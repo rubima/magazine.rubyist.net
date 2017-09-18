@@ -1,0 +1,11 @@
+{{*&task*}}                  # アンカー
+desc:   作業分解図
+type:   map
+mapping:
+ "name":      { type: str, required: yes }
+ "assigned":  { type: str }
+ "deadline":  { type: date }
+ "subtasks":
+    type:  seq
+    sequence:
+      - {{**task*}}          # エイリアス

@@ -1,0 +1,11 @@
+--- adaptor.rb.orig	2004-12-15 06:06:23.923544000 +0900
++++ adaptor.rb	2004-12-15 16:17:33.838262400 +0900
+@@ -490,7 +490,7 @@
+ 					if ( attr.generate? )
+ 
+ 						column = attr.column_name
+-						row = select_one_query( "select nextval ('#{entity.table_name}_seq')" )
++						row = select_one_query( "select nextval ('#{entity.table_name}_#{column}_seq')" )
+ 						primary_key[ attr ] = row[ 'nextval' ]
+ 
+ 					end

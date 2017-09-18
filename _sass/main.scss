@@ -1,0 +1,425 @@
+@charset "utf-8";
+
+/*
+.css: Hiki theme for Rubyist Magazine.
+
+ただただしさんの「ruby-lang.css: tDiary theme for ruby-lang.org.」を
+ベースに作成しました。
+オリジナルテーマ作者のただただしさんに感謝します。
+
+You can redistribute it and/or modify it under the same term as Ruby.
+
+Copyright 2004 (C) by TADA Tadashi <sho@spc.gr.jp>
+Copyright 2004 (C) by Yamamoto Dan <dan@dgames.jp>
+*/
+
+body {
+    margin: 0;
+    color: #1e1e1e;
+    background-color: #fff;
+}
+h1 {
+    padding-top: 128px;
+    margin-bottom: 0.4em;
+    padding-left: 0.2em;
+    font-size: large;
+    border-color: #333333;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+}
+div.body a {
+    color: #AD273F;
+    background-color: transparent;
+    &:visited {
+        color: #4c0b00;
+        background-color: transparent;
+    }
+    &:hover {
+        color: #ff2600;
+        background-color: transparent;
+    }
+    h3, h4 {
+        a {
+            text-decoration: none;
+        }
+    }
+}
+h1.header a {
+    color: #444;
+    text-decoration: none;
+}
+div.referer, div.refererlist, div.day div.form {
+    font-size: small;
+    margin-left: 3em;
+    border-style: solid;
+    border-color: #a11;
+    border-width: 1px;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+}
+div.day div.field {
+    display: inline;
+    margin-right: 1em;
+}
+img.icon {
+    float: right;
+    margin-left: 0.5em;
+    border: none;
+}
+img.amazon {
+    float: right;
+    margin-left: 0.5em;
+    border: none;
+}
+img.right {
+    float: right;
+    margin-left: 0.5em;
+    border: none;
+}
+img.ext {
+    border: none;
+}
+div.comment {
+    font-size: x-small;
+    display: none;
+}
+div.trackbacks {
+    font-size: small;
+    display: inline;
+}
+
+div.social-buttons {
+    text-align: right;
+}
+/* whole-contents */
+
+div.whole-contents {
+    position: relative;
+}
+
+/* main */
+
+div.main {
+    background-image: url(../images/rubima_logo_l.png);
+    background-repeat: no-repeat;
+    background-position: 0px 44px;
+    margin-top: 0px;
+    margin-left: 150px;
+    margin-right: 0.6em;
+    padding: 0.0em;
+    padding-top: 0em;
+    padding-left: 0em;
+    min-width: 480px;
+    hr {
+        width: 96%;
+        color: #888;
+        background-color: transparent;
+    }
+    div.day {
+        margin-right: 0em;
+        font-size: 90%;
+    }
+    span.readmore {
+        font-size: 80%;
+    }
+    div.lm {
+        margin-top: 0em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+        text-align: right;
+        font-size: 75%;
+    }
+    h2 {
+        margin-top: 0.8em;
+        margin-bottom: 0.8em;
+        font-size: 110%;
+        padding-left: 0.6em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+        color: #ffffff;
+        background-color: #696969;
+    }
+    h3 {
+        font-size: 110%;
+        border-color: #950000;
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+    }
+    h4 {
+        margin-left: 0.6em;
+        border-color: #950000;
+        border-width: 0px 0px 1px 0px;
+        border-style: dashed;
+        font-size: 100%;
+    }
+    p {
+        margin-top: 0px;
+        margin-bottom: 0.5em;
+        line-height: 1.5;
+        margin-left: 1em;
+    }
+    li {
+        line-height: 1.5;
+    }
+    dt {
+        margin-top: 0.5em;
+        font-weight: bold;
+        img {
+            margin: 0.6em;
+            float: left;
+        }
+    }
+    dl {
+        clear: none;
+    }
+    dd {
+        margin-left: 2em;
+        line-height: 140%;
+        img {
+            margin: 0.2em;
+            margin-right: 0.8em;
+            margin-left: 0.6em;
+            margin-bottom: 0.6em;
+            float: right;
+        }
+    }
+    pre {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #888;
+        padding: 4px;
+        clear: both;
+    }
+    blockquote {
+        border-style: solid;
+        border-width: 1px;
+        color: #333333;
+        border-color: #888888;
+        background-color: #f0f0f0;
+        padding: 8px;
+        padding-top: 8px;
+        padding-bottom: 0px;
+        clear: both;
+    }
+    table {
+        margin: 1em;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    p.footnote {
+        font-size: small;
+        a {
+            text-decoration: none;
+        }
+    }
+    hr.sep {
+        display: none;
+        margin: 0px;
+    }
+    p img {
+        margin: 0.2em;
+        margin-right: 0.8em;
+        margin-bottom: 0.8em;
+    }
+    p em img {
+        margin: 0.2em;
+        margin-right: 0.8em;
+        margin-bottom: 0.8em;
+        float: none;
+    }
+    p strong img {
+        margin: 0px;
+        padding: 0px;
+        float: none;
+        clear: both;
+    }
+}
+
+div.main div.day, h2, h3, h4, h5, h6, h7, h8, h9, hr {
+    clear: both;
+}
+div.main h2 a:link, div.main h2 a:visited {
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: none;
+}
+span.lm {
+    border-style: dashed;
+    border-color: #950000;
+    border-width: 1px 0px 0px 0px;
+}
+div.main h5, h6, h7, h8, h9 {
+    margin: 0.0em;
+    padding: 0.4em 1em;
+    font-size: 100%;
+}
+
+div.main ul, div.main dl {
+    margin-top: 0.2em;
+    margin-left: 2em;
+    padding-left: 0em;
+}
+div.main td, th {
+    padding: 2px;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    border: thin solid #888;
+}
+div.form {
+    clear: right;
+}
+span.corres {
+    font-size: 80%;
+    font-weight: lighter;
+}
+div.main span.footnote a {
+    /*    vertical-align: super;*/
+    font-size: x-small;
+    text-decoration: none;
+}
+
+/* sidebar */
+
+div.sidebar {
+    background-color: #900;
+    background: url(../images/rubima_logo_left.png) top no-repeat, url(../images/rubima_sidebar.png) bottom repeat-y;
+    position: absolute;
+    top: 0em;
+    left: 0px;
+    width: 150px;
+    color: #fee;
+    word-break: break-all;
+    padding-top: 148px;
+    padding-bottom: 5em;
+    h4, h5 {
+        font-size: small;
+        padding-right: 8px;
+        margin-bottom: 0.2em;
+        margin-top: 1em;
+        margin-left: 6px;
+    }
+    div.menu {
+        font-size: small;
+        font-weight: bold;
+        padding-left: 4px;
+    }
+    ul {
+        margin-top: 0em;
+        margin-left: 0em;
+        padding-left: 10px;
+        padding-right: 8px;
+    }
+    li {
+        font-size: x-small;
+        list-style-type: none;
+        margin: 6px 0px;
+        line-height: 100%;
+    }
+    hr {
+        color: #fff;
+        background-color: transparent;
+        width: 80%;
+        margin-bottom: 1em;
+    }
+    p {
+        margin: 0px;
+        padding: 0px;
+        font-size: x-small;
+    }
+    form {
+        margin-top: 0em;
+        margin-left: 0.5em;
+        margin-right: 4px;
+        padding-right: 8px;
+        font-size: x-small;
+        line-height: 110%;
+    }
+    a {
+        color: #ffffff;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    img {
+        margin-left: 8px;
+        border-style: none;
+    }
+}
+div.sidebar img.rubynokai {
+    margin-left: 8px;
+    border-style: none;
+}
+div.sidebar img.rubima_logo {
+    position: absolute;
+    top: 49px;
+    left: 0px;
+    margin-left: 0px;
+    border-style: none;
+}
+
+/* rightbar */
+
+div.footer {
+    font-size: 90%;
+    text-decoration: none;
+    text-align: right;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    padding-top: 36px;
+    clear: both;
+}
+
+/*
+for printer
+*/
+
+@media print {
+    div.main {
+        margin-left: 0.6em;
+        max-width: 100%;
+        min-width: 100%;
+        h2 {
+            color: #000;
+            background-color: #fff;
+            font-size: 150%;
+            text-align: left;
+            padding: 0.2em;
+            margin: 0.5em 0;
+            border-left: 15px solid #950000;
+            border-bottom: 2px solid #950000;
+        }
+    }
+    div.sidebar {
+        display: none;
+    }
+}
+
+/* hide sanchor */
+
+div.day span.sanchor {
+    display: none;
+}
+div.note {
+    text-align: right;
+    font-size: small;
+    margin-bottom: 0.5em;
+}
+
+/* from append-css */
+
+div.preview {
+    font-size: medium;
+    background-color: #fcc;
+    padding-top: 0.5em;
+}
+div.main p img.right {
+    float: right;
+}
+ins.added {
+    background-color: #fbb;
+}
+del.deleted {
+    background-color: #ccc;
+}
+div.sidebar input[type=text] {
+    width: 123px;
+}
