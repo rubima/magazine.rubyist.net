@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RubyKaigi2007： C より速い Ruby プログラム</title>
+  <meta name="description" content="著者： 桑田 誠">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0022/0022-FasterThanC.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>RubyKaigi2007： C より速い Ruby プログラム</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0022/0022-FasterThanC.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RubyKaigi2007： C より速い Ruby プログラム" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0022/0022-FasterThanC.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0022/0022-FasterThanC.html" data-text="RubyKaigi2007： C より速い Ruby プログラム">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者： 桑田 誠</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#eruby-について" id="markdown-toc-eruby-について">eRuby について</a></li>
+  <li><a href="#ベンチマークの内容" id="markdown-toc-ベンチマークの内容">ベンチマークの内容</a></li>
+  <li><a href="#実装" id="markdown-toc-実装">実装</a>    <ul>
+      <li><a href="#実装1-最初の実装" id="markdown-toc-実装1-最初の実装">実装#1: 最初の実装</a></li>
+      <li><a href="#実装2-行への分解をやめる" id="markdown-toc-実装2-行への分解をやめる">実装#2: 行への分解をやめる</a></li>
+      <li><a href="#実装3-構文解析をパターンマッチに" id="markdown-toc-実装3-構文解析をパターンマッチに">実装#3: 構文解析をパターンマッチに</a></li>
+      <li><a href="#実装4-正規表現をチューニング" id="markdown-toc-実装4-正規表現をチューニング">実装#4: 正規表現をチューニング</a></li>
+      <li><a href="#実装5-メソッドをインライン展開" id="markdown-toc-実装5-メソッドをインライン展開">実装#5: メソッドをインライン展開</a></li>
+      <li><a href="#実装6-配列バッファを使ってメソッド呼び出しを削減する" id="markdown-toc-実装6-配列バッファを使ってメソッド呼び出しを削減する">実装#6: 配列バッファを使ってメソッド呼び出しを削減する</a></li>
+      <li><a href="#実装7-式展開を使ってメソッド呼び出しを削減" id="markdown-toc-実装7-式展開を使ってメソッド呼び出しを削減">実装#7: 式展開を使ってメソッド呼び出しを削減</a></li>
+      <li><a href="#実装8-ファイルキャッシュ" id="markdown-toc-実装8-ファイルキャッシュ">実装#8: ファイルキャッシュ</a></li>
+      <li><a href="#実装9-関数にして実行" id="markdown-toc-実装9-関数にして実行">実装#9: 関数にして実行</a></li>
+    </ul>
+  </li>
+  <li><a href="#高速化のための原則" id="markdown-toc-高速化のための原則">高速化のための原則</a></li>
+  <li><a href="#他言語との比較" id="markdown-toc-他言語との比較">他言語との比較</a></li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Ruby をはじめとする動的なスクリプト言語は、C や Java のような静的なコンバイル型言語と比べると動作速度が遅いです。
+しかし、それがそのままアプリケーションの動作速度を決定するわけではありません。
+アプリケーションの動作速度には、実装言語の速度よりも、アルゴリズムやデータ構造といった知識の有無や、プログラミング上の工夫やアイデアのほうがずっと大きく影響を与えます<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<p>本稿では、C 言語で書かれた拡張モジュールより高速に動作する pure Ruby プログラムを示すことで、アプリケーションの速度には言語よりも知識やアイデアの方がずっと重要であることを示します。</p>
+
+<p>具体的な題材としては、実アプリケーションで広く使われている eRuby の処理系を扱います (eRuby については後述)。
+学校の教科書では、よくフィボナッチ数列の高速化などを使って「アルゴリズムの工夫が大事である」と説明していますが、実際のアプリケーションでフィボナッチ数列を使うことなど滅多にありません。
+我々が知りたいのは自分のプログラムで使える知識であり、教科書の中でしか出てこないようなものを使って「工夫が大事」といわれても実感がわきません。</p>
+
+<p>本稿ではそのようなことがないように、eRuby の処理系という、現場で広く使われているものを取り上げます。これにより、知識や工夫が大事であることを実感していただけたらと思います。</p>
+
+<p>なお本稿は、<a href="http://jp.rubyist.net/RubyKaigi2007/">RubyKaigi2007</a> における<a href="http://jp.rubyist.net/RubyKaigi2007/Program0609.html#l12">同名のセッション</a> を文書化したものです。
+<a href="http://www.kuwata-lab.com/presen/rubykaigi2007.pdf">発表資料 (pdf)</a> も併せてご覧下さい。</p>
+
+<h2 id="eruby-について">eRuby について</h2>
+
+<p>今回の題材である eRuby について説明します。
+eRuby(embedded Ruby) とは、テキストファイル中に Ruby の文や式を埋め込むための仕様です (大雑把にいえば PHP のようなものだと思ってください)。
+list0-1 はそのサンプルです。「&lt;%= … %&gt;」の中に Ruby の式を、「&lt;% … %&gt;」の中に Ruby の文を埋め込みます。</p>
+
+<p>list0-1: eRuby のサンプル</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;table&gt;
+ &lt;tbody&gt;
+{{*&lt;% for item in list %&gt;*}}
+  &lt;tr&gt;
+   &lt;td&gt;{{*&lt;%= item %&gt;*}}&lt;/td&gt;
+  &lt;/tr&gt;
+{{*&lt;% end %&gt;*}}
+ &lt;/tbody&gt;
+&lt;table&gt;</code></pre></figure>
+
+<p>式や文が埋め込まれたテキストファイルは、Ruby のスクリプトへ「変換」され、そのまま Ruby スクリプトとして「実行」されます。この「変換」と「実行」を行うのが eRuby の処理系です。</p>
+
+<p>現在、eRuby の主な処理系は次の 2 つです。</p>
+
+<dl>
+  <dt>eruby</dt>
+  <dd>C 言語による拡張モジュールとして書かれた処理系です。自分でコンパイルする必要がありますが、動作は高速です。</dd>
+  <dt>ERB</dt>
+  <dd>pure Rubyで書かれた処理系です。Ruby 1.8 以降に標準添付されており、最も広く使われています。</dd>
+</dl>
+
+<p>名前の混乱を避けるために、以降では前者を「C 実装 eruby」と呼ぶことにします。後者はそのまま「ERB」と呼びます。</p>
+
+<p>C 実装 eruby と ERB では、変換結果に違いがあります。
+list0-2 は C 実装 eruby による変換例です。
+1 行ずつ print 文に変換しているのが特徴です。</p>
+
+<p>list0-2: C 実装 eruby による変換例</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">print "&lt;table&gt;\n"
+print " &lt;tbody&gt;\n"
+{{* for item in list *}}; print "\n"
+print "  &lt;tr&gt;\n"
+print "   &lt;td&gt;"; print(( {{*item*}} )); print "&lt;/td&gt;\n"
+print "  &lt;/tr&gt;\n"
+{{* end *}}; print "\n"
+print " &lt;/tbody&gt;\n"
+print "&lt;table&gt;\n"</code></pre></figure>
+
+<p>list0-3 は ERB による変換例です。1行ずつ変換している点は C 実装 eruby と同じですが、print 文ではなく文字列結合を使っているのが特徴です。</p>
+
+<p>list0-3: ERB による変換例</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">_erbout = ''; _erbout.concat "&lt;table&gt;\n"
+_erbout.concat " &lt;tbody&gt;\n"
+{{* for item in list *}}; _erbout.concat "\n"
+_erbout.concat "  &lt;tr&gt;\n"
+_erbout.concat "   &lt;td&gt;"; _erbout.concat(( {{*item*}} ).to_s); _erbout.concat "&lt;/td&gt;\n"
+_erbout.concat "  &lt;/tr&gt;\n"
+{{* end *}}; _erbout.concat "\n"
+_erbout.concat " &lt;/tbody&gt;\n"
+_erbout.concat "&lt;table&gt;\n"
+_erbout</code></pre></figure>
+
+<p>変換された Ruby スクリプトを実行すると、例えば list0-4 のような出力が得られます。
+C 実装 eruby と ERB とでは、変換された Ruby スクリプトは違いますが、その実行結果は同じものになります。</p>
+
+<p>list0-4: 実行されて得られる出力の例</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;table&gt;
+ &lt;tbody&gt;
+
+  &lt;tr&gt;
+   &lt;td&gt;AAA&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+   &lt;td&gt;BBB&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;tr&gt;
+   &lt;td&gt;CCC&lt;/td&gt;
+  &lt;/tr&gt;
+
+ &lt;/tbody&gt;
+&lt;table&gt;</code></pre></figure>
+
+<h2 id="ベンチマークの内容">ベンチマークの内容</h2>
+
+<p>ここで、このあとで使用するベンチマークデータについて説明します。ベンチマーク一式は以下からダウンロードできます。</p>
+
+<ul>
+  <li><a href="http://www.kuwata-lab.com/presen/erubybench-1.1.zip">http://www.kuwata-lab.com/presen/erubybench-1.1.zip</a></li>
+</ul>
+
+<p>ベンチマークで使用する eRuby ファイルは list0-5 のようになります。
+ループ部分が 20 行あり、それを 20 回ループします。その前後に 53 行と 5 行のデータがついており、最終的に約 400 行の HTML ファイルを出力します。</p>
+
+<p>list0-5: ベンチマーク用 eRuby ファイル (<a href="http://www.kuwata-lab.com/presen/erubybench/html/erubybench.rhtml.htm">erubybench.rhtml</a>)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">     1:	&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+     2:	&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     3:	          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+     4:	&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"&gt;
+        .....
+    47:	  &lt;table&gt;
+        ....
+    53:	   &lt;tbody&gt;
+    54:	{{*&lt;%*}}
+    55:	{{*n = 0*}}
+    56:	{{*for item in list*}}
+    57:	    {{*n += 1*}}
+    58:	{{* %&gt;*}}
+    59:	    &lt;tr class="{{*&lt;%= n % 2 == 0 ? 'even' : 'odd' %&gt;*}}"&gt;
+    60:	     &lt;td style="text-align: center"&gt;{{*&lt;%= n %&gt;*}}&lt;/td&gt;
+    61:	     &lt;td&gt;
+    62:	      &lt;a href="/stocks/{{*&lt;%= item['symbol'] %&gt;*}}"&gt;{{*&lt;%= item['symbol'] %&gt;*}}&lt;/a&gt;
+    63:	     &lt;/td&gt;
+        .....
+    77:	    &lt;/tr&gt;
+    78:	{{*&lt;%*}}
+    79:	{{*end*}}
+    80:	{{* %&gt;*}}
+    81:	   &lt;/tbody&gt;
+    82:	  &lt;/table&gt;
+    83:	
+    84:	 &lt;/body&gt;
+    85:	&lt;/html&gt;</code></pre></figure>
+
+<p>なお本稿でのベンチマークでは、純粋に eRuby 処理系としてだけの能力を測るため、HTML エスケープ (サニタイズ) は行っていません。ご注意ください。</p>
+
+<p>またベンチマークに使った環境は次の通りです。この環境で 10000 回実行した時間を計測しました。</p>
+
+<ul>
+  <li>MacBook, Intel CoreDuo 1.83GHz, Memory 2GB</li>
+  <li>MacOS X 10.4 Tiger</li>
+  <li>Ruby 1.8.6</li>
+  <li>eruby 1.0.5</li>
+  <li>GCC 4.0.1</li>
+</ul>
+
+<p>C 実装 eruby と ERB のベンチマーク結果は table0-1 のようになりました。
+これを見ると、C 実装 eruby は ERB と比べて 3 倍ほど高速ですが、高速なのは eRuby ファイルの変換部分だけであり、変換後の Ruby スクリプトを実行する部分ではそれほどの違いはないことがわかります。</p>
+
+<p>table0-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>このように、 C 実装 eruby で速くなるのは変換部分だけであり、実行部分は速くはなりません。
+この点は大事ですので覚えておいてください。</p>
+
+<h2 id="実装">実装</h2>
+
+<p>ここからは、実際に eRuby 処理系を pure Ruby で実装していきます。
+それを少しずつ改良しながら、ベンチマークをとって速度を確認していきます。</p>
+
+<h3 id="実装1-最初の実装">実装#1: 最初の実装</h3>
+
+<p>まず最初の実装は list1-1 のようになります。
+ポイントは「入力を1行ずつに分解して構文解析する」という点です。</p>
+
+<p>list1-1: 最初の実装 (<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby1.rb.htm">myeruby1.rb</a>)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### プログラム
+class MyEruby1
+  ...
+  def convert(eruby_str)
+    s = '_buf = ""; '
+    kind = :text
+    {{*eruby_str.each_line do |line|*}}     # 1行ずつに分解
+      {{*line.scan(/(.*?)(&lt;%=?|%&gt;)/) do*}}  # '&lt;%' と '&lt;%=' と '%&gt;' を探す
+        str = $1                      # テキストまたは埋め込み文や式
+        s &lt;&lt; _convert_str(str, kind) unless str.empty?
+        case $2
+        when '&lt;%'  ;  kind = :stmt    # 埋め込み文
+        when '&lt;%=' ;  kind = :expr    # 埋め込み式
+        when '%&gt;'  ;  kind = :text    # テキスト
+        end
+      end
+      text = $' || line               # 残りのテキスト
+      s &lt;&lt; _convert_str(text, kind) unless text.empty?
+    end
+    s &lt;&lt; "_buf\n"
+    return s
+  end
+  ...
+end</code></pre></figure>
+
+<p>変換されたRubyスクリプトは list1-2 のようになります。
+ポイントは「1行ずつの文字列結合に変換する (ERB とほぼ同じ)」という点です。</p>
+
+<p>list1-2: 変換後のRubyスクリプト</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### 変換結果
+_buf = ""; _buf &lt;&lt; "&lt;html&gt;\n";
+_buf &lt;&lt; "&lt;body&gt;\n"
+_buf &lt;&lt; " &lt;table&gt;\n"
+{{* for item in list ;*}} _buf &lt;&lt; "\n";
+_buf &lt;&lt; "  &lt;tr&gt;\n"
+_buf &lt;&lt; "   &lt;td&gt;"; {{*_buf &lt;&lt; (item['name']).to_s;*}} _buf &lt;&lt; "&lt;/td&gt;\n";
+_buf &lt;&lt; "  &lt;/tr&gt;\n";
+{{* end ;*}} _buf &lt;&lt; "\n";
+...</code></pre></figure>
+
+<p>ベンチマーク結果は table1-1 のようになりました。
+変換部分が大変なボトルネックになっていることが分かります。</p>
+
+<p>table1-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby1 (initial implement)</strong></td>
+      <td><strong>79.210</strong></td>
+      <td><strong>13.320</strong></td>
+      <td><strong>92.530</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>最初の実装は、大変遅いものとなりました。
+これを少しずつ改良していきます。</p>
+
+<h3 id="実装2-行への分解をやめる">実装#2: 行への分解をやめる</h3>
+
+<p>まず最初の改良として、入力を1行ずつ分解して解析するのをやめ、入力全体をひとつの文字列としてそのまま解析するようにします (list2-1)。
+これにより、1 行ずつに分解するコストがなくなるため、Ruby スクリプトへの変換部分が速くなります。</p>
+
+<p>list2-1: 1行ずつに分解するのをやめる (<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby2.rb.htm">myeruby2.rb</a>)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 改良前
+    {{*eruby_str.each_line do |line|*}}
+      {{*line*}}.scan(/(.*?)(&lt;%=?|%&gt;)/).each do
+        ...
+      end
+    end
+
+## 改良後
+    {{*eruby_str*}}.scan(/(.*?)(&lt;%=?|%&gt;)/m).each do
+      ...
+    end</code></pre></figure>
+
+<p>また変換後の Ruby スクリプトも、1 行ずつに分解するのではなく、複数行をまとめて扱うようにします (list2-2)。
+これにより、文字列結合のメソッド呼び出しが大幅に削減できるので、変換後の実行部分が速くなります。
+今までだと、例えば 50 行の HTML があれば 50 回メソッドが呼び出されていたのが、この方法だと 1 回で済むわけですから、かなりの高速化が期待できます。</p>
+
+<p>list2-2: 複数行をまとめて扱う</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 改良前
+_buf &lt;&lt; "&lt;html&gt;\n"
+_buf &lt;&lt; " &lt;body&gt;\n"
+_buf &lt;&lt; "  &lt;h1&gt;title&lt;/h1&gt;\n"
+
+## 改良後
+_buf &lt;&lt; '&lt;html&gt;
+ &lt;body&gt;
+  &lt;h1&gt;title&lt;/h1&gt;
+';</code></pre></figure>
+
+<p>ベンチマーク結果は table2-1 のようになりました。
+変換部分で 8 倍の高速化、実行部分で 70% 以上の高速化、トータルで 5 倍高速化されました。
+C 実装 eruby にはまだ負けますが、ERB には余裕で勝つことができました。</p>
+
+<p>table2-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td>MyEruby1 (initial implement)</td>
+      <td>79.210</td>
+      <td>13.320</td>
+      <td>92.530</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby2 (no split lines)</strong></td>
+      <td><strong>9.937</strong></td>
+      <td><strong>8.408</strong></td>
+      <td><strong>18.345</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>入力を 1 行ずつに分解するのは C や Perl でよく見かけますが、それにならう必要性はありません。
+メモリ容量がよほど厳しい場合は別として、通常は入力文字列を行に分解せずそのまま扱う方が高速になります。</p>
+
+<h3 id="実装3-構文解析をパターンマッチに">実装#3: 構文解析をパターンマッチに</h3>
+
+<p>次に、構文解析をやめて正規表現によるパターンマッチで済ませるようにします (list3-1)。
+構文解析といっても大したことをやっているわけではないのですが、それっぽいことをしているので、この部分をパターンマッチに置き換えます。</p>
+
+<p>list3-1: 構文解析をせず、パターンマッチで済ます (<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby3.rb.htm">myeruby3.rb</a>)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 改良前
+    ...
+    kind = :text
+    eruby_str.scan(/(.*?)(&lt;%=?|%&gt;)/m) do
+      s &lt;&lt; _convert_str($1, kind)
+      case $2
+      when '&lt;%=' ;  kind = :expr
+      when '&lt;%'  ;  kind = :stmt
+      when '%&gt;'  ;  kind = :text
+      end
+    end
+    ...
+
+## 改良後
+    ...
+    eruby_str.scan({{*/(.*?)&lt;%(=?)(.*?)%&gt;/*}}m) do
+      s &lt;&lt; _convert_str($1, {{*:text*}})
+      {{*if $2 == '='*}}
+        {{*s &lt;&lt; _convert_str($3, :expr)*}}
+      {{*else*}}
+        {{*s &lt;&lt; _convert_str($3, :stmt)*}}
+      {{*end*}}
+    end
+    ...</code></pre></figure>
+
+<p>変換後の Ruby スクリプトは先ほどのと同じですので省略します。</p>
+
+<p>ベンチマーク結果は table3-1 の通りです。
+これを見ると、変換部分が 70% 以上高速化され、全体として C 実装 eruby より速くなったことが分かります。</p>
+
+<p>table3-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td>MyEruby1 (initial implement)</td>
+      <td>79.210</td>
+      <td>13.320</td>
+      <td>92.530</td>
+    </tr>
+    <tr>
+      <td>MyEruby2 (no split lines)</td>
+      <td>9.937</td>
+      <td>8.408</td>
+      <td>18.345</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby3 (pattern matching)</strong></td>
+      <td><strong>5.738</strong></td>
+      <td><strong>8.466</strong></td>
+      <td><strong>14.204</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2回目の改良で、早くも目的は達成されました。
+もちろん変換部分だけをみると C 実装 eruby にはかなわないのですが、変換後の Ruby スクリプトの実行が大幅に高速化されているため、全体としては C 実装 eruby よりも速くなっています。</p>
+
+<p>このように、構文解析をまじめに行うかわりにパターンマッチで済ませることができると、大幅に高速化できる場合があります。
+例えば XML ファイルからデータを取り出すときに、XML パーサを使うかわりにパターンマッチで済ませられないか検討するとよいでしょう。</p>
+
+<h3 id="実装4-正規表現をチューニング">実装#4: 正規表現をチューニング</h3>
+
+<p>次に、正規表現をチューニングします。
+正規表現のチューニングでは、速い正規表現を使うことも大事ですが、それ以上に遅い正規表現を使わないことが大事です。</p>
+
+<p>先ほどのプログラムだと、カッコを使ったグルーピングが 3 つありました。このうち 2 つめと 3 つめはマッチする文字列が短いですが、1 つめはかなり長い文字列にマッチします。</p>
+
+<p>実は正規表現のグルーピングは、長い文字列にマッチするととたんに遅くなることが分かっています。
+そこでこの部分を改良し、正規表現のグルーピングを使わずに自力で切り出してくるようにします (list4-1)。
+グルーピングの数が 3 つから 2 つに減っていることに注意してください。
+プログラムは長くなってしまいますが、高速化とのトレードオフです。</p>
+
+<p>list4-1: 正規表現のグルーピングを避けて自前で切り出す (<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby4.rb.htm">myeruby4.rb</a>)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 改良前
+    ...
+    eruby_str.scan(/{{*(.*?)*}}&lt;%(=)?(.*?)%&gt;/m) do
+      text, equal, code = $1, $2, $3
+      ...
+    end
+    ...
+
+## 改良後
+    ...
+    {{*pos = 0*}}
+    eruby_str.scan(/&lt;%(=)?(.*?)%&gt;/m) do
+      equal, code = $1, $2
+      {{*match = Regexp.last_match*}}
+      {{*len   = match.begin(0) - pos*}}
+      {{*text  = eruby_str[pos, len]*}}
+      {{*pos   = match.end(0)*}}
+      ...
+    end
+    ...</code></pre></figure>
+
+<p>変換後の Ruby スクリプトに変更はありません。</p>
+
+<p>ベンチマーク結果 (table4-1) を見ると、変換部分が確かに高速化されていることが分かります。</p>
+
+<p>table4-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td>MyEruby1 (initial implement)</td>
+      <td>79.210</td>
+      <td>13.320</td>
+      <td>92.530</td>
+    </tr>
+    <tr>
+      <td>MyEruby2 (no split lines)</td>
+      <td>9.937</td>
+      <td>8.408</td>
+      <td>18.345</td>
+    </tr>
+    <tr>
+      <td>MyEruby3 (pattern matching)</td>
+      <td>5.738</td>
+      <td>8.466</td>
+      <td>14.204</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby4 (optimized regexp)</strong></td>
+      <td><strong>3.620</strong></td>
+      <td><strong>8.356</strong></td>
+      <td><strong>11.976</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>正規表現や SQL のように宣言的な記述を行うようなものはどれも、使うだけなら簡単ですが、中の仕組みがブラックボックス化しているため、チューニングが困難です。
+その分、チューニングの余地が大きい箇所でもあります。
+興味のある人は正規表現の動作コストをいろいろ調べてみてください。</p>
+
+<h3 id="実装5-メソッドをインライン展開">実装#5: メソッドをインライン展開</h3>
+
+<p>次に、メソッドをインライン展開することで、メソッド呼び出しの回数を減らしてみます (list5-1)。
+Ruby のメソッド呼び出しはそれなりのコストがかかるので、これを減らすことは一定の効果があります。</p>
+
+<p>ただし、高速化よりもプログラムの保守性を優先するようにしてください。
+今回はそもそも別メソッドにしなくてよいケースでしたのでインライン展開してよかったのですが、実際のプログラムでは必ずしもそうとは限りませんので注意してください。</p>
+
+<p>list5-1: メソッドをインライン展開 (<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby5.rb.htm">myeruby5.rb</a>)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### 改良前
+        ...
+        s &lt;&lt; _convert_str(code, :expr)
+        s &lt;&lt; _convert_str(code, :stmt)
+        s &lt;&lt; _convert_str(text, :text)
+        ...
+### 改良後
+        ...
+        {{*s &lt;&lt; "_buf &lt;&lt; (#{code}).to_s; "*}}
+        {{*s &lt;&lt; "#{code}; "*}}
+        {{*text.gsub!(/[\\']/, '\\\\\&amp;')*}}
+        {{*s &lt;&lt; "_buf &lt;&lt; '#{text}'; " unless text.empty?*}}
+        ...</code></pre></figure>
+
+<p>今回も変換後の Ruby スクリプトに変更はありません。</p>
+
+<p>ベンチマーク結果 (table5-1) を見ると、変換部分が 15％ 以上高速化していることがわかります。</p>
+
+<p>table5-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td>MyEruby1 (initial implement)</td>
+      <td>79.210</td>
+      <td>13.320</td>
+      <td>92.530</td>
+    </tr>
+    <tr>
+      <td>MyEruby2 (no split lines)</td>
+      <td>9.937</td>
+      <td>8.408</td>
+      <td>18.345</td>
+    </tr>
+    <tr>
+      <td>MyEruby3 (pattern matching)</td>
+      <td>5.738</td>
+      <td>8.466</td>
+      <td>14.204</td>
+    </tr>
+    <tr>
+      <td>MyEruby4 (optimized regexp)</td>
+      <td>3.620</td>
+      <td>8.356</td>
+      <td>11.976</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby5 (inline method)</strong></td>
+      <td><strong>3.091</strong></td>
+      <td><strong>8.320</strong></td>
+      <td><strong>11.411</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>変換部分の時間は、pure Ruby でありながら C 実装 eruby の 2 倍強で済んでおり充分高速といえますので、あとは実行部分の改善を図っていきます。</p>
+
+<h3 id="実装6-配列バッファを使ってメソッド呼び出しを削減する">実装#6: 配列バッファを使ってメソッド呼び出しを削減する</h3>
+
+<p>次に、変換後の Ruby スクリプトにおいて、文字列バッファではなくて配列バッファを使ってみます (処理系のプログラムは<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby6.rb.htm">myeruby6.rb</a>)</p>
+
+<p>変換後の Ruby スクリプト (list6-1) では、今までだと複数回の String#&lt;&lt; メソッドの呼び出しが必要だったのが、配列バッファを使うと 1 回の Array#push() メソッドの呼び出しで済ませることができます。
+このため、メソッド呼び出しの回数を減らすことができ、変換後の実行部分が高速化されます。</p>
+
+<p>list6-1: String#&lt;&lt; のかわりに Array#push() を使い、メソッド呼び出しを削減する</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### 改良前
+_buf = '';
+_buf &lt;&lt; '&lt;td&gt;'; _buf &lt;&lt; n.to_s; _buf &lt;&lt; '&lt;/td&gt;';
+_buf
+
+### 改良後
+{{*_buf = [];*}}
+{{*_buf.push(*}}'&lt;td&gt;', n, '&lt;/td&gt;'{{*)*}};
+{{*_buf.join*}}</code></pre></figure>
+
+<p>ベンチマーク結果 (list6-1) を見ると、実行部分が高速化し、全体で 10% 弱速くなっていることが分かります。</p>
+
+<p>table6-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td>MyEruby1 (initial implement)</td>
+      <td>79.210</td>
+      <td>13.320</td>
+      <td>92.530</td>
+    </tr>
+    <tr>
+      <td>MyEruby2 (no split lines)</td>
+      <td>9.937</td>
+      <td>8.408</td>
+      <td>18.345</td>
+    </tr>
+    <tr>
+      <td>MyEruby3 (pattern matching)</td>
+      <td>5.738</td>
+      <td>8.466</td>
+      <td>14.204</td>
+    </tr>
+    <tr>
+      <td>MyEruby4 (optimized regexp)</td>
+      <td>3.620</td>
+      <td>8.356</td>
+      <td>11.976</td>
+    </tr>
+    <tr>
+      <td>MyEruby5 (inline method)</td>
+      <td>3.091</td>
+      <td>8.320</td>
+      <td>11.411</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby6 (array buffer)</strong></td>
+      <td><strong>3.139</strong></td>
+      <td><strong>7.381</strong></td>
+      <td><strong>10.520</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>なお配列を使って高速化されるのは、Array#push() メソッドが複数個の引数をとることができるおかげで全体のメソッド呼び出しを削減できるからです。
+残念ながら String#&lt;&lt; メソッドや String#concat() メソッドは引数を 1 つしかとれないので、メソッド呼び出しを削減することには使えません。</p>
+
+<p>しかし、文字列バッファでは別の方法を使ってメソッド呼び出しを削減できます。
+これを次に見てみます。</p>
+
+<h3 id="実装7-式展開を使ってメソッド呼び出しを削減">実装#7: 式展開を使ってメソッド呼び出しを削減</h3>
+
+<p>配列バッファではなく文字列バッファを使う場合は、文字列中の式展開を使うことで String#&lt;&lt; メソッドの呼び出しを減らすことができます (list7-1)。</p>
+
+<p>式展開とは、Ruby の文字列リテラルの中に任意の式を埋め込むことができる機能です。
+Perl や PHP でも似た機能がありますが、これらの言語では埋め込めるのが基本的に変数名のみに限定されているのに対し、Ruby ではメソッド呼び出しや四則演算など任意の式を埋め込むことができます。</p>
+
+<p>サンプルを見れば分かるように、変換後の Ruby スクリプトにおいて従来だと文字列結合のメソッド呼び出しが複数回必要だったのが、式展開を使うと 1 回で済むようになるため、変換後の実行部分を高速化できます。</p>
+
+<p>list7-1: 文字列中の式展開を使って、String#&lt;&lt; メソッドの呼び出しを削減する</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### 改良前
+_buf &lt;&lt; '&lt;tr&gt;
+&lt;td&gt;'; _buf &lt;&lt; n.to_s; _buf &lt;&lt; '&lt;/td&gt;
+&lt;/tr&gt;';
+
+### 改良後
+_buf &lt;&lt; {{*%Q`*}}&lt;tr&gt;
+&lt;td&gt;{{*#{n}*}}&lt;/td&gt;
+&lt;/tr&gt;{{*`*}}</code></pre></figure>
+
+<p>またこのサンプルでは「% 記法」を使っています。
+「%Q<code class="highlighter-rouge">...</code>」は「”…“」と同じ意味ですが、文字列リテラルを囲むのに「<code class="highlighter-rouge">」以外の任意の記号を使うことができます。
+「"」で文字列リテラルを表すと、HTML中にも「"」が頻出するため、そのエスケープ処理のコストが馬鹿になりません。
+そこで「% 記法」を使い、例えば「</code>」のようなHTML中に現れにくい文字を使うことで、エスケープ処理を避けています。</p>
+
+<p>なお処理系のプログラムは<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby7.rb.htm">myeruby7.rb</a></p>
+
+<p>ベンチマーク結果 (table7-1) を見ると、実行部分の速度は配列バッファを使う方法と比べてほぼ同じであることがわかります。
+つまり、メソッド呼び出しを減らすことによる効果はどちらも同じだといえます。</p>
+
+<p>table7-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td>MyEruby1 (initial implement)</td>
+      <td>79.210</td>
+      <td>13.320</td>
+      <td>92.530</td>
+    </tr>
+    <tr>
+      <td>MyEruby2 (no split lines)</td>
+      <td>9.937</td>
+      <td>8.408</td>
+      <td>18.345</td>
+    </tr>
+    <tr>
+      <td>MyEruby3 (pattern matching)</td>
+      <td>5.738</td>
+      <td>8.466</td>
+      <td>14.204</td>
+    </tr>
+    <tr>
+      <td>MyEruby4 (optimized regexp)</td>
+      <td>3.620</td>
+      <td>8.356</td>
+      <td>11.976</td>
+    </tr>
+    <tr>
+      <td>MyEruby5 (inline method)</td>
+      <td>3.091</td>
+      <td>8.320</td>
+      <td>11.411</td>
+    </tr>
+    <tr>
+      <td>MyEruby6 (array buffer)</td>
+      <td>3.139</td>
+      <td>7.381</td>
+      <td>10.520</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby7 (interpolation)</strong></td>
+      <td><strong>3.004</strong></td>
+      <td><strong>7.411</strong></td>
+      <td><strong>10.415</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>式展開を使ってメソッド呼び出しを削減する方法は、Ruby の特徴をうまく利用した、Ruby ならではの方法といえます。
+逆にいえば、Ruby 以外では利用できない方法ともいえます。
+他の言語では、配列バッファを使う方法がいいでしょう。</p>
+
+<p>この時点で、 C 実装 eruby と比べて約 1.5 倍高速化されました。
+プログラムの工夫がいかに大事であるか、実感していただけましたでしょうか。</p>
+
+<h3 id="実装8-ファイルキャッシュ">実装#8: ファイルキャッシュ</h3>
+
+<p>次に、変換後の Ruby プログラムをファイルにキャッシュするようにします (list8-1)。
+今までは、ファイルを読み込んで毎回 Ruby スクリプトへ変換していましたが、変換後の Ruby プログラムをファイルにキャッシュすれば、この変換コストをほぼゼロにすることができます。</p>
+
+<p>list8-1: 変換後の Ruby スクリプトをファイルにキャッシュする (<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby8.rb.htm">myeruby8.rb</a>)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 改良前
+  ...
+  def convert_file(filename)
+    prog = convert(File.read(filename))
+    return prog
+  end
+  ...
+
+## 改良後
+  ...
+  def convert_file(filename)
+    if キャッシュファイルがない or 古い
+      prog = convert(File.read(filename))
+      キャッシュファイルに書き込む
+    else
+      prog = キャッシュファイルを読み込む
+    end
+    return prog
+  end
+  ...</code></pre></figure>
+
+<p>ベンチマーク結果 (table8-1) を見ると、変換部分のコストがほぼゼロになり、全体で 20% 以上高速化されたことかわかります。</p>
+
+<p>table8-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td>MyEruby1 (initial implement)</td>
+      <td>79.210</td>
+      <td>13.320</td>
+      <td>92.530</td>
+    </tr>
+    <tr>
+      <td>MyEruby2 (no split lines)</td>
+      <td>9.937</td>
+      <td>8.408</td>
+      <td>18.345</td>
+    </tr>
+    <tr>
+      <td>MyEruby3 (pattern matching)</td>
+      <td>5.738</td>
+      <td>8.466</td>
+      <td>14.204</td>
+    </tr>
+    <tr>
+      <td>MyEruby4 (optimized regexp)</td>
+      <td>3.620</td>
+      <td>8.356</td>
+      <td>11.976</td>
+    </tr>
+    <tr>
+      <td>MyEruby5 (inline method)</td>
+      <td>3.091</td>
+      <td>8.320</td>
+      <td>11.411</td>
+    </tr>
+    <tr>
+      <td>MyEruby6 (array buffer)</td>
+      <td>3.139</td>
+      <td>7.381</td>
+      <td>10.520</td>
+    </tr>
+    <tr>
+      <td>MyEruby7 (interpolation)</td>
+      <td>3.004</td>
+      <td>7.411</td>
+      <td>10.415</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby8 (file caching)</strong></td>
+      <td><strong>0.662</strong></td>
+      <td><strong>7.360</strong></td>
+      <td><strong>8.022</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>またキャッシュを使えば、C 実装 eruby を使う必要がまったくないことも分かります。
+C 実装 eruby によって速くなるのは Ruby スクリプトへの変換部分だけですが、キャッシュを使えばこの変換自体を省くことができるので、わざわざ C 言語を使ってまで高速化する必要はなかったわけです。</p>
+
+<p>キャッシュを使う方法は、ERB にも適用可能です。
+ERB での変換コストはとても高いので、ERB を使った CGI プログラムを書いている人は、ぜひキャッシュを使いましょう。</p>
+
+<h3 id="実装9-関数にして実行">実装#9: 関数にして実行</h3>
+
+<p>次に、文字列を eval するのをやめて、関数を定義して実行するようにします (list9-1)。</p>
+
+<p>文字列を eval する方法では、Ruby パーサが文字列を解析して構文木を生成するコストが毎回発生します。
+関数にして実行すれば、このコストをほぼなくすことができます。</p>
+
+<p>list9-1: evalの代わりに、関数に変換して実行 (<a href="http://www.kuwata-lab.com/presen/erubybench/html/myeruby9.rb.htm">myeruby9.rb</a>)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### 改良前
+  ...
+  prog = myeruby.convert_file(filename)
+  eval prog
+  ...
+
+### 改良後
+  ...
+  {{*def define_method(body, args=[])*}}
+    {{*eval "def self.evaluate(#{args.join(',')}); #{body}; end"*}}
+  {{*end*}}
+  ...
+  prog = myeruby.convert_file(filename)
+  args = ['list']
+  {{*myeruby.define_method(prog, args)*}}
+  {{*myeruby.evaluate()*}}
+  ...</code></pre></figure>
+
+<p>ただし、この方法で効果があるのは、ひとつのプロセス中で同じ eRuby ファイルを何度も実行する場合です。
+Web アプリケーションでいえば、mod_ruby や FastCGI では効果がありますが、CGI では効果はないでしょう。</p>
+
+<p>ベンチマーク結果 (table9-1) を見ると、約 1.5 倍高速化されたことがわかります。
+つまり、eval だと全実行時間のうち約 3 分の 1 がプログラムのパースに費やされていることになります。</p>
+
+<p>table9-1: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>処理系</th>
+      <th>変換部分(sec)</th>
+      <th>実行部分(sec)</th>
+      <th>合計(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C 実装 eruby</td>
+      <td>1.390</td>
+      <td>13.958</td>
+      <td>15.348</td>
+    </tr>
+    <tr>
+      <td>ERB</td>
+      <td>27.963</td>
+      <td>14.849</td>
+      <td>42.812</td>
+    </tr>
+    <tr>
+      <td>MyEruby1 (initial implement)</td>
+      <td>79.210</td>
+      <td>13.320</td>
+      <td>92.530</td>
+    </tr>
+    <tr>
+      <td>MyEruby2 (no split lines)</td>
+      <td>9.937</td>
+      <td>8.408</td>
+      <td>18.345</td>
+    </tr>
+    <tr>
+      <td>MyEruby3 (pattern matching)</td>
+      <td>5.738</td>
+      <td>8.466</td>
+      <td>14.204</td>
+    </tr>
+    <tr>
+      <td>MyEruby4 (optimized regexp)</td>
+      <td>3.620</td>
+      <td>8.356</td>
+      <td>11.976</td>
+    </tr>
+    <tr>
+      <td>MyEruby5 (inline method)</td>
+      <td>3.091</td>
+      <td>8.320</td>
+      <td>11.411</td>
+    </tr>
+    <tr>
+      <td>MyEruby6 (array buffer)</td>
+      <td>3.139</td>
+      <td>7.381</td>
+      <td>10.520</td>
+    </tr>
+    <tr>
+      <td>MyEruby7 (interpolation)</td>
+      <td>3.004</td>
+      <td>7.411</td>
+      <td>10.415</td>
+    </tr>
+    <tr>
+      <td>MyEruby8 (file caching)</td>
+      <td>0.662</td>
+      <td>7.360</td>
+      <td>8.022</td>
+    </tr>
+    <tr>
+      <td><strong>MyEruby9 (define method)</strong></td>
+      <td><strong>0.001</strong></td>
+      <td><strong>5.105</strong></td>
+      <td><strong>5.106</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>この結果から想像できるように、パース後の構文木をファイルにキャッシュできると、関数にすることなくeRubyを高速化することができるはずです。
+しかし残念ながら、現在の Ruby ではそれができません。
+例えば Python だとパース後の (構文木ではなく) バイトコードをファイルに保存することができるので、関数にすることなく、また CGI でも、eval を高速に実行できます。
+現在開発中の Ruby 1.9 ではバイトコードインタプリタになるので、バイトコードをファイルに保存できるようになれば、Python と同じように eval が大幅に高速化できるでしょう。</p>
+
+<p>なお関数に変換するかわりに、Proc オブジェクトに変換して instance_eval() で実行する方法でも、同じように高速化できます（個人的にはこのほうが好みです）。興味のある人は試してみてください。</p>
+
+<h2 id="高速化のための原則">高速化のための原則</h2>
+
+<p>今回行った高速化の方法は、大きく3つの原則に分類できます。</p>
+
+<p>1つめは__余計な処理をしない__ということです。今回でいうと次の方法が当てはまります。</p>
+
+<ul>
+  <li>入力を1行ずつに分解しない (<a href="/articles/0022/0022-FasterThanC.html">実装#2</a>、変換部分で 69.17sec 削減)</li>
+  <li>キャッシュを使うことで変換作業を減らす (<a href="/articles/0022/0022-FasterThanC.html">実装#8</a>、変換部分で 2.44sec 削減)</li>
+  <li>関数化することでパースするコストを減らす (<a href="/articles/0022/0022-FasterThanC.html">実装#9</a>、実行部分で 2.26sec 削減)</li>
+</ul>
+
+<p>2つめは__メソッド呼び出しを減らす__ということです。今回でいうと次の方法が当てはまります。</p>
+
+<ul>
+  <li>複数行をまとめて1回で出力する (<a href="/articles/0022/0022-FasterThanC.html">実装#2</a>、実行部分で 4.91sec 削減)</li>
+  <li>メソッドをインライン展開する (<a href="/articles/0022/0022-FasterThanC.html">実装#5</a>、変換部分で 2.11sec 削減)</li>
+  <li>配列バッファとArray#push()メソッドを使う (<a href="/articles/0022/0022-FasterThanC.html">実装#6</a>、実行部分で 0.94sec 削減)</li>
+  <li>文字列中の式展開を使う (<a href="/articles/0022/0022-FasterThanC.html">実装#7</a>、実行部分で 0.91sec 削減)</li>
+</ul>
+
+<p>3つめは__正規表現を見直す__ことです。今回でいうと次の方法が当てはまります。</p>
+
+<ul>
+  <li>構文解析をやめてパターンマッチを使う (<a href="/articles/0022/0022-FasterThanC.html">実装#3</a>、変換部分で 4.20sec 削減)</li>
+  <li>長い文字列にマッチするようなグルーピングを避けて自前で切り出す (<a href="/articles/0022/0022-FasterThanC.html">実装#4</a>、変換部分で 2.12sec 削減)</li>
+</ul>
+
+<p>言語や環境によって個々の方法は変わっても、これらの原則は普遍的に通用します。
+細かいテクニックを覚えることよりも、こういった普遍的な原理や原則のほうを大事にしてください。</p>
+
+<h2 id="他言語との比較">他言語との比較</h2>
+
+<p>本稿での内容は、<a href="http://www.kuwata-lab.com/erubis/">Erubis</a> という eRuby 処理系に反映されています。
+それも含めて、他の言語で使われているテンプレートエンジンでベンチマークをしてみました (ベンチマークの内容は本稿で使用したのと同じものです)。
+その結果が table10 です。</p>
+
+<p>table10: ベンチマーク結果</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>言語</th>
+      <th>ツール</th>
+      <th>時間(sec)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ruby</td>
+      <td>MyEruby7 (interporation)</td>
+      <td>10.42</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>MyEruby8 (cached)</td>
+      <td>8.02</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>MyEruby9 (def_method)</td>
+      <td>5.11</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>eruby</td>
+      <td>15.32</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>ERB</td>
+      <td>42.67</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>Erubis</td>
+      <td>12.78</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>Erubis (cached)</td>
+      <td>9.15</td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td>Erubis::Fast (cached)</td>
+      <td>8.22</td>
+    </tr>
+    <tr>
+      <td>Perl</td>
+      <td>Template-Toolkit</td>
+      <td>26.40</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>Django</td>
+      <td>50.55</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>TurboGears(Kid)</td>
+      <td>344.16</td>
+    </tr>
+    <tr>
+      <td>Java</td>
+      <td>Velocity</td>
+      <td>13.24</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>使用したソフトウェアのバージョンは次の通りです。</p>
+
+<ul>
+  <li>Ruby 1.8.6</li>
+  <li>Perl 5.8.8</li>
+  <li>Python 2.5</li>
+  <li>Java 1.5.0_07</li>
+  <li>eruby 1.0.5</li>
+  <li><a href="http://www.kuwata-lab.com/erubis/">Erubis</a> 2.3</li>
+  <li><a href="http://www.template-toolkit.org/">Template-Toolkit</a> 2.18</li>
+  <li><a href="http://www.djangoproject.com/">Django</a> 0.95</li>
+  <li><a href="http://kid-templating.org/">Kid</a> (TurboKid) 0.9.9</li>
+  <li><a href="http://velocity.apache.org/">Velocity</a> 1.4</li>
+</ul>
+
+<p>ここで大事なのは、どれが速くてどれが遅いかということではなく、もちろん「○○という機能がある/ない」という話でもなく、__言語の速度がそのままアプリケーションの速度につながるわけではない__ということです。</p>
+
+<p>Java が速いからといって、Java で作られたアプリケーションも速いとは限りません。
+Ruby が遅いからといって、Ruby で作られたアプリケーションも遅いと決めつける必要はありません。
+少なくとも、Reflection を多用したような__動的な Java プログラムよりも素の Ruby プログラムのほうが速い__です。</p>
+
+<p>また eRuby は Velocity や JSP より速くできる<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>ので、Web アプリケーションのビュー層に限っていえば、Java で性能要件が満たせられるなら Ruby でも満たすことができるはずです。
+今回のデータを見れば、10,000 ページ生成するのにノート PC で 10 秒もかかってないわけですから、ビュー層としては充分な速度でしょう。
+つまりスクリプト言語でも工夫次第で十分な速度がだせるのです。</p>
+
+<p>アプリケーションの速度は、アルゴリズムやデータ構造、使用するライブラリやデータベースなど、様々な要因が絡んできます。
+言語の速度は、アプリケーションの速度を決定する要因の 1 つでしかなく、それよりも他の要因の方がずっと大きいということを知っておいてください。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>本稿では eRuby の処理系を題材にとり、C言語 による拡張モジュールより高速 な pure Ruby プログラムを作成しました。
+速度は、キャッシュなしで約 1.5 倍高速、キャッシュありなら約 2 倍高速、さらに関数化すれば約 3 倍高速になりました。
+また他言語でのライブラリと比較しても、圧倒的に速いことがわかりました。</p>
+
+<p>繰り返しになりますが、本稿でいいたかったことは、__言語の速度とアプリケーションの速度は別物であり、アプリケーションの高速化には言語の速度よりも知識やアイデアの方が重要__だということです。
+アプリケーションの速度を決定する要因はいくつもあり、言語はそのうちのひとつに過ぎず、かつその影響度は一般的に考えられているよりも低いのです<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<p>スクリプト言語では最高速度を得ることはできませんが、たいがいのシステムが必要とする速度は十分得られます。
+あなたが開発したアプリケーションが遅いとしたら、ほとんどの場合においてそれは Ruby やスクリプト言語のせいではなく、あなた自身のせいです。
+安易に言語のせいにするまえに、自分のプログラムを見直してみましょう。
+またスクリプト言語を使うなら、どれだけ速いかにこだわるのではなく、自分が必要とする速度がでればそれでよいという考えを持ちましょう。</p>
+
+<p>なおテンプレートエンジンの速度に興味がある方は、<a href="http://www.kuwata-lab.com/tenjin/">Tenjin の Web ページ</a>に様々な言語のテンプレートエンジンを使ったベンチマーク結果が公開されていますので、そちらをご覧下さい。</p>
+
+<p>本稿がスクリプト言語の発展に役立てば幸いです。</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>もちろんアプリケーションの特性に依ります。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>JSP は Velocity より遅いことが知られているため、Velocity より速ければ JSP よりも速いといえます。ただし、昔の JSP は Velocity の半分程度の速さだったのが、最近はかなり改善されています。なお table10 に JSP がないのは、JSP の実行には Servlet コンテナが必要であり、テンプレートエンジンのように単体で実行することができないためです。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>繰り返しますがアプリケーションの特性に依ります。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

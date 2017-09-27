@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HanamiはRubyの救世主(メシア)となるか、愚かな星と散るのか</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0056/0056-hanami.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>HanamiはRubyの救世主(メシア)となるか、愚かな星と散るのか</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0056/0056-hanami.html" class="hatena-bookmark-button" data-hatena-bookmark-title="HanamiはRubyの救世主(メシア)となるか、愚かな星と散るのか" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0056/0056-hanami.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0056/0056-hanami.html" data-text="HanamiはRubyの救世主(メシア)となるか、愚かな星と散るのか">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに-レイルズ王国と異端審問" id="markdown-toc-はじめに-レイルズ王国と異端審問">はじめに: レイルズ王国と異端審問</a></li>
+  <li><a href="#hanami-について" id="markdown-toc-hanami-について">Hanami について</a>    <ul>
+      <li><a href="#hanami-は-rails-じゃない" id="markdown-toc-hanami-は-rails-じゃない">Hanami は Rails じゃない</a></li>
+      <li><a href="#hanami-の設計思想" id="markdown-toc-hanami-の設計思想">Hanami の設計思想</a></li>
+    </ul>
+  </li>
+  <li><a href="#hanami-の各層について" id="markdown-toc-hanami-の各層について">Hanami の各層について</a>    <ul>
+      <li><a href="#router" id="markdown-toc-router">Router</a>        <ul>
+          <li><a href="#router-の高度な使い方" id="markdown-toc-router-の高度な使い方">Router の高度な使い方</a></li>
+        </ul>
+      </li>
+      <li><a href="#controller" id="markdown-toc-controller">Controller</a></li>
+      <li><a href="#validation" id="markdown-toc-validation">Validation</a></li>
+      <li><a href="#view" id="markdown-toc-view">View</a>        <ul>
+          <li><a href="#helper-form" id="markdown-toc-helper-form">Helper, Form</a></li>
+        </ul>
+      </li>
+      <li><a href="#model" id="markdown-toc-model">Model</a></li>
+      <li><a href="#entity" id="markdown-toc-entity">Entity</a></li>
+      <li><a href="#repository" id="markdown-toc-repository">Repository</a>        <ul>
+          <li><a href="#sql-クエリの発行" id="markdown-toc-sql-クエリの発行">SQL クエリの発行</a></li>
+        </ul>
+      </li>
+      <li><a href="#interactor" id="markdown-toc-interactor">Interactor</a>        <ul>
+          <li><a href="#hanamiinteractor" id="markdown-toc-hanamiinteractor">Hanami::Interactor</a></li>
+          <li><a href="#hanamivalidations" id="markdown-toc-hanamivalidations">Hanami::Validations</a></li>
+          <li><a href="#test-factory" id="markdown-toc-test-factory">Test Factory</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#hanami-の不十分な点" id="markdown-toc-hanami-の不十分な点">Hanami の不十分な点</a></li>
+  <li><a href="#その他の-hanami-のプロジェクト" id="markdown-toc-その他の-hanami-のプロジェクト">その他の Hanami のプロジェクト</a>    <ul>
+      <li><a href="#hanamicli" id="markdown-toc-hanamicli">Hanami::Cli</a></li>
+      <li><a href="#hanamievents" id="markdown-toc-hanamievents">Hanami::Events</a></li>
+      <li><a href="#hanami-20" id="markdown-toc-hanami-20">Hanami 2.0</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<h2 id="はじめに-レイルズ王国と異端審問">はじめに: レイルズ王国と異端審問</h2>
+
+<p>20XX年、僕は Ruby on Rails の規約に違反したコードを書いたことでレイルズ王国の異端審問にかけられていた。僕がリポジトリに commit した <em>app/services/</em> や <em>app/repositories/</em> といったディレクトリと、その中に定義された <a href="https://ja.wikipedia.org/wiki/Command_%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">Command パターン</a>を用いたクラスや <em>Module#refine</em> による <a href="http://www.artima.com/articles/dci_vision.html">DCI</a> もどき達がレイルズ王国の異端審問官の目に触れてしまったのだ。(僕は ActiveRecord で作られた Model の特異クラスに対して Module#refine を用いて SQL の発行を行うメソッドを差し込むという方法で Repository を表現していた。)</p>
+
+<p>異端審問官は旨に掲げた聖書(Rails Guideという名前だった)を僕の頭に振り降りしながら叫んだ。</p>
+
+<p>「この <em>app/services/</em> や <em>app/repositories/</em> というディレクトリは聖書に記されていない！
+規約に違反しています！ このようなコードは開発者を困惑させ、スケジュールの遅延に繋がるのです！」</p>
+
+<p>「いいえ、審問官様！これらの設計はメンテナンス性を上げるために尽力した結果なのです！
+この設計はシステムの長期運用に有用です！いたずらにレールを外れたわけではないのです！」</p>
+
+<p>「規約が全てなのです！レールに乗るのです！」</p>
+
+<p>僕は異端審問の結果、国外追放になってしまった。
+ルビィ島の大半はレイルズ王国に支配されていたが、そうではない場所もあった。
+僕は自生したラックの球根を齧りながらさまよった末、小さな村にたどり着いた。</p>
+
+<p>村の人々は異国の服を着ていたり、大きかったり小さかったり、若かったり老いていたりしていた。
+そして、桜の樹の下で、静かに花見をしていた…</p>
+
+<h2 id="hanami-について">Hanami について</h2>
+
+<p>まぁ、茶番はこのくらいにして。これは Hanami の紹介記事だ。</p>
+
+<p><a href="http://hanamirb.org/">Hanami</a> は Ruby 製の新しい Web フレームワークだ。2017年4月の桜前線に合わせてバージョン 1.0.0 がリリースされた。でも、（少なくとも）日本ではいまいち注目されていないように感じる。
+Hanami はとても面白い Web フレームワークだ。簡単に言うと「Rails がもっとこうだったらいいのになぁ」と僕が思うようなことを全部やってくれた。
+バージョン 1.0.0 だから機能として不十分な部分もあるけれど、それを踏まえてもワクワクするフレームワークだ。</p>
+
+<p>「まだ Ruby を使うの？ 新しく何かを学ぶなら Go とか Elixir とかの方がいいんじゃないの？」</p>
+
+<p>それも尤もな意見だ。いや、でもそう言わないでくれ。</p>
+
+<p>Hanami は本当に面白い Web フレームワークだ。
+それに <a href="http://dry-rb.org/">dry-rb</a> や <a href="http://rom-rb.org/">ROM.rb</a> のような新しいタイプの gem も使っている。
+一方で、 <a href="http://rack.github.io/">Rack</a> や <a href="http://sequel.jeremyevans.net/">Sequel</a> や <a href="https://github.com/rtomayko/shotgun">Shotgun</a> のような昔からある gem もうまく使っている。</p>
+
+<p>Hanami を使えばきっと Rails とは違う目線で Ruby を見ることができると思う。</p>
+
+<p>本記事の読者は今まで Rails を使って Web サービスを作ってきた人を想定している。
+本記事では Hanami と Rails の比較を頻繁にするが、これは Rails を使ってきた人に Hanami を紹介するためには一番いい方法だと思うからだ。
+はじめに断っておくが、僕は Rails の批判をしたいわけじゃない。</p>
+
+<h3 id="hanami-は-rails-じゃない">Hanami は Rails じゃない</h3>
+
+<p>Hanami の紹介をするにあたり、まず重要なこととして一言:  Hanami は Rails じゃない。
+つまり、 Hanami も Rails も Ruby 製の Web フレームワークだけど、使用目的や設計思想や得意な分野が違う。</p>
+
+<p>Rails は MVC (これが何かについて今は話したくない) や ActiveRecord パターンをベースにした設計だが、
+Hanami は <a href="https://www.amazon.co.jp/dp/B00GRKD6XU">DDD (Domain-driven design)</a> をベースにしている。
+Rails はサービスを素早くローンチすることに向いていて、 Hanami は長期的にメンテナンスすることに向いている。</p>
+
+<p>Hanami のコンセプトは次の4つだ。</p>
+
+<ul>
+  <li>Modularity (継承ではなく Module と mix-in を積極的に使う)</li>
+  <li>Simplicity and LightWeight</li>
+  <li>Pure Object (Zero Monkey-Patching)</li>
+  <li>Threadsafe</li>
+</ul>
+
+<p>Hanami は Rails と同じく Routing から DB へのアクセスまで Web サービスとしての全ての機能を提供する Web フレームワークだけど、
+Rails よりもずっとマジックが少なくて Pure Ruby に近い。</p>
+
+<p>Rails は Monkey-Patching で Ruby を拡張している。メソッドを使おうとしたときにそれが Ruby の標準ライブラリのメソッドなのか Rails が独自に拡張したメソッドなのかよくわからなくなる。
+Hanami ではそのようなことはしない。
+これはもちろん長所短所がある。 Rails のように拡張した方が便利だけど、 Hanami はそれ以上にシンプルであることを選択した。</p>
+
+<h3 id="hanami-の設計思想">Hanami の設計思想</h3>
+
+<p>Hanami の設計思想は DDD の影響が強い。
+ディレクトリ構造にもこれは現れている。</p>
+
+<p>Hanami にも Rails と同様に generator 機能があるので次のコマンドで、新しい Hanami プロジェクトを作ってみよう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">% gem install hanami
+% hanami new bookshelf
+% tree -F bookshelf
+bookshelf
+├── Gemfile
+├── Rakefile
+├── apps/
+│   └── web/
+│       ├── application.rb
+│       ├── assets/
+│       │   ├── favicon.ico
+│       │   ├── images/
+│       │   ├── javascripts/
+│       │   └── stylesheets/
+│       ├── config/
+│       │   └── routes.rb
+│       ├── controllers/
+│       ├── templates/
+│       │   └── application.html.erb
+│       └── views/
+│           └── application_layout.rb
+├── config/
+│   ├── boot.rb
+│   ├── environment.rb
+│   └── initializers/
+├── config.ru
+├── db/
+│   ├── migrations/
+│   └── schema.sql
+├── lib/
+│   ├── bookshelf/
+│   │   ├── entities/
+│   │   ├── mailers/
+│   │   │   └── templates/
+│   │   └── repositories/
+│   └── bookshelf.rb
+├── public/
+└── spec/
+    ├── bookshelf/
+    │   ├── entities/
+    │   ├── mailers/
+    │   └── repositories/
+    ├── features_helper.rb
+    ├── spec_helper.rb
+    ├── support/
+    └── web/
+        ├── controllers/
+        ├── features/
+        └── views/
+
+31 directories, 14 files</code></pre></figure>
+
+<p>Hanami のディレクトリ構造は一見 Rails に似ているが、実際には全く違う。</p>
+
+<p>大雑把に言うとデータフローに関する部分は <em>apps/</em> 以下に、 ビジネスロジックに関する部分は <em>lib/</em> 以下に定義する。
+<em>apps/</em> 以下には Routing 、 Controller 、 View 、 Assets に関するもの、 <em>lib/</em> 以下には Model と Interactor に関するものを置く。
+図にすると次のようになる。
+<img src="/images/0056-hanami/hanami-ddd.png" alt="hanami-ddd.png" /></p>
+
+<p>Hanami では Model を Repository と Entity の2層で表現している。</p>
+
+<p>図中の “Interactor” の部分が点線になっているが、これは Hanami では Interactor の実装がまだ不十分だからだ。
+Interactor とは Controller と Model の間にあって、ビジネスロジックをまとめておくための層になる。</p>
+
+<p><em>apps/</em> 以下にはアプリケーションとして複数のディレクトリを定義することができる。
+例えば、ECサイトを作るときにWebサービスを顧客(Customer)向け、店舗(Shop)向け、管理者(Admin)向けに分けたい場合、次のようなディレクトリ構成にすればいい。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">apps/
+├── customers/
+├── shops/
+└── admins/</code></pre></figure>
+
+<p><em>lib/</em> 以下にあるビジネスロジックに関する部分は <em>apps/</em> 以下で共通して使えるが、
+<em>apps/</em> にあるデータフローに関する部分は名前空間で分けることができる。</p>
+
+<h2 id="hanami-の各層について">Hanami の各層について</h2>
+
+<p>Hanami の各層についてひとつずつ見ていこう。</p>
+
+<h3 id="router">Router</h3>
+
+<p>Hanami は Rack Application だ。 <em>Hanami::Router</em> はパスを Rack Application にマッピングする。</p>
+
+<p>一番無骨な例はこうだ。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># apps/web/config/routes.rb
+get '/hello', to: -&gt;(env) { [200, {}, ['Hello from Hanami!']] }</code></pre></figure>
+
+<p><a href="http://www.rubydoc.info/github/rack/rack/file/SPEC">Rackのドキュメント</a> では Rack Application の仕様について次のように記されている。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">A Rack application is a Ruby object (not a class) that responds to call. It takes exactly one argument, the environment and returns an Array of exactly three values: The status, the headers, and the body.</code></pre></figure>
+
+<p>つまり、</p>
+
+<ul>
+  <li><em>#call</em> メソッドをもったオブジェクト</li>
+  <li><em>#call</em> メソッドは <em>environment</em> を引数にとる</li>
+  <li><em>#call</em> メソッドは要素数が3の配列を返し、配列の値は前から順に Status 、Headers 、Body であること</li>
+</ul>
+
+<p>先程のプログラムはこの Rack Application の仕様を満たしている。
+結果として、 <em>Hanami::Router</em> は <em>/hello</em> に GET リクエストを受け取ると <em>Hello from Hanami!</em> と返すわけだ。</p>
+
+<p><em>Hanami::Router</em> は Rack Application であれば何でもマッピングできるため、他にも次のような書き方ができる。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">get '/proc',       to: -&gt;(env) { [200, {}, ['Hello from Hanami!']] }
+get '/action',     to: "home#index"
+get '/middleware', to: Middleware
+get '/rack-app',   to: RackApp.new
+get '/rails',      to: ActionControllerSubclass.action(:new)</code></pre></figure>
+
+<p>一番使うのは2番めの <em>get ‘/action’, to: “home#index”</em> という書き方だろう。
+これは HTTP リクエストを <em>home#index</em> Action にマッピングする。Action (Controller) については次節で説明する。</p>
+
+<p>また、Rails 同様 <em>resources</em> メソッドを用いることで RESTful Resource を定義できる。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">resources :books</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">% hanami routes
+                Name Method     Path                           Action
+
+               books GET, HEAD  /books                         Web::Controllers::Books::Index
+            new_book GET, HEAD  /books/new                     Web::Controllers::Books::New
+               books POST       /books                         Web::Controllers::Books::Create
+                book GET, HEAD  /books/:id                     Web::Controllers::Books::Show
+           edit_book GET, HEAD  /books/:id/edit                Web::Controllers::Books::Edit
+                book PATCH      /books/:id                     Web::Controllers::Books::Update
+                book DELETE     /books/:id                     Web::Controllers::Books::Destroy</code></pre></figure>
+
+<h4 id="router-の高度な使い方">Router の高度な使い方</h4>
+
+<p><em>Hanami::Router</em> はパスを正規表現やワイルドカードでマッチさせる便利な機能が備わっている。
+これについては公式サイトのドキュメントを見てほしい。</p>
+
+<ul>
+  <li><a href="http://hanamirb.org/guides/routing/basic-usage/">Hanami Routing Basic Usage</a></li>
+</ul>
+
+<p>でも、<em>Hanami::Router</em> が単に Rack Application にマッピングするだけということは、もっと柔軟なマッピングもできる。
+例えば、 root パスにアクセスしたときにユーザーがサインインしているかどうかによってアクションを変えるケースを考えてみよう。
+下記の例では、サインインしている場合 <em>env[‘rack.session’][‘user_id’]</em> に値があるものとする。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">get '/', to: -&gt;(env) {
+  if env['rack.session']['user_id']
+    # サインイン状態であれば home#index
+    Web::Controllers::Home::Index.new.call(env)
+  else
+    # サインイン状態でなければ session#new
+    Web::Controllers::Session::New.new.call(env)
+  end
+}</code></pre></figure>
+
+<p>Rails の場合、 <a href="http://guides.rubyonrails.org/routing.html#advanced-constraints">Constraint クラス</a> を定義すると
+同じようなことができるけど、 Hanami の方がコンパクトに実装できているように思う。</p>
+
+<h3 id="controller">Controller</h3>
+
+<p>Router の話で予想がついたかもしれないけど、 Controller は Rack Application として実装する。</p>
+
+<p>一番単純な例だとこんな感じだ:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># apps/web/controllers/dashboard/index.rb
+module Web::Controllers::Dashboard
+  class Index
+    include Web::Action
+
+    def call(params)
+    end
+  end
+end</code></pre></figure>
+
+<p>短いコードだけど、上から読んでいこう。</p>
+
+<p>まず、 Hanami では Controller は Action 毎にクラスを作成する。
+上記は <em>Index</em> の Action だけど、 別の例だと <em>new</em> の Action は <em>Web::Controllers::Dashboard::New</em> になる。</p>
+
+<p>次に、 <em>Web::Action</em> を <em>include</em> している。
+これは <a href="https://github.com/hanami/controller">hanami-controller gem</a> で定義された <em>Hanami::Action</em> を少し拡張した module だ。
+この <em>Web::</em> という名前空間は <em>apps/web/</em> ディレクトリ以下に対応した名前空間だから、<em>Web::Action</em> はこの名前空間における Action の基底 module だ。
+もちろん <em>Hanami::Action</em> をそのまま使ってもいいんだけど、名前空間に対応した基底 module があったほうが便利なので <em>Web::Action</em> を
+使うほうがいい。</p>
+
+<p>最後に、 <em>#call</em> メソッドを定義している。
+これは Rack Application の <em>#call</em> に近い動きをするけど、 <em>Hanami::Action</em> のおかげで便利になっている。
+Rack Application は <em>#call</em> の引数に <em>environment</em> を取るけど、このコードでは <em>params</em> を取ることになっている。
+これは <em>Hanami::Action</em> と <em>Hanami::Router</em> がうまい具合に <em>environment</em> から <em>params</em> だけ取り出して <em>#call</em> の引数に入れてくれているんだ。
+だから Action 内では <em>environment</em> を直接見る必要がない。(Session 等の利用方法については <a href="http://hanamirb.org/guides/actions/sessions/">http://hanamirb.org/guides/actions/sessions/</a> を参照)</p>
+
+<p>これは単にコードがスッキリするだけじゃなくて、別のメリットもある。それはテストを書きやすいことだ。
+<em>Web::Controllers::Dashboard::Index</em> のテストは次のようになる。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># spec/web/controllers/dashboard/index_spec.rb
+require 'spec_helper'
+require_relative '../../../../apps/web/controllers/dashboard/index'
+
+describe Web::Controllers::Dashboard::Index do
+  let(:action) { Web::Controllers::Dashboard::Index.new }
+  let(:params) { Hash[] }
+
+  it "is successful" do
+    response = action.call(params)
+
+    response[0].must_equal 200 # http status code
+    response[1] #=&gt; http header [Hash]
+    response[2] #=&gt; http body [String]
+  end
+end</code></pre></figure>
+
+<p><em>Web::Controllers::Dashboard::Index</em> はただのクラスだから当然インスタンスを作ることができる。
+そして、テストしたいメソッドは <em>#call</em> だからこれを呼び出す。<em>#call</em> の引数の <em>params</em> は <em>Hash</em> で任意に作って渡してやればいい。
+<em>#call</em> は Rack Application の規約に則って要素数3の配列を返すから、この値をテストする。</p>
+
+<p>もちろん <a href="https://github.com/rack-test/rack-test">Rack::Test</a> を使うこともできるけど、
+上記のように入力値と戻り値を確認するだけで十分なケースは多い。
+それにこれはただのメソッド呼び出しだから <em>Rack::Test</em> を使うよりも実行速度が速い。</p>
+
+<h3 id="validation">Validation</h3>
+
+<p>Hanami の Controller にはもう一つ機能があって、入力された <em>params</em> の Validation を定義することができる。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># apps/web/controllers/users/create.rb
+module Web::Controllers::Users
+  class Create
+    include Web::Action
+
+    params do
+      required(:user).schema do
+        required(:email).value(:filled?)
+        required(:password).value(:filled?, size?: 8..40, format?: /\A[\w!$%@#123]+\z/).confirmation
+        required(:password_confirmation).filled(:str?)
+      end
+    end
+
+    def call(params)
+      if params.valid?
+        # Validation に成功した時の処理
+      else
+        # Validation に失敗した時の処理
+      end
+    end
+  end
+end</code></pre></figure>
+
+<p>上記の例では <em>params</em> に次のような値が入力されることを期待している。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">params = {
+  user: {
+    email: 'user1@example.com',
+    password: 'password',
+    password_confirmation: 'password'
+  }
+}</code></pre></figure>
+
+<p>Hanami の Validation に関する部分は <a href="https://github.com/hanami/validations">hanami-validations</a> という gem にまとまっている。
+この gem は <a href="http://dry-rb.org/gems/dry-validation/">dry-validation</a> をベースにしていて、 AcriveRecord の Validation と
+同じくらい細かくルールを記述できる。</p>
+
+<p>hanami-validations の細かい使い方は gem の <a href="https://github.com/hanami/validations">README</a> 等を参照してほしい。
+ここではアーキテクチャ設計に関する話をしよう。</p>
+
+<p>Rails と比べると、 Model ではなく Controller に Validation があるのは違和感があるかもしれない。
+でも Validation の目的は入力値の妥当性を検証することだ。
+Web サービスの入力は Form や API リクエストで渡されてくるから、 Routes から Controller に渡されることになる。
+Model はデータベース寄りの層だから、入力値の妥当性を検証するなら Controller にある方がいい。</p>
+
+<p>Model に Validation を書く設計では、例えば新規作成と更新で Validation が異なるような場合に定義しづらい。
+また、入力パラメータが複数の Model に影響を与える場合の Validation も書きづらい。
+(僕は Rails の <em>accepts_nested_attributes_for</em> や <em>validates</em> メソッドの <em>if</em> 、<em>unless</em> 、 <em>on</em> オプションがものすごく嫌いだ。)</p>
+
+<p>それに Rails も入力値を制限するということを Controller でも行なっている。 Strong Parameters だ。
+Strong Parameters の目的は Mass Assignment 脆弱性対策だけど、それはつまり Controller に入力可能な項目を定義するということにもなる。
+結果的に、 Rails では Action に対する入力値を Controller で定義して、 Model で Validation を実行するという設計になっている。
+これはロジックが分散してわかりづらいし、層を跨いで暗黙の依存関係があるような感じがして気持ち悪い。</p>
+
+<p>Hanami は Controller にロジックをまとめる設計になっている。
+だがこれはこれで思い切った割り切りをしているので課題がある。課題については Interactor の節で説明する。</p>
+
+<h3 id="view">View</h3>
+
+<p>Hanami の View は HTML Template と Ruby のクラスで構成されている。
+Rails でいえば、 View や Partial にそれぞれクラスがあるような感じだ。</p>
+
+<p>例えば、 <em>dashboard#index</em> アクションの HTML Template は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;!-- apps/web/templates/dashboard/index.html.erb --&gt;
+&lt;h1&gt;&lt;%= title %&gt;&lt;/h1&gt;</code></pre></figure>
+
+<p>のような erb ファイルになる。これと1対1に対応する Ruby のクラスは次のようになる。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># apps/web/views/dashboard/index.rb
+module Web::Views::Dashboard
+  class Index
+    include Web::View
+
+    def title
+      'Dashboard'
+    end
+  end
+end</code></pre></figure>
+
+<p>ディレクトリ構成は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">apps/web/
+├── templates
+│   ├── application.html.erb
+│   └── dashboard
+│        └── index.html.erb
+└── views
+    ├── application_layout.rb
+    └── dashboard
+         └── index.rb</code></pre></figure>
+
+<p>のようになる。Template と View は、パスで1対1に対応している。</p>
+
+<p>HTML Template は erb 以外にも <a href="https://github.com/rtomayko/tilt">Tilt</a> で扱えるエンジンが使用できるため、 Haml や Slim 等も使うことができる。</p>
+
+<p>View 用のクラスに定義したメソッドは HTML Template から呼び出すことができる。
+HTML Template から呼び出すことができるメソッドは1対1対応しているクラスで定義したものだけなので、
+それ以外のクラスのメソッドを呼び出そうとした場合は <em>NoMethodError</em> になる。</p>
+
+<p>Rails では View のためのロジックを定義するには Helper モジュールを使うしかなかった。
+Rails の Helper モジュールはデフォルトでは全て読み込まれるが、設定を変更すればパスに対応した Helper だけを読み込むことができる。
+しかしこれも Controller 単位で、 Template ファイル単位ではない。
+どれだけ partial で Template を分割しても、使用できる Helper モジュールは Controller の粒度で決まるため、いまいち使い勝手が悪い。</p>
+
+<p><a href="https://github.com/drapergem/draper">Draper</a> や <a href="https://github.com/amatsuda/active_decorator">ActiveDecorator</a> のように
+Model の decorator を作成して View 用のロジックを記述する gem もあるが、これらは <a href="http://wiki.c2.com/?DependencyInjection">Dependency Injection</a> するオブジェクトを
+拡張するものなので Template とは無関係だから Controller の複雑さは解消しない。</p>
+
+<p>Hanami のように Template と Ruby のクラスが1対1に対応することで、ほとんど全てのViewのためのロジックを
+Templateから追い出すことができるようになる。</p>
+
+<h4 id="helper-form">Helper, Form</h4>
+
+<p>Hanami の Helper メソッドは View クラスで使う前提で出来ている。
+これもまたロジックを Template から追い出しやすくしている。</p>
+
+<p>例えば、 Ruby のコードの中で HTML の生成がやりやすい。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">module Web::Views::Dashboard
+  class Index
+    include Web::View
+
+    def title
+      html.div(class: 'header-background') do
+        div(class: 'header') do
+          h1(class: 'title') do
+           'Dashboard'
+          end
+        end
+      end
+    end
+  end
+end</code></pre></figure>
+
+<p>上記の <em>title</em> メソッドは次の HTML を返す。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class="header-background"&gt;
+  &lt;div class="header"&gt;
+    &lt;h1 class="title"&gt;Dashboard&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></figure>
+
+<p>Rails の Helper では HTML の生成は <em>content_tag</em> メソッドで行うことができるが、冗長になりがちだったため
+Helper では HTML を返すメソッドを定義しづらかった。
+HTML の生成は Template だけで行なったほうが良いという考え方もあるが、
+やはり Ruby のコードの中で HTML が扱いやすいことは便利だと思う。</p>
+
+<p>また、 Form も同様に定義しやすくなっている。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def form
+  form_for :book, routes.books_path do
+    text_field :title
+
+    submit 'Create'
+  end
+end</code></pre></figure>
+
+<p>これは次のHTMLを返す。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;form action="/books" id="book-form" method="POST"&gt;
+  &lt;input type="hidden" name="_csrf_token" value="0a800d6a8fc3c24e7eca319186beb287689a91c2a719f1cbb411f721cacd79d4"&gt;
+  &lt;input type="text" name="book[title]" id="book-id" value=""&gt;
+  &lt;button type="submit"&gt;Create&lt;/button&gt;
+&lt;/form&gt;</code></pre></figure>
+
+<p>Hanami の <em>form_for</em> は Rails 5.1 で追加された <em>form_with</em> に近い動きをする。
+これらはフォームを生成するためにオブジェクトを必要としない。</p>
+
+<p>Rails の <em>form_for</em> で親しまれてきた Model のインスタンスを用いてフォームを作成する手法は、
+エラーメッセージの出し分けや多言語対応に関してはオブジェクト指向をうまく使っていてスマートだが、
+ネストしたフォームを作るケースなどを考えるとフォーム生成時に行わなければならない手続きが多く、面倒が増えるという面もある。</p>
+
+<p>これを避けるため、フォームの作成にはオブジェクトを使用しない設計にし、
+HTMLの生成とリクエストを受ける側のアクションが依存しないようになった。</p>
+
+<h3 id="model">Model</h3>
+<p><img src="/images/0056-hanami/hanami-ddd.png" alt="hanami-ddd.png" /></p>
+
+<p>今までずっとアプリケーション層を巡る旅をしてきた。ここからはドメイン層を見ていこう。
+ドメイン層には Interactor 、Repository 、 Entity の3層があり、 Model は Repository と Entity の2層で表現されている。
+これは <a href="https://martinfowler.com/eaaCatalog/repository.html">Repository パターン</a> と呼ばれている設計手法だ。</p>
+
+<p>Entity の方がわかりやすいので、まずはこちらから見ていこう。</p>
+
+<h3 id="entity">Entity</h3>
+
+<p>Entity は RDBMS のテーブルを Ruby で表現するための層だ（実際には RDBMS 以外も扱うことができるが、ここでは話を単純にするため RDBMS に限定して説明する）。
+ActiveRecord パターンと同様にクラスがテーブル、オブジェクトがレコードに対応する。
+しかし ActiveRecord パターンと異なり、 Entity は RDBMS のデータをオブジェクトとして扱うための入れ物に過ぎず、
+SQL の発行等の RDBMS に対する操作は Repository で行う。</p>
+
+<p>Entity はイミュータブルなので、イニシャライザでしか値を入力することが出来ない。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class User &lt; Hanami::Entity
+  # データベースの users テーブルに email カラムが存在する
+end
+
+user = User.new(email: 'kbaba1001@example.com')
+user.email
+#=&gt; "kbaba1001@example.com"
+user.email = 'foo@example.com'
+#=&gt; NoMethodError: undefined method `email='</code></pre></figure>
+
+<p>Entity の仕事はこれだけだ。</p>
+
+<h3 id="repository">Repository</h3>
+
+<p>Repository は SQL クエリを発行して、 RDBMS のテーブルに対する CRUD 操作を行う。
+システム内で SQL クエリを発行する部分を Repository だけにすることで抽象度を揃えることができる。</p>
+
+<p>Repository は次のように <em>Hanami::Repository</em> を継承して作成する。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class UserRepository &lt; Hanami::Repository
+end</code></pre></figure>
+
+<p><em>Hanami::Repository</em> には次の public メソッドが予め提供されている。</p>
+
+<ul>
+  <li><em>#create(data)</em> - <em>data</em> から RDBMS のレコードを作成して Entity のオブジェクトを返す</li>
+  <li><em>#update(id, data)</em> - <em>id</em> のレコードを <em>data</em> で更新して Entity のオブジェクトを返す</li>
+  <li><em>#delete(id)</em> - <em>id</em> のレコードを削除する</li>
+  <li><em>#all</em> - テーブルから全てのレコードを取得して Entity の配列で返す</li>
+  <li><em>#find(id)</em> - <em>id</em> のレコードを取得して Entity のオブジェクトを返す</li>
+  <li><em>#first</em> - テーブルから最初のレコードを取得して Entity のオブジェクトを返す。並び順はデフォルトでは id の昇順。</li>
+  <li><em>#last</em> - テーブルから最後のレコードを取得して Entity のオブジェクトを返す。並び順はデフォルトでは id の昇順。</li>
+  <li><em>#clear</em> - テーブルの全てのレコードを削除する</li>
+</ul>
+
+<p>これ以外の操作については自らメソッドを定義する。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class UserRepository &lt; Hanami::Repository
+  def find_by_email(email)
+    users.where(email: email).first
+  end
+end</code></pre></figure>
+
+<p>この時、次のようにすることでメソッドを定義することなく SQL クエリを発行することができるが、 Hanami では推奨されていない。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">user_repository = UserRepository.new
+
+user_repository.users.where(email: email).first</code></pre></figure>
+
+<p>次の理由がある。</p>
+
+<ul>
+  <li>呼び出す側が Repository の内部構造に依存している</li>
+  <li>呼び出す側が SQL について考えてしまうと、レイヤー間の抽象度が揃わなくなる</li>
+  <li>ただのメソッドチェーンでは意図が明白ではない</li>
+  <li>テストしづらい</li>
+  <li>もしストレージ(RDBMS)を変更することになったら、呼び出す側を変更しなければならない</li>
+</ul>
+
+<p>ソフトウェア設計の抽象度とは、あるオブジェクトが他のオブジェクトのことをどの程度知っているかという度合いのことを言う。
+SQLの発行に関するコードを Repository 内に隠蔽できれば、 Repository を呼び出す側は SQL について考える必要はなくなり、
+Repository のインタフェースだけを知っていれば良くなる。
+Repository がシステム内の SQL クエリ発行の責務を一任することで、SQLに関する修正や抽象化がやりやすくなる。
+もし、ストレージ(RDBMS)を変更することになったとしても Repository と Entity を修正すればよいだけになる。</p>
+
+<h4 id="sql-クエリの発行">SQL クエリの発行</h4>
+
+<p><em>Hanami::Repository</em> の提供するテーブルへのアクセッサは <em>ROM::Relation::Composite</em> のインスタンスを返す。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">user_repository = UserRepository.new
+
+user_repository.users
+#=&gt; #&lt;ROM::Relation::Composite...&gt;</code></pre></figure>
+
+<p>これは Hanami の Model の実装が内部では <a href="http://rom-rb.org/">ROM.rb</a> を使っているためだ。</p>
+
+<p>ROM は Ruby Object Mapper の略で、 RDBMS 以外にも様々なもの ( CSV や HTTP リソースなど ) をデータストレージとして扱うことができる gem だ。
+ROM における SQL クエリの発行は <a href="https://github.com/rom-rb/rom-sql">rom-sql</a> という gem で行なっていて、
+これは <a href="https://github.com/jeremyevans/sequel">Sequel</a> のラッパーになっている。
+だから、 <em>Hanami::Repository</em> では Sequel の機能がだいたい使える。
+こんな感じだ。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">users.where(email: 'kbaba1001@example.com')
+users.where("email = 'kbaba1001@example.com'")
+users.where(created_at: (Date.today - 14)..(Date.today - 7)) # WHERE ((\"created_at\" &gt;= '2017-07-23') AND (\"created_at\" &lt;= '2017-07-30'))
+users.where { created_at &gt; Date.today } # WHERE (created_at &gt; '2017-08-13')
+users.where(status: ['unconfirmed', 'confirmed']) # WHERE (status IN ('unconfirmed', 'confirmed'))
+users.exclude(status: ['unconfirmed', 'confirmed']) # WHERE (status NOT IN ('unconfirmed', 'confirmed'))
+users.where(Sequel.lit('id IS NOT NULL')) # WHERE (id IS NOT NULL)
+users.where(Sequel.like(:email, '%kbaba1001%')) # WHERE ("email" LIKE '%kbaba1001%' ESCAPE '\')</code></pre></figure>
+
+<p>Sequel は ORM として豊かな表現力を持っている。これにより様々な SQL クエリを発行することができる。
+詳しくは <a href="https://github.com/jeremyevans/sequel">Sequel の README</a> を参照してほしい。</p>
+
+<h3 id="interactor">Interactor</h3>
+
+<p>最後に Interactor の話をしよう。 Interactor は <a href="http://hanamirb.org/guides/">Hanami - Guide</a> に登場しない。
+しかし DDD の観点からすると非常に重要な層なので説明する。
+Interactor の責務はビジネスロジックをまとめることだ。</p>
+
+<p>まず、 Interactor を用いた場合のアーキテクチャ設計の概念図は次のようになる。
+<img src="/images/0056-hanami/hanami-ddd-service.png" alt="hanami-ddd-service.png" /></p>
+
+<p>Interactor は Controller と Repository の中間に位置する。
+Hanami では Interactor がない場合 Controller にビジネスロジックを書くことになる。
+まずこのケースから見てみよう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">module Web::Controllers::Users
+  class Create
+    include Web::Action
+
+    expose :user
+
+    params do
+      required(:user).schema do
+        required(:email).value(:filled?)
+        required(:password).value(:filled?, size?: 8..40, format?: /\A[\w!$%@#123]+\z/).confirmation
+        required(:password_confirmation).filled(:str?)
+      end
+    end
+
+    def call(params)
+      if params.valid?
+        @user = sign_up_user
+
+        redirect_to '/'
+      else
+        self.status = 422
+      end
+    end
+
+    def sign_up_user
+      password_digest = BCrypt::Password.hashing(params[:user][:password])
+
+      UserRepository.new.create(
+        email: params[:user][:email],
+        password_digest: password_digest
+      )
+    end
+  end
+end</code></pre></figure>
+
+<p>上記のコードでは、 Action は <em>params</em> の Validation に成功したら User 情報をデータベースに記録する。
+これは次の点でビジネスロジックを含んでいる。</p>
+
+<ul>
+  <li>パラメータの Validation</li>
+  <li>平文のパスワードを Hashing する</li>
+  <li>User 情報をデータベースに記録する</li>
+</ul>
+
+<p>Action の責務は HTTP リクエストにレスポンスを返すことなので、ビジネスロジックを記述することは <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">単一責任の原則(SRP)</a> に違反している。
+そのため、ここで使っているロジックを他の場所で流用したい場合、Action にロジックがあると使いづらい。
+そこで、 Interactor を導入することでこれらのビジネスロジックを Action から分離して、ドメイン層に移動してみよう。</p>
+
+<h4 id="hanamiinteractor">Hanami::Interactor</h4>
+
+<p>Interactor の作成単位にはいくつかの設計があるが、ここでは Entity 毎に作成する方法を紹介する。
+Hanami における Interactor は実は <a href="https://github.com/hanami/utils">hanami-utils</a> gem 内で <a href="http://www.rubydoc.info/gems/hanami-utils/Hanami/Interactor/">Hanami::Interactor</a> として提供されている。</p>
+
+<p>これを使ってみよう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># lib/bookshelf/interactors/user_interactor/create.rb
+require 'hanami/interactor'
+
+module UserInteractor
+  class Create
+    include Hanami::Interactor
+
+    expose :user, :params
+
+    def initialize(params)
+      @params = params
+    end
+
+    def call
+      password_digest = BCrypt::Password.hashing(@params[:user][:password])
+
+      @user = UserRepository.new.create(
+        email: @params[:user][:email],
+        password_digest: password_digest
+      )
+    end
+
+    private
+
+    def valid?
+      true
+    end
+  end
+end
+
+result = UserInteractor::Create.new(
+  user: {
+    email: 'kbaba1001@example.com',
+    password: 'password',
+    password_confirmation: 'password'
+  }
+).call #=&gt; Hanami::Interactor::Result のインスタンスを返す
+
+result.failure? #=&gt; false
+result.successful? #=&gt; true
+
+result.user #=&gt; #&lt;User:0x0055e9b1916608 ...&gt;
+result.params #=&gt; {:email=&gt;"kbaba1001@example.com", :password=&gt;"password", :password_confirmation=&gt;"password"}
+result.foo #=&gt; raises NoMethodError</code></pre></figure>
+
+<p><em>Hanami::Interactor</em> を include したクラスで <em>#call</em> を呼び出すと次のような特殊な動きをする。</p>
+
+<ul>
+  <li><em>#valid?</em> を実行する</li>
+  <li><em>#valid?</em> の戻り値が真値であれば、クラスに定義された <em>#call</em> を実行する</li>
+  <li>(<em>#valid?</em> の戻り地が偽値であれば、何もしない)</li>
+  <li>Hanami::Interactor::Result のインスタンスに <em>.expose</em> メソッドで指定したインスタンス変数を Dependency Injection する</li>
+  <li>Hanami::Interactor::Result のインスタンスを返す</li>
+</ul>
+
+<p>この動きにより、 <em>#call</em> には Validation をパスした時のみ実行するビジネスロジックを記述することができる。
+<em>#valid?</em> には Validation の結果を呼び出すようなメソッドを定義すれば良い。
+例えば、 <em>#valid?</em> を次に変更しよう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'hanami/interactor'
+
+module UserInteractor
+  class Create
+    # ... (省略) ...
+
+    def valid?
+      @params.valid?
+    end
+  end
+end</code></pre></figure>
+
+<p>これを Controller から次のように使用する。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">module Web::Controllers::Users
+  class Create
+    include Web::Action
+
+    expose :user
+
+    params do
+      required(:user).schema do
+        required(:email).value(:filled?)
+        required(:password).value(:filled?, size?: 8..40, format?: /\A[\w!$%@#123]+\z/).confirmation
+        required(:password_confirmation).filled(:str?)
+      end
+    end
+
+    def call(params)
+      interactor = UserInteractor::Create.new(params).call
+
+      if interactor.successful?
+        @user = interactor.user
+
+        redirect_to '/'
+      else
+        self.status = 422
+      end
+    end
+  end
+end</code></pre></figure>
+
+<p>これにより、 User を生成する処理を Interactor に移動することが出来た。</p>
+
+<p>しかしまだ Validation が Controller に残っている。
+僕としては Interactor が受け入れ可能なパラメータと Validation も把握している方が好きだ。</p>
+
+<p>今度は Validation を Interactor で扱えるようにしよう。</p>
+
+<h4 id="hanamivalidations">Hanami::Validations</h4>
+
+<p>Hanami における Validation は Controller に依存しておらず、 <a href="https://github.com/hanami/validations">hanami-validations</a> gem で独立して提供されている。
+これにより、 Controller とは無関係のクラスでも Validation を定義することができる。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'hanami/validations'
+
+class Validation
+  include Hanami::Validations
+
+  validations do
+    required(:email).value(:filled?)
+    required(:password).value(:filled?, size?: 8..40, format?: /\A[\w!$%@#123]+\z/).confirmation
+    required(:password_confirmation).filled(:str?)
+  end
+end
+
+result = Validation.new(
+  email: 'kbaba1001@example.com',
+  password: 'password',
+  password_confirmation: 'password'
+).validate
+result.success? #=&gt; true
+result.failure? #=&gt; false
+
+result = Validation.new(
+  email: 'kbaba1001',
+  password: 'password',
+  password_confirmation: 'password'
+).validate
+result.success? #=&gt; false
+result.failure? #=&gt; true
+result.messages #=&gt; {:email=&gt;["invalid email format"]}</code></pre></figure>
+
+<p>さて、これを Interactor 内で使ってみよう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># lib/bookshelf/interactors/user_Interactor/create.rb
+require 'hanami/interactor'
+require 'hanami/validations'
+
+module UserInteractor
+  class Create
+    class Validation
+      include Hanami::Validations
+
+      validations do
+        required(:email).value(:filled?)
+        required(:password).value(:filled?, size?: 8..40, format?: /\A[\w!$%@#123]+\z/).confirmation
+        required(:password_confirmation).filled(:str?)
+      end
+    end
+
+    include Hanami::Interactor
+
+    expose :user, :params
+
+    def initialize(params)
+      @params = params
+    end
+
+    def call
+      password_digest = BCrypt::Password.hashing(@params[:password])
+
+      @user = UserRepository.new.create(
+        email: @params[:email],
+        password_digest: password_digest
+      )
+    end
+
+    private
+
+    def valid?
+      @validate_result = Validation.new(@params).validate
+
+      if @validate_result.failure?
+        error(@validate_result.messages)
+      end
+
+      @validate_result.success?
+    end
+  end
+end
+
+result = UserInteractor::Create.new(
+  email: 'kbaba1001@example.com',
+  password: 'password',
+  password_confirmation: 'password'
+).call
+result.successful? #=&gt; true
+result.error # =&gt; nil
+
+result = UserInteractor::Create.new(
+  email: '',
+  password: 'password',
+  password_confirmation: 'password'
+).call
+result.successful? #=&gt; false
+result.error #=&gt; {:email=&gt;["must be filled"]}</code></pre></figure>
+
+<p>これを使う Controller は次のようになる。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">module Web::Controllers::Users
+  class Create
+    include Web::Action
+
+    expose :user, :error
+
+    def call(params)
+      interactor = UserInteractor::Create.new(params).call
+
+      if interactor.successful?
+        @user = interactor.user
+
+        redirect_to '/'
+      else
+        @error = interactor.error
+        self.status = 422
+      end
+    end
+  end
+end</code></pre></figure>
+
+<p>これにより、 Controller からビジネスロジックを切り離すことができた。
+Controller は HTTP リクエストを受け取ったら Interactor に処理を委ねる。
+Controller は Interactor の中でどのような処理が行われるかを気にすることなく、成功か失敗かに応じて HTTP レスポンスを変更する。
+つまり Controller はデータフローを処理することに集中できる。</p>
+
+<p>Interactor は Controller の名前空間から独立しているから、どの Controller からでもアクセスできるし、
+他の Interactor から呼び出すこともできる。
+Interactor 間のコードの重複の解消も、名前空間で別れた Controller で行うよりやりやすい。
+Validation やビジネスロジックのテストも HTTP や Rack から独立して行うことができる。</p>
+
+<h4 id="test-factory">Test Factory</h4>
+
+<p>余談のような話になるが Interactor を使うと、 テスト用のデータ生成器 (Test Factory) を作成することができる。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># spec/factories/user_factory.rb
+class UserFactory
+  def create(params = {})
+    result = UserInteractor::Create.new(
+      default_params.merge(params)
+    ).call
+
+    result.user
+  end
+
+  def default_params
+    {
+      email: 'kbaba1001@example.com',
+      password: 'password',
+      password_confirmation: 'password'
+    }
+  end
+end</code></pre></figure>
+
+<p>上記のクラスはテスト中で User データを作成したいときに次のように使う。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe 'foo' do
+  it 'bar' do
+    user = UserFactory.new.create(
+      email: 'user1@example.com'
+    )
+
+    # ...
+  end
+end</code></pre></figure>
+
+<p>これにより <a href="https://github.com/thoughtbot/factory_girl">FactoryGirl</a> や <a href="https://github.com/paulelliott/fabrication">Fabrication</a> のような gem を使わなくてもテスト用のデータを作成しやすくなる。
+テストでも Interactor を使うことでシステム内で使用するデータ生成ロジックが統一されるので、
+テストだけパスして不具合を見落とすというミスが少なくなる。
+もし Interactor のロジックを変更したら、上記の Factory を使っているテストも落ちるので影響があるコードを修正しやすい。</p>
+
+<p>実のところ僕は FactoryGirl や Fabrication のような gem が嫌いだ。これらの gem はシステム内のビジネスロジックを
+DSL を用いて別途再定義しているに過ぎない。
+これは DRY じゃないし、複雑になると生成されるデータが信用できなくなってくる。
+信用できないデータで行うテストもまた信用できない。</p>
+
+<h2 id="hanami-の不十分な点">Hanami の不十分な点</h2>
+
+<p>さて、Hanami をアーキテクチャ設計の観点から一通り見てきた。
+Hanami が Rails では扱いづらかった部分を改善した設計になっていることを感じてもらえたと思う。</p>
+
+<p>しかし Hanami はまだバージョン 1.0.0 が発表されたばかりで、不十分な点もある。</p>
+
+<ul>
+  <li>Assets の整備</li>
+  <li>多言語対応(i18n)</li>
+  <li>サードパーティライブラリの少なさ</li>
+  <li>ドキュメントの少なさ</li>
+  <li>Monkey-Patching がないため、便利メソッドが少ない</li>
+</ul>
+
+<p>Assets周りは <a href="https://github.com/hanami/assets">hanami-assets</a> gem で対応することができるが、
+これは Sprockets のようなものなので、 Node.js にまかせて Webpack などを用いる方が今風かもしれない。</p>
+
+<p>多言語対応はバージョン 1.0.0 以降で対応するとアナウンスされていて、現状ではほとんど対応されていない。
+一部 hanami-validations で対応しているが実用段階にあるとは言い難い。</p>
+
+<p>サードパーティライブラリは Rails に比べれば圧倒的に少ないが、 <a href="http://awesome-hanami.org/">Awesome Hanami</a> などで探すことはできる。
+他にも Rails ではなく Rack や Ruby や Sequel に依存した gem であれば使うことができる。</p>
+
+<p>ドキュメントの少なさは大した問題じゃない。コードを読もう。
+Hanamiのコードは読みやすく出来ている。</p>
+
+<p>Rails の Monkey-Patching には元々賛否両論ある。賛成意見は便利なメソッドが増えること、
+反対意見はメソッドが Ruby の標準ライブラリなのかフレームワークが提供しているものなのかわかりづらいことや依存関係が明白ではないこと等だ。
+Rails が提供する Monkey-Patching は便利だが、同じ機能がほしいときに自前で実装するのが大変かと言うと、殆どの場合それほどでもない。
+自前で作るなら Monkey-Patching をする代わりにただのメソッドで機能を提供してもいいし、
+Refinements を活用すれば安全に Monkey-Patching を行うこともできる。</p>
+
+<h2 id="その他の-hanami-のプロジェクト">その他の Hanami のプロジェクト</h2>
+
+<p>今まで Hanami の機能を一通り紹介してきたが、他にも実験段階のものも含めていくつかのプロジェクトがあるので紹介する。</p>
+
+<h3 id="hanamicli">Hanami::Cli</h3>
+
+<p><a href="https://github.com/hanami/cli">https://github.com/hanami/cli</a></p>
+
+<p>これは <em>hanami</em> コマンドの内部実装 <strong>ではなく</strong> 、 <a href="https://github.com/erikhuda/thor">Thor</a> のようなコマンドラインインタフェースを提供する汎用的な gem だ。</p>
+
+<h3 id="hanamievents">Hanami::Events</h3>
+
+<p><a href="https://github.com/hanami/events">https://github.com/hanami/events</a></p>
+
+<p>これは Event 処理を行うための gem だ。
+Rails の ActiveJob のように非同期処理を実行することもできるが、
+主目的は Martin Fowler が提案している <a href="https://www.youtube.com/watch?v=STKCRSUsyP0">Event-Driven Architecture</a> を実装することだ。</p>
+
+<p>まだ実験段階だが、これを用いたプロジェクトのサンプルコードもあり、 Event-Driven Architecture の雰囲気を体験することができる。</p>
+
+<p><a href="https://github.com/davydovanton/hanami_event_example">https://github.com/davydovanton/hanami_event_example</a></p>
+
+<h3 id="hanami-20">Hanami 2.0</h3>
+
+<p>Hanami 2.0 に向けてのアイディアも既にいくつか公開されているので、興味のある方は下記のサイトを確認してほしい。</p>
+
+<p><a href="https://discourse.hanamirb.org/t/hanami-2-0-ideas/306">https://discourse.hanamirb.org/t/hanami-2-0-ideas/306</a></p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>もう 5 年近く Rails で仕事をしている。
+幸いにも Rails の案件は多く、前職の会社をやめて独立してからもリモートワークで受託開発を続けられている。
+しかし Rails はシステムを素早く作ってローンチするには向いているが、その後のメンテナンスはさほどやりやすくないことがわかってきた。</p>
+
+<p>Railsを導入する時、クライアントはしばしば「これはプロトタイププロジェクトでユーザーの反応が良ければ予算をとって作り直す」と言う。
+だが、残念ながら未だにプロトタイププロジェクトとして作成したシステムが、プロトタイプとして捨てられる現場に関わったことがない。
+おそらく、本当にプロトタイプとして捨てるとしても、2〜3年くらいは運用して様子を見るのではないだろうか。
+結局のところ、それまでのメンテナンスについてエンジニアは考えなければならない。</p>
+
+<p>Railsプロジェクトに蔓延した Fat Model 、 Fat Controller 、信用できないテスト、層をまたいで依存したビジネスロジック、
+難解で巧妙な Model 同士のやり取り、Rails Mountable Engine を用いた独自ルールや DSL だらけの gem 、
+eager loading に頼り切った非効率な SQL 、ロジックまみれの View ……。
+メンテナンス性を下げる要因はたくさんあるが、共通して言えることは、複雑な要件に対して簡単すぎる設計をしてしまっていることだ。
+しかもこれらのコードの不吉な匂いは、システムをローンチする頃には既に漂い始めている。</p>
+
+<p>僕はなんとかメンテナンスしやすくしようと試行錯誤した結果、
+<a href="http://trailblazer.to/">Trailblazer</a> や <a href="https://github.com/orgsync/active_interaction">ActiveInteraction</a> や  <a href="http://dry-rb.org/">dry-rb</a> を導入するようになった。
+ActiveRecord gem と ActiveRecord パターンに嫌気が差して SQL クエリを発行するメソッドを Refinements で別の module に切り離したりもした。（僕は SQL を書くのは苦痛じゃない方だから、 ActiveRecord が何もかも eager loading で解決しようとするのが好きじゃない）
+これらは <a href="https://www.amazon.co.jp/dp/B00GRKD6XU">DDD(Domain-driven design)</a> や <a href="http://www.artima.com/articles/dci_vision.html">DCI</a> の考え方を参考にしていた。</p>
+
+<p>この試みは結構うまくいった。Rails にも Interactor を導入することで <em>accepts_nested_attributes_for</em> や
+Validation の <em>if</em> オプションなどを使わなくて良くなった。
+Refinements で SQL クエリを切り離す方法も、その SQL クエリがどのような状況で使われるのか明白になってよかった。
+複雑な SQL を書くときは、古典的だが erb で SQL を書くことさえあったが、そのロジックを Module の中に隠蔽できたのは良かった。</p>
+
+<p>だが、このような「オレオレRails」と呼ぶべき設計は、他の開発メンバーから常に受け入れられるわけではなかったし、
+プロジェクトの方針としてメンテナンス性の高さよりもローンチまでの速さを優先することも多かった。
+また、メンテナンス性を上げたはずなのに Rails のバージョンアップへの追従が難しく (これはみんな苦労するので「オレオレRails」のせいだけでもないのだが) なったり、僕以外にメンテナンスできる人がいなくなったりすることもあった。</p>
+
+<p>結局のところ、 Rails を使うのであれば Rails Way に従うのが一番良いという結論に至った。
+それが最も Rails の強みを活かせる使い方なのだろう。</p>
+
+<p>Hanami は僕が行なっていた「オレオレRails」にかなり近いものだった。
+DDD の影響が強いわりに全体的にシンプルにまとまっている感じが好きになった。
+Rack や dry-rb をうまく使っているのも賢いと思った。
+Repository パターンやロジック付きの View など、 Rails では手を出しづらい部分を改善できるのも気に入った。</p>
+
+<p>DDD もまた銀の弾丸ではない。DDD に対する批判として、システムの複雑さが割に合わないというものがある。
+つまり、簡単な要件に対して複雑すぎる設計をしているというものだ。
+たしかにこのバランスは難しい。
+Hanami は Rails に比べて作成するファイルやクラスの数が多いし、開発初期は開発スピードが遅いだろう。
+小規模なシステムであれば Rails の方が向いている場合もある。
+だが、ある程度の規模のシステムであれば Hanami の方が後々のメンテナンスはやりやすいはずだ。</p>
+
+<p>僕は Hanami に興奮している。
+まだ Hanami でそれなりの規模のシステムを開発したわけではないし、多言語対応がないのは辛いが、何か良いものを作れそうな予感がしている。</p>
+
+<p>世界的に Ruby の人気が下がりつつあるようだが、少しでも Hanami に興味を持つ人が増えてほしいと思ってこの記事を書いた。
+もしハンズオンがほしいなら <a href="http://hanamirb.org/guides/getting-started/">公式サイトの Getting Started</a> をやってみるといいだろう。
+一通り Hanami の機能を触ることができるから、Hanami における開発の雰囲気がわかるはずだ。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>主に Rails を用いた受託開発を 5 年程続けている。
+Ruby をずっとやっていたら何故か DDD にたどり着いた。
+最近は、千葉の田舎で五右衛門風呂に薪をくべながらコードを書く生活を送っている。</p>
+
+<ul>
+  <li>Twitter: <a href="https://twitter.com/kbaba1001">https://twitter.com/kbaba1001</a></li>
+  <li>Facebook: <a href="https://www.facebook.com/kbaba1001">https://www.facebook.com/kbaba1001</a></li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

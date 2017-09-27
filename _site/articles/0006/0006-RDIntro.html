@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RD でも書いてみようか 【第 1 回】 ブロックレベル</title>
+  <meta name="description" content="書いた人：mput">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0006/0006-RDIntro.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>RD でも書いてみようか 【第 1 回】 ブロックレベル</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0006/0006-RDIntro.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RD でも書いてみようか 【第 1 回】 ブロックレベル" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0006/0006-RDIntro.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0006/0006-RDIntro.html" data-text="RD でも書いてみようか 【第 1 回】 ブロックレベル">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：mput</p>
+
+<h2 id="まえがき">まえがき</h2>
+
+<p>みなさんは Ruby スクリプトと一緒に README.rd などという文章が添付されているのを見た事はありませんか？　RD というのは Ruby 関連のドキュメントを書くのに広く使われている書式で、おもにこの書式から HTML に変換して使われる事が多いと思われます。</p>
+
+<p>他人に読まれることを意識した文章は、自ずと他人と共通のフォーマットで書かれるものだと思います。Ruby においてはそのフォーマットが RD なのです。したがって、Ruby 関連のドキュメントを書く際には RD を選択する場合が必然的に多くなります。この連載では、みなさんが RD を書く際に最低限必要な構造に着目しつつ、それを変換した場合の出力例を交えながら、RD の書き方を解説します。</p>
+
+<h2 id="rd-の書き方">RD の書き方</h2>
+
+<h3 id="文章とその構造について">文章とその構造について</h3>
+
+<p>これは RD に限った話ではありませんが、一般に文章には構造というものがあります。英作
+文を習ったことがある人なら、英語のパラグラフは通常 3 つから 5 つ程度のセンテンスで構
+成されていて云々、というのを習ったと思いますが、あれはべつに英語に限った話ではあ
+りません。分かりやすい文章は自ずときれいに構造化されているものです。RD は労せずに
+構造化された文章を書けるように、しかし型にはまった文章以外もちゃんと書けるように、
+設計されています
+<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。
+そこで、RD 本体の説明の前にほんのちょっとだけ文章構造の説明をしておこうと思います。</p>
+
+<ul>
+  <li>文章はひとつ以上の文(日本語で言えば読点「。」で区切られた部分)があつまってできたものです。文の長さが少ないと詩的な文になり、長いと繰言調になります</li>
+  <li>文章の構成において基本となるのは段落(パラグラフ)です。段落はいくつかの文から構成されていて、基本的にひとつの段落内では内容が完結しているのがふつうです</li>
+  <li>いくつかの段落が集合してさらに大きな構造を作る場合があります。たとえば節(セクション)と呼ばれる構造は段落が集まってできます</li>
+  <li>さらに大きな構造として、節が集まってできた章(チャプター)という構造が出現することもあります</li>
+</ul>
+
+<p>このように、セオリーとして文章は__ある要素がいくつか集まって別の大きな要素になる__
+ように書くと読みやすくなります。もちろん読みやすさを気にしないなら必ずしもこの構
+造に従う必要はありません。たとえば詩歌などは大幅にセオリーを外れた構造をしていま
+す。しかし、たとえば拡張ライブラリのドキュメントが都都逸で書いてあったとしたら、
+読みづらくてしかたないでしょう(笑えるかもしれませんが)。他人に読まれる文章は、で
+きるだけ定石を踏まえた構造で書くべきと個人的には考えています。</p>
+
+<h3 id="rd-と構造化">RD と構造化</h3>
+
+<p>これを踏まえて、RD の書き方を見ていきましょう。</p>
+
+<h4 id="段落の作り方">段落の作り方</h4>
+
+<p>RD で文章のある点に段落を作りたいときには、そこに空行を入れると段落の区切りになり
+ます。</p>
+
+<p>入力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">春は、あけぼの。やうやう白くなりゆく、山ぎは少し明りて、紫だちたる雲のほそくたな
+びきたる。
+
+夏は、夜。月のころはさらなり、闇もなほ、蛍の多く飛びちがひたる。また、ただ一つ二
+つなど、ほのかにうち光りて行くも、をかし。雨など降るも、をかし。
+
+秋は、夕暮れ。夕日のさして、山の端いと近うなりたるに、烏の寝どころへ行くとて、三
+つ四つ、二つ三つなど、飛び急ぐさへあはれなり。まいて、雁などのつらねたるが、いと
+小さく見ゆるは、いとをかし。日入り果てて、風の音、虫の音など、はた言ふべきにあら
+ず。
+
+冬は、つとめて。雪の降りたるは言ふべきにもあらず。霜のいと白きも、またさらでも、
+いと寒きに、火など急ぎおこして、炭持て渡るも、いとつきづきし。昼になりて、ぬるく
+ゆるびもていけば、火桶の火も白き灰がちになりて、わろし。</code></pre></figure>
+
+<p>出力例:</p>
+
+<h2><img src="/images/0006-RDIntro/1.png" alt="1.png" /></h2>
+<p>このように、RD では改行ひとつだけの場合はそこで区切りが入ったりはしないことに注意
+してください。</p>
+
+<h4 id="段落より大きな構造の作り方">段落より大きな構造の作り方</h4>
+
+<p>段落より大きな構造として章や節などがありますが、RD ではこれらの構造は
+__タイトルを指定する__ことで明示していきます。次の例を見てください。</p>
+
+<p>入力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">= おぼつかなきもの
+十二年の山篭りの法師の女親。知らぬ所に、闇なるに行きたるに、あらはにもぞあるとて、
+火もともさで、さすがに並みゐたる。今出で来る者の、心も知らぬに、やむごとなき物持
+たせて人のもとにやりたるに、遅く帰る。ものもまだ言はぬちごの、そりくつがへり人に
+も抱かれず泣きたる。
+
+= たとしへなきもの
+夏と冬と。夜と昼と。雨降る日と照る日と。人の笑ふと腹立つと。老いたると若きと。白
+きと黒きと。思ふ人とにくむ人と。同じ人ながらも心ざしあるをりとかはりたるをりは、
+まことに異人とぞおぼゆる。火と水と。肥えたる人、痩せた人。髪長きと短き人と。</code></pre></figure>
+
+<p>出力例:</p>
+
+<h2 id="-1"><img src="/images/0006-RDIntro/2.png" alt="2.png" /></h2>
+<p>このように、= で始まる行はタイトルになり、以下別のタイトルが出現するまでがひとか
+たまりになります。</p>
+
+<p>RD では実際には複数の構造レベルを記述することができて、その場合には==、
+=== などで始まる行がタイトルとなります。以下にタイトル行の一覧を示しておきますが、
+個人的な経験から言ってそうそうすべてのレベルが出現することはないでしょう。</p>
+
+<p>タイトルレベル:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">構造の大きさ|行頭
+------------+-----
+   大きい   |
+     ｜     |=
+     ｜     |==
+     ｜     |===
+     ｜     |+
+     ↓     |++
+   小さい   |</code></pre></figure>
+
+<h3 id="rd-のその他の構造化要素">RD のその他の構造化要素</h3>
+
+<p>RD にはこのほかにも便利な構造がいくつか存在します。</p>
+
+<h4 id="逐次出力verbatim">逐次出力(verbatim)</h4>
+
+<p>上に書いたように RD ではただの改行はなにもなかったように扱われます。しかし、時とし
+て改行位置が大きな意味を持つ場合があります。たとえば詩歌の表現において改行と行頭
+位置は重要な情報ですし、技術系の文章でプログラムコードを入力する際にも改行は意味
+を持つことがあります(Python や Haskell はインデントも意味を持ちますね)。そこで、RD 
+には verbatim という、書いたままを表示する仕組みが備わっています。この書式はとても
+簡単で、単に__周辺より字下げが深い箇所はそのまま出力__というルールです。例を見
+てみましょう。</p>
+
+<p>入力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">= 菩提といふ寺に
+菩提といふ寺に、結縁の八講せしに詣でたるに、人のもとより「とく帰りたまひね。いと
+さうざうし」と言ひたりければ、蓮の葉のうらに、
+
+    もとめてもかかる蓮の露をおきて憂き世に、または帰るものかは
+
+と書きてやりつ。まことに、いと尊くあはれなれば、やがてとまりぬべくおぼゆるに、さ
+うちうが家の人のもどかしさも忘れぬべし。</code></pre></figure>
+
+<p>出力例:</p>
+
+<h2 id="-2"><img src="/images/0006-RDIntro/3.png" alt="3.png" /></h2>
+<p>これだけでは改行の扱いが分かりづらいので、もう少し別の例もあげておきます。</p>
+
+<p>入力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">= 漢詩(verbatimの例)
+== 偶成 朱熹
+ 少年易老学難成
+ 一寸光陰不可軽
+ 未覚池塘春草夢
+ 階前梧葉已秋声
+
+== 春望 杜甫
+ 国破山河在
+ 城春草木深
+ 感時花濺涙
+ 恨別鳥驚心
+ 烽火連三月
+ 家書抵万金
+ 白頭掻更短
+ 渾欲不勝簪</code></pre></figure>
+
+<p>出力例:</p>
+
+<h2 id="-3"><img src="/images/0006-RDIntro/4.png" alt="4.png" /></h2>
+<p>このように書いたままの形で出力されていることが分かります。</p>
+
+<h4 id="箇条書き">箇条書き</h4>
+
+<p>箇条書きの記法があります。箇条書きは行頭が * で始まっている行で表します。</p>
+
+<p>入力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">= 木の花は
+* 濃きも薄きも、紅梅
+* 桜は、花びら大きに、葉の色濃きが、枝細くて咲きたる
+* 藤の花は、しなひ長く、色濃く咲きたる、いとめでたし。
+* 四月のつごもり、五月のついたちのころほひ、橘の葉の濃く青きに、花のいと白う咲き
+  たるが、雨うち降りたるつとめてなどは、世になう心あるさまに、をかし。花の中より
+  黄金の玉かと見えて、いみじうあざやかに見えたるなど、朝露に濡れたる朝ぼらけの桜
+  に劣らず。郭公のよすがとさへ思へばにや、なほ、さらに言ふべきにもあらず。
+* 梨の花、よにすさまじきものにして、近うもてなさず、はかなき文付けなどだにせず、
+  愛敬おくれたる人の顔など見ては、たとひに言ふも、げに、葉の色よりはじめて、あは
+  ひなく見ゆるを、唐土には限りなきものにて、詩にも作る、なほさりとも、やうあらむ
+  と、せめて見れば、花びらの端にをかしきにほひこそ、心もとなうつきためれ。楊貴妃
+  の、帝の御使いあひて泣きける顔に似せて、「梨花一枚、春、雨を帯びたり」など言ひ
+  たるは、おぼろけならじと思ふに、なほいみじうめでたきことは、たぐひあらじとおぼ
+  えたり。
+* 桐の木の花、紫に咲きたるは、なほをかしきに、葉のひろごりざまぞ、うたてこちたれ
+  ど、異木どもとひとしう言ふべきにもあらず。唐土にことごとしき名つきたる鳥の、選
+  りてこれにのみ居るらむ、いみじう心異なり。まいて、琴に作りて、さまざまなる音の
+  いでくるなどは、をかしなど、世の常に言ふべくやはある、いみじうこそめでたけれ。
+* 木のさまにくげなれど、楝花、いとをかし。かれがれに、様異に吹きて、かならず五月
+  五日にあふも、をかし。</code></pre></figure>
+
+<p>出力例:</p>
+
+<h2 id="-4"><img src="/images/0006-RDIntro/5.png" alt="5.png" /></h2>
+<p>箇条書きのルールをよりくわしく解説すると、</p>
+
+<ul>
+  <li>行頭が * で始まる行が箇条書きの開始</li>
+  <li>以下、開始行の字下げよりも字下げが戻るまでの間はずっと箇条書き</li>
+</ul>
+
+<p>となります。ちなみにこのように字下げを最初の行に倣って続ける方式のことをハンギン
+グインデントと呼んだりしますが、RDは基本的にハンギングインデントを認識して構文解
+析を行う言語であると言えます。</p>
+
+<h2 id="次回予告">次回予告</h2>
+
+<p>RD のルールはまだ他にもありますが、とりあえず上に挙げたくらいの要素が分かっていれ
+ば、かなりの文章が書けるようになります。</p>
+
+<p>ところが、ここまでの説明ではまだ、文より小さな構造単位を説明していませんでした。例えばここまでの説明では、まだ HTML にあるようなハイパーリンクを記述したりすることはできません。</p>
+
+<p>そこで、次回は文よりも小さな構文要素たちを紹介します。</p>
+
+<h2 id="今月の宿題">今月の宿題</h2>
+
+<ul>
+  <li>各自、好きな短めのエッセイを RD で写経してみよう
+    <ul>
+      <li>ただし、今回の例で使った枕草子の各段は使っちゃダメです</li>
+    </ul>
+  </li>
+  <li>RD を使って自分でエッセイを書いてみよう</li>
+</ul>
+
+<h2 id="rd-でも書いてみようか連載一覧">RD でも書いてみようか連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0009/0009-RDIntro.html">RD でも書いてみようか 【第 3 回】 RD as a ruby document format</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-RDIntro.html">RD でも書いてみようか 【第 2 回】 インライン</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-RDIntro-Hiki.html">RD でも書いてみようか 【第 2 回】 インライン (整形済み)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RDIntro.html">RD でも書いてみようか 【第 1 回】 ブロックレベル</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>構造化を最初から意図して設計したのか、無意識のうちにそうなってしまっているのかは不明ですが&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

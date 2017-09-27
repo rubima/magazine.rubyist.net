@@ -1,0 +1,42 @@
+require 'ruby-processing'
+
+class RotateRectangles < Processing::App
+  include Math
+  
+  def radians(x)
+    return x*(PI/180)
+  end
+
+  def setup
+    color_mode HSB, 100
+	background 0
+	no_stroke
+  end
+  
+  def draw
+    translate width/2, height/2
+	ary = (0..11).map{|a| a*30}
+	ary.each do|r1|
+	  push_matrix
+	  rotate radians(r1)
+	  translate 100, 0
+	  h = random 100
+	  ary.each do|r2|
+	    push_matrix
+	    rotate radians(r2)
+	    translate 50, 0
+        5.times do |i|
+	      i += 1
+	      fill h, i*20, 99, 80
+	      sz = 60 - i*10
+	      rect 0, 0, sz, sz
+	    end
+	    pop_matrix
+	  end
+	  pop_matrix
+	end
+  end
+  
+end
+
+RotateRectangles.new :title => "Rotate Rectangles", :width => 400, :height => 400

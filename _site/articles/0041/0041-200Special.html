@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby 2.0.0 リリース特集</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0041/0041-200Special.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby 2.0.0 リリース特集</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0041/0041-200Special.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby 2.0.0 リリース特集" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0041/0041-200Special.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0041/0041-200Special.html" data-text="Ruby 2.0.0 リリース特集">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#ruby-200-リリース特集について" id="markdown-toc-ruby-200-リリース特集について">Ruby 2.0.0 リリース特集について</a></li>
+  <li><a href="#識者からのメッセージ" id="markdown-toc-識者からのメッセージ">識者からのメッセージ</a>    <ul>
+      <li><a href="#まつもとさんからのメッセージ" id="markdown-toc-まつもとさんからのメッセージ">まつもとさんからのメッセージ</a></li>
+      <li><a href="#ruby-20-on-rails" id="markdown-toc-ruby-20-on-rails">Ruby 2.0 on Rails</a></li>
+      <li><a href="#空気のように環境が変わると言うこと" id="markdown-toc-空気のように環境が変わると言うこと">空気のように環境が変わると言うこと</a></li>
+      <li><a href="#message-from-dave-thomas" id="markdown-toc-message-from-dave-thomas">Message from Dave Thomas</a>        <ul>
+          <li><a href="#message" id="markdown-toc-message">Message</a></li>
+          <li><a href="#favorite-feature" id="markdown-toc-favorite-feature">Favorite Feature</a></li>
+        </ul>
+      </li>
+      <li><a href="#message-from-charles-oliver-nutter" id="markdown-toc-message-from-charles-oliver-nutter">Message from Charles Oliver Nutter</a></li>
+      <li><a href="#message-from-thomas-e-enebo" id="markdown-toc-message-from-thomas-e-enebo">Message from Thomas E Enebo</a></li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+</ul>
+
+<p>編集：ささだ</p>
+
+<h2 id="ruby-200-リリース特集について">Ruby 2.0.0 リリース特集について</h2>
+
+<p>2013 年 2 月 24 日に Ruby 2.0.0 がリリースされました (<a href="http://www.ruby-lang.org/ja/news/2013/02/24/ruby-2-0-0-p0-is-released/">Ruby 2.0.0-p0 リリース</a>)。ダウンロード方法などは、リリース文をご覧下さい。</p>
+
+<p>リリース文にあります Ruby 2.0.0 の「主要な新機能」は次の通りです (引用します)。</p>
+
+<ul>
+  <li>言語コア機能
+    <ul>
+      <li>キーワード引数: API 設計の新しい柔軟性</li>
+      <li>Module#prepend: クラス拡張の新しい方法</li>
+      <li>シンボルの配列を簡単に作るリテラル %i</li>
+      <li><strong>dir</strong>: 実行中のファイルのあるディレクトリ名</li>
+      <li>default UTF-8 encoding: 多くのマジックコメントが不要に</li>
+    </ul>
+  </li>
+  <li>組み込みライブラリ
+    <ul>
+      <li>Enumerable#lazy / Enumertor::Lazy: 無限の遅延ストリーム</li>
+      <li>Enumerable#size: 遅延サイズ評価</li>
+      <li>#to_h: Hash への変換メソッド</li>
+      <li>Onigmo (鬼雲): 新しい正規表現エンジン (鬼車の fork)</li>
+      <li>非同期例外を安全にハンドリングする API</li>
+    </ul>
+  </li>
+  <li>デバッグサポート
+    <ul>
+      <li>DTrace サポート: 本番環境での実行時診断を可能にする機能</li>
+      <li>TracePoint: 改善されたトレース API</li>
+      <li>性能改善</li>
+      <li>bitmap marking による GC 最適化</li>
+      <li>Rails の起動時間を大幅に短縮する Kernel#require の最適化</li>
+      <li>メソッドディスパッチなどの VM 最適化</li>
+      <li>浮動小数演算の最適化</li>
+    </ul>
+  </li>
+</ul>
+
+<p>しかし、具体的に何が変わったか、あまり情報がまとまっていないのが実情です。そこで、Ruby 開発者の人たちに Ruby 2.0.0 の機能や改善についてご紹介頂く特集記事をまとめました。</p>
+
+<p>記事は次の通りです。</p>
+
+<ul>
+  <li><a href="/articles/0041/0041-200Special-release.html">Ruby 2.0.0 リリースを振り返って</a> では、Ruby 2.0.0 のリリースマネージャである遠藤さんに Ruby 2.0.0 の開発の経緯をまとめて頂きました。</li>
+  <li><a href="/articles/0041/0041-200Special-kwarg.html">Ruby 2.0.0 のキーワード引数</a> では、遠藤さんに新しい文法であるメソッドのキーワード引数についてまとめて頂きました。</li>
+  <li><a href="/articles/0041/0041-200Special-lazy.html">無限リストを map 可能にする Enumerable#lazy</a> では、原さんに新しい機能である Lazy の紹介をしてもらいました。</li>
+  <li><a href="/articles/0041/0041-200Special-refinement.html">Refinementsとは何だったのか</a> では、前田さんに新しい機能である Refinements について、恨み言を含めて書いて頂きました。</li>
+  <li><a href="/articles/0041/0041-200Special-dtrace.html">Ruby 2.0.0 の DTrace の紹介</a> では、Aaron Patterson さんに Ruby の DTrace サポートについて紹介して頂きました。</li>
+  <li><a href="/articles/0041/0041-200Special-gc.html">Ruby 2.0.0 の GC 改善</a> では、nari さんに Ruby 2.0.0 での GC の改善をまとめて頂きました。</li>
+  <li><a href="/articles/0041/0041-200Special-require.html">Ruby 2.0.0 の require</a> では、樽家さんに、Ruby 2.0.0 での require の速度改善についてまとめて頂きました。</li>
+  <li><a href="/articles/0041/0041-200Special-note.html">Ruby 2.0.0 の注意点やその他の新機能</a> では、Ruby 2.0.0 について、互換性の情報や他の追加機能などについて書いています。</li>
+</ul>
+
+<p>さらに、<a href="/articles/0041/0041-200Special-193.html">Ruby 安定版の今後の保守の見通し</a> では、Ruby 1.9.3 のメンテナである usa さんに、Ruby 2.0.0 および 1.9.3 の安定版の見通しについてまとめて頂きました。</p>
+
+<p>お楽しみ下さい。</p>
+
+<h2 id="識者からのメッセージ">識者からのメッセージ</h2>
+
+<p>本 Ruby 2.0.0 リリース特集にあたって Ruby のパパであるまつもとゆきひろさんをはじめ、著名な Rubyist の方々からメッセージを頂きましたのでご紹介します。</p>
+
+<h3 id="まつもとさんからのメッセージ">まつもとさんからのメッセージ</h3>
+
+<p>書いた人：まつもとゆきひろ (<a href="https://twitter.com/yukihiro_matz/">@yukihiro_matz</a>)</p>
+
+<p>Ruby が登場して 20 年、私はバージョン番号を大胆に進めることに抵抗を感じてきました。過去、マーケティング上の理由でソフトウェアのバージョン番号が大幅に進むケースはいくつか見ましたが (Solaris とか)、オープンソースにマーケティングは無縁だと考えてきましたし、むしろ「バージョンなんて飾りです。偉い人にはそれがわからんのです」というのが本音でした。</p>
+
+<p>もちろん、Ruby2 あるいは Ruby 2.0 という名前をこの 10 年ほのめかしていたのは私自身なのですが、それはあくまでも開発者のヤル気の源泉としてであり、たとえるならば「馬車馬のためのニンジン」のようなものと考えてきたのが本音です。</p>
+
+<p>しかし、2011 年ごろに、キーワード引数や Module#prepend、Refinement など、私が 10 年以上も欲しいと思っていながら実現できてなかった機能の実装がコミュニティメンバーから提案されてきました。見果てぬ夢が次第に現実化してきたと言ってもよいでしょう。</p>
+
+<p>最終的に私に 2.0 リリースの決心をさせたのは、2011 年に聞いた「2013 年は Ruby 開発開始 20 周年だから、2.0 にふさわしい」という発言でした。残念ながらどなたの発言だか失念してしまったのですが、この言葉がバージョンを進めるのに抵抗があった私の心を溶かしてくれました。</p>
+
+<p>きっと他の方が詳細に解説してくださっていると思いますが、Ruby 2.0 の変更は実に多岐にわたります。しかし、基本的な方針は、互換性を保ちつつより良い言語を提供することです。</p>
+
+<p>特に特徴的な新機能である、キーワード引数は API の複雑化への対処、Module#prepend および Refinement は、既存のクラスを拡張する時の複雑性の制御への対処であり、今後、ますます大規模化、複雑化が予想される Ruby プログラム開発へ備える意図が含まれています。</p>
+
+<p>また DTrace や TracePoint などのデバッグ支援機能や、GC や VM の性能改善など Ruby 2.0 は将来の Ruby を取り巻く環境を予想しつつ、それに対処できるように進化しつつあります。</p>
+
+<p>私たち、Ruby 開発コミュニティは、Ruby がいつまでも人々の役に立つ愛すべき言語であり続けられるように、日夜努力を続けているのです。Ruby 2.0 がリリースされた後も、この活動を継続していく心づもりです。</p>
+
+<p>できることならば、今後も Ruby のことを暖かく見守っていただけるようにお願いします。また、もし気が向いたらならば、Ruby の開発コミュニティに参加してみてください。どこかの勉強会に参加してみるもよし、Ruby 開発メーリングリストに参加してみるもよし。私たちは皆さんを歓迎します。</p>
+
+<h3 id="ruby-20-on-rails">Ruby 2.0 on Rails</h3>
+
+<p>書いた人：松田明 (<a href="https://twitter.com/a_matsuda">@a_matsuda</a>)</p>
+
+<p>Rails プログラマーの皆さんにとっては、Ruby on Rails の Ruby 2.0 対応状況が気になるところでしょう。せっかく処理系の最新版がリリースされても、フレームワークが対応してくれないとなかなか現場に投入できなかったりしますからね。</p>
+
+<p>しかし、ご安心ください。松江で開催された <a href="http://2009.rubyworld-conf.org/ja/program/abstract/a-5/">RubyWorld Conference 2009 の Jeremy Kemper のトーク</a> (すっげーいい話なので、講演をご覧になっていない方は是非リンク先の動画を観てみてください) をご覧になった方ならご記憶のことかと思いますが、Ruby on Rails コアチームは昔から変わらず、Ruby の進化を最大限サポートする立場をとっています。いや、むしろ、今回 Ruby 2.0 とほぼ同時期のリリースが予想される Rails 4.0 以降では、両者が正式リリースされるよりも前から Ruby 2.0 を「推奨」と位置づけています (<a href="https://github.com/rails/rails/commit/a0380e8">https://github.com/rails/rails/commit/a0380e8</a>) 。</p>
+
+<p>もちろん宣言しているだけじゃなくて、実際 Ruby 2.0 に対しては <a href="https://travis-ci.org/rails/rails">Travis CI</a> でコミットごとにビルドを通していて、常に動作の確認がとれている状態になっています。もし仮に Ruby 2.0 で Rails がうまく動かないケースがあったら、それはきっとバグなので、こちらまでご報告ください (<a href="https://github.com/rails/rails/issues">https://github.com/rails/rails/issues</a>) 。</p>
+
+<p>さて、そんなこんなで新機能もいろいろ増えて動作も速くなって前バージョンと 100% 互換で Rails コアチームも使用を推奨している Ruby 2.0 を、今すぐお手元の Rails プロジェクトに導入しない理由はもはや何も無いですよね？</p>
+
+<h3 id="空気のように環境が変わると言うこと">空気のように環境が変わると言うこと</h3>
+
+<p>書いた人：id:secondlife (<a href="https://twitter.com/hotchpotch">@hotchpotch</a>)</p>
+
+<p>最近の私の近況ですが、ユーザが沢山居る環境で、表面上ではできるかぎり変化を起こさず、裏側を大きく変える仕事をしています。このユーザとは、エンドユーザだったり、はたまた開発者だったりします。</p>
+
+<p>やってみると改めて実感するのですが、空気のように環境を変えるには、ただならぬ努力が必要です。できるだけ意識させること無く、問題なく変化させるか。裏側は様々な変更があり、いろいろなメリットが生まれるのですが、ユーザから見た表面上には大きな変化は生まれません。</p>
+
+<p>さて、Ruby 2.0 の話しです。Ruby 2.0 には、Refinement のような、うまく扱えばより柔軟な言語内 DSL 等を実装可能、しかし使い方を誤れば黒魔術になりそうな機能から、待ちに待ったキーワード引数等、言語仕様の追加から、様々な性能改善まで、また一歩大きく言語として進化しました。</p>
+
+<p>しかしながら一番驚いたのが、空気のように環境を変えられたことでした。2012 年下旬から Ruby 2.0 HEAD を使ってますが、Ruby 1.9.3 からすんなり移行でき、また社内で扱っているほとんどの 1.9.3 プロジェクトで spec が通りました (しかも 20-80% も高速に！)。一部のプロジェクトでは実際に Ruby 2.0 HEAD で 3 ヶ月ほど動かしてますが、不安定になったことは一度もありません。100% の互換性のうたい文句は伊達じゃありません。</p>
+
+<p>空気のように環境を変えることができる Ruby 2.0。是非皆さんも使ってみて下さい。そして改めて、Ruby 開発に携わっている皆さん、ありがとうございます。きっと互換性の裏には、多大な努力があったはずです。</p>
+
+<h3 id="message-from-dave-thomas">Message from Dave Thomas</h3>
+
+<p>書いた人：Dave Thomas、訳した人：<a href="https://twitter.com/makoto_inoue/">@makoto_inoue</a></p>
+
+<h4 id="message">Message</h4>
+
+<p>I’ve known Ruby since she was just 4 or 5 years old. Of course, I knew her parents, Smalltalk and Perl, and had a nodding acquaintance with Aunt Clu, so I knew she was in good hands. I watched with pleasure as she took her first tentative steps into the wide world. Even as a young language, she captured the hearts of some wonderful people―I think it was her relaxed and happy nature.</p>
+
+<p>Of course, when she became a teenager, she had a few rough times. She got involved with some strange friends, but her character and strength means that she simply developed into a deeper and more confident language.</p>
+
+<p>Now, at 20, Ruby shows fantastic maturity and composure. She is loved by hundreds of thousands of people, and she makes their lives better.</p>
+
+<p>I’m looking forward to watching her continue to grow over the next 20 years.</p>
+
+<p>Happy birthday.</p>
+
+<p>(和訳)</p>
+
+<p>Rubyのことは彼女が 4〜5 歳のころから知っています。彼女の両親である Smalltalk とPerl のことはよく知っているし、そして Clu おばさんについても聞きかじっていたから、彼女の筋がいいってことは知っていました。彼女が初めてみんなの前ではにかみながらお披露目をしたときもちゃんと見守っていましたよ。若い言語でありながら彼女がすばらしい人々を魅了していたのは、私が思うに、彼女の落ち着いていながらも幸せに満ちた性格によるんじゃないでしょうか。</p>
+
+<p>もちろん彼女がティーンエイジャーの時はいくつかの危なっかしい時がありましたよね。変な友達とつるむようになった時もあったけど、でも彼女の素直でまっすぐな性格によって、より深く、自信に満ちた言語になっていきました。</p>
+
+<p>今年、二十歳になった Ruby はすばらしいほどに成熟し、落ち着いた言語になりました。彼女は多くの人々に愛され、人々の役にたっています。</p>
+
+<p>次の 20 年に向けて、彼女がより成熟していくのを見続けることができるのを楽しみにしています。</p>
+
+<p>お誕生日おめでとう。</p>
+
+<h4 id="favorite-feature">Favorite Feature</h4>
+
+<p>Obviously, the new keyword arguments are very cool. But when I was playing with them, I came across an implementation detail that just made me smile like a fool:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   APP_OPTS     = { name: 'play', author: 'dave' }
+   LOG_OPTS     = { level: 2, color: 'blue', line: "3pt" }
+
+   def log(msg, options)
+     p msg
+     p options
+   end
+
+   log("Starting", **APP_OPTS)
+   log("Connected", **APP_OPTS, **LOG_OPTS)
+   log("Giving up", **APP_OPTS, **LOG_OPTS, color: "VERY RED")</code></pre></figure>
+
+<p>produces:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   "Starting"
+   {:name=&gt;"play", :author=&gt;"dave"}
+   "Connected"
+   {:name=&gt;"play", :author=&gt;"dave", :level=&gt;2, :color=&gt;"blue", :line=&gt;"3pt"}
+   "Giving up"
+   {:name=&gt;"play", :author=&gt;"dave", :level=&gt;2, :color=&gt;"VERY RED", :line=&gt;"3pt"}</code></pre></figure>
+
+<p>The **arg converts the hash into the equivalent of the individual options (in the same way that a single star expands an array into individual parameters. And then Ruby collects all these values into the hash that it eventually passes to the method.</p>
+
+<p>It’s this kind of attention to small details that makes Ruby such a fun language―there’s always something to discover.</p>
+
+<p>(和訳)</p>
+
+<p>新しいキーワード引数がクールなのは知っていましたが、実際にその機能を試している時に、実装の詳細に出くわして、おもわず間抜けみたいにニヤニヤ笑いをしてしまいました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   APP_OPTS     = { name: 'play', author: 'dave' }
+   LOG_OPTS     = { level: 2, color: 'blue', line: "3pt" }
+
+   def log(msg, options)
+     p msg
+     p options
+   end
+
+   log("Starting", **APP_OPTS)
+   log("Connected", **APP_OPTS, **LOG_OPTS)
+   log("Giving up", **APP_OPTS, **LOG_OPTS, color: "VERY RED")</code></pre></figure>
+
+<p>出力結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   "Starting"
+   {:name=&gt;"play", :author=&gt;"dave"}
+   "Connected"
+   {:name=&gt;"play", :author=&gt;"dave", :level=&gt;2, :color=&gt;"blue", :line=&gt;"3pt"}
+   "Giving up"
+   {:name=&gt;"play", :author=&gt;"dave", :level=&gt;2, :color=&gt;"VERY RED", :line=&gt;"3pt"}</code></pre></figure>
+
+<p>引数として渡している <em>*arg はハッシュを個別のオプションに変換してくれます (</em>が配列を個別のパラメターに変換するのと同様にです)。その後、Ruby がそれらの値が別々にメソッドに渡された際、マージされたものをハッシュに再変換してくれています。</p>
+
+<p>こういう細心の注意を払ってくれているところが Ruby を楽しい言語にしてくれているんだと思います。Ruby にはいつも新しい発見があります。</p>
+
+<h3 id="message-from-charles-oliver-nutter">Message from Charles Oliver Nutter</h3>
+
+<p>書いた人: Charles Oliver Nutter、
+訳した人：<a href="https://twitter.com/zundan/">@zundan</a></p>
+
+<p>Congratulations to the MRI team on releasing 2.0! We are looking forward to implementing Ruby 2.0 features like keyword arguments in upcoming releases of JRuby, and I’m personally excited to see where we can take Ruby in the post-2.0 era. I’ve also seen solid improvements in performance and GC overhead while playing with the release candidates. Great job!</p>
+
+<p>(和訳)</p>
+
+<p>MRI チームの皆さん、2.0 のリリースおめでとうございます!
+私たちは、JRuby に、キーワード引数などの Ruby 2.0 の機能を実装するのを楽しみにしています。
+私たちが 2.0 後の時代で Ruby をどのように発展させていくことになるのか、個人的にわくわくしています。
+(Ruby 2.0.0 の) リリース候補版を試していて、パフォーマンスや GC のオーバーヘッドが確実に改善されているのを見ていました。Great job!</p>
+
+<h3 id="message-from-thomas-e-enebo">Message from Thomas E Enebo</h3>
+
+<p>書いた人: Thomas E Enebo、
+訳した人：<a href="https://twitter.com/zundan/">@zundan</a></p>
+
+<p>I have been very excited to see Ruby 2.0.0 released.  This release has
+been the dream of many Ruby programmers for quite some time.  As for
+Ruby 2 features, I expect keyword arguments will have the largest
+impact on how people change their APIs; so I predict it will have the
+largest visible impact in how we think in terms of writing Ruby code.</p>
+
+<p>I am also excited to see how features like refinements and
+Module#prepend get used in unexpected ways.  Unexpected uses often end
+up being responsible for game-changing idioms and I am hoping these
+features deliver something amazing.</p>
+
+<p>(和訳)</p>
+
+<p>Ruby 2.0.0 がリリースされていくのを目にして、とても興奮しています。
+このリリースは、多くの Ruby プログラマにとって長年の夢でした。
+Ruby 2 の新機能について言えば、
+人々が API を更新していくのに最も影響が大きいのが、キーワード引数でしょう。
+キーワード引数が、私たちが Ruby のコードを書くときに考えることに、
+最も顕著な影響を与えることになると思います。</p>
+
+<p>私はまた Refinements や Module#prepend などの機能が、
+予想もできないやり方で使われることを楽しみにしています。
+予想もできない使い方は、
+しばしば考え方を根本から変えてしまうようなイディオムを産み出すことになります。
+私は、これらの新しい機能が、
+何かすばらしいものをもたらしてくれるのを楽しみに待っています。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>それでは、Ruby 2.0.0 で Happy Hacking!!</p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

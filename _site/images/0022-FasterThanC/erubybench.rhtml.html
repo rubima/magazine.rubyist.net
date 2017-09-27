@@ -1,0 +1,100 @@
+<html>
+<head>
+  <!--link rel="stylesheet" href="../docstyle.css" type="text/css" /-->
+  <style type="text/css">
+  <!--
+  body { color: #333333; }
+  pre strong { font-weight: bold; color: #773333; }
+  -->
+  </style>
+</head>
+<body>
+<pre class="terminal">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
+          &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;title&gt;Stock Prices&lt;/title&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Style-Type&quot; content=&quot;text/css&quot; /&gt;
+  &lt;meta http-equiv=&quot;Content-Script-Type&quot; content=&quot;text/javascript&quot; /&gt;
+  &lt;link rel=&quot;shortcut icon&quot; href=&quot;/favicon.ico&quot; /&gt;
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/css/style.css&quot; media=&quot;all&quot; /&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/js/util.js&quot;&gt;&lt;/script&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+  /*&lt;![CDATA[*/
+
+body {
+    color: #333333;
+    line-height: 150%;
+}
+
+thead {
+    font-weight: bold;
+    background-color: #CCCCCC;
+}
+
+.odd {
+    background-color: #FFCCCC;
+}
+
+.even {
+    background-color: #CCCCFF;
+}
+
+.minus {
+    color: #FF0000;
+}
+
+  /*]]&gt;*/
+  &lt;/style&gt;
+
+ &lt;/head&gt;
+
+ &lt;body&gt;
+
+  &lt;h1&gt;Stock Prices&lt;/h1&gt;
+
+  &lt;table&gt;
+   &lt;thead&gt;
+    &lt;tr&gt;
+     &lt;th&gt;#&lt;/th&gt;&lt;th&gt;symbol&lt;/th&gt;&lt;th&gt;name&lt;/th&gt;&lt;th&gt;price&lt;/th&gt;&lt;th&gt;change&lt;/th&gt;&lt;th&gt;ratio&lt;/th&gt;
+    &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+<strong>&lt;%
+n = 0
+for item in list
+    n += 1
+ %&gt;</strong>
+    &lt;tr class=&quot;<strong>&lt;%= n % 2 == 0 ? 'even' : 'odd' %&gt;</strong>&quot;&gt;
+     &lt;td style=&quot;text-align: center&quot;&gt;<strong>&lt;%= n %&gt;</strong>&lt;/td&gt;
+     &lt;td&gt;
+      &lt;a href=&quot;/stocks/<strong>&lt;%= item['symbol'] %&gt;</strong>&quot;&gt;<strong>&lt;%= item['symbol'] %&gt;</strong>&lt;/a&gt;
+     &lt;/td&gt;
+     &lt;td&gt;
+      &lt;a href=&quot;<strong>&lt;%= item['url'] %&gt;</strong>&quot;&gt;<strong>&lt;%= item['name'] %&gt;</strong>&lt;/a&gt;
+     &lt;/td&gt;
+     &lt;td&gt;
+      &lt;strong&gt;<strong>&lt;%= item['price'] %&gt;</strong>&lt;/strong&gt;
+     &lt;/td&gt;
+<strong>&lt;%   if item['change'] &lt; 0.0 %&gt;</strong>
+     &lt;td class=&quot;minus&quot;&gt;<strong>&lt;%= item['change'] %&gt;</strong>&lt;/td&gt;
+     &lt;td class=&quot;minus&quot;&gt;<strong>&lt;%= item['ratio'] %&gt;</strong>&lt;/td&gt;
+<strong>&lt;%   else %&gt;</strong>
+     &lt;td&gt;<strong>&lt;%= item['change'] %&gt;</strong>&lt;/td&gt;
+     &lt;td&gt;<strong>&lt;%= item['ratio'] %&gt;</strong>&lt;/td&gt;
+<strong>&lt;%   end %&gt;</strong>
+    &lt;/tr&gt;
+<strong>&lt;%
+end
+ %&gt;</strong>
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</body>
+</html>

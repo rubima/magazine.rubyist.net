@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby Library Report 【第 3 回】 O/R マッピング</title>
+  <meta name="description" content="著者：馬場 道明　編集・校正：立石 孝彰　協力：かずひこ、moriq">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0004/0004-RLR.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby Library Report 【第 3 回】 O/R マッピング</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0004/0004-RLR.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby Library Report 【第 3 回】 O/R マッピング" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0004/0004-RLR.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0004/0004-RLR.html" data-text="Ruby Library Report 【第 3 回】 O/R マッピング">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：馬場 道明　編集・校正：立石 孝彰　協力：かずひこ、moriq</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>今回は、Ruby で O/R マッピングを扱うライブラリとして、
+rorm, TapKit, SDS, Active Record の４つを紹介します。</p>
+
+<p>リレーショナルデータベースを扱う際、
+SQL の組み立てや、それから得られた結果セットをオブジェクトに詰め直す作業は、
+Ruby でプログラミングする場合に限らず、最近のオブジェクト指向言語を使っている方なら、誰しもが煩雑に感じるのではないでしょうか。</p>
+
+<p>この煩雑さは、RDBとオブジェクト指向言語のデータに関する思想の違いに起因します。
+RDBとオブジェクト指向は、ともにデータとそれらのリレーションを持つところは同じです。
+しかし、
+RDBにおけるデータモデルの設計では、
+データ自身の整合性やパフォーマンスに基づいて
+モデルの最適解を得ようとするのに対して、
+オブジェクトモデルの設計では、
+プログラマの理解・再利用性等の開発効率に基づいて
+モデルの最適解を得ようとします。
+ER 図と UML におけるクラス図は一見似ているのですが
+大元のアプローチが違うため様々な相違点をもたらします。
+これを、オブジェクトリレーショナル・インピーダンスミスマッチ <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+と呼びます。</p>
+
+<p>オブジェクト指向パラダイムが登場した後に作られた、オブジェクト指向データベースや XML データベースならば、オブジェクト指向言語との親和性も高いかもしれませんが、長い間エンタープライズの現場で使われ続けてきたRDBと比べると実績やパフォーマンスという面で難があり、まだまだRDBと付き合っていかなければいけないのが現状でしょう。</p>
+
+<p>そこで、このインピーダンス・ミスマッチを少しでも軽減する為に用いられるのが、今回ご紹介する O/R マッピングツールです。</p>
+
+<h2 id="始める前に">始める前に</h2>
+
+<p>今回のレポートを通して使用するテーブルを定義したSQLを用意しました。</p>
+
+<p><a href="/images/0004-RLR/rlr-pg.sql">rlr-pg.sql</a>
+<img src="/images/0004-RLR/rlr-pg.sql" alt="rlr-pg.sql" /></p>
+
+<p>今回のサンプルの作成は、RDBMS に PostgreSQL を用いて行い、この SQL も PostgreSQL 特有のカラム型がありますが、小さい定義なので、その他の RDBMS でも若干の修正で使用できると思います。</p>
+
+<p>簡単ながら、テーブル定義を説明させて頂きますと、</p>
+
+<ul>
+  <li>Student (学生)</li>
+  <li>Account (学生のコンピューターアカウント)</li>
+  <li>Department (学生の所属する学部)</li>
+  <li>Registration (学生が履修する授業)</li>
+  <li>Course (授業)</li>
+</ul>
+
+<p>という大学におけるデータを想定しており、</p>
+
+<ul>
+  <li>Student - Account (1 対 1)</li>
+  <li>Department - Student (1 対 多)</li>
+  <li>Student - Registration - Course (多 対 多)</li>
+</ul>
+
+<p>というリレーションに O/R マッパーを用いてどうアクセスするかを見て行きたいと思います。</p>
+
+<p>かなりディフォルメされていますが、各ライブラリの感触を掴むには充分だと思います。</p>
+
+<h2 id="試用レポート--rorm">試用レポート – rorm</h2>
+
+<h3 id="登録データ">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] rorm</li>
+  <li>[作成者] 高井 直人</li>
+  <li>[URL] <a href="http://www.commentout.com/people/takai/src/rorm/">http://www.commentout.com/people/takai/src/rorm/</a></li>
+  <li>[バージョン] 0.1.1</li>
+  <li>[レポート環境] ruby-1.8(cygwin), PostgreSQL 7.4.5</li>
+</ul>
+
+<h3 id="概要">概要</h3>
+
+<p>rorm は、XML による定義ファイルを用いて、データベースへの接続からオブジェクトへのマッピングまでの仲立ちをしてくれるライブラリです。Ruby/DBI の対応する RDBMS をカバーしています。</p>
+
+<h3 id="作者からの声">作者からの声</h3>
+
+<blockquote>
+  <p>rorm は P of EAA (Patterns of Enterprise Application Architecture [2]) を読んで、その理解を深めるために実装されました。rorm では、P of EAA で解説されているパターンのうち、Data Mapper パターンを採用し、付随するパターンである Identity Map, Lazy Load, Metadata Mapping, Query Object などが実装されています。</p>
+
+  <p>rorm のウェブページでは簡単にデータベースが扱えるということを強調していますが、rorm の実際の問題意識は、Ruby のオブジェクトとリレーショナルデータベースシステム (RDBMS) をどのようにつなぐべきかという設計の部分にあります。</p>
+
+  <p>ご存じの通り、オブジェクト指向プログラム (OOP) で扱われるオブジェクトと、RDBMSで扱われるデータとの間には多くの違いがあります。Ruby に限らず、OOP で RDBMS を利用するアプリケーションをどのように設計すべきかということで悩んだ方は多いのではないでしょうか。</p>
+
+  <p>そういった視点から rorm をながめると、あまりよくない実装も、ちょっとは興味深く思っていただけるのではないかと思っています。</p>
+</blockquote>
+
+<p>第 1 回にも声を寄せて頂いた高井さんのコメントです。ありがとうございます。
+筆者も P of EAA は所持しているのですが、拾い読みしただけで読み込めておりません。
+これを機会に勉強させてもらいたいと思います。</p>
+
+<h3 id="サンプル">サンプル</h3>
+
+<h4 id="単純な参照">単純な参照</h4>
+
+<p>まずは Student テーブルからデータを取り出す単純なアクセスの方法を見てみましょう。</p>
+
+<p><a href="/images/0004-RLR/rorm-simple.rb">rorm-simple.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'rorm'</span>
+
+<span class="k">class</span> <span class="nc">Student</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:no</span><span class="p">,</span> <span class="ss">:name</span>
+  <span class="k">def</span> <span class="nf">introduce</span>
+    <span class="k">return</span> <span class="s2">"Hello, my name is %s."</span> <span class="o">%</span> <span class="nb">name</span>
+  <span class="k">end</span> 
+<span class="k">end</span>
+
+<span class="n">db</span> <span class="o">=</span> <span class="no">Rorm</span><span class="o">::</span><span class="no">Rorm</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">DATA</span><span class="p">.</span><span class="nf">read</span><span class="p">)</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="no">Student</span><span class="p">)</span>
+<span class="n">query</span><span class="p">.</span><span class="nf">add_criteria</span><span class="p">(</span><span class="no">Rorm</span><span class="o">::</span><span class="no">Criteria</span><span class="p">.</span><span class="nf">equals</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'Alan Mathison Turing'</span><span class="p">))</span>
+<span class="n">alan</span> <span class="o">=</span> <span class="n">query</span><span class="p">.</span><span class="nf">execute</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">puts</span> <span class="n">alan</span><span class="p">.</span><span class="nf">introduce</span>
+
+<span class="cp">__END__
+&lt;?xml version="1.0" ?&gt;
+&lt;config&gt;
+  &lt;database driver="DBI:Pg:RLR_DB" user="babie" password="" /&gt;
+  &lt;mapper&gt;
+    &lt;mapping class="Student" table="Student"&gt;
+      &lt;id column="id" /&gt;
+      &lt;property field="no" column="no" /&gt;
+      &lt;property field="name" column="name" /&gt;
+    &lt;/mapping&gt;
+  &lt;/mapper&gt;
+&lt;/config&gt;
+
+
+</span></code></pre>
+</div>
+
+<p><strong>END</strong> 以下に定義されている XML による設定の要素・属性から説明すると、</p>
+
+<dl>
+  <dt>config</dt>
+  <dd>設定の root になります。</dd>
+  <dt>database</dt>
+  <dd>接続するデータベースの情報。属性は、driver が Ruby/DBI の URL、user が接続するデータベースのユーザー、password がそのパスワードとなります。</dd>
+  <dt>mapper</dt>
+  <dd>マッピング情報枠。</dd>
+  <dt>mapping</dt>
+  <dd>マッピング情報。属性 class に Ruby 側のクラス、table にテーブル名を記入します。</dd>
+  <dt>id</dt>
+  <dd>データベースのキー情報。属性 column がテーブルのカラム名です。</dd>
+  <dt>property</dt>
+  <dd>Ruby クラスの属性とテーブルの列の対応情報。属性 field が Ruby 側のアトリビュート、column が列名を表します。</dd>
+</dl>
+
+<p>となります。</p>
+
+<p>コードの方は、
+クラス Student を定義、
+Rorm::Rorm.new で設定を読み込み DB 操作を一手に引き受けるオブジェクトを得ます。</p>
+
+<p>db.query(class) で DB とそのマッパークラスを得るためのクエリオブジェクトを作成します。</p>
+
+<p>Rorm::Criteria.equals(column, criteria) では、この例の場合、SQL で “name = ‘Alan Mathison uring’” となる条件を作成しています。</p>
+
+<p>query.add_criteria でクエリオブジェクトに条件を追加します。</p>
+
+<p>最後に、query.execute でクエリを実行します。
+戻り値は Student オブジェクトの配列で、対象は 1 レコードなのでインデクサで 1 つだけ取り出しています。
+そして、introduce メソッドでマッピングされたデータにアクセスし出力しています。</p>
+
+<p>ここで驚きなのは、Student クラス定義が、全く DB を連想させず、とても自然なところです。ただのアトリビュートとメソッドを持つ普通のクラスにしか見えません。
+db.query(クラス)で「全てがオブジェクト」である Ruby の「クラスもオブジェクト」という特性を活かした優れた設計だと思います。</p>
+
+<h4 id="各種-参照更新">各種 参照・更新</h4>
+
+<p>次は、ざっと、1対1、1対多、多対多、追加、更新、削除を見てみたいと思います。</p>
+
+<p><a href="/images/0004-RLR/rorm-sample.xml">rorm-sample.xml</a>
+<img src="/images/0004-RLR/rorm-sample.xml" alt="rorm-sample.xml" /></p>
+
+<p>Student テーブルのマッピング定義の id 要素に last_id 属性が加わっています。
+これは INSERT 時はキー id 値が自動採番の為未定義で、INSERT 後にオブジェクトにキーの値を詰め直す為の関数を記入します。</p>
+
+<p>その他追加された要素を説明します。</p>
+
+<dl>
+  <dt>relation</dt>
+  <dd>リレーション情報枠です。</dd>
+  <dt>one_to_many</dt>
+  <dd>1対多のリレーションを定義します。source 要素はリレーション元、target 要素はリレーション先、field 要素は Ruby コードからアクセスする時のアトリビュート名、key 要素は リレーション先のキー値を表します。</dd>
+  <dt>many_to_many</dt>
+  <dd>多対多のリレーションを定義します。RDB では多対多のリレーションは 中間テーブルがなければ実現できないので、1対多定義の場合と同じ sourse, target, field 以外も定義しなければなりません。table 要素は間に挟むテーブル、source_key 要素はリレーション元から中間テーブルを得る時のキー、target_key 要素は中間テーブルからターゲットテーブルを得る時のキーです。</dd>
+</dl>
+
+<p>Account へのリレーションは 1対1 を意図しているのですが、rorm には 1対1 の為の特別な記法はありませんので、1対多の記法で代用しています。</p>
+
+<p>それではコードの方を見てみましょう。</p>
+
+<p><a href="/images/0004-RLR/rorm-sample.rb">rorm-sample.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'rorm'</span>
+
+<span class="k">class</span> <span class="nc">Student</span>
+	<span class="kp">attr_accessor</span> <span class="ss">:no</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:department_id</span>
+	<span class="k">def</span> <span class="nf">introduce</span>
+		<span class="s2">"Hello, my name is %s."</span> <span class="o">%</span> <span class="vi">@name</span>
+	<span class="k">end</span> 
+
+	<span class="kp">attr_accessor</span> <span class="ss">:account</span>	<span class="c1"># for 1:1</span>
+	<span class="k">def</span> <span class="nf">tellme_password</span>
+		<span class="sx">%Q|</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sx">'s account is </span><span class="si">#{</span><span class="n">account</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">username</span><span class="si">}</span><span class="sx">/</span><span class="si">#{</span><span class="n">account</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">password</span><span class="si">}</span><span class="sx">|</span>
+	<span class="k">end</span>
+
+	<span class="kp">attr_accessor</span> <span class="ss">:courses</span>	<span class="c1"># for N:N</span>
+	<span class="k">def</span> <span class="nf">course_summary</span>
+		<span class="n">output</span> <span class="o">=</span> <span class="s2">""</span>
+		<span class="n">courses</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="s2">"</span><span class="se">\t</span><span class="s2">[</span><span class="si">#{</span><span class="n">c</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">] </span><span class="si">#{</span><span class="n">c</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+		<span class="k">end</span>
+		<span class="k">return</span> <span class="n">output</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Department</span>
+	<span class="kp">attr_accessor</span> <span class="ss">:code</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:abbrev</span>
+	<span class="kp">attr_accessor</span> <span class="ss">:students</span>	 <span class="c1"># for 1:N</span>
+<span class="k">end</span>
+
+<span class="no">Account</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:username</span><span class="p">,</span> <span class="ss">:password</span><span class="p">)</span>
+<span class="no">Course</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:code</span><span class="p">,</span> <span class="ss">:name</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Sample</span>
+	<span class="k">def</span> <span class="nf">initialize</span>
+		<span class="vi">@db</span> <span class="o">=</span> <span class="no">Rorm</span><span class="o">::</span><span class="no">Rorm</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'rorm-sample.xml'</span><span class="p">){</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">})</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (1) 1:1</span>
+	<span class="k">def</span> <span class="nf">one2one</span>
+		<span class="n">o2o_query</span> <span class="o">=</span> <span class="vi">@db</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="no">Student</span><span class="p">)</span>
+		<span class="n">o2o_query</span><span class="p">.</span><span class="nf">add_criteria</span><span class="p">(</span><span class="no">Rorm</span><span class="o">::</span><span class="no">Criteria</span><span class="p">.</span><span class="nf">equals</span><span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="s1">'Charles Babbage'</span><span class="p">))</span>
+		<span class="n">charles</span> <span class="o">=</span> <span class="n">o2o_query</span><span class="p">.</span><span class="nf">execute</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="nb">puts</span> <span class="n">charles</span><span class="p">.</span><span class="nf">tellme_password</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (2) 1:N</span>
+	<span class="k">def</span> <span class="nf">one2many</span>
+		<span class="n">db</span> <span class="o">=</span> <span class="no">Rorm</span><span class="o">::</span><span class="no">Rorm</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'rorm-sample.xml'</span><span class="p">){</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">})</span>
+		<span class="n">o2m_query</span> <span class="o">=</span> <span class="n">db</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="no">Department</span><span class="p">)</span>
+		<span class="n">o2m_query</span><span class="p">.</span><span class="nf">add_criteria</span><span class="p">(</span><span class="no">Rorm</span><span class="o">::</span><span class="no">Criteria</span><span class="p">.</span><span class="nf">equals</span><span class="p">(</span><span class="s1">'code'</span><span class="p">,</span> <span class="s1">'20'</span><span class="p">))</span>
+		<span class="n">ec</span> <span class="o">=</span> <span class="n">o2m_query</span><span class="p">.</span><span class="nf">execute</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">ec</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">:"</span>
+		<span class="n">ec</span><span class="p">.</span><span class="nf">students</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+			<span class="nb">puts</span> <span class="n">s</span><span class="p">.</span><span class="nf">introduce</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (3) N:N</span>
+	<span class="k">def</span> <span class="nf">many2many</span>
+		<span class="n">m2m_query</span> <span class="o">=</span> <span class="vi">@db</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="no">Student</span><span class="p">)</span>
+		<span class="n">m2m_query</span><span class="p">.</span><span class="nf">add_criteria</span><span class="p">(</span><span class="no">Rorm</span><span class="o">::</span><span class="no">Criteria</span><span class="p">.</span><span class="nf">greater_than</span><span class="p">(</span><span class="s1">'no'</span><span class="p">,</span> <span class="s1">'20-000'</span><span class="p">,</span> <span class="kp">true</span><span class="p">))</span>
+		<span class="n">m2m_query</span><span class="p">.</span><span class="nf">add_criteria</span><span class="p">(</span><span class="no">Rorm</span><span class="o">::</span><span class="no">Criteria</span><span class="p">.</span><span class="nf">less_than</span><span class="p">(</span><span class="s1">'no'</span><span class="p">,</span> <span class="s1">'30-000'</span><span class="p">,</span> <span class="kp">false</span><span class="p">))</span>
+		<span class="n">students</span> <span class="o">=</span> <span class="n">m2m_query</span><span class="p">.</span><span class="nf">execute</span>
+		<span class="n">students</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+			<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">s</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">'s courses are:"</span>
+			<span class="nb">puts</span> <span class="n">s</span><span class="p">.</span><span class="nf">course_summary</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (4) INSERT</span>
+	<span class="k">def</span> <span class="nf">insert</span>
+		<span class="vi">@db</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span>
+			<span class="n">fillip</span> <span class="o">=</span> <span class="no">Student</span><span class="p">.</span><span class="nf">new</span>
+			<span class="n">fillip</span><span class="p">.</span><span class="nf">no</span> <span class="o">=</span> <span class="s2">"20-004"</span>
+			<span class="n">fillip</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"Fillip Estridge"</span>
+			<span class="n">fillip</span><span class="p">.</span><span class="nf">department_id</span> <span class="o">=</span> <span class="mi">2</span>
+			<span class="n">mapper</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="nf">mapper</span><span class="p">(</span><span class="no">Student</span><span class="p">)</span>
+			<span class="n">mapper</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">fillip</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (5) UPDATE</span>
+	<span class="k">def</span> <span class="nf">update</span>
+		<span class="vi">@db</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span>
+			<span class="n">fillip_query</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="no">Student</span><span class="p">)</span>
+			<span class="n">fillip_query</span><span class="p">.</span><span class="nf">add_criteria</span><span class="p">(</span><span class="no">Rorm</span><span class="o">::</span><span class="no">Criteria</span><span class="p">.</span><span class="nf">equals</span><span class="p">(</span><span class="s1">'no'</span><span class="p">,</span> <span class="s1">'20-004'</span><span class="p">))</span>
+			<span class="n">fillip</span> <span class="o">=</span> <span class="n">fillip_query</span><span class="p">.</span><span class="nf">execute</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">fillip</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s2">"Fillip Don Estridge"</span>
+			<span class="n">mapper</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="nf">mapper</span><span class="p">(</span><span class="no">Student</span><span class="p">)</span>
+			<span class="n">mapper</span><span class="p">.</span><span class="nf">update</span><span class="p">(</span><span class="n">fillip</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (6) DELETE</span>
+	<span class="k">def</span> <span class="nf">delete</span>
+		<span class="vi">@db</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span>
+			<span class="n">fillip_query</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="nf">query</span><span class="p">(</span><span class="no">Student</span><span class="p">)</span>
+			<span class="n">fillip_query</span><span class="p">.</span><span class="nf">add_criteria</span><span class="p">(</span><span class="no">Rorm</span><span class="o">::</span><span class="no">Criteria</span><span class="p">.</span><span class="nf">equals</span><span class="p">(</span><span class="s1">'no'</span><span class="p">,</span> <span class="s1">'20-004'</span><span class="p">))</span>
+			<span class="n">fillip</span> <span class="o">=</span> <span class="n">fillip_query</span><span class="p">.</span><span class="nf">execute</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+			<span class="n">mapper</span> <span class="o">=</span> <span class="n">d</span><span class="p">.</span><span class="nf">mapper</span><span class="p">(</span><span class="no">Student</span><span class="p">)</span>
+			<span class="n">mapper</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="n">fillip</span><span class="p">)</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="kp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+	<span class="n">s</span> <span class="o">=</span> <span class="no">Sample</span><span class="p">.</span><span class="nf">new</span>
+	<span class="nb">puts</span> <span class="s2">"(1) 1:1"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2one</span>
+	<span class="nb">puts</span> <span class="s2">"(2) 1:N"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(3) N:N"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">many2many</span>
+
+	<span class="nb">puts</span> <span class="s2">"(4) INSERT"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">insert</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(5) UPDATE"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">update</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(6) DELETE"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">delete</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>Account, Course を見てもらえば分かる通り、DTO として利用するだけならば、Struct で代用することが出来ます。</p>
+
+<p>(1) 1:1</p>
+
+<p>まずは 1対1 のリレーションです。
+データの取得自体は最初の例で挙げた物と変わりません。Account テーブルデータへのアクセスですが、上述したように 1対多 のリレーションで代用したので account 配列の最初の要素を明示的に指定しています。</p>
+
+<p>(2) 1:N</p>
+
+<p>次は 1対多のリレーションです。ここで Rorm::Rorm オブジェクトを新規に作り直して使用していますが気にしないで下さい。後述する INSERT, UPDATE, DELETE の結果の確認のため別コンテキストで実行しています。XML で定義した</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;relation&gt;
+  &lt;one_to_many
+    source="Department" target="Student"
+    field="students" key="department_id"
+  /&gt;
+&lt;/relation&gt;</code></pre></figure>
+
+<p>の通り、students アトリビュートで Department.id Student.departmetn_id が一致する Student テーブルのデータを取得できていますね。</p>
+
+<p>(3) N:N</p>
+
+<p>RDB 上では多対多のリレーションの為に Registration テーブルが中間テーブルとして存在しているのですが、その存在を意識することなく Course データにアクセス出来ています。</p>
+
+<p>(4) INSERT</p>
+
+<p>rorm では transaction メソッドを使用することにより、アトミックな データ の変更が行えます。普通の Ruby オブジェクトと同様に生成しています。ここではセッターによる値の代入を行いましたが、initialize メソッドを定義してコンストラクタによって各アトリビュートの値を埋めることも出来ます。</p>
+
+<p>mapper メソッドによって作成されたオブジェクトは引数とされたクラスのマッピング情報を保持しています。そのマッピング情報を元に INSERT, UPDATE, DELETE が行われます。</p>
+
+<p>(5) UPDATE
+(6) DELETE 
+については特に説明する必要は無いでしょう。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>機能という点で見ると、
+更新系がカスケードに対応してない等で若干不備な点がありますが、
+参照系はまったく不都合ありません。
+ストレス無く使用できる良いライブラリではないでしょうか。</p>
+
+<p>なにより、全 8 ファイル、総計 約 600 行でここまでのものが出来ることに感動しました。</p>
+
+<h2 id="試用レポート--tapkit">試用レポート – TapKit</h2>
+
+<h3 id="登録データ-1">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="http://raa.ruby-lang.org/project/tapkit">RAA:tapkit</a></li>
+  <li>[作成者] 鈴木 鉄也</li>
+  <li>[URL] <a href="http://www.spice-of-life.net/tapkit/index_ja.html">http://www.spice-of-life.net/tapkit/index_ja.html</a></li>
+  <li>[バージョン] 0.5.2</li>
+  <li>[レポート環境] ruby-1.8(cygwin), PostgreSQL 7.4.5</li>
+</ul>
+
+<h3 id="概要-1">概要</h3>
+
+<p>TapKit は EOF (Enterprise Objects Framework<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>) を Ruby で実装した物です。
+YAML による定義ファイルを用いて DB や マッピングの情報を記述します。
+対応する RDBMS は、MySQL, PostgreSQL, OpenBase, CSV(実験的対応)ですが、
+Ruby/DBI の対応しているものならば概ね動くようです。<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<h3 id="作者からの声-1">作者からの声</h3>
+
+<blockquote>
+  <p>TapKit は単純な興味から作りました。WebObjects の Web ライブラリを真似た CGIKit の開発がある程度進んだところで、ついでに DB ライブラリである EOF も真似てみようと思い、EOF の理解も兼ねてとりかかりました。
+実は EOF に関して無知の状態でしたから仕様をコンパクトにまとめることもできず、とりあえずコア部分をほぼそのまま Ruby らしく作ってみたのが TapKit です。</p>
+
+  <p>TapKit の特徴は「変更を管理するオブジェクト」を通してオブジェクトを操作する点にあります。
+CVS を使った作業サイクルを思い浮かべてみてください。リポジトリから作業用コピーを取得し、その中で作業します。作業内容をコミットするまでソースコードには何も影響せず、気に入らなければ作業コピーを捨てても構いません。TapKit でもデータベースから取得したオブジェクトが「編集コンテキスト」という作業用コピーにあたるオブジェクトによって管理されます。データベースへの問い合わせ、更新などの作業はすべてこのオブジェクトを通して行います。</p>
+
+  <p>TapKit は CGIKit と対になっているわけではなく、あくまで汎用的なライブラリとして使えるように開発を続ける予定です。</p>
+</blockquote>
+
+<p>特徴を簡潔に述べて頂いて助かりました。この「変更を管理するオブジェクト」「編集コンテキスト」の理解がスムーズだと、EOF 独特の世界にも戸惑わないでしょう。</p>
+
+<h3 id="サンプル-1">サンプル</h3>
+
+<h4 id="ユーティリティー">ユーティリティー</h4>
+
+<p>TapKit では YAML<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> でマッピング定義であるモデルファイルを記述します。</p>
+
+<p>付属の modeler コマンドでモデルファイルを DB から直接リレーション等の情報を読み取って生成することが出来ます。早速使用してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ modeler PostgreSQL modeler-sample.yaml
+Login database with DBI
+URL: dbi:Pg:RLR_DB
+Username: babie
+Password:
+Selectable tables - ...(アクセスできるテーブルの一覧 省略)...
+(If you want to select the all tables, input 'all')
+Select tables (separate table names with comma): department,student,account,registration,course
+Create modeler-sample.yaml</code></pre></figure>
+
+<p>引数で与える adapter 名は MySQL, PostgreSQL, OpenBase, CSV の何れかを指定できます。注意するところは DBIの接続文字列のものとは違うということです。例えば PostgreSQL の DBI 接続文字列は “Pg” ですが、ここでは “PostgreSQL” という文字列を与えなければなりません。大文字小文字も区別しますので注意してください。</p>
+
+<p>“URL:” プロンプトでは DBIの接続文字列を入力します。
+“Username:”, “Password:” では、それぞれ DB に接続するユーザーとパスワードを入力してください。</p>
+
+<p>最後に、”Select tables:” プロンプトでモデルファイルに書き出すテーブルをカンマ区切りで指定しますが、この時、空白を入れてはいけません。例えば “department, student” と入力した場合 student テーブルは “ student” テーブルとみなされて出力されてしまいます。
+また、all を選択すると、データベースユーザーがアクセスできるテーブルが全て出力されるので、データベースユーザーに大きな権限を与えている場合はアプリケーションで使用するテーブル名だけを指定したほうが良いでしょう。</p>
+
+<p>modeler コマンドは設定ファイル自動生成してくれますが、未だ発展途上のようで、精度は今回のサンプルを用いた限りではイマイチです。
+例えば、後述する 1:N の例での Department - Student のリレーションシップが、お互いの Department.id と Student.id がキーとなるものとして出力されていました。
+現段階では雛形として利用するのが良さそうです。<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></p>
+
+<h4 id="単純な参照-1">単純な参照</h4>
+
+<p>rorm と同じく単純な参照を行ってみましょう。</p>
+
+<p><a href="/images/0004-RLR/tapkit-simple.yaml">tapkit-simple.yaml</a>
+<img src="/images/0004-RLR/tapkit-simple.txt" alt="tapkit-simple.txt" /></p>
+
+<p>コードの説明に移る前に YAML の各要素について解説します。</p>
+
+<p>設定は大きく分けて 3 つのセクションがあります。</p>
+
+<dl>
+  <dt>adapter_name</dt>
+  <dd>TapKit の対応するアダプターを指定します。modeler コマンドと同じくMySQL, PostgreSQL, OpenBase, CSV が対応されています。</dd>
+  <dt>connection</dt>
+  <dd>DB との接続に関するセクションです。</dd>
+  <dt>entities</dt>
+  <dd>エンティティ(テーブル)に関するセクションです。</dd>
+</dl>
+
+<p>connection セクションでは以下の情報を記述します。</p>
+
+<dl>
+  <dt>url</dt>
+  <dd>使用する DBI の接続文字列を記入します。</dd>
+  <dt>user</dt>
+  <dd>DB にアクセスするユーザー名を指定します。</dd>
+  <dt>password</dt>
+  <dd>DB にアクセスするユーザーのパスワードを使用します。</dd>
+</dl>
+
+<p>entities セクションでは以下の設定が並びます。</p>
+
+<dl>
+  <dt>name</dt>
+  <dd>TapKit がアクセスする際のエンティティ名です。</dd>
+  <dt>class_name</dt>
+  <dd>TapKit が作成するオブジェクトの継承元クラスです。</dd>
+  <dt>external_name</dt>
+  <dd>テーブル名</dd>
+  <dt>class_properties</dt>
+  <dd>Ruby コード側から使用するアトリビュートのリストを記入します。ここに記入されていない物は Ruby コードから触ることはできません。</dd>
+  <dt>attributes</dt>
+  <dd>各カラム情報を記入するカテゴリです。</dd>
+  <dt>primary_key_attributes</dt>
+  <dd>プライマリキーを指定します。</dd>
+</dl>
+
+<p>attributes には以下のデータを記述します。</p>
+
+<dl>
+  <dt>name</dt>
+  <dd>Ruby コード側から使用する際の名前です。</dd>
+  <dt>column_name</dt>
+  <dd>テーブルのカラム名です。</dd>
+  <dt>class_name</dt>
+  <dd>Ruby コード側の型です。</dd>
+  <dt>external_type</dt>
+  <dd>DB のカラム型です。</dd>
+  <dt>allow_null</dt>
+  <dd>NULL 制約です。false 時は NULL 不許可となります。</dd>
+  <dt>read_only</dt>
+  <dd>参照専用設定です。</dd>
+  <dt>width</dt>
+  <dd>DB 側で文字列等のサイズ設定が必要な場合に定義します。</dd>
+</dl>
+
+<p>それではコードの方を覗いてみましょう。</p>
+
+<p><a href="/images/0004-RLR/tapkit-simple.rb">tapkit-simple.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'tapkit'</span>
+
+<span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+   <span class="s2">"Hello, my name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">."</span>
+<span class="k">end</span>
+
+<span class="kp">include</span> <span class="no">TapKit</span>
+<span class="n">app</span> <span class="o">=</span> <span class="no">Application</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'tapkit-simple.yaml'</span><span class="p">)</span>
+
+<span class="n">context</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="nf">shared_editing_context</span>
+<span class="n">query</span> <span class="o">=</span> <span class="no">Qualifier</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">"name = 'Alan Mathison Turing'"</span><span class="p">)</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="no">FetchSpec</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="n">query</span><span class="p">);</span>
+
+<span class="n">alan</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">fs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">puts</span> <span class="n">introduce</span><span class="p">(</span><span class="n">alan</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span>
+
+
+</code></pre>
+</div>
+
+<p>include TapKit で Tapkit モジュールをインクルードして諸々の機能を使用します。</p>
+
+<p>Application.new(modelfile) で設定ファイルからエンティティやリレーションの情報を読み込みます。</p>
+
+<p>app.create_editing_context は読み込まれたモデルから「編集コンテキスト」オブジェクトを作成します。</p>
+
+<p>query = Qualifier.format(query_str) でフェッチ時の条件オブジェクトを作成します。</p>
+
+<p>fs = FetchSpec.new(class, query) 条件オブジェクトとマッピングクラスを関連付けます。</p>
+
+<p>context.fetch(fs) フェッチします。</p>
+
+<p>object[‘attr_name’] で モデルファイルで定義したアトリビュートにアクセスできます。</p>
+
+<h4 id="各種-参照更新-1">各種 参照・更新</h4>
+
+<p>次も同じく、各種参照と更新系を試してみましょう。
+<a href="/images/0004-RLR/tapkit-sample.yaml">tapkit-sample.yaml</a></p>
+
+<p>定義ファイルは 200 行ほどの長大なリストになるのでリンクだけに留めて、追加要素を解説したいと思います。</p>
+
+<dl>
+  <dt>relationships</dt>
+  <dd>リレーションに関する設定を記述します。</dd>
+  <dt>name</dt>
+  <dd>Ruby コードからアクセスする時の名前を入力します。</dd>
+  <dt>destination</dt>
+  <dd>リレーション先のクラス名を取得します。</dd>
+  <dt>joins</dt>
+  <dd>子要素でリレーションのキーを定義します。</dd>
+  <dt>source</dt>
+  <dd>リレーション元のアトリビュート名。</dd>
+  <dt>destination</dt>
+  <dd>リレーション先のアトリビュート名。</dd>
+  <dt>join_semantic</dt>
+  <dd>結合する方法。inner, left_outer, right_outer, full_outer を指定できます。</dd>
+  <dt>mandatory</dt>
+  <dd>リレーションシップが必須かどうかを設定します。</dd>
+  <dt>to_many</dt>
+  <dd>1対多の場合に true を指定します。</dd>
+  <dt>delete_rule</dt>
+  <dd>削除時に削除レコードを参照しているリレーション先の扱いを指定します。nullify (NULL で埋める), cascade (参照している他のテーブルのレコードも削除する), deny (リレーション先にレコードがある時削除できなくする) の 3 つが指定できます。</dd>
+</dl>
+
+<p><a href="/images/0004-RLR/tapkit-sample.rb">tapkit-sample.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'tapkit'</span>
+
+<span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+	<span class="s2">"</span><span class="se">\t</span><span class="s2">Hello, my name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">."</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Sample</span>
+	<span class="kp">include</span> <span class="no">TapKit</span>
+	<span class="k">def</span> <span class="nf">initialize</span>
+		<span class="vi">@app</span> <span class="o">=</span> <span class="no">Application</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'tapkit-sample.yaml'</span><span class="p">)</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (1) 1:1</span>
+	<span class="k">def</span> <span class="nf">one2one</span>
+		<span class="n">ec</span> <span class="o">=</span> <span class="vi">@app</span><span class="p">.</span><span class="nf">shared_editing_context</span>
+		<span class="n">q</span> <span class="o">=</span> <span class="no">Qualifier</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">"name like 'C*'"</span><span class="p">)</span>
+		<span class="n">fs</span> <span class="o">=</span> <span class="no">FetchSpec</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="n">q</span><span class="p">);</span>
+		<span class="n">charles</span><span class="p">,</span> <span class="o">=</span> <span class="n">ec</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span>
+
+		<span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="si">#{</span><span class="n">charles</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">'s Password: </span><span class="si">#{</span><span class="n">charles</span><span class="p">[</span><span class="s1">'account'</span><span class="p">][</span><span class="s1">'password'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (2) 1:N</span>
+	<span class="k">def</span> <span class="nf">one2many</span>
+		<span class="n">app</span> <span class="o">=</span> <span class="no">Application</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'tapkit-sample.yaml'</span><span class="p">)</span>
+		<span class="n">ec</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="nf">shared_editing_context</span>
+		<span class="n">q</span> <span class="o">=</span> <span class="no">Qualifier</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">"code = '20'"</span><span class="p">)</span>
+		<span class="n">fs</span> <span class="o">=</span> <span class="no">FetchSpec</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'Department'</span><span class="p">,</span> <span class="n">q</span><span class="p">);</span>
+
+		<span class="n">dept</span> <span class="o">=</span> <span class="n">ec</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">fs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="si">#{</span><span class="n">dept</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">:"</span>
+		<span class="n">students</span> <span class="o">=</span> <span class="n">dept</span><span class="p">[</span><span class="s1">'students'</span><span class="p">]</span>
+		<span class="n">students</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+			<span class="nb">puts</span> <span class="n">introduce</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (3) N:N</span>
+	<span class="k">def</span> <span class="nf">many2many</span>
+		<span class="n">ec</span> <span class="o">=</span> <span class="vi">@app</span><span class="p">.</span><span class="nf">shared_editing_context</span>
+		<span class="n">q</span> <span class="o">=</span> <span class="no">Qualifier</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">"no like '20-*'"</span><span class="p">)</span>
+		<span class="n">fs</span> <span class="o">=</span> <span class="no">FetchSpec</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+
+		<span class="n">students</span> <span class="o">=</span> <span class="n">ec</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">fs</span><span class="p">)</span>
+		<span class="n">students</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+			<span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="si">#{</span><span class="n">s</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">'s courses are:"</span>
+			<span class="n">rs</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="s1">'registration'</span><span class="p">]</span>
+			<span class="n">rs</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+				<span class="nb">puts</span> <span class="s2">"</span><span class="se">\t\t</span><span class="s2">[</span><span class="si">#{</span><span class="n">r</span><span class="p">[</span><span class="s1">'course'</span><span class="p">][</span><span class="s1">'code'</span><span class="p">]</span><span class="si">}</span><span class="s2">] </span><span class="si">#{</span><span class="n">r</span><span class="p">[</span><span class="s1">'course'</span><span class="p">][</span><span class="s1">'name'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+			<span class="k">end</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (4) INSERT</span>
+	<span class="k">def</span> <span class="nf">insert</span>
+		<span class="n">ec</span> <span class="o">=</span> <span class="vi">@app</span><span class="p">.</span><span class="nf">create_editing_context</span>
+
+		<span class="n">fillip</span> <span class="o">=</span> <span class="n">ec</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">)</span>
+		<span class="n">fillip</span><span class="p">[</span><span class="s1">'no'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'20-004'</span>
+		<span class="n">fillip</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Fillip Estridge'</span>
+		<span class="n">fillip</span><span class="p">[</span><span class="s1">'department_id'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+		<span class="n">ec</span><span class="p">.</span><span class="nf">save</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (5) UPDATE</span>
+	<span class="k">def</span> <span class="nf">update</span>
+		<span class="n">ec</span> <span class="o">=</span> <span class="vi">@app</span><span class="p">.</span><span class="nf">create_editing_context</span>
+		<span class="n">q</span> <span class="o">=</span> <span class="no">Qualifier</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">"no = '20-004'"</span><span class="p">)</span>
+		<span class="n">fs</span> <span class="o">=</span> <span class="no">FetchSpec</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+
+		<span class="n">fillip</span> <span class="o">=</span> <span class="n">ec</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">fs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">fillip</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Fillip Don Estridge'</span>
+		<span class="n">ec</span><span class="p">.</span><span class="nf">save</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (6) DELETE</span>
+	<span class="k">def</span> <span class="nf">delete</span>
+		<span class="n">ec</span> <span class="o">=</span> <span class="vi">@app</span><span class="p">.</span><span class="nf">create_editing_context</span>
+		<span class="n">q</span> <span class="o">=</span> <span class="no">Qualifier</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">"no = '20-004'"</span><span class="p">)</span>
+		<span class="n">fs</span> <span class="o">=</span> <span class="no">FetchSpec</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+
+		<span class="n">fillip</span> <span class="o">=</span> <span class="n">ec</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="n">fs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">ec</span><span class="p">.</span><span class="nf">delete</span> <span class="n">fillip</span>
+		<span class="n">ec</span><span class="p">.</span><span class="nf">save</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="kp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+	<span class="n">s</span> <span class="o">=</span> <span class="no">Sample</span><span class="p">.</span><span class="nf">new</span>
+	<span class="nb">puts</span> <span class="s2">"(1) 1:1"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2one</span>
+	<span class="nb">puts</span> <span class="s2">"(2) 1:N"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(3) N:N"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">many2many</span>
+
+	<span class="nb">puts</span> <span class="s2">"(4) INSERT"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">insert</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(5) UPDATE"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">update</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(6) DELETE"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">delete</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>(1) 1:1</p>
+
+<p>TapKitでは、条件式に “*” や “?” といったワイルドカードが使えます。
+SQL の “%” も使えます。</p>
+
+<p>(2) 1:N
+は特にひっかかるところは無いと思います。</p>
+
+<p>(3) N:N</p>
+
+<p>多対多アクセスでは、中間オブジェクトを明示的に記述しないと目的のデータにアクセス出来ないようです。</p>
+
+<p>(4) INSERT</p>
+
+<p>編集オブジェクトを生成する時に、shared_editing_context メソッドでなく、
+create_editing_context メソッドを使用しています。
+shared_editing_context は読み取り専用、
+create_editing_context は変更もできます。</p>
+
+<p>編集コンテキストオブジェクトの save メソッドを呼ぶのを忘れないで下さい。
+save メソッドを呼ぶまでは DB は実際には更新されません。</p>
+
+<p>(5) UPDATE
+(6) DELETE
+も特に言及するところはありません。</p>
+
+<p>編集コンテキストオブジェクトを各メソッドで生成していますが、実際のアプリケーションでは大体 1 つのクラスに 1 つで済むでしょう。</p>
+
+<h3 id="感想-1">感想</h3>
+
+<p>残念ながら、今回のサンプルでは
+編集コンテキストの効用や
+カスケードした更新の
+例を示すことが出来ませんでしたが、
+次号以降で CGIKit と TapKit の記事が予定されていますので、
+実用的な例はそちらに任せたいと思います。</p>
+
+<p>個人的には、
+object[‘attr_name’] というハッシュ風アクセスで
+Ruby らしいオブジェクトの手触りを感じられないところや
+id というアトリビュートにアクセスすると Object#id が返る仕様といった
+細かい点に若干不満がありますが、機能的な不足はなく概ね満足です。</p>
+
+<p>あと、
+懇切丁寧な日本語マニュアル
+<a href="http://www.spice-of-life.net/tapkit/ja/TapKitUserGuide_J.html">TapKitユーザーガイド</a>
+があるのは大きな魅力です。</p>
+
+<h2 id="試用レポート--sds">試用レポート – SDS</h2>
+
+<h3 id="登録データ-2">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="http://raa.ruby-lang.org/project/sds">RAA:sds</a></li>
+  <li>[作成者] Marek Janukowicz</li>
+  <li>[URL] <a href="http://www.starware.one.pl/software/sds/">http://www.starware.one.pl/software/sds/</a></li>
+  <li>[バージョン] 0.3</li>
+  <li>[レポート環境] ruby-1.8(cygwin), PostgreSQL 7.4.5</li>
+</ul>
+
+<h3 id="概要-2">概要</h3>
+
+<p>SDS は TapKit と同じく EOF を Ruby で実装したものです。</p>
+
+<h3 id="作者からの声-2">作者からの声</h3>
+
+<blockquote>
+  <p>SDS is modeled after Apple’s Enterprise Objects Framework (EOF), which is an excellent O/R mapping library for Java and (formerly) Objective-C. In contrast with Tapkit (which follows EOF class layout quite literally), SDS mimics only some major concepts from EOF. O/R mapping is modelled using the YAML file (more model file formats coming) and a graphical modelling tool (similar to Apple’s EOModeler) is under way. SDS is indented to help to get rid of SQL (in all but most complicated cases), so it is possible to switch to another RDBMS just by changing the adaptor line in the model file. Relationship fetching/deleting is handled transparently.</p>
+</blockquote>
+
+<p>複数の開発者が実装してしまう EOF はよほど魅力的なフレームワークなのでしょうね。
+EOF だけでなく WebObjects には一度は触れてみたいものです。</p>
+
+<p>今後の計画として、
+GUI によるモデリングツール・
+SQL のより一層の排除・
+RDBMS 依存性の排除
+といった機能強化が挙げられています。
+意欲的に開発を行っているようなので期待がもてますね。</p>
+
+<h3 id="サンプル-2">サンプル</h3>
+
+<h4 id="単純な参照-2">単純な参照</h4>
+
+<p><a href="/images/0004-RLR/sds-simple.yaml">sds-simple.yaml</a>
+<img src="/images/0004-RLR/sds-simple.txt" alt="sds-simple.txt" /></p>
+
+<p>TapKit の YAML とも似てますし、キー名も素直なので特に解説する必要はないのではないでしょうか。</p>
+
+<p><a href="/images/0004-RLR/sds-simple.rb">sds-simple.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'sds'</span>
+
+<span class="kp">include</span> <span class="no">SDS</span>
+<span class="n">store</span> <span class="o">=</span> <span class="no">Store</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s1">'sds-simple.yaml'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Student</span>
+   <span class="kp">include</span> <span class="no">SDS</span><span class="o">::</span><span class="no">Object</span>
+   <span class="k">def</span> <span class="nf">introduce</span>
+      <span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="s2">Hello, my name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">."</span>
+   <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">context</span> <span class="o">=</span> <span class="no">Context</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+<span class="n">alan</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="s2">"name = 'Alan Mathison Turing'"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">alan</span><span class="p">.</span><span class="nf">introduce</span>
+
+
+</code></pre>
+</div>
+
+<p>Store.get により、エンティティやりレーションの定義を読み込みます。</p>
+
+<p>Ruby のクラスに SDS::Object モジュールをインクルードして、マッピングできるようになります。</p>
+
+<p>TapKit とは違って、通常のオブジェクトのように object.attr_name といった形式でアクセスできます。</p>
+
+<p>また、TapKit の Querifiler のようなオブジェクトは生成せず、context.fetch メソッドに直接条件式を与えることができます。</p>
+
+<h4 id="各種-参照更新-2">各種 参照・更新</h4>
+
+<p><a href="/images/0004-RLR/sds-sample.yaml">sds-sample.yaml</a>
+<img src="/images/0004-RLR/sds-sample.yaml" alt="sds-sample.yaml" /></p>
+
+<p>relationships が増えましたが、これも TapKit とそう変わりませんので、難なく読み書きできると思います。</p>
+
+<p><a href="/images/0004-RLR/sds-sample.rb">sds-sample.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'sds'</span>
+
+<span class="kp">include</span> <span class="no">SDS</span>
+<span class="no">Store</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s1">'sds-sample.yaml'</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Department</span>
+   <span class="kp">include</span> <span class="no">SDS</span><span class="o">::</span><span class="no">Object</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Student</span>
+   <span class="kp">include</span> <span class="no">SDS</span><span class="o">::</span><span class="no">Object</span>
+   <span class="k">def</span> <span class="nf">introduce</span>
+      <span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="s2">Hello, my name is </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">."</span>
+   <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Account</span>
+   <span class="kp">include</span> <span class="no">SDS</span><span class="o">::</span><span class="no">Object</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Course</span>
+   <span class="kp">include</span> <span class="no">SDS</span><span class="o">::</span><span class="no">Object</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Registration</span>
+   <span class="kp">include</span> <span class="no">SDS</span><span class="o">::</span><span class="no">Object</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Sample</span>
+   <span class="k">def</span> <span class="nf">initialize</span>
+      <span class="vi">@store</span> <span class="o">=</span> <span class="no">Store</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s1">'sds-sample.yaml'</span><span class="p">)</span>
+   <span class="k">end</span>
+
+   <span class="c1"># (1) 1:1</span>
+   <span class="k">def</span> <span class="nf">one2one</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="no">Context</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="vi">@store</span><span class="p">)</span>
+      <span class="n">students</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="s2">"name like 'C%'"</span><span class="p">)</span>
+      <span class="n">charles</span> <span class="o">=</span> <span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="si">#{</span><span class="n">charles</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">'s Password: </span><span class="si">#{</span><span class="n">charles</span><span class="p">.</span><span class="nf">account</span><span class="p">.</span><span class="nf">password</span><span class="si">}</span><span class="s2">"</span>
+   <span class="k">end</span>
+
+   <span class="c1"># (2) 1:N FIXME</span>
+   <span class="k">def</span> <span class="nf">one2many</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="no">Context</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="vi">@store</span><span class="p">)</span>
+      <span class="n">biz</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s1">'Department'</span><span class="p">,</span> <span class="s2">"code = '20'"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="si">#{</span><span class="n">biz</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">:"</span>
+      <span class="n">biz</span><span class="p">.</span><span class="nf">students</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+         <span class="nb">puts</span> <span class="n">s</span><span class="p">.</span><span class="nf">introduce</span>  <span class="c1"># なんか nil も出力されちゃう</span>
+      <span class="k">end</span>
+   <span class="k">end</span>
+
+   <span class="c1"># (3) N:N</span>
+   <span class="k">def</span> <span class="nf">many2many</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="no">Context</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="vi">@store</span><span class="p">)</span>
+      <span class="n">students</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="s2">"department_id = 2"</span><span class="p">)</span>
+      <span class="n">students</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+         <span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="si">#{</span><span class="n">s</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">'s courses are:"</span>
+         <span class="n">s</span><span class="p">.</span><span class="nf">registrations</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+            <span class="nb">puts</span> <span class="s2">"</span><span class="se">\t\t</span><span class="s2">[</span><span class="si">#{</span><span class="n">r</span><span class="p">.</span><span class="nf">course</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">] </span><span class="si">#{</span><span class="n">r</span><span class="p">.</span><span class="nf">course</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">"</span>
+         <span class="k">end</span>
+      <span class="k">end</span>
+   <span class="k">end</span>
+
+   <span class="c1"># (4) INSERT</span>
+   <span class="k">def</span> <span class="nf">insert</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="no">Context</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="vi">@store</span><span class="p">)</span>
+      <span class="n">fillip</span> <span class="o">=</span> <span class="no">Student</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+      <span class="n">fillip</span><span class="p">.</span><span class="nf">no</span> <span class="o">=</span> <span class="s1">'20-004'</span>
+      <span class="n">fillip</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s1">'Fillip Estridge'</span>
+		<span class="n">fillip</span><span class="p">.</span><span class="nf">department_id</span> <span class="o">=</span> <span class="mi">2</span>
+		<span class="nb">puts</span> <span class="s2">"object to insert: </span><span class="si">#{</span><span class="n">context</span><span class="p">.</span><span class="nf">objects_to_insert</span><span class="si">}</span><span class="s2">"</span>
+      <span class="n">context</span><span class="p">.</span><span class="nf">save</span>
+   <span class="k">end</span>
+
+   <span class="c1"># (5) UPDATE</span>
+   <span class="k">def</span> <span class="nf">update</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="no">Context</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="vi">@store</span><span class="p">)</span>
+      <span class="n">fillip</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="s2">"no = '20-004'"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">fillip</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s1">'Fillip Don Estridge'</span>
+      <span class="n">context</span><span class="p">.</span><span class="nf">save</span>
+   <span class="k">end</span>
+
+   <span class="c1"># (6) DELETE FIXME</span>
+   <span class="k">def</span> <span class="nf">delete</span>
+      <span class="n">context</span> <span class="o">=</span> <span class="no">Context</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="vi">@store</span><span class="p">)</span>
+      <span class="n">fillip</span> <span class="o">=</span> <span class="n">context</span><span class="p">.</span><span class="nf">fetch</span><span class="p">(</span><span class="s1">'Student'</span><span class="p">,</span> <span class="s2">"no = '20-004'"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="c1">#context.delete(fillip)</span>
+      <span class="n">context</span><span class="p">.</span><span class="nf">save</span>
+   <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="kp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+   <span class="n">s</span> <span class="o">=</span> <span class="no">Sample</span><span class="p">.</span><span class="nf">new</span>
+
+	<span class="nb">puts</span> <span class="s2">"(1) 1:1"</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">one2one</span>
+	<span class="nb">puts</span> <span class="s2">"(2) 1:N"</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(3) N:N"</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">many2many</span>
+
+	<span class="nb">puts</span> <span class="s2">"(4) INSERT"</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">insert</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(5) UPDATE"</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">update</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(6) DELETE"</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">delete</span>
+   <span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>(2) 1:N 
+で students.each メソッドの出力で、途中に nil という行が出力されてしまいます。残念ながら、時間的な制約もあり、回避策を施したサンプルを用意できませんでした。</p>
+
+<p>(3) N:N 
+はと TapKit と同じく、目的のオブジェクトに直接のアクセスはできませんでした。</p>
+
+<p>(4) INSERT 
+は、実はそのままでは動きません。SDS は INSERT 時に連番を取得する際、
+(table_name)<em>Seq というシーケンステーブル名を期待している<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>のですが、
+PostgreSQL の serial カラム型によるデフォルトのシーケンステーブル名は (table_name)</em>(column_name)_seq なので、エラーを起こしてしまいます。
+今回は、<a href="/images/0004-RLR/adaptor.rb.patch">adaptor.rb.patch</a> というパッチを作成し凌ぎました。
+(6) DELETE が動かないのもここら辺が関係するかもしれません。</p>
+
+<h3 id="感想-2">感想</h3>
+
+<p>SDS には YAML 定義ファイルからテーブル定義 SQL ファイルを出力できる sds_generate_db_schema.rb スクリプトがあるのですが、
+今回はテーブルを先に用意していたので使用しませんでした。
+DB 定義が先にあることも往々にしてあるので、TapKit のように実際の DB から YAML 定義ファイルを出力するコマンドも欲しいところです。</p>
+
+<p>全体を通してみると TapKit より Ruby 側への歩み寄りがなされていると思います。
+細かいバグ？がありますが、開発は継続しているので、機能もこれから徐々に充実していくのではないでしょうか。</p>
+
+<p>今回のサンプルコードには一部不具合があるので、
+修正できた時は、<a href="mailto:magazine@ruby-no-kai.org">るびま編集部</a> まで是非ご連絡下さい。
+追記を明示して差し替えたいと思います。</p>
+
+<h2 id="試用レポート--active-record">試用レポート – Active Record</h2>
+
+<h3 id="登録データ-3">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="RubyForge:activerecord">RubyForge:activerecord</a></li>
+  <li>[作成者] David Heinemeier Hansson</li>
+  <li>[URL] <a href="http://www.rubyonrails.org/show/ActiveRecord">http://www.rubyonrails.org/show/ActiveRecord</a></li>
+  <li>[バージョン] 1.1.0</li>
+  <li>[レポート環境] ruby-1.8(cygwin), PostgreSQL 7.4.5</li>
+</ul>
+
+<h3 id="概要-3">概要</h3>
+
+<p>Active Record は ウェブアプリケーションフレームワークである、RubyOnRails の O/R マッピングを担うライブラリです。RubyOnRails が依存しているわけではなく、単体で利用することもできます。</p>
+
+<p>マッピング定義を Ruby クラス内で表現できるところに特徴があります。</p>
+
+<h3 id="サンプル-3">サンプル</h3>
+
+<h4 id="単純な参照-3">単純な参照</h4>
+
+<p><a href="/images/0004-RLR/ar-simple.rb">ar-simple.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'active_record'</span>
+
+<span class="k">class</span> <span class="nc">Student</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+	<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">table_name</span><span class="p">()</span> <span class="s2">"student"</span> <span class="k">end</span>
+
+	<span class="k">def</span> <span class="nf">introduce</span>
+		<span class="k">return</span> <span class="s2">"Hello, my name is %s."</span> <span class="o">%</span> <span class="nb">name</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="nb">require</span> <span class="s1">'logger'</span>
+<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">logger</span> <span class="o">=</span> <span class="no">Logger</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"debug.log"</span><span class="p">)</span>
+<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">establish_connection</span><span class="p">(</span>
+	<span class="ss">:adapter</span>  <span class="o">=&gt;</span> <span class="s2">"postgresql"</span><span class="p">,</span>
+	<span class="ss">:host</span>     <span class="o">=&gt;</span> <span class="s2">"localhost"</span><span class="p">,</span>
+	<span class="ss">:username</span> <span class="o">=&gt;</span> <span class="s2">"babie"</span><span class="p">,</span>
+	<span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+	<span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s2">"RLR_DB"</span>
+<span class="p">)</span>
+
+<span class="n">student</span> <span class="o">=</span> <span class="no">Student</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s2">"name = 'Alan Mathison Turing'"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">puts</span> <span class="n">student</span><span class="p">.</span><span class="nf">introduce</span>
+
+
+</code></pre>
+</div>
+
+<p>ActiveRecord::Base を継承して マッピングクラスを定義します。
+このようにテーブル名が複数形でない場合は table_name クラスメソッドを定義します。
+テーブル名に複数形を使用することができれば table_name メソッド定義を省略でき一層楽をすることが出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'logger'
+ActiveRecord::Base.logger = Logger.new(logfile)</code></pre></figure>
+
+<p>でログファイルを記録することによりエラー時のトレースを簡単にできます。</p>
+
+<p>ActiveRecord::Base.establish_connection 
+で DB との接続を定義します。</p>
+
+<p>find_all(query_str) メソッドで マッピングされたオブジェクトを取得することが出来ます。
+あとは object.column_name という形式でデータにアクセスすることが出来ます。</p>
+
+<h4 id="各種-参照更新-3">各種 参照・更新</h4>
+
+<p><a href="/images/0004-RLR/ar-sample.rb">ar-sample.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'active_record'</span>
+<span class="c1"># for RubyGems package</span>
+<span class="cm">=begin
+require 'rubygems'
+require_gem 'activerecord'
+=end</span>
+
+<span class="k">class</span> <span class="nc">Student</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+	<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">table_name</span><span class="p">()</span> <span class="s2">"student"</span> <span class="k">end</span>
+	<span class="n">has_one</span> <span class="ss">:account</span>
+	<span class="n">has_and_belongs_to_many</span> <span class="ss">:courses</span><span class="p">,</span> <span class="ss">:table_name</span> <span class="o">=&gt;</span> <span class="s2">"course"</span><span class="p">,</span> <span class="ss">:join_table</span> <span class="o">=&gt;</span> <span class="s2">"registration"</span>
+
+	<span class="k">def</span> <span class="nf">introduce</span>
+		<span class="k">return</span> <span class="s2">"Hello, my name is %s."</span> <span class="o">%</span> <span class="nb">name</span>
+	<span class="k">end</span>
+
+	<span class="k">def</span> <span class="nf">tellme_password</span>
+		<span class="sx">%Q|</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="sx">'s password is "</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">account</span><span class="p">.</span><span class="nf">password</span><span class="si">}</span><span class="sx">"|</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Department</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+	<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">table_name</span><span class="p">()</span> <span class="s2">"department"</span> <span class="k">end</span>
+	<span class="n">has_many</span> <span class="ss">:students</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Account</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+	<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">table_name</span><span class="p">()</span> <span class="s2">"account"</span> <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Course</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+	<span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">table_name</span><span class="p">()</span> <span class="s2">"course"</span> <span class="k">end</span>
+	<span class="n">has_and_belongs_to_many</span> <span class="ss">:students</span><span class="p">,</span> <span class="ss">:table_name</span> <span class="o">=&gt;</span> <span class="s2">"student"</span><span class="p">,</span> <span class="ss">:join_table</span> <span class="o">=&gt;</span> <span class="s2">"registration"</span>
+<span class="k">end</span>
+
+<span class="nb">require</span> <span class="s1">'logger'</span>
+<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">logger</span> <span class="o">=</span> <span class="no">Logger</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"debug.log"</span><span class="p">)</span>
+<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">establish_connection</span><span class="p">(</span>
+	<span class="ss">:adapter</span>  <span class="o">=&gt;</span> <span class="s2">"postgresql"</span><span class="p">,</span>
+	<span class="ss">:host</span>     <span class="o">=&gt;</span> <span class="s2">"localhost"</span><span class="p">,</span>
+	<span class="ss">:username</span> <span class="o">=&gt;</span> <span class="s2">"babie"</span><span class="p">,</span>
+	<span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+	<span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s2">"RLR_DB"</span>
+<span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Sample</span>
+	<span class="c1"># (1) 1:1</span>
+	<span class="k">def</span> <span class="nf">one2one</span>
+		<span class="n">charles</span> <span class="o">=</span> <span class="no">Student</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s2">"name = 'Charles Babbage'"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="nb">puts</span> <span class="n">charles</span><span class="p">.</span><span class="nf">tellme_password</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (2) 1:N</span>
+	<span class="k">def</span> <span class="nf">one2many</span>
+		<span class="n">dept</span> <span class="o">=</span> <span class="no">Department</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s2">"code = 20"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">dept</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">:"</span>
+		<span class="n">dept</span><span class="p">.</span><span class="nf">students</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+			<span class="nb">puts</span> <span class="n">s</span><span class="p">.</span><span class="nf">introduce</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (3) N:N</span>
+	<span class="k">def</span> <span class="nf">many2many</span>
+		<span class="no">Student</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s2">"no like '20-%'"</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">s</span><span class="o">|</span>
+			<span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">s</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">'s courses are:"</span>
+			<span class="n">s</span><span class="p">.</span><span class="nf">courses</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
+				<span class="nb">puts</span> <span class="s2">"</span><span class="se">\t</span><span class="s2">[</span><span class="si">#{</span><span class="n">c</span><span class="p">.</span><span class="nf">code</span><span class="si">}</span><span class="s2">] </span><span class="si">#{</span><span class="n">c</span><span class="p">.</span><span class="nf">name</span><span class="si">}</span><span class="s2">"</span>
+			<span class="k">end</span>
+		<span class="k">end</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (4) INSERT</span>
+	<span class="k">def</span> <span class="nf">insert</span>
+		<span class="n">dept</span> <span class="o">=</span> <span class="no">Department</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s2">"code = 20"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">fillip</span> <span class="o">=</span> <span class="no">Student</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+			<span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s1">'Fillip Estridge'</span><span class="p">,</span>
+			<span class="s2">"no"</span> <span class="o">=&gt;</span> <span class="s1">'20-004'</span><span class="p">,</span>
+			<span class="s2">"department_id"</span> <span class="o">=&gt;</span> <span class="mi">2</span>
+		<span class="p">)</span>
+		<span class="n">fillip</span><span class="p">.</span><span class="nf">save</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (5) UPDATE</span>
+	<span class="k">def</span> <span class="nf">update</span>
+		<span class="n">fillip</span> <span class="o">=</span> <span class="no">Student</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s2">"no = '20-004'"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">fillip</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="s1">'Fillip Don Estridge'</span>
+		<span class="n">fillip</span><span class="p">.</span><span class="nf">save</span>
+	<span class="k">end</span>
+
+	<span class="c1"># (6) DELETE</span>
+	<span class="k">def</span> <span class="nf">delete</span>
+		<span class="n">fillip</span> <span class="o">=</span> <span class="no">Student</span><span class="p">.</span><span class="nf">find_all</span><span class="p">(</span><span class="s2">"no = '20-004'"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+		<span class="n">fillip</span><span class="p">.</span><span class="nf">destroy</span>
+	<span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">if</span> <span class="kp">__FILE__</span> <span class="o">==</span> <span class="vg">$0</span>
+	<span class="n">s</span> <span class="o">=</span> <span class="no">Sample</span><span class="p">.</span><span class="nf">new</span>
+	<span class="nb">puts</span> <span class="s2">"(1) 1:1"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2one</span>
+	<span class="nb">puts</span> <span class="s2">"(2) 1:N"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(3) N:N"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">many2many</span>
+
+	<span class="nb">puts</span> <span class="s2">"(4) INSERT"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">insert</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(5) UPDATE"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">update</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+	<span class="nb">puts</span> <span class="s2">"(6) DELETE"</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">delete</span>
+	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>1対1 は  has_one、
+1対多は has_many、
+多対多は has_and_belongs_to_many
+メソッドを使用しリレーションを定義します。</p>
+
+<p>INSERT, UPDATE, DELETE についても、コードを読めばすぐわかるでしょう。</p>
+
+<h3 id="感想-3">感想</h3>
+
+<p>驚きです。
+うまく嵌まればこれ以上のものは無いのではないでしょうか。
+特に、定義ファイル要らずというのは嬉しい利点です。
+1 からアプリケーションを作れるならば今回一押しです。</p>
+
+<p>しかし、
+プライマリーキー名が “id” であるという事を前提としている部分があったりして、
+全てのケースで使える訳では無いようです。
+活動は活発で徐々に痒いところに手が届くようになっていますので、この辺も期待して見守りたいと思います。</p>
+
+<p>今号から連載記事「<a href="/articles/0004/0004-RubyOnRails.html">RubyOnRails　を使ってみる</a>」が始まっていますのでこちらも参考にしてください。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は O/R マッピングライブラリとして、rorm, TapKit, SDS, Active Record を取り上げました。
+各種ライブラリ多種多様のアプローチがあり、大変興味深く試用させてもらいました。
+rorm 以外は、カスケードの INSERT, UPDATE, DELETE に対応しているのですが、紹介できなかったのが残念なところです。</p>
+
+<p>O/R マッピングライブラリは盛況のようで、
+今回紹介した以外にも 
+<a href="http://vapor.rubyforge.org/">vapor</a> 
+や 
+<a href="http://enigo.com/projects/kansas/">Kansas</a> 
+といったものもあるのですが、時間と分量の面で折り合いがつかず紹介できませんでした。
+どちらかというと IoC/DI コンテナがメインですが、<a href="http://seasar.sourceforge.jp/">Seasar2</a> の Ruby 実装である <a href="http://homepage1.nifty.com/ryugate/akabeko/">Akabeko</a> も要注目です。
+機会があればこれらも取り上げてみたいと思います。</p>
+
+<p>最後に、忙しい中睡眠時間を削って付き合ってくれた立石さん、動作検証やサンプルコードの作成で協力していただいた かずひこさん、moriq さんに感謝致します。</p>
+
+<h2 id="参考リソース">参考リソース</h2>
+
+<p>[1] Scott W. Ambler, 2003, “Agile Database Techniques: Effective Strategies for the Agile Software Developer”, ISBN:0471202835, MA:John Wiley &amp; Sons Inc</p>
+
+<p>[2] Fowler, Martin, 2002, “Patterns of Enterprise Application Architecture”, Boston, MA:Addison-Wesley.</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>馬場 道明 はソフトウェア技術者です。現在は関西某大学に常駐して、システム運用チームの一員として働いています。</p>
+
+<p>仕事で使ってきたプログラミング言語は、
+C, C++, C#, Perl, PHP と変遷を辿っているので、
+並びからいって次はきっと Python です。
+今のところ Ruby が下働きに甘んじているのが悲しいところです。</p>
+
+<h2 id="ruby-library-report-連載一覧">Ruby Library Report 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0008/0008-RLR.html">Ruby Library Report 【第 6 回】 正規表現と構文解析</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RLR.html">Ruby Library Report 【第 5 回】 数値計算と可視化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RLR.html">Ruby Library Report 【第 4 回】 Win32Utils</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RLR-en.html">Ruby Library Report [No.4] Using Win32Utils (en)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-RLR.html">Ruby Library Report 【第 3 回】 O/R マッピング</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-RLR.html">Ruby Library Report 【第 2 回】 Java との連携</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-RLR.html">Ruby Library Report 【第 1 回】 IoC コンテナ</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://www.agiledata.org/essays/impedanceMismatch.html">The Object-Relational Impedance Mismatch</a>に詳しい&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>上記の邦訳 <a href="http://capsctrl.que.jp/kdmsnr/wiki/agiledata/?TheObject-RelationalImpedanceMismatch">オブジェクト・リレーショナル・インピーダンス・ミスマッチ</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>詳細は http://www.apple.com/jp/webobjects/wo_docs_j.html の “Enterprise Objects Framework Developers Guide” を参照して下さい&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>SQLite でも今回のサンプルのプロトタイプを動かすことができました。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>http://www.yaml.org/&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>http://www.spice-of-life.net/tapkit/ja/TapKitUserGuide_J_c5_s1.html#doc7_1176 によると、「主キー名に id と設定しないでください。主キーを id とすると、オブジェクトにアクセスしても Object#id が呼び出されてしまいます。」とあるので、今回のサンプルのテーブル定義が適切でない可能性があります。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>付属コマンド sds_generate_db_schema.rb で YAML から テーブル定義 SQL を生成すると、この名前でシーケンステーブル名が定義されています。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

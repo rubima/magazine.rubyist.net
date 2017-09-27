@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CGIKit2によるリファレンスマニュアル作り</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0007/0007-CGIKit-2.x.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>CGIKit2によるリファレンスマニュアル作り</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0007/0007-CGIKit-2.x.html" class="hatena-bookmark-button" data-hatena-bookmark-title="CGIKit2によるリファレンスマニュアル作り" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0007/0007-CGIKit-2.x.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0007/0007-CGIKit-2.x.html" data-text="CGIKit2によるリファレンスマニュアル作り">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#cgikit2によるリファレンスマニュアル作り" id="markdown-toc-cgikit2によるリファレンスマニュアル作り">CGIKit2によるリファレンスマニュアル作り</a>    <ul>
+      <li><a href="#対象読者" id="markdown-toc-対象読者">対象読者</a></li>
+      <li><a href="#必要なもの" id="markdown-toc-必要なもの">必要なもの</a></li>
+    </ul>
+  </li>
+  <li><a href="#自分で-rdoc-の文法を解釈するのー" id="markdown-toc-自分で-rdoc-の文法を解釈するのー">自分で RDoc の文法を解釈するのー？</a>    <ul>
+      <li><a href="#情けないなーところでri-って何" id="markdown-toc-情けないなーところでri-って何">情けないなー。ところで、ri って何？</a></li>
+      <li><a href="#ri-のインストール" id="markdown-toc-ri-のインストール">ri のインストール</a></li>
+      <li><a href="#ri-のリファレンスマニュアルのデータのインストール" id="markdown-toc-ri-のリファレンスマニュアルのデータのインストール">ri のリファレンスマニュアルのデータのインストール</a></li>
+      <li><a href="#riの動作確認" id="markdown-toc-riの動作確認">riの動作確認</a></li>
+      <li><a href="#ri-のデータへのアクセス" id="markdown-toc-ri-のデータへのアクセス">ri のデータへのアクセス</a></li>
+    </ul>
+  </li>
+  <li><a href="#メソッドとかクラスとかの情報はこれで手に入るけどどうやってページを作るのさ" id="markdown-toc-メソッドとかクラスとかの情報はこれで手に入るけどどうやってページを作るのさ">メソッドとかクラスとかの情報はこれで手に入るけど、どうやってページを作るのさ</a>    <ul>
+      <li><a href="#ダイレクトアクションって何さー変な言葉使うなよー" id="markdown-toc-ダイレクトアクションって何さー変な言葉使うなよー">ダイレクトアクションって何さー。変な言葉使うなよー。</a></li>
+      <li><a href="#例がないと分かんないー" id="markdown-toc-例がないと分かんないー">例がないと分かんないー</a></li>
+      <li><a href="#なんか前と書き方が違うよー混乱するー" id="markdown-toc-なんか前と書き方が違うよー混乱するー">なんか前と書き方が違うよー。混乱するー。</a></li>
+    </ul>
+  </li>
+  <li><a href="#うーん仕方がない我慢するよーでページの構成は" id="markdown-toc-うーん仕方がない我慢するよーでページの構成は">うーん、仕方がない。我慢するよー。で、ページの構成は？</a>    <ul>
+      <li><a href="#ファイルはー" id="markdown-toc-ファイルはー">ファイルはー？</a></li>
+      <li><a href="#全部手で書いていくの" id="markdown-toc-全部手で書いていくの">全部手で書いていくの？</a></li>
+    </ul>
+  </li>
+  <li><a href="#いろいろ設定するー" id="markdown-toc-いろいろ設定するー">いろいろ設定するー</a>    <ul>
+      <li><a href="#実行ファイルの設定" id="markdown-toc-実行ファイルの設定">実行ファイルの設定</a></li>
+      <li><a href="#cgikitconfrb-の編集" id="markdown-toc-cgikitconfrb-の編集">cgikitconf.rb の編集</a></li>
+    </ul>
+  </li>
+  <li><a href="#肝心のダイレクトアクションってどうするの" id="markdown-toc-肝心のダイレクトアクションってどうするの">肝心のダイレクトアクションってどうするの？</a>    <ul>
+      <li><a href="#list_actiondefault_action" id="markdown-toc-list_actiondefault_action">list_action(default_action)</a></li>
+      <li><a href="#method_action-class_action" id="markdown-toc-method_action-class_action">method_action、 class_action</a></li>
+      <li><a href="#search_action" id="markdown-toc-search_action">search_action</a></li>
+    </ul>
+  </li>
+  <li><a href="#そろそろページを作ろうよ最初は-classlistpage-" id="markdown-toc-そろそろページを作ろうよ最初は-classlistpage-">そろそろページを作ろうよ。最初は ClassListPage ？</a>    <ul>
+      <li><a href="#ri-のクラスやモジュールの名前" id="markdown-toc-ri-のクラスやモジュールの名前">ri のクラスやモジュールの名前</a></li>
+      <li><a href="#クラスモジュールへのリンク" id="markdown-toc-クラスモジュールへのリンク">クラス・モジュールへのリンク</a></li>
+    </ul>
+  </li>
+  <li><a href="#次は順番どおりにいくとclasspageだね" id="markdown-toc-次は順番どおりにいくとclasspageだね">次は順番どおりにいくと、ClassPageだね</a>    <ul>
+      <li><a href="#ri2referenceclasspagesetup" id="markdown-toc-ri2referenceclasspagesetup">RI2Reference::ClassPage#setup</a></li>
+      <li><a href="#classpagehtml-のクラスモジュール名の部分には余分なものが付いてるよー" id="markdown-toc-classpagehtml-のクラスモジュール名の部分には余分なものが付いてるよー">ClassPage.html のクラス・モジュール名の部分には余分なものが付いてるよー</a></li>
+      <li><a href="#概要の部分は変だー" id="markdown-toc-概要の部分は変だー">「概要」の部分は変だー</a></li>
+      <li><a href="#残り" id="markdown-toc-残り">残り</a></li>
+    </ul>
+  </li>
+  <li><a href="#methodpage-は-classpage-とよく似てる" id="markdown-toc-methodpage-は-classpage-とよく似てる">MethodPage は ClassPage とよく似てる？</a></li>
+  <li><a href="#searchresultもう説明する気がないんじゃない" id="markdown-toc-searchresultもう説明する気がないんじゃない">SearchResult…もう説明する気がないんじゃない？</a>    <ul>
+      <li><a href="#じゃあもっと違うページになるようにしろよー" id="markdown-toc-じゃあもっと違うページになるようにしろよー">じゃあ、もっと違うページになるようにしろよー</a></li>
+    </ul>
+  </li>
+  <li><a href="#実行" id="markdown-toc-実行">実行</a></li>
+  <li><a href="#最後に" id="markdown-toc-最後に">最後に</a></li>
+  <li><a href="#参考文献" id="markdown-toc-参考文献">参考文献</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<p>バックナンバー</p>
+
+<ul>
+  <li><a href="http://jp.rubyist.net/magazine/?0006-CGIKit-2.x">CGIKit2.x を用いたアルバム CGI/Web アプリケーション</a></li>
+</ul>
+
+<p>著者: speakillof &lt;speakillof at yahoo dot co dot jp&gt;</p>
+
+<h2 id="cgikit2によるリファレンスマニュアル作り">CGIKit2によるリファレンスマニュアル作り</h2>
+
+<p>皆さん RDoc を使っていますか？ ご存知の方も多いでしょうが、RDoc というのは Ruby スクリプトのコメントに書かれた文章からリファレンスマニュアルを生成するツールです。RDoc は Ruby に標準添付されているので、リファレンスマニュアルを作るために多くの人が利用しています。でも、生成される HTML にはフレームがたくさん付いていて、見にくいと感じる人が多いのではないでしょうか？</p>
+
+<p>RDoc のフレームがうっとおしいという意見</p>
+
+<ul>
+  <li><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/124131">A RDoc template without frames </a></li>
+  <li><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/145720">[ANN] Frameless RDoc template (‘technology preview’)</a></li>
+</ul>
+
+<p>私も見やすいリファレンスマニュアルが欲しいと思う一人です。そこで、この記事では CGIKit と RDoc (というか ri ) を使ってオリジナルのリファレンスマニュアルを作成します。CGIKit の紹介をかねているので、この記事で作るサンプルは解説をしやすくするためシンプルなものにします。</p>
+
+<h3 id="対象読者">対象読者</h3>
+
+<ul>
+  <li>RDoc が生成する HTML を見やすくしたい人
+    <ul>
+      <li>Windows 用には rdoc の f オプションで chm を使った方が幸せになれます。</li>
+    </ul>
+  </li>
+  <li>CGI の GET/POST について理解している人</li>
+  <li><a href="/articles/0006/0006-CGIKit-2.x.html">前回のCGIKit 2.x の記事</a> を読んだ人、もしくは、<a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi">CGIKit の Wiki</a> のチュートリアルを5章まで読んだ人</li>
+</ul>
+
+<h3 id="必要なもの">必要なもの</h3>
+
+<ul>
+  <li>Ruby-1.8.2
+    <ul>
+      <li>標準添付されている WEBrick、 REXML、 RDoc、 ri</li>
+    </ul>
+  </li>
+  <li>cgikit-2.0.0-preview1</li>
+  <li>サンプルのソース  <a href="/images/0007-CGIKit-2.x/ri2ref_sample.zip">ri2ref_sample.zip</a></li>
+</ul>
+
+<p>インストールの方法については <a href="/articles/0006/0006-CGIKit-2.x.html">前回の記事</a> や CGIKit の Wiki を参照してください。</p>
+
+<h2 id="自分で-rdoc-の文法を解釈するのー">自分で RDoc の文法を解釈するのー？</h2>
+
+<p>それは面倒なので、今回は ri のデータを利用することにします。</p>
+
+<h3 id="情けないなーところでri-って何">情けないなー。ところで、ri って何？</h3>
+
+<p>ri は <a href="http://i.loveruby.net/ja/prog/refe.html">refe</a> と同じくコマンドラインからリファレンスマニュアルを検索するツールです。ri は RDoc の一部であり、ri のデータは RDoc を使って生成されます。ri について詳しく知りたい場合は <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=ri">http://www.ruby-lang.org/ja/man/?cmd=view;name=ri</a> を参照してください。</p>
+
+<h3 id="ri-のインストール">ri のインストール</h3>
+
+<p>通常、ruby のインストールが終わると、一緒に ri がインストールされます。ri のある場所は ruby と同じディレクトリ(フォルダ)です。何も設定せずに Ruby One Click Installer をインストールした場合は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> C:\Program Files\ruby\bin\ri</code></pre></figure>
+
+<p>に ri があります。Unix 系 OS をお使いの人は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ which ri</code></pre></figure>
+
+<p>として、どこに ri がインストールされているか確かめてみてください。</p>
+
+<h3 id="ri-のリファレンスマニュアルのデータのインストール">ri のリファレンスマニュアルのデータのインストール</h3>
+
+<p>ri がインストールされていても、ri のデータが無いことがあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (rubyのインストールパス)/share/ri
+ (ホームディレクトリ)/.rdoc</code></pre></figure>
+
+<p>に ri のデータがあるか確かめてみましょう(他のディレクトリにインストールされていることもあります)。</p>
+
+<p>環境設定で変化しますが、Windows で Ruby One Click Installer を使っている人は上のそれぞれのディレクトリが</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">C:\Program Files\ruby\share\ri
+C:\Documents and Settings\(ユーザー名)\.rdoc</code></pre></figure>
+
+<p>になります。</p>
+
+<p>もし、 ri のデータがない場合は Ruby のソースを取ってきて</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ tar xvzf ruby-1.8.x.tar.gz
+$ cd ruby-1.8.x
+$./configure --prefix=/hogehoge/
+$ make
+# make install
+# make install-doc</code></pre></figure>
+
+<p>として下さい($はユーザーを、#はrootを表します)。コンパイルする環境があればこれで /hogehoge/share/ 以下に ri のデータがインストールされますので、上記のディレクトリにコピーしてください。</p>
+
+<p>コンパイルする環境が無い人は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rdoc --ri (ディレクトリ)</code></pre></figure>
+
+<p>とすることで ri 用のリファレンスマニュアルのデータが作られます。例えば、CGIKit なら下のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rdoc --ri cgikit-2.0.0-preview1/lib/</code></pre></figure>
+
+<p>これで自分のホームディレクトリの下に CGIKit の ri のデータがインストールされます。</p>
+
+<h3 id="riの動作確認">riの動作確認</h3>
+
+<p>ri のデータがインストールされているか試してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ri Array
+$ ri Hash#[]
+$ ri CGIKit::Application</code></pre></figure>
+
+<h3 id="ri-のデータへのアクセス">ri のデータへのアクセス</h3>
+
+<p>今回作成するリファレンスマニュアルには ri のデータを使うわけですが、そのためには ri の データにアクセスする必要があります。RDoc には ri のデータにアクセスするためのクラス( rdoc/ri/ri_reader.rb の RI::RiReader )が用意されており、この記事ではそのクラスをラッピングしたライブラリを使用します。</p>
+
+<p>ファイルの名前は ri2ref_utils.rb です。CGIKit と関係がないので、実装についてはすべて省略し、各メソッドについては後ほど紹介します。<a href="/images/0007-CGIKit-2.x/ri2ref_utils.rb">ri2ref_utils.rb</a></p>
+
+<h2 id="メソッドとかクラスとかの情報はこれで手に入るけどどうやってページを作るのさ">メソッドとかクラスとかの情報はこれで手に入るけど、どうやってページを作るのさ</h2>
+
+<p>今回はダイレクトアクションという機能を使います。ダイレクトアクションには下のような利点があります。</p>
+
+<ul>
+  <li>処理が軽い</li>
+  <li>CGIのGET/POSTになれている人には処理の流れが分かりやすい</li>
+  <li>ページへのブックマークが可能になる</li>
+</ul>
+
+<p>最後の利点は <a href="/articles/0006/0006-CGIKit-2.x.html">前回の記事</a> で言われた文句のうち</p>
+
+<ul>
+  <li>URL に変な文字列がある</li>
+</ul>
+
+<p>を解決することになります(前回のアルバム CGI で見られた URL の変な文字列というのは session ID、 context ID と呼ばれるものです)。</p>
+
+<p>ダイレクトアクションを使うことで CGIKit の幾つかの機能が使いにくくなりますが、今回の記事の範囲ならダイレクトアクションを使っても困ることはありません。</p>
+
+<h3 id="ダイレクトアクションって何さー変な言葉使うなよー">ダイレクトアクションって何さー。変な言葉使うなよー。</h3>
+
+<p>簡単に言うと、アクセスされた URL と Ruby のメソッドを結びつけることを言います。例えば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> http://www.hogehoge.com/hoge.cgi</code></pre></figure>
+
+<p>が CGIKit の CGI スクリプトとします。この時に</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> http://www.hogehoge.com/hoge.cgi/d/Hoge/foo</code></pre></figure>
+
+<p>にアクセスすると、Hoge というクラスの foo_action というメソッドが実行されます。URL の /d/ というのはダイレクトアクションを使うという目印です。URL の /d/ の次の部分の Hoge はクラス名、その次の foo が呼び出されるメソッド名を示します。この URL に対して Hoge#foo_action メソッドが対応することから分かるようにaction という接尾語が付いていないメソッドは呼び出すことができません。ダイレクトアクションの詳細については CGIKit の Wiki に説明がありますので、そちらに任せます。</p>
+
+<h3 id="例がないと分かんないー">例がないと分かんないー</h3>
+
+<p>ダイレクトアクションを使った簡単な例を紹介します。</p>
+
+<p>RI2Reference/hoge/hoge.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'cgikit'</span>
+<span class="nb">require</span> <span class="s1">'webrick'</span>
+<span class="nb">require</span> <span class="s1">'cgikit/webrick'</span>
+
+<span class="k">class</span> <span class="nc">HogePage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
+  <span class="kp">attr_accessor</span> <span class="ss">:title</span>
+  
+  <span class="k">def</span> <span class="nf">init</span>
+    <span class="vi">@title</span> <span class="o">=</span> <span class="s1">'Hoge'</span>
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">FooPage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
+  
+  <span class="kp">attr_accessor</span> <span class="ss">:body</span>
+  
+  <span class="k">def</span> <span class="nf">init</span>
+    <span class="vi">@body</span> <span class="o">=</span> <span class="s1">'FOO'</span>
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">HogeAction</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">DirectAction</span>
+  
+  <span class="k">def</span> <span class="nf">hoge_action</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">HogePage</span><span class="p">)</span>
+    <span class="n">a</span><span class="p">.</span><span class="nf">title</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">title</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s1">'%Y%m%d'</span><span class="p">)</span> 
+    <span class="n">a</span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">foo_action</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">FooPage</span><span class="p">)</span>
+    <span class="n">a</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">body</span> <span class="o">+</span> <span class="s1">' '</span> <span class="o">+</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nf">to_s</span>
+    <span class="n">a</span>
+  <span class="k">end</span>
+  
+  <span class="k">alias</span> <span class="n">default_action</span> <span class="n">hoge_action</span>
+  
+<span class="k">end</span>
+
+
+
+<span class="k">if</span> <span class="vg">$0</span> <span class="o">==</span> <span class="kp">__FILE__</span>
+  <span class="n">port</span> <span class="o">=</span> <span class="p">(</span><span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span> <span class="o">||</span> <span class="mi">8080</span><span class="p">).</span><span class="nf">to_i</span>
+  
+  <span class="n">app</span> <span class="o">=</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">new</span>
+  <span class="n">app</span><span class="p">.</span><span class="nf">direct_action_class</span> <span class="o">=</span> <span class="no">HogeAction</span>
+  
+  <span class="n">server</span> <span class="o">=</span> <span class="no">WEBrick</span><span class="o">::</span><span class="no">HTTPServer</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span><span class="ss">:Port</span> <span class="o">=&gt;</span> <span class="n">port</span><span class="p">})</span>
+  <span class="n">server</span><span class="p">.</span><span class="nf">mount</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="no">WEBrick</span><span class="o">::</span><span class="no">CGIKitServlet</span><span class="o">::</span><span class="no">ApplicationHandler</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span>
+  
+  <span class="nb">trap</span><span class="p">(</span><span class="s2">"INT"</span><span class="p">){</span> <span class="n">server</span><span class="p">.</span><span class="nf">shutdown</span> <span class="p">}</span>
+  <span class="n">server</span><span class="p">.</span><span class="nf">start</span>  
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>各ページの HTML や ckd ファイルは省略します。この例では hoge.rb に HogePage、 FooPage というページと HogeAction というダイレクトアクションが定義されています。WEBrick用に作ってあるので、試しに RI2Reference/hoge に移動して</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby hoge.rb</code></pre></figure>
+
+<p>で実行して <a href="http://localhost:8080/">http://localhost:8080/</a> にアクセスしてみてください。</p>
+
+<p>…エラーになりましたね？ CGIKit::Application にダイレクトアクションの設定をしていない場合、/d/を付けないと CGIKit はダイレクトアクションを使用しません。そのため <a href="http://localhost:8080/">http://localhost:8080/</a> にアクセスすると、 CGIKit::Application#main に設定されたページを表示させようとします(このサンプルの場合はMainPage)。残念ながらこのサンプルには MainPage が定義されていませんので、エラーメッセージが表示されます。</p>
+
+<p>次に <a href="http://localhost:8080/d/HogeAction/hoge">http://localhost:8080/d/HogeAction/hoge</a> にアクセスしてみましょう。今度は HogePage が表示されますね。 /d/ の付いた URL にアクセスがあると、CGIKit が該当するメソッドを判定してそのメソッドを呼び出します。この場合は HogeAction#hoge_action ですね。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def hoge_action
+   a = page(HogePage)
+   a.title = a.title + ' ' + Time.now.strftime('%Y%m%d')
+   a
+ end</code></pre></figure>
+
+<p>HogeAction#hoge_action では CGIKit::DirectAcion#page を使って HogePage というページを生成します。このオブジェクトが HogeAction#hoge_action の返値になるので、HogePage が表示されます。ダイレクトアクションの返値は CGIKit によって表示されます。</p>
+
+<p>今度は <a href="http://localhost:8080/d/HogeAction/foo">http://localhost:8080/d/HogeAction/foo</a> にアクセスしてみましょう。予想したとおりになったでしょうか？ この場合は HogeAction#foo_action が実行されて FooPage が表示されます。</p>
+
+<p>では、 <a href="http://localhost:8080/d/HogeAction">http://localhost:8080/d/HogeAction</a> にアクセスしてみてください。メソッド名が指定されていないので、エラーになると考えた人が多いのではないでしょうか？ メソッドの指定がない場合や該当するメソッドがない場合、CGIKit は default_action を呼びます。このサンプルでは HogeAction#default_action は HogeAction#hoge_action のエイリアスですので、 HogePage が表示されます。</p>
+
+<p>最後は <a href="http://localhost:8080/d/foo">http://localhost:8080/d/foo</a> にアクセスして下さい。FooPage が表示されますね。 CGIKit::Application#direct_action_class にダイレクトアクションのクラスを設定すると、CGIKit はクラス名の指定がない時に CGIKit::Application#direct_action_class に指定されたクラスを使います。</p>
+
+<h3 id="なんか前と書き方が違うよー混乱するー">なんか前と書き方が違うよー。混乱するー。</h3>
+
+<p>うーん。今のところ CGIKit で URL に Session ID、 Context ID を入れない方法はこの方法しかありません。現時点では諦めてください…。</p>
+
+<h2 id="うーん仕方がない我慢するよーでページの構成は">うーん、仕方がない。我慢するよー。で、ページの構成は？</h2>
+
+<p>主なページは 4 つあります。それぞれの名前は</p>
+
+<ul>
+  <li>ClassListPage</li>
+  <li>ClassPage</li>
+  <li>MethodPage</li>
+  <li>SearchResult</li>
+</ul>
+
+<p>です。ClassListPage は ri にあるクラス・モジュールの一覧を表示し、 ClassPage はクラス・モジュールの情報を、MethodPage はメソッドの情報を表示させます。また、URL から検索可能にするため SearchResult に検索結果を表示させます。</p>
+
+<h3 id="ファイルはー">ファイルはー？</h3>
+
+<p>大雑把に下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">RI2Reference
+  │
+  ├─ lib
+  │    │
+  │    ├─ application.rb
+  │    │
+  │    ├─ directaction.rb
+  │    │
+  │    └─ ri2ref_utils.rb
+  │
+  ├─ components
+  │    │
+  │    └─ ここに多数のファイル
+  │         ClassListPage、 ClassPage、 MethodPage、 SearchResult など
+  │
+  ├─ www
+  │    │
+  │    └─ ref.css
+  │
+  ├─ cgikitconf.rb
+  │
+  ├─ RI2Reference.rb(WEBrick)
+  │
+  ├─ RI2Reference.cgi(CGI)
+  │
+  └─ RI2Reference.rbx(mod_ruby)</code></pre></figure>
+
+<p>components 以下のファイルを省いてありますので、完全な構成を知りたい場合はサンプルをダウンロードしてください。<a href="/images/0007-CGIKit-2.x/ri2ref_sample.zip">ri2ref_sample.zip</a></p>
+
+<h3 id="全部手で書いていくの">全部手で書いていくの？</h3>
+
+<p>前回紹介した ckproject を使用すると、少し楽ができます。cgikit-2.x.x に CGIKit のソースがあると仮定すると、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby cgikit-2.x.x/bin/ckproject RI2Reference</code></pre></figure>
+
+<p>で、上とよく似た構成のファイル/ディレクトリが出来上がります。
+足りないものは components 以下のファイルと lib/ri2ref_utils.rb、 www 
+ディレクトリです。余分なものは lib/session.rb、 resources ディレクトリです。
+余分なファイル/ディレクトリは削除しても構いません。</p>
+
+<p>簡単にそれぞれのファイル/ディレクトリの紹介をします。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>lib/application.rb</td>
+      <td>RI2Reference::Application が定義されています。このクラスは CGIKit::Application を継承していますが、特にいじる所はありません。今回は CGIKit::Application の代わりに RI2Reference::Application を使います。</td>
+    </tr>
+    <tr>
+      <td>lib/directaction.rb</td>
+      <td>RI2Reference::DirectAction があります。これは CGIKit::DirectAction の子クラスで、今回のダイレクトアクションのためのクラスです。これから作るページはこのクラスから呼ばれます。</td>
+    </tr>
+    <tr>
+      <td>lib/ri2ref_utils.rb</td>
+      <td>ri のデータを扱うための RI2Reference::Utils が定義されています。</td>
+    </tr>
+    <tr>
+      <td>components ディレクトリ</td>
+      <td>ClassListPage、 ClassPage、 MethodPage、 SearchResult などのファイルがあります。</td>
+    </tr>
+    <tr>
+      <td>www/ref.css</td>
+      <td>今回使用する CSS ファイルです。</td>
+    </tr>
+    <tr>
+      <td>cgikitconf.rb</td>
+      <td>CGIKit の設定ファイルです。</td>
+    </tr>
+    <tr>
+      <td>RI2Reference.rb、 RI2Reference.cgi、 RI2Reference.rbx</td>
+      <td>起動用ファイルです。それぞれ WEBrick、 CGI、 mod_ruby 用です。今回は WEBrick しか使いません。ちなみに mod_ruby は CVS の CGIKit でしか使えませんので、注意して下さい。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="いろいろ設定するー">いろいろ設定するー</h2>
+
+<h3 id="実行ファイルの設定">実行ファイルの設定</h3>
+
+<p>今回も WEBrick で開発を行います(CGI 用のスクリプトは省略します。前回の内容を踏まえて御自分でいじってみて下さい)。それでは ckproject によって生成された RI2Reference.rb を変更しましょう。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="c1"># RI2Reference.rb [port]</span>
+
+<span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="s1">'lib'</span><span class="p">)</span>
+<span class="nb">require</span> <span class="s1">'webrick'</span>
+<span class="nb">require</span> <span class="s1">'cgikit-all'</span>
+<span class="nb">require</span> <span class="s1">'cgikit/webrick'</span>
+<span class="nb">require</span> <span class="s1">'application'</span>
+<span class="nb">require</span> <span class="s1">'directaction'</span>
+
+<span class="n">port</span> <span class="o">=</span> <span class="p">(</span><span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span> <span class="o">||</span> <span class="mi">8080</span><span class="p">).</span><span class="nf">to_i</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">load_all_components</span><span class="p">(</span><span class="s1">'./components'</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">load_configuration</span><span class="p">(</span><span class="s1">'./cgikitconf.rb'</span><span class="p">)</span>
+
+<span class="n">app</span><span class="p">.</span><span class="nf">direct_action_class</span> <span class="o">=</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">DirectAction</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">default_request_handler</span> <span class="o">=</span> <span class="n">app</span><span class="p">.</span><span class="nf">direct_action_request_handler</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="no">WEBrick</span><span class="o">::</span><span class="no">HTTPServer</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span><span class="ss">:Port</span> <span class="o">=&gt;</span> <span class="n">port</span><span class="p">})</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">mount</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="no">WEBrick</span><span class="o">::</span><span class="no">CGIKitServlet</span><span class="o">::</span><span class="no">ApplicationHandler</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">mount</span><span class="p">(</span><span class="s1">'/www'</span><span class="p">,</span> <span class="no">WEBrick</span><span class="o">::</span><span class="no">HTTPServlet</span><span class="o">::</span><span class="no">FileHandler</span><span class="p">,</span> <span class="s1">'./www'</span><span class="p">)</span>
+
+<span class="nb">trap</span><span class="p">(</span><span class="s2">"INT"</span><span class="p">){</span> <span class="n">server</span><span class="p">.</span><span class="nf">shutdown</span> <span class="p">}</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">start</span>
+
+</code></pre>
+</div>
+
+<p>最初に 18・19行目の</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">app.direct_action_class = RI2Reference::DirectAction
+app.default_request_handler = app.direct_action_request_handler</code></pre></figure>
+
+<p>を追加します。これはダイレクトアクションの設定です。1つ目は今回使用するダイレクトアクションがどのクラスかということを CGIKit::Application に伝えます。二つ目は…おまじないと思っていて下さい。</p>
+
+<p>もう一つ追加する部分は23行目です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">server.mount('/www', WEBrick::HTTPServlet::FileHandler, './www')</code></pre></figure>
+
+<p>これは css ファイルを読み込むための設定です。変更しなくても見栄えは悪いですが、動きます。それと、ファイルの先頭にある</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'session'</code></pre></figure>
+
+<p>を削っておきましょう。</p>
+
+<p>修正する部分はこれでおしまいですが、見なれない部分があるので、補足しておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> app.load_all_components('./components')
+ app.load_configuration('./cgikitconf.rb')</code></pre></figure>
+
+<p>15行目の CGIKit::Application#load_all_components は 指定されたディレクトリの <em>.rb をすべて require します。これでいちいち require しなくても良くなりますが、</em>.rb と名前が付けば何でもかんでも require するので、注意が必要です。16行目の CGIKit::Application#load_configuration は設定ファイルの読み込みです。</p>
+
+<p>この修正をした RI2Reference.rb を実行すると、 <a href="http://localhost:8080/">http://localhost:8080/</a> に
+WEBrick のサーバーが起動します。/www 以下に
+アクセスがある場合はその URL に該当するファイルが www ディレクトリから探索されます。
+/www 以外の URL にアクセスすると、RI2Reference::DirectAction によって
+生成されたページが表示されます。</p>
+
+<h3 id="cgikitconfrb-の編集">cgikitconf.rb の編集</h3>
+
+<p>cgikitconf.rb の最初に</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'ri2ref_utils'</code></pre></figure>
+
+<p>の一行を加えます。これでどこからでも RI2Reference::Utils を使うことができます。それと @main への RI2Reference::MainPage を代入する部分をコメントにします。今回は CGIKit::Application#main を使いませんし、 RI2Reference::MainPage がないので、この行無効にしないとエラーになってしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   def configure_component
+
+     # Main page:
+     # If session ID or context ID aren't specified, this component is shown.
+     #@main = RI2Reference::MainPage</code></pre></figure>
+
+<p>他にも色々設定することが出来ますが、今回は説明しません。</p>
+
+<h2 id="肝心のダイレクトアクションってどうするの">肝心のダイレクトアクションってどうするの？</h2>
+
+<p>上で HogeAction の例を見せましたが、同じように CGIKit::DirectAction を継承したクラスを書いてそこにメソッドを定義します。今回定義するダイレクトアクションのクラスは RI2Reference::DirectAction  です。そこに 4 つのメソッドを定義します。クラスを置く場所は lib/direcaction.rb です。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'ri2ref_utils'</span>
+
+<span class="k">module</span> <span class="nn">RI2Reference</span>
+
+  <span class="k">class</span> <span class="nc">DirectAction</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">DirectAction</span>
+    
+    <span class="k">def</span> <span class="nf">list_action</span>
+      <span class="n">pg</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">ClassListPage</span><span class="p">)</span>
+      <span class="n">pg</span><span class="p">.</span><span class="nf">list</span> <span class="o">=</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">Utils</span><span class="p">.</span><span class="nf">get_all_class_names</span>
+      
+      <span class="n">pg</span>
+    <span class="k">end</span>
+    
+    <span class="k">def</span> <span class="nf">class_action</span>
+      <span class="n">pg</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">ClassPage</span><span class="p">)</span>
+      <span class="n">full_name</span> <span class="o">=</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Utilities</span><span class="p">.</span><span class="nf">unescape_url</span><span class="p">(</span> <span class="n">request</span><span class="p">.</span><span class="nf">form_value</span><span class="p">(</span><span class="s1">'n'</span><span class="p">)</span> <span class="p">)</span>
+      <span class="n">pg</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">Utils</span><span class="p">.</span><span class="nf">get_class_description</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span> <span class="p">)</span>
+      
+      <span class="n">pg</span> 
+    <span class="k">end</span>
+    
+    <span class="k">def</span> <span class="nf">method_action</span>
+      <span class="n">pg</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">MethodPage</span><span class="p">)</span>
+      <span class="n">full_name</span> <span class="o">=</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Utilities</span><span class="p">.</span><span class="nf">unescape_url</span><span class="p">(</span> <span class="n">request</span><span class="p">.</span><span class="nf">form_value</span><span class="p">(</span><span class="s1">'n'</span><span class="p">)</span> <span class="p">)</span>
+      <span class="n">pg</span><span class="p">.</span><span class="nf">setup</span><span class="p">(</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">Utils</span><span class="p">.</span><span class="nf">get_method_description</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span> <span class="p">)</span>
+      
+      <span class="n">pg</span>
+    <span class="k">end</span>
+    
+    <span class="c1"># gorgeous implementation</span>
+    <span class="k">def</span> <span class="nf">search_action</span>      
+      <span class="n">keys</span> <span class="o">=</span> <span class="n">request</span><span class="p">.</span><span class="nf">form_values</span><span class="p">.</span><span class="nf">keys</span>
+      <span class="k">if</span> <span class="n">keys</span><span class="p">.</span><span class="nf">empty?</span>
+        <span class="n">list_action</span>
+      <span class="k">else</span>
+        <span class="n">keyword</span> <span class="o">=</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Utilities</span><span class="p">.</span><span class="nf">unescape_url</span><span class="p">(</span> <span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">to_s</span> <span class="p">)</span> 
+        <span class="n">results</span> <span class="o">=</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">Utils</span><span class="p">.</span><span class="nf">search_name</span><span class="p">(</span><span class="n">keyword</span><span class="p">)</span>        
+        <span class="n">all_classes</span> <span class="o">=</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">Utils</span><span class="p">.</span><span class="nf">get_all_class_names</span>
+        
+        <span class="nb">methods</span> <span class="o">=</span> <span class="n">results</span> <span class="o">-</span> <span class="n">all_classes</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="n">results</span> <span class="o">&amp;</span> <span class="n">all_classes</span>
+        
+        <span class="n">pg</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">SearchResult</span><span class="p">)</span>
+        <span class="n">pg</span><span class="p">.</span><span class="nf">method_list</span> <span class="o">=</span> <span class="nb">methods</span>
+        <span class="n">pg</span><span class="p">.</span><span class="nf">class_list</span> <span class="o">=</span> <span class="n">classes</span>
+        <span class="n">pg</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    
+    <span class="k">alias</span> <span class="n">default_action</span> <span class="n">list_action</span>
+        
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>ダイレクトアクションによって呼び出されるのはページではなくメソッドです。紹介した4つのページはすべてダイレクトアクションを通じて CGIKit によって表示されます。URL、 メソッド、 表示されるページの関係は下のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>URL</td>
+      <td>Method</td>
+      <td>ページ</td>
+    </tr>
+    <tr>
+      <td><a href="http://localhost:8080/d/list">http://localhost:8080/d/list</a></td>
+      <td>list_action</td>
+      <td>ClassListPage</td>
+    </tr>
+    <tr>
+      <td><a href="http://localhost:8080/d/class">http://localhost:8080/d/class</a></td>
+      <td>class_action</td>
+      <td>ClassPage</td>
+    </tr>
+    <tr>
+      <td><a href="http://localhost:8080/d/method">http://localhost:8080/d/method</a></td>
+      <td>method_action</td>
+      <td>MethodPage</td>
+    </tr>
+    <tr>
+      <td><a href="http://localhost:8080/d/search">http://localhost:8080/d/search</a></td>
+      <td>search_action</td>
+      <td>SearchResult</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>各ページの遷移先は下のようになりますが、各ページの内容を見ないと下のように遷移するという事は分からないと思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ClassListPage ────&gt; ClassPage ─────&gt; MethodPage
+(list_action)       (class_action)       (method_action)
+
+
+ SearchResult  ─┬─&gt; ClassPage
+(search_action)  │  (class_action)
+                 │
+               └─&gt; MethodPage
+                  (method_action)</code></pre></figure>
+
+<p>では、それぞれのメソッドについて見てみましょう。</p>
+
+<h3 id="list_actiondefault_action">list_action(default_action)</h3>
+
+<p>ダイレクトアクションのメソッドの指定がない場合や無効なメソッドが指定された場合に実行されるメソッドです。 CGIKit::DirectAction#page (実装は前回使った CGIKit::Component#page と同じ) を呼び出して ClassListPage を生成し、それに表示したいクラス・モジュールの一覧を ClassListPage#list に設定します。後は CGIKit が ClassListPage を表示してくれます。</p>
+
+<p>表示したいクラス・モジュールの一覧は RI2Reference::Utils.get_all_class_names で取得します。実行例は下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p RI2Reference::Utils.get_all_class_names
+["Abbrev", "Array", ...  "Zlib::VersionError", "Zlib::ZStream"]</code></pre></figure>
+
+<h3 id="method_action-class_action">method_action、 class_action</h3>
+
+<p>今回は <a href="http://localhost:8080/d/class?n=Array">http://localhost:8080/d/class?n=Array</a> のように GET を用いてクエリーを渡し、どのメソッド・クラス・モジュールを表示したいのかを決定します。そのためプログラム側でクエリーに指定されたメソッド・クラス・モジュール名を取得する必要があります。前回のようにダイレクトアクションを使わない場合は、この部分を CGIKit が行ってくれるのですが、今回は自分でやらなければなりません。</p>
+
+<p>GET/POST の値は CGIKit::Request に格納されており、CGIKit::DirectAction (CGIKit::Component) からは request メソッドを使って CGIKit::Request のオブジェクトにアクセスすることが出来ます。取得した CGIKit::Reuqest オブジェクトに対して CGIKit::Reuqest#form_value を使うことで GET で指定された値にアクセスすることが出来ます。</p>
+
+<p>例えば、<a href="http://localhost:8080/d/class?n=Array">http://localhost:8080/d/class?n=Array</a> に対して request.form_value(‘n’) を実行すると、’Array’ という文字列を得ることが出来ます。この値は URL エンコードされていますので、CGIKit::Utilities.unescape_url を使って元の文字列に戻します。</p>
+
+<p>次に、得られた名前に対応する ri のデータを取得します。この役目は RI2Reference::Utils.get_{class、method}_entry が担当します。取得した ri のデータは ClassPage、 MethodPage のオブジェクトの setup というメソッドで設定します。</p>
+
+<p>ClassPage#setup、 MethodPage#setup については後ほど説明します。RI2Reference::Utils.get_{class、 method}_entry についてもそこで紹介します。</p>
+
+<h3 id="search_action">search_action</h3>
+
+<p>URL の「?」の後ろの文字列、つまり、GETによるクエリーのデータに対して検索を行います。例えば、 <a href="http://localhost:8080/d/search?push">http://localhost:8080/d/search?push</a> にアクセスされた時は「push」に対して検索を行います。</p>
+
+<p>すでに述べたように CGIKit::Request#form_value でクエリーのデータにアクセスすることができますが、この方法ではクエリーデータのキーにはアクセスできません
+(上の例では push がクエリーデータのキーです)。</p>
+
+<p>そこで、クエリーデータの元に近い形のオブジェクトを使うことにします。
+CGIKit::Request#form_values にはクエリーデータが
+Hash のデータとして格納されているので、32行目で</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">keys = request.form_values.keys</code></pre></figure>
+
+<p>としてクエリーデータのキーのすべてを取得します。
+もし、検索ワードが指定されていれば keys は空の配列になりません。
+次に36行目で</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">keys[0].to_s</code></pre></figure>
+
+<p>として「push」に相当する文字列を取得します(多分 to_s はなくても大丈夫です)。37-41行でその文字列に一致するメソッド名の配列を methods に、 クラス・モジュール名の配列を classes に格納しています。</p>
+
+<p>search_action で使われている
+RI2Reference::Utils.search_name(str) は str を含む
+メソッド・クラス・モジュール名を検索し、その結果を配列として返します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p RI2Reference::Utils.search_name('String')
+ ["Kernel#String",
+  "PathnameTest::AnotherStringLike",
+  "String",
+  "String::new",
+    ...
+  "StringScanner#terminate",
+  "StringScanner#unscan",
+  "StringScanner::Error"]</code></pre></figure>
+
+<p>また、 RI2Reference::Utils.get_all_names は ri にある
+メソッド・クラス・モジュールの名前一覧です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p RI2Reference::Utils.get_all_names
+["Abbrev","Abbrev#abbrev", "ArgumentError", "Array", "Array::[]", ... , "Zlib::ZStream#total_out"]</code></pre></figure>
+
+<p>この後の処理は CGIKit とは直接関係がないので、ふーんと思っていて下さい。ちなみにこの実装は<a href="http://pitecan.com/articles/Bit/Fugo/fugo.html">富豪的</a>です。検索文字列に一致する項目が見つけたら、 SearchResult にその結果を設定します。</p>
+
+<p>34行目は検索する文字列が指定されていない場合の処理です。この時は ClassListPage を表示させます。list_action の返す値は ClassListPage なので、そのまま list_action を実行するだけです。</p>
+
+<h2 id="そろそろページを作ろうよ最初は-classlistpage-">そろそろページを作ろうよ。最初は ClassListPage ？</h2>
+
+<p>そうですね。じゃあ、最初は ClassListPage にしましょうか。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">RI2Reference</span>
+  
+  <span class="k">class</span> <span class="nc">ClassListPage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
+  
+    <span class="kp">attr_accessor</span> <span class="ss">:i</span><span class="p">,</span> <span class="ss">:list</span>
+    
+    <span class="k">def</span> <span class="nf">query</span>
+      <span class="p">{</span><span class="s1">'n'</span> <span class="o">=&gt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Utilities</span><span class="p">.</span><span class="nf">escape_url</span><span class="p">(</span><span class="vi">@i</span><span class="p">)</span> <span class="p">}</span>
+    <span class="k">end</span>
+  
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:rep</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:list</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>  
+  <span class="p">},</span>
+  
+  <span class="ss">:class_link</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Link</span><span class="p">,</span>
+    <span class="ss">:string</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>
+    <span class="ss">:action_class</span> <span class="o">=&gt;</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">DirectAction</span><span class="p">,</span>
+    <span class="ss">:direct_action</span> <span class="o">=&gt;</span> <span class="s1">'class'</span><span class="p">,</span>
+    <span class="ss">:query</span> <span class="o">=&gt;</span> <span class="ss">:query</span><span class="p">,</span>
+    <span class="ss">:session_id</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+  <span class="p">},</span>
+  
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p><img src="/images/0007-CGIKit-2.x/ClassListPage.html" alt="ClassListPage.html" />
+<img src="/images/0007-CGIKit-2.x/list.jpg" alt="list.jpg" /></p>
+
+<p>このページは RI2Reference::DirectAction#list_action によって表示されるページです。ここでは ri から取得できるクラス・モジュールの一覧を表示します。ユーザーはこのページを基点として各マニュアルを参照します。</p>
+
+<h3 id="ri-のクラスやモジュールの名前">ri のクラスやモジュールの名前</h3>
+
+<p>ri で取得できるすべてのクラス・モジュールの名前は RI2Reference::Utils.get_all_class_names で取得できます。すでにそのリストが @list に格納されていますので、これを使って各クラス・モジュールのページへのリンクを張ります。@list のクラス・モジュール名を CGIKit::Repetition の item 属性で ClassListPage の @i に格納し、リンクを繰り返し表示させます。</p>
+
+<p>今回はHTMLに目印を付けるために ckid 属性を用いています。繰り返されるのは下の HTML の &lt;li&gt; … &lt;/li&gt; です。&lt;a ckid=’class_link’&gt; が各クラス・モジュールへのリンクになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div ckid='rep'&gt;
+  &lt;li&gt; &lt;a ckid='class_link' /&gt; &lt;/li&gt;
+&lt;/div&gt;</code></pre></figure>
+
+<p>この辺りの処理が理解しづらい人は CGIKit の Wiki を参照してください。</p>
+
+<h3 id="クラスモジュールへのリンク">クラス・モジュールへのリンク</h3>
+
+<p>リンクの生成には前回同様 CGIKit::Link を使います。ソースを見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> :class_link =&gt; {
+   :element =&gt; Link,
+   :string =&gt; :i,
+   :action_class =&gt; RI2Reference::DirectAction,
+   :direct_action =&gt; 'class',
+   :query =&gt; :query,
+   :session_id =&gt; false
+ },</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def query
+   {'n' =&gt; CGIKit::Utilities.escape_url(@i) }
+ end</code></pre></figure>
+
+<p>前回は href 属性を使いましたが、今回は action_class、 direct_action、 query、 session_id 属性が使われていますね。</p>
+
+<p>action_class にはダイレクトアクションに使用するクラスを指定します。今回は RI2Reference::DirectAction ですね。direct_action は呼び出したいメソッド名です。ここにはメソッド名から action を除いた部分を指定します。ClassListPage からはクラスのマニュアルを表示させるので、指定する値は “class” となります。</p>
+
+<p>query 属性は クエリーに指定する値のペア(Hashのオブジェクト)です。ここで指定した値は CGIKit::Link が生成する URL に付加されます。</p>
+
+<p>例えば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> query =&gt; {'hoge' =&gt; '123'}</code></pre></figure>
+
+<p>とすると、URL には</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ...#hoge=123</code></pre></figure>
+
+<p>という GET のクエリーデータが付加されます。query の値は CGIKit 側で自動的に URL エンコードされます。先ほど述べたようにここで指定した値が RI2Reference::DirectAction#class_action で参照されます。</p>
+
+<p>前回は一般的な CGI スクリプトで使用される GET/POST を使いませんでしたが、これは CGIKit がセッションや GET/POST の部分を自動的に処理してくれたからです。今回のようにダイレクトアクションを使用する場合はセッションや GET/POST の処理が自動的には行われませんので、query 属性等を使って自分で GET/POST を処理しなくてはなりません。</p>
+
+<p>session_id 属性は URL にsession ID を付加するかどうかを決定します。これを有効にすると URL に変な文字列が付いてしまうので無効にします。無効にするには session_id 属性に false を指定します。</p>
+
+<p>この設定で</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;li&gt; &lt;a ckid='class_link' /&gt; &lt;/li&gt;</code></pre></figure>
+
+<p>の部分は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;li&gt; &lt;a href='http://localhost:8080/d/class?n=Array' /&gt; &lt;/li&gt;</code></pre></figure>
+
+<p>のようになります。先ほども述べましたが、/d/ の後ろにクラスの指定がない場合は CGIKit::Application#direct_action_class に指定したクラスが使用されます。今回の場合は RI2Reference::DirectAction ですね。上の URL にアクセスすると、 RI2Reference::DirectAction#class_action が実行されることになります。</p>
+
+<h2 id="次は順番どおりにいくとclasspageだね">次は順番どおりにいくと、ClassPageだね</h2>
+
+<p>ClassPage の基本構成は、</p>
+
+<ul>
+  <li>デザインはすべてCSSで行う</li>
+  <li>クラス・モジュール名を先頭に 概要・スーパークラス・includeされているモジュール・定数・インスタンスメソッド・アトリビュート・クラスメソッド を表示する</li>
+  <li>各クラス・モジュール・メソッドにはリンクを張る</li>
+</ul>
+
+<p>とします。</p>
+
+<p>先にページを構成する3つのファイルをお見せします。先ほどの CGIKit::Link のダイレクトアクションの使い方が分かれば難しいところはそれほど無いと思います。</p>
+
+<p><img src="/images/0007-CGIKit-2.x/ClassPage.rb" alt="ClassPage.rb" /></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+
+  <span class="ss">:is_class</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
+    <span class="ss">:condition</span> <span class="o">=&gt;</span> <span class="ss">:class_page?</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:is_module</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
+    <span class="ss">:condition</span> <span class="o">=&gt;</span> <span class="ss">:class_page?</span><span class="p">,</span>
+    <span class="ss">:negate</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:full_name</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:class_comment</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:class_comment</span><span class="p">,</span>
+    <span class="ss">:escape</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  
+  
+  <span class="ss">:superclasses</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:superclasses</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:mod</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:included_modules</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:included_modules</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:mod</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:module_link</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Link</span><span class="p">,</span>
+    <span class="ss">:string</span> <span class="o">=&gt;</span> <span class="ss">:module_name</span><span class="p">,</span>
+    <span class="ss">:action_class</span> <span class="o">=&gt;</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">DirectAction</span><span class="p">,</span>
+    <span class="ss">:direct_action</span> <span class="o">=&gt;</span> <span class="s1">'class'</span><span class="p">,</span>
+    <span class="ss">:query</span> <span class="o">=&gt;</span> <span class="ss">:module_query</span><span class="p">,</span>
+    <span class="ss">:session_id</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+    
+    <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s1">'module_link'</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  
+  <span class="ss">:constants</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:constants</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:con</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:constant_name</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:constant_name</span>
+  <span class="p">},</span>
+  
+  <span class="c1">#:constant_value =&gt; {}</span>
+    
+  
+    
+    
+  
+  <span class="ss">:ims</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:instance_methods</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:attrs</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:attributes</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:cms</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:class_methods</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  
+  
+  <span class="ss">:instance_method_link</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Link</span><span class="p">,</span>
+    <span class="ss">:string</span> <span class="o">=&gt;</span> <span class="ss">:method_name</span><span class="p">,</span>
+    <span class="ss">:action_class</span> <span class="o">=&gt;</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">DirectAction</span><span class="p">,</span>
+    <span class="ss">:direct_action</span> <span class="o">=&gt;</span> <span class="s1">'method'</span><span class="p">,</span>
+    <span class="ss">:query</span> <span class="o">=&gt;</span> <span class="ss">:method_query</span><span class="p">,</span>
+    <span class="ss">:session_id</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+
+    <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s1">'method_link'</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:attribute_link</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Link</span><span class="p">,</span>
+    <span class="ss">:string</span> <span class="o">=&gt;</span> <span class="ss">:method_name</span><span class="p">,</span>
+    <span class="ss">:action_class</span> <span class="o">=&gt;</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">DirectAction</span><span class="p">,</span>
+    <span class="ss">:direct_action</span> <span class="o">=&gt;</span> <span class="s1">'method'</span><span class="p">,</span>
+    <span class="ss">:query</span> <span class="o">=&gt;</span> <span class="ss">:method_query</span><span class="p">,</span>
+    <span class="ss">:session_id</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+
+    <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s1">'method_link'</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:class_method_link</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Link</span><span class="p">,</span>
+    <span class="ss">:string</span> <span class="o">=&gt;</span> <span class="ss">:method_name</span><span class="p">,</span>
+    <span class="ss">:action_class</span> <span class="o">=&gt;</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">DirectAction</span><span class="p">,</span>
+    <span class="ss">:direct_action</span> <span class="o">=&gt;</span> <span class="s1">'method'</span><span class="p">,</span>
+    <span class="ss">:query</span> <span class="o">=&gt;</span> <span class="ss">:class_method_query</span><span class="p">,</span>
+    <span class="ss">:session_id</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+
+    <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="s1">'method_link'</span><span class="p">,</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p><img src="/images/0007-CGIKit-2.x/ClassPage.html" alt="ClassPage.html" />
+<img src="/images/0007-CGIKit-2.x/class.jpg" alt="class.jpg" /></p>
+
+<h3 id="ri2referenceclasspagesetup">RI2Reference::ClassPage#setup</h3>
+
+<p>RI2Reference::DirectAction で出てきた setup です。これは与えられた引数を HTML として表示させるために簡単なデータ変換を行います。変換されたデータはインスタンス変数に格納されて、データを表示するときに参照されます。setup メソッドの引数は RI2Reference::DirectAction によって決定されます。その引数の entry は full_name 対応する ri のデータです。</p>
+
+<p>setup によって設定された ClassPage のインスタンス変数と ri のデータとの対応関係は下のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>@full_name</td>
+      <td>表示されるページのクラス・モジュール名</td>
+    </tr>
+    <tr>
+      <td>@superclasses</td>
+      <td>スーパークラスの名前一覧</td>
+    </tr>
+    <tr>
+      <td>@included_modules</td>
+      <td>includeされているモジュール名一覧</td>
+    </tr>
+    <tr>
+      <td>@constants</td>
+      <td>定数</td>
+    </tr>
+    <tr>
+      <td>@instance_methods</td>
+      <td>インスタンスメソッド</td>
+    </tr>
+    <tr>
+      <td>@attributes</td>
+      <td>アトリビュート</td>
+    </tr>
+    <tr>
+      <td>@class_methods</td>
+      <td>クラスメソッド</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>各変数には実際に何が格納されているのか見てみましょう。</p>
+
+<p>RI2Reference::DirectAction で呼び出された RI2Reference::Utils.get_class_entry(full_name, plural = false) は full_name に対応するクラス・モジュールの情報を返します。対応する情報がない場合は nil が返ります。plural は full_name に対応するクラス・モジュールが複数あった場合にそのうちのひとつを返すのかすべてを返すのかを決めます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p RI2Reference::Utils.get_class_entry('Array')
+#&lt;RI::ClassDescription:0x10656060 .... &gt;</code></pre></figure>
+
+<p>返値は RI::ClassDescription のオブジェクトです。このオブジェクトには クラスやモジュールの説明が格納されており、下のようなメソッドがあります。ClassPage のインスタンス変数に格納した値はこれらのメソッドの返値です。</p>
+
+<dl>
+  <dt>full_name</dt>
+  <dd>クラスやモジュールの名前です。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p entry.full_name
+"CGIKit::Application"</code></pre></figure>
+
+<dl>
+  <dt>comment</dt>
+  <dd>クラス・モジュールの説明です。ここには HTML のタグが含まれているので、RI2Reference::Utils.struct2html でこのメソッドの返値を HTML に変換します。この記事ではcommentメソッドには直接アクセスしません。</dd>
+  <dt>superclass</dt>
+  <dd>クラスのスーパークラスです。モジュールでは空文字が返値となります。</dd>
+  <dt>includes</dt>
+  <dd>include しているモジュールの配列です。使用方法は attributes と同じです。</dd>
+  <dt>constants</dt>
+  <dd>クラス・モジュールに定義されている定数の配列です。</dd>
+  <dt>attributes</dt>
+  <dd>attr_{reader、 writer、 accessor} で定義されたメソッドが格納されています。このメソッドの返値は配列で、配列内のオブジェクトに対して name でメソッド名にアクセスできます。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p entry.attributes[0].name
+"foo"</code></pre></figure>
+
+<dl>
+  <dt>class_methods</dt>
+  <dd>クラス・モジュールに定義されたクラスメソッドの配列です。attributes と同様に配列内のオブジェクトに対して name を使うことでメソッド名にアクセスできます。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p entry.class_methods[0].name
+"new"</code></pre></figure>
+
+<dl>
+  <dt>instance_methods</dt>
+  <dd>クラス・モジュールに定義されているメソッド名の配列です。使用方法は attributes と同じです。</dd>
+</dl>
+
+<h3 id="classpagehtml-のクラスモジュール名の部分には余分なものが付いてるよー">ClassPage.html のクラス・モジュール名の部分には余分なものが付いてるよー</h3>
+
+<p>表示するページによってクラス名だったりモジュール名だったりするので、それに合わせて表記を「class」や「module」に変えなくてはいけません。そのために if 文に相当する CGIKit::Conditional を使ってクラス名の場合には「class」を、モジュール名の場合には「module」を表示させます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div id='page_name'&gt;
+&lt;div ckid='is_class'&gt; &lt;span class='title'&gt;class&lt;/span&gt; &lt;/div&gt;
+&lt;div ckid='is_module'&gt; &lt;span class='title'&gt;module&lt;/span&gt; &lt;/div&gt;
+&lt;span ckid='class_name' /&gt;
+&lt;/div&gt;</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> :is_class =&gt; {
+   :element =&gt; Conditional,
+   :condition =&gt; :class_page?,
+ },
+
+ :is_module =&gt; {
+   :element =&gt; Conditional,
+   :condition =&gt; :class_page?,
+   :negate =&gt; true,
+ },</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def class_page?
+   (not(@superclasses.empty?) or @full_name == 'Object')
+ end</code></pre></figure>
+
+<p>表示するページがクラスの場合、Object 以外にはスーパークラスがあるはず(将来は違うのかな…)なので、 RI2Reference::ClassPage#class_page? を上のように定義します。</p>
+
+<p>次に ckd の設定です。is_class、 is_module の目印の付いた部分に CGIKit::Conditional を設定します。:condition が true になると目印の付いた部分は表示され、false になると表示されません。is_class、 is_module は全く正反対の動作をさせたいので、is_module の方に negate属性 を true にします。negate 属性が true だと、condition 属性が true の時に内容が表示されず、false の時に表示されるようになります。</p>
+
+<h3 id="概要の部分は変だー">「概要」の部分は変だー</h3>
+
+<p>概要の部分には RI2Reference::Utils.struct2html を使っているんですよね…。ri のデータには簡単な HTML のタグが含まれています。そのため CGIKit のエレメントを使ってその内容を表示させるのは少々難しいのです。仕方が無いので RI2Reference::Utils.struct2html を使って、CGIKitに頼らずに HTML を生成します。RI2Reference::Utils.struct2html(entry) の引数には get_method_entry、 get_class_entry の 返値を渡します。このメソッドは再帰呼び出しを使って ri から得られたデータを HTML にするので、分かりにくいかもしれません。</p>
+
+<p>RI2Reference::Utils.struct2html で生成された HTML は CGIKit::String を使って ClassPage.html の中に埋め込みます。前回の記事でも書きましたが、CGIKit::String の value 属性に 「&lt;」「&gt;」のような文字が含まれると、CGIKit::String は自動的にその部分を escape します(つまり、「&lt;」は「&amp;lt;」に、「&gt;」は「&amp;gt;」に変換されます)。そのため HTML を埋め込む場合はその処理を無効にしておかないと意図したように表示されません。これを回避するためには CGIKit::String の escape 属性に false を指定します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> :class_comment =&gt; {
+   :element =&gt; String,
+   :value =&gt; :class_comment,
+   :escape =&gt; false,
+ },</code></pre></figure>
+
+<h3 id="残り">残り</h3>
+
+<p>残った部分は前回までの説明でほとんど理解できるはずです。御自分で色々考えてみて下さい。</p>
+
+<p>1点だけ説明を追加しておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> :instance_method_link =&gt; {
+   :element =&gt; Link,
+   :string =&gt; :method_name,
+   :action_class =&gt; RI2Reference::DirectAction,
+   :direct_action =&gt; 'method',
+   :query =&gt; :method_query,
+   :session_id =&gt; false,
+
+   :class =&gt; 'method_link',
+ },</code></pre></figure>
+
+<p>この部分です。最後に class 属性が使われていますが、これは CGIKit::Link には無い属性です。CGIKit では各エレメントに定義されていない属性を使用すると、その属性は HTML の属性とみなされます。</p>
+
+<p>これにより上の場合は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;a href="http://localhost:8080/d/method?n=Mutex%2523lock" class="method_link"&gt;lock&lt;/a&gt;</code></pre></figure>
+
+<p>のように HTML の a タグに class 属性が設定されることになります。クラス属性は CSS でデザインする時に用いるので動作そのものには関係有りませんが、覚えておくと応用が利きます。</p>
+
+<h2 id="methodpage-は-classpage-とよく似てる">MethodPage は ClassPage とよく似てる？</h2>
+
+<p>そうですね。よく似ています。</p>
+
+<p><img src="/images/0007-CGIKit-2.x/MethodPage.rb" alt="MethodPage.rb" /></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:method_name</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:full_name</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:parameter</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:parameter</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:visibility</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:'entry.visibility'</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:aliases</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:aliases</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:method_comment</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:method_comment</span><span class="p">,</span>
+    <span class="ss">:escape</span> <span class="o">=&gt;</span> <span class="kp">false</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p><img src="/images/0007-CGIKit-2.x/MethodPage.html" alt="MethodPage.html" />
+<img src="/images/0007-CGIKit-2.x/method.jpg" alt="method.jpg" /></p>
+
+<p>MethodPage#setup は分かりますね。単にインスタンス変数に必要な情報を代入しているだけです。setup の引数である entry は RI2Reference::Utils.get_method_entry の返値です。</p>
+
+<p>RI2Reference::Utils.get_method_entry(full_name, plural = false) は  full_name に対応するメソッドの情報を返します。対応する情報がない場合は nil が返ります。plural は get_class_entry と同じ役割です。このメソッドの実行例を下に示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p RI2Reference::Utils.get_method_entry('Array#push')
+#&lt;RI::MethodDescription:0x10754e68 ... &gt;</code></pre></figure>
+
+<p>返値は RI::MethodDescription のオブジェクトです。RI::ClassDescription と同様にメソッドに関するいくつかの情報が含まれています。MethodPage に配置されたエレメントから RI::MethodDescription のメソッドを呼び出すことでメソッドのリファレンスを作成します。各メソッドの役割は下のようになります。</p>
+
+<dl>
+  <dt>full_name</dt>
+  <dd>メソッド名です</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p entry.full_name
+"Array#push",</code></pre></figure>
+
+<dl>
+  <dt>aliases</dt>
+  <dd>alias されているメソッド名の一覧です。</dd>
+  <dt>is_singleton</dt>
+  <dd>特異メソッドかどうかを示します。返値は true/false</dd>
+  <dt>params</dt>
+  <dd>メソッドの引数をあらわします。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p entry.params
+"array.push(obj, ... )   -&gt; array\n",</code></pre></figure>
+
+<dl>
+  <dt>visibility</dt>
+  <dd>メソッドの可視性をあらわします。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p entry.visibility
+"public"</code></pre></figure>
+
+<dl>
+  <dt>comment</dt>
+  <dd>RI::ClassDescription#comment と同じです。</dd>
+</dl>
+
+<p>HTML の visibility の目印のところには見慣れない記述がありますね。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> :visibility =&gt; {
+   :element =&gt; String,
+   :value =&gt; :'entry.visibility',
+ },</code></pre></figure>
+
+<p>value 属性に :’entry.visibility’ という　Symbol オブジェクトが設定されていますが、これは self.entry.visibility を呼び出すことを意味します( self は RI2Reference::MethodPage のオブジェクトとします)。
+Ruby の文法では「:」の後ろに文字列を指定することができ、
+CGIKit は Symbol オブジェクトの文字列の部分を評価して、属性の値とします。
+上の場合であれば CGIKit は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> :'entry.visibility'</code></pre></figure>
+
+<p>を</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">'entry.visibility'</code></pre></figure>
+
+<p>に変換し、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">eval('entry.visibility')</code></pre></figure>
+
+<p>のようにして評価します。
+そして、その結果が value 属性の値になります。これによって</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;p&gt;Visibility: &lt;span ckid='visibility' /&gt; &lt;/p&gt;</code></pre></figure>
+
+<p>は CGIKit::String エレメントにより self.entry.visibility の値に変換され、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;p&gt;Visibility: public&lt;/p&gt;</code></pre></figure>
+
+<p>のようになります。</p>
+
+<h2 id="searchresultもう説明する気がないんじゃない">SearchResult…もう説明する気がないんじゃない？</h2>
+
+<p>…おっしゃるように説明しません。今まで見てきたページと構成はほとんど変わりませんので、御自分で考えてみて下さい。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">RI2Reference</span>
+
+  <span class="k">class</span> <span class="nc">SearchResult</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
+    
+    <span class="kp">attr_accessor</span> <span class="ss">:class_list</span><span class="p">,</span> <span class="ss">:method_list</span><span class="p">,</span> <span class="ss">:i</span>
+    
+    <span class="k">def</span> <span class="nf">query</span>
+      <span class="p">{</span><span class="s1">'n'</span> <span class="o">=&gt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Utilities</span><span class="p">.</span><span class="nf">escape_url</span><span class="p">(</span><span class="vi">@i</span><span class="p">)}</span>
+    <span class="k">end</span>
+    
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:class_list</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>  
+  <span class="p">},</span>
+  
+
+  <span class="ss">:methods</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
+    <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:method_list</span><span class="p">,</span>
+    <span class="ss">:item</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>  
+  <span class="p">},</span>
+
+  <span class="ss">:class_link</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Link</span><span class="p">,</span>
+    <span class="ss">:string</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>
+    <span class="ss">:action_class</span> <span class="o">=&gt;</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">DirectAction</span><span class="p">,</span>
+    <span class="ss">:direct_action</span> <span class="o">=&gt;</span> <span class="s1">'class'</span><span class="p">,</span>
+    <span class="ss">:query</span> <span class="o">=&gt;</span> <span class="ss">:query</span><span class="p">,</span>
+    <span class="ss">:session_id</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:method_link</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Link</span><span class="p">,</span>
+    <span class="ss">:string</span> <span class="o">=&gt;</span> <span class="ss">:i</span><span class="p">,</span>
+    <span class="ss">:action_class</span> <span class="o">=&gt;</span> <span class="no">RI2Reference</span><span class="o">::</span><span class="no">DirectAction</span><span class="p">,</span>
+    <span class="ss">:direct_action</span> <span class="o">=&gt;</span> <span class="s1">'method'</span><span class="p">,</span>
+    <span class="ss">:query</span> <span class="o">=&gt;</span> <span class="ss">:query</span><span class="p">,</span>
+    <span class="ss">:session_id</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+  <span class="p">},</span>
+
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p><img src="/images/0007-CGIKit-2.x/SearchResult.html" alt="SearchResult.html" />
+<img src="/images/0007-CGIKit-2.x/search.jpg" alt="search.jpg" /></p>
+
+<h3 id="じゃあもっと違うページになるようにしろよー">じゃあ、もっと違うページになるようにしろよー</h3>
+
+<p>うーん、この記事で使うサンプルは各ページがシンプルな構成になるように書いています。あまり複雑なことをすると、読みにくくなりますからね。</p>
+
+<h2 id="実行">実行</h2>
+
+<p>今回は WEBrick だけですので、RI2Reference のディレクトリで</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby RI2Reference.rb</code></pre></figure>
+
+<p>として</p>
+
+<ul>
+  <li><a href="http://localhost:8080/">http://localhost:8080/</a></li>
+  <li><a href="http://localhost:8080/d/class?n=Hash">http://localhost:8080/d/class?n=Hash</a></li>
+  <li><a href="http://localhost:8080/d/search?push">http://localhost:8080/d/search?push</a></li>
+</ul>
+
+<p>等にアクセスして色々試してください。</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>使いやすいリファレンスマニュアルが欲しいということで作ったのですが、</p>
+
+<ul>
+  <li>クラスのページにメソッドの簡単な概要が欲しい。</li>
+  <li>クラスの継承関係を一覧できるようにしたい</li>
+  <li>クラス一覧が無味乾燥</li>
+  <li>サイドメニューが欲しい</li>
+  <li>デザインがへちょへちょ。アイコンが欲しい(筆者は絵心無し)</li>
+</ul>
+
+<p>などなど不満が色々とあります。この中で1つ目は何とか対処したいのですが、今の RDoc では各メソッドの概要を記述することが出来ないので対応が難しいです。</p>
+
+<p>宿題</p>
+
+<ul>
+  <li>CGI 用のスクリプトの設定をしてみましょう。</li>
+  <li>CGI で実行すると CSS ファイルが上手く読み込めない場合があります。どうやって回避しますか？</li>
+  <li>サイドメニューを作ってみましょう。</li>
+</ul>
+
+<h2 id="参考文献">参考文献</h2>
+
+<p>エレメントリファレンスやダイレクトアクションの説明などがあります。</p>
+
+<ul>
+  <li><a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi?FrontPage">CGIKit の Wiki</a></li>
+</ul>
+
+<p>リファレンスマニュアルの構成を考える際に以下のサイトを参考にしました。</p>
+
+<ul>
+  <li><a href="http://wiki.rubyonrails.com/rails/show/DocumentationDiscussion">Documentation Discussion at Rails Wiki</a></li>
+  <li><a href="http://ruby-gnome2.sourceforge.jp/ja/hiki.cgi?Ruby-GNOME2+API+Reference">Ruby-GNOME2 APIリファレンス</a></li>
+  <li><a href="http://www.php.net/docs.php">PHP Documentation</a></li>
+  <li><a href="http://www.phpdoc.org/">phpDocumentor</a></li>
+  <li><a href="http://hie.s64.xrea.com/xyzzy/reference/">xyzzy Reference</a></li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>某サービス業をしています。エンタープライズアプリケーション<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>を使って仕事をしています。</p>
+
+<p>記事のリリース直前に Frameless RDoc template が出て、へこんだのは内緒です。</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>誰かこのアプリを rewrite してくれません？いやマジで。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

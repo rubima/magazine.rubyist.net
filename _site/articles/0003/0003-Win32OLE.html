@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Win32OLE 活用法 【第 1 回】 Win32OLE ことはじめ</title>
+  <meta name="description" content="書いた人：cuzic">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0003/0003-Win32OLE.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Win32OLE 活用法 【第 1 回】 Win32OLE ことはじめ</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0003/0003-Win32OLE.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Win32OLE 活用法 【第 1 回】 Win32OLE ことはじめ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0003/0003-Win32OLE.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0003/0003-Win32OLE.html" data-text="Win32OLE 活用法 【第 1 回】 Win32OLE ことはじめ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：cuzic</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>受信ボックスにたまった Excel ファイルを添付したメール。Excel の表にした
+がって、DB から検索して、特定のセルに入力を繰り返す面倒な作業。気が滅入
+ります。</p>
+
+<p>今まで、皆さんはこういう面倒な作業を効率化するためにどんなアプローチをし
+てきましたか？　たとえば、MS Office には Visual Basic for Application 
+(VBA) を使うことで自動的に処理させることができます。
+だけど、VB はあまりよく知らないし、使い慣れた Ruby で自動化していきたい
+って思ったことありますよね。</p>
+
+<p>こんなときに活躍するのが Win32OLE です。この連載では Win32OLE という 
+Ruby の拡張ライブラリを使ったプログラムについて紹介していきます。
+Win32OLE という名前からわかるとおり、Microsoft Windows (以下、Windows) 
+でしか動作しません。そのため、本連載は Windows を利用している Rubyist を
+対象としています。</p>
+
+<p>Win32OLE は、COM とか ActiveX などと呼ばれたりする技術を扱うためのライブ
+ラリです。この記事の中では OLE/COM/ActiveX といった用語をあまり区別せず
+に COM という言葉でまとめておきます。Windows アプリケーションは一般に
+いくつかの部品を組み合わせてできています。この部品化する技術の中に 
+Microsoft 社が開発した技術に Component Object Model (COM) があります。</p>
+
+<p>COM には言語に非依存であるという特徴があります。つまり、COM で作られた部
+品であれば C++ でも VB でも Delphi でも、そして Ruby でもプログラムの中
+で扱うことができます。</p>
+
+<p>こう言ってもピンとこないかもしれません。具体的に言うと、Ruby で書いたプ
+ログラムで Internet Explorer を制御したり、Excel 表の値を取得、変更した
+りすることが可能だということです。</p>
+
+<p>COM を Ruby で扱えるようにする拡張ライブラリが Win32OLE です。Ruby 1.8 
+では標準添付されており、cygwin 版でもネイティブ win32 版の Ruby をインス
+トールした時点で使用可能です。</p>
+
+<p>この連載では、この Win32OLE の使い方および Win32OLE を Ruby で効果的に使
+うためのレシピについて紹介していきます。</p>
+
+<h2 id="今回の記事の目的と構成">今回の記事の目的と構成</h2>
+
+<p>今回の記事の目的は、３つあります。</p>
+
+<ul>
+  <li>Win32OLE を体験してもらうこと</li>
+  <li>COM の概要について理解してもらうこと</li>
+  <li>COM のオブジェクト、メソッドの調べられるようになること</li>
+</ul>
+
+<p>まず、Win32OLE の体験として、Internet Explorer を操作するスクリプトを紹
+介します。</p>
+
+<p>次に、COM の概要について説明します。そして、今回の記事のメインである COM 
+オブジェクトのインターフェースを調べる方法について説明します。具体的に言
+うと、オブジェクトの作成の仕方やメソッドの名前や引数を調べる方法です。こ
+のオブジェクトやメソッドというのは、Ruby の世界ではなく、COM の世界での
+意味のオブジェクトやメソッドのことを指しています。</p>
+
+<p>これらの調べ方が分かれば自分が必要なオブジェクトを適切に選ぶことや、自分
+が使いたい機能を持つメソッドが何かを調べることができるようになります。</p>
+
+<p>Win32OLE を使う具体的な方法などについては、インターネットなどを調べても
+なかなか資料がなく、私自身使うときに苦労してきました。今回の内容を活用す
+ることで、Win32OLE を用いたプログラミングが楽になるでしょう。</p>
+
+<h2 id="internet-explorer-の制御を通じて-win32ole-を体験">Internet Explorer の制御を通じて Win32OLE を体験</h2>
+
+<p>このスクリプトでは自動的に Google で ruby という単語で検索を行います。実
+際に実行してみてください。</p>
+
+<p><a href="/images/0003-Win32OLE/ie.rb">ie.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+
+<span class="n">ie</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'InternetExplorer.Application'</span><span class="p">)</span>
+<span class="n">ie</span><span class="o">.</span><span class="no">Navigate</span><span class="p">(</span><span class="s2">"http://www.google.co.jp/"</span><span class="p">)</span>
+<span class="n">ie</span><span class="o">.</span><span class="no">Visible</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="k">while</span> <span class="n">ie</span><span class="p">.</span><span class="nf">busy</span>
+  <span class="nb">sleep</span> <span class="mi">1</span>
+<span class="k">end</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">ie</span><span class="p">.</span><span class="nf">document</span><span class="p">.</span><span class="nf">all</span><span class="o">.</span><span class="no">Item</span><span class="p">(</span><span class="s2">"q"</span><span class="p">)</span>
+<span class="n">q</span><span class="o">.</span><span class="no">Value</span> <span class="o">=</span> <span class="s2">"ruby"</span>
+<span class="n">btnG</span> <span class="o">=</span> <span class="n">ie</span><span class="p">.</span><span class="nf">document</span><span class="p">.</span><span class="nf">all</span><span class="o">.</span><span class="no">Item</span><span class="p">(</span><span class="s2">"btnG"</span><span class="p">)</span>
+<span class="n">btnG</span><span class="p">.</span><span class="nf">click</span><span class="p">()</span>
+
+</code></pre>
+</div>
+
+<p>このスクリプトでは Internet Explorer の COM オブジェクトを作成していま
+す。COM オブジェクトというのは、ざっくりと Windows アプリケーションの
+外部から利用できる形式の部品という理解をしておいてください。</p>
+
+<p>実際にこのスクリプトが何をしているのかというと、Google のページに移動し、
+テキストボックスに 「ruby」 と入力し、「Google 検索」のボタンをクリック
+する、という動作を行っています。</p>
+
+<p>COM オブジェクトを作成することで、Internet Explorer があたかも Ruby の
+オブジェクトであるかのように使えるわけです。このような形で、他に Word や 
+Excel などの MS Office のアプリケーションも Win32OLE を用いることであた
+かも Ruby のオブジェクトを扱うようにコントロールすることができます。</p>
+
+<p>上記のプログラムで重要なことは、2 つあります。</p>
+
+<ul>
+  <li>COM オブジェクトの作成</li>
+  <li>COM オブジェクトのメソッド呼び出し</li>
+</ul>
+
+<p>1 つ目は Internet Explorer のオブジェクトを作成するとき
+‘InernetExplorer.Application’ という文字列を指定しているということです。
+この文字列を ProgID といいます。つまり、COM オブジェクトは 
+WIN32OLE::new(ProgID) の形式で作成します。この ProgID として指定する文字
+列を変えることで、 Internet Explorer のオブジェクトを作成するか、Excel 
+のオブジェクトを作成するかなどを制御できます。</p>
+
+<p>2 つ目は呼び出すべきメソッドさえ分かっていれば、そのコンポーネントの内部
+の詳細を知っている必要がないということです。ただ、メソッド名とその引数、
+返り値などが分かっていれば十分なのです。</p>
+
+<p>残りの行は、Internet Explorer のオブジェクトが持つメソッドやプロパティを
+使っています。残りの行について詳しく解説することはもちろんできます。例え
+ば、Navigate というメソッドに URL を引数として渡すことで、目的のページに
+自動的に移動できます。</p>
+
+<p>しかし、この記事では、ここに深入りするのではなく、もっと大事なことを説明
+します。</p>
+
+<p>自分が作成したい COM オブジェクトの ProgID の調べ方やそのオブジェクト
+が持つメソッドの一覧を得る方法、そのメソッドがどういう引数をとるを調べる
+方法などについて説明します。</p>
+
+<p>この記事を読み終えて、いろいろ実験すると、さまざまなアプリケーションが 
+COM のオブジェクトとして作成できるということにあなたは驚くはずです。そし
+て、Ruby の Win32OLE のライブラリを活用することで、今までやってきた面倒
+な定型的な業務をとても簡単なプログラムで実現できるようになります。</p>
+
+<h2 id="com-とは">COM とは</h2>
+
+<p>COM を使って Internet Explorer を実際に操作してみました。それでは COM と
+はどういう技術なのでしょうか。</p>
+
+<p>COM をきちんと理解するにはいろいろと知らなければいけない知識があります。
+しかしながら、この記事では Ruby と Win32OLE を利用できるようになることが
+目的なので、難しい部分は省略して説明します。きちんと知りたい方は本稿末尾
+にある参考文献を手がかりに調べてみてください。</p>
+
+<p>Ruby では、たとえば String クラスのインスタンスに何かメソッド (たとえば 
+length) を適用することで、ある機能を実行することができます (length なら
+ば、文字列の長さを取得することができる)。これを、Ruby で書くと、次のよう
+になるでしょうか。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">str = String.new("abc")
+str.length #=&gt; 長さが返る</code></pre></figure>
+
+<p>このとき、「あるクラス (String)」の「インスタンスを生成 
+(String.new(“abc”))」し、「あるメッセージ (length)」をその生成したオブジ
+ェクトに投げる (str.length) ことで処理 (その文字列の長さを取得) をしてい
+きます。</p>
+
+<p>Ruby ではインスタンスを生成するのに「あるクラス」に対して「new」という
+メソッドを実行するわけですが、COM ではインスタンスを生成するときに
+「COM コンポーネント」を指定するための ProgID を引数として
+WIN32OLE.new メソッドを実行します。
+COM コンポーネントとは、Windows に登録された、ある機能 (たとえば、IE や 
+MS Office の制御機能) を提供するためのものです。
+この「COM コンポーネント」を利用して作成したインスタンス 
+を「COM オブジェクト」とこの記事では呼んでいます。
+COM オブジェクトを作成した後は、その COM オブジェクトで定義されている
+「メソッド」を実行することでそのコンポーネントが提供する機能を
+実現することができます。</p>
+
+<p>COM の特徴として オブジェクト指向でサービスを提供しているということが
+あります。ご存知のとおり、Ruby はオブジェクト指向で設計されているので
+COM の技術と相性がいいと言えます。</p>
+
+<p>そこで、Win32OLE の出番です。Win32OLE は、Ruby から、COM コンポーネント
+を利用することを目的とした拡張ライブラリです。Win32OLE を使うと、
+COM コンポーネントからオブジェクトの作成、COM のメソッドの実行などを、
+Ruby オブジェクトに対するそれと同様のインターフェースで行えます。</p>
+
+<p>Windows では、多数の COM コンポーネントが標準で利用できます。また、標準
+以外の他のCOMコンポーネントをインストールして、標準のコンポーネントと同
+じように利用することもできます。たとえば、Internet Explorer は、標準で 
+COM コンポーネントとして利用可能ですし、MS Office の各アプリケーションも
+COM コンポーネントとして機能を提供しています。</p>
+
+<p>COM コンポーネントを使うためには、まずどんな COM コンポーネントが利用可
+能か、そしてその COM コンポーネントがどんな機能を提供しているのかを知ら
+なければなりません。この情報は、ドキュメントとして公開していれば話が早い
+のですが、多くの COM コンポーネントの情報は公開されていません。</p>
+
+<p>しかしながら、COM ではオブジェクトの名やメソッド名といったインターフェー
+スなどを調べるための API が用意されています。Ruby でもこの機能を使うこと
+で、インターフェースを調査できます。今回は COM コンポーネントを利用する
+ために利用可能な調査方法について説明します。</p>
+
+<h2 id="com-オブジェクトの調べ方">COM オブジェクトの調べ方</h2>
+
+<p>この章では COM オブジェクトを使う方法を調べるための方法について説明し
+ます。</p>
+
+<h3 id="ruby-だけを利用する調べ方">Ruby だけを利用する調べ方</h3>
+
+<p>まずは、Ruby のライブラリ Win32OLE を使うことで、COM のオブジェクトを生
+成する方法や、メソッド名や引数について調べる方法を説明します。</p>
+
+<h4 id="作成したい-com-オブジェクトの探し方">作成したい COM オブジェクトの探し方</h4>
+
+<p>先ほど説明しましたように COM オブジェクトを生成するには
+その COM コンポーネントに対応した ProgID が何かを調べる必要があります。</p>
+
+<p>そこでまず、あなたのパソコンで利用可能な ProgID の一覧を
+表示させてみましょう。
+コマンドラインから次のコマンドを入力してみてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby -rwin32ole -e 'puts WIN32OLE_TYPE.progids'</code></pre></figure>
+
+<p>このコマンドを実行すると、ProgID の一覧、つまり、利用できる
+COM コンポーネントの一覧が得られます。実行するとインストール
+しているアプリケーションが多い方の場合は、数千行出力されると思います。
+参考までに筆者の環境では、4906 行出力されました。</p>
+
+<p>あなたの使いたいコンポーネントの ProgID をこの中から見つけて 
+WIN32OLE.new メソッドで呼び出せば、そのコンポーネントのオブジェクトを 
+Ruby の世界で作成できます。</p>
+
+<p>どのような ProgID を指定すればどのような COM オブジェクトを作成できる
+かは、次の表を参考にしてください。有名なオブジェクトを幾つか紹介していま
+す。(<a href="http://www.microsoft.com/japan/msdn/library/default.asp?url=/japan/msdn/library/ja/vbaof10/html/ofmscprogrammaticidentifiers.asp">MSDN: OLE プログラム ID</a> などを参考にして作成)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>作成するオブジェクト</td>
+      <td>ProgID</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Microsoft Internet Explorer</td>
+      <td>InternetExplorer.Application</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Microsoft Excel</td>
+      <td>Excel.Application</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Microsoft Access</td>
+      <td>Access.Application</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ADODB Connection</td>
+      <td>ADODB.Connection</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ADODB Recordset</td>
+      <td>ADODB.Recordset</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Microsoft Outlook</td>
+      <td>Outlook.Application</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Microsoft Word</td>
+      <td>Word.Application</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Microsoft Word Document</td>
+      <td>Word.Document</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Windows Scripting Host</td>
+      <td>Wscript.Shell</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>先ほどのプログラムでは InternetExplorer.Application という ProgID を用いて 
+COM オブジェクトを作成しています。</p>
+
+<h4 id="オブジェクトが持つメソッドの調べ方">オブジェクトが持つメソッドの調べ方</h4>
+
+<p>次にすることは、作成する COM オブジェクトがどのようなメソッドを持つか
+を調べることです。つまり、それが実際にどんなことができるかを確認します。</p>
+
+<p>WIN32OLE#ole_methods メソッドを使うことで、オブジェクトが持つメソッドの
+一覧を得ることができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby -r win32ole -e "ie = WIN32OLE.new('InternetExplorer.Application');puts ie.ole_methods;"</code></pre></figure>
+
+<p>上記コマンドは、ProgID が InternetExplorer の COM コンポーネントから
+COM オブジェクトを生成し、その COM オブジェクトが持つメソッドの一覧を
+出力させています。
+この出力に先ほど使いました Navigate という文字列が含まれています。</p>
+
+<p>この Navigate というメソッドが何を引数とするどのようなメソ
+ッドかを調べるには次のスクリプトを実行します。</p>
+
+<p><a href="/images/0003-Win32OLE/method_param.rb">method_param.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+
+<span class="n">ie</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'InternetExplorer.Application'</span><span class="p">)</span>
+<span class="nb">puts</span>  <span class="n">ie</span><span class="p">.</span><span class="nf">ole_obj_help</span><span class="p">.</span><span class="nf">to_s</span>
+<span class="nb">method</span> <span class="o">=</span> <span class="n">ie</span><span class="p">.</span><span class="nf">ole_method_help</span><span class="p">(</span><span class="s1">'Navigate'</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="nb">method</span><span class="p">.</span><span class="nf">return_type</span>
+<span class="nb">method</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">param</span><span class="o">|</span>
+  <span class="n">str</span> <span class="o">=</span> <span class="s2">""</span>
+  <span class="n">str</span><span class="p">.</span><span class="nf">concat</span> <span class="s2">"[in] "</span> <span class="k">if</span> <span class="n">param</span><span class="p">.</span><span class="nf">input?</span>
+  <span class="n">str</span><span class="p">.</span><span class="nf">concat</span> <span class="s2">"[out] "</span> <span class="k">if</span> <span class="n">param</span><span class="p">.</span><span class="nf">output?</span>
+  <span class="n">str</span><span class="p">.</span><span class="nf">concat</span> <span class="s2">"[optional] "</span> <span class="k">if</span> <span class="n">param</span><span class="p">.</span><span class="nf">optional?</span>
+  <span class="n">str</span><span class="p">.</span><span class="nf">concat</span> <span class="s2">"[retval] "</span> <span class="k">if</span> <span class="n">param</span><span class="p">.</span><span class="nf">retval?</span>
+  <span class="n">str</span><span class="p">.</span><span class="nf">concat</span> <span class="n">param</span><span class="p">.</span><span class="nf">name</span>
+  <span class="n">str</span><span class="p">.</span><span class="nf">concat</span> <span class="s2">" = </span><span class="si">#{</span><span class="n">param</span><span class="p">.</span><span class="nf">default</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="n">param</span><span class="p">.</span><span class="nf">default</span>
+  <span class="n">str</span><span class="p">.</span><span class="nf">concat</span> <span class="s2">" As </span><span class="si">#{</span><span class="n">param</span><span class="p">.</span><span class="nf">ole_type</span><span class="si">}</span><span class="s2">"</span>
+  <span class="nb">puts</span> <span class="n">str</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>上記スクリプトの実行結果は次のとおりです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">IWebBrowser2
+VOID
+[in] URL As BSTR
+[in] [optional] Flags As VARIANT
+[in] [optional] TargetFrameName As VARIANT
+[in] [optional] PostData As VARIANT
+[in] [optional] Headers As VARIANT</code></pre></figure>
+
+<p>実行結果の 1 行目は COM タイプライブラリの説明文。
+2 行目は、返り値の型。3 行目以降は、引数についての情報を
+第一引数から順に出力しています。</p>
+
+<p>これから上記スクリプトとその実行結果について説明します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ie = WIN32OLE.new('InternetExplorer.Application')</code></pre></figure>
+
+<p>この行では、先ほど説明したように、ProgID を引数とすることで Internet 
+Explorer の COM オブジェクトを作成しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts  ie.ole_obj_help.to_s
+#=&gt; 出力結果
+IWebBrowser2</code></pre></figure>
+
+<p>という行は、指定した型のタイプライブラリの説明文を表示しています。タイプ
+ライブラリというのは、メソッド、定数、インタフェースなどを定義するものの
+総称です。これがあるから、このようなリフレクションを行い、メソッドや
+インタフェースなどを調べることができるわけですね。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts method.return_type
+#=&gt; 出力結果
+VOID</code></pre></figure>
+
+<p>という行はこのメソッドの返り値が COM の型で VOID であることを示します。
+VOID は C 言語 の void 型と同じで戻り値がないことを意味します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">method = ie.ole_method_help('Navigate')</code></pre></figure>
+
+<p>この行で使われている WIN32OLE#ole_method_help というメソッドはメソッド名
+を引数としてとり、WIN32OLE_METHOD 型を返します。</p>
+
+<p>WIN32OLE_METHOD 型では、params メソッドが重要です。
+WIN32OLE_METHOD#params は、WIN32OLE_PARAM 型の配列を返します。
+WIN32OLE_PARAM 型を用いることで引数の詳細を知ることができます。</p>
+
+<p>WIN32OLE_PARAM 型を逐次まわすループのところが上記スクリプトのハイライト
+です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">method.params.each do |param|
+  str = ""
+  str.concat "[in] " if param.input?
+  str.concat "[out] " if param.output?
+  str.concat "[optional] " if param.optional?
+  str.concat "[retval] " if param.retval?
+  str.concat param.name
+  str.concat " = #{param.default}" if param.default
+  str.concat " As #{param.ole_type}"
+  puts str
+end</code></pre></figure>
+
+<p>まず、WIN32OLE_PARAM#input? はその引数が入力用であるとき true、そうでな
+いとき false を返します。同様に、WIN32OLE_PARAM#output? はその引数が出力
+用であるとき、 WIN32OLE_PARAM#optional? は省略可能なとき、
+WIN32OLE_PARAM#retval? は返り値のときに true を返します。</p>
+
+<p>WIN32OLE_PARAM#name は、その引数の名前を返します。いわゆる仮引数名と呼ば
+れるものです。これは実際に使う上での重要なヒントです。例えば上記の例でも
+第一引数は文字列で URL という名をつけられています。何を引数とすれば良い
+か想像できますよね？</p>
+
+<p>WIN32OLE_PARAM#default は省略時のデフォルト値、WIN32OLE_PARAM#ole_type 
+は引数の COM での型を示します。</p>
+
+<p>BSTR というのは、COM での文字列型のことです。Win32OLE が Ruby の文字列と
+の変換を勝手にしてくれます。なので、単に文字列型だと思っていただければい
+いです。</p>
+
+<p>VARIANT というのは、数値、文字列、配列などさまざまなオブジェクトを表し得
+る型です。</p>
+
+<p>COM での型がどのように Ruby での型に変換されるかは、次回に詳しく説明する
+予定です。</p>
+
+<h3 id="オブジェクトブラウザでの調べ方">オブジェクトブラウザでの調べ方</h3>
+
+<p>ここまでは、いちいち手で ruby を実行して、必要な ProgID を調べ、そして 
+ProgID で作成できる COM オブジェクトの持つメソッドやその引数について調べ
+る方法について紹介してきました。</p>
+
+<p>こういう作業を GUI ベースで行える Simple OLE Browser という Ruby で書かれ
+たツールもあります。助田さんのページで無料でダウンロードできます。
+(<a href="http://homepage1.nifty.com/markey/ruby/win32ole/">Win32OLE 製作過程の雑記</a>)</p>
+
+<p>名前のとおりシンプルな作りです。
+しかしながら、上記 URL を確認してもらうと分かりますが、
+DESCRIPTION というペインで簡単なメソッドの説明文を見ることもできたりするなど、
+結構便利です。
+詳しい使い方については上記 URL を参考にしてください。</p>
+
+<p>この節で紹介する他のツールでもそうですが、Simple OLE Browser でもまずタ
+イプライブラリの名前を指定します。そして、そのタイプライブラリで定義され
+ているオブジェクトのメソッドの説明を見ることができます。</p>
+
+<p>ProgID とタイプライブラリの名前との間の関係はレジストリを見れば分かりま
+す。詳しい説明については次のページを参考にしてください。(<a href="http://support.microsoft.com/default.aspx?scid=kb;ja;183771">[VB] ActiveX コンポーネントで作成されるレジストリ エントリ</a>)</p>
+
+<p>レジストリを見るのは面倒なので、私自身のやり方としては、あてずっぽでいく
+つかクリックして、対応関係を見つけています。この方法でもそれほど不便して
+いません。</p>
+
+<p>ところで COM のテクノロジーは、言語に非依存です。そのため他の言語におい
+ても、COM を利用することができます。それはつまり他の言語向けに開発された 
+COM オブジェクトの詳細を閲覧するツールも利用できるということです。
+<img src="/images/0003-Win32OLE/pythonwin_combrowser.GIF" alt="pythonwin_combrowser.GIF" /></p>
+
+<p>たとえば海外では非常に人気があるスクリプト言語である Python では、
+“Python Object Browser” というある COM の型が持つメソッドの引数などを簡
+単に調べるためのツールがあります。
+<a href="http://starship.python.net/crew/mhammond/win32/Downloads.html">PythonWin</a>をダウンロードしたら、Tools から選択して起動できます。ツリー形式で見
+れて便利です。無料で手に入ります。
+<img src="/images/0003-Win32OLE/object_browser.png" alt="object_browser.png" /></p>
+
+<p>とさまざまなブラウザがありますが、真打はやはり Microsoft が提供している
+オブジェクトブラウザでしょう。Visual Basic Editor に含まれるこのツールを
+使うと、クラスが持つメソッドやプロパティの一覧やメソッドの使い方を見るこ
+とができます。オブジェクトブラウザは、MS Office の Visual Basic for 
+Applications のエディタをまず起動して、[F2] キーを押すことで起動できます。
+これは、無料では手に入りませんが使いやすくて便利です。</p>
+
+<p>プロパティがどういう型かなどがよく分かる点や、「戻る」ボタンがあることな
+どが便利で私はよく利用します。</p>
+
+<p>オブジェクトブラウザに関する説明は検索すれば解説がいくつか見つかると思います。
+例えば、MSDN には次のページがあります。(<a href="http://www.microsoft.com/japan/msdn/library/default.asp?url=/japan/msdn/library/ja/vsintro7/html/vxurfobjectbrowsers.asp">オブジェクト ブラウザ</a>)</p>
+
+<p>他に、Microsoft が提供する無料で使えるツールとして、Microsoft の Resource Kit  の 
+Free Tool の中にある OLE View というツールもこの目的に使えます。
+(<a href="http://www.microsoft.com/windows2000/techinfo/reskit/tools/existing/oleview-o.asp">Oleview.exe: OLE/COM Object Viewer</a>)</p>
+
+<h3 id="その他の調べ方">その他の調べ方</h3>
+
+<p>WEB で検索して、COM オブジェクトのインターフェースについて調べることもで
+きます。</p>
+
+<p>適当なメソッド名や ProgID を使って Google で検索すれば、詳しいドキュメン
+トが得られることもあります。</p>
+
+<p>ProgID が分からないときは、CreateObject という単語を Google で検索すると
+Visual Basic や VB Script でのサンプルコードや説明を検索できるというテク
+ニックもあります。使える小技です。</p>
+
+<p>Visual Basic で MS Office アプリケーションを自動化する話はよくありますから
+そういうコードを参考にするというのも非常に良い方法です。例えば、
+Microsoft Office アプリケーションのオートメーションに関してドキュメント
+が次のページにあります。(<a href="http://support.microsoft.com/default.aspx?scid=kb;ja;222101">[HOWTO] Office オブジェクト モデルに関するドキュメントの検索および使用方法</a>)</p>
+
+<p>このページにも紹介されている方法ですが、Excel のようなマクロ機能がある
+MS Office のアプリケーションでは、行いたい動作を一旦マクロとして記録してみる
+という方法があります。生成された Visual Basic のコードを読めば何をすると
+きにどのようなプロパティ・メソッドを使うかの参考になると思います。</p>
+
+<p>他に、MSDN や MS Office の Visual Basic に付属のヘルプはとても参考になりま
+す。MS Office のアプリケーションはドキュメントが充実しています。
+見る価値はあります。</p>
+
+<p>繰り返しますが、COM は言語に依存しないため、Visual Basic が呼び出しに使
+用しているメソッド名や呼び出し規則はRuby と同じようになります。もちろん
+文法に起因する違いはありますがオブジェクトがもつメソッドなどを調べるには
+十分な情報が得られます。このような点で Visual Basic での書き方は参考にな
+りますので、一度見てみるようにした方がいいでしょう。</p>
+
+<p>あ。一つ、言っておかないといけないことがあります。それは、COM において、
+メソッド名やプロパティは大文字と小文字を区別しないということです。自分の
+好きな方を使っていただいて結構です。Visual Basic のコードで大文字始まり
+のメソッド名であってもRuby では小文字始まりでかまいません。もちろん大文
+字でも大丈夫です。</p>
+
+<h3 id="私の調べ方">私の調べ方</h3>
+
+<p>以上、自分が求めるクラス、メソッドをどうやって見つけるかについて説明しま
+した。</p>
+
+<p>最後に私が実際にどうやって新しいクラスの使い方を調べる方法について少しだ
+け書きます。ひょっとしたらこの節がこの記事で参考になるところかもしれませ
+ん。</p>
+
+<p>まずは MS Office 付属の Visual Basic Editor のオブジェクトブラウザで勘で
+使えそうなタイプライブラリを参照設定してみて、クラス名やメソッド名を眺め
+てみることから始めます。このようにして、だいたいやりたいことができるメソ
+ッドがあるかどうかを調べます。</p>
+
+<p>メソッド名や、クラス名以上の情報が必要な場合は、Google で検索したり、
+MSDN での情報も参考にします。MS Office に付属の VBA のヘルプも参考にしま
+す。</p>
+
+<p>それでも情報が足りない場合は、使いたいメソッドを実際に使用するような小さ
+なスクリプトを書いてみたりします。スクリプトを書く目的は、短い時間でその
+オブジェクトが自分が必要としている機能を実際に持っているのかどうかを調査
+することです。</p>
+
+<p>あなたがもしもアジャイルなプログラマであれば、これをスパイクと呼んだりす
+るのもいいもしれません。スパイク中にメソッドの使い方を調べるときは、
+WIN32OLE#ole_method_help などのメソッドを使います。実際にそのオブジェク
+トを作成するスクリプトを書いている途中にそのオブジェクトの使い方を調べる
+場合は、Ruby に閉じて調べられるWin32OLE のメソッドは便利です。オブジェク
+トブラウザも平行して使いながら、自分が求める機能を実現するにはどうすれば
+よいのかを探っていきます。そして、だいたい目的が達成できそうだと分かると
+プログラムを書き上げていきます。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>さて、今回は、Win32OLE を使った簡単なアプリケーションを紹介し、そして自
+分が欲しいオブジェクトを得るためにはどうするかということを解説しました。</p>
+
+<p>次回以降では実際に Excel 等のオブジェクトを得て、それらを具体的に活用し
+ていく方法について紹介します。</p>
+
+<p>(アドバイザー：arton、助田 雅紀)</p>
+
+<h2 id="今回の理解度チェック">今回の理解度チェック</h2>
+
+<p>今回の記事に出てきた Internet Explorer のサンプルファイルに出てきたメソ
+ッドの引数などについて調べてみましょう。</p>
+
+<p>ヒント：
+オブジェクトブラウザを使って調べる場合は、
+対応するタイプライブラリを知る必要があります。
+[InternetExplorer.Application] という ProgID は、
+[Microsoft Internet Controls] というタイプライブラリに
+対応しています。
+ie.document のメソッドについて調べる場合は 
+[Microsoft HTML Object Library] というタイプライブラリを
+調べるとよいでしょう。
+Ruby だけで調べる場合は、対応するタイプライブラリが
+分からなくても調べられます。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<p>Windows での Ruby プログラミングについて知りたい方へ</p>
+
+<ul>
+  <li><a href="https://www.amazon.co.jp/Ruby%E3%82%92256%E5%80%8D%E4%BD%BF%E3%81%86%E3%81%9F%E3%82%81%E3%81%AE%E6%9C%AC-%E9%82%AA%E9%81%93%E7%B7%A8-arton/dp/4756136036?SubscriptionId=AKIAJDQ4M6M4FSYT327Q&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4756136036">‘arton (著)『Rubyを256倍使うための本 邪道編』’</a></li>
+  <li><a href="http://homepage1.nifty.com/markey/ruby/win32ole/">Win32OLE 製作過程の雑記</a></li>
+  <li><a href="http://homepage3.nifty.com/masarl/article/ruby-win32ole.html">Ruby による Win32OLE プログラミング</a></li>
+  <li><a href="http://www.ruby-doc.org/stdlib/libdoc/win32ole/rdoc/">Win32OLE: Ruby Standard Library Documentation </a></li>
+</ul>
+
+<p>COM について詳しくなりたい方へ</p>
+
+<ul>
+  <li><a href="https://www.amazon.co.jp/Essential-ASCII-Addison-Wesley-Programming/dp/4756130666?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4756130666">‘Don Box (著)『Essential COM』ISBN 4-7561-3066-6’</a></li>
+  <li><a href="ftp://ftp.borland.co.jp/pub/delphi/d6prodoc.zip">Delphi 開発者ガイド</a>(del6com.hlp に COM についての詳しい説明がある)</li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>cuzic は、通信系の会社に勤める会社員です。
+世界史、経済学、健康、J-POP などに興味があります。
+著者への連絡先は cuzic atmark cuzic dot com です。</p>
+
+<h2 id="win32ole-活用法-連載一覧">Win32OLE 活用法 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0009/0009-Win32OLE.html">Win32OLE 活用法 【第 7 回】 ほかの言語での COM</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Win32OLE.html">Win32OLE 活用法 【第 6 回】 Web 自動巡回</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Win32OLE.html">Win32OLE 活用法 【第 5 回】 Outlook</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Win32OLE.html">Win32OLE 活用法 【第 4 回】 Adobe Illustrator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Win32OLE.html">Win32OLE 活用法 【第 3 回】 ADODB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Win32OLE.html">Win32OLE 活用法 【第 2 回】 Excel</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Win32OLE.html">Win32OLE 活用法 【第 1 回】 Win32OLE ことはじめ</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>テンプレートシステム入門 (1) 歴史編</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0024/0024-TemplateSystem.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>テンプレートシステム入門 (1) 歴史編</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0024/0024-TemplateSystem.html" class="hatena-bookmark-button" data-hatena-bookmark-title="テンプレートシステム入門 (1) 歴史編" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0024/0024-TemplateSystem.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0024/0024-TemplateSystem.html" data-text="テンプレートシステム入門 (1) 歴史編">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#動的に-web-ページを生成する方法" id="markdown-toc-動的に-web-ページを生成する方法">動的に Web ページを生成する方法</a>    <ul>
+      <li><a href="#第-1-世代-プログラムに-html-を埋め込む方法" id="markdown-toc-第-1-世代-プログラムに-html-を埋め込む方法">第 1 世代: プログラムに HTML を埋め込む方法</a></li>
+      <li><a href="#第-2-世代-html-にプログラムを埋め込む方法" id="markdown-toc-第-2-世代-html-にプログラムを埋め込む方法">第 2 世代: HTML にプログラムを埋め込む方法</a></li>
+      <li><a href="#第-3-世代-プログラムと-html-とを分離する方法" id="markdown-toc-第-3-世代-プログラムと-html-とを分離する方法">第 3 世代: プログラムと HTML とを分離する方法</a></li>
+    </ul>
+  </li>
+  <li><a href="#テンプレートシステムについての補足" id="markdown-toc-テンプレートシステムについての補足">テンプレートシステムについての補足</a>    <ul>
+      <li><a href="#テンプレートシステムとテンプレートエンジンの違いについて" id="markdown-toc-テンプレートシステムとテンプレートエンジンの違いについて">「テンプレートシステム」と「テンプレートエンジン」の違いについて</a></li>
+      <li><a href="#eruby-はテンプレートエンジンの夢を見るか" id="markdown-toc-eruby-はテンプレートエンジンの夢を見るか">eRuby はテンプレートエンジンの夢を見るか</a></li>
+      <li><a href="#eruby-や-php-があればテンプレートエンジンはいらないか" id="markdown-toc-eruby-や-php-があればテンプレートエンジンはいらないか">eRuby や PHP があればテンプレートエンジンはいらないか</a></li>
+      <li><a href="#xslt-をプレゼンテーション層に使うのはよくない" id="markdown-toc-xslt-をプレゼンテーション層に使うのはよくない">XSLT をプレゼンテーション層に使うのはよくない</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+  <li><a href="#テンプレートシステム入門-連載一覧" id="markdown-toc-テンプレートシステム入門-連載一覧">テンプレートシステム入門 連載一覧</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>テンプレートシステムとは、テンプレートとなるファイルをメインプログラムから読み込み、必要な箇所を書き換えて出力する仕組みのことです。
+現在では Web アプリケーションにおいて動的に Web ページを生成するのによく使われます。</p>
+
+<p>本シリーズでは、Web アプリケーション用のテンプレートシステムについて基本から理解してもらうことを目的とします。
+また各種のテンプレートシステムについても紹介します。</p>
+
+<p>第 1 回目となる本稿では、テンプレートシステムが生まれた歴史を紐解きます。
+動的に Web ページを生成する方法が進化してきた過程を見ることで、テンプレートシステムの利点がわかります。</p>
+
+<p>なお本稿の対象読者は、Web アプリケーション開発に興味のある方です。
+特に、自分でテンプレートエンジンを作成しようと考えている方には参考になると思います。</p>
+
+<h2 id="動的に-web-ページを生成する方法">動的に Web ページを生成する方法</h2>
+
+<p>テンプレートシステムについて説明する前に、Web アプリケーションで動的にページを生成する方法について説明しましょう。</p>
+
+<p>動的に Web ページを生成する方法は、メインプログラムとの関係から見て大きく次の 3 つに分けられます<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<ul>
+  <li>第 1 世代: メインプログラムに HTML を埋め込む方法</li>
+  <li>第 2 世代: HTML にメインプログラムを埋め込む方法</li>
+  <li>第 3 世代: メインプログラムと HTML とを分離する方法</li>
+</ul>
+
+<p>また対象とする出力形式から見て、次の 2 つに分けられます<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+
+<ul>
+  <li>テキスト汎用型: 任意のテキスト形式で利用可能</li>
+  <li>HTML 専用型: HTML/XML でしか利用できない</li>
+</ul>
+
+<p>もう少し説明を付け加えると、テキスト汎用型では HTML を単なる文字列として扱うのに対し、HTML 専用型では HTML を構造化されたデータとして扱う点が異なります。</p>
+
+<p>参考までに、代表的なライブラリやフレームワークを分類してみます (表 1)。</p>
+
+<p>表1. 代表的なライブラリやフレームワークの分類</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>生成方法</th>
+      <th>テキスト汎用型</th>
+      <th>HTML 専用型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>プログラムに HTML を埋め込む (第 1 世代)</td>
+      <td>CGI, Servlet</td>
+      <td><a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=cgi#HTML.a5.a8.a5.ec.a5.e1.a5.f3.a5.c8.bd.d0.ce.cf.cd.d1.a5.e1.a5.bd.a5.c3.a5.c9">cgi.rb</a>, <a href="http://markaby.rubyforge.org/">Markaby</a>, <a href="http://jakarta.apache.org/ecs/index.html">Jakarta ECS</a>, <a href="http://www.kahua.org/">Kahua</a>, <a href="http://qwik.jp">qwikWeb</a></td>
+    </tr>
+    <tr>
+      <td>HTML にプログラムを埋め込む (第 2 世代)</td>
+      <td>eRuby, PHP, JSP</td>
+      <td>ColdFusion</td>
+    </tr>
+    <tr>
+      <td>プログラムと HTML とを分離 (第 3 世代)</td>
+      <td><a href="http://velocity.apache.org">Velocity</a>, <a href="http://smarty.php.net/">Smarty</a>, <a href="http://www.template-toolkit.org/">Template-Toolkit</a></td>
+      <td><a href="http://xmlc.objectweb.org/">XMLC</a>, <a href="http://amrita2.rubyforge.org/indexJ.html">Amrita2</a>, <a href="http://tapestry.apache.org/">Tapestry</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>以降、詳細について説明します。</p>
+
+<h3 id="第-1-世代-プログラムに-html-を埋め込む方法">第 1 世代: プログラムに HTML を埋め込む方法</h3>
+
+<p>図 1: 第 1 世代: プログラムに HTML を埋め込む</p>
+
+<p><img src="/images/0024-TemplateSystem/template-system-1-1.png" alt="template-system-1-1.png" />
+動的に Web ページを出力する方法で一番原始的なのは、プログラムの中に HTML を埋め込み、print 文などで出力する方法です。
+ここではこれを第 1 世代の方法と呼ぶことにします (図 1)。</p>
+
+<p>この方法の利点は、仕組みが大変分かりやすいことと、他のライブラリを必要としないことと、どのプログラミング言語でも利用可能であることです。
+そのため、初期の CGI プログラムや Java Servlet でよく使われました。
+欠点は、HTML デザインの確認や変更がしにくいことです。</p>
+
+<p>リスト 1-1 は CGI プログラムのサンプルです。
+プログラムの中に HTML が文字列として埋め込まれており、それを print() で出力しています (HTML エスケープ (サニタイズ) は省略)。</p>
+
+<p>リスト 1-1 : CGI プログラムのサンプル</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'cgi'
+cgi = CGI.new
+print cgi.header
+
+title = 'Example'
+list  = ['AAA', 'BBB', 'CCC']
+
+print   "&lt;html&gt;\n"
+print   " &lt;body&gt;\n"
+print   "  &lt;h1&gt;#{title}&lt;/h1&gt;\n"
+print   "  &lt;ul&gt;\n"
+for item in list
+  print "   &lt;li&gt;#{item}&lt;/li&gt;\n"
+print   "  &lt;/ul&gt;\n"
+print   " &lt;/body&gt;\n"
+print   "&lt;/html&gt;\n"</code></pre></figure>
+
+<p>print 文を使う方法は最も原始的な方法であり、HTML に限らずどんなテキスト形式でも利用できます (テキスト汎用型)。
+これに対し、HTML/XML の生成のみに特化した方法も考案されました (HTML特化型)。
+この方法は、HTML が構造化されたマークアップ言語である点を生かし、文字列ではない方法で HTML を表現します。
+具体的には以下のような方法があります。</p>
+
+<ul>
+  <li>HTML をネストした関数/メソッド呼び出しで表現する (例: <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=cgi#HTML.a5.a8.a5.ec.a5.e1.a5.f3.a5.c8.bd.d0.ce.cf.cd.d1.a5.e1.a5.bd.a5.c3.a5.c9">cgi.rb</a>, <a href="http://markaby.rubyforge.org/">Markaby</a>)</li>
+  <li>HTML を木構造で表現する (例: <a href="http://jakarta.apache.org/ecs/index.html">Jakarta ECS</a>)</li>
+  <li>HTML をネストした配列/リストとして表現する (いわゆる「<a href="http://jp.rubyist.net/magazine/?0012-qwikWeb#l8">わびさび方式</a>」のこと。例: <a href="http://www.kahua.org/">Kahua</a>, <a href="http://qwik.jp/">qwikWeb</a>)</li>
+</ul>
+
+<p>HTML 専用型では HTML を構造化されたデータとして扱うため、単なる文字列として扱うテキスト汎用型と比べると次のような利点があります。</p>
+
+<ul>
+  <li>HTML の開始タグと終了タグが正しく対応付けされる</li>
+  <li>タグ名や属性名が正しいかどうかチェックできる</li>
+  <li>自動的に HTML エスケープ (サニタイズ) することができる</li>
+</ul>
+
+<p>ただし、__プログラム中に HTML を埋め込んでいるという点ではテキスト汎用型と変わりがない__ことに注意してください。
+「HTML デザインの確認や変更がしづらい」という欠点も共通しています。
+またテキスト汎用型と比べ、一般的には動作が重くなります。</p>
+
+<p>例として、cgi.rb についている <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=cgi#HTML.a5.a8.a5.ec.a5.e1.a5.f3.a5.c8.bd.d0.ce.cf.cd.d1.a5.e1.a5.bd.a5.c3.a5.c9">HTML エレメント出力用メソッド</a>を使ったサンプルをお見せします (リスト 1-2, 1-3)。
+cgi.rb では、HTML を文字列ではなくブロックつきメソッドのネストで表現します。
+そのため、上の 3 つの利点がすべて当てはまります。</p>
+
+<p>リスト 1-2 : cgi.rb による HTML 出力のサンプル (HTML エスケープは省略)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'cgi'
+cgi = CGI.new('html4')
+html = cgi.instance_eval {
+  html {[
+    head {
+      title { 'Example' }
+    },
+    body {[
+      h1('class'=&gt;'capter') { 'Example' },
+      ul {[
+        li { 'AAA' },
+        li { 'BBB' },
+        li { 'CCC' },
+      ]},
+    ]},
+  ]}
+}
+print html</code></pre></figure>
+
+<p>リスト 1-3 : 出力結果 (改行とインデントを追加)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+     "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;HTML&gt;
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;Example&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+  &lt;BODY&gt;
+    &lt;H1 class="capter"&gt;Example&lt;/H1&gt;
+    &lt;UL&gt;
+      &lt;LI&gt;AAA&lt;/LI&gt;
+      &lt;LI&gt;BBB&lt;/LI&gt;
+      &lt;LI&gt;CCC&lt;/LI&gt;
+    &lt;/UL&gt;
+  &lt;/BODY&gt;
+&lt;/HTML&gt;</code></pre></figure>
+
+<p>もうひとつ、<a href="http://markaby.rubyforge.org/">Markaby</a> を使ったサンプルをお見せします (リスト 1-4, 1-5)。
+cgi.rb と比べて、Markabyではよりシンプルに記述できるようになっており、またデフォルトで HTML エスケープ (サニタイズ) されるという利点があります。</p>
+
+<p>リスト 1-4 : Markaby のサンプル</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">doctitle = 'Exmample'
+list = ['&lt;AAA&gt;', 'B&amp;B', '"CCC"']
+
+require 'rubygems'
+require 'markaby'
+builder = Markaby::Builder.new
+builder.html {
+  head {
+    title(doctitle)
+  }
+  body {
+    h1(doctitle, :class=&gt;'chapter')
+             # or h1(:class=&gt;'chapter'){doctitle}
+    ul {
+      for item in list
+        li(item)   # or li { item }
+      end
+    }
+  }
+}
+puts builder.to_s</code></pre></figure>
+
+<p>リスト 1-5 : 出力結果 (改行とインデントを追加)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta content="text/html; charset=utf-8" http-equiv="Content-Type"/&gt;
+  &lt;title&gt;Exmample&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;h1 class="chapter"&gt;Exmample&lt;/h1&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&amp;lt;AAA&amp;gt;&lt;/li&gt;
+   &lt;li&gt;B&amp;amp;B&lt;/li&gt;
+   &lt;li&gt;"CCC"&lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+
+<h3 id="第-2-世代-html-にプログラムを埋め込む方法">第 2 世代: HTML にプログラムを埋め込む方法</h3>
+
+<p>図 2: 第 2 世代: HTML にプログラムを埋め込む</p>
+
+<p><img src="/images/0024-TemplateSystem/template-system-1-2.png" alt="template-system-1-2.png" />
+Web 黎明期のように HTML が単純なうちは print 文でちまちま出力する方法でも良かったのですが、Web ページが複雑かつ大きくなるにつれ、この方法は破綻しました。
+print 文として埋め込まれた HTML の変更があまりに面倒だったからです。</p>
+
+<p>ほどなく現れたのが、HTML の中にプログラムを埋め込む方法です (これを第 2 世代の方法と呼ぶことにします)。
+この方法はファイルの形式が HTML に近いため、第 1 世代と比べて HTML デザインの確認や変更がしやすいという利点があります。
+特に、動的な部分が少なくほとんどの部分が静的な HTML である場合は、この方法のほうが圧倒的に簡単です。</p>
+
+<p>この方法を広めたのは、なんといっても <a href="http://www.php.net">PHP</a> でした。
+また「プログラムが埋め込まれた HTML」を「HTML が埋め込まれたプログラム」に変換するのもそう難しくない<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>ため、eRuby や JSP など似たようなものが数多く登場しました。</p>
+
+<p>この方法もテキスト汎用型と HTML 専用型に分けることができます。</p>
+
+<p>まずテキスト汎用型の例として、eRuby のサンプルプログラムをお見せします (リスト 2-1)。
+eRuby では、次のような記法で Ruby コードをテキストファイル中に埋め込みます。</p>
+
+<ul>
+  <li>「&lt;% … %&gt;」は Ruby の文として実行される</li>
+  <li>「&lt;%= … %&gt;」は Ruby の式として評価され、出力される</li>
+  <li>「&lt;%=# … %&gt;」はコメントであり、読み飛ばされる</li>
+</ul>
+
+<p>リスト 2-1: eRuby のサンプル</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;% title = 'Example' %&gt;
+&lt;% list = ['&lt;AAA&gt;', 'B&amp;B', '"CCC"'] %&gt;
+&lt;html&gt;
+ &lt;body&gt;
+  &lt;h1&gt;&lt;%=h title %&gt;&lt;/li&gt;
+  &lt;ul&gt;
+&lt;% for item in list %&gt;
+   &lt;li&gt;&lt;%=h item %&gt;&lt;/li&gt;
+&lt;% end %&gt;
+  &lt;/ul&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+
+<p>print() を使ったリスト 1-1 と比べると、ずいぶん HTML に近いことが分かります。
+ただし、「&lt;% %&gt;」や「&lt;%= %&gt;」は HTML の仕様に反する記法なので、ブラウザでデザインを確認したり、HTML バリデータでチェックするということはできません<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+
+<p>次に HTML 専用型の例をお見せしたいのですが、Ruby では適当なものが見つかりませんでしたので、かわりに XML 構文を使った JSP の例をお見せします (リスト 2-2)。
+JSP (Java ServerPage) は基本的にはテキスト汎用型ですが、ファイルの拡張子を「.jspx」にすることで、埋め込みコードを XML の構文で記述できるようになります。</p>
+
+<p>リスト 2-2:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;html xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:jsp="http://java.sun.com/JSP/Page"&gt;
+  &lt;jsp:directive.page contentType="text/html;charset=UTF-8" /&gt;
+  &lt;jsp:directive.page import="java.util.List, java.util.ArrayList"/&gt;
+  &lt;c:set var="title" value="Example"/&gt;
+  &lt;jsp:scriptlet&gt;
+    &lt;![CDATA[
+      List list = new ArrayList();
+      list.add("&lt;AAA&gt;");
+      list.add("B&amp;B");
+      list.add("\"CCC\"");
+      pageContext.setAttribute("list", list);
+    ]]&gt;
+  &lt;/jsp:scriptlet&gt;
+  &lt;body&gt;
+    &lt;h1&gt;&lt;c:out value="${title}"/&gt;&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;c:forEach var="item" items="${list}"&gt;
+      &lt;li&gt;&lt;c:out value="${item}"/&gt;&lt;/li&gt;
+      &lt;/c:forEach&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+
+<p>テキスト汎用型である eRuby と比べると、XML 構文を使った JSP は HTML 専用型であるため、「開始タグと終了タグが正しく対応付けされる」<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>などの利点があります。
+ただし、__ロジックを HTML 中に埋め込んでいるという点ではどちらも同じ__です。</p>
+
+<p>なお余談ですが、JSP は</p>
+
+<ul>
+  <li>EL (Expression Language) の機能が貧弱 (メソッドを呼び出せないなど)</li>
+  <li>変数のスコープが多くて分かりづらい (page/request/session/applicaiton)</li>
+  <li>Servlet コンテナがないと利用できない (内部で Servlet に変換されて実行されるため)</li>
+  <li>カスタムタグを作るのが大変</li>
+  <li>動作が重い</li>
+</ul>
+
+<p>など、問題点が多い仕様です。
+それに比べると、eRuby は実に単純であり、しかもそれで充分役に立っています。
+Ruby ユーザは eRuby の単純さに感謝しましょう。</p>
+
+<h3 id="第-3-世代-プログラムと-html-とを分離する方法">第 3 世代: プログラムと HTML とを分離する方法</h3>
+
+<p>図 3: 第 3 世代: プログラムと HTML とを分離する</p>
+
+<p><img src="/images/0024-TemplateSystem/template-system-1-3.png" alt="template-system-1-3.png" />
+HTML 中にプログラムを埋め込む方法によって、特にプログラムが小さい場合は開発作業が格段に楽になりました。
+しかし、この方法にも次のような問題点が残っています。</p>
+
+<ul>
+  <li>HTML とプログラムとがひとつのファイルに混在している。
+    <ul>
+      <li>→ 一方を変更すると他方にも影響を与えてしまう</li>
+      <li>→ デザイナーとプログラマーが協業できない (独立して作業できない)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>特に、Web アプリケーションのプログラム部分が大規模かつ複雑になるにつれ、この問題点がクローズアップされるようになりました。</p>
+
+<p>これを解決するために、プログラムと HTML とを別々のファイルに分離する方法が生み出されました。
+具体的には、__テンプレートとなる HTML ファイルをプログラムから読み込み、必要な箇所を書き換えて出力する__というものです。
+そのような仕組みをテンプレートシステムといい、それを実現するためのライブラリをテンプレートエンジンといいます (両者の違いについては後述します)。</p>
+
+<p>テンプレートシステムでは、テンプレートを読み込んで必要な箇所を書き換えて出力します。
+そのため、__書き換える箇所を示す「目印」をテンプレート中に埋め込む__必要があります。
+この「目印」の記法によって、テキスト汎用型か HTML 専用型かに分かれます。</p>
+
+<p>テキスト汎用型では、HTML とは関係ない独自の記法を使って「目印」を埋め込みます。
+記法が HTML ではないため HTML デザインが崩れる、HTML バリデータで検証できない、という欠点がありますが、HTML パーサを使わないので動作が軽い、仕組みが分かりやすく実装しやすい、などの長所もあります。</p>
+
+<p>リスト 3-1, 3-2 は、<a href="http://www.pagetemplate.org/">PageTemplate</a> というテンプレートエンジンのサンプルです。
+変数の値を出力する「[%var …%]」や、繰り返しを表す「[%loop …%]」など、独自の記法を使っているのが分かります。</p>
+
+<p>リスト 3-1 : ex-pagetemplate.tmpl</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1 class="[%var klass %]"&gt;[%var title :escapeHTML %]&lt;/h1&gt;
+    &lt;ul&gt;
+[%loop list %]
+      &lt;li&gt;[%var value :escapeHTML %]&lt;/li&gt;
+[%end loop %]
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+
+<p>リスト 3-2: ex-pagetemplate.rb</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">title = 'Example'
+klass = 'chapter'
+list  = [
+  {'value'=&gt;'&lt;AAA&gt;'},
+  {'value'=&gt;'B&amp;B'},
+  {'value'=&gt;'"CCC"'},
+]
+require 'rubygems'
+require 'PageTemplate'
+template = PageTemplate.new()
+template.load('ex-pagetemplate.tmpl')
+template['title'] = title
+template['klass'] = klass
+template['list'] = list
+print template.output</code></pre></figure>
+
+<p>このタイプのテンプレートエンジンは非常に多く、有名なものだと</p>
+
+<ul>
+  <li><a href="http://velocity.apache.org/">Velocity</a> (Java)</li>
+  <li><a href="http://smarty.php.net/">Smarty</a> (PHP)</li>
+  <li><a href="http://www.template-toolkit.org/">Template-Toolkit</a> (Perl)</li>
+  <li><a href="http://www.cheetahtemplate.org/">Cheetah</a> (Python)</li>
+</ul>
+
+<p>などが挙げられます。</p>
+
+<p>次に HTML 専用型ですが、HTML 専用型では「目印」を埋め込むのに HTML の記法を利用します
+(一般的には id 属性か独自の属性を使うことが多いです)。
+HTML と同じ記法なので HTML デザインがまったく崩れないことが最大の特徴ですが、HTML パーサと DOM ツリーを使うため動作が重い、仕組みが複雑で学習コストがかかる、といった欠点があります。
+特に HTML 専用型は仕組みや仕様にクセがある場合が多く、学習コストは高くなる傾向にあります。</p>
+
+<p>リスト 3-3, 3-4 は、代表的な HTML 専用型である <a href="http://amrita2.rubyforge.org/indexJ.html">Amrita2</a> のサンプルです。
+Amrita2 では id 属性が「目印」になっていて、id 属性と同じ名前のデータを用意することで、テンプレートが書き換えられて出力されます。</p>
+
+<p>リスト 3-3 : ex-amrita2.html</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;html&gt;
+  &lt;body&gt;
+    &lt;h1 id="title"&gt;TITLE&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li id="list"&gt;ITEM&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+
+<p>リスト 3-4 : ex-amrita2.rb</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'rubygems'
+require 'amrita2/template'
+include Amrita2
+context = {
+  :title =&gt; a(:class=&gt;'chapter') { 'Example' },
+  :list =&gt; ['&lt;AAA&gt;', 'B&amp;B', '"CCC"'],
+}
+template = TemplateFile.new('ex-amrita2.html')
+template.expand(output='', context)
+print output</code></pre></figure>
+
+<p>このタイプのテンプレートエンジンはテキスト汎用型ほど多くはありませんが、</p>
+
+<ul>
+  <li><a href="http://xmlc.objectweb.org/">XMLC</a> (Java)</li>
+  <li><a href="http://tapestry.apache.org/">Tapestry</a> (Java)</li>
+  <li><a href="http://wiki.zope.org/ZPT/FrontPage">Zope PageTemplate</a> (Python)</li>
+  <li><a href="http://www.kid-templating.org/">Kid</a> (Python)</li>
+  <li><a href="http://www.fobj.com/tempura/doc/tempura.ja.html">Tempura</a> (Ruby)</li>
+</ul>
+
+<p>などが挙げられます。</p>
+
+<p>なお「テキスト汎用型は独自の記法を使う」「HTML 専用型は HTML の記法を使う」というのは、あくまでそういう傾向があるというだけで、絶対的な法則ではありません。
+たとえば <a href="http://www.kuwata-lab.com./kwartz/">Kwartz</a> のように HTML の記法を使うけどテキスト汎用型というのもあります
+(独自記法は必ずしも HTML と違ってなければならないというわけではないということです)。</p>
+
+<p>またテンプレートシステムでは、テキスト汎用型か HTML 専用型かということも重要ですが、__プレゼンテーションロジックをテンプレート中に含めるのかどうか__という点のほうがより重要です。
+これについては次回説明します。</p>
+
+<h2 id="テンプレートシステムについての補足">テンプレートシステムについての補足</h2>
+
+<h3 id="テンプレートシステムとテンプレートエンジンの違いについて">「テンプレートシステム」と「テンプレートエンジン」の違いについて</h3>
+
+<p>本稿では、「テンプレートシステム」と「テンプレートエンジン」の 2 つの用語を使いわけています。
+一般的には両者は用語として区別されずに使われますが、本稿では次のように定義します。</p>
+
+<ul>
+  <li>「テンプレートシステム」とは、メインプログラムと HTML とを分離するための「仕組み」のことを指す。</li>
+  <li>「テンプレートエンジン」とは、メインプログラムと HTML とを分離するための「具体的なライブラリ」のことを指す。</li>
+</ul>
+
+<p>もっというと、テンプレートシステムという「仕組み」を実現するだけなら、必ずしもテンプレートエンジンは必要ありません。</p>
+
+<p>たとえば、一般的には PHP はテンプレートエンジンとは見なされません (本稿でも PHP は「第 2 世代の方法」に分類しました)。
+しかし、関数 include() を使えば通常の PHP スクリプトをテンプレートとして使うことができます (リスト 4-1)。
+これはまさに、テンプレートエンジンなしでテンプレートシステムを使った例といえます。</p>
+
+<p>リスト 4-1 : include() を使って、PHP スクリプトをテンプレートとして使う</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">----- main.php -----
+&lt;?php
+  $title = 'Exampe';
+  $items = array('AAA', 'BBB', 'CCC');
+  include('template.php');
+?&gt;
+----- template.php ----
+&lt;h1&gt;&lt;?php echo $title; ?&gt;&lt;/h1&gt;
+&lt;ul&gt;
+&lt;?php foreach ($items as $item) { ?&gt;
+  &lt;li&gt;&lt;?php echo $item; ?&gt;&lt;/li&gt;
+&lt;?php } ?&gt;
+&lt;/ul&gt;</code></pre></figure>
+
+<h3 id="eruby-はテンプレートエンジンの夢を見るか">eRuby はテンプレートエンジンの夢を見るか</h3>
+
+<p>本稿では、eRuby を「第 2 世代の方法」に分類しました。
+つまり、eRuby をテンプレートエンジンではないとしたわけです。
+この分類は妥当でしょうか。</p>
+
+<p>筆者は、妥当だと思っています。
+__eRuby は汎用のテキストプロセッサであり、メインプログラムと HTML との分離を目的としたテンプレートエンジンではない__というのが筆者の見解です。</p>
+
+<p>多くのアプリケーションで eRuby をテンプレートエンジンがわりに使っていますが、それは前のセクションでの PHP の例と同じで、あくまでテンプレートシステムとして使っているだけであり、eRuby 自体はテンプレートエンジンではないです。
+たとえるなら、コップを花瓶がわりに使ったとしても、コップはコップであり花瓶ではないのと同じです。
+定義と用途とを混同してはいけません。</p>
+
+<p>ただし、こんな細かい違いは普通に生きている限り気にする必要はありません。</p>
+
+<p>なお、同じことが JSP でもいえます。
+本稿における用語の定義だと JSP はテンプレートエンジンではありませんが、テンプレートシステムとして使うことができます<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+
+<h3 id="eruby-や-php-があればテンプレートエンジンはいらないか">eRuby や PHP があればテンプレートエンジンはいらないか</h3>
+
+<p>eRuby や PHP のような第 2 世代型のツールは、PageTemplate や Velocity や Smarty のようなテキスト汎用型のテンプレートエンジンとよく似ています。
+実際、eRuby や PHP はそのままテンプレートエンジンのかわりとして使うことができます。
+両者には違いがあるのでしょうか。</p>
+
+<p>両者を比べると、次のような違いがあります。</p>
+
+<ul>
+  <li>目的が違う
+    <ul>
+      <li>PHP や eRuby の目的は、任意のテキストに文や式を埋め込んで実行すること</li>
+      <li>テンプレートエンジンの目的は、メインプログラムと HTML とを分離すること</li>
+    </ul>
+  </li>
+  <li>見た目が違う
+    <ul>
+      <li>PHP や eRuby は、PHP や Ruby をそのまま使う</li>
+      <li>テンプレートエンジンでは、独自の言語を使う (ことが多い)</li>
+    </ul>
+  </li>
+  <li>利点や欠点はよく似ている
+    <ul>
+      <li>利点: 任意のテキスト形式で使える、条件分岐や繰り返しを自由に埋め込める、など</li>
+      <li>欠点: HTML のデザインが崩れる、HTML Validator が使えない、など</li>
+    </ul>
+  </li>
+</ul>
+
+<p>こうしてみると、目的や見た目は違うものの、利点や欠点はよく似ていることがわかります。
+実際のところ、多くの機能を望まなければ、テキスト汎用型のテンプレートエンジンを PHP や eRuby のような第 2 世代型のツールで置き換えても、大きな問題は生じません。</p>
+
+<p>その他、次のような違いがあります。</p>
+
+<ul>
+  <li>速度は、PHP や eRuby のような第 2 世代型のほうがずっと高速です。たとえば PHP で include() を使う方法は Smarty よりも約 3 倍高速であり、eRuby は PageTemplate よりも 2 倍以上高速です。またテンプレートエンジンは大きなライブラリを読み込む必要があるため、特に CGI では不利です。</li>
+  <li>学習コストは、PHP や Ruby の知識がそのまま使える第 2 世代型のほうが低いです。たとえば繰り返しや条件分岐をしたい場合、eRuby だと Ruby の for 文や if 文がそのまま使えますが、テンプレートエンジンを使う場合は専用の構文を覚える必要があります。</li>
+  <li>式や文の記述能力は、PHP や Ruby がそのまま使える第 2 世代型のほうが高いです。たとえば 3 項演算子や整数の余剰を求める演算子 (%) は PHP にも Ruby にもありますが、それらを用意しているテンプレートエンジンは少なく、その分記述能力は劣ります。他にも、たとえば Velocity 1.4 では整数は扱えるが小数は扱えないなど、多くのテンプレートエンジンで機能の低さが目立ちます。ただし、機能が低いおかげで余計なロジックが記述できないため、プレゼンテーション層にはテンプレートエンジンのほうがふさわしいとする考え方もあります<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</li>
+  <li>PHP や eRuby のような第 2 世代型と比べると、テンプレートエンジンは Web アプリケーションに必要な機能が備わっています。たとえば、複数のページにおいてレイアウトを統一する機能や、他のテンプレートを読み込む機能や、出力をキャッシュする機能などが挙げられます。</li>
+  <li>セキュリティについては、テンプレートエンジンのほうが優れている場合があります。たとえばデフォルトで HTML エスケープするなどです。ただし多くのテンプレートエンジンは、PHP や eRuby と比べて大した違いがないのが実情です。</li>
+</ul>
+
+<p>こうしてみると、PHP や eRuby のような第 2 世代型と比べて、テキスト汎用型のテンプレートエンジンは利点が少ないことがわかります。
+むしろ、欠点が多いといったほうがいいでしょう。</p>
+
+<p>これらの欠点をよく見ると、__テンプレートエンジンが独自の記述言語を使っていることが原因__です。
+そのため、テンプレートエンジンが独自言語を使うことなく、PHP や Ruby をそのまま使うようにすればこれらの欠点は解決されます。
+実際、<a href="http://www.makotemplates.org/">Mako</a> や <a href="http://www.kuwata-lab.com/tenjin/">Tenjin</a> のように独自のテンプレート言語を使わず、Python や Ruby といったプログラミング言語をそのまま記述言語として用いたテンプレートエンジンが台頭しつつあります。</p>
+
+<p>筆者としては、Smarty や PageTemplate のような独自の記述言語を使ったテキスト汎用型テンプレートエンジンを使うくらいなら、PHP や eRuby のような第 2 世代型の方法を使い、足りない機能があれば自分で追加することをお勧めします。
+またこれからテンプレートエンジンを自作しようとする方は、特別な理由がない限りは、独自言語を使わず Ruby や PHP や Python などをそのまま使うことを強くお勧めします。</p>
+
+<h3 id="xslt-をプレゼンテーション層に使うのはよくない">XSLT をプレゼンテーション層に使うのはよくない</h3>
+
+<p>プレゼンテーション層に XSLT を使ったシステムがありますが、これはよくないアイデアですのでやめるべきです。</p>
+
+<p>XSLT (XML Stylesheet Language Transformations) とは、XML を別の形式の XML に変換するための技術です。
+これを使うと、たとえばメインプログラムで中間形式の XML を出力し、XSLT を使ってそれを XHTML に変換し出力する、ということができます。
+この場合、出力する XHTML のデザインを変更したいときは XSLT スクリプトだけを変更すればよく、中間形式の XML およびメインプログラムには何の変更も必要ありません。
+つまり、メインプログラムとプレゼンテーション層とを疎結合にできます。
+また XSLT 自体が任意の XML を任意の XML に変換できるだけの柔軟さを持っています。</p>
+
+<p>しかし、XSLT は文法が複雑なうえ、動作が大変遅いという欠点を持っています。
+またメインプログラムとプレゼンテーション層を疎結合にするのは、テンプレートシステムでも充分実現できます。
+そもそも Web アプリケーションが出力するページは形式が一定のものばかりであり、XSLT ほどの柔軟性は必要ありません。
+それよりも XSLT の複雑さと動作の重さのほうが問題になります。</p>
+
+<p>筆者は以前、プレゼンテーション層に XSLT を使ってしまったために、Java で作成されているにも関わらず CGI より遅くなったシステムを目の当たりにしたことがあります。
+いくら速い言語を使っても、アーキテクチャがまずいとアプリケーションは遅くなるという典型的な例でした。
+みなさんも、XSLT の使いどころを間違わないようにしましょう<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>本稿では、動的に HTML を出力する方法を以下のように分類して説明しました。</p>
+
+<ul>
+  <li>プログラムとの関係からみた分類
+    <ul>
+      <li>第 1 世代: プログラムに HTML を埋め込む (CGIプログラム、cgi.rb など)
+        <ul>
+          <li>利点: 仕組みが極めて単純、他のライブラリを必要としない、どんな言語でも使える</li>
+          <li>欠点: HTML デザインの確認や変更がしにくい</li>
+        </ul>
+      </li>
+      <li>第 2 世代: HTML にプログラムを埋め込む (eRuby、PHP など)
+        <ul>
+          <li>利点: 仕組みが単純、HTML デザインの確認や変更がしやすい</li>
+          <li>欠点: HTML とプログラムとが混在している</li>
+        </ul>
+      </li>
+      <li>第 3 世代: プログラムと HTML とを分離する (テンプレートシステム)
+        <ul>
+          <li>利点: HTML デザインの確認や変更がしやすい、プログラマーとデザイナーとが協業しやすい</li>
+          <li>欠点: 仕組みは複雑、学習コストがかかる</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>出力形式による分類
+    <ul>
+      <li>テキスト汎用型
+        <ul>
+          <li>利点: 任意のテキスト形式で使える、動作が軽い、仕組みや実装が簡単</li>
+          <li>欠点: HTML デザインが崩れる、HTML Validator で検証できない</li>
+        </ul>
+      </li>
+      <li>HTML 専用型
+        <ul>
+          <li>利点: HTML デザインが一切崩れない、HTML Validator で検証できる</li>
+          <li>利点: HTML や XML しか扱えない、動作が重い、仕組みが複雑で学習コストがかかる</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>その他、以下について説明を行ないました。</p>
+
+<ul>
+  <li>用語の違い
+    <ul>
+      <li>「テンプレートシステム」… メインプログラムと HTML とを分離するための仕組み</li>
+      <li>「テンプレートエンジン」… それを実現するための、具体的なライブラリ</li>
+    </ul>
+  </li>
+  <li>第 2 世代型と、テキスト汎用型テンプレートエンジンとの比較
+    <ul>
+      <li>似てはいるが、そもそもの目的が違う</li>
+      <li>独自の記述言語を使うテンプレートエンジンよりは、第 2 世代型を使う方がお勧め</li>
+    </ul>
+  </li>
+  <li>eRuby は、厳密にはテンプレートエンジンではない
+    <ul>
+      <li>定義と用途とを混同してはいけない</li>
+    </ul>
+  </li>
+  <li>XSLT をプレゼンテーション層に使ってはいけない</li>
+</ul>
+
+<p>次回は、テンプレートシステムについてより詳しい説明を行ないます。</p>
+
+<h2 id="テンプレートシステム入門-連載一覧">テンプレートシステム入門 連載一覧</h2>
+
+<ul>
+  <li><a href="/articles/0024/0024-TemplateSystem.html">テンプレートシステム入門 (1) 歴史編</a></li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>「第 N 世代」という名前はこの記事で便宜上つけたものです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>「テキスト汎用型」「HTML 専用型」という名称もこの記事で便宜上つけたものです。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Ruby であれば、<a href="http://www.kuwata-lab.com/support/2007/10/09/30-lines-implementation-of-eruby/">30 行で実装できます</a>。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>ここはもう少し考慮して eRuby の仕様を決めて欲しかったです。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>開始タグと終了タグが正しく対応付けされるのは入力となる JSP ファイルであって、出力された HTML については保証されません。これは、正しくない HTML の断片を変数にいれてそれを出力するということが可能なためです。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>初期の JSP は確かに第 2 世代型でしたが、JSP 2.0 以降は EL (Expression Language) を使うようになり、Java の文や式を埋め込むことはほぼなくなったため、第 3 世代に分類するほうがいいかもしれません。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>ただし、筆者はこの意見に反対です。理由は次回説明します。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>たとえば、PC 向けのページをケータイ向けに自動変換するといった用途であれば、XSLT も悪くないでしょう。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,20 @@
+{{*type:      map*}}                  # マッピング型
+{{*mapping:*}}                        # マッピングの要素
+ "company":
+    type:      str
+    required:  yes
+ "email":
+    type:      str
+ "employees":
+    {{*type:      seq*}}              #   シーケンス型
+    {{*sequence:*}}                   #   シーケンスの要素
+      - type:    map            #     マッピング型
+        mapping:                #     マッピングの要素
+         "code":
+            type:      int
+            required:  yes
+         "name":
+            type:      str
+            required:  yes
+         "email":
+            type:      str

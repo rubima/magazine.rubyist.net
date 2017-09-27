@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0037/0037-CreateRailsPlugin.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0037/0037-CreateRailsPlugin.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0037/0037-CreateRailsPlugin.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0037/0037-CreateRailsPlugin.html" data-text="Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#rubygemsとは" id="markdown-toc-rubygemsとは">RubyGemsとは</a></li>
+  <li><a href="#jeweler-について" id="markdown-toc-jeweler-について">Jeweler について</a>    <ul>
+      <li><a href="#インストール" id="markdown-toc-インストール">インストール</a></li>
+      <li><a href="#パッケージのひな形作成" id="markdown-toc-パッケージのひな形作成">パッケージのひな形作成</a>        <ul>
+          <li><a href="#オプション" id="markdown-toc-オプション">オプション</a></li>
+          <li><a href="#github-の確認" id="markdown-toc-github-の確認">github の確認</a></li>
+          <li><a href="#ひな形の確認" id="markdown-toc-ひな形の確認">ひな形の確認</a></li>
+        </ul>
+      </li>
+      <li><a href="#プログラムの作成" id="markdown-toc-プログラムの作成">プログラムの作成</a></li>
+      <li><a href="#公開準備" id="markdown-toc-公開準備">公開準備</a></li>
+      <li><a href="#公開" id="markdown-toc-公開">公開</a></li>
+      <li><a href="#テスト" id="markdown-toc-テスト">テスト</a></li>
+    </ul>
+  </li>
+  <li><a href="#need_label" id="markdown-toc-need_label">need_label</a>    <ul>
+      <li><a href="#ソースのダウンロード" id="markdown-toc-ソースのダウンロード">ソースのダウンロード</a></li>
+      <li><a href="#ライブラリの解説" id="markdown-toc-ライブラリの解説">ライブラリの解説</a></li>
+      <li><a href="#テストの手法" id="markdown-toc-テストの手法">テストの手法</a></li>
+      <li><a href="#参考元を探して" id="markdown-toc-参考元を探して">参考元を探して</a></li>
+      <li><a href="#テストコードについて" id="markdown-toc-テストコードについて">テストコードについて</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#35-歳にして最近バイクの免許を取りたいと思ってる" id="markdown-toc-35-歳にして最近バイクの免許を取りたいと思ってる">35 歳にして最近バイクの免許を取りたいと思ってる。</a></li>
+</ul>
+
+<p>書いた人 : 山本 和久</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>こんにちは。皆さん RubyGems 使ってますか？ RubyGems パッケージは使うだけではなく自分で作ったものを公開することができるプラットフォームです。
+今回は Jeweler を使った RubyGems パッケージの作り方と、私が初めて作った Rails 用パッケージを題材にしたテストの書き方についてお話したいと思います。</p>
+
+<h2 id="rubygemsとは">RubyGemsとは</h2>
+
+<p>RubyGems は Ruby のパッケージ管理システムです。RubyGems が構築された経緯や使い方についてはすでにるびまの記事としてまとめられています。</p>
+
+<ul>
+  <li>
+    <p><a href="/articles/0010/0010-PackageManagement.html">シリーズ パッケージマネジメント 【第 2 回】 RubyGems (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-PackageManagement.html">シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)</a></p>
+  </li>
+</ul>
+
+<p>Ruby のライブラリは gem 形式のファイルとしてパッケージ化することができます。このパッケージを集約しているのが RubyGems というサイトで、簡単に検索やインストールを行うことができます。また、 Rails3 系から標準採用された Bundler<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> という仕組みを利用すればバージョン間の依存を考慮したインストールおよびアップデートを行うことができます。</p>
+
+<h2 id="jeweler-について">Jeweler について</h2>
+
+<p>Jeweler とは、RubyGems 作成支援のツールであり RubyGems の作成を簡単にしてくれます。
+下記のような機能があります。</p>
+
+<ul>
+  <li>パッケージのひな形の作成</li>
+  <li>github へのソースの登録</li>
+  <li>RubyGems への公開</li>
+  <li>公開したパッケージの更新</li>
+</ul>
+
+<p>ここでは順を追って操作を説明します。</p>
+
+<h3 id="インストール">インストール</h3>
+
+<p>Jeweler をインストールします。Jeweler 自体も RubyGems で配布されています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gem install jeweler</code></pre></figure>
+
+<h3 id="パッケージのひな形作成">パッケージのひな形作成</h3>
+
+<p>新しいパッケージのひな形を jeweler コマンドで作成します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ jeweler --rspec --create-repo hoge</code></pre></figure>
+
+<p>hoge の部分がパッケージ名です。先に rubygems.org で自分が作ろうとしているパッケージ名[^2]が先に登録されていないか確認しておきましょう。</p>
+
+<h4 id="オプション">オプション</h4>
+
+<ul>
+  <li>–rspec</li>
+</ul>
+
+<p>テストフレームワークに rspec を使用します。rspec は Ruby のプロダクトで最も多く使用されているテストツールです。上記のコマンドでは rspec を選択しています。</p>
+
+<ul>
+  <li>–shoulda</li>
+</ul>
+
+<p>テストフレームワークに shoulda を使用します。should は Test::Unit を拡張して rspec 的に書くことができるようにしたものです。他にもお好みで bacon , testspec , minitest , micronaut , riot , shind , cucumber などのテストフレームワークを使用することができます。</p>
+
+<ul>
+  <li>–reek</li>
+</ul>
+
+<p>reek をインストールします。reek は大きなクラスやふさわしく無い名前など「読みやすい」コードであるかチェックを行うことができます。</p>
+
+<ul>
+  <li>–create-repo</li>
+</ul>
+
+<p>github にリポジトリを作成します。 ~/.gitconfig に github の設定が行われている必要があります。</p>
+
+<h4 id="github-の確認">github の確認</h4>
+
+<p>今回のコマンドでは –create-repo を指定しているので、この時点で github にログインすると指定したパッケージ名でリポジトリが作成されていることを確認できます。</p>
+
+<h4 id="ひな形の確認">ひな形の確認</h4>
+
+<p>現時点で次の内容でファイルが作成されていることが確認できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">hoge
+├── Gemfile
+├── LICENSE.txt
+├── README.rdoc
+├── Rakefile
+├── lib
+│   └── hoge.rb
+└── spec
+   ├── hoge_spec.rb
+   └── spec_helper.rb</code></pre></figure>
+
+<h3 id="プログラムの作成">プログラムの作成</h3>
+
+<p>lib/hoge.rb にプログラムを記述します。一つのファイルで収まらない場合は lib フォルダ以下にパッケージ名のディレクトリを作成して、その中に関連ファイルを置くと良いでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">├── lib
+│   ├── hoge
+│   │   ├── lib1.rb
+│   │   ├── lib2.rb
+│   │   └── lib3.rb
+│   └── hoge.rb</code></pre></figure>
+
+<h3 id="公開準備">公開準備</h3>
+
+<p>まず VERSION ファイルを作成します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake version:write</code></pre></figure>
+
+<p>公開前にマイナーバージョンを上げておきましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake version:bump:minor</code></pre></figure>
+
+<p>Jeweler によって作成された Rakefile を使用してパッケージをビルドしてみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake build
+rake aborted!
+"FIXME" or "TODO" is not a description</code></pre></figure>
+
+<p>おや？エラーメッセージが表示されました。Rakefile に最低限必要な情報を記述しましょう。
+次の TODO の箇所を修正します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">gem</span><span class="p">.</span><span class="nf">summary</span> <span class="o">=</span> <span class="sx">%Q{TODO: one-line summary of your gem}</span>
+  <span class="n">gem</span><span class="p">.</span><span class="nf">description</span> <span class="o">=</span> <span class="sx">%Q{TODO: longer description of your gem}</span>
+
+</code></pre>
+</div>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake build
+  Successfully built RubyGem
+  Name: hoge
+  Version: 0.1.0
+  File: hoge-0.1.0.gem</code></pre></figure>
+
+<p>今度は作成されました。</p>
+
+<p>今の状態で一旦 commit して github に push しておきましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ git add .
+$ git commit -m "create new library."
+$ git push origin master</code></pre></figure>
+
+<h3 id="公開">公開</h3>
+
+<p>ここまでできたら RubyGems に公開することができます。
+次のコマンドで公開しましょう。[^3]</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake release</code></pre></figure>
+
+<p>実際に rubygems.org に公開されるのはしばらく時間がかかるという人が多いですが、私の場合はすぐに公開されました。
+リリースする時間帯にもよると思いますので、焦らずしばらく待ってみましょう。</p>
+
+<h3 id="テスト">テスト</h3>
+
+<p>テストコードはプログラムの動作を保証すると共に、仕様を明確にする目的があります。RubyGems を公開する際にはテストコードを添付するべきです。
+さて、小規模なライブラリの場合はテストコードの記述も容易です。</p>
+
+<p>例：</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># jp_yen.rb</span>
+<span class="k">class</span> <span class="nc">Fixnum</span>
+  <span class="k">def</span> <span class="nf">yen</span>
+    <span class="s2">"</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">to_s</span><span class="si">}</span><span class="s2">yen"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># jp_yen_spec.rb</span>
+<span class="nb">require</span> <span class="s1">'rspec'</span>
+<span class="nb">require</span> <span class="s1">'./jp_yen'</span>
+
+<span class="n">describe</span> <span class="s2">"JpYen"</span> <span class="k">do</span>
+  <span class="n">it</span> <span class="s2">"Checks that a yen is displayed"</span> <span class="k">do</span>
+    <span class="mi">10</span><span class="p">.</span><span class="nf">yen</span><span class="p">.</span><span class="nf">should</span> <span class="o">==</span> <span class="s2">"10yen"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rspec jp_yen_spec
+.
+
+Finished in 0.46084 seconds
+1 example, 0 failures</code></pre></figure>
+
+<p>しかし、多くの RubyGems パッケージは他のライブラリ、もしくは Ruby on Rails のようなフレームワークに依存しています。
+ここでは Ruby on Rails で使用するための RubyGems パッケージのテスト方法を、私が作成した need_label を例にとって説明してみたいと思います。</p>
+
+<h2 id="need_label">need_label</h2>
+
+<p>私が作成した need_label は view のラベル項目に class 属性を出力する単純なものです。Ruby on Rails では Model の項目に必須入力のバリデーションを設定することができます。フォームで何も入力せずに登録しようとするとエラーが発生するのですが、登録してみるまでその項目が必須であるかどうかは分かりません。世の中の多くの入力フォームが実現しているような「必須入力マーク」は自分で View に設定する必要があります。need_label を導入することで自動的に必須入力項目にマークを表示させることができます。</p>
+
+<h3 id="ソースのダウンロード">ソースのダウンロード</h3>
+
+<p>ソースは github からダウンロードすることができます。</p>
+
+<p><a href="https://github.com/kazuhisa/need_label">https://github.com/kazuhisa/need_label</a></p>
+
+<h3 id="ライブラリの解説">ライブラリの解説</h3>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># lib/need_label/helpers.rb</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="k">module</span> <span class="nn">ActionView</span>
+  <span class="k">module</span> <span class="nn">Helpers</span>
+    <span class="k">module</span> <span class="nn">FormHelper</span>
+      <span class="k">def</span> <span class="nf">need_label</span><span class="p">(</span><span class="n">object_name</span><span class="p">,</span> <span class="n">object</span><span class="p">,</span> <span class="nb">method</span><span class="p">,</span> <span class="n">content_or_options</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+        <span class="n">need</span> <span class="o">=</span> <span class="kp">true</span>
+        <span class="k">if</span> <span class="n">content_or_options</span><span class="p">.</span><span class="nf">class</span> <span class="o">==</span> <span class="no">Hash</span> <span class="o">&amp;&amp;</span> <span class="n">content_or_options</span><span class="p">[</span><span class="ss">:need_label</span><span class="p">]</span> <span class="o">==</span> <span class="kp">false</span>
+          <span class="n">need</span> <span class="o">=</span> <span class="kp">false</span>
+          <span class="n">content_or_options</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="ss">:need_label</span><span class="p">)</span>
+          <span class="n">content_or_options</span> <span class="o">=</span> <span class="kp">nil</span> <span class="k">if</span> <span class="n">content_or_options</span> <span class="o">==</span> <span class="p">{}</span>
+        <span class="k">end</span>
+        <span class="n">need</span> <span class="o">=</span> <span class="kp">false</span> <span class="k">if</span> <span class="n">options</span><span class="p">.</span><span class="nf">class</span> <span class="o">==</span> <span class="no">Hash</span> <span class="o">&amp;&amp;</span> <span class="n">options</span><span class="p">[</span><span class="ss">:need_label</span><span class="p">]</span> <span class="o">==</span> <span class="kp">false</span>
+        <span class="k">if</span> <span class="n">need</span> <span class="o">&amp;&amp;</span> <span class="n">object</span><span class="p">.</span><span class="nf">present?</span> <span class="o">&amp;&amp;</span> <span class="n">object</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">respond_to?</span><span class="p">(</span><span class="ss">:validators</span><span class="p">)</span>
+          <span class="n">need_attributes</span> <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">validators</span><span class="p">.</span>
+            <span class="nf">select</span><span class="p">{</span><span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span><span class="p">.</span><span class="nf">is_a?</span> <span class="no">ActiveModel</span><span class="o">::</span><span class="no">Validations</span><span class="o">::</span><span class="no">PresenceValidator</span><span class="p">}.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">e</span><span class="o">|</span> <span class="n">e</span><span class="p">.</span><span class="nf">attributes</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span>
+          <span class="k">if</span> <span class="n">need_attributes</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="nb">method</span><span class="p">.</span><span class="nf">to_sym</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">content_or_options</span><span class="p">.</span><span class="nf">present?</span> <span class="o">&amp;&amp;</span> <span class="n">content_or_options</span><span class="p">.</span><span class="nf">class</span> <span class="o">==</span> <span class="no">Hash</span> <span class="o">&amp;&amp;</span> <span class="n">content_or_options</span><span class="p">[</span><span class="ss">:class</span><span class="p">].</span><span class="nf">present?</span>
+              <span class="n">content_or_options</span><span class="p">[</span><span class="ss">:class</span><span class="p">]</span> <span class="o">=</span> <span class="n">content_or_options</span><span class="p">[</span><span class="ss">:class</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" need-label"</span>
+            <span class="k">else</span>
+              <span class="n">options</span><span class="p">[</span><span class="ss">:class</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"need-label"</span>
+            <span class="k">end</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+        <span class="n">label</span><span class="p">(</span><span class="n">object_name</span><span class="p">,</span> <span class="nb">method</span><span class="p">,</span> <span class="n">content_or_options</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">class</span> <span class="nc">FormBuilder</span>
+      <span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="nb">method</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{},</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+        <span class="k">if</span> <span class="vi">@object_name</span><span class="p">.</span><span class="nf">class</span> <span class="o">==</span> <span class="no">Symbol</span>
+          <span class="vi">@object</span> <span class="o">=</span> <span class="vi">@template</span><span class="p">.</span><span class="nf">instance_variable_get</span><span class="p">(</span><span class="s2">"@</span><span class="si">#{</span><span class="vi">@object_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">end</span>
+        <span class="vi">@template</span><span class="p">.</span><span class="nf">need_label</span><span class="p">(</span><span class="vi">@object_name</span><span class="p">,</span> <span class="vi">@object</span><span class="p">,</span> <span class="nb">method</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">objectify_options</span><span class="p">(</span><span class="n">options</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>まず ActionView::Helpers::FormBuilder#label に手を加えて、標準の label メソッドではなく need_label メソッドを呼び出すように変更しています。
+ActionView::Helpers::FormHelper#need_label で関連する Model の項目が必須入力に設定されていれば need-label というクラスを追加する仕様です。
+ただし、option に :need_label =&gt; false と設定されていればこの限りではありません。</p>
+
+<h3 id="テストの手法">テストの手法</h3>
+
+<p>いざテストを書こうとして、どうやって環境を作るべきか非常に困りました。need_label は ActionView::Helpers::FormHelper をフックしています。そして Model 内で :presence =&gt; true と設定している項目のラベルに need-label というクラス属性を出力するという仕様です。View と Model が登場するためテストのために Rails を導入するのが手っ取り早いのですが、それではあまりにも大掛かりです。プロダクトコードに関係する最低限のコードで「Rails のようなもの」を構築するにはどうすればよいのでしょうか？</p>
+
+<h3 id="参考元を探して">参考元を探して</h3>
+
+<p>困った私は似たような機能を持つ Gem のソースを片っ端からダウンロードしてテストコードを見てみました。しかしなかなかシンプルなものが見つかりません。Model と View が関係しそうな Gem といえば、取得したレコードに応じたページ数を表示するページネーションが思い当たりました。初めは will_pagenate[^4] を、そしてページネーションなら「amatsuda<sup id="fnref:5"><a href="#fn:5" class="footnote">2</a></sup> さんが作られた kaminari<sup id="fnref:6"><a href="#fn:6" class="footnote">3</a></sup> がいいよ」という知人からのアドバイスもあり、ソースを確認してみたところシンプルで良い感じなので参考にさせて頂きました。</p>
+
+<h3 id="テストコードについて">テストコードについて</h3>
+
+<p>kaminari のテストに習い spec/fake_app.rb に Rails で必要な機能を設定しています。テストフレームワークは rspec を使用してエンドツーエンドテストを行なっています。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># spec/fake_app.rb</span>
+
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="nb">require</span> <span class="s1">'active_record'</span>
+<span class="nb">require</span> <span class="s1">'action_controller/railtie'</span>
+<span class="nb">require</span> <span class="s1">'action_view/helpers'</span>
+<span class="nb">require</span> <span class="s1">'need_label'</span>
+
+<span class="c1"># database</span>
+<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">configurations</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'test'</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:adapter</span> <span class="o">=&gt;</span> <span class="s1">'sqlite3'</span><span class="p">,</span> <span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s1">':memory:'</span><span class="p">\}\}</span>
+<span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">establish_connection</span><span class="p">(</span><span class="s1">'test'</span><span class="p">)</span>
+
+<span class="c1"># config</span>
+<span class="n">app</span> <span class="o">=</span> <span class="no">Class</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">Rails</span><span class="o">::</span><span class="no">Application</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">secret_token</span> <span class="o">=</span> <span class="s2">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">session_store</span> <span class="ss">:cookie_store</span><span class="p">,</span> <span class="ss">:key</span> <span class="o">=&gt;</span> <span class="s2">"_myapp_session"</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">active_support</span><span class="p">.</span><span class="nf">deprecation</span> <span class="o">=</span> <span class="ss">:log</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">initialize!</span>
+
+<span class="c1"># routes</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">routes</span><span class="p">.</span><span class="nf">draw</span> <span class="k">do</span>
+  <span class="n">resources</span> <span class="ss">:users</span>
+<span class="k">end</span>
+
+<span class="c1"># models</span>
+<span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">validates</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:presence</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+<span class="k">end</span>
+
+<span class="c1"># controllers</span>
+<span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span><span class="p">;</span> <span class="k">end</span>
+
+<span class="c1"># helpers</span>
+<span class="no">Object</span><span class="p">.</span><span class="nf">const_set</span><span class="p">(</span><span class="ss">:ApplicationHelper</span><span class="p">,</span> <span class="no">Module</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span>
+
+<span class="c1">#migrations</span>
+<span class="k">class</span> <span class="nc">CreateAllTables</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">up</span>
+    <span class="n">create_table</span><span class="p">(</span><span class="ss">:users</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">t</span><span class="o">|</span> <span class="n">t</span><span class="p">.</span><span class="nf">string</span> <span class="ss">:name</span><span class="p">;</span> <span class="n">t</span><span class="p">.</span><span class="nf">integer</span> <span class="ss">:age</span><span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>テスト用に name と age という項目が設定された User モデルが作成されており、name が必須項目に設定されていることに注目してください。</p>
+
+<p>テスト本体は spec/requests/need_label_spec.rb に記述されています。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># spec/requests/need_label_spec.rb</span>
+
+<span class="nb">require</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="kp">__FILE__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'/../spec_helper'</span><span class="p">)</span>
+
+<span class="n">describe</span> <span class="s2">"output need-label class"</span> <span class="k">do</span>
+  <span class="n">describe</span> <span class="s2">"instance variable type without options"</span> <span class="k">do</span>
+    <span class="n">before</span> <span class="k">do</span>
+      <span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+        <span class="k">def</span> <span class="nf">new</span>
+          <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span>
+          <span class="n">render</span> <span class="ss">:inline</span> <span class="o">=&gt;</span> <span class="o">&lt;&lt;-</span><span class="no">ERB</span><span class="sh">
+          &lt;%= form_for @user do |f| %&gt;
+            &lt;%= f.label :name %&gt;
+            &lt;%= f.text_field :name %&gt;
+            &lt;%= f.label :age %&gt;
+            &lt;%= f.text_field :age %&gt;
+            &lt;%= f.submit "save" %&gt;
+          &lt;% end %&gt;
+</span><span class="no">          ERB</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+      <span class="n">visit</span> <span class="s2">"/users/new"</span>
+    <span class="k">end</span>
+    <span class="n">it</span> <span class="s2">"It checks that need-label is outputted."</span> <span class="k">do</span>
+      <span class="n">page</span><span class="p">.</span><span class="nf">has_xpath?</span><span class="p">(</span><span class="s2">"//label[@for='user_name'][@class='need-label']"</span><span class="p">).</span><span class="nf">should</span> <span class="n">be_true</span>
+    <span class="k">end</span>
+    <span class="n">it</span> <span class="s2">"It checks that need-label is not outputted."</span> <span class="k">do</span>
+      <span class="n">page</span><span class="p">.</span><span class="nf">has_xpath?</span><span class="p">(</span><span class="s2">"//label[@for='user_age'][not(@class)]"</span><span class="p">).</span><span class="nf">should</span> <span class="n">be_true</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+<span class="c1">##(略)##</span>
+
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>様々なパターンで View を定義してレンダリングすることで、name と age にどのような class が出力されているかを確認しています。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>Jeweler を使用すると容易に RubyGems パッケージが作成できることが分かりました。しかし、テストの手法については作成するパッケージの種類よって多様です。
+さらに RubyGems パッケージのテストについて記述されたドキュメントが少ないのもテストが書きづらい要因になっています。
+困ったときは自分が作ろうとしているパッケージの機能に似ているものを探して、積極的にテスト手法を参考にするのが良いと思います。
+そのためには Ruby をとりまくパッケージの情報にアンテナを張って積極的に情報収集していきましょう。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>山本 和久(<a href="http://twitter.com/kazuhisa1976">@kazuhisa1976</a>)</p>
+
+<p>岡山 Ruby / Ruby on Rails 勉強会のスタッフの一人。仕事は Ruby on Rails を使用した Web サービスの作成。</p>
+
+<h2 id="35-歳にして最近バイクの免許を取りたいと思ってる">35 歳にして最近バイクの免許を取りたいと思ってる。</h2>
+
+<p>https://github.com/carlhuda/bundler
+http://guides.rubygems.org/command-reference/#gem_push
+[^2]: 特に命名規約は無いようですが単語の区切りは_(アンダーバー)で行い、◯◯の Ruby 版などの場合は最後に -ruby を付けるのが良いようです。http://kyow.cocolog-nifty.com/blog/2010/12/rubygems-d629.html
+[^3]: 誤って公開してしまったgemはgemcutterを使用して削除しましょう。使い方は次のFAQに記述されています。http://help.rubygems.org/kb/gemcutter/removing-a-published-rubygem
+$ gem update –system
+$ gem install gemcutter
+$ gem yank hoge -v 0.1.0 #必ずバージョンを指定すること
+[^4]: Railsで古くから使用されているページネーション。https://github.com/mislav/will_paginate</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Jewelerを使用せずBundlerを使用してパッケージを作成し、gem pushコマンドでRubyGemsへパッケージを公開することもできます。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>今号のインタビュー記事 [[0037-Hotlinks]] に出ておられます&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>Rails3.1やmongoidにも対応している最近話題のページネーション。https://github.com/amatsuda/kaminari&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

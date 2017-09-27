@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)</title>
+  <meta name="description" content="書いた人: かくたに、もろはし">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0023/0023-Rspec.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0023/0023-Rspec.html" class="hatena-bookmark-button" data-hatena-bookmark-title="スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0023/0023-Rspec.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0023/0023-Rspec.html" data-text="スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人: かくたに、もろはし</p>
+
+<ul id="markdown-toc">
+  <li><a href="#この連載について" id="markdown-toc-この連載について">この連載について</a>    <ul>
+      <li><a href="#対象読者" id="markdown-toc-対象読者">対象読者</a></li>
+      <li><a href="#対象とする-rspec-のバージョン" id="markdown-toc-対象とする-rspec-のバージョン">対象とする RSpec のバージョン</a></li>
+      <li><a href="#この連載でのテストという言葉の使い方について" id="markdown-toc-この連載でのテストという言葉の使い方について">この連載での「テスト」という言葉の使い方について</a></li>
+      <li><a href="#今回の説明範囲" id="markdown-toc-今回の説明範囲">今回の説明範囲</a></li>
+    </ul>
+  </li>
+  <li><a href="#前回までのあらすじ" id="markdown-toc-前回までのあらすじ">前回までのあらすじ</a>    <ul>
+      <li><a href="#テストの実行" id="markdown-toc-テストの実行">テストの実行</a></li>
+      <li><a href="#rspec-on-rails-がサポートする周辺ツール" id="markdown-toc-rspec-on-rails-がサポートする周辺ツール">RSpec (on Rails) がサポートする周辺ツール</a></li>
+      <li><a href="#rcov-による-c0-カバレッジの計測" id="markdown-toc-rcov-による-c0-カバレッジの計測">RCov による C0 カバレッジの計測</a>        <ul>
+          <li><a href="#もっと詳しく" id="markdown-toc-もっと詳しく">もっと詳しく</a></li>
+        </ul>
+      </li>
+      <li><a href="#rake-stats-の統合" id="markdown-toc-rake-stats-の統合">rake stats の統合</a></li>
+    </ul>
+  </li>
+  <li><a href="#今回の実装のゴール" id="markdown-toc-今回の実装のゴール">今回の実装のゴール</a>    <ul>
+      <li><a href="#これからの-myblog" id="markdown-toc-これからの-myblog">これからの myblog</a></li>
+      <li><a href="#今回の実装のゴール-1" id="markdown-toc-今回の実装のゴール-1">今回の実装のゴール</a></li>
+    </ul>
+  </li>
+  <li><a href="#rails-と-rspec-のバージョンアップ" id="markdown-toc-rails-と-rspec-のバージョンアップ">Rails と RSpec のバージョンアップ</a>    <ul>
+      <li><a href="#rails-202-にバージョンアップ" id="markdown-toc-rails-202-にバージョンアップ">Rails 2.0.2 にバージョンアップ</a>        <ul>
+          <li><a href="#rails-本体のバージョンアップ" id="markdown-toc-rails-本体のバージョンアップ">Rails 本体のバージョンアップ</a></li>
+          <li><a href="#configbreakpoint_server-の削除" id="markdown-toc-configbreakpoint_server-の削除">config.breakpoint_server の削除</a></li>
+          <li><a href="#cookie-のシークレット文字列の設定" id="markdown-toc-cookie-のシークレット文字列の設定">Cookie のシークレット文字列の設定</a>            <ul>
+              <li><a href="#configenvironmentrb" id="markdown-toc-configenvironmentrb">config/environment.rb</a></li>
+            </ul>
+          </li>
+          <li><a href="#バージョンアップできたことの確認" id="markdown-toc-バージョンアップできたことの確認">バージョンアップできたことの確認</a></li>
+        </ul>
+      </li>
+      <li><a href="#rspec-on-rails-のバージョンアップ" id="markdown-toc-rspec-on-rails-のバージョンアップ">RSpec on Rails のバージョンアップ</a>        <ul>
+          <li><a href="#rspec-on-rails-108-のアンインストール" id="markdown-toc-rspec-on-rails-108-のアンインストール">RSpec on Rails 1.0.8 のアンインストール</a></li>
+          <li><a href="#rspec-on-rails-113-のインストール" id="markdown-toc-rspec-on-rails-113-のインストール">RSpec on Rails 1.1.3 のインストール</a>            <ul>
+              <li><a href="#rspec-on-rails-のインストールについてもっと詳しく" id="markdown-toc-rspec-on-rails-のインストールについてもっと詳しく">RSpec on Rails のインストールについてもっと詳しく</a></li>
+            </ul>
+          </li>
+          <li><a href="#関連ファイルの再生成" id="markdown-toc-関連ファイルの再生成">関連ファイルの再生成</a></li>
+          <li><a href="#オプション-specopts-ファイルの設定" id="markdown-toc-オプション-specopts-ファイルの設定">オプション: spec.opts ファイルの設定</a></li>
+          <li><a href="#バージョンアップの確認" id="markdown-toc-バージョンアップの確認">バージョンアップの確認</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#rspec-11-の新機能" id="markdown-toc-rspec-11-の新機能">RSpec 1.1 の新機能</a>    <ul>
+      <li><a href="#story-runner-の登場" id="markdown-toc-story-runner-の登場">Story Runner の登場</a></li>
+      <li><a href="#ネストした-describe-のサポート" id="markdown-toc-ネストした-describe-のサポート">ネストした describe のサポート</a></li>
+      <li><a href="#testunit-との相互運用性の向上" id="markdown-toc-testunit-との相互運用性の向上">Test::Unit との相互運用性の向上</a></li>
+    </ul>
+  </li>
+  <li><a href="#今回の実装の作戦を立てる" id="markdown-toc-今回の実装の作戦を立てる">今回の実装の作戦を立てる</a>    <ul>
+      <li><a href="#水平分割アプローチと垂直分割アプローチ" id="markdown-toc-水平分割アプローチと垂直分割アプローチ">水平分割アプローチと垂直分割アプローチ</a>        <ul>
+          <li><a href="#todoリスト" id="markdown-toc-todoリスト">TODOリスト</a></li>
+        </ul>
+      </li>
+      <li><a href="#必要な作業は何だろう" id="markdown-toc-必要な作業は何だろう">「必要な作業は何だろう？」</a>        <ul>
+          <li><a href="#todo-リスト" id="markdown-toc-todo-リスト">TODO リスト</a></li>
+          <li><a href="#いちどにひとつずつ" id="markdown-toc-いちどにひとつずつ">いちどにひとつずつ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#コントローラのテスト" id="markdown-toc-コントローラのテスト">コントローラのテスト</a>    <ul>
+      <li><a href="#もう一度必要な作業は何だろう" id="markdown-toc-もう一度必要な作業は何だろう">もう一度。「必要な作業は何だろう？」</a>        <ul>
+          <li><a href="#ユニット" id="markdown-toc-ユニット">ユニット</a></li>
+          <li><a href="#責務" id="markdown-toc-責務">責務</a></li>
+          <li><a href="#コントローラの責務" id="markdown-toc-コントローラの責務">コントローラの責務</a></li>
+          <li><a href="#コントローラでテストすべきこと" id="markdown-toc-コントローラでテストすべきこと">コントローラでテストすべきこと</a>            <ul>
+              <li><a href="#受信したリクエストに対してレスポンスを返す" id="markdown-toc-受信したリクエストに対してレスポンスを返す">受信したリクエストに対してレスポンスを返す</a></li>
+              <li><a href="#ビューで使用するのに必要なモデルオブジェクトをロードする" id="markdown-toc-ビューで使用するのに必要なモデルオブジェクトをロードする">ビューで使用するのに必要なモデルオブジェクトをロードする</a></li>
+              <li><a href="#レスポンスを表示するのに適切なビューを選択する" id="markdown-toc-レスポンスを表示するのに適切なビューを選択する">レスポンスを表示するのに適切なビューを選択する</a></li>
+              <li><a href="#todo-リストの更新" id="markdown-toc-todo-リストの更新">TODO リストの更新</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#コントローラのテストの雛形の作成" id="markdown-toc-コントローラのテストの雛形の作成">コントローラのテストの雛形の作成</a>        <ul>
+          <li><a href="#rspec_controller-ジェネレータ" id="markdown-toc-rspec_controller-ジェネレータ">rspec_controller ジェネレータ</a>            <ul>
+              <li><a href="#app-ディレクトリ" id="markdown-toc-app-ディレクトリ">app ディレクトリ</a></li>
+              <li><a href="#spec-ディレクトリ" id="markdown-toc-spec-ディレクトリ">spec ディレクトリ</a></li>
+            </ul>
+          </li>
+          <li><a href="#rspec-on-rails-ではすべてがユニットテスト" id="markdown-toc-rspec-on-rails-ではすべてがユニットテスト">RSpec on Rails ではすべてが「ユニットテスト」</a>            <ul>
+              <li><a href="#rails-のユニットテストファンクショナルテストインテグレーションテスト" id="markdown-toc-rails-のユニットテストファンクショナルテストインテグレーションテスト">Rails のユニットテスト、ファンクショナルテスト、インテグレーションテスト</a></li>
+              <li><a href="#rspec-on-rails-のテスティング環境" id="markdown-toc-rspec-on-rails-のテスティング環境">RSpec on Rails のテスティング環境</a></li>
+            </ul>
+          </li>
+          <li><a href="#ジェネレータが生成したテストの実行" id="markdown-toc-ジェネレータが生成したテストの実行">ジェネレータが生成したテストの実行</a></li>
+          <li><a href="#ジェネレータが生成したコントローラのスペックファイル" id="markdown-toc-ジェネレータが生成したコントローラのスペックファイル">ジェネレータが生成したコントローラのスペックファイル</a>            <ul>
+              <li><a href="#speccontrollerblogs_controllerrb" id="markdown-toc-speccontrollerblogs_controllerrb">spec/controller/blogs_controller.rb</a></li>
+              <li><a href="#appcontrollersblogs_controllerrb" id="markdown-toc-appcontrollersblogs_controllerrb">app/controllers/blogs_controller.rb</a></li>
+              <li><a href="#appviewsblogsshowrhtmlerb" id="markdown-toc-appviewsblogsshowrhtmlerb">app/views/blogs/show.rhtml.erb</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#テストblogsshowid-のリクエストに対する-http-レスポンスのステータスコードは-200" id="markdown-toc-テストblogsshowid-のリクエストに対する-http-レスポンスのステータスコードは-200">テスト:「/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200」</a>        <ul>
+          <li><a href="#speccontrollersblogs_controller_specrb" id="markdown-toc-speccontrollersblogs_controller_specrb">spec/controllers/blogs_controller_spec.rb</a></li>
+          <li><a href="#todo-リスト-1" id="markdown-toc-todo-リスト-1">TODO リスト</a></li>
+        </ul>
+      </li>
+      <li><a href="#テストblogsshowid-で指定した-blog-インスタンスをロードする" id="markdown-toc-テストblogsshowid-で指定した-blog-インスタンスをロードする">テスト:「/blogs/show/:id で指定した Blog インスタンスをロードする」</a>        <ul>
+          <li><a href="#speccontrollersblogs_controller_specrb-1" id="markdown-toc-speccontrollersblogs_controller_specrb-1">spec/controllers/blogs_controller_spec.rb</a></li>
+          <li><a href="#assigns-による参照" id="markdown-toc-assigns-による参照">assigns による参照</a></li>
+          <li><a href="#テストの実行-1" id="markdown-toc-テストの実行-1">テストの実行</a></li>
+          <li><a href="#プロダクトコードの実装" id="markdown-toc-プロダクトコードの実装">プロダクトコードの実装</a>            <ul>
+              <li><a href="#appcontrollersblogs_controllerrb-1" id="markdown-toc-appcontrollersblogs_controllerrb-1">app/controllers/blogs_controller.rb</a></li>
+            </ul>
+          </li>
+          <li><a href="#再びテストを実行する" id="markdown-toc-再びテストを実行する">再びテストを実行する</a>            <ul>
+              <li><a href="#todo-リスト-2" id="markdown-toc-todo-リスト-2">TODO リスト</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#テストappviewsblogsshowerbhtml-を選択する" id="markdown-toc-テストappviewsblogsshowerbhtml-を選択する">テスト:「app/views/blogs/show.erb.html を選択する」</a>        <ul>
+          <li><a href="#スペックファイルのリファクタリング" id="markdown-toc-スペックファイルのリファクタリング">スペックファイルのリファクタリング</a>            <ul>
+              <li><a href="#speccontrollersblogs_controller_specrb-2" id="markdown-toc-speccontrollersblogs_controller_specrb-2">spec/controllers/blogs_controller_spec.rb</a></li>
+            </ul>
+          </li>
+          <li><a href="#example-の追加" id="markdown-toc-example-の追加">example の追加</a>            <ul>
+              <li><a href="#speccontrollersblogs_controller_specrb-3" id="markdown-toc-speccontrollersblogs_controller_specrb-3">spec/controllers/blogs_controller_spec.rb</a></li>
+              <li><a href="#speccontrollersblogs_controller_specrb-4" id="markdown-toc-speccontrollersblogs_controller_specrb-4">spec/controllers/blogs_controller_spec.rb</a></li>
+              <li><a href="#todo-リスト-3" id="markdown-toc-todo-リスト-3">TODO リスト</a></li>
+            </ul>
+          </li>
+          <li><a href="#コントローラのテストで利用できる機能" id="markdown-toc-コントローラのテストで利用できる機能">コントローラのテストで利用できる機能</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#ビューのテスト" id="markdown-toc-ビューのテスト">ビューのテスト</a>    <ul>
+      <li><a href="#ビューの責務と-rspec-on-rails-のテストサポート" id="markdown-toc-ビューの責務と-rspec-on-rails-のテストサポート">ビューの責務と RSpec on Rails のテストサポート</a></li>
+      <li><a href="#必要な作業は何だろう-1" id="markdown-toc-必要な作業は何だろう-1">「必要な作業は何だろう？」</a>        <ul>
+          <li><a href="#todo-リスト-4" id="markdown-toc-todo-リスト-4">TODO リスト</a></li>
+        </ul>
+      </li>
+      <li><a href="#ジェネレータが生成したスペックファイルを確認する" id="markdown-toc-ジェネレータが生成したスペックファイルを確認する">ジェネレータが生成したスペックファイルを確認する</a>        <ul>
+          <li><a href="#specviewsblogsshowhtmlerb_specrb" id="markdown-toc-specviewsblogsshowhtmlerb_specrb">spec/views/blogs/show.html.erb_spec.rb</a></li>
+          <li><a href="#appviewsblogsshowrhtmlerb-1" id="markdown-toc-appviewsblogsshowrhtmlerb-1">app/views/blogs/show.rhtml.erb</a></li>
+        </ul>
+      </li>
+      <li><a href="#テスト指定したブログの名前を表示する" id="markdown-toc-テスト指定したブログの名前を表示する">テスト:指定したブログの名前を表示する</a>        <ul>
+          <li><a href="#specviewsblogsshowhtmlerb_specrb-1" id="markdown-toc-specviewsblogsshowhtmlerb_specrb-1">spec/views/blogs/show.html.erb_spec.rb</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="この連載について">この連載について</h2>
+
+<p>この連載では Test::Unit を代替するテスティングフレームワークである
+<a href="http://rspec.info">RSpec</a> (先日、サイトが移転しました。新しい URL は <a href="http://rspec.info">http://rspec.info</a> です) の使い方や、
+その背景にある考え方を何回かに分けて連載形式でお届けします。
+連載全体を通じて、次のような内容を紹介したいと考えています。</p>
+
+<ul>
+  <li>RSpec とは何か。RSpec の使い方、特に RSpec on Rails を使った Rails アプリ開発への適用</li>
+  <li>テスト駆動開発 (TDD:Test Driven Development) の進め方と、テスト駆動開発的な設計アプローチ</li>
+  <li>RSpec の仕組みと拡張の方法</li>
+</ul>
+
+<h3 id="対象読者">対象読者</h3>
+
+<p><a href="http://jp.rubyist.net/magazine/?0021-Rspec">前回の連載</a>に目を通している方を対象としています。</p>
+
+<p>前回の連載は、Ruby 標準添付のテスティングフレームワークである Test::Unit を多少は使ったことがあることを前提としていますが、
+いわゆるテスト駆動開発やテストファーストといったプログラム技法の経験は前提としていません。</p>
+
+<p>また、前回の後半から、Ruby on Rails を使った Web アプリケーションをテスト駆動で開発しているので、
+Ruby on Rails の初歩的な知識も前提としています。</p>
+
+<h3 id="対象とする-rspec-のバージョン">対象とする RSpec のバージョン</h3>
+
+<p>執筆時点での最新リリースバージョンを対象とします。
+つまり、今回は RSpec 1.1.3 です。
+Ruby on Rails も同様に最新のリリースバージョンを対象とします。
+こちらは 2.0.2 を対象とします。</p>
+
+<p>RSpec と Rails のいずれも、前回の執筆以降にバージョンアップされました。
+本文で両者をアップデートする手順を紹介します。</p>
+
+<h3 id="この連載でのテストという言葉の使い方について">この連載での「テスト」という言葉の使い方について</h3>
+
+<p>RSpec も少しずつ知名度を高めつつあり、さまざまな場所で紹介されるようになりました。
+その際に、RSpec は BDD (Behaviour Driven Development)、「振舞駆動開発」あるいは「ビヘイビア駆動開発」のフレームワークと紹介されることが多いです。</p>
+
+<p>「BDD は TDD を進化させたもの」という意見も見かけますが、私たちは__「TDD とは BDD であり、BDD とは TDD である」<strong>という立場を取り、
+TDD で行っていた「テスト」を「ビヘイビア」や「スペック」といった言葉に__言い換えません</strong>。
+つまり、ツールとして RSpec を使いながら、TDD をします。</p>
+
+<p>この考えの詳細については連載第1回の<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l9">「なぜ、RSpec なのか」</a>を参照してください。</p>
+
+<p>また、今回の連載では私たちが別段 BDD という言葉にこだわらない理由が明らかになります。お楽しみに。</p>
+
+<h3 id="今回の説明範囲">今回の説明範囲</h3>
+
+<p>今回は、次の 4 点を取りあげます。</p>
+
+<ul>
+  <li>RSpecがサポートする周辺ツールの紹介 (RCov、Rails の rake stats との統合)</li>
+  <li>RSpec on Rails を使ったコントローラの初歩的なテスト</li>
+  <li>RSpec on Rails を使ったビューの初歩的なテスト</li>
+  <li>__RSpec on Rails ではすべてがユニットテスト__であること</li>
+</ul>
+
+<p>これらについて、簡単なブログアプリケーションをテスト駆動で開発を進めながら説明していきます。</p>
+
+<h2 id="前回までのあらすじ">前回までのあらすじ</h2>
+
+<p>前回は RSpec の概要と簡単な使い方を説明した後、RSpec on Rails を使った Web アプリケーションの開発を始めました。
+題材は簡単なブログアプリケーション、その名も myblog です。</p>
+
+<p>前回の連載の最後の時点のサンプルアプリケーション (myblog) 一式を zip 形式で圧縮したファイルを用意しました。</p>
+
+<ul>
+  <li><a href="/images/0023-Rspec/myblog-0021.zip">myblog-0021.zip</a></li>
+</ul>
+
+<p>文字コードはUTF-8です。どうぞご利用ください。</p>
+
+<h4 id="テストの実行">テストの実行</h4>
+
+<p>前回やったことを思いだすために (もう昨年のことですしね)、myblog のテストを実行してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake db:migrate      # 今回提供したmyblog-0021.zipを展開して作業する場合は必要
+$ rake db:test:prepare # 今回提供したmyblog-0021.zipを展開して作業する場合は必要
+$ script/spec --color --format specdoc spec/**/*_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+Blog#nameが設定されていない場合:
+<span style="color: lime">- バリデーションに失敗すること</span>
+
+<span style="color: lime">- :nameにエラーが設定されていること</span>
+
+
+Blog
+<span style="color: lime">- は複数の記事を所有できること</span>
+
+
+Blog に記事を投稿できた場合:
+<span style="color: lime">- 記事の件数が1件増えること</span>
+
+
+Entry
+<span style="color: lime">- は特定のブログに属すること</span>
+
+
+Entry#posted_onが入力されずに保存された場合:
+<span style="color: lime">- Entryの作成日は投稿日であること</span>
+
+
+Entry#posted_onを明示して保存された場合:
+<span style="color: lime">- 入力された日付が投稿日であること</span>
+
+
+Finished in 0.159336 seconds
+
+<span style="color: lime">7 examples, 0 failures</span>
+
+</pre>
+
+<p>zsh以外のシェルをお使いの場合、’<em>*/</em>_spec.rb’ がネストしたディレクトリを展開しないかもしれません。その場合は「rake spec」で代用してください。後で触れるように、spec コマンドに渡すコマンドラインオプションは $RAILS_ROOT/spec/spec.opts に指定できます。</p>
+
+<p>私たちは Blog と Entry のごくごく基本的な機能をテスト駆動で実装したところで力尽きたのでした。</p>
+
+<p>前回実装したモデルの関連は次のようなものです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">+------+  has_many         +-------+
+| Blog |1 --------------&gt; *| Entry |
++------+      belongs_to   +-------+</code></pre></figure>
+
+<p>Blog クラスはユーザが開設しているブログ (たとえば「<a href="http://d.hatena.ne.jp/moro/">moro の日記</a>) を表現するクラスです。</p>
+
+<p>Entry クラスはブログに投稿されている 1 件 1 件の記事 (たとえば「<a href="http://d.hatena.ne.jp/moro/20080219/1203440184">ニコニコ動画デビュー by 札幌でのプレゼン</a>」) のことです。</p>
+
+<h3 id="rspec-on-rails-がサポートする周辺ツール">RSpec (on Rails) がサポートする周辺ツール</h3>
+
+<p>テストを実行したついでに、前回書いたコードを使って RSpec on Rails の機能を 2 つ紹介します。
+ひとつは、RCov を使ったカバレッジの計測。もうひとつは rake stats の RSpec 統合です。
+(前者は RSpec そのものの機能ですが、後者は RSpec on Rails 特有の機能です。)</p>
+
+<h3 id="rcov-による-c0-カバレッジの計測">RCov による C0 カバレッジの計測</h3>
+
+<p><a href="http://eigenclass.org/hiki.rb?rcov">RCov</a> は Mauricio Fernandez さん作の Ruby 用のカバレッジツールです。</p>
+
+<p>「カバレッジ」という概念に馴染みのない方のために簡単に説明しておきます。カバレッジとは乱暴に言うと「プロダクトコードに対するテストの網羅率 (どれだけテストできているか)」です。「どれぐらいか」といってもそこには質的な違いがあり、カバレッジの測定でよく使われている指標は次の 3 つです:</p>
+
+<ul>
+  <li>C0: ステートメントカバレッジ (命令網羅率)</li>
+  <li>C1: ブランチカバレッジ (分岐網羅率)</li>
+  <li>C2: コンディションカバレッジ (条件網羅率)</li>
+</ul>
+
+<p>RCov が測定できるのは、C0 のステートメントカバレッジです。C0 はプロダクトコードの各行について少なくとも 1 回はテストから実行されているかを測定したものです。</p>
+
+<p>ユニットテストでは C1 まで網羅することが望ましいのですが、RCov では C0 しか測定しません (その理由は <a href="http://eigenclass.org/hiki/rcov+FAQ#l1">RCov の FAQ(英語)</a> を参照してください)。</p>
+
+<p>RSpec は RCov を利用する Rake タスクを標準で用意しています。このタスクは RSpec on Rails をインストールするとすぐに使えるようになっています。</p>
+
+<p>では、前回書いたコードのカバレッジを測定してみましょう。RCov をまだインストールしていない方は gem コマンドでインストールしてください。
+Rcov の執筆時点での最新バージョンは 0.8.1.2.0 です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gem install rcov</code></pre></figure>
+
+<p>RCov をインストールできたら、次の Rake タスクを実行してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake spec:rcov
+(in /path/to/myblog)
+.......
+
+Finished in 0.192235 seconds
+
+7 examples, 0 failures</code></pre></figure>
+
+<p>テストの実行が無事に終われば、$RAILS_ROOT/coverage ディレクトリが作成されていると思います。
+coverage ディレクトリには次のようなファイルができているはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ls coverage
+app-controllers-application_rb.html     app-models-entry_rb.html
+app-helpers-application_helper_rb.html  index.html
+app-models-blog_rb.html</code></pre></figure>
+
+<p>このディレクトリにある coverage/index.html を Web ブラウザで開いてみましょう。
+<img src="/images/0023-Rspec/rcov-screenshot-01.png" alt="rcov-screenshot-01.png" /></p>
+
+<p>テストから先に書いているので C0 レベルでのカバレッジは 100% です。当然ですね :-)</p>
+
+<h4 id="もっと詳しく">もっと詳しく</h4>
+
+<p>RCov の RSpec への統合の詳細は以下を参照してください。</p>
+
+<ul>
+  <li><a href="http://rspec.info/documentation/tools/rcov.html">RSpec プロジェクトのサイトドキュメント</a></li>
+  <li><a href="http://rspec.info/rdoc/classes/Spec/Rake/SpecTask.html">Spac::Rake::SpecTask の RDoc</a></li>
+  <li>RSpec の Rake タスクのソースコード</li>
+</ul>
+
+<h3 id="rake-stats-の統合">rake stats の統合</h3>
+
+<p>RSpec on Rails をインストールすると、Rails が標準で用意している Rake タスクである stats が RSpec に対応します。
+stats タスクは、プロダクトコードとテストコードの記述量をレポートする Rake タスクです。これを実行する手順は次の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ mkdir spec/views       # このディレクトリが無いと動作しない
+$ mkdir spec/controllers # このディレクトリが無いと動作しない
+$ rake stats
+(in /path/to/myblog)
++----------------------+-------+-------+---------+---------+-----+-------+
+| Name                 | Lines |   LOC | Classes | Methods | M/C | LOC/M |
++----------------------+-------+-------+---------+---------+-----+-------+
+| Controllers          |     7 |     3 |       1 |       0 |   0 |     0 |
+| Helpers              |     3 |     2 |       0 |       0 |   0 |     0 |
+| Models               |    11 |    10 |       2 |       1 |   0 |     8 |
+| Model specs          |    84 |    70 |       0 |       0 |   0 |     0 |
+| View specs           |     0 |     0 |       0 |       0 |   0 |     0 |
+| Controller specs     |     0 |     0 |       0 |       0 |   0 |     0 |
+| Helper specs         |     0 |     0 |       0 |       0 |   0 |     0 |
++----------------------+-------+-------+---------+---------+-----+-------+
+| Total                |   105 |    85 |       3 |       1 |   0 |    83 |
++----------------------+-------+-------+---------+---------+-----+-------+
+  Code LOC: 15     Test LOC: 70     Code to Test Ratio: 1:4.7</code></pre></figure>
+
+<p>表の「Name」カラムを見ると、下半分が「Model/View/Controller/Helper <strong>specs</strong>」に変更されています。
+これは単に用語が RSpec のものになっているだけでなく、集計対象も $RAILS_ROOT/spec ディレクトリ以下が対象となっています。</p>
+
+<p>いまの時点では、プロダクトコード 1 行に対して RSpec で書いたテストコードの行数 (Code to Test Ratio) が 4.7 行と、5 倍近くになっています。</p>
+
+<h2 id="今回の実装のゴール">今回の実装のゴール</h2>
+
+<p>前回やったことを思い出したので、私たちの myblog の今後を考えましょう。
+基本的なモデルは開発したので、これを利用する画面を用意したいですね。</p>
+
+<h3 id="これからの-myblog">これからの myblog</h3>
+
+<p>myblog にはパッと考えただけでも次のような機能が必要になりそうです。</p>
+
+<ul>
+  <li>新しいブログを開設できる</li>
+  <li>ブログに記事を投稿できる</li>
+  <li>ブログのトップページには、ブログの情報と最新の記事を表示する
+    <ul>
+      <li>(このとき、最大表示件数を絞る必要がある……とりあえず 5 件表示させるようにしましょ)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>必要な機能や欲しい機能はこれら以外にもいくらでもがありますが、いずれにしても今回だけですべてを説明しながら実装することはできません。
+これらの基本的な 3 つの機能だけでも手一杯です。今回実装する機能を決めます。</p>
+
+<h3 id="今回の実装のゴール-1">今回の実装のゴール</h3>
+
+<p>… …決めました。ブログのトップページを表示する機能を分割して、今回はその一部を実装します。つまり:</p>
+
+<ul>
+  <li>ブログのトップページを表示する。表示する情報はブログの情報のみ</li>
+</ul>
+
+<p>です。今回実装しないことにした機能は:</p>
+
+<ul>
+  <li>ブログのトップページには、ブログの最新の記事を表示する
+    <ul>
+      <li>(このとき、最大表示件数を絞らないと……とりあえず 5 件表示させるようにしましょ)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>です。なぜこのように分割したのかというと、何よりもまず、説明の都合です。
+今回は簡単でもよいからコントローラとビューのスペックの両方を紹介したいからです。
+RSpec を使うとヘルパーやルーティングのテストも書けるのですが、これらについては次回以降に取りあげます。</p>
+
+<p>もう一つの理由は「垂直分割アプローチ」を繰り返すことで機能を実現したいからです。垂直分割アプローチについては後述します。</p>
+
+<h2 id="rails-と-rspec-のバージョンアップ">Rails と RSpec のバージョンアップ</h2>
+
+<p>前回の連載記事を寄稿してから今日までの間に、私たちが <a href="http://jp.rubyist.net/magazine/?0022-RubyConf2007Report">RubyConf2007 に出かけたり</a>、
+<a href="http://ruby-sapporo.org/events/etc/postgresql-ruby-2008/">JPUG と Ruby 札幌の合同セミナー</a>に参加していたら、Rails や RSpec のバージョンが上がってしまいました。</p>
+
+<p>まずは、RSpec と Rails のそれぞれをバージョンアップすることから始めましょう。</p>
+
+<h3 id="rails-202-にバージョンアップ">Rails 2.0.2 にバージョンアップ</h3>
+
+<p>既にバージョンアップされている方には関係のない話ですので、読み飛ばしてください。</p>
+
+<p>アプリケーションで利用する Rails をバージョンアップする方法には複数の選択肢があります。</p>
+
+<p>今回は説明が一番簡単な、RubyGems を利用した方法を説明します。ネットワークへの接続が必要です。
+vendor/rails を利用する場合は、次の 4 つの手順を実施します。</p>
+
+<ul>
+  <li>Rails 本体のバージョンアップ</li>
+  <li>config.breakpoint_server の削除</li>
+  <li>Cookie のシークレット文字列の設定</li>
+  <li>バージョンアップできたことの確認</li>
+</ul>
+
+<p>手順そのものはこの連載の中心的な話題ではありませんので、簡単に示すだけに留めます。</p>
+
+<h4 id="rails-本体のバージョンアップ">Rails 本体のバージョンアップ</h4>
+
+<p>RubyGems で Rails 2.0.2 をインストールします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gem install rails -v 2.0.2</code></pre></figure>
+
+<p>その後、$RAILS_ROOT/config/enviroonment.rb にある、RAILS_GEM_VERSION で指定している Rails のバージョンを変更します。参考までに差分を載せておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">diff --git a/config/environment.rb b/config/environment.rb
+index 5db2d3a..dbfbd06 100644
+--- a/config/environment.rb
++++ b/config/environment.rb
+@@ -5,7 +5,7 @@
+ # ENV['RAILS_ENV'] ||= 'production'
+
+ # Specifies gem version of Rails to use when vendor/rails is not present
+-RAILS_GEM_VERSION = '1.2.3' unless defined? RAILS_GEM_VERSION
++RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
+
+ # Bootstrap the Rails environment, frameworks, and default configuration
+ require File.join(File.dirname(__FILE__), 'boot')</code></pre></figure>
+
+<p>さらに、rails:update タスクを実行すると javascript や config/boot.rb などのアプリケーションレベルに配置されているファイルを 2.0.2 が提供するものへとアップデートします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake rails:update</code></pre></figure>
+
+<h4 id="configbreakpoint_server-の削除">config.breakpoint_server の削除</h4>
+
+<p>Rails2.0 では <a href="http://www.datanoise.com/ruby-debug/">ruby-debug</a> が統合されました。このため、breakpoint_server オプションは不要になりました。
+$RAILS_ROOT/config/environments/development.rb にある、config.breakpoint_server = true の記述を削除します。
+参考までに、削除前後の差分を載せておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">diff --git a/0023/myblog/config/environments/development.rb b/0023/myblog/config
+/environments/development.rb
+index 0589aa9..568ccd0 100644
+--- a/0023/myblog/config/environments/development.rb
++++ b/0023/myblog/config/environments/development.rb
+@@ -8,9 +8,6 @@ config.cache_classes = false
+ # Log error messages when you accidentally call methods on nil.
+ config.whiny_nils = true
+
+-# Enable the breakpoint server that script/breakpointer connects to
+-config.breakpoint_server = true
+-
+ # Show full error reports and disable caching
+ config.action_controller.consider_all_requests_local = true
+ config.action_controller.perform_caching             = false</code></pre></figure>
+
+<h4 id="cookie-のシークレット文字列の設定">Cookie のシークレット文字列の設定</h4>
+
+<p>Rails 2.0 は、デフォルトではセッション情報を Cookie に格納します。これに伴い、Cookie に格納されているセッション情報の改竄を検知するためにシークレットキー文字列の設定が必須になりました。</p>
+
+<p>そのための設定を config/environment.rb に追記します。シークレットキー文字列は 30〜40 文字程度の長さにします。30 文字より少ないと Rails から「短すぎる」と怒られてしまいます。逆に、長すぎても暗号の強度には寄与しません[^1]。ここでは手っ取り早い方法を取ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ script/runner 'puts CGI::Session.generate_unique_id'
+ce053ab2dfc17fbe2ee2a8675d83952f</code></pre></figure>
+
+<p>出力された文字列を、:secretの値として config/environment.rb に追記します。
+下記のように、 config/environment.rb というファイルの Rails::Initializer.run のブロックの最後にでも記入してください。</p>
+
+<p>念のために書いておきますが、シークレット文字列はアプリケーション毎に異なるべきです。上記のシークレット文字列をそのままコピーせずに、必ず各自の環境で生成しなおしてください。</p>
+
+<h5 id="configenvironmentrb">config/environment.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">...Rails::Initializer.run do |config|
+  # Settings in config/environments/* take precedence over those specified here
+  ...
+  # See Rails::Configuration for more options
+  config.action_controller.session = {
+    :session_key =&gt; '_myblog_session',
+    :secret =&gt; 'ce053ab2dfc17fbe2ee2a8675d83952f'
+  }
+end</code></pre></figure>
+
+<h4 id="バージョンアップできたことの確認">バージョンアップできたことの確認</h4>
+
+<p>script/about コマンドで Rails を構成するフレームワーク群のバージョンが 2.0.2 になっていることを確認しておきましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ script/about
+About your application's environment
+Ruby version              1.8.6 (i686-darwin9.1.0)
+RubyGems version          1.0.1
+Rails version             2.0.2
+Active Record version     2.0.2
+Action Pack version       2.0.2
+Active Resource version   2.0.2
+Action Mailer version     2.0.2
+Active Support version    2.0.2
+Edge Rails revision       rel_2-0-2
+Application root          /path/to/myblog
+Environment               development
+Database adapter          sqlite3
+Database schema version   2</code></pre></figure>
+
+<p>大丈夫そうです。</p>
+
+<h3 id="rspec-on-rails-のバージョンアップ">RSpec on Rails のバージョンアップ</h3>
+
+<p>では次に、RSpec (と RSpec on Rails) のバージョンも上げます。手順は次の 4 手(オプションも含めれば 5 手)です。</p>
+
+<ul>
+  <li>RSpec on Rails 1.0.8 のアンインストール</li>
+  <li>RSpec on Rails 1.1.3 のインストール</li>
+  <li>関連ファイルの再生成</li>
+  <li>オプション: spec.opts ファイルの設定</li>
+  <li>バージョンアップの確認</li>
+</ul>
+
+<h4 id="rspec-on-rails-108-のアンインストール">RSpec on Rails 1.0.8 のアンインストール</h4>
+
+<p>連載が長期にわたってしまうので、前回の連載で<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l52">紹介した</a>ような、
+バージョンを固定するインストール方法はあまり適切とはいえませんでした。ごめんなさい。
+ここでは、連載中に RSpec のバージョンが上っても問題ない方法にしたいと思います。
+そのためにまず、バージョンが固定されている現在の RSpec on Rails をアンインストールします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby script/plugin remove rspec
+$ ruby script/plugin remove rspec_on_rails</code></pre></figure>
+
+<h4 id="rspec-on-rails-113-のインストール">RSpec on Rails 1.1.3 のインストール</h4>
+
+<p>新しいバージョンの RSpec と RSpec on Rails をインストールし直します。</p>
+
+<p>今回は固定したバージョンではなくて、リリースされている最新版をインストールするようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby script/plugin install http://rspec.rubyforge.org/svn/tags/CURRENT/rspec
+$ ruby script/plugin install http://rspec.rubyforge.org/svn/tags/CURRENT/rspec_on_rails</code></pre></figure>
+
+<p>この形式でインストールしておけば、今後は新バージョンがリリースされても「$ ruby script/plugin update」コマンドですぐ更新できるはずです。</p>
+
+<h5 id="rspec-on-rails-のインストールについてもっと詳しく">RSpec on Rails のインストールについてもっと詳しく</h5>
+
+<p>これ以外の RSpec on Rails のインストール方法 (svn:externals を使う方法や、tar.gz からインスールする方法) は、
+<a href="http://rspec.info/documentation/rails/install.html">RSpec プロジェクトのサイトに掲載</a>されています。
+こちらも参考にしてください。</p>
+
+<h4 id="関連ファイルの再生成">関連ファイルの再生成</h4>
+
+<p>RSpec on Rails のバージョンを上げた場合には、アプリケーションレベルに配置されている RSpec 関連ファイルを再生成してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ script/generate rspec
+      exists  spec
+overwrite spec/spec_helper.rb? [Ynaqd] y # 今回は上書きする
+   identical  spec/spec_helper.rb
+       force  spec/spec_helper.rb
+   identical  spec/spec.opts
+      create  spec/rcov.opts
+overwrite script/spec_server? [Ynaqd] y # 今回は上書きする
+       force  script/spec
+      create  stories
+      create  stories/all.rb
+      create  stories/helper.rb</code></pre></figure>
+
+<p>関連のファイルは、ときどきファイルに増減があったり、内容に変更があります。
+spec_helper.rb や spec/spec.opts で変更が衝突した場合は手動でマージしてください。</p>
+
+<h4 id="オプション-specopts-ファイルの設定">オプション: spec.opts ファイルの設定</h4>
+
+<p>rake の spec タスクへのオプションを設定することができます。この手順はスキップしても問題ありません。</p>
+
+<p>spec/spec.opts ファイルの設定にはデフォルトでは “–backtrace” (-b) が指定されています。
+このオプションを指定すると、テストに失敗した際に詳細なバックトレースを出力します。
+これは、好みに応じて削除してしまってよいでしょう。私 (かくたに) は削除しています。</p>
+
+<h4 id="バージョンアップの確認">バージョンアップの確認</h4>
+
+<p>Rails 本体と同様に、RSpec もバージョンアップできていることを確認しておきましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -v
+RSpec-1.1.3 (build 20080131122909) - BDD for Ruby
+http://rspec.rubyforge.org/</code></pre></figure>
+
+<p>無事にアップデートできたようです。</p>
+
+<h2 id="rspec-11-の新機能">RSpec 1.1 の新機能</h2>
+
+<p>ここで RSpec 1.1 の新機能をごくごく簡単に紹介しておきます。</p>
+
+<p>執筆時点での RSpec の最新バージョンは 1.1.3 です。1.1.1 〜 1.1.3 のリリースはバグ修正や細かい機能拡張が中心のメンテナンスリリースです
+(メンテナンスリリースでの変更点の詳細は <a href="http://rspec.info/changes.html">CHANGES</a> を参照してください)。</p>
+
+<p>開発チームの中心メンバーである David Chelimsky さんの<a href="http://blog.davidchelimsky.net/articles/2007/12/14/rspec-1-1">ブログのエントリ</a>によると、RSpec 1.1 での目玉となる機能は次の 3 点です。</p>
+
+<ul>
+  <li>Story Runner の登場</li>
+  <li>ネストした describe のサポート</li>
+  <li>Test::Unitとの相互運用性の向上</li>
+</ul>
+
+<p>以下ではそれぞれについて簡単に紹介します。</p>
+
+<h3 id="story-runner-の登場">Story Runner の登場</h3>
+
+<p>るびま 0022 号の <a href="http://jp.rubyist.net/magazine/?0022-RubyConf2007Report">RubyConf2007 レポート</a>で紹介した、rbehave を RSpec に統合した Story Runner がリリースされました。</p>
+
+<p>リリースされたばかりの新機能なので、仕様や API がそれなりに安定してきたらこの連載でも取りあげたいと思います。</p>
+
+<p>RSpec では、過去に少なくとも 2 度、劇的な API 変更が行われました。私たちはそのことを忘れていません。Story Runner の API でも同様の激変があっても何ら不思議ではないと考えています。私たちは経験から学んで、少し慎重になっています :-)</p>
+
+<h3 id="ネストした-describe-のサポート">ネストした describe のサポート</h3>
+
+<p>前回の連載では Behaviour (振舞) として<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l26">説明した</a>、describe do … end のブロックをネストして書けるようになりました。</p>
+
+<p>describe をネストさせて記述した際には、外側の describe ブロックで定義したインスタンス変数や before / after の設定、定義した独自のメソッドは、内側の describe ブロック からも見えます。</p>
+
+<p>これは、RSpec が実行時に describe ブロックのネストに応じて動的にサブクラスを生成しているからですが、まあ、<a href="https://www.amazon.co.jp/%E3%83%AA%E3%83%95%E3%82%A1%E3%82%AF%E3%82%BF%E3%83%AA%E3%83%B3%E3%82%B0%E2%80%95%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AE%E4%BD%93%E8%B3%AA%E6%94%B9%E5%96%84%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF-Object-Technology-%E3%83%9E%E3%83%BC%E3%83%81%E3%83%B3-%E3%83%95%E3%82%A1%E3%82%A6%E3%83%A9%E3%83%BC/dp/4894712288?SubscriptionId=1F9ZB25T785C6BC6EWG2&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4894712288">‘「魔法と割り切って」’</a>もよいと思います。</p>
+
+<p>これにともなって、DSLの実装としても、describe do … end のブロック付きメソッド呼び出しに対応する RSpec のクラスも変更され、ExampleGroup クラスとなりました。これまでの Behaviour (振舞) クラス はもう存在していません。RSpec のソースコードツリーからも behaviour.rb というファイルは削除されています。すなわち、<strong>Behaviour</strong> Driven Development のためのツールと呼ばれる <strong>RSpec にはもう Behaviour を表現するクラスはありません</strong>。</p>
+
+<p>RSpec の実装とは、RSpec で記述する DSL に対応する語彙を実装したものです。その語彙から Behaviour という語が消えているわけですから、いまや BDD という言葉にこだわる理由もありません。</p>
+
+<p>この連載での私たちの立ち位置を再度述べておきます。「TDD とは BDD であり、BDD とは TDD です。」</p>
+
+<h3 id="testunit-との相互運用性の向上">Test::Unit との相互運用性の向上</h3>
+
+<p>describe や Object#should、Object#should_not といった RSpec の API を従来の Test::Unit からも使えるようになりました。この機能は、Test::Unit から RSpec への段階的な移行を支援するのが目的です (たぶん)。</p>
+
+<p>詳しくは前掲の David Chelimsky さんの<a href="http://blog.davidchelimsky.net/articles/2007/12/14/rspec-1-1">ブログのエントリ</a>を参照してください。</p>
+
+<h2 id="今回の実装の作戦を立てる">今回の実装の作戦を立てる</h2>
+
+<p>またしても前置きが長くなってしまいましたが、おかげで RSpec と Ruby on Rails を最新版にアップデートできました。
+また RSpec の新機能もざっと確認できました。そろそろ本当に今回ターゲットとしている機能を実装しましょう。</p>
+
+<p>今回も、前回のモデルの開発と同じように「レッド - グリーン - リファクタリング」という<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l11">テスト駆動開発の小さなステップ</a>を小さく、短い単位で積み上げていきます。
+作業単位の理想は数分サイクルで「レッド - グリーン - リファクタリング」を 1 周させられることです。これを目指して実装の作戦を立ててみます。</p>
+
+<h3 id="水平分割アプローチと垂直分割アプローチ">水平分割アプローチと垂直分割アプローチ</h3>
+
+<p>ところで前回は Rails アプリケーションの構成要素 (モデル・コントローラ・ビューから構成されるいわゆる MVC モデル) のうち、モデルだけをテスト駆動で開発しました。</p>
+
+<p>前回モデルを実装した時のように、アプリケーションを論理的な層に分割したうえで、分割した層ごとに実装していくアプローチを__「水平分割アプローチ」__と呼びます。</p>
+
+<p>一方、水平分割アプローチとは対照的に、アプリケーションを、提供する機能ごとに分割して、分割した機能ごとに実装していくアプローチを__「垂直分割アプローチ」__と呼びます。</p>
+
+<p>私たちの myblog ではまだモデルしか実装していません。Rails アプリケーションとして動作させるためには、コントローラとビューの実装が必要です(実装しないことには、この連載で RSpec on Rails の機能も説明できませんしね)。</p>
+
+<p>今回の実装のターゲットとする機能を:</p>
+
+<ul>
+  <li>ブログのトップページを表示する。表示する情報はブログの情報のみ</li>
+</ul>
+
+<p>とした理由はここにあります。それは、もっとも手早く簡単に「垂直分割アプローチ」を実践するためです。</p>
+
+<p>「手早く簡単に」ということを考慮すると、データを投入したり更新するよりも、既にあるデータを表示させるほうがよさそうです。
+必要なデータはあらかじめデータベースにロードしてしまえばよいのですから。</p>
+
+<p>やるべきことを TODO リストに書き留めておきます。実際の開発では、ホワイトボードやメモ用紙、裏紙に書き留めることが多いです。</p>
+
+<h5 id="todoリスト">TODOリスト</h5>
+
+<ul>
+  <li>ブログのトップページにブログの名前を表示する</li>
+</ul>
+
+<p>「ブログの情報」といってもいまの時点ではブログの名前しかありませんので、TODOリストではそれを明示しました。</p>
+
+<h3 id="必要な作業は何だろう">「必要な作業は何だろう？」</h3>
+
+<p>ところで「ブログの情報」とは何でしょうか？ ……いまのところ「ブログ名」ぐらいしかありません。
+では「ブログの名前を表示する」を実現するために Railsアプリケーションで必要な作業を考えます。</p>
+
+<p>この機能のための URL は旧来の Rails の規約に従います――ということは、デフォルトのルーティング設定に従うということです。
+つまり「blogs/show/:id」で特定のブログが表示されるようにします。</p>
+
+<p>Rails の規約に従うのは、考えること (と説明すること) を減らすためです。Rails の規約に従えば、今回の「ブログの名前を表示する」という機能を実現するのに必要な作業は次の 2 つです。TODO リストを更新しましょう。</p>
+
+<h5 id="todo-リスト">TODO リスト</h5>
+
+<ul>
+  <li>ブログのトップページにブログの名前を表示する
+    <ul>
+      <li>コントローラにアクションを用意する</li>
+      <li>アクションの結果を表示するビューを用意する</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="いちどにひとつずつ">いちどにひとつずつ</h4>
+
+<p>この段階ではまだ、作業を分単位でやりとげられる自信が私たちにはありません。
+テスト駆動で開発する場合には「いちどにひとつずつ」が基本です。
+そして、いかに「ひとつ」の作業の大きさを数分単位へと分割していくかがテスト駆動開発者の腕の見せどころです。</p>
+
+<h2 id="コントローラのテスト">コントローラのテスト</h2>
+
+<p>RSpec を使えば、コントローラとビューのどちらからでもテスト駆動で実装可能です(いずれやってみたいと思います)。今は順当に、コントローラから実装していきます。つまり「コントローラにアクションを用意する」を先に片づけます。</p>
+
+<h3 id="もう一度必要な作業は何だろう">もう一度。「必要な作業は何だろう？」</h3>
+
+<p>では「コントローラにアクションを用意する」というタスクをテスト駆動で開発するにはどうすればよいでしょうか？
+別の言い方をすれば、何をテストすればよいのでしょうか？
+答えを先に言ってしまうと、テストするのは「実装対象となるユニットの責務」です。</p>
+
+<h4 id="ユニット">ユニット</h4>
+
+<p>ユニットとは、ソフトウェアを構成する要素の論理的なまとまりのことです。
+Ruby ではクラスに対応することが多いですが、必ずしもクラスであるとは限りません。
+その粒度は状況によりけりです。
+メソッドやモジュールがユニットになることもあれば、ライブラリがユニットとなることもあるでしょう。</p>
+
+<h4 id="責務">責務</h4>
+
+<p>「<strong>責務</strong> (Responsibility)」とはオブジェクト指向設計界の業界用語です。
+もう少し普通の言葉に言い換えると「<strong>オブジェクトが責任を持って果たすべき仕事</strong>」です。
+以後、この連載で「責務」という言葉はこの意味合いで使います。</p>
+
+<p>テスト駆動開発は、ユニットの責務のテスト (つまり、<strong>ユニットテスト</strong>) が開発を引っ張っていく (駆動する) からテスト駆動開発です。そして、RSpec はこうしたテスト (つまり、ユニットテスト) を支援します。であれば、今回実装したいユニットであるコントローラの責務を考えることが、コントローラの実装に必要な作業を考えることになります。</p>
+
+<h4 id="コントローラの責務">コントローラの責務</h4>
+
+<p>RSpec on Railsでは、コントローラの責務を次の 3 つだと捉えています。</p>
+
+<ul>
+  <li>受信したリクエストに対して適切なレスポンスを返す</li>
+  <li>ビューで使用するのに必要なモデルオブジェクトをロードする</li>
+  <li>レスポンスを表示するのに適切なビューを選択する</li>
+</ul>
+
+<p>1 つ目と 2 つ目はわかりやすいですが、3 つ目に注意してください。Rails ではコントローラ自身は、ビューを描画__しません__。実際にビューの描画をするのは、ActionView の責務 (仕事) です。</p>
+
+<p>コントローラの責務を考えてみることで、こなすべき TODO 項目を洗い出せるのではないでしょうか。</p>
+
+<h4 id="コントローラでテストすべきこと">コントローラでテストすべきこと</h4>
+
+<p>「コントローラの責務」に従って、ブログの名前を表示するためのコントローラでテストすべき項目をリストにします。
+Rails の規約に従うので、コントローラの名前は BlogsController です。
+特定のブログを表示するのだから、アクションの名前は show にしましょう。</p>
+
+<h5 id="受信したリクエストに対してレスポンスを返す">受信したリクエストに対してレスポンスを返す</h5>
+
+<p>今回実装したいリクエストの形式は、Blog インスタンスのidを指定した「/blogs/show/:id」です。
+このリクエストに対して HTTP レスポンスがステータスコードとして「200」を返せばよさそうです。</p>
+
+<h5 id="ビューで使用するのに必要なモデルオブジェクトをロードする">ビューで使用するのに必要なモデルオブジェクトをロードする</h5>
+
+<p>これは、「/blogs/show/:id」で指定された id の Blog インスタンスをロードできていればよさそうです。
+これだと config/routes.rb を修正しなくてもよいです。これは、説明の手間を少し省けるので、記事を書く私たちにとっても助かります。</p>
+
+<h5 id="レスポンスを表示するのに適切なビューを選択する">レスポンスを表示するのに適切なビューを選択する</h5>
+
+<p>ブログの情報を表示するためのビューを erb のテンプレートとして用意して、それを選択していることを検証できれば、この責務を果たしているといえるのではないでしょうか。Rails の規約に従えば「app/ivews/blogs/show.erb.html」を選んでいれば良さそうです</p>
+
+<h5 id="todo-リストの更新">TODO リストの更新</h5>
+
+<p>……やるべきことがまた細かく分割されました。忘れてしまう前に TODO リストを更新しておきます。</p>
+
+<ul>
+  <li>ブログの名前を表示する
+    <ul>
+      <li>コントローラにアクションを用意する
+        <ul>
+          <li>/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200</li>
+          <li>/blogs/show/:id で指定した Blog インスタンスをロードする</li>
+          <li>app/views/blogs/show.erb.html を選択する</li>
+        </ul>
+      </li>
+      <li>アクションの結果を表示するビューを用意する</li>
+    </ul>
+  </li>
+  <li>ブログの最新記事を表示する</li>
+  <li>ブログの最新記事を最大 5 件表示する</li>
+</ul>
+
+<p>これぐらい作業が細かくなれば、1 つ 1 つをどうにか分単位でこなせそうです。</p>
+
+<h3 id="コントローラのテストの雛形の作成">コントローラのテストの雛形の作成</h3>
+
+<p>TDD のサイクルを回すための下準備をします。</p>
+
+<p>RSpec on Rails には RSpec 用のテストの雛形を生成するためのジェネレータも用意されています。
+コントローラのテストを生成するには rspec_controller ジェネレータを使います。
+オプションの渡し方などの使い方は Rails 標準の controllers ジェネレータとほとんど同じです。</p>
+
+<h4 id="rspec_controller-ジェネレータ">rspec_controller ジェネレータ</h4>
+
+<p>RSpec on Rails が用意するジェネレータには、rspec_controller 以外にも rspec_model と rspec_scaffold ジェネレータが用意されています。</p>
+
+<p>(RSpec on Rails 1.1.3 現在では、ビュー専用のジェネレータは用意されていません)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby script/generate rspec_controller blogs show
+      exists  app/controllers/
+      exists  app/helpers/
+      create  app/views/blogs
+      exists  spec/controllers/
+      create  spec/helpers/
+      create  spec/views/blogs
+      create  spec/controllers/blogs_controller_spec.rb
+      create  spec/helpers/blogs_helper_spec.rb
+      create  app/controllers/blogs_controller.rb
+      create  app/helpers/blogs_helper.rb
+      create  spec/views/blogs/show.html.erb_spec.rb
+      create  app/views/blogs/show.html.erb</code></pre></figure>
+
+<p>生成されたファイルは、それぞれ次のようになっています。</p>
+
+<h5 id="app-ディレクトリ">app ディレクトリ</h5>
+
+<ul>
+  <li>app/controllers/blogs_controller.rb</li>
+  <li>app/helpers/blogs_helper.rb</li>
+  <li>app/views/blogs/show.html.erb</li>
+</ul>
+
+<p>Rails のコントローラとビュー、それからヘルパーに対応する雛形が生成されています。</p>
+
+<h5 id="spec-ディレクトリ">spec ディレクトリ</h5>
+
+<ul>
+  <li>spec/controllers/blogs_controller_spec.rb</li>
+  <li>spec/helpers/blogs_helper_spec.rb</li>
+  <li>spec/views/blogs/show.rhtml_spec.rb</li>
+</ul>
+
+<p>ここで、spec 以下に生成されるファイル群に注目してください。
+RSpec on Rails ではコントローラ、ビュー、ヘルパーのテストがそれぞれ別のファイルに分かれています。
+これは、RSpec on Rails がこれらの要素をすべて「ユニット」だと捉えているからです。</p>
+
+<h4 id="rspec-on-rails-ではすべてがユニットテスト">RSpec on Rails ではすべてが「ユニットテスト」</h4>
+
+<p>Rails 標準のテスティング環境では ActiveRecord のモデルに対するテストを「ユニットテスト」と呼んでいます。しかし、RSpec on Rails はその立場に立ちません。
+先ほど「ユニットとはソフトウェアを構成する要素の論理的なまとまりである」と説明しました。では、Ruby on Rails を使ったアプリケーションにおけるユニットとは何でしょうか。</p>
+
+<p>RSpec on Rails にとってのユニットは主に次の 4 つです。</p>
+
+<ul>
+  <li>モデル</li>
+  <li>コントローラ</li>
+  <li>ビュー</li>
+  <li>ヘルパー</li>
+</ul>
+
+<p>RSpec on Rails を使って書くテストはすべてが「ユニットテスト」です。
+それぞれがアプリケーションを構成する「ユニット」ですから、
+RSpec on Rails が支援するユニットテストではそれぞれをユニット単位で独立してテストできます。</p>
+
+<p>これらをユニットとして捉えているという根拠は <a href="http://rspec.info/rdoc-rails/classes/Spec/Rails/Example.html">Spec::Rails::Example の rdoc</a> の記述も参考にしてください。</p>
+
+<p>この 4 つに加えて、ルーティングや Rails で利用する Ruby ライブラリ ($RAILS_ROOT/lib の下に配置されるもの) や、プラグインもユニットと考えてもよいかもしれません (そうすると 7 つですね)。</p>
+
+<h5 id="rails-のユニットテストファンクショナルテストインテグレーションテスト">Rails のユニットテスト、ファンクショナルテスト、インテグレーションテスト</h5>
+
+<p>Rails 標準のテスティング環境では、独立してテストできるユニットとなっているのはモデルだけです。この意味において、Rails 標準のテスティング環境がモデルのテストを「ユニットテスト」と呼んでいるのは正しいです。コントローラやビュー、ヘルパーをユニットとして扱うテストはサポートされていません。</p>
+
+<p>Rails 標準のテスティング環境でコントローラやビュー、ヘルパをテストするには「ファンクショナルテスト」や「インテグレーションテスト」を利用します。</p>
+
+<p>ファンクショナルテストは主にコントローラをテストするためのテストです。ファンクショナルテストではコントローラはビューと結合され(ヘルパーも同様に結合されます)、さらにはフィクスチャを通じてモデルとも結合します。結合した状態での機能 (ファンクション) をテストするからファンクショナルテストと呼んでいるのでしょう。</p>
+
+<p>インテグレーションテストはモデル・ビュー・コントローラという Rails アプリケーションの 3 つのコンポーネントに加えて、ルーティングやセッションも含めたアプリケーションの外側からのテストを支援します。アプリケーションを全体として統合 (インテグレーション) した状態でテストするからインテグレーションテストです。</p>
+
+<h5 id="rspec-on-rails-のテスティング環境">RSpec on Rails のテスティング環境</h5>
+
+<p>RSpec on Rails には長らく、Rails 標準のインテグレーションに対応するテストの仕組みが提供されていませんでした。RSpec 1.1 で導入された Story Runner が Rails 標準のインテグレーションテストに対応します。</p>
+
+<p>乱暴にまとめると、Rspec on Rails のテスティング環境は、ユニットテストと Story Runner によるユーザストーリのテストから構成されているといえます。</p>
+
+<h4 id="ジェネレータが生成したテストの実行">ジェネレータが生成したテストの実行</h4>
+
+<p>話を戻して、まずはこの段階で、生成されたテストを実行してみましょう。
+RSpec on Rails が用意しているジェネレータでコントローラ (モデルも同様です) のテストの雛形を生成した直後は、
+テストが通る状態になっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ script/spec -c spec/**/*_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+<span style="color: lime">.</span>
+
+
+Finished in 0.311666 seconds
+
+<span style="color: lime">11 examples, 0 failures</span>
+
+</pre>
+
+<p>期待通り、テストに成功しました。
+生成直後のテスト実行状態がグリーンであることには理由があります。
+これは、生成直後の状態でいきなりテストに失敗してレッドバーが表示されてしまうと
+問題原因の究明に時間がかかってしまうことがあるからです。</p>
+
+<p>レッドバーになったのは、テストがまずいのからなのか。
+それともテスト基盤 (この場合はRSpec on Rails) が悪いからなのか。
+最初がレッドバーだと、この問題の切り分けが難しくなります。
+それに、そもそもテスト基盤が動作していなければ「レッド - グリーン - リファクタリング」という実装のステップを刻んでいくことができません。</p>
+
+<p>こうした問題を回避するために、RSpec on Rails のジェネレータではテストコードの雛形を生成した直後の状態はグリーンになっています。</p>
+
+<p>これを TDD の知識がある方に向けて簡単に説明するなら「RSpec on Rails のジェネレータはコードを書き始めるのに必要なだけの『Fake It』までの作業を自動化している」ということです。</p>
+
+<p>話がそれました。コンソールの出力結果の example の数を確認してみましょう。前回の最後の時点の 7 つから 4 つ増えて 11 になっています。
+ジェネレータで生成した example が動いていそうな感じです。</p>
+
+<h4 id="ジェネレータが生成したコントローラのスペックファイル">ジェネレータが生成したコントローラのスペックファイル</h4>
+
+<p>最初ですから、念のためにジェネレータで生成したスペックファイルの中身を確認しておきましょう。</p>
+
+<h5 id="speccontrollerblogs_controllerrb">spec/controller/blogs_controller.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 1:require File.dirname(__FILE__) + '/../spec_helper'
+ 2:
+ 3:describe BlogsController do
+ 4:
+ 5:  #Delete these examples and add some real ones
+ 6:  it "should use BlogsController" do
+ 7:    controller.should be_an_instance_of(BlogsController)
+ 8:  end
+ 9:
+10:  describe "GET 'show'" do
+11:    it "should be successful" do
+12:      get 'show'
+13:      response.should be_success
+14:    end
+15:  end
+16:end</code></pre></figure>
+
+<p>1 行目で spec_helper を読み込んでいるのは、連載の前回で説明したモデルのスペックファイルと同じです。spec_helper は RSpec on Rails で共通する設定を記述するためのヘルパーです。</p>
+
+<p>3 行目から始まる describe ブロック (ExampleGroup) では、引数にコントローラのクラスを指定しています。これは RSpec on Rails のイディオムです。クラスを引数とすることで、app/controller/blogs_controller.rb の読み込と、テスト対象のコントローラの指定を 1 箇所でまとめて行っています。</p>
+
+<p>6 行目から始まる example (it “should use BlogsController” do … end) では、テスト対象のコントローラが BlogsController のインスタンスであることを期待しています。なお、5 行目のコメントには「この example は削除してまともなものを追加すること」と書かれています (あとでこの指示に従って、この example は削除します)。</p>
+
+<p>10 行目はネストした ExampleGroup です。ネストしている理由は、BlogsController をテストするコンテキストをより明確にするためです。describe ブロックの引数である文字列がコンテキストをあらわしています。ここでのコンテキストは「BlogsController の show アクションを HTTP の GET メソッドでリクエストを送信した場合」ということです。</p>
+
+<p>11 行目から始まる example が、このコンテキストで期待される振る舞いです。この example では、’show’ に GET リクエストを送信し (12行目)、その結果としてレスポンスのステータスコードが success、つまり 200 であることを期待しています (13行目)。なお、12 行目にある get メソッドは、Rails 標準のコントローラのテストクラスに用意されているものと同じです。get(action, params={}) というメソッドシグネチャでコントローラのアクションを呼び出します。</p>
+
+<p>いま確認した blogs_controller_spec.rb には 2 つの example が定義されていました。今回のジェネレータによるコントローラのスペックファイルを実行した結果では、4 つ example が増えていました。ということは example はあと 2 つあるはずです。残り 2 つの example は spec/views/blogs/show.rhtml.erb_spec.rb と spec/helpers/blogs_helper.rb にそれぞれ 1 つずつ定義されています。ビューの example については後述します。 (ヘルパーのテストのことは次回以降で説明します。)</p>
+
+<p>スペックファイルを見たついでに、その対となる現時点での実装も確認しておきましょう。</p>
+
+<h5 id="appcontrollersblogs_controllerrb">app/controllers/blogs_controller.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class BlogsController &lt; ApplicationController
+
+  def show
+  end
+end</code></pre></figure>
+
+<p>Rails のアクションで明示的に render を指定しなかった場合、Rails は規約に従ってデフォルトのテンプレート名を指定します。ここでのデフォルトは「app/views/blogs/show.rhtml.erb」です。ビューのファイルも先ほどの rspec_controller ジェネレータで生成されました。念のため確認しておきます。</p>
+
+<h5 id="appviewsblogsshowrhtmlerb">app/views/blogs/show.rhtml.erb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;h1&gt;Blogs#show&lt;/h1&gt;
+&lt;p&gt;Find me in app/views/blogs/show.html.erb&lt;/p&gt;</code></pre></figure>
+
+<p>……なるほど。これは確かにグリーンになります。</p>
+
+<p>文章にするとはなはだ回りくどいですが、ここまででテストの基盤はきちんと動いていることに確信を持てました。</p>
+
+<h3 id="テストblogsshowid-のリクエストに対する-http-レスポンスのステータスコードは-200">テスト:「/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200」</h3>
+
+<p>それでは、既に作成されている雛形のスペックファイルを足場に私たちの myblog に必要な機能を実装していきます。</p>
+
+<p>まずは最初にコントローラに期待する振る舞いである「/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200」をテストしましょう。
+これは次のように書けます。</p>
+
+<h5 id="speccontrollersblogs_controller_specrb">spec/controllers/blogs_controller_spec.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require File.dirname(__FILE__) + '/../spec_helper'
+
+ describe BlogsController, 'GET /show/:id' do
+   fixtures :blogs
+
+    it "リクエストは成功すること" do
+     get 'show', :id=&gt;blogs(:kakutani).id
+     response.should be_success
+   end
+ end</code></pre></figure>
+
+<p>修正した example ではまず、get メソッドを少し変更して、:id パラメータにフィクスチャからロードしたブログの id を渡しています。
+そして、リクエストを送信した後に、response オブジェクト[^2]が success であることを期待しています。つまり、response#success? が true を返すことを期待しています。これが成立するのは、レスポンスの HTTP ステータスコードが 200 の場合です。</p>
+
+<p>テストを書いたので、実行してみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ script/spec -cfs spec/controllers/blogs_controller_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+BlogsController GET 'show/:id'
+<span style="color: lime">- リクエストは成功すること</span>
+
+
+Finished in 0.224647 seconds
+
+<span style="color: lime">1 example, 0 failures</span>
+
+</pre>
+
+<p>おっと。いきなりグリーンになってしまいました。けれどもここで無理矢理レッドバーを出しても特に意味はありませんし、面白くもありません。私たちに代わって Rails が既に実装してくれていたと思って、これはこれで OK とします。このテストは完了とみなして良いでしょう。TODO リストから消しておきます。</p>
+
+<h5 id="todo-リスト-1">TODO リスト</h5>
+
+<ul>
+  <li>ブログの名前を表示する
+    <ul>
+      <li>コントローラにアクションを用意する
+        <ul>
+          <li>__ <del>/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200</del> __</li>
+          <li>/blogs/show/:id で指定した Blog インスタンスをロードする</li>
+          <li>app/views/blogs/show.erb.htmlを選択する</li>
+        </ul>
+      </li>
+      <li>アクションの結果を表示するビューを用意する</li>
+    </ul>
+  </li>
+  <li>ブログの最新記事を表示する</li>
+  <li>ブログの最新記事を最大 5 件表示する</li>
+</ul>
+
+<h3 id="テストblogsshowid-で指定した-blog-インスタンスをロードする">テスト:「/blogs/show/:id で指定した Blog インスタンスをロードする」</h3>
+
+<p>では次の TODO 項目に取りかかります。先ほど書いたテストでは、show アクションのパラメータとしてブログの id を指定するようにしました。
+この流れに乗って、指定された id に対応する Blog インスタンスをロードしているという振る舞いをコントローラに期待するテストを書いてみます。
+このテストはコントローラの責務でいえば「適切なモデルオブジェクトをロードする」という責務をテストすることに該当します。</p>
+
+<p>具体的な example の記述は次の通りです。</p>
+
+<h5 id="speccontrollersblogs_controller_specrb-1">spec/controllers/blogs_controller_spec.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require File.dirname(__FILE__) + '/../spec_helper'
+
+describe BlogsController do
+
+  describe "GET 'show/:id'" do
+    fixtures :blogs
+
+    it "リクエストは成功すること" do
+      get 'show', :id =&gt; blogs(:kakutani).id
+      response.should be_success
+    end
+
+    it ":idで指定したブログをロードしていること" do
+      get 'show', :id =&gt; blogs(:kakutani).id
+      assigns[:blog].should == blogs(:kakutani)
+    end
+
+  end
+end</code></pre></figure>
+
+<p>ビューで使用するオブジェクトは、コントローラのアクションでインスタンス変数に代入します (これは Rails の規約です)。</p>
+
+<h4 id="assigns-による参照">assigns による参照</h4>
+
+<p>コントローラのインスタンス変数に代入されたオブジェクトは、コントローラの assigns メソッド経由で参照できます。参照する場合には、インスタンス変数名から “@” を除いたものをシンボルまたは文字列にしたものをキーとして指定します。</p>
+
+<p>assigns の呼び出しは、assigns(:blog) という形式でも呼び出せますが、この連載としては推奨しません。その理由は、次の 2 点です。</p>
+
+<ul>
+  <li>後方互換性のために用意されている形式であること</li>
+  <li>代入する場合は、assigns[:var_name] = var の形式しか使えず、参照と代入が対称的ではないこと</li>
+</ul>
+
+<p>後者については「assigns(var_name) = var」といった書き方が Ruby の文法では許されていないためです。ちなみに、私 (もろはし) は参照は assigns(variable_name) 形式の方が好みです。</p>
+
+<h4 id="テストの実行-1">テストの実行</h4>
+
+<p>では、テストを実行してみましょう。</p>
+
+<p>Blog インスタンスをロードしていることを期待はしていますが、対応する処理は実装していません。
+いまの段階では、テストに失敗する (レッドである) ことを期待します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ script/spec -cfs spec/controllers/blogs_controller_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+BlogsController GET 'show/:id'
+<span style="color: lime">- リクエストは成功すること</span>
+
+<span style="color: red">- :idで指定したブログをロードしていること (FAILED - 1)</span>
+
+
+1)
+<span style="color: red">'BlogsController GET 'show/:id' :idで指定したブログをロードしていること' FAILED
+expected: #&lt;Blog id: 1, name: "角谷HTML化計画"&gt;,
+     got: nil (using ==)</span>
+
+./spec/controllers/blogs_controller_spec.rb:15:
+script/spec:4:
+
+Finished in 0.200573 seconds
+
+<span style="color: red">2 examples, 1 failure</span>
+
+</pre>
+
+<p>予想通り失敗しました。</p>
+
+<h4 id="プロダクトコードの実装">プロダクトコードの実装</h4>
+
+<p>テストに通るようにコントローラのプロダクトコードを実装します。</p>
+
+<h5 id="appcontrollersblogs_controllerrb-1">app/controllers/blogs_controller.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class BlogsController &lt; ApplicationController
+   def show
+     @blog = Blog.find(params[:id])
+   end
+ end</code></pre></figure>
+
+<h4 id="再びテストを実行する">再びテストを実行する</h4>
+
+<p>テストを実行します。今度はグリーンのはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -cfs spec/controllers/blogs_controller_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+BlogsController GET 'show/:id'
+<span style="color: lime">- リクエストは成功すること</span>
+
+<span style="color: lime">- :idで指定したブログをロードしていること</span>
+
+
+Finished in 0.198442 seconds
+
+<span style="color: lime">2 examples, 0 failures</span>
+
+</pre>
+
+<p>テストに通りました。2 つ目の TODO 項目も完了です。TODO リストを更新します。</p>
+
+<h5 id="todo-リスト-2">TODO リスト</h5>
+
+<ul>
+  <li>ブログの名前を表示する
+    <ul>
+      <li>コントローラにアクションを用意する
+        <ul>
+          <li><del>/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200</del></li>
+          <li>__ <del>/blogs/show/:id で指定した Blog インスタンスをロードする</del> __</li>
+          <li>app/views/blogs/show.erb.html を選択する</li>
+        </ul>
+      </li>
+      <li>アクションの結果を表示するビューを用意する</li>
+    </ul>
+  </li>
+  <li>ブログの最新記事を表示する</li>
+  <li>ブログの最新記事を最大 5 件表示する</li>
+</ul>
+
+<h3 id="テストappviewsblogsshowerbhtml-を選択する">テスト:「app/views/blogs/show.erb.html を選択する」</h3>
+
+<p>ここまででコントローラのアクションの 3 つの責務のうち、2 つを実装しました。
+残っている最後の責務である「適切なテンプレートを選択していること」をテストします。</p>
+
+<p>ひとつ断わっておきますが、この責務のテストは、いま実現しようとしている機能 (ブログの名前を表示する) 程度であれば、あまり意義のあるテストではありません。というのも、現在の実装にとって選択すべき「適切なテンプレート」とは Rails の規約に従ったデフォルトのテンプレート (/app/views/blogs/show.html.erb) だからです。つまり、このテストは単に Rails がフレームワークとして提供している機能をテストしているだけです (「アプリケーションやライブラリの機能をテストすること」については、前回の連載で簡単に<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l56">説明しました</a>)。</p>
+
+<p>ですが、今回は RSpec on Rails を説明するために、このテンプレートの選択もテストします。このテストを書くことに価値がある場合もあるからです。</p>
+
+<p>たとえば、実際のアプリケーションでは、リクエストの形態や処理結果に応じて描画するテンプレートが異なることもあります。このような、Rails のデフォルトの挙動とは異なる処理を自分たちのアプリケーションに書く場合、それをテストすることには価値があります。</p>
+
+<h4 id="スペックファイルのリファクタリング">スペックファイルのリファクタリング</h4>
+
+<p>では早速 example を追加……する前に、スペックファイルの重複を整理しましょう。
+各 example で重複している get メソッドによるリクエスト送信のコードを、
+共通する事前処理を書くための場所である before メソッドにまとめます。</p>
+
+<p>ごくごく単純な作業ですが、これも立派なリファクタリングです。
+ある時点でガラッと設計を変えていくことだけがリファクタリングではありません。
+むしろ、こうした日常的な細かいソースコードの整理こそがリファクタリングでは重要です。</p>
+
+<h5 id="speccontrollersblogs_controller_specrb-2">spec/controllers/blogs_controller_spec.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require File.dirname(__FILE__) + '/../spec_helper'
+
+describe BlogsController do
+
+  describe "GET 'show/:id'" do
+    fixtures :blogs
+
+    before do
+      @blog = blogs(:kakutani)
+      get 'show', :id =&gt; @blog.id
+    end
+
+    it "リクエストは成功すること" do
+      response.should be_success
+    end
+
+    it ":idで指定したブログをロードしていること" do
+      assigns[:blog].should == @blog
+    end
+
+  end
+end</code></pre></figure>
+
+<p>スペックファイルを修正したので、テストを実行して壊してないことを確認します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -cfs spec/controllers/blogs_controller_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+BlogsController GET 'show/:id'
+<span style="color: lime">- リクエストは成功すること</span>
+
+<span style="color: lime">- :idで指定したブログをロードしていること</span>
+
+
+Finished in 0.181086 seconds
+
+<span style="color: lime">2 examples, 0 failures</span>
+
+</pre>
+
+<p>きちんとリファクタリングできたようです。</p>
+
+<h4 id="example-の追加">example の追加</h4>
+
+<p>リファクタリングを済ませたので、example を追加します。既に述べた通り、ここで選択する適切なテンプレートは Rails の規約通りです。
+よって、テストを書いたら実装をせずともグリーンになってしまうでしょう。今回は、最初はわざとレッドにしてみます。</p>
+
+<h5 id="speccontrollersblogs_controller_specrb-3">spec/controllers/blogs_controller_spec.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">...
+describe BlogsController do
+
+  describe "GET 'show/:id'" do
+    ...
+    it "blogs/showを描画すること" do
+      response.should render_template("blogs") # 間違えている
+    end
+  end
+end</code></pre></figure>
+
+<p>render_template マッチャは、response が描画することを期待するテンプレートを指定するための RSpec on Rails 用のマッチャです。
+実行してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -cfs spec/controllers/blogs_controller_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+BlogsController GET 'show/:id'
+<span style="color: lime">- リクエストは成功すること</span>
+
+<span style="color: lime">- :idで指定したブログをロードしていること</span>
+
+<span style="color: red">- blogs/showを描画すること (FAILED - 1)</span>
+
+
+1)
+<span style="color: red">'BlogsController GET 'show/:id' blogs/showを描画すること' FAILED
+expected "blogs", got "blogs/show"</span>
+
+./spec/controllers/blogs_controller_spec.rb:22:
+script/spec:4:
+
+Finished in 0.208673 seconds
+
+<span style="color: red">3 examples, 1 failure</span>
+
+</pre>
+
+<p>オーケイ。”blogs” を (わざと) 期待してみたところ (expected “blogs”)、実際に描画されたのは “blogs/show” でした (got “blogs/show”)。</p>
+
+<p>これは意図した通りの失敗です。今回は example のほうが間違っているので、これを修正します。これでグリーンになれば、正しく example を書けているといえます。</p>
+
+<h5 id="speccontrollersblogs_controller_specrb-4">spec/controllers/blogs_controller_spec.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    ...
+    it "blogs/showを描画すること" do
+      response.should render_template("blogs/show")
+    end</code></pre></figure>
+
+<p>今度はグリーンのはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -cfs spec/controllers/blogs_controller_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+BlogsController GET 'show/:id'
+<span style="color: lime">- リクエストは成功すること</span>
+
+<span style="color: lime">- :idで指定したブログをロードしていること</span>
+
+<span style="color: lime">- blogs/showを描画すること</span>
+
+
+Finished in 0.217429 seconds
+
+<span style="color: lime">3 examples, 0 failures</span>
+
+</pre>
+
+<p>できました。実装していないので、いまひとつ手応えを感じません。とはいえ、グリーンはグリーンです。TODO リストの項目を完了にしておきましょう。</p>
+
+<p>これで、今回実装するコントローラのアクションは完成です。プロダクトコードは 1 行しか書いていませんが……。</p>
+
+<h5 id="todo-リスト-3">TODO リスト</h5>
+
+<ul>
+  <li>ブログの名前を表示する
+    <ul>
+      <li>__ <del>コントローラにアクションを用意する</del> __
+        <ul>
+          <li><del>/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200</del></li>
+          <li><del>/blogs/show/:id で指定した Blog インスタンスをロードする</del></li>
+          <li>__ <del>app/views/blogs/show.erb.html を選択する</del> __</li>
+        </ul>
+      </li>
+      <li>アクションの結果を表示するビューを用意する</li>
+    </ul>
+  </li>
+  <li>ブログの最新記事を表示する</li>
+  <li>ブログの最新記事を最大 5 件表示する</li>
+</ul>
+
+<h4 id="コントローラのテストで利用できる機能">コントローラのテストで利用できる機能</h4>
+
+<p>今回のコントローラのテストを書くのに使用した RSpec on Rails のメソッドを簡単にまとめておきます。</p>
+
+<dl>
+  <dt>get(action, params={})</dt>
+  <dd>指定したアクションへ GET リクエストを送信します。</dd>
+  <dt>response()</dt>
+  <dd>レスポンスオブジェクトへのアクセサです。レスポンスオブジェクトは HTTP ステータスコードや使用したテンプレートの情報を保持しています。</dd>
+  <dt>assigns[variable_name]</dt>
+  <dd>コントローラのインスタンス変数 @variable_name に代入されたオブジェクトを取得します。キーには “@” を除いたものを文字列またはシンボルで指定します。</dd>
+</dl>
+
+<p>この他にも RSpec on Rails を使用したコントローラのテストでは、次のようなメソッドを利用できます。</p>
+
+<dl>
+  <dt>post(action, params={})</dt>
+  <dd>指定したアクションへ POST リクエストを送信します。パラメータの指定方法は get と同じです。同様に、put や delete も用意されています。</dd>
+  <dt>session()</dt>
+  <dd>セッションオブジェクトへのアクセサです。セッション変数の設定やセッション ID を取得する際に利用します。</dd>
+  <dt>request()</dt>
+  <dd>リクエストオブジェクトへのアクセサです。リクエストの MIME-Type を設定する場合などに利用します。</dd>
+</dl>
+
+<p>RSpec on Rails がコントローラのテストを書くために提供している機能は、
+<a href="http://rspec.info/documentation/rails/writing/controllers.html">プロジェクトサイトのドキュメント</a>にまとまっています。参考にしてください。</p>
+
+<h2 id="ビューのテスト">ビューのテスト</h2>
+
+<p>ここまでで「ブログの名前を表示する」ためのコントローラを実装しました。次は、コントローラのアクションの結果を表示するためのビューをテスト駆動で実装します。</p>
+
+<p>既に述べた通り、__RSpec on Rails の考え方では__すべてがユニットテストです。
+RSpec on Rails ではコントローラとビューとを異なるユニットと考えるので、テストも互いに独立した状態で行えます。</p>
+
+<h3 id="ビューの責務と-rspec-on-rails-のテストサポート">ビューの責務と RSpec on Rails のテストサポート</h3>
+
+<p>ビューはアプリケーションとユーザーとがインタラクションする界面です。(今に始まった話でもなければ Rails に限った話でもありませんが)ビューのテストには独特の難しさがあります。それは主に次の 2 点に集約されます。</p>
+
+<ul>
+  <li>見た目は変更されやすく、せっかく書いたテストがすぐに無効になる</li>
+  <li>ユーザとやりとりする部分があると、テストの実行を自動化しづらい</li>
+</ul>
+
+<p>RSpec on Rails ではビューのユニットテストができるからといって、この問題点を解決してくれるわけではありません。多くのソリューションと同じく、RSpec もまた銀の弾丸ではありません。が、RSpec on Rails も自分なりに頑張っています。</p>
+
+<p>RSpec on Rails のビューのユニットテストでは次の 2 点をサポートします。</p>
+
+<ul>
+  <li>ビューのコンポーネントとしての責務を明確にする</li>
+  <li>モックやスタブを活用することで、コントローラやモデルから独立した状態でテストできる</li>
+</ul>
+
+<p>Rails ではビューにも平気でロジックを書きます。
+ビューを独立してテストできるのは「テストを書かないと不安な TDD 厨」にとって心強いです。(今回は紹介しませんが、ヘルパーについても同様です。)</p>
+
+<p>この連載で私たちはビューのテストを書く際には RSpec の教えに従って考えたいと思います。
+それは「そのビューはどう振る舞うのか？」「ビューの責務は何か？」という視点です。</p>
+
+<p>ビューの責務は (当然ですが)「データを実際に画面として表示すること」です。</p>
+
+<p>RSpec on Rails はビューの責務のテストをコントローラから独立して行えるように、次のような機能を用意しています。</p>
+
+<ul>
+  <li>ビューから参照するデータを example で設定する機能</li>
+  <li>指定したテンプレートを描画する機能</li>
+  <li>描画された HTML を解析する機能</li>
+</ul>
+
+<p>これらの機能を使いながら、ビューのテストを書いていきます。</p>
+
+<h3 id="必要な作業は何だろう-1">「必要な作業は何だろう？」</h3>
+
+<p>繰り返しになりますが、いま実現しようとしてる機能は「ブログの名前を表示する」です。
+画面表示するのに必要なブログのデータはコントローラで取得していますから、これを使ってブログの名前を表示すればよさそうです。</p>
+
+<p>画面の表示は、次のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class="blog"&gt;
+  &lt;h1&gt;ブログの名前&lt;/h1&gt;
+&lt;/div&gt;</code></pre></figure>
+
+<p>TODO リストに「指定したブログの名前を表示する」を追加して、ビューのテストに進みましょう。</p>
+
+<h5 id="todo-リスト-4">TODO リスト</h5>
+
+<ul>
+  <li>ブログの名前を表示する
+    <ul>
+      <li><del>コントローラにアクションを用意する</del></li>
+      <li><del>/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200</del></li>
+      <li><del>/blogs/show/:id で指定した Blog インスタンスをロードする</del></li>
+      <li><del>app/views/blogs/show.erb.html を選択する</del></li>
+      <li>アクションの結果を表示するビューを用意する
+        <ul>
+          <li><strong>指定したブログの名前を表示する</strong></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>ブログの最新記事を表示する</li>
+  <li>ブログの最新記事を最大 5 件表示する</li>
+</ul>
+
+<h3 id="ジェネレータが生成したスペックファイルを確認する">ジェネレータが生成したスペックファイルを確認する</h3>
+
+<p>私たちは今回はじめてビューのテストを書きます。
+コントローラの場合と同じように RSpec on Rails のジェネレータが生成したビューのスペックファイルを確認しておきましょう。</p>
+
+<p>RSpec on Rails ではビューのテストは spec/views/#{controller_name}/#{view_filename}_spec.rb という規約で配置されます。
+今回の場合は「blogs/show/:id」で使用するテンプレートファイルのスペックですから「spec/views/blogs/show.html.erb_spec.rb」です。</p>
+
+<h5 id="specviewsblogsshowhtmlerb_specrb">spec/views/blogs/show.html.erb_spec.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 1:require File.dirname(__FILE__) + '/../../spec_helper'
+ 2:
+ 3:describe "/blogs/show" do
+ 4:  before(:each) do
+ 5:    render 'blogs/show'
+ 6:  end
+ 7:
+ 8:  #Delete this example and add some real ones or delete this file
+ 9:  it "should tell you where to find the file" do
+10:    response.should have_tag('p', /Find me in app\/views\/blogs\/show/)
+11:  end
+12:end</code></pre></figure>
+
+<p>1 行目では、他のスペックファイルと同じように spec_helper を読み込んでいます。</p>
+
+<p>このビュースペックファイルの最初のポイントは、before ブロック(4 行目)です。
+5 行目の render() メソッドは、引数で指定されたテンプレートを描画します。
+テンプレートの検索パスやファイル名の規約は Rails の render メソッドと同じです。
+この例では app/views/blogs/show.html.erb のテンプレートを描画しています。</p>
+
+<p>2つ目のポイントは、example 中の have_tag マッチャ(10 行目)です。have_tag マッチャは、描画された HTML を解析するためのマッチャです。
+have_tag マッチャの実装は、Rails 標準のテスティング環境で用意されている assert_select への薄いラッパーです。利用方法も assert_select と同じです。</p>
+
+<p>この例では、response.body に格納されているテキスト (HTML 片) に正規表現 /Find me in app\/views\/blogs\/show/ にマッチする p タグがあることを期待しています。
+ここで生成されている “Find me 〜” は Rails が自動生成した rhtml テンプレートのデフォルトで出力されている文字列です。もう一度確認しておきましょう。</p>
+
+<h5 id="appviewsblogsshowrhtmlerb-1">app/views/blogs/show.rhtml.erb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;h1&gt;Blogs#show&lt;/h1&gt;
+&lt;p&gt;Find me in app/views/blogs/show.html.erb&lt;/p&gt;</code></pre></figure>
+
+<p>確かに。実行してみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -cfs spec/views/blogs/show.html.erb_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+/blogs/show
+<span style="color: lime">- should tell you where to find the file</span>
+
+
+Finished in 0.223786 seconds
+
+<span style="color: lime">1 example, 0 failures</span>
+
+</pre>
+
+<p>うまく動いています。</p>
+
+<h3 id="テスト指定したブログの名前を表示する">テスト:指定したブログの名前を表示する</h3>
+
+<p>コントローラの場合と同様に、このスペックファイルを足場に myblog のビューをテスト駆動で実装します。
+指定したブログの名前を表示していることを振る舞いとして期待するなら、次のように書けます。</p>
+
+<h5 id="specviewsblogsshowhtmlerb_specrb-1">spec/views/blogs/show.html.erb_spec.rb</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require File.dirname(__FILE__) + '/../../spec_helper'
+
+describe "/blogs/show" do
+  fixtures :blogs
+
+  before(:each) do
+    @blog = assigns[:blog] = blogs(:kakutani)
+    render 'blogs/show'
+  end
+
+  it "ブログの名前を表示すること" do
+    response.should have_tag('div.blog &gt; h1', @blog.name)
+  end
+end</code></pre></figure>
+
+<p>最初から用意されていた example はコントローラの場合と同じように、コメントの指示 (“Delete this example …”) に従って削除しました。</p>
+
+<p>beforeブロックでの代入の連鎖を念のため補足しておくと、インスタンス変数 @blog への代入は example で利用するためです。
+assigns[:blog] への代入は、render メソッドで描画するテンプレートのインスタンス変数に代入するためです。</p>
+
+<p>“ブログの名前を表示すること” と名前をつけた example では、ブログの名前が
+CSS クラス名が “blog” である div タグの子要素の h1 タグに出力されていることを期待しています。</p>
+
+<p>では、テストを実行します。まだ実装してないので失敗するはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -cfs spec/views/blogs/show.html.erb_spec.rb</code></pre></figure>
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+/blogs/show
+<span style="color: red">- ブログの名前を表示すること (FAILED - 1)</span>
+
+
+1)
+<span style="color: red">'/blogs/show ブログの名前を表示すること' FAILED
+Expected at least 1 element matching "div.blog &gt; h1", found 0.
+<false> is not true.&lt;/span&gt;
+
+./spec/views/blogs/show.html.erb_spec.rb:12:
+script/spec:4:
+
+Finished in 0.18182 seconds
+
+<span style="color: red">1 example, 1 failure</span>
+
+&lt;/pre&gt;
+
+指定した CSS セレクタにマッチする要素が無いのでテストに失敗しました。予想通りです。このエラーの読み方は、次の通りです。
+
+「"div.blog &gt; h1" にマッチする (matching "div.blog")、少なくとも 1 つの要素が存在することを期待した (Expected at least 1 element) が、1 つも見つからなかった (found 0)、つまり have_tag マッチャが成立しなかった (&lt;false&gt;) のであり、それは期待通りではない (is not true)」
+
+では、ビューのファイルを修正します。
+
+##### app/views/blogs/show.html.erb
+
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class="blog"&gt;
+  &lt;h1&gt;&lt;%=h @blog.name %&gt;&lt;/h1&gt;
+&lt;/div&gt;</code></pre></figure>
+
+
+
+実行します。
+
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -cfs spec/views/blogs/show.html.erb_spec.rb</code></pre></figure>
+
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+/blogs/show
+<span style="color: lime">- ブログの名前を表示すること</span>
+
+
+Finished in 0.166681 seconds
+
+<span style="color: lime">1 example, 0 failures</span>
+
+</pre>
+
+成功しました。
+
+TODO 項目を消しておきましょう。
+
+##### TODOリスト
+
+* ブログの名前を表示する
+  *  ~~コントローラにアクションを用意する~~ 
+    *  ~~/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200~~ 
+    *  ~~/blogs/show/:id で指定した Blog インスタンスをロードする~~ 
+    *  ~~app/views/blogs/show.erb.html を選択する~~ 
+  * __ ~~アクションの結果を表示するビューを用意する~~ __
+    * __ ~~指定したブログの名前を表示する~~ __
+* ブログの最新記事を表示する
+* ブログの最新記事を最大 5 件表示する
+
+
+#### FAQ:「ビューのテストなのに何が出力されているのかわからないのは不安だ」
+
+その感情はもっともです。というか、私たちも不安になることがあります。
+
+実際の開発でも、思ったようにテストが通らないことはいくらでもあります。
+そうした時には、実際に出力される HTML 片などを目で確認したくなります。
+特に、have_tag マッチャや assert_select の記法に慣れないうちは「これで正しいはずなのにテストが通らない」という状況によく遭遇します。
+
+実際に出力される結果を目視確認したい場合には、response#body を使います。
+手っ取り早い方法としては example の記述に「puts response.body」と追加してテストを実行すれば、出力された HTML 片がターミナルに表示されます。
+
+### ブラウザで動作確認
+
+ここまでで、モデル、ビュー、コントローラのそれぞれについてごく簡単にですがテストを書きました。
+TODO リストを確認すると、これで「ブログの名前を表示する」ことができそうです。本当でしょうか？ブラウザで確認してみましょう。
+
+#### データの準備
+
+ブラウザでアプリケーションの動作を確認したいのですが、まだデータを入力する画面がありません。
+TODO リストに実現したい機能として追加しておいて、ここではフィクスチャで定義しているデータを development 環境のデータベースへロードすることで代用しましょう。
+
+##### TODOリスト
+
+* ブログの名前を表示する
+  *  ~~コントローラにアクションを用意する~~ 
+    *  ~~/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200~~ 
+    *  ~~/blogs/show/:id で指定した Blog インスタンスをロードする~~ 
+    *  ~~app/views/blogs/show.erb.html を選択する~~ 
+  *  ~~アクションの結果を表示するビューを用意する~~ 
+* ブログの最新記事を表示する
+* ブログの最新記事を最大 5 件表示する
+* __ブログを開設する__
+
+
+さて。フィクスチャのデータを DB に投入するには、rake で spec:db:fixtures:load タスクを実行します。
+
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake spec:db:fixtures:load</code></pre></figure>
+
+
+
+#### ブラウザで確認する
+
+開発用のサーバを起動して、ブラウザからアクセスします。
+
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby script/server</code></pre></figure>
+
+
+
+[http://localhost:3000/blogs/show/1](http://localhost:3000/blogs/show/1) へアクセスしてみてください。
+![blogs_show_1.png](/images/0023-Rspec/blogs_show_1.png)
+
+連載 2 回を費して、ついに画面を表示することができました。なんという生産性。Ruby on Rails すごい!
+
+### ビューのテストで利用できる機能
+
+RSpec on Rails のビューのテストでは、描画したテンプレートのデータにアクセスする方法として以下をサポートしています。
+
+assigns[variable_name]
+: ビューのインスタンス変数 @variable_name に代入されたオブジェクトを取得します。インスタンス変数名の "@" を除いたものを文字列またはシンボルをキーとして指定します。
+
+flash[&#58;key], params[&#58;key], session[&#58;key]
+:  flash、params、session のそれぞれに指定したキーでアクセスします。
+
+template.expect_render / stub_render
+:  描画するテンプレートを部分的にモック化 / スタブ化します。モックとスタブについては今後の連載で紹介します。
+
+have_tag マッチャ
+: テンプレートが描画する HTML を検証するためのマッチャーです。その実装は、assert_select への薄いラッパーです。assert_select は Rails 1.2 で導入された HTML 検証用のメソッドです。検証したいエレメントを CSS セレクタ形式で指定し、エレメントの数や内部のテキストなど様々な検証を記述できます。assert_select の詳細は『<a href="https://www.amazon.co.jp/Rails%E3%81%AB%E3%82%88%E3%82%8B%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%ABWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA-%E5%89%8D%E7%94%B0-%E4%BF%AE%E5%90%BE/dp/4274066401?SubscriptionId=AKIAIXYTNSOEGXJVP5SQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4274066401">'Rails によるアジャイル Web アプリケーション開発'</a>』や私 (もろはし) が[執筆中の書籍の草稿](http://d.hatena.ne.jp/moro/20071001/1191255082)を参照してください。
+
+RSpec on Rails がコントローラのテストを書くために提供している機能は、
+[プロジェクトサイトのドキュメント](http://rspec.info/documentation/rails/writing/views.html)にもまとまっています。参考にしてください。
+
+## 今回のまとめ
+
+今回書いたコードをふりかえっておきましょう。
+
+### 全テストケースの実行
+
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ spec -cfs spec/**/*_spec.rb</code></pre></figure>
+
+
+<pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
+
+BlogsController GET 'show/:id'
+<span style="color: lime">- リクエストは成功すること</span>
+
+<span style="color: lime">- :idで指定したブログをロードしていること</span>
+
+<span style="color: lime">- blogs/showを描画すること</span>
+
+
+BlogsHelper
+<span style="color: lime">- should include the BlogsHelper</span>
+
+
+Blog#nameが設定されていない場合:
+<span style="color: lime">- バリデーションに失敗すること</span>
+
+<span style="color: lime">- :nameにエラーが設定されていること</span>
+
+
+Blog
+<span style="color: lime">- は複数の記事を所有できること</span>
+
+
+Blog に記事を投稿できた場合:
+<span style="color: lime">- 記事の件数が1件増えること</span>
+
+
+Entry
+<span style="color: lime">- は特定のブログに属すること</span>
+
+
+Entry#posted_onが入力されずに保存された場合:
+<span style="color: lime">- Entryの作成日は投稿日であること</span>
+
+
+Entry#posted_onを明示して保存された場合:
+<span style="color: lime">- 入力された日付が投稿日であること</span>
+
+
+/blogs/show
+<span style="color: lime">- ブログの名前を表示すること</span>
+
+
+Finished in 0.210226 seconds
+
+<span style="color: lime">12 examples, 0 failures</span>
+
+</pre>
+
+モデル、コントローラ、ビューのテストをごく簡単にではありますが、一通り書きました。
+
+### RCov によるカバレッジ
+
+カバレッジも確認しておきましょう。
+
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">rake spec:rcov
+(in /path/to/myblog)
+............
+
+Finished in 0.411136 seconds
+
+12 examples, 0 failures</code></pre></figure>
+
+
+![rcov-screenshot-02.png](/images/0023-Rspec/rcov-screenshot-02.png)
+
+依然 100% です(まあ、ほとんどプロダクトコードは増えてないのですが)。
+
+### rake stats による統計情報
+
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake stats
+(in /path/to/myblog)
++----------------------+-------+-------+---------+---------+-----+-------+
+| Name                 | Lines |   LOC | Classes | Methods | M/C | LOC/M |
++----------------------+-------+-------+---------+---------+-----+-------+
+| Controllers          |    13 |     8 |       2 |       1 |   0 |     6 |
+| Helpers              |     5 |     4 |       0 |       0 |   0 |     0 |
+| Models               |    11 |    10 |       2 |       1 |   0 |     8 |
+| Model specs          |    84 |    70 |       0 |       0 |   0 |     0 |
+| View specs           |    14 |    11 |       0 |       0 |   0 |     0 |
+| Controller specs     |    25 |    19 |       0 |       0 |   0 |     0 |
+| Helper specs         |    11 |     7 |       0 |       0 |   0 |     0 |
++----------------------+-------+-------+---------+---------+-----+-------+
+| Total                |   163 |   129 |       4 |       2 |   0 |    62 |
++----------------------+-------+-------+---------+---------+-----+-------+
+  Code LOC: 22     Test LOC: 107     Code to Test Ratio: 1:4.9</code></pre></figure>
+
+
+
+今回もテストばかり書いていました。
+
+## 次回予告
+
+次回も、myblog の機能拡張をテスト駆動で開発しながら、RSpec の機能を紹介していきます。
+現在の TODO リストを整理しておきます。
+
+##### TODO リスト
+
+* __ ~~ブログの名前を表示する~~ __
+* ブログの最新記事を表示する
+* ブログの最新記事を最大 5 件表示する
+* ブログを開設する
+
+
+まだまだ先は長いですね。いかにもすべてを実装する前に飽きてしまいそうです :-)
+
+それはそれとして、またお目にかかりましょう。Happy Testing!
+
+## 著者について
+
+### かくたに
+
+[kakutani.com](http://kakutani.com)。日本 Ruby の会理事。(株) 永和システムマネジメント サービスプロバイディング事業部チーフプログラマ。『<a href="https://www.amazon.co.jp/Rubyist-Magazine-%E5%87%BA%E5%BC%B5%E7%89%88-%E6%AD%A3%E3%81%97%E3%81%84Ruby%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E8%AC%9B%E5%BA%A7%E2%80%95Rubyist%E3%81%AERubyist%E3%81%AB%E3%82%88%E3%82%8B%E3%80%81Rubyist%E3%81%A8%E3%81%9D%E3%81%86%E3%81%A7%E3%81%AA%E3%81%84%E4%BA%BA%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE-%E9%9D%92%E6%9C%A8/dp/4839923205?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4839923205">'Rubyist Magazine 出張版'</a>』にコラムを寄稿したり『<a href="https://www.amazon.co.jp/Java%E3%81%8B%E3%82%89Ruby%E3%81%B8-%E2%80%95%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E5%AE%9F%E8%B7%B5%E7%A7%BB%E8%A1%8C%E3%82%AC%E3%82%A4%E3%83%89-Bruce-Tate/dp/4873113202?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4873113202">'Java から Ruby へ'</a>』を翻訳したり、『<a href="https://www.amazon.co.jp/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9-%E9%81%94%E4%BA%BA%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%AB%E5%AD%A6%E3%81%B6%E7%8F%BE%E5%A0%B4%E9%96%8B%E7%99%BA%E8%80%85%E3%81%AE%E7%BF%92%E6%85%A3-Venkat-Subramaniam/dp/4274066940?SubscriptionId=0WVS3J53FVP9M1E7ET02&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4274066940">'アジャイルプラクティス'</a>』を監訳したり。好きなメソッドは Object#extend 。好きな分散 SCM は git (にわかユーザ)。
+
+### もろはし
+
+[moro の日記](http://d.hatena.ne.jp/moro/) 。Rails 勉強会@東京の案内メール係。(株) 永和システムマネジメント サービスプロバイディング事業部所属。足掛け 2 年もかかっている Rails 書籍がそろそろ一区切り着きそうです。ただいま絶賛自己レビュー中。Rails 2.0 対応で書き上げています。好きなメソッドは content_tag_for という Rails 脳。
+
+## バックナンバー
+
+
+
+  - [スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)](/articles/0023/0023-Rspec.html)
+
+  - [スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)](/articles/0021/0021-Rspec.html)
+
+
+----
+
+[^1]: 現在の Cookie セッションストアでは HMAC-SHA1 を利用しており、その鍵長は160ビットです。key が鍵長を越えると key のハッシュ値を key とします。[[http://www.ipa.go.jp/security/rfc/RFC2104JA.html#3]] も参照してください
+[^2]: より正確に書くなら「response() メソッドの戻り値である ActionController::TestResponse オブジェクト」ですが、冗長なので便宜的に「response オブジェクト」と呼びます
+</false></span></pre>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

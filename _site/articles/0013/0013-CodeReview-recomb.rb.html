@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>0013-CodeReview-recomb.rb</title>
+  <meta name="description" content="あなたの Ruby コードを添削します 【第 3 回】 dbf.rb で解説した、添削後のサンプルコードです。">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0013/0013-CodeReview-recomb.rb.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>0013-CodeReview-recomb.rb</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0013/0013-CodeReview-recomb.rb.html" class="hatena-bookmark-button" data-hatena-bookmark-title="0013-CodeReview-recomb.rb" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0013/0013-CodeReview-recomb.rb.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0013/0013-CodeReview-recomb.rb.html" data-text="0013-CodeReview-recomb.rb">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p><a href="/articles/0013/0013-CodeReview.html">あなたの Ruby コードを添削します 【第 3 回】 dbf.rb</a> で解説した、添削後のサンプルコードです。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby -Ke</span>
+<span class="c1">#</span>
+<span class="c1"># $Id: recomb.rb,v 1.4 2006/02/12 22:05:45 aamine Exp $</span>
+<span class="c1">#</span>
+<span class="c1"># 入力dbfファイルから、２つのデフォルトフィールド(日時と雨量)の組を</span>
+<span class="c1"># 抜き出して指定したフィールドを加え、それらをレコードとするdbfファ</span>
+<span class="c1"># イルを出力する</span>
+<span class="c1"># 出力フィールドは、入力リストの先頭ファイルの同名フィールドの定義</span>
+<span class="c1"># とする。文字型フィールドを出力指定すると、そのいずれか１つでも値</span>
+<span class="c1"># のないレコードに対しては、レコードを出力しない</span>
+<span class="c1"># 入力は、コマンドラインで指定したリストファイルを順に読込む。</span>
+<span class="c1"># 出力は、コマンドラインで指定した出力ファイルに続けて書き込む。</span>
+<span class="c1">#</span>
+<span class="c1"># Example:</span>
+<span class="c1"># ./recomb.rb -f pntid,name,area -o output.dbf input1.dbf input2.dbf</span>
+<span class="c1">#</span>
+
+<span class="nb">require</span> <span class="s1">'dbf'</span>
+<span class="nb">require</span> <span class="s1">'optparse'</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="n">additional</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">outfile</span> <span class="o">=</span> <span class="kp">nil</span>
+  <span class="n">parser</span> <span class="o">=</span> <span class="no">OptionParser</span><span class="p">.</span><span class="nf">new</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">banner</span> <span class="o">=</span> <span class="s2">"Usage: </span><span class="si">#{</span><span class="vg">$0</span><span class="si">}</span><span class="s2"> [-f NAME,NAME...] -o PATH input..."</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="s1">'-f'</span><span class="p">,</span> <span class="s1">'--fields=NAME,NAME'</span><span class="p">,</span> <span class="s1">'Adding field names.'</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">names</span><span class="o">|</span>
+    <span class="n">additional</span> <span class="o">=</span> <span class="n">names</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="s1">'-o'</span><span class="p">,</span> <span class="s1">'--output=PATH'</span><span class="p">,</span> <span class="s1">'Name of output file.'</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">path</span><span class="o">|</span>
+    <span class="n">outfile</span> <span class="o">=</span> <span class="n">path</span>
+  <span class="p">}</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">on</span><span class="p">(</span><span class="s1">'--help'</span><span class="p">,</span> <span class="s1">'Prints this message and quit.'</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">puts</span> <span class="n">parser</span><span class="p">.</span><span class="nf">help</span>
+    <span class="nb">exit</span> <span class="mi">0</span>
+  <span class="p">}</span>
+  <span class="k">def</span> <span class="nc">parser</span><span class="o">.</span><span class="nf">error</span><span class="p">(</span><span class="n">msg</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
+    <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="n">msg</span> <span class="k">if</span> <span class="n">msg</span>
+    <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="n">help</span><span class="p">()</span>
+    <span class="nb">exit</span> <span class="mi">1</span>
+  <span class="k">end</span>
+  <span class="k">begin</span>
+    <span class="n">parser</span><span class="p">.</span><span class="nf">parse!</span>
+  <span class="k">rescue</span> <span class="no">OptionParser</span><span class="o">::</span><span class="no">ParseError</span> <span class="o">=&gt;</span> <span class="n">err</span>
+    <span class="n">parser</span><span class="p">.</span><span class="nf">error</span> <span class="n">err</span><span class="p">.</span><span class="nf">message</span>
+  <span class="k">end</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">error</span> <span class="s1">'no output file'</span> <span class="k">unless</span> <span class="n">outfile</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">error</span> <span class="s1">'no input file'</span> <span class="k">if</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">empty?</span>
+  <span class="n">infiles</span> <span class="o">=</span> <span class="no">ARGV</span>
+
+  <span class="n">schema_initialized</span> <span class="o">=</span> <span class="kp">false</span>
+  <span class="no">DBF</span><span class="o">::</span><span class="no">RecordSet</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">dbout</span><span class="o">|</span>
+    <span class="n">infiles</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">path</span><span class="o">|</span>
+      <span class="no">DBF</span><span class="o">::</span><span class="no">RecordSet</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">dbin</span><span class="o">|</span>
+        <span class="k">unless</span> <span class="n">schema_initialized</span>
+          <span class="n">dbout</span><span class="p">.</span><span class="nf">add_string_field</span> <span class="s1">'datetime'</span><span class="p">,</span> <span class="mi">20</span>
+          <span class="n">dbout</span><span class="p">.</span><span class="nf">add_numeric_field</span> <span class="s1">'rainfall'</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span>
+          <span class="n">additional</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+            <span class="n">dbout</span><span class="p">.</span><span class="nf">add_field</span> <span class="n">dbin</span><span class="p">.</span><span class="nf">field</span><span class="p">(</span><span class="nb">name</span><span class="p">).</span><span class="nf">dup</span>
+          <span class="k">end</span>
+          <span class="n">schema_initialized</span> <span class="o">=</span> <span class="kp">true</span>
+        <span class="k">end</span>
+
+        <span class="n">rainfall_data</span> <span class="o">=</span> <span class="n">dbin</span><span class="p">.</span><span class="nf">fields</span><span class="p">\</span>
+            <span class="p">.</span><span class="nf">select</span> <span class="p">{</span><span class="o">|</span><span class="n">field</span><span class="o">|</span> <span class="n">rainfall_field?</span><span class="p">(</span><span class="n">field</span><span class="p">.</span><span class="nf">name</span><span class="p">)</span> <span class="p">}\</span>
+            <span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">field</span><span class="o">|</span> <span class="p">[</span><span class="n">extract_datetime</span><span class="p">(</span><span class="n">field</span><span class="p">.</span><span class="nf">name</span><span class="p">),</span> <span class="n">field</span><span class="p">.</span><span class="nf">name</span><span class="p">]</span> <span class="p">}</span>
+        <span class="n">dbin</span><span class="p">.</span><span class="nf">each_record</span> <span class="k">do</span> <span class="o">|</span><span class="n">rec</span><span class="o">|</span>
+          <span class="k">next</span> <span class="k">unless</span> <span class="n">valid_record?</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span> <span class="n">additional</span><span class="p">)</span>
+          <span class="n">rainfall_data</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">datetime</span><span class="p">,</span> <span class="nb">name</span><span class="o">|</span>
+            <span class="n">dbout</span><span class="p">.</span><span class="nf">append</span> <span class="p">{</span><span class="o">|</span><span class="n">r</span><span class="o">|</span>
+              <span class="n">r</span><span class="p">.</span><span class="nf">datetime</span> <span class="o">=</span> <span class="n">datetime</span>
+              <span class="n">r</span><span class="p">.</span><span class="nf">rainfall</span> <span class="o">=</span> <span class="n">rec</span><span class="p">[</span><span class="nb">name</span><span class="p">]</span>
+              <span class="n">additional</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span>
+                <span class="n">r</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">rec</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+              <span class="k">end</span>
+            <span class="p">}</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="p">}</span>
+    <span class="k">end</span>
+  <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="c1"># ALL needed fields must contain non-space chars.</span>
+<span class="k">def</span> <span class="nf">valid_record?</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">needed_fields</span><span class="p">)</span>
+  <span class="n">needed_fields</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span> <span class="n">record</span><span class="p">.</span><span class="nf">field</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span> <span class="p">}\</span>
+      <span class="p">.</span><span class="nf">all?</span> <span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">not</span> <span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="nf">string_field?</span> <span class="n">and</span> <span class="n">f</span><span class="p">.</span><span class="nf">value</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/ /</span><span class="p">,</span> <span class="s2">""</span><span class="p">).</span><span class="nf">empty?</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="c1"># Format of rainfall field  e.g. T039250030</span>
+<span class="no">RAINFALL_FIELD_RE</span> <span class="o">=</span> <span class="sr">/\AT(\d\d)([\da-f])(\d\d)(\d\d)(\d0)\z/</span>
+
+<span class="k">def</span> <span class="nf">rainfall_field?</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="no">RAINFALL_FIELD_RE</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c1"># rainfall field name -&gt; datetime string</span>
+<span class="k">def</span> <span class="nf">extract_datetime</span><span class="p">(</span><span class="n">fieldname</span><span class="p">)</span>
+  <span class="n">m</span> <span class="o">=</span> <span class="no">RAINFALL_FIELD_RE</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="n">fieldname</span><span class="p">)</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="n">month</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nf">hex</span><span class="p">;</span> <span class="n">date</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+  <span class="n">hour</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span> <span class="n">minute</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+  <span class="s2">"20</span><span class="si">#{</span><span class="n">year</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">month</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">date</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">hour</span><span class="si">}</span><span class="s2">:</span><span class="si">#{</span><span class="n">minute</span><span class="si">}</span><span class="s2">:00"</span>
+<span class="k">end</span>
+
+<span class="n">main</span>
+
+</code></pre>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

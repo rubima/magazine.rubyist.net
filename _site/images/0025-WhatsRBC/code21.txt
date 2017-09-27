@@ -1,0 +1,131 @@
+require 'ruby-processing'
+
+class LoopQueue
+  def initialize(*items)
+    @items = items
+	@index = 0
+  end
+  
+  def next
+    @index += 1
+	@index = 0 if @index == @items.length
+	current
+  end
+  
+  def current
+    @items[@index]
+  end
+end
+
+class Position
+  attr_accessor :x, :y
+  
+  def initialize(x = 0, y = 0, &block)
+    move_to(x, y, &block)
+  end
+  
+  def move_to(x, y)
+    @x = block_given? ? yield(x, :x, @x) : x
+    @y = block_given? ? yield(y, :y, @y) : y
+  end
+  
+  def move_by(dx, dy)
+    @x += block_given? ? yield(dx, :x, @x) : dx
+    @y += block_given? ? yield(dy, :y, @y) : dy
+  end
+end
+
+class Rectangle < Position
+  attr_accessor :width, :height
+  def initialize(x, y, width, height)
+    super(x, y)
+	@width, @height = width, height
+  end
+  
+  def to_a
+    [@x, @y, @width, @height]
+  end
+end
+
+class Dot
+  include Math
+  
+  DEFAULT_SIZE = 10
+  DEFAULT_MARGIN = 2
+  
+  def initialize(position, w = DEFAULT_SIZE, h = DEFAULT_SIZE)
+    @app = Processing::App.current
+	@rect = Rectangle.new(position.x, position.y, w, h)
+	@original_position = position.dup
+	@@dot_count ||= 0
+	@dot_num = (@@dot_count += 1)
+	@speed = 0.05
+	@next = Position.new
+  end
+  
+  def move
+    case @app.patterns.current
+    when :line
+	  @next.move_to(@original_position.x, @original_position.y)
+	when :circle
+	  @next.move_to(@app.width, @app.height) do |wh_value, attr|
+	  val, sin_or_cos = (attr == :x) ? [10, 'sin'] : [20, 'cos']
+	  (wh_value/2 - val) * self.__send__(sin_or_cos, radians(@dot_num * 360 / @@dot_count)) + wh_value / 2
+	end
+	when :center
+	  @next.move_to(@app.width/2, @app.height/2)
+	when :random
+	  @next.move_by(@app.width/8, @app.height/8) do |value, attr|
+	    @app.random(-value, value)
+      end
+	else
+	  raise NameError, "Unsupported pattern: #{@app.patterns.current.inspect}"
+	end
+	@rect.move_by(@rect.x - @next.x, @rect.y - @next.y) do |value, attr| - (value * @speed)
+	end
+  end
+  
+  def radians(x)
+    x * (PI / 180)
+  end
+  
+  def display
+    c1 = @app.color(*(0..3).map{rand(255)})
+	@app.fill c1
+	@app.stroke c1
+	@app.rect(*@rect.to_a)
+  end
+end
+
+class MovableDot < Processing::App
+
+  attr_accessor :patterns
+  THE_NUM_OF_DOT = 20
+
+  def setup
+    frame_rate 5
+	@patterns = LoopQueue.new(:line, :circle, :center, :random)
+    @dots = []
+	dot_size, dot_margin = Dot::DEFAULT_SIZE, Dot::DEFAULT_MARGIN
+	
+	THE_NUM_OF_DOT.times do
+	  THE_NUM_OF_DOT.times do |i|
+	    initial_position = Position.new(width, height) do |wh_value, attr|
+	      i * (dot_size + dot_margin) + wh_value / 2 - THE_NUM_OF_DOT * ((dot_size + dot_margin) /2)
+	    end
+	    @dots << Dot.new(initial_position)
+	  end
+    end
+  end
+  
+  def draw
+    background 0
+	@dots.each{|dot| dot.display; dot.move} 
+  end
+  
+  def mouse_pressed
+    @patterns.next
+  end
+end
+
+MovableDot.new :title => "Movable Dot", :width => 300, :height => 300

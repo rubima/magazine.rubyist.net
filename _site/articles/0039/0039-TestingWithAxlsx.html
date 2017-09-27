@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Axlsx でテスト支援</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0039/0039-TestingWithAxlsx.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Axlsx でテスト支援</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0039/0039-TestingWithAxlsx.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Axlsx でテスト支援" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0039/0039-TestingWithAxlsx.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0039/0039-TestingWithAxlsx.html" data-text="Axlsx でテスト支援">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#axlsx-って" id="markdown-toc-axlsx-って">Axlsx って？</a></li>
+  <li><a href="#axlsx-の使い方" id="markdown-toc-axlsx-の使い方">Axlsx の使い方</a></li>
+  <li><a href="#テスト支援ツールとしての-axlsx" id="markdown-toc-テスト支援ツールとしての-axlsx">テスト支援ツールとしての Axlsx</a>    <ul>
+      <li><a href="#rspec-と一緒に使う" id="markdown-toc-rspec-と一緒に使う">RSpec と一緒に使う</a>        <ul>
+          <li><a href="#rspec-を使ったウェブアプリケーションの受け入れテストで使う" id="markdown-toc-rspec-を使ったウェブアプリケーションの受け入れテストで使う">RSpec を使ったウェブアプリケーションの受け入れテストで使う</a></li>
+        </ul>
+      </li>
+      <li><a href="#cucumber--と一緒に使う" id="markdown-toc-cucumber--と一緒に使う">Cucumber  と一緒に使う</a></li>
+    </ul>
+  </li>
+  <li><a href="#最後に" id="markdown-toc-最後に">最後に</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a>    <ul>
+      <li><a href="#佐藤竜之介tricknotes" id="markdown-toc-佐藤竜之介tricknotes">佐藤竜之介(<a href="https://github.com/tricknotes">@tricknotes</a>)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>書いた人: 佐藤竜之介 (<a href="https://github.com/tricknotes">@tricknotes</a>)</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>「テスト結果の報告書を Excel で作成して提出しなくてはいけない」</p>
+
+<p>そんな状況の中、手作業で Excel を作成されている方はいらっしゃいませんでしょうか？
+本稿では、RSpec や Cucumber の自動テストの結果をもとに、Axlsx を使って Excel ファイルのレポートを自動作成をする方法をご紹介したいと思います。</p>
+
+<h2 id="axlsx-って">Axlsx って？</h2>
+
+<p><a href="https://github.com/randym/axlsx">Axlsx</a> は Randy Morgan(<a href="http://twitter.com/morgan_randy">@morgan_randy</a>) 氏 によって開発されている、Office Open XML Spreadsheet の生成ツールです。
+Excel をはじめ、OpenOffice などの各オフィスアプリケーションで閲覧することのできる表計算データを作成することができます。</p>
+
+<p>現在活発に開発が進められており、日々バージョンが上がっています。
+本稿での対象とするバージョンは 1.1.8 です。</p>
+
+<h2 id="axlsx-の使い方">Axlsx の使い方</h2>
+
+<p>さっそくですが、Axlsx をどのように利用すればよいのか、実際に試してみましょう。</p>
+
+<p>まずは Axlsx をインストールしましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ gem install axlsx</code></pre></figure>
+
+<p><a href="http://gembundler.com/">Bundler</a> を利用する場合は、Gemfile に以下の行を追加してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> gem 'axlsx'</code></pre></figure>
+
+<p>これで準備は完了です。
+さっそく簡単なサンプルを書いてみましょう。</p>
+
+<ul>
+  <li>example.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'axlsx'</span>
+
+<span class="n">package</span> <span class="o">=</span> <span class="no">Axlsx</span><span class="o">::</span><span class="no">Package</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="n">worksheet</span> <span class="o">=</span> <span class="n">package</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">add_worksheet</span><span class="p">(</span><span class="ss">name: </span><span class="s1">'Example'</span><span class="p">)</span>
+<span class="n">worksheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">])</span>
+
+<span class="n">package</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="s1">'example.xlsx'</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>このファイルを実行すると、example.xlsx というファイルが生成されているかと思います。
+お手持ちのオフィスアプリケーションで開いてみてください。
+<img src="/images/0039-TestingWithAxlsx/example1.png" alt="example1.png" /></p>
+
+<p>また、Numbers をお使いの方であれば文字が表示されていないかと思います。
+これを解決するためには、文字列を sharedString.xml に保存するようにする必要があります。
+Axlsx では以下のように指定します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># ...</span>
+<span class="n">package</span><span class="p">.</span><span class="nf">use_shared_strings</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># for Numbers</span>
+<span class="n">package</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="s1">'example.xlsx'</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>なお、本稿では互換性を重視して常にこの指定を行うことにします。</p>
+
+<p>では次に、セルにスタイルをあててみましょう。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">package</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">styles</span> <span class="k">do</span> <span class="o">|</span><span class="n">style</span><span class="o">|</span>
+  <span class="n">black</span> <span class="o">=</span> <span class="n">style</span><span class="p">.</span><span class="nf">add_style</span><span class="p">(</span><span class="ss">:bg_color</span> <span class="o">=&gt;</span> <span class="s1">'000000'</span><span class="p">,</span> <span class="ss">:fg_color</span> <span class="o">=&gt;</span> <span class="s1">'FFFFFF'</span><span class="p">,</span> <span class="ss">:sz</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="p">,</span> <span class="ss">:alignment</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:horizontal</span><span class="o">=&gt;</span> <span class="ss">:center</span> <span class="p">})</span>
+  <span class="n">worksheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">],</span> <span class="ss">style: </span><span class="n">black</span><span class="p">)</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+<p><img src="/images/0039-TestingWithAxlsx/example2.png" alt="example2.png" /></p>
+
+<p>また、画像を貼り付けることもできます。
+対応している形式は、PNG, GIF, JPEG の3種類です。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">worksheet</span><span class="p">.</span><span class="nf">add_image</span><span class="p">(</span><span class="ss">image_src: </span><span class="s1">'/path/to/your/image'</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>この例では、筆者のアイコン画像を貼り付けてみました。
+<img src="/images/0039-TestingWithAxlsx/example3.png" alt="example3.png" /></p>
+
+<p>以上、ごく一部ですが Axlsx の簡単な例を試してみました。</p>
+
+<p>また、利用するオフィスアプリケーションによっては、正しく表示されない部分があります。
+これについては、<a href="https://github.com/randym/axlsx#known-interoperability-issues">Known interoperability issues.</a> に説明があります。</p>
+
+<p>筆者は Numbers’09 バージョン2.2 で検証しています。</p>
+
+<h2 id="テスト支援ツールとしての-axlsx">テスト支援ツールとしての Axlsx</h2>
+
+<p>さて、本稿のテーマは 「Axlsx でテスト支援」です。
+ということで、テスト支援のための使い方をご紹介したいと思います。</p>
+
+<p>「テスト結果の報告書を Excel で作成して提出しなくてはいけない」</p>
+
+<p>そんな状況であっても、その Excel ファイルを人間が直接作成するのはあまり好ましい方法とは言えません。できるならば、そのドキュメントはテスト結果から自動で生成したいところです。その提出すべきドキュメントを RSpec や Cucumber のテストから生成できたら気持ちいいと思いませんか？</p>
+
+<p>そこで本稿では、Axlsx を使ってテスト結果を Excel ファイルで生成するための実践的な方法をご紹介します。</p>
+
+<h3 id="rspec-と一緒に使う">RSpec と一緒に使う</h3>
+
+<p>まずは <a href="https://github.com/rspec/rspec">RSpec</a> と一緒に使う方法をご紹介します。
+対象バージョンは以下です:</p>
+
+<ul>
+  <li>RSpec (2.11.0)</li>
+</ul>
+
+<p>簡単なテストを作成して、その実行結果を Axlsx でレポート出力してみましょう。
+作成するテストは「Array について、初期化された際は中身が空であること」とします。</p>
+
+<ul>
+  <li>spec/example_spec.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<span class="n">describe</span> <span class="no">Array</span> <span class="k">do</span>
+  <span class="n">context</span> <span class="s1">'When initialized'</span> <span class="k">do</span>
+    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_empty</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>作成したテストが成功することを確認します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ rspec spec/example_spec.rb</code></pre></figure>
+
+<p>それでは、このテストの実行結果を Axlsx でレポート出力するようにしてみましょう。</p>
+
+<ul>
+  <li>spec/example_spec.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<span class="nb">require</span> <span class="s1">'axlsx'</span>
+
+<span class="n">describe</span> <span class="no">Array</span> <span class="k">do</span>
+  <span class="n">context</span> <span class="s1">'When initialized'</span> <span class="k">do</span>
+    <span class="c1"># テスト実行前にレポート作成の準備をする</span>
+    <span class="n">before</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span> <span class="k">do</span>
+      <span class="vi">@excel</span> <span class="o">=</span> <span class="no">Axlsx</span><span class="o">::</span><span class="no">Package</span><span class="p">.</span><span class="nf">new</span>
+      <span class="vi">@worksheet</span> <span class="o">=</span> <span class="vi">@excel</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">add_worksheet</span><span class="p">(</span><span class="ss">name: </span><span class="s1">'Array spec'</span><span class="p">)</span>
+      <span class="vi">@worksheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="s1">'検証項目'</span><span class="p">,</span> <span class="s1">'○/×'</span><span class="p">])</span>
+    <span class="k">end</span>
+
+    <span class="c1"># テスト実行後に成否を取得してレポートに記入する</span>
+    <span class="n">after</span><span class="p">(</span><span class="ss">:each</span><span class="p">)</span> <span class="k">do</span>
+      <span class="c1"># テストの検証項目名を取得する</span>
+      <span class="n">description</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">example</span><span class="p">.</span><span class="nf">full_description</span>
+      <span class="k">if</span> <span class="nb">self</span><span class="p">.</span><span class="nf">example</span><span class="p">.</span><span class="nf">metadata</span><span class="p">[</span><span class="ss">:description</span><span class="p">].</span><span class="nf">empty?</span>
+        <span class="n">description</span> <span class="o">+=</span> <span class="no">RSpec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">.</span><span class="nf">generated_description</span>
+      <span class="k">end</span>
+      <span class="c1"># テスト実行時に発生した例外を取得する</span>
+      <span class="n">exception</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">example</span><span class="p">.</span><span class="nf">exception</span>
+
+      <span class="vi">@worksheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="n">description</span><span class="p">,</span> <span class="n">exception</span> <span class="p">?</span> <span class="s1">'x'</span> <span class="p">:</span> <span class="s1">'o'</span><span class="p">])</span>
+    <span class="k">end</span>
+
+    <span class="c1"># テスト実行後に xlsx ファイルを保存する</span>
+    <span class="n">after</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span> <span class="k">do</span>
+      <span class="vi">@excel</span><span class="p">.</span><span class="nf">use_shared_strings</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># for Numbers</span>
+      <span class="vi">@excel</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="s1">'array_spec.xlsx'</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_empty</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>RSpec の after/before を利用して、すべての検証が終わった後にカレントディレクトリに array_spec.xlsx というファイル名でレポートを生成するよう</p>
+
+<p>それでは、この状態でテストを実行して、レポートが作成されることを確認してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ rspec spec/example_spec.rb</code></pre></figure>
+
+<p>これで、テストを実行するとレポートが作成されるようになりました。
+<img src="/images/0039-TestingWithAxlsx/array_spec.png" alt="array_spec.png" /></p>
+
+<p>しかし、これではテスト自体とは関係の無い処理がテストファイルの中に含まれてしまうため、
+新しく検証項目を追加する際に思考を阻害してしまいます。
+しかも新しくファイルを追加した際には、その新しいファイルにもレポート生成に関する処理を記述する必要が出てきます。</p>
+
+<p>これは好ましくない状況なので、レポート出力に関する処理はヘルパーに移動させることにしましょう。</p>
+
+<ul>
+  <li>spec/spec_helper.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<span class="nb">require</span> <span class="s1">'axlsx'</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="k">def</span> <span class="nf">excel</span>
+    <span class="vc">@@excel</span> <span class="o">||=</span> <span class="no">Axlsx</span><span class="o">::</span><span class="no">Package</span><span class="p">.</span><span class="nf">new</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">worksheet</span>
+    <span class="vc">@@worksheet</span> <span class="o">||=</span> <span class="n">excel</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">add_worksheet</span><span class="p">(</span><span class="ss">name: </span><span class="s1">'Spec'</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1"># テスト実行前にレポート作成の準備をする</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">before</span><span class="p">(</span><span class="ss">:suite</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">worksheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="s1">'検証項目'</span><span class="p">,</span> <span class="s1">'○/×'</span><span class="p">])</span>
+  <span class="k">end</span>
+
+  <span class="c1"># テスト実行後に成否を取得してレポートに記入する</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:each</span><span class="p">)</span> <span class="k">do</span>
+    <span class="c1"># テストの検証項目名を取得する</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">example</span><span class="p">.</span><span class="nf">full_description</span>
+    <span class="k">if</span> <span class="nb">self</span><span class="p">.</span><span class="nf">example</span><span class="p">.</span><span class="nf">metadata</span><span class="p">[</span><span class="ss">:description</span><span class="p">].</span><span class="nf">empty?</span>
+      <span class="n">description</span> <span class="o">+=</span> <span class="no">RSpec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">.</span><span class="nf">generated_description</span>
+    <span class="k">end</span>
+    <span class="c1"># テスト実行時に発生した例外を取得する</span>
+    <span class="n">exception</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">example</span><span class="p">.</span><span class="nf">exception</span>
+
+    <span class="n">worksheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="n">description</span><span class="p">,</span> <span class="n">exception</span> <span class="p">?</span> <span class="s1">'x'</span> <span class="p">:</span> <span class="s1">'o'</span><span class="p">])</span>
+  <span class="k">end</span>
+
+  <span class="c1"># テスト実行後に xlsx ファイルを保存する</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:suite</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">excel</span><span class="p">.</span><span class="nf">use_shared_strings</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># for Numbers</span>
+    <span class="n">excel</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="s1">'array_spec.xlsx'</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>これで、テスト本体からレポート出力に関する処理を取り除くことができます。</p>
+
+<ul>
+  <li>spec/example_spec.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require_relative</span> <span class="s1">'./spec_helper'</span>
+
+<span class="n">describe</span> <span class="no">Array</span> <span class="k">do</span>
+  <span class="n">context</span> <span class="s1">'When initialized'</span> <span class="k">do</span>
+    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_empty</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>こうすることで、レポートに出力するかどうかを意識することなく新しいテストを追加することができます。</p>
+
+<h4 id="rspec-を使ったウェブアプリケーションの受け入れテストで使う">RSpec を使ったウェブアプリケーションの受け入れテストで使う</h4>
+
+<p>では次に、RSpec を使ったウェブアプリケーションの受け入れテストについてもレポートを作成してみましょう。</p>
+
+<p>受け入れテストは Capybara を利用して作成することにします。
+対象バージョンは以下です:</p>
+
+<ul>
+  <li>Capybara (1.1.2)</li>
+</ul>
+
+<p>まずは、RSpec で Capybara を利用する設定を行います。
+さきほど作成した <code class="highlighter-rouge">spec/spec_helper.rb</code> に以下の内容を追加してください。</p>
+
+<ul>
+  <li>spec/spec_helper.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<span class="nb">require</span> <span class="s1">'capybara/dsl'</span>
+<span class="nb">require</span> <span class="s1">'capybara/rspec'</span>
+
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">default_driver</span> <span class="o">=</span> <span class="ss">:selenium</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">include</span> <span class="no">Capybara</span><span class="o">::</span><span class="no">DSL</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>試しに、<a href="http://jp.rubyist.net/magazine/">るびま</a>にアクセスするテストを書いてみましょう。</p>
+
+<ul>
+  <li>spec/rubima_spec.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<span class="nb">require_relative</span> <span class="s1">'./spec_helper'</span>
+
+<span class="n">describe</span> <span class="s1">'るびま'</span> <span class="k">do</span>
+  <span class="n">context</span> <span class="s1">'トップページにアクセスした場合'</span> <span class="k">do</span>
+    <span class="n">before</span> <span class="k">do</span>
+      <span class="n">visit</span> <span class="s1">'http://jp.rubyist.net/magazine/'</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s1">'タイトルに "るびま" と表示されていること'</span> <span class="k">do</span>
+      <span class="n">page</span><span class="p">.</span><span class="nf">should</span> <span class="n">have_css</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">,</span> <span class="ss">text: </span><span class="s1">'るびま'</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>このテストを実行すると Selenium を利用してるびまにアクセスしコンテンツを検証します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ rspec spec/rubima_spec.rb</code></pre></figure>
+
+<p>レポートの出力は以下のようになります。
+<img src="/images/0039-TestingWithAxlsx/rubima_spec.png" alt="rubima_spec.png" /></p>
+
+<p>せっかくなので、レポートに画面のスクリーンショットも貼り付けることにしましょう。</p>
+
+<p>Capybara のドライバとして Selenium を利用するように設定している場合であれば、現在表示している画面を PNG で出力する機能を使うことができます。
+以下のコードを、spec/spec_helper.rb に追加します。</p>
+
+<ul>
+  <li>spec/spec_helper.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'mini_magick'</span>
+
+<span class="c1"># ...</span>
+
+<span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+
+  <span class="c1"># ...</span>
+
+  <span class="k">def</span> <span class="nf">serial_number</span>
+    <span class="vc">@@serial_number</span> <span class="o">||=</span> <span class="mi">0</span>
+    <span class="vc">@@serial_number</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">end</span>
+
+  <span class="c1"># テスト実行後にスクリーンショットを取得して xlsx ファイルに貼り付ける</span>
+  <span class="n">config</span><span class="p">.</span><span class="nf">after</span><span class="p">(</span><span class="ss">:each</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">spec_number</span> <span class="o">=</span> <span class="n">serial_number</span>
+
+    <span class="n">image_src</span> <span class="o">=</span> <span class="s1">'./screenshot_%i.png'</span> <span class="o">%</span> <span class="n">spec_number</span>
+    <span class="c1"># スクリーンショットを取得する(driver 非互換)</span>
+    <span class="n">page</span><span class="p">.</span><span class="nf">driver</span><span class="p">.</span><span class="nf">browser</span><span class="p">.</span><span class="nf">save_screenshot</span><span class="p">(</span><span class="n">image_src</span><span class="p">)</span>
+
+    <span class="c1"># 画像のサイズを取得し設定する</span>
+    <span class="n">image_data</span> <span class="o">=</span> <span class="no">MiniMagick</span><span class="o">::</span><span class="no">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">image_src</span><span class="p">)</span>
+    <span class="n">excel</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">add_worksheet</span><span class="p">(</span><span class="ss">name: </span><span class="s1">'Screenshot %s'</span> <span class="o">%</span> <span class="n">spec_number</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">sheet</span><span class="o">|</span>
+      <span class="n">sheet</span><span class="p">.</span><span class="nf">add_image</span><span class="p">(</span><span class="ss">image_src: </span><span class="n">image_src</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">image</span><span class="o">|</span>
+        <span class="n">image</span><span class="p">.</span><span class="nf">width</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="ss">:width</span><span class="p">]</span>
+        <span class="n">image</span><span class="p">.</span><span class="nf">height</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="ss">:height</span><span class="p">]</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>スクリーンショットを取得する機能は Capybara のドライバ依存なので、別のドライバを利用する際にはそのドライバで用意されているスクリーンショット出力方法を使用してください。
+(なお、Capybara 2.0.0 ではスクリーンショット取得用のインターフェースが用意される見込みです: <a href="https://github.com/jnicklas/capybara/tree/2.0.0.beta2#debugging">https://github.com/jnicklas/capybara/tree/2.0.0.beta2#debugging</a> )</p>
+
+<p>また Axlsx で画像ファイルを追加する場合、ユーザが画像のサイズを設定する必要があります。
+今回は、画像サイズを取得するために MiniMagick を利用しています。
+本稿で対象としているバージョンは以下です:</p>
+
+<ul>
+  <li>MiniMagick (3.4)</li>
+</ul>
+
+<p>これで、スクリーンショット付きのレポートを出力できるようになりました。
+<img src="/images/0039-TestingWithAxlsx/rubima_spec2.png" alt="rubima_spec2.png" /></p>
+
+<p>また、CI 環境でテストを実行し、その実行結果を出力することもできます。
+その場合には、ヘッドレスで実行できる Capybara のドライバを選択しましょう。
+例えば、<a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a> や <a href="https://github.com/jonleighton/poltergeist">poltergeist</a>
+が利用可能です。
+これらのドライバを利用する場合、スクリーンショットを取得している箇所は以下のメソッドを利用するようにしてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> page.driver.render(image_src)</code></pre></figure>
+
+<h3 id="cucumber--と一緒に使う">Cucumber  と一緒に使う</h3>
+
+<p>Cucumber でも、RSpec の場合と同じようにレポートを作成することができます。
+対象バージョンは以下です:</p>
+
+<ul>
+  <li>Cucmber (1.2.1)</li>
+  <li>RSpec (2.11.0)</li>
+  <li>Capybara (1.1.2)</li>
+  <li>MiniMagick (3.4)</li>
+</ul>
+
+<p>まずは、Cucumber を実行するための初期設定をします。</p>
+
+<ul>
+  <li>features/support/env.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<span class="nb">require</span> <span class="s1">'capybara/cucumber'</span>
+<span class="nb">require</span> <span class="s1">'rspec/expectations'</span>
+
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">default_driver</span> <span class="o">=</span> <span class="ss">:selenium</span>
+
+<span class="no">World</span><span class="p">(</span><span class="no">RSpec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>簡単に Cucumber を実行できるよう、Rake タスクを設定しておくこともできます。
+Rake タスクの設定については <a href="https://github.com/cucumber/cucumber/wiki/Using-Rake">Using Rake - cucumber/cucumber</a> に情報が載っています。</p>
+
+<p>これで、 Cucmber でテストを書く準備が整いました。</p>
+
+<p>それでは、<a href="http://jp.rubyist.net/magazine/">るびま</a>を閲覧できることのフィーチャを書いてみましょう。</p>
+
+<ul>
+  <li>features/rubima.feature</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+
+<span class="no">Feature</span><span class="p">:</span> <span class="err">るびまを閲覧できる</span>
+  <span class="no">Scenario</span><span class="p">:</span> <span class="err">るびまのトップページを閲覧できる</span>
+    <span class="no">When</span>  <span class="n">web</span><span class="err">サイト</span> <span class="s2">"http://jp.rubyist.net/magazine/"</span> <span class="err">にアクセスする</span>
+    <span class="no">Then</span>  <span class="err">ページタイトルが</span> <span class="s2">"るびま"</span> <span class="err">であること</span>
+
+</code></pre>
+</div>
+
+<p>このフィーチャを動作させるためのステップ定義は次のようになります。</p>
+
+<ul>
+  <li>features/step_definitions/steps.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+
+<span class="no">When</span> <span class="sr">/^webサイト "(.*?)" にアクセスする$/</span> <span class="k">do</span> <span class="o">|</span><span class="n">url</span><span class="o">|</span>
+  <span class="n">visit</span> <span class="n">url</span>
+<span class="k">end</span>
+
+<span class="no">Then</span> <span class="sr">/^ページタイトルが "(.*?)" であること$/</span> <span class="k">do</span> <span class="o">|</span><span class="n">title</span><span class="o">|</span>
+  <span class="n">page</span><span class="p">.</span><span class="nf">should</span> <span class="n">have_css</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">,</span> <span class="ss">text: </span><span class="n">title</span><span class="p">)</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>作成したフィーチャが正しく動作することを確認します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ cucumber</code></pre></figure>
+
+<p>では、ここからレポート出力機能を組み込んでいきましょう。フィーチャを実行後にカレントディレクトリに rubima_features.xlsx というファイル名でレポートを生成するようにします。</p>
+
+<ul>
+  <li>features/support/env.rb</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<span class="nb">require</span> <span class="s1">'capybara/cucumber'</span>
+<span class="nb">require</span> <span class="s1">'rspec/expectations'</span>
+
+<span class="nb">require</span> <span class="s1">'axlsx'</span>
+<span class="nb">require</span> <span class="s1">'mini_magick'</span>
+
+<span class="no">Capybara</span><span class="p">.</span><span class="nf">default_driver</span> <span class="o">=</span> <span class="ss">:selenium</span>
+
+<span class="no">World</span><span class="p">(</span><span class="no">RSpec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">excel</span>
+  <span class="vc">@@excel</span> <span class="o">||=</span> <span class="no">Axlsx</span><span class="o">::</span><span class="no">Package</span><span class="p">.</span><span class="nf">new</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">worksheet</span>
+  <span class="vc">@@worksheet</span> <span class="o">||=</span> <span class="n">excel</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">add_worksheet</span><span class="p">(</span><span class="ss">name: </span><span class="s1">'Features'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">sheet</span><span class="o">|</span>
+    <span class="n">sheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="s1">'検証項目'</span><span class="p">,</span> <span class="s1">'○/×'</span><span class="p">])</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">serial_number</span>
+  <span class="vc">@@serial_number</span> <span class="o">||=</span> <span class="mi">0</span>
+  <span class="vc">@@serial_number</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">end</span>
+
+<span class="c1"># スクリーンショットを貼り付ける</span>
+<span class="no">After</span> <span class="k">do</span> <span class="o">|</span><span class="n">scenario</span><span class="o">|</span>
+  <span class="n">spec_number</span> <span class="o">=</span> <span class="n">serial_number</span>
+
+  <span class="n">image_src</span> <span class="o">=</span> <span class="s1">'screenshot_%i.png'</span> <span class="o">%</span> <span class="n">spec_number</span>
+  <span class="c1"># スクリーンショットを取得する(driver 非互換)</span>
+  <span class="n">page</span><span class="p">.</span><span class="nf">driver</span><span class="p">.</span><span class="nf">browser</span><span class="p">.</span><span class="nf">save_screenshot</span><span class="p">(</span><span class="n">image_src</span><span class="p">)</span>
+
+  <span class="c1"># 画像のサイズを取得し設定する</span>
+  <span class="n">image_data</span> <span class="o">=</span> <span class="no">MiniMagick</span><span class="o">::</span><span class="no">Image</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">image_src</span><span class="p">)</span>
+  <span class="n">excel</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">add_worksheet</span><span class="p">(</span><span class="ss">name: </span><span class="s1">'Screenshot %s'</span> <span class="o">%</span> <span class="n">spec_number</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">sheet</span><span class="o">|</span>
+    <span class="n">sheet</span><span class="p">.</span><span class="nf">add_image</span><span class="p">(</span><span class="ss">image_src: </span><span class="n">image_src</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">image</span><span class="o">|</span>
+      <span class="n">image</span><span class="p">.</span><span class="nf">width</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="ss">:width</span><span class="p">]</span>
+      <span class="n">image</span><span class="p">.</span><span class="nf">height</span> <span class="o">=</span> <span class="n">image_data</span><span class="p">[</span><span class="ss">:height</span><span class="p">]</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># テスト実行後に成否を取得してレポートに記入する</span>
+<span class="no">After</span> <span class="k">do</span> <span class="o">|</span><span class="n">scenario</span><span class="o">|</span>
+  <span class="c1"># テストの検証項目名を取得する</span>
+  <span class="n">description</span> <span class="o">=</span> <span class="n">scenario</span><span class="p">.</span><span class="nf">title</span>
+  <span class="c1"># テストの成否を取得する</span>
+  <span class="n">failed</span> <span class="o">=</span> <span class="n">scenario</span><span class="p">.</span><span class="nf">failed?</span>
+
+  <span class="n">worksheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="n">description</span><span class="p">,</span> <span class="n">failed</span> <span class="p">?</span> <span class="s1">'×'</span> <span class="p">:</span> <span class="s1">'○'</span><span class="p">])</span>
+<span class="k">end</span>
+
+<span class="c1"># テスト実行後に xlsx ファイルを保存する</span>
+<span class="nb">at_exit</span> <span class="k">do</span>
+  <span class="n">excel</span><span class="p">.</span><span class="nf">use_shared_strings</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># for Numbers</span>
+  <span class="n">excel</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="s1">'rubima_features.xlsx'</span><span class="p">)</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>レポート出力の処理は RSpec の項で書いたコードとほとんど同じです。
+ただ、テスト実行時のフックの書き方が Cucumber と RSpec で異なるので、その部分を Cucmber 用に書き直しています。</p>
+
+<p>それでは、テストを実行して、レポートが作成されることを確認してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ cucumber</code></pre></figure>
+
+<p>レポートは以下のように出力されます。
+<img src="/images/0039-TestingWithAxlsx/rubima_feature1.png" alt="rubima_feature1.png" /></p>
+
+<p>スクリーンショットは以下のように貼付けられます。
+<img src="/images/0039-TestingWithAxlsx/rubima_feature2.png" alt="rubima_feature2.png" /></p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>以上で、本稿は終了となります。
+いかがでしたでしょうか。</p>
+
+<p>今回は passed/failure の結果しか表示していませんが、実際に使う場合は pending の結果も表示する必要があるでしょう。
+他にも、テスト達成率をグラフで表示したり、テスト失敗時にスタックトレースを表示するなどしてもよいかもしれません。
+また、レポートの表示形式もシンプルなものしか試しませんでしたが、レイアウトを工夫したりワークシートの組み方を変えたり、まだまだ改善の余地はあるかと思います。</p>
+
+<p>本稿では、簡単な使い方しかご紹介しませんでしたが、Axlsx にはまだまだ魅力的な機能があります。
+ぜひ、 Axlsx に同梱されている <a href="https://github.com/randym/axlsx/tree/master/examples">example</a> を見てみてください。</p>
+
+<p>さらなるレポートの改善は、読者のみなさまにお任せしたいと思います。
+まずは、みなさまのテスト支援の参考としていただければ幸いです。</p>
+
+<p>それでは良いテスト生活を！</p>
+
+<h2 id="著者について">著者について</h2>
+
+<h3 id="佐藤竜之介tricknotes">佐藤竜之介(<a href="https://github.com/tricknotes">@tricknotes</a>)</h3>
+
+<p><a href="http://ruby-sapporo.org/">Ruby札幌</a>所属、<a href="http://sapporojs.org/">Sapporo.js</a>主催。
+札幌在住の Ruby と JavaScript が好きなプログラマ。
+<a href="https://github.com/">GitHub</a> をもっと楽しくつかうためのアプリケーションである <a href="http://nothub.org">NotHub</a> を運営している。</p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

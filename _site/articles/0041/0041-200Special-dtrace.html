@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby 2.0.0 の DTrace の紹介</title>
+  <meta name="description" content="書いた人：Aaron Patterson (@tenderlove) 、翻訳：遠藤侑介 (@mametter)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0041/0041-200Special-dtrace.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby 2.0.0 の DTrace の紹介</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0041/0041-200Special-dtrace.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby 2.0.0 の DTrace の紹介" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0041/0041-200Special-dtrace.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0041/0041-200Special-dtrace.html" data-text="Ruby 2.0.0 の DTrace の紹介">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：Aaron Patterson (<a href="https://twitter.com/tenderlove">@tenderlove</a>) 、翻訳：遠藤侑介 (<a href="https://twitter.com/mametter">@mametter</a>)</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Ruby 2.0 は DTrace probe の機能を組み込みで提供します。
+あなたの環境が DTrace をサポートしていれば、
+probe を使って Ruby のプロセスの挙動を見ることができます。
+本稿では、Ruby 2.0 での DTrace probe の基本的な使い方をご紹介します。</p>
+
+<p>本稿の例は OS X で行ったものなので、環境によっては異なるかも知れません。</p>
+
+<h2 id="dtrace-とは">DTrace とは</h2>
+
+<p>DTrace は Sun Microsystems が開発したトレースフレームワークです。
+これにより、
+アプリケーションのトラブルシューティングをリアルタイムで行ったり、
+本番環境で動作しているプロセスのデバッグをしたりできます。</p>
+
+<h2 id="d-言語">D 言語</h2>
+
+<p>DTrace では、実行中のプロセスに問い合わせをするために D 言語を使います。
+D プログラムは以下のような文の列です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">probe /test/ { action }
+probe /test/ { action }</code></pre></figure>
+
+<p>probe が発火したら test が走り、test をパスしたら action が実行されます。
+テストは省略可能で、probe が発火したら常に action が実行されるようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">probe { action }</code></pre></figure>
+
+<p><strong>probe</strong> のフォーマットは以下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">provider:module:function:name</code></pre></figure>
+
+<ul>
+  <li><strong>provider</strong> はプロバイダ（イベントを起こしたもの）の名前です。今回の場合は <strong>ruby</strong> です。</li>
+  <li><strong>module</strong> はソフトウェア中の位置です。（これは使いません）</li>
+  <li><strong>function</strong> はソフトウェアの関数です。（これも使いません）</li>
+  <li><strong>name</strong> は probe の名前です。</li>
+</ul>
+
+<p>今回は、”ruby” がプロバイダで、
+probe の名前は<a href="https://bugs.ruby-lang.org/projects/ruby/wiki/DTraceProbes">この wiki に掲載されている名前のいずれか</a>です。</p>
+
+<p>例えば、すべてのメソッドの実行開始に probe を設定したいなら、
+以下のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby:::method-entry { action }</code></pre></figure>
+
+<p>action の節で以下のようにすれば、
+メソッドの実行が始まるたびに “hello world” を表示できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby:::method-entry { printf("hello world\n"); }</code></pre></figure>
+
+<p>D プログラムは <strong>dtrace</strong> コマンドで以下のように実行します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo dtrace -q -n'ruby$target:::method-entry { printf("hello world\n"); }' -c"ruby -e'puts :hi'"</code></pre></figure>
+
+<p>DTrace はカーネルで動作するため、権限の昇格が必要で、
+そのために <strong>sudo</strong> を使わないといけません。
+また、<strong>$target</strong> には、
+<strong>-c</strong> オプションで指示されたコマンドのプロセス ID が入ります。
+<strong>$target</strong> を使わないと、DTrace はその環境で現在実行中の_すべての_ Rubyプロセスに probe を設定します。</p>
+
+<p>では、例をいくつか試してみましょう。</p>
+
+<h2 id="ruby-に-probe-を設定する">Ruby に probe を設定する</h2>
+
+<p>以下のプログラムを <strong>t.rb</strong> というファイルとして保存します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Foo
+  def hello
+    puts :hello
+  end
+end
+
+5.times do
+  foo = Foo.new
+  foo.hello
+  sleep 1
+end</code></pre></figure>
+
+<p><strong>ruby:::method-entry</strong> という probe には、
+呼ばれたときにクラス名とメソッド名が渡されます。
+以下のコードが書かれた <strong>x.d</strong> というファイルを作ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby$target:::method-entry
+{
+  printf("%s#%s\n", copyinstr(arg0), copyinstr(arg1));
+}</code></pre></figure>
+
+<p>そして以下のコマンドを実行します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo dtrace -q -s x.d -c"ruby t.rb"</code></pre></figure>
+
+<p>出力がたくさん表示されるはずですが、そのうち以下のような出力が始まります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">hello
+Foo#hello
+hello
+Foo#hello
+hello
+Foo#hello
+hello
+Foo#hello</code></pre></figure>
+
+<p>今回の D プログラムでは、
+<strong>arg0</strong> にはクラス名、<strong>arg1</strong> にはメソッド名が入っています。
+Ruby の起動時にはたくさんのメソッドが実行されるので、
+ファイル t.rb の結果に絞りましょう。</p>
+
+<p><strong>arg2</strong> がファイル名なので、
+以下のように D プログラムを変えてテストを足せばよいです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby$target:::method-entry
+/copyinstr(arg2) == "t.rb"/
+{
+  printf("%s#%s\n", copyinstr(arg0), copyinstr(arg1));
+}</code></pre></figure>
+
+<p>すると、メソッドが <strong>t.rb</strong> に含まれる時だけ probe が発火するようになります。
+プログラムを再実行すると、以下のような出力だけが得られるはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">hello
+Foo#hello
+hello
+Foo#hello
+hello
+Foo#hello
+hello
+Foo#hello</code></pre></figure>
+
+<h2 id="プロセスをトレースする">プロセスをトレースする</h2>
+
+<p>DTrace を用いると、現在実行中のプロセスにアタッチできます。
+<strong>t.rb</strong> を変えて以下のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Foo
+  def hello
+    puts :hello
+  end
+end
+
+loop do
+  foo = Foo.new
+  foo.hello
+  sleep 1
+end</code></pre></figure>
+
+<p>ある端末で以下のプログラムを実行します。
+それから別の端末でそのプロセス ID を探し、DTrace を以下のように実行します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sudo dtrace -q -s x.d -p $PID</code></pre></figure>
+
+<p>ただし $PID は Ruby プログラムのプロセス ID です。
+DTrace から以下のような出力が得られるはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Foo#hello
+Foo#hello
+Foo#hello
+Foo#hello
+Foo#hello</code></pre></figure>
+
+<p>DTrace を使うと、
+実行中のプロセスがどのように振る舞っているかを見ることができるのです。</p>
+
+<h2 id="もうちょっと技">もうちょっと技</h2>
+
+<p>DTrace には、統計情報を集める強力な機能があります。
+プログラムの中でメソッドが呼ばれた回数を数えるプログラムを書いてみましょう。</p>
+
+<p>Ruby プログラムはこちら。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Foo
+  def hello
+  end
+  def world
+  end
+end
+
+foo = Foo.new
+100.times   { foo.hello }
+10000.times { foo.world }</code></pre></figure>
+
+<p>D プログラムはこちら。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby$target:::method-entry
+/copyinstr(arg2) == "t.rb"/
+{
+  @[copyinstr(arg0), copyinstr(arg1)] = count();
+}</code></pre></figure>
+
+<p>D プログラム中の特殊変数 <strong>@</strong> は、Ruby のハッシュのようなものです。
+このハッシュのキーはターゲットのクラスとメソッドで、
+値はメソッドが呼ばれた回数になります。</p>
+
+<p>このプログラムを実行すると、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo dtrace -q -s x.d -c"ruby t.rb"</code></pre></figure>
+
+<p>以下のような出力が得られます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  Foo          hello          100
+  Foo          world        10000</code></pre></figure>
+
+<p><strong>Foo#hello</strong> が 100 回、<strong>Foo#world</strong> が 10000 回実行されたことが
+一目でわかります。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>DTrace と Ruby 2.0 を始めるための一助となれば幸いです。
+以上の例を動かすには、Ruby 2.0.0 を使わなければならないこと、
+DTrace をサポートしているシステムでないといけないことを忘れないでください。</p>
+
+<p>DTrace で楽しい hacking を！</p>
+
+<h2 id="著者紹介">著者紹介</h2>
+
+<p>Aaron Patterson パターソン・アーロン (1980年 (昭和 55 年) 12月16日生) は、
+ただ唯一人の ruby-core チームと rails-core チームの両方に在籍するプログラマーである。Ruby の使用歴は 8 年間、Rails 開発者として業務での使用歴は 6 年間になる。現在、アメリカ合衆国シアトル市ワシントン州にて AT&amp;T のシニアーソフトウェアアーキテクトを勤める。AT&amp;T での主な業務としては、AT&amp;T が使用する開発者用ツールの改良に長期間に渡り従事する。プログラミングをしない日には、趣味の料理や茸狩りなどを楽しむ。</p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

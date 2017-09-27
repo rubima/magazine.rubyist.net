@@ -1,0 +1,78 @@
+<html>
+<head>
+  <!--link rel="stylesheet" href="../docstyle.css" type="text/css" /-->
+  <style type="text/css">
+  <!--
+  body { color: #333333; }
+  pre strong { font-weight: bold; color: #773333; }
+  -->
+  </style>
+</head>
+<body>
+<pre class="terminal">
+##
+## 関数に変換して実行する
+##
+
+class MyEruby9
+  def self.desc; &quot;define method&quot;; end
+
+  ## 実行用のメソッドを定義する
+  <strong>def define_method(body, args=[])</strong>
+    <strong>eval &quot;def self.evaluate(#{args.join(',')}); #{body}; end&quot;</strong>
+  <strong>end</strong>
+
+  ## ファイルを読み込んでRubyプログラムに変換する
+  def convert_file(filename, cache_filename=nil)
+    cache_filename ||= filename + '.cache'
+    if File.file?(cache_filename) &amp;&amp; \
+       File.mtime(filename) &lt;= File.mtime(cache_filename)
+      prog = File.read(cache_filename)
+    else
+      prog = convert(File.read(filename))
+      File.open(cache_filename, 'w') do |f|
+        f.flock(File::LOCK_EX)
+        f.write(prog)
+      end
+    end
+    return prog
+  end
+
+  ## Rubyプログラムに変換する
+  def convert(input)
+    s = '_buf = &quot;&quot;; '
+    pos = 0
+    str = ''
+    input.scan(/&lt;%(=)?(.*?)%&gt;/m) do
+      equal, code = $1, $2
+      match = Regexp.last_match
+      len   = match.begin(0) - pos
+      text  = input[pos, len]
+      pos   = match.end(0)
+      _escape_text(str, text)                   # テキスト
+      if equal
+        str &lt;&lt; &quot;\#{&quot; &lt;&lt; code &lt;&lt; &quot;}&quot;             # 埋め込み式
+      else
+        s &lt;&lt; &quot;_buf &lt;&lt; %Q`#{str}`; &quot; unless str.empty?
+        str = ''
+        s &lt;&lt; &quot;#{code}; &quot;                        # 埋め込み文
+      end
+    end
+    text = $' || input                          # 残りのテキスト
+    _escape_text(str, text)
+    s &lt;&lt; &quot;_buf &lt;&lt; %Q`#{str}`; &quot; unless str.empty?
+    s &lt;&lt; &quot;_buf\n&quot;
+    return s
+  end
+
+  private
+
+  def _escape_text(str, text)
+    text.gsub!(/[`\\]/, '\\\\\&amp;')
+    str &lt;&lt; text
+  end
+
+end
+</pre>
+</body>
+</html>

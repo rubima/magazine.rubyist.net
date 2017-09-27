@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby Library Report 【第 1 回】 IoC コンテナ</title>
+  <meta name="description" content="著者・編集者：Rubyist Magazine RLR 担当 (立石 孝彰)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0002/0002-RLR.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby Library Report 【第 1 回】 IoC コンテナ</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0002/0002-RLR.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby Library Report 【第 1 回】 IoC コンテナ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0002/0002-RLR.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0002/0002-RLR.html" data-text="Ruby Library Report 【第 1 回】 IoC コンテナ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者・編集者：Rubyist Magazine RLR 担当 (立石 孝彰)</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="ruby-library-report-について">Ruby Library Report について</h3>
+
+<p>Ruby Library Report (RLR) では、以下のサイトに登録されているライブラリや
+ツールなど、開発において役立ちそうなものについて順次紹介していきます。</p>
+
+<ul>
+  <li><a href="http://raa.ruby-lang.org/">RAA</a></li>
+  <li><a href="http://rubyforge.org/">RubyForge</a></li>
+  <li><a href="http://sourceforge.net/">SourceForge.net</a></li>
+  <li><a href="http://sourceforge.jp/">SourceForge.jp</a></li>
+</ul>
+
+<p>上記サイトなどで様々なライブラリを見つけることができますが、あまり聞かない
+ものなども多くあります。しかし、それぞれのライブラリを少しでも知っていれば、
+開発において必要で適切なライブラリを探すという苦労や、自作するという苦労を
+省けます。
+また、実装方法や思想などの違いなどから、目的は同じでも複数のライブラリが
+存在する場合があります。このような場合、どれを使っても同じというわけでは
+なく、また、有名なものを使えば良いというわけではないと考えています。
+自分が目標とする成果物に適したライブラリを選択し、再利用することが重要です。
+RLR は、そのような場合に補助的な参考資料として、少しでも役に立つことを考
+えて始めました。全く知らないよりは、少しでも知っている方が、開発方針に幅
+を持たせることができると思います。</p>
+
+<p>ライブラリの目的は、簡単には、方法やアイデアを実現し、再利用可能とするこ
+とです。再利用するためには、その前提条件や技術的背景を知る必要があります。
+そこで、前提知識が必要と判断したものについては、必要な範囲で説明を行うつ
+もりです。しかし、本レポートは，個々の技術の説明が主テーマではないため，説
+明が不十分であることが多くなると思います。
+そのような場合には，ruby-list メーリングリストで質問をするか、以下の Web サイ
+トにアクセスすることで情報を得ることができる場合があります。</p>
+
+<ul>
+  <li><a href="http://www.rubygarden.org/">RubyGarden</a></li>
+  <li><a href="http://pub.cozmixng.org/~the-rwiki/">The RWiki</a></li>
+</ul>
+
+<p>これらのサイトは、Ruby 関連の情報を提供するサイトとして良く知られています。</p>
+
+<p>また、紹介文を読むだけでは著者の感覚も伝わらないと思いますし、著者とは異な
+る感想も持つはずです。そのため、簡単なチュートリアルなどを通して紹介を行う
+ことがあります。
+是非、読者の皆様自身でも利用し、その経験を Rubyist Magazine に寄稿して頂
+ければ著者としてこれ以上の喜びはありません。また、次には読者の皆様自身が、
+RLR の執筆者となって頂ければと考えています。</p>
+
+<p>さて、RLR 第 1 回では、IoC コンテナ [1,3] である Copland、Rico、tudura 
+<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>を紹介します。
+今回のレポートでは、初めに IoC コンテナについての簡単な説明を記載します。
+IoC をご存知のユーザは、読み飛ばしても支障はないと思います。
+その次に、Copland、Rico、tudura を続けて紹介します。</p>
+
+<h3 id="ioc-と軽量コンテナについて">IoC と軽量コンテナについて</h3>
+
+<p>IoC とは Inverse of Control (制御の逆転) の略記です。各コンポーネントや
+コンテナ<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+との依存性をコードから排除し、コンテナによって依存性の解決を行うというパタ
+ーンです。
+ここで、依存性とはどのようにコンポーネントを獲得するかということに関わって
+きます。つまり、クラスやオブジェクトという用語を用いるのであれば、オブジェ
+クトの生成方法を、コンポーネントを利用するコードから分離したいということが 
+IoC の目的です。
+使用範囲を絞れば、プラグインを一般化した機構を IoC だと想像して頂ければ良
+いと思います。また、コンテナがオブジェクトを生成する方法として、シリアライ
+ゼーションの機能などを用いても良いでしょう。</p>
+
+<p>実際に、コンポーネント開発者から見ると、必要なコンポーネントはコンテナによ
+って提供されているものとして開発を行います。例えば、Ruby の場合、コンテナ
+がそれぞれのインスタンス変数にオブジェクトを代入するということを想像してくだ
+さい。以下の例では、インスタンス変数 @attr を持つ Bar クラスを実装してお
+り、obj は、コンテナが与えるオブジェクトです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class Bar
+   def initialize(obj)
+     @attr = obj
+   end
+   ...</code></pre></figure>
+
+<p>ここで着目したいことは、@attr に代入されるべきオブジェクトは、Bar クラス
+の外側、つまり、コンテナが決定するという点です。
+このように、Foo クラスから Foo オブジェクトを生成し、そのオブジェクトを 
+@attr に代入する、つまり、initialize の引数に渡すということが、IoC コンテナ
+の仕事です。
+そして、そのような組み立て方を指示する設定が、それぞれのコンポーネントの実装
+とは分離して記述できることによって、各コンポーネント間の依存性が低くなります。
+コンテナを用いない場合、次のようなコードを記述することでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class Bar
+   def initialize()
+     @attr = Foo.new(...)
+   end
+   ...</code></pre></figure>
+
+<p>このようなコードを書くと、Bar クラスでは、Foo クラスのインスタンスの獲得方法
+を明示的に記述しています。このため、Bar クラスを利用するためには、Foo クラス
+も同時に利用することになります。
+もちろん、Ruby の動的な機能や、他のパターンを利用して、依存しないようなコード
+を書くことはできますが、そのようなコードを何度も書く必要があり、アプリケーショ
+ン全体で一貫性を保つためには、多少の手間が必要です。
+その手間を請け負うものが IoC コンテナです。</p>
+
+<p>Martin Fowler の著作 [1] によれば、IoC については三つのタイプがあります。
+それは、Constructor Injection、Setter Injection、Inteface Injection です。
+Constructor Injection では、コンストラクタによって各コンポーネントに対して
+別のコンポーネントを関係付けます。また、Setter Injection では、Setter を
+用いることで別のコンポーネントを関係付けます。
+Interface Injection も Setter Injection と同様に特別なメソッドを経由して型
+を頼りに属性にコンポーネントを関係付けます。
+先の Bar クラスの例は、Constructor Injection におけるコンポーネントの例です。
+一方で、Rod Johnson の書籍 [3] によれば IoC は Dependency Lookup と 
+Dependency Injection に分けるようです。
+そして、Dependency Injection のタイプ分けとして、Constructor Injection と Setter Injection を挙げています。
+本レポートで紹介する Rico は Constructor Injection を利用しており、Copland 
+と Tudura は、Setter Injection を利用しています。</p>
+
+<p>また、軽量コンテナという用語を、IoC コンテナと同時に見かけることがあります。
+軽量コンテナとは、コンテナに期待される基本的な機能を備えつつ、コンポーネント
+がコンテナにほとんど依存せず、デプロイ<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>
+に必要以上の手間がかからない手軽なコンテナのことを指すようです。
+そして、コンポーネントの依存性を低くするために IoC を用いているように思います。
+私も IoC コンテナや、軽量コンテナの厳密な定義は定かではありませんが、IoC コン
+テナにとって重要なことは、コンポーネントの依存性を排除するための仕組みです。</p>
+
+<p>IoC コンテナを用いると、コンポーネントの依存性を排除することによって、個々の
+コンポーネントの独立性が高まり、単独でテストを行うことが少しは容易になります。
+また、アプリケーションを超えたコンポーネントの再利用を促進できます。従来のフ
+レームワークは、再利用の対象がフレームワークそのものであったのに対して、コン
+ポーネント指向の開発では、再利用の対象がコンポーネントです。
+そのため、IoC はコンポーネント指向開発の一つの解となるでしょう。
+最近では、IoC ではなく、DI と呼ぶこともあります。これは、Dependency
+Injection (依存性注入) の略記です。一般的に、IoC と DI は区別されて使われ
+ておらず、IoC という名前があまりに包括的であり、何を反転させるのかという混乱
+を招くために、DI という用語が使われるようになったようです。</p>
+
+<p>IoC コンテナは、アプリケーションを超えた再利用ができるなど、一見素晴
+らしい道具のように見えるかもしれませんが、IoC コンテナを利用すべきかどうかは、
+作成するアプリケーションによります。例えば、IoC コンテナを利用すると、コンポ
+ーネントの関係が設定時に決定されてしまうため、動的な構成変更を必要とするソフ
+トウェアには不向きです。</p>
+
+<h2 id="試用レポート--copland">試用レポート – Copland</h2>
+
+<h3 id="登録データ">登録データ</h3>
+
+<ul>
+  <li>[RAA名] <a href="http://raa.ruby-lang.org/project/copland">RAA:copland</a></li>
+  <li>[作成者] Jamis Buck</li>
+  <li>[URL] <a href="http://copland.rubyforge.org/">http://copland.rubyforge.org/</a></li>
+  <li>[バージョン] 0.7.0</li>
+  <li>[実行環境] ruby-1.8.1, ruby-1.9.x</li>
+  <li>[必要なライブラリ]</li>
+</ul>
+
+<h3 id="概要">概要</h3>
+
+<p>Copland は、Java 版 IoC コンテナである HiveMind [2] のデザインを真似て作成
+された Ruby 用の IoC コンテナです。
+Ruby らしいところは、各コンポーネントの依存性を記述する設定ファイルを、
+YAML [4,5,6] によって記述するという点です。以降では、まず作者の Jamis Buck 氏
+のコメントを紹介し、次に、サンプルを通して簡単に Copland を紹介します。</p>
+
+<h3 id="作者からの声">作者からの声</h3>
+
+<p>作者の Jamis Buck 氏にコンタクトをとったところ以下の文面を頂いたので
+紹介します。</p>
+
+<blockquote>
+  <p>It seems very few Rubyists have done much with Inversion 
+of Control, it being a domain most explored in the Java 
+world. I was first introduced to IoC about a year ago, 
+when my office moved to Java and started using HiveMind to 
+manage our application services. As an attempt to better 
+understand how HiveMind worked its magic, I began work on 
+an IoC container of my own. Ruby was the natural choice 
+for the implementation language. Copland has since grown 
+to include nearly the functionality of HiveMind itself, 
+and is currently undergoing heavy development in preparation 
+for RubyConf (where I will be presenting on it). Hopefully, 
+Copland will be a means for Ruby programmers to become more 
+familiar with IoC and its benefits.</p>
+</blockquote>
+
+<p>Jamis 氏は、どうやら HiveMind をより詳しく知ろうとするために、Copland 
+の作成を始めたようです。著者としては、今後は、Ruby ならではの IoC コン
+テナの利点なども追求してもらいたいと思っています。</p>
+
+<h3 id="サンプル">サンプル</h3>
+
+<p>IoC コンテナでは、オブジェクトの生成を支援する仕組みが備わっています。
+まずは、文字列を出力するだけの簡単なクラス RLR::Display を作成
+して、そのオブジェクトを生成してみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # copland/display.rb
+ module RLR
+   class Display
+     attr_accessor :filter
+
+     def print(*args)
+       if( @filter )
+         $stdout.print(@filter[*args])
+       else
+         $stdout.print(*args)
+       end
+     end
+   end
+ end</code></pre></figure>
+
+<p>このクラスを含むファイルを copland/display.rb とします。次に、このクラス
+の生成方法を Copland に示すために、設定ファイル copland/sample1.yml を書
+きます。
+Copland では、このファイルをパッケージと呼んでいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # copland/sample1.yml
+ ---
+ id: sample1
+ description: sample1.rb のパッケージ
+
+ service-points:
+   Display:
+     implementor: display/RLR::Display</code></pre></figure>
+
+<p>id を使って、このパッケージを識別するために、一意な名前を与えます。
+これは、Copland が複数のパッケージを扱う上で必要となります。サービス
+ポイント (service-points) は、コンポーネント<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
+を利用するコードが、その
+コンポーネントをコンテナから獲得するときに用いるキーです。
+Copland では、コンポーネントのことをサービスと呼ぶため、サービスポイ
+ントという名前を使っているようです。
+sample1.yml では、Display というコンポーネントを、display.rb の
+RLR::Display と関連付けています。
+つまり、Display というコンポーネントが RLR::Display のインスタンスで
+あることを登録しています。
+このコンポーネントを利用するコードは、次の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # copland/sample1.rb
+ require 'copland'
+ registry = Copland::Registry.build(".", :yaml_package_file =&gt; "sample1.yml")
+ display = registry.service("sample1.Display")
+ display.print("sample1.Displayのサンプル.\n")</code></pre></figure>
+
+<p>まず、Copland::Registry.build によって先程の YAML で書いた設定ファイル
+を読み込み、レジストリと呼ぶコンテナを作成しています。
+第一引数には、パッケージのあるディレクトリを指定し、第二引数にはオプシ
+ョンを与えます。オプションとして、シンボルと値から構成される Hash オブ
+ジェクトを与えます。ここでは、パッケージのファイル名として sample1.yml 
+を指定しています。引数はそれぞれ省略可能ですが、その場合、第一引数にはカ
+レントディレクトリが指定されたことと同じです。また、省略時のパッケージの
+ファイル名は package.yml です。
+次に、レジストリからコンポーネントを獲得します。ここで得るコンポーネント
+が、パッケージにより記述したサービスのことです。</p>
+
+<p>それでは次に、@filter にオブジェクトを設定します。このためにまず、次の
+ようなフィルタのためのクラスを二つ用意することにしましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # copland/filter.rb
+ module RLR
+   class Filter
+     def [](*args)
+       args.join()
+     end
+   end
+
+   class LabelFilter &lt; Filter
+     attr_accessor :label
+
+     def [](*args)
+       super("[", @label, "] ", *args)
+     end
+   end
+ end</code></pre></figure>
+
+<p>RLR::Filter には、受け取った文字列を連接して返すだけの簡単なメソッド
+があり、RLR::LabelFilter には、ラベルを文字列の頭に付けて返すメソッド
+があります。
+まずは、RLR::Filter をコンポーネントとして登録し、そのサービスを先ほど
+の RLR::Display の @filter と結びつけることにします。
+そのためのパッケージが、次の sample2.yml です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # copland/sample2.yml
+ ---
+ id: sample2
+ description: this is the package for sample2.rb
+
+ service-points:
+   Filter:
+     implementor: filter/RLR::Filter
+   Display:
+     implementor:
+       factory: copland.BuilderFactory
+       class: display/RLR::Display
+       properties:
+         filter: !!service Filter</code></pre></figure>
+
+<p>Filter コンポーネントについては、sample1.yml の Display コンポーネント
+と同様です。
+しかし、Display コンポーネントの記述量が増えたことに気づくと思います。
+まず、implementor によって直接クラスを指定するのではなく、どのファクトリ
+を利用してコンポーネントを生成するかということを factory という命令に
+よって与え、どのクラスから生成するのかということを class で与えます。
+次に、そのクラスにおけるプロパティと、どのコンポーネントを関連付けるか
+ということ、つまり、インスタンス変数にどのオブジェクトを与えるのかとい
+うことを properties によって指定します。
+上記の場合、filter というプロパティに、Filter コンポーネントを関連付け
+ています。
+これは、Ruby 上では、@filter というインスタンス変数に Filter コンポーネント
+、つまり RLR::Filter オブジェクトをセットしていることに相当します。
+sample2.yml の Display コンポーネントを利用するコードは次の sample2.rb の
+通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # copland/sample2.rb
+ require 'copland'
+ registry = Copland::Registry.build(".", :yaml_package_file =&gt; "sample2.yml")
+ display = registry.service("sample2.Display")
+ display.print("sample2.Displayのサンプル.\n")</code></pre></figure>
+
+<p>ここで、この sample2.rb を変更することなく、Display コンポーネントの 
+filter プロパティに関連するコンポーネントを変更することができます。
+そのためには、sample2.yml の filter プロパティに与えるコンポーネント
+を変更するだけです。
+例えば、Display コンポーネントの properties の記述を次の通りに書き
+換えると、LabelFilter コンポーネントが Display コンポーネントの filter
+プロパティに設定されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   properties:
+     filter: !!service LabelFilter</code></pre></figure>
+
+<p>さらに、次の sample3.yml のパッケージを用いると、LabelFilter コンポーネ
+ントの label プロパティ、つまり、RLR::LabelFilter オブジェクトの @label 
+というインスタンス変数に文字列を与えることもできます。
+このときには、!!service の代わりに !!string を使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # copland/sample3.yml
+ ---
+ id: sample3
+ description: this is the package for sample3.rb
+
+ service-points:
+   Filter:
+     implementor:
+       factory: copland.BuilderFactory
+       class: filter/RLR::LabelFilter
+       properties:
+         label: !!string label
+   Display:
+     implementor:
+       factory: copland.BuilderFactory
+       class: display/RLR::Display
+       properties:
+         filter: !!service Filter</code></pre></figure>
+
+<p>このようにして、複数のコンポーネント (オブジェクト) の組み立てを行う
+ことができますが、コンテナの機能として、メソッドをフックすることがで
+きるようになっています。これを Interceptor と呼びます。例えば、
+sample3.yml において、Display コンポーネントに次の interceptors 命令
+を加えてみます。conpland.LoggingInterceptor は、include で指示され
+た正規表現に一致するメソッドをフックして、そのログを copland.log に
+出力するものです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Display:
+   interceptors:
+     - service: copland.LoggingInterceptor
+       include:
+         - print.*
+   ...</code></pre></figure>
+
+<p>以上で、Copland の紹介は終わりですが、copland を用いてイベントリスナー
+を登録することもできます。
+今回のサンプルでは、イベントリスナーについてのサンプルは掲載しませんでし
+たが、Copland のマニュアルやチュートリアルに記載されていますので体験して
+みてください。</p>
+
+<h3 id="感想">感想</h3>
+
+<p>Copland は !!service でコンポーネントを指定する以外に、Ruby における基
+本的なオブジェクトを直接扱うことができます。例えば、sample3.yml で示した
+ように !!string を用いることができます。また、YAML を利用しているための特
+徴として、YAML で扱える Ruby のオブジェクトであれば何でも記述することがで
+きます。そのまま label: label と記述しても支障はありません。
+試しに、以下のような Struct なども与えてみてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> properties:
+   label: !ruby/Struct:Article
+     author: Takaaki Tateishi
+     title: xxxxxxxxx</code></pre></figure>
+
+<p>今回のサンプルでは、面白い結果を得ることはできませんが、直接 Ruby のオブ
+ジェクトを指定できるところが非常に手軽です。</p>
+
+<p>また本稿の執筆に際して、途中までは、copland-0.6.0 を使っていましたが、Ruby に
+は Java における Interface に対応するものがないため、メソッドの存在を保証
+できないことが多少不満でした。
+そこで、パッケージを使ってメソッド名の付け替えを行えないかという提案をした
+ところ、この提案に賛成を頂くことができました。そして、0.7.0 においてメソッ
+ド呼び出しをリダイレクトする機能とブロックする機能を Interceptor の一種と
+して追加して頂きました。
+電子メールで数回コンタクトをかとっただけですが、copland の開発は積極的
+に行われているという印象を受けました。</p>
+
+<h2 id="試用レポート--rico">試用レポート – Rico</h2>
+
+<h3 id="登録データ-1">登録データ</h3>
+
+<ul>
+  <li>[RAA名] <a href="http://raa.ruby-lang.org/project/rico">RAA:rico</a></li>
+  <li>[作成者] Dan North</li>
+  <li>[URL] <a href="http://www.picocontainer.org/">http://www.picocontainer.org/</a></li>
+  <li>[バージョン] CVSより取得のため不明</li>
+  <li>[依存性] ruby-1.8 or ruby-1.9</li>
+</ul>
+
+<h3 id="概要-1">概要</h3>
+
+<p>Rico は、PicoContainer [8] と呼ばれる Constructor Injection を採用した IoC コン
+テナをベースにしています。
+初期の頃の実装であり、著者が触れた限りでは、機能的には copland よりも洗練され
+ておらず、Ruby ならではの利点となる特徴もないように思います。
+もし、Copland よりも Setter Injection が読者の好みに合うのであれば、Rico を改
+良して Copland に並ぶ IoC コンテナを開発しても良いでしょう。
+また、残念ながら、作者へのコンタクト先などが明記されていないため、コンタクトを
+とることは遠慮しました。</p>
+
+<h3 id="サンプル-1">サンプル</h3>
+
+<p>copland の場合と同様に、Display クラスと Filter クラスを定義するところから
+始めます。copland とは違い、Rico は Constructor Injection を採用している
+ため、コンストラクタによってコンテナから与えられるオブジェクトを受け取ります。
+Ruby の場合、コンストラクタに相当するものは initialize ですので、initialize 
+の引数によってオブジェクトを受け取ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # rico/display.rb
+ module RLR
+   class Display
+     def initialize(filter = nil)
+       @filter = filter
+     end
+
+     def print(*args)
+       if( @filter )
+         $stdout.print(@filter[*args])
+       else
+         $stdout.print(*args)
+       end
+     end
+   end
+ end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # rico/filter.rb
+ module RLR
+   class Filter
+     def [](*args)
+       args.join()
+     end
+   end
+
+   class LabelFilter &lt; Filter
+     def initialize(label)
+       @label = label
+     end
+
+     def [](*args)
+       super("[", @label, "] ", *args)
+     end
+   end
+ end</code></pre></figure>
+
+<p>Rico では、Copland におけるパッケージのような設定ファイルを使わず、コード
+によってコンポーネント間の関係を決定します。このレポートでは、このようなも
+のを設定コードと呼ぶことにします。以下のものが copland/sample1.yml に相当
+する設定コードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # rico/sample1.rb
+ require 'rico/container'
+ require 'display'
+ container = Rico::Container.new
+ container.register_component_implementation(:Display, RLR::Display)</code></pre></figure>
+
+<p>まず、Rico::Container.new によってコンテナを生成しています。
+次に、register_component_implementation によって :Display というコンポ
+ーネントを登録し、このコンポーネントが RLR::Display クラスから生成される
+ということを定義しています。このコンポーネントを利用するコードは次の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # rico/sample1.rb 続き
+ display = container.component_instance(:Display)
+ display.print("This message is generated by sample1.Display.\n")</code></pre></figure>
+
+<p>component_instance によって :Display として登録されたコンポーネントを獲得
+しています。</p>
+
+<p>次に、RLR::Display のインスタンス変数 @filter に Filter オブジェクトを与える
+設定コードを書くと、次の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # rico/sample2.rb
+ require 'rico/container'
+ require 'display'
+ require 'filter'
+ container = Rico::Container.new
+ container.register_component_implementation(:Filter, RLR::Filter)
+ container.register_component_implementation(:Display, RLR::Display, [:Filter])</code></pre></figure>
+
+<p>まず、:Filter というコンポーネントを登録します。
+次に、:Display の登録ですが、このとき第三引数に [:Filter] という配列を与えて
+います。ここで、:Filter というのは先ほど登録したコンポーネントですが、実体は
+RLR::Filter オブジェクトです。そのため、RLR::Filter オブジェクト一つから構成
+された配列であると見ることができます。:Display というコンポーネント、つまり RLR::Display オブジェクトを生成するときに、この配列の要素が initialize の引数
+として与えられます。
+この :Display コンポーネントを利用するコードは先ほどと同じなので割愛します。</p>
+
+<p>copland/sample3.yml と同様の設定コードを、以下の rico/sample3.rb として
+作成します。:LabelFilter コンポーネントを登録するには、上記の
+rico/sample2.rb において Filter としていたところを LabelFilter とします。
+また、LabelFilter にはラベルの初期値として文字列 “label” を与えます。
+この文字列は、String クラスのインスタンスであるため、
+register_component_instance メソッドを用いてインスタンスであることを明示して
+コンテナに登録します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # rico/sample3.rb
+ require 'rico/container'
+ require 'display'
+ require 'filter'
+ container = Rico::Container.new
+ container.register_component_instance(:label, "label")
+ container.register_component_implementation(:Filter, RLR::LabelFilter, [:label])
+ container.register_component_implementation(:Display, RLR::Display, [:Filter])
+ display = container.component_instance(:Display)</code></pre></figure>
+
+<p>最後に、Interceptor をコンテナに登録する方法を以下の rico/sample4.rb を使って
+紹介します。Interceptor を登録するには、つまり、メソッドにフックをかけるためには、Rico::Container クラスの代わりに Rico::InterceptingContainer を使い、イン
+スタンス作成時に Proc オブジェクトを与えます。
+ここでは、メソッドコールのログを出力するための簡単な Proc オブジェクトを与えて
+います。ブロック引数の args には、レシーバーとその引数が配列として格納されてい
+ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'rico/container'
+ require 'rico/chainedcontainer'
+ require 'rico/interceptingcontainer'
+ require 'display'
+ require 'filter'
+ container = Rico::InterceptingContainer.new(Rico::Interceptor, Proc.new{|*args| p args})
+ container.register_component_implementation(:Filter, RLR::Filter)
+ container.register_component_implementation(:Display, RLR::Display, [:Filter])
+ display = container.component_instance(:Display)</code></pre></figure>
+
+<p>ここで、本来はメソッドコールの前と後ろのどちらにフックをかけるかということを
+指定できるべきですが、Rico ではまだ対応できていないようです。</p>
+
+<h3 id="感想-1">感想</h3>
+
+<p>Rico は、非常にシンプルに IoC コンテナを実装しています。しかし、interceptor を
+Proc オブジェクトとして与えることができる以外は、際立って Ruby らしいところは見
+当たりません。
+また、ロードするライブラリは、コンポーネントを利用するコードとコンポーネントの
+設定コードの双方で必要となりますが、必要なライブラリをロードするコードを設定コ
+ードとし、利用コードからその設定をロードすることによって、利用コードと設定コー
+ドを区別することができると思います。</p>
+
+<h2 id="試用レポート--tudura">試用レポート – Tudura</h2>
+
+<h3 id="登録データ-2">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="http://sourceforge.jp/projects/nihohi/">tudura</a></li>
+  <li>[作成者] TAKAI Naoto</li>
+  <li>[URL] <a href="http://sourceforge.jp/projects/nihohi/">http://sourceforge.jp/projects/nihohi/</a></li>
+  <li>[バージョン] 0.2</li>
+  <li>[依存性] ruby-1.8 or ruby-1.9</li>
+</ul>
+
+<h3 id="概要-2">概要</h3>
+
+<p>tudura は、nihohi という blog ツールのために開発されている IoC コンテナです。
+Setter Injection を採用しており、コンポーネント間の関係は、XML 形式で記述しま
+す。以降では、まず作者の TAKAI Naoto 氏のコメントを紹介し、次に、サンプルを通し
+て簡単に tudura を紹介します。</p>
+
+<h3 id="作者の声">作者の声</h3>
+
+<p>tudura の作者である TAKAI Naoto 氏より以下のコメントを頂きましたので
+紹介します。</p>
+
+<blockquote>
+  <p>私が tudura をつくるきっかけは、そのときにつくっていた小さなウェブログツー
+ルのためのコンポーネントを柔軟にまとめあげるコンテナが欲しいとおもった
+からです。</p>
+
+  <p>私が tudura をつくろうとしたとき、Ruby での Dependency Injection の実装は、
+調べた限りで Rico しかありませんでした。 Rico はコンストラクタ・インジェク
+ションを採用したコンテナですので、動的型言語である Ruby ではあまり便利な
+ものではありませんでした。というのも、静的型付言語ならばコンストラクタ
+の型によって、自動的に挿入するインスタンスを決定することができますが、
+動的型言語ではそれをすることができないからです。</p>
+
+  <p>そこで、Spring Framework に似たセッター・インジェクションのコンテナを作
+成してみようとおもいたったのです。セッター・インジェクションを採用する
+と、外部設定ファイルに記述されるインスタンスと、頭の中に描かれるインス
+タンスとの対応がとりやすいため、モノ感にあふれる Ruby にはぴったりだと考
+えました。</p>
+
+  <p>とはいえ、tudura は一通りの動作ができるところまでは実装したものの、飽
+きっぽい性格が災いして、その後の開発をやめてしまいました。残念ながら、
+ソフトウェア開発に自分の時間を割くことが、あまりできないようになってし
+まいましたので、tudura のこれ以上の発展はないかとおもっています。Ripper
+などのパーサを利用して、変数名にもとづくインジェクションを行うなど、
+色々とアイデアはあるのですが……。</p>
+
+  <p>私は Dependency Injection を、単なるデザインパターンのうちのひとつとい
+うよりも、オブジェクト指向の思想を推し進める手法のひとつであると考えて
+います。ぜひ、皆さんの道具箱のなかに、Dependency Injection を加えてみて
+ください。Dependency Injection を利用することによって得られるテスタビリ
+ティやフレキシビリティは、私たちプログラマーにとって、きっと強力な武器
+になるはずです。</p>
+</blockquote>
+
+<p>残念ながら、tudura の開発は現在のところ止まっているようです。しかし、
+<a href="http://sourceforge.jp/projects/nihohi/">SourceForge.JP</a> にソース
+などが一式揃っていますので、SourceForge.JP のアカウントがあれば、すぐにで
+も他の方が開発を引き継ぐということも可能だと思います。その際には、TAKAI 氏
+のアイデアも引き継いで頂ければと思います。</p>
+
+<h3 id="サンプル-2">サンプル</h3>
+
+<p>tudura は、Setter Injection を採用しているので、Copland のサンプルで用いた
+display.rb と filter.rb を用いることにします。
+以下は、このうち display.rb に定義されている Display クラスからオブジェクトを
+獲得するための設定ファイルです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ &lt;context&gt;
+   &lt;object id="Display" class="RLR::Display" /&gt;
+ &lt;/context&gt;</code></pre></figure>
+
+<p>id 属性が、コンポーネントを識別する名前になります。この設定ファイルの場合、
+RLR::Display オブジェクトに対して Display というコンポーネント名を与えています。
+これを利用するコードは、次の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'tudura'
+ require 'tudura/xmlconfig'
+ require 'display'
+ xml = File.open("sample1.xml"){|f| f.read()}
+ container = Tudura::XMLContext.new(xml).configure
+ display = container.fetch(:Display)
+ display.print("This message is generated by sample1.Display.\n")</code></pre></figure>
+
+<p>まず、変数 xml に sample1.xml の内容をロードしています。この段階では、設定
+ファイルは、まだ Tudura によって解釈されていません。
+Tudura::XMLContext.new(xml).configure というコードによって設定ファイルが
+解釈され、コンテナを作成しています。作成したコンテナから Display コンポーネン
+トを獲得するには、fetch メソッドを使います。</p>
+
+<p>次の XMLファイルは、Filter オブジェクトを Display オブジェクトの @filter に
+関係付けるための設定ファイルです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ &lt;context&gt;
+   &lt;object id="Display" class="RLR::Display"&gt;
+     &lt;property name="filter"&gt;&lt;ref object="Filter" /&gt;&lt;/property&gt;
+   &lt;/object&gt;
+   &lt;object id="Filter" class="RLR::Filter"&gt;
+   &lt;/object&gt;
+ &lt;/context&gt;</code></pre></figure>
+
+<p>これを利用するコードは次の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # tudura/sample1.rb
+ require 'tudura'
+ require 'tudura/xmlconfig'
+ require 'display'
+ require 'filter'
+ xml = File.open("sample2.xml"){|f| f.read()}
+ container = Tudura::XMLContext.new(xml).configure
+ display = container.fetch(:Display)
+ display.print("This message is generated by sample2.Display.\n")</code></pre></figure>
+
+<p>Copland とは異なり、設定ファイル中でどのファイルに対して require を行うかとい
+うことは記述していませんので、利用するコード側で display.rb と filter.rb を
+ロードする必要があります。</p>
+
+<p>次に、LabelFilter を用いる場合の設定ファイルは次の通りです。
+LabelFilter のインスタンス変数 @label に与える文字列は、&lt;value&gt;label&lt;/value&gt;
+として与えています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ &lt;context&gt;
+   &lt;object id="Display" class="RLR::Display"&gt;
+     &lt;property name="filter"&gt;&lt;ref object="Filter" /&gt;&lt;/property&gt;
+   &lt;/object&gt;
+   &lt;object id="Filter" class="RLR::LabelFilter"&gt;
+     &lt;property name="label"&gt;&lt;value&gt;label&lt;/value&gt;&lt;/property&gt;
+   &lt;/object&gt;
+ &lt;/context&gt;</code></pre></figure>
+
+<p>これを利用するコードは以下の通りで、tudura/sample1.rb と変わりはありません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # tudura/sample2.rb
+ require 'tudura'
+ require 'tudura/xmlconfig'
+ require 'display'
+ require 'filter'
+ xml = File.open("sample3.xml"){|f| f.read()}
+ container = Tudura::XMLContext.new(xml).configure
+ display = container.fetch(:Display)
+ display.print("This message is generated by sample3.Display.\n")</code></pre></figure>
+
+<p>最後に、Interceptor を使ったサンプルを挙げます。Interceptor を実現するため
+には Tudura::InterceptorProxy というプロキシーを用います。つまり、これまでの 
+Display というコンポーネントのクラスを、Tudura::InterceptorProxy とし、 
+interceptors という属性に Logger と DisplayImpl を登録し、これらを順に
+呼び出すようにします。
+ここで、DisplayImpl が、これまでのサンプルで Display としていたものです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+ &lt;context&gt;
+   &lt;object id="Logger" class="Logger" /&gt;
+   &lt;object id="DisplayImpl" class="RLR::Display"&gt;
+     &lt;property name="filter"&gt;&lt;ref object="Filter" /&gt;&lt;/property&gt;
+   &lt;/object&gt;
+   &lt;object id="Display" class="Tudura::InterceptorProxy"&gt;
+     &lt;property name="interceptors"&gt;
+       &lt;array&gt;
+         &lt;ref object="Logger" /&gt;
+         &lt;ref object="DisplayImpl" /&gt;
+       &lt;/array&gt;
+     &lt;/property&gt;
+   &lt;/object&gt;
+   &lt;object id="Filter" class="RLR::LabelFilter"&gt;
+     &lt;property name="label"&gt;&lt;value&gt;label&lt;/value&gt;&lt;/property&gt;
+   &lt;/object&gt;
+ &lt;/context&gt;</code></pre></figure>
+
+<p>ここでは、Logger というクラスは、利用する側のコードとまとめて定義することに
+しますが、別ファイルで定義を行い、require を行っても良いでしょう。
+そのため、上記の設定ファイルを利用するコードは次の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'tudura'
+ require 'tudura/xmlconfig'
+ require 'tudura/interceptor'
+ require 'display'
+ require 'filter'
+
+ class Logger
+   include Tudura::Interceptor
+   def intercept(name, args, chain)
+     p [name, args, chain]
+     chain.proceed(name, args)
+   end
+ end
+
+ xml = File.open("sample4.xml"){|f| f.read()}
+ container = Tudura::XMLContext.new(xml).configure
+ display = container.fetch(:Display)
+ display.print("This message is generated by sample4.Display.\n")</code></pre></figure>
+
+<p>Logger では、intercept メソッドを定義しています。このメソッドは、先程のプロ
+キシーに対して呼ばれたメソッド名、その引数、次の Interceptor への参照のような
+ものを渡されます。
+tudura では、この参照を InterceptorChain と呼んでいます。
+chain.proceed(name,args) は、InterceptorChain を用いて、次の Interceptor 
+の同じメソッドを、同じ引数を用いて呼び出すコードです。このようにして、メソッド
+を順次呼び出し、利用するコードから見ると、あたかもメソッドの実装にフックがか
+かったような動作を行います。</p>
+
+<h3 id="感想-2">感想</h3>
+
+<p>tudura は、nihohi という blog ツールのために書かれた IoC コンテナです。
+<a href="http://nihohi.sourceforge.jp/">nihohi のプロジェクトホームページ</a> が、
+nihohi を用いて構築されているようです。このため、実際に動く Web アプリケー
+ションのデモがあり、現実的に使えるレベルの仕上がりになっていることと思います。</p>
+
+<p>tudura では、設定は XML ファイルで行うものの、その設定ファイル内で用いた
+クラスは、利用コード側で再び require を行わなければならないようです。
+このため、利用コード内に、設定要素が含まれてしまい、コンテナの機能として
+利用コードと設定の二つを明確に分けることが難しくなっていると思います。
+このことは、一貫性を保つ手間が増し、依存性の分離という IoC の利点を守れてい
+ないと著者は考えます。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は、IoC コンテナである Copland、Rico、tudura を紹介しました。</p>
+
+<p>必要なライブラリ (クラスを定義したファイル) のロードの仕方については、
+tudura は、利用コード側に require を明示的に記述しなければならず、利用
+するオブジェクト (コンポーネント) に応じて適切なライブラリを予めロードしてお
+く必要があります。このため、設定ファイルと利用コードの間で一貫性をとる必要が
+あります。
+Rico も同様に require を行うライブラリをコード中に記述しなければなりません
+が、設定コードと利用コードを、ユーザが区別して記述していれば、設定コードの中
+で一貫性をとることができるでしょう。
+一方、Copland では、設定ファイル中で、require すべきファイル名なども含めて
+コンポーネントを指定するので、設定ファイル内で一貫性をとることができます。</p>
+
+<p>動作の実績という観点では、
+Copland と tudura では、<a href="http://raa.ruby-lang.org/project/webrick">RAA:webrick</a> などとの連携もテストされ
+ている様子があり、Rico に比べて利用実績があると言えると思います。
+今号には、「WEBrick によるコンテンツフィルタ」という記事もありますので、
+そちらを参考にして、フィルタをコンポーネント化し、再利用可能かつ組み合わせ
+も可能なようにすると面白いでしょう。そして、編集の立場からのお願いですが、
+機会があれば、その開発内容を寄稿してください。</p>
+
+<p>Interceptor の使い勝手については、tudura と Rico が簡単です。
+tudura では、明示的に Proxy オブジェクトを作成しますが、このようなメカニ
+ズムは本来は IoC ライブラリとして隠蔽すべきだと著者は考えます。また、Rico 
+では Proc オブジェクトを用いることによって簡単に実現していますが、メソッド
+コール前にフックをかけることしかできません。
+Copland の Interceptor は、自ら定義するには多少面倒でしたのでサンプルに
+含めず用意されていたものを使いました。予め必要なものを Copland 自身で提供
+するという方針なのかもしれません。
+いずれの IoC コンテナにおいても、Interceptor と同様の機能は、AOP を支援
+する <a href="http://raa.ruby-lang.org/project/AspectR">RAA:AspectR</a> などを用いても実現できますので、すでに AspectR の経
+験がある人はこちらの方が簡単で使い勝手が良いかもしれません。</p>
+
+<p>また、それぞれの IoC コンテナ自身は、分散化やデータアクセスなどの機能を提供
+していません。
+しかし、dRuby や SOAP4R などと連携を図り、開発者自身でそれらを制御すること
+が可能です。先に書いたように、WEBrick と連携すれば、自分で Web アプリケーシ
+ョンサーバを作ることもできます。
+すでに完成したアプリケーションサーバを用いるよりも手間は多少かかると思いま
+すが、コンポーネントへの制約に束縛されることがなくなります。</p>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>さて、初回の RLR はいかがでしたか？
+このくらいのことでよければ情報を提供したいという方がいらっしゃれば是非寄稿
+をお願いします。私でよければ調査や校正のお手伝いなどをします。
+RLR に対する私個人の趣向としては、それぞれのライブラリを深く観察するのでは
+なく、広く浅くサーベイを行うことを考えています。もちろん、広く深くというの
+は大歓迎ですし、一つのマイナーなライブラリを深くという内容もご相談ください。
+寄稿などの連絡は、<a href="mailto:magazine@ruby-no-kai.org">編集部</a> へお送りください。</p>
+
+<p>また、本レポートで用いたサンプルソースコードは、
+<a href="/images/0002-RLR/0002-RLR-0001-SRC.zip">0002-RLR-0001-SRC.zip</a>
+にありますので、必要があればダウンロードして使ってください。</p>
+
+<h2 id="参考資料">参考資料</h2>
+
+<p>[1] IoC についての概要をより詳しく知りたい方は、
+<a href="http://www.martinfowler.com/articles/injection.html">『Inversion of Control Containers and the Dependency Injection pattern』 (原文)</a> <a href="http://www.kakutani.com/trans/fowler/injection.html">(和訳)</a>
+を読むと良いでしょう。</p>
+
+<p>[2] <a href="http://jakarta.apache.org/hivemind/index.html">HiveMind</a> 
+は、Coplandが参考にした実装です。</p>
+
+<p>[3] <a href="https://www.amazon.co.jp/Expert-One-One-Development-without/dp/0764558315?SubscriptionId=AKIAIXYTNSOEGXJVP5SQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0764558315">‘『expert one-on-one – J2EE Development without EJB』’</a> 
+は、EJB が解決対象とする問題を、EJB を用いずに実現する方法を考察しています。</p>
+
+<p>[4] <a href="http://yaml.org/">YAML</a> は、プログラム言語のデータ型に、シームレスに
+対応したマークアップ言語です。</p>
+
+<p>[5] <a href="http://yaml4r.sourceforge.net/">YAML4R</a> は、Ruby 版の YAML の
+実装です。ruby-1.8 では、標準添付ライブラリとなっています。</p>
+
+<p>[6] <a href="http://yaml4r.sourceforge.net/cookbook/">YAML Cookbook</a> は、
+YAML でどのようなものが記述可能か知ることができるでしょう。</p>
+
+<p>[7] <a href="http://aspectr.sourceforge.net/">AspectR</a> は、
+<a href="http://c2.com/cgi/wiki?AspectOrientedProgramming">AOP</a> 
+を簡単に実現するための Ruby のライブラリです。</p>
+
+<p>[8] <a href="http://www.picocontainer.org/">PicoContainer</a> は、
+Setter Injection を採用した Java 版 IoC コンテナです。Ruby 以外にも、いくつ
+かの言語に移植されています。</p>
+
+<p>[9] <a href="http://patterns-wg.fuka.info.waseda.ac.jp/study/8th.html">IPSJ SIGSE パターンワーキンググループ 第 8 回勉強会</a> 
+の資料では、DI と <a href="http://c2.com/cgi/wiki?DesignPatternsBook">GoF</a> の 
+<a href="http://c2.com/cgi/wiki?DesignPatterns">デザインパターン</a> との関連性を
+考察しています。</p>
+
+<p>[10] <a href="http://sourceforge.jp/projects/seasar/">Seaser</a> は、オープンソース
+の Java 版 IoC コンテナです。開発が日本を中心に行われているため、比較的
+日本語の情報が得やすいでしょう。</p>
+
+<p>[11] <a href="http://www-6.ibm.com/jp/developerworks/java/040604/j_j-hibern.html">『コンテナを使わないオブジェクト・リレーション・マッピング』</a>
+は、<a href="http://www.hibernate.org/">Hibernate</a>と IoC コンテナを含む <a href="http://www.springframework.org/">Spring フレームワーク</a> を使ってトランザクショナル・パーシ
+スタンス・レイヤーの開発方法を簡単に説明します。</p>
+
+<p>[12] <a href="http://www.andore.com/money/trans/spring_ja.html">『Springフレームワークの紹介』 (和訳)</a>
+<a href="http://www.theserverside.com/articles/article.tss?l=SpringFramework">(原文)</a>
+では、Spring フレームワークの中核技術として、IoC コンテナを説明しています。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>著者 (立石) は、ソフトウェアに関する研究開発職に従事しています。</p>
+
+<h2 id="ruby-library-report-連載一覧">Ruby Library Report 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0008/0008-RLR.html">Ruby Library Report 【第 6 回】 正規表現と構文解析</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RLR.html">Ruby Library Report 【第 5 回】 数値計算と可視化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RLR.html">Ruby Library Report 【第 4 回】 Win32Utils</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RLR-en.html">Ruby Library Report [No.4] Using Win32Utils (en)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-RLR.html">Ruby Library Report 【第 3 回】 O/R マッピング</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-RLR.html">Ruby Library Report 【第 2 回】 Java との連携</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-RLR.html">Ruby Library Report 【第 1 回】 IoC コンテナ</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>作者の意向により、tudura はすべて小文字表記です。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>コンポーネントとコンテナが良く分からない方は、コンテナを、実行環境やアプリケーションサーバ、コンポーネントを、その上で動くソフトウェア部品、つまり単独では意味を持たないが、他のコンポーネントやコンテナと組み合わさることで役割を発揮するオブジェクトを想像してください。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>コンテナにコンポーネントを導入することです。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>コンポーネントとオブジェクトという用語には、明確に区別は無いと思いますが、本レポートでは、設定ファイルや設定コードのコンテキストではコンポーネントという用語を用いて、通常のプログラミングのコンテキストではオブジェクトを用いています。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</title>
+  <meta name="description" content="書いた人：西山">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0029/0029-BundledLibraries.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0029/0029-BundledLibraries.html" class="hatena-bookmark-button" data-hatena-bookmark-title="標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0029/0029-BundledLibraries.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0029/0029-BundledLibraries.html" data-text="標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：西山</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Ruby には便利な標準添付ライブラリがたくさんありますが、なかなか知られていないのが現状です。そこで、この連載では Ruby の標準添付ライブラリを紹介していきます。</p>
+
+<p>今回は tmpdir と tempfile についてです。
+名前が似ていますが、歴史的理由により tmpdir は e なしの tmp で tempfile は e ありの temp になっています。
+tmpdir は dir が 3 文字なので tmp も 3 文字、tempfile は file が 4 文字なので temp も 4 文字と覚えると良いかもしれません。</p>
+
+<p>詳細は後述しますが、安全に一時ファイルを作成するのは素人には難しいので、一時ファイルなどを使うときは、自分で独自実装をせず既存のライブラリを使うことをおすすめします。</p>
+
+<h2 id="tmpdir-ライブラリ">tmpdir ライブラリ</h2>
+
+<p>テンポラリディレクトリ (一時ディレクトリ) を扱うためのライブラリです。</p>
+
+<p>一般的には、何か一時的な作業をするディレクトリとして “/tmp” などを使うべきではありません。
+OS によっては存在しなかったり、使い方を間違えるとセキュリティホールの原因になったりします。</p>
+
+<p>そういう場合に ruby では tmpdir ライブラリを使います。</p>
+
+<h3 id="dirtmpdir">Dir.tmpdir</h3>
+
+<p>Dir.tmpdir を使うと OS や環境変数や $SAFE に応じて、テンポラリディレクトリとして使うのに適切な絶対パスを取得できます。</p>
+
+<p>Linux での実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> % env - ruby1.8 -v -r tmpdir -e 'p Dir.tmpdir'
+ ruby 1.8.7 (2009-06-12 patchlevel 174) [i486-linux]
+ "/tmp"
+ %</code></pre></figure>
+
+<p>Windows での実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> C:\ruby\bin&gt;ruby -v -r tmpdir -e "p Dir.tmpdir"
+ ruby 1.8.7 (2008-08-11 patchlevel 72) [i386-mswin32]
+ "c:/DOCUME~1/kazu/LOCALS~1/Temp"
+
+ C:\ruby\bin&gt;</code></pre></figure>
+
+<p>ユーザが環境変数を設定している場合:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> % env - TMPDIR=$HOME/tmp ruby1.8 -v -r tmpdir -e 'p Dir.tmpdir'
+ ruby 1.8.7 (2009-06-12 patchlevel 174) [i486-linux]
+ "/home/kazu/tmp"
+ %</code></pre></figure>
+
+<p>さらに safe level が 1 以上の場合:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> % env - TMPDIR=$HOME/tmp ruby1.8 -v -r tmpdir -e '$SAFE=1; p Dir.tmpdir'
+ ruby 1.8.7 (2009-06-12 patchlevel 174) [i486-linux]
+ "/tmp"
+ %</code></pre></figure>
+
+<p>セキュリティを考慮するなら symlink attack などの可能性があるため、Dir.tmpdir の直下に直接ファイルを作ったりせず、次の Dir.mktmpdir を使ったり、後述の tempfile を使う方がおすすめです。</p>
+
+<p>詳しくは後述のセキュリティのところで紹介しているリンク先を参照してください。</p>
+
+<h3 id="dirmktmpdir">Dir.mktmpdir</h3>
+
+<p>ruby 1.8.7 以降の tmpdir には Dir.mktmpdir が追加されています。</p>
+
+<p>Dir.mktmpdir を使うと一時ディレクトリを作成できます。
+作られるディレクトリのパーミッションは 0700 になっています。</p>
+
+<p>ブロック付きで Dir.mktmpdir を使うと、ブロックの引数に作成された一時ディレクトリのパスが渡されて、作成された一時ディレクトリやその中のファイルが Dir.mktmpdir から返るときに FileUtils.remove_entry_secure で削除されます。
+カレントディレクトリは変わらないので、必要ならブロック付きの Dir.chdir と組み合わせると便利でしょう。</p>
+
+<p>例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "tmpdir"
+ Dir.mktmpdir do |dir|
+   p dir #=&gt;
+   # dir を使って何かする。
+   open("#{dir}/foo", "w") {|f| f.puts "..." }
+   system("ls", "-al", dir) #=&gt;
+ end</code></pre></figure>
+
+<p>第一引数に文字列を渡すと作成するディレクトリの prefix を指定できます。(指定しなかった場合は “d” になります。)</p>
+
+<p>例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "tmpdir"
+ Dir.mktmpdir("foo") do |dir|
+   p dir #=&gt;
+ end</code></pre></figure>
+
+<p>第一引数に 2 要素の配列を渡すと作成するディレクトリの prefix と suffix を指定できます。</p>
+
+<p>例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "tmpdir"
+ Dir.mktmpdir(["foo", "bar"]) do |dir|
+   p dir #=&gt;
+ end</code></pre></figure>
+
+<p>第二引数にパスを指定すると、そのディレクトリの中に一時ディレクトリを作成します。
+指定しなかった場合には Dir.tmpdir の中に作成されます。</p>
+
+<p>第二引数だけ指定したい場合は第一引数に nil を渡します。</p>
+
+<p>例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "tmpdir"
+ Dir.mktmpdir(["foo", "bar"], "/var/tmp") do |dir|
+   p dir #=&gt;
+ end
+ require "tmpdir"
+ Dir.mktmpdir(nil, "/var/tmp") do |dir|
+   p dir #=&gt;
+ end</code></pre></figure>
+
+<p>ブロックなしで Dir.mktmpdir を呼びだすと、作成されたディレクトリを返します。
+このとき、 Dir.mktmpdir はディレクトリを消さないので、自分でどうにかする必要があります。</p>
+
+<p>例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> dir = Dir.mktmpdir
+ begin
+   open("#{dir}/foo", "w") {|f| f.puts "..." }
+ ensure
+   # ディレクトリを消す
+   FileUtils.remove_entry_secure dir
+ end</code></pre></figure>
+
+<h2 id="tempfile-ライブラリ">tempfile ライブラリ</h2>
+
+<p>tempfile ライブラリはテンポラリファイル (一時ファイル) を扱うためのライブラリです。</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p>Tempfile は Dir.mktmpdir と違って finalizer でファイルの削除をするようになっているため、 GC や ruby の終了時に自動でファイルが削除されます。
+しかし、開いたファイルは閉じるのが行儀が良いように、Tempfile も使い終わったらちゃんと消すのがおすすめです。</p>
+
+<p>例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "tempfile"
+ file = Tempfile.new('foo')
+ begin
+   # file を使って何かする。
+   file.puts "..."
+ ensure
+   file.close
+   file.unlink # 一時ファイルを削除
+end</code></pre></figure>
+
+<h3 id="tempfilenewbasename-tempdirdirtmpdir">Tempfile.new(basename, tempdir=Dir.tmpdir)</h3>
+
+<p>ruby 1.8.7 以降の tempfile では Dir.mktmpdir と同様に第一引数に 2 要素の配列を渡すと prefix と suffix を指定できます。
+拡張子によって処理内容が決まるコマンドの引数に使うなど、一時ファイルの拡張子を指定する必要があるときに使います。</p>
+
+<h3 id="tempfileopen">Tempfile.open</h3>
+
+<p>ブロックなしで呼び出した場合は Tempfile.new と同じです。</p>
+
+<p>ブロック付きで呼び出した場合は File.open と同じように Tempfile オブジェクトを引数としてブロックが呼ばれ、
+ブロックから抜けるときにファイルは自動的に閉じて削除されます。</p>
+
+<h3 id="tempfilecloseunlink_nowfalse">Tempfile#close(unlink_now=false)</h3>
+
+<p>一時ファイルを閉じます。
+引数に true を指定すると、一時ファイルの削除もします。</p>
+
+<h3 id="tempfileclose">Tempfile#close!</h3>
+
+<p>Tempfile#close(true) と同じです。</p>
+
+<h3 id="tempfileopen-1">Tempfile#open</h3>
+
+<p>close した後、再度開くのに使います。</p>
+
+<h3 id="tempfileunlink-tempfiledelete">Tempfile#unlink, Tempfile#delete</h3>
+
+<p>一時ファイルを削除します。</p>
+
+<p>Unix 系の OS では open したまま unlink することにより、</p>
+
+<ul>
+  <li>ファイルは存在し続ける</li>
+  <li>ファイル名がなくなり open できなくなる</li>
+  <li>プロセス異常終了時にも残らない</li>
+</ul>
+
+<p>という状態になります。</p>
+
+<p>詳しくは
+<a href="http://www.ipa.go.jp/security/awareness/vendor/programmingv2/contents/c603.html">http://www.ipa.go.jp/security/awareness/vendor/programmingv2/contents/c603.html</a>
+の「ファイルを作成したら unlink する」を参照してください。</p>
+
+<p>Windows では開いているファイルを削除することが出来ないので、
+いろいろな環境で動かしたいプログラムを作成する場合には注意してください。</p>
+
+<h3 id="tempfilepath">Tempfile#path</h3>
+
+<p>一時ファイルのパスを返します。</p>
+
+<p>一時ファイルを別プログラムとの連携に使う場合などに使います。</p>
+
+<h2 id="使用例-1">使用例</h2>
+
+<p>一時ファイルの主な用途としては、</p>
+
+<ul>
+  <li>他のプログラムを起動するときの引数</li>
+  <li>ユニットテストなどのテストの中で扱うファイルを作成</li>
+</ul>
+
+<p>などがあるようです。</p>
+
+<h3 id="子プロセスのリダイレクト">子プロセスのリダイレクト</h3>
+
+<ul>
+  <li>終了ステータスも子プロセスの標準出力も標準エラー出力もほしい</li>
+  <li>子プロセスの標準出力と標準エラー出力は別々にほしい</li>
+  <li>出力はコマンドの実行後にまとめて取得できるだけで良い</li>
+  <li>fork のない環境は対応しなくても良い</li>
+  <li>ruby 1.8 対応</li>
+</ul>
+
+<p>という条件で子プロセスを起動したいことがありました。</p>
+
+<p>そのとき、いくつか方法を考えてみたところ、</p>
+
+<ul>
+  <li>「<code class="highlighter-rouge">#{cmd} 2&amp;gt;&amp;amp;1</code>」だと標準出力と標準エラー出力が混ざる</li>
+  <li>「open3」ライブラリの「Open3.popen3(cmd)」だと終了ステータスが取れない</li>
+  <li>IO.pipe と fork の組み合わせだと読み込まないとコマンドが止まる可能性があるのが面倒</li>
+  <li>Process.spawn は ruby 1.8 では使えない</li>
+</ul>
+
+<p>という問題がありました。</p>
+
+<p>そこで Tempfile で作成したファイルにリダイレクトするという方法を使いました。
+そのときのプログラムの tempfile を使用した部分を再現したものが以下のプログラムです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#!/usr/bin/ruby
+require 'tempfile'
+make_out = Tempfile.open("make")
+make_err = Tempfile.open("make")
+make_out.close
+make_err.close
+pid = fork do
+  STDOUT.reopen(make_out.path)
+  STDERR.reopen(make_err.path)
+  exec("make", "all")
+  abort("exec failed")
+end
+pid, status = Process.waitpid2(pid)
+p status
+make_out.open
+p make_out.read
+make_out.close(true)
+make_err.open
+p make_err.read
+make_err.close(true)</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">実行結果の例:
+#&lt;Process::Status: pid=12023,exited(2)&gt;
+""
+"make: *** ターゲット `all' を make するルールがありません.  中止.\n"</code></pre></figure>
+
+<h2 id="セキュリティ">セキュリティ</h2>
+
+<p>安全に一時ファイルを作成するのは素人には難しく、<a href="http://www.ipa.go.jp/security/awareness/vendor/programmingv2/contents/c603.html">http://www.ipa.go.jp/security/awareness/vendor/programmingv2/contents/c603.html</a> の「使用を避けた方がよい関数」にあるように問題がある実装になりがちなので、普通はライブラリを使いましょう。
+ライブラリを使っていれば、問題がある可能性は自分で実装するより低く、問題がみつかった場合もきちんと修正されることが期待できます。</p>
+
+<p>また、どのような問題があり、どう対処すれば良いのかは <a href="http://www.ipa.go.jp/security/fy20/reports/tech1-tg/2_05.html">http://www.ipa.go.jp/security/fy20/reports/tech1-tg/2_05.html</a> も参考になります。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は tmpdir と tempfile を紹介しました。
+一時ファイルなどを使うときは、自分で独自実装をせず既存のライブラリを使い、セキュリティや削除されずにゴミファイルが残る可能性を考慮した使い方をすると良いと思います。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>西山和広。
+最近は文字コード関連やフォント関連も勉強中。</p>
+
+<h2 id="標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-BundledLibraries.html">標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-BundledLibraries.html">標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-BundledLibraries.html">標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-BundledLibraries.html">標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-BundledLibraries.html">標準添付ライブラリ紹介 【第 11 回】 zlib</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-BundledLibraries.html">標準添付ライブラリ紹介 【第 10 回】 ERB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-BundledLibraries.html">標準添付ライブラリ紹介 【第 9 回】 PStore</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-BundledLibraries.html">標準添付ライブラリ紹介 【第 8 回】 uri, pathname</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-BundledLibraries.html">標準添付ライブラリ紹介 【第 7 回】 net/http</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-BundledLibraries.html">標準添付ライブラリ紹介 【第 6 回】 委譲</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-BundledLibraries.html">標準添付ライブラリ紹介 【第 5 回】 enumerator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-BundledLibraries.html">標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-BundledLibraries.html">標準添付ライブラリ紹介 【第 2 回】 Logger</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-BundledLibraries.html">標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

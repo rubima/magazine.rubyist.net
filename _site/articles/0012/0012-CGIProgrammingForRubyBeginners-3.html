@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 3</title>
+  <meta name="description" content="前ページへ目次ページへ次ページへ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0012/0012-CGIProgrammingForRubyBeginners-3.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 3</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0012/0012-CGIProgrammingForRubyBeginners-3.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 3" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0012/0012-CGIProgrammingForRubyBeginners-3.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0012/0012-CGIProgrammingForRubyBeginners-3.html" data-text="Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 3">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-2.html">前ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners.html">目次ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-4.html">次ページへ</a></p>
+
+<ul id="markdown-toc">
+  <li><a href="#山彦もどき改" id="markdown-toc-山彦もどき改">山彦もどき改</a>    <ul>
+      <li><a href="#フォームデータの受け取り-と-cgi-クラス" id="markdown-toc-フォームデータの受け取り-と-cgi-クラス">フォームデータの受け取り と CGI クラス</a>        <ul>
+          <li><a href="#cgi-クラスの準備" id="markdown-toc-cgi-クラスの準備">CGI クラスの準備</a></li>
+          <li><a href="#cgi-クラスを使ってフォームデータを取得する" id="markdown-toc-cgi-クラスを使ってフォームデータを取得する">CGI クラスを使ってフォームデータを取得する</a></li>
+        </ul>
+      </li>
+      <li><a href="#フォームに入力された-html-タグ" id="markdown-toc-フォームに入力された-html-タグ">フォームに入力された HTML タグ</a>        <ul>
+          <li><a href="#html-エスケープ---escapehtml-命令" id="markdown-toc-html-エスケープ---escapehtml-命令">HTML エスケープ - escapeHTML 命令</a></li>
+          <li><a href="#山彦もどき改で-html-エスケープを使う" id="markdown-toc-山彦もどき改で-html-エスケープを使う">「山彦もどき改」で HTML エスケープを使う</a></li>
+        </ul>
+      </li>
+      <li><a href="#秘密のメッセージ" id="markdown-toc-秘密のメッセージ">秘密のメッセージ</a>        <ul>
+          <li><a href="#if-文とフォームデータ" id="markdown-toc-if-文とフォームデータ">if 文とフォームデータ</a></li>
+          <li><a href="#文字列と" id="markdown-toc-文字列と">文字列と「*」</a></li>
+          <li><a href="#実行結果" id="markdown-toc-実行結果">実行結果</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="山彦もどき改">山彦もどき改</h2>
+
+<p>前ページの「山彦もどき」では読者が入力した情報を受け取ることが出来ました。
+ここでは「山彦もどき」を改良して「山彦もどき改」にしていきます。
+「山彦もどき改」の改良点は大まかに言って 2 つあります。</p>
+
+<p>1 つ目の改良点はフォームに漢字などの
+アルファベットや数字以外の文字が入力された時に
+その内容がきちんと表示される点です。
+後で実際に入力してみますが、「山彦もどき」では
+ひらがな・カタカナ・漢字などを入力しても正しく表示されません。
+「山彦もどき改」ではこの制限を取り払います。</p>
+
+<p>2 つ目の改良点は読者がフォームに HTML タグを入力した時の処理です。
+通常なら HTML タグを入力しても問題はないのですが、
+例えば、Javascript を含んだ HTML が入力されると
+困ったことになります。
+そこで、HTML の入力を出来ないようにします。</p>
+
+<p>細かい改造ですが、秘密のメッセージ機能を追加してみます。
+これはフォームに特定のキーワードが書かれた時に
+プログラムに用意された秘密のメッセージを表示させます。</p>
+
+<h3 id="フォームデータの受け取り-と-cgi-クラス">フォームデータの受け取り と CGI クラス</h3>
+
+<p>まずは「山彦もどき」でアルファベットや数字以外の文字を入力してみましょう。
+<a href="http://localhost:8080/bar_echo2.html">http://localhost:8080/bar_echo2.html</a> にアクセスして
+フォームにアルファベットや数字以外の文字を入力してみて下さい。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_problem.jpg" alt="bar_echo_problem.jpg" /></p>
+
+<p>上の図は「ほげ」をフォームに入力して
+サブミットボタンを押した時の結果です。
+bar_echo2.rb だと「ほげ」の部分が
+「%82%D9%82%B0」になってしまいますね
+(お使いのブラウザによっては表示が違うかもしれません)。</p>
+
+<p>先程、フォームデータが作られる時には前処理が行われると書きました。
+その前処理の時、ある規則に従って「ほげ」を変換すると「%82%D9%82%B0」になります。
+今の皆さんが自力でこの処理を行うのは正直言って難しいと思います。
+そこで、自分で処理するのは諦めて 
+CGI プログラミングを支援する仕組みを使ってこの問題を解決することにします。</p>
+
+<h4 id="cgi-クラスの準備">CGI クラスの準備</h4>
+
+<p>CGI プログラミングを支援する仕組みのことを CGI クラスと言います。
+今号では CGI クラスの詳しい説明はしませんが、
+CGI プログラミングに便利な機能が集まっているところと
+考えてもらえば十分です。
+CGI クラスを使うと比較的簡単に前述のフォームデータの処理を行えます。</p>
+
+<p>CGI クラスを使うためには準備が必要なので、
+まずはその準備を済ませます。
+CGI クラスを使う前には</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "cgi"</code></pre></figure>
+
+<p>という行が必要になります。
+この行は CGI クラスを使う前に入れておかなければなりません。
+require の説明はいずれ詳しく行いたいと思いますが、
+とりあえず何か便利な機能を追加したい時に使う命令
+ということを覚えておいて下さい。</p>
+
+<h4 id="cgi-クラスを使ってフォームデータを取得する">CGI クラスを使ってフォームデータを取得する</h4>
+
+<p>CGI クラスを使ったプログラムを見てみましょう。
+<a href="http://localhost:8080/bar_echo_improved1.html">http://localhost:8080/bar_echo_improved1.html</a> を表示させ、
+フォームに日本語を入れて bar_echo_improved1.rb を実行させてみて下さい。
+今度はちゃんと日本語でも表示されるはずです。</p>
+
+<p>bar_echo_improved1.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">require</span> <span class="s2">"cgi"</span>
+
+<span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+<span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;"</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">text</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">"t"</span><span class="p">]</span>
+<span class="nb">print</span> <span class="n">text</span>
+<span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+
+<span class="nb">print</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
+
+</code></pre>
+</div>
+<p><img src="/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved.jpg" alt="bar_echo_improved.jpg" /></p>
+
+<p>文字化けする場合はブラウザの文字コード設定を変えてみて下さい。
+IE ならメニューの 表示 → エンコード の中に
+日本語という項目が幾つかあるので、
+それを順に選択していけばどれか 1 つはきちんと表示されるはずです。
+Firefox ではメニューの 表示 → 文字コードの中にあります。</p>
+
+<p>きちんと表示されたところで
+日本語対応版「山彦もどき改」の説明をしましょう。
+まず 3 行目は先程も言ったように CGI クラスを使うための準備です。
+8 行目は初めて見ますね。この行の
+<strong>CGI.new は CGI クラスにフォームのデータを作るようにお願いしています</strong>。
+CGI クラスには CGI プログラムのための便利な機能が
+集まっていると先程説明しました。
+その機能の 1 つがフォームのデータを作ることです。</p>
+
+<p>難しい事は抜きにして 
+__CGI.new でフォームのデータが作られる__ということを覚えて下さい。
+CGI.new で作られたフォームのデータは Hash のようになっていて、
+そのデータには「フォームの部品の name 属性」と
+「その部品のデータ (value 属性)」の組みが含まれています。
+CGI.new で作られたフォームデータの中身を図示すると下のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>“t”</td>
+      <td>”s”</td>
+    </tr>
+    <tr>
+      <td>“ほげ”</td>
+      <td>“Button”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>フォームに「ほげ」と入力したので、
+t という name 属性のテキストフィールドには「ほげ」という値が、
+s という name 属性のサブミットボタンには「Button」という value 属性が
+対応することになります。</p>
+
+<p>ここまで CGI.new で作られたデータの事をフォームのデータと書いてきましたが、
+今後は「CGI のデータ」と書くことにします。
+これにはちゃんと理由があるのですが、説明がちょっと難しいので、
+ここではそのことには触れないでおきます。</p>
+
+<p>次の 9 行目で c[“t”] としていますね。
+この行では CGI のデータのうち
+name 属性が t の部品データにアクセスしています
+(この場合は「ほげ」という文字列ですね)。
+この行から分かるように
+CGI データの__フォームデータには name 属性を使ってアクセスします__。
+アクセスの仕方は Hash や ENV と同じで [] を使います。
+フォームデータへのアクセス方法が「山彦もどき」と違いますが、
+プログラムはこちらの方が簡単ですね。</p>
+
+<p>CGI.new で CGI データが作られる時に
+「%82%D9」のようなデータはきちんと日本語になります。
+これで日本語表示が出来るようになりました。</p>
+
+<h3 id="フォームに入力された-html-タグ">フォームに入力された HTML タグ</h3>
+
+<p>次はフォームに HTML タグが入力された時、
+そのタグをどう扱うかです。
+皆さんご存知無いかもしれませんが、
+フォームに入力された HTML タグをそのまま
+表示させると困ったことになります。
+<a href="http://localhost:8080/bar_echo_improved1.html">http://localhost:8080/bar_echo_improved1.html</a> を開いて、
+下のような内容をテキストフィールドに書いて
+サブミットボタンを押してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div onclick="alert('hoge')"&gt;ほげ&lt;/div&gt;</code></pre></figure>
+
+<p>ページが表示される時は
+ただ「ほげ」と表示されているだけですが、
+表示された「ほげ」をクリックすると
+「hoge」というメッセージが出現します。
+これはフォームに入力された HTML タグの中に
+Javascript が含まれていることが原因です。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_problem.jpg" alt="bar_echo_improved_problem.jpg" /></p>
+
+<p>Javascript を使えば色々なことが出来るので、
+Javascript を含んだ HTML のタグを受け付けてしまうと、
+自分のサイト (場合によってはインターネット全体) 
+が不利益を受けます。
+これを防ぐためには、ページの読者が書いた HTML タグは
+機能しないようにするのが無難です。</p>
+
+<h4 id="html-エスケープ---escapehtml-命令">HTML エスケープ - escapeHTML 命令</h4>
+
+<p>この処理も CGI クラスを使えば簡単に出来ます。
+HTML タグを受け取らないようにするには
+HTML の規約に従って「&lt;」「&gt;」等を「&amp;lt;」「&amp;gt;」等に変えます。
+この処理は HTML のエスケープと言われていて、
+ブラウザは エスケープされた HTML タグを
+HTML タグとして認識しません。</p>
+
+<p>CGI クラスの機能の escapeHTML 命令を使えば
+HTML エスケープされた文字列を作れます。
+使い方は下のようにします。
+split と同じように括弧の中身がパラメーターになります。
+パラメーターには HTML エスケープしたい文字列を指定します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">CGI.escapeHTML( HTMLタグを含んだ文字列 )</code></pre></figure>
+
+<p>下のプログラムを RDE に入力して
+escapeHTML を試してみましょう。
+図のように 「&lt;」「&gt;」はそのまま表示されません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'cgi'
+puts CGI.escapeHTML("&lt;html&gt;&lt;/html&gt;")
+puts CGI.escapeHTML("&lt;body&gt;&lt;div&gt;&lt;/div&gt;&lt;/body&gt;")</code></pre></figure>
+
+<p><img src="/images/0012-CGIProgrammingForRubyBeginners-3/rde_html_escape.jpg" alt="rde_html_escape.jpg" /></p>
+
+<h4 id="山彦もどき改で-html-エスケープを使う">「山彦もどき改」で HTML エスケープを使う</h4>
+
+<p>escapeHTML 命令を使った「山彦もどき改」は
+下のようになります。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">require</span> <span class="s2">"cgi"</span>
+
+<span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+<span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;"</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">text</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escapeHTML</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"t"</span><span class="p">])</span>
+<span class="nb">print</span> <span class="n">text</span>
+<span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+
+<span class="nb">print</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
+
+</code></pre>
+</div>
+
+<p>元のプログラムとの違いは 9 行目だけです。
+説明が長いくせに修正は 1 行だけなので、
+拍子抜けするかもしれませんね。
+c[“t”] の値を CGI.escapeHTML で
+HTML エスケープしています。</p>
+
+<p><a href="http://localhost:8080/bar_echo_improved2.html">http://localhost:8080/bar_echo_improved2.html</a> にアクセスして
+試してみて下さい。
+余裕のある人はテキストフィールドに色々なデータを入力して、
+2 つの CGI プログラムの結果を HTML のソースで比較し、
+その違いを探してみましょう。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_escaped.jpg" alt="bar_echo_improved_escaped.jpg" /></p>
+
+<h3 id="秘密のメッセージ">秘密のメッセージ</h3>
+
+<p>このあたりで CGI プログラムに簡単な仕掛けでも入れてみましょう。
+いつも律儀にフォームの内容を返しても
+面白くありませんからね。</p>
+
+<p>仕掛けはごく単純です。
+まずあらかじめキーワードを決めておきます。
+そして、そのキーワードがフォームに入力されたら、
+プログラムに用意された秘密のメッセージと猫の絵を表示させます。
+この仕掛けには既に紹介した if 文と rand 命令を利用します。</p>
+
+<p>bar_echo_improved3.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">require</span> <span class="s2">"cgi"</span>
+
+<span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+<span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;"</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"nya"</span><span class="p">,</span> <span class="s2">"nyan"</span><span class="p">,</span> <span class="s2">"fuu"</span><span class="p">,</span> <span class="s2">"nobi"</span><span class="p">,</span> <span class="s2">"suya"</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">text</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escapeHTML</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">"t"</span><span class="p">])</span>
+
+<span class="k">if</span> <span class="n">text</span> <span class="o">==</span> <span class="s2">"bar"</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="nb">print</span> <span class="n">i</span>
+  <span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+  <span class="nb">print</span> <span class="n">s</span>
+  <span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+  <span class="nb">print</span> <span class="n">s</span> <span class="o">*</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="nb">rand</span> <span class="mi">7</span>
+  <span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+  <span class="nb">print</span> <span class="s2">"&lt;img src=</span><span class="se">\"</span><span class="s2">images/</span><span class="si">#{</span><span class="n">num</span><span class="si">}</span><span class="s2">.jpg</span><span class="se">\"</span><span class="s2">&gt;&lt;/img&gt;</span><span class="se">\n</span><span class="s2">"</span> 
+<span class="k">else</span>
+  <span class="nb">print</span> <span class="n">text</span>
+  <span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+<span class="k">end</span>
+
+<span class="nb">print</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
+
+</code></pre>
+</div>
+
+<h4 id="if-文とフォームデータ">if 文とフォームデータ</h4>
+
+<p>bar_echo_improved3.rb はページの読者がフォームに「bar」と入力した場合に、
+秘密のメッセージを猫の写真と一緒に表示させます。
+bar_echo_improved3.rb は基本的に bar_echo_improved2.rb と同じなので、
+違う部分だけを説明します。</p>
+
+<p>12 行目で if 文を使っています。
+この行でフォームに入力されたデータが “bar” と同じかどうかをチェックします。
+つまり、”bar” がキーワードになるわけです。
+「==」は等号の左と右が同じデータかどうかを調べる方法でしたね。</p>
+
+<p>同じデータでない場合は 24, 25行 が実行されます。
+こちらは「山彦もどき」と同じ動作ですので、説明は要らないと思います。</p>
+
+<p>フォームに書かれたデータが bar だった場合、
+13-22 行が実行されます。
+こちらで秘密のメッセージを表示したり、猫の絵を表示したりします。</p>
+
+<h4 id="文字列と">文字列と「*」</h4>
+
+<p>8 行目で秘密のメッセージを変数 arr に用意しています。
+メッセージは何でも良いのですが、
+このプログラムでは Array に 5 つのメッセージが用意されています。</p>
+
+<p>13 行目では rand 命令の結果に変数 i の目印が付きます。
+この変数 i が表示する秘密のメッセージを決定します。
+なぜなら、14 行目で変数 i の値を変数 arr の Array の添字としており、
+その添字に対応するメッセージが後で表示されるからです。
+例えば、rand 命令の結果が 0 だとすれば、
+表示されるメッセージは 変数 arr の 0 番目の “nya” となります。
+また、ここでは表示されるメッセージには変数 s の目印が付きます。</p>
+
+<p>bar_echo_improved3.rb のように rand(5) とすると、
+その結果は 0-4 のいずれかになります。
+変数 arr のデータ数は 5 個なので、
+0-4 は変数 arr の Array の添字として使えます。
+もし、秘密のメッセージの個数を変える時は
+rand のパラメーターも変更しなければなりません。</p>
+
+<p>15-18 行は rand の結果や Array から取り出したメッセージを
+表示させているだけです。</p>
+
+<p>19 行目は少し難しいですね。
+ゆっくり考えてみましょう。
+例えば、13行目で rand の結果が 0 になったとしましょう。
+そうすると、変数 i は 0 への目印に、
+変数 s は “nya” への目印になります。
+この時、19 行目は “nya” * rand(10) となります。
+これはどういう計算なのでしょうか？
+試しに RDE で実行してみましょう。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-3/string_multiply.jpg" alt="string_multiply.jpg" /></p>
+
+<p>何回も実行させると分かりますが、
+「nya」が繰り返し表示されますね。
+文字列の後ろに「*」と数値が来ると、
+文字列を数値の分だけつなげて下さいという意味になります。</p>
+
+<p>下のプログラムでも試してみて下さい。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts "hoge" * 2
+puts "bar" * 3
+puts "foo" * 10 + "bar" * 2</code></pre></figure>
+
+<p>19行目は s * rand(10) なので、
+rand の結果だけ変数 s のデータ(“nya” やら “nyan” やら)をつなげます。
+その結果、同じメッセージが繰り返し表示されます。
+20-22 行は分かりますね。
+前号の foo5.rb と同じです。</p>
+
+<h4 id="実行結果">実行結果</h4>
+
+<p><a href="http://localhost:8080/bar_echo_improved3.html">http://localhost:8080/bar_echo_improved3.html</a> にアクセスして、
+bar と入力してみて下さい。色んなメッセージや猫の絵が表示されると思います。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_msg.jpg" alt="bar_echo_improved_msg.jpg" /></p>
+
+<p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-2.html">前ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners.html">目次ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-4.html">次ページへ</a></p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

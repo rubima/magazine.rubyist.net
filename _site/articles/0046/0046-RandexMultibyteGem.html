@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby 初心者の新卒エンジニアが gem パッケージ公開に至るまで</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0046/0046-RandexMultibyteGem.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby 初心者の新卒エンジニアが gem パッケージ公開に至るまで</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0046/0046-RandexMultibyteGem.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby 初心者の新卒エンジニアが gem パッケージ公開に至るまで" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0046/0046-RandexMultibyteGem.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0046/0046-RandexMultibyteGem.html" data-text="Ruby 初心者の新卒エンジニアが gem パッケージ公開に至るまで">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#自己紹介" id="markdown-toc-自己紹介">自己紹介</a>    <ul>
+      <li><a href="#学生時代" id="markdown-toc-学生時代">学生時代</a></li>
+      <li><a href="#今やっていること" id="markdown-toc-今やっていること">今やっていること</a></li>
+      <li><a href="#swet-とは" id="markdown-toc-swet-とは">SWET とは？</a></li>
+    </ul>
+  </li>
+  <li><a href="#dena-への入社-swet-への配属" id="markdown-toc-dena-への入社-swet-への配属">DeNA への入社・ SWET への配属</a>    <ul>
+      <li><a href="#入社新卒エンジニア研修" id="markdown-toc-入社新卒エンジニア研修">入社・新卒エンジニア研修</a></li>
+      <li><a href="#swet-という環境" id="markdown-toc-swet-という環境">SWET という環境</a></li>
+    </ul>
+  </li>
+  <li><a href="#脱初心者ハッカーへの第一歩-gem-パッケージ公開" id="markdown-toc-脱初心者ハッカーへの第一歩-gem-パッケージ公開">脱初心者・ハッカーへの第一歩: gem パッケージ公開</a>    <ul>
+      <li><a href="#業務で困っていたこと" id="markdown-toc-業務で困っていたこと">業務で困っていたこと</a></li>
+      <li><a href="#脱初心者に必要なこと" id="markdown-toc-脱初心者に必要なこと">脱初心者に必要なこと</a></li>
+      <li><a href="#自分で-gem-パッケージを作って解決しよう" id="markdown-toc-自分で-gem-パッケージを作って解決しよう">自分で gem パッケージを作って解決しよう</a></li>
+    </ul>
+  </li>
+  <li><a href="#今回作成した-gem-randexp-multibyte" id="markdown-toc-今回作成した-gem-randexp-multibyte">今回作成した gem: “randexp-multibyte”</a>    <ul>
+      <li><a href="#既存の-gem-パッケージでできることできないこと" id="markdown-toc-既存の-gem-パッケージでできることできないこと">既存の gem パッケージでできること・できないこと</a></li>
+      <li><a href="#randexp-multibyte-で何ができるか" id="markdown-toc-randexp-multibyte-で何ができるか">“randexp-multibyte” で何ができるか</a></li>
+    </ul>
+  </li>
+  <li><a href="#gem-パッケージの作成公開" id="markdown-toc-gem-パッケージの作成公開">gem パッケージの作成・公開</a>    <ul>
+      <li><a href="#gem-パッケージの命名規則" id="markdown-toc-gem-パッケージの命名規則">gem パッケージの命名規則</a></li>
+      <li><a href="#bundle-gem" id="markdown-toc-bundle-gem">bundle gem</a></li>
+      <li><a href="#rubygems-への公開" id="markdown-toc-rubygems-への公開">RubyGems への公開</a></li>
+    </ul>
+  </li>
+  <li><a href="#randexp-multibyteを公開してわかったこと" id="markdown-toc-randexp-multibyteを公開してわかったこと">“randexp-multibyte”を公開してわかったこと</a>    <ul>
+      <li><a href="#ruby-のバージョン依存" id="markdown-toc-ruby-のバージョン依存">Ruby のバージョン依存</a></li>
+      <li><a href="#新たな機能要望" id="markdown-toc-新たな機能要望">新たな機能要望</a></li>
+      <li><a href="#その他-gem-パッケージを公開することで得たもの" id="markdown-toc-その他-gem-パッケージを公開することで得たもの">その他、 gem パッケージを公開することで得たもの</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a>    <ul>
+      <li><a href="#randexp-multibyte-の今後" id="markdown-toc-randexp-multibyte-の今後">randexp-multibyte の今後</a></li>
+    </ul>
+  </li>
+  <li><a href="#最後に" id="markdown-toc-最後に">最後に</a></li>
+</ul>
+
+<p>書いた人： @deme0607</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Ruby 初心者の筆者が新卒で配属されたのは、凄腕 Rubyist の方々が名を連ねる部署でした。その部署での業務から、脱初心者・ OSS 貢献の第一歩として gem パッケージ “randexp-multibyte” を公開するに至るまでの道のりを解説します。</p>
+
+<h2 id="自己紹介">自己紹介</h2>
+
+<p>初めまして。 @deme0607 こと清水直樹と申します。
+今回は私が Rubyist のひしめく環境に身を置いてから gem パッケージを公開するに至るまでの道のりについての記事ですので、まずは簡単に自己紹介をさせていただきたいと思います。</p>
+
+<h3 id="学生時代">学生時代</h3>
+
+<p>まずは私が「どれぐらい初心者だったのか」をご説明するために、学生時代のお話です。</p>
+
+<p>大学ではプログラミングは授業で C 言語に少し触れる程度で、学部生の 4 年間のほとんどはラグビー部での部活動に費やしていました。
+どれぐらいラグビー漬けの生活を送っていたかというと、「清水直樹 スクラム」で<a href="https://www.google.co.jp/search?q=%E6%B8%85%E6%B0%B4%E7%9B%B4%E6%A8%B9+%E3%82%B9%E3%82%AF%E3%83%A9%E3%83%A0">Google検索</a>するとソフトウェア開発プロセスのスクラムではなく、<a href="http://www.kurfc.com/TeamDiary/diary/774">ラグビーのスクラム</a>の記事が出てくるほどです。</p>
+
+<p>大学院進学後は画像処理系の研究室で、 C++ を使ったプログラムを書きながらスポーツ映像処理に関する理論やアプリケーションを題材にした研究をしていました。</p>
+
+<p>当時書いていたプログラムは自分以外の人が見たり、使ったりすることはほとんどなく、安定性や保守性・拡張性・再利用性などは無視していた (というか概念そのものが欠如していた) ため、ソフトウェアエンジニアとしてのコーディングは全くと言って良いほどできていませんでした。</p>
+
+<p>大学の情報系研究室でのプログラミングと、ソフトウェアエンジニアとしてのプログラミングのギャップについてはそれだけで 1 つの記事が書けてしまうほどの分量があるため、また別の機会で詳しく書きたいと思っていますが、一言で言うと私は「プログラミング経験はあるが、超初心者エンジニア」という状態で新卒エンジニアとして社会人になりました。</p>
+
+<h3 id="今やっていること">今やっていること</h3>
+
+<p>現在は株式会社ディー・エヌ・エー (DeNA) のプラットフォーム本部システム部 SWET グループという部署で Mobage プラットフォームの品質担保及び向上に関する業務に携わっております。</p>
+
+<p>主な業務の 1 つとして、ゲームデベロッパーの皆様が利用する<a href="http://developer.dena.jp/mbga/">Mobage Developers Japan</a>の自動システムテストを実装しています。 SWET では Web アプリケーションの自動システムテストには</p>
+
+<ul>
+  <li>Ruby</li>
+  <li>RSpec</li>
+  <li>Selenium WebDriver</li>
+  <li>Capybara</li>
+</ul>
+
+<p>の組み合わせを採用しているため、業務では主に Ruby を使っています。</p>
+
+<h3 id="swet-とは">SWET とは？</h3>
+
+<p>私が所属している部署名にもなっている SWET とは、”Software Engineer in Test”の略称です。
+少しでも早く、ユーザの皆様に満足していただける品質のプロダクトをリリースしていくため、従来の開発 (エンジニア) ・ QA (テスター) 分断方式ではなく、</p>
+
+<ul>
+  <li>エンジニアがテストをする</li>
+  <li>エンジニアがテストに関する生産活動を行う</li>
+</ul>
+
+<p>というアプローチをとるために生まれた組織です。
+SWET について詳しくは <a href="http://codezine.jp/article/detail/7666">Developers Summit 2014 13-A-6 レポート</a>で紹介されています。</p>
+
+<h2 id="dena-への入社-swet-への配属">DeNA への入社・ SWET への配属</h2>
+
+<h3 id="入社新卒エンジニア研修">入社・新卒エンジニア研修</h3>
+
+<p>大学院を修了後、2013 年 4 月に DeNA にエンジニアとして入社しました。
+新卒エンジニアは私と同様エンジニア経験のない社員が多く、入社後はワークショップ形式の新卒エンジニア研修で Web アプリケーション開発をゼロから学びました。</p>
+
+<p>私が受けた新卒エンジニア研修については当時の講師であった <a href="http://ryopeko.hatenablog.com/entry/2014/02/13/225714">@ryopeko さんのブログ</a>や <a href="http://codezine.jp/article/detail/7663">Developers Summit 2014 13-A-4 レポート</a>に詳しく取り上げられているため、ぜひ御覧ください。</p>
+
+<h3 id="swet-という環境">SWET という環境</h3>
+
+<p>無事に研修を卒業し、前述の SWET グループに配属となりました。 DeNA は Perl がメインの会社ではありますが、 SWET グループには Ruby コミッターの @shyouhei さんや、書籍「パーフェクト Ruby 」の著者の一人で、新卒研修講師のミッションを終えた @ryopeko さんなど、凄腕 Rubyist の方々が大勢おります。
+この SWET という環境で、私の Rubyist 人生がスタートしました。</p>
+
+<h2 id="脱初心者ハッカーへの第一歩-gem-パッケージ公開">脱初心者・ハッカーへの第一歩: gem パッケージ公開</h2>
+
+<h3 id="業務で困っていたこと">業務で困っていたこと</h3>
+
+<p>SWET に所属する私のメインの業務の 1 つはテストを書くことです。
+SWET として書くテストは各コンポーネントの開発者が作成するユニットテストではカバーしきれない領域を検証する、 E2E (End to End) のテストが主になります。</p>
+
+<p>例えば「パートナーゲームデベロッパーの方が Mobage Developers サイトでゲームを新規に作成し、そのゲームをユーザに向けて公開する」といったシナリオの全てを自動化し、テストとして実行します。</p>
+
+<p>代表的なテストケースとして、「フォームから入力し保存したゲームのタイトルが、正しく反映されていること」というようなものが挙げられます。</p>
+
+<p>上記テストケースを Capybara と RSpec を使用した擬似コードで表すと、以下のようになります。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"spec_helper"</span>
+<span class="nb">require</span> <span class="s2">"randexp"</span>
+
+<span class="n">describe</span> <span class="s2">"Game Title"</span> <span class="k">do</span>
+  <span class="n">context</span> <span class="s2">"when input valiid value"</span> <span class="k">do</span>
+     <span class="n">before</span> <span class="ss">:all</span> <span class="k">do</span>
+       <span class="vi">@input_value</span> <span class="o">=</span> <span class="sr">/\w{15}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#randexp でランダムに生成</span>
+       <span class="n">edit_game_info</span><span class="p">(</span><span class="ss">:game_title</span> <span class="o">=&gt;</span> <span class="vi">@input_value</span><span class="p">)</span>
+     <span class="k">end</span>
+
+     <span class="n">it</span> <span class="s2">"is shown in game info"</span> <span class="k">do</span>
+       <span class="n">expect</span><span class="p">(</span><span class="n">game_info</span><span class="p">[</span><span class="ss">:title</span><span class="p">]).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="vi">@input_value</span><span class="p">)</span>
+     <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>Mobage Developers に何らかのリリースが入る度、上記のようなテストケース群から成るリグレッションテストを実行しており一定の効果を上げられていたのですが、ある問題に関してはこのリグレッションテストでは検知できないという懸念がありました。</p>
+
+<p>それは、「マルチバイト文字列の文字化け」です。</p>
+
+<p>上記のテストコードでは <a href="http://rubygems.org/gems/randexp">randexp</a> を用いて入力する文字列をランダムに生成しています。上記の例のゲームタイトルは本来は漢字やひらがななどのマルチバイト文字も入力することができるのですが、 randexp で生成される文字列は英数字のみのため、マルチバイト文字を入力して保存した際、表示される文字列が文字化けを起こしてしまうようなデグレが発生しても検出できないのです。</p>
+
+<h3 id="脱初心者に必要なこと">脱初心者に必要なこと</h3>
+
+<p>業務で困っていたことは上記の通りなのですが、もう一つ困っていたことがありました。 SWET の凄腕 Rubyist の方々の実力を目の当たりにして、どのようにしてその人たちに追いつき、追い越せばよいかのイメージが湧かない、ということです。</p>
+
+<p>しばらくは上記の悩みを抱えながらの日々が続いておりましたが、私の上司でもある <a href="http://ikasama.hateblo.jp/">@ikasam_a</a> さんから今回の記事を執筆するきっかけにもなったアドバイスをいただきました。</p>
+
+<p>それは「業務外のエンジニア活動にも積極的に取り組む」ということです。</p>
+
+<p>できるエンジニアに近づくために今の私に足りていないのは、業務に直接関係ない活動 (勉強会・コーディング etc) での成長であり、そういった成長があるからこそ、業務でも大きな活躍ができるのだという指摘でした。</p>
+
+<p>私自身エンジニア経験が非常に浅いということもあり、業務外でのエンジニア活動はしていきたいとは思っていたものの、なかなか実行には移せないでいるといった状態でしたが、この @ikasam_a さんのアドバイスで私に足らないものは何か、今すべきことは何かをはっきりと知ることができました。</p>
+
+<h3 id="自分で-gem-パッケージを作って解決しよう">自分で gem パッケージを作って解決しよう</h3>
+
+<p>上記のきっかけから、真っ先に思い浮かんだのが前述の「業務で困っていたこと」を解決するような gem パッケージを作って公開してしまおう、ということでした。</p>
+
+<p>正確には業務で感じた課題点を解決するための gem パッケージになるため、完全に業務外のエンジニア活動とは言えないのかもしれません。</p>
+
+<p>しかしこの課題は自分だけではなく社内外多くの方々に影響するものであり、その解決には大きな意味があると感じたため、脱初心者そして凄腕 Rubyist への第一歩として gem パッケージ “randexp-multibyte” の作成に取り掛かりました。</p>
+
+<h2 id="今回作成した-gem-randexp-multibyte">今回作成した gem: “randexp-multibyte”</h2>
+
+<p>ここでは前述の「マルチバイト文字のランダム文字列を生成できない」という課題を解決するために作成した <a href="https://rubygems.org/gems/randexp-multibyte">randexp-multibyte</a>について簡単にご紹介します。</p>
+
+<h3 id="既存の-gem-パッケージでできることできないこと">既存の gem パッケージでできること・できないこと</h3>
+
+<p>「業務で困っていたこと」に記述したテストコードにあるように、これまではテスト用のランダムな入力パラメータの生成には <a href="http://rubygems.org/gems/randexp">randexp</a>を使用していました。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp"</span>
+ 
+<span class="sr">/\w{10}/</span><span class="p">.</span><span class="nf">gen</span>               <span class="c1">#=&gt; "breastwood" 英数字 10 文字から生成された文字列を返す</span>
+<span class="sr">/[:email:]/</span><span class="p">.</span><span class="nf">gen</span>            <span class="c1">#=&gt; "chint@phasma.example.org" ランダムな文字列から生成されたメールアドレスを返す</span>
+<span class="sr">/[:phone_number:]{10}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "862-229-5689" ランダムな数字から生成された電話番号を返す</span>
+
+
+</code></pre>
+</div>
+
+<p>重複を許可しない入力パラメータの生成などに非常に便利な gem パッケージなのですが、やはり日本語対応のプロダクトのテスト用途としては日本語文字列のランダム生成ができないことが課題でした。</p>
+
+<h3 id="randexp-multibyte-で何ができるか">“randexp-multibyte” で何ができるか</h3>
+
+<p>randexp では補いきれなかった日本語のランダム文字列生成を、 randexp を拡張する形で実装しました。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp-multibyte"</span>
+
+<span class="sr">/[:hiragana:]{3}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "けさぎ"    ひらがな 3 文字から生成された文字列を返す</span>
+<span class="sr">/[:katakana:]{2}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "ドヘ"      カタカナ 2 文字から生成された文字列を返す</span>
+<span class="sr">/[:kanji:]{5}/</span><span class="p">.</span><span class="nf">gen</span>    <span class="c1">#=&gt; "脈菌握亭村" (常用) 漢字 5 文字から生成された文字列を返す</span>
+<span class="sr">/[:japanese:]{5}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "シど敷キ飾" 漢字+ひらがな+カタカナ 5 文字から生成された文字列を返す</span>
+<span class="sr">/\w{7}/</span><span class="p">.</span><span class="nf">gen</span>           <span class="c1">#=&gt; "lapwork"  randexp の機能は継承</span>
+
+
+</code></pre>
+</div>
+
+<p>また、私は韓国向けの <a href="https://developer.dena-seoul.kr/">Mobage Developers Korea</a> のテストも担当しているため、韓国語の生成にも対応しました。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="sr">/[:hangeul:]{7}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "콃콿텤헔혓튿혓" ハングル文字 7 文字から生成された文字列を返す</span>
+<span class="sr">/[:korean:]{5}/</span><span class="p">.</span><span class="nf">gen</span>  <span class="c1">#=&gt; "핫콂쾐컮퍊"    hangeul のエイリアス</span>
+
+
+</code></pre>
+</div>
+
+<h2 id="gem-パッケージの作成公開">gem パッケージの作成・公開</h2>
+
+<p>ここでは実際に私が gem パッケージ を作成した手順を解説します。</p>
+
+<h3 id="gem-パッケージの命名規則">gem パッケージの命名規則</h3>
+
+<p>コードを書き始める前にまず、 gem パッケージの名前をどうするかを決めなければなりません。 gem パッケージの命名規則に関しては <a href="http://guides.rubygems.org/name-your-gem/">RubyGems.org のガイド</a>を参考にしました。
+こちらでは RubyGems.org に記載されている内容を要約します。</p>
+
+<ul>
+  <li>単語の区切りにはアンダースコアを使用する
+    <ul>
+      <li>例: multi_json, thread_safe</li>
+    </ul>
+  </li>
+  <li>既存の gem パッケージの拡張にはダッシュを使う
+    <ul>
+      <li>例: rack-test, net-http-persistent</li>
+      <li>今回作成した gem パッケージは既存の randexp を拡張するものであるため、 randexp-multibyte としました</li>
+      <li>ディレクトリ構成は”-“を”/”に置き換えたもの
+        <ul>
+          <li>net-http-persistent =&gt; net/http/persistent</li>
+        </ul>
+      </li>
+      <li>メインのクラス名は”-“を”::”に置き換えたもの
+        <ul>
+          <li>rack-test =&gt; Rack::Test</li>
+        </ul>
+      </li>
+      <li>他の言語のモジュール・ライブラリの Ruby 版もこちらの命名規則を使うことが多い
+        <ul>
+          <li>例: matlab-ruby, sqllite-ruby</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>アンダースコア、ダッシュは混合して使用できる
+    <ul>
+      <li>例: net-http-digest_auth</li>
+      <li>パス: net/http/digest_auth</li>
+      <li>クラス名: Net::HTTP::DigestAuth</li>
+    </ul>
+  </li>
+  <li>大文字は使わない
+    <ul>
+      <li>OSX や Windows は case-insensitive なため、意図せずプラットフォーム依存なコードを書いてしまうことを避けるためです</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Ruby の gem パッケージの名前を見ていると、「名前を見ても何をするモジュールかわからない！」となることが多いです。有名なものだと<a href="https://rubygems.org/gems/nokogiri">nokogiri</a>や<a href="https://rubygems.org/gems/poltergeist">poltergeist</a>など、 Rubyist でない人にその働きは全くわかりません。一説によると、 Ruby の普及と Google 検索の普及がほぼ同時期であったため、 googlability を高めるためにユニークな名前の gem が数多く生まれたのだそうです。</p>
+
+<p>私個人としては、可能な限り名前から役割が推測できる gem パッケージ作成を心がけていきたいな、と思っています。</p>
+
+<h3 id="bundle-gem">bundle gem</h3>
+
+<p>gem パッケージの名前を決めたら、いよいよ gem パッケージの実装に着手します。
+今回は以下の環境で gem パッケージを作成しました。</p>
+
+<ul>
+  <li>OSX Mavericks 10.9.2</li>
+  <li>Ruby 2.1.0 (rvm)</li>
+  <li>Bundler 1.5.3</li>
+</ul>
+
+<p>まずは Bunlder のコマンドで gem パッケージのひな形を作成します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ bundle gem randexp-multibyte -t
+     create  randexp-multibyte/Gemfile
+     create  randexp-multibyte/Rakefile
+     create  randexp-multibyte/LICENSE.txt
+     create  randexp-multibyte/README.md
+     create  randexp-multibyte/.gitignore
+     create  randexp-multibyte/randexp-multibyte.gemspec
+     create  randexp-multibyte/lib/randexp/multibyte.rb
+     create  randexp-multibyte/lib/randexp/multibyte/version.rb
+     create  randexp-multibyte/.rspec
+     create  randexp-multibyte/spec/spec_helper.rb
+     create  randexp-multibyte/spec/randexp/multibyte_spec.rb
+     create  randexp-multibyte/.travis.yml
+Initializing git repo in /Users/shimizu.naoki/hobby/randexp-multibyte</code></pre></figure>
+
+<p>randexp-multibyte の部分は適宜作成する gem パッケージ名に置き換えてください。</p>
+
+<p>上記コマンドで指定している <strong>-t</strong> オブションは、 rpsec のテストのひな形も同時に生成するものです。
+このオプションを指定しない場合は randexp-multibyte/spec ディレクトリや .rspec ファイル、.travis.yml は作成されません。</p>
+
+<p>次に作成したひな形を github に登録しておきます。 <a href="http://www.github.com">github.com</a> にアクセスしリポジトリを作成後、以下の要領でひな形を push します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ cd randexp-multibyte
+$ git commit -am "first commit"
+$ git remote add origin git@github.com:{user_name}/randexp-multibyte.git
+$ git push -u origin master</code></pre></figure>
+
+<p>github への登録が終われば、 Bundler で生成したひな形を編集して gem パッケージを実装していきます。
+まず、 randexp-multibyte.gemspec ファイルを編集します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<span class="n">lib</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../lib'</span><span class="p">,</span> <span class="kp">__FILE__</span><span class="p">)</span>
+<span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span> <span class="k">unless</span> <span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
+<span class="nb">require</span> <span class="s1">'randexp/multibyte/version'</span>
+
+<span class="no">Gem</span><span class="o">::</span><span class="no">Specification</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">spec</span><span class="o">|</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">name</span>          <span class="o">=</span> <span class="s2">"randexp-multibyte"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">version</span>       <span class="o">=</span> <span class="no">Randexp</span><span class="o">::</span><span class="no">Multibyte</span><span class="o">::</span><span class="no">VERSION</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">authors</span>       <span class="o">=</span> <span class="p">[</span><span class="s2">"Naoki Shimizu"</span><span class="p">]</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">email</span>         <span class="o">=</span> <span class="p">[</span><span class="s2">"deme0607@gmail.com"</span><span class="p">]</span>
+  <span class="c1">#spec.summary      = %q{TODO: Write a short summary. Required.}</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">summary</span>       <span class="o">=</span> <span class="sx">%q{randexp extension for multibyte characters}</span>
+  <span class="c1">#spec.description  = %q{TODO: Write a longer description. Optional.}</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">description</span>   <span class="o">=</span> <span class="sx">%q{randexp extension for multibyte characters}</span>
+  <span class="c1">#spec.homepage     = ""</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">homepage</span>      <span class="o">=</span> <span class="s2">"https://github.com/deme0607/randexp-multibyte"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">license</span>       <span class="o">=</span> <span class="s2">"MIT"</span>
+
+  <span class="n">spec</span><span class="p">.</span><span class="nf">files</span>         <span class="o">=</span> <span class="sb">`git ls-files -z`</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\x0</span><span class="s2">"</span><span class="p">)</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">executables</span>   <span class="o">=</span> <span class="n">spec</span><span class="p">.</span><span class="nf">files</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{^bin/}</span><span class="p">)</span> <span class="p">{</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">test_files</span>    <span class="o">=</span> <span class="n">spec</span><span class="p">.</span><span class="nf">files</span><span class="p">.</span><span class="nf">grep</span><span class="p">(</span><span class="sr">%r{^(test|spec|features)/}</span><span class="p">)</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">require_paths</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"lib"</span><span class="p">]</span>
+
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"bundler"</span><span class="p">,</span> <span class="s2">"~&gt; 1.5"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"rake"</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_development_dependency</span> <span class="s2">"rspec"</span>
+
+  <span class="c1">#追記</span>
+  <span class="n">spec</span><span class="p">.</span><span class="nf">add_dependency</span> <span class="s2">"randexp"</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>ひとまず TODO の summary と description の項目を埋めれば OK です。 homepage には先ほど登録した github のリポジトリの URL を記入すると良いでしょう。</p>
+
+<p>また、作成する gem パッケージが既存の gem パッケージに依存する場合は <strong>add_dependency</strong> オプションを追加します。 randexp-multibyte は randexp に依存しているので、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">spec.add_dependency "randexp"</code></pre></figure>
+
+<p>を追記しています。</p>
+
+<p>次にバージョンナンバーの定義です。 lib/randexp/multibyte/version.rb ファイルを編集しバージョンナンバーを記述します。 <strong>bundle gem</strong> コマンドで作成したひな形は以下のようになっています。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Randexp</span>
+  <span class="k">module</span> <span class="nn">Multibyte</span>
+    <span class="no">VERSION</span> <span class="o">=</span> <span class="s2">"0.0.1"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>今回のバージョンナンバーは初期状態の 0.0.1 のままにしてあります。</p>
+
+<p>バージョンナンバーを定義すると、具体的な実装に取り掛かります。 randexp-multibyte は require されると lib/randexp/multibyte.rb が読み込まれます。</p>
+
+<p>あとは通常の Module や Class を実装するのと同じ要領で、 gem パッケージの機能を実装していきます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
+ 
+<span class="k">module</span> <span class="nn">Randexp</span>
+  <span class="k">module</span> <span class="nn">Multibyte</span>
+    <span class="c1"># 機能を実現するコード</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>Bundler で gem パッケージを作る際の注意点として、 Bundler で生成されるひな形は名前空間が Module として定義されるということが挙げられます。</p>
+
+<p>上記のように randexp/multibyte.rb では Module として Randexp::Multibyte が定義されています。</p>
+
+<p>しかし拡張元の Randexp は Class として定義されているため、 Bundler のひな形ファイルから randexp を require すると Class と Module の Randexp を二重に定義することになるためエラーが発生します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
+<span class="nb">require</span> <span class="s2">"randexp"</span> <span class="c1"># class Randexp</span>
+ 
+<span class="k">module</span> <span class="nn">Randexp</span> <span class="c1">#=&gt; TypeError: Randexp is not a module</span>
+  <span class="k">module</span> <span class="nn">Multibyte</span>
+
+
+</code></pre>
+</div>
+
+<p>Bundler には Class による定義のひな形を生成するオプションは現状ないようなので、 Class を定義したい場合は Bundler が生成したファイルの module という記述を class に置換する必要があります。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
+<span class="nb">require</span> <span class="s2">"randexp"</span>
+ 
+<span class="k">class</span> <span class="nc">Randexp</span>
+  <span class="k">class</span> <span class="nc">Multibyte</span>
+
+
+</code></pre>
+</div>
+
+<p>作成中の gem パッケージをローカルで試したい場合は、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ bundle install # 依存モジュール (rake など) のインストール
+$ bundle exec rake install   # gem パッケージの build と install</code></pre></figure>
+
+<p>を実行すると gem パッケージがビルドされ、インストールされます。</p>
+
+<h3 id="rubygems-への公開">RubyGems への公開</h3>
+
+<p>gem パッケージの機能を満たす実装が済んだら、いよいよ RubyGems.org への公開です。 gem パッケージの公開も、 Bundler の rake タスクで簡単に実行することができます。</p>
+
+<p>まずは <a href="https://rubygems.org/sign_up">RubyGems.org のサインアップページ</a>でアカウントを作成しておきます。</p>
+
+<p>アカウントを作成後、 gem パッケージを RubyGems.org にアップロードするための API Key を ~/.gem/credentials に登録する必要があります。 RubyGems.org の<a href="https://rubygems.org/profile/edit">プロフィールページ</a>に API Key が記載されています。 API Key を記述した設定ファイルをダウンロードするための API も用意されているので、今回はそれを利用します。以下のコマンドを実行すると、 ~/.gem/credentials に API Key を登録することができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ curl -u [ユーザ id] https://rubygems.org/api/v1/api_key.yaml &gt; ~/.gem/credentials; chmod 0600 ~/.gem/credentials</code></pre></figure>
+
+<p>コマンドを実行すると、途中でパスワードを求められるので RubyGems.org で登録したアカウントのパスワードを入力します。また、 Ruby 2.0 以降にバンドルされている RubyGems の 2.0 系は ~/.gem/credentials のパーミッションが 600 でないとエラーになるように変更されているため、パーミッションの変更も同時に行っています。</p>
+
+<p>API Key の登録を終えたら、加えた変更を全て commit した後、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ bundle exec rake release</code></pre></figure>
+
+<p>コマンドを実行することで</p>
+
+<ul>
+  <li>設定したバージョンナンバーでのタグ付け</li>
+  <li>gem パッケージのビルド</li>
+  <li>github と RubyGems.org への push</li>
+</ul>
+
+<p>が実行されます。</p>
+
+<p>以上で RubyGems への公開が完了しました。</p>
+
+<p>ここまでの作業が完了すると、ついに作成した gem パッケージを全世界に向けて公開したことになりました！</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gem install randexp-multibyte</code></pre></figure>
+
+<p>で RubyGems.org から gem パッケージをインストールすることができます。</p>
+
+<h2 id="randexp-multibyteを公開してわかったこと">“randexp-multibyte”を公開してわかったこと</h2>
+
+<p>ここでは初心者 Rubyist が gem パッケージを作成・公開してみて新たにわかったことを記載したいと思います。</p>
+
+<h3 id="ruby-のバージョン依存">Ruby のバージョン依存</h3>
+
+<p>自分で作成した gem パッケージを公開すると、多くの方々がその gem パッケージを利用することになります。
+多くの方々が利用するということは、多くの環境でその gem パッケージが動作するということです。</p>
+
+<p>今回の randexp-multibyte は Ruby 2.1.0 の環境で作成し、好調に動作しているように見えていたのですが、ある時「 Ruby 1.9.3 環境では randexp-multibyte がエラーを起こし動作しない」というフィードバックを受けました。</p>
+
+<p>エラーの内容は以下のようなものです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby -v
+ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-darwin13.0.2]
+$  ruby -r randexp-multibyte -e 'p /[:japanese:]/.gen'
+/Users/shimizu.naoki/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby/1.9.1/rubygems/core_ext/kernel_require.rb:55:in
+ `require': /Users/shimizu.naoki/.rvm/gems/ruby-1.9.3-p484/gems/randexp-multibyte-0.0.2/lib/randexp/multibyte/randexp_ext/randgen.rb:5:
+ invalid multibyte char (US-ASCII) (SyntaxError)</code></pre></figure>
+
+<p>これは Ruby のバージョン 2.0 未満のデフォルトのスクリプトエンコーディングが US-ASCII であることを考慮していないために発生したバグでした。(バージョン 2.0.0 以降は UTF-8 に変更)</p>
+
+<p>randexp-multibyte には以下のようなコードが含まれていたため、 Ruby 2.0.0 未満で require するとコードに不正な文字列が含まれていると解釈され、エラーとなります。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">hiragana</span><span class="p">(</span><span class="n">options</span> <span class="o">=</span> <span class="p">{})</span>
+  <span class="n">length</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:length</span><span class="p">]</span> <span class="o">||</span> <span class="mi">1</span>
+  <span class="n">length</span><span class="p">.</span><span class="nf">of</span> <span class="p">{</span> <span class="p">(</span><span class="s1">'ぁ'</span><span class="p">.</span><span class="nf">.</span><span class="s1">'ん'</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">pick</span> <span class="p">}.</span><span class="nf">join</span> <span class="c1"># invalid multibyte char (US-ASCII) </span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>こちらのバグは既に修正済みのバージョン 0.0.3 をリリースしました。
+修正方法としては</p>
+
+<ul>
+  <li>該当するファイルに Magic Comment を追記し、スクリプトエンコーディングを UTF-8 にする</li>
+  <li>gemspec ファイルの required_ruby_version オプションを指定して対応する Ruby のバージョンを狭める</li>
+</ul>
+
+<p>といった選択肢が考えられますが、 randexp-multibyte は Ruby の新しいバージョン固有の機能を使用しているわけではなく、今回のバグはスクリプトエンコーディング指定の問題に過ぎないため、 Magic Comment を追記する方法を採用しました。</p>
+
+<p>今回の経験で、多くの方が使用するようなコードを書く際は、</p>
+
+<ul>
+  <li>使用する言語のバージョン</li>
+  <li>動作するプラットフォーム</li>
+</ul>
+
+<p>なども考慮に入れて設計・実装を行うことが重要であるという気付きを得ることができました。</p>
+
+<p>また randexp-multibyte では未導入ですが、<a href="https://travis-ci.org/">Travis CI</a> を gem パッケージのリポジトリに仕掛けておくと github に push される度に Ruby の各バージョンでテストを実行する、といったことも可能です。</p>
+
+<h3 id="新たな機能要望">新たな機能要望</h3>
+
+<p>コードが多くの方の目に触れることで、多くの機能要望をいただくことができました。</p>
+
+<p>当初から実装したいと考えていたが、手が回らず実装できていない機能もあれば、自分では思いもよらなかったような要望もあります。</p>
+
+<p>特に私自身と似た業務に携わっている SWET の方々からはテストの考え方に根ざしたフィードバックを数多く得ることができ、 gem パッケージを作成する Rubyist としての技術だけでなく、「どういったテストが効果的で、そのテストを実行するにあたり理想的な gem パッケージはどのようなものか」といった知見も得ることができました。</p>
+
+<h3 id="その他-gem-パッケージを公開することで得たもの">その他、 gem パッケージを公開することで得たもの</h3>
+
+<p>上述のチュートリアルをご覧になるとわかるのですが、 gem パッケージの公開というのは本当に簡単です。
+誰でも簡単に公開できてしまうので、世に出ている gem パッケージは決して完璧なものではありません。
+私のような超初心者が書いた gem パッケージも少なくありません。</p>
+
+<p>だからこそ、普段使用している gem パッケージも単なるブラックボックスとしておくのではなく、何らかの問題が含まれている可能性を常に意識しておくという感覚を身につけることができました。</p>
+
+<p>そして何より、これは gem パッケージだけに限らず OSS 全てに言えることではありますが、「コードを公開してしまうと後にはひけなくなる」ということはスキルアップ・脱初心者に向けて非常に大きな意味があると思います。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<h3 id="randexp-multibyte-の今後">randexp-multibyte の今後</h3>
+
+<p>上記「新たな機能要望」にもある通り、皆様の目に触れるようにしたことで多くの改善点・新機能の要望が見えてきました。直近で取り組む予定の新機能として、「多言語対応に向けた設計の見直し」と「文字コードの境界値を突ける仕組みの追加」があります。</p>
+
+<p>特に後者の「文字コードのエッジケースを突ける仕組みの追加」に関しては、普段からテストに深く関わっておられる SWET の方々から得られた非常に重要なフィードバックです。</p>
+
+<p>プロダクトの文字化け問題に悩まされた経験のある方ならご存じかもしれませんが、文字化けが起こるのは「JIS X 0213 には定義されているが JIS X 0208 には定義されていない文字」といったような、文字コード上のエッジケースであることがほとんどです。</p>
+
+<p>しかし randexp-multibyte では漢字とハングルは定義ファイルにベタ書きしたものからランダムに取得するという非常に原始的な作りになっています。</p>
+
+<p>このような設計では文字化け問題を未然に防ぐテストを書く (文字コードのエッジケースを突く文字列を生成する) ことはできません。</p>
+
+<p>「ひとまずランダムな文字列を生成できるようになった」にすぎない randexp-multibyte を、こういった多言語対応アプリケーションも文字化け対策に広く利用できるようにするため、利用者が文字コードのエッジケースを突いた文字列を生成できるような機能を追加したいと考えています。</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>この度は SWET の先輩 Rubyist の方々のご協力のもと、私のような初心者 Rubyist がるびまの記事を執筆することができました。 randexp-multibyte の改善はもちろんですが、凄腕 Rubyist の方々に囲まれた今の環境を 120% 活用し、業務内外問わず Ruby 界、そしてインターネット全体のお役に立てるようなコードをどんどん書いていきます。</p>
+
+<p>次にるびまに記事を寄稿させていただく際には、初心者 Rubyist としてではなく、凄腕の Rubyist として成長した姿をご報告できればと思います。</p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

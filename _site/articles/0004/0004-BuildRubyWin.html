@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>build Ruby on Windows 【第 1 回】</title>
+  <meta name="description" content="書いた人：たむらけんいち">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0004/0004-BuildRubyWin.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>build Ruby on Windows 【第 1 回】</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0004/0004-BuildRubyWin.html" class="hatena-bookmark-button" data-hatena-bookmark-title="build Ruby on Windows 【第 1 回】" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0004/0004-BuildRubyWin.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0004/0004-BuildRubyWin.html" data-text="build Ruby on Windows 【第 1 回】">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：たむらけんいち</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#ビルドコンパイルするとは" id="markdown-toc-ビルドコンパイルするとは">ビルド(コンパイル)するとは？</a>    <ul>
+      <li><a href="#開発環境" id="markdown-toc-開発環境">開発環境</a></li>
+      <li><a href="#ruby-が対応している-windows-開発環境コンパイラ" id="markdown-toc-ruby-が対応している-windows-開発環境コンパイラ">Ruby が対応している Windows 開発環境(コンパイラ)</a></li>
+    </ul>
+  </li>
+  <li><a href="#そこで-mingw-ですよ" id="markdown-toc-そこで-mingw-ですよ">そこで MinGW ですよ</a>    <ul>
+      <li><a href="#minimalist-gnu-for-windows" id="markdown-toc-minimalist-gnu-for-windows">Minimalist GNU for Windows</a></li>
+      <li><a href="#msys" id="markdown-toc-msys">MSYS?</a></li>
+    </ul>
+  </li>
+  <li><a href="#インストールしてみる" id="markdown-toc-インストールしてみる">インストールしてみる</a>    <ul>
+      <li><a href="#mingw-セットアップ" id="markdown-toc-mingw-セットアップ">MinGW セットアップ</a></li>
+      <li><a href="#msys-1" id="markdown-toc-msys-1">MSYS</a></li>
+    </ul>
+  </li>
+  <li><a href="#通はコンソールで-cui" id="markdown-toc-通はコンソールで-cui">通はコンソールで CUI</a>    <ul>
+      <li><a href="#rxvt" id="markdown-toc-rxvt">rxvt</a></li>
+      <li><a href="#bash" id="markdown-toc-bash">bash</a></li>
+    </ul>
+  </li>
+  <li><a href="#gcc--v-で確認" id="markdown-toc-gcc--v-で確認">gcc -v で確認</a></li>
+  <li><a href="#最初は-helloc-だ" id="markdown-toc-最初は-helloc-だ">最初は hello.c だ</a>    <ul>
+      <li><a href="#でも-windows-連携" id="markdown-toc-でも-windows-連携">でも Windows 連携</a></li>
+      <li><a href="#メモ帳でコードを書く" id="markdown-toc-メモ帳でコードを書く">メモ帳でコードを書く</a></li>
+      <li><a href="#gcc-helloc" id="markdown-toc-gcc-helloc">gcc hello.c</a></li>
+    </ul>
+  </li>
+  <li><a href="#rubyexe作ってみるよ" id="markdown-toc-rubyexe作ってみるよ">ruby.exe作ってみるよ</a>    <ul>
+      <li><a href="#ruby-182-preview3をコンパイルしてみる" id="markdown-toc-ruby-182-preview3をコンパイルしてみる">ruby-1.8.2 preview3をコンパイルしてみる</a></li>
+      <li><a href="#解凍展開しなきゃ" id="markdown-toc-解凍展開しなきゃ">解凍(展開)しなきゃ</a></li>
+      <li><a href="#たったこんだけ" id="markdown-toc-たったこんだけ">たったこんだけ？</a></li>
+    </ul>
+  </li>
+  <li><a href="#道は遠い" id="markdown-toc-道は遠い">道は遠い</a>    <ul>
+      <li><a href="#課題その１拡張ライブラリ" id="markdown-toc-課題その１拡張ライブラリ">課題その１：拡張ライブラリ</a></li>
+      <li><a href="#課題その２エディタ" id="markdown-toc-課題その２エディタ">課題その２：エディタ</a></li>
+    </ul>
+  </li>
+  <li><a href="#あとがき" id="markdown-toc-あとがき">あとがき</a></li>
+  <li><a href="#link" id="markdown-toc-link">Link</a>    <ul>
+      <li><a href="#ruby関連" id="markdown-toc-ruby関連">Ruby関連</a></li>
+      <li><a href="#rubyのビルド" id="markdown-toc-rubyのビルド">Rubyのビルド</a></li>
+      <li><a href="#mingw関連" id="markdown-toc-mingw関連">MinGW関連</a></li>
+    </ul>
+  </li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<h3 id="はじめに">はじめに</h3>
+
+<p>あなたはコンピュータを使っているだろうか。「もちろん。プログラムを使うってことは、コンピュータに命令しているってことだからね」</p>
+
+<p>果たしてそうなのだろうか？</p>
+
+<p>プログラムは OS を介してコンピュータに命令をしている。でもあなたとプログラムの関係は本当に</p>
+
+<p><strong>(主) あ な た  - (従) プ ロ グ ラ ム</strong></p>
+
+<p>なのだろうか。</p>
+
+<p>人間は仕様という名前の制限の下で使わされてるに過ぎないのではないのか？</p>
+
+<p>Ruby は、ライセンス<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> に基づいて、
+公開されているフリーソフトウェア <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> だ。
+ここでは「動かすことの出来る有用なプログラムのソースコードがある」事実をひとまず考えてみたい。</p>
+
+<p>ソースコードは ruby インタプリタの設計図だ。理論的には、あなたはその全てを確認することが出来るし
+自分の思うままに書き換えることが可能である。昔から ruby に 『++』(インクリメント)を導入して欲しい
+というリクエストがあるが、これだって自分で仕様を考えて、自分でコーディングして、自分で 
+ruby インタプリタを作りさえすれば手に入る。自分の手のひらの中だけでだけど
+<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<p>この記事を読んでいるあなたは、(アプリケーション)プログラムを触るだけでなく、スクリプティング言語
+に興味があるのだと思う。自分から PC に歩み寄る選択肢を選んだあなたなら、この気持ちは判ると思う。</p>
+
+<p>__ そ こ に ソ ー ス が あ る の だ か ら 、 コ ン パ イ ル し な き ゃ 損 な の だ __</p>
+
+<p>あるいは、こう考える人もいるかも知れない。「プログラムを作るっていったって、OS の制限下での
+話じゃないか」その通りである。しかし我々には Linux もあるし、FreeBSD / NetBSD / OpenBSD もあるし、
+ソース公開したソラリスや OpenDOS や、えーっとえーっとたくさんのフリー OS があるではないか。</p>
+
+<p>OS をいぢる前に(もちろん、いぢることから始めても良いけれど)プログラムをビルド(コンパイル)することから始めてみようじゃないか。
+この連載は Windows OS (具体的には、Windows 2000 以降の Microsoft 製の OS たち)上で
+<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> 、
+ruby.exe をビルドする方法について説明していく。</p>
+
+<h3 id="ビルドコンパイルするとは">ビルド(コンパイル)するとは？</h3>
+
+<p>ソースコードをコンピュータが処理可能な命令を出すモノ(プログラム)に変換する作業がコンパイルだ。
+正確にはコンパイルとはソースコード→オブジェクトコードの変換を指すため、最終的なプログラム
+および必要なファイル群<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> を生成する
+後処理的な部分も合わせて「ビルドする」といった言い方<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> を本稿では用いることとする。</p>
+
+<h4 id="開発環境">開発環境</h4>
+
+<p>開発環境とは、ビルドするためのツール群のことだ。コンパイラやリンカなどのツール、ヘッダ/ライブラリ<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>などが含まれる。
+また、OS やコンパイラによっても、ビルドに必要なツールは変わっていく。</p>
+
+<p>Windows OS には、基本的に開発環境は含まれないのでインストールする必要がある。</p>
+
+<h4 id="ruby-が対応している-windows-開発環境コンパイラ">Ruby が対応している Windows 開発環境(コンパイラ)</h4>
+
+<p>そもそも Ruby は作者のまつもとさん曰く、「Windows は(触ってないから)知らない」(<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/40205">ruby-list:40205</a>)と明言していることもあって、各環境毎にコミッターがいる状態である。</p>
+
+<dl>
+  <dt>MSWin32</dt>
+  <dd>俗にいう VC++(Microsoft VisualStudio) をコンパイラとして利用。うさ氏 ( <a href="http://www.garbagecollect.jp/ruby/mswin32/ja/">http://www.garbagecollect.jp/ruby/mswin32/ja/</a> ) が主に担当。なかださん ( <a href="http://nokada.jin.gr.jp/t/">http://nokada.jin.gr.jp/t/</a> ) や 、eban さん ( <a href="http://jarp.jin.gr.jp/diary/">http://jarp.jin.gr.jp/diary/</a> ) や他多くのコントリビュータが対応。</dd>
+  <dt>MinGW</dt>
+  <dd>MSWin32 と同じ Runtime を利用する GCC。環境構築が容易という利点を持つ。担当は、Ruby全般でコントリビュートしている eban さん ( <a href="http://jarp.jin.gr.jp/diary/">http://jarp.jin.gr.jp/diary/</a> )</dd>
+  <dt>Cygwin</dt>
+  <dd>UNIX エミュレート環境で動く GCC 。メインはMinGW 同様 ebanさん。</dd>
+  <dt>BCC32</dt>
+  <dd>Borland FreeCompilerを使用(bcc32.exe) 。もりきゅう氏 ( <a href="http://moriq.tdiary.net/">http://moriq.tdiary.net/</a> ) が基礎の対応(<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/31865">ruby-list:31865</a>)をし、現在小西さん ( <a href="http://www001.upp.so-net.ne.jp/konishi/ruby/ja/">http://www001.upp.so-net.ne.jp/konishi/ruby/ja/</a> ) がバイナリ提供などコントリビュートしている。</dd>
+</dl>
+
+<p>詳しく知りたい向きは、<a href="http://i.loveruby.net/d/20040310.html#p01">青木日記突込付(2004/03/10)</a>および、<a href="http://www.ruby-lang.org/ja/install.cgi?cmd=view;name=Microsoft+Windows%C8%C7%A4%CE%A5%D3%A5%EB%A5%C8%B4%C4%B6%AD%A4%CB%A4%E8%A4%EB%B0%E3%A4%A4">Microsoft Windows版のビルト環境による違い</a>(ちょっと内容が古い)を読んで欲しい。</p>
+
+<h3 id="そこで-mingw-ですよ">そこで MinGW ですよ</h3>
+
+<p>さて本稿では MinGW の開発環境をセットアップして Ruby のビルドに挑戦しようと思う。なぜ MinGW かというと</p>
+
+<ol>
+  <li>Free で提供されているセットアッププログラムから簡単にインストール可能</li>
+  <li>UNIX 的考えを比較的考慮しなくても利用出来る</li>
+  <li>別 PC に持っていく場合の可搬性に優れている</li>
+</ol>
+
+<p>それでは、もう少し詳細に MinGW について見ていこう。</p>
+
+<h4 id="minimalist-gnu-for-windows">Minimalist GNU for Windows</h4>
+
+<p><a href="http://www.mingw.org/">MinGW Project</a> の WEB PAGE において MinGWはこう説明されている。</p>
+
+<blockquote>
+  <p>MinGW: A collection of freely available and freely distributable Windows specific header files and import libraries combined with GNU toolsets that allow one to produce native Windows programs that do not rely on any 3rd-party C runtime DLLs.</p>
+</blockquote>
+
+<p>なんちゃって日本語訳すると「MinGWってのはさぁ、とりあえず他に何もインストールしなくても動作するプログラムを作るための 自由に使える GNU の開発環境の Windows版なんだよね」くらいの意味である。</p>
+
+<p>この文章のキモは次の2点にある</p>
+
+<ol>
+  <li>他に何もインストールしなくても動作する</li>
+  <li>GNUの開発環境</li>
+</ol>
+
+<p>同様に GCC というコンパイラが使える Cygwin では、 cygwin1.dll という動作用の DLL 他を入れないと動かない<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>、しかし、UNIX 系 OS とほぼ同等の環境まで用意してくれる という違いがある。MSWin32版および bccwin32版でも基本的にフリーで環境をそろえることも可能なのだが、今回はインストールなどの手間が一番小さいと思われる MinGW および MSYS にて環境を作ることとする。</p>
+
+<h4 id="msys">MSYS?</h4>
+
+<p>さていきなり出てきた MSYS であるが、先程の<a href="http://www.mingw.org/">MinGW Project</a>にはこう説明がある。</p>
+
+<blockquote>
+  <p>MSYS: A Minimal SYStem to provide POSIX/Bourne configure scripts the ability to execute and create a Makefile used by make.</p>
+</blockquote>
+
+<p>またまた適当になんちゃって訳すると「最小限の POSIX<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup> と configureスクリプトが動作して Makefileを作ることが出来る環境」ってとこだ。元々 UNIX環境を祖とする Rubyの場合 UNIX的環境(上記 POSIXおよび configureスクリプトが動作する環境だ)がある方がビルドの手間がかからない。
+まぁ、知ってるに越した事はないんだが「コンパイラ以外のビルドに必要なツール群が入ってる」くらいの認識でも今は OK だ。おいおい知るハメにもなるわけだし。</p>
+
+<p>MinGW/MSYS環境と Cygwin 環境との大きな違いはコンパイルした実行ファイルが、動作用の DLL(msys-1.0.dll)が無くても動くことを前提にしてる部分である。</p>
+
+<p>MinGW/MSYS に関しては MinGW公式ページの <a href="http://www.mingw.org/mingwfaq.shtml">FAQ</a>や<a href="http://www.mingw.org/docs.shtml">Documentation</a>にも情報がある<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup> 。この後紹介するページにも有用な解説もあるので見て欲しい。</p>
+
+<h3 id="インストールしてみる">インストールしてみる</h3>
+
+<p>それではインストールについて解説する。といっても、インストール自体の解説は行わない。各自で <a href="GoogleJ:MinGW インストール">GoogleJ:MinGW インストール</a> から探して欲しい。だけだとあんまりなので、例えば、</p>
+
+<dl>
+  <dt>MinGWを使う</dt>
+  <dd><a href="http://www.geocities.jp/turtle_wide/tools/gccwin.htm">http://www.geocities.jp/turtle_wide/tools/gccwin.htm</a> :画像付きの説明ページあり</dd>
+  <dt>Win32 + MSYS + MinGW 2.0 で SDL の開発環境を構築</dt>
+  <dd><a href="http://cefiro.homelinux.org/topics/SDL/setup-win32-mingw-2.0.html">http://cefiro.homelinux.org/topics/SDL/setup-win32-mingw-2.0.html</a> :SDL <sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup> 用に環境構築を説明している。ただし現在は MinGW3.0</dd>
+</dl>
+
+<p>がまとまっている。で、今回は MinGW/MSYS セットアップのみをインストールする。</p>
+
+<ul>
+  <li><a href="http://prdownloads.sf.net/mingw/MinGW-3.0.0-1.exe?download">http://prdownloads.sf.net/mingw/MinGW-3.0.0-1.exe?download</a></li>
+  <li><a href="http://prdownloads.sf.net/mingw/MSYS-1.0.9.exe?download">http://prdownloads.sf.net/mingw/MSYS-1.0.9.exe?download</a></li>
+</ul>
+
+<h4 id="mingw-セットアップ">MinGW セットアップ</h4>
+
+<p>ファイルをダウンロードしたら、MinGW-3.0.0-1.exe をダブルクリックするとインストーラが起動するので画面の指示に従うだけである。</p>
+
+<p><strong>以 上</strong></p>
+
+<p>というか、上記 Google経由のページにたくさんあるので。</p>
+
+<p>一つだけ忠告するならば、インストール先は C:\MinGW にしとくが吉である。他のアップデータパッケージに関しては入れないことを前提に以降は解説を行う。</p>
+
+<h4 id="msys-1">MSYS</h4>
+
+<p>こちらも MinGW 同様インストーラからマウスクリックするだけである。インストール先は C:\MSYS\1.0 にしておく。最後にコマンドプロンプトで入力を求めてくるので</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">This is a post install process that will try to normalize between
+your MinGW install if any as well as your previous MSYS installs
+if any.  I don't have any traps as aborts will not hurt anything.
+Do you wish to continue with the post install? [yn ]</code></pre></figure>
+
+<p><em>「インストール後処理をするか？」</em> なので、『y』を入力してエンター。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Do you have MinGW installed? [yn ] y</code></pre></figure>
+
+<p><em>「MinGW インストール済みか？」</em> その通りなので、『y』を入力してエンター。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Please answer the following in the form of c:/foo/bar.
+Where is your MinGW installation?</code></pre></figure>
+
+<p><em>「MinGW のインストール場所を答えよ」</em> なので、『C:/MinGW』を入力してエンター。</p>
+
+<p>__ こ れ だ け で あ る __</p>
+
+<h3 id="通はコンソールで-cui">通はコンソールで CUI</h3>
+
+<p>さて、MinGW/MSYS 環境であるが、どうやって触るかというとコマンドプロンプトのようにキーボードから入力する環境であるコンソールが用意されている。</p>
+
+<h4 id="rxvt">rxvt</h4>
+
+<p>MSYS のアイコンから起動すると、一瞬コマンドプロンプトが表示された後で MINGW32 というタイトルの画面が表示される。</p>
+
+<p><em><img src="/images/0004-BuildRubyWin/msys_rxvt.png" alt="msys_rxvt.png" /></em></p>
+
+<p>rxvt は Linuxなどの UNIX互換OSなどで動くターミナルプログラムの移植版である。詳しくはこれも <a href="GoogleJ:rxvt">GoogleJ:rxvt</a>から探索して欲しい。そうそう、こいつは初期設定のままでは、日本語は通らない <sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>。</p>
+
+<h4 id="bash">bash</h4>
+
+<p>Linuxディストリビューションではシェルはほとんどコレである。詳しいことは、<a href="GoogleJ:bash">GoogleJ:bash</a>する … というのも飽きてきたな。CUIであっても最近のシェルはファイル名補完機能というものがあって、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/c/Do(TABキー)                        →  /c/Documents and Settings
+/c/Documents and Settings/ta(TABキー) →  /c/Documents and Settings/tamura</code></pre></figure>
+
+<p>などと TAB キーを押すことで、入力を補佐してくれる機能だ。ちなみに MSYS では C:\は /c/ となる。この辺は慣れるしかないので、bash に関することと MSYS特有なことを区別して理解していく必要があるだろう。</p>
+
+<h3 id="gcc--v-で確認">gcc -v で確認</h3>
+
+<p>さて、インストールの確認も兼ねてコンパイラである gcc の環境を見ておこう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gcc -v
+Reading specs from c:/mingw/bin/../lib/gcc-lib/mingw32/3.2.3/specs
+Configured with: ../gcc/configure --with-gcc --with-gnu-ld
+--with-gnu-as --host=mingw32 --target=mingw32 --prefix=/mingw
+--enable-threads --disable-nls --enable-languages=c++,f77,objc
+--disable-win32-registry --disable-shared --enable-sjlj-exceptions
+Thread model: win32
+gcc version 3.2.3 (mingw special 20030504-1)</code></pre></figure>
+
+<p>ここで、gccがありません系の反応だったり、specファイルが異常などの表示が無ければインストールは正常である。何か実際にコンパイルしてみよう。</p>
+
+<h3 id="最初は-helloc-だ">最初は hello.c だ</h3>
+
+<p>こういう場合は古(いにしえ)より『Hello,World!!』と表示するプログラムを書くことになっている。で、早速ということだが、まずどうやってソースコードを書くのか？</p>
+
+<h4 id="でも-windows-連携">でも Windows 連携</h4>
+
+<p>まず MSYSというか rxvt 上でコードを書くためのエディタとしては、vi がある。</p>
+
+<p>__ O K ! v i  問 題 な い っ __</p>
+
+<p>という向きはそのまま書いていただきたい。無問題である。が、vi のキー操作を知らない向きにいきなりコードを書けってのも厳しい話だ。よって、今回は Windowsのメモ帳で書くこととする。が、しかし</p>
+
+<p>__ rxvt で作業しているディレクトリに存在しているファイルを、どうやってメモ帳で編集するのか？__</p>
+
+<h4 id="メモ帳でコードを書く">メモ帳でコードを書く</h4>
+
+<p>今回はその辺は、きっちりやり方を説明させていただく。しかし</p>
+
+<p><strong>今 度 だ け だ よ ん <sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup></strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ mkdir src
+$ cd src</code></pre></figure>
+
+<p>現在は、ホームディレクトリ(/home/#{ユーザー名})にいると思うのでソースコード用にディレクトリを用意して移動する。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ start .
+$</code></pre></figure>
+
+<p>これで、Homeディレクトリをエクスプローラが開いた状態で表示されるはずだ <sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>
+後は何とかメモ帳から hello.cファイルを開いた状態にして欲しい。</p>
+
+<p>そうしたら、以下のソースコードをコピペだ。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/* hello.c */
+#include &lt;stdio.h&gt;
+int main(void)
+{
+  printf("Hello,World!!\n");
+  return(0);
+}</code></pre></figure>
+
+<h4 id="gcc-helloc">gcc hello.c</h4>
+
+<p>ではコンパイルだ。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gcc hello.c
+$ ls
+a.exe
+$ a
+Hello,World!!</code></pre></figure>
+
+<p><sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup> 
+特に問題は無いはずだ。</p>
+
+<h3 id="rubyexe作ってみるよ">ruby.exe作ってみるよ</h3>
+
+<p>さてそれでは、第１回目を締めくくる前に Ruby をソースからビルドしてみよう。</p>
+
+<h4 id="ruby-182-preview3をコンパイルしてみる">ruby-1.8.2 preview3をコンパイルしてみる</h4>
+
+<p>現在の安定版は、1.8.1である。それから次期安定版の1.8.2 preview3 がアナウンスされている。最新のソースコードをWEB経由でCVSでも取得可能ではある。今回は新しさ、安定度、当原稿の都合を考え、1.8.2 preview3を対象とする。</p>
+
+<p>インターネットエクスプローラでも、Firefoxでも何でも構わないので、<a href="ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.2-preview3.tar.gz">ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.2-preview3.tar.gz</a> をダウンロードする。その後で先ほど作った src ディレクトリにコピーをして欲しい。</p>
+
+<h4 id="解凍展開しなきゃ">解凍(展開)しなきゃ</h4>
+
+<p>再度 rxvtコンソールでの操作だ。コマンドラインでソースコードを解凍しよう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ tar xfz ruby-1.8.2-preview3.tar.gz
+$ ls
+ruby-1.8.2-preview3.tar.gz ruby/
+$ mv ruby ruby-1.8.2-preview3
+$ cd ruby-1.8.2-preview3</code></pre></figure>
+
+<p>展開した rubyソースコードのバージョンなどが判るようにディレクトリ名を変更しておく。</p>
+
+<h4 id="たったこんだけ">たったこんだけ？</h4>
+
+<p>それでは、<a href="http://www.ruby-lang.org/ja/install.cgi?cmd=view;name=UNIX%C1%B4%C8%CC">Ruby インストールガイド UNIX全般</a>の通りにコマンドを入力する。<a href="http://www.ruby-lang.org/ja/install.cgi?cmd=view;name=mingw32+%28%A5%BD%A1%BC%A5%B9%A4%AB%A4%E9%29">mingw32 (ソースから)</a>は若干古い内容なので、Cygwinを使えとか configure にオプションが必要とあるが、現在は単純にconfigureを実行するだけだ。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ./configure &amp;&amp; make
+(略)
+$ ruby -v
+ruby 1.8.2 (2004-11-06) [i386-mingw32]</code></pre></figure>
+
+<h3 id="道は遠い">道は遠い</h3>
+
+<p>さて ruby.exeも正常に作れたし、後は make install するだけと思ったあなた。はっきりいって</p>
+
+<p><strong>甘 い な</strong></p>
+
+<p>これから、MinGW の環境の内部・Windows の DLL などの仕組み・C言語とライブラリの関係などがあなたを待っている。実は Ruby と根本的には関係ないことなのだけど。</p>
+
+<p>という訳で、次回までに２つほど宿題として課題を提示させておいてもらう。</p>
+
+<h4 id="課題その１拡張ライブラリ">課題その１：拡張ライブラリ</h4>
+
+<p>今回のビルドではいくつかの拡張ライブラリ<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>が作られていない。</p>
+
+<p>以下で拡張ライブラリの名前<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>を表示させている <sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>。作られなかったライブラリの共通点を考えてみよう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ find . -name \*.so
+./ext/bigdecimal/bigdecimal.so
+./ext/digest/digest.so
+./ext/digest/md5/md5.so
+./ext/digest/rmd160/rmd160.so
+./ext/digest/sha1/sha1.so
+./ext/digest/sha2/sha2.so
+./ext/dl/dl.so
+./ext/enumerator/enumerator.so
+./ext/etc/etc.so
+./ext/fcntl/fcntl.so
+./ext/nkf/nkf.so
+./ext/racc/cparse/cparse.so
+./ext/readline/readline.so
+./ext/sdbm/sdbm.so
+./ext/socket/socket.so
+./ext/stringio/stringio.so
+./ext/strscan/strscan.so
+./ext/syck/syck.so
+./ext/tk/tkutil.so
+./ext/Win32API/Win32API.so
+./ext/win32ole/win32ole.so</code></pre></figure>
+
+<p>この原因を考えて欲しい。</p>
+
+<h4 id="課題その２エディタ">課題その２：エディタ</h4>
+
+<p>vi を操作することに問題のない向きは関係ないが、メモ帳は開発に使うにはシンプル過ぎる <sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>。
+やはりプログラミング言語用にカラーリングをしてくれたり、開発向き機能に特化したエディタの使い方に慣れた方が後々楽だ。</p>
+
+<p>以下でフリーな開発系のエディタをいくつか紹介するので、インストールして試しておいて欲しい。もちろん<a href="http://hide.maruo.co.jp/">秀丸エディタ</a>などのシェアウェアのものであっても構わない。</p>
+
+<dl>
+  <dt>Terapad</dt>
+  <dd><a href="http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html">http://www5f.biglobe.ne.jp/~t-susumu/library/tpad.html</a></dd>
+  <dt>KaoriYa.net(VIM6.3)</dt>
+  <dd><a href="http://www.kaoriya.net/#VIM63">http://www.kaoriya.net/#VIM63</a></dd>
+  <dt>まったくやる気のないぺぇじ(xyzzy)</dt>
+  <dd><a href="http://www.jsdlab.co.jp/~kamei/">http://www.jsdlab.co.jp/~kamei/</a></dd>
+  <dt>Meadow Wiki</dt>
+  <dd><a href="http://www.meadowy.org/meadow/wiki/">http://www.meadowy.org/meadow/wiki/</a></dd>
+</dl>
+
+<h3 id="あとがき">あとがき</h3>
+
+<p>本稿を書いているときに、まつもとさんより ruby-1.8.2 のリリースが 12/25に予定されていることが発表された(<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/25193">ruby-dev:25193</a>)。たくさんのコミッターの成果である。</p>
+
+<p>願わくば、未来のコミッターとなる人が、この記事を読んだ方の中から出てきてくれればと思う。</p>
+
+<h3 id="link">Link</h3>
+
+<h4 id="ruby関連">Ruby関連</h4>
+
+<dl>
+  <dt>Rubyホームページ</dt>
+  <dd><a href="http://www.ruby-lang.org/ja/">http://www.ruby-lang.org/ja/</a></dd>
+  <dt>1.8.2 preview3 リリース</dt>
+  <dd><a href="http://www.ruby-lang.org/ja/20041108.html">http://www.ruby-lang.org/ja/20041108.html</a></dd>
+</dl>
+
+<h4 id="rubyのビルド">Rubyのビルド</h4>
+
+<dl>
+  <dt>Ruby インストールガイド</dt>
+  <dd><a href="http://www.ruby-lang.org/ja/install.cgi?cmd=view;name=top">http://www.ruby-lang.org/ja/install.cgi?cmd=view;name=top</a></dd>
+  <dt>rubyビルドガイド</dt>
+  <dd><a href="http://i.loveruby.net/ja/rhg/cd/build.html">http://i.loveruby.net/ja/rhg/cd/build.html</a></dd>
+  <dt>Ruby Binaries</dt>
+  <dd><a href="http://ftp.ruby-lang.org/pub/ruby/binaries/">http://ftp.ruby-lang.org/pub/ruby/binaries/</a></dd>
+</dl>
+
+<h4 id="mingw関連">MinGW関連</h4>
+
+<dl>
+  <dt>MinGW - Minimalist GNU for Windows</dt>
+  <dd><a href="http://www.mingw.org/">http://www.mingw.org/</a></dd>
+  <dt>GnuWin32</dt>
+  <dd><a href="http://gnuwin32.sourceforge.net/">http://gnuwin32.sourceforge.net/</a></dd>
+  <dt>MinGW 関係文書の翻訳@Studio Sixnine.</dt>
+  <dd><a href="http://www.sixnine.net/cygwin/translation/index.html#s1-2">http://www.sixnine.net/cygwin/translation/index.html#s1-2</a> :FAQ や Documentation の翻訳文書</dd>
+</dl>
+
+<h3 id="著者について">著者について</h3>
+
+<p>たむら (tamura at ruby-lang dot org)</p>
+
+<p>退役エンジニア。最近人の管理だなんだで開発的な仕事が出来ないため
+逃避を兼ねてるびまや雑誌原稿を書きなぐっています。</p>
+
+<p>this writing special thanks for <em>The Police on Synchronicity</em> and <em>VIRGIN RADIO GROOVE</em></p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>GPL ライセンス、または Ruby’s と呼ばれる独自ライセンス http://www.ruby-lang.org/ja/LICENSE.txt を参照のこと&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>実は『フリーソフトウェア』の定義ってやつも難しいのだが&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>フリーソフトウェアの場合、改変が自由であるケースが多い。この辺はライセンスをきちんと確認すること&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>ユーザーが多い、なじみがないというのがチョイスした理由だ&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>ruby でいうならライブラリとかマニュアル関係とか&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>configure とかもコンパイルじゃないな&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>予め用意されている、プログラムに組み込むための材料&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>おまけに以前はこいつの動作が不安定という問題もあった。最近はかなり安定して動作するようではある&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>UNIX系で共通の開発的インターフェースの共通仕様のこと。詳細は http://www.atmarkit.co.jp/icd/root/31/5787131.html&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>残念ながら英語である。この辺に関しては英語のページを避けることは現状無理だ。ちょっとした辞書と根気と慣れがあれば何とかなるものである。探すと翻訳されたページが発見されたりするわけだが&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>http://www.libsdl.org/ フリーなクロスプラットフォームのマルチメディア開発用ライブラリ&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>http://fun.sci.fukuoka-u.ac.jp/RWiki/rw-cgi.rb?cmd=view;name=MSYS に msys.bat の修正をすることで表示は可能だと書かれている&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>これは決していぢわるで言っているのではなく、自分の頭で解決出来るやり方やクセをつける方が、その人のためだからである&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>C:\msys\1.0\home\tamura とか&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>gcc -o hello.exe hello.c など出力ファイル名を指定しなければ、a.exe が作られる。ちなみに Linuxなどの環境では ./a.out としなければ実行されない&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>C言語で記述されたRubyを拡張する機能を持つライブラリ&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>Windowsでは hogehoge.so という名前になる&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>コンパイル直後に実行だ&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p>容量が 64Kまでだったり、文字コードがShiftJISしか対応してなかったり&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RegionalRubyKaigi レポート (13) 札幌 Ruby 会議 02</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0030/0030-SapporoRubyKaigi02Report.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>RegionalRubyKaigi レポート (13) 札幌 Ruby 会議 02</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0030/0030-SapporoRubyKaigi02Report.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RegionalRubyKaigi レポート (13) 札幌 Ruby 会議 02" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0030/0030-SapporoRubyKaigi02Report.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0030/0030-SapporoRubyKaigi02Report.html" data-text="RegionalRubyKaigi レポート (13) 札幌 Ruby 会議 02">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <h2 id="はじめに">はじめに</h2>
+
+<p>2009 年 12 月 5 日に、札幌で開催される地域 Ruby 会議として今年で 2 回目となる、札幌 Ruby 会議 02 が開催されました。
+今回も<a href="http://jp.rubyist.net/magazine/?0025-SapporoRubyKaigi01Report">前回</a>に引き続き、道外で活躍している方々もたくさん参加して頂きました。発表者の方ではなく純粋に札幌 Ruby 会議へ参加された方もいらっしゃいました。一時間ほどの懇親スイーツタイムでは道外の方々とも沢山お話することができ、「ここは本当に札幌なのだろうか！？」と思わせるような地域 Ruby 会議でした。
+<img src="/images/0030-SapporoRubyKaigi02Report/spkr02_rubima.jpg" alt="spkr02_rubima.jpg" /></p>
+
+<h2 id="札幌-ruby-会議-02-について">札幌 Ruby 会議 02 について</h2>
+
+<dl>
+  <dt><strong>開催日</strong></dt>
+  <dd>2009/12/5 (土) 11:30 〜 18:30</dd>
+  <dt><strong>開催場所</strong></dt>
+  <dd><a href="http://sangyo.center.sec.or.jp/">札幌市産業振興センター</a></dd>
+  <dt><strong>開催母体</strong></dt>
+  <dd>札幌 Ruby 会議 02 実行委員会、<a href="http://ruby-sapporo.org/">Ruby 札幌</a></dd>
+  <dt><strong>協賛</strong></dt>
+  <dd>さっぽろ産業振興財団 高度情報通信人材育成事業 プラットフォームワークショップ</dd>
+  <dt><strong>後援</strong></dt>
+  <dd><a href="http://jp.rubyist.net/">日本 Ruby の会</a>、<a href="http://www.local.gr.jp/">LOCAL</a></dd>
+  <dt><strong>参加者</strong></dt>
+  <dd>およそ 112 名</dd>
+  <dt><strong>動画・資料</strong></dt>
+  <dd><a href="http://regional.rubykaigi.org/sapporo02">公式ページ</a></dd>
+  <dt><strong>公式タグ</strong></dt>
+  <dd>sappororubykaigi02 (<a href="http://b.hatena.ne.jp/t/sappororubykaigi02">はてなブックマークでの検索結果</a>)</dd>
+  <dt><strong>公式ハッシュタグ</strong></dt>
+  <dd>#sprk02</dd>
+</dl>
+
+<h2 id="プログラム">プログラム</h2>
+
+<h3 id="tdiary-annual-report-2009-柴田-博志-hsbt---tdiaryorg">「tDiary annual report 2009」 (柴田 博志 (hsbt) - <a href="http://www.tdiary.org/">tDiary.org</a>)</h3>
+
+<p>札幌 Ruby 会議 01 に引き続き、tDiary プロジェクトのコミッタである柴田さんの講演から札幌 Ruby 会議 02 はスタートしました。講演内容は、札幌 Ruby 会議 01 から一年間の tDiary プロジェクトの活動レポートでした。</p>
+
+<p>はじめに Ruby 1.9 対応の方針に関する話がありました。tDiary プロジェクトでは「Ruby 1.9 はいつかは使わなければならないのだから、いち早く tDiary を Ruby 1.9 対応として利用者の Ruby 環境を 1.9 にアップグレードするよう誘導し、tDiary を Ruby 1.9 のキラーアプリにしよう」という方針のもとに活動が行われているということでした。tDairy の開発状況については、2009 年 5 月 8 日にリリースを行い、現在の最新版は 2.3.2 となり、Ruby 1.9 にも対応しているとのことです。</p>
+
+<p>次に、具体的な Ruby 1.9 対応の内容についての説明がありました。最初に Ruby 1.9 で動かした際はエラーだらけで大変だったそうですが、その後行われた作戦会議などを経て、</p>
+
+<ul>
+  <li>過去バージョンとの非互換部分</li>
+  <li>文字エンコーディングの変更</li>
+</ul>
+
+<p>について対応が行われたとのことです。「過去バージョンとの非互換部分」については、compatible.rb というファイルを用意して、そこで非互換部分を吸収するようにしたそうです。是非このソースを読んで、既存のアプリを 1.9 対応する際の参考にしてくださいとのことでした。「文字エンコーディングの変更」については、先頭に magic comment を一括指定して円コーディングを明示するようにしたそうです。また、外部エンコーディング指定については、RUBY_VERSION を使用せずに Encoding:default_external を使用するようにしたそうです。</p>
+
+<p>Ruby 1.9 対応以外の開発項目については、</p>
+
+<ul>
+  <li>自動テストの仕組みを取り入れ</li>
+  <li>CGI から Rack への載せ替え</li>
+  <li>機能追加と不具合修正</li>
+</ul>
+
+<p>についての対応は完了しており、</p>
+
+<ul>
+  <li>XML-RPC から Atom への移行</li>
+</ul>
+
+<p>が未解決となっているとのことでした。</p>
+
+<p>最後に、</p>
+
+<ul>
+  <li>2009 年も tDiary は Ruby と共に成長しました</li>
+  <li>2010 年も Ruby ととともに成長していく</li>
+  <li>『<a href="http://jp.rubyist.net/magazine/?0027-WhatWeCanDo">Rubyist に出来ること</a>』をやるなら tDiary</li>
+</ul>
+
+<p>ということで、レポートがまとめられました。</p>
+
+<h3 id="知らないと損をする-smalltalk-sumim---squeak-ja">「知らないと損をする Smalltalk」 (sumim - squeak-ja)</h3>
+
+<p>オブジェクト指向の本質、パターンとの関わり方、GUI の起源…。 日常のモヤモヤの中核にありながら語れる人が少ない Smalltalk について、Ruby 札幌のメンターでもある squeak-ja の sumim さんに解説していただきました。お話の切り出しは「Smalltalk の t は小文字です」でした。最低限これを覚えて帰ってくださいとのことで、最近はこれを言い続けているので、ブログのタイトルもこれに変えてしまったそうです。</p>
+
+<p>これに続き、Smalltalk を一見とっつきにくくしている 4 つのキーワード</p>
+
+<ul>
+  <li>古いのに新しい</li>
+  <li>言語ではなく環境</li>
+  <li>シンプルなのに難解</li>
+  <li>知識よりも体験</li>
+</ul>
+
+<p>に沿って、Smalltalk の解説がなされました。</p>
+
+<p>まず最初のキーワードである「古いのに新しい」では、Smalltalk の歴史に始まり言語処理系としての特色などについてお話いただきました。言語処理系としての一番大きな特色は「全てがオブジェクトである」ということで、Ruby と少し違うところは「ほぼ全てをメッセージングで実現している」ところであるということでした。オブジェクト指向の考え方は「抽象データ型の OO (オブジェクト指向) 」と「メッセージング中心の OO」という二つに大きく分類でき、Smalltalk はアラン・ケイによってメッセージング中心の OO として考えられたとのことでした。</p>
+
+<p>また、Smalltalk は Ruby にも多大な影響を与えているとのことで、「ブロック付きメソッド呼び出し」を取り上げ、Ruby と Smalltalk のコードがほとんど同じように記述できることを解説していただきました。そして、より Smalltalk 側に寄った Ruby 処理系として「Rubinius」と「MagLev」、Smalltalk 発の Ruby 新機能として「Traits」と「Classboxes」についての紹介がありました。「MagLev」については、OODB (オブジェクト指向データベース) の機能を以下のデモを交えて紹介してくださいました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1. MagLev の OODB サーバを起動
+2. maglev-irb を起動して、Maglev::PERSISTENT_ROOT へオブジェクトを追加
+   Maglev::PERSISTENT_ROOT[:foo] = Object.new =&gt; #Object:0x9f66501
+3. このオブジェクト ID を確認
+   Maglev::PERSISTENT_ROOT[:foo].object_id =&gt; 167142657
+4. このトランザクションをコミットして、maglev-irb を一度終了する
+5. 新しい irb のインスタンスを立ち上げて、先ほどのオブジェクト ID を確認する
+   Maglev::PERSISTENT_ROOT[:foo].object_id =&gt; 167142657</code></pre></figure>
+
+<p>次のキーワード「言語ではなく環境」では、Smaltalk は言語だけではなく他の環境にも影響を及ぼしているとのことで、GUI の起源についてのお話がありました。「現在の GUI の起源は Mac ではなく Smalltalk である」というお話で、Mac や Windows が起源と思われている右クリックメニューやコピー &amp; ペースト、マルチフォントの取り込みなども、実は当時の Smalltalk にすでに実装されていたものだったという内容でした。また、Smalltalk は NeXTSTEP の API にも大きな影響を与えたとのことでした。</p>
+
+<p>そして、3 つめのキーワード「シンプルなのに難解」では、Smalltalk が、何故長期に渡って生きながらえ、他に影響を与え、新しい発想を育み続けられるのか、という謎について sumim さんが最近たどり着いたという考えが紹介されました。その考えとは、Smalltalk と他の言語との違いが「利用者主体の漸進的成長が可能かどうか」という点にあるのではないかということで、
+他を人工都市、Smalltalk を自然都市になぞらえて、その考え方について説明がありました。この辺りの詳しい話は江渡浩一郎さんの『パターン、Wiki、XP』を参照してくださいとのことです。</p>
+
+<p>最後のキーワードである「知識よりも体験」では、Smalltalk を理解するには知識よりも体験が重要であるとのことで、Smalltalk の文法や勉強方法についてのお話がありました。
+文法については、リテラル (6 種)、予約語、文法、メソッド定義テンプレートを覚えるだけで大丈夫とのことです。ですが、それ以外はなかなか本だけで学ぶことが難しいので、独学ではなく使い方がわかる人が居るところ (しかも少人数が望ましい) で学ぶことがいいでしょうとのことでした。</p>
+
+<h3 id="ruby-で-postgresql-とお話する方法-石田-朗雄---株式会社サイクルオブフィフス">「Ruby で PostgreSQL とお話する方法」 (石田 朗雄 - 株式会社サイクル・オブ・フィフス)</h3>
+
+<p>勉強会での発表スタイルが、「知らないことを、当日までに必死で調べて発表する」という石田さんが、Ruby で PostgreSQL を操作するための Tips やその背景にある PostgreSQL インタフェースである libpq の機能についてお話ししてくれました。</p>
+
+<p>始めに「プログラムから SQL を実行するということ」についてのお話がありました。PostgreSQL はクライアント / サーバーモデルになっているのでクライアントとサーバ間でのソケット通信があります。それは Frontend / Backend プロトコルと呼ばれていて、PostgreSQL 標準のドキュメントにもそうしたプロトコルの説明があります。こうしたプロトコルがあるのは良いことなのですが、 Ruby や Java などからサーバに接続したいという場合に、それぞれの言語でドライバを作る人がそうしたプロトコルを実装するのが大変です。PostgreSQL にはそのために libpq というこのプロトコルを実装してある C 言語のライブラリがあるので、これを使うことで実装を楽にできるようになるとのことです。</p>
+
+<p>次に具体的なドライバの実装についての説明がありました。Ruby から PostgreSQL に接続するためのドライバとしては、これまで libpq を使って実装された「ruby-postgres」と、libpq を使わずに実装された「postgres-pr」の二つのライブラリが存在していましたが、2007 年に Ruby 勉強会 @ 札幌で両者を比較した際には、前者が「メンテされていない状態」、後者が「メソッドが少ない」状態 (DB 接続関数 PGconn のインスタンスメソッドを比較したところ、 postgres-pr は 6 つしかないという状態) だったそうです。しかし、この発表直後に「ruby-pg」という libpg を使用した新しいライブラリが出たので確認してみたところ、PGconn のインスタンスメソッドが非常に多くのメソッドが用意されており (スライド一枚が埋まるくらい) 、現時点では「ruby-pg」が Ruby における最強の libpq ラッパーであるということでした。ruby-pg の使い方は『Ruby 逆引きレシピ』を参照くださいとのことでしたが、当日はレシピに書かれていない内容について解説してくださいました。 ri のドキュメントを見ても引数に何を指定していいのかよくわからないという場合があります。例えば「options という引数があるがいったい何のことなんだろう」などです。そのような時は、libpq のラッパーであるので libpq のドキュメントを読むことが一番であるとおっしゃっていました。</p>
+
+<p>最後に、 ruby-pg の便利な機能として、</p>
+
+<ul>
+  <li>非同期問い合わせ</li>
+  <li>非同期通知</li>
+  <li>SQLSTATE のエラーコードを返す</li>
+  <li>SSL サポート</li>
+</ul>
+
+<p>などがあるので、一度 libpq のドキュメントを読んでみてほしいとのことでした。</p>
+
+<h3 id="レシピに書かれていないこと-須藤-功平---株式会社クリアコード">「レシピに書かれていないこと」 (須藤 功平 - 株式会社クリアコード)</h3>
+
+<p>Ruby 札幌を応援しているという須藤さんが、『Ruby 逆引きレシピ』に載っている須藤プロダクツについて、ライブコーディングにてもっと掘り下げて紹介してくださいました。</p>
+
+<p>須藤さんはこの日のためにメールを全文検索する Web アプリケーションを作成されてきていて、セッションではこのアプリケーションに「添付 PDF 内検索」と「添付 PDF のサムネイル表示」をする機能を追加する部分をコーディングしてくださいました。使用したレシピは「レシピ 113 : ActiveLdap」「レシピ 149 / 150 : RSS Parser」「レシピ 155 : rcairo」だそうです。また、レシピには載っていない須藤プロダクツとして「groonga」「Poppler」も使用されていました。</p>
+
+<p>ライブコーディングにした意図として、須藤さんは「よいプログラマは自生しない」と最近思うようになったというお話をしてくださり、「どのような過程でどのような問題を見つけてどのように解決したか」を理解するということの重要性を強く訴えられていました。</p>
+
+<p>当日ご覧になれなかった方も、是非動画などを通して須藤さんのライブコーディング、問題を解決していく過程をご覧になっていただければと思います。</p>
+
+<h3 id="ruby-における-2038-年問題の解決-田中哲-akr---産総研">「Ruby における 2038 年問題の解決」 (田中哲 (akr) - 産総研)</h3>
+
+<p>Unix 伝統の制約として、 time_t は 32bit 符号付き整数で、-2147483648 〜 2147483648 で表現可能となっており、これが 1970-01-01 00:00:00 UTC を起点とする秒数で、表現可能範囲が 1901-12-14 〜 2038-01-19 となっています。そのため、2038 年 1 月 19 日を超える日時を扱うことができず、これが俗に 2038 年問題と言われています。このセッションでは、Time クラスを使用した際に問題となるこの 2038 年問題を Ruby 1.9 でどのように解決していったのかについて、田中さんが解説してくださいました。</p>
+
+<p>時刻システムは自然 (科学) の話と人間 (暦) の話が集積した所であり、それを Ruby という汎用 OS 上で動作するアプリケーションで、どのような仕様とし、どのように実現するかは、非常に難しい問題であるということでした。</p>
+
+<p>自然 (科学) の話としては自転周期は一定でないこと、人間 (暦) の話では時差や夏時間、季節の巡りにあわせた周期の決定や閏年などがあり、Ruby 1.9 ではそうした中でよく使われる所についてサポートするようにしたとおっしゃられていました。</p>
+
+<p>技術的な話としては、タイムゾーンの情報をどこでどのように持つべきかという問題があり、Ruby 1.9 では OS の zoneinfo を使用することとし、2038 年問題は Perl のアイデアを参考にして 2038 年以前の時差情報から推測することにしたそうです。また 1 秒未満は有理数を表現可能にして理不尽な制約をなるべくプログラマに見せないようにすることで、容易なプログラミングを実現できるようにしたとのことでした。</p>
+
+<p>実装の局面において問題に対してどういったポリシーでどのような決断をしていくか、非常にためになるお話でした。是非、動画や資料などでじっくりとご覧になることをお勧めします。</p>
+
+<h3 id="ライトニングトークス">ライトニングトークス</h3>
+
+<h4 id="僕たちが-samit-を続ける理由-仮-hokkai7go--onodes---local-学生部--samit">「僕たちが SAMIT を続ける理由 (仮)」 (hokkai7go &amp; onodes - (LOCAL 学生部 | SAMIT))</h4>
+
+<p><a href="http://www.local.or.jp/?Students">LOCAL 学生部</a>として活躍している hokkai7go さんと onodes さんより、これまでの活動とこれからの方向性についての報告がありました。</p>
+
+<p>LOCAL 学生部では学生勉強会の支援を行っており、2009年は室蘭工業大学、北見工業大学、北海道情報大学などの各地域の大学の勉強会と繋がりを作れたそうです。また、11月にはそれらの勉強会のメンバが集まって LOCAL 学生部総大会も開催することが出来たとのことでした。2010年に向けては縦横のつながりを作っていきたいと考えているそうです。現在は札幌の学生勉強会がなく、北見や江別、室蘭などの Regional of Regional（田舎の中の田舎）が頑張ってやっている状況なので、今後は地方の熱を札幌に伝えたいと考えいるとのことでした。</p>
+
+<h4 id="東京とちぎ札幌-vestige---toruby">「東京〜とちぎ〜札幌」 (vestige - toRuby)</h4>
+
+<p>toRuby の米澤さんが、ご自身のこれまでの振り返りと toRuby ビギンズナイトについてお話してくださいました。</p>
+
+<p>米澤さんは、高校生のころは数学同好会に所属したり Basic で音楽を作っていたそうです。その後、プログラマとして働き始め、2004 年頃からオープンソースの世界と関わり始めたとのことでした。勉強会デビューもこの頃だったそうです。そして、2006 年にそうした関わりの中で出会ったあるスーパープログラマからの誘いを受け、東京から栃木へ移りって一緒に仕事をすることになります。そしてある晩、咳さんから「勉強会の司会をしてみない？」という誘いを受け、そこから toRuby が始まったということでした。</p>
+
+<p>米澤さんご自身のコミュニティとのつきあい方がよく伝わる、これからコミュニティ活動を始めたいと思っている人たちにとても参考になるトークでした。</p>
+
+<h4 id="田舎-ruby-親方で元エンドユーザの自分が目指すこと-片平裕市---rails-勉強会東北">「田舎 Ruby 親方で元エンドユーザの自分が目指すこと」 (片平裕市 - Rails 勉強会＠東北)</h4>
+
+<p><a href="http://rubykaigi.org/2009/ja">RubyKaigi2009</a> で実施された田舎 Ruby 親方会議に参加された片平さんが、続「田舎 Ruby 親方会議」「儲かる Ruby」という内容でお話されました。片平さんの「田舎 Ruby 親方」の定義は、「地方で Ruby で仕事をしている個人事業者や小規模の法人経営者」で、片平さんが「田舎 Ruby 親方」である理由は、生まれた場所が好きだからということでした。</p>
+
+<p>国立大学時職員として 10 年以上働かれてた片平さんが独立することになったきっかけは、2005 年に Ruby (Rails) に触って惚れてしまったことだったそうです。そして Ruby で人や地域の役に立つことを夢見るようになり、地元の人たちに親しまれる「街の IT 屋」を目指して 2007 年 8 月に独立します。当初は地元の企業にアプローチして、システム開発を安価で直受けしていくことを考えていましたが、田舎には予想以上に IT に投資する予算や IT への興味を持っているお客さんも少なく、作戦の建て直しを余儀なくされたそうです。現在は、パッケージやサービスなど、エンドユーザにとってわかりやすい形を提供することを考えているそうです。エンドユーザを経験していること、そして情報部門で仕事をしていたことがあるということを自分の強みとして、これからも田舎 Ruby 親方をがんばっていきたいとおっしゃられていました。</p>
+
+<h4 id="カーリングと-ruby-はしむかい-としかつ---妹背牛カーリング協会">「カーリングと Ruby」 (はしむかい としかつ - 妹背牛カーリング協会)</h4>
+
+<p>妹背牛からやってきた稲作農家のはしむかいとしかつさんのお話です。ちなみに妹背牛(「もせうし」と読みます)は北海道の難読地方として有名です。はしむかいさんは 22、3 歳くらいまで札幌でプログラマとして働いていたことがあるそうですが、現在は稲作農家をされているそうです。また、妹背牛ではカーリング協会に所属し、今年は強化委員長として Web 担当をされているそうです。</p>
+
+<p>トークの前半は、カーリングの歴史についての紹介でした。一番古いと思われるカーリングストーンの話に始まり、北海道とカナダとの文化交流の話、そしてカーリングがどのようにインターネット上で伝えられてきたかについての話などがありました。後半は はしむかいさんが作られた妹背牛カーリング協会の Web サイトについての話でした。妹背牛カーリング協会から Web サイトを作らないか？という話が持ちかけられたのをきっかけに、最初はブログサービスなどでの構築を検討していたそうです。しかし、一般の人も投稿できるような簡易マークアップ言語を持った適応なサービスがなかったということで、tDiary を採用することにしたそうです。最初はプラグインや CSS に手を入れて運用していましたが、その後パッチを書いて、試合結果を表にしたり総当たりの結果なども表示できるようにしたそうです。それまでは試合結果の確認とツッコミが同時にできるサイトがなかったため結構盛り上がったとのことでした。しかし、最近プロバイダのサービスが終了してしまいサイト自体がなくなってしまったため、現在は Heroku と Sinatra を使いサイトを再構築中とのことでした。構築中のサイトは、コメント機能の他に棋符を見せたいなどの要望もあることから、flash と json、yaml 等でそうした機能を作り込んでいき、ゆくゆくはオープンソースとして公開したいとおっしゃられていました。</p>
+
+<p>札幌 Ruby 会議 02 で一番の盛り上がりを見せた、地域 Ruby 会議らしいとても素敵なトークでした。</p>
+
+<h4 id="ruby-と-twitter-と私-hhiro">「Ruby と Twitter と私」 (H.Hiro)</h4>
+
+<p>Ruby と Twitter が大好きという H.Hiro さんによる、Twitter の BOT 作りを通して学んできた Ruby やプログラミング全般についての話でした。</p>
+
+<p>H.Hiro さんが最初に作られた Twitter BOT は <a href="http://hhiro.net/nobotter.php">nobotter</a> という BOT だそうです。H.Hiro さんは、この開発を通して Ruby のリファレンスマニュアルを読むのに慣れ、net/http や json などのライブラリの使い方も分かって、さらなる創作意欲が沸いたそうです。その後、様々な BOT を作っていく中で、コピペコードや BOT ごとで振るまいが変わらない部分の共通化などに問題意識を持つようになり、リファクタリングやライブラリ化、アプリケーションフレームワークの良さなどについて実際の経験から学ぶことが出来たということでした。</p>
+
+<h4 id="冬の札幌で心温まるおしゃべりを-大和田純-june29---ruby-札幌サイジニア株式会社">「冬の札幌で、心温まるおしゃべりを。」 (大和田純 (june29) - Ruby 札幌、サイジニア株式会社)</h4>
+
+<p>現在は東京で活躍している Ruby 札幌の大和田さんが「温かい飲み物 (Cocoa) を飲みながら皆さんとおしゃべり (Chat) を」ということで、RubyCocoa 製の Chat アプリケーションである LimeChat のカスタマイズを披露してくれました。</p>
+
+<p>LimeChat の view は HTML で記述されており、メインウィンドウは大雑把に、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;body&gt;
+&lt;div&gt;message&lt;/div&gt;
+&lt;div&gt;message&lt;/div&gt;
+&lt;div&gt;message&lt;/div&gt;
+&lt;/body&gt;</code></pre></figure>
+
+<p>という構成になっています。</p>
+
+<p>また、view を生成している部分のコードは log.rb になり、このファイルに、IRC の発言部分を ruby で生成している処理や DOM にアクセスして body に div タグを挿入している処理などが記述されています。Ruby、HTML、DOM の知識があれば、ソースコードを読むことが出来、デスクトップアプリケーションだけれど自分にもカスタマイズ出来そうだということで、カスタマイズに挑戦することにしたということでした。</p>
+
+<p>大和田さんが実際にしたカスタマイズは、IRC のメッセージを Twitter 風にアイコンと共に表示するというものでした。マークアップと CSS にも手を入れ、まさに Twitter 風の表示となっていました。ユーザーアイコンを返すところは、 参加者のアイコンを当日の朝から地道に頑張って集めて登録していたということでした。</p>
+
+<p>「泥作業を通じてリッチな体験を」などのフレーズも飛び出す、大和田さんらしい素敵で楽しいトークでした。</p>
+
+<h4 id="動的-html-スクレイピング対応並列分散クローラの紹介-白土慧-kei-s---ruby-札幌サイジニア株式会社">「動的 HTML スクレイピング対応並列分散クローラの紹介」 (白土慧 (kei-s) - Ruby 札幌、サイジニア株式会社)</h4>
+
+<p>Web 上のデータ収集が趣味だという白土さんによる、動的 HTML スクレイピング対応並列分散クローラについての話でした。</p>
+
+<p>Web 上のデータ収集の方法としては、Web API や HTML による Scraping がよくあるやり方で、Ruby で HTML の Scraping を実装することを考えた場合、白土さんは Mechanize と Nokogiri をよく使うそうです。しかし、こうしたやり方は、JavaScript で動的にコンテンツが差し込まれるような動的なページの場合にはうまく機能しません。白土さんはこれに対応するために Greasi というクローラを作成されたそうです。Greasi はクライアント側で DOM を解析し、処理した結果のデータをサーバ側で受けるという構成となっており、サーバ側に Sinatra と Sequel を、クライアント側に Greasemonkey と jQuery を使用しているそうです。サーバ側では Sinatra で URL とデータを受ける POST のエンドポイントを用意し、クライアント側では jQuery の GM_xmlhttpRequest を使ってそのエンドポイントへデータを POST し、返却されたレスポンスをそのまま location.href へ入れることで動作しているとのことでした。今回は、評価機として Firefox を使い、Google の画像検索から、北海道や札幌、スープカレー、ファイターズなどのクエリーで検索して、リアルタイムでクロールして、検索結果を出力するデモを披露してくれました。並列化については「Firefox のタブを増やせばよいだけ」で実現できるということで、タブを増やして並列化していく様子に会場は大いに沸いていました。</p>
+
+<h4 id="ビュー層のキャッシュシステムにおける問題点とその解決策-桑田誠">「ビュー層のキャッシュシステムにおける問題点とその解決策」 (桑田誠)</h4>
+
+<p>桑田さんが HTML ページの一部のみをキャッシュする Fragment cache における問題点とその解決策について話をしてくださいました。Fragment cache はページ全体をキャッシュする方法と比べると、キャッシュする箇所を細かくコントロールできるという利点があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;% cache do %&gt;
+  &lt;ul&gt;
+  &lt;% @books.each do |book| %&gt;
+     &lt;li&gt;&lt;%= book.title %&gt;&lt;/li&gt;
+  &lt;% end %&gt;
+  &lt;/ul&gt;
+&lt;% end %&gt;</code></pre></figure>
+
+<p>しかし、Fragment cache ではコントローラ側でキャッシュの有効・無効を知る術がないため、キャッシュが有効（データ取得が不要）な場合でも裏ではDBアクセスが行われることになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># @booksはキャッシュを更新するときにだけ必要なのだけれど、アクション側はそれを判断できないのでDBにアクセスしておく必要がある
+def index
+   @books = Book.find(:all :limit=&gt;5)
+end</code></pre></figure>
+
+<p>これを回避しようとしてテンプレート側でモデル層に直接アクセスしてしまっているようなケースもあるが、これは MVC の原則から外れてしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;% cache do %&gt;
+&lt;% @books = Book.find(:all, limit=&gt;5) %&gt;
+  &lt;ul&gt;
+  &lt;% @books.each do |book| %&gt;
+     &lt;li&gt;&lt;%= book.title %&gt;&lt;/li&gt;
+  &lt;% end %&gt;
+  &lt;/ul&gt;
+&lt;% end %&gt;</code></pre></figure>
+
+<p>従来の方法はコントローラ側でコンテキストデータを用意しビュー層に渡す push 型ですが、これを必要なデータを必要なときにだけとってくる pull 側にするのが望ましい解決であるということで、解決策の一つとしてコールバック用のクロージャ（ Proc ）を遅延評価の一種として使う方法が紹介されました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># コントローラ側のアクションでは コールバック用の Proc オブジェクトを生成
+def index
+   @user = session[:user]
+   @books = proc {
+       Book.find(:all, :limit=&gt;5)
+   }
+   render
+end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># キャッシュ更新が必要なときだけ、コールバックがキックされ DB アクセスが行われる
+&lt;% cache do %&gt;
+  &lt;ul&gt;
+  &lt;% @books.call.each do |book| %&gt;
+     &lt;li&gt;&lt;%=h book.title %&gt;&lt;/li&gt;
+  &lt;% end %&gt;
+  &lt;/ul&gt;
+&lt;% end %&gt;</code></pre></figure>
+
+<h4 id="jruby-最新事情札幌-高井直人---akasakarb">「JRuby 最新事情＠札幌」 (高井直人 - Akasaka.rb)</h4>
+
+<p>Rubyist 写真家 (「動物写真家と同じ、Rubyist を撮る写真家」) と名乗ることを考えられている高井さんが、JRuby の最新事情についてお話してくださいました。JRuby の最新バージョンは 1.4.0 で MRI 1.8.7 互換となっているそうです。また、JRuby は Java 統合機能、JavaHotSpotVM による高い処理性能をもちあわせており、処理速度も MRI より早くなっているとのことです。ただ、起動には若干時間がかかるため、スプラッシュウィンドウを表示させることで体感速度を向上させると良いとのことでした。</p>
+
+<h4 id="そろそろカバレッジについてひとこと言っておくか---アンドなう-和田-卓人---タワーズクエスト株式会社">「そろそろカバレッジについてひとこと言っておくか - アンド・なう」 (和田 卓人 - タワーズ・クエスト株式会社)</h4>
+
+<p>Slow Tests との戦い方について、札幌 Ruby 会議 01 に引き続き、和田さんが話してくださいました。Slow Tests の原因は「増え続けるテスト」です。「増え続けるテスト」は、テストのメンテナンス・コスト、そしてテストの実行コストを増やし、黄金の回転の速度を落とし、最後には TDD を殺してしまうとのことです。これを防ぐ安価な方法としては、一度に実行するテストの数を減らすという対策があります。具体的には、タグやアノテーションといったメタ情報をテストに与えておくなど、特定のコンテキストでテストを実行出来るようにしておくことで、一度に実行するテストの数を減らせるとのことでした。次に、そもそもテストの数を減らせないかということについて、和田さんの考えが紹介されました。和田さんは、テストの重複を検知させることができればテストの数を減らすことが出来るのではないかと考えられているそうです。そして、小さい単位でカバレッジを測定していく micro coverage という手法をテストに適応させることで、テストの重複を検知し、これを実現できるのではないかというのが、現在の考えだそうです。micro coverage については産学協同で「カバレッジに基づく重複テスト解析」という研究を進めており、引き続き次の札幌 Ruby 会議でその成果を報告したいとのことでした。</p>
+
+<h4 id="達人出版会について-高橋征義---日本-ruby-の会会長--達人出版会">「達人出版会について」 (高橋征義 - 日本 Ruby の会会長 / 達人出版会)</h4>
+
+<p>TokyuRuby 会議01 での発表に引き続き、高橋会長から「達人出版会」についての話がありました。まず始めに達人出版会を設立された経緯についての紹介がありました。高橋さんは、Rubyist として読んでみたい物が沢山がたくさんあるそうです。例えば「はじめての Nokogiri」、「はじめての haml+sass」「はじめての Watir」「はじめての YARV」など。こうした書籍を読んでみたいけれど、残念な事にあっても英語書籍で、読むのに時間がかかるので困っているそうです。そこで高橋さんが考えられた解決策が、これらの日本語コンテンツを誰かに書いてもらい PDF として販売するというサービスだったそうです。「達人出版会」という名前は、達人プログラマーからとられたそうです。今は、サービス構築の準備中とのことでした。また、「達人出版会」では自由な文章 (Creative Commons) も販売出来れば、とおっしゃられていました。CC だと購入した人は再配布可能となりますが、お布施的な意味での対価 (書いてくれた人にありがとうという意味でお金を払う) という形にする仕組みを提供したいと考えられているそうです。「チャンスを掴むためには手を挙げる勇気、手を挙げ続ける勇気、そして、うまくいかなかった場合は、手を下ろす覚悟が必要」という言葉がとても印象的でした。最後にご自身が好きだという「世界はひとりの力で変えられるんです」という宇山日出臣氏の言葉を挙げられて、発表を締めくくられました。</p>
+
+<h3 id="高アクセス数の-web-サイトを-ruby-on-rails-で構築運用するための-tips-基礎編-沼田-一哉---株式会社エストコスモ--プラットフォームワークショップ">「高アクセス数の WEB サイトを Ruby on Rails で構築、運用するための Tips 基礎編」 (沼田 一哉 - (株式会社エストコスモ | プラットフォームワークショップ))</h3>
+
+<p>沼田さんが開発に関わった最も大きなサイトは、Web (Apache) サーバ一台、毎秒平均ページビュー 10 req/s、最大ページビュー 70 req/s、頻繁に参照と記録が行われるテーブルのレコード数が 500,000 という内容だったそうで、そうした高トラフィックに対応する Rails アプリの開発、運用を通して見つけてこられた Tips について紹介くださいました。</p>
+
+<p>開発する上で一番大切だと感じたのは cache で、とにかく cache は積極的に利用することが大事だそうです。認証がなく、リアルタイム性がないコンテンツであれば、page cache を使うことが良いとのことでした。そして、リンクに必ず拡張子を付けることが大切だということです。ページキャッシュは、必ず静的ファイルを作成するので、こうすることで Apache のレイヤで処理させることができ、Rails の負荷を下げることができるとのことでした。こうした条件にあわない場合には、Action cache や fragment cache など小さい単位のキャッシュを利用すると良いとのことです。また、Web サーバのキャッシュ機能を活用することもお勧めされていました。Apache の mod_disk_cache を有効活用するのが良いとのことでしたが、キャッシュのクリアには htcacheclean を忘れずにすることを注意点として挙げられていました。次に、ベーシック認証をしている場合の Tips として、ブラウザのキャッシュについての紹介がありました。更新の少ないコンテンツについてはリクエストすら送らせないように、Apache の mod_expires を使い、リクエストを送る時点で Cache - Control ヘッダ、Expire ヘッダを付けるようにするとのことでした。</p>
+
+<p>次に、リバースプロキシについての紹介がありました。沼田さんは apache + mod_proxy_balancer を使用するようにしているそうです。また、DB についてはインデックスを使うことや MySQL5 以上なら view を使用すること、つまりデータベースで出来ることをしっかりとやることをお勧めされていました。</p>
+
+<p>そして、Web サーバでできることとして、DoS 攻撃対応に mod_evasive を利用して 503 Service Temporary Unavailable ヘッダを返すようにして Rails の負荷を下げることや、 Passenger の Pool サイズを変更してみることなどを紹介されていました。</p>
+
+<p>最後に、</p>
+
+<ul>
+  <li>パフォーマンステストをしてからチューニングすること</li>
+  <li>パフォーマンスを上げるために、コードの変更が必要になることがあるので、必ずテストを書いておく事</li>
+  <li>monit で監視して、万が一 Web サーバが停止していた場合は、自動再起動するようにしておくこと (最後の手段)</li>
+</ul>
+
+<p>などをやっておくとよいとおっしゃていました。</p>
+
+<h3 id="大学教員はレシピ先輩たりうるのか--レシピ先輩製造機としての大学教員-谷口-文威---ruby-札幌--北海道情報大学">「大学教員はレシピ先輩たりうるのか – レシピ先輩製造機としての大学教員」 (谷口 文威 - Ruby 札幌 / 北海道情報大学)</h3>
+
+<p>大学教員である谷口さんが、授業を通しての「楽しさ」についてお話してくれました。集中力が持続しない学生に対して「楽しい」と感じてもらうにはどうすれば良いのかと考え、谷口さんはまず Ruby on Rails を授業に使用してみたそうです。しかし、それは失敗たっだとのことでした。何故ダメだったかについては、教科書に沿ってやるだけになってしまったことと Ruby on Rails が呪文すぎたため、実際に何が行われているかのイメージを持たせることが出来なかったためという理由を挙げられていました。</p>
+
+<p>次に、谷口さんは「楽しい」とは「collaborative」と「challenging」ではないかと考えられたそうです。collaborative つまり複数人で行うことで、議論が生まれ、役割分担も発生してくるということと、challenging という到達可能だと思わせる課題設定が重要であると考え、現在は dRuby や Shoes など学生に受け入れられやすいもの、簡単に GUI を作れるものを利用し「楽しい」を実現しようとしているとのことです。</p>
+
+<p>最後に、興味の持続に Ruby という選択肢は有効ではないだろうかとのことでした。</p>
+
+<h3 id="ruby--rails導入への道-前田-智樹---ruby札幌--株式会社アンタス">「Ruby / Rails導入への道」 (前田 智樹 - Ruby札幌 / 株式会社アンタス)</h3>
+
+<p>Ruby 札幌の前田さんが、Ruby が大好きだから Ruby で仕事をしたい！　でも会社では導入できていない、という人達のためのお話をされました。</p>
+
+<p>はじめに、アンタスでの Ruby 歴についてお話しがありました。2006 年は一つのプロジェクト (前田さんが Ruby でやると宣言して開始されたそうです) だけでしたが、2009 年になると社内の約半分のプロジェクトが Ruby もしくは Rails で開発するようになったとのことでした。</p>
+
+<p>Ruby で仕事を出来るようになるための最初のステップとしては、小さな要求を承諾してもらった後であれば、より大きな要求も承諾してもらいやすくなるということで、まず小さな要求を承諾して貰うことが大事だとのことでした。実績作りとしては、本や Web を読んでしっかり勉強して実際に自分で何か作ってみる。本棚に Ruby の書籍を置いてみたりして他の人へアピールをしてみる。 Ruby の勉強会に参加していることなどを何気なく社内で話したりレポートを書いたりする。というような活動が大事だとおっしゃられていました。そして、Ruby 製のツール (tDaiary、Hiki、影舞、Redmine など) を実際の仕事に導入してみて、みんなに使ってもらうと良いとのことでした。この辺りの話はごとけんさんの「仕事で使う Ruby シリーズ」が参考になるので Ruby 会議で発表されている資料を見てみておいて下さいとのことでした。小さな会社であれば、ここまで活動を進められたら周囲は「Ruby って何だろう？」という気持ちは既に無くなっているはずなので、あとは実行に移すだけ、つまり「今回のプロジェクトでは Ruby を使ってみましょう！」と宣言するだけになっているとのことでした。
+あと、上司への説得材料としては楽天における Ruby 導入の取り組みを使用したり、Rails で作られているサービスなどを説得材料使うのも良いとおっしゃっていました。</p>
+
+<p>お話してくださった内容は、まさに前田さんが実際に実行されたことだと思いますので、Ruby で仕事がしたいと考えられている皆さんは、是非参考にされると良いのではないでしょうか。</p>
+
+<h3 id="github-と-jekyll-でつくる静的-web-サイト-設樂-洋爾---ruby-札幌--株式会社えにしテック">「GitHub と Jekyll でつくる静的 Web サイト」 (設樂 洋爾 - Ruby 札幌 / 株式会社えにしテック)</h3>
+
+<p>Ruby 札幌運営チームでありスープカレーが大好きだと言う設樂さんが、とちぎ Ruby 会議 02 でも話した Jekyll について紹介してくださいました。エンタープライズで Web サイトを作るというと、コラボレーションやワークフロー、変更記録などが重要になってきます。また、リニューアルやキャンペーンをしたり、セキュリティやバックアップ、スケーラビリティなどの考慮も必要とります。大規模であればそれなりの CMS を使えばよいですが、小規模の場合は、それだと too match 過ぎます。そこで、設樂さんは GitHub と Jekyll を使うのが良いと提案されていました。</p>
+
+<p>GitHub を複数人で使うことでコラボレーションやワークフローの問題は解決できますし、変更記録もバッチリです。キャンペーンやリニューアルの際にはブランチを切ればよいし、バックアップも clone するだけです。Jekyll は静的コンテンツが出力なのでセキュリティも動的なサイトに比べると安全ですし、デプロイもコマンド1発で行えるとのことでした。GitHub にある GitHub pages を使うのも簡単でおすすめされていました。</p>
+
+<h3 id="多様化する-ruby-の処理系の現在-笹田-耕一---日本-ruby-の会--東京大学">「多様化する Ruby の処理系の現在」 (笹田 耕一 - 日本 Ruby の会 / 東京大学)</h3>
+
+<p>YARV の開発者でもある笹田耕一さんが、さまざまな Ruby の処理系が存在する Ruby の現在についてお話しくださいました。</p>
+
+<p>まず、現在最も勢いがある処理系として JRuby の紹介がありました。JRuby は JavaVM 上で動作する Ruby 処理系で、JavaVM 用に非常に良く最適化されているそうです。この JRuby が火付け役となり、現在処理系の速度比較の話が盛んに行われているとのことです。</p>
+
+<p>つぎに、.NET 上で作られた処理系である IronRuby についての紹介がありました。IronRuby は Silverlight 上でも非常によく動いてるとされ、.NET 環境での Web プログラミングを容易にすることが出来るということです。</p>
+
+<p>続いて、MacOS X 向けの Ruby 処理系である MacRuby についての紹介されました。MacRuby は MacOS X が持っている Cocoa と呼ばれる仮想レイヤーを直接叩いており、 String などは MacOS X が始めからサポートしているものを使用しているとのことです。また、当初は笹田さんが開発されている YARV を採用予定だったが、JIT コンパイラを用いる方式に全く作り替えたとのことでした。</p>
+
+<p>これらは JavaVM、.NET Framework、Mac OS X などターゲットを絞った処理系のため、最適化が行いやすい処理系だそうです。この他にも、Rubinius や Sydney、DubySurinx やPhuby、ByteCodeRuby、YARV2LLVM、YAJIT、Ruby 1.8、Ruby 1.9 といった処理系について紹介をされ、最後に Ruby 2.0 は Ruby 1.9.2 がリリースされたら、まつもとさんがきちんと考え始めるらしいというお話がありました。</p>
+
+<p>まとめとして、Ruby 処理系には色々な選択肢があるので好きなものをお使いくださいとのことでした。</p>
+
+<h3 id="welcome-to-the-desert-of-the-real-角谷-信太郎---日本-ruby-の会--株-永和システムマネジメント">「Welcome to The Desert of The Real」 (角谷 信太郎 - 日本 Ruby の会 || (株) 永和システムマネジメント)</h3>
+
+<p>角谷さんが、日本 Ruby 会議 2009 での発表「Take a red pill」のその後についてお話してくださいました。</p>
+
+<p>「Take a red pill」で角谷さんは「世界とは Matrix で、赤いピルと蒼いピルがあったら、迷わず赤いピル (Ruby) を選べばいい」という話しをしたのだけど、これは実は話の半分でしかなく、Red pill を飲んで世界の真実に目覚めたらそこは砂漠で、そこからが現実の物語の始まりだということでした。</p>
+
+<p>Ruby を中心としたエコシステムでは、これまで当たり前にあった多くのものがまだまだ足りていない状況で、やり方や考え方もこうすれば良いというものはまだ無いため、角谷さんでさえ時にその光景は砂漠に映ってしまうそうです。そうした現実の砂漠の中をしっかりと歩いていくために大事なのは、こう変わってほしい・こうなって欲しいと自分が思っていることに対して関わることだと角谷さんは考えられているということです。</p>
+
+<p>Rails のブームが一段落した現在、Rails から Ruby の世界に入ってきたたくさんの海外 Rubyist も、それぞれの Ruby との関わり方を始めているそうです。</p>
+
+<p>角谷さんからは最後に、僕らでも関わることができる Ruby　との関わり方の例として、日本 Ruby の会のさまざまな活動 (るりまやるびま、日本 Ruby 会議や地域 Ruby 会議など) についての紹介がありました。この発表を見た一人一人が自分なりの Ruby との関わり方について考えさせられる、角谷さんにしか出来ない特別なお話でした。</p>
+
+<h3 id="クロージング">クロージング</h3>
+
+<p>大盛況のうちに終わった札幌 Ruby 会議 02 ですが、閉会の辞にて実行委員長のしまださんから、札幌 Ruby 会議 03 の開催が宣言されました。</p>
+
+<p>ぜひ 札幌 Ruby 会議 03 もたくさんの方に起こし頂ければと思います。</p>
+
+<p>また、すばらしいお話をしていただいたスピーカーの方々、それをバックアップしてくださった後援団体の方々、この日のために着々と準備してくれたスタッフのみなさん、そして忙しい中足を運んでくれた参加者のみなさん &amp; IRC に集まってくれたみなさん、本当にありがとうございました。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<h3 id="小笠原">小笠原</h3>
+
+<p>札幌の時計台のすぐそばの会社に勤務。普段のお仕事は、Mac のお仕事 8 割、Ruby が 2 割くらいな感じです。</p>
+
+<h3 id="小野寺大地">小野寺大地</h3>
+
+<p>LOCAL 学生部で学生に IT 勉強会を広げよう！な人。Rubyist。nequal の中の人。高専クラスタ。</p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

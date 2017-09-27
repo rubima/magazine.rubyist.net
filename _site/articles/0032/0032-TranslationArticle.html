@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>海外記事翻訳シリーズ 【第 1 回】 RSpec ベストプラクティス</title>
+  <meta name="description" content="訳者: 桑田誠">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0032/0032-TranslationArticle.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>海外記事翻訳シリーズ 【第 1 回】 RSpec ベストプラクティス</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0032/0032-TranslationArticle.html" class="hatena-bookmark-button" data-hatena-bookmark-title="海外記事翻訳シリーズ 【第 1 回】 RSpec ベストプラクティス" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0032/0032-TranslationArticle.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0032/0032-TranslationArticle.html" data-text="海外記事翻訳シリーズ 【第 1 回】 RSpec ベストプラクティス">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>訳者: 桑田誠</p>
+
+<h2 id="この連載について">この連載について</h2>
+
+<p>この連載では、海外の良質な記事やブログを翻訳して紹介します。</p>
+
+<p>第 1 回目は、Jared Carrollさんのブログ記事「<a href="http://blog.carbonfive.com/2010/10/21/rspec-best-practices/">RSpec Best Practice</a>」です。</p>
+
+<h2 id="rspec-ベストプラクティス">RSpec ベストプラクティス</h2>
+
+<p>RSpec は、振舞駆動の設計プロセス (behaviour driven design process) において、人間にとって読みやすい仕様を書くための優れたツールです。RSpec で書かれた仕様が、アプリケーション開発における方向と検証を行います。本記事では私たちが気づいた、エレガントで保守しやすい仕様を書くためのプラクティスを紹介します。</p>
+
+<h3 id="まず何をしてるのかを-describe-で説明しましょう">まず、何をしてるのかを #describe で説明しましょう</h3>
+
+<p>定義するつもりのメソッドごとに、#describe を使うことから始めましょう。このとき引数にはメソッド名を指定します。クラスメソッドには名前の頭に「.」をつけ、インスタンスメソッドには頭に「#」をつけましょう。これは Ruby の標準的なドキュメントプラクティスに則っており、spec ランナーによる出力が読みやすくなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe User do
+
+  describe '.authenticate' do
+  end
+
+  describe '.admins' do
+  end
+
+  describe '#admin?' do
+  end
+
+  describe '#name' do
+  end
+
+end</code></pre></figure>
+
+<h3 id="次にcontext-コンテキスト-をはっきりさせましょう">次に、#context (コンテキスト) をはっきりさせましょう</h3>
+
+<p>メソッドの実行パスごとに、#context を書きましょう。与えられたコンテキストのもとでの〔訳注: つまり実行パスごとの〕メソッドの挙動を逐語的に指定します。</p>
+
+<p>たとえば、次のメソッドには 2 つの実行パスがあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class SessionsController &lt; ApplicationController
+
+  def create
+    user = User.authenticate :email =&gt; params[:email],
+                                     :password =&gt; params[:password]
+    if user.present?
+      session[:user_id] = user.id
+      redirect_to root_path
+    else
+      flash.now[:notice] = 'Invalid email and/or password'
+      render :new
+    end
+  end
+
+end</code></pre></figure>
+
+<p>対応するスペックでは 2 つのコンテキストを作成します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe '#create' do
+  context 'given valid credentials' do
+  end
+
+  context 'given invalid credentials' do
+  end
+end</code></pre></figure>
+
+<p>各 #context の引数における「given」の使い方に注意してください。「given」はメソッドに与えられる入力値を説明します。ほかに使える単語としては「when」があります。こちらは条件によって挙動が変わるときのコンテキストを表現するのに使えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe '#destroy' do
+  context 'when logged in' do
+  end
+
+  context 'when not logged in' do
+  end
+end</code></pre></figure>
+
+<p>このスタイルに従えば、複数の #context を入れ子にすることで、より深い実行パスを明確に定義できます。</p>
+
+<h3 id="it-でのエクスペクテーションはひとつだけにしましょう">#it でのエクスペクテーションはひとつだけにしましょう</h3>
+
+<p>サンプル (example) 1 つにつき 1 つのエクスペクテーション (expectation) だけを記述するように努力してください。そうすればスペックの可読性が向上します。</p>
+
+<p>次のスペックはひとつのサンプルのなかにあまり関連していないエクスペクテーションが混じっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe UsersController do
+
+  describe '#create' do
+    ...
+
+    it 'creates a new user' do
+      User.count.should == @count + 1
+      flash[:notice].should be
+      response.should redirect_to(user_path(assigns(:user)))
+    end
+  end
+
+end</code></pre></figure>
+
+<p>以下のようにエクスペクテーションを複数のサンプルに分解することで、挙動を明確に定義できますし、サンプルの保守もより簡単になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe UsersController do
+
+  describe '#create' do
+    ...
+
+    it 'creates a new user' do
+      User.count.should == @count + 1
+    end
+
+    it 'sets a flash message' do
+      flash[:notice].should be
+    end
+
+    it "redirects to the new user's profile" do
+      response.should redirect_to(user_path(assigns(:user)))
+    end
+  end
+
+end</code></pre></figure>
+
+<p>サンプルの説明は挙動を表す現在時制の動詞で始めてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">it 'creates a new user' do
+end
+
+it 'sets a flash message' do
+end
+
+it 'redirects to the home page' do
+end
+
+it 'finds published posts' do
+end
+
+it 'enqueues a job' do
+end
+
+it 'raises an error' do
+end</code></pre></figure>
+
+<p>最後に、サンプルの説明を「should」で始めないようにしましょう。「should」を使うのは冗長ですし、結果としてスペックの出力が読みづらくなります。可読性が向上すると思うなら「the」や「a」や「an」は積極的にサンプルの説明に使っていきましょう。</p>
+
+<h3 id="明示的にすることを心がけましょう">明示的にすることを心がけましょう</h3>
+
+<p>「#it」や「#its」や「#specify」はタイプ量を減らすことができますが、可読性が犠牲になってしまいます。それらを使った場合、サンプルの中身を読まないと、それが何を意味しているのかを把握できなくなります。</p>
+
+<p>次の例を使ってドキュメントフォーマッタ出力を比べてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe PostsController do
+
+  describe '#new' do
+    context 'when not logged in' do
+      ...
+
+      subject do
+        response
+      end
+
+      it do
+        should redirect_to(sign_in_path)
+      end
+
+      its :body do
+        should match(/sign in/i)
+      end
+        end
+  end
+ end</code></pre></figure>
+
+<p>明示的に振舞いを記述した場合は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe PostsController do
+
+  describe '#new' do
+    context 'when not logged in' do
+      ...
+
+      it 'redirects to the sign in page' do
+        response.should redirect_to(sign_in_path)
+      end
+
+      it 'displays a message to sign in' do
+        response.body.should match(/sign in/i)
+      end
+    end
+  end
+
+end</code></pre></figure>
+
+<p>前者の場合、そっけなくてコードっぽい感じで出力され、「should」が何度も登場して冗長です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rspec spec/controllers/posts_controller_spec.rb --format documentation
+
+PostsController
+  #new
+    when not logged in
+      should redirect to "/sign_in"
+      should match /sign in/i</code></pre></figure>
+
+<p>後者の場合、スペックが非常に明確で読みやすく出力されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rspec spec/controllers/posts_controller_spec.rb --format documentation
+
+PostsController
+  #new
+    when not logged in
+      redirects to the sign in page
+      displays a message to sign in</code></pre></figure>
+
+<h3 id="スペックを実行して読みやすさを確認しましょう">スペックを実行して読みやすさを確認しましょう</h3>
+
+<p>スペックを実行する際には常に「-format」オプションに「documentation」をつけるようにしましょう (RSpec 1.x では「-format」オプションは「nestable」と「specdoc」です)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rspec spec/controllers/users_controller_spec.rb --format documentation
+
+UsersController
+  #create
+    creates a new user
+    sets a flash message
+    redirects to the new user's profile
+  #show
+    finds the given user
+    displays its profile
+  #show.json
+    returns the given user as JSON
+  #destroy
+    deletes the given user
+    sets a flash message
+    redirects to the home page</code></pre></figure>
+
+<p>出力が明瞭な会話のようになるまで、サンプルの名前を変更し続けましょう。</p>
+
+<h3 id="適切なマッチャを使いましょう">適切なマッチャを使いましょう</h3>
+
+<p>RSpec は役に立つマッチャを数多く揃えています。これらを使うと、スペックが話しことばにより近くなります (訳注: ここでの話しことばとは英語のことです)。</p>
+
+<p>私たちが好んで使うマッチャを紹介します。使う前と使った後での違いは次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 使用前: 二重否定
+object.should_not be_nil
+# 使用後: 二重否定しない
+object.should be
+
+# 使用前: 'lambda' だと低水準すぎる
+lambda { model.save! }.should raise_error(ActiveRecord::RecordNotFound)
+# 使用後: 'expect' と 'to' でより自然なエクスペクテーションに
+expect { model.save! }.to raise_error(ActiveRecord::RecordNotFound)
+
+# 使用前: 実直に比較
+collection.size.should == 4
+# 使用後: サイズを調べるより高水準なエクスペクテーションを使う
+collection.should have(4).items</code></pre></figure>
+
+<p><a href="http://rspec.info/documentation/">ドキュメント</a>を参照したり周りの人に聞いたりしてください。</p>
+
+<h3 id="フォーマット">フォーマット</h3>
+
+<p>すべてのブロックで、’do..end’ スタイルのブロックを使いましょう。このとき、たとえ 1 行のエクスペクテーションでも複数行のブロックを使います。可読性をより向上させるために、すべてのブロック間に空行を 1 行入れます。また、トップレベルの #describe では最初と最後に 1 行の空行を入れましょう。</p>
+
+<p>比較してみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe PostsController do
+  describe '#new' do
+    context 'when not logged in' do
+      ...
+      subject { response }
+      it { should redirect_to(sign_in_path) }
+      its(:body) { should match(/sign in/i) }
+    end
+  end
+end</code></pre></figure>
+
+<p>分かりやすく構造化したコードは次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe PostsController do
+
+  describe '#new' do
+    context 'when not logged in' do
+      ...
+  
+      it 'redirects to the sign in page' do
+        response.should redirect_to(sign_in_path)
+      end
+  
+      it 'displays a message to sign in' do
+        response.body.should match(/sign in/i)
+      end
+    end
+  end
+
+end</code></pre></figure>
+
+<p>複数の開発者がいるチームでは、一貫したフォーマットスタイルを維持するのは難しいことではありますが、各チームメイトのスタイルを視覚的にパースするのを修得するために費やされる時間を節約できるので、やる価値はあります。</p>
+
+<h3 id="まとめ">まとめ</h3>
+
+<p>本記事では、誰にとっても読みやすくて分かりやすい仕様を書くことに関するプラクティスを紹介しました。目標は、実行してパスするだけでなく、その出力結果がアプリケーションを完全に定義しているようなスペックを書くことです。ひとつひとつの小さなステップの積み重ねが、ゴールに向かうことを助けてくれます。私たちはもっと良い方法を引き続き学んでいるところです。あなたの RSpec ベストプラクティスはどのようなものでしょうか？</p>
+
+<h3 id="訳者について">訳者について</h3>
+
+<p>桑田誠。RSpecより「alias eq assert_equal」のほうが好き。</p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

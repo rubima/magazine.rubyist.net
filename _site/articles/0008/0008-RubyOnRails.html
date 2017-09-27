@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RubyOnRails を使ってみる 【第 4 回】 ActionPack</title>
+  <meta name="description" content="書いた人: moriq">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0008/0008-RubyOnRails.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>RubyOnRails を使ってみる 【第 4 回】 ActionPack</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0008/0008-RubyOnRails.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RubyOnRails を使ってみる 【第 4 回】 ActionPack" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0008/0008-RubyOnRails.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0008/0008-RubyOnRails.html" data-text="RubyOnRails を使ってみる 【第 4 回】 ActionPack">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人: moriq</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>夏休み前のひととき。
+夏休みはいっちょ Rails でもやってみようかと思われる方、ようこそです。
+仕事で Rails と格闘されている方、普及に努めていらっしゃる方に、心よりのご健闘と感謝を。</p>
+
+<p>今回は ActionPack について取り上げようと思います。</p>
+
+<p>先号は ActionPack について書くつもりにしていたのに休んでしまいました。
+今回もなぜか時間がありません。でもこの Rails 熱の高まっている中 (しかも来月は休みだし) 何も書かないのはちょっとなあと思って書いてみました。もちろんこれは予防線を張るためのひどい言い訳です。</p>
+
+<p>さて、ActionPack は非常に広範囲に渡るライブラリで、ちょっとやそっとで語れるものではありません。
+ということで今回は、ピンポイントの選択と集中を行って、
+みんなが知りたいと思っている (と私が思っている) ことを書いてみました。ヤマを外していたらごめんなさい。</p>
+
+<p>嬉しいことに、Rails を使う人がすごく増えていて、ActionPack についてもいろいろなところで詳細な説明が行われています。
+同じようなことを薄く書いても意味がないので、隙間狙いで書いてみました。</p>
+
+<p>お題目は次の通りです。</p>
+
+<ul>
+  <li>ActionPack は何をしてくれるの - 簡単なまとめ</li>
+  <li>どのように伝わるの - 流れを理解する</li>
+  <li>最近の Rails</li>
+  <li>フォーム要素を Ajax 化する</li>
+</ul>
+
+<p>また、ActionPack のうち、今回扱わない話は次の通り。</p>
+
+<ul>
+  <li>benchmarking</li>
+  <li>caching, fragment</li>
+  <li>components</li>
+  <li>dependencies</li>
+  <li>pagination</li>
+  <li>streaming</li>
+  <li>upload_progress</li>
+  <li>verification</li>
+  <li>action_view/helper 全般</li>
+  <li>partials</li>
+  <li>test</li>
+</ul>
+
+<p>…多いね!</p>
+
+<h2 id="actionpack-は何をしてくれるの">ActionPack は何をしてくれるの</h2>
+
+<p>ActionPack は何をしてくれるものなのか。</p>
+
+<p>ブラウザからのリクエストを受け取って、それを処理して、レスポンスを返す。これが Web アプリの基本。
+例えば
+<a href="http://my.shop.com/store/add_to_cart/123">http://my.shop.com/store/add_to_cart/123</a>
+という URL にリクエストしたとしよう。すると
+StoreController クラスの add_to_cart メソッドが呼び出される。
+このときパラメータ id=123 が一緒に渡される。</p>
+
+<p>add_to_cart は id=123 に対応する商品をカート (買い物かご) に入れる。
+そして、続けて買い物できるようにページを作ってレスポンスとして返す。
+もちろん、そうなるように add_to_cart を書くことになるわけだけど。</p>
+
+<p>このように URL を解析してアクションメソッドを呼び出してレスポンスを返すことが ActionPack の大事な仕事その一。
+この機能は特に ActionController というくくりでまとめられている。
+ActionController を構成するファイルは lib/action_controller/ に置かれている。</p>
+
+<p>ActionPack の大事な仕事その二はテンプレートを元にレスポンスを作ること。
+このうち、テンプレートを作成するのに役立つ機能が ActionView としてまとめられている。</p>
+
+<p>Rails では ERB で HTML テンプレートを書く。このテンプレートを書きやすくするのが ActionView の仕事。
+ERB 以外のテンプレートエンジンでも書けるようにしようという動きがあるけど、本稿ではこれについて触れない (ごめん)。
+ActionView のファイルは lib/action_view/ にある。</p>
+
+<p>細かい話をするときりがないけど (test とか caching とか dependencies とかね) MVC のうち View と Controller を司るのが ActionPack。</p>
+
+<h3 id="ジェネレータ">ジェネレータ</h3>
+
+<p>ActionPack を利用する上で、使う頻度が高いジェネレータについて説明します。</p>
+
+<p>script/generate はジェネレータを起動するスクリプトです。ジェネレータのうち、ActionPack に関連するものとして controller, scaffold を取り上げます。
+まず、controller ジェネレータについて。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> script/generate controller</code></pre></figure>
+
+<p>とすると controller ジェネレータのヘルプが表示されます。引数としてコントローラ名とアクション名 (省略可) を指定します。</p>
+
+<p>controller ジェネレータは app/controllers に Controller クラス、app/views にテンプレートディレクトリを (アクション名を指定すればテンプレートファイルも) 作ってくれます (ちなみに generate view はありません)。</p>
+
+<p>もうひとつ、scaffold ジェネレータについて。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> script/generate scaffold</code></pre></figure>
+
+<p>scaffold ジェネレータは model と controller (と view) を作ってくれます。その上、基本的なアクション (いわゆる CRUD) を行える段階までアクションメソッドとテンプレートを用意してくれます。合わせてきれいなスタイルシートも付いてくるので、これだけでも見栄えのするインターフェイスができあがります (まあ、我々には日本語という問題があるので、こんな宣伝文句には煽られないのだけど)。
+具体的には、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> script/generate scaffold Entry</code></pre></figure>
+
+<p>は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> script/generate model Entry
+ script/generate controller Entries list show new edit</code></pre></figure>
+
+<p>のようなもので (generate scaffold を使うとコントローラ名が複数形になることは気に留めておいたほうがいいでしょう)、これに加え、アクションの定義 (view を持たない index create update destroy も含まれます) とテンプレートの作成も行います。</p>
+
+<p>generate scaffold を使う際には、データベース上でテーブルを作成しておく必要があります。
+なぜなら generate scaffold は実際のテーブル情報に基づいてフォームテンプレート (_form.rhtml) を作るからです。
+といっても、ジェネレータは後から再実行できるので、不可欠というわけではありません。なお、再実行の際には、既存のファイルを上書きする前に、上書きするか否かをファイルごとに選択できます。</p>
+
+<p>Rails で scaffold と言われるものにはもうひとつあって、
+コントローラの中で宣言するもの、具体的には</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class WeblogController &lt; ActionController::Base
+   scaffold :entry
+ end</code></pre></figure>
+
+<p>のように用いるものがあります。
+これは実行時に (動的に) アクションを定義する面でジェネレータとは異なりますが、アプリを起動したときに提供される機能としては同じものです。ただ、ジェネレータは実際にソースを書き出してくれるので、以降のカスタマイズが容易です。</p>
+
+<p>ソースを読む方へ。
+ジェネレータのソースは railties (gem では rails) の lib/rails_generator にあります。
+コントローラの中で宣言するほうの scaffold は action_controller/scaffolding.rb にあります。</p>
+
+<h3 id="セッション-session">セッション (session)</h3>
+
+<p>Web アプリケーションの要であるセッションについて説明します。</p>
+
+<p>セッション (session) は Web アプリケーションを作るうえで欠かせない要素です。
+セッションは同一性を保持する仕組みです。セッションを使うと次のアクションにデータを渡せます。
+具体的には、ログイン状態の維持、買い物かごの維持、といったことに使われます。</p>
+
+<p>一般的に Web アプリケーションのセッションは Cookie を使って実現されています。
+Rails のセッションは cgi.rb のセッション管理機能を元に実装されていますが、これも Cookie を使います。</p>
+
+<p>セッションの id を URL にパラメータとして載せれば Cookie なしにセッションを実現できますが、
+セッションを認証の仕掛けに用いる場合には穴が開く恐れがあります。</p>
+
+<p>また SSL を通すときには secure Cookie を使う必要があるかもしれません。</p>
+
+<p>実装の観点から見れば、セッションは Marshal されたオブジェクト (Hash) をファイル (やメモリ) に格納したり復元したりする仕組みです。
+Marshal されたオブジェクトは id (16進数32文字) に対応付けられます。
+Cookie の中には id だけ保存されます。</p>
+
+<p>Rails では、セッションのファイル (やメモリ) への格納と復元については、自動化されています。
+Rails ユーザから見ると、アクションの中でセッションを利用するには session というアクセサ (あるいは @session というインスタンス変数) を Hash のように読み書きするだけです。
+また、テンプレートの中では @session としてアクセスできます (1.9.0 以降はアクセサが定義されているので session でも ok)。</p>
+
+<h3 id="フラッシュ-flash">フラッシュ (flash)</h3>
+
+<p>セッションを利用した機能として flash (フラッシュ) があります。
+flash は Rails 特有の用語なんでしょうか。ほかのフレームワークでは聞いたことがありません。
+flash は次のアクションに (それも特に次のアクションに限って) 任意のオブジェクトを受け渡す仕組みです。Macromedia Flash とは何の関係もありません。</p>
+
+<p>flash の主な用途はメッセージの伝達です。あるアクションで失敗した旨をメッセージ文字列としてフラッシュに保存してから redirect_to すれば、redirect 先のアクションでフラッシュからメッセージを取り出せるというわけです。
+たいてい flash に格納されるのはこのようなメッセージとしての単純な文字列です (flash は全体で見れば Hash であって、あるキーに対する値としてメッセージを設定する)。</p>
+
+<p>flash はセッションから見れば単にひとつのキー “flash” とそれに対応する値 (FlashHash) です。</p>
+
+<p>flash はアクションの中ではアクセサ flash を通してアクセスでき、これを Hash として読み書きできます。
+また、テンプレートの中では @flash としてアクセスできます (1.9.0 以降はアクセサが定義されているので flash でも ok)。</p>
+
+<h2 id="どのように伝わるの---流れを理解する">どのように伝わるの - 流れを理解する</h2>
+
+<p>この章は ActionPack のソースを読む話。</p>
+
+<p>フレームワークを使うんだから詳細は別にいいという向きもあるかもしれないけど、
+どういう仕組みになっているか知っておくことは大切だと思う。
+特に Rails のような柔軟なフレームワークでは、使いこなす上でも仕組みを理解することは大切になってくるはず。</p>
+
+<p>特にわかりにくいのは、プロセスの始めの部分。ようするに、
+ブラウザからのアクセスがどのように伝わるのかという、とっかかりが難しい。
+一通り Ruby の文法と CGI や Web の仕組みを理解していても、ActionPack の実装を読むのは難しい。</p>
+
+<p>まず、ファイルの構成を見ておこう。</p>
+
+<p>ファイルの多くは lib/action_controller/ にあるけど、
+dispatcher.rb は railties (gems でいうと rails) に含まれるし、active_support が提供する機能も使われている。
+適宜参照してください。</p>
+
+<p>URL を解析してアクションメソッドを呼び出してレスポンスを返すという流れでいくと、
+URL の解析は routing.rb
+メソッドの呼び出しは dispatcher.rb
+で行われる。</p>
+
+<p>あと、
+リクエスト request.rb とレスポンス response.rb があるんだけど、
+これらは CGI に限らない抽象的なクラスになっている。
+CGI としてのリクエストとレスポンスは cgi_process.rb にある。
+それと cgi.rb を拡張する cgi_ext/ も見ることになる。</p>
+
+<p>ファイルの構成は以上。</p>
+
+<p>道標としてこれから見ていく流れをまとめておく。</p>
+
+<ol>
+  <li>リクエストとレスポンスを生成</li>
+  <li>リクエストを解析して (recognize!)、コントローラを得る</li>
+  <li>コントローラでアクションを実行 (process)</li>
+  <li>テンプレートを元にレスポンスを設定 (render)</li>
+  <li>レスポンスを出力</li>
+</ol>
+
+<p>ではスタート。</p>
+
+<p>CGI, FastCGI, mod_ruby を通してアクセスすると、public/dispatch.{cgi,fcgi,rb} が最初に実行されるファイルになる。
+詳細を省くと、最終的には</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "dispatcher"
+ Dispatcher.dispatch</code></pre></figure>
+
+<p>が呼ばれる。</p>
+
+<p>script/server で Webrick を使う場合は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> DispatchServlet.dispatch</code></pre></figure>
+
+<p>が呼ばれる。</p>
+
+<h3 id="dispatch">dispatch</h3>
+
+<p>ここでは Dispatcher.dispatch をみていくことにする。定義は dispatcher.rb にある。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   def dispatch(cgi = CGI.new, session_options = ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS, output = $stdout)
+     begin
+       request, response = ActionController::CgiRequest.new(cgi, session_options), ActionController::CgiResponse.new(cgi)
+       prepare_application
+       ActionController::Routing::Routes.recognize!(request).process(request, response).out(output)
+     rescue Object =&gt; exception
+       ActionController::Base.process_with_exception(request, response, exception).out(output)
+     ensure
+       reset_after_dispatch
+     end
+   end</code></pre></figure>
+
+<p>ここでは cgi という CGI オブジェクトを元に (これは cgi.rb の CGI オブジェクトだ)、request (ActionController::CgiRequest), response (ActionController::CgiResponse) を作っている。
+そして、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ActionController::Routing::Routes.recognize!(request).process(request, response).out(output)</code></pre></figure>
+
+<p>これからこの一行を解読してみよう。</p>
+
+<h3 id="routesrecognize">Routes.recognize!</h3>
+
+<p>ActionController::Routing::Routes は routing.rb にある。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   class RouteSet #:nodoc:
+
+     def recognize(request)
+       string_path = request.path
+       string_path.chomp! if string_path[0] == ?/
+       path = string_path.split '/'
+       path.shift
+
+       hash = recognize_path(path)
+       return recognition_failed(request) unless hash &amp;&amp; hash['controller']
+
+       controller = hash['controller']
+       hash['controller'] = controller.controller_path
+       request.path_parameters = hash
+       controller.new
+     end
+     alias :recognize! :recognize
+
+   end
+
+   Routes = RouteSet.new</code></pre></figure>
+
+<p>引用した最後の行にあるように、Routes は RouteSet のインスタンス。</p>
+
+<p>ええと、詳細は後でじっくり追ってくれたらいいので (でもやるなら暇なときがいいと思うよ)、とりあえず recognize! (alias recognize) の戻り値が controller.new つまりコントローラであることに注目して。ここで作られるコントローラは URL を解析した結果として得られるコントローラ名をクラス名としたもの。つまり recognize は config/routes.rb を元に解析を行っているわけ。</p>
+
+<h3 id="process">process</h3>
+
+<p>dispatch に戻ると recognize! の戻り値に .process(request, response) だから、今度は base.rb を見よう (もちろん action_controller の base.rb)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">     def process(request, response, method = :perform_action, *arguments) #:nodoc:
+       initialize_template_class(response)
+       assign_shortcuts(request, response)
+       initialize_current_url
+       @action_name = params[:action] || 'index'
+
+       log_processing unless logger.nil?
+       send(method, *arguments)
+       close_session
+
+       return @response
+     end</code></pre></figure>
+
+<p>詳細は飛ばして send に注目。process のパラメータを見ると method = :perform_action だから perform_action の定義を見よう。</p>
+
+<h3 id="perform_action">perform_action</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">     def perform_action
+       if action_methods.include?(action_name) || action_methods.include?('method_missing')
+         send(action_name)
+         render unless performed?
+       elsif template_exists? &amp;&amp; template_public?
+         render
+       else
+         raise UnknownAction, "No action responded to #{action_name}", caller
+       end
+     end</code></pre></figure>
+
+<p>ここで action_name はアクセサであることに注意。さっきの process の中で send の前に</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">       @action_name = params[:action] || 'index'</code></pre></figure>
+
+<p>としている。この値が action_name として得られる。これはようするに URL を解析した結果として得られるアクション名だ (params の詳細ははしょった)。</p>
+
+<p>というわけで、perform_action では、アクション名に対応するメソッドがあればそれを呼び出し (send)、メソッドがなくてもテンプレートがあればそのテンプレートを出力し (render)、だめなら UnknownAction 例外を飛ばす。</p>
+
+<h3 id="responseout">response.out</h3>
+
+<p>process の戻り値は @response 。これは process の引数の response と同じ (assign_shortcuts を参照)。response の中身は render とか redirect_to といったメソッドを呼んだときに設定されることになる。</p>
+
+<p>その後は、dispatch に戻って process(request, response).out(output) なので、response の out メソッドが呼ばれる。
+引数 output のデフォルト値は $stdout。
+cgi_process.rb を見よう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class CgiResponse &lt; AbstractResponse #:nodoc:
+
+   def out(output = $stdout)
+     convert_content_type!(@headers)
+     output.binmode      if output.respond_to?(:binmode)
+     output.sync = false if output.respond_to?(:sync=)
+
+     begin
+       output.write(@cgi.header(@headers))
+
+       if @cgi.send(:env_table)['REQUEST_METHOD'] == 'HEAD'
+         return
+       elsif @body.respond_to?(:call)
+         @body.call(self)
+       else
+         output.write(@body)
+       end
+
+       output.flush if output.respond_to?(:flush)
+     rescue Errno::EPIPE =&gt; e
+       # lost connection to the FCGI process -- ignore the output, then
+     end
+   end</code></pre></figure>
+
+<p>まず、ヘッダの調整とか output (= $stdout) の調整があって、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> output.write(@cgi.header(@headers))</code></pre></figure>
+
+<p>ヘッダを出力する。
+それから、普通は output.write(@body) に進む。単に @body を出力する。
+REQUEST_METHOD が HEAD のときは @body を出力しない (ので、ヘッダだけ出力することになる)。
+@body.call(self) が使われるのは、ええと、@body が Proc オブジェクトのときなんだね。具体的には、send_file でファイルを細切れに流すときに使われる (streaming.rb)。</p>
+
+<h3 id="params">params</h3>
+
+<p>params はアクションを書くときにもよく使うので見ておこうか。</p>
+
+<p>params はアクセサで、@params = request.parameters と設定される (assign_shortcuts を参照)。
+request.parameters は request.rb:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   def parameters
+     @parameters ||= request_parameters.merge(query_parameters).merge(path_parameters).with_indifferent_access
+   end</code></pre></figure>
+
+<p>query_parameters は CGI のいわゆるクエリパラメータ (? 以降 ; や &amp; で区切られるやつね)。</p>
+
+<p>path_parameters はさっき見た recognize の中で</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> request.path_parameters = hash</code></pre></figure>
+
+<p>として設定される、URL を解析した結果として渡されるパラメータ。主に :controller, :action, :id のことだ。</p>
+
+<p>with_indifferent_access なるメソッドはどこからくるのかというと lib/active_support/core_ext/hash/indifferent_access.rb (うわあ)。
+これはハッシュのキーが Symbol ならキーを文字列に置き換える新たなハッシュ (HashWithIndifferentAccess) を作る。</p>
+
+<h3 id="落穂拾い">落穂拾い</h3>
+
+<p>かなりはしょったけど、データの流れていく経路が見えたと思う。</p>
+
+<p>例外処理については dispatch メソッドと rescue.rb を読むことになるね。
+config/routes.rb の処理については、正直私はついてけないんだけど、猛者は挑戦すべし! というか、教えてください。</p>
+
+<p>なお、こういう内側の実装は変更されることが多いので、バージョンが異なるときは適宜読み替えてください。
+あまりにも変わってしまって記事が役立たずになっていなければだけど。</p>
+
+<h2 id="最近の-rails">最近の Rails</h2>
+
+<p>本稿は Rails 0.13.1 の段階で書いている。
+Rails 1.0 のリリースに向けてとりまとめが進んでいる。</p>
+
+<p>Rails year で測ると、Rails にはすでに長い歴史がある。
+昔書かれたドキュメントは、最近の仕様からすると古い書き方になっているかもしれない。
+ここでは特に目に付く書き方の違いについて、どのように対応すればいいのか確認しておくことにしよう。</p>
+
+<h3 id="より簡潔な表現">より簡潔な表現</h3>
+
+<p>前章で触れたように、
+@params が HashWithIndifferentAccess になったことで、キーとしての Symbol は文字列として扱われるようになった。
+また、@params にはアクセサが定義されているため、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> @params["id"]</code></pre></figure>
+
+<p>これを</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> params[:id]</code></pre></figure>
+
+<p>と書けるようになった。
+現時点ではドキュメント中でどちらの表記も用いられているが、少なくともドキュメント上は後者にまとめられていくと思う。</p>
+
+<p>id に関連して、もうひとつ。
+url_for の引数として :id をキーにして指定するとき、
+値として渡す ActiveRecord オブジェクトに .id を付けて数値として渡す必要はなく、
+ActiveRecord オブジェクトのままでもよくなった。</p>
+
+<p>url_for は link_to や form_tag などの引数の処理に用いられているのだが、
+例えば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;%= link_to "Edit", :action =&gt; "edit", :id =&gt; @entry.id %&gt;</code></pre></figure>
+
+<p>これを</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;%= link_to "Edit", :action =&gt; "edit", :id =&gt; @entry %&gt;</code></pre></figure>
+
+<p>と書けるようになった。
+初めてこれを見たときは違和感があったが、たった3文字でもタイプ数が減ると楽だ。</p>
+
+<p>この機能は、ActiveRecord の CHANGELOG によれば、
+ActiveRecord::Base#to_param</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">     # Enables Active Record objects to be used as URL parameters in Action Pack automatically.
+     alias_method :to_param, :id</code></pre></figure>
+
+<p>によるもので、1.9.0 以降で使えるようになった。</p>
+
+<p>以上のことは、互換性があるので、昔の書き方でも特に問題は生じない。</p>
+
+<h3 id="非推奨-deprecated-になったメソッド">非推奨 (deprecated) になったメソッド</h3>
+
+<p>最近の Rails では推奨されなくなったメソッドについて確認しておきたい。</p>
+
+<p>ライブラリの deprecated_*.rb というのが、これにあたる。
+多くのサンプルはまだ非推奨メソッドを用いた書き方になっているし、廃止を宣言しているわけではないので、知らない方もおられるかもしれない。この機会に確認しておきたい。</p>
+
+<p>ActiveRecord と ActionPack にはいくつか deprecated というファイルがある。</p>
+
+<ul>
+  <li>active_record/
+    <ul>
+      <li>deprecated_associations.rb</li>
+      <li>deprecated_finders.rb</li>
+    </ul>
+  </li>
+  <li>action_controller/
+    <ul>
+      <li>deprecated_assertions.rb</li>
+      <li>deprecated_renders_and_redirects.rb</li>
+    </ul>
+  </li>
+</ul>
+
+<p>実際にこれらのファイルを確認してみると、その多くは少し引数のとり方を変えて、新しい (推奨される) メソッドを呼んであるだけであることがわかる。</p>
+
+<p>deprecated_renders_and_redirects.rb について、新旧の例が ActionPack の CHANGELOG に載っている:</p>
+
+<ul>
+  <li>redirect_to_path, redirect_to_url は推奨されなくなりました。代わりに redirect_to を使います。</li>
+  <li>render_* は推奨されなくなりました。代わりに render を使います。</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>BEFORE</th>
+      <th>AFTER</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>render_with_layout “weblog/show”, “200 OK”, “layouts/dialog”</td>
+      <td>render :action =&gt; “show”, :layout =&gt; “dialog”</td>
+    </tr>
+    <tr>
+      <td>render_without_layout “weblog/show”</td>
+      <td>render :action =&gt; “show”, :layout =&gt; false</td>
+    </tr>
+    <tr>
+      <td>render_action “error”, “404 Not Found”</td>
+      <td>render :action =&gt; “error”, :status =&gt; “404 Not Found”</td>
+    </tr>
+    <tr>
+      <td>render_template “xml.div(‘stuff’)”, “200 OK”, :rxml</td>
+      <td>render :inline =&gt; “xml.div(‘stuff’)”, :type =&gt; :rxml</td>
+    </tr>
+    <tr>
+      <td>render_text “hello world!”</td>
+      <td>render :text =&gt; “hello world!”</td>
+    </tr>
+    <tr>
+      <td>render_partial_collection “person”, @people, nil, :a =&gt; 1</td>
+      <td>render :partial =&gt; “person”, :collection =&gt; @people, :locals =&gt; { :a =&gt; 1 }</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ただし、非推奨にはなっても警告が出ることもなく使える状態にある。
+慌てて対応しなければならないものではないと思う。</p>
+
+<p>非推奨になってしまったメソッドのほうが、新しく定義された汎用のメソッドより書きやすいこともある。
+例えば、これは ActiveRecord での例になるが、find_all を find :all で書き直すと、条件は :conditions =&gt; で書かないといけないのでかなり面倒だ。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> find(:all, :conditions =&gt; ["user_name = ?", user_name])
+ find_all(["user_name = ?", user_name])</code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>find_by_<em>, find_all_by_</em> に慣れ親しんでいる開発者もいるだろう (ただし find_{all_}by_* は find_{all</td>
+      <td>first}, find :{all,first} の置き換えであり、オプションが Hash 形式なら deprecated ではない)。</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> find_all_by_user_name(user_name)</code></pre></figure>
+
+<p>find については、最近のオプションの指定方法を確認しておくと良いだろう。</p>
+
+<p>Rails 1.0 に向けてどのような方針になっているのか調べられていないのだが、
+非推奨側 (deprecated_*.rb) に移されたメソッドも、互換性の問題から長期的にサポートせざるを得ないのではないだろうか。これは私の希望でもあるけど。</p>
+
+<h2 id="フォーム要素を-ajax-化する">フォーム要素を Ajax 化する</h2>
+
+<p>ここでは、既存のフォーム要素を Ajax 化する例を取り上げる。</p>
+
+<p>Rails が紹介されるとき、特長のひとつとして、Ajax のサポートを挙げられることが多くなってきたように思う。</p>
+
+<p>Ajax をサポートするライブラリは javascript_helper として ActionView に組み込まれている。</p>
+
+<p>Rails での Ajax は JavaScript で書かれた Prototype というライブラリを用いる。
+動作を理解するためには JavaScript 側も見る必要があり、Ruby のコードだけ追っても仕掛けはわかりにくい。
+具体的な置き換えを見ながら、使い方を把握してみよう。</p>
+
+<p>Rails で Ajax を使うのは簡単だ。</p>
+
+<h3 id="link_to-form-の置き換え">link_to, form の置き換え</h3>
+
+<p>端的には、link_to を link_to_remote に、form_tag を form_remote_tag に置き換えるだけでいい。
+ここでは省略させていただく。これらの使い方は次に示す『動的な form の生成』にも出てくる。</p>
+
+<h3 id="動的な-form-の生成">動的な form の生成</h3>
+
+<p>動的にフォームを作ると良いパターンとしてリスト項目の編集がある。
+ここではサンプルとして、
+アンケートフォームを生成するシステムのうち、設問項目の編集画面を採り上げる。</p>
+
+<p>@survey.questions の要素である question を編集するインターフェイスを考える。</p>
+
+<p>ここで、
+アンケートの編集画面を表示するアクションを edit_enq、
+リスト項目の編集画面を表示するアクションを edit_question、
+リスト項目を更新するアクションを update_question とする。</p>
+
+<p>最も単純な画面設計は、編集ボタンを押したときに編集ページ (edit_question) に遷移し、そこで更新すると (update_question) リスト表示に戻る (edit_enq) というものだろう。これは scaffold で簡易に作ることができるインターフェイスと同じものになる。
+しかし、編集する項目が少ないときに編集ページを用意すると、遷移がわずらわしく感じられる。
+そこで、リスト表示と編集フォームの表示を同じ画面で行うことを考える。
+<img src="/images/0008-RubyOnRails/enq.gif" alt="enq.gif" /></p>
+
+<p>(icon 画像は Rails Day 2005 の Sheets から拝借した)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def edit_enq
+   @survey = Survey.find(@params["id"])
+ end
+
+ def edit_question
+   @question = Question.find(@params["id"])
+   @survey = @question.survey
+   render_action "edit_enq"
+ end
+
+ def update_question
+   @question = Question.find(@params["id"])
+   @question.attributes = @params["question"]
+   @question.save
+   redirect_to :action=&gt;"show_enq", :id=&gt;@question.survey
+ end</code></pre></figure>
+
+<p>edit_question で edit_enq.rhtml テンプレートを使うように指定していることに注意。</p>
+
+<ul>
+  <li>edit_enq.rhtml:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;ul&gt;
+ &lt;% @survey.questions.each {|question| -%&gt;
+   &lt;li&gt;
+ &lt;%   if controller.action_name == "edit_question" &amp;&amp; question == @question -%&gt;
+     &lt;%= form_tag :action=&gt;"update_question", :id=&gt;question %&gt;
+     &lt;%= text_field "question", "content", "size"=&gt;80 %&gt;
+     &lt;%= submit_tag "更新" %&gt;
+     &lt;/form&gt;
+ &lt;%   else -%&gt;
+     &lt;%=h question.content %&gt;
+     &lt;%= link_to image_tag("/images/edit.gif", :border=&gt;0), :action=&gt;"edit_question", :id=&gt;question %&gt;
+ &lt;%   end -%&gt;
+   &lt;/li&gt;
+ &lt;% } -%&gt;
+ &lt;/ul&gt;</code></pre></figure>
+
+<p>このように controller.action_name を元にして、アクションの違いでテンプレートを一部変更することができる。</p>
+
+<p>さて、これは期待通りに動くが、編集時に画面全体を書き換えてしまうのが気になる。
+変更が必要な部分だけ書き換えることができれば、レスポンスの向上が見込める。
+というわけで、前置きが長くなったが、ここでは Ajax を用いて、動的に書き換えるようにしてみよう。</p>
+
+<ul>
+  <li>edit_enq.rhtml (with Ajax):</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;%= javascript_include_tag "prototype" %&gt;
+
+ &lt;ul&gt;
+ &lt;% @survey.questions.each {|question| -%&gt;
+   &lt;li&gt;
+   &lt;div id="question_&lt;%= question.id %&gt;"&gt;&lt;%=h question.content %&gt;&lt;/div&gt;
+   &lt;%= link_to_remote image_tag("/images/edit.gif", :border=&gt;0), :url=&gt;{:action=&gt;"edit_question", :id=&gt;question}, :update=&gt;"question_#{question.id}" %&gt;
+   &lt;/li&gt;
+ &lt;% } -%&gt;
+ &lt;/ul&gt;</code></pre></figure>
+
+<p>まず前提として、Rails で Ajax サポートメソッドを使うときには、テンプレートに Prototype ライブラリを組み込む必要がある。
+そのためには javascript_include_tag を用いればよい。
+必要な JavaScript ファイルは public/javascripts に置くことになるが、prototype.js は始めから置かれているはずだ。</p>
+
+<p>ライブラリが準備できたところで、中身にとりかかろう。
+まず、書き換える範囲を div で囲み id 属性を設定しておく。
+そして link_to を link_to_remote に変更する。
+その際 :action, :id の引数は :url の値としてくるみ、書き換える div の id 属性を :update の値に設定する。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def edit_question
+   @question = Question.find(@params["id"])
+   @survey = @question.survey
+   render_text @template.render_partial("edit_question", "question"=&gt;@question)
+ end</code></pre></figure>
+
+<p>edit_question では render を変更する。ここでは partial を用いてフォームを作ることにする。</p>
+
+<ul>
+  <li>_edit_question.rhtml:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;%= form_remote_tag :url=&gt;{:action=&gt;"update_question", :id=&gt;question}, :update=&gt;"question_#{question.id}" %&gt;
+ &lt;% @question = question -%&gt;
+ &lt;%= text_field "question", "content", "size"=&gt;80 %&gt;
+ &lt;%= submit_tag "更新" %&gt;
+ &lt;/form&gt;</code></pre></figure>
+
+<p>partial のファイル名は頭に _ が付くことに注意。また、render_partial で指定したパラメータはローカル変数としてテンプレートに渡されるので、text_field の object 名を元に value を設定するためにはインスタンス変数に代入し直す必要がある。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def update_question
+   @question = Question.find(@params["id"])
+   @question.attributes = @params["question"]
+   @question.save
+   render_text @question.content
+ end</code></pre></figure>
+
+<p>update_question では redirect_to を render_text に変更する。
+更新ボタンを押すと form_remote_tag の :update で指定された div のテキストとして render_text に指定した値が使われる。</p>
+
+<p>このように、Rails なら Ajax を簡単に組み込める。</p>
+
+<h3 id="文字コードの問題">文字コードの問題</h3>
+
+<p>…とすんなりことが運べば苦労はない。実際には、日本語環境では UTF-8 を使わない限り文字コードの問題が出てくる。
+一般に、Ajax を通してやり取りされるデータの文字コードは UTF-8 だ (ブラウザの実装による)。
+なので、先のサンプルを Shift_JIS のテンプレートや EUC として扱う DB と組み合わせると文字化けする。</p>
+
+<p>文字コードは出力時に一括して処理することもできるが、Ajax を使う箇所だけで対応するなら、nkf や iconv を用いて変換する必要がある。
+例えば、DB とテンプレートが Shift_JIS のとき、先のサンプルは次のようにする必要がある (注意: ここでは iconv の例外を考慮していない)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "iconv"
+
+ def toutf8(text)
+   Iconv.iconv("UTF-8", "Shift_JIS", text).first
+ end
+ private :toutf8
+
+ def tosjis(text)
+   Iconv.iconv("Shift_JIS", "UTF-8", text).first
+ end
+ private :tosjis
+
+ def edit_question
+   @question = Question.find(@params["id"])
+   @survey = @question.survey
+   render_text toutf8(@template.render_partial("edit_question", "question"=&gt;@question))
+ end
+
+ def update_question
+   @question = Question.find(@params["id"])
+   @params["question"]["content"].replace(tosjis(@params["question"]["content"]))
+   @question.attributes = @params["question"]
+   @question.save
+   render_text toutf8(@question.content)
+ end</code></pre></figure>
+
+<h3 id="ajax-リファレンス">Ajax リファレンス</h3>
+
+<p>今回</p>
+
+<ul>
+  <li>observer</li>
+  <li>auto complete</li>
+</ul>
+
+<p>については採り上げなかった。</p>
+
+<p>Rails で Ajax を使う上で参考になるページを載せておく。</p>
+
+<ul>
+  <li>Ajax on Rails
+    <ul>
+      <li><a href="http://www.onlamp.com/pub/a/onlamp/2005/06/09/rails_ajax.html">http://www.onlamp.com/pub/a/onlamp/2005/06/09/rails_ajax.html</a></li>
+    </ul>
+  </li>
+  <li>Ajax on Rails - 日本語訳
+    <ul>
+      <li><a href="http://wiki.fdiary.net/rails/?AjaxOnRails">http://wiki.fdiary.net/rails/?AjaxOnRails</a></li>
+    </ul>
+  </li>
+  <li>Prototype - JavaScript Framework
+    <ul>
+      <li><a href="http://prototype.conio.net/">http://prototype.conio.net/</a></li>
+    </ul>
+  </li>
+  <li>Ruby on Rails のマニュアル - JavaScriptHelper
+    <ul>
+      <li><a href="http://api.rubyonrails.com/classes/ActionView/Helpers/JavaScriptHelper.html">http://api.rubyonrails.com/classes/ActionView/Helpers/JavaScriptHelper.html</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="rails-関連情報">Rails 関連情報</h2>
+
+<p>Rails に関係するニュースをまとめてみます。</p>
+
+<p>Rails を扱う日本語サイトの <a href="http://wiki.fdiary.net/rails/?NetWatcher">リンク集</a> が Rails 日本語 Wiki
+にあります。</p>
+
+<p><a href="/articles/0007/0007-RubyNews.html">先号の News</a> でもお伝えしましたが、
+pragprog の Dave Thomas と
+Rails の開発者 David Heinemeier Hansson による Rails 本
+<a href="http://www.pragmaticprogrammer.com/titles/rails/">Agile Web Development with Rails</a> が Web 上で販売されています。
+PDF 版もあります。</p>
+
+<p>また、<a href="http://railsday.com/">Rails Day 2005</a> では、Rails Day の入賞作品が公開されています。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>もりきゅうは ミッタシステム のプログラマです。</p>
+
+<p>著者の連絡先は moriq@moriq.com です。</p>
+
+<h2 id="rubyonrails-を使ってみる-連載一覧">RubyOnRails を使ってみる 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0019/0019-RubyOnRails.html">RubyOnRails を使ってみる 【第 10 回】 パフォーマンスチューニング</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-RubyOnRails.html">RubyOnRails を使ってみる 【第 9 回】 Rails で XML-DB にチャレンジ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-RubyOnRails.html">RubyOnRails を使ってみる 【第 8 回】 Rails はまり道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-RubyOnRails.html">RubyOnRails を使ってみる 【第 7 回】 RJS を使ってみる</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-RubyOnRails.html">RubyOnRails を使ってみる 【第 6 回】 テストの書き方</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-RubyOnRails.html">RubyOnRails を使ってみる 【第 5 回】 ActiveHeart</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-RubyOnRails.html">RubyOnRails を使ってみる 【第 4 回】 ActionPack</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RubyOnRails.html">RubyOnRails を使ってみる 【第 3 回】 ActiveRecord</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RubyOnRails.html">RubyOnRails を使ってみる 【第 2 回】 (続・RubyOnRails を使ってみる)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-RubyOnRails.html">RubyOnRails を使ってみる 【第 1 回】</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

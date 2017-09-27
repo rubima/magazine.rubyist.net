@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist にできること</title>
+  <meta name="description" content="著者：かずひこ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0027/0027-WhatWeCanDo.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Rubyist にできること</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0027/0027-WhatWeCanDo.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist にできること" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0027/0027-WhatWeCanDo.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0027/0027-WhatWeCanDo.html" data-text="Rubyist にできること">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：かずひこ</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#使う" id="markdown-toc-使う">使う</a></li>
+  <li><a href="#アップデート" id="markdown-toc-アップデート">アップデート</a></li>
+  <li><a href="#ruby-19" id="markdown-toc-ruby-19">Ruby 1.9</a></li>
+  <li><a href="#コードレビュー" id="markdown-toc-コードレビュー">コードレビュー</a></li>
+  <li><a href="#バグ報告" id="markdown-toc-バグ報告">バグ報告</a></li>
+  <li><a href="#助けを求める" id="markdown-toc-助けを求める">助けを求める</a></li>
+  <li><a href="#プロファイルをとってみる" id="markdown-toc-プロファイルをとってみる">プロファイルをとってみる</a></li>
+  <li><a href="#メモリ使用量をチェック" id="markdown-toc-メモリ使用量をチェック">メモリ使用量をチェック</a></li>
+  <li><a href="#パトロール" id="markdown-toc-パトロール">パトロール</a></li>
+  <li><a href="#ソフトウェアの自由" id="markdown-toc-ソフトウェアの自由">ソフトウェアの自由</a></li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Rubyist のみなさん、こんにちは。
+私事ですが、先日 4 年間務めていた<a href="http://kazuhiko.tdiary.net/20090727.html#p01">日本 Ruby の会理事の職を離れ</a>、晴れて「ただの日本 Ruby の会会員」になりました。
+そこで、「ただの日本 Ruby の会会員」というか「ただの Rubyist」にできることって一体何だろう、と考えてみることにしました。</p>
+
+<p><a href="http://jp.rubyist.net/?About">日本 Ruby の会 公式 Wiki - 日本 Ruby の会とは</a>によると、日本 Ruby の会の目的は、</p>
+
+<ul>
+  <li>Ruby の利用者の支援</li>
+  <li>Ruby (+Ruby のライブラリ) 開発者の支援</li>
+</ul>
+
+<p>だそうですので、だったら私にもいろいろできることはあるのかなと、この 1 ヶ月間にいろいろやってみたことを紹介したいと思います。</p>
+
+<h2 id="使う">使う</h2>
+
+<p>Ruby を使うのは当然として、世の中にたくさんある「Ruby で書かれたフリーソフトウェア」を使ってみましょう。
+もちろん、使うだけでなく、フリーソフトウェアならソースを見て勉強できますし、自分好みにカスタマイズしたり、新しい機能を追加したりできますから、「何となく使う」ではなく、「使って使って使い倒す！」勢いが肝心です。</p>
+
+<p>私が使っている主な Ruby のフリーソフトウェアは、7 年半くらい前から使っているブログじゃなくて Web 日記システムの <a href="http://www.tdiary.org/">tDiary</a> と、6 年半くらい前から使っている Wiki エンジンの <a href="http://hikiwiki.org/">Hiki</a> です。
+そして、自分で使うだけでなく、tDiary と Hiki のホスティングサービスを提供することで、さらにたくさんの人にも Ruby のフリーソフトウェアとの出会いの場を提供しています。</p>
+
+<p>さて、この 1 ヶ月の間に、私が新たに使い始めた Ruby で書かれたフリーソフトウェアは、ただただしさん作の <a href="https://github.com/tdtds/amazon-auth-proxy">amazon-auth-proxy</a> です。
+これは、2009 年 8 月 15 日から <a href="http://www.amazon.co.jp/">Amazon</a> の API 利用に認証が必要になったため、(tDiary や Hiki などの) フリーソフトウェアから使う場合は秘密鍵をいっしょに配布するわけにいかず、利用者一人一人が API の認証鍵の取得を強いられてしまいかねなくなったことに対し、認証部分を代行する proxy を (これまでのと同じ API で) 提供することで、元のフリーソフトウェア利用者に新たな負担をかけない、というアイデアのソフトウェアです。</p>
+
+<p>tDiary や Hiki の大口 (？) 利用者である私としては、この amazon-auth-proxy を大いに必要とする立場ですので、さっそくインストールするとともに、さらに他のユーザの役にも立てるように、風柳さん作の <a href="http://honnomemo.appspot.com/rpaproxy/">Product Advertising API用リバースプロキシ</a><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>に参加しました。
+ちなみに、Product Advertising API用リバースプロキシに参加している人の多くは、私とおなじく tDiary ユーザだそうです。
+こんなところでも、Rubyist は Nice ですね。</p>
+
+<p>Ruby で書かれたフリーソフトウェアの情報は、例えば <a href="http://raa.ruby-lang.org/">RAA (Ruby Application Archive)</a> や <a href="http://rubyforge.org/">RubyForge</a> で得ることができますので、みなさんも自分の好みにあったものがないか、ぜひ探してみてください。</p>
+
+<h2 id="アップデート">アップデート</h2>
+
+<p>次に、使うからには常に最新版を追いかけたいものです。
+古いバージョンにあったバグが最新版では直っているかも、というのも理由の一つですが、それよりも、最新版は開発している人たちが通常もっとも情熱を注いでいるバージョンですので、最新版を追いかけることで、そんな開発者の情熱をより熱く感じられることができるからです。</p>
+
+<p>そんなわけで、私もこの 1 ヶ月間で、手元の環境をいろいろアップデートしてみました。</p>
+
+<p>まずは、Ruby 本体を 1.8.5 から 1.8.7 にアップデートしました。
+これは、私がインストールした当初の amazon-auth-proxy が、Array#tap を使っているために古い Ruby で動かなかったからというのが本当の理由なのですが、1.8.5 という今はもうメンテナンスされていないバージョンを使いつづけるのも不安ですから、ちょうどいい機会でした。</p>
+
+<p>続いて、tDiary や Hiki も久しぶりにアップデートしました。
+しばらくアップデートをさぼっていたので、随分いろんな変更がありましたが、その間の変更箇所を斜め読みすることで、だんだん勘が戻ってきました。</p>
+
+<p>プログラミング言語の学習は、英語やフランス語などの自然言語の学習と同じく継続がとても大切ですので、そういう意味でもこまめなアップデートをして継続的にコードに触れる機会を作るのは良いのではないでしょうか。</p>
+
+<h2 id="ruby-19">Ruby 1.9</h2>
+
+<p>そして、アップデートと言えば、もちろん Ruby 1.9 を忘れるわけには行きません。
+これから Ruby を学ぼうという人は、過去に縛られることなく最初から Ruby 1.9 を使えばいいのですが、tDiary や Hiki のように大昔 (Ruby on Rails 以前！) からあるソフトウェアでは、Ruby 1.9 ではそのまま動かないものもたくさんあります。</p>
+
+<p>もし、今使っているソフトウェアが Ruby 1.9 に対応していない場合、これも嘆くところではなく、むしろ「じゃあ Ruby 1.9 に対応させてあげようじゃないか！」と心踊らせるべきところです。
+そんなわけで、この 1 ヶ月間で Hiki の Ruby 1.9 対応に挑戦してみました。</p>
+
+<p>Ruby 1.9 への移行については、まずは同じ「るびま」の記事、<a href="/articles/0025/0025-FirstStepRuby191.html">Ruby 1.9.1 の歩き方</a>の中の、松江 Ruby 会議でのパネルディスカッションが参考になります。</p>
+
+<blockquote>
+  <p>まず、Ruby 1.8.6 を使っているプログラムは、Ruby 1.8.7 に対応させる。 Ruby 1.8.7 で警告を表示するオプションをつけてプログラムを起動すると、標準エラー出力などに、例えば、String#each や String#map など、 Ruby 1.9 で動かなくなる機能について警告が出る。それらについては、Ruby 1.9 でどうなっているかを調べて修正していく。</p>
+</blockquote>
+
+<p>これは最初の一歩としてとても有効なのですが、警告が出るのは残念ながら「Ruby 1.9 で動かなくなる機能」だけであって、「Ruby 1.9 では仕様が異なる機能」については警告してくれません。
+例えば、String#size は Ruby 1.8 ではバイト数を返すが Ruby 1.9 では文字数を返す、とか、Array#join は Ruby 1.8 では Array#join($,) と同じだが Ruby 1.9 では Array#inspect と同じ、とかです。</p>
+
+<p>でも、人間の目でそういう場所を探すのには限度がありますし、grep などで検索しても動的に呼び出している場合などひっかからないケースもあります。
+そこで、これまでどおり Ruby 1.8 で動かしながら、そういう「やばそうなメソッド」が呼ばれた時に呼び出し元の情報付きで警告を出すライブラリを作ってみました。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_warning</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span>
+  <span class="n">owner</span> <span class="o">=</span> <span class="nb">method</span><span class="p">.</span><span class="nf">owner</span>
+  <span class="nb">name</span> <span class="o">=</span> <span class="nb">method</span><span class="p">.</span><span class="nf">name</span>
+  <span class="n">orig_name</span> <span class="o">=</span> <span class="s2">"orig_</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+  <span class="n">str</span> <span class="o">=</span> <span class="o">&lt;&lt;-</span><span class="no">SRC</span><span class="sh">
+    </span><span class="si">#{</span><span class="n">owner</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">downcase</span><span class="si">}</span><span class="sh"> </span><span class="si">#{</span><span class="n">owner</span><span class="si">}</span><span class="sh">
+      alias :</span><span class="si">#{</span><span class="n">orig_name</span><span class="si">}</span><span class="sh"> :</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sh">
+      def </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sh">(*args)
+        log_warning "</span><span class="si">#{</span><span class="nb">method</span><span class="p">.</span><span class="nf">receiver</span><span class="p">.</span><span class="nf">class</span><span class="si">}</span><span class="sh">#</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sh">"
+        </span><span class="si">#{</span><span class="n">orig_name</span><span class="si">}</span><span class="sh">(*args)
+      end
+    end
+</span><span class="no">    SRC</span>
+  <span class="nb">eval</span> <span class="n">str</span>
+<span class="k">end</span>
+
+<span class="vg">$log_warning_hash</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">def</span> <span class="nf">log_warning</span><span class="p">(</span><span class="n">method_name</span><span class="p">)</span>
+  <span class="n">log_msg</span> <span class="o">=</span> <span class="sx">%Q!(compatibility warning) </span><span class="si">#{</span><span class="n">method_name</span><span class="si">}</span><span class="sx"> used in </span><span class="si">#{</span><span class="nb">caller</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="sx"> !</span>
+  <span class="k">return</span> <span class="k">if</span> <span class="vg">$log_warning_hash</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="n">log_msg</span><span class="p">)</span>
+  <span class="vg">$log_warning_hash</span><span class="p">[</span><span class="n">log_msg</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="n">log_msg</span>
+<span class="k">end</span>
+
+<span class="c1"># String#size has a different behaviour on Ruby-1.9</span>
+<span class="n">add_warning</span> <span class="s2">""</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:size</span><span class="p">)</span>
+
+<span class="c1"># String#length has a different behaviour on Ruby-1.9</span>
+<span class="n">add_warning</span> <span class="s2">""</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:length</span><span class="p">)</span>
+
+<span class="c1"># String#slice has a different behaviour on Ruby-1.9</span>
+<span class="n">add_warning</span> <span class="s2">""</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:slice</span><span class="p">)</span>
+
+<span class="c1"># String#slice! has a different behaviour on Ruby-1.9</span>
+<span class="n">add_warning</span> <span class="s2">""</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:slice!</span><span class="p">)</span>
+
+<span class="c1"># Array#to_s has a different behaviour on Ruby-1.9</span>
+<span class="n">add_warning</span> <span class="p">[].</span><span class="nf">method</span><span class="p">(</span><span class="ss">:to_s</span><span class="p">)</span>
+
+<span class="c1"># String#to_a is not defined on Ruby-1.9</span>
+<span class="n">add_warning</span> <span class="s2">""</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:to_a</span><span class="p">)</span> <span class="k">rescue</span> <span class="kp">nil</span>
+
+</code></pre>
+</div>
+
+<p>使い方は、動かすプログラムの適当な場所で require “compatibility_warning” と加えるだけで、例えば Hiki を Ruby 1.8 で動かすと、こんな error_log が得られます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(compatibility warning) String#to_a used in /hiki_0_8_8/plugin/01sp.rb:37:in `load_file'
+(compatibility warning) String#size used in /hiki_0_8_8/hiki/pluginutil.rb:50:in `convert_value'
+(compatibility warning) String#size used in /hiki_0_8_8/plugin/00default.rb:47:in `page_name'
+(compatibility warning) String#size used in /usr/lib/ruby/1.8/erb.rb:548:in `compile'
+(compatibility warning) String#size used in /usr/lib/ruby/1.8/erb.rb:585:in `compile'
+(compatibility warning) String#size used in /hiki_0_8_8/hiki/page.rb:49:in `process'</code></pre></figure>
+
+<p>これを見ながら、String#to_a は str.split(/^/) に書き換えるとか、String#size は String#bytesize にすべきかそのままでいいか確認するとか、していけるわけです。
+とりあえず、Hiki で使っていそうな機能でぱっと思いついたメソッドで警告が出るようにしましたが、ソースの末尾の add_warning メソッドの要領で、ニーズにあわせて簡単に拡張することができます。</p>
+
+<p>ただし、compatible_warning ライブラリのやり方では、メソッドを実際に呼び出した時点で警告するので、めったに実行されないコードをこの方法で検査するのは無理があります。
+ちゃんと隅々までカバーされたテストがあればいいのですが、現状の Hiki は残念ながら包括的なテストがありません。</p>
+
+<p>ちなみに、似た目的の別アプローチの実装に、id:takehikom さんによる <a href="http://d.hatena.ne.jp/takehikom/20090129/1233169748">Ruby 1.9移行のための簡易lintを作ってみた</a>があります。
+こちらは、grep でソースコードを検索するようなスタイルですので、動的なメソッド呼び出しに対応できませんが、指定されたソースコードを隅々まで検索しますから、どういうケースに実行されるコードかどうかに関係なく見つけることができます。</p>
+
+<p>Hiki を Ruby 1.9 で動かすのにはたくさんの課題があるかと思いましたが、tDiary がすでに Ruby 1.9 対応を果たしていたこと、そして xibbar こと藤岡さんが<a href="http://d.hatena.ne.jp/xibbar/20090124#1232783325">「tDiaryなどのレガシーウェブアプリをRuby1.9で動かす方法」のスライドを公開</a>で既にかなりの部分を試みてくれていたこともあり、この compatible_warning ライブラリも使いながらだいたい 1 週間くらいでほぼ対応させることができました。</p>
+
+<h2 id="コードレビュー">コードレビュー</h2>
+
+<p>フリーソフトウェアなら、ソースコードを読み放題です。
+しかし、そうは言っても、ある程度以上の規模のソフトウェアのソースコードをいきなり全部読むのは大変です。
+そこで、まずは「日々、どんな変更が行われているのか」を中心にコードを読んでみるのがお勧めです。</p>
+
+<p>多くのフリーソフトウェアで、「コミット通知メール」と呼ばれるメーリングリストが提供されています。
+これを購読すると、コミット、つまり誰かがソースコードを変更した際に、「コミットログ」と呼ばれるその変更の意図を説明した文章と一緒に、その変更箇所だけが配信されます。</p>
+
+<p>例えば tDiary の場合、<a href="https://lists.sourceforge.net/lists/listinfo/tdiary-svn">tdiary-svn ML</a> というメーリングリストがあります。
+そのメールの一例を紹介します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Revision: 3523
+          http://tdiary.svn.sourceforge.net/tdiary/?rev=3523&amp;view=rev
+Author:   kazuhiko
+Date:     2009-08-23 13:40:28 +0000 (Sun, 23 Aug 2009)
+
+Log Message:
+-----------
+	* makerss.rb (absolutify): fix a bug that breaks html if new lines
+	are included in a tag.
+
+Modified Paths:
+--------------
+    trunk/plugin/ChangeLog
+    trunk/plugin/makerss.rb
+
+Modified: trunk/plugin/ChangeLog
+===================================================================
+--- trunk/plugin/ChangeLog	2009-08-22 12:58:09 UTC (rev 3522)
++++ trunk/plugin/ChangeLog	2009-08-23 13:40:28 UTC (rev 3523)
+@@ -1,3 +1,7 @@
++2009-08-23  Kazuhiko  &lt;kazuhiko@fdiary.net&gt;
++	* makerss.rb (absolutify): fix a bug that breaks html if new lines
++	are included in a tag.
++
+ 2009-08-22  sakai &lt;masahiro.sakai at gmail.com&gt;
+ 	* category.rb: redirected to old encoding access to UTF-8's.
+ 
+
+Modified: trunk/plugin/makerss.rb
+===================================================================
+--- trunk/plugin/makerss.rb	2009-08-22 12:58:09 UTC (rev 3522)
++++ trunk/plugin/makerss.rb	2009-08-23 13:40:28 UTC (rev 3523)
+@@ -704,7 +704,7 @@
+ 	r = html.gsub(%r|&lt;\S[^&gt;]*/?&gt;|) do |tag|
+ 		type = tag.scan(/\A&lt;(\S+)/)[0][0].downcase
+ 		if attr = {'a' =&gt; 'href', 'img' =&gt; 'src'}[type]
+-			m = tag.match(%r|(.*#{attr}=)(['"]?)([^\2&gt;]+?)\2(.*)|i)
++			m = tag.match(%r|(.*#{attr}=)(['"]?)([^\2&gt;]+?)\2(.*)|im)
+ 			prefix = m[1] + m[2]
+ 			location = m[3]
+ 			postfix = m[2] + m[4]</code></pre></figure>
+
+<p>これくらいの量でしたら、ちょっとコードを読んでみようかなという気になりますし、コミットログもあるので「こうしたいからこう変更する」というのを小さい単位で知ることができます。
+そして、もしこのコミットに興味がひかれたら、もう少しまわりのコードを読んでようとか、どうやってこのメソッドを呼び出しているのか調べてみよう、という風に、そこを入口にしてさらに広いコードの世界を探検することができます。</p>
+
+<p>こうやってコードを読む人が増えれば、その分、間違えたコードをコミットした時に気づきやすかったり、読みやすさや処理速度の面などでさらにいいコードを提案する人が出てきたりしますし、コミットする側も、たくさんの人がコードをレビューしていると思えば、自然と「よりよいコードを書きたい」と感じるでしょう。</p>
+
+<p>そんなわけで、積極的にコードレビューをすることは、あなたの実力を伸ばす助けになるのはもちろんのこと、それだけでなく他の人が書くコードの質が上がる助けにもなるのです。</p>
+
+<h2 id="バグ報告">バグ報告</h2>
+
+<p>さて、ソフトウェアを使っていると、何らかのバグを見つけることがあります。
+そんな時、この世の不幸が自分だけにやってきたような気持ちになる必要はありません。
+むしろ、「バグ報告できるチャンスが来た！　つまり、私のお陰で世界は前よりもよくなる！」と前向きに受け止めましょう。</p>
+
+<p>では、この 1 ヶ月で私が遭遇したバグを紹介します。</p>
+
+<p>まず、Ruby を 1.8.5 から 1.8.7 に上げると、同じサーバで稼動している tDiary のホスティングサービスで、<a href="http://www.tdiary.net/rubbs/support.rb?top=1137">エラーが出るようになったと報告</a>がありました。
+元のバグ報告をした方が詳しく報告してくれたおかげで、ほどなくこれは Ruby 本体のバグだと感じましたので、Ruby の ChangeLog を見てあたりをつけながらリビジョンを遡って行って、1 年以上も前のコミット以降バグが発生するとわかったので、Ruby のバグ報告システムに報告しました (<a href="http://redmine.ruby-lang.org/issues/show/1864">Ruby-1.8.7 $SAFE=4 の array/hash の recursive 比較で SecurityError</a>)。</p>
+
+<p>「使う」そして「アップデート」という二つのプラクティスのコンボで、1 年以上存在しつづけたバグが発見されて修正されたのは、とても感動的でした。</p>
+
+<p>つぎに、tDiary と同じサーバでホスティングしていた <a href="http://0xcc.net/quickml/">quickml</a> というメーリングリストサーバが動いていないと報告がありました。
+調べてみると、確かにプロセスは起動しているのですが、listen しているポートにアクセスしても応答がありません。
+試行錯誤の結果、バックグラウンドで起動しないようにすれば動くのに気づいたのですが、IRC で相談したところ、すでに報告されている <a href="http://redmine.ruby-lang.org/issues/show/1872">Kernel#system doesn’t work in forked process</a> というバグと同じ原因だと指摘してもらいました。
+このバグは、この原稿の執筆時点でまだ解決しておらず、とりあえずは Ruby 1.8 を ‘–disable-pthread’ でビルドすることで回避しています。</p>
+
+<p>ただ、この問題は Ruby 1.9 では再現しませんので、このバグを踏むソフトウェアを片っ端から Ruby 1.9 対応にする、というのがあるべき Rubyist の姿かもしれません。</p>
+
+<h2 id="助けを求める">助けを求める</h2>
+
+<p>気づいたバグに対して、その条件を詳しく調べ、再現する短いコードを書き、さらにはバグまで直してしまいパッチを投稿する、まで一人でできれば、それはもちろん素晴らしいことですが、そうでなくても他の人と力をあわせることで解決できることはたくさんあります。</p>
+
+<p>例えば、前述の <a href="http://redmine.ruby-lang.org/issues/show/1864">Ruby-1.8.7 $SAFE=4 の array/hash の recursive 比較で SecurityError</a> というバグは、tDiary のこういう使い方で必ず再現するのは分かっていましたが、再現する短いコードを書くことはできませんでした。</p>
+
+<p>でも、自分なりに分かっている範囲のことをすべて書いてバグ報告を出してみたところ、西山和広さんが<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/38984">バグ修正のパッチを書いて</a>くれて、さらに遠藤さんがこの修正を確認する<a href="http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/test/ruby/test_object.rb?r1=23968&amp;r2=24396&amp;diff_format=h">短いテストコードを書いて</a>くれました。</p>
+
+<p>こうやって、一人では無理なことも誰かが助けてくれたお陰で解決しましたし、「自分なりにやってみたその先」を見るのはとても勉強になりました。</p>
+
+<h2 id="プロファイルをとってみる">プロファイルをとってみる</h2>
+
+<p>自分が使っているソフトウェアのどの処理で主に時間がかかっているのかとか、Ruby ではどういう処理で時間がかかるのか、というのを知るために、たまには自分が使っているソフトウェアのプロファイルをとってみるといいでしょう。</p>
+
+<p>プロファイラとは効率改善のための調査に用いられるツールのことで、Ruby に標準添付の profile ライブラリ<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>を使えば、各メソッドの実行時間に関する統計を出力してくれます。</p>
+
+<p>さて、私が久しぶりにプロファイルをとってみようと思ったきっかけは、先日の <a href="http://rubykaigi.org/2009/">RubyKaigi 2009</a> で行われた <a href="http://www.hsbt.org/diary/20090720.html#p01">tDiary 会議</a>です。
+そこで、「tDiary を Ruby 1.9 で動かすと妙に遅い」という発言があったので、じゃあ Ruby 1.8 と Ruby 1.9 とでプロファイルを取って見比べてみよう、と思ったのでした。</p>
+
+<p>まずは、Ruby 1.8 でプロファイルを取るとこんな感じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ echo date=20090722 | sudo -u apache ruby -r profile ./index.rb &gt; /dev/null
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls  ms/call  ms/call  name
+ 18.10     0.42      0.42      243     1.73     6.13  Kernel.instance_eval
+ 15.95     0.79      0.37        6    61.67   105.00  ERB::Compiler::SimpleScanner2#scan
+ 13.36     1.10      0.31      219     1.42     6.48  Kernel.require
+  4.31     1.20      0.10      211     0.47    20.28  Array#each
+  3.02     1.27      0.07      241     0.29     0.29  ERB::Compiler::Buffer#push
+  3.02     1.34      0.07     3240     0.02     0.02  Module#method_added
+  3.02     1.41      0.07     1647     0.04     0.07  Kernel.===
+  2.16     1.46      0.05        4    12.50    17.50  TDiary::DefaultIO#transaction
+  2.16     1.51      0.05     2389     0.02     0.02  String#==
+  1.72     1.55      0.04        5     8.00   204.00  TDiary::Plugin#initialize
+(snip)</code></pre></figure>
+
+<p>つぎに、Ruby 1.9 でプロファイルを取るとこんな感じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">echo date=20090722 | sudo -u apache ruby-trunk -r profile ./index.rb &gt; /dev/null
+  %   cumulative   self              self     total
+ time   seconds   seconds    calls  ms/call  ms/call  name
+ 22.58     0.28      0.28      216     1.30     4.63  Kernel.require
+ 12.10     0.43      0.15      243     0.62     0.95  BasicObject#instance_eval
+  8.06     0.53      0.10      137     0.73     3.28  IO#open
+  5.65     0.60      0.07      125     0.56     4.32  TDiary::Plugin#load_plugin
+  5.65     0.67      0.07        6    11.67    30.00  ERB::Compiler::SimpleScanner2#scan
+  2.42     0.70      0.03     2014     0.01     0.01  BasicObject#singleton_method_added
+  2.42     0.73      0.03      109     0.28     3.03  Array#each
+  2.42     0.76      0.03     1057     0.03     0.03  String#===
+  1.61     0.78      0.02      787     0.03     0.03  String#==
+  1.61     0.80      0.02      171     0.12     0.12  Regexp#=~
+(snip)</code></pre></figure>
+
+<p>Ruby 1.9 は、いろんな部分が Ruby 1.8 より速くなっていますが、逆に有意に遅くなっている主なものは、eval と文字列処理です。
+確かに、Ruby 1.8 でも 1.9 でも、instance_eval が上位に君臨しています。
+そこで、まずは instance_eval をちょっとでも減らせないかと、コードを追いかけ始めました。
+その結果、プラグインの読み込みが 1 アクセスあたり 4 回も行われていることが分かり、無駄な重複がなくなるようにコードを修正することで、なんと 4 割くらい速くなりました。</p>
+
+<p>次に、Ruby 1.9 では、Kernel.require が一番合計時間を食っているのが気になります。
+Ruby on Rails のように、一度プロセスが起動したらあとは起動したままアクセスをさばくアプリケーションですと、require はプロセス毎に一度ずつ行われるだけですが、tDiary は基本的にはリクエスト毎にプロセスが起動されるただの CGI アプリケーションですので、require もリクエスト毎に毎回行われてしまいます。</p>
+
+<p>実際、今まで require されていないライブラリを require する変更がコミットされた時に、2% ほど動作が遅くなりました。そこで、似た機能を提供するライブラリは一つだけ使うようにするとか、めったに使わない機能でだけ必要なライブラリは、autoload を使って必要な時だけ require されるようにするとか、考える必要があります。</p>
+
+<p>もっとも、最近コミットされた FastCGI 版を使えば、require のコストはプロセス毎に一度だけですし、予定されている <a href="http://rack.rubyforge.org/">Rack</a> 対応が完了すれば、FastCGI も含めて tDiary でも常時起動が当たり前になるかも知れません。
+そうなれば、require を必死になって減らしても関係無いので、こっちはあまりムキにならないでおこうと思っています。</p>
+
+<p>おかげで、Ruby 1.9 での動作は確かに速くなったのですが、同時に Ruby 1.8 での動作も速くなってしまい、「Ruby 1.9 で動かすと妙に遅い」という当初の問題は完全には解決されていません。
+ただ、Ruby 1.9 で動かす方が遅いとは言っても、未来はこっちにあるわけですから、<a href="http://kazuhiko.tdiary.net/20090822.html#p01">私自身の日記を Ruby 1.9 に移行</a>して、今後も Ruby 1.9 でのパフォーマンス向上に取り組もうと思います。</p>
+
+<h2 id="メモリ使用量をチェック">メモリ使用量をチェック</h2>
+
+<p>FastCGI のようにプロセスが起動したまま動作するソフトウェアは、安定したサービス提供のためにも、メモリ使用量とその変化をチェックすることが大切です。</p>
+
+<p>そんなわけで、私も tDiary を Ruby 1.9 + FastCGI の環境で動かして、たくさんのアクセスをしながらメモリ使用量の変化をチェックしてみることにしました。
+たくさんのアクセスをするために、今回はお手軽に Apache HTTP サーバに付属する ab (Apache HTTP server benchmarking tool) を使いました<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ab -n 100 http://example.com/diary/index.fcgi?date=20090722</code></pre></figure>
+
+<p>すると、明らかにアクセスごとにメモリ使用量が増えていきました。
+これはおかしいと思い、Ruby 1.8 でもチェックしてみると、こちらはほとんど変化がありませんでした。</p>
+
+<p>そこで、まずは以下のような変更をして、アクセス終了後に回収されずに残っているオブジェクトの種類を多い順に出力してみました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">--- index.fcgi
++++ index.fcgi
+@@ -24,5 +28,13 @@
+     class &lt;&lt; CGI
+       remove_method :new
+     end
++    GC.start
++    a = Hash.new(0)
++    ObjectSpace.each_object{|e| a[e.class.to_s]+=1}
++    File.open("/var/tmp/#{RUBY_VERSION}.#{$$}.log", 'a'){|f| f.puts a.sort_by{|k,v| -v}.inspect}
+   end
+ end</code></pre></figure>
+
+<p>その結果、Ruby 1.9 ではこんなログが得られました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[["String", 22067], ["RubyVM::InstructionSequence", 3057], ["Regexp", 726], ... ["RubyVM::Env", 86], ...
+[["String", 22191], ["RubyVM::InstructionSequence", 3066], ["Regexp", 727], ... ["RubyVM::Env", 88], ...
+[["String", 22223], ["RubyVM::InstructionSequence", 3075], ["Regexp", 728], ... ["RubyVM::Env", 90], ...
+[["String", 22224], ["RubyVM::InstructionSequence", 3084], ["Regexp", 729], ... ["RubyVM::Env", 92], ...</code></pre></figure>
+
+<p>このデータを元に IRC で相談すると、なかむら（う）さんが短い再現コードとともに Ruby 1.9 のバグとして登録してくれました。</p>
+
+<ul>
+  <li><a href="http://redmine.ruby-lang.org/issues/show/1997">Bug #1997: memory leak on redefining method</a></li>
+  <li><a href="http://redmine.ruby-lang.org/issues/show/2024">Bug #2024: memory leak in eval with TOPLEVEL_BINDING</a></li>
+</ul>
+
+<p>まず、前者は中田さんが修正して、後者はささださんが修正してくれて、今では Ruby 1.9 と FCGI の環境でメモリ使用量の変化がほぼ落ち着きました。</p>
+
+<p>以前から、「Ruby のバグを踏むのは tDiary」と定評がありましたが、今回もまたちゃっかりバグを踏むことで、Ruby 1.9 の安定化に少しでも貢献できてよかったと思います。</p>
+
+<h2 id="パトロール">パトロール</h2>
+
+<p>ソフトウェアを使うだけでなく、作る側の一員になってみると、ちゃんと他の人の環境でも動いているだろうかとか、どんな風に使われているだろうかとかを知りたくなります。
+一昔前ですと、公式メーリングリストがあって、そこにバグ報告や改善案などが自然に集まっていたのですが、今ではブログをはじめとしてユーザの人たちが何かを書くメディアが多様化したこともあり、そういう「オフィシャルなルート」にやってこない声もたくさんあります。
+個人的にはそういう状況はちょっと残念にも思いますが、そうは言っても仕方がないので、ときどきこちらからパトロールしましょう。</p>
+
+<p>私がよく使っているのは、ブログ専用の検索エンジンや、twitter 検索です。
+実際、twitter で tDiary とか Hiki とか書かれたつぶやきを見つけたら、「そのバグはここを見てください」とか「エラーをもうちょっと詳しく教えて」とか返事をしまくって、必死にユーザを引き止めています。
+また、Hiki のリリースの後には、「アップデート手順がわからない」という声をいくつか見かけたので、そのあたりのドキュメントをもう少し改善したいと思っています。</p>
+
+<p>ただ、開発者の側からそういう声を探してまわるのは、効率の悪いことであるのは確かですので、みなさんも不具合に気づいたり改善のアイデアがあったりした場合は、ぜひその声を開発者に直接届くようにしてください。
+また、届いてなさそうだけれど大切っぽい声を偶然見かけた場合にも、ぜひタレコミをよろしくお願いします。</p>
+
+<h2 id="ソフトウェアの自由">ソフトウェアの自由</h2>
+
+<p>さて、私たちが愛してやまない Ruby は、フリーソフトウェアです。
+ですから、Ruby の未来も Rubyist の未来も、フリーソフトウェアの更なる発展なしにはありえません。
+というか、もしこの世にフリーソフトウェアが無ければ、今読んでいる Rubyist Magazine が存在することもなかったでしょうね。</p>
+
+<p>「フリーソフトウェア＝無料＝質が劣る」みたいな根拠のない勘違いは、さすがに以前よりは少なくなりましたが、
+もしみなさんが仕事で Ruby や Ruby on Rails を使ったシステムを提案しようとして、お客さんに「フリーソフトウェアって大丈夫？」と聞かれるかも知れません。
+その時に、例えば Windows パソコンで PowerPoint でプレゼンをして、例えば Mac OS X パソコンで Keynote でプレゼンをして、一方でフリーソフトウェアの Ruby や Ruby on Rails の素晴らしさを熱く語って信用してもらえるでしょうか？
+大丈夫、Ruby を使ってフリーソフトウェアでプレゼンをするなら、<a href="http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit">Rabbit</a> があります！</p>
+
+<p>私たち Rubyist が率先してフリーソフトウェアを使えば、ソフトウェアを使う人にとっても作る人にとっても、フリーソフトウェアがより当たり前な社会になって、その結果きっと利用者も開発者も増えていくでしょう。
+逆に、もし私たちが当たり前のようにプロプライエタリ (フリーでない) ソフトウェアを使いつづければ、その逆の結果をもたらすことでしょう。
+Ruby を愛するのと同じだけの気持ちで、他のフリーソフトウェアも大切にしてほしい、それが私の願いです。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>この原稿を書いている時点で、日本 Ruby の会会員の数、つまり日本 Ruby の会のメーリングリストを購読している人の数は、ちょうど 400 人です。
+この 400 人もの Rubyist が、例えばここに書いたようなことを何かやってみて、そしてそれが 1 年間積み重なれば、来年の RubyKaigi の頃には Ruby をとりまく世界はどんな世界になっていることでしょう。
+そんな想像をしてみると、とてもわくわくしませんか？</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>フランス、リール市在住のただの日本 Ruby の会会員。
+所属は <a href="http://www.nexedi.com/">Nexedi SA</a>で、フリーソフトウェアの ERP である <a href="http://www.erp5.org/">ERP5</a> の開発をしています。
+なので、仕事でよく使う言語は Python です。</p>
+
+<p>Ruby と Python。
+O さんが好きな人もいれば、K さんが好きな人もいます。
+私はどちらも好きです♪</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Product Advertising API用リバースプロキシ は、Ruby ではなく Python で書かれています。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Ruby 1.8 標準の profile ライブラリは、それ自身のオーバヘッドがかなりあり、実行時間が数倍から数十倍くらい遅くなるので、代わりに <a href="http://rubyforge.org/projects/ruby-prof/">ruby-prof</a> ライブラリを使うのがお勧めですが、ここでは同じフォーマットで比較するために、あえて Ruby 1.8 でも標準の profile ライブラリを使っています。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>名前のとおり、本来はパフォーマンスを測定するためのツールで、プロファイルをみながらコードを変更するときも、これを使ってその効果を調べました。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

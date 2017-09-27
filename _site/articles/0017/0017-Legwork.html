@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist のための他言語探訪 【第 10 回】 Erlang</title>
+  <meta name="description" content="著者：まつもとゆきひろ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0017/0017-Legwork.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Rubyist のための他言語探訪 【第 10 回】 Erlang</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0017/0017-Legwork.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist のための他言語探訪 【第 10 回】 Erlang" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0017/0017-Legwork.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0017/0017-Legwork.html" data-text="Rubyist のための他言語探訪 【第 10 回】 Erlang">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：まつもとゆきひろ</p>
+
+<h2 id="erlang-について">Erlang について</h2>
+
+<p>今回は関数型言語 Erlang について紹介しようと思います。</p>
+
+<p>RubyConf 2006 の Welcome セッションで、スタッフの一人である Rich Kilmer の「最近のお気に入り」であるとして、Erlang の紹介ビデオが流されました。
+電話交換機プログラムに使われている Erlang を解説する 80 年代風のビデオは (実際に 80 年代に撮られたビデオのようですが)、まるでモンティパイソンのようでした。</p>
+
+<p>Erlang は 1987 年頃、スウェーデンの電話会社である Ericsson で開発された関数型言語です。
+Erlang の名前は、デンマーク出身の数学者・統計学者・技術者である Agner Krarup Erlang にちなんで名付けられています。
+発音は「あーらん」という感じのようです。
+私は最初「Ericsson の言語」という意味だろうと思い「えるらんぐ」と発音してましたが、発音については明確に間違いですね。
+ただ、開発者たちも「Ericsson の言語」というニュアンスは意識したようです。
+なお、Erlang は通信におけるデータのトラフィック量 (通信量) を表す国際単位 (略号 erl) にもなっています。</p>
+
+<p>Erlang の特徴は以下の通りです。</p>
+
+<ul>
+  <li>関数型</li>
+  <li>単一代入</li>
+  <li>パターンマッチ</li>
+  <li>動的型</li>
+  <li>プロセス</li>
+  <li>耐障害性</li>
+</ul>
+
+<p>ではひとつひとつ見てみましょう。</p>
+
+<h2 id="単一代入">単一代入</h2>
+
+<p>Erlang の変数は一度だけ代入可能です。
+同じ変数に複数回の代入を行おうとするとエラーになります。
+これはつまり、通常のループなどは書けないということを意味します。
+実際、Erlang ではループの類は再帰か高階関数を用いて実現します。
+この辺は関数型言語らしいと言えるかもしれません。</p>
+
+<p>Erlang の変数はすべて大文字またはアンダースコア (_) で始まることになっています。
+変数名にルールがあるところはちょっとだけ Ruby を思い出させます。</p>
+
+<h2 id="動的型">動的型</h2>
+
+<p>同じ関数型でも型推論のある OCaml や Haskell とは異なり、Erlang には静的型がありません。
+型の解決は動的に行われます。
+イギリスで開発された ML の型推論が、同じくイギリスで始まった Haskell やフランスで開発された OCaml などに受け継がれてきたのとは違い、北欧生まれの Erlang は関数型言語の別の血脈であると考えればよいのでしょうか。
+しかし、北欧というのは人口はさほど多くないはずですが、Simula といい、C++ といい、Beta といい、この Erlang といい、ユニークなプログラミング言語が生まれる土地ですねえ。</p>
+
+<h2 id="関数型">関数型</h2>
+
+<p>Erlang は関数型言語です。つまり、</p>
+
+<ul>
+  <li>状態がない (副作用がない)</li>
+  <li>第一級オブジェクトとしての関数</li>
+  <li>高階関数プログラミング</li>
+</ul>
+
+<p>などの関数型言語としての特徴を備えています。</p>
+
+<h2 id="erlang-のプログラム">Erlang のプログラム</h2>
+
+<p>では、実際に Erlang のプログラムを見てみましょう。
+以下は Erlang による階乗を求めるプログラムです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> -module(fact).
+ -export([fac/1]).
+
+ fac(0) -&gt; 1;
+ fac(N) when N &gt; 0 -&gt; N * fac(N-1).</code></pre></figure>
+
+<p>Erlang にはきちんとしたモジュールシステムがあり、最初の 2 行はモジュールの宣言になっています。
+1 行目は fact というモジュールを宣言し、2 行目で 1 引数の fac という関数をエクスポートしています。</p>
+
+<p>Quicksort のプログラムです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> -module(quicksort).
+ -export([qsort/1]).
+
+ qsort([]) -&gt; [];
+ qsort([Pivot|Rest]) -&gt;
+     qsort([ X || X &lt;- Rest, X &lt; Pivot]) ++ [Pivot] ++ qsort([ Y || Y &lt;- Rest, Y &gt;= Pivot]).</code></pre></figure>
+
+<p>最初の 2 行は先ほどと同様にモジュールの宣言です。
+残りの qsort の実体は関数型言語を見たことがあればごく自然に読めるのではないでしょうか。
+というか、正直、Haskell の quicksort プログラムとほとんど同じです。
+引数でパターンマッチするあたりも同じですね。リスト閉包記法までよく似ています。</p>
+
+<p>さきにも述べたように Erlang にはループ構文はありませんが、if 文と case 文はあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> odd(X) -&gt;
+ 	if
+ 	  X rem 2 == 0 -&gt; true;
+ 	  true -&gt; false
+ 	end.</code></pre></figure>
+
+<p>if 文は「式 -&gt; 式」を並べたものです。
+else に当たるものが存在しないので、true を置きます。
+なんか変ですが、確か Beta も似たような文法だったように思います。
+北欧的伝統かしら。</p>
+
+<p>case 文も似たような文法です</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  case X of
+    1 -&gt; "hogehoge";
+    2 -&gt; "fugafuga";
+    3 -&gt; "foobar";
+    _ -&gt; "zzz..."
+  end</code></pre></figure>
+
+<p>case では他の関数型言語同様パターンマッチを使うことができます。</p>
+
+<h2 id="プロセス">プロセス</h2>
+
+<p>「プロセス」といっても OS が管理するプロセスとは違います。
+他の言語で言うと「スレッド」のような単一の OS レベルプロセスの中で実行される複数の実行の流れのことです。
+ただし、Erlang にはグローバル変数も書換可能なオブジェクトもありませんから、これらの制御の流れの間で共有される状態というものが存在しません。
+この共有される状態というのはスレッドとプロセスを分ける重要な要素であり、Erlang のそれは共有状態を持たない以上、「プロセス」であるというのが開発者の主張のようです。
+Erlang のプロセスは大変軽量であることで知られており、1 プロセスあたり 300 バイト程度しかメモリを消費せず、ある実験では 2000 万個のプロセスを同時に実行することが可能であったとのことです。</p>
+
+<p>プロセス間で共有する状態がないということは、プロセスは単一 OS プロセスに限定される必要がないということも意味します。
+Erlang のプロセスは複数の OS プロセスにまたがって存在することも可能であり、分散処理にも対応しています。</p>
+
+<p>Erlang のプロセス間通信は「メッセージ」によって行われます。
+Erlang の任意の値をメッセージとして用いることができます。
+メッセージの送出は「!」演算子によって行い、メッセージの受け取りは receive 文を用いて行います。</p>
+
+<p>なお、Erlang では関数型言語の枠組みでは処理が難しい入出力や他言語インタフェースもこのメッセージによって実現しています。</p>
+
+<p>以下はメッセージセンドの基礎を表現する例です。
+start 関数を実行すると、ping プロセスと pong プロセスの二つを spawn し、ふたつのプロセスの間で 15 回メッセージをやりとりします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> -module(pingpong).
+ -export([start/0, ping/2, pong/0]).
+
+ ping(0, Pong_PID) -&gt;
+     Pong_PID ! finished,
+     io:format("ping finished~n", []);
+
+ ping(N, Pong_PID) -&gt;
+     Pong_PID ! {ping, self()},
+     receive
+ 	  pong -&gt;
+ 	      io:format("Ping received pong~n", [])
+     end,
+     ping(N - 1, Pong_PID).
+
+ pong() -&gt;
+     receive
+ 	  finished -&gt;
+ 	      io:format("Pong finished~n", []);
+ 	  {ping, Ping_PID} -&gt;
+ 	      io:format("Pong received ping~n", []),
+ 	      Ping_PID ! pong,
+ 	      pong()
+     end.
+
+ start() -&gt;
+     Pong_PID = spawn(pingpong, pong, []),
+     spawn(pingpong, ping, [3, Pong_PID]).</code></pre></figure>
+
+<p>pingpong はあまりにも人工的な例なので、もうちょっとだけ実用をイメージできる例も紹介しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> -module(fibcalc).
+ -export([calc_fibs/1, fib_send/2, start/0]).
+
+ % [a,b,c,...] を受け取って fib(a), fib(b), ... を表示
+ calc_fibs( Lst ) -&gt;
+ 	  calc_fibs_list( Lst ),
+ 	  receive_results( length(Lst) ).
+
+
+ % フィボナッチ数列 {1,1,2,3,5,8,13,...} の計算
+ fib(0) -&gt; 1;
+ fib(1) -&gt; 1;
+ fib(N) -&gt; fib(N-1) + fib(N-2).
+ fib_send(P,N) -&gt; P ! {N,fib(N)}. % 計算結果をプロセス P へ送る版
+
+ % リストの各要素から fib を計算するプロセス生成
+ calc_fibs_list([])      -&gt; ok; % 何もしない
+ calc_fibs_list([N|Lst]) -&gt;
+ 	  spawn(fibcalc, fib_send, [self(),N]),
+ 	  calc_fibs_list(Lst).
+
+
+ % N 個の計算結果を受け取る
+ receive_results(0) -&gt; complete; % 何もしない
+ receive_results(N) -&gt;
+ 	  receive
+ 		  {X, Fx} -&gt;
+ 			  io:format("fib(~w) = ~w~n", [X, Fx]),
+ 			  receive_results( N-1 )
+ 	  after 1000 -&gt;
+ 		  timeout
+ 	  end.
+
+ start() -&gt; calc_fibs([12, 3, 11, 4, 24, 31, 28, 10]).</code></pre></figure>
+
+<p>これを実行した結果は以下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> fib(12) = 233
+ fib(3) = 3
+ fib(11) = 144
+ fib(4) = 5
+ fib(10) = 89
+ fib(24) = 75025
+ fib(28) = 514229
+ fib(31) = 2178309
+ complete</code></pre></figure>
+
+<p>フィボナッチ数の計算はプロセスによって並列して実行されるため、計算量によって結果の出力順が入れ代わっていることに注目してください。
+なお、この例は <a href="http://www.kmonos.net/alang/etc/erlang.php">http://www.kmonos.net/alang/etc/erlang.php</a> からお借りしました。</p>
+
+<h2 id="耐障害性">耐障害性</h2>
+
+<p>Erlang は元々電話交換機のような信頼性が要求される環境のために設計されたプログラミング言語なので、エラーによってプログラム全体の動作が停止しないように設計されています。
+あるプロセスで発生した例外はそのプロセスだけを停止させ、デバッガーを起動させます。
+そこでプログラムを修正し、そのモジュールを再ロードさせてから続きを実行させることもできます。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回はまだあまり知られていない関数型言語 Erlang について解説しました。
+Erlang は知名度こそ低いものの Ericsson 内部を中心に相当の実績を積んでいます。
+また、ユーザカンファレンスも毎年開かれているようです。
+2006 年は 11 月 9 日、10 日にストックホルムで第 12 回国際 Erlang ユーザカンファレンスが開催されたそうです。
+1998 年以来 Erlang 処理系はオープンソースとして公開されていますし、Debian のパッケージも存在します。
+関数型言語としては最近 Haskell が注目されていますが、軽量プロセスと高信頼性を特徴とする Erlang も面白いかもしれません。</p>
+
+<p>Erlang についての情報は以下から入手できます。</p>
+
+<dl>
+  <dt>Wikipedia 英語版</dt>
+  <dd><a href="http://en.wikipedia.org/wiki/Erlang_%28programming_language%29">http://en.wikipedia.org/wiki/Erlang_%28programming_language%29</a></dd>
+  <dt>Wikipedia 日本語版 (英語版の翻訳)</dt>
+  <dd><a href="http://ja.wikipedia.org/wiki/Erlang">http://ja.wikipedia.org/wiki/Erlang</a></dd>
+  <dt>Open Source Erlang</dt>
+  <dd><a href="http://www.erlang.org/">http://www.erlang.org/</a></dd>
+  <dt>Erlang Land (日本語解説)</dt>
+  <dd><a href="http://www.kmonos.net/alang/etc/erlang.php">http://www.kmonos.net/alang/etc/erlang.php</a></dd>
+</dl>
+
+<h2 id="著者について">著者について</h2>
+
+<p><img src="/images/0017-Legwork/matz_in_suit.jpg" alt="matz_in_suit.jpg" />まつもとゆきひろは自他ともに認める日本を代表する言語オタクです。
+言語好きが昂じて自分の言語を設計してしまった大馬鹿者です。
+が、オタクとかハッカーとか呼ばれる人種はみんな多かれ少なかれそんなものじゃないでしょうか。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0022/0022-Legwork.html">Rubyist のための他言語探訪 【第 14 回】 Whitespace</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Legwork.html">Rubyist のための他言語探訪 【第 13 回】 Prolog</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-Legwork.html">Rubyist のための他言語探訪 【第 12 回】 APL と J</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Legwork.html">Rubyist のための他言語探訪 【第 11 回】 C++</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Legwork.html">Rubyist のための他言語探訪 【第 10 回】 Erlang</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Legwork.html">Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Legwork.html">Rubyist のための他言語探訪 【第 8 回】 Forth</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Legwork.html">Rubyist のための他言語探訪 【第 7 回】 Icon</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Legwork.html">Rubyist のための他言語探訪 【第 6 回】 Dylan</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Legwork.html">Rubyist のための他言語探訪 【第 5 回】 Groovy</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Legwork.html">Rubyist のための他言語探訪 【第 4 回】 Tcl</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Legwork.html">Rubyist のための他言語探訪 【第 3 回】 Io</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Legwork.html">Rubyist のための他言語探訪 【第 2 回】 CLU</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Legwork.html">Rubyist のための他言語探訪 【第 1 回】 Python</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby でのバックトレース活用法</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0031/0031-BackTrace.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby でのバックトレース活用法</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0031/0031-BackTrace.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby でのバックトレース活用法" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0031/0031-BackTrace.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0031/0031-BackTrace.html" data-text="Ruby でのバックトレース活用法">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#バックトレース入門" id="markdown-toc-バックトレース入門">バックトレース入門</a>    <ul>
+      <li><a href="#バックトレースとは" id="markdown-toc-バックトレースとは">バックトレースとは</a></li>
+      <li><a href="#メソッドがどこから呼び出されたかを調べる" id="markdown-toc-メソッドがどこから呼び出されたかを調べる">メソッドがどこから呼び出されたかを調べる</a></li>
+      <li><a href="#例外の発生場所を偽装する" id="markdown-toc-例外の発生場所を偽装する">例外の発生場所を偽装する</a></li>
+    </ul>
+  </li>
+  <li><a href="#現在の-ruby-におけるバックトレース関連の問題点と解決案" id="markdown-toc-現在の-ruby-におけるバックトレース関連の問題点と解決案">現在の Ruby におけるバックトレース関連の問題点と解決案</a>    <ul>
+      <li><a href="#バックトレースを扱う際の問題点と解決案" id="markdown-toc-バックトレースを扱う際の問題点と解決案">バックトレースを扱う際の問題点と解決案</a></li>
+      <li><a href="#ライブラリcalled_from" id="markdown-toc-ライブラリcalled_from">ライブラリ「called_from」</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+</ul>
+
+<p>著者: 桑田 誠</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>バックトレースとは、大雑把にいうと「メソッドの呼び出し状況を表したデータ」です。バックトレースを使うと、以下のようなことができます。</p>
+
+<ul>
+  <li>メソッドがどこから呼び出されたかを調べる</li>
+  <li>例外が発生された場所を偽装する</li>
+</ul>
+
+<p>本稿では、あまり使い道はないけど知っていると人生で 2 回ぐらい嬉しいことがありそうなこのバックトレースについて、初心者向けに説明を行います。またバックトレースについて Ruby 本体で改善してほしい点についても説明します。</p>
+
+<h2 id="バックトレース入門">バックトレース入門</h2>
+
+<h3 id="バックトレースとは">バックトレースとは</h3>
+
+<p>バックトレースとは、大雑把にいうと「メソッドの呼び出し状況を表したデータ」です。例外が発生したときにソースコードのファイル名や行番号が表示されますが、あれがバックトレースの情報です。</p>
+
+<p>たとえば次の例をご覧下さい。この例では f1() → f2() → f3() のようにメソッドを呼び出し、最後の f3() で NameError 例外が発生します。</p>
+
+<p><a href="/images/0031-BackTrace/ex1.rb">ex1.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f1</span><span class="p">()</span>
+  <span class="n">f2</span><span class="p">()</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">()</span>
+  <span class="n">f3</span><span class="p">()</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">()</span>
+  <span class="n">foobar</span>    <span class="c1"># NameError 例外が発生</span>
+<span class="k">end</span>
+
+<span class="n">f1</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>これを実行すると、ソースコードのファイル名と行番号が表示されています。これがバックトレース情報であり、メソッドの呼び出し状況を表しています。</p>
+
+<dl>
+  <dt>実行結果</dt>
+  <dd></dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby ex1.rb
+ex1.rb:10:in `f3': undefined local variable or method `foobar' for main:Object (NameError)
+        from ex1.rb:6:in `f2'
+        from ex1.rb:2:in `f1'
+        from ex1.rb:13</code></pre></figure>
+
+<p>バックトレースを取り出すには、Ruby ではグローバル関数 caller() を使います。引数には呼び出しの深さを指定することができ、「0」なら現在の場所から、「1」なら呼び出し元から、「2」なら呼び出し元の呼び出し元から、… という意味になります。デフォルトは「1」です。</p>
+
+<p><a href="/images/0031-BackTrace/ex2.rb">ex2.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f1</span><span class="p">()</span>
+  <span class="n">f2</span><span class="p">()</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">()</span>
+  <span class="n">f3</span><span class="p">()</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">()</span>
+  <span class="nb">p</span> <span class="nb">caller</span><span class="p">()</span>    <span class="c1">#=&gt; ["ex2.rb:6:in `f2'", "ex2.rb:2:in `f1'", "ex2.rb:15"]</span>
+  <span class="c1">#p caller(0)  #=&gt; ["ex2.rb:11:in `f3'", "ex2.rb:6:in `f2'", "ex2.rb:2:in `f1'", "ex2.rb:15"]</span>
+  <span class="c1">#p caller(2)  #=&gt; ["ex2.rb:2:in `f1'", "ex2.rb:15"]</span>
+<span class="k">end</span>
+
+<span class="n">f1</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<dl>
+  <dt>実行結果</dt>
+  <dd></dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby ex2.rb
+["ex2.rb:6:in `f2'", "ex2.rb:2:in `f1'", "ex2.rb:15"]</code></pre></figure>
+
+<p>実行結果を見るとわかりますが、caller() の戻り値は文字列を要素とする配列であり、要素の文字列にファイル名と行番号が含まれています。これが Ruby におけるバックトレースになります。</p>
+
+<h3 id="メソッドがどこから呼び出されたかを調べる">メソッドがどこから呼び出されたかを調べる</h3>
+
+<p>バックトレースを使うと、メソッドがどこから呼び出されたかを調べることができます。</p>
+
+<p>メソッドがどこから呼び出されたかを調べたい場面というのはどういうときでしょうか。筆者は、ログを取る場合やデバッグ用メッセージを出力する場合に、メソッドの呼び出し元を調べます。</p>
+
+<p>たとえば次の例では、ファイル名と行番号を自動的に出力してくれる、デバッグ出力用のヘルパー関数 debug_puts() を定義しています。</p>
+
+<p><a href="/images/0031-BackTrace/ex3.rb">ex3.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">debug_puts</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+  <span class="nb">caller</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=~</span> <span class="sr">/(.*?):(\d+)/</span>   <span class="c1"># 呼び出し元を調べる</span>
+  <span class="n">filename</span><span class="p">,</span> <span class="n">linenum</span> <span class="o">=</span> <span class="vg">$1</span><span class="p">,</span> <span class="vg">$2</span>
+  <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"[DEBUG] </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">:</span><span class="si">#{</span><span class="n">linenum</span><span class="si">}</span><span class="s2">"</span>
+  <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"[DEBUG] </span><span class="si">#{</span><span class="n">message</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="s2">"foo"</span>
+<span class="n">debug_puts</span> <span class="s2">"x=</span><span class="si">#{</span><span class="n">x</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+<span class="n">x</span> <span class="o">=</span> <span class="s2">"bar"</span>
+<span class="n">debug_puts</span> <span class="s2">"x=</span><span class="si">#{</span><span class="n">x</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+</code></pre>
+</div>
+
+<p>これを実行すると、デバッグ用のメッセージだけでなく、debug_puts() を使っている場所も同時に表示されることがわかります。実際使ってみると、これは大変便利です。</p>
+
+<dl>
+  <dt>実行結果</dt>
+  <dd></dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby ex3.rb
+[DEBUG] ex3.rb:9
+[DEBUG] x="foo"
+[DEBUG] ex3.rb:11
+[DEBUG] x="bar"</code></pre></figure>
+
+<p>また拙作のデータベースライブラリでは、SQL にエラーがあった場合、caller() を使ってその SQL を指定した場所をログに出力しています。これにより、SQL エラーがあったときに原因を突き止めやすくなりました。</p>
+
+<h3 id="例外の発生場所を偽装する">例外の発生場所を偽装する</h3>
+
+<p>バックトレース情報は、例外オブジェクトにも自動的に格納されます。例外オブジェクトには、次のようなメソッドが用意されています。</p>
+
+<ul>
+  <li>Exception#backtrace() : 例外オブジェクトからバックトレースを取り出す</li>
+  <li>Exception#set_backtrace(arg) : 例外オブジェクトにバックトレースを設定する</li>
+</ul>
+
+<p>これらを使うと、例外の発生箇所を偽装することができます。次の例では、本当は 8 行目で発生している例外を、あたかも 12 行目で発生したかのように偽装しています。</p>
+
+<p><a href="/images/0031-BackTrace/ex4.rb">ex4.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AssertionError</span> <span class="o">&lt;</span> <span class="no">StandardError</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">_assert</span> <span class="n">expr</span>
+  <span class="k">return</span> <span class="k">if</span> <span class="n">expr</span>
+  <span class="n">ex</span> <span class="o">=</span> <span class="no">AssertionError</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"assertion failed"</span><span class="p">)</span>
+  <span class="n">ex</span><span class="p">.</span><span class="nf">set_backtrace</span><span class="p">(</span><span class="nb">caller</span><span class="p">())</span>
+  <span class="k">raise</span> <span class="n">ex</span>  <span class="c1"># 本当はここで例外が発生してるけど</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">main</span>
+  <span class="n">_assert</span> <span class="mi">1</span><span class="o">+</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">3</span>   <span class="c1"># あたかもここで発生したかの</span>
+<span class="k">end</span>                  <span class="c1"># ように偽装している</span>
+
+<span class="n">main</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<dl>
+  <dt>実行例</dt>
+  <dd>12 行目で例外が発生したかのように見える</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby ex4.rb
+ex4.rb:12:in `main': assertion failed (AssertionError)
+        from ex4.rb:15</code></pre></figure>
+
+<p>例外の発生場所を偽装するのは、何らかのパーサを作っているときにもよくやります。たとえば自分で JSON パーサを作成していて、JSON ファイルのシンタックスエラーを見つけたとします。この場合、単に raise JsonSyntaxError.new としてもいいですが、あたかも JSON ファイル中で例外が発生したかのように偽装することが考えられます。</p>
+
+<h2 id="現在の-ruby-におけるバックトレース関連の問題点と解決案">現在の Ruby におけるバックトレース関連の問題点と解決案</h2>
+
+<h3 id="バックトレースを扱う際の問題点と解決案">バックトレースを扱う際の問題点と解決案</h3>
+
+<p>筆者は、現在の Ruby にはバックトレース関連で 2 つの問題点があると思っています。</p>
+
+<p>1 つ目は、バックトレース内でファイル名や行番号がひとつの文字列に埋め込まれている点です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">caller()    #=&gt; ["ex2.rb:6:in `f2'", "ex2.rb:2:in `f1'", "ex2.rb:15"]</code></pre></figure>
+
+<p>このせいで、ファイル名や行番号を取り出すのにいちいち正規表現を使って切り出さなければならず、手間がかかるだけでなく結構な動作コストがかかってしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">caller().each do |str|
+  str =~ /(.*?):(\d+)/
+  filename, linenum = $1, $2
+end</code></pre></figure>
+
+<p>できれば、これらを分離したまま返すようなオプションが用意されてほしいと思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## たとえばこんな感じ
+caller!()    #=&gt; [["ex2.rb",6,"f2"], ["ex2.rb",2,"f1"], ["ex2.rb",15,nil]]</code></pre></figure>
+
+<p>2 つ目は、呼び出し元を調べたいだけのときにバックトレースを取り出すのは重すぎるということです。たとえばログを記録するときにメソッドの呼び出し元もログに記録したい場合、そのたびにバックトレースを取り出していたのではあまりに動作コストがかかりすぎます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def exec_sql(sql)
+  str = caller()[0]   # 呼び出し元を調べたいだけなのに、動作コストが高すぎる
+  logger.info("#{str}: sql=#{sql}")
+  Adapter.exec(sql)
+end</code></pre></figure>
+
+<p>できれば caller() の引数として、開始点の深さだけでなくバックトレースの長さも指定できればと思います。こうするとバックトレース全体を取り出す必要がなくなり、動作コストを大幅に減少できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">depth = 1
+length = 1
+p caller(depth, length)   #=&gt; [["ex2.rb",6,"f2"]]</code></pre></figure>
+
+<p>以上が、筆者が Ruby のバックトレースについて思っている問題点とその解決案でした。</p>
+
+<h3 id="ライブラリcalled_from">ライブラリ「called_from」</h3>
+
+<p>最後に、筆者が作成した「<a href="http://github.com/kwatch/called_from">called_from</a>」というライブラリを紹介します。これは上で説明した caller() の問題点を解決するためのライブラリです。</p>
+
+<p>インストールは gem を使って行います。なお現在のところ 1.8 でのみ動作確認しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gem install called_from</code></pre></figure>
+
+<p>使い方は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'called_from'
+
+## 呼び出し元を調べる
+filename, linenum, function = called_from(1)</code></pre></figure>
+
+<p>called_from を使わない場合のコードは以下のようになります。called_from を利用することで可読性が向上していることがよく分かると思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 呼び出し元を調べる
+caller(1)[0] =~ /(.*?):(\d+)(:in `(.*)')?/
+filename, linenum, function = $1, $2, $3</code></pre></figure>
+
+<p>また、called_from はバックトレース全体を取り出さないので、動作が非常に高速です。以下は README.txt に載ってあるベンチマーク結果です (ベンチマークも called_from のソースに含まれています)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">*** n=100000
+                             user     system      total        real
+caller()[0]              7.920000   0.400000   8.320000 (  8.985343)
+caller()[0]   (*1)       8.590000   0.420000   9.010000 (  9.804065)
+called_from()            0.240000   0.010000   0.250000 (  0.257151)
+called_from() (*2)       0.250000   0.000000   0.250000 (  0.268603)
+
+
+(*1) retrieve filename and line number using pattern match (=~ /:(\d+)/)
+(*2) retrieve filename and line number</code></pre></figure>
+
+<p>called_from は超マイナーなライブラリですが、<a href="http://rubyonrails.org/core">Rails コアチーム</a>のメンバーである Jeremy Kemper から <a href="http://groups.google.co.jp/group/comp.lang.ruby/browse_thread/thread/a1805a6827487ffd/0a9eec28d7899ac4#msg_448ca2f8177d2eab">「great extension!」というお褒めの言葉をいただいた</a>ので、筆者としては満足してます。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>本稿では、初心者向けにバックトレースについて説明しました。バックトレースを使うと、メソッドの呼び出し元を調べたり、例外の発生箇所を偽装することができます。また現在の Ruby におけるバックトレース関連の問題点とその解決策を紹介し、そのためのライブラリである <a href="http://github.com/kwatch/called_from">called_from</a> を紹介しました。</p>
+
+<p>バックトレースはあまり触る機会がないとは思いますが、こういう機能があるということを頭の片隅にでも覚えておいていただくと、何かの機会に役立つかもしれません。</p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

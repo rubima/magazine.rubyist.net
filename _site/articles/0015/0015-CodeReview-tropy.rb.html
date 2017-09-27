@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>0015-CodeReview-tropy.rb</title>
+  <meta name="description" content="あなたの Ruby コードを添削します 【第 4 回】 Tropy で添削した Tropy のソースコード (添削前) です。">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0015/0015-CodeReview-tropy.rb.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>0015-CodeReview-tropy.rb</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0015/0015-CodeReview-tropy.rb.html" class="hatena-bookmark-button" data-hatena-bookmark-title="0015-CodeReview-tropy.rb" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0015/0015-CodeReview-tropy.rb.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0015/0015-CodeReview-tropy.rb.html" data-text="0015-CodeReview-tropy.rb">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p><a href="/articles/0015/0015-CodeReview.html">あなたの Ruby コードを添削します 【第 4 回】 Tropy</a> で添削した Tropy のソースコード (添削前) です。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#</span>
+<span class="c1"># tropy.rb - Tropy in Ruby, Version 0.2</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (C) 2005,2006 by Hiroshi Yuki.</span>
+<span class="c1"># http://www.hyuki.com/tropy/</span>
+<span class="c1">#</span>
+<span class="c1"># You can redistribute and/or modify it under the same terms as Ruby.</span>
+<span class="c1">#</span>
+<span class="nb">require</span> <span class="s2">"cgi"</span>
+<span class="nb">require</span> <span class="s2">"nkf"</span>
+<span class="nb">require</span> <span class="s2">"pstore"</span>
+
+<span class="no">CHARSET</span> <span class="o">=</span> <span class="s2">"Shift_JIS"</span>
+<span class="no">NKF_OPTION</span> <span class="o">=</span> <span class="s2">"-m0 -s"</span>
+
+<span class="k">BEGIN</span> <span class="p">{</span> <span class="vg">$defout</span><span class="p">.</span><span class="nf">binmode</span> <span class="p">}</span>
+
+<span class="k">module</span> <span class="nn">Tropy</span>
+
+  <span class="c1"># idとメッセージ（タイトルと本体）を管理</span>
+  <span class="k">class</span> <span class="nc">Database</span> <span class="o">&lt;</span> <span class="no">PStore</span>
+    <span class="no">INDEX</span> <span class="o">=</span> <span class="s2">"index"</span> <span class="c1"># id一覧保存用のキー</span>
+
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+      <span class="k">super</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+      <span class="n">transaction</span> <span class="k">do</span>
+        <span class="k">unless</span> <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">]</span>
+          <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">empty?</span>
+      <span class="n">transaction</span><span class="p">(</span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span>
+        <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">].</span><span class="nf">length</span> <span class="o">==</span> <span class="mi">0</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 存在するidからランダムに一個選択</span>
+    <span class="k">def</span> <span class="nf">random_id</span>
+      <span class="n">transaction</span><span class="p">(</span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">].</span><span class="nf">length</span>
+        <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">][</span><span class="nb">rand</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 存在の有無にかかわらずランダムなidを一個生成</span>
+    <span class="k">def</span> <span class="nf">create_id</span>
+      <span class="nb">sprintf</span><span class="p">(</span><span class="s2">"%08d"</span><span class="p">,</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="k">end</span>
+
+    <span class="c1"># idを追加</span>
+    <span class="k">def</span> <span class="nf">add_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+      <span class="k">unless</span> <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">].</span><span class="nf">index</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="nb">id</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># idを削除</span>
+    <span class="k">def</span> <span class="nf">delete_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+      <span class="n">index</span> <span class="o">=</span> <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">].</span><span class="nf">index</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">index</span>
+        <span class="nb">self</span><span class="p">[</span><span class="no">INDEX</span><span class="p">].</span><span class="nf">delete_at</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># idのページにメッセージmを保存</span>
+    <span class="k">def</span> <span class="nf">set_msg</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+      <span class="nb">id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">.</span><span class="nf">to_s</span>
+      <span class="n">m</span> <span class="o">=</span> <span class="no">NKF</span><span class="o">::</span><span class="n">nkf</span><span class="p">(</span><span class="no">NKF_OPTION</span><span class="p">,</span> <span class="n">m</span><span class="p">.</span><span class="nf">to_s</span><span class="p">)</span>
+      <span class="n">transaction</span> <span class="k">do</span>
+        <span class="k">if</span> <span class="n">m</span><span class="p">.</span><span class="nf">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+          <span class="nb">self</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span>
+          <span class="n">add_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        <span class="k">else</span>
+          <span class="nb">self</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+          <span class="n">delete_id</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># idのページのメッセージ</span>
+    <span class="k">def</span> <span class="nf">msg</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+      <span class="n">transaction</span><span class="p">(</span><span class="kp">true</span><span class="p">)</span> <span class="k">do</span>
+        <span class="nb">self</span><span class="p">[</span><span class="nb">id</span><span class="p">.</span><span class="nf">to_s</span><span class="p">].</span><span class="nf">to_s</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># idのページのタイトル（一行目）</span>
+    <span class="k">def</span> <span class="nf">title</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">msg</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span> <span class="o">=~</span> <span class="sr">/^(.*)$/</span>
+        <span class="vg">$1</span>
+      <span class="k">else</span>
+        <span class="s2">""</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># idのページの本体（二行目以降）</span>
+    <span class="k">def</span> <span class="nf">body</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+      <span class="n">msg</span><span class="p">(</span><span class="nb">id</span><span class="p">).</span><span class="nf">sub!</span><span class="p">(</span><span class="sr">/^.*$/</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="k">class</span> <span class="nc">Tropy</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">cgi</span><span class="p">,</span> <span class="n">db</span><span class="p">)</span>
+      <span class="vi">@db</span> <span class="o">=</span> <span class="n">db</span>
+      <span class="k">begin</span>
+        <span class="n">cgi</span><span class="p">.</span><span class="nf">params</span><span class="p">.</span><span class="nf">each_key</span> <span class="k">do</span> <span class="o">|</span><span class="n">k</span><span class="o">|</span>
+          <span class="k">if</span> <span class="n">k</span> <span class="o">=~</span> <span class="sr">/^(\d{8})$/</span>
+            <span class="vi">@id</span> <span class="o">=</span> <span class="vg">$1</span>
+            <span class="n">do_read</span>
+          <span class="k">elsif</span> <span class="n">k</span> <span class="o">=~</span> <span class="sr">/^e(\d{8})$/</span>
+            <span class="vi">@id</span> <span class="o">=</span> <span class="vg">$1</span>
+            <span class="n">do_edit</span>
+          <span class="k">elsif</span> <span class="n">k</span> <span class="o">=~</span> <span class="sr">/^w(\d{8})$/</span>
+            <span class="vi">@id</span> <span class="o">=</span> <span class="vg">$1</span>
+            <span class="n">do_write</span><span class="p">(</span><span class="n">cgi</span><span class="p">.</span><span class="nf">params</span><span class="p">[</span><span class="s2">"msg"</span><span class="p">])</span>
+          <span class="k">elsif</span> <span class="n">k</span> <span class="o">=~</span> <span class="sr">/^c$/</span>
+            <span class="vi">@id</span> <span class="o">=</span> <span class="vi">@db</span><span class="p">.</span><span class="nf">create_id</span>
+            <span class="n">do_create</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+        <span class="k">unless</span> <span class="vi">@id</span>
+          <span class="k">if</span> <span class="vi">@db</span><span class="p">.</span><span class="nf">empty?</span>
+            <span class="vi">@id</span> <span class="o">=</span> <span class="vi">@db</span><span class="p">.</span><span class="nf">create_id</span>
+            <span class="n">do_create</span>
+          <span class="k">else</span>
+            <span class="vi">@id</span> <span class="o">=</span> <span class="vi">@db</span><span class="p">.</span><span class="nf">random_id</span>
+            <span class="n">do_read</span>
+          <span class="k">end</span>
+        <span class="k">end</span>
+      <span class="k">rescue</span>
+        <span class="nb">print</span> <span class="n">error</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 新規ページ作成フォームを表示</span>
+    <span class="k">def</span> <span class="nf">do_create</span>
+      <span class="nb">print</span> <span class="n">header</span><span class="p">(</span><span class="s2">"New Page"</span><span class="p">),</span> <span class="n">editform</span><span class="p">,</span> <span class="n">footer</span>
+    <span class="k">end</span>
+
+    <span class="c1"># @idで指定したページを表示</span>
+    <span class="k">def</span> <span class="nf">do_read</span>
+      <span class="nb">print</span> <span class="n">header</span><span class="p">(</span><span class="vi">@db</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="vi">@id</span><span class="p">),</span> <span class="ss">:editable</span><span class="p">),</span> <span class="n">content</span><span class="p">,</span> <span class="n">footer</span>
+    <span class="k">end</span>
+
+    <span class="c1"># @idで指定したページの編集フォームを表示</span>
+    <span class="k">def</span> <span class="nf">do_edit</span>
+      <span class="nb">print</span> <span class="n">header</span><span class="p">(</span><span class="vi">@db</span><span class="p">.</span><span class="nf">title</span><span class="p">(</span><span class="vi">@id</span><span class="p">)),</span> <span class="n">editform</span><span class="p">,</span> <span class="n">footer</span>
+    <span class="k">end</span>
+
+    <span class="c1"># @idで指定したページにmsgを書き込む</span>
+    <span class="k">def</span> <span class="nf">do_write</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+      <span class="vi">@db</span><span class="p">.</span><span class="nf">set_msg</span><span class="p">(</span><span class="vi">@id</span><span class="p">,</span> <span class="n">msg</span><span class="p">)</span>
+      <span class="nb">print</span> <span class="s2">"Location: </span><span class="si">#{</span><span class="no">ABSOLUTE_URL</span><span class="si">}</span><span class="s2">?</span><span class="si">#{</span><span class="vi">@id</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">"</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 編集フォーム</span>
+    <span class="k">def</span> <span class="nf">editform</span>
+      <span class="n">escmsg</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escapeHTML</span><span class="p">(</span><span class="vi">@db</span><span class="p">.</span><span class="nf">msg</span><span class="p">(</span><span class="vi">@id</span><span class="p">))</span>
+      <span class="o">&lt;&lt;-</span><span class="no">"EOD"</span><span class="sh">
+&lt;form action="</span><span class="si">#{</span><span class="no">ABSOLUTE_URL</span><span class="si">}</span><span class="sh">" method="post"&gt;
+&lt;input type="hidden" name="w</span><span class="si">#{</span><span class="vi">@id</span><span class="si">}</span><span class="sh">" value="1"&gt;
+&lt;textarea cols="</span><span class="si">#{</span><span class="no">MAX_COLS</span><span class="si">}</span><span class="sh">" rows="</span><span class="si">#{</span><span class="no">MAX_ROWS</span><span class="si">}</span><span class="sh">" name="msg"&gt;</span><span class="si">#{</span><span class="n">escmsg</span><span class="si">}</span><span class="sh">&lt;/textarea&gt;&lt;br&gt;
+&lt;input type="submit" value="Write"&gt;
+&lt;/form&gt;
+</span><span class="no">      EOD</span>
+    <span class="k">end</span>
+
+    <span class="c1"># 中身</span>
+    <span class="k">def</span> <span class="nf">content</span>
+      <span class="n">body</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escapeHTML</span><span class="p">(</span><span class="vi">@db</span><span class="p">.</span><span class="nf">body</span><span class="p">(</span><span class="vi">@id</span><span class="p">))</span>
+      <span class="n">body</span><span class="p">.</span><span class="nf">gsub!</span><span class="p">(</span><span class="sr">/\n/</span><span class="p">,</span> <span class="s2">"&lt;br /&gt;"</span><span class="p">)</span>
+      <span class="s2">"&lt;p&gt;</span><span class="si">#{</span><span class="n">body</span><span class="si">}</span><span class="s2">&lt;/p&gt;"</span>
+    <span class="k">end</span>
+
+    <span class="c1"># ヘッダ</span>
+    <span class="k">def</span> <span class="nf">header</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+      <span class="n">edit</span> <span class="o">=</span> <span class="n">editable</span> <span class="o">==</span> <span class="ss">:editable</span> <span class="p">?</span> <span class="sx">%Q(&lt;a href="?e</span><span class="si">#{</span><span class="vi">@id</span><span class="si">}</span><span class="sx">"&gt;Edit&lt;/a&gt;)</span> <span class="p">:</span> <span class="s1">''</span>
+      <span class="n">create</span> <span class="o">=</span> <span class="sx">%Q(&lt;a href="?c"&gt;Create&lt;/a&gt;)</span>
+      <span class="n">random</span> <span class="o">=</span> <span class="sx">%Q(&lt;a href="</span><span class="si">#{</span><span class="no">ABSOLUTE_URL</span><span class="si">}</span><span class="sx">"&gt;Random&lt;/a&gt;)</span>
+      <span class="o">&lt;&lt;-</span><span class="no">"EOD"</span><span class="sh">
+Content-type: text/html; charset=</span><span class="si">#{</span><span class="no">CHARSET</span><span class="si">}</span><span class="sh">
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="content-type" content="text/html; charset=</span><span class="si">#{</span><span class="no">CHARSET</span><span class="si">}</span><span class="sh">"&gt;
+&lt;meta http-equiv="content-style-type" content="text/css"&gt;
+&lt;base href="</span><span class="si">#{</span><span class="no">ABSOLUTE_URL</span><span class="si">}</span><span class="sh">"&gt;
+&lt;style type="text/css"&gt;&lt;!--
+body{font-family:Verdana,sans-serif;margin:2% 20% 10% 20%;color:black;background-color:white;}
+input{font-family:Verdana,sans-serif;}
+#navi{text-align:right;}
+p{line-height:150%;}
+a{color:gray;background-color:white;text-decoration:none;}
+a:hover{text-decoration:underline;color:white;background-color:gray;}
+--&gt;&lt;/style&gt;
+&lt;title&gt;</span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="sh"> - </span><span class="si">#{</span><span class="no">TITLE</span><span class="si">}</span><span class="sh">&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p id="navi"&gt;</span><span class="si">#{</span><span class="n">edit</span><span class="si">}</span><span class="sh"> </span><span class="si">#{</span><span class="n">create</span><span class="si">}</span><span class="sh"> </span><span class="si">#{</span><span class="n">random</span><span class="si">}</span><span class="sh">&lt;/p&gt;
+&lt;h1&gt;</span><span class="si">#{</span><span class="n">title</span><span class="si">}</span><span class="sh">&lt;/h1&gt;
+</span><span class="no">      EOD</span>
+    <span class="k">end</span>
+
+    <span class="c1"># フッタ</span>
+    <span class="k">def</span> <span class="nf">footer</span>
+      <span class="s2">"&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;"</span>
+    <span class="k">end</span>
+
+    <span class="c1"># エラー</span>
+    <span class="k">def</span> <span class="nf">error</span>
+      <span class="o">&lt;&lt;-</span><span class="no">"EOD"</span><span class="sh">
+Content-Type: text/html
+
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Error&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Error&lt;/h1&gt;&lt;pre&gt;
+</span><span class="si">#{</span><span class="vg">$!</span><span class="si">}</span><span class="sh">
+</span><span class="si">#{</span><span class="vg">$!</span><span class="p">.</span><span class="nf">class</span><span class="si">}</span><span class="sh">
+</span><span class="si">#{</span><span class="vg">$@</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span><span class="si">}</span><span class="sh">
+&lt;/pre&gt;
+</span><span class="no">      EOD</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby 2.0.0 の注意点やその他の新機能</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0041/0041-200Special-note.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby 2.0.0 の注意点やその他の新機能</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0041/0041-200Special-note.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby 2.0.0 の注意点やその他の新機能" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0041/0041-200Special-note.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0041/0041-200Special-note.html" data-text="Ruby 2.0.0 の注意点やその他の新機能">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#気を付ける必要がある非互換" id="markdown-toc-気を付ける必要がある非互換">気を付ける必要がある非互換</a>    <ul>
+      <li><a href="#文字コードまわりの非互換" id="markdown-toc-文字コードまわりの非互換">文字コードまわりの非互換</a>        <ul>
+          <li><a href="#デフォルトのスクリプトエンコーディングの変更" id="markdown-toc-デフォルトのスクリプトエンコーディングの変更">デフォルトのスクリプトエンコーディングの変更</a></li>
+          <li><a href="#iconv-ライブラリが削除された" id="markdown-toc-iconv-ライブラリが削除された">iconv ライブラリが削除された</a></li>
+          <li><a href="#-k-を用いたときに-warning-が出るようになった" id="markdown-toc--k-を用いたときに-warning-が出るようになった">-K を用いたときに warning が出るようになった</a></li>
+        </ul>
+      </li>
+      <li><a href="#stringlines-が-enumerator-ではなく配列を返すようになった" id="markdown-toc-stringlines-が-enumerator-ではなく配列を返すようになった">String#lines が Enumerator ではなく配列を返すようになった</a></li>
+      <li><a href="#inspect-が-to_s-を使わなくなった" id="markdown-toc-inspect-が-to_s-を使わなくなった">inspect が to_s を使わなくなった</a></li>
+      <li><a href="#数値-integer-と-float-が-frozen-になった" id="markdown-toc-数値-integer-と-float-が-frozen-になった">数値 (Integer と Float) が frozen になった</a></li>
+    </ul>
+  </li>
+  <li><a href="#その他の新機能" id="markdown-toc-その他の新機能">その他の新機能</a>    <ul>
+      <li><a href="#新しいシンボルリストの記法" id="markdown-toc-新しいシンボルリストの記法">新しいシンボルリストの記法</a></li>
+      <li><a href="#moduleprepend-の追加" id="markdown-toc-moduleprepend-の追加">Module#prepend の追加</a></li>
+      <li><a href="#enumerablesize-の追加" id="markdown-toc-enumerablesize-の追加">Enumerable#size の追加</a></li>
+      <li><a href="#to_h-メソッドの追加" id="markdown-toc-to_h-メソッドの追加">to_h メソッドの追加</a></li>
+      <li><a href="#kerneldir-メソッドの追加" id="markdown-toc-kerneldir-メソッドの追加">Kernel#<strong>dir</strong> メソッドの追加</a></li>
+      <li><a href="#arraybsearch-の追加" id="markdown-toc-arraybsearch-の追加">Array#bsearch の追加</a></li>
+      <li><a href="#fiber-ローカルではないスレッドローカル変数の機能の追加" id="markdown-toc-fiber-ローカルではないスレッドローカル変数の機能の追加">Fiber ローカルではないスレッドローカル変数の機能の追加</a></li>
+      <li><a href="#スタックサイズの指定" id="markdown-toc-スタックサイズの指定">スタックサイズの指定</a></li>
+      <li><a href="#デバッグ機能の強化" id="markdown-toc-デバッグ機能の強化">デバッグ機能の強化</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>本稿では Ruby 2.0.0 の注意点や、他の特筆するべき機能追加についてまとめています。</p>
+
+<p>なお、公式には <a href="http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/tags/v2_0_0_0/NEWS?view=markup">NEWS ファイル</a>に変更点がまとまっていることになっています。</p>
+
+<h2 id="気を付ける必要がある非互換">気を付ける必要がある非互換</h2>
+
+<h3 id="文字コードまわりの非互換">文字コードまわりの非互換</h3>
+
+<p>書いた人：naruse</p>
+
+<h4 id="デフォルトのスクリプトエンコーディングの変更">デフォルトのスクリプトエンコーディングの変更</h4>
+
+<p>Magic Comment を書いていないファイルの文字列リテラルのエンコーディング (default script encoding) が UTF-8 に変更されました。<a href="http://bugs.ruby-lang.org/issues/6679">[#6679]</a></p>
+
+<p>Ruby 1.9 においては、default script encoding は US-ASCII でした。しかし、以下のようなメリット・デメリットを考えた結果、上記の通り UTF-8 へと変更することになりました。</p>
+
+<ul>
+  <li>21世紀の現代においてはほとんどのコードが UTF-8 であるため、デフォルトが UTF-8 であった方が便利</li>
+  <li>1.9 向けの Magic Comment の書かれたコードはこの変更の影響を受けない</li>
+  <li>1.9 向けの Magic Comment の無いコードは、従来 US-ASCII や ASCII-8BIT になっていた String だった文字列が UTF-8 になるため、文字列処理の速度が低下する可能性がある</li>
+  <li>1.8 時代の UTF-8 以外のエンコーディングで書かれたコードには Magic Comment はないが、UTF-8 以外の文字列はたいていの場合 UTF-8 としては不正なバイト列としてエラーになるため問題になる可能性は低い</li>
+</ul>
+
+<p>典型的には、Magic Comment を書いていないコードでバイナリをエスケープを使いながらソースコードに埋め込んでいる場合にはこの変更によって問題が発生する可能性があります。この場合、Magic Comment を明示的に書くようにするか、<a href="http://bugs.ruby-lang.org/issues/6767">[#6767]</a> で追加された Sring#b を用いて、ASCII-8BIT  へと明示的に変更してください。</p>
+
+<h4 id="iconv-ライブラリが削除された">iconv ライブラリが削除された</h4>
+
+<p>拡張ライブラリ iconv が削除されました。<a href="http://bugs.ruby-lang.org/issues/6322">[#6322]</a></p>
+
+<p>今後は String#encode や Encoding::Converter、あるいはどうしても iconv が必要な場合は <a href="https://rubygems.org/gems/iconv">iconv.gem</a> を用いてください。</p>
+
+<h4 id="-k-を用いたときに-warning-が出るようになった">-K を用いたときに warning が出るようになった</h4>
+
+<p>1.8 時代にはお世話になったオプション、-K を指定した場合、-w をつけているときには警告を表示するようになりました。</p>
+
+<h3 id="stringlines-が-enumerator-ではなく配列を返すようになった">String#lines が Enumerator ではなく配列を返すようになった</h3>
+
+<p>書いた人：yhara</p>
+
+<p>String クラスには、文字列に対して列挙を行う each_line、each_char、each_byte、each_codepoint というメソッドがあり、それらと同じ動作をする lines、chars、bytes、codepoints メソッドがありました。</p>
+
+<p>Ruby 2.0.0 ではこれらのうち、lines、chars、bytes、codepoints の方が Enumerator ではなく配列を返すようになりました。このため、1.9 で</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 文字列の最後の行を返す
+ str.lines.to_a.last
+ # 文字列の二番目の文字を返す
+ str.chars.to_a[1]</code></pre></figure>
+
+<p>のように書いていたプログラムが、2.0 では</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 文字列の最後の行を返す
+ str.lines.last
+ # 文字列の二番目の文字を返す
+ str.chars[1]</code></pre></figure>
+
+<p>のように to_a なしで書けるようになりました。</p>
+
+<p>一方、この影響で、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> str.chars.with_index{ ... }</code></pre></figure>
+
+<p>のようなプログラムがエラーになるようになりました。配列には with_index メソッドがないからですね。この場合は、以下のように each_char の方を使用してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> str.each_char.with_index{ ... }</code></pre></figure>
+
+<p>なお IO、StringIO、ARGF にも同名のメソッドがありますが、2.0.0 では IO#bytes 等は deprecated になり、使うと warning が表示されるようになりました。
+IO#bytes の返り値の型が String#bytes と異なるのは気持ち悪いけど、かといってファイル全体を配列化したいケースはあまりなさそうなので <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>、IO の方は deprecated にしようという判断がされました。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<p>この場合も bytes ではなく each_byte の方を使うことが推奨されています。</p>
+
+<p>関連チケット：<a href="http://bugs.ruby-lang.org/issues/6670">http://bugs.ruby-lang.org/issues/6670</a></p>
+
+<h3 id="inspect-が-to_s-を使わなくなった">inspect が to_s を使わなくなった</h3>
+
+<p>書いた人：ささだ</p>
+
+<p>inspect を定義していないクラスでは、to_s が使われていましたが、2.0.0 か
+ら Object#inspect が使われることになりました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class C
+   def to_s
+     "C!!"
+   end
+ end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> puts C.new.inspect
+ #=&gt; 1.9 では C!!
+ #=&gt; 2.0 では #&lt;C:0x300da4&gt;</code></pre></figure>
+
+<p>従来のように inspect を使いたければ、明示的に inspect が to_s を使うよう
+に定義するようにしましょう。</p>
+
+<h3 id="数値-integer-と-float-が-frozen-になった">数値 (Integer と Float) が frozen になった</h3>
+
+<p>書いた人: ささだ</p>
+
+<p>Integer (Fixnum, Bignum) と Float オブジェクトが必ず freeze されるようになりました。多分、無いと思いますが、これらの数値オブジェクトにインスタンス変数や特異メソッドなどを追加するプログラムは動かなくなりました。そのようなプログラムは窓から外に放り出しましょう。</p>
+
+<p>関連チケット：<a href="http://bugs.ruby-lang.org/issues/3222,">http://bugs.ruby-lang.org/issues/3222,</a> <a href="http://bugs.ruby-lang.org/issues/6936">http://bugs.ruby-lang.org/issues/6936</a></p>
+
+<h2 id="その他の新機能">その他の新機能</h2>
+
+<h3 id="新しいシンボルリストの記法">新しいシンボルリストの記法</h3>
+
+<p>書いた人：ささだ</p>
+
+<p>シンボルの配列 [:a, :b, :c] を、%i(a b c) のように省略して書けるようになりました。</p>
+
+<p>%w (文字列展開しない) 、%W (文字列展開する) に対応して、%i (文字列展開しない) 、%I (文字列展開する) があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p %w(a b#{1} c) #=&gt; ["a", "b\#{1}", "c"]
+p %W(a b#{1} c) #=&gt; ["a", "b1", "c"]
+
+p %i(a b#{1} c) #=&gt; [:a, :"b\#{1}", :c]
+p %I(a b#{1} c) #=&gt; [:a, :b1, :c]</code></pre></figure>
+
+<h3 id="moduleprepend-の追加">Module#prepend の追加</h3>
+
+<p>書いた人：ささだ</p>
+
+<p>Module#include に似た、Module#prepend という機能が追加されました。Module#include と異なり、prepend  するクラス (モジュール) よりもメソッド探索順序を前にもってくる仕組みになります。</p>
+
+<p>詳しくは、下記に記事をまとめてみたのでご覧下さい。</p>
+
+<ul>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d19">#19 Module#prepend の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d20">#20 Module#prepend の応用</a></li>
+</ul>
+
+<h3 id="enumerablesize-の追加">Enumerable#size の追加</h3>
+
+<p>書いた人：yhara</p>
+
+<p>Enumerable に size というメソッドが追加されました。Enumerable なオブジェクトの要素の個数を返すメソッドには count がありますが、count は個数だけ知りたいときでも要素をすべて列挙してしまうという欠点がありました。</p>
+
+<p>size は Enumerable を include している各クラスで適切にオーバーライドされていて、要素をすべて列挙することなしに個数を教えてくれます。例えば、Ruby 2.0 では「1000 個の中から 3 個を選ぶ組み合わせの数」の計算を</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p [*1..1000].combination(3).size
+ #=&gt; 166167000</code></pre></figure>
+
+<p>のように書けるようになりました (count を使うと長さ 166167000 の配列をメモリ上に確保しようとするため、とても長い時間がかかってしまいます) 。</p>
+
+<p>なお、個数が事前に分からないようなケースでは、size は nil を返します。たとえば「ファイルの中の行の数」はファイルを全部読むまで分からないため、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> File.open("log.txt"){|f|
+   p f.each_line.size
+ }</code></pre></figure>
+
+<p>は nil を表示します。</p>
+
+<p>関連チケット：<a href="https://bugs.ruby-lang.org/issues/6636">https://bugs.ruby-lang.org/issues/6636</a></p>
+
+<h3 id="to_h-メソッドの追加">to_h メソッドの追加</h3>
+
+<p>書いた人：yhara</p>
+
+<p>Ruby には to_a や to_s という、オブジェクトを配列や文字列に変換する一連のメソッドがあります。Ruby 2.0 ではこれに to_h という、オブジェクトをハッシュに変換するメソッドが加わりました。</p>
+
+<p>具体的には、Struct、OpenStruct、ENV を to_h でハッシュに変換できるようになっています。またコーナーケースとして、Hash は to_h で self をそのまま返します。nil は to_h で空のハッシュ ({}) を返します。<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<p>これから書くプログラムでは、オブジェクトのハッシュとしての表現を返すようなメソッドは to_h という名前をつけると良いでしょう。</p>
+
+<h3 id="kerneldir-メソッドの追加">Kernel#<strong>dir</strong> メソッドの追加</h3>
+
+<p>書いた人：ささだ</p>
+
+<p>File.dirname(<strong>FILE</strong>) と同じようなことができる Kernel#<strong>dir</strong> メソッドが追加されました。<strong>dir</strong> だけでそのファイルのディレクトリ名が取得できます。</p>
+
+<h3 id="arraybsearch-の追加">Array#bsearch の追加</h3>
+
+<p>書いた人: nari</p>
+
+<p>Array#bsearch というメソッドが追加されました<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。このメソッドでは、ソートされた配列<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>について、指定した条件の要素をバイナリサーチを利用して見つけます。プログラミングコンテストなどの機会に自前で bsearch を実装しなくて済むので、個人的にはかなり嬉しい機能です。</p>
+
+<p>まず、例を示します。下記の例はすべて <a href="https://github.com/ruby/ruby/blob/v2_0_0_0/array.c#L2404-2408">Ruby 本体の RDoc</a> から引用しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ary = [0, 4, 7, 10, 12]
+ary.bsearch {|x| x &gt;=   4 } #=&gt; 4
+ary.bsearch {|x| x &gt;=   6 } #=&gt; 7
+ary.bsearch {|x| x &gt;=  -1 } #=&gt; 0
+ary.bsearch {|x| x &gt;= 100 } #=&gt; nil</code></pre></figure>
+
+<p>bsearch はブロックの引数に配列内の任意の要素が渡され、ブロックは true/false のいずれかを返す必要があります。そして、それぞれ以下のような振る舞いをします。</p>
+
+<ul>
+  <li>true を返す場合、探している要素はブロックに渡った任意の要素である、もしくはそれより大きなインデックスにある</li>
+  <li>false を返す場合、探している要素はブロックに渡った任意の要素より小さなインデックスにある</li>
+</ul>
+
+<p>例もあわせて説明を読むと、なんとなく理解できそうですね。</p>
+
+<p>さて、実は bsearch は二つのモードがあり、ここまでは <em>find-minimum</em> というモードについてのみ説明してきました。
+ここからは二つ目のモードである <em>find-any</em> モードについても説明していきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># ほとんどのユースケースでは find-minimum モードしか使わないと思うので、
+# ここからは興味のある人だけ。</code></pre></figure>
+
+<p>それぞれのモードはブロックの返り値の種類のよって切り替わります。
+ブロックで true/false を返す場合は find-minimum モードで動き、数値を返す場合は二つ目の find-any モードで動きます。</p>
+
+<p>find-any モードは、条件に合致する範囲（i…j）にある、任意の要素を見つける機能です。ブロックが返す数値によって以下のような振る舞いになります。</p>
+
+<ul>
+  <li>正数を返す場合、ブロックに渡る ary[k] は i…j の範囲外であり、探している要素は k より大きなインデックスにある</li>
+  <li>0 を返す場合、ブロックに渡る ary[k] は i…j の範囲内（i &lt;= ary[k] &lt; j）</li>
+  <li>負数を返す場合、ブロックに渡る ary[k] は i…j の範囲外であり、探している要素は k より小さなインデックスにある</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ary = [0, 4, 7, 10, 12]
+# 4 &lt;= x &lt; 8 の条件にあう値を探す
+ary.bsearch {|x| 1 - x / 4 } #=&gt; 4 or 7
+# 8 &lt;= x &lt; 10 の条件にあう値を探す（ないので nil を返す）
+ary.bsearch {|x| 4 - x / 2 } #=&gt; nil</code></pre></figure>
+
+<p>例もあわせて読むとなんとなくわかりそうな感じですね！
+ちなみに find-any モードは libc の bsearch(3) を参考にしているそうです。</p>
+
+<h3 id="fiber-ローカルではないスレッドローカル変数の機能の追加">Fiber ローカルではないスレッドローカル変数の機能の追加</h3>
+
+<p>書いた人：ささだ</p>
+
+<p>Thread#[] によって、スレッドローカル変数（スレッド間で共有する変数）を扱うことができましたが、Fiber を切り替えると無効になってしまうと言う問題がありました (これらの値を Fiber ローカル変数と言うことにします)。</p>
+
+<p>そこで新しく、Fiber を切り替えても共通で使えるスレッドローカル変数を扱うための API が次のように用意されました。</p>
+
+<ul>
+  <li>Thread#thread_variable_get(sym) で sym というスレッドローカル変数を取得</li>
+  <li>Thread#thread_variable_set(sym, obj) で sym というスレッドローカル変数をセット</li>
+  <li>Thread#thread_variables ですべてのスレッドローカル変数を取得</li>
+  <li>Thread#thread_variable?(sym) で sym というスレッドローカル変数があるかどうかチェック</li>
+</ul>
+
+<p>殆どのケースでは、Thread#[] によって操作する、Fiber 間で独立した Fiber ローカル変数を利用すると良いと思いますが、時々この新しい API が必要になるかもしれません。注意して使って下さい。</p>
+
+<h3 id="スタックサイズの指定">スタックサイズの指定</h3>
+
+<p>書いた人：ささだ</p>
+
+<p>スレッドおよびファイバが利用する VM およびマシンスタックのサイズが環境変数でそれぞれ指定できるようになりました。</p>
+
+<ul>
+  <li>RUBY_THREAD_VM_STACK_SIZE: スレッドを作る時に作成する VM スタックサイズ（デフォルト: 128KB (32bit CPU) or 256KB (64bit CPU)）</li>
+  <li>RUBY_THREAD_MACHINE_STACK_SIZE: スレッドを作る時に作成するマシンスタックサイズ（デフォルト：512KB or 1024KB）</li>
+  <li>RUBY_FIBER_VM_STACK_SIZE: ファイバを作る時に作成する VM スタックサイズ（デフォルト：64KB or 128KB）</li>
+  <li>RUBY_FIBER_MACHINE_STACK_SIZE: ファイバを作る時に作成するマシンスタックサイズ（デフォルト：256KB or 512KB）</li>
+</ul>
+
+<p>デフォルトのスタックサイズも大きくなっています。普通に使う分にはあまり気にしなくても良いと思います。</p>
+
+<p>この記事も参考にして下さい：<a href="http://www.atdot.net/~ko1/diary/201212.html#d21">Ruby VM アドベントカレンダー #21 VM のスタックサイズチューニング</a></p>
+
+<h3 id="デバッグ機能の強化">デバッグ機能の強化</h3>
+
+<p>書いた人：ささだ</p>
+
+<p>Ruby 2.0.0 から、いくつかのデバッグ機能が追加されました。</p>
+
+<ul>
+  <li>set_trace_func を置きかえる TracePoint</li>
+  <li>caller() の返値をもっと使いやすくする caller_locations()</li>
+  <li>オブジェクトの参照関係を取り出す ObjectSpace.reachable_objects_from()</li>
+</ul>
+
+<p>などなどです。詳しくは今号の <a href="/articles/0041/0041-YarvManiacs.html">YARV Maniacs 【第 11 回】 最近の YARV の事情</a> （から参照されている Ruby VM アドベントカレンダー）をご参照下さい。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>いちばんありそうなのは行の列にする場合ですが、この用途には IO#readlines という昔からあるメソッドが存在します。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>knu さんは、将来 Enumerable とインデックスアクセスの機能を併せ持つ LazyArray のようなクラスを返り値にすることを考えているようです。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>評判がすごく悪ければ、2.0.1 で元に戻ることはあるかも知れません :-p&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>これによって、opts[:foo] が nil かどうかを気にせずに hash = opts[:foo].to_h のように書けるわけですね。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>ちなみに Range#bsearch もあってそっちも似たような感じ。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>バイナリサーチ (二分探索) は配列がソートされていることを前提に行う探索アルゴリズムなので、配列がソートされていない場合の動作は未定義です。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

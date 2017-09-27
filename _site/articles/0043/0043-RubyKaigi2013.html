@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RubyKaigi 2013 レポート</title>
+  <meta name="description" content="書いた人 : RubyKaigi 2013 るびまレポートスタッフ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0043/0043-RubyKaigi2013.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>RubyKaigi 2013 レポート</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0043/0043-RubyKaigi2013.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RubyKaigi 2013 レポート" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0043/0043-RubyKaigi2013.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0043/0043-RubyKaigi2013.html" data-text="RubyKaigi 2013 レポート">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人 : RubyKaigi 2013 るびまレポートスタッフ</p>
+
+<h2 id="rubykaigi-2013-レポート">RubyKaigi 2013 レポート</h2>
+
+<h3 id="開催概要">開催概要</h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2013 年 5 月 30 日 (木) 10:00 〜 2013 年 6 月 1 日 (土) 18:30</dd>
+  <dt>開催場所</dt>
+  <dd>東京国際交流館 プラザ平成</dd>
+  <dt>主催</dt>
+  <dd>RubyKaigi 2013 実行委員会</dd>
+  <dt>公式ページ</dt>
+  <dd><a href="http://rubykaigi.org/2013">http://rubykaigi.org/2013</a></dd>
+  <dt>公式ハッシュタグ</dt>
+  <dd>#rubykaigi</dd>
+  <dt>動画と資料</dt>
+  <dd><a href="http://rubykaigi.org/2013/schedule">http://rubykaigi.org/2013/schedule</a></dd>
+</dl>
+
+<h3 id="はじめに">はじめに</h3>
+
+<p>RubyKaigi が 2011 年 7 月に終わってから、2 年弱の充電期間を経て、新たな RubyKaigi として帰ってきました。
+これまでの RubyKaigi とは異なる <a href="http://rubykaigi.org/2013/">RubyKaigi 2013</a>。準国際カンファレンスとして蘇り、新たな試みが多かった <a href="http://rubykaigi.org/2013/">RubyKaigi 2013</a>。</p>
+
+<p>keynote の大部分のレポートは、<a href="http://gihyo.jp/news/report/01/rubykaigi2013">gihyo.jp さんの RubyKaigi 2013 レポート</a> にお任せして、るびまでは独断と偏見で選んだ <a href="http://rubykaigi.org/2013/">RubyKaigi 2013</a> の様子を一部ではありますが、お伝えしたいと思います。</p>
+
+<h2 id="may-30">May 30</h2>
+
+<h3 id="the-history-of-ruby-20th-anniversary-ed-by-高橋-征義-さん-書いた人-shokolateday-">The History of Ruby; 20th Anniversary Ed. by 高橋 征義 さん (書いた人： @shokolateday )</h3>
+<p>: <img src="http://farm4.staticflickr.com/3695/8886034213_8f3c8a2517.jpg" alt="takahashim" /></p>
+
+<p><a href="http://www.flickr.com/photos/miio119/8886034213">photo by miio</a></p>
+
+<p><a href="http://ruby-no-kai.org/">日本 Ruby の会</a> 会長 高橋征義氏が、Ruby の 20 年を語りました。ネットに情報がない時代に日本で生まれた Ruby が、世界各国でカンファレンス (<a href="http://rubyconf.org/">RubyConf</a>) が開催される程に知名度を広げるまでの歩みを振り返った後、高橋氏は「Ruby の歴史の “教科書” に載っている人が来ている。隣に座っているかもしれない。だが、あなたも歴史の一人である。皆で歴史をつくっていこう！」とコミュニティと愛を大切にする Ruby のカンファレンスらしいメッセージで締めくくりました。</p>
+
+<p>今回の <a href="http://rubykaigi.org/2013/">RubyKaigi 2013</a> は高額なチケット料にも関わらずキャンセル待ち、平日である初日には予想を上回る参加者が動員した為、配布弁当の数が不足、立ち見のセッションが複数出る等、参加者の RubyKaigi に対する強い意気込みが表れていました。</p>
+
+<h3 id="ruby-リファレンスマニュアル刷新計画-2013-初夏-by-okkez-さん-書いた人-raa0121">Ruby リファレンスマニュアル刷新計画 2013 初夏 by okkez さん (書いた人： @raa0121)</h3>
+<p>: <img src="/images/0043-RubyKaigi2013/okkez.jpg" alt="okkez.jpg" /></p>
+
+<p>Ruby リファレンスマニュアル (以下、るりま) は 2006 年 8 月にプロジェクトが始まり、<a href="http://doc.okkez.net/">doc.okkez.net</a> / <a href="http://doc.ruby-lang.org/">doc.ruby-lang.org</a> で公開されています。
+2011 年 9 月に主要なクラス・モジュール・メソッドなどに最低限の説明が付きましたが、執筆対象 17000 の内、優先順位の低い Tk や XML 関係の 10000 ほどのエントリーがまだ手付かずの状態なのだそうです。</p>
+
+<p>okkez さんは<a href="http://rubykaigi.org/2011/ja/schedule/details/18M01">前回の RubyKaigi 2011 の時</a>にもるりまに関する発表を行われていますが、当時設定した目標をるりまプロジェクトは着実に進め、るりまの UTF-8 化やるりまを利用するツールである <a href="https://github.com/rurema/bitclust">BitClust</a> の gem 化などを行ってきたそうです。
+今後はるりまのリポジトリを <a href="https://github.com/">Github</a> に移行し、参加・継続のしやすい環境づくりをすること、また、<a href="http://rdoc.sourceforge.net/">RDoc</a> との連携が目標です。( <a href="http://rubykaigi.org/2013/">RubyKaigi 2013</a> の後、<a href="https://github.com/rurema">早速 Github に公開されました！</a>)</p>
+
+<p>また、るりまはクリエイティブ・コモンズで公開されており、るりまプロジェクト外でのプロダクトも複数存在します。例えば、 <a href="https://github.com/yhara/">yhara</a> さんの <a href="https://github.com/yhara/prismdoc">prismdoc</a> という JavaDoc 風 Web アプリケーションやクリアコードさんの <a href="http://rurema.clear-code.com/">rurima-search</a> という全文検索 Web アプリなどがあります。</p>
+
+<p>現在、るりまプロジェクトでは言語仕様のページを書く人がおらず、1.6 - 1.8 の頃のものがまだ使われており、随時執筆者を募集中です。
+るりまはすでに <a href="https://github.com/">Github</a> に移行され、みなさんに馴染み深いインターフェースでの開発が始まっています。これを機にみなさんも気軽にるりまに pull request してみてはいかかでしょうか？</p>
+
+<p>私はまだまだひよっこ Rubyist ですが、普段 XML ライブラリの rexml を使ってコードを書くことが多いので、ドキュメントを書いて pull request してみたいなと思いました。
+常に進化し続ける Ruby に対して、ドキュメントがすぐに追いつくのは難しいとは思いますが、これからどんどん増えていくであろうドキュメントに期待したいです。</p>
+
+<h3 id="ruby-on-robots-using-artoo-a-new-platform-for-robotics-physical-computing-and-the-real-world-web-by-ron-evans-by-ron-evans-さん-adrian-zankich-さん-書いた人-shokolateday-">Ruby On Robots Using Artoo: A New Platform For Robotics, Physical Computing, and the Real World Web by Ron Evans by Ron Evans さん、 Adrian Zankich さん (書いた人： @shokolateday )</h3>
+
+<dl>
+  <dt>タイトルの「Ruby On Robots」というキーワードだけで興味が沸くこのセッション。<a href="http://hybridgroup.com/">The Hybrid Group</a> の中心人物である <a href="https://github.com/deadprogram">Ron Evans</a> 氏が助手の <a href="https://github.com/adzankich">Adrian Zankich</a> 氏を連れ、Ruby で動くロボットをコードとともに披露してくれました。 出てきたロボットは <a href="http://www.gosphero.com/">Sphero</a>  というスマホ・タブレットで操作して遊べるボール型ラジコンと、Wi-Fi コントロールヘリコプターである <a href="http://ardrone2.parrot.com/">AR Drone</a> の二つ。10 個の <a href="http://www.gosphero.com/">Sphero</a> を操作して「 <a href="http://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%A4%E3%83%95%E3%82%B2%E3%83%BC%E3%83%A0">Life Game</a> 」という生命をシュミレートするゲームを見せてくれたり、<a href="http://ardrone2.parrot.com/">AR Drone</a> を飛行させて聴衆を楽しませました。</dt>
+  <dd><img src="/images/0043-RubyKaigi2013/9337643677_6987305482.jpg" alt="9337643677_6987305482.jpg" /></dd>
+</dl>
+
+<p><br />
+そして最後に「Ruby ベースのロボットの時代がきた！あなたもロボット革命に参加しよう！」と会場に語りかけました！</p>
+
+<p><br />
+今回 RubyKaigi に参加して「もっと英語勉強しなくては……orz」と思った方、いるのではないでしょうか？
+次回は視覚で楽しめそうなものを選ぶのも英語初心者には良いかもしれません。 
+このセッションは英語で行われましたが、ロボットのデモがあるため、話していることが比較的推測しやすく、視覚的にも楽しめるものでした。まずは<a href="http://vimeo.com/69688042">公式の Video</a> を見てヒアリング力を高めるのも良いと思います！</p>
+
+<p><img src="/images/0043-RubyKaigi2013/9340585232_eff3e733af.jpg" alt="9340585232_eff3e733af.jpg" />
+<br /></p>
+
+<h3 id="ruby-kaja--community-appeal-by-矢部さんこしばさん-書いた人-ayako119-">Ruby Kaja / Community Appeal by 矢部さん、こしばさん (書いた人： @ayako119 )</h3>
+<p>: <img src="/images/0043-RubyKaigi2013/9175560230_fd46662f70_tyabe.jpg" alt="9175560230_fd46662f70_tyabe.jpg" /></p>
+
+<p><a href="http://rubykaigi.org/2013/">RubyKaigi 2013</a> の 1 日目の最後を飾ったのは、Ruby や Ruby コミュニティに貢献した若手の Rubyist を讃える<a href="http://kaja.rubyist.net/">「Ruby Kaja」</a> でした。
+今回は、北は札幌、南は沖縄まで日本全国の Ruby コミュニティが <a href="http://kaja.rubyist.net/2013/about">Ruby Kaja 2013</a> に応募されていました。</p>
+
+<p>Kaja の選出にはコミュニティ毎に基準が異なっていて、コードをたくさん書いた人、コミュニティ内で使うツールを開発した人、司会進行をずっとしていた人とコミュニティ毎に特色のある基準だと感じました。</p>
+
+<p>また、各コミュニティの紹介では、それぞれのコミュニティの特色が紹介されていました。
+例えば、<a href="http://qwik.jp/okinawarb/">Okinawa.rb</a> ではゲストハウスで活動していたり、<a href="https://www.facebook.com/groups/shibuya.rb/">Shibuya.rb</a> では、駅に近いから通いやすいことをアピールしたりしていました。</p>
+
+<p>Kaja に選出された皆さん、おめでとうございます。選出された Kaja の皆さんには、特典として来年の RubyKaigi 2014 のチケット争奪戦では Kaja 割が適用されるそうです。</p>
+
+<p>来年の Ruby Kaja の開催は「未定」とのことですが、来年も開催されることを期待したいと思います。</p>
+
+<h3 id="ruby-archaeology-by-石塚圭樹さん-書いた人-zonu_exe">Ruby Archaeology by 石塚圭樹さん (書いた人: @zonu_exe)</h3>
+<p>: <img src="/images/0043-RubyKaigi2013/ishitsuka.jpg" alt="ishitsuka.jpg" /></p>
+
+<p>「Ruby考古学」 発表者の石塚圭樹 (けいじゅ ＠ いしつか) さんは、世界最初の Ruby 書籍である『オブジェクト指向スクリプト言語 Ruby 』の著書としても知られる、Ruby の名付け親です<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。また、現在まで広く使われている対話環境 IRB の作者です。Ruby が開発された 1993 年、いしつかさんはまつもとゆきひろさんと同じ会社でプログラミング言語の研究職に就いていらっしゃいました。 Ruby の歴史については初日の最初のセッションで高橋征義さんが「<a href="http://rubykaigi.org/2013/talk/S57">The History of Ruby</a>」として紹介していましたが、当セッション「Ruby 考古学」は、当事者の立場からの Ruby 開発前史にあたります。</p>
+
+<p>Ruby 誕生の前日までに新しい言語の特徴として現在まで貫かれているコンセプトがいくつも挙げられていました。この時点では「<a href="http://ja.wikipedia.org/wiki/Yacc">yacc</a> を使用しないシェル風の簡単な構文」が想定されていたようで、「引数を文字列として扱う」「引数区切りはカンマ (,) なし」など、あたかもシェルスクリプトのような言語でした。しかしこの時点で既に、こんにち <a href="http://doc.ruby-lang.org/ja/2.0.0/doc/spec=2fcall.html#block">ブロック付きメソッド呼び出し</a> と呼ばれるものに相当する「ユーザ定義の制御構文」が検討されていたことは特筆すべきでしょう。</p>
+
+<p>言語名が「ruby<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>」と決まったあと具体的な構文の検討が開始され、毎日のように成長していきます。この時点で引数はまだ全て文字列で扱うことになっていたので、 if [a == b] のような構文で引数に式を埋め込めるようになっていました。ほどなくして、誕生から 5 日目には「引数区切りはカンマ (,)」になります。また、当初 PC との互換性のために使用しないことになっていた <a href="http://ja.wikipedia.org/wiki/Yacc">yacc</a> は、このころ解禁されることになります。</p>
+
+<p>インスタンス変数は当初 obj.ivar のように参照するようになっていました。現在の Ruby では <a href="http://doc.ruby-lang.org/ja/2.0.0/class/Module.html#I_ATTR">Module#attr_*</a> で明示的にアクセサを定義することで同様のアクセスができるようになります。意外なことに、当時は「アクセサの定義は要らないようにしたい」という設計でした。しかしそれは 13 日目までには撤回され、現在のものに近い仕様になります。</p>
+
+<p>誕生から半年以内に「モジュールの mix-in<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>」「private メソッド」「グローバル変数 ($gver), インスタンス変数 (@ivar)」など現在と同様なものが登場し、1993 年 8 月 19 日に初めて Ruby が動作したそうです。その後、いしつかさんとまつもとさんの転職でメールのやりとりが途切れてしまい、いしつかさんの記録が存在しない「暗黒時代」を経た 1994 年 8 月 10 日にバージョンが ruby 0.50 になりました。開発は進み、やがて 1994 年末には 0.6 に、そして 1995 年 12 月に ruby 0.95 をリリース、ネットニュースで一般公開されました。</p>
+
+<p>その後は高橋さんの語る「Ruby の歴史」へと続き、数々の出来事を経て現在へと至ります。筆者がプログラミングを始めたのは 2010 年、 Web に関わるようになったのも 2004 年頃なので、Ruby の歴史の大部分にはまったく接点を持つことなく過ごしてきました。今後 Ruby と関わっていく上で歴史に貢献、などと大それたことではなくとも、関わりを持っていくことができるのか。エモい話ではありますが、わくわくしますね。</p>
+
+<h2 id="may-31">May 31</h2>
+
+<h3 id="high-parformance-rails-by-issei-naruta-さん-書いた人-mitaku-">High Parformance Rails by Issei Naruta さん (書いた人： @mitaku )</h3>
+
+<p><a href="http://rubykaigi.org/2013">RubyKaigi 2013</a> 2 日目のホール A。トップバッターは、日本のキッチンを支える<a href="http://cookpad.com/">クックパッド</a>のインフラやパフォーマンスの改善を担っている成田 (<a href="https://twitter.com/mirakui">@mirakui</a>) さん。
+その成田さんの経験から語られる <a href="http://rubyonrails.org/">Rails</a> アプリケーションのパフォーマンスについての発表でした。</p>
+
+<p>他の言語・フレームワークの組み合わせと比べ、決して高速とはいえない <a href="http://rubyonrails.org/">Rails</a> ですが、それでも<a href="http://cookpad.com/">クックパッド</a>では開発の容易さから <a href="http://rubyonrails.org/">Rails</a> を採用し、サービスを運用しています。</p>
+
+<p>この発表を通じて <a href="http://rubyonrails.org/">Rails</a> のアプリケーションを高速化させる２つのコツを教わりました。</p>
+
+<ul>
+  <li>極力 Ruby に処理をさせないこと</li>
+  <li>Ruby は極力新しいバージョンを使うこと</li>
+</ul>
+
+<p>成田さん曰く、経験上特に <a href="http://rubyonrails.org/">Rails</a> が遅いところは ActiveRecord のオブジェクトを生成するところと Routing の解決であると言います。
+特に Routing の話は会場を沸かせていました。</p>
+
+<p>クックパッドのように大規模な Web アプリケーションになると routes が大きくなり、ルーティングのコストが上がってしまうとのことです。
+この話を聞いて私も気になったので、自分で計測してみたところ以下の順番で実行速度が速いことがわかりました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # config/routes.rb
+ resouces :users
+
+ url_for("/users")
+ url_for(users_path)
+ url_for(:users)
+ url_for(controller: 'users', action: 'index')</code></pre></figure>
+
+<p>他にも Template Engine (<a href="http://www2a.biglobe.ne.jp/seki/ruby/erb.html">ERB</a> や <a href="http://haml.info/">Haml</a> など)についての話や、GC を止める話など、多くの <a href="http://rubyonrails.org/">Rails</a> アプリケーションを作る人の役に立ちそうな話が目白押しでした。</p>
+
+<p>成田さんはこのパフォーマンスを問題に <a href="http://rubyonrails.org/">Rails</a> で開発することを諦めてはいけないと言っていました。
+ちょっとした工夫で高速化ができるのでパフォーマンスに配慮したよいアプリケーションを作って行きたいですね!</p>
+
+<p>ぜひ <a href="http://rubyonrails.org/">Rails</a> アプリケーションを作っている人は<a href="https://speakerdeck.com/mirakui/high-performance-rails-long-edition">スライド</a>や発表動画を御覧ください！</p>
+
+<p>※スライドは発表当時より内容が増えているので、発表を聞いた方もぜひ御覧ください。</p>
+
+<dl>
+  <dt><img src="http://farm3.staticflickr.com/2850/9176041292_535f9c4962.jpg" alt="mirakui" /></dt>
+  <dd><img src="http://farm6.staticflickr.com/5451/8939936147_d4aabf55b1_z.jpg" alt="8939936147_d4aabf55b1_z.jpg" /></dd>
+</dl>
+
+<p><a href="http://www.flickr.com/photos/miio119/8939936147">photo by miio</a></p>
+
+<h3 id="krypt-semper-pi-by-martin-bosslet-さん-書いた人-muryoimpl-">krypt. semper pi. by Martin Bosslet さん (書いた人： @muryoimpl )</h3>
+<p>: <img src="http://farm3.staticflickr.com/2865/8905719598_25e453bb3c.jpg" alt="http://www.flickr.com/photos/recompile_net/8905719598/" /></p>
+
+<p>openssl ライブラリに対するコミットで Ruby に貢献されているコミッタの Martin Bosslet (<a href="https://twitter.com/_emboss_">@<em>emboss</em></a>) さん。このセッションでは <a href="https://github.com/krypt">krypt</a> というライブラリを作成されているお話を、暗号化ライブラリの正しい使い方やセキュリティの話題を交えてお話をされていました。</p>
+
+<p>セキュリティは難しいけれども避けては通れない話題。
+なるべく煩わされたくないけど、高度に抽象化されたものやごくごく単純なものまで幅広い知識が必要で、初期状態の安全性を確保したまま、細かい設定までできるようにしないといけなくってたいへん。ライブラリの使い方を間違えると、セキュリティを強化したつもりでも逆に穴を作ってしまうことだってある、とコード例を出して説明されていました。</p>
+
+<p>そんな問題がでないように <a href="https://github.com/krypt">krypt</a> ライブラリを作成しているとのことです。</p>
+
+<p><a href="https://github.com/krypt">krypt</a> は Ruby の標準ライブラリに取り込まれることを狙っているライブラリで、Security by Default を意識し、多くの Ruby 処理系や環境で利用できるよう C 拡張を利用せず、<a href="http://www.openssl.org/">OpenSSL</a> にも依存しないで利用できることを目指しているそうです。</p>
+
+<p><a href="https://github.com/krypt">krypt</a> が C 拡張なしで書かれるのであれば、多くの Ruby 処理系での利用が期待出来ますし、<a href="http://www.openssl.org/">OpenSSL</a> への依存がなくなるのであれば、Ruby のインストール時に <a href="http://www.openssl.org/">OpenSSL</a> で問題が起こることもなくなる？かもしれませんね。</p>
+
+<p>ライブラリを利用する側も、意識せずとも安全性が確保できるようライブラリ側で考慮されているなら安心して利用できますね。<a href="https://github.com/krypt">krypt</a> の発展に期待したいですね！</p>
+
+<p><br />
+<a href="http://www.flickr.com/photos/recompile_net/8905719598">photo by Naoto Takai</a></p>
+
+<h3 id="refactoring-fat-models-with-patterns-by-bryan-helmkamp-さん-書いた人-muryoimpl-">Refactoring Fat Models with Patterns by Bryan Helmkamp さん (書いた人： @muryoimpl )</h3>
+<p>: <img src="http://farm4.staticflickr.com/3687/8949794377_244c97f0e0.jpg" alt="8949794377_244c97f0e0.jpg" /></p>
+
+<p><a href="http://www.flickr.com/photos/miio119/8949794377/in/set-72157633904447668">photo by miio</a></p>
+
+<p><a href="https://codeclimate.com/">Code Climate</a> の Founder である <a href="https://github.com/brynary">Bryan</a> さんは、『skinny controller, fat model』 の原則に従うことで発生する、太りすぎてモデルをやっていけない model 達への対策をコードと共に示してくださいました。</p>
+
+<p><a href="http://weblog.rubyonrails.org/2013/6/25/Rails-4-0-final/">Rails 4</a> では、太りゆく model のメソッド群を分離するため concerns ディレクトリが提供されましたが、太りゆく model のコードを単純に concerns に逃がすべきでなく、オブジェクト指向の原則に基づいた分け方で解決するべきとのアプローチで下記の 6 つのパタンを紹介されています。</p>
+
+<ul>
+  <li>Value Object</li>
+  <li>Service Object</li>
+  <li>Form Object</li>
+  <li>Query Object</li>
+  <li>View Object</li>
+  <li>Policy Object (当日は説明を省略)</li>
+</ul>
+
+<p>説明で使用したコード例: <a href="https://github.com/codeclimate/refactoring-fat-models">https://github.com/codeclimate/refactoring-fat-models</a>
+<br /></p>
+
+<p>オブジェクトとして分割する際の目安は、同様の prefix、suffix がつくようなメソッドがあるもの、その model のコアな処理ではないもの、ライフサイクルが異なるものを別 class に分離するのがよいとのこと。この分離の方法は、Value Object (値), Service Object (振舞), Query Object (クエリ) の説明に当てはまります。</p>
+
+<p>Form Object は 1 つの form で複数の model を扱う場合の解決策です。ActiveModel を使って複数 model を扱う処理を書くことで、登録をひとつの流れとして表現できるようになり、ActiveRecord の機能を使って書くより流れが明確になります。メンテナンスを考えると、コードが表現しているものが明確なのがよいですよね。</p>
+
+<p>View Object は、同一の関心事を Object として View に渡して View にロジックが書かれること、helper メソッドとして各所にバラバラに定義されるのを防ぐ効果があるとのことでした。</p>
+
+<p><a href="http://rubykaigi.org/2013/talk/S61">直前の諸橋さんの発表</a> と併せて、ちょっと規模が大きくなってきたアプリケーションに対する対策として是非理解しておきたい内容でした。普段何気なく使っていたパタン、気付かされたパタンもあり、非常に勉強になったセッションでした。</p>
+
+<h2 id="june-1">June 1</h2>
+
+<h3 id="rails-gems-realize-restful-modeling-patterns-by-toru-kawamura-さん--書いた人-asonas-">Rails Gems realize RESTful modeling patterns by Toru Kawamura さん  (書いた人： @asonas )</h3>
+
+<p>多くの人が使っている <a href="http://rubyonrails.org/">Rails</a> は RESTful な設計、開発ができるように開発されています。
+その <a href="http://rubyonrails.org/">Rails</a> をより RESTful に扱うために 7 つのパターンを記載しているブログ(<a href="http://rest-pattern.hatenablog.com/entry/contents">http://rest-pattern.hatenablog.com/entry/contents)</a>)をもとに、その中からいくつか私達がよく使うパターンについて発表されました。</p>
+
+<p><img src="http://farm3.staticflickr.com/2833/9176641662_f57c12f4a7.jpg" alt="9176641662_f57c12f4a7.jpg" /></p>
+
+<h4 id="rails-は-restful-である">Rails は RESTful である</h4>
+
+<p><a href="http://rubyonrails.org/">Rails</a> は RESTful なフレームワークであると、<a href="https://twitter.com/dhh">DHH</a> が 7 年前に言っていました。
+<a href="http://rubyonrails.org/">Rails</a> でどういうところが RESTful であるかというと</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # config/routes.rb
+ resources :users</code></pre></figure>
+
+<p>と 1 行だけ書くことによって CRUD に必要なものが用意されることは、日頃から <a href="http://rubyonrails.org/">Rails</a> で Web アプリケーションを書いている人はすぐにわかると思います。
+この CRUD を表にすると以下のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>-</td>
+      <td>GET</td>
+      <td>POST</td>
+      <td>PUT</td>
+      <td>DELETE</td>
+    </tr>
+    <tr>
+      <td>/users</td>
+      <td>index</td>
+      <td>create</td>
+      <td>-</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>/users/:id</td>
+      <td>show</td>
+      <td>-</td>
+      <td>update</td>
+      <td>destroy</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="restful-にするメリット">RESTful にするメリット</h4>
+
+<p>RESTful な設計にすることでいくつかのメリットを享受することができます。</p>
+
+<ul>
+  <li>一貫性がとれる</li>
+  <li>簡単</li>
+  <li>HTTP のメリットに乗れる</li>
+</ul>
+
+<p>ということが言えます。
+それは <a href="http://rubyonrails.org/">Rails</a> でも同じで、同じことを開発者に強いるので理解がしやすく、設計をしても誰がやっても同じような設計ができあがります。
+<a href="https://github.com/tkawa">tkawa</a> さんの発表の中で幾つかの RESTful のパターンを紹介されていましたが、このレポートではその中から「認証」について紹介したいと思います。</p>
+
+<p>認証をするときの URL やリソースはなんでしょうか？例えば、私達がよく認証機能を実装するときに使う <a href="https://github.com/plataformatec/devise">devise</a> をひとつの例としてみてみると</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> GET    /users/sign_in devise/sessions#new
+ POST   /users/sign_in devise/sessions#create
+ DELETE /users/sign_in devise/sessions#destroy
+ # snip</code></pre></figure>
+
+<p>この例から <a href="https://github.com/plataformatec/devise">devise</a>  は session に対して new したり create していることがわかります。ここで注目したいのは、実際には session はモデルとしては存在しないし、データベースにも保存をするようにはなっていませんが、session をリソースとみなしているということです。</p>
+
+<p>つまり単一のリソースに対しての CRUD なので、<a href="http://rubyonrails.org/">Rails</a> で表現するならば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # config/routes.rb
+ resource :session</code></pre></figure>
+
+<p>と書くことによって</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>-</td>
+      <td>GET</td>
+      <td>POST</td>
+      <td>PUT</td>
+      <td>DELETE</td>
+    </tr>
+    <tr>
+      <td>/session</td>
+      <td>show</td>
+      <td>create</td>
+      <td>update</td>
+      <td>destroy</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>と、表現できます。なにをリソースとするのかを考えることによって、自然な URL が生成されましたね。</p>
+
+<p>このあとも <a href="https://github.com/tkawa">tkawa</a> さんは <a href="https://github.com/binarylogic/authlogic">authlogic</a> や <a href="https://github.com/amatsuda/kaminari">kaminari</a> といった有名な Gem がどういう RESTful なパターンを持っているのかを紹介していました。</p>
+
+<p>このように、<a href="http://rubyonrails.org/">Rails</a> の RESTful なパターンは他の Gem を参考にすることで解決することが多いように思いました。認証の例でもありましたが、リソースの名付けが難しい場合時にはなにをリソースと見なすか？ ということに焦点を当てることが <a href="http://rubyonrails.org/">Rails</a> における開発の基本なのかもしれませんね。</p>
+
+<p>このレポートで紹介しきれなかった他のパターンについては<a href="http://rest-pattern.hatenablog.com/">こちらのブログ</a>で綴られています。<a href="http://www.slideshare.net/tkawa1/rubykaigi2013-rails-gems-realize-restful-modeling-patterns">tkawa さんのスライド</a>と合わせて読んでみてはどうでしょう？</p>
+
+<p><img src="http://farm8.staticflickr.com/7328/9176633696_6c71029340.jpg" alt="9176633696_6c71029340.jpg" />
+<img src="http://farm4.staticflickr.com/3828/9174416131_915a6cc95d.jpg" alt="tkawa" /></p>
+
+<h3 id="be-a-library-developer-by-kouhei-sutou-さん--書いた人-asonas-">Be a library developer! by Kouhei Sutou さん  (書いた人： @asonas )</h3>
+
+<h4 id="良いソフトウェア開発を知っている">良いソフトウェア開発を知っている</h4>
+
+<p>須藤さんは発表中に「私たちは『良いソフトウェア』の開発の仕方をしっている」とし、身近にあるコード(<a href="https://github.com/rcairo/rcairo">rcairo</a> というライブラリのコード)を例としてあげて説明をされていました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> context.save
+ context.circle(50, 50, 50)
+ context.stroke
+ context.restoke</code></pre></figure>
+
+<p>この短いコードの中で <code class="highlighter-rouge">context.save</code> と <code class="highlighter-rouge">context.restore</code> に注目してみると</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> context.save do
+   context.circle(50, 50, 50)
+   context.stroke
+ end</code></pre></figure>
+
+<p>上のようなかんじで書けると良いとお話されていました。
+なぜ良いか、はそれが Ruby-ish (Ruby ぽい) からで、この書き方は他のライブラリにも同様に見られるからです。</p>
+
+<h4 id="ruby-ぽい">Ruby ぽい</h4>
+
+<p>「Ruby ぽい」ことはつまり他と似ているということです。
+似ているということは、一貫性があるということと、場面ごとに考えを変えなくても済むということ。
+読みやすく一貫性があると、コードの本質に集中することができてメンテナンスがしやすくなります。</p>
+
+<h4 id="もう一歩踏み込んで">もう一歩踏み込んで</h4>
+
+<p>私たちがよく使う File クラス、これもひとつの例を上げるなら</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Setup
+ file = File.open(path)
+ file.read
+ # Teardown
+ file.close</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Setup
+ File.open(path) do |file|
+   file.read
+ end # Teardown</code></pre></figure>
+
+<p>こう書くことができて、最初に出てきた <a href="https://github.com/rcairo/rcairo">rcairo</a> のコードも同じように扱うことができます。</p>
+
+<p>須藤さんの発表は、Ruby ぽい (Ruby-ish) コードについて問いかけていて、普段僕が書くコードが Ruby ぽいかどうかを再確認するような発表でした。
+まつもとさんが「言語をつくると良いコードが書けるようになる」と言っていたが、須藤さんは「ライブラリをつくると良いコードがかけるようになる」と言っていたのが印象的でした。</p>
+
+<p>こちらも今号により詳細な解説が載っているので見てくださいね！ <a href="http://magazine.rubyist.net/?0043-BeALibraryDeveloper">ライブラリー開発者になろう</a></p>
+
+<p><img src="http://farm8.staticflickr.com/7443/9174376167_0f51f7443d.jpg" alt="ktou" /></p>
+
+<h3 id="trick-by-yusuke-endoh--the-judges--書いた人-shokolateday-">TRICK by Yusuke Endoh &amp; the judges  (書いた人： @shokolateday )</h3>
+
+<p>参加者ブログに一番登場しているセッションとも言える、第一回の TRICK<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> が開催されました。TRICK とは簡単に言うと自らがプログラミングにかける変態さ<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>を Ruby で表現しあう大会です。</p>
+
+<p>Ruby の生みの親のまつもとゆきひろさんを初めとする豪華な審査員が、応募作品をジャッジ、順位をつけていくのですが、作品の出来もさることながら、審査員同士のゆるい掛け合いが面白く、「俺が作った言語だよな？」「変態だーと思って次の作品見たら更に変態で……」「審査員が試されるコンテストだ」とコメントが飛び出すたびに会場は大いに盛り上がりました。また、受賞者の半分以上が審査員というのも笑いを誘ったひとつでありました。(受賞作品は<a href="https://github.com/tric/trick2013">コチラ</a>でご覧になれます。)</p>
+
+<p>優勝したのは <a href="https://twitter.com/kinaba">@kinaba</a> さん！満場一致の変態さだったようでした。また、受賞者には、変態の称号が与えられ、今回の記録は Ruby 公式レポジトリに半永的に刻まれることが発表されました。
+次回開催には海外からの初応募を待っているとのこと！</p>
+
+<p>今号のこちらの記事も是非見てくださいね！  <a href="http://magazine.rubyist.net/?0043-TRICK2013">TRICK2013 開催報告＆入賞作品紹介</a>
+<img src="/images/0043-RubyKaigi2013/9340416728_a60e9f72a3.jpg" alt="9340416728_a60e9f72a3.jpg" />
+<img src="/images/0043-RubyKaigi2013/9340592092_f2e1231bde.jpg" alt="9340592092_f2e1231bde.jpg" /></p>
+
+<h3 id="fight-with-diversity-by-akira-akr-tanaka-さん-書いた人-zonu_exe">Fight with Diversity by Akira “akr” Tanaka さん (書いた人: @zonu_exe)</h3>
+
+<p>「多様性は善」– <a href="http://www.perl.org/">Perl</a> の「やりかたは一つじゃない (TMTOWTDI)」から引き継いだ、Ruby の世界観を代表するスローガンのひとつ<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>です。「生物多様性」という言葉は環境保護の重要なキーワードとして知られます。しかしソフトウェアの世界において、ただ選択肢が多様であることは良いことなのでしょうか。RubyKaigi 最後のセッションとして Ruby コミッタの <a href="https://github.com/akr">akr</a> さんが基調講演として語ったのは、Ruby 開発の上で直面した、多様性との格闘でした。</p>
+
+<p>今日のような複雑さが生まれた経緯はまさに「歴史的経緯」と呼ぶほかないのですが、<a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> の歴史と発展は収集のつかない多様性を生みました。そのひとつが、<a href="http://ja.wikipedia.org/wiki/DBM">DBM</a> と総称されるアプリケーション組込みの DB ライブラリ<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>です。技術的な要約を試みるのは齟齬が生じかねないので避けますが、この問題は <a href="http://ja.wikipedia.org/wiki/AT%26T">AT&amp;T</a> で開発された最初の <a href="http://ja.wikipedia.org/wiki/DBM">dbm</a> が (そして <a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> が) プロプライエタリ<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>であったこと、時を経て <a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> 世界が「多様化」したこと、そして多様化の過程で各実装間に互換性への配慮が乏しかったことによります。</p>
+
+<p><a href="https://github.com/akr">akr</a> さんは、この <a href="http://ja.wikipedia.org/wiki/DBM">dbm</a> 拡張ライブラリのサポートに関して、検出が可能な限りの多くの OS 及び C ライブラリ環境でのビルド対応に挑戦しました。その過程はさながらパズルのようで、結果として、現在ではよほどおかしなライブラリ構成でない限りほとんどの場合に問題なく自動検出・ビルドできるようになっているようです。</p>
+
+<p>この講演は淡々と話しているようでいて、(このセッションに限った話ではありませんが) 非常に楽しそうに自分の成果を発表しているように見えたのが印象的でした。一介の技術の好きな人間として、もし私がいつかこのような場を与えられたとき、 <a href="https://github.com/akr">akr</a> さんのように自分の挑戦について物怖じせずに、聴衆をエキサイトさせながらあんなに楽しげに自分の成果を披露することができるでしょうか。熱狂の冷めやらぬ中で会場をあとにしながら、筆者はそんなことを考えていました。</p>
+
+<p><img src="/images/0043-RubyKaigi2013/8954605063_9ab4c76218_akr1.jpg" alt="8954605063_9ab4c76218_akr1.jpg" />
+<img src="/images/0043-RubyKaigi2013/8911765298_8da091388c_akr2.jpg" alt="8911765298_8da091388c_akr2.jpg" /></p>
+
+<p><br />
+写真左
+<a href="http://www.flickr.com/photos/miio119/8954605063/in/set-72157633934757203">photo by miio</a></p>
+
+<p>写真右
+<a href="http://www.flickr.com/photos/recompile_net/8911765298/in/set-72157633808215917">photo by Naoto Takai</a></p>
+
+<h2 id="セッション以外のイベント">セッション以外のイベント</h2>
+
+<h3 id="rubyist-を支えるランチ-書いた人-asonas-">Rubyist を支えるランチ (書いた人： @asonas )</h3>
+
+<h4 id="rubykaigi-2013-で配られた弁当">RubyKaigi 2013 で配られた弁当</h4>
+
+<p><a href="http://rubykaigi.org/2013">RubyKaigi 2013</a> のお昼は参加者全員に、通称「<a href="https://www.heroku.com/">Heroku</a> 弁当」と呼ばれるお弁当が配られました。
+今回は <a href="https://www.heroku.com/">Heroku</a> さんの協賛で 1 日約 400 食ものお弁当が用意されました。</p>
+
+<p>ランチを摂る場所は、マイクロソフトさんが用意してくれたお座敷、会場の 1 階のベンチや 2 階にあったテラス、4 階の会議室、中には外のベンチなど多くの場所で食べることができました。お昼の国際交流会館やそのまわりにはたくさんの Rubyist がお弁当を食べていました。</p>
+
+<h5 id="お座敷は大賑わい">お座敷は大賑わい</h5>
+
+<p><img src="http://farm8.staticflickr.com/7447/9173081863_beccb13123.jpg" alt="9173081863_beccb13123.jpg" /></p>
+
+<h5 id="外でお弁当を食べてる-rubyist">外でお弁当を食べてる Rubyist</h5>
+
+<p><img src="http://farm4.staticflickr.com/3728/9173112929_496146ca92.jpg" alt="9173112929_496146ca92.jpg" /></p>
+
+<h4 id="混雑を考慮してお弁当を配る場所を-2-箇所に">混雑を考慮してお弁当を配る場所を 2 箇所に</h4>
+
+<p>お弁当を配る場所は 1 日目はホワイエだけでしたが、とても混雑したため 2 日目からはホール A とホール B から配るようにしました。特にホール A は収容人数も多いことと、ホワイエに続く出口が 2 箇所あったので、机をそれぞれの出口の前に置くことで効率的に弁当をくばることができていました。</p>
+
+<p><img src="http://farm6.staticflickr.com/5478/9173793345_acb7a63b05.jpg" alt="9173793345_acb7a63b05.jpg" /></p>
+
+<p><img src="http://farm8.staticflickr.com/7398/9176620168_253464ac41.jpg" alt="9176620168_253464ac41.jpg" /></p>
+
+<h4 id="まつもとさんもお弁当を配っていました">まつもとさんもお弁当を配っていました</h4>
+
+<p><img src="http://farm4.staticflickr.com/3779/9173078395_8fafbccd2d.jpg" alt="9173078395_8fafbccd2d.jpg" />
+<img src="http://farm6.staticflickr.com/5520/9174390629_ac0bd5669d.jpg" alt="9174390629_ac0bd5669d.jpg" />
+<img src="http://farm3.staticflickr.com/2853/9173795249_18f6c14a16.jpg" alt="9173795249_18f6c14a16.jpg" /></p>
+
+<h4 id="駄洒落クラブ">駄洒落クラブ</h4>
+
+<p>また、当日のサイネージには <a href="https://twitter.com/takoyakikamen">takoyakikamen</a> さんのつぶやき「<a href="https://twitter.com/takoyakikamen/status/339651045233938432">イベントでいい弁当</a>」 が表示されていました。</p>
+
+<p><img src="http://farm8.staticflickr.com/7422/9176019118_7ecb9b0e40.jpg" alt="9176019118_7ecb9b0e40.jpg" /></p>
+
+<h4 id="追加のお弁当と最終日のカレー">追加のお弁当と最終日のカレー</h4>
+
+<p>初日はお弁当が足らなくて配られない人がいましたが、翌日からは追加のお弁当を注文することになり、いくつかの余ったお弁当は “More Lunch box” としておかわりができるほどでした。
+最終日にはカレー弁当が配られました。私は初めて知ったのですが、いつのころからの RubyKaigi からか、スタッフの胃にやさしいとかでお昼にカレーが出る風習があり、<a href="http://rubykaigi.org/2013">RubyKaigi 2013</a> でも最終日にカレー弁当が出てきました。</p>
+
+<p>今回は会場がお台場ということもあり、お昼を食べる場所が会場から遠かったのですが、会場や会場の近くでお昼が食べられるようにお弁当を配ったのは大変よかったと思います。Rubyist 同士の交流を深めるアクションとしてお昼の時間を活用できた人もいらっしゃったのではないでしょうか？</p>
+
+<p><img src="http://farm3.staticflickr.com/2818/9175949974_db03b7b2db.jpg" alt="You can have more Bento !!" />
+<img src="http://farm6.staticflickr.com/5468/9176613816_6fecf280a5.jpg" alt="9176613816_6fecf280a5.jpg" /></p>
+
+<h3 id="rusyists-に質問-あなたが-ruby-を好きな理由-by-codeiq-運営事務局-書いた人-shokolateday-">Rusyists に質問： あなたが Ruby を好きな理由 by CodeIQ 運営事務局 (書いた人： @shokolateday )</h3>
+<p>: <img src="/images/0043-RubyKaigi2013/9340433052_efc0d3df5e_n.jpg" alt="9340433052_efc0d3df5e_n.jpg" /></p>
+
+<p>会期限定で <a href="https://codeiq.jp/">CodeIQ</a> さんより「あなたが Ruby を好きな理由」をハッシュタグ #rubykaigi #codeiq をつけてつぶやこう！キャンペーンが開催され、審査員の心に響いたつぶやきが選ばれました！</p>
+
+<p><strong>@kakutani 賞！(当選者プレゼントにサイン付き！) @suginoy さん</strong></p>
+
+<p>「Ruby コミュニティに顔を出すと、自分はもっと良いプログラマになろうと思うし、Ruby でコード書くと、もっと成長できると思わせてくれるところ」</p>
+
+<p><strong>Aaron 賞！@nay3 さん</strong></p>
+
+<p>「Ruby を好きな理由は、自由なところ。読めば読める。やればできる。」</p>
+
+<p><strong>@yukihiro_matz 賞！@berobero11 さん</strong></p>
+
+<p>「コアの開発者陣が日本人らしく、とても些細（に見えるよう）なことを延々と議論して作りあげているところ。この細かさがあの使いやすさを生んでいるのだと思います。」
+<br /></p>
+
+<p>応募者全体のつぶやきには「楽しい」「使いやすい」「コミュニティ」というキーワードが頻出し、Ruby の「人間が気持ちよく書ける言語」というコンセプトを皆が感じ、結果、コミュニティが活発になっている様子が見てとれました。</p>
+
+<h3 id="憩いのwindows-azure-ジュース-書いた人-ayako119-">憩いのWindows Azure ジュース (書いた人： @ayako119 )</h3>
+
+<p>一休みしたい時には、<a href="http://www.windowsazure.com/ja-jp/">Windows Azure</a> さん提供のジュースで癒されました。</p>
+
+<p>今年は <a href="http://www.windowsazure.com/ja-jp/">Windows Azure</a> さんがスポンサーです。会期中多くのジュースを配布していました。
+何杯飲んでも無料ということで、会期中毎日ある Coffee Break の時間には長蛇の列が押し寄せる程の人気です。</p>
+
+<h4 id="気分は忍者なスポンサーさん">気分は忍者なスポンサーさん</h4>
+
+<p><img src="http://farm4.staticflickr.com/3748/8954232221_d8d090587c_n.jpg" alt="8954232221_d8d090587c_n.jpg" />
+<a href="http://www.flickr.com/photos/miio119/8954232221/">photo by miio</a></p>
+
+<h4 id="長蛇の列">長蛇の列</h4>
+
+<p><img src="http://farm6.staticflickr.com/5342/8949830417_e3d07afd7c_n.jpg" alt="8949830417_e3d07afd7c_n.jpg" />
+<a href="http://www.flickr.com/photos/miio119/8949830417/">photo by miio</a></p>
+
+<p>####</p>
+
+<p>畳の席がいくつもありました。外人さんには和の文化に触れる良い機会だなぁと感じました。
+畳で PC に向かう人々や iPad にサインをする光景もちらほら。</p>
+
+<h4 id="サイン光景">サイン光景</h4>
+
+<p><img src="http://farm9.staticflickr.com/8118/8955388370_5ae8187518_n.jpg" alt="8955388370_5ae8187518_n.jpg" />
+<a href="http://www.flickr.com/photos/miio119/8955388370/">photo by miio</a></p>
+
+<h4 id="畳">畳！</h4>
+
+<p><img src="http://farm8.staticflickr.com/7343/8951080368_0e147d4fd8_n.jpg" alt="8951080368_0e147d4fd8_n.jpg" />
+<a href="http://www.flickr.com/photos/miio119/8951080368/">photo by miio</a></p>
+
+<p>####</p>
+
+<p>最終日は疲れが溜まってヘロヘロになってしまっていたので、畳にはお世話になりました。</p>
+
+<p>素晴らしい憩いをありがとうございます！</p>
+
+<h3 id="懇親github-ドリンクアップ-書いた人-ayako119-">懇親！Github ドリンクアップ (書いた人： @ayako119 )</h3>
+
+<p>ドリンクアップは会期 2 日目の夜に開催されました。
+告知は 1 日目に急遽発表され、<a href="https://github.com/">Github</a> さんがスポンサーとなり参加費は 1000 円でしたが、2 日目には参加費無料になりました。会場はタイム 24 でした。</p>
+
+<p>スタッフは会場の片付けがあったので参加者の方より遅れて会場入りしましたが、ドリンクアップ会場に到着した頃には大勢の人々で賑わっていました。しばらくしてから乾杯が始まり (既にビールを飲んでいる人々も多くいましたが) 思い思い懇親されていました。</p>
+
+<p>カメラを持ってずっと歩きまわっていたので、椅子に腰かけて撮影もしてましたが大勢の方々の表情を伺っては、RubyKaigi も成功したんだなぁと感じてほっとしたのでした。</p>
+
+<p><img src="http://farm8.staticflickr.com/7400/8918959830_50751e0c0f.jpg" alt="8918959830_50751e0c0f.jpg" /> 左<a href="http://www.flickr.com/photos/sora_h/8918959830/in/set-72157633834333235">photo by sora_h</a> 
+<img src="http://farm8.staticflickr.com/7441/8918996098_25f04a974b.jpg" alt="8918996098_25f04a974b.jpg" /> 右<a href="http://www.flickr.com/photos/sora_h/8918996098/in/set-72157633834333235/">photo by sora_h</a></p>
+
+<p>####</p>
+
+<p><img src="http://farm8.staticflickr.com/7342/8950831387_4071d9b222.jpg" alt="8950831387_4071d9b222.jpg" /> 左<a href="http://www.flickr.com/photos/miio119/8950831387/">photo by miio</a>
+<img src="http://farm4.staticflickr.com/3742/8950799049_85fdf64272.jpg" alt="8950799049_85fdf64272.jpg" />右<a href="http://www.flickr.com/photos/miio119/8950799049/">photo by miio</a></p>
+
+<p>####</p>
+
+<p><img src="http://farm4.staticflickr.com/3792/8951977458_561753735b.jpg" alt="8951977458_561753735b.jpg" />左<a href="http://www.flickr.com/photos/miio119/8951977458/">photo by miio</a></p>
+
+<h3 id="rubyist-たちの時計-書いた人-asoans">Rubyist たちの時計 (書いた人: @asoans)</h3>
+
+<p><a href="http://rubykaigi.org/2013">RubyKaigi 2013</a> で、ホワイエやホール A の前など、一際目立つ場所に置かれていたサイネージに表示されていた時計を見かけた人もいると思います。
+<a href="http://rubykaigi.org/2013">RubyKaigi 2013</a> が始まる前から <a href="https://twitter.com/">Twitter</a> や <a href="https://www.facebook.com/">Facebook</a>  で話題になっていたので知っている人もいるかもしれませんが、あの時計は Rubyist の写真を集めてそれを時計と一緒に表示している Web アプリケーションです。</p>
+
+<p><img src="http://farm6.staticflickr.com/5462/9173839845_7bc32739b9.jpg" alt="9173839845_7bc32739b9.jpg" /></p>
+
+<p>####</p>
+
+<p><a href="http://rubyistokei.herokuapp.com">Rubyistokei</a> はサイネージに表示されるだけではなく、発表者のスライドにも登場することがありました。また、RubyKaigi の最中でも頻繁に時計にされていく Rubyist たちがいました。 RubyKaigi が終わった今では総勢で 213 人もの Rubyist たちが時計の中にいます。</p>
+
+<p>また <a href="http://rubyistokei.herokuapp.com">Rubyistokei</a> に出てくる Rubyist たちの写真ををグリッチさせる<a href="http://glitch-rubyistokei.heroku.com/">スピンオフWebアプリケーション</a>も登場しました。これは <a href="https://twitter.com/makimoto">@makimoto</a> さんの作品で、LT でも発表されていました。</p>
+
+<p><a href="http://rubyistokei.herokuapp.com">Rubyistokei</a> は pull request で Rubyist たちを集めています。あなたも自分の Ruby のヒーローたちを時計にして飾ってみませんか？(<a href="https://github.com/darashi/rubyistokei">Githubリポジトリ</a>)</p>
+
+<h2 id="筆者からのひとこと">筆者からのひとこと</h2>
+
+<h3 id="asonas"><a href="https://twitter.com/asonas">@asonas</a></h3>
+
+<p>今回はじめてレポート班として RubyKaigi に参加しました。普段自分のブログなどで文章は書いていますが、RubyKaigiのレポートを書くときには発表者のことや発表内容について調べたりと、いつもとは違った視点で RubyKaigi を楽しむことができました。</p>
+
+<h3 id="ayako119"><a href="https://twitter.com/ayako119">@ayako119</a></h3>
+
+<p><a href="http://www.ospn.jp/osc2011-do/">OSC 2011 Hokkaido</a> や <a href="http://sapporo.rubykaigi.org/2012/ja/">札幌 Ruby 会議 2012</a> でレポートを経験していますが、今回はまた別の視点で、いつもよりもフレンドリーな感じで書けたのかなと思います。</p>
+
+<p>他には会期中カメラを構えて 3000 シャッター切るスポーツも地味に楽しかったです。カメラに至っては機材の増強を図りましたので、来年は、もっと良い写真撮影をしたいです！</p>
+
+<h3 id="raa0121"><a href="https://twitter.com/raa0121">@raa0121</a></h3>
+
+<p>今回初めてレポート班として RubyKaigi に参加しました。 Ruby を知り、使い始めてから一番大きなイベントにレポート班という形で参加出来たのはいい思い出、経験になりました。</p>
+
+<h3 id="mitaku"><a href="https://twitter.com/mitaku">@mitaku</a></h3>
+
+<p>RubyKaigi とても刺激的でした。スライドや動画からは伝わらない会場の雰囲気がこの記事を見て少しでも伝わればとても嬉しいです。</p>
+
+<h3 id="shokolateday"><a href="https://twitter.com/shokolateday">@shokolateday</a></h3>
+
+<p>初挑戦。とてもいい経験になりました！。
+自分の英語力の低さもさることながら、読んでいて違和感を与えない文章を書くのは難しいです！</p>
+
+<h3 id="zonu_exe"><a href="https://twitter.com/zonu_exe">@zonu_exe</a></h3>
+
+<p>二度めの The RubyKaigi 。いろいろな人とお話できて楽しかったです ヾ(〃＞＜)ﾉﾞ☆
+原稿を書く遅さは弁解のしようもありません……！</p>
+
+<h3 id="muryoimpl"><a href="https://twitter.com/muryoimpl">@muryoimpl</a></h3>
+
+<p>突然のお誘いを受けて編集として参加しましたが、自然とレポートを書いていました。そして痛感しました。英語重要！ RubyKaigi という貴重な場でのレポート経験は勉強になりました。</p>
+
+<h2 id="参加にかかった費用-書いた人-raa0121-">参加にかかった費用 (書いた人： @raa0121 )</h2>
+
+<p>急遽友人からチケットを譲っていただけることになり、飛行機をギリギリに申し込み、
+北海道から遠征し、前後泊した人の例です。</p>
+
+<ul>
+  <li>飛行機代：約 3 万円 (ANA 旅割28)</li>
+  <li>参加費：2 万円 (Super EarlyBird)</li>
+  <li>宿泊費：約 3 万円 (4 泊 5 日)</li>
+  <li>あとは、食事と現地交通費、お土産代などなど。</li>
+</ul>
+
+<h2 id="写真の提供">写真の提供</h2>
+
+<p>今回は以下の方々から写真を提供いただきました。ありがとうございました。</p>
+
+<ul>
+  <li><a href="http://www.flickr.com/photos/asonas/sets/72157634409872430/">http://www.flickr.com/photos/asonas/sets/72157634409872430/</a></li>
+  <li><a href="http://www.flickr.com/photos/miio119/sets/72157633798599541/">http://www.flickr.com/photos/miio119/sets/72157633798599541/</a></li>
+  <li><a href="http://www.flickr.com/photos/miio119/sets/72157633904447668/">http://www.flickr.com/photos/miio119/sets/72157633904447668/</a></li>
+  <li><a href="http://www.flickr.com/photos/miio119/sets/72157633934757203/">http://www.flickr.com/photos/miio119/sets/72157633934757203/</a></li>
+  <li><a href="http://www.flickr.com/photos/sora_h/sets/72157633834333235/">http://www.flickr.com/photos/sora_h/sets/72157633834333235/</a></li>
+  <li><a href="http://www.flickr.com/photos/recompile_net/sets/72157633808215917/">http://www.flickr.com/photos/recompile_net/sets/72157633808215917/</a></li>
+</ul>
+
+<h2 id="最後に">最後に</h2>
+
+<p><a href="http://rubykaigi.org/2013/schedule">RubyKaigi 2013 の SCHEDULE ページ</a> の各ページに、録画された動画や発表資料のリンクがありますので、みなさん是非御覧になってください！</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://ja.wikipedia.org/wiki/Ruby">Ruby - Wikipedia</a> などで “まつもとの同僚の誕生石（7 月）のルビーを取って名付けられた” として言及されている「同僚」本人でもあります&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>当時の言語名の正式な表記は、すべて小文字の「ruby」でした。ただし、 <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/5039">[ruby-list:5039] Ruby or ruby, but no RUBY</a> 以後は「Ruby」と表記することが許容され、現在では言語の正式表記は「Ruby」になっています。 <a href="https://github.com/ruby-no-kai/official/wiki/Ruby-FAQ#ruby%E3%81%A8ruby%E3%81%AF%E3%81%A9%E3%81%A3%E3%81%A1%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8B">“Ruby” と “ruby” はどっちが正しいのですか</a> も参照&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Ruby では多重継承をサポートしないが、その代替としてモジュールの Mix-in をサポートする。継承の種類と特徴については、まつもとさんの書かれた <a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060825/246409/">まつもと直伝 プログラミングのオキテ</a> の「第3回 多重継承の光と影」を参照&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>「Transcendental Ruby Imbroglio Contest for rubyKaigi (超絶技巧 Ruby 意味不明コンテスト in RubyKaigi)」の頭文字&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>ここでは難解で突拍子もない発想と、周囲を置いてきぼりにする異次元な実力のことを、最高の賛辞を添えて「変態」と表現しています&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p><a href="http://magazine.rubyist.net/?0015-ForeWord">Rubyist Magazine - 0015 号 巻頭言</a> によれば、1999 年までにはこのフレーズが登場しているとのこと&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>DB と言っても <a href="http://www.mysql.com/">MySQL</a> のような RDBMS ではなく、今日 <a href="http://ja.wikipedia.org/wiki/NoSQL">NoSQL</a> の一種と呼ばれることもある KVS (Key-Value Store) です。現に、例えば <a href="http://fallabs.com/kyototycoon/">KyotoTycoon</a> という分散 KVS は同作者による DBM の実装である <a href="http://fallabs.com/kyotocabinet/index.ja.html">KyotoCabinet</a> を基盤としています&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p><a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%83%97%E3%83%A9%E3%82%A4%E3%82%A8%E3%82%BF%E3%83%AA%E3%83%BB%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2">プロプライエタリ・ソフトウェア - Wikipedia</a> を参照。<a href="http://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2">フリーソフトウェア</a> の対義語。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

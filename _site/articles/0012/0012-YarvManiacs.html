@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ</title>
+  <meta name="description" content="書いた人：ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0012/0012-YarvManiacs.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0012/0012-YarvManiacs.html" class="hatena-bookmark-button" data-hatena-bookmark-title="YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0012/0012-YarvManiacs.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0012/0012-YarvManiacs.html" data-text="YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：ささだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p><a href="http://www.atdot.net/yarv">YARV: Yet Another RubyVM</a> を解説するこの連載。今回は、命令セットの紹介の続きで、Ruby のもっとも重要な概念のひとつであるメソッドディスパッチ (メソッド呼び出し) を行う命令を、Ruby プログラムがどのように YARV 命令列にコンパイルされるか、という例とともに説明します。</p>
+
+<p>メソッドディスパッチは第 4 回 (<a href="/articles/0009/0009-YarvManiacs.html">YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</a>) でも簡単に説明しましたが、今回はたっぷり丸ごとメソッドディスパッチです。</p>
+
+<h3 id="その前に---yarv-033">その前に - YARV 0.3.3</h3>
+
+<p>ところで、先月この連載を休んだので間が空いてしまいましたが、<a href="http://www.atdot.net/yarv/">YARV 0.3.3</a> をリリースしました。おもにバグフィックス版ですが、一部繰り返しのためのブロックをインライン化するなどの最適化機能を追加しました (ただし、デフォルトでは無効になっています)。また、足りなかったいろいろな機能、たとえば define_method に対応しました。</p>
+
+<p>今回のバグフィックスによって、以前のバージョンの YARV では (バグのために) 動かなかった optparse.rb などのライブラリが利用できるようになりました。これによって、optparse.rb を利用していたため出来なかった拡張ライブラリのビルドができるようになりました。0.3.3 ではいくつかの標準の拡張ライブラリも利用できるようになっています。</p>
+
+<p>ぜひこのバージョンを試してみてください (そして、私にバグ報告をください)。</p>
+
+<p>前回紹介した <a href="http://www.atdot.net/yc/">YARV - Compile and Disassemble CGI</a> も 0.3.3 になっています。この記事に書かれている例をお気軽にコンパイルして試してみてください。</p>
+
+<h3 id="rubyconf-2005">RubyConf 2005</h3>
+
+<p>去る 10 月に RubyConf 2005 に行ってきたのですが、そこで「YARV Progress Report」と題して YARV について一時間弱話をしてきました。プレゼンは <a href="http://www.atdot.net/yarv/RubyConf2005_ko1_YARV.pdf">RubyConf2005 Presentation (pdf)</a> に置いてありますが、主に「YARV の目指すもの」、「YARV で新しくサポートされる Ruby の機能」、「YARV の現在の状況」についてしゃべりました。全体的なレポートは<a href="/articles/0011/0011-RubyConf2005Report.html">Ruby Conference 2005 レポート</a>に載せたのであわせてご覧ください。</p>
+
+<h2 id="メソッド呼び出し">メソッド呼び出し</h2>
+
+<p>メソッド呼び出しのための YARV 命令を説明します。</p>
+
+<h3 id="とりあえず試してみる">とりあえず試してみる</h3>
+
+<p>具体的なものを見ないとなかなかわからないと思うので、とりあえず単純なメソッド呼び出しを含む Ruby プログラムをコンパイルしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[1, 2].length</code></pre></figure>
+
+<p>レシーバの配列 [1, 2] に対して、その長さを求めるメソッド Array#length を呼び出してみます。これを YARV 命令列で示すと次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 duparray         [1, 2]
+0002 send             :length, 0, nil, 0, &lt;ic&gt;</code></pre></figure>
+
+<p>duparray は前回解説した、配列リテラルを生成する命令でした。今回大事なのは、0002 番地にある実際にメソッドディスパッチを実行する <strong>send</strong> 命令です。</p>
+
+<h3 id="send-命令">send 命令</h3>
+
+<p>Ruby で一番大事なメソッド呼び出しを実現する send 命令について解説します。</p>
+
+<h4 id="ruby-のメソッド呼び出しがすること">Ruby のメソッド呼び出しがすること</h4>
+
+<p>Ruby のメソッド呼び出しは、使う側はとてもお手軽に使えますが、実際には非常に複雑なことを行っています。厳密にはメソッドは以下のような手続きを経て呼び出されます。仮に recv.method(arg) というメソッド呼び出しを行うと考えましょう。</p>
+
+<ol>
+  <li>レシーバ、引数を特定する。この例ではレシーバは recv、引数は 1 引数で arg。</li>
+  <li>もし引数を展開 (m(*ary) のように配列を引数として展開) する必要があれば展開する。この例では展開はしない。</li>
+  <li>もし Proc オブジェクトをブロックとして渡す場合 (m(&amp;pr) のようなメソッド呼び出し)、それをブロックとして通常の引数としては扱わない。</li>
+  <li>レシーバのクラス (これを klass とする。klass = recv.class) からメソッドの定義を検索する。</li>
+  <li>もし klass で method メソッドが定義されていなければ、klass の親クラスで定義されていないかを検索する。これを method メソッドの定義が見つかるまで繰り返す。
+    1. もし見つからなかったら method_missing メソッドを呼び出す。</li>
+  <li>メソッドの定義を見て、visibility  (private とか protected) などのチェックを行う。</li>
+  <li>private なのにレシーバ指定している、などの場合は NoMethodError 例外を発生する。</li>
+  <li>メソッドの定義を見て、引数の数をチェックする。</li>
+  <li>引数の数が違ったら ArgumentError 例外を発生する。</li>
+  <li>もしオプショナル引数 (m(a=1) のように指定するやつ) がある場合、そちらを実行する。</li>
+  <li>メソッドフレームを構築する。</li>
+  <li>メソッドを実行する。</li>
+</ol>
+
+<p>なるべく細かく書いたつもりですが、大体こんな感じです。意外にいろいろしていると思いませんか？　これでも少し端折っています。YARV の send 命令は、大体上記のような処理をしています。</p>
+
+<p>余談ですが、Ruby ではメソッド呼び出しが大量に行われます。この処理をいかに軽量化するかが高速化の鍵になります。YARV でも、この処理をいかに高速に行うか、試行錯誤を重ねました。いや、重ねています。</p>
+
+<h4 id="send-の命令オペランド">send の命令オペランド</h4>
+
+<p>では、send 命令を実際にどうやって使うか見ていきましょう。まずは命令オペランドの詳細です。先ほどの例を利用して説明します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0002 send             :length, 0, nil, 0, &lt;ic&gt;</code></pre></figure>
+
+<p>1 番目の命令オペランド :length は見てすぐわかりますね。どのメソッドを呼び出すかを示すシグネチャです。この例では length メソッドを呼び出したいのですから、:length というシグネチャになっています。シグネチャは Symbol だということがわかりやすいように :length と表記しています。</p>
+
+<p>2 番目の命令オペランド 0 は、引数の数を表しています。[1, 2].length は引数無し (引数 0 個) で呼び出されているので 0 になっています。</p>
+
+<p>3 番目の命令オペランドは、ブロック付きメソッド呼び出し (m(){ … } のようなメソッド呼び出し) のために利用します。今回はブロックは無いので nil になっています。</p>
+
+<p>4 番目の命令オペランドはフラグになっています。このフラグは次のようなメソッド呼び出しであることを表しています。</p>
+
+<ul>
+  <li>最後の引数は配列として展開するか？ (r.m(…, *args))</li>
+  <li>最後の引数はブロックとして扱うか？ (r.m(…, &amp;proc_object))</li>
+  <li>レシーバ無しの (関数っぽい) メソッド呼び出しであるか？(m())</li>
+  <li>レシーバ無しで、引数指定がないか？ (m のこと。変数のように書くメソッド呼び出し)</li>
+</ul>
+
+<p>これらのフラグは一度に複数指定できます (各フラグの bit 和になっています)。</p>
+
+<p>5 番目の &lt;ic&gt; はインラインキャッシュを示しており、インラインメソッドキャッシュで利用する領域を表します。インラインメソッドキャッシュについては後述します。</p>
+
+<p>send 命令のオペランドは 5 つと多いのですが、たいていのメソッド呼び出しで重要なのは 1 番目のメソッドシグネチャ、2 番目の引数の数です。</p>
+
+<h4 id="レシーバと引数">レシーバと引数</h4>
+
+<p>メソッド呼び出しではレシーバと引数が必要になりますが、これらの値はあらかじめ評価しておくことになります。</p>
+
+<p>send メソッドは、スタックにすでにレシーバと引数が積んであることを前提にしています。まず、レシーバを積んで、その上に引数が積んであると想定します。</p>
+
+<p>先ほどの例、[1, 2].length というプログラムをコンパイルすると次のようになりました。このメソッド呼び出しでは、レシーバは [1, 2] で、引数はありません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 duparray         [1, 2]
+                      # スタックの状況: [1, 2]
+0002 send             :length, 0, nil, 0, &lt;ic&gt;
+                      # スタックの状況: 2
+                      # ([1, 2].length は 2 を返すから)</code></pre></figure>
+
+<p>レシーバとして、[1, 2] をスタックに積んでいます。この例では引数の数が 0 なので、引数は評価していません。メソッド呼び出しを行ったあと、レシーバの値をスタックから取り除き、代わりにメソッドの返り値をスタックに積みます (この例では 2)。</p>
+
+<p>では、引数の数が 1 個ある例として、[1, 2].index(0) という Ruby プログラムをコンパイルしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 duparray         [1, 2] # レシーバ
+                      # スタックの状況: [1, 2]
+0002 putobject        0      # 引数 1 番目
+                      # スタックの状況: [1, 2] 0
+0004 send             :index, 1, nil, 0, &lt;ic&gt;
+                      # スタックの状況: 1
+                      # ([1, 2].index(0) は 1 を返すから)</code></pre></figure>
+
+<p>レシーバとして [1, 2] をスタックに積んだあと、第 1 引数である 0 をスタックに積んでいます。次の send 命令でそれらの値を利用してメソッド呼び出しを行います。引数の値とレシーバの値はメソッド呼出しの後スタックから取り除かれ、代わりにメソッドの返り値 (この場合は 1) がスタックに積まれます。</p>
+
+<p>引数の数が 1 よりも大きい場合も引数の数の値をスタックに積むだけです。</p>
+
+<h4 id="関数っぽいメソッド呼び出し">関数っぽいメソッド呼び出し</h4>
+
+<p>Ruby ではレシーバを省略して、 func() のようにメソッド呼び出しをすることができます。このとき、レシーバは暗黙に self が渡されます。</p>
+
+<p>YARV では関数っぽいメソッド呼び出しでも putself 命令によって明示的に self をレシーバとしてスタックに積んでおきます。</p>
+
+<p>では、例として p(“abc”) という、p メソッドを関数っぽくメソッド呼び出しする Ruby プログラムをコンパイルしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putself
+0001 putstring        "abc"
+0003 send             :p, 1, nil, 4, &lt;ic&gt;</code></pre></figure>
+
+<p>レシーバが putself によって詰まれる self、引数として “abc” を積み、引数の数を 1 つとして p メソッドを呼び出しています。ここで、send 命令の 3 番目の命令オペランド (フラグ) が 4 になっていますが、これが関数っぽいメソッド呼び出しであったということを示すフラグになっています (より正確には、フラグの 3 bit 目が 1 になっていることがそれを示しています)。このフラグは private メソッドの呼び出し制限を実現するために利用します。</p>
+
+<h4 id="演算子っぽいメソッド呼び出し">演算子っぽいメソッド呼び出し</h4>
+
+<p>Ruby では 1+2 のような、足し算などの演算子もすべてメソッド呼び出しとして扱われ、1.+(2) とまったく同じです。YARV でもそのようにコンパイルされます。</p>
+
+<p>実際に 1+2 (つまり、1.+(2)) という Ruby プログラムを YARV 命令列にしてみると次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putobject        1
+0002 putobject        2
+0004 send             :+, 1, nil, 0, &lt;ic&gt;</code></pre></figure>
+
+<p>このように、1 をレシーバ、2 を引数として、1 引数で :+ というメソッドを呼び出すという YARV 命令列になりました。</p>
+
+<p>ただし、YARV の最適化 (OPT_BASIC_OPERATIONS) を有効にすると、いくつかのメソッド呼び出しは特別な命令に置き換えられます。たとえば、この例 1+2 は send 命令ではなく opt_plus という命令に置き換えられるのですが (そして、この最適化は数値計算系のアプリケーションでは速度向上に結構効果がある)、この話はいつかしたいと思います。</p>
+
+<h4 id="引数の展開">引数の展開</h4>
+
+<p>Ruby では配列オブジェクトを引数に展開する機能があります。例えば p(*[1, 2, 3]) というプログラムは p(1, 2, 3) というプログラムとまったく同じ意味です。</p>
+
+<p>YARV では send 命令のフラグで、最後の引数を展開することを示します。</p>
+
+<p>p(0, *[1, 2, 3]) というプログラムを YARV 命令列にコンパイルしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putself
+0001 putobject        0
+0003 duparray         [1, 2, 3]
+0005 send             :p, 2, nil, 5, &lt;ic&gt;
+0011 end</code></pre></figure>
+
+<p>send 命令では引数の数が 2 個になっており、スタック上にも引数として 0 と [1, 2, 3] というオブジェクトしか詰まれて居ませんが、フラグが 5 になっています。このとき、フラグの 1 ビット目が 1 なので、最後の引数を展開する、というふうに示しています (3 ビット目が 1 なのは、関数っぽいメソッド呼び出しだから)。send 命令は最後の引数を展開し、スタック上には 0, 1, 2, 3 という値を積んで 4 引数で p メソッドを呼ぶ、という処理を行います。</p>
+
+<h4 id="インラインメソッドキャッシュ">インラインメソッドキャッシュ</h4>
+
+<p>先ほど、Ruby のメソッド呼び出しの処理内容を示しましたが、その中でメソッド定義の検索、というものがありました。</p>
+
+<ul>
+  <li>レシーバのクラス (これを klass とする。klass = recv.class) からメソッドの定義を検索する。
+    <ul>
+      <li>もし klass で method メソッドが定義されていなければ、klass の親クラスで定義されていないかを検索する。これを method メソッドの定義が見つかるまで繰り返す。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>これです。</p>
+
+<p>この検索は、見てのとおり負荷が大きい (最悪、ハッシュの計算を何度もやることになります) ため、現在の Ruby 処理系ではグローバルメソッドキャッシュという最適化をしています。これについての詳細は RHG を読んでいただくとして (<a href="http://i.loveruby.net/ja/rhg/book/method.html">第15章 メソッド</a>)、要するに「以前にそのクラス klass で検索したメソッド method の定義は再定義されない限り変わらない」という事実を利用して、キャッシュ表に検索した結果を書き込んでおき、あとでその結果を利用する、というものです。</p>
+
+<p>で、これをもっと高速化したいなぁ、と思って作ったのがインラインメソッドキャッシュです。</p>
+
+<p>前回、定数アクセスを高速化するためにインラインキャッシュを利用しましたが、まったく同様のことをメソッド検索結果にも適用しています。</p>
+
+<p>たとえば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> num.times{
+   recv.method()
+ }</code></pre></figure>
+
+<p>という繰り返しを行うプログラムがあった場合、num 回実行される recv.method() で呼び出すメソッドの定義は毎回同じだろう、と推測されます。それならば、毎回ここでメソッド検索を行うのは無駄なので、その send 命令に検索結果をキャッシュしてあげればいいのではないか、と思うのは人間として当然ですね。そこで、これを行うのがインラインメソッドキャッシュ、というわけです。</p>
+
+<p>このインラインメソッドキャッシュはたいていうまくいってます。</p>
+
+<p>これについての詳細な情報 (実装方法とその評価) は私の情報処理大会、全国大会の予稿 (<a href="http://www.atdot.net/yarv/imc.pdf">プログラム言語Ruby におけるメソッドキャッシング手法の検討 (PDF)</a>) をご参照ください。</p>
+
+<p>YARV ではグローバルメソッドキャッシュも併用しており、インラインメソッドキャッシュにひっかからなかった場合にはそちらを利用することになります。たとえば、Ruby C API 経由でメソッド呼び出しを行った場合は、グローバルメソッドキャッシュだけを利用することになります。</p>
+
+<p>余談ですが、メソッド定義検索の高速化はオブジェクト指向言語の処理系で研究テーマのひとつとなっており、他にもさまざまな手法が提案されています。</p>
+
+<h3 id="ブロック付メソッド呼び出し">ブロック付メソッド呼び出し</h3>
+
+<p>さて、Ruby のメソッド呼び出しの大きな特徴のひとつにブロック付メソッド呼び出しがあります。よく、イテレータとか言われるアレです。</p>
+
+<p>たとえば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">3.times{
+   ... # ブロックの内容
+ }</code></pre></figure>
+
+<p>というプログラムは、3 回ブロックの内容を繰り返します。</p>
+
+<p>渡したブロックは、その呼ばれたメソッド中で yield を利用することで実行されます。</p>
+
+<p>では、実際に 3.times{} というブロックを YARV 命令列にコンパイルしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">== disasm: &lt;ISeq:&lt;main&gt;@../yarv/test.rb&gt;================================
+== catch table
+| catch type: retry  st: 0000 ed: 0008 sp: 0000 cont: 0000
+|------------------------------------------------------------------------
+local scope table (size: 1, argc: 0)
+
+0000 putobject        3                                               (   1)
+0002 send             :times, 0, block in &lt;main&gt;, 0, &lt;ic&gt;
+0008 end
+== disasm: &lt;ISeq:block in &lt;main&gt;@../yarv/test.rb&gt;=======================
+== catch table
+| catch type: redo   st: 0000 ed: 0001 sp: 0000 cont: 0000
+| catch type: next   st: 0000 ed: 0001 sp: 0000 cont: 0001
+|------------------------------------------------------------------------
+0000 putnil
+0001 end</code></pre></figure>
+
+<p>これまでの例ではヘッダは省略してましたが、今回はヘッダ付きで全部載せました。</p>
+
+<p>コンパイル結果を見てみると、2 つの命令列が生成されたのがわかるかと思います。これは、トップレベルの命令列の他に、ブロックの処理を示す命令列オブジェクトを作っているからです。つまり、ブロックは別の命令列として生成されます。</p>
+
+<p>send 命令を見てみると、3 個目の命令オペランドに <strong>block in &lt;main&gt;</strong> というものが指定されていますが、これがブロックとして渡された命令列、ということになります。block in &lt;main&gt; の実体は、<strong>&lt;ISeq:block in &lt;main&gt;@../yarv/test.rb&gt;</strong> として示されている命令列です。</p>
+
+<p>YARV のブロック付メソッド呼び出しは send 命令の命令オペランドにブロックを指定するだけ、ということがわかって頂けたと思います。</p>
+
+<h4 id="proc-オブジェクトを利用したブロック付きメソッド呼び出し">Proc オブジェクトを利用したブロック付きメソッド呼び出し</h4>
+
+<p>Ruby では Proc オブジェクトをブロックとして渡すメソッド呼び出しが可能です。たとえば、3.times(&amp;Proc.new{…}) は、3.times{…} とほぼ同じ意味です。</p>
+
+<p>では、3.times(&amp;proc.new{}) というプログラムを YARV 命令列にコンパイルしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">== disasm: &lt;ISeq:&lt;main&gt;@../yarv/test.rb&gt;================================
+== catch table
+| catch type: retry  st: 0002 ed: 0009 sp: 0000 cont: 0002
+| catch type: retry  st: 0000 ed: 0015 sp: 0000 cont: 0000
+|------------------------------------------------------------------------
+local scope table (size: 1, argc: 0)
+
+0000 putobject        3                                               (   1)
+0002 putself
+0003 send             :proc, 0, block in &lt;main&gt;, 4, &lt;ic&gt;
+0009 send             :times, 0, nil, 2, &lt;ic&gt;
+0015 end
+== disasm: &lt;ISeq:block in &lt;main&gt;@../yarv/test.rb&gt;=======================
+== catch table
+| catch type: redo   st: 0000 ed: 0001 sp: 0000 cont: 0000
+| catch type: next   st: 0000 ed: 0001 sp: 0000 cont: 0001
+|------------------------------------------------------------------------
+0000 putnil
+0001 end</code></pre></figure>
+
+<p>このようなコンパイル結果になりました。ちょっと複雑ですね。細かく見ていきましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0002 putself
+0003 send             :proc, 0, block in &lt;main&gt;, 4, &lt;ic&gt;</code></pre></figure>
+
+<p>この部分は proc{} というプログラムをコンパイルした結果で、Proc オブジェクトを作るプログラムです。先ほど紹介したブロック付メソッド呼び出しですね。</p>
+
+<p>では、全体を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putobject        3
+                      # スタックの状態: 3
+0002 putself          # proc メソッドのレシーバ
+                      # スタックの状態: 3 self
+0003 send             :proc, 0, block in &lt;main&gt;, 4, &lt;ic&gt;
+                      # スタックの状態: 3 Procオブジェクト
+0009 send             :times, 0, nil, 2, &lt;ic&gt;
+                      # スタックの状態: 3 (3.times メソッドの返り値)
+0015 end</code></pre></figure>
+
+<p>times メソッド呼び出しのための send 命令 (9 番地) の 3 個目の命令オペランド、つまりブロックの指定は nil になっていますが、フラグが 2 (2 bit 目がたっている) なので、最後の引数は Proc オブジェクトであり、これをブロックとして利用する、ということになります。</p>
+
+<h3 id="super-と-super">super() と super</h3>
+
+<p>super はオーバーライドしたメソッドから上位のメソッドを呼び出す、という、ある意味メソッドディスパッチの親戚みたいな機能です。また、引数無しで super とだけ指定した場合、呼び出し元のメソッドと同じ引数がわたる、という意味になります<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<p>これを実現するために YARV には super という命令があります。命令オペランドは send 命令とほぼ同様ですが、super 命令ではメソッドシグネチャを指定する send 命令の 3 個目の命令オペランドとインラインキャッシュがありません。</p>
+
+<p>では、ちょっと例を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def m a, b
+   super(1)
+   super    # super(a, b) と一緒
+ end</code></pre></figure>
+
+<p>super() と super を対比するために、両方使ってみました。メソッドの定義部分はすっ飛ばしています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># super(1)
+0000 putnil             # レシーバはないのでとりあえず nil
+0001 putobject        1 # 引数 1 番目
+0003 super            1, nil, 0
+0007 pop                # send の結果を pop (使わないから)
+# super
+0008 putnil             # レシーバはないのでとりあえず nil
+0009 getlocal         3 # ローカル変数 a の値をとる
+0011 getlocal         2 # ローカル変数 b の値をとる
+0013 super            2, nil, 0
+0017 end</code></pre></figure>
+
+<p>send 命令ではレシーバを積んでいたところで、今度は (putnil 命令によって) nil を積んでいます。super にはレシーバは必要ないのですが、実装の都合上スタックに何か積んでおかないとまずい (send 命令の処理の大部分を流用するため) のでとりあえず nil を積んでいる、というわけです。</p>
+
+<p>super(1) のほうは、send 命令とほぼ同様ですね。</p>
+
+<p>super のほうは、super の引数として仮引数の a と b をスタックに積んでいます。コンパイル時に super が super(a, b) だということがわかるので、そのようにコンパイルされます。引数無し super のための特別な命令はありません。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は Ruby で一番重要な要素であるメソッド呼び出しを YARV 命令列ではどのように表現されるか、ということを説明しました。</p>
+
+<p>メソッドの呼び出し命令の設計はいろんな選択肢があって、いろいろ試行錯誤したのですが、「作りやすさ」「性能」を考えて今の形に落ち着きました。まぁ、もっといい方法を思いついたら、もしかしたら変わるかもしれないですけど。</p>
+
+<p>しかし、今回の内容ですが、簡単すぎてつまんなかったですかね。説明するのが大変で、なかなか先に進まない、というのが実情なんですが。本当は今回はスタックフレームについての解説からメソッドディスパッチの話に持って行こうと思ったんですが、説明がとても大変で諦めてしまいました (図とか用意してたんだけど)。</p>
+
+<p>さて、次回はメソッドの定義やクラスの定義なんかを行うための命令を説明しようかなぁと思っています。気が変わったら他のことをやるかもしれません。分岐 (if文など) とか、例外処理についても解説したいんですけどね。というか、YARV の実装についての話がなかなか出てこない。これはまずい。</p>
+
+<p>まぁ、お楽しみに。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>ささだこういち。学生。就職活動中。</p>
+
+<p>今月の 24 日は予定通り暇でしょうがありません。まぁいいか。メリークリスマス。</p>
+
+<h2 id="yarv-maniacs-連載一覧">YARV Maniacs 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-YarvManiacs.html">YARV Maniacs 【第 13 回】 事前コンパイルへの道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-YarvManiacs.html">YARV Maniacs 【第 11 回】 最近の YARV の事情</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0033/0033-YarvManiacs.html">YARV Maniacs 【第 10 回】 例外処理（初級編）</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-YarvManiacs.html">YARV Maniacs 【第 9 回】 特化命令</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-YarvManiacs.html">YARV Maniacs 【第 8 回】 命令列のシリアライズ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-YarvManiacs.html">YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-YarvManiacs.html">YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-YarvManiacs.html">YARV Maniacs 【第 5 回】 命令セット (2) リテラル・変数・定数</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-YarvManiacs.html">YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-YarvManiacs.html">YARV Maniacs 【第 3 回】 命令ディスパッチの高速化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-YarvManiacs.html">YARV Maniacs 【第 2 回】 VM ってなんだろう</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-YarvManiacs.html">YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>このあたりの細かい文法は Ruby 1.9 で変更されました。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

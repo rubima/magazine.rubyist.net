@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby de GUI</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0001/0001-RubyGUI.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby de GUI</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0001/0001-RubyGUI.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby de GUI" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0001/0001-RubyGUI.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0001/0001-RubyGUI.html" data-text="Ruby de GUI">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#ruby-de-gui" id="markdown-toc-ruby-de-gui">Ruby de GUI</a>    <ul>
+      <li><a href="#ruby-と-gui-ライブラリ" id="markdown-toc-ruby-と-gui-ライブラリ">Ruby と GUI ライブラリ</a>        <ul>
+          <li><a href="#紹介基準" id="markdown-toc-紹介基準">紹介基準</a></li>
+          <li><a href="#動作環境について" id="markdown-toc-動作環境について">動作環境について</a></li>
+        </ul>
+      </li>
+      <li><a href="#既存の-gui-ライブラリを利用するタイプ" id="markdown-toc-既存の-gui-ライブラリを利用するタイプ">既存の GUI ライブラリを利用するタイプ</a>        <ul>
+          <li><a href="#rubytk" id="markdown-toc-rubytk">Ruby/Tk</a></li>
+          <li><a href="#ruby-gnome2" id="markdown-toc-ruby-gnome2">Ruby-GNOME2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#" id="markdown-toc-"></a>    <ul>
+      <li><a href="#qtruby" id="markdown-toc-qtruby">QTRuby</a></li>
+      <li><a href="#fxruby" id="markdown-toc-fxruby">FXRuby</a></li>
+      <li><a href="#rubyfltk" id="markdown-toc-rubyfltk">Ruby/FLTK</a></li>
+      <li><a href="#wxruby" id="markdown-toc-wxruby">wxRuby</a></li>
+      <li><a href="#マルチプラットフォーム環境を利用するタイプ" id="markdown-toc-マルチプラットフォーム環境を利用するタイプ">マルチプラットフォーム環境を利用するタイプ</a>        <ul>
+          <li><a href="#apollo" id="markdown-toc-apollo">Apollo</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#-1" id="markdown-toc--1"></a>    <ul>
+      <li><a href="#widestudio" id="markdown-toc-widestudio">WideStudio</a></li>
+    </ul>
+  </li>
+  <li><a href="#-2" id="markdown-toc--2"></a>    <ul>
+      <li><a href="#os-の基盤-api-上のライブラリを利用するタイプ" id="markdown-toc-os-の基盤-api-上のライブラリを利用するタイプ">OS の基盤 API 上のライブラリを利用するタイプ</a>        <ul>
+          <li><a href="#visualuruby" id="markdown-toc-visualuruby">VisualuRuby</a></li>
+          <li><a href="#rubycocoa" id="markdown-toc-rubycocoa">RubyCocoa</a></li>
+        </ul>
+      </li>
+      <li><a href="#番外編" id="markdown-toc-番外編">番外編</a>        <ul>
+          <li><a href="#rjb" id="markdown-toc-rjb">rjb</a></li>
+          <li><a href="#rubywebdialogs" id="markdown-toc-rubywebdialogs">Ruby/WebDialogs</a></li>
+        </ul>
+      </li>
+      <li><a href="#終わりに代えて" id="markdown-toc-終わりに代えて">終わりに代えて</a>        <ul>
+          <li><a href="#次回予告" id="markdown-toc-次回予告">次回予告</a></li>
+        </ul>
+      </li>
+      <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+    </ul>
+  </li>
+  <li><a href="#著者の連絡先は-tamura-at-ruby-lang-dot-org-です" id="markdown-toc-著者の連絡先は-tamura-at-ruby-lang-dot-org-です">著者の連絡先は tamura at ruby-lang dot org です。</a></li>
+</ul>
+
+<h2 id="ruby-de-gui">Ruby de GUI</h2>
+
+<p>たむらけんいち (tamura at ruby-lang dot org)</p>
+
+<p><a href="http://www.rubyist.net/~tamura/d/">Ruby にまつわるえとせとら日記</a></p>
+
+<p>2004 年 9 月 5 日</p>
+
+<h3 id="ruby-と-gui-ライブラリ">Ruby と GUI ライブラリ</h3>
+
+<p>ここでは Ruby から利用できる GUI ライブラリを紹介する。
+その特徴と守備範囲を説明することで、ライブラリ選びの参考になれば幸いである。</p>
+
+<h4 id="紹介基準">紹介基準</h4>
+
+<p>Ruby のライブラリといえば、<a href="http://raa.ruby-lang.org/">RAA</a> だが、<a href="http://raa.ruby-lang.org/cat.rhtml?category_major=Library;category_minor=GUI">Library/GUI</a> を見ると、2004-8-29 現在、31 のプロジェクトが登録されている。
+この中には、<a href="http://raa.ruby-lang.org/project/fxirb">RAA:fxirb</a> のように FXRuby 用に拡張した IRB といった純粋な GUI ライブラリとは呼べないものも含まれている。他にも <a href="http://raa.ruby-lang.org/project/ruby-dialogs">RAA:ruby-dialogs</a> もコンソール上のツールなので、今回の紹介からは外させてもらった。</p>
+
+<p>もちろん限られた時間でこれを書いてるので、私の興味あるモノになるというところも勘弁して欲しい。</p>
+
+<h4 id="動作環境について">動作環境について</h4>
+
+<p>今回紹介するライブラリの全てを動作確認した訳ではないことをまず述べておく。特に筆者は Macintosh 環境を持っていない。ネットで確認を依頼するなどした内容もある。</p>
+
+<p>各ライブラリの紹介スペースでの動作環境だが、それぞれ</p>
+
+<dl>
+  <dt>Win32</dt>
+  <dd>Windows 環境 :Windows9x、Windows2000、WindowsXP などを想定</dd>
+  <dt>X11</dt>
+  <dd>Linux、FreeBSD、Solaris などの Unix 系環境上での XFree86 に代表される X Window を想定</dd>
+  <dt>MacOSX</dt>
+  <dd>OSX 以降の Mac の Aqua上を想定。OSX には X Windowもあるがここでは通常のシステムのみ</dd>
+  <dt>MacOSClassic</dt>
+  <dd>OS9 以前の Mac の インターフェース上を想定</dd>
+</dl>
+
+<p>とする。もちろん環境として他にも BeOS (HAIKU) などの独自環境やフレームバッファ上
+での描画などもあるので、あくまでも参考として考慮していただきたい。</p>
+
+<h3 id="既存の-gui-ライブラリを利用するタイプ">既存の GUI ライブラリを利用するタイプ</h3>
+
+<p>このタイプは、C/C++ 用の GUI ライブラリを Ruby から利用できるようにしたものであり、ライブラリのインターフェースやクラスライブラリ (C++) が Ruby からどう見えるかがポイントである。</p>
+
+<p>また、元ライブラリ自体のドキュメントが日本語対応なども含めて充実しているかなども重要である。</p>
+
+<h4 id="rubytk">Ruby/Tk</h4>
+
+<ul>
+  <li>site : 本体付属のため無し</li>
+  <li>RAA : 本体付属のため無し</li>
+  <li>needs : <a href="http://www.tcl.tk/">Tcl/Tk</a> が必要</li>
+  <li>owner : Hidetoshi NAGAI (正確には現メンテナ)</li>
+  <li>screenshot :</li>
+  <li>GUI ビルダの有無 : <a href="http://raa.ruby-lang.org/project/specruby">RAA:specruby</a> や <a href="http://starship.python.net/crew/mike/Tide/Spectix/Spectix.html">SpecTix</a> で Ruby のコードを出力させることが可能</li>
+  <li>日本語対応 : Tcl/Tk の Version による機能を利用可能</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>○</td>
+      <td>○</td>
+      <td>○</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>Ruby/Tk は Ruby の GUI ライブラリの中でもっとも長い歴史を持つ。最初の作者は、まつもとゆきひろ氏である。Tk は Tcl という言語から利用するための GUI ライブラリだったのだが、設計の良さと覚えることの少なさなどが相まって、他の言語からも使われる人気ものとなった。</p>
+
+<p>Perl には Perl/Tk 、Python には Tkinter、と LL (Lightweighted Language = 軽量言語) なスクリプティング言語は Tk をサポートしている。ほとんどの Unix 系の OS は、Tcl/Tk がインストールされているため、ライブラリなどを別途用意しなくても良いこともメリットと呼べる。</p>
+
+<p>Ruby/Tk については、「Ruby から Tcl を経由して Tk を制御している」「オブジェクト指向的じゃない」「単純な Widget しか用意されてない」「見た目が昔の X11 してる」という意見があるが、実はそれらのほとんどは最近の Ruby/Tk (あるいは、本家の Tcl/Tk にて) で対応済みだったりする。現在 Ruby/Tk のメンテナである永井氏はかなり精力的に上記問題に対してコミットしている。</p>
+
+<blockquote>
+  <p>Ruby/Tk については 1.8.2 に含まれる Tcl/Tk 拡張サポートまで
+含めてもらえると嬉しいです。
+これは、これまでの Ruby/Tk への批判の一つである「ウィジェット不足」への
+回答の一つであると思ってます。</p>
+
+  <p>Tcl/Tk 拡張は各個にインストールしてもいいですが、ActiveTcl 版の
+バイナリパッケージをインストールしてそちらのライブラリをリンク
+するようにすれば大部分はすぐに使えるはずです。
+一部のライブラリには ext/sample/tkextlib/ 以下にサンプルスクリプトも
+ありますので、ぜひ試してみてください。</p>
+
+  <p>なお、「外観が古くさい」という点は、Tcl/Tk8.5 以降で改善への動きがあります。
+8.5a1 で、まず radiobutton と checkbutton での改善が行われたようです。</p>
+
+  <p>(永井氏の今回の執筆に対する反応より)</p>
+</blockquote>
+
+<p>Ruby/Tk の魅力としては、何より構成が単純なため習得がある程度容易であることだろう。これは反対に Widgets の数の少なさや構成がオブジェクト指向的でないということの裏返しでもあるのだが。そして、日本語化されたドキュメントが豊富な点も挙げておきたい。その歴史の長さにより Tcl/Tk の書籍もたくさんある上、永井氏による Ruby/Tk256 本および Ruby アプリケーションプログラミングで、かなり詳細に解説されている。</p>
+
+<p>また日本語 (多国語) の扱いについても永井氏にコメントをいただいたので、紹介しておく。</p>
+
+<blockquote>
+  <p>日本語対応については、現在の Ruby/Tk では環境の推定結果に基づいた
+コード変換処理が組み込まれてます。
+ですから、日本語表示可能な Tcl/Tk (日本語版でも UTF-8 によるものでも)
+を使っているなら特に気にせずに表示可能なはずです。
+逆に、例えば Tcl/Tk のデフォルトエンコーディングが euc-jp の
+環境で直接 UTF-8 の文字列を与えるとかえって文字化けしてしまいます。</p>
+
+  <p>なお最新の Ruby/Tk では、エンコーディングが異なる文字列を混在させて
+用いることができるような仕組みも組み込んであります。
+もちろん、エンコード情報がなければどうしようもありませんから、
+文字列クラスのサブクラスとしてエンコード情報付き文字列クラスを
+作成し、それを扱うことができるようにしているわけです。</p>
+
+  <p># 通常の文字列に @encoding というインスタンス変数を持たせ、
+そこにエンコード情報を文字列で設定しておくだけでも OK です。</p>
+
+  <p>こうした文字列を扱う場合にはエンコーディングが何かを
+気にする必要はありません。
+そのまま Tk に渡してもらえればコード変換して表示します。</p>
+</blockquote>
+
+<p>Ruby/Tk は現在進行形で進化中の GUI ライブラリであり、決して過去のものではないのだ。</p>
+
+<ul>
+  <li>Link
+    <ul>
+      <li>Tcl Developer Xchange <a href="http://www.tcl.tk/">http://www.tcl.tk/</a></li>
+      <li>
+        <p>Tcl/Tk リンク集 <a href="http://www.geocities.co.jp/SiliconValley/4137/tcllink.html">http://www.geocities.co.jp/SiliconValley/4137/tcllink.html</a></p>
+      </li>
+      <li><a href="http://pub.cozmixng.org/~the-rwiki/rw-cgi.rb?cmd=view;name=Ruby%2FTk+%A5%C1%A5%E5%A1%BC%A5%C8%A5%EA%A5%A2%A5%EB">RWiki:Ruby/Tk チュートリアル</a></li>
+      <li><a href="http://pub.cozmixng.org/~the-rwiki/rw-cgi.rb?cmd=view;name=%B5%D5%B0%FA%A4%ADRuby%2FTk">RWiki:逆引きRuby/Tk</a></li>
+      <li>やってみよう Ruby/Tk <a href="http://www.mnet.ne.jp/~tnomura/rubytk.html">http://www.mnet.ne.jp/~tnomura/rubytk.html</a></li>
+      <li>
+        <p>入門 tcl/tk の移植 <a href="http://www.lostway.org/ruby/ruby-tk/">http://www.lostway.org/ruby/ruby-tk/</a></p>
+      </li>
+      <li>Ruby/Tk@ProgrammingRuby <a href="http://www.rubycentral.com/book/ext_tk.html">http://www.rubycentral.com/book/ext_tk.html</a></li>
+      <li>Ruby/Tk tutorial <a href="http://httpd.chello.nl/k.vangelder/ruby/learntk/">http://httpd.chello.nl/k.vangelder/ruby/learntk/</a></li>
+      <li>
+        <p>Ruby-Tk FAQ <a href="http://approximity.com/ruby/rubytk.html">http://approximity.com/ruby/rubytk.html</a></p>
+      </li>
+      <li>Ruby を 256 倍使うための本 界道編 <a href="http://www.ascii.co.jp/books/detail/4-7561/4-7561-3993-0.html">http://www.ascii.co.jp/books/detail/4-7561/4-7561-3993-0.html</a></li>
+      <li>Ruby アプリケーションプログラミング <a href="http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=4-274-06461-1">http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=4-274-06461-1</a></li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41G66962XEL._SL160_.jpg" /></td>
+      <td><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/411NAX7HKJL._SL160_.jpg" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ruby-gnome2">Ruby-GNOME2</h4>
+
+<ul>
+  <li>site : <a href="http://ruby-gnome2.sourceforge.jp/ja/">http://ruby-gnome2.sourceforge.jp/ja/</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/ruby-gnome2">RAA:ruby-gnome2</a></li>
+  <li>needs : <a href="http://www.gnome.org/">GNOME2</a>/<a href="http://www.gtk.org/">Gtk+</a> などの関連ライブラリがインストールされている必要あり</li>
+  <li>owner : The Ruby-GNOME2 Project Team</li>
+  <li>screenshot : <a href="http://ruby-gnome2.sourceforge.jp/ja/hiki.cgi?gtk2-tut">Ruby/GTK2 チュートリアル</a>など</li>
+  <li>GUI ビルダの有無 : <a href="http://glade.gnome.org/">Glade</a> を利用することが可能</li>
+  <li>日本語対応 : 基本的に UTF-8 で渡すことで表示可能</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>○</td>
+      <td>× <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></h2>
+
+<p>Ruby-GNOME2 は、主に X11 上でのデスクトップ統合環境である GNOME2 を構成する各ライブラリを Ruby から使うためのものである<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<p>GIMP 開発が始まりだった画面描画ツールキットである GTK の最新版である GTK+2.4 および GLib2 などの基本的なライブラリの Ruby ライブラリパッケージを ruby-gtk2 パッケージ、高性能キャンパスの Ruby/GnomeCanvas2、マルチメディアを扱う Ruby/GStreamer、HTML レンダリングエンジンである Ruby/GtkHtml2、パラメータデータの扱いをカプセル化する Ruby/GConf2 、GNOME パネルのための Ruby/PanelAppletなどまで含めたものを ruby-gnome2 パッケージと呼ぶ。豊富なライブラリ群に関しては、site にて内容を確認して欲しい。単に画面を作りたい程度であれば、ruby-gtk2 パッケージより Ruby/GTK2 を使えば OK である。</p>
+
+<p>Ruby/GTK も、最初の作者はまつもとゆきひろ氏である。GTK+ 自身が C 言語によるオブジェクト指向的ライブラリとなっているので、Ruby と相性が良い。Widget の種類も
+たくさんある。</p>
+
+<p>最近の Unix 互換環境では GNOME2 がデスクトップとなってる場合も
+多くインストールに必要なライブラリも揃っていて、利用するのが比較的簡単だ。</p>
+
+<p>Windows 環境においても、MS Windows 向けのバイナリがプロジェクトチームによって用意されているため、比較的簡単にインストールは可能だ。この場合、インストールする GNOME2 の環境によって、Ruby から利用できる部分は制限される。</p>
+
+<p>また地域化 (L10n) や国際化 (I18n) に対するアドバンテージについて、プロジェクトリーダーであるむとう氏よりコメントをいただいたので、紹介しておく。</p>
+
+<blockquote>
+  <p>Ruby-GNOME2 では、Ruby-GetText-Package との併用で L10n が実現
+可能ですし、UTF-8 で I18n の表示を可能にしています。
+特にビルダーがあるものに関しては L10n がうまくできないものがあるんじゃ
+ないでしょうか。</p>
+
+  <p># ビルダーがないものは Ruby-GetText-Package を使うことで
+きっと L10n できるでしょうけど</p>
+</blockquote>
+
+<p>最後にライブラリとプロジェクトチームとの対応について説明しておこう。2002 年 11 月を最後に、Ruby/GTK および <a href="http://ruby-gnome.sourceforge.net/">Ruby-GNOME</a> はメンテナンスされていない (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/37857">ruby-list:37857</a>)。実は現在 Ruby-GNOME2 についての書籍は存在せず、すべてが Ruby/GTK に関するものなのである。GTK および GNOME は、Ver1.2 の次に Ver2.x となり GNOME2 で大幅な機能強化を行い関連ライブラリが増えた経緯がある。一例として現在の Linux ディストリビューションでは GTK+1.2x 系と GNOME2.x 系は並存しているが、メインは GNOME2 (GTK+2) へと移っている。</p>
+
+<p>GNOME2 環境が一般的になるに従い、Ruby-GNOME2 で実装されたアプリケーションは増えてきており、これからも GUI 作成の定番として目が離せないと言えるだろう。</p>
+
+<ul>
+  <li>Link
+    <ul>
+      <li>GTK+ The GIMP Toolkit <a href="http://www.gtk.org/">http://www.gtk.org/</a></li>
+      <li>GNOME <a href="http://www.gnome.org/">http://www.gnome.org/</a></li>
+      <li>GNOME Developer Site <a href="http://developer.gnome.org/">http://developer.gnome.org/</a></li>
+      <li>GNOMEDesktop <a href="http://www.gnomedesktop.org/">http://www.gnomedesktop.org/</a></li>
+      <li>GNOME FILES GTK+ Software Repository <a href="http://www.gnomefiles.org/">http://www.gnomefiles.org/</a></li>
+      <li>
+        <p>日本 GNOME ユーザー会 <a href="http://www.gnome.gr.jp/">http://www.gnome.gr.jp/</a></p>
+      </li>
+      <li>むとう氏の日記 (Linux ビボ〜ろく) <a href="http://ponx.s5.xrea.com/bibo/">http://ponx.s5.xrea.com/bibo/</a></li>
+      <li>
+        <p>lrz’s diary <a href="http://www.rubymonks.org/~lrz/diary/">http://www.rubymonks.org/~lrz/diary/</a></p>
+      </li>
+      <li>rbbr <a href="http://ruby-gnome2.sourceforge.jp/hiki.cgi?rbbr">http://ruby-gnome2.sourceforge.jp/hiki.cgi?rbbr</a></li>
+      <li>Rabbit <a href="http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit">http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit</a></li>
+      <li>
+        <p>Alexandria <a href="http://alexandria.rubyforge.org/">http://alexandria.rubyforge.org/</a></p>
+      </li>
+      <li><a href="http://www-6.ibm.com/jp/developerworks/">IBM developerWorks Japan</a> にて<a href="http://www.ibm.com/search?v=11&amp;lang=ja&amp;cc=jp&amp;q=+GNOME&amp;Search.x=0&amp;Search.y=0&amp;Search=Search">『GNOME』で検索</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="qtruby">QTRuby</h4>
+
+<ul>
+  <li>site : <a href="http://developer.kde.org/language-bindings/ruby/">http://developer.kde.org/language-bindings/ruby/</a> (<a href="http://rubyforge.org/projects/korundum/">Download</a>)</li>
+  <li><a href="http://raa.ruby-lang.org/project/qtruby">RAA:qtruby</a></li>
+  <li>needs : <a href="http://www.kde.org/">KDE</a> (Qt.3.x) 環境がインストールされていること</li>
+  <li>owner : rdale</li>
+  <li>screenshot :</li>
+  <li>GUI ビルダの有無 : <a href="http://www.trolltech.com/products/qt/designer.html">Qt Designer</a> を利用することが可能</li>
+  <li>日本語対応 : 問題なし(本文を参照)</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>○</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>QTRuby は GNOME と双璧をなす統合デスクトップ環境である KDE の基本ライブラリである。
+<a href="http://raa.ruby-lang.org/project/ruby-qt2">RAA:ruby-qt2</a> (Qt.2.x) / <a href="http://raa.ruby-lang.org/project/ruby-qt">RAA:ruby-qt</a> (Qt.1.4x) は前のバージョン用のものなので、注意のこと。シャープの Linux Zaurus 上の Qt embedded で動く <a href="http://raa.ruby-lang.org/project/ruby-qte">RAA:ruby-qte</a> もある。</p>
+
+<p>QTRuby は、Smoke (Scripting Meta Object Kompiler Engine) という Qt/KDE 用フレームワークに用意された仕組みを利用しているようだが、残念ながら筆者は触った経験がないので、これ以上何も書けない。</p>
+
+<p>Ruby/Qt2 などの開発者である堀江氏よりコメントをいただけたので紹介する。</p>
+
+<blockquote>
+  <p>qt1,qt2 のラッパーを作成していた関係で少しいじってみたのですが、大変完成度が高くほぼ実
+用レベルに達していると思います。</p>
+
+  <p>主な特徴としては、</p>
+
+  <p>1.Qt ライブラリーの豊富なクラスがほぼ全て利用できる (みたい)。</p>
+
+  <ol>
+    <li>日本語も $KCODE=”EUC” とすると、問題なく使用できる(何も指定しないときは UTF-8)。</li>
+  </ol>
+
+  <p>3.Qt がもともと C++ のライブラリーなので Ruby との相性もそんなに悪くない (と思う) 。</p>
+
+  <p>なお、QT Ruby の Web サイトにある Korundom は www.kde.org の
+kdebinding の cvs パッケージの中にあります。
+(ftp://ftp.kde.org/pub/kde/unstable/snapshots/ ;
+こちらもお薦めです。)</p>
+</blockquote>
+
+<p>また Windows での状況もコメントしていただけた。</p>
+
+<blockquote>
+  <p>なお、QT Ruby の Win32 対応ですが、私の見た限り公式な表明はないようです。</p>
+
+  <p>Qt の Windows 版は一応商用で (しかもかなり高い)、ver 3 については本の付録として
+non-commercial version が入手できます。これを用いて以前 Qt Ruby を
+コンパイルしたことがあるのですが、完全にはうまくいきませんでした (一部は動いたのですが。ま
+たやってみます)。 もっとも、cygwin や qt-win32 のような GPL 版 qt を
+Windows に移植しようというプロジェクトもかなり動いてきたので、比較的簡単に移植できる
+ようになるかも知れません。ちなみに、MacOSX で x なのですが、X Window System をいれると KDE も動いてしまうようなので、QT Ruby も動くような気が……</p>
+
+  <p>(これは対応と言わないのかも？) ほかの Unix 系 GUI もそうですよね。</p>
+</blockquote>
+
+<p>上記コメントの本とは
+C++ GUI Programming with Qt3 ,Pearson Education, Inc., 2004 (<a href="http://www.amazon.com/exec/obidos/ASIN/0131240722/qid=1094568973/sr=ka-1/ref=pd_ka_1/104-2064109-6555114">amazon.com</a>)
+である。</p>
+
+<ul>
+  <li>Link
+    <ul>
+      <li>Ruby/Qt, Ruby/KDE,Ruby/Qt2 <a href="http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/horie_prog_jp.html">http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/horie_prog_jp.html</a></li>
+      <li>
+        <p>SMOKE <a href="http://developer.kde.org/language-bindings/smoke/">http://developer.kde.org/language-bindings/smoke/</a></p>
+      </li>
+      <li>Qt とPyQt (IBM dW) <a href="http://www-6.ibm.com/jp/developerworks/linux/030418/j_l-qt.html">http://www-6.ibm.com/jp/developerworks/linux/030418/j_l-qt.html</a></li>
+      <li>
+        <p>Ruby/Qte <a href="http://takahr.dhis.portside.net/cgi-bin/rwiki.cgi?cmd=view;name=Ruby%2FQte">http://takahr.dhis.portside.net/cgi-bin/rwiki.cgi?cmd=view;name=Ruby%2FQte</a></p>
+      </li>
+      <li>KDE Developer’s Corner <a href="http://developer.kde.org/">http://developer.kde.org/</a></li>
+      <li>日本 KDE ユーザ会 <a href="http://www.kde.gr.jp/">http://www.kde.gr.jp/</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="fxruby">FXRuby</h4>
+
+<ul>
+  <li>site: <a href="http://www.fxruby.org/">http://www.fxruby.org/</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/fxruby">RAA:fxruby</a></li>
+  <li>needs: <a href="http://www.fox-toolkit.org/">FOX</a> ライブラリをインストールする必要あり。</li>
+  <li>owner: Lyle Johnson</li>
+  <li>screenshot : <a href="http://www.fxruby.org/doc/examples.html">http://www.fxruby.org/doc/examples.html</a></li>
+  <li>GUI ビルダの有無 :</li>
+  <li>日本語対応 : 基本的に UTF-8 で渡すことで表示可能(本文も参照)</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>○</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>FXRuby はあまり日本ではなじみがないかも知れないが、海外では Windows 用パッケージとして定番の <a href="http://rubyinstaller.rubyforge.org/wiki/wiki.pl">One-Click Ruby Installer</a> (旧 Ruby Installer for Windows) に含まれている<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。外見が Windows ライクということも手伝って、かなり敷居が低い。</p>
+
+<p>特徴としては、C++ で構築されたライブラリを上手に Ruby で wrap しているところか。クラスの継承やメッセージの投げ方などを上手に利用すると短いコーディングで GUI が書ける。</p>
+
+<p>もっとも、FXRuby が利用している FOX が多国語化を現状で対応していないため、表示に関しては、UTF-8 でコーディングすれば大丈夫だが、仮名漢字変換などではパッチを当ててコンパイルする必要がある。</p>
+
+<p>fox-unicode 開発および、FXRuby に詳しい、ひだか氏からのコメントを紹介する。</p>
+
+<blockquote>
+  <p>FOXは、X11でもWindowsでも同じ外観・操作感のアプリケーションを
+作ることができる高機能なツールキットです。</p>
+
+  <p>FXRubyによって、Rubyから呼び出して利用することができます。
+日本語対応についてですが、FOX + FXRubyは、UNICODEベースで動作する
+ので、日本語の表示だけであればそれなりに可能ですが、日本語の入力に
+ついては対応していないので、非公式パッチが必要です。</p>
+
+  <p>私はそのパッチを管理していることになっているのですが、忙しくて
+ここのところ全く更新できていなくて申し訳ないです。</p>
+</blockquote>
+
+<ul>
+  <li>Links
+    <ul>
+      <li>Ruby GUI ライブラリ ::FXRuby <a href="http://www.gesource.jp/ruby/gui/fxruby.html">http://www.gesource.jp/ruby/gui/fxruby.html</a></li>
+      <li>逆引き FXRuby <a href="http://takahr.dhis.portside.net/cgi-bin/rwiki.cgi?cmd=view;name=%B5%D5%B0%FA%A4%ADFXRuby">http://takahr.dhis.portside.net/cgi-bin/rwiki.cgi?cmd=view;name=%B5%D5%B0%FA%A4%ADFXRuby</a></li>
+      <li>FOX-Toolkit 日本語ドキュメント <a href="http://www.asahi-net.or.jp/~cv8t-hdk/fox/fox-doc.ja/fox.ja.html">http://www.asahi-net.or.jp/~cv8t-hdk/fox/fox-doc.ja/fox.ja.html</a></li>
+      <li>
+        <p>FOX unicode 化 <a href="http://takahr.dhis.portside.net/cgi-bin/rwiki.cgi?cmd=view;name=fox-unicode">http://takahr.dhis.portside.net/cgi-bin/rwiki.cgi?cmd=view;name=fox-unicode</a></p>
+      </li>
+      <li>Ruby Gem Box ―ツール利用でここまでできる (FXRuby の章) <a href="http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=4-274-06460-3">http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=4-274-06460-3</a></li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51snCV8UmnL._SL160_.jpg" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="rubyfltk">Ruby/FLTK</h4>
+
+<ul>
+  <li>site : <a href="http://ruby-fltk.sourceforge.net/index.html">http://ruby-fltk.sourceforge.net/index.html</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/ruby-fltk">RAA:ruby-fltk</a></li>
+  <li>needs : <a href="http://fltk.org/">FLTK</a> がインストールされている必要あり</li>
+  <li>owner : Takaaki Tateishi</li>
+  <li>screenshot : <a href="http://ruby-fltk.sourceforge.net/sample/">http://ruby-fltk.sourceforge.net/sample/</a> サンプルコードも</li>
+  <li>GUI ビルダの有無 : Ruby 用はない。C++ 用はライブラリに同梱</li>
+  <li>日本語対応 : FLTK 1.1.x I18N (xunicode patch for FLTK-1.1.x) を使うと、UTF-8 で日本語の表示が可能</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>○</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>実は、Ruby/FLTK は現在メンテナンスされていない。
+作者である立石氏からのコメントを紹介しよう。</p>
+
+<blockquote>
+  <p>Ruby/FLTK の開発動機は、もともとは C++ で拡張ライブラリを作ろうという漠然と
+したもので、特に C++ の抽象仮想関数などをうまく Ruby 側で扱いたいという目的
+がありました。</p>
+
+  <p>そのため、Ruby/FLTK では、C++ における抽象仮想関数を含む抽象クラスを、Ruby
+側で継承して、抽象仮想関数の実装を行うことができます。また、同様の仕組み
+で、Ruby 側で継承したクラスも、あたかも C++ のレベルで継承を行ったように FLTK
+の処理に反映されるようにしていて、かつ、FLTK とのクラス階層も一致させてい
+ます。苦労したのは、開発当初に C++ での拡張ライブラリ作成の実績がほとんどな
+いことでした。現在は、開発を行っていません。</p>
+</blockquote>
+
+<p>FLTK 自体が日本語の扱いに難があることなどからも現在 Ruby/FLTK を選択する機会は
+少ないかもしれない。ただ上記 C++ での Ruby 拡張ライブラリ実装や抽象クラスの Ruby 側
+からの扱いなどは、FXRuby などに受け継がれていると思われる。</p>
+
+<p>そもそも FLTK 自体がかなり軽量なライブラリであり、規模の小ささと構成のシンプルさは、これから GUI ライブラリに取り組もうと考える人への良い題材となるのではないだろうか。</p>
+
+<ul>
+  <li>Links
+    <ul>
+      <li>FLTK The Fast Light Toolkit Home Page <a href="http://www.fltk.org/">http://www.fltk.org/</a></li>
+      <li>日本語対応パッチ <a href="http://www.boreas.dti.ne.jp/~miyoshi/fltk/">http://www.boreas.dti.ne.jp/~miyoshi/fltk/</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="wxruby">wxRuby</h4>
+
+<ul>
+  <li>site : <a href="http://wxruby.rubyforge.org/wiki/wiki.pl?WxRuby">http://wxruby.rubyforge.org/wiki/wiki.pl?WxRuby</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/wxruby">RAA:wxruby</a></li>
+  <li>needs : <a href="http://wxwidgets.org/">wxWidgets</a> がインストールされている必要あり</li>
+  <li>owner : Kevin Smith</li>
+  <li>screenshot : <a href="http://www.wxwidgets.org/screensh.htm">wxWidgetsのサンプル</a></li>
+  <li>GUI ビルダの有無 : <a href="http://visualwx.altervista.org/indexit.php">VisualWx</a> を利用。あるいは、XRC 対応のデザイナーを利用</li>
+  <li>日本語対応 : 基本的に UTF-8 で渡すことで表示可能</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>○</td>
+      <td>○</td>
+      <td>△ <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>wxRuby は、現在の GUI ライブラリの中では動作環境が一番多い。その理由は、wxWidgets の構造にある。wxWidgets は実際の画面描画を、それぞれの環境の native ライブラリに任せている。Windows では、Win32API、X11 では、Motif や GTK+、Macintosh では、Quartz、Cocoa である。</p>
+
+<p>wxWidgets のクラスライブラリが膨大なことから、wxRuby はいまひとつ安定性には欠ける部分や多国語の扱いなどで難があるのも事実だ。同じ LL として先行している Python の wxWidgets binding である  <a href="http://wxpython.org/">wxPython</a> の  <a href="http://wxpython.org/screenshots.php">screenshot</a> や wxPython で実装されている GUI ビルダの  <a href="http://wxglade.sourceforge.net/">wxGlade</a> の完成度にいつか追いつけるのだろうか。</p>
+
+<p>wxRuby としては、日本語の資料は皆無なため、C++ から wxWidget を使う資料を読み解いていくしかないのもツライところである。</p>
+
+<ul>
+  <li>Link
+    <ul>
+      <li>
+        <p>Ruby GUI ライブラリ ::wxRuby <a href="http://www.gesource.jp/ruby/gui/wxruby.html">http://www.gesource.jp/ruby/gui/wxruby.html</a></p>
+      </li>
+      <li>wxWindows 日本語プロジェクト <a href="http://wxwindowsjp.sourceforge.jp/">http://wxwindowsjp.sourceforge.jp/</a></li>
+      <li>Let’s wxWidgets <a href="http://dot-gray.s33.xrea.com/">http://dot-gray.s33.xrea.com/</a></li>
+      <li>wxWindows で始める C++GUI プログラミング <a href="http://www.h3.dion.ne.jp/~k5_n/wxwin/">http://www.h3.dion.ne.jp/~k5_n/wxwin/</a></li>
+      <li>
+        <p>wxWidgets <a href="http://rcl.hp.infoseek.co.jp/wxwidgets.html">http://rcl.hp.infoseek.co.jp/wxwidgets.html</a></p>
+      </li>
+      <li>VisualWx <a href="http://visualwx.altervista.org/indexit.php">http://visualwx.altervista.org/indexit.php</a></li>
+      <li>wxGlade <a href="http://wxglade.sourceforge.net/">http://wxglade.sourceforge.net/</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="マルチプラットフォーム環境を利用するタイプ">マルチプラットフォーム環境を利用するタイプ</h3>
+
+<p>このタイプは既に別言語 (C など) にて、マルチプラットフォーム対応ができている統合環境をそのまま Ruby から利用するものである。</p>
+
+<h4 id="apollo">Apollo</h4>
+
+<ul>
+  <li>site : <a href="http://www.moriq.com/apollo/">http://www.moriq.com/apollo/</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/apollo">RAA:apollo</a></li>
+  <li>needs : 動作させるのに Runtime が必要</li>
+  <li>owner : moriq</li>
+  <li>screenshot :</li>
+  <li>GUI ビルダの有無 : Delphi のフォームデザイナで作ったデータが使える</li>
+  <li>日本語対応 : 特に意識する必要なし</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>×</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-1"><sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></h2>
+
+<p>Apollo のサイトにて作者のもりきゅう氏は、こう述べている。</p>
+
+<blockquote>
+  <p>Delphi と Ruby を結びつける機構全体を総称して Apollo と呼んでいます。</p>
+</blockquote>
+
+<p>Apollo の機能は GUI だけに留まらない。DB アクセスなど Delphi が利用できるものの全てを Ruby からも利用できるのである。Delphi の VCL からサードパーティのコントロールまで例外はない。</p>
+
+<p>Apollo の面白い点は以上の逆側の機能も用意している点である。つまり Delphi からも Ruby の機能が利用できるようになっている。Phi 拡張ライブラリを書くためには、Delphi &lt;-&gt; Ruby 間の値変換などが必要である。</p>
+
+<p>Apollo は、MS Windows 版の Ruby 自体を含むパッケージも提供されるので、インストールなどの手間はあまりかからない。
+Linux 上の Delphi 互換環境である Kylix が発表されて数年経つが、環境を作ったり安定して動作させるのは難しいようだ。その理由として、もりきゅう氏は次のように述べている。</p>
+
+<blockquote>
+  <p>VCL (Delphi のライブラリ。Win32 に依存している) と CLX (Delphi と Kylix で共通な
+ライブラリ。Qt のラッパー) に完全な互換性がないことと、Kylix 自体が安定して
+いなかったことがあります。</p>
+
+  <p>Delphi から Kylix へのプログラムの移植は、VCL から CLX への移行後、Windows から
+Linux へ移行する、という二段階の手順を踏まなければならないのですが、VCL 版
+の開発が続く現状では Kylix への移植に時間をかけられないのが実情です。また、
+Kylix には共有オブジェクトの扱いに不具合があり (最新版では改善されていると
+思いますが)、Kylix2 での開発では原因の切り分けと対応に苦労しました。
+時間をかければ Kylix 版 Apollo も実現できるので、対応していく予定です。でも、
+今後対応するならやっぱり Lazarus というか FreePascal がいいのかなあ。</p>
+</blockquote>
+
+<ul>
+  <li>Link
+    <ul>
+      <li>Apollo チュートリアル <a href="http://www.moriq.com/apollo/tutorial/tut_index.html">http://www.moriq.com/apollo/tutorial/tut_index.html</a></li>
+      <li>
+        <p>Apollo Wiki <a href="http://wiki.fdiary.net/apollo/">http://wiki.fdiary.net/apollo/</a></p>
+      </li>
+      <li>
+        <p>Ruby GUI ライブラリ ::Apollo <a href="http://www.gesource.jp/ruby/gui/apollo01.html">http://www.gesource.jp/ruby/gui/apollo01.html</a></p>
+      </li>
+      <li>Ruby を 256 倍使うための本 黄道編 <a href="http://www.ascii.co.jp/books/detail/4-7561/4-7561-3886-1.html">http://www.ascii.co.jp/books/detail/4-7561/4-7561-3886-1.html</a></li>
+      <li>Ruby を 256+ 倍使うための本 紅玉制覇編 <a href="http://www.ascii.co.jp/books/detail/4-7561/4-7561-3810-1.html">http://www.ascii.co.jp/books/detail/4-7561/4-7561-3810-1.html</a></li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41H3WWR8R6L._SL160_.jpg" /></td>
+      <td><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51PJS0RFNEL._SL160_.jpg" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="widestudio">WideStudio</h4>
+
+<ul>
+  <li>site : <a href="http://www.widestudio.org/">http://www.widestudio.org/</a></li>
+  <li>RAA : なし</li>
+  <li>needs : 動作させるのに Runtime が必要。</li>
+  <li>OS : Unix、Windows</li>
+  <li>owner : Shun-ichi Hirabayashi</li>
+  <li>screenshot : site のチュートリアルなどを参照</li>
+  <li>GUI ビルダの有無 : アプリケーションビルダにより可能</li>
+  <li>日本語対応 : 独自のマルチエンコーディング対応</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>○</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-2"><sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></h2>
+
+<p><a href="http://www.widestudio.org/spec.html">WideStudio の特徴</a>に説明があるが、一番の特徴はやはり、「統一されたデスクトップアプリケーション開発環境」だと思われる。OS に依存せずWideStudio独自の外観が提供され、開発時もほぼ同じ環境で作業が可能となる。C/C++、Perl、Python、Ruby に対応しているが、これも外観同様各言語の特色よりも WideStudioとしてのスタイルを優先させている。(set_hoge/get_hoge といった Java/C++ 系のプロパティアクセスなど)</p>
+
+<p>各 OS / 言語の特徴を抑えて、共通のスタイルで開発しマルチプラットフォームで動作させる必然性があるような場合 WideStudio は、かなりの威力を発揮するだろう。</p>
+
+<ul>
+  <li>Link
+    <ul>
+      <li>
+        <p>WideStudio Ruby プログラミングガイド <a href="http://www.widestudio.org/prog-ruby/prog.html">http://www.widestudio.org/prog-ruby/prog.html</a></p>
+      </li>
+      <li>
+        <p>Ruby GUI ライブラリ ::WideStudio <a href="http://www.gesource.jp/ruby/gui/widestudio.html">http://www.gesource.jp/ruby/gui/widestudio.html</a></p>
+      </li>
+      <li>
+        <p>Online Documents wiki <a href="http://widestudio.sourceforge.jp/wiki/jp/pukiwiki.php?WSdocuments">http://widestudio.sourceforge.jp/wiki/jp/pukiwiki.php?WSdocuments</a></p>
+      </li>
+      <li>
+        <p>WideStudio オフィシャルプログラミングガイド <a href="http://book.mycom.co.jp/book/4-8399-0964-4/4-8399-0964-4.shtml">http://book.mycom.co.jp/book/4-8399-0964-4/4-8399-0964-4.shtml</a></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51X4AY7J03L._SL160_.jpg" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="os-の基盤-api-上のライブラリを利用するタイプ">OS の基盤 API 上のライブラリを利用するタイプ</h3>
+
+<p>このタイプは、OS が備えている API を利用するので、見た目が通常のものと変わらないという利点がある。ただしクラス構成などがオブジェクト指向的でなかった場合、Ruby 側のライブラリがそれをどう吸収しているかという問題がある。</p>
+
+<h4 id="visualuruby">VisualuRuby</h4>
+
+<ul>
+  <li>site : <a href="http://www.osk.3web.ne.jp/~nyasu/software/vrproject.html">http://www.osk.3web.ne.jp/~nyasu/software/vrproject.html</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/swin">RAA:swin</a> <a href="http://raa.ruby-lang.org/project/vruby">RAA:vruby</a></li>
+  <li>needs : なし</li>
+  <li>owner : nyasu (NISHIKAWA Yasuhiro)</li>
+  <li>screenshot :</li>
+  <li>GUI ビルダの有無 : <a href="https://sourceforge.jp/projects/fdvr">FormDesigner</a></li>
+  <li>日本語対応 : 問題なし</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>×</td>
+      <td>×</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>Windows 上では、ほぼ定番と呼べるライブラリ。swin はイベントなどのための拡張ライブラリ、vruby はクラス群の Ruby ライブラリである。VisualuRuby 自体で作られたフォームデザイナで画面が作れ、Exerb (<a href="http://raa.ruby-lang.org/project/exerb">RAA:exerb</a>) を利用すると、複数ファイルと Ruby 実行ファイルである ruby(w).exe + msvcrt-ruby18.dll を一つの実行ファイルにまとめることができるのも大きな特徴。</p>
+
+<p>それなりに利用され、ドキュメントも探しやすいなど環境を Windows に限れば<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>使いやすいライブラリである。</p>
+
+<ul>
+  <li>Links
+    <ul>
+      <li>作者のにゃすさんの日記 <a href="http://www.osk.3web.ne.jp/~nyasu/diary/latest.html">http://www.osk.3web.ne.jp/~nyasu/diary/latest.html</a></li>
+      <li>
+        <p>FormDesigner 作者雪見酒さんの日記 <a href="http://note3.nifty.com/cgi-bin/note.cgi?u=GHE01746&amp;n=1">http://note3.nifty.com/cgi-bin/note.cgi?u=GHE01746&amp;n=1</a></p>
+      </li>
+      <li>VisualuRuby (仮称) 使い方 <a href="http://www.osk.3web.ne.jp/~nyasu/vruby/howto/">http://www.osk.3web.ne.jp/~nyasu/vruby/howto/</a></li>
+      <li>
+        <p>サンプルと説明 <a href="http://www.threeweb.ad.jp/~nyasu/vruby/samples.html">http://www.threeweb.ad.jp/~nyasu/vruby/samples.html</a></p>
+      </li>
+      <li>窓辺で Ruby <a href="http://www.osk.3web.ne.jp/~nyasu/vruby/madobe/">http://www.osk.3web.ne.jp/~nyasu/vruby/madobe/</a></li>
+      <li>
+        <p>Ruby GUI ライブラリ ::VisualuRuby <a href="http://www.gesource.jp/ruby/gui/vruby.html">http://www.gesource.jp/ruby/gui/vruby.html</a></p>
+      </li>
+      <li>Ruby を 256+ 倍使うための本 場外乱闘編 <a href="http://www.ascii.co.jp/books/detail/4-7561/4-7561-3809-8.html">http://www.ascii.co.jp/books/detail/4-7561/4-7561-3809-8.html</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="rubycocoa">RubyCocoa</h4>
+
+<ul>
+  <li>site : <a href="http://www.fobj.com/rubycocoa/doc/index.ja.html">http://www.fobj.com/rubycocoa/doc/index.ja.html</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/rubycocoa">RAA:rubycocoa</a></li>
+  <li>needs : なし</li>
+  <li>owner : Fujimoto Hisa</li>
+  <li>screenshot : 上記 site にあり</li>
+  <li>GUI ビルダの有無 :</li>
+  <li>日本語対応 : UTF-8 で渡すことで表示可能(OSX 自体が UNICODE メインである)</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>×</td>
+      <td>×</td>
+      <td>○</td>
+      <td>×</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>上記サイトには、RubyCocoa の説明としてこう書かれている。</p>
+
+<blockquote>
+  <p>RubyCocoa は、オブジェクト指向スクリプト言語 Ruby での Cocoa プログラミングを可能とする、Mac OS X のフレームワークです。</p>
+</blockquote>
+
+<p>OS 固有の API を利用できること自体は、Windows における VisualuRuby 同様だが、Cocoa の場合オブジェクト指向がそこにあり、Objective-C をスクリプト内に一緒に書けるらしい。</p>
+
+<p>残念ながら、筆者は Macintosh に嫌われてる身で、手元にも環境がないため、これ以上のことは書くことができない。</p>
+
+<ul>
+  <li>
+    <p>Link</p>
+
+    <ul>
+      <li>作者のふじもとひさ氏の日誌 <a href="http://www.fobj.com/hisa/d/">http://www.fobj.com/hisa/d/</a></li>
+      <li>RubyCocoa でアプリを作ろう <a href="http://www.mouseup.net/rubycocoa/calc_app1.html">http://www.mouseup.net/rubycocoa/calc_app1.html</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="番外編">番外編</h3>
+
+<p>ここまでの範疇に収まらないものを紹介する。</p>
+
+<h4 id="rjb">rjb</h4>
+
+<ul>
+  <li>site : <a href="http://arton.no-ip.info/collabo/backyard/?RubyJava%A5%D6%A5%EA%A5%C3%A5%C2">http://arton.no-ip.info/collabo/backyard/?RubyJava%A5%D6%A5%EA%A5%C3%A5%C2</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/rjb">RAA:rjb</a></li>
+  <li>needs : 動作させるのに JDK か JRE (1.3 以降) が必要</li>
+  <li>owner : arton</li>
+  <li>screenshot : <a href="http://www.rubyist.net/~tamura/d/?date=20040831#p01">http://www.rubyist.net/~tamura/d/?date=20040831#p01</a></li>
+  <li>GUI ビルダの有無 : なし</li>
+  <li>日本語対応 : Java 経由なので、UTF-8 で渡すことで表示可能</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Win32</td>
+      <td>X11</td>
+      <td>MacOSX</td>
+      <td>MacOSClassic</td>
+    </tr>
+    <tr>
+      <td>○</td>
+      <td>○</td>
+      <td>○</td>
+      <td>？</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>rjb とは Ruby Java Bridge の略である。arton 氏の ruby-list への投稿 (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/39755">ruby-list:39755</a>) より引用する。</p>
+
+<blockquote>
+  <p>rjb という ruby と Java のブリッジを作ったので RAA に登録しました。
+既に RAA には rjava というブリッジが登録されていますが、rjb は JNI を利用して同
+一プロセス内で行き来するところが特徴です。なお Java 側の異なる複数のスレッ
+ドから Ruby を呼び出すことはできません。</p>
+</blockquote>
+
+<p>rjb は開発開始から日が浅いということもあって、まだこなれていない部分もあるが ActiveScriptRuby の arton 氏が創っているという点でも注目のプロジェクトである。Ruby + WIN32OLE + COM という組み合わせだが、Ruby + rjb + JavaClass と置き換えることが可能だと思う。</p>
+
+<p>作者の arton 氏からコメントをいただいたので紹介する。</p>
+
+<blockquote>
+  <p>アピール</p>
+
+  <ol>
+    <li>
+      <p>JDBC 知っているから今更 DBI 覚えるよりも、JDBC が使いたいなぁとか</p>
+    </li>
+    <li>
+      <p>JUnit 使っていて、別に同じ言語でユニットテストを書かなくても良いのでは
+(Ruby なら楽だし) とか</p>
+    </li>
+    <li>
+      <p>どうも ASR が Win32 でしか動かないのは気に食わんとか</p>
+    </li>
+    <li>
+      <p>Java のビジネスロジックのクラス (static void main を持たない) をシェル
+から使いたいとか</p>
+    </li>
+  </ol>
+
+  <p>もろもろの欲望を満たすために始めたプロジェクトです。
+しかし、3. の野望は早くも Mac と Linux の前に脆くも崩れ落ちてしまいました
+(AWT/Swing を使わなければ OK なわけですが)。</p>
+
+  <p>苦労話</p>
+
+  <p>最初、Win32 で JNI の呼び出しをすべてオフセットを元にした一つの呼び出しにま
+とめていて、我ながらすっきり書けたと思っていたら、ビッグエンディアン
+(SPARC) とか gcc とか (VC++ とスタックの戻し方が異なる) が出てきて結局、
+switch 文の嵐になってしまったりとか、が苦労した点かな。</p>
+
+  <p>でも、個人的にはきれいなソースだと思うので、是非見てやってください。</p>
+</blockquote>
+
+<p>現状の rjb は、フィールドにアクセスできないという点と Java の GUI ライブラリである Swing を利用する際に環境を選ぶということが報告されている。<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup> もし軽量な SWT 辺りが他の OS の JVM 上でもブリッジできるようになれば、Ruby と Java を適材適所に使うといったハイブリッドな開発が可能になるかもしれない。</p>
+
+<ul>
+  <li>Link
+    <ul>
+      <li>arton 氏の日記 日々の破片 <a href="http://arton.no-ip.info/diary/">http://arton.no-ip.info/diary/</a></li>
+      <li>上記サイトを rjb をキーワードに<a href="http://www.google.co.jp/search?num=100&amp;hl=ja&amp;ie=UTF-8&amp;q=rjb+site%3Aarton.no-ip.info&amp;btnG=Google+%E6%A4%9C%E7%B4%A2&amp;lr=lang_ja">検索</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="rubywebdialogs">Ruby/WebDialogs</h4>
+
+<ul>
+  <li>site : <a href="http://www.erikveen.dds.nl/rubywebdialogs/index.html">http://www.erikveen.dds.nl/rubywebdialogs/index.html</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/rubywebdialogs">RAA:rubywebdialogs</a></li>
+  <li>needs : Javascript を理解できる WEB ブラウザが必要</li>
+  <li>owner : Erik Veenstra</li>
+  <li>screenshot : <a href="http://www.erikveen.dds.nl/rubywebdialogs/index.html#4.6..Japanese">http://www.erikveen.dds.nl/rubywebdialogs/index.html#4.6..Japanese</a></li>
+  <li>GUI ビルダの有無 : なし</li>
+  <li>日本語対応 : 文字コード設定で可能</li>
+</ul>
+
+<hr />
+
+<p>Ruby/WebDialogs はいろいろな意味でユニークな GUI ライブラリである。まず拡張ライブラリではない。</p>
+
+<p>ではどうやって GUI を表示させるかというと Web ブラウザと HTTP でやりとりすることによって、表示は HTML + CSS、イベントは Javascript 経由で受け取る。ある意味簡易 CGI なのである。仕組みとしては、DIV <a href="http://raa.ruby-lang.org/project/div">RAA:div</a> が近いといえるだろう。ただし、Ruby/WebDialogs は localhost だけに限定したフレームワークでファイルアクセスなどもカプセル化している。そして依存ライブラリが必要ない。</p>
+
+<p>部品の表示やイベントは XML で記述し、メソッドと結びつける方式である。Windows 環境では実行すると自動的に Web ブラウザが起動し画面が表示される。Linux だとコンソールに URL が表示されるので、そこにアクセスする必要がある。</p>
+
+<p>発想のユニークさ、仮想化されたモデル、実行環境を選ばないなど他とは違うライブラリである。上記サイトは英語だが図式された仕組みやサンプルコード、snapshot があるので一読をお勧めする。</p>
+
+<ul>
+  <li>Link
+    <ul>
+      <li>@Ruby Garden <a href="http://www.rubygarden.org/ruby?RubyWebDialogs">http://www.rubygarden.org/ruby?RubyWebDialogs</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="終わりに代えて">終わりに代えて</h3>
+
+<p>本稿は、<a href="http://www.gesource.jp/ruby/gui/index.html">Ruby GUI ライブラリ</a>に inspire されたことをまず記しておく。</p>
+
+<p>MacOSX 上での最新の Ruby/Tk の状況が判らないとぐちっていたら、救いの手を差し伸べてくれた <a href="http://mput.dip.jp/">mput 氏</a>にも感謝する。</p>
+
+<p>それから本稿に対するコメントをいただいた GUI ライブラリの関係者の方々、勝手なスケジュールで押し付けてしまってごめんなさい。</p>
+
+<p>その他の GUI ライブラリについて解説しているページもここで紹介しておこう。</p>
+
+<ul>
+  <li>Links
+    <ul>
+      <li><a href="http://kansai.anesth.or.jp/gijutu/ruby/man-z1/refm0315.html">Ruby GUI センター</a> (Mirror)</li>
+      <li><a href="http://i.loveruby.net/w/RubyGuiLibraries.html">RubyGuiLibraries</a></li>
+      <li><a href="http://www.rubygarden.org/ruby?ComparingGuiToolkits">ComparingGuiToolkits</a></li>
+      <li><a href="http://home.arcor.de/scite/">GUI Toolkits fur Ruby</a></li>
+      <li><a href="http://takahr.dhis.portside.net/cgi-bin/rwiki.cgi?cmd=view;name=%A5%C4%A1%BC%A5%EB%A5%AD%A5%C3%A5%C8%C8%E6%B3%D3">ツールキット比較。</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="次回予告">次回予告</h4>
+
+<p>本稿は結構なボリュームになったが、それでもひとつひとつのライブラリの紹介としては、満足な内容ではない。次回 (があれば) からは、二つずつくらい取り上げてコードも含めた掘り下げた内容にしたいと考えている。</p>
+
+<p>もちろん「俺が使った経験で書いてやるぜ」とか「俺が作ったライブラリは俺が一番詳しいぜ」という申し出は大歓迎である。次回はこれを読んだあなたの番かも知れない。</p>
+
+<p>本稿に対する質問や感想を是非、ご自分の Weblog で表明したり、Wiki に書き込んだりして欲しい。</p>
+
+<h3 id="著者について">著者について</h3>
+
+<p><img src="/images/0001-RubyGUI/tamura.jpg" alt="tamura.jpg" /> たむらは、なんちゃって IT 企業に生息する退役エンジニアです。最初に Ruby と出会ったのは、1996 年で、NIFTY-Serve (現 @nifty) の会議室でした。それ以降、こっそり仕事で使ったり、雑誌などに寄稿したり、
+<a href="http://www.rubyist.net/~tamura/d/">えとせとら</a>という日記に 6 歳になる長男と 3 歳の双子のことを書いたりしています。本当は、仮面ライダーブレイドよりもデカレンジャーの方が好きです。</p>
+
+<h2 id="著者の連絡先は-tamura-at-ruby-lang-dot-org-です">著者の連絡先は tamura at ruby-lang dot org です。</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>OS X での native 実装としては、http://gtk-osx.sourceforge.net/ があるが動作未確認&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>GTK は X11 を介さずに例えば FrameBuffer 上でも動作するのでそのような環境でも理屈では Ruby/GTK2 は動くはず&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Ruby/GNOME2 だと libgnome などの拡張ライブラリを指すため、Ruby-GNOME2 なのである。って私もよく間違える&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>ちなみに、Tcl/Tk (8.3) 込みで、Ruby/Tk も使える&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>wxWidgets、Ruby どちらもあるが、wxRuby が動くかは未確認&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>Linux 上の Kylix が Delphi 互換環境なので対応中&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>Linux 上のエミュレータ上で開発し、BTRON/T-Engine 動作可能だが、Ruby で開発可能かは不明&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>筆者は、遊びで WINE 上で動くのを確認したことがある&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>具体的には Win32 と Solaris でしか動作しない&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

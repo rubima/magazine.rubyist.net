@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)</title>
+  <meta name="description" content="編集: babie">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0006/0006-PackageManagement.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0006/0006-PackageManagement.html" class="hatena-bookmark-button" data-hatena-bookmark-title="シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0006/0006-PackageManagement.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0006/0006-PackageManagement.html" data-text="シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>編集: babie</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="この連載について">この連載について</h3>
+
+<p>現在の Ruby のパッケージ管理は標準がありません。
+RPA、RubyGems だけでなく各ディストリビューション・OS 毎にライブラリ・パッケージが提供され、混迷を極めているといっても過言ではありません。
+そこで、各パッケージマネジメント環境の主要開発者の話を伺い、各環境を理解し、分類し、
+さらに連載終了の暁には、
+パッケージマネジメント環境の標準を打ちたてよう！
+という野望をもってお送りするものであります。</p>
+
+<p>というのは嘘で、RLR の連載で「作者からの声」を寄せてもらった際に、
+たまたま RPA、RubyGems の主要開発者が揃っていたので、
+ついでだから話を聞いてみようというゆるいノリで始めました。
+標準が決まって欲しいなぁという気もないではないですが、
+気負わずパッケージに関連する話題を提供していきたいと思います。</p>
+
+<h3 id="今回の記事について">今回の記事について</h3>
+
+<p>RubyGems の主要開発者 Chad Fowler 氏に開発の経緯を書いてもらいました。
+過去・現在・未来の三部作になる予定です。
+今回は過去編です。
+手を動かすところはないので、気軽にお読み下さい。</p>
+
+<h2 id="the-past-present-and-future-of-rubygems-1">The Past, Present, and Future of RubyGems (1)</h2>
+
+<p>著者: Chad Fowler, 
+訳・編: babie</p>
+
+<p>原文 (英文): <a href="http://www.rubygarden.org/index.cgi/Libraries/RubyGems-PastPresentAndFuture-part1.rdoc">http://www.rubygarden.org/index.cgi/Libraries/RubyGems-PastPresentAndFuture-part1.rdoc</a></p>
+
+<h3 id="history">History</h3>
+
+<h4 id="2000-年">2000 年</h4>
+
+<p>2000 年、私は Ruby を使い始めた。
+私の記憶が正しければ、<a href="http://www.ruby-talk.org">ruby-talk メーリングリスト</a>で Perl における <a href="http://www.cpan.org/">CPAN</a> に相当するものがあるかどうか、初めて話題に上った。
+1999 年初頭、サン・マイクロシステムズ所属の Manpreet Singh がこの話題の最初の投稿者となった。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Subject: [ruby-talk:00247] Ruby Application Arvhive
+From: Manpreet Singh &lt;manpreet.singh sun.com&gt;
+Date: Wed, 10 Mar 1999 14:07:15 -0800
+
+やあ、誰か Perl の CPAN のように Ruby モジュールをアーカイブする計画って知らない？
+
+perl -MCPAN -e shell
+
+こんな風に簡単にできるやつ。
+
+Thanks
+Manpreet</code></pre></figure>
+
+<p>それから、
+とりわけ Ruby を支持するトピックが上がった時に、
+しばしば議論が持ち上がった。
+それは大抵こんな感じだった。</p>
+
+<dl>
+  <dt>「なんで Rubyは #{なんとかプログラミング言語} のようにメジャーじゃないの？」</dt>
+  <dd>「ライブラリが少ないからさ。」</dd>
+  <dt>「ライブラリはいっぱいあるじゃないか。何を見つけられないの？」</dt>
+  <dd>「うーん、ライブラリは十分にあると思うけど、見つけられないんだ。そんでもってインストールがキツイ！」</dd>
+  <dt>「Ruby には CPAN のようなものを作る必要がある！　最高のやつを！　委員会を組織しよう！！」</dt>
+  <dd></dd>
+</dl>
+
+<p>(…しばらくして…)</p>
+
+<dl>
+  <dt>「なんで Rubyは #{なんとかプログラミング言語} のようにメジャーじゃないの？」</dt>
+  <dd></dd>
+</dl>
+
+<p>私はこういった不平不満を別に茶化すつもりはない。
+当時は本当に頭の痛い問題だった。
+Ruby のソフトウェアをインストールする時、
+原始的なインストーラーはあったが、
+決まった方法は確立されてなかった。
+そして、再帰的な依存性地獄に陥ったもんだ。
+特に新規の Ruby ユーザーにとっては
+全く苛々する経験だった。</p>
+
+<h4 id="2001-年">2001 年</h4>
+
+<p>2001 年夏、Ruby のパッケージング環境に 2 つの興味深い動きがあった。</p>
+
+<p>まず 1 つは、青木峰郎氏が setup.rb の バージョン 1.0.0 をリリースした事だ。
+現在でもとてもポピュラーな
+setup.rb
+は、Ruby のパッケージング問題の一部を解決してくれた。
+求められていた Ruby のインストーラーに対するデファクトスタンダードとなり、
+統一的なパッケージレイアウトの元となった。
+でも「CPAN はどこよ？」と探している人達にとっては十分じゃなかった。</p>
+
+<p>2 つ目に、Ryan Leavengood が “RubyGems” と呼ぶプロジェクトを発足した。
+RubyGems は、2001 年 8 月に開催された初のインターナショナル Ruby カンファレンスで発表された。
+その最初の実装は、Java の jar ファイルのような Ruby のライブラリを 1 つに纏めたファイルを生成し、
+その纏めたファイルからロードするために ‘require’ をハックしていた。
+発表の時、Matz も出席しており、RubyGems に興味をもったのは間違いない。
+そして、標準配布物に同梱できるように
+Ryan に Ruby の CVS リポジトリのコミット権を与えようと持ちかけた。
+Matz は特に “execute” できる機能に興味を持った。
+それはこんな感じだ。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby --gem=myprogram.gem</code></pre></figure>
+
+<p>Ryan のソフトウェアに対する反響と、
+相次ぐ「Ruby の CPAN を作れ」という要望に押され、
+Ruby カンファレンスの参加者達は協調してセッションを設け、
+後に RAA.succ と呼ばれるようになる機能群をまとめた。
+多くの委員会主導の努力が無駄に終わる例にもれず、
+このバージョンの RAA.succ はついに日の目を見ることはなかった。
+しかし、このアイデアは、カンファレンスが終わった後も、
+長らく参加したメンバー達の心を捉えて離さなかった。
+特に、中心のリポジトリにメタデータを集積するという
+「スマートな」パッケージのアイデアは今日にも通用する。</p>
+
+<p>Ruby カンファレンスの後、
+興奮はおさまり、
+Ryan は <a href="http://sourceforge.net/project/showfiles.php?group_id=34845">RubyGems 0.4.0</a> を SourceForge でリリースした。
+そしてこれが彼の RubyGems における最後の仕事だった。</p>
+
+<h4 id="2002-年">2002 年</h4>
+
+<p>2002 年、活動は混乱していた。
+<a href="http://raa.ruby-lang.org/project/rpkg">rpkg</a> があり、
+<a href="http://raa.ruby-lang.org/project/installpkg">installpkg</a> があり、
+そして特筆すべき <a href="http://raa.ruby-lang.org/project/raainstall">RAA-Install</a> があった。
+RAA-Install は <a href="http://raa.ruby-lang.org">RAA</a> のメタデータを基に自動でインストールをするという、真に野心的な試みだった。
+それは Ruby の標準配布物に同梱して欲しいという 
+<a href="http://www.rubygarden.org/ruby?RaaInstallInRuby">Wiki 上の請願書</a>にサインするかなりの数の支持者を集めた。</p>
+
+<p>多くの Rubyist 達のひたむきな努力にもかかわらず、
+Ruby コミュニティのための
+確固たる、いつでもどこからでもアクセスできるパッケージマネジメントの仕組みは用意されないまま、
+2002 年は過ぎ去った。</p>
+
+<h4 id="2003-年">2003 年</h4>
+
+<p>そしてまた、2003 年も同じ状況のまま過ぎ去った。
+ただ、11 月末の Ruby カンファレンス、
+我々の優しい独裁者である Matz との懇談会で、
+David Black は、この件に関しては、もっと厳しくもっと独裁的に振舞って欲しいと提案した。</p>
+
+<p>その時、Matz はこういうようなことを言った。
+「誰か作ってくれたら、Ruby の標準配布物に含めるよ。」
+そして Rich kilmer はすぐに、
+まさしく素早く、
+数人を引き連れて、
+ホテルのバーで作り上げてしまった。
+コードとカフェインで満たされた長い夜が明けて、
+私達の手には新生 RubyGems があった。
+それは
+ライブラリとその依存するものをリモート・インストールできるという
+基本的な機能を備えていた。
+私達は Ryan のオリジナルと同じ名前をつけた (Ryan の許可はもらっている)。
+しかし、2001 年版 RubyGems と 2003 年版 RubyGems との類似点は、
+その目標である Ruby コードを配布する方法を簡略化し標準化するという点だけだった。</p>
+
+<h3 id="nuts-and-bolts">Nuts and Bolts</h3>
+
+<p>我々が初期にリリースした RubyGems のもっとも面白く (そして賛否両論の) 機能は、
+同一のライブラリの複数のバージョンを同時に管理できるようにしたことだ。
+例えば、RedCloth の 2.0.3、3.0.0、3.0.3 を全てインストールし、
+スクリプト毎にどのバージョンを使うか選択できるのだ。
+具体的には、バージョンを指定する為に比較演算子を使うことができる。
+例えば、RedCloth 3 もしくはそれ以上のバージョンでしか動かないライブラリがあったと場合、下記のようにすれば良い。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require_gem 'RedCloth', '&gt;= 3.0.0'</code></pre></figure>
+
+<p>こうして、適切なバージョンの RedCloth を $LOAD_PATH に加えて、
+前もってパッケージ作成者が autorequire 属性で指定おいたファイルを、自動で require することができる。</p>
+
+<p>また、バージョン指定演算子はインストール時にも使える。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gem install redcloth --version "&gt;= 3.0.0"</code></pre></figure>
+
+<p>この場合も、バージョンの指定がない場合も、
+最新のバージョンが使用される。</p>
+
+<p>議論を呼ぶところは、
+これらの機能を実装するために RubyGems の配布物を全て専用のディレクトリに置く方法を採用したということである。
+我々はこの方が行儀がいいと思ったのでそうした。
+そのおかげで、RubyGems 管理外のファイルを消してしまう心配をしないで、安全に扱うことができるのだ。</p>
+
+<h3 id="to-be-continued">To be continued</h3>
+
+<p>次回は、現在の RubyGems の状況についてお伝えします。
+リリースしてから今日まで
+RubyGems のダウンロード数は 4 万件、
+ライブラリとアプリケーションのリモート・インストール数は 30 万件を超えるまでになっています。
+初期リリースから 1.0 までの進化の過程を追ってみようと思います。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>Chad Fowler はある巨大な多国籍企業のソフトウェア開発者 兼 マネージャーです。
+最近はインドに住んで働いており、オフショア・ソフトウェア開発センターを設置し率いています。
+また、Ruby Central の共同設立者でもあります。
+Ruby Central は非営利企業で、 
+毎年行われる インターナショナル Ruby カンファレンス を主催し、
+Ruby コミュニティを支援しています。</p>
+
+<h2 id="次回予告">次回予告</h2>
+
+<p>RPA の主要開発者 Mauricio FernaOdez 氏に開発の経緯等を述べてもらおうと思っています。が、しかし、オファーも了承してもらい、案も出してもらっているのですが、多忙なためか連絡が途絶えております (汗。
+というわけで、未定です。</p>
+
+<h2 id="シリーズ-パッケージマネジメント-連載一覧">シリーズ パッケージマネジメント 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0010/0010-PackageManagement.html">シリーズ パッケージマネジメント 【第 2 回】 RubyGems (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-PackageManagement.html">シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

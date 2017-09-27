@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby Conference 2005 レポート</title>
+  <meta name="description" content="まとめた人：ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0011/0011-RubyConf2005Report.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby Conference 2005 レポート</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0011/0011-RubyConf2005Report.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby Conference 2005 レポート" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0011/0011-RubyConf2005Report.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0011/0011-RubyConf2005Report.html" data-text="Ruby Conference 2005 レポート">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>まとめた人：ささだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p><img src="/images/0011-RubyConf2005Report/rc1.jpg" alt="rc1.jpg" />先月 10 月 14 日 (金) から三日間、<a href="http://www.rubyconf.org/">Fifth International Ruby Conference</a>、通称 RubyConf 2005 がアメリカはサンディエゴで行われました。この日程は、同じくサンディエゴで 10 月 16 日 (日) から行われた <a href="http://www.oopsla.org/2005/">OBJECT-ORIENTED PROGRAMMING, SYSTEMS, LANGUAGES and APPLICATIONS 2005</a>、通称 OOPSLA’05 に日程をあわせて行われました。</p>
+
+<p>今回はなんと総参加者が 200 人弱と、去年が 60 人ほどだったものに比べ、大変規模が大きくなりました。また、日本人参加者がなんと 14 人！　去年までの日本人参加者の最大数は 3 人だったそうなので、これまた凄い人数です。Ruby on Rails 効果による Ruby の人気と、OOPSLA に日程と場所を合わせた効果だと思いますが、それにしても Ruby の注目度は非常に高いことが伺えます。</p>
+
+<p>本稿では RubyConf 2005 に出席した人の生の声を中心にまとめたいと思います。</p>
+
+<h2 id="rubyconf-2005-について">RubyConf 2005 について</h2>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2005 年 10 月 14 日 (金) 〜 16 日 (日)</dd>
+  <dd><img src="/images/0011-RubyConf2005Report/rc8.jpg" alt="rc8.jpg" /></dd>
+  <dt>開催場所</dt>
+  <dd>Lafayette Hotel and Suites, San Diego, CA, USA</dd>
+  <dt>開催母体</dt>
+  <dd><a href="http://www.rubycentral.com/">Ruby Central</a></dd>
+  <dt>中心スタッフ</dt>
+  <dd>David Alan Black and Chad Fowler</dd>
+  <dt>参加者</dt>
+  <dd>200 人くらい</dd>
+</dl>
+
+<h2 id="カンファレンスの内容">カンファレンスの内容</h2>
+
+<p>プログラムは会場で配布された Agenda<sup id="fnref:2"><a href="#fn:2" class="footnote">1</a></sup> より引用します。</p>
+
+<p>また、各発表について、独断と偏見で一言コメントを付けさせていただきます。</p>
+
+<h3 id="rubyconf-2005-前夜">RubyConf 2005 前夜</h3>
+
+<p>前日の昼から Rubyist 達がホテルに集っていた。ロビーに入ったら、テーブルを囲んで PowerBook を開いている集団が目にとまり驚いた。夜は <a href="http://www.gordonbiersch.com/">Gordon Biersch</a> というブリュワリーレストランに行って、皆で食事をした。</p>
+
+<h3 id="friday-october-14">Friday, October 14</h3>
+
+<ul>
+  <li>8:30 Continental breakfast
+    <ul>
+      <li>朝ごはんは Continental breakfast と、ホテル側の用意した暖かい食べ物があった。</li>
+    </ul>
+  </li>
+  <li>9:15 Welcome
+    <ul>
+      <li>David Black の開会の言葉。このホールは Top Gun の撮影で使われたとか。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/0011-RubyConf2005Report/rc5.jpg" alt="rc5.jpg" /></p>
+
+<ul>
+  <li>10:00-12:00 Panel 1
+    <ul>
+      <li>Francis Hwang - Top-to-bottom Testing in Ruby
+        <ul>
+          <li>いきなり予定のプログラムと違っていてびびったのだけれど、テストをどうするか、という話。</li>
+        </ul>
+      </li>
+      <li>Akira Tanaka - open-uri: easy to use and extensible virtual file system
+        <ul>
+          <li>田中さんの「いかに使いやすい拡張ライブラリを作るか」講座。なかなか稀有な話。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>12:00 Lunch
+    <ul>
+      <li>ランチはカンファレンス側で用意。ちゃんと座って食べる食事でした。</li>
+    </ul>
+  </li>
+  <li>13:30-16:30 Panel 2
+    <ul>
+      <li>Charles Nutter - JRuby: A Ruby VM in Java
+        <ul>
+          <li>JRuby の進捗と今後。Continuation Passing Style にするらしいんだけれど、どれくらい有効なのかな。</li>
+        </ul>
+      </li>
+      <li>Koichi SASADA - YARV Progress Report
+        <ul>
+          <li>ささだの YARV の進捗報告と、今後の話。でも、会場に伝わったのはジョークだけだという。<img src="/images/0011-RubyConf2005Report/rc9.jpg" alt="rc9.jpg" /></li>
+        </ul>
+      </li>
+      <li>Eric Hodel - Reimplementing Ruby
+        <ul>
+          <li>ruby2c を利用して、Ruby で Ruby を実装しましょう、という話。どれくらい有効なのかな。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>dinner (on your own)
+    <ul>
+      <li>日本人何人かで近所のデニーズに行きました。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/0011-RubyConf2005Report/rc2.jpg" alt="rc2.jpg" /></p>
+
+<ul>
+  <li>Yukihiro “matz” Matsumoto - Roundtable
+    <ul>
+      <li>会場からの英語での質問にまつもとさんが答えまくる、という企画。ジョークを交えた回答を即座にできて、まつもとさんスゲー、と思っていた 1 時間半。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/0011-RubyConf2005Report/rc6.jpg" alt="rc6.jpg" /> (写真は被告人席に座っているまつもとさん)</p>
+
+<h3 id="saturday-october-15">Saturday, October 15</h3>
+
+<ul>
+  <li>
+    <p>8:30 Continental breakfast</p>
+  </li>
+  <li>9:00-11:30 Panel 3
+    <ul>
+      <li>Kevin Baird - Refactoring No Clergy
+        <ul>
+          <li>「No Clergy」という音楽作品を Python で書いていたが、Ruby に書き直した経験を語る。</li>
+        </ul>
+      </li>
+      <li>Brent Roman - Embedding Ruby into a Robotic Marine Laboratory
+        <ul>
+          <li>Ruby であるロボットを動かす、という話。Ruby の何が良かったとか。</li>
+        </ul>
+      </li>
+      <li>Austin Ziegler - PDF::Writer
+        <ul>
+          <li>Pure Ruby で実装してある PDF::Writer の紹介。すでに takahashi メソッドを実装済みらしい。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>12:00 Lunch</p>
+  </li>
+  <li>13:30-17:00 Panel 4
+    <ul>
+      <li>Ryan Davis - Polishing Ruby: Power Tools and Toys
+        <ul>
+          <li>彼の作っているテストツール、プロファイラ、RubyInline、ruby2c などの紹介と、それを利用した実行時最適化のデモ。</li>
+        </ul>
+      </li>
+      <li>Jim Weirich - Creating Domain Specific Languages in Ruby
+        <ul>
+          <li>DSL を Ruby で表現するのは楽だね、という話。ジャグリングを実際にしていたんだが、マイクでぜぇぜぇ言うのはちょっと。</li>
+        </ul>
+      </li>
+      <li>Karlin Fox - System Testing in Ruby with Systir
+        <ul>
+          <li>「story-driven development という概念を導入している。書いたストーリーがそのままシステムテストになるらしい。ストーリーを書いてから開発する」(卜部さん日記より引用)、という話らしい。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>突発のアナウンス大会
+    <ul>
+      <li>数十人出てきて各人 1、2 分で好きなことをアナウンス。「今晩このテーマでハックするよ」とか、色々。</li>
+    </ul>
+  </li>
+  <li>18:00 Conference Dinner
+    <ul>
+      <li>この日は夕飯が出た。まぁ、量は多いよね。</li>
+    </ul>
+  </li>
+  <li>after dinner Keynote address: Yukihiro “matz” Matsumoto
+    <ul>
+      <li>スライド: <a href="http://www.rubyist.net/~matz/slides/rc2005/">http://www.rubyist.net/~matz/slides/rc2005/</a></li>
+      <li>30 分ほど遅れてのスタートだが、まつもとさんが Ruby の今後の機能をプレゼン。枕に「日本人は生活必需品作るのが得意だよね。TOYOTA とか HONDA とか SONY とか PANASONIC とか……Ruby とか」として会場沸く。1 トピックずつ質問を受け付けたので、ちょっとグダグダ感があって、最後のほうのトピックは飛ばし飛ばしになってしまっていたのが残念。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/0011-RubyConf2005Report/rc4.jpg" alt="rc4.jpg" /></p>
+
+<h3 id="sunday-october-16">Sunday, October 16</h3>
+
+<ul>
+  <li>
+    <p>8:30 Continental breakfast</p>
+  </li>
+  <li>9:00 Panel 5
+    <ul>
+      <li>David Heinemeier Hansson - The State of the Rails
+        <ul>
+          <li><img src="/images/0011-RubyConf2005Report/rc10.jpg" alt="rc10.jpg" />言わずもがなな Ruby on Rails 開発者の話。技術的なことはほとんどなかった。</li>
+        </ul>
+      </li>
+      <li>Nathaniel Talbott - Rails: Serving the long tail in 1883 and 2005
+        <ul>
+          <li>アメリカの歴史と Rails の歴史を重ねた話。</li>
+        </ul>
+      </li>
+      <li>Aslak Hellesoy - Continuous Integration with DamageControl
+        <ul>
+          <li>Damage Control の紹介。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>12:00 Lunch
+    <ul>
+      <li>RubyConf 2005 最後のランチ。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="after-lunch-workshops">after lunch Workshops</h3>
+
+<ul>
+  <li>David Heinemeier Hansson - Hands-on Rails
+    <ul>
+      <li>Rails 次期バージョンの新機能についての説明。Hands on という感じではなかった。</li>
+    </ul>
+  </li>
+  <li>Jim Weirich &amp; Chad Fowler - Continuations Demystified
+    <ul>
+      <li>Continuation って何？　というところから、Continuation を利用して throw/catch を自分で作ってみよう、という課題までを用意した意欲的なワークショップ。いきなりゼルダの伝説 (時のオカリナ。シナリオが Continuation に絡むらしい) が始まってびっくりした。</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/0011-RubyConf2005Report/rc7.jpg" alt="rc7.jpg" /></p>
+
+<h3 id="参考資料">参考資料</h3>
+
+<h4 id="卜部さんの日本語の実況ログ">卜部さんの日本語の実況ログ</h4>
+
+<p>卜部さんが各セッションの模様を聞きながら日記に書く (！) という離れ技をやってくれたので、詳細はこちらをご覧ください。日本語です :)</p>
+
+<ul>
+  <li><a href="http://mput.dip.jp/mput/?date=20051015">http://mput.dip.jp/mput/?date=20051015</a></li>
+  <li><a href="http://mput.dip.jp/mput/?date=20051016">http://mput.dip.jp/mput/?date=20051016</a></li>
+  <li><a href="http://mput.dip.jp/mput/?date=20051017">http://mput.dip.jp/mput/?date=20051017</a></li>
+</ul>
+
+<h4 id="スライド">スライド</h4>
+
+<ul>
+  <li>Ryan Davis が RubyConf 2005 の発表で利用したスライドを集めて公開しています：<a href="http://www.zenspider.com/Languages/Ruby/RubyConf2005.html">RubyConf 2005</a></li>
+</ul>
+
+<h2 id="感想">感想</h2>
+
+<p>日本人参加者より RubyConf 2005 の感想を頂きました。</p>
+
+<h3 id="まつもとさん">まつもとさん</h3>
+
+<p>キーワードは「多かった」でしょうか。</p>
+
+<ul>
+  <li>出席者が多かった</li>
+  <li>Ruby で食べてる人が多かった</li>
+  <li>日本人出席者が多かった</li>
+  <li>料理の量が多かった</li>
+</ul>
+
+<h3 id="江渡さん">江渡さん</h3>
+
+<p>Exciting!</p>
+
+<p>まつもとさんのプレゼンに感動しました。いまから Ruby 2.0 が楽しみです。</p>
+
+<p>“Wild and Weird” な Ruby 万歳!</p>
+
+<h3 id="卜部さん">卜部さん</h3>
+
+<p>初めての海外旅行、初めての RubyConf でしたが大変興味深い発表ばかりでとても有意義でした。本当は議論とかいろいろ参加したかったけどさすがにそこまでの会話スキルはなくてあまり参加できなかったのが残念です。ぜひ次回以降も条件 (予算とか……) が許せば参加したいと思います。</p>
+
+<h3 id="新井さん">新井さん</h3>
+
+<p>まだ Ruby を始めてから二年くらいの私ですが、仕事をすべて Ruby で片付けるようになり、RubyConf にも参加してみました。感想は、とにかく Nice なコミュニティだということです。</p>
+
+<p>もう一つの感想は Matz は魅力的な人物だなあ、ということです。Round Table で質問にウィットの効いた答えを返す様子はカリスマを感じました。</p>
+
+<p>私も Ruby に対して何か貢献できるかもしれないという思いを抱いたカンファレンスでした。</p>
+
+<p>Ruby == Happy Hacking</p>
+
+<h3 id="森脇さん">森脇さん</h3>
+
+<p>空港で盗難にあいました。貴重品は必ず機内持込しよう！　そういう感想はさておき。</p>
+
+<p>四方八方 Ruby Fan という熱気を浴び、日頃名前しか目にしない方々とお話したりして、想像と現実の調整ができました。
+セッションは、知らないことだらけということではなかったので一安心 (？) だったのですが、仕事として Ruby を使っている割合が 1/3 ほどもあって驚きました。</p>
+
+<p>Ruby は、もはや趣味の世界ではなく、欠かすことのできないものとして回っていることを目のあたりにできました。何か役立つものを知ろうという意気込みが会場に満ちていたと思います。Keynote では、まつもとさんへの 200 人からの大拍手が鳴り止まず、海を越えたここにも素晴らしいコミュニティがあることを実感しました。</p>
+
+<p>来年に向けて、Ruby はもちんですが、英語力をもっと上げないと……。議論の輪になかなか入れないのは残念。</p>
+
+<h3 id="高橋-maki-さん">高橋 (maki) さん</h3>
+
+<p>今年の Ruby Conference は、なんといっても Rails 効果ですね。3 日目は一部で「Rails トラック」とも呼ばれてたほど、DHH のスピーチで始まり、Talbott のちょっとよく分からない話に続き、午後の Rails セッションでも Rails1.0RC 版 (最終的には 0.14.x としてリリースされたもの) についての変更点についてもろもろ説明があり、という Rails づくしでした。前回の RubyConf2004 における DHH の初発表から 1 年を経て、Rails の躍進振りを思わせるものでした。</p>
+
+<p>もっとも、RubyConf 初の 200 人規模にまでなったのは、OOPSLA 効果があったのも忘れてはいけません。実は、RubyConf は第 2 回まで OOPSLA の開催直前に OOPSLA 会場に近い場所で行われていたため、OOPSLA 参加者がついでに来る、という例が多かったのでした。実際、前回の RubyConf より第 2 回の方がのべ参加者が多かったと記憶しています (ちょっとあいまい)。</p>
+
+<p>いずれにしても、この勢いで増えつづけると、主催者側はたいへんでしょうね。でも、日本でもこれくらいの規模の国内イベントをやってみたいとも思った 3 日間でした。</p>
+
+<h3 id="荻野-さん">荻野 さん</h3>
+
+<p>RubyConf2004 に引き続き参加しました。</p>
+
+<p>小ぶりだった昨年にくらべて、全体の参加人数が 3 倍になるし日本人参加者も 14 人もいるし (昨年は 3 人)、すごい盛り上がりを感じます。</p>
+
+<p>本当のことを言うと私は RubyConf に来て international な開発者たちと議論できるような英語力があるわけではないのですが、それどころかセッション内容を聞くことすらおぼつかないわけですが、それでもここでしか得られない刺激をたくさん受けて帰ってきました。</p>
+
+<p>Ruby の周辺は成長し続けているので、今から来年の RubyConf がたのしみです。そのためにいろいろとがんばらないとなあと再認識。</p>
+
+<p>これを読んでいる皆さんも、海外の Ruby コミュニティが持つ刺激を受けるためにぜひ参加を検討してみてください。</p>
+
+<h3 id="西田さん">西田さん</h3>
+
+<p>カンファレンスでは、もっと人としゃべれたらなあと思うのですが、語学力が追いついていけませんでした。</p>
+
+<p>また、海外ははじめてということもあり、身に覚えのない荷物が紛れこんだりして驚きの連続でした。</p>
+
+<p>もう少し英語が使えるようになろう。</p>
+
+<h3 id="前田さん">前田さん</h3>
+
+<p>英語はわかりませんでしたが、Ruby のコードはよくわかりました。Ruby 万歳。
+コードが出て来ないようなプレゼンはぜんぜんわかんなくて、あとで卜部さんの日記のレポートを読んではじめて内容を理解してたりしました :(</p>
+
+<p>昔書き散らしたプログラムのおかげで何人かの人に話しかけてもらえて、片言ながら多少話ができたのがよかったです。いつか日本でも International な Ruby Conference ができるといいですね。</p>
+
+<h3 id="青木さん">青木さん</h3>
+
+<p>今回の RubyConf ではプレゼンテーションの重要さを痛感しました。
+もちろんスライドを使ってやるプレゼンも含まれますが、
+英会話とか、プロジェクトの宣伝のしかたとか、
+とにかく提示のしかたすべてに関して危機感を覚えます。</p>
+
+<p>えーと、とりあえず…… Mac でも買うか。</p>
+
+<h3 id="ささだ">ささだ</h3>
+
+<p>RubyConf の熱気は凄いし楽しいので、つい日本でも Ruby Conference みたいなものをやることにしてしまいました。</p>
+
+<p>英語は、OOPSLA も含めあまりに悔しいので iPod nano を買いました。英会話能力に結びつくかは不明。</p>
+
+<h2 id="おまけoopsla05-での-ruby-事情">おまけ：OOPSLA’05 での Ruby 事情</h2>
+
+<p>RubyConf 2005 が場所、時期をあわせた OOPLSA’05 に、RubyConf 2005 参加者の日本人としては新井さん、江渡さん、田中さんとささだが参加しました。江渡さんは <a href="http://www.wikisym.org/ws2005/">Wiki Symposium</a> での Paper 発表 (<a href="http://ws2005.wikisym.org/space/Kouichirou+Eto,+Satoru+Takabayashi,+Toshiyuki+Masui.+%22qwikWeb+-+Integrating+mailing+list+and+WikiWikiWeb+for+group+communication.%22">qwikWeb - Integrating mailing list and WikiWikiWeb for group communication</a>)、ささだは OOPSLA の Poster 発表 (<a href="http://www.oopsla.org/2005/ShowEvent.do?id=533">OOPSLA’05 - YARV: Yet Another RubyVM</a>) を行いました。江渡さんによる Wiki Symposium の報告は SoftwareDesign 誌 2006 年 1 月号の Wiki つまみぐいで掲載されるとのことです。</p>
+
+<p><img src="/images/0011-RubyConf2005Report/oopsla1.jpg" alt="oopsla1.jpg" /> Ruby 関連の話ですが、まず 10 月 17 日 (月) が私のポスター発表でした<sup id="fnref:3"><a href="#fn:3" class="footnote">2</a></sup>。ほかのポスター発表の人は設計やら理論やらプロセスやらだったので、実装の話は思いっきり浮いてるなぁ、という感じだったのですが、Ruby 自体に興味を持つ人が多く、立ち止まって見てくれる人、声をかけてくれる人は多かったです。また、OOPSLA は Smalltalk ハッカーが多いコミュニティですので、Smalltalk 関連の実装の話を色々と聞くことができました。</p>
+
+<p>その次の日、10 月 18 日には Dynamic Language Symposium があったのですが、その中でも Ruby に興味がある人は多かったようです (シンポジウム開始後、いきなり、聴衆全員が自己紹介をする、というイベントがあって焦りました。そのとき、Ruby という単語を喋っていた人が多かった、という話です)。その中の 1 セッション、<a href="http://decomp.ulb.ac.be/events/dls05/implementingdynamiclanguagesonthe.netclr/">Implementing Dynamic Languages on the .NET CLR</a> を聞きに行ったのですが、なんと中心になったお題は Ruby の .NET 実装！　英語が聞き取れなくて議論に参加できずに大変悔しい思いをしました。</p>
+
+<p>10 月 19 日には夜に Ruby の BoF を Ryan Davis が中心になって開催していたのですが、裏番組に Sun がデザートを配るというイベントがあったからか (私も最初はケーキを食べてから行きました)、10 人強という感じで、Rails に興味がある人が集まった、という感じでした。</p>
+
+<p>Ruby というキーワードは OOPSLA では思いのほかよく聞きました。OOPSLA は研究よりの人たちが集まるコミュニティですが、Ruby はその中でも注目を浴びていると感じました。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>本稿では出席者の声を中心に RubyConf 2005 をレポートしました。</p>
+
+<p><a href="/articles/0002/0002-RubyConf2004Report.html">Ruby Conference 2004 レポート</a> を見ると、</p>
+
+<blockquote>
+  <p>60 人ほどの出席者の中で、日本人は 2、3 人というのはやはりさびしいので、来年はもっと日本人の出席者が増えるといいですね。来年は日本人出席者 4 名の最高記録を目指したいです。</p>
+</blockquote>
+
+<p>と書いてあったりして、目標 (なんの) を凄い越したなあ、という感じです。
+<img src="/images/0011-RubyConf2005Report/rc3.jpg" alt="rc3.jpg" /></p>
+
+<p>今月の巻頭言にもありますが、日本 (日本語) だけでの RubyConf みたいなものも企画しておりますので、そちらにも是非ご期待ください。アメリカに行くより近いですよ。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:2">
+      <p>http://www.rubycentral.org/conference/agenda.html とは若干違う<sup id="fnref:1"><a href="#fn:1" class="footnote">3</a></sup>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>余談ですが、ポスター発表はウェルカムパーティー、つまり豪華っぽい料理が並んだ立食パーティー会場の周りにポスターが置いてある、という状況でした。つまり、ポスター発表者は説明しないといけないのでご飯が食べられないのです。これは悲しかった。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:1">
+      <p>さらにいうと会場でいきなり題名が変わってたやつもあった気がする。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

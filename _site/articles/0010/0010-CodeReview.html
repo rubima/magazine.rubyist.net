@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb</title>
+  <meta name="description" content="著者： 青木峰郎">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0010/0010-CodeReview.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0010/0010-CodeReview.html" class="hatena-bookmark-button" data-hatena-bookmark-title="あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0010/0010-CodeReview.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0010/0010-CodeReview.html" data-text="あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者： 青木峰郎</p>
+
+<ul id="markdown-toc">
+  <li><a href="#この連載について" id="markdown-toc-この連載について">この連載について</a></li>
+  <li><a href="#今回のお題-pukiparb" id="markdown-toc-今回のお題-pukiparb">今回のお題 〜pukipa.rb〜</a>    <ul>
+      <li><a href="#pukiwiki-文法" id="markdown-toc-pukiwiki-文法">PukiWiki 文法</a></li>
+      <li><a href="#pukiparb" id="markdown-toc-pukiparb">pukipa.rb</a></li>
+    </ul>
+  </li>
+  <li><a href="#プログラムの意味の保証" id="markdown-toc-プログラムの意味の保証">プログラムの意味の保証</a></li>
+  <li><a href="#コーディングスタイルの改善" id="markdown-toc-コーディングスタイルの改善">コーディングスタイルの改善</a>    <ul>
+      <li><a href="#インデント" id="markdown-toc-インデント">インデント</a></li>
+      <li><a href="#括弧と空白" id="markdown-toc-括弧と空白">括弧と空白</a></li>
+      <li><a href="#カンマと空白" id="markdown-toc-カンマと空白">カンマと空白</a></li>
+      <li><a href="#コメント" id="markdown-toc-コメント">コメント</a></li>
+      <li><a href="#コーディングスタイルの統一" id="markdown-toc-コーディングスタイルの統一">コーディングスタイルの統一</a></li>
+    </ul>
+  </li>
+  <li><a href="#文単位の改善" id="markdown-toc-文単位の改善">文単位の改善</a>    <ul>
+      <li><a href="#リテラルへの式埋め込み" id="markdown-toc-リテラルへの式埋め込み">リテラルへの式埋め込み</a></li>
+      <li><a href="#unless-と-until" id="markdown-toc-unless-と-until">unless と until</a></li>
+      <li><a href="#case" id="markdown-toc-case">case</a></li>
+      <li><a href="#到達しないはずのコード" id="markdown-toc-到達しないはずのコード">到達しないはずのコード</a></li>
+    </ul>
+  </li>
+  <li><a href="#インターフェイスの改善" id="markdown-toc-インターフェイスの改善">インターフェイスの改善</a>    <ul>
+      <li><a href="#クラス名とファイル名" id="markdown-toc-クラス名とファイル名">クラス名とファイル名</a></li>
+      <li><a href="#元のインターフェイス" id="markdown-toc-元のインターフェイス">元のインターフェイス</a></li>
+      <li><a href="#改善後のインターフェイス" id="markdown-toc-改善後のインターフェイス">改善後のインターフェイス</a></li>
+      <li><a href="#可視性" id="markdown-toc-可視性">可視性</a></li>
+    </ul>
+  </li>
+  <li><a href="#メソッド単位の改善" id="markdown-toc-メソッド単位の改善">メソッド単位の改善</a>    <ul>
+      <li><a href="#pukipapagelist" id="markdown-toc-pukipapagelist">Pukipa#pagelist</a></li>
+      <li><a href="#pukipato_html-block_parse" id="markdown-toc-pukipato_html-block_parse">Pukipa#to_html, #block_parse</a></li>
+      <li><a href="#pukipah_parse" id="markdown-toc-pukipah_parse">Pukipa#h_parse</a></li>
+      <li><a href="#多くのメソッドを使うことの是非" id="markdown-toc-多くのメソッドを使うことの是非">多くのメソッドを使うことの是非</a></li>
+      <li><a href="#pukipadl_parse" id="markdown-toc-pukipadl_parse">Pukipa#dl_parse</a></li>
+      <li><a href="#pukipastr_parse" id="markdown-toc-pukipastr_parse">Pukipa#str_parse</a></li>
+      <li><a href="#pukipaescapehtml-escape" id="markdown-toc-pukipaescapehtml-escape">Pukipa#escapeHTML, #escape</a></li>
+    </ul>
+  </li>
+  <li><a href="#添削終了" id="markdown-toc-添削終了">添削終了！</a></li>
+  <li><a href="#コードの全体的なよさを計測する" id="markdown-toc-コードの全体的なよさを計測する">コードの「全体的なよさ」を計測する</a>    <ul>
+      <li><a href="#コード量" id="markdown-toc-コード量">コード量</a></li>
+      <li><a href="#メソッドの行数の分布" id="markdown-toc-メソッドの行数の分布">メソッドの行数の分布</a></li>
+      <li><a href="#メソッド間の構造" id="markdown-toc-メソッド間の構造">メソッド間の構造</a></li>
+    </ul>
+  </li>
+  <li><a href="#速度比較" id="markdown-toc-速度比較">速度比較</a>    <ul>
+      <li><a href="#ベンチマークの結果" id="markdown-toc-ベンチマークの結果">ベンチマークの結果</a></li>
+      <li><a href="#原因の追究-1-ガベージコレクション" id="markdown-toc-原因の追究-1-ガベージコレクション">原因の追究 (1) ガベージコレクション</a></li>
+      <li><a href="#原因の追究-2-プロファイリング" id="markdown-toc-原因の追究-2-プロファイリング">原因の追究 (2) プロファイリング</a></li>
+      <li><a href="#改善策" id="markdown-toc-改善策">改善策</a></li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a>    <ul>
+      <li><a href="#プログラム募集" id="markdown-toc-プログラム募集">プログラム募集</a></li>
+      <li><a href="#次回予告" id="markdown-toc-次回予告">次回予告</a></li>
+    </ul>
+  </li>
+  <li><a href="#参考文献" id="markdown-toc-参考文献">参考文献</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#あなたの-ruby-コードを添削します-連載一覧" id="markdown-toc-あなたの-ruby-コードを添削します-連載一覧">あなたの Ruby コードを添削します 連載一覧</a></li>
+</ul>
+
+<h2 id="この連載について">この連載について</h2>
+
+<p>この連載では、投稿してもらった Ruby プログラムを様々な角度から添削してみようと思います。
+添削基準は著者（今回は青木）の独断と偏見のみです。</p>
+
+<p>きっかけになったのは
+<a href="http://www.ospn.jp/osc2005-fall/">Open Source Conference 2005/Fall</a>
+で行われた「あなたの Ruby コードを添削します」というセミナーでした。
+このセミナーは高橋征義さん・後藤裕蔵さん・青木の三人によって行われ、
+好評をいただきました。
+<img src="/images/0010-CodeReview/osc2005fall-pukipa.jpg" alt="osc2005fall-pukipa.jpg" /></p>
+
+<p>本来ならばそれで終わりのはずだったのですが、
+その後行われた宴会の際に交わされたらしい、
+こんな感じだったような気がする会話が命取りになってしまいました。</p>
+
+<p>誰か「あの添削さあ、るびまでやったらいいんじゃない？」</p>
+
+<p>青木「あー、それはいいかもねえやろうかー。10 月号でいいよね？」</p>
+
+<p>昔の人は言いました。「酒は飲んでも飲まれるな」。
+つくづく昔の人は無茶を言うものだと思う今日このごろです。</p>
+
+<h2 id="今回のお題-pukiparb">今回のお題 〜pukipa.rb〜</h2>
+
+<p>さて今回爼上にのせるのは、PukiWiki 文法のパーサ pukipa.rb (MIT ライセンス) です。
+このプログラムは <a href="http://rails2u.com">rails2u</a> の
+gorou さんに提供していただきました。ありがとうございます。</p>
+
+<p><a href="http://pukiwiki.sourceforge.jp">PukiWiki</a>
+というのは PHP 言語で実装された Wiki の一種で、
+Wiki の中でも相当メジャーな部類に入ると思われます。</p>
+
+<p>Wiki にはそれぞれ独自だったり独自ではなかったりする文法があり、
+それを HTML に変換して表示しています。
+pukipa.rb は PukiWiki の独自文法を HTML に変換するライブラリです。</p>
+
+<h3 id="pukiwiki-文法">PukiWiki 文法</h3>
+
+<p>まずはその独自文法について見ておきましょう。
+pukipa.rb が扱う文法は本家 PukiWiki と比べるとかなり簡略化されていますが、基本は同じです。
+すでに Wiki をあるていど知っているかた向けに一言で説明すると次のようになります。</p>
+
+<ul>
+  <li>見出しは「<em>」「<strong>」「</strong></em>」「<em>**</em>」</li>
+  <li>箇条書きは「-」「–」「—」……</li>
+  <li>番号付き箇条書きは「+」「++」「+++」……</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>dl は「:dt</td>
+          <td>dd」</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>pre はスペースインデント</li>
+  <li>ブロック引用は「&gt;」</li>
+</ul>
+
+<p>より詳しくは
+<a href="http://pukiwiki.sourceforge.jp/?%E6%95%B4%E5%BD%A2%E3%83%AB%E3%83%BC%E3%83%AB">PukiWiki 本家の解説</a>を参照してください。</p>
+
+<h3 id="pukiparb">pukipa.rb</h3>
+
+<p>では、オリジナルの pukipa.rb をお見せします。
+わたしの添削結果を見る前に、みなさんならどこを変えるか考えてみるのもいいでしょう。</p>
+
+<ul>
+  <li><a href="/articles/0010/0010-CodeReview-pukipa.rb.html">pukipa.rb</a>（別ページで表示）</li>
+</ul>
+
+<h2 id="プログラムの意味の保証">プログラムの意味の保証</h2>
+
+<p>これから添削と同時にコードを変更していきますが、
+そのときにコードの意味を変えないようにしなければなりません。
+今回の事例で言えば、変換結果の HTML が変化しないようにしなければいけません。</p>
+
+<p>コードの意味が変わっていないことを確認するには、テストを書くのがよいでしょう。
+テストがあるからといって意味が変わっていないことが
+100% 保証されるわけではありませんが、
+思いがけず仕様を変えてしまう確率は下げられます。</p>
+
+<p>今回は、test/unit を使ったテストを……書いたほうが格好いいのですが、
+すべての文法を使ったテストデータが元のファイルについていましたので、
+このデータの変換結果が Ruby の == で同じになることだけを確認しました。</p>
+
+<p>ところで、今回のプログラムの出力は HTML ですから、
+たとえテキストとして改行や空白が増えていても、HTML として構造が変化していなければ問題ないという考えかたもありえます。
+そのような場合は <a href="http://cvs.m17n.org/~akr/htree/">htree</a>
+を使ってチェックするのがよいでしょう。</p>
+
+<h2 id="コーディングスタイルの改善">コーディングスタイルの改善</h2>
+
+<p>まずはコードの意味に直接関係しないコーディングスタイルに関することから話を始めることにしましょう。</p>
+
+<h3 id="インデント">インデント</h3>
+
+<p>まずはインデントです。オリジナルのコードはタブ幅 を 2 と仮定してタブを使っていたようで、
+タブ幅 が 8 のわたしの環境ではインデントが崩れてしまいました。
+インデントに関しては各自の好みと論理があると思いますが、
+わたしはタブが嫌いなのですべてスペースに展開しました。</p>
+
+<p>また、インデント幅は元から 2 になっていましたので、
+そのまま 2 に揃えました。
+Ruby では 2 インデントが最も一般的ですので、
+特に思うところがないなら 2 にしておくべきです。</p>
+
+<h3 id="括弧と空白">括弧と空白</h3>
+
+<p>オリジナルのコードでは、メソッドを呼ぶとき、str_parse(str) のように空白がないスタイルと、Logger::new( $deferr ) のように空白を入れるスタイルが混在しています。
+これは空白なしに統一しました。
+経験的には、コードに目が慣れるほど空白が邪魔に感じられます。</p>
+
+<h3 id="カンマと空白">カンマと空白</h3>
+
+<p>今度は逆に空白が少ない例です。オリジナルのコードは、list_parse(str,’ul’) のように、
+カンマのあとに空白が入っていませんでした。
+隙間がなさすぎるのもまた見にくいので、
+「カンマの後には空白一つ」で統一しました。</p>
+
+<p>また、演算子の左右にも空白がなかったので、
+これも空白一つで統一しました。</p>
+
+<p>ちなみに、わたしは普段コードに色をつけません。
+ですから、つまったコードでも実は色がつけば多少は読みやすくなるのかもしれません。
+ですが less の表示や grep の出力に色がつくわけではないので、
+色が付く環境を前提にコーディングスタイルを決めるのは不適切だと考えています。</p>
+
+<h3 id="コメント">コメント</h3>
+
+<p>次にコメントです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # dlのパーサ
+ def dl_parse(str)</code></pre></figure>
+
+<p>……という感じのコメントがほとんどのメソッドについていたのですが、dl_parse という名前のメソッドで dl をパースしていなかったら詐欺でしょう。
+このコメントは意味がなさそうなので消すことにしました。</p>
+
+<p>では、どういうコメントがついていたら有意義でしょうか。
+例えば次のようなコメントは意味があるかもしれません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # ":dt|dd\n:dt|dd\n..." という形式の文字列 str を
+ # パースして HTML の文字列配列を返す
+ def dl_parse(str)</code></pre></figure>
+
+<p>このコメントでは引数 str の形式と返り値を書いてみました。
+わたしの好みからすると饒舌すぎるのですが、
+少なくとも無駄にはならないコメントだと思います。</p>
+
+<h3 id="コーディングスタイルの統一">コーディングスタイルの統一</h3>
+
+<p>コーディングスタイルは人によってかなり違うと思います。
+ここまでの話に賛成できないことも当然あるでしょう。
+しかし、少なくとも、一つのプログラム内ではスタイルを統一すべきであるという点は同意していただけると思います。</p>
+
+<h2 id="文単位の改善">文単位の改善</h2>
+
+<p>引き続き一般的な話を続けます。
+今度は構文のレベルでプログラムを見ていきましょう。
+キーワードは「Ruby らしさ」です。</p>
+
+<h3 id="リテラルへの式埋め込み">リテラルへの式埋め込み</h3>
+
+<p>元コードの特徴として、リテラルへの式埋め込み（”#{…}”）を
+執拗に避けていることが挙げられます。
+例えば /lit#{code}eral/ で済むところを
+Regexp.new(“lit” + code + “eral”) とする、などです。</p>
+
+<p>添削では、文字列および正規表現リテラルを書く場合、
+式の埋め込みを積極的に使うように変更しました。
+常に式埋め込みを使ったほうがよいとは言えませんが、
+埋め込む式が単純なら、埋め込みを使ったほうがたいていは見やすくなります。
+それに、式の埋め込みを使ったほうが、
+最終的に得る値が文字列や正規表現であることがわかりやすくなります。</p>
+
+<p>実際の例をひいて比較してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 添削前
+ @pagelist = Regexp.new('(?!&lt;a.*?&gt;.*?)((?:' + pagelist.join(')|(?:') + '))(?!.*?&lt;/a&gt;)',Regexp::IGNORECASE )
+
+ 添削後
+ @pagelist = /(?!&lt;a.*?&gt;.*?)((?:#{ pagelist.join(')|(?:') }))(?!.*?&lt;/a&gt;)/i</code></pre></figure>
+
+<p>どうでしょうか。添削後でもやはり見にくいですが、
+相対的に言えば見やすくなっていると思います。
+また、@pagelist には正規表現が入るのだということもわかりやすいのではないでしょうか。</p>
+
+<p>なお、コードの文脈まで含めて考えていくと、@pagelist はもっとわかりやすくできます。
+これについてはまたあとで話しましょう。</p>
+
+<h3 id="unless-と-until">unless と until</h3>
+
+<p>C や Java から Ruby 移行してきた人にありがちなのが、C/Java にもある構文ばかり使って Ruby 特有の構文を避けることです。
+特に unless, until はなぜか嫌われているようです。</p>
+
+<p>また、and や or を絶対に使わず
+&amp;&amp; と || ばかり使うというケースも散見されます。
+and/or と &amp;&amp;/|| では演算子の優先順位が違うので、
+そのときどきで使い分けるのが適切です。</p>
+
+<p>では個別の事例を見ていきましょう。</p>
+
+<p>まず、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> if !@scanner.eos?</code></pre></figure>
+
+<p>という式が見付かりました。これは、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> if !@scanner.eos?
+       ↓
+ if not @scanner.eos?
+       ↓
+ unless @scanner.eos?</code></pre></figure>
+
+<p>と変形できます。「!@」と記号が連続すると非常に見にくいので、
+この場合は unless か、せめて if not にするようお勧めします。</p>
+
+<p>「while not」という表現もたくさん見付かりました。
+これは単純に「until」に変換できます。</p>
+
+<p>また、少しステップが増えますが、次の表現も変形できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> if pagelist.size &gt; 0</code></pre></figure>
+
+<p>まず pageslist.size &gt; 0 は not pagesize.empty? に変換できます。
+すると「if not」が現れるので、これも unless にできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> if pagelist.size &gt; 0
+        ↓
+ if not pagelist.empty?
+        ↓
+ unless pagelist.empty?</code></pre></figure>
+
+<p>ではなぜ if not よりも unless が、while not よりも until がよいのでしょうか。
+その理由は、文を構成する要素数が減るからです。
+わたしが「if not A」という式を見る場合、
+まず if を見て、A を見て、それを not で反転します。つまり脳内操作は三つです。
+しかし「unless A」の場合、unless を見て A を見れば終わりなので二つです。</p>
+
+<p>別の表現をすると、わたしの感覚では「if not A」は「if (not A)」なのですが、
+「unless A」は「(if not) A」と認識されます。
+if は「〜という条件が当てはまるときだけ本体を実行してほしいんだけど」という意味であり、unless は「〜という条件が当てはまるときは実行しないでほしいんだけど」という意味です。
+つまり if は「特殊な条件を指定する構文」であり、unless は「特殊な例外を排除する構文」なのです。</p>
+
+<p>このあたりは説明するのが難しいのですが、
+あるていど Ruby に慣れれば unless のほうが文を解釈する負担が少なくなると思います。</p>
+
+<h3 id="case">case</h3>
+
+<p>その次に気にかかったのがこういうコードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> if str =~ /^ /
+   略
+ elsif str =~ /^&gt;/
+   略
+ elsif str =~ /^-/
+   略
+ elsif str =~ /^\+/
+   略
+ elsif str =~ /^:/
+   略
+ else
+   略
+ end</code></pre></figure>
+
+<p>この if 文はすべての条件式で変数 str を対象にマッチしています。
+ですから次のように case 〜 when に書き直せます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> case str
+ when /^ /
+   略
+ when /^&gt;/
+   略
+ when /^-/
+   略
+ when /^\+/
+   略
+ when /^:/
+   略
+ else
+   略
+ end</code></pre></figure>
+
+<p>念のため復習すると、case 文は、case の値（str）と when の値とを次々に「===」で比較して、
+真を返した節を実行します。
+つまりこの場合なら</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> /^ / === str
+ /^&gt;/ === str
+ /^-/ === str
+ /^\+/ === str
+ /^:/ === str</code></pre></figure>
+
+<p>を次々に実行して、最初に真になった節を実行します。
+そして Regexp#=== は Regexp#=~ と同じ意味ですから、
+書き換えたあとの case 文が元の if 文と同じ意味であることがわかります。</p>
+
+<p>見ためだけをとっても case を使った後者のほうが簡潔ですし、
+意味的にも、case 文を使うと「これから str に関する比較をするぞ」
+ということが明確になります。</p>
+
+<h3 id="到達しないはずのコード">到達しないはずのコード</h3>
+
+<p>if や case などで場合分けをしていると、
+「コードの意味上、ここには絶対に到達しない」ケースが出てくることがあります。
+到達しないのだから単に無視してもよいはずですが、
+現実にはバグだのなんだので到達してしまう可能性があるわけです。
+そこで次のようなコードが書かれることになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> if @scanner.scan(/^\n/)
+   略
+ elsif ...
+   略
+ else
+   #ここにはこないはずなので・・・
+   raise PukipaParseError.new
+ end</code></pre></figure>
+
+<p>元のコードでは例外 PukipaParseError を投げていますが、これは変です。
+到達しないコードに到達してしまうのはコードにバグがあるためであって、
+解析中のテキストが間違っているせいではありません。
+そこで次のように変更しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> raise "must not happen"</code></pre></figure>
+
+<p>raise は例外クラスを省略すると RuntimeError を生成します。
+これで PukipaParseError が必要なくなるので定義も消しました。
+ちなみに「must not happen」というメッセージは確か『ソフトウェア作法』あたりで読んで以来使っています。</p>
+
+<p>なぜ RuntimeError にするかと言うと、RuntimeError は StandardError の下位クラスではないので、
+クラスを指定しない rescue では捕獲できないからです。
+この例外はプログラムにバグがあることを報告するために投げているわけですから、そう簡単に捕まえられたくはないでしょう……</p>
+
+<p>……と、セミナーで発言したのですが、その場で
+「RuntimeError も StandardError の下位クラスだ」と間違いを指摘されてしまいました。
+つまり、raise “must not happen” ではクラスを省略した rescue で捕獲されてしまいます。
+そこで、新しい例外クラスを定義しなくても済む代替案をその場で募集したところ
+「raise Exception, “must not happen” とする」という案が出されました。
+多少字面が長いですが目的は果たせるのでとりあえずはこれでよしとします。</p>
+
+<h2 id="インターフェイスの改善">インターフェイスの改善</h2>
+
+<p>続いては pukipa.rb のインターフェイスを検討します。</p>
+
+<h3 id="クラス名とファイル名">クラス名とファイル名</h3>
+
+<p>まずクラス名から検証しましょう。このファイルには Pukipa（たぶん PukiWiki parser の略）というクラスが一つだけ定義されています。
+Ruby ではファイル中のメインクラス名を downcase してファイル名にするのが標準的ですから、クラス名が Pukipa でファイル名が pukipa.rb ならば、
+標準に沿っており適切です。</p>
+
+<p>なお、Open Source Conference のセミナーでは「Pukipa という名前はどうなんだ」などなどとテキトーなツッコミを入れてみたのですが、あれは単にウケを狙っただけなので、
+個人的には特に思うところはありません。
+ありませんが、クラス名を変えておかないとテストなどが少々面倒になるので、
+添削後のコードでは PukiWikiParser とクラス名を変えておきます。</p>
+
+<h3 id="元のインターフェイス">元のインターフェイス</h3>
+
+<p>次にクラスのインターフェイスを見ます。
+Pukipa クラスのインターフェイスはこうなっていました。</p>
+
+<ul>
+  <li>Pukipa.new(plain)</li>
+  <li>Pukipa#pagelist(pagelist, base_uri = ‘/’, suffix = ‘/’)</li>
+  <li>Pukipa#to_html</li>
+</ul>
+
+<p>まず Pukipa.new でソースコードを与え、Pukipa#pagelist で Wiki に存在するページ名を教え、Pukipa#to_html で HTML を生成します。</p>
+
+<p>このインターフェイスでまず気になったのが pagelist メソッドの存在です。
+このインターフェイスだと to_html メソッドを呼ぶ前に必ず pagelist メソッドを呼ばなければいけないのですが、
+呼ぶほうが気をつけて順番通りに呼ばなければいけないという制約はどうにも不自由に感じられます。
+いっそのこと一つにまとめてしまうわけにはいかないのでしょうか。
+最終的には Pukipa クラスを使っているコードのほうを見ないとなんとも言えませんが、自分で Wiki を書いた経験から考えるに、
+このメソッドを独立させる必然性はあまり感じられません。</p>
+
+<p>また、initialize の中で Logger を生成しているのですが、logger の level やプログラム名などはパーサを使う側で設定したいことが多いので、logger は外から new に渡してもらうことにしました。
+この変更により、pukipa.rb で logger を require する必要もなくなります。</p>
+
+<p>そもそも、なんでパーサにロガーが必要なのかという疑問もあります。
+しかも、のちのちコードを見ていくとわかりますが、
+ロガーはデバッグにしか使われていません。
+このクラスは独立して使えるのですから、
+なにもロガーでデバッグ出力しなくてもいいように思えるのです。
+が、添削に出すときに無理矢理構成を変えた可能性もあるかと考え、
+添削後もいちおうロガーは使えるようにしておきました。</p>
+
+<h3 id="改善後のインターフェイス">改善後のインターフェイス</h3>
+
+<p>以上の考察を経て、PukiWikiParser クラスのインターフェイスは次のようになりました。</p>
+
+<ul>
+  <li>PukiWikiParser.new(logger)</li>
+  <li>PukiWikiParser#to_html(src, page_names, base_uri = ‘/’, suffix = ‘/’)</li>
+</ul>
+
+<p>pagelist メソッドはなくなり、
+ページ名のリストは to_html メソッドにまとめて渡すようにしています。
+ついでに引数 plain（ページのソースコード）も new から to_html に移動しました。これは logger を new に渡すようにした余波です。</p>
+
+<p>ちょっと考えてみてください。
+たぶん設定ファイルあたりに由来する logger はプロセス中は同じものが使えるはずです。
+一方、ページのソースコードは CGI リクエストごとに変化するはずです。
+つまり寿命も由来も違うわけで、両者を一緒に渡すよう要求してしまうと使いづらくなることうけあいです。ですから、new で要求するのは logger だけとし、CGI リクエストごとに変化するデータはすべて to_html で渡すことにしました。</p>
+
+<p>ついでに、plain（たぶんプレーンテキストの plain）という変数名も
+src（ソースコードの source）に変えてみました。
+PukiWiki のソースコードをプレーンテキストと呼んでいいかどうか
+疑問に感じたからです。</p>
+
+<h3 id="可視性">可視性</h3>
+
+<p>珍しいことに、pukipa.rb では protected が使われています。
+Ruby には public, private, protected の三種類の可視性がありますが、
+通常使われるのは public と private のみです。
+protected はほとんど使われていません。</p>
+
+<p>public はいいとして、private と protected の違いはみなさん御存知でしょうか。
+どちらを指定しても基本的にはオブジェクトの外からは呼べなくなるのですが、protected のメソッドは、同じクラスか、
+その下位クラスのインスタンスに限っては外からでも呼ぶことができます。</p>
+
+<p>しかし、pukipa.rb 全体を見ても protected である必要性は感じられませんでしたし、外から使われているわけでもありませんでした。
+よってこれは単なる勘違いだろうと判断し、private に変えました。</p>
+
+<h2 id="メソッド単位の改善">メソッド単位の改善</h2>
+
+<p>ここからは実際のソースコードを追いながら、
+メソッド単位でコードを検討していきます。</p>
+
+<h3 id="pukipapagelist">Pukipa#pagelist</h3>
+
+<p>まずは Pukipa#pagelist から見ていきましょう。</p>
+
+<p>このメソッドは Wiki 内に存在するページ名をパーサに教えてあげるために用意されています。
+ではなぜパーサが全てのページ名を知る必要があるかと言うと、
+オートリンク機能のためなのです。</p>
+
+<p>オートリンクとは、同じ Wiki 内に存在するページ名を書くと自動的にハイパーリンクになるという機能のことです。
+例えば、「Ruby言語」というページがすでに存在するなら、
+他のページのどこかに「Ruby言語」と書くだけでそれがリンクになるわけです。</p>
+
+<p>元の pagelist メソッドでは次のようなコードでページ名にマッチする正規表現を作り、変換の準備をしていました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # arrayでpagelistを渡す
+ # pagelistはwikiページ一覧
+ def pagelist(pagelist,base_uri = '/',suffix = '/')
+   @base_uri = base_uri
+   @pagelist_suffix = suffix
+   if pagelist.size &gt; 0
+     #三文字以下はそもそも対象外
+     pagelist.reject!{|pn| pn.size &lt;= 3 }
+     pagelist.map!{|pn| Regexp.escape(pn)}
+     @pagelist = Regexp.new('(?!&lt;a.*?&gt;.*?)((?:' + pagelist.join(')|(?:') + '))(?!.*?&lt;/a&gt;)',Regexp::IGNORECASE )
+   end
+ end</code></pre></figure>
+
+<p>少し前に出てきた @pagelist の正体がこれです。
+なお、ページが存在しないとき（pagelist.size &gt; 0）のときは
+@pagelist が nil になるので、
+この後、@pagelist を使うときに nil かどうかで分岐していました。</p>
+
+<p>この @pagelist を作る部分をわたしが書き直したのが次のコードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def autolink_re
+   Regexp.union(* @page_names.reject {|name| name.size &lt;= 3 })
+ end</code></pre></figure>
+
+<p>ポイントごとに見ていきましょう。</p>
+
+<p>まず、「正規表現を作ってインスタンス変数に格納する」メソッドを書くのではなく、
+「正規表現を作る」メソッド autolink_re を書いて、その結果を使うようにしました。</p>
+
+<p>次に、Regexp.new と Regexp.escape を自分で使うのではなく、
+標準ライブラリのメソッド Regexp.union を使いました。
+Regexp.union は Ruby 1.8.1 で追加されたメソッドで、
+引数がすべて文字列の場合は以下と同じ意味です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def Regexp.union(*strings)
+   return /(?!)/ if strings.empty?
+   new(strings.map {|s| escape(s) }.join('|'))
+ end</code></pre></figure>
+
+<p>例えば Regexp.union(‘aa’, ‘bb’, ‘cc’) は文字列 aa か bb か cc にマッチする正規表現を返します。</p>
+
+<p>引数がゼロ個のとき（strings.empty?）にはどういう正規表現が返ってくるのでしょうか。
+Regexp.union(‘aa’, ‘bb’) は aa か bb、Regexp.union(‘aa’) は aa
+……と順番に考えてみると、
+引数がゼロ個のときは「どんな文字列にもマッチしない」
+パターンが適切であるとわかります。それが /(?!)/ です。</p>
+
+<p>Regexp.union は常に正規表現を返してきますから、nil かどうかによる場合分けをする必要もなくなります。</p>
+
+<p>このように、標準のメソッドをとことん使いたおしていけばコードを圧倒的に簡潔にできるのです。
+String・Regexp・Array・Hash・Enumerable あたりだけで十分ですから、リファレンスマニュアルは熟読しておきましょう。</p>
+
+<h3 id="pukipato_html-block_parse">Pukipa#to_html, #block_parse</h3>
+
+<p>ここからは HTML への変換のコードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def to_html
+   plain = @plain.gsub(/\r?\n/,"\n").chomp + "\n"
+   result = []
+   block_regex = /^([:\-+&gt; ]).*\n(?:(?:\1.*\n)+)?/
+	@scanner = StringScanner.new( plain )
+   while !@scanner.eos?
+     if @scanner.scan(/^\n/)
+       #空行
+     elsif @scanner.scan(/^----.*?\n/)
+       result &lt;&lt; '&lt;hr /&gt;'
+     elsif @scanner.scan(block_regex)
+       result &lt;&lt; block_parse(@scanner.matched)
+     elsif @scanner.scan(/^\*.*?\n/)
+       result &lt;&lt; h_parse(@scanner.matched)
+     elsif @scanner.scan(/^([^*:\-+&gt; \n].+?\n){1,}/)
+       result &lt;&lt; block_parse(@scanner.matched)
+     elsif @scanner.scan(/(.*)/)
+       result &lt;&lt; block_parse(@scanner.matched)
+     else
+       #ここにはこないはずなので・・・
+       raise PukipaParseError.new
+     end
+   end
+   result.join("\n")
+ end</code></pre></figure>
+
+<p>このメソッドではソースコードを文法の種類ごとに分割しています。
+箇条書きや dl などの複数行に渡るブロックの場合はその複数行をまとめて読み、block_parse であらためて処理します。
+h や hr のように一行で済む場合はメソッド内で処理してしまいます。</p>
+
+<p>まず考えたのは、ul や dl のように複数行に渡るブロックを
+to_html と block_parse の二ヶ所に分けて処理するのは無駄ではないかということです。
+to_html では正規表現を使ってブロックに分割しているのですから、
+ここで ul や dl の判定も同時にやってしまってもコードは複雑にはなりません。</p>
+
+<p>次に、StringScanner は必要ないのではないかということです。
+StringScanner（strscan）はわたしの作なので使ってもらえるのは嬉しいのですが、この状況ではあまり使う価値はありません。
+Wiki の文法というのは行単位ですから、無理に文字列のまま処理するよりも、まず行ごとの配列にしてしまい、配列を相手にしたほうが楽なのです。
+実際、block_parse では String#each_line を使って行ごとに処理しています。
+最初から行の配列にしておけばそんな苦労はいりません。</p>
+
+<p>ただ、行の配列になると複数行に渡る ul や dl のブロックを取り出すのがちょっと厄介になります。
+そこで行配列からブロックを取り出すためのメソッド take_block を定義しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def take_block(lines, marker)
+   buf = []
+   until lines.empty?
+     break unless marker =~ lines.first
+     buf.push lines.shift.sub(marker, '')
+   end
+   buf
+ end</code></pre></figure>
+
+<p>take_block は文字列配列 lines の先頭から正規表現 marker にマッチする行をすべて取って配列で返します。
+そのときついでに marker にマッチする部分は削ってしまいます。</p>
+
+<h3 id="pukipah_parse">Pukipa#h_parse</h3>
+
+<p>では *_parse メソッドを順々に見ていきます。
+まずは見出し（h1, h2…）を処理するコードからです。
+このメソッドは “** 見出し” のような文字列を “&lt;h3&gt;見出し&lt;/h3&gt;” と変換します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def h_parse(str)
+   str.chomp!
+
+   h_regexs = {
+     '*'    =&gt; 'h' + @h_start_level.to_s,
+     '**'   =&gt; 'h' + (@h_start_level + 1).to_s,
+     '***'  =&gt; 'h' + (@h_start_level + 2).to_s,
+     '****' =&gt; 'h' + (@h_start_level + 3).to_s,
+   }
+   h_regexs.each do |tmp_regex,prefix|
+     regex = Regexp.new('^' + Regexp.escape(tmp_regex) + '([^*])')
+     if str =~ regex
+       str.gsub!(regex,"\\1").gsub!(/^\s+/,'')
+       str = "&lt;%s&gt;%s&lt;/%s&gt;" % [prefix,str_parse(str),prefix]
+       break
+     end
+   end
+   @log.debug "inline:\n%s" % str
+   str
+ end</code></pre></figure>
+
+<p>このメソッドの不幸は、h_regexs のデータ構造でしくじってしまったことです。
+例えば次のような構造にしておけばずっと簡単になったはずなのです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> h_table = [
+   [/^\*\*\*\*/, @h_start_level + 3],
+   [/^\*\*\*/,   @h_start_level + 2],
+   [/^\*\*/,     @h_start_level + 1],
+   [/^\*/,       @h_start_level + 0]
+ ]</code></pre></figure>
+
+<p>Enumerable#detect（#find）と組み合わせればさらに美しく書けます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> re, level = *h_table.detect {|re, *| re =~ str }
+ str.sub!(re, '').gsub!(/^\s+/, '')
+ @log.debug "inline:\n%s" % str
+ "&lt;h%d&gt;%s&lt;/h%d&gt;" % [level, str_parse(str), level]</code></pre></figure>
+
+<p>このように、見ためもコードの流れもスッキリしました。</p>
+
+<p>さらに、わたしならテーブルを作ること自体をやめて次のように書きます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def parse_h(line)
+   @logger.debug "h: #{line.inspect}"
+   level = @h_start_level + (line.slice(/\A\*{1,4}/).length - 1)
+   content = line.sub(/\A\*+\s+/, '')
+   "&lt;h#{level}&gt;#{parse_inline(content)}&lt;/h#{level}&gt;"
+ end</code></pre></figure>
+
+<p>まず String#slice で正規表現にマッチした部分を取り出し、h のレベルを計算します。
+次に String#sub で行先頭のアスタリスクを削ります。
+最後に h エレメントを作ります。
+一行一動作にまとまり、わかりやすくなったでしょう。</p>
+
+<h3 id="多くのメソッドを使うことの是非">多くのメソッドを使うことの是非</h3>
+
+<p>h_parse についてはセミナー当日、
+「元のコードのほうが自明でわかりやすいと思う」
+という意見が出されました。より抽象的な主旨としては、
+「（青木しか使ってないような String#slice より）
+みんなが知っているメソッドだけを使ったコードのほうがわかりやすいのではないか」
+という提起です。</p>
+
+<p>わたしも、この提起の主旨には賛成します。
+つまり誰も知らないようなメソッドやライブラリを使ってもあまりわかりやすくはならないだろうと思います。</p>
+
+<p>しかし、このケースに関してはわたしのコードのほうに優位性があると主張します。
+String#slice(regexp) は確かに入門書でいきなり使われるメソッドではないでしょうが（わたしは書くべきだと思いますが）、Ruby 1.6 あたりから標準ライブラリに入っている古いメソッドです。
+これを「誰も知らない」と言われてしまうのでは Ruby のメソッドの大部分は使えなくなるでしょう。</p>
+
+<p>また、「もっとメジャーなメソッドの組み合わせで書けるから必要ない」
+という意見に対しては、まったく少しも全然微塵も賛成できません。
+プログラミング言語の目的はプログラムを人間に理解しやすくすることです。
+プリミティブな操作を組み合わせた「結果として」 X という操作を実行できる場合、
+われわれが知りたいのは「結果として X になる」ということなのです。
+それを知るために、わざわざプリミティブな操作をすべて追っていかなければならないというのは理不尽極まりありません。</p>
+
+<p>したがって、わたしの結論はこうです。
+「ちょうど求める働きをするメソッドがあるのなら、どんどん使うべきである。
+少なくともよく知られているメソッドに関しては」。</p>
+
+<h3 id="pukipadl_parse">Pukipa#dl_parse</h3>
+
+<p>続いてはリスト関係をスキップして dl_parse に行きます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def dl_parse(str)
+   regex = /^:/
+   regex2 = /(.*?)\|(.*)/
+   str = str.map{|s| s.gsub(regex,'')}.join
+   result = []
+   result &lt;&lt; "&lt;dl&gt;"
+   tmp = []
+   str.each_line do |s|
+     s.chomp!
+     m = regex2.match(s)
+     if m
+       result &lt;&lt; "&lt;dt&gt;" + str_parse(m[1]) + "&lt;/dt&gt;"
+       result &lt;&lt; "&lt;dd&gt;" + str_parse(m[2]) + "&lt;/dd&gt;"
+     else
+       result &lt;&lt; "&lt;dt&gt;" + str_parse(s) + "&lt;/dt&gt;"
+     end
+   end
+   result &lt;&lt; "&lt;/dl&gt;"
+   result.join "\n"
+ end</code></pre></figure>
+
+<p>すぐに気付いたのが、ローカル変数 regex, regex2 の意味がないということです。
+どちらも一回ずつしか使われていませんから、直接埋め込んでしまえば十分でしょう。</p>
+
+<p>なお、セミナーの当日に会場で「一回しか使われていないからといってリテラルを埋め込んでしまったらマジックナンバーのようにならないか」という質問がありました。
+わたしの答えはこうです。「正規表現はマジックナンバーではない」。
+マジックナンバーとは、それ自体では意味をなさない、
+本質的には他の何であっても構わない数値のことです。
+しかし正規表現はそれ自体で十分に意味が限定されますから、
+マジックナンバーと同列に考えるべきではありません。</p>
+
+<p>とは言えもちろん、正規表現が非常に複雑なときにはすぐに意味がとれませんから、
+名前を付ける価値はあります。しかしそれはマジックナンバーというより、
+複雑な手続きを関数としてくくりだす操作にたとえられるべきです。
+一つの正規表現が複数回使われる場合も同様です。</p>
+
+<p>また、マジックナンバーをマジックナンバーでなくするためには適切な名前を付ける必要があります。
+ひるがえって「regex」「regex2」という変数名はどうでしょうか。
+これでは型以外の情報をすべて捨ててしまっており、
+むしろ情報量が低下しています。せっかく名前を付けるのなら、
+例えば dl_marker_re と dl_body_re のような名前にすべきでしょう。</p>
+
+<p>ところで、そんな話をすべて無にしかねないのですが、
+コードの意味をよくよく考えると regex2 はそもそも必要ありません。
+また、改善後のコードでは引数の文字列からすでに「:」がなくなっているので、regex も必要ありません。最終的なコードはこうなりました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def parse_dl(lines)
+   @logger.debug "dl: #{lines.inspect}"
+   buf = ["&lt;dl&gt;"]
+   lines.each do |line|
+     dt, dd = *line.split('|', 2)
+     buf.push "&lt;dt&gt;#{parse_inline(dt)}&lt;/dt&gt;"
+     buf.push "&lt;dd&gt;#{parse_inline(dd)}&lt;/dd&gt;" if dd
+   end
+   buf.push "&lt;/dl&gt;"
+   buf
+ end</code></pre></figure>
+
+<p>String#split を使うことでコードが全体的にコンパクトになり、dt を生成するコードを二行書く必要もなくなりました。
+文字列リテラルの式埋め込みも効果的に使われていますね。</p>
+
+<h3 id="pukipastr_parse">Pukipa#str_parse</h3>
+
+<p>次はテキストのパーサ、str_parse です。
+このメソッドの仕事は主にハイパーリンクを張ることですが、HTML の特殊文字のエスケープも同時に行っています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def str_parse(str)
+   #URIへの自動リンクは一番最初にやる
+   uri_regex = Regexp.new('(?!\[\[.*?)(' + URI.regexp('http').source + ')(?!.*?\]\])',Regexp::EXTENDED)
+   str.gsub!(uri_regex) do |match|
+     uri = $1.dup
+     re = match
+     re = '[[%s:%s]]' % [uri,uri] if not uri =~ /\]\]$/
+     re
+   end
+
+   str = escapeHTML(str)
+
+   #リンク
+   str.gsub!(/\[\[(.+?):\s*(https?:\/\/.+?)\s*\]\]/) do
+     name = $1.dup
+     uri = $2.dup
+     '&lt;a class="outlink" href="%s"&gt;%s&lt;/a&gt;' % [uri,name]
+   end
+
+   #ページにリンク
+   if @pagelist
+     str.gsub!(@pagelist) do
+       s = $1.dup
+       '&lt;a class="pagelink" href="%s%s%s"&gt;%s&lt;/a&gt;' % [@base_uri,escape(s),@pagelist_suffix,s]
+     end
+   end
+
+   str
+ end</code></pre></figure>
+
+<p>このメソッドの最大の問題は、gsub を何度も使うというデザインです。
+この方法を選んだために、最初のほうの段階で文字列に HTML のタグが入ってしまい、
+あとになるほど処理が（正規表現が）どんどんややこしくなってしまいます。</p>
+
+<p>この問題を解決するには、三つの gsub と escapeHTML を一つの
+gsub にまとめなければいけません。
+すると当然正規表現も一つしか使えなくなるので、</p>
+
+<ol>
+  <li>HTML の特殊文字</li>
+  <li>URL</li>
+  <li>ブラケットリンク（[[ …. ]]を使ったハイパーリンクの表記法）</li>
+  <li>Wiki 内に存在するページ名</li>
+</ol>
+
+<p>の四つすべてにマッチする正規表現を使う必要があります。
+とにかく改善後のコードを見てもらいましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def parse_inline(str)
+   @inline_re ||= %r&lt;
+       ([&amp;&lt;&gt;"])                             # $1: HTML escape characters
+     | \[\[(.+?):\s*(https?://\S+)\s*\]\]   # $2: label, $3: URI
+     | (#{autolink_re()})                   # $4: Page name autolink
+     | (#{URI.regexp('http')})              # $5...: URI autolink
+     &gt;x
+   str.gsub(@inline_re) {
+     case
+     when htmlchar = $1 then escape(htmlchar)
+     when bracket  = $2 then a_href($3, bracket, 'outlink')
+     when pagename = $4 then a_href(page_uri(pagename), pagename, 'pagelink')
+     when uri      = $5 then a_href(uri, uri, 'outlink')
+     else
+       raise 'must not happen'
+     end
+   }
+ end</code></pre></figure>
+
+<p>最初の数行で正規表現を一つだけ作っています。
+%r を使った正規表現リテラル（デリミタ変更）と
+x オプション（正規表現内の空白類およびコメントを削除）を同時に使っているので、
+かなり理解しにくいでしょう。正規表現としては以下と同じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> /([&amp;&lt;&gt;"])|\[\[(.+?):\s*(https?://\S+)\s*\]\]|(#{autolink_re()})|(#{URI.regexp('http')})/</code></pre></figure>
+
+<p>この正規表現の意味は、コード中のコメントを見てもらえばだいたいわかるでしょう。
+$1 が HTML の特殊文字、$2, $3 がブラケットリンク、$4 がページ名オートリンク、$5 が URL オートリンクです。
+それを gsub に使い、どの $n が存在するかをチェックすることで、
+四つのうちどのパターンにマッチしたのかを確かめます。</p>
+
+<p>それから、case のあとに式がない case 文は Ruby 1.8 から導入された新文法です。
+if 〜 elsif 〜 else と全く同じ意味で、最初に真になった when 節が実行されます。
+Lisp を知っている人には「cond です」の一言で通じるでしょう。</p>
+
+<h3 id="pukipaescapehtml-escape">Pukipa#escapeHTML, #escape</h3>
+
+<p>最後のメソッドは、これまでに何度か登場した escapeHTML と escape です。
+escapeHTML は HTML で特別な意味を持つ「&lt;」や「&gt;」を実体参照に置き換え、escape は URL の特殊文字をエスケープします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def escapeHTML(string)
+   string.gsub(/&amp;/n, '&amp;amp;').gsub(/\"/n, '&amp;quot;').gsub(/&gt;/n, '&amp;gt;').gsub(/&lt;/n, '&amp;lt;')
+ end
+
+ def escape(string)
+   string.gsub(/([^ a-zA-Z0-9_.-]+)/n) do
+     '%' + $1.unpack('H2' * $1.size).join('%').upcase
+   end.tr(' ', '+')
+ end</code></pre></figure>
+
+<p>実はこのメソッドはどちらも標準添付ライブラリ cgi.rb とまったく同じ内容です。
+おそらく cgi.rb からコピー &amp; ペーストしたものと思われます。
+添削的には cgi.rb を require して
+CGI.escapeHTML と CGI.escape を使うのがよいのでしょうが、
+いろいろと気に食わなかったのでモジュールとして書き直しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> module HTMLUtils
+   ESC = {
+     '&amp;' =&gt; '&amp;amp;',
+     '"' =&gt; '&amp;quot;',
+     '&lt;' =&gt; '&amp;lt;',
+     '&gt;' =&gt; '&amp;gt;'
+   }
+
+   def escape(str)
+     table = ESC   # optimize
+     str.gsub(/[&amp;"&lt;&gt;]/n) {|s| table[s] }
+   end
+
+   def urlencode(str)
+     str.gsub(/[^\w\.\-]/n) {|ch| sprintf('%%%02X', ch[0]) }
+   end
+ end</code></pre></figure>
+
+<p>ちなみに、気に食わなかったところは三つあります。</p>
+
+<ul>
+  <li>escapeHTML が gsub を何回も呼んでいるのが嫌</li>
+  <li>なんで escape_html じゃないんだ</li>
+  <li>URL なら escape じゃなくて encode だろ！</li>
+</ul>
+
+<p>なお、このコードは新規に書き起こしたわけではなく、
+ローカルの自作ライブラリ置き場からみつくろって持ってきただけです。
+HTMLUtils.escape は CGI.escapeHTML に比較してエスケープする文字列が少ないときに速いという利点があります。</p>
+
+<h2 id="添削終了">添削終了！</h2>
+
+<p>以上で添削は終わりです。
+今回の改善におけるポイントをまとめておきましょう。</p>
+
+<ul>
+  <li>コーディングスタイルは統一する</li>
+  <li>unless, until のような Ruby 独特の構文も好き嫌いなく使う</li>
+  <li>データ構造はよくよく考える</li>
+  <li>標準ライブラリのメソッドを活用する</li>
+  <li>正規表現を使う前に別のメソッドを検討してみる</li>
+  <li>正規表現を使うなら最大限まで意味を持たせる</li>
+</ul>
+
+<p>最後に添削前・添削後のソースコードを置いておきますので、
+見比べてみてください。</p>
+
+<ul>
+  <li><a href="/articles/0010/0010-CodeReview-pukipa.rb.html">pukipa.rb</a>（別ページで表示）</li>
+  <li><a href="/articles/0010/0010-CodeReview-pukiwikiparser.rb.html">pukiwikiparser.rb</a>（別ページで表示）</li>
+  <li><a href="/images/0010-CodeReview/osc2005-ruby.tar.gz">osc2005-ruby.tar.gz</a>（まとめてダウンロード）</li>
+</ul>
+
+<h2 id="コードの全体的なよさを計測する">コードの「全体的なよさ」を計測する</h2>
+
+<p>さて、ここまでさまざまな角度からコードを「改善」してきました。
+しかし、それをすべて合わせたときに全体としてどうなっているのかについてはまだ検討されていません。
+この節ではプログラムの全体的な「よさ」について、
+あるていど定量的な計測を試みます。</p>
+
+<h3 id="コード量">コード量</h3>
+
+<p>まず、コード量はどうでしょうか。
+古典的なコード量計測の手段として、行数を比較してみましょう。
+行数が減ればいいわけではないのは当然ですが、
+だからと言って一切の比較を拒否するのは行きすぎです。
+わかりやすさ（複雑さ）が同じくらいのコード同士で比較するなら、
+行数・文字数の少ないほうがよいに決まっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ~/c/osc2005 % wc pukipa.rb pukiwikiparser.rb
+ 203  505 5110 pukipa.rb
+ 165  401 4161 pukiwikiparser.rb</code></pre></figure>
+
+<p>このように、コード行数は 203 行 → 165 行と約 20% 削減できました。
+文字数もほぼ同様の割合で減っています。
+コメントだけの行や空行も消しているのでそのまま受け取ることはできませんが、
+これだけ違えば十分効果が出ていると言えるでしょう。</p>
+
+<p>その内訳を見ると、h_parse, block_parse, list_parse
+の三つが行数削減に大きく響いているようです。
+特に to_html と block_parse を一本化したことが行数削減につながっています。</p>
+
+<h3 id="メソッドの行数の分布">メソッドの行数の分布</h3>
+
+<p>ファイル全体の行数を比較しただけではコードが読みやすくなったかどうかはわかりません。
+同じ 1000 行でも、50 行のメソッドが 20 個の場合と
+main メソッドが一つで 1000 行の場合とでは、
+恐らく前者のほうがずっと読みやすいはずです。</p>
+
+<p>そこで今度はメソッドの行数の傾向を比較してみましょう。
+次のグラフは、メソッドを行数ごとにプロットしたものです。
+例えば pukipa.rb の場合、3 行のメソッドが一つ、5 行のメソッドが一つ……という具合に読みます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ~/c/osc2005 % method-lines-distribution puki*.rb
+ pukipa.rb     pukiwikiparser.rb
+    1:            1:
+    2:            2:
+    3: *          3: ****
+    4:            4: ***
+    5: *          5: **
+    6:            6: **
+    7:            7:
+    8:            8: *
+    9:            9:
+   10: *         10:
+   11:           11: *
+   12: *         12:
+   13:           13:
+   14:           14:
+   15:           15: *
+   16:           16:
+   17:           17:
+   18:           18: *
+   19:           19:
+   20: **        20:
+   21:           21:
+   22: *         22:
+   23:           23:
+   24:           24:
+   25: *         25:
+   26:           26:
+   27:           27:
+   28:           28:
+   29: *         29:
+   30:           30:
+   31:           31:
+   32:           32:
+   33:           33:
+   34: *         34:
+   35:           35: *</code></pre></figure>
+
+<p>このグラフによると、添削後は長いメソッドが相対的に減り、
+短いメソッドが増えていることがわかります。
+一般的に言ってこれはプログラムが「よい」構造に変化したことを示しています。</p>
+
+<p>※ メソッドの行数の分布を見るという方法は、
+藤原博文『C プログラミング診断室』を参考にしました。</p>
+
+<h3 id="メソッド間の構造">メソッド間の構造</h3>
+
+<p>ですがコードがわかりやすくなっているのかどうか、まだまだ疑えます。
+メソッドが全体的に短くなっても、
+メソッド同士が複雑怪奇な構造で呼び合っていたら、
+理解するのは非常に難しいはずです。</p>
+
+<p>そこで今回はコールグラフを使ってメソッド間の構造を解析します。
+コールグラフというのは手続き（メソッド）の呼び出し関係を図にしたものです。
+ソースコード上での呼び出し関係を表現したスタティックコールグラフ（static call graph）と、
+実行時に呼び出された手続きだけを表現したダイナミックコールグラフ（dynamic call graph）があります。
+今回お見せするのはスタティックコールグラフです。</p>
+
+<p>以下に改善前・改善後のプログラムそれぞれのスタティックコールグラフを示します。</p>
+
+<p>改善前：
+<img src="/images/0010-CodeReview/pukipa.png" alt="pukipa.png" /></p>
+
+<p>改善後：
+<img src="/images/0010-CodeReview/pukiwikiparser.png" alt="pukiwikiparser.png" /></p>
+
+<p>いかがでしょうか。
+改善後のコールグラフは要素数（メソッド数）こそ増えていますが、
+わかりづらくなったとは感じられないと思います。
+つまり、メソッド同士の関係は複雑化していないということです。</p>
+
+<h2 id="速度比較">速度比較</h2>
+
+<p>コードはわかりやすくなったけど速度は落ちた……
+というのでは、あまり嬉しくありません。
+最後は速度を比較することにしましょう。</p>
+
+<h3 id="ベンチマークの結果">ベンチマークの結果</h3>
+
+<p>以下に添削前と添削後の速度比較を示します。
+ベンチマークのコードでは、
+すべての文法を網羅したテストデータを 1000 回パースする時間を比較しました。
+単位は秒です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> original …… 添削前
+ aamine   …… 添削後（青木版）</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ---- Ruby 1.8.2 --------------------------------------
+	  user     system      total        real
+ original   12.770000   0.030000  12.800000 ( 12.905975)
+ aamine      2.240000   0.000000   2.240000 (  2.274815)</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ---- Ruby 1.9 2005-08-29 -----------------------------
+	  user     system      total        real
+ original   25.040000   0.040000  25.080000 ( 25.308324)
+ aamine      2.120000   0.000000   2.120000 (  2.138534)</code></pre></figure>
+
+<p>なんと、書き換えによって 6 〜 12 倍の高速化を達成できました。</p>
+
+<h3 id="原因の追究-1-ガベージコレクション">原因の追究 (1) ガベージコレクション</h3>
+
+<p>しかし、高速になったこと自体はよいのですが、
+いったいなぜこんなに速度差がついたのでしょうか。
+無駄な計算はチマチマと省きましたが、
+これほど効果が出るようなことはやっていないはずです。
+それどころか、破壊的メソッドを意図的に排除したので、
+生成されるオブジェクトの数はむしろ増えているはずです。</p>
+
+<p>では、なぜ青木版のコードはこんなに速くなったのでしょうか。</p>
+
+<p>まず考えたのは、青木版のコードが Ruby 1.8/1.9 の特性、
+特にガベージコレクションの特性にうまくはまっているせいではないか、
+ということです。ガベージコレクションが実行時間に占める割合は意外なほど大きく、プログラムがガベージコレクタの特性に合っているかどうかによって実行時間が秒単位で変わることもあるからです。</p>
+
+<p>しかし、この推測はすぐに否定されました。
+GC.disable でガベージコレクションを停止しても、
+実行時間がほとんど変わらなかったからです。</p>
+
+<h3 id="原因の追究-2-プロファイリング">原因の追究 (2) プロファイリング</h3>
+
+<p>となると、やはりコード自体の実行時間に差があると考えるしかありません。
+いくつか推測もしてみましたが、
+こういう場合はやはり現物でプロファイリングをとるのが王道でしょう。
+Ruby でプロファイルをとるには、ruby コマンドに -r profile とオプションを付けてプログラムを実行します。
+するとプログラム終了後、標準エラー出力にプロファイルが出力されます。
+以下にオリジナル版のプロファイルを示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> %   cumulative   self              self     total
+time   seconds   seconds    calls  ms/call  ms/call  name
+22.22     0.44      0.44      580     0.76     0.88  URI.regexp
+12.12     0.68      0.24     1619     0.15     0.15  Regexp#initialize
+11.62     0.91      0.23       20    11.50    95.00  Pukipa#to_html
+ 8.59     1.08      0.17      580     0.29     1.83  Pukipa#str_parse
+ 6.06     1.20      0.12      240     0.50     3.21  Pukipa#h_parse
+ 5.56     1.31      0.11      240     0.46     2.50  Hash#each
+                         以下略</code></pre></figure>
+
+<p>この出力を見ると URI.regexp（URI にマッチする正規表現を返すメソッド）で時間がかかっているようです。また次の Regexp#initialize も正規表現を生成するメソッドですから、両方合わせると、pukipa.rb は実行時間の 34% を正規表現の生成だけに費しているということになります。</p>
+
+<h3 id="改善策">改善策</h3>
+
+<p>URI.regexp は str_parse の中で次のように使われています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> uri_regex = Regexp.new('(?!\[\[.*?)(' + URI.regexp('http').source + ')(?!.*?\]\])',Regexp::EXTENDED)</code></pre></figure>
+
+<p>問題は、str_parse が非常にたくさん呼ばれるメソッドだということです。
+しかも、実は uri_regex は毎回同じ値になります。
+つまり uri_regex を作るのはプロセスにつき一回でいいはずなのです。
+何度も呼ばれる str_parse 内で毎回作りなおす必要はありません。
+そこで次のように、uri_regex の値をキャッシュするようにしてみました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> uri_regex = uri_re()
+        :
+        :
+ def uri_re
+   @uri_re ||= /(?!\[\[.*?)(#{URI.regexp('http')})(?!.*?\]\])/x
+ end</code></pre></figure>
+
+<p>すると、この変更を加えるだけで速度が一気に 10 倍近くになり、
+添削後とほぼ同じ速度になりました。</p>
+
+<p>速度差がこの一行だけで決定していたという事実はちょっと悲しいものです。
+しかし少なくとも添削後のコードが遅くなっているわけではないことは明らかになりましたから、これでよしとしましょう。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は PukiWiki 文法のパーサ pukipa.rb をテーマに、Ruby プログラムの改善についてお話ししました。
+テーマがかなり普遍的なテキスト処理でしたから、広く応用できると思います。
+みなさんもこの機会に自分のコードを見直してみてはいかがでしょうか。</p>
+
+<h3 id="プログラム募集">プログラム募集</h3>
+
+<p>（酒の）勢いだけで始まったこの企画ですが、どうやら連載になる模様です。
+が、添削するプログラムのストックがあまりないので、この場でプログラムを募集します。
+添削してほしいプログラムがあるかたは<a href="mailto:magazine@ruby-no-kai.org">るびま編集部</a>まで御応募ください。
+今回のプログラムは正味 200 行程度でしたが、
+できればそれ以下の分量を希望します。</p>
+
+<h3 id="次回予告">次回予告</h3>
+
+<p>連載の第 2 回は（たぶん）（きっと）（運がよければ）次号掲載予定です。
+何を添削するかは全然まったく決まっておりませんが、
+コード自体をいじるときの基本的な話は今回すべてやってしまったので、
+次回はちょっと違う視点からお話ししたいと考えています。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+  <li><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51ES1E62MCL._SL160_.jpg" /></li>
+  <li><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/5164YAE2H1L._SL160_.jpg" /></li>
+  <li><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51885S48YPL._SL160_.jpg" /></li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>青木峰郎（あおき・みねろう）</p>
+
+<p>ふつうの文系プログラマ。
+本業はいちおう哲学ということになっている。
+主著『Ruby ソースコード完全解説』
+『ふつうの Linux プログラミング』
+『Ruby レシピブック』。</p>
+
+<h2 id="あなたの-ruby-コードを添削します-連載一覧">あなたの Ruby コードを添削します 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview.html">あなたの Ruby コードを添削します 【第 5 回】 Miyako + MidoreDayBook + Lispもどき</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-miyako_ext.rb.html">0017-CodeReview-miyako_ext.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-miyako.rb.html">0017-CodeReview-miyako.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-lisp.rb.html">0017-CodeReview-lisp.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-daybook_viewindex.rb.html">0017-CodeReview-daybook_viewindex.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-d_index.rb.html">0017-CodeReview-d_index.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview.html">あなたの Ruby コードを添削します 【第 4 回】 Tropy</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-tropy2.rb.html">0015-CodeReview-tropy2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-tropy.rb.html">0015-CodeReview-tropy.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-sample.cgi.html">0015-CodeReview-sample.cgi</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-index.cgi.html">0015-CodeReview-index.cgi</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-config.html">0015-CodeReview-config</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview.html">あなたの Ruby コードを添削します 【第 3 回】 dbf.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-recomb.rb.html">0013-CodeReview-recomb.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbfrecomb.rb.html">0013-CodeReview-dbfrecomb.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbf2.rb.html">0013-CodeReview-dbf2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbf.rb.html">0013-CodeReview-dbf.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview.html">あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-test_hexstruct2.rb.html">0011-CodeReview-test_hexstruct2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-test_hexstruct.rb.html">0011-CodeReview-test_hexstruct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-hexstruct2.rb.html">0011-CodeReview-hexstruct2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-hex_struct.rb.html">0011-CodeReview-hex_struct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview-pukiwikiparser.rb.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukiwikiparser.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview-pukipa.rb.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukipa.rb</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>
