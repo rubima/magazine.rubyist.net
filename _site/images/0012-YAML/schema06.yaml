@@ -1,0 +1,31 @@
+name:      address-book            # 名前
+desc:      アドレス帳              # 説明
+type:      seq
+sequence:
+  - type:      map
+    mapping:
+     "name":
+        type:       str
+        required:   yes            # 必須項目
+     "email":
+        type:       str
+        required:   yes            # 必須項目
+        pattern:    /@/            # パターン
+     "password":
+        type:       str
+        length:     { max: 16, min: 8 }      # 長さ指定
+     "age":
+        type:       int
+        range:      { max: 30, min: 18 }     # 範囲指定
+        # or assert: 18 <= val && val <= 30  # 条件式
+     "blood":
+        type:       str
+        enum:                      # 列挙
+          - A
+          - B
+          - O
+          - AB
+     "birth":
+        type:       date
+     "memo":
+        type:       any            # データ型は任意

@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>あなたの Ruby コードを添削します 【第 3 回】 dbf.rb</title>
+  <meta name="description" content="著者：青木峰郎">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0013/0013-CodeReview.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>あなたの Ruby コードを添削します 【第 3 回】 dbf.rb</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0013/0013-CodeReview.html" class="hatena-bookmark-button" data-hatena-bookmark-title="あなたの Ruby コードを添削します 【第 3 回】 dbf.rb" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0013/0013-CodeReview.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0013/0013-CodeReview.html" data-text="あなたの Ruby コードを添削します 【第 3 回】 dbf.rb">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：青木峰郎</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#今回のテーマ" id="markdown-toc-今回のテーマ">今回のテーマ</a></li>
+      <li><a href="#ソースコード" id="markdown-toc-ソースコード">ソースコード</a></li>
+      <li><a href="#難易度について" id="markdown-toc-難易度について">難易度について</a></li>
+    </ul>
+  </li>
+  <li><a href="#コーディングスタイルの改善" id="markdown-toc-コーディングスタイルの改善">コーディングスタイルの改善</a>    <ul>
+      <li><a href="#コメント" id="markdown-toc-コメント">コメント</a></li>
+      <li><a href="#識別子" id="markdown-toc-識別子">識別子</a></li>
+      <li><a href="#変数名" id="markdown-toc-変数名">変数名</a></li>
+      <li><a href="#メソッド名" id="markdown-toc-メソッド名">メソッド名</a></li>
+      <li><a href="#クラス名" id="markdown-toc-クラス名">クラス名</a></li>
+      <li><a href="#then-と-do" id="markdown-toc-then-と-do">then と do</a></li>
+      <li><a href="#require" id="markdown-toc-require">require</a></li>
+      <li><a href="#truefalse" id="markdown-toc-truefalse">TRUE/FALSE</a></li>
+    </ul>
+  </li>
+  <li><a href="#コードの局所的な改善" id="markdown-toc-コードの局所的な改善">コードの局所的な改善</a>    <ul>
+      <li><a href="#マジックナンバー" id="markdown-toc-マジックナンバー">マジックナンバー</a></li>
+      <li><a href="#nilfalse-との比較" id="markdown-toc-nilfalse-との比較">nil、false との比較</a></li>
+      <li><a href="#配列へのアクセス" id="markdown-toc-配列へのアクセス">配列へのアクセス</a></li>
+      <li><a href="#冗長なあまりに冗長な" id="markdown-toc-冗長なあまりに冗長な">冗長な、あまりに冗長な</a></li>
+      <li><a href="#文字列のパディング" id="markdown-toc-文字列のパディング">文字列のパディング</a></li>
+      <li><a href="#ファイルを行ごとに読む" id="markdown-toc-ファイルを行ごとに読む">ファイルを行ごとに読む</a></li>
+      <li><a href="#配列の全要素が条件を満たすか調べる" id="markdown-toc-配列の全要素が条件を満たすか調べる">配列の全要素が条件を満たすか調べる</a></li>
+      <li><a href="#エラーの通知" id="markdown-toc-エラーの通知">エラーの通知</a></li>
+      <li><a href="#オプション解析" id="markdown-toc-オプション解析">オプション解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#インターフェイスの改善" id="markdown-toc-インターフェイスの改善">インターフェイスの改善</a>    <ul>
+      <li><a href="#用語" id="markdown-toc-用語">用語</a></li>
+      <li><a href="#データベースへの接続" id="markdown-toc-データベースへの接続">データベースへの接続</a></li>
+      <li><a href="#レコードへのアクセス" id="markdown-toc-レコードへのアクセス">レコードへのアクセス</a></li>
+      <li><a href="#データベーススキーマの定義" id="markdown-toc-データベーススキーマの定義">データベーススキーマの定義</a></li>
+      <li><a href="#データベーススキーマの参照" id="markdown-toc-データベーススキーマの参照">データベーススキーマの参照</a></li>
+      <li><a href="#レコードの追加" id="markdown-toc-レコードの追加">レコードの追加</a></li>
+    </ul>
+  </li>
+  <li><a href="#設計の改善" id="markdown-toc-設計の改善">設計の改善</a>    <ul>
+      <li><a href="#dbase-iv-20-フォーマット" id="markdown-toc-dbase-iv-20-フォーマット">dBASE IV 2.0 フォーマット</a></li>
+      <li><a href="#クラス構造" id="markdown-toc-クラス構造">クラス構造</a></li>
+      <li><a href="#型による分岐" id="markdown-toc-型による分岐">型による分岐</a></li>
+      <li><a href="#protected" id="markdown-toc-protected">protected</a></li>
+    </ul>
+  </li>
+  <li><a href="#シリアライザの改善" id="markdown-toc-シリアライザの改善">シリアライザの改善</a>    <ul>
+      <li><a href="#ビフォアー" id="markdown-toc-ビフォアー">ビフォアー</a></li>
+      <li><a href="#アフター" id="markdown-toc-アフター">アフター</a></li>
+      <li><a href="#dsl" id="markdown-toc-dsl">DSL</a></li>
+      <li><a href="#packedstruct" id="markdown-toc-packedstruct">PackedStruct</a></li>
+      <li><a href="#dsl-の実装" id="markdown-toc-dsl-の実装">DSL の実装</a></li>
+      <li><a href="#構造体としての機能" id="markdown-toc-構造体としての機能">構造体としての機能</a></li>
+      <li><a href="#メソッドによるメンバアクセス" id="markdown-toc-メソッドによるメンバアクセス">メソッドによるメンバアクセス</a></li>
+      <li><a href="#余談永続化はいつも面倒だ" id="markdown-toc-余談永続化はいつも面倒だ">余談：永続化はいつも面倒だ</a></li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a>    <ul>
+      <li><a href="#次回予告" id="markdown-toc-次回予告">次回予告</a></li>
+    </ul>
+  </li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#あなたの-ruby-コードを添削します-連載一覧" id="markdown-toc-あなたの-ruby-コードを添削します-連載一覧">あなたの Ruby コードを添削します 連載一覧</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>冬です。移動性高気圧の曲線はいやらしすぎます。</p>
+
+<p>しかし今回は参りましたね。東京のくせに路地に雪が積もりやがってます。
+だいたいあれですよ、武蔵野線は止まるの早すぎですよ。
+弱すぎですよ。脆弱すぎですよ。too weak. 
+まあ、武蔵野線なんて乗らないからどうでもいいけどね。</p>
+
+<p>で　も　ね</p>
+
+<p>車体が同じオレンジ色でも中央線が止まる理由は雪じゃないのよアハハン。</p>
+
+<h3 id="今回のテーマ">今回のテーマ</h3>
+
+<p>そんな和やかな枕をはさみつつ、流れるように今回のテーマ説明に入りたいと思います。
+今回のお題は yrock さんに提供していただいた dbf.rb です。
+dbf.rb は昔なつかしい <a href="http://ja.wikipedia.org/wiki/DBASE">dBASE</a> というデータベースのファイルを読み書きするライブラリです。</p>
+
+<p>これまでと同じく、
+今回もシリアライズとパースが重要ポイントです。
+これまでに扱ったポイントが多く登場してくるので、
+この機会に過去の記事を復習してみるのもよいでしょう。</p>
+
+<h3 id="ソースコード">ソースコード</h3>
+
+<p>今回もまず添削前のソースコードを示します。</p>
+
+<ul>
+  <li><a href="/articles/0013/0013-CodeReview-dbf.rb.html">dbf.rb</a> (オンラインで表示)</li>
+  <li><a href="/articles/0013/0013-CodeReview-dbfrecomb.rb.html">dbfrecomb.rb</a> (オンラインで表示)</li>
+  <li><a href="/images/0013-CodeReview/CodeReview-0013.tar.gz">CodeReview-0013.tar.gz</a> (まとめてダウンロード)</li>
+</ul>
+
+<p>dbf.rb がライブラリで、dbfrecomb.rb はそのサンプルコードです。
+dbf.rb は Ruby ライセンスですので、
+添削後のコードも Ruby ライセンスで公開します。</p>
+
+<h3 id="難易度について">難易度について</h3>
+
+<p>ところで、前回の記事について某所で
+「青木のコードは小難かしくてわからん」という意見をいただきました。
+今回はそれを踏まえてより平易なコードを心がけ……るとでも思ったらまるっと大間違いだ！　今回は前回よりもさらにリフレクションを活用してみました。
+がんばって読んでください。</p>
+
+<h2 id="コーディングスタイルの改善">コーディングスタイルの改善</h2>
+
+<p>今回も最初はアプリケーション特有でない話から始めましょう。</p>
+
+<h3 id="コメント">コメント</h3>
+
+<p>例えばこんなコメントがありました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@headerlen = 0      # ヘッダ長
+@recordlen = 0      # レコード長</code></pre></figure>
+
+<p>@headerlen が header の length
+だということくらいはプログラマなら誰でもわかります。
+どうせなら、長さの単位は何か、どこからどこまでの長さなのか、
+などの情報が欲しいところです。</p>
+
+<p>あるいはこんなコメントがありました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@dbfeof = FALSE     #EOF
+@dbfbof = FALSE     #BOF</code></pre></figure>
+
+<p>これも情報が少なすぎます。
+EOF が end of file だろうってのはわかりますが、
+BOF が何の略なのかわかりません。
+コードを読んでみたら beginning of file の略だということがわかりました。</p>
+
+<p>また、この二つの変数には false が代入されているところを見ると真偽値をとるようです。
+つまり @dbfeof は「EOF の位置」でも「EOF のマーク」でもなく
+「EOF に達したかどうか」を表している、のだろうなあ〜……と想像できます。
+しかし想像は間違っている場合があるので、
+できればそういうことをコメントに書いてほしいわけです。
+例えば次のように書いておいたらどうでしょうか。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@eofp = false   # true if @f is at EOF (End Of File).
+@bofp = false   # true if @f is at BOF (Beginning Of File).</code></pre></figure>
+
+<p>こんなコメントもありました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def writerecord
+  # 1バイト空白を出力 (dbfファイル仕様の削除マーク)
+  @fp.write(" ")</code></pre></figure>
+
+<p>このコメントを見たら普通は
+「空白が削除マークなんだなあ」と思うのではないでしょうか。
+しかし writerecord というメソッド名からすると、
+別にレコードを削除しているわけではなさそうです。
+実にミスリーディングです。</p>
+
+<p>仕様を見てわかったのですが、
+実はこのバイトが空白の場合はレコードは「生きて」おり、
+アスタリスク (‘*’) の場合はレコードが削除されている (無効になる、死ぬ) のです。
+上記のコメントは「削除マーク」ではなく「削除されているかどうかを示すバイト」
+とでも書けばよかったのでしょうね。</p>
+
+<p>さらにこんなコメントまでありました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">end   # while count &lt; (@fields.numfields) do</code></pre></figure>
+
+<p>こんなコメントを付けたくなるのは、
+コードが無駄に長く、ネストが深いからです。
+コードが整理されていれば対応など一目でわかります。
+コメントで逃げるのはやめましょう。</p>
+
+<p>ちなみに、よいコメントもありました。
+例えば次のようなコメントは有用だと思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@headerset = FALSE  # ファイルにヘッダ部が書き込まれているか
+@currentrecno = -1  # 0から始まるレコード番号
+@numrecords = 0     # 1から始まるレコード数</code></pre></figure>
+
+<p>0 から始まるレコード番号に -1 を入れて異常状態を知らせる手法は
+いまいちだと思いますが、それが明示してあること自体は有意義でした。</p>
+
+<h3 id="識別子">識別子</h3>
+
+<p>Ruby の標準的なコーディングスタイルでは、
+それぞれの識別子に次のようなスタイルを使います。</p>
+
+<ul>
+  <li>variable_name</li>
+  <li>method_name</li>
+  <li>ModuleName</li>
+  <li>ClassName</li>
+  <li>ConstName</li>
+  <li>filename</li>
+</ul>
+
+<p>また、これまでも何度か扱っているように、
+ファイル名はそのファイルに記述されている主要クラスを downcase して決定します。</p>
+
+<p>さて dbf.rb では variablename のように
+アンダースコアを使わないスタイルが多用されていました。
+これは気に食わないので、すべてアンダースコアを付けることにしました。
+例えば movefirst は move_first に、movenext は move_next にします。</p>
+
+<p>ただ、この修正後のメソッドも意味を考えるといまいち気に入りませんでした。
+最終的にはそれぞれ first と next に単純化しています。</p>
+
+<h3 id="変数名">変数名</h3>
+
+<p>スタイルとしてではなく、意味的に不適切な変数名も目に付きました。
+代表例は @fp (file pointer) です。
+この変数名は他の Ruby プログラムでもときどき目にしますが、まったく不適切だと思います。
+なぜなら Ruby 言語に pointer という概念は存在しないからです。
+C 言語の命名慣習をそのまま持ち込むのはやめましょう。</p>
+
+<p>では File オブジェクトの変数名としては何が適切でしょうか。
+個人的には、f, input, output を多用しています。
+file も使うことがありますが、
+これだとパスのようにも見えて紛らわしいことがあるのであまり積極的には使いません。
+インスタンス変数に使う場合、さすがに @f は短すぎるような気もするのですが、
+いまいち他に思いつかないときは @f で済ますこともあります。
+今回も @f を使いました。</p>
+
+<h3 id="メソッド名">メソッド名</h3>
+
+<p>メソッド名が冗長なのも気になりました。
+例えば DBFfield#fieldname というメソッドがあります。
+このメソッドを実際に使うと次のようになってしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">field.fieldname</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbf.field('rainfall').fieldname</code></pre></figure>
+
+<p>明らかに、field が冗長です。
+ふつう、レシーバを見ればクラスは想像がつくので、
+レシーバに関する情報をメソッド名に入れると冗長になってしまいます。
+DBFfield#name で十分でしょう。</p>
+
+<h3 id="クラス名">クラス名</h3>
+
+<p>次にクラス名です。
+dbf.rb のクラスは DBFheader, DBFfield, DBFrecordset という名前でした。
+すべてのクラス名に「DBF」がついているのは冗長です。
+「DBF」をくくりだしてモジュールを階層化しましょう。
+つまり次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">module DBF
+  class Header
+    ……
+  end
+  class Field
+    ……
+  end
+  class RecordSet
+    ……
+  end
+end</code></pre></figure>
+
+<p>これで各クラスが DBF というライブラリに属していることが明確になりますし、
+ライブラリ内部では「Header」や「Field」のような
+簡潔な名前でクラスを参照できるようになります。
+また、ファイル名の dbf.rb とモジュール名 DBF の downcase が一致したので、
+ファイル名も標準コーディングスタイルに合ったものになりました。</p>
+
+<h3 id="then-と-do">then と do</h3>
+
+<p>次に then と do について。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if @fp != nil then</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">while count &lt; numfields do</code></pre></figure>
+
+<p>then や do をつけるかどうか、
+なんてのはほとんど趣味の領域なのでどちらでも構いません。
+構いませんが、個人的には省略しています。
+最初のころは絶対に省略しないようにしていたのですが、
+then があると後置 if に変更するのが面倒なのでだんだん付けなくなりました。</p>
+
+<p>ちなみに最近はこんな書きかたをするときもあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if @linkmap[id]
+then a_href(escape(sprintf(@linkmap[id], vary)), escape(idvary))
+else escape(idvary)
+end</code></pre></figure>
+
+<p>こういう書きかたをするのは、then/else とも一文で済み、
+if 式全体の値を使う場合です。
+シェルスクリプトか何かで見て使うようになったのが始まりです。</p>
+
+<h3 id="require">require</h3>
+
+<p>ライブラリを require するときは拡張子を取るのが原則です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "dbf.rb"</code></pre></figure>
+
+<p>は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "dbf"</code></pre></figure>
+
+<p>にしましょう。</p>
+
+<p>require するのは dbf という機能が使いたいからであって、
+それが Ruby プログラムであるか拡張ライブラリであるかなんてのは
+どうでもいいことです。そしてどうでもいいことなら書くべきではありません。</p>
+
+<p>ただし例外もあります。例えば xxx.rb と xxx.so の両方があるときです。
+このようなときは拡張子を省略すると xxx.rb が優先されるので、
+xxx.so をロードしなければならない場面では require “xxx.so” と明示しなければいけません。</p>
+
+<h3 id="truefalse">TRUE/FALSE</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@dbfeof = FALSE     #EOF
+@dbfbof = FALSE     #BOF</code></pre></figure>
+
+<p>次に大文字の TRUE と FALSE です。
+大文字の (定数の) TRUE、FALSE は捨てて、true と false を使いましょう。</p>
+
+<p>そもそも大文字の TRUE、FALSE なんてものがあったことを知らない人もいるかもしれません。
+大昔の Ruby には true、false の文法が存在せず、
+定数の TRUE, FALSE に現在で言う true と false がセットされていました。
+しかし、たしか Ruby 1.1 になるあたりで true、false が新設されて、
+それ以降は大文字の TRUE、FALSE は使うべきではないとされています。
+いつなくなるか知れたものではありませんから、
+大文字の TRUE、FALSE は問答無用で捨てるべきです。</p>
+
+<p>というか、TRUE、FALSE のように古い記法がいったいどこから伝わったのか謎です。
+昔のものがそのまま残っているユーザガイドでしょうか。
+あれも早いところ書き直さないとまずいですね。</p>
+
+<h2 id="コードの局所的な改善">コードの局所的な改善</h2>
+
+<p>続いてはコードの意味にも立ち入ってリファクタリングしていきましょう。</p>
+
+<h3 id="マジックナンバー">マジックナンバー</h3>
+
+<p>マジックナンバーには名前をつけろというのは古典的な話です。
+しかし次のように書いてあると意外と気がつかないものでしょうか。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># ファイルの終端マーク (Chr(26)、&amp;H1A、&amp;O32) を書き込む
+@f.seek(0 + @headerlen + @recordlen * @numrecords, File::SEEK_SET)
+@f.write("\x1a")</code></pre></figure>
+
+<p>“\x1a” がマジックナンバーです。
+コメントをつけたからよいというものではありません。
+まず名前をつけて、コメントをつけるなら名前のほうにつけるべきです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">EOF = "\x1a"   # EOF (End Of File) mark of dBASE
+……
+@f.seek @headerlen + @recordlen * @numrecords, File::SEEK_SET
+@f.write EOF</code></pre></figure>
+
+<p>さらに、EOF を書き込むコードを単独のメソッドに分割してもよいでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def put_eof
+  @f.seek @headerlen + @recordlen * @numrecords, File::SEEK_SET
+  @f.write EOF
+end</code></pre></figure>
+
+<p>これなら最初のコメントとほぼ同じ情報がコード上に表現されています。</p>
+
+<h3 id="nilfalse-との比較">nil、false との比較</h3>
+
+<p>ああこれは Ruby に慣れていない人のコードだなと一目でわかるのが、
+条件式で nil や false と明示的に比較している場合です。例えば次のように。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if @fp != nil then</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if @headerset == FALSE then</code></pre></figure>
+
+<p>これは「if @fp」と「unless @headerset」にすべきです。
+特にもともと真偽値である値を true, false と比較するのは時間の無駄です。
+if の条件式はもともと真偽値を受け付けるのですから、
+余計な比較を増やすのはやめましょう。</p>
+
+<p>ちなみに、「if @headerset」では @headerset が真偽値かわからないだろ、
+などという意見は本末転倒もいいところだと思います。
+それは真偽値に見えない変数名が悪いのです。
+条件式で工夫して悪いところを隠すのはやめてください。</p>
+
+<p>nil の場合は明示的に比較したほうがいいよという人もいますが、
+わたしは nil の場合も積極的に if @fp の形式を使います。
+Ruby の if, unless は「存在するかどうか」をチェックする文法なんだと
+脳内にビルトインされているので、特に不自然だとは感じません。</p>
+
+<h3 id="配列へのアクセス">配列へのアクセス</h3>
+
+<p>オリジナルのコードには、
+次のようにインデックスを使って配列にアクセスするコードが大量にありました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">count = 0
+while count &lt; (@fields.numfields) do
+  ……
+  count += 1
+end</code></pre></figure>
+
+<p>配列の全要素に順番にアクセスするのなら Array#each を使いましょう。
+each を使うと次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@fields.each do |field|
+  ……
+end</code></pre></figure>
+
+<p>一般的に言うと、次のようなコードは、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">i = 0
+while i &lt; a.size
+  x = a[i]
+  ……
+  i += 1
+end</code></pre></figure>
+
+<p>each を使って以下のように書き換えられます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a.each do |x|
+  ……
+end</code></pre></figure>
+
+<p>each にはカウンタを使うスタイルに比べて以下のような利点があります。</p>
+
+<ul>
+  <li>短い。単純。読みやすい。</li>
+  <li>無駄なカウンタが必要ない。</li>
+  <li>実は each のほうが速い。</li>
+</ul>
+
+<p>このように、each の優位は明らかです。
+配列や、それに類似したデータへの順次アクセスには常に each を使いましょう。</p>
+
+<h3 id="冗長なあまりに冗長な">冗長な、あまりに冗長な</h3>
+
+<p>一時変数は少ないほうがいいというのは事実ですが、
+何事にも限度というものがあるわけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">typechar = @fields.item(@fields.fieldname(count)).fieldtype
+if typechar == "N" or  typechar == "F" then
+  @fields.item(@fields.fieldname(count)).value = @fp.read(@fields.item(@fields.fieldname(count)).fieldsize).to_f
+elsif typechar == "C" then
+  @fields.item(@fields.fieldname(count)).value = @fp.read(@fields.item(@fields.fieldname(count)).fieldsize)</code></pre></figure>
+
+<p>さて @fields.item(@fields.fieldname(count)) は何度出てくるでしょうか。
+これはさすがに一時変数に代入しておいたほうがよいと思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">field = @fields.item(@fields.fieldname(count))
+typechar = field.fieldtype
+if typechar == "N" or  typechar == "F" then
+  field.value = @fp.read(field.fieldsize).to_f
+elsif typechar == "C" then
+  field.value = @fp.read(field.fieldsize)</code></pre></figure>
+
+<p>一時変数を嫌うなら、むしろ typechar を消すべきでしょうね。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">field = @fields.item(@fields.fieldname(count))
+if field.fieldtype == "N" or  field.fieldtype == "F" then
+  field.value = @fp.read(field.fieldsize).to_f
+elsif field.fieldtype == "C" then
+  field.value = @fp.read(field.fieldsize)</code></pre></figure>
+
+<p>ついでに if を case に変えればさらにスッキリします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">field = @fields.item(@fields.fieldname(count))
+case field.fieldtype
+when "N", "F"
+  field.value = @fp.read(field.fieldsize).to_f
+when "C"
+  field.value = @fp.read(field.fieldsize)</code></pre></figure>
+
+<h3 id="文字列のパディング">文字列のパディング</h3>
+
+<p>次はやや細かい話題です。
+まずコードを見てください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">fieldnamelen = 0
+fieldnamearr = @fields.fieldname(count).split(//)
+while fieldnamelen &lt; 11 do
+  if fieldnamearr.size &gt; 0 then
+    @fp.write(fieldnamearr.shift)
+  else
+    @fp.write("\000")
+  end
+  fieldnamelen += 1
+end</code></pre></figure>
+
+<p>何をしたいのかわかるでしょうか。
+これは、fieldname が 11 バイトより短いときには
+末尾に NUL 文字 (“\0”) を追加して 11 バイトにするコードです。</p>
+
+<p>このコードは String#ljust を使うと劇的に単純化できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">fieldname.ljust(11, "\0")</code></pre></figure>
+
+<p>ちなみに、ljust の第二引数が使えるようになったのは Ruby 1.8 からなので、
+1.6 の場合はもう少し工夫する必要があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">fieldname + ("\0" * (11 - fieldname.size))</code></pre></figure>
+
+<p>それでも二行以上にはなりません。
+何度も言いますが、String のリファレンスマニュアルはぜひ眺めておいてください。
+それから手前味噌ですが<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51M15FFSH6L._SL160_.jpg" />の文字列の章も役に立ちます。</p>
+
+<h3 id="ファイルを行ごとに読む">ファイルを行ごとに読む</h3>
+
+<p>短く書けるコードは他にもあります。
+例えばこれです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 入力リストの取得
+filelist = []
+count = 0
+fplist = open(listfile, "r")
+while not fplist.eof
+  filelist[count] = fplist.gets.chomp
+  count += 1
+end
+infilenum = count
+fplist.close</code></pre></figure>
+
+<p>ファイル listfile を読み込んで各行の改行文字を取り除き、
+行ごとの配列にしています。</p>
+
+<p>まず、ブロック付きの File.open が使えます。
+ブロック付きのときはブロック終了とともに
+自動的にファイルが close されるので、
+明示的に close する必要がありません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">filelist = []
+count = 0
+File.open(listfile, "r") {|f|
+  until f.eof?
+    filelist[count] = f.gets.chomp
+    count += 1
+  end
+  infilenum = count
+}</code></pre></figure>
+
+<p>ローカル変数 infilenum は配列 filelist のサイズと同じなので、
+いつでも filelist.size で取れます。
+また、配列の末尾に要素を追加していくなら push を使えば済むので
+count も必要ありません。
+したがって両方とも消せます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">filelist = []
+File.open(listfile, "r") {|f|
+  until f.eof?
+    filelist.push f.gets.chomp
+  end
+}</code></pre></figure>
+
+<p>行ごとの読み込みには File#each (IO#each を継承) が使えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">filelist = []
+File.open(listfile, "r") {|f|
+  f.each do |line|
+    filelist.push line.chomp
+  end
+}</code></pre></figure>
+
+<p>もうそろそろ無理ですかね？　無理ですよね。無理ですよ。</p>
+
+<p>残念ながら甘すぎます。
+ほとんどの場合、each と push の組み合わせは map に変更できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">filelist = nil
+File.open(listfile, "r") {|f|
+  filelist = f.map {|line| line.chomp }
+}</code></pre></figure>
+
+<p>ここまで行けばあと一息です。
+ファイル全体を行ごとの配列として読み込む
+File.readlines を使ってみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> filelist = File.readlines(listfile).map {|line| line.chomp }</code></pre></figure>
+
+<p>またしても 1 行で済んでしまいました。</p>
+
+<h3 id="配列の全要素が条件を満たすか調べる">配列の全要素が条件を満たすか調べる</h3>
+
+<p>配列絡みでもう一発やりましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 入力したレコードを出力するかをチェック
+# すべての文字型の指定フィールドに空白以外の値があるかで判定する
+count = 0
+validcount = 0
+refccount = 0
+while count &lt; reffieldnum
+  if dbfin.fields(reffield[count]).fieldtype == "C" then
+    refccount += 1
+    if dbfin.fields(reffield[count]).value.gsub(" ", "") != "" then
+      validcount += 1
+    end
+  end
+  count += 1
+end   # while count &lt; reffieldnum
+
+# 文字型の指定フィールドのすべてに空白以外の値のある場合にレコードを出力する
+if validcount == refccount then</code></pre></figure>
+
+<p>最後の if 文が何をやっているかわかるでしょうか。</p>
+
+<p>まあコメントに書いてあるからわかるでしょうね。
+「フィールドが文字列型ならば、値に空白以外の文字を含まなければならない」
+という条件をチェックしているのです。
+このコードでは「文字列型のフィールドの数 (refcount)」と
+「値が空白以外の文字を含むフィールドの数 (validcount)」を数えて、
+それが等しいかどうかでチェックしています。</p>
+
+<p>まず、例によって count は each で置き換えます。
+コメントもうざったいので消しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">validcount = 0
+refccount = 0
+reffield.each do |name|
+  if dbfin.fields(name).fieldtype == "C"
+    refccount += 1
+    if dbfin.fields(name).value.gsub(" ", "") != ""
+      validcount += 1
+    end
+  end
+end
+
+if validcount == refccount</code></pre></figure>
+
+<p>条件部をメソッドに分割します。これは次の布石です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def valid?(dbfin, reffield)
+  validcount = 0
+  refccount = 0
+  reffield.each do |name|
+    if dbfin.fields(name).fieldtype == "C"
+      refccount += 1
+      if dbfin.fields(name).value.gsub(" ", "") != ""
+        validcount += 1
+      end
+    end
+  end
+  validcount == refccount
+end
+
+if valid?(dbfin, reffields)</code></pre></figure>
+
+<p>dbfin.fields(name) をくくりだします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def valid?(fields)
+  validcount = 0
+  refccount = 0
+  fields.each do |f|
+    if f.fieldtype == "C"
+      refccount += 1
+      if f.value.gsub(" ", "") != ""
+        validcount += 1
+      end
+    end
+  end
+end
+
+if valid?(reffield.map {|name| dbfin.fields(name) })</code></pre></figure>
+
+<p>一つでも条件に合わない (valid でない) フィールドがあったら
+その時点でメソッドの返り値は false になることを考慮しつつ、
+メソッド内の条件判断二つを融合し、カウンタを一掃します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def valid?(dbfin, reffields)
+  fields.each do |f|
+    if f.fieldtype == "C" and f.value.gsub(" ", "").empty?
+      return false
+    end
+  end
+  true
+end
+
+if valid?(reffield.map {|name| dbfin.fields(name) })</code></pre></figure>
+
+<p>次の変形は少々手強いかもしれません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> list.each do |x|
+   return false if cond?(x)
+ end
+ true</code></pre></figure>
+
+<p>は、Enumerable#all? を使って</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> list.all? {|x| not cond?(x) }</code></pre></figure>
+
+<p>と書き換えられます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def valid?(fields)
+  fields.all? {|f|
+    not (f.fieldtype == "C" and f.value.gsub(" ", "").empty?)
+  }
+end
+
+if valid?(reffield.map {|name| dbfin.fields(name) })</code></pre></figure>
+
+<p>あとは好みに応じてさらにメソッドを分割するなりなんなり、好きにしてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if valid?(needed_fields.map {|name| dbin.field(name) })
+....
+
+def valid?(fields)
+  fields.all? {|f| not invalid_field?(f) }
+end
+
+def invalid_field?(f)
+  f.string_field? and f.value.gsub(/ /, "").empty?
+end</code></pre></figure>
+
+<h3 id="エラーの通知">エラーの通知</h3>
+
+<p>最初は、ライブラリ内で起こったエラーを通知する方法についてです。
+以下が dbf.rb 内にあったコードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if openmode != "r" and openmode != "c" then
+  p "オプションのオープンモード [" + openmode + "] が不正です"
+  exit
+end</code></pre></figure>
+
+<p>改善すべき点は二つです。</p>
+
+<p>第一に、p は基本的にデバッグ用のメソッドなのでエラーメッセージを出すには適しません。
+どうしてもエラーメッセージを出すなら $stderr.puts や $stderr.print を使いましょう。
+また、アプリケーションのユーザではなく、
+ライブラリを使うプログラマに気付いてほしいメッセージには warn を使いましょう。</p>
+
+<p>第二に、ライブラリ内で exit すべきではありません。
+ライブラリで exit してしまうと使い勝手が非常に悪くなるからです。
+こういうときは例外を使いましょう。
+このコードを例外を使って書き換えると次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">case openmode
+when 'r', 'c'
+  ……
+else
+  raise ArgumentError, "invalid open mode: #{openmode.inspect}"
+end</code></pre></figure>
+
+<p>引数が不正なときには ArgumentError を発生するのが適切です。
+他の代表的な例外には以下のようなクラスがあります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>例外クラス</td>
+      <td>意味</td>
+    </tr>
+    <tr>
+      <td>ArgumentError</td>
+      <td>引数の内容が不正である</td>
+    </tr>
+    <tr>
+      <td>TypeError</td>
+      <td>(引数の) 型が違う</td>
+    </tr>
+    <tr>
+      <td>IndexError</td>
+      <td>配列などのインデックスが範囲外</td>
+    </tr>
+    <tr>
+      <td>RangeError</td>
+      <td>C レベルにおいて、Bignum を Fixnum に変換しようとした、など</td>
+    </tr>
+    <tr>
+      <td>IOError</td>
+      <td>入出力エラー</td>
+    </tr>
+    <tr>
+      <td>RuntimeError</td>
+      <td>その他の、一般的な実行時エラー</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>もっとも、普通は ArgumentError くらいしか使わないと思います。
+よりたくさんの情報を例外に乗せる必要があるときは、
+自分で StandardError を継承して例外クラスを作ったほうがよいでしょう。</p>
+
+<h3 id="オプション解析">オプション解析</h3>
+
+<p>ライブラリの使用例として添付されていた dbfrecomb.rb
+はコマンドラインオプションを受け付けるようになっていました。
+以下のように、ごく簡単に -h だけを処理しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if ARGV[0] == "-h" then
+  p "dbfrecomb ver. 0.2"
+  p "dbfrecomb [-opt] listfile outfile [reffield ...]"
+  p "       opt:h         help"
+  p "       reffield      reference field name"
+  p ""
+  p "(ex.) dbfrecomb listfile.txt outdata.dbf pntid name area"
+  p ""
+  p "listfile format:"
+  p "dbffile1.dbf"
+  p "dbffile2.dbf"
+  p "  ..."
+
+  exit
+end</code></pre></figure>
+
+<p>まず、p はやめましょう。ここは puts にすべきです。
+また、複数行に渡る文字列はヒアドキュメントを使うと簡潔に書けます。</p>
+
+<p>しかしせっかくの機会ですから、元のコードを利用するのではなく、
+<a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=OptionParser">optparse.rb</a> を使って「しっかりと」オプションを解析してみることにしました。
+以下がわたしのコードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'optparse'
+
+def main
+  additional = []
+  outfile = nil
+  parser = OptionParser.new
+  parser.banner = "Usage: #{$0} [-f NAME,NAME...] -o PATH input..."
+  parser.on('-f', '--fields=NAME,NAME', 'Adding field names.') {|names|
+    additional = names.split(',')
+  }
+  parser.on('-o', '--output=PATH', 'Name of output file.') {|path|
+    outfile = path
+  }
+  parser.on('--help', 'Prints this message and quit.') {
+    puts parser.help
+    exit 0
+  }
+  def parser.error(msg = nil)
+    $stderr.puts msg if msg
+    $stderr.puts help()
+    exit 1
+  end
+  begin
+    parser.parse!
+  rescue OptionParser::ParseError =&gt; err
+    parser.error err.message
+  end
+  parser.error 'no output file' unless outfile
+  parser.error 'no input file' if ARGV.empty?
+  infiles = ARGV</code></pre></figure>
+
+<p>optparse.rb の基本的な使いかたは以下の通りです。</p>
+
+<ol>
+  <li>require ‘optparse’</li>
+  <li>とりあえずパーサを作る</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>parser.on(…) {</td>
+          <td>arg</td>
+          <td>…… } でオプションを登録</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>parser.parse! で実際にパース</li>
+</ol>
+
+<p>その他に知っておくとお得な情報としては、
+以下のようなところでしょう。</p>
+
+<ul>
+  <li>parser.help でオプションを自動的に要約した文字列を作ってくれる</li>
+  <li>そのメッセージにコマンドの使いかたなどを追加したいときは parser.banner= で登録できる</li>
+</ul>
+
+<p>これは見てみたほうが早いでしょう。
+上記のコードを書いて –help オプションを付けてみると、
+次のようなメッセージが出ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">~/c/rubima/0013-CodeReview % ruby recomb.rb --help
+Usage: recomb.rb [-f NAME,NAME...] -o PATH input...
+    -f, --fields=NAME,NAME           Adding field names.
+    -o, --output=PATH                Name of output file.
+        --help                       Prints this message and quit.</code></pre></figure>
+
+<p>「Usage:」の行が banner= で登録したメッセージで、
+残りはオプションの定義から OptionParser が生成しています。</p>
+
+<h2 id="インターフェイスの改善">インターフェイスの改善</h2>
+
+<p>次はまた視点を上げてライブラリのインターフェイスを検討していきましょう。
+オリジナルの dbf.rb のコード例は、
+添付されていた dbfrecomb.rb からの引用です。</p>
+
+<h3 id="用語">用語</h3>
+
+<p>最初に少し用語を定義しておきます。</p>
+
+<p>データベースは「レコード (record)」の集まりです。
+レコードというのは構造体みたいなもので、
+いくつかの「フィールド (field)」から成ります。
+同じ dBASE データベースに入っているレコードは
+すべて同じフィールドを持ちます。
+つまり図に書くと「フィールド×レコード」のマトリックスになるわけです。</p>
+
+<p>フィールドは型が決まっており、
+データベースにはフィールドの型情報 (メタデータ) も保存されています。
+このメタデータをまとめてデータベーススキーマ (database schema)
+と呼んでおきます。</p>
+
+<h3 id="データベースへの接続">データベースへの接続</h3>
+
+<p>以下本題です。</p>
+
+<p>まずデータベースに接続しないと話になりません。
+オリジナルのコードはこうです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbfin = DBFrecordset.new    # ファイルごとにオブジェクトを生成する
+dbfin.dbfopen(filelist[listcount], "r")
+……
+dbfin.close</code></pre></figure>
+
+<p>二つ不満があります。</p>
+
+<ul>
+  <li>new と dbfopen の二段階が必要なのが不便</li>
+  <li>close するのがめんどくさい</li>
+</ul>
+
+<p>したがって、まず dbfopen は open に改名し、
+インスタンスメソッドではなく特異メソッドとして使えるようにします。
+また、open はブロックを受け取り、ブロックから抜けるタイミングで
+自動的にデータベースを close するよう改善します。</p>
+
+<p>この変更によって使いかたは次のように変わりました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">DBF::RecordSet.open(path, 'c') {|db|
+  ……
+}</code></pre></figure>
+
+<h3 id="レコードへのアクセス">レコードへのアクセス</h3>
+
+<p>データベースに接続したらレコードにアクセスしましょう。
+以下がオリジナルのコードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbfin.movefirst
+while not dbfin.eof
+  ……
+  if dbfin.fields(reffield[count]).value.gsub(" ", "") != "" then
+    ……
+  end
+  ……
+  dbfin.movenext
+end</code></pre></figure>
+
+<p>まず、DBFrecordset#eof と #movenext でループを作っておきます。
+movenext メソッドを呼ぶたびに
+RecordSet には「現在のレコード」がロードされ、
+レコード一つずつにアクセスできるようになるわけです。</p>
+
+<p>DBFrecordset#fields で現在のレコードからフィールドオブジェクトが取り出せます。
+fields メソッドの引数はフィールド名です。
+そして DBFfield#value でそのフィールドの値が取り出せます。
+例えば rainfall というフィールドがあるなら
+その値には次のようにアクセスできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbfin.fields('rainfall').value</code></pre></figure>
+
+<p>今度は四つ不満があります。</p>
+
+<ul>
+  <li>最初の #movefirst がダルい</li>
+  <li>#movenext を呼ぶのがダルい</li>
+  <li>フィールドの値にアクセスする方法がダルい</li>
+  <li>#eof は真偽値を返すんだから「?」を付けたい</li>
+</ul>
+
+<p>以上を勘案して、次のように改善しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">db.each_record do |rec|
+  rec.rainfall
+end</code></pre></figure>
+
+<p>まずループは each_record 一発で書けるようにします。
+ブロック引数は DBF::Record オブジェクトです。
+このオブジェクトにはフィールド名と同じ名前のメソッドが定義されており、
+そのメソッドでフィールドの値にアクセスできます。
+例えば “rainfall” フィールドにアクセスしたければ
+上記のように rec.rainfall で OK です。</p>
+
+<p>また、日本語フィールド名など、
+メソッドだと不都合が起きそうなフィールドに備えて、
+rec[‘フィールド名’] でもアクセスできるようになっています。</p>
+
+<p>なお、each_record によるアクセスは以下の略記です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">until db.eof?
+  rec = db.current
+  ……
+  db.next
+end</code></pre></figure>
+
+<p>このインターフェイスを決めるにあたっては
+JDBC の API を参考にしました。</p>
+
+<h3 id="データベーススキーマの定義">データベーススキーマの定義</h3>
+
+<p>参照側は以上で終わりです。
+今度は定義・追加のほうを見てみましょう。</p>
+
+<p>まず新しいデータベースを作るときは
+open(path, “c”) でデータベースを開いたあと、
+次のようにフィールドを追加します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbfout.addfield(rainfallfield, "N", 10, 4)</code></pre></figure>
+
+<p>またしても気に食わない点があります。</p>
+
+<ul>
+  <li>“N” がなんなのかわからない</li>
+</ul>
+
+<p>この N は実は numeric の意味で、
+フィールドに数値を格納することを示しています。
+こういう謎の値はできるだけ避けたいものです。
+添削後のコードでは次のようにメソッド名で
+フィールドタイプを指定できるようにしました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbout.add_numeric_field 'rainfall', 10, 4</code></pre></figure>
+
+<p>また、次のように他のデータベースのスキーマをそのまま使うこともできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbout.add_field dbin.field('rainfall').dup</code></pre></figure>
+
+<p>ちなみに addfield の残りの引数はサイズ指定で、
+10, 4 は「整数部 10 桁、小数部 4 桁」の意味です。
+これはこれでわかりにくいのでできれば改善したいですが、
+そろそろ力尽きてきたので放置します。</p>
+
+<h3 id="データベーススキーマの参照">データベーススキーマの参照</h3>
+
+<p>すでに定義してあるデータベーススキーマ
+(レコードの型) を参照することもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbfout.addfield(fieldname, dbfin.fields(fieldname).fieldtype, \
+         dbfin.fields(fieldname).fieldsize, dbfin.fields(fieldname).decimal)</code></pre></figure>
+
+<p>これだとどこが該当のコードなのかわかりにくいので、
+もう少し人工的なコードも用意しておきました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">field = dbfout.fields(fieldname)
+p field.fieldname
+p field.fieldtype
+p field.fieldsize
+p field.decimal</code></pre></figure>
+
+<p>このように、#fields で特定フィールドのスキーマが取れて、
+そこから情報が得られるわけです。</p>
+
+<p>今回は、すでに指摘したメソッド名の冗長さを除くと、
+基本的な部分では不満はありません。
+ただし fields というメソッド名は明らかに不適切です。
+そこで次のように少し変えてみました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">field = db.field('rainfall')
+p field.name
+p field.type
+p field.size
+p field.decimal</code></pre></figure>
+
+<p>fields → field ではたいして違いませんが、
+多少よくなったということで勘弁してください。</p>
+
+<h3 id="レコードの追加">レコードの追加</h3>
+
+<p>最後にレコードの追加を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">dbfout.addnew
+
+dbfout.fields(datefield).value = datetime[count]
+dbfout.fields(rainfallfield).value = dbfin.fields(outfield[count]).value
+……
+dbfout.update</code></pre></figure>
+
+<p>まず DBFrecordset#addnew で新しいレコードを追加します。
+そのレコードのフィールドに書き込むには、
+DBFrecordset#fields(フィールド名) でフィールドオブジェクトを取り出し、
+field.value= で値をセットします。
+最後に DBFrecordset#update でデータベースにレコードを書き込みます。</p>
+
+<p>今回の不満は二つです。</p>
+
+<ul>
+  <li>fields(name).value= という字面がダルい</li>
+  <li>いかにも update を呼ぶのを忘れそう</li>
+</ul>
+
+<p>以上の点と、参照側のインターフェイスも踏まえて
+次のような使用例を作りました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">db.append {|rec|
+  rec.date = "2006-02-05T10:33:18"
+  rec.rainfall = 5213
+}</code></pre></figure>
+
+<p>まずレコードを追加するメソッド append はブロックを取るようにし、
+ブロックが正常終了したら自動的に update するようにします。
+ブロック内で例外が発生したときは update せずに抜けます。
+なお #append は以下の略記です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">rec = db.append
+rec.date = "2006-02-05T10:33:18"
+rec.rainfall = 5213
+db.update</code></pre></figure>
+
+<p>また、フィールドの値の参照のときと同じように、
+フィールド名と同名のメソッドでいきなり値を代入できるようにしました。</p>
+
+<h2 id="設計の改善">設計の改善</h2>
+
+<p>さて、ここからが本番です。
+改良を加えたインターフェイスを目標として、
+一気に内部を洗浄します。</p>
+
+<h3 id="dbase-iv-20-フォーマット">dBASE IV 2.0 フォーマット</h3>
+
+<p>実装を見るにあたって、dBASE データベースのフォーマット
+(DBF フォーマット) をごく簡単に説明しておきます。</p>
+
+<p>DBF ファイルは以下のような構造になっています。
+<img src="/images/0013-CodeReview/format.png" alt="format.png" /></p>
+
+<p>ファイルは大きくヘッダとボディに分かれます。
+ヘッダはさらにリーディングブロックとフィールドディスクリプタに大別できます。
+リーディングブロックにはファイルフォーマットのバージョンや最終更新日、
+レコード数などの情報が格納されており、
+フィールドディスクリプタはデータベーススキーマのことです。
+ボディは見ての通りレコードが束になっているにすぎません。</p>
+
+<p>また、ヘッダとボディの終わりにはそれぞれ特別なバイト EOH と EOF が入ります。</p>
+
+<h3 id="クラス構造">クラス構造</h3>
+
+<p>ではオリジナルのコードにどんなクラスとメソッドがあるのかざっと見ておきましょうか。
+わたしはこういうときには rdefs というコマンドを使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">~/c/rubima/0013-CodeReview % rdefs dbf.rb.org
+class DBFheader
+  def initialize
+  attr_accessor :version, :date1, :date2, :date3, :numrec, :headerbytes, :recordbytes, :reserve
+class DBFfield
+  def initialize
+  attr_accessor :fieldname, :fieldtype, :fieldsize, :decimal, :value
+class DBFfields
+  def initialize
+  def add(fname, ftype, fsize, dec)
+  def fieldname(num)
+  def item(fname)
+  def numfields
+class DBFrecordset
+  def initialize
+  def addfield(fname, ftype, fsize, dec)
+  def dbfopen(filename, openmode)
+  def eof
+  def close
+  def movefirst
+  def movenext
+  def addnew
+  def update
+  def numfields
+  def fieldname(num)
+  def fieldspec
+  def fields(fname)
+  def putheader
+  def writerecord
+  def readrecord
+  def moverecord(recno)
+  protected :putheader, :writerecord, :readrecord, :moverecord</code></pre></figure>
+
+<p>この rdefs コマンドは [ruby-talk:28274] に
+最初に登場したツールで、単純な実装ながら非常に使いでがあります。
+ここで使っているのはそれをわたしが大幅に改造したものです (<a href="/images/0013-CodeReview/rdefs.rb">rdefs.rb</a>)。</p>
+
+<p>さて内容について議論しましょう。</p>
+
+<p>まず DBFheader と DBFfield は実際のところ単なる構造体と変わりません。
+おそらく Struct に置き換えても動いてしまうでしょう。
+こういう何もしないクラスが絶対に必要ないとは言いませんが、
+ほとんどの場合には設計が間違っています。</p>
+
+<p>また DBFfields のコードをさっと眺めてみたところ、
+このクラスはほぼ配列のラッパーにすぎませんでした。
+このていどならば素の配列をそのまま使ってしまったほうが早いと感じるほどです。</p>
+
+<p>一方 DBFrecordset クラスだけは異様に大きく、複雑そうです。
+コードを眺めてみると、dbf.rb の機能のほとんどがこのクラスにつめこまれていました。
+おそらく C 言語のような感覚で「構造体と、それを操作するコード」
+のような設計をしてしまったのでしょう。</p>
+
+<p>以上の観察を元に、次の点にポイントを絞ってリファクタリングすることにします。</p>
+
+<ul>
+  <li>できるだけ DBFheader, DBFfield に機能を移転する</li>
+  <li>DBFfields は廃止して配列を直接使う</li>
+  <li>DBFrecordset から分離できるオブジェクトが見付かったら分離する</li>
+</ul>
+
+<p>最終的には次のようなクラス構成に落ち着きました。</p>
+
+<ul>
+  <li>DBF::HeaderLead</li>
+  <li>DBF::Field</li>
+  <li>DBF::RecordSet</li>
+  <li>DBF::Record</li>
+</ul>
+
+<p>まず、DBFheader は名前を HeaderLead と改名し、
+単体でパースとシリアライズをこなせるようにします。
+DBFfield も同様にパースとシリアライズの機能を追加します。
+これで DBF::RecordSet をかなりダイエットできるはずです。
+また、インターフェイスを改良した結果としてレコード一つを表現するクラスが必要になったので、DBF::Record クラスを新設しました。</p>
+
+<h3 id="型による分岐">型による分岐</h3>
+
+<p>続いて、さきほど改良したコードをさらに深く検討しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">typechar = @fields.item(@fields.fieldname(count)).fieldtype
+if typechar == "N" or typechar == "F" then
+  @fields.item(@fields.fieldname(count)).value = 0.0
+elsif typechar == "C" then
+  @fields.item(@fields.fieldname(count)).value = ""
+else
+  p "illegal type"
+end</code></pre></figure>
+
+<p>このコードはここまでの話を踏まえると次のように改善できるのでした。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">field = @fields.item(@fields.fieldname(count))
+case field.fieldtype
+when "N", "F"
+  field.value = 0.0
+when "C"
+  field.value = ""
+else
+  raise ArgumentError, "illegal type"
+end</code></pre></figure>
+
+<p>ここで見たいのは fieldtype で明示的に分岐しているところです。
+この類の分岐は、オブジェクト指向プログラミングの利点を語るときによく使われる、
+「問題のあるコード」そのままですね。
+フィールドの種類 (型) によって動作を変える必要があるのなら、
+動作ごとにフィールドのクラスを分けましょう。
+一言で言えば、ポリモルフィズムを活用するべきです。</p>
+
+<p>添削後の該当するコードは以下の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">field.load_default_value</code></pre></figure>
+
+<p>添削後のコードでは呼ぶ側に分岐が一切ありません。
+フィールドの型の違いは field のクラスによって吸収されます。
+具体的には、以下のように Field クラスを継承するクラスを三つ新設しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">DBF::Field
+    DBF::NumericField
+    DBF::FloatField
+    DBF::StringField</code></pre></figure>
+
+<p>実装を全て見るのは無駄なので、
+各クラスの load_default_value だけを見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class NumericField &lt; Field
+  ……
+  def load_default_value
+    @value = 0.0
+  end
+end
+
+class StringField &lt; Field
+  ……
+  def load_default_value
+    @value = ""
+  end
+end</code></pre></figure>
+
+<p>見ての通りです。説明するまでもないでしょう。</p>
+
+<h3 id="protected">protected</h3>
+
+<p>それから以前も扱った protected についてふれます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#-----------------------------------------------------------------------
+#   呼び出し制限
+#-----------------------------------------------------------------------
+  protected :putheader, :writerecord, :readrecord, :moverecord</code></pre></figure>
+
+<p>このような場合には protected ではなく private を使うべきです。
+おそらく Java や C++ の protected と同じイメージで使ったのだと思いますが、
+Ruby の protected は Java, C++ とは意味が違います。
+Ruby の protected を使うと、サブクラスのインスタンスが
+「オブジェクトの外から」メソッドを呼べるようになります。
+つまり、次のような状況です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class A
+  def m
+    puts "OK"
+  end
+  protected :m
+
+  def call_m(a)
+    a.m
+  end
+end
+
+A.new.call_m(A.new)   # これは大丈夫
+A.new.m               # これはダメ</code></pre></figure>
+
+<p>protected が有効な場面はほとんどありません。
+強いて言うと == を実装するときに他オブジェクトの内部データにアクセスしたいとか、
+そのくらいでしょう。
+外からの呼び出しを制限したいだけならば private が適切です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class A
+  def m
+    puts "called"
+  end
+  private :m
+end
+
+A.new.m   # m は呼べない</code></pre></figure>
+
+<p>ちなみに、private に二種類の使いかたがあるのはみなさん御存知だと思います。
+一つめは上記のようにメソッド名を明示する方法、
+二つめは次のように領域を指定する方法です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class A
+  private    # これ以降のメソッドは private！
+
+  def m
+    puts "called"
+  end
+end
+
+A.new.m   # m は呼べない</code></pre></figure>
+
+<p>この二つのうちどちらを使うべきでしょうか。
+わたしは public メソッドを上に書き
+private メソッドを下にまとめて書く癖があるので、
+それに従って後者の方法を使っています。
+毎回メソッド名を二回書くのがかったるいという理由もあります。</p>
+
+<h2 id="シリアライザの改善">シリアライザの改善</h2>
+
+<p>長い長い第三回の添削もようやく終わりに近付いてきました。
+これだけ長いと読むほうも疲れると思いますが、書いているほうはヘロヘロです。
+5 時ですよ 5 時。そりゃ東の空も白んでくるっつーの。</p>
+
+<p>さて最後の改善点はパーサとシリアライザです。
+改善前・改善後いずれのコードもこの二つだけで
+ファイルの大部分を消費する重要パーツです。</p>
+
+<h3 id="ビフォアー">ビフォアー</h3>
+
+<p>まず何も言わずにこれを見てください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def putheader
+  @fp.seek(0, File::SEEK_SET)
+
+  #1　ヘッダ先導部
+  @fp.write("\003")                                     # バージョンなど
+  @fp.write([Time.now.strftime("%y").to_i].pack("c"))   # 最終更新日(年）
+  @fp.write([Time.now.strftime("%m").to_i].pack("c"))   # 最終更新日(月）
+  @fp.write([Time.now.strftime("%d").to_i].pack("c"))   # 最終更新日(日）
+  @fp.write([@numrecords].pack("l"))                    # レコード数
+  @headerlen = ((@fields.numfields + 1) * 32 + 1)       # ヘッダのバイト数 ヘッダ先導部(32バイト)＋Σフィールド記述部(32バイト) ＋１  ヘッダの終わりに1バイト付く
+  @fp.write([@headerlen].pack("s"))
+
+  count = 0
+  @recordlen = 1
+  while count &lt; (@fields.numfields) do
+    @recordlen += @fields.item(@fields.fieldname(count)).fieldsize
+    count += 1
+  end
+  @fp.write([@recordlen].pack("s"))         # レコードのバイト数 Σ((フィールド長)+1) レコードの先頭に削除フィールドが付く
+  @fp.write("\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000")   # 予約領域など 20バイト出力
+
+  #2　フィールド記述部
+  count = 0
+  while count &lt; (@fields.numfields) do
+    #フィールド名   (DBF ファイルの定義では11バイト)
+    fieldnamelen = 0
+    fieldnamearr = @fields.fieldname(count).split(//)
+    while fieldnamelen &lt; 11 do
+      if fieldnamearr.size &gt; 0 then
+        @fp.write(fieldnamearr.shift)
+      else
+        @fp.write("\000")
+      end
+      fieldnamelen += 1
+    end
+
+    @fp.write(@fields.item(@fields.fieldname(count)).fieldtype)     # フィールド型   N,F:数値型、C:文字型
+    @fp.write("\000\000\000\000")                                   # 予約領域 (4バイト)
+    @fp.write([@fields.item(@fields.fieldname(count)).fieldsize.to_i].pack("C"))  # フィールド長
+    @fp.write([@fields.item(@fields.fieldname(count)).decimal.to_i].pack("C"))    # 小数部の長さ
+    @fp.write("\000\000\000\000\000\000\000\000\000\000\000\000\000\000")         # 予約領域など (14バイト)
+
+    count += 1
+  end   # while count &lt; (@fields.numfields) do
+
+  #2　ヘッダ部 (フィールド記述部) の終わりマーク (&amp;H0D)
+  @fp.write("\x0d")
+  @headerset = TRUE   # ヘッダ部を書き込んだ
+end</code></pre></figure>
+
+<p>見た瞬間に「メソッド長すぎ、ゴチャゴチャしすぎ」という感想が浮かんできます。
+また、すでに指摘した配列アクセスの問題もあります。
+count は一掃しなければなりません。</p>
+
+<p>しかし実は、メソッドを分割し、ここまでの問題をすべて修正しても、
+このメソッドにはなお問題があります。
+例えばコードの先頭付近に最終更新日をシリアライズしているコードがありますね。
+次のところです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  @fp.write([Time.now.strftime("%y").to_i].pack("c"))   # 最終更新日(年）</code></pre></figure>
+
+<p>さて、pack の ‘c’ はどういう意味だったか思い出せますか。
+わたしは無理です。整数をパックしてるんだから整数だろうな、くらいしかわかりません。
+まったく pack の意味不明さと来たら、
+「pack のテンプレートがわからなくたって悔しくなんかないんだからな！ バーカバーカ！」と幼児退行してみたくなるほどです。
+そんな pack を使ったコードがえんえんと並ぶ様を見ているとそれだけでウンザリしてきます。
+そのわかりにくさを補うためであろうコメントの山を見てまたさらにゲンナリします。</p>
+
+<p>さらに悲しいのは、これが一度で済まないということです。
+これはヘッダ書き込みのコードですから、
+読み込みコードでもまた pack を連発してウンザリでゲンナリなコードを書かねばなりません。
+これは明らかに問題です。二回もこんな面倒なコードを書いていたら、
+いつテンプレートを間違えるか知れたものではありません。
+コードが正しいことを確認するのも大変です。</p>
+
+<h3 id="アフター">アフター</h3>
+
+<p>では改善策を考えましょう。
+まずは結論からお見せします。
+改善の結果、次のように書けるようになりました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def save_header
+  return unless header_modified?
+  @f.seek 0, File::SEEK_SET
+  @lead.last_modified = Time.now
+  @f.write @lead.serialize
+  @fields.each do |field|
+    @f.write field.serialize_schema
+  end
+  @f.write EOH
+  @header_modified = false
+end</code></pre></figure>
+
+<p>衝撃の簡潔さです。
+pack なんたらはどこへ行ってしまったのでしょうか。
+実はすべて @lead.serialize の一行に押し込められているのです。
+「完全に受動的な構造体 + シリアライズと I/O のコード」という構成を
+「シリアライズできるオブジェクト + I/O」に変形したのですっきりとしました。
+原則として I/O とそれ以外はきっちり分離したほうが設計がシンプルになります。</p>
+
+<p>では serialize の定義はどうなっているのでしょう。
+これがグチャグチャだったら意味がないはずです。
+しかし、もちろんそんなことはありません。
+serialize はこんなコードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def serialize
+  self.class.prototypes.zip(@alist.map {|_, val| val })\
+      .map {|proto, val| proto.serialize(val) }.join('')
+end</code></pre></figure>
+
+<p>二行でした。
+どうやらどこまで行っても pack でグチャグチャなコードは出てこないようです。</p>
+
+<h3 id="dsl">DSL</h3>
+
+<p>実は、今回も前回と同じような工夫をして、
+pack 関係の記述はすべて DSL (Domain Specific Language) に押し込めているのです。
+添削後バージョンでは、ヘッダリーディングブロックは以下のように記述されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># dBASE IV 2.0 file header leading block
+#
+# - filesize = header_size + (record_size * n_records)
+# - header_size = HeaderLead.size + (Field.size * n_fields) + 1
+#
+HeaderLead = PackedStruct.define {
+  byte       :magic        # MSSSmVVV (M: dBASE III+/IV memo file,
+                           #           S: SQL table,
+                           #           m: dBASE IV memo file,
+                           #           V: format version)
+  byte       :_year        # last-modifield year - 1900
+  byte       :month        # last-modifield month
+  byte       :date         # last-modifield date
+  int32LE    :n_records    # a number of records
+  int16LE    :header_size  # byte-size of whole header
+  int16LE    :record_size  # byte-size of a record
+  string 2,  :reserved1
+  byte       :in_transaction
+  byte       :encrypted
+  string 12, :reserved2
+  byte       :mdx          # 0x1: MDX;  0x0: no MDX
+  byte       :langid       # language driver ID
+  string 2,  :reserved3
+}</code></pre></figure>
+
+<p>HeaderLead#serialize と、それから HeaderLead.read は、
+いずれもこのコードから自動的に定義されます。
+つまり、仕様の記述に一切重複がありません。</p>
+
+<p>また、仕様も一目瞭然です。byte, string, int16LE のような
+可読性の高い記述が使えるので、プログラム自体で仕様を表現できます。
+各フィールドの定義は以下の通りです。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>メソッド</td>
+      <td>意味</td>
+    </tr>
+    <tr>
+      <td>byte</td>
+      <td>8 ビット整数</td>
+    </tr>
+    <tr>
+      <td>int16LE</td>
+      <td>16 ビット整数リトルエンディアン</td>
+    </tr>
+    <tr>
+      <td>int32LE</td>
+      <td>32 ビット整数リトルエンディアン</td>
+    </tr>
+    <tr>
+      <td>string n</td>
+      <td>n バイトの文字列。余剰バイトは NUL パディング</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>問題は、この PackedStruct がどう実装されているかです。</p>
+
+<h3 id="packedstruct">PackedStruct</h3>
+
+<p>PackedStruct の根本的なアイデアは簡単です。
+バイナリデータなんてのは、ようするに、
+pack 経由で読み書きできるフィールドがぎっちり詰まっているだけです。
+ということは、pack で使うテンプレートがフィールドと
+同じ順番に並んでいればそれで読み書きはできるはずです。</p>
+
+<p>そこでまず、フィールド一つのメタ情報を保持するクラスを作っておきます。
+以下の FieldPrototype がそれです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class FieldPrototype
+  def initialize(name, template, size)
+    @name = name
+    @template = template
+    @size = size
+  end
+
+  attr_reader :name
+  attr_reader :size
+
+  def read(f)
+    parse(f.read(@size))
+  end
+
+  def parse(s)
+    s.unpack(@template)[0]
+  end
+
+  def serialize(val)
+    [val].pack(@template)
+  end
+end</code></pre></figure>
+
+<p>見ての通り、FieldPrototype はフィールド名 (@name) と pack テンプレート (@template)、
+それにバイトサイズ (@size) を保持しています。
+サイズを pack テンプレートから計算できれば一つ変数が減ると考え、
+ちょっとだけやってみましたが、
+文字列が混じると思ったより面倒なのでやめました。</p>
+
+<p>さて、FieldPrototype がフィールド一つ分の情報を持っているので、
+これの配列を作れば pack された構造体の定義になります。
+あとは、それをどうやって作るかです。</p>
+
+<h3 id="dsl-の実装">DSL の実装</h3>
+
+<p>そこで登場するのがさきほどお見せした
+DSL (Domain Specific Language) です。
+あのコードから FieldPrototype の配列が作れれば
+任務完了ということになります。</p>
+
+<p>ではまず define から見ていきましょう。
+コードは見やすいように少し変えました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def PackedStruct.define(&amp;block)
+  c = Class.new(self)
+  def c.inherited(subclass)
+    proto = @prototypes
+    subclass.instance_eval {
+      @prototypes = proto
+    }
+  end
+  c.module_eval(&amp;block)
+  c
+end</code></pre></figure>
+
+<p>まず、Class.new で self (例えば PackedStruct) 
+を継承したクラスを作ります。</p>
+
+<p>次にそのクラスに特異メソッド inherited を定義します。
+inherited はそのクラスを継承するクラスを定義したときに
+Ruby インタプリタが呼ぶメソッドです。
+ここでは FieldPrototype の配列 (@prototypes) をクラスの継承関係に沿って継承させています。
+ぶっちゃけて言えば、Field の @prototypes を StringField などにコピーしたいというのがここの目的です。</p>
+
+<p>最後に、module_eval を使って新しいクラスの上でブロックを実行します。
+したがって、そのブロック中で byte, int16LE, string などが呼ばれると
+いま作ったばかりの新しいクラスに対してそのメソッドが呼ばれることになります。</p>
+
+<p>次にその byte の定義を見てみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def PackedStruct.byte(name)
+  define_field name, 'C', 1
+end
+
+def PackedStruct.define_field(name, template, size)
+  (@prototypes ||= []).push FieldPrototype.new(name, template, size)
+  define_accessor name
+end</code></pre></figure>
+
+<p>define_field の一行目で FieldPrototype の配列が作成されています。
+(@prototypes ||= []) で配列 @prototypes を遅延初期化し、
+FieldPrototype オブジェクトをつっこみます。
+わかると思いますが、ここの @prototypes は
+クラスオブジェクトのインスタンス変数です。
+インスタンスのインスタンス変数ではありません。</p>
+
+<p>以上で FieldPrototypes の配列が用意できました。</p>
+
+<h3 id="構造体としての機能">構造体としての機能</h3>
+
+<p>あとは PackedStruct が構造体として働くようにするだけです。
+ここからの話は DSL とはまったく関係ありません。</p>
+
+<p>まず struct[‘field_name’] 形式でアクセスできるようにするところまでを見ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class PackedStruct
+  def initialize(*vals)
+    @alist = self.class.names.zip(vals)
+  end
+
+  def [](name)
+    k, v = @alist.assoc(name.to_s.intern)
+    raise ArgumentError, "no such field: #{name}" unless k
+    v
+  end
+
+  def []=(name, val)
+    a = @alist.assoc(name.to_s.intern)
+    raise ArgumentError, "no such field: #{name}" unless a
+    a[1] = val
+  end
+
+  ……
+end</code></pre></figure>
+
+<p>initialize を見てください。
+self.class.name はつまり PackedStruct.names で、
+@prototypes からフィールド名を集めてきます。
+それと、フィールドの値を zip します。</p>
+
+<p>zip は知らない人が多いと思うので解説しましょう。
+Array#zip は、二つ以上の配列 (レシーバと引数) を「横に」連結するメソッドです。
+例えば上記のコードでは、
+まずフィールド名の配列と値の配列があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["magic", "_year", "month", "date", "n_records"]
+[      3,     106,       2,     12,         256]</code></pre></figure>
+
+<p>これを zip すると次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[ ["magic",       3],
+  ["_year",     106],
+  ["month",       2],
+  ["date",       12],
+  ["n_records", 256] ]</code></pre></figure>
+
+<p>まあ、直感的にわかるでしょう。
+このようなペアの配列のことを alist (association list) と呼ぶことは前回も話しました。</p>
+
+<p>このデータ構造さえわかっていれば PackedStruct#[] と PackedStruct#[]= はもはや恐るに足りないはずです。まあ、Array#assoc というマイナーメソッドがありますが……。
+これは前回も話しましたし、リファレンスマニュアルでも見てください。</p>
+
+<h3 id="メソッドによるメンバアクセス">メソッドによるメンバアクセス</h3>
+
+<p>最後に、これまた前回と同じように、
+メンバにメソッドでアクセスできるようにしましょう。
+つまり struct[‘n_records’] を struct.n_records と書けるようにしたいのです。</p>
+
+<p>これをやっているのが、
+define_field の中で呼んでいた define_accessor です。
+さきほど言ったように、いま話していることは DSL とは関係ありません。
+ですから define_accessor を DSL の実装の中で呼ぶ必然性もありません。
+例えば new の中で一回だけ全フィールド分の
+define_accessor を呼んでも問題はありません。
+しかしそれよりは define_field の中で呼んでしまったほうが実装が楽だから、
+そこに紛れ込ませてあるにすぎません。</p>
+
+<p>さて実装を見てみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def define_accessor(name)
+  module_eval(&lt;&lt;-End, __FILE__, __LINE__ + 1)
+    def #{name}
+      self['#{name}']
+    end
+
+    def #{name}=(val)
+      self['#{name}'] = val
+    end
+  End
+end</code></pre></figure>
+
+<p>このように module_eval で一発です。</p>
+
+<p>え、module_eval がわからない？
+リファレンスマニュアルを引いてください。以上、添削終了！</p>
+
+<h3 id="余談永続化はいつも面倒だ">余談：永続化はいつも面倒だ</h3>
+
+<p>かようにパースとシリアライズは多くのプログラムで問題になってきます。
+もうちょっと話を一般化すると、データの永続化 (persistency) の問題です。
+バイナリデータなら型がどーとかエンディアンがなんたらで面倒ですし、
+テキストデータならそれはそれで LL とか LR とかの話が出てきて面倒です。
+任意のオブジェクトを永続化しようとするとリファレンスも扱う必要があります。
+効率的に I/O を書くのもダルいことこのうえありません。</p>
+
+<p>そうなると誰でも「汎用的な永続化ライブラリを作っておけば楽なんじゃね？」
+……と、考えるわけです。
+Ruby on Rails の一部である Active Record もそんな努力の一種だと言えるでしょう。
+Ruby オブジェクトの定義を規約で縛り、
+自動的にリレーショナルデータベースへ出し入れできるようにしたのが
+Active Record だと思っておけば、まあ当たらずと言えども遠からず。
+Active Record に限らず O/R マッパーと呼ばれる層は
+どれもそういう狙いのもとに作られています。</p>
+
+<p>しかし永続化に使えるのはリレーショナルデータベースだけではありません。
+最近わたしが気になってしかたないのがオブジェクト指向データベースです。
+オブジェクト指向データベースは、あたかもメモリ上のオブジェクトを
+そのままディスクに保存したかのように動作します。
+つまり、普段 Ruby プログラムで使っているオブジェクトが
+まさにそのままデータベースに入っており、
+永続化されたオブジェクトはプロセスの壁を越えて共有できます。
+また、データベースにもよりますが、
+トランザクションやバージョン管理が使えることもあります。
+そんな便利なオブジェクト指向データベースが、Ruby でも使え</p>
+
+<p>……たらいいなぁ〜、と、思うのですが、
+残念ながら Ruby で実用になるオブジェクト指向データベースは
+まだ見たことがありません。前々から作りたいなあと思ってはいるのですが……。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>いかがだったでしょうか。
+今回のコードは基本的な部分から復習するにはなかなかよい題材です。
+後半のゴチャゴチャはともかくとして、前半部分だけは確実に押さえておいてください。
+余裕のあるかたはシリアライズ部分についてもあれこれ試してみるとよいでしょう。</p>
+
+<p>最後に添削前・添削後両方のソースコードを置いておきます。
+見比べてみてください。</p>
+
+<ul>
+  <li><a href="/articles/0013/0013-CodeReview-dbf.rb.html">dbf.rb</a> (オンラインで表示)</li>
+  <li><a href="/articles/0013/0013-CodeReview-dbfrecomb.rb.html">dbfrecomb.rb</a> (オンラインで表示)</li>
+  <li><a href="/articles/0013/0013-CodeReview-dbf2.rb.html">dbf2.rb</a> (オンラインで表示)</li>
+  <li><a href="/articles/0013/0013-CodeReview-recomb.rb.html">recomb.rb</a> (オンラインで表示)</li>
+  <li><a href="/images/0013-CodeReview/CodeReview-0013.tar.gz">CodeReview-0013.tar.gz</a> (まとめてダウンロード)</li>
+</ul>
+
+<h3 id="次回予告">次回予告</h3>
+
+<p>例によって予定は未定です。添削してほしいプログラムをお持ちのかたは
+Subject に「添削希望」と書いて<a href="mailto:magazine@ruby-no-kai.org">るびま編集部</a>にプログラムを送りつけてください。
+ただし、添削するプログラムはオープンソースソフトウェアに限定します。
+プログラムサイズの制限はありません。</p>
+
+<p>ではまた次回の添削でお会いしましょう。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>青木峰郎 (あおき・みねろう)</p>
+
+<p>ふつうの文系プログラマ。本業はたぶん哲学。
+主著『Ruby ソースコード完全解説』
+『ふつうの Linux プログラミング』
+『Ruby レシピブック』。
+『ふつうの Haskell プログラミング』も近日発売……だと嬉しい。</p>
+
+<h2 id="あなたの-ruby-コードを添削します-連載一覧">あなたの Ruby コードを添削します 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview.html">あなたの Ruby コードを添削します 【第 5 回】 Miyako + MidoreDayBook + Lispもどき</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-miyako_ext.rb.html">0017-CodeReview-miyako_ext.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-miyako.rb.html">0017-CodeReview-miyako.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-lisp.rb.html">0017-CodeReview-lisp.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-daybook_viewindex.rb.html">0017-CodeReview-daybook_viewindex.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-d_index.rb.html">0017-CodeReview-d_index.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview.html">あなたの Ruby コードを添削します 【第 4 回】 Tropy</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-tropy2.rb.html">0015-CodeReview-tropy2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-tropy.rb.html">0015-CodeReview-tropy.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-sample.cgi.html">0015-CodeReview-sample.cgi</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-index.cgi.html">0015-CodeReview-index.cgi</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-config.html">0015-CodeReview-config</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview.html">あなたの Ruby コードを添削します 【第 3 回】 dbf.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-recomb.rb.html">0013-CodeReview-recomb.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbfrecomb.rb.html">0013-CodeReview-dbfrecomb.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbf2.rb.html">0013-CodeReview-dbf2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbf.rb.html">0013-CodeReview-dbf.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview.html">あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-test_hexstruct2.rb.html">0011-CodeReview-test_hexstruct2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-test_hexstruct.rb.html">0011-CodeReview-test_hexstruct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-hexstruct2.rb.html">0011-CodeReview-hexstruct2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-hex_struct.rb.html">0011-CodeReview-hex_struct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview-pukiwikiparser.rb.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukiwikiparser.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview-pukipa.rb.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukipa.rb</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

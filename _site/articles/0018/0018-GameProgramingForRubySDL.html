@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby/SDLで始めるゲームプログラミング【前編】</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0018/0018-GameProgramingForRubySDL.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby/SDLで始めるゲームプログラミング【前編】</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0018/0018-GameProgramingForRubySDL.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby/SDLで始めるゲームプログラミング【前編】" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0018/0018-GameProgramingForRubySDL.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0018/0018-GameProgramingForRubySDL.html" data-text="Ruby/SDLで始めるゲームプログラミング【前編】">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <h2 id="はじめに">はじめに</h2>
+
+<p>本稿では Ruby/SDL を使って簡単なゲームを作ってみます。
+Ruby on Rails など Web 系の用途で知名度を上げている Ruby ですが、
+Ruby でこんなこともできるんだ！と思ってもらえれば幸いです。</p>
+
+<h2 id="準備">準備</h2>
+
+<h3 id="テキストエディタ">テキストエディタ</h3>
+
+<p>Ruby スクリプトの編集用に何かひとつ<a href="http://www.forest.impress.co.jp/lib/offc/document/txteditor/">テキストエディタ</a>を
+用意しておいてください (Windows 付属の「メモ帳」でも良いですが、もう少し高機能なものを使ったほうが何かと便利です)。</p>
+
+<h3 id="rubysdl-のインストール">Ruby/SDL のインストール</h3>
+
+<p>あなたは……</p>
+
+<ul>
+  <li>Linux や FreeBSD など、Unix 系 OS を使っている→ (A) へ</li>
+  <li>Windows を使っていて、
+    <ul>
+      <li>Ruby は既にインストールしている→ (B) へ</li>
+      <li>Ruby はまだインストールしていない
+        <ul>
+          <li>インストールは面倒だから嫌いだ→ (C) へ</li>
+          <li>インストールは嫌いじゃない→ (D) へ</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Mac OS X を使っている→ (E) へ</li>
+</ul>
+
+<h3 id="a-unix-系-os-へのインストール">(A) Unix 系 OS へのインストール</h3>
+
+<p>ディストリビューションによってはパッケージが用意されているので、
+それを利用するのが簡単です (例えば Debian GNU/Linux なら libsdl-ruby1.8)。</p>
+
+<p>その他のディストリビューションでは
+<a href="http://www.kmc.gr.jp/~ohai/rubysdl_download.html">Download Ruby/SDL</a> から「source of Ruby/SDL 1.3.0」
+をダウンロードし、<a href="http://www.kmc.gr.jp/~ohai/rubysdl/README.ja">README.ja</a> に従ってインストールしてください。
+SDL 関係のライブラリを一つずつインストールしなければならないので多少面倒ですが、とりあえずは
+SDL、SDL_mixer、SDL_ttf、SDL_image があれば OK です。</p>
+
+<h3 id="b-windows-へのインストール">(B) Windows へのインストール</h3>
+
+<p><a href="http://www.kmc.gr.jp/~ohai/rubysdl_download.html">Download Ruby/SDL</a>
+から「Win32’s binary(ver 1.3.0) for Ruby 1.8」をダウンロードし、同梱の install_rubysdl.rb を実行してください。</p>
+
+<h3 id="c-rubysdl-スターターキットを使う">(C) Ruby/SDL スターターキットを使う</h3>
+
+<p>Windows 用に、インストールなしに Ruby/SDL を使ったゲーム開発ができるパッケージを公開しています。
+<a href="http://mono.kmc.gr.jp/~yhara/w/?RubySDLStarterKit">Ruby/SDL スターターキット</a>から zip ファイルをダウンロードし、好きなところに展開してください。</p>
+
+<h3 id="d-windows-に-ruby-をインストールする">(D) Windows に Ruby をインストールする</h3>
+
+<p>まず、<a href="https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md">FirstStepRuby</a>を参考に Ruby をインストールしてください。Windows 版の Ruby にはいろいろなパッケージが用意されていますが、
+<a href="http://arton.hp.infoseek.co.jp/indexj.html">ActiveScriptRuby</a> が人気があるようです。</p>
+
+<p>インストールできたら (B) に進んでください。</p>
+
+<h3 id="e-mac-os-x-について">(E) Mac OS X について</h3>
+
+<p>MacPorts を利用するのが一番簡単なようです。以下の順にインストールを行ってください。</p>
+
+<ul>
+  <li>XCodeTools (OS のインストールディスク等から入手可能)</li>
+  <li><a href="http://svn.macosforge.org/repository/macports/downloads/">MacPorts</a></li>
+  <li>各種ライブラリ</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> % port install XFree86
+ % port install libsdl
+ % port install libsdl_image
+ % port install libsdl_mixer
+ % port install libsdl_ttf
+ % port install rb-opengl</code></pre></figure>
+
+<ul>
+  <li><a href="http://www.kmc.gr.jp/~ohai/rubysdl_download.html">Ruby/SDL 本体</a> (ソースからコンパイル)</li>
+  <li><a href="http://www.kumaryu.net/?(Ruby)+Ruby%2FSDL%CD%D1ruby">rsdl</a></li>
+</ul>
+
+<h3 id="サンプルパック">サンプルパック</h3>
+
+<p>インストールできたら、
+ゲームに必要なデータが入った<a href="http://mono.kmc.gr.jp/~yhara/files/rubima_sdl_sample.zip">サンプルパック</a>をダウンロードし、好きなところに解凍してください。
+ただし (C) の Ruby/SDL スターターキットには同じデータが既に同梱されているのでダウンロードの必要はありません。</p>
+
+<h3 id="qa">Q&amp;A</h3>
+
+<p>本稿では Q&amp;A 形式で「ちょっとした疑問」に答えていきます。豆知識なので、お急ぎの方は読み飛ばしても構いません。</p>
+
+<dl>
+  <dt>Q. SDL って何ですか？</dt>
+  <dd></dd>
+  <dt>A. SDL は「クロスプラットフォームなマルチメディアアプリケーションを書くためのライブラリ」です。</dt>
+  <dd>なんだか仰々しいですね (笑)。簡単に言うと、「いろんな OS で動くゲームが作れるライブラリ」だと思ってもらえれば良いと思います。<a href="http://libsdl.org">SDL の公式サイト</a>に書かれているように、Windows や Linux、Mac OS X などいろいろな OS に対応しています。SDL 本体は C 言語のためのライブラリですが、有志の手によって Perl や Python など他のいろいろな言語から SDL を使うためのライブラリが公開されています。そのうちの、Ruby から SDL を使うためのライブラリが <a href="http://www.kmc.gr.jp/~ohai/rubysdl.html">Ruby/SDL</a> であるというわけです。</dd>
+</dl>
+
+<h2 id="ウィンドウを出してみよう">ウィンドウを出してみよう</h2>
+
+<p>では早速、初めての Ruby/SDL アプリケーションを書いてみましょう。</p>
+
+<p>サンプルパックを展開した中に main.rb というファイルがあるので、これをテキストエディタで開き、以下のように
+書き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># ライブラリの読み込み
+require "sdl"
+
+# 定数の定義
+SCREEN_W = 640
+SCREEN_H = 480
+
+# SDL の初期化
+SDL.init(SDL::INIT_EVERYTHING)
+SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+# 2 秒間待つ
+sleep(2)</code></pre></figure>
+
+<h3 id="実行方法">実行方法</h3>
+
+<p>このスクリプトを実行するには、以下のようにします。</p>
+
+<dl>
+  <dt>Ruby/SDL スターターキットを使っている場合</dt>
+  <dd>debug.exe をダブルクリック</dd>
+  <dt>それ以外の場合</dt>
+  <dd>ターミナルや MS-DOS プロンプトを開いて</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby main.rb</code></pre></figure>
+
+<p>新しいウィンドウが開いて、2 秒後に閉じれば成功です。Ruby/SDL の世界へようこそ！
+![00<em>.png](/images/0018-GameProgramingForRubySDL/00</em>.png)</p>
+
+<h3 id="初期化">初期化</h3>
+
+<p>Ruby/SDL では、一番最初に <a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-7">SDL.init</a> を呼び出します。
+引数には、SDL のさまざまな機能のうちどれを初期化するかを指定します。通常は INIT_EVERYTHING (全て初期化) で
+問題ないでしょう。</p>
+
+<p>次に、<a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-18">SDL.set_video_mode</a>
+で画面を初期化しています。
+多くのゲームは VGA サイズで作られるので、ここでも幅 640 ピクセル、高さ 480 ピクセルを指定しています。
+SCREEN_W、SCREEN_H の W、H はそれぞれ Width (幅)、Height (高さ) の略です。</p>
+
+<h2 id="何か描いてみよう">何か描いてみよう</h2>
+
+<p>さて、真っ黒なウィンドウを出すだけでは寂しいので、何か描いてみましょうか。</p>
+
+<p>main.rb を以下のように書き換えて保存してください。
+(以下では、前のスクリプトから変更する部分にはコメントを付けてあります。
+スクリプトを写すときにはまず「#」を探してみてください。)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400   #地平線の高さ (一番上が 0、一番下が 399)
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+# 塗りつぶし
+screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+screen.update_rect(0, 0, 0, 0)
+
+sleep(2)</code></pre></figure>
+
+<p>空と大地が表示されましたか？:-)
+![01<em>.png](/images/0018-GameProgramingForRubySDL/01</em>.png)</p>
+
+<h3 id="画面への描画">画面への描画</h3>
+
+<p><a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-18">SDL.set_video_mode</a> を実行すると、「画面」を表す
+SDL::Screen クラスのオブジェクトが返ってきます。上では screen という変数に代入しています。
+画面に何か表示するにはいつもこのオブジェクトを使います。</p>
+
+<p>次に、<a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-78">SDL::Surface#fill_rect</a> というメソッドを使って四角形の範囲を塗りつぶしています。
+引数の意味はそれぞれ「左上の x 座標、y 座標、幅、高さ、色」です。
+色は 0〜255 の間の 3 つの数字で指定します (それぞれ赤、緑、青の明るさです)。</p>
+
+<p>ただし、fill_rect を呼び出しただけではまだ画面には何も表示されません。
+画面の更新には時間がかかるので、SDL では
+<a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-196">SDL::Screen.update_rect</a>
+を呼んだ時にまとめて更新されるという仕様になっています。引数には fill_rect と同じく
+「左上の x 座標、y 座標、幅、高さ、色」を指定します。4 つとも 0 を指定すると画面全体が更新されます。</p>
+
+<h2 id="画像を表示してみよう">画像を表示してみよう</h2>
+
+<p>ゲームには主人公が必要ですよね。 次はビットマップ画像を表示してみましょう。
+image というディレクトリにサンプル画像 (nos_front.png) が入っていることを確認してください。</p>
+
+<p>main.rb を以下のように書き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+# 画像の読み込み
+chara = SDL::Surface.load("image/nos_front.png")
+chara.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+screen.put(chara, 240, HOLIZON-chara.h)  # 画像の表示
+screen.update_rect(0, 0, 0, 0)
+
+sleep(2)</code></pre></figure>
+
+<p>実行すると、地面の上にキャラクターが表示されます。少しゲームらしくなってきました。
+![02<em>.png](/images/0018-GameProgramingForRubySDL/02</em>.png)</p>
+
+<h3 id="画像の読み込み">画像の読み込み</h3>
+
+<p><a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-67">SDL::Surface.load</a>
+というメソッドにファイル名を渡すことで画像ファイルを読み込むことができます。
+読み込み可能なフォーマットは bmp, png, gif, jpg などです。
+読み込んだ画像は <a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-59">SDL::Surface</a> のインスタンス
+になります。Ruby/SDL で画像を扱うときはいつもこの Surface クラスを使います。</p>
+
+<p><a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-86">SDL::Surface#w</a> で画像の横幅が、
+<a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-85">SDL::Surface#h</a> で画像の縦幅が得られます。
+上では、キャラクターが地面の上に立っている用に見せるために、「HOLIZON - chara.h」でキャラクターの
+y 座標を計算しています。</p>
+
+<h3 id="カラーキーの設定">カラーキーの設定</h3>
+
+<p>その次の行では、読みこんだ画像に対し <a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-76">SDL::Surface#set_color_key</a> でカラーキー (色抜き) を設定しています。
+カラーキーを使うと、図のように画像のある色の部分だけ背景に溶け込ませることができます。
+ここでは白 (255,255,255) をカラーキーに設定しています。</p>
+
+<p><img src="/images/0018-GameProgramingForRubySDL/colkey_off.png" alt="colkey_off.png" />
+<img src="/images/0018-GameProgramingForRubySDL/colkey_on.png" alt="colkey_on.png" /></p>
+
+<h2 id="関数を使ってみよう">関数を使ってみよう</h2>
+
+<p>さて、画像の読み込みはよく使うので、関数にまとめておきましょう。</p>
+
+<p>main.rb を以下のように書き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+# 関数を定義
+def load_image(fname)
+  image = SDL::Surface.load(fname)
+  image.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+  image      #生成した画像を返す
+end
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+# 画像の読み込み
+chara = load_image("image/nos_front.png")
+
+screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+screen.put(chara, 240, HOLIZON-chara.h)
+screen.update_rect(0, 0, 0, 0)
+
+sleep(2)</code></pre></figure>
+
+<p>実行結果は前と変わらないはずです。</p>
+
+<h3 id="qa-1">Q&amp;A</h3>
+
+<dl>
+  <dt>Q. あれ、値を返すのに return はいらないの？</dt>
+  <dd></dd>
+  <dt>A. 付けても構いません。</dt>
+  <dd>Ruby では関数の「最後に評価した値」が自動的に返り値になるので、「return image」のように return をつける必要はありません。</dd>
+</dl>
+
+<h2 id="画像を動かしてみよう">画像を動かしてみよう</h2>
+
+<p>次はビットマップ画像を動かしてみましょう。
+キャラクターを少しずつ位置をずらしながら描画することで、パラパラマンガのように
+絵を動かすことができます。</p>
+
+<p>main.rb を以下のように書き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+def load_image(fname)
+  image = SDL::Surface.load(fname)
+  image.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+  image
+end
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+chara = load_image("image/nos_front.png")
+
+# 変数の初期化
+x = 0
+
+# 右端に達するまで繰り返す
+while x &lt; SCREEN_W
+  x += 8
+  screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+  screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+  screen.put(chara, x, HOLIZON-chara.h)
+  screen.update_rect(0, 0, 0, 0)
+end</code></pre></figure>
+
+<p>実行するとキャラクターが左から右まで動いて終了します。少しゲームらしくなってきました。</p>
+
+<h3 id="ゲームの動く仕組み">ゲームの動く仕組み</h3>
+
+<p>このように、ゲームプログラミングでは</p>
+
+<ul>
+  <li>キーボードやジョイパッドの入力を受け付ける (入力)</li>
+  <li>キャラクターの座標を少し動かす (移動)</li>
+  <li>キャラクターを描画する (描画)</li>
+  <li>画面を更新する (更新)</li>
+</ul>
+
+<p>という手順を何度も繰り返すことでゲームを進めていきます。この「入力→移動→描画→更新」 1 回分を
+1 フレームと呼びます。</p>
+
+<p>しかし、このままだと 1 フレームにかかる時間はコンピュータのスペックによって異なります。
+自分のコンピュータではゆっくり飛んでくる弾が友達のコンピュータではものすごい速さで飛んでくる……
+なんてことでは困りますよね。
+そこで、1 秒間のフレーム数を 60 回なら 60 回に固定してしまい</p>
+
+<ul>
+  <li>1 フレームにかかる時間が 1/60 秒より短いときは、適当にウェイトを入れて調整する</li>
+  <li>1 フレームにかかる時間が 1/60 秒より長いときは、描画や更新をスキップして調整する</li>
+</ul>
+
+<p>という処理を行うことで、どの環境でも同じ速度でゲームを動かすことができます。</p>
+
+<h3 id="fpstimerrb">fpstimer.rb</h3>
+
+<p>この処理を行うためのライブラリが、Ruby/SDL 公式サイトの
+<a href="http://www.kmc.gr.jp/~ohai/rubysdl_intro.html">チュートリアル</a>の最後で公開されています。
+これをダウンロードしたものが lib/fpstimer.rb に入っています。</p>
+
+<p>これを使った main.rb は以下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+require "lib/fpstimer"  # fpstimer.rb を読み込む
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+def load_image(fname)
+  image = SDL::Surface.load(fname)
+  image.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+  image
+end
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+chara = load_image("image/nos_front.png")
+x = 0
+
+#タイマーの生成
+timer = FPSTimerLight.new
+timer.reset
+
+while x &lt; SCREEN_W
+  x += 8
+  screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+  screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+  screen.put(chara, x, HOLIZON-chara.h)
+  #タイマー処理
+  timer.wait_frame do
+    screen.update_rect(0, 0, 0, 0)
+  end
+end</code></pre></figure>
+
+<p>最近のコンピュータは処理速度が速いので、実行すると大抵の環境ではさっきのバージョンよりもキャラクターがゆっくり動く
+ようになったと思います。</p>
+
+<h3 id="fpstimerlight">FPSTimerLight</h3>
+
+<p>fpstimer.rb では FPSTimerLight というクラスが定義されています。
+このタイマーの wait_frame というメソッドにブロックを渡してやると、</p>
+
+<ul>
+  <li>時間に余裕があるときはブロックを実行し、定時まで待つ</li>
+  <li>時間に余裕がないときはブロックを実行しない</li>
+</ul>
+
+<p>という風に時間を調整してくれます。</p>
+
+<p>ゲームプログラミングにおいて一番時間がかかるのは画面の更新処理なので、上では update_rect のみを
+wait_frame で囲んでいます。
+処理速度の遅いコンピュータではときどき画面の更新をスキップすることで、
+(見た目は多少カクカクしますが) 秒間 60 フレームを守ることができます。</p>
+
+<h3 id="qa-2">Q&amp;A</h3>
+
+<dl>
+  <dt>Q. どうして require “lib/fpstimer.rb”のように拡張子を付けないの？</dt>
+  <dd></dd>
+  <dt>A. つけても構いません。</dt>
+  <dd>Ruby のライブラリには C 言語で書かれたもの (<em>.so) と Ruby で書かれたもの (</em>.rb) の 2 種類があります。拡張子を省略した場合は*.rb の方が優先されます。</dd>
+</dl>
+
+<h2 id="キーボードから操作できるようにしよう">キーボードから操作できるようにしよう</h2>
+
+<p>次はキーボードの矢印キーでキャラクターが左右に移動するようにしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+require "lib/fpstimer"
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+def load_image(fname)
+  image = SDL::Surface.load(fname)
+  image.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+  image
+end
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+chara = load_image("image/nos_front.png")
+x = 240 #初期位置の設定
+
+timer = FPSTimerLight.new
+timer.reset
+
+# メインループ
+loop do  
+  #キーが「押されたかどうか」を調べる
+  while event=SDL::Event2.poll
+    case event
+    when SDL::Event2::Quit #ウィンドウの×ボタンが押された
+      exit
+    when SDL::Event2::KeyDown
+      exit if event.sym == SDL::Key::ESCAPE
+    end
+  end
+
+  #キーが「押されているかどうか」を調べる
+  SDL::Key.scan
+  x -= 8 if SDL::Key.press?(SDL::Key::LEFT)  
+  x += 8 if SDL::Key.press?(SDL::Key::RIGHT)
+
+  #入力に応じてキャラクターを動かす
+  x = 0 if x &lt; 0
+  x = SCREEN_W-chara.w if x &gt;= SCREEN_W-chara.w
+
+  screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+  screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+  screen.put(chara, x, HOLIZON-chara.h)
+  timer.wait_frame do
+    screen.update_rect(0, 0, 0, 0)
+  end
+end</code></pre></figure>
+
+<h3 id="入力の処理">入力の処理</h3>
+
+<p>SDL では、キーが「押されたかどうか」と「押されているかどうか」を区別して調べることができます。
+これによって、例えばシューティングゲームで</p>
+
+<ul>
+  <li>ショットはボタンが「押されている」間ずっと発射される</li>
+  <li>ボムはボタンが「押された」瞬間に一度だけ発射される</li>
+</ul>
+
+<p>というような仕様を簡単に実装することができます。</p>
+
+<p>Ruby/SDL では、<a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-248">SDL::Event2</a> というクラスで
+「キーが押された」などのイベントを、
+<a href="http://www.kmc.gr.jp/~ohai/rubysdl_doc.html#label-329">SDL::Key.scan</a>
+というメソッドで「キーが押されているか」という状態を取得することができます。
+上では ESCAPE キーが「押されたら」ゲームを終了し、矢印キーが「押されていたら」キャラクターを
+動かすようにしています。</p>
+
+<h3 id="inputrb">input.rb</h3>
+
+<p>上ではキーボードの入力のみを受け付けていますが、
+ゲームの入力デバイスには他にもジョイパッドなどいろいろなものがあります。
+これらに対応するコードをいちいち書くのは面倒なので、本稿では input.rb というライブラリを用意しました。</p>
+
+<p>input.rb を使うと、上のスクリプトはこんな風に書けます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+require "lib/fpstimer"
+require "lib/input"  # input.rb を読み込む
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+def load_image(fname)
+  image = SDL::Surface.load(fname)
+  image.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+  image
+end
+
+# キー定義
+class Input
+  define_key SDL::Key::ESCAPE, :exit
+  define_key SDL::Key::LEFT, :left
+  define_key SDL::Key::RIGHT, :right
+end
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+chara = load_image("image/nos_front.png")
+x = 240
+
+input = Input.new        # 入力用の変数を初期化
+timer = FPSTimerLight.new
+timer.reset
+loop do  
+  input.poll             # キーボードやジョイスティックを調べる
+  break if input.exit
+
+  x -= 8 if input.left
+  x += 8 if input.right
+  x = 0 if x &lt; 0
+  x = SCREEN_W-chara.w if x &gt;= SCREEN_W-chara.w
+
+  screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+  screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+  screen.put(chara, x, HOLIZON-chara.h)
+  timer.wait_frame do
+    screen.update_rect(0, 0, 0, 0)
+  end
+end</code></pre></figure>
+
+<p>だいぶすっきりしました。
+もしパソコンに繋げられるジョイパッドをお持ちなら、ぜひジョイパッドで操作してみてください。</p>
+
+<p>input.rb は Ruby の高度な (マニアックな、とも言う) 機能をいろいろ使っているので、中身の解説は省略します。
+興味のある人は lib/input.rb の解読に挑戦してみてください。</p>
+
+<h2 id="クラスを定義してみよう">クラスを定義してみよう</h2>
+
+<p>さて、主人公の次は敵キャラ出して、アイテム出して……と行きたいところですが、変数名に「x」を使っているのが
+ちょっと気になります。
+例えば敵キャラを出すなら、プレイヤーの座標は player_x、敵キャラの座標は teki_x のように改名しないといけないですよね。
+さらにアイテムの座標も……と考えると、似たような変数がたくさんあって混乱してしまいそうです。</p>
+
+<p>せっかく Ruby を使うのですから、ここはひとつ自分でクラスを定義してみましょう。</p>
+
+<p>main.rb と同じディレクトリに player.rb というファイルを作って、以下のように書いてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Player
+  def initialize(x)
+    @image = load_image("image/nos_front.png")
+    @x = x
+    @y = HOLIZON - @image.h
+  end
+  attr_reader :x, :y
+
+  def center
+    cx = @x + (@image.w / 2)
+    cy = @y + (@image.h / 2)
+
+    [cx, cy]
+  end
+
+  def act(input)
+    @x -= 8 if input.left
+    @x += 8 if input.right
+    @x = 0 if @x &lt; 0
+    @x = SCREEN_W-@image.w if @x &gt;= SCREEN_W-@image.w
+  end
+
+  def render(screen)
+    screen.put(@image, @x, @y)
+  end
+end</code></pre></figure>
+
+<p>initialize は Player.new でプレイヤーが生成されるときに自動的に呼ばれるメソッドです。
+initialize ではキャラクターの座標や画像といった情報を「@」から始まる変数 (インスタンス変数) にセットしています。</p>
+
+<p>インスタンス変数は基本的に外からアクセスすることができませんが、attr_reader :x のように書いておくと
+player.x で @x の値を取得できるようになります。また書き込みを可能にする attr_writer や、
+読み書き両方を可能にする attr_accessor もあります。</p>
+
+<p>また center ではプレイヤーの画像の「中心の座標」を返しています (あとで使います)。</p>
+
+<p>このクラスを使うと、main.rb はこんな風に書けます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+require "lib/fpstimer"
+require "lib/input"
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+def load_image(fname)
+  image = SDL::Surface.load(fname)
+  image.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+  image
+end
+require "player"               # player.rb を読み込む
+
+class Input
+  define_key SDL::Key::ESCAPE, :exit
+  define_key SDL::Key::LEFT, :left
+  define_key SDL::Key::RIGHT, :right
+end
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+player = Player.new(240)   # プレイヤーをつくる
+
+input = Input.new        
+timer = FPSTimerLight.new
+timer.reset
+loop do  
+  input.poll            
+  break if input.exit
+
+  player.act(input)            # プレイヤーを動かす
+
+  screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+  screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+  player.render(screen)        # プレイヤーを描画する
+  timer.wait_frame do
+    screen.update_rect(0, 0, 0, 0)
+  end
+end</code></pre></figure>
+
+<p>まず、require で player.rb を読み込んでいます。player.rb の中では関数 load_image や定数 SCREEN_W を使っているので、
+それらの定義より後に読み込まないといけません。</p>
+
+<p>また Player クラスには act (移動) と render (描画) という 2 つのメソッドが定義されていて、メインループの中で
+これらのメソッドを 1 フレーム毎に呼び出しています。</p>
+
+<h3 id="qa-3">Q&amp;A</h3>
+
+<dl>
+  <dt>Q. クラスごとにファイルを分けないといけないの？</dt>
+  <dd></dd>
+  <dt>A. 別に分けなくても構いません。</dt>
+  <dd>Ruby では、Java のように 1 ファイル 1 クラスのような制限がありません。1 つのファイルで複数のクラスを定義しても良いし、逆に 1 つのクラスの定義を複数のファイルに分けて書くこともできます (Input クラスがそうですね)。</dd>
+</dl>
+
+<h2 id="アイテムを降らせてみよう">アイテムを降らせてみよう</h2>
+
+<p>さて、主人公だけでは寂しいので、他の物も描画してみましょう。
+手元にリンゴと爆弾の絵があるので、「爆弾を避けつつリンゴを集める」ゲームにしてみましょうか。
+![11<em>.png](/images/0018-GameProgramingForRubySDL/11</em>.png)</p>
+
+<p>main.rb と同じディレクトリに items.rb というファイルを作り、
+以下のように書いてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Item
+  def initialize(x, y, v)
+    @x, @y, @v = x, y, v
+    @is_dead = false
+  end
+  attr_reader :v, :image
+  attr_accessor :x, :y, :is_dead
+end
+
+class Apple &lt; Item
+  def initialize(x, y, v)
+    super
+    @image = load_image("image/ringo.bmp")
+  end
+end
+
+class Bomb &lt; Item
+  def initialize(x, y, v)
+    super
+    @image = load_image("image/bomb.bmp")
+  end
+end
+
+class Items
+  def initialize
+    @items = []
+  end
+
+  def act(player)
+    #それぞれのアイテムを移動
+    @items.each do |item|
+      item.y += item.v
+      item.is_dead = true if item.y &gt; SCREEN_H
+    end
+      
+    #画面外に出たものを消去
+    @items.reject!{|item| item.is_dead}
+
+    #新しいアイテムを補充 (つねに画面内に 5 個のアイテムがあるように)
+    while @items.size &lt; 5
+      newx = rand(SCREEN_W) 
+      newv = rand(9) + 4
+      if rand(100) &lt; 60
+	@items &lt;&lt; Bomb.new(newx, 0, newv)
+      else
+        @items &lt;&lt; Apple.new(newx, 0, newv)
+      end
+    end
+  end
+
+  def render(screen)
+    @items.each do |item|
+      screen.put(item.image, item.x, item.y)
+    end
+  end
+end</code></pre></figure>
+
+<p>リンゴを表す Apple クラスと、爆弾を表す Bomb クラスを定義しています。
+また Apple と Bomb はほとんど同じ実装になるので、「空から降ってくるもの」全体を現す Item クラスを作り、
+Apple と Bomb は Item のサブクラスにしてみました。最後に、アイテムの管理を行う Items クラスを定義しています。
+メインループから使うのはこの Items クラスのみです。</p>
+
+<p>アイテムの処理を追加した main.rb は以下のようになります。前のバージョンとほとんど変わりませんね。</p>
+
+<p>このようにプログラムをクラスに分割することで、表示するものを増やしてもメインループをシンプルに保つことができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+require "lib/fpstimer"
+require "lib/input"
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+def load_image(fname)
+  image = SDL::Surface.load(fname)
+  image.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+  image
+end
+require "player"
+require "items"                # items.rb を読み込む
+
+class Input
+  define_key SDL::Key::ESCAPE, :exit
+  define_key SDL::Key::LEFT, :left
+  define_key SDL::Key::RIGHT, :right
+end
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+player = Player.new(240)
+items = Items.new              # アイテムを初期化
+
+input = Input.new        
+timer = FPSTimerLight.new
+timer.reset
+loop do  
+  input.poll            
+  break if input.exit
+
+  player.act(input)            
+  items.act(player)            # アイテムを動かす
+
+  screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+  screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+  player.render(screen)  
+  items.render(screen)         # アイテムを描画する
+  timer.wait_frame do
+    screen.update_rect(0, 0, 0, 0)
+  end
+end</code></pre></figure>
+
+<h3 id="qa-4">Q&amp;A</h3>
+
+<dl>
+  <dt>Q. クラスをどういう風に分けたらいいのかよく分かりません。</dt>
+  <dd></dd>
+  <dt>A. 僕にもよく分かりません。：-P</dt>
+  <dd>クラスをどのように設計すべきか？という話はそれだけで本が書けてしまうくらいで、ここに書くにはちょっと余白が狭すぎます。基本的には「リンゴ」や「爆弾」などの「物」をひとつづつクラスにすれば良いと思いますが、Items のように物でないものをクラスにすることもあります。いろいろなパターンでプログラムを書いて、試行錯誤するのが良いと思います。</dd>
+</dl>
+
+<h2 id="当たり判定を付けてみよう">当たり判定を付けてみよう</h2>
+
+<p>上から落ちてきたものがすり抜けてしまうのではゲームになりませんね。ここでは、</p>
+
+<ul>
+  <li>爆弾に当たったらゲーム終了 (爆弾に当たってはいけない)</li>
+  <li>リンゴに当たったらリンゴは消える (リンゴには当たっても良い)</li>
+</ul>
+
+<p>という風にしてみましょう。</p>
+
+<p>当たり判定を実装する方法にはいろいろありますが、ここでは単純に「中心どうしの距離が一定以下か」で
+判定することにしましょう。この方法は当たり判定の範囲 (下図の青線) が円形になるので丸い画像に向いていますが、
+Math.sqrt(平方根) を利用しているので物体が多いと重くなる可能性があります (その場合は四角形で判定するのが
+良いでしょう)。
+<img src="/images/0018-GameProgramingForRubySDL/distance.png" alt="distance.png" /></p>
+
+<p>items.rb を以下のように書き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Item
+  def initialize(x, y, v)
+    @x, @y, @v = x, y, v
+    @is_dead = false
+  end
+  attr_reader :v, :image
+  attr_accessor :x, :y, :is_dead
+
+  # 2 点間の距離の計算
+  def distance(x1, y1, x2, y2)
+    Math.sqrt((x1-x2)**2 + (y1-y2)**2)  # n**2 は 「n の 2 乗」(=n*n)
+  end
+end
+
+class Apple &lt; Item
+  def initialize(x, y, v)
+    super
+    @image = load_image("image/ringo.bmp")
+  end
+
+  # リンゴの当たり判定
+  def collides?(player)
+    px, py = player.center
+    distance(@x+@image.w/2, @y+@image.h/2, px, py) &lt; 56
+  end
+end
+
+class Bomb &lt; Item
+  def initialize(x, y, v)
+    super
+    @image = load_image("image/bomb.bmp")
+  end
+
+  # 爆弾の当たり判定
+  def collides?(player)
+    px, py = player.center
+    distance(@x+@image.w/2, @y+@image.h/2, px, py) &lt; 42
+  end
+end
+
+class Items
+
+  def initialize
+    @items = []
+  end
+
+  def act(player)
+    crash = false
+
+    @items.each do |item|
+      item.y += item.v
+      item.is_dead = true if item.y &gt; SCREEN_H
+    end
+      
+    # 当たり判定を行う
+    @items.each do |item|
+      case item
+      when Apple
+        item.is_dead = true if item.collides?(player)
+      when Bomb
+        crash = true if item.collides?(player)
+      end
+    end
+
+    @items.reject!{|item| item.is_dead}
+
+    while @items.size &lt; 5
+      newx = rand(SCREEN_W) 
+      newv = rand(9) + 4
+      if rand(100) &lt; 60
+	@items &lt;&lt; Bomb.new(newx, 0, newv)
+      else
+        @items &lt;&lt; Apple.new(newx, 0, newv)
+      end
+    end
+
+    # 爆弾に当たったかどうかを返す
+    crash
+  end
+
+  def render(screen)
+    @items.each do |item|
+      screen.put(item.image, item.x, item.y)
+    end
+  end
+end</code></pre></figure>
+
+<p>collides?というメソッドで、アイテムとプレイヤーが接触しているかどうかを判定しています。
+判定には、中心間の距離と半径の和を比べればよい……のですが、どの画像も完全な円ではないので、
+プレイしてみて違和感がないように数値を手で調整しています。できれば、リンゴの当たり判定は大きめに、
+爆弾の当たり判定は小さめにするとより楽しいゲームになると思います。</p>
+
+<p>また、爆弾に当たったときは act が true を返すようにしました。</p>
+
+<p>これに対応した main.rb は以下のようになります。item.act が true を返したらゲームを終了するように変更しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sdl"
+require "lib/fpstimer"
+require "lib/input"
+
+SCREEN_W = 640
+SCREEN_H = 480
+HOLIZON  = 400
+
+def load_image(fname)
+  image = SDL::Surface.load(fname)
+  image.set_color_key(SDL::SRCCOLORKEY, [255, 255, 255])
+
+  image
+end
+require "player"
+require "items"
+
+class Input
+  define_key SDL::Key::ESCAPE, :exit
+  define_key SDL::Key::LEFT, :left
+  define_key SDL::Key::RIGHT, :right
+end
+
+SDL.init(SDL::INIT_EVERYTHING)
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE)
+
+player = Player.new(240)
+items = Items.new
+
+input = Input.new        
+timer = FPSTimerLight.new
+timer.reset
+loop do  
+  input.poll            
+  break if input.exit
+
+  player.act(input)            
+  is_crashed = items.act(player)    # 爆弾に当たったか？
+  break if is_crashed               # 当たったらゲーム終了
+
+  screen.fill_rect(0, 0,       SCREEN_W, HOLIZON,          [128, 255, 255])
+  screen.fill_rect(0, HOLIZON, SCREEN_W, SCREEN_H-HOLIZON, [0, 128, 0])
+  player.render(screen)  
+  items.render(screen) 
+  timer.wait_frame do
+    screen.update_rect(0, 0, 0, 0)
+  end
+end</code></pre></figure>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>何となくゲームらしくなってきたところで、今回はお別れです。</p>
+
+<p>次回は点数表示や効果音など、ゲームとしての完成度をより高めていきたいと思います。お楽しみに！</p>
+
+<h2 id="補足フルスクリーンについて">補足：フルスクリーンについて</h2>
+
+<p>本文では説明しませんでしたが、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, SDL::SWSURFACE|SDL::FULLSCREEN)</code></pre></figure>
+
+<p>のように SDL::FULLSCREEN というフラグを指定することで、アプリケーションを全画面で動かすことができます。</p>
+
+<p>ゲームをフルスクリーンで動かすと迫力がある反面、起動に時間がかかるのでデバッグが少し面倒になります。
+開発中はウィンドウモードにしておき、リリースするときにフルスクリーンで動くように変更するのが良いと思います。</p>
+
+<h3 id="rubysdl-スターターキットの場合">Ruby/SDL スターターキットの場合</h3>
+
+<p>Ruby/SDL スターターキットでは、main.rb を実行するための exe を debug.exe と game.exe という 2 種類用意しています。
+main.rb の中では「SDL::RELEASE_MODE という変数が定義されているかどうか」を調べることで
+どちらの exe から起動されたかを判別することができるので、例えば以下のようにすると game.exe から起動されたときだけフルスクリーンにすることができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if defined?(SDL::RELEASE_MODE)
+  video_mode = SDL::SWSURFACE|SDL::FULLSCREEN
+else
+  video_mode = SDL::SWSURFACE
+end
+screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, video_mode)</code></pre></figure>
+
+<p>なお、フルスクリーン/ウィンドウモードを選択できるのは set_video_mode で画面を初期化するときのみで、
+ゲームの実行中に切り替えることはできません。</p>
+
+<h2 id="関連リンク">関連リンク</h2>
+
+<dl>
+  <dt><a href="http://www.kmc.gr.jp/~ohai/rubysdl.html">Ruby/SDL</a></dt>
+  <dd>Ruby/SDL の公式サイトです。</dd>
+  <dt><a href="http://www.kmc.gr.jp/~ohai/rubysdl.html">Ruby/SDL Reference</a></dt>
+  <dd>Ruby/SDL の日本語リファレンスです。</dd>
+  <dt><a href="http://mono.kmc.gr.jp/proj/rubysdl/">Ruby/SDL Users</a></dt>
+  <dd>Ruby/SDL の関連情報についてまとめたページです。まだ出来立てですが、<a href="http://mono.kmc.gr.jp/proj/rubysdl/?Works">Ruby/SDL を利用した作品へのリンク集</a>などがあります。</dd>
+</dl>
+
+<h2 id="筆者について">筆者について</h2>
+
+<dl>
+  <dt>yhara</dt>
+  <dd><a href="http://www.kmc.gr.jp/">京大マイコンクラブ</a>に所属する大学院生。好きなゲームのジャンルは音ゲーと落ちゲー。</dd>
+</dl>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

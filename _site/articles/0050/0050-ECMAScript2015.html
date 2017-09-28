@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>2015 年の JavaScript と babel の話</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0050/0050-ECMAScript2015.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>2015 年の JavaScript と babel の話</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0050/0050-ECMAScript2015.html" class="hatena-bookmark-button" data-hatena-bookmark-title="2015 年の JavaScript と babel の話" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0050/0050-ECMAScript2015.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0050/0050-ECMAScript2015.html" data-text="2015 年の JavaScript と babel の話">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <h2 id="はじめに">はじめに</h2>
+
+<p>Node.js 日本ユーザーグループ代表の古川 (@yosuke_furukawa) です。るびま初投稿です。よろしくお願いいたします。</p>
+
+<p>今日は JavaScript の基本的な所に触れつつ、今後の JavaScript である ECMAScript2015 (旧 ECMAScript6 ) の話を中心にしようと思います。</p>
+
+<p>ECMAScript2015 (以下 ES2015 ) は今年の 6 月に公式に次の ECMAScript として仕様が公開されます。この ECMAScript の仕様に準拠した言語実装が JavaScript であり、簡単に言ってしまえば <em>今後のブラウザ</em> ではこの ES2015 の仕様に準拠した新しい JavaScript が使えるようになります。</p>
+
+<p>ただし、それは今後のブラウザであって、現在普及しているブラウザでは使えません。ES2015 の機能をサポートしたブラウザを待つのではなく、ES2015 で記述し、それを現在普及しているブラウザでも扱えるようにするトランスパイラ <em>babel (旧 6to5)</em> に関して今回は解説します。</p>
+
+<p>また Ruby を記述している方々の中ではウェブのアプリケーションを構築されている方も多いと思いますが、この <em>babel</em> は次の Sprockets の v4.x で導入が検討されており、新しい Sprockets では ES6 で記述することもできる可能性があります。</p>
+
+<h2 id="トランスパイラで何が嬉しいのか">トランスパイラで何が嬉しいのか</h2>
+
+<p>JavaScript におけるトランスパイラというのは、ES2015 以降のセマンティクスで書かれた JavaScript を現在使われているブラウザでも使えるようにするための変換処理をするツールです。</p>
+
+<p>ES2015 は仕様公開を 6 月に控えて、盛り上がりを見せています。
+Chrome の開発ビルド (Canary) や FireFox の開発版 (Aurora) にも多くの ES2015 の機能追従がされてますし、一部の機能は既に今のブラウザでも扱えるようになっています。ただし、全ての機能セットを揃えたブラウザは今のところ存在しません。</p>
+
+<p>さらに、JavaScript には他の言語には必ずあるような一般的な機能が欠落している事も多く、それをカバーするために Underscore といったライブラリや CoffeeScript, TypeScript, JSX といった altJS が台頭しています。</p>
+
+<p>ES2015 に対応した JavaScirpt を使うことで、ライブラリの機能が不要になり、依存ライブラリを減らすことができたり、altJS に頼らなくても豊富な言語機能が扱える可能性が広がります。</p>
+
+<p>また数年後には ES2015 が広まっていることを考えるとその時までに ES2015 の新文法、新機能に慣れておいたほうがスムーズな移行が期待できます。</p>
+
+<h2 id="ecmascript-2015-について">ECMAScript 2015 について</h2>
+
+<p>ECMAScript 2015 には、下記の仕様が機能として追加されます。</p>
+
+<ul>
+  <li>let/const といった Blocking Scope</li>
+  <li>Map/Set/WeakMap/WeakSet といった Collections</li>
+  <li>型を定義する Class</li>
+  <li>Generator/for..of</li>
+  <li>Promises</li>
+  <li>Template String Literals</li>
+  <li>Arrow Functions</li>
+  <li>modules</li>
+</ul>
+
+<h2 id="babel-について">babel について</h2>
+
+<p>今一番更新がホットな トランスパイラの一つです。他にもトランスパイラはいくつか存在しますが、新しい文法を一番サポートしているのが babel になります。ちなみに読み方は決まっていません。いろんな読み方を許容しているので、「バベル」でも「ベーベル」でも「バブゥ」でもいいらしいです。 <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>babel サポート文法一覧
+<img src="/images/0050-ECMAScript2015/babel-syntax.png" alt="babel-syntax.png" /></p>
+
+<p><a href="http://kangax.github.io/compat-table/es6/">http://kangax.github.io/compat-table/es6/</a></p>
+
+<h3 id="babel-インストール">babel インストール</h3>
+
+<p>npm を利用します。node.js をインストールしておいてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm install babel -g</code></pre></figure>
+
+<p>こうすると 3 つのコマンドラインツールがインストールされます。</p>
+
+<ul>
+  <li>babel (babel の基本コマンド、本コマンドを利用すれば ES2015 で記述された JavaScript ファイルをトランスパイルできる)</li>
+  <li>babel-node (babel でのトランスパイルをした上でコードを node で実行するためのコマンド、REPL にもなる)</li>
+  <li>babel-external-helpers (babel の utility を babel の外からも使えるようにするためのコマンド)</li>
+</ul>
+
+<p>簡単な使い方としては下記の通り</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># babel filename でトランスパイルすると標準出力に結果が出る
+$ babel test.js
+
+# babel -o を使うと出力先ファイルを指定できる
+$ babel -o test2.js test.js
+
+# babel -w を使うと変更を監視してファイルを出力できる
+$ babel -w test.js -o test2.js
+
+# ソースマップを付ける場合は -s, インラインソースマップが欲しいなら -t
+$ babel -s -t -w test.js -o test2.js</code></pre></figure>
+
+<p>トランスパイルではなく、スクリプトとしてそのまま実行することもできます。
+実行したい場合は babel-node を使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ babel-node test.js</code></pre></figure>
+
+<p>ファイルを省略して実行すると、簡単な REPL にもなります。ただし、改行する度に逐次実行されるため、今のところ一行で全て書く必要があるので REPL としての利用はオススメはしません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ babel-node
+&gt; [0, 1, 2, 3].map((x)=&gt;x*x);
+[ 0, 1, 4, 9 ]</code></pre></figure>
+
+<h3 id="sprockets-で使う方法">Sprockets で使う方法</h3>
+
+<p><strong>sprockets-es6</strong> を使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gem install sprockets-es6</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># Gemfile
+gem "sprockets"
+gem "sprockets-es6"</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "sprockets/es6"</code></pre></figure>
+
+<p>これで使えるようになります。</p>
+
+<h3 id="gulpgrunt-などで使う方法">gulp/grunt などで使う方法</h3>
+
+<p>これもさほど変わりません。grunt-babel, gulp-babel があるのでそれを利用しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm install grunt-babel load-grunt-tasks -D</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require("load-grunt-tasks")(grunt);
+grunt.initConfig({
+  "babel": {
+    options: {
+      // ソースマップが要らない場合は false にする
+      sourceMap: true
+    },
+    dist: {
+      files: {
+        "dist/app.js": "src/app.js"
+      }
+    }
+  }
+});
+
+grunt.registerTask("default", ["babel"]);</code></pre></figure>
+
+<p>これで <strong>grunt</strong> コマンドを実行すれば babel が実行されます。
+また gulp の場合は以下のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm install gulp-babel gulp-sourcemaps gulp-concat -D</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">var gulp = require("gulp");
+var sourcemaps = require("gulp-sourcemaps");
+var babel = require("gulp-babel");
+var concat = require("gulp-concat");
+
+gulp.task("default", function () {
+  return gulp.src("src/**/*.js")
+    .pipe(sourcemaps.init())
+    .pipe(concat("all.js"))
+    .pipe(babel())
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("dist"));
+});</code></pre></figure>
+
+<p>これで <strong>gulp</strong> コマンドを実行すれば babel でトランスパイルされます。</p>
+
+<h2 id="ecmascript-2015-で変わる-javascript-の書き方">ECMAScript 2015 で変わる JavaScript の書き方</h2>
+
+<p>ES2015 にはここでは紹介しきれないほどの機能が入っています。個人的に重要だと思っているものは紹介しますが、全てを見てみたい場合は<a href="http://people.mozilla.org/~jorendorff/es6-draft.html">ES2015 のドラフトをご一読下さい</a>。</p>
+
+<p>ES2015 の目標は先程のドラフトに記述されていて、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ECMAScript 第 6 版のゴールには以下のものが含まれている。
+
+- 大規模アプリ開発の支援
+- ライブラリ構築の支援
+- 他の言語からのコンパイル対象として利用されること
+
+具体的なエンハンスとして、
+
+- モジュール化
+- クラス定義
+- ブロックスコープ
+- iterator と generator
+- 非同期プログラミングのための Promise
+- デストラクチャリング
+- 末尾呼び出し最適化
+
+といった機能が含まれている。
+
+また、ECMAScript のライブラリとして map や set、binary 配列、Unicode 補助文字、正規表現拡張が built-in で追加されている。
+これらの build-in はサブクラスとして拡張するのも可能とする。</code></pre></figure>
+
+<p>という風になっています。つまり、大規模開発に耐えるため、適切にモジュール化をすること、適切な単位でクラスを設計してブロックスコープにより、変数を限定的に扱うことなどができるようになりました。</p>
+
+<p>また非同期プログラミングに関しては Promise として非同期処理を抽象化する事ができるようになりました。さらに iterator や generator を扱う事で遅延繰り返し処理を扱うことができるようになりました。これらの機能は関数型言語の流れを汲んでいると筆者は捉えていて、また末尾呼び出し最適化もこの流れを汲んだ機能追加であると捉えています。</p>
+
+<p>では、これらの機能に対して一つ一つ紹介していきます。また、本当はこの他にも Template String Literals とか Arrow Functions などが定義されていますが、この記事では説明を省きます。</p>
+
+<h3 id="モジュール化">モジュール化</h3>
+
+<p>モジュールを切り出すことができるようになりました。これまで JavaScript では言語レベルでモジュールの分割ができませんでした。そのため、JavaScript をモジュール化してフロントで読み込む際には require.js 使ったり、 browserify 使ったりというライブラリで解決するか、global 空間に独自の名前空間を作ってそこに生やすといった処理がされてきました。</p>
+
+<p>ES2015 からはこのモジュール化をするための専用の構文 <strong>export</strong> と <strong>import</strong> が使えるようになりました。</p>
+
+<p>基本的には commonjs と似ています、つまり、 export でオブジェクトを import できるようにして、require の代わりに import 構文でオブジェクトを利用できるようにします。</p>
+
+<h4 id="名前付きの-export">名前付きの export</h4>
+
+<p>では実際にモジュールを使ってコードを書いてみましょう。</p>
+
+<p>下記のようなファイルを作成し、<strong>Math.js</strong> のような名前をつけておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">"use strict";
+
+// export 構文で外部から読み込めるようにする
+// export する場合は以下のようにする
+export const PI = 3.141592;
+
+// import させないものは export をつけないでおく
+const _sqrt = function(s, x, last){
+  return x != last ? _sqrt(s, (x + s / x) / 2.0, x) : x;
+};
+
+// 関数に対しても export 可能
+// 平方根を求める (バビロニアの平方根アルゴリズム)
+export const sqrt = function(s){
+  return _sqrt(s, s/2.0, 0.0);
+};
+
+// 二乗を求める
+export function square(x) {
+  return x * x;
+}</code></pre></figure>
+
+<p>これはちょうど commonjs で以下のように記述しているのと同じです。 node.js もしくは browserify を使ってコードを書いたことがある方であれば馴染み深い書き方かと思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// Math.js
+
+export.PI = 3.141592;
+
+var _sqrt = function(s, x, last){
+  return x != last ? _sqrt(s, (x + s / x) / 2.0, x) : x;
+};
+export.sqrt = function(s){
+  return _sqrt(s, s/2.0, 0.0);
+};
+export.square(x) {
+  return x * x;
+};</code></pre></figure>
+
+<p>同様に下記のようなファイルを作成し、 <strong>Main.js</strong> のような名前をつけておきます。
+同じフォルダ内においてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">import {PI, sqrt, square} from './Math';
+console.log(PI); // 3.141592
+console.log(sqrt(121)); // 11
+console.log(square(11)); // 121</code></pre></figure>
+
+<p>実際に babel-node を使ってコードを実行してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ babel-node Main.js
+3.141592
+11
+121</code></pre></figure>
+
+<p>このように <strong>export</strong> 構文を使うと <strong>import</strong> で読み込んで利用できるようになります。</p>
+
+<p>名前付きの import ではなく、export されているものを全て一つのオブジェクトに import する場合は以下のように書きます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">import * as Math from './Math';
+console.log(Math.PI); // 3.141592
+console.log(Math.sqrt(121)); // 11
+console.log(Math.square(11)); // 121</code></pre></figure>
+
+<h4 id="デフォルトの-export">デフォルトの export</h4>
+
+<p>前節では、 module について説明しましたが、 export には 2 種類あります。通常の export と default export です。 この違いについて説明しましょう。下記の JavaScript は前回の名前付き export を使っています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">const PI = 3.141592;
+
+const _sqrt = function(s, x, last){
+  return x != last ? _sqrt(s, (x + s / x) / 2.0, x) : x;
+};
+
+const sqrt = function(s){
+  return _sqrt(s, s/2.0, 0.0);
+};
+
+const square = function(x) {
+  return x * x;
+};
+
+export default Math = {
+  PI: PI,
+  sqrt: sqrt,
+  square: square
+};</code></pre></figure>
+
+<p>import する側ではこう書きます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">import Math from './Math';
+console.log(Math.PI);
+console.log(Math.sqrt(121));
+console.log(Math.square(11));</code></pre></figure>
+
+<p>先ほどとの違いが分かるでしょうか。default export で export した場合は、import する時に import の対象をブレース {……} で囲む必要はなく、export されている対象の名前を知る必要はありません。</p>
+
+<p>これは、ちょうど commonjs で module.exports を使って書くのと似ています。</p>
+
+<p>後述しますが、export default 構文は class 定義と組み合わせて使うことが多くなると思います。定義したクラスを default export して外から import できるようにする、という書き方が多くなると思われます。</p>
+
+<h3 id="クラス定義">クラス定義</h3>
+
+<p>JavaScript でクラスライクなものを作るときは、コンストラクタとして関数を定義し、prototype に対してメソッドを定義することで実現してきました。このような JavaScript をよく見るかと思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">var Character = function(x, y) {
+  this.x = x;
+  this.y = y;
+  this.health_ = 100;
+}
+Character.prototype.attack = function(character) {
+  character.health_ -= 10;
+};</code></pre></figure>
+
+<p>これの糖衣構文として class が追加されました。class 構文を使うと以下のように記述することができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Character {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.health_ = 100;
+  }
+  attack(character) {
+    character.health_ -= 10;
+  }
+}</code></pre></figure>
+
+<p>さっきの書き方よりもスッキリ定義できる上に、クラスであることが直感的に分かるようになりました。以前の書き方は関数定義と同じく <strong>function</strong> を使った書き方なので、一見しただけでは関数なのか class なのか分かりにくいです。</p>
+
+<p>また先程の module の default export と組み合わせて、下記のように class を公開するやり方が ES6 ベースで記述されたモジュールによく見られます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">export default class Character {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.health_ = 100;
+  }
+  attack(character) {
+    character.health_ -= 10;
+  }
+}</code></pre></figure>
+
+<p>さて、class があるということは継承も存在します。
+継承を使うと以下のように記述できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// Character クラス
+class Character {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.health_ = 100;
+  }
+  attack(character) {
+    character.health_ -= 10;
+  }
+}
+
+// 当然継承もある。
+// Monster クラスに継承
+class Monster extends Character {
+  constructor(x, y, name) {
+    super(x, y);
+    this.name = name;
+  }
+
+  // メソッド書くときはこう書く
+  attack(character) {
+    // 親クラスのメソッド呼ぶときはこう
+    super.attack(character);
+    // super(character) でも同じ意味になる
+  }
+
+  // get prefix を付けられる
+  get isAlive() { return this.health_ &gt; 0; }
+  get health() { return this.health_; }
+  // set prefix を付けられる
+  set health(value) {
+    if (value &lt; 0) throw new Error('Health must be non-negative.');
+    this.health_ = value;
+  }
+}
+var myMonster = new Monster(5,1, 'arrrg');
+var yourMonster = new Monster(5,1, 'nyan');
+// get prefix をつけるとプロパティアクセスのようにメソッドを扱える
+console.log(myMonster.health); // 100
+console.log(myMonster.isAlive); // true
+// set prefix でも同様。
+myMonster.health = 1;
+console.log(myMonster.health); // 1
+console.log(myMonster.isAlive); // true
+
+myMonster.attack(yourMonster);
+console.log(yourMonster.health); //90</code></pre></figure>
+
+<p>これまでの <strong>function</strong> と <strong>prototype</strong> を使った書き方よりも直感的な書き方が期待できます。</p>
+
+<h3 id="ブロックスコープ-letconst">ブロックスコープ (let/const)</h3>
+
+<p>let, const という新しい変数宣言ができるようになりました。これは block スコープと呼ばれています。JavaScript の場合、変数の生存するスコープを表現するのに function で囲む必要がありました。しかし、let/const を使うことで、function だけではなくブレース <strong>{ …… }</strong> で囲まれた領域がスコープになります。</p>
+
+<p>let は再代入可能な変数ですが、const は再代入不可能な変数です。const はちょうど Java で言うところの final があたったような状態になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// block.js
+{
+  var a = 10;
+  let b = 20;
+  const tmp = a;
+  a = b;
+  b = tmp;
+  // tmp = 30; 再代入はできない SyntaxError になる。
+}
+
+// a = 20、a は var で宣言しているのでブロックスコープの外からも参照可能。
+console.log(a);
+// let で定義した b はブロックスコープの外からは解決できない、ReferenceError b is not defined になる。
+console.log(b);
+// const もスコープの中でのみ有効、tmp is not defined
+console.log(tmp);</code></pre></figure>
+
+<h3 id="iterator-と-generator">iterator と generator</h3>
+
+<p>ES2015 から、新しく <strong>for of</strong> という文法が追加されました。これは繰り返しをおこなう <strong>for</strong> 文の拡張です。以下の様な記述を行います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">var res = [];
+// ここが for of 文
+for (let element of [1, 2, 3]) {
+  res.push(element * element);
+}
+console.log(res); // [1, 4, 9]</code></pre></figure>
+
+<p>これまでの for 文と何が違うのでしょうか。これまでの for in 文と異なり、of に渡すのはコレクションに限りません。
+繰り返し可能なもの、Iterable なものであれば for of 文で繰り返すことができます。</p>
+
+<p>Iterable なものを作るには、 <strong>Symbol.Iterator</strong> を使います。 <strong>Symbol.Iterator</strong> の定義は下記の通り。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// 1000 までの値を返す fibonacci を作る
+var fibonacci = {
+  // Symbol.iterator を持つメソッドを持つオブジェクトにする
+  [Symbol.iterator]() {
+    let pre = 0, cur = 1;
+    // iterator オブジェクトは next メソッドを持つオブジェクトを返す
+    return {
+      next() {
+        // next の中では返す値 (value) と次で終わりかどうかを示すプロパティ (done) を返す
+        [pre, cur] = [cur, pre + cur];
+        if (pre &lt; 1000)  return { done: false, value: pre };
+        return { done: true };
+      }
+    }
+  }
+}
+
+for (var n of fibonacci) {
+  console.log(n);
+}</code></pre></figure>
+
+<p>こうすると、繰り返し可能な任意のオブジェクトを実装することができます。ただし、Symbol.Iterator を使ったやり方は見て頂いて分かる通り、書きやすいものではありません。もう少し簡潔に Iterable なオブジェクトを作るには <strong>generator</strong> を利用します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">let fibonacci = function*(){
+    let pre = 0, cur = 1;
+    while (pre &lt; 1000) {
+      // ここで destructuring で値を swap させる。
+      [pre, cur] = [cur, pre + cur];
+      // yield で値を返す
+      yield pre;
+    }
+}();
+
+for (let n of fibonacci) {
+  console.log(n);
+}</code></pre></figure>
+
+<h3 id="promises">Promises</h3>
+
+<p>成功するか失敗するか分からない非同期の抽象化された状態を持つのが <strong>Promise</strong> です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">function timeout(ms) {
+  // Promise の resolve 関数を受け取る
+  return new Promise((onFulfilled, onRejected) =&gt; {
+    // 50% の確率で onFulfilled, onRejected が呼ばれる
+    setTimeout(() =&gt; Math.random() &gt; 0.5 ?  onFulfilled() : onRejected(), ms);
+  });
+}
+
+function log() {
+  console.log('done');
+}
+
+function error() {
+  console.log('error');
+}
+
+// onFulfilled が出たら done、onRejected だったら error と表示する
+timeout(100).then(log).catch(error)</code></pre></figure>
+
+<h3 id="デストラクチャリング">デストラクチャリング</h3>
+
+<p>デストラクチャリング、和訳すると分配束縛と呼ばれる機能です。Clojure にある機能ですね。
+これを利用すると配列やオブジェクトで設定した値を取り出しやすくなります。</p>
+
+<p>具体的には以下のとおり。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">var hoge = 123;
+var fuga = 456;
+
+// 値を swap する
+var [fuga, hoge] = [hoge, fuga];
+
+console.log(hoge); // 456
+console.log(fuga); // 123
+
+var [a, [b], [c], d] = ['hello', [', ', 'junk'], ['world']];
+
+console.log(a + b + c); // hello, world (a に "hello", b に ",", c に "world" が入ってる )
+
+var pt = {x: 123, y: 444};
+var {x, y} = pt;
+console.log(x, y); // 123 444</code></pre></figure>
+
+<h3 id="末尾呼び出し最適化">末尾呼び出し最適化</h3>
+
+<p>関数の末尾にある再帰呼び出しを関数で呼ぶのではなく、内部でループに置換することで関数呼び出しのスタック累積をなくし、効率化するという方法です。</p>
+
+<p>module の時に利用したバビロニアの平方根アルゴリズムを元に解説します。ちなみに 2015 年 3 月現在、数多く存在するブラウザ、トランスパイラの中でこの末尾呼び出し最適化を実装しているのは <strong>babel</strong> だけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">// バビロニアの平方根
+// 関数の最後に再帰呼び出しを利用している事がわかる。
+function _sqrt(s, x, last){
+  'use strict';
+  if (x === last) return x;
+  return _sqrt(s, (x + s / x) / 2.0, x);
+};
+
+const sqrt = function(s){
+  return _sqrt(s, s/2.0, 0.0);
+};</code></pre></figure>
+
+<p>babel でトランスパイルすると下記のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">function _sqrt(_x, _x2, _x3) {
+  var _again = true;
+
+  _function: while (_again) {
+    "use strict";
+    _again = false;
+    var s = _x,
+        x = _x2,
+        last = _x3;
+    if (x === last) {
+      return x;
+    }_x = s;
+    _x2 = (x + s / x) / 2;
+    _x3 = x;
+    _again = true;
+    continue _function;
+  }
+};
+
+var sqrt = function sqrt(s) {
+  return _sqrt(s, s / 2, 0);
+};</code></pre></figure>
+
+<p><strong>_sqrt</strong> 関数の再帰呼び出しが消えて <strong>while</strong> と ラベル付き <strong>continue</strong> を使ったループ処理に変換されていることが分かります。
+再帰呼び出しは直感的で副作用を少なくすることができる書き方だと言われていますが、関数スタックサイズを消費してしまうため、実行コストがかかります。関数のコールスタックを減らして最適化するのが末尾呼び出し最適化であり、ES2015 の仕様として策定されています。</p>
+
+<h3 id="etc-etc">etc, etc……</h3>
+
+<p>この他にも <strong>=&gt;</strong> で関数を定義する Arrow Functions や 変数埋め込みやヒアドキュメントとしても利用可能な Template String Literals、Symbols や Proxy 等、語り尽くせないほど機能があります。</p>
+
+<h2 id="今後の-ecmascript2015-の展望">今後の ECMAScript2015 の展望</h2>
+
+<p>上に挙げた事からも分かる通り、JavaScript に class や module の考え方が入り、適切な単位でモジュールとクラスを分割して設計することができるようになりました。また let や const で変数の生存範囲を限定する事ができるようになりました。これらの機能は大規模なアプリを開発する時やライブラリを作る際の助けになるはずです。</p>
+
+<p>また、generator/iterator/Promise といった関数型プログラミングの概念が導入され、さらに末尾呼び出し最適化といった副作用を少なくする記述方法ができるようになりました。ES6 には ES5 までの考え方にはないモダンな機能が入っています。</p>
+
+<p>既に ECMAScript の仕様を決めている TC39 は次の ES7 に向けて準備をしています。現時点ではまだまだ検討中ですが、<strong>async-await</strong> といった非同期呼び出しを同期っぽく呼び出す C# にある機能であったり、Optional Typing の機能をもたらす <strong>types</strong> や Object の監視をする <strong>Object.observe</strong> といった機能が検討されています。</p>
+
+<p>これらの機能が全てのブラウザで書けるようになるのはまだまだ先ですが、<strong>babel</strong> にはいくつか実験的に先行実装されている <a href="http://babeljs.io/docs/usage/transformers/#es7-experimental-">ES7 の機能</a>もあります。また <strong>babel</strong> 単体ではサポートしていなくても <strong>flow</strong> とあわせることで型チェックを実現したり、<strong>jsx</strong> とあわせることでかつて存在した E4X <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>のような XML リテラルを記述することができるようになっています。</p>
+
+<p>ここでは紹介しきれませんでしたが、 <strong>babel</strong> にはこの他にも<a href="http://babeljs.io/docs/usage/transformers/validation/undeclared-variable-check/">未定義の変数/関数をチェックする機能</a>や通らないコードを削除する<a href="http://babeljs.io/docs/usage/transformers/utility/dead-code-elimination/">デッドコード削除の機能</a>、<a href="http://babeljs.io/docs/usage/transformers/utility/inline-expressions">インライン展開をする機能</a>などの最適化が入っており、大変高機能になっています。</p>
+
+<p>babel を使って新しい JavaScript を学んでみたい方向けに <a href="https://github.com/yosuke-furukawa/tower-of-babel">tower-of-babel</a> という ES6 チュートリアルの学習ツールを作りました。
+<img src="/images/0050-ECMAScript2015/tower-of-babel.png" alt="tower-of-babel.png" /></p>
+
+<p>こちらも使ってみてください。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今後の JavaScript である ES6 の話をトランスパイラである <strong>babel</strong> とともに説明しました。
+ES6 の仕様は固まってきてはいるものの、今は仕様のフィードバックを求めている状況であり、この段階で積極的に ES6 を利用していく事で、ES6 の盛り上げを図りたいと思っています。バグや問題があれば<a href="https://esdiscuss.org/">フィードバック</a>すれば改修される可能性もあります。</p>
+
+<p>また、今回の機能をまとめた <a href="https://github.com/yosuke-furukawa/tower-of-babel">tower-of-babel</a> を作ってみました。</p>
+
+<p>是非使ってみてください。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ul>
+  <li><a href="http://babeljs.io/">babel</a></li>
+  <li><a href="http://people.mozilla.org/~jorendorff/es6-draft.html">ES6 spec draft</a></li>
+  <li><a href="http://www.2ality.com/2014/09/es6-modules-final.html">modules</a></li>
+  <li><a href="http://js-next.hatenablog.com/entry/2014/11/01/034607">Class 構文が実装された</a></li>
+  <li><a href="http://babeljs.io/docs/using-babel/#sprockets">Sprockets での指定</a></li>
+  <li><a href="http://www.sitepoint.com/understanding-ecmascript-6-class-inheritance/">Class</a></li>
+  <li><a href="http://yosuke-furukawa.hatenablog.com/entry/2014/07/31/093041#2">traceur-compiler 入門</a></li>
+  <li><a href="https://github.com/yosuke-furukawa/tower-of-babel">tower-of-babel</a></li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>古川陽介 (Yosuke Furukawa / <a href="https://twitter.com/yosuke_furukawa">@yosuke_furukawa</a>)。日本 Node.js ユーザーグループ代表、io.js エヴァンジェリスト、io.js コントリビュータ。記事掲載時点では会社でサーバサイドの Perl とフロント JavaScript も行うフルスタックなエンジニア</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>読み方: https://github.com/babel/babel/issues/780#issuecomment-74426418&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>編注: https://atnd.org/events/38810&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

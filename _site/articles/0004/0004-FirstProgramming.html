@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ではじめるプログラミング 【第 3 回】</title>
+  <meta name="description" content="著者：だん">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0004/0004-FirstProgramming.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby ではじめるプログラミング 【第 3 回】</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0004/0004-FirstProgramming.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ではじめるプログラミング 【第 3 回】" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0004/0004-FirstProgramming.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0004/0004-FirstProgramming.html" data-text="Ruby ではじめるプログラミング 【第 3 回】">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：だん</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>前回 (<a href="/articles/0003/0003-FirstProgramming.html">Ruby ではじめるプログラミング 【第 2 回】</a>) はいくつかの便利な機能と配列を中心に解説しました。</p>
+
+<p>今回も Ruby の新しい機能を 2 つ紹介します。</p>
+
+<ul>
+  <li>ハッシュの使いかた</li>
+  <li>メソッド定義</li>
+</ul>
+
+<p>ハッシュを使うと、前回配列を使って書いたプログラムがよりわかりやすく、便利になります。</p>
+
+<p>より大きなプログラムを書くときに必要になるメソッド定義についても解説します。</p>
+
+<h2 id="ハッシュ">ハッシュ</h2>
+
+<p>Ruby にはハッシュという機能があります。</p>
+
+<p>ハッシュは数値以外も添え字に出来る配列のようなもので、配列を理解していればハッシュもすぐに使えるようになります。</p>
+
+<p>ここではハッシュの使い方を解説します。</p>
+
+<h3 id="ハッシュの使い方">ハッシュの使い方</h3>
+
+<p>空のハッシュは次のようにして作ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">values = {}</code></pre></figure>
+
+<p>p メソッドで中身を表示することもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">values = {}
+p values</code></pre></figure>
+
+<p>実行結果はこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{}</code></pre></figure>
+
+<p>データを持つハッシュは次のようにして作ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">values = {
+  'HP' =&gt; 16,
+  'MP' =&gt; 4,
+  'STR' =&gt; 9
+}</code></pre></figure>
+
+<p>データ全体を__ { } <strong>で囲んでいることに注意してください。配列は</strong> [ ] <strong>を使いましたがハッシュでは</strong> { } __を使います。</p>
+
+<p>values の中身は複数行に分けて書きましたが、次のように 1 行で書くことも出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">values = {'HP' =&gt; 16, 'MP' =&gt; 4, 'STR' =&gt; 9}</code></pre></figure>
+
+<p>こう書いても意味はまったく同じです。</p>
+
+<p>p メソッドを使って values の中身を表示すると結果はこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"MP"=&gt;4, "STR"=&gt;9, "HP"=&gt;16}</code></pre></figure>
+
+<h3 id="値の追加と取り出し">値の追加と取り出し</h3>
+
+<p>ハッシュに値を追加し、その値を表示するプログラムです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">values = {}
+# ハッシュに値を追加
+values['HP']  = 16
+values['MP']  = 4
+values['STR'] = 9
+
+# ひとつずつ表示
+puts values['HP']
+puts values['MP']
+puts values['STR']
+# values の中身を表示
+p values</code></pre></figure>
+
+<p>実行結果はこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">16
+4
+9
+{"MP"=&gt;4, "STR"=&gt;9, "HP"=&gt;16}</code></pre></figure>
+
+<p>このハッシュデータの ‘HP’, ‘MP’, ‘STR’ を__キー__と呼び、それに関連付けられた 16, 4, 9 を__値__と呼びます。</p>
+
+<p>このハッシュではキーに文字列オブジェクト、値に数値オブジェクトを用いています。
+配列の添え字は数値しか使うことができませんでした。ハッシュでは配列の添え字にあたる部分に文字列を使うこともできます。</p>
+
+<h3 id="ハッシュは配列に似ている">ハッシュは配列に似ている</h3>
+
+<p>ハッシュの使い方は配列によく似ています。ハッシュは連想配列と呼ばれることもあります。</p>
+
+<p>次のプログラムは前回紹介した配列を使ったじゃんけんロボットです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 'じゃんけん'
+sleep 1
+values = ['グー', 'チョキ', 'パー']
+r = rand(3) # r に 0 〜 2 の乱数を代入
+puts values[r]</code></pre></figure>
+
+<p>このプログラムでは values が配列になっています。この values はハッシュを使って書くことも出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 'じゃんけん'
+sleep 1
+values = {
+  0 =&gt; 'グー',
+  1 =&gt; 'チョキ',
+  2 =&gt; 'パー'
+}
+r = rand(3) # r に 0 〜 2 の乱数を代入
+puts values[r]</code></pre></figure>
+
+<p>このハッシュを使ったプログラムは配列を使ったじゃんけんプログラムと同じように動作します。</p>
+
+<p>配列のデータは 0 からはじまる添え字を指定することで取り出すことができました。ハッシュの場合は添え字にあたるものを自分で決めることができます。上のプログラムでは__ =&gt; <strong>の左側にある 0,1,2 がそれにあたります。この</strong> =&gt; __の左側にある 0,1,2 が__キー__です。</p>
+
+<p>つまりこのプログラム中のハッシュ values では、</p>
+
+<ul>
+  <li>キーが 0 なら値は「グー」</li>
+  <li>キーが 1 なら値は「チョキ」</li>
+  <li>キーが 2 なら値は「パー」</li>
+</ul>
+
+<p>というデータが格納されているわけです。</p>
+
+<p>ハッシュの__キーと値は必ずペア__になります。ハッシュはキーと値のペアが集まったオブジェクトということもできます。</p>
+
+<p>ハッシュのキーには便利なことにどんなオブジェクトでも使うことができます。</p>
+
+<h2 id="ハッシュを使ったゲームブック">ハッシュを使ったゲームブック</h2>
+
+<p>ハッシュの使い方に続いて、ここではハッシュの便利さについて解説します。</p>
+
+<p>前回紹介した配列を使ったゲームブックプログラムをハッシュを使って書き直してみます。配列とハッシュの違いを見てみましょう。</p>
+
+<h3 id="ハッシュ版ゲームブック">ハッシュ版ゲームブック</h3>
+
+<p>前回との違いは 14 行目からの tbl への代入されるオブジェクトがハッシュオブジェクトに変わっている点と、
+23 行目の scene 変数の初期値が ‘opening’ という文字列オブジェクトの代入になっている点です。この ‘opening’ がハッシュオブジェクトである tbl に含まれるキーになっています。</p>
+
+<p>24 行目以降は配列バージョンのプログラムとまったく同じです。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">msg0</span> <span class="o">=</span> <span class="s2">"３本の分かれ道があります。どの道を進みますか。</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span>
+       <span class="s2">"  1 左の道</span><span class="se">\n</span><span class="s2">  2 真ん中の道</span><span class="se">\n</span><span class="s2">  3 右の道"</span>
+<span class="n">msg1</span> <span class="o">=</span> <span class="s2">"あっ！</span><span class="se">\n</span><span class="s2">落とし穴に落ちてしまいました。</span><span class="se">\n</span><span class="s2">〜 GAME "</span> <span class="o">+</span>
+       <span class="s2">"OVER 〜"</span>
+<span class="n">msg2</span> <span class="o">=</span> <span class="s2">"真ん中の道をまっすぐ歩いていくと……</span><span class="se">\n</span><span class="s2">宝箱をみつ"</span> <span class="o">+</span>
+       <span class="s2">"けました！</span><span class="se">\n</span><span class="s2">  1 そのままにしておく</span><span class="se">\n</span><span class="s2">  2 あける"</span>
+<span class="n">msg3</span> <span class="o">=</span> <span class="s2">"しばらく歩き続けると　もとの場所にもどってしまい"</span> <span class="o">+</span>
+       <span class="s2">"ました。</span><span class="se">\n</span><span class="s2">  1 次へ"</span>
+<span class="n">msg4</span> <span class="o">=</span> <span class="s2">"宝箱には見向きもせず　お家に帰りました。</span><span class="se">\n</span><span class="s2">〜 GAM"</span> <span class="o">+</span>
+       <span class="s2">"E OVER 〜"</span>
+<span class="n">msg5</span> <span class="o">=</span> <span class="s2">"パカッ</span><span class="se">\n</span><span class="s2">まばゆい光があふれだす……</span><span class="se">\n</span><span class="s2">１００枚の金"</span> <span class="o">+</span>
+       <span class="s2">"貨を手に入れました！"</span>
+
+<span class="n">tbl</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'opening'</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="n">msg0</span><span class="p">,</span> <span class="s1">'left'</span><span class="p">,</span> <span class="s1">'center'</span><span class="p">,</span> <span class="s1">'right'</span><span class="p">],</span>
+  <span class="s1">'left'</span>    <span class="o">=&gt;</span> <span class="p">[</span><span class="n">msg1</span><span class="p">],</span>
+  <span class="s1">'center'</span>  <span class="o">=&gt;</span> <span class="p">[</span><span class="n">msg2</span><span class="p">,</span> <span class="s1">'leave'</span><span class="p">,</span> <span class="s1">'ending'</span><span class="p">],</span>
+  <span class="s1">'right'</span>   <span class="o">=&gt;</span> <span class="p">[</span><span class="n">msg3</span><span class="p">,</span> <span class="s1">'opening'</span><span class="p">],</span>
+  <span class="s1">'leave'</span>   <span class="o">=&gt;</span> <span class="p">[</span><span class="n">msg4</span><span class="p">],</span>
+  <span class="s1">'ending'</span>  <span class="o">=&gt;</span> <span class="p">[</span><span class="n">msg5</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">scene</span> <span class="o">=</span> <span class="s1">'opening'</span>
+<span class="k">while</span> <span class="kp">true</span>
+  <span class="n">scene_data</span> <span class="o">=</span> <span class="n">tbl</span><span class="p">[</span><span class="n">scene</span><span class="p">]</span>
+  <span class="n">message</span> <span class="o">=</span> <span class="n">scene_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="nb">puts</span> <span class="n">message</span>
+
+  <span class="k">if</span> <span class="n">scene_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="kp">nil</span>
+    <span class="nb">exit</span>
+  <span class="k">end</span>
+
+  <span class="nb">print</span> <span class="s1">'  数字を入力してください '</span>
+  <span class="n">input_value</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">.</span><span class="nf">to_i</span>
+
+  <span class="k">if</span> <span class="n">input_value</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">next_scene</span> <span class="o">=</span> <span class="n">scene_data</span><span class="p">[</span><span class="n">input_value</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">next_scene</span> <span class="o">==</span> <span class="kp">nil</span>
+      <span class="nb">puts</span> <span class="s1">'不正な値が入力されました'</span>
+    <span class="k">else</span>
+      <span class="n">scene</span> <span class="o">=</span> <span class="n">next_scene</span>
+    <span class="k">end</span>
+  <span class="k">else</span>
+    <span class="nb">puts</span> <span class="s1">'不正な値が入力されました'</span>
+  <span class="k">end</span>
+
+  <span class="nb">sleep</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+  <span class="nb">print</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>このプログラムは前回の配列バージョンのゲームブックプログラムと見かけ上は全く同じように動作します。</p>
+
+<h3 id="配列バージョンより便利になったこと">配列バージョンより便利になったこと</h3>
+
+<p>今回わざわざハッシュを使って改造したこのプログラムには何かいいことがあったのでしょうか。</p>
+
+<p><strong>scene</strong> 変数を使って場面を管理していますが、これは配列バージョンもハッシュバージョンも同じです。ただ、今回のハッシュ版では <strong>scene</strong> 変数に代入される値が__数値から文字列オブジェクト__に変わりました。配列版では <strong>scene</strong> には数値オブジェクトが代入されていましたが、各場面に割り当てられていた数値は、たまたまその場面情報が配置されている配列内の位置によって決まっていた番号で、数値と場面情報の間には__本質的な関係がありません__でした。ハッシュ版では場面をイメージできるような__意味のある単語__を文字列としてキーにすることができます。キーを見れば、ただの数値よりも、そのキーがどの場面を示すものなのかが直感的に把握できるようになります。</p>
+
+<p>ハッシュを使うことのメリットはそれだけではありません。
+このプログラムではテーブルデータを書き換えることで
+新しい場面を追加したり、削除したりすることができます。しかし、配列版のテーブルは安易にデータを書き換えると問題が発生することがあります。問題が起こるのは__場面データの並び順を変更した場合__です。例えば、ある場面を配列から削除すると、それ以降の__インデックスがずれる__のでジャンプ先を指定する数値も書き換えなければなりません。これはとても面倒な作業ですし、書き換えることを__うっかり忘れてテーブルデータに矛盾を発生させてしまう__かもしれません。</p>
+
+<p>しかし、<strong>ハッシュ版ではこの心配がありません</strong>。もともと場面ごとにその場面にふさわしいキーが文字列で振ってあり、そのキーを使って場面データを参照することになるのでテーブル内のデータを追加・削除することによってずれが生じるというようなことはありません。</p>
+
+<p>プログラミングを始めたばかりだと、このハッシュ版でのメリットがあまり感じられないかもしれませんが、本格的なプログラミングを目指すならこのような考え方も重要です。</p>
+
+<h2 id="メソッド定義">メソッド定義</h2>
+
+<p>複雑なプログラムを作る場合は自分でメソッドを作ることも必要です。
+ここはメソッドの作り方について紹介します。</p>
+
+<h3 id="メソッドを作る">メソッドを作る</h3>
+
+<p>これまではあらかじめ Ruby に用意されているメソッドを使ってきましたが、メソッドは自分で作ることもできます。</p>
+
+<p>例えば「Hello」という文字列を表示する print_hello という名前のメソッドを作るには次のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def print_hello
+  print 'Hello'
+end</code></pre></figure>
+
+<p>これで__ print_hello メソッド__ができました。__ def <strong>の後に作成するメソッドの名前を書きます。そしてメソッドの最後は</strong> end __で閉じます。</p>
+
+<p>メソッドの名前に使える文字は アルファベットと数字とアンダースコア ( _ )です。ただし先頭の 1 文字目に数字を使うことはできません。</p>
+
+<p>メソッドを作ることをメソッドを定義するといいます。メソッドは定義しただけでは実行されません。実行するにはこのメソッドを呼び出す必要があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># print_hello メソッドを定義
+def print_hello
+  print 'Hello'
+end
+
+# print_hello メソッドを呼び出す
+print_hello</code></pre></figure>
+
+<p>実行結果はこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Hello</code></pre></figure>
+
+<h3 id="引数を受け取るメソッド">引数を受け取るメソッド</h3>
+
+<p>メソッドには引数を受け取るものがありました。引数を渡すことのできるメソッドも簡単に作ることができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def print_hello_name(name)
+  print 'Hello '
+  print name
+end
+
+print_hello_name('太郎')</code></pre></figure>
+
+<p>実行結果はこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Hello 太郎</code></pre></figure>
+
+<p>この print_hello_name は__引数を 1 つ受け取るメソッド__です。
+先頭の print_hello_name の直後にある__ (name) __の部分で引数を受け取ることを定義しています。渡された引数は name 変数に代入されメソッドの中で使うことができます。</p>
+
+<p>引数を 2 つ以上持つメソッドを定義したければ、引数をカンマ (__ , __) で区切って並べます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def tasizan(a, b, c)
+  print a + b + c
+end
+
+tasizan(1, 2, 4)</code></pre></figure>
+
+<p>実行結果はこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">7</code></pre></figure>
+
+<h3 id="戻り値を返す">戻り値を返す</h3>
+
+<p>これまで使ってきたメソッドの中には値を返すものがありました。
+例えば配列の size メソッドです。次のコードで size メソッドは
+値「3」を返しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">nums = [1, 2, 3]
+p nums.size   #=&gt; 3      ← 3 を返している</code></pre></figure>
+
+<p>この、メソッドが返す値のことを「メソッドの戻り値」と言います。</p>
+
+<p>戻り値を返すメソッドを定義することもできます。
+メソッドから戻り値を返すには__ return __を使用します。 return 文が実行されると return の直後に書かれた値が戻り値となります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def tasizan(a, b, c)
+  total = a + b + c
+  return total
+end
+
+print tasizan(1, 2, 4)</code></pre></figure>
+
+<p>このプログラムでは 3 つの引数を足し算した合計の値が戻り値になっていて、その戻り値を tasizan メソッドの外の print メソッドが受け取って表示しています。
+実行結果はこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">7</code></pre></figure>
+
+<p>メソッドの中で return が呼ばれるとそこで__メソッドの処理が終了__してしまうので、それより後ろに書かれている処理は実行されません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def tasizan(a, b, c)
+  total = a + b + c
+  return total
+  print '表示されない' # この行は実行されない
+end
+
+print tasizan(1, 2, 4)</code></pre></figure>
+
+<p>実行結果はこうなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">7</code></pre></figure>
+
+<p>次回は自作したメソッドを使うもっと大きなプログラムを紹介します。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回はハッシュの使い方と、メソッドの作り方を紹介しました。</p>
+
+<p>ゲームブックプログラムではハッシュを使うことのメリットについて紹介しました。
+全く同じように動作するプログラムでもテーブルデータの持ち方を少し変えるとデータの管理がとても楽になることがあります。
+紹介したような少量のデータではたいした違いになりませんが、市販されるようなシナリオデータが巨大になるアプリケーションではこのような効率化がとても重要です。</p>
+
+<p>プログラムを作るときには、なるべく人間の手間を軽減することや、ちょっとしたミスが起こりにくくなるように注意を払うことが大切です。</p>
+
+<h2 id="筆者について">筆者について</h2>
+
+<p>だん (dan at dgames dot jp)</p>
+
+<p>ゲームメーカーに勤めるゲームクリエイター。
+Ruby を使ってオープンソースのゲームが開発できないかと模索中。</p>
+
+<h2 id="ruby-ではじめるプログラミング-連載一覧">Ruby ではじめるプログラミング 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0005/0005-FirstProgramming.html">Ruby ではじめるプログラミング 【最終回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-FirstProgramming.html">Ruby ではじめるプログラミング 【第 3 回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-FirstProgramming.html">Ruby ではじめるプログラミング 【第 2 回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-FirstProgramming.html">Ruby ではじめるプログラミング 【第 1 回】</a></p>
+  </li>
+</ul>
+
+<hr />
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

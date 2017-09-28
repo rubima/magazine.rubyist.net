@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ビギナーのための CGI 入門 【第 4 回】 1 ページ</title>
+  <meta name="description" content="目次へ次のページへ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0015/0015-CGIProgrammingForRubyBeginners-1.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby ビギナーのための CGI 入門 【第 4 回】 1 ページ</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0015/0015-CGIProgrammingForRubyBeginners-1.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ビギナーのための CGI 入門 【第 4 回】 1 ページ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0015/0015-CGIProgrammingForRubyBeginners-1.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0015/0015-CGIProgrammingForRubyBeginners-1.html" data-text="Ruby ビギナーのための CGI 入門 【第 4 回】 1 ページ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p><a href="/articles/0015/0015-CGIProgrammingForRubyBeginners.html">目次へ</a>
+<a href="/articles/0015/0015-CGIProgrammingForRubyBeginners-2.html">次のページへ</a></p>
+
+<h2 id="目次">目次</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#対象読者" id="markdown-toc-対象読者">対象読者</a></li>
+      <li><a href="#準備" id="markdown-toc-準備">準備</a></li>
+    </ul>
+  </li>
+  <li><a href="#新-ruby-に馴れよう" id="markdown-toc-新-ruby-に馴れよう">新 Ruby に馴れよう</a>    <ul>
+      <li><a href="#while-文" id="markdown-toc-while-文">while 文</a>        <ul>
+          <li><a href="#while-文の使い方" id="markdown-toc-while-文の使い方">while 文の使い方</a></li>
+          <li><a href="#while-文を使って数字の合計を計算" id="markdown-toc-while-文を使って数字の合計を計算">while 文を使って数字の合計を計算</a></li>
+        </ul>
+      </li>
+      <li><a href="#each-を使った-array-の内容の表示" id="markdown-toc-each-を使った-array-の内容の表示">each を使った Array の内容の表示</a></li>
+      <li><a href="#arrayの内容を逆順に表示" id="markdown-toc-arrayの内容を逆順に表示">Arrayの内容を逆順に表示</a>        <ul>
+          <li><a href="#while-を使う" id="markdown-toc-while-を使う">while を使う</a></li>
+          <li><a href="#reverse_each-を使う" id="markdown-toc-reverse_each-を使う">reverse_each を使う</a></li>
+        </ul>
+      </li>
+      <li><a href="#truefalsenil" id="markdown-toc-truefalsenil">true、false、nil</a>        <ul>
+          <li><a href="#nil" id="markdown-toc-nil">nil</a></li>
+          <li><a href="#truefalse" id="markdown-toc-truefalse">true、false</a></li>
+          <li><a href="#if-文や-while-文での使い方" id="markdown-toc-if-文や-while-文での使い方">if 文や while 文での使い方</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>今年は天候不順なのかなかなか日差しを見る機会が少ないですね。平日は職場にいるので、通勤以外では天候はあまり関係ないのですが、休日だけでも晴れて欲しいです。</p>
+
+<p>14 号では寄り道をしてエラーの修正方法について説明しました。掲示板作りには直接関係しませんが、今後自分で CGI プログラムを作る時に役立つと思うので、参考にして下さい。</p>
+
+<p>今号からは 12 号で作った簡易掲示板に改良を加えていきます。
+簡易掲示板には機能不足な点が幾つかありますので、それを解消していきましょう。
+まずは表示に関連する部分から変更を加えていきます。</p>
+
+<h3 id="対象読者">対象読者</h3>
+
+<p>この記事は以下のような人を対象としています。</p>
+
+<ul>
+  <li>前号 (<a href="/articles/0014/0014-CGIProgrammingForRubyBeginners.html">Ruby ビギナーのための CGI 入門 【第 3 回】 エラーの修正</a>) の記事を読んだ人</li>
+  <li>HTML を書ける人</li>
+  <li>Windows 98/98SE/Me/2000/XP のいずれかを使っている人</li>
+</ul>
+
+<p>この連載は前号までの記事を読んでいる方を対象として書かれています。
+今号を読む前に前号までの内容を把握しておいて下さい。</p>
+
+<h3 id="準備">準備</h3>
+
+<p>必要なものは下の 2 つです。</p>
+
+<ul>
+  <li>サーバー</li>
+  <li>Ruby</li>
+</ul>
+
+<p>この他に RDE を使います。これらの準備の方法は
+<a href="/articles/0011/0011-CGIProgrammingForRubyBeginners.html">11 号</a> で述べたので、
+詳しくはそちらを参照して下さい。
+今号で使うプログラムを zip ファイルにまとめてあります。
+前号と同じようにダウンロードして C:\ に展開して下さい。
+<a href="/images/0015-CGIProgrammingForRubyBeginners-1/rubima015-cgi.zip">rubima015-cgi.zip</a></p>
+
+<h2 id="新-ruby-に馴れよう">新 Ruby に馴れよう</h2>
+
+<p>今回もまずは Ruby の機能を紹介していきます。
+例によって 14 号で紹介した機能を使いますので、
+不安な方は復習しておいて下さい。</p>
+
+<h3 id="while-文">while 文</h3>
+
+<p>プログラムを書いていると同じようなことを繰り返したいことがあります。
+例えば、Array の中身をすべて表示させる時。
+今までなら print 文を何回も書いて Array の中身を表示させていました。
+具体的には下のようなプログラムです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = [10, 20, 30]
+print a[0]
+print a[1]
+print a[2]</code></pre></figure>
+
+<p>Array の中身が少ない時はこのように書くことも可能ですが、
+Array の中身が 100 個や 1000 個になると、
+上記のような方法は現実的ではありません。</p>
+
+<p>このような時のために Ruby には繰り返しの機能があります。
+繰り返しを使うことでプログラムを簡潔に書くことが出来ます。
+繰り返しの方法はいくつかありますが、
+この連載では主に while 文を使います。</p>
+
+<h4 id="while-文の使い方">while 文の使い方</h4>
+
+<p>while 文は下のように使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">while (条件)
+ (繰り返したいこと)
+end</code></pre></figure>
+
+<p>(条件) が真である時に (繰り返したいこと) の部分が実行され続けます。
+上の print だらけのプログラムを while 文を使って書き直してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = [10, 20, 30]
+m = a.length
+i = 0
+while i &lt; m
+  print a[i]
+  i = i + 1
+end</code></pre></figure>
+
+<p>プログラムは少し長くなっていますが、
+このように書くことで Array の中身が 1000 個になっても対応可能です。</p>
+
+<p>まず 変数 a, m, i の役割を説明しましょう。
+それぞれの役割は下の表のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>変数</td>
+      <td>役割</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>Array を指す</td>
+    </tr>
+    <tr>
+      <td>m</td>
+      <td>Array の中身の個数</td>
+    </tr>
+    <tr>
+      <td>i</td>
+      <td>print で表示させる Array の添字</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>一番のポイントは変数 i です。
+もし、変数 i の値が 0 であれば、
+print では添字 0 が指す Array のデータ (Array の最初のデータ) を表示させます。
+同様に変数 i が 1 であれば Array の 2 番目のデータが表示され、
+2 であれば 3 番目のデータが表示されます。
+これでわかるように、一般的に、Array の (1 から数えて) n 番目の中
+身を表す添字は、n ではなくて n - 1 です。</p>
+
+<p>変数 m は Array の中身の個数を表し、
+while 文の (条件) で使われます。
+(条件) では変数 i が添字の範囲を超えていないかをチェックしています。
+添字の最大数は Array の中身の数より 1 小さいので、
+添字の範囲は 0 以上、変数 m 未満となります。
+このことを利用して while 文の (条件) では
+変数 i が添字の範囲を超えていないかどうかを調べるのです。</p>
+
+<p>では、プログラムの説明に移りましょう。
+1-3 行目は各変数への代入を行っています。
+4-7 行目が while 文です。</p>
+
+<p>4 行目の while の後ろの i &lt; m が while 文の条件になります。
+この i &lt; m は変数 i が変数 m より小さいという意味です。
+変数 i が変数 m の値以上になるということは
+添字の範囲を超えることを意味します。
+これ以上繰り返し必要はありませんので、
+while 文を使った繰り返しを終了させるために i &lt; m という条件としています。
+5 行目では変数 i に対応する添字のデータを表示させます。
+6 行目は少し不思議に思うかもしれません。
+通常、数学ではこのような式は見かけないと思います。
+この行の意味は 6 行目を実行する前の変数 i の値に 1 を足し、
+変数 i に代入し直す ということです。
+この行がないと、while 文の繰り返し部分を何回実行しても添字が増加しないので、
+プログラムが終了しないことになります。</p>
+
+<p>もう一度 while 文の部分を順に解釈し直してみましょう。</p>
+
+<ul>
+  <li>3 行目を実行し終えた時点で変数 a は [10, 20, 30]、変数 m  は 3、変数 i は 0 です。</li>
+  <li>4 行目で、1 度目の while 文の条件のチェックをします。変数 i が 0、変数 m が 3 なので、while 文の繰り返し部分を実行します。</li>
+  <li>5 行目が実行されて、添字 0 に対応する 10 が表示されます。</li>
+  <li>
+    <p>6 行目で 変数 i は 1 となります。</p>
+  </li>
+  <li>4 行目に戻り、2 度目の条件チェックです。変数 i が 1 なので、条件を満たしています。</li>
+  <li>5 行目で添字 1 に対応する 20 が表示されます。</li>
+  <li>
+    <p>6 行目で変数 i は 2 となります。</p>
+  </li>
+  <li>4 行目に戻り、3 度目の条件チェックです。変数 i が 2 なので、条件を満たしています。</li>
+  <li>5 行目で添字 1 に対応する 30 が表示されます。</li>
+  <li>
+    <p>6 行目で変数 i は 3 となります。</p>
+  </li>
+  <li>4 行目に戻り、4 度目の条件チェックです。変数 i が 3 なので、条件を満たしていません。</li>
+  <li>while 文を終了します。</li>
+  <li>while 文の後ろに続きがないので、プログラムは終了となります。</li>
+</ul>
+
+<h4 id="while-文を使って数字の合計を計算">while 文を使って数字の合計を計算</h4>
+
+<p>もう一つ別の例を見てみましょう。
+下のプログラムは Array の中身をすべて足していくプログラムです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = [1,3,5,7,9]
+i = 0
+sum = 0
+m = h.length
+while i &lt; m
+  sum = sum + a[i]
+  i = i + 1
+end
+print sum</code></pre></figure>
+
+<p>最初の 4 行は準備です。変数 a が Array、変数 i が添字となる数字、
+変数 m が Array の中身の個数、変数 sum が合計の数に相当します。
+変数 sum は最初 0 から始まり、while 文の繰り返しの部分で数字を足していきます。</p>
+
+<p>5-8 行目が while 文です。
+while 文の条件の部分では先ほどと同じく変数 i が
+Array の添字の範囲にあるかをチェックしています。
+繰り返しの部分の 6 行目では変数 sum に Array の中身の数が足されています。
+この行が繰り返されることでArrayの中身のすべてが足されます。</p>
+
+<p>繰り返しの部分は難しいと思うので、少しずつ見直してみましょう。
+まず 4 行目が終わった時点での各変数についてチェックします。
+それぞれ下の表のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>変数</td>
+      <td>値</td>
+    </tr>
+    <tr>
+      <td>a</td>
+      <td>[1,3,5,7,9]</td>
+    </tr>
+    <tr>
+      <td>m</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>i</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>sum</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>次に繰り返しの部分について考えてみましょう。
+1 回目の繰り返しの部分の処理は下記のようになります。</p>
+
+<ol>
+  <li>5行目で 1 度目の while 文の条件をチェックします。変数 i が 0、変数 m が 5 で条件は真なので、while 文の繰り返し部分を実行します。</li>
+  <li>6 行目が実行されます。変数 i が 0 なので、変数 sum は a[0] の値だけ増えます。a[0] は 1 なので、変数 sum は 1 になります。</li>
+  <li>7 行目が実行されて、変数 i は 1 となります。</li>
+</ol>
+
+<p>以後は同じような処理が続いていきます。
+変数の変化だけを下の表に載せます。
+それぞれの変数の値は繰り返しが終わった後の値です。
+例えば、3 回目の繰り返しが終わった段階、つまり、
+7 行目を 3 回実行した後では
+変数 m は 5、変数 i は 3、変数 sum は 9 になっています。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>繰り返しの回数</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>m</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>i</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>sum</td>
+      <td>1</td>
+      <td>4</td>
+      <td>9</td>
+      <td>16</td>
+      <td>25</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>繰り返しが 5 回終了すると、次に 6 回目の条件チェックに入ります。
+この時  i &lt; m は成り立ちません。
+変数 i, m ともに 5 なので、i &lt; m とはならないからです。
+この時点で while 文の条件を満たさなくなるため
+繰り返しは終了し、次に 8 行目が実行されます。
+8 行目では変数 m の値である 25 を表示して、
+プログラムは終了します。</p>
+
+<h3 id="each-を使った-array-の内容の表示">each を使った Array の内容の表示</h3>
+
+<p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-1.html">12号 の each の説明</a> で紹介したように Array には each というメソッドがあります。
+これを利用すると、while 文よりも間単に
+Array の中身を順番に処理することが出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">arr = [1,3,5]
+arr.each do |i|
+  p i
+end</code></pre></figure>
+
+<p>arr.each と end の間に繰り返したいことを書きます。
+この場合は「p i」が相当します。
+「do |i|」というのは each のようなメソッドに特有の書式で、
+メソッドによって色々な意味があるのですが、
+each の場合には今繰り返している Array の中身が
+変数 i に代入されます。
+上の場合ならば、変数 i に順番に 1,3,5 が代入されて、
+その都度に繰り返し部分の「p i」が実行されます。</p>
+
+<p>処理を順番に見ていくと、下記のようになります。</p>
+
+<ol>
+  <li>2 行目で変数 i に 1 が代入される。</li>
+  <li>3 行目の p i が実行されて 1 が表示される。</li>
+  <li>2 行目で変数 i に 3 が代入される。</li>
+  <li>3 行目の p i が実行されて 3 が表示される。</li>
+  <li>2 行目で変数 i に 5 が代入される。</li>
+  <li>3 行目の p i が実行されて 5 が表示される。</li>
+  <li>Array の中身の数だけ繰り返したので、each のメソッドは終了します。</li>
+</ol>
+
+<p>上から分かるように繰り返しの終了の判定は each メソッドがしてくれます。
+while だと最後の添字かどうかを自分でチェックしなければならかったのですが、
+その部分を each が処理してくれます。
+each を使う方が while よりも楽に書けますね。</p>
+
+<h3 id="arrayの内容を逆順に表示">Arrayの内容を逆順に表示</h3>
+
+<p>ここでは Array の内容を逆順に表示させます。
+例えば、[1,3,5]というArrayであれば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">5
+3
+1</code></pre></figure>
+
+<p>と表示させることになります。</p>
+
+<h4 id="while-を使う">while を使う</h4>
+
+<p>下に while を使ったプログラムを示します。
+基本は先ほどと同じですが、
+条件チェックや添字の変化のさせ方が異なっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">arr = [1,3,5]
+i = arr.length - 1
+while i &gt;= 0
+  p arr[i]
+  i = i - 1
+end</code></pre></figure>
+
+<p>まず添字にあたる変数 i が最後の添字から始まることが大きく違う点です。
+最後の添字は Array の中身の数より 1 小さいので注意して下さい。
+しばしば 1 小さいことを忘れてしまいます。</p>
+
+<p>次の変更部分は繰り返しの中で変数 i の値を 1 ずつ減らしている点です。
+これによって添字は繰り返しごとに 1 ずつ減っていくので、
+Array の中身を逆順に表示することになります。</p>
+
+<p>最後の大きな変更点は添字の範囲のチェックが 0 以上になっていることです。
+while の条件部分で使用している「&gt;=」は「以上」を表す記号です。
+このチェックがないと添字がどんどんと減っていって
+添字の範囲から外れても繰り返しが終了しません。</p>
+
+<h4 id="reverse_each-を使う">reverse_each を使う</h4>
+
+<p>each の仲間に reverse_each というメソッドがあります。
+reverse が逆を意味することから分かるように、このメソッドを使うと、
+Array の中身を逆順に繰り返す事が出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">arr = [1,3,5]
+arr.reverse_each do |i|
+  p i
+end</code></pre></figure>
+
+<p>使い方は each と同じです。このような例であれば each を reverse_each
+に変更するだけです。</p>
+
+<h3 id="truefalsenil">true、false、nil</h3>
+
+<p>Ruby には true、false、nil という値 (これもオブジェクトです) が存在します。true や false は真や偽を表す値で、nil は何ものでもないということを表す値です。ここではこの 3 つについて説明します。</p>
+
+<h4 id="nil">nil</h4>
+
+<p>最初は nil からです。</p>
+
+<p>nil は <strong>何ものでも無いということを表すオブジェクト</strong> のことです。
+禅問答のように聞こえるかもしれませんが、
+とりあえずそういうオブジェクトと思っておきましょう。</p>
+
+<p>nil が出てくる場面はいくつかありますが、
+1 つの例として添字の範囲を超えて Array の中身を使おうとした時に出現します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">arr = [1,2]
+p arr[0]
+p arr[1]
+p arr[2]</code></pre></figure>
+
+<p>上のプログラムの 4 行目では Array の 3 番目の値を
+表示させようとしていますが、
+Array には 2 個しかデータがありません。
+そのため 4 行目では nil が表示されます。
+このような時に 「何ものでも無いオブジェクト」である nil  が利用されます。</p>
+
+<h4 id="truefalse">true、false</h4>
+
+<p>次に true、false という値について説明しましょう。
+これらは条件を評価した時の真偽を表すオブジェクトです。
+真を表す値は true、偽を表す値は false になります。</p>
+
+<p>例えば、下のプログラムを RDE で実行してみて下さい。
+それぞれ、true、false と表示されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p (1&gt;0)
+p (0&gt;1)</code></pre></figure>
+
+<p>Ruby が 1&gt;0 や 0&gt;1 といった条件を評価して
+true や false という結果を出しています。</p>
+
+<h4 id="if-文や-while-文での使い方">if 文や while 文での使い方</h4>
+
+<p>while 文や if 文の条件は Ruby によって評価されて、
+true、もしくは、false となります。</p>
+
+<p>例えば、下のプログラムなら 10 &gt; i が
+評価されて true か false のいずれかになります。
+変数 i の値が 9 以下であれば、
+条件は true と評価されて while 文の繰り返し部分が実行され、
+10 以上であれば false と評価されて繰り返しが中止されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">i = 0
+while 10 &gt; i
+  p i
+  i = i + 1
+end</code></pre></figure>
+
+<p>if 文や while 文で直接 true や false を使うことは少ないと思います。</p>
+
+<p>例えば、下のように条件部分に true を使うと、
+while 文の繰り返しが続くので、
+終了しないプログラムを作ることが出来ます。
+<strong>皆さんは強制的にプログラムを終了させる方法を知らないので、絶対に実行しないで下さい</strong>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">while true
+  p 123
+end</code></pre></figure>
+
+<p>逆に全くwhie 文の繰り返し部分を実行しないプログラムも作ることが出来ます。
+下の例では条件部分が false であるため繰り返し部分は
+実行されずに終了してしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">while false
+  p 123
+end</code></pre></figure>
+
+<p>前者に関しては時々使うこともありますが、
+後者に関してはほとんど使うことはありません。
+両者とも CGI プログラムでは使う頻度はあまり高くありません。</p>
+
+<p>Ruby では変数の値も while 文や if 文の条件になることが出来ます。
+この場合、false と nil 以外はすべて真として扱われます。</p>
+
+<p>false、nil 以外は真として扱われるので、
+上に示した終わらないプログラムの条件部分を文字列で代用することが出来ます。
+その例を下に示します。
+“123” は false でも nil でも無いので、
+真として扱われて while 文が終了しません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">while "123"
+  p 123
+end</code></pre></figure>
+
+<p>false と nil  が 偽、それ以外が真
+として扱われることを覚えておいて下さい。</p>
+
+<p><a href="/articles/0015/0015-CGIProgrammingForRubyBeginners.html">目次へ</a>
+<a href="/articles/0015/0015-CGIProgrammingForRubyBeginners-2.html">次のページへ</a></p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>YARV Maniacs 【第 8 回】 命令列のシリアライズ</title>
+  <meta name="description" content="書いた人：ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0015/0015-YarvManiacs.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>YARV Maniacs 【第 8 回】 命令列のシリアライズ</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0015/0015-YarvManiacs.html" class="hatena-bookmark-button" data-hatena-bookmark-title="YARV Maniacs 【第 8 回】 命令列のシリアライズ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0015/0015-YarvManiacs.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0015/0015-YarvManiacs.html" data-text="YARV Maniacs 【第 8 回】 命令列のシリアライズ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：ささだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>YARV: Yet Another RubyVM を解説するこの連載。ずっと命令列についてばかり解説していたので、今号ではちょっと脱線して、命令列のシリアライズ機能について解説します。</p>
+
+<p>すでに YARV は命令列のシリアライズ機能、デシリアライズ機能を持っています。今回はその使い方の紹介と、実際に応用してみた話をしてみます。</p>
+
+<h3 id="その前に---rubykaigi-2006">その前に - RubyKaigi 2006</h3>
+
+<p>いやー、日本 Ruby カンファレンス 2006、終わりましたねぇ。運営側の人間としてはまだ残務が残っているんですが、無事に終わって本当に一安心といったところです。お世話になった方々、関係者の方々、ご参加頂いた方々、本当にありがとうございました。この場を借りて御礼申し上げます。</p>
+
+<p>さて、RubyKaigi2006 の初日には Ruby 2.0 というパネルを行ったのですが、そこでまつもとさんから「Ruby 1.9.1 を来年のクリスマスに出す」「Ruby 2.0 は 2010 年くらいに出す」「1.9.1 に YARV が入っているといいねぇ」という話がありました。うーん、マージされるといいですねぇ。YARV のバグだしって何年くらいかかるか想像すると、今年中にはマージしないと 1.9.1 に間に合わないと考えるべきですかねぇ、うーん。</p>
+
+<p>そもそも、RubyKaigi 2006 の準備なり残務なりで、YARV の開発が全然進んでいない。Ruby の開発を阻害する RubyKaigi。うーむ。</p>
+
+<p>さて、そのパネルで、Java の VM が利用するようなクラスファイルとか、コード隠蔽みたいなことは出来ないのか、という質問を青木さんから受けたんですが (事前の打ち合わせどおりです。感謝)、「それを行うための機能は実装している」と答えました(詳細は<a href="http://jp.rubyist.net/magazine/?RubyKaigi2006">るびま RubyKaigi2006 特別号</a>を見てね)。その機能が今回紹介する命令列のシリアライズ機能です。</p>
+
+<p>ちなみに、RubyKaigi では「コード隠蔽みたいなことはやる気がないので、プライオリティは低い」と言ったんですが、この連載のことを思い出して、ちょうどいい、ということで簡単に実装することにしました。</p>
+
+<p>ところで、この命令列のシリアライズは、順番が逆で、デシリアライズ、というか Ruby スクリプト以外の他の表現から命令列を生成する方法が欲しくて作りました。今年 (2006 年) の 3 月に YAPC::Asia というイベントが開催されましたが、Pugs の作者である Audrey Tang さんに Pugs のバックエンドとして YARV も使ってみたい、という申し出を受けて作り始めました。作ってみて、作ったよー、と報告はしたんですが、実際に使ってるのかどうかは謎です。</p>
+
+<h3 id="命令の名前の変更">命令の名前の変更</h3>
+
+<p>えーと、前回までで説明していた命令の名前、色々と変えてしまいました。前回も後悔しているって書いたんですが、まぁ影響範囲が皆無であるうちに、えいや、ということで変えてしまいました。今度は従来の Ruby プログラムなどのキーワード、メソッド名などと被らないようにしてあります。</p>
+
+<p>変更結果は <a href="http://www.atdot.net/yarv/insnstbl.html">YARV: Instruction Table</a> を見てください。具体的には、前回後悔していた if 命令などが branchif 命令などに変更されています。</p>
+
+<h3 id="yarv---041">YARV - 0.4.1</h3>
+
+<p>今回の記事を書くために色々と修正したので、その辺をまとめて 0.4.1 としてリリースしました。記事中のサンプルは YARV 0.4.1 を利用して実行してみてください。</p>
+
+<h2 id="yarv-命令列">YARV 命令列</h2>
+
+<p>そもそも YARV 命令列とは何か、というのは以前にも書いたような気がするのですがもう一度おさらいしておきます。</p>
+
+<p>YARV は VM、仮想マシンですので、命令を順番に実行していきます。その命令を表現しているのが命令列です。簡単ですね。</p>
+
+<p>Ruby プログラムを読み込むと、まず YARV は従来のパーサを使って構文木にします。私はパーサには (とくに Ruby のようなマジカルなパーサには) 手を出さないように幼少のころから教育されていますので、現在の Ruby 処理系そのまんまのものを使っています。で、パーサは Ruby プログラムを抽象構文木にして返します。ちょっとかっこつけて言うと Abstract Syntax Tree といって、頭文字をとって AST といいます。その AST を YARV のコンパイラが YARV 命令列に変換する、というわけです。簡単ですね。</p>
+
+<h3 id="命令列オブジェクト">命令列オブジェクト</h3>
+
+<p>YARV では、命令列もオブジェクトとして取り扱っています。YARVCore::InstructionSequence という長ーいクラス名のオブジェクトになっています。ところで、YARV は YARV じゃなくなるので、YARVCore という名前もなくなると思います。YARVCore じゃなくて RubyCore になるのかなぁ。それとも、ただの VM クラスになるのかなぁ。ご意見募集中です。あ、ところで YARVCore クラスは YARV を実行すると勝手に定義されています。</p>
+
+<p>InstructionSequence は、そのまんま命令列の意味ですね。違ったら、誰かこっそり教えてください。YARV のソース中では、これをそのまま書くのはめんどくさいので iseq と略しています。YARV のソースコード中には大量に iseq が出没しますので、ソースを読むときは覚えておいてください。</p>
+
+<p>オブジェクトなのでメソッドを持ちます。たとえば、InstructionSequence#disasm メソッドは逆アセンブルした結果を文字列で返します。文字列で返すのはカッコわりーなー、もうちょっとマシな設計無いのかよ、と自分でも思うのですが、誰も使う人がいないのでとりあえずこのまんまです。将来的にはこの辺も整理されることでしょう。されるといいなぁ。</p>
+
+<h3 id="命令列オブジェクトの単位">命令列オブジェクトの単位</h3>
+
+<p>命令列オブジェクトは、実際にはいくつもの命令列オブジェクトがツリー上になって構成されています。</p>
+
+<p>いったいどういうことかというと、いくつかの種類の命令列オブジェクトが、変数のスコープが独立しているという単位 (など) で、異なる命令列オブジェクトとなり、それらがリンクしています。具体的な種類は次のとおりです。</p>
+
+<ul>
+  <li>トップレベル</li>
+  <li>クラス・モジュール</li>
+  <li>(特異) メソッド</li>
+  <li>ブロック</li>
+  <li>例外 (rescue / ensure)</li>
+  <li>eval によって生成された命令列</li>
+</ul>
+
+<p>たとえば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class C
+   def m
+     1.times{
+     }
+   end
+ end
+ C.new.m</code></pre></figure>
+
+<p>なんていうやる気のないプログラムは</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> toplevel 命令列:
+   クラス C の命令列:
+     メソッド m の命令列:
+       ブロックの命令列</code></pre></figure>
+
+<p>というような木構造になっています。</p>
+
+<p>ちなみに、命令列オブジェクトも Ruby の普通のオブジェクトですので GC されます。もちろん実行中には GC されることはありませんが、たとえばトップレベルの命令列は別のトップレベルへ実行が遷移したとき、GC されるかもしれません<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<p>ちなみに、命令列同士の親子関係で参照を持っているものがあります。たとえば、ブロックの命令列はその親への参照を持っています。そのため、子どもを実行中に親が GC されるということは多分ありません。</p>
+
+<h3 id="命令列オブジェクトの取り出し">命令列オブジェクトの取り出し</h3>
+
+<p>ところで、このオブジェクトはどうやって生成するんでしょうか。前述したように、YARV は命令列にそって実行します。つまり、Ruby プログラムを読み込んで実行している時点で、しっかり存在するわけですね。</p>
+
+<p>でも、YARV を使っていても 命令列オブジェクトなんて見た事ねーよ、という方がほとんどではないかと思います<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。私もほとんどありません。</p>
+
+<p>今回の話題は、この命令列オブジェクトに対してなんかする、ということなので、Ruby レベルのオブジェクトとして取り出したいわけですが、どうしましょう。</p>
+
+<p>実は、実行するために命令列にしてしまうと、それを取り出す手段は (今は) ありません<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。require なども同様です。</p>
+
+<p>そのため、YARV 命令列オブジェクトのファクトリーメソッドを用意してあります。これは、Ruby プログラムである文字列を YARV 命令列オブジェクトに変換して返すという機能を持っています。</p>
+
+<p>ファクトリーメソッドは以下の二つです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> iseq = YARVCore::InstructionSequence.compile(ruby_program, [file_name, [line_no]])
+ iseq = YARVCore::InstructionSequence.compile_file(file_name)</code></pre></figure>
+
+<p>compile メソッドは文字列を、compile_file メソッドはファイルを対象にパースとコンパイルを行います。</p>
+
+<p>compile メソッドの file_name、line_no はそれぞれファイル名と行数で、eval メソッドの引数と同様、スタックトレースの出力などに利用します。</p>
+
+<p>では、実際に試してみましょう。test.rb というファイルを用意します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># test.rb
+iseq = YARVCore::InstructionSequence.compile(&lt;&lt;EOS__)
+if 1&lt;2
+  puts "hello"
+end
+EOS__
+puts "compile sample:"
+puts iseq.disasm
+puts
+puts "compile file sample:"
+puts YARVCore::InstructionSequence.compile_file(__FILE__).disasm</code></pre></figure>
+
+<p>このプログラムでは、まずてきとーな Ruby プログラム (ヒアドキュメントで記述してあるもの) をコンパイルし、そのコンパイル結果を逆アセンブルして出力、というものです。その後、そのファイル自身を compile_file メソッドでコンパイルし、出力しています。</p>
+
+<p>実行結果は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">compile sample:
+== disasm: &lt;ISeq:&lt;main&gt;@&lt;compiled&gt;&gt;=====================================
+local scope table (size: 1, argc: 0)
+
+0000 putobject        1                                               (   1)
+0002 putobject        2
+0004 opt_lt
+0005 branchunless     17
+0007 putself                                                          (   2)
+0008 putstring        "hello"
+0010 send             :puts, 1, nil, 4, &lt;ic&gt;
+0016 leave                                                            (   1)
+0017 putnil
+0018 leave                                                            (   2)
+
+compile file sample:
+== disasm: &lt;ISeq:&lt;main&gt;@../yarv/test.rb&gt;================================
+local scope table (size: 2, argc: 0)
+[ 2] iseq
+0000 getinlinecache   &lt;ic&gt;, 9                                         (   3)
+0003 getconstant      :YARVCore
+0005 getconstant      :InstructionSequence
+0007 setinlinecache   0
+0009 putstring        "if 1&lt;2\n  puts \"hello\"\nend\n"
+0011 send             :compile, 1, nil, 0, &lt;ic&gt;
+0017 setlocal         iseq
+0019 putself                                                          (   8)
+0020 putstring        "compile sample:"
+0022 send             :puts, 1, nil, 4, &lt;ic&gt;
+0028 pop
+0029 putself                                                          (   9)
+0030 getlocal         iseq
+0032 send             :disasm, 0, nil, 0, &lt;ic&gt;
+0038 send             :puts, 1, nil, 4, &lt;ic&gt;
+0044 pop
+0045 putself                                                          (  10)
+0046 send             :puts, 0, nil, 12, &lt;ic&gt;
+0052 pop
+0053 putself                                                          (  11)
+0054 putstring        "compile file sample:"
+0056 send             :puts, 1, nil, 4, &lt;ic&gt;
+0062 pop
+0063 putself                                                          (  12)
+0064 getinlinecache   &lt;ic&gt;, 73
+0067 getconstant      :YARVCore
+0069 getconstant      :InstructionSequence
+0071 setinlinecache   64
+0073 putstring        "../yarv/test.rb"
+0075 send             :compile_file, 1, nil, 0, &lt;ic&gt;
+0081 send             :disasm, 0, nil, 0, &lt;ic&gt;
+0087 send             :puts, 1, nil, 4, &lt;ic&gt;
+0093 leave</code></pre></figure>
+
+<p>まぁ、長々と出てきましたが、なんとなくコンパイルできた感をつかんでいただけたんではないかと思います。多分。</p>
+
+<h4 id="コンパイルオプション">コンパイルオプション</h4>
+
+<p>さて、紹介した 2 つの命令列オブジェクトファクトリーメソッドですが、実はオプショナルにもう 1 つ、コンパイルオプションを指定する引数を受け付けます。コンパイルオプションで渡す値は以下のようになっています。</p>
+
+<dl>
+  <dt>nil</dt>
+  <dd>デフォルトのコンパイルオプションを適用する</dd>
+  <dt>true</dt>
+  <dd>全てのコンパイルオプションを有効にする</dd>
+  <dt>false</dt>
+  <dd>全てのコンパイルオプションを無効にする</dd>
+  <dt>Hash</dt>
+  <dd>特定のコンパイルオプションを有効・無効に設定する。指定の無いコンパイルオプションはデフォルトのままとする</dd>
+</dl>
+
+<p>現状でサポートしているコンパイルオプションは以下のとおりです。</p>
+
+<dl>
+  <dt>peephole_optimization</dt>
+  <dd>ピープホール最適化を行う (デフォルトで有効)</dd>
+  <dt>inline_const_cache</dt>
+  <dd>定数インラインキャッシュを利用する (デフォルトで有効)</dd>
+  <dt>specialized_instruction</dt>
+  <dd>特化命令を利用する (デフォルトで有効)</dd>
+  <dt>operands_unification</dt>
+  <dd>オペランド融合を行う</dd>
+  <dt>instructions_unification</dt>
+  <dd>命令融合を行う</dd>
+  <dt>stack_caching</dt>
+  <dd>スタックキャッシングを行う (性能上の問題から、現時点では有効にできないようにしてあります)</dd>
+</dl>
+
+<p>指定するときは、上記のコンパイルオプションをシンボルにして、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">CompileOption = {
+ :peephole_optimization    =&gt; true,
+ :inline_const_cache       =&gt; true,
+ :specialized_instruction  =&gt; false,
+}</code></pre></figure>
+
+<p>のように行います。</p>
+
+<p>では、コンパイルオプションを弄って試してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def compile_option_test opt
+  script = &lt;&lt;-EOS__
+  if 1&lt;2
+    puts "hello"
+  end
+  EOS__
+  puts YARVCore::InstructionSequence.compile(script, '&lt;test&gt;', 1, opt).disasm
+end
+
+# すべてのコンパイル (最適化) オプションを無効にする
+compile_option_test false
+# デフォルトのコンパイルオプションを適用する
+compile_option_test nil
+# すべてのコンパイル (最適化) オプションを有効にする
+compile_option_test true</code></pre></figure>
+
+<p>実行結果です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">== disasm: &lt;ISeq:&lt;main&gt;@&lt;test&gt;&gt;=========================================
+local scope table (size: 1, argc: 0)
+
+0000 putobject        1                                               (   1)
+0002 putobject        2
+0004 send             :&lt;, 1, nil, 0, &lt;ic&gt;
+0010 branchunless     25
+0012 jump             14
+0014 putself                                                          (   2)
+0015 putstring        "hello"
+0017 send             :puts, 1, nil, 4, &lt;ic&gt;
+0023 jump             26                                              (   1)
+0025 putnil
+0026 leave                                                            (   2)
+== disasm: &lt;ISeq:&lt;main&gt;@&lt;test&gt;&gt;=========================================
+local scope table (size: 1, argc: 0)
+
+0000 putobject        1                                               (   1)
+0002 putobject        2
+0004 opt_lt
+0005 branchunless     17
+0007 putself                                                          (   2)
+0008 putstring        "hello"
+0010 send             :puts, 1, nil, 4, &lt;ic&gt;
+0016 leave                                                            (   1)
+0017 putnil
+0018 leave                                                            (   2)
+== disasm: &lt;ISeq:&lt;main&gt;@&lt;test&gt;&gt;=========================================
+local scope table (size: 1, argc: 0)
+
+0000 putobject_OP_INT2FIX_O_1_C_                                      (   1)
+0001 putobject        2
+0003 opt_lt
+0004 branchunless     13
+0006 putself                                                          (   2)
+0007 putstring        "hello"
+0009 send_OP__WC__1_Qfalse_0x04__WC_ :puts, &lt;ic&gt;
+0012 leave                                                            (   1)
+0013 putnil
+0014 leave                                                            (   2)</code></pre></figure>
+
+<p>たくさん出てきてわかりづらいですが、とりあえず命令列の長さが短くなっているのはわかるので、なんらかの最適化がかかったんだなぁ、ということはわかると思います。</p>
+
+<p>なお、Ruby プログラムを実行するときに適用されるコンパイルオプション (デフォルト値) は YARVCore::InstructionSequence.compile_option= メソッドにここで説明した値を渡すことで指定できます。多分、将来的には Ruby インタプリタのコマンドライン引数で指定できるようにするんじゃないでしょうか。ただ、この辺を弄れても嬉しい人はほとんどいないような気はします。</p>
+
+<h2 id="命令列のシリアライズ">命令列のシリアライズ</h2>
+
+<p>さて今回の本題、YARV 命令列のシリアライズです。</p>
+
+<h3 id="シリアライズ--yarvcoreinstructionsequenceto_a">シリアライズ ―― YARVCore::InstructionSequence::to_a</h3>
+
+<p>命令列オブジェクトは、定数 (数値・文字列・シンボル)、配列、ハッシュオブジェクトなどのプリミティブなデータのみの、取り扱いデータ型へ変換可能です。ここでは、これをもって命令列のシリアライズと称しています。</p>
+
+<p>で、その変換を行うには YARVCore::InstructionSequence::to_a を利用します。実際に試してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'pp'
+
+ary = YARVCore::InstructionSequence.compile(&lt;&lt;EOS__).to_a
+class C
+  def m
+    1.times{
+    }
+  end
+end
+
+C.new.m
+
+EOS__
+
+pp ary</code></pre></figure>
+
+<p>こんなふうに使います。このプログラムはやる気の無い Ruby プログラムをコンパイルして、YARV 命令列オブジェクトを生成して、その結果を配列に変換し、pp してデータ構造をどかどか出力しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## pp での出力結果
+["YARVInstructionSimpledataFormat",
+ 1,
+ 1,
+ 1,
+ nil,
+ "&lt;main&gt;",
+ "&lt;compiled&gt;",
+ [],
+ :toplevel,
+ [],
+ [0, 0, [], 0, 0],
+ [],
+ [[:putnil],
+  [:putnil],
+  [:defineclass,
+   :C,
+   ["YARVInstructionSimpledataFormat",
+    1,
+    1,
+    1,
+    nil,
+    "&lt;class:C&gt;",
+    "&lt;compiled&gt;",
+    [],
+    :class,
+    [],
+    [0, 0, [], 0, 0],
+    [],
+    [[:putnil],
+     [:definemethod,
+      :m,
+      ["YARVInstructionSimpledataFormat",
+       1,
+       1,
+       1,
+       nil,
+       "m",
+       "&lt;compiled&gt;",
+       [],
+       :method,
+       [],
+       0,
+       [[:retry, nil, :label_0, :label_8, :label_0, 0]],
+       [:label_0,
+        [:putobject, 1],
+        [:send,
+         :times,
+         0,
+         ["YARVInstructionSimpledataFormat",
+          1,
+          1,
+          1,
+          nil,
+          "block in m",
+          "&lt;compiled&gt;",
+          [],
+          :block,
+          [],
+          0,
+          [[:redo, nil, :label_0, :label_1, :label_0, 0],
+           [:next, nil, :label_0, :label_1, :label_1, 0]],
+          [:label_0, [:putnil], :label_1, [:leave]]],
+         0,
+         nil],
+        :label_8,
+        [:leave]]],
+      0],
+     [:putnil],
+     [:leave]]],
+   0],
+  [:pop],
+  :label_7,
+  [:getinlinecache, nil, :label_14],
+  [:getconstant, :C],
+  [:setinlinecache, :label_7],
+  :label_14,
+  [:send, :new, 0, nil, 0, nil],
+  [:send, :m, 0, nil, 0, nil],
+  [:leave]]]</code></pre></figure>
+
+<p>眺めただけで、どんなプログラムなのかすぐにわかりますね！</p>
+
+<h4 id="シリアライズしたデータ構造">シリアライズしたデータ構造</h4>
+
+<p>さて、出力したデータ構造は面倒なんで説明はかなり省略しますが、命令列の説明 + いろんな付加データとなっています (省略しすぎ)。</p>
+
+<p>「いろんな付加情報」というのは以下のような配列になっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[magic, major_version, minor_version, format_type, misc,
+ name, filename, line,
+ type, args, vars, exception_table, body]</code></pre></figure>
+
+<p>それぞれがどんなデータをあらわしてどのように表現するか、という説明は <del>面倒くさいので</del> 紙面の都合上行いませんが、名前を見るとぼんやりとわかるんじゃないかな、と思います。ソースを見るのも手です (compile.c、iseq.c)。</p>
+
+<p>この付加情報のうち body 要素が命令列を表しています。body 要素の実体は配列で、その配列の要素は [:”命令名のシンボル”, operand…] という配列もしくは :label_name というシンボルです。つまり、body の値は次のような感じになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   [[:insnA, op1, op2],
+    [:insnB, op3],
+    :labelX,
+    ...
+   ]</code></pre></figure>
+
+<p>例えば、p true while true という Ruby プログラムは</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[:label_0,
+ [:putself],
+ [:putobject, true],
+ [:send, :p, 1, nil, 4, nil],
+ [:pop],
+ [:jump, :label_0],
+ [:putnil],
+ [:leave]]]</code></pre></figure>
+
+<p>こんなふうに表現されます。</p>
+
+<p>命令名などは、命令名に対応する数字を決めてしまえば、このデータ構造はかなり圧縮できたりするのですが、シンボルにしておいたほうが可搬性があるのでこのようなフォーマットにしています。というか、まだ命令セットが fix していないので、ガチガチに固めたくないということもあります。まぁ、シンボルだと (人間にとって) 読み書きがとてもやりやすいというのが一番の理由です。</p>
+
+<h3 id="デシリアライズ--yarvcoreinstructionsequenceload">デシリアライズ ―― YARVCore::InstructionSequence.load</h3>
+
+<p>さて、上記のようにシリアライズしたデータ構造は、もちろんそのまま読み込むことができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> iseq = YARVCore::InstructionSequence.load(serialized_iseq)</code></pre></figure>
+
+<p>こんなふうに使います。</p>
+
+<p>また、YARVCore::InstructionSequence#eval というメソッドは (トップレベルタイプの命令列なら) その命令列を実行します。</p>
+
+<h3 id="応用例rbcompilerb">応用例：rb/compile.rb</h3>
+
+<p>では YARV のシリアライズ機構の応用例を示しましょう。昔から Ruby には難読化器がないとかなんとか、いろいろ言われてきたので、シリアライズ機構を活用して作ってみました。以下にその難読化器のコードを示します。なお、これとまったく同じものが YARV のソースツリーの中の rb/compile.rb にも同梱してあるので、実際に使いたい場合はそちらを利用してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'optparse'
+require 'pp'
+
+OutputCompileOption = {
+  # enable
+  :peephole_optimization    =&gt;true,
+  :inline_const_cache       =&gt;true,
+
+  # disable
+  :specialized_instruction  =&gt;false,
+  :operands_unification     =&gt;false,
+  :instructions_unification =&gt;false,
+  :stack_caching            =&gt;false,
+}
+
+def compile_to_rb infile, outfile
+  iseq = YARVCore::InstructionSequence.compile_file(infile, OutputCompileOption)
+
+  open(outfile, 'w'){|f|
+    f.puts "YARVCore::InstructionSequence.load(" +
+           "Marshal.load(&lt;&lt;EOS____.unpack('m*')[0])).eval"
+    f.puts [Marshal.dump(iseq.to_a)].pack('m*')
+    f.puts "EOS____"
+  }
+end
+
+def compile_to_rbc infile, outfile, type
+  iseq = YARVCore::InstructionSequence.compile_file(infile, OutputCompileOption)
+
+  case type
+  when 'm'
+    open(outfile, 'wb'){|f|
+      f.print "RBCM"
+      f.puts Marshal.dump(iseq.to_a, f)
+    }
+  else
+    raise "Unsupported compile type: #{type}"
+  end
+end
+
+## main
+
+outfile = 'a.rb'
+type    = 'm'
+opt = OptionParser.new{|opt|
+  opt.on('-o file'){|o|
+    outfile = o
+  }
+  opt.on('-t type', '--type type'){|o|
+    type = o
+  }
+  opt.version = '0.0.1'
+}
+
+opt.parse!(ARGV)
+
+ARGV.each{|file|
+  case outfile
+  when /\.rb\Z/
+    compile_to_rb file, outfile
+  when /\.rbc\Z/
+    compile_to_rbc file, outfile, type
+  else
+    raise
+  end
+}</code></pre></figure>
+
+<p>このプログラムは、指定したファイルを a.rb (もしくは、-o オプションで指定した名前) というファイルに__コンパイル__します。</p>
+
+<p>実際にやってみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># t.rb
+class C
+  def m
+    1.times{
+    }
+  end
+end
+
+C.new.m</code></pre></figure>
+
+<p>これを ruby compile.rb t.rb として実行すると、a.rb というファイルが生成されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># a.rb
+YARVCore::InstructionSequence.load(Marshal.load(&lt;&lt;EOS____.unpack('m*')[0])).eval
+BAhbEiIkWUFSVkluc3RydWN0aW9uU2ltcGxlZGF0YUZvcm1hdGkGaQZpBjAi
+CzxtYWluPiIJdC5yYlsAOg10b3BsZXZlbFsAWwppAGkAWwBpAGkAWwBbEVsG
+OgtwdXRuaWxbBjsGWwk6EGRlZmluZWNsYXNzOgZDWxIiJFlBUlZJbnN0cnVj
+dGlvblNpbXBsZWRhdGFGb3JtYXRpBmkGaQYwIg48Y2xhc3M6Qz5ACFsAOgpj
+bGFzc1sAWwppAGkAWwBpAGkAWwBbCVsGOwZbCToRZGVmaW5lbWV0aG9kOgZt
+WxIiJFlBUlZJbnN0cnVjdGlvblNpbXBsZWRhdGFGb3JtYXRpBmkGaQYwIgZt
+QAhbADoLbWV0aG9kWwBpAFsGWws6CnJldHJ5MDoMbGFiZWxfMDoMbGFiZWxf
+ODsOaQBbCjsOWwc6DnB1dG9iamVjdGkGWws6CXNlbmQ6CnRpbWVzaQBbEiIk
+WUFSVkluc3RydWN0aW9uU2ltcGxlZGF0YUZvcm1hdGkGaQZpBjAiD2Jsb2Nr
+IGluIG1ACFsAOgpibG9ja1sAaQBbB1sLOglyZWRvMDsOOgxsYWJlbF8xOw5p
+AFsLOgluZXh0MDsOOxU7FWkAWwk7DlsGOwY7FVsGOgpsZWF2ZWkAMDsPWwY7
+F2kAWwY7BlsGOxdpAFsGOghwb3A6DGxhYmVsXzdbCDoTZ2V0aW5saW5lY2Fj
+aGUwOg1sYWJlbF8xNFsHOhBnZXRjb25zdGFudDsIWwc6E3NldGlubGluZWNh
+Y2hlOxk7G1sLOxE6CG5ld2kAMGkAMFsLOxE7C2kAMGkAMFsGOxc=
+EOS____</code></pre></figure>
+
+<p>実際に何をやっているかというと、</p>
+
+<ul>
+  <li>文字列を YARV 命令列に変換して、</li>
+  <li>それをシリアライズして、</li>
+  <li>それを Marshal.dump して、</li>
+  <li>それを pack(‘m*’) で Base64 エンコーディングして、</li>
+  <li>それをデシリアライズして実行するためのコードを付加して</li>
+</ul>
+
+<p>いる、というものです。</p>
+
+<p>なんというか、Ruby プログラムを pack(‘m*’) するだけでもいいような気がしないでもないですが、まぁそれだけだと簡単に中身が見えてしまうので、一度 YARV 命令列にコンパイルしてから Base64 エンコーディングしているということです。</p>
+
+<p>さて、ロードしたいときにはデシリアライズするプログラムになっているのでこれをそのまま実行すればよいのですが、具体的に何をするかというと、</p>
+
+<ul>
+  <li>文字列を unpack(‘m*’) で Base64 デコードして、</li>
+  <li>それを Marshal.load して、</li>
+  <li>それをデシリアライズして、</li>
+  <li>それを実行</li>
+</ul>
+
+<p>という流れになります。</p>
+
+<p>ちなみに、これだけのオーバヘッドがあるのでロード時間短縮のためにこのコンパイラで先にコンパイルしておく、というのは意味がありません (測りました)。というか、遅くなります。unpack のコスト、および Marshal.load のコストが大部分で、これに時間がかかります。後者のコストはシンボルを多用している現在の表現によります。この辺、バイナリでガチガチに固めてしまう、よくある (Java の VM 用クラスファイルのような) 構造を定義すれば可能になるでしょう。そのためには命令セット決めないとなぁ。うーん<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+
+<p>ところで、結局 YARV 命令列 -&gt; Ruby プログラム変換器 (逆コンパイラ) を作れば中で何をしているのかわかってしまうのですが、とりあえずそんなに簡単ではないとたかをくくっています。誰か作りませんか？</p>
+
+<h2 id="ライブラリ-yasm">ライブラリ yasm</h2>
+
+<p>さて、このデシリアライズインターフェースを使うと簡単に YARV 上で実行できる命令列を作成することができます。たとえば、他の言語で YAML を利用して上記フォーマットを記述しておけば、簡単に YARV に読み込ませることが出来ます<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+
+<p>が、配列をごちゃごちゃ弄るのはめんどくさいです。そもそも、構造の解説がソース読め、という冷たい仕打ち。そこで、yasm というライブラリを用意しました。要するに YARV 用アセンブラで、Ruby の文法で記述します、というか Ruby のプログラムです。アセンブラで色々記述すると、上記のシリアライズした表現、つまり Ruby の配列を作るので、あとはそれをデシリアライズ (ロード) して実行すればいいわけです。</p>
+
+<h3 id="yasm-利用例">yasm 利用例</h3>
+
+<p>習うより慣れろ、ということで利用例を示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'yasm'
+
+iseq = YASM.toplevel([:a, :b]){
+  #
+  # a = 10
+  # b = 20
+  # p(a+b)
+  # 3.times{|i| p i}
+  #
+  putobject 10
+  setlocal :a
+  putobject 20
+  setlocal :b
+  putself
+  getlocal :a
+  getlocal :b
+  send :+, 1
+  call :p, 1 # call means send with flags 4
+  pop
+  putobject 3
+  send :times, 0, block([:i]){
+    putself
+    getdynamic :i
+    call :p, 1
+    leave
+  }
+  leave
+}
+p iseq
+iseq.eval #=&gt; 30, 0, 1, 2</code></pre></figure>
+
+<p>YASM.toplevel メソッドが toplevel の YARV 命令列のファクトリーメソッドになります。そして、ブロック中でどんな挙動をするのか、命令を Ruby のメソッドとして作成します<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+
+<p>ブロックなどは block メソッドで記述します。</p>
+
+<h4 id="余談">余談</h4>
+
+<p>さて、YASM の書き方、Ruby の文法としてちょっと不思議に思いませんか。Ruby プログラムとしては完全に valid ですが、putobject などのメソッド、どのクラスに属しているんでしょう。トップレベルで定義されたメソッドでもありません (実際に putobject と読んでみると、NoMethodError になります)。ブロックの中でしか有効ではありません。</p>
+
+<p>この仕組み、instance_eval を利用して作られています。つまり、ブロックの中では self が違うんですね。そのため、うっかりすると間違ってしまう可能性があります。</p>
+
+<p>で、self の置き換えを防ぐために、明示的にビルダーオブジェクトに対してエミットメッセージを送るという書き方にするには次のように書きます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> YASM.toplevel{|ib| # ib: iseq builder
+   ib.putobject 10
+   ...
+ }</code></pre></figure>
+
+<p>ブロックの arity を見て、もし arity が 1 ならば instance_eval する代わりにビルダーオブジェクトを渡す、という設計です。この設計、ちょっとどうかなと思わなくもないのですが…。まぁ、とりあえずこのようにしておきましょう。</p>
+
+<p>ちなみに、これは Microsoft の .NET などで用意されている ILGenerator みたいなイメージですね。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は YARV 命令列のシリアライズとデシリアライズの機能について紹介しました。今回紹介した仕組み、とくに yasm を利用すると YARV 上で動作するプログラミング言語を気楽に作ることが出来ます (なんといっても、アセンブリ言語が Ruby の表現力を持っているわけですから、その使いやすさは推して知るべし)。</p>
+
+<p>本当は、今回何か簡単な言語のコンパイラを作ろうと思っていたのですが、間に合いませんでした。誰か Scheme あたりで挑戦してみませんか。かなり簡単だと思いますよ。</p>
+
+<p>では、また。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>ささだ こういち。非学生。</p>
+
+<p>非学生だが、RubyKaigi 2006 にかまけて仕事が全然できていない。ヤバイ。まぁ、いいか (いや、大変よくない。マジで)。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-YarvManiacs.html">YARV Maniacs 【第 13 回】 事前コンパイルへの道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-YarvManiacs.html">YARV Maniacs 【第 11 回】 最近の YARV の事情</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0033/0033-YarvManiacs.html">YARV Maniacs 【第 10 回】 例外処理（初級編）</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-YarvManiacs.html">YARV Maniacs 【第 9 回】 特化命令</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-YarvManiacs.html">YARV Maniacs 【第 8 回】 命令列のシリアライズ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-YarvManiacs.html">YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-YarvManiacs.html">YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-YarvManiacs.html">YARV Maniacs 【第 5 回】 命令セット (2) リテラル・変数・定数</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-YarvManiacs.html">YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-YarvManiacs.html">YARV Maniacs 【第 3 回】 命令ディスパッチの高速化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-YarvManiacs.html">YARV Maniacs 【第 2 回】 VM ってなんだろう</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-YarvManiacs.html">YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>ちょっとわかりづらいかもしれませんが、たとえばこの命令列が require などで実行された場合を考えてみてください。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>YARV を使ったことがある人がほとんどいねーという噂。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>加えるのは簡単なんですが、インターフェース、API の設計が難しいのです。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>別の選択肢として、「現在の VM が dump したファイルしか読み込めないようにする」という割り切りをしてしまうという方法があります。ビルドバージョンが違ったり、別の VM が dump した、たとえばネットワーク越しのやり取りは一切サポートしない、という方法です。個人的には、現在の冗長表現、それから VM 限定のタイトな表現、どちらもサポートするのがいいのかな、と思っています。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>というか、そういう目的で作ったわけです。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>命令を Ruby のメソッドとして記述可能にするために命令セットの名前を考え直したんですよね。たとえば、end 命令は leave 命令になりました。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

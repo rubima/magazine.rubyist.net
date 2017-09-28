@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/miyohide/magazine.rubyist.net.svg?branch=master)](https://travis-ci.org/miyohide/magazine.rubyist.net)
+
 # Rubima on Jekyll
 
 次期るびま本体のサイトです。

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PyCall があれば Ruby で機械学習ができる</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0055/0055-pycall.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>PyCall があれば Ruby で機械学習ができる</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0055/0055-pycall.html" class="hatena-bookmark-button" data-hatena-bookmark-title="PyCall があれば Ruby で機械学習ができる" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0055/0055-pycall.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0055/0055-pycall.html" data-text="PyCall があれば Ruby で機械学習ができる">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#ruby-で機械学習をする際の困難さ" id="markdown-toc-ruby-で機械学習をする際の困難さ">Ruby で機械学習をする際の困難さ</a>    <ul>
+      <li><a href="#使える道具がない" id="markdown-toc-使える道具がない">使える道具がない</a></li>
+      <li><a href="#ruby-でやっている人がいない" id="markdown-toc-ruby-でやっている人がいない">Ruby でやっている人がいない</a></li>
+      <li><a href="#道具を作ろうとする人がいない" id="markdown-toc-道具を作ろうとする人がいない">道具を作ろうとする人がいない</a></li>
+      <li><a href="#負のサイクル" id="markdown-toc-負のサイクル">負のサイクル</a></li>
+    </ul>
+  </li>
+  <li><a href="#なぜ-python-を使う必要があるのか" id="markdown-toc-なぜ-python-を使う必要があるのか">なぜ Python を使う必要があるのか</a></li>
+  <li><a href="#pycall-でできること" id="markdown-toc-pycall-でできること">PyCall でできること</a></li>
+  <li><a href="#pycall-の利用例" id="markdown-toc-pycall-の利用例">PyCall の利用例</a></li>
+  <li><a href="#pycall-を-docker-で試す" id="markdown-toc-pycall-を-docker-で試す">PyCall を Docker で試す</a></li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+</ul>
+
+<p>書いた人 : mrkn さん</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>この記事では、著者が開発中の PyCall と呼ばれる Ruby-Python ブリッジライブラリを紹介します
+(RubyKaigi 2016、RubyWorld Conference 2016、Ruby Business Users Conference 2017 で著者が行った講演をるびま向けにまとめました)。</p>
+
+<h2 id="ruby-で機械学習をする際の困難さ">Ruby で機械学習をする際の困難さ</h2>
+
+<p>みなさんは Ruby を使って機械学習や統計分析をやろうとしたことはありますか？</p>
+
+<p>そのような経験がある方も、経験はないけどやってみようとしたことがある方も、誰もが「Ruby では不可能だ」と思ったことでしょう。
+なぜ Ruby で機械学習はできないのでしょうか。</p>
+
+<p>その大きな理由は次の 3 つです: (1) 使える道具がない、(2) やっている人がいない、(3) 作ろうとする人がいない。</p>
+
+<h3 id="使える道具がない">使える道具がない</h3>
+
+<p>現在 Ruby には、機械学習や統計分析の仕事において実用的に使える道具がありません。</p>
+
+<p>なんてことを言うと「<a href="https://rubygems.org/gems/daru/">daru</a> とか <a href="https://rubygems.org/gems/numo-narray">numo-narray</a> とかあるじゃないか」と怒られるかもしれませんね。でも、daru や numo-narray などの既存の gem をいくら組み合わせても、機械学習や統計分析の仕事を現実的な効率と品質でやっていくことは不可能です。ですから、私は現在の Ruby には機械学習や統計分析のために使える道具は存在しないと考えています。</p>
+
+<p>既存の gem を駆使して仕事をしようとすると、必要な機能が足りず、他の gem との連携が不十分であり、かなりの頑張りを要求されることになります。</p>
+
+<p>既存の gem はオープンソースソフトウェアなので、プルリクエストを送って少しずつ実用的なものにしていけば良いと考える人がいるかもしれません。
+そのような行動を取れる人はそうすれば良いのですが、仕事で機械学習や統計分析をやる必要がある多くの人にとって、主目的は「道具を作ること」ではありません。
+多くの人の主目的は「まともな道具を使って仕事を完了させること」です。</p>
+
+<p>さらに、機械学習や統計分析においては、道具を使う場合と作る場合とで、要求されるスキルセットが大きく違う問題があります。
+そのため、道具を使う側の人間が必ずしも実用的な道具を実装できるわけでは無いのです。</p>
+
+<p>既存の gem は「品質が信用できない」という問題も抱えています。この問題の最も大きな要因は次節で述べる「Ruby でやっている人がいない」ことです。
+利用者が少ないので利用例も乏しくなり、公開されている情報も皆無です。
+そして、このようなライブラリの多くは開発が継続していないことが多いです。</p>
+
+<p>このような状況ではライブラリを全く信用できないため、利用時に実装を精読して問題がないかどうか実験を通して調査する必要があります。
+でも、どうせ実装を読んだり実験したりする時間を取るなら、誰も使ってないライブラリではなく、世界中の人が使っている <a href="http://pandas.pydata.org/">pandas</a> や <a href="http://scikit-learn.org/">scikit-learn</a> を対象とする方が良いと思いませんか？</p>
+
+<h3 id="ruby-でやっている人がいない">Ruby でやっている人がいない</h3>
+
+<p>Ruby で機械学習や統計分析をやっている人がいない理由は大きく 3 つあると私は考えています。その 1 つは前節で述べた「使える道具がない」ことです。
+残りの 2 つは労働市場に関する要因で、相互に関係しています。それは「Python や R を使っている人が多い」ことと、「Python や R の求人が多い」ことです。</p>
+
+<p>機械学習や統計分析においては、Python と R は無くてはならないプログラミング言語です。
+この 2 言語については、多くの専門家が道具を開発していますし、信頼できる書籍も多く、Web 上の日本語の情報源も豊富に存在しています。
+Python や R を使っている人が多くなるのは当然のように思えます。</p>
+
+<p>そして、機械学習や統計分析の分野で活躍できるデータサイエンティストを雇用したい企業は、Python や R の能力者を募集しています。
+なぜなら、Python と R がこの分野の標準的なプログラミング言語ですし、まともに仕事をするためにこの 2 言語を扱えることが最低条件だからです。
+この 2 言語を要求する求人が多いことは、この 2 言語の利用者を増やす要因にもなりますから、さらに利用者が増える循環が作られています。</p>
+
+<p>このような状況ですから、Ruby で機械学習や統計分析を頑張ってやろうとする人なんて現れません。</p>
+
+<h3 id="道具を作ろうとする人がいない">道具を作ろうとする人がいない</h3>
+
+<p>Ruby で機械学習や統計分析ができない最後の理由は「道具を作ろうとする人がいない」です。</p>
+
+<p>前 2 節の繰り返しになりますが、この分野においては道具を作ることが目的の人が少なく、しかも使われないものを作りたい人も少ないでしょう。
+しかし、「自分で使うため」とか、「自分で作って学ぶため」などの理由で、あまり一般的には使えないシンプルなツールを作ろうとする人はいても良いと思います。
+そのような人ですらほとんど存在しないのが現在の Ruby コミュニティの状況です。なぜなのでしょう？</p>
+
+<p>それは、作り始めようとした人に対する大きな障壁が 2 つ存在するからです。</p>
+
+<p>障壁の 1 つ目は、数値配列やグラフィックス機能など、基礎となる機能を提供するライブラリの定番が存在しないことです。
+そのため、何かを作り始める前に、現在どのようなライブラリが存在して、それぞれがどんな機能を提供していて、それらの実装はどのくらい信用できるのかを調査しなければならないのです。
+面倒臭くてやってられませんね。</p>
+
+<p>障壁の 2 つ目は、仕事で機械学習や統計分析をやっている人の多くが仕事で Python や R を使っていて、Ruby のために自分で作ったものを仕事で使える機会がほとんど無いことです。
+プライベートで機械学習や統計分析をやる機会があるとしても、仕事で使い慣れている環境を使う方が良いと考える人は多いでしょう。</p>
+
+<h3 id="負のサイクル">負のサイクル</h3>
+
+<p>このように Ruby で機械学習や統計分析ができない理由は、互いに大きく関係し、強い負のサイクルを形成していることが分かります。</p>
+
+<p>この負のサイクルから抜け出すには、できるだけ早く Ruby で機械学習と統計分析ができる状況を作り、これらの仕事を Ruby でやる人を集める必要があります。</p>
+
+<h2 id="なぜ-python-を使う必要があるのか">なぜ Python を使う必要があるのか</h2>
+
+<p>Ruby で機械学習と統計分析ができる状況を作るには 2 つの道があります。1 つ目は「Ruby 独自の生態系を作る」道です。もう 1 つは「Python や R の道具をそのまま利用する」道です。</p>
+
+<p>私は、Ruby のためのデータ分析環境に対して多くの人が求める条件を次の 3 つであると考えています。</p>
+
+<ol>
+  <li>実用的に使える機能と品質を持つこと</li>
+  <li>Python や R で作られた既存の資産を捨てずに使い続けられること</li>
+  <li>CTO (など組織・チームの技術責任者) が Rails を捨てる決断をする前に使える状態になっていること</li>
+</ol>
+
+<p>私は、これらの条件を全て満足できるのは「Python や R の道具をそのまま利用する」道だと判断しました。
+そして、PyCall をはじめとする言語間ブリッジを開発し始めました。</p>
+
+<h2 id="pycall-でできること">PyCall でできること</h2>
+
+<p>PyCall は Ruby と Python との間のブリッジです。これは、Python のオブジェクトを Ruby から触ること、逆に Ruby のオブジェクトを Python 側に見せることが可能になります。
+(本記事の執筆時点では、Ruby オブジェクトを Python 側に見せる機能は未実装です)。これらの機能によって次のことが可能になります。</p>
+
+<ul>
+  <li>Python のモジュールをインポートして Ruby から使う</li>
+  <li>Ruby の Proc オブジェクトを Python からコールバックさせる</li>
+  <li>Python のジェネレータを Ruby から利用する</li>
+</ul>
+
+<p>そのため、私が pycall を開発している目的はデータサイエンスですが、実際に pycall を利用可能な領域はデータサイエンスに限定されません。</p>
+
+<h2 id="pycall-の利用例">PyCall の利用例</h2>
+
+<p>PyCall はまだ開発が始まったばかりです。実験的な実装になっていて、GC やスレッドなど気をつけて実装しなければならない部分がまだ手付かずの状態であり、
+筆者も開発中に Segmentation Fault を発生させることがよくあります。そのため、実運用での使用はオススメしません。
+しかしながら PyCall を使って Ruby で簡単な機械学習やデータの可視化を試すことは既に可能です。</p>
+
+<p>PyCall の利用例は PyCall のリポジトリ内にある examples ディレクトリにまとめています。現在のところ、numpy、matplotlib、pandas、scikit-learn などを pycall を使って利用する例を置いています。</p>
+
+<ul>
+  <li><a href="https://github.com/mrkn/pycall/blob/master/examples/">https://github.com/mrkn/pycall/blob/master/examples/</a></li>
+</ul>
+
+<p>pycall を利用して matplotlib を扱いやすくするためのラッパーとして、同名の matplotlib.gem というライブラリも開発しています (リポジトリ名は matplotlib.rb です)。
+このライブラリでは IRuby とのインテグレーションも提供しています。IRuby 上での使い方は以下の iPython notebook をご覧ください。</p>
+
+<ul>
+  <li><a href="https://github.com/mrkn/matplotlib.rb/blob/master/examples/iruby_integration.ipynb">https://github.com/mrkn/matplotlib.rb/blob/master/examples/iruby_integration.ipynb</a></li>
+</ul>
+
+<h2 id="pycall-を-docker-で試す">PyCall を Docker で試す</h2>
+
+<p>(本節は<a href="http://tech.speee.jp/entry/2017/03/13/113720">ほかのブログ記事</a>で筆者が紹介した手順を簡略化して引用したものです)</p>
+
+<p>PyCall は Docker を利用して簡単に試すことができます。Docker が使える環境で下記のコマンドを実行すると、iruby と名付けられたコンテナが起動します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">docker run -p 8888:8888 -it --rm --name iruby -v ~:/notebooks/local rubydata/pycall</code></pre></figure>
+
+<p>そして次のようなメッセージが表示されるはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   Copy/paste this URL into your browser when you connect for the first time,
+   to login with a token:
+       http://0.0.0.0:8888/?token=2f8dda92daa9c28326baf5024d5b8883ca36dcb0e470f885</code></pre></figure>
+
+<p>このメッセージ内の URL からトークンの部分をコピペして <a href="http://localhost:8888/?token=2f8dda92daa9c28326baf5024d5b8883ca36dcb0e470f885">http://localhost:8888/?token=2f8dda92daa9c28326baf5024d5b8883ca36dcb0e470f885</a> のような URL を作りブラウザで開いてもらえれば、コンテナ内で動いている jupyter notebook にアクセスできます。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>本記事では、Ruby でデータサイエンスの仕事ができない現状について述べ、その状況を解決するために開発している PyCall とその周辺ライブラリについて紹介しました。
+PyCall の他にも、R や Julia のようにデータサイエンスに強い言語とのブリッジも開発しています。
+この分野に興味がある方は、今後の開発の動向に期待していてください。</p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

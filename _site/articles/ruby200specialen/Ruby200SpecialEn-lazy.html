@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby 2.0.0： Enumerable#lazy</title>
+  <meta name="description" content="Author: Yutaka Hara (@yhara_en)Translator: makoto (@makoto_inoue)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/ruby200specialen/Ruby200SpecialEn-lazy.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby 2.0.0： Enumerable#lazy</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/ruby200specialen/Ruby200SpecialEn-lazy.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby 2.0.0： Enumerable#lazy" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/ruby200specialen/Ruby200SpecialEn-lazy.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/ruby200specialen/Ruby200SpecialEn-lazy.html" data-text="Ruby 2.0.0： Enumerable#lazy">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>Author: Yutaka Hara (<a href="https://twitter.com/yhara_en">@yhara_en</a>)
+Translator: makoto (<a href="https://twitter.com/makoto_inoue">@makoto_inoue</a>)</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In this post, I will talk about the Enumerable#lazy method and the Enumerator::Lazy object it returns. Both have been added as new features in Ruby 2.0. <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>Related ticket</p>
+
+<ul>
+  <li><a href="http://bugs.ruby-lang.org/issues/4890">http://bugs.ruby-lang.org/issues/4890</a></li>
+</ul>
+
+<h2 id="what-is-enumerablelazy-">What is Enumerable#lazy ?</h2>
+
+<p>Enumerable#lazy is often explained as “a method that enables lazy versions of methods like ‘map’ and ‘select’”. If you would like to be seen as an advanced Rubyist, you would describe it more accurately by saying it is “a method <strong>that provides a namespace</strong> for lazy versions of ‘map’, ‘select’, etc”.</p>
+
+<p>Let’s first define what “lazy version of ‘map’ and ‘select’” means, and then explain what “providing a namespace” means.</p>
+
+<h2 id="lazy-version-of-map-and-select">Lazy version of <strong>map</strong> and <strong>select</strong></h2>
+
+<p>Ruby’s ‘map’ method returns a result set after a block is applied to each element of an Enumerable object such as Array.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p [1, 2, 3].map{|x| x * 2}
+#=&gt; [2, 4, 6]</code></pre></figure>
+
+<p>‘map’ is a very useful method, but it has one limitation: it cannot return infinite lists, as it tries to create an array with an infinite number of elements.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p (1..Float::INFINITY).map{|x| x * 2}
+#=&gt; ...</code></pre></figure>
+
+<p>You may think this is obvious. Who would try to map an infinite list? Well, functional programming languages, especially Haskell are based on lazy evaluation, so this is a very common programming style. In Ruby, there is a case where a lazy version of the ‘map’ method is useful. I will explain it later on.</p>
+
+<h3 id="enumerator-represents-a-sequence-of-objects">Enumerator represents a sequence of objects.</h3>
+
+<p>What if there were a method that could map an infinite list? How would it behave? (Let’s call it ‘lazy_map’ for now)</p>
+
+<p>Ruby already has a class called Enumerator for lazy evaluation. So ‘lazy_map’ should just return an object.
+Enumerator represents “a sequence of objects” and you can generate a new instance by passing a block into Enumerator.new.</p>
+
+<p>The block receives a special object called a “yielder”, and you can define each element by passing a value with the &lt;&lt; (“shovel”) operator.</p>
+
+<p>Let’s try out the FizzBuzz program using Enumerator.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">fizzbuzz = Enumerator.new{|yielder|
+  1.upto(Float::INFINITY) do |n|
+    case
+    when n % 15 == 0 then yielder &lt;&lt; "FizzBuzz"
+    when n % 5 == 0 then yielder &lt;&lt; "Buzz"
+    when n % 3 == 0 then yielder &lt;&lt; "Fizz"
+    else yielder &lt;&lt; n.to_s
+    end
+  end
+}
+fizzbuzz.each do |str|
+  puts str
+end</code></pre></figure>
+
+<p>The variable fizzbuzz contains an Enumerator object, and you can access the next FizzBuzz string via the ‘each’ method.</p>
+
+<p>You can use any of the Enumerable methods such as ‘map’, ‘select’, and ‘take’, because Enumerator includes Enumerable.</p>
+
+<p>The above code runs endlessly; let’s change the code to display only first 100 rows.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">fizzbuzz.first(100).each do |str|
+  puts str
+end</code></pre></figure>
+
+<h3 id="casual-enumerator">Casual Enumerator</h3>
+
+<p>I’ve shown you how to generate Enumerator objects. In fact, some of Ruby’s built in methods return Enumerator, such as ‘each’, ‘each_line’, ‘each_byte’. Many of these “each”-related methods returns an Enumerator if you don’t pass a block.</p>
+
+<p>As an example, I wrote a program to display the first 10 lines of a file.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">File.open("log.txt") do |f|
+  puts f.each_line.first(10)
+end</code></pre></figure>
+
+<p>If you don’t pass in a block, IO#each_line returns an Enumerator object that yields each row of the file.
+Since Enumerator includes all Enumerable methods, you can use ‘first’ method to take the first ten rows.</p>
+
+<p>There are three important things happening here:</p>
+
+<ol>
+  <li>
+    <dl>
+      <dt>each_line does not read the entire file</dt>
+      <dd>IO#each_line starts reading only the required portion rather than the entire file rows. Therefore this program finishes in less than a second, even when log.txt is several gigabytes in size.</dd>
+    </dl>
+  </li>
+  <li>
+    <dl>
+      <dt>It is easy to change to ‘each_byte’ that reads data per byte.</dt>
+      <dd>Let’s change the above program to show the first ten bytes rather than the first ten rows. You can easily do this by replacing ‘each_line’ with a similar IO method called ‘each_byte’. Enumerator provides an abstracted interface that acts like an Enumerable object array, so it can handle either each row or each byte.</dd>
+    </dl>
+  </li>
+</ol>
+
+<dl>
+  <dt>3 (FYI) IO#lines is deprecated in 2.0.</dt>
+  <dd>It’s not directly related to <strong>lazy</strong>, but some methods in String class, such as ‘lines’, ‘chars’, ‘bytes’, ‘codepoints’ return arrays instead of Enumerator(<a href="http://bugs.ruby-lang.org/issues/6670">#6670</a>). To stay consistent, the ‘lines’ method in IO is not recommended. Please use ‘each_line’ instead of ‘lines’ when you when you want to be <em>lazy</em>.</dd>
+</dl>
+
+<h3 id="enumerator-and-map">Enumerator and ‘map’</h3>
+
+<p>Let’s get back to the ‘map’ method. Thus far, I have been talking about a case where you don’t want ‘map’ to return an entire array. For example, let’s write a program that reads the first ten rows matching a certain condition. Here is an example using ‘map’ and ‘select’.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">File.open(path) do |f|
+  puts f.each_line.map{|line| ...(modify line)...}
+  .select{|line| ...(return true if line matches the condition)...}
+  .first(10)
+end</code></pre></figure>
+
+<p>This program defeats the purpose of using ‘each_line’, because the ‘map’ method tries to return the entire file (such as log.txt) to convert it into an array.</p>
+
+<p>Now let’s imagine that there are methods called ‘lazy_map’ and ‘lazy_select’ that act similarly to ‘map’ and ‘select’, but return an Enumerator instead of an Array.</p>
+
+<p>You can then rewrite the code like this:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">File.open(path) do |f|
+  puts f.each_line.lazy_map{|line| ... (modify line)... }
+  .lazy_select{|line| ...(return true if line matches the condition)... }
+  .first(10)
+end</code></pre></figure>
+
+<p>This is almost identical to the previous example, but ‘lazy_map’ returns Enumerator that yields the modified rows and therefore lazily evaluates the program. ‘lazy_select’ works in the same way: it only reads the first ten rows that match the condition so the program ends without using up all your memory.</p>
+
+<h2 id="the-naming-issue">The naming issue.</h2>
+
+<p>The lazy version of ‘map’ is very convenient, but there is a issue with the method names. The Enumerable module includes many other methods that can be lazily evaluated, such as ‘map’, ‘select’, ‘reject’ and ‘drop’, but we did not want to inflate Enumerable module with methods such as ‘lazy_map’ and ‘lazy_select’.</p>
+
+<p>Then I came up with an API that changes its mode by appending .lazy. I added a method called “lazy” in the Enumerable module. If you call this method, it returns an instance of a special class called Enumerator::Lazy. Enumerator::Lazy is almost identical to Enumerator, but certain methods (such as ‘map’ and ‘select’) are overwritten by the lazy version.</p>
+
+<p>Now you can rewrite the previous example like this in Ruby 2.0.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">File.open(path) do |f|
+  puts f.each_line.lazy.map{|line| ...(modify line)...}
+  .select{|line| ...(return true if line matches the condition)...}
+  .first(10)
+end</code></pre></figure>
+
+<p>Thanks to Enumerable#lazy and Enumerator::Lazy you can easily switch methods to the lazy version by simply adding “lazy” method, without adding a large number of new methods. This is what I meant by “a method that provides a namespace” at the very beginning.</p>
+
+<h2 id="an-example">An example</h2>
+
+<p>Enumerable#lazy lets you handle an array that is either huge, infinite, or endless with familiar interfaces such as ‘select’ and ‘map’.
+One example of an “endless map” is streaming data over a network. For example, you can write a program that parses a public timeline on Twitter, then extracts and modifies the tweets like this:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">TwitterPublicTimeline.each.lazy.map{|json| ...(modify json)...}
+.select{|tweet| ...(return true if the tweet matches a condition)...}
+.each{|tweet| p tweet}</code></pre></figure>
+
+<p>If there were no lazy version of ‘map’ and ‘select’, you would have to write it like this:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">TwitterPublicTimeline.each do |json|
+  tweet = ...(modify json)...
+  next unless ...(return true if the tweet matches a condition)...
+  p tweet
+end</code></pre></figure>
+
+<p>Some of you may think the latter is easier to understand. It may be true for shorter programs.
+However, while the former example uses Enumerable’s API effectively, the latter reimplements part of Enumerable’s logic.</p>
+
+<p>What if TwitterPublicTimeline.each returned multiple tweets in chunks rather than single tweets one at a time? With lazy, you can simply swap .map with .flat_map to handle the difference.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">TwitterPublicTimeline.each.lazy.flat_map{|json| ...(modify json)...}
+.select{|tweet| ...(return true if tweet matches a condition)...}
+.each{|tweet| p tweet}</code></pre></figure>
+
+<p>How would you handle this without lazy? Would you use a nested loop? Either way, it won’t be as easy as the lazy version.</p>
+
+<p>You may not be familiar with using ‘map’ and ‘select’ to handle unusual types of arrays such as streaming data, but you may discover a new programming style once you try.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Enumerable#lazy in Ruby 2.0 gives you lazily evaluatable versions of ‘map’ and ‘select’, and so on with its “.lazy.map” interface. It provides a unified interface for handling huge or infinite arrays because its methods return an instance of Enumerator::Lazy rather than a normal array.</p>
+
+<h2 id="about-the-author">About the author</h2>
+
+<p>Yutaka Hara (Network Applied Communication Laboratory) has been living in Matsue City for the past five years. His latest hobby is Minecraft.</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Note that a class named ‘Enumerable::Lazy’ does not exist; only ‘Enumerable#lazy’ and ‘Enumerator::Lazy’ are correct.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

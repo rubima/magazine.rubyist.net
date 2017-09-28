@@ -1,0 +1,2 @@
+str = "rubima"
+print st

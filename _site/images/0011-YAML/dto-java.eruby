@@ -1,0 +1,134 @@
+<%
+   ##
+   ## Java用DTO(Data Transfer Object)クラスを生成するテンプレート
+   ##
+   ## テンプレートプロパティ：
+   ##   package   - パッケージ名
+   ##   parent    - 親クラス名
+   ##
+
+   ## コンテキスト
+   table      = context['table']         # ・・・(1)
+   properties = context['properties']    # ・・・(2)
+   raise "コマンドオプション '-m' を指定してください。" unless table
+
+   unless defined?(KEYWORDS)
+
+     ## Javaの予約語
+     keywords = <<-END
+       abstract assert boolean break byte case catch char class const
+       continue default do double else enum extends final finally float
+       for goto if implements import instanceof int interface long
+       native new package private protected public return short
+       static strictfp super switch synchronized this throw throws
+       transient try void volatile while
+     END
+     @keywords = {}
+     keywords.each { |word| @keywords[word] = true }
+
+     ## 予約語をエスケープする関数
+     def self._(word)
+       return @keywords[word] ? "_#{word}" : word
+     end
+
+     ## 文字列 "aaa_bbb_ccc" を "AaaBbbCcc" に変換する関数
+     def camel_case(name, flag_all=true)
+       s = ''
+       name.split('_').each_with_index do |word, i|
+         s << (!flag_all && i == 0 ? word.downcase : word.capitalize)
+       end
+       return s
+     end
+
+   end
+
+
+   ## クラス定義情報
+   klass = {
+     :name       => table['class']   || camel_case(table['name']),
+     :package    => table['package'] || properties['package'],    # ・・・(3)
+     :parent     => table['parent']  || properties['parent'],     # ・・・(3)
+     :desc       => table['desc'],
+   }
+
+   ## 出力ファイル名
+   context[:output_filename] = klass[:name] + ".java"    # ・・・(4)
+
+   ## インスタンス変数
+   variables = []
+   ref_variables = []
+   table['columns'].each do |column|
+     type = column['class']
+     unless type
+       type   = column['type']
+       width  = column['width']
+       case type
+       when 'char'            ;  type = (!width || width == 1) ? 'char' : 'String'
+       when 'short'           ;
+       when 'int', 'integer'  ;  type = 'int'
+       when 'str', 'string'   ;  type = width == 1 ? 'char' : 'String'
+       when 'text'            ;  type = width == 1 ? 'char' : 'String'
+       when 'float'           ;
+       when 'double'          ;
+       when 'bool', 'boolean' ;  type = 'boolean'
+       when 'date'            ;  type = 'java.util.Date'  # or java.util.Calendar
+       when 'timestamp'       ;  type = 'java.util.Date'  # or java.util.Calendar
+       when 'money'           ;  type = 'double'
+       end
+     end
+     var = {
+       :name  => column['name'],
+       :type  => type,
+       :desc  => column['desc'],
+     }
+     variables << var
+     ## 外部参照キー
+     if (ref = column['ref']) != nil
+       var = {
+         :name => column['ref-name'] || column['name'].sub(/_id$/, ''),
+         :type => ref['table']['class'],
+         :desc => ref['table']['desc']
+       }
+       ref_variables << var
+     end
+   end
+   variables.concat(ref_variables)
+
+
+   ## ファイルの出力を開始
+
+ %>
+/*
+ * DTO class for Java
+ *   generated at <%= Time.now.to_s %>
+
+ */
+<% if klass[:package] %>
+package <%= klass[:package] %>;
+<% end %>
+
+/**
+ * <%= klass[:desc] %>
+
+ */
+<% extends = klass[:parent] ? ' extends ' + klass[:parent] : '' %>
+public class <%= klass[:name] %><% extends %> implements java.io.Serializable {
+
+<% ## インスタンス変数 %>
+<% variables.each do |var|  %>
+<%   vartype = '%-12s' % var[:type] %>
+<%   varname = '%-12s' % (var[:name]+';') %>
+    private  <%= vartype %> <%= _(varname) %>  /* <%= var[:desc] %> */
+<% end %>
+
+<% ## getter/setter %>
+<% variables.each do |var| %>
+<%   vname  = var[:name] %>
+<%   vtype  = var[:type] %>
+<%   getter = "#{vtype == 'boolean' ? 'is' : 'get'}#{camel_case(vname)}" %>
+<%   setter = "set#{camel_case(vname)}" %>
+    public <%= vtype %> <%= getter %>() { return <%= _(vname) %> }
+    public void <%=setter%>(<%=vtype%> <%=_(vname)%>) { this.<%=_(vname)%> = <%=_(vname)%>; }
+<% end %>
+
+}

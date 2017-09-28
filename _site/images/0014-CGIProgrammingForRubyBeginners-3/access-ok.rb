@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+require "cgi"
+
+c = CGI.new
+
+f = open("access.txt", "a")
+f.write(Time.new)
+f.write(": ")
+f.write(c.remote_addr)
+f.write(", ")
+f.write(c.remote_host)
+f.write("\n")
+f.close
+
+print "Content-Type: text/html\n\n"
+print "OK"
+

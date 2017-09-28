@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Win32OLE 活用法 【第 2 回】 Excel</title>
+  <meta name="description" content="書いた人：cuzic">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0004/0004-Win32OLE.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Win32OLE 活用法 【第 2 回】 Excel</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0004/0004-Win32OLE.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Win32OLE 活用法 【第 2 回】 Excel" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0004/0004-Win32OLE.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0004/0004-Win32OLE.html" data-text="Win32OLE 活用法 【第 2 回】 Excel">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：cuzic</p>
+
+<h2 id="プロローグ">プロローグ</h2>
+
+<p>あなたは、メールボックスに溜まった Excel ファイル添付付きのメールを
+見ていて、長い間うんざりとした気分を味わってきました。</p>
+
+<p>「どうして、こんな単純な作業を俺がやらないといけないんだっ。」</p>
+
+<p>「これくらい機械でもできるはずだっ」</p>
+
+<p>あなたは、Excel ファイルの解析を自動的にできるようにする
+スクリプトを作成する決意を固めました。</p>
+
+<p>そして、思いました。</p>
+
+<p>「いったい、どうすれば楽に Excel ファイルを扱えるんだろう？」</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Excel を使ってのうんざりするような作業っていろいろありますよね。</p>
+
+<p>Excel でデータを渡されて、それを使って行う一連の作業があるような
+場合とか。
+他に、何がしかのログとかデータが別にあって、それを整形したり
+解析した結果を、お客さまや上司の指定で Excel で出力する
+必要がある場合もあります。</p>
+
+<p>私たちが今回学ぶ内容は、このような業務で適用できる事柄に
+なります。
+私たちは、今回、Excel ファイルに含まれるデータを Ruby から
+扱う方法と Ruby で Excel ファイルを作成する方法について学びます。</p>
+
+<h2 id="今回の目的">今回の目的</h2>
+
+<p>これから私たちは次の内容について学びます。</p>
+
+<ul>
+  <li>Excel のオブジェクトモデルの概略</li>
+  <li>Excel ファイルのパース</li>
+  <li>Excel ファイルの自動作成</li>
+  <li>Excel を操作するのによく使うクラスやモジュールのリスト</li>
+</ul>
+
+<p>Excel は、前回に説明した COM という技術を用いて、
+外部のプログラムから利用できる形で、
+部品となる COM オブジェクトを提供しています。</p>
+
+<p>Ruby から Excel を操作するにはこれらのオブジェクトと
+その関連を知らなければいけません。
+したがって、最初に Excel のオブジェクトモデルに
+ついて簡単に説明します。</p>
+
+<p>その次に、今回の記事のメインである Excel ファイルをパースする
+方法について説明します。
+ここでは、パースする方法をいくつかに分類して、それぞれどういう
+状況で適用できるのかについて説明します。
+具体的にパースを行うスクリプトを紹介しながら、既存の Excel の
+ファイルを、 Ruby で扱えるように読み取っていくときのコツを
+共有していきたいと思います。</p>
+
+<p>Excel ファイルの自動作成については、
+Excel の特定のセルを変更していく処理について
+簡単に説明します。</p>
+
+<h2 id="excel-のオブジェクトモデル">Excel のオブジェクトモデル</h2>
+
+<p>Excel のオブジェクトの中で重要なものは４つあります。</p>
+
+<ul>
+  <li>Application オブジェクト</li>
+  <li>Workbook オブジェクト</li>
+  <li>Worksheet オブジェクト</li>
+  <li>Range オブジェクト</li>
+</ul>
+
+<p><img src="/images/0004-Win32OLE/excel_object_model.png" alt="excel_object_model.png" /></p>
+
+<p>Application オブジェクトは Excel のアプリケーション自身を
+表現します。実行しているアプリケーションに関する情報を提供します。</p>
+
+<p>Workbook オブジェクトは Excel アプリケーションで開かれている
+特定のブックを表現します。</p>
+
+<p>Worksheet オブジェクトは、ブックの中の一枚のシートを表します。</p>
+
+<p>Range オブジェクトは Excel を利用するときに最も頻繁に利用する
+オブジェクトです。
+Range オブジェクトはセル、行、列、１つ以上のセルのブロックを含む
+範囲、さらには複数のセルにまたがるグループを表現します。
+目的の範囲を Range オブジェクトとして取得することでその値や、
+境界線、書式などを取得、変更できます。</p>
+
+<p>Application オブジェクトは、Excel ブックを表現する 
+Workbook オブジェクトを１個以上所有します。
+そして、Workbook オブジェクトは １個以上の Worksheet
+オブジェクトを所有します。
+そして、Worksheet オブジェクトのの中にある任意の範囲は、
+Range オブジェクトを使用して表現されることになります。</p>
+
+<p>この所有関係が Excel のオブジェクトモデルの基本になります。</p>
+
+<p>正確には Chart というグラフを表現するオブジェクトも含めて
+考える必要があるので、この理解は正確ではありません。
+しかしながらワークシートのみを扱う場合はこれで充分です。</p>
+
+<p>Excel を操作するときはこの関係を念頭におくと分かりやすく
+なります。</p>
+
+<h2 id="excel-ファイルのパース">Excel ファイルのパース</h2>
+
+<p>ここまでで、Excel のオブジェクトモデルの概略を理解できました。</p>
+
+<p>これから私たちは、Excel ファイルを実際に扱っていく方法について
+学んでいきます。</p>
+
+<p>この章では特に、 既存の Excel ファイルを Ruby でパースする
+方法について学びます。</p>
+
+<h3 id="excel-ファイルの全データを出力">Excel ファイルの全データを出力</h3>
+
+<p>この節では、Excel ファイルに含まれる全シートの全セルの値を
+出力するスクリプトについて説明します。</p>
+
+<p>私たちは次のことについて学びます。</p>
+
+<ul>
+  <li>ファイルの絶対パスの取得方法</li>
+  <li>Excel ファイルの開き方</li>
+  <li>全ワークシートに対して処理を行う方法</li>
+  <li>全行、全列に対して処理を行う方法</li>
+  <li>ブックの閉じ方、始め処理、終わり処理のイディオム</li>
+  <li>セルの値の取得の仕方</li>
+  <li>Excel のセルの型と Ruby の型の関係</li>
+</ul>
+
+<p>それでは、まずはスクリプトを見てみましょう。このプログラムを実行するのに
+必要なファイルはもう少し後に出てきますので、実行するのはちょっと待ってください。</p>
+
+<p><a href="/images/0004-Win32OLE/excel1.rb">excel1.rb</a>
+<img src="/images/0004-Win32OLE/excel1.rb" alt="excel1.rb" /></p>
+
+<p>このスクリプトでは、Excel 表のデータを Ruby で扱えるように読み出しています。
+これを本稿では「パースする」と言います。</p>
+
+<p>これだけのスクリプトでも説明すべきことはいろいろとあります。</p>
+
+<p>本稿の最後によく使うクラスとメソッドの簡単な説明も
+書きますので、そちらも参照してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def getAbsolutePath filename
+  fso = WIN32OLE.new('Scripting.FileSystemObject')
+  return fso.GetAbsolutePathName(filename)
+end
+filename = getAbsolutePath("sample1.xls")</code></pre></figure>
+
+<p>順番が前後しますが、後に使う Workbooks オブジェクトの
+Open メソッドでは Excel ファイルの Windows での絶対パスを
+渡す必要があります。</p>
+
+<p>Win32 ネイティブ版の Ruby であれば簡単に File::expand_path メソッドを
+用いて絶対パスを取得できます。
+しかしながら、Cygwin 版であればこれで得られるのは UNIX 形式の
+絶対パスとなります。</p>
+
+<p>ここでは Win32 ネイティブ版、Cygwin版の違いに関わらず絶対パスを取得する
+方法として、Scripting.FileSystemObject という COM コンポーネントを
+使っています。
+Scripting.FileSystemObject の GetAbsolutePathName メソッドを使うことで
+ファイルの絶対パスを取得することができます。</p>
+
+<p>このようにすることで、カレントディレクトリにある Excel ファイルの
+絶対パスを、Win32 ネイティブ版、Cygwin 版に関わりなく取得できます。</p>
+
+<p>そして、ここで得た絶対パスは変数 filename に代入しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">xl = WIN32OLE.new('Excel.Application')</code></pre></figure>
+
+<p>という行で Excel.Application の COM オブジェクトを作成しています。
+先ほど説明した Application オブジェクトが xl になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">book = xl.Workbooks.Open(filename)</code></pre></figure>
+
+<p>という行で、先ほど得た filename の Excel ファイルを開きます。</p>
+
+<p>Application オブジェクト xl の Workbooks は読み取り専用のプロパティです。
+プロパティというのは、COM の用語の１つです。
+構文上はパブリック変数のように扱えるメソッドの一種のことを
+プロパティと呼びます。
+Ruby でいうと、読み取り専用のプロパティというのは attr_reader で
+作るメソッド、読み取りも書き込みも可能なプロパティというのは
+attr_accessor で作るメソッドに対応します。</p>
+
+<p>Workbooks オブジェクトが持つ Open メソッドで、
+既存の Excel ファイルを開くことができます。
+このとき、開いた Workbook をオブジェクトを返します。
+なお、新規に Excel ファイルを作成する場合は Workbooks オブジェクト
+の Add メソッドを用います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">book.Worksheets.each do |sheet|
+  ...
+end</code></pre></figure>
+
+<p>と書くことで、開いたブックのすべての Worksheet に対して
+同じように処理させることができます。</p>
+
+<p>COM オブジェクトには名前付け規則があり、
+「〜s」というプロパティは「s」をとった COM オブジェクトの
+コレクションオブジェクトとなることが多いです。
+ここではコレクションオブジェクトというのは、簡単に
+Win32OLE で each メソッドが使えるようなオブジェクトという
+理解をしていてください。
+ここでは、ブロック引数として渡されている sheet は、
+Worksheet オブジェクトになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  sheet.UsedRange.Rows.each do |row|
+    record = []
+    row.Columns.each do |cell|
+      record &lt;&lt; cell.Value
+    end
+    puts record.join(",")
+  end</code></pre></figure>
+
+<p>ここが出力を行う箇所になります。
+Worksheet の UsedRange というプロパティは、
+そのワークシートで使われているセルの範囲を返します。
+これは Range オブジェクトになります。</p>
+
+<p>先ほども説明したように Range オブジェクトは Excel の操作に関して
+最も頻繁に用いる COM オブジェクトです。</p>
+
+<p>このブロックでは Range オブジェクトの Rows プロパティ、
+Columns プロパティ、Value プロパティを用いています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  sheet.UsedRange.Rows.each do |row|
+    ...
+  end</code></pre></figure>
+
+<p>と書くことで、ワークシートの使用している範囲を一行ごとに
+取り出して順に処理させることができます。
+ここで、 row は一行分の範囲を表現する Range オブジェクトと
+なります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    row.Columns.each do |cell|
+      record &lt;&lt; cell.Value
+    end</code></pre></figure>
+
+<p>Range オブジェクトの Rows プロパティがその Range オブジェクトが表現する
+範囲の一行ずつに対応したのに対して、Columns プロパティは
+一列分のセルに対応します。</p>
+
+<p>ここで、一行分の範囲の一列分というのは、結局セル１つに対応します。</p>
+
+<p>そして、そのセルの値を取得するために Value プロパティを
+利用しています。</p>
+
+<p>record が一行分の一連のデータを格納する配列で、そこに
+順にデータを追加しています。
+そして、その後 Array#join メソッドを用いてカンマ区切りで
+文字列の連結を行っています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  xl.Workbooks.Close</code></pre></figure>
+
+<p>最後に Workbooks オブジェクトの Close メソッドで開いている
+すべてのブックを閉じています。
+そのブックだけを閉じたい場合は、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">book.Close</code></pre></figure>
+
+<p>と実行しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">xl.Quit</code></pre></figure>
+
+<p>さらに Application オブジェクトの Quit メソッドを実行すると
+Excel アプリケーションそのものを終了することができます。</p>
+
+<p>Workbooks オブジェクトの Close メソッドと
+Application オブジェクトの Quit メソッド終了時に呼び出すのは
+良い習慣です。</p>
+
+<p>前回紹介しました Internet Explorer を起動するスクリプトの
+ようにアプリケーションを起動することが目的の場合は、
+起動したアプリケーションを終了する必要はありません。
+しかしながら今回紹介するスクリプトのような場合は、
+Excel を起動した状態でスクリプトを終了するのは
+望ましい動作ではありません。
+Application オブジェクトの Quit メソッドを起動して、
+Excel アプリケーションを終了するようにしましょう。</p>
+
+<p>終わり処理（後始末）を書かないようなスクリプトを実行した場合は
+タスクマネージャを起動すると、Excel がプロセスに
+残っていることを確認できるでしょう。
+正しく終わり処理を書けばこのような問題は起こりません。</p>
+
+<p>必ず終わり処理を行わせるためには、このスクリプトのように</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">... # 始め処理
+begin
+  ... # 行いたい処理
+ensure
+  ... # 終わり処理
+end</code></pre></figure>
+
+<p>と書くことがよくあります。</p>
+
+<p>これは、始め処理に対応する終わり処理がある場合に
+よく使われるイディオムです。
+また、途中で例外が発生した場合でも、終わり処理が必ず実行
+されるため、安心できます。</p>
+
+<p>説明が延々と長くなってしまいまして、すいません。
+話を戻します。</p>
+
+<p>ここで、先ほどのスクリプトをサンプルのエクセルファイルに
+対して実行してみましょう。</p>
+
+<p>ここでは、次の Excel ファイルをサンプルとして利用します。</p>
+
+<p><a href="/images/0004-Win32OLE/sample1.xls">sample1.xls</a>
+<img src="/images/0004-Win32OLE/sample1.PNG" alt="sample1.PNG" /></p>
+
+<p>20世紀の大きな地震の履歴を書いた Excel ファイルです。
+このスクリプトを実行するときは、添付する Excel ファイルを
+カレントディレクトリに置いてください。</p>
+
+<p>すると、以下の結果が得られます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1923/09/01 00:00:00,関東大震災,7.9,142807.0,true
+1994/10/04 00:00:00,北海道東方沖地震,8.1,0.0,false
+1995/01/17 00:00:00,阪神淡路大震災,7.2,6418.0,true
+2004/10/23 00:00:00,新潟県中越地震,6.8,37.0,true</code></pre></figure>
+
+<p>あれれ。少し変ですね。
+そのまま考えれば、次のように出力されるような気がします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1923/09/01,関東大震災,7.9,142807,TRUE
+1994/10/04,北海道東方沖地震,8.1,0,FALSE
+1995/01/17,阪神淡路大震災,7.2,6418,TRUE
+2004/10/23,新潟県中越地震,6.8,37,TRUE</code></pre></figure>
+
+<p>たとえば、Excel 表では、発生日のところ、「1923/09/01」と
+入力されているところ、出力されたデータは
+「1923/09/01 00:00:00」となっています。
+他にも 「死者・不明者」のところが Excel では
+整数のところが、「14287.0」のように最後に小数点付き
+で出力されています。</p>
+
+<p>どうして、このような結果になったのでしょう？</p>
+
+<p>実は、セルには内部的に表現されている型があります。
+もう少し説明すると、セルの値は Variant という COM の型で
+表現されており、 Variant 型の中でもそれが
+どのような Variant 型かという区別があるのです。</p>
+
+<p>Win32OLE はこの型を適切に Ruby の型へと変換します。</p>
+
+<p>具体的には Excel での型は次のように Ruby の型に変換されます。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Excelでの型</td>
+      <td>Rubyの型</td>
+    </tr>
+    <tr>
+      <td>文字列</td>
+      <td>String</td>
+    </tr>
+    <tr>
+      <td>数値</td>
+      <td>Float</td>
+    </tr>
+    <tr>
+      <td>日付</td>
+      <td>YYYY/mm/dd HH:MM:SS形式の String</td>
+    </tr>
+    <tr>
+      <td>Boolean</td>
+      <td>true もしくは false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>日付型が YYYY/mm/dd 形式の文字列となる理由は、Ruby の
+Time クラスで表現できる値と、Excel で表現できる日付型の
+範囲が異なっているからです。
+Ruby の Time クラスは、1901年12月14日から2038年1月19日まで
+しか表現できません。
+それと違って、Excel での日付型は
+100年１月１日から 9999年1月1日となっています。</p>
+
+<p>このような問題があるため、日付型は Ruby の文字列型として
+変換する形になっています。
+この文字列を Ruby の Time クラスに変換するのはプログラマの
+責任になっています。</p>
+
+<p>この文字列を Ruby の Time クラスに変換することを考慮して、
+さきほどのスクリプトを書き換えてみましょう。</p>
+
+<p>そうするには、 record という配列に追加しているところを
+次のように変更します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">     if cell.Value.is_a?(String) &amp;&amp;
+        cell.Value =~ %r(\d\d\d\d/\d\d/\d\d \d\d:\d\d:\d\d)
+        begin
+          record &lt;&lt; Time.mktime(*cell.Value.split(%r([:/])))
+        rescue ArgumentError =&gt; e
+          STDERR.puts e.inspect
+        end
+     else
+       record &lt;&lt; cell.Value
+     end</code></pre></figure>
+
+<p>%r() は知っていると思いますが、正規表現リテラルを作るための別記法です。
+Time.mktime メソッドは、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Time::mktime( year, mon, day, hour, min, sec)</code></pre></figure>
+
+<p>の形式の引数をとるメソッドです。
+引数で指定された時刻を表現する Time オブジェクトを返します。*array 
+の表現は、最後の引数の直前に * がついている場合は、その
+最後の引数の値が展開されて、引数として渡されるという Ruby の
+文法上のルールを利用しています。</p>
+
+<p>なお、Time::mktime メソッドは Ruby の Time 型に変換できない場合に
+ArgumentError の例外を raise します。
+実際にプログラムを書くときはこの例外を捕捉するように書きましょう。</p>
+
+<h3 id="excel-ファイルのタイプごとのパース">Excel ファイルのタイプごとのパース</h3>
+
+<p>与えられた Excel ファイルのセルの内容をすべて出力する方法は
+これで分かりました。</p>
+
+<p>単純な形式の Excel のファイルをパースする場合なら、これでも
+充分かもしれません。</p>
+
+<p>しかしながら、Excel ファイルの中にあるデータを取り出せるように
+なったとして、データが何についてのデータなのかはどうやって
+分かるのでしょう？</p>
+
+<p>Excel ファイルに含まれる値を取り出すことができたとしてもそれが
+何の値かが分からなければ意味がありません。</p>
+
+<p>日常的に業務で流れてくる Excel ファイルというのは、
+なかなかそう単純な形式ではないものですよね。
+人間が目で見れば分かるけれども、コンピュータで処理しにくいような形式であったり
+します。</p>
+
+<p>本稿では、あるデータがどういうデータなのかを調べる方法として、
+次の３つの方法について紹介します。</p>
+
+<ul>
+  <li>カラムが決まればどのような値かが決まる場合</li>
+  <li>同一カラムの上の方に、見出しがあり、見出しの文字列からどのような値かが決まる場合</li>
+  <li>境界線から、見出しの位置が導かれ、そのセルがどのような値かが決まる場合</li>
+</ul>
+
+<p>これから、これらの場合について順に学んでいきます。</p>
+
+<h4 id="カラムが決まればどのような値かが決まる場合">カラムが決まればどのような値かが決まる場合</h4>
+
+<p>きれいなマトリックスで書かれているような Excel ファイルは
+比較的簡単にパースできます。
+そうでなくても、列が決まれば、そのセルが何についての情報が格納されている
+かが決まるような場合には、それに基づいてスクリプトを書けば
+Excel ファイルをパースしていけます。</p>
+
+<p>この場合は、簡単にパースするスクリプトを書くことができます。</p>
+
+<p>この節では次の項目について説明します。</p>
+
+<ul>
+  <li>Worksheet の中で特定の行、列の値を取得する方法</li>
+  <li>module および Object#extendの利用</li>
+  <li>複数引数の [] メソッドの定義</li>
+  <li>アクティブなオブジェクトの簡単な参照方法</li>
+</ul>
+
+<p>次のスクリプトは、さきほどのサンプルの Excel ファイルをこのパターンで
+パースしていきます。</p>
+
+<p><a href="/images/0004-Win32OLE/excel2.rb">excel2.rb</a>
+<img src="/images/0004-Win32OLE/excel2.rb" alt="excel2.rb" /></p>
+
+<p>上記スクリプトは、まず Worksheet モジュールをあらかじめ定義しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">module Worksheet
+  def [] y,x
+    self.Cells.Item(y,x).Value
+  end
+end</code></pre></figure>
+
+<p>Worksheet オブジェクトの sheet.Cells.Item(y,x).Value という一連の
+呼び出しで、y 番目の行で x 番目の列に対応するセルの値を
+取得できます。最初の行は、１番目で、１から順に数え上げます。
+なお、あまり知られていないかもしれませんが Ruby では [] メソッドに
+対して、複数の引数を指定できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sheet = book.Worksheets.Item("Sheet1")</code></pre></figure>
+
+<p>という行は、Work オブジェクトのプロパティメソッド Worksheets を用いて、
+Worksheets コレクションを取得しています。
+そして、 “Sheet1” に対応する Worksheet オブジェクトを取得しています。</p>
+
+<p>なお、参考までにここでは代わりに</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sheet = xl.Worksheets.Item("Sheet1")</code></pre></figure>
+
+<p>と書くこともできます。試してみてください。</p>
+
+<p>Application オブジェクトの Worksheets プロパティを使うと
+アクティブな Workbook のオブジェクトの Worksheets プロパティ
+と同じオブジェクトを返します。
+こういうアクティブなオブジェクトのプロパティを操作できるようにする
+ショートカットは、Office アプリケーションオブジェクトモデルでは
+しばしば提供されます。</p>
+
+<p>Workbooks オブジェクトの Open メソッドを用いると
+既存のブックを開き、その Workbook オブジェクトを返します。
+このとき、その Workbook オブジェクトを ActiveWorkbook と
+なるため、xl.Worksheets と書いてもうまく動作するわけです。
+これについての詳細は、
+<a href="http://www.microsoft.com/japan/msdn/columns/office/office01042001.asp">エクセレントな Office の冒険</a>
+を参照してください。</p>
+
+<p>話を戻します。一般にコレクションでは、
+Item メソッドで特定のオブジェクトを取得できます。
+ここでは、 Worksheets がコレクションで、Sheet1 という名前の
+ワークシートを book.Worksheets.Item(“Sheet1”) で取得しています。</p>
+
+<p>このスクリプトでは、明示的に範囲指定を行っています。
+2.upto(5) や 1.upto(5) などといった箇所です。
+このやり方は、自分で制御しやすい書き方です。
+先ほど紹介しました UsedRange を用いる方法とどちらが良いかは
+状況によって異なります。
+明示的に範囲指定を行うことが容易である場合はこの方法を
+使用すると良いでしょう。</p>
+
+<p>このスクリプトは 1 行目に見出しがあることを前提としています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    title = sheet[1,x]</code></pre></figure>
+
+<p>そして、その見出しを title に代入しています。
+このように ある行に見出しがあることを前提とできることは多いでしょう。</p>
+
+<p>これをキーとして、ハッシュへと代入させています。
+今回はたまたまある行に見出しがあることを前提として title を取得させて
+いますが、そうではない場合もあります。
+このときは、行番号と見出しとの対応表をあらかじめ Ruby のソースコード中に
+持たせて、見出しに対応する行を探す方法もあります。
+その方法について簡単に次の節で紹介します。</p>
+
+<p>これからパースしようとする Excel 表を見ながら工夫しつつ、アプローチを
+考えていきましょう。</p>
+
+<p>出力のところでは、Enumerable#map や Enumerable#join を使って、簡潔に
+書いています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   recordset.each do |record|
+     puts record.map{|title,value|
+       "#{title}=#{value}"
+     }.join(",")
+   end</code></pre></figure>
+
+<p>Hash#map は、Enumerable モジュールで定義されている map メソッドを
+呼び出します。
+Enumerable#map メソッドは each と同じ引数をとり、要素に対してブロックを
+評価した結果を配列で返します。
+そして、Array#join メソッドによって、Hash の内容を “,” でつなげています。</p>
+
+<p>このような配列演算は最初は慣れないかもしれませんが、
+簡潔に書けるという利点があります。
+私は好きです。</p>
+
+<h4 id="見出しを使ったパース">見出しを使ったパース</h4>
+
+<p>何列目のセルかということで、何のデータが含まれているかを決定できれば
+先ほどのやり方でよいですが、そう簡単な Excel ファイルばかりでは
+ありません。</p>
+
+<p>例えば、１枚のワークシートに複数のテーブルがあって、
+同一の列が複数の使われ方をしている場合もあります。
+１枚のワークシートに複数の同じ形式の表があって、
+それぞれに対して、何列目かを列挙することが面倒な場合もあるでしょう。</p>
+
+<p>このような場合は、たとえばあるセルから、同一カラムで何行か上の
+セルに見出しがあるので、この見出しの文字列をパースするときに
+利用したいということもあるでしょう。</p>
+
+<p>この場合は、見出しの文字列をあらかじめ配列に入れておき、
+そのセルを起点に何行か上にマッチする見出しがあるかどうかを
+探索することで、パースするというやり方があります。</p>
+
+<p>同じように先ほどの sample1.xls を使えば次のようなスクリプト
+になります。</p>
+
+<p><a href="/images/0004-Win32OLE/excel3.rb">excel3.rb</a>
+<img src="/images/0004-Win32OLE/excel3.rb" alt="excel3.rb" /></p>
+
+<p>このスクリプトの重要な部分は titles への代入と getTitle メソッドです。
+そして、始め処理終わり処理のイディオムを yield を使うメソッドで
+実現する方法も学びます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  titles = ["発生日","名称","マグニチュード","死者・不明者","死者の有無"]</code></pre></figure>
+
+<p>で、見出しの配列をあらかじめ、 titles に代入しています。</p>
+
+<p>そして  Worksheet モジュールで定義された  getTitle というメソッドを
+使って、そのセルが何に使われているかを特定しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def getTitle(x,y,titles)
+    while y &gt; 0
+      v = self[y,x]
+      if titles.include?(v)
+        return v
+      end
+      y -= 1
+    end
+    return nil
+  end</code></pre></figure>
+
+<p>getTitle というメソッドでは、そのセルの位置から順に上へと
+見出しとなりうる値があるのかどうかを調べています。
+これは、今回単純に１つずつ順に上へと調べているので、行数が増えると
+どんどん時間がかかることになっています。
+工夫の余地があります。</p>
+
+<p>あなたの手元の Excel ファイルを見ながら、改良して使ってください。</p>
+
+<p>このスクリプトではもう１つ新しい要素があります。
+始め処理終わり処理のイディオムを yield を使った
+メソッドとして抜き出しているという点です。
+このスクリプトでは今までそのまま書き下ろしていた、
+ワークブックを開き、終了する動作を別のメソッドで定義しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def openExcelWorkbook filename
+   filename = getAbsolutePath(filename)
+
+   xl = WIN32OLE.new('Excel.Application')
+   book = xl.Workbooks.Open(filename)
+   begin
+     yield book
+   ensure
+     xl.Workbooks.Close
+     xl.Quit
+   end
+ end</code></pre></figure>
+
+<p>このようにすることで、始め処理と終わり処理を
+近い位置に書くことができます。
+始め処理と終わり処理は互いに関連しています。
+その２つが近い位置にあると見通しが良い
+分かりやすくスクリプトになります。</p>
+
+<p>始め処理を行ったのちに必ずある終わり処理を行わなければ
+いけない状況というのは、多いものです。
+このテクニックは応用範囲が広く覚える価値があります。</p>
+
+<h4 id="境界線を元にセルの情報を取得">境界線を元にセルの情報を取得</h4>
+
+<p>境界線がテーブルの情報を取得するのに、非常に大事な場合も
+あります。</p>
+
+<p>きれいな Excel ファイルであれば上記の方法でパースできると
+思います。
+しかし場合によっては、Excel 表の境界線の罫線の種別が
+何かということをヒントにしてスクリプトを書くと、
+楽に書ける場合があります。</p>
+
+<p>このような場合は、えてして非常に非定型な形式となります。
+そのため、具体的な場合については説明することは
+ここではしません。</p>
+
+<p>そこで、この節では一般的な境界線の種別を得る方法を中心に
+学んでいきます。
+この節で学ぶ内容は次のとおりです。</p>
+
+<ul>
+  <li>A1,B2 といった形式でセルの Range オブジェクトを取得する方法</li>
+  <li>COM コンポーネントで定義された定数をロードする方法</li>
+  <li>Win32OLE での COM コンポーネントの定数の命名規則</li>
+  <li>モジュールに定義された定数を取得する方法</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td> </td>
+          <td>= という初期化時のイディオム</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>%w() リテラルによる文字列配列の生成</li>
+</ul>
+
+<p>このスクリプトは、あるセルを囲む境界線の線種や線の太さに対応する
+定数名を返します。</p>
+
+<p><a href="/images/0004-Win32OLE/excel4.rb">excel4.rb</a>
+<img src="/images/0004-Win32OLE/excel4.rb" alt="excel4.rb" /></p>
+
+<p>このスクリプトでは Worksheet オブジェクトの Range メソッドで
+セルの値を取得しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cell = sheet.Range("B2")</code></pre></figure>
+
+<p>この B2 といった記法は Excel ファイルの扱いに慣れた方であれば
+すぐに分かるでしょう。
+２列目２行目のセルを表現する Range オブジェクトを取得しています。</p>
+
+<p>境界線について調べるには Border オブジェクトを使用します。
+Border オブジェクトを取得するには、Range オブジェクトの
+Borders プロパティによって取得できるコレクションオブジェクト
+を使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">borders = cell.Borders</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  border = borders.Item(index)</code></pre></figure>
+
+<p>Borders オブジェクトはセルの上下左右の境界線を表現する
+Border オブジェクトを格納するコレクションオブジェクトです。</p>
+
+<p>セルを囲むどの境界線を取り出すかは Borders オブジェクトの
+Item メソッドに何を引数として渡すかで決まります。</p>
+
+<p>そして、線種や線の太さを調べるには、Border オブジェクトの
+LineStyle プロパティや Weight プロパティを使用します。</p>
+
+<p>LineStyle プロパティの値によってその境界線の線種が分かり、
+Weight プロパティによって線の太さが分かります。
+それぞれの線種ごとに定数が割り当てられていますので、
+その定数をスクリプト中に直接書くことによって線種や線の太さを
+調べることもできます。
+定数の値は、オブジェクトブラウザを使えば、簡単に
+調べることができます。</p>
+
+<p>しかしながら、通常はもっと良い方法があります。
+COM コンポーネントで定義された定数を利用する方法です。
+Excel のような Office アプリケーションではさまざまな用途で
+定数が使われています。</p>
+
+<p>COM コンポーネントで定義された定数を使うことで、より
+分かりやすいプログラムを書くことができます。</p>
+
+<p>この COM コンポーネントで定義された定数を Ruby のクラスや
+モジュールにロードするために WIN32OLE::const_load 
+メソッドを使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">WIN32OLE.const_load(borders,Border)</code></pre></figure>
+
+<p>この行で Border モジュールに borders という COM オブジェクトで
+使われている定数がロードされます。</p>
+
+<p>今回のスクリプトでは、セルの中でどの境界線を取り出すかを指定するとき
+や、そして境界線の線種や線の太さを区別するために定数をロードしています。</p>
+
+<p>例えば、セルの周りのどの境界線かを区別するための定数の名前と値は
+次のようになります。この値はオブジェクトブラウザを使うことで
+確認できます。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>定数名</td>
+      <td>説明</td>
+      <td>値</td>
+    </tr>
+    <tr>
+      <td>xlEdgeLeft</td>
+      <td>左の境界線</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>xlEdgeTop</td>
+      <td>上の境界線</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>xlEdgeBottom</td>
+      <td>下の境界線</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>xlEdgeRight</td>
+      <td>右の境界線</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ここで定数名がすべて小文字から始まっています。
+Ruby で定義される定数は Ruby の文法上 大文字から始まります。
+そのため、COM コンポーネントで定義された定数名の最初の文字が
+小文字の場合は、そのままでは Ruby の定数とできません。</p>
+
+<p>この制限があるため、Win32OLEではある工夫をしています。
+定数名の最初の文字を大文字にしているのです。</p>
+
+<p>たとえば、COM コンポーネントで “xlEdgeTop” という変数は、
+“XlEdgeTop” という変数名になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">WIN32OLE.const_load(borders,Border)</code></pre></figure>
+
+<p>WIN32OLE::const_load メソッドの第二引数は モジュール/クラス
+になります。
+Ruby は動的なプログラミング言語で、実行中にモジュールに
+定数の定義を追加することもできるという特徴があります。
+この特徴を利用して、ここでは Border というモジュールに定数の定義
+を追加しています。</p>
+
+<p>このようにロードした定数は、普通の Ruby の定数と同じように</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Border::XlEdgeTop</code></pre></figure>
+
+<p>などという形で使えます。</p>
+
+<p>こうして得られた定数を使って、境界線ごとにその境界線の
+線種や線の太さを調べるのがさきほどのスクリプトとなります。</p>
+
+<p>この節の最後に linetype メソッドで使っているテクニックについて
+簡単に説明します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    @@linestyles ||= nil</code></pre></figure>
+
+<p>という行は、 @@linestyles が未定義か偽ならば nil を代入しています。
+初期化時のイディオムとしてよく使われるテクニックです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">      %w(XlContinuous XlDash XlDashDot
+         XlDashDotDot XlDot XlDouble
+         XlLineStyleNone XlSlantDashDot).each do |linestyle|</code></pre></figure>
+
+<p>%w() は文字列配列を作るためのリテラル記法のひとつです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">        v = Border.const_get(linestyle)</code></pre></figure>
+
+<p>Module#const_get メソッドを使うと、そのモジュールで定義された
+定数を取得できます。</p>
+
+<p>入力サンプルとして使用した Excel ファイルは次のものです。</p>
+
+<p><a href="/images/0004-Win32OLE/sample2.xls">sample2.xls</a>
+<img src="/images/0004-Win32OLE/sample2.PNG" alt="sample2.PNG" /></p>
+
+<p>カレントディレクトリに sample2.xls を置いて、このスクリプトを実行
+してください。
+このスクリプトの実行結果は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">上 XlContinuous XlThin
+右 XlContinuous XlThin
+下 XlContinuous XlThin
+左 XlContinuous XlThin</code></pre></figure>
+
+<p>取得するセルを変えながらいろいろと実験してみてください。</p>
+
+<h3 id="連結セルの扱い">連結セルの扱い</h3>
+
+<p>ここまで、取り上げてきませんでしたが、Excel のセルの中には
+複数のセルを結合させたものがあります。</p>
+
+<p>結合されたセルの場合は、値を取得するときに工夫が必要です。</p>
+
+<p>下記のスクリプトは、今まで利用してきた Worksheet モジュールを
+連結セルの値を取得するように改変したサンプルです。</p>
+
+<p><a href="/images/0004-Win32OLE/excel5.rb">excel5.rb</a>
+<img src="/images/0004-Win32OLE/excel5.rb" alt="excel5.rb" /></p>
+
+<p>このスクリプトで重要なのは、下記の箇所です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def [] y,x
+    cell = self.Cells.Item(y,x)
+    if cell.MergeCells
+      cell.MergeArea.Item(1,1).Value
+    else
+      cell.Value
+    end
+  end</code></pre></figure>
+
+<p>Range オブジェクトの MergeCells プロパティは そのセルが
+結合されていれば true を、結合されていなければ、false を返します。</p>
+
+<p>Range オブジェクトの MergeArea プロパティは、セルが結合
+されている場合、そのセルを含む結合範囲の Range オブジェクトを
+返します。</p>
+
+<p>結合されたセルを表現する Range オブジェクトの場合は、
+Item(1,1) で取り出せるセルの値が結合されたセルの値と
+なります。</p>
+
+<p>これはこういうものだと理解してください。</p>
+
+<h3 id="excel-ファイルをパースするときの私のやり方">Excel ファイルをパースするときの私のやり方</h3>
+
+<p>これまで、Excel ファイルをパースする方法について学んできました。</p>
+
+<p>この節では筆者が Excel ファイルをパースするときのやり方について
+簡単に整理して紹介しようと思います。</p>
+
+<p>まず、私はパースするときの心構えとしてできる限り
+単純に行うということを重視します。
+これは、必要以上に一般的にしたり、難しく作ったりしない
+ということです。</p>
+
+<p>どれくらいが必要かは、例えばそのスクリプトが使い捨てなのか
+今後も継続して使うのかといったことで判断します。
+この違いで実装方針というのは、大きく変わります。</p>
+
+<p>使い捨てであれば、遅くてもかまわないですし、多少保守性が
+悪くなっても問題はありません。とにかく結果が早く得られる
+ことを考えます。
+そこで、Excel ファイルを分析して
+決めうちで処理を行う実装をしたりします。
+Excel ファイルに手を入れて、あらかじめ作成するスクリプトの
+例外事項を少なくすることも考えます。
+例外的な値やセルの順があると、パースするのが急に難しくなります。
+それを条件分岐として実装することもできますが、それよりも
+Excel ファイルをあらかじめ編集しておく方が楽なこともあります。</p>
+
+<p>継続して使いそうな場合はまず見通しよく実装します。
+Excel ファイルを事前に編集しなくても正しくパースできる程度には、
+実装を行います。定期的に前処理を行うことは面倒だからです。</p>
+
+<p>また、Excel ファイルを作成している人と調整して、
+スクリプトを楽に作成できるように Excel ファイルの形式を
+整えてもらうこともあります。</p>
+
+<p>ひたむきにプログラミングすることだけが、目的を達成するための
+方法ではありません。</p>
+
+<p>私は単純なやり方をとります。
+その方が保守性も高く簡単に作れるからです。</p>
+
+<p>どの方法が一番単純かは、Excel ファイルがどのような形式かで
+決まります。</p>
+
+<p>これから私が考える単純さについて簡単に書きます。
+個人的な方針として、次の２点を大切にしています。</p>
+
+<ul>
+  <li>条件分岐の数を減らす</li>
+  <li>状態への参照を減らす</li>
+</ul>
+
+<p>ここで「状態への参照」というのはここでの説明のために
+私が導入したフレーズで、説明が難しいです。
+例えば、あるセルがあってそのセルの見出しを同じ列から探し出す
+ときは、そのセルの状態を参照しようとしているわけです。
+一行前のパースした結果を記憶して、今の行のパースに利用する
+ような場合も状態への参照が増えているような感じがしてしまいます。</p>
+
+<p>状態を参照することで柔軟性が増し、適用範囲を広げることができます。
+条件分岐についても同様で、多くすればそれまで例外的であった部分にも
+適用できるようになり、柔軟性が高まります。</p>
+
+<p>条件分岐のないプログラムを書けることは稀でしょう。
+同じように完全に状態を参照しなくてもいいような場合もないでしょう。
+そういうときは、CSV に出力するだけで事が足りることも多く、
+改めてスクリプトを書く必要もありません。</p>
+
+<p>しかしながら、あまりに多くなってくると複雑になってるな、
+嫌だなと感じます。
+例外的な場合に対応しようとすると、条件分岐を行う必要もありますし、
+条件分岐を行うために、今まで利用していなかった状態への参照が
+必要になってしまいがちです。</p>
+
+<p>Excel ファイルのパースに関して言うと、今ある Excel ファイルを
+パースできれば充分なことが多く、それ以上に適用範囲を広げる努力は
+あまり報われないように思います。
+むしろ、突発的に生じる例外的な場合には、例外的なセルの使い方が
+あったということが分かることの方が大事だったりします。</p>
+
+<p>説明が下手ですいませんが、この節では私のやり方・指針について紹介しました。
+みなさんに合わない点もあるかもしれません。
+皆さんも自分に合ったやり方、基準を見つけていってください。</p>
+
+<h2 id="excel-ファイルの自動作成">Excel ファイルの自動作成</h2>
+
+<p>ここまで、パースする方法について学んできました。
+この章では、Excel ファイルを自動作成する方法について
+学びます。</p>
+
+<p>自動作成のために必要な知識は、セルの値を更新することです。</p>
+
+<p>この章で説明することは多くありません。
+次の項目になります。</p>
+
+<ul>
+  <li>ワークシートの特定の位置の値の更新</li>
+  <li>現在のワークブックの保存</li>
+  <li>[]= メソッドに複数引数が使えること</li>
+</ul>
+
+<p>下記のスクリプトは、セルの値を更新できるように、Worksheet モジュールを
+拡張しています。
+このスクリプトを実行するときは、sample2.xls を開いている場合は
+すべて閉じてから行ってください。</p>
+
+<p><a href="/images/0004-Win32OLE/excel6.rb">excel6.rb</a>
+<img src="/images/0004-Win32OLE/excel6.rb" alt="excel6.rb" /></p>
+
+<p>このスクリプトは、さきほどと同じ sample2.xls を
+カレントディレクトリに置いて実行します。
+すると、２枚目のシートのセルに “Ruby”, “Python”, “Perl” という
+文字列を書き込みます。
+このプログラムを実行すると、Excel を終了させるので、sample2.xls を開きなおして確認してみてください。</p>
+
+<p>このスクリプトで説明するべきことは []= メソッドの定義のところだけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def []= y,x,value
+    cell = self.Cells.Item(y,x)
+    if cell.MergeCells
+      cell.MergeArea.Item(1,1).Value = value
+    else
+      cell.Value = value
+    end
+  end</code></pre></figure>
+
+<p>Ruby の文法では  []= メソッドは、[] メソッドと同じ様に複数の引数をとることが
+できます。
+この機能を利用して、セルの値を更新できるように、[]= メソッドを定義しています。</p>
+
+<p>ここで定義した []= メソッドでは、連結セルかどうかを判定しています。
+連結セルの場合は、その連結セルの値を更新します。</p>
+
+<p>Appliction オブジェクトの ActiveWorkbook プロパティは、現在アクティブな
+Workbook オブジェクトを返します。
+そして、Workbook オブジェクトの Save メソッドを使うことで、保存できます。
+名前をつけて保存するときは、 SaveAs メソッドを使います。</p>
+
+<p>このスクリプトが動かない場合は、すでに　sample2.xls を開いていないか
+を確認してください。</p>
+
+<p>ほかに境界線を編集する場合は、先ほども使いました Borders プロパティを
+使うことでできます。</p>
+
+<p>筆者は、あらかじめ境界線を引いた Excel ファイルを用意して、
+作成するスクリプトでの処理は、そのセルの値を更新するだけにします。
+境界線まで自動作成するのは、手間がかかるからです。</p>
+
+<p>セルの値を変更できれば、充分なことは多いでしょう。</p>
+
+<h2 id="よく使うオブジェクトとメソッド">よく使うオブジェクトとメソッド</h2>
+
+<p>ここまで、Excel ファイルをパースしたり、自動作成したりする
+スクリプトについて説明してきました。
+Excel 関係で使用可能なオブジェクトは非常に数多くあります。
+しかし、その中でよく使うものは極々一部です。</p>
+
+<p>そこで、よく使うオブジェクトとメソッドについてこの章で簡単に
+説明します。</p>
+
+<p>どのような引数をとるかや、実際の使い方については Visual Basic の
+ヘルプや Google で検索した内容を参照してください。</p>
+
+<p>Excel 関係の COM オブジェクトでよく使うオブジェクトは次のものです。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>オブジェクト</td>
+      <td>説明</td>
+    </tr>
+    <tr>
+      <td>Application</td>
+      <td>Workbook や Window、各種イベントの取得ができる</td>
+    </tr>
+    <tr>
+      <td>Workbooks</td>
+      <td>Workbook のコレクションオブジェクト</td>
+    </tr>
+    <tr>
+      <td>Workbook</td>
+      <td>ファイルを開いたり、保存したりできる</td>
+    </tr>
+    <tr>
+      <td>Worksheets</td>
+      <td>Worksheet のコレクションオブジェクト</td>
+    </tr>
+    <tr>
+      <td>Worksheet</td>
+      <td>ワークシートの名前、Range を取得できる</td>
+    </tr>
+    <tr>
+      <td>Range</td>
+      <td>セルの値の取得、プロパティの設定ができる。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="application-オブジェクト">Application オブジェクト</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Visible</td>
+      <td>可視属性。Visible = true とすることでウィンドウを表示できる</td>
+    </tr>
+    <tr>
+      <td>Workbooks</td>
+      <td>Workbook のコレクション</td>
+    </tr>
+    <tr>
+      <td>Windows</td>
+      <td>Window のコレクション</td>
+    </tr>
+    <tr>
+      <td>ActiveWorkbook</td>
+      <td>アクティブな Workbook を返す</td>
+    </tr>
+    <tr>
+      <td>Worksheets</td>
+      <td>アクティブな Workbook の Worksheets を返す。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="workbooks-オブジェクト">Workbooks オブジェクト</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Add</td>
+      <td>新しい Workbook を追加</td>
+    </tr>
+    <tr>
+      <td>Open</td>
+      <td>既存のWorkbook を開く</td>
+    </tr>
+    <tr>
+      <td>Close</td>
+      <td>すべての Workbook を閉じる</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="workbook-オブジェクト">Workbook オブジェクト</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Save</td>
+      <td>Workbook を保存する</td>
+    </tr>
+    <tr>
+      <td>SaveAs</td>
+      <td>Workbook を保存する。多数の引数がある。</td>
+    </tr>
+    <tr>
+      <td>PrintOut</td>
+      <td>Workbookを印刷する</td>
+    </tr>
+    <tr>
+      <td>Close</td>
+      <td>Workbook を閉じる</td>
+    </tr>
+    <tr>
+      <td>Worksheets</td>
+      <td>Worksheet のコレクション。Sheet1 という名前の Worksheet にアクセスするには、aWorksheets.Item(“Sheet1”) とする。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="worksheet-オブジェクト">Worksheet オブジェクト</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Range</td>
+      <td>セルや複数のセルの集合を返すプロパティ。引数としては、”A1”や”A1:B2”といった文字列形式。sheet.Range(sheet.Cells(1,1),sheet(2,2)といった指定もできる。他にセルに名前をつけている場合は、sheet.Range(“名前”) といった形もできる。</td>
+    </tr>
+    <tr>
+      <td>Cells</td>
+      <td>ワークシートのセルの集合を返すプロパティ。</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>ワークシートの名前を取得したり、変更したりできる。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="range-オブジェクト">Range オブジェクト</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Value</td>
+      <td>セルの値。範囲の場合はセルの値の配列。</td>
+    </tr>
+    <tr>
+      <td>Borders</td>
+      <td>セルの境界線を示す</td>
+    </tr>
+    <tr>
+      <td>Height</td>
+      <td>セルの高さを返す(Integer)</td>
+    </tr>
+    <tr>
+      <td>Width</td>
+      <td>セルの幅(Double）</td>
+    </tr>
+    <tr>
+      <td>Row</td>
+      <td>Rangeオブジェクトの行の座標を返す</td>
+    </tr>
+    <tr>
+      <td>Column</td>
+      <td>Rangeオブジェクトの列の座標を返す</td>
+    </tr>
+    <tr>
+      <td>MergeCells</td>
+      <td>そのセルが結合されているかどうかを返す。(true/false)</td>
+    </tr>
+    <tr>
+      <td>Count</td>
+      <td>Rangeオブジェクトに含まれた範囲のセルの数を返す</td>
+    </tr>
+    <tr>
+      <td>Rows</td>
+      <td>行で切り出した Range オブジェクト</td>
+    </tr>
+    <tr>
+      <td>Columns</td>
+      <td>列で切り出した Range オブジェクト</td>
+    </tr>
+    <tr>
+      <td>Merge</td>
+      <td>セルの結合を行うメソッド</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は、Ruby で Excel ファイルを扱う方法について学びました。
+Excel ファイルを扱う方法はここに紹介してきた以外にもいろいろあります。</p>
+
+<p>これまでの内容でパースや自動作成といった場合には対応できると
+思いますが、Excel にはまだまださまざまな機能があります。
+今回紹介した内容ではまったく網羅できてはいないでしょう。</p>
+
+<p>そのような場合は、前回紹介したように、オブジェクトブラウザを
+使ったり VBA での操作の解説のページなどを参考にしてください。
+また、Excel の場合は特にキーボードマクロを保存して、
+結果としてできた Visual Basic のスクリプトを眺めれば
+かなり参考になります。</p>
+
+<p>創意工夫しながら、自分のやりたいことを実現していきましょう。</p>
+
+<p>(アドバイザー：arton、助田 雅紀)</p>
+
+<h2 id="エピローグ">エピローグ</h2>
+
+<p>「できた！」
+この一日、あなたは、憂鬱な Excel ファイルと付き合ってきた日々とサヨナラを言うために、
+慣れない Win32OLE プログラミングに取り組んできました。
+そして今、Excel ファイルをパースするスクリプトを書き上げたのです。</p>
+
+<p>セルに想定外のデータが入っていた箇所があったりしてデバッグにも苦労していましたが、
+今度の実行結果を見ていると、問題なく動いています。</p>
+
+<p>これからは、今までのあの憂鬱な作業から解放されると思うとそれだけで
+気分が晴々としてきました。</p>
+
+<p>「やったぞ！」</p>
+
+<p>あなたがやり遂げたことを同僚に説明していると、自分が誇らしく思えてきました。
+単純な作業を繰り返していたときには達成感という気持ちがあることも忘れて
+しまっていたことに気がつきました。</p>
+
+<p>そして、もっとよくしていきたいなと思いながら結果を見ていたあなたは
+こんなふうに思いました。</p>
+
+<p>「これをデータベース化して今までよりもっと楽に簡単に扱えるようにならないかな？」</p>
+
+<p>（つづく）</p>
+
+<p>次号では、Win32OLE でデータベースを扱う方法について学んでいきます。
+ご期待ください。</p>
+
+<h2 id="作者について">作者について</h2>
+
+<p>cuzic が Ruby を始めたのは2000年くらいです。</p>
+
+<p>cuzic は Windows + Cygwin + Emacs の環境での開発を好み、
+スポーツジム通いを続けるプログラマーです。</p>
+
+<p>作者への連絡先は cuzic atmark cuzic.com です。</p>
+
+<h2 id="参考">参考　</h2>
+
+<ul>
+  <li><a href="http://www.microsoft.com/japan/msdn/library/default.asp?url=/japan/msdn/library/ja/dv_wrcore/html/wrconexcelobjectmodeloverview.asp">Excelオブジェクトモデルの概要</a></li>
+  <li><a href="http://www.microsoft.com/japan/msdn/library/default.asp?url=/japan/msdn/library/ja/dv_wrcore/html/wrtskhowtorefertoworksheetrangesincode.asp">方法 : コード内でワークシートの範囲を参照する</a></li>
+</ul>
+
+<h2 id="win32ole-活用法-連載一覧">Win32OLE 活用法 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0009/0009-Win32OLE.html">Win32OLE 活用法 【第 7 回】 ほかの言語での COM</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Win32OLE.html">Win32OLE 活用法 【第 6 回】 Web 自動巡回</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Win32OLE.html">Win32OLE 活用法 【第 5 回】 Outlook</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Win32OLE.html">Win32OLE 活用法 【第 4 回】 Adobe Illustrator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Win32OLE.html">Win32OLE 活用法 【第 3 回】 ADODB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Win32OLE.html">Win32OLE 活用法 【第 2 回】 Excel</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Win32OLE.html">Win32OLE 活用法 【第 1 回】 Win32OLE ことはじめ</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

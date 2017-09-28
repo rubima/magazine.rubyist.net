@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ActiveLdap を使ってみよう（後編）</title>
+  <meta name="description" content="著者：高瀬一彰編集：うえだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0029/0029-ActiveLdap.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>ActiveLdap を使ってみよう（後編）</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0029/0029-ActiveLdap.html" class="hatena-bookmark-button" data-hatena-bookmark-title="ActiveLdap を使ってみよう（後編）" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0029/0029-ActiveLdap.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0029/0029-ActiveLdap.html" data-text="ActiveLdap を使ってみよう（後編）">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：高瀬一彰<br />
+編集：うえだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>本記事は「<a href="/articles/0027/0027-ActiveLdap.html">ActiveLdap を使ってみよう（前編）</a>」の後編です。ActiveLdap を扱い始めたばかりの方やこれから使ってみようとお考えの方は、先に<a href="/articles/0027/0027-ActiveLdap.html">前編</a>の記事をご覧頂くと理解しやすいと思います。</p>
+
+<dl>
+  <dt><strong>公式サイト</strong></dt>
+  <dd><a href="http://rubyforge.org/projects/ruby-activeldap/">RubyForge: Ruby/ActiveLdap: Project Info</a></dd>
+  <dt><strong>ダウンロード</strong></dt>
+  <dd><a href="http://rubyforge.org/frs/?group_id=381&amp;release_id=36906">RubyForge: Ruby/ActiveLdap: ファイルリスト</a></dd>
+  <dt><strong>前記事</strong></dt>
+  <dd><a href="/articles/0027/0027-ActiveLdap.html">ActiveLdap を使ってみよう（前編）</a></dd>
+</dl>
+
+<p>ActiveLdap は LDAP を検索・操作するためのライブラリで、クリアコードの須藤功平さんが開発者です。</p>
+
+<p>ActiveRecord に着想を得たこのライブラリは、これまでの LDAP ライブラリと比較するとシンプルかつ判りやすい LDAP プログラミングを可能とします。Rubyist な皆さんなら、以下のサンプルコードを直感的に理解していただけるのではないでしょうか。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># エントリの作成</span>
+<span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="c1"># 属性の設定</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">cn</span> <span class="o">=</span> <span class="s2">"Ruby Taro"</span>
+
+<span class="c1"># 保存</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">save</span>
+
+<span class="c1"># 削除</span>
+<span class="n">user</span><span class="p">.</span><span class="nf">destroy</span>
+
+</code></pre>
+</div>
+
+<p>前編の記事執筆時から現在までに ActiveLdap のバージョンが上がったため、先ずこの点について説明します。本稿は最新版である 1.2.1 を利用して執筆していますが、「<a href="/articles/0029/0029-ActiveLdap.html">バージョンアップで変更された点</a>」で記載の項目以外問題なく利用できると思います。</p>
+
+<p>次に前編で説明した機能を土台として、その応用技術を解説していきます。そのため、前編はチュートリアル的に記述しましたが、今回はリファレンス的な記述になっています。大きく分けて 3 つのパートに分かれています。必要に応じて各部を参照してください。</p>
+
+<ul>
+  <li>ActiveLdap の機能を詳細に解説してコーディングを助ける「<a href="/articles/0029/0029-ActiveLdap.html">より効率よく・堅牢に開発するための知識</a>」</li>
+  <li>Ruby on Rails で利用するための「<a href="/articles/0029/0029-ActiveLdap.html">Ruby on Rails との統合</a>」</li>
+  <li>LDAP の DIT/スキーマ 構造の操作を記述した「<a href="/articles/0029/0029-ActiveLdap.html">LDAP の管理的操作を可能にしていくために</a>」</li>
+</ul>
+
+<h2 id="対象読者">対象読者</h2>
+
+<ul>
+  <li>ActiveLdap を既に利用していて、更に知識を深めたい方</li>
+  <li>ActiveLdap と Ruby on Rails を連携させたい方</li>
+  <li>LDAP の構造を Ruby を用いて参照したい方</li>
+</ul>
+
+<p>以下に該当する方は先に <a href="/articles/0027/0027-ActiveLdap.html">前編</a> をご覧ください。</p>
+
+<ul>
+  <li>Ruby を用いて LDAP プログラミングをしようと考えている方</li>
+  <li>ActiveLdap に興味のある方、ActiveLdap をこれから利用したい方</li>
+</ul>
+
+<h2 id="検証環境">検証環境</h2>
+
+<p>この記事で記載のコマンド例などは以下の環境で確認しています。皆さんの環境では適宜読み替えてください。</p>
+
+<ul>
+  <li>OS: CentOS 5</li>
+  <li>LDAP: openldap 2.3.43</li>
+  <li>ActiveLdap: gem 版 (version 1.2.1)</li>
+</ul>
+
+<h2 id="目次">目次</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#対象読者" id="markdown-toc-対象読者">対象読者</a></li>
+  <li><a href="#検証環境" id="markdown-toc-検証環境">検証環境</a></li>
+  <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+  <li><a href="#バージョンアップで変更された点" id="markdown-toc-バージョンアップで変更された点">バージョンアップで変更された点</a></li>
+  <li><a href="#より効率よく堅牢に開発するための知識" id="markdown-toc-より効率よく堅牢に開発するための知識">より効率よく・堅牢に開発するための知識</a>    <ul>
+      <li><a href="#validation" id="markdown-toc-validation">validation</a>        <ul>
+          <li><a href="#実装方法" id="markdown-toc-実装方法">実装方法</a></li>
+          <li><a href="#保存を試行せず状態のチェックだけを行う" id="markdown-toc-保存を試行せず状態のチェックだけを行う">保存を試行せず、状態のチェックだけを行う</a></li>
+          <li><a href="#予め用意された状態チェックメソッド" id="markdown-toc-予め用意された状態チェックメソッド">予め用意された状態チェックメソッド</a></li>
+        </ul>
+      </li>
+      <li><a href="#callbacks" id="markdown-toc-callbacks">callbacks</a></li>
+      <li><a href="#検索フィルタを動的に組み立てる方法" id="markdown-toc-検索フィルタを動的に組み立てる方法">検索フィルタを動的に組み立てる方法</a></li>
+      <li><a href="#関連性の詳細と操作方法" id="markdown-toc-関連性の詳細と操作方法">関連性の詳細と操作方法</a>        <ul>
+          <li><a href="#関連性の実装" id="markdown-toc-関連性の実装">関連性の実装</a></li>
+          <li><a href="#関連先の情報を取得する" id="markdown-toc-関連先の情報を取得する">関連先の情報を取得する</a></li>
+          <li><a href="#関連先を操作する" id="markdown-toc-関連先を操作する">関連先を操作する</a></li>
+          <li><a href="#関連性定義の際関連先を扱うクラスを直接指定する" id="markdown-toc-関連性定義の際関連先を扱うクラスを直接指定する">関連性定義の際、関連先を扱うクラスを直接指定する</a></li>
+          <li><a href="#関連先の追加や削除を行う際の注意点" id="markdown-toc-関連先の追加や削除を行う際の注意点">関連先の追加や削除を行う際の注意点</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#ruby-on-rails-との統合" id="markdown-toc-ruby-on-rails-との統合">Ruby on Rails との統合</a>    <ul>
+      <li><a href="#設定方法" id="markdown-toc-設定方法">設定方法</a></li>
+      <li><a href="#モデルジェネレータ" id="markdown-toc-モデルジェネレータ">モデルジェネレータ</a></li>
+      <li><a href="#利用するユーザ毎にコネクションを貼る場合の注意点" id="markdown-toc-利用するユーザ毎にコネクションを貼る場合の注意点">利用するユーザ毎にコネクションを貼る場合の注意点</a></li>
+    </ul>
+  </li>
+  <li><a href="#ldap-の管理的操作を可能にしていくために" id="markdown-toc-ldap-の管理的操作を可能にしていくために">LDAP の管理的操作を可能にしていくために</a>    <ul>
+      <li><a href="#ツリー構造に対する操作" id="markdown-toc-ツリー構造に対する操作">ツリー構造に対する操作</a>        <ul>
+          <li><a href="#ツリーを構成する" id="markdown-toc-ツリーを構成する">ツリーを構成する</a></li>
+          <li><a href="#ツリーを辿る" id="markdown-toc-ツリーを辿る">ツリーを辿る</a></li>
+          <li><a href="#全てのエントリを扱うクラス" id="markdown-toc-全てのエントリを扱うクラス">全てのエントリを扱うクラス</a></li>
+        </ul>
+      </li>
+      <li><a href="#ldap-のスキーマ情報を-activeldap-から参照する" id="markdown-toc-ldap-のスキーマ情報を-activeldap-から参照する">LDAP のスキーマ情報を ActiveLdap から参照する</a>        <ul>
+          <li><a href="#サブスキーマサブエントリ" id="markdown-toc-サブスキーマサブエントリ">サブスキーマサブエントリ</a></li>
+          <li><a href="#スキーマ情報にアクセスする-activeldapschema" id="markdown-toc-スキーマ情報にアクセスする-activeldapschema">スキーマ情報にアクセスする ActiveLdap::Schema</a>            <ul>
+              <li><a href="#オブジェクトクラスの定義情報を得る" id="markdown-toc-オブジェクトクラスの定義情報を得る">オブジェクトクラスの定義情報を得る</a></li>
+              <li><a href="#属性タイプの定義情報を得る" id="markdown-toc-属性タイプの定義情報を得る">属性タイプの定義情報を得る</a></li>
+              <li><a href="#よりローレベルでのアクセス方法" id="markdown-toc-よりローレベルでのアクセス方法">よりローレベルでのアクセス方法</a></li>
+              <li><a href="#その他のメソッド" id="markdown-toc-その他のメソッド">その他のメソッド</a></li>
+            </ul>
+          </li>
+          <li><a href="#エントリから構造上の情報を参照する" id="markdown-toc-エントリから構造上の情報を参照する">エントリから構造上の情報を参照する</a>            <ul>
+              <li><a href="#必須の属性を調べる" id="markdown-toc-必須の属性を調べる">必須の属性を調べる</a></li>
+              <li><a href="#必須の属性以外で設定可能な属性が何かを調べる" id="markdown-toc-必須の属性以外で設定可能な属性が何かを調べる">必須の属性以外で、設定可能な属性が何かを調べる</a></li>
+              <li><a href="#所属するオブジェクトクラスを調べる" id="markdown-toc-所属するオブジェクトクラスを調べる">所属するオブジェクトクラスを調べる</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#バックナンバー" id="markdown-toc-バックナンバー">バックナンバー</a></li>
+</ul>
+
+<h2 id="バージョンアップで変更された点">バージョンアップで変更された点</h2>
+
+<p>前回執筆時の ActiveLdap はバージョン 1.1.0 でしたが、現在は 1.2.1 に変わっています。バグフィクスが主でしたが、マイナー番号が変わっていることから前バージョン（1.1.x）とは非互換の変更があった事を示しています。</p>
+
+<p>バージョン 1.1.x までは各エントリの DN を取得したり、クラスの BASE DN を取得すると文字列が返されていました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; User.base
+ =&gt; "ou=Users,o=rubyistMagazine,c=jp"
+ irb&gt; User.first.dn
+ =&gt; "uid=ruby_jiro,ou=Users,o=rubyistMagazine,c=jp"</code></pre></figure>
+
+<p>これがバージョン 1.2.1 では以下のように ActiveLdap::DistinguishedName オブジェクトを返すようになっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; User.base
+ =&gt; #&lt;ActiveLdap::DistinguishedName:0xb78f0fa4 @rdns=[{"ou"=&gt;"Users"}, {"o"=&gt;"rubyistMagazine"}, {"c"=&gt;"jp"}]&gt;
+ irb&gt; User.first.dn
+ =&gt; #&lt;ActiveLdap::DistinguishedName:0xb7a8d04c @rdns=[{"uid"=&gt;"ruby_jiro"}, {"ou"=&gt;"Users"}, {"o"=&gt;"rubyistMagazine"}, {"c"=&gt;"jp"}]&gt;</code></pre></figure>
+
+<p>DistinguishedName オブジェクトを返すようになった事で DN パスの編集などが容易になりました。</p>
+
+<p>以前のように文字列で取得したい場合は to_s メソッドをご利用ください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; User.first.dn.to_s
+ =&gt; "uid=ruby_jiro,ou=Users,o=rubyistMagazine,c=jp"</code></pre></figure>
+
+<h2 id="より効率よく堅牢に開発するための知識">より効率よく・堅牢に開発するための知識</h2>
+
+<p>前回解説した機能の知識を土台として、これを知れば更に便利であろうと思う機能を紹介していきます。</p>
+
+<dl>
+  <dt><strong>validation と callbacks の紹介</strong></dt>
+  <dd>より堅牢な LDAP 操作が可能になります。名前から容易に想像できる方もいると思いますが、ActiveRecord の validation、callbacks と同一のものです。非常に強力な機能なので、改めて基本的な機能を紹介しておきます。</dd>
+  <dt><strong>検索フィルタを動的に組み立てる方法</strong></dt>
+  <dd>ActiveLdap::Base#find メソッドで LDAP エントリの検索を行う際、:filter オプションに LDAP フィルタを直接書いて検索条件を指定できますが、動的に検索条件を作成したい場合、文字列結合によって条件を組み立てるのはミスが発生し易い上に煩雑な作業です。文字列結合以外の方法によって検索条件を構成する方法を解説します。</dd>
+  <dt><strong>関連性の詳細と操作方法</strong></dt>
+  <dd>関連性について更に踏み込んだ説明を行います。関連性がどのように実装されているかを説明した上で、設定された関連性や関連先を操作する方法と注意点について説明します。</dd>
+</dl>
+
+<p>どれも ActiveRecord の機能を参考に構成されているので類似のインターフェースを利用できますが、検索フィルタの構成や関連性の操作に関しては LDAP の特性上、それなりに差異もあります。本記事が理解の一助になれば幸いです。</p>
+
+<h3 id="validation">validation</h3>
+
+<p>validation は一般的に言えばビジネスロジックを記述するための機構です。この仕組みを利用すると、オブジェクトの状態が一定の条件を満たしていない場合、エラーとして保存しないようにすることができます。また、どの位置でエラーが発生しているかも簡単にチェックすることが可能です。例えばエントリが特定の属性を保持していなかったり、ある属性の値が想定した範囲外の値を持っていた場合、これをエラーにする事が可能です。</p>
+
+<p>validation は save ないし save! メソッドの直前に実行され、保存するエントリが期待通りの状態であるかをチェックする機構です。チェックに弾かれた場合、save メソッドであれば保存に失敗して false が返り、save! の場合は例外 ActiveLdap::EntryInvalid が発生します。実際に弾かれる例を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; taro = User.new :uid =&gt; "ruby_taro",
+ irb*               :uidNumber =&gt; 10000,
+ irb*               :sn =&gt; "Ruby",
+ irb*               :cn =&gt; "Ruby Taro",
+ irb*               :gidNumber =&gt; 20000,
+ irb*               :homeDirectory =&gt; "/home/ruby_taro"
+ =&gt; #&lt;User ...&gt;
+
+ # 状態が期待通りでなかったので保存に失敗
+ irb&gt; taro.save
+ =&gt; false
+
+ # 失敗した理由を確認する（uid が指定された正規表現にマッチしていない）
+ irb&gt; taro.errors.full_messages
+ =&gt; ["uid must match with '/\\A[a-zA-Z0-9]+\\z/'."]</code></pre></figure>
+
+<p>以降では、このような機構の実装方法と簡単な解説を行います。詳細については <a href="http://api.rubyonrails.org/classes/ActiveRecord/Validations.html">ActiveRecord::Validations</a> や <a href="http://api.rubyonrails.org/classes/ActiveRecord/Validations/ClassMethods.html">ActiveRecord::Validations::ClassMethods</a> などのドキュメントをご覧ください。</p>
+
+<h4 id="実装方法">実装方法</h4>
+
+<p>冒頭の例では以下のような User クラスを利用しました。このクラスは validate というメソッドが定義されており、ここで状態のチェックが行われています。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
+                <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span>
+                <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
+
+  <span class="k">def</span> <span class="nf">validate</span>
+    <span class="c1"># uid が正規表現にマッチするか確認</span>
+    <span class="k">if</span> <span class="nb">self</span><span class="p">.</span><span class="nf">uid</span> <span class="o">!~</span> <span class="sr">/\A[a-zA-Z0-9]+\z/</span>
+      <span class="c1"># uid でエラーが起きた事を記録</span>
+      <span class="n">errors</span><span class="p">.</span><span class="nf">add</span> <span class="ss">:uid</span><span class="p">,</span> <span class="s2">"must match with '/</span><span class="se">\\</span><span class="s2">A[a-zA-Z0-9]+</span><span class="se">\\</span><span class="s2">z/'."</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>validation の機構はインスタンスメソッド validate を見つけると、save の直前にそれを実行します。上記のクラスでは self.uid が正規表現にマッチしなかった場合に errors.add によってエラーの発生を記録していますが、これが validation の正体と言っても差支えないでしょう。</p>
+
+<p>save メソッドは errors.add によって追加されたエラーを発見すると保存を行わずに false を返す仕組みになっています。冒頭の例では uid が正規表現にマッチしなかった結果、保存ができなかったのです。</p>
+
+<p><br />
+save メソッドが呼ばれると、エラー情報が記録されていた場合は全てクリアされてから状態チェックが行われます。従って、一度エラーになっても以下のようにその原因を修正すれば保存が可能となります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; taro.uid = 'rubytaro'
+ =&gt; "rubytaro"
+ irb&gt; taro.save
+ =&gt; true</code></pre></figure>
+
+<p>インスタンスメソッド validate を定義する以外に、クラスメソッド validate によって妥当性チェックメソッドを指定することができます。先ほどの状態チェックをこの方法で実装してみましょう。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
+                <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span>
+                <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
+
+  <span class="n">validate</span> <span class="ss">:validates_uid</span>
+
+  <span class="k">def</span> <span class="nf">validates_uid</span>
+    <span class="k">if</span> <span class="nb">self</span><span class="p">.</span><span class="nf">uid</span> <span class="o">!~</span> <span class="sr">/\A[a-zA-Z0-9]+\z/</span>
+      <span class="n">errors</span><span class="p">.</span><span class="nf">add</span> <span class="ss">:uid</span><span class="p">,</span> <span class="s2">"must match with '/</span><span class="se">\\</span><span class="s2">A[a-zA-Z0-9]</span><span class="se">\\</span><span class="s2">z/'."</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>validate クラスメソッドで :validates_uid を状態チェックのためのメソッドとして実行すると予約しています。validate インスタンスメソッドを利用した場合と違うのは、validate クラスメソッドを複数回指定するか引数に複数のメソッド名を指定することで、状態チェックメソッドを複数設定できることです。</p>
+
+<p>以下のように指定すれば、指定した順番にメソッドが実行されます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">validate</span> <span class="ss">:validate_one</span><span class="p">,</span> <span class="ss">:validate_two</span>
+
+</code></pre>
+</div>
+
+<h4 id="保存を試行せず状態のチェックだけを行う">保存を試行せず、状態のチェックだけを行う</h4>
+
+<p>valid? メソッドを利用すると状態のチェックのみを行うことができます。この場合、値が保存される事はありません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; taro.valid?
+ =&gt; true</code></pre></figure>
+
+<h4 id="予め用意された状態チェックメソッド">予め用意された状態チェックメソッド</h4>
+
+<p>ActiveRecord::Validations::ClassMethods では、良く使う状態チェックを予めメソッド化して提供しています。先の例では validates_uid としてチェック用のメソッドを定義していましたが、予め用意されている状態チェックメソッド validates_format_of を用いると以下のように記述できます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
+                <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span>
+                <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
+  
+  <span class="n">validates_format_of</span> <span class="ss">:uid</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="sr">/\A[a-zA-Z0-9]+\z/</span><span class="p">,</span>
+                      <span class="ss">:message</span> <span class="o">=&gt;</span> <span class="s2">"must match with '/</span><span class="se">\\</span><span class="s2">A[a-zA-Z0-9]+</span><span class="se">\\</span><span class="s2">z/'."</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; taro = User.new :uid =&gt; "ruby_taro",
+ irb*                :uidNumber =&gt; 10000,
+ irb*                :sn =&gt; "Ruby",
+ irb*                :cn =&gt; "Ruby Taro",
+ irb*                :gidNumber =&gt; 20000,
+ irb*                :homeDirectory =&gt; "/home/ruby_taro"
+ irb&gt; taro.valid?
+ =&gt; false
+ irb&gt; taro.errors.full_messages
+ =&gt; ["uid must match with '/\\A[a-zA-Z0-9]+\\z/'."]</code></pre></figure>
+
+<h3 id="callbacks">callbacks</h3>
+
+<p>callbacks は save などのメソッドが実行される前後に、予め特定の処理を自動的に実行するよう”予約”することができる機構です。上手く使えば便利な機能でしょう。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
+                <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span>
+                <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
+  <span class="k">def</span> <span class="nf">before_save</span>
+    <span class="nb">puts</span> <span class="s2">"before_save received"</span>
+  <span class="k">end</span>
+  <span class="k">def</span> <span class="nf">after_save</span>
+    <span class="nb">puts</span> <span class="s2">"after_save received"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; taro = User.new :uid =&gt; "ruby_taro",
+ irb*                :uidNumber =&gt; 10000,
+ irb*                :sn =&gt; "Ruby",
+ irb*                :cn =&gt; "Ruby Taro",
+ irb*                :gidNumber =&gt; 20000,
+ irb*                :homeDirectory =&gt; "/home/ruby_taro"
+ irb* taro.save
+ before_save received
+ after_save received
+ =&gt; true</code></pre></figure>
+
+<p>その他多数の before_<em>、after_</em> といったコールバックが用意されています。詳しくは <a href="http://api.rubyonrails.org/classes/ActiveRecord/Callbacks.html">ActiveRecord::Callbacks</a> の説明をご覧ください。</p>
+
+<p>実際に調べる方のために本題から逸れた話を少しだけ。RoR で Callbacks といった場合は以下の 2 種類があります。</p>
+
+<ol>
+  <li>ActiveSupport::Callbacks</li>
+  <li>ActiveRecord::Callbacks</li>
+</ol>
+
+<p>混乱の種にもなるので<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>老婆心ながら違いについて触れておきますと、ActiveSuport::Callbacks は特定のメソッドが実行される際にその前後をフックして他のメソッドを実行し易くするための仕組みです。これを利用すると様々なコールバックを定義することができます。</p>
+
+<p>上記で解説したのは ActiveRecord::Callbacks です。これは ActiveSupport::Callbacks を利用して各種 before_* や after_* を定義している、という実装になっています<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+
+<h3 id="検索フィルタを動的に組み立てる方法">検索フィルタを動的に組み立てる方法</h3>
+
+<p>LDAP エントリを検索する際は LDAP フィルタを利用しますが、ActiveLdap では ActiveLdap::Base#find メソッドの :filter オプションで指定します。最もシンプルなやり方では :filter オプションに LDAP フィルタ文字列を直接渡します。</p>
+
+<p>この方法の欠点は、検索条件を動的に構成するには不向きだという事です。SQL を利用する場合もそうですが、検索条件を動的に生成したい場合に文字列（String）は不便で、フィルタの構文に合うように、かつ意図した検索条件に合うように文字列を結合させていくのは、思いのほか手間がかかります。</p>
+
+<p>実はこの :filter オプション、文字列以外の Array や Hash を渡すこともできます。これを利用すると構文をあまり意識せずにフィルタを構成する事ができるのです。</p>
+
+<p>先ずはどんな形で渡せるのか見てみましょう。この時点では細かく見る必要はありません。大体で見てください。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># "(uid=ruby_taro)" の別表現</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:first</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">]</span>
+
+<span class="c1"># "(|(uid=ruby_taro)(uid=ruby_hanako))" の別表現</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">{</span><span class="ss">:uid</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]}]</span>
+
+</code></pre>
+</div>
+
+<p>ちょっと見づらいですが、重要なのは文字列を編集する必要がないという事です。つまりフィルタ構文のカッコの開閉や、メタ文字列の扱いなど気にすることなくフィルタを構成できる点こそが重要です。</p>
+
+<p>以下の例では、もう少し複雑なフィルタを記述してみます。フィルタを動的に構成し易い点が見て取れると思います。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># :filter オプションを組み立てて記述する例</span>
+<span class="n">users</span>                 <span class="o">=</span> <span class="p">[</span><span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]</span>
+<span class="n">exclude_uidnumber</span>     <span class="o">=</span> <span class="mi">10000</span>
+
+<span class="n">user_filter</span>     <span class="o">=</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span>  <span class="p">{</span><span class="ss">:uid</span> <span class="o">=&gt;</span> <span class="n">users</span><span class="p">}]</span>
+<span class="n">exclude_filter</span>  <span class="o">=</span> <span class="p">[</span><span class="ss">:not</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uidNumber</span><span class="p">,</span> <span class="n">exclude_uidnumber</span><span class="p">]]</span>
+
+<span class="c1"># "(&amp;(|(uid=ruby_taro)(uid=ruby_hanako))(!(uidNumber=10000)))" が適用される</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:and</span><span class="p">,</span> <span class="n">user_filter</span><span class="p">,</span> <span class="n">exclude_filter</span><span class="p">]</span>
+
+</code></pre>
+</div>
+
+<p>仕組みを簡単に解説します。概念はそう難しくはありません。</p>
+
+<p>LDAP フィルタは各カッコ内に記述された比較式を、論理演算子によって結合して記述します。このため最小限の構成単位は比較式です。</p>
+
+<p>ActiveLdap のフィルタオプションも同様の構成を取っています。最も原理的で基本的な単位である比較式から解説しましょう。</p>
+
+<p>最小限のフィルタ構成は、以下のようなものです。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># "(uid=ruby_taro)" が利用される</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">]</span>
+
+<span class="c1"># "(uidNumber&gt;=100)" が利用される</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:uidNumber</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+
+</code></pre>
+</div>
+
+<p>どちらもおよそ見た目通りです。前者の例では、配列の最初の要素に検索対象の属性名を String か Symbol で指定します。そのまま比較演算子を指定しないで検索値を入れると、比較演算子 “=” で繋がったフィルタが構成されます。後者の例では比較演算子を指定しています。二番目の要素に有効な比較演算子を指定するとその演算子でフィルタが作成されます。</p>
+
+<p>これらの例が最も基本的なフィルタ構成、つまり単一の比較式です。あとは比較式を論理演算子によって繋げれば、複雑なフィルタを容易に構成することができます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># (|(uid=ruby_taro)(uid=ruby_hanako))</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">],</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]]</span>
+
+<span class="c1"># こちらも同じ</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]]</span>
+
+</code></pre>
+</div>
+
+<p>前者の場合、実際の LDAP フィルタに近い書式なので判りやすいでしょう。後者の場合、値を示す配列の要素が更に配列になっていますが、これは ActiveLdap が備える省略形であり、このように検索値を複数指定することが可能です。上記二例ともに、結果的に生成される LDAP フィルタは同じものです。</p>
+
+<p>次は LDAP フィルタ自身の実装でも浮いている否定形ですが、ActiveLdap でもやはり浮いています(笑)。LDAP フィルタでの検索条件の否定は比較式を否定することによって構成します。このため論理演算子に近い利用の仕方をします。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># (!(uid=ruby_taro))</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:not</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">]]</span> 
+
+</code></pre>
+</div>
+
+<p>フィルタは入れ子にできるため、幾らでも深く記述することができます（あまりそこまで複雑にはしませんが……）。</p>
+
+<p>最後に、Hash を渡す場合について簡単に触れておきます。Hash を渡す場合と Array を渡す場合にそれほど差異はありません。以下の例では Hash を利用する利点が見え難いですが、動きを確認するために記述します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># "(|(uid=ruby_taro)(uid=ruby_hanako))" が利用される</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="p">[</span><span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]]]</span>     
+
+<span class="c1"># これも同じ</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">{</span><span class="ss">:uid</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]}]</span>
+
+</code></pre>
+</div>
+
+<p>どちらの場合も生成される LDAP フィルタは同一です。Hash を利用すると Hash のキーが属性名、その値が検索値として扱われます。</p>
+
+<p>以下のように、複数の属性に対する検索を and または or で一括して繋ぐような場合があれば、Hash は便利でしょう。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">hash</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nb">hash</span><span class="p">[</span><span class="ss">:ou</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'rubyistMagazine'</span>
+<span class="nb">hash</span><span class="p">[</span><span class="ss">:sn</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Ruby'</span>
+
+<span class="c1"># "(&amp;(ou=rubyistMagazine)(sn=Ruby))" が利用される</span>
+<span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:and</span><span class="p">,</span> <span class="nb">hash</span><span class="p">]</span> 
+
+</code></pre>
+</div>
+
+<p>Hash を利用する利点は、単にその方が見やすい場合もあるでしょうし、プログラム上扱いやすい場合もあるでしょう。場合に合わせて使い分けてください<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<h3 id="関連性の詳細と操作方法">関連性の詳細と操作方法</h3>
+
+<p>前回は関連性の定義方法と関連先へのアクセス方法を紹介しましたが、関連性には他にも便利な機能があります。特定のオブジェクトを関連先から外す、追加する、といった処理を簡便に行うことができます。</p>
+
+<p><strong>利用例</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; group.users.loaded?
+ =&gt; true
+ irb&gt; group.users &lt;&lt; user
+ =&gt; #&lt;ActiveLdap...&gt;</code></pre></figure>
+
+<p>これらの機能を正しく利用するためには、関連性の実装面についてもう少し解説する必要があると考えます。従って、先ず関連性がどのように実装されているかを解説した後、実際に利用できる関連先操作メソッドを紹介します。</p>
+
+<h4 id="関連性の実装">関連性の実装</h4>
+
+<p>さて、先ずは<a href="/articles/0027/0027-ActiveLdap.html">前回</a>のおさらいの意味も含め、has_many を用いた関連性を見てみましょう。</p>
+
+<dl>
+  <dt>クラスと関連性(has_many)の定義</dt>
+  <dd></dd>
+</dl>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Groups"</span><span class="p">,</span>
+                <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"cn"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"posixGroup"</span><span class="p">]</span>
+
+  <span class="n">has_many</span> <span class="ss">:primary_users</span><span class="p">,</span> <span class="ss">:primary_key</span> <span class="o">=&gt;</span> <span class="s2">"gidNumber"</span><span class="p">,</span>
+                            <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">"User"</span><span class="p">,</span> <span class="ss">:foreign_key</span> <span class="o">=&gt;</span> <span class="s2">"gidNumber"</span>
+
+  <span class="n">has_many</span> <span class="ss">:users</span><span class="p">,</span> <span class="ss">:wrap</span> <span class="o">=&gt;</span> <span class="s2">"memberUid"</span><span class="p">,</span>
+                    <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">"User"</span><span class="p">,</span> <span class="ss">:primary_key</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<dl>
+  <dt>関連先へのアクセス例</dt>
+  <dd></dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; group = Group.find(:first)
+ =&gt; #&lt;Group ... &gt;
+ irb&gt; group.users[0]
+ =&gt; #&lt;User ...&gt;
+ irb&gt; group.users[0].cn
+ =&gt; "Ruby Taro"</code></pre></figure>
+
+<p>上記の例では、関連性メソッド Group#users が関連先オブジェクト群を返しているように見えますが、実際には __関連性オブジェクト__を返しており、関連先オブジェクト（群）に対する Proxy パターンの実装です。</p>
+
+<p>関連先に対する操作は、この <strong>関連性オブジェクト</strong> が責任をもって行います。上記の例では users に対して Array のような API を提供していますが、このように見せているのが関連性オブジェクトです。上記のコードで “users[0]” と記載されている部分は、実際には <strong>関連性オブジェクトの [] メソッド</strong> をコールしています。関連先オブジェクト（群）に対して直接メソッド呼び出しをするのが適切でない場合があるからです。</p>
+
+<p>関連性オブジェクトは、関連性の特性に応じたかたちで関連先オブジェクト（群）をロードし、自身のインスタンス変数に格納します。</p>
+
+<p>関連先が単一の関連性（belongs_to）であればそのオブジェクトをインスタンス変数に格納し、関連先が複数の関連性（has_many など）であれば配列にまとめてインスタンス変数に格納します。基本的には、関連性オブジェクトに対するメソッド呼び出しは method_missing によって、関連先オブジェクト（群）に飛ばしています。</p>
+
+<p>前出の例の users は has_many ですから、関連性オブジェクト内では関連先オブジェクト群が配列の形で格納されています。method_missing によって各種メソッドがこの配列に飛ばされているので、Array のようにアクセスできます。</p>
+
+<p>となれば、 users に対して “&lt;&lt;” メソッドを使い、関連先オブジェクトを追加できると直感的で便利ですが、method_missing でそのまま “&lt;&lt;” メソッドを格納先インスタンス変数に飛ばしても意味がありません。</p>
+
+<p>関連先を追加ないし削除したい場合、has_many(:wrap) ならば自身の属性値を編集しなければなりませんし、belongs_to(:many) ならば相手先の属性値を変えなければなりません。関連性オブジェクトのインスタンス変数に入っている配列にオブジェクトを追加しても、関連性に変化は無い訳です。</p>
+
+<p>関連性オブジェクトはこれを解決するために存在します。関連性オブジェクト自身に “&lt;&lt;” メソッドが定義されており、ここをうまく吸収しているからです。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># group の memberUid に new_user の uid を追加して、group を自動で保存する</span>
+<span class="n">group</span><span class="p">.</span><span class="nf">users</span> <span class="o">&lt;&lt;</span> <span class="n">new_user</span>
+
+</code></pre>
+</div>
+
+<p>また関連性そのものの情報を得ることなどもでき、関連性オブジェクトを通じて、既に関連先のオブジェクトがロードされたか？ 関連先は存在するか？ などを問い合わせることが可能です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 関連先が一つ以上存在するか確認する
+ irb&gt; group.users.exists?
+ =&gt; true</code></pre></figure>
+
+<p>まとめます。has_many などによって定義された関連性メソッドは、関連性オブジェクトを返します。関連性オブジェクトには、大別して二種類のメソッドがあります。</p>
+
+<ul>
+  <li>関連先の情報を取得するメソッド</li>
+  <li>関連先を操作するメソッド</li>
+</ul>
+
+<p>以降、利用できるメソッド群のうち、特に有用と思われるものについて説明します。</p>
+
+<h4 id="関連先の情報を取得する">関連先の情報を取得する</h4>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 関連先オブジェクト（群）を取得</span>
+<span class="n">group</span><span class="p">.</span><span class="nf">users</span><span class="p">.</span><span class="nf">target</span>
+
+<span class="c1"># 関連先オブジェクト（群）が存在するかを確認する</span>
+<span class="n">group</span><span class="p">.</span><span class="nf">users</span><span class="p">.</span><span class="nf">exists?</span>  <span class="c1">#=&gt; true</span>
+
+</code></pre>
+</div>
+
+<dl>
+  <dt>target</dt>
+  <dd>ロード済みの関連先オブジェクト(群)を返します。ロードされていない場合はロードを試みてから返します。</dd>
+  <dt>loaded?</dt>
+  <dd>関連先オブジェクト(群)が、既にロードされているかを真偽値で返します。なお関連先オブジェクトがロードされるタイミングは、関連先オブジェクトにアクセスしようとした最初のタイミングか exists? をコールした時です。そのためオブジェクトを find などによって取得した直後に loaded? をコールしても偽が返ることでしょう。</dd>
+  <dt>exists?</dt>
+  <dd>関連先が存在すれば真を、存在しなければ偽を返します。loaded? と違い、このメソッドをコールすると実際に関連先オブジェクトを収集した上で存在確認を行います。</dd>
+</dl>
+
+<h4 id="関連先を操作する">関連先を操作する</h4>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 関連先オブジェクト（群）を再ロードする</span>
+<span class="n">group</span><span class="p">.</span><span class="nf">users</span><span class="p">.</span><span class="nf">reload</span>
+
+<span class="c1"># 関連先を追加する</span>
+<span class="n">group</span><span class="p">.</span><span class="nf">users</span> <span class="o">&lt;&lt;</span> <span class="n">user</span>
+
+</code></pre>
+</div>
+
+<dl>
+  <dt>reload</dt>
+  <dd>関連先オブジェクト(群)を再ロードします。関連先オブジェクトの最新の状態を得たい場合に利用します。</dd>
+  <dt>&lt;&lt;(*entries)</dt>
+  <dd>has_many、belongs_to(:many)、children で利用可能です。関連先オブジェクトを追加するのに利用します。別名のメソッドとして push、concat が定義されています。</dd>
+  <dt>delete(*entries)</dt>
+  <dd>has_many、belongs_to(:many)、children で利用可能です。渡したオブジェクト(群)から、関連性を取り除きます。</dd>
+</dl>
+
+<p>children については「<a href="/articles/0029/0029-ActiveLdap.html">LDAPの管理的操作を可能にしていくために</a>」の「<a href="/articles/0029/0029-ActiveLdap.html">ツリーを辿る</a>」で説明します。</p>
+
+<h4 id="関連性定義の際関連先を扱うクラスを直接指定する">関連性定義の際、関連先を扱うクラスを直接指定する</h4>
+
+<p>前回の記事では関連性定義の際に :class_name によって関連先オブジェクト（群）のクラスを指定すると説明しましたが、以下のようにキー <strong>:class</strong> によってクラスを直接指定することもできます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Groups"</span><span class="p">,</span>
+                <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"cn"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"posixGroup"</span><span class="p">]</span>
+
+  <span class="c1"># User クラスを直接指定している</span>
+  <span class="n">has_many</span> <span class="ss">:members</span><span class="p">,</span> <span class="ss">:wrap</span> <span class="o">=&gt;</span> <span class="s2">"memberUid"</span><span class="p">,</span>
+                    <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="no">User</span><span class="p">,</span> <span class="ss">:primary_key</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="err">　</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>メタプログラミングを意識する際などに有用でしょう。</p>
+
+<h4 id="関連先の追加や削除を行う際の注意点">関連先の追加や削除を行う際の注意点</h4>
+
+<p>関連性は、可能な限り関連性オブジェクトを通して編集してください。</p>
+
+<p>関連性オブジェクトを通して関連性を編集した場合、関連性オブジェクトに保持されている関連先オブジェクト（群）も変更されます。一方、関連性を表現する属性（例の Group クラスで言うと gidNumber や memberUid）の値を直接編集した場合、関連性オブジェクトはそれを検知できません。この場合、属性が示す関連と関連性メソッドから取得できるオブジェクト（群）が一致せず、混乱をきたします。</p>
+
+<p>関連性を編集する場合、原則として関連性オブジェクトの API を利用してください。何らかの制約によりそれができない場合は reload を呼び出すことをお勧めします。</p>
+
+<p>一方で、API を利用して関連先を追加あるいは削除した場合、自動的に関連先オブジェクトやレシーバが保存される場合があります。例えば、以下のような場合には新規の関連先（user）が保存されます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># user が保存される</span>
+<span class="c1"># （has_many を利用し、posixAccount と posixGroup を ユーザ側の gidNumber で 関連付けている場合の例）</span>
+<span class="n">group</span><span class="p">.</span><span class="nf">primary_users</span> <span class="o">&lt;&lt;</span> <span class="n">user</span>
+
+</code></pre>
+</div>
+
+<p>逆に、以下の場合には関連元（group）が保存されます</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># group が保存される</span>
+<span class="c1"># （has_many(:wrap) を利用して posixAccount と posixGroup をグループ側の memberUid で関連付けている場合）</span>
+<span class="n">group</span><span class="p">.</span><span class="nf">users</span> <span class="o">&lt;&lt;</span> <span class="n">user</span>
+
+</code></pre>
+</div>
+
+<p>以下に関連先の追加あるいは削除の際の挙動をまとめます。参考にしてください。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>関連性</strong></td>
+      <td><strong>関連先を追加/削除した場合の挙動</strong></td>
+    </tr>
+    <tr>
+      <td>belongs_to(:many)</td>
+      <td>関連先がその属性を編集された上、保存される</td>
+    </tr>
+    <tr>
+      <td>has_many</td>
+      <td>関連先がその属性を編集された上、保存される</td>
+    </tr>
+    <tr>
+      <td>has_many(:wrap)</td>
+      <td>関連__元__がその属性を編集された上、保存される</td>
+    </tr>
+    <tr>
+      <td>children</td>
+      <td>追加の場合は子が保存される。削除の場合、削除対象の子エントリがエントリごと削除される</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ruby-on-rails-との統合">Ruby on Rails との統合</h2>
+
+<p>ActiveLdap は RoR と統合し易いよう構成されています。説明することはそう多くありませんが、RoR で利用する場合の手順例と注意点をそれぞれ説明します。</p>
+
+<h3 id="設定方法">設定方法</h3>
+
+<p>ActiveRecord では config/database.yml を利用して設定を行いますが、ActiveLdap でも同じように config/ldap.yml というファイルを利用します。記載の仕方もほぼ同様です。実際の作成例を示します。</p>
+
+<p>ActiveLdap をインストールしていれば、ActiveLdap 用のジェネレータが利用可能になっています。以下のコマンドで設定ファイル ldap.yml のテンプレートを作成できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ script/generate scaffold_active_ldap
+       create  config/ldap.yml
+ $ cat config/ldap.yml
+   development:
+     host: 127.0.0.1
+     base: dc=devel,dc=local,dc=net
+     bind_dn: cn=admin,dc=local,dc=net
+     password: secret
+
+   test:
+     host: 127.0.0.1
+     base: dc=test,dc=local,dc=net
+     bind_dn: cn=admin,dc=local,dc=net
+     password: secret
+
+   production:
+     host: 127.0.0.1
+     method: :tls
+     base: dc=production,dc=local,dc=net
+     bind_dn: cn=admin,dc=local,dc=net
+     password: secret</code></pre></figure>
+
+<p>ファイル名の通り YAML で設定が記述されています。RoR に合わせて test、development、production の各動作モード用の設定をそれぞれ定義でき、モードに合わせて自動的に設定が適用されます。それぞれの内容は ActiveLdap::Base.setup_connection に渡す内容です。</p>
+
+<h3 id="モデルジェネレータ">モデルジェネレータ</h3>
+
+<p>ActiveLdap 用のモデルジェネレータも用意されています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ script/generate model_active_ldap user
+       exists  app/models/
+       exists  test/unit/
+       create  app/models/user.rb
+       create  test/unit/user_test.rb
+ $ cat app/models/user.rb
+ class User &lt; ActiveLdap::Base
+   ldap_mapping :dn_attribute =&gt; "cn",
+                :prefix =&gt; "ou=users"
+ end</code></pre></figure>
+
+<h3 id="利用するユーザ毎にコネクションを貼る場合の注意点">利用するユーザ毎にコネクションを貼る場合の注意点</h3>
+
+<p>アプリケーションの作り方によりますが、例えばユーザにログインさせる Web アプリケーションの場合、ログインしたユーザ毎に bind させるようなロジックでは注意が必要です。</p>
+
+<p>ActiveLdap のコネクションを特定のユーザで bind させると、mongrel なり Passenger なりが保持している LDAP 接続がそのユーザで bind された状態になります。直後に他の人がアクセスした場合にも、先に bind されたユーザと関連付けられた状態でアプリケーションが動作します。更に mongrel あるいは Passenger などで複数のサーバインスタンスを動作させた状態では、インスタンス間で LDAP 接続の共有はできないため、ログインした直後にログアウトしてしまったり、いつの間にか別のユーザになってしまったり、といった問題が生じる可能性があります。</p>
+
+<p>Web アプリケーションが共通して利用するアカウントで bind するか、別の対策をご検討ください。</p>
+
+<h2 id="ldap-の管理的操作を可能にしていくために">LDAP の管理的操作を可能にしていくために</h2>
+
+<p>これまで LDAPエントリ群の基本的操作を解説してきました。このセクションでは、より応用的・メタ操作的な話題を取り上げていきます。高度な LDAP 管理アプリケーションを作成する場合などに役立つことでしょう。</p>
+
+<dl>
+  <dt>LDAP のスキーマ情報を ActiveLdap から参照する</dt>
+  <dd>LDAP を操作していると LDAP サーバの DIT や スキーマ情報を利用したプログラミングが必要になって来るかもしれません。ActiveLdap::Schema はこれに対応します。</dd>
+  <dt>ツリー構造に対する操作</dt>
+  <dd>LDAPはツリー構造ですから、ツリー構造を辿ったり操作したりする API が最初から含まれています。これについて解説します。</dd>
+  <dt>全てのエントリを参照するクラス</dt>
+  <dd>ActiveLdap は特定のツリー以下を特定のクラスに結びつけると解説しました。そうではなく、全てのエントリ扱えるクラスの作り方を解説します。</dd>
+</dl>
+
+<h3 id="ツリー構造に対する操作">ツリー構造に対する操作</h3>
+
+<p>エントリに対応する各インスタンスには、ツリー構造を辿ったり、子を親に紐づけたりする API が備わっています。これらを利用すれば LDAP のツリー構造を意識したプログラミングが可能になります。</p>
+
+<p>ツリー操作のための各インスタンスメソッドを以下で解説します。</p>
+
+<h4 id="ツリーを構成する">ツリーを構成する</h4>
+
+<p>ツリーを構成するためのメソッドは <strong>parent=</strong> です。特定のエントリを示すオブジェクトの <strong>parent=</strong> メソッドで親になるオブジェクトを指定します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 親になる devel グループを取得
+ irb&gt; devel = Group.find 'devel'
+ =&gt; #&lt;Group objectClass:&lt;posixGroup&gt;.. &gt;
+
+ # web グループを作成
+ irb&gt; web = Group.new :cn =&gt; 'web', :gidNumber =&gt; 10001
+ =&gt; #&lt;Group objectClass:&lt;posixGroup&gt;.. &gt;
+
+ # web グループの親に devel を設定
+ irb&gt; web.parent = devel
+
+ # 保存
+ irb&gt; web.save
+ =&gt; true</code></pre></figure>
+
+<p>保存した時点で、指定したエントリを親に持つエントリが作成されます。</p>
+
+<h4 id="ツリーを辿る">ツリーを辿る</h4>
+
+<p>ツリー構造を辿ってエントリを取得するためのメソッドを紹介します。これには少々制限があり、ActiveLdap::Base を継承したクラスが担当するツリー以下のみを辿る事ができます。幾つかの制限もありますが、各メソッドに記載していきます。</p>
+
+<p>各クラスが担当する範囲を超えてツリーを辿る事も可能です。これについては「<a href="/articles/0029/0029-ActiveLdap.html">全てのエントリを扱うクラス</a>」で紹介します。用途に応じて使い分けてください。</p>
+
+<p>以降の説明では、以下のようなツリーを利用して説明を行います</p>
+
+<p>ツリーのサンプル：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> c=jp
+    |
+    +--- o=rubyistMagazine
+            |
+            +--- ou=Groups   # =&gt; Groups クラスが担当
+                     |
+                     +--- cn=devel
+                     |        |
+                     |        +--- cn=web
+                     |        |        |
+                     |        |        +--- cn=design
+                     |        |
+                     |        +--- cn=sever
+                     |
+                     +--- cn=manage</code></pre></figure>
+
+<p>コード例：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 親を取得する
+ irb&gt; web.parent.cn
+ =&gt; "devel"
+
+ # 子を検索する
+ irb&gt; devel.children[0].cn
+ =&gt; "web"
+
+ # 兄弟のエントリを羅列する
+ irb&gt; devel.children.map &amp;:cn
+ =&gt; ["web", "server"]</code></pre></figure>
+
+<p><strong>parent</strong></p>
+
+<p>親のエントリを直接取得します。親のエントリと対応づいた ActiveLdap オブジェクトを返します。</p>
+
+<p>parent で取得できるエントリの上限は、オブジェクトのクラスが担当する DN の直下のエントリです。上記のツリーのサンプルでいえば parent は devel や manage までのオブジェクトを返します。そこから更に遡ろうとして parent を呼ぶと nil を返します。</p>
+
+<p>使用例：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; web = Group.find 'web'
+ =&gt; #&lt;Group ...&gt;
+ irb&gt; web.parent.cn
+ =&gt; "devel"
+ irb&gt; web.parent.parent
+ =&gt; nil</code></pre></figure>
+
+<p><strong>siblings</strong></p>
+
+<p>兄弟のエントリ群を配列で返します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; web.siblings.map &amp;:cn
+ =&gt; ["server"]</code></pre></figure>
+
+<p><strong>self_and_siblings</strong></p>
+
+<p>（自身を含めた）兄弟のエントリ群を配列で返します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; web.self_and_siblings.map &amp;:cn
+ =&gt; ["web", "server"]</code></pre></figure>
+
+<p><strong>children</strong></p>
+
+<p>直接の子に当たるエントリ群にアクセスします。孫のエントリは返しません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; devel = Group.find 'devel'
+ =&gt; #&lt;Group ...&gt;
+ irb&gt; devel.children
+ =&gt; #&lt;ActiveLdap::Association::Children:0xb7a496bc ...&gt;
+ irb&gt; devel.children.map &amp;:cn
+ =&gt; ["web", "server"]</code></pre></figure>
+
+<p>実際のところ、これは関係性オブジェクトを返すメソッドです。従って <strong>&lt;&lt;</strong> などのメソッドを利用できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; network = Group.new :cn =&gt; 'network', :gidNumber =&gt; 10005
+ =&gt; #&lt;Group ...&gt;
+ irb&gt; devel.children &lt;&lt; network
+ =&gt; #&lt;ActiveLdap::Association::Children ... &gt;
+ irb&gt; devel.children.map &amp;:cn
+ =&gt; ["web", "server", "network"]</code></pre></figure>
+
+<p><strong>root</strong></p>
+
+<p>レシーバの「根」にあたるエントリのオブジェクトを返します。ここで言う根とは LDAP ツリーの根のことではありません。</p>
+
+<p>レシーバのクラスが担当する DN 直下のエントリが根として扱われます。parent で遡れる最後のエントリとも換言できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; design = Group.find 'design'
+ =&gt; #&lt;Group ...&gt;
+ irb&gt; design.root.cn
+ =&gt; "devel"
+
+ # parent で最後まで辿れるエントリと同じ
+ irb&gt; design.parent.parent.cn
+ =&gt; "devel"</code></pre></figure>
+
+<h4 id="全てのエントリを扱うクラス">全てのエントリを扱うクラス</h4>
+
+<p>さて、これまで特定のエントリ（DN）以下を扱うクラスを紹介してきました。これらのクラスは指定された DN 以下について、指定されたオブジェクトクラスの組みによって管理対象のエントリを検索したり、そのオブジェクトクラスの組みを持つエントリを作成していました。</p>
+
+<p>では LDAPツリー 全体を管理対象としたい場合などはどうでしょう。これは少し特殊な設定のクラスを作れば対応できます。これを利用すれば全てのエントリを取得できますし、ツリー全体を辿る事も可能です。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Entry</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+  <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
+               <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"top"</span><span class="p">],</span>
+               <span class="ss">:scope</span> <span class="o">=&gt;</span> <span class="ss">:sub</span>
+  <span class="nb">self</span><span class="p">.</span><span class="nf">dn_attribute</span> <span class="o">=</span> <span class="kp">nil</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 全てのエントリを取得して DN を表示する
+ irb&gt; pp Entry.find(:all).map{|e| e.dn.to_s}
+ ["o=rubyistMagazine,c=jp",
+  "ou=Users,o=rubyistMagazine,c=jp",
+  "ou=Groups,o=rubyistMagazine,c=jp",
+  "cn=devel,ou=Groups,o=rubyistMagazine,c=jp",
+  "cn=web,cn=devel,ou=Groups,o=rubyistMagazine,c=jp",
+  "cn=design,cn=web,cn=devel,ou=Groups,o=rubyistMagazine,c=jp",
+  "cn=server,cn=devel,ou=Groups,o=rubyistMagazine,c=jp",
+  "cn=manage,ou=Groups,o=rubyistMagazine,c=jp",
+  "cn=network,cn=devel,ou=Groups,o=rubyistMagazine,c=jp"]
+ =&gt; nil
+
+ # LDAP ツリーの根の直下のエントリ群を選択し、DN を表示する
+ irb&gt; pp Entry.first.children.map{|e| e.dn.to_s}
+ ["ou=Users,o=rubyistMagazine,c=jp", "ou=Groups,o=rubyistMagazine,c=jp"]
+ =&gt; nil</code></pre></figure>
+
+<h3 id="ldap-のスキーマ情報を-activeldap-から参照する">LDAP のスキーマ情報を ActiveLdap から参照する</h3>
+
+<p>スキーマ情報には ActiveLdap::Base.schema を通してアクセス可能です。これはスキーマ定義情報を抽象化したオブジェクト(ActiveLdap::Schema のインスタンス)に対するアクセサです。</p>
+
+<p>スキーマ定義情報が格納されているエントリをサブスキーマサブエントリと言います。先ずサブスキーマサブエントリについて説明した後に、情報の取得方法を説明していきます。</p>
+
+<h4 id="サブスキーマサブエントリ">サブスキーマサブエントリ</h4>
+
+<p>LDAP にはサブスキーマサブエントリというエントリがあり、ここにスキーマ定義情報が格納されています。即ち『スキーマ定義情報を参照する』とは、このサブスキーマサブエントリの情報を参照するということです。ActiveLdap::Schema がこれを担当するクラスです。ここでは、どのようにそれらが格納されているかを解説します。</p>
+
+<p>このサブスキーマサブエントリについて言及されている <a href="http://tools.ietf.org/html/rfc4512">RFC4512</a> 4.2 の冒頭部分を紹介しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> サブスキーマ（サブ）エントリはディレクトリスキーマの管理管理情報のために使われます。
+ 単一のサブスキーマ（サブ）エントリは、ディレクトリツリーの特定の部分に存在するエン
+ トリ群で利用される全てのスキーマ定義を格納しています。</code></pre></figure>
+
+<p>少々判りづらい表現ですが、私が確認した限りでは、このサブスキーマサブエントリにディレクトリツリーの全てのスキーマ定義が属性として記述されているようです<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<p>このサブスキーマサブエントリを参照するため、各エントリは subschemaSubentry という属性を持っています<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。この属性にはサブスキーマサブエントリの DN が格納され、DNが示す先のエントリに、各種スキーマ定義が記載されています。</p>
+
+<p>前回の記事と同じ LDAP ツリーを利用し、o=rubyistMagazine,c=jp のエントリから subschemaSubentry 属性を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ldapsearch -x -b o=rubyistMagazine,c=jp -s base -LLL +
+ dn: o=rubyistMagazine,c=jp
+ structuralObjectClass: organization
+ entryUUID: a3f93e6a-2386-102e-9707-09f5f7ff8de6
+ creatorsName: cn=Manager,o=rubyistMagazine,c=jp
+ createTimestamp: 20090822164318Z
+ entryCSN: 20090822164318Z#000000#00#000000
+ modifiersName: cn=Manager,o=rubyistMagazine,c=jp
+ modifyTimestamp: 20090822164318Z
+ entryDN: o=rubyistMagazine,c=jp
+ subschemaSubentry: cn=Subschema
+ hasSubordinates: TRUE</code></pre></figure>
+
+<p>いろいろと見慣れない属性が出てきました。ldapsearch コマンドの最後には、検索条件に合致したエントリのうち取得したい属性名を指定します。ここに “+” を指定すると LDAP 上の管理属性が表示されるようになります。subschemaSubentry 属性はこの管理属性にあたるため、普段は表示されていないのです。 “+” を指定した事で “subschemaSubentry” 属性が表示され、”cn=Subschema” という値を持っています。これがスキーマ情報を格納しているエントリの DN です。</p>
+
+<p>では実際にサブスキーマサブエントリの中身を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ldapsearch -x -b cn=Subschema -s base -LLL +
+ dn: cn=Subschema
+ structuralObjectClass: subentry
+ createTimestamp: 20100130124925Z
+ modifyTimestamp: 20100130124925Z
+ ldapSyntaxes: ( 1.3.6.1.1.16.1 DESC 'UUID' )
+ ldapSyntaxes: ( 1.3.6.1.1.1.0.1 DESC 'RFC2307 Boot Parameter' )
+ ldapSyntaxes: ( 1.3.6.1.1.1.0.0 DESC 'RFC2307 NIS Netgroup Triple' )
+ ldapSyntaxes: ( 1.3.6.1.4.1.1466.115.121.1.52 DESC 'Telex Number' )
+ ldapSyntaxes: ( 1.3.6.1.4.1.1466.115.121.1.50 DESC 'Telephone Number' )
+ ldapSyntaxes: ( 1.3.6.1.4.1.1466.115.121.1.49 DESC 'Supported Algorithm' X-BIN
+ (snip)</code></pre></figure>
+
+<p>色々と出てきました(笑)。これがスキーマ定義です。スキーマ定義はオブジェクトクラスの定義、属性タイプの定義など各種あります。ここでは記事の範囲を逸脱するため、定義方法やその構文については詳しくは触れませんが、こういった情報に簡便にアクセスできるのが ActiveLdap::Schema です。</p>
+
+<h4 id="スキーマ情報にアクセスする-activeldapschema">スキーマ情報にアクセスする ActiveLdap::Schema</h4>
+
+<p>ActiveLdap::Schema がアクセスできるスキーマ定義情報は様々です。先ずは、基本的な使い方から解説していきましょう。</p>
+
+<p>ActiveLdap::Schema のインスタンスがスキーマ定義情報へのアクセスを担当します。インスタンスを開発者が作成する必要はなく、ActiveLdap::Base.schema によってアクセスが可能です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # posixAccount オブジェクトクラスの description を得る
+ irb&gt; ActiveLdap::Base.schema.object_class('posixAccount').description
+ =&gt; "Abstraction of an account with POSIX attributes"
+
+ # 全ての属性タイプの名前を得る
+ irb&gt; ActiveLdap::Base.schema.attributes.map {|a| a.name}
+ =&gt; ["ipServiceProtocol", "shadowWarning", "preferredLanguage", "aliasedObjectName", ...]
+
+ # 全ての属性タイプの名前を得るローレベルアクセス
+ irb&gt; ActiveLdap::Base.schema.names "attributeTypes"
+ =&gt; ["ipserviceprotocol", "shadowwarning", "preferredlanguage", "aliasedobjectname", ...]</code></pre></figure>
+
+<p>スキーマ定義にはオブジェクトクラス定義や属性タイプ定義など幾つかの種類があり、少なくともどの種類の定義情報が必要かを指定する必要があります。予め特定の種別の情報にアクセスするよう作られているメソッドもありますし、より柔軟に（そしてローレベルで）アクセスする方法もあります。</p>
+
+<p>先ず、よく利用するオブジェクトクラス定義と属性タイプ定義へのアクセス方法を紹介します。その後でよりローレベルなアクセス方法について言及します。</p>
+
+<h5 id="オブジェクトクラスの定義情報を得る">オブジェクトクラスの定義情報を得る</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # posixAccount オブジェクトクラスの description を得る
+ irb&gt; ActiveLdap::Base.schema.object_class('posixAccount').description
+ =&gt; "Abstraction of an account with POSIX attributes"
+
+ # oid からオブジェクトクラスの情報を得る
+ irb&gt; ActiveLdap::Base.schema.object_class("1.3.6.1.1.1.2.0").must.map &amp;:name
+ =&gt; ["cn", "uid", "uidNumber", "gidNumber", "homeDirectory", "objectClass"]
+
+ # オブジェクトクラスの定義情報を全て得る
+ # （凄く長い出力になるので注意）
+ irb&gt; ActiveLdap::Base.schema.object_classes
+ =&gt; [#&lt;ActiveLdap::Schema::ObjectClass:0xb79f23a8 &gt;, ...]</code></pre></figure>
+
+<p>オブジェクトクラスの定義情報は ActiveLdap::Schema::ObjectClass のインスタンスとして返されます。 object_class は引数に oid または オブジェクトクラスの名前を取り、該当する定義情報を抽象化したオブジェクトを返します。object_classes は定義されている全てのオブジェクトクラスのインスタンスを配列にして返します。</p>
+
+<h5 id="属性タイプの定義情報を得る">属性タイプの定義情報を得る</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 属性タイプ cn の 別名を得る
+ irb&gt; ActiveLdap::Base.schema.attribute("cn").aliases
+ =&gt; ["commonName"]
+
+ # 属性タイプ定義情報のオブジェクトを全て得る
+ # （凄く長い出力になるので注意）
+ irb&gt; ActiveLdap::Base.schema.attributes
+ =&gt; [#&lt;ActiveLdap::Schema::Attribute ...&gt;, ...]</code></pre></figure>
+
+<p>使い方はオブジェクトクラスの定義情報を得る場合とほぼ同じです。得られる定義情報は ActiveLdap::Schema::Attribute のインスタンスとして取得します。</p>
+
+<h5 id="よりローレベルでのアクセス方法">よりローレベルでのアクセス方法</h5>
+
+<p>ここで紹介するメソッドは、スキーマ種別の知識が多少なりとも必要になります。</p>
+
+<p>各種の定義情報にアクセスする場合、先ずスキーマ定義の種類の名前を文字列で指定します。この名前の実体はサブスキーマサブエントリの属性名です。</p>
+
+<p>これらは RFC4512 のサブスキーマサブエントリの記述（4.2）に記述されています。例えば、オブジェクトクラスであれば “objectClasses” という種別を指定して情報を引き出します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 指定した定義情報の名前を全て取得する
+ irb&gt; ActiveLdap::Base.schema.names "objectClasses"
+ =&gt; ["locality", "pilotdsa", "residentialperson", "applicationprocess", "dcobject", ...]
+
+ # 指定した名前を持つ定義情報が存在するか確認する
+ irb&gt; ActiveLdap::Base.schema.exist_name? "objectClasses", "posixAccount"
+ =&gt; true
+
+ # 指定した定義情報をハッシュで取得する
+ irb&gt; ActiveLdap::Base.schema.entry "attributeTypes", "cn"
+ =&gt; {"NAME"=&gt;["cn", "commonName"], "SUP"=&gt;["name"], "DESC"=&gt;["RFC2256: common name(s) for which the entity is known by"]}
+
+ # スキーマ定義情報の内、特定のフィールドの値だけを取得する
+ irb&gt; ActiveLdap::Base.schema.fetch "attributeTypes", "cn", "DESC"
+ =&gt; ["RFC2256: common name(s) for which the entity is known by"]
+
+ # オブジェクトクラス定義の内、MUSTフィールドの値だけを取得する
+ irb&gt; ActiveLdap::Base.schema.object_class_attribute "posixAccount", "MUST"
+ =&gt; ["cn", "uid", "uidNumber", "gidNumber", "homeDirectory"]</code></pre></figure>
+
+<dl>
+  <dt>ids</dt>
+  <dd>指定した種類のスキーマ定義情報から、全ての oid を返します。</dd>
+  <dt>names</dt>
+  <dd>指定した種類のスキーマ定義情報から、全ての名前を返します。</dd>
+  <dt>exist_name?</dt>
+  <dd>指定した種類のスキーマ定義情報の中に、特定の名前を持つスキーマ定義があるかを真偽で返します。</dd>
+  <dt>resolve_name</dt>
+  <dd>スキーマ定義の種別と名前を渡し、対応する oid を返します。</dd>
+  <dt>fetch</dt>
+  <dd>スキーマ定義種別、名前かoid、取得したいフィールドをそれぞれ指定します。指定したスキーマ定義尾特定のフィールドの値を返します。</dd>
+  <dt>entry</dt>
+  <dd>スキーマ定義種別と oid または名前を指定して、スキーマ定義情報をハッシュにして返します。</dd>
+  <dt>object_class_attribute</dt>
+  <dd>オブジェクトクラスの名前と、定義情報のフィールド名を指定して特定のフィールドの定義だけを取得します。</dd>
+  <dt>attribute_type</dt>
+  <dd>属性タイプの名前と、定義情報のフィールド名を指定して特定のフィールドの定義だけを取得します。</dd>
+</dl>
+
+<h5 id="その他のメソッド">その他のメソッド</h5>
+
+<p>他にも幾つかのメソッドがあります。ここでは名前の紹介のみに留めます。</p>
+
+<ul>
+  <li>dit_content_rule_attribute</li>
+  <li>ldap_syntax</li>
+  <li>ldap_syntaxes</li>
+  <li>ldap_syntax_attribute</li>
+</ul>
+
+<h4 id="エントリから構造上の情報を参照する">エントリから構造上の情報を参照する</h4>
+
+<p>ここまで、全体のスキーマ情報を参照する手段について解説してきましたが、実際にデータを保持する各エントリが、幾つかのオブジェクトクラスに属する場合も多々あるでしょう。その場合、エントリを保存するための制約は所属する各オブジェクトクラスが持つ制約の和になるため、総合的にどのような制約があるかなどが見えづらくなります。</p>
+
+<p>これらの制約などは、エントリに対応するオブジェクトから直接引きだす事が可能です。</p>
+
+<h5 id="必須の属性を調べる">必須の属性を調べる</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; g = Group.find :first
+ =&gt; #&lt;Group objectClass:&lt;posixGroup&gt;, ...&gt;
+ irb&gt; g.must.map &amp;:name
+ =&gt; ["cn", "gidNumber", "objectClass"]</code></pre></figure>
+
+<p>オブジェクトクラスのスキーマ定義上 MUST と指定された属性は、そのオブジェクトクラスに所属したエントリは必ず値を持たなければならない属性になります。</p>
+
+<p>エントリは複数のオブジェクトクラスに所属し得るため、その場合には全てのオブジェクトクラスで MUST に指定されている属性について値を持たなければなりません。</p>
+
+<p>これは valid? でも一応調べる事が可能ですが、全てのリストを綺麗に得るならば must メソッドを利用するとよいでしょう。</p>
+
+<p>must メソッドはそのエントリが必須で値を持たなければならない属性を、ActiveLdap::Schema::Attriubte のインスタンスのリストで返します。</p>
+
+<h5 id="必須の属性以外で設定可能な属性が何かを調べる">必須の属性以外で、設定可能な属性が何かを調べる</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; g.may.map &amp;:name
+ =&gt; ["userPassword", "memberUid", "description"]</code></pre></figure>
+
+<p>オブジェクトクラスが保有する属性の定義では、MUST の他に MAY も指定できます。これは「値を持っても持たなくてもいい」属性です。これらは may メソッドで取得でき、値を設定しなくても構いません。</p>
+
+<p>must でも may でも出てこない属性に値を設定しようとするとエラーになります。</p>
+
+<h5 id="所属するオブジェクトクラスを調べる">所属するオブジェクトクラスを調べる</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; g.classes
+ =&gt; ["posixGroup"]</code></pre></figure>
+
+<p>非常にシンプルで、classes メソッドを呼べばオブジェクトクラスの名前のリストが出力されます。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>二稿に渡り ActiveLdap の紹介をさせて頂きました。まだ紹介し切れていない機能もありますが、ひとまずここで筆を置かせていただきます。</p>
+
+<p>記事執筆にあたり、編集のうえださん、開発者の須藤さんには大変お世話になりました。この場を借りてお礼させていただきます。有難うございました。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>高瀬一彰。ActiveLdap のドキュメント係とかやってます。<br />
+<a href="http://d.hatena.ne.jp/tashen">http://d.hatena.ne.jp/tashen</a></p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-ActiveLdap.html">ActiveLdap を使ってみよう（後編）</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0027/0027-ActiveLdap.html">ActiveLdap を使ってみよう（前編）</a></p>
+  </li>
+</ul>
+
+<hr />
+<p><br /></p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>というか私が混乱したんですが……&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>内容からお気づきの方もいらっしゃると思いますが、validations でも callbacks の仕組みが利用されています&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>例では判り易さのために、各検索値などを直接記述していますが、実際のプログラムでは他のメソッドの戻り値などを利用するでしょう。その場合にこそ、この仕組みは威力を発揮すると思います&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>RFC の書き方的にツリーの一部のスキーマ定義を格納するのか、各部を合計した全部のスキーマ定義を集約しているのかはちょっと判りません。一見した限りでは全部のスキーマ定義が入っているように見えます。予想にすぎませんが、ツリーの一部を別のサーバに委譲する場合などに全部のスキーマ情報を格納する訳ではないのかもしれません。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>厳密に言えば、RFC はこの属性を持つ事を「強く推奨」しています&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

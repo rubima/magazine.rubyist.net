@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RubyOnRails を使ってみる 【第 7 回】 RJS を使ってみる</title>
+  <meta name="description" content="書いた人: 高木宏 (Gollum)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0014/0014-RubyOnRails.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>RubyOnRails を使ってみる 【第 7 回】 RJS を使ってみる</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0014/0014-RubyOnRails.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RubyOnRails を使ってみる 【第 7 回】 RJS を使ってみる" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0014/0014-RubyOnRails.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0014/0014-RubyOnRails.html" data-text="RubyOnRails を使ってみる 【第 7 回】 RJS を使ってみる">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人: 高木宏 (Gollum)</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>今回の連載は、プロフェッショナルな執筆陣が多忙につき、Ruby on Rails しろうとの高木宏が最近夢中の RJS について書きます。
+いつもの heavy なものとは違って内容がありませんが、ちょっと休憩ということで、ご勘弁いただき、RJS の紹介と適用例の下手なコードを楽しんでもらえればさいわいです。</p>
+
+<h2 id="ajax-とは">Ajax とは</h2>
+
+<p>Rails を使っている人に、いまさら Ajax の解説は不要でしょう。
+AJAX (Asynchronous JavaScript and XML) は、Web アプリケーションのありようを大きく変えつつあります。
+古典的な Web アプリケーションが、ブラウザから送信される HTTP GET/POST Request にサーバーがページ単位にコンテンツを送信していたのに対して、Ajax Web アプリケーションでは、ブラウザから送信される XMLHttpRequest に対して、ページ中の部分的な更新内容を DOM (Document Object Model) 単位でサーバーが返すことで、応答性能や画面の柔軟性を劇的に改善できます。
+Ruby on Rails が Ruby 勉強会＠関西で初めて紹介された時に、参加者は Rails/Ajax アプリケーションが提供する画面のダイナミックな点に驚嘆したものです。
+古典的な Web アプリケーションでは、画面遷移しなければならない場面でも、同じ画面のままで、ちょっとした・しかし重要な画面変化を起こすことができます (<a href="http://wiki.fdiary.net/rails/?AjaxOnRails">AjaxOnRails</a>)。</p>
+
+<p>しかし、RJS 登場以前の Rails では、Ajax Web アプリを開発するには大きな問題がありました。
+それは link_to_remote が :update する要素にひとつの DOM しか指定できないことです。
+この結果、一回のアクション/トリガで複数の DOM 要素を更新する Ajax アプリを書くには、view テンプレートの中に手製の JavaScript と ERB を混在させることになります。
+多言語環境で生きている人は平気でしょうが、Ruby でさえやっとこさっとこの筆者には、複数の言語が混在するスクリプトは頭が痛くなります。なにより JavaScript を覚えなければなりません。</p>
+
+<p>RJS が登場して、Rails ユーザーは Ajax アプリを JavaScript を知らなくても非常に簡単に使えるようになりました。</p>
+
+<h2 id="rjs-とはなにか">RJS とはなにか</h2>
+
+<p>RJS は、Rails Ajax 応答用の JavaScript を生成するしくみです。
+(少し前までは、Ajax レスポンス用のテンプレートです、と言い切れたのですが、最近は、Controller ベースの inline RJS と呼ばれるしくみができてますので、いちがいに RJS テンプレートとも言えないのがつらいところです。)
+RJS = Remote JavaScript とも Ruby JavaScript とも呼ばれますが、どちらが正しいかはよく知りません。JavaScriptGeneratorTemplates ともよばれるようです (これがいちばんしっくりきます)。</p>
+
+<p>RJS では、ブラウザ上のページを page というオブジェクトとして扱い、page 中の DOM 要素への操作を Ruby コードだけで (ここが重要！) 柔軟に記述できます。</p>
+
+<h3 id="rjs-のしくみ">RJS のしくみ</h3>
+
+<p>RJS の動作のしくみは以下のとおりです。</p>
+
+<ol>
+  <li>link_to_remote などで Controller の :action (method) が呼ばれます。:action を仮に xxx とします。</li>
+  <li>RJS template ファイルである xxx.rjs の内容から JavaScript を生成し、ブラウザに送信します。</li>
+  <li>ブラウザが JavaScript を実行し、既存のページの DOM 要素を操作します。</li>
+</ol>
+
+<p>ここでいう DOM 要素とは、HTML タグに ユニークな id を付けたもののことを指します。</p>
+
+<p>xxx.rjs ファイルは view テンプレートと同じ場所におきます。xxx.rhtml があればそちらが優先されます。</p>
+
+<p>xxx.rjs のように RJS template に DOM 操作を記述する以外にも、Controller に inline RJS を記述する方法もあります。(MVC 的に美しくない！ という方もおられるかもしれません。)</p>
+
+<p>RJS の記述の中心になるのはブラウザの現在のページを抽象化した page というオブジェクトで、RJS プログラミングは page オブジェクトに対する操作になります。
+以下は、Rails 1.1 の David による紹介文に登場する RJS のサンプルです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># First buy appears the cart, subsequent buys highlight it
+page[:cart].visual_effect(@cart.size == 1 ? :appear : :highlight)</code></pre></figure>
+
+<p>RJS はピュア Ruby で記述します。view のように &lt;% %&gt; な ERB でもありません。Rails で提供される既存の Helper もインスタンス変数も有効です。</p>
+
+<h3 id="要素の指定方法">要素の指定方法</h3>
+
+<p>要素の指定方法は二通りあります。
+以下のふたつは、どちらも、要素 ‘item_form’ をページから削除します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> page.remove 'item_form'
+ page[:item_form].remove</code></pre></figure>
+
+<h3 id="rjs-が生成する-javascript">RJS が生成する JavaScript</h3>
+
+<p>例えば、以下の RJS は、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.select('p.hint').each do |hint|
+  hint.visual_effect :highlight
+end</code></pre></figure>
+
+<p>次の JavaScript を生成します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$$("p.hint").each(function(value, index) {
+value.visualEffect("highlight");
+});</code></pre></figure>
+
+<p>RJS 側が partial などを使ってイテレートしている場合は、巨大な JavaScript が生成されることもあります。</p>
+
+<h3 id="rjs-が使える環境">RJS が使える環境</h3>
+
+<p>RJS は Rails 1.1 から使えます。もしなんらかの理由で 1.1 にアップデートできない場合は、plugin も提供されています。 (plugin の場合は、以下で解説する機能のすべてが実装されているわけではありません。)</p>
+
+<p>RJS を使うには、Ajax を使う時と同様に、HTML の head 要素内で、
+JavaScript ライブラリの利用宣言が必要です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;%= javascript_include_tag :defaults %&gt;</code></pre></figure>
+
+<p>layout ファイルなどに加えてください。
+上の例では :defaults と宣言し、public/javascripts 内のすべてのライブラリを include しています。</p>
+
+<h2 id="rjs-が提供する機能">RJS が提供する機能</h2>
+
+<p>RJS が提供する機能は実に多様です。詳しくは RDoc マニュアルを参照してください。</p>
+
+<ul>
+  <li><a href="http://api.rubyonrails.org/classes/ActionView/Helpers/PrototypeHelper.html">ActionView::Helpers::PrototypeHelper</a></li>
+  <li><a href="http://api.rubyonrails.org/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
+</ul>
+
+<p>以下では、機能別にそのいくつかを紹介します。</p>
+
+<h3 id="dom-要素を置き換える-replace-replace_html-reload">DOM 要素を置き換える (replace, replace_html, reload)</h3>
+
+<p>最もよく使われるカテゴリのひとつです。</p>
+
+<ul>
+  <li>page.replace : 要素を完全に置き換えます (outer HTML の置き換え)。</li>
+  <li>page.replace_html : 要素の内容を置き換えます (inner HTML の置き換え)。</li>
+  <li>page.reload : 指定した要素の内容を同じ名前の partial でリフレッシュします。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.replace :list, render(:partial =&gt; :list)
+page.replace_html :list, render(:partial =&gt; :list)
+page.reload :list</code></pre></figure>
+
+<h3 id="dom-要素の追加削除-insert_html-remove">DOM 要素の追加・削除 (insert_html, remove)</h3>
+
+<p>これもよく使われるグループです。</p>
+
+<ul>
+  <li>page.insert_html : 要素に対して位置指定を使って追加します。</li>
+  <li>page.remove : 要素を page から削除します。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.insert_html :bottom, 'list', '&lt;li&gt;new item&lt;/li&gt;'
+page.remove :oldlist</code></pre></figure>
+
+<h3 id="dom-要素を表示する見えなくする-show-hide">DOM 要素を表示する・見えなくする (show, hide)</h3>
+
+<p>指定の要素を表示する/見えなくする機能です。</p>
+
+<h3 id="視覚効果-visual_effect">視覚効果 (visual_effect)</h3>
+
+<p>Ajax で要素の追加・置き換え・削除を行うと、動作が速すぎてユーザーには何が起こったかわからないことがしばしばです。
+要素に対する操作にあわせて視覚効果を付けて、ユーザーに対象の要素に対する注意を喚起することはとても重要です。</p>
+
+<p>visual_effect には、さまざまなものが用意されています。詳しくは以下の RDoc を参照してください。</p>
+
+<ul>
+  <li><a href="http://api.rubyonrails.org/classes/ActionView/Helpers/ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a></li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.visual_effect :highlight, "item_form",  :duration =&gt; 0.6</code></pre></figure>
+
+<p>上の例のように :duration で 視覚効果の動作時間を指定できます。速くすると動作自体が認識できませんから、最低 0.3 秒程度は必要なように思います。
+わたしが好んでよく使う visual_effect は :highlight と :fade です。</p>
+
+<h3 id="タイミングを取る-delay">タイミングを取る (delay)</h3>
+
+<p>直接 DOM 要素を操作するわけではありませんが、RJS で記述するふたつ以上の動作にちょっとした「間」をおける delay はよく使う便利な機能です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.delay(0.5) do
+  page.insert_html :top, 'item_form_block', :partial =&gt; 'item_form'
+end</code></pre></figure>
+
+<p>上のスクリプトは 0.5 秒待ってから insert_html を実行します。</p>
+
+<h3 id="dom-要素のプロパティの変更-prototypescriptaculous-element-extensions">DOM 要素のプロパティの変更 (prototype/script.aculo.us element extensions)</h3>
+
+<p>DOM 要素のプロパティを変更できます。</p>
+
+<p>例</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page[:element].set_style :backgroundColor =&gt; '#f00'
+page[:element].set_opacity =&gt; 0.5</code></pre></figure>
+
+<p>わたしはこの機能は使ったことがありません。</p>
+
+<h3 id="controller-からの-rjs-操作-render-update">Controller からの RJS 操作 (render :update)</h3>
+
+<p>inline RJS とも呼ばれます。
+RJS は .rjs ファイルだけでなく、Controller/Helper 中に記述することもできます。
+つまり、.rjs ファイルなしの RJS も可能です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> render :update do |page|
+   page....
+   page....
+ end</code></pre></figure>
+
+<p>Controller に画面の操作を記述するのを嫌う人もあるかもしれませんが、.rjs だけで記述していると同じような操作を繰り返して記述することがよくあります。これを Helper や Controller に書いて再利用すれば、ちょっと DRY な気分になれます。</p>
+
+<h3 id="drag--drop-draggable-drop_receiving-sortable">Drag &amp; Drop (draggable, drop_receiving, sortable)</h3>
+
+<p>RJS から使うことは少ないかもしれませんが、動的に DOM 要素を変更する Ajax アプリで Drag &amp; Drop な効果を維持し続けるには、これらのメソッドが必要です。</p>
+
+<p>例</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.insert_html(:bottom, :list, "new list item..." )
+page.sortable :list</code></pre></figure>
+
+<p>せっかく Drag &amp; Drop sortable リストを作っても、要素を追加した後で、.sortable で再初期化しないと、追加した要素が Drag &amp; Drop できません。</p>
+
+<h3 id="javascript-の利用-call-">JavaScript の利用 (call, &lt;&lt;)</h3>
+
+<ul>
+  <li>page.call : JavaScript を呼び出します。</li>
+  <li>page &lt;&lt; “…. JavaScript…” : JavaScript を再利用します。</li>
+</ul>
+
+<p>JavaScript が苦手なわたしはめったに使いません。イディオム的によく使うのは、フォームに入力された内容をリセットする以下の例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.call 'Form.reset', 'item_form'</code></pre></figure>
+
+<h2 id="rjs-template-適用例">RJS template 適用例</h2>
+
+<p>以下では、わたしが実際に業務で適用しようとしている RJS アプリケーションのサンプルを紹介します。</p>
+
+<h3 id="見積書明細行の編集">見積書明細行の編集</h3>
+
+<p>わたしの仕事は、セキュリティ機器の保守・運用・監視業務会社の経営です。
+業務を Rails 化しようとすると、モデルとしては acts_as_list 型の題材が圧倒的に多くなります。
+いちばん簡単なモデルとしては、見積書を想像してもらえればよいでしょう。</p>
+
+<h4 id="見積書のモデルと要件">見積書のモデルと要件</h4>
+
+<p>見積書は大きくふたつの部分に分かれます。</p>
+
+<dl>
+  <dt>マスター部分</dt>
+  <dd>見積番号, 顧客名, 見積タイトル, 日付, 担当者など</dd>
+  <dt>明細部分</dt>
+  <dd>商品名, 個数, 単価, 小計など</dd>
+</dl>
+
+<p>これを ActiveRecord 風に記述すると、以下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Estimate &lt; ActiveRecord::Base
+  has_many :e_items, :order =&gt; :position
+  belongs_to :customer
+end
+
+class EItem &lt; ActiveRecord::Base
+  belongs_to :estimate
+  acts_as_list :scope =&gt; :estimate
+  belongs_to :product
+end</code></pre></figure>
+
+<p>この他にも class Product (製品マスタ), class Customer (顧客マスタ) がありますが割愛します。
+Rails で見積情報の入力・修正アプリケーションを組むと、
+マスター部分 (Estimate) は、scaffold した form をちょっと手直しすれば十分ですが、
+明細行 (EItem) のほうはそうはいきません。
+一画面で一明細行ずつ入力するのではなく、全体の明細行を見ながら、</p>
+
+<ul>
+  <li>新規の明細行を追加できる。</li>
+  <li>任意の明細行を修正できる。</li>
+  <li>任意の明細行を削除できる。</li>
+  <li>明細行の順を任意に変更できる。</li>
+</ul>
+
+<p>という作業が可能なことがアプリケーションの要件になります。</p>
+
+<h4 id="見積書明細行の画面">見積書明細行の画面</h4>
+
+<p>以上の要件を満足する見積書明細行の入力・編集画面のサンプルを作ってみました。
+画面は以下のような構成です。
+<img src="/images/0014-RubyOnRails/fig1.jpg" alt="fig1.jpg" /></p>
+
+<p>画面上部の表ののマスター部分 (Estimate) は今回の例では使いません。
+二番目の表が RJS 操作の中心です。以下が二番目の表を作成している .rhtml です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;%= javascript_tag &lt;&lt;-END
+    function disable_submit_button() {
+      $('submit_button').disabled = true;
+    }
+    function enable_submit_button() {
+      $('submit_button').disabled = false;
+    }
+END
+%&gt;
+
+&lt;table border="1" cellpadding="3"&gt;
+  &lt;colgroup width="60"&gt;&lt;/colgroup&gt;
+  &lt;colgroup width="140"&gt;&lt;/colgroup&gt;
+  &lt;colgroup width="80"&gt;&lt;/colgroup&gt;
+  &lt;colgroup width="80"&gt;&lt;/colgroup&gt;
+  &lt;colgroup width="80"&gt;&lt;/colgroup&gt;
+  &lt;colgroup width="50"&gt;&lt;/colgroup&gt;
+  &lt;colgroup width="40"&gt;&lt;/colgroup&gt;
+  &lt;colgroup width="60"&gt;&lt;/colgroup&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;qty&lt;/th&gt;
+      &lt;th&gt;item&lt;/th&gt;
+      &lt;th&gt;price&lt;/th&gt;
+      &lt;th&gt;subtotal&lt;/th&gt;
+      &lt;th colspan="4"&gt;action&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody id="item-list"&gt;
+  &lt;%= render(:partial =&gt; 'e_item', :collection =&gt; @estimate.e_items) %&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;hr/&gt;
+
+&lt;div id="item_form_block"&gt;
+  &lt;%= render :partial =&gt; 'item_form' %&gt;
+&lt;/div&gt;</code></pre></figure>
+
+<p>先頭で作成している disable_submit_button(), enable_submit_button() という JavaScript は
+データの追加削除用のボタンを disable/enable するためのものです。</p>
+
+<p>明細行の部分には &lt;tbody id=”item-list”&gt; という id をつけています。</p>
+
+<p>画面下部のフォームを配置する部分には、&lt;div id=”item_form_block”&gt; という id をつけ、
+item_form という partial でフォームを配置しています。</p>
+
+<p>e_item という partial で作成している明細行の部分では以下のように各行に id をつけ、
+行末に link_to_remote アクションを 4 つ定義しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;tr id="item_&lt;%= e_item.id %&gt;" &gt;
+  &lt;td align="right"&gt;&lt;%= e_item.qty %&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;%= e_item.product.name %&gt;&lt;/td&gt;
+  &lt;td align="right"&gt;&lt;%= e_item.product.price %&gt;&lt;/td&gt;
+  &lt;td align="right"&gt;&lt;%= e_item.qty * e_item.product.price %&gt;&lt;/td&gt;
+  &lt;td align="center"&gt;
+    &lt;%= link_to_remote('destroy',
+          :url =&gt; { :action =&gt; 'rm_item', :id =&gt; e_item },
+          :confirm =&gt; 'Are you sure?') %&gt;
+    &lt;/td&gt;
+  &lt;td align="center"&gt;
+    &lt;%= link_to_remote('edit',
+          :url =&gt; { :action =&gt; 'edit_item', :id =&gt; e_item } ) %&gt;
+    &lt;/td&gt;
+  &lt;td align="center"&gt;
+    &lt;%= link_to_remote('up',
+          :url =&gt; { :action =&gt; 'up_item', :id =&gt; e_item } ) %&gt;
+    &lt;/td&gt;
+  &lt;td align="center"&gt;
+    &lt;%= link_to_remote('down',
+          :url =&gt; { :action =&gt; 'down_item', :id =&gt; e_item } ) %&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;</code></pre></figure>
+
+<p>以後、説明はこの “item-list” と “item_&lt;%= e_item.id %&gt;” のふたつの要素に対する操作が中心になります。</p>
+
+<h4 id="明細行の追加">明細行の追加</h4>
+
+<p>追加は画面下部のフォーム (‘item_form’) から行います。
+_item_form.rhtml の内容は以下のとおりです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;%=
+  case @form_action
+  when "add_item"
+    form_remote_tag :url =&gt; { :action =&gt; @form_action, :id =&gt; @estimate.id },
+                    :loading =&gt; 'disable_submit_button()',
+                    :html =&gt; { :id =&gt; 'item_form' }
+  when "update_item"
+    form_remote_tag :url =&gt; { :action =&gt; @form_action, :id =&gt; @e_item.id },
+                    :loading =&gt; 'disable_submit_button()',
+                    :html =&gt; { :id =&gt; 'item_form' }
+  else
+    # do nothing
+  end
+%&gt;
+
+&lt;table border="0" cellpadding="3"&gt;
+  &lt;colgroup width="60"&gt;&lt;/colgroup&gt;
+  &lt;colgroup width="80"&gt;&lt;/colgroup&gt;
+  &lt;tr align="center"&gt;
+    &lt;td&gt;qty&lt;/td&gt;
+    &lt;td&gt;item&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td align="right"&gt;
+    &lt;%= text_field(:e_item, :qty, :size =&gt; 7 ) %&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+    &lt;%=
+      @products = Product.find(:all)
+      collection_select(:e_item, :product_id, @products,
+                        :id, :name,
+                        { :include_blank =&gt; true }
+                       )
+    %&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;%= submit_tag(@form_button, :id =&gt; 'submit_button') %&gt;
+
+&lt;%= end_form_tag %&gt;</code></pre></figure>
+
+<p>_item_form.rhtml は、明細行を追加する場合・修正する場合の両方で使えるようにするために、
+Controller 側で @form_action, @form_button を用途に応じて設定して render します。
+初期状態では、@from_action は ‘add_item’ に設定されており、明細行追加用のフォームになっています。</p>
+
+<p>ボタンを二度クリックされて二重登録されることを防ぐために、
+disable_submit_button で、ボタンを disable しています。
+add_item というアクションが Ajax コールされ、
+Controller 中でデータベースに @estimate.e_items のエントリがひとつ追加されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def add_item
+  @estimate = Estimate.find(params[:id])
+  @estimate.e_items.create(params[:e_item])
+  @estimate.save
+  @e_item = @estimate.e_items.last
+end</code></pre></figure>
+
+<p>データを追加した後に実行される add_item.rjs は以下のとおりです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.call 'Form.reset', 'item_form'
+page.insert_html :bottom, 'item-list', :partial =&gt; 'e_item'
+page.visual_effect :grow, "item_#{@e_item.id}",  :duration =&gt; 0.6
+page.delay(1) do
+  page.call 'enable_submit_button'
+end</code></pre></figure>
+
+<p>まず、フォームに入力された内容をリセットし、”item-list” 要素の下部に明細行を追加します。
+残念ながら、動きは見てもらえませんが、
+add_item がコールされた時点で disable しているボタンを enable にしています (form_remote_tag の :loading)。</p>
+
+<p>フォームに “100個のりんご” を入力し追加された結果、画面は以下のようになります。
+<img src="/images/0014-RubyOnRails/fig2.jpg" alt="fig2.jpg" /></p>
+
+<h4 id="明細行の削除">明細行の削除</h4>
+
+<p>各行の右の destroy リンクをクリックすると alert ボックスが出て確認ののち、その行を削除します。
+上から二行目の “ 55 バナナ … “ の destroy をクリックして OK すると、
+アクション rm_item がコールされ、対象行は表から消えて以下のようになります。
+<img src="/images/0014-RubyOnRails/fig3.jpg" alt="fig3.jpg" /></p>
+
+<p>rm_item.rjs は以下のとおりです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.visual_effect :highlight, "item_#{@e_item.id}", :duration =&gt; 0.4
+page.visual_effect :fade, "item_#{@e_item.id}", :duration =&gt; 0.4</code></pre></figure>
+
+<p>消える時に :highlight しても仕方ないかもしれませんが、
+何が消えたかを意識してもらうためにこういう視覚効果は重要です。</p>
+
+<h4 id="明細行の修正">明細行の修正</h4>
+
+<p>Excel のように、修正したい行の要素をクリックしていきなり修正！　といきたかったのですが、
+tbody 要素内での動的な変更はいろいろと制約があってやめました。
+edit リンクをクリックすると修正対象行の内容を下部のフォームにコピーし、
+フォームを修正用に変更し、
+フォームのボタンをクリックした時点で update_item アクションをコールしています。
+edit_item アクションは以下のとおりです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def edit_item
+  @form_action = 'update_item'
+  @form_button = 'Update Item'
+  @e_item = EItem.find(params[:id])
+end</code></pre></figure>
+
+<p>Controller の edit_item アクションの中で、
+@form_action を ‘update_item’ と設定しておき、
+edit_item.rjs 中では、画面下部 item_form_block 中のフォームを、
+明細行追加用の状態から明細行修正用のものに置き換えます。
+edit_item.rjs は以下のとおりです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.visual_effect :highlight, "item_#{@e_item.id}",  :duration =&gt; 0.4
+page[:item_form].remove
+page.delay(0.5) do
+  page.insert_html :top, 'item_form_block', :partial =&gt; 'item_form'
+  page.visual_effect :highlight, "item_form",  :duration =&gt; 0.6
+end</code></pre></figure>
+
+<p>update_item 後の RJS は update_item.rjs にではなく、
+Controller の update_item アクション中に記述してみました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def update_item
+  @e_item = EItem.find(params[:id])
+  @estimate = Estimate.find(@e_item.estimate_id)
+  @e_item.update_attributes(params[:e_item])
+  @estimate.reload
+
+  render :update do |page|
+    #page.replace "item_#{@e_item.id}", :partial =&gt; 'e_item'
+    page.replace_html "item-list", :partial =&gt; 'e_item',
+                                   :collection =&gt; @estimate.e_items
+    page.visual_effect :highlight, "item_#{@e_item.id}",  :duration =&gt; 0.4
+
+    page[:item_form].remove
+    @form_action = 'add_item'
+    @form_button = 'Add Item'
+    page.insert_html :top, 'item_form_block', :partial =&gt; 'item_form'
+  end
+end</code></pre></figure>
+
+<p>コメントアウトしてある</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">page.replace "item_#{@e_item.id}", :partial =&gt; 'e_item'</code></pre></figure>
+
+<p>は、Firefox なら有効です。
+が悲しいことに IE 6 でこれを使うとエラーになりますので、
+しかたなく、partial に collection を渡して明細行の表全体を再描画しています。</p>
+
+<p>明細行の修正が終わった後に、item_form_block のフォームをいったん削除し、
+@form_action を ‘add_item’ に設定し、
+再度、partial item_form を明細行追加用に戻しています。</p>
+
+<h4 id="明細行を上下に移動する">明細行を上下に移動する</h4>
+
+<p>acts_as_list には便利なメソッドがいろいろと用意されており、
+その中で position 操作はとても重宝します。
+この表中の明細行を up/down させるリンクは、move_higher, move_lower を利用しています。
+この up, down のリンクをクリックすると up_item, down_item のアクションがコールされます。</p>
+
+<p>このふたつのアクションも .rjs ファイルを使わず、RJS の記述を Controller 中だけで済ませています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def up_item
+   @e_item = EItem.find(params[:id])
+   @estimate = Estimate.find(@e_item.estimate_id)
+   @e_item.move_higher
+   @e_item.save
+   @estimate.reload
+   redraw_item_list
+ end
+
+ def down_item
+   @e_item = EItem.find(params[:id])
+   @estimate = Estimate.find(@e_item.estimate_id)
+   @e_item.move_higher
+   @e_item.save
+   @estimate.reload
+   redraw_item_list
+ end
+
+ def redraw_item_list
+   render :update do |page|
+     page.replace_html "item-list", :partial =&gt; 'e_item',
+                                    :collection =&gt; @estimate.e_items
+     page.visual_effect :highlight, "item_#{@e_item.id}",  :duration =&gt; 0.4
+   end
+ end</code></pre></figure>
+
+<p>redraw_item_list というメソッドをコントローラ中に直接書いていますが、
+本来、これは Helper メソッドの中に置くべきでしょう。</p>
+
+<p>fig.3 の状態から、三行目の up のリンクをクリックすると以下のようになります。
+<img src="/images/0014-RubyOnRails/fig4.jpg" alt="fig4.jpg" /></p>
+
+<p>Ajax ばりばりで！　という趣向なら、
+この明細行の上下も Drag &amp; Drop sortable リストでやってみたかったのですが、
+tbody 内での制約から断念しました。</p>
+
+<h4 id="よいことばかりではない">よいことばかりではない</h4>
+
+<p>この例のように、RJS を使うと、
+Web アプリでもデスクトップアプリに近い感覚のものが
+簡単に開発できることがわかっていただけたかと思います。
+が、いいことばかりではありません。</p>
+
+<ul>
+  <li>デバッグがやっかい。</li>
+  <li>validation が raise した時の処理を記述するのが困難。</li>
+  <li>flash[] が使いにくい。</li>
+  <li>画面内容とデータベースが同期している保証がない。</li>
+</ul>
+
+<p>最後の問題は、Ajax/RJS アプリに限ったことではありませんが、
+多数の明細行を扱っていて長時間画面遷移をしない状態が続くと危険が増すのは間違いありません。
+中小企業でユーザーは 2,3 人でも、
+繁忙期におこる同一見積への競合入力は十分可能性があります。
+運用でカバーするだけでなく、システム側でもしっかりとした対策が必要でしょう。</p>
+
+<h2 id="rjs-のデバッグ">RJS のデバッグ</h2>
+
+<p>Rails という開発環境になれていると、
+あのげっぷが出るほど詳しく親切なスタックトレースのおかげで、
+ほかの環境でのデバッグにいやけがさすことがしばしばあります。
+RJS でエラーを起した場合、エラーはブラウザ側で発生するので、
+とたんに JavaScript のデバッグになり、
+JavaScript が苦手なわたしにはかなり苦労させられています。
+以下ではいくつかデバッグのヒントを挙げてみます。</p>
+
+<h3 id="firefox-を使え">Firefox を使え！</h3>
+
+<p>Tom Funchs の Ajax デバッグルールその一です。
+Firefox はたしかに IE よりも多くの情報をデバッグに提供してくれます。</p>
+
+<h3 id="firefox-とその-extension-を使え">Firefox とその Extension を使え！</h3>
+
+<p>Tom Funchs の Ajax デバッグルールその二です。
+具体的には FireBug などの強力な JavaScript デバッグツールを指しています (<a href="https://addons.mozilla.org/firefox/1843/">FireBug 0.3.2</a>)。</p>
+
+<h3 id="対象のブラウザはすべてテストせよ">対象のブラウザはすべてテストせよ！</h3>
+
+<p>Tom Funchs の Ajax デバッグルールその三です。
+これは現在ではかなり困難かもしれません。
+RJS と親しんでくると IE 6 には悩まされるでしょう。
+特に &lt;table&gt; にこだわっていると IE で RJS を使うのがいやになるかもしれません。
+Firefox で開発しておいて IE 6 でテストする、という流れがわたしの開発パターンです。</p>
+
+<h3 id="rjs-中であやしいところを順にコメントアウトしていく">.rjs 中であやしいところを順にコメントアウトしていく</h3>
+
+<p>単純ですがけっこう有効です。</p>
+
+<h3 id="その他">その他</h3>
+
+<p>Chad Fowler の “Rails Recipes” Recipe 11 “Debugging Ajax” に、
+自分で Ajax レスポンダを仕込んでおき、
+デバッグしたい時に &lt;div id=”debug”&gt; を追加すれば、デバッグ情報が画面に出力される、
+という手法が紹介されています。</p>
+
+<h2 id="参考ドキュメント">参考ドキュメント</h2>
+
+<h3 id="rdoc">RDoc</h3>
+
+<ul>
+  <li>ActionView::Helpers::PrototypeHelper</li>
+  <li>ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</li>
+  <li>ActionView::Helpers::ScriptaculousHelper</li>
+</ul>
+
+<h3 id="リンク">リンク</h3>
+
+<ul>
+  <li><a href="http://mir.aculo.us/stuff/COR_20060413_RailsAjax.pdf">“Advanced Rails Ajax Techniques” Thomas Fuchs </a></li>
+  <li><a href="http://blog.craz8.com/articles/2005/12/15/rails-rjs-templates-need-better-replace-semantics">“Rails RJS Templates need better replace semantics” Tom Fakes</a></li>
+</ul>
+
+<h3 id="書籍">書籍</h3>
+
+<ul>
+  <li><a href="http://www.pragmaticprogrammer.com/titles/fr_rr/">“Rails Recipes” Chad Fowler</a></li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>1957年生まれのオヤジ。
+オブジェクト指向, HTML, CGI, JavaScript よくわかりませんっ！
+永遠の初心者プログラマ。根っからの無精者。
+中小企業 (ネットワークセキュリティ機器の保守・運用・監視会社) の平取 (ひらとり) です。
+Ruby には、インターンで使った某女子大生から感染しました。
+Ruby の利用用途は、機器のログ解析やサーバーのシステム管理以外に、
+社内業務アプリや自社開発の WebUI にこっそり仕込んでいたりします。</p>
+
+<h2 id="rubyonrails-を使ってみる-連載一覧">RubyOnRails を使ってみる 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0019/0019-RubyOnRails.html">RubyOnRails を使ってみる 【第 10 回】 パフォーマンスチューニング</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-RubyOnRails.html">RubyOnRails を使ってみる 【第 9 回】 Rails で XML-DB にチャレンジ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-RubyOnRails.html">RubyOnRails を使ってみる 【第 8 回】 Rails はまり道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-RubyOnRails.html">RubyOnRails を使ってみる 【第 7 回】 RJS を使ってみる</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-RubyOnRails.html">RubyOnRails を使ってみる 【第 6 回】 テストの書き方</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-RubyOnRails.html">RubyOnRails を使ってみる 【第 5 回】 ActiveHeart</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-RubyOnRails.html">RubyOnRails を使ってみる 【第 4 回】 ActionPack</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RubyOnRails.html">RubyOnRails を使ってみる 【第 3 回】 ActiveRecord</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RubyOnRails.html">RubyOnRails を使ってみる 【第 2 回】 (続・RubyOnRails を使ってみる)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-RubyOnRails.html">RubyOnRails を使ってみる 【第 1 回】</a></p>
+  </li>
+</ul>
+
+<hr />
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐</title>
+  <meta name="description" content="書いた人：ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0013/0013-YarvManiacs.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0013/0013-YarvManiacs.html" class="hatena-bookmark-button" data-hatena-bookmark-title="YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0013/0013-YarvManiacs.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0013/0013-YarvManiacs.html" data-text="YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：ささだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>YARV: Yet Another RubyVM を解説するこの連載。今回は (まだまだ) 命令セットの紹介の続きで、分岐を解説します。if 文とか、お馴染みのああいうやつです。ご想像通り、今回の内容はとっても簡単です。気楽に読んでみてください。</p>
+
+<h3 id="yarv-の今後について">YARV の今後について</h3>
+
+<p>さて、本編に入る前に恒例の与太話を。</p>
+
+<p>一部では YARV が 1.9 にマージされるのは今年のバレンタインデーだ、という話もありましたが、実際には 1.9 へのマージはもうちょっと先になるかと思います。積み残している作業は、リファクタリング関連で、特に API 名やファイル名などが統一がなされていない、ということで、この辺をしっかりと見直してからということになりそうです。まさに、名前重要、と言う感じです。CVS だと、ファイル名の整理とかしづらいので面倒ですね。いっそ、Ruby 開発で利用するバージョン管理システムを Subversion に移行してくれないかな思っているんですが。</p>
+
+<p>さて、移行の具体的な方策として、とりあえずまつもとさんに YARV のコミッターになってもらいました (<a href="http://redhanded.hobix.com/cult/yarvMergedMatz.html">YARV Merged Matz</a>)。まつもとさんに実際に手をつけてもらうことで、現実味が増したんではないかと思います。Ruby 2.0 も大分見えてきましたね (そういうことにしておきたいのです)。</p>
+
+<p>さて、sheepman さんからのバグ報告 (と、その fix）などにより、大分 YARV も安定してきました。今 test-all をすると</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby 1.9.0 (2006-02-14) [i686-linux]
+ YARVCore 0.3.3 (rev: 674) [opts: ]
+ ...
+ 1754 tests, 13147 assertions, 15 failures, 0 errors</code></pre></figure>
+
+<p>こんな感じでした。まだちょこっと通らないテストも残ってますが (大半は Ruby の不思議な不思議なブロックパラメータ)、動かない機能が大分減ったという印象です。あなたも YARV を使ってみませんか？</p>
+
+<p>ちなみに、バグ報告は yarv-dev へどうぞ。積んでるバグの一覧などは <a href="http://www.atdot.net/~ko1/yarvbugs/">YARV Bugs</a> で確認できます。</p>
+
+<h3 id="over-two-orders-of-magnitude-faster-with-yarv-yay-for-algorithmical-optimization"><a href="http://eigenclass.org/hiki.rb?yarv+ueber+algorithmical+optimization">Over two orders of magnitude faster with YARV, yay for algorithmical optimization</a></h3>
+
+<p>ところで、RedHanded でも記事になっていましたが (<a href="http://redhanded.hobix.com/inspect/mauricioSkipsRecursionWithYarvSHiddenLevels.html">Mauricio Skips Recursion With YARV’s Hidden Levels!</a>)、秘密の VM コンパイルオプションを使うと、YARV ではアッカーマン関数が 2桁以上高速に動くんだそうです。凄いですね。これを見つけた Mauricio が凄い。</p>
+
+<p>どんなに難しい、計算オーダの大きな問題も定数時間で答えちゃう、という話です。でも、答えが 42 だってわかっていないとダメなんですけどね。</p>
+
+<h2 id="yarv-における分岐の基礎">YARV における分岐の基礎</h2>
+
+<p>まず、分岐について説明していく上で必要なことをまとめておきます。簡単にいうと「どうやって分岐するのか」ということと、「どこへ分岐するのか」ということです。</p>
+
+<p>ちなみに、ジャンプとか分岐とか言っている操作は VM のプログラムカウンタ (PC) を操作して命令列中の任意の地点から実行を開始する操作をいいます。</p>
+
+<h3 id="条件ジャンプと無条件ジャンプ">条件ジャンプと無条件ジャンプ</h3>
+
+<p>YARV には条件ジャンプ命令 <em>if</em> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> と <em>unless</em>、無条件ジャンプ命令の <em>jump</em> があります。</p>
+
+<h4 id="条件ジャンプ命令">条件ジャンプ命令</h4>
+
+<p>条件ジャンプ命令は、読んで字のごとく条件によってジャンプしたりしなかったり、という命令です。条件によってジャンプ先を変えるわけではありません<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。条件分岐命令 if はスタックからひとつ値をポップして、もしそれが真ならオペランドで指定された分岐先へジャンプし、そうでなければ何もしません。unless 命令はその逆です。</p>
+
+<p>Ruby における真偽の判断は、値が nil か false なら偽、それ以外なら真ということになります。C 言語レベルでは RTEST(val) というマクロが用意されています。</p>
+
+<h4 id="if-と-unless-命令">if と unless 命令</h4>
+
+<p>YARV には否定の値を得るための not 命令があります。not 命令はスタックトップの値が真なら false を、偽なら true をスタックトップに置く命令です。not 命令があるならば、if / unless 命令はどちらか一方あればよいことがわかります。つまり、if 命令は not と unless という命令の並び、unless 命令は not と if 命令の並びで実現できるからです。</p>
+
+<p>ただ、性能的な観点からと、コンパイラを作るのが楽だったという理由で (どちらもたいした事じゃないんだけど) 両方の命令を設けました。</p>
+
+<h4 id="無条件ジャンプ命令">無条件ジャンプ命令</h4>
+
+<p>無条件ジャンプ命令 jump は、問答無用で分岐先へジャンプします。いわゆる分岐ではありませんが、ここにまとめて書いておきます。</p>
+
+<p>YARV におけるローカルな分岐命令、ジャンプ命令はこの 3 つだけです。何も難しいことはないですね<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<h3 id="分岐先とラベル">分岐先とラベル</h3>
+
+<p>さて、分岐先ですが、どのように指定するかというと、現在の PC からの増分値として指定します。たとえば、10 番地にある無条件ジャンプ命令 jump が 20 番地へジャンプしたければ、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 0010  jump 8</code></pre></figure>
+
+<p>という命令列 (内部表現) になります。ここで +10 したいのに 8 を指定しているのは、「jump 8」という命令表現自体が 2 番地分消費するので、8 + 2 で 10 番地分進める、という意味にするためです。ちなみに、PC が減る方向にジャンプするときはこの増分値が負の値になります。</p>
+
+<p>さて、上記で「内部表現」という言葉を使いました。なんでこんなことを言うかというと、YARV の逆アセンブラはこの場合、「jump 20」という命令を表示します。逆アセンブルした結果を見るとき、いちいち PC と増分値を足すのは面倒ですよね。</p>
+
+<p>しかし、分岐先を数字で示しても、わかりづらいことこの上ありません。そこで、これからの擬似コードでは分岐先をラベルで表現します。C 言語などでお馴染みで、アセンブラでもお馴染みです。たとえば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   jump LABEL
+   ...
+ LABEL:</code></pre></figure>
+
+<p>という命令列は、「…」で示している命令列をすっ飛ばして LABEL の位置へジャンプする、という意味です。分岐先のラベルは「(LABEL名):」と表記し、インデントをひとつ下げて表現するようにします。</p>
+
+<p>本連載でも以前からこんな表記を使っていたような気がしますが、一応ここで定義しておきました。まぁ、見てわかるよね。</p>
+
+<p>さて、これで基本はおしまいです。簡単ですね。</p>
+
+<h2 id="条件分岐">条件分岐</h2>
+
+<p>では、説明した命令を利用して Ruby の if 文などをどうやって表現するか見てみましょう。</p>
+
+<h3 id="if-文">if 文</h3>
+
+<p>とっても簡単な if 文の例である</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ if COND
+   THEN_BODY
+ end</code></pre></figure>
+
+<p>という命令を見てみましょう。ところで、COND とか THEN_BODY とか、全部大文字で書いてありますが、全部大文字の部分は任意の Ruby 式がまとまっていると思ってください。なんでもいいです。たとえば、COND に if 文が入っていても問題ありません。</p>
+
+<p>これを YARV 命令列で表現すると、次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列
+   &lt;COND&gt;
+   unless ELSE
+   &lt;THEN_BODY&gt;
+ ELSE:</code></pre></figure>
+
+<p>ここで &lt;COND&gt; と &lt;THEN_BODY&gt; は COND と THEN_BODY をコンパイルした結果ということを示すことにしておきます。</p>
+
+<p>処理を見てみると、&lt;COND&gt; 式はスタックにひとつ値を積み、unless 命令で、もしその値が偽なら ELSE ラベルへジャンプする、ということになります。馬鹿にするな、というほど簡単ですね。</p>
+
+<p>では、ELSE 節があるときにどうなるか見てみましょう。次のような Ruby プログラム</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ if COND
+   THEN_BODY
+ else
+   ELSE_BODY
+ end</code></pre></figure>
+
+<p>は、以下のような YARV 命令列にコンパイルされます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列
+   &lt;COND&gt;
+   unless ELSE
+   &lt;THEN_BODY&gt;
+   jump END
+ ELSE:
+   &lt;ELSE_BODY&gt;
+ END:</code></pre></figure>
+
+<p>今度は jump 文が増えました。これも、説明するよりも見てもらったほうが早いですね。&lt;THEN_BODY&gt; を実行してから、後に続く &lt;ELSE_BODY&gt; をスキップするために END へジャンプしています。簡単ですね。</p>
+
+<p>次に、Ruby 玄人も打ち間違える elsif を含んだプログラムを見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ if COND
+   THEN_BODY
+ elsif COND_ELSIF_1
+   ELSIF_BODY_1
+ elsif COND_ELSIF_2
+   ELSIF_BODY_2
+ else
+   ELSE_BODY
+ end</code></pre></figure>
+
+<p>このプログラムは、以下のプログラムと同じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム改
+ if COND
+   THEN_BODY
+ else
+   if ELSIF_COND_1
+     ELSIF_BODY_1
+   else
+     if ELSIF_COND_2
+       ELSIF_BODY_2
+     else
+       ELSE_BODY
+     end
+   end
+ end</code></pre></figure>
+
+<p>これを、先に説明したものと同じようにコンパイルするだけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列
+   &lt;COND&gt;
+   unless ELSIF_1
+   &lt;THEN_BODY&gt;
+   jump END_THEN
+ ELSIF_1:
+   &lt;ELSIF_COND_1&gt;
+   unless ELSIF_2
+   &lt;ELSIF_BODY_1&gt;
+   jump END_ELSIF_1
+ ELSIF_2:
+   &lt;ELSIF_COND_2&gt;
+   unless ELSE
+   &lt;ELSIF_BODY_2&gt;
+   jump END_ELSIF_2
+ ELSE:
+   &lt;ELSE_BODY&gt;
+ END_ELSIF_2:
+ END_ELSIF_1:
+ END_THEN:</code></pre></figure>
+
+<p>最後にラベルが複数重なっていますが、結局同じ番地を指していることになります。ちょっと込み入っていますが、やっていることは単純ですね。</p>
+
+<p>では、具体的な Ruby プログラムで実験してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ a = 0
+ if a &gt; 10
+   a = :then
+ elsif a &gt; 5
+   a = :elsif1
+ elsif a &gt; 0
+   a = :elsif2
+ else
+   a = :else
+ end</code></pre></figure>
+
+<p>このプログラムを実際にコンパイルすると次のようになります。わかりやすいようにコメントを入れておきました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># YARV 命令列
+
+# a = 0
+0000 putobject        0
+0002 setlocal         a
+# if a &gt; 10
+0004 getlocal         a
+0006 putobject        10
+0008 send             :&gt;, 1, nil, 0, &lt;ic&gt;
+0014 unless           22
+# a = :then
+0016 putobject        :then
+0018 setlocal         a
+0020 jump             62
+# elsif a &gt; 5
+0022 getlocal         a
+0024 putobject        5
+0026 send             :&gt;, 1, nil, 0, &lt;ic&gt;
+0032 unless           40
+# a = :elsif1
+0034 putobject        :elsif1
+0036 setlocal         a
+0038 jump             62
+# elsif a &gt; 0
+0040 getlocal         a
+0042 putobject        0
+0044 send             :&gt;, 1, nil, 0, &lt;ic&gt;
+0050 unless           58
+# a = :elsif2
+0052 putobject        :elsif2
+0054 setlocal         a
+0056 jump             62
+# else
+# a = :else
+0058 putobject        :else
+0060 setlocal         a
+# exit
+0062 putself
+0063 send             :exit, 0, nil, 12, &lt;ic&gt;
+0069 end</code></pre></figure>
+
+<p>まぁ、長いですけどそのまんまだし、読めばわかりますよね。</p>
+
+<h3 id="unless-文">unless 文</h3>
+
+<p>if 文の次は unless 文を説明します。いや、説明しようと思ったんですが、if 文で出てきた unless 命令を if 命令に変更するだけなので省略します。</p>
+
+<p>if 文で unless 命令、unless 文で if 命令、というのがちょっと面白いですね。</p>
+
+<h3 id="後置の-if--unless-文">後置の if / unless 文</h3>
+
+<p>Ruby は後置の if 文、unless 文が記述できます。たとえば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> if COND
+   THEN_BODY
+ end</code></pre></figure>
+
+<p>の代わりに</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> THEN_BODY if COND</code></pre></figure>
+
+<p>と書けます<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+
+<p>後置の式は、そのまま普通の if 文に置き換えられるため、YARV のコンパイラは普通の if 文として扱います。というか、パーサが普通の if 文と変わらないように構文木を作るため、違いがわからないということになります。</p>
+
+<p>ついでにいうと、三項演算子 (a ? b c : d みたいなの) も同様に、普通の if 文と同じようにコンパイルされます。</p>
+
+<h3 id="and--or-演算子">and / or 演算子</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Ruby には and もしくは &amp;&amp;、同様に or もしくは</td>
+      <td> </td>
+      <td>という演算子がありますが、これも条件分岐と言えるでしょう。</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ a and b and c</code></pre></figure>
+
+<p>は、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ if __tmp__ = a
+   if __tmp__ = b
+     c
+   else
+     __tmp__
+   end
+ else
+   __tmp__
+ end</code></pre></figure>
+
+<p>とほぼ同じ意味 (仮に作った変数 <strong>tmp</strong> が余計) になります<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+
+<p>これを YARV 命令列にしてみると次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># YARV 命令列
+
+# a = b = c = nil
+0000 putnil
+0001 dup
+0002 setlocal         c
+0004 dup
+0005 setlocal         b
+0007 setlocal         a
+# if __tmp__ = a
+0009 getlocal         a
+0011 dup
+0012 unless           23
+0014 pop
+# if __tmp__ = b
+0015 getlocal         b
+0017 dup
+0018 unless           23
+0020 pop
+# c
+0021 getlocal         c
+0023 end</code></pre></figure>
+
+<p><strong>tmp</strong> のような一時的な変数の代わりにスタックトップをこの目的に使っています。そのために dup 命令によって値を複製してスタックに積んでいます。</p>
+
+<p>or もちょっと変わっただけです。a or b or c を if 文で表すと次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ if __tmp__ = a
+   __tmp__
+ elsif __tmp__ = b
+   __tmp__
+ else
+   c
+ end</code></pre></figure>
+
+<p>これを YARV 命令列で表すと次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># YARV 命令列
+
+# a = b = c = nil
+0000 putnil
+0001 dup
+0002 setlocal         c
+0004 dup
+0005 setlocal         b
+0007 setlocal         a
+# if __tmp__ = a
+0009 getlocal         a
+0011 dup
+0012 if               23
+0014 pop
+# elsif __tmp__ = b
+0015 getlocal         b
+0017 dup
+0018 if               23
+0020 pop
+# c
+0021 getlocal         c
+0023 end</code></pre></figure>
+
+<p>まぁ、ゆっくり考えれば簡単ですね。</p>
+
+<h2 id="繰り返し">繰り返し</h2>
+
+<p>さて、繰り返しは条件分岐と無条件分岐を組み合わせれば作れるのは誰でも知ってますよね。たとえば、C 言語では、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> while(expr){
+   body;
+ }</code></pre></figure>
+
+<p>という繰り返しは</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> while_start:
+   if(!expr){
+     goto while_end;
+   }
+   body;
+   goto while_start;
+ while_end;</code></pre></figure>
+
+<p>と表現できます。釈迦に説法ですみません。</p>
+
+<p>さて、我らが Ruby では while と until 文を使って繰り返しを表現できますが、while と until は if と unless のように条件文を逆にすればいいだけなので while 文だけ説明します。</p>
+
+<h3 id="while-文">while 文</h3>
+
+<p>早速ですが Ruby プログラム</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ while LOOP_COND
+   LOOP_BODY
+ end</code></pre></figure>
+
+<p>は、YARV 命令列では次のようにコンパイルします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列
+   jump LOOP_START
+ LOOP_BODY_START:
+   &lt;LOOP_BODY&gt;
+ LOOP_START:
+   &lt;LOOP_COND&gt;
+   if LOOP_BODY_START
+ LOOP_END:</code></pre></figure>
+
+<p>後置の while では、必ず一回は LOOP_BODY を実行するので最初の jump 命令がなくなります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム：後置の while 文
+ begin
+   LOOP_BODY
+ end while LOOP_COND</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列：後置の while 文
+ LOOP_BODY_START:
+   &lt;LOOP_BODY&gt;
+ LOOP_START:
+   &lt;LOOP_COND&gt;
+   if LOOP_BODY_START
+ LOOP_END:</code></pre></figure>
+
+<p>さて、LOOP_COND の処理を、LOOP_BODY の前に持ってきてもいいんですが (初期の YARV はそうしていました)、そうすると次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列
+ LOOP_START:
+   &lt;LOOP_COND&gt;
+   if LOOP_BODY
+   jump LOOP_END
+ LOOP_BODY:
+   &lt;LOOP_BODY&gt;
+   jump LOOP_START     # これが余分
+ LOOP_END:</code></pre></figure>
+
+<p>繰り返しのたびに「jump LOOP_START」を余計に行うことになります (先の例だと最初の一回だけ)。まぁ、たった 1 命令なんですが、されど 1 命令ということで、今のようにしています。</p>
+
+<p>具体的な例を示しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ a = nil
+ while a
+   b
+ end</code></pre></figure>
+
+<p>このような Ruby プログラムでは次のような YARV 命令列にコンパイルされます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># YARV 命令列
+
+# a = nil
+0000 putnil
+0001 setlocal         a
+# while a をする準備
+0003 jump             13
+# b
+0005 putself
+0006 send             :b, 0, nil, 12, &lt;ic&gt;
+0012 pop
+# while a の条件式
+0013 getlocal         a
+0015 if               5
+0017 putnil
+0018 end</code></pre></figure>
+
+<h2 id="条件式の最適化">条件式の最適化</h2>
+
+<p>さて、分岐における条件式は、ちょっとの工夫で最適化が可能です。その方法を少し紹介してみます。</p>
+
+<h3 id="リテラルだけの条件式">リテラルだけの条件式</h3>
+
+<p>たとえば、if 1 という式があった場合 (あまり用途が考えられませんが)、その条件式は必ず真になります。while true という表現で無限ループを作るという例なら見かけるかな？　さて、そういう場合、if 命令などを利用するのは無意味なので、無条件ジャンプ命令になります。nil、false なら分岐しないので、そもそも if 命令自体が消えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ if 1
+   p :ok
+ end
+ if false
+   p :ng
+ end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># YARV 命令列
+ 	0000 putself
+0001 putobject        :ok
+0003 send             :p, 1, nil, 4, &lt;ic&gt;
+0009 pop
+0010 jump             22
+0012 putself
+0013 putobject        :ng
+0015 send             :p, 1, nil, 4, &lt;ic&gt;
+0021 end
+0022 putnil
+0023 end</code></pre></figure>
+
+<p>本当は、if false; BODY; end の場合、BODY をスキップするための jump 命令も省略できるのですが (不到達ブロックの除去)、面倒なのでやっていません。</p>
+
+<h3 id="否定の条件式">否定の条件式</h3>
+
+<p>たとえば if !expr という条件があった場合、これは unless expr と同じ意味になります。</p>
+
+<p>具体的な例としては、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ a = nil
+ if !a
+   p :ok
+ end</code></pre></figure>
+
+<p>という Ruby プログラムは</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># YARV 命令列
+0000 putnil
+0001 setlocal         a
+# if !a  &lt;= not 命令を省略
+0003 getlocal         a
+0005 unless           9
+0007 putnil
+0008 end
+0009 putself
+0010 putobject        :ok
+0012 send             :p, 1, nil, 4, &lt;ic&gt;
+0018 end</code></pre></figure>
+
+<p>となります。</p>
+
+<h3 id="and--or-が混ざる条件式">and / or が混ざる条件式</h3>
+
+<p>and 式、or 式は値を返す式ですが、条件文として使われる場合、その値は重要ではなくその結果の真偽値が問題になります。</p>
+
+<p>たとえば、素直に実装すると、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ if A and B
+   BODY
+ end</code></pre></figure>
+
+<p>は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列
+   &lt;A&gt;
+   dup
+   unless END_AND
+   &lt;B&gt;
+ END_AND:
+   unless END_IF
+   &lt;BODY&gt;
+ END_IF:</code></pre></figure>
+
+<p>となりますが、この命令列はちょっと冗長なので、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列改
+   &lt;A&gt;
+   unless END_IF
+   &lt;B&gt;
+   unless END_IF
+   &lt;BODY&gt;
+ END_IF:</code></pre></figure>
+
+<p>とすることが出来ます。</p>
+
+<p>具体的な例を出してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Ruby プログラム
+ a = b = nil
+ if a and b
+   p :ng
+ end
+ p :ok</code></pre></figure>
+
+<p>は、次のようにコンパイルされます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># YARV 命令列
+0000 putnil
+0001 dup
+0002 setlocal         b
+0004 setlocal         a
+# if a and b
+0006 getlocal         a
+0008 unless           24
+0010 getlocal         b
+0012 unless           24
+# p :ng
+0014 putself
+0015 putobject        :ng
+0017 send             :p, 1, nil, 4, &lt;ic&gt;
+0023 pop
+# p :ok
+0024 putself
+0025 putobject        :ok
+0027 send             :p, 1, nil, 4, &lt;ic&gt;
+0033 end</code></pre></figure>
+
+<h4 id="実現手法">実現手法</h4>
+
+<p>条件式に or や and はよく出てくるので、この最適化はしっかりとしたいところです。ちょっと面倒そうですが、少し問題を一般化すればこの最適化を簡単に行うことが出来ます。</p>
+
+<p>A and B という式が条件式だった場合、真なら then_label、偽なら else_label へ飛ぶということにすると、条件式を</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;A&gt;
+ unless else_label
+ &lt;B&gt;
+ unless else_label
+ jump then_label</code></pre></figure>
+
+<p>というプログラムを生成すればいいことになります。</p>
+
+<p>or の場合は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;A&gt;
+ if then_label
+ &lt;B&gt;
+ if then_label
+ jump else_label</code></pre></figure>
+
+<p>というプログラムを生成します。</p>
+
+<p>さて、これを</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> if A and B
+   BODY
+ end</code></pre></figure>
+
+<p>という式に適用してみると、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列
+   &lt;A&gt;
+   unless else_label
+   &lt;B&gt;
+   unless else_label
+   jump then_label      # (*)
+ then_label:
+   &lt;BODY&gt;
+ else_label:</code></pre></figure>
+
+<p>となります。(*) で示したところは次の命令に無条件ジャンプしろ、という命令なので、無駄ですね。というわけで、こいつは削ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # YARV 命令列
+   &lt;A&gt;
+   unless else_label
+   &lt;B&gt;
+   unless else_label
+   &lt;BODY&gt;
+ else_label:</code></pre></figure>
+
+<p>求める結果が得られました。</p>
+
+<p>ここでは and と or を引き合いに出していますが、not もこれで一般化できます。if not A というプログラムは</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   &lt;A&gt;
+   unless else_label:
+   jump then_label:
+ then_label:
+   &lt;BODY&gt;
+ else_label:</code></pre></figure>
+
+<p>というようになります。</p>
+
+<p>これを一般化したものは compile.c の compile_branch_condition() という関数にまとめられています。上述した「リテラルだけの条件式」は無条件ジャンプにする、という最適化もこの中にまとめています。</p>
+
+<p>compile_branch_condition() は引数として、条件文としてコンパイルしたいノード (node) と、もし条件が成立したときに飛ぶジャンプ先 (then_label)、そうでない場合に飛ぶジャンプ先 (else_label) を取ります。たとえば、if !expr というプログラムがあった場合、条件文としてコンパイルする式 (node) には !expr が指定されます。if !expr は unless expr と同じですから、この結果はcompile_branch_condition() を then_label、else_label 逆にして、node を expr として実行したものでいいということになります。not 命令を見事に省けましたね。まぁ、詳しくはソースを読んでください。</p>
+
+<h3 id="ピープホール最適化">ピープホール最適化</h3>
+
+<p>上述したように、「次の命令へジャンプする無条件ジャンプ命令」は、削ってもまったく問題ありません。というわけで、こういうのは削ることにします。こういう、コンパイル結果をちょこっとだけ見てちょこっとだけ命令列を変更する手法をピープホール (のぞき穴) 最適化といいます。</p>
+
+<p>他にも、分岐関連では次のようなピープホール最適化をしています。</p>
+
+<ul>
+  <li>無条件ジャンプする命令 (a) のジャンプ先が無条件ジャンプ命令 (b) だった場合、(a) のジャンプ先を (b) のジャンプ先に変更する。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   jump LABEL1  # (a)
+   ...
+ LABEL:
+   jump LABEL2  # (b)
+
+ =&gt; ピープホール最適化
+
+   jump LABEL2  # ジャンプ先を LABEL2 へ変更
+   ...
+ LABEL
+   jump LABEL2</code></pre></figure>
+
+<ul>
+  <li>無条件ジャンプ命令のジャンプ先が end 命令だった場合、ジャンプ命令を end 命令に置き換える[^6]。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   jump LABEL
+   ...
+ LABEL:
+   end
+
+ =&gt; ピープホール最適化
+
+   end       # jump 命令が end 命令に
+   ...
+ LABEL:
+   end</code></pre></figure>
+
+<ul>
+  <li>「if L1; jump L2; L1: …」という命令列は「unless L2」という命令列に置き換える。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   if L1
+   jump L2
+ L1:
+
+ =&gt; ピープホール最適化
+
+   unless L2 # if 命令と jump 命令を融合</code></pre></figure>
+
+<p>言葉だけだとちょっとわかりづらいですが、コードを見ると、ああ、なるほど、とわかるかと思います。</p>
+
+<p>ちなみに、これらの最適化は自分で考えたものもあるし、人から教えてもらったものもあるんですが、全てよく知られているものばかりです。調べるより自分で考えたほうが早い、というのもあるんで、あまり真面目に調べていないんですが。何か、これはいいぞ、という方法があったら教えてください。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は YARV における分岐について説明しました。</p>
+
+<p>このあたり、分岐のあたりは考えることがなくとても簡単で、特に最適化について考えやすい部分なので、ついつい色々と考えてしまうのですが、分岐命令を一つ減らしてもあんまり速くなんないんですよね。でも、楽しいので考えてしまう。</p>
+
+<p>さて次回はまだまだ命令セットの説明ですが、まだネタが思いつかないので未定です。えーと、お楽しみに。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>ささだこういち。学生。</p>
+
+<p>先日紙の雑誌に記事を書かせてもらったんだけど、るびまの記事執筆がいかに楽かを痛感しました。るびまでは識者のチェックが入るし、リンクが貼れるし、何より分量を気にしないでいい。紙の雑誌のほう、色々ご迷惑をおかけいたしました。まぁいいか (いや、よくないよ)。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-YarvManiacs.html">YARV Maniacs 【第 13 回】 事前コンパイルへの道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-YarvManiacs.html">YARV Maniacs 【第 11 回】 最近の YARV の事情</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0033/0033-YarvManiacs.html">YARV Maniacs 【第 10 回】 例外処理（初級編）</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-YarvManiacs.html">YARV Maniacs 【第 9 回】 特化命令</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-YarvManiacs.html">YARV Maniacs 【第 8 回】 命令列のシリアライズ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-YarvManiacs.html">YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-YarvManiacs.html">YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-YarvManiacs.html">YARV Maniacs 【第 5 回】 命令セット (2) リテラル・変数・定数</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-YarvManiacs.html">YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-YarvManiacs.html">YARV Maniacs 【第 3 回】 命令ディスパッチの高速化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-YarvManiacs.html">YARV Maniacs 【第 2 回】 VM ってなんだろう</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-YarvManiacs.html">YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<p>if a
+    if b
+      if <strong>tmp</strong> = c
+        <strong>tmp</strong>
+      end
+    end
+  end
+ではありません。返り値を考えてみてください。
+[^6]: 先ほどのプログラムで最後に p :ok と書いていたのは、end の置き換えを回避するためでした。</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>if という名前は失敗したなぁ、と思わなくもないです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>条件によって、指定先にジャンプするか、次の命令にジャンプ (つまり、普通の命令と同じ) するかを変える、という見方をすれば、条件によってジャンプ先を変えると言えるかも知れません。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>スコープをまたぐジャンプ命令は end と throw がありますが、面倒なので気にしないことにしましょう。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>厳密にはローカル変数定義のあたりが変わりますが、パース時 (構文木作成段階) に決定するので気にしないことにします。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+
+      <p><a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

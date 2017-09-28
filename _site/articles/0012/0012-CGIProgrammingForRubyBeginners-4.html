@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 4</title>
+  <meta name="description" content="前ページへ目次ページへ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0012/0012-CGIProgrammingForRubyBeginners-4.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 4</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0012/0012-CGIProgrammingForRubyBeginners-4.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 4" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0012/0012-CGIProgrammingForRubyBeginners-4.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0012/0012-CGIProgrammingForRubyBeginners-4.html" data-text="Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 4">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-3.html">前ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners.html">目次ページへ</a></p>
+
+<ul id="markdown-toc">
+  <li><a href="#一行掲示板" id="markdown-toc-一行掲示板">一行掲示板</a>    <ul>
+      <li><a href="#ファイルの扱い" id="markdown-toc-ファイルの扱い">ファイルの扱い</a>        <ul>
+          <li><a href="#ファイルの読み取り" id="markdown-toc-ファイルの読み取り">ファイルの読み取り</a></li>
+          <li><a href="#ファイルへの書き込み" id="markdown-toc-ファイルへの書き込み">ファイルへの書き込み</a></li>
+        </ul>
+      </li>
+      <li><a href="#一行掲示板の処理の流れ" id="markdown-toc-一行掲示板の処理の流れ">一行掲示板の処理の流れ</a></li>
+      <li><a href="#投稿データを保存する" id="markdown-toc-投稿データを保存する">投稿データを保存する</a>        <ul>
+          <li><a href="#フォムデータの取得" id="markdown-toc-フォムデータの取得">フォ―ムデータの取得</a></li>
+          <li><a href="#ファイルへの追加書き込み" id="markdown-toc-ファイルへの追加書き込み">ファイルへの追加書き込み</a></li>
+          <li><a href="#投稿した結果の表示" id="markdown-toc-投稿した結果の表示">投稿した結果の表示</a></li>
+          <li><a href="#実行してみよう" id="markdown-toc-実行してみよう">実行してみよう</a></li>
+        </ul>
+      </li>
+      <li><a href="#掲示板データを表示する" id="markdown-toc-掲示板データを表示する">掲示板データを表示する</a>        <ul>
+          <li><a href="#html-エスケープを行うタイミング" id="markdown-toc-html-エスケープを行うタイミング">HTML エスケープを行うタイミング</a></li>
+          <li><a href="#ヒアドキュメントと変数埋め込み" id="markdown-toc-ヒアドキュメントと変数埋め込み">ヒアドキュメントと変数埋め込み</a></li>
+        </ul>
+      </li>
+      <li><a href="#完成してるのこれ" id="markdown-toc-完成してるのこれ">完成してるの、これ？</a></li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#謝辞" id="markdown-toc-謝辞">謝辞</a></li>
+  <li><a href="#参考文献-というか-リンク" id="markdown-toc-参考文献-というか-リンク">参考文献 というか リンク</a></li>
+  <li><a href="#筆者について-というか-猫について" id="markdown-toc-筆者について-というか-猫について">筆者について というか 猫について</a></li>
+</ul>
+
+<h2 id="一行掲示板">一行掲示板</h2>
+
+<p>そろそろ今号最後の CGI プログラムにとりかかりましょう。
+ここでは一行掲示板を作ります。</p>
+
+<p>今まではフォームに書かれた内容をすぐに表示していましたが、
+今回はそのデータ (書き込み内容) をいったんファイルに保存し、
+後でそのファイルの内容を HTML として表示させてみます。
+掲示板の中にはこの形態をとっているものがあり、
+本格的に掲示板を作る時に参考になります。</p>
+
+<h3 id="ファイルの扱い">ファイルの扱い</h3>
+
+<p>さて、皆さんまだファイルの中身を扱う方法を知りませんね。
+一行掲示板を作る前に先にファイルの扱い方を覚えましょう。</p>
+
+<h4 id="ファイルの読み取り">ファイルの読み取り</h4>
+
+<p>最初はファイルの中身を読んでみます。
+下に示す message.txt というファイルの中身を
+表示するプログラムを作ってみましょう。
+ファイルの読み込みには色々な方法があるのですが、
+ここでは一番シンプルな例を紹介します。</p>
+
+<p>C:\rubima012-cgi\message.txt
+<img src="/images/0012-CGIProgrammingForRubyBeginners-4/message.txt" alt="message.txt" /></p>
+
+<p>file_read.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"C:/rubima012-cgi/message.txt"</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+<span class="nb">print</span> <span class="n">s</span>
+
+
+</code></pre>
+</div>
+
+<p>file_read.rb は C:\rubima012-cgi\message.txt の中身を読み込んで
+そのデータを表示させます。
+ファイルの中身を取得するには
+<strong>open という命令にファイルのパス名を指定します</strong>。
+ここでは message.txt の中身を見たいわけですから、
+open のパラメーターに “C:/rubima012-cgi/message.txt” を指定します。</p>
+
+<p>open のパラメーターは「\」を「/」に変えただけで
+Windows のエクスプローラーのパス名に使われている値と同じですね。
+「\」を「/」に変えている理由は
+「”」で作った文字列の「\」には色々な意味があり、
+「”」で作った文字列で「\」を使おうとすると色々と面倒だからです。</p>
+
+<p>ちなみに Windows ではパス名に「\」と「/」の両方を使うことが出来ます。
+嘘だと思う人はエクスプローラーで試してみて下さい。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-4/path_windows.jpg" alt="path_windows.jpg" /></p>
+
+<p>open の処理はしばしば「ファイルを開く」と言われます。
+open は英語で「開く」という意味ですから、
+ファイルを読むために open 命令を使うというのは分かりやすいですね。
+open の結果は File データになります。
+File データと言うと難しい感じがしますが、
+ここでは <strong>File データに read 命令を実行してもらえばファイルの中身をすべて読み取れる</strong> 
+ということを覚えれば OK です。
+要はそれぞれのデータ (今なら File データ) が
+何をしてくれるのかさえ把握しておけば良いわけです。</p>
+
+<p>3 行目が実行された時点で File データには
+変数 f の目印が付いています。
+4 行目で f.read とすると message.txt の中身を全部読み取ってくれます。
+また、その行では read 命令の結果に s という変数で目印を付けています。</p>
+
+<p>5 行目では File データに close 命令を実行して開いたファイルを閉じています。
+<strong>開いたファイルは使い終わったら、閉じておきましょう</strong>。</p>
+
+<p>6 行目の実行前にはファイルの中身がすでに読み込まれていて、
+そのデータには変数 s の目印が付いています。 
+ここまできたら後は print でデータを表示するだけです。</p>
+
+<p>ところで、File データの read 命令で読み取ってもらった
+データはどんな種類のデータなのでしょうか？
+答えは文字列です。
+他の文字列と同様、後から文字列をつなげたり、split で分解したり出来ます。
+興味のある人は試してみて下さい。</p>
+
+<h4 id="ファイルへの書き込み">ファイルへの書き込み</h4>
+
+<p>次はファイルにデータを書き込こんでみます。
+<strong>書き込む時には File データの write 命令を使います</strong>。
+write 命令を使う時には 1 つお約束があって、
+書き込み用の File データを作らないと write 命令を実行してもらえません。
+使い分けが面倒だというのは良く分かりますが、
+そういうお約束なので諦めて従いましょう。</p>
+
+<p>ここまでで読み込み用、書き込み用の File データが出てきました。
+File データにはいくつかの種類があって、いずれも open 命令で作ることが出来ます。
+File データの種類を指定したい時には open 命令の 2 つ目のパラメーターを使います。</p>
+
+<p>では、実際のプログラムを見てみましょう。
+file_write.rb は C:\rubima012-cgi\message2.txt に hogehoge
+という内容を書き込むプログラムです。</p>
+
+<p>file_write.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"C:/rubima012-cgi/message2.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s2">"hogehoge"</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+
+</code></pre>
+</div>
+
+<p>file_write.rb では open(“xxxxx”, “w”) のように
+open 命令にパラメーターが 2 つ付いています。
+Ruby には複数のパラメーターを使う命令がたくさんあり、
+それぞれのパラメーターは「,」で区切られます。
+例えば、上の open 命令なら、1 つ目のパラメーターには
+書き込み先のファイルのパス名を指定しています。
+その後ろには「,」が続き、
+さらにその後ろには 2 つ目のパラメーターの “w” が続きます。
+<strong>open の場合、2 つ目のパラメーターの “w” には書き込み用という意味があり、open の結果は書き込み用 File データになります</strong>。</p>
+
+<p>file_write.rb の 3 行目では書き込み用の File データを作り、
+4 行目で File データの write 命令で “hogehoge” という文字列を
+C:\rubima012-cgi\message2.txt に書き込んでいます。
+書き込みが終わったら、file_read.rb と同様に close 命令でファイルを閉じます。
+書き込みの時も忘れずにファイルを閉じましょう。</p>
+
+<p>最後に注意点を 1 つ。
+<strong>書き込み用に File データを作る時は open の一つ目のパラメーターに指定したファイルは存在しない、もしくは、必要の無いファイルだということを確認しましょう</strong>。
+大事なファイルを open で書き込み用に開くと、
+それだけで元の内容は消えてしまいます。
+間違っても大事なファイルを open で書き込み用に
+開いてはいけません。</p>
+
+<h3 id="一行掲示板の処理の流れ">一行掲示板の処理の流れ</h3>
+
+<p>ファイルへの保存方法が分かったところで、
+一行掲示板の処理の流れを簡単に予習しておきましょう。</p>
+
+<p>まずは掲示板に投稿するためのフォームです。
+名前を bbs.html とします。
+ここに投稿する内容を書きます。</p>
+
+<p>bbs.html のフォームに書かれた内容は
+update.rb という CGI プログラムによって処理されて、
+投稿データとして保存されます。
+保存先のファイル名は bbs.dat としましょう。
+フォームにはテキストフィールドしかないため
+1 回の投稿では 1 行しか投稿データは増えません。</p>
+
+<p>最後は bbs.rb です。これは bbs.dat に書かれた
+データを読み込んで、そのデータを元に掲示板を表示します。</p>
+
+<p>全体の流れを図にすると、下図のようになります。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-4/bbs_flow.PNG" alt="bbs_flow.PNG" /></p>
+
+<h3 id="投稿データを保存する">投稿データを保存する</h3>
+
+<p>投稿データである bbs.dat が無いと、
+掲示板を表示出来ないので、
+先に投稿データを保存する update.rb を作ります。
+投稿用の bbs.html と update.rb は下のようになります。</p>
+
+<p>bbs.html 
+<img src="/images/0012-CGIProgrammingForRubyBeginners-4/bbs.html" alt="bbs.html" /></p>
+
+<p>update.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">require</span> <span class="s1">'cgi'</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s2">"t"</span><span class="p">]</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"bbs.dat"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> 
+<span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">message</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+
+<span class="nb">print</span> <span class="s2">"Content-type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+
+<span class="nb">print</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS"&gt;
+  &lt;title&gt;form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+書き込みありがとうございました。
+&lt;a href="bbs.rb"&gt;一行掲示板へ&lt;/a&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</span><span class="no">EOF</span>
+
+</code></pre>
+</div>
+
+<p>bbs.html の説明は必要ないでしょう。
+今まで使ってきた HTML フォームとほとんど一緒です。
+update.rb は bar_echo_improved2.rb が元になっていますが、
+いくつか修正点があります。</p>
+
+<h4 id="フォムデータの取得">フォ―ムデータの取得</h4>
+
+<p>まずは 3-6 行を見てみましょう。
+ここでは bbs.html のテキストフィールドに
+入力されたデータを取得しています。
+取得の処理自体は bar_echo_improved2.rb と同じですが、
+bar_echo_improved2.rb の時には c[“t”] に escapeHTML を使って 
+HTML エスケープを行いましたね。
+一行掲示板では HTML エスケープを bbs.rb の時に行うので、
+update.rb では HTML エスケープ を省略しています。</p>
+
+<h4 id="ファイルへの追加書き込み">ファイルへの追加書き込み</h4>
+
+<p>次に 8-10 行を見てみましょう。
+ここでは bbs.dat への書き込みを行っています。
+最初に open を使って File データを作っていますが、
+ちょっと見慣れない形です。
+もう一度 open のパラメーターについて説明しておきましょう。</p>
+
+<p>1 つ目は bbs.dat です。
+1 つ目のパラメーターにファイルのパス名を指定するのは今までと同じです。
+しかし、これまでと違ってパス名には「/」が含まれていません。
+この場合、同じフォルダーにあるファイルを意味します。
+つまり、open(“bbs.dat”) は update.rb と同じフォルダーに
+ある bbs.dat を開こうとするわけです。</p>
+
+<p>2 つ目は “a” です。
+これは__ファイルへデータを追加する時に使うパラメーターです__。
+open(“bbs.dat”, “w”) とすると、
+その時点で bbs.dat の内容は消されてしまいます。
+update.rb は受け取った投稿データを bbs.dat に追加したいわけですから、
+bbs.dat の前のデータが消えるのは困ります。
+そこで、open の 2 つ目のパラメーターに “a” を指定して
+追加用の File データを作ります。
+追加用に作られた File データで write 命令を実行すると、
+ファイルの内容の末尾にデータが書き足されます。</p>
+
+<p>9 行目ではテキストフィールドの内容に改行を加えた上で、
+そのデータを write 命令でファイルに追加します。
+この時、write 命令の括弧の中の内容が実行されてから、
+write 命令が実行されます。順番を間違えないで下さい。
+この場合なら 変数 message の文字列に改行 “\n” がくっついてから、
+write が実行されます。
+例えば、テキストフィールドに書かれたデータが “dddd” なら
+変数 message の値は “dddd” となり、
+それに “\n” がくっ付いて、”dddd\n” となってから、
+ファイルへの追加書き込みが行われます。</p>
+
+<h4 id="投稿した結果の表示">投稿した結果の表示</h4>
+
+<p>書き込みが済めば、update.rb がやる事はほとんどありません。
+ページの読者の人に書き込みが済んだよ というメッセージを出し、
+掲示板の URL へのリンクを表示させます。</p>
+
+<p>12 行目は CGI プログラムを作る時のおまじないでしたね。
+その後の 14〜29 行に「print &lt;&lt;EOF」と HTML と「EOF」が並んでいますね。
+この部分は 15〜28 行に書かれた「EOF」までの内容を
+print で表示してねという意味です。 
+<strong>「&lt;&lt;EOF」「EOF」までの部分が文字列になっていると思えば良いでしょう</strong>。
+同じプログラムを「”」で作ることも出来ますが、
+HTML 内に「”」が使われているので、色々と面倒です。
+そのため「&lt;&lt;EOF」「EOF」を使います。</p>
+
+<p>この機能は__ヒアドキュメント__と言われます。
+文字列を作る時に「”」がいっぱい含まれていたり、
+文字列がすごく長かったりする場合は
+ヒアドキュメントで文字列を作る方が楽になります。</p>
+
+<p>ヒアドキュメントで文字列を作る時は
+「EOF」の前に一文字も入れてはいけません。
+例えば、「EOF」の前に空白を入れてしまうと、
+プログラムを実行する時に Ruby に文句を言われます。
+そういうミスをして悲しい思いをした人は
+全国 (世界中？) にたくさんいるはずです
+(少なくとも筆者は悲しい思いをしたことがあります)。</p>
+
+<p>ヒアドキュメントを使うのが嫌だという人は「”」でも書けるので、
+update.rb を「”」を使って書き直しみて下さい。
+これはこれで悲しい思いをするので、お勧めはしませんが…。</p>
+
+<h4 id="実行してみよう">実行してみよう</h4>
+
+<p>では、実際に書き込んでみましょう。
+<a href="http://localhost:8080/bbs.html">http://localhost:8080/bbs.html</a> にアクセスし、
+書き込んでみて下さい。
+ちゃんと書き込み完了のページが表示されたでしょうか？
+投稿データの書き込みが出来たなら、
+次は保存した投稿データを掲示板として表示させてみます。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-4/update_bbs.jpg" alt="update_bbs.jpg" /></p>
+
+<h3 id="掲示板データを表示する">掲示板データを表示する</h3>
+
+<p>bbs.html と update.rb で書き込みが出来るようになりましたから、
+次は bbs.rb で投稿データを表示させてみましょう。</p>
+
+<p>bbs.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">require</span> <span class="s1">'cgi'</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"bbs.dat"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> 
+<span class="n">s</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escapeHTML</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">)</span>
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+
+<span class="nb">print</span> <span class="s2">"Content-type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+
+<span class="nb">print</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS"&gt;
+  &lt;title&gt;form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;pre&gt;
+</span><span class="si">#{</span><span class="n">s</span><span class="si">}</span><span class="sh">
+&lt;/pre&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</span><span class="no">EOF</span>
+
+</code></pre>
+</div>
+
+<h4 id="html-エスケープを行うタイミング">HTML エスケープを行うタイミング</h4>
+
+<p>bbs.rb では 3-5 行で投稿データを一括して読み込んで、
+そのデータを escapeHTML を使って HTML エスケープし、
+変数 s の目印を付けます。
+HTML エスケープを update.rb で行うか
+bbs.rb で行うかは人の考えによって違いますが、
+特別な理由が無い限り HTML エスケープはデータを表示する時に行います。
+データがどう使われるかは、
+データを保存する時には分からないことが多いからです。
+今回の場合、データを表示するのは bbs.rb なので、
+HTML エスケープを bbs.rb で行います。</p>
+
+<p>HTML エスケープした後で投稿データをファイルに保存してしまうと、
+同じデータを使って</p>
+
+<ul>
+  <li>メールで送る</li>
+  <li>HTML のタイトルにする</li>
+  <li>URL にしてリンクする</li>
+  <li>RSS に整形する</li>
+</ul>
+
+<p>といった用途に使用する時、1 度 HTML エスケープを解除
+しなければならないのでとても面倒です。
+エスケープする前に保存しておけば手間が少し省けます。</p>
+
+<h4 id="ヒアドキュメントと変数埋め込み">ヒアドキュメントと変数埋め込み</h4>
+
+<p>HTML エスケープされた投稿データはヒアドキュメントの文字列で使われます。
+20 行目にさりげなく #{s} が含まれていて、
+投稿データが変数埋め込みによって表示されます。</p>
+
+<h3 id="完成してるのこれ">完成してるの、これ？</h3>
+
+<p>これで一行掲示板は完成です。
+<a href="http://localhost:8080/bbs.rb">http://localhost:8080/bbs.rb</a> にアクセスしてみて下さい。
+ちゃんと書き込みは出来ますし、
+投稿されたデータも表示されますね。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-4/bbs.jpg" alt="bbs.jpg" /></p>
+
+<p>でも、この一行掲示板には色々な問題があります。
+ちょっと試しただけでも</p>
+
+<ul>
+  <li>過去に投稿されたデータが先頭に来る</li>
+  <li>書き込みをすればするほど表示される HTML が長くなる</li>
+  <li>デザインがしょぼしょぼ</li>
+  <li>投稿データを Windows のメモ帳で開けない</li>
+</ul>
+
+<p>などなどの問題が沸いてきます。
+これ以外にも問題がいっぱいあるのですが、
+こうした問題への対応については
+次号以降にゆずりたいと思います。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今号では HTML フォームを使った CGI プログラムの紹介をしました。
+HTML フォームは CGI プログラムの重要なポイントです。
+小さなプログラムで良いので、
+自分で HTML フォームを使った CGI プログラムを作ってみて下さい。</p>
+
+<p>前号で CGI プログラムを設置してみますと書きましたが、
+今号での紹介は出来ませんでした。
+申し訳ありません。CGI プログラムの設置は次号以降にしたいと思います。</p>
+
+<h2 id="謝辞">謝辞</h2>
+
+<p>この記事をレビューして下さった方、
+貴重なご意見をありがとうございました。
+下にアルファベット順にお名前を掲載させて頂きます。</p>
+
+<ul>
+  <li>hatamoto さん</li>
+  <li>小波秀雄 さん</li>
+  <li>徳冨 さん</li>
+  <li>その他、レビューしてくださった方々</li>
+</ul>
+
+<p>編集者の方にも記事の編集や校正で大変お世話になりました。
+本当にありがとうございました。</p>
+
+<h2 id="参考文献-というか-リンク">参考文献 というか リンク</h2>
+
+<p>HTML フォーム</p>
+
+<ul>
+  <li><a href="http://www.kanzaki.com/docs/html/htminfo31.html">ごく簡単なHTMLの説明 - 基本的なフォーム </a> ちょっと難しいですが、今号で曖昧に説明されていたフォームが明確に理解されると思います。</li>
+  <li><a href="http://www.asahi-net.or.jp/~sd5a-ucd/rec-html401j/interact/forms.html">HTML 4.01仕様書 - 17 フォーム </a> HTML のフォームについて分からないことがあれば、まずは仕様書を読むべきなのですが…。</li>
+</ul>
+
+<p>CGI の枠組みについての文章</p>
+
+<ul>
+  <li><a href="http://suika.fam.cx/~wakaba/-temp/wiki/wiki?RFC%203875">The Common Gateway Interface (CGI) Version 1.1 RFC3875 日本語訳 </a></li>
+  <li><a href="http://www.ietf.org/rfc/rfc3875">The Common Gateway Interface (CGI) Version 1.1 RFC3875 </a></li>
+  <li><a href="http://www.nilab.info/docs/cgi/draft-coar-cgi-v11-03-clean-jp.html">The WWW Common Gateway Interface Version 1.1 日本語訳 </a></li>
+  <li><a href="http://cgi-spec.golux.com/draft-coar-cgi-v11-03-clean.html">The WWW Common Gateway Interface Version 1.1 </a></li>
+</ul>
+
+<p>Ruby</p>
+
+<ul>
+  <li><a href="http://www.ruby-lang.org/ja/">オブジェクト指向スクリプト言語 Ruby</a> Ruby の 本家サイトです。</li>
+  <li><a href="https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md">FirstStepRuby</a> Ruby を習い始める時の情報がまとまっています。</li>
+  <li><a href="http://www.rubycgi.org/cgi_explanation/index.htm">Ruby で CGI を作ろう</a>  Ruby で CGI プログラムを作ろうというサイトです。対象が Ruby-1.6.x であるため内容が古くなってきています。</li>
+</ul>
+
+<h2 id="筆者について-というか-猫について">筆者について というか 猫について</h2>
+
+<p>今回は雄猫を中心に写真を撮ってみました。
+寝ている姿が中心ですが、
+凛と立っている姿もなかなか良い感じです。</p>
+
+<p>デジカメ撮影の際にフラッシュをたくと瞳が小さくなるので、
+フラッシュをたかないようにしているのですが、
+そうすると今度は全体が暗くなってしまいます。
+まあ、趣味で撮っているだけなので、
+細かいところまであまり気にしていないのですが…。</p>
+
+<p>ところで、この記事を読んでいる人の中でナローバンドの人はいますか？
+この連載はスクリーンショットが多くて、
+ナローバンドの人にはちょっとストレスが溜まると思います。
+実は筆者の下宿は 64kbps で、編集の時にストレスが溜まっています。
+早くブロードバンド環境にしたいけど、もうすぐ引っ越すしなあ…。</p>
+
+<p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-3.html">前ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners.html">目次ページへ</a></p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

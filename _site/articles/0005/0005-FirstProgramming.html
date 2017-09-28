@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ではじめるプログラミング 【最終回】</title>
+  <meta name="description" content="著者：だん">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0005/0005-FirstProgramming.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby ではじめるプログラミング 【最終回】</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0005/0005-FirstProgramming.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ではじめるプログラミング 【最終回】" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0005/0005-FirstProgramming.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0005/0005-FirstProgramming.html" data-text="Ruby ではじめるプログラミング 【最終回】">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：だん</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>今回は最終回です。
+前回 (<a href="/articles/0004/0004-FirstProgramming.html">Ruby ではじめるプログラミング 【第 3 回】</a>) 紹介したプログラムを改造してグラフィカルなプログラミングに挑戦します。</p>
+
+<h2 id="ビジュアルノベル">ビジュアルノベル</h2>
+<p>: <img src="/images/0005-FirstProgramming/ss02.jpg" alt="ss02.jpg" /></p>
+
+<p>前回までは、コマンドプロンプトで動作するプログラムだけを扱ってきました。
+今回は、前回までに作成してきたゲームブックプログラムをグラフィカルにして、ビジュアルノベルを作ってみます。</p>
+
+<p>グラフィックを使ったプログラムも、これまでのコマンドプロンプトで動かしてきたプログラムと、本質的に変わらないというのを知ってもらうことが、今回のテーマです。</p>
+
+<h2 id="動かしてみよう">動かしてみよう</h2>
+
+<p>まず <a href="/images/0005-FirstProgramming/visualnovel.zip">visualnovel.zip</a> をダウンロードしてください。
+ビジュアルノベルのサンプルプログラムと画像データが入っています。</p>
+
+<p>このサンプルプログラムを動かすには Ruby/Tk が動作する環境が必要です。Ruby/Tk とは、Ruby で GUI (グラフィカルユーザーインターフェース) を扱うためのライブラリで、Ruby に標準添付されています。</p>
+
+<p><a href="/articles/0002/0002-FirstProgramming.html">Ruby ではじめるプログラミング 第 1 回</a>で紹介した手順で <a href="http://rubyforge.org/projects/rubyinstaller/">One-Click Ruby Installer</a> を使って Ruby をインストールした場合は、既に Ruby/Tk が使える状態になっています。これまでと同じ操作でプログラムを起動することができます。</p>
+
+<p>作業ディレクトリにダウンロードしたファイルを展開してコマンドプロンプトで次のように入力してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby visualnovel.rb</code></pre></figure>
+
+<p>次のような画面が表示されれば OK です。画面下に表示されている選択肢をマウスでクリックすると場面が切り替わります。</p>
+
+<p><em><img src="/images/0005-FirstProgramming/ss00.jpg" alt="ss00.jpg" /> <img src="/images/0005-FirstProgramming/ss01.jpg" alt="ss01.jpg" /></em></p>
+
+<h2 id="ファイル構成">ファイル構成</h2>
+
+<p>visualnovel.zip には 3 つのソースファイルがあります。</p>
+
+<ul>
+  <li>guiutil.rb … GUI を使うためのユーティリティ</li>
+  <li><a href="/images/0005-FirstProgramming/scenario.rb">scenario.rb</a> … シナリオデータ</li>
+  <li><a href="/images/0005-FirstProgramming/visualnovel.rb">visualnovel.rb</a> … ゲームプログラム本体</li>
+</ul>
+
+<h3 id="guiutilrb">guiutil.rb</h3>
+
+<p>guiutil.rb ではグラフィックを扱うためのいくつかのメソッドを定義しています。
+guiutil.rb で定義されているメソッドの使い方は後ほど解説します。
+中身については特に解説しません。</p>
+
+<h3 id="scenariorb">scenario.rb</h3>
+
+<p>シナリオデータを記述するソースファイルです。このファイルを書き換えることでシナリオをカスタマイズすることができます。</p>
+
+<h3 id="visualnovelrb">visualnovel.rb</h3>
+
+<p>ビジュアルノベルプログラムの本体となるソースファイルです。
+このプログラムが guiutil.rb と scenario.rb を利用する形になっています。</p>
+
+<h2 id="シナリオテーブルのデータ構造">シナリオテーブルのデータ構造</h2>
+
+<p>scenario.rb では前回紹介したハッシュと配列を使ってシナリオのデータを定義しています。このシナリオテーブルのデータ構造を理解することがこのプログラムを理解する最大のポイントです。</p>
+
+<p>このシナリオデータは前回ゲームブックプログラムで紹介したハッシュを使ったテーブルデータを少し改造したものです。</p>
+
+<p>scenario.rb は次のようになっています。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># シナリオテーブル</span>
+<span class="no">ScenarioTbl</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'opening'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">'bg00.gif'</span><span class="p">,</span> <span class="s2">"嵐で知らないところに流されちゃった…</span><span class="se">\n</span><span class="s2">どっちへ行けばいいのかなぁ…。"</span><span class="p">,],</span>
+    <span class="p">[</span><span class="s1">'fault-a'</span><span class="p">,</span>  <span class="s2">"右に行ってみる"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'fault-b'</span><span class="p">,</span>  <span class="s2">"左に行ってみる"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'depth'</span><span class="p">,</span>    <span class="s2">"もっと深く潜ってみる"</span><span class="p">],</span>
+  <span class="p">],</span>
+  <span class="s1">'fault-a'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">'bg01.gif'</span><span class="p">,</span> <span class="s2">"水が冷たくなってきた。こっちじゃないみたい…。"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'opening'</span><span class="p">,</span>  <span class="s2">"戻る"</span><span class="p">],</span>
+  <span class="p">],</span>
+  <span class="s1">'fault-b'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">'bg02.gif'</span><span class="p">,</span> <span class="s2">"うわっ。鰯の大群だ！！"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'opening'</span><span class="p">,</span>  <span class="s2">"戻る"</span><span class="p">],</span>
+  <span class="p">],</span>
+  <span class="s1">'depth'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">'bg03.gif'</span><span class="p">,</span> <span class="s2">"あ、何かいる。どうしよう…。"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'depth2'</span><span class="p">,</span>   <span class="s2">"近づいてみる"</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">'opening'</span><span class="p">,</span>  <span class="s2">"怖いから戻る"</span><span class="p">],</span>
+  <span class="p">],</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p>ScenarioTbl はハッシュです。次のように書くとわかりやすいでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ScenarioTbl = {
+  'opening' =&gt; opening のシーンデータ ,
+  'fault-a' =&gt; fault-a のシーンデータ ,
+  'fault-b' =&gt; fault-b のシーンデータ ,
+  'depth'   =&gt; depth のシーンデータ ,
+}</code></pre></figure>
+
+<p>ScenarioTbl に対してシーン名のキー (文字列) を与えるとシーンデータを取り出すことができます。</p>
+
+<p>つまり、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">scene_data = ScenarioTbl['opening']</code></pre></figure>
+
+<p>と書くと scene_data に「 opening のシーンデータ」を代入することができます。</p>
+
+<p>次に scene_data の中身を詳しく見ていきましょう。</p>
+
+<h2 id="シーンデータのデータ構造">シーンデータのデータ構造</h2>
+
+<h3 id="シーンデータは配列">シーンデータは配列</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">scene_data = ScenarioTbl['opening']</code></pre></figure>
+
+<p>のようにして ScenarioTbl から取り出すことのできるシーンデータは次のような配列です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[
+  背景とメッセージデータ ,
+  選択肢データ 1,
+  選択肢データ 2,
+  選択肢データ 3,
+]</code></pre></figure>
+
+<p>次のようにすれば ScenarioTbl から「背景とメッセージデータ」にアクセスすることができます。(ただし、アクセスするだけで実際には何も処理は行っていません。)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># シーンデータを scene_data に代入
+scene_data = ScenarioTbl['opening']
+scene_data[0]             # 背景とメッセージデータにアクセス
+
+ScenarioTbl['opening'][0] # このようにダイレクトにアクセスすることも可能</code></pre></figure>
+
+<h3 id="背景とメッセージデータも配列">背景とメッセージデータも配列</h3>
+
+<p>先ほど取り出した「背景とメッセージデータ」の中身も配列です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[背景画像のファイル名, シーンメッセージ]</code></pre></figure>
+
+<p>ここまで理解すれば実際に使用するデータを取り出すことができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">scene_data = ScenarioTbl['opening']
+p scene_data[0][0] # 背景画像のファイル名を表示
+p scene_data[0][1] # シーンメッセージを表示</code></pre></figure>
+
+<h3 id="選択肢データも配列">選択肢データも配列</h3>
+
+<p>選択肢データにアクセスするには次のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">scene_data = ScenarioTbl['opening']
+scene_data[1] # 選択肢データ 1 にアクセス
+scene_data[2] # 選択肢データ 2 にアクセス
+scene_data[3] # 選択肢データ 3 にアクセス</code></pre></figure>
+
+<p>選択肢データの中身も次のようなデータの配列です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[ジャンプ先シーン ID, 選択肢メッセージ]</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">scene_data = ScenarioTbl['opening']
+p scene_data[1][0] # 選択肢 1 のジャンプ先シーン ID を表示
+p scene_data[1][1] # 選択肢 1 のメッセージを表示</code></pre></figure>
+
+<h3 id="まとめ">まとめ</h3>
+
+<p>つまりひとつのシーンデータは次のような 2 次元配列です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># ひとつのシーンデータ
+[
+  [背景画像のファイル名, シーンメッセージ],
+  [ジャンプ先シーン ID, 選択肢メッセージ],
+  [ジャンプ先シーン ID, 選択肢メッセージ],
+  [ジャンプ先シーン ID, 選択肢メッセージ],
+]</code></pre></figure>
+
+<p>このシーンデータが ScenarioTbl の値になっているわけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># シナリオデータ
+ScenarioTbl = {
+  シーン ID =&gt; シーンデータ ,
+  シーン ID =&gt; シーンデータ ,
+  ・
+  ・
+  ・
+}</code></pre></figure>
+
+<p>ScenarioTbl が理解できれば今回のビジュアルノベルプログラムを理解することは容易です。
+ではこのテーブルデータを使った実際の処理を見ていくことにしましょう。</p>
+
+<h2 id="visualnovelrb-1">visualnovel.rb</h2>
+
+<p>このスクリプトは長いのでプログラム中に多くのコメントをつけました。とは言ってもコメントも含めて 120 行ほどのプログラムです。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="nb">require</span> <span class="s2">"guiutil.rb"</span>
+ <span class="nb">require</span> <span class="s2">"scenario.rb"</span>
+ 
+ <span class="c1">#--------------------------------------</span>
+ <span class="c1">#    初期化処理</span>
+ <span class="c1">#--------------------------------------</span>
+ <span class="k">def</span> <span class="nf">init</span>
+   <span class="c1"># ウィンドウの作成</span>
+   <span class="n">create_screen</span> <span class="s2">"Visual Novel"</span><span class="p">,</span> <span class="mi">480</span><span class="p">,</span> <span class="mi">360</span>
+   <span class="c1"># GUI システム開始</span>
+   <span class="n">start_gui</span>
+ 
+   <span class="c1"># グローバル変数の初期化</span>
+   <span class="vg">$font_size</span> <span class="o">=</span> <span class="mi">12</span>    <span class="c1"># フォントの表示サイズ</span>
+   <span class="vg">$scene</span> <span class="o">=</span> <span class="s1">'opening'</span> <span class="c1"># 場面 ID</span>
+   <span class="vg">$fonts</span> <span class="o">=</span> <span class="p">[]</span>        <span class="c1"># フォントオブジェクト格納用の配列</span>
+   <span class="vg">$bg_image</span> <span class="o">=</span> <span class="kp">nil</span>    <span class="c1"># 背景オブジェクトを代入する変数</span>
+   <span class="vg">$quit_button</span> <span class="o">=</span> <span class="kp">nil</span> <span class="c1"># 終了ボタンオブジェクトを代入する変数</span>
+ <span class="k">end</span>
+ 
+ <span class="c1">#--------------------------------------</span>
+ <span class="c1">#    メインループ</span>
+ <span class="c1">#--------------------------------------</span>
+ <span class="k">def</span> <span class="nf">mainloop</span><span class="p">(</span><span class="n">tbl</span><span class="p">)</span>
+   <span class="k">while</span> <span class="kp">true</span>
+     <span class="c1"># シーンデータ取り出し</span>
+     <span class="n">scene_data</span> <span class="o">=</span> <span class="n">tbl</span><span class="p">[</span><span class="vg">$scene</span><span class="p">]</span>
+ 
+     <span class="c1"># 背景画像が指定されていれば表示する</span>
+     <span class="n">bg_fname</span> <span class="o">=</span> <span class="n">scene_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+     <span class="k">if</span> <span class="n">bg_fname</span>
+       <span class="vg">$bg_image</span> <span class="o">=</span> <span class="n">create_img</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bg_fname</span>
+     <span class="k">end</span>
+
+     <span class="c1"># 終了ボタンの表示</span>
+     <span class="vg">$quit_button</span> <span class="o">=</span> <span class="n">create_img_button</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">438</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="s2">"quiticon0.gif"</span><span class="p">,</span> <span class="s2">"quiticon1.gif"</span>
+ 
+     <span class="c1"># メッセージの表示</span>
+     <span class="n">message</span> <span class="o">=</span> <span class="n">scene_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+     <span class="n">font</span> <span class="o">=</span> <span class="n">create_font</span> <span class="n">message</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span><span class="mi">218</span><span class="p">,</span> <span class="vg">$font_size</span>
+     <span class="vg">$fonts</span><span class="p">.</span><span class="nf">push</span> <span class="n">font</span>
+ 
+     <span class="c1"># 選択肢メッセージの表示</span>
+     <span class="p">(</span><span class="n">scene_data</span><span class="p">.</span><span class="nf">size</span><span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+       <span class="nb">sleep</span> <span class="mi">0</span><span class="o">.</span><span class="mi">2</span>
+       <span class="n">idx</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+       <span class="n">ch_msg</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">idx</span><span class="si">}</span><span class="s2">. </span><span class="si">#{</span><span class="n">scene_data</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+       <span class="n">font</span> <span class="o">=</span> <span class="n">create_font_button</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ch_msg</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">270</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="mi">24</span><span class="p">,</span> <span class="vg">$font_size</span>
+       <span class="vg">$fonts</span><span class="p">.</span><span class="nf">push</span> <span class="n">font</span>
+     <span class="k">end</span>
+
+     <span class="c1"># ボタンの入力待ち</span>
+     <span class="n">input_value</span> <span class="o">=</span> <span class="n">get_button_id</span>
+     <span class="c1"># ボタン ID が 0 なら終了</span>
+     <span class="k">if</span> <span class="n">input_value</span> <span class="o">==</span> <span class="mi">0</span>
+       <span class="n">finish</span>
+     <span class="k">end</span>
+     <span class="c1"># 選択されたフォントを水色にする</span>
+     <span class="vg">$fonts</span><span class="p">[</span><span class="n">input_value</span><span class="p">].</span><span class="nf">color</span> <span class="s2">"#88FFFF"</span>
+ 
+     <span class="c1"># 次のシーン ID を取り出す</span>
+     <span class="vg">$scene</span> <span class="o">=</span> <span class="n">scene_data</span><span class="p">[</span><span class="n">input_value</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+     <span class="c1"># nil なら終了</span>
+     <span class="k">if</span> <span class="vg">$scene</span> <span class="o">==</span> <span class="kp">nil</span>
+       <span class="n">finish</span>
+     <span class="k">end</span>
+
+     <span class="c1"># 画面を黒い四角で塗りつぶす</span>
+     <span class="n">block_mask</span>
+
+     <span class="c1"># 表示物を削除</span>
+     <span class="n">delete_items</span>
+   <span class="k">end</span>
+ <span class="k">end</span>
+ 
+ <span class="c1">#--------------------------------------</span>
+ <span class="c1">#    表示物の削除</span>
+ <span class="c1">#--------------------------------------</span>
+ <span class="k">def</span> <span class="nf">delete_items2</span><span class="p">()</span>
+   <span class="c1"># 表示中の終了ボタンを削除</span>
+   <span class="k">if</span> <span class="vg">$quit_button</span>
+     <span class="vg">$quit_button</span><span class="p">.</span><span class="nf">delete</span>
+     <span class="vg">$quit_button</span> <span class="o">=</span> <span class="kp">nil</span>
+   <span class="k">end</span>
+ <span class="k">end</span>
+
+ <span class="c1">#--------------------------------------</span>
+ <span class="c1">#    表示物の削除</span>
+ <span class="c1">#--------------------------------------</span>
+ <span class="k">def</span> <span class="nf">delete_items</span>
+   <span class="c1"># 表示中のフォントを削除</span>
+   <span class="vg">$fonts</span><span class="p">.</span><span class="nf">size</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">idx</span><span class="o">|</span>
+     <span class="vg">$fonts</span><span class="p">[</span><span class="n">idx</span><span class="p">].</span><span class="nf">delete</span>
+   <span class="k">end</span>
+   <span class="vg">$fonts</span> <span class="o">=</span> <span class="p">[]</span>
+
+   <span class="c1"># 表示中の背景画像を削除</span>
+   <span class="k">if</span> <span class="vg">$bg_image</span>
+     <span class="vg">$bg_image</span><span class="p">.</span><span class="nf">delete</span>
+     <span class="vg">$bg_image</span> <span class="o">=</span> <span class="kp">nil</span>
+   <span class="k">end</span>
+ <span class="k">end</span>
+ 
+ <span class="c1">#--------------------------------------</span>
+ <span class="c1">#    終了処理</span>
+ <span class="c1">#--------------------------------------</span>
+ <span class="k">def</span> <span class="nf">finish</span>
+   <span class="c1"># 表示物があれば削除</span>
+   <span class="n">delete_items</span>
+   <span class="c1"># GUI システム終了</span>
+   <span class="n">stop_gui</span>
+   <span class="c1"># プログラムの終了</span>
+   <span class="nb">exit</span>
+ <span class="k">end</span>
+ 
+ <span class="c1">#======================================</span>
+ <span class="c1">#    実際の処理はここからスタート</span>
+ <span class="c1">#======================================</span>
+ <span class="n">init</span> <span class="c1"># 初期化処理</span>
+ <span class="n">mainloop</span> <span class="no">ScenarioTbl</span> <span class="c1"># メインループ</span>
+
+</code></pre>
+</div>
+
+<h3 id="guiutilrb-と-scenariorb-をロード">guiutil.rb と scenario.rb をロード</h3>
+
+<p>先頭に見慣れない 2 行のコードがあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "guiutil.rb"
+require "scenario.rb"</code></pre></figure>
+
+<p><strong>require</strong> は外部のプログラム (ライブラリ) をロードするための Ruby の機能です。
+このプログラム中では guiutil.rb と scenario.rb で定義しているメソッドとシナリオテーブルを利用するので、はじめにロードしておきます。</p>
+
+<h3 id="全体的な流れを把握する">全体的な流れを把握する</h3>
+
+<p>プログラムがどこから開始するかわかるでしょうか。
+このプログラムでは 119 行目の</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">init # 初期化処理</code></pre></figure>
+
+<p>から処理が始まります。119 行目より前はメソッド定義なので、メソッド内のプログラムは、そのメソッドが呼び出されたときにはじめて実行されます。</p>
+
+<p>init は 7 行目で定義しているメソッドです。今回のプログラムではじめに一回だけ実行される初期化処理が書かれています。このメソッドを実行した後、次の</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">mainloop ScenarioTbl # メインループ</code></pre></figure>
+
+<p>が実行されます。mainloop は 24 行目で定義しているメソッドです。
+プログラム実行中は__このメソッドの中で処理が無限ループ__しています。無限ループなのでこのメソッドを呼び出すともう処理は帰ってきません。</p>
+
+<p>おおざっぱな流れはこのようになります。</p>
+
+<h3 id="init-初期化処理">init 初期化処理</h3>
+
+<p>最初に実行されることになる init メソッドの中身を詳しく見ていきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># ウィンドウの作成
+create_screen "Visual Novel", 480, 360</code></pre></figure>
+
+<p>create_screen はウィンドウを作成するメソッドです。引数には、作成したウィンドウのタイトルバーに表示する文字列 , 横方向のサイズ , 縦方向のサイズを渡します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># GUI システム開始
+start_gui</code></pre></figure>
+
+<p>: <img src="/images/0005-FirstProgramming/window.jpg" alt="window.jpg" /></p>
+
+<p>start_gui を呼び出すと GUI のシステムが開始します。また start_gui を実行したときにはじめてウィンドウが表示されます。
+create_screen と start_gui は guiutil.rb で定義しているメソッドです。</p>
+
+<p><strong><img src="/images/0005-FirstProgramming/spacer.gif" alt="spacer.gif" /></strong></p>
+
+<p>次のコードを見てください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># グローバル変数の初期化
+$font_size = 12    # フォントの表示サイズ
+$scene = 'opening' # 場面 ID
+$fonts = []        # フォントオブジェクト格納用の配列
+$bg_image = nil    # 背景オブジェクトを代入する変数
+$quit_button = nil # 終了ボタンオブジェクトを代入する変数</code></pre></figure>
+
+<p>今回のプログラムで使用するいくつかの変数をここで初期化しています。前回までに紹介した通常の変数はそのメソッドの中でしか使用出来ません。変数名の先頭に $ をつけるとその変数はプログラム中の全ての箇所で使用出来るようになります。つまり、ここではいくつかのメソッド内で共有したい変数を初期化しています。</p>
+
+<p>各変数の役割はコメントにあるとおりです。いくつかの変数については実際に使うときも説明します。</p>
+
+<p>init メソッドが終わると次に mainloop メソッドが呼び出されます。</p>
+
+<h3 id="mainloop-メインループ">mainloop メインループ</h3>
+
+<p>基本的には前回紹介したゲームブックのプログラムとそれほど変わりません。新しくグラフィック表示処理が追加されていますが、これらは単なるメソッド呼び出しです。では詳しく見ていきましょう。</p>
+
+<p>まず、全体が</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">while true
+  処理
+end</code></pre></figure>
+
+<p>という無限ループになっています。このプログラムの終了には 3 種類のパタンがあります。</p>
+
+<ul>
+  <li>メッセージの右上にある終了ボタンがクリックされる … 55 行目で処理</li>
+  <li>選択肢のジャンプ先の ID が nil だった場合  … 64 行目で処理</li>
+  <li>ウィンドウの右上にある×ボタンが押される … guiutil.rb 内部で終了処理が行われる</li>
+</ul>
+
+<p>1 番目と 2 番目の場合は終了処理を行う finish メソッドが呼ばれ、finish メソッドの中でプログラムを終了させる exit が実行されます。</p>
+
+<p>また mainloop メソッドは引数に シナリオテーブルを受け取るので、引数 tbl はシナリオテーブルになります。</p>
+
+<p>ではメインループの中を具体的に見ていくことにします。</p>
+
+<h3 id="背景の表示">背景の表示</h3>
+
+<p>30 行目で bg_fname に BG に使う画像ファイルのファイル名をシーンデータから取り出しています。
+BG を使用しないシーンでは nil が代入されています。</p>
+
+<p>32 行目の</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$bg_image = create_img 0, 0, bg_fname</code></pre></figure>
+
+<p>: <img src="/images/0005-FirstProgramming/bg.jpg" alt="bg.jpg" /></p>
+
+<p>で背景画像を表示しています。create_img は画像を表示するためのメソッドです。引数には、横方向の表示座標 (X) , 縦方向の表示座標 (Y) , ファイル名を渡します。create_img が戻り値として返すのは、作成した画像を操作するためのオブジェクト (正確にはクラスのインスタンスといいます) です。それは guiutil.rb で定義されています。このオブジェクトを $bg_image に代入しておきます。
+$bg_image.delete を実行すると表示した背景を削除することができます。</p>
+
+<p>create_img は guiutil.rb で定義されているメソッドです。guiutil.rb で定義しているメソッドをここでまとめて紹介しておくと</p>
+
+<ul>
+  <li>create_img … 画像を作成</li>
+  <li>create_img_button … マウスでクリックできる画像ボタンを作成</li>
+  <li>create_font … 文字列を表示</li>
+  <li>create_font_button … マウスでクリックできる文字列を表示</li>
+  <li>get_button_id … クリックされたボタンの ID を取得</li>
+  <li>block_mask … 画面を任意色で塗りつぶすエフェクト表示</li>
+</ul>
+
+<p>があります。</p>
+
+<h3 id="終了ボタンの表示">終了ボタンの表示</h3>
+
+<p>メッセージ表示欄右上の終了アイコンを作成する処理です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 終了ボタンの表示
+$quit_button = create_img_button 0, 438, 180, "quiticon0.gif", "quiticon1.gif"</code></pre></figure>
+
+<p>: <img src="/images/0005-FirstProgramming/quit.jpg" alt="quit.jpg" /></p>
+
+<p>create_img_button の引数は、ボタン ID , 表示座標 (X) , 表示座標 (Y) , 画像ファイル名 1 , 画像ファイル名 2 です。</p>
+
+<p>ボタン ID とはこの画像がマウスでクリックされたときに get_button_id メソッドが返す ID です。整数を設定してください。
+画像ファイル名 2 でマウスカーソルを乗せたときの画像を指定できます。画像ファイル名 2 は省略することも可能です。</p>
+
+<p>このボタンを操作するオブジェクトを $quit_button に代入しておきます。</p>
+
+<h3 id="メッセージの表示">メッセージの表示</h3>
+
+<p>次の部分を見てください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># メッセージの表示
+message = scene_data[0][1]
+font = create_font message, 24,218, $font_size
+$fonts.push font</code></pre></figure>
+
+<p>: <img src="/images/0005-FirstProgramming/mes.jpg" alt="mes.jpg" /></p>
+
+<p>シーンデータから取り出した message をフォントとして画面に表示しています。24,218 は表示座標、$font_size はフォントのサイズです。戻り値を font に代入して、font を配列 $fonts に追加しています。</p>
+
+<h3 id="選択肢メッセージの表示">選択肢メッセージの表示</h3>
+
+<p>次のプログラムでは選択肢となるメッセージの表示を行っています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 選択肢メッセージの表示
+(scene_data.size-1).times do |i|
+  sleep 0.2
+  idx = i+1
+  ch_msg = "#{idx}. #{scene_data[idx][1]}"
+  font = create_font_button idx, ch_msg, 24, 270+i*24, $font_size
+  $fonts.push font
+end</code></pre></figure>
+
+<p>: <img src="/images/0005-FirstProgramming/sel.jpg" alt="sel.jpg" /></p>
+
+<p>選択肢の数はシーンによって異なるのでシーンデータ配列のサイズから表示数を求めています。シーンデータは以下のような配列でした。</p>
+
+<p><strong><img src="/images/0005-FirstProgramming/spacer.gif" alt="spacer.gif" /></strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[
+  背景とメッセージデータ ,
+  選択肢データ 1,
+  選択肢データ 2, # (省略可能)
+  選択肢データ 3, # (省略可能)
+]</code></pre></figure>
+
+<p>配列のサイズから、背景とメッセージデータを取り除いた (-1 した) 数が選択肢の数になります。
+times によるループを使って、選択肢の数だけでメッセージフォントを作成します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ch_msg = "#{idx}. #{scene_data[idx][1]}"</code></pre></figure>
+
+<p>の部分では表示する文字列を作成しています。scene_data[idx][1] によって選択肢の文字列を取り出し、先頭に選択肢番号を追加しています。この処理により表示される選択肢は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">選択肢の番号. 選択肢メッセージ</code></pre></figure>
+
+<p>この文字列データを create_font_button に渡します。idx は選択肢番号、ch_msg は表示する文字列です。
+ここでも戻り値を $fonts 配列に追加しています。</p>
+
+<p>$fonts 配列の中身は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[
+  メッセージフォントオブジェクト,
+  選択肢 1 フォントオブジェクト,
+  選択肢 2 フォントオブジェクト, # 選択肢 2 がある場合
+  選択肢 3 フォントオブジェクト, # 選択肢 3 がある場合
+]</code></pre></figure>
+
+<p>選択肢がひとつしかない場合は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[
+  メッセージフォントオブジェクト,
+  選択肢 1 フォントオブジェクト,
+]</code></pre></figure>
+
+<p>$fonts は後で表示したフォントを削除するときに使用しています。</p>
+
+<h3 id="ボタンを入力を処理">ボタンを入力を処理</h3>
+
+<p>次のコードはマウスでクリックされたボタンの ID を受け取るところです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># ボタンの入力待ち
+input_value = get_button_id
+# ボタン ID が 0 なら終了
+if input_value == 0
+  finish
+end</code></pre></figure>
+
+<p>get_button_id メソッドを呼び出すとあらかじめ配置したボタンをマウスでクリックするまでプログラムの処理が止まります。実際はプログラムが停止するわけではなく get_button_id メソッドの中でループしています。
+ボタンがクリックされると get_button_id の処理が終了し、クリックされたボタンの ID が戻り値として返ります。</p>
+
+<p>ボタン ID 0 は終了ボタンの ID なので get_button_id の戻り値が 0 だった場合は finish メソッドを呼び出してプログラムを終了させます。</p>
+
+<h3 id="表示物を削除">表示物を削除</h3>
+
+<p>ボタンがクリックされるとシーンが切り替わります。メインループ処理の最後で表示物を削除しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 表示物を削除
+delete_items</code></pre></figure>
+
+<p>ループの先頭でシーンに応じた背景やフォントがまた表示されることになります。</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>今回紹介したビジュアルノベルのプログラムは、前回紹介したコマンドプロンプトで動くゲームブックプログラムに比べるとアプリケーションとしては見違えるほどに立派になりました。
+しかし、プログラムの内容は前回までに紹介したものとそれほど変わりません。
+コマンドプロンプトで動作するテキストを扱ったプログラムも、派手なグラフィックを使用した PS2 のゲームプログラムも、基本は同じなのです。</p>
+
+<p>この連載で紹介したこと以外にも、プログラミングの世界には、まだまだたくさんの覚えるべきことがあります。しかし、連載の中で紹介した方法でもそれなりのプログラミングは可能です。あとは自分でプログラムを書いているうちに、自然と何を勉強すべきかということもわかってくるでしょう。この「 Ruby ではじめるプログラミング」がプログラミングを始めるきっかけになってくれれば幸いです。</p>
+
+<h2 id="筆者について">筆者について</h2>
+
+<p>だん (dan at dgames dot jp)</p>
+
+<p>ゲームメーカーに勤めるゲームクリエイター。
+Ruby をゲーム開発に効果的に利用する方法を模索中。<a href="http://www.dgames.jp/dan/">開発日記</a>あり。</p>
+
+<h2 id="ruby-ではじめるプログラミング-連載一覧">Ruby ではじめるプログラミング 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0005/0005-FirstProgramming.html">Ruby ではじめるプログラミング 【最終回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-FirstProgramming.html">Ruby ではじめるプログラミング 【第 3 回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-FirstProgramming.html">Ruby ではじめるプログラミング 【第 2 回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-FirstProgramming.html">Ruby ではじめるプログラミング 【第 1 回】</a></p>
+  </li>
+</ul>
+
+<hr />
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

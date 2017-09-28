@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby Library Report 【第 2 回】 Java との連携</title>
+  <meta name="description" content="著者：立石 孝彰 編集・校正：馬場 道明、青木 峰郎">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0003/0003-RLR.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby Library Report 【第 2 回】 Java との連携</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0003/0003-RLR.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby Library Report 【第 2 回】 Java との連携" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0003/0003-RLR.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0003/0003-RLR.html" data-text="Ruby Library Report 【第 2 回】 Java との連携">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：立石 孝彰 編集・校正：馬場 道明、青木 峰郎</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>今回は Ruby と Java をつなぐライブラリとして、
+rjb, rjni, RubyJDWP という三つのライブラリを紹介します。
+rjb と rjni は Ruby から Java のクラスファイルにアクセスするためのライブラリです。
+RubyJDWP は実行中の Java プロセスにアクセスするためのライブラリです。</p>
+
+<p>近年、Java は普及が進み、
+名前だけであれば一般的な PC ユーザですらも知っているようになりました。
+それだけにライブラリの種類も Ruby と比べると遥かに多く、特殊なサービスへの
+アクセス用ライブラリが Java でしか提供されていない場合もあります。
+また、Java を多く使用するユーザの中には Java 用に作成した様々なリソース
+を活用したいこともあるでしょう。
+このような場合に rjb や rjni を利用すると Java のリソースをそのまま再利用でき、
+類似ライブラリや特殊なラッパーライブラリなどを開発する手間が省くことができます。</p>
+
+<p>一方で、頻度はそれほど多くないかもしれませんが、実行中の Java プログラムに
+アクセスして動的にクラスファイルを入れ替えたり、プログラムを解析したい場合が
+あります。
+このようなことは、JDWP [1] というデバッグ用のプロトコルを使うと
+実現できます。このプロトコルを Ruby から使えるようにしたのが RubyJDWP です。
+JDWP は低レベルなプロトコルですので、より使いやすくしたものに JDI という
+ライブラリがあります。JDI には、Java のメソッドコールを行うことができる程度<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+の機能があります。
+RubyJDWP を利用して JDI 相当のライブラリを作成すれば、
+Ruby プロセスから Java のメソッドを呼ぶことができます。
+本レポートの作成当初はこのような機能を利用して rjb や rjni と同様に
+Java のメソッドを呼ぶ機能を実装しようと考えていたのですが、
+RubyJDWP で JDI に相当する部分の実装が不十分なため断念しました。
+そのため RubyJDWP の例では JVM へアクセスするだけに留めます。</p>
+
+<h2 id="試用レポート--rjb">試用レポート – rjb</h2>
+
+<h3 id="登録データ">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="http://raa.ruby-lang.org/project/rjb">RAA:rjb</a></li>
+  <li>[作成者] arton</li>
+  <li>[URL] <a href="http://arton.no-ip.info/collabo/backyard/?RubyJavaBridge">http://arton.no-ip.info/collabo/backyard/?RubyJavaBridge</a></li>
+  <li>[バージョン] 0.1.6</li>
+  <li>[レポート環境] ruby-1.8(mswin32, cygwin, linux), j2se-1.4.2</li>
+</ul>
+
+<h3 id="概要">概要</h3>
+
+<p>rjb は JNI (Java Native Interface) を利用して Java VM (JVM) を
+操作するライブラリです。具体的には、Ruby プロセス内に JVM を起動し
+Java クラスファイルをロードしてメソッドを呼ぶことができます。</p>
+
+<h3 id="作者からの声">作者からの声</h3>
+
+<p>作者の arton 氏より以下のコメントを頂きました。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<blockquote>
+  <p>rjb の 3 つの目的と 3 つの誤算</p>
+
+  <p>　ここ数年、サーバーサイド Java の開発を仕事にしているのですが幾つか気に食わな
+い点がある、というのが rjb の開発動機です。</p>
+
+  <p>目的 1
+　JUnitでテストを作るのが (特にモックを作るのが) 面倒くさくなったこと。開発す
+るターゲットとテストプログラムを同一言語で作るという意義は認めます。でもヒアド
+キュメントはないし (結構長い文字列を使うテストが多い)、Proxy の生成には 
+interface 縛りがあるといった点です。</p>
+
+  <p>誤算 1
+　Ruby ならメソッド名と引数の数が合っていればいくらでもモックできますが、残念、
+JNI 経由で呼ぶためには結局 Proxy を利用しなければなりませんでした。でも、まあ
+使えるからこれは良しとします。</p>
+
+  <p>目的 2
+　サーバーサイドのビジネス処理用クラスはそのインスタンスだけでは (少なくても僕
+が作ってるのは) 動けません。誰か制御するプログラムが必要です。だから時々シェル
+から使いたくなっても、そのためにグルーとなるプログラムを Java で作らなければな
+りません。これってどこかで経験したな、ああ ActiveX コントロールと ActiveScript 
+みたいだ、というわけで Ruby がインスタンス化とメソッド呼び出しをすれば良いとい
+うのも目的です。で、一応 RAA を探したところ JNI でささっと呼べるブリッジはなか
+ったので作り始めました。</p>
+
+  <p>誤算 2
+　rjni みたいに RAA に登録していない先達の存在に気付きませんでした。とは言えこ
+の目的としては幸せに使っています。元々使うつもりのクラスはシングルスレッドでし
+か動作しないし Ruby 自身は単に Java のクラスを操作するだけの処理しか想定してい
+ないので問題がないからです。</p>
+
+  <p>目的 3
+　僕は現在、Win32, Solaris, OSX, Linux を使っています。全部で共用できる GUI ラ
+イブラリでかつ Win32 にも標準で乗っているものを Ruby から呼べれば使いまわしが
+楽になるでしょう。となると Tk でも Gtk でもなく Swing ですなぁ、というのも目的
+でした。</p>
+
+  <p>誤算 3
+　OSX では Java の GUI ライブラリ(AWT)はメインスレッドからは呼び出せないという
+制限が rjb が動き出してからわかりました。目的 2 から Ruby はシェルそのものとし
+て動かしたいのでこれはあんまり嬉しくはありません、というか事実上使えません。も
+ちろん、Ruby を組み込みで使うプログラムを作りワーカスレッド上で Ruby を呼べば
+良さそうですが、それを作っても Win32 とは共用できません。また Linux についても
+描画のあたりでうまく動作しないという問題があって (これは原因は追求していません) 
+結局第 3 の目的は頓挫しました。なお、Win32 や Solaris では一応動くとは言え、
+rjni の開発者が [ruby-talk:115504] で語っているように、Ruby はネイティブスレッ
+ドや再入をうまく処理できなないので Java のイベントリスナからの呼び出しは綱渡り
+となります。もっともこれはデッドロックを覚悟すればどうにかならないわけではない
+のですが (ASR で無理矢理実装している) 既に OSX と Linux の挫折があるのでそれほ
+ど乗り気にはならない部分です。</p>
+
+  <p>　というわけで、誤算はあったものの、当初の目的のうち 1 と 2 については使えてい
+るのでこんなものかなぁというところで小休止しています。</p>
+
+  <p>　ちなみに、誤算 2 の補足ですが、実際には誰かが作っていても結局自分で作ったか
+も。既存の車輪を無視してガンガン何度でも作れるところが NPD(非営利開発)の良いと
+ころかも知れません。使いたければ使うし作りたければ作る、そんな感じです。</p>
+
+  <p>　最後になりましたが、文字列の変換処理を追加してくださった桑島さんと、バグ報告
+をくださった立石さん、ありがとうございます (現時点では更新が止まっていますがそ
+ろそろ反映させますのでもうちょっとお待ちください) 。</p>
+</blockquote>
+
+<p>rjb は趣味・実験目的で作られた物と思っていましたが、実用目的だったのですね。目的が合致する方は、使ってみると良いのではないのでしょうか。なお、コメントにあるバグですが、今回のサンプルや通常の使用ではほとんど問題ありません。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<h3 id="サンプル">サンプル</h3>
+
+<p>まず最初は Java の System.out.println メソッドを利用して
+文字列を出力する簡単なスクリプトを紹介します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'rjb'
+
+ Rjb::load    # (a1)
+
+ System = Rjb::import("java.lang.System")   # (a2)
+ System.out.println("Hello World!")         # (a3)</code></pre></figure>
+
+<p>(a1) 最初に Rjb::load で JVM を起動します。
+rjb 0.1 以降ではこの文は省略可能です。</p>
+
+<p>(a2) Rjb.import で java.lang.System クラスをロードし、
+Ruby の定数 System に保持します。
+Rjb.import は Java で言う import に相当します。
+このように、Java 上のクラスなどの要素を Ruby から扱えるようにすることを、
+このレポートでは「インポート」と呼ぶことにします。
+なお、素の Java では java.lang パッケージの import は省略できますが、
+rjb を使う場合は省略できません。</p>
+
+<p>(a2) Java の System.out.println メソッドを使って
+“Hello World!” という文字列を出力させています。
+System.out はメソッドではなく public 変数ですが、
+rjb では、違いを意識することなくアクセスできます。
+また、整数などの Java の基本データ型の値と文字列は、
+対応する Ruby のオブジェクトから自動変換されるようです。
+このため、”Hello World!” という Ruby の String オブジェクトは
+明示的に変換せずとも渡せます。</p>
+
+<p>もう少し実用的なサンプルとして、FreeMarker [3] という Java の HTML/XML
+テンプレートエンジンを Ruby から使ってみましょう。
+ここでは以下のテンプレート (ファイル名 sample.flt) を使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;html&gt;
+ &lt;head&gt;
+   &lt;title&gt;RLR&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   ${user}'s latest product:
+   &lt;a href="${latestProduct.url}"&gt;${latestProduct.name}&lt;/a&gt;!
+ &lt;/body&gt;
+ &lt;/html&gt;</code></pre></figure>
+
+<p>${user}, ${latestProduct.url}, ${latestProduct.name} という箇所に
+プログラムから与えたパラメータが埋め込まれ、
+最終的な HTML ドキュメントを生成します。
+埋め込むデータは Java の Map オブジェクトとして与えます。</p>
+
+<p>まずネイティブの Java ならこのテンプレートを使うコードは
+次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> import java.util.*;
+ import java.io.*;
+ import freemarker.template.*;
+
+ class FillTemplate
+ {
+     static public void main(String[] args) {
+         // データを作る
+         Map root = new HashMap();
+         root.put("user", "Takaaki Tateishi");
+         Map latest = new HashMap();
+         latest.put("url", "products/RLR.html");
+         latest.put("name", "Ruby Library Report");
+         root.put("latestProduct", latest);
+
+         // テンプレートを埋める
+         try {
+             Configuration conf = Configuration.getDefaultConfiguration();
+             conf.setDirectoryForTemplateLoading(new File("."));
+             Template template = conf.getTemplate("sample.ftl");
+
+             OutputStreamWriter out = new OutputStreamWriter(System.out);
+             template.process(root, out);
+         }
+         catch (Exception ex) {
+             // 例外処理
+         }
+     }
+ }</code></pre></figure>
+
+<p>これと同じ処理を rjb を使って Ruby から実行すると、
+以下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'rjb'
+
+ # (a1)
+ Rjb::load
+ # (a2)
+ module Java
+   extend Rjb
+   System = import("java.lang.System")
+   String = import("java.lang.String")
+   Number = import("java.lang.Number")
+   Boolean = import("java.lang.Boolean")
+   List = import("java.util.List")
+   Map = import("java.util.Map")
+   HashMap = import("java.util.HashMap")
+   File = import("java.io.File")
+   OutputStreamWriter = import("java.io.OutputStreamWriter")
+   IOException = import("java.io.IOException")
+ end
+ module FreeMarker
+   extend Rjb
+   Configuration = import("freemarker.template.Configuration")
+   Template = import("freemarker.template.Template")
+ end
+
+ # (b1)
+ cfg = FreeMarker::Configuration.getDefaultConfiguration()
+ cfg.setDirectoryForTemplateLoading(Java::File.new("."))
+ template = cfg.getTemplate("sample.ftl")
+
+ # (b2)
+ root = Java::HashMap.new()
+ root.put("user", "Takaaki Tateishi")
+ latest = Java::HashMap.new()
+ latest.put("url", "products/RLR.html")
+ latest.put("name", "Ruby Library Report")
+ root.put("latestProduct", latest)
+
+ # (b3)
+ out = Java::OutputStreamWriter.new(Java::System.out)
+ template.process(root, out)</code></pre></figure>
+
+<p>(a1) 最初のサンプルと同じく Rjb::load で JVM を起動します。省略しても構いません。</p>
+
+<p>(a2) 必要な Java のクラスをインポートします。
+Java 標準クラスと FreeMarker のクラスを Ruby 上でも区別するため、
+別々のモジュールに Java のクラスを集めておきます。</p>
+
+<p>(b1) FreeMarker の設定を行い、
+テンプレート用のオブジェクトを作成しています。</p>
+
+<p>(b2) テンプレートに与えるデータを作成します。
+先の Java におけるデータ作成とほとんど同じ要領で作成できています。</p>
+
+<p>(b3) テンプレートにデータを埋め込み標準出力へ結果を出力します。
+出力結果は以下の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;html&gt;
+ &lt;head&gt;
+   &lt;title&gt;RLR&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+   Takaaki Tateishi's latest product:
+   &lt;a href="products/RLR.html"&gt;Ruby Library Report&lt;/a&gt;!
+ &lt;/body&gt;
+ &lt;/html&gt;</code></pre></figure>
+
+<h3 id="感想">感想</h3>
+
+<p>rjb を用いると Java のクラスをあたかも Ruby のクラスであるかのように利用することができます。
+つまり Ruby と Java のデータの受け渡しなどのために
+特別な処理を行う必要がないということです。</p>
+
+<p>ただ、rjb 0.1.6 で試した限りでは環境変数 CLASSPATH
+が効かなくなるという問題に遭遇しました。
+そのため FreeMarker のライブラリ本体である freemarker.jar を
+JVM デフォルトのロードパスに置いてテストしています。
+デフォルトのロードパスは Linux などでは $JAVA_HOME/jre/lib/ext、
+Windows では %JAVA_HOME%\jre\lib\ext です。</p>
+
+<p>また、サンプルでは紹介しませんでしたが、rjb では Ruby のオブジェクトを
+Java のインターフェイスに関連付け、Java オブジェクトとして扱うこともできます。
+この機能は
+<a href="http://arton.no-ip.info/collabo/backyard/?RubyJavaBridge">rjb のドキュメント</a>
+で Comparable インターフェイスの例が紹介されています。
+この仕組みを利用すると、Map インターフェイスを実装した Java のクラスを
+Ruby の Hash にマップする、といったことが実現できそうです。</p>
+
+<p>ところで、サンプルに似たプログラム例が、
+<a href="http://www.atmarkit.co.jp/fjava/rensai3/devworks05/devworks05_2.html">@IT の記事</a>
+にあります。
+この記事では、Groovy を用いて、(b1) と (b2) に相当することを行っています。
+比べて見ると、インポート方法が若干異なりますが、
+似た雰囲気を感じることができるでしょう。</p>
+
+<h2 id="試用レポート--rjni">試用レポート – rjni</h2>
+
+<h3 id="登録データ-1">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="RubyForge:rjni">RubyForge:rjni</a></li>
+  <li>[作成者] Mauricio Julio Fernandez Pradier</li>
+  <li>[URL] <a href="http://rjni.rubyforge.org/">http://rjni.rubyforge.org/</a></li>
+  <li>[バージョン] tech-preview2</li>
+  <li>[レポート環境] ruby-1.8(linux), j2se-1.4.2</li>
+</ul>
+
+<h3 id="概要-1">概要</h3>
+
+<p>rjni も rjb と同様に JNI を利用して
+Java のメソッドコールなどを実現しています。</p>
+
+<h3 id="作者からの声-1">作者からの声</h3>
+
+<p>作者の Mauricio Julio Fernandez Pradier 氏より
+以下のコメントを頂きました。</p>
+
+<blockquote>
+  <p>Regarding rjni, it was originally just a straightforward mapping of the 
+JNI API to Ruby, with some minimal wrapping for Java’s primitives:</p>
+
+  <p>jobject   -&gt; RJNI::Object</p>
+
+  <p>jclass    -&gt; RJNI::jclass</p>
+
+  <p>jmethodID -&gt; RJNI::MethodID</p>
+
+  <p>etc</p>
+
+  <p>After a while, I realized it would be easy to implement transparent 
+access to Java objects/classes by using Java’s introspection 
+capabilities. I built it all on top of the RJNI layer, for quicker 
+prototyping: it would be rewritten as C eventually. The higher-level 
+layer featured:</p>
+
+  <ul>
+    <li>
+      <p>Java object instantiation from Ruby</p>
+    </li>
+    <li>
+      <p>Java method dispatching from Ruby with overloading</p>
+    </li>
+    <li>
+      <p>metaclass objects representing Java classes</p>
+    </li>
+    <li>
+      <p>static methods becomed class singleton methods</p>
+    </li>
+    <li>
+      <p>some basic type conversions (String &lt;=&gt; java.lang.String, etc)</p>
+    </li>
+    <li>
+      <p>automatic accessors for fields:</p>
+    </li>
+  </ul>
+
+  <p>　* readers: javaobject.field?</p>
+
+  <p>　* setters: javaobject.field = value</p>
+
+  <ul>
+    <li>
+      <p>conversion of Java exceptions to Ruby</p>
+    </li>
+    <li>
+      <p>implementing Java interfaces in Ruby</p>
+    </li>
+  </ul>
+
+  <p>…</p>
+
+  <p>I got to the point where I could implement Java interfaces in Ruby, 
+which I wanted to use for GUI programming, but ruby’s lack of reentrancy 
+and some undesired interaction with the JVM got in the way.  Eventually, 
+the project was put to sleep.</p>
+
+  <p>I have looked at rjb and it seems very promising. As I said above, I 
+had originally planned to rewrite rjni’s higher-level API (which was the 
+only interesting part after all) in C, and I have to say that rjb looks 
+very much like what I had planned (only so much better, of course). I’m 
+glad arton undertook the tiresome task of creating something like rjb :)</p>
+</blockquote>
+
+<p>rjni もいくつか改善予定はあったようですが、結局開発は休止したままのようです。
+rjb には、rjni で実装予定だった機能も入っているようです．</p>
+
+<h3 id="サンプル-1">サンプル</h3>
+
+<p>まずは rjni でも “Hello, World!” を書いてみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'rjni'
+ require 'rjni/base'
+ require 'rjni/reflect'
+
+ RJNI::JVM.new
+
+ System = RJNI::Reflect.new["java.lang.System"]
+ System.out?.println("Hello World!")   # (c1)</code></pre></figure>
+
+<p>rjni のコードは rjb とかなり似ています。
+JVM を起動するメソッドは RJNI::JVM.new、
+Java のクラスをインポートするメソッドは RJNI::Reflect#[] です。
+RJNI::Reflect オブジェクトをリフレクターと呼びます。</p>
+
+<p>(c1) に注目してください。rjni ではメソッドと public 変数アクセスを
+区別するので、public 変数にアクセスする場合は ‘?’ を最後につける必要が
+あります。</p>
+
+<p>また rjb と同じように FreeMarker を利用する Ruby プログラムを
+書いてみました。しかし現在の rjni では Java オブジェクトを
+引数から渡す機能が実装されていないようで、HashMap を構築する
+ところでエラーになってしまいました。従って以下のプログラムは動作しません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'rjni'
+ require 'rjni/base'
+ require 'rjni/reflect'
+
+ RJNI::JVM.new
+
+ module Java
+   Ref = RJNI::Reflect.new
+   System = Ref["java.lang.System"]
+   String = Ref["java.lang.String"]
+   Number = Ref["java.lang.Number"]
+   Boolean = Ref["java.lang.Boolean"]
+   List = Ref["java.util.List"]
+   Map = Ref["java.util.Map"]
+   HashMap = Ref["java.util.HashMap"]
+   File = Ref["java.io.File"]
+   OutputStreamWriter = Ref["java.io.OutputStreamWriter"]
+   IOException = Ref["java.io.IOException"]
+ end
+ module FreeMarker
+   include Java
+   Configuration = Ref["freemarker.template.Configuration"]
+   Template = Ref["freemarker.template.Template"]
+ end
+
+ cfg = FreeMarker::Configuration.getDefaultConfiguration() # (d1)
+ cfg.setDirectoryForTemplateLoading(Java::File.new("."))
+ template = cfg.getTemplate("sample.ftl")
+
+ root = Java::HashMap.new()
+ root.put("user", "Takaaki Tateishi")
+ latest = Java::HashMap.new()
+ latest.put("url", "products/RLR.html")
+ latest.put("name", "Ruby Library Report")
+ root.put("latestProduct", latest)
+
+ out = Java::OutputStreamWriter.new(Java::System.out?)
+ template.process(root, out)</code></pre></figure>
+
+<h3 id="感想-1">感想</h3>
+
+<p>rjni はまだ正式にリリースされていないためか、
+実用できるほどの完成度には達していません。
+しかし環境変数 CLASSPATH に関しては rjb よりもうまく扱えているようです。
+他にもよい点があるかもしれません。</p>
+
+<h2 id="試用レポート--rubyjdwp">試用レポート – RubyJDWP</h2>
+
+<h3 id="登録データ-2">登録データ</h3>
+
+<ul>
+  <li>[RubyForge名] <a href="RubyForge:rubyjdwp">RubyForge:rubyjdwp</a></li>
+  <li>[作成者] Chad Fowler, Richard Kilmer</li>
+  <li>[URL] <a href="http://rubyforge.org/projects/rubyjdwp/">http://rubyforge.org/projects/rubyjdwp/</a></li>
+  <li>[バージョン] CVSより取得</li>
+  <li>[レポート環境] ruby-1.8(cygwin,linux), j2se-1.4.2</li>
+</ul>
+
+<h3 id="概要-2">概要</h3>
+
+<p>先に紹介した通り、RubyJDWP は JDWP というプロトコルを扱うためのライブラリ
+です。また JDI に相当するライブラリも、まだ不完全ではありますが、
+含まれています。今後の展開が楽しみなライブラリです。</p>
+
+<h3 id="作者からの声-2">作者からの声</h3>
+
+<p>作者の Chad Fowler 氏より以下のコメントを頂きました。</p>
+
+<blockquote>
+  <p>RubyJDWP is our attempt to extend the simplicity and flexibility of Ruby 
+as deeply into our professional lives as possible.  As with many Rubyists 
+before and after us, Rich and I both came to Ruby from backgrounds in 
+other languages.  We both specifically had a lot of exposure to Java, and 
+have found ourselves continuing to work with Java as part of our jobs. 
+Also a pattern with Rubyists, we found that Ruby spoiled us.  Sure, we 
+still know Java, but after having programmed in Ruby, going back to Java 
+is a painful experience.</p>
+
+  <p>RubyJDWP enables us to do more than just debug Java virtual machines.  For 
+many applications, running the JVM in debug mode is acceptable even in 
+production environments.  Given the deep level to which you can control a 
+running JVM using JDWP, it enables us to freeze running JVM instances, 
+insert bytecode at runtime, and inspect the JVM’s loaded classes and 
+objects in a way that extends beyond what traditional Java programming 
+allows–much more reminscent of what’s possible with Ruby.</p>
+
+  <p>The most interesting implementation detail of RubyJDWP is how we chose to 
+create the code for the wire protocol itself.  Instead of hand coding the 
+entire spec, we chose to generate the code.  Rich converted Sun’s JDWP 
+specification document into a very readable Ruby metalanguage and then 
+wrote a generator that implements the protocol directly from the 
+specification. We know of at least one alternative JDWP implementation 
+that took advantage of the Ruby generator to create a Scheme 
+implementation.  Now if only we could get Sun to document all of their 
+protocols in Ruby… :)</p>
+</blockquote>
+
+<p>Chad Fowler 氏は JDWP を単なるデバッグ用のプロトコルではなく、
+JVM の停止・実行時におけるバイトコードレベルでの編集・
+クラスやオブジェクトの内部表現の調査など、
+通常行われている Java プログラミング以上の機能を実現するものと捉えているようです。</p>
+
+<p>実装上の自慢は、JDWP の仕様を Ruby を利用したメタ言語で記述し、
+JDWP のプロトコル実装部分を自動化したところのようです。
+[5] <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<h3 id="サンプル-2">サンプル</h3>
+
+<p>JDWP は別プロセスから JVM にアクセスするプロトコルなので、
+まずアクセス対象にする Java プロセスを起動しておく必要があります。
+この点は RubyJDWP でも同様です。
+そこで、アクセス対象として、
+以下の 2 つのプログラム Main.java と Person.java を動かしておくことにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> // Main.java
+ import java.lang.*;
+ public class Main {
+   public static void main(String[] args) {
+     Person man = new Person();
+     for( int i = 0; i &lt; 10; i++ ){
+       System.out.println("My name is " + man.getName() + ".");
+       System.out.println("I am " + man.getAge() + " years old.");
+       try{
+         Thread.sleep(1000);
+       } catch (InterruptedException e){
+         e.printStackTrace();
+       }
+     }
+   }
+ }
+
+ // Person.java
+ public class Person {
+   private String name;
+   private int    age;
+   public Person(){
+     setName("&lt;noname&gt;");
+     setAge(0);
+   }
+   public int getAge() {
+     return age;
+   }
+   public String getName() {
+     return name;
+   }
+   public void setAge(int i) {
+     age = i;
+   }
+   public void setName(String string) {
+     name = string;
+   }
+ }</code></pre></figure>
+
+<p>見てわかる通り、main() では Person オブジェクトを表示し 1 秒 sleep、を 10 回繰り返します。
+つまりこのプログラムは最短でも 10 秒以上動作しているはずです。
+このようにゆっくり処理することで Ruby から JVM プロセスにアクセスする時間を稼ぎます。</p>
+
+<p>この 2 つのソースコードをコンパイルし、クラスファイルを作成します。
+通常は「java Main」として実行しますが、JDWP によるアクセスを許可する場合は
+次のように起動しておく必要があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> java -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=8081,server=y,suspend=n Main</code></pre></figure>
+
+<p>ここで address=8081 は JDWP での接続を許可するポート番号です。
+このようにして起動した JVM に Ruby からアクセするためには
+次のような Ruby スクリプトを使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'jdi'
+ jvm = JDI::JavaVirtualMachine.connect_via_tcpip('localhost', 8081)</code></pre></figure>
+
+<p>connect_via_tcpip には JDWP でアクセスするホストとポート番号を指定します。
+今回は単一ホスト上で JVM プロセスと Ruby プロセスを実行するので
+ホストは localhost、ポート番号はさきほど指定した 8081 を使います。</p>
+
+<p>接続が済んだら JVM にアクセスできるようになります。
+試しに接続先の JVM で動作しているスレッドの一覧を表示してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> jvm.each_thread{|thread|
+   puts thread.name
+ }</code></pre></figure>
+
+<p>さきほど起動した JVM プロセスがちゃんと動作していれば
+スレッドの一覧が表示されるはずです。
+もしすでに実行が終了していたら、再度 JVM を起動してから試してください。</p>
+
+<p>もう少し他のこともやってみましょう。
+以下のコードは JVM 上で起こるメソッドコールとスレッドの停止を監視する
+Ruby プログラムです。JDWP では JVM 上で起こる様々な動作をイベントとして
+監視できます。監視したいイベントを add_event_listner メソッドで
+登録しておくと、そのイベントが起きたときにブロックを実行してくれます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> req = JDWP::Packets::EventRequest::Set.new(
+   JDWP::EventKind::METHOD_ENTRY,
+   JDWP::SuspendPolicy::NONE,
+   [])
+ jvm.session.add_event_listener(req){|suspend_plicy, event_kind, event|
+   p event
+ }
+
+ req = JDWP::Packets::EventRequest::Set.new(
+   JDWP::EventKind::THREAD_END,
+   JDWP::SuspendPolicy::NONE,
+   [])
+ jvm.session.add_event_listener(req){|suspend_plicy, event_kind, event|
+   p event
+   exit
+ }
+
+ sleep   # イベントが起こるまで停止する</code></pre></figure>
+
+<h3 id="感想-2">感想</h3>
+
+<p>現在の RubyJDWP では、JDI に相当する機能は一部しか提供されていないため、
+実際に利用できるのは、本来の用途である Java プログラムの監視やデバッグ
+などに限定されるでしょう。もちろん、このライブラリはまだ正式にリリース
+されていないので、これは仕方のないことです。開発が進み、JDI などの
+高レベルなライブラリの整備が整ってくれば、rjb と同様に、
+Java のメソッドを呼ぶなどの高級な作業も行えるようになるでしょう。
+また、実行時にクラスファイルを入れ替えたり、
+メソッドコールをフックすることもできますから、
+柔軟に Java のクラスファイルを利用することができるようになるはずです。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回の RLR 第 2 回では Ruby から Java のリソースへアクセスするための
+ライブラリとして、rjb, rjni, RubyJDWP の 3 つを紹介しました。</p>
+
+<p>rjb と rjni は JNI を用いて JVM にアクセスし、
+メソッドコールなどを行うことを目的としている点は同じです。
+rjb は、FreeMarker のサンプルを見ての通り、ほとんど Java と同等のコード
+で Ruby から JVM の機能を利用することができました。
+一方、rjni はまだ実用レベルには至っておらず
+今後様々な点を改善する必要があるように感じました。</p>
+
+<p>RubyJDWP は、より使いやすくするためにも、
+Java の JDI 相当の高レベルなライブラリが必要です。
+そのようなライブラリも部分的には実装されていますが、
+まだ用途が限られてしまっています。
+今後実装が進めば、rjb と同じように、Ruby スクリプトから
+Java の機能を自在に利用することができるようになると思います。</p>
+
+<h2 id="参考リソース">参考リソース</h2>
+
+<p>[1] <a href="http://java.sun.com/j2se/1.4.2/docs/guide/jpda/jdwp-protocol.html">JDWP</a>
+は、Java において、リモートデバッグを行うためのプロトコル仕様です。</p>
+
+<p>[2] <a href="http://java.sun.com/products/jpda/">JPDA</a>
+は、Java 用のデバッガのためのアーキテクチャです。</p>
+
+<p>[3] <a href="http://freemarker.sourceforge.net/">FreeMarker</a>
+は、Java 用の HTML/XML テンプレートエンジンです。</p>
+
+<p>[4] <a href="http://freemarker.sourceforge.net/docs/index.html">FreeMarker Manual</a>
+における Designer’s Guide と Programmer’s Guide それぞれの章の Quick Start の例
+を参考に本レポートのサンプルを作成しました。</p>
+
+<p>[5] <a href="http://www.zenspider.com/dl/rubyconf2003/RubyAndJDWP.pdf">http://www.zenspider.com/dl/rubyconf2003/RubyAndJDWP.pdf</a>
+は、RubyJDWP の Ruby Conference 2003 における発表資料です。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>著者 (立石) は、ソフトウェアに関する研究開発職に従事しています。</p>
+
+<h2 id="ruby-library-report-連載一覧">Ruby Library Report 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0008/0008-RLR.html">Ruby Library Report 【第 6 回】 正規表現と構文解析</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RLR.html">Ruby Library Report 【第 5 回】 数値計算と可視化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RLR.html">Ruby Library Report 【第 4 回】 Win32Utils</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RLR-en.html">Ruby Library Report [No.4] Using Win32Utils (en)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-RLR.html">Ruby Library Report 【第 3 回】 O/R マッピング</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-RLR.html">Ruby Library Report 【第 2 回】 Java との連携</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-RLR.html">Ruby Library Report 【第 1 回】 IoC コンテナ</a></p>
+  </li>
+</ul>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>com.sun.jdi.ObjectReference における、invokeMethod を利用します。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>arton 氏ご自身の<a href="http://arton.no-ip.info/diary/20041116.html#p02">ページ</a>に、コメントに対する補足説明があります。[11/25 追記]&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Rjb::load メソッドの第 1 引数に JNI のバージョン番号を渡せるのですが、現状、1 引いて渡さなければなりません。例えば、バージョン 1.3 を指定する場合、0.3 を渡す必要があります。デフォルト値で使用する分には問題ありません。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Rich Kilmer さんが中心となり実装したようです。該当部分は、RubyJDWP ソースツリーの lib/jdwp/spec/ 以下になります。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

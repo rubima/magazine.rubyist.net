@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>WEBrickでプロキシサーバを作って遊ぶ</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0002/0002-WEBrickProxy.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>WEBrickでプロキシサーバを作って遊ぶ</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0002/0002-WEBrickProxy.html" class="hatena-bookmark-button" data-hatena-bookmark-title="WEBrickでプロキシサーバを作って遊ぶ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0002/0002-WEBrickProxy.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0002/0002-WEBrickProxy.html" data-text="WEBrickでプロキシサーバを作って遊ぶ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#webrick-で作るコンテンツフィルタ" id="markdown-toc-webrick-で作るコンテンツフィルタ">WEBrick で作るコンテンツフィルタ</a>    <ul>
+      <li><a href="#コンテンツフィルタってなに" id="markdown-toc-コンテンツフィルタってなに">コンテンツフィルタってなに？</a></li>
+      <li><a href="#webrick-ってなに" id="markdown-toc-webrick-ってなに">WEBrick ってなに？</a></li>
+      <li><a href="#webrick-でプロキシサーバを作る" id="markdown-toc-webrick-でプロキシサーバを作る">WEBrick でプロキシサーバを作る</a></li>
+      <li><a href="#もうちょっとオプションとか指定したい" id="markdown-toc-もうちょっとオプションとか指定したい">もうちょっとオプションとか指定したい</a></li>
+      <li><a href="#ハンドラを使う" id="markdown-toc-ハンドラを使う">ハンドラを使う</a></li>
+      <li><a href="#実際にフィルタを書いてみよう" id="markdown-toc-実際にフィルタを書いてみよう">実際にフィルタを書いてみよう</a></li>
+      <li><a href="#宿題" id="markdown-toc-宿題">宿題</a></li>
+      <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+      <li><a href="#参考文献" id="markdown-toc-参考文献">参考文献</a></li>
+      <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="webrick-で作るコンテンツフィルタ">WEBrick で作るコンテンツフィルタ</h2>
+
+<h3 id="コンテンツフィルタってなに">コンテンツフィルタってなに？</h3>
+
+<p>コンテンツフィルタというのは、コンテンツをフィルタリングするソフトウェアです。バナー広告、JavaScript、ポップアップウインドウといったものを除去するものです。</p>
+
+<p>代表的なものに、<a href="http://www.pluto.dti.ne.jp/~tengu/proxomitron/">Proxomitron-J</a> 
+や <a href="http://www.privoxy.org/">Privoxy</a> があります。</p>
+
+<p>Proxomitron や Privoxy は、大変有用なソフトウェアですが、フィルタのルールを独自の言語で書かなければなりません。</p>
+
+<p>「そんなのヤだ!  ヤだ!  Ruby じゃなきゃヤだ!」と言う声が聞こえてきますね。という
+か、そうでしょ。そうなんでしょ。そうだと言ってくれ。そうじゃないとこの記事は成り
+たたないのだっ!!</p>
+
+<p>……というわけで、Ruby でコンテンツフィルタを書いてみましょう。</p>
+
+<p>しかし、プロキシサーバを一から書くとなると、大変です。面倒です。やってられません。</p>
+
+<p><strong>そこで WEBrick ですよ!</strong></p>
+
+<h3 id="webrick-ってなに">WEBrick ってなに？</h3>
+
+<p>WEBrick っていうのは、知ってる人は知ってるし、知らない人は知らない、そんなライブ
+ラリです。</p>
+
+<p>……と、こんなことで済ますと編集長に怒られるので、真面目に説明します。</p>
+
+<p><a href="http://raa.ruby-lang.org/project/webrick">RAA:webrick</a> によると、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> WEBrick is a Ruby library program to build HTTP servers.</code></pre></figure>
+
+<p>だそうです。日本語にすると、「WEBrick は HTTP サーバを作るためのライブラリだよっ
+♪」ということですね。このライブラリを使えば HTTP サーバを数行で書けます。す
+げぇー。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>しかも、Ruby 1.8 系標準添付なので、気軽に使えるのも良いのですよ。</p>
+
+<h3 id="webrick-でプロキシサーバを作る">WEBrick でプロキシサーバを作る</h3>
+
+<p>WEBrick ってのは、HTTP サーバだけじゃなくて、HTTP Proxy サーバを作るための機能
+もついてるんですよ。WEBrick::HTTPProxyServer というクラスがそれ。
+これを使えば、HTTP プロキシサーバも数行で書けます。</p>
+
+<p>で、書いてみました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/env ruby
+
+ require 'webrick'
+ require 'webrick/httpproxy'
+
+ # プロキシサーバオブジェクトを作る
+ s = WEBrick::HTTPProxyServer.new({})
+
+ # SIGINT を捕捉する。
+ Signal.trap('INT') do
+   # 捕捉した場合、シャットダウンする。
+   s.shutdown
+ end
+
+ # サーバを起動する。
+ s.start</code></pre></figure>
+
+<p>うわぁ。本当に数行だよ。これでプロキシサーバとして動作するってんだから凄いよねぇ。</p>
+
+<p>「書いた気がしない」とか「手抜きだ」とか言わないように。そのへんはまぁ、あれだよ。
+うん。</p>
+
+<p><strong>君が自前主義症候群なのだよ</strong></p>
+
+<p>そうだ。そうに違いない。こんなに便利なものがあるんだから、それを使えば良いのだ。
+自分はもっと高いレベルの部分を実装することに力を入れるのだ。車輪の再発明は避ける
+のだ!</p>
+
+<p>ということで。</p>
+
+<p>えぇーっと、一行ずつに解説とかは面倒なんでやめます。コメントを懇切丁寧に書いてあ
+るんで、それを読んでください。</p>
+
+<p>さて、これを simpleproxy.rb とかいう名前で保存して、普通に ruby simpleproxy.rb 
+とかやって起動すれば、ちゃんとプロキシサーバとして動きます。</p>
+
+<h3 id="もうちょっとオプションとか指定したい">もうちょっとオプションとか指定したい</h3>
+
+<p>前の章で作ったのは、</p>
+
+<p><strong>WEBrick だとこんなに短かくプロキシサーバを書けるんだぞ</strong></p>
+
+<p>というのを見せるためのプログラムなので、駄目駄目です。ポート番号が80番だったりし
+ます。</p>
+
+<p>というわけで、ちゃんとオプションを設定しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'uri'
+
+ # プロキシサーバオブジェクトを作る
+ s = WEBrick::HTTPProxyServer.new(
+ # バインドアドレス(デフォルト:nil)
+   :BindAddress =&gt; '127.0.0.1',
+ # ポート番号(デフォルト:80)
+   :Port =&gt; 8080,
+ # ログ(デフォルト:nil)
+   :Logger =&gt; WEBrick::Log::new("log.txt", WEBrick::Log::DEBUG),
+ # proxy が通ってきたことを header で報せるか(デフォルト:true)
+   :ProxyVia =&gt; false,
+ # 親プロキシ(デフォルト:nil)
+   :ProxyURI =&gt; URI.parse('http://localhost:3128/')
+ )</code></pre></figure>
+
+<p>さて、:Logger は、WEBrick::Log::new(“log.txt”, WEBrick::Log::DEBUG) を設定していますね。ここは重要なので、解説しておきます。</p>
+
+<p>WEBrick::Log.new() の第一引数は、ログの出力先です。ファイル名を与えると、そのファ
+イルにログを吐きます。nil を与えると、$stderr にログを吐きます。それ以外なら、与
+えられた引数に &lt;&lt; します。</p>
+
+<p>第二引数は、ログの出力レベルです。FATAL、ERROR、WARN、INFO、DEBUG の中から、用途
+に応じて選んでください。今回はすべてのログを見たいので、WEBrick::Log::DEBUG を選
+びました。</p>
+
+<p>他にも色々ありますが、まぁこのぐらいを設定すれば十分でしょう。さらなるオプション
+は lib/webrick/config.rb を読んで調べてください。なぜソースを読めというのかって？</p>
+
+<p><strong>ドキュメントが無い</strong></p>
+
+<p>からだよっ!</p>
+
+<h3 id="ハンドラを使う">ハンドラを使う</h3>
+
+<p>さて、これだけだと、ただ丸投げするだけの HTTP プロキシサーバです。今回作
+りたいのはコンテンツフィルタですから、こっからが本番です。</p>
+
+<p>で、コンテンツフィルタなんてものを作るための機能が WEBrick にあるのかなー？と
+言うと……あるんですねー。その名も__ハンドラ__です。パンドラでもゴンドラでもあ
+りません。ハンドラです。こいつを使います。</p>
+
+<p>ハンドラはこんな感じで書きます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> handler = Proc.new() {|req,res|
+   if req.unparsed_uri =~ %r!a.hatena.ne.jp! and res['content-type'] =~ %r!text/html!
+     res.body.gsub!(%r=&lt;!-- TG-Affiliate Banner Space --&gt;.*&lt;!-- /TG-Affiliate Banner Space --&gt;=m, '')
+   end
+ }</code></pre></figure>
+
+<p>Proc を使うんですね。で、この手続きを</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # プロキシサーバオブジェクトを作る
+ s = WEBrick::HTTPProxyServer.new(
+ # ハンドラ
+   :ProxyContentHandler =&gt; handler
+ )</code></pre></figure>
+
+<p>こんな感じでプロキシサーバオブジェクトに設定してやれば、通信が行われた時に call
+されます。</p>
+
+<p>さて、ハンドラの中身です。引数として、req と res というのが渡されてますね。req
+と res ってのは WEBrick::HTTPRequest と WEBrick::HTTPResponse のインスタンスです。</p>
+
+<p>WEBrick::HTTResponse の方をイジれば、ダウンロードしてきたコンテンツを改変できま
+す。</p>
+
+<p>ハンドラはデータのダウンロードが終了した後に呼ばれるので、リクエストをイジること
+は出来ません。WEBrick::HTTPRequest の方をイジっても無意味です。無視されます。そ
+して悲しい気分になれます。イジっても実害は無いので、悲しい気分になりたい方はイジっ
+て頂いても構いません。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p>この二つにはいっぱいインスタンス変数がついてます。それらをイジって、色々遊べるわ
+けです。</p>
+
+<p>でまぁ、それっぽいインスタンス変数の一覧をあげてみました。大体名前でわかるでしょ。
+うん。そゆことでよろしく。</p>
+
+<p>詳しい中身については、次の章で説明します。</p>
+
+<ul>
+  <li>WEBrick::HTTRequest の役立ちそうなインスタンス変数
+    <ul>
+      <li>cookies</li>
+      <li>body</li>
+      <li>request_method</li>
+      <li>request_uri</li>
+    </ul>
+  </li>
+  <li>WEBrick::HTTPResponse の役立ちそうなインスタンス変数
+    <ul>
+      <li>request_uri</li>
+      <li>host</li>
+      <li>port</li>
+      <li>path</li>
+      <li>query_string</li>
+      <li>header</li>
+      <li>cookies</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="実際にフィルタを書いてみよう">実際にフィルタを書いてみよう</h3>
+
+<p>では、いよいよ実際にフィルタを書いてみましょう。</p>
+
+<p>さて、どんなフィルタをかけるのか、というところが問題になってくるわけですが、
+Proxomitron のフィルタでも、一番需要が多いのが、広告カッターです。ウザい広告を
+取り除きたい、のですよ。そういうことで、今回は広告カッターを例題として取り上げま
+す。</p>
+
+<p>さて、どこの広告をカットするか、ということが問題になってくるわけですが、今回は皆
+大好き、スラシュドットジャパンの広告をカットしてみましょう。</p>
+
+<p>まずは、<a href="http://slashdot.jp/">http://slashdot.jp/</a> を開いて、ソースを表示します。すると、いかにも広告っ
+ぽい部分があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;!-- begin ad code --&gt;
+ (中略)
+ &lt;!-- end ad code --&gt;</code></pre></figure>
+
+<p>という部分です。広告は英語で ad ですから、きっとここが広告です。</p>
+
+<p>では、この部分をカットするハンドラを定義しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> handler = Proc.new() {|req,res|
+   if req.host == 'slashdot.jp' and res['content-type'] =~ /text\/html/
+     res.body.gsub!(/&lt;!-- begin ad code --&gt;.*?&lt;!-- end ad code --&gt;/m, '')
+   end
+ }</code></pre></figure>
+
+<p>簡単そうなコードですね。順番に見ていきましょう。</p>
+
+<p>さて、もう一度確認すると、req は WEBrick::HTTPRequest のインスタンス、res は
+WEBrick::HTTPResponse のインスタンスです。</p>
+
+<p>req.host には、リクエストされたホストの名前が入っています。今回はslashdot.jp の
+広告を抜きたいので、それにマッチするかを調べています。</p>
+
+<p>res#[] には相手サーバの返してきた HTTP ヘッダが入っています。ここでは、’
+content-type’ をキーとしたときに帰ってくるものが text/html であるかどうか、を調
+べています。</p>
+
+<p>まとめると、「slashdot.jp に対するリクエストで、コンテンツのタイプが html のもの」
+の時、この条件は真になります。</p>
+
+<p>さて、if の中身です。res.body には、向こうのサーバから帰ってきた本文が含まれてい
+ます。これは書換え可能データなので、容赦なく書換えてしまって構いません。今回は、
+広告部分にマッチする部分をカットしています。</p>
+
+<p>これまでの成果をまとめると、次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/env ruby
+
+ require 'webrick'
+ require 'webrick/httpproxy'
+ require 'uri'
+
+ handler = Proc.new() {|req,res|
+   if req.host == 'slashdot.jp' and res['content-type'] =~ /text\/html/
+     res.body.gsub!(/&lt;!-- begin ad code --&gt;.*?&lt;!-- end ad code --&gt;/m, '')
+   end
+ }
+
+ # プロキシサーバオブジェクトを作る
+ s = WEBrick::HTTPProxyServer.new(
+ # バインドアドレス(デフォルト:nil)
+   :BindAddress =&gt; '127.0.0.1',
+ # ポート番号(デフォルト:80)
+   :Port =&gt; 8080,
+ # ログ(デフォルト:nil)
+   :Logger =&gt; WEBrick::Log::new($stderr, WEBrick::Log::DEBUG),
+ # proxy が通ってきたことを header で報せるか(デフォルト:true)
+   :ProxyVia =&gt; false,
+ # 親プロキシ(デフォルト:nil)
+   :ProxyURI =&gt; URI.parse('http://localhost:3128/'),
+ # ハンドラ
+   :ProxyContentHandler =&gt; handler
+ )
+
+ # 後処理の為に SIGINT を捕捉する。
+ Signal.trap('INT') do
+   # 捕捉した場合、シャットダウンする。
+   s.shutdown
+ end
+
+ # サーバを起動する。
+ s.start</code></pre></figure>
+
+<p>これを、slashdotfilterproxy.rb とでも名前をつけて保存してください。そして、コマ
+ンドラインから、おもむろに</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ruby slashdotfilterproxy.rb</code></pre></figure>
+
+<p>と打つと、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> [2004-09-12 11:05:04] INFO  WEBrick 1.3.1
+ [2004-09-12 11:05:04] INFO  ruby 1.8.2 (2004-08-24) [i386-linux]
+ [2004-09-12 11:05:04] DEBUG TCPServer.new(127.0.0.1, 8080)
+ [2004-09-12 11:05:04] INFO  WEBrick::HTTPProxyServer#start: pid=2305 port=8080</code></pre></figure>
+
+<p>と表示されて、サーバが起動します。</p>
+
+<p>あとはブラウザのプロキシ設定を、自作のプロキシに向けるだけです。</p>
+
+<p><a href="http://slashdot.jp/">http://slashdot.jp/</a> にアクセスすると、上部の広告がカットされている筈です。</p>
+
+<h3 id="宿題">宿題</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 「。」を「にょ。」に変換するプロキシサーバを書きなさい。</code></pre></figure>
+
+<p>解けた方は私にメールで送ってください。宛先は tokuhirom at yahoo dot co dot jp で
+す。</p>
+
+<h3 id="おわりに">おわりに</h3>
+
+<p>この記事では、WEBrick を使って簡単なプロキシサーバの作り方を紹介しました。</p>
+
+<p>フィルタを Ruby で自由に書けるので、可能性は無限大です。皆さんも自分でフィルタ
+を書いてみてください。</p>
+
+<p>日常的に使うものなので、使っているうちに改良したい点が出てくると思います。Ruby 
+が上達するコツは頻繁にプログラムを書くことですから、よい練習になると思います。</p>
+
+<p>宿題にも挑戦してください。ポイントは文字コードの扱いです。UTF-8 なページを
+「にょ。」な語尾に変換できない、なんてのは、<strong>ありえません</strong>。</p>
+
+<h3 id="参考文献">参考文献</h3>
+
+<ul>
+  <li><a href="http://raa.ruby-lang.org/project/webrick">RAA:webrick</a></li>
+  <li><a href="http://www.faqs.org/rfcs/rfc2616.html">RFC 2616</a></li>
+  <li><a href="http://shogo.homelinux.org/~ysantoso/WebWiki/WEBrick.html">Gnome’s Guide to WEBrick</a></li>
+</ul>
+
+<h3 id="著者について">著者について</h3>
+<p><img src="/images/0002-WEBrickProxy/tokuhirom.jpg" alt="tokuhirom.jpg" /></p>
+
+<p><a href="http://mixi.jp/show_friend.pl?id=3024">まつの とくひろ</a></p>
+
+<p>自称、日本で一番モンキーレンチが似合う男。</p>
+
+<p>日々<a href="http://www13.ocn.ne.jp/~tokuhiro/cl/">TokuLog!</a> で毒を吐くも、本当は「いい日記」を目指したいと思っている。</p>
+
+<p>ご意見・要望・バグレポートは tokuhirom at yahoo dot co dot jp まで。</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>俺ってばスゲー感を手軽に得られます&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>私は推奨いたしません&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist のための他言語探訪 【第 8 回】 Forth</title>
+  <meta name="description" content="著者：まつもとゆきひろ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0015/0015-Legwork.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Rubyist のための他言語探訪 【第 8 回】 Forth</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0015/0015-Legwork.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist のための他言語探訪 【第 8 回】 Forth" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0015/0015-Legwork.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0015/0015-Legwork.html" data-text="Rubyist のための他言語探訪 【第 8 回】 Forth">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：まつもとゆきひろ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>本連載で取り扱う言語の選択にはいつも気を使います。</p>
+
+<p>世の中にはそれこそ星の数だけプログラミング言語があるので、珍しい言語というだけなら枚挙にいとまはないのですが、とはいえ、単に珍しい言語を紹介するだけでは蘊蓄以外にあまり役に立たないので、以下のような条件を満たすような言語を選ぼうと思っています。</p>
+
+<ul>
+  <li>誰もが知っているような言語ではない</li>
+  <li>有名ではなくてもある程度の実績がある</li>
+  <li>(上記の結果として) 誕生してからある程度時間がたっている</li>
+  <li>他の言語には見られない珍しい特徴がある</li>
+</ul>
+
+<p>言語が数多くあるといっても、これらをすべて満たす言語はなかなか見つからないのが実情です。皆さんもなにか「これ」という言語を思いついたら教えてくださいね。</p>
+
+<p>今月も苦労して考えついた Forth について紹介します。</p>
+
+<h2 id="forthについて">Forthについて</h2>
+
+<p>Forth は、アメリカ国立電波天文台の Charles H. Moore によって開発された、一風変わった表現を持つプログラミング言語です。
+元々は 1970 年代初頭に天文台の機器制御のために開発されたということです。</p>
+
+<p>Forth の名は Moore がこの言語を機械語、アセンブラ、コンパイル型言語に続く、「第 4 世代言語」と見なしていたことに由来します。
+本当は 4 番目だから fourth とつけるつもりでだったのに、当時 Moore が利用していたミニコンのファイル文字数制限が 5 文字だったため Forth になったということです。</p>
+
+<p>特徴としては、とにかく言語仕様が小さく、処理系がコンパクトなことがあげられます。
+元々小さなマシンで開発されたこともありますし、この特徴からいまだに組み込み系で使われることもあるようです。
+また、Forth の最大の特徴は「逆ポーランド記法」にあるのですが、それについては次の節で説明します。</p>
+
+<h2 id="逆-ポーランド記法">(逆) ポーランド記法</h2>
+
+<p>Forth のプログラムは逆ポーランド記法 (Reverse Polish Notation - RPN) によって記述されます。</p>
+
+<p>逆ポーランド記法は「後置記法」とも呼ばれ、演算子が式の末尾に登場します。
+それに対して関数記法のように演算を指定するものが先頭に登場するものは「前置記法」、二項演算子のように間に登場するものは「中置記法」と呼ばれます。</p>
+
+<p>逆ポーランド記法は 1950 年代半ば頃にオーストラリアの哲学者でありコンピュータ科学者であった Charles Hamblin によって発明されました。
+オーストラリア人なのになぜ「ポーランド」かというと、それ以前に元になった「ポーランド記法」が存在していたからです。</p>
+
+<p>「ポーランド記法」は、ポーランドの数学者であるJan Łukasiewiczによって 1820 年に発明されました。
+これは要するに、前置記法なのですが、「演算子が要求するオペランドの数があらかじめ分かっていれば括弧が不要になる」という点が斬新でした。
+つまり、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> × ＋ 0 1 ＋ 2 3</code></pre></figure>
+
+<p>は、各演算子が 2 引数を取ることが分かっているとかならず</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (× (＋ 0 1) (＋ 2 3))</code></pre></figure>
+
+<p>と解釈されるということです。
+前置記法や中置記法に必要な括弧による曖昧性の除去が不要になるので、表現が非常にコンパクトになります。</p>
+
+<p>「逆ポーランド記法」は、いちばん簡単に表現すると「ポーランド記法」を逆にしたものです。
+逆ポーランド記法で表現すると上記の式は以下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 0 1 ＋ 2 3 ＋ ×</code></pre></figure>
+
+<p>逆ポーランド記法は (偶然にも) 日本語の語順と相性がよく、上の逆ポーランド式を読み下すと「0 と 1 を足したものと、2 と 3 を足したものを、掛ける」となります。</p>
+
+<p>逆ポーランド記法の解釈にはほとんどの場合、スタックを用います。
+スタックを使った意味付けにおいては、</p>
+
+<ul>
+  <li>リテラルは値をスタックに積む</li>
+  <li>演算子はスタックから一定数の値を取り出し、結果を積む</li>
+</ul>
+
+<p>という動作をします。ですから、上の式を 1 ステップずつ実行すると、</p>
+
+<ul>
+  <li>初期状態 (スタックは空)</li>
+  <li>0 をスタックに積む (スタック: 0)</li>
+  <li>1 をスタックに積む (スタック: 1 0)</li>
+  <li>＋演算子がスタックからふたつ値を取り、結果 (1) を一つ積む (スタック: 1)</li>
+  <li>2 をスタックに積む (スタック: 2 1)</li>
+  <li>3 をスタックに積む (スタック: 3 2 1)</li>
+  <li>＋演算子がスタックからふたつ値を取り、結果 (5) を一つ積む (スタック: 5 1)</li>
+  <li>×演算子がスタックからふたつ値を取り、結果 (5) を一つ積む (スタック: 5)</li>
+</ul>
+
+<p>と動作します。</p>
+
+<p>逆ポーランド記法は、</p>
+
+<ul>
+  <li>記法がコンパクト</li>
+  <li>評価順序に曖昧性がない</li>
+  <li>コンピュータ評価と相性が良い</li>
+</ul>
+
+<p>という非常に優れた記法で、Forth のパワーの多くはこの記法によっています。
+逆ポーランド記法は Forth 以外にも、古いタイプの HP 関数電卓でも採用されています。</p>
+
+<h2 id="ワードとディクショナリ">ワードとディクショナリ</h2>
+
+<p>Forth のあらゆるプログラムは「ワード」の並びです。
+Forth の「ワード」は他の言語における「手続き」や「演算子」またはリテラルなどに相当します。</p>
+
+<p>新しいワードを定義するには「:」ワードを用います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> : DOUBLE ( n -- 2*n ) 2 * ;</code></pre></figure>
+
+<p>「:」から「;」までがワードの定義になります。: の直後にあるのが定義するワードの名前です。
+ここでは「DOUBLE」になります。
+括弧から対応する括弧まではコメントになります。
+ワード定義の後ろには、「–」ではさんで入力時と出力時のスタックの状態を示すのが一般的のようです。</p>
+
+<p>ごく簡単なものを除いて、Forth のプログラムは「ワード」を定義することで行います。
+プログラムは「ワード」の集まりですから、「ディクショナリ」と呼びます。</p>
+
+<h2 id="制御構造">制御構造</h2>
+
+<p>逆ポーランド記法を活用する Forth では、制御構造もやや特殊です。
+Forth の if 文は以下のような形式になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> cond IF true-part ELSE false-part THEN</code></pre></figure>
+
+<p>IF ワードは、スタックトップが真であれば IF と ELSE の間のワード列を実行し、偽であれば ELSE と THEN の間を実行します。
+C の三項演算子 (cond ? true_part : else_part) にちょっと似ているかもしれません。</p>
+
+<p>ループも同様です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> BEGIN word... UNTIL</code></pre></figure>
+
+<p>これは BEGIN から UNTIL の間までを繰り返します。
+UNTIL を実行した時点でスタックトップが偽であれば、BEGIN の位置までジャンプします。
+真であれば、UNTIL の次を実行します。</p>
+
+<p>Forth にはもうひとつ、DO ループもあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> end start DO word... LOOP</code></pre></figure>
+
+<p>start から end までの回数 DO と LOOP の間のワードを繰り返します。</p>
+
+<h2 id="変数">変数</h2>
+
+<p>基本的にスタックを使って値の受渡をする Forth では変数の必要性は他の言語よりも少ないのですが、それでも変数を全く使わないというのは難しいときもあります。
+そのようなときのために Forth にも変数があります。
+Forth の変数は VARIABLE ワードで定義します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> VARIABLE var
+ 123 var !	(varに123を代入)
+ var @		(varの値123をスタックトップに)</code></pre></figure>
+
+<p>これによって var というワードが定義されます。
+そのワードを評価すると、その変数に割り当てられた「アドレス」(整数値) をスタックに積みます。</p>
+
+<p>変数への代入は ! ワードを使います。! ワードはスタックトップにあるアドレスに次のスタックの値を格納します。</p>
+
+<p>変数の値を取り出すためには @ ワードを使います。
+@ ワードはスタックトップのアドレスに格納されている値をスタックトップに積みます。</p>
+
+<h2 id="forth-の仲間たち">Forth の仲間たち</h2>
+
+<p>Forth は単純ながら柔軟性が高く、一部の人に非常に高い人気があり、あまり目立たないところで活躍しています。
+たとえば、Sun や Apple のマシンの Boot ファームウェアである OpenFirmware には Forth が組み込まれています。
+FreeBSD のブートローダにも Forth 系言語 FICL が組み込まれています。</p>
+
+<p>また、 Forth の柔軟性の魅力は、Forth の基本的なアイディアを踏襲した言語を数多く生んでいます。
+たとえば、プリンタ用ページ記述言語の代表格 (というより、他のページ記述言語をすでに駆逐してしまった) Postscript は逆ポーランド記法を用いた言語です。
+おそらく世界でもっともたくさん使われている後置記法言語ですが、世界で一番人間の目に触れる割合の少ない言語でもあります。</p>
+
+<p>すでに述べたように逆ポーランド記法は日本語の語順によく似ています。
+そのことから、Forth に良く似た文法を採用した日本語プログラミング言語 Mind が誕生しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ４と　５を　加え　表示する。</code></pre></figure>
+
+<p>というような外見になります。</p>
+
+<p>それから、逆ポーランド記法と関連の深いスタック方式は仮想マシンの実装に広く使われていて、JVM や YARV などで採用されています。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は広くいろいろなところで活躍していながら、全然目立っていない言語である Forth を紹介しました。
+Forth はコンパクトで実装も簡単でありながら、高性能の処理系があることでも有名です。
+言語処理系の実装に興味のある人なら一度は調べてみて損はないでしょう。</p>
+
+<p>Forth についての情報は以下から入手することができます。</p>
+
+<ul>
+  <li><a href="http://www.forth.org/">Forth Internet Group Home Page</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Forth">Wikipedia Forth (英語)</a></li>
+  <li><a href="http://ja.wikipedia.org/wiki/FORTH">Wikipedia Forth (日本語)</a></li>
+</ul>
+
+<p>日本語プログラミング言語 Mind についての情報は以下から入手することができます。</p>
+
+<ul>
+  <li><a href="http://www.scripts-lab.co.jp/mind/whatsmind.html">スクリプツ・ラボ有限会社</a></li>
+  <li><a href="http://www2.airnet.ne.jp/sardine/langs/Mind.html">プログラミング言語 Mind</a></li>
+</ul>
+
+<h2 id="次回予告">次回予告</h2>
+
+<p>未定です。リクエスト歓迎。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p><img src="/images/0015-Legwork/matz_in_suit.jpg" alt="matz_in_suit.jpg" />まつもとゆきひろは自他ともに認める日本を代表する言語オタクです。
+言語好きが昂じて自分の言語を設計してしまった大馬鹿者です。
+が、オタクとかハッカーとか呼ばれる人種はみんな多かれ少なかれそんなものじゃないでしょうか。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0022/0022-Legwork.html">Rubyist のための他言語探訪 【第 14 回】 Whitespace</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Legwork.html">Rubyist のための他言語探訪 【第 13 回】 Prolog</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-Legwork.html">Rubyist のための他言語探訪 【第 12 回】 APL と J</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Legwork.html">Rubyist のための他言語探訪 【第 11 回】 C++</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Legwork.html">Rubyist のための他言語探訪 【第 10 回】 Erlang</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Legwork.html">Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Legwork.html">Rubyist のための他言語探訪 【第 8 回】 Forth</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Legwork.html">Rubyist のための他言語探訪 【第 7 回】 Icon</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Legwork.html">Rubyist のための他言語探訪 【第 6 回】 Dylan</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Legwork.html">Rubyist のための他言語探訪 【第 5 回】 Groovy</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Legwork.html">Rubyist のための他言語探訪 【第 4 回】 Tcl</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Legwork.html">Rubyist のための他言語探訪 【第 3 回】 Io</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Legwork.html">Rubyist のための他言語探訪 【第 2 回】 CLU</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Legwork.html">Rubyist のための他言語探訪 【第 1 回】 Python</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

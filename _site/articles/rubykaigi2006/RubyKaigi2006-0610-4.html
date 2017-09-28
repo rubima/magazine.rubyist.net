@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>6 月 10 日 午後の部 - 3</title>
+  <meta name="description" content="なひ「セキュアアプリケーションプログラミング」">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/rubykaigi2006/RubyKaigi2006-0610-4.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>6 月 10 日 午後の部 - 3</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/rubykaigi2006/RubyKaigi2006-0610-4.html" class="hatena-bookmark-button" data-hatena-bookmark-title="6 月 10 日 午後の部 - 3" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/rubykaigi2006/RubyKaigi2006-0610-4.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/rubykaigi2006/RubyKaigi2006-0610-4.html" data-text="6 月 10 日 午後の部 - 3">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <h2 id="なひセキュアアプリケーションプログラミング">なひ「セキュアアプリケーションプログラミング」</h2>
+
+<dl>
+  <dt>スピーカー</dt>
+  <dd>なひ氏 ((株) サリオンシステムズリサーチ); SOAP4R, WSDL4R, csv など Ruby の標準添付ライブラリの開発者です。</dd>
+  <dt>時間</dt>
+  <dd>16:15〜16:47</dd>
+  <dt>セッション概要</dt>
+  <dd>セキュリティ基礎技術を振舞中心に解説</dd>
+  <dt>講演資料</dt>
+  <dd><a href="http://dev.ctor.org/download/RubyKaigi2006_SAP_20060610.pdf">発表資料</a>、<a href="http://dev.ctor.org/download/rubykaigi2006.tar.gz">ソースコード</a>
+<img src="/images/RubyKaigi2006-0610-4/s06100068.jpg" alt="s06100068.jpg" /></dd>
+</dl>
+
+<ul>
+  <li>ソースコード全開度 ★★★</li>
+  <li>ライブラリ活用度 ★★★</li>
+  <li>セキュリティ定石度 ★★★</li>
+  <li>gotoyuzo さんよいしょ度 ★★★</li>
+  <li>時間不足度 ★★</li>
+</ul>
+
+<p><a href="http://dev.ctor.org/download/rubykaigi2006.tar.gz">ソースコード</a> の動作確認には、rake と OpenPGP ツールキットが必要とのことです。</p>
+
+<h3 id="基礎技術">基礎技術</h3>
+
+<ol>
+  <li>暗号化 - 第三者に読まれないようにする</li>
+  <li>認証 - 誰が書いたのかを明らかにする</li>
+  <li>完全性の保証 - 改竄されていないことを保証する</li>
+</ol>
+
+<p>後者二つは通常ペアとして扱われます。分離すべき用途がないので、これらを別個に扱う技術開発が進んでいないためです (分離して「誰が書いたのか分からないけれども改竄されていないことを保証する」必要がある用途は匿名誘拐犯の身代金要求くらい？)。</p>
+
+<h4 id="認証用の鍵対称性とアクセス性">認証用の鍵、対称性とアクセス性</h4>
+
+<p>認証には送信側と受信側で鍵が対称なもの、対象でないものがあります。</p>
+
+<ul>
+  <li>対称鍵。何か確実な方法であらかじめ秘密鍵を共有しておく (実は安全に共有するのは非常に難しい問題なのだが)。AES<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> などのアルゴリズムがある。</li>
+  <li>非対称鍵。公開してしまっても問題ない公開鍵と、受信側だけが持っている私有鍵のペアを利用する。RSA<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> など。</li>
+</ul>
+
+<h5 id="三種類の公開度">三種類の公開度</h5>
+
+<ul>
+  <li>共通鍵 (以下、seckey)。対称鍵方式<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>で用いる。通信を行う当事者以外に洩れてはいけない。これを秘密鍵と呼ぶ流儀もあるが、ここでは共通鍵と呼ぶ。</li>
+  <li>私有鍵 (以下、privkey)。非対称鍵方式で用いる<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。privkey は、その人だけが持っていることがパワーのすべて。</li>
+  <li>公開鍵 (以下、pubkey)。非対称鍵方式で用いる。privkey に対して、1 つの対応する pubkey を使用するが、pubkey から privkey を割り出すことはほぼ不可能。pubkey が通信当事者以外に洩れても安全性に問題ない。pubkey を一般に公開してしまうこともある。</li>
+</ul>
+
+<h4 id="完全性の保証">完全性の保証</h4>
+
+<p>暗号はあくまでも暗号であり、それそのものでは完全性の保証はしない。ここで、EBC で暗号化したテキストを改竄して見せた。</p>
+
+<p>EBC がいけない。OpenSSL<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> では、何も考えずに CBC と書いておくべきです<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+
+<h4 id="鍵完全性保証のデモ">鍵＋完全性保証のデモ</h4>
+
+<p>パスワードで AES を簡単化できます。
+素朴な RSA では、鍵のサイズより短いバイト列しか暗号化できないので、用途が非常に限定されます。例えば (と実演すると)、open-uri.rb のソースそのものでは長すぎて無理でした。</p>
+
+<p>そこで、AES 用パスワードを動的に生成し、私有鍵を暗号化する。</p>
+
+<ul>
+  <li>Marshal.dump</li>
+  <li>認証 + 完全化</li>
+</ul>
+
+<p>秘密を共有できている人なら同じ署名が生成できる。
+OpenSSL::Digest::なんか.new ――「なんか」はどの手段で署名するのかを指定する。
+検証には DSA というものもある。ただし署名用のみ。</p>
+
+<h3 id="例題-アプリケーション間通信">例題: アプリケーション間通信</h3>
+
+<p><a href="http://dev.ctor.org/download/rubykaigi2006.tar.gz">ソースコード</a>
+を参照のこと。
+動作は</p>
+
+<ul>
+  <li>host は外部から Ruby プログラムとりこんで評価実行</li>
+  <li>proxy は接続して結果を返す</li>
+</ul>
+
+<p>ものとする。</p>
+
+<dl>
+  <dt>2_application/21_clientauth</dt>
+  <dd>まず何とか安全に送る クライアント認証</dd>
+  <dd>署名を送って ソースを送って 評価結果を返して 最初の一行をとって 署名を verify して。</dd>
+  <dt>2_application/22_hostcheck</dt>
+  <dd>送り先が二つ以上あるとき、送り先を特定するには</dd>
+  <dt>2_application/23_mastercontrol</dt>
+  <dd>クライアント二つ以上あるとき、集中管理したい。</dd>
+  <dd>それにはサーバ側にも鍵を用意する。サーバが一番えらくて「諸君らの鍵はたしかに我輩が認証した」を管理の手引きにする。</dd>
+  <dt>2_application/24_nglist</dt>
+  <dd>いったん許可したんだけど、もう使わない人は NG にしたい。</dd>
+  <dd>サーバ側に NG リストを作って、参照して載ってたら NG とする。</dd>
+</dl>
+
+<p>以下、SSL はこんなことまで考えてるから安全、というストーリーでいく。</p>
+
+<dl>
+  <dt>2_application/25_noreplay</dt>
+  <dd>リプレイ攻撃</dd>
+  <dd>同じことを何回も繰り返されると、昔取れた許可が不要に長く生き延びてしまう可能性がある。対策としてワンタイム制を導入する。</dd>
+  <dt>2_application/26_encrypt</dt>
+  <dd>暗号化</dd>
+  <dt>2_application/27_ssl</dt>
+  <dd>SSL の例</dd>
+  <dd>徹底的に考えて設計されたのが SSL なので、みなさんこれを使いましょう。</dd>
+</dl>
+
+<h3 id="証明書を作ってそれを使って通信する">証明書を作って、それを使って通信する。</h3>
+
+<p>最後の例。結構手間なのですが。</p>
+
+<ul>
+  <li>まず CA</li>
+  <li>パスワード生成</li>
+  <li>失効リストをつくる</li>
+  <li>クライアント鍵をつくる</li>
+  <li>サーバ鍵をつくる</li>
+  <li>クライアント証明書 パスワード</li>
+  <li>サーバ証明書 パスワード</li>
+</ul>
+
+<p>WEBrick 最初の設定の手間だけは若干かかるが、あとは WEBrick が面倒見てくれる。</p>
+
+<dl>
+  <dt>3_pgp/32_sign</dt>
+  <dd>OpenPGP</dd>
+  <dd>これは作りかけ。まだまだ生々しい……</dd>
+</dl>
+
+<h3 id="まとめ">まとめ</h3>
+
+<p>いまあるツールキットは、まだまだガリガリ。しかも落とし穴いっぱい。</p>
+
+<p>抽象化するひとつの手は OpenSSL マッピングモジュール。現状でも充分すばらしい。
+しかもサポートが厚い！ (gotoyuzo 氏)</p>
+
+<p>他の環境では真似できません！ まねの出来ないセキュア・アプリを作ってください！</p>
+
+<h2 id="後藤謙太郎仕事で使うruby">後藤謙太郎「仕事で使うRuby」</h2>
+
+<dl>
+  <dt>スピーカー</dt>
+  <dd>後藤謙太郎氏 (<a href="http://www.syngram.co.jp">シングラム</a>); benchmark.rb など、Ruby の標準添付ライブラリの開発者で、前セッションで名前の挙がった gotoyuzo 氏とご兄弟です。</dd>
+  <dt>時間</dt>
+  <dd>16:49〜17:20</dd>
+  <dt>セッション概要</dt>
+  <dd>Ruby アプリケーションの活用事例を紹介</dd>
+  <dt>講演資料</dt>
+  <dd><a href="http://www.webrick.org/misc/20060610-rubykaigi2006-gotoken.pdf">http://www.webrick.org/misc/20060610-rubykaigi2006-gotoken.pdf</a>
+<img src="/images/RubyKaigi2006-0610-4/s06100071.jpg" alt="s06100071.jpg" /></dd>
+</dl>
+
+<ul>
+  <li>Ruby 関係なくても有用度 ★★</li>
+  <li>業務管理のチケットドリブン度 ★★</li>
+  <li>ルックス重要度 ★★★</li>
+  <li>ご本人のルックス度 ★★★</li>
+</ul>
+
+<h3 id="わたしと-ruby">わたしと Ruby</h3>
+
+<p>PC を借りてプレゼンを入れといたら、いつの間にか「世界初」って。なひさん？</p>
+
+<ul>
+  <li>学校で教えた (世界初)</li>
+  <li>雑誌に連載した (世界初)</li>
+  <li>学会発表した</li>
+  <li>業務で使った</li>
+</ul>
+
+<h3 id="仕事で使う">仕事で使う</h3>
+
+<p>体験談: 業務の支援ツールとして</p>
+
+<h3 id="なぜアプリも-ruby">なぜアプリも Ruby？</h3>
+
+<ul>
+  <li>トラブルシューティングする‘気になる’</li>
+  <li>非プログラマ向けに重要; 使いものになる</li>
+</ul>
+
+<h3 id="業務とは">業務とは</h3>
+
+<ul>
+  <li>似た「ようなこと」の繰り返し
+    <ul>
+      <li>いわゆるワークフロー</li>
+      <li>同じようで、微妙に違う。</li>
+      <li>ローカルルールが山ほど。そのなかでエントリーもたくさん</li>
+    </ul>
+  </li>
+  <li>隠し事が多い
+    <ul>
+      <li>インターネットを通せない</li>
+      <li>権限にうるさい</li>
+      <li>「決まりですから」／危険な操作をさせないことは実際に重要だし。</li>
+    </ul>
+  </li>
+  <li>紙が重要
+    <ul>
+      <li>紙になることが多い</li>
+      <li>スキャンデータとか Excel とか</li>
+    </ul>
+  </li>
+  <li>少なくとも印刷できるようにはしておきたい。PC や端末に依存しないことはよいこと。</li>
+  <li>一覧性もあがる。</li>
+  <li>プログラマが使うとは限らない
+    <ul>
+      <li>英語ダメ</li>
+      <li>日本語ファイル名当たり前</li>
+    </ul>
+  </li>
+  <li>人名順序は辞書式じゃない！ 表示順はなんか謎でカスタマイズが必要。</li>
+</ul>
+
+<h3 id="使ってよかった-wiki">使ってよかった Wiki<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></h3>
+
+<ul>
+  <li>「決まりごと」を書く
+    <ul>
+      <li>コピーが無いのがいい</li>
+      <li>「決まりごと」といっても変更は出来ないと</li>
+    </ul>
+  </li>
+  <li>「起こったこと」を書く
+    <ul>
+      <li>コマンドラインの記録とか，議事録とか</li>
+    </ul>
+  </li>
+  <li>チケットシステム ←これは無いと仕事にならない</li>
+</ul>
+
+<h4 id="wiki-の導入">Wiki の導入</h4>
+
+<ul>
+  <li>Office にすると正解 (最新版) がどれか分からなくなりがち。</li>
+  <li>tDiary のカテゴリ機能は便利。</li>
+  <li>でも Wiki は一般の人には割と敷居が高い。記号を使うのが大変。</li>
+  <li>まずは大量に自分で書く。書く際の決め事は (ゆるくていいから) 決めておく。</li>
+  <li>無理に index を作らないこと。‘ある程度は’淘汰に任せるほうがよい。
+    <ul>
+      <li>新規ページがいきなり作れるタイプの Hiki<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup> とかは手動で一覧を作りたい。</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="wiki-のルックス重要">Wiki のルックス重要</h4>
+
+<ul>
+  <li>Hiki のテーマ、流通しているものは、ちょっと合わない。会社らしさ (CI<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup> とか) を反映させよう (会社のレターヘッドとか入れると効果的)。</li>
+  <li>封筒や PowerPoint のフォーマットに合わせるとか</li>
+  <li>印刷用スタイルシートも用意する→紙にも反映しやすい。</li>
+</ul>
+
+<h4 id="wiki-に欲しい機能">Wiki に欲しい機能</h4>
+
+<ul>
+  <li>タグ − ラベル貼りたい</li>
+  <li>テンプレート − 定型が山ほどある</li>
+  <li>ログイン − 署名したい (ルール化では不十分)</li>
+</ul>
+
+<h3 id="チケットシステム">チケットシステム</h3>
+
+<ul>
+  <li>たっぷりつかってる
+    <ul>
+      <li>影舞<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>は本来バグトラッキングシステムだが、テンプレートの「バグ」を「案件」に置き換えて利用</li>
+      <li>影舞.gsub(“バグ”,”案件”)</li>
+    </ul>
+  </li>
+  <li>ワークフローの進行を記述。
+    <ul>
+      <li>区切り区切りでチケットを発行する</li>
+      <li>ステップ一覧表</li>
+      <li>やりとりにも使用する</li>
+      <li>可視制御・編集制御</li>
+      <li>管理機能が簡潔かつ充分で、表示順序を制御できるのもうれしい。</li>
+    </ul>
+  </li>
+  <li>一番最初のエントリを「おしらせ」に</li>
+  <li>ルックスは絶対カスタマイズすべし。違う顧客のものに入れ替わったりするかもしれないので。
+    <ul>
+      <li>本家の影舞に会社のデータ入れそうになったり w</li>
+    </ul>
+  </li>
+  <li>250 エントリー／月</li>
+  <li>ちょっとハック</li>
+</ul>
+
+<h3 id="ruby-アプリの問題点">Ruby アプリの問題点</h3>
+
+<ul>
+  <li>探しにくい (じつはアプリの RAA エントリはそんなに多くない)</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Application 450 &lt;&lt;&lt; Library 955</code></pre></figure>
+
+<ul>
+  <li>影舞とか howm とか portupgrade とかエントリされてない</li>
+  <li>商用 OS にパッケージされている Ruby は微妙に古い。1.8.1 と 1.8.2 だとライブラリ数ちがう。shim 必要か！？</li>
+  <li>→客先で野良ビルド。で upgrade hell…</li>
+</ul>
+
+<h3 id="まとめ-1">まとめ</h3>
+
+<ul>
+  <li>クローズドならではの制約</li>
+  <li>もっと使おう。</li>
+</ul>
+
+<h3 id="qa">Q&amp;A</h3>
+
+<dl>
+  <dt>C (かずひこさん)</dt>
+  <dd>タグもテンプレートも、結構前から Hiki では使えます。</dd>
+</dl>
+
+<h2 id="前田修吾rails-によるメタプログラミング入門">前田修吾「Rails によるメタプログラミング入門」</h2>
+
+<dl>
+  <dt>スピーカー</dt>
+  <dd>前田修吾氏 ((株) ネットワーク応用通信研究所 主任研究員); mod_ruby など、Ruby の標準添付ライブラリの開発者です。</dd>
+  <dt>時間</dt>
+  <dd>17:24〜17:54</dd>
+  <dt>セッション概要</dt>
+  <dd>Ruby の暗黒面を探求 (話題の Rails を題材に)</dd>
+  <dt>講演資料</dt>
+  <dd><a href="http://shugo.net/tmp/metaprogramming.pdf">http://shugo.net/tmp/metaprogramming.pdf</a>
+<img src="/images/RubyKaigi2006-0610-4/s06100074.jpg" alt="s06100074.jpg" /></dd>
+</dl>
+
+<ul>
+  <li>メタ度 ★★</li>
+  <li>DSL 度 ★★★</li>
+  <li>おとうさん度 ★</li>
+  <li>同姓同名 Rails で注意度 ★★</li>
+  <li>Ruby の闇がというより一部の発言が度 ★★★</li>
+</ul>
+
+<h3 id="自己紹介">自己紹介</h3>
+
+<ul>
+  <li>Family/Given 順が統一できなかった。これが Ruby Quality なのかな</li>
+  <li>Scheme と同い年</li>
+  <li>リクエストが有りましたので。</li>
+  <li>在りし日の JavaHouse-Brewers ML で regex 投げたら OO らしくないって恩師が</li>
+  <li>クラックされたりとか。</li>
+  <li>いきなり終わったり</li>
+  <li>mod_ruby, eruby, ximapd/Ruby アプリ Ruby による (ママ)</li>
+</ul>
+
+<h3 id="目的">目的</h3>
+
+<ul>
+  <li>Ruby を肴にメタプロについてお話</li>
+</ul>
+
+<h3 id="ror">RoR</h3>
+
+<ul>
+  <li>生産性 Java×10！「うそですけど」。</li>
+  <li>15 分でできる！「ぜったいめちゃめちゃ練習してですけど」。</li>
+  <li>ruby-lang.org の before/after ちょっとバタくさいですが</li>
+  <li>コンテンツが問題。協力者募集。</li>
+  <li>開発者のルックスがよくて  <del>matz がどうとはいわないけど</del> キャッチーさでは……</li>
+  <li>なにより Rails is fun!</li>
+  <li>フレームワークってハリウッドの原則 “Don’t call us, we’ll call you.”</li>
+  <li>フレームワークは使い方を強制されるので楽しくないのに Rails が fun なのは、Ruby が fun だから。「予定ではここで拍手があるはずなのでしたけれども」</li>
+  <li>さらに meta programming が fun だから。</li>
+</ul>
+
+<h3 id="メタプログラミングとは">メタプログラミングとは</h3>
+
+<ul>
+  <li>メタ言語</li>
+  <li>メタ SF</li>
+  <li>メタミステリ<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup></li>
+  <li>メタリカ</li>
+  <li>自己言及的 (コード生成<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>、マクロ、テンプレート……)。「プログラムを扱うプログラムのこと」。</li>
+  <li>DRY。生産性向上。たのしい。</li>
+  <li>副作用あり。ハイリスクハイリターン
+    <ul>
+      <li>ソースが読みにくい (正直 Rails のソースも……)</li>
+      <li>実行効率が悪い</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="rails-に学ぶテクニック">Rails に学ぶテクニック</h3>
+
+<ul>
+  <li>コード生成。Rails の scaffold が「10 分でできる……」を実現。べつに Ruby に特化した話ではない。</li>
+  <li>blade テクノロジー的アプローチ。きっと中身は heuristic なんだろうなぁ</li>
+  <li>DSL<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup>
+    <ul>
+      <li>DSL + コード生成は、パワーのない言語で使用。必ずしも静的型付とは限らず</li>
+      <li>言語内 DSL<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup> は、汎用言語で DSL を実装したもの (秀丸みたいなのではなく)。 Lisp のマクロ<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>。C++ のテンプレート等。</li>
+      <li>Ruby ならブロック使う。例: Builder テンプレート</li>
+      <li>Ruby ならあとはクラスメソッド。例: アクセサ (attr_reader, has_many)</li>
+    </ul>
+  </li>
+  <li>脱線
+    <ul>
+      <li>has_many で find 呼び出すと配列との差が浮き彫りに。detect 使う→collect 派が拡大すると。</li>
+      <li>HasManyAssociation ……正規表現を実行して、該当しないものをクラスから削除してる</li>
+      <li>method_missing で処理。一見配列に見えるけれども、実は委譲の結果配列ではなくなっていたり</li>
+    </ul>
+  </li>
+  <li>eval
+    <ul>
+      <li>Ruby はコードを扱うことはできない (コードそのものは object ではないので)</li>
+      <li>代わりに文字列をコードと見なして扱う</li>
+      <li>動的にメソッドの追加ができる</li>
+      <li>eval power: eval の種類が 3 つもあるのは Ruby だけ！ (instance_eval, class_eval, module_eval)</li>
+      <li>Rails では eval を多用 …… 429 箇所！</li>
+      <li>$SAFE=4 でもセキュアとはいえないので、いいにくいのですが、使えません</li>
+      <li>2.0 ではさらに eval が遅くなる…… eval は使うな？</li>
+    </ul>
+  </li>
+  <li>標準クラスの拡張 (Ruby では既存のクラスを後から拡張できる)
+    <ul>
+      <li>active_support/core_ext</li>
+      <li>プラグイン。ダブルディスパッチを使用 (append_features)</li>
+      <li>想定動作が変化してしまうので驚き最大</li>
+      <li>Rails なしで Ruby は使えますか？</li>
+      <li>jcode.rb 問題 (jcode.rb は String クラスを再定義するのでふるまいが変わってしまう。要注意)</li>
+    </ul>
+  </li>
+  <li>マクロ (Lisp にあって Ruby にはないもの): Ruby ではブロックや Binding.of_caller で代用。
+    <ul>
+      <li>って後者は Ruby 本体には採用されてないじゃん！ Rails は提供している。</li>
+      <li>継続と set_trace_func を使用、行ったり来たりしてる。breakpoint でしか使ってない</li>
+    </ul>
+  </li>
+  <li><strong>「用量・用法を守って正しく使いましょう」</strong></li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>AES (Advanced Encryption Standard): アメリカの国家新標準暗号規格で規格化された共通鍵暗号方式。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>RSA: 公開鍵暗号の中でも素因数分解の困難さを利用したアルゴリズム。”RSA” は開発者の頭文字をつなげたもの。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>対称暗号あるいは共通鍵暗号方式:暗号化と復号化を同じ鍵を使って行う方式。この鍵のことは秘密鍵と呼ぶ。対称暗号では秘密鍵を誰にも知られることなく相手に渡すことが重要となる。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>非対称暗号あるいは公開鍵暗号方式:暗号化と復合化を異なる鍵で行う方式。この場合公開するキーを公開鍵、公開しない鍵を私有鍵と呼ぶ。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>OpenSSL: 各種の暗号処理を扱うライブラリ。Ruby 用のライブラリもある。http://www.ruby-lang.org/ja/man/?cmd=view;name=openssl&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>ECB と CBC: どちらもブロック暗号の暗号利用モードの 1 つ。ECB には「同じ平文から同じ暗号文が生成される」という性質があるため長文の暗号文で同一平文の箇所が分かってしまうという問題がある。これを回避するため CBC が使われる。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>Wiki:ユーザが内容を編集できる機能をもった Web ツール。数多くのバリエーションがある。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>Hiki:Ruby で記述された Wiki クローン。tDiary のテーマがそのまま使える。http://hikiwiki.org/ja/&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>CI:Corporate Identity の略。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>影舞:Ruby で記述されたバグトラッキングシステム。http://www.daifukuya.com/kagemai/&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>メタミステリ:推理小説の構造そのものを利用したミステリ。推理小説の「お約束」を逆手にとった東野圭吾の<a href="https://www.amazon.co.jp/%E5%90%8D%E6%8E%A2%E5%81%B5%E3%81%AE%E6%8E%9F-%E8%AC%9B%E8%AB%87%E7%A4%BE%E6%96%87%E5%BA%AB-%E6%9D%B1%E9%87%8E-%E5%9C%AD%E5%90%BE/dp/4062646188?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4062646188">‘『名探偵の掟』’</a>などがこれに当たる。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>コード生成:Ruby によるコード生成は<a href="http://www.codegeneration.net/cgia/">『Code Generation In Action』</a>が詳しい。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>DSL (Domain Specific Language):特定の問題領域向けにチューニングされたコンピュータ言語のこと。http: //capsctrl.que.jp/kdmsnr/wiki/bliki/?DomainSpecificLanguage&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>言語内 DSL:汎用のプログラミング言語で DSL を表現すること。Ruby on Rails で多用されている。&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>Lisp のマクロ: 多くのプログラミング言語のマクロは専用の文法を持つ (Cのマクロなど) が、Lisp のマクロは Lisp そのもので、Lisp の機能が全て使える非常に強力なもの。&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

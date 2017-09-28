@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby コードの感想戦 【第 2 回】 WikiR</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0041/0041-CodePostMortem.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby コードの感想戦 【第 2 回】 WikiR</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0041/0041-CodePostMortem.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby コードの感想戦 【第 2 回】 WikiR" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0041/0041-CodePostMortem.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0041/0041-CodePostMortem.html" data-text="Ruby コードの感想戦 【第 2 回】 WikiR">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#ruby-コードの感想戦-第-2-回-wikir" id="markdown-toc-ruby-コードの感想戦-第-2-回-wikir">Ruby コードの感想戦 【第 2 回】 WikiR</a>    <ul>
+      <li><a href="#須藤さんのこと" id="markdown-toc-須藤さんのこと">須藤さんのこと</a></li>
+      <li><a href="#ソフトウェアの構成" id="markdown-toc-ソフトウェアの構成">ソフトウェアの構成</a></li>
+      <li><a href="#命名に関すること" id="markdown-toc-命名に関すること">命名に関すること</a>        <ul>
+          <li><a href="#喩えた名前" id="markdown-toc-喩えた名前">喩えた名前</a></li>
+          <li><a href="#set_srcのこと" id="markdown-toc-set_srcのこと">set_srcのこと</a></li>
+          <li><a href="#奇妙な省略形と-attr_reader-の位置" id="markdown-toc-奇妙な省略形と-attr_reader-の位置">奇妙な省略形と attr_reader の位置</a></li>
+        </ul>
+      </li>
+      <li><a href="#monitormixinのこと" id="markdown-toc-monitormixinのこと">MonitorMixinのこと</a>        <ul>
+          <li><a href="#defmethod" id="markdown-toc-defmethod">DefMethod</a></li>
+        </ul>
+      </li>
+      <li><a href="#例外のこと" id="markdown-toc-例外のこと">例外のこと</a></li>
+      <li><a href="#webrickcgiのこと" id="markdown-toc-webrickcgiのこと">WEBrick::CGIのこと</a></li>
+      <li><a href="#indexrbのこと" id="markdown-toc-indexrbのこと">index.rbのこと</a></li>
+      <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+      <li><a href="#延長戦" id="markdown-toc-延長戦">延長戦</a></li>
+      <li><a href="#バックナンバー" id="markdown-toc-バックナンバー">バックナンバー</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>書いた人: 関将俊さん</p>
+
+<h2 id="ruby-コードの感想戦-第-2-回-wikir">Ruby コードの感想戦 【第 2 回】 WikiR</h2>
+
+<p>この連載は第一回の冒頭で説明されている通り、あるコードをテーマにした文通です。
+たいていの文通は人に見せるものではないのだけれど、今回は特別にみなさんに公開します。</p>
+
+<p>サラリーマンモードのコードレビューではにらむ、指差す、びっくりするなど言葉を使わなくてもわりと伝わりますが、今回は文通ですからなんとか言葉にしていきたいと思います。</p>
+
+<p>前回は須藤さんのターンでした。私の小さな Wiki を題材に、須藤さんからコメントをいただきました。
+今回は私のターンです。須藤さんのコメントに私が言い訳していく番です。</p>
+
+<h3 id="須藤さんのこと">須藤さんのこと</h3>
+
+<p>須藤さんを知ったのはオーム社の森田さんからのメールです。</p>
+
+<p>私が昔 (いまも) 使っていた WebUI のライブラリを使ったアプリケーションを森田さんが見つけて教えてくれたのです。
+当時、須藤さんは社長ではなく学生だったのではないでしょうか。
+たぶんそれと同じ頃に RWiki の開発に参加してくれたと思います。須藤さんは国際化やリファクタリングだけでなく、The RWiki の運営などめんどうなことも担当してくれました。昔過ぎて思い出せませんが、だいたいそんな感じです。</p>
+
+<p>RWiki は別の誰かとコードを書いた唯一のプロダクツ (語弊があるけど、誰かに頼って開発した、という意味) です。それ以来はどれもパッとしないというか相手にされてないでいるし、まあ一人でもいいかなと思っています。そういうわけで、私が誰かとコードを書いたのは須藤さんが最後です。
+すごいでしょ。</p>
+
+<p>須藤さんとの作業はひっかかるポイントがよく似ていてとても楽しかったです。似ていても解決方法は全く違ったりすることもあり、誰かとやるのもいろいろ面白いなあ、と思い知らされましたね、そういえば。</p>
+
+<p>そうそう。須藤さんの話題と同じくらい重要なポイントがあります。私はいわゆる OSS 的なかっこいい活動とは縁遠いということです。プルリとかパッチとかそういうモダンなソーシャルネットワークの世界を楽しんだ経験は少ないので、須藤さんが語られているよいパッチのスタイルなど関することへの言及はしません。
+その分、ソースコードについてたくさん時間を割きますね。</p>
+
+<h3 id="ソフトウェアの構成">ソフトウェアの構成</h3>
+
+<p>まずソフトウェアの構成について解説されています。</p>
+
+<blockquote>
+  <p>WikiR は dRuby サーバーと dRuby サーバーに接続する CGI で構成されています。これは、咳プロダクツではよくあるパターンです。
+咳フリークならみんな知っています。</p>
+</blockquote>
+
+<p>須藤さんはじめ多くの方はご存知かと思うのですが一応説明しますと、私は dRuby という Ruby のプログラムならなんでもサーバにしてしまうライブラリを書きました。それ以来このような構成の、サーバによるアプリケーション本体 (モデル？) とクライアントによる UI の組合せを用いたシステムを書くことが多いです。
+WebMVC がこういう風に流行る前には、モデルのプロセス／ビューとコントローラーのプロセスと分けて配置するように意識していましたが、最近はもう飽きてしまいました。</p>
+
+<p>アプリケーション自体をサーバとして考えるのは、Smalltalk のプロセスの様子や、AppleEvent/AppleScript 時代の Macintosh のアプリケーションの利用、X11 アプリケーション開発などの経験からです。まあ全然ちがうだろ！と思うかもしれませんが、私はよく似た何かを感じたんですよね…。</p>
+
+<p>なんの話でしたっけ。えっとソフトウェアの構成のことですね。須藤さんがおっしゃる通り、咳フリークならよくしっているいつもの構成でした。</p>
+
+<h3 id="命名に関すること">命名に関すること</h3>
+
+<p>私はプログラミングにおいて「名前重要」というのが好きじゃありません。なんだか名前だけが重要に聞こえるので「名前も重要」くらいが好みです。いろいろな判断をした結果として残されたのがコードです。名前をはその背景を知るひとつの手がかりで、読み手にとっては重要なヒントになります。</p>
+
+<h4 id="喩えた名前">喩えた名前</h4>
+
+<p>須藤さんは WikiR::Book という名前についてコメントしています。</p>
+
+<blockquote>
+  <p>ページを管理するクラスには他にも違う名前が考えられます。例えば「Wiki」という名前です。ページを全部集めたものが Wiki だと考えれば適切な名前です。
+あるいは、「データベース」という名前です。ページが保存されている感じがします。「本」や「Wiki」ではどのように保存するかは気になりませんが、
+データベースという名前を使うとどのようにページを保存するかを意識している感じがしますね。</p>
+
+  <p>咳さんは何かに例えた名前をつけます。作っているものは Wiki ですが、「ページが集まっているものと言えば本だよね」という連想をして
+「本」という名前をつけたのでしょう。このように何かに例えた名前をつけると愛着がわき、例えたものベースで説明するようになります。
+例えば、「ページの数が増えてきて処理に時間がかかるようになったね」というのではなく、「本が厚くなって重くなったね」というような感じです。
+自分が書いたソフトウェアに愛着がわくので一度は試してみるとよいでしょう。</p>
+</blockquote>
+
+<p>愛着もそうかもしれないけど、私はその文脈で識別し易いものを選ぶようにしている気がします。 (今まで意識したことなかったですが、この文通のためにムリに考えています。)</p>
+
+<p>Book については Wiki を作っているのに Wiki って名前にしたらよくわからないし、辞書構造だから Hash とかデータ構造を表すのも実装を狭めるし、なんとなく Page の集まりだから Book を選びました。もっと素敵な名前が出てくるかもしれないけど、以前書いたときも Book だったし、まあ惰性も強く働いたと思います。</p>
+
+<p>私がこういった名前の付け方を知ったのは TCL からです。TCL とはシマンテック社の THINK Pascal についていた THINK Class Library です。tcl とは関係ないです。
+私はこの小さくて速いコンパイラとクラスライブラリに夢中になりました。コンパイラに付属していたクラスライブラリのマニュアルを何度も何度も読みました。このクラスライブラリの日本語版のマニュアル、バージョンアップ後の英語版のマニュアルの二冊はまだ手元に置いてあります。もうボロボロになってしまったけれど捨てられません。</p>
+
+<p>喩えを使った名前は GUI 部品ではよく見かけましたが、次のような機能を喩えた名前を知ってくすくすした覚えがあります。</p>
+
+<dl>
+  <dt>CBartender</dt>
+  <dd>イベントを適切なオブジェクトにディスパッチする係</dd>
+  <dt>rainyDayFund / creditLimit / loanApproved</dt>
+  <dd>メモリが少ない時のための蓄え、借りれる最大サイズ、メモリ要求が承認されたかの状態</dd>
+</dl>
+
+<p>はっ。そういえばプロセス間通信に使われるメカニズムの名前は比較的キラキラネーム (セマフォ、ランデブー、リンダとか) が多い気がしますね。</p>
+
+<h4 id="set_srcのこと">set_srcのこと</h4>
+
+<blockquote>
+  <p>RWiki の時もそうでしたが、咳さんは set_src いう名前を使います。 src= の方が Ruby らしいのに、です。たぶん、「src= だと単純に値を設定するだけ」
+というイメージがあるけど、実際は「ソースを設定した後に HTML に変換するというようにたくさんやっている」から set_src という
+別の名前にしているんじゃないかと思います。で、私はこの名前が好きではありません。</p>
+</blockquote>
+
+<p>同感です。私も set_src は好きでありません。というよりも、まず思いつきません。当然、最初は src= で書き始めました。そうするとですね、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> @@ -29,11 +29,11 @@ class WikiR
+    class Page
+      def initialize(name)
+        @name = name
+ -      set_src("# #{name}\n\nan empty page. edit me.")
+ +      self.src = "# #{name}\n\nan empty page. edit me."
+      end
+      attr_reader :name, :src, :html, :warnings</code></pre></figure>
+
+<p>この記述に出会うわけです。「self.src = 」。どうですかこの奇妙さは！</p>
+
+<p>ここまできてああそうか、src= は dRuby/irb などの外部アプリケーションからの操作のためにとっておいて、内部は特別なことをしそう感のある奇妙な名前にしておこうかなあと思ったわけです。そんな思考を経て、10 年前に書いた set_src を「あのときもこんな気分だったのかなあ」と思い出しつつ拝借しました。src= 以外の名前があったらそれにしたいと思います。</p>
+
+<h4 id="奇妙な省略形と-attr_reader-の位置">奇妙な省略形と attr_reader の位置</h4>
+
+<blockquote>
+  <p>km という変数名が気になります。これは KraMdown の略だと思いますが、このオブジェクトは
+Kramdown::Document オブジェクトなので km ではなく document が適切です。</p>
+</blockquote>
+
+<p>なんで省略形に km を選んだのかよく覚えていないのですが、Kramdown を示す名前を使った理由は覚えています。私はよく暇つぶしに Wiki を実装しますが、最初のバージョンは書式をもたない plain text (というより HTML 直書き) で始めます。その場合、フォーマッタは plain や html だったりします。
+今回もそのように書き始めて、Kramdown のフォーマッタに取り替える時に km としました。その他のフォーマッタの採用を検討してもいましたし、この当時は doc でなく km を選んだんでしょうね、たぶん。</p>
+
+<blockquote>
+  <p>他にも src と省略しないで source にしたいとか、attr_reader は initialize の下じゃなくて上に書きたいとか、”# #{name}…” は default_source
+というメソッドとして括りだしたいとかありますが省略します。</p>
+</blockquote>
+
+<p>src を source にするべきかは議論があると思います。
+常に省略しない名前が素晴らしいと誰かが言ってたみたいですが、自分の想定する読者の範囲のリテラシーに合わせて良いと思います。たぶん。私はそう信じているので、source は src でソースだと通じると考えました。C でループを書くときの添字の i や、座標の x, y、stdin/stderr/stdout、また WikiWikiWeb を Wiki と略したりするのもわりと通じることが多いのではないでしょうか。</p>
+
+<p>そうそう。The dRuby Book の訳者である井上さん<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>から ary というのがイケテナイと指摘をうけたことがあります。ary は ruby のソースコードではポピュラーな省略形ですから、なんの躊躇もなく使用しています。通じなくてごめんなさい。</p>
+
+<p>さて、attr_reader の位置はどうでしょうか。Ruby ではインスタンス変数を宣言する必要はなく、代入した瞬間に生まれます。多くの場合、initialize メソッドで初期値を入れることで宣言のように見せているのではないでしょうか。ですから attr_reader など、インスタンス変数を操作するコンビニエンスメソッドを定義するのは initialize の後が好みです。</p>
+
+<p>default 値をつくるメソッドを分けるのは賛成です。その場合、Kramdown という書式を追い出してそのフォーマッタにデフォルト値を生成するメソッドを配置すると思います。</p>
+
+<h3 id="monitormixinのこと">MonitorMixinのこと</h3>
+
+<blockquote>
+  <p>MonitorMixin を include して、initialize で super() して、up の中の処理を synchronize do … end しています。
+これは dRuby を使ったプログラムでよく見る処理です。</p>
+
+  <p>と、 MonitorMixin の説明をしてきましたが、私は MonitorMixin が好きではありません。initialize で super() するのがカッコ悪いなぁと思います。
+継承したときに initialize で super() するのは親クラスも初期化しないといけないからだろうなぁとは思います。
+クラスをインスタンス化するときに initialize が呼ばれるというルールがあるからです。
+しかし、モジュールは initialize が呼ばれるというルールはありません。
+それなのに super を呼ばなければいけないのがカッコ悪いなぁと思う理由な気がします。</p>
+</blockquote>
+
+<p>MonitorMixin は私のコードでよく出現します。使用例などは須藤さんが示されている通りです。入れ子に呼び出してもロック可能なのでアプリケーションを書くのが楽です。</p>
+
+<p>実は私は MonitorMixin よりも Monitor が好きです。MonitorMixin が好きでない理由は @mon_owner, @mon_count, @mon_mutex の三つのインスタンス変数を定義してしまうところです。須藤さんの言う通り、superが必要なのもめんどくさいです。でもそれを補って MonitorMixin を採用する理由があります。それは synchronize メソッドが定義されることです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  class WikiR
+    class Book
+ -    include MonitorMixin
+      def initialize
+ -      super()
+ +      @monitor = Monitor.new
+        @page = {}
+      end
+
+ @@ -19,7 +18,7 @@ class WikiR
+      end
+
+      def []=(name, src)
+ -      synchronize do
+ +      @monitor.synchronize do</code></pre></figure>
+
+<p>須藤さんのパッチをごらんください。synchronize は @monitor のメソッドのままです。これは、@monitor に関して排他制御することを意思表示しています。オブジェクト自身の排他制御ではなく、あるモニターに関する排他制御に見えます。あるオブジェクトの中で複数の関連しない区間が排他制御される可能性がある (つまりモニターが複数あるかもしれない、という心構えで読む必要がある) ということです。排他制御はある関心事について書かれるべきです。
+MonitorMixin が synchronize メソッドを定義してくれる場合、いま読んでいるオブジェクト全体が関心ごとであることを意思表示することになります。あるオブジェクトの中で本当に複数の関心事それぞれに排他制御が必要なケースで @関心事.synchronize を導入するべきだと信じています。</p>
+
+<p>すると次のような synchronize メソッドを導入すればいいじゃんと思いますよね。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def synchronize(&amp;blk)
+   @monitor.synchronize(&amp;blk)
+ end</code></pre></figure>
+
+<p>これを毎度定義するくらいなら、super とインスタンス変数が増えちゃうことを受け入れて MonitorMixin を使ってもいいかー、となるわけです。</p>
+
+<h4 id="defmethod">DefMethod</h4>
+
+<blockquote>
+  <p>特に改善案はないのですが、前から DefMethod というモジュール名がカッコ悪いなぁと思っていることだけ書いておきます。</p>
+</blockquote>
+
+<p>はい、同感です。</p>
+
+<h3 id="例外のこと">例外のこと</h3>
+
+<blockquote>
+  <p>それでは、最近の書き方をしているところも見てみましょう。</p>
+
+  <p>84 text = text.force_encoding(‘utf-8’)</p>
+
+  <p>force_encoding は ! がついていないので名前だけではわかりづらいですが、破壊的なメソッドです。
+そのため、戻り値を text に代入する必要はありません。これで十分です。</p>
+</blockquote>
+
+<p>うおおお。それは知りませんでした。コメントありがとうございます。</p>
+
+<blockquote>
+  <p>このメソッドにはそれよりも気になることがあります。それは、例外を握りつぶしているという事です。</p>
+
+  <p>wikir.rb:
+  81 def do_request(req, res)
+  …
+  86 rescue
+  87 end</p>
+
+  <p>rescue の中でログを出力するなどした方がよいです。</p>
+</blockquote>
+
+<p>do_request は WikiR の中で、外部から入ってくる怪しい入力を濾過してきれいな入力だけを扱うメソッドと位置づけました。怪しい入力を却下し、扱える入力だけを処理します。怪しい入力はいろいろな方法で怪しく、それに対してアプリケーションができることはほとんど残されていません。せいぜいログを吐いてユーザに言い訳するくらいでしょう。それくらいなら httpd のログにも手がかりはあるし、ruby の起動オプションで印字することもできます (全ての例外が等しく重要であるなら、ですが) 。</p>
+
+<p>このコメントは二通りの受け止め方ができます。一つは、HTTP のリクエストではログを残すべきである、もう一つは、例外を握りつぶすのはダメだ、です。</p>
+
+<p>前者の意図であれば、須藤さんの言う通りかもしれません。私は HTTP のサービスを仕事で書いた経験はありませんし、運用もしていませんから、経験豊富な須藤さんの意見が正しいと思います。</p>
+
+<p>後者の場合、私は「例外を握りつぶす」という表現がよくわかりません。例外をフィルタするのが悪で、ログするべきである、というニュアンスのことを言われることがよくありますが、私はそうは思いません。例外はちょっとかっこいい制御構文とエラー情報であって、他の戻り値やジャンプ命令と大差ありません。例外だけを特別扱いするのは奇妙な感じがします。</p>
+
+<p>アプリケーションはいつかどこかで例外を処理しなくてはなりません。例外はそれぞれの間で適切にフィルタされるべきだし、適切に発生させるべきだと思っています。ライブラリを設計するとき、全ての例外をそのまま通すのは簡単です。その処理の責任を呼び手に押し付けるわけですから。アプリケーションはライブラリの値域に対して正しく動くように書かなくてはなりません。例外の設計はエラー値の設計でもあります。ライブラリはアプリケーションが書き易いような値域にすることを心がけるべきです。例外を返すということは、アプリケーションがそれを処理するべきだ、という意思表示であったり、一連の処理のそれぞれに対してエラーチェックすることなく、まとめて rescue でエラー処理するチャンスを与えるためであったりするでしょう。</p>
+
+<p>アプリケーションにとって役に立つ例外はなんでしょう。do_request に関して言えば、ここで例外をあげてもアプリケーションができることはないし、積極的に例外を捨てることが正しいと判断しました。</p>
+
+<p>WikiR とは関係ありませんが、この言い訳をしているうちに例外を発生させないライブラリに対して、アプリケーションの記述を容易にするために、例外を発生させるラッパーを書いたことがあるのを思い出しました。</p>
+
+<ul>
+  <li><a href="http://d.hatena.ne.jp/m_seki/20081203#1228239611">http://d.hatena.ne.jp/m_seki/20081203#1228239611</a></li>
+</ul>
+
+<p>これは Koya という OODB の習作をしていて書いたものです。Koya のストレージには TokyoCabinet (以下 TC) を利用しました。TC では「例外を発生させず、戻り値でエラーを表現する」という方針を採用しており、エラーが起きるかもしれない呼び出しに関しては戻り値をチェックする必要があります。
+アプリケーションで全てのTCの操作に対して戻り値の検査をするのは退屈ですよね。たとえばトランザクションの処理のようなものを想像してください。トランザクション中で行う TC の操作の全てについていちいち検査するのではなく、rescue でまとめて処理するとアプリケーションのコードはシンプルになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   class BDBError &lt; RuntimeError
+     def initialize(bdb)
+       super(bdb.errmsg(bdb.ecode))
+     end
+   end
+
+   class BDB &lt; TokyoCabinet::BDB
+     def exception
+       BDBError.new(self)
+     end
+
+     def cursor
+       TokyoCabinet::BDBCUR.new(self)
+     end
+
+     def self.call_or_die(*ary)
+       file, lineno = __FILE__, __LINE__
+       if /^(.+?):(\d+)(?::in `(.*)')?/ =~ caller(1)[0]
+         file = $1
+         lineno = $2.to_i
+       end
+       ary.each do |sym|
+         module_eval("def #{sym}(*arg); super || raise(self); end",
+                     file, lineno)
+       end
+     end
+
+     call_or_die :open, :close
+     call_or_die :tranbegin, :tranabort, :trancommit
+     call_or_die :vanish
+   end</code></pre></figure>
+
+<p>call_or_die というクラスのメソッドに Symbol を渡すと、戻り値が異常なら例外を発生させるメソッドを定義します。</p>
+
+<p>こんな風に、処理はうまくいかなかった (うまくいかなかったら false を返すという仕様のメソッドだと考えると、メソッドはうまく動いているとも言えるんだよなー) けど例外があがらないケースって多々ありますよね。この場合はどう考えたらいいんでしょう。「例外」が特別なのか戻り値が false なのも特別なのか、いや全てのメソッドの戻り値はログされるべきだとか、いろいろ考えられますが、こういうのってあるルールで機械的に思考する類のものではなく、その状況に応じて対応をテキトーに選ぶものではないでしょうか。</p>
+
+<p>あっ、ここばっかり言い訳が長くなりました。苦しいので先に進みます。</p>
+
+<h3 id="webrickcgiのこと">WEBrick::CGIのこと</h3>
+
+<p>WEBrick::CGI はここ五年くらい (もっと？) 意識して使ってます。</p>
+
+<p>CGI や WEBrick サーブレットなどのアプリケーションインターフェイスはよく似ているけど、ちょっとずつ違ってます。たいていそういうのをみるとインターフェイスをそろえてみたくなるのが人情です。私も 20 世紀にそういうのをやってたんですが、全部のインターフェイスをそろえるのめんどくさいんですよね。細かい仕様とか調べるの苦手だし。そこで CGI でもなんでも WEBrick のインターフェイスにそろえることができそうだと気付いておねだりして作ってもらったのが WEBrick::CGI です。よく似たアイデアのものも多いかもしれないけど、gem なしですぐ使えるのが魅力です。
+WikiR も CGI でないところに配置されたとしても、WEBrick なアプリケーションインターフェイスを変更することなく動作させることができます。</p>
+
+<h3 id="indexrbのこと">index.rbのこと</h3>
+
+<p>もっとも、index.rb のように非常に小さい CGI は Rails を CGI で起動するようなケースと比べて軽いため、実用的な速度を持ちます。イントラネットで使用するには十分なことも多いです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> index.rb:
+   #!/usr/bin/ruby
+   require 'drb/drb'
+
+   DRb.start_service('druby://localhost:0')
+   ro = DRbObject.new_with_uri('druby://localhost:50830')
+   ro.start(ENV.to_hash, $stdin, $stdout)
+
+ その人のコードを見続けていると、この人はどうしてこんなコードを書いたのか、というのがわかってきます
+ (想像できるようになってくるだけで、わかってはいないかもしれません) 。
+ 昔、咳さんのコードを見ていた私からすると「このコードはいろんなプロダクツで使いまわしているコードだろうなぁ」と感じます。
+
+ ちゃんと書いた咳さんのコードでは「ro (たぶん、Remote Object の略) 」という名前を使いません。
+ 咳さんなら「wikir (リモートにあるどのオブジェクトを触るかがわかる名前。一見、ローカルのオブジェクトに
+ 見える名前をつけるはずです。wikir.rb の最後を見るとリモートにあるのは WikiR::UI ですが、ui にはしないはず
+ です。リモートのオブジェクトを提供する側は公開用に WikiR::UI というオブジェクトを用意していますが、
+ 使う側からすれば Wiki サービスを使いたいだけなので、それが UI 用のやつかどうかなんて気にしたくありません。) 」や
+ 「front (dRuby 本でも使われている伝統的な名前) 」といった名前を使うはずです。</code></pre></figure>
+
+<p>その通り、このコードは使い回しです。相手が特定の何かであることを意図しないので remote object としています。there でもよかったんだけど。</p>
+
+<p>最近のテストコードはもっとひどくて、ファイル名をそのままポート番号にしています。外部のサービスでこんなことをする人はいないと思うけど、紹介しておきます。</p>
+
+<p>54321.rb</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'drb/drb'
+
+ DRb.start_service('druby://localhost:0')
+ ro = DRbObject.new_with_uri('druby://localhost:' +  File.basename($0, '.rb'))
+ ro.start(ENV.to_hash, $stdin, $stdout)</code></pre></figure>
+
+<h3 id="まとめ">まとめ</h3>
+
+<p>須藤さんからいただいたコメントにたくさん言い訳しました。
+気になるポイントは近いのに選んだコードが違うことが多いことに (慣れてたけど) やっぱり驚きました。</p>
+
+<p>意識の高い読者が多いところで述べるのは怖いのですが、最後に。
+コードのどうでもいいところはどうでもよく書く。それも意図の表現のひとつであると思っています。</p>
+
+<p>次回は別のペアでやってくださいー。</p>
+
+<h3 id="延長戦">延長戦</h3>
+
+<p>咳さんからの文通のお返事を受けて、メールで追加のやりとりがありましたので紹介します。結論を出そうというものではないので、自分の判断をするときに両者の視点を参考にしてもらえればと思います。</p>
+
+<p>以下、須藤さんからのコメントです。</p>
+
+<blockquote>
+  <p>例外の話へのコメントが書けそうであればお願いします。
+咳さんのいいわけに納得ならそれで終わりです。</p>
+</blockquote>
+
+<p>納得というか、そういう考えもあるんだーとは思いますが、じゃあ私も今度からはその方向で！となることはあんまりなくて、今回もそうなのでコメントを書きますね (別に咳さんの考えが間違っているとは思わなくて、そういう考え方もあるのかーという感じです。念のため) 。</p>
+
+<blockquote>
+  <p>このメソッドにはそれよりも気になることがあります。それは、例外を握りつぶしているという事です。</p>
+
+  <p>wikir.rb:
+ 81 def do_request(req, res)
+  …
+ 86 rescue
+ 87 end</p>
+
+  <p>rescue の中でログを出力するなどした方がよいです。</p>
+
+  <p>これはあえてそうしています。do_requestはWikiRの中で、外部からくる怪しい入力を濾過してきれいな入力だけを扱うメソッドと位置づけました。怪しい入力を却下し、扱える入力だけを処理します。怪しい入力はいろいろな方法で怪しく、それに対してアプリケーションができることはほとんど残されていません。せいぜいログを吐いてユーザに言い訳するくらいでしょう。それくらいならhttpdのログにもあるし、rubyの起動オプションで印字することもできます。</p>
+</blockquote>
+
+<p>httpdのログにはPOSTの内容が残らないので再現できないんですよねぇ。起動オプション（-dのことです）だと余計なものがたくさんでて目的のものをみつけるのが大変にな（ることがあ）ります。</p>
+
+<p>私はデバッグのしやすさを大事にしたいんだなぁと思いました。バグ（想定していない動作のことで、今回の場合だとこの入力は受け付けてほしいなーと思ったのに実際は無視されたという挙動）は自分で使っているときにもおきますが、他の人が使っているときにもおきます。私は、自分だけが使うツールよりも、自分以外の人も使うツール（自分以外の人にも使って欲しいツール）を作ることが多いので、手元でバグを調べることができないこともあります。そういうときに、必要な情報をとる仕組みがあると便利なんですよね。「ここにでているログを見せてもらえませんか？」とかができるので。</p>
+
+<p>自分だけが使うツールならログも出さなくてもいいかなぁとは思います。</p>
+
+<blockquote>
+  <p>まず「例外を握りつぶす」という表現がよくわかりません。アプリケーションはいつかどこかで例外を処理しなくてはなりません。
+例外はそれぞれの間で適切にフィルタされるべきものだと思っています。ライブラリを設計するとき、全ての例外をそのまま通すのは簡単です。
+その処理の責任を呼び手に押し付けるわけですから。アプリケーションはライブラリの値域に対して正しく動くように書かなくてはなりません。
+例外の設計はエラー値のの設計でもあります。ライブラリはアプリケーションが書き易いような値域にすることを心がけるべきです。
+例外を返すということは、アプリケーションがそれを処理するべきだ、という意思表示です。アプリケーションにとって役に立つ例外はなんでしょう。
+do_requestに関して言えば、ここで例外をあげてもアプリケーションができることはないし、積極的に例外を捨てることが正しいと判断しました。</p>
+</blockquote>
+
+<p>例外を捨ててもいいのですが、例外があったということはわかるようにして欲しいなぁということでした。理由はデバッグしやすいので。</p>
+
+<h3 id="バックナンバー">バックナンバー</h3>
+
+<ul>
+  <li>
+    <p><a href="/articles/0041/0041-CodePostMortem.html">Ruby コードの感想戦 【第 2 回】 WikiR</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0040/0040-CodePostMortem.html">Ruby コードの感想戦 【第 1 回】 WikiR</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>井上さん注：いけていない (というよりスペルミスじゃないかという) 指摘をしたのは私というより PragMagazine 編集者のスザンナです。あと私の会社の同僚は Euruko で Matz に「elsif」がいけていないと直接指摘していました (別に Ruby だけの文法でもないのですが) 。英語圏の人も単語の省略はしますが、日本人のしかたとちょっとやりかたが違うんではないでしょうか。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0029/0029-ExcellentRuby.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0029/0029-ExcellentRuby.html" class="hatena-bookmark-button" data-hatena-bookmark-title="VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0029/0029-ExcellentRuby.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0029/0029-ExcellentRuby.html" data-text="VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <h2 id="はじめに">はじめに</h2>
+
+<p>本記事は「<a href="/articles/0027/0027-ExcellentRuby.html">VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (前編)</a>」の後編です。前回は Ruby を使ってちゃっかり手早く Excel を処理するスクリプトを組むためのテクニックについて解説しました。</p>
+
+<p>今回は、じっくり作って長く運用する Excel 利用システムを作りたい場合に使いたいテクニックをご紹介します。</p>
+
+<h2 id="必要となる環境">必要となる環境</h2>
+
+<p>この記事で解説する事を行うには、Windows 上で、Microsoft Excel と Ruby が動く環境が必要です。Rubyの入手とインストールについては、<a href="https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md">FirstStepRuby</a> を参照してください。</p>
+
+<p>サンプルコードの動作は下記環境で確認しております。</p>
+
+<ul>
+  <li>Windows XP Home Edition SP3</li>
+  <li>ruby 1.9.1p0  [i386-mswin32]</li>
+  <li>Microsft Excel 2007 SP1</li>
+</ul>
+
+<p>なお、コードのエンコーディングはシフトJIS を用いて動作確認を行いました。同じくシフトJIS でサンプルコードを試す場合は、ソースファイルの先頭で下記ようにエンコーディング指定を行ってください。使っているRuby が1.8系でも1.9系でもこれで動作します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#! ruby -Ks
+# -*- coding: sjis -*-</code></pre></figure>
+
+<h2 id="投げ捨てろexcel">「投げ捨てろ！　Excel！！」</h2>
+
+<p>じっくり作って長く運用するようなプログラムの場合、大事なのは、Excel と距離を置いて、__Excel そのものが見えないように作る__ことです。
+そのために、Excel の様な特定技術は限られた一部のクラスからのみ利用するようにして、依存度 (結合度) の低減と凝縮度の向上を目指しましょう。</p>
+
+<h3 id="excel-を抽象化して考える">Excel を抽象化して考える</h3>
+
+<p>たいていの場合、「Excel とは何か」と問われたら表計算ソフトウェアと答えると思います。しかし、我々プログラマの観点では、Excel の機能は API として立ち上がってきます。</p>
+
+<p>例えば Excel の API は、以下のような機能を提供しています。</p>
+
+<ul>
+  <li>データの全文検索</li>
+  <li>キーから値を取り出す</li>
+  <li>統計分析機能の提供</li>
+  <li>計算機能の提供</li>
+  <li>永続ストレージ</li>
+  <li>データ構造 (ツリー＋2次元配列) の提供</li>
+</ul>
+
+<p>このように API としてみた場合、Excel とは抽象的な機能の集合体であると捉える事ができます。</p>
+
+<p>この観点で Ruby から  Excel を扱うようにすると、Excel を捨てざるを得ない状況に陥った場合にでも、同様の機能を持つ他のソフトウェア、ミドルウェア、ライブラリに交換することが容易となります。</p>
+
+<p>例えば、ワークシートから値を取得するという要件の場合、”Worksheet から特定範囲の Range の Value を取得する”、と Excel の世界の言葉で考えずに、まずは抽象的に”データストレージから条件に合致するデータを取得”と考えてみましょう。</p>
+
+<p>勿論、考えるだけではなく、Ruby でのビジネスロジックには Excel の機能を呼び出すコードを書かない様にすることが肝心です。</p>
+
+<h3 id="excel-利用箇所を集中して実装する">Excel 利用箇所を集中して実装する</h3>
+
+<p>先に述べたように、Ruby でのビジネスロジックには Excel の機能を呼び出すコードを書かないようにする必要があります。</p>
+
+<p>具体的には、Excel を使うクラスは1つに集中することで、ビジネスロジックの快適さを保ちましょう。</p>
+
+<p>この方法で実現した例として、私の作った XLS クラスや、XLS_KVS クラスがあります。</p>
+
+<h4 id="xls-クラス">XLS クラス</h4>
+
+<p><a href="http://github.com/bash0C7/XLS/blob/master/xls.rb">http://github.com/bash0C7/XLS/blob/master/xls.rb</a></p>
+
+<p>ワークシート上の各行を順に読み込み、1行目の値をキーとする Hash を2行目以降1行 につき1つ返します。そのため、Excel を意識する処理はこのクラスで完結し、ビジネスロジックではあくまで読み込んだ結果である Hash だけを相手にするだけで済みます。</p>
+
+<p>勿論、このクラスの中では、Win32OLE 経由で Excel を直接操作しています。例えば、ワークシート上の行を順に読み込む部分は、下記のように Excel の API を呼び出しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#@sheetにはWorksheetのインスタンスを格納
+@sheet.UsedRange.rows.each {|row| ...... }</code></pre></figure>
+
+<h3 id="xls_kvs-クラス">XLS_KVS クラス</h3>
+
+<p><a href="http://github.com/bash0C7/XLS_KVS/blob/master/xls_kvs.rb">http://github.com/bash0C7/XLS_KVS/blob/master/xls_kvs.rb</a></p>
+
+<p>キーと値を組にして永続化するクラスです。ビジネスロジックからは、Hash と同様にデータの追加・取得・変更・削除を行えます。</p>
+
+<p>永続化の仕掛けとしてこのクラス内部で Excel を用いて、ワークシート上にキーを格納する列と値を格納する列を表形式で持っています。そして、データの追加・取得・変更・削除は全てワークシート上のデータを操作しています。</p>
+
+<dl>
+  <dt>追加</dt>
+  <dd>Worksheet#UsedRange を取得し、ワークシート上で使われている行範囲下限の次の行にキーと値を設定する。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">max_row = @sheet.UsedRange.Row + @sheet.UsedRange.Rows.count
+@sheet.range("A#{max_row}").value = YAML.dump(key)
+@sheet.range("B#{max_row}").value = YAML.dump(value)</code></pre></figure>
+
+<dl>
+  <dt>取得</dt>
+  <dd>VLookup 関数で、指定されたキーに対応する値を取得する。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">YAML.load(@app.WorksheetFunction.VLookup(YAML.dump(key), 
+                                         @sheet.Range(KEYVALUE_COLS), 
+                                         2, 
+                                         false)
+         )</code></pre></figure>
+
+<dl>
+  <dt>変更</dt>
+  <dd>Range#find メソッドで、指定されたキーを格納しているセルを、キーを格納している列から検索し、検索したセルの隣、値を格納する列のセルに値を設定する。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">range = find(key)      
+range.offset(0, 1).value = YAML.dump(value) if range</code></pre></figure>
+
+<dl>
+  <dt>削除</dt>
+  <dd>指定されたキーを格納しているセルを、キーを格納している列から検索し、Range#Delete メソッドで、検索したセルがある行を削除する。</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">target_row = (key).Row
+@sheet.Range("#{target_row}:#{target_row}").Delete (-4162)</code></pre></figure>
+
+<p>勿論、このクラスの場合も、Excel を意識する処理はこのクラスで完結しています。そのため、ビジネスロジックではどのように Excel を取り扱っているかを意識する必要は全くありません。</p>
+
+<p>これらのクラスの様に Excel を使う部分を1クラスに切りだすことで、もし Excel を使うのを止めて別の手段に移行したいといった場合、クラス内のロジックを変更するだけ済みます。そのためビジネスロジックには手を入れずに済みます。</p>
+
+<p>つまり、影響が局所化されるため、長い運用期間で変化が発生する場合にも対応が容易です。</p>
+
+<p>また、このクラスはビジネスロジックとは直行した存在ですので、容易に再利用できます。</p>
+
+<p>とはいえ、そのような変更を安全に行うには、やはりビジネスロジックが変更後もきちんと動くかをテストする必要があります。そのため予めテストコードを用意して、いつでも回帰テストを行えるように備えておきましょう。</p>
+
+<h3 id="切り離す">切り離す</h3>
+
+<p>Excel を使うクラスは1つに集中するとビジネスロジックと Excel そのものは直接関わらなくなります。しかし (当然ながら) Excel を使っているクラスとビジネスロジックとは密接に関連した状態です。</p>
+
+<p><br /><br />
+<img src="/images/0029-ExcellentRuby/tight_coupling.png" alt="tight_coupling.png" /></p>
+
+<p><br /><br /></p>
+
+<p>そこで、ビジネスロジックを実装したクラスと、Excel を使っているクラスとの関連を切り離してしまいましょう。</p>
+
+<p>具体的には、Excel 利用を担当するプログラムと、ビジネスロジックを担当するプログラムを別に作ります。この 2 プログラム間のインターフェイスとして、YAML や XML など Ruby の標準添付クラスで扱えるファイルを用います。</p>
+
+<p><br /><br />
+<img src="/images/0029-ExcellentRuby/loose_coupling.png" alt="loose_coupling.png" /></p>
+
+<p><br /><br /></p>
+
+<p>このようにすると、プログラムレベルで再利用できるため、様々なバッチファイルやシェルスクリプトからユーティリティとして扱う事ができ、大変便利です。</p>
+
+<p>少し手間はかかりますが、ユーティティを整備しておくことで、ユーティリティの組み合わせだけで多くの事が実現できるようになります。ここまで考えて作るのは面倒かもしれませんが、後々元が取れるので是非意識して整備するよう心掛けたいところです。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>要約すると、以下2点にまとめることができます。</p>
+
+<ul>
+  <li>Excel は API と考える。</li>
+  <li>ビジネスロジックと Excel は、最大限切り離して依存度を下げる。</li>
+</ul>
+
+<h2 id="最後に">最後に</h2>
+
+<p>前編、後編の 2 回に渡って Ruby から Excel を使うテクニックについて解説しましたが、いかがでしたでしょうか？</p>
+
+<p>同様の考え方やテクニックは、Excel の他に Word や PowerPoint など、他のソフトウェアに対して適用が可能です。是非、自分なり活用方法を編み出して、可能であればその成果を公開して下さい。</p>
+
+<p><strong>Happy Exceling!</strong></p>
+
+<h2 id="著者について">著者について</h2>
+
+<h3 id="こしば-としあき">こしば としあき</h3>
+<p><img src="/images/0029-ExcellentRuby/bash0C7.jpg" alt="bash0C7.jpg" /></p>
+
+<ul>
+  <li>計画管理と設計が好きなソフトウェア技術者。Ruby &amp; Excel 使い。</li>
+  <li>ブログ : <a href="http://d.hatena.ne.jp/bash0C7/">http://d.hatena.ne.jp/bash0C7/</a></li>
+  <li>twitter : <a href="http://twitter.com/bash0C7">http://twitter.com/bash0C7</a></li>
+  <li>github : <a href="http://github.com/bash0C7/">http://github.com/bash0C7/</a></li>
+</ul>
+
+<h2 id="参考資料">参考資料</h2>
+
+<ul>
+  <li><a href="http://jp.rubyist.net/magazine/?0003-Win32OLE">Win32OLE 活用法 【第 1 回】 Win32OLE ことはじめ</a></li>
+  <li><a href="http://jp.rubyist.net/magazine/?0004-Win32OLE">Win32OLE 活用法 【第 2 回】 Excel</a></li>
+  <li><a href="http://www.nicovideo.jp/watch/sm4367870">ニコニコ動画 オフィスで踏み出すRubyの世界 - こしばとしあき</a></li>
+  <li><a href="http://www.nicovideo.jp/watch/sm8242867">ニコニコ動画 ローカル環境向けKey-Valueストアの紹介 - こしばとしあき</a></li>
+  <li><a href="http://github.com/bash0C7/XLS/">XLS プロジェクト</a></li>
+  <li><a href="http://github.com/bash0C7/XLS_KVS/">XLS_KVS プロジェクト</a></li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

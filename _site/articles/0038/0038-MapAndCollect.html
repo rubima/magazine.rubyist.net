@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>map と collect、reduce と inject ―― 名前の違いに見る発想の違い</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0038/0038-MapAndCollect.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>map と collect、reduce と inject ―― 名前の違いに見る発想の違い</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0038/0038-MapAndCollect.html" class="hatena-bookmark-button" data-hatena-bookmark-title="map と collect、reduce と inject ―― 名前の違いに見る発想の違い" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0038/0038-MapAndCollect.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0038/0038-MapAndCollect.html" data-text="map と collect、reduce と inject ―― 名前の違いに見る発想の違い">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#名前の由来となった二つのプログラミング言語lisp-と-smalltalk" id="markdown-toc-名前の由来となった二つのプログラミング言語lisp-と-smalltalk">名前の由来となった二つのプログラミング言語、Lisp と Smalltalk</a>    <ul>
+      <li><a href="#lisp-の-map" id="markdown-toc-lisp-の-map">Lisp の map</a></li>
+      <li><a href="#smalltalk-の-collect" id="markdown-toc-smalltalk-の-collect">Smalltalk の collect</a></li>
+      <li><a href="#lisp-の-reduce" id="markdown-toc-lisp-の-reduce">Lisp の reduce</a></li>
+      <li><a href="#smalltalk-の-inject" id="markdown-toc-smalltalk-の-inject">Smalltalk の inject</a></li>
+    </ul>
+  </li>
+  <li><a href="#map-と-collect-の発想の違い" id="markdown-toc-map-と-collect-の発想の違い">map と collect の発想の違い</a>    <ul>
+      <li><a href="#map" id="markdown-toc-map">map</a></li>
+      <li><a href="#collect" id="markdown-toc-collect">collect</a></li>
+    </ul>
+  </li>
+  <li><a href="#reduce-と-inject-の発想の違い" id="markdown-toc-reduce-と-inject-の発想の違い">reduce と inject の発想の違い</a>    <ul>
+      <li><a href="#reduce" id="markdown-toc-reduce">reduce</a></li>
+      <li><a href="#inject" id="markdown-toc-inject">inject</a></li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a>    <ul>
+      <li><a href="#郡司啓-gunjisatoshi" id="markdown-toc-郡司啓-gunjisatoshi">郡司啓 (<a href="http://twitter.com/gunjisatoshi/">@gunjisatoshi</a>)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>書いた人 : 郡司啓</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>「あなたは map 派？それとも collect 派？」</p>
+
+<p>Rubyist であれば、一度はこんな質問を受けたことがあるのではないでしょうか。たとえば Rubyist Magazine の過去の記事を紐解くと、<a href="/articles/0001/0001-Hotlinks.html">まつもとゆきひろさんのインタビュー</a>や<a href="/articles/0014/0014-Hotlinks.html">角谷信太郎さんのインタビュー</a>でその話題が出ていますね。</p>
+
+<p>ここでいう map と collect とは、<a href="http://doc.ruby-lang.org/ja/1.9.3/method/Enumerable/i/map.html">Enumerable#map</a> メソッドと <a href="http://doc.ruby-lang.org/ja/1.9.3/method/Enumerable/i/collect.html">Enumerable#collect</a> メソッドのことですが、リファレンスマニュアルを見ていただくと分かる通り、どちらも全く同じ動作をするメソッドになります。</p>
+
+<p>そして Enumerable モジュールには reduce と inject というメソッドもあります。「map 派？collect 派？」という質問よりは聞かれる可能性が低いと思いますが、reduce 派か inject 派かを問われることがあるかもしれません。リファレンスマニュアルで <a href="http://doc.ruby-lang.org/ja/1.9.3/method/Enumerable/i/reduce.html">Enumerable#reduce</a> メソッドと <a href="http://doc.ruby-lang.org/ja/1.9.3/method/Enumerable/i/inject.html">Enumerable#inject</a> メソッドを見ると、やはりこの二つのメソッドは全く同じ動作をします。</p>
+
+<p>それでは、なぜ同じ機能に違う名前が付いているのでしょうか。今回の記事では、map と collect、reduce と inject それぞれの名前の由来を紐解きつつ、その発想の違いを見ていきたいと思います。</p>
+
+<h2 id="名前の由来となった二つのプログラミング言語lisp-と-smalltalk">名前の由来となった二つのプログラミング言語、Lisp と Smalltalk</h2>
+
+<p>Ruby は様々なプログラミング言語の「良いとこ取り」をした言語だ、と Ruby の作者であるまつもとゆきひろさんもどこかでおっしゃっていたかと思いますが、今回取り上げる 4 つのメソッドの名前は、Lisp と Smalltalk という 2 つのプログラミング言語が由来となっています。具体的には map と reduce が Lisp 由来、collect と inject が Smalltalk 由来となります。</p>
+
+<p>Lisp と Smalltalk がどのようなプログラミング言語なのか、という詳細についての説明はここではしませんが、書いたコードの動作の確認のためにはそれぞれのプログラミング言語の処理系が必要になりますね。そこで、下準備として Lisp は GNU CLISP という Common Lisp の処理系<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>を、Smalltalk は GNU Smalltalk という処理系<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>をインストールして利用することにします。Debian 系の Linux ディストリビューションを利用しているなら、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo apt-get install clisp</code></pre></figure>
+
+<p>で GNU CLISP を、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo apt-get install gnu-smalltalk</code></pre></figure>
+
+<p>で GNU Smalltalk をインストールすることができます。他の OS を利用している方でも、上記二つの処理系はインストールパッケージが用意されていると思いますので、Google などの検索エンジンでインストール手順を調べてインストールしてみてください。</p>
+
+<p>準備ができたら、Ruby で書いたコードとそれぞれのプログラミング言語のコードを比較してみましょう。</p>
+
+<h3 id="lisp-の-map">Lisp の map</h3>
+
+<p>まずは「ある配列の要素を全て 1 だけ増加させた配列が欲しい」という場合です。Ruby では、Enumerable#map メソッドを使って次のように書くことができますよね。irb を使って動作を確認してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&gt; [3, 4, 5, 6].map {|i| i + 1 }
+ =&gt; [4, 5, 6, 7]</code></pre></figure>
+
+<p>それでは、これと同じことを実現するコードを Lisp でも書いてみましょう。上記の Ruby で書いた</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[3, 4, 5, 6].map {|i| i + 1 }</code></pre></figure>
+
+<p>というコードを Lisp (Common Lisp) で書くと、次のようなコードになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(map 'list (lambda (i) (+ i 1)) '(3 4 5 6))</code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>あまり詳しくは解説しませんが、Lisp の「’(3 4 5 6)」は Ruby の配列「[3, 4, 5, 6]」の部分に相当します。また Lisp の「(lambda (i) (+ i 1))」は Ruby のブロック「{</td>
+      <td>i</td>
+      <td>i + 1 }」の部分に相当します。そして Lisp の「(map ‘list …)」が、Ruby の Enumerable#map メソッドに相当します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>もう少し説明すると、「(map A B C)」と書いた場合、C の部分にはリストや配列、文字列などの「各要素をひとつずつ分解できる何か」が、B の部分には「C の各要素に適用したい、何らかの処理」が、そして A の部分には戻り値の型（リストを返すなら「’list」、配列を返すなら「’array」、文字列を返すなら「’string」など）」が入ります。</p>
+
+<p>それでは、GNU CLISP を起動して、動作を確認してみましょう。clisp コマンドを実行すると、irb のような対話型のインタプリタが起動して、プログラムを一行一行書きながらその結果を確認できます。またこの対話型インタプリタを終了したいときは「(exit)」と入力します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ clisp
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.44.1 (2008-02-23) &lt;http://clisp.cons.org/&gt;
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2008
+
+Type :h and hit Enter for context help.
+
+[1]&gt; (map 'list (lambda (i) (+ i 1)) '(3 4 5 6))
+(4 5 6 7)
+[2]&gt; (exit)
+Bye.
+$</code></pre></figure>
+
+<p>ちゃんと「(4 5 6 7)」という結果が返ってきましたね。どうでしょう、意外と Ruby に似ていると思いませんか？</p>
+
+<h3 id="smalltalk-の-collect">Smalltalk の collect</h3>
+
+<p>先ほどの Enumerable#map メソッドの例は、Enumerable#collect メソッドを使っても、同様の結果を得ることができます。また irb で確認してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&gt; [3, 4, 5, 6].collect {|i| i + 1 }
+ =&gt; [4, 5, 6, 7]</code></pre></figure>
+
+<p>それでは、これと同じことを実現するコードを Smalltalk で書いてみましょう。上記の Ruby で書いた</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[3, 4, 5, 6].collect {|i| i + 1 }</code></pre></figure>
+
+<p>というコードを Smalltalk で書くと、次のようなコードになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#(3 4 5 6) collect: [:i | i + 1 ]</code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>これまたあまり詳しくは解説しませんが、Smalltalk の「#(3 4 5 6)」は Ruby の配列「[3, 4, 5, 6]」の部分に相当します。また Smalltalk の「[:i</td>
+      <td>i + 1 ]」は Ruby のブロック「{</td>
+      <td>i</td>
+      <td>i + 1 }」の部分に相当します。そして Smalltalk の「collect:」が、Ruby の Enumerable#collect メソッドに相当します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>それでは、GNU Smalltalk を起動して、動作を確認してみましょう。gst コマンドを実行すると、irb のような対話型のインタプリタが起動して、プログラムを一行一行書きながらその結果を確認できます。またこの対話型インタプリタを終了したいときはCtrlキーを押しながらDキーを入力します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gst
+GNU Smalltalk ready
+
+st&gt; #(3 4 5 6) collect: [:i | i + 1 ]
+(4 5 6 7 )
+st&gt; ^D
+$</code></pre></figure>
+
+<p>こちらもちゃんと「(4 5 6 7 )」という結果が返ってきましたね。どうでしょうか。こちらはさらに Ruby に似ていると感じられたのではないでしょうか。</p>
+
+<h3 id="lisp-の-reduce">Lisp の reduce</h3>
+
+<p>次に「ある配列の要素を全て足し合わせた合計を求めたい」という場合です。Ruby では Enumerable#reduce メソッドを使って、次のように書くことができます。また irb を使って動作を確認してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&gt; [3, 4, 5, 6].reduce {|i, j| i + j }
+ =&gt; 18</code></pre></figure>
+
+<p>それでは、これと同じことを実現するコードを Lisp でも書いてみましょう。上記の Ruby で書いた</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[3, 4, 5, 6].reduce {|i, j| i + j }</code></pre></figure>
+
+<p>というコードを Lisp (Common Lisp) で書くと、次のようなコードになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(reduce (lambda (i j) (+ i j)) '(3 4 5 6))</code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>これまた詳しくは解説しませんが、Lisp の「’(3 4 5 6)」は Ruby の配列「[3, 4, 5, 6]」の部分に相当し、また Lisp の「(lambda (i j) (+ i j))」は Ruby のブロック「{</td>
+      <td>i, j</td>
+      <td>i + j }」の部分に相当します。そして Lisp の「(reduce …)」が、Ruby の Enumerable#reduce メソッドに相当します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>それでは、また GNU CLISP を起動して、動作を確認してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ clisp
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.44.1 (2008-02-23) &lt;http://clisp.cons.org/&gt;
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2008
+
+Type :h and hit Enter for context help.
+
+[1]&gt; (reduce (lambda (i j) (+ i j)) '(3 4 5 6))
+18
+[2]&gt; (exit)
+Bye.
+$</code></pre></figure>
+
+<p>ちゃんと 3 + 4 + 5 + 6 の結果である 18 が返ってきましたね。</p>
+
+<p>余談ですが、Lisp では同じことを次のように簡略化して書くことができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(reduce '+ '(3 4 5 6))</code></pre></figure>
+
+<p>これと同様に Ruby でも次のように簡略化して書くことができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[3, 4, 5, 6].reduce(:+)</code></pre></figure>
+
+<p>どうしてそうなるのかはここでは本題ではないので説明は省略しますが、興味のある方は調べてみると面白いでしょう。</p>
+
+<h3 id="smalltalk-の-inject">Smalltalk の inject</h3>
+
+<p>先ほどの Enumerable#reduce メソッドの例は、Enumerable#inject メソッドを使っても、同様の結果を得ることができます。また irb で確認してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&gt; [3, 4, 5, 6].inject {|i, j| i + j }
+ =&gt; 18</code></pre></figure>
+
+<p>それでは、これと同じことを実現するコードを Smalltalk で書いてみましょう。上記の Ruby で書いた</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[3, 4, 5, 6].inject {|i, j| i + j }</code></pre></figure>
+
+<p>というコードですが、実は inject メソッドの引数を省略しているので、次のように書き換えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[3, 4, 5, 6].inject(0) {|i, j| i + j }</code></pre></figure>
+
+<p>これを Smalltalk で書くと、次のようなコードになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#(3 4 5 6) inject: 0 into: [:i :j | i + j ]</code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>これまたあまり詳しくは解説しませんが、Smalltalk の「#(3 4 5 6)」は Ruby の配列「[3, 4, 5, 6]」の部分に相当します。また Smalltalk の「[:i :j</td>
+      <td>i + j ]」は Ruby のブロック「{</td>
+      <td>i, j</td>
+      <td>i + j }」の部分に相当します。そして Smalltalk の「inject: 0 into: …」が、Ruby の Enumerable#inject メソッドに引数(0)を与え、ブロック付きでメソッドを呼び出すことに相当します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>それでは、GNU Smalltalk を起動して、動作を確認してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ gst
+GNU Smalltalk ready
+
+st&gt; #(3 4 5 6) inject: 0 into: [:i :j | i + j ]
+18
+st&gt; ^D
+$</code></pre></figure>
+
+<p>こちらもちゃんと「18」という結果が返ってきましたね。</p>
+
+<p>以上で 4 つのメソッドの動作と、それが元になったプログラミング言語の動作の確認が出来ました。それでは、それぞれのメソッド名が一体どのような発想からその名前が付いたのかを考察してみましょう。</p>
+
+<h2 id="map-と-collect-の発想の違い">map と collect の発想の違い</h2>
+
+<p>まずは map と collect の発想の違いを見てみましょう。</p>
+
+<h3 id="map">map</h3>
+
+<p>map は「データ構造を保ったまま<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>、あるルールに従って元のデータ構造を別データ構造に変換する」という発想になります。図にすると、次のようになります。
+<img src="/images/0038-MapAndCollect/map.png" alt="map.png" /></p>
+
+<p>それでは、先ほどの Lisp で map を使ったコードの例をもういちど見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(map 'list (lambda (i) (+ i 1)) '(3 4 5 6))</code></pre></figure>
+
+<p>ここでもう少し Lisp について説明しますと、Lispでは「(関数名 引数1 引数2 …)」という形で式を書きます。先ほどの map の例だと、関数名「map」、第一引数「’list」、第二引数「(lambda (i) (+ i 1))」、第三引数「’(3 4 5 6)」という式になります。そしてこの式を評価すると「(4 5 6 7)」という戻り値が得られるわけです。</p>
+
+<p>ここで重要なのは、map 関数の引数「’(3 4 5 6)」と、戻り値「(4 5 6 7)」です。先ほどの図のとおり、「’(3 4 5 6)」というデータ構造を分解することなく、ひとかたまりの一つの値として見ています。そして戻り値も「(4 5 6 7)」というひとかたまりの一つの値です。もちろん戻り値の型（第一引数「’list」）、各要素をどのように変換するか（第二引数「(lambda (i) (+ i 1))」）といったルールの宣言はしていますが、map 関数自体がどんな処理をしているのかは分からず、発想としてはあくまで「’(3 4 5 6) を受け取って (4 5 6 7) を返す」というものになります。</p>
+
+<h3 id="collect">collect</h3>
+
+<p>collect は「データ構造内の全ての要素に対して、ある処理を繰り返し実行し、その結果を集めたもの」という発想になります。図にすると、次のようになります。
+<img src="/images/0038-MapAndCollect/collect.png" alt="collect.png" /></p>
+
+<p>それでは、先ほどの Smalltalk で collect を使ったコードの例をもういちど見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#(3 4 5 6) collect: [:i | i + 1 ]</code></pre></figure>
+
+<p>こちらは、先ほどの Lisp の map とは異なり、最初に「#(3 4 5 6)」が来ているのがポイントです。Lisp の場合は関数名が先に来ましたが、Smalltalk の場合は配列（コレクション）が先に来ています。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>そして「collect:」という名前からも分かるとおり、配列の各要素にブロック「[:i</td>
+      <td>i + 1 ]」を適用して、その結果を集める、という動作が見えてきます。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>以前「<a href="/articles/0034/0034-FiberForBeginners.html">Fiber と Proc ―― 手続きを抽象化する二つの機能</a>」という記事でも書きましたが、この collect: のように「ループしたり条件分岐したりといった、コンピューターがひとつひとつどのような処理をしているのかが目に浮かぶ」というのは、手続き型言語の発想ですよね。対して、map のように「やりたいことを宣言的に書いておけば、あとはコンピューターが頑張ってくれる」というのは、関数型言語の発想ですね。</p>
+
+<p>つまり、「あなたは map 派？それとも collect 派？」という質問は、「あなたは関数型言語が好き？それとも手続き型言語が好き？」というのを暗に聞いているのかもしれませんね。</p>
+
+<h2 id="reduce-と-inject-の発想の違い">reduce と inject の発想の違い</h2>
+
+<p>次は、reduce と inject の発想の違いを見てみましょう。</p>
+
+<h3 id="reduce">reduce</h3>
+
+<p>reduce は「あるルールに従ってデータ構造内の要素数を縮小していき、最後に残った値を返す」という発想になります。図にすると、次のようになります。
+<img src="/images/0038-MapAndCollect/reduce.png" alt="reduce.png" /></p>
+
+<p>それでは、先ほどの Lisp で reduce を使ったコードの例をもういちど見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(reduce (lambda (i j) (+ i j)) '(3 4 5 6))</code></pre></figure>
+
+<p>先ほどの map のときと同様に説明をしますと、関数名「reduce」、第一引数「(lambda (i j) (+ i j))」、第二引数「’(3 4 5 6)」、という式になります。そしてこの式を評価すると「18」という戻り値が得られます。</p>
+
+<p>もう少し説明しますと、第一引数「(lambda (i j) (+ i j))」は「隣り合った値をどのように結合するか」を表したものになります。こうした「2 つの値をどのように 1 つにするか」を宣言してあげれば、それにしたがって第二引数で指定したデータ構造の中の要素を次々と結合して要素数を縮小していき、最後に残った値を返す、というようなイメージになります。</p>
+
+<h3 id="inject">inject</h3>
+
+<p>inject は「値をプールしておくバケツを用意しておき、データ構造内の全ての要素をひとつずつ、ある処理にしたがってバケツに注入していく」という発想になります。図にすると、次のようになります。
+<img src="/images/0038-MapAndCollect/inject.png" alt="inject.png" /></p>
+
+<p>それでは、先ほどの Smalltalk で inject を使ったコードの例をもういちど見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#(3 4 5 6) inject: 0 into: [:i :j | i + j ]</code></pre></figure>
+
+<p>先ほどの Lisp の reduce とは異なり、「inject: 0 into: …」となっているのがポイントです。「inject:」という名前からも分かるとおり、「0」をどこかに「注入」しているわけです。どこに注入しているのかといいますと、ブロックの変数 i になります。そして変数 j には配列の要素をひとつ取り出して代入し、計算した結果をまた変数 i に注入し、また変数 j には配列の要素をひとつ取り出して変数 j に代入して、といったことを要素がなくなるまで繰り返します。</p>
+
+<p>先ほどの collect: と同様、inject: は「コンピューターがひとつひとつどのような処理をしているのかが目に浮かぶ（手続き型言語の発想）」のではないでしょうか。対して、reduce は「やりたいことを宣言的に書いておけば、あとはコンピューターが頑張ってくれる（関数型言語の発想）」というように感じられると思います。</p>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回の記事では map と collect、reduce と inject の比較をしてきましたが、最終的には同じ結果が得られるのに、それぞれの発想にはずいぶん違いがあることが分かります。</p>
+
+<p>しかし別々の発想をしていても、それぞれで「こうした処理は必要だ」という結論になって、違う名前で同じ機能が実装されたということはとても面白いですね。実は今回取り上げた二つの機能、ひとつは「map と collect」が表現している「巨大なデータを構造を保ったまま別のデータに変換する」機能<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>、もうひとつは「reduce と inject」が表現している「巨大なデータのすべての要素を使って何らかの計算結果を求める」機能<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>は、巨大なデータを処理する場合の最も基本的な処理、つまり基礎となる機能なのです。</p>
+
+<p>今回の例では「[3, 4, 5, 6]」という 4 つの要素しかない配列を対象としていましたが、これが巨大なデータを対象とした場合でも全く同じ考え方を適用できます。最近「ビッグデータ」という言葉をよく耳にするようになりましたが、そうした巨大なデータを手軽に処理するフレームワークとして「Hadoop<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>」というものがあります。Hadoop は Google の「MapReduce」というフレームワークが元になっており、今回取り上げた map と reduce が「巨大なデータを処理する際の基礎」であることを伺わせますね。</p>
+
+<p>このフレームワークの名前が「MapReduce」なのも興味深いですね。なぜ「CollectInject」ではなかったのでしょうか。おそらくこれは「並列処理」のためだと思われます。map も reduce も「やりたいことを宣言的に書いておけば、あとはコンピューターが頑張ってくれる」という発想のため、ユーザーはフレームワークの裏側の並列処理を意識することなく巨大なデータを扱えそうなイメージですよね。対する collect や inject は、コンピューターがどんな処理をしているかが分かりやすい半面、並列処理をするには色々と工夫が必要そうな印象を受けます。</p>
+
+<p>こんな感じで名前の由来を紐解いていくと、色々と想像できて楽しいですね。「この処理には、なぜこのような名前が付いているのだろう？」と疑問を持ったら、是非その由来を調べて見てください。きっと新しい発見がありますよ。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<h3 id="郡司啓-gunjisatoshi">郡司啓 (<a href="http://twitter.com/gunjisatoshi/">@gunjisatoshi</a>)</h3>
+
+<p><a href="http://asakusa.rubyist.net/">Asakusa.rb</a> の黒こしょうせんべい担当。Asakusa.rb は毎週火曜日 19:30 頃から東京下町のどこかで開催されていますので、お近くをお通りの方は是非お立ち寄りを。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>http://www.clisp.org/&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>http://smalltalk.gnu.org/&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>ちなみに Common Lisp の map はデータ構造を保ちません。そういう意味では Ruby の map は Common Lisp の map ではなく mapcar に相当します。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>数学ではこれを「写像」と呼びます。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>数学ではこれを「畳み込み」と呼びます。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>http://hadoop.apache.org/&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

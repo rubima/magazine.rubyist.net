@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist のための他言語探訪 【第 14 回】 Whitespace</title>
+  <meta name="description" content="著者：まつもとゆきひろ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0022/0022-Legwork.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Rubyist のための他言語探訪 【第 14 回】 Whitespace</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0022/0022-Legwork.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist のための他言語探訪 【第 14 回】 Whitespace" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0022/0022-Legwork.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0022/0022-Legwork.html" data-text="Rubyist のための他言語探訪 【第 14 回】 Whitespace">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：まつもとゆきひろ</p>
+
+<h2 id="whitespace">Whitespace</h2>
+
+<p>今回は普段とは趣を変えて、実用性は全くないけれども話のネタとしては面白い言語「Whitespace」を紹介しましょう。</p>
+
+<p>Whitespace は Durham 大学の Edwin Brady と Chris Morris によって開発され、2003 年 4 月 1 日にリリースされました。
+つまり、エイプリルフールのジョークだったわけです。
+しかし、Whitespace は単なるジョークではなく、(見かけはともかく) ちゃんと動作する言語です。
+多くの言語 (Python などを除く) ではスペース、タブ、改行などの空白 (whitespace) を無視しますが、Whitespace では逆に空白以外の文字を無視します。
+図 1 は Whitespace による Hello World プログラムです。
+しかし、すべてが空白であるため、人間の目にはなんのことだかわかりません。</p>
+
+<p><strong>図 1 WhitespaceによるHello World</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   	  	   
+	
+     		  	 	
+	
+     		 		  
+	
+     		 		  
+	
+     		 				
+	
+     	     
+	
+     	 	 			
+	
+     		 				
+	
+     			  	 
+	
+     		 		  
+	
+     		  	  
+	
+        	 	 
+	
+  </code></pre></figure>
+
+<h2 id="whitespace-の命令">Whitespace の命令</h2>
+
+<p>人間に読めないプログラムを扱うのは難しいので、まず Whitespace の文法を紹介し、人間に読める形に置換してみましょう。
+「異常な」外見を持つ Whitespace ですが、その構造は意外にストレートです。
+Whitespace は単純なスタックベースのプログラミング言語です。
+Whitespace の命令は「IMP (Instruction Modification Parameter)」、「コマンド」、「パラメータ」から構成されます。</p>
+
+<p>IMP は命令の種類を決めるプレフィックスです。
+スタック操作とフロー操作はもっとも頻繁に行われるので、1 バイトで表現されます。</p>
+
+<p><strong>表 1 IMP 一覧</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>種別</th>
+      <th>IMP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>スタック操作</td>
+      <td>[space]</td>
+    </tr>
+    <tr>
+      <td>整数演算</td>
+      <td>[tab][space]</td>
+    </tr>
+    <tr>
+      <td>ヒープアクセス</td>
+      <td>[tab][tab]</td>
+    </tr>
+    <tr>
+      <td>フロー制御</td>
+      <td>[newline]</td>
+    </tr>
+    <tr>
+      <td>入出力</td>
+      <td>[tab][newline]</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>パラメータは命令によってあったりなかったりします。
+表 2 に Whitespace の命令一覧を示します。</p>
+
+<p><strong>表 2 Whitespace 命令セット</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>IMP</th>
+      <th>コマンド</th>
+      <th>パラメータ</th>
+      <th>意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[space]</td>
+      <td>[space]</td>
+      <td>数値<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></td>
+      <td>数値をスタックにプッシュ</td>
+    </tr>
+    <tr>
+      <td>[space]</td>
+      <td>[newline][space]</td>
+      <td>-</td>
+      <td>スタックトップを複製</td>
+    </tr>
+    <tr>
+      <td>[space]</td>
+      <td>[newline][tab]</td>
+      <td>-</td>
+      <td>スタックの1番目と2番目を交換</td>
+    </tr>
+    <tr>
+      <td>[space]</td>
+      <td>[newline][newline]</td>
+      <td>-</td>
+      <td>スタックトップを破棄</td>
+    </tr>
+    <tr>
+      <td>[tab][space]</td>
+      <td>[space][space]</td>
+      <td>-</td>
+      <td>スタックの上から二つを足し算</td>
+    </tr>
+    <tr>
+      <td>[tab][space]</td>
+      <td>[space][tab]</td>
+      <td>-</td>
+      <td>スタックの上から二つで引き算</td>
+    </tr>
+    <tr>
+      <td>[tab][space]</td>
+      <td>[space][newline]</td>
+      <td>-</td>
+      <td>スタックの上から二つでかけ算</td>
+    </tr>
+    <tr>
+      <td>[tab][space]</td>
+      <td>[tab][space]</td>
+      <td>-</td>
+      <td>スタックの上から二つで割り算</td>
+    </tr>
+    <tr>
+      <td>[tab][space]</td>
+      <td>[tab][tab]</td>
+      <td>-</td>
+      <td>スタックの上から二つで剰余</td>
+    </tr>
+    <tr>
+      <td>[tab][tab]</td>
+      <td>[space]</td>
+      <td>-</td>
+      <td>値をアドレスに格納</td>
+    </tr>
+    <tr>
+      <td>[tab][tab]</td>
+      <td>[tab]</td>
+      <td>-</td>
+      <td>アドレスから値をスタックに</td>
+    </tr>
+    <tr>
+      <td>[newline]</td>
+      <td>[space][space]</td>
+      <td>ラベル<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></td>
+      <td>ラベル定義</td>
+    </tr>
+    <tr>
+      <td>[newline]</td>
+      <td>[space][tab]</td>
+      <td>ラベル</td>
+      <td>サブルーチン呼び出し</td>
+    </tr>
+    <tr>
+      <td>[newline]</td>
+      <td>[space][newline]</td>
+      <td>ラベル</td>
+      <td>無条件ジャンプ</td>
+    </tr>
+    <tr>
+      <td>[newline]</td>
+      <td>[tab][space]</td>
+      <td>ラベル</td>
+      <td>スタックトップがゼロならジャンプ</td>
+    </tr>
+    <tr>
+      <td>[newline]</td>
+      <td>[tab][tab]</td>
+      <td>ラベル</td>
+      <td>スタックトップが負ならジャンプ</td>
+    </tr>
+    <tr>
+      <td>[newline]</td>
+      <td>[tab][newline]</td>
+      <td>-</td>
+      <td>サブルーチン終了</td>
+    </tr>
+    <tr>
+      <td>[newline]</td>
+      <td>[newline][newline]</td>
+      <td>-</td>
+      <td>プログラム終了</td>
+    </tr>
+    <tr>
+      <td>[tab][newline]</td>
+      <td>[space][space]</td>
+      <td>-</td>
+      <td>スタックトップの文字を出力</td>
+    </tr>
+    <tr>
+      <td>[tab][newline]</td>
+      <td>[space][tab]</td>
+      <td>-</td>
+      <td>スタックトップの数値を出力</td>
+    </tr>
+    <tr>
+      <td>[tab][newline]</td>
+      <td>[tab][space]</td>
+      <td>-</td>
+      <td>文字を読み込みアドレスに格納</td>
+    </tr>
+    <tr>
+      <td>[tab][newline]</td>
+      <td>[tab][newline]</td>
+      <td>-</td>
+      <td>数値を読み込みアドレスに格納</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="入出力-tabnewline">入出力 ([tab][newline])</h3>
+
+<p>図 2 はスペースを S、タブを T と置き換えた Hello World です。
+これをさらにわかりやすい命令に逆アセンブルしたものを図 3 に示します。</p>
+
+<p><strong>図 2 置換を行った Hello World</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">SSSTSSTSSS
+T
+SSSSSTTSSTST
+T
+SSSSSTTSTTSS
+T
+SSSSSTTSTTSS
+T
+SSSSSTTSTTTT
+T
+SSSSSTSSSSS
+T
+SSSSSTSTSTTT
+T
+SSSSSTTSTTTT
+T
+SSSSSTTTSSTS
+T
+SSSSSTTSTTSS
+T
+SSSSSTTSSTSS
+T
+SSSSSSSSTSTS
+T
+SS</code></pre></figure>
+
+<p><strong>図 3 逆アセンブルした Hello World</strong></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">PUSH "H"
+PUTCHAR
+PUSH "e"
+PUTCHAR
+PUSH "l"
+PUTCHAR
+PUSH "l"
+PUTCHAR
+PUSH "o"
+PUTCHAR
+PUSH " "
+PUTCHAR
+PUSH "W"
+PUTCHAR
+PUSH "o"
+PUTCHAR
+PUSH "r"
+PUTCHAR
+PUSH "l"
+PUTCHAR
+PUSH "d"
+PUTCHAR
+PUSH "\n"
+PUTCHAR
+FINISH</code></pre></figure>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回はエイプリルフールのジョークから生まれた言語 Whitespace を紹介しました。
+Whitespace は通常無視されがちな空白に対する「不公平を是正する」ために生まれたのだそうです。
+ジョークとは言え、ちゃんと動作するプログラミング言語を一つ設計・実装してしまう
+パワーには脱帽します。</p>
+
+<p>Whitespace に関する詳細な情報は<a href="http://compsoc.dur.ac.uk/whitespace/">本家サイト</a> [英文] を参照してください。
+<a href="http://ja.wikipedia.org/wiki/Whitespace">Wikipedia</a> にも情報があります。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p><img src="/images/0022-Legwork/matz.jpg" alt="matz.jpg" />まつもとゆきひろは自他ともに認める日本を代表する言語オタクです。
+言語好きが昂じて自分の言語を設計してしまった大馬鹿者です。
+が、オタクとかハッカーとか呼ばれる人種はみんな多かれ少なかれそんなものじゃないでしょうか。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0022/0022-Legwork.html">Rubyist のための他言語探訪 【第 14 回】 Whitespace</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Legwork.html">Rubyist のための他言語探訪 【第 13 回】 Prolog</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-Legwork.html">Rubyist のための他言語探訪 【第 12 回】 APL と J</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Legwork.html">Rubyist のための他言語探訪 【第 11 回】 C++</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Legwork.html">Rubyist のための他言語探訪 【第 10 回】 Erlang</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Legwork.html">Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Legwork.html">Rubyist のための他言語探訪 【第 8 回】 Forth</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Legwork.html">Rubyist のための他言語探訪 【第 7 回】 Icon</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Legwork.html">Rubyist のための他言語探訪 【第 6 回】 Dylan</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Legwork.html">Rubyist のための他言語探訪 【第 5 回】 Groovy</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Legwork.html">Rubyist のための他言語探訪 【第 4 回】 Tcl</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Legwork.html">Rubyist のための他言語探訪 【第 3 回】 Io</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Legwork.html">Rubyist のための他言語探訪 【第 2 回】 CLU</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Legwork.html">Rubyist のための他言語探訪 【第 1 回】 Python</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>数値: 数値は二進数で表し、[space] が 0、[tab] が 1、[newline] が終端記号となる&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>ラベル: ラベルは [space] と [tab] の列で表現され、[newline] が終端記号となる&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

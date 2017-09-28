@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ビギナーのための CGI 入門 【第 1 回】 2 ページ</title>
+  <meta name="description" content="目次ページへ前ページへ次ページへ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0011/0011-CGIProgrammingForRubyBeginners-2.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby ビギナーのための CGI 入門 【第 1 回】 2 ページ</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0011/0011-CGIProgrammingForRubyBeginners-2.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ビギナーのための CGI 入門 【第 1 回】 2 ページ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0011/0011-CGIProgrammingForRubyBeginners-2.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0011/0011-CGIProgrammingForRubyBeginners-2.html" data-text="Ruby ビギナーのための CGI 入門 【第 1 回】 2 ページ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p><a href="/articles/0011/0011-CGIProgrammingForRubyBeginners.html">目次ページへ</a>
+<a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-1.html">前ページへ</a>
+<a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-3.html">次ページへ</a></p>
+
+<ul id="markdown-toc">
+  <li><a href="#cgi-プログラムに必要なもの" id="markdown-toc-cgi-プログラムに必要なもの">CGI プログラムに必要なもの</a></li>
+  <li><a href="#cgi-プログラムに必要なものを準備しよう" id="markdown-toc-cgi-プログラムに必要なものを準備しよう">CGI プログラムに必要なものを準備しよう</a>    <ul>
+      <li><a href="#ruby-の準備" id="markdown-toc-ruby-の準備">Ruby の準備</a>        <ul>
+          <li><a href="#ダウンロード" id="markdown-toc-ダウンロード">ダウンロード</a></li>
+          <li><a href="#インストール" id="markdown-toc-インストール">インストール</a></li>
+          <li><a href="#インストールの確認" id="markdown-toc-インストールの確認">インストールの確認</a></li>
+        </ul>
+      </li>
+      <li><a href="#サーバーの準備" id="markdown-toc-サーバーの準備">サーバーの準備</a></li>
+      <li><a href="#rde-の準備" id="markdown-toc-rde-の準備">RDE の準備</a>        <ul>
+          <li><a href="#ダウンロード-1" id="markdown-toc-ダウンロード-1">ダウンロード</a></li>
+          <li><a href="#インストール-1" id="markdown-toc-インストール-1">インストール</a></li>
+          <li><a href="#rdeの設定" id="markdown-toc-rdeの設定">RDEの設定</a></li>
+          <li><a href="#メニューの日本語表示" id="markdown-toc-メニューの日本語表示">メニューの日本語表示</a></li>
+          <li><a href="#エディタの日本語表示" id="markdown-toc-エディタの日本語表示">エディタの日本語表示</a></li>
+          <li><a href="#ファイル保存時の文字コード" id="markdown-toc-ファイル保存時の文字コード">ファイル保存時の文字コード</a></li>
+          <li><a href="#ruby-の-help-との連動" id="markdown-toc-ruby-の-help-との連動">Ruby の Help との連動</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="cgi-プログラムに必要なもの">CGI プログラムに必要なもの</h2>
+
+<p>次に CGI プログラムに何が必要か考えてみましょう。
+例えば、材料や道具も揃えずに料理を始めてもなかなか上手くいきません。
+それと同じでプログラムを作る時もあらかじめ必要な物を予想して、
+準備しておいた方が失敗が少なくなります。</p>
+
+<p>これから皆さんが作るのは CGI プログラム ですから、
+先ほどの例えの「料理」に相当するものは CGI プログラムです。
+CGI プログラムはプログラムですから、
+プログラム作成に必要な道具や材料を用意しなければなりません。
+ここで (翻訳機としての) Ruby が出てきます。</p>
+
+<p>次に CGI プログラムに固有なものについても考えてみましょう。
+最初はブラウザです。
+「るびま」 を読んでいる皆さんは <br />
+<a href="http://www.microsoft.com/windows/ie_intl/ja/default.mspx">Internet Explorer</a>
+や
+<a href="http://www.mozilla.org/">Firefox</a>
+などを使ってこの記事までたどり着いたと思います。
+ブラウザというのは「るびま」のような Web ページを表示させる時に使います。
+CGI プログラムの実行結果を見る時にもブラウザを利用するので、
+ブラウザが無いと CGI プログラムの実行結果を見れません。
+自分が作った CGI プログラムの動くところを見れないのは
+面白くないですよね。</p>
+
+<p>ブラウザに加えてもう一つ必要なものがあります。
+それはサーバーです。
+皆さんの中には自分のサイト (ホームページ) に HTML や画像などをアップロードして
+Web ページを公開している人もいると思います。
+公開された Webページ はブラウザを使って世界中から見ることが出来ます。
+実はその裏ではサーバーと呼ばれるものが働いています。
+ブラウザで Web ページにアクセスすると、
+サーバーはその Web ページのデータをブラウザに渡します。
+この時、サーバーはブラウザへのデータの運び役をしています。</p>
+
+<p>データ運びだけがサーバーの役割ではありません。
+サーバーは CGI でも大きな役割を果たします。
+ブラウザで掲示板などの CGI プログラムにアクセスすると、
+サーバーによって CGI プログラムが実行されて
+その結果がブラウザに渡ります。
+この場合、サーバーは CGI プログラムの実行役になります。
+サーバーが無いと、CGI プログラムを作っても
+その CGI プログラムを実行させることが出来ません。</p>
+
+<p>以上をまとめると CGI プログラムに最低限必要な物は以下のようになります。</p>
+
+<ul>
+  <li>プログラミング言語の翻訳機 (この連載では Ruby を用います)</li>
+  <li>ブラウザ</li>
+  <li>サーバー</li>
+</ul>
+
+<h2 id="cgi-プログラムに必要なものを準備しよう">CGI プログラムに必要なものを準備しよう</h2>
+
+<p>CGI プログラムに何が必要か分かったところで
+実際に必要なものを準備しましょう。
+ブラウザの準備は済んでいるはずなので、
+ここで用意するのは下の二つです。</p>
+
+<ul>
+  <li>Ruby (の翻訳機)</li>
+  <li>サーバー</li>
+</ul>
+
+<p>Ruby でプログラムを書く時は
+Ruby (の翻訳機) の他に
+テキストエディタがあれば十分です。
+例えば、Windows のメモ帳でも Ruby のプログラムを書くことが出来ます。</p>
+
+<p>メモ帳でプログラムを書いても良いのですが、
+Windows には Ruby プログラムを書くための
+便利な道具があるので、それを使って楽をしましょう。
+道具の名前は <a href="http://homepage2.nifty.com/sakazuki/rde.html">RDE</a> と言います。
+RDE は Ruby のプログラムの開発を色々と助けてくれるので、
+メモ帳で開発していると面倒なことも RDE だと簡単に出来たりします。</p>
+
+<p>準備は面倒ですが、一回限りです。頑張りましょう。</p>
+
+<h3 id="ruby-の準備">Ruby の準備</h3>
+
+<p>まずは Ruby (の翻訳機) を用意しましょう。
+One-Click Ruby Installer を使って Ruby をインストール (準備) します。</p>
+
+<p>One-Click Ruby Installer を使用しない場合、
+自分で設定しなければならない事がありちょっと面倒です。
+One-Click Ruby Installer を使うことをお勧めします。</p>
+
+<p>なお、ここで Ruby と書いた場合は
+すべて Ruby の翻訳機のことを指します。</p>
+
+<h4 id="ダウンロード">ダウンロード</h4>
+
+<p><strong>その1</strong></p>
+
+<p>最初に <a href="http://rubyforge.org/projects/rubyinstaller/">http://rubyforge.org/projects/rubyinstaller/</a> に行きます。
+ページを下の方へスクロールさせると
+下図のような「最新ファイルリリース」というところがあるので、
+そこの 「ダウンロード」のリンクをクリックします。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rubyforge_installer.jpg" alt="rubyforge_installer.jpg" /></p>
+
+<p><strong>その2</strong></p>
+
+<p>表示されたページの上の方に
+One-Click Installer - Windows と書かれた項目があります。
+そこにダウンロード可能なインストーラーが一覧で表示されています。
+インストーラーは rubyXXX-YY.exe (XXXとYYは数字) で示されています。
+これをクリックしてダウンロードします。
+筆者がダウンロードした時には ruby182-15.exe が最新版でした。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rubyforge_download.jpg" alt="rubyforge_download.jpg" /></p>
+
+<p><strong>その3</strong></p>
+
+<p>ダウンロードが完了すると、下のようなファイルが作成
+されていると思います。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/installer_donwloaded.jpg" alt="installer_donwloaded.jpg" /></p>
+
+<h4 id="インストール">インストール</h4>
+
+<p>ダウンロードしたファイル (ここでは ruby182-15.exe) を
+ダブルクリックして実行します。
+可能であれば、実行する前に、自分に Windows の管理者権限があるかどうか
+確認しておいて下さい。</p>
+
+<p><strong>その1</strong></p>
+
+<p>インストーラーを実行すると、
+下のようなダイアログが表示されるはずです。
+「Next」 を選択するとインストールが開始されます。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/installer_startup.jpg" alt="installer_startup.jpg" /></p>
+
+<p><strong>その2</strong></p>
+
+<p>次の画面にはインストーラーと 
+Ruby ライセンスの説明が書かれています。
+Ruby のライセンスが英語で書かれていて
+読めないという方は
+<a href="http://www.ruby-lang.org/ja/LICENSE.txt">http://www.ruby-lang.org/ja/LICENSE.txt</a> に
+Ruby ライセンスの日本語の説明がありますので、
+そちらを参照して下さい。
+納得出来たら「I Agree」を押して下さい。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/installer_argeed.jpg" alt="installer_argeed.jpg" /></p>
+
+<p><strong>その3</strong></p>
+
+<p>インストールされる内容を選択します。
+ここも「Next」 で結構です。
+皆さんの中にはインストールの内容を取捨したい方もいるでしょう。
+最低でも RubyGems と OpenSSL と Tcl/Tk GUI Libraries の 3 つを
+選択することをお勧めします。
+その他はお好みで選択して良いと思います。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/installer_content.jpg" alt="installer_content.jpg" /></p>
+
+<p><strong>その4</strong></p>
+
+<p>Ruby のインストール場所を指定します。
+インストール場所を変更したい場合は
+「Destinaion Folder」に指定します。
+インストール場所はデフォルトの C:\ruby でも良いですし、
+下図のように D:\app\ruby に変更しても良いです。
+スペースが入る C:\Program Files\ruby は止めておきましょう。
+トラブルの原因になります。</p>
+
+<p>「Install」を押すとファイルがインストールされます。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/installer_path.jpg" alt="installer_path.jpg" /></p>
+
+<p><strong>その5</strong></p>
+
+<p>これでインストールは終了です。「Finish」を押してインストーラーを終了させます。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/installer_done.jpg" alt="installer_done.jpg" /></p>
+
+<h4 id="インストールの確認">インストールの確認</h4>
+
+<p>インストールが完了したかどうかを確認します。
+方法その 1 が一番簡単ですが、
+この方法は One-Click Ruby Installer に Tcl/TK
+が含まれていなければなりません。
+もし、含まれていない場合は
+方法その 2 を試して下さい。</p>
+
+<p><strong>方法その1</strong></p>
+
+<p>インストールのその 3 で Tcl/Tk をインストールした人は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(Rubyのインストール先)\samples\tk\</code></pre></figure>
+
+<p>にある</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">tkline.rb</code></pre></figure>
+
+<p>というファイルをダブルクリックして実行してみて下さい。
+黒い画面 (コマンドプロンプト) と何かウィンドウが現れるはずです。
+これが出てきたらインストールは完了しています。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/confirm_installation_tk.jpg" alt="confirm_installation_tk.jpg" /></p>
+
+<p><strong>方法その2</strong></p>
+
+<p>コマンドプロンプト が必要になります。
+Windows XP なら次の手順で起動することが出来ます。</p>
+
+<ol>
+  <li>スタートボタンをクリック</li>
+  <li>すべてのプログラム をクリック</li>
+  <li>アクセサリ をクリック</li>
+  <li>コマンドプロンプト をクリック</li>
+</ol>
+
+<p>起動したコマンドプロンプトに</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby -v</code></pre></figure>
+
+<p>と入力して、「Enter」キーを押します。下図のように 
+Ruby のバージョン・リリースの日付・プラットフォームが
+表示されれば OK です。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/confirm_installation.jpg" alt="confirm_installation.jpg" /></p>
+
+<h3 id="サーバーの準備">サーバーの準備</h3>
+
+<p>サーバーには 
+<a href="http://www.apache.org/">Apache</a> や 
+<a href="http://www.st.rim.or.jp/~nakata/">AN HTTPD</a> などのプログラムがありますが、
+これらのプログラムでは CGI を使うために設定が必要となり、多少煩雑です。
+そこで、この連載では Ruby で書かれたサーバーを用意しました。
+設定をせずに CGI プログラムを試すことが出来ます。</p>
+
+<ul>
+  <li><a href="/images/0011-CGIProgrammingForRubyBeginners-2/rubima011-cgi.zip">rubima011-cgi.zip</a></li>
+</ul>
+
+<p>上のリンクをクリックして
+rubima011-cgi.zip をダウンロードし自分のマシンに保存して下さい。
+Windows XP を使っている場合は
+zip ファイルをダブルクリックしてその中身を C:\ にコピーします。
+こうする事で zip ファイルを展開することが出来ます。
+今号では <strong>zip ファイルを C:\ に展開した</strong> という前提で話を進めていきます。</p>
+
+<p>Windows XP 以外の Windows をお使いの方は zip ファイルを
+展開するプログラムが必要となります。
+zip ファイルを展開するプログラムは多数あるので、
+個々のプログラムの説明は出来ません。
+ご自分で調べて下さい。
+下に zip を展開するプログラムを 1 つだけ紹介します。</p>
+
+<ul>
+  <li><a href="http://www.chitora.jp/lhaz.html">Lhaz</a></li>
+</ul>
+
+<h3 id="rde-の準備">RDE の準備</h3>
+
+<p>ここでは RDE のインストールやその設定について説明を行います。 
+まずはインストールからです。</p>
+
+<h4 id="ダウンロード-1">ダウンロード</h4>
+
+<p><strong>その1</strong></p>
+
+<p><a href="http://homepage2.nifty.com/sakazuki/rde.html">http://homepage2.nifty.com/sakazuki/rde.html</a> に行き、
+RDE を ダウンロードします。</p>
+
+<p>ページの上の方に「ダウンロード」という項目があります。
+それをクリックすると、
+新しく表示されたページの中に ver. 1.x.x (x は数字) というリンクがあるので、
+もう一度そこをクリックします。
+筆者がこれを書いた時には ver. 1.0.0 でした。
+ver 1.0.0 よりも新しいものがあればそれをクリックして下さい。</p>
+
+<p><strong>その2</strong></p>
+
+<p>Sourceforge の RDE のページに移動します。
+ページの中ほどやや上に RDE binary と書かれたところがあり、
+そこから RDE をダウンロードすることが出来ます。
+Download RDE1.x.x_setup.exe (x は数字) と書かれたリンクを
+クリックします。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge1.jpg" alt="rde_sourceforge1.jpg" /></p>
+
+<p><strong>その3</strong></p>
+
+<p>RDE をダウンロードするところを選択します。
+「Download」 の下の 「xxxx kb」 (x は数字) の
+左隣のアイコンをどれでもいいので、クリックして下さい。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge2.jpg" alt="rde_sourceforge2.jpg" /></p>
+
+<p><strong>その4</strong></p>
+
+<p>しばらく待つとダウンロードが開始されます。
+開始されない場合は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">http://.../RDE1.x.x_setup.exe (x は数字)</code></pre></figure>
+
+<p>というリンクをクリックして下さい。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge3.jpg" alt="rde_sourceforge3.jpg" /></p>
+
+<h4 id="インストール-1">インストール</h4>
+
+<p>ダウンロードが終了したら、 RDE1.x.x_setup.exe (x は数字) を
+ダブルクリックしてインストールを開始します。
+基本的に画面の指示に従っていけば良いだけです。</p>
+
+<p><strong>その1</strong></p>
+
+<p>インストーラーが使用する言語を指定します。
+通常は「Japanese」のままで良いです。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_startup.jpg" alt="rde_installer_startup.jpg" /></p>
+
+<p><strong>その2</strong></p>
+
+<p>そのまま「次へ」を選びます。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_startup2.jpg" alt="rde_installer_startup2.jpg" /></p>
+
+<p><strong>その3</strong></p>
+
+<p>ここでは使用する ruby.exe がインストールされている場所を指定します。
+通常は「次へ」を選べば良いはずです。</p>
+
+<p>ここで指定する場所は
+One-Click Ruby Installer で Ruby (の翻訳機) のインストール時に
+指定した場所が基準になります。
+もし D:\app\ruby に Ruby をインストールしたならば
+D:\app\ruby\bin\ruby.exe になりますし、
+C:\ruby に Ruby をインストールしたら
+C:\ruby\bin\ruby.exe になります。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_ruby.jpg" alt="rde_installer_ruby.jpg" /></p>
+
+<p><strong>その4</strong></p>
+
+<p>RDE をインストールする場所を指定します。
+これも「次へ」を押します。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_path.jpg" alt="rde_installer_path.jpg" /></p>
+
+<p><strong>その5</strong></p>
+
+<p>インストールする内容を選びます。
+内容を選ぶのが面倒なら「次へ」を選んで下さい。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_content.jpg" alt="rde_installer_content.jpg" /></p>
+
+<p><strong>その6</strong></p>
+
+<p>これも「次へ」を選べば良いです。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_rde.jpg" alt="rde_installer_rde.jpg" /></p>
+
+<p><strong>その7</strong></p>
+
+<p>今までの設定で問題なければ「インストール」を選びます。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_install.jpg" alt="rde_installer_install.jpg" /></p>
+
+<p><strong>その8</strong></p>
+
+<p>インストール終了です。「終了」を押して下さい。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_finish.jpg" alt="rde_installer_finish.jpg" /></p>
+
+<h4 id="rdeの設定">RDEの設定</h4>
+
+<p>最初に起動すると、下の図のようなダイアログが出ます。
+後で設定出来るので、「Submit」ボタンを押しましょう。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_startup.jpg" alt="rde_startup.jpg" /></p>
+
+<p>「Submit」ボタンを押すと、下のようなウィンドウが
+表示されるはずです。
+もしかするとツールバーが 4 種類見えないかもしれません。
+その場合は各ツールバーの左端の縦線をドラッグして
+ツールバーを動かしてみて下さい。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_main_window.jpg" alt="rde_main_window.jpg" /></p>
+
+<h4 id="メニューの日本語表示">メニューの日本語表示</h4>
+
+<p>ここではメニューの表示を日本語にします。</p>
+
+<p>メニューの Tool → Options で起動時に表示されたダイアログが表示されます。
+表示されたダイアログの左側の列の「Config File」を選択すると、
+下図のように各種設定ファイルを指定する画面が表示されます。
+その中の一番上の TranslationFile に 
+RDE がインストールされた場所の
+「Translations\Japanese_XXXX.xml」(Xは数字) を翻訳ファイルとして指定します。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_translation.jpg" alt="rde_translation.jpg" /></p>
+
+<p>上の図は RDE を C:\Program Files\RDE にインストールした場合です。
+他の場所に RDE をインストールした場合は適宜変更する必要があります。</p>
+
+<p>適切な翻訳ファイルを指定してダイアログの「Submit」ボタンを押して
+RDE を再起動すればメニューが日本語表示になります。</p>
+
+<h4 id="エディタの日本語表示">エディタの日本語表示</h4>
+
+<p>最初はエディタ部分に日本語を表示することが出来ないかもしれません。</p>
+
+<p>その場合はメニューの ツール → エディタ設定 を選び、
+タブの一番上にあるフォントと書かれたボタンを押します。
+こうすることで下図のようなフォント選択のダイアログが出ます。
+<img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_editor_font.jpg" alt="rde_editor_font.jpg" /></p>
+
+<p>好みのフォントが無ければ下記のようにすれば良いでしょう。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>フォント名</td>
+      <td>MS ゴシック</td>
+    </tr>
+    <tr>
+      <td>スタイル</td>
+      <td>標準</td>
+    </tr>
+    <tr>
+      <td>サイズ</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>書体の種類</td>
+      <td>日本語</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ファイル保存時の文字コード">ファイル保存時の文字コード</h4>
+
+<p>細かいことを考えたくない場合は下記のようにして下さい。</p>
+
+<ul>
+  <li>メニュー の ツール → 設定 を選ぶ</li>
+  <li>コードウィンドウ → 文字コード変換 を選ぶ</li>
+</ul>
+
+<p><img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_charcode.jpg" alt="rde_charcode.jpg" /></p>
+
+<ul>
+  <li>「追加」 のボタンを押す</li>
+  <li>RDE のインストール先の japanese.dll を選択</li>
+</ul>
+
+<p><img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_japanese_dll.jpg" alt="rde_japanese_dll.jpg" /></p>
+
+<ul>
+  <li>コードウィンドウ → 文字コード を選ぶ</li>
+  <li>標準文字コードを デフォルト から SJIS に変更</li>
+</ul>
+
+<p><img src="/images/0011-CGIProgrammingForRubyBeginners-2/rde_default_charcode.jpg" alt="rde_default_charcode.jpg" /></p>
+
+<h4 id="ruby-の-help-との連動">Ruby の Help との連動</h4>
+
+<p>RDE から Ruby の Windows HTML Help を使うことが出来ます。
+設定しなくても問題は起きませんが、
+しておくと便利です。</p>
+
+<p><a href="http://elbereth-hp.hp.infoseek.co.jp/ruby.html">http://elbereth-hp.hp.infoseek.co.jp/ruby.html</a></p>
+
+<p>から <a href="http://elbereth-hp.hp.infoseek.co.jp/files/ruby/refm/ruby-refm-rdp-1.8.1-ja-htmlhelp.zip">ruby-refm-rdp-1.8.1-ja-htmlhelp.zip </a>
+をダウンロードします。ダウンロードしたファイルを解凍して、
+中の rubymanjp.chm を RDE のインストール先にコピーします。
+これでメニューの ヘルプ → Rubyヘルプ から Ruby の HTML Help を使うことが出来るようになります。</p>
+
+<p><a href="/articles/0011/0011-CGIProgrammingForRubyBeginners.html">目次ページへ</a>
+<a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-1.html">前ページへ</a>
+<a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-3.html">次ページへ</a></p>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

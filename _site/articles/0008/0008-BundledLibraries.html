@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>標準添付ライブラリ紹介 【第 2 回】 Logger</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0008/0008-BundledLibraries.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>標準添付ライブラリ紹介 【第 2 回】 Logger</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0008/0008-BundledLibraries.html" class="hatena-bookmark-button" data-hatena-bookmark-title="標準添付ライブラリ紹介 【第 2 回】 Logger" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0008/0008-BundledLibraries.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0008/0008-BundledLibraries.html" data-text="標準添付ライブラリ紹介 【第 2 回】 Logger">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#この連載について" id="markdown-toc-この連載について">この連載について</a></li>
+      <li><a href="#今回の記事について" id="markdown-toc-今回の記事について">今回の記事について</a></li>
+    </ul>
+  </li>
+  <li><a href="#logger" id="markdown-toc-logger">Logger</a>    <ul>
+      <li><a href="#logger-とは" id="markdown-toc-logger-とは">Logger とは？</a></li>
+      <li><a href="#ログの例" id="markdown-toc-ログの例">ログの例</a></li>
+      <li><a href="#ログのレベル-重要度" id="markdown-toc-ログのレベル-重要度">ログのレベル (重要度)</a>        <ul>
+          <li><a href="#閾値の変更" id="markdown-toc-閾値の変更">閾値の変更</a></li>
+        </ul>
+      </li>
+      <li><a href="#簡単な例" id="markdown-toc-簡単な例">簡単な例</a></li>
+      <li><a href="#ログの出力先" id="markdown-toc-ログの出力先">ログの出力先</a>        <ul>
+          <li><a href="#標準出力などの-io" id="markdown-toc-標準出力などの-io">標準出力などの IO</a></li>
+          <li><a href="#ファイル" id="markdown-toc-ファイル">ファイル</a>            <ul>
+              <li><a href="#ログのローテーション" id="markdown-toc-ログのローテーション">ログのローテーション</a></li>
+            </ul>
+          </li>
+          <li><a href="#一定サイズごとにローテーション" id="markdown-toc-一定サイズごとにローテーション">一定サイズごとにローテーション</a></li>
+          <li><a href="#一定期間ごとに名前を変更" id="markdown-toc-一定期間ごとに名前を変更">一定期間ごとに名前を変更</a></li>
+        </ul>
+      </li>
+      <li><a href="#ログへの出力方法" id="markdown-toc-ログへの出力方法">ログへの出力方法</a>        <ul>
+          <li><a href="#ブロック" id="markdown-toc-ブロック">ブロック</a></li>
+          <li><a href="#文字列" id="markdown-toc-文字列">文字列</a></li>
+          <li><a href="#progname-指定付き" id="markdown-toc-progname-指定付き">ProgName 指定付き</a></li>
+          <li><a href="#レベル指定付き" id="markdown-toc-レベル指定付き">レベル指定付き</a></li>
+          <li><a href="#例外オブジェクト" id="markdown-toc-例外オブジェクト">例外オブジェクト</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#syslog" id="markdown-toc-syslog">Syslog</a>    <ul>
+      <li><a href="#syslogとは" id="markdown-toc-syslogとは">Syslogとは？</a></li>
+      <li><a href="#なぜクラスではなくモジュール" id="markdown-toc-なぜクラスではなくモジュール">なぜクラスではなくモジュール？</a></li>
+      <li><a href="#facility" id="markdown-toc-facility">facility</a></li>
+      <li><a href="#使用例" id="markdown-toc-使用例">使用例</a></li>
+      <li><a href="#openlog-の-option-引数" id="markdown-toc-openlog-の-option-引数">openlog の option 引数</a></li>
+      <li><a href="#mask-ログの優先度マスク" id="markdown-toc-mask-ログの優先度マスク">mask (ログの優先度マスク)</a></li>
+    </ul>
+  </li>
+  <li><a href="#標準添付以外のライブラリ" id="markdown-toc-標準添付以外のライブラリ">標準添付以外のライブラリ</a>    <ul>
+      <li><a href="#log4r" id="markdown-toc-log4r">Log4r</a></li>
+      <li><a href="#win32-eventlog" id="markdown-toc-win32-eventlog">win32-eventlog</a></li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+  <li><a href="#参考サイト" id="markdown-toc-参考サイト">参考サイト</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#標準添付ライブラリ紹介-連載一覧" id="markdown-toc-標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</a></li>
+</ul>
+
+<p>書いた人: 西山</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="この連載について">この連載について</h3>
+
+<p>Ruby 1.8 になって標準添付ライブラリが増えました。
+そんなライブラリをどんどん紹介していこうという連載です。</p>
+
+<h3 id="今回の記事について">今回の記事について</h3>
+
+<p>ログ記録関係のライブラリを紹介します。</p>
+
+<p>紹介するライブラリは</p>
+
+<ol>
+  <li>ファイルなどにログを記録するための Logger</li>
+  <li>syslog にログを記録するための Syslog</li>
+</ol>
+
+<p>です。</p>
+
+<h2 id="logger">Logger</h2>
+
+<h3 id="logger-とは">Logger とは？</h3>
+
+<p>Logger とは、ファイルなどにログを記録するためのクラスです。</p>
+
+<h3 id="ログの例">ログの例</h3>
+
+<p>ログの形式は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> SeverityID, [Date Time mSec #pid] SeverityLabel -- ProgName: message</code></pre></figure>
+
+<p>となっていて、たとえば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> log.warn("Nothing to do!")</code></pre></figure>
+
+<p>で出力されるログは</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> W, [2005-07-10T20:02:25.402217 #15339]  WARN -- : Nothing to do!</code></pre></figure>
+
+<p>のようになっています。</p>
+
+<p>それぞれの項目の意味は表の通りです。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>SeverityID</td>
+      <td>SeverityLabel の 1 文字目</td>
+    </tr>
+    <tr>
+      <td>Date Time mSec</td>
+      <td>日時</td>
+    </tr>
+    <tr>
+      <td>pid</td>
+      <td>プロセス ID</td>
+    </tr>
+    <tr>
+      <td>SeverityLabel</td>
+      <td>ログの重要度</td>
+    </tr>
+    <tr>
+      <td>ProgName</td>
+      <td>プログラム名など (省略されていることが多い)</td>
+    </tr>
+    <tr>
+      <td>message</td>
+      <td>ログメッセージ自体</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ProgName はあらかじめ</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> logger.progname = "MyApp"</code></pre></figure>
+
+<p>のように設定しておくか、ログを出力するときに指定します。
+上の例では ProgName は省略されています。</p>
+
+<h3 id="ログのレベル-重要度">ログのレベル (重要度)</h3>
+
+<p>アプリケーションが出力するログには重要なものも重要でないものもあります。
+ログはその重要度 (severity) によって、五つのレベルにわけて記録します。</p>
+
+<p>その意味は以下の表のようになっています。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>FATAL</td>
+      <td>(プログラムをクラッシュさせるような) 対処不可能なエラー</td>
+    </tr>
+    <tr>
+      <td>ERROR</td>
+      <td>対処可能なエラー</td>
+    </tr>
+    <tr>
+      <td>WARN</td>
+      <td>警告</td>
+    </tr>
+    <tr>
+      <td>INFO</td>
+      <td>一般的な情報</td>
+    </tr>
+    <tr>
+      <td>DEBUG</td>
+      <td>開発者用の低レベルの情報</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>基本的には、ログのレベルの名前を小文字にしたメソッドで、
+そのレベルのログが出力されます。</p>
+
+<h4 id="閾値の変更">閾値の変更</h4>
+
+<p>通常稼働時には DEBUG レベルのログは不要なことが多いでしょう。
+そこで、Logger オブジェクトに閾値となるレベルを設定しておけば、
+閾値より重要度が低いメッセージは記録せずに捨ててくれます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger.level = Logger::WARN
+ logger.level = Logger::ERROR</code></pre></figure>
+
+<h3 id="簡単な例">簡単な例</h3>
+
+<p>ライブラリ本体のファイルの logger.rb から例を紹介します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'logger'
+ log = Logger.new(STDOUT)
+ log.level = Logger::WARN
+
+ log.debug("Created logger")
+ log.info("Program started")
+ log.warn("Nothing to do!")
+
+ begin
+   File.each_line(path) do |line|
+     unless line =~ /^(\w+) = (.*)$/
+       log.error("Line in wrong format: #{line}")
+     end
+   end
+ rescue =&gt; err
+   log.fatal("Caught exception; exiting")
+   log.fatal(err)
+ end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 出力例:
+ W, [2005-07-18T12:02:31.747391 #9493]  WARN -- : Nothing to do!
+ F, [2005-07-18T12:02:31.748051 #9493] FATAL -- : Caught exception; exiting
+ F, [2005-07-18T12:02:31.748227 #9493] FATAL -- : undefined local variable or method `path' for main:Object (NameError)
+ sample.rb:10</code></pre></figure>
+
+<p>最初にレベルを WARN に設定しているので、
+warn と error と fatal だけがログに出力されて、
+debug と info のメッセージは出力されずに黙って捨てられます。</p>
+
+<h3 id="ログの出力先">ログの出力先</h3>
+
+<h4 id="標準出力などの-io">標準出力などの IO</h4>
+
+<p>Logger.new の引数に STDOUT や STDERR のような IO オブジェクトを渡すと、
+ログがその IO オブジェクトに出力されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger = Logger.new(STDOUT)
+ # または
+ logger = Logger.new(STDERR)</code></pre></figure>
+
+<p>自分で File.open した File オブジェクトを渡すことも出来ます。
+しかし、File オブジェクトを Logger オブジェクトとは別に扱う手間がかかるので、
+次のファイル名を渡す方法を使った方が良いでしょう。</p>
+
+<h4 id="ファイル">ファイル</h4>
+
+<p>Logger.new の引数にファイル名を渡すとそのファイルに出力されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger = Logger.new('foo.log')</code></pre></figure>
+
+<p>ファイル名だけを指定した場合は、そのファイルにどんどん追加されていきます。</p>
+
+<h5 id="ログのローテーション">ログのローテーション</h5>
+
+<p>どんどん追加されていくと、ログファイルでディスクが埋まってしまうので、
+普通はログファイルのローテーションをします。</p>
+
+<p>ローテーションとは、一定のサイズや期間ごとにファイル名を変更していき、
+新しいものから一定のファイル数だけ残して、古いものは消してしまうことです。</p>
+
+<p>logrotate などの別の手段を併用してログのローテーションをするのなら、
+ファイル名だけ指定する方法でも良いでしょう。
+ただし、Logger は Logger#close でログファイルを閉じることは出来ても、
+再度開くことは出来ないので、
+Logger 自身にローテーションを任せることをお勧めします。</p>
+
+<h4 id="一定サイズごとにローテーション">一定サイズごとにローテーション</h4>
+
+<p>Logger でログファイルのローテーションをすることも出来ます。</p>
+
+<p>第 2 引数で Integer を指定すると、
+サイズを基準にしたログのローテーションが出来ます。</p>
+
+<p>第 3 引数で指定した一定サイズごとを超えるごとにログをローテーションして、
+第 2 引数で指定したファイル数までのログファイルを残します。
+サイズを省略すると
+1 MiB <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+ごとになります。</p>
+
+<p>ただし、一度に (logger.info などの呼び出しで)
+出力した内容が分割されることはありません。
+つまり、各ファイルの分量が厳密に指定したサイズになるとは限りません。</p>
+
+<p>Logger がログをローテーションする場合、
+たとえば Logger.new(‘foo.log’, 7) なら</p>
+
+<ul>
+  <li>foo.log</li>
+  <li>foo.log.0</li>
+  <li>foo.log.1</li>
+  <li>foo.log.2</li>
+  <li>foo.log.3</li>
+  <li>foo.log.4</li>
+  <li>foo.log.5</li>
+</ul>
+
+<p>が残ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger = Logger.new('foo.log', 7)
+ # または
+ logger = Logger.new('foo.log', 7, 10*1024*1024)</code></pre></figure>
+
+<h4 id="一定期間ごとに名前を変更">一定期間ごとに名前を変更</h4>
+
+<p>第 2 引数に ‘daily’ などの文字列を指定すると、
+期間を基準にしてログをローテーションしてくれます。</p>
+
+<p>たとえば、Logger.new(‘foo.log’, ‘daily’) なら、最新のログは
+foo.log に入っていて、最新のログの前日以前のログは</p>
+
+<ul>
+  <li>…</li>
+  <li>foo.log.20050630</li>
+  <li>foo.log.20050701</li>
+  <li>foo.log.20050702</li>
+  <li>foo.log.20050703</li>
+  <li>foo.log.20050704</li>
+  <li>foo.log.20050705</li>
+  <li>…</li>
+</ul>
+
+<p>のようなファイル名に変更されます。</p>
+
+<p>ログが書き込まれるときに古いログファイルの名前が変更されるので、
+ログの書き込みがなければ、昨日以前のログでも foo.log のままになります。</p>
+
+<p>サイズを基準にしたローテーションとは違って、
+古いログファイルが自動で消えることはありません。
+そのため、ディスクの空き容量に注意する必要があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger = Logger.new('foo.log', 'daily')
+ # または
+ logger = Logger.new('foo.log', 'weekly')
+ # または
+ logger = Logger.new('foo.log', 'monthly')</code></pre></figure>
+
+<p>念のため補足しておきますが、</p>
+
+<ul>
+  <li>daily は 日ごと</li>
+  <li>weekly は週ごと</li>
+  <li>monthly は月ごと</li>
+</ul>
+
+<p>です。</p>
+
+<h3 id="ログへの出力方法">ログへの出力方法</h3>
+
+<p>次にアプリケーションからログを出力する方法を示します。
+基本的には次のようにログのレベルを小文字にしたメソッドを使うだけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger.error "lost connection"
+ logger.debug "got new connection"</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 出力例:
+ E, [2005-07-18T12:03:21.820442 #9551] ERROR -- : lost connection
+ D, [2005-07-18T12:03:21.837889 #9551] DEBUG -- : got new connection</code></pre></figure>
+
+<p>これらのメソッドにはメッセージを指定する方法がいくつかあります。
+それをここで紹介します。</p>
+
+<h4 id="ブロック">ブロック</h4>
+
+<p>ブロック付きで呼び出すと、ログが記録されるときだけブロックが呼ばれて、
+その値がメッセージに使われます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger.fatal { "Argument 'foo' not given." }
+ logger.debug { "ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE}) [#{RUBY_PLATFORM}]" }</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 出力例:
+ F, [2005-07-18T12:04:14.123795 #9551] FATAL -- : Argument 'foo' not given.
+ D, [2005-07-18T12:04:14.157705 #9551] DEBUG -- : ruby 1.8.2 (2005-04-11) [i386-linux]</code></pre></figure>
+
+<h4 id="文字列">文字列</h4>
+
+<p>ブロックなしで引数に文字列を指定すると、
+文字列がそのままログメッセージに使われます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger.error("Argument #{@foo} mismatch.")</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 出力例:
+ E, [2005-07-18T12:05:41.200541 #9551] ERROR -- : Argument value-of-@foo mismatch.</code></pre></figure>
+
+<h4 id="progname-指定付き">ProgName 指定付き</h4>
+
+<p>引数の文字列とブロックの両方を指定すると、文字列が ProgName に使われます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger.info('initialize') { "Initializing..." }</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 出力例:
+ I, [2005-07-18T12:05:58.596513 #9551]  INFO -- initialize: Initializing...</code></pre></figure>
+
+<h4 id="レベル指定付き">レベル指定付き</h4>
+
+<p>ログのレベルを小文字にしたメソッドの中で呼ばれている add メソッドを
+レベル指定付きで直接呼び出すことも出来ます。</p>
+
+<p>普通は add メソッドは使わず、ログのレベルごとのメソッドを使えば良いでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ logger.add(Logger::FATAL) { 'Fatal error!' }</code></pre></figure>
+
+<h4 id="例外オブジェクト">例外オブジェクト</h4>
+
+<p>ブロック付きの場合もブロックなしで引数に指定する場合も、
+文字列の変わりに例外オブジェクトを指定することが出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 例:
+ begin
+   raise "some error"
+ rescue
+   logger.error($!)
+ end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 出力例:
+ E, [2005-07-18T12:06:09.525728 #9551] ERROR -- : some error (RuntimeError)
+ sample.rb:4</code></pre></figure>
+
+<h2 id="syslog">Syslog</h2>
+
+<h3 id="syslogとは">Syslogとは？</h3>
+
+<p>Syslog モジュールとは、
+UNIX のシステムのログ記録用プログラム (syslog)
+にメッセージを送るためのモジュールです。</p>
+
+<h3 id="なぜクラスではなくモジュール">なぜクラスではなくモジュール？</h3>
+
+<p>syslog はプロセスごとに 1 つしか開けないので、
+最初は Syslog が Singleton
+パターンのクラスになっていました。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+その後の互換性を保った変更で、現在はモジュールになっています。</p>
+
+<h3 id="facility">facility</h3>
+
+<p>syslog には、Logger の レベルと同じような意味の priority (優先度) の他に
+facility (ファシリティ) があります。</p>
+
+<p>facility とは、ログの種類を表しているもので、詳細はシステムに依存します。
+詳しいことは、それぞれのシステムの syslog の man などを参照してください。</p>
+
+<p>例として、Linux の facility を
+<a href="http://www.linux.or.jp/JM/html/LDP_man-pages/man3/syslog.3.html">JM の syslog(3)</a>
+から表の形式にして引用します。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>LOG_AUTH</td>
+      <td>セキュリティ/認証 メッセージ (非推奨。代わりに LOG_AUTHPRIV を使用すること)</td>
+    </tr>
+    <tr>
+      <td>LOG_AUTHPRIV</td>
+      <td>セキュリティ/認証 メッセージ (プライベート)</td>
+    </tr>
+    <tr>
+      <td>LOG_CRON</td>
+      <td>クロックデーモン (cron と at)</td>
+    </tr>
+    <tr>
+      <td>LOG_DAEMON</td>
+      <td>特定の facility 値を持たないシステムデーモン</td>
+    </tr>
+    <tr>
+      <td>LOG_FTP</td>
+      <td>ftp デーモン</td>
+    </tr>
+    <tr>
+      <td>LOG_KERN</td>
+      <td>カーネルメッセージ</td>
+    </tr>
+    <tr>
+      <td>LOG_LOCAL0 から LOG_LOCAL7</td>
+      <td>ローカルな使用のためにリザーブされている</td>
+    </tr>
+    <tr>
+      <td>LOG_LPR</td>
+      <td>ラインプリンタ・サブシステム</td>
+    </tr>
+    <tr>
+      <td>LOG_MAIL</td>
+      <td>メール・サブシステム</td>
+    </tr>
+    <tr>
+      <td>LOG_NEWS</td>
+      <td>USENET ニュース・サブシステム</td>
+    </tr>
+    <tr>
+      <td>LOG_SYSLOG</td>
+      <td>syslogd によって内部的に発行されるメッセージ</td>
+    </tr>
+    <tr>
+      <td>LOG_USER (デフォルト)</td>
+      <td>一般的なユーザレベルメッセージ</td>
+    </tr>
+    <tr>
+      <td>LOG_UUCP</td>
+      <td>UUCPサブシステム</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>この中で、
+プログラムの目的に適した facility があればそれを使うと良いでしょう。
+適した facility がなければ、LOG_LOCAL0 から LOG_LOCAL7 のうち、
+他のプログラムが使っていないものを調べて、デフォルトとして使い、
+他の facility にも設定可能にしておくと良いと思います。</p>
+
+<h3 id="使用例">使用例</h3>
+
+<p><a href="ruby-man:Syslog">ruby-man:Syslog</a> にある例を紹介します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'syslog'
+ Syslog.open("syslogtest")
+ Syslog.log(Syslog::LOG_WARNING, "the sky is falling in %d seconds!", 100)
+ Syslog.log(Syslog::LOG_CRIT, "the sky is falling in %d seconds!", 10)
+ Syslog.crit("the sky is falling in %d seconds!", 5)
+ Syslog.close</code></pre></figure>
+
+<p>Syslog を使うためには、まず一度だけ open する必要があります。</p>
+
+<p>その後は、</p>
+
+<ul>
+  <li>Syslog.log(priority, format, …)</li>
+</ul>
+
+<p>または</p>
+
+<ul>
+  <li>Syslog.emerg(message, …)</li>
+  <li>Syslog.alert(message, …)</li>
+  <li>Syslog.crit(message, …)</li>
+  <li>Syslog.err(message, …)</li>
+  <li>Syslog.warning(message, …)</li>
+  <li>Syslog.notice(message, …)</li>
+  <li>Syslog.info(message, …)</li>
+  <li>Syslog.debug(message, …)</li>
+</ul>
+
+<p>などの priority ごとのメソッドでメッセージを送ります。</p>
+
+<p>priority (priority に対応する定数とメソッド) は、
+システムによっては定義されていないものもあります。</p>
+
+<p>message とそれに続く引数は、syslog(3) 関数ではなく
+Ruby の sprintf メソッドで処理されます。
+そのため、syslog(3) 関数とは違って「%m」が使えません。</p>
+
+<p>sprintf で処理されるので、任意の文字列を出力するためには</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Syslog.debug('%s', str)</code></pre></figure>
+
+<p>のように %s を使う必要があることに注意してください。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<p>Ruby では、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Syslog.debug(str)</code></pre></figure>
+
+<p>としてしまうと、str に %s などが含まれていた場合に</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ArgumentError: too few arguments</code></pre></figure>
+
+<p>になります。</p>
+
+<h3 id="openlog-の-option-引数">openlog の option 引数</h3>
+
+<p>openlog(3) 関数の第 2 引数の option を Syslog.open の第 2 引数に指定出来ます。
+Syslog::Constants モジュールに定義された定数を「|」(ビット単位の or)
+した値を指定します。</p>
+
+<p>オプションもシステム依存のため、詳細はそれぞれのシステムの syslog の man などを参照してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 例:
+ Syslog.open('ftpd', Syslog::LOG_PID | Syslog::LOG_NDELAY, Syslog::LOG_FTP)</code></pre></figure>
+
+<h3 id="mask-ログの優先度マスク">mask (ログの優先度マスク)</h3>
+
+<p>Syslog は Logger と違い、メッセージを送るかどうかを
+priority ごとに設定出来ます。</p>
+
+<p>syslogd などのメッセージを受け取る側でファイルに記録するかどうかなどの
+扱いを設定出来るので、mask を使うことはあまりないかもしれません。</p>
+
+<p>Logger のレベルのようにある priority 以上のログのみを送る設定は、
+LOG_UPTO の存在するシステムの場合は、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Syslog.mask = Syslog.LOG_UPTO(Syslog::LOG_WARNING)</code></pre></figure>
+
+<p>のようにすると良いでしょう。</p>
+
+<p>特定の priority が syslog に送られるかどうかを調べるには</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Syslog.mask &amp; Syslog.LOG_MASK(Syslog::LOG_WARNING) != 0
+ Syslog.mask &amp; Syslog.LOG_MASK(Syslog::LOG_INFO) != 0</code></pre></figure>
+
+<p>のようにすると良いでしょう。</p>
+
+<h2 id="標準添付以外のライブラリ">標準添付以外のライブラリ</h2>
+
+<h3 id="log4r">Log4r</h3>
+
+<p>Log4r は高機能なログ記録用ライブラリです。
+Logger では機能不足と思ったときに使うと良いと思います。</p>
+
+<h3 id="win32-eventlog">win32-eventlog</h3>
+
+<p>Win32 では <a href="/articles/0005/0005-RLR.html">Ruby Library Report 【第 4 回】 Win32Utils</a> で、その他のライブラリとして名前が出ていた
+win32-eventlog を使って、eventlog の読み書きが出来るようです。</p>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回は Logger を中心に紹介しました。
+一般的なログを記録する用途には、Logger のローテーションを機能を使えば充分だと思います。
+用途や環境に応じて syslog や win32-eventlog を使ったり、
+プログラムのユーザが XML や YAML でログの設定を自由に出来るようにしたい時は
+Log4r を使ったりすると良いのではないかと思います。</p>
+
+<h2 id="参考サイト">参考サイト</h2>
+
+<ul>
+  <li><a href="http://www.ruby-doc.org/stdlib/libdoc/logger/rdoc/index.html">Logger の rdoc</a> (英語)</li>
+  <li><a href="ruby-man:Logger">ruby-man:Logger</a></li>
+  <li><a href="ruby-man:Syslog">ruby-man:Syslog</a></li>
+  <li><a href="ruby-man:Syslog::Constants">ruby-man:Syslog::Constants</a></li>
+  <li><a href="ruby-man:sprintfフォーマット">ruby-man:sprintfフォーマット</a></li>
+  <li><a href="http://www.linux.or.jp/JM/html/LDP_man-pages/man3/syslog.3.html">http://www.linux.or.jp/JM/html/LDP_man-pages/man3/syslog.3.html</a></li>
+  <li><a href="http://www.linux.or.jp/JM/html/LDP_man-pages/man3/setlogmask.3.html">http://www.linux.or.jp/JM/html/LDP_man-pages/man3/setlogmask.3.html</a></li>
+  <li><a href="http://log4r.sourceforge.net/">Log4r</a> (英語)</li>
+  <li><a href="http://raa.ruby-lang.org/project/log4r">RAA:log4r</a></li>
+  <li><a href="http://raa.ruby-lang.org/project/win32-eventlog">RAA:win32-eventlog</a></li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>西山和広。前号に続いて、標準添付ライブラリ紹介を書きました。</p>
+
+<h2 id="標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-BundledLibraries.html">標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-BundledLibraries.html">標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-BundledLibraries.html">標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-BundledLibraries.html">標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-BundledLibraries.html">標準添付ライブラリ紹介 【第 11 回】 zlib</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-BundledLibraries.html">標準添付ライブラリ紹介 【第 10 回】 ERB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-BundledLibraries.html">標準添付ライブラリ紹介 【第 9 回】 PStore</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-BundledLibraries.html">標準添付ライブラリ紹介 【第 8 回】 uri, pathname</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-BundledLibraries.html">標準添付ライブラリ紹介 【第 7 回】 net/http</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-BundledLibraries.html">標準添付ライブラリ紹介 【第 6 回】 委譲</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-BundledLibraries.html">標準添付ライブラリ紹介 【第 5 回】 enumerator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-BundledLibraries.html">標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-BundledLibraries.html">標準添付ライブラリ紹介 【第 2 回】 Logger</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-BundledLibraries.html">標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<p>syslog(“%s”, str) とせずに syslog(str) としてしまうと format string
+bug というセキュリティホールの原因となるバグになります。</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>MiB については http://www.linux.or.jp/JM/html/LDP_man-pages/man7/units.7.html を参照&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>[[ruby-ext:1996]]&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>C 言語で&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

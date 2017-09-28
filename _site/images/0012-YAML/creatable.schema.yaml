@@ -1,0 +1,37 @@
+type:     map
+mapping:
+ "defaults":
+    type:     map
+    mapping:
+     "columns":
+        type:     seq
+        sequence:
+          - {{*&column-rule*}}                 # アンカー
+            type:     map
+            mapping:
+             "name":   { type: str, required: yes }
+             "desc":   { type: str }
+             "type":   { type: str }
+             "width":  { type: int }
+             "primary-key": { type: bool }
+             "serial":      { type: bool }
+             "not-null":    { type: bool }
+             "unique":      { type: bool }
+             "enum":
+                type: seq
+                sequence:
+                  - type:     scalar
+             {{*"ref": *column-rule*}}         # エイリアスで再帰的な定義
+
+ "tables":
+    type:     seq
+    sequence:
+      - type:     map
+        mapping:
+         "name":   { type: str, required: yes }
+         "class":  { type: str }
+         "desc":   { type: str }
+         "columns":
+            type:     seq
+            sequence:
+              - {{**column-rule*}}              # エイリアスでルールを共有

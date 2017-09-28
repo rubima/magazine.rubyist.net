@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb</title>
+  <meta name="description" content="著者：青木峰郎">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0011/0011-CodeReview.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0011/0011-CodeReview.html" class="hatena-bookmark-button" data-hatena-bookmark-title="あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0011/0011-CodeReview.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0011/0011-CodeReview.html" data-text="あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>著者：青木峰郎</p>
+
+<p>編集：ささだ</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#今回のお題" id="markdown-toc-今回のお題">今回のお題</a></li>
+      <li><a href="#テストについて" id="markdown-toc-テストについて">テストについて</a></li>
+    </ul>
+  </li>
+  <li><a href="#hexstruct-のユースケース" id="markdown-toc-hexstruct-のユースケース">HexStruct のユースケース</a>    <ul>
+      <li><a href="#基本的な使いかた" id="markdown-toc-基本的な使いかた">基本的な使いかた</a></li>
+      <li><a href="#可変長フィールド" id="markdown-toc-可変長フィールド">可変長フィールド</a></li>
+      <li><a href="#構造体のネスト" id="markdown-toc-構造体のネスト">構造体のネスト</a></li>
+      <li><a href="#構造体の配列" id="markdown-toc-構造体の配列">構造体の配列</a></li>
+    </ul>
+  </li>
+  <li><a href="#コーディングスタイル" id="markdown-toc-コーディングスタイル">コーディングスタイル</a>    <ul>
+      <li><a href="#" id="markdown-toc-">()</a></li>
+      <li><a href="#-1" id="markdown-toc--1">::</a></li>
+      <li><a href="#例外クラスの定義" id="markdown-toc-例外クラスの定義">例外クラスの定義</a></li>
+      <li><a href="#alias-private-と空行" id="markdown-toc-alias-private-と空行">alias, private と空行</a></li>
+      <li><a href="#クラスチェック" id="markdown-toc-クラスチェック">クラスチェック</a></li>
+      <li><a href="#ファイル名" id="markdown-toc-ファイル名">ファイル名</a></li>
+    </ul>
+  </li>
+  <li><a href="#型の宣言" id="markdown-toc-型の宣言">型の宣言</a>    <ul>
+      <li><a href="#問題" id="markdown-toc-問題">問題</a></li>
+      <li><a href="#改善案-1-メソッドを使う" id="markdown-toc-改善案-1-メソッドを使う">改善案 (1) メソッドを使う</a></li>
+      <li><a href="#改善案-2-ブロックを使う" id="markdown-toc-改善案-2-ブロックを使う">改善案 (2) ブロックを使う</a></li>
+      <li><a href="#改善案-3-module_eval-を使う" id="markdown-toc-改善案-3-module_eval-を使う">改善案 (3) module_eval を使う</a></li>
+      <li><a href="#実装" id="markdown-toc-実装">実装</a></li>
+    </ul>
+  </li>
+  <li><a href="#役割の分配とメソッド名" id="markdown-toc-役割の分配とメソッド名">役割の分配とメソッド名</a>    <ul>
+      <li><a href="#hexstructnew" id="markdown-toc-hexstructnew">HexStruct.new</a></li>
+      <li><a href="#hexstructsize_of-data_of-write_to" id="markdown-toc-hexstructsize_of-data_of-write_to">HexStruct#size_of, #data_of, #write_to</a></li>
+    </ul>
+  </li>
+  <li><a href="#アクセサメソッドの定義" id="markdown-toc-アクセサメソッドの定義">アクセサメソッドの定義</a>    <ul>
+      <li><a href="#問題-1" id="markdown-toc-問題-1">問題</a></li>
+      <li><a href="#method_missing-が適切な場面" id="markdown-toc-method_missing-が適切な場面">method_missing が適切な場面</a></li>
+      <li><a href="#例外クラスの選択" id="markdown-toc-例外クラスの選択">例外クラスの選択</a></li>
+      <li><a href="#改善策と実装" id="markdown-toc-改善策と実装">改善策と実装</a></li>
+    </ul>
+  </li>
+  <li><a href="#文字列との比較" id="markdown-toc-文字列との比較">文字列との比較</a>    <ul>
+      <li><a href="#暗黙の変換" id="markdown-toc-暗黙の変換">暗黙の変換</a></li>
+      <li><a href="#改善策" id="markdown-toc-改善策">改善策</a></li>
+    </ul>
+  </li>
+  <li><a href="#データ構造" id="markdown-toc-データ構造">データ構造</a>    <ul>
+      <li><a href="#改善案" id="markdown-toc-改善案">改善案</a></li>
+      <li><a href="#実装-1" id="markdown-toc-実装-1">実装</a></li>
+      <li><a href="#おまけ-arrayassoc" id="markdown-toc-おまけ-arrayassoc">おまけ： Array#assoc</a></li>
+    </ul>
+  </li>
+  <li><a href="#全体に関係する疑問" id="markdown-toc-全体に関係する疑問">全体に関係する疑問</a>    <ul>
+      <li><a href="#immutable-にできないか" id="markdown-toc-immutable-にできないか">immutable にできないか</a></li>
+      <li><a href="#フィールドの値" id="markdown-toc-フィールドの値">フィールドの値</a></li>
+    </ul>
+  </li>
+  <li><a href="#添削終了" id="markdown-toc-添削終了">添削終了！</a></li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a>    <ul>
+      <li><a href="#引き続きプログラム募集" id="markdown-toc-引き続きプログラム募集">引き続きプログラム募集</a></li>
+      <li><a href="#次回予告" id="markdown-toc-次回予告">次回予告</a></li>
+    </ul>
+  </li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#あなたの-ruby-コードを添削します-連載一覧" id="markdown-toc-あなたの-ruby-コードを添削します-連載一覧">あなたの Ruby コードを添削します 連載一覧</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>秋です。締め切りの季節です。</p>
+
+<p>応募が全然なかったら自虐的に自分の昔のコードの
+ダメ出しでもするしかないかなあと心配していましたが、
+幸いにも今月は新しいコードを投稿していただけました。
+今回のお題は Yac さんに提供していただいた HexStruct です。</p>
+
+<h3 id="今回のお題">今回のお題</h3>
+
+<p>HexStruct はシリアライズされた構造体を扱うライブラリです。
+シリアライズ (serialize) とは、オブジェクトをバイト列に変換することです。
+Ruby オブジェクトの代表的なシリアライズ形式としては Marshal が挙げられます。</p>
+
+<p>HexStruct が扱うのは特殊なシリアライズ形式で、
+シリアライズ対象が数値の構造体だけに限定されています。
+そのシリアライズ結果の文字列で 16 進表現の数値が使われるため、
+そこから HexStruct と名付けられたようです。
+六角形の構造体を扱うわけではありません。</p>
+
+<p>ではまず最初にオリジナルのコードとテストスクリプトを示します。</p>
+
+<ul>
+  <li><a href="/articles/0011/0011-CodeReview-hex_struct.rb.html">hex_struct.rb</a> (別ページで表示)</li>
+  <li><a href="/articles/0011/0011-CodeReview-test_hexstruct.rb.html">test_hexstruct.rb</a> (別ページで表示)</li>
+  <li><a href="/images/0011-CodeReview/hexstruct.tar.gz">hexstruct.tar.gz</a> (まとめてダウンロード)</li>
+</ul>
+
+<p>HexStruct は Ruby ライセンスですので、
+添削後のコードも Ruby ライセンスで公開します。
+ただし、添削後のコードはスクラッチから書き直したので
+わたしのコピーライトのみにしました。</p>
+
+<h3 id="テストについて">テストについて</h3>
+
+<p>今回は応募していただいたコードに
+RubyUnit を使ったテストコードがついていたので、
+これを無変更ですべて通そう、かと、
+最初は思っていたのですが、途中で方針を変えました。
+テストで示されるインターフェイスには賛成できなかったので、
+まずわたしの考える「より適切な」インターフェイスを使ったテストを書き、
+それからそのインターフェイスを実装しました。
+従って、添削前後では使いかたからしてまったく違う別物になっています。</p>
+
+<h2 id="hexstruct-のユースケース">HexStruct のユースケース</h2>
+
+<p>前回の Pukipa は使いかたが相当に限定されていたので
+使いかたの説明はほとんどしませんでしたが、
+HexStruct はやや複雑ですから最初に使用例を紹介しておきます。</p>
+
+<h3 id="基本的な使いかた">基本的な使いかた</h3>
+
+<p>まずは基本的な使いかたを示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'hex_struct'
+
+ class FixedSizeFrame &lt; HexStruct
+   STRUCT = [
+     [:MsgCode, 2],
+     [:from_add, 3],
+     [:to_add, 3],
+     [:data, 5],
+   ]
+ end
+
+ frame = FixedSizeFrame.new("002B000FF00002C3010203040A")
+ p frame.MsgCode   # "002B"
+ p frame.from_add  # "000FF0"
+ p frame.to_add    # "0002C3"
+ p frame.data      # "010203040A"</code></pre></figure>
+
+<p>最初に、HexStruct を継承したクラスを作ります。
+そのクラスに STRUCT という定数を定義して、
+その値によって構造体の型を定義します。
+上記の例ならば、MsgCode が 2 バイト固定長、
+from_add が 2 バイト固定長……という具合です。</p>
+
+<p>定義を済ませたら、あとは文字列を new するとパースされ、
+構造体のメンバにメソッドでアクセスできるようになります。
+各メンバの値は文字列です。</p>
+
+<h3 id="可変長フィールド">可変長フィールド</h3>
+
+<p>次は可変長フィールドの例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'hex_struct'
+
+ class VariableSizeFrame &lt; HexStruct
+   STRUCT = [
+     [:MsgCode, 2],
+     [:from_add, 3],
+     [:to_add, 3],
+     [:data, -1],
+   ]
+ end
+
+ frame = VariableSizeFrame.new("0023000FF0000203010203040A")
+ p frame.MsgCode   # "0023"
+ p frame.from_add  # "000FF0"
+ p frame.to_add    # "000203"
+ p frame.data      # "010203040A"</code></pre></figure>
+
+<p>可変長フィールドは -1 で宣言します。
+VariableSizeFrame では data メンバが可変長です。</p>
+
+<p>また可変長フィールドには隠れパラメータとしてバッファ長が設定されています。
+このバッファ長は整数をセットする限りでは変化しないのですが、
+文字列をセットすると変化します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> frame.data = 0x01
+ p frame.data      # "0000000001"   # バッファサイズは変化しない
+
+ frame.data = "0102030405060708"    # より長い文字列を代入
+ frame.data = 0x01
+ p frame.data      # "0000000000000001"   # のびた</code></pre></figure>
+
+<p>なお、この例からわかるように、
+HexStruct はメンバの値として文字列と整数を両方受け付けますが、
+参照すると常に文字列が返ります。</p>
+
+<h3 id="構造体のネスト">構造体のネスト</h3>
+
+<p>構造体はネストできます。
+ただし STRUCT 定数ではそのことが宣言できないので、
+まず通常のフィールドとして宣言し、
+あとでパースしなおして構造体を代入します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'hex_struct'
+
+ class VariableSizeFrame &lt; HexStruct
+   STRUCT = [
+     [:MsgCode, 2],
+     [:from_add, 3],
+     [:to_add, 3],
+     [:data, -1],
+   ]
+ end
+
+ class DataPart &lt; HexStruct
+   STRUCT = [
+     [:DataType, 2],
+     [:Len, 1],
+     [:data, -1],
+   ]
+ end
+
+ frame = VariableSizeFrame.new("0023000110000203001103AABBCC")
+ frame.data = DataPart.new(frame.data)
+ assert_equal "0011", frame.data.DataType
+ assert_equal "03", frame.data.Len
+ assert_equal "AABBCC", frame.data.data</code></pre></figure>
+
+<h3 id="構造体の配列">構造体の配列</h3>
+
+<p>最後に、構造体の配列が扱えます。
+ただし構造体の配列も宣言ができないので、
+一度パースしてから代入して扱います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'hex_struct'
+
+ class VariableSizeFrame &lt; HexStruct
+   STRUCT = [
+     [:data, -1],
+   ]
+ end
+
+ class RepeatPart &lt; HexStruct
+   STRUCT = [
+     [:index, 1],
+     [:code,  2],
+   ]
+ end
+
+ frame = VariableSizeFrame.new
+ frame.data = ["011111", "022222", "033333"].map {|str| RepeatPart.new(str) }
+ assert_equal "01",   frame.data[0].index
+ assert_equal "1111", frame.data[0].code
+ assert_equal "02",   frame.data[1].index
+ assert_equal "2222", frame.data[1].code</code></pre></figure>
+
+<h2 id="コーディングスタイル">コーディングスタイル</h2>
+
+<p>では添削を始めます。
+最初は前回と同じく、内容とは関係ない、
+見ために関わる部分から見ていきましょう。
+今回は多分に個人的な趣味に走った見解を示します。</p>
+
+<h3>()</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def HexStruct::size()</code></pre></figure>
+
+<p>まずこの行ですが、わたしは「()」 (空の括弧のみ) がどうも好きになれません。
+呼ぶときにはローカル変数とはっきり区別するため付けることもあるのですが、
+定義時に「()」が付いていると意地でも消したくなります。</p>
+
+<h3 id="-1">::</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def HexStruct::size()</code></pre></figure>
+
+<p>さらに同じ行ですが、わたしは特異メソッド定義の「::」にも拒否反応が出ます。
+だいたいあれです、:: を使いたがるのなんて C++ マニアだけです。
+Ruby で書くときはあきらめてドットを使ってください。</p>
+
+<h3 id="例外クラスの定義">例外クラスの定義</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class NoMemberError &lt; StandardError
+ end</code></pre></figure>
+
+<p>普通のクラスを一行で書く人はあまりいないと思いますが、
+わたしはなぜか例外クラスだけは一行で書くことにしています。
+たとえば次のように。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class NoMemberError &lt; StandardError; end</code></pre></figure>
+
+<p>こう書きたくなるのは、たぶん、
+例外クラスの定義では本体を書くことがほとんどないからでしょう。</p>
+
+<h3 id="alias-private-と空行">alias, private と空行</h3>
+
+<p>次はこの部分です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def byte_size()
+   @item_list.flatten.join('').size / 2
+ end
+ alias size byte_size</code></pre></figure>
+
+<p>わたしなら def と alias の間に空行を入れます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def byte_size()
+   @item_list.flatten.join('').size / 2
+ end
+
+ alias size byte_size</code></pre></figure>
+
+<p>なぜならば alias は別のメソッドの定義だからです。
+def と def の間に空行を入れるのが当然であるならば、
+def と alias の間にも空行があってしかるべきです。</p>
+
+<p>と言いつつ、わたしも alias と alias の間には空行を入れないわけですが、
+それはそれ！ これはこれ！ ということで、深く追究はしません。</p>
+
+<h3 id="クラスチェック">クラスチェック</h3>
+
+<p>HexStruct では随所に is_a? を使ったクラスチェックが入っていました。
+Ruby ではクラスをチェックする方法にもいくつか書きかたがあります。</p>
+
+<ol>
+  <li>Object#is_a?</li>
+  <li>Object#kind_of?</li>
+  <li>Class#===</li>
+  <li>(結果として === を使うが) case 文</li>
+</ol>
+
+<p>kind_of? は is_a? の alias ですから、効果は同じです。
+しかし最近は三人称を避けるべきという理由で kind_of? が推奨されています。</p>
+
+<p>また、Class#=== でもクラスチェックができます。
+例えば obj.kind_of?(String) は String === obj と同じです。</p>
+
+<p>わたしも昔は === が打ちやすくていいなあ〜とか言っていた時期もありましたが、
+最近 kind_of? 派に転向しました。
+なぜなら、レシーバにチェック方法を選ばせればポリモルフィズムが働くからです。
+ぶっちゃけて言えば、kind_of? を適切に再定義できるということです。
+このことは例えば dRuby を使う場合には重要になります。</p>
+
+<p>それから、念のために書きますが、こう書いたからといって
+「クラスチェックをしろ」と言ったつもりは毛頭ありません。
+むしろ、可能な限りクラスをチェックしなくて済むように設計すべきだと思います。
+どうしても書かなければならない場合には
+kind_of? を使うのがよいだろうというだけです。</p>
+
+<h3 id="ファイル名">ファイル名</h3>
+
+<p>コーディングスタイルに入るかどうかは微妙ですが、
+他に入れる場所がないので、最後にファイル名について述べます。</p>
+
+<p>オリジナルのファイル名は hex_struct.rb となっていました。
+しかし Ruby ではクラス名を単純に downcase して
+ファイル名を決定するのが基本なので、hexstruct.rb としたほうがよいでしょう。</p>
+
+<h2 id="型の宣言">型の宣言</h2>
+
+<p>ここからはコードの意味に踏み込みつつ添削を進めていきます。
+まずは型の宣言方法を検討しましょう。</p>
+
+<h3 id="問題">問題</h3>
+
+<p>HexStruct では STRUCT という定数で型を宣言していましたが、
+この方式はイマイチだと思います。
+STRUCT という名前もさることながら、
+定数で型を宣言するというのが納得できません。
+STRUCT という定数と、構造体の型には何もつながりがないからです。</p>
+
+<p>そんなことを言いながらわたし自身も net/http で似たようなことをやっていますが、
+あれは自他ともに認める失敗作なので事例として挙げるには不適切です。
+また、net/http の場合はライブラリの外で定数を定義する必要はありませんが、
+HexStruct はユーザに定数を定義させているところが問題を大きくしています。</p>
+
+<p>それから、可変長フィールドを宣言するために -1 という特別な値を使うのも問題です。
+「-1」という字面からは、
+それが可変長フィールドであるということが全くわからないからです。
+C 言語ならともかく、Ruby なら他にも手法がたくさんあるのですから、
+特別な意味を表すために 0 だの -1 だのを使うのは避けましょう。
+この場合なら、nil のほうがまだ納得できます。
+よりよい改善案は以下で示します。</p>
+
+<h3 id="改善案-1-メソッドを使う">改善案 (1) メソッドを使う</h3>
+
+<p>では改善案を考えていきましょう。</p>
+
+<p>最初の案は、組み込みライブラリの Struct のように、メソッドだけで解決することです。
+この方法では例えば FixedSizeFrame を次のように定義できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> FixedSizeFrame = HexStruct.new([:MsgCode, 2],
+                                [:from_add, 3],
+                                [:to_add, 3],
+                                [:data, nil])</code></pre></figure>
+
+<p>この方法ならば STRUCT という余分な定数は必要なくなります。
+ただ、配列やネストした構造体の定義がやや汚くなりそうです。</p>
+
+<h3 id="改善案-2-ブロックを使う">改善案 (2) ブロックを使う</h3>
+
+<p>この方法の変種として、次のようにブロックを使う方法も考えられます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> FixedSizeFrame = HexStruct.define {|x|
+   x.fixed_size_field :MsgCode, 2
+   x.fixed_size_field :from_add, 3
+   x.fixed_size_field :to_add, 3
+   x.variable_size_field :data
+ }</code></pre></figure>
+
+<p>define のブロック引数の x は新しいクラス (FixedSizeFrame) を指しており、
+それに対して fixed_size_field や variable_size_field というメソッドを呼んで
+フィールドを定義していきます。
+この方法だと fixed_size_field や variable_size_field などのメソッド名で
+型を明示できるので、引数の意味も明らかになります。
+また、構造体のネストや配列の定義も自然と考えつきます。
+例えば次のようにすればよいのです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # 構造体の配列を定義する
+ ArrayFrame = HexStruct.define {|x|
+   x.list_field(:list) {|y|
+     y.fixed_size_field :index, 1
+     y.fixed_size_field :code, 2
+   }
+ }
+
+ # ネストした構造体を定義する
+ NestedFrame = HexStruct.define {|x|
+   x.fixed_size_field :MsgCode, 2
+   x.fixed_size_field :from_add, 3
+   x.fixed_size_field :to_add, 3
+   x.struct_field(:sub) {|y|
+     y.fixed_size_field :DataType, 2
+     y.fixed_size_field :Len, 1
+   }
+ }</code></pre></figure>
+
+<h3 id="改善案-3-module_eval-を使う">改善案 (3) module_eval を使う</h3>
+
+<p>しかし、こうなってくると x. だの y. だのが邪魔に思えます。
+こいつらをなんとか取れないものでしょうか。</p>
+
+<p>そういうときに便利なのが module_eval です。
+ブロックつきの module_eval を使うと
+FixedSizeFrame の定義は次のように短縮できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> FixedSizeFrame = HexStruct.define {
+   fixed_size_field :MsgCode, 2
+   fixed_size_field :from_add, 3
+   fixed_size_field :to_add, 3
+   variable_size_field :data
+ }</code></pre></figure>
+
+<p>この define のブロック中では self が
+FixedSizeFrame オブジェクトに入れ換わっているので、
+fixed_size_field や variable_size_field をレシーバなしで呼べるわけです。
+こうなるといま世間で噂の DSL (Domain Specific Language) ぽくなってきます。
+わたしは昔これをやりすぎて酷いめにあったので DSL はあまり好きではないのですが、
+今回は流行に媚びておきます。</p>
+
+<h3 id="実装">実装</h3>
+
+<p>今回は改善案 (3) を実装することにしました。
+以下に該当部分のコードを示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class HexStruct2
+   class &lt;&lt; self
+     def define(&amp;block)
+       new_class(&amp;block)
+     end
+
+     def fixed_size_field(name, byte_size)
+       define_field name, FixedSizeField.new(nil, byte_size)
+     end
+
+     def variable_size_field(name)
+       define_field name, VariableSizeField.new(nil)
+     end
+
+     def struct_field(name, &amp;block)
+       c = new_class(&amp;block)
+       define_field name, StructField.new(nil, c)
+       c
+     end
+
+     def list_field(name, &amp;block)
+       c = new_class(&amp;block)
+       define_field name, ListField.new([], c)
+       c
+     end
+
+     private
+
+     def new_class(&amp;block)
+       c = Class.new(::HexStruct2)
+       c.instance_variable_set :@field_specs, []
+       c.module_eval(&amp;block)
+       c
+     end
+
+     def define_field(name, prototype)
+       @field_specs.push [name.to_s.intern, prototype]
+       define_field_accessor name
+     end</code></pre></figure>
+
+<p>まずクラス名についてですが、クラス名がオリジナルと同じだと
+テストなどがややこしいことになるので、HexStruct2 と名前を変えました。</p>
+
+<p>それから、このコードではいきなり特異クラス定義文が使われているのでこれを説明しましょう。
+特異クラス定義文というのは、特異メソッドをまとめて定義するときに使う構文です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class &lt;&lt; HexStruct2
+   def a() ... end
+   def b() ... end
+   def c() ... end
+ end</code></pre></figure>
+
+<p>が、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def HexStruct2.a() ... end
+ def HexStruct2.b() ... end
+ def HexStruct2.c() ... end</code></pre></figure>
+
+<p>と同じ意味になります。したがって、
+今回は define や fixed_size_field, variable_size_field, list_field などが
+すべて HexStruct2 のクラスメソッドになります。</p>
+
+<p>特異クラス文は特異メソッドをまとめて定義するために使われることがほとんどですが、
+そのほかにも、クラスメソッドを private にしたり、alias を定義したり、
+などの操作がやりやすいという特徴があります。</p>
+
+<p>残るポイントは new_class メソッドです。
+このメソッドは細かく見ていきましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">     def new_class(&amp;block)
+       c = Class.new(::HexStruct2)
+       c.instance_variable_set :@field_specs, []
+       c.module_eval(&amp;block)
+       c
+     end</code></pre></figure>
+
+<p>まず Class.new(::HexStruct2) で HexStruct2 を継承したクラスを作ります。
+続いて instance_variable_set で
+その新しいクラスのインスタンス変数 @field_spec を初期化します。
+最後に module_eval を使い、
+そのクラスのうえで define のブロック引数 (block) を評価します。
+「クラスのうえで評価する」とは、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> HexStruct2.module_eval {
+   ....
+ }</code></pre></figure>
+
+<p>と書くと、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class HexStruct2
+   ....
+ end</code></pre></figure>
+
+<p>と書いたのとほとんど同じ効果があるということです。
+したがって、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> C = HexStruct2.define {
+   ....
+ }</code></pre></figure>
+
+<p>は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class C &lt; HexStruct2
+   @field_specs = []
+   ....
+ end</code></pre></figure>
+
+<p>と書いたのとほぼ同じ効果があるわけです。ですから define のブロック内では
+HexStruct2 のクラスメソッドである fixed_size_field や variable_size_field が呼べます。</p>
+
+<p>コードの残りの部分は通常の Ruby プログラミングの範囲で理解できるでしょう。
+FixedSizeField, VariableSizeField などは構造体のフィールドを表現するクラスであり、
+そのインスタンスをフィールド名とともに @field_specs に記憶しておきます。</p>
+
+<p>define_field の中にある
+define_field_accessor についてはあとの節で改めて話します。</p>
+
+<p>ところで、本当は @field_specs には
+インスタンス変数ではなくクラス変数を使うつもりでした。
+しかし、クラス変数の静的スコープ仕様に負けたこと、
+class_variable_set が 1.8.3 以降にしかなかったこと、
+の二つの理由であきらめました。</p>
+
+<h2 id="役割の分配とメソッド名">役割の分配とメソッド名</h2>
+
+<p>続いては HexStruct のメソッドをいくつか例にとって、
+役割の分配について議論します。</p>
+
+<h3 id="hexstructnew">HexStruct.new</h3>
+
+<p>HexStruct は HexStruct.new(str)
+で文字列をパースしてくれるのですが、どうもこれが気に入りません。</p>
+
+<p>理由は二つあります。
+一つめは、new というメソッド名からはパースするという働きが予想できないからです。
+二つめは、new に機能をたくさん付けすぎているからです。
+一つのメソッドに機能をつめこみすぎると、拡張するのも難しくなります。
+例えば後で IO から読み込んでオブジェクトを作るメソッドが欲しくなったとき、
+オリジナルの構造だと機能を追加する余地がありません。</p>
+
+<p>改善策として、文字列をパースしてオブジェクトを作る機能は
+HexStruct.parse(str) に分離し、
+new はパース後の値を受け取ってオブジェクトを作るだけにします。</p>
+
+<p>ちなみに、わたしは生成系のメソッドとして以下の定義をよく使っています。</p>
+
+<dl>
+  <dt>CLASS.new(value)</dt>
+  <dd>値 value をそのまま保持するオブジェクトを生成</dd>
+  <dt>CLASS.parse(string)</dt>
+  <dd>文字列 string をパースしてオブジェクトを生成</dd>
+  <dt>CLASS.for_io(io)</dt>
+  <dd>IO オブジェクト io から読み込んでパースしてオブジェクトを生成</dd>
+  <dt>CLASS.load(path)</dt>
+  <dd>ファイル path を読み込んでパースしてオブジェクトを生成</dd>
+</dl>
+
+<h3 id="hexstructsize_of-data_of-write_to">HexStruct#size_of, #data_of, #write_to</h3>
+
+<p>先に挙げた例では、メンバにアクセスするときは
+常にメソッド形式のアクセサを使っていました。
+しかし実は以下のようなメソッドも用意されています。</p>
+
+<dl>
+  <dt>size_of(name)</dt>
+  <dd>name メンバのバイト長を返す</dd>
+  <dt>data_of(name)</dt>
+  <dd>name メンバの値を返す</dd>
+  <dt>write_to(name, val)</dt>
+  <dd>name メンバに値 val を代入する</dd>
+</dl>
+
+<p>以下に簡単な使用例を示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p hexstruct.size_of('MsgCode')      # 3
+ p hexstruct.data_of('MsgCode')      # hexstruct.MsgCode と同じ
+ hexstruct.write_to 'MsgCode', '1f'  # hexstruct.MsgCode = '1f' と同じ</code></pre></figure>
+
+<p>一般的に、「xxxx_of」「xxxx_to」のように
+前置詞で終わるメソッドが並んでいたら注意が必要です。
+なぜなら、そういうメソッドはレシーバではなく何か
+別のオブジェクトについて責任を負わされている場合があるからです。</p>
+
+<p>例えば #size_of は何のサイズを返すのでしょうか。
+「フィールドの」サイズですね。
+では #data_of は何のデータを返すでしょう。
+「フィールドの」データです。#write_to はどうでしょうか。
+「フィールドに」書き込むのでしょうね。
+これは明らかに、フィールドを表すオブジェクトが必要な状況です。</p>
+
+<p>例えば HexStruct にフィールドオブジェクトを検索するメソッド
+HexStruct#[] を定義したとすると、
+各メソッドは次のように変形できるはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> hexstruct[name].size
+ hexstruct[name].value
+ hexstruct[name].value = val</code></pre></figure>
+
+<h2 id="アクセサメソッドの定義">アクセサメソッドの定義</h2>
+
+<p>HexStruct で定義した構造体には、
+メソッドでメンバにアクセスできるようになっていました。
+アクセスするためのメソッドなので、
+これをアクセサメソッド (accessor method) と呼んでおきましょう。
+この節ではアクセスメソッドの実装について検討します。</p>
+
+<h3 id="問題-1">問題</h3>
+
+<p>HexStruct ではアクセサメソッドを実現するために、
+次のように method_missing を使っています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def method_missing(method_sym, *params)
+   #puts "method_missing()"; p [method_sym, *params]
+   if method_sym.to_s =~ /\w=$/
+     member_name = method_sym.to_s.gsub(/=$/, "")
+     write_to(member_name, *params)
+   else
+     member_name = method_sym.to_s
+     set_flag = false
+   end
+
+   unless @cache.key?(member_name)
+     hex_str = self.to_s
+     if hex_str.methods.include?(member_name)
+       return hex_str.send(method_sym, *params)
+     else
+       raise NoMemberError, "'#{member_name}' is not member.", caller
+     end
+   end
+   item_size, item_data = @cache[member_name]
+   item_data
+ end</code></pre></figure>
+
+<p>method_missing は、使わなくて済むならば使うべきではありません。
+method_missing を使ってメソッドを実装するということは、必然的に、
+メソッドの定義がソースコード上で直接見えなくなるということです。
+コードを読む側にとってみるとこれほどウザったいものはありません。
+それ以外にどうしようもないときの手段として method_missing が
+用意されていることは重要だと思いますが、
+「method_missing で実装できる」→「使う」という安易な姿勢には賛成できません。
+まして、method_missing を積極的に使ってみようなどと考えるのは論外です。</p>
+
+<p>たとえるなら、method_missing を始めとするリフクレション機能は
+鰻丼における山椒のようなものです。最後の仕上げに少々使うくらいが
+ちょうどいいのであって、山盛り一杯かかっていたら食えたもんではありません。</p>
+
+<p>後述するように、HexStruct では method_missing を使わなくても
+同等の機能が実装できますから、method_missing は捨てるべきでしょう。</p>
+
+<h3 id="method_missing-が適切な場面">method_missing が適切な場面</h3>
+
+<p>では、method_missing を使うのが適切なのはどんなときでしょうか。
+method_missing の「よい」応用例としては drb が挙げられます。
+drb ではリモートオブジェクトにメソッドを転送するために
+method_missing が効果的に使われています。</p>
+
+<p>drb で使われている method_missing が問題ないのは、二つの理由によります。</p>
+
+<p>一つめは、どのメソッドをリモートホストに転送すべきかがあらかじめわからないということです。
+Ruby ではいつメソッドが追加されるかわからないうえに、
+method_missing のような機構があるため、
+実際にメソッドを呼んでみなければ本当にメソッドが存在しないのか判定できません。</p>
+
+<p>二つめは、すべてのメソッドが対等に扱われるということです。
+drb において、method_missing で拾われたメソッド呼び出しは基本的にすべて転送されます。
+「すべて」というところがポイントです。HexStruct の場合のように、
+エラーになったりならなかったりするような使いかたをしていると、
+次に説明するように、意図しないものを拾ってしまう危険性があります。</p>
+
+<h3 id="例外クラスの選択">例外クラスの選択</h3>
+
+<p>それから、上記の HexStruct のコードを見ると、メンバが存在しなかったときに
+NoMemberError という例外を投げていることがわかります。
+これは元どおり NoMethodError を投げるべきでしょう。
+method_missing はもともと NoMethodError を投げるように実装されているので、
+super を呼んでおけば元の動作を再現できます。</p>
+
+<p>なぜ例外クラスを変更してはいけないのでしょうか。
+第一に、HexStruct のメソッドはメンバアクセサだけではないからです。
+例えば size_of を呼ぼうとして間違えて sizeof と書いてしまったとしても
+NoMemberError になってしまいます。</p>
+
+<p>第二に、使う側からすると、メンバアクセスだろうがなんだろうが、
+見ためがメソッドであるならそれはメソッドだからです。
+メソッドがないなら NoMethodError が起きるべきです。</p>
+
+<p>作者のかたの気持ちを想像するに、HexStruct#data_of などが NoMemberError を投げるのに
+合わせたかったのだと思うのですが、この場合は気をきかせすぎでしょう。</p>
+
+<h3 id="改善策と実装">改善策と実装</h3>
+
+<p>この問題はどのように解決できるでしょうか。
+答えは簡単です。せっかく構造体の型宣言があるのだから、
+宣言されたときに即座にアクセサメソッドを定義してしまえばよいのです。
+すでに名前だけ出てきた define_field_accessor がそれです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class HexStruct2
+   class &lt;&lt; self
+     # 略...
+     private
+
+     def define_field_accessor(name)
+       define_method(name) {
+         self[name].value
+       }
+       define_method("#{name}=") {|obj|
+         self[name].value = obj
+       }
+     end
+   end
+ end</code></pre></figure>
+
+<p>このメソッドは fixed_size_field や variable_size_field から間接的に呼ばれます。
+内容は Module#define_method を使ってアクセサメソッドを定義するだけです。</p>
+
+<p>define_method について簡単に説明しておきましょう。
+define_method は一言で言うと「メソッドを定義するメソッド」です。
+ブロックとともに呼び出すと、そのクラスに、引数に与えた名前のインスタンスメソッドを定義します。
+そのメソッドの本体は define_method のブロックと同じです。
+つまり以下の二つがほぼ同じだということです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class C
+   def m
+     puts "OK"
+   end
+ end
+
+ class C
+   define_method(:m) {
+     puts "OK"
+   }
+ end</code></pre></figure>
+
+<p>この二つの違いは、define_method ではブロックの外のローカル変数が見えるという点、
+それから引数の渡されかたが Proc と同じになるという点です。</p>
+
+<h2 id="文字列との比較">文字列との比較</h2>
+
+<p>テストを眺めていたところ、驚愕の事実を発見しました。
+なんと HexStruct は文字列とイコールなのです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> assert_equal(true, frame_01 == "0000000000000000")</code></pre></figure>
+
+<p>この比較を可能にするため、HexStruct#== は両辺に to_s を呼んでから比較しています。</p>
+
+<p>また、== は二項演算子なので、
+右辺左辺を入れ換えても同じ結果になってほしいという人は多いでしょう。
+そんなわけで、HexStruct#to_str が定義されていて暗黙のうちに文字列に
+変換されるようになっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> assert_equal("0022000123000000AABBCCDDEEFF", frame)</code></pre></figure>
+
+<h3 id="暗黙の変換">暗黙の変換</h3>
+
+<p>まず Ruby の提供する暗黙の変換について押さえておきましょう。</p>
+
+<p>Ruby ではメソッドシグネチャ (メソッド名と、引数の数) さえ
+合っていればクラスに関わらずメソッドが呼び出せるので、
+レシーバ側はかなり自由に入れ換えられます。
+例えば、String にも Array にも IO にも each
+と &lt;&lt; が定義されているので、
+次のメソッドの引数 src, dest は String でも Array でも IO でも、
+あるいはリモートホストにある文字列でも問題なく動作します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def copy(src, dest)
+   src.each do |str|
+     dest &lt;&lt; str
+   end
+ end</code></pre></figure>
+
+<p>しかし、他のメソッドの引数にする場合はどうでしょうか。
+例えば以下のコードを見てください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def compile(arg)
+   buf = ""
+   buf.concat arg
+   # 略
+ end</code></pre></figure>
+
+<p>ここで arg は文字列のように振る舞うだけではだめで、
+文字列それ自体でなければいけません。
+例えば arg が Delegator でラップした文字列や、
+リモートホストにある文字列であってはまずいわけです。</p>
+
+<p>こういうときに使うのが to_str です。to_str というメソッドを定義しておくと、
+文字列「である」値が必要なときにはそれを呼んで文字列に変換してくれます。
+直感的に言うと、to_str を定義したオブジェクトは他のメソッドから
+文字列扱いしてもらえるということです。</p>
+
+<p>このようなメソッドには to_str の他に
+to_int, to_ary, to_hash, to_io, to_regexp, to_proc などがあり、
+それぞれ Integer, Array, Hash, IO, Regexp, Proc への自動変換を処理します。</p>
+
+<h3 id="改善策">改善策</h3>
+
+<p>暗黙の変換についても、言うことは method_missing とほとんど同じです。
+すなわち、この機能を使わなければ実装できないときのために用意されていることは
+重要だと思いますが、安易に使うべきではありません。
+なぜなら、安易に暗黙の変換を使ってしまうと肝心なところでエラーが隠されてしまったり、
+思いもかけないところで変換されてしまったりするからです。</p>
+
+<p>暗黙の変換を使うべきかどうか判断するにはどうしたらいいでしょうか。
+簡単にできる方法は、クラス名をじっと見ることです。
+クラス名だけを見て「これは明らかに文字列っぽい」と思えなかったら、
+文字列に変換すべきではありません。配列その他も同様です。</p>
+
+<p>そこで HexStruct はどうでしょうか。これを文字列だと思う人はまずいないでしょう。
+したがって、この場合は単に文字列との相互変換をやめるべきです。
+多少比較のコードが面倒になるかもしれませんが、
+その多少の利便性とひきかえにするには、暗黙の変換はあまりにも危険すぎます。</p>
+
+<h2 id="データ構造">データ構造</h2>
+
+<p>オリジナルの HexStruct は次のようなデータ構造を使っています。
+<img src="/images/0011-CodeReview/before.jpg" alt="before.jpg" /></p>
+
+<p>つまり、まずフィールド名と値の組の配列があり、それをさらに配列に入れて管理します。
+このような構造を alist (association list) と言います。
+HexStruct ではメンバの順番に意味があるので、この場合 Hash は不適切です。</p>
+
+<p>オリジナルのコードの問題は、扱う値が String, Integer, Array, HexStruct
+と四種類もあるため、統一的に扱えないところです。
+結果として HexStruct ではクラスによって分岐せざるをえません。
+たとえば以下の HexStruct#write_to のコードを見てください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def write_to(member_name, data)
+   member_check(member_name)
+
+   item_size, item_data = @cache[member_name]
+
+   if data.is_a?(HexStruct) or data.is_a?(Array)
+     index = @item_list.index(item_data)
+     @item_list[index] = data
+     @cache[member_name] = [item_size, @item_list[index]]
+     return data
+   elsif data.is_a?(Integer)
+     current_size = item_data.size
+     set_param = sprintf("%0#{current_size}X", data)
+     item_data.replace(set_param)
+   else
+     if (item_size &gt; 0) and (item_size * 2 != data.size)
+       raise SizeError, "unmatch data size.", caller
+     end
+     item_data.replace(data)
+   end
+ end</code></pre></figure>
+
+<p>このようにベタにクラスを書いてしまうと本当にそのクラスしか使えなくなり、
+Ruby の重要な利点である Duck typing が生きてきません。</p>
+
+<p>また一般的に言って、クラス分岐が必要になるのは設計がまずい場合がほとんどです。
+クラス分岐が必要になったら設計を見直してみるべきでしょう。</p>
+
+<h3 id="改善案">改善案</h3>
+
+<p>添削後のコードでは、alist を使うところは変えませんが、
+値をすべて Field オブジェクトでくるみます。
+つまり次のような構造です。
+<img src="/images/0011-CodeReview/after.jpg" alt="after.jpg" /></p>
+
+<p>そのうえで各 Field クラスに同じメソッドを定義しておけば、
+種類の違うオブジェクトを統一的に扱えます。
+例として構造体を文字列化する HexStruct2#string と
+配列化する HexStruct2#to_a を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def string
+   fields().map {|field| field.string }.join('')
+ end
+
+ alias to_s string
+
+ def to_a
+   fields().map {|field| field.to_a_item }
+ end
+
+ def fields
+   @alist.map {|name, field| field }
+ end</code></pre></figure>
+
+<p>このように、クラス分岐が一切必要なくなりました。
+これは、フィールドの型ごとに異なるコードを
+各フィールドクラスが吸収してくれるからです。</p>
+
+<h3 id="実装-1">実装</h3>
+
+<p>ではフィールドまわりの実装を示します。
+すべてのフィールド型を紹介すると長いので、
+固定長フィールドだけにしぼって見てみましょう。</p>
+
+<p>まずは宣言からです。
+コードは見やすくなるように少しいじりました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def HexStruct2.fixed_size_field(name, byte_size)
+   define_field name, FixedSizeField.new(nil, byte_size)
+ end
+
+ def HexStruct2.define_field(name, prototype)
+   @field_specs.push [name.to_s.intern, prototype]
+   define_field_accessor name
+ end</code></pre></figure>
+
+<p>fixed_size_field でフィールドの型を宣言されたら、
+FixedSizeField というクラスのインスタンスを作成します。
+この FixedSizeField オブジェクトは
+デザインパターンで言う Prototype として使われます。</p>
+
+<p>呼び出された define_field ではフィールド名と
+プロトタイプオブジェクトを @field_specs に記録します。
+この @field_specs は HexStruct2.parse などで使われるので、
+それを次にお見せしましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def HexStruct2.parse(str)
+   f = StringIO.new(str)
+   result = for_io(f)
+   raise ArgumentError, 'string too long' unless f.eof?
+   result
+ end
+
+ def HexStruct2.for_io(f)
+   new(@field_specs.map {|name, prototype| prototype.read_value(f) })
+ end
+
+ def initialize(values)
+   specs = self.class.instance_variable_get(:@field_specs)
+   unless values.size == specs.size
+     raise ArgumentError,"wrong # of values (#{values.size} for #{specs.size})"
+   end
+   @alist = specs.zip(values).map{|(name, proto), val| [name, proto.new(val)] }
+ end</code></pre></figure>
+
+<p>for_io ではプロトタイプオブジェクトを使って値を読み込むと同時にパースさせます。
+また initialize ではプロトタイプオブジェクトから真のフィールドオブジェクトを作成します。</p>
+
+<p>あとはさきほど見た通りです。各フィールドが同じインターフェイスを
+実装しているので、#string や #to_a が簡潔に記述できます。
+各 Field クラスが実装しなければならないインターフェイスを以下にまとめておきました。</p>
+
+<dl>
+  <dt>read_value(f)</dt>
+  <dd>IO f から文字列を読み込みパースする</dd>
+  <dt>new(val)</dt>
+  <dd>パースされた値から Field オブジェクトを作る</dd>
+  <dt>value</dt>
+  <dd>パースされた値を返す</dd>
+  <dt>value=(v)</dt>
+  <dd>パースされた値を代入する</dd>
+  <dt>byte_size</dt>
+  <dd>フィールドのサイズ (バイト単位)</dd>
+  <dt>size</dt>
+  <dd>byte_size の別名</dd>
+  <dt>string</dt>
+  <dd>フィールドを文字列化する</dd>
+  <dt>to_a_item</dt>
+  <dd>HexStruct2#to_a の要素へ変換する</dd>
+</dl>
+
+<p>実装例として FixedSizeField のコードを以下に示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class FixedSizeField
+   def initialize(int, byte_size)
+     @value = nil
+     @byte_size = byte_size
+     self.value = int if int
+   end
+
+   def read_value(f)
+     s = f.read(@byte_size * 2)
+     raise ArgumentError, 'field too short' unless s
+     raise ArgumentError, 'field too short' unless s.size == @byte_size * 2
+     s.hex
+   end
+
+   def new(val)
+     self.class.new(val, @byte_size)
+   end
+
+   attr_reader :value
+
+   def value=(int)
+     if (int &gt;&gt; (@byte_size * 8)) &gt; 0
+       raise ArgumentError, "integer too big: #{int}"
+     end
+     @value = int
+   end
+
+   attr_reader :byte_size
+   alias size byte_size
+
+   def string
+     sprintf("%0#{@byte_size * 2}X", @value)
+   end
+
+   alias to_a_item value
+ end</code></pre></figure>
+
+<p>プロトタイプとしての実装とインスタンスとしての実装が混じっているので
+やや混雑していますが、特に難しくはないでしょう。</p>
+
+<h3 id="おまけ-arrayassoc">おまけ： Array#assoc</h3>
+
+<p>Array のメソッドでマイナーランキングをつけたら
+nitems と首位を争いそうなメソッドに Array#assoc というのがあります。
+これは読んで字のごとく alist を検索するメソッドです。
+今回もこの assoc を使うと少し幸せになれます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def [](name)
+   name, field = @alist.assoc(name)
+   raise KeyError, "wrong member name: #{name}" unless field
+   field
+ end</code></pre></figure>
+
+<h2 id="全体に関係する疑問">全体に関係する疑問</h2>
+
+<p>最後に、クラスの使いかた全体に関して疑問を提示します。
+ここからは実際のユースケースを見てみないと確かなことが言えなかったので、
+オリジナルの作者のかたにも意見をいただいて考察しました。</p>
+
+<h3 id="immutable-にできないか">immutable にできないか</h3>
+
+<p>まず、HexStruct には代入は必要ないのではないかという疑問があります。
+代入が許されているとそれだけでコードが複雑になりますから、
+必要がないのであれば代入は許可しないほうが無難です。</p>
+
+<p>現在の HexStruct で代入が必要なのは、
+以下の二つの理由があるからでしょうか。</p>
+
+<ol>
+  <li>構造体のネストや配列を型として宣言できない</li>
+  <li>パース後の値からは構造体を作れない</li>
+</ol>
+
+<p>改善後のコードではいずれも改善されているので、
+思いきって代入をすべて禁止してしまってもよいように思います。</p>
+
+<p>と書いていましたが、作者のかたから、
+このクラスは構造体の作成にも使うので、
+名前を使って代入していけるほうが便利なのだという主旨の返事をいただきました。
+この意見は納得できるので、HexStruct の代入は問題なしと結論します。</p>
+
+<h3 id="フィールドの値">フィールドの値</h3>
+
+<p>それから、フィールドの値についてです。
+HexStruct のメンバにアクセスすると文字列が返ってくるのですが、
+これは本当に文字列であるべきなのでしょうか。</p>
+
+<p>わざわざ to_str まで定義してあるところを見ると
+文字列を使いたがっているような印象も受けるのですが、
+16 進表記の文字列が返ってきて嬉しい状況というのがよくわかりません。
+こればかりはどういうシチュエーションで使うのかを聞いてみないと
+なんとも言えないのですが、わたしの感覚からすると、
+整数値が返ってきたほうが嬉しいように思います。</p>
+
+<p>ただ、整数になってしまうとまずいところというのも確かにありました。
+一番問題になるのが可変長フィールドのバッファサイズで、
+最初のパース時にうっかり整数にしてしまうと
+バッファサイズが小さくなってしまう場合があります。
+また元のコードではネストした構造体やリストを扱うために
+文字列のままにしておきたいという事情もあるのではないかと予想します。</p>
+
+<p>これについても作者のかたに確認したところ、
+フィールドの値を 16 進数で覚えているのでどうも数値ではよくわからない、
+数値が欲しいときは string.hex で数値にできるので文字列のままにしている、
+という返答をいただきました。
+これは少々悩みましたが、やはり基本インターフェイスはコンピュータに
+合わせるのが適切であろうと考えます。デバッグがしにくいのであれば、
+デバッグがしやすいように専用メソッドを追加してもよいでしょう。
+例えば HexStruct2 と各 Field クラスの inspect を
+16 進数表記にすれば十分なのではないかと思います。</p>
+
+<h2 id="添削終了">添削終了！</h2>
+
+<p>以上で添削は終わりです。
+今回のポイントをまとめておきましょう。</p>
+
+<ul>
+  <li>「それでできる」ことと、わかりやすいことは違う</li>
+  <li>リフレクションを濫用しない</li>
+  <li>メソッドを定義するときは誰の責任なのか考える</li>
+  <li>ポリモルフィズムを活用する</li>
+</ul>
+
+<p>最後に添削前・添削後のコードを以下に置いておきます。
+見比べてみてください。</p>
+
+<ul>
+  <li><a href="/articles/0011/0011-CodeReview-hex_struct.rb.html">hex_struct.rb</a> (別ページで表示)</li>
+  <li><a href="/articles/0011/0011-CodeReview-test_hexstruct.rb.html">test_hexstruct.rb</a> (別ページで表示)</li>
+  <li><a href="/articles/0011/0011-CodeReview-hexstruct2.rb.html">hexstruct2.rb</a> (別ページで表示)</li>
+  <li><a href="/articles/0011/0011-CodeReview-test_hexstruct2.rb.html">test_hexstruct2.rb</a> (別ページで表示)</li>
+  <li><a href="/images/0011-CodeReview/hexstruct.tar.gz">hexstruct.tar.gz</a> (まとめてダウンロード)</li>
+</ul>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は複数の構造が混在したデータ構造を持つライブラリについて、
+リフレクションとポリモルフィズムをテーマに話してきました。
+リフレクションを使っているとまさに Ruby という感じがしますから、
+誰しも一度はリフレクションでプログラムを埋め尽してみたくなる時期があるものです。
+かく言うわたしもかつてリフレクションを使いすぎて自爆したことがありました。
+皆さんくれぐれもリフレクションの使いすぎには用心してください。</p>
+
+<h3 id="引き続きプログラム募集">引き続きプログラム募集</h3>
+
+<p>本連載では添削してほしいプログラムを募集しています。
+添削希望のかたは、好き勝手に論評される覚悟を決めたのち、
+るびま編集部までメールで御投稿ください。</p>
+
+<p>なお、前回は「200 行くらいまで」と書いたのですが、
+それではクラス構造のような大きな単位の話がしにくいことに気付いたので、
+やはり行数制限はしないことにしました。
+あまりに大きいと採用しにくいと思いますが、
+まずは見てみないとわからないので、お気軽に御応募ください。</p>
+
+<p>それとコードのライセンスについてです。
+まず当然ながら添削後のソースコードは添削前のコードのライセンスに従います。
+かと言って公開がどうとかあまり面倒なことを考えるのは嫌なので、
+募集するプログラムは基本的に GPL なり modified BSDL なりの
+オープンソースソフトウェアライセンスで発行されるプログラムに限定することにしました。</p>
+
+<h3 id="次回予告">次回予告</h3>
+
+<p>本連載は自転車操業なので予定は未定です。
+応募がないと連載が止まってしまうので、どしどし御応募ください。</p>
+
+<p>では、運がよければまた次号でおあいしましょう。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>青木峰郎（あおき・みねろう）</p>
+
+<p>ふつうの文系プログラマ。
+本業はいちおう哲学ということになっている。
+主著『Ruby ソースコード完全解説』
+『ふつうの Linux プログラミング』
+『Ruby レシピブック』。</p>
+
+<h2 id="あなたの-ruby-コードを添削します-連載一覧">あなたの Ruby コードを添削します 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview.html">あなたの Ruby コードを添削します 【第 5 回】 Miyako + MidoreDayBook + Lispもどき</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-miyako_ext.rb.html">0017-CodeReview-miyako_ext.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-miyako.rb.html">0017-CodeReview-miyako.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-lisp.rb.html">0017-CodeReview-lisp.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-daybook_viewindex.rb.html">0017-CodeReview-daybook_viewindex.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-CodeReview-d_index.rb.html">0017-CodeReview-d_index.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview.html">あなたの Ruby コードを添削します 【第 4 回】 Tropy</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-tropy2.rb.html">0015-CodeReview-tropy2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-tropy.rb.html">0015-CodeReview-tropy.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-sample.cgi.html">0015-CodeReview-sample.cgi</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-index.cgi.html">0015-CodeReview-index.cgi</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-CodeReview-config.html">0015-CodeReview-config</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview.html">あなたの Ruby コードを添削します 【第 3 回】 dbf.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-recomb.rb.html">0013-CodeReview-recomb.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbfrecomb.rb.html">0013-CodeReview-dbfrecomb.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbf2.rb.html">0013-CodeReview-dbf2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-CodeReview-dbf.rb.html">0013-CodeReview-dbf.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview.html">あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-test_hexstruct2.rb.html">0011-CodeReview-test_hexstruct2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-test_hexstruct.rb.html">0011-CodeReview-test_hexstruct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-hexstruct2.rb.html">0011-CodeReview-hexstruct2.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-CodeReview-hex_struct.rb.html">0011-CodeReview-hex_struct.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview-pukiwikiparser.rb.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukiwikiparser.rb</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-CodeReview-pukipa.rb.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukipa.rb</a></p>
+  </li>
+</ul>
+
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

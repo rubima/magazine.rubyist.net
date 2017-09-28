@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby 2.0.0 の require</title>
+  <meta name="description" content="書いた人：樽家昌也 (Masaya TARUI)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0041/0041-200Special-require.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>Ruby 2.0.0 の require</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0041/0041-200Special-require.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby 2.0.0 の require" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0041/0041-200Special-require.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0041/0041-200Special-require.html" data-text="Ruby 2.0.0 の require">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <p>書いた人：樽家昌也 (Masaya TARUI)</p>
+
+<h2 id="速くなりました">速くなりました</h2>
+
+<p>Ruby 2.0 では色々な機能追加や性能向上が行われていますが、そのうちの一つとして、require がまた高速になりました。</p>
+
+<p>現在の Ruby では rubygems によって様々なライブラリが提供されるようになり、これらの gem を用いる事によって自分自身はほんの少しのコードだけ書けば望む機能を実装できるようになってきています。特に Ruby on Rails では rails 本体を始め多くの gem を利用する事が普通になっています。
+このため、特に Ruby on Rails で大規模なサイトを構築しようとする場合、その開発過程でこれらの gem を読み込む初期化処理が開発者のストレスとなる場合がありました。</p>
+
+<p>require でのファイルの読み込みが Ruby 1.9 では様々な機能拡張の結果か、Ruby 1.8 と比較して遅くなってしまってから、Ruby 1.9 内でもいくつかの改善を行ってきましたが、Ruby 2.0 では少しの仕様変更によって更に性能が向上しています。
+以下のテストベンチでの測定結果を図に示します。
+(複数回測定し、一番良い結果を採用しています)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">files=2000
+begin
+    files.times{|i|
+        file = "req/file#{i}.rb"
+        open(file,"wb"){}
+    }
+rescue
+end
+100.times{ $LOAD_PATH &lt;&lt; "/" } #gemsの代わり
+$LOAD_PATH &lt;&lt; "."
+start = Time.now
+cnt=0
+files.times{|j|
+    file = "req/file#{j}.rb"
+    require file
+    cnt +=1
+    puts "#{cnt}, #{Time.now - start}" if cnt % 100 == 0
+}</code></pre></figure>
+
+<p><img src="/images/0041-200Special-require/require_bench_linux.png" alt="require_bench_linux.png" />
+<img src="/images/0041-200Special-require/require_bench_win.png" alt="require_bench_win.png" /></p>
+
+<p>これを見ると、1.8.7が未だに最速なのは色々と頑張っている身としては残念ですが、1.9で徐々に挽回してきた歴史と、そろそろ1.8.7と比較しても体感としては問題にならない程度まで高速化されているのが分かると思います。</p>
+
+<h2 id="仕様変更について">仕様変更について</h2>
+
+<p>先に少しの仕様変更と書きました。恐らくは誰も引っかからない所なのですが、一応書いておきます。</p>
+
+<ol>
+  <li>$LOAD_PATH 内の String オブジェクトが freeze されるようになります。</li>
+  <li>$LOADED_FEATURES 内の String オブジェクトが freeze されるようになります。</li>
+  <li>String オブジェクトに対して to_path が呼ばれなくなります。</li>
+</ol>
+
+<p>1 はそのままで、require を呼んだタイミングで、$LOAD_PATH 内の String オブジェクトが freeze されるようになりました。そもそも String オブジェクトで新しい Object を生成するのではなく、中身を更新するメソッドがそれほど多くないため、問題になる事は少ないだろうという判断ですが、仮に $LOAD_PATH から Object を取り出したり、$LOAD_PATH に Object を入れてから、それを操作するようなコードを書いている人がいたら悔い改めてください。</p>
+
+<p>2 についても、$LOADED_FEATURES は require したファイルの識別に用いられる配列ですが、freeze されたものが代入されるようになりました。</p>
+
+<p>3 については、皆さんご存知だったかどうか、実は $LOAD_PATH 内のオブジェクトは、to_path メソッドを持っていればそのメソッドの結果を使って文字列に変換し、path としていました。String オブジェクトに対してこの機能は余分である事もあり、to_path メソッドがたとえ定義されていても呼ばれなくなりました。</p>
+
+<p>これらは結局の所、変更が無い場合に実際のファイルパスをキャッシュして高速化する為に行われています。freeze する事によってその中身に変化が無い事を保証しますが、to_path メソッドがあると中身に変化はなくともクラスが修正されると結果を変えないといけないので、実際のファイルパスに変更が無い事を保証する為に呼び出さない事としました。</p>
+
+<p>そのため、上記で何度も String オブジェクトと書いていましたが、$LOAD_PATH 内に String オブジェクト以外を入れてしまうと効果は半減とは言わないまでも少し落ちてしまう為、入れないようにする事をお勧めします <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<p>なお、$LOAD_PATH や $LOADED_FEATURES に変更が無い事自体の判定の実装では、内部で用いている配列の share フラグを利用する中々面白いギミックが用いられています。このあたりに興味のある方は、是非 <a href="https://bugs.ruby-lang.org/issues/7158">https://bugs.ruby-lang.org/issues/7158</a> も覗いてみてください。</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>Ruby 2.0 を使ってより高速な Ruby 生活を送ってください！</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>樽家昌也(Masaya TARUI)</p>
+
+<p>No Tool, No Life. 文明って素晴らしい。Let’s Civilization!</p>
+
+<p>Windows の IRB 上で生活している。割とスピード狂。ツールが改良されて 1 秒短くなって、万人が使うとすると合算して 1 万秒/回の経済効果！ 素晴らしいですね。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>入れた事がある人がどの位いるかわかりませんが :-)&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>

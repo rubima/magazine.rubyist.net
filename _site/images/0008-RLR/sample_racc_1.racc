@@ -1,0 +1,33 @@
+class Calc
+  token NUM
+prechigh
+  left  '*' '/'
+  left  '+' '-'
+preclow
+rule
+   expr : expr '+' expr { result = val[0] + val[2] }
+        | expr '-' expr { result = val[0] - val[2] }
+        | expr '*' expr { result = val[0] * val[2] }
+        | expr '/' expr { result = val[0] / val[2] }
+        | prim          { result = val[0] }
+
+   prim : NUM            { result = val[0] }
+        | '(' expr ')'   { result = val[1] }
+end
+---- inner
+  def parse(str)
+    @tokens = str.split(/([\(\)\+\-\*\/])/).select{|c| !c.nil? && c!=""}
+    do_parse()
+  end
+
+  def next_token()
+    token = @tokens.shift()
+    case token
+    when /^\d+\z/
+      return [:NUM, token.to_i]
+    when nil
+      return nil
+    else
+      return [token, nil]
+    end
+  end

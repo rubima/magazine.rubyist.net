@@ -1,0 +1,68 @@
+<html>
+<head>
+  <!--link rel="stylesheet" href="../docstyle.css" type="text/css" /-->
+  <style type="text/css">
+  <!--
+  body { color: #333333; }
+  pre strong { font-weight: bold; color: #773333; }
+  -->
+  </style>
+</head>
+<body>
+<pre class="terminal">
+##
+## 変換後の Ruby スクリプトをファイルにキャッシュする
+##
+
+class MyEruby8
+  def self.desc; &quot;file caching&quot;; end
+
+  ## ファイルを読み込んでRubyプログラムに変換する
+  <strong>def convert_file(filename, cache_filename=nil)</strong>
+    <strong>cache_filename ||= filename + '.cache'</strong>
+    <strong>if File.file?(cache_filename) &amp;&amp; \</strong>
+       <strong>File.mtime(filename) &lt;= File.mtime(cache_filename)</strong>
+      <strong>prog = File.read(cache_filename)</strong>
+    <strong>else</strong>
+      <strong>prog = convert(File.read(filename))</strong>
+      <strong>File.open(cache_filename, 'w') do |f|</strong>
+        <strong>f.flock(File::LOCK_EX)</strong>
+        <strong>f.write(prog)</strong>
+      <strong>end</strong>
+    <strong>end</strong>
+    <strong>return prog</strong>
+  <strong>end</strong>
+
+  ## Rubyプログラムに変換する
+  def convert(input)
+    s = '_buf = &quot;&quot;; '
+    pos = 0
+    str = ''
+    input.scan(/&lt;%(=)?(.*?)%&gt;/m) do
+      equal, code = $1, $2
+      match = Regexp.last_match
+      len   = match.begin(0) - pos
+      text  = input[pos, len]
+      pos   = match.end(0)
+      text.gsub!(/[`\\]/, '\\\\\&amp;')             # テキスト
+      str &lt;&lt; text
+      if equal
+        str &lt;&lt; &quot;\#{&quot; &lt;&lt; code &lt;&lt; &quot;}&quot;             # 埋め込み式
+      else
+        s &lt;&lt; &quot;_buf &lt;&lt; %Q`#{str}`; &quot; unless str.empty?
+        str = ''
+        s &lt;&lt; &quot;#{code}; &quot;                        # 埋め込み文
+      end
+    end
+    text = $' || input                          # 残りのテキスト
+    text.gsub!(/[`\\]/, '\\\\\&amp;')
+    str &lt;&lt; text
+    s &lt;&lt; &quot;_buf &lt;&lt; %Q`#{str}`; &quot; unless text.empty?
+    s &lt;&lt; &quot;_buf\n&quot;
+    return s
+  end
+
+end
+</pre>
+</body>
+</html>

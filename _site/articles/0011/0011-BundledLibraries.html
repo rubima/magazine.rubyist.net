@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>標準添付ライブラリ紹介 【第 5 回】 enumerator</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0011/0011-BundledLibraries.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container container-left">
+        <div class="row">
+            <div class="col-md-1 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-11 main">
+                <img src="/images/rubima_logo_l.png">
+                <h1>標準添付ライブラリ紹介 【第 5 回】 enumerator</h1>
+                <div class="social-buttons">
+                    <a href="http://b.hatena.ne.jp/entry//articles/0011/0011-BundledLibraries.html" class="hatena-bookmark-button" data-hatena-bookmark-title="標準添付ライブラリ紹介 【第 5 回】 enumerator" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0011/0011-BundledLibraries.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0011/0011-BundledLibraries.html" data-text="標準添付ライブラリ紹介 【第 5 回】 enumerator">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                </div>
+                <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#この連載について" id="markdown-toc-この連載について">この連載について</a></li>
+      <li><a href="#今回の記事について" id="markdown-toc-今回の記事について">今回の記事について</a></li>
+    </ul>
+  </li>
+  <li><a href="#enumerator-とは" id="markdown-toc-enumerator-とは">enumerator とは？</a></li>
+  <li><a href="#使用例" id="markdown-toc-使用例">使用例</a></li>
+  <li><a href="#enumerator-で追加されるクラスやメソッド" id="markdown-toc-enumerator-で追加されるクラスやメソッド">enumerator で追加されるクラスやメソッド</a>    <ul>
+      <li><a href="#enumerableenumerator" id="markdown-toc-enumerableenumerator">Enumerable::Enumerator</a></li>
+      <li><a href="#enumerable-に追加されるメソッド" id="markdown-toc-enumerable-に追加されるメソッド">Enumerable に追加されるメソッド</a></li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+  <li><a href="#関連リンク" id="markdown-toc-関連リンク">関連リンク</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#標準添付ライブラリ紹介-連載一覧" id="markdown-toc-標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</a></li>
+</ul>
+
+<p>書いた人：西山</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="この連載について">この連載について</h3>
+
+<p>Ruby 1.8 になって標準添付ライブラリが増えました。そんなライブラリをどんどん紹介していこうという連載です。</p>
+
+<h3 id="今回の記事について">今回の記事について</h3>
+
+<p>今回は <a href="ruby-man:enumerator.so">enumerator</a> を紹介します。
+ruby 1.9 では既に組み込みとなっていて、
+今後はより広く一般的に用いられるようになると思われるライブラリです。</p>
+
+<h2 id="enumerator-とは">enumerator とは？</h2>
+
+<p><a href="ruby-man:Enumerable">Enumerable モジュール</a>に含まれるすべてのメソッドは、
+each メソッドを利用して実現されています。</p>
+
+<p>例えば、通常は String#each を用いて行毎にインデックス付きで繰り返す 
+String#each_with_index で、String#each の代わりに
+String#each_byte を利用してバイト毎に処理してみたいと思ったことはありませんか？</p>
+
+<p>IO.foreach などで each_with_index や collect などの
+Enumerable モジュールのメソッドを利用したいと思ったことはありませんか？</p>
+
+<p>それを叶えるために enumerator が作られました。</p>
+
+<h2 id="使用例">使用例</h2>
+
+<p>一番簡単な例は Object#enum_for で each の代わりに使いたいメソッドを指定して、Enumerable モジュールのメソッドを続けるだけです。</p>
+
+<p>コメントに書いてあるものは出力例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'enumerator'
+ 'abc'.enum_for(:each_byte).each_with_index do |e,i|
+   puts "#{i}: #{e}"
+ end
+ #=&gt;
+ # 0: 97
+ # 1: 98
+ # 2: 99</code></pre></figure>
+
+<p>enum_for を使わない場合は、このようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> i = 0
+ 'abc'.each_byte do |e|
+   puts "#{i}: #{e}"
+   i += 1
+ end</code></pre></figure>
+
+<p>引数を必要とするメソッドでは、enum_for の第 2 引数以降に指定すれば
+そのままメソッド (下の例では each_slice) に渡されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'enumerator'
+ [0,1,2,3,4,5].enum_for(:each_slice, 2).each_with_index do |e,i|
+   p [e,i]
+ end
+ #=&gt;
+ # [[0, 1], 0]
+ # [[2, 3], 1]
+ # [[4, 5], 2]</code></pre></figure>
+
+<p>enum_for を使わない場合は、このようになります。
+each_slice が enumerator ライブラリで定義されているメソッドなので、
+require は残しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'enumerator'
+ i = 0
+ [0,1,2,3,4,5].each_slice(2) do |e|
+   p [e,i]
+   i += 1
+ end</code></pre></figure>
+
+<p>クラスメソッドでも同じように使えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'enumerator'
+ p IO.enum_for(:foreach, '/etc/hosts').grep(/^127\./)
+ #=&gt; ["127.0.0.1\tlocalhost.localdomain\tlocalhost\n"]</code></pre></figure>
+
+<p>enum_for を使わない場合は、このようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> result = []
+ IO.foreach('/etc/hosts') do |line|
+   if /^127\./ === line
+     result.push(line)
+   end
+ end
+ p result</code></pre></figure>
+
+<h2 id="enumerator-で追加されるクラスやメソッド">enumerator で追加されるクラスやメソッド</h2>
+
+<p>enumerator を require することによって、</p>
+
+<ul>
+  <li>Enumerable::Enumerator クラス</li>
+  <li>Object#to_enum(method_name = :each, *args)</li>
+  <li>Object#enum_for(method_name = :each, *args)</li>
+  <li>Enumerable#enum_with_index など</li>
+</ul>
+
+<p>が追加されます。</p>
+
+<p>ruby 1.9 (2005-07-15) 以降では組み込みになったため、
+require する必要はありません。
+<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<h3 id="enumerableenumerator">Enumerable::Enumerator</h3>
+
+<p>使用例では説明を省略していましたが、Object#enum_for（または Object#to_enum）で Enumerable::Enumerator オブジェクトが生成されます。</p>
+
+<p>Enumerable::Enumerator オブジェクトの生成は、以下の 3 通りあります。どれも同じ意味になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> enum = obj.enum_for(method_name, *args)
+ enum = obj.to_enum(method_name, *args)
+ enum = Enumerable::Enumerator.new(obj, method_name, *args)</code></pre></figure>
+
+<p>使用例の例で言うと、それぞれ以下の 3 つずつが同じ意味になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> enum1 = 'abc'.enum_for(:each_byte)
+ enum1 = 'abc'.to_enum(:each_byte)
+ enum1 = Enumerable::Enumerator.new('abc', :each_byte)</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> enum2 = [0,1,2,3,4,5].enum_for(:each_slice, 2)
+ enum2 = [0,1,2,3,4,5].to_enum(:each_slice, 2)
+ enum2 = Enumerable::Enumerator.new([0,1,2,3,4,5], :each_slice, 2)</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> enum3 = IO.enum_for(:foreach, '/etc/hosts')
+ enum3 = IO.to_enum(:foreach, '/etc/hosts')
+ enum3 = Enumerable::Enumerator.new(IO, :foreach, '/etc/hosts')</code></pre></figure>
+
+<p>そして、以下の 2 つが同じ意味になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> enum.each { ... }
+ obj.method_name(*args) { ... }</code></pre></figure>
+
+<p>上の enum1, enum2, enum3 の例でいうと、
+それぞれ以下の 2 つずつが同じ意味になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> enum1.each { ...block1... }
+ 'abc'.each_byte { ...block1... }</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> [0,1,2,3,4,5].each_slice(2) { ...block2... }
+ enum2.each { ...block2... }</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> IO.foreach('/etc/hosts') { ...block3... }
+ enum3.each { ...block3... }</code></pre></figure>
+
+<p>Enumerable::Enumerator は Enumerable をインクルードしているので、each の他に Enumerable のメソッドも使えます。</p>
+
+<p>そのため、以下のような書き方が出来ます。
+途中の enum1 などの変数を使わずに書くと、
+使用例のところに出てきたような書き方になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> enum1.each_with_index do |e,i|
+   puts "#{i}: #{e}"
+ end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> enum2.each_with_index do |e,i|
+   p [e,i]
+ end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p enum3.grep(/^127\./)</code></pre></figure>
+
+<h3 id="enumerable-に追加されるメソッド">Enumerable に追加されるメソッド</h3>
+
+<p>enumerator を require すると、
+以下のメソッドが Enumerable に追加されます。</p>
+
+<ul>
+  <li>enum_ 系
+    <ul>
+      <li>Enumerable#enum_cons(n)</li>
+      <li>Enumerable#enum_slice(n)</li>
+      <li>Enumerable#enum_with_index</li>
+    </ul>
+  </li>
+  <li>each_ 系
+    <ul>
+      <li>Enumerable#each_cons(n) {…}</li>
+      <li>Enumerable#each_slice(n) {…}</li>
+    </ul>
+  </li>
+</ul>
+
+<p>enum_ が頭についているメソッドは Enumerable::Enumerator を生成するメソッドになります。</p>
+
+<p>each_ が頭についているメソッドは each と同じように繰り返すメソッドで、Enumerable::Enumerator とは直接の関係はないメソッドですが、
+あると便利なので enumerator で定義されています。</p>
+
+<p>each_slice と each_cons は、どちらも n 要素ずつ繰り返すメソッドです。
+違いは言葉で説明するよりも、以下の使用例を見た方がわかりやすいと思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'enumerator'
+ (1..7).each_cons(5) {|x| p x}
+ #=&gt;
+ # [1, 2, 3, 4, 5]
+ # [2, 3, 4, 5, 6]
+ # [3, 4, 5, 6, 7]
+ (1..7).each_slice(3) {|x| p x}
+ #=&gt;
+ # [1, 2, 3]
+ # [4, 5, 6]
+ # [7]
+ (1..7).enum_cons(5).each_with_index {|x,i| p [x,i]}
+ #=&gt;
+ # [[1, 2, 3, 4, 5], 0]
+ # [[2, 3, 4, 5, 6], 1]
+ # [[3, 4, 5, 6, 7], 2]
+ (1..7).enum_slice(3).each_with_index {|x,i| p [x,i]}
+ #=&gt;
+ # [[1, 2, 3], 0]
+ # [[4, 5, 6], 1]
+ # [[7], 2]
+ ['a', 'b', 'c'].enum_with_index.select {|x,i| p x if i%2==0}
+ #=&gt;
+ # "a"
+ # "c"</code></pre></figure>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回は便利そうなのに意外と使われていないような気がする enumerator を紹介してみました。</p>
+
+<h2 id="関連リンク">関連リンク</h2>
+
+<ul>
+  <li><a href="ruby-man:enumerator.so">ruby-man:enumerator.so</a></li>
+  <li><a href="ruby-man:Enumerable::Enumerator">ruby-man:Enumerable::Enumerator</a></li>
+  <li><a href="ruby-man:Enumerable">ruby-man:Enumerable</a></li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>西山和広。
+<a href="http://www.rubyist.net/~kazu/samidare/">Ruby hotlinks 五月雨版</a>
+や
+<a href="http://www.ruby-lang.org/ja/man/">Ruby リファレンスマニュアル</a>
+のメンテナをやっています。
+<a href="http://www.ruby-lang.org/ja/man/">Ruby リファレンスマニュアル</a>
+はいつでも<a href="ruby-man:執筆者募集">執筆者募集中</a>です。
+何かあれば、マニュアル執筆編集に関する議論をするためのメーリングリスト rubyist@freeml.com（<a href="http://www.freeml.com/ctrl/html/MLInfoForm/rubyist">参加方法</a>）へどうぞ。</p>
+
+<h2 id="標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-BundledLibraries.html">標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-BundledLibraries.html">標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-BundledLibraries.html">標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-BundledLibraries.html">標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-BundledLibraries.html">標準添付ライブラリ紹介 【第 11 回】 zlib</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-BundledLibraries.html">標準添付ライブラリ紹介 【第 10 回】 ERB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-BundledLibraries.html">標準添付ライブラリ紹介 【第 9 回】 PStore</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-BundledLibraries.html">標準添付ライブラリ紹介 【第 8 回】 uri, pathname</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-BundledLibraries.html">標準添付ライブラリ紹介 【第 7 回】 net/http</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-BundledLibraries.html">標準添付ライブラリ紹介 【第 6 回】 委譲</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-BundledLibraries.html">標準添付ライブラリ紹介 【第 5 回】 enumerator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-BundledLibraries.html">標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-BundledLibraries.html">標準添付ライブラリ紹介 【第 2 回】 Logger</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-BundledLibraries.html">標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>互換性のために $LOADED_FEATURES に “enumerator.so” が入っているので、require しても問題はありません。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
+<!DOCTYPE html>
+<html>
