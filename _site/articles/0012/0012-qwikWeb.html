@@ -690,6 +690,17 @@ qwik/lib/template 以下に、HTML によるページ・テンプレートが存
 
 <h3 id="ジェームズクラーク式記法">ジェームズ・クラーク式記法</h3>
 
+<blockquote>
+  <p>※2017年10月19日（木）22:14 るびま編集による歴史的追記。 この節で使っているような、
+要素のタグ間の文字列に改行などの空白が入るのを防ぐ記法を、
+「ジェームズ・クラーク式記法」乃至「James Clark 記法」と呼ぶことは、
+実は結果的には勘違いによって、 この記事の著者である江渡さんが作ってしまったものであると、
+後に確認されました<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。 なお、あまり多くは使われてはいないフレーズのようですが、
+英語圏で James Clark notation というフレーズは、 「{http://www.w3.org/2000/xmlns/}xmlns」
+という ようにして名前空間プレフィックスのURIを展開した記法のことを指して使われていることが
+あります<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。 ※るびま編集による歴史的追記（ここまで）</p>
+</blockquote>
+
 <p>上記のコードを実行すると、下記のような出力が得られる。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;html
@@ -845,7 +856,7 @@ ServerMemory はサーバが動作中に保持する情報を扱う。
 インスタンスが生成される。Action#run というメソッドにて、Request に指
 示された内容を元に様々な処理が行われ、結果として Response インスタンス
 が変形され、クライアントに返される。
-<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></p>
 
 <p>つまり、一つのセッションは、
 __Request インスタンスを受け、Response インスタンスを返す__という
@@ -876,7 +887,7 @@ Response を返すという構造になっている。Request と Response は�
 がら処理され、結果が返される。ページを表示する、ページを編集するなどと
 いった基本的な操作も含め、全ての操作やプラグインは、この Action という
 一つのクラスの中に存在する。つまり、Action はキッチンシンクになっている。
-<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></p>
 
 <p>具体的に Action がどのように実装されているかを見てみよう。まず、最も単純
 な形のプラグインのコードを示す。</p>
@@ -974,7 +985,7 @@ end</code></pre></figure>
 
 <p>これはつまり、「 hello 」というアクションが呼ばれることによって、
 テンプレートとして notice ページを用意し
-<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>、
+<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>、
 タイトルを「 hello, world! 」に、
 本文を「 hi, there. 」にするということを指示している。
 この本文の個所にはとりあえず文字列だけを指定しているが、
@@ -993,7 +1004,7 @@ end</code></pre></figure>
 
 <p>この URL は、一見 FrontPage.html という静的なファイルの取得を意味している
 ように見えるが、そうではなく、実はこれも動的な処理
-である<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。
+である<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。
 この URL の拡張子は「 html 」
 であるが、これは「 FrontPage 」というページを対象とし、「 ext_html 」というメ
 ソッドを呼び出すという意味になる。</p>
@@ -1079,7 +1090,7 @@ end</code></pre></figure>
 う二段階方式にしているのだろうか。それは、このファイル単体のテストをで
 きるようにすると共に、システム一式のテストも行えるようにするためである。
 つまり、全てのテストケースを一度に読み込むという使い方もできる。
-<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></p>
+<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup></p>
 
 <p>試しにテストスイートを実行してみよう。</p>
 
@@ -1189,7 +1200,7 @@ Content-Length: 1230
 <p>結果となる res は Response オブジェクトであり、
 res.body という形でHTMLを取り出せる。
 また、res は同時に @res というインスタンス変数にも代入される。
-<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup></p>
+<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">     ok_xp([:title, 'hello, world!'], '//title')</code></pre></figure>
 
@@ -1219,7 +1230,7 @@ ok_xp は要素全体を比較するが、ok_in は要素の中だけ比較す�
 <p>qwikWeb では、実際にこのようなブラウザから見た際の挙動のテストをほぼ全
 機能について行うことによって、安定したサービス運営を行えるようになって
 いる。
-<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></p>
+<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup></p>
 
 <h3 id="老人力としてのテスト能力">老人力としてのテスト能力</h3>
 
@@ -1364,25 +1375,34 @@ Ruby 界の規約に合わせ、今後はひらがなでいくことにした。
       <p>実際にはここで実装している XPath は、XPath の構文を全てサポートしているわけではなく、テストを行う際に必要だった構文だけをサポートしている。XPath モドキといった方が正確である。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>実際には Reponse オブジェクトの情報から WEBrick::HTTPResponse インスタンスへと書き戻され、それを WEBrick がクライアントに返す。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p><a href="https://twitter.com/eto/status/391633752">https://twitter.com/eto/status/391633752</a>&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>キッチンシンクアプローチとは、Emacs エディタに代表されるような、さまざまな機能を一箇所につめこむような設計を意味する。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p><a href="https://twitter.com/eto/status/391635652">https://twitter.com/eto/status/391635652</a>&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>テンプレートには他に c_surface, c_plain などが存在する。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>この件に関する簡単なまとめ → <a href="http://ksmakoto.hatenadiary.com/entry/2017/10/15/123716">http://ksmakoto.hatenadiary.com/entry/2017/10/15/123716</a>&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>正確には、静的な HTML を生成してそれを返す場合もある。ページを見るという動作は非常に頻繁に発生するため、ゲスト、つまりログインしていないユーザとしてアクセスする場合は、静的なページを返している。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+      <p>実際には Reponse オブジェクトの情報から WEBrick::HTTPResponse インスタンスへと書き戻され、それを WEBrick がクライアントに返す。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:7">
-      <p>ここで $test という一般的な変数名を選んだのは失敗だったと思っている。この仕組みを理解していない人が、たまたま $test をセットしてから require すると、謎のエラーが発生していまう。グローバル変数の変数名はもっと考えてつけるべきである。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+      <p>キッチンシンクアプローチとは、Emacs エディタに代表されるような、さまざまな機能を一箇所につめこむような設計を意味する。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:8">
-      <p>並列実行のテストといった特殊な状況ではインスタンス変数を使えないため、返り値を使って検証する必要がある。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+      <p>テンプレートには他に c_surface, c_plain などが存在する。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:9">
-      <p>実際にはまだテストできない項目がある。CSS のテスト、JavaScript のテストは、この方式では対応できない。今後の課題である。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+      <p>正確には、静的な HTML を生成してそれを返す場合もある。ページを見るという動作は非常に頻繁に発生するため、ゲスト、つまりログインしていないユーザとしてアクセスする場合は、静的なページを返している。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>ここで $test という一般的な変数名を選んだのは失敗だったと思っている。この仕組みを理解していない人が、たまたま $test をセットしてから require すると、謎のエラーが発生していまう。グローバル変数の変数名はもっと考えてつけるべきである。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>並列実行のテストといった特殊な状況ではインスタンス変数を使えないため、返り値を使って検証する必要がある。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>実際にはまだテストできない項目がある。CSS のテスト、JavaScript のテストは、この方式では対応できない。今後の課題である。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
