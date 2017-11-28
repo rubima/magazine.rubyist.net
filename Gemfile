@@ -6,3 +6,6 @@ gem 'googlebooks'
 gem 'nokogiri'
 gem 'rouge'
 gem 'html-proofer'
+gem 'rack-jekyll'
+gem 'unicorn'
+
