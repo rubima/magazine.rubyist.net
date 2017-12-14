@@ -22,7 +22,7 @@ tags: 0056 naruhodo_erlang_process
 
 ## Elixir とは
 
-「[]({% post_url articles/0054/2016-08-21-0054-ElixirBook %})」によい記事があるので省略します。
+「[書籍紹介「プログラミング Elixir」]({% post_url articles/0054/2016-08-21-0054-ElixirBook %})」によい記事があるので省略します。
 
 ## Erlang プロセスは ID を持っている
 
