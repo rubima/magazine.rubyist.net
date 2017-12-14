@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>URL変更</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var from_path = "http://magazine.rubyist.net/";
+      var page_detail = window.location.search;
+      var result = page_detail.match(/\?(\d{4})(\-(.+))?/);
+      var change_url = "https://magazine.rubyist.net/articles/";
+
+      var fromurl_span = document.getElementById("fromurl");
+      var tourl_span = document.getElementById("tourl");
+
+      if (typeof result[3] === "undefined") {
+        change_url += result[1] + "/" + result[1] + "-index.html";
+      } else {
+        change_url += result[1] + "/" + result[1] + "-" + result[3];
+      }
+
+      var change_path = "<a href='" + change_url + "'>" + change_url + "</a>";
+
+      fromurl_span.insertAdjacentHTML("beforeend", from_path + page_detail);
+      tourl_span.insertAdjacentHTML("beforeend", change_path);
+    });
+  </script>
+</head>
+<body>
+  <span id="fromurl"></span>は<span id="tourl"></span>に移転しました。
+</body>
+</html>
