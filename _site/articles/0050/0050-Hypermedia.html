@@ -848,7 +848,7 @@ Accept: application/vnd.amundsen-uber+json</code></pre></figure>
   </tbody>
 </table>
 
-<p>また、リンクの名前も対応する語彙があれば結びつけておきます。ただしリンクの名前はまだあまり選択肢がありません。schema.org の hasPart のように、プロパティとして存在すればそれを使いましょう。加えて、<a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">IANA のリンクリレーション</a>は汎用的なリンクリレーションを定義しているので、あてはまるものがあれば取り入れましょう[^9]。</p>
+<p>また、リンクの名前も対応する語彙があれば結びつけておきます。ただしリンクの名前はまだあまり選択肢がありません。schema.org の hasPart のように、プロパティとして存在すればそれを使いましょう。加えて、<a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">IANA のリンクリレーション</a>は汎用的なリンクリレーションを定義しているので、あてはまるものがあれば取り入れましょう<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。</p>
 
 <p>create などの安全でない遷移 (フォーム) に対応する語彙は、schema.org では Action から探します。または、<a href="http://www.w3.org/TR/activitystreams-vocabulary/">Activity Streams</a> の語彙を使う方法もあります。IANA のリンクリレーションにはあまりありません。</p>
 
@@ -1034,8 +1034,6 @@ by @yohei</p>
 
 <hr />
 
-<p>Link: <a href="http://www.example.com/data/2">http://www.example.com/data/2</a>;rel=”next” のように使用できます。
-[^9]: IANA のリンクリレーションには、 http://schema.org/hasPart のような標準的な URL がありませんが、「リンクリレーション」を表現できる JSON フォーマット (リンクを表現できるフォーマットのほとんど) を使用する場合は、’item’のように名前だけでかまいません。</p>
 <div class="footnotes">
   <ol>
     <li id="fn:1">
@@ -1060,7 +1058,10 @@ by @yohei</p>
       <p><a href="https://html.spec.whatwg.org/multipage/microdata.html#converting-html-to-other-formats">WHATWG HTML Living Standard 5.5 Converting HTML to other formats</a> や <a href="http://www.w3.org/TR/json-ld/#microdata">JSON-LD Relationship to Other Linked Data Formats</a> など。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:8">
-      <p>Link ヘッダはフォーマットではありませんが、レスポンスヘッダを使ってリンクを付加するシンプルな方法です。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+      <p>Link ヘッダはフォーマットではありませんが、レスポンスヘッダを使ってリンクを付加するシンプルな方法です。Link: <a href="http://www.example.com/data/2">http://www.example.com/data/2</a>;rel=”next” のように使用できます。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>IANA のリンクリレーションには、 http://schema.org/hasPart のような標準的な URL がありませんが、「リンクリレーション」を表現できる JSON フォーマット (リンクを表現できるフォーマットのほとんど) を使用する場合は、’item’のように名前だけでかまいません。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
