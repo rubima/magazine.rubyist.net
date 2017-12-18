@@ -461,10 +461,12 @@ end</code></pre></figure>
 
 <p>もし仮に、HTML にリンクが存在しなかったらどうなるでしょう?代わりに、メッセージ Web アプリを使うためのワークフローの手順書が用意されているとします。</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text"> :メッセージ Web アプリ利用の手順書:
+<pre>
+<b>メッセージ Web アプリ利用の手順書</b>
  1. アドレスバーに /messages と入力して GET
  2. アドレスは /messages のまま、 title と body のパラメータに文字列をセットして POST
- 3.  message-id を受け取って、アドレスバーに /messages/{message-id} と入力して GET</code></pre></figure>
+ 3.  message-id を受け取って、アドレスバーに /messages/{message-id} と入力して GET
+</pre>
 
 <p>私たちはいちいちこんなことをしていられないので、URL やパラメータをハードコードしてこの通りにプログラミングして専用クライアントを作るでしょう。結果、サイトごとに専用クライアントが山のようにできて、そのクライアントは手順が変わると壊れるでしょう。今の Web API がやっているのはこういうことです。</p>
 
