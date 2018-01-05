@@ -3,20 +3,24 @@
   {% include head.html %}
   <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-1 hidden-xs sidebar">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
                 {% include sidebar.html %}
             </div>
-            <div class="col-md-11 main">
-                <img src="{{ site.baseurl }}/images/rubima_logo_l.png">
-                <h1>{{page.title}}</h1>
-                <div class="social-buttons">
-                    {% include social-buttons.html %}
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="{{ site.baseurl }}/images/rubima_logo_l.png">
+                        <h1>{{page.title}}</h1>
+                        <div class="social-buttons">
+                            {% include social-buttons.html %}
+                        </div>
+                        <div class="section">
+                           『るびま』は、Ruby に関する技術記事はもちろんのこと、Rubyist へのインタビューやエッセイ、その他をお届けするウェブ雑誌です。
+                        </div>
+                        {{ content }}
+                    </div>
                 </div>
-                <div class="section">
-                   『るびま』は、Ruby に関する技術記事はもちろんのこと、Rubyist へのインタビューやエッセイ、その他をお届けするウェブ雑誌です。
-                </div>
-                {{ content }}
             </div>
         </div>
     </div>
