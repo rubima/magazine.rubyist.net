@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RegionalRubyKaigi レポート (64) Tokyu Ruby 会議 11</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://localhost:4000/articles/0057/0057-TokyuRubyKaigi11Report.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>RegionalRubyKaigi レポート (64) Tokyu Ruby 会議 11</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0057/0057-TokyuRubyKaigi11Report.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RegionalRubyKaigi レポート (64) Tokyu Ruby 会議 11" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0057/0057-TokyuRubyKaigi11Report.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0057/0057-TokyuRubyKaigi11Report.html" data-text="RegionalRubyKaigi レポート (64) Tokyu Ruby 会議 11">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>TokyuRuby 会議 11 は、東京での RegionalRuby 会議として、2017 年 7 月 29 日に開催されました。<br />
+本記事はその様子をレポートしたものです。<br /></p>
+
+<h2 id="開催概要">開催概要</h2>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2017-7-29  (土) 13:30 - 19:30</dd>
+  <dt>開催場所</dt>
+  <dd>株式会社 VOYAGE GROUP 様 会議室</dd>
+  <dt>主催</dt>
+  <dd>Tokyu.rb</dd>
+  <dt>参加者</dt>
+  <dd>およそ 80 名</dd>
+  <dt>公式ページ</dt>
+  <dd><a href="http://regional.rubykaigi.org/tokyu11">http://regional.rubykaigi.org/tokyu11</a></dd>
+  <dt>公式ハッシュタグ</dt>
+  <dd><a href="https://twitter.com/search?q=%23tqrk11&amp;src=hash">#tqrk11</a></dd>
+</dl>
+
+<hr />
+
+<h2 id="tokyuruby-会議とは">TokyuRuby 会議とは</h2>
+
+<p>TokyuRuby 会議は、Ruby に興味のあるエンジニアが集うTokyu.rb が主催する LT 大会です。<br />
+第一回からの特徴として、<br /></p>
+
+<ul>
+  <li>「お酒・食べ物の持ち寄り」</li>
+  <li>「その場で参加者から抽選で LT 発表者を選出する」</li>
+  <li>「基調講演は当日の投票で LT 王を選ぶ」</li>
+  <li>「基調講演は当日の投票で持ち寄られた食べ物から飯王を選ぶ」</li>
+</ul>
+
+<p>などがあります。<br />
+今回 11 では初の試みとして、飯王を 2 つに分け、単品飯王、合算飯王が用意されました。</p>
+
+<hr />
+
+<h2 id="lt-大会の様子">LT 大会の様子</h2>
+
+<h3 id="開場--オープニング">開場 ~ オープニング</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>五十嵐邦明 ( Tokyu.rb )</td>
+      <td>進行と会場に関するご案内</td>
+    </tr>
+    <tr>
+      <td>ビールスポンサー　サントリー様</td>
+      <td>ザ・プレミアム・モルツの美味しさの秘密</td>
+    </tr>
+    <tr>
+      <td>キャンペーンのご説明</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>会場スポンサー　VOYAGE GROUP様</td>
+      <td>会場説明</td>
+    </tr>
+    <tr>
+      <td>@yucao24hours ( Tokyu.rb )</td>
+      <td>投票アプリ説明</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="委員長の挨拶">委員長の挨拶</h4>
+
+<p>いつもより緊張感のある雰囲気で始まった実行委員長の挨拶。<br />
+まず、残念なお報らせ<br />
+Tokyu.rb のメイン会場として利用させてもらっていた大和路さんが 2 月末に閉店となってしまいました。<br />
+残念ではありますが、これまでお世話になってきたことなど感謝の気持ちでの黙祷！<br />
+そして、悪い報らせからの朗報。<br />
+Tokyu.rb の幹事 @ginkouno さんが、大和路の元店員さんがいらっしゃるお店を発見したということでした。<br />
+場所は、閉店した大和路の上の階のお店！次回はこのお店で開催を検討とのことでした。<br />
+ここからは、いつもの雰囲気になって、<br />
+諸注意等と挨拶の後、終焉を告げるもの( 5 分間の銅鑼を使ったタイマー係)は、次の LT 登壇者、
+という告知をして乾杯の挨拶でした！<br /></p>
+
+<h4 id="プレモルセミナー">プレモルセミナー</h4>
+
+<p>毎回恒例になっている、TokyuRuby Kaigi でしか見られないプレモルセミナー！<br />
+プレモルに使われる天然水と渋谷の水道水との利き水<br />
+多数の立候補の中から、じゃんけんで５名が選出され利き水に挑戦！<br />
+回答の方は、A ３人、B ２人に解答が分かれ<br />
+それぞれの選択した理由についてインタビュー、自信満々で臭いでわかるという方もいらっしゃいました。<br />
+正解は A の3人の方々が正解でした！<br />
+<img src="/images/0057-TokyuRubyKaigi11Report/プレモルセミナー.jpg" alt="プレモルセミナー.jpg" /></p>
+
+<h3 id="lt">LT</h3>
+
+<p>今回の TokyuRuby Kaigi では、いつもよりも欲張って 30 以上のLTがあったので３部構成で行いました。</p>
+
+<h4 id="ライトニングトーク第一部">ライトニングトーク第一部</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>登壇者</th>
+      <th>タイトル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>k0kubun</td>
+      <td><a href="https://speakerdeck.com/k0kubun/the-architecture-of-haml-5">The Architecture of Haml 5</a></td>
+    </tr>
+    <tr>
+      <td>川村 徹 (@tkawa)</td>
+      <td><a href="http://qiita.com/tkawa/items/8d8a509858aae03dba84">JSON-LDとRails</a></td>
+    </tr>
+    <tr>
+      <td>cesare</td>
+      <td>Rails の辛みを回避するための処方箋</td>
+    </tr>
+    <tr>
+      <td>ujihisa</td>
+      <td>Vim</td>
+    </tr>
+    <tr>
+      <td>上杉隆史</td>
+      <td>Ruby On Railsを利用したサービスで特定のユーザ(〇〇〇万人)に何らかの告知をするための効率的な方法</td>
+    </tr>
+    <tr>
+      <td>Akira Nonaka</td>
+      <td><a href="https://speakerdeck.com/anonaka/rubydedian-hua-wokakeru">Rubyで電話する、電話を受ける</a></td>
+    </tr>
+    <tr>
+      <td>さとうたつや</td>
+      <td><a href="https://speakerdeck.com/satoryu/ruby-on-rails-on-azure">Ruby on Rails on Azure</a></td>
+    </tr>
+    <tr>
+      <td>shigemk2</td>
+      <td>別にRubyistではないのだけれどノリと勢いでRubyのOSSに貢献した気持ち</td>
+    </tr>
+    <tr>
+      <td>onk</td>
+      <td>RuboCop: Ragnarok</td>
+    </tr>
+    <tr>
+      <td>mozamimy</td>
+      <td>SSH configuration meets Ruby &lt;3</td>
+    </tr>
+    <tr>
+      <td>抽選LT抽選/休憩</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ライトニングトーク第二部">ライトニングトーク第二部</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>登壇者</th>
+      <th>タイトル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>esaスポンサー esa LLC様</td>
+      <td>エ(ゴ)サ</td>
+    </tr>
+    <tr>
+      <td>Tシャツスポンサー spice life様</td>
+      <td>TMIX, STEERSスポンサートーク</td>
+    </tr>
+    <tr>
+      <td>安田篤史</td>
+      <td>本当にあった怖いコード2017夏</td>
+    </tr>
+    <tr>
+      <td>mtsmfm</td>
+      <td><a href="https://speakerdeck.com/mtsmfm/rails-system-test-on-docker">Rails System Test on Docker</a></td>
+    </tr>
+    <tr>
+      <td>Shinichi Nakagawa(野球の人/Retty.Inc)</td>
+      <td><a href="https://speakerdeck.com/shinyorke/rubydehazimeruye-qiu-detafen-xi-naopython-number-tqrk11">Rubyではじめる野球データ分析(なおPython) #tqrk11</a></td>
+    </tr>
+    <tr>
+      <td>koic</td>
+      <td><a href="https://www.slideshare.net/koic/application-patches?ref=http://koic.hatenablog.com/entry/tqrk11">アプリがパッチにまみれたら</a></td>
+    </tr>
+    <tr>
+      <td>2celeb</td>
+      <td>とあるソシャゲのbotを1年間作り続けた話</td>
+    </tr>
+    <tr>
+      <td>joker1007</td>
+      <td>Rubyistの皆さん、まだMacで消耗してるの？</td>
+    </tr>
+    <tr>
+      <td>cnosuke</td>
+      <td>Ruby + gRPCは果たして実用に耐えうるのだろうか</td>
+    </tr>
+    <tr>
+      <td>sue445</td>
+      <td>パーフェクトrubicure</td>
+    </tr>
+    <tr>
+      <td>@chiastolite</td>
+      <td>Rubyistなら知っておきたい広島のこと</td>
+    </tr>
+    <tr>
+      <td>今　佑介</td>
+      <td><a href="https://www.slideshare.net/kon_yu/rails-78364554">Railsアプリの長期運用のコツ 未使用コードを削除せよ</a></td>
+    </tr>
+    <tr>
+      <td>抽選 LT 1~ 3</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ライトニングトーク第三部">ライトニングトーク第三部</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>登壇者</th>
+      <th>タイトル</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>小川 伸一郎</td>
+      <td>技術顧問にならないほうがいい3つの理由</td>
+    </tr>
+    <tr>
+      <td>iTume</td>
+      <td>Rubyに出会って人生変わっちゃった話</td>
+    </tr>
+    <tr>
+      <td>中島 滋</td>
+      <td><a href="https://speakerdeck.com/ledsun/rspectofei-tong-qi-guan-shu-tesuto">RSpecで非同期関数をテストする</a></td>
+    </tr>
+    <tr>
+      <td>樽家昌也</td>
+      <td><a href="https://www.slideshare.net/tarui/rubyruby-78364916">東急Ruby会議向け「rubyの細かい話」</a></td>
+    </tr>
+    <tr>
+      <td>yancya</td>
+      <td><a href="https://www.slideshare.net/yancyajp/ss-78364793">どう書く日記</a></td>
+    </tr>
+    <tr>
+      <td>秒速284km</td>
+      <td>はじめて勉強会を運営して学んだこと Rails Developers Meetup 編</td>
+    </tr>
+    <tr>
+      <td>茂木勇</td>
+      <td>マストドンでCircleCI2.0を導入したらテスト時間が半分になったよー</td>
+    </tr>
+    <tr>
+      <td>サキ</td>
+      <td>RSpec でメールサンプルの管理</td>
+    </tr>
+    <tr>
+      <td>小芝 敏明</td>
+      <td>Ruby、Mastodon、そしてPawoo</td>
+    </tr>
+    <tr>
+      <td>基調講演[単品飯王]</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>基調講演[合算飯王]</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>基調講演[LT王]</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="抽選--lt">抽選  LT</h3>
+
+<p>毎回恒例の抽選LTでは、いろいろな抽選方法が行われてきました。
+そして、今回は @kishima さんから、ユニティちゃんによる抽選が行われました。
+<img src="/images/0057-TokyuRubyKaigi11Report/抽選LT.jpg" alt="抽選LT.jpg" /></p>
+
+<h3 id="投票結果">投票結果</h3>
+
+<hr />
+
+<h4 id="飯王">飯王</h4>
+
+<p><img src="/images/0057-TokyuRubyKaigi11Report/elt合算飯王.png" alt="elt合算飯王.png" />
+接戦の様子がうかがえる、途中経過。</p>
+
+<h5 id="単品飯王">単品飯王</h5>
+
+<p>@arimo さんが念願の飯王に。<br />
+これまでの TokyuRuby Kaigi でも、すてきな食べ物を提供していただいていましたが、<br />
+おめでとうございます！</p>
+
+<p>基調講演では、低温調理で、パンから作ったパン粉を使ったヒレカツについて、<br />
+低温調理とはいえ、66 度以上のところに手を突っ込んで圧を感じながら調理したとのお話をしていただき、会場をザワつかせました。<br /></p>
+
+<p>@arimo さんの喜びのツイートと飯王の料理はこちらをご覧ください<br />
+<a href="https://twitter.com/arimo/status/891231836411535362">https://twitter.com/arimo/status/891231836411535362</a><br />
+また、ブログはこちら。
+<a href="http://arimo.hatenablog.com/entry/tqrk11">TokyuRubyKaigi11で手と時間を犠牲にして飯王になった #tqrk11</a></p>
+
+<h5 id="合算飯王">合算飯王</h5>
+
+<p>初代「合算飯王」には、これまで5回もの飯王をとっている永世飯王@2celebさん。
+とあるバーに差し入れとして持って行ったら、バーのお客さんに提供されてしまうほど美味しい「
+牛肉のリエット」、<br />
+3 時間ほど時間のかかるフランス東部地方の料理「ベッコフ」<br />
+お菓子は未経験とのことですが票を獲得していた「クレームドブリュレ」などの料理を提供していただき、<br />
+安定した票をあつめて、合算で最多得票を獲得となりました！<br /></p>
+
+<p>基調講演では、今回の料理を選んだ経緯や思いについて、<br />
+TokyuRuby Kaigi に来てくれる、いろんな人に食べてもらいたいという思いや、<br />
+次回からは、「肉を増やしたい」といったことを話していただきました。</p>
+
+<h4 id="lt-王">LT 王</h4>
+
+<p>今回の TokyuRuby Kaigi 11 では、受付スタッフとしても参加していた安田篤史さんが、
+投票アプリに登録を忘れてしまうというハプニングも乗り越え、
+2017 年夏にふさわしい怪談で、最多得票数を獲得して LT 王となりました。
+<img src="/images/0057-TokyuRubyKaigi11Report/LT王.jpg" alt="LT王.jpg" /></p>
+
+<hr />
+
+<h2 id="おまけ-tokyuruby-会議を支える">おまけ:: TokyuRuby 会議を支える○○</h2>
+
+<h3 id="飯">飯</h3>
+
+<p>TokyuRuby 会議では恒例の飯 (お持ち寄り料理) も、これまで以上にたくさんお持ち寄りいただきました。</p>
+
+<p><img src="/images/0057-TokyuRubyKaigi11Report/夏休み00.jpg" alt="夏休み00.jpg" />
+<img src="/images/0057-TokyuRubyKaigi11Report/開始早々飯テーブル01.jpg" alt="開始早々飯テーブル01.jpg" /></p>
+
+<h4 id="飯王-1">飯王</h4>
+
+<p>飯王とは、TokyuRuby 会議 03 からはじまった、お持ち寄り料理に参加者が投票を行い、一番票を集めた参加者に贈られる TokyuRuby 会議の称号です！<br />
+今回から、集計のルールを変更して_単品飯王_と_合算飯王_の二種類になりました。<br />
+詳しくは、こちら「<a href="https://goo.gl/Q9fc54">飯王への道</a>」をご覧ください。</p>
+
+<h3 id="lt-1">LT</h3>
+
+<h4 id="lt-王-1">LT 王</h4>
+
+<p>LT 王とは、発表された LT の中から投票を行い、一番票を集めた LT を発表した人に贈られる TokyuRuby 会議の称号です。</p>
+
+<h3 id="スタッフ-t-シャツ">スタッフ T シャツ</h3>
+
+<p>今回の T シャツデザインは、前回当日スタッフとしてお手伝いしてもらった <a href="https://twitter.com/tdakak">@tdakak</a> さんにデザインしてもらいました。<br />
+<img src="/images/0057-TokyuRubyKaigi11Report/stuff_t-shirts.jpg" alt="stuff_t-shirts.jpg" /></p>
+
+<hr />
+
+<h3 id="投票システム">投票システム</h3>
+
+<p>TokyuRuby 会議 08 から引き続いて、PC 、スマフォから、コメント付きで投票ができるシステムが導入されています。</p>
+
+<h3 id="会場スポンサー">会場スポンサー</h3>
+
+<p>株式会社 VOYAGE GROUP 様<br />
+いつも使わせていただいている大きな銅鑼、飲食もできるステキな会場と、休憩の出来る和室、アルコール・フリードリンクのご提供などなど、いつもありがとうございます。<br />
+<img src="/images/0057-TokyuRubyKaigi11Report/会場スポンサー.jpg" alt="会場スポンサー.jpg" /></p>
+
+<h3 id="tokyuruby-会議実行委員長システム">TokyuRuby 会議実行委員長システム</h3>
+
+<p>TokyuRuby 会議 06 までは実行委員長は <a href="https://twitter.com/ginkouno">@ginkouno</a> 、<br />
+TokyuRuby 会議 07 では実行委員長は <a href="https://twitter.com/tatsuoSakurai">@tatsuoSakurai</a> 、<br />
+TokyuRuby 会議 08 では再び <a href="https://twitter.com/ginkouno">@ginkouno</a> 、<br />
+TokyuRuby 会議 09 では  <a href="https://twitter.com/yukaina">@yukaina</a> 、<br />
+TokyuRuby 会議 10 では  <a href="https://twitter.com/yucao24hours">@yucao24hours</a> 、<br />
+今回 TokyuRuby 会議 11 では 5 人目の実行委員長として__<a href="https://twitter.com/igaiga555">@igaiga555</a>__が実行委員長を務めました。<br />
+次回の 12 の担当は未定です:)</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>開始前から、振舞われるビール、続々と持ち寄られる食べ物、<br />
+実行委員長の挨拶から始まり、いつものように笑い、いつものようにツッコミが入る、<br />
+いつもどおりのTokyuRuby Kaigi 11 でしたが、<br />
+楽しく無事終えることができ本当に良かったです。<br /></p>
+
+<p>参加してくださる皆様あっての TokyuRuby Kaigi だと再確認できたものになりました。<br /></p>
+
+<h2 id="次回の__-tokyuruby-kaigi__-はちょうど一年後-20180729-日-を予定しています">次回の__ TokyuRuby Kaigi__ は、ちょうど一年後 2018.07.29 （日） を予定しています。</h2>
+
+<h2 id="tokyurb-とは">Tokyu.rb とは</h2>
+
+<p>2 ヶ月に 1 度位、目黒でしゃぶしゃぶかすきやきを食べる Rubyist の集団。<br />
+お酒持ち込みのハッカソンも開催予定。 東急沿線でなくとも乗り入れ線沿線や、職場が沿線だったりする方も、全く関係が無い方も誰でも参加可能です。<br />
+お気軽に <a href="https://www.facebook.com/groups/928069233888488/">Facebook グループ</a>よりお越しください。 <br /></p>
+
+<hr />
+
+<h4 id="著者について">著者について</h4>
+
+<h3 id="三浦-美咲樹--yukaina-">三浦 美咲樹 ( <a href="https://twitter.com/yukaina">@yukaina</a> )</h3>
+
+<p><img src="/images/0057-TokyuRubyKaigi11Report/yukaina.png" alt="yukaina.png" />TokyuRuby 会議 11 るびま係。<br />
+普段は Ruby on Rails でストックフォトサイトの開発しています。<br /></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
