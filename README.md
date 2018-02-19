@@ -14,6 +14,17 @@
 Markdownです。具体的には、[kramdown](https://kramdown.gettalong.org/)を使っています。
 詳細な文法は[kramdownのSyntaxページ](https://kramdown.gettalong.org/syntax.html)を参照してください。
 
+# ローカル環境構築
+
+```
+$ git clone git@github.com:rubima/magazine.rubyist.net.git
+$ cd magazine.rubyist.net
+$ bundle install
+$ bundle exec jekyll serve -I
+```
+
+http://127.0.0.1:4000/ にローカル開発サーバーが起動し、Markdownから生成されたHTMLページを確認することができます。
+
 # リリース作業について
 
 次の手順で行います。今のところ、GitHub Pages上で動かすことを考えています。
