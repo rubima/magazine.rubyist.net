@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/miyohide/magazine.rubyist.net.svg?branch=master)](https://travis-ci.org/miyohide/magazine.rubyist.net)
+[![Build Status](https://travis-ci.org/rubima/magazine.rubyist.net.svg?branch=master)](https://travis-ci.org/rubima/magazine.rubyist.net)
 
 # Rubima on Jekyll
 
