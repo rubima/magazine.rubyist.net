@@ -238,7 +238,7 @@ TokyuRuby 会議 07 では実行委員長は [@tatsuoSakurai](https://twitter.co
 TokyuRuby 会議 08 では再び [@ginkouno](https://twitter.com/ginkouno) 、<br />
 TokyuRuby 会議 09 では  [@yukaina](https://twitter.com/yukaina) 、<br />
 TokyuRuby 会議 10 では  [@yucao24hours](https://twitter.com/yucao24hours) 、<br />
-今回 TokyuRuby 会議 11 では 5 人目の実行委員長として__[@igaiga555](https://twitter.com/igaiga555)__が実行委員長を務めました。<br />
+今回 TokyuRuby 会議 11 では 5 人目の実行委員長として __[@igaiga555](https://twitter.com/igaiga555)__ が実行委員長を務めました。<br />
 次回の 12 の担当は未定です:)
 
 ## まとめ
@@ -250,7 +250,8 @@ TokyuRuby 会議 10 では  [@yucao24hours](https://twitter.com/yucao24hours) �
 
 参加してくださる皆様あっての TokyuRuby Kaigi だと再確認できたものになりました。<br />
 
-次回の__ TokyuRuby Kaigi__ は、ちょうど一年後 2018.07.29 （日） を予定しています。
+次回の __TokyuRuby Kaigi__ は、ちょうど一年後 2018.07.29 （日） を予定しています。
+
 ----
 
 ## Tokyu.rb とは

@@ -95,7 +95,7 @@ sounds/
 
 #### (B) スターターキットを使う
 
-Rubyのインストール方法がわからない、または調べるのがめんどくさい、という人向けに、DXOpalスターターキットというものがあります。これを使うとRubyをインストールしなくてもゲームが作れます。ただし、__[Firefox](https://www.mozilla.org/ja/firefox/new/)にしか対応していない__のでご注意ください。
+Rubyのインストール方法がわからない、または調べるのがめんどくさい、という人向けに、DXOpalスターターキットというものがあります。これを使うとRubyをインストールしなくてもゲームが作れます。ただし、 __[Firefox](https://www.mozilla.org/ja/firefox/new/)にしか対応していない__ のでご注意ください。
 
 [https://github.com/yhara/dxopal-starter-kit/releases](https://github.com/yhara/dxopal-starter-kit/releases) から最新のzipをダウンロードして展開してください。
 
