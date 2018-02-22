@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>なるほど Erlang プロセス</title>
+  <meta name="description" content="なるほど Erlang プロセス">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0056/0056-naruhodo_erlang_process.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>なるほど Erlang プロセス</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0056/0056-naruhodo_erlang_process.html" class="hatena-bookmark-button" data-hatena-bookmark-title="なるほど Erlang プロセス" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0056/0056-naruhodo_erlang_process.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0056/0056-naruhodo_erlang_process.html" data-text="なるほど Erlang プロセス">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="なるほど-erlang-プロセス">なるほど Erlang プロセス</h2>
+
+<p><a href="http://tatsu-zine.com/books/naruhounix">なるほど Unix プロセス ― Ruby で学ぶ Unix の基礎</a>という本があります。</p>
+
+<p>この本は私にとって謎が多く触れにくかった Unix プロセスというものを、 Ruby からのプロセス操作を通じて馴染みのあるものにしてくれました。</p>
+
+<p>今回はみなさんにとっても謎の多い ( かもしれない ) Erlang プロセスと、それを利用したプログラミングというものを、 Ruby に少し似た Elixir からの操作を通じてより良く理解してみましょう。</p>
+
+<p>オンライン上でコンパイル・実行ができるサービス <a href="https://wandbox.org/">wandbox</a> 上では Elixir が動作するため、Elixir を手元の PC にインストールしなくてもコードを編集、実行できます。今回のコードへのリンクを貼っておくのでもし興味があればコードを書き換えてオンラインで試してみてください。( 書き換えて実行しても他の人やリンクには影響が出ないので安心してください )</p>
+
+<h2 id="erlang-とは">Erlang とは</h2>
+
+<p>「<a href="/articles/0017/0017-Legwork.html">Rubyist のための他言語探訪 【第 10 回】 Erlang</a>」によい記事があるので省略します。</p>
+
+<h2 id="elixir-とは">Elixir とは</h2>
+
+<p>「<a href="/articles/0054/0054-ElixirBook.html">書籍紹介「プログラミング Elixir」</a>」によい記事があるので省略します。</p>
+
+<h2 id="erlang-プロセスは-id-を持っている">Erlang プロセスは ID を持っている</h2>
+
+<p>Erlang プロセスは、 ID を持っています。 PID と呼ばれています。 <em>self()</em> という関数で自身の PID を返します。</p>
+
+<p>以下のプログラムでは Ruby の <em>p</em> に相当する Elixir の関数 <em>IO.inspect</em> を使って <em>self()</em> の値を表示しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.inspect self()
+   # =&gt; #PID&lt;0.73.0&gt;</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/KY0OmfkBWbS3uB6a">コード</a></p>
+
+<h2 id="erlang-プロセスは別のプロセスを作れる">Erlang プロセスは別のプロセスを作れる</h2>
+
+<p>Erlang プロセスは、別の Erlang プロセスを作ることができます。 <em>spawn</em> という関数を利用します。</p>
+
+<p>Ruby で lambda を <em>-&gt; do … end</em> や <em>-&gt; x do … end</em> と書けるように、
+Elixir では無名関数を <em>fn -&gt; … end</em> や <em>fn x -&gt; … end</em> と書けます。</p>
+
+<p><em>spawn</em> は引数に無名関数を取り、作成した Erlang プロセスの上でその関数を実行します。</p>
+
+<p>ですから、以下のプログラムではメインの Erlang プロセスの PID と、 spawn で生成した Erlang プロセスでの PID が異なっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.puts "プロセス #{inspect self()}"
+   spawn(fn -&gt;
+     IO.puts "別プロセス #{inspect self()}"
+   end)
+   # =&gt; プロセス #PID&lt;0.73.0&gt;
+   # =&gt; 別プロセス #PID&lt;0.76.0&gt;</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/XdMnsoTvT4uQEhh5">コード</a></p>
+
+<h2 id="erlang-プロセスは別の-erlang-プロセスとやりとりできる">Erlang プロセスは別の Erlang プロセスとやりとりできる</h2>
+
+<p>Erlang プロセスは、別の Erlang プロセスとの間でやりとりができます。プロセスとプロセスの間でやりとりする値のことはメッセージと呼ばれています。</p>
+
+<p>あるプロセスから別のプロセスへメッセージを送るには <em>send</em> という関数を利用します。<em>send</em> の引数は送り先の PID と送りたいメッセージです。</p>
+
+<p>プロセスへと送られてきたメッセージを取り出して読むには <em>receive</em> という関数を利用します。<em>receive</em> の <em>do … end</em> の中でメッセージを受けとることができます。</p>
+
+<p>以下のプログラムでは Ruby の <em>Object#inspect</em> に相当する Elixir の関数 <em>inspect</em> と Ruby の <em>puts</em> に相当する Elixir の関数 <em>IO.puts</em> を使って、送られてきたメッセージの値を表示しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.puts "プロセス #{inspect self()}"
+
+   other_pid = spawn(fn -&gt;
+     IO.puts "別プロセス #{inspect self()}"
+     receive do
+       message -&gt;
+         IO.puts "#{inspect self()} が #{inspect message} を受け取りました。"
+     end
+   end)
+
+   send(other_pid, "こんにちは")
+   Process.sleep(100)
+   # =&gt; プロセス #PID&lt;0.73.0&gt;
+   # =&gt; 別プロセス #PID&lt;0.76.0&gt;
+   # =&gt; #PID&lt;0.76.0&gt; が "こんにちは" を受け取りました。</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/8OxwzVa7cP24PGtN">コード</a></p>
+
+<h2 id="erlang-プロセスはメッセージボックスを持つ">Erlang プロセスはメッセージボックスを持つ</h2>
+
+<p><em>send</em> でメッセージが送られてきたとき、受け手のプロセスでは明示的な処理は不要です。もちろんメッセージを <strong>取り出して読む</strong> には先ほどの例のように <em>receive</em> を使わなければいけませんが、メッセージを <strong>受けとる</strong> には何も必要ありません。全てのプロセスは、プロセスと一対一で結びついたキューを持っており、プロセスへ送られたメッセージはそのキューへと蓄積されます。この、プロセスに結びついたメッセージを格納するためのキューのことはメッセージボックスと呼ばれています。</p>
+
+<p>以下のプログラムではプロセスの状態を調べられる <em>Process.info</em> を使って、プロセスのメッセージボックスの内容を表示しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   message_receiver_pid = self()
+   spawn(fn -&gt;
+      send(message_receiver_pid, "メッセージ0")
+      send(message_receiver_pid, "メッセージ1")
+      send(message_receiver_pid, "メッセージ2")
+      send(message_receiver_pid, "メッセージ3")
+      send(message_receiver_pid, "メッセージ4")
+      {_, messages} = Process.info(message_receiver_pid, :messages)
+      IO.puts "メッセージボックスには #{inspect messages} が入っています"
+   end)
+   Process.sleep(100)
+   # =&gt; メッセージボックスには ["メッセージ0", "メッセージ1", "メッセージ2", "メッセージ3", "メッセージ4"] が入っています</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/X0IFXSaId23qelUo">コード</a></p>
+
+<h2 id="erlang-プロセスは並列に動ける">Erlang プロセスは並列に動ける</h2>
+
+<p>Erlang プロセスは並列に動作します。ハードウェアによる限りはありますが、プロセスそれぞれが同時に別の計算を行えるということです。</p>
+
+<p>ある処理を 1 つだけ実行したときと、複数 ( 今回は 2 つ ) 実行したときの、結果が得られるまでの時間を比較して検証しましょう。例えば 2 つ並列に動かして、<em>1 つ動かしたときの時間 * 2</em> より小さいなら、並列に動いているといえるでしょう。</p>
+
+<p>以下のプログラムでは Ruby の <em>sleep</em> のように処理をスリープさせられる Elixir の関数 <em>Process.sleep</em> を使って、処理に 5 秒かかるようにしています。時間は Ruby の <em>DateTime.now</em> に似た Elixir の <em>DateTime.utc_now</em> で測ることにしました。</p>
+
+<p>また、 1 回の <em>receive</em> で受けとれるメッセージは常に 1 つなので、ここでは 2 つのメッセージを受けとるため 2 回 <em>receive</em> しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.puts "#{DateTime.utc_now} 直列スタート"
+   Process.sleep(5000)
+   IO.puts "#{DateTime.utc_now} 1番目完了"
+   Process.sleep(5000)
+   IO.puts "#{DateTime.utc_now} 直列エンド"
+
+   IO.puts "================"
+   me = self()
+   IO.puts "#{DateTime.utc_now} 並列スタート"
+   spawn(fn -&gt;
+     Process.sleep(5000)
+     send(me, DateTime.utc_now)
+   end)
+   spawn(fn -&gt;
+     Process.sleep(5000)
+     send(me, DateTime.utc_now)
+   end)
+
+   receive do
+     date_time -&gt;
+       IO.puts "#{date_time} 1番目完了"
+   end
+   receive do
+     date_time -&gt;
+       IO.puts "#{date_time} 並列エンド"
+   end
+   # =&gt; 2017-08-17 11:41:12.254579Z 直列スタート
+   # =&gt; 2017-08-17 11:41:17.368968Z 1番目完了
+   # =&gt; 2017-08-17 11:41:22.384862Z 直列エンド
+   # =&gt; ================
+   # =&gt; 2017-08-17 11:41:22.385204Z 並列スタート
+   # =&gt; 2017-08-17 11:41:27.400778Z 1番目完了
+   # =&gt; 2017-08-17 11:41:27.400848Z 並列エンド</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/1D3W9tI4FKA2ItGL">コード</a></p>
+
+<p>直列だと約 10 秒 (5 秒 * 2 回 ) かかって、並列だとほぼ 5 秒で終わっていますね。</p>
+
+<h2 id="erlang-プロセスは軽量">Erlang プロセスは軽量</h2>
+
+<p>Erlang プロセスを作るのには、プロセスのヒープ領域込みで 2.5k バイト程度しか要しません。この記事のここまでの文字を UTF-8 として計算すると 7.8k バイトであるようなので、これでプロセス 3 つ分作れてしまうようです。</p>
+
+<p>Ruby の <em>Enumerable#reduce</em> に似た Eliixr の関数 <em>Enum.reduce</em> を使って 10 万プロセスを畳み込み、生成と処理にかかる時間を計測しましょう。また、 Elixir からは Erlang の関数を直接呼び出せるので、 Erlang の関数 <em>:erlang.memory(:total)</em> で 10 万プロセスが生きているときのメモリ使用量も計測しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.puts "#{DateTime.utc_now} 計測開始"
+   last_pid = Enum.reduce(1..100_000, self(), fn (_prev, send_to) -&gt;
+     spawn(fn -&gt;
+       receive do
+         x -&gt;
+           # 受けとったメッセージの数値に1を足し、次のプロセスへメッセージを送る
+           send(send_to, x + 1)
+       end
+     end)
+   end)
+
+   memory = :erlang.memory(:total)
+   send(last_pid, 0) # n個の子プロセスの最初の1個を動かす
+   receive do
+     final_answer -&gt;
+       IO.puts "#{DateTime.utc_now} 計測終了。数値:#{final_answer}。メモリ量:#{memory}"
+   end
+   # =&gt; 2017-08-16 16:16:29.249655Z 計測開始
+   # =&gt; 2017-08-16 16:16:33.040399Z 計測終了。数値:100000。メモリ量:282859376</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/Jdddis6yA9QHH2ac">コード</a></p>
+
+<p>プロセスを 10 万個生成して 1 ずつ足したので数値が計算結果が 10 万になっており、そのときの生成と実行にかかった時間は 4 秒程度、メモリ使用量は約 2.8 G バイトだったことがわかりますね。</p>
+
+<h2 id="erlang-プロセス同士のかかわり">Erlang プロセス同士のかかわり</h2>
+
+<p>ここまでは Erlang プロセス自身の性質を見てきました。ここからは Erlang プロセス同士の関係に関する性質を見ていきましょう。</p>
+
+<p>プロセスを作り、そのプロセス上でエラーを起こしても、元のプロセスでは何も検知しません。</p>
+
+<p>Ruby の <em>raise</em> に似た、 Elixir の <em>raise</em> でエラーを起こしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.puts "#{DateTime.utc_now} start"
+   spawn(fn -&gt;
+     raise "boom!"
+   end)
+
+   Process.sleep(1000)
+   IO.puts "\n#{DateTime.utc_now} done"
+   # =&gt; 2017-08-16 16:23:20.787436Z start
+   # =&gt;
+   # =&gt; 01:23:20.926 [error] Process #PID&lt;0.76.0&gt; raised an exception
+   # =&gt; ** (RuntimeError) boom!
+   # =&gt;     prog.exs:3: anonymous fn/0 in :elixir_compiler_0.__FILE__/1
+   # =&gt;
+   # =&gt; 2017-08-16 16:23:21.804186Z done</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/4ZoIEU5Q1sZxZldD">コード</a></p>
+
+<p>エラーログはコンソールに出力されているものの、処理は正常に終わって done が表示されています。</p>
+
+<h2 id="erlang-プロセスは-link-できる">Erlang プロセスは link できる</h2>
+
+<p>Erlang プロセス同士を link する方法があります。プロセス同士を繋げると、片方のプロセスで異常が起きたとき、もう一方へと知らせてくれます。</p>
+
+<p>Elixir でプロセスを生成してすぐ link するには <em>spawn_link</em> という関数を使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.puts "#{DateTime.utc_now} start"
+   spawn_link(fn -&gt;
+     raise "boom!"
+   end)
+
+   Process.sleep(1000)
+   IO.puts "\n#{DateTime.utc_now} done"
+   # =&gt; 2017-08-16 16:25:15.395832Z start
+   # =&gt;
+   # =&gt; ** (EXIT from #PID&lt;0.73.0&gt;) an exception was raised:
+   # =&gt;     ** (RuntimeError) boom!
+   # =&gt;         prog.exs:3: anonymous fn/0 in :elixir_compiler_0.__FILE__/1
+   # =&gt;
+   # =&gt;
+   # =&gt; 01:25:15.525 [error] Process #PID&lt;0.76.0&gt; raised an exception
+   # =&gt; ** (RuntimeError) boom!
+   # =&gt;     prog.exs:3: anonymous fn/0 in :elixir_compiler_0.__FILE__/1
+   # =&gt;</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/owTt3cyR8nrhK3X6">コード</a></p>
+
+<p>先程とは異なり done がコンソールに表示されていませんね。</p>
+
+<p>生成してリンクしたプロセスにてエラーが発生、そのエラーが元のプロセスへ伝えられ、元のプロセスでもエラーハンドリングしていないため、元のプロセスもエラーになりました。</p>
+
+<h2 id="erlang-プロセスのエラーハンドリング">Erlang プロセスのエラーハンドリング</h2>
+
+<p>エラーを知らせてくれるのは便利ですけれども、エラーハンドリングしないと自分もエラーになってしまうのは不便ですね。</p>
+
+<p>ある Erlang プロセスから別の Erlang プロセスへエラーを伝えるのは、特別なメッセージを送ることで行われています。そのメッセージの名前を <em>exit シグナル</em> といいます。ErlangVM には <em>exit シグナル</em> を通常のメッセージとして受け付ける仕組みがあるので、それを利用してエラーハンドリングします。</p>
+
+<p>あるプロセスに <em>Process.flag(:trap_exit, true)</em> と書くと <em>exit シグナル</em> を通常のメッセージとして扱えるようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.puts "#{DateTime.utc_now} start"
+   Process.flag(:trap_exit, true)
+   spawn_link(fn -&gt;
+     raise "boom!"
+   end)
+
+   Process.sleep(1000)
+   receive do
+     message -&gt;
+       IO.puts "exitシグナルを受信しました: #{inspect message}"
+   end
+   IO.puts "\n#{DateTime.utc_now} done"
+   # =&gt; 2017-08-16 16:26:58.615378Z start
+   # =&gt;
+   # =&gt; 01:26:58.680 [error] Process #PID&lt;0.76.0&gt; raised an exception
+   # =&gt; ** (RuntimeError) boom!
+   # =&gt;     prog.exs:4: anonymous fn/0 in :elixir_compiler_0.__FILE__/1
+   # =&gt; exitシグナルを受信しました: {:EXIT, #PID&lt;0.76.0&gt;, {%RuntimeError{message: "boom!"}, [{:elixir_compiler_0, :"-__FILE__/1-fun-0-", 0, [file: 'prog.exs', line: 4]}]}}
+   # =&gt;
+   # =&gt; 2017-08-16 16:26:59.741148Z done</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/JEbFgmjGixoZ0rDZ">コード</a></p>
+
+<p>exit シグナルを通常のメッセージとして受信し、その後 done になっていますね。</p>
+
+<h2 id="erlang-プロセスを-link-するとどう嬉しいのか">Erlang プロセスを link するとどう嬉しいのか</h2>
+
+<p>こうしてプロセスを link しておくことにはどのような意味があるのでしょうか。この記事の最後に紹介している、『すごい Erlang ゆかいに学ぼう！』という本の「第 12 章 - エラーとプロセス (P151)」 には以下のように記述がありました。</p>
+
+<blockquote>
+  <p>もしエラーのあるプロセスがクラッシュしたけれど、それに依存しているプロセスが動き続けているとしたら、それら依存プロセスすべては依存先がなくなったことに対処しなければならなくなります。</p>
+</blockquote>
+
+<p>link しておけば処理を実装するプログラマが考えなければいけない状態が一つ減ります。</p>
+
+<p>また、 link したプロセスが死んだことをすぐに検知できると、時間をおかずに新しいプロセスを作りなおすことができます。エラー検知/再開を素早く行えると、一部の処理で不具合が起きても全体の動作には影響をほぼ与えずに復元することができ、全体の安定動作向上に寄与します。</p>
+
+<h2 id="erlang-プロセスは-monitor-できる">Erlang プロセスは monitor できる</h2>
+
+<p>Erlang プロセス同士を link するのではなく、片方がもう片方を見ておく方法があります。 monitor といいます。先程の link は link 元と link 先が対等の立場でしたが、 monitor は monitor 元と monitor 先で立場が異なります。</p>
+
+<p>Elixir でプロセスを生成してすぐ monitor するには <em>spawn_monitor</em> という関数を使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   IO.puts "#{DateTime.utc_now} start"
+   spawn_monitor(fn -&gt;
+     raise "boom!"
+   end)
+
+   Process.sleep(1000)
+   receive do
+     message -&gt;
+       IO.puts "メッセージを受信しました: #{inspect message}"
+   end
+   IO.puts "\n#{DateTime.utc_now} done"
+   # =&gt; 2017-08-16 16:29:49.030618Z start
+   # =&gt;
+   # =&gt; 01:29:49.072 [error] Process #PID&lt;0.76.0&gt; raised an exception
+   # =&gt; ** (RuntimeError) boom!
+   # =&gt;     prog.exs:3: anonymous fn/0 in :elixir_compiler_0.__FILE__/1
+   # =&gt; メッセージを受信しました: {:DOWN, #Reference&lt;0.2290368879.2564030465.30809&gt;, :process, #PID&lt;0.76.0&gt;, {%RuntimeError{message: "boom!"}, [{:elixir_compiler_0, :"-__FILE__/1-fun-0-", 0, [file: 'prog.exs', line: 3]}]}}
+   # =&gt;
+   # =&gt; 2017-08-16 16:29:50.086205Z done</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/ams6gsRUJcQUdKbe">コード</a></p>
+
+<p>link の際とは異なり <em>Process.flag(:trap_exit, true)</em> を使っていないプロセスでも受け取れていることに注意してください。<em>exit シグナル</em> ではない、単なるメッセージが送られてきます。</p>
+
+<h2 id="erlang-プロセスを-monitor-するとどう嬉しいのか">Erlang プロセスを monitor するとどう嬉しいのか</h2>
+
+<p>こうしてプロセスを monitor しておくことにはどのような意味があるのでしょうか。『すごい Erlang ゆかいに学ぼう！』「第 12 章 - エラーとプロセス (P158)」 には以下のように記述がありました。</p>
+
+<blockquote>
+  <p>モニターは、プロセスが下位のプロセスで何が起きているかを知りたいけれど、お互いが致命的な影響を及ぼしてほしくないときに便利です。( 略 ) 他のプロセスで何が起きているかを知る必要があるライブラリを書くときに活躍します。</p>
+</blockquote>
+
+<p>私があまり monitor を使いこなしていないせいか、 monitor がバチッとハマりそうな例はうまく思いつきませんでした。すみません m(_ _)m みなさんでよい例を知っていたり、おもいついたらブログなどに書いていただけると嬉しいです。</p>
+
+<h2 id="erlang-プロセス同士の結びつきまとめ">Erlang プロセス同士の結びつきまとめ</h2>
+
+<p>以上のように、プロセス同士の結びつきの強度に応じていくつかの方法が提供されています。</p>
+
+<ul>
+  <li>A が B を link した場合、 A がエラーになったら B へ <em>exit シグナル</em> が行く。 B がエラーになったら A へ <em>exit シグナル</em> が行く。</li>
+  <li>A が B を monitor した場合、 A がエラーになっても B は影響を受けない。 B がエラーになったら A へ通常のメッセージが行く。</li>
+  <li>それ以外の場合、他のプロセスで何が起きようと影響を受けない</li>
+</ul>
+
+<h2 id="壊れやすいタイマー">壊れやすいタイマー</h2>
+
+<p>さてここまでプロセスの性質やプロセスのインタラクションについて説明してきたので、これらを組み合わせて簡単なアプリケーションを作ってみましょう。</p>
+
+<p>壊れやすいタイマーというものを考えてみます。毎秒時刻を出力し、 30% の割合で壊れてしまうタイマーを考えましょう。</p>
+
+<p>Ruby の <em>module</em> に似た、 Elixir の <em>defmodule</em> でモジュールを定義、Ruby の <em>def</em> に似た、 Elixir の <em>def</em> で関数を定義します。また Elixir には while のようなループがなく、ループは関数の中で自身の関数を呼び出す、いわゆる再帰で表現します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   defmodule FragileTimer do
+     def loop do
+       case :rand.uniform() do
+         x when x &lt; 0.3 -&gt;
+           exit("ガシャ")
+         _x -&gt;
+           IO.puts "#{DateTime.utc_now}"
+       end
+       Process.sleep(1000)
+       loop()
+     end
+   end
+
+   FragileTimer.loop
+   =&gt; 2017-08-16 16:33:14.767947Z
+   =&gt; 2017-08-16 16:33:15.785176Z
+   =&gt; 2017-08-16 16:33:16.786127Z
+   =&gt; 2017-08-16 16:33:17.787063Z
+   =&gt; 2017-08-16 16:33:18.788181Z
+   =&gt;
+   =&gt; ** (exit) "ガシャ"
+   =&gt;     prog.exs:5: FragileTimer.loop/0
+   =&gt;     (elixir) lib/code.ex:376: Code.require_file/2</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/7a8Tu7aK85jD5Q2p">コード</a></p>
+
+<p>ここまでは意図通りに動くようです。とはいえ、壊れてしまいタイマーが動かなくなると困るので、タイマーが壊れたのを検知してすぐに新しいタイマーを起動する見張り役のプロセスを作り、タイマーを安定動作させることを目指します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   defmodule FragileTimer do
+     def loop do
+       case :rand.uniform() do
+         x when x &lt; 0.3 -&gt;
+           exit("ガシャ")
+         _x -&gt;
+           IO.puts "#{DateTime.utc_now}"
+       end
+       Process.sleep(1000)
+       loop()
+     end
+   end
+
+   defmodule FragileTimerSupervisor do
+     def loop(times) when 3 &lt; times do
+       IO.puts "3回壊れたのであきらめます"
+     end
+
+     def loop(times) do
+       spawn_monitor(fn -&gt;
+         FragileTimer.loop
+       end)
+       IO.puts "#{DateTime.utc_now} にタイマー起動しました"
+       receive do
+         _down_message -&gt;
+           IO.puts "#{DateTime.utc_now} に壊れたのを検知しました"
+           loop(times + 1)
+       end
+     end
+   end
+
+   FragileTimerSupervisor.loop(1)
+   =&gt; 2017-08-16 16:35:34.013130Z にタイマー起動しました
+   =&gt; 2017-08-16 16:35:34.017548Z
+   =&gt; 2017-08-16 16:35:35.027242Z に壊れたのを検知しました
+   =&gt; 2017-08-16 16:35:35.027497Z にタイマー起動しました
+   =&gt; 2017-08-16 16:35:35.027560Z
+   =&gt; 2017-08-16 16:35:36.028080Z
+   =&gt; 2017-08-16 16:35:37.029087Z
+   =&gt; 2017-08-16 16:35:38.030102Z に壊れたのを検知しました
+   =&gt; 2017-08-16 16:35:38.030352Z にタイマー起動しました
+   =&gt; 2017-08-16 16:35:38.030422Z
+   =&gt; 2017-08-16 16:35:39.031359Z
+   =&gt; 2017-08-16 16:35:40.033239Z
+   =&gt; 2017-08-16 16:35:41.034229Z
+   =&gt; 2017-08-16 16:35:42.035212Z
+   =&gt; 2017-08-16 16:35:43.036179Z に壊れたのを検知しました
+   =&gt; 3回壊れたのであきらめます</code></pre></figure>
+
+<p><a href="https://wandbox.org/permlink/1dWaw0nNjBlgQO8B">コード</a></p>
+
+<p>壊れやすいタイマーと、見張り役を組み合わせることで多くの時間にはきちんと動くタイマーを作ることができましたね。</p>
+
+<p>このコードではランダムで表現した「壊れやすい」部分というのは現実的なプログラミングだとどの部分になるでしょうか？　私は例えば TCP コネクションがそうだと考えています。 TCP コネクションは相手先の都合やネットワークでいつ切れるかわかりません。 HTTP サーバーや Websocket サーバーはこういった特色を持ちます。そして複数の TCP コネクションを持っているサーバーが、 1 つの TCP コネクションのエラーの悪影響を受けることを避けたいですよね。こういったケースには ErlangVM のプロセスの性質が生かされます。</p>
+
+<h2 id="erlang-プロセスを扱うライブラリ-erlangotp">Erlang プロセスを扱うライブラリ Erlang//OTP</h2>
+
+<p>これまで挙げたようなプロセスの協調動作を駆使するのが ErlangVM のプログラミングの面白く難しいところですが、これらのプリミティブな性質を直接使うのではなく、便利に利用するためのライブラリ OTP というものが Erlang に標準添付されています。</p>
+
+<p>説明ではわかりやすさのために、<em>spawn</em> や <em>link</em> や _monitor_を直接利用していましたが、私がこれまで眺めたことのある Erlang/Elixir ライブラリたちではそれらはほとんど使われず、 OTP を使うものが多かったです。</p>
+
+<p>プロダクションで利用するコードには OTP を利用しましょう。</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>私が最初に Erlang を学びはじめたとき、よくわからなかったのは「ErlangVM でのプログラミングは Ruby に比べてどういう利点があるのだろう？」というところでした。学んでいくうちに、それは Erlang プロセス上の処理について着目していたから、利点がよくわからなかったのだという感想にいたっています ( 今のところ )。 ErlangVM プログラミングは、<strong>プロセス上の処理</strong> より、 <strong>プロセスとプロセスのつながり方</strong> をどうデザインするかいう視点で捉えてみると利点がよく見えてくる気がしました。</p>
+
+<p>Erlang プロセスや OTP について深く知りたければ私は『<a href="http://shop.ohmsha.co.jp/shopdetail/000000003873/">すごい Erlang ゆかいに学ぼう！</a> 』という本をおすすめします。この本、特に「第 12 章 - エラーとプロセス」を読んで得た知識を元にこの記事に書きました。</p>
+
+<p>また Elixir に興味が湧いた方には 『<a href="http://shop.ohmsha.co.jp/shopdetail/000000004675/">プログラミングElixir</a>』をおすすめします。 この本にも当然 Erlang プロセスや OTP のことがしっかりと書かれているので Rubyist の方はこちらの本から読み始める方がとっつきやすいかもしれません。 私は最初この本から入りました。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>ヽ（´・肉・｀）ノ <a href="https://twitter.com/niku_name">@niku_name</a></p>
+
+<p>札幌に住んでいて、お仕事や趣味で Ruby を書いています。だいたい毎週木曜日に開催されている<a href="http://sapporo-beam.github.io/">サッポロビーム</a>という ErlangVM について話す集まりに参加しています。たまに RubySapporo.beam というイベント ( <a href="https://rubysapporo.doorkeeper.jp/events/50956">#1</a>, <a href="https://rubysapporo.doorkeeper.jp/events/57253">#2</a> ) を開催しています。</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

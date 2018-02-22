@@ -1,0 +1,3378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist Hotlinks 【第 21 回】 原信一郎さん</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0023/0023-Hotlinks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist Hotlinks 【第 21 回】 原信一郎さん</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0023/0023-Hotlinks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist Hotlinks 【第 21 回】 原信一郎さん" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0023/0023-Hotlinks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0023/0023-Hotlinks.html" data-text="Rubyist Hotlinks 【第 21 回】 原信一郎さん">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>著名な Rubyist にインタビューを行う企画「Rubyist Hotlinks」。 今回は Ruby 関連メーリングリストのアーカイブシステム blade の作者であり、また管理者でもある原信一郎さんにお話を伺いました。お楽しみください。</p>
+
+<h2 id="プロフィール">プロフィール</h2>
+
+<p><img src="/images/0023-Hotlinks/hara01.jpg" alt="hara01.jpg" />
+初期の頃からの Ruby 使いで、数学関係のライブラリを書いている原信一郎さん。代表著作は白い『Ruby プログラミング入門』。</p>
+
+<dl>
+  <dt>好きな言葉</dt>
+  <dd>迷ったら捨てる</dd>
+  <dt>尊敬する人</dt>
+  <dd>まつもとゆきひろさん</dd>
+  <dt>ご本人のサイト</dt>
+  <dd><a href="http://blade.nagaokaut.ac.jp/~sinara/">sinara’s home</a></dd>
+</dl>
+
+<h2 id="インタビュー">インタビュー</h2>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>ささだ</dd>
+  <dt>語り手</dt>
+  <dd>原さん</dd>
+  <dt>野次馬</dt>
+  <dd>arton さん</dd>
+  <dt>日にち</dt>
+  <dd>2008 年 2 月 2 日 10 PM</dd>
+  <dt>場　所</dt>
+  <dd>長岡技術科学大学 (新潟県長岡市)</dd>
+</dl>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#プロフィール" id="markdown-toc-プロフィール">プロフィール</a></li>
+  <li><a href="#インタビュー" id="markdown-toc-インタビュー">インタビュー</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+      <li><a href="#プロフィール-1" id="markdown-toc-プロフィール-1">プロフィール</a>        <ul>
+          <li><a href="#出身地家族構成" id="markdown-toc-出身地家族構成">出身地、家族構成</a></li>
+          <li><a href="#好きな言葉座右の銘" id="markdown-toc-好きな言葉座右の銘">好きな言葉、座右の銘</a></li>
+          <li><a href="#尊敬する人" id="markdown-toc-尊敬する人">尊敬する人</a></li>
+          <li><a href="#代表作" id="markdown-toc-代表作">代表作</a></li>
+          <li><a href="#著作" id="markdown-toc-著作">著作</a></li>
+          <li><a href="#好きなメソッド嫌いなメソッド" id="markdown-toc-好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</a></li>
+        </ul>
+      </li>
+      <li><a href="#ruby-に関して" id="markdown-toc-ruby-に関して">Ruby に関して</a>        <ul>
+          <li><a href="#rubyist-になったきっかけ" id="markdown-toc-rubyist-になったきっかけ">Rubyist になったきっかけ</a></li>
+          <li><a href="#ruby-の好きなところと嫌いなところ" id="markdown-toc-ruby-の好きなところと嫌いなところ">Ruby の好きなところと嫌いなところ</a></li>
+          <li><a href="#ruby-を使ってうまくいった事例" id="markdown-toc-ruby-を使ってうまくいった事例">Ruby を使ってうまくいった事例</a></li>
+          <li><a href="#キラーアプリ" id="markdown-toc-キラーアプリ">キラーアプリ</a></li>
+          <li><a href="#ruby-の習得" id="markdown-toc-ruby-の習得">Ruby の習得</a></li>
+        </ul>
+      </li>
+      <li><a href="#プログラミング全般" id="markdown-toc-プログラミング全般">プログラミング全般</a>        <ul>
+          <li><a href="#初めてのプログラミング" id="markdown-toc-初めてのプログラミング">初めてのプログラミング</a></li>
+          <li><a href="#ruby-以外のプログラミング言語" id="markdown-toc-ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</a></li>
+          <li><a href="#美しいソースコード" id="markdown-toc-美しいソースコード">美しいソースコード</a></li>
+          <li><a href="#興味を持ってるテーマ" id="markdown-toc-興味を持ってるテーマ">興味を持ってるテーマ</a></li>
+        </ul>
+      </li>
+      <li><a href="#生い立ち" id="markdown-toc-生い立ち">生い立ち</a>        <ul>
+          <li><a href="#小学校時代" id="markdown-toc-小学校時代">小学校時代</a></li>
+          <li><a href="#中学校時代" id="markdown-toc-中学校時代">中学校時代</a></li>
+          <li><a href="#高校大学時代" id="markdown-toc-高校大学時代">高校・大学時代</a></li>
+          <li><a href="#計算機とのつきあい" id="markdown-toc-計算機とのつきあい">計算機とのつきあい</a></li>
+        </ul>
+      </li>
+      <li><a href="#仕事に関する話題" id="markdown-toc-仕事に関する話題">仕事に関する話題</a>        <ul>
+          <li><a href="#普段のお仕事" id="markdown-toc-普段のお仕事">普段のお仕事</a></li>
+          <li><a href="#大学での-ruby" id="markdown-toc-大学での-ruby">大学での Ruby</a></li>
+          <li><a href="#blede-について" id="markdown-toc-blede-について">blede について</a></li>
+          <li><a href="#rational" id="markdown-toc-rational">Rational</a></li>
+        </ul>
+      </li>
+      <li><a href="#その他の話題" id="markdown-toc-その他の話題">その他の話題</a>        <ul>
+          <li><a href="#趣味" id="markdown-toc-趣味">趣味</a></li>
+          <li><a href="#普段の生活スタイル" id="markdown-toc-普段の生活スタイル">普段の生活スタイル</a></li>
+          <li><a href="#仕事とプライベートとの両立" id="markdown-toc-仕事とプライベートとの両立">仕事とプライベートとの両立</a></li>
+          <li><a href="#マシンのスペック" id="markdown-toc-マシンのスペック">マシンのスペック</a></li>
+          <li><a href="#好きな女性のタイプ" id="markdown-toc-好きな女性のタイプ">好きな女性のタイプ</a></li>
+        </ul>
+      </li>
+      <li><a href="#今後について" id="markdown-toc-今後について">今後について</a>        <ul>
+          <li><a href="#今後の展望将来の夢など" id="markdown-toc-今後の展望将来の夢など">今後の展望、将来の夢など</a></li>
+          <li><a href="#前のインタビューイ石塚さんとの関係" id="markdown-toc-前のインタビューイ石塚さんとの関係">前のインタビューイ、石塚さんとの関係</a></li>
+          <li><a href="#次のインタビューイ" id="markdown-toc-次のインタビューイ">次のインタビューイ</a></li>
+          <li><a href="#若手に一言" id="markdown-toc-若手に一言">若手に一言</a></li>
+          <li><a href="#読者へ一言" id="markdown-toc-読者へ一言">読者へ一言</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+  <li><a href="#rubyist-hotlinks-連載一覧" id="markdown-toc-rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</a></li>
+</ul>
+
+<h3 id="プロフィール-1">プロフィール</h3>
+
+<p><strong>ささだ</strong> お忙しいところ、どうもありがとうございます。</p>
+
+<p><strong>原</strong> 遠いところ<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>を来ていただいて、大変光栄です。</p>
+
+<h4 id="出身地家族構成">出身地、家族構成</h4>
+
+<p><strong>ささだ</strong> 皆さんに聞いているところから、順々に伺いたいと思います。生年月日、出身地、現住所、家族構成など、いずれも差し支えなければ教えていただければ。</p>
+
+<p><strong>原</strong> 1960 年生まれで、出身は千葉県成田市。空港の近くです。現住所は新潟県の長岡市。家族構成は、妻と、去年の 5 月に息子が 1 人生まれました。3 人家族です。</p>
+
+<p><strong>ささだ</strong> かわいい盛りと。</p>
+
+<p><strong>原</strong> まぁ、一応。だいぶ暴れます (笑)</p>
+
+<p><strong>ささだ</strong> お父さんがお風呂入れる係とか、決まってるんですか？</p>
+
+<p><strong>原</strong> 僕は入れますね。一応、苦もなく入れておりますけれど。</p>
+
+<p><strong>ささだ</strong> 奥さんは、共働きとかされてるんですか？</p>
+
+<p><strong>原</strong> 本当は、共働き系なんですけれども。我が家は。新潟には中々、女性の再就職先というのが無い。</p>
+
+<p><strong>ささだ</strong> そうなんですか。</p>
+
+<p><strong>原</strong> うん。インテリアコーディネーターの資格とかあるんだけど、使い道が無い。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<h4 id="好きな言葉座右の銘">好きな言葉、座右の銘</h4>
+
+<p><strong>ささだ</strong> 好きな言葉、座右の銘。</p>
+
+<p><strong>原</strong> あんまり無いんですけど、言わないのも愛想が無いので。「迷ったら捨てる」というのが。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> おととい、遠方からの客を迎えるために研究室を血反吐を吐くような掃除をしたので。一応それがポリシー。あんまり勢いの良いのは、座右の銘としては好きじゃないんですけど、一応良いんじゃないですかね。</p>
+
+<p><strong>ささだ</strong> どんどん捨てたと。</p>
+
+<p><strong>原</strong> 迷ったら何々シリーズっていうのが色々あって。迷ったらどうしろっていう。</p>
+
+<h4 id="尊敬する人">尊敬する人</h4>
+
+<p><strong>ささだ</strong> 尊敬する人。</p>
+
+<p><strong>原</strong> まつもとさんです。</p>
+
+<p><strong>ささだ</strong> おお。るびまらしい。</p>
+
+<p><strong>原</strong> ここで迷ったり、居ませんっていう人が信じられませんね。</p>
+
+<p><strong>ささだ</strong> (笑)。そういう人、何人か居なかったっけ。そこはまつともさんと言う所だろと。</p>
+
+<p><strong>原</strong> いやいや、僕がそう思ってるから言ってるんであって。</p>
+
+<p><strong>ささだ</strong> なるほど。どんなところが尊敬できるというのはありますか。</p>
+
+<p><strong>原</strong> なんとなく、顔がニヤニヤしているところ。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> ま、温厚な方ですよね。</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> 温厚な感じで、ズバズバいう人みたいな。</p>
+
+<p><strong>原</strong> あれで人に説教してるわけでしょ。それがどうもね、面白いですね。</p>
+
+<p><strong>ささだ</strong> 聞いてみたいですね、一度。</p>
+
+<p><strong>原</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> まつもとさんは、週末は毎週スーツらしいですよ。</p>
+
+<p><strong>原</strong> あ、そう。</p>
+
+<p><strong>ささだ</strong> 平日は絶対スーツ着ないけど。</p>
+
+<p><strong>原</strong> あの不精ヒゲでそんなことしてたんですかね。大胆ですね。不精ヒゲじゃなかったんだ。</p>
+
+<p><strong>ささだ</strong> (笑) 。最近は沸かせてますが。PHP がどうとかで。</p>
+
+<p><strong>原</strong> ああ、らしいですね。</p>
+
+<p><strong>arton</strong> 高橋さんが書いてたよね。温厚な人に見えるけど、あれで言語のことになると、ハンドアックス投げまくって、とんでもないやつなんだと。</p>
+
+<p><strong>原</strong> (笑)</p>
+
+<p><strong>ささだ</strong> モヒカンってやつね。</p>
+
+<p><strong>原</strong> でも、まつもとさんは、ああいう風に書くと、どういうことが起こってというのを全部読みきった上でやってるんでしょ？</p>
+
+<p><strong>arton</strong> そうかなぁ?</p>
+
+<p><strong>原</strong> でも、まつもとさんぐらいになると、いろんな蓄積もあるし、大体方向性ってのはわかってるんじゃないですか。</p>
+
+<p><strong>ささだ</strong> どこまで考えているのか。深いところまで考えているような、考えていないようなという。</p>
+
+<p><strong>原</strong> それがやっぱり、まつもとさんらしいんだよね。</p>
+
+<p><strong>ささだ</strong> ズバズバやっていくリーダーって感じではないんですよね。</p>
+
+<p><strong>原</strong> うん。やっぱり、Ruby がこれだけ普及したのは、まつもとさん本人のキャラクターっていうのが関係あるんじゃないですかね。</p>
+
+<p><strong>ささだ</strong> 非常にるびまっぽいインタビューですね、これは。</p>
+
+<p><strong>原</strong> 良い感じ？</p>
+
+<p><strong>ささだ</strong> 良い感じ。</p>
+
+<p><strong>原</strong> (笑)</p>
+
+<p><strong>ささだ</strong> 最近は、あんまりるびまっぽい話をせずに、淡々と世間話をするというのが。</p>
+
+<p><strong>原</strong> あー、それがるびまっぽい。</p>
+
+<p><strong>ささだ</strong> どうなんでしょうね。まあいいや (笑)</p>
+
+<h4 id="代表作">代表作</h4>
+
+<p><strong>ささだ</strong> 代表作。</p>
+
+<p><strong>原</strong> 代表作か……。Ruby のスクリプトはたくさん書いてるんですけど、他人が触れるようになってるのは……。</p>
+
+<p><strong>ささだ</strong> blade <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> とか。</p>
+
+<p><strong>原</strong> ああ、blade ね。blade は Ruby で出来てますからね。</p>
+
+<p><strong>arton</strong> あとは Rational<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<p><strong>ささだ</strong> あれ石塚さんでしたっけ、オリジナルは。</p>
+
+<p><strong>原</strong> Ruby スクリプト版は石塚さん。statistics2<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>とか。一番手がかかってるのは Algebra<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> ですね。</p>
+
+<p><strong>ささだ</strong> あるじぇぶら？</p>
+
+<p><strong>原</strong> 「代数」っていう意味で、物凄い大風呂敷なんだけど。</p>
+
+<p><strong>ささだ</strong> Ruby に入ってましたっけ？あ、添付ライブラリではなくて、配っている？</p>
+
+<p><strong>原</strong> そうそう。RAA に登録されている。</p>
+
+<p><strong>ささだ</strong> 何をするものなんですか。</p>
+
+<p><strong>原</strong> これは、中学、高校生、大学 1, 2 年生ぐらいの宿題が出来るようにするのがコンセプトになってる。</p>
+
+<p><strong>ささだ</strong> 連立方程式とか？</p>
+
+<p><strong>原</strong> うん。例えば、三角形の重心が存在することを証明しなさい、みたいなことが出来るんですよ。</p>
+
+<p><strong>ささだ</strong> Ruby スクリプトで？</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> 定理証明系みたいな話になるんですか？</p>
+
+<p><strong>原</strong> いや、そうでもないんだけど、一部の初等的な証明は、代数的にごちゃごちゃってやるとできる。</p>
+
+<p><strong>ささだ</strong> へー。それって使われてるんですか？</p>
+
+<p><strong>原</strong> 使われてません (力強く)</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> たぶん。</p>
+
+<p><strong>arton</strong> 是非とも使い方をこの場で。</p>
+
+<p><strong>ささだ</strong> この場でというか、普通に記事書いてくださいよ。るびまに。</p>
+
+<p><strong>原</strong> 後ね、例えば、x^2 + 5x + 6 を因数分解しろみたいなのあるでしょ。そういうのをやる。</p>
+
+<p><strong>ささだ</strong> そういうのがさくっと出来ると。すばらしい。中高生の宿題が一瞬で。</p>
+
+<p><strong>原</strong> そうそう。だから中高生ぐらいの実力は出来なきゃまずいんじゃないかと、僕があるとき思い込んだんですよ。そんなことも出来ないのかって言われちゃったら、困るわけですよ。いや、それ出来ますよって言いたくて作ったんです。</p>
+
+<p><strong>ささだ</strong> 使われていない？</p>
+
+<p><strong>原</strong> 使われてないですね。僕は使ってますけどね。</p>
+
+<p><strong>ささだ</strong> それは自分のご研究で。</p>
+
+<p><strong>原</strong> 研究って程でもないけれど。ま、簡単な計算には。僕は、計算がすごく苦手なタイプな人間なんで、それは当然機械に補助させる。させたいんだけど、普通は数値計算ぐらいしか出来ないだけど、そういう数式の処理が出来るようなライブラリで、そのさっき言ってた<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> 1 週間たっても答えが返ってこないアプリっていうのは、そのあるパート。幸いなことに答えが返らないから、正しいかどうか分からない。</p>
+
+<p><strong>arton</strong> それが YARV になると、あっという間に答えが返ってくるから頼りになると。</p>
+
+<p><strong>原</strong> そうだといいな。後ね、import-module<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> っていうのがあって、ブロックの中だけで定義を変える。</p>
+
+<p><strong>ささだ</strong> selector namespace みたいなことがやりたかった？</p>
+
+<p><strong>原</strong> そうそう。selector namespace 自体はあまり知らないけれど。例えば、整数 ÷ 整数は、今は整数だけど、ブロックの中だけ、整数 ÷ 整数は有理数になる、みたいなことをさせるんですよ。</p>
+
+<p><strong>ささだ</strong> それはもう出来た？</p>
+
+<p><strong>原</strong> それは出来てる。</p>
+
+<p><strong>ささだ</strong> スレッドセーフなんですか？</p>
+
+<p><strong>原</strong> スレッドセーフにするのが大変だった。</p>
+
+<p><strong>ささだ</strong> スレッドローカルストレージか何か使って？</p>
+
+<p><strong>原</strong> それはどういうものだか分からないんだけども、結構泥臭い。</p>
+
+<p><strong>ささだ</strong> スレッド変数ってのがあるじゃないですか。Thread#[]。ああいうのを使いました？</p>
+
+<p><strong>原</strong> そうですね。で、これは石塚さんが scope-in-state というのを作ってて。ruby-list を見れば分かるんだけど……。</p>
+
+<p><strong>ささだ</strong> ruby-list でしたっけ？応酬してたやつですよね<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+
+<p><strong>原</strong> そうそう。どっちが速いか競争をしてた。</p>
+
+<p><strong>ささだ</strong> どっちが勝ってた？</p>
+
+<p><strong>原</strong> 結局石塚さんの勝ちだったかな。それにソースコードっていうか、中身の発想みたいなのは、石塚さんは素晴らしくて。</p>
+
+<p><strong>ささだ</strong> 私は、あの議論を見たときには、Ruby 始めたばっかりで、さっぱり分からなかったですね。</p>
+
+<p><strong>原</strong> 一見出来そうもないことが、出来てた。石塚さんが出来ちゃったんで、じゃ、僕もやってみようって全然別の方法で。これでどうだ、ああだ、みたいな。そこ (ホワイトボード) に書いてある円の、これはそれを作ったときので、モジュールは重なってるところがあって。</p>
+
+<p><strong>ささだ</strong> 数学じゃなかったんだ、これ。</p>
+
+<p><strong>原</strong> これはね……すごくややこしかったです。
+<img src="/images/0023-Hotlinks/hara06.jpg" alt="hara06.jpg" /></p>
+
+<p><strong>ささだ</strong> 代表作は、Algebra と、import-module。</p>
+
+<p><strong>原</strong> ですかね。</p>
+
+<p><strong>ささだ</strong> あと、blade か。</p>
+
+<h4 id="著作">著作</h4>
+
+<p><strong>ささだ</strong> 著作。</p>
+
+<p><strong>原</strong> 著作は、白い『<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41Y5TK0Y9VL._SL160_.jpg" />』。</p>
+
+<p><strong>ささだ</strong> あれ、売れました？</p>
+
+<p><strong>原</strong> 結構売れてるんですよ。今 7 刷ぐらい。</p>
+
+<p><strong>ささだ</strong> うおー。</p>
+
+<p><strong>arton</strong> すげえ。</p>
+
+<p><strong>ささだ</strong> あれが私の最初の Ruby 本だったんですよね。</p>
+
+<p><strong>原</strong> そうですか。申し訳ない。</p>
+
+<p><strong>ささだ</strong> さっぱり理解できなくて (笑)</p>
+
+<p><strong>原</strong> あれねぇー。僕も訳が分からなくて (笑)</p>
+
+<p><strong>ささだ</strong> いや、私が特殊だったような感じがして。後で黄色い Ruby 本を読んだら、定義が書いてあって、なるほど、そういうことだったのかと納得できました。たぶん、私は対象読者じゃなかったんじゃないかと。C、C++ とかをやった後に Ruby を勉強し始めたので、なんか Ruby らしさに気づく前に、原先生の本はリタイアしちゃったかな。最初、CSV を解析するとかありますよね。あれを読んで、うーんってなっちゃって、続かなかったという感じで。</p>
+
+<p><strong>原</strong> 僕、結構やさしく書くことを恐れてて。退屈させちゃうんじゃないかっていうのが、すごい怖いですよね。本当は、そういうのは全部自分で抑圧して、きちんと読む人の気持ちになって書かなくちゃいけないんだけど、そういうことがあまり出来ずに。いや、出来ずにってことはないですよ。編集の人からは強く言われたし、すごくたくさんいろんなレビューも一般にしてもらって。あれでもがんばったんだけど、ちょっと暴走したところが (笑)</p>
+
+<p><strong>ささだ</strong> なるほど。でもまだまだ売れてると。</p>
+
+<p><strong>原</strong> うん。あと、最後の方で正規表現の解析ルーチンをブロックを使って書くとかいうのがあって。</p>
+
+<p><strong>ささだ</strong> 解析ルーチン？</p>
+
+<p><strong>原</strong> 正規表現のコンパイラですよ。Ruby の元々の正規表現のルーチンを使うんじゃなくて。さっき言ったアルゴリズムの本を Ruby で書いたらどうなるか、みたいな話ですよね。正規表現のアルゴリズムを Ruby で書いてるんですよ。あれが一番暴走したところです。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 自分で見ても良く分かる。非常に短くて簡潔なんだけど、「これで動くの？」みたいな。</p>
+
+<p><strong>ささだ</strong> 田中さんは、それで授業をやってましたよ。原先生の本からじゃなくて、彼自身が正規表現エンジンを Ruby で作って、学生に 12 回ぐらいの授業で教えるという。</p>
+
+<p><strong>原</strong> あ、そうなのー。田中さん無茶苦茶やりそうだけど、やっぱりやってるんだねー。それから、パーサーみたいなのがあって、コンパイラみたいなのがあって、作ってみると。</p>
+
+<p><strong>ささだ</strong> 正規表現コンパイラ？ 正規表現エンジン？</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> 実行までするんですか、これは？</p>
+
+<p><strong>原</strong> 実行までします。</p>
+
+<p><strong>ささだ</strong> コンパイラ、かつエンジン？</p>
+
+<p><strong>原</strong> うん。コンパイラっていうか、インタプリタです。</p>
+
+<p><strong>ささだ</strong> ちなみに、また新しいのとかは無いんですか？</p>
+
+<p><strong>原</strong> 第二版を作ってます。</p>
+
+<p><strong>ささだ</strong> ほう。</p>
+
+<p><strong>原</strong> あと、『TRY! PC』っていう雑誌があって、そこに「超分かりやすい Ruby 入門」ってのを書いた。多分、商業誌で最初の Ruby 解説ではないかと。</p>
+
+<p><strong>ささだ</strong> 何かそう言ってた人が居たような気がする (笑)</p>
+
+<p><strong>原</strong> そういうのを言ってる人が何人か居るの？</p>
+
+<p><strong>ささだ</strong> いや、eban さんに聞いたのかもしれない。もしかしたら。<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></p>
+
+<p><strong>原</strong> なるほど。立派な功績でしょ？</p>
+
+<p><strong>ささだ</strong> そうですね。世に知らしめたと。</p>
+
+<p><strong>原</strong> そうそう。一応その時、Perl 入門も書いてて。eban さんと共著。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> そこで、Perl5 になって、Perl のオブジェクト機能が初めて実装されて訳分からないんで、僕も使ってなかったんだけども。雑誌で解説記事を書いてくれって言われて、初めて良く考えてみて、あ、そういうことかっていうのを書いたんです。多分、Perl5 の OOP の話を解説して、非常に良く出来てた。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>原</strong> 今、この場に無いので、何とでも言えるんだけど (笑) 。Perl で OOP っぽい何か書いたことはあります？</p>
+
+<p><strong>ささだ</strong> Perl でプログラミングはほとんどしたことが無いです。</p>
+
+<p><strong>原</strong> ここら辺、すごいですよ。取ってつけたような。取ってつけたんだけど (笑)</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 良くそれを成立させたと思って。それは偉いんけどね。</p>
+
+<p><strong>ささだ</strong> よくこれでリリースしたと。</p>
+
+<p><strong>原</strong> いや、破綻無くちゃんとできてるから、それはすごい。だって、後から付け加えるってね。無茶だよね。</p>
+
+<p><strong>ささだ</strong> 数学の本だと、何かありますか？本業の方だと。</p>
+
+<p><strong>原</strong> 本業のほうは、開店休業みたいなもんで。ろくに論文も書いてないし。日々楽しんではいるんだけども、結果は出てません。</p>
+
+<p><strong>ささだ</strong> Web で検索したら、1991 年と 1997 年と 1992 年の論文が<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>。</p>
+
+<p><strong>原</strong> たぶんそれが成果だと思う (笑)</p>
+
+<p><strong>ささだ</strong> じゃ、著作はこれということで。名前を読んでもさっぱり意味が分からなかったんですけどね。</p>
+
+<p><strong>原</strong> 僕の専門は、代数的位相幾何学っていうやつで。数学の分野には、代数と解析と幾何学と、大きく分かれてて。位相ってのは解析。代数的な、解析的な、幾何学。微分位相幾何学みたいなのもあるし、代数幾何学というのもあるし、全部違う分野。いわゆるトポロジーなんですよね。トポロジーってのは聞いたことあります？位相幾何学のこと。例えば「不動点定理」というのがあって……</p>
+
+<p><strong>ささだ</strong> まぁ、本業の話は後でゆっくりとうかがう感じで。</p>
+
+<h4 id="好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</h4>
+
+<p><strong>ささだ</strong> 好きなメソッド、嫌いなメソッド。</p>
+
+<p><strong>原</strong> あー。map が好きです。</p>
+
+<p><strong>ささだ</strong> おお。</p>
+
+<p><strong>原</strong> map が嫌いな人が多いんだけど、良くわかんないんですよ。人差し指と小指だけで打つところがおしゃれだし。なんで嫌いなんですか？</p>
+
+<p><strong>ささだ</strong> おかしいですよね。</p>
+
+<p><strong>arton</strong> 嫌いな人は居ないんじゃないの？ただ、collect って名前の方が、先に出てくるから。</p>
+
+<p><strong>原</strong> そうですよね。昔は map は無くて collect しかなかったですよね。</p>
+
+<p><strong>原</strong> 嫌いなメソッドは、パラメータの順番が分からないから inject かな。でもさっき、ささださんに決定的な記憶術を教わったんで、もう嫌いじゃないかも。それはちょっと書いておいてください。</p>
+
+<p><strong>ささだ</strong> (笑)。はい。「each_with_index と順番が逆！」と。</p>
+
+<p><strong>原</strong> 逆と。多分それ、物凄く Ruby 界で喜ばれると思う。もしかすると、VM より喜ばれる。</p>
+
+<p><strong>ささだ</strong> 厳しいなそれは (笑) 4 年間の成果よりも (笑)</p>
+
+<p><strong>原</strong> 僕、これで二度と忘れない。</p>
+
+<h3 id="ruby-に関して">Ruby に関して</h3>
+
+<h4 id="rubyist-になったきっかけ">Rubyist になったきっかけ</h4>
+
+<p><strong>ささだ</strong> Rubyist になったのいつからで、きっかけはなんでしょう？</p>
+
+<p><strong>原</strong> えっと、話せば長いんですけど。昔、日経 MIX ってのがあって。</p>
+
+<p><strong>ささだ</strong> パソコン通信。</p>
+
+<p><strong>原</strong> うん。arton さんは PC-VAN とか、NIFTY とか。
+<img src="/images/0023-Hotlinks/hara05.jpg" alt="hara05.jpg" /></p>
+
+<p><strong>arton</strong> 全然。まぁ、NIFTY にちょっとっていうぐらい。</p>
+
+<p><strong>原</strong> あ、そうですか。日経 MIX は結構熱い所だったんですよね。例えば、私の青春は日経 MIX でしたっていう人がいるんですよ。そういう所だったですね。そこで、awk 会議ってのがあって……。</p>
+
+<p><strong>ささだ</strong> オーク会議？</p>
+
+<p><strong>原</strong> フォーラムのことを会議って言うんですよ。awk 会議ってのがあって、awk と言いながら結局スクリプト言語全般をみてるような感じだった。で、そこの議長ってのをやってたんです。議長ってのは、モデレータで。</p>
+
+<p><strong>ささだ</strong> NIFTY 用語で、SYSOP ってやつですね。</p>
+
+<p><strong>原</strong> そうそう。で、初代は、takun、足立さんっていって、ストラウストラップを訳した方で。彼が、『プログラミング言語 AWK』っていう本を訳して、それがベストセラーになったのかな。本として非常にいい本で。実務的なところから、コンピュータサイエンス的なところまで良く書いてあって。誰が書いたんだったかな……。エイホ、ワインバーガー、カーニハンだ、頭文字取ったんだから。すでに酔ってる<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>。その人が議長を辞めて、僕に代わった。</p>
+
+<p><strong>ささだ</strong> それはいつ頃だったんですか？</p>
+
+<p><strong>原</strong> 日経 MIX に入ったのは 1990 年だけど 1994 年ぐらいかな。awk 会議のサブカテゴリに、awk/main とか、awk/salon とか、awk/abc とか。abc ってのは、初心者向けのこと。そのにひとつに awk/perl ってのがあったんですよ。awk/perl ってのは、awk 会議の Perl の分科会。皆で、つい Perl 使っちゃうけどしんどいね、みたいなことを。俺がこんなことを言っていいのかな (笑)。つらいね、みたいなことを言ってたら、AWK みたいな Perl があると良いねっていう気持ちだったんですよね。つまり、すっきりした Perl が欲しいねって言った所に、何かで聞きつけて、Ruby っていうのがあるよって。</p>
+
+<p><strong>ささだ</strong> それは、リリースされた後？</p>
+
+<p><strong>原</strong> リリースされた後ですね。</p>
+
+<p><strong>ささだ</strong> 1995 年、1996 年？</p>
+
+<p><strong>原</strong> 1996 年ぐらいですかね。</p>
+
+<p><strong>ささだ</strong> 日経 MIX に Ruby がやってきた。</p>
+
+<p><strong>原</strong> やってきた。でも、Ruby のソースコードをアップロードし、awk 会議 ruby 分科会ってのが始まったわけですね。何を隠そう、そこの副議長に、まつもとさんを召喚してですね。僕が議長、まつもと副議長、そういう体制で。</p>
+
+<p><strong>ささだ</strong> おお。</p>
+
+<p><strong>原</strong> これは、日本における Ruby 史の画期的な 1 ページってやつなんでしょうか (笑)</p>
+
+<p><strong>ささだ</strong> 知りませんでした (笑) 日経 MIX では、Ruby 話は盛り上がったんですか？</p>
+
+<p><strong>原</strong> 盛り上がりましたよ。ただ、その頃から BBS タイプというのが廃れてきて、日経 MIX が潰れたんですよね。だから尻切れトンボになったけども。ruby-list を検索すると出てくるけど、awk 会議オフラインミーティングにまつもと氏を呼ぼうってのがあって、東京でみんなで会ったことがある。その時、石塚さんも居た。</p>
+
+<p><strong>ささだ</strong> その頃は、もう長岡にいらっしゃってた？</p>
+
+<p><strong>原</strong> 僕が議長してたときは長岡に居たかな。</p>
+
+<p><strong>ささだ</strong> 東京に原先生も行って。</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> なるほど。議長と副議長の関係だったと。</p>
+
+<p><strong>原</strong> そうなんですよ。</p>
+
+<p><strong>arton</strong> eban さんはその頃会ってた？</p>
+
+<p><strong>原</strong> eban さんはその頃です。eban さんは日経 MIX に入ってましたから。eban さんが ruby を MS-DOS(DJGPP) と Windows で動くようにしたことは、Ruby の普及に大きな影響を与えたんです。当時 PC-UNIX はあまり普及していなかった。</p>
+
+<p><strong>ささだ</strong> へぇー。なるほど。じゃ、fj だけじゃなかったんですね。</p>
+
+<p><strong>原</strong> うん。まぁ、fj 経由だったと思う。</p>
+
+<p><strong>ささだ</strong> まつもとさんは松江から……。あ、その頃は松江じゃないのか。</p>
+
+<p><strong>原</strong> うん。名古屋。</p>
+
+<p><strong>ささだ</strong> 名古屋から日経 MIX につないで。</p>
+
+<p><strong>原</strong> そうそう。本当言うと、副議長って言うのは、副議長職にすると、接続料金を払わなくて良かったんですよ。それで、そうしたんですけどね。まつもとさんに来て欲しくて。</p>
+
+<p><strong>ささだ</strong> なるほど (笑) で、言語の仕様とかの議論を熱く語って。</p>
+
+<p><strong>原</strong> いや、そんなことは……。その頃はすでに固まっててたので突っ込んだ話はしてないですね。まぁ、AWK が好きで、Perl に付いていけない人たちが、嬉しかったんじゃないですかね。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<dl>
+  <dt><strong>原</strong> その頃の……これが 『<a href="https://www.amazon.co.jp/MS%E2%80%90DOS%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E6%96%99%E7%90%86%E5%AD%A6-PC%E2%80%90PAGE-SE%E7%B7%A8%E9%9B%86%E9%83%A8/dp/4915673952?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4915673952">‘MS-DOS テキストデータ料理学’</a>』。半分ぐらいは僕が書いてるんですけど。これは隠れた……あの、何だ。</dt>
+  <dd><img src="/images/0023-Hotlinks/teryori-5.jpg" alt="teryori-5.jpg" /></dd>
+</dl>
+
+<p><strong>ささだ</strong> 名著。</p>
+
+<p><strong>原</strong> 名著！ よく言ってくれました。</p>
+
+<p><strong>arton</strong> 翔泳社版の 256 倍みたいな感じだね。</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> これ、ペンネーム使ってるんですか？</p>
+
+<p><strong>原</strong> いや、これはそのまんま僕が。</p>
+
+<p><strong>ささだ</strong> 原先生の名前が……。</p>
+
+<p><strong>原</strong> 後ろの方にあるね。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>原</strong> これは、テキストデータ中心主義っていうか、UNIX 的な考え方を MS-DOS に持ってこようという本です。</p>
+
+<p><strong>ささだ</strong> 持っている人は中々居なさそうな。</p>
+
+<p><strong>arton</strong> そうだね。確かに便利そうな本だね。</p>
+
+<p><strong>ささだ</strong> 貴重な本ですね。</p>
+
+<h4 id="ruby-の好きなところと嫌いなところ">Ruby の好きなところと嫌いなところ</h4>
+
+<p><strong>ささだ</strong> Ruby の好きなところと嫌いな所。さっき、AWK みたいな Perl っていう話がありましたけど。</p>
+
+<p><strong>原</strong> もちろん、全然違いますよね。異様に偏った見方で。Ruby はやっぱり Ruby。Ruby はオブジェクト指向プログラミングが手軽に出来るっていうところが好きですね。まるで本の最初のページみたいな (笑) 嫌いなところは無いですね。</p>
+
+<p><strong>ささだ</strong> おお。Ruby だけがあれば良いと。</p>
+
+<p><strong>原</strong> うーん、そんなことも無いんだけど。</p>
+
+<p><strong>arton</strong> いや、1 週間行って帰ってこなかったというのは、あんまり好きになれない気がする (笑)</p>
+
+<p><strong>原</strong> うーん、それは Ruby でそういうプログラムを書くほうが間違ってますからね。</p>
+
+<p><strong>ささだ</strong> Ruby の嫌いなところは特になし？</p>
+
+<p><strong>原</strong> うん。僕は身体の延長として、Ruby を考えてますね。好きも嫌いもありません。</p>
+
+<p><strong>ささだ</strong> なるほど。Ruby 脳っていうんですかね。</p>
+
+<p><strong>原</strong> 脳ではないんですよね。運動系でもあるし。</p>
+
+<p><strong>arton</strong> Ruby 強化された肉体。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<h4 id="ruby-を使ってうまくいった事例">Ruby を使ってうまくいった事例</h4>
+
+<p><strong>ささだ</strong> Ruby を使って成功だった、上手く行った事例。blade ?</p>
+
+<p><strong>原</strong> 全然、Ruby である必要性はないですよね。blade は。</p>
+
+<p><strong>arton</strong> いや、コンテンツが Ruby だよ (笑)</p>
+
+<p><strong>原</strong> blade を Ruby で書いたのは、単に Ruby じゃなかったら失礼かなっていうかね、道理が悪いんで。体裁のために Ruby で書きましたけど、Ruby である必要は全然無い。</p>
+
+<p><strong>ささだ</strong> 無理したんだ (笑)</p>
+
+<p><strong>原</strong> あ、ただね。非常に長い間ね、少しずつ作ってるわけですよね。ガウディの教会<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>みたいにね。それで破綻が来ないで一応続いてるってのは Ruby の偉さじゃないですかね。良いこと言うな俺も。</p>
+
+<p><strong>ささだ</strong> なるほど (笑)</p>
+
+<p><strong>原</strong> 他の言語だとたぶん、ボキっと折れたり、グズグズグズって潰れたり、破綻してしまったんじゃないかな。一応コードを柔らかく持って、立ち続けてるのは素晴らしいなと。</p>
+
+<p><strong>ささだ</strong> 数学とかで Ruby を使ったら上手くいったみたいな。</p>
+
+<p><strong>原</strong> 細かい計算は、自分で書いた Algebra を使ってることはあるんだけど。Ruby スクリプトで数式処理を書くってのは、まったく頓珍漢な話なんだけど。だってもっと速くて優れたのがいっぱいあるからね。Mathematica や Maple はすばらしい。だけど、身体の延長になってるわけですからね。仕事の途中から Mathematica っていうのも何か無粋なわけですよ。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>原</strong> こうやってパッと手を伸ばせば届くところに使えるようにあるって言う。引き出し開けたらそこに電卓が置いてあるみたいな。そういう風に、ちょいちょい使う。</p>
+
+<p><strong>ささだ</strong> Mathematica がそういう風な身体の一部になっていれば、幸せだったかもしれない (笑)</p>
+
+<p><strong>原</strong> それを言っちゃあお終い……そうだね、きっと。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> ま、高いですよね。</p>
+
+<p><strong>原</strong> 高いし。出力を TeX にしたりレポートにしたり、そこまで全部シームレスにできるでしょ。そういうのはやっぱ、Ruby が得意なわけですよ。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>原</strong> 僕は、計算がすごく苦手なんですよ。数学やる人っていうのは 2 パターンあって。数学者の平均は、一般の人より暗算とかはできないんですよね。で、特に極端に出来ないグループってのに属してる。</p>
+
+<p><strong>ささだ</strong> グループがあるんですか。出来ないから、やりたいっていう。それは関係なく？</p>
+
+<p><strong>原</strong> それは関係ないんだけど。</p>
+
+<p><strong>ささだ</strong> 数学とそういう計算は関係ない？</p>
+
+<p><strong>原</strong> うん。だからある意味ハンディキャップを持ってるわけですよね。で、そのハンディキャップを補助してもらってるのが、Ruby なんです。また良いこと言っちゃった。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> だから、うんと助けられてる。</p>
+
+<p><strong>ささだ</strong> じゃ、電卓は irb で。</p>
+
+<p><strong>原</strong> うん。そうですね。だから、ちょっとした計算にはしょっちゅう使うわけ。別に手でやれば、10 分ぐらいで出来るんだけど。</p>
+
+<p><strong>ささだ</strong> 私は最近、計算は Windows の計算機を使ってて。</p>
+
+<p><strong>arton</strong> めんどくさくないですか？</p>
+
+<p><strong>ささだ</strong> いや、数字を押したら出来るので。</p>
+
+<p><strong>arton</strong> ああ、テンキーか。</p>
+
+<p><strong>ささだ</strong> だから、irb を起動するよりかは楽で。いや、irb を起動してもいいんだけど。もうちょっと括弧とか使いたいときは、xyzzy のスクラッチを使ってしまうという。なんで Ruby を使わないのかは良く分からないんですけど。</p>
+
+<p><strong>原</strong> 何で使わないの？</p>
+
+<p><strong>ささだ</strong> irb を使う習慣がないんですよ。</p>
+
+<p><strong>原</strong> 僕は、irb 使い出したのはこの 2、3 年なんですけどね。</p>
+
+<p><strong>arton</strong> えっ？</p>
+
+<p><strong>原</strong> それまでは何かって言うと、ちゃんとスクリプトを書いて、バッチ処理ですね。</p>
+
+<p><strong>ささだ</strong> じゃ、電卓は？</p>
+
+<p><strong>原</strong> 電卓はほとんど使わないんですよ。</p>
+
+<p><strong>ささだ</strong> あー、なるほど。</p>
+
+<p><strong>原</strong> Ruby スクリプトで計算をする。どんな計算でも。</p>
+
+<p><strong>ささだ</strong> 最近 irb って逆な感じがしますけどね。</p>
+
+<p><strong>原</strong> まつもとさんがそんなこと言ってたよね。irb 使わないって。でも、使ってみたら便利だねって。</p>
+
+<p><strong>ささだ</strong> irb ブーム？</p>
+
+<p><strong>arton</strong> ブームじゃないんだけどさ、普通に使うと便利だよね。</p>
+
+<p><strong>原</strong> ヒストリーとかね。補完とか。</p>
+
+<p><strong>arton</strong> むしろ IDE ブームみたいな。</p>
+
+<p><strong>ささだ</strong> IDE 。すごい一昔前みたいな感じですよね。では、電卓が成功事例ということで。</p>
+
+<h4 id="キラーアプリ">キラーアプリ</h4>
+
+<p><strong>ささだ</strong> 自分にとって、これはキラーアプリケーションとかライブラリ、無いと困るものはありますか？  まぁ、blade はそうですよね、全 Rubyist にとって。</p>
+
+<p><strong>原</strong> アプリケーション……</p>
+
+<p><strong>ささだ</strong> この質問の背景は、「Ruby で作られたものってあんまりないよね、だから、お勧めのがあったら教えてください」っていう感じなんです。</p>
+
+<p><strong>原</strong> 個人的に作ったもので、非常に良く使うって言うのはある。でも公開されてないからね。言っても分からない。</p>
+
+<p><strong>ささだ</strong> 何に使ってるんですか？</p>
+
+<p><strong>原</strong> 色々、たくさん。</p>
+
+<p><strong>ささだ</strong> 無いと生きていけない？</p>
+
+<p><strong>原</strong> 無いと生きていけないって程でもないけどなぁ。</p>
+
+<p><strong>ささだ</strong> あ、そうですか。私は、自分で作ってて無いと生きていけないものは結構ありますよ。</p>
+
+<p><strong>原</strong> ふーん。例えば？</p>
+
+<p><strong>ささだ</strong> メール捌くやつとか。Procmail とか使えないんですよ、私。</p>
+
+<p><strong>原</strong> なるほどね。</p>
+
+<p><strong>ささだ</strong> 文法が分からないから。Ruby なら読める。そんな感じで作ってますよ。</p>
+
+<p><strong>arton</strong> 車輪の再発明とは言わせない、みたいなね。</p>
+
+<p><strong>ささだ</strong> 再発明しまくりですよ。</p>
+
+<p><strong>原</strong> 僕もしまくり。僕は結構、マニュアルを読むのが苦で。マニュアルを読むよりは、自分で書いた方が……遅いんだけど、精神的には良いかな。</p>
+
+<p><strong>ささだ</strong> ちなみに、その作ってるツールというのはどんなの？</p>
+
+<p><strong>原</strong> 非常に特殊なもの。</p>
+
+<p><strong>ささだ</strong> それは研究用？</p>
+
+<p><strong>原</strong> 研究用じゃなくて。趣味。……なんの話でしたっけ。</p>
+
+<p><strong>ささだ</strong> キラーアプリケーション。</p>
+
+<p><strong>原</strong> アプリケーションは特に無いですかね。Ruby 自体がキラーアプリケーション。</p>
+
+<p><strong>ささだ</strong> なるほど。上手いですね (笑)</p>
+
+<h4 id="ruby-の習得">Ruby の習得</h4>
+
+<p><strong>ささだ</strong> Ruby の習得は簡単でしたか。</p>
+
+<p><strong>原</strong> 僕はね、AWK 出身なんで、メーリングリストの最初の頃に、まつもとさん直々に色々質問をして、開眼した瞬間があるんです。それは、昔僕は、変数とオブジェクトの区別が付いてなかった。結構他の、AWK とか Perl とかは、『変数 = 変数』ってすると、元の変数が参照しているオブジェクトがコピーされる。代入とオブジェクトのコピーの区別が付きづらかったんだよね。ところが、変数とオブジェクトの区別が付いた瞬間に、Ruby は非常に分かりやすくなったわけ。</p>
+
+<p><strong>ささだ</strong> それが分かるまでが難しかったと。</p>
+
+<p><strong>原</strong> そうですね。その後は非常にすっと。</p>
+
+<p><strong>ささだ</strong> クラスがブロックとか、その辺もすんなりと。</p>
+
+<p><strong>原</strong> そうですね。非常にすんなりといった気がしますね。特に、昔は素人さんが日曜プログラムをすると、Turbo Pascal, Turbo Cとか使う。あるときから、オブジェクト指向な機能が付いた。</p>
+
+<p><strong>arton</strong> Delphi?</p>
+
+<p><strong>原</strong> いや、Turbo Pascal 5 で、オブジェクトオリエンテッドになった。全然わかんなかったんですよ。僕は、Ruby を勉強して、オブジェクト指向が分かったんですね。だから、非常に感謝してるんです。これは多分、まつもとさんが Ruby を作った意図の一部でもあったのかなと。いい話ですね。</p>
+
+<p><strong>ささだ</strong> 深読みしすぎですから (笑) わかんないですけど。</p>
+
+<h3 id="プログラミング全般">プログラミング全般</h3>
+
+<h4 id="初めてのプログラミング">初めてのプログラミング</h4>
+
+<p><strong>ささだ</strong> 始めてプログラムを書いたのはいつぐらいですか。</p>
+
+<p><strong>原</strong> これは、大学 1 年のときに買った、カシオのプログラマブル計算機。</p>
+
+<p><strong>ささだ</strong> ポケコン？</p>
+
+<p><strong>原</strong> うん。ポケコンという言葉はなかった。CASIO FX502P かな。で、ブラックジャックかな、作ったのは。</p>
+
+<p><strong>ささだ</strong> それはプログラムを全部自分で考えたんですか。それとも本かなんかで。</p>
+
+<p><strong>原</strong> あ、違う。それは友達が考えたのかな。僕は途中でヘタって止めたんだな。最初はユークリッドの互除法かなんかを作ったのかな。</p>
+
+<p><strong>ささだ</strong> 原体験はポケコンだったと。</p>
+
+<p><strong>原</strong> うん。ちょっとだけね。でも、計算機って言うのは、数学やる人は使わないってのが常識だったんですね。</p>
+
+<p><strong>ささだ</strong> 大学も数学科？</p>
+
+<p><strong>原</strong> まあ。</p>
+
+<p><strong>ささだ</strong> じゃ、周り見てもみんな計算機は持ってない？</p>
+
+<p><strong>原</strong> そうです。</p>
+
+<p><strong>ささだ</strong> みんな暗算？</p>
+
+<p><strong>原</strong> 暗算って、手計算。計算機に乗るようなことはやらないんですよ。シ
+ンボルの操作だけではなくて、数学的オブジェクトの操作だから。今でもそうだけどね。計算機ってのは基本的には数学には使えないんですよ。昔の数学教室は、学生用の計算機室ってのはあったんだけど、夕方 5 時に閉まってた。つまり、事務が閉まるときに閉まってた。</p>
+
+<p><strong>arton</strong> 使ってないの？</p>
+
+<p><strong>原</strong> みんな、タイプの画面使ってる。</p>
+
+<p><strong>ささだ</strong> あ、論文書くために？</p>
+
+<p><strong>原</strong> うん。今は違いますよ。僕も特にめんどくさがりだったから、僕のクラスで計算機演習をみんなやったんだけど、僕だけめんどくさいからって、計算機演習をしなかったんだよね。</p>
+
+<p><strong>ささだ</strong> 計算機演習って、Fortran とか？</p>
+
+<p><strong>原</strong> Fortran。パンチカードと Fortran。そのぐらいだったから、コンピュータにあまり興味が無かったんだろうな。</p>
+
+<p><strong>ささだ</strong> それがいつの間にか日経 MIX に。</p>
+
+<p><strong>原</strong> うん。それはやっぱり、論文を書くためにエディタを使って。エディタを使うのに、マクロを使って。エディタのマクロを使うくらいなら、AWK を使ったほうがいい。あと、TeX をみんな使うようになって。僕が大学院時代ってのは、クボソフトっていう数学専用ワープロってのがあって、それから TeX への移行期だった。で、みんなコンピュータに触るようになって。今は数学関係の人は、ほとんどコンピュータ使えますよね。昔は数学者はコンピュータ触っちゃいけないと。数学が出来なくなるといわれてたんだけど。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> ま、若干そういうところはある。</p>
+
+<h4 id="ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</h4>
+
+<p><strong>ささだ</strong> Ruby以外のプログラミング言語。</p>
+
+<p><strong>原</strong> 色々と、つまんではみるんだけど、日常的に使うまでは習得し切れませんね。Haskell とか面白かったけど、面白がってただけ。スゲーとか言って喜んでただけだし。Java も最初は面白がってたけど、何でこんなにいろんなコード書かされるんだってなったし。C はポインタが分からないっていう噂があるのだけど (笑)</p>
+
+<p><strong>ささだ</strong> コンピュータサイエンスの先生方でも、C は分かんないっていう先生は結構居ますよね。</p>
+
+<p><strong>原</strong> へぇ。それはどういう意味で分からないの？</p>
+
+<p><strong>ささだ</strong> 知らないとか。数学と同じように、別にプログラム書かなくても計算機の研究は出来るので。プログラム書く分野もあるんですけど、書かない分野もあって。Lisp しかできませんとか。</p>
+
+<p><strong>原</strong> Lisp とか Scheme とか、匂いを嗅いで物凄い面白がるんだけど、習得するまでには至らない。</p>
+
+<p><strong>ささだ</strong> なるほど。何が好きってのはありますか？ かじってきた中で。</p>
+
+<p><strong>原</strong> Haskell。</p>
+
+<p><strong>ささだ</strong> 数学屋さんの琴線に触れる？</p>
+
+<p><strong>原</strong> いや、ああいう徹底した関数型っていうことの発想自体が面白いなって。モナドも最初は全然わかんなくって。分かんないのがすごく楽しくって。</p>
+
+<p><strong>ささだ</strong> もう完璧？</p>
+
+<p><strong>原</strong> いや、もう忘れました。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 純粋な関数型言語っていうのは、入力も出力も持っちゃいけないんじゃないかっていう気がするんですよね。</p>
+
+<p><strong>ささだ</strong> じゃ、cat とか作るなと。</p>
+
+<p><strong>原</strong> そうそう。入力もないし、出力もないから、何の役にも立たない。誰も在ることに気づかない (笑)</p>
+
+<p><strong>ささだ</strong> でも、普段使うなら Ruby と。</p>
+
+<p><strong>原</strong> そうですね。</p>
+
+<h4 id="美しいソースコード">美しいソースコード</h4>
+
+<p><strong>ささだ</strong> 美しいソースコード。</p>
+
+<p><strong>原</strong> あんまり、他人のソースコードを読まないんで。読んだことがあるのは、Ruby のソースコードの一部ですかね。まつもとさんは随分ときっちり書くんだなっていう。見た目はへらへらしてるのに、コードを前にしては真摯な態度になるんだなと思って、それは感動しました。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>原</strong> 美しいというような審美眼はない。</p>
+
+<h4 id="興味を持ってるテーマ">興味を持ってるテーマ</h4>
+
+<p><strong>ささだ</strong> 今興味を持っているプログラミングに関するテーマ。</p>
+
+<p><strong>原</strong> プログラミングに関するテーマ？</p>
+
+<p><strong>ささだ</strong> テーマというか、次何を作りたいかとか。</p>
+
+<p><strong>原</strong> うーん……(しばし考える)。Ruby がこんなに普及する前は、自分が色々なものを作ってやろうという気持ちはあったんですけど。</p>
+
+<p><strong>ささだ</strong> それは言語から？</p>
+
+<p><strong>原</strong> いやいや、違います。Ruby でアプリケーションを書きたいと思ったんだけど、今はもうすごく立派な方々がたくさんの部品をお作りになってるので、まったく出る幕が無いなという感じですね。言語を作りたいってのはありますよね。</p>
+
+<p><strong>ささだ</strong> ほう。どんな。</p>
+
+<p><strong>原</strong> Ruby で、do … end をブラケットにしたりとかね。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> ブラケットの方がいい？</p>
+
+<p><strong>原</strong> いや、なんとなく、囲まれてる感じが強いじゃない。</p>
+
+<p><strong>ささだ</strong> それは疑問を持っちゃいけないんじゃないですか、手足の (笑)</p>
+
+<p><strong>原</strong> しまった、馬脚を現した (笑)</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> まだ納得がいかないと (笑)</p>
+
+<p><strong>原</strong> いや、納得がいかないことはないんだけど。</p>
+
+<p><strong>arton</strong> 爪が伸びるみたいなもんでさ。時々切ってやる必要があるとか。</p>
+
+<p><strong>原</strong> (笑)</p>
+
+<p><strong>ささだ</strong> じゃ、Ruby の根本的なところには特に問題がないというか、異論は無いわけですか？</p>
+
+<p><strong>原</strong> 多分ね、色々あるんだけど、それより良い物を作ろうと思っても、多分良い物が出来ないんですよね、きっと。</p>
+
+<p><strong>ささだ</strong> なるほど。改善案を出すほどでもないと。</p>
+
+<p><strong>原</strong> うん。良い所を 2、3 個作ったとしても、悪いところが 10 個ぐらい出ちゃうんじゃ無いかなって思う。</p>
+
+<p><strong>ささだ</strong> まぁ、良く考えてますもんね。</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> じゃあ、今興味を持ってるのは、特に無いのかな。プログラムでどうの、というのではないんですね。満足してる感じ？</p>
+
+<p><strong>原</strong> これ、全然違う話なんですけど。スレッドを使って、デッドロックが起こりますよね。しばしばね。</p>
+
+<p><strong>ささだ</strong> はい。</p>
+
+<p><strong>原</strong> あれって、デッドロックを起こさないようにするとか、そういうのを自動化できないの？</p>
+
+<p><strong>ささだ</strong> あります、あります。</p>
+
+<p><strong>原</strong> どういう？</p>
+
+<p><strong>ささだ</strong> そういう理論体系を作って、起こさないことを保証するなり、起こすようなプログラムを書いたら、エラーを出したりという。</p>
+
+<p><strong>原</strong> そういうことできるの。</p>
+
+<p><strong>ささだ</strong> ええ。プログラミング言語の理論系の分野や、言語処理系のある分野では。私の苦手なところですけど。だけど全然、野に降りてこない気がしますね。</p>
+
+<p><strong>原</strong> 前ね、Ruby プログラムを食わすと、それがデッドロックを起こすか起こさないかを判定するプログラムみたいなのを……まったく書いてないんですけど、書けたら面白いなと思ったんですけどね。</p>
+
+<p><strong>ささだ</strong> Ruby プログラムの駄目なところは、動的な部分が多すぎて、解析できないんですよね。例えば、Thread.new って書いても、それが本当にスレッドを作るかどうか分からないんですよ。</p>
+
+<p><strong>原</strong> いやでもね、デッドロックを起こす可能性があるかどうかは分かるでしょ。</p>
+
+<p><strong>ささだ</strong> あー、なるほど。</p>
+
+<p><strong>原</strong> つまり、どんなタイミングで何が起こったとしても、起こさないっていう。</p>
+
+<p><strong>ささだ</strong> 再定義が起こらないという仮定を置いて？</p>
+
+<p><strong>原</strong> まぁそうだね。ある程度そういう制約の元で。</p>
+
+<p><strong>ささだ</strong> 出来るんですかね。私は詳しくないんで分からないんですけど。</p>
+
+<p><strong>原</strong> 昔ね、thread.rb っていうライブラリがあって、そこに Queue とかあって。</p>
+
+<p><strong>ささだ</strong> 1.8 にもありますね。</p>
+
+<p><strong>原</strong> それがいつまで経ってもバグが取れなかったのね。結構僕、バグの報告したんですよ。</p>
+
+<p><strong>ささだ</strong> あれ書いたの修吾さんですよね。たしか前田修吾さんがメンテナをやって。</p>
+
+<p><strong>原</strong> あ、今そうなの？ 最初はまつもとさんだった。で、あまりにいつまで経っても直らないから、何かこれは自動で出来るんじゃないかと思ったんですけどね。考えてみたんだけど、全然手がかりが無くて分からなかった。</p>
+
+<p><strong>ささだ</strong> Ada っていう言語があって、それにはそういう機能があるらしいっていう噂ですが。</p>
+
+<p><strong>原</strong> へぇー、すごいなぁ。やっぱあるんだなぁ。</p>
+
+<p><strong>ささだ</strong> ぜひそういう研究も。</p>
+
+<p><strong>原</strong> いやいや、それはやっぱり大変だと思うから。手は出さない。
+<img src="/images/0023-Hotlinks/hara03.jpg" alt="hara03.jpg" /></p>
+
+<h3 id="生い立ち">生い立ち</h3>
+
+<h4 id="小学校時代">小学校時代</h4>
+
+<p><strong>ささだ</strong> 生い立ち。いつも生い立ちが長いんですけど、ぜひ自分語りを。</p>
+
+<p><strong>原</strong> えっと、僕は成田に生まれたんですね。で、小学校の遊びは、投石ごっこ。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 分かる？arton さんは分かると思うけど。</p>
+
+<p><strong>arton</strong> あー、これか。</p>
+
+<p><strong>ささだ</strong> 石を投げる？</p>
+
+<p><strong>原</strong> そうそう。三里塚闘争<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup>ってのがあって、学生が全国から集まってきて、機動隊に向かって投石するわけ。機動隊は学生に催涙弾を撃つ。それを真似て、赤組白組に分かれてですね、石を投げ合う (笑)</p>
+
+<p><strong>ささだ</strong> 危ない (笑)</p>
+
+<p><strong>原</strong> そういう小学生 (笑)</p>
+
+<p><strong>ささだ</strong> すっげー怒られるんじゃないんですか。</p>
+
+<p><strong>原</strong> 怒られた。水平に投げてはいけないという不文律はある。弓なりに。</p>
+
+<p><strong>ささだ</strong> ま、でもそういうのを見てきた時代ということですね。</p>
+
+<p><strong>原</strong> 見てきたって言うか、大学時代にもまだあったからね。</p>
+
+<p><strong>ささだ</strong> 自分は投げたりしたんですか？</p>
+
+<p><strong>原</strong> 僕はしてないけど、友達には結構居て。よく、援農って言って、三里塚で空港を反対して農業を続けている農民を学生たちが手伝いに行って。</p>
+
+<p><strong>ささだ</strong> 学生運動の延長だったってこと？</p>
+
+<p><strong>原</strong> そうそう。時々、援農にいかないかって誘われたりして。僕は、盆暮帰省してるからいいって言って。自分の故郷に帰ると、大学の友達が居たりして。</p>
+
+<p><strong>ささだ</strong> まぁ、そんな小学生で、あまり数学とか算数とかには興味は無く？</p>
+
+<p><strong>原</strong> あー、自分は算数が得意だと思い込んでいた時期が、一時期あったんですよね。僕は何桁でも足し算できると、1 年生か 2 年生かで威張ってたら、じゃやってみろとか言って。原君に足し算をしてもらう列が出来てね。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>原</strong> みんなのノートに長ーい数字が並んでて。僕は次から次へ足し算をしてって。</p>
+
+<p><strong>ささだ</strong> そんな小学 1 年生 (笑)</p>
+
+<p><strong>原</strong> そうそう (笑)</p>
+
+<p><strong>arton</strong> 占い師みたいだな。答えが正しくてもさ、持ってった子も分かんないんだよ、きっと。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>原</strong> そうだよ。絶対間違ってたんだよ、それは。だって、計算が不得意だったんだよ、たぶんね。ただ、アルゴリズムは知ってた。</p>
+
+<p><strong>ささだ</strong> 筆算をどうすればいいかとか。</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> あ、筆算を習うのは小学 2 年生とかでしたっけ。</p>
+
+<p><strong>arton</strong> ちょっと分かんないな。</p>
+
+<p><strong>ささだ</strong> ま、そんな算数天才少年だったと。</p>
+
+<p><strong>原</strong> そうそう (笑)</p>
+
+<p><strong>ささだ</strong> それが小学 1、2 年生で、3、4 年生は、もう石を投げていたと (笑)</p>
+
+<p><strong>原</strong> いや、そんなことも無いんだけど (笑)。小学校のことは、あんまり覚えてないですね。やっぱり打ち所が悪かったか。</p>
+
+<p><strong>ささだ</strong> 数学数学してたんじゃないと。</p>
+
+<p><strong>原</strong> もう全然。</p>
+
+<p><strong>ささだ</strong> 計算機とは……その時代は無い？</p>
+
+<p><strong>原</strong> もちろん無い。あっ、初めて CASIO Mini が出た時代で、家にやってきたときはとても嬉しかった。</p>
+
+<p><strong>ささだ</strong> CASIO Mini ってなんですか？</p>
+
+<p><strong>原</strong> えっと、12800 円で、こんぐらいの大きさの電卓が、初めて市販されたんです。みんながそろばんじゃなくて電卓を使うようになったんです。爆発的ヒットになったんですよ。</p>
+
+<p><strong>ささだ</strong> なるほど。ごっついものじゃなくてハンディな。</p>
+
+<p><strong>原</strong> 今でも形を覚えてるぐらいだから、非常にインパクトがあったんですよね。</p>
+
+<p><strong>arton</strong> 富士山麓オウム鳴くって広告していた電卓ですか？</p>
+
+<p><strong>原</strong> 富士山麓ってのはルート 5 ですか。</p>
+
+<p><strong>arton</strong> うん。あのころの電卓の広告で、やたらそれが印象深いから、それかな、と。電卓でルートの計算が出来る。って、それは CASIO Mini じゃない気もしてきたな……。</p>
+
+<p><strong>原</strong> いや、CASIO Mini かもしれない……。ささださんの時代っていうのは、計算機があふれてる？</p>
+
+<p><strong>ささだ</strong> もう当たり前でしたね。親父の持ってる電卓とかを触って、面白いとか思ってました。関数電卓だったので、小学校の頃は何が書いてあるかさっぱり分からなかったですけど。何か押したら数字が出てくるから。</p>
+
+<p><strong>原</strong> プログラマブルではなかった？</p>
+
+<p><strong>ささだ</strong> ではなかったですね。</p>
+
+<p><strong>原</strong> プログラマブルと言えば、電子ブロックってのがありましたよね。</p>
+
+<p><strong>arton</strong> ありましたね。</p>
+
+<p><strong>原</strong> あれは面白かったですね。</p>
+
+<p><strong>ささだ</strong> それは小学校？</p>
+
+<p><strong>原</strong> 小学校。</p>
+
+<p><strong>ささだ</strong> それでラジオ作ったり？</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> いわゆる理系とか工学系には興味があったと。</p>
+
+<p><strong>原</strong> ええ。</p>
+
+<h4 id="中学校時代">中学校時代</h4>
+
+<p><strong>原</strong> 小学校 5 年、6 年が物凄く無気力症になって。無駄じゃ無駄じゃ、みたいな感じ。</p>
+
+<p><strong>arton</strong> 無駄じゃ無駄じゃって、ヘムリンさんかな。</p>
+
+<p><strong>原</strong> うん。何をやっても無駄じゃ、みたいな。</p>
+
+<p><strong>arton</strong> 知らないな。</p>
+
+<p><strong>ささだ</strong> 知らない。</p>
+
+<p><strong>原</strong> ジャコウネズミさん？そういう無気力少年だったんですね。中学校も、その延長だったんじゃないですかね。</p>
+
+<p><strong>ささだ</strong> 部活とかは。</p>
+
+<p><strong>原</strong> 部活も別にしないし。一応、科学部かなんかだったけど。あまりやらないし。運動部なんてとんでもない。</p>
+
+<p><strong>ささだ</strong> 無駄じゃんと。</p>
+
+<p><strong>原</strong> 無駄です。僕は、中学校の修学旅行のときに、京都に行って山に登って降りた時に、先生に「どうせ降りるのになんで登ったんですか」ってマジで訊いて怒られたことがある。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> つまり、上に何も無かったんだよね。何かあったらしいんだけど、僕には見えなかった。</p>
+
+<p><strong>ささだ</strong> あー。</p>
+
+<p><strong>原</strong> ま、一事が万事そんな感じですよ。</p>
+
+<p><strong>ささだ</strong> そんな中学生が高校に。</p>
+
+<p><strong>arton</strong> いつ無駄じゃなくなるのか。</p>
+
+<p><strong>原</strong> いや、基本的には今もまだそれが続いているわけですね。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> プログラムとか、無駄じゃないですか？</p>
+
+<p><strong>原</strong> 無駄ですね。物凄い無駄ですね。</p>
+
+<p><strong>arton</strong> 無駄じゃ無駄じゃ (笑)</p>
+
+<p><strong>ささだ</strong> 数学とかはどうなんですか？</p>
+
+<p><strong>原</strong> 数学？数学は物凄い無駄の最たるものじゃないですか。</p>
+
+<p><strong>ささだ</strong> 自分の職が (笑)</p>
+
+<p><strong>原</strong> だって、僕ね、この大学に来たときに「先生の研究はどんな役に立つんですか」って訊かれて、びっくりしたことがあるんだよね。そんな質問を受けたことが無かったんで。大学でもそんな質問する人は居なくて。で、なんかの役に立てようと思ったこともないし、役に立つと思ったことも無い。</p>
+
+<p><strong>ささだ</strong> (笑)。何か面白いからやってる？</p>
+
+<p><strong>原</strong> そうそう。遊んでるっていえば遊んでるんだけど。</p>
+
+<p><strong>ささだ</strong> 私もそっちの立場ですけど、工学だと役立つものっていうのはありますよね。</p>
+
+<p><strong>arton</strong> そういうのって、言ってるだけかも知れないよね。</p>
+
+<p><strong>原</strong> そうだよ、きっと。</p>
+
+<p><strong>ささだ</strong> マッチポンプ？</p>
+
+<p><strong>arton</strong> マッチポンプとは違うかなぁ。そう言わないと、エクスキューズが立たないだけでさ。エクスキューズして「こういう役に立つんです。社会のためには私はやってます」って言うんだけど、実際は面白いからやってるだけでさ。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> うん。そうじゃないの。</p>
+
+<p><strong>ささだ</strong> いやまぁ、それはそうですね。お金もらうために、こんなに役立つんですよって言いますよね。</p>
+
+<p><strong>arton</strong> 二つしかないんだよ。面白いからやってるか、お金のためにやってるか。多分面白いからやってるんだよ (笑)</p>
+
+<p><strong>ささだ</strong> 世界人類のためになりそうだと。</p>
+
+<p><strong>arton</strong> 自分がやってて面白くて、なおかつ世界人類のために役に立つんだったら、こんなに良いことは無いって感じじゃない。</p>
+
+<p><strong>ささだ</strong> で、高校では無気力症ではなくなってる？</p>
+
+<p><strong>原</strong> いや、ずっと続いてますよ、高校でも。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 少し戻るけど、僕は中学校のときに何をやってたかというと、ペニープレーンって言って、3 グラム以下のバルサで作ったゴム動力の飛行機を作ってったんです。延々と作ってた。授業中も。だから、一番後ろの席を自分の席だと言い張って。そこで、授業中にピッとバルサを曲げたりとかして、飛行機を作ってました。時々、セメダインの匂いをプーンとさせたり (笑)</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> 先生は何も言わないんですか？</p>
+
+<p><strong>原</strong> 言わなかったですね。</p>
+
+<p><strong>ささだ</strong> もうあきらめてた？</p>
+
+<p><strong>原</strong> うん。多分あきらめてた。あんまり関わらないほうがいいと思ってたんだろうね。おかしな奴と。</p>
+
+<p><strong>ささだ</strong> でも、高校とか行くためには、テストで良い点を取らないとっていうのは。</p>
+
+<p><strong>原</strong> 僕は付属中だったから、あんまり。</p>
+
+<p><strong>ささだ</strong> あ、なるほど。</p>
+
+<p><strong>原</strong> 当時、近くの中学校は公立と成田高校付属中学のどちらかで。公立は、丸刈りで、私立の方は、普通に長髪。坊主なんてありえないと。他人の頭になにをするんじゃと。物凄い嫌悪感が坊主にあって。で、付属中に行って、そのまま高校に上がったと。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>原</strong> arton さんは、そういった無気力だった時代とかはあったんですか？</p>
+
+<p><strong>arton</strong> 無気力って言うか、そうですね、やっぱり中学校、高校にかけて、特に何かしたいものは無かったから。</p>
+
+<p><strong>原</strong> 一種の無気力ですよね。</p>
+
+<p><strong>arton</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> テレビ番組とか、何やっても無駄みたいな、すれた子みたいなのが。</p>
+
+<p><strong>arton</strong> っていうか、テレビってそもそも嫌いなんだよね。だって、待たないと駄目じゃん。何が嫌って、待つのが一番嫌だからさ。だからテレビって見ないんだよね。</p>
+
+<p><strong>ささだ</strong> 待つって言うのは、番組が始まるのを待つのが嫌だから？</p>
+
+<p><strong>arton</strong> それも待たないと駄目じゃん。はっきり言って、映画は好きなわけ。映画は、まともに作ってるのが分かるから。テレビって言うのは、単に筋を人間に追わしてるだけじゃん。映画の面白さは、映画そのものにあって、物語はなんでも良いみたいな。あくまで表現を見てるわけであってさ。テレビってのはそれが無い。表現は無くてさ、ただ筋を追ってるだけでさ。だから文章で書いてあったら 3 行で読めるものを、延々 15 分掛けてやったりするわけじゃん。あれが嫌なんだよね。</p>
+
+<p><strong>ささだ</strong> へぇー。映画はちゃんと、それ以外のものを見ると。</p>
+
+<p><strong>arton</strong> そう。映画だからね。もちろん、テレビみたいな映画もあるから、それは見ないけどさ。たまに見ると寝ちゃうんだよ。物語は面白かったかも知れないけど、見てないから分からない。</p>
+
+<p><strong>原</strong> 僕は結構テレビは見る。本当だったら、全部のドラマに目を通したいんですよね。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 微妙に、ちょっとましなドラマが出てきたな、とかね。昔は、トレンディドラマの評論家でしたよ。</p>
+
+<p><strong>arton</strong> おお。</p>
+
+<h4 id="高校大学時代">高校・大学時代</h4>
+
+<p><strong>ささだ</strong> それで、中学はずっと飛行機を作っていて、高校は何を作ってるんですか (笑)</p>
+
+<p><strong>原</strong> 高校は、なにをしてたんだっけ…。記憶に無いですね、もう。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 中学校 3 年生ぐらいで、数学が面白くなって、高校はすごく数学は意識してた。</p>
+
+<p><strong>ささだ</strong> それは、数学の本を読んだり、数学の証明を自分で解いたり？</p>
+
+<p><strong>原</strong> そうそう。結構、そういう勉強の仕方は良くないんだけど、いっぺん考え始めるとずっと考えるっていう所があって。それは飛行機と一緒で、ひとつの問題を考えると、ぶっ通しで 2 週間ぐらい考えるとかね。その間、全部の授業を無視。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> ずーっと、同じことを考えてた。そういう勉強の仕方って、良くないんだけどね。休んで、色々と新しい知識を蓄えてやるのが良いやり方なんだけど、考えっぱなしみたいな。</p>
+
+<p><strong>ささだ</strong> それはもう、寝るとき以外はずっと考えてると。</p>
+
+<p><strong>原</strong> そうそう。おんなじことをずっと考えてるから、思いっきり煮詰まってるんだよね。それでもそればっかり。</p>
+
+<p><strong>ささだ</strong> 飽きないと。高校の数学の授業とかは、全然興味が無かった？ 自分でやってるんだったら。</p>
+
+<p><strong>原</strong> うん、そうですね。</p>
+
+<p><strong>ささだ</strong> なるほど。信じられないですね。ちなみに、どんな問題を考えていたか覚えてますか？</p>
+
+<p><strong>原</strong> えっとね、ひとつ覚えてるのは、円形に n 個の玉が並んでいて、同時に 1 個あるいは隣接してる 2 個の玉をとることが出来ると。で、二人で交互にとって最後にとった方が負けだとすると、先手必勝ですか、後手必勝ですかっていうのがあって。</p>
+
+<p><strong>ささだ</strong> それは何かの本に書いてあったんですか？</p>
+
+<p><strong>原</strong> これはね、『大学への数学』<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>っていう受験雑誌の懸賞問題。</p>
+
+<p><strong>ささだ</strong> へぇー。</p>
+
+<p><strong>原</strong> それはね、最後に取った方が勝ちだとすると、後手必勝なんだけど。相手が取ったところの対称のところを取ればいい。で、最後に取らせたほうが勝ちだとすると、どうなりますか、みたいなのがあって。それをずーっと考えてた。で、結局答えが分からなくて。解答が出てきたら、n によって、先手必勝だったり後手必勝だったりしますって書いてあって。そのときは愕然としましたね。こっちは、n によってどうなるか決定しようと思ってたのに、n によって色々ですっていう答えだったんだよね。</p>
+
+<p><strong>ささだ</strong> あー。n を入れたら答えが出る方程式があるかと思っていた。</p>
+
+<p><strong>原</strong> そうそう。n によって、どっちになるか出すアルゴリズムを探してた。たぶん、未解決問題。</p>
+
+<p><strong>ささだ</strong> ふーん。</p>
+
+<p><strong>原</strong> ひどい話ですよね。</p>
+
+<p><strong>arton</strong> でも、未解決じゃないですよね、きっと。n の時と、n+1 の時の 2 種類があるんじゃないのかな。</p>
+
+<p><strong>原</strong> いや、そんな単純じゃないです。n によって違うパターンが…。</p>
+
+<p><strong>arton</strong> なんだっけ。スーパーマリオブラザーズのミニゲームに花占いがあって。最後に 1 枚取った人が負けになるんだけど、あれが何かそのゲームと近い気がするんだよね。あ、違うか。1 枚か 2 枚じゃなくて、1 枚からたくさんか。そのミニゲーム集の中にあってさ。2 人で戦うわけなんだけど、花があるわけ。お互い取って行くんだよね。最後の 1 枚を引かされたほうが、ウェーって言って負けるんだよ、確か。そういうのがあるんだよ。</p>
+
+<p><strong>ささだ</strong> スーパーマリオブラザーズで？</p>
+
+<p><strong>arton</strong> DS のだから、スーパーマリオブラザーズじゃなくて、なんだっけ。<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup></p>
+
+<p><strong>原</strong> だけど、それは何個並んでるかが固定されてるわけでしょ？</p>
+
+<p><strong>arton</strong> 固定されてますね。</p>
+
+<p><strong>原</strong> それが、n によってどうなるかって言う……</p>
+
+<p><strong>arton</strong> あ、そうかそうか。</p>
+
+<p><strong>原</strong> n から先手必勝かどうなのかって言うのを出す、しらみつぶし以外のアルゴリズムが欲しかった。ひとつ、例えば n が 7 だったら、どちらかに決まってしまうわけ。でも、任意の n の時にどうなのかっていう話ですよね。本当にあの時は無駄でしたねぇ。</p>
+
+<p><strong>ささだ</strong> (笑)。じゃ、そういうのは雑誌を読んで仕入れてきては、考えて。</p>
+
+<p><strong>原</strong> そう。</p>
+
+<p><strong>ささだ</strong> で、大学も数学科に行こうと。</p>
+
+<p><strong>原</strong> うん。大学はね、理学部ってのがボンとひとつあって、数学科っていうのは無いんですよ。で、主に数学を勉強したりという但し書きが付くわけ。数学科じゃないんですよ。だから単位を生物と数学で半々ずつとって卒業とかも出来る。ルーズなところだったですね。</p>
+
+<p><strong>ささだ</strong> で、原先生は数学だけをやった？</p>
+
+<p><strong>原</strong> そうですね。数学と物理と半々ずつで卒業した他人も多い。</p>
+
+<p><strong>ささだ</strong> その頃は、授業を受けてたんですか？</p>
+
+<p><strong>原</strong> いや、よく登校拒否になってて。授業に出られなくなっちゃった。正確に言うと違うんだけどね。とにかく、出なかったですね。授業は。僕は、トポロジーを専攻しようと思ったから、トポロジーだけは 1 回だけ出て先生の顔を覚えようとして出たら、トポロジーだけ単位を落とした。</p>
+
+<p><strong>ささだ</strong> (笑)。登校拒否で、他の単位は？</p>
+
+<p><strong>原</strong> 大丈夫だった。登校拒否だけども、午前中登校拒否で、午後出られる。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> で、授業って言うのは、午前中。で、演習が午後だから、登校拒否で全部の授業聞かなかった。ただ 1 回だけ、トポロジーの授業を聞いた。</p>
+
+<p><strong>ささだ</strong> それでもやっぱり大学院で数学をやるという固い意志はあった？</p>
+
+<p><strong>原</strong> それはあった。それは他に何も出来ないみたいな感じもあるし、働きたくないなっていう考えがあるでしょ、学生だったら誰でも。</p>
+
+<h4 id="計算機とのつきあい">計算機とのつきあい</h4>
+
+<p><strong>ささだ</strong> まぁ、分からなくもないですが (笑)。計算機はいつ頃？</p>
+
+<p><strong>原</strong> 論文を書くときに TeX とか使って。</p>
+
+<p><strong>ささだ</strong> 論文を書くのは大学院？</p>
+
+<p><strong>原</strong> 大学院。そっからですね。</p>
+
+<p><strong>ささだ</strong> それは UNIX か何かの環境で？</p>
+
+<p><strong>原</strong> それはもう、MS-DOS で。PC-98。ASCII TeX ってのがあって。</p>
+
+<p><strong>ささだ</strong> それは、論文を書くために研究室においてあった？</p>
+
+<p><strong>原</strong> 数学教室の計算機室って、5 時で閉まる。VM とか VX とか。</p>
+
+<p><strong>ささだ</strong> 論文書くよりも TeX を使ったら面白いじゃないかと。</p>
+
+<p><strong>原</strong> そうそう。あと、Turbo Pascal で遊んだり。</p>
+
+<p><strong>ささだ</strong> じゃ、数学家は計算機を触っちゃいかん、という環境だと計算機を使ってる人はあまり居なかった？</p>
+
+<p><strong>原</strong> そんなことは無いですね。FM-7 で整数論の計算をした同級生が居たから。</p>
+
+<p><strong>ささだ</strong> やってる人はいたと。</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> 日経 MIX に入りだしたのもその頃？</p>
+
+<p><strong>原</strong> それは論文を書くためにエディタを使うと。当時流行ってたのは、Vz エディタ。MS-DOS 上で動くアセンブラで書かれたエディタで、マクロが搭載されていて、色々書くのがめんどくさくなってマクロ組んじゃえってなって。Vz エディタに関する会議、フォーラムみたいなのが日経 MIX にあるんで、そこに入ったっていうのが最初。</p>
+
+<p><strong>ささだ</strong> Vz のマクロ使うんだったら、AWK 使えよと。</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> それは言われたんですか？</p>
+
+<p><strong>原</strong> いや、自分でそう思った。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> だって、アセンブラに近いんですから。そのマクロが。</p>
+
+<p><strong>ささだ</strong> なるほど。でも良く知ってましたね。例えば、日経 MIX があるってことは、何も知らないと結構わからないんじゃないかな。</p>
+
+<p><strong>原</strong> ASCII かなぁ。</p>
+
+<p><strong>arton</strong> 雑誌に出てるんだよ。</p>
+
+<p><strong>ささだ</strong> あー、そっか。その頃はそういう雑誌があったのか。最近無いですよね。</p>
+
+<p><strong>原</strong> 一時期ね、パソコン雑誌は毎月十冊ぐらい買ってたんで。だって、いっぱい出るんだもん。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> なるほど。で、そっちにはまりだして。</p>
+
+<p><strong>arton</strong> それは大学院の頃ですか？</p>
+
+<p><strong>原</strong> 大学院の頃ですね。パソコン通信を始めたのはその頃で。パソコン通信っていうのは、非常に衝撃的でしたね。分からないことがあって質問すると、寄ってたかって教えてくれる。全国の人がね。その時に、知識っていうのは自分が持っている必要は無くて、他の人が持ってて、情報が交換できれば良いんだと。だから、一種自分の脳の延長だっていう感覚を持って、すごく感動したんですよね。</p>
+
+<p><strong>ささだ</strong> 今なら、Web 2.0 とか言ってそうな話ですよね。</p>
+
+<p><strong>原</strong> そう。だから、インターネット、インターネットって言ってるけど、別にインターネットじゃなくて BBS で十分だったんですね。技術のある人がいっぱい集まってる結構濃い集団だったですね。もう要らんちゅーぐらい色んなことを教えてくれるわけですよ。初心者が来るのを、手ぐすね引いて待ってるわけ。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 今、ruby-list が全然そういう感じ無いでしょ。</p>
+
+<p><strong>ささだ</strong> 教えたがりは多いですよ。</p>
+
+<p><strong>原</strong> 教えたがりは多いけども、教えてもらいに来ないじゃない。あれは、まつもとさんが悪いんだと思うんだけど。</p>
+
+<p><strong>ささだ</strong> あ、そうですか？</p>
+
+<p><strong>原</strong> 一時、まつもとさんがあんまりごちゃごちゃ書かないでくれみたいなことをどっかで言わなかったっけ？</p>
+
+<p><strong>arton</strong> あー、言ったような気がする。でも、もしそれだけが事実だったら、本当に馬鹿なことを訊く初心者なんて、過去のログを見るはずが無いんだから。やっぱりそれだけじゃ無いんじゃないの。まず、ML っていうのが、もう駄目なんじゃないのかなぁ。初心者は ML に来ないもん。OKWave とかさ、ああ言う所で訊くんじゃないの。宿題が出たんですけど、1+1 はどう書けばいいんですか、とか。</p>
+
+<p><strong>ささだ</strong> あと 2 ちゃんねるとか。</p>
+
+<p><strong>arton</strong> 2 ちゃんねるもありそうだね。明日の朝までに 1+2 のやり方を知りたいんです、って。</p>
+
+<p><strong>原</strong> BBS でネットワークの面白さって十分伝わって、例えば論争とか起こるわけね。ところが当時 BBS 上で論争が起こるということ自体が一般の人に言っても伝わらなかった。例えば言葉で傷ついたり、激怒したりするということがネット上で起こるということを精神科の先生に話をしたことがあったんだけど笑って相手にされなかった。勝手に思い込んでるだけじゃないのって。つまりアイデンティティの一部がネットの上に載るって言うことが、当時は一般の人には想像できなかった。今はもう当たり前のように、誹謗中傷という言葉が使われるけど、ネットの会話で人格の一部を否定されるということが一般には全く知られてなかった。</p>
+
+<p><strong>arton</strong> それはあんまりネットは関係ないな。雑誌とかでもそうだけど、読者の声なんかでも喧嘩になることがあるよね。『噂の真相<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>』なんか平気でやったり。ああいうのを見てると侮辱されてムキになって否定してくるやつなんて、別に活字でも見られたことであって。</p>
+
+<p><strong>原</strong> たしかにね。昔、有名な作家同士が月刊誌上で口論したりなんか。</p>
+
+<p><strong>arton</strong> あ、そういうのもありますね。『噂の真相』は投稿欄で素人同士が口論やって。</p>
+
+<p><strong>原</strong> (笑) それでもまあ、編集者は喜んでるわけですよね。</p>
+
+<p><strong>ささだ</strong> ちなみに出身は京大ですよね？京大だと計算機というと京大マイコンクラブとかが有名だと思うんですけど、そういうのには入らなかったんですか？</p>
+
+<p><strong>原</strong> それはもう全然。あの人たちは本当に本格的だから、私なんぞが出る感じではない。</p>
+
+<p><strong>ささだ</strong> MIX の会員の議長は本格的じゃないんですか (笑)</p>
+
+<p><strong>原</strong> あ、ちなみに日経MIXの議長の業務というのは毎月の議論のダイジェストをまとめる。それが唯一の義務だったんです。ダイジェストは手作業でまとめるのだけど、足立さんは、それこそ AWK の出番だということで digest.awk というのを作って自動化してしまった。これが議長連に流行った。唯一の業務が自動化されて問題になったりして。実はそれが blade の起源なんです。</p>
+
+<p><strong>ささだ</strong> 重要そうなところをピックアップして、1 行にだすみたいな。それを AWK プログラムで作った、と。ちなみに議長やりだしたのは大学院の時？</p>
+
+<p><strong>原</strong> そう。</p>
+
+<p><strong>ささだ</strong> じゃ、デビューしてすぐに議長やれっていう？ 暇な学生だろみたいな感じで？(笑)<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup></p>
+
+<p><strong>原</strong> そうそうそう。その中で僕は論文を書いたの。あの BBS の中に AWK のコードを書くと。で、その掲載形式<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>っていうのを決めたんですよ。点線で山 (^) がある。ここが始まりで、点線で $ がこうある。その間にコードがある。で、後で Ruby のプログラムを書くと、そこだけ抽出されて出てくるみたいなプログラムを作ろうと決まったので。それを決めた時に、点線はコードの掲載形式の一部なのか、記事の一部なのか、ていうのが論争になった。</p>
+
+<p><strong>ささだ</strong> バイクシェルフ問題<sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>みたいな。</p>
+
+<p><strong>原</strong> 何ですかそれ？</p>
+
+<p><strong>ささだ</strong> バイク小屋の屋根の色を決めるっていう、しょうもないことを論争するって言う。</p>
+
+<p><strong>原</strong> あ、そうなんだ (笑) それよりもっと深い論争だったんですけど。僕は、点線は外だ。内側じゃないということを切々と書いた長い文章を書いて。それを書いて認められたんですよ。素晴らしいと。あんたはこれから議長だと。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> それ、プログラミングがどうとか、そういう話では……。</p>
+
+<p><strong>原</strong> ではないです。点線が外か内かっていう認識だけの話。</p>
+
+<p><strong>ささだ</strong> おー。でも人を説き伏せるのは難しいですよね。なるほど。</p>
+
+<p><strong>原</strong> ……こんな話でいいんですかね？ (笑)</p>
+
+<p><strong>ささだ</strong> こんな話が良いんです (笑)</p>
+
+<p><strong>arton</strong> それがるびまのインタビュー。</p>
+
+<p><strong>ささだ</strong> 点線で、いつの間にか Ruby の偉い人に。</p>
+
+<p><strong>原</strong> そうなんです。点線が内側なのか、外側なのか。</p>
+
+<p><strong>arton</strong> なぜ外側なんですか？いや、僕もそう思うんだけど。</p>
+
+<p><strong>原</strong> 何でだったかな。特別扱いすべきものは、きちんと特別扱いしようみたいな方式です。Ruby でいうと、nil を普通のオブジェクト扱いするのに、僕は反対なんですよ。</p>
+
+<p><strong>all</strong> おおー。</p>
+
+<p><strong>原</strong> ハッシュで、値として nil を与えると要素を delete するっていう機能が昔はあったんですけど。それは AWK 譲りかな。</p>
+
+<p><strong>ささだ</strong> JavaScript でいう undefined みたいなものですよね。</p>
+
+<p><strong>原</strong> そうそう。nil は特別だから、そういうことが起こっても良いと。nil を代入するんじゃなくて、nil が来たから、全然違う動作になってしまう。そういうことがあるべきだと言うのが、僕の主張です。何か特別なものがあっても良いという。すべては Object だから平等に扱うべし、みたいな考え方は、良くない。なぜ良くないかと言うと、特別なものを内部に取り込んでしまうと、新たにまた別に特別なものがどうしても必要とされてしまうのではないかと。</p>
+
+<p><strong>ささだ</strong> 今、無いは無いでやってるけど、それは無理をしているはずだ？</p>
+
+<p><strong>原</strong> そうです。</p>
+
+<p><strong>ささだ</strong> ま、delete は delete というメソッドがあるしという。</p>
+
+<p><strong>arton</strong> でも特別なものを取り込むと、もっと特別なものが新たに出てくるから、発展するよって話じゃないんですか？</p>
+
+<p><strong>原</strong> いや、発展しないので、結局元に戻ってしまう。</p>
+
+<p><strong>ささだ</strong> 発散しちゃうとかそういう。</p>
+
+<p><strong>arton</strong> じゃ、特別なものは取り込まないほうが良いと言うわけですか。</p>
+
+<p><strong>原</strong> そうです。特別なものは特別なままにしておく。</p>
+
+<p><strong>arton</strong> ああ、そうかそうか。</p>
+
+<p><strong>原</strong> 特別扱いすべきものを……。</p>
+
+<p><strong>arton</strong> 無理に取り込むって言うのは、意味が無いと。</p>
+
+<p><strong>ささだ</strong> nil を変数に代入したら、それは変数の消滅だ、とか？</p>
+
+<p><strong>原</strong> そうそう。そういうことの方が良い。</p>
+
+<p><strong>ささだ</strong> それは華麗にスルーされたんでしょ？</p>
+
+<p><strong>原</strong> まぁ何か、知らないうちに。</p>
+
+<p><strong>ささだ</strong> うやむやに？</p>
+
+<p><strong>原</strong> 時々あるんですよ、Ruby には。僕に断りも無く話が違う方向へ進んでしまうことがね。</p>
+
+<p><strong>ささだ</strong> いやそれは誰に断りも無く変えますよね (笑) この間、私とまつもとさんのインタビューをやったら、Ruby の仕様は密室で決まるとか書かれちゃって。</p>
+
+<p><strong>原</strong> (笑)</p>
+
+<p><strong>arton</strong> 密室どころの騒ぎじゃないよね。</p>
+
+<p><strong>ささだ</strong> まつもとさんの脳内で決まってると言う。往々にして。</p>
+
+<p><strong>原</strong> いや、あれなんかね、みんなで話し合って決めてるように、一見見えるところが罪深いんだよね。</p>
+
+<p><strong>ささだ</strong> やっぱりそう見えてるんですかね。Ruby の仕様製作委員会みたいなのがあるような感じが。</p>
+
+<p><strong>原</strong> みんなで色々な意見出し合って、民主的に決めるわけじゃないけど、一番良い意見が採用される、みたいな。</p>
+
+<p><strong>arton</strong> そういう意見じゃなくて、まつもとさんが単に、それが良いなと思った仕様になる。</p>
+
+<p><strong>ささだ</strong> まつもとさんが良いと思った意見が一番良い、ですよね。ま、それはそれで良いんじゃないかと言う気がしますけどね。</p>
+
+<p><strong>原</strong> ま、良いんですけど。全然問題ないでしょ。</p>
+
+<p><strong>ささだ</strong> ま、点線は特別扱いするべきだと。内と外って言う表現が良く分からなかったんですけど。</p>
+
+<p><strong>原</strong> いや、別に単純な意味ですよ。カプセルがあったとすると、カプセルの皮はカプセルに属するのか、外界に属するのかっていう。</p>
+
+<p><strong>ささだ</strong> なるほど。で、ユーザーが見たいのは内側なんだから、外側はいらないじゃんとか。</p>
+
+<p><strong>原</strong> うん……。詳しい話は忘れちゃったけど。</p>
+
+<p><strong>arton</strong> カプセルはどっちに属するんだろう？外側に属するの？</p>
+
+<p><strong>ささだ</strong> 薬だったらカプセルにそういう成分が。</p>
+
+<p><strong>arton</strong> でも欲しいのは、成分じゃん。外側の世界とインターフェースするためにあるんだから、外側にあるんじゃないかな。</p>
+
+<p><strong>ささだ</strong> ああ、なるほど。</p>
+
+<p><strong>arton</strong> 僕が内側と外側を、実は全然勘違いしているような気がするけど、ドキュメントの中に、スクリプトが埋めてあって、区別するために点々がある。その点々は、抽出したスクリプトの側なのか、それともスクリプトを取った後のメッセージのどっちに残るべきかというと、そりゃメッセージに残るだろうな。こういうスクリプトがありましたよって、後で位置もわかるし。</p>
+
+<p><strong>原</strong> そういう意味ですよ。例えば、点線はコードの一部じゃないんだから、当然外だと思うでしょ？</p>
+
+<p><strong>arton</strong> 思いますね。</p>
+
+<p><strong>原</strong> 当時、awk 会議は、スクリプト側に属するべきだというのが非常に強く……、あ、思い出した。違うわ。点線じゃなかったんですよ。シャープだ。# だったんだ。区切りが。</p>
+
+<p><strong>arton</strong> おお。</p>
+
+<p><strong>原</strong> で、# の並び最後に、^ が付くと始まりで、$ が付くと終わり。# の部分はコードの一部になってる。</p>
+
+<p><strong>ささだ</strong> valid な AWK スクリプトであると。</p>
+
+<p><strong>原</strong> うん。どっちでもいいから、便利だって言うので、じゃそれにしようって話だからね。その時に僕は駄目だと。エラーになるようなものを境界にするべきだと、説得したのよ。</p>
+
+<p><strong>arton</strong> おおー。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>arton</strong> それはそうだよね。スクリプトに全部一々そんなくっだらないものが埋め込まれてたら邪魔でしょうがないよね。</p>
+
+<p><strong>原</strong> でも、安全ではあるよね。</p>
+
+<p><strong>ささだ</strong> 何かそういうスクリプトが埋め込まれているスクリプトが作れないという制約は付きますよね。ま、でもどうでもいいですよね (笑)</p>
+
+<p><strong>原</strong> どうでもいいね (笑) それを先に言われちゃうと。僕が先に言おうとしてたのに (笑)</p>
+
+<p><strong>arton</strong> いやでもさ、便利なスクリプトってのを配る時にさ、こいつにバグがあって、変なコメントが前後に入るって言われるかどうかって、瀬戸際じゃん。</p>
+
+<p><strong>原</strong> ……これ今何の話ですか？</p>
+
+<p><strong>ささだ</strong> 生い立ちですよ。大学院で計算機にズブズブとはまって行った様子を。</p>
+
+<p><strong>arton</strong> 計算機って言うか、日経 MIX。</p>
+
+<p><strong>原</strong> かなり awk 会議に出てた頃は、1 バイトでも短いコードを書くっていう競争があって。</p>
+
+<p><strong>ささだ</strong> 今で言う golf ですね。それでもう AWK マンセーみたいな感じ？</p>
+
+<p><strong>原</strong> そうでもないんだけど。AWK が一番気に入ったのは、『プログラミング言語 AWK』っていう本が良かった。だから、スクリプト言語自体、初めて出会った。スクリプト言語の AWK を初めて見た時に、小さなロボットに見えたんですよね。自動的に動くね。</p>
+
+<p><strong>ささだ</strong> オートマトン。</p>
+
+<p><strong>原</strong> うん、そうそう。すごく魅力的だった。</p>
+
+<p><strong>ささだ</strong> その前に、C 言語とか Pascal とかを見ていたわけではない？</p>
+
+<p><strong>原</strong> うん。その時は無かったんですよ。何でだったんだろうね。</p>
+
+<p><strong>ささだ</strong> ちなみに、その頃数学の問題とかを解いてたんですか？</p>
+
+<p><strong>原</strong> うん。時々。</p>
+
+<p><strong>ささだ</strong> メインはパソコン通信？</p>
+
+<p><strong>原</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> で、数学で学位を取られたんですよね。</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> 数学で学位をとるって、なんかとんでもないことのように思えちゃうんですけど。</p>
+
+<p><strong>原</strong> あの大学は結構、いろんな学生が居て。偉い人も居れば、そうでない人も居るわけ。で、教員のほうも、体裁は適当で良いとか言って。</p>
+
+<p><strong>ささだ</strong> えー (笑)</p>
+
+<p><strong>原</strong> あいつ、めんどくさいから、みたいな (笑)</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 皆さん自分の腕一本でやってきた自負があるから、肩書きを軽視する。</p>
+
+<p><strong>ささだ</strong> このまま居られても困るしっていう。修士までは聞く話ではありますが、博士でもあるんですか。</p>
+
+<p><strong>原</strong> 何も困らないですよね (笑)</p>
+
+<p><strong>ささだ</strong> えー (笑)</p>
+
+<p><strong>原</strong> 権威が下がるって言ったって。10 人居て、1 人 2 人がんばってもらえればそれでいいわけでしょ。</p>
+
+<p><strong>ささだ</strong> ベンチャーみたいな。</p>
+
+<p><strong>原</strong> ろくでもないのが居るかもしれないけど、偉い人が確実に居る。</p>
+
+<p><strong>ささだ</strong> で、出てからすぐこちらに？</p>
+
+<p><strong>原</strong> しばらくは京都で非常勤講師をしてた。流しの数学教師で。非常勤講師で結構食えるんですね。</p>
+
+<p><strong>ささだ</strong> 流しのプログラマーという人も居ましたが。</p>
+
+<p><strong>原</strong> 非常勤講師で、京大と同志社と立命館と、大阪工大と。結構バイトでも良い給料くれるし、休んでも給料くれる。</p>
+
+<p><strong>ささだ</strong> えー？</p>
+
+<p><strong>原</strong> 夏休みにも給料くれるんですよ。場所によりますけど。それは同志社。だから生活できる。</p>
+
+<p><strong>ささだ</strong> 最近だとすごい厳しいと言う話ですが。</p>
+
+<p><strong>原</strong> 多分そうでしょうね。それは昔の話で。まぁ、ブラブラしてたんですね。それで、そろそろどっかに出たほうがいいんじゃないのって。</p>
+
+<p><strong>ささだ</strong> で、こちらに移られて。数学の先生という形で。</p>
+
+<p><strong>原</strong> いや、教養の先生みたいな感じで。1、2 年、あるいは 3 年ぐらいを教える。大学院でも教えてるかな。数学の論文で卒論書いたり、修論書いたりする学生は居ないんだよね。そういうのを書きたいって言ったら、受けなきゃいけないっていう噂もあるんだけど、僕のところに言ってきた学生さんは居ない。</p>
+
+<h3 id="仕事に関する話題">仕事に関する話題</h3>
+
+<h4 id="普段のお仕事">普段のお仕事</h4>
+
+<p><strong>ささだ</strong> 普段、仕事って何をしてるんですか。</p>
+
+<p><strong>原</strong> まぁ、授業をしたり。</p>
+
+<p><strong>ささだ</strong> 授業。教養の先生として。授業してない時間は。授業の準備？</p>
+
+<p><strong>原</strong> うーん、それも良く分からない。</p>
+
+<p><strong>ささだ</strong> 雑用がどんどん振ってくる感じ？</p>
+
+<p><strong>原</strong> 雑用、結構あります。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>原</strong> 結構、数学で遊んでるかな。</p>
+
+<p><strong>ささだ</strong> 研究してると。</p>
+
+<p><strong>原</strong> 研究とはいえないんじゃないかな。『博士の愛した数式』<sup id="fnref:20"><a href="#fn:20" class="footnote">20</a></sup>状態なのかね。読んだことあります？</p>
+
+<p><strong>ささだ</strong> 私は、映画があるぐらいしか知らない。</p>
+
+<p><strong>原</strong> あれはね、新しい数学をどんどん作っていこうっていう状態じゃなくなっているわけねもう、博士は。楽しんじゃってるわけだよね。新しいもの作るって言うよりは。新しい物を作れば、それはそれで楽しいんだけど。そういう状態。</p>
+
+<p><strong>ささだ</strong> 愛でるって言うやつ？</p>
+
+<p><strong>原</strong> そんな感じ。</p>
+
+<p><strong>arton</strong> 博士って、忘れやすくなってるから、次々と忘れて、また新しいものだと思って愛でるっていうのは無い？</p>
+
+<p><strong>原</strong> それもちょっとある。</p>
+
+<p><strong>ささだ</strong> 原先生は忘れてるわけじゃない？ (笑)</p>
+
+<p><strong>原</strong> 僕も忘れてるんですよ (笑)</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> で、話し戻りますけど、Ruby の良い所はね、僕は物凄く忘れっぽいんですよ。だけど、3 日前のコードは他人の書いたコードに見えるって言うかな。</p>
+
+<p><strong>ささだ</strong> 言いますよ。</p>
+
+<p><strong>原</strong> 僕はそんな感じなんですよ。だから、前のコードに、もう一度復帰できるのは、僕は Ruby は非常にしやすいと思ってるわけ。昔のことは思い出しやすいっていうか。あるいは、狭い範囲だけ思い出せれば十分だみたいな。</p>
+
+<p><strong>arton</strong> ああー。</p>
+
+<p><strong>原</strong> モジュール化されているとか。そういうスクリプトになりやすいんじゃないかな、Ruby は。</p>
+
+<p><strong>arton</strong> なるほど。</p>
+
+<p><strong>原</strong> 僕は、極端に記憶力が悪くて、ヤバイぐらいなんですね。例えば、先週どこまで授業やったか忘れちゃう。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> ずっとね、粋がって授業のメモは取らないみたいなことをやってたんだけど、それだと先週やったのと同じのをやったりするんですよ。</p>
+
+<p><strong>ささだ</strong> 授業でやる内容は覚えてる？</p>
+
+<p><strong>原</strong> うん。授業の内容は覚えてるけど、どこまでやったかは忘れてしまう。で、それは原先生、ちゃんとメモを取らないとだめだよって怒られて。で、メモを取るようになった。それで、同じことの繰り返しは無くなったんですよ。それに気付いたのは、ここ 10 年ぐらいかな。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> ところがね、ノートでどこまでやったって書いたのは良いんだけど、後で 1 週間後に見返したときにね、それを書いた記憶が無いのね。なんか、そこに書いてある文字の筆跡も、自分のじゃないような気がする。誰だ僕のノートにいたずら書きしたのは！</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> それぐらい酷いんだよね。それぐらい極端に記憶力が無いんだよね。ハンディキャップがある人でも、Ruby は使えると。前の自分に戻してくれるような気がするんですけどね。人に優しいっていうかね、ハンディキャップのある人にも優しい。どうですか、この話。</p>
+
+<p><strong>ささだ</strong> 私も忘れっぽいんですが、自分の書いた Ruby スクリプトを忘れると、もう一から読んでる気がしますね。思い出しやすいかどうかはパッとわかんないな。</p>
+
+<p><strong>原</strong> えっと、何の話でしたっけ。</p>
+
+<p><strong>ささだ</strong> 普段の仕事。</p>
+
+<p><strong>原</strong> あ、普段の仕事。ま、授業したり……。</p>
+
+<p><strong>ささだ</strong> 授業したり、忘れたり、授業したり。</p>
+
+<p><strong>原</strong> うん。あと学生が飛び込んでくるので、相手をしたり。</p>
+
+<p><strong>arton</strong> 何しに来るの？</p>
+
+<p><strong>原</strong> 数学の話を訊きにくる。分からないことがあるんですけどって言うんで、相手をする。</p>
+
+<p><strong>arton</strong> 飛込みが出来るのか。</p>
+
+<p><strong>原</strong> 自分の学生っていうのが居ないから、みんな飛び込む。</p>
+
+<h4 id="大学での-ruby">大学での Ruby</h4>
+
+<p><strong>ささだ</strong> 今は Ruby にはまって。</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> 大学でも Ruby を。</p>
+
+<p><strong>原</strong> 意外にも、僕はね、この大学では Ruby とかやるってことは隠してるわけ。</p>
+
+<p><strong>ささだ</strong> 隠してる！</p>
+
+<p><strong>原</strong> だから知らない。みんな。知ってる人は知ってるけど。もしそういうことが出来るって分かっちゃうと、「計算機実習 2」を持てとか言われる。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>原</strong> だから内緒にしてるわけ。数学の先生は、コンピュータ苦手だからっていう印象をみんな持ってるので、それはそーっとしてるわけ。</p>
+
+<p><strong>ささだ</strong> なるほど (笑) こんなに出来る人が居るのに。でも、ばれると情報基盤センターとかそういうのをやれとか言われますよね。情報系の先生は結構やれって言われてるみたいで。</p>
+
+<p><strong>原</strong> そうそう。それって大変ですよね。</p>
+
+<p><strong>arton</strong> 何なの、情報基盤センターって。</p>
+
+<p><strong>ささだ</strong> 要するに、学生用の計算機。大学のネットワークを管理したりとか。で、そういうに関わっちゃうと、大学のメール管理をして、さもいかに spam を外すかとかそういう研究とは関係ない話で、時間ばっか取られるって言う。良く聞く話ですよね。</p>
+
+<p><strong>arton</strong> なるほど。</p>
+
+<p><strong>ささだ</strong> そういう雑務は特に無いと。それは素晴らしい。</p>
+
+<p><strong>原</strong> 最近、e ラーニングやれとか言ってたね。</p>
+
+<p><strong>ささだ</strong> e ラーニングは、何かの方針があって、その一環で？</p>
+
+<p><strong>原</strong> そうそう。で、Rails で e ラーニングっぽいものを作ったりとか。</p>
+
+<p><strong>ささだ</strong> え、それを作れって言われたんですか？</p>
+
+<p><strong>原</strong> いやいや、何かやれっていうから、じゃあって。</p>
+
+<p><strong>ささだ</strong> バレちゃうじゃないですか。自分が作ったって言ったら。</p>
+
+<p><strong>原</strong> そうね。だから僕が作ったんじゃないってことにする。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<h4 id="blede-について">blede について</h4>
+
+<p><strong>ささだ</strong> blade の話は聞きたい人が多いと思うので、ちょっと聞きたいんですけど。blade 作り出したのは、AWK の移植だっていう話でしたよね。ここが特徴だとかありますか。</p>
+
+<p><strong>原</strong> 非常に泥臭く作ってるだけなんで。例えば、最初に引用部分があると、それを飛ばして最初の言葉が出てきて、それを拾ってタイトルみたいにするわけですよね。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>ささだ</strong> 例えばまつもとさんの引用って、なんか変じゃないですか。バーティカルバー (</td>
+      <td>) つかって引用してたりとか。それはもう、そういうルールをつけてとか。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>原</strong> うん。で、実際に出来上がったものを見て、これはまずいなと思ったらどんどん正規表現を書き換えて。正規表現が蓄積になっているという。</p>
+
+<p><strong>ささだ</strong> やっぱ、blade の一番難しいところは、まとめを 1 行取ってくるところになるんですかね。</p>
+
+<p><strong>原</strong> 僕の発明は、好き嫌いあるんですけど、インデントの圧縮。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> これ、分かりますかね。これ普通どうやるかというと、こっから斜めにダダダダダっとなるじゃないですか。これがならないんです。</p>
+
+<p><strong>arton</strong> なるほど。</p>
+
+<p><strong>ささだ</strong> あー、Thunderbird で見てると、例えば最近の M17N の議論とか、大変なことになってますね。全然タイトルが見えないという状態になっているという。</p>
+
+<p><strong>原</strong> そう。</p>
+
+<p><strong>ささだ</strong> それは、ある一定を超えるとツリーにしないっていうことですか。</p>
+
+<p><strong>原</strong> 違います。ツリー構造の情報は全部現れつつ……。</p>
+
+<p><strong>ささだ</strong> 表示はしない？</p>
+
+<p><strong>原</strong> いや、これを見れば、ツリー構造は分かるんです。</p>
+
+<p><strong>ささだ</strong> え？</p>
+
+<p><strong>原</strong> これは、これへのコメントなんですよ。33516 は、33515 へのリプライなのね<sup id="fnref:21"><a href="#fn:21" class="footnote">21</a></sup>。それから、33517 は、やっぱりこれへのリプライ。で、これはこれへのリプライ。これはこれへのリプライ。分かります？
+<img src="/images/0023-Hotlinks/hara02.jpg" alt="hara02.jpg" /></p>
+
+<p><strong>ささだ</strong> あー。読めば分かると。</p>
+
+<p><strong>原</strong> これは僕の発明。特許取れる。</p>
+
+<p><strong>arton</strong> ネストしないで、そのままつける。</p>
+
+<p><strong>ささだ</strong> 情報量を落とさずに減らせると。</p>
+
+<p><strong>原</strong> そう。圧縮してるわけ。気付いて頂いて無かったんですか？</p>
+
+<p><strong>arton</strong> その見方はしたことが無かった。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>arton</strong> もっと、ここのボタンを押すとこんな便利なことがあるっていうのを、ガンガン強くアピールするべきだよね。サムネイル表示したりしてさ。</p>
+
+<p><strong>ささだ</strong> サムネイル表示？</p>
+
+<p><strong>arton</strong> ここにマウス持ってくじゃん。すると、[thread] とか一言でてくるじゃん。あれ何だかよくわかんないじゃん。そうじゃなくて、こういう表示になるっていうサムネイルが出てくるようになってる。</p>
+
+<p><strong>原</strong> ああ、なるほど。</p>
+
+<p><strong>arton</strong> で、w3m つかってるひとは、そんな変なのを見なくて済むから、文句たれないし、IE とか使ってる人は、見て「あーこうなるのか。便利だな」って黙って使ってくれるから嬉しい。八方丸く収まっていいんじゃないかな。</p>
+
+<p><strong>ささだ</strong> じゃ、これは是非。</p>
+
+<p><strong>原</strong> あと、意外な工夫があるんですけど。これをね、スクロールさせるとね、動くの。</p>
+
+<p><strong>ささだ</strong> それは気が付いてました。上のナビゲーションバーが付いてくると……。うっとおしいとか思った (笑)</p>
+
+<p><strong>原</strong> これ、ちょっとずれるんだよね、一瞬ね。これが、何ていうの？ かわいい？</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> いかにもループさせてます、みたいな。ループを早くすると、分からなくなるわけ。それをちょっと長めにとってあるわけですよ。</p>
+
+<p><strong>ささだ</strong> これワザとなんですか (笑)</p>
+
+<p><strong>原</strong> ワザとなんですよ。だから、これを速くしたら、ここに止まって見えるわけですよ。それじゃ、それはねぇ、そういう読者を甘やかすようなことは良くない (笑)</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>原</strong> 一生懸命、コンピュータはループしてる。そこにリソース使ってるんですよ。そこに僕の気持ちが入ってるわけ。</p>
+
+<p><strong>ささだ</strong> 健気に追っかけていく感じが (笑)</p>
+
+<p><strong>原</strong> そうそう。そういうこと。それがかわいいっていう意味なんです。</p>
+
+<p><strong>ささだ</strong> すげー (笑)</p>
+
+<p><strong>arton</strong> そういう意味で、Ruby は遅えーっていう人が居る (笑)</p>
+
+<p><strong>ささだ</strong> 深いですね、これは (笑)</p>
+
+<p><strong>原</strong> 言う機会があってうれしい。</p>
+
+<p><strong>ささだ</strong> ちなみに、以前までは 1.1 で動いているという噂を聞いてたんですけど。</p>
+
+<p><strong>原</strong> 長い間、1.1 でしたね。</p>
+
+<p><strong>ささだ</strong> おー。</p>
+
+<p><strong>原</strong> 部分的に 1.1 だった。</p>
+
+<p><strong>ささだ</strong> じゃ、部分的ってことは、いくつかのシステムを統合したものなんですか？</p>
+
+<p><strong>原</strong> うん。Ruby が 3 つぐらい入ってて。部分的に、それぞれ違う Ruby で動いてたんです。</p>
+
+<p><strong>ささだ</strong> え、何でですかそれは。</p>
+
+<p><strong>原</strong> え、何でって言うか、めんどくさかったわけですよ。昔の奴をね、動くかどうかチェックするのとか。動いているところは、そのままで。新しい機能を作ったら、それは最新の Ruby で作る。</p>
+
+<p><strong>ささだ</strong> ちなみに、どれくらいのコンポーネントでやってるんですか。</p>
+
+<p><strong>原</strong> 結構大したことないよね。</p>
+
+<p><strong>ささだ</strong> えっと、メールをパーズする部分と、メールを表示する部分と、解析する部分とかですか？</p>
+
+<p><strong>原</strong> そうですね。で、更新が、ツリーの作り直しが、1 時間に 1 回かな。</p>
+
+<p><strong>ささだ</strong> あー。</p>
+
+<p><strong>原</strong> リアルタイムじゃない。</p>
+
+<p><strong>ささだ</strong> それは、cron か何かで。</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> そうだったんだ。これは静的 HTML ？</p>
+
+<p><strong>原</strong> えーっと、ここは静的。こっちは動的。</p>
+
+<p><strong>ささだ</strong> バックエンドのデータベースは、何を使ってるんですか？</p>
+
+<p><strong>原</strong> えっと、プレーンテキスト。</p>
+
+<p><strong>ささだ</strong> おー。</p>
+
+<p><strong>原</strong> 違う違う。ごめん。元々組み込みの DBM です。</p>
+
+<p><strong>ささだ</strong> おー。それを未だに。</p>
+
+<p><strong>原</strong> 未だに。</p>
+
+<p><strong>ささだ</strong> 検索ってありますよね。あれは何で？</p>
+
+<p><strong>原</strong> 検索は Namazu 。</p>
+
+<p><strong>ささだ</strong> じゃ、Namazu にメールを食わせてるところもあると。</p>
+
+<p><strong>原</strong> そうです。で、これを www.ruby-lang.org に収容するって話がまつもとさんから来たんで、是非僕もそうしたいって言ったんだけども、めんどくさくて。コンポーネントが分散していて。</p>
+
+<p><strong>ささだ</strong> そっか。だからリリースできないっていう。</p>
+
+<p><strong>原</strong> そうなんです。</p>
+
+<p><strong>ささだ</strong> 使い方を書くのもめんどくさいし。ていうか、今出来ますか？ 自分で。</p>
+
+<p><strong>原</strong> 出来ますよ。だって、何度かコンピュータ飛んでますから。</p>
+
+<p><strong>ささだ</strong> なるほど。データは飛ばなかった？</p>
+
+<p><strong>原</strong> データは飛んでます。全部作り直ししてる。</p>
+
+<p><strong>ささだ</strong> 元データはあったんですね。</p>
+
+<p><strong>原</strong> 元データはメールだけですから。</p>
+
+<p><strong>ささだ</strong> メールのデータは飛ばなかった？</p>
+
+<p><strong>原</strong> 飛ばなかった。だから、困るのは時々「僕のメールを削除してくれ」というのが来て、削除するんだけど。</p>
+
+<p><strong>ささだ</strong> するんですか。</p>
+
+<p><strong>原</strong> うん、します。何も考えずにすぐ削除。</p>
+
+<p><strong>ささだ</strong> めんどくさいから。</p>
+
+<p><strong>原</strong> うん。だけど、それはシステムがリプレースされると、復活したりする (笑)</p>
+
+<p><strong>ささだ</strong> まぁ、永久に削除するとは言ってないですしね。ちなみに、これを追加してくれって言ったら追加してくれるんですか？</p>
+
+<p><strong>原</strong> 例えばどういう？</p>
+
+<p><strong>ささだ</strong> なんだろう。Ruby 関係だと……、Ruby の会のメーリングリストとか。</p>
+
+<p><strong>原</strong> あ、もちろん全然 OK ですよ。</p>
+
+<p><strong>ささだ</strong> いま、w3ml っていう Ruby のアーカイバでやってたりするんですけど、blade でやってくれるんであれば。</p>
+
+<p><strong>原</strong> 過去メールの束があれば、それをもらえれば。</p>
+
+<p><strong>ささだ</strong> おお、素晴らしい。っていうか、haskell-jp とかやってましたよね。</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> なるほど。blade で他に聞くことはありましたっけ？</p>
+
+<p><strong>arton</strong> 新潟県中越地震<sup id="fnref:22"><a href="#fn:22" class="footnote">22</a></sup>で止まった話が聞きたい。</p>
+
+<p><strong>原</strong> 命をかけてね、復旧させた。</p>
+
+<p><strong>ささだ</strong> 新潟の地震があって、それで blade が止まった時に、余震が続く中、命をかけて。</p>
+
+<p><strong>原</strong> みんな、建物に近づかないとか言ってたときに。</p>
+
+<p><strong>ささだ</strong> blade が止まっちゃまずいという。</p>
+
+<p><strong>原</strong> そう。死んでもラッパを離しませんでした、って。</p>
+
+<p><strong>ささだ</strong> 外のネットワークは大丈夫だったんですか？</p>
+
+<p><strong>原</strong> ネットワークは大丈夫だったんですけど、電気が来てなかった (笑)</p>
+
+<p><strong>ささだ</strong> じゃあ、命がけでスイッチを入れても、電気が入らない。</p>
+
+<p><strong>原</strong> そうそう。最初はね。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<h4 id="rational">Rational</h4>
+
+<p><strong>ささだ</strong> Rational とかその辺の Ruby の数学関係なんですが、これはほとんど、石塚さんと原先生でまとめている？</p>
+
+<p><strong>原</strong> ほとんどっていうか、基本的には石塚さんが全部やっている。</p>
+
+<p><strong>ささだ</strong> で、原先生の方でベリファイというか。これは良い、これは悪いと。</p>
+
+<p><strong>原</strong> そんなにもやってない。石塚さんは優秀なんで、僕がどうのこうのってこともない。僕は僕で、適当にやってる。</p>
+
+<p><strong>ささだ</strong> ruby-math は、全然流れてなくて。</p>
+
+<p><strong>原</strong> あれは単に、みんなでサロン的に。</p>
+
+<p><strong>arton</strong> ruby-math って動いてるの？見たこと無いからわかんないんだけどさ。
+<img src="/images/0023-Hotlinks/hara_arton01.jpg" alt="hara_arton01.jpg" /></p>
+
+<p><strong>ささだ</strong> 最近、ずっと無いですよね。ちょっと前は結構あったんですけど。</p>
+
+<p><strong>原</strong> 結局、僕は「読み書き Ruby」って思ってるんですよね。そろばんの代わりに Ruby 使えるだろと。中学生ぐらいの数学の勉強に Ruby が使えるようになって欲しいと、ささやかにそう思ってるだけなんですよね。だから、Rational が組み込みじゃないというのは、よろしくないんで。</p>
+
+<p><strong>ささだ</strong> 組み込みと言うか、まず C 言語化があって。で、リテラルで書けるとかそういう。</p>
+
+<p><strong>原</strong> うん。本当はリテラルでかけると一番いいんだけど。リテラル書く方法が見つからないんで。小学生が良く使うでしょ、分数って。お父さんお母さんが、子どもに、こういう風にすれば計算できますよって教えるのに、Ruby が使えないって言うことがね。これはとても悲しい。だから、そういう基本的なところを。なぜかあまり有理数ってみんな使わないみたいなんだけど、確かに学校教育以外で中々使わないみたいなんだけど、使うようになって欲しい。</p>
+
+<p><strong>ささだ</strong> なんか、ふなばさんが今日のメールで、mathn を基本で有効にした nuby というのを作ったって、ruby-dev にメールがありましたけど。</p>
+
+<p><strong>原</strong> えっ、mathn をどうするって？</p>
+
+<p><strong>ささだ</strong> デフォルトで有効にして。// がいわゆる整数のdivだっていうバージョンを作って。何これって。</p>
+
+<p><strong>原</strong> へぇー。えらいこっちゃ、それは。それ、大論争があったのを知ってます？ / を整数の除算じゃなくて、有理数を出しましょうっていう。</p>
+
+<p><strong>ささだ</strong> 出されると、非常に大問題が起こりそうな気がしますよね。</p>
+
+<p><strong>arton</strong> そこで nuby ？</p>
+
+<p><strong>ささだ</strong> よくわかんないけど……。それそれ。その上のほうですね。</p>
+
+<p><strong>原</strong> おおー。へぇー。うわー。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> これは、これは。</p>
+
+<p><strong>arton</strong> フォークとも言わない。nuby って名前が違うんだから。</p>
+
+<p><strong>ささだ</strong> Ruby の文法が使えるっぽい何か。</p>
+
+<p><strong>arton</strong> mathn を有効にしたディストリビューションってことだよね。</p>
+
+<p><strong>ささだ</strong> あと、パーサも変えてると思いますよ。Complex 組み込みとか。</p>
+
+<p><strong>arton</strong> あ、なるほど。</p>
+
+<p><strong>原</strong> ふーん。へぇー。僕のインタビューがあると知って、僕の注意が薄れてるところを狙って……。</p>
+
+<p><strong>ささだ</strong> (笑) じゃ、とりあえずこれを使えと。ちなみに、浮動小数点数って良く使いますか？</p>
+
+<p><strong>原</strong> まったく使わないです。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 浮動小数点数っていうのは、数じゃないと思ってるんですよね、内心。</p>
+
+<p><strong>ささだ</strong> じゃ、いわゆる計算機分野の数値計算というのは邪道だ、みたいな。</p>
+
+<p><strong>原</strong> 時々、浮動小数点数を real って呼ぶ言語とかあるでしょ。実数って。ありえないですよ。</p>
+
+<p><strong>ささだ</strong> 全然 real じゃないじゃんと。</p>
+
+<p><strong>原</strong> real っていうのはもっと抽象的なもので、無限桁あるもんなんですよね。だから、そういう float みたいなものを real と呼ぶなんていうセンスには、抵抗がある。</p>
+
+<p><strong>ささだ</strong> その話聞きたいですね。</p>
+
+<p><strong>原</strong> ……以上。</p>
+
+<p><strong>ささだ</strong> (笑) 例えば Fortran なんかでも、float は浮動小数点数ですよね。そういうのもありえない？</p>
+
+<p><strong>原</strong> だって、有限で止まるわけでしょ？実数は無限に伸びてる。それが実数なんで。これは一番大切なところで、過去何世紀もかかって、人類が苦労してやっと捕まえた。リアルこそイマジナリーな最たるもので<sup id="fnref:23"><a href="#fn:23" class="footnote">23</a></sup>。それを一切無視するんで、ありえないと。</p>
+
+<p><strong>ささだ</strong> なるほど。じゃ、Complex クラスの Real パートも real とは言えない？</p>
+
+<p><strong>原</strong> うん。言えないですね。……それは意味が違うか。</p>
+
+<p><strong>ささだ</strong> じゃ、Math.sin とかは、何を返すべき？</p>
+
+<p><strong>原</strong> いや、だから Float でいい。</p>
+
+<p><strong>ささだ</strong> え、あれ？</p>
+
+<p><strong>原</strong> いや、だから Float を real と呼ぶなって言う。</p>
+
+<p><strong>ささだ</strong> あー、なるほど。</p>
+
+<p><strong>原</strong> 学生の数学の答案で、答えが 1/2 になって、こうなったら 100 点だけど、この先に、= 0.5 と書くと 0 点にしたいぐらい。</p>
+
+<p><strong>ささだ</strong> x = 1/2 だったら、100 点で、x = 0.5 って書いたら 0 点と。</p>
+
+<p><strong>原</strong> みたいな感じ。本当はしないよ。</p>
+
+<p><strong>ささだ</strong> その心が分からない。</p>
+
+<p><strong>原</strong> それは、1/2 っていうのは実数だけど、0.5 っていうのは測定値みたいな。</p>
+
+<p><strong>ささだ</strong> 有効桁数があるように見える？</p>
+
+<p><strong>原</strong> そうそう。で、例えば、1/2 + 0.5 っていうのを、1.0 って書くと良いんだけど、1/2 + 0.5 = 1 と書くと、これはバツという感じなわけですよ。</p>
+
+<p><strong>arton</strong> それがバツという感じは分かるな。</p>
+
+<p><strong>原</strong> ここはもやもやしてるんですよ。汚れてるわけね。この汚れが伝播するわけ。ここが知らないうちにサニタイズされている感じ。float っていうのは実験データみたいなのは使ってもいいんであって、1/2 っていうのは、理論的なものって言う。</p>
+
+<p><strong>ささだ</strong> sin 何とかっていうのも、リアルナンバーに入れるんだったら、sin 何とかのままでずっと引きずると。</p>
+
+<p><strong>原</strong> そうそう。そういうことです。</p>
+
+<p><strong>ささだ</strong> で、まぁ実際には、Float は使わないと。</p>
+
+<p><strong>原</strong> 使うけどね。ま、あまり使わない。だって、小学校の時にそういう風に習うんじゃないの。</p>
+
+<p><strong>ささだ</strong> 32 bit で表現できる幅とか習わないですよね。じゃ、BigDecimal とか使います？</p>
+
+<p><strong>原</strong> ほとんど使わないです。</p>
+
+<p><strong>ささだ</strong> 小数点が入る数とかはあまり使わない？</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> まぁ、割り勘で使うか、みたいな感じで。</p>
+
+<p><strong>原</strong> Rails では BigDecimal は使ってる。</p>
+
+<p><strong>ささだ</strong> へぇ。何に？</p>
+
+<p><strong>原</strong> 小数は。</p>
+
+<p><strong>ささだ</strong> お金の計算をしなきゃいけないから？</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>arton</strong> MySQL の返り値が BigDecimal で、ActiveRecord が取り出してくるときに。</p>
+
+<p><strong>原</strong> しょうがないのかな。</p>
+
+<p><strong>ささだ</strong> ちなみに、なぜ浮動小数点数にこだわっているのかと言うと、私、この間出した論文が、Ruby の浮動小数点数を速くするというのだったんですよ。</p>
+
+<p><strong>原</strong> 速くする？</p>
+
+<p><strong>ささだ</strong> 遅いじゃないですか、今。</p>
+
+<p><strong>原</strong> あれって、C ライブラリ？</p>
+
+<p><strong>ささだ</strong> C ライブラリなんだけど、1 個 Float を作ると、1 オブジェクト作るんですよ、あれ。オブジェクトアロケーションが発生するんで、くだらない floating の計算をガンガンやってると、どんどんゴミが出て GC が起こる。</p>
+
+<p><strong>原</strong> そうなんですか。へぇー。</p>
+
+<p><strong>ささだ</strong> ええ。それを Fixnum みたいにして、アロケーションを不要にするって話を書いたんですよ。それを気にしていて。その関係で、今、倍精度浮動小数点数ですけど、4 倍精度欲しいとかいう人も居て。Complex もそういう風にして欲しい話があって。それはいったいどのくらい要望があるのかというのがいまいち読めなくて。4 倍精度とかいりますか？ 使わないから要らない？</p>
+
+<p><strong>原</strong> 要らない。</p>
+
+<p><strong>ささだ</strong> じゃ、原先生がいいと言ったからいいや (笑) なんかやんないといけないのかなと思ったんですけど。</p>
+
+<p><strong>arton</strong> 4 倍精度ってどうすればいいの？</p>
+
+<p><strong>ささだ</strong> 128 bit の浮動小数点数。</p>
+
+<p><strong>arton</strong> 誰が欲しいの？</p>
+
+<p><strong>ささだ</strong> まぁ、数値計算屋さん。数値計算のために欲しい。数学屋さんと見方は違うと思いますけど。</p>
+
+<p><strong>原</strong> 立石さんが書いた、frac を研究して、ちゃんと Rational C 作りますって言ったのね。その約束をいい加減に延ばし延ばししちゃって。</p>
+
+<p><strong>ささだ</strong> ちなみに、やるんですよね？</p>
+
+<p><strong>原</strong> やるんですけど、僕より適任の人が沢山居ると思うんですよ<sup id="fnref:24"><a href="#fn:24" class="footnote">24</a></sup>。みんな必要と思って無いのね、Rational 組み込みの。僕は教育者なのかなぁ。小学生、中学生程度の能力は、Ruby に組み込みで備えていてほしい。</p>
+
+<p><strong>ささだ</strong> ちなみに、今のリリースプランとしては、2 月の末に、1.9.0-1 を出すらしいですよ<sup id="fnref:25"><a href="#fn:25" class="footnote">25</a></sup>。で、6 月に RubyKaigi あたりに、1.9.1 を出すらしいです<sup id="fnref:26"><a href="#fn:26" class="footnote">26</a></sup>。</p>
+
+<p><strong>arton</strong> おおー。半年ごとに出すと。</p>
+
+<p><strong>ささだ</strong> そうそう。6 月までだとちょっと間に合わないので、3 月ぐらいにコミットしちゃって、テストテストって。</p>
+
+<p><strong>原</strong> コミットも知らないし……。</p>
+
+<p><strong>ささだ</strong> コミット権無いんですか？</p>
+
+<p><strong>原</strong> うん。だって僕、C 書けないし。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> Rational C もたぶん、かなりへただと思うんだよ。何でこんなことにしてるんだみたいな感じだと思う。</p>
+
+<p><strong>ささだ</strong> じゃ、その辺も早めにやったほうがいいですね。やりたいけど、という感じですか？</p>
+
+<p><strong>原</strong> 僕は、組み込みしたいんだけど、.rb だったライブラリが、組み込みになった例って無いですよね、今まで。</p>
+
+<p><strong>ささだ</strong> ありませんでしたっけ？</p>
+
+<p><strong>原</strong> どういう風にしたらしてくれるのかなって。</p>
+
+<p><strong>ささだ</strong> いや、それはちゃんとクオリティがあれば、だと思いますけど。.rb で動いてるから、変えないほうがいいじゃんということもありそうですが……。あ、Thread がありました。</p>
+
+<p><strong>原</strong> どの部分？</p>
+
+<p><strong>ささだ</strong> たとえば、Queue とか。</p>
+
+<p><strong>原</strong> 一番最初？</p>
+
+<p><strong>ささだ</strong> いや、1.8.6 から、fastthread ってのが入りました。だから、thread.rb に書かれていた Queue の実装とかは全部。</p>
+
+<p><strong>原</strong> あ、Queue が。</p>
+
+<p><strong>ささだ</strong> はい。組み込みになりました。だから速くなってる。</p>
+
+<p><strong>原</strong> へぇ、あ、そう。あれは、元々 .rb だったのは、中々バグが取れないからだったと思ってたんだけど、もう大丈夫なんですね。</p>
+
+<p><strong>ささだ</strong> 私は使わないなぁ。時々、irb で手が滑って -m とかつけると、mathn が入るじゃないですか。そうするとギョッとするという。何か require すると、Rational が入っちゃって。</p>
+
+<p><strong>原</strong> mathn も、僕はあんまり必要ないかな。だって、あなたに子どもができて「父ちゃん、1/2 + 1/3 は何なの？」って訊かれて。じゃちょっとやってみようねってコンピュータ出してきて、Ruby で irb でやろうとしたら、require ‘rational’ とか最初書くでしょ。そしたら「父ちゃん、これ何？」とか言われて、あなたそれでいいんですか？</p>
+
+<p><strong>ささだ</strong> いいや別に、それは (笑) あと、rational の API だと Rational.new じゃなくて、Rational() じゃないですか、たしか。あれは、.new はなし？私は、あれではまったんですよ、1 回。</p>
+
+<p><strong>原</strong> え、ありますよ。</p>
+
+<p><strong>ささだ</strong> .new でも出来ましたっけ？なんかできなかった記憶があるんだけど。</p>
+
+<p><strong>原</strong> 数値だから、.new ってのがそぐわないというのかな。</p>
+
+<p><strong>ささだ</strong> Rational() はあっていいと思うんですけど、Rational.new もサポートしてくれると嬉しいなと。ただ単に、そういう風に思っちゃうんで。</p>
+
+<p><strong>原</strong> なるほど。</p>
+
+<p><strong>ささだ</strong> それは別に、原先生がどうとかいう話じゃないんで。あと、数学だと Integer を Enumerable にして欲しいっていうのがありましたよね。</p>
+
+<p><strong>原</strong> あー、あるある。</p>
+
+<p><strong>ささだ</strong> あれはして欲しいですよねぇ。</p>
+
+<p><strong>原</strong> して欲しい。</p>
+
+<p><strong>ささだ</strong> 3.map とかしたい<sup id="fnref:27"><a href="#fn:27" class="footnote">27</a></sup>ですよね。</p>
+
+<p><strong>原</strong> ねぇ。あれ何でしないのかね。何か、まつもと基準だとありえないんだろうね、きっと。</p>
+
+<p><strong>ささだ</strong> まつもとさんなんですかね、あれは。</p>
+
+<p><strong>原</strong> して何も損はないのにね。喜ぶ人は多いんじゃない。</p>
+
+<p><strong>ささだ</strong> golfer は大喜びですよ。</p>
+
+<p><strong>原</strong> ああー。</p>
+
+<h3 id="その他の話題">その他の話題</h3>
+
+<h4 id="趣味">趣味</h4>
+
+<p><strong>ささだ</strong> 趣味とかはどうでしょう。</p>
+
+<p><strong>原</strong> 僕の趣味はね、映画を録画して、それを DVD に焼くことなんですよ、実は。</p>
+
+<p><strong>ささだ</strong> それはテレビでやってやつを？</p>
+
+<p><strong>原</strong> そう。衛星放送とか、CS とか。それの管理をしたいっていうんで、Rails で管理するアプリを作りました。HDD レコーダーに録ると、記録が残って、色んなデータが残る。それをコンピュータに転送して、それをまとめてデータベースに入れてるんですね。で、検索したりできるようにしてる。</p>
+
+<p><strong>ささだ</strong> その、DVD に焼くところは自分でやる？</p>
+
+<p><strong>原</strong> それはもう、手でね。</p>
+
+<p><strong>ささだ</strong> その吸出しからイジェクトまでは出来ないけど。</p>
+
+<p><strong>原</strong> うん。それはちょっと難しい。</p>
+
+<p><strong>ささだ</strong> でも、CD チェンジャーとかありますよね。7 枚連装で焼けるとか。</p>
+
+<p><strong>arton</strong> 焼くのも出来るの？</p>
+
+<p><strong>ささだ</strong> できる。それは業務用ですけど……。それは見る時間あるんですか？</p>
+
+<p><strong>原</strong> 無いです。焼くのが趣味って言ってる。見る時間が無いんですよ。</p>
+
+<p><strong>ささだ</strong> ハードディスクで全部取れる奴でも、結局いつ見るんだっていう。</p>
+
+<p><strong>原</strong> SONY の VAIO だと、8チャンネル同時録画とか。何テラバイトってのがあって。僕のは東芝の W 録ってやつで。これ 1 日入れといたら、原理的に全部見れない。一生が 2 倍無きゃいけない。と思ったんだけど、8 チャンネルとか言ったらね、それどころじゃないですね。</p>
+
+<p><strong>arton</strong> っていうか、実際問題、1 チャンネルでも 24 時間録ったら絶対見終わらないじゃないですか。</p>
+
+<p><strong>原</strong> そうそう。ひどい時は、1 日映画 3 本ぐらい焼いてましたからね。それはもうすでに見れないよね。</p>
+
+<p><strong>ささだ</strong> それは焼く作業が楽しい？</p>
+
+<p><strong>原</strong> いや、老後のためにと思ってるんだけど。で、僕は何か勘違いしててね。ある程度ストックすると、おおよそ映画のすべてをカバーできるんじゃないかと思ったのね。映画の総数ってのはあんまり考えなかった。例えば、1000 とか 2000 とかストックしてしまうと、主だった映画は全部自分のものになるんじゃないかと思ったんです。でも、映画のトータルって、今何本ぐらいあるんですかね。</p>
+
+<p><strong>arton</strong> 720 万本ぐらい。</p>
+
+<p><strong>原</strong> そんなにある。</p>
+
+<p><strong>arton</strong> いや、わかんない。適当に言ってみただけ。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> いや、100 万本近いと思いますよ。だから、それは夢想であって、現実ではない。</p>
+
+<p><strong>ささだ</strong> でも、ある程度のパターンは網羅できそうですよね。</p>
+
+<p><strong>原</strong> まぁねぇ。</p>
+
+<p><strong>arton</strong> だって、映画って一言で言っちゃうとさ、インドは年間 1000 本だか 2000 本だか作ってるはずだぜ。それを含めると、すでにインドだけで数 10 万本の映画がある。それを見たいかっていうと、別問題じゃん。中には傑作もあるけど、中には見てもしょうがないものもあるわけじゃん。同じことはハリウッドだっけ、メジャー以外のちっちゃなプロダクションがいっぱい作ってるわけでさ。それは中には大作から、2 人で録れるようなのもあるわけ。そんなの全部入れてたら数なんて……。だから、そこでまずジャンルの絞込みは無いと駄目だよね。考えてみれば、そんな恣意的なものはどうでもいいじゃんって感じはしてくるんだけどね。</p>
+
+<p><strong>ささだ</strong> ちなみに、無差別に録ってるんですか？</p>
+
+<p><strong>原</strong> いや、ある程度録って。<a href="http://cinema.intercritique.com/">CinemaScape</a> って言う Web サイト知ってます？ 結構大勢の人が映画ごとに書き込んでて、星が付いてるんですよね。それをしばらく見てたら、ある程度の信用ができてくる。例えば、5 つ星が最高点なんだけど、3.8 っていうと、見てこれはとんでもなかったなってことは無いんですよね。それで録るか録るないかの判断基準にしてるんですけど。こういうのを作ってるんです。今、1676 本入ってる。</p>
+
+<p><strong>ささだ</strong> このデータは、映画のサイトから取ってきてる？</p>
+
+<p><strong>原</strong> ここに評価ってのがあるんですけど、自動的にサイトから取ってきてる。</p>
+
+<p><strong>arton</strong> マッシュアップってやつだな。</p>
+
+<p><strong>原</strong> ま、シネマスケープってのは、これなんですけど。</p>
+
+<p><strong>ささだ</strong> 例えば、今後 1 週間やる番組を全部とってきて、その評価が上の奴だけ抽出するとか、そんな感じのことをやってたりとかするんですか？</p>
+
+<p><strong>原</strong> 目新しい奴は全部録画しちゃって、それに対して全部、評価がでてくる。</p>
+
+<p><strong>ささだ</strong> あ、焼くか焼かないかを決める時に評価を参照するんですか。</p>
+
+<p><strong>arton</strong> なるほど。</p>
+
+<p><strong>原</strong> 署名があるんで、大体この人が面白いって言っているのは面白いかな。これはあんまり役に立たないと思うんだけど、面白いと思うんだよね。この映画を好きな人は、どの映画が好きか。</p>
+
+<p><strong>arton</strong> ゴダールが好き、チャップリンが好き、ジャッキーチェン好きと。</p>
+
+<p><strong>原</strong> このルールが良く分からないんですけど。</p>
+
+<p><strong>arton</strong> いや、分かる。</p>
+
+<p><strong>原</strong> arton さんは、フランス映画が好きですよね。</p>
+
+<p><strong>arton</strong> フランス映画も好き。</p>
+
+<p><strong>原</strong> ゴダール？</p>
+
+<p><strong>arton</strong> ゴダール好き。</p>
+
+<p><strong>原</strong> 僕も。</p>
+
+<p><strong>arton</strong> ゴダールは一番好きですね。分かりやすいじゃないですか。ゴダールは好きだなぁ。はなればなれにとか、ウイークエンドとか。最近のは最近ので、やたら面白いし。</p>
+
+<p><strong>原</strong> 最近のは、あんまり知らないです。</p>
+
+<p><strong>arton</strong> 最近のね、モーツァルトがどうしたみたいな題のやつ、あれはすげぇ面白かったなぁ。あの速度がやたら面白かった。最近は、どうでもいいパターンと、やたら面白いのと、2 種類に完全に分かれてる。</p>
+
+<p><strong>原</strong> 新潟ではね、ゴダールは見れないんです。</p>
+
+<p><strong>arton</strong> そういえば、クェイ兄弟が行けなくて。あれはどうなりました？クェイ兄弟じゃなくて、シュヴァンクマイエルでしたっけ？</p>
+
+<p><strong>原</strong> うん。ブラザーズ・クェイと。そうそう。あれは見ました。</p>
+
+<p><strong>原</strong> まぁ、Ruby が役に立ってる話です。それから、これは映画ですけど、それとは別にブラジル音楽を収集してるんですね。</p>
+
+<p><strong>arton</strong> さっき車<sup id="fnref:28"><a href="#fn:28" class="footnote">28</a></sup>で流れてたのは、自分で録音しなおしてるんですか？</p>
+
+<p><strong>原</strong> スターデジオを録画して、それをコンピュータに持ってきて、それを切り分けてですね、MP3 化してるんです。週 6 時間分のお勤めなんです。</p>
+
+<p><strong>ささだ</strong> ブラジル音楽っていうのは、どういうジャンルなんですか。</p>
+
+<p><strong>原</strong> ボサノバですね、主に。あと、カフェミュージックも集めてて。</p>
+
+<p><strong>arton</strong> カフェミュージックってなんですか？</p>
+
+<p><strong>原</strong> カフェミュージックって言うのは、喫茶店に流れるような軽音楽なんです。今日、車の中で時々流れてたんですけど。</p>
+
+<p><strong>arton</strong> 例えば、チャカチャカッチャッチャチャッチャッチャッ、とかの奴とか。</p>
+
+<p><strong>原</strong> そうです。そんな感じ。</p>
+
+<p><strong>arton</strong> つまり、サンノゼの人からかな。</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>arton</strong> あれ、カフェミュージックってことか。</p>
+
+<p><strong>原</strong> 昔はそういう言い方しなかったんだけど、最近そういう非常に大きな……。</p>
+
+<p><strong>arton</strong> 小じゃれた言い方しますね。ソウルを売った音楽って。</p>
+
+<p><strong>原</strong> まぁ、スーパー行くとかかってる。</p>
+
+<p><strong>arton</strong> ネスカフェの広告とかね。</p>
+
+<p><strong>原</strong> それを収集する癖がついちゃってね。</p>
+
+<p><strong>arton</strong> いい趣味ですね。</p>
+
+<p><strong>原</strong> 病気ですね。</p>
+
+<p><strong>arton</strong> バート・バカラックとか。</p>
+
+<p><strong>原</strong> バート・バカラックは良いですよ。</p>
+
+<p><strong>arton</strong> 僕も好きなんですよ。</p>
+
+<p><strong>原</strong> で、カフェチャンネルの 九割はカスなんですよ。いや、九割五分カスなんだけど、五分が面白くて。それを探すために、延々とハードディスクに録り続けて……。</p>
+
+<p><strong>ささだ</strong> え、録るってどこから？</p>
+
+<p><strong>原</strong> それはだから、スターデジオから。</p>
+
+<p><strong>ささだ</strong> スターデジオとは。</p>
+
+<p><strong>原</strong> それは、スカパーで音楽チャンネルがあって。それを東芝の機械はコンピュータに転送できるんですね。転送して、それを編集して、切り分けて音量調節して。</p>
+
+<p><strong>arton</strong> そこまですべてオートメーションなんですか？</p>
+
+<p><strong>原</strong> えーっと、切り分けするところは僕が手を動かさなきゃいけない。あ、切るのは自動ですよ。切り分けしろってボタンを押さなければいけない。だけど、出来る限り自動化してます。</p>
+
+<p><strong>ささだ</strong> それを判断するために聴かなきゃいけないじゃないですか。</p>
+
+<p><strong>原</strong> そうです。もう速いですよ。ピッ、ピッ、ピッとこう。iPod Touch でですね。</p>
+
+<p><strong>ささだ</strong> iPod まで落とすのまではやると。後は、残す残さないを。</p>
+
+<p><strong>原</strong> そうです。</p>
+
+<p><strong>arton</strong> 瞬時に聴いて、これはカス、これはカスと。</p>
+
+<p><strong>原</strong> これはいま 14000 曲。</p>
+
+<p><strong>ささだ</strong> 原セレクションが。</p>
+
+<p><strong>原</strong> これは、録ったのがこれ。</p>
+
+<p><strong>ささだ</strong> あと、14000 曲聴かなきゃいけないってこと？ (笑)</p>
+
+<p><strong>原</strong> もう聴いたはず。</p>
+
+<p><strong>arton</strong> そのうち、100 曲くらいが残ってる。</p>
+
+<p><strong>原</strong> それに星つけてね。</p>
+
+<p><strong>ささだ</strong> あー。その 100 曲のリストは貴重ですね。</p>
+
+<p><strong>原</strong> そうですよ。</p>
+
+<p><strong>arton</strong> でも、それを公表しちゃうと、きっと「これを消すなんて信じられない」とか言われて (笑)</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>arton</strong> 影響力のある人がこれを消しちゃいけないですよって (笑)</p>
+
+<p><strong>原</strong> そんなことして、結果は分かっていたのか。</p>
+
+<p><strong>ささだ</strong> 他何かありますか？言っておきたい趣味。</p>
+
+<p><strong>原</strong> 映画を見るのが趣味だったんだけども、倒錯してしまった。</p>
+
+<p><strong>ささだ</strong> 老後のために。</p>
+
+<p><strong>arton</strong> 高度に発達した映画の趣味では、映画の製造会社とタイアップ出来る。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> さっき夕食の時にゲームの話をしてましたけど、ゲームはよくされるんですか？</p>
+
+<p><strong>原</strong> 僕はゲーム音痴なんですよ。ファイナルファンタジーは、話題だからって買ってきて、オープニングムービー見て、最初にちいちゃなキャラクターが出てきて、1 回殺されて、それで終わりなんですよ。所要時間は 5、6 分なんですよ。</p>
+
+<p><strong>ささだ</strong> 駄目ですよ、それは (笑)</p>
+
+<p><strong>原</strong> 駄目なのかなぁ。</p>
+
+<p><strong>ささだ</strong> FF は音楽が良いので。</p>
+
+<p><strong>原</strong> あー。</p>
+
+<p><strong>ささだ</strong> 音楽を聴くゲームなので、あれは……。すみません、なんかどうでもいいことを。</p>
+
+<p><strong>原</strong> あんまりね、勝とうとしないのね。負けちゃっていいや、みたいな気持ちが最初からあるから、のめり込まない。</p>
+
+<p><strong>ささだ</strong> さっき言ってたのはなんでしたっけ。</p>
+
+<p><strong>原</strong> クーロンズゲート。</p>
+
+<p><strong>ささだ</strong> それは良かったんですか？</p>
+
+<p><strong>原</strong> それは、その世界を楽しむみたいな。</p>
+
+<p><strong>ささだ</strong> あー。じゃ、のんびりと。</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> スポーツとかは？</p>
+
+<p><strong>原</strong> しませんね。奥さんに無理やりスノーボードさせられたぐらい。</p>
+
+<p><strong>ささだ</strong> へぇ。奥さんドリヴンな生活と。ま、でも何もしないでダラダラするよりはよっぽど良いですよね。</p>
+
+<p><strong>原</strong> まぁね。</p>
+
+<p><strong>ささだ</strong> 本とかは何かあります？</p>
+
+<p><strong>原</strong> あまり小説とかは苦手で。</p>
+
+<p><strong>ささだ</strong> 数学書とか技術書とか。</p>
+
+<p><strong>原</strong> そんなに、本とかはあまり読まないかな。とか言って、僕は教養教育等専門分科会の委員で、学生に本を読ませるということをやって、学生のためのブックガイドを編纂した編集人なの。</p>
+
+<p><strong>arton</strong> 原先生のお勧めのリスト。</p>
+
+<p><strong>原</strong> ありますよ。</p>
+
+<p><strong>ささだ</strong> Web ページに<a href="http://www.nagaokaut.ac.jp/j/gakubu/bgmokuji.html">『ブックガイド』</a>ってのがあるんですけど。</p>
+
+<p><strong>原</strong> ああ、あれあれ。それです。</p>
+
+<p><strong>ささだ</strong> 「長岡技術科学大学の教員が書いた、自然科学分野を中心とするブックガイドです。」</p>
+
+<p><strong>原</strong> うん。それは僕が色んな人に声をかけて。</p>
+
+<p><strong>ささだ</strong> 「頭痛が痛い」っていう記事が。</p>
+
+<p><strong>原</strong> うん、それは僕。「いやー、最近の学生は本を読まなくなりましたなー」「それはいかんことです」「やっぱり本は読まさないといけません」とか言って、そういうのを作ったんです。当人が本を読まない (笑)</p>
+
+<p><strong>arton</strong> 本は読まないかもしれないけど、本はいっぱいあるよー。</p>
+
+<p><strong>原</strong> いっぱいある。
+<img src="/images/0023-Hotlinks/hara04.jpg" alt="hara04.jpg" /></p>
+
+<p><strong>arton</strong> この程度じゃ読んだうちに入らない。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 僕は積ん読じゃないんです。やたら持ち歩くから。</p>
+
+<p><strong>arton</strong> 一番読む先生は、地震の時に本の山に埋もれてしまう。</p>
+
+<p><strong>原</strong> もうね、これプレゼントにできたらよかったね。</p>
+
+<p><strong>arton</strong> チケットを発行するから、ご自分で原先生の教室まで取りに行ってくださいっていうのが良いな (笑)</p>
+
+<p><strong>原</strong> 話し相手になります (笑)</p>
+
+<p><strong>arton</strong> おしゃべり 2 時間分プレゼント (笑)</p>
+
+<h4 id="普段の生活スタイル">普段の生活スタイル</h4>
+
+<p><strong>ささだ</strong> 普段の生活スタイル。朝何時ぐらいに？</p>
+
+<p><strong>原</strong> 大学に 10 時頃来ますね。</p>
+
+<p><strong>ささだ</strong> 通勤時間短いですよね。</p>
+
+<p><strong>原</strong> うん。5 分。</p>
+
+<p><strong>ささだ</strong> すごいうらやましい。</p>
+
+<p><strong>原</strong> 僕は授業時間が始まってから家を出たことがあります。</p>
+
+<p><strong>ささだ</strong> (笑) それで十分間に合う？</p>
+
+<p><strong>原</strong> 10 分遅れで間に合った。そんな近い。まぁ、良いこともあるし、悪いこともある。帰りぶらぶら色んなところ寄って帰れない。</p>
+
+<p><strong>ささだ</strong> なるほど。帰りは？</p>
+
+<p><strong>原</strong> 帰りは 7 時半頃かな。</p>
+
+<p><strong>ささだ</strong> 非常に良いですね。いい感じのサイクルで。</p>
+
+<p><strong>原</strong> 結婚する前は滅茶苦茶でしたね。明け方帰ったり。</p>
+
+<p><strong>ささだ</strong> じゃ、結婚されると、奥さんに合わせたりとか。</p>
+
+<p><strong>原</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> 研究室でずっと研究しながら寝たりとかは。</p>
+
+<p><strong>原</strong> うん。めんどくさくなっちゃって。</p>
+
+<p><strong>ささだ</strong> 分かります、それは (笑) 朝昼とかは普通に食べて？</p>
+
+<p><strong>原</strong> うん。最近はジジイになったので。多分、arton さんもそうだと思うんだけど、朝起きるのが早くなった。</p>
+
+<p><strong>arton</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> 何時ぐらいですか？</p>
+
+<p><strong>原</strong> 色々ですね。6 時に起きたり、5 時に起きたり。</p>
+
+<p><strong>ささだ</strong> 早いですね。</p>
+
+<p><strong>原</strong> 寝るのは遅いんですよ。2 時とか。</p>
+
+<p><strong>ささだ</strong> へぇー。2 時、3 時に寝て、6 時に起きたら眠くないんですか。</p>
+
+<p><strong>原</strong> 平気なんです、これがね。</p>
+
+<p><strong>ささだ</strong> はぁー。</p>
+
+<p><strong>原</strong> 飯食った後、ちょっとだけ眠くなるんですけど。いっぺん起きると眠れない。</p>
+
+<p><strong>ささだ</strong> うらやましい。私は所かまわず眠くなりますね。そんな感じの生活スタイルと。</p>
+
+<h4 id="仕事とプライベートとの両立">仕事とプライベートとの両立</h4>
+
+<p><strong>ささだ</strong> 仕事とプライベートとの両立。これだけ近いと両立と言うか、切り分けが難しそうな。</p>
+
+<p><strong>原</strong> 別に数学の人に限らないと思うけど、ひとつのことを考えはじめると、他のことをしたくないですよね。結婚すると、それが出来ないですね。僕は結婚してから、すごい技術を身につけて。何を考えていても、奥さんが「ねぇ」って言ったら、バチッと切って、奥さんの方を向く。奥さんの話を聞く。って出来る。何を考えていても。これは特技。</p>
+
+<p><strong>ささだ</strong> (笑) その前は、授業とかやっててもそういうことを考えながらやってた？</p>
+
+<p><strong>原</strong> 結構ありますね。ひとつのことを考えてると、ずっと考えてる。それはもう無くなった。止めた。</p>
+
+<p><strong>ささだ</strong> スイッチできるようになった。</p>
+
+<p><strong>原</strong> そう。外の世界の厳しさを分かった……。</p>
+
+<p><strong>ささだ</strong> (笑)。で、普段家で何をしてるんですかというと、DVD 焼いてる？</p>
+
+<p><strong>原</strong> DVD 焼いてる。雪国だから。</p>
+
+<p><strong>ささだ</strong> 音楽の選別をして、ライブラリの音楽を選別と。</p>
+
+<h4 id="マシンのスペック">マシンのスペック</h4>
+
+<p><strong>ささだ</strong> 使ってるマシンを拝見させてください。</p>
+
+<p><strong>原</strong> blade とこれは同じなんですよ。</p>
+
+<p><strong>ささだ</strong> そうか。むしろ blade の写真を撮っておこうかな。黒い奴？
+<img src="/images/0023-Hotlinks/hara07.jpg" alt="hara07.jpg" /></p>
+
+<p><strong>原</strong> うん。これね。いわゆる自作。</p>
+
+<p><strong>ささだ</strong> 沢山ありますが。</p>
+
+<p><strong>原</strong> うん。ちょっと沢山ありすぎていかんですね。</p>
+
+<p><strong>arton</strong> そっちは、VAIO なんですかね？</p>
+
+<p><strong>原</strong> そっちはね。この blade のスペックねぇ……。</p>
+
+<p><strong>arton</strong> blade って、Windows マシンなんですか？</p>
+
+<p><strong>原</strong> 違いますよ。ハードウェアが同じもので、片方が Debian で、片方が Vista。</p>
+
+<p><strong>arton</strong> エクスペリエンスインデックス<sup id="fnref:29"><a href="#fn:29" class="footnote">29</a></sup>が「 1 」！ いつ頃のマシンなんだ……。グラフィックが問題にならないサーバーマシンだからなのか。納得しました。</p>
+
+<p><strong>原</strong> 普通、どのぐらいなんですか？</p>
+
+<p><strong>arton</strong> 私のこのノートパソコンでさえ、もちろんプロセッサとかは 4.8 とかなんですよ。グラフィックは 3.3 とか 3.5。だから最低でも 3 台は出るもんだと思ったら、1 なんでちょっと驚きました。</p>
+
+<p><strong>原</strong> 一度も評価を行ってないだけかも。というわけで、Core Duo 2.66GHz。メモリは 4G 乗せてるのに、3G しか認識しない。</p>
+
+<p><strong>ささだ</strong> 32 bit OS ですか。</p>
+
+<p><strong>原</strong> そうですね。Debian は linux-image-686-bigmem を使えばいいらしいけど……。</p>
+
+<h4 id="好きな女性のタイプ">好きな女性のタイプ</h4>
+
+<p><strong>ささだ</strong> 好きな女性のタイプは。</p>
+
+<p><strong>原</strong> これはね。奥さんって答える人が居るけど、信じられない。</p>
+
+<p><strong>arton</strong> タイプを聞いてるのにね。</p>
+
+<p><strong>ささだ</strong> 奥さんみたいな人なんじゃないですか。</p>
+
+<p><strong>原</strong> 尊敬する人が両親とか言ってるのと変わらないですよね。だいたい、好み云々なんて年寄りのセリフ。</p>
+
+<p><strong>ささだ</strong> (笑) ご結婚はいつだったんですか？</p>
+
+<p><strong>原</strong> 結婚はね、結構最近っていうか、1999 年。そろそろ世界も無くなるしって言って結婚したんですけど。</p>
+
+<p><strong>ささだ</strong> その頃までは、誰でも良かったんですか？ (笑)</p>
+
+<p><strong>原</strong> 誰でもいいってわけじゃないですけど (笑) …… ごめん …… 奥さんです。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>ささだ</strong> 弱気 (笑) 奥さんのここに惚れたとかいうのはありますか？</p>
+
+<p><strong>原</strong> 僕はあんまり女っぽい感じがよろしくないので……。arton さんの好きな女優というのは？</p>
+
+<p><strong>arton</strong> 好きな顔の女優？ヨーロッパだったら、ナスターシャ・キンスキーで。</p>
+
+<p><strong>原</strong> あ、なるほど。良いですね。</p>
+
+<p><strong>arton</strong> 日本だと…… 1960 年代の中原早苗。深作欣二の奥さん。今の、おばあさんが出てきて、とんでもない顔をしているのじゃなくて、昔々の、60 年代の日活映画をみると、こんなオバ Q みたいな口して、楽しく陽気に踊ってて、それがすごくモダンで好きなんだよ。</p>
+
+<p><strong>原</strong> へぇー。</p>
+
+<p><strong>arton</strong> あんまり最近のは知らないからなぁ……。あ、鈴木蘭々が好きなんだな。</p>
+
+<p><strong>原</strong> おおー。意外に。僕は、若い頃のカトリーヌ・ドヌーヴは良くない。年取ってからは良いかな。</p>
+
+<p><strong>arton</strong> あ、それはあるかもしれないな。若い頃のって、ちょっと怖い感じがあるな。僕はお姉さんのフランソワーズ・ドルレアックがね、変に崩れてて好きなんですよ。</p>
+
+<p><strong>原</strong> あ、そうなんですか。</p>
+
+<p><strong>ささだ</strong> おじさんの好きな俳優談義になってるんですけど。いや、それは別にいいんだけど (笑)</p>
+
+<p><strong>原</strong> イングリット・バーグマンとかどうですか。</p>
+
+<p><strong>arton</strong> イングリット・バーグマンは綺麗ですね。そういうんだと、40 年代の女優だと、<a href="http://cinema.intercritique.com/person.cgi?name=%A5%A2%A5%A4%A5%C0%A1%A6%A5%EB%A5%D4%A5%CE">アイダ・ルピノ</a>って僕は好きなんだけど。</p>
+
+<p><strong>原</strong> へぇ、知らない。</p>
+
+<p><strong>arton</strong> 一番有名なのは、ハイ・シエラかな。ハイ・シエラは、ハンフリー・ボガードが一匹狼の殺し屋で、シエラ山の山の上に追い詰められて殺されるっていう。情婦役がアイダ・ルピノで、目と目の間が離れていて、ヒラメみたいな顔してるんだけど、それがかわいい。</p>
+
+<p><strong>原</strong> ほぉー。</p>
+
+<p><strong>ささだ</strong> ……。もういいですか (笑)</p>
+
+<p><strong>原</strong> うん。この話が続くと、多分長くなるんで。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>arton</strong> で、バーグマンはどうだったんですか。</p>
+
+<p><strong>原</strong> あ、バーグマンは僕は好きですよ。美人といえば、エリザベス・テーラーはどうですか？</p>
+
+<p><strong>arton</strong> 僕は良く知らない。あんまり好きじゃなさそうな気がしてならない。</p>
+
+<p><strong>原</strong> 好き嫌いは結構あるみたいですね。僕は綺麗だと思うんだけどな。うちの奥さんは奇麗じゃないって言うんですよね。</p>
+
+<p><strong>ささだ</strong> ……。うちの奥さんは綺麗じゃないって、そこだけ切るとなんか違う意味が (笑)</p>
+
+<p><strong>原</strong> それはいけない (笑)</p>
+
+<p><strong>ささだ</strong> ちょっとびっくりしました (笑)</p>
+
+<p><strong>原</strong> ……クリスティーナ・リッチ。</p>
+
+<p><strong>arton</strong> お、なるほど。</p>
+
+<p><strong>原</strong> バッファロー 66 に出てたし、スリーピー・ホロウに出て有名になったのかな。子どもの頃に出てたのって何でしたっけ。アダムス家<sup id="fnref:30"><a href="#fn:30" class="footnote">30</a></sup>、あれが良かった。</p>
+
+<h3 id="今後について">今後について</h3>
+
+<h4 id="今後の展望将来の夢など">今後の展望、将来の夢など</h4>
+
+<p><strong>ささだ</strong> 今後の展望、将来の夢など。</p>
+
+<p><strong>原</strong> うーん、Ruby に関して？</p>
+
+<p><strong>ささだ</strong> いや、何でもいいですよ。</p>
+
+<p><strong>原</strong> まず差し当たって、Rational は組み込みにして頂きます。</p>
+
+<p><strong>ささだ</strong> Rational の組み込みって言うのは、C 言語化じゃなくて？</p>
+
+<p><strong>原</strong> C 言語化ですね。で、標準ライブラリ。require しない。</p>
+
+<p><strong>ささだ</strong> リテラルは作る？</p>
+
+<p><strong>原</strong> リテラルは作れるなら作って欲しいんだけど、空きが無いらしいんで。あるなら欲しいですね。誰か良いアイデアを。</p>
+
+<p><strong>ささだ</strong> 他は。</p>
+
+<p><strong>原</strong> もう少し、Algebra 関係で。高校生ぐらいまでは、宿題に使えるようにしたい。</p>
+
+<p><strong>ささだ</strong> 記事を書きましょうよ。</p>
+
+<p><strong>arton</strong> そうだよね。</p>
+
+<p><strong>ささだ</strong> 別にるびまじゃなくても。</p>
+
+<p><strong>arton</strong> 使い方を知らないと、誰も使えない。</p>
+
+<p><strong>ささだ</strong> 使い方と言うか、存在を知らないと使えない。</p>
+
+<p><strong>原</strong> 僕は、3 年生の線形代数の問題を自動的に作って、自動的に解答例を作って、PDF で出力するっていうのは作ったことがあるんです。</p>
+
+<p><strong>ささだ</strong> それは労力に合いましたか。</p>
+
+<p><strong>原</strong> えっと、翌年そのアプリケーションの使い方が分からなくなった。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<p><strong>原</strong> 捨ててしまった (笑) バックエンドには、Algebra を使ってる。</p>
+
+<p><strong>ささだ</strong> なるほど (笑)</p>
+
+<p><strong>原</strong> 解答例まで出来るのは素晴らしい。</p>
+
+<p><strong>ささだ</strong> まぁ、自分の手でやるんじゃないから、楽っていうか、間違いが無くていいですよね。</p>
+
+<p><strong>原</strong> 後ね、その計算量がありすぎると困るわけですよ。だから適度な計算量の問題を自動的に生成する。大したことじゃないですよ。ステップ数いくつか数えて。</p>
+
+<p><strong>ささだ</strong> そこまでちゃんとやってた。</p>
+
+<p><strong>原</strong> うん。難し過ぎない問題。行列だったら、逆行列を計算してるときに、分数の分母が大きくなり過ぎない感じで出して。固有値も 2 次方程式ぐらいで解けて。</p>
+
+<p><strong>ささだ</strong> なるほど。高校生ぐらいだと、大体割り切れる数になるじゃないですか。</p>
+
+<p><strong>原</strong> そうそう。そういう問題を自動的に作る。</p>
+
+<p><strong>ささだ</strong> あ、そこまで見てくれる？</p>
+
+<p><strong>原</strong> うん。</p>
+
+<p><strong>ささだ</strong> なんか、その辺は本当、高校の先生とか喜びそうですよね。</p>
+
+<p><strong>原</strong> ですよね。大学の先生も。</p>
+
+<p><strong>ささだ</strong> 是非、何か書きましょうよ。書くなり発表するなり。</p>
+
+<p><strong>原</strong> ですね。</p>
+
+<p><strong>ささだ</strong> 他は何かありますか。ここ長岡を Ruby の聖地にするとか。</p>
+
+<p><strong>原</strong> おお。</p>
+
+<p><strong>ささだ</strong> この大学で何かするとか。その辺は何も考えてない？内緒？</p>
+
+<p><strong>原</strong> 隠れキリシタンみたいな感じですからねぇ。差し当たってばれないように。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<h4 id="前のインタビューイ石塚さんとの関係">前のインタビューイ、石塚さんとの関係</h4>
+
+<p><strong>ささだ</strong> 前のインタビューイ、石塚さんとの関係は。</p>
+
+<p><strong>原</strong> 石塚さんは、「越後・妻有トリエンナーレ」<sup id="fnref:31"><a href="#fn:31" class="footnote">31</a></sup>ってのがあって、非常に広範囲な芸術作品群。驚くべき大きさのプロジェクト。田んぼの間にボコボコっと作品があったりして、3 年にいっぺんやってる。良く石塚さんが来る。</p>
+
+<p><strong>ささだ</strong> 意外なところですね。最初はそれだったんですか？</p>
+
+<p><strong>原</strong> 最初はやっぱり Ruby の宴会。あの人も数学出身で。数学関係のライブラリは全部石塚さんがやったから、やり取りがあって。</p>
+
+<p><strong>ささだ</strong> で、意気投合したと。</p>
+
+<p><strong>原</strong> そういう趣味も結構。</p>
+
+<p><strong>ささだ</strong> 行ってみたら、あ、なんでこんなところでみたいな。</p>
+
+<p><strong>原</strong> その時はどこだったのかな。今年はどこ行くとか言うんだ、一応。情報交換したりして。石塚さんは、いつも奥さんと一緒。</p>
+
+<p><strong>ささだ</strong> 旅行は沢山してるって言ってましたね。</p>
+
+<p><strong>arton</strong> 車だっけ。</p>
+
+<p><strong>ささだ</strong> そうですね。長い時間かけていくって。じゃあ、石塚さんとはなんだろう。数学仲間とか、プライベートでも何か。</p>
+
+<p><strong>原</strong> ちょっとですね。</p>
+
+<h4 id="次のインタビューイ">次のインタビューイ</h4>
+
+<p><strong>ささだ</strong> 次のインタビューイ、誰にしましょう。</p>
+
+<p><strong>原</strong> あー、それはねぇ。それは困ってるんで、決めてくれません？</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 知ってるのは、まつもとさん、前田さん、石塚さん、咳さん、後藤兄弟……。あ、eban さん。</p>
+
+<p><strong>ささだ</strong> 皆やってる。</p>
+
+<p><strong>原</strong> 皆やってるの？どんづまっちゃったな。</p>
+
+<p><strong>ささだ</strong> どうしましょうかね。</p>
+
+<h4 id="若手に一言">若手に一言</h4>
+
+<p><strong>ささだ</strong> 若手に一言。</p>
+
+<p><strong>原</strong> 若手に一言二言、言うのが多分本業なんだけど、そういうのは、あんまりないんですよね。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 僕はね、結構何でも教育的見地からものを見る。自分は根っからの教育者だと思うんですけど、あまり「教育」に興味が無い。</p>
+
+<p><strong>ささだ</strong> 何ですかそれは (笑)</p>
+
+<p><strong>原</strong> 若い人に興味が無いのか。</p>
+
+<p><strong>ささだ</strong> 何に興味があるんですか？</p>
+
+<p><strong>原</strong> 自分に興味があるのか。</p>
+
+<p><strong>ささだ</strong> 自分の教育に余念が無い？</p>
+
+<p><strong>原</strong> うーん、そう。勝手にやってくれ、みたいな。</p>
+
+<p><strong>ささだ</strong> それは、恩師に言われたことを言う感じですか。</p>
+
+<p><strong>原</strong> うん、基本的には。恩師に対しても、勝手にさせてくれてありがとう。</p>
+
+<p><strong>ささだ</strong> あー。</p>
+
+<p><strong>原</strong> そのご恩を、後輩にも返したいわけですよ。どうぞご勝手にって。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>原</strong> 先祖から、ずっと伝わる家訓みたいなもので。各世代で勝手にっていうことで。</p>
+
+<p><strong>ささだ</strong> じゃ、それで (笑) 勝手にしてください (笑)</p>
+
+<p><strong>arton</strong> 勝手にしてくださいで出来ない人は、要らないっていう。</p>
+
+<p><strong>原</strong> そんなことは言ってない (笑)</p>
+
+<p><strong>ささだ</strong> 出来ない人は、他の所に行ってください？ (笑)</p>
+
+<p><strong>原</strong> そんな厳しいこと、言ってるわけじゃない。ただ自由に。</p>
+
+<p><strong>ささだ</strong> じゃ、出来ない人はどうするんですか？</p>
+
+<p><strong>原</strong> (笑) 困っちゃったな。まぁ、そういう人は知ったことではない、ということになっちゃうのかなあ。</p>
+
+<p><strong>all</strong> (笑)</p>
+
+<h4 id="読者へ一言">読者へ一言</h4>
+
+<p><strong>ささだ</strong> 読者の Rubyist への一言。</p>
+
+<p><strong>原</strong> それはどういう……？</p>
+
+<p><strong>ささだ</strong> 何でもいいですよ。読んでる人に言いたいこと。</p>
+
+<p><strong>原</strong> うーん。まぁ、僕なんかのインタビューでスビバセンっていう気持ちはあるんですけど、それは置いておきます。</p>
+
+<p><strong>ささだ</strong> blade に DoS しないようにね、とか。</p>
+
+<p><strong>原</strong> (笑)</p>
+
+<p><strong>ささだ</strong> あるんですか、そんなこと。</p>
+
+<p><strong>arton</strong> いやでもさ、思うんだけど、bot で取りに来ようとする奴が居ると、バグがあってうわーってことはあるんじゃないのかな。bot 作って失敗して、うわーってやったことはあるよ。blade じゃないけど。</p>
+
+<p><strong>原</strong> ほー。</p>
+
+<p><strong>ささだ</strong> 中高生、Ruby を使いなさいとか。</p>
+
+<p><strong>原</strong> あー、うん。そうですね。中高生にかぎらず、皆 Ruby を数学に使いましょう。</p>
+
+<p><strong>ささだ</strong> Ruby を数学に使いましょう。こんなもんでいいですかね。</p>
+
+<p><strong>原</strong> 辛い計算は Ruby に任せて、おいしい所を優雅にいただこう、かな。</p>
+
+<p><strong>ささだ</strong> では、長時間どうもありがとうございました。</p>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回は Ruby 関連メーリングリストのアーカイブシステム blade の作者/管理者であり、また添付ライブラリ Rational の作者でもある原信一郎さんにお話を伺いました。お忙しい中、本当にありがとうございました。次回のインタビュアーはまだ未定ですが、お楽しみに。</p>
+
+<p>(インタビュー：ささだ、編集：むらまさ、くげ、ささだ)</p>
+
+<h2 id="rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-Hotlinks.html">Rubyist Hotlinks 【第 36 回】 須藤功平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0052/0052-Hotlinks.html">Rubyist Hotlinks 【第 35 回】 島田浩二さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0045/0045-Hotlinks.html">Rubyist Hotlinks 【第 34 回】 大場さん夫妻 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0044/0044-Hotlinks.html">Rubyist Hotlinks 【第 33 回】 大場さん夫妻 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0042/0042-Hotlinks.html">Rubyist Hotlinks 【第 32 回】 卜部昌平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-Hotlinks.html">Rubyist Hotlinks 【第 31 回】 樽家昌也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0038/0038-Hotlinks.html">Rubyist Hotlinks 【第 30 回】 遠藤侑介さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-Hotlinks.html">Rubyist Hotlinks 【第 29 回】 松田明さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0035/0035-Hotlinks.html">Rubyist Hotlinks 【第 28 回】 Yugui さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-Hotlinks.html">Rubyist Hotlinks 【第 27 回】 小波秀雄 さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-Hotlinks.html">Rubyist Hotlinks 【第 26 回】 cuzic さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0031/0031-Hotlinks.html">Rubyist Hotlinks 【第 25 回】 加藤勇也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0030/0030-Hotlinks.html">Rubyist Hotlinks 【第 24 回】 okkez さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0029/0029-Hotlinks.html">Rubyist Hotlinks 【第 23 回】 yhara さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-Hotlinks.html">Rubyist Hotlinks 【第 22 回】 nari さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0023/0023-Hotlinks.html">Rubyist Hotlinks 【第 21 回】 原信一郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Hotlinks.html">Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-Hotlinks.html">Rubyist Hotlinks 【第 19 回】 伊尾木将之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Hotlinks.html">Rubyist Hotlinks 【第 18 回】 立石孝彰さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Hotlinks.html">Rubyist Hotlinks 【第 16 回】 essa さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Hotlinks.html">Rubyist Hotlinks 【第 15 回】 arton さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Hotlinks.html">Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Hotlinks.html">Rubyist Hotlinks 【第 13 回】 関将俊さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Hotlinks.html">Rubyist Hotlinks 【第 12 回】 後藤兄弟 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Hotlinks.html">Rubyist Hotlinks 【第 11 回】 後藤兄弟 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Hotlinks.html">Rubyist Hotlinks 【第 10 回】 わたなべひろふみさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Hotlinks.html">Rubyist Hotlinks 【第 9 回】 中田伸悦さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks.html">Rubyist Hotlinks 【第 8 回】 田中哲さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-3.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その3</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-2.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その2</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-1.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その1</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Hotlinks.html">Rubyist Hotlinks 【第 7 回】 江渡浩一郎さん 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Hotlinks.html">Rubyist Hotlinks 【第 6 回】 江渡浩一郎さん 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Hotlinks.html">Rubyist Hotlinks 【第 5 回】 増井俊之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Hotlinks.html">Rubyist Hotlinks 【第 4 回】 ただただしさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Hotlinks.html">Rubyist Hotlinks 【第 3 回】 かずひこさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-Hotlinks.html">Rubyist Hotlinks 【第 2 回】 前田修吾さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>長岡。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Ruby 関連のメーリングリストをアーカイブしている<a href="http://blade.nagaokaut.ac.jp/">サーバ</a>。またそのソフトウェアのこと。ちょっと前まで Ruby 1.1 で動いていた。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>有理数を扱うための拡張ライブラリ <a href="http://raa.ruby-lang.org/project/rational/">rational</a>&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>統計関数の拡張ライブラリ <a href="http://raa.ruby-lang.org/project/statistics2/">statistics2</a>&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>1 変数及び多変数を扱う<a href="http://raa.ruby-lang.org/project/algebra/">ライブラリ</a>、<a href="http://blade.nagaokaut.ac.jp/~sinara/ruby/math/algebra/algebra-0.72/doc-ja/samples-ja.html">サンプル</a>&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>インタビュー開始前に、一週間かかっても終わらない Ruby プログラムの話をしていた。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>モジュールを一時的に include する<a href="http://raa.ruby-lang.org/project/import_module/">ライブラリ</a>、<a href="http://blade.nagaokaut.ac.jp/~sinara/ruby/import-module/import-module-0.82/doc/README-ja.html">サンプル</a>&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>このあたりから断続的に議論が続く。<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/35631">[ruby-list:35631] scope-in-state</a>, <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/17927">[ruby-dev:17927] Re: import-module (Re: Re: scope-in-state)</a>&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p><a href=":?0010-Hotlinks#l7">eban さんの回</a>と<a href=":?0009-Hotlinks#l9">中田さんの回</a>で話題になった。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>http://www.nagaokaut.ac.jp/j/kenkyu/SOURAN/teacher/hara_shin-ichiro.html&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>軽く地元のお酒を呑みながらのインタビューでした。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p><a href="http://ja.wikipedia.org/wiki/%E3%82%B5%E3%82%B0%E3%83%A9%E3%83%80%E3%83%BB%E3%83%95%E3%82%A1%E3%83%9F%E3%83%AA%E3%82%A2">サグラダ・ファミリア</a>のこと。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p><a href="http://ja.wikipedia.org/wiki/%E4%B8%89%E9%87%8C%E5%A1%9A%E9%97%98%E4%BA%89">三里塚闘争</a>とは成田空港建設に反対して起こった運動。成田空港建設地の地名が三里塚だった。&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>東大・京大を目指す学生が主な読者。むずかし〜い問題がたくさん載ってる。&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>『New スーパーマリオブラザーズ』の「VS バトル」モード限定の『ドキドキ！はなうらない』&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>http://www.uwashin.com/&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>るびまも暇な学生を募集しています。&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>yab/yax 形式&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p><a href="http://0xcc.net/blog/archives/000135.html">自転車置場の議論 - bkブログ</a>&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:20">
+      <p>小川洋子の小説。記憶が80分しかもたない老数学者とその家政婦と彼女の息子の交流を描く。日本本屋大賞。日本数学会出版賞。&nbsp;<a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:21">
+      <p><a href="http://blade.nagaokaut.ac.jp/cgi-bin/vframe.rb/ruby/ruby-dev/33488?33328-33934+split-mode-vertical">このあたり</a>を見ながら話をしている。&nbsp;<a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:22">
+      <p>2004 年 10 月 23 日発生。最大震度 7。震度 6 規模の余震が複数回続いた。&nbsp;<a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:23">
+      <p>このあたりのことが書いてある本→<a href="http://www.amazon.co.jp/dp/4121019121">『数学する精神』</a>&nbsp;<a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:24">
+      <p>結局 Rational の組み込みは、ふなば氏がすることになった。&nbsp;<a href="#fnref:24" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:25">
+      <p>3 月 1 日にリリースされました。<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/33947">[ruby-dev:33947] Ruby 1.9.0-1 snapshot released</a>&nbsp;<a href="#fnref:25" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:26">
+      <p>無理っぽい。&nbsp;<a href="#fnref:26" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:27">
+      <p>集合論では 3 を 0,1,2 の 3 要素の集合として定義する。&nbsp;<a href="#fnref:27" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:28">
+      <p>長岡では原さんに色々車で案内してもらいました。&nbsp;<a href="#fnref:28" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:29">
+      <p>Windows Vista が動作している PC のハードウェア能力を評価した値。1 〜 5.9 の範囲で表示される。&nbsp;<a href="#fnref:29" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:30">
+      <p><a href="http://cinema.intercritique.com/movie.cgi?mid=182">アダムス・ファミリー２</a>&nbsp;<a href="#fnref:30" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:31">
+      <p><a href="http://www.echigo-tsumari.jp/">大地の芸術祭</a>&nbsp;<a href="#fnref:31" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

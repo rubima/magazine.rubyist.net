@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>レアでアレなGCの話</title>
+  <meta name="description" content="書いた人: nari">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0025/0025-RareAreGCTalk.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>レアでアレなGCの話</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0025/0025-RareAreGCTalk.html" class="hatena-bookmark-button" data-hatena-bookmark-title="レアでアレなGCの話" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0025/0025-RareAreGCTalk.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0025/0025-RareAreGCTalk.html" data-text="レアでアレなGCの話">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人: nari</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#たまにはgcの話を" id="markdown-toc-たまにはgcの話を">たまにはGCの話を</a></li>
+  <li><a href="#gc-とは" id="markdown-toc-gc-とは">GC とは</a></li>
+  <li><a href="#gc-が搭載された言語処理系" id="markdown-toc-gc-が搭載された言語処理系">GC が搭載された言語処理系</a></li>
+  <li><a href="#gcのアルゴリズム" id="markdown-toc-gcのアルゴリズム">GCのアルゴリズム</a>    <ul>
+      <li><a href="#重要な3つのアルゴリズム" id="markdown-toc-重要な3つのアルゴリズム">重要な3つのアルゴリズム</a></li>
+      <li><a href="#たとえ話のはじまり" id="markdown-toc-たとえ話のはじまり">たとえ話のはじまり</a></li>
+      <li><a href="#本の整理とgc" id="markdown-toc-本の整理とgc">本の整理とGC</a></li>
+      <li><a href="#marksweep" id="markdown-toc-marksweep">Mark&amp;Sweep</a>        <ul>
+          <li><a href="#悪い点" id="markdown-toc-悪い点">悪い点</a></li>
+        </ul>
+      </li>
+      <li><a href="#copying" id="markdown-toc-copying">Copying</a>        <ul>
+          <li><a href="#良い点" id="markdown-toc-良い点">良い点</a></li>
+          <li><a href="#悪い点-1" id="markdown-toc-悪い点-1">悪い点</a></li>
+        </ul>
+      </li>
+      <li><a href="#referencecount" id="markdown-toc-referencecount">ReferenceCount</a>        <ul>
+          <li><a href="#良い点-1" id="markdown-toc-良い点-1">良い点</a></li>
+          <li><a href="#問題点" id="markdown-toc-問題点">問題点</a></li>
+        </ul>
+      </li>
+      <li><a href="#本棚は整理できたか" id="markdown-toc-本棚は整理できたか">本棚は整理できたか？</a></li>
+      <li><a href="#たとえ話終わり" id="markdown-toc-たとえ話終わり">たとえ話終わり</a></li>
+    </ul>
+  </li>
+  <li><a href="#rubygcの仕組み" id="markdown-toc-rubygcの仕組み">RubyGCの仕組み</a>    <ul>
+      <li><a href="#marksweep-1" id="markdown-toc-marksweep-1">Mark&amp;Sweep</a></li>
+      <li><a href="#保守的gc" id="markdown-toc-保守的gc">保守的GC</a>        <ul>
+          <li><a href="#オブジェクトの生死定義" id="markdown-toc-オブジェクトの生死定義">オブジェクトの生死定義</a></li>
+          <li><a href="#オブジェクトを指しているポインタの判別方法" id="markdown-toc-オブジェクトを指しているポインタの判別方法">オブジェクトを指しているポインタの判別方法</a></li>
+          <li><a href="#疑問" id="markdown-toc-疑問">疑問</a></li>
+          <li><a href="#欠点" id="markdown-toc-欠点">欠点</a></li>
+        </ul>
+      </li>
+      <li><a href="#正確なgc" id="markdown-toc-正確なgc">正確なGC</a>        <ul>
+          <li><a href="#良い点-2" id="markdown-toc-良い点-2">良い点</a></li>
+          <li><a href="#欠点-1" id="markdown-toc-欠点-1">欠点</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#最近の動向" id="markdown-toc-最近の動向">最近の動向</a>    <ul>
+      <li><a href="#o1bitmapmarkinggc" id="markdown-toc-o1bitmapmarkinggc">O1BitmapMarkingGC</a>        <ul>
+          <li><a href="#詳細を知りたい方へ" id="markdown-toc-詳細を知りたい方へ">詳細を知りたい方へ</a></li>
+        </ul>
+      </li>
+      <li><a href="#snapshotgc" id="markdown-toc-snapshotgc">SnapshotGC</a>        <ul>
+          <li><a href="#詳細を知りたい方へ-1" id="markdown-toc-詳細を知りたい方へ-1">詳細を知りたい方へ</a></li>
+        </ul>
+      </li>
+      <li><a href="#mostlycopyinggc" id="markdown-toc-mostlycopyinggc">MostlyCopyingGC</a>        <ul>
+          <li><a href="#詳細を知りたい方へ-2" id="markdown-toc-詳細を知りたい方へ-2">詳細を知りたい方へ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#関連資料" id="markdown-toc-関連資料">関連資料</a></li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>この記事では「 GC が便利って事は知ってるんだけど仕組みは知らないなぁ」という人たちに向けて、GC のアルゴリズムを分かりやすく解説します。</p>
+
+<p>その後、実際に CRuby <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>の GC がどういう風に動いているのかを説明します。</p>
+
+<p>また、CRubyGC に対する最近の研究の動向にも少し触れようかと思います。</p>
+
+<p>あ、先に断っておきますがこの記事は CG やゲームキューブとは関係ありません :-)</p>
+
+<h2 id="たまにはgcの話を">たまにはGCの話を</h2>
+
+<p>2008年12月に開催された<a href="http://regional.rubykaigi.org/kyushu01">九州Ruby会議01</a>で「 GC に興味がある人はどの位いっらしゃいますか？」と壇上からアンケートを採った所、200人中3人しか手が上がりませんでした。（それでも無理矢理GCの話をしたわけですが・・）</p>
+
+<p>どうやら、多くの人々にとって GC とは「勝手に裏でヨロシクやってくれてれば、それでいいんですよ」という存在のようです。</p>
+
+<p>しかし、GC は多くの言語処理系に搭載され、当たり前の様に皆さんが使われている機能の一つです。
+GC の仕組みや内部実装を知ることはプログラマにとって決して害ではありません。</p>
+
+<p>｢息抜き程度に GC の話を聞いてあげようか。｣</p>
+
+<p>という軽い気持ちでこの記事を読んでいただければ幸いです。</p>
+
+<h2 id="gc-とは">GC とは</h2>
+
+<p>GC とは「 GarbageCollection 」(ごみ集め)の略です。</p>
+
+<p>GC が行うことは、メモリ内の不要になった領域を発見し、その領域を開放することです。</p>
+
+<p>この事がプログラマに多大な恩恵を与える事を皆さんよくご存じだと思います。</p>
+
+<p>ですので、ここではその事について大きく取り上げません。</p>
+
+<h2 id="gc-が搭載された言語処理系">GC が搭載された言語処理系</h2>
+
+<p>最近のほとんどの言語処理系はGCを搭載したものです。</p>
+
+<p>例を数個挙げるならば</p>
+
+<ul>
+  <li>Ruby</li>
+  <li>Perl</li>
+  <li>Java</li>
+  <li>Haskell</li>
+  <li>C#</li>
+  <li>Gauche</li>
+</ul>
+
+<p>の言語処理系にはすでに GC が搭載されています。</p>
+
+<p>モダンな言語にとって GC は欠かせない機能と言えるのではないでしょうか。</p>
+
+<h2 id="gcのアルゴリズム">GCのアルゴリズム</h2>
+
+<p>では、GC とはどのようにしてゴミを判別し、捨てているのでしょうか。</p>
+
+<p>ここからは、その GC アルゴリズムをなるべく分かりやすく紹介したいと思います。</p>
+
+<h3 id="重要な3つのアルゴリズム">重要な3つのアルゴリズム</h3>
+
+<p>GC が初めて実装されたのは1960年代だそうです。
+それから40年、多くの研究が行われ、そして多くのアルゴリズムが生み出されてきました。</p>
+
+<p>しかし、世の中にある沢山の GC のアルゴリズムは元を辿ると基本的な3つのアルゴリズムに集約されてしまいます。</p>
+
+<p>そのアルゴリズムとは</p>
+
+<ul>
+  <li>Mark&amp;Sweep</li>
+  <li>Copying</li>
+  <li>ReferenceCount</li>
+</ul>
+
+<p>の3つです。</p>
+
+<p>この3つは GC アルゴリズムの中でも基本中の基本です。</p>
+
+<p>このアルゴリズムを理解することが、GC を理解する近道になるでしょう。</p>
+
+<h3 id="たとえ話のはじまり">たとえ話のはじまり</h3>
+
+<p>とはいえ、GC のアルゴリズムの話をするにはマシンスタックやレジスタなど多くの専門知識を前提として知っておいて貰う必要があります。</p>
+
+<p>しかし、そのような知識はこれらのアルゴリズムの本質ではありません。</p>
+
+<p>そこで、本質だけを理解していただく為に、あるたとえ話を用意しました。</p>
+
+<h3 id="本の整理とgc">本の整理とGC</h3>
+
+<p>もう年は明けてしまいましたが、年末には家や会社の大掃除をされた方も多いかもしれません。</p>
+
+<p>私も会社の年末大掃除をお手伝いする事になりました。</p>
+
+<p>うちの会社には技術書がぎっしり詰まった本棚があります。
+その本棚にはもう二度と開くことのないような古い雑誌や、RHGの様な良書が混同して置かれていました。</p>
+
+<p>そこで私は「必要な本」と「不要な本」を分け、「不要な本」はゴミ箱に捨て、本棚を整理しようと考えました。</p>
+
+<p>しかし、よく考えてみると「必要な本」と「不要な本」を区別する事は大変そうです。</p>
+
+<p>なぜなら、本棚に置いてある本のすべてが会社のみんなで共有しているものであり、私個人の考えで「不要である」と判断する事はできないからです。
+私がもう読まないだろうと思ったものでも、会社内の誰かにとっては「必要な本」かもしれません。</p>
+
+<p>肝心な事は「会社内の誰もが不要だと思う本」を見つけることにあるようです。</p>
+
+<p>さて、どのようにすればそれを見つけることができるでしょうか。</p>
+
+<p>下の図は一応本棚を表しています。。
+<img src="/images/0025-RareAreGCTalk/bookshelf_ms_01.jpg" alt="bookshelf_ms_01.jpg" /></p>
+
+<h3 id="marksweep">Mark&amp;Sweep</h3>
+
+<p>ベタなアイデアですが、こういうのはどうでしょう。</p>
+
+<p>本棚の本の一冊ずつに対して、会社の皆さんに「この本、来年も必要ですか？」と聞いて回る方法です。</p>
+
+<p>具体的には以下の様な事をやります。</p>
+
+<ol>
+  <li>本棚の上左端から一冊本を取り出す。</li>
+  <li>同僚に「この本、来年も必要ですか？」と聞いて回る。</li>
+  <li>もし誰かが「いるよ！」と答えたら、その本の背表紙に赤いシールを貼って戻す。</li>
+  <li>全員が「いらないなぁ」と答えたら、その本は何もせずに本棚に戻す。</li>
+  <li>これを本棚の下右端まで繰り返す。</li>
+</ol>
+
+<p>この手順を終えると本棚の本は以下の図の様に変化しました。
+<img src="/images/0025-RareAreGCTalk/bookshelf_ms_02.jpg" alt="bookshelf_ms_02.jpg" /></p>
+
+<p>この手順では「必要な本」には赤いシールで印付けを、「不要な本」は何もせずにそのままにしています。
+これで「必要な本」と「不要な本」を確実かつ完全に区別する事ができました。</p>
+
+<p>この作業を「 Mark 」（印付け）と言います。</p>
+
+<p>　</p>
+
+<p>さて次は「不要な本」をゴミ箱に捨てる作業です。</p>
+
+<p>これは以下の手順で行おうと思います。</p>
+
+<ol>
+  <li>また本棚の上左端から一冊本を取り出す。</li>
+  <li>もし、その本の背表紙に赤いシールが貼られていたら、それを剥がし本棚に戻す。</li>
+  <li>逆に何も印がなければゴミ箱に捨てる。</li>
+  <li>これを本棚の下右端まで繰り返す。</li>
+</ol>
+
+<p>この手順を終えると本棚の本は以下の図の様に変化しました。
+<img src="/images/0025-RareAreGCTalk/bookshelf_ms_03.jpg" alt="bookshelf_ms_03.jpg" /></p>
+
+<p>この手順では「必要な本」を本棚に戻し、「不要な本」をゴミ箱に捨てました。
+すると本棚には「必要な本」だけが残り、全ての「不要な本」を処分することができました。</p>
+
+<p>この作業を「 Sweep 」（掃き出す）と言います。</p>
+
+<p>そして、この方法を「 Mark&amp;Sweep アルゴリズム」と呼びます。</p>
+
+<p>日本語では「印付けをして箒で掃き出す」という意味です。とても良いネーミングですね。</p>
+
+<h4 id="悪い点">悪い点</h4>
+
+<p>本棚はきれい整理されました。めでたしめでたし…</p>
+
+<p>と、思いましたが、一つ問題があります。</p>
+
+<p>それは本同士の隙間がスカスカに空いてしまった事です。</p>
+
+<p>こうなってしまうと少し大きめの本は本棚にしまうことができなくなります。
+<img src="/images/0025-RareAreGCTalk/bookshelf_ms_04.jpg" alt="bookshelf_ms_04.jpg" /></p>
+
+<p>この問題を「断片化」（フラグメンテーション）と呼びます。</p>
+
+<p>これでは新しい本を入れるときに困ってしまいますね。何か違う方法を考えた方が良さそうです。</p>
+
+<p>余談ですが我らが CRuby ではこの Mark&amp;Sweep アルゴリズムが実装されており、この本棚と同じく断片化の問題があります<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+
+<h3 id="copying">Copying</h3>
+
+<p>一つの本棚だけで整理するのは断片化などの様々な問題を起こしそうです。
+なので、次は二つの本棚をうまく使って本の整理を行うことにしましょう。
+<img src="/images/0025-RareAreGCTalk/bookshelf_cp_01.jpg" alt="bookshelf_cp_01.jpg" /></p>
+
+<p>具体的には以下の様な手順で行います。</p>
+
+<ol>
+  <li>本棚の上左端から一冊本を取り出す。</li>
+  <li>同僚に「この本、来年も必要ですか？」と聞いて回る。</li>
+  <li>もし誰かが「いるよ！」と答えたら、その本の空の本棚に移す。</li>
+  <li>全員が「いらないなぁ」と答えたら、その本は何もせずに本棚に戻す。</li>
+  <li>これを本棚の下右端まで繰り返す。</li>
+</ol>
+
+<p>この手順を終えると本棚の本は以下の図の様に変化しました。
+<img src="/images/0025-RareAreGCTalk/bookshelf_cp_02.jpg" alt="bookshelf_cp_02.jpg" /></p>
+
+<p>この手順では「必要な本」は右の本棚に移動、「不要な本」は何もせずにそのままにしました。</p>
+
+<p>Mark&amp;Sweep では印付けをする事で「不要な本」を区別しましたが、この方法は置き場所によってそれを区別します。</p>
+
+<p>　</p>
+
+<p>さて、次に「不要な本」をゴミ箱に捨てる作業です。</p>
+
+<p>そうです。これはもう簡単ですね。</p>
+
+<ol>
+  <li>左の棚の本を全てゴミ箱に捨てる。</li>
+</ol>
+
+<p>この手順を終えると本棚の本は以下の図の様に変化しました。
+<img src="/images/0025-RareAreGCTalk/bookshelf_cp_03.jpg" alt="bookshelf_cp_03.jpg" /></p>
+
+<p>何も考えずに左の本棚の本をゴッソリとゴミ箱に捨ててしまいましょう。</p>
+
+<p>この方法を｢ Copying アルゴリズム｣と呼びます。</p>
+
+<p>ちなみに、次回本棚の整理をする際は、左の空の本棚に「必要な本」を移していく事になります。</p>
+
+<h4 id="良い点">良い点</h4>
+
+<p>Copyingの良い点はMark&amp;Sweepよりも素早く整理できる点です。</p>
+
+<p>Mark&amp;Sweepでは｢不要な本｣を捨てる際に、一度本棚の本を全て調べる必要がありましたが、Copyingではその必要がありません。</p>
+
+<p>また Copying では Mark&amp;Sweep において課題であった断片化も起こっていません。</p>
+
+<p>新しい本も入れやすそうですね。</p>
+
+<h4 id="悪い点-1">悪い点</h4>
+
+<p>速いし、断片化もないし、これは完璧じゃないですか！
+早速、取りかかりましょう。と…思いましたが、やっぱり駄目です。</p>
+
+<p>なぜなら、空きの本棚が無いからです。</p>
+
+<p>そういえば全ての本棚はぎっしり詰まっているのでした。。。orz</p>
+
+<p>このように、Copying する為には Mark&amp;Sweep に比べて2倍の入れ物（領域）が必要になります。これは困りものです。</p>
+
+<p>この場合だと新しい本棚を買ってこなくてはなりません<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>が、そんな事はしたくありませんよね。</p>
+
+<p>次は、もっと根本的に違う方法を考えてみましょう。</p>
+
+<h3 id="referencecount">ReferenceCount</h3>
+
+<p>皆さんは夏休みの宿題を毎日コツコツやる方でしたか？それとも、最後の二日くらいでひーひー言いながらやる方だったでしょうか？</p>
+
+<p>私はいつも後者の「ひーひー組」で、親からは「毎日遊んでばっかりだからこういう事になる！」と怒られた記憶があります。</p>
+
+<p>これと同じように、そもそも「年末に一気に整理しよう」という甘い考え自体捨てましょう。</p>
+
+<p>日頃から本棚を整理しておけば年末にバタバタする必要はないのですから。</p>
+
+<p>　</p>
+
+<p>なのでそういう方法を考えてみました。</p>
+
+<p>それは「捨てないでねカード」を作る方法です。
+<img src="/images/0025-RareAreGCTalk/bookshelf_rf_01.jpg" alt="bookshelf_rf_01.jpg" /></p>
+
+<p>「捨てないでねカード」は名前の通り、この本を捨てて欲しくない（必要だ！）と思う人が名前を書き込むカードです。
+このカードは本一冊につき一枚作成し、本の間にでも挟んでおくことにします。</p>
+
+<p>では、具体的にどのように「捨てないでねカード」使うのでしょうか。</p>
+
+<p>架空の人物A君が新しい本を買ってきたと想定して、順を追ってみていきましょう。</p>
+
+<ol>
+  <li>A君が本を買ってきました。</li>
+  <li>「捨てないでねカード」を作ります。</li>
+  <li>A君はその本の「捨てないでねカード」に自分の名前を書き、本に挟みます。</li>
+  <li>B君が本棚に新しい本があることに気づきます。</li>
+  <li>B君は「ちょっと読んでみたいかも」と思ったので、その本の「捨てないでねカード」に名前を書きます。</li>
+</ol>
+
+<p>この時、「捨てないでねカード」は以下の図の様になっています。
+<img src="/images/0025-RareAreGCTalk/bookshelf_rf_02.jpg" alt="bookshelf_rf_02.jpg" /></p>
+
+<p>こうして、どんどんA君が買ってきた本の「捨てないでねカード」には名前が増えていきます。</p>
+
+<p>　</p>
+
+<p>では、この本が「不要な本」と見なされるどんな時でしょうか。</p>
+
+<p>それは以下の様なタイミングで起こります。</p>
+
+<ol>
+  <li>A君はその本を読み終わった後、「もうこれは読まないし。いらないや」と思いました。</li>
+  <li>A君は本の「捨てないでねカード」の、自分の名前に取消線を引きます。</li>
+  <li>B君は「この本の技術は古くなったからもう読まないな」と思いました。</li>
+  <li>B君も本の「捨てないでねカード」の、自分の名前に取消線を引きます。</li>
+  <li>「捨てないでねカード」に書かれた名前には全て取消線が引かれました。どうやらこの本は誰も必要だと思っていないようです。</li>
+  <li>最後に名前を消したB君は、その本をゴミ箱に捨てました。</li>
+</ol>
+
+<p>これで無事に不要な本を捨てることができました。
+<img src="/images/0025-RareAreGCTalk/bookshelf_rf_03.jpg" alt="bookshelf_rf_03.jpg" /></p>
+
+<p>この方法を「 ReferenceCount アルゴリズム」と呼びます。</p>
+
+<p>ここではその人の興味を参照（ Reference ）とし、それを数えて（ Count ）いますが、実際には Object 同士の参照を数える事になります。</p>
+
+<h4 id="良い点-1">良い点</h4>
+
+<p>この方法の良い点は負荷が分散する点です。</p>
+
+<p>年末に本棚を整理するのは大変な作業ですが、それぞれが日頃気をつけていれば本棚は常に整理されたままです。</p>
+
+<h4 id="問題点">問題点</h4>
+
+<p>このアルゴリズムの問題点は｢面倒くさい｣という点です。</p>
+
+<p>ReferenceCount では、「捨てないでねカード」に自分の名前を書いたり消したりしなくてはいけませんが、うっかり忘れてしまいそうですよね。</p>
+
+<p>しかし、名前を書くのを忘れてしまうと間違えて捨てられてしまいますし、名前を消すのを忘れてしまうとその本は捨てることはできません。少しのミスが命取りになってしまいます。</p>
+
+<p>これは非常に面倒です。</p>
+
+<h3 id="本棚は整理できたか">本棚は整理できたか？</h3>
+
+<p>本の整理とは中々面倒ですね。断片化が起こったり、本棚がもう一つ必要だったりと・・・。</p>
+
+<p>もちろんこれはGCのアルゴリズムと無理矢理こじつけたからで、実際には適当に本なんて捨てればいいんです。</p>
+
+<p>もしくは整理しないというのも一つの手かもしれませんよ :-)</p>
+
+<p>実際の会社の大掃除では私がいらなそうだなーと思う本を適当に捨てました。</p>
+
+<p>もしかしたら誰かの必要な本だったかも知れませんが、それは現実世界ではよくあることですよね！（とお茶を濁して・・・）</p>
+
+<h3 id="たとえ話終わり">たとえ話終わり</h3>
+
+<p>この章では、GC初心者の方に分かりやすいように、本棚の整理に例えてGCのアルゴリズムを解説してみました。
+無理矢理こじつけた感は少しありますけど。。。</p>
+
+<p>｢実際に実装してみるか！｣ともなるともっと詳細を知る必要があるのですが、それとは無縁の人はこの程度の知識があれば充分ではないでしょうか。</p>
+
+<h2 id="rubygcの仕組み">RubyGCの仕組み</h2>
+
+<p>アルゴリズムの概念を知った所で RubyGC の仕組みを解説していきます。</p>
+
+<p>RubyGC には Mark&amp;Sweep アルゴリズムが実装されています。</p>
+
+<p>アルゴリズムの概念自体は前の章で触れました。
+なのでここでは RubyGC にどのように Mark&amp;Sweep が実装されているかを見ていく事にします。</p>
+
+<p>注：ここからは C と Ruby の知識が多少必要になります。</p>
+
+<h3 id="marksweep-1">Mark&amp;Sweep</h3>
+
+<p>以下の様なサンプルプログラムを用意しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#Childクラスを定義
+class Child; end
+
+#配列生成
+arry1 = []
+#Childクラスのインスタンスを挿入
+arry1 &lt;&lt; Child.new
+
+#配列生成
+arry2 = []
+#Childクラスのインスタンスを挿入
+arry2 &lt;&lt; Child.new
+arry2 &lt;&lt; Child.new
+#参照を削除
+arry2 = nil
+
+#GC開始！
+GC.start</code></pre></figure>
+
+<p>このプログラムを動作させた場合に実際に CRuby 内部ではどういう動きをしているのかを見ていきます。</p>
+
+<p>Child クラスを定義し、配列を生成します。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_01.jpg" alt="crubygc_ms_01.jpg" /></p>
+
+<p>まず、上の図のヒープ領域から説明していきます。</p>
+
+<p>ここで差しているヒープ領域とはCのヒープ領域では無く、Ruby が使用するヒープ領域のことです。</p>
+
+<p>RVALUE という構造体の配列の配列という形で、Ruby のヒープ領域は確保されています。</p>
+
+<p>そして、その Ruby のヒープ領域に RArray が定義されています。</p>
+
+<p>これは Ruby 上で生成した配列のインスタンスの構造体です。Ruby上で生成した配列は CRuby 内部では RArray という構造体でヒープ領域に確保されます。</p>
+
+<p>その後、ルート内部に上記で確保した RArray のポインタが入ります。これは Ruby 上では arry1 と同じ役割です。</p>
+
+<p>ルートについての詳細は後で述べます。今はローカル変数を管理している所と思って貰えばいいでしょう。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_02.jpg" alt="crubygc_ms_02.jpg" /></p>
+
+<p>Childクラスのインスタンスが生成されました。</p>
+
+<p>CRuby 内部では RObject という構造体でヒープ領域に確保されます。</p>
+
+<p>また、RArray 内部には上記で生成した RObject のポインタが挿入されます。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_03.jpg" alt="crubygc_ms_03.jpg" /></p>
+
+<p>先ほどと同じくルートに RArray のポインタが入り、RArray 構造体がヒープ領域に確保されます。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_04.jpg" alt="crubygc_ms_04.jpg" /></p>
+
+<p>　
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_05.jpg" alt="crubygc_ms_05.jpg" /></p>
+
+<p>ここも先ほど説明した内容と同じです。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_06.jpg" alt="crubygc_ms_06.jpg" /></p>
+
+<p>ローカル変数 arry2 に nil が入りました。</p>
+
+<p>これによりルートに入っていた RArray のポインタが削除されます。</p>
+
+<p>図を見れば分かるようにRArrayは誰からも参照されていない、つまり不要なゴミのオブジェクトになりました。</p>
+
+<p>それに紐付いている RObject も、生きているオブジェクトから参照されていませんのでゴミのオブジェクトとなります。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_07.jpg" alt="crubygc_ms_07.jpg" /></p>
+
+<p>おまちかねの GC が始まります。</p>
+
+<p>どのようにして、不要なオブジェクトを解放するでしょうか。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_08.jpg" alt="crubygc_ms_08.jpg" /></p>
+
+<p>Mark 処理の始まりです。</p>
+
+<p>Mark 処理ではルートから必要なオブジェクトを再帰的に Mark していきます。</p>
+
+<p>具体的には、それぞれの構造体が持っている Mark ビットを1にしていきます。</p>
+
+<p>対象のオブジェクトが既に Mark 済みだった場合は、そのオブジェクトに Mark しません。</p>
+
+<p>さて、ここで重要な事はどこからも参照されていないオブジェクトには Mark されていない事です。本棚の話と同じですね。</p>
+
+<p>これで「必要なオブジェクト」と「不要なオブジェクト」が区別することができました。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_09.jpg" alt="crubygc_ms_09.jpg" /></p>
+
+<p>つづいて Sweep 処理です。</p>
+
+<p>Sweep 処理では Ruby のヒープ領域を一つずつ Mark がついていないかチェックしていきます。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_10.jpg" alt="crubygc_ms_10.jpg" /></p>
+
+<p>もし、Mark ビットが立っている場合はそれを0に戻します。</p>
+
+<p>これは次回の GC の際に不具合を起こさないようにするためです。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_11.jpg" alt="crubygc_ms_11.jpg" /></p>
+
+<p>もし、Mark ビットが立っていない場合はそのオブジェクトを解放します。</p>
+
+<p>これで GC は終了です。
+<img src="/images/0025-RareAreGCTalk/crubygc_ms_12.jpg" alt="crubygc_ms_12.jpg" /></p>
+
+<p>ゴミのオブジェクトは捨てられ、必要なオブジェクトのみ残りました。</p>
+
+<h3 id="保守的gc">保守的GC</h3>
+
+<p>保留していたルートの話です。ルートとは何なのでしょうか。</p>
+
+<p>簡単に言うと「オブジェクトを指しているポインタが入ってるかもしれない領域の全て」という所です。</p>
+
+<p>具体的にはマシンスタック、レジスタ、大域変数、Ruby 内のグローバル変数の管理テーブルなどの領域をルートと呼びます。</p>
+
+<p>オブジェクトを指しているポインタがルートにあれば、そのオブジェクトは必要であり生きているオブジェクトとなります。</p>
+
+<p>先ほどの本棚の例を使うと、ルートは「本棚を共有している人々」で、ルートの中のポインタは「この本は必要という気持ち」です。</p>
+
+<h4 id="オブジェクトの生死定義">オブジェクトの生死定義</h4>
+
+<p>オブジェクトの生死の定義を書いておきます。</p>
+
+<ul>
+  <li>ユーザプログラムが現在直接さわれるメモリ領域(レジスタ、スタック、大域変数など、つまりルート)からポインタによって指されるオブジェクトは生きている（必要なオブジェクト）。</li>
+  <li>生きたオブジェクト内からポインタによって指されるオブジェクトも生きている。</li>
+  <li>それ以外のオブジェクトはゴミであり、解放されるべきである。</li>
+</ul>
+
+<h4 id="オブジェクトを指しているポインタの判別方法">オブジェクトを指しているポインタの判別方法</h4>
+
+<p>マシンスタックやレジスタなどにはポインタとは関係のない値が多く含まれています。</p>
+
+<p>例えば、int 型の値や char 型の値とか。とにかくゴチャゴチャに色々な値が整理されないまま入っています。</p>
+
+<p>そこから、どのようにして「オブジェクトを指しているポインタ」を見つけるのでしょうか。</p>
+
+<p>CRuby では最終的に「ヒープ領域にその値が含まれているか？」で判断します。</p>
+
+<p>言葉だけでは少しわかりにくいので Ruby で擬似的なコードを書いてみました。</p>
+
+<p>ヒープ領域は0x0000から0x1000の範囲であると仮定しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def is_pointer_to_heap?(value)
+  heap_start = 0x0000
+  heap_end   = 0x1000
+  return true if heap_start &lt;= value &amp;&amp; value &lt; heap_end
+  return false
+end
+
+stacks = [0x0000, 0x0500, 0x10000]
+is_pointer_to_heap?(stacks[0])     #=&gt; true
+is_pointer_to_heap?(stacks[1])     #=&gt; true
+is_pointer_to_heap?(stacks[2])     #=&gt; false</code></pre></figure>
+
+<p>上記のコードでは「オブジェクトを指しているポインタ」を以下の基準で判断します。</p>
+
+<ul>
+  <li>値がヒープ領域内にあれば、それは「オブジェクトを指しているポインタ」と見なす。</li>
+  <li>値はヒープ領域外にあれば、それは「オブジェクトを指しているポインタ」ではないと見なす。</li>
+</ul>
+
+<p>これで「オブジェクトを指しているポインタ」と「そうでないもの」を区別できました。</p>
+
+<p>しかし、実は完全に区別できたわけではありません。</p>
+
+<p>この方法ではポインタの 0x0500 と int の 0x0500 の違いを判断することができないのです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">integer = 0x0500
+is_pointer_to_heap(integer) #=&gt; true</code></pre></figure>
+
+<p>これでもし 0x0500 番地のオブジェクトがゴミのオブジェクトだった場合、それは間違えて「生きている」と判断されてしまいます。</p>
+
+<p>この方法は「これオブジェクトのポインタっぽくない？」というものは全て生きていると見なしてしまいます。</p>
+
+<p>ポインタと数値を区別できない以上、これはどうしようもありません・・・。</p>
+
+<p>疑わしいものは安全な方に倒すという保守的な姿勢から、この方法は「保守的 GC 」と呼ばれます。英語では「 ConservativeGC 」です。</p>
+
+<p>そして、CRuby はこの「保守的 GC 」を採用しています。</p>
+
+<h4 id="疑問">疑問</h4>
+
+<p>しかし、ちょっと不思議に感じませんか。</p>
+
+<p>ゴミのオブジェクトを間違えて生かしておいて大丈夫なんでしょうか。何か致命的な不具合が起きそうな気もしますよね。</p>
+
+<p>問題が起きない理由としては、「ゴミのオブジェクトはユーザにとって不要なものだから」というのがあります。</p>
+
+<p>ゴミのオブジェクトとはユーザから完全に隠れてしまい、基本的に操作できないものです。そのオブジェクトが生きていても致命的な問題にはなりません。</p>
+
+<p>もちろん、ゴミのオブジェクトが増えすぎるとメモリ領域を圧迫してしまい、それはそれで問題なのですが。</p>
+
+<h4 id="欠点">欠点</h4>
+
+<p>保守的GCの欠点は使用できる GC アルゴリズムが制限されてしまう事です。</p>
+
+<p>例えば、先ほど説明した CopyingGC は保守的に行うことは不可能です。</p>
+
+<p>それは、CopyingGC ではオブジェクト自体を移動させる為、「オブジェクトを指しているポインタ」を書き換える必要があるからです。</p>
+
+<p>保守的 GC ではルート内のポインタと数値を区別できません。書き換えたポインタが数値であったら最悪です。</p>
+
+<p>1+1 の結果がたまに変わるかもね……なんて非常に不愉快ですよね。</p>
+
+<h3 id="正確なgc">正確なGC</h3>
+
+<p>ちなみに保守的GCの反対の意味で正確な GC という方法があります。英語では「 PreciseGC 」や「 ExactGC 」と呼ばれます。</p>
+
+<p>正確な GC ではマシンスタックやレジスタなどはチェックしません。「オブジェクトを指しているポインタ」のみを管理するイメージです。</p>
+
+<p>これにより、ゴミであるものは確実に全て解放されます。</p>
+
+<p>実際に実装を見たい場合は<a href="http://tinyscheme.sourceforge.net/">TinyScheme</a>等のScheme実装を見るのをお勧めします。シンプルなので読みやすいですよ。</p>
+
+<p><a href="http://rubini.us/">Rubinius</a>も正確な GC で実装されていますが、複雑すぎる為、あまりお勧めできません。</p>
+
+<h4 id="良い点-2">良い点</h4>
+
+<p>正確な GC の良い点は多くのGCアルゴリズムを実装する事が可能な点です。</p>
+
+<p>CopyingGC の様なオブジェクトを動かすアルゴリズムも実装することが可能です。</p>
+
+<p>「書き換えた値がうっかり数値だった」という心配がない為です。</p>
+
+<p>もちろん Mark&amp;Sweep も実装することが可能です。</p>
+
+<h4 id="欠点-1">欠点</h4>
+
+<p>GC を実装するにはこちらの方が単純で簡単ですが、保守的 GC と違って色々な制約がユーザ側にかかってきます。</p>
+
+<p>例えば現在の CRuby では C の拡張ライブラリを簡単に実装することが可能ですが、確実なGCを使用した場合それは難しくなります。</p>
+
+<p>なぜなら、ユーザがスタックやレジスタに「オブジェクトを指しているポインタ」をばらまいてしまうかも知れないからです。</p>
+
+<p>もし、それが唯一の参照だった場合は、そのオブジェクトは間違えて解放されてしまうでしょう。</p>
+
+<p>確実なGCではユーザに自由に「オブジェクトを指しているポインタ」を扱って貰っては困るのです。
+必然的にユーザへの制限は厳しくなってしまいます。</p>
+
+<h2 id="最近の動向">最近の動向</h2>
+
+<p>現在の CRuby の GC を改善しようとする動きが最近活発になってきました。</p>
+
+<p>2008年10月に松江で開催された「<a href="http://www.math.nagoya-u.ac.jp/~garrigue/pro71/">第71回情報処理学会プログラミング研究発表会</a>」では3つのRubyGCに関する発表が行われています。</p>
+
+<p>このイベントを笹田さんは「なんというかアレ、じゃなくてレアなイベント」<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>と表現しました。なるほど:-)</p>
+
+<p>そこで、今回はその3つレアな研究内容を簡単に紹介したいと思います。</p>
+
+<p>詳細は割愛しますが資料へのリンクを記しておきますので、興味のある方はそちらをご覧ください。</p>
+
+<h3 id="o1bitmapmarkinggc">O1BitmapMarkingGC</h3>
+
+<p>O1BitmapMarkingGC とは私とまつもとさんが作成した BitmapMarking による GC の改善案の一つです。</p>
+
+<p>BitmapMarking は<a href="http://www.rubyenterpriseedition.com/index.html">Ruby Enterprise Edition（REE）</a>という Ruby 実装で採用され、効果があることが実証されました。</p>
+
+<p>しかし、REE で実装された BitmapMarking はある部分に O(n) のアルゴリズムを使用しており、速度面で実用的ではありませんでした。</p>
+
+<p>この部分を何とか O(1) にして、高速化させたのがこの改善案です。</p>
+
+<p>CRuby に将来的に入るのかと言うと・・・微妙な所です。</p>
+
+<h4 id="詳細を知りたい方へ">詳細を知りたい方へ</h4>
+
+<dl>
+  <dt><a href="http://www.ustream.tv/recorded/838010">第４回NaCl勉強会〜BitmapMarkingGC〜</a></dt>
+  <dd>このアルゴリズムについて私がNaCl勉強会で説明したときの動画です。</dd>
+  <dt><a href="http://www.narihiro.info/resource/presen/bitmap_gc.pdf">効率的なビットマップマーキングを用いたRuby 用ごみ集め実装</a></dt>
+  <dd>このアルゴリズムについて私とまつもとさんの連名で書いた論文です。</dd>
+  <dt><a href="http://github.com/authorNari/ruby/tree/master/patch/gc_bitmap_by_align_to_v_1_9_0_4.patch">パッチ</a></dt>
+  <dd>実際の実装です。</dd>
+</dl>
+
+<h3 id="snapshotgc">SnapshotGC</h3>
+
+<p>東京大学の相川さんらの研究は「 Ruby 処理系への SnapshotGC の実装」というものです。</p>
+
+<p>これは RubyGC にインクリメンタルなGCを実装しようという試みです。</p>
+
+<p>また、この研究内には「ライトバリアをここに張らないと駄目ですよ！」という事を教えてくれる超絶便利機能も研究・実装されています。</p>
+
+<p>miniruby<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> までしか動かないそうですが、今後が非常に楽しみです。</p>
+
+<h4 id="詳細を知りたい方へ-1">詳細を知りたい方へ</h4>
+
+<dl>
+  <dt><a href="http://www.yuasa.kuis.kyoto-u.ac.jp/~aikawa/files/presentation.ppt">CRUBY処理系へのライトバリア挿入支援 </a></dt>
+  <dd>相川さんのご厚意で資料を公開していただきました。インクリメンタルGCやライトバリア自体の説明も書かれているので、その点でも参考になります。</dd>
+</dl>
+
+<h3 id="mostlycopyinggc">MostlyCopyingGC</h3>
+
+<p>電気通信大学の鵜川さんの研究は「 RubyVM における MostlyCopyingGC の実装」というものです。</p>
+
+<p>MostlyCopyingGC とは保守的な GC で何とか Copying しようというアルゴリズムです。</p>
+
+<p>このアルゴリズムを実装することで断片化が改善されます。</p>
+
+<p>まつもとさんは「良ければ明日にでも入れたい」と言っておられました。わお。</p>
+
+<p>まだ 1.9にマージされる前の YARV を対象にしたパッチしかないようですが、今後が楽しみです。</p>
+
+<h4 id="詳細を知りたい方へ-2">詳細を知りたい方へ</h4>
+
+<dl>
+  <dt><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/19909">[ruby-core:19909]</a></dt>
+  <dd>[ruby-core:19909]のスレッド内で鵜川さんのMostlyCopyingについての発表資料が公開されました。</dd>
+  <dt><a href="http://wiki.livedoor.jp/author_nari/d/GC/extend/MostlyCopyingGC(Bartlett%201989)">MostlyCopyingGC(Bartlett 1989)</a></dt>
+  <dd>アルゴリズムの詳細について知りたい場合はこちらをどうぞ。</dd>
+</dl>
+
+<h2 id="関連資料">関連資料</h2>
+
+<dl>
+  <dt><a href="http://i.loveruby.net/ja/rhg/book/gc.html">RHG 第5章 ガ−ベージコレクション</a></dt>
+  <dd>RubyGCについて更に詳しい事を知りたければ青木さんの書かれたRHGが参考になるでしょう。</dd>
+  <dt><a href="http://matsu-www.is.titech.ac.jp/~endo/gc/gc.pdf">一般教養としてのGarbage Collection</a></dt>
+  <dd>GC全般について分かりやすく解説してあります。</dd>
+  <dt><a href="http://wiki.livedoor.jp/author_nari/d/GC">GCアルゴリズム詳細解説</a></dt>
+  <dd>GCのアルゴリズム自体に興味がある場合は私が書いているWikiを見ていただけると良いかもしれません。</dd>
+  <dt><a href="http://www.amazon.co.jp/Garbage-Collection-Algorithms-Automatic-Management/dp/0471941484/">Garbage Collection: Algorithms for Automatic Dynamic Memory Management</a></dt>
+  <dd>本気で学びたい人はこの本がお勧めです。GCに関するほとんどの事はこの本に書いてあります。非常に良い本です。英語ですが・・・。</dd>
+</dl>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>ここまで読んでいただいてありがとうございます。</p>
+
+<p>この記事を通じて少しでもGCに興味を持ってもらえたならば嬉しい限りです。</p>
+
+<p>まさかと思いますが、皆さんの頭のGCはこの記事をゴミ判定してたりしないですよね？ :-)</p>
+
+<h2 id="著者について">著者について</h2>
+<p><img src="/images/0025-RareAreGCTalk/profile_kao.png" alt="profile_kao.png" /></p>
+
+<p><a href="http://d.hatena.ne.jp/authorNari/">nari</a></p>
+
+<p><a href="http://www.netlab.jp/">ネットワーク応用通信研究所</a>に所属。GC好き。</p>
+
+<p>リアルGC（掃除）はそれ程得意ではない。</p>
+
+<p>ご意見等は authorNari at gmail.com まで</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>まつもとさん主導で開発が進められているCで書かれたRuby実装&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>これに対する対策は多くありますが詳細についてはまたの機会にでも&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>ちなみに｢床においたら？｣とかは受け付けませんのであしからず :-)&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/45519">[ruby-list:45519]</a>&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>この記事のタイトルもここから頂きました&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>miniruby はビルド途中で構築される、拡張ライブラリなどを含まない最小構成のRuby&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

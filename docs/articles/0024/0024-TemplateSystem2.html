@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>テンプレートシステム入門 (2) 基礎編</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0024/0024-TemplateSystem2.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>テンプレートシステム入門 (2) 基礎編</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0024/0024-TemplateSystem2.html" class="hatena-bookmark-button" data-hatena-bookmark-title="テンプレートシステム入門 (2) 基礎編" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0024/0024-TemplateSystem2.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0024/0024-TemplateSystem2.html" data-text="テンプレートシステム入門 (2) 基礎編">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#ビジネス層とプレゼンテーション層" id="markdown-toc-ビジネス層とプレゼンテーション層">ビジネス層とプレゼンテーション層</a></li>
+  <li><a href="#プレゼンテーションロジックをどこに記述するか" id="markdown-toc-プレゼンテーションロジックをどこに記述するか">プレゼンテーションロジックをどこに記述するか?</a>    <ul>
+      <li><a href="#html-テンプレート中に記述する" id="markdown-toc-html-テンプレート中に記述する">HTML テンプレート中に記述する</a></li>
+      <li><a href="#メインプログラムの中に記述する" id="markdown-toc-メインプログラムの中に記述する">メインプログラムの中に記述する</a></li>
+      <li><a href="#独立したファイルに記述する" id="markdown-toc-独立したファイルに記述する">独立したファイルに記述する</a></li>
+    </ul>
+  </li>
+  <li><a href="#テンプレートシステムの分類" id="markdown-toc-テンプレートシステムの分類">テンプレートシステムの分類</a>    <ul>
+      <li><a href="#プレゼンテーションロジックを書く場所による分類" id="markdown-toc-プレゼンテーションロジックを書く場所による分類">プレゼンテーションロジックを書く場所による分類</a></li>
+      <li><a href="#対象とする形式による分類" id="markdown-toc-対象とする形式による分類">対象とする形式による分類</a></li>
+      <li><a href="#実際のテンプレートシステムの分類" id="markdown-toc-実際のテンプレートシステムの分類">実際のテンプレートシステムの分類</a></li>
+    </ul>
+  </li>
+  <li><a href="#デザイナーとプログラマーが協業するために必要なこと" id="markdown-toc-デザイナーとプログラマーが協業するために必要なこと">デザイナーとプログラマーが協業するために必要なこと</a>    <ul>
+      <li><a href="#技術的な観点から" id="markdown-toc-技術的な観点から">技術的な観点から</a></li>
+      <li><a href="#技術以外の観点から" id="markdown-toc-技術以外の観点から">技術以外の観点から</a></li>
+    </ul>
+  </li>
+  <li><a href="#その他" id="markdown-toc-その他">その他</a>    <ul>
+      <li><a href="#独自のテンプレート言語は避ける" id="markdown-toc-独自のテンプレート言語は避ける">独自のテンプレート言語は避ける</a></li>
+      <li><a href="#テンプレートを安全に編集する" id="markdown-toc-テンプレートを安全に編集する">テンプレートを安全に編集する</a></li>
+      <li><a href="#プレゼンテーションロジックの担当者" id="markdown-toc-プレゼンテーションロジックの担当者">プレゼンテーションロジックの担当者</a></li>
+      <li><a href="#html-エスケープについて" id="markdown-toc-html-エスケープについて">HTML エスケープについて</a></li>
+      <li><a href="#ホワイトリスト方式について" id="markdown-toc-ホワイトリスト方式について">ホワイトリスト方式について</a></li>
+      <li><a href="#目印として使える属性" id="markdown-toc-目印として使える属性">「目印」として使える属性</a></li>
+      <li><a href="#キャッシュ機能について" id="markdown-toc-キャッシュ機能について">キャッシュ機能について</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+  <li><a href="#テンプレートシステム入門-連載一覧" id="markdown-toc-テンプレートシステム入門-連載一覧">テンプレートシステム入門 連載一覧</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>テンプレートシステムは、動的に HTML ページを生成する方法のひとつです<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。
+具体的には、テンプレートとなる HTML ファイルをメインプログラムから読み込み、必要な箇所を書き換えて出力するという仕組みのことです。
+またこれを実現してくれる具体的なライブラリをテンプレートエンジンといいます。</p>
+
+<p>前回は、動的に HTML ページを生成する方法について、テンプレートシステムも含めて 3 つ紹介しました。
+またそれぞれの方法において、テキスト汎用型と HTML 専用型の 2 つのタイプがあることも紹介しました。</p>
+
+<p>今回は、テンプレートシステムについて詳しく見ていきます。
+具体的には、次のことについて説明します。</p>
+
+<ul>
+  <li>ビジネス層とプレゼンテーション層について</li>
+  <li>テンプレートシステムの分類について</li>
+  <li>デザイナーとの協業について</li>
+</ul>
+
+<p>なお本稿の対象読者は、Web アプリケーション開発に興味のある方です。
+特に、テンプレートシステムを自作しようと考えている方や、Web デザイナーとの協業を考えておられる方には、とりわけ参考になると思います。</p>
+
+<h2 id="ビジネス層とプレゼンテーション層">ビジネス層とプレゼンテーション層</h2>
+
+<p>何らかの表示を伴うアプリケーションは、大きく「ビジネス層」と「プレゼンテーション層」の 2 つに分けることができます<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+
+<dl>
+  <dt>ビジネス層</dt>
+  <dd>何 (What) を表示するか? を司る層であり、メインプログラムが担当します。</dd>
+  <dt>プレゼンテーション層</dt>
+  <dd>どう (How) 表示するか? を司る層であり、テンプレートシステムが担当します。</dd>
+</dl>
+
+<p>仕組みとしては、ビジネス層であるメインプログラムがデータを用意し、それをプレゼンテーション層であるテンプレートシステムに渡すことでデータが表示されます (図 1)。</p>
+
+<p>図 1. ビジネス層とプレゼンテーション層
+<img src="/images/0024-TemplateSystem2/template-fig1.png" alt="template-fig1.png" /></p>
+
+<p>またビジネス層とプレゼンテーション層それぞれに、ロジックとデータが必要です (表 1)。
+これらはそれぞれ、ビジネスロジック、ビジネスデータ、プレゼンテーションロジック、プレゼンテーションデータといいます。</p>
+
+<p>表 1: ビジネス層とプレゼンテーション層のそれぞれにロジックとデータがある</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>ビジネス層</th>
+      <th>プレゼンテーション層</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ロジック</td>
+      <td>ビジネスロジック</td>
+      <td>プレゼンテーションロジック</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>データ</td>
+      <td>ビジネスデータ</td>
+      <td>プレゼンテーションデータ</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>たとえば、「営業部員の売り上げ成績から上位 20 名を選出し、奇数行と偶数行で背景色を変えて &lt;table&gt; タグで表示する」というアプリケーションを考えると、これは次のように分解できます。</p>
+
+<ul>
+  <li>「営業部員の売り上げ成績」… ビジネスデータ</li>
+  <li>「上位 20 名を選出する」… ビジネスロジック</li>
+  <li>「奇数行と偶数行で背景色を変える」… プレゼンテーションロジック</li>
+  <li>「(使用する) 背景色」と「&lt;table&gt; タグ」… プレゼンテーションデータ</li>
+</ul>
+
+<p>ここで大事なのは、__プレゼンテーション層にもロジックが必要である__ということです。
+この例でいうと、「奇数行と偶数行で背景色を変える」というのは表示のためだけに必要なロジックであり、明らかにプレゼンテーション層に含まれます。
+これをビジネス層であるメインプログラムに含めてはいけません。</p>
+
+<p>よく「ロジックとプレゼンテーションを分離する」という人がいますが、これは誤りです。
+なぜなら、プレゼンテーション層にもロジックが含まれるからです。
+「ビジネス層とプレゼンテーション層を分離する」や「プレゼンテーション層をプレゼンテーションロジックとプレゼンテーションデータに分離する」というなら正しいですが、「ロジックとプレゼンテーションを分離する」は明らかに間違いですので注意してください。</p>
+
+<h2 id="プレゼンテーションロジックをどこに記述するか">プレゼンテーションロジックをどこに記述するか?</h2>
+
+<p>プレゼンテーション層が、プレゼンテーションロジックとプレゼンテーションデータに分けられることはわかりました。
+また HTML がプレゼンテーションデータであることは明白です。
+では、プレゼンテーションロジックはどこに記述すべきでしょうか。</p>
+
+<p>実は、これこそがテンプレートシステムにおける重要ポイントです。
+<strong>プレゼンテーションロジックをどこに記述するかで、テンプレートの HTML デザインが崩れるか否か、またデザイナーとプログラマーとが協業しやすいかどうかが決まります</strong>。</p>
+
+<p>プレゼンテーションロジックを記述する場所は、3 つ考えられます (図 2)。</p>
+
+<ul>
+  <li>HTML テンプレートの中</li>
+  <li>メインプログラムの中</li>
+  <li>独立した別ファイルの中</li>
+</ul>
+
+<p>図 2. プレゼンテーションロジックを記述する場所
+<img src="/images/0024-TemplateSystem2/template-fig2.png" alt="template-fig2.png" /></p>
+
+<p>これらを詳しく見ていきます。</p>
+
+<h3 id="html-テンプレート中に記述する">HTML テンプレート中に記述する</h3>
+
+<p>現在ほとんどのテンプレートエンジンは、プレゼンテーションロジックを HTML テンプレート中に記述しています。例を挙げると、Ruby でいえば eRuby、<a href="http://www.fobj.com/tempura/doc/tempura.ja.html">Tempura</a>、<a href="http://www.kuwata-lab.com/tenjin/">Tenjin</a> など、Ruby 以外でいえば <a href="http://velocity.apache.org/">Velocity</a>(Java)、<a href="http://www.smarty.net/">Smarty</a>(PHP)、<a href="http://template-toolkit.org/">Template-Toolkit</a>(Perl)、<a href="http://wiki.zope.org/ZPT/FrontPage">Zope PageTemplate</a>(Python) などが挙げられます。</p>
+
+<p>プレゼンテーションロジックを HTML テンプレートの中に記述するのは、方法としては分かりやすいのですが、HTML の中に HTML ではない要素 (= プレゼンテーションロジック) が混じるため、記法を工夫しないと HTML デザインが崩れてしまいます<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。
+また Web デザイナーと協業する場合、デザイナーとプログラマーが同じファイルを編集するため、同時作業がしづらく、またデザイナーが誤ってロジックを変更してしまう危険性もあり、協業するには都合が悪いです。</p>
+
+<p>例として、<a href="http://www.kuwata-lab.com/tenjin/">Tenjin</a> のサンプルをリスト 1 と リスト 2 に掲載します。
+ビジネス層 (メインプログラム) とプレゼンテーション層 (テンプレート) はきれいに分離していますが、テンプレートの中にプレゼンテーションデータとプレゼンテーションロジックが混在していることが分かります。
+そのため、デザイナーが誤ってプレゼンテーションロジックを変更してしまう可能性は十分にあります。</p>
+
+<p>また Tenjin のように処理命令を使ったり、<a href="http://www.fobj.com/tempura/doc/tempura.ja.html">Tempura</a> や <a href="http://wiki.zope.org/ZPT/FrontPage">Zope PageTemplate</a> のようにタグの属性に記述する場合は HTML デザインが崩れませんが、たとえば eRuby のように「&lt;% %&gt;」を使ったり、Velocity のように独自記法を採用している場合は、テンプレートの HTML デザインが崩れてしまうため、デザイナーには不評です。</p>
+
+<p>リスト 1: ex-tenjin.rbhtml (テンプレート)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;table&gt;
+&lt;?rb odd = false ?&gt;
+&lt;?rb for item in @list ?&gt;
+&lt;?rb   odd = !odd ?&gt;
+&lt;?rb   klass = odd ? 'odd' : 'even' ?&gt;
+  &lt;tr class="#{klass}"&gt;
+    &lt;td&gt;${item}&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;?rb end ?&gt;
+&lt;/table&gt;</code></pre></figure>
+
+<p>リスト 2: ex-tenjin.rb (メインプログラム)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'tenjin'
+
+## 表示したいデータを用意する
+list = ['&lt;AAA&gt;', 'B&amp;B', '"CCC"']
+
+## データをプレゼンテーション層に渡して表示する
+engine = Tenjin::Engine.new
+output = engine.render('ex-tenjin.rbhtml', :list=&gt;list)
+print output</code></pre></figure>
+
+<h3 id="メインプログラムの中に記述する">メインプログラムの中に記述する</h3>
+
+<p>プレゼンテーションロジックをメインプログラム中に記述することで、HTML テンプレートに余計なものが含まれないようにしたテンプレートシステムがあります。例を挙げると、Ruby なら <a href="http://amrita2.rubyforge.org/indexJ.html">Amrita2</a> や <a href="http://devel.korinkan.co.jp/misen/">misen</a>、Ruby 以外だと <a href="http://www.enhydra.org/tech/xmlc/index.html">Enhydra XMLC</a>(Java) や <a href="http://wicket.apache.org/">Wicket</a><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>(Java) が挙げられます。</p>
+
+<p>プレゼンテーションロジックをメインプログラムの中に書く方法は、HTML テンプレートの中に余計なものが混じらないので HTML デザインが崩れません。
+またデザイナーが編集するファイル (= HTML テンプレート) と、プログラマーが編集するファイル (= メインプログラム) が別になるので、同時作業がしやすく、デザイナーがロジックを触ることができないので、デザイナーと協業する上でも好都合です。</p>
+
+<p>しかし、本来プレゼンテーション層に含まれるべきプレゼンテーションロジックが、ビジネス層を担当するメインプログラムに現れるわけですから、ビジネス層とプレゼンテーション層が分離できません。
+アプリケーションのアーキテクチャとしては良くないです。</p>
+
+<p>例として、<a href="http://amrita2.rubyforge.org/indexJ.html">Amrita2</a> のサンプルをリスト 3 とリスト 4 に掲載します。
+テンプレート中に HTML 以外の要素 (= プレゼンテーションロジック) が現れておらず、テンプレートのデザインがまったく崩れないことがわかります。</p>
+
+<p>しかしプレゼンテーションロジックがメインプログラム中に現れるため、ビジネス層とプレゼンテーション層とが分離できていないこともわかります
+(Amrita2 ではロジックをデータで表現するため、Amrita2 用にデータを用意することがプレゼンテーションロジックの記述になります)。</p>
+
+<p>リスト 3: ex-amrita2.html (テンプレート)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;table&gt;
+  &lt;tr id="list" class="odd"&gt;
+    &lt;td id="item"&gt;ITEM&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr id="dummy" class="even"&gt;
+    &lt;td&gt;ITEM&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></figure>
+
+<p>リスト 4: ex-amrita2.rb (メインプログラム)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'rubygems'
+require 'amrita2/template'
+include Amrita2
+
+## 表示したいデータ (Amrita2 用に加工済み) を用意する
+list = [
+  a(:class=&gt;'odd')  { {:item=&gt;'&lt;AAA&gt;'} },
+  a(:class=&gt;'even') { {:item=&gt;'B&amp;B'  } },
+  a(:class=&gt;'odd')  { {:item=&gt;'"CCC"'} },
+]
+context = { :list=&gt;list }
+
+## テンプレートを読み込んで表示する
+template = TemplateFile.new('ex-amrita2.html')
+template.expand(output='', context)
+print output</code></pre></figure>
+
+<p>ただこのタイプの場合、プレゼンテーションロジックをメインプログラムから追い出して別ファイルにすることはさほど難しくないため、あまり問題とはならないようです。
+たとえば Amrita2 の場合、リスト 5 と リスト 6 のようにすれば、メインプログラムとプレゼンテーションロジックとを分離することができます。</p>
+
+<p>リスト 5: ex-amrita2-view.rb (プレゼンテーションロジック)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'rubygems'
+require 'amrita2/template'
+include Amrita2
+
+def ex_amrita2_view(list)
+  ## Amrita2 用にデータを加工する
+  arr = []
+  list.each_with_index do |item, i|
+    klass = i % 2 == 0 ? 'odd' : 'even'
+    arr &lt;&lt; a(:class=&gt;klass) { {:item=&gt;item} }
+  end
+  context = { :list=&gt;arr }
+  ## テンプレートを読み込んで表示する
+  template = TemplateFile.new("ex-amrita2.html")
+  template.expand(output='', context)
+  return output
+end</code></pre></figure>
+
+<p>リスト 6: ex-amrita2-main.rb (メインプログラム)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 表示したいデータを用意する
+list = ['&lt;AAA&gt;', 'B&amp;B', '"CCC"']
+
+## データをプレゼンテーション層に渡して表示する
+require 'ex-amrita2-view'
+output = ex_amrita2_view(list)
+print output</code></pre></figure>
+
+<p>なお筆者の印象だと、このタイプのテンプレートシステムはどれも、複雑なプレゼンテーションロジックが記述しにくい (または分かりづらい) です。</p>
+
+<h3 id="独立したファイルに記述する">独立したファイルに記述する</h3>
+
+<p>プレゼンテーションロジックをテンプレート中に記述するのも、またメインプログラム中に記述するのも、どちらも問題があることが分かりました。
+ではどうすればいいのでしょうか。</p>
+
+<p>いちばん理想的なのは、プレゼンテーションロジックだけを別ファイルにすることです。
+つまり、プレゼンテーション層を「HTML テンプレートファイル」と「プレゼンテーションロジックファイル」の 2 つに分離するわけです。</p>
+
+<p>これによる利点は次の通りです。</p>
+
+<ul>
+  <li>テンプレート中に HTML 以外の要素 (= プレゼンテーションロジック) が現れないため、テンプレートのデザインがまったく崩れません。</li>
+  <li>デザイナーとプログラマーとで編集するファイルが別なため、同時作業がしやすく、またデザイナーが誤ってロジックを変更してしまうこともありません。</li>
+  <li>テンプレートを変更しても、それがメインプログラムやプレゼンテーションロジックに影響を与えませんし、その逆も成り立ちます。</li>
+  <li>ビジネス層 (メインプログラム) とプレゼンテーション層 (テンプレート + プレゼンテーションロジック) がきれいに分離できます。</li>
+</ul>
+
+<p>このように、今まであった問題点がきれいに解決されていることがわかります。
+また、特にデザイナーとプログラマーとの協業に向いていることも分かります。
+欠点があるとすれば、ファイルの数が増えるので管理の手間が少し増えることぐらいでしょうか。</p>
+
+<p>このタイプの例として、<a href="http://www.kuwata-lab.com/kwartz/">Kwartz</a> のサンプルをリスト 7、8、9 に掲載します。
+これをみると、テンプレートの HTML デザインがまったく崩れないことと、ビジネス層であるメインプログラムとプレゼンテーション層とがきれいに分離できていることがわかります。</p>
+
+<p>Kwartz では、プレゼンテーションロジックをあたかも CSS のように記述します。
+ちょうど、CSS によって HTML からデザインに関する事項を別ファイルに分離したように、Kwartz を使うと HTML からプレゼンテーションロジックを別ファイルに分離できます。
+しかも、Kwartz はHTML 専用型のように見えて実はテキスト汎用型であり、HTML や XML 以外でも使用できます。</p>
+
+<p>リスト 7 : ex-kwartz.html (テンプレート)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;table&gt;
+  &lt;tr id="mark:list" class="odd"&gt;
+    &lt;td id="mark:item"&gt;ITEM&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr id="dummy:d1" class="even"&gt;
+    &lt;td&gt;ITEM&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></figure>
+
+<p>リスト 8 : ex-kwartz.plogic (プレゼンテーションロジック)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/* id="mark:list" (または id="list") がついた要素 */
+#list {
+  /* class 属性の値として変数 klass の値を使う */
+  attrs: 'class' klass;
+  /* 要素全体を繰り返す */
+  logic: {
+    odd = false
+    for item in list
+      odd = !odd
+      klass = odd ? 'odd' : 'even'
+      _stag      # 開始タグ
+      _cont      # 内容
+      _etag      # 終了タグ
+    end
+  }
+}
+
+/* id="mark:item" (または id="item") がついた要素 */
+#item {
+  /* 内容のかわりに変数 item の値を HTML エスケープして表示する */
+  Value: item;
+}
+
+/* id="dummy:xxx" がついた要素は自動的に削除される */</code></pre></figure>
+
+<p>リスト 9 : (メインプログラム)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## あらかじめコマンドラインで
+## $ kwartz -l eruby -p ex-kwartz.plogic ex-kwartz.html &gt; ex-kwartz.rhtml
+## を実行しておく
+
+## 表示するデータを用意する
+list = ['&lt;AAA&gt;', 'B&amp;B', '"CCC"']
+
+## テンプレートを読み込んで表示する
+def create_binding(list)
+  return binding()
+end
+require 'erb'
+include ERB::Util
+filename = 'ex-kwartz.rhtml'
+eruby = ERB.new(File.read(filename), nil, trim_mode=1)
+print eruby.result(create_binding(list))</code></pre></figure>
+
+<p>このタイプのテンプレートシステムは数が少ないですが、Ruby なら <a href="http://www.kuwata-lab.com/kwartz/">Kwartz</a> や <a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi?FrontPage">CGIKit</a>、PHP なら <a href="http://www.kuwata-lab.com/kwartz/">Kwartz-php</a>、Java なら <a href="http://tapestry.apache.org/">Tapestry</a>(Java)、<a href="http://mayaa.seasar.org/index.html">Mayaa</a> などがあります。</p>
+
+<h2 id="テンプレートシステムの分類">テンプレートシステムの分類</h2>
+
+<p>テンプレートシステムの特徴を考えるうえで、それらを分類してみるのはいい方法です。
+分類方法はいくつも考えられますが、その中から筆者が重要だと思う分類方法を紹介します。</p>
+
+<h3 id="プレゼンテーションロジックを書く場所による分類">プレゼンテーションロジックを書く場所による分類</h3>
+
+<p>前のセクションで述べたように、プレゼンテーションロジックをどこに書くかによって、テンプレートシステムは次の 3 つに分類できます。</p>
+
+<ul>
+  <li>HTML テンプレート (Tempura, Tenjin, Velocity, Smarty, Template-Toolkit, Zope PagetTemplate, Kid など)</li>
+  <li>メインプログラム (Amrita, XMLC, Wicket など)</li>
+  <li>独立したファイル (CGIKit, Tapestry, Mayaa, Kwartz など)</li>
+</ul>
+
+<p>前のセクションと重複しますが、それぞれの特徴を以下にまとめます。</p>
+
+<ul>
+  <li>
+    <p>プレゼンテーションロジックをテンプレート中に書くタイプは、HTML 中に余計なものが混じるうえにデザイナーとプログラマーとが同じファイルを編集することになるため、協業するにはあまり向きません。だだ仕組みとしては分かりやすく学習コストも低いので、協業する必要がなければこのタイプでも問題ありません。</p>
+  </li>
+  <li>
+    <p>プレゼンテーションロジックをメインプログラムに書くタイプは、HTML に余計なものが混じることがなく、またデザイナーとプログラマーとで編集するファイルが異なるため、協業するには大変便利です。ビジネス層とプレゼンテーション層の分離という点では問題がありますが、プレゼンテーションロジックをメインプログラムから追い出すのは難しくないため、深刻な問題とはならないでしょう。それよりも、テンプレート中に書くタイプと比べて仕組みがわかりづらく、学習コストが大きい点のほうが問題となるでしょう。</p>
+  </li>
+  <li>
+    <p>プレゼンテーションロジックを独立したファイルに書くタイプは、デザイナーとプログラマーとが協業する上でも、またビジネス層とプレゼンテーション層の分離という点からも、いちばん理想的です。仕組みがわかりづらく学習コストがかかる点は、メインプログラムに書くタイプと同じです。このタイプの先駆けとなったのは <a href="http://www.apple.com/jp/webobjects/">WebObjects</a> であり、WebObjects がコンポーネント指向であったためか、このタイプにはコンポーネント指向のフレームワークが多いです。</p>
+  </li>
+</ul>
+
+<h3 id="対象とする形式による分類">対象とする形式による分類</h3>
+
+<p>テンプレートシステムはまた、どんな形式を対象とするかによって、大きく以下の 2 種類に分類できます。</p>
+
+<ul>
+  <li>テキスト汎用型 (Tenjin, Kwartz, Velocity, Smarty, Template-Toolkit など)</li>
+  <li>HTML 専用型 (Tempura, Amrita, XMLC, Mayaa, Zope PageTemplate, Kid など)</li>
+</ul>
+
+<p>両者の特徴は互いに対の関係になっており、一方の利点は他方の欠点となっています。
+以下にそれを紹介します。</p>
+
+<ul>
+  <li>
+    <p>テキスト汎用型は、テンプレート中に書く「目印」の記法が独自形式であることが多く、そのためテンプレートの HTML デザインが崩れます (本当は HTML のコメントや処理命令を「目印」として使ったり、Kwartz のように HTML タグを認識する独自のパーサを使うことで HTML デザインを崩さないようにできるのですが、そこまで考慮されたものは少ないです)。また HTML パーサや DOM ツリーを使わないので、HTML 専用型と比べて高速かつ軽量です。</p>
+  </li>
+  <li>
+    <p>HTML 専用型では、「目印」としてタグや属性を使うため、テンプレートの HTML デザインが崩れません。Amrita2 や XMLC のように id 属性で目印をつけるだけのものと、Tempura や Zope PageTemplate のように独自属性を使ってロジックを記述するものに分かれます<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。また foreach ~ end や if ~ end のようなブロックは、HTML タグの構造をそのまま使います。内部で HTML パーサや DOM ツリーを使うため、一般的にはテキスト汎用型と比べて遅くかつ重いです。</p>
+  </li>
+</ul>
+
+<h3 id="実際のテンプレートシステムの分類">実際のテンプレートシステムの分類</h3>
+
+<p>以上のことから、テンプレートシステムは、</p>
+
+<ul>
+  <li>プレゼンテーションロジックを書く場所 (テンプレートか、メインプログラムか、独立したファイルか) で 3 種類</li>
+  <li>対象とする形式 (テキスト汎用型か、HTML 専用型か) で 2 種類</li>
+</ul>
+
+<p>に分類できることが分かりました。
+実際にはこれらの組み合わせになるので、3 * 2 = 6 種類に分類できます。</p>
+
+<p>表 2 に、いくつかのテンプレートシステムを分類してみました。
+テンプレートエンジンを選ぶときの参考にしてください。</p>
+
+<p>表 2 : テンプレートシステムの分類</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>プレゼンテーションロジックを書く場所</th>
+      <th>テキスト汎用型</th>
+      <th>HTML 専用型</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>テンプレート</td>
+      <td><a href="http://www.kuwata-lab.com/tenjin/">Tenjin</a>, <a href="http://velocity.apache.org/">Velocity</a>, <a href="http://smarty.php.net/">Smarty</a>, <a href="http://www.template-toolkit.org/">Template-Toolkit</a>, <a href="http://www.cheetahtemplate.org/">Cheetah</a></td>
+      <td><a href="http://www.fobj.com/tempura/doc/tempura.ja.html">Tempura</a>, <a href="http://wiki.zope.org/ZPT/FrontPage">Zope PageTemplate</a>, <a href="http://www.kid-templating.org/">Kid</a>, <a href="http://genshi.edgewall.org/">Genshi</a></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>メインプログラム</td>
+      <td>-</td>
+      <td><a href="http://amrita2.rubyforge.org/indexJ.html">Amrita2</a>, <a href="http://xmlc.enhydra.org/">XMLC</a>, <a href="http://wicket.apache.org/">Wicket</a></td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>独立した別ファイル</td>
+      <td><a href="http://www.kuwata-lab.com/kwartz/">Kwartz</a></td>
+      <td><a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi?FrontPage">CGIKit</a>, <a href="http://tapestry.apache.org/">Tapestry</a><sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>, <a href="http://mayaa.seasar.org/">Mayaa</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>　</p>
+
+<h2 id="デザイナーとプログラマーが協業するために必要なこと">デザイナーとプログラマーが協業するために必要なこと</h2>
+
+<p>テンプレートシステム導入の効果として、デザイナーとプログラマーとの協業がしやすくなることが挙げられます。
+しかし、実際にはうまく協業できている例はほとんどありません。</p>
+
+<p>このセクションでは、デザイナーとプログラマーが協業するために何が必要か、筆者の見解を述べてみます。</p>
+
+<h3 id="技術的な観点から">技術的な観点から</h3>
+
+<p>デザイナーとプログラマーが本当の意味で協業するためには、__HTML テンプレート中にプレゼンテーションロジックを埋め込まないことが重要__です。</p>
+
+<p>一般的に、デザイナーとプログラマーが協業するためには HTML テンプレートのデザインが崩れないことが大事だと言われます。
+しかし筆者は、__HTML テンプレートのデザインが崩れないことは協業のための必要条件であって十分条件ではない__と考えています。
+それよりも、HTML テンプレート中にプレゼンテーションロジックを埋め込まないことのほうが重要です。</p>
+
+<p>リスト 10 をご覧下さい。
+これは HTML デザインを崩さないことを特徴とする <a href="http://www.kid-templating.org/">Kid</a> という Python 用テンプレートエンジンのサンプルです。
+これを見ると、プレゼンテーションロジックを属性に記述しているため、HTML デザインが崩れないことがわかります。</p>
+
+<p>リスト 10 : Kid のテンプレート例 (HTML デザインが崩れない)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+      xmlns:py="http://purl.org/kid/ns#"&gt;
+ &lt;body&gt;
+  &lt;h1&gt;Stock Prices&lt;/h1&gt;
+  &lt;table&gt;
+   &lt;tbody&gt;
+    &lt;tr {{*py:for="i, item in enumerate(items)"*}}
+        class="{{*${i % 2 == 1 and 'even' or 'odd'}*}}"&gt;
+     &lt;td style="text-align: center" {{*py:content="i + 1"*}}&gt;1&lt;/td&gt;
+     &lt;td&gt;
+      &lt;a href="{{*${item.url}*}}" {{*py:content="item.name"*}}&gt;AAPL&lt;/a&gt;
+     &lt;/td&gt;
+     &lt;td&gt;
+      &lt;strong {{*py:content="item.price"*}}&gt;64.23&lt;/strong&gt;
+     &lt;/td&gt;
+&lt;span {{*py:if="item.change &amp;lt; 0"*}} {{*py:strip=""*}}&gt;
+     &lt;td class="minus" {{*py:content="item.change"*}}&gt;-2.20&lt;/td&gt;
+&lt;/span&gt;
+&lt;span {{*py:if="item.change &amp;gt;= 0"*}} {{*py:strip=""*}}&gt;
+     &lt;td {{*py:content="item.change"*}}&gt;2.20&lt;/td&gt;
+&lt;/span&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+
+<p>しかしこれだと、確かに HTML デザインは崩れていませんが、テンプレート中にプレゼンテーションロジックが埋め込まれているため、次のような問題が発生します。</p>
+
+<ul>
+  <li>デザイナーがプレゼンテーションロジックにアクセスできる。
+    <ul>
+      <li>→ デザイナーがプレゼンテーションロジックを誤って変更したり、間違ったロジックを埋め込んでしまう可能性がある。</li>
+    </ul>
+  </li>
+  <li>プレゼンテーションロジックを変更するには、HTML テンプレートを修正しなくてはいけない。
+    <ul>
+      <li>→ プログラマーとデザイナーとが同じファイルを編集するため、競合が発生する<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>大事なのは、これらの問題が、HTML テンプレートのデザインが崩れる崩れないに関わらず、プレゼンテーションロジックをテンプレートに埋め込むタイプのものであれば必ず発生するということです。</p>
+
+<p>これらの問題を解決するには、プレゼンテーションロジックを HTML テンプレートから分離して別ファイルにするのがいい方法です。
+つまり、Amrita2 のようにプレゼンテーションロジックをメインプログラムに書くタイプか、Kwartz のように完全な別ファイルに分離するタイプでないと、本当の意味での「プログラマーとデザイナーとの協業」は実現できません。</p>
+
+<h3 id="技術以外の観点から">技術以外の観点から</h3>
+
+<p>ただし、以上のことはあくまで技術的な観点からの見解です。
+実際にデザイナーと協業するうえで本当に大事なのは、__デザイナーに対するリスペクト__ではないでしょうか。</p>
+
+<p>本来であれば、デザイナーと協業しやすい仕組みを用意するのはプログラマーの責任です。
+しかしその責任を果たさないくせに、デザイナーに「この書き方で書け」「ロジックぐらい書けるようになれ」と押しつける傲慢なプログラマーのなんと多いことでしょう。
+ひどいのになると、「デザイナーって、HTML と絵を書いてるだけでしょ? あんなの誰でもできるよ」と言い出すプログラマーやプロマネもいます。</p>
+
+<p>これはとんでもない暴言です。
+素人が書く HTML とデザイナーが書く HTML とを同じだと思ってはいけません。
+これは素人が書くプログラムと、お金をもらっているプログラマーが書くプログラムとを、「結局は同じプログラムでしょ?」といってしまうようなものであり、到底許されるものではありません。</p>
+
+<p>プログラマーがコードに込める思いと同じだけのものを、デザイナーは HTML や CSS に込めています。
+デザイナーが 1 ピクセルに見せるこだわりは、プログラマーがインデント幅にみせるこだわりよりもずっと尊いものです。
+いくつもあるブラウザの互換性問題やバグを回避し、どのブラウザでも同じように表示されるように HTML や CSS を書くのは、素人では絶対に出来ない職人技です。
+自分でいい仕事をしている人間は、他人のいい仕事もわかります。
+他人の仕事のよさがわからないのは、自分がろくな仕事をしていない証拠です。</p>
+
+<p>またプログラマーの皆さんが vi や Emacs や IDE ではなくメモ帳を使ってプログラムを書けと言われたらどう感じますか?
+デザイナーが Dreamweaver や GoLive を使えずエディタでテンプレートを書くことを強制されるのは、皆さんがメモ帳でプログラムを書くのを強制されるのと同じことなのです。
+職人には職人の道具があります。
+デザイナーという職人に対して、Dreamweaver や GoLive が使えないような、デザインが崩れっぱなしのテンプレートを使うよう強制するのはよくないことです。
+プログラマーの都合をデザイナーに押し付けるべきではありません。</p>
+
+<p>繰り返しますが、__デザイナーと協業しやすい仕組みを用意するのはプログラマーの責任__です。
+もしみなさんがデザイナーとの協業を望むなら、まずはデザイナーの仕事を認めることが先であり、そのあとに彼らが作業しやすいテンプレートシステムを選びましょう。
+テンプレートシステムが進化した今なら、それが可能なはずです。</p>
+
+<h2 id="その他">その他</h2>
+
+<p>テンプレートシステムに関する雑多な話題を紹介します。
+本当に雑多ではありますが、自分でテンプレートシステムを自作しようと考えている方はぜひお読み下さい。損はさせません。</p>
+
+<h3 id="独自のテンプレート言語は避ける">独自のテンプレート言語は避ける</h3>
+
+<p>テンプレートシステムが、プレゼンテーションロジックを記述するための独自の言語を持つことがあります。
+しかし、これは速度の面からも、また学習コストの面からも、やめたほうがいいです。</p>
+
+<p>たとえば、Smarty や Template-Toolkit や Django や Velocity は、プレゼンテーションロジックを記述するために、独自の言語を用意しています。
+しかし、これらは PHP や Perl や Python や Java をそのまま使うテンプレートシステムと比べて、以下のような欠点があります。</p>
+
+<ul>
+  <li>動作速度が非常に遅い (少なくとも <a href="http://www.kuwata-lab.com/tenjin/">数倍の違いがある</a>)</li>
+  <li>学習コストがかかる (新しい言語を覚えなければならない)</li>
+  <li>実装が大変でコードサイズが大きくなる (読み込みに時間がかかるので CGI では特に深刻)</li>
+  <li>言語の機能が乏しい (プラグインで補っても足りない)</li>
+</ul>
+
+<p>特に動作速度の問題は、皆さんが思っている以上に深刻です。
+たとえば Perl でよく使われている <a href="http://template-toolkit.org/">Template-Toolkit</a> はプレゼンテーションロジックを記述するのに独自言語を使いますが、C 言語で実装されているにも関わらず、pure Perl で実装された <a href="http://www.kuwata-lab.com/tenjin/">Tenjn</a> と比べて動作は約 5 倍遅いです (Perl 用の Tenjin では Perl そのものをテンプレート言語として使います)。</p>
+
+<p>このように、テンプレートシステム独自の言語を実装するのは、実装する側にも使う側にもメリットがありませんので、やめたほうがいいでしょう<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+
+<h3 id="テンプレートを安全に編集する">テンプレートを安全に編集する</h3>
+
+<p>HTML テンプレートをプログラマー以外の人が安全に編集できるようにしたいなら、プレゼンテーションロジックを HTML テンプレートから分離するタイプのテンプレートシステムを選ぶべきです。</p>
+
+<p>テンプレートシステムの利点として、「テンプレート中に書けるロジックを制限できること」をあげる人がよくいます。
+たとえば<a href="http://q.hatena.ne.jp/1202225691">こちら</a>:</p>
+
+<blockquote>
+  <p>&gt; Smartyでも十分危険なコードはかけます</p>
+
+  <p>でも、制御することも可能なんですよね。（というか、それがすごく便利です）
+PHP直だと、「俺、HTMLコーダだけど、PHPも使えるぜ！PGに依頼せずに、自分で解決しておいてあげよう」
+なんて、お節介な事されて、致命的なバグが発生したりするので、
+別にSmartyに固執しなくてもいいのですが、HTMLコーダさんが勝手なことしないように制限かけて起きたいってのが
+本音なんです。</p>
+</blockquote>
+
+<p>しかし、これは大きな間違いです。
+HTML にロジックを埋め込めるのであれば、どんなテンプレートシステムでも危険なことにかわりはありません。
+独自言語を使うことで多少制限はできますが、大した違いはありません。</p>
+
+<p>本当にテンプレートを安全に編集させようと思ったら、HTML テンプレート中には一切のロジックを記述できないようにすべきです。
+つまり、Amrita2 や Wicket のように ロジックをメインプログラム中に記述するか、または CGIKit や Tapestry や Kwartz のようにロジックを別ファイルに分離するようにしなければいけません。</p>
+
+<p>HTML テンプレート中にロジックが一切記述できないのであれば、デザイナーが何をしようと HTML テンプレートは安全です。
+もっというと、デザイナーでない任意の人にも編集させることすらできるようになります。
+たとえばブログサービスを展開していたとして、ユーザにブログの CSS だけでなく、HTML テンプレートの編集すら許可できるようになります (危険な Java スクリプトなどは、HTML テンプレートがアップロードされるときに削除すればよいでしょう)。</p>
+
+<p>繰り返しますが、HTML テンプレートにロジックを記述できるのであれば、どのテンプレートシステムでも危険です。
+安全に HTML テンプレートを編集させたいのであれば、プレゼンテーションロジックを HTML テンプレートから分離できるものを選びましょう。</p>
+
+<h3 id="プレゼンテーションロジックの担当者">プレゼンテーションロジックの担当者</h3>
+
+<p>プレゼンテーションロジックは、プレゼンテーション層に属します。
+またプレゼンテーション層は「どう表示するか?」を表すため、デザイナーが担当するべきです。
+このことから、三段論法でいうと、プレゼンテーションロジックはデザイナーの担当であるといえます。</p>
+
+<p>たとえば、奇数行と偶数行で背景色を変えたテーブルがあるとします。
+この「奇数行と偶数行で背景色を変える」というのはまさに表示のためのロジックであり、これをたとえば「金額がプラスかマイナスかで背景色を変える」に変更するとしたら、それを決定するのはプログラマーではなくデザイナーのはずです。
+その意味では、「プレゼンテーションロジックはデザイナーの担当」というのは筋が通っています。</p>
+
+<p>しかし実際には、プレゼンテーションロジックはプログラマーが担当したほうがいいでしょう。
+なぜならプレゼンテーションロジックは、ビジネス層 (メインプログラム) からプレゼンテーション層 (テンプレートシステム) にどのようなデータが渡されるのかを知っていないと記述できず、それを知っているのはプログラマーだからです。</p>
+
+<p>たしかに、見た目を管理するのはデザイナーの仕事です。
+しかし、システムが正しく動作することのほうが見た目よりも重要です。
+システムが正しく動作するうえで、ビジネス層からプレゼンテーション層にどんなデータが渡されるかは大変重要な情報であり、これについて責任を持つのはデザイナーではなくプログラマーです。
+そのため、表示のためとはいえプレゼンテーションロジックはプログラマーが担当すべきというのが、筆者の考えです。
+デザイナーがプレゼンテーションロジックを変更したくなったら、その都度プログラマーに頼むのがいいでしょう。</p>
+
+<h3 id="html-エスケープについて">HTML エスケープについて</h3>
+
+<p>HTML エスケープとは、「&lt; &gt; &amp; “」を「&amp;lt; &amp;gt; &amp;amp; &amp;quot;」に変換することです (サニタイズと呼ばれることもあります)。
+これは Web アプリケーションを作る上で、セキュリティ上非常に大切なことです。
+そのため、多くのテンプレートシステムでは HTML エスケープをする機能をサポートしています。</p>
+
+<p>ただし、デフォルトで HTML エスケープするかどうかについては議論が分かれています。
+最近では安全性を重視して、デフォルトで HTML エスケープするようなテンプレートシステムが出てきてはいますが、そうすると HTML 以外の用途では使いづらくなります。</p>
+
+<p>また HTML エスケープしたくないときにどうするかという問題もあります。
+たとえば ERB では <a href="http://www2a.biglobe.ne.jp/seki/ruby/erbquote.html">&lt;%= %&gt; がデフォルトで HTML エスケープされるように改造することも可能</a>なようですが、その場合は HTML エスケープしたくないときの指定が面倒になります。</p>
+
+<p>いちばん手軽で効果が高いのは、HTML エスケープする記法としない記法の両方をテンプレートシステムが提供することです。
+たとえば、&lt;%= %&gt; は HTML エスケープあり、&lt;%== %&gt; は エスケープなしにしたとします。
+そうすれば、通常は &lt;%= %&gt; を使うのでエスケープし忘れがなくなり安全性が高まります。
+また &lt;%== %&gt; は &lt;%= %&gt; より長いため、
+間違えて &lt;%== %&gt; のほうを使う可能性は低いです (エスケープありよりエスケープなしのほうが書くのが面倒くさいことがポイントです)。</p>
+
+<h3 id="ホワイトリスト方式について">ホワイトリスト方式について</h3>
+
+<p>ホワイトリスト方式とは、すべてのデータはデフォルトで HTML エスケープして表示するようにし、エスケープしたくないデータだけ個別に明示するという方式です。
+こうすることで、エスケープし忘れを防ごうというのが狙いです。</p>
+
+<p>たとえば、次のようなデータを表示するとします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@context = {
+  :title=&gt;'Tom &amp; Jerry は面白い',
+  :date=&gt;'2008-01-01',
+  :body=&gt;'&lt;p&gt;Tom &amp;amp; Jerry の再放送みた。なつかしー!&lt;/p&gt;'
+}</code></pre></figure>
+
+<p>ホワイトリスト方式では、まずこのデータをすべて HTML エスケープしたものを用意します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@escaped_context = {
+  :title=&gt;'Tom &amp;amp; Jerry は面白い',
+  :date=&gt;'2008-01-01',
+  :body=&gt;'&amp;lt;p&amp;gt;Tom &amp;amp;amp; Jerry の再放送みた。なつかしー!&amp;lt;/p&amp;gt;'
+}</code></pre></figure>
+
+<p>そして、表示するときにはこの HTML エスケープしたデータ (@escaped_context) のほうを表示します。
+ただし、テンプレート側で個別に明示すれば、エスケープしていないデータ (@context) のほうも表示できます。
+こうすることで、エスケープし忘れを防ごうというわけです。</p>
+
+<p>しかし筆者としては、以下のような理由からホワイトリスト方式には反対です。</p>
+
+<ul>
+  <li>エスケープし忘れを防止する方法として、不完全である。たとえば以下のような場合、ホワイトリスト方式では事前に HTML エスケープできない。
+    <ul>
+      <li>渡されたデータではない、別のデータを表示する場合 (たとえばテンプレート中で User.find(123).name を表示したりとか)。</li>
+      <li>渡されたデータから導出されるデータを表示する場合 (たとえば @user = User.find(123) が渡されたとき、@user.title を表示すると、これはエスケープされていない)。</li>
+    </ul>
+  </li>
+  <li>テンプレート中で、HTML エスケープするデータとしないデータを区別して記述しなければならない。
+    <ul>
+      <li>これなら、埋め込み式がデフォルトで HTML エスケープするようなテンプレートシステムと違いはない。</li>
+    </ul>
+  </li>
+  <li>パフォーマンスが悪い。
+    <ul>
+      <li>エスケープする必要のないデータまで無駄にエスケープしてしまう。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>筆者としては、ホワイトリスト方式を使うことで、テンプレートを書く人が HTML エスケープする・しないを気にすることなく、かつ必要な HTML エスケープが漏れなく行なわれるのであれば、ホワイトリスト方式に賛成しますが、現状はそうなっていません。
+また前のセクションで説明した、デフォルトで HTML エスケープする方法と比べて、特に利点があるとも思えません。</p>
+
+<p>もし、ホワイトリスト方式のよりよい利点がありましたら、ぜひ筆者に教えてください。</p>
+
+<h3 id="目印として使える属性">「目印」として使える属性</h3>
+
+<p>テンプレートシステムは、メインプログラムからテンプレートを読み込み、必要な箇所を書き換えて出力する仕組みです。
+そのため、書き換える箇所を表す「目印」をテンプレート中に記述する必要があります。</p>
+
+<p>テンプレートの HTML デザインを崩したくないなら、そこに埋め込む「目印」も HTML の仕様に含まれるものを利用すべきです。
+たとえばタグやコメントや処理命令 (「&lt;?php ?&gt;」など) を使うことが考えられますが、最近はタグの属性を使うタイプが増えてきました。</p>
+
+<p>目印として属性を使う場合、どのような属性を使うといいでしょうか。
+まず任意の箇所を目印として使うためには、どのタグにでも使える必要があります。
+またできれば、属性値に任意の文字列が書けるものがいいでしょう。</p>
+
+<p>どのタグでも使えるような属性としては、次のものがあります。</p>
+
+<ul>
+  <li>XHTML の名前空間を使った独自属性 (Zope PageTemplate や Kid がこの方法)。</li>
+  <li>HTML の共通属性 (id, class, style, title, lang, dir のこと)</li>
+</ul>
+
+<p>XHTML の名前空間を使った独自属性は便利なのですが、HTML で使うことも考えると、おいそれと独自属性を使うわけにはいきません (テンプレートに対して HTML validator が使えなくなります)。
+また共通属性のうち、テンプレートシステムでよく使われるのは id 属性や class 属性ですが、これらは属性値として使える文字が限られているため、たとえば「id=”if(items.length == 0)”」のような記述をすると HTML validator でエラーになります。</p>
+
+<p>筆者のお勧めは title 属性です<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。
+title 属性だと、属性値として使える文字列に制限がありません。
+また HTML テンプレートをブラウザで表示したときに、該当箇所にマウスカーソルを乗せれば属性値が表示されるというのも、テンプレートシステムに都合がいいです。</p>
+
+<p>テンプレートシステムを自作しようとしている人がもしいるなら、title 属性を使うことを考えてみてください。</p>
+
+<h3 id="キャッシュ機能について">キャッシュ機能について</h3>
+
+<p>テンプレートシステムには、出力結果 (生成された Web ページ) をファイルやメモリにキャッシュする機能を持つものがあります。
+しかし、これは設計上の誤りだと言えます。</p>
+
+<p>キャッシュ機能を持つには、以下のような事項を考慮する必要があります。</p>
+<ul>
+  <li>キャッシュの対象 (何をキャッシュするか)</li>
+  <li>キャッシュの有効期間 (いつまでキャッシュするか)</li>
+  <li>キャッシュの保存場所 (どこにキャッシュを置くか)</li>
+</ul>
+
+<p>しかし、こういったことはプレゼンテーション層で考慮すべきことなのでしょうか。
+本来、プレゼンテーション層は「データをどう表示するか」という役目だけを果たせばよく、他の責務を果たす必要はないはずです。</p>
+
+<p>キャッシュ機能が必要であれば、それはメインプログラム (または、MVC でいうところのコントローラ) が持つべきものであり、プレゼンテーション層が持つべきものではありません。
+メインプログラムがキャッシュをコントロールすれば、たとえばデータベースへのアクセスを減らすという効果が期待できますが、プレゼンテーション層がキャッシュをコントロールするならこのような効果を期待することはできません。
+出力結果のキャッシュ機能を有したテンプレートシステムというのは、プレゼンテーション層としての役割を間違えていると言えます。</p>
+
+<p>なお、出力結果のキャッシュと、テンプレートシステムが内部で使用する構文木などのキャッシュとは、きちんと区別してください。
+たとえば Jakarta Velocity はパースしたテンプレートの構文木をキャッシュできますが、これは出力結果のキャッシュとはわけが違うことに注意してください。
+構文木をキャッシュすることはテンプレートシステムの役割に入りますが、出力結果のキャッシュはテンプレートシステムがする必要はありません。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>本稿では、以下のような内容を説明しました。</p>
+
+<ul>
+  <li>ビジネス層とプレゼンテーション層
+    <ul>
+      <li>ビジネス層 … 何 (What) を表示するか? を司る。メインプログラムが担当。</li>
+      <li>プレゼンテーション層 … どう (How) 表示するか? を司る。テンプレートシステムが担当。</li>
+      <li>ビジネス層とプレゼンテーション層のそれぞれに「データ」と「ロジック」が存在する。
+        <ul>
+          <li>プレゼンテーション層にもロジックが必要</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>プレゼンテーションロジックをどこに記述するか
+    <ul>
+      <li>テンプレート中に記述 … HTML デザインが崩れるなど欠点が多い</li>
+      <li>メインプログラム中に記述 … ビジネス層とプレゼンテーション層の分離ができない</li>
+      <li>独立した別ファイルに記述 … いちばん理想的</li>
+    </ul>
+  </li>
+  <li>テンプレートシステムの分類
+    <ul>
+      <li>プレゼンテーションロジックをどこに記述するかで 3 種類 (テンプレート中、メインプログラム中、別ファイル)</li>
+      <li>対象とする形式で 2 種類 (テキスト汎用型、HTML 専用型)</li>
+    </ul>
+  </li>
+  <li>デザイナーとプログラマーが協業するために
+    <ul>
+      <li>プレゼンテーションロジックを HTML テンプレートから分離することこそが大事</li>
+      <li>デザイナーに対するリスペクトを持とう</li>
+    </ul>
+  </li>
+  <li>その他
+    <ul>
+      <li>テンプレート独自言語は、速度面からも学習コスト面からもよくない</li>
+      <li>HTML テンプレートからロジックを分離できると、安全にテンプレートを編集できる</li>
+      <li>プレゼンテーションロジックはプログラマーが担当すべき</li>
+      <li>埋め込み式は HTML エスケープするのとしないのを両方用意すべき</li>
+      <li>ホワイトリスト方式に利点はない</li>
+      <li>「目印」として属性を使うなら title 属性がお勧め</li>
+      <li>テンプレートシステムがキャッシュ機能を持つべきではない</li>
+    </ul>
+  </li>
+</ul>
+
+<p>次回からは、実際のテンプレートエンジンを紹介していきます。</p>
+
+<h2 id="テンプレートシステム入門-連載一覧">テンプレートシステム入門 連載一覧</h2>
+
+<ul>
+  <li><a href="/articles/0024/0024-TemplateSystem.html">テンプレートシステム入門 (1) 歴史編</a></li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>厳密にいうと、出力形式は HTML に限りませんが、本稿は Web アプリケーションを対象としているため、主に HTML を出力することを前提とします。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>これはテンプレートシステムから見た分け方というだけであり、他の分け方 (MVC など) を否定するものではありません。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>厳密にいうと、テンプレートの HTML デザインが崩れるかどうかは単に記法の問題であり、プレゼンテーションロジックをテンプレート中に埋め込むかどうかは関係ありません。ただし、埋め込むタイプでデザインが崩れないような記法を採用しているのは少数派です。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Wicket は、実際にはフレームワークであり、テンプレートエンジンだけを取り出して使うことはできません。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>ColdFusion や JSP のようにカスタムタグを使うものも考えられますが、それよりは独自属性を使う方がセンスがいいでしょう。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>CGIKit と Tapestry は、実際には Web アプリケーションフレームワークであり、テンプレートエンジンとして使うことはできません。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>デザイナーとプログラマーとが同じリポジトリを共有できる幸せな環境なら、この問題はあまり重要ではありません。デザイナーが Subversion や Git を使いこなせればの話ですが。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>ただし、「複数の言語で使えるテンプレートエンジンを作りたい」のような、特別な事情がある場合は別です。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>本音をいえば、特定の用途を定めないような共通属性が HTML の仕様にあると、テンプレートシステムにとっては大変都合がいいのですが。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

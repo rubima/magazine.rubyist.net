@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>解説 Ruby Refactoring Browser - Emacs でリファクタリング</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0010/0010-RubyRefactoringBrowser.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>解説 Ruby Refactoring Browser - Emacs でリファクタリング</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0010/0010-RubyRefactoringBrowser.html" class="hatena-bookmark-button" data-hatena-bookmark-title="解説 Ruby Refactoring Browser - Emacs でリファクタリング" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0010/0010-RubyRefactoringBrowser.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0010/0010-RubyRefactoringBrowser.html" data-text="解説 Ruby Refactoring Browser - Emacs でリファクタリング">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#この連載について" id="markdown-toc-この連載について">この連載について</a></li>
+      <li><a href="#この文章が対象とする読者" id="markdown-toc-この文章が対象とする読者">この文章が対象とする読者</a></li>
+    </ul>
+  </li>
+  <li><a href="#ruby-refactoring-browser-とは" id="markdown-toc-ruby-refactoring-browser-とは">Ruby Refactoring Browser とは</a></li>
+  <li><a href="#インストール" id="markdown-toc-インストール">インストール</a></li>
+  <li><a href="#rrb-によるリファクタリング" id="markdown-toc-rrb-によるリファクタリング">RRB によるリファクタリング</a>    <ul>
+      <li><a href="#ローカル変数名の変更" id="markdown-toc-ローカル変数名の変更">ローカル変数名の変更</a></li>
+      <li><a href="#メソッドの抽出" id="markdown-toc-メソッドの抽出">メソッドの抽出</a></li>
+      <li><a href="#メソッドの移動" id="markdown-toc-メソッドの移動">メソッドの移動</a></li>
+    </ul>
+  </li>
+  <li><a href="#ruby-refactoring-browser-の制約" id="markdown-toc-ruby-refactoring-browser-の制約">Ruby Refactoring Browser の制約</a>    <ul>
+      <li><a href="#定義部と実行部への分離" id="markdown-toc-定義部と実行部への分離">定義部と実行部への分離</a></li>
+      <li><a href="#対象となるファイルの範囲" id="markdown-toc-対象となるファイルの範囲">対象となるファイルの範囲</a></li>
+      <li><a href="#文法の制限" id="markdown-toc-文法の制限">文法の制限</a></li>
+    </ul>
+  </li>
+  <li><a href="#tips" id="markdown-toc-tips">Tips</a></li>
+  <li><a href="#最後に" id="markdown-toc-最後に">最後に</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#解説-ruby-refactoring-browser-連載一覧" id="markdown-toc-解説-ruby-refactoring-browser-連載一覧">解説 Ruby Refactoring Browser 連載一覧</a></li>
+</ul>
+
+<p>著者: 大林一平</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>この文章では、 Ruby 用のリファクタリングブラウザ、「Ruby Refactoring Browser」
+の Emacs での使いかたについて解説します。</p>
+
+<p>この文章は、 Emacs 使いな読者が Ruby Refactoring Browser を一通り使いこなせるようになる
+ことを目標としています。</p>
+
+<h3 id="この連載について">この連載について</h3>
+
+<p>この連載は、2 回に分けて Ruby Refactoring Browser に関する解説をします。</p>
+
+<p>第 1 回は Emacs での使いかたについて解説します。簡単なサンプルスクリプトに
+対して実際に Ruby Refactoring Browser を使ってリファクタリングをしてみます。</p>
+
+<p>第 2 回は Ruby Refactoring Browser の組み込み方を解説します。この手のツールは
+エディタ、もしくは IDE と連携できると便利なのですが、私の知る限り、現在のところ
+Ruby Refactoring Browser は Emacs と VIM と FreeRIDE にしか対応していません。
+これを他の環境でも使えるようにするためにはどのようなプログラミングが必要か
+、 Emacsと VIM の場合を例にして解説します。</p>
+
+<h3 id="この文章が対象とする読者">この文章が対象とする読者</h3>
+
+<p>まず、 Ruby の文法について十分な知識があることを仮定します。
+また、リファクタリングの目的や方法、手順等についての知識も仮定します。
+実際にリファクタリングを活用したことがあることが望ましいでしょう。</p>
+
+<p>リファクタリングに詳しくない方は、まずマーチン・ファウラー著「リファクタリング」
+を読むことをお勧めします。</p>
+
+<p>Emacs の使いかたに関する知識も多少必要です。基本的な操作や .emacs の書き方を
+知っていて、 M-x hoge と書いてそれの意味するところがわかるくらいで
+十分です。</p>
+
+<h2 id="ruby-refactoring-browser-とは">Ruby Refactoring Browser とは</h2>
+
+<p>まずはリファクタリングブラウザについて解説しましょう
+（注 リファクタリングツールという呼びかたのほうが一般的かもしれません）。
+リファクタリングをする際には、新しいバグを作りこまないよう、「動作を変え
+ない」ように変更します。そして、それを実現するため、リファクタリングを
+細かく分割し、そのそれぞれをパターンにあてはめてしまいます。例えば
+「ローカル変数名を変更する」だとか、「コードの一部を別のメソッドとして切り出す」
+だとかです。で、このとき、あなたが怠けものであるならば、きっとこう思うでしょう。
+ローカル変数名の変更くらいコンピュータに自動でやらせりゃいいだろう、置換
+コマンドでいちいち正しいか確認しながら変更していくのは面倒だ、と。
+（注 「怠惰」はプログラマの三大美徳の内の一つでしたね）
+で、これを実現するのがリファクタリングブラウザです。
+Smalltalk で最初に開発されたそうです。有名な開発環境では Eclipse の
+JDT がリファクタリング機能を備えています。</p>
+
+<p>そして、Ruby 用のリファクタリングブラウザが Ruby Refactoring Browser です。</p>
+
+<ul>
+  <li>ローカル/グローバル/インスタンス/クラス変数名の変更</li>
+  <li>クラス名/定数名の変更</li>
+  <li>メソッド名の変更</li>
+  <li>コードの一部を新しいメソッドとして抽出</li>
+  <li>メソッドのクラス階層間の移動</li>
+  <li>クラス階層に新しいクラスを挿入</li>
+</ul>
+
+<p>以上のことができます。
+「コードの一部を新しいメソッドとして抽出」、「変数名の変更」などは
+頻繁に使うでしょう。</p>
+
+<p>配布等は <a href="http://www.kmc.gr.jp/proj/rrb/">http://www.kmc.gr.jp/proj/rrb/</a> でしています。</p>
+
+<h2 id="インストール">インストール</h2>
+
+<p>ここでは、 Linux 上でのインストールの方法を解説します。Unix 系の OS では
+ほぼ同じ方法でインストールできるはずです。ここでは Ruby 1.8.x の場合について
+説明します。 1.6.x はREADME.jaを見てください。 1.9 では動きません。</p>
+
+<p>まずは、上で挙げたページから最新版のアーカイブをダウンロードします。
+青木さんの setup.rb を利用しているため、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> cd rrb-0.1
+ $ ruby setup.rb config
+ $ ruby setup.rb setup
+ $ su
+ # ruby setup.rb install</code></pre></figure>
+
+<p>で ruby の部分はインストールできます。</p>
+
+<p>そして elisp/rrb.el を Emacs のロードパスの通った所にコピーします。
+あとは .emacs に</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (load "rrb")</code></pre></figure>
+
+<p>と書くなり、 Emacs を起動してから</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> M-x load-library[RET]rrb[RET]</code></pre></figure>
+
+<p>とするなりすれば OK です。</p>
+
+<p>Windows では Meadow での動作を確認しています。上の作業に加えて bin/ 以下の
+ファイルを rb2exe や exerb で実行可能にしておく必要があります。コンパイラ
+の準備などが面倒かもしれませんが一応 Windows でも使えます。</p>
+
+<h2 id="rrb-によるリファクタリング">RRB によるリファクタリング</h2>
+
+<p>さあ、実際にリファクタリングをやってみましょう。</p>
+
+<p>ここでは例として「ローカル変数の変更」「メソッドの抽出」「スーパークラス
+へのメソッドの移動」の 3 つをとりあげます。</p>
+
+<p>ほかの機能もだいたいこれと同じ手順で利用できるので、これだけ理解すれば
+およその機能が使えるでしょう。</p>
+
+<h3 id="ローカル変数名の変更">ローカル変数名の変更</h3>
+
+<p>では実際に使ってみましょう。まずはローカル変数名の変更からです。
+以下のようなスクリプトで、 XComplex.+ のパラメータ o を other に変更しましょう。
+ファイル名は、 sample1.rb とします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 複素数クラス
+class XComplex
+  attr_reader :im, :re
+
+  def initialize(im, re)
+    @im = im
+    @re = re
+  end
+
+  def +(o)
+    XComplex.new(@im+o.im, @re+o.re)
+  end
+
+  def to_s
+    "#{@re}+#{@im}i"
+  end
+end
+
+if __FILE__ == $0
+  x = XComplex.new(2, 3)
+  y = x + XComplex.new(1, 10)
+  puts y.to_s
+end</code></pre></figure>
+
+<p>さて emacs sample1.rb として起動します。
+<img src="/images/0010-RubyRefactoringBrowser/img1.png" alt="img1.png" /></p>
+
+<p>M-x rrb-rename-local-variable とします。
+<img src="/images/0010-RubyRefactoringBrowser/img2.png" alt="img2.png" /></p>
+
+<p>まずは「どのメソッド」のローカル変数を変更するか、を指定します。
+XComplex#+ ですね。 TAB による補完もできます。カーソル位置にある
+メソッドがデフォルト値になります。
+「XC[TAB]+[RET]」と入力すればよいでしょう。
+<img src="/images/0010-RubyRefactoringBrowser/img3.png" alt="img3.png" /></p>
+
+<p>次に、ローカル変数の名前を選びます。これも TAB で補完できます。
+「o」とします。</p>
+
+<p>最後に、新しい名前を入力します。ここでは「other」とします。
+<img src="/images/0010-RubyRefactoringBrowser/img5.png" alt="img5.png" /></p>
+
+<p>これで完了、下の図のように無事変数「o」が「other」に変更されました。
+<img src="/images/0010-RubyRefactoringBrowser/img6.png" alt="img6.png" /></p>
+
+<p>ローカル変数の他にも、グローバル/インスタンス/クラス変数名、定数名、
+メソッド名の変更もだいたい同じようにします。例えばインスタンス変数なら
+「どのクラス」の「なんという名前の変数」を「何」に変更するか、
+を指定します。アーカイブに含まれる doc/emacs.ja.rd や
+<a href="http://www.kmc.gr.jp/proj/rrb/emacs.ja.html">http://www.kmc.gr.jp/proj/rrb/emacs.ja.html</a> などに多少
+解説があります。</p>
+
+<h3 id="メソッドの抽出">メソッドの抽出</h3>
+
+<p>次にをコードの一部を新たなメソッドとして切り出してみましょう。
+例として挙げるのは以下のスクリプトです。名前は sample2.rb と
+しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class ShoppingBasket
+   def initialize
+     @basket = []
+   end
+
+   def add(item)
+     @basket &lt;&lt; item
+   end
+
+   def print_receipt
+     print "**************************\n"
+     print "*         KMC Mart       *\n"
+     print "**************************\n"
+     print "\n"
+
+     @basket.each do |item|
+       printf "- %-15s %7d\n", item.name, item.price
+     end
+
+     amount = @basket.inject(0){|r, item| r+item.price}
+
+     print "--------------------------\n" # from
+     printf "amount: %17d\n", amount      # to
+   end
+ end
+
+ class Commodity
+   attr_reader :name, :price
+
+   def initialize(name, price)
+     @name = name
+     @price = price
+   end
+ end
+
+ if __FILE__ == $0
+   chocolate = Commodity.new("YARA chocolate", 150)
+   cookie = Commodity.new("OHII cookies", 100)
+   candy = Commodity.new("AXY candy", 85)
+
+   basket = ShoppingBasket.new
+   basket.add(chocolate)
+   basket.add(cookie)
+   basket.add(candy)
+
+   basket.print_receipt
+ end</code></pre></figure>
+
+<p>切り出す部分は from と書かれた行から to と書かれた
+行までの範囲とします。新しいメソッドの名前は print_footer としましょう。</p>
+
+<p>まず、切り出したい部分の最初の行の適当な位置でマークをします。
+ただし、行の末尾でマークすると次の行からになるので注意してください。
+<img src="/images/0010-RubyRefactoringBrowser/img11.png" alt="img11.png" /></p>
+
+<p>次に、切り出したい部分の最後の行にカーソルを移動させてください。
+これも行頭にカーソルを置くと前の行までになるのに注意してください。
+<img src="/images/0010-RubyRefactoringBrowser/img12.png" alt="img12.png" /></p>
+
+<p>そして、M-x rrb-extract-method[RET] とします。
+新しいメソッドの名前を入力して C-m(Enter) を押せば実行されます。
+<img src="/images/0010-RubyRefactoringBrowser/img13.png" alt="img13.png" /></p>
+
+<p>以下のようになります。切り出す部分で使われているローカル変数は
+新しいメソッドの引数になります。
+<img src="/images/0010-RubyRefactoringBrowser/img14.png" alt="img14.png" /></p>
+
+<p>さて、 rrb-undo で元にもどしてから、今度は add という名前で切り出し
+てみます。</p>
+
+<p>すると、名前が重複しているため、以下のようなメッセージが
+表示されます。
+<img src="/images/0010-RubyRefactoringBrowser/img15.png" alt="img15.png" /></p>
+
+<p>このように、ある程度はチェックをしてくれます。
+ただしこのチェックは完璧ではありません。名前の重複のような
+低コストでチェックできることしか見ていません。
+よって、変更後のユニットテストはちゃんとしてください。</p>
+
+<h3 id="メソッドの移動">メソッドの移動</h3>
+
+<p>3 番目の例として、あるクラスのメソッドをそのスーパークラスに
+移動させましょう。対象となるスクリプトは以下のもの、名前は
+sample3.rb とします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class Employee
+   attr_reader :name
+   def initialize(name, days)
+     @name = name
+     @days = days
+   end
+
+ end
+
+ class Salesman &lt; Employee
+   def initialize(name, days, sales)
+     super(name, days)
+     @sales = sales
+   end
+
+   def base_salary
+     if @days &gt; 20
+       @days*8000 + (@days - 20)*3000
+     else
+       @days*8000
+     end
+   end
+
+   # 給料計算
+   # 基本給 + 売上比例
+   def salary
+     base_salary + (@sales / 250)
+   end
+ end
+
+ class Engineer &lt; Employee
+   # 給料計算
+   # 基本給 + 技能給
+   def salary
+     if @days &gt; 20
+       @days*8000 + (@days - 20)*1000 + 20000
+     else
+       @days*8000 + 20000
+     end
+   end
+ end
+
+ def print_salary(p)
+   print p.name, " ", p.salary, "\n"
+ end
+
+ if __FILE__ == $0
+   okamoto = Engineer.new("Okamoto", 21)
+   wada = Salesman.new("Wada", 17, 20_000_000)
+   print_salary(okamoto)
+   print_salary(wada)
+ end</code></pre></figure>
+
+<p>Salesman#base_salary を Employee に移動させましょう。</p>
+
+<p>まず、カーソルを新しいメソッドが置かれる場所に移動させます。
+その行は空白行である必要があります。
+<img src="/images/0010-RubyRefactoringBrowser/img21.png" alt="img21.png" /></p>
+
+<p>つぎに、 M-x rrb-pullup-method[RET] と入力します。</p>
+
+<p>移動するメソッドを入力します。 Salesman#base_salary と指定します。
+<img src="/images/0010-RubyRefactoringBrowser/img23.png" alt="img23.png" /></p>
+
+<p>最後に、移動先のクラスを指定します。 Employee です。
+<img src="/images/0010-RubyRefactoringBrowser/img24.png" alt="img24.png" /></p>
+
+<p>結果、以下の画像のようになります。
+<img src="/images/0010-RubyRefactoringBrowser/img25.png" alt="img25.png" /></p>
+
+<p>ここからさらに Engineer#salary をリファクタリングしていけますね。</p>
+
+<p>サブクラスへの移動も同様の手順でできます。</p>
+
+<h2 id="ruby-refactoring-browser-の制約">Ruby Refactoring Browser の制約</h2>
+
+<p>Ruby Refactoring Browser にはいくつか制約があります。</p>
+
+<h3 id="定義部と実行部への分離">定義部と実行部への分離</h3>
+
+<p>Ruby のライブラリによくあるように、スクリプトの一部を
+「if <strong>FILE</strong> == $0 … end」で囲む必要があります。
+そして、そのスクリプトが require で読みこまれた場合、クラス/メソッド/定数
+の定義だけを行い、実際の実行がされないようにする必要があります。</p>
+
+<p>これは、スクリプトから定数定義情報や、クラスの継承階層を取り出すために、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require '/tmp/rrb/script1.rb'
+ require '/tmp/rrb/script2.rb
+ # 以下requireが続く</code></pre></figure>
+
+<p>というスクリプトを生成し、それを ruby の処理系で実行しているからです。</p>
+
+<h3 id="対象となるファイルの範囲">対象となるファイルの範囲</h3>
+
+<p>Ruby Refactoring Browser は複数ファイルにまたがるリファクタリングも可能です。
+そしてリファクタリング対象となるファイルは、その emacs プロセスで読み込まれている
+Ruby ファイルすべてとなります。
+ちなみにRubyファイルとは、「.rb」で終わるファイル、もしくは先頭行に
+「#!/usr/local/bin/ruby」のような shebang な行があるものです。</p>
+
+<p>Emacs には IDE でいうプロジェクトのような概念がありません。そのためこの
+ような仕様になっています。</p>
+
+<p>まったく関連のない ruby スクリプトを編集する場合は Emacs を複数起動して
+ください。</p>
+
+<h3 id="文法の制限">文法の制限</h3>
+
+<p>パーサが 1.7 相当にしか対応していませんので、スクリプトも
+最近変更された文法には対応していません。</p>
+
+<h2 id="tips">Tips</h2>
+
+<p>上で書いたように Ruby Refactoring Browser は対象のスクリプトを実行します。
+そのとき $rrb_run_for_reflection というグローバル変数が true になっています。
+「if <strong>FILE</strong> == $0 … end」ではうまくいかない場合はこちらを使えば
+よいかもしれません。</p>
+
+<p>また、 Ruby Refactoring Browser にはリファクタリング作業専用の undo があります。
+M-x rrb-undo とすれば最後にしたリファクタリングがなかったことになり
+ます。この機能は特に複数のファイルをリファクタリングしたときに有効です。</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>このツールはまだ発展途上にあります。様々なバグレポート、 patch 、その
+他開発に対する寄与を我々は期待しています。</p>
+
+<p>当プロジェクトは RubyForge を利用しています。
+<a href="http://www.rubyforge.org/projects/rrb/">プロジェクトページ</a>
+には BTS や CVS リポジトリなどが置いてあります。こちらを利用してください。</p>
+
+<p>Ruby Refactoring Browser で Ruby プログラミングがさらに楽しくなればと願って
+います。</p>
+
+<p>さて、次回は Ruby Refactoring Browser の機能を様々な IDE やエディタから利用できる
+ようにする方法を解説する予定です。「エディタのプラグインを書く人」というかなり
+狭い範囲をターゲットにした解説をします。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>私（大林）は京都で大学院生をしています。専門は数学です。
+また KMC（<a href="http://www.kmc.gr.jp">京大マイコンクラブ</a>）部員でもあります。
+Ruby Refactoring Browser の主要開発者です。 Ruby Refactoring Browser は
+最初 KMC 内部のプロジェクトとして開発を開始しました。</p>
+
+<h2 id="解説-ruby-refactoring-browser-連載一覧">解説 Ruby Refactoring Browser 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0011/0011-RubyRefactoringBrowser.html">解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-RubyRefactoringBrowser.html">解説 Ruby Refactoring Browser - Emacs でリファクタリング</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

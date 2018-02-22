@@ -1,0 +1,3041 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist Hotlinks 【第 32 回】 卜部昌平さん</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0042/0042-Hotlinks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist Hotlinks 【第 32 回】 卜部昌平さん</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0042/0042-Hotlinks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist Hotlinks 【第 32 回】 卜部昌平さん" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0042/0042-Hotlinks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0042/0042-Hotlinks.html" data-text="Rubyist Hotlinks 【第 32 回】 卜部昌平さん">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>著名な Rubyist にインタビューを行う企画「Rubyist Hotlinks」。
+第 32 回となる今回は、Ruby 1.8 系のリリースマネージャを担当されている Ruby コミッタ、卜部昌平さんにお話を伺いました。</p>
+
+<p>では、お楽しみください。
+<img src="/images/0042-Hotlinks/1.jpg" alt="1.jpg" /></p>
+
+<h2 id="プロフィール">プロフィール</h2>
+
+<dl>
+  <dt>好きな言葉</dt>
+  <dd>перестройка</dd>
+  <dt>尊敬する人</dt>
+  <dd>Михаил Сергеевич Горбачёв</dd>
+  <dt>ご本人のサイト</dt>
+  <dd><a href="http://shyouhei.tumblr.com/">卜部昌平のあまりreblogしないtumblr</a></dd>
+</dl>
+
+<h2 id="インタビュー">インタビュー</h2>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>ささださん</dd>
+  <dt>語り手</dt>
+  <dd>卜部さん</dd>
+  <dt>野次馬</dt>
+  <dd>ryopeko さん、arton さん、たなべさん、川口さん、郡司さん</dd>
+  <dt>日にち</dt>
+  <dd>2013 年 3 月 23 日</dd>
+  <dt>場所</dt>
+  <dd>渋谷ヒカリエ</dd>
+</dl>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#プロフィール" id="markdown-toc-プロフィール">プロフィール</a></li>
+  <li><a href="#インタビュー" id="markdown-toc-インタビュー">インタビュー</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+      <li><a href="#プロフィール-1" id="markdown-toc-プロフィール-1">プロフィール</a>        <ul>
+          <li><a href="#生年月日出身地" id="markdown-toc-生年月日出身地">生年月日、出身地</a></li>
+          <li><a href="#好きな言葉座右の銘" id="markdown-toc-好きな言葉座右の銘">好きな言葉、座右の銘</a></li>
+          <li><a href="#尊敬する人" id="markdown-toc-尊敬する人">尊敬する人</a></li>
+          <li><a href="#代表作" id="markdown-toc-代表作">代表作</a></li>
+          <li><a href="#嫌いなメソッド好きなメソッド" id="markdown-toc-嫌いなメソッド好きなメソッド">嫌いなメソッド、好きなメソッド</a></li>
+        </ul>
+      </li>
+      <li><a href="#ruby-に関して" id="markdown-toc-ruby-に関して">Ruby に関して</a>        <ul>
+          <li><a href="#rubyist-になったきっかけ" id="markdown-toc-rubyist-になったきっかけ">Rubyist になったきっかけ</a></li>
+          <li><a href="#現在の-ruby-との付き合い" id="markdown-toc-現在の-ruby-との付き合い">現在の Ruby との付き合い</a></li>
+          <li><a href="#ruby-の好きなところ嫌いなところ" id="markdown-toc-ruby-の好きなところ嫌いなところ">Ruby の好きなところ、嫌いなところ</a></li>
+          <li><a href="#ruby-を使った成功事例" id="markdown-toc-ruby-を使った成功事例">Ruby を使った成功事例</a></li>
+          <li><a href="#ruby-のキラーアプリケーションライブラリ" id="markdown-toc-ruby-のキラーアプリケーションライブラリ">Ruby のキラーアプリケーション（ライブラリ）</a></li>
+          <li><a href="#ruby-の習得" id="markdown-toc-ruby-の習得">Ruby の習得</a></li>
+          <li><a href="#プログラミング全般" id="markdown-toc-プログラミング全般">プログラミング全般</a></li>
+          <li><a href="#ruby-以外" id="markdown-toc-ruby-以外">Ruby 以外</a></li>
+          <li><a href="#今まで読んだ中で最も美しいソースコード" id="markdown-toc-今まで読んだ中で最も美しいソースコード">今まで読んだ中で最も美しいソースコード</a></li>
+          <li><a href="#今興味を持っているテーマ" id="markdown-toc-今興味を持っているテーマ">今興味を持っているテーマ</a></li>
+        </ul>
+      </li>
+      <li><a href="#生い立ち" id="markdown-toc-生い立ち">生い立ち</a></li>
+      <li><a href="#普段の生活" id="markdown-toc-普段の生活">普段の生活</a>        <ul>
+          <li><a href="#仕事" id="markdown-toc-仕事">仕事</a></li>
+          <li><a href="#普段の生活スタイル" id="markdown-toc-普段の生活スタイル">普段の生活スタイル</a></li>
+          <li><a href="#仕事とプライベートとの両立" id="markdown-toc-仕事とプライベートとの両立">仕事とプライベートとの両立</a></li>
+          <li><a href="#美術館巡り" id="markdown-toc-美術館巡り">美術館巡り</a></li>
+          <li><a href="#映画音楽ゲームスポーツ" id="markdown-toc-映画音楽ゲームスポーツ">映画・音楽・ゲーム・スポーツ</a></li>
+          <li><a href="#使ってるマシン" id="markdown-toc-使ってるマシン">使ってるマシン</a></li>
+          <li><a href="#好きな女性のタイプ" id="markdown-toc-好きな女性のタイプ">好きな女性のタイプ</a></li>
+        </ul>
+      </li>
+      <li><a href="#今後について" id="markdown-toc-今後について">今後について</a>        <ul>
+          <li><a href="#今後の展望将来の夢" id="markdown-toc-今後の展望将来の夢">今後の展望、将来の夢</a></li>
+          <li><a href="#その他の質問" id="markdown-toc-その他の質問">その他の質問</a></li>
+          <li><a href="#mput-の由来" id="markdown-toc-mput-の由来">mput の由来</a></li>
+          <li><a href="#ruby-187-について" id="markdown-toc-ruby-187-について">Ruby 1.8.7 について</a></li>
+          <li><a href="#rubyconf-渡航支援のモチベーション" id="markdown-toc-rubyconf-渡航支援のモチベーション">RubyConf 渡航支援のモチベーション</a></li>
+          <li><a href="#前のインタビュイーとの関係次のインタビュイー" id="markdown-toc-前のインタビュイーとの関係次のインタビュイー">前のインタビュイーとの関係、次のインタビュイー</a></li>
+          <li><a href="#若手へ一言" id="markdown-toc-若手へ一言">若手へ一言</a></li>
+          <li><a href="#読者に一言" id="markdown-toc-読者に一言">読者に一言</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+  <li><a href="#rubyist-hotlinks-連載一覧" id="markdown-toc-rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</a></li>
+</ul>
+
+<h3 id="プロフィール-1">プロフィール</h3>
+
+<h4 id="生年月日出身地">生年月日、出身地</h4>
+<p>: <img src="/images/0042-Hotlinks/2.jpg" alt="2.jpg" /></p>
+
+<p><strong>ささだ</strong> 今日はよろしくお願いします。</p>
+
+<p><strong>卜部</strong> よろしくお願いします。</p>
+
+<p><strong>ささだ</strong> まずはいつも訊いている生年月日、出身地、現住所、家族構成、いずれも差し支えないところで。</p>
+
+<p><strong>卜部</strong> はい。けど、僕が ‘81 年生まれっていうことは、けっこう、いろんな人に言われているような気がするんだけど。</p>
+
+<p><strong>ささだ</strong> 言われるものなの？</p>
+
+<p><strong>卜部</strong> Hotlinks とかで言及されてませんでしたっけ。あ、Hotlinks ではないのか。Twitter とかでは、けっこう言われている気がしますね。</p>
+
+<p><strong>ささだ</strong> Twitter で「’81 年生まれ」って、言われるの？</p>
+
+<p><strong>郡司</strong> Ruby のリリースマネージャが ‘81 年生まれが多い、という話は、聞きましたよ。</p>
+
+<p><strong>ryopeko</strong> <a href="/articles/0035/0035-Hotlinks.html">Yugui さん</a>とか。</p>
+
+<p><strong>卜部</strong> えっとね、そもそも、Ruby のコミッターに、’81 年生まれが 8 人ぐらい居るんですよ。</p>
+
+<p><strong>ささだ</strong> 8 人もいるの！？ そんなに居たっけ？</p>
+
+<p><strong>卜部</strong> えっとね、僕が把握してる限りでは、年齢わかんない人はちょっとおいとくとして、<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<ul>
+  <li>shyouhei <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></li>
+  <li>ktou <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></li>
+  <li>yugui <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></li>
+  <li>mame <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></li>
+  <li>kouji <sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></li>
+  <li>mrkn <sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></li>
+  <li>takano32 <sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup></li>
+  <li>hsbt <sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></li>
+</ul>
+
+<p>というわけで、僕らの世代はムダに沢山居るので。</p>
+
+<p><strong>ささだ</strong> なんと。</p>
+
+<p><strong>卜部</strong> というわけで、まあ、Ruby のコミッターは、だいたい三十代が、こう、いちばんメインという感じで。</p>
+
+<p><strong>ささだ</strong> そろそろ三十代になっちゃったわけだね。</p>
+
+<p><strong>卜部</strong> そうですね。ヤバいですね。二十代がぜんぜんいない<sup id="fnref:11"><a href="#fn:11" class="footnote">10</a></sup>ですね。</p>
+
+<p><strong>郡司</strong> <a href="http://sorah.jp/">sora_h 君</a>が十代ですよね。</p>
+
+<p><strong>卜部</strong> えっと、十代は、sora_h と、あと誰だっけ？ 最近、ごく最近入った、<a href="http://charlie.bz/">Charlie Somerville</a> という人が自称 18 歳なので。本当かどうか知らないけど。</p>
+
+<p><strong>ささだ</strong> なるほど。次、出身地。</p>
+
+<p><strong>卜部</strong> 出身地は島根県ですね。</p>
+
+<p><strong>ささだ</strong> Ruby のふるさと。島根にいるとき、Ruby って知ってた？</p>
+
+<p><strong>卜部</strong> いや、だって、生まれた時、まだ Ruby 無いし。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>卜部</strong> で、Ruby を知ったきっかけ、みたいな話は、あとでやると思うけど、大学入ってからなんで、東京に来てからですね。</p>
+
+<p><strong>ささだ</strong> 今や <a href="http://www1.city.matsue.shimane.jp/sangyoushinkou/ruby/rubycity/rubycity.html">Ruby City</a> ですよ。</p>
+
+<p><strong>卜部</strong> そうですよね。</p>
+
+<p><strong>ささだ</strong> 親御さんから何か言われる？</p>
+
+<p><strong>卜部</strong> あ、言う言う。今度 11 月くらいに Ruby のイベントとやらがあるらしいよ、というくらいの話はしますね。</p>
+
+<p><strong>ささだ</strong> <a href="http://www.rubyworld-conf.org/ja/">RubyWorld Conference</a> ですね。「お前は出るのか？」みたいな。</p>
+
+<p><strong>卜部</strong> 「まあ、出ません」みたいな話をする。</p>
+
+<p><strong>ささだ</strong> それ出たほうがいいってこと？ 出たいと言えば出られるんじゃない？</p>
+
+<p><strong>卜部</strong> どうなんですかね<sup id="fnref:12"><a href="#fn:12" class="footnote">11</a></sup>。言えば出れるのかも。</p>
+
+<p><strong>郡司</strong> 故郷に錦を飾るということで。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> 今はどこに住んでいるんだっけ。</p>
+
+<p><strong>卜部</strong> 東京都です。</p>
+
+<p><strong>ささだ</strong> 東京を転々としているよね。</p>
+
+<p><strong>卜部</strong> そうでもないけどね。どっちかっていうと、今のところに住み始めて三年くらいだけど、そのうち一年ぐらいは、なんかどっか他のところに、例えば福岡行ったりとかしてたんで、そういう意味では東京にいない時間が、結構長いって感じですね。</p>
+
+<p><strong>ささだ</strong> 家族構成は。</p>
+
+<p><strong>卜部</strong> 一人ですね。独り身です。</p>
+
+<p><strong>ささだ</strong> 彼女は、募集中？</p>
+
+<p><strong>卜部</strong> 募集といえば募集中。まあ、今はいないですね。</p>
+
+<h4 id="好きな言葉座右の銘">好きな言葉、座右の銘</h4>
+
+<p><strong>ささだ</strong> 好きな言葉、座右の銘。</p>
+
+<p><strong>卜部</strong> いろいろ考えたんだけど。</p>
+
+<p><strong>ささだ</strong> 皆さん色々考えます。</p>
+
+<p><strong>卜部</strong> どうしようかな。今日は、じゃあ。</p>
+
+<p><strong>ささだ</strong> 何で「今日は」なの。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>郡司</strong> 表の好きな言葉、裏の好きな言葉があるとか。</p>
+
+<h4 id="尊敬する人">尊敬する人</h4>
+
+<p><strong>卜部</strong> じゃあ今日は、好きな言葉は「ペレストロイカ」で。そして尊敬する人はミハエル・ゴルバチョフということでどうでしょう。</p>
+
+<p><strong>arton</strong> ペレストロイカって何だっけ。</p>
+
+<p><strong>郡司</strong> 革命、とかそんな感じでしたっけ。</p>
+
+<p><strong>卜部</strong> 「改革・開放」ですか<sup id="fnref:13"><a href="#fn:13" class="footnote">12</a></sup>。</p>
+
+<p><strong>ささだ</strong> 何か由来とかあるんですか。</p>
+
+<p><strong>卜部</strong> 僕が子供の頃って、ロン・ヤス<sup id="fnref:14"><a href="#fn:14" class="footnote">13</a></sup>とかさ、あるいはサッチャー<sup id="fnref:15"><a href="#fn:15" class="footnote">14</a></sup>とかさ、あるいはゴルビーとか、そういう時代なんですよ。</p>
+
+<p><strong>arton</strong> あー。</p>
+
+<p><strong>卜部</strong> 僕が子供の頃には、テレビを見ると、そこではだいたいエーリッヒ・ホーネッカー<sup id="fnref:16"><a href="#fn:16" class="footnote">15</a></sup>とか、ニコラエ・チャウシェスク<sup id="fnref:17"><a href="#fn:17" class="footnote">16</a></sup>がどう、とかっていう話をしていて、僕が見ていた大人の人たちっていうのは、お話の分かる人と分からない人に二分されてて。で、お話の分かる人の代表がゴルビーだった、という感じですね。まあでも、別に、もちろんゴルバチョフが一人でやっていたというわけではなくて、レフ・ワレサ<sup id="fnref:18"><a href="#fn:18" class="footnote">17</a></sup>とか色々いたわけですけど、ま、そういった中で、「新思考外交」だっけ、柔軟な頭の方、というイメージですね。もちろん当時ゴルバチョフがやったことが正しかったのか、ということを今評価するとどうなの、というのは色々あると思いますけど。</p>
+
+<p><strong>arton</strong> すげえ難しいよね。</p>
+
+<p><strong>卜部</strong> ね。</p>
+
+<p><strong>arton</strong> 改革・開放したら、とんびに油揚げさらわれてなくなってしまったと。なんだそれ。</p>
+
+<p><strong>卜部</strong> 今で言えば、たとえば「オバマが Change って言ったらアメリカなくなった」くらいの感じですよ。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>arton</strong> しかもなぜか大統領がシュワルツェネッガーになってた、という感じ。何でエリツィンなんだよ、と。</p>
+
+<p><strong>卜部</strong> エリツィン、（今のアメリカだと）誰みたいな感じなんですかね？ 戦車乗って演説してるのは分かったけどさ<sup id="fnref:19"><a href="#fn:19" class="footnote">18</a></sup>。</p>
+
+<p><strong>ささだ</strong> 子供の頃にそれを見てかっこいいと思った？</p>
+
+<p><strong>卜部</strong> まあそうですね。</p>
+
+<p><strong>ささだ</strong> 今ペレストロイカのようなことをやっているところってありますか。今この辺が熱い、という。</p>
+
+<p><strong>卜部</strong> 今この辺が熱い！？ それは難しいですね。</p>
+
+<p><strong>ささだ</strong> アベノミクスとかは。</p>
+
+<p><strong>卜部</strong> 別にアベノミクスは改革じゃないじゃん。うーん、特にないですね。</p>
+
+<p><strong>ささだ</strong> ペレストロイカが最高だったと。</p>
+
+<p><strong>卜部</strong> 最高とは言わないけど、そのあとみんな色々やろうとして、理論的な発展とか色々あったと思うんですよ。なので逆にとんがった感じにはなっていないというか、オールラウンドに攻めようとしているので。</p>
+
+<p><strong>ささだ</strong> みんな賢くなった。</p>
+
+<p><strong>卜部</strong> そういう意味では、賢くなったっていう感じですね。ゴルバチョフも、改革が成功したとは言いづらい。最終的に、ソ連がなくなっちゃったわけだし。</p>
+
+<h4 id="代表作">代表作</h4>
+
+<p><strong>ささだ</strong> 代表作。</p>
+
+<p><strong>卜部</strong> 僕を代表しているのかよくわからないんだけど、個人的に頑張ったのは、Hotlinks の最初のほう。超がんばりましたね。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> 著作じゃなくて、ソフトウェアのことを聞いているんだけど。いや、インタビューのテープ起こしではお世話になりました。</p>
+
+<p><strong>arton</strong> <a href="/articles/0006/0006-Hotlinks.html">江渡さん</a>のとか。</p>
+
+<p><strong>郡司</strong> 江渡さんのインタビュー記事はすごい量ですよね。</p>
+
+<p><strong>卜部</strong> 今ここで思い出してみると、<a href="/articles/0004/0004-Hotlinks.html">たださん</a>が最初かな。たださんの回に野次馬として行って、「テープ起こしをやりますよ」と言って、やったのが最初ですね。</p>
+
+<p><strong>ささだ</strong> あの頃は、まだ 1 時間くらいだったっけ。</p>
+
+<p><strong>卜部</strong> たださんの回は <a href="http://pub.cozmixng.org/~the-rwiki/rw-cgi.rb?cmd=view;name=RHG%C6%C9%BD%F1%B2%F1">RHG 読書会</a>の前とかで、ふらっとやったんですよね。</p>
+
+<p><strong>郡司</strong> 第四回ですね。</p>
+
+<p><strong>卜部</strong> そのあと徐々に長くなるに従って、僕も頑張ってみました。江渡さんと<a href="/articles/0008/0008-Hotlinks.html">田中哲 (akr) さん</a>の回がすごかった<sup id="fnref:20"><a href="#fn:20" class="footnote">19</a></sup>ですね。</p>
+
+<p><strong>arton</strong> あれは圧倒的だよね。</p>
+
+<p><strong>卜部</strong> あの頃は本当に、るびましかやっていなかった。寝ても覚めてもテープ起こししてましたもん。</p>
+
+<p><strong>ささだ</strong> 本当にすいません。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> 代表作は Ruby 1.8 とかじゃないの。</p>
+
+<p><strong>卜部</strong> Ruby 1.8 は僕が作ったわけじゃないので。</p>
+
+<p><strong>ささだ</strong> 「俺のおかげでおまえら使っているんだぞ」って言ってもいいのでは<sup id="fnref:21"><a href="#fn:21" class="footnote">20</a></sup>。</p>
+
+<p><strong>卜部</strong> 今の会社に転職したら、一番最初に「あ、.screenrc の人だ」って言われたので。周りから見た僕の代表作は .screenrc<sup id="fnref:23"><a href="#fn:23" class="footnote">21</a></sup> らしいですね。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> <a href="http://shyouhei.tumblr.com/post/313410522/screenrc">tumblr に書いてあるやつ</a>ですね。</p>
+
+<p><strong>卜部</strong> そうそう。「今度 .screenrc について一時間喋ってくれませんか」とか訳のわからない依頼<sup id="fnref:24"><a href="#fn:24" class="footnote">22</a></sup>をされたこともあります。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>arton</strong> screenrc で検索すると、上から 2 番目に出てくる。.screenrc の記事、いきなり「生産性のない話題」って書いてある。代表作って、まさに生産性じゃん。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> あれは、TiMidity++<sup id="fnref:25"><a href="#fn:25" class="footnote">23</a></sup> とかは？</p>
+
+<p><strong>卜部</strong> あれも、僕が作ったわけじゃないからね。</p>
+
+<p><strong>ささだ</strong> あれはどうなったの？</p>
+
+<p><strong>卜部</strong> どうにもなっていないというか。まあ、地道にやってます、って感じですね。</p>
+
+<p><strong>ささだ</strong> まだ続いているの？</p>
+
+<p><strong>卜部</strong> まだ続いてはいます。</p>
+
+<p><strong>ささだ</strong> 次、著作。</p>
+
+<p><strong>卜部</strong> 著作はあまりなくて、ささださんの論文に co-auther として書いていただいたのが 2 編あるのと、あとは <a href="http://www.oreilly.co.jp/books/9784873113944/">Flanagan の Ruby 本</a>に監訳ってのがあるくらいですね。
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41CGDEMgyoL._SL160_.jpg" /></p>
+
+<p><strong>ささだ</strong> 本は書かないの？</p>
+
+<p><strong>卜部</strong> 本ねえ。お話があればって感じですが。</p>
+
+<p><strong>ささだ</strong> screen についてとかは。</p>
+
+<p><strong>卜部</strong> 書いても、そんなに売れなそうだし<sup id="fnref:26"><a href="#fn:26" class="footnote">24</a></sup>。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<h4 id="嫌いなメソッド好きなメソッド">嫌いなメソッド、好きなメソッド</h4>
+
+<p><strong>ささだ</strong> 好きなメソッド、嫌いなメソッド。</p>
+
+<p><strong>卜部</strong> 実は、好き嫌いをあえて作らないことにしている。嫌いなメソッドを作っちゃうと、「これ嫌いだからメンテしなくてもいいや」って感じでメンテナンスしない、とかあるじゃないですか。</p>
+
+<p><strong>ささだ</strong> メンテナンスか。使わない、じゃなくて。</p>
+
+<p><strong>卜部</strong> こいつバグってるけど嫌いだからいいや、とかなっちゃうと、やっぱり問題あるじゃないですか。</p>
+
+<p><strong>ささだ</strong> バグっているからみんな使わないようにさせよう、とか。</p>
+
+<p><strong>卜部</strong> というわけで、あまりあえて作らないようにしている。あえて言うとすれば、1.9 以降の新機能とかですね。<a href="/articles/0041/0041-200Special-lazy.html">lazy</a> とか便利だなと。</p>
+
+<p><strong>ささだ</strong> lazy は 2.0 ですね。lazy 使ってますか。</p>
+
+<p><strong>卜部</strong> 無駄に lazy って入れて、動きが変わらないね<sup id="fnref:27"><a href="#fn:27" class="footnote">25</a></sup>、と思ったらバグった<sup id="fnref:28"><a href="#fn:28" class="footnote">26</a></sup>りとかして。あー、とか思ったりする。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<h3 id="ruby-に関して">Ruby に関して</h3>
+
+<h4 id="rubyist-になったきっかけ">Rubyist になったきっかけ</h4>
+
+<p><strong>ささだ</strong> Ruby について。Rubyist になったきっかけは。いつからですか。</p>
+
+<p><strong>卜部</strong> 2000 年の 4 月だと思うのですが、大学に入って、大学の生協に入ってみたら、例のマヨネーズ色<sup id="fnref:29"><a href="#fn:29" class="footnote">27</a></sup>の Ruby 本<sup id="fnref:30"><a href="#fn:30" class="footnote">28</a></sup>が平積み<sup id="fnref:31"><a href="#fn:31" class="footnote">29</a></sup>になっていたと。それまで僕は Ruby というものは一切知らなくて、「オブジェクト指向スクリプト言語 Ruby」って書いてあって、なにこれ、みたいな感じで買った覚えがあります。
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41A6ZQVF71L._SL160_.jpg" /></p>
+
+<p><strong>ささだ</strong> <a href="/articles/0001/0001-Hotlinks.html">まつもとさん</a>と<a href="/articles/0021/0021-Hotlinks.html">石塚さん</a>が書いたやつですね。それを買ったのがきっかけ。</p>
+
+<p><strong>卜部</strong> Ruby を知ったきっかけはそれで、その時は本を買っただけで、CD-ROM がついてきたのでちょっとさわってみた程度<sup id="fnref:32"><a href="#fn:32" class="footnote">30</a></sup>で、そんなに真面目に使っていなかった。</p>
+
+<p><strong>ささだ</strong> ちょっとさわってみただけと。</p>
+
+<p><strong>卜部</strong> ちょっとさわってみた程度。2 年くらい経って、日本にもブログブームみたいなのがやってきて<sup id="fnref:34"><a href="#fn:34" class="footnote">31</a></sup>、ブログやるか、みたいな感じになって。2002 年くらいに <a href="http://www.tdiary.org/">tDiary</a> を始めて。</p>
+
+<p><strong>ささだ</strong> その頃はブログといえば tDiary だったと。</p>
+
+<p><strong>卜部</strong> そうでもないかもしんないけど、日本人作者だし、いちおう Ruby の本買ったことくらいは記憶にあったからさ。と思って使ってみたら、これが<a href="http://web.archive.org/web/20041106192909/http:/mput.dip.jp/mput/?date=20030214">見事に動かない</a>わけですよ。</p>
+
+<p><strong>ささだ</strong> 動かなかったんですか？</p>
+
+<p><strong>卜部</strong> 自宅で Apache で CGI とかやろうとすると、パフォーマンスが悪かった<sup id="fnref:35"><a href="#fn:35" class="footnote">32</a></sup>りすることもあって、がーっとアクセスが来るとがーっとリファラとかが溜まって、非線形に遅くなって、全く動かなくなったりとかして。しょうがねえなあ、ということで手を入れたりとかしていた。</p>
+
+<p><strong>ささだ</strong> なるほど。tDiary で人生が変わったってやつですね。人生曲がったと。</p>
+
+<p><strong>卜部</strong> そうですね。<a href="http://sho.tdiary.net/20130223.html">この間、たださんが言っていたやつ</a>ですね。</p>
+
+<p><strong>arton</strong> そのたださんへのインタビューが、記念すべき第一作か。</p>
+
+<p><strong>卜部</strong> Hotlinks に遊びに行ったのはそういう理由ですね。tDiary で遊んでいてバグを見つけて、これおかしいじゃん、って tDiary に書くと、まつもとさんとか<a href="/articles/0009/0009-Hotlinks.html">中田さん</a>とかが来て、僕のダイアリーのコメント欄に diff を貼って去っていく、という感じで。そうじゃなくて直せよ、みたいな。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> これで動くから、って。そういう時代だったよね。コミュニケーションは tDiary のコメントで。</p>
+
+<p><strong>arton</strong> そこが tDiary だからね。</p>
+
+<p><strong>卜部</strong> ツッコミができると。</p>
+
+<p><strong>arton</strong> あれ、「<a href="http://web.archive.org/web/20080612235329/http://mput.dip.jp/mput/">mputの日記。</a>」って今存在しないよね。</p>
+
+<p><strong>卜部</strong> あれですね、自宅サーバーだったので、自宅のサーバーが壊れてしまって<sup id="fnref:36"><a href="#fn:36" class="footnote">33</a></sup>終了しました。</p>
+
+<p><strong>arton</strong> そういえば代表作と言えば <a href="http://web.archive.org/web/20060212054717/http://mput.dip.jp/mput/?date=20051015">RubyConf のレポート</a>。</p>
+
+<p><strong>郡司</strong> リアルタイムレポートされてましたよね。</p>
+
+<p><strong>卜部</strong> ごく最近、Twitter のログが落とせるようになった<sup id="fnref:37"><a href="#fn:37" class="footnote">34</a></sup>ので、おっと思って落としてみたら、11 月くらいがばーっとログが出ていて、おお、11 月には毎年 RubyConf に行っているんだと。傾向として明らかになってすごいですね。</p>
+
+<p><strong>郡司</strong> なるほど、最近やたらと「My First Post」って言い出したのは、Twitter のログが落とせるようになったからなんですね。</p>
+
+<p><strong>卜部</strong> 月別の傾向とか分かるので面白いですよ。</p>
+
+<p><strong>ささだ</strong> 今 Twitter でコミュニケーションするっていうのの代わりに、昔は tDiary のコメントと、アンテナで Ruby 関係を巡る、っていうのを数年やっていたような気がする<sup id="fnref:38"><a href="#fn:38" class="footnote">35</a></sup>。</p>
+
+<p><strong>卜部</strong> やってましたね。</p>
+
+<p><strong>ささだ</strong> 今アンテナとか使ってます？</p>
+
+<p><strong>卜部</strong> <a href="http://www.rubyist.net/~kazu/samidare/">るるりん</a>とか生きてるんじゃないの。</p>
+
+<p><strong>ささだ</strong> 生きていると思うけど。</p>
+
+<p><strong>卜部</strong> 今、読者の人を完全に置いてけぼりにしているような気がする。るるりん、という Ruby 関係のアンテナがありまして。</p>
+
+<p><strong>ささだ</strong> るるりんが出来た時に、すごい便利になりましたよね。</p>
+
+<p><strong>郡司</strong> <a href="http://a.hatena.ne.jp/">はてなアンテナ</a>みたいなやつですか。</p>
+
+<p><strong>卜部</strong> 今「るるりん」でググると上から 3 番目くらいに出てくる。素晴らしい。動いてる動いてる。</p>
+
+<p><strong>arton</strong> さみだれ。これがるるりんなの？</p>
+
+<p><strong>卜部</strong> ここに移ってくる前は、rrr.jin.gr.jp に置いてあって、やがてここに移ってきたんだったと思います。</p>
+
+<p><strong>郡司</strong> おお、意外に便利ですね、これ。</p>
+
+<p><strong>ささだ</strong> ちなみに、このインタビューの記事名、「Rubyist Hotlinks」は、このアンテナの名前である「Ruby Hotlinks さみだれ版」から取っています。</p>
+
+<h4 id="現在の-ruby-との付き合い">現在の Ruby との付き合い</h4>
+
+<p><strong>ささだ</strong> 現在の Ruby とのつきあいを教えて下さい。</p>
+
+<p><strong>卜部</strong> 現在の Ruby とのつきあいは、<a href="http://ruby-no-kai.org/">日本 Ruby の会</a>。これは Ruby とのつきあいというか、Ruby の会とのつきあいだけど。Ruby 本体とのつきあいは、コミッタということですよね。Ruby 1.8.7 のブランチメンテナをやっています。あと最近、<a href="https://speakerdeck.com/shyouhei/whats-new-in-ruby-2-dot-0">作ったスライドを Speaker Deck に置いた</a>ら 15,000 Views くらい行って良かったなと。</p>
+
+<p><strong>ささだ</strong> それはすごい。2.0 についての発表資料ですよね。</p>
+
+<p><strong>卜部</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> ポジティブだと駄目っていうコメントが Twitter であったけど。なんでポジティブだと駄目なの？</p>
+
+<p><strong>卜部</strong> やりづらい。駄目というか、難しい。疲れる。</p>
+
+<p><strong>ささだ</strong> ちゃんと Dis らないと駄目だと。芸風と合わないと。</p>
+
+<p><strong>arton</strong> <a href="http://shyouhei.tumblr.com/post/5545216280/c">C 死ね</a>とか。</p>
+
+<p><strong>卜部</strong> あんな感じのノリだと、ストレスなく言える。</p>
+
+<p><strong>ささだ</strong> 1.8.7 の話はまた後でしますか。</p>
+
+<h4 id="ruby-の好きなところ嫌いなところ">Ruby の好きなところ、嫌いなところ</h4>
+
+<p><strong>ささだ</strong> Ruby の好きなところ、嫌いなところ。</p>
+
+<p><strong>卜部</strong> やりたいことと記述のギャップが少ないですよね。割と。プログラムを書くということに関しては、すごく簡単だと。今仕事で Perl 書いてますが、Perl と比べるとね<sup id="fnref:39"><a href="#fn:39" class="footnote">36</a></sup>。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> Perl と比べると Ruby はよい、と。</p>
+
+<p><strong>卜部</strong> そうですね。書きやすいですね。</p>
+
+<p><strong>ささだ</strong> そうですか。何かツッコミづらいなあ。嫌いなところ。</p>
+
+<p><strong>卜部</strong> プログラムを書くのは超簡単なんだけど、その前後が難しいと思っていて。たとえば設計をするだとか、あるいはデバッグをするだとか。そういったところに関して、あんまりツールが足りないと僕は思っています。</p>
+
+<p><strong>ささだ</strong> というと？</p>
+
+<p><strong>卜部</strong> 設計の話をすると、たとえば「型がない」という話があるわけですよ。プログラムのデザインというのは、アプリケーションはともかくとして、ライブラリのデザインというのは、やらないことを決めるというのが大きいんだよね。ユーザーに何をやらせないか、というのがデザインとしてすごく重要なポイントなんだけど、Ruby の場合は何でもできちゃうので。ユーザーがなんでもできてしまうと。最終的に、だから eval すればいいでしょ、みたいな話になってくるので。そういう意味では、ユーザーができることを制限させてデザインをするという方向が、実はすごく難しいですね。というところを何とかしたいんですけど、でもどうするの、って。</p>
+
+<p><strong>ささだ</strong> そこはまつもとさんはけっこう否定していたと思っていて、そういう意味ではプログラマの自由<sup id="fnref:40"><a href="#fn:40" class="footnote">37</a></sup>を奪わないことが大事という言い方をしていたと思う。ライブラリという観点からすると、そういうわけにもいかんでしょ、という話？</p>
+
+<p><strong>卜部</strong> そうですね。</p>
+
+<p><strong>arton</strong> 改革開放したらゴルビー追放されちゃった、みたいな話？</p>
+
+<p><strong>ささだ</strong> それはちょっと難しい話に。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>卜部</strong> 作った後の話としては、デバッグやっぱり難しいですよね。何が起こっているかよく分からない<sup id="fnref:41"><a href="#fn:41" class="footnote">38</a></sup>。</p>
+
+<p><strong>ささだ</strong> 何が起こっているかよく分からない、と。何があればいい？</p>
+
+<p><strong>卜部</strong> どうなんでしょうね<sup id="fnref:42"><a href="#fn:42" class="footnote">39</a></sup>。</p>
+
+<p><strong>ささだ</strong> それは何があったら解決される？ たとえば C++ とかなら？</p>
+
+<p><strong>卜部</strong> C++ では、あまり解決されていない気もするけど。でも IDE とかがあれば、インタラクティブなデバッガとかあるじゃないですか。ブレークポイントとかが仕掛けられたりして、そこに来たら止める、とかできるよね。</p>
+
+<p><strong>ささだ</strong> それ ruby-debug とかでは昔からできてたよ。</p>
+
+<p><strong>卜部</strong> できる、ということと、簡単、ということには、だいぶ差があるので<sup id="fnref:43"><a href="#fn:43" class="footnote">40</a></sup>。</p>
+
+<p><strong>arton</strong> <a href="https://github.com/arton/ruined">ruined</a> とか、簡単じゃない？ 俺が作った。</p>
+
+<p><strong>卜部</strong> どうなんですかね。僕はそれは使ってみないと。</p>
+
+<p><strong>ささだ</strong> 有名じゃないから、使われていないからできない、という感じ？</p>
+
+<p><strong>卜部</strong> 最近だと <a href="http://pryrepl.org/">Pry</a> というのがあって、Rails の中に pry と書いておくと、Rails を動かしながらポンと止まって。コンソールに落ちてくる。便利、ってみんな叫んでいるんだけど。</p>
+
+<p><strong>ささだ</strong> それで便利とか言うなと。</p>
+
+<p><strong>卜部</strong> いや、便利だと思いますよ。実際。でもまあ、そうなのか、と。もうちょっとそういう方向に（言語から）支援があってもいいかなと。あとはデバッグも、パフォーマンス測定、instrument の方ですね。</p>
+
+<p><strong>郡司</strong> ベンチマーク？</p>
+
+<p><strong>ささだ</strong> ある特定のところだけ図りたいとか。</p>
+
+<p><strong>卜部</strong> けっこう面倒くさいですね。TracePoint が入ったから今後はわからないけど、パフォーマンスを測定しようと思うとパフォーマンスデグレードがでかくて、精度の高い測定ができなかった、とか。</p>
+
+<p><strong>ささだ</strong> ruby-prof は、かなり頑張ってる。</p>
+
+<p><strong>卜部</strong> という話もありましたね。</p>
+
+<p><strong>ささだ</strong> けっこうそれに関しては昔の印象が強くて、それが改善されてもその悪評が消えていないというのがあるかな、と思う。IDE の話だと、売っている奴はけっこういいらしいと聞くけど。使ってないけど。</p>
+
+<p><strong>卜部</strong> なるほど。</p>
+
+<p><strong>ささだ</strong> いわゆる普通の人たちが「Ruby ってこう使うんだよ」って広めている使い方が、まだそこまで至っていない使い方なのかな、と。それで「使いづらいね」っていう話をしていると。</p>
+
+<p><strong>卜部</strong> プロファイラの研究とかは、まあやっていましたよね。笹田研で<sup id="fnref:44"><a href="#fn:44" class="footnote">41</a></sup>。</p>
+
+<p><strong>ささだ</strong> あのへんをうまく取り込みたいですね。</p>
+
+<p><strong>卜部</strong> そういったところがもっと発展するといいなと思っていますね。</p>
+
+<p><strong>ささだ</strong> 頑張ります。他にある？ 設計というと、今は UML を使うんですかね。</p>
+
+<p><strong>卜部</strong> どうなんでしょうね。まあ僕はシーケンス・ダイアグラムは作ったりとかしますけど。</p>
+
+<p><strong>ささだ</strong> 石塚さんがけっこう Rational Rose でぱーっと書いてプログラムを書いていらっしゃったみたいですが。あのへんのツールとの連携とかをやると嬉しいとかあるんですか。</p>
+
+<p><strong>卜部</strong> かもしれませんね。言語側のサポートじゃなくて、ツールとして。UML を書くと正しさが分かるみたいな。</p>
+
+<p><strong>ささだ</strong> そういう意味では卜部くんの Ruby の嫌いなところって、処理系というより環境の話？</p>
+
+<p><strong>卜部</strong> 環境と絡むところですね。どこまでが処理系でどこまでが環境か、というのは非常に微妙なので。</p>
+
+<p><strong>ささだ</strong> 処理系、環境。言語としては、さっきの制限をかけられないっていうのが嫌いなところと。</p>
+
+<p><strong>卜部</strong> まあそうですね、言語としては。</p>
+
+<p><strong>ささだ</strong> で、ほかにも環境として足りないところがあると。</p>
+
+<p><strong>卜部</strong> Smalltalk とか見ると、環境って何だろう<sup id="fnref:45"><a href="#fn:45" class="footnote">42</a></sup>、っていう話になりますよね。</p>
+
+<p><strong>ささだ</strong> そうだね。では次に行きましょうか。</p>
+
+<h4 id="ruby-を使った成功事例">Ruby を使った成功事例</h4>
+
+<p><strong>ささだ</strong> Ruby を使って成功だった、うまくいったという事例は。</p>
+
+<p><strong>卜部</strong> 前職では Ruby を使って仕事をしていたので、非常にたくさんありますね。具体的にはなかなか言えないのですけど、数はたくさんあると思います。</p>
+
+<p><strong>ささだ</strong> こういうところでうまくいった、っていうのを、ぼかして言えないですか。Web 開発とか。</p>
+
+<p><strong>卜部</strong> まあ Web 開発は普通に、いいですよね。あとは前職で言うと、<a href="http://www.rubycamp.jp/">Ruby 合宿</a>とかやったりしましたね。中高生を集めてきて、Ruby でプログラムを何泊かで書く、みたいな感じで。そういうのをやるときに、ぱっと書けるので。実装するところが容易、というのはすごくいいですよね。</p>
+
+<p><strong>ささだ</strong> Haskell を一週間でやりましょう、というのだと厳しいと。</p>
+
+<p><strong>卜部</strong> わかんないですよ （笑）。Haskell ではやったことがないのでわからないですけど。</p>
+
+<p><strong>郡司</strong> 昔、<a href="http://rubykaigi.org/2010/ja/events/39">AR の発表</a>をされていましたよね。それを中高生にやってもらったんですか？</p>
+
+<p><strong>卜部</strong> そうですね。それですね。</p>
+
+<p><strong>ささだ</strong> AR のコンポーネントを渡してあげれば、生徒さんはそれを使って作っていけると。</p>
+
+<p><strong>卜部</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> 何か面白い結果になった？ それを拡張して。</p>
+
+<p><strong>卜部</strong> インタラクティブなもので、画像を見てみたり。アイコンを登録すると、中にぴょんと表示される。</p>
+
+<p><strong>ささだ</strong> そういうのを配置したのをつなげる、と。</p>
+
+<h4 id="ruby-のキラーアプリケーションライブラリ">Ruby のキラーアプリケーション（ライブラリ）</h4>
+
+<p><strong>ささだ</strong> では次。キラーアプリとかライブラリ。</p>
+
+<p><strong>卜部</strong> tDiary ですね（断言）。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> 久々ですね、インタビューのこの項目で tDiary が出たのは。昔はみんなそう言っていたような気がします。</p>
+
+<p><strong>卜部</strong> あとまあ tDiary は僕の個人的なやつなんだけど、そういうのではなくて仕事で、というのであれば、<a href="https://github.com/">GitHub</a> と <a href="https://travis-ci.org/">Travis CI</a> の組み合わせは、どっちも Ruby が使われていますが、だいぶ仕事のやり方が変わりましたね。</p>
+
+<p><strong>ささだ</strong> なるほど。すごい、いい話ですね。</p>
+
+<p><strong>卜部</strong> あのへんはキラーアプリというか、ライフチェンジングな気がする。時々 unicorn が出て<sup id="fnref:46"><a href="#fn:46" class="footnote">43</a></sup>、けっこう悲惨な時もありますが<sup id="fnref:47"><a href="#fn:47" class="footnote">44</a></sup>。</p>
+
+<p><strong>ささだ</strong> 今の仕事でも使っている、と。</p>
+
+<p><strong>卜部</strong> 使ってます。<a href="https://enterprise.github.com/">GitHub Enterprise</a>ですね。</p>
+
+<p><strong>ささだ</strong> 仕事のやり方がだいぶ変わったと。</p>
+
+<p><strong>卜部</strong> それはねえ、僕が入社したときにはもう入っていたので、元からどう変わったかは分からないですね。元からの方はどうですか<sup id="fnref:48"><a href="#fn:48" class="footnote">45</a></sup>。</p>
+
+<p><strong>たなべ</strong> すごい変わりましたよ。</p>
+
+<p><strong>ささだ</strong> それまでは？</p>
+
+<p><strong>ryopeko</strong> svn のすごい巨大なリポジトリで。各個人が何をやっているか分かってなかった。GitHub になって、みんなが連携して作業するようになって、すごく良いですね。</p>
+
+<p><strong>ささだ</strong> みんながリポジトリ見えていたのに？</p>
+
+<p><strong>ryopeko</strong> svn のときはログを意識していなかったんですね。使い方の問題ではあるんですけど。</p>
+
+<p><strong>ささだ</strong> svn log だと遅いから？</p>
+
+<p><strong>たなべ</strong> 単純にコミットコメントが update だけみたいな感じでひどかったり。</p>
+
+<p><strong>ryopeko</strong> ちょっと便利な tar.gz くらいの使われ方しかできてなかったのが、急に github が来てすごい世界が変わった。</p>
+
+<p><strong>卜部</strong> あとは pull request が便利ですね。</p>
+
+<p><strong>ryopeko</strong> そうですね、pull request で仕事の仕方がずいぶん変わりましたね。</p>
+
+<p><strong>卜部</strong> でも、最近の（GH:e の）更新でアクティビティが自分の個人ページで見えるようになって、働いていないのがまるわかりになってやばいですね。</p>
+
+<p><strong>たなべ</strong> さぼっているのが分かってしまうと。</p>
+
+<p><strong>卜部</strong> アメリカに行っている期間はコミットが全く無かったりとかして。「ここ何やってたの、俺？」みたいな。</p>
+
+<p><strong>ささだ</strong> それで査定されるわけじゃないよね。</p>
+
+<p><strong>卜部</strong> もちろんそうですよ。違うんだけど。でも、見ていると冷や汗をかきますよね。俺、働いてないわー、みたいな。</p>
+
+<p><strong>ささだ</strong> 単にインデント直したりとか、わざとバグ入れてバグを直すとか。</p>
+
+<p><strong>卜部</strong> それはひどい。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<h4 id="ruby-の習得">Ruby の習得</h4>
+
+<p><strong>ささだ</strong> Ruby の習得は簡単でしたか。</p>
+
+<p><strong>卜部</strong> 最初のマヨネーズ色の Ruby の本を見て分からなかったのは、<a href="http://doc.ruby-lang.org/ja/2.0.0/doc/spec=2fliteral.html#here">ヒアドキュメント</a>の使い方が分からなかった。</p>
+
+<p><strong>ささだ</strong> ヒアドキュメントの仕様は分かった？</p>
+
+<p><strong>卜部</strong> 分からなかった。どうなっているかさっぱり。</p>
+
+<p><strong>ささだ</strong> 使い方が分からなかったと。なぜこれで行けるのかと。</p>
+
+<p><strong>卜部</strong> あと実は <a href="http://doc.ruby-lang.org/ja/2.0.0/doc/spec=2fcall.html#yield">yield</a> も分からなかったですね。Ruby を始めるまで、そういう概念を知らなかったので、何これ、みたいな。</p>
+
+<p><strong>ささだ</strong> 関数を渡して内側で起動するようなのが難しかった？</p>
+
+<p><strong>卜部</strong> そういう意味では、実行の順序が飛んでいくようなのが難しいですね。ヒアドキュメントも流れの中であっちに行ったりこっちに行ったりするじゃないですか。</p>
+
+<p><strong>ささだ</strong> 中田育男先生が、Ruby の JIS 規格や ISO 規格を検証するために、<a href="https://github.com/inakata/ruby_scala">Ruby の parser を書かれている</a>んですけど。</p>
+
+<p><strong>卜部</strong> Scala でね。</p>
+
+<p><strong>ささだ</strong> そう、だけどヒアドキュメントだけできなかったっていう。</p>
+
+<p><strong>卜部</strong> それは、parser だけではダメで、scanner と連携しないとたぶんできない。</p>
+
+<p><strong>ささだ</strong> scanner と連携しなきゃいけないのはヒアドキュメント以外にもいくつかあるんだけど、その中でも特別変で。</p>
+
+<p><strong>arton</strong> なんで？</p>
+
+<p><strong>ささだ</strong> なんて言えばいいのかよくわかんないんですけど、ヒアドキュメントは、後ろにずらずら書けるんですよ。end の後とか。</p>
+
+<p><strong>ryopeko</strong> 一行に、複数のヒアドキュメントのブロックが書ける。</p>
+
+<p><strong>ささだ</strong> し、その後に普通の式も書ける。次の行にヒアドキュメントが書けるので、method の def から end の間を見れば、method の実装が全部取れると思ったら大間違いなんですよ。end って書いた後に、ヒアドキュメントが続く可能性がある。</p>
+
+<p><strong>卜部</strong> （サンプルコードをホワイトボードに書き始める）</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1  def foo; &lt;&lt;bar end
+2    ここは foo の中でーす
+3  bar</code></pre></figure>
+
+<p><strong>卜部</strong> end で終わったかと思うと実はそんなことなくて、bar に対応するのは末尾 2 行なんですよ。</p>
+
+<p><strong>arton</strong> こんな便利な使い方があったとは知らなかった。</p>
+
+<p><strong>ささだ</strong> この仕様良くないよね。</p>
+
+<p><strong>卜部</strong> 良くないよねとは言うけど、ヒアドキュメントとはこういうものだ<sup id="fnref:49"><a href="#fn:49" class="footnote">46</a></sup>と、マヨネーズ色の本には書いてあった<sup id="fnref:50"><a href="#fn:50" class="footnote">47</a></sup>ので。</p>
+
+<p><strong>ささだ</strong> 良くないよね、というのは、仕様・処理系書く方からすると。</p>
+
+<p><strong>郡司</strong> 使う方からすると便利だけど。</p>
+
+<p><strong>卜部</strong> shell とか awk とかはこうなので、ヒアドキュメントの仕様というのは僕らが勝手に決めて良いものではないという感じですね。</p>
+
+<p><strong>ささだ</strong> なんで end の後ろに来たら嫌かというと、いくつかの議論で、メソッドの実装しているプログラムを文字列で取り出しというのがありまして。def と end の行番号を取り出すというのは作れそうなんですよ。99% は def と end の間を見れば上手くいきそうなんだけど、この仕様があるからそれが上手くいかないという話がありまして。（さらにホワイトボードに書く）</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1  def foo; &lt;&lt;bar end; def baz; &lt;&lt;quux end
+2    ここは foo の中でーす
+3  bar
+4    ここは baz の中でーす
+5  quux</code></pre></figure>
+
+<p><strong>ささだ</strong> これの嫌なところは、def foo end の後にさらにヒアドキュメント quux を書いちゃうと、quux の中身は、他の def の後ろに来るということになるんですね。こういう風に書くと、foo の body は 1 - 3 行目、baz の body は 1, 4, 5 行目となってしまう。</p>
+
+<p><strong>郡司</strong> 一行にヒアドキュメントを 2 つ書いてつなげるとかできるんだ。</p>
+
+<p><strong>arton</strong> 気持ち悪いけどこれは便利だな。</p>
+
+<p><strong>ささだ</strong> で、メソッドの文字列を取る機能は、単純な機能に見えるんだけど、こいつがあるせいでなんかよくわかんないことになる、という話があります。</p>
+
+<p><strong>卜部</strong> ヒアドキュメントは、Perl と Ruby はこんな感じですね、PHP はちょっと違った仕様<sup id="fnref:51"><a href="#fn:51" class="footnote">48</a></sup>。Python には、ヒアドキュメントという概念はない。</p>
+
+<p><strong>ささだ</strong> せめて、end をまたがないとか、ブロックはまたがないとか、そういう制限をしても誰も困らないと思う<sup id="fnref:52"><a href="#fn:52" class="footnote">49</a></sup>。</p>
+
+<h4 id="プログラミング全般">プログラミング全般</h4>
+
+<p><strong>ささだ</strong> プログラミング全般の話題に。初めてコードを書いたのはいつぐらいですか？</p>
+
+<p><strong>卜部</strong> これはですね、これまでインタビューを受けた方とは違って、僕は親がエンジニアとかではないという話があって、結構遅いんですよ。思い返すと、93 年ぐらいに中学校に入ってから。一番最初にコードを書いたのは HyperTalk<sup id="fnref:53"><a href="#fn:53" class="footnote">50</a></sup> というやつですね。</p>
+
+<p><strong>郡司</strong> Mac。</p>
+
+<p><strong>卜部</strong> その当時、MACPOWER という雑誌があって<sup id="fnref:54"><a href="#fn:54" class="footnote">51</a></sup>ですね、「掌田津耶乃の Stack 10 行勝負」<sup id="fnref:55"><a href="#fn:55" class="footnote">52</a></sup>という連載があって、一番最初に magic って書け<sup id="fnref:57"><a href="#fn:57" class="footnote">53</a></sup>って書いてあるんですよ。で、しょうがないので Home スタックに行って magic って打ったのが一番最初のコード。</p>
+
+<p><strong>ささだ</strong> あったあった。</p>
+
+<p><strong>卜部</strong> それが中学一年生ですね。</p>
+
+<p><strong>ささだ</strong> なんで Mac なんかあったの？</p>
+
+<p><strong>卜部</strong> それは生い立ちの話と絡むんだけど、うちの親が、自分の仕事に使うために Mac 買ってきたという感じですね。</p>
+
+<p><strong>ささだ</strong> それを横からいじって。</p>
+
+<p><strong>卜部</strong> そうそう。</p>
+
+<p><strong>ささだ</strong> プログラムというのができるらしいと。やってみたら楽しかった？</p>
+
+<p><strong>卜部</strong> まぁ比較的。</p>
+
+<h4 id="ruby-以外">Ruby 以外</h4>
+
+<p><strong>ささだ</strong> Ruby 以外のプログラミング言語は何を使いますか。</p>
+
+<p><strong>卜部</strong> まぁ Perl ですね。</p>
+
+<p><strong>ささだ</strong> 笑。趣味とかは？</p>
+
+<p><strong>卜部</strong> Ruby の開発やってるんで C ですね。好きかどうかは微妙だけど、良いと思っているのは最近の言語。特に LINQ が入った以降の C#<sup id="fnref:58"><a href="#fn:58" class="footnote">54</a></sup> は結構良いなと。僕らが思っているような静的言語みたいな感じじゃなくて、動的言語のようにぽーんと書くと、勝手に型推論してくれて勝手に動く。</p>
+
+<p><strong>ささだ</strong> LINQ はそれに絡む？</p>
+
+<p><strong>arton</strong> 絡む。LINQ の場合テンポラリなオブジェクトを result として作って、そこから値を引っ張ったりするから構文の中で class を作んなきゃいけない。静的型言語だからコンパイル時にその class は定義されていないとできないはずなんだけど、LINQ の構文の中で型が作られちゃうから。</p>
+
+<p><strong>ささだ</strong> それをコンパイル時に解析しちゃダメなの？</p>
+
+<p><strong>arton</strong> もちろん、その通りです。ただ、それを、プログラム書いている人には見せないわけ。</p>
+
+<p><strong>卜部</strong> つまり、select 文とかで返ってくる型って、文によって何が返ってくるか変わるじゃないですか。そのたびに、後ろ側で新たに無名の struct 型<sup id="fnref:59"><a href="#fn:59" class="footnote">55</a></sup>が毎回作られて返ってきていているんだけど、そのことをプログラマには一切意識させずに、あたかも動的に返ってきているかのように見せかけている。</p>
+
+<p><strong>arton</strong> そこが工夫されているところ。</p>
+
+<p><strong>ささだ</strong> なるほど。C# で何か書いてる？</p>
+
+<p><strong>卜部</strong> 仕事では書いてないですね、趣味とかでちょっと遊んでみるぐらい。</p>
+
+<p><strong>ささだ</strong> なるほど、好きな言語で他はありますか？</p>
+
+<p><strong>卜部</strong> ごく最近は C# で遊んでるぐらいですね、好きとか嫌いとかはあんまないかな。</p>
+
+<h4 id="今まで読んだ中で最も美しいソースコード">今まで読んだ中で最も美しいソースコード</h4>
+
+<p><strong>卜部</strong> この質問さ、るびまの wiki に書いたのって俺じゃないかって気がするんだけど<sup id="fnref:60"><a href="#fn:60" class="footnote">56</a></sup>。</p>
+
+<p><strong>ささだ</strong> 知らないよ （笑）</p>
+
+<p><strong>卜部</strong> もうおぼえてないけど、俺が書いたような気がしなくもない。そういうような問題意識を持っていた時期があるので。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>卜部</strong> 美しいソースコードってわかんないじゃないですか、誰も。だから、ほかの人が美しいと思うソースコードを聞いていくと、その輪郭が浮かび上がってくるのでは、と思っていた気がする。でも、るびまを読んでみると、そうでもないよな、と （笑）</p>
+
+<p><strong>ささだ</strong> 何を美しいというか。</p>
+
+<p><strong>卜部</strong> そう、突き詰めていくと美しいとは何ぞや、という話になっちゃって、さらに行くと竹内先生<sup id="fnref:61"><a href="#fn:61" class="footnote">57</a></sup>みたいに<sup id="fnref:62"><a href="#fn:62" class="footnote">58</a></sup>、美とは何か<sup id="fnref:63"><a href="#fn:63" class="footnote">59</a></sup>っていう話に行っちゃうわけですよ。美しいとは別に、バグがなくて読みやすくてきれいなコードってのはあるんだけど、それを美しいと呼ぶかはまた別の話、という話になりがちですね。</p>
+
+<p><strong>ささだ</strong> （バグがなくて読みやすくてきれいなコード）というのは？</p>
+
+<p><strong>卜部</strong> CRuby のコードとかきれいですよね。</p>
+
+<p><strong>ささだ</strong> CRuby の一部のコード、いや、一部以外のコード。</p>
+
+<p><strong>卜部</strong> うん、parse.y とかはそうでもない<sup id="fnref:64"><a href="#fn:64" class="footnote">60</a></sup>けど。</p>
+
+<p><strong>ささだ</strong> そういうのは皆さん良く言われるテンプレの答え。</p>
+
+<p><strong>卜部</strong> だけど、それは美しいソースコードってのとはちょっと違うなってのが、わかってきた感じ。</p>
+
+<p><strong>ささだ</strong> 遠藤さんだっけ、あれ、arton さんだっけ、美しいとは字面が左右対称になっているとかと言っていて。</p>
+
+<p><strong>arton</strong> それは遠藤さんのソースじゃん。yugui さんかな？</p>
+
+<p><strong>ささだ</strong> 9 年インタビューやってるけど、インタビューで何を聞いたかまったくおぼえていない、ははは…。誰かが言っていた気がする。</p>
+
+<p><strong>卜部</strong> 全部おぼえているのはたいへんですよね。</p>
+
+<p><strong>arton</strong> その手のが美しいって言うなら、column 7 の美学が美しいのかっていう。</p>
+
+<p><strong>ささだ</strong> Fortran。</p>
+
+<p><strong>arton</strong> COBOL でもいいけど。</p>
+
+<p><strong>ささだ &amp;&amp; arton</strong> びっちり<sup id="fnref:65"><a href="#fn:65" class="footnote">61</a></sup>。</p>
+
+<p><strong>卜部</strong> 今でも、イコールの位置を揃えようとする人とかいますよね。流儀があるので、僕はどっちが良いとは言えませんが。</p>
+
+<h4 id="今興味を持っているテーマ">今興味を持っているテーマ</h4>
+<p>: <img src="/images/0042-Hotlinks/3.jpg" alt="3.jpg" /></p>
+
+<p><strong>ささだ</strong> 今興味を持っているテーマは？</p>
+
+<p><strong>卜部</strong> ごく最近だと、僕らがぜんぜん使っていなかったタブレットとかが広まってきているので、コンピュータとの関わり方が変わっていくような気がするんですよね、わかんないけど。今年とか、タブレットの方が PC よりたくさん売れるという話もあるぐらいなんで。デバイスも変わるし、キーボードも使わなくなるだろうし、ポインティングデバイスもマルチタッチになるし、というところで、どういうふうなプログラミングになっていくかが気になっていますね。</p>
+
+<p><strong>ささだ</strong> それ向けのプログラムをどう作っていくか、ではなくて？</p>
+
+<p><strong>卜部</strong> どう作っていくかも含めて。あるいはそういうタブレットみたいのでどうやってプログラミングすんのってのも気になるし。</p>
+
+<p><strong>ささだ</strong> そういう世界でのプログラミングとは一体何かと。</p>
+
+<p><strong>卜部</strong> あるいはデバッグもしづらいだろうし。どうやってるのかなと。</p>
+
+<p><strong>ささだ</strong> そういう新しい世界でプログラミングをどうするかというのはまだあまり世間に話が無い気がしますね。</p>
+
+<p><strong>卜部</strong> 考えている人は考えているはずなんですけどね。</p>
+
+<p><strong>ささだ</strong> もちろん、ただ私の観測範囲ではない気がする。</p>
+
+<p><strong>卜部</strong> 結局みんな PC でプログラミングしてますからね。</p>
+
+<p><strong>arton</strong> エミュレータでデバッグしてる。</p>
+
+<p><strong>ささだ</strong> サーバとクライアントの関係だと、ブラウザのリッチさも上がってきて、だいぶクライアントで処理するようにはなってきている。でもそれはタブレット関係ないもんね。</p>
+
+<p><strong>卜部</strong> そういったところのフロンティアがあるかと思って転職してみた感じ。</p>
+
+<p><strong>ささだ</strong> なんと、そんな裏が…裏でもないか。で、DeNA では、キーボード？ （笑）</p>
+
+<p><strong>卜部</strong> それはまぁ… iPad で Perl 書いてますとかすごいね。</p>
+
+<p><strong>ささだ</strong> Perl Top とかね<sup id="fnref:66"><a href="#fn:66" class="footnote">62</a></sup>。</p>
+
+<p><strong>arton</strong> くだらねーｗ</p>
+
+<p><strong>郡司</strong> タブレットのアプリを、タブレットで開発するっていうこと？</p>
+
+<p><strong>卜部</strong> ていう世界になっても良いと思うんですよねー。</p>
+
+<p><strong>arton</strong> 実機一番だからね。</p>
+
+<p><strong>郡司</strong> GUI のコンポーネントを組み立てるとソフトができるっていうの、昔から研究されてますけどモノになっていなくて、あれなんでなんですかね？</p>
+
+<p><strong>arton</strong> かったるいから？ toy program にはいいけど、product code を書こうとすると、コピペできない時点で使い物にならない。エディタなら簡単だけど。</p>
+
+<p><strong>卜部</strong> その辺は、デバイスの問題もあって、マウスだとやりづらいっていう話だったのかもしれない。マルチタッチで両手が使えると違う、かもしれない。</p>
+
+<p><strong>arton</strong> それはあるかもしれない。</p>
+
+<p><strong>ささだ</strong> 単純な処理だけなら、たとえば Salesforce.com の <a href="http://wiki.developerforce.com/page/JP:Visualforce">VisualForce</a> なら、GUI だけで出来るらしいですよ<sup id="fnref:67"><a href="#fn:67" class="footnote">63</a></sup>。</p>
+
+<p><strong>卜部</strong> Perl とか Ruby とかは、サーバサイドのプログラムとしてはずっと残っていくと思いますけど、今、クライアントサイドのプログラムは<sup id="fnref:68"><a href="#fn:68" class="footnote">64</a></sup>、だいたい Java か Objective-C で書かれているわけですが、それがずっと残っていくのか、<a href="http://www.viscuit.com/">viscuit</a> のようなやつになっていくのかは、非常に気になっている。</p>
+
+<p><strong>ささだ</strong> そういう環境での、Perl プログラミングはどうなるか。</p>
+
+<p><strong>卜部</strong> そうですね。まぁ、だからといって自分が何をやっているわけでもないんだけど。</p>
+
+<p><strong>ささだ</strong> 何かやろうと思っていることはないの？</p>
+
+<p><strong>卜部</strong> 思わなくもないけど、ツールが足らなすぎるので、がんばってやらないといけないのがたいへんだと思っていますね。クライアントサイドのプログラミングをしばらくやっていなかったので、やろうかなと思ったりするんですけど、めんどくさいですね、GUI プログラミング。すんごく。</p>
+
+<p><strong>ささだ</strong> 昔から進化してない？</p>
+
+<p><strong>卜部</strong> そうねえ、Interface Builder<sup id="fnref:69"><a href="#fn:69" class="footnote">65</a></sup> が昔からすごかったという話なのかもしれないけど。</p>
+
+<p><strong>ささだ</strong> 結局今って GUI 作ろうとすると何使うの？</p>
+
+<p><strong>卜部</strong> Interface Biulder。Mac だと XCode ですね。iPhone アプリのソースコードとか読んでるんだけど、たいへんそう。</p>
+
+<h3 id="生い立ち">生い立ち</h3>
+
+<p><strong>ささだ</strong> 生い立ち、また長そうだぞー。</p>
+
+<p><strong>卜部</strong> さっきも言ったんだけど、中学生くらいまではパソコンと縁がない生活をしていたわけですよ。</p>
+
+<p><strong>ささだ</strong> どんな生活でした？ 島根の生活は。</p>
+
+<p><strong>卜部</strong> いや田舎ですけど。僕が通っていた小学校は 母衣小って小学校で、特筆すべき事項として、小学校の校区内に NaCl の本社があるわけですけど。そういった地域に住んでいました。で、建て替わっちゃった<sup id="fnref:70"><a href="#fn:70" class="footnote">66</a></sup>んで今は違うんだけど、その当時は学校の中に図書館が 2 つあって、司書さんがいて、非常に恵まれた環境でした。今でも小学校に司書さんはあんまりいないと思う。</p>
+
+<p><strong>ささだ</strong> 図書館専属の方がいた？</p>
+
+<p><strong>卜部</strong> そう。 図書館は高学年用と低学年用で、非常に充実していました。 だから、ずっと図書館にいた感じ。</p>
+
+<p><strong>ささだ</strong> 本を読み漁っていた？ なんでもかんでもっていう感じ？</p>
+
+<p><strong>卜部</strong> 比較的なんでもですね。</p>
+
+<p><strong>ささだ</strong> 印象に残ってる本とかあります？</p>
+
+<p><strong>卜部</strong> むずいですね、『エルマーとりゅう』、それ小学校じゃないかな？
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51GMBGKYYZL._SL160_.jpg" /></p>
+
+<p><strong>arton</strong> 小学校でしょう、幼稚園じゃつらいかな。</p>
+
+<p><strong>郡司</strong> 内容ぜんぜんおぼえてないけど、表紙のイメージがある。</p>
+
+<p><strong>arton</strong> 竜がいじめられているから助けに行くんだよ。</p>
+
+<p><strong>郡司</strong> そんな話でしたっけ？</p>
+
+<p><strong>arton</strong> 竜が、空から落っこちてきて、動物の森に捕まっちゃうんだよ、ライオンとかカバとかゴリラとかに。それをネコと一緒に助けに行くんだ。</p>
+
+<p><strong>ささだ</strong> で、じゃあ、読書少年だった？</p>
+
+<p><strong>卜部</strong> そうですね、うちの親が考古学者だったということもあり、教育的にも文系のそういう話を（よく読んでいた）。</p>
+
+<p><strong>ささだ</strong> 親御さんは、大学？</p>
+
+<p><strong>卜部</strong> いや、島根県。</p>
+
+<p><strong>ささだ</strong> そうか、島根だとたくさんありそうだもんね、考古学。</p>
+
+<p><strong>卜部</strong> 実際には大学と、官公庁ぐらいですけど。で、中学生ぐらいの頃に、親が報告書を作成するということで、Mac を買ってきたというのが最初ですね。Mac の使い方を勉強するという意味で MACPOWER とかを買ってきていて、それを読んで HyperCard 使ってみたのがさっきの話。</p>
+
+<p><strong>郡司</strong> 漢字 Talk 6 ぐらいの頃？</p>
+
+<p><strong>卜部</strong> 6 じゃないですね、7.1.2 だったかな。</p>
+
+<p><strong>郡司</strong> もう System 7<sup id="fnref:71"><a href="#fn:71" class="footnote">67</a></sup> の頃か。</p>
+
+<p><strong>ささだ</strong> 白黒じゃない、タイルじゃないやつね。</p>
+
+<p><strong>卜部</strong> Macintosh LC 630<sup id="fnref:72"><a href="#fn:72" class="footnote">68</a></sup> でした。</p>
+
+<p><strong>郡司</strong> 一体型のやつ？</p>
+
+<p><strong>卜部</strong> いや、セパレートです。</p>
+
+<p><strong>ささだ</strong> ピザボックス。</p>
+
+<p><strong>郡司</strong> ああ、薄いやつ<sup id="fnref:73"><a href="#fn:73" class="footnote">69</a></sup>。</p>
+
+<p><strong>卜部</strong> そう、一体型は Performa とかでしたね<sup id="fnref:74"><a href="#fn:74" class="footnote">70</a></sup>。</p>
+
+<p><strong>ささだ</strong> ぼく Performa 588 なので、LC 630 は羨ましいなぁと思っていた。</p>
+
+<p><strong>卜部</strong> LC 630 は、FPU がついてないんですよ、整数演算しかできない。で、FPU が付いてないと何が困るかというと、BSD とかを動かそうとすると、FPU が要る<sup id="fnref:75"><a href="#fn:75" class="footnote">71</a></sup>んだ、これが。やがて Mac に飽きてくると…。</p>
+
+<p><strong>ささだ</strong> え、ちょっと、いつぐらいの話？ BSD とかって。</p>
+
+<p><strong>卜部</strong> しばらくしてからですね、中学 3 年から高校 1 年ぐらい。</p>
+
+<p><strong>郡司</strong> そんな早いんだ。</p>
+
+<p><strong>ささだ</strong> まずは話を戻して、買った当初は、MACPOWER のスタック10行勝負の連載を読んでコピーして動かしてたの？</p>
+
+<p><strong>卜部</strong> 最初はそうですね。HyperCard って、スタック<sup id="fnref:76"><a href="#fn:76" class="footnote">72</a></sup>の中のスクリプトだけ書いてもしょうがなくて、絵とかもがんばって描いたりとか。意外に IDE っぽくなっているので、カードとかを増やすとかやんないといけなくて、その辺面倒だなと思いながらがんばってやっていた。</p>
+
+<p><strong>ささだ</strong> 何作ったの？ 自分で。</p>
+
+<p><strong>卜部</strong> ランチャーとかですかね。フォルダをたどって行かないとアプリケーションが起動しないので、一発で起動するように。</p>
+
+<p><strong>ささだ</strong> HyperTalk はどうやって学んだ？</p>
+
+<p><strong>卜部</strong> スタック 10 行勝負は、10 行という制限があるので、言語のこととかは書いてないんですよ。</p>
+
+<p><strong>ささだ</strong> うん。しかも 2 ページの連載だし。</p>
+
+<p><strong>卜部</strong> そう、だからしゃあないと思って、HyperTalk Reference を買ってきて読んだ。</p>
+
+<p><strong>ささだ</strong> HyperTalk Reference って、関数が書いてあるだけのやつでしょ？</p>
+
+<p><strong>卜部</strong> うん、あー、文法とかは、Home スタック<sup id="fnref:77"><a href="#fn:77" class="footnote">73</a></sup>読んだ。</p>
+
+<p><strong>ささだ</strong> なるほど、あれに書いてあるんだ。 俺もその Reference 買ったのだけど、それらの関数をどう使うかがわかんなかった。HyperTalk って英語<sup id="fnref:78"><a href="#fn:78" class="footnote">74</a></sup>なんですよ、なになに is なんとかとか書くんですけど、ここには何が書けるんだっていうのがわかんなくて。結局、私にはわからなかった。</p>
+
+<p><strong>ささだ</strong> HyperTalk は、日本語版もあるんだよね。</p>
+
+<p><strong>卜部</strong> AppleScript<sup id="fnref:79"><a href="#fn:79" class="footnote">75</a></sup> の日本語版<sup id="fnref:80"><a href="#fn:80" class="footnote">76</a></sup>があるはず。</p>
+
+<p><strong>ささだ</strong> すごいよくできている環境だという印象がある。でも結局使い方がよくわかんなくて、わたしは PC-98 に逃げました。で、中学時代も本の虫だったの？</p>
+
+<p><strong>卜部</strong> Mac と並行してっていう感じですね。</p>
+
+<p><strong>ささだ</strong> 中学でも図書館？</p>
+
+<p><strong>卜部</strong> 図書館も行ってたと思います。</p>
+
+<p><strong>ささだ</strong> 親御さんの本も読んだり？</p>
+
+<p><strong>卜部</strong> 親の本は、専門的過ぎてバックグラウンドがないと読みづらい。だからあまり読まなかったかな。</p>
+
+<p><strong>ささだ</strong> CNN 聞いてたっていうのは？</p>
+
+<p><strong>卜部</strong> それはその頃ですね、中学時代。</p>
+
+<p><strong>ささだ</strong> 卜部くんと言えば英語が堪能、ということでも有名ですが。「どうしてそんなに英語がうまいの？」と以前聞いたら、CNN をずっと聞いていれば耳なんか慣れますよって言われた記憶が。なんで聞いてたのそれ？</p>
+
+<p><strong>卜部</strong> 93 - 95 年が中学生なんですけど、95 年ぐらいに、一時期、日本の TV 局がオウムしかやらない時期があって。</p>
+
+<p><strong>一同</strong> あー。</p>
+
+<p><strong>卜部</strong> で、島根県なんでテレ東とかない<sup id="fnref:81"><a href="#fn:81" class="footnote">77</a></sup>の。</p>
+
+<p><strong>arton</strong> 逃げられないんだ。</p>
+
+<p><strong>卜部</strong> そう。NHK 見ても常にオウム真理教しかやってなくて。しょうがないな、どこかないかなってチャンネル回してると、なんか違うのやってるんですよ。で、意味わかんないけど、とりあえずこれがオウムじゃねーやと思って流してた。</p>
+
+<p><strong>ささだ</strong> えー、それで英語できるようになるの？</p>
+
+<p><strong>卜部</strong> いや、ならないと思いますよ。それだけではね。なるためにちゃんと学校に通ったりとかしたので。耳はそこで、っていう感じかな。</p>
+
+<p><strong>ささだ</strong> 部活は？</p>
+
+<p><strong>卜部</strong> 中学は PC 部だった。</p>
+
+<p><strong>ささだ</strong> PC 部があったんだ。先進的な感じがしますね。うちはなかった。</p>
+
+<p><strong>卜部</strong> 中学校には PC が置いてあった。</p>
+
+<p><strong>ささだ</strong> PC-98 ？</p>
+
+<p><strong>卜部</strong> なんだっけ。</p>
+
+<p><strong>arton</strong> もう DOS/V になってるんじゃない？</p>
+
+<p><strong>ささだ</strong> 学校って NEC が入っているイメージ、勝手なイメージです。</p>
+
+<p><strong>郡司</strong> 98 が入っていました。</p>
+
+<p><strong>卜部</strong> 思い出せないけど、N88Basic<sup id="fnref:82"><a href="#fn:82" class="footnote">78</a></sup> が乗っていたのはおぼえています。</p>
+
+<p><strong>ささだ</strong> それでゲームとか作っていたりした？</p>
+
+<p><strong>卜部</strong> Basic でゲームを作るのは超むずい<sup id="fnref:83"><a href="#fn:83" class="footnote">79</a></sup>ので、既存のゲームがあるので、それを見て遊んでいたりしました。</p>
+
+<p><strong>ささだ</strong> 既存のゲームで遊んで終わり？</p>
+
+<p><strong>卜部</strong> いや、print するとソースコードが見えるじゃないですか。</p>
+
+<p><strong>ささだ</strong> あー、それで勉強したり、ちょっと変えてみたりとかか。</p>
+
+<p><strong>卜部</strong> でも部活っぽいことはしてなかったね、そうやって遊ぶ感じ。</p>
+
+<p><strong>ささだ</strong> で、その中学校の後半で、Mac に飽きてきた？</p>
+
+<p><strong>卜部</strong> そうですね、HyperTalk ってやれることがそんなに多くないんですよ、オーサリングツール<sup id="fnref:84"><a href="#fn:84" class="footnote">80</a></sup>なんで。 HyperCard の中では完結しているんだけど、HyperCard の外の、 例えば Finder と連動したりってことをやりだすとちょっと難しいので、 どうしましょうかね、という感じになってくる。で、その頃、Mac の環境では C のコンパイラとかなくてですね。いや、あるけど、中学生のお小遣いで買えるような値段ではない。</p>
+
+<p><strong>ささだ</strong> CodeWarrior<sup id="fnref:85"><a href="#fn:85" class="footnote">81</a></sup>、10 万円するんだよね。欲しかった。けど買えませんでした。</p>
+
+<p><strong>卜部</strong> 買えませんでした。で、ResEdit<sup id="fnref:87"><a href="#fn:87" class="footnote">82</a></sup> とかをいじったりもしました。ResEdit を見ると、CODE っていうリソース<sup id="fnref:88"><a href="#fn:88" class="footnote">83</a></sup>にコードが書いてあるからそれをいじればできるよ、って言われるんだけど、見てもさー、MC680x0 のフルアセンブラなんで。</p>
+
+<p><strong>ささだ</strong> バイナリ列が入ってる？</p>
+
+<p><strong>卜部</strong> 入ってる。</p>
+
+<p><strong>ささだ</strong> アセンブラでも何でもない。</p>
+
+<p><strong>卜部</strong> これをいじれと言われてもなかなかね、みたいな。アイコンいじったりは楽しいんですけどね。で、あるとき、NetBSD というものを動かすと、コンパイラがついてくるらしいと。</p>
+
+<p><strong>ささだ</strong> 中学とか高校で、なんで NetBSD を知ることが出来るの？</p>
+
+<p><strong>卜部</strong> いや、本屋さんに行くと、島根の本屋さんは大きくない<sup id="fnref:89"><a href="#fn:89" class="footnote">84</a></sup>ので、 Mac とか BSD とかは、コンピュータ書籍のその他の欄に積まれているんですよ。Mac の本を見ようとすると、隣に BSD の本があることがわかる。</p>
+
+<p><strong>ささだ</strong> 見つけてしまったわけだ。</p>
+
+<p><strong>卜部</strong> で、NetBSD/mac68k を入れると、C コンパイラがついてきて gcc が動くらしいと。入れてみると、FPU がないので動かないとかあったけど。</p>
+
+<p><strong>ささだ</strong> 乗り越えた？</p>
+
+<p><strong>卜部</strong> それはねー、結局乗り越えてはいないですね。浮動小数点演算を走らせようとするとマシン例外が起きるので、そういうことをやらなければ OK という感じですね。 ただ、そういうアプリであるかは判定が非常に難しいので、 やってたら時々 kernel panic になるみたいな。</p>
+
+<p><strong>ささだ</strong> なるほど。ねんがんの C コンパイラをてにいれたぞーと</p>
+
+<p><strong>卜部</strong> そう、ねんがんの C コンパイラをてにいれたぞー、なんだけど、C のコンパイラを手に入れたけど、何も書くものがないじゃないですか<sup id="fnref:90"><a href="#fn:90" class="footnote">85</a></sup>？ で、仕方ないから BSD のソースコードを読んだりとか。</p>
+
+<p><strong>ささだ</strong> あはは （笑）</p>
+
+<p><strong>卜部</strong> インストールすると、NetBSD はソースコードがついてくるんですよ。なので、それを読む。</p>
+
+<p><strong>ささだ</strong> オープンソースの教育効果が如実に現れたわけですね。</p>
+
+<p><strong>卜部</strong> オープンソースってもうあったのかな。96 年の頃、今オープンソースと呼ばれているものがあったことは間違いないけど、オープンソースという概念だったかはわからない。</p>
+
+<p><strong>arton</strong> オープンソースは 97 年のはずだ。</p>
+
+<p><strong>卜部</strong> なるほど、じゃあまだなかったわけだ、BSD という文化圏しかなかった。だから Linux にはあんま行かなかったんだよね、Mac だから。Mac で Linux が動くの随分後なので。<sup id="fnref:91"><a href="#fn:91" class="footnote">86</a></sup></p>
+
+<p><strong>ささだ</strong> その辺全部一人でやってたの？ 本読んで。</p>
+
+<p><strong>卜部</strong> うん、全部一人ですね。その頃パソコン通信とか知らなかったので、周りに仲間がいることを知らなかった。</p>
+
+<p><strong>ささだ</strong> なるほど、すぐそばに NaCl があったのに。</p>
+
+<p><strong>卜部</strong> ないでしょまだ。</p>
+
+<p><strong>ささだ</strong> ないのか。松江の方にインターネットはきてなかった？</p>
+
+<p><strong>卜部</strong> ありましたよ、僕の中学は島大の附属中学なんだけど、大学から専用線が道路の上を引かれてきていて、中学校まではインターネットが来ていた。</p>
+
+<p><strong>ささだ</strong> インターネットは知ってた？</p>
+
+<p><strong>卜部</strong> うん、Yahoo! の日本語版ができましたわーいみたいなのは。</p>
+
+<p><strong>ささだ</strong> PC 部とかでそれを見ていた？ それとも授業？</p>
+
+<p><strong>卜部</strong> どうだったっけな、中学校の途中で PC の入れ替えをして、入れ替えをしてからつながった。 で、 Firefox、じゃないや、</p>
+
+<p><strong>郡司</strong> Mosaic？</p>
+
+<p><strong>卜部</strong> NetScape<sup id="fnref:92"><a href="#fn:92" class="footnote">87</a></sup>。3.0、gold<sup id="fnref:93"><a href="#fn:93" class="footnote">88</a></sup> だったかもしれないけど、これを入れて。</p>
+
+<p><strong>ささだ</strong> 見えるぞと。</p>
+
+<p><strong>卜部</strong> そうそう。島根県はバスケットが盛ん<sup id="fnref:94"><a href="#fn:94" class="footnote">89</a></sup>なので、バスケット少年とかは、アメリカのバスケの試合の結果を見たりとか。</p>
+
+<p><strong>ささだ</strong> すごいまっとうな使い方だ。</p>
+
+<p><strong>卜部</strong> だって当時日本はそんなにインターネット文化圏とか熱くなくて。</p>
+
+<p><strong>ささだ</strong> 商業化した直後ぐらい？</p>
+
+<p><strong>卜部</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> じゃあ、中学・高校とそういう意味ではネットワークは繋がってたけど、それを追求するという方向には？</p>
+
+<p><strong>卜部</strong> そうそう、中学校はそんな感じで、大学から専用線が引かれてきていて。95 年に 10M でバックボーンまで繋がっていた<sup id="fnref:95"><a href="#fn:95" class="footnote">90</a></sup>と。高校になったらいきなりダイヤルアップに退行して、これは遅いみたいな。</p>
+
+<p><strong>さだだ</strong> でも、あったんだ？</p>
+
+<p><strong>卜部</strong> あるっちゃ、ありましたけど。そんなに激しくなかったので。ダイヤルアップの 1 本の回線を皆で使ってたみたいな感じですよ。ちょっと辛いのでそこで大分退化しましたよ。</p>
+
+<p><strong>ささだ</strong> なるほど。高校では、なんか部活やってたんですか？</p>
+
+<p><strong>卜部</strong> 放送部でしたね。担任の先生が放送部の顧問をやっていて巻き込まれた感じですね。</p>
+
+<p><strong>ささだ</strong> 放送部って、ラジオとか？</p>
+
+<p><strong>卜部</strong> そうそう、ラジオ番組を作成したりとか、あとは朗読ですね。</p>
+
+<p><strong>arton</strong> 英語の朗読？</p>
+
+<p><strong>卜部</strong> いや、朗読は日本語でやりましたけど。</p>
+
+<p><strong>ささだ</strong> そういうので競いあうんでしょ？</p>
+
+<p><strong>卜部</strong> コンテストとかやりましたよ。予選落ちでしたけど。</p>
+
+<p><strong>ささだ</strong> そういうのって自分たちで脚本を書いたりする？</p>
+
+<p><strong>卜部</strong> 色々あって、朗読のやつは、指定の課題を読むってやつ。</p>
+
+<p><strong>ささだ</strong> 聴きやすさを競い合う？</p>
+
+<p><strong>卜部</strong> 聴きやすいペースとか、正しい発音とか、方言出ないとか。それとは別に、自分たちで脚本作って番組制作みたいなのもあります。</p>
+
+<p><strong>ささだ</strong> 映画作ってみたり？</p>
+
+<p><strong>卜部</strong> 5 分間とかのですね。</p>
+
+<p><strong>ささだ</strong> リア充っぽい。</p>
+
+<p><strong>卜部</strong> そういうことも無いけどね。</p>
+
+<p><strong>ささだ</strong> なるほど。という、高校時代。高校の時は卜部君の中でコンピュータについての知識はどう進化したの？</p>
+
+<p><strong>卜部</strong> いや、特にはそんなでもないですね。</p>
+
+<p><strong>ささだ</strong> 中学校の延長？ BSD のソースコード読んだりとか？</p>
+
+<p><strong>卜部</strong> BSD のソースコード、すげぇたくさんあるので、それを読むだけでも時間掛かるんですよ。で、まぁ大体それで費やされた感じですね。</p>
+
+<p><strong>arton</strong> ほぼ読んだ？</p>
+
+<p><strong>卜部</strong> ほぼって程では無いと思いますけどね。ドライバとかは、BSD でもドライバは特殊な文法で書いてあって<sup id="fnref:96"><a href="#fn:96" class="footnote">91</a></sup>とか、ネットワークは特殊な文法でとかあるわけですよ。ここの部分と、ここの部分は全然違うこと書いてあって、「これ同じ言語なのか？」ってなったりとかしてるわけですよ。</p>
+
+<p><strong>ささだ</strong> ていうのを、高校の頃から親しんでるっていうのがすごいことだよね。それはすごいアドバンテージだよね。</p>
+
+<p><strong>卜部</strong> 今から思うと、そうなのかもしれないですね。</p>
+
+<p><strong>arton</strong> それは島根？</p>
+
+<p><strong>ささだ</strong> 島根すごい。</p>
+
+<p><strong>卜部</strong> 島根関係ないと思いますけど。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> ソースコード読んだのいつですか、arton さん。</p>
+
+<p><strong>arton</strong> 俺は、会社入ってからだよ。一番最初に読んだのはメインフレームのソースコード。</p>
+
+<p><strong>ささだ</strong> まぁ、会社入ってからが普通というか。普通ではないけど。</p>
+
+<p><strong>arton</strong> いや考えたら、大学の時一般教養で 360 アセンブラ読んでたな。</p>
+
+<p><strong>ささだ</strong> それでもちょっとでしょ？ 授業で出る範囲なんだから。でも、卜部君は膨大なソースコードの海を中学高校の頃から。</p>
+
+<p><strong>卜部</strong> あ、そういう意味では、いきなりインストールした NetBSD にソースコードが付いてきてたのが良かったですね。</p>
+
+<p><strong>ささだ</strong> 僕の場合は、全然分かんないままに PC98 で買って、ソースコードなんてついてこないから、逆アセンブルですよ。</p>
+
+<p><strong>arton</strong> いきなり、逆アセンブルしたの？</p>
+
+<p><strong>ささだ</strong> そう。これが育ちの違いか。(ほかの人にも一通り聞いてみようとして) 初めてソースコードっていつくらいですか？</p>
+
+<p><strong>郡司</strong> 私はベーマガ世代なので、当時、ぴゅう太というやつを買ってもらって、日本語ベーシックなんですね。ちょっと変わった言語なんですけど。</p>
+
+<p><strong>ささだ</strong> ただ、腐るほど読むっていうのは無かったでしょ。</p>
+
+<p><strong>郡司</strong> それはないです。腐るほど読むって経験はないですね。</p>
+
+<p><strong>ryopeko</strong> 僕も、仕事してからですね。</p>
+
+<p><strong>ささだ</strong> 仕事してから？ 仕事で他の人のソースコード読んでから、理解して。</p>
+
+<p><strong>arton</strong> ただ俺気がついたけど、会社の仕事とは別に Amiga を買って Fred Fish<sup id="fnref:97"><a href="#fn:97" class="footnote">92</a></sup> コレクションの nethack とか xlisp とかのソースを読んでいたから<sup id="fnref:98"><a href="#fn:98" class="footnote">93</a></sup>趣味ですね。</p>
+
+<p><strong>ささだ</strong> じゃあ同じ時期に</p>
+
+<p><strong>卜部</strong> 入手性の問題もありますからね。ソースコードとか流通するようになったのがその頃かもしれないですね。</p>
+
+<p><strong>ささだ</strong> でも Amiga。</p>
+
+<p><strong>arton</strong> C だし。</p>
+
+<p><strong>ささだ</strong> ドライバとかは特殊だったかも。</p>
+
+<p><strong>卜部</strong> ドライバは読んだとは言えないかもしれないですね。僕は歯が立たなかった。</p>
+
+<p><strong>ささだ</strong> あることは知った。その頃は OS のアーキテクチャとか分かんないでしょ？</p>
+
+<p><strong>卜部</strong> わかんない。</p>
+
+<p><strong>ささだ</strong> ドライバと普通のソフトウェアの違いとか分かんないじゃん。</p>
+
+<p><strong>卜部</strong> あ、そうか。確かにカーネルとそれ以外は非常に違うなという感じが分かったくらいですね。</p>
+
+<p><strong>ささだ</strong> どういうレイヤーに分かれて、そういうのは。</p>
+
+<p><strong>卜部</strong> わかんない。</p>
+
+<p><strong>arton</strong> あれでも、そのころ『4.3BSD の設計と実装』って出てなかった？
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/512NCZF43FL._SL160_.jpg" /></p>
+
+<p><strong>卜部</strong> 出てたと思うけど、出てたのに気付かなかったですね。</p>
+
+<p><strong>ささだ</strong> まぁ、普通の本屋さんに売ってないよね。</p>
+
+<p><strong>arton</strong> そりゃそうだ。</p>
+
+<p><strong>ささだ</strong> そんな感じで、高校生は過ごした。で、島根を出る。</p>
+
+<p><strong>卜部</strong> で、そういう方向に向かって、専門にしましょうかって思って、電通大に入った。</p>
+
+<p><strong>ささだ</strong> 計算器をやろうと？</p>
+
+<p><strong>卜部</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> 数ある大学のなかで、電通大ってのは何が？</p>
+
+<p><strong>卜部</strong> 受かったから。</p>
+
+<p><strong>ささだ</strong> 東京がよかった？</p>
+
+<p><strong>卜部</strong> それはありますね。島大 (島根大学) よりはっていう感じですね。偏差値の関係で、僕が行ける大学のレンジはこの辺ですってのがある。その中だと筑波大とか、電通大とか、東工大はちょっと僕だとチャレンジングって感じで。あと九大とか。という中で何個か受けてみて、色々落ちたりとかして電通大受かったので入った。後期で入ったので、それまで全部落ちたって事ですね。結構色々落ちました。</p>
+
+<p><strong>ささだ</strong> え、結構落ちたって、一浪してる？</p>
+
+<p><strong>卜部</strong> いや、ストレートだけど</p>
+
+<p><strong>ささだ</strong> ストレートだと二回しかできないじゃん</p>
+
+<p><strong>卜部</strong> 当時は中期ってやつがあってですね</p>
+
+<p><strong>ささだ</strong> えー？ あったっけ？ だって僕と 2 つ違いでしょ？</p>
+
+<p><strong>arton</strong> 81 年って人数多いから、そういう考慮したのかもしれないよ。</p>
+
+<p><strong>卜部</strong> 中期ってのは公立大学ではあったんですね。</p>
+
+<p><strong>ささだ</strong> で、大学入ったと。そこで Ruby との出会いはあったけど、大きなイベントではなかった？</p>
+
+<p><strong>卜部</strong> まぁ、そうですね。Ruby みたいなスクリプト言語は全然知らなかったので。HyperTalk があって C があって Ruby。</p>
+
+<p><strong>ささだ</strong> でも、NetBSD だとシェルがあるんじゃ？</p>
+
+<p><strong>卜部</strong> シェルはあるんだけど、シェルスクリプトはあんまり書かなかった<sup id="fnref:99"><a href="#fn:99" class="footnote">94</a></sup>んですよ。当時は Perl もやらずなので。</p>
+
+<p><strong>ささだ</strong> Ruby の本でスクリプト言語ってのを知ったと。</p>
+
+<p><strong>卜部</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> 大学で普通に学生やってた？</p>
+
+<p><strong>卜部</strong> アルゴリズムの単位とかあるんだけど、大体知ってることしか言わないので、暇でした<sup id="fnref:100"><a href="#fn:100" class="footnote">95</a></sup>ね。</p>
+
+<p><strong>ささだ</strong> アルゴリズムは知ってた？</p>
+
+<p><strong>卜部</strong> 配列の話とか Hash の話とかやるんだけど、C のソースコード読むとか Hash の実装とか大体載ってるじゃないですか。</p>
+
+<p><strong>ささだ</strong> そっちから知るのかー！ アルゴリズムの本とかじゃなくて。</p>
+
+<p><strong>卜部</strong> あ、これあんとき読んだわー。</p>
+
+<p><strong>ささだ</strong> あ、これ Hash っていうんだみたいな？</p>
+
+<p><strong>卜部</strong> そうそうそう。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>卜部</strong> へー、これこんなバックグラウンドがあるんだって。</p>
+
+<p><strong>ささだ</strong> オーダーがどうとか。</p>
+
+<p><strong>卜部</strong> そう、計算量理論とかそういう理論的なバックグランドは学んだのは良かったですね。</p>
+
+<p><strong>ささだ</strong> ソースコードからアルゴリズム知るってすごいな。</p>
+
+<p><strong>卜部</strong> BSD ってリンクリスト大好きで、だいたいの物がリンクリストになってるんですけど、「これ何なの？」って思ってたのが大学入ると、そういうふうに意味があるんだって。</p>
+
+<p><strong>郡司</strong> 具体例から入ったほうがいいとは思うんですよ。抽象的なことを言うんじゃなくて。</p>
+
+<p><strong>ささだ</strong> 大学はやっぱ、抽象的なところから言おうってしますよね。</p>
+
+<p><strong>郡司</strong> 具体的なこと散々やったあとに、体系立ったほうが早い。</p>
+
+<p><strong>ささだ</strong> 私も番兵とか言われてもすぐには理解らなかった。なんで番兵って。アルゴリズムの本とか読むと、番兵の絵が書いてあって。ソースコード読めば分かるんだけど。</p>
+
+<p><strong>卜部</strong> なんか日本語に訳そうする流派ありますよね。</p>
+
+<p><strong>ささだ</strong> 授業はそんな感じ、と。</p>
+
+<p><strong>卜部</strong> で、さっきも言ったけど 2002 年くらいにブログブームとかあったりして、それからはインターネット経由で色々学ぶという。</p>
+
+<p><strong>ささだ</strong> 東京来てどうでした？</p>
+
+<p><strong>卜部</strong> 東京来てって感じの事は特に無いですね。けど 2004 年くらいに Rubyist で花見やりだして、井の頭公園とかで花見やったりしてましたね。代々木公園とかでもやったかな。やがて Asakusa.rb の花見に繋がっていく。</p>
+
+<p><strong>ささだ</strong> 2003 年から RHG 読書会をはじめたんだっけ。</p>
+
+<p><strong>卜部</strong> RHG 読書回、二回目くらいから行ってる感じですね。</p>
+
+<p><strong>ささだ</strong> インターネット経由ってのはそういう話。そのときもう TiMidity++ やってたよね？</p>
+
+<p><strong>卜部</strong> やってましたね。その話をすると、大学入ったときにもとからの繋がりで Mac を親に買ってもらったと。時を前後して Mac の OS が 9 から X に変わるということになって。その時の切り替えではソースコードの互換性がなくって、既存のソフトウェアが軒並み動かなくなったんですよ。しかたがないので移植をしていたことがあって、そんなかで TiMidity++ は。最初は Mac に移植する人でした。</p>
+
+<p><strong>ささだ</strong> Mac 用のオープンなソースコードってのは、それなりにコミュニティ大きかった？</p>
+
+<p><strong>卜部</strong> TiMidity++ の Linux の元からあるソースコードを Mac に向かって移植してた。</p>
+
+<p><strong>ささだ</strong> そのころ GCC とか Mac で動くんだっけ？</p>
+
+<p><strong>卜部</strong> X になってちょうど GCC とかが動くようになったんですよ。これで移植出来るわーって。その時、はじめて C じゃなくてシェルを書いたというか、configure なんだけど。UNIX のソフトウェアの移植ってのは C を書くことよりも configure を書くことの方が大きいというのを実体験して、頑張ってシェルのコードを書いた。</p>
+
+<p><strong>ささだ</strong> 大学とは関係なく？</p>
+
+<p><strong>卜部</strong> そうですね。自分の Mac を快適にするために。</p>
+
+<p><strong>ささだ</strong> 大学でなんかサークルとかは入らなかったの？</p>
+
+<p><strong>卜部</strong> 大学は入らなかったですね。</p>
+
+<p><strong>ささだ</strong> 研究室はアルゴリズム系だった？</p>
+
+<p><strong>卜部</strong> まぁそうですね。学科がネットワークの学科<sup id="fnref:101"><a href="#fn:101" class="footnote">96</a></sup>で、そのなかでアルゴリズムの研究をやってる。とは言うものの僕の行ってた研究室は理論系なのでグラフっていうデータ構造<sup id="fnref:102"><a href="#fn:102" class="footnote">97</a></sup>をどのようにして分類していくかってことをやっていた。僕は理論系の研究室で実装の話をしていて、並列に動かすと早いねとか話をしていた。グラフってネットワーク同士くっついてるのでバサッと 2 つにわかれなくて、塊にわけないとなんだけど、塊にすると大きいのと小さいのが出てくるので並列に動かそうとしても動かないので、そこをうまくどうするのかをやってた。</p>
+
+<p><strong>ささだ</strong> いま、その知見は生かされてる？</p>
+
+<p><strong>卜部</strong> いや、仕事には生かされてないけど、考えかたは役に立ってる。計算量とか学んだので。</p>
+
+<p><strong>ささだ</strong> 話は戻るけど RHG を 2003 年くらいからやってて、あれは何で知ったの？</p>
+
+<p><strong>卜部</strong> 花見だと思う。花見いくと読書会やってるの知った。</p>
+
+<p><strong>ささだ</strong> その花見は何でしったの？</p>
+
+<p><strong>卜部</strong> 多分、日記コミュニティ。</p>
+
+<p><strong>arton</strong> Ruby-list じゃないの？</p>
+
+<p><strong>卜部</strong> 誰かの日記をアンテナ経由でしってという流れかもしれない。</p>
+
+<p><strong>ささだ</strong> それで Ruby 1.8.7 がこんなに良くなったってのはいい話ですね。tDiary のおかげで。</p>
+
+<p><strong>ささだ</strong> で、大学卒業っていかないんだよね。</p>
+
+<p><strong>卜部</strong> 大学は出たんだけど、大学院に入ったくらいのころから並行して <a href="http://www.trans-nt.com">TNT</a> という会社で仕事もやってて。しばらくして、並行してやるのは無理って気づいたので、会社の社長にお願いして半年休学して会社働いてて、そのあと半年休職して大学院を出た。</p>
+
+<p><strong>ささだ</strong> なんの会社でしたっけ</p>
+
+<p><strong>卜部</strong> その頃は BSD からの繋がりで、下まわりの会社を選んでいて。</p>
+
+<p><strong>ささだ</strong> 俺 BSD 読んだことあるみたいな？</p>
+
+<p><strong>卜部</strong> それは言わなかったけどね実は。BSD の仕事をしてました。</p>
+
+<p><strong>ささだ</strong> 選んだ理由がそれだった？</p>
+
+<p><strong>卜部</strong> あと、未経験の大学生をやとってくれる会社っていうのがありますよね。</p>
+
+<p><strong>ささだ</strong> 下まわりをやっていた。</p>
+
+<p><strong>卜部</strong> まぁ、最終的にはデバイスドライバとか書いてましたが、それだけに限らず、そんなに大きい会社じゃなかったので色々やらせていただいた。</p>
+
+<p><strong>ささだ</strong> そちらを一段落させて。大学院を出て。晴れてフルタイムになった、と。</p>
+
+<p><strong>卜部</strong> そう。</p>
+
+<p><strong>ささだ</strong> それで、転職を考えた？</p>
+
+<p><strong>卜部</strong> いや、まだ。</p>
+
+<p><strong>ささだ</strong> Ruby コミッタになるのはその辺ですか？</p>
+
+<p><strong>卜部</strong> そうですねその辺でなるかな。</p>
+
+<p><strong>ささだ</strong> なんでなったんだっけ？</p>
+
+<p><strong>卜部</strong> 1.8.5 くらいでちょっと大分駄目みたいな流れだった。なのでリリースマネージャをやるって話に。コミッターになった瞬間リリースしてた気がしますね。そのころ <a href="http://web.archive.org/web/20060924103902/http://mput.dip.jp/mput/?date=20060902">tDiary とかに Ruby の駄目なところとか書いてました</a>ね。</p>
+
+<p><strong>ささだ</strong> 2004/11/13 のメールに、卜部くんが、リリースなんとかしようぜって書いてますね。<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/40266">まつもとさんの負担を減らすために何が出来るだろう？</a> っていう。</p>
+
+<p><strong>卜部</strong> その時もう大学院だと思うけど、そんな感じのことやってましたね。</p>
+
+<p><strong>ささだ</strong> じゃ、リリースまわりのお付き合いって感じ？</p>
+
+<p><strong>卜部</strong> 最初はそうでしたね。とはいえ、今もそんなに trunk にコミットしてないので、リリースのお付き合いって感じですね。</p>
+
+<p><strong>ささだ</strong> そのころに、標準ライブラリのメンテナのリストを作ってる。</p>
+
+<p><strong>卜部</strong> そのころから成瀬さんとか僕とかはそういうことやってたって感じです。</p>
+
+<p><strong>ささだ</strong> それで Ruby とは、そういうふうな付き合いをしていた、と。初めての Rubyconf は 2005？ サンディエゴ？</p>
+
+<p><strong>卜部</strong> サンディエゴですね。</p>
+
+<p><strong>ささだ</strong> それで、卜部くんのリアルタイム日記で、日本中が固唾を飲んで見ていて。</p>
+
+<p><strong>卜部</strong> なんで夜中なのにこんなに見ているんだと。当時は自宅サーバーだから Apache のアクセスログとか見えるわけですよ。だからこの人達はおかしいみたいな。</p>
+
+<p><strong>ささだ</strong> その後、転職？</p>
+
+<p><strong>卜部</strong> はい、NaCl に拾ってもらった感じですね。それまでは Ruby で仕事やったことないわけですよ。Ruby で仕事やるようになったので、面白いなと。とは言ううものの NaCl で 50% くらいは笹田さんとの研究をやらせていただいてたので、そういう意味では研究っぽいこともやってましたね。</p>
+
+<p><strong>ささだ</strong> 大変お世話になりました。</p>
+
+<p><strong>卜部</strong> で、福岡に行ったりとか。その後転職ですね。</p>
+
+<p><strong>ささだ</strong> DeNA に。</p>
+
+<p><strong>卜部</strong> DeNA に来たら、わりと直後くらいにアメリカ行っちゃってましたが。</p>
+
+<p><strong>ささだ</strong> それ、去年だっけ？</p>
+
+<p><strong>卜部</strong> 去年の 10 月。</p>
+
+<p><strong>ささだ</strong> 10 月に一ヶ月くらい？</p>
+
+<p><strong>卜部</strong> とりあえず、二週間のつもりで行ってたんだけど、結局年末まで居たので 3 ヶ月くらい居ました。</p>
+
+<p><strong>ささだ</strong> そちらの仕事が忙しくて？</p>
+
+<p><strong>卜部</strong> 途中で、去年の RubyConf に抜けてたりしたので、ずっと仕事してたわけじゃないけど。</p>
+
+<p><strong>ささだ</strong> でも、抜けてたのは数日ですよね？</p>
+
+<p><strong>卜部</strong> 前回は関さんを連れて行く任務があったので、サンフランシスコから一旦日本に戻って、また行くという。</p>
+
+<p><strong>ささだ</strong> Ruby の会との関連とかいうのは？</p>
+
+<p><strong>卜部</strong> 話が戻るけど 2005 の Rubyconf に初めていったときに、高橋さんが日本でも RubyConf やりたいって話があって、その流れで日本 RubyConf が 2006 くらいにあったと。任意団体だったころの Ruby の会にはあまり関わってなかったけど、法人になるにあたって監事がいるのでなってくれませんかとご依頼をうけて、やらせてもらっている感じ。</p>
+
+<p><strong>ささだ</strong> それが 2011。</p>
+
+<p><strong>卜部</strong> 1 年経ったからそういうことか。まぁ、RubyKaigi は毎年出ていたので皆勤賞ですね。今のところ。コミッターは無料なので、今更出ない理由もないので、今後も続くと思いますが。</p>
+
+<p><strong>ささだ</strong> Ruby コミッタはコミット数に応じて参加費無料って、誰のアイデア？</p>
+
+<p><strong>卜部</strong> あれ、誰のアイデアなんでしょうね。僕じゃないのは確かなんだけど。</p>
+
+<p><strong>ささだ</strong> 卜部くんだと思ってた。</p>
+
+<p><strong>卜部</strong> 僕無料じゃないですからね。あれで言うと。あれは 2.0 に貢献した数なので、僕はそんなに 2.0 に貢献してないのであんまり減らない。</p>
+
+<p><strong>arton</strong> あれは 2.0 までに？ 累計で 1.4 とかも入ってるんじゃないの？</p>
+
+<p><strong>卜部</strong> メインストリームにコミットした人は入ってるんだけど、横のブランチとかは入ってない。</p>
+
+<p><strong>ささだ</strong> Backport とかカウントされないんだよね。さて、仕事のはなしで、言いたいこととかある？</p>
+
+<p><strong>卜部</strong> いや、特には？</p>
+
+<p><strong>ささだ</strong> 生い立ちてきなところで、俺の人生はもっとかっこよかったみたいなエピソードは？</p>
+
+<p><strong>卜部</strong> いや、ないですね。旅行も毎年一回アメリカに行くくらいだし。</p>
+
+<p><strong>ささだ</strong> RubyConf は大きかった？</p>
+
+<p><strong>卜部</strong> 大きかったですね。色々と。</p>
+
+<p><strong>郡司</strong> RubyConf に参加する前は、アメリカに行ったことなかった？</p>
+
+<p><strong>卜部</strong> 行ったことなかったですね。</p>
+
+<p><strong>郡司</strong> 行こうと思ったキッカケは？</p>
+
+<p><strong>卜部</strong> Debian の Ruby のパッケージを見てる森脇さんが行きませんかって言ってくれたので、じゃあ行くかって感じですね。</p>
+
+<h3 id="普段の生活">普段の生活</h3>
+
+<h4 id="仕事">仕事</h4>
+<p>: <img src="/images/0042-Hotlinks/4.jpg" alt="4.jpg" /></p>
+
+<p><strong>ささだ</strong> 普段の仕事、何してるんですか？</p>
+
+<p><strong>卜部</strong> 秘密ですとか言ってたけど、僕の仕事が明らかになってしまうわけですけど。ソフトウェアエンジニア in Test。テストっぽいことをやってる。</p>
+
+<p><strong>ささだ</strong> QA？</p>
+
+<p><strong>卜部</strong> に、近いかな。これまでの Hotlinks に出てきた人で言うと、関さんの仕事に近い。</p>
+
+<p><strong>ささだ</strong> 統括ってわけではない？</p>
+
+<p><strong>卜部</strong> 既存の職業とちょっと違うので、微妙なんだけど。</p>
+
+<p><strong>ささだ</strong> ソースコードパトロールみたいなこと？</p>
+
+<p><strong>卜部</strong> それも近いですね。</p>
+
+<p><strong>ささだ</strong> ソースコードをながめて？</p>
+
+<p><strong>卜部</strong> 眺めてるだけじゃだめなので、機械的なテストも含めて。もっとエンジニアリングしていきましょうって</p>
+
+<p><strong>ささだ</strong> テスト足りなかったら書けよって言う仕事？</p>
+
+<p><strong>卜部</strong> 書けよじゃなくて、自分で書く。テストしていく上で、もっと品質とか性能とかよくしていきましょう。</p>
+
+<p><strong>ささだ</strong> それ何人くらい居るんですか。</p>
+
+<p><strong>卜部</strong> 全体では何人いるかわかんない。部署ごとにバラバラってやってるので。</p>
+
+<p><strong>ささだ</strong> 卜部くんは何人中の何人。</p>
+
+<p><strong>卜部</strong> 僕らのチームだと 30 人くらいの中で、5 人くらいのチームです。</p>
+
+<p><strong>ささだ</strong> だいぶそこに手厚い感じですね。</p>
+
+<p><strong>卜部</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> アメリカ行きとは違う話しなの？</p>
+
+<p><strong>卜部</strong> 違う話ですね。ただ、ちょっとしか違わなくて、アメリカとか中国とか色んなところにmobageのシステムが展開されてるんだけど、それらを含めて統一的にテストしていきたいねって話になっていますので。</p>
+
+<p><strong>ささだ</strong> 全世界的なフレームワークをどうしよっかって話をしに行ったと。</p>
+
+<p><strong>卜部</strong> 一つの理由ですね。</p>
+
+<p><strong>ささだ</strong> 入社してすぐにそれをやらせるってすごいですね。海外の人と、ずっとディスカッションするの？</p>
+
+<p><strong>卜部</strong> まあそうですね。</p>
+
+<p><strong>ささだ</strong> そのディスカッションの方法とかは RubyConf で覚えた？</p>
+
+<p><strong>卜部</strong> そうですね。RubyConf はそういう意味ではすごい役に立ってますね。</p>
+
+<p><strong>ささだ</strong> 仕事はそんな感じ、と。ゲームとかは作ってないんですね。</p>
+
+<p><strong>卜部</strong> いわゆるプレアブルなゲームは作ってないですね。QA をやるにあたって、ゲームプレーする観点があるので、テスト用のゲームは作ってる。</p>
+
+<p><strong>ささだ</strong> 入社後の研修というか、「これを読んでその辺の方法を覚えろ」ってのはあるの？ それとも自分の経験で？</p>
+
+<p><strong>卜部</strong> 自分の経験からですね。経験からやると人が育たないので、そこをなんとかしようかなってなりつつあるんだけど、掛け声だけかかってる状態ですね。</p>
+
+<p><strong>ささだ</strong> じゃあ、その中で統一的な本を書いたりとかレジュメ書いたりとかっていう？</p>
+
+<p><strong>卜部</strong> うん。まあそういったことで、ブランディングから攻めていきたいとは思っていますが。</p>
+
+<p><strong>ささだ</strong> じゃあ卜部ブランドみたいなので、アジャイルとかそういうのに並ぶようなものが出てくるっていう？</p>
+
+<p><strong>卜部</strong> そうそうそう、でてくるといいなと思う。という風に上司からは言われているんだけど、名前なんか中々思いつかねえよみたいな感じで （笑）</p>
+
+<p><strong>ささだ</strong> ウラジャイルとか、そういう （笑）</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> この間大江戸 Ruby 会議 03 で、松田明さんがホニャイルって言ってましたが（笑）</p>
+
+<p><strong>卜部</strong> ああ、Cookpad でいうと mrkn のバットマンみたいなのがあるじゃん。</p>
+
+<p><strong>ささだ</strong> うん、井上さんがバットマンという話を言っていて。</p>
+
+<h4 id="普段の生活スタイル">普段の生活スタイル</h4>
+
+<p><strong>ささだ</strong> 普段の生活スタイル。</p>
+
+<p><strong>卜部</strong> 普段の生活スタイルはまあ会社員なのであんまり変な感じではないですね。</p>
+
+<p><strong>ささだ</strong> ちゃんと朝来て、夜帰る？</p>
+
+<p><strong>卜部</strong> 一応、朝会ならぬ昼会というのをやってるので。10 時には一応来ることになっていて、それは若干守れていないので心苦しい点ではあるんだけど。まあ 10 時前後には来るっていう感じですね。で、普通に働いてそんなに遅くならないうちには帰るって感じ。</p>
+
+<p><strong>ささだ</strong> ふむふむ。超ホワイト？</p>
+
+<p><strong>卜部</strong> そうですね。まあでも今のスタイルはそうだからそうなんだけど、別に僕がこれまでそういうスタイルでずっと生きてきましたってわけでは全然ない。</p>
+
+<p><strong>ささだ</strong> そうですか。今、会社まで近いよね？</p>
+
+<p><strong>卜部</strong> うん、今は家から会社まで乗り換えなしで来れるっていう話もありますね。</p>
+
+<h4 id="仕事とプライベートとの両立">仕事とプライベートとの両立</h4>
+
+<p><strong>ささだ</strong> 仕事とプライベートとの両立は？</p>
+
+<p><strong>卜部</strong> いきなり海外出張行って三ヶ月帰ってこれないとかなので、もはやプライベートってなんですか、みたいな感じになりつつありますよね。</p>
+
+<p><strong>ささだ</strong> （笑）。でも土日とかはちゃんとあるんでしょ？</p>
+
+<p><strong>卜部</strong> そうですね。土日とかは仕事の話はあんまりしないように頑張ってはいますね。ただ現職もふくめて今まで働いたところ全部そうだけど裁量労働制なので、いつ働いていいかは自分で決めてねって話にはなっているので。そういう意味では渾然一体となってますみたいな感じですね。一応、労務管理上の話はあるのでそんなにひどくはないけど。</p>
+
+<p><strong>ささだ</strong> でも、仕事は家に持って帰らないでしょ？</p>
+
+<p><strong>卜部</strong> 持って帰れないですね。そういう意味では仕事とプライベートの両立という話で言うと、家ではちゃんとプライベートな時間ですね。仕事の中にプライベートが混ざり込んでくるっていう感じ。ときどき座ってますけど Ruby のコミットしてます、とかいう瞬間はある。</p>
+
+<p><strong>ささだ</strong> なるほど。では普段の余暇の間とかは何をされているのでしょう？</p>
+
+<p><strong>卜部</strong> ごく最近の話をすると、何件か書籍のレビューをやってくれって話があって。レビューをずっとやってるって感じですね。</p>
+
+<p><strong>ささだ</strong> おお、素晴らしい。</p>
+
+<p><strong>卜部</strong> っていう話をいっていいんでしょうか。このるびまが出る頃には言っていいかもしれないけど。</p>
+
+<p><strong>郡司</strong> 間に合えば今回のるびまは 5 月にはでますね。</p>
+
+<p><strong>卜部</strong> じゃあ微妙だな。まあ、なんか出るかもしれません。だから最近のプライベートで何やってるかって言うと、そんな感じのをずっと読んでるってことですね。</p>
+
+<p><strong>ささだ</strong> ほんと仕事してるんだね （笑）</p>
+
+<p><strong>arton</strong> うーん……仕事……だね。</p>
+
+<p><strong>ささだ</strong> レビュー以外の本とか読まないんですか？</p>
+
+<p><strong>卜部</strong> 読みますね。最近読んだ本だと 1984 を最近。ついに読んだって感じ。オーウェルの方ね。『1984 年』<sup id="fnref:103"><a href="#fn:103" class="footnote">98</a></sup>
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41ZAgdWin2L._SL160_.jpg" /></p>
+
+<p><strong>郡司</strong> あ、そっちか （笑）</p>
+
+<p><strong>卜部</strong> そう、だからついになんですよ。今まで読んでなかった。</p>
+
+<p><strong>ささだ</strong> どうでした？</p>
+
+<p><strong>卜部</strong> いや、どうでしたという程のものでも （笑）</p>
+
+<p><strong>ささだ</strong> 古典だよね。</p>
+
+<p><strong>卜部</strong> 古典だよね<sup id="fnref:104"><a href="#fn:104" class="footnote">99</a></sup>。</p>
+
+<p><strong>ささだ</strong> まあ俺は読んでないけど。私は最近、村上春樹の方<sup id="fnref:105"><a href="#fn:105" class="footnote">100</a></sup>を読み始めた （笑）
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51pdnZBq-aL._SL160_.jpg" /></p>
+
+<p><strong>卜部</strong> えっ、あれオーウェルの方読んでなくても、あれ通じるの？</p>
+
+<p><strong>ささだ</strong> いやーどうなんだろう……。</p>
+
+<p><strong>郡司</strong> 直接は関係ないですよね？ オマージュではあるんですけど。</p>
+
+<p><strong>卜部</strong> そうなんだ。</p>
+
+<p><strong>郡司</strong> いや、まあでもストーリーの中で言及はされますけどね。</p>
+
+<p><strong>arton</strong> やっぱりニュースピークのとかあるわけ？</p>
+
+<p><strong>郡司</strong> それはないですね （笑）</p>
+
+<p><strong>卜部</strong> その前は、ウンベルト・エーコ<sup id="fnref:106"><a href="#fn:106" class="footnote">101</a></sup><sup id="fnref:107"><a href="#fn:107" class="footnote">102</a></sup>って人が書いた『完全言語の探求』<sup id="fnref:108"><a href="#fn:108" class="footnote">103</a></sup>って本があって、これが超厚くて昔は手が出なかったんだけど、最近、平凡社ライブラリー<sup id="fnref:109"><a href="#fn:109" class="footnote">104</a></sup>に入って持ち運べるようになったので頑張って読んだって感じですね。
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51hvdcg3raL._SL160_.jpg" /></p>
+
+<p><strong>arton</strong> それって人工言語に対する興味で読んでんの？ オーウェルも含めて。</p>
+
+<p><strong>卜部</strong> それはえっと、その流れはそうですね。『完全原語の探求』読んだので、その流れで読んだって感じかな。</p>
+
+<p><strong>arton</strong> エーコかぁ。すげえな。</p>
+
+<p><strong>卜部</strong> あれねえ、なんか学術的な本でしたねって感じでした。趣味で読む感じじゃなかったわ。参考文献の塊だった。</p>
+
+<h4 id="美術館巡り">美術館巡り</h4>
+<p>: <img src="/images/0042-Hotlinks/5.jpg" alt="5.jpg" /></p>
+
+<p><strong>ささだ</strong> 本以外は？</p>
+
+<p><strong>卜部</strong> 本以外は、一人で博物館とか美術館とか行くのが好きで。これは親の影響もあると思うけど。</p>
+
+<p><strong>ささだ</strong> 卜部くんと知り合って十年くらいたってるけど、知らなかった （笑）</p>
+
+<p><strong>卜部</strong> さっきもいったけど親が考古学者なので、これは親の影響が強いと思っていて。暇な日とかはけっこう美術館とかいったりしてますね。で、一人でダラダラしてる。清澄白河とか行きますね。</p>
+
+<p><strong>ささだ</strong> 清澄白河にあったっけ？</p>
+
+<p><strong>郡司</strong> 現代美術館<sup id="fnref:110"><a href="#fn:110" class="footnote">105</a></sup>がありますね。</p>
+
+<p><strong>卜部</strong> そう、すげーデカイやつ。</p>
+
+<p><strong>ささだ</strong> あそこいいですか？</p>
+
+<p><strong>卜部</strong> うん、あそこね。人がいないときは超ガランとしてる。</p>
+
+<p><strong>arton</strong> あそこ空いてるよねえ。</p>
+
+<p><strong>卜部</strong> ところが夏休みに毎年ジブリのやつ<sup id="fnref:111"><a href="#fn:111" class="footnote">106</a></sup>とかやっていて、夏は超込む。</p>
+
+<p><strong>arton</strong> あー。</p>
+
+<p><strong>郡司</strong> 常設展はガラガラ<sup id="fnref:112"><a href="#fn:112" class="footnote">107</a></sup>で、いいんですよ。</p>
+
+<p><strong>arton</strong> あのさ、地下の中庭の方に迷路みたいなのがあんじゃん。あれがなんか好きでさ。</p>
+
+<p><strong>郡司</strong> あと、あのあそこは図書館というかライブラリがあって。</p>
+
+<p><strong>卜部</strong> ありますね。</p>
+
+<p><strong>郡司</strong> あそこが凄くいいですね。</p>
+
+<p><strong>卜部</strong> いいですねえ。</p>
+
+<p><strong>ささだ</strong> それは美術書が入っているの？</p>
+
+<p><strong>郡司</strong> 基本は美術書です。</p>
+
+<p><strong>ささだ</strong> それで造詣を深める？</p>
+
+<p><strong>卜部</strong> 造詣が深まっているって感じはないですね<sup id="fnref:113"><a href="#fn:113" class="footnote">108</a></sup>。たんにぼーっとしてる感じ。</p>
+
+<p><strong>ささだ</strong> おお。じゃあ彼女にするんだったら美術館に一緒にいって、ぼーっとできる人がいい？</p>
+
+<p><strong>卜部</strong> あー、それはありかな。</p>
+
+<p><strong>ささだ</strong> （笑）</p>
+
+<p><strong>卜部</strong> たしかに。いいかもしれないですね。</p>
+
+<p><strong>ささだ</strong> 以前、あそこのそばに住んでて、何回も前を通ってるんだけど、一度もいったことなくて。今度行こうと思っているうちに引っ越してしまった。あとのおすすめ美術館は？</p>
+
+<p><strong>卜部</strong> おすすめ美術館。美術館ってジャンルが全然違ったりするとグッと来る人と来ない人がいるので。</p>
+
+<p><strong>ささだ</strong> まあ、卜部くんがグッとくるってやつを。</p>
+
+<p><strong>卜部</strong> そういう意味で言うと、全然ジャンルが違うのでいうと出光美術館<sup id="fnref:114"><a href="#fn:114" class="footnote">109</a></sup>は行きますね。</p>
+
+<p><strong>arton</strong> 東京駅？</p>
+
+<p><strong>卜部</strong> 東京駅なのかな、日比谷？ まあ丸の内側ですね。ここは日本の古美術とかですけど。</p>
+
+<p><strong>ささだ</strong> あの、東京駅の地下の通路を通るとディスプレイやってるけど、あれはなんか関係あるの？</p>
+
+<p><strong>卜部</strong> いや、そういうわけではないよ。東京駅で言うと、新しくなったからステーションギャラリー<sup id="fnref:115"><a href="#fn:115" class="footnote">110</a></sup>とかできたんですよ。</p>
+
+<p><strong>ささだ</strong> ふーん。</p>
+
+<p><strong>卜部</strong> で、一回は行ってみたって感じですね。あれは駅の真上なのでいいですね。</p>
+
+<p><strong>ささだ</strong> じゃあ東京都とか、その辺の美術館は行き尽くしたって感じ？</p>
+
+<p><strong>卜部</strong> そうでもないけどね。東京ってすごく美術館多くって。そういうことだと島根の方が行き尽くした率は高いと思います。東京はポコポコ沢山あるから大変なんだよね。</p>
+
+<p><strong>ささだ</strong> なるほど。島根の美術館は湖のところにあるやつ<sup id="fnref:116"><a href="#fn:116" class="footnote">111</a></sup>しか行ったことないや。</p>
+
+<p><strong>卜部</strong> うん、まああれがデカイね。</p>
+
+<p><strong>ささだ</strong> 博物館は？</p>
+
+<p><strong>卜部</strong> 博物館と美術館はそんなにきっぱり分かれてるってわけじゃないんで。渾然一体となっている部分がありますけど。特に考古学の方はね。</p>
+
+<p><strong>arton</strong> あーなるほど。</p>
+
+<p><strong>ささだ</strong> そういう興味もあったの？</p>
+
+<p><strong>卜部</strong> 興味っていうか、これは親の影響だよねえ。親がだから連れていくわけですよ。逆に親が上京してくると美術館とか行ったりする。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>arton</strong> じゃあ清澄白河はあんまりあれだね。</p>
+
+<p><strong>卜部</strong> そう、だから清澄白河はあんまり親は関係ないね。</p>
+
+<p><strong>郡司</strong> 国立博物館とか？</p>
+
+<p><strong>卜部</strong> そうそう、国立博物館とか。上野だとあとは都立美術館とか。</p>
+
+<p><strong>ささだ</strong> なるほど、いっぱいあるんすねえ。私は全然行かないのでわからないんですけど。日本科学未来館<sup id="fnref:117"><a href="#fn:117" class="footnote">112</a></sup>とかはジャンルが違うの？</p>
+
+<p><strong>卜部</strong> いや別に違わないと思いますよ。未来館はね、今日美術館いきたいわ、とかってあるとき有給取っていたらお子さんが修学旅行でバスで乗り付けててガーッと来ていて。</p>
+
+<p><strong>ささだ</strong> （笑）</p>
+
+<p><strong>卜部</strong> おおーっと思った （笑）</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>卜部</strong> 平日来るじゃなかったわーみたいな感じ。だから平日はそんな感じですね。</p>
+
+<p><strong>郡司</strong> お台場の方ですか？</p>
+
+<p><strong>卜部</strong> うん。</p>
+
+<p><strong>arton</strong> いつか RubyKaigi やったじゃん。</p>
+
+<p><strong>卜部</strong> そうそうそう。RubyKaigi2006 ですね。</p>
+
+<p><strong>郡司</strong> 私、2006 だけは行ってないんですよね。</p>
+
+<p><strong>卜部</strong> あ、未来館でやったわけじゃないですよ。未来館の隣の建物でやりましたね。</p>
+
+<p><strong>郡司</strong> インターネット物理モデルとかあるところですよね。</p>
+
+<p><strong>ささだ</strong> そうそう、<a href="RubyKaigi2006-0611-4#l74">江渡さんも携わっているやつ</a><sup id="fnref:118"><a href="#fn:118" class="footnote">113</a></sup>ね。2006 年の RubyKaigi では未来館の最上階の食堂で懇親会をやりましたね。</p>
+
+<p><strong>郡司</strong> ほー。</p>
+
+<p><strong>卜部</strong> そういう意味で言うと RubyKaigi2013、今年のやつもそこの辺ではありますね。</p>
+
+<p><strong>ささだ</strong> 隣の。</p>
+
+<p><strong>卜部</strong> そう、逆向きの隣。だから未来館の産総研じゃない方ですね。</p>
+
+<p><strong>ささだ</strong> うん、あの辺ですね。あとは……。海外では美術館なんかありました？ おーっていうのは。</p>
+
+<p><strong>卜部</strong> 美術館で言うとサンフランシスコ近代美術館<sup id="fnref:119"><a href="#fn:119" class="footnote">114</a></sup>っていうすごい有名なやつがあって。</p>
+
+<p><strong>ささだ</strong> うん。</p>
+
+<p><strong>卜部</strong> でも、これもどっちかっていうと現代アートですよね。アメリカは現代アートが凄く強くて<sup id="fnref:120"><a href="#fn:120" class="footnote">115</a></sup>。</p>
+
+<p><strong>ささだ</strong> そうだよねえ。</p>
+
+<p><strong>卜部</strong> 謎の抽象画とかですよ。壁一面にバーって謎の模様<sup id="fnref:121"><a href="#fn:121" class="footnote">116</a></sup>が書いてあって。抽象画です、みたいな感じのやつ。はぁーって感じ。あとは無駄に大きいですね。</p>
+
+<p><strong>ささだ</strong> 博物館とか美術館とかで、特にこの作品がっていうのはあったりするの？</p>
+
+<p><strong>卜部</strong> うーん、まああんまりないかなあ。作品って実は展示期間が決まっていて、一年中ずっーとっていうのは日本ではあまりないと思うんですよ。海外はわかんないけど。なので、見に行こうと思っていても実際行くと「展示されてません」みたいな結構あるので。思い入れっていうか「これ見なきゃ」みたいことで行くと結構悲しい思いすることが多いですね。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>郡司</strong> さっきも出ましたけど、国立博物館はやっぱり国宝とかは順繰りで出してるんで。必ずあるってわけじゃいないんですよね。</p>
+
+<p><strong>ささだ</strong> これを見たいと思って行ってもないことがある、と。</p>
+
+<p><strong>郡司</strong> 鳥獣戯画だと、もう、ここの部分だけとか （笑）</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>郡司</strong> 全部やると長いので、あれは （笑）</p>
+
+<p><strong>ささだ</strong> あとはなんだろう。有名なところだとジブリ美術館とかですね？</p>
+
+<p><strong>arton</strong> ジブリってたぶん 100 年後には考古学的に面白いものになるだろうね。</p>
+
+<p><strong>ささだ</strong> （笑）</p>
+
+<p><strong>卜部</strong> うん、かもしんないですね （笑）。この人たちはなにをやってたんだみたいな。でも 100 年だとまだ文字が読める<sup id="fnref:122"><a href="#fn:122" class="footnote">117</a></sup>からあれかもしれないですね。</p>
+
+<p><strong>arton</strong> そっか、300 年くらいたつといいかな （笑）</p>
+
+<p><strong>卜部</strong> （笑）</p>
+
+<p><strong>arton</strong> この頃はいったいどういう文明だったんだって （笑）</p>
+
+<h4 id="映画音楽ゲームスポーツ">映画・音楽・ゲーム・スポーツ</h4>
+
+<p><strong>ささだ</strong> あとは映画・音楽・ゲーム・スポーツ。</p>
+
+<p><strong>卜部</strong> 映画・音楽・ゲーム・スポーツはそんなには……。</p>
+
+<p><strong>arton</strong> アニメもみない？</p>
+
+<p><strong>卜部</strong> あんまり観ないっていうか、テレビ持ってないのでアニメ観れないので。映画、映画ねえ。あんまないですね、そのへんは。</p>
+
+<p><strong>ささだ</strong> ゲームとかもしない？</p>
+
+<p><strong>卜部</strong> ゲームしない。あとmobageのアカウントもってない。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> テスト用にはいらないの？</p>
+
+<p><strong>卜部</strong> あっ！ テスト用はもちろん持ってますよ。</p>
+
+<p><strong>ささだ</strong> （笑）</p>
+
+<p><strong>卜部</strong> それはアカウント持ってるとか持ってないとかそういう話しとはちょっと違うので<sup id="fnref:123"><a href="#fn:123" class="footnote">118</a></sup> （笑）</p>
+
+<p><strong>ささだ</strong> あー、なるほど。仕事とは関係ないものはもってないと。</p>
+
+<p><strong>卜部</strong> うん。</p>
+
+<p><strong>ささだ</strong> mobageってなにか知ってた？ 入るまえに。mobageとはこういうものである、みたいな。</p>
+
+<p><strong>卜部</strong> あ、それは、まあ知ってたよ（笑）</p>
+
+<p><strong>ささだ</strong> やったことあった？</p>
+
+<p><strong>卜部</strong> やったことはないですね。</p>
+
+<p><strong>郡司</strong> 面接とかで好きなmobageのゲームとかは聞かれないんですか？</p>
+
+<p><strong>卜部</strong> ああ、そういう意味で言うと聞かれたかもしんないけど、僕は何もやってなくても入れたって感じですね。</p>
+
+<p><strong>ryopeko</strong> 僕もおんなじように答えましたよ。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ryopeko</strong> やったことありますか？ いやないです、って。</p>
+
+<p><strong>川口</strong> 受ける前超やったのに……。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> スポーツは？</p>
+
+<p><strong>卜部</strong> スポーツもあんまりやんないですねえ。</p>
+
+<p><strong>ささだ</strong> 動かないとヤバイよ。</p>
+
+<p><strong>卜部</strong> ねっ。</p>
+
+<p><strong>ささだ</strong> 三十超えてるんだから （笑）</p>
+
+<p><strong>卜部</strong> そうそう、って言われるんだけど。やっぱりやってないみたいな感じですね。よくないですね。</p>
+
+<p><strong>arton</strong> なんか、居合いとかやったらいいんじゃない？</p>
+
+<p><strong>卜部</strong> 居合いねえ （笑）</p>
+
+<p><strong>ささだ</strong> それ、髪だけ見てない？ （笑）</p>
+
+<p><strong>arton</strong> えっ、見てる （笑）</p>
+
+<p><strong>ささだ</strong> （笑）。スポーツやんないとヤバイっすよ。</p>
+
+<p><strong>卜部</strong> ヤバイね。思っております、はい。</p>
+
+<p><strong>ささだ</strong> 家から駅までは歩く？</p>
+
+<p><strong>卜部</strong> うん、ただそんなに遠くないんですよね。あとはこの建物の中で上下している程度で。</p>
+
+<p><strong>ささだ</strong> あ、けっこうウロウロする？</p>
+
+<p><strong>卜部</strong> えっと会議室があるフロアと、自分の居室が違うので、そこの間を上下しますね。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<h4 id="使ってるマシン">使ってるマシン</h4>
+
+<p><strong>ささだ</strong> 使ってるマシンは ThinkPad ？</p>
+
+<p><strong>卜部</strong> 自分で使ってるやつは ThinkPad ですね。会社から支給されてるのは Mac っていう感じです。なんだけど、別に ThinkPad に思い入れがあるわけではなくって、これの前は VAIO を使っていたし、VAIO の前は Let’s Note を使っていた。とかなので、別に ThinkPad がないと生きていけません、という人ではないですね。</p>
+
+<p><strong>ささだ</strong> 以前の VAIO は GPU がすごくてうんぬんとか言ってたよね。</p>
+
+<p><strong>卜部</strong> VAIO X の前のやつかな、GPU がえらべるやつ（VGNSZ92PS）。GPU がデュアルでついてたやつがあって、それを使っていました。</p>
+
+<p><strong>ささだ</strong> なんかウィンドウをうにゅうにゅさせてたよね<sup id="fnref:124"><a href="#fn:124" class="footnote">119</a></sup>。</p>
+
+<p><strong>卜部</strong> そうそうそう</p>
+
+<h4 id="好きな女性のタイプ">好きな女性のタイプ</h4>
+
+<p><strong>ささだ</strong> 好きな女性のタイプは？</p>
+
+<p><strong>卜部</strong> あんまりタイプとかで女性を好きになったりしないんですよ。</p>
+
+<p><strong>ささだ</strong> 好きになった女性がタイプ？</p>
+
+<p><strong>卜部</strong> どうなんですかね？ さかのぼって分析とかしたことないのでわからない。</p>
+
+<p><strong>ささだ</strong> なるほどねぇ。えっ、これでおわり？</p>
+
+<p><strong>卜部</strong> うーん、そうかなあ。まあだから、嫌いなものには理由があるけど、好きなものにはあまり理由が無いので。</p>
+
+<p><strong>ささだ</strong> 好きになった人が好きという？</p>
+
+<p><strong>卜部</strong> そんな感じですかねー。</p>
+
+<p><strong>ささだ</strong> おんなじ事言ってるような気がする （笑） 趣味があうとかは気にしないんですか？</p>
+
+<p><strong>卜部</strong> まあ、趣味があってくれたほうが嬉しいなとは思うけど。</p>
+
+<p><strong>arton</strong> さっき「一緒に美術館に」って話してたじゃん。</p>
+
+<p><strong>卜部</strong> それはあるかもしれないですね。あるとプラスになるねくらいの話で。</p>
+
+<p><strong>ささだ</strong> それだから好きってことではない？</p>
+
+<p><strong>卜部</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> DeNA は合コンとかあるの？</p>
+
+<p><strong>卜部</strong> どうなんでしょう、DeNA といっちゃうとすごい広いからさ。</p>
+
+<p><strong>ささだ</strong> （笑） やっぱ部署によっても違うのかな</p>
+
+<p><strong>卜部</strong> 違うんじゃないですかね、というくらいのことしか言えない。僕の周りはないですね。</p>
+
+<p><strong>ささだ</strong> 募集とか、なんか言ったほうがいいですか？</p>
+
+<p><strong>卜部</strong> いや、知らないけど。</p>
+
+<p><strong>ささだ</strong> ご連絡をここまでみたいな （笑）</p>
+
+<p><strong>卜部</strong> じゃあ、るびま編集部まで （笑）</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>ささだ</strong> こないだアドセンスで恋人募集って載せてた人が付き合ったって話があったので。</p>
+
+<p><strong>卜部</strong> ああ、ありましたね。</p>
+
+<p><strong>ささだ</strong> あんな感じでるびまに載せたから付き合ったみたいな。</p>
+
+<p><strong>卜部</strong> なんか楽しそうな感じですね。</p>
+
+<h3 id="今後について">今後について</h3>
+
+<h4 id="今後の展望将来の夢">今後の展望、将来の夢</h4>
+<p>: <img src="/images/0042-Hotlinks/6.jpg" alt="6.jpg" /></p>
+
+<p><strong>ささだ</strong> 今後の展望、将来の夢。</p>
+
+<p><strong>卜部</strong> えーっと、僕がやっているような、プログラミングみたいな仕事というのはなくなっていくべきだと実は思っていて。将来的には人間の手を介さないようなプログラミングとか、できるべきだと思っているので、全然道は遠いですが、そういうふうになっていくといいなあ、と。</p>
+
+<p><strong>ささだ</strong> 将来的にはそういう予想があると？</p>
+
+<p><strong>卜部</strong> うん。</p>
+
+<p><strong>ささだ</strong> 要するに今のプログラミングっていうのは人間がやるべきものではないし、将来的にはそれをやらなくていい世界が来る？</p>
+
+<p><strong>卜部</strong> 来て欲しいなあと思う、という話があるので、そこに向けてそういう風なことができないかなということを、考えたりやったりとかしていきたいですね。</p>
+
+<p><strong>ささだ</strong> じゃあそういう将来において自分の立ち位置というのはどのへんに置きたい？</p>
+
+<p><strong>卜部</strong> どうなんでしょうね。そのときどこに立ってるのかはよくわかんないですね。</p>
+
+<p><strong>ささだ</strong> そういう世の中を見てみたいって感じ？</p>
+
+<p><strong>卜部</strong> そうですね。</p>
+
+<h4 id="その他の質問">その他の質問</h4>
+
+<p><strong>ささだ</strong> で、その他の話になるんですけど、咳さんから卜部くんへの質問がきていて</p>
+
+<p><strong>卜部</strong> うん</p>
+
+<p><strong>ささだ</strong> 「シャンプーなに使ってるの？」だって （笑）</p>
+
+<p><strong>卜部</strong> 何使ってるっていうか、アメリカとか行くからさあ、そんなに特別なシャンプーとか使ってないんですよ。そこら辺のドラッグストアとかで入手できるようなシャンプーを使っています。</p>
+
+<p><strong>ささだ</strong> はい。</p>
+
+<p><strong>卜部</strong> はい。</p>
+
+<h4 id="mput-の由来">mput の由来</h4>
+
+<p><strong>ささだ</strong> あとは私の質問。ニックネームに使っていた mput ってなんで mput なの？</p>
+
+<p><strong>卜部</strong> えっと、「computer」は 8 文字ですが、その真ん中の 4 文字。</p>
+
+<p><strong>arton</strong> あっ、そうなんだ。俺、FTP の mput かと思ってた。</p>
+
+<p><strong>卜部</strong> そう、で、あとからググってみたらそっちがヒットしてきたので、グーグラビリティが低いのであんまりよくない名前だった。</p>
+
+<p><strong>ささだ</strong> へー、そっからなんだ。</p>
+
+<h4 id="ruby-187-について">Ruby 1.8.7 について</h4>
+
+<p><strong>ささだ</strong> あとは、Ruby 1.8.7 について。</p>
+
+<p><strong>卜部</strong> はい。</p>
+
+<p><strong>ささだ</strong> Ruby 1.8.7 の思い出はまあ「頑張りました」という感じでしょうか。</p>
+
+<p><strong>卜部</strong> 思い出は、そうですねえ。</p>
+
+<p><strong>ささだ</strong> で、2013 年の 6 月でサポートが切れる、セキュリティフィックスもしません、ということだよね。</p>
+
+<p><strong>卜部</strong> そう。という状況になる。あ、やべ、そのアナウンス忘れてたわ。</p>
+
+<p><strong>ささだ</strong> （笑）</p>
+
+<p><strong>ささだ</strong> で、そうすると卜部くんは、御役御免というか、大団円というか。</p>
+
+<p><strong>卜部</strong> まあ、なんというか、普通のコミッタになるというかですね。</p>
+
+<p><strong>一同</strong> （じわじわ （笑））</p>
+
+<p><strong>卜部</strong> 平コミッタというやつです。</p>
+
+<p><strong>arton</strong> 普通のコミッタになると、RubyKaigi が安くなるような trunk へのコミットもできるようになる。</p>
+
+<p><strong>卜部</strong> ああ、いいかもしれないですね。とりあえず、eval をキーワードにしてみますか。</p>
+
+<p><strong>ささだ</strong> ははは。1.8.7 はもう、卜部くんは少なくとも見ない、と。</p>
+
+<p><strong>卜部</strong> そうですね。他の人がやってくれることに関しては、とくに意見はありませんが。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>arton</strong> じゃあ、1.8.7 のユーザに対して二言三言。</p>
+
+<p><strong>卜部</strong> 今、1.8.7 を使っている人は多分僕がリリースしたやつをそのまま使っているという人は少ないと思っていて。たとえば CentOS に入ってるものとか<sup id="fnref:125"><a href="#fn:125" class="footnote">120</a></sup>、RedHat に入っているものとか<sup id="fnref:126"><a href="#fn:126" class="footnote">121</a></sup>、そういうのを使っておられると思うので。そういう意味では僕がメンテナンスをするという意味は相対的に下がってきていて、そういう部分でも終わってもいいとのかなと思うところがある。なのでユーザのみなさんは RedHat とかにお金を払ってください、って感じですね。</p>
+
+<p><strong>ささだ</strong> 僕が辞めても Ruby 1.8.7 は永久に不滅ですっていう （笑）</p>
+
+<p><strong>卜部</strong> そうだ、ひとつ言いたいことがあるのですが、るびまを動かしている Hiki のバージョンが古いです。</p>
+
+<p><strong>ささだ</strong> よく存じております……。</p>
+
+<p><strong>郡司</strong> それはやらないとですね。</p>
+
+<p><strong>ささだ</strong> 今、鋭意改良中ということで<sup id="fnref:127"><a href="#fn:127" class="footnote">122</a></sup>。</p>
+
+<p><strong>卜部</strong> このインタビューが終わるくらいの頃にはなんとかなっていて欲しい （笑）</p>
+
+<p><strong>たなべ</strong> 柴田さんが Hiki にプルリクしてたのはその流れだったんですか。</p>
+
+<p><strong>ささだ</strong> そろそろこれも 1.9 にしないと。</p>
+
+<p><strong>arton</strong> 2.0 にしない？</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>arton</strong> 自分たちで食わないって何それ （笑）</p>
+
+<p><strong>卜部</strong> ドッグフード食うの重要ですよ。</p>
+
+<p><strong>arton</strong> いやでもね、1.9 から 2.0 っていうのはかつてないほど移行が楽だったと思う。</p>
+
+<p><strong>卜部</strong> ほとんど変わってないですからね。新しいものとかは沢山入ってるんだけど非互換の変更っていうのがない。</p>
+
+<h4 id="rubyconf-渡航支援のモチベーション">RubyConf 渡航支援のモチベーション</h4>
+
+<p><strong>郡司</strong> <a href="http://shyouhei.tumblr.com/post/2552169195/rubyconf2011">RubyConf へ行く支援を自費でやられてた</a>じゃないですか。</p>
+
+<p><strong>卜部</strong> はいはい。</p>
+
+<p><strong>郡司</strong> あれのモチベーションって何だったのでしょうか？</p>
+
+<p><strong>卜部</strong> あれはね、あれのまえの Ruby の会とかで、行く人を支援しようみたいな話が前からあったんですよね。でも、結局誰も応募してこない。若干広報が足りてない気がしていたので、なんていうのか、話題になったほうがいいかなと思ってやってみたっていう感じ。</p>
+
+<p><strong>郡司</strong> 話題になったほうがいいから自費でっていう （笑）</p>
+
+<p><strong>ささだ</strong> それは後進をという意味もあったの？</p>
+
+<p><strong>卜部</strong> ありますねえ。さっきの話でもあったけど、なかなか十代二十代の人たちが入ってこないという話もあり、どうしたものかみたいな感じだったんですよね。今でこそ十代のコミッタが何人かいますけど、ほんとうにいなかった時期もあるんで。なんとかしないとなあみたいなことを思っていた時期がありました。</p>
+
+<p><strong>ささだ</strong> たしかに。</p>
+
+<p><strong>arton</strong> でもその一方で新しいデバイスがでて、プログラミングの方法が変わるんだったら、当然この古臭いプログラムシステムのコミッターがどんどん若い人がいなくなるのは当たり前っちゃ、当たり前なのかな。</p>
+
+<p><strong>卜部</strong> うん、まあ、そうですね。</p>
+
+<p><strong>arton</strong> にしちゃあ、次のもんが全然見えてないんだよね。</p>
+
+<p><strong>卜部</strong> Ruby は少なくとも新しいプログラムとは呼びづらい感じになってきているはずですよね。20 年もやったわけだし。そろそろ新しいものが出てくるっていうのであれば、若い人がそっちに、というのもわかんなくはないですね。ただ出てこないのが残念。</p>
+
+<p><strong>arton</strong> そういう意味で言ったら、MRI よりは Rubinius、あっちに行くのがほんとうは得策なんだよね。</p>
+
+<p><strong>卜部</strong> Rubinius どうなんですかね。最近どういう風に動いているのかあんまりよくわかっていないんだけど。</p>
+
+<p><strong>ささだ</strong> うん、あと元気なのは Topaz ですね。やっぱり。</p>
+
+<p><strong>卜部</strong> Topaz、元気なんだ。</p>
+
+<p><strong>ささだ</strong> うん、活発ですよ。開発の当初ってやれる事たくさんあるじゃないですか。</p>
+
+<p><strong>卜部</strong> そう、Ruby も処理系に関して面白いのは、開発が進むに連れてどんどん速度が遅くなっていくんだよね。</p>
+
+<p><strong>arton</strong> （笑）</p>
+
+<p><strong>卜部</strong> エッジケースとかを考えだすからさ。最初は何百倍とか超速いんだけど徐々に遅くなっていって、だいたい JRuby くらいの速さに収斂していくみたいな。なので Topaz に関してはこのまま速いままでいてほしいなと思いますね。</p>
+
+<p><strong>ささだ</strong> そうですねえ。と、質問の回答としてはよろしいですか、RubyConf 行きたい人への支援やつ。</p>
+
+<p><strong>郡司</strong> はい。ありがとうございました。</p>
+
+<p><strong>卜部</strong> まあでも、あれはそんなに続けるつもりはなかったので。</p>
+
+<p><strong>ささだ</strong> 今はうまいこと Ruby の会の方でやっている？</p>
+
+<p><strong>卜部</strong> 今はそうですね。もとのは続けるつもりはなかったっていうか、続けると俺が破産して終了するので。続かないことは明らかで。</p>
+
+<p><strong>ささだ</strong> あ、じゃあ、いまアピールしておく？</p>
+
+<p><strong>卜部</strong> そうですね。というわけで、続かないと思っていましたが今は <a href="http://shyouhei.tumblr.com/post/27693307006/rubyconf">Ruby の会でやれるようになった</a>。で、Ruby の会もそれくらいのことでは破産しない感じになっているので、気にせず応募していただけると。</p>
+
+<p><strong>ささだ</strong> 今年も（RubyConf に）送る？</p>
+
+<p><strong>卜部</strong> そうですね。やりますやります。</p>
+
+<p><strong>ささだ</strong> 素晴らしい。</p>
+
+<p><strong>卜部</strong> で、Ruby の会的には日本国内にいる知られていないような Rubyist を海外に紹介するっていうのがあるので。</p>
+
+<p><strong>ささだ</strong> へー、そんなミッションが。</p>
+
+<p><strong>卜部</strong> というわけで、特に自分は Rubyist だと思っている方々はぜひ応募していただけるといいかなと。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>卜部</strong> というわけで去年は咳さんだったんだよね。</p>
+
+<p><strong>ささだ</strong> あー、名前は知られてるけど顔は誰も知らないみたいな？</p>
+
+<p><strong>arton</strong> ERB とか使われまくってるのにね。</p>
+
+<p><strong>卜部</strong> dRuby の作者という感じで連れていきましたね。</p>
+
+<h4 id="前のインタビュイーとの関係次のインタビュイー">前のインタビュイーとの関係、次のインタビュイー</h4>
+
+<p><strong>ささだ</strong> 前のインタビュイーとの関係は。</p>
+
+<p><strong>卜部</strong> 樽家さんとの関係。なんでしょうね。何ヶ月か前にささださんの家で一緒に鍋を食った感じですかね。</p>
+
+<p><strong>ささだ</strong> そうですね （笑）。インタビューのときね。</p>
+
+<p><strong>卜部</strong> ね。</p>
+
+<p><strong>ささだ</strong> 次は誰にします？</p>
+
+<p><strong>卜部</strong> その話をする前にここで言っておくべきなのは今回のインタビューで一応ささださんはインタビュアー終わり。</p>
+
+<p><strong>ささだ</strong> そう、御役御免。</p>
+
+<p><strong>卜部</strong> というわけで、次回も僕は参加します。インタビュアーとして。で、誰がいいかと思ったんだけど、個人的には大場さんに振りたい。</p>
+
+<p><strong>一同</strong> おお。</p>
+
+<p><strong>ささだ</strong> いいですね。ご夫婦どちら？</p>
+
+<p><strong>卜部</strong> どっちかいれば、どっちかその次でしょう、みたいな。</p>
+
+<p><strong>arton</strong> 両方でいいんじゃない？</p>
+
+<p><strong>ささだ</strong> 両方！ いいですね。</p>
+
+<p><strong>arton</strong> あれ後藤兄弟のときは後藤兄弟二人だったよね。だから同じような感じで。</p>
+
+<p><strong>ささだ</strong> でしたね。兄弟で前編後編。</p>
+
+<p><strong>郡司</strong> 遠藤さんも一応お二人でしたよね。</p>
+
+<p><strong>ささだ</strong> あれは遠藤侑介さんって形で出したんだけど、今回は二人共 Rubyist なので。</p>
+
+<p><strong>arton</strong> もしかしてテープ起こしが死ぬほど大変？</p>
+
+<p><strong>ささだ</strong> まあそれもあるだろうし、今お子さんがいらっしゃるから。</p>
+
+<p><strong>卜部</strong> そうだね。だからお二人同時は無理で。片方がお子さんをあやしている間に片方がインタビュアー、みたいな感じなるかもわかんないですね （笑）</p>
+
+<p><strong>ささだ</strong> 素晴らしい。</p>
+
+<p><strong>ryopeko</strong> 静内でやるんですか？</p>
+
+<p><strong>卜部</strong> ああ、まだ場所はわかってないです。じゃあ、次のインタビュイーへの質問は静内に掛ける情熱の話を聞くということで。</p>
+
+<p><strong>arton</strong> DeNA 対 GREE だね。</p>
+
+<p><strong>ささだ</strong> そうそう （笑）</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>卜部</strong> そういう方向にするのはどうなんすかね （笑）</p>
+
+<p><strong>arton</strong> いやあ、しちゃだめでしょう （笑）</p>
+
+<p><strong>ささだ</strong> じゅあ場所は Heroku で用意しますので。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>たなべ</strong> 中立な場所で。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<h4 id="若手へ一言">若手へ一言</h4>
+
+<p><strong>ささだ</strong> 若手へ一言。</p>
+
+<p><strong>卜部</strong> はい、ええ、まあなんていうんですかねえ。Hotlinks を始めた頃は、若手に一言ってときに「若手って誰？」っていうと、「じゃあ卜部くんに向けて」ってささださんは言ってたわけじゃないですか。</p>
+
+<p><strong>ささだ</strong> はいはい。</p>
+
+<p><strong>卜部</strong> ついに若手に一言を言う側になってしまって、こう、隔世の感がありますね。</p>
+
+<p><strong>一同</strong> （笑）</p>
+
+<p><strong>卜部</strong> そういう意味で言うと、Hotlinks を始めた頃に比べると若い人達の環境ってずいぶん変わってきてると思うし、僕らの頃に比べてもずいぶん恵まれた環境でやっておられると思うので。僕らがアドバイスをするほどのことでもなくてですね。ま、ふつうになんかズンズン開発をしていっていただけると、たぶん僕らのことなんか追い越していくのはすごい簡単だと思うんで。</p>
+
+<p><strong>ささだ</strong> はい</p>
+
+<p><strong>卜部</strong> うん、ぜひ。たゆまぬ努力をしていただければいいかなと思います （笑）</p>
+
+<h4 id="読者に一言">読者に一言</h4>
+<p>: <img src="/images/0042-Hotlinks/7.jpg" alt="7.jpg" /></p>
+
+<p><strong>ささだ</strong> 読者に一言。</p>
+
+<p><strong>卜部</strong> 読者に一言っていうと、うーん、Hotlinks を読む暇があったらコード書いたら？</p>
+
+<p><strong>ささだ</strong> ひどい （笑）</p>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回は Ruby コミッタの卜部昌平さんにインタビューをさせて頂きました。</p>
+
+<p>次回の Rubyist Hotlinks は、インタビュアーを笹田から卜部さんに交代して、大場さんにお話を伺う予定です。
+お楽しみに。</p>
+
+<p>(インタビュー：ささだ、編集：すぎむし、川口、小西、nari、郡司)</p>
+
+<h2 id="rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-Hotlinks.html">Rubyist Hotlinks 【第 36 回】 須藤功平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0052/0052-Hotlinks.html">Rubyist Hotlinks 【第 35 回】 島田浩二さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0045/0045-Hotlinks.html">Rubyist Hotlinks 【第 34 回】 大場さん夫妻 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0044/0044-Hotlinks.html">Rubyist Hotlinks 【第 33 回】 大場さん夫妻 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0042/0042-Hotlinks.html">Rubyist Hotlinks 【第 32 回】 卜部昌平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-Hotlinks.html">Rubyist Hotlinks 【第 31 回】 樽家昌也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0038/0038-Hotlinks.html">Rubyist Hotlinks 【第 30 回】 遠藤侑介さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-Hotlinks.html">Rubyist Hotlinks 【第 29 回】 松田明さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0035/0035-Hotlinks.html">Rubyist Hotlinks 【第 28 回】 Yugui さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-Hotlinks.html">Rubyist Hotlinks 【第 27 回】 小波秀雄 さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-Hotlinks.html">Rubyist Hotlinks 【第 26 回】 cuzic さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0031/0031-Hotlinks.html">Rubyist Hotlinks 【第 25 回】 加藤勇也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0030/0030-Hotlinks.html">Rubyist Hotlinks 【第 24 回】 okkez さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0029/0029-Hotlinks.html">Rubyist Hotlinks 【第 23 回】 yhara さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-Hotlinks.html">Rubyist Hotlinks 【第 22 回】 nari さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0023/0023-Hotlinks.html">Rubyist Hotlinks 【第 21 回】 原信一郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Hotlinks.html">Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-Hotlinks.html">Rubyist Hotlinks 【第 19 回】 伊尾木将之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Hotlinks.html">Rubyist Hotlinks 【第 18 回】 立石孝彰さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Hotlinks.html">Rubyist Hotlinks 【第 16 回】 essa さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Hotlinks.html">Rubyist Hotlinks 【第 15 回】 arton さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Hotlinks.html">Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Hotlinks.html">Rubyist Hotlinks 【第 13 回】 関将俊さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Hotlinks.html">Rubyist Hotlinks 【第 12 回】 後藤兄弟 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Hotlinks.html">Rubyist Hotlinks 【第 11 回】 後藤兄弟 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Hotlinks.html">Rubyist Hotlinks 【第 10 回】 わたなべひろふみさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Hotlinks.html">Rubyist Hotlinks 【第 9 回】 中田伸悦さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks.html">Rubyist Hotlinks 【第 8 回】 田中哲さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-3.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その3</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-2.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その2</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-1.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その1</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Hotlinks.html">Rubyist Hotlinks 【第 7 回】 江渡浩一郎さん 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Hotlinks.html">Rubyist Hotlinks 【第 6 回】 江渡浩一郎さん 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Hotlinks.html">Rubyist Hotlinks 【第 5 回】 増井俊之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Hotlinks.html">Rubyist Hotlinks 【第 4 回】 ただただしさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Hotlinks.html">Rubyist Hotlinks 【第 3 回】 かずひこさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-Hotlinks.html">Rubyist Hotlinks 【第 2 回】 前田修吾さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>順不同です&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="/articles/0042/0042-Hotlinks.html">本人による CO</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p><a href="http://www.clear-code.com/archives/SendaiRubyKaigi01/love-and-continue-it.pdf">本人による CO</a>&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p><a href="/articles/0035/0035-Hotlinks.html">本人による CO</a>&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p><a href="/articles/0038/0038-Hotlinks.html">本人による CO</a>&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p><a href="http://www.hatena.com/kouji0625/">本人による CO</a>&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p><a href="http://theinterviews.jp/mrkn/profile">本人による CO</a>&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p><a href="http://theinterviews.jp/takano32/profile">本人による CO</a>&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p><a href="http://www.slideshare.net/hsbt/sapporo-ruby-kaigi01-presentation">本人による CO</a>&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>成瀬注「コミッターにおける二十代」: nari さん<sup id="fnref:10"><a href="#fn:10" class="footnote">123</a></sup>とわたしが二十代&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>卜部注「どうなんですかね」: 無理に出させていただくほどの強いコンテンツではないと自認しているので。枯葉も山の賑わい程度に末席を汚させていただくのはよいとしても、ぜひにと売り込むほどのことはないかなー。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>卜部注「改革解放」: 適当なこといったけど調べたところによるとペレストロイカは「リストラ」くらいの意味のようですね…。&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>卜部注「ロンヤス」: とはいうものの実は、相当小さかったので中曽根首相の頃の記憶はない。島根に住んでたので、さすがに竹下首相の記憶はある。&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>卜部注「サッチャー」: このインタビューを行った当時まだ存命であった。なお卜部にフォークランド紛争の記憶はない。&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>卜部注「ホーネッカー」: 当時からホーネッカーといえば頭の固さに定評ある人物だが、実のところ彼とて政治手腕があったからこそ東独の元首にまで登ったわけで、ある種の有能な人ではあったのだろうと卜部は思う。なので、なぜ東独がうまく立ち回れなかったか (逆にうまく立ち回ったハンガリー共産党は、90 年代以降 3 回も政権に返り咲いている) を、彼個人のパーソナリティーの問題に帰着するのは、あまり正しいとは思わない。が、いずれにせよ頭は固かった。&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>卜部注「チャウチェスク」: チャウチェスクのリアルタイムの記憶がないんだよなー。当時子供だったのでそもそもルーマニアとか知らなかった(さすがにドイツは分った)というのはあるかもしれない。&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>卜部注「ワレサ」: この人に関して特筆すべき事項は、元電気技師ということである。おそらく世界の国家元首の中で一番、プログラマに近いはず。&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p>卜部注「戦車乗って演説」: これ <a href="http://commons.wikimedia.org/wiki/File:Boris_Yeltsin_19_August_1991-1.jpg?">Boris_Yeltsin_19_August_1991-1.jpg</a>&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:20">
+      <p>卜部注「eto さんと akr さんの回」: いまだから言えるが、この 2 人の回のインタビューテープは 6 時間もあった。それをほぼノーカットで収録したらああなった。&nbsp;<a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:21">
+      <p>卜部注「言ってもいいのでは」: これは後の方で詳述されているけど、まとめだけ先に言うと、「てか 1.8 なんて使ってないでしょ今更」&nbsp;<a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:23">
+      <p>卜部注「screenrc」: <a href="http://www.gnu.org/software/screen/">Screen</a> という強烈にぐぐりづらい名前のソフトウエア<sup id="fnref:22"><a href="#fn:22" class="footnote">124</a></sup>の設定ファイルである。どう贔屓目に見ても使いやすいとは言えないソフトウエアだ。なので設定ファイルの解説記事といったものに一定の需要がある。&nbsp;<a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:24">
+      <p>卜部注「Screenについて一時間」: これは実際社内で喋った。&nbsp;<a href="#fnref:24" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:25">
+      <p>卜部注「TiMidity++」: お、これの解説がないぞ。入れておこう。MIDI という、ボカロの要素技術のような技術（語弊があるが「だいたいあってる」）があるのだが、TiMidity++ はこれをレンダリングするエンジンである。当時広く使われていた Gravis Ultrasound という PC 向けサウンドカードの音源ファイルや SoundFont などの形式のいわゆるシンセサイザー・パッチと MIDI を入力として受け付けて、MIDI の指示にしたがいパッチをコピペして出力するのである。こういうのをソフトウエアシンセサイザーという。ところで MIDI の’'’指示’'’というのは意味深な表現であり、TiMidity++ の実装上はファイルやネットワークから読み込んだ MIDI イベントを一旦内部表現に解釈し直した後、これを前から順に評価器で評価することにより…こう書くとだいぶイメージがわくと思うが、実態としては MIDI はやや特殊な（チューリング不完全な）インストラクションセットの仮想マシンなのである。ただし音楽には時系列というものがあるから、速すぎず遅すぎずのある一定のタイミングで実行する必要がある。このあたりが普通のプログラムとは違うところだ。&nbsp;<a href="#fnref:25" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:26">
+      <p>卜部注「売れなそう」: Screen が生まれた当初、少なくとも X11 はなかった。実際にシリアル端末を使ったことがある人なら Screen が必要不可欠なソフトウエアであることに異論はないはずだ。とはいえ、きょうび「本物の」端末などもはや失伝して久しいし、VT100 互換でない仮想端末ですら、およそ駆逐されている。Screen の初期の目的はおおむね消滅した、と見てよいだろう。&nbsp;<a href="#fnref:26" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:27">
+      <p>卜部注「lazy の便利さ」: lazy のポイントは実行順序は変わるけど実行結果はよほどひねくれた使い方をしない限り、だいたいの場合で同じというところが良いのである。なので随所に意味もなく lazy って入れておくだけで勝手に遅延実行してくれるかのような幻想があって大変によい。&nbsp;<a href="#fnref:27" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:28">
+      <p>卜部注「lazy のバグ」: というか、これは ruby 本体がバグってた。 [[https://bugs.ruby-lang.org/issues/7878]]&nbsp;<a href="#fnref:28" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:29">
+      <p>卜部注「マヨネーズ色」: あの本をマヨネーズ色と最初に言ったのは arton さんだったように思うのだが。&nbsp;<a href="#fnref:29" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:30">
+      <p>卜部注「Ruby 本」: ちなみに今これを読み返すと逆に新鮮な驚きがある。たとえば Enumerable についてほとんど記述がない (今なら間違いなく一章かそれ以上は割かれるだろう)、あるいは proc とか lambda についてもほとんど記述がない (これも今なら詳細な解説がつく)。基本的にマヨネーズ色の本は Ruby な本ではあったかもしれないが、Ruby 「の」本という総括には若干の違和感を感じる仕上がりとなっている (けっして悪い意味ではなく)。歴史的価値以上のものがあるので今でも読むに値すると思う。&nbsp;<a href="#fnref:30" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:31">
+      <p>卜部注「マヨネーズ色の Ruby 本が平積み」: 手元の現物の奥付を見ると 1999 年 12 月 1 日初版 2 刷、とある。&nbsp;<a href="#fnref:31" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:32">
+      <p>卜部注「ちょっと触ってみた」: つまり卜部が最初に触った Ruby は 1.6 ということ&nbsp;<a href="#fnref:32" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:34">
+      <p>卜部注「ブログブーム」: いわゆる「<a href="http://bloggers.ja.bz/myojin/archives/000002.html">ブログ草創期（笑）事件</a>」<sup id="fnref:33"><a href="#fn:33" class="footnote">125</a></sup>がこのころである。卜部はこの事件を期に逆にブログってものがあるということを知った。&nbsp;<a href="#fnref:34" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:35">
+      <p>卜部注「tDiary のパフォーマンスの件」: （当時の）tDiary というのは普通に設置した状態だとアクセスが来る度にリファラの集計が走り、かつ、もちろん、そのアクセスのリファラが記録されるのである。したがって n 回のアクセスでだいたい n の 3 乗くらいのループが回るのだ。高木先生の日記がスペランカーなのも同様の理由と思われる。これはリファラを記録しないようにするだけで一気に改善する。&nbsp;<a href="#fnref:35" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:36">
+      <p>卜部注「自宅サーバが壊れて」: 実際には壊れたのはサーバではなく ADSL モデム。ただそれを期に家から常時接続する機運が完璧になくなってしまった。潮時ではあったのだろう。&nbsp;<a href="#fnref:36" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:37">
+      <p>Twitter の Web サイトにログインし、画面上部の歯車アイコンから「設定」を選択して、下の方にある「全ツイート履歴」をクリックすれば、自分の過去の全ツイートがダウンロードできます。&nbsp;<a href="#fnref:37" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:38">
+      <p>卜部注「tDiary のコメント」:コメント欄はそのまま放置しとくとすぐ spam かアホか両方が湧いてきて壊滅する、というのは tDiary で学んだ。コメント欄が成立するのはコメント欄を開ける覚悟がある場合のみだ。その点で卜部は覚悟が不足していた。&nbsp;<a href="#fnref:38" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:39">
+      <p>卜部注「Perl と比べると」: まあこれは比べるのが悪い。さすがに設計された時代が違うというより他にない。ただ Perl が書きづらいということは忘れられないように言っておく歴史的価値がある。これを書いている今、Perl はほとんど顧みられることのない太古の技術となりつつあるが、マジョリティが Perl を使わなくなったのは、ようするに「便利ツール」というポジションにもっとよいものが出てきたからだろう。&nbsp;<a href="#fnref:39" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:40">
+      <p>卜部注「プログラマの自由」: Rubyは奇跡的に書きやすいが、それは、デザインというよりはアートに近い領域の産物ではないかという風に卜部は思っている。つまりデザインとはフィーリングを言葉にすることだし、言葉にできないフィーリングはアートだ。ここでいう自由とは何か？ なんでもできすぎて逆に面倒な状態を自由と呼ぶのか？ それとも不自由でも気持ちよければそれでいいのか？ 型の議論はつきつめると、自由の定義の問題となる。&nbsp;<a href="#fnref:40" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:41">
+      <p>卜部注「何が起こっているかよくわからない」: tDiary の場合で言うと eval の中でメソッド定義されたメソッドの中で例外が起きたときね。これはもう手に負えない。tDiary 以外の例で言うと EventMachine ね。これも手に負えない。&nbsp;<a href="#fnref:41" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:42">
+      <p>卜部注「どうなんでしょうね」: ただ、ひじょうに大きな枠の話をすると、動いている ruby の動くさまを横から観測する仕組みが不足しているのだな、とは思う。たとえば Java などを見ていると、JVM を観測する仕組みの豊富さには驚かされる。&nbsp;<a href="#fnref:42" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:43">
+      <p>卜部注「できると簡単には差がある」: これね。とっても大きなポイントね。インタビューではさらっと流しちゃったけど。tDiary でいうと tDiary を ruby-debug でデバッグしてみようと思ったことは実はあるんだ。で、どうなったか？ みなさんもやってみれば分かりますよ（笑）&nbsp;<a href="#fnref:43" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:44">
+      <p>卜部注「プロファイラの研究」: 実は Ruby の VM 側からの支援によるリアルタイム・プロファイラといったものが笹田研には存在した。あのままでいいから svn に突っ込めばよかったのに、というのは卜部が所詮趣味で ruby やってるだけだから言える発言で、きっと研究としてはそういうわけにもいかないのだろう。&nbsp;<a href="#fnref:44" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:45">
+      <p>卜部注「環境ってなんだろう」: 逆から言うと言語ってなんだろうっていう話でもある。マンマシンインターフェースだと思えば、たとえば Java と Eclipse の境界線や C# と VisualStudio の境界線は、さほど自明の話ではない。&nbsp;<a href="#fnref:45" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:46">
+      <p>これ <a href="https://github.com/images/error/angry_unicorn.png?">angry_unicorn.png</a>&nbsp;<a href="#fnref:46" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:47">
+      <p>卜部注「unicorn が出る」: 本文にあるとおり Github は Ruby で作られているが、その下回りで <a href="http://unicorn.bogomips.org/">unicorn</a> によってホストされているのだ。ただ しunicorn は理想的な環境下ではただの Rack フロントエンドなのでユーザーにとって透過的である。これが観測できるようになるというのは、その上で動いているアプリケーション（つまりここでは Github）がなんらか不調であることを示している。したがって unicorn が見えるというのはあまり良い状態ではない。unicorn が観測されているときというのはだいたい、github が使えなくて仕事が強制的に中断される。github の .com のほうでは最近はあまり見れなくなったが…。&nbsp;<a href="#fnref:47" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:48">
+      <p>たなべ注「元からの方はどうですか」: ryopeko さんと川口さん、たなべはインタビューが開催された 2013 年 3 月当時に卜部さんと同じ会社で働いています。&nbsp;<a href="#fnref:48" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:49">
+      <p>卜部注「ヒアドキュメントとはこういうものだ」: そもそもシェルというのは行指向なのである。なのでシェルでは一行に完結している事に対する要請が強い。そのためヒアドキュメントがこのような奇怪な仕様として発展した面があるのではないかと卜部は想像している。&nbsp;<a href="#fnref:49" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:50">
+      <p>卜部注「マヨネーズ色の本に書いてあった」: 正確を期すため引用すると「ここで説明しているような行指向の文字列がヒア・ドキュメントです ^^;;;」(p.70) である&nbsp;<a href="#fnref:50" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:51">
+      <p>卜部注「PHP のヒアドキュメント」: あれはまがいもん。まがいもんだからダメってわけではないが、だからといって違うものは違う。もうちょっと別の名前で呼ぶべきだと思う、あれで便利っていう局面があるのも理解できるので。詳細 [[http://tinyurl.com/btougo9]]&nbsp;<a href="#fnref:51" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:52">
+      <p>卜部注「ヒアドキュメントに制限を入れるのはどうかというささださんの発言」: これいま注を入れてて思ったけど、逆に parser むずくね？ end の前とかブロックの前とかそういう状態をきちんと管理せんといかんってことですよね？ まあ今でも既になんかそういうのやってるっちゃやってるけど。既存のフレームワークでうまく扱えるのか？&nbsp;<a href="#fnref:52" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:53">
+      <p>卜部注「HyperCard」: HyperCard には、やれ「Ward Cunningham が最初に Wiki というコンセプトを実装した環境である」だの「Robert Cailliau を経由して WWW の哲学のバックボーンに影響を与えた」だの「その Web がプログラマブルでないことを嘆いた Brendan Eich に JavaScript を作らせる動機となった」だの、虚実さまざまの伝説がある（いくらかは事実だろう）が、それはさておきじゃあ HyperCard ってなんやの、というのは意外に知られていないのではないか。あれは、今で言うと ‘'’すごいパワポ’’’ といったようなものである。まずスライドに相当するもの（カード）がある。カードは増やせる。カード同士は行ったり来たりできる。マスタースライドに相当するものもある。そして、VBAに相当するマクロ言語が HyperTalk だ。笹田追記: すごいパワポという表現は初めて見た…。スライドは 1 方向へ進む、という前提があるけど、HyperCard は任意のカードに進むので、その辺はかなり違うと思うな。いや、もちろん 1 方向に進む紙芝居アプリもあったようですが。卜部さらに追記: カードも順番あったよー。 go to next card とか書いたじゃーん&nbsp;<a href="#fnref:53" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:54">
+      <p>卜部注「MACPOWER」: 日本で一番最初に DTP やった雑誌である（ということを誌面で盛んに喧伝していた）。今結局どうなっちゃったんでしょうね。一旦休刊して、ムックあつかいで復活したけど、でも放置？&nbsp;<a href="#fnref:54" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:55">
+      <p>卜部注「掌田津耶乃」: この人はすごい。卜部が中一の時にはすでにプロのライターだった。のに今でもまだ「Heroku ではじめる Rails プログラミング入門」とか著作がある<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/515q16BHGGL._SL160_.jpg" />。この業界で中断をはさまない数十年のキャリアってちょっと尋常じゃない。ネットでは叩かれがちな人ではあるので残念だが、そんなことで止まらずに走りつづける姿勢は本当に頭が下がる。&nbsp;<a href="#fnref:55" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:57">
+      <p>卜部注「magic」: 解説しよう! 当時の Mac についてきていた HyperCard は HyperCard 2.1-Lite J とかいうやつで、これはパワポでいえば PowerPoint Viewer に相当するような、ようするに再生専用ツールなのだ。しかし実際には専用の再生プログラムをいちから作り直すといった高度なことは当時のアップルは行わず<sup id="fnref:56"><a href="#fn:56" class="footnote">126</a></sup>、実際にはこれはフルセットの HyperCard にちょっと手を加えて編集機能をパスワードロックしたに過ぎないものであった。このロックを解除するパスワードが「magic」だ。&nbsp;<a href="#fnref:57" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:58">
+      <p>卜部注「LINQ 以降の C#」: それ以前の C# とは文法が同じだけでコンセプトはまるで別物である。どちらかというと Scala の仲間だ。Scala にせよ C# にせよ、型推論を積極的に使って便利にさっくり書けるようになった（しかも型安全はしっかり保証されている）あたりの言語から、世代が変わったという気がする。&nbsp;<a href="#fnref:58" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:59">
+      <p>卜部注「struct 型」: いや、言っといてなんだけどこれは本当は class 型かも。すいません。そのへんまったく意識してないでも使えてしまうので。&nbsp;<a href="#fnref:59" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:60">
+      <p>笹田注: インタビューしたい質問を何にするか、るびま編集部内で募集したのですが、その応募方法がるびま編集 wiki に書き込む、ということでした。ちなみに、もう 10 年近く前に集めた質問項目を、未だに続けているんですねえ。&nbsp;<a href="#fnref:60" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:61">
+      <p>卜部注「竹内先生」: 竹内郁雄、国際的には竹内関数にその名を刻む。国内的には未踏ソフトウエア創造事業など。ささださんの元上司でもある。&nbsp;<a href="#fnref:61" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:62">
+      <p>卜部注「竹内先生みたい」: ここでいう「みたい」というのは 2012 年夏のプログラミング・シンポジウムで竹内先生のご発表「プログラミング美学」のことを指している。&nbsp;<a href="#fnref:62" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:63">
+      <p>卜部注「美とは」: 美学、Aesthetics という学問領域がそれである。多くの大学では美術ではなく哲学の一分野として開講している。&nbsp;<a href="#fnref:63" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:64">
+      <p>卜部注「parse.y」: 魔窟。ruby 1.0 が出たころの ruby 2.0 の目標としてパーザーと評価器の刷新、があったはずだが、評価器は YARV が入ったものの、parse.y に関してはついに秘伝のタレを継ぎ足しつづけて 20 年だ。底のほうでどんな虫が繁殖してるか分かったもんじゃない。また、理解している人間が少ないので数人欠けるとやばい。後継者の養成は急務といわざるをえない。&nbsp;<a href="#fnref:64" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:65">
+      <p>卜部注「Fortran」: 解説しよう! 当時、プログラムというのは今と違って自由にインデントしたりするものではなかったのだ。むしろ逆であり、インデントの幅によってその行の意味が決まっていたのである。なぜそんなことになるかというと、当時まだエディタのような便利な仕組みがなく、というかキーボードすらあやしくて、人々はパンチカードでプログラムしていたのだ。パンチカードというのは当然穴が開いている。なので穴の位置、すなわちインデント幅というのはずれたら意味が通らないのだ。これが実際に使われていた <a href="http://commons.wikimedia.org/wiki/File:FortranCardPROJ039.agr.jpg?">Fortran のパンチカード</a> だが、「FORTRAN STATEMENT」の欄が左から 7 欄目で始まっているのが分かるだろうか？&nbsp;<a href="#fnref:65" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:66">
+      <p>ダジャレに解説を付けるのは野暮ってもんですが‥‥。かつて、手のひらサイズのデジタルガジェットのことを総称して Palm Top と呼んでいた時代があったのだ。それに引っ掛けて「Palm Top で Perl プログラミングだから Perl Top」というダジャレ。&nbsp;<a href="#fnref:66" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:67">
+      <p>笹田注: 親会社のステマ。&nbsp;<a href="#fnref:67" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:68">
+      <p>卜部注「クライアントサイド」: ここでいうクライアントというのはすなわち Android か iPhone かということである。&nbsp;<a href="#fnref:68" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:69">
+      <p>卜部注「Interface Builder」: これほど完成した形で登場し、いまだに多くの人に使われ続けているプログラムもちょっとない。&nbsp;<a href="#fnref:69" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:70">
+      <p>卜部注「建て変わった」: 今、校舎があるあたりは、昔はグランドだった。&nbsp;<a href="#fnref:70" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:71">
+      <p>卜部注「System」: 昔の Mac は OS のことを単に System と呼んでいた。Mac が Mac OS を自称するようになるのは 10 以降だ。で、漢字 Talk というのは日本語版についてた愛称みたいの。&nbsp;<a href="#fnref:71" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:72">
+      <p>こんなやつです。 http://www.soundstock.org/mac/lc630.html&nbsp;<a href="#fnref:72" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:73">
+      <p>郡司注：余談だが、このとき郡司の頭の中では Macintosh LC とか LC II とか LC III とか LC 475 とかが頭に浮かんでいた。LC 630 はそこまで薄くなかった。&nbsp;<a href="#fnref:73" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:74">
+      <p>郡司注：ちなみに Performa は一体型かどうかではなくて、廉価版のマシンに付けられるブランド名でした。LC シリーズでも 500 番台は一体型でした。&nbsp;<a href="#fnref:74" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:75">
+      <p>FPU エミュレーションというソフトウェアで FPU をエミュレートする機能もありますが、NetBSD/mak68k のものは色々と問題があった。&nbsp;<a href="#fnref:75" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:76">
+      <p>卜部注「スタック」: HyperCard のプログラムはプログラムとかスクリプトとか呼ばずにスタックとよぶ慣習だった。&nbsp;<a href="#fnref:76" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:77">
+      <p>卜部注「Home スタック」: 解説しよう！ HyperTalk というのはあれでいてオブジェクト指向言語ではあるが、そう言われてみんなが想像するようなものとはかなり趣きが異なる。まずクラスがない。Unity でいうところの Prefab に相当するようなものもない。じゃあ何がオブジェクト指向か？ それは ‘'’メッセージ’’’ で駆動されている点なのだ。たとえばマウスがクリックすることなどでメッセージが発生するのである。このメッセージをオブジェクトが理解することにより処理が進むのである。これは GTK+ で「シグナル」と呼ばれている機構に近いであろう。ただ微妙に特徴的なのは、HyperTalk の場合、メッセージが処理できないものに関しては他のオブジェクトに順次たらい回しにされるところにある（GTK+ ではデフォルトは無視だ）。したがって Ruby におけるメソッド探索パスと同様、HyperTalk においてはメッセージが呼ばれるパスが存在する（メッセージパスと呼ばれる）のである。これは、無限に続いていると無限に処理が終わらないから、どこかで終端される必要がある。その端点が Home スタックだ。これは、バイナリではなくて、一見ごく普通の HyperCard の作品であるかのように見えるもので、したがって編集機能でその実装をいろいろと閲覧してまわることができるのだ。&nbsp;<a href="#fnref:77" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:78">
+      <p>卜部注「英語」: 解説しよう! HyperTalk には型がないのだ。というと、普通じゃんと思うかもしれないが、「配列すらもない」、と言ったら、どうだろうか？ HyperTalk には本当に配列がない。ただ文字列はある。なので、もし、配列のようなことをしょうと思ったら、改行をデリミタに使って “put the fifth line of foo into the first line of bar” とかいう記述になる。これで Ruby でいえば bar[0] = foo[4] くらいの意味である。あるいは二次元配列を必要とする場合はさらにスペースもデリミタに使って “put the eighth word of the fifth line of foo into the third word of the first line of bar” とかなる。このように、あらゆる記述が英語っぽくだらだらと書けるというのは、アチラの方々としてはうれしい機能なのだろうが、日本人としては正直少々ウザいと言わざるを得ない。&nbsp;<a href="#fnref:78" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:79">
+      <p>卜部注「AppleScript」: という、さらに別の言語があるのだ。これは旧 Mac におけるシェルスクリプトのようなもので、たとえば QuarkXpress を自動化することにより書籍の組版をオートメーションするなどに使われていた。&nbsp;<a href="#fnref:79" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:80">
+      <p>卜部注「日本語版」: 上の注のように（まあ Smalltalk-&gt;HyperTalk-&gt;AppleScript と連綿と続く伝統といえるかもしれないが）基本的に英語圏の人であれば、プログラミングの素養がなくとも、読むとなんとなく意味が分かるようにできているのである。であるからして、日本語話者にとっても同様に「読むと意味が分かる」というものを考えようというのは、当然の流れであった。ただ、これは、今で言えば cuke の DSL を日本語に置き換えましたとかいうレベルの対応なので、若干中途半端だったという印象である。つまり、結構書きづらい割に、さほど読みやすくなかった。&nbsp;<a href="#fnref:80" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:81">
+      <p>卜部注「島根にテレ東はない」: 島根にパソコンなんてあるわけないじゃん！ というが、実際にはテレ東こそ存在しないのだ。オウム事件の時まだ AT-X などというものもなかった。&nbsp;<a href="#fnref:81" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:82">
+      <p>卜部注「N88Basic」: こいつはアンティークである。変数が全部グローバルなのはベーシックだから当然としても、行番号必須・サブルーチンなし GOTO のみという、当時としてもなかなか… 95 年ですよ？ 85年じゃないよ？&nbsp;<a href="#fnref:82" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:83">
+      <p>卜部注「Basicでゲームはむずい」: つまるところ規模に限界があるのだ。ちょっとしたお絵描きとかはむしろやりやすい。でも、そこからトリビアルでないゲームに発展させようとすると、根性以外の武器が一切存在しない。これは辛い。&nbsp;<a href="#fnref:83" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:84">
+      <p>卜部注「オーサリングツール」: まあ今パワポでソシャゲ作ろうと思う人は少ないだろう。でも当時 HyperCard で作られたゲームってのは結構あった。そう明示されてなくても起動時に HyperCard を要求するものは多かったし、そもそも標準添付なので何の問題もなかったのだ。だから、今思えばあれで結構なことができたのである。ただ限界は明らかで、あくまで HyperCard の枠の中でしか記述することができなかった。できないことはどうやってもできないのだ。&nbsp;<a href="#fnref:84" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:85">
+      <p>卜部注「CodeWarrior」: 全然使ったことがないが、これの吐く PPC バイナリはそれなりに速かったらしく、Mac で gcc が動くようになってからもしばらくは覇権を争っていたし、結局現在は買われて Freescale Semiconductor （PPC の総本山だ）の製品となっている。商用コンパイラとしては成功した部類であろう。&nbsp;<a href="#fnref:85" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:87">
+      <p>卜部注「ResEdit」: <a href="http://ja.wikipedia.org/wiki/ResEdit">ResEdit</a> はリソースを編集するツールだが、たんにリソースのバイナリを取得するだけでなく、たとえばアイコンならグラフィカルに編集できるし、メニューとかなら文字列をそれっぽくいじれる。のだが、さすがにバイナリを逆アセンブルしてくれたりはしなかった。それは MacsBug<sup id="fnref:86"><a href="#fn:86" class="footnote">127</a></sup> などを使う必要があった。&nbsp;<a href="#fnref:87" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:88">
+      <p>卜部注「リソース」: 解説しよう! Mac のファイルシステムは Unix とかと全然違うのである! というか、Unix みたいなほんとうになんも一切区別しないフラットな仕組みは（今では勝ち残ってるが）当時としては異端なのだ。Windows ですら拡張子とかテキストモードとかあるもんね。「違うものは違うってことをシステム上も違うように扱う」っていうのは、自然な発想といえる。で、Mac の場合はファイルの中がさらにどういう仕組みになっているかが決まっていて、一個のファイルがある種の Key-Value Store みたいな感じになっているのである。この仕組みがリソースだ。なのでたとえばファイルに対してアイコンを取得するようなことが、ファイルシステムレベルで “ICON” リソースを取り出すという自然なクエリとして実現できていたのである。&nbsp;<a href="#fnref:88" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:89">
+      <p>卜部注「島根の本屋さんは大きくない」: 念のため注記しておくのだがこれは「その頃の話」だ。当時はちょっとした繁華街に出ると小さいながら書店があったものだ。&nbsp;<a href="#fnref:89" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:90">
+      <p>卜部注「書くものがない」: もともと Finder と連携したいから C コンパイラを手に入れたかったはずが、手に入ったけど OS から別物になっちゃったので連携できたりしてないわけで。&nbsp;<a href="#fnref:90" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:91">
+      <p>卜部注「Mac で Linux」: というかですね、そもそも 90 年代の Linux は今と違ってそう移植に熱心でなかった。まだ 386 べったりだった時代ですんで。その点、NetBSD という OS は昔からそういう移植とかは大好きな風土がある。その後 Mac は PPC-&gt;Intel と CPU が変わったし、Linux としてもプレステなどを経て移植は当然なので、今となっては隔世の感がある話とはいえるだろう。&nbsp;<a href="#fnref:91" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:92">
+      <p>卜部注「Netscape」: IE が Netscape と喧嘩しだす前夜くらいの話だ。卜部は NetBSD も CDROM を買って入手したので、本気で無料のソフトウエアがおおでを振って落としてこれるという体験はこれが最初だった。&nbsp;<a href="#fnref:92" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:93">
+      <p>卜部注「Netscape Gold」: よく言われることだが、今の Web の姿というのは双方向性の面で若干、元となる思想とは乖離がある。Gold が成功していればこの状況に一石を投じた可能性がある。つまり Wiki のような、だれでもが情報を編集できる仕組み…に、なるかもしれなかった。ならなかったけど。&nbsp;<a href="#fnref:93" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:94">
+      <p>卜部注「島根はバスケットがさかん」: まあそれも事実やねんけど、これ 95 年ってのもポイントね。スラムダンクリアルタイムですからね。&nbsp;<a href="#fnref:94" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:95">
+      <p>卜部注「10M でバックボーンまで」: いや、これは怪しいかもしれんなあ。構内はたしかに 10M だったけど、上流はもっと細かったかもなあ。1M とか。&nbsp;<a href="#fnref:95" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:96">
+      <p>卜部注「特殊な文法」: とはいえ C なのでまあ C の文法ではあるのだけれど、まあ、分かるでしょう？ あの話通じない感じ。&nbsp;<a href="#fnref:96" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:97">
+      <p>卜部注「Fred Fish」:  gdb のすごい人である。&nbsp;<a href="#fnref:97" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:98">
+      <p>卜部注「xlisp」: このへんの逸話は[[0015-Hotlinks]]でも語られている。&nbsp;<a href="#fnref:98" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:99">
+      <p>卜部注「シェルはあるけど」: シェルはシェルでも NetBSD のシェルは csh だぜ（当時）。これでスクリプト書くのはやはり狂気の沙汰と言わざるを得ない。&nbsp;<a href="#fnref:99" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:100">
+      <p>卜部注「アルゴリズムの単位が暇」: あまりに暇すぎるので講義出ずに試験だけ受けてそれも間違いなく 100% 正解だったが、出席しないとダメな先生だったので不可をくらい再履修した思い出。&nbsp;<a href="#fnref:100" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:101">
+      <p>卜部注「ネットワーク系の学科」: 電通大はなにせ「電気」と「通信」の大学なのでネットワーク系ってのは保守本流みたいなもんで、なので逆にネットワークっていうキーワードにちょっとでもかすってれば案外なんでもありなのであった。もう十年以上前の話。今は改組したのでどうだか存じ上げませぬ。&nbsp;<a href="#fnref:101" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:102">
+      <p>卜部注「データ構造のグラフ」: これはエクセルとかで作るグラフじゃなくて、ネットワークを抽象化したような概念で、なにかのオブジェクトとそれらの間の関係性を考える領域だ。&nbsp;<a href="#fnref:102" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:103">
+      <p>卜部注「1984」:「On January 24th Apple Computer will introduce Macintosh」からそろそろ三十年だが、結局 1984 は回避できたかというと、テレスクリーンは（まさに）iPhone として実現したし、二分間憎悪は togetter として実装されつつある。案外回避できてない。&nbsp;<a href="#fnref:103" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:104">
+      <p>卜部注「古典」:膨大なエピゴーネンが存在するゆえ、本気で読んだことがなくても、出てくる小道具や敵やあらすじや台詞はいずれもどこかでなにか見聞きしたことがある。今となっては上から下までお約束の塊なのだ。もちろん、だからといって読む価値が微塵も減らない（むしろ、あああれはこれか、ってのが分かってさらに理解が深まる）。そういう点も含めてまさに押しも押されぬ古典であった。&nbsp;<a href="#fnref:104" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:105">
+      <p>卜部注「春樹のほう」: 80 年代生まれにとって春樹は親ほども年が離れてるんですよね…。&nbsp;<a href="#fnref:105" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:106">
+      <p>卜部注「エーコ」:言語、論理学、記号論、聖書、トマス・アクィナス、中世キリスト教、フランシスコ会、テンプル騎士団、そしてホルヘ・ルイス・ボルヘス。どれかの単語にかすった人は必ずエーコにたどり着かざるをえない。現代における知の巨人の一人だ。&nbsp;<a href="#fnref:106" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:107">
+      <p>卜部注「エーコ」#2 :この人は自分ちの本棚に「ビブリオテーカ・セミオロギア・キュリオーサ・ルナティカ・マギカ・エ・プニューマティカ！」とか名づけて悦に入るというなかなかアレな趣味をお持ちである。人気小説家にして大学教授という肩書きとは裏腹に、日本で言うとどちらかといえば太田出版系の香りがすると思うのは僕だけだろうか。&nbsp;<a href="#fnref:107" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:108">
+      <p>卜部注「完全言語の探求」: 神は「光あれ」と言った… ‘'’何語で’’‘？ 疑問は素朴だが深い。その神を信じる民にとて神は全能だから、喋るなら不完全な言語ではありえない、というわけだ。彼らを悩ませてきた苦悩の歴史をきわめて詳細に記した本。&nbsp;<a href="#fnref:108" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:109">
+      <p>卜部注「平凡社ライブラリー」: 講談社学術文庫等と並ぶ本邦におけるソレ系叢書の雄である。共産党宣言から鼻行類とかまでラインナップされている。&nbsp;<a href="#fnref:109" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:110">
+      <p>卜部注「都現美」: アクセスの微妙さに定評があり、最寄り駅から徒歩 15 分というのは 23 区内の文化施設としてはやや… ただ繁華街を避けて余裕のある敷地条件で建てたためか建築として巨大であり、手狭な感じは一切しない。その点も相まって、非常にがらんとした印象を受ける。&nbsp;<a href="#fnref:110" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:111">
+      <p>卜部注「ジブリのやつ」: 昔、日テレの社長が館長だった縁があるらしい。&nbsp;<a href="#fnref:111" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:112">
+      <p>卜部注「常設展はガラガラ」: 企画展のチケットで入れるのにねえ。&nbsp;<a href="#fnref:112" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:113">
+      <p>卜部注「造詣が深まっている感じはしない」: そもそも美術館というのは賢くなりにいく所ではないのだ、というのは、上記出てきた美とは何かとかそういう議論とも関係するけれど、美術ってべつに高尚なものではない。何かを感じる必要はない。全般にそうだが、とくに現代美術はそうである。べつに高尚じゃないってことに自覚的なのが現代、と言うべきかな。&nbsp;<a href="#fnref:113" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:114">
+      <p>卜部注「出光美術館」: ここもぼーっとできるゾーン。窓から皇居が見下ろせてとてもよい。&nbsp;<a href="#fnref:114" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:115">
+      <p>卜部注「ステーションギャラリー」: これは新しいがゆえに意外にどういう展示で攻めてくるのかよくわからないので、注目ではある。最初の展覧会はクワクボリョウタとかだったけど次のは木村荘八。この後どう来る…？&nbsp;<a href="#fnref:115" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:116">
+      <p>卜部注「湖のところ」: 島根県立美術館のこと。ここは湖も展示品なので、夏場は営業時間が「日没まで」とかになる。&nbsp;<a href="#fnref:116" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:117">
+      <p>卜部注「未来館」: あれでいて未来館はインタラクティブアートっぽいのが結構ある。あと上野の科博ね。このあたりは子供向けと侮れない。&nbsp;<a href="#fnref:117" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:118">
+      <p>卜部注「インターネット物理モデル」: どこで聞いたか思い出せないけどこれさきごろバージョンが上がってついにRubyじゃなくなったって聞いたような[要出典] 笹田注: まさに、RubyKaigi 2006 で江渡さんが LT で言ってました。&nbsp;<a href="#fnref:118" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:119">
+      <p>卜部注「SFMOMA」: Duchamp の泉の「本物」（のひとつ https://twitpic.com/bikobp）などが置いてある、現代美術の美術館としては世界的に有名な場所である。&nbsp;<a href="#fnref:119" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:120">
+      <p>卜部注「アメリカは現代アートがすごい」: このへんの事情は椹木野衣の反アート入門 <img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41ZEqlxQ5wL._SL160_.jpg" /> とかを読むと書いてある。&nbsp;<a href="#fnref:120" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:121">
+      <p>卜部注「謎の模様」: ちなみにこれは Rothko の No.14 ってやつのこと。ロスコ様を模様扱いなんてひどい！ が、現実問題として現物を見るとそうとしか言いようがないのだった。&nbsp;<a href="#fnref:121" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:122">
+      <p>卜部注「まだ字が読める」: 百年前って大正元年だぜ。普通に会話が通じる。井原西鶴あたりが三百五十年くらい前だけど、さすがにときどき？ってなるけどまだいける。まあ専門家なら万葉仮名も読み下せるしそういうのは例外としても、ふつうの庶民であっても文献なら意外に数百年くらいまでは「通じる」といえるだろう。音韻のほうが先に崩壊するだろうから会話はもっと早く通じなくなると思われるが。&nbsp;<a href="#fnref:122" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:123">
+      <p>卜部注「テストアカウント」: というかテストアカウントは会社が所有しているのであって卜部の個人のアカウントじゃない。&nbsp;<a href="#fnref:123" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:124">
+      <p>卜部注「うにゅうにゅ」: これ 2006 年頃かな。ちょうど Ubuntu で Compiz が動くようになったんですね。で、楽しくて色々エフェクトかけてた。&nbsp;<a href="#fnref:124" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:125">
+      <p>卜部注「CentOS」: 調べずに言っちゃったけど CentOS に収録されてるのも多分 1.8.7 だよねえ？&nbsp;<a href="#fnref:125" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:126">
+      <p>卜部注「RHEL」: RHEL に 1.8.7 が収録されているのは確認済で、ちゃんとメンテナンスもされている模様。卜部個人としてはもし今後も 1.8.7 を使い続けないといけないやんごとなき事情がある場合には RHEL を買うのがもっともおすすめの方法だ。&nbsp;<a href="#fnref:126" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:127">
+      <p>笹田注: 柴田さんが中心となって、なんとかしてくれました！&nbsp;<a href="#fnref:127" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p><a href="/articles/0028/0028-Hotlinks.html">本人による CO</a>&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:22">
+      <p>勘違いしてはいけない、Screen(1987〜) のほうが Google(1998〜) の 10 年以上前から存在するのだ。ぐぐりづらいのはどちらかというと Google が悪い。&nbsp;<a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:33">
+      <p>このURLに今まだアクセスできる!これは純粋にすごい、奇跡に近い。作者の人の胆力を感じる。今なら絶対閉鎖されてる（し、たくさん魚拓とられてる）だろう。&nbsp;<a href="#fnref:33" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:56">
+      <p>旧Macのコンポーネント・モジュラリティの悪さには定評がある…そこを改善しようとしたCyberdogというプロジェクトもあったが盛大にコケた。&nbsp;<a href="#fnref:56" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:86">
+      <p>卜部注「MacsBug」: 旧 Mac のデバッガである。これを使うことでブレークポイントを仕掛けたりできる。ただ、よく知られたように旧 Mac というのはすべてのプログラムが特権モードで動いている。したがって、いきおいデバッガもカーネルデバッガに近くなってくる。&nbsp;<a href="#fnref:86" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」</title>
+  <meta name="description" content="書いた人：クジラ飛行机">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0016/0016-Legwork.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0016/0016-Legwork.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0016/0016-Legwork.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0016/0016-Legwork.html" data-text="Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：クジラ飛行机</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>こんにちは。日本語プログラミング言語「なでしこ」開発者のクジラ飛行机です。情報通の Rubyist の皆様なら、名前くらいはご存知でしょうか？　なでしこは、日本語に近い文法を用いてプログラムを作っていくことができる言語です。</p>
+
+<p>日本語プログラミング言語については、その面白さに加えて、必要不要で論争があったり、「こんなの日本語とは言えない」などなど、時には議論の的になります。この機会に、日本語プログラミングについて、より多くの人が日本語とプログラミングに関して興味を持ってくださる事を期待して、日本語プログラミング言語「なでしこ」について熱く語らせていただきます。</p>
+
+<h2 id="なでしこについて">なでしこについて</h2>
+
+<p>なでしこは、私が、IPA2004 年度未踏ユース採択プロジェクトにて開発した言語です。それまで、とある会社の片隅で一人でコツコツ作っていた「ひまわり」という言語を大幅に改良して作ったものです。「ひまわり」というのも、日本語のプログラミング言語ですが、主に、日々の雑用を片付けるためのちょっとしたマクロ言語として開発したものです。</p>
+
+<ul>
+  <li><a href="http://hima.chu.jp/">ひまわり</a></li>
+  <li><a href="http://nadesi.com/">なでしこ</a></li>
+</ul>
+
+<h2 id="日本語プログラミング言語について">日本語プログラミング言語について</h2>
+
+<h3 id="対象ユーザーに関する論争">対象ユーザーに関する論争</h3>
+
+<p>これまで多くのプログラマーの皆さんから「日本語プログラミング言語、面白いと思うけど、自分では使わないなぁ〜」と言われ続けて来ました。その通り、はじめから、Rubyist の皆様に、使っていただこうとは考えておりません。もともと、なでしこは、これからプログラミングをはじめる「プログラミング入門」以前の方に使ってもらえたらいいなぁと考えて作ったものです。</p>
+
+<p>私が考える日本語プログラミング言語の対象ユーザーは、「プログラムって何？　それって便利なの？　面白そうだから、なんかやってみたいなぁ……」というプログラミング以前の人、および「日本語万歳！　日本人なら母国語の日本語でプログラムするべきだ！」という素晴らしい思想を持つ硬派な人です。</p>
+
+<h3 id="日本語が理想的なケース">日本語が理想的なケース</h3>
+
+<p>とにかく、プログラミング言語は難しくなりすぎました。今では、コンピューターを利用する人のほとんどが、プログラミングと無縁です。ですが、ちょっと複雑な処理を片付けたり、毎日同じような作業を片付けるのに、プログラミングができるとできないでは、仕事の作業効率に雲泥の差が出ます。</p>
+
+<p>そんな時、「ちょっとやってみたいだけ」なのに、構造化プログラミングや、オブジェクト指向など、もろもろの決まりごとを学習しなくてはならないのは、まったくナンセンスです。覚えることが多すぎます。とにかく、目の前の仕事を手軽に片付けたいだけで、これから書くプログラムの美しさや、プログラミング言語に関する思想など関係がありません。</p>
+
+<p>つまり、昔の BASIC みたいに、なんとなく適当に「書けば動く」という状態が理想的なのです。そして、さらに、それが、日本語に近い文法を持つ言語であって、なんとなく数行のプログラミングをコピペして数文字だけ修正したら、仕事が完遂できたとなれば、言うことがありません。</p>
+
+<p>私は根っからの日本語プログラミング言語のファンです。毎日、何かしら日本語でプログラムを書いたり利用したりしています。しかし、100 行以上のプログラミングを書くことは、ほとんどありません。ここから考えると、日本語を使って理想的なケースというのは、バッチ処理的な処理、手順の流れを簡潔に記述したい処理などに限られてくるかもしれません。</p>
+
+<h3 id="デメリット">デメリット</h3>
+
+<p>これは、なでしこのデメリットではあるのですが、あまりに日本語の文法にこだわっているため、どれが関数でどれが変数なのか、一見して区別がつきません。もちろん、C 言語のように、「strcpy(a,b)」のような関数的な表記もできますが、これでは、あまり意味はありません。</p>
+
+<p>できるだけ、名詞は変数、動詞は関数と日本語の意味に基づいた名前規則を意識すると、変数と関数の区別もつきやすくなりますが、これには文法的な強制があるわけではないので、気をつけていないと、逆に読みにくいプログラムになってしまう可能性もあります。</p>
+
+<p>また、「漢字への変換が面倒ではないか」との意見もよくあります。ですが、普段、友人に電子メールを書くとき、漢字の変換が面倒なので、英語で書いたなんて例はあまり聞いたことがありません。既に漢字入力プログラムは十分に賢いので、それほど、日本語の変数関数名を使うことに面倒に感じることはありません。それどころか、難しい英単語を覚えるよりも、「覚えやすい」「馴染みやすい」という声の方が多いです。</p>
+
+<p>ただし、単純な計算式がたくさん出てくるプログラムで、変数名に長い綴りの単語を採用した場合に、非常にタイプするのが面倒に感じることもあります。しかし、これは、英語の単語の場合も同じでしょう。</p>
+
+<h2 id="実装に関して">実装に関して</h2>
+
+<p>次に実装に関することについて書いてみます。日本語プログラミング言語には、既に様々な言語が存在します。老舗の「Mind」に続いて、TTS、言霊、ひまわりなどです。それぞれの言語ごとにユニークな手法を用いて日本語プログラミング言語を実現しています。ここでは、皆さんが、日本語のプログラミング言語を作ってみるという観点から、なでしこの実装を紹介します。</p>
+
+<h3 id="単語-トークン-の区切りに関する問題">単語 (トークン) の区切りに関する問題</h3>
+
+<p>日本語プログラミング言語を作る上で、一番初めに悩むことは、どうやって、日本語を単語 (トークン) に分割しようかという問題です。日本語は英語と違って、単語がスペースや句読点で区切られていませんので、文脈を見て区切る必要が生じます。どうやって、トークンを区切ったら良いのでしょうか？</p>
+
+<h4 id="諦めるという選択">諦めるという選択</h4>
+
+<p>老舗の「Mind」や私が以前作った「ひまわり」では、この問題を完全に諦めています。プログラミングを行うユーザー自身が「分かち書き」をすることでトークンの区切りを明確に示してもらうのです。例えば、『変数Ａに３を足す』というプログラムなら、以下のように、ユーザーがトークンの区切り位置に、読点やスペースを書かなくてはなりません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 変数Ａに、３を、足す。</code></pre></figure>
+
+<p>当然ですが、この方法は原始的ながら、一番正確に解析が行えます。このプログラミングに慣れると、プログラム以外でも、日本語の文章を書くときにやたらと、読点が増えてしまうという欠点があります。</p>
+
+<h4 id="形態素解析という選択">形態素解析という選択</h4>
+
+<p>次に思いつくのが、「分かち書き」というキーワードから、形態素解析を用いた本格的な日本語の解析です。kakasi や MeCab など、オープンソースの形態素解析エンジンも存在します。この方法は昔ほど実装に手間がかからないと思います。しかし、デメリットとして、(インタプリタの場合) 構文解析に時間がかかってしまうことや、巨大な辞書を同時に配布しなくてはならないという問題があります。</p>
+
+<p>また同時に、巨大な辞書を使う割に、完全に正確な場所でのトークン分割ができないという問題もあります。「プログラムがなんとなく動くのだが誤作動が多すぎる」というのでは困りモノです。ですが、プログラミングの入門用、教育用だけに使うソフトウェアなら、それでも問題ありませんし、用途を限定することで実用に耐えるものになる気がしています。以前、カーナビやケータイのボイスコマンド機能が面白くて、特に必要もなく使って遊んだものですが、これらは、用途が限定されているので、適当に言っても言葉の揺れを吸収して、なんとなく仕事をこなしてくれます。</p>
+
+<h4 id="助詞区切りという選択">助詞区切りという選択</h4>
+
+<p>なでしこを作る際に、トークンの区切りに関しては、ずいぶん悩みました。そして辿りついたのが、「助詞区切り」という方法です。日本語の文章は、だいたいのところ、助詞で区切られています。先ほどの『変数Ａに３を足す』という例でも、「変数Ａ（に）３（を）足す」と、必ず、単語の区切れには「に」「を」などの助詞が用いられています。そこで、この助詞 (は｜の｜が｜から｜まで｜に｜へ｜を｜で｜など) を句読点のようなデリミタ (区切り記号) と見なして、トークンを区切ることにしたのです。この方法は、ほとんどの場合、問題なく機能しました。</p>
+
+<p>ただし、うまくいかない場合もあります。変数名の中に「の」「は」などの助詞を含めたい場合です。例えば「リンゴの値段」の場合などです。この場合は、仕方ないので「リンゴ値段」と縮めたり「リンゴノ値段」とカタカナにしてもらったりします。また、根本的な解決策として、トークンを区切るとき、例外語句を設定しておく方法もあります。</p>
+
+<h3 id="構文解析">構文解析</h3>
+
+<p>トークンを区切った後は、Forth 言語に似た処理を行います。つまり、トークンを順に読んでいって、変数や定数だった場合、スタックにデータを積んでいきます。そして、関数だった場合には、必要な数だけスタックからデータを下ろして、関数を実行します。これは、日本語の文法が、計算機の処理において効率的な、逆ポーランドに近いことを利用しています。</p>
+
+<p>例えば、以下のような入力を例に取ると</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ４と｜５を｜足して｜変数Ａに｜代入する</code></pre></figure>
+
+<p>次のような操作が行われます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">　入力　　　　　　スタック操作
+---------------- ---------------------------------------------
+　４（定数）　　  スタックに「４」を乗せる
+　５（定数）　　  スタックに「５」を乗せる
+　足す（関数）　  スタックから「４」と「５」を下ろす
+　　　　　　　　  下ろして計算の結果「９」をスタックに乗せる
+　変数Ａ（変数）  スタックに「変数Ａ」を乗せる
+　代入（関数）    スタックから「９」と「変数A」を下ろす
+　　　　　　　　　変数Ａに９を代入する</code></pre></figure>
+
+<p>ただし、なでしこでは、トークンを区切った後、すぐに実行するのではなく、一度、構文木を作ってから実行するようにすることで、実行速度が出るように工夫しています。ただ、このあたりは、日本語とぜんぜん関係なく、当然必要となる処理です。</p>
+
+<p>ですが、なでしこの前に作った「ひまわり」では、ぜんぜんそんな工夫をしていませんでした。とにかく動けば良いと思っていましたし、マシン速度が十分に高速な現在では、インタプリタの高速化に時間を割くよりは、ライブラリの充実に時間を割いたほうが、ユーザーが喜ぶかもしれません。</p>
+
+<h2 id="制御構造">制御構造</h2>
+
+<p>構文をどのように実装するのかは、一番言語作者の好みが出るところかもしれません。なでしこでは、「日本語として読める」という点に留意して制御構文を考えました。この時、構文レベルにインデントを用いることにしました。これは、スクリプト言語の Python を参考にして作りました。プログラムがより日本語っぽく見えるためにはどうしたら良いか考えて採用しました。</p>
+
+<p>しかし、Python ライクなインデントによる構文表現は、賛否両論のあるところです。日本語の文章でインデントによってレベルを下げることは一般的でないので、逆に不自然に見えてしまうという意見もありました。Ruby のように、end で制御文を閉じるようにするようにした方が良かったのかもと思います。</p>
+
+<p>以下、参考までに条件分岐の「もし」文と、繰り返しの「回」文を紹介します。</p>
+
+<h3 id="もし文">「もし」文</h3>
+
+<p>「もし」文は、if にあたる制御構文です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">もし、天気が「晴れ」ならば
+　　洗濯を干す
+違えば
+　　乾燥機を使う</code></pre></figure>
+
+<h3 id="回文">「回」文</h3>
+
+<p>「回」は指定回数だけ繰り返し実行する制御構文です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">３回
+　　「わん」と表示。</code></pre></figure>
+
+<h2 id="言語設計の楽しみ">言語設計の楽しみ</h2>
+
+<p>「なでしこ」は「ひまわり」を元に、日本語プログラミング言語の道を追求して来たのですが、言語が完成してしばらく使っていると、いろいろな改良点を思いつき、機会があれば、もっと完成されたものに改良したくなるものです。</p>
+
+<p>言語設計の楽しいところは、制御構文を考えたり、使いやすい機構を考えたりという部分です。加えて、関数の名前のネーミングだったり、ちょっとした造語を考えたり、センスが問われる部分もあります。「なでしこ」では、アプリケーションのメインウィンドウのことを「母艦」と呼んでいるのですが、ユーザーの間でちょっとした話題になっています。</p>
+
+<p>このように、言語設計は、詩人としての感覚も必要になってくる部分もあります。プログラミング技術だけでなく、尖った感性も磨いて、今後も便利で面白い言語に育てていきたいと思います。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p><img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51NJDSZV9QL._SL160_.jpg" />
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41KPFJJ89FL._SL160_.jpg" />
+ウノウ (株) プログラマー。
+1976 年生まれ。中学生の頃、MSX というパソコンに出会い人生が一転。
+ゲームや音楽のプログラミングに没頭。
+現在は、ソフト企画「くじらはんど」にて、オンラインソフトを多数発表している。
+代表作は、ドレミで作曲できる音楽ソフト『テキスト音楽「サクラ」』や『日本語プログラミング言語「なでしこ」』など。
+著書に『<a href="https://www.amazon.co.jp/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E%E3%80%8C%E3%81%AA%E3%81%A7%E3%81%97%E3%81%93%E3%80%8D%E5%85%AC%E5%BC%8F%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF-%E3%82%AF%E3%82%B8%E3%83%A9%E9%A3%9B%E8%A1%8C%E6%9C%BA/dp/4839917647?SubscriptionId=AKIAJDQ4M6M4FSYT327Q&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4839917647">‘日本語プログラミング言語「なでしこ」ガイドブック’</a>』や『<a href="https://www.amazon.co.jp/%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A7%E5%AD%A6%E7%BF%92%E3%81%99%E3%82%8BAction-Script%E5%85%A5%E9%96%80%E2%80%95Flash8-MX2004-%E3%82%AF%E3%82%B8%E3%83%A9%E9%A3%9B%E8%A1%8C%E6%9C%BA/dp/4839917914?SubscriptionId=1PE38HKS6CPYCN0NM382&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4839917914">‘ゲームプログラミングで学習する ActionScript (Flash8/MX2004)’</a>』など。
+日本中に、プログラミングの楽しさを伝えるため日々奮闘中。
+ホームページ→ <a href="http://kujirahand.com">http://kujirahand.com</a></p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0022/0022-Legwork.html">Rubyist のための他言語探訪 【第 14 回】 Whitespace</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Legwork.html">Rubyist のための他言語探訪 【第 13 回】 Prolog</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-Legwork.html">Rubyist のための他言語探訪 【第 12 回】 APL と J</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Legwork.html">Rubyist のための他言語探訪 【第 11 回】 C++</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Legwork.html">Rubyist のための他言語探訪 【第 10 回】 Erlang</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Legwork.html">Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Legwork.html">Rubyist のための他言語探訪 【第 8 回】 Forth</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Legwork.html">Rubyist のための他言語探訪 【第 7 回】 Icon</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Legwork.html">Rubyist のための他言語探訪 【第 6 回】 Dylan</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Legwork.html">Rubyist のための他言語探訪 【第 5 回】 Groovy</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Legwork.html">Rubyist のための他言語探訪 【第 4 回】 Tcl</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Legwork.html">Rubyist のための他言語探訪 【第 3 回】 Io</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Legwork.html">Rubyist のための他言語探訪 【第 2 回】 CLU</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Legwork.html">Rubyist のための他言語探訪 【第 1 回】 Python</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

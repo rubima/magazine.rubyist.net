@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>jpmobile + Rails 2.3.4 で作る携帯サイト入門 【前編】</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0028/0028-JpMobile.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>jpmobile + Rails 2.3.4 で作る携帯サイト入門 【前編】</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0028/0028-JpMobile.html" class="hatena-bookmark-button" data-hatena-bookmark-title="jpmobile + Rails 2.3.4 で作る携帯サイト入門 【前編】" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0028/0028-JpMobile.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0028/0028-JpMobile.html" data-text="jpmobile + Rails 2.3.4 で作る携帯サイト入門 【前編】">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#概要" id="markdown-toc-概要">概要</a></li>
+  <li><a href="#jpmobile-とは" id="markdown-toc-jpmobile-とは">jpmobile とは</a></li>
+  <li><a href="#rails-プロジェクトのセットアップ" id="markdown-toc-rails-プロジェクトのセットアップ">Rails プロジェクトのセットアップ</a>    <ul>
+      <li><a href="#debian-パッケージのインストール" id="markdown-toc-debian-パッケージのインストール">Debian パッケージのインストール</a></li>
+      <li><a href="#gem-のアップデート" id="markdown-toc-gem-のアップデート">gem のアップデート</a></li>
+      <li><a href="#rails-のインストール" id="markdown-toc-rails-のインストール">Rails のインストール</a></li>
+      <li><a href="#rails-プロジェクトの作成" id="markdown-toc-rails-プロジェクトの作成">Rails プロジェクトの作成</a></li>
+    </ul>
+  </li>
+  <li><a href="#jpmobile-のインストール" id="markdown-toc-jpmobile-のインストール">jpmobile のインストール</a></li>
+  <li><a href="#初期設定" id="markdown-toc-初期設定">初期設定</a>    <ul>
+      <li><a href="#セッションの設定" id="markdown-toc-セッションの設定">セッションの設定</a></li>
+    </ul>
+  </li>
+  <li><a href="#動かしてみよう" id="markdown-toc-動かしてみよう">動かしてみよう</a>    <ul>
+      <li><a href="#コントローラの作成と設定" id="markdown-toc-コントローラの作成と設定">コントローラの作成と設定</a></li>
+    </ul>
+  </li>
+  <li><a href="#カスタマイズしよう" id="markdown-toc-カスタマイズしよう">カスタマイズしよう</a>    <ul>
+      <li><a href="#ビューファイルの追加" id="markdown-toc-ビューファイルの追加">ビューファイルの追加</a></li>
+      <li><a href="#確認するには" id="markdown-toc-確認するには">確認するには</a></li>
+    </ul>
+  </li>
+  <li><a href="#絵文字を使ってみる" id="markdown-toc-絵文字を使ってみる">絵文字を使ってみる</a>    <ul>
+      <li><a href="#jpmobile-での絵文字の埋め込み" id="markdown-toc-jpmobile-での絵文字の埋め込み">jpmobile での絵文字の埋め込み</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+  <li><a href="#次回予告" id="markdown-toc-次回予告">次回予告</a></li>
+  <li><a href="#リンク" id="markdown-toc-リンク">リンク</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a>    <ul>
+      <li><a href="#rustogawa" id="markdown-toc-rustogawa">Rust/OGAWA</a></li>
+    </ul>
+  </li>
+  <li><a href="#jpmobile--rails-234-で作る携帯サイト入門-連載一覧" id="markdown-toc-jpmobile--rails-234-で作る携帯サイト入門-連載一覧">jpmobile + Rails 2.3.4 で作る携帯サイト入門 連載一覧</a></li>
+</ul>
+
+<h2 id="概要">概要</h2>
+
+<p>jpmobile + Ruby on Rails 2.3.4
+で携帯サイトを作る際には、これさえ押さえておけば大丈夫という、ベストプラクティスを紹介します。意外にはまるところや、基本的な設定方法、Ruby on Rails 2.3.4 での変更による影響点などを紹介します。</p>
+
+<p>「これで誰でもお手軽に携帯電話対応サイトを構築できる！」</p>
+
+<h2 id="jpmobile-とは">jpmobile とは</h2>
+
+<p><a href="http://ruby-sapporo.org/">Ruby 札幌</a>所属の <a href="http://friendfeed.com/dara">darashi</a> さんが制作されている、携帯電話特有の機能を Ruby on Rails で利用するためのプラグインです。</p>
+
+<p>ここで私は主に Rails 2.3 以降の対応を担当していています。</p>
+
+<h2 id="rails-プロジェクトのセットアップ">Rails プロジェクトのセットアップ</h2>
+
+<p>ここでは Debian 5.0.3 がインストールされたシステムをターゲットとします。またデータベースには sqlite3 を用います。</p>
+
+<h3 id="debian-パッケージのインストール">Debian パッケージのインストール</h3>
+
+<p>まず Ruby と関連パッケージをインストールします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo aptitude install ruby ruby1.8 ruby1.8-dev sqlite3 libsqlite3-dev rubygems git-core libopenssl-ruby</code></pre></figure>
+
+<h3 id="gem-のアップデート">gem のアップデート</h3>
+
+<p>Debian 5.0.3 のパッケージは gem 1.2.0 なのですが、Rails 2.3.4 は gem 1.3.2 以降が必要となるので下記の手順でアップデートします。</p>
+
+<p>gem 1.2.0 で rubygems-update がインストールされていない場合、 gem 最新版への直接の update はうまく行えません。そのため、まず 1.3.1 へ update を行ない、その後最新版へ update します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo gem install rubygems-update -v 1.3.1
+$ sudo /var/lib/gems/1.8/bin/update_rubygems
+$ sudo gem install rubygems-update
+$ sudo /var/lib/gems/1.8/bin/update_rubygems</code></pre></figure>
+
+<h3 id="rails-のインストール">Rails のインストール</h3>
+
+<p>Rails と必要な gem パッケージをインストールします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo gem install rails sqlite3-ruby</code></pre></figure>
+
+<h3 id="rails-プロジェクトの作成">Rails プロジェクトの作成</h3>
+
+<p>プロジェクト名は「jpmobile-rails」とします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ mkdir ~/rails-projects/
+$ cd ~/rails-projects/
+$ rails jpmobile-rails
+     create
+     create  app/controllers
+     create  app/helpers
+     create  app/models
+     create  app/views/layouts
+     create  config/environments
+     create  config/initializers
+     create  config/locales
+     create  db
+     create  doc
+     create  lib
+     create  lib/tasks
+     create  log
+     create  public/images
+     create  public/javascripts
+     create  public/stylesheets
+     create  script/performance
+     create  test/fixtures
+     create  test/functional
+     create  test/integration
+     create  test/performance
+     create  test/unit
+     create  vendor
+     create  vendor/plugins
+     create  tmp/sessions
+     create  tmp/sockets
+     create  tmp/cache
+     create  tmp/pids
+     create  Rakefile
+     create  README
+     create  app/controllers/application_controller.rb
+     create  app/helpers/application_helper.rb
+     create  config/database.yml
+     create  config/routes.rb
+     create  config/locales/en.yml
+     create  db/seeds.rb
+     create  config/initializers/backtrace_silencers.rb
+     create  config/initializers/inflections.rb
+     create  config/initializers/mime_types.rb
+     create  config/initializers/new_rails_defaults.rb
+     create  config/initializers/session_store.rb
+     create  config/environment.rb
+     create  config/boot.rb
+     create  config/environments/production.rb
+     create  config/environments/development.rb
+     create  config/environments/test.rb
+     create  script/about
+     create  script/console
+     create  script/dbconsole
+     create  script/destroy
+     create  script/generate
+     create  script/runner
+     create  script/server
+     create  script/plugin
+     create  script/performance/benchmarker
+     create  script/performance/profiler
+     create  test/test_helper.rb
+     create  test/performance/browsing_test.rb
+     create  public/404.html
+     create  public/422.html
+     create  public/500.html
+     create  public/index.html
+     create  public/favicon.ico
+     create  public/robots.txt
+     create  public/images/rails.png
+     create  public/javascripts/prototype.js
+     create  public/javascripts/effects.js
+     create  public/javascripts/dragdrop.js
+     create  public/javascripts/controls.js
+     create  public/javascripts/application.js
+     create  doc/README_FOR_APP
+     create  log/server.log
+     create  log/production.log
+     create  log/development.log
+     create  log/test.log
+$ cd jpmobile-rails</code></pre></figure>
+
+<h2 id="jpmobile-のインストール">jpmobile のインストール</h2>
+
+<p>次に <a href="http://github.com/darashi/jpmobile">github</a> から、jpmobile をプラグインとしてインストールします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ git clone git://github.com/darashi/jpmobile.git vendor/plugins/jpmobile
+$ rm -rf vendor/plugins/jpmobile/.git</code></pre></figure>
+
+<h2 id="初期設定">初期設定</h2>
+
+<h3 id="セッションの設定">セッションの設定</h3>
+
+<p>cookie が使えない携帯電話でセッション管理するための設定です。以前は config/environment.rb に書きましたが、Rails 2.3 からは config/initializers/session_store.rb というセッションまわり用の初期設定ファイルができていますので、こちらに書くことにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ emacs config/initializers/session_store.rb</code></pre></figure>
+
+<p>変更内容はおおまかに言って下記の 3 点です。</p>
+
+<ul>
+  <li>:key を書き換える
+    <ul>
+      <li>ここが長いと URL が長くなってしまい、携帯端末によっては欠落する可能性があるので、少し短くしておきます。</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ActionController::Base.session = {
+ :key         =&gt; '_session_id',
+ :secret      =&gt; 'hogehoge'
+}</code></pre></figure>
+
+<ul>
+  <li>ActionController::Base.session_store = :active_record_store を有効にする。
+    <ul>
+      <li>Cookie が使えない携帯端末でセッション管理をするために session_store に :active_record_store を設定する必要があります。</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ActionController::Base.session_store = :active_record_store</code></pre></figure>
+
+<ul>
+  <li>Cookie よりもセッションパラメータを先に見る設定をする
+    <ul>
+      <li>Rails 2.3 以降では、Cookie が使える場合にはそちらが優先されてしまいます。このため後述する trans_sid で :always (PC でも有効にする設定) が有効になりません。設定方法は下記のように :cookie_only =&gt; false を追加します。
+        <ul>
+          <li>実はこの設定だけでは有効になりません。jpmobile では ActiveController に手を入れることで、先にセッションパラメータを見るように変更しています。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ActionController::Base.session = {
+ :key         =&gt; '_session_id',
+ :cookie_only =&gt; false,
+ :secret      =&gt; 'hogehoge'
+}</code></pre></figure>
+
+<p>最終的には以下のようになります。:key と :secret は適宜置き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># Be sure to restart your server when you modify this file.
+
+# Your secret key for verifying cookie session data integrity.
+# If you change this key, all old sessions will become invalid!
+# Make sure the secret is at least 30 characters and all random,
+# no regular words or you'll be exposed to dictionary attacks.
+ActionController::Base.session = {
+ :key         =&gt; '_session_id',
+ :cookie_only =&gt; false,
+ :secret      =&gt; 'hogehoge'
+}
+
+# Use the database for sessions instead of the cookie-based default,
+# which shouldn't be used to store highly confidential information
+# (create the session table with "rake db:sessions:create")
+ActionController::Base.session_store = :active_record_store</code></pre></figure>
+
+<ul>
+  <li>セッションテーブルを作成する
+    <ul>
+      <li>準備ができたら実際にセッションを管理するテーブルを作成します。</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">rake db:sessions:create
+rake db:migrate</code></pre></figure>
+
+<h2 id="動かしてみよう">動かしてみよう</h2>
+
+<p>では実際に動かしてみましょう。</p>
+
+<h3 id="コントローラの作成と設定">コントローラの作成と設定</h3>
+
+<p>まずはコントローラを作成します。ここでは TopController を作ってみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby script/generate controller Top
+     exists  app/controllers/
+     exists  app/helpers/
+     create  app/views/top
+     exists  test/functional/
+     create  test/unit/helpers/
+     create  app/controllers/top_controller.rb
+     create  test/functional/top_controller_test.rb
+     create  app/helpers/top_helper.rb
+     create  test/unit/helpers/top_helper_test.rb</code></pre></figure>
+
+<p>次にオプションを設定します。ここではセッションパラメータが有効に働くか確認するために trans_sid を設定します。また簡単なビューも作成してみましょう。</p>
+
+<ul>
+  <li>app/controllers/top_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class TopController &lt; ApplicationController
+ trans_sid :always
+
+ def index
+   session[:count] ||= 0
+   session[:count] += 1
+   @count = session[:count]
+ end
+end</code></pre></figure>
+
+<ul>
+  <li>app/views/top/index.html.erb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;%= @count -%&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;%= link_to "Go to index", :action =&gt; "index" -%&gt;</code></pre></figure>
+
+<p>ではブラウザで確認してみましょう。</p>
+
+<ul>
+  <li>サーバの起動</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby script/server</code></pre></figure>
+
+<p>サーバを起動してブラウザで <a href="http://localhost:3000/top/">http://localhost:3000/top/</a> にアクセスすると、下記のような画面になります。</p>
+
+<ul>
+  <li>初回アクセス</li>
+</ul>
+
+<p><img src="/images/0028-JpMobile/jpmobile_1.png" alt="jpmobile_1.png" /></p>
+
+<p>ではリンクをクリックして見ましょう。数字が 1 つ増えて 2 になっていて、リンクの URL に指定したセッションパラメータがついていることがわかります。</p>
+
+<ul>
+  <li>2 回目のアクセス</li>
+</ul>
+
+<p><img src="/images/0028-JpMobile/jpmobile_2.png" alt="jpmobile_2.png" /></p>
+
+<p>trans_sid :always を指定することでセッション ID を URL のクエリーパラメータから取得するようになりました。Cookie が使えない携帯端末では、この機能を使うことでセッション管理が可能となります。</p>
+
+<h2 id="カスタマイズしよう">カスタマイズしよう</h2>
+
+<p>次に PC と携帯端末とでビューを切り替えてみましょう。同じコントローラとアクションを使ってみます。</p>
+
+<h3 id="ビューファイルの追加">ビューファイルの追加</h3>
+
+<p>jpmobile では、端末のユーザエージェントに応じてビューファイルを切り替えて表示することができます。ビューファイルと端末の対応関係は以下の通りです。</p>
+
+<ul>
+  <li>アクション index に対するビューの選択リスト</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>ファイル名</th>
+      <th>対応端末</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>index_mobile_docomo.html.erb</td>
+      <td>NTT ドコモ携帯全般</td>
+    </tr>
+    <tr>
+      <td>index_mobile_au.html.erb</td>
+      <td>au 携帯全般</td>
+    </tr>
+    <tr>
+      <td>index_mobile_softbank.html.erb</td>
+      <td>SoftBank 携帯全般</td>
+    </tr>
+    <tr>
+      <td>index_mobile_willcom.html.erb</td>
+      <td>WILLCOM 携帯全般</td>
+    </tr>
+    <tr>
+      <td>index_mobile_emobile.html.erb</td>
+      <td>イー・モバイル携帯全般</td>
+    </tr>
+    <tr>
+      <td>index_mobile.html.erb</td>
+      <td>携帯全般</td>
+    </tr>
+    <tr>
+      <td>index.html.erb</td>
+      <td>上記以外の全て</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>優先順位は上記の順で、ファイルが存在しなければ飛ばされます。
+    <ul>
+      <li>たとえば index_mobile.html.erb だけがある場合は下記のようになります。
+        <ul>
+          <li>携帯であれば index_mobile.html.erb が表示される。</li>
+          <li>それ以外は index.html.erb が表示される</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>ここでは携帯端末と PC とでビューを切り替えてみましょう。index_mobile.html.erb を追加して script/server を再起動します。（新規ファイルの追加なので再起動が必要です。）</p>
+
+<ul>
+  <li>app/views/top/index_mobile.html.erb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">mobile !!&lt;br /&gt;
+&lt;%= @count -%&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;%= link_to "Go to index", :action =&gt; "index" -%&gt;</code></pre></figure>
+
+<h3 id="確認するには">確認するには</h3>
+
+<p>さて確認しようと思っても、PC のブラウザで閲覧する限りはずっと index.html.erb が表示されてしまいます。jpmobile はユーザエージェントで判別しているので、これを偽装する必要があります。主な偽装の方法は下記の通りです。</p>
+
+<ul>
+  <li>Firefox のアドオン <a href="http://firemobilesimulator.org/">FireMobileSimulator</a></li>
+  <li><a href="http://coderepos.org/share/wiki/ssb">ssb (server side browser)</a></li>
+</ul>
+
+<p>今回は前者の FireMobileSimulator を使って確認します。Firefox で [ツール]-&gt;[FireMobileSimulator]-&gt;[DC P903i] を選択して <a href="http://localhost:3000/top/">http://localhost:3000/top/</a> にアクセスしてみてください。
+“mobile !!” と追加されているのがわかります。</p>
+
+<ul>
+  <li>mobile !!と表示されている</li>
+</ul>
+
+<p><img src="/images/0028-JpMobile/jpmobile_3.png" alt="jpmobile_3.png" /></p>
+
+<p>このように jpmobile では携帯キャリアごとにビューを切り替えることで、ビューの中に if else end などの条件分岐を少なく済ませることができます。</p>
+
+<h2 id="絵文字を使ってみる">絵文字を使ってみる</h2>
+
+<p>携帯といえば絵文字です。次は絵文字を表示してみましょう。</p>
+
+<h3 id="jpmobile-での絵文字の埋め込み">jpmobile での絵文字の埋め込み</h3>
+<p>: <img src="/images/0028-JpMobile/25.gif" alt="25.gif" /></p>
+
+<p>ビューファイルへの絵文字の埋め込みは HTML の実体参照を利用しています。たとえば <a href="http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/basic/index.html">NTT ドコモの絵文字</a>を埋め込む場合を考えます。表の中でサッカーの Unicode のコードは <em>E656</em> となっています。
+これを先ほどの携帯用ビュー index_mobile.html.erb に埋め込んでみましょう。
+<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<ul>
+  <li>app/views/top/index_mobile.html.erb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&amp;#xe656;&lt;br /&gt;
+mobile !!&lt;br /&gt;
+&lt;%= @count -%&gt;&lt;br /&gt;
+&lt;br /&gt;
+&lt;%= link_to "Go to index", :action =&gt; "index" -%&gt;</code></pre></figure>
+
+<p>先ほどと同じく FireMobileSimulator で確認します。FireMobileSimulator は絵文字を適切に表示してくれるので、絵文字の確認にも非常に有用です。</p>
+
+<ul>
+  <li>NTT ドコモで絵文字を表示したところ</li>
+</ul>
+
+<p><img src="/images/0028-JpMobile/jpmobile_4.png" alt="jpmobile_4.png" /></p>
+
+<p>さて一見よさそうに見えるのですが、ブラウザで文字コード (Firefox の場合は [表示]-&gt;[文字エンコーディング]) を確認すると、文字コードが UTF-8 になっています。携帯電話ではそれぞれのキャリアに応じた文字コードを用いる必要があります。
+また絵文字の埋め込みに関しても、NTT ドコモのコードで埋め込んだものはそのままでは他のキャリアでは見えません。</p>
+
+<p>そこで出力変換用のフィルターを適用します。適用したいコントローラに mobile_filter と追加します。ここでは Top コントローラに追加してみましょう。</p>
+
+<ul>
+  <li>app/controllers/top_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class TopController &lt; ApplicationController
+ trans_sid :always
+
+ # add filter
+ mobile_filter
+
+ def index
+   session[:count] ||= 0
+   session[:count] += 1
+   @count = session[:count]
+ end
+end</code></pre></figure>
+
+<p>さてもう一度アクセスして文字コードを確認すると、今度は Shift_JIS に変わっているのが確認できます。では続いて他のキャリアで見てみましょう。
+[ツール]-&gt;[FireMobileSimulator]-&gt;[AU W53CA] と選んで au で見てみることにします。</p>
+
+<ul>
+  <li>au で見たとき</li>
+</ul>
+
+<p><img src="/images/0028-JpMobile/jpmobile_5.png" alt="jpmobile_5.png" /></p>
+
+<p>若干分かりにくいですが、絵文字が変わっています。また文字コードも Shift_JIS に変わっているのがわかります。
+次に [ツール]-&gt;[FireMobileSimulator]-&gt;[SB SoftBank 930SH (3GC 型)] と選んで SoftBank で見てみます。</p>
+
+<ul>
+  <li>SoftBank で見たとき</li>
+</ul>
+
+<p><img src="/images/0028-JpMobile/jpmobile_6.png" alt="jpmobile_6.png" /></p>
+
+<p>今度は絵文字の変化も少しわかりやすいですね。また文字コードも UTF-8 に変わっているのがわかると思います。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は jpmobile の主な機能のうち</p>
+
+<ul>
+  <li>セッション ID の URL パラメータへの追加</li>
+  <li>ビューの切り替え</li>
+  <li>文字コード変換</li>
+  <li>絵文字変換</li>
+</ul>
+
+<p>の 4 つを紹介しました。この他にも</p>
+
+<ul>
+  <li>端末情報の取得</li>
+  <li>位置情報取得</li>
+  <li>全角半角変換</li>
+</ul>
+
+<p>など携帯サイト制作には欠かせない機能が含まれています。不明点や問題点がありましたら、下記のメーリングリストか IRC でお気軽にお尋ねください。</p>
+
+<h2 id="次回予告">次回予告</h2>
+
+<p>次回は jpmobile を拡張して iPhone や Android といった新しい端末を判別できるようにしてみる予定です。</p>
+
+<h2 id="リンク">リンク</h2>
+
+<dl>
+  <dt>RDoc Documentation</dt>
+  <dd><a href="http://jpmobile.rubyforge.org/rdoc">http://jpmobile.rubyforge.org/rdoc</a></dd>
+  <dt>GitHub</dt>
+  <dd><a href="http://github.com/darashi/jpmobile/">http://github.com/darashi/jpmobile/</a></dd>
+  <dt>RubyForge Project Page</dt>
+  <dd><a href="http://rubyforge.org/projects/jpmobile">http://rubyforge.org/projects/jpmobile</a></dd>
+  <dt>Mailing List</dt>
+  <dd><a href="http://groups.google.com/group/jpmobile">http://groups.google.com/group/jpmobile</a></dd>
+  <dt>IRC Channel</dt>
+  <dd>#jpmobile@freenode.net</dd>
+</dl>
+
+<h2 id="著者について">著者について</h2>
+
+<h3 id="rustogawa">Rust/OGAWA</h3>
+
+<p>300 万人規模の携帯向けメーリングリストサービスを Ruby on Rails で構築・運用している人。</p>
+
+<p>jpmobile / termtter のコミッターでもある。</p>
+
+<p><a href="http://qwik.jp/tokyurb">Tokyu.rb</a> 所属</p>
+
+<h2 id="jpmobile--rails-234-で作る携帯サイト入門-連載一覧">jpmobile + Rails 2.3.4 で作る携帯サイト入門 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-JpMobile.html">jpmobile + Rails 2.3.5 で作る携帯サイト入門 【後編】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-JpMobile.html">jpmobile + Rails 2.3.4 で作る携帯サイト入門 【前編】</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>サッカーの絵文字は <a href="http://www.nttdocomo.co.jp/service/imode/make/content/pictograph/basic/index.html">NTT ドコモのホームページ「基本絵文字」</a>より引用。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

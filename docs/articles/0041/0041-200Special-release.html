@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby 2.0.0 リリースを振り返って</title>
+  <meta name="description" content="書いた人：遠藤侑介 (@mametter)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0041/0041-200Special-release.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby 2.0.0 リリースを振り返って</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0041/0041-200Special-release.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby 2.0.0 リリースを振り返って" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0041/0041-200Special-release.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0041/0041-200Special-release.html" data-text="Ruby 2.0.0 リリースを振り返って">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：遠藤侑介 (<a href="https://twitter.com/mametter">@mametter</a>)</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>こんにちは、遠藤と言います。るびまに記事を書くのは多分初めてです。</p>
+
+<p>めでたく、Ruby 2.0.0 がリリースされました。</p>
+
+<p>筆者はリリースマネージャとして 2.0.0 のリリースに携わったことになっています。といっても、実作業はほとんど他のコミッタの人たちによるもので、実態としては「リリースアナウンス文作家」という感じです。</p>
+
+<p>本稿では 2.0.0 のリリースまでの道のりについて、簡単に振り返ってみたいと思います。筆者の記憶で書いているので間違いはご容赦を。</p>
+
+<h2 id="2010-年夏-ruby-20-の始まり">2010 年夏: Ruby 2.0 の始まり</h2>
+
+<p>現在の 2.0 が公の場で言及されたのは、筆者の知る限りでは <a href="http://bugs.ruby-lang.org/projects/ruby/wiki/DevelopersMeeting20100827">RubyKaigi 2010 の開発者会議</a>が最初です。</p>
+
+<p>当時は 1.9.2 がリリースされた直後でした。2.0 については、漠然と「classbox とキーワード引数が欲しい」という話がされただけで、具体的な議論がなされることはありませんでした。</p>
+
+<p>しかし、matz から「2.0 は 1.9 と 100% 互換」というスローガンが出されたことは特筆に値するでしょう。このスローガンがなければ、新機能についての議論は指針なく発散し放題となり、2.0 はあと 10 年くらいリリースされなかったと思います。</p>
+
+<p>しかし、RubyKaigi 2010 の後の 1 年間は 1.9.3 の開発に費やされ、特に 2.0 の話が進捗することはありませんでした。</p>
+
+<h2 id="2011-年秋-20-の本格始動">2011 年秋: 2.0 の本格始動？</h2>
+
+<p>1.9.3 のリリースが近づいた 2011 年 10 月上旬、ささださんから「2.0 の仕様を決めよう」という話が出ました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/39824">[ruby-core:39824]</a>)<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。これに対し筆者が「2.0 に必須の機能と入れたい機能を区別しよう」と提案しました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/39836">[ruby-core:39836]</a>)。そして matz から「refinement とキーワード引数を必須とする」という表明がなされました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/39837">[ruby-core:39837]</a>)。</p>
+
+<p>そして激動の 2011 年 10 月 18 日。筆者がキーワード引数を試験的に実装し、「trunk<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> にコミットしよう」と持ちかけました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/44602">[ruby-dev:44602]</a>)。
+この機能は実のところ大した機能ではないのですが、一応構文拡張になるので、これをコミットするには 1.9 系列と trunk を分ける必要がありました。
+さらに同日、成瀬さんから次にリリースするバージョンを 2.0 にしようという提案がなされました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/44604">[ruby-dev:44604]</a>)。
+これらをきっかけに話が一気に進み、その当日中に matz が trunk のバージョン番号を 1.9.4 から 2.0.0 に変更するコミットをしました (<a href="http://svn.ruby-lang.org/cgi-bin/viewvc.cgi?revision=33483&amp;view=revision">r33483</a>)。</p>
+
+<blockquote>
+  <ul>
+    <li>version.h (RUBY_RELEASE_DATE): finally declare start of 2.0 work!</li>
+  </ul>
+</blockquote>
+
+<p>また、このどさくさの中で、筆者の 2.0 リリースマネージャへの立候補が承認されました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/44672">[ruby-dev:44672]</a>)。matz からの祝福にみちた承認コメントを引用しておきます。</p>
+
+<blockquote>
+  <p>まつもと ゆきひろです</p>
+
+  <p>まだ2.0はリリースマネージャが必要なレベルになってないと思いますが、遠藤さんが立候補しておられることに反対する理由もありません。どうぞ。</p>
+
+  <p>そんなことより、個別の機能を開発しようよ。</p>
+</blockquote>
+
+<p>そしてリリーススケジュールが告知されました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/44691">[ruby-dev:44691]</a>)。</p>
+
+<ul>
+  <li>2012/08/24: big feature freeze (大まかな機能提案締切り)</li>
+  <li>2012/10/24: feature freeze (機能提案締切り)</li>
+  <li>2013/02/24: 2.0.0 リリース (Ruby 生誕 20 周年)</li>
+</ul>
+
+<p>これで 2.0 に向けた歩みが本格的に始まりました……と言いたいところですが、どうも人間は締切りが近づくまで (or 過ぎるまで) 何もしないようで、この後半年くらいは特に大きな動きはなかったと記憶しています<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。もっと直前に締切りを設定しても大差ないんじゃないか、とか思いました。この教訓は後に生きて (？) 来ます。</p>
+
+<h2 id="2012-年春夏-機能提案判定会祭り">2012 年春〜夏: 機能提案判定会祭り</h2>
+<dl>
+  <dt>: <img src="/images/0041-200Special-release/dm1.jpg" alt="dm1.jpg" /></dt>
+  <dd><img src="/images/0041-200Special-release/dm2.jpg" alt="dm2.jpg" /></dd>
+</dl>
+
+<p>さて、そろそろ機能提案締切りが見え始めた時期、2.0 の機能提案を判定していく会議を企画しました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/45708">[ruby-dev:45708]</a>)。
+機能提案者に提案内容を紹介する 1 枚スライドを作って送ってもらい、会議当日はそのスライドを順に眺めていく、というものでした。</p>
+
+<p>2012 年 7 月 21 日に matz を中心に採否判定会を開催し、集まった 30 件強のスライドを一件 5 分程度で採択・不採択・コメントつき保留、とばしばし決めていきました。
+(@hsbt さん・paperboy&amp;co. さんより会議室をご提供いただきました。ありがとうございます。)</p>
+
+<p>この会議の成果として採択された機能提案には以下のようなものがあります。</p>
+
+<ul>
+  <li>const_get(“Foo::Bar”) と書けるようになった <a href="http://bugs.ruby-lang.org/issues/5690">[#5690]</a></li>
+  <li>シンボルの配列のリテラル %i(foo bar baz) <a href="http://bugs.ruby-lang.org/issues/4985">[#4985]</a></li>
+  <li>デフォルトのソースコードエンコーディングが UTF-8 になった <a href="http://bugs.ruby-lang.org/issues/6679">[#6679]</a></li>
+  <li>ソースのあるディレクトリを返す Kernel#<strong>dir</strong> <a href="http://bugs.ruby-lang.org/issues/3346">[#3346]</a></li>
+  <li>#chars や #lines が Array を返すようになった <a href="http://bugs.ruby-lang.org/issues/6670">[#6670]</a></li>
+</ul>
+
+<p>この企画はわりと実りがあったと自画自賛しているのですが、企画者 (筆者) の準備・後始末がなかなか大変だったので、その後しばらく燃え尽き症候群でした。加えて他の非常に重要なミッション (<a href="http://spro2012.prosym.jp/">夏のプロシンでの発表</a>と <a href="http://d.hatena.ne.jp/ku-ma-me/20120930/p1">IOCCC 参加</a>) で忙しかったこともあり、8 月の「大まかな機能提案締切り」で特にアクションを起こせなかったことは反省点です。この辺はボランタリベースの問題点ですよね…… (他人事のように)。</p>
+
+<p>余談ですが、このころ<a href="http://d.hatena.ne.jp/ku-ma-me/20120521/p1">リリース週記</a>なるものを書き始めて見ましたが、これも 3 週坊主くらいになりました。</p>
+
+<h2 id="2012-年秋--現在-機能提案締切りから-previewrc-リリース">2012 年秋 〜 現在: 機能提案締切りから preview/rc リリース</h2>
+
+<p>このままじゃいかん！と奮い立ち<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>、2012 年 10 月 24 日に突如「予定通り」の機能提案締切りを宣言しました。こんなひどい宣言みたことない。ただ、スケジュール決定後の半年間の空白の教訓から、ここで延期したところで成果が大きく変わることはないだろうという予想はありました。はい、もちろん言い訳です。</p>
+
+<p>続いて 2012 年 11 月 2 日に、その時点の trunk をパッケージ化した 2.0.0-preview1 をリリースしました (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/46348">[ruby-dev:46348]</a>)。この時、リリーススケジュールを詳細化しました。</p>
+
+<ul>
+  <li>12 月上旬: 2.0.0-preview2</li>
+  <li>クリスマスごろ: code freeze</li>
+  <li>正月過ぎたくらい: 2.0.0-rc1</li>
+  <li>2 月上旬: 2.0.0-rc2</li>
+  <li>2/24: 2.0.0-p0</li>
+</ul>
+
+<p>実はこのスケジュールにはひどい問題点があります。わかりますでしょうか。</p>
+
+<p>答えは “code freeze” (新機能の実装締切り) と rc1 まで 1 週間強しかないことです。コミットされたばかりの新機能が “release candidate” (問題なければそのままリリースパッケージとなる候補版) と呼べるほど安定しているわけがないのに……。バグチケットの処理をする時間も全然ない……。
+結局、rc1 は残念ながら文字通りの release candidate の品質には至らず、その後も通常レベルのバグ修正を許容せざるを得ませんでした。これも反省点。</p>
+
+<p>また、さらなる反省点として、rc1 の前後にまた別のミッション (後の「余談」参照) で忙しく、バグチケットの面倒をみる暇が全然とれませんでした。すみません。なお、この作業はいろんな人が代わりにやってくれました（特にささださん、Eric Hodel 、yhara さんが印象深いです）。ありがとうありがとう。</p>
+
+<p>まあこんな風に反省点だらけですが、スケジュールを予定通りに進めることだけは努めたつもりです。なので筆者の 2.0 に対する主な貢献は、リリースアナウンス文の作文です。すみません。</p>
+
+<h2 id="20-の今後">2.0 の今後</h2>
+
+<h3 id="200-のメンテナンスについて">2.0.0 のメンテナンスについて</h3>
+
+<p>正直、筆者は精緻な作業を継続的にやっていくのはあんまり得意でないです。そこで、2.0.0 メンテナに @nagachika さんを推薦し、ご快諾頂きました。</p>
+
+<p>@nagachika さんは Ruby trunk の全コミットを追いつづける日記 <a href="http://d.hatena.ne.jp/nagachika/">ruby-trunk-changes</a> をもう何年も続けてらっしゃる方で、その継続力は明らかにコミッタ随一です。</p>
+
+<h3 id="200-の次は">2.0.0 の次は？</h3>
+
+<p>今年のクリスマス頃に 2.1.0 のリリースを目指します。<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></p>
+
+<p>ごく最近 (2013 年 2 月 15 日) 決まったことなので、具体的な内容はまだ何も決まっていません。なので以下は筆者の予想です。
+まず、refinements がまだ「実験的機能」という位置づけなので、2.0.0 の中で徐々に実践経験を詰み、改良されていくと思います。
+また、TracePoint など debugger 回りの API も整備されていくと思います。
+さらに、今回入った新機能も、実践を経てさらにブラッシュアップされていくことでしょう。</p>
+
+<p>特に反対がなければ、筆者がリリースマネージャを続けたいと思っています。
+(「お前のようなやつにリリースマネージャは任せておけん！」という声が上がればお譲りしたいと思っています。)</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>執筆時点では全然終わっていないので締めるのは難しいのですが。
+それどころか、ここに来て rubygems.org のクラック事件が起きたり、脆弱性報告が相次いだりして、2.0.0 のリリースには何やら暗雲立ちこめておりますが。
+この文章、ちゃんとリリースが済んだ後に書きたかったな。</p>
+
+<p>とにかく、この文章が無事 2/24 に皆さんの目に入っていることを願います。
+また、だらしないリリースマネージャに怒ることもなく、Ruby 2.0.0 に貢献してくれたすべての方々に感謝いたします。</p>
+
+<h2 id="余談-宣伝">余談 (宣伝)</h2>
+
+<p>リリース時期に何が忙しかったかというと、まあ普通に本業も忙しかったんですが、ある本の翻訳をしていて余暇の大半を吸い取られてました。</p>
+
+<p>Benjamin C. Pierce の <a href="http://www.cis.upenn.edu/~bcpierce/tapl/">“Types and Programming Languages”</a> (通称 TAPL) という本で、プログラミング言語の「型」の教科書とされる本です。「型」とは、Ruby にはないアレのことです。</p>
+
+<p>3 月にオーム社から<a href="http://www.ohmsha.co.jp/kaihatsu/archive/2013/01/17112000.html">「型システム入門 プログラミング言語と型の理論」</a>というタイトルで発売されますので、よかったらお買い上げください。</p>
+
+<p>Ruby の型なしの良さを語るには、この本の内容くらいは抑えとくべきですよ (煽り)。</p>
+
+<h2 id="筆者について">筆者について</h2>
+
+<p>遠藤侑介。
+Ruby コミッタ (アカウントは mame)。Ruby のテストカバレッジをあげたり、1.9.2 のリリースマネージャ補佐をやったり、2.0.0 のリリースマネージャをやったり。
+<a href="http://www.slideshare.net/mametter/ruby-2012">超絶技巧プログラミング</a>を提唱し、実践している。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>笹田注：RubyConf2011 で 2.0 を出そうぜ、って話はしていたのです [[ruby-core:39810]]。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>開発最新版のリポジトリのこと。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>笹田注：大きな動きでもなかったのですが、この間 3/11, 3/18, 3/28, 7/14 とローカルで集まれる人だけ集まって、開発会議をしていました。主に細かい仕様の検討です。結構、細かい仕様検討が多かったもので、この密度で開発を進めたのは初めてだったんじゃないかなぁ。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>妻に「だらしない」と怒られたのがきっかけ。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>2013 年 02 月 23 日の開発者会議にて、この件は保留となりました。導入を目指す機能を同定してからスケジュールを切ろうということに。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

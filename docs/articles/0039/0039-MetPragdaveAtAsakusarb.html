@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた</title>
+  <meta name="description" content="書いた人 : たなべすなお">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0039/0039-MetPragdaveAtAsakusarb.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0039/0039-MetPragdaveAtAsakusarb.html" class="hatena-bookmark-button" data-hatena-bookmark-title="達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0039/0039-MetPragdaveAtAsakusarb.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0039/0039-MetPragdaveAtAsakusarb.html" data-text="達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人 : たなべすなお</p>
+
+<h2 id="達人プログラマ-dave-thomas-が-asakusarb-で話するというので聞いてきた">達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた</h2>
+
+<h3 id="これは発言のまとめではなく感想レポートです">これは発言のまとめではなく感想レポートです</h3>
+
+<p>Asakusa.rb は毎週火曜日に開催されている地域 Ruby コミュニティです。2012 年 2 月 21 日、その Asakusa.rb へ Dave Thomas がやってきて話をするという機会がありました。これはその場で話を聞いて受け取った内容をまとめたレポートです。当日は Ustream によるストリーミング中継はされていたのですが、残念ながらアーカイブにはなっていません。そのため、その場にいた著者が何を受け取ったか<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>という主観に大きく依存するものなため、Dave の発言の抄録ではなく内容の正確さはまったく保証できない感想レポートです。</p>
+
+<p>今でも見られる唯一の間違いのない情報は Dave 本人が後に公開してくれたスライドだけになりますので、一次情報としてはスライドを参照し、自分なりの理解をしてもらえればと思います。</p>
+
+<ul>
+  <li><a href="http://www.slideshare.net/pragdave/asakusa-ruby">http://www.slideshare.net/pragdave/asakusa-ruby</a></li>
+</ul>
+
+<h3 id="事の起こり">事の起こり</h3>
+
+<p>来日前夜の興奮を少しでも感じてもらうために、Asakusa.rb の ML から松田明さんからの開催通知のメール本文を引用してみます。「第146回Asakusa.rb (2012-02-21)」より。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">さて、そんなわけで、以前から予告しているとおり、次回のmeet-upにはなんとあの達人Dave Thomas氏がいらっしゃいます。
+https://twitter.com/#!/pragdave/status/166002282494820352
+
+僕のほうからは「去年の最後のRubyKaigiで話しそびれたことを話してくれると嬉しい」とお伝えしてあって、彼も「準備は何もしてないけどちょっと喋ってあとは質疑応答みたいな感じならやるよ」と言ってくださっています。
+https://twitter.com/#!/pragdave/status/169701069667041280
+
+そこで、今回参加される皆さんにはひとつお願いがあります。せっかくDaveが遊びにきてくれるので、Daveと交流しに来てください。お客さんしに来ないでください。
+
+ここにいる皆さんは、絶対なんらかの形でDaveにはお世話になってるはずです。
+少なくとも1人2つか3つはDaveに訊きたいこと、Daveに伝えたいことを考えておいてください。
+今のうちに、あのRubyKaigi 2007の講演とか http://jp.rubyist.net/RubyKaigi2007/Log0610-S5.html
+RubyConf 2010の講演とか http://www.confreaks.com/videos/368-rubyconf2010-keynote
+を復習しておくと良いかもしれません。
+
+今回は参加人数を把握しておきたいので、参加予定の方は、このスレに返信をお願いします。
+
+なお、会場は秋葉原の笹田研になります。いつもの上野じゃないのでご注意ください。
+時間は19時開場19時半開演とかそんなぐらいな感じですかね。</code></pre></figure>
+
+<p>当日は Dave Thomas が来日するということで、大勢の人が秋葉原ダイビルへ集まっていました。日本の Rubyist にとっての Dave Thomas といえば、RubyKaigi 2007 での基調講演を抜きにしては語れません。Ruby への愛情と大きくなった Ruby コミュニティへ日本の Rubyist がどう対応していくべきかの指針を語った講演は感動的で大変すばらしいものでした。そして、Dave は 2011 年の最後の RubyKaigi でも基調講演をする予定でした。残念ながら、この時は Dave の都合がつかなくなり様々な思いで基調講演を待っていた人々が悲しみに暮れ涙しました。そして、2012 年の来日にあわせて開かれたこの場は、「RubyKaigi 2011 で話すはずだった話」をテーマに語ってほしいというリクエストが出ていたと聞きます。それを知っていた人も知らなかった人も、同じことを期待して会場へ詰めかけてきたことは想像に難くありません。</p>
+
+<p>スライドを背景に Dave は世間話のように話し始めました。</p>
+
+<h3 id="hello-im-dave">Hello, I’m Dave</h3>
+
+<p>最初は自己紹介です。Dave への敬愛と親愛の情を隠しきれない人たちばかりが集まっていたため、この時点で会場は期待と聞き漏らすまいという緊張感と歓迎の気持ちで温度が高かったです。そして、”Hello, I’m a Ruby Programmer” と続きます。”Hello, I’m Agile” 会場の誰もが知ってる、知ってると心の中でつっこんでたと思いますが、次のスライドでこれが今回のテーマであることがわかります。</p>
+
+<p>“Dave”、”a Ruby Programmer”、”Agile” これらはすべて Dave Thomas という人そのものではなく、ラベル (Labels) だと言います。</p>
+
+<p>たとえば、自分は “Agile” だと言いますが、これはどういうことでしょう？</p>
+
+<p>インデックスカードを使うから？　スタンドアップミーティングしているから？　リファクタリングをするから？　ユニットテストを書いているから？　それとも Cucumber を使ってるから Agile ？</p>
+
+<p>「だって、アジャイルのすごい人たちがそうしろって言ってたもの！」</p>
+
+<p>それはアジャイルじゃないよ。それらを使っているというのは自分に貼られたただのラベルです。</p>
+
+<p>Dave の話は “a Ruby Programmer” へ続きます。「この中で Ruby を使っている人は？　昼の仕事で使っている人はどれくらいいる？」少し昔はよく聞いた質問です。このときは半分以上の手が挙がりました。Ruby コミュニティでこの質問がされるときはたいてい Ruby を使っていることを肯定的に受けとめられます。当然ですよね。しかし、この日の Dave の話は少し違います。</p>
+
+<p>Web アプリケーションを何でつくろう？　それ Ruby でできるよ！</p>
+
+<p>仕事をぜんぶ自動化しないといけないんだよね。　それ Ruby でできるよ！</p>
+
+<p>お客さんにとって一番価値があることをしなければ。　それ Ruby でできるよ！</p>
+
+<p>世界が平和でありますように。　それ Ruby でできるよ！</p>
+
+<p>Ruby を使えるようになったからといって、なんでもかんでも Ruby でやろうとするのが “a Ruby Programmer” なのでしょうか？</p>
+
+<p>それでは “a Ruby Programmer” であることの定義は何でしょう？　90 のビルトインクラスとモジュールのすべてを知り尽くしていること？　143,797 の Rails のメソッドすべてを知っていること？　もしくは自分でテスティングフレームワークを書いたことがあること？</p>
+
+<p>これらは単に物知りなだけであって、Ruby プログラマだとことにはなりません。</p>
+
+<p>“Agile” と呼ぶことや “a Ruby Programmer” と呼ぶことの問題は何でしょう？　それは、ラベルは固有の意味を与えてしまう (Labels are static) ということです。そこからはそれ以上の気づきが得られません。</p>
+
+<p>どんなに知識を得てプラクティスをやっていたとしても、それをもってアジャイルな態度だとは呼べません。</p>
+
+<h3 id="this-is-agility">This is Agility…</h3>
+
+<p>アジャイルマニフェストにも名を連ねる達人プログラマ<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>が「これがアジャイルだ」と言ってスライドをめくるので、皆がまばたきもせず見つめているとやや手間取った後に、頼りない足取りでふらふらと前進するロボットの映像が流れます。</p>
+
+<p><a href="http://www.geology.smu.edu/~dpa-www/robo/nbot/nbot_gravel_1.mpg">http://www.geology.smu.edu/~dpa-www/robo/nbot/nbot_gravel_1.mpg</a></p>
+
+<p>これは何ごとだろうと皆がぽかーんとする中で Dave が話を進めます。</p>
+
+<p>このロボットは地面のでこぼこなどの状況を入力として受け取り、その時々の最適な調整をして自動的に前へ進みます。前へ進んだらそのときの地面の様子をリアルタイムに入力して、またその状況へ適応して前へ進むことを続けます。</p>
+
+<p>これは PID 制御と呼ばれる仕組みで、このような式で定義されます。式は一見むずかしいけれども、かんたんに説明すると Proportional、Integral、Derivative の三つの部分でできあがっており、それぞれ現在の路面からのフィードバックと過去の走行履歴、将来予測から、今どのようにするべきかを選択するという仕組みになっています。</p>
+
+<p>つまり、考えるべきは「今なにをすべきか」「過去の経験を元に焦ることはないと落ち着き」「将来の予測からどの程度緊急かを考える」ということです。</p>
+
+<p>このように言うこともできます。</p>
+
+<ul>
+  <li>A. どこへいこうとしているのか？</li>
+  <li>B. 今どこにいるのか？</li>
+  <li>C. どのようにしたら、より前へ進めるのか？</li>
+</ul>
+
+<p>を一つのサイクルとして、それを繰り返し考え、行動すること。それが Agility です。</p>
+
+<h3 id="hello-im-a-ruby-programmer--ruby-do">Hello, I’m a Ruby Programmer ~ Ruby-do</h3>
+
+<p>さて、ラベルの話でした。自分のことを “a Ruby Programmer” と呼ぶのは、ラベルなのでこれをやめようという話でしたね。では、どう呼べばいいのでしょうか？　これからは、このように考えてはどうでしょう。</p>
+
+<ul>
+  <li>人々の問題を解決するのが得意です</li>
+  <li>そして私はそのためにコンピュータをどのように使えばいいかを知っています</li>
+  <li>いくつもの道具を使いますが、その中の一つには Ruby というプログラミング言語があります</li>
+  <li>私は Ruby-do を実践しています</li>
+</ul>
+
+<p>Ruby-do とはなんでしょうか？　それはこのような態度を言います。</p>
+
+<ul>
+  <li>オブジェクト指向プログラミングだけが唯一の方法じゃないよ</li>
+  <li>手続型のプログラミングだけがプログラムを書くたった一つの方法でもない</li>
+  <li>“よい” コードだけがコードなわけじゃない</li>
+  <li>Ruby が最上のプログラミング言語ってわけじゃない
+    <ul>
+      <li>そもそも最上のプログラミング言語なんてものはないわけだし</li>
+    </ul>
+  </li>
+</ul>
+
+<p>こんな質問を受けることがあります。「PHP のシステムがあって、今それなりにうまくやってるんだけど、これを Ruby に変えようかと思ってるんだよね。どう思う？」</p>
+
+<p>みなさん、どう思いますか？　私はこう答えます。「今なにも困っていなくてそれでうまくいっているんだろう？　なぜ変える必要があるんだい？」</p>
+
+<p>Ruby-do を実践するにはこのような態度も必要になります。</p>
+
+<p>for を使ったイテレーションと each を使ったイテレーション。どっちがよりよい書き方？　そう、each の方だとみんな知っている。なぜ？　そう、DHH がそうだと言ったからだ (会場笑) 。さて、では本当にそうかを考えてみてほしい。なぜ each の方がよいのだろう。for のときに困ることは何もないはず。ではなぜそのように言われるのだろう？　それは本当にそのとおりなのかな？</p>
+
+<p>インデントをそろえる書き方とそろえない書き方。どっちがよりよい書き方だと思う？　そろえない方がよいと言ってる本あったよね。そろえたらそろえる手間と後で変更するときにそろえ直す手間と二重の手間がかかると。でも、それはエディタがやってくれることもある。その場合はどっちがよりより書き方になる？</p>
+
+<p>Akitaonrails という人がいます。知っていますか？　彼は偉大なプログラマで、そんな彼がとある質問へこんな風に答えていました。これが優れた態度というものです。</p>
+
+<dl>
+  <dt>Ruby を学ぶほうが Python を学ぶよりもうれしい点を説明してよ。python はすでに Web から学術まで広い範囲のライブラリがそろってる。Ruby は Web に偏ってるよね。</dt>
+  <dd>どっちもやればいいんじゃない、としか言えないな。一つしか学んじゃいけない理由があるわけじゃないよね。</dd>
+</dl>
+
+<p>みなさん、練習はしていますか？　自信は手を動かして練習することから生まれます。知識からは生まれません。いつもどうやって練習したらいいだろうと考えましょう。</p>
+
+<p>そんなわけで、エキスパートと呼ばれる人やベストプラクティス、ラベルを盲信することはやめましょう。</p>
+
+<p>ラベルはあなたを思考停止させます。ラベルはあなたを枠にはめます。ラベルがあなたを狭めることになります。自分自身にラベルを貼るのはやめましょう。あなたが何者かはあなたが何をするかで決まります。名詞ではなく動詞でいましょう。よい行動をしましょう！</p>
+
+<p>最後を畳みかけるように話をし、最後のスライドを終えたところで大きな拍手が起きました。ここからは Dave の希望もあり、質疑応答というよりも意見交換をしてみたいという流れで発表の内容やそれ以外のことへの会話が行われました。皆が Dave への感謝の気持ちをここぞとばかりに伝えていたのが印象的です。</p>
+
+<h3 id="dave-の話を終えて">Dave の話を終えて。</h3>
+
+<p>今は少し<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>時間も経ち、熱が冷めてからこのレポートを書いています。あらためて書きながら思うのは、目線を高くもって話をしてくれたことがうれしいなということです。PragProg の本を翻訳して出版する様子やその過程での翻訳者からのフィードバックなどである程度は日本の状況なども知っているのでしょう。表面的な話ではなく、一通りのことを踏まえたうえで私たちはなにをしていくかを語ることへ終始話の焦点があっており、これを RubyKaigi 2011 で話そうとしていたというのは、日本の Rubyist への信頼と期待を感じられるようで単純にうれしいことでした。</p>
+
+<p>一方で、この話は大変むずかしい話でもあります。なにがむずかしいかというと、受け手の理解によって薄くも濃くもなる話だという点です。この話にはほとんど答えは書かれていません。むしろその「答え」にとどまることをやめ、自分自身でそのときどきに何が必要かを常に考えろという話です。つまり、これはその人の知識、経験によってかんたんに上限が決まってきます。魔法はないので、この上限はどのようにしたって避けられない上限でもあるのですが、一方でそこにとどまることをよしとしてしまうと、そのときどきのベストを尽くしたという言い訳をしやすい (だって Dave がその時の状況で考えろって言ってたもん！) 話でもあります。</p>
+
+<p>私はその「ベスト」をまた常に疑う必要があるというのが Ruby-do の話の主旨だと思って聞いていました。局面では自分の過去の経験と次の予測からそのときの状況へ適応をしつつ、本当にそれがベストで、次同じような局面が来たときにもその選択をするのがよいのか、あるいはもっとうまくやる方法があったんじゃないか。もし、次の局面でうまくやれるとしたら、そのときまでに自分は何を準備しておく必要があるのか。そんなことを意識しながら、プログラマを続けていくのがよいプログラマであり続けるために必要なことなんだというメッセージを受け取った気がしています。</p>
+
+<p>そうやって聞くと、これは実はアジャイルのエキスパートだとすでに見られている人や、自分の職場で一定の評価を得ている人、すでにプログラマとしてそれなりの仕事をできるようになっている人、そういう人向けの話のようにも聞こえます。本当にあなたの知っている今のソフトウェア開発はそこがゴールなのか、今の現場であなたは何をやってますか？　そういう問いかけが含まれているようにも聞こえます。この話を聞いて、「うんうん、そうだよね。俺の知ってるアジャイルと同じだわ。達人が言ってるのと同じ理解の俺は大丈夫だ！」と思った人こそもう一度なにを言われているかを考えなおすべき発表ではないかと今は理解しています。</p>
+
+<h3 id="大江戸-ruby-会議-02">大江戸 Ruby 会議 02</h3>
+
+<p>さて、あまりに Dave Thomas の話がよい内容だったもので、すっかり満足してしまった Asakusa.rb としては、「あれはおれたちの大江戸 Ruby 会議 02 だった」ということになったそうです。もちろん公式に地域 Ruby 会議として告知されていたわけでもないので、公式の地域 Ruby 会議ではないのですが、大江戸 Ruby 会議 02 はこれをもって終わったこととして、次の大江戸 Ruby 会議は 03 のナンバリングを受けるそうです。</p>
+
+<h3 id="dave-thomas-から日本のみなさんへ">Dave Thomas から日本のみなさんへ</h3>
+
+<p>最後に、この記事の著者は Rubyist Magazine の編集者でもあるので、せっかくの機会を逃してはならないと Dave Thomas から日本の Rubyist へのメッセージを書いてもらいました。</p>
+
+<p>Dave からの挨拶で記事の結びにしたいと思います。</p>
+
+<hr />
+
+<p>It is always an honor to come back to Japan, to the home of Ruby. The community here is both welcoming and enthusiastic, and I always feel at home.</p>
+
+<p>The Ruby language reflects the values of Matz<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>, and the people using Ruby seem somehow to reflect the values of Ruby-they are open, accepting of new ways, and good at finding ways of expressing themselves.</p>
+
+<p>I look forward to coming back many times over the coming years to see how Ruby continues to grow, and to see how the community here in Japan continues to contribute so significantly to the world of software development.</p>
+
+<p>Thank you for having me here.</p>
+
+<p>Dave Thomas</p>
+
+<hr />
+
+<p>Ruby のホームである日本に戻ってくる時はいつも、光栄に思います。コミュニティからの熱烈な歓待があり、いつも我が家に帰って来たように感じます。</p>
+
+<p>Ruby という言語には Matz の良さが表れています。そして Ruby を使う人々も、なぜだか Ruby の良さを表しているようです。みなオープンで、新しいやり方を受け入れる余地があり、自身を表現する方法を見つけるのが得意です。</p>
+
+<p>Ruby がどんな成長を続けているか、そしてここ日本のコミュニティがどのように世界のソフトウェア開発に大きく貢献していっているのか、今後数年間で見に戻ってくるその時を楽しみにしています。</p>
+
+<p>招いてくれてありがとう。</p>
+
+<p>Dave Thomas</p>
+
+<h3 id="著者について">著者について</h3>
+
+<p>たなべすなお (Sunao Tanabe / @sunaot) 。日本 Ruby の会、Asakusa.rb 所属。Rubyist Magazine 編集者。記事公開時点では Perl の会社で Ruby の仕事をしているプログラマ。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>しかも当然ながら Dave は全編英語で語っていたので著者の英語力にも依存することを付け加えておきます&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>これらもすべてラベルになってしまうのでこの話は書くのがむずかしいですね&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>いや、レポートを書くのをさぼったこともありかなりか&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>最初、Dave は Matz san と書いていて「みんなどう呼ぶの？」と質問を受けました。「Matz 自身が Matz さんとは呼ばず Matz と呼んでほしいと言ってるよ」と伝えた結果、こうなっています&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

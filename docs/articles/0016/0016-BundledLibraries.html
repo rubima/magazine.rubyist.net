@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>標準添付ライブラリ紹介 【第 9 回】 PStore</title>
+  <meta name="description" content="書いた人：西山">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0016/0016-BundledLibraries.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>標準添付ライブラリ紹介 【第 9 回】 PStore</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0016/0016-BundledLibraries.html" class="hatena-bookmark-button" data-hatena-bookmark-title="標準添付ライブラリ紹介 【第 9 回】 PStore" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0016/0016-BundledLibraries.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0016/0016-BundledLibraries.html" data-text="標準添付ライブラリ紹介 【第 9 回】 PStore">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：西山</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Ruby には便利な標準添付ライブラリがたくさんありますが、なかなか知られていないのが現状です。そこで、この連載では Ruby の標準添付ライブラリを紹介していきます。</p>
+
+<p>今回は、データを外部ファイルに保存するためのクラス PStore と PStore を継承したクラスについて紹介します。</p>
+
+<h2 id="pstore">PStore</h2>
+
+<p>PStore を使うと Ruby のオブジェクトを手軽に外部ファイルに保存することが出来ます。
+保存されるデータファイルの内容は Marshal されたバイナリになります。</p>
+
+<h3 id="基本的な使い方">基本的な使い方</h3>
+
+<p>使い方は基本的には Hash のように PStore#[]= を使って値を保存して、PStore#[] を使って値を取り出します。
+PStore#roots は Hash#keys に、PStore#root? は Hash#key に相当します。</p>
+
+<p>ただし、transaction 中でしかデータを操作することは出来ません。
+データを参照するだけの transaction の場合は引数に true を指定することで、読み込み専用の transaction にすることが出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'pstore'
+db = PStore.new('/tmp/foo')
+db.transaction do
+  p db.roots
+  ary = db['root'] = [1,2,3,4] # 配列を db に設定
+  ary[0] = [1,1.5]             # 破壊的に変更
+end # 保存は transaction を抜けるときなので変更された結果が保存される
+
+db.transaction(true) do
+  p db.root?('root')
+  p db['root']
+end
+
+begin
+  db.transaction(true) do
+    db['root'] = 'hoge' # 書き込もうとすると PStore::Error
+  end
+rescue PStore::Error
+  p $!
+end</code></pre></figure>
+
+<p>実行例 (1 回目):</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[]
+true
+[[1, 1.5], 2, 3, 4]
+#&lt;PStore::Error: in read-only transaction&gt;</code></pre></figure>
+
+<p>実行例 (2 回目以降):</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["root"]
+true
+[[1, 1.5], 2, 3, 4]
+#&lt;PStore::Error: in read-only transaction&gt;</code></pre></figure>
+
+<p>他に PStore#fetch と PStore#delete が Hash の同名のメソッドと同じ機能を持っています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'pstore'
+db = PStore.new('/tmp/foo')
+db.transaction do
+  ary = db.fetch(:ary, [])
+  p ary
+  ary.push(0, 1, 2)
+  db[:ary] = ary
+end
+
+db.transaction do
+  ary = db.fetch(:ary, [])
+  p ary
+  db.delete(:ary)
+end</code></pre></figure>
+
+<p>実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[]
+[0, 1, 2]</code></pre></figure>
+
+<p>PStore#abort と PStore#commit で、その transaction での PStore への変更を破棄したり、即座に変更を反映して transaction を抜けたり出来ます。
+transaction の中で例外が発生した場合も abort と同様に変更は保存されずに transaction を抜けます。</p>
+
+<p>PStore#path は、PStore のデータファイルのパスを返します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'pstore'
+db = PStore.new('/tmp/foo')
+db.transaction do
+  db['foo'] = 'bar'
+  p [1, db['foo']]
+  db.abort
+  p [2, db['foo']] # abort したので実行されない
+end
+db.transaction do
+  db.delete('foo')
+  p [3, db['foo']]
+  db.commit
+  p [4, db['foo']] # commit したので実行されない
+  db['foo'] = 'bar' # 実行されないので delete されたまま
+end
+db.transaction(true) do
+  p [5, db['foo']]
+end
+p db.path</code></pre></figure>
+
+<p>実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[1, "bar"]
+[3, nil]
+[5, nil]
+"/tmp/foo"</code></pre></figure>
+
+<h3 id="pstore-の特徴">PStore の特徴</h3>
+
+<p>内部で Marshal を使っているため、以下の特徴があります。</p>
+
+<ul>
+  <li>データファイルの内容はバイナリになるため、エディタなどでデータファイルの内容を直接編集することは出来ません。</li>
+  <li>データファイルが壊れてしまった場合は、バックアップファイルがある場合はそのファイルを試すことが出来ますが、それも壊れていた場合は復旧はほぼ不可能です。</li>
+  <li>IO や Proc などの Marshal.dump が出来ないオブジェクトは保存することが出来ませんが、Marshal.dump 出来るオブジェクトなら何でも保存できて、Marshal.load 出来るものは何でも読み込めます。</li>
+  <li>Marshal::MAJOR_VERSION が違う Ruby で保存された PStore のデータファイルは扱えません。現在の Marshal::MAJOR_VERSION は 4 で Ruby 1.0 の頃から変わっていないため、将来 Marshal::MAJOR_VERSION があがるまで気にする必要はないでしょう。</li>
+  <li>Marshal::MINOR_VERSION が小さいバージョンの Ruby で保存された PStore のデータファイルを Marshal::MINOR_VERSION が大きいバージョンの Ruby で読み込むことは出来ますが、逆に大きい Marshal::MINOR_VERSION のデータファイルは読み込めません。Ruby インタープリタをバージョンダウンしたり、他の環境へ PStore のデータファイルを持って行ったりすることがない限り、気にする必要はないでしょう。</li>
+</ul>
+
+<h3 id="windows-上での注意事項">Windows 上での注意事項</h3>
+
+<p>ruby 1.8.5 以前の pstore.rb には<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/29518">バイナリモードに関するバグ</a>があるため、以下のスクリプトを実行して「found pstore.rb bug!」と表示された場合は<a href="http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/~checkout~/ruby/lib/pstore.rb?rev=1.17.2.7;content-type=application%2Fx-ruby">修正済みの pstore.rb をダウンロード</a>して使ってください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'pstore'
+db = PStore.new('bugcheck')
+begin
+  db.transaction do
+    db['bugcheck'] = "\x1a"
+  end
+  db.transaction do
+    if db['bugcheck'] == "\x1a"
+      puts "OK"
+    end
+  end
+rescue ArgumentError
+  puts "found pstore.rb bug!"
+end</code></pre></figure>
+
+<h2 id="yamlstore">YAML::Store</h2>
+
+<p>YAML::Store は PStore と同じように Ruby のオブジェクトを YAML 形式で外部ファイルに保存します。
+保存されるデータファイルの内容は YAML 形式のテキストで基本的に UTF-8N (BOM なしの UTF-8) になります。</p>
+
+<h3 id="基本的な使い方-1">基本的な使い方</h3>
+
+<p>YAML::Store の使い方は基本的に PStore と全く同じです。
+<a href="/articles/0010/0010-YAML.html">プログラマーのための YAML 入門 (中級編)</a> も参考にしてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'yaml/store'
+db = YAML::Store.new('/tmp/foo.yaml')
+db.transaction do
+  db['foo'] = 'bar'
+end
+db.transaction(true) do
+  p db['foo']
+end</code></pre></figure>
+
+<p>実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">"bar"</code></pre></figure>
+
+<p>実行後の /tmp/foo.yaml の例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">---
+foo: bar</code></pre></figure>
+
+<p>YAML::Store には Hash でオプションを指定することも出来ます。</p>
+
+<p>オプションの詳細は
+<a href="http://yaml4r.sourceforge.net/doc/page/the_options_hash.htm">http://yaml4r.sourceforge.net/doc/page/the_options_hash.htm</a>
+を参照してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'yaml/store'
+db = YAML::Store.new('/tmp/foo.yaml', :SortKeys =&gt; true)
+db.transaction do
+  db['foo'] = 'bar'
+  db['hoge'] = 'fuga'
+end
+db.transaction(true) do
+  p db.roots
+end</code></pre></figure>
+
+<p>実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["hoge", "foo"]</code></pre></figure>
+
+<p>実行後の /tmp/foo.yaml の例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">---
+hoge: fuga
+foo: bar</code></pre></figure>
+
+<h3 id="yamlstore-の特徴">YAML::Store の特徴</h3>
+
+<p>内部で YAML を使っているため、以下の特徴があります。</p>
+
+<ul>
+  <li>YAML はテキスト形式のため、データファイルをテキストエディタで直接編集できます。</li>
+  <li>YAML は UTF-8 のテキスト形式のため、UTF-8 ではない String を YAML.dump すると、バイナリ扱いされて base64 などで格納される可能性があります。(<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/42204">[ruby-list:42204]</a> あたりの話によると、Ruby 1.8.3 からの仕様変更のようです。)</li>
+  <li>YAML.dump が出来るのに YAML.load が出来ないオブジェクトを格納してしまうとデータファイルを読み込めなくなります。そういう状態になってしまった場合は、テキストエディタでデータファイルを直接編集して原因となるオブジェクトを表す部分を削除するなどの対処が必要になります。</li>
+</ul>
+
+<h4 id="読み込めなくなる例">読み込めなくなる例</h4>
+
+<p>Proc のように YAML.dump が出来るのに YAML.load が出来ないオブジェクトを格納してしまうと、以下の例のように transaction に入ることが出来なくなるので注意しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'yaml/store'
+db = YAML::Store.new('/tmp/proc.yaml')
+begin
+  db.transaction do
+    db["proc"] = proc{}
+  end
+  db.transaction(true) {}
+rescue TypeError
+  p $!
+end</code></pre></figure>
+
+<p>実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&lt;TypeError: allocator undefined for Proc&gt;</code></pre></figure>
+
+<p>実行後の /tmp/proc.yaml の例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">---
+proc: !ruby/object:Proc {}</code></pre></figure>
+
+<h2 id="独自形式の-store-の作成">独自形式の Store の作成</h2>
+
+<p>Marshal や YAML のように dump と load が出来る機能があれば、PStore を継承して他の形式の Store を簡単に作成することが出来ます。</p>
+
+<h3 id="オーバーライドすべきメソッド">オーバーライドすべきメソッド</h3>
+
+<p>最低限以下のメソッドをオーバーライドすれば独自形式の Store を作ることが出来ます。
+継承により transaction の処理などは PStore の機能をそのまま使うことが出来ます。</p>
+
+<dl>
+  <dt>initialize(filename)</dt>
+  <dd>initialize は YAML::Store のように別途オプションを受け取るなど、ファイル名以外を受け取る必要がなければ定義する必要はありません。</dd>
+  <dt>dump(table)</dt>
+  <dd>dump は Marshal.dump に相当するメソッドを定義します。</dd>
+  <dt>load(content)</dt>
+  <dd>load は文字列を引数とする Marshal.load に相当するメソッドを定義します。</dd>
+  <dt>load_file(file)</dt>
+  <dd>load_file は File オブジェクトを引数とする Marshal.load に相当するメソッドを定義します。(が実際には使われていないので不要です。)</dd>
+</dl>
+
+<h3 id="xmlstore">XMLStore</h3>
+
+<p>ここでは例として、SOAP::Marshal を使って作った XMLStore を紹介します。</p>
+
+<p>内容は短いのでここに全文を載せます。</p>
+
+<p><a href="/images/0016-BundledLibraries/xmlstore.rb">xmlstore.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#</span>
+<span class="c1"># XMLStore</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2005 Kazuhiro NISHIYAMA.</span>
+<span class="c1"># You can redistribute it and/or modify it under the same terms as Ruby.</span>
+<span class="c1">#</span>
+<span class="c1"># $Id: xmlstore.rb,v 1.1 2005/03/09 13:58:25 znz Exp $</span>
+
+<span class="nb">require</span> <span class="s1">'pstore'</span>
+<span class="nb">require</span> <span class="s1">'soap/marshal'</span>
+
+<span class="k">class</span> <span class="nc">XMLStore</span> <span class="o">&lt;</span> <span class="no">PStore</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="k">super</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+    <span class="no">SOAP</span><span class="o">::</span><span class="no">Marshal</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="no">SOAP</span><span class="o">::</span><span class="no">Marshal</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">load_file</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="no">SOAP</span><span class="o">::</span><span class="no">Marshal</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">){</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">})</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>使い方は PStore や YAML::Store と同じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'xmlstore'
+db = XMLStore.new('/tmp/foo.xml')
+db.transaction do
+  db['foo'] = 'bar'
+  db['hoge'] = 'fuga'
+end
+db.transaction(true) do
+  p db.roots
+end</code></pre></figure>
+
+<p>実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["hoge", "foo"]</code></pre></figure>
+
+<p>実行後の /tmp/foo.xml の例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;env:Body&gt;
+    &lt;Hash xmlns:n1="http://xml.apache.org/xml-soap"
+        xsi:type="n1:Map"
+        env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+      &lt;item&gt;
+        &lt;key xsi:type="xsd:string"&gt;hoge&lt;/key&gt;
+        &lt;value xsi:type="xsd:string"&gt;fuga&lt;/value&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+        &lt;key xsi:type="xsd:string"&gt;foo&lt;/key&gt;
+        &lt;value xsi:type="xsd:string"&gt;bar&lt;/value&gt;
+      &lt;/item&gt;
+    &lt;/Hash&gt;
+  &lt;/env:Body&gt;
+&lt;/env:Envelope&gt;</code></pre></figure>
+
+<h3 id="jsonstore">JsonStore</h3>
+
+<p>もう一つの例として、ActiveSupport の to_json を使って作ってみた JsonStore を紹介します。
+これも短いので全体を載せておきます。rubygems で ActiveSupport がインストールされていることを想定しています。
+<a href="http://redhanded.hobix.com/inspect/yamlIsJson.html">YAML is JSON</a> に書いてあるように、JSON は YAML の制限をきつくしたものと見なせるので、load には YAML.load を使っています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'pstore'
+require 'yaml'
+require 'rubygems'
+require 'active_support'
+
+class JsonStore &lt; PStore
+  def initialize(filename)
+    super(filename)
+  end
+
+  def dump(table)
+    table.to_json
+  end
+
+  def load(content)
+    YAML.load(content)
+  end
+end</code></pre></figure>
+
+<p>to_json は Symbol が文字列になるなど、JavaScript の仕様にあわせているため、load しても元通りにならないので、JsonStore は実用には向かないと思いますが、このように簡単に独自形式の Store が作れるという例として参考にしてください。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は PStore を中心に PStore を継承して独自形式の Store を作成する方法までを紹介しました。
+自作のアプリケーションでの手軽なデータ保存に活用していただければ幸いです。</p>
+
+<h2 id="関連リンク">関連リンク</h2>
+
+<ul>
+  <li><a href="ruby-man:PStore">ruby-man:PStore</a></li>
+  <li><a href="ruby-man:Marshal">ruby-man:Marshal</a></li>
+  <li><a href="ruby-man:YAML::Store">ruby-man:YAML::Store</a></li>
+  <li><a href="/articles/0010/0010-YAML.html">プログラマーのための YAML 入門 (中級編)</a></li>
+  <li><a href="http://yaml4r.sourceforge.net/doc/">http://yaml4r.sourceforge.net/doc/</a></li>
+  <li><a href="http://yaml4r.sourceforge.net/doc/page/the_options_hash.htm">http://yaml4r.sourceforge.net/doc/page/the_options_hash.htm</a></li>
+  <li><a href="http://cvs.sourceforge.jp/cgi-bin/viewcvs.cgi/ruexli/ruexli/lib/xmlstore.rb">http://cvs.sourceforge.jp/cgi-bin/viewcvs.cgi/ruexli/ruexli/lib/xmlstore.rb</a></li>
+  <li><a href="http://redhanded.hobix.com/inspect/yamlIsJson.html">YAML is JSON</a></li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>西山和広。
+<a href="http://www.rubyist.net/~kazu/samidare/">Ruby hotlinks 五月雨版</a>や
+現在の <a href="http://www.ruby-lang.org/ja/man/">Ruby リファレンスマニュアル</a>のメンテナをやっています。
+<a href="http://www.ruby-lang.org/ja/man/">Ruby リファレンスマニュアル</a>はいつでも<a href="ruby-man:執筆者募集">執筆者募集中</a>です。
+何かあれば、マニュアル執筆編集に関する議論をするためのメーリングリスト rubyist@freeml.com (<a href="http://www.freeml.com/ctrl/html/MLInfoForm/rubyist">参加方法</a>) へどうぞ。</p>
+
+<p>Ruby リファレンスマニュアルは現在青木さんによる新システムに移行準備中です。
+手伝っていただける方は <a href="http://www.loveruby.net/d/20060904.html#p01">ruby-reference-manual ML</a> に入ってください。</p>
+
+<h2 id="標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-BundledLibraries.html">標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-BundledLibraries.html">標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-BundledLibraries.html">標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-BundledLibraries.html">標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-BundledLibraries.html">標準添付ライブラリ紹介 【第 11 回】 zlib</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-BundledLibraries.html">標準添付ライブラリ紹介 【第 10 回】 ERB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-BundledLibraries.html">標準添付ライブラリ紹介 【第 9 回】 PStore</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-BundledLibraries.html">標準添付ライブラリ紹介 【第 8 回】 uri, pathname</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-BundledLibraries.html">標準添付ライブラリ紹介 【第 7 回】 net/http</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-BundledLibraries.html">標準添付ライブラリ紹介 【第 6 回】 委譲</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-BundledLibraries.html">標準添付ライブラリ紹介 【第 5 回】 enumerator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-BundledLibraries.html">標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-BundledLibraries.html">標準添付ライブラリ紹介 【第 2 回】 Logger</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-BundledLibraries.html">標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

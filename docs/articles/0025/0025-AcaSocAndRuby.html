@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>学術会議とRuby</title>
+  <meta name="description" content="書いた人：ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0025/0025-AcaSocAndRuby.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>学術会議とRuby</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0025/0025-AcaSocAndRuby.html" class="hatena-bookmark-button" data-hatena-bookmark-title="学術会議とRuby" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0025/0025-AcaSocAndRuby.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0025/0025-AcaSocAndRuby.html" data-text="学術会議とRuby">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：ささだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>昨年の 10 月暮れに、Ruby City 松江の松江テルサにおいて、<a href="http://www.ipsj.or.jp/sig/pro/">情報処理学会プログラミング研究会</a>による<a href="http://www.math.nagoya-u.ac.jp/~garrigue/pro71/">第 71 回プログラミング研究会</a>が開催されました。</p>
+
+<p>松江という土地柄からか、全部で 17 件の発表のうち、Ruby に関する発表が 6 件ありました。プログラミング研究会は、主な研究テーマとして、プログラミング言語に関する「実装技術」が含まれているものの<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>、Ruby ネタがこれだけ集まる機会はなかなかありません。</p>
+
+<p>というわけで、いい機会なので、学術会議、いわゆる「学会」ですね、そういうところでどんな発表が行われているのか、議論が行われているのか、Ruby というとてもわかりやすいサンプルがある今回のプログラミング研究会を例に、ご紹介したいと思います。好評だったら続きを書いてみたいと思います。</p>
+
+<p>今回の記事で一番言いたいことは、学会はあんまり怖くなくて、意外と面白くて、もしかしたら利用出来そうだよ、ということです。</p>
+
+<h2 id="発表一覧">発表一覧</h2>
+
+<p>第 71 回情報処理学会プログラミング研究発表会では、Ruby 関連の記事は以下の 6 つでした。</p>
+
+<ol>
+  <li>効率的なビットマップマーキングを用いた Ruby 用ごみ集め実装、○中村 成洋　松本 行弘 (ネットワーク応用通信研究所)</li>
+  <li>Ruby VM における Mostly-Copying GC の実装、○鵜川 始陽 (電気通信大学)</li>
+  <li>Ruby 処理系へのスナップショット GC の実装、○相川 光　笹田 耕一　本位田 真一 (東京大学)</li>
+  <li>Ricsin: Ruby に C を埋め込むシステム、○笹田 耕一 (東京大学)</li>
+  <li>Ruby における実用的な多言語処理の実装、○松本 行弘 (ネットワーク応用通信研究所)</li>
+  <li>atomic-Ruby: 世界でたった一つだけの Ruby、○奈須 翔太　辻 良繁　相川 光　笹田 耕一　竹内 郁雄 (東京大学)</li>
+</ol>
+
+<p>よく見るとわかるのですが、私が関わっているのが 3 件、まつもとさんが関わっているのが 2 件、その他 1 件、という、関係者ばかりじゃん、という内容ではありました。というか、3 件の投稿はつらかったです。正直。</p>
+
+<p>以降、各論文についてご紹介いたします。</p>
+
+<h2 id="効率的なビットマップマーキングを用いた-ruby-用ごみ集め実装-中村-成洋松本-行弘">効率的なビットマップマーキングを用いた Ruby 用ごみ集め実装 (中村 成洋、松本 行弘)</h2>
+
+<p>朝から 3 本、Ruby の GC が続きました。この 3 本については、今回の別の記事 <a href="/articles/0025/0025-RareAreGCTalk.html">レアでアレなGCの話</a> で nari （中村）さんが紹介して下さっているので、そちらもご参照下さい。</p>
+
+<p>最近は Ruby の GC の研究が熱いようです。たとえば、2009 年 1 月に箱根で開催された<a href="http://www.ipsj.or.jp/prosym/50/50program.html">第 50 回プログラミングシンポジウム</a>でも「短寿命オブジェクトを対象とした静的解析 GC の提案 」というタイトルの発表がありました。タイトルからして Ruby と関係ないだろう、とたかをくくっていたのですが、Ruby を用いた研究でびっくりしました。ちなみに内容は、単寿命オブジェクトを GC 管理とは別にしよう、という話で、まだまだ課題も多い挑戦的な内容でした。</p>
+
+<p>このように、Ruby の GC が最近よく研究されているのは、現在の実装が単純な保守的 mark &amp; sweep であるため、手を入れる余地が沢山あるため、研究にしやすい、というのがあるのでしょう。単純な実装にしているのは、それはそれで言語仕様や拡張ライブラリからの制限などといった理由があるのですが、でも、まだまだやることがあるというのは確かだと思います。</p>
+
+<p>この発表は、今回 GC の記事を書いてくれた中村さんとまつもとさんの共著です。まつもとさんは、学会発表などだと漢字表記の名前を使うのだそうです。</p>
+
+<p>概要から引用します。</p>
+
+<blockquote>
+  <p>Apache HTTP サーバの元で提供される Web サービスのようなひんぱんにサブプロセスが生成される環境下では， 現在 Ruby が採用しているマークビットをオブジェクトヘッダ内に持つマークスイープ方式のゴミ集め実装は， copy-on-write によるメモリページ共有を疎外し， 必要以上にメモリを消費する． 本研究では，マークをオブジェクトヘッダ内から独立したビットマップに移すことによるメモリ消費量実行性能の変化を示す． 効率的なビットマップマーキングのためにはオブジェクトポインタからビットマップの特定の位置の計算が必要である． 一般的にはビットマップ位置をたとえば 1MB バイト単位でアラインしておきアドレスをマスクすることでビットマップ位置を求めることが行われている． しかし， Ruby のように種々のプラットフォームで動作する言語処理系では， 利用できるメモリ割り当て API は malloc() しかないため， 効率良くアラインされたメモリを確保する方法は知られていない． 本研究では Ruby のオブジェクト配置方式を利用し， 移植性を維持したまま， オブジェクトポインタから定数時間でビットマップ位置を計算する手法を提案する． また， ニ分木検索を用いたビットマップマーキングと比較したマーキング性能の改善も示す．</p>
+</blockquote>
+
+<p>Ruby の話になのにいきなり Apache という単語が出てきて驚きます。何がやりたいかというと、最近 Ruby Enterprise Edition などがやっているらしい bitmap marking GC を効率的に実装する、という話です。</p>
+
+<p>さて、そもそもなんで bitmap marking GC が考えられているかというと、fork (2) （プロセスを分岐させるアレです）で利用される Copy on Write (COW) という技術と相性をよくするためなんですね。mark bit をオブジェクトの領域に用意している現在の Ruby 実装では、mark 時に不要な COW を発生することになります。しかし、mark bit を外に出してしまえば、mark （書き込み）するのはそのマークが集まったページだけ、ということになり、不要な COW が必要なくなります。</p>
+
+<p>ここで問題になるのは、オブジェクトのアドレスから適切な mark bit の取得方法になります。それを、移植性が高く、単純な方法で実現する、というのが本論文の骨子です。</p>
+
+<p>質疑応答では、Hash などではどうか、など、他手法との比較が十分ではないといったことが指摘されていました。</p>
+
+<h2 id="ruby-vm-における-mostly-copying-gc-の実装-鵜川-始陽">Ruby VM における Mostly-Copying GC の実装 (鵜川 始陽)</h2>
+
+<p>GC 第二弾。</p>
+
+<p>著者の鵜川さんは、Java などで組込機器向けの効率的な GC の研究などをされてきた方です。</p>
+
+<blockquote>
+  <p>本研究では Ruby VM にコピー GC を実装した．従来の Ruby VM は，メモリ管理に保守的マークスイープ GC を用いていた．その理由は，Ruby には多くの C 言語で記述された拡張モジュールがあり，これらの関数が扱う領域のどこに Ruby オブジェクトへのポインタがあるかが精確には分からないためである．我々は，Bartlettのmostly-copying GC を応用しコピー GC を実現した．基本的なアイデアは，ポインタかどうか分からない値の含まれる「あいまいなルート」から指されるオブジェクトは移動させず，それ以外のオブジェクトのみを移動させるというものである．しかし Bartlett のアルゴリズムは，あいまいなルートが多くのポインタを含む場合に回収できないごみが多くなる．そのため改善したアルゴリズムを提案する．提案アルゴリズムでは，マークスイープ GC を組み合わせることにより，このような場合もごみを回収できるようにした．これによりヒープのコンパクションが可能になり，生きているオブジェクトの減少に合わせて広がったヒープを縮小できるようになった．本稿では，そのアルゴリズムの詳細を述べ，それを実装したVM の性能評価を行う．</p>
+</blockquote>
+
+<p>Ruby の保守的 GC は、保守的ゆえにコピーができない仕様ですが、本当にコピーできないのはマシンスタックをルートとするような場所だけなので、じゃあそれ以外はコピーしてしまおう、という話です。コピーをするとメモリ断片化が解消できたりと、いろいろいいことがあるので、嬉しいこと、できることが増えるよ、という話です。</p>
+
+<p>実装は、Ruby にマージされる前の YARV を利用したとのことで、私が驚いてしまいました。もう数年も前のソースベースなわけで。今度、最新版に試してもらえるようにお願いしました。</p>
+
+<p>実装し、実験した結果は良好なようですが、例えばオブジェクトの種類ごとにアロケーションする場所を変更するなど、細かい改善が色々あったので、この GC 方式が本当に性能に寄与しているかはわからない、という結果でした。</p>
+
+<p>質疑応答では、まつもとさんが「すぐにでも取り込みたい」と発言し、期待の高さを示していました。</p>
+
+<h2 id="ruby-処理系へのスナップショット-gc-の実装-相川-光笹田-耕一本位田-真一">Ruby 処理系へのスナップショット GC の実装 (相川 光　笹田 耕一　本位田 真一)</h2>
+
+<p>GC 第三弾。</p>
+
+<p>この発表は、私が関係する 3 件の発表のなかの最初の発表です。これは学生さんによる発表です。</p>
+
+<blockquote>
+  <p>オブジェクト指向スクリプト言語 Ruby はガーベッジコレクション（以下，GC）を備えており，プログラマがメモリ管理をする必要がないという特長をもつ．しかし，現在広く利用されている Ruby 処理系は停止型 GC を採用しており，場合によってはアプリケーションの実行が長く中断されてしまうという問題がある．これを解決するため，一連の GC 処理を細かく分割し，アプリケーションと並行して少しずつ実行するインクリメンタル GC という手法が考案されている．そこで，我々は GC によるアプリケーションの停止時間を低減するため，インクリメンタル GC の一つであるスナップショット GC を Ruby 処理系へ実装した．スナップショット GC にはオブジェクト間の参照関係を維持するための処理（ライトバリア）が必要となるが，C 言語による拡張ライブラリが開発可能な Ruby においては，これらにもライトバリアを挿入しなければならない．このため，本研究では GC 時にメモリ領域を書き込みから保護しておくことでライトバリア挿入の漏れを検出するという方式を用いて，効率的にスナップショット GC を実装した．本発表では Ruby 処理系におけるスナップショット GC の実装と開発，および評価結果について述べる．</p>
+</blockquote>
+
+<p>Ruby にリアルタイム GC の一種であるスナップショット GC を実装するという話になります。</p>
+
+<p>スナップショット GC 自体はよく知られた GC なので、まぁ頑張って実装すればいいんですが、そこで問題になるのがライトバリア。ライトバリアはいくつかの GC に必要とされる処理で、プログラムの書き込みをチェックするために必要になるのですが、これが 1 つでも抜けていると GC が正しく動かない。つまり、漏れなくきっちり挿入しなければいけない、というのが GC の実装の一つのハードルになります。ちなみに、関数型言語などの場合、この「書き込み」箇所が少ないので、入れるのが相対的に楽ちんとか、そういった話もあります。</p>
+
+<p>で、我々はどうしたかというと、一度テストプログラムを走らせて、そのテストプログラムのメモリ書き込み履歴を解析することによって、ライトバリアが必要な箇所を自動的に検出する、という手法を提案しました。</p>
+
+<p>質疑応答では、テストプログラムだけではやはり抜けが出るので、他の自動化手法（たとえば、静的な型解析) と組み合わせるのはどうだろうか、という意見が出ました。</p>
+
+<h2 id="ricsin-ruby-に-c-を埋め込むシステム-笹田-耕一">Ricsin: Ruby に C を埋め込むシステム (笹田 耕一)</h2>
+
+<p>これは私の発表でした。</p>
+
+<blockquote>
+  <p>スクリプト言語 Ruby は，その記述の容易さから世界中で広く利用されているオブジェクト指向プログラミング言語である．C 言語を用いて実装されている Ruby 処理系は Ruby C API を提供しており，Ruby では記述できない機能拡張や，性能のボトルネックとなるメソッドを C で実装するといったことが可能である．しかし，C で機能拡張を行う場合，メソッド単位で C 言語を記述する必要があり，Ruby プログラムの一部を直接 C で記述することはできない．また，Ruby から C のような，言語をまたぐプログラムの呼び出しにはオーバヘッドが生じるという問題がある．そこで，我々は Ruby プログラムに C プログラム片を埋め込むためのシステム Ricsin を開発した．埋め込んだ C プログラム片から Ruby プログラムのローカル変数などのコンテキスト情報へのアクセスが可能である．本システムを用いることで，Ruby の記述性の高さと C 言語の強力な機能を組み合わせることができる．また，Ruby 処理系に専用の命令を導入することで言語間の呼び出しオーバヘッドを抑える．本論文では Ricsin のアーキテクチャについて述べ，実装し評価を行った結果を述べる．</p>
+</blockquote>
+
+<ul>
+  <li><a href="http://www.atdot.net/~ko1/activities/ricsin2009.pdf">論文の PDF</a></li>
+  <li><a href="http://www.atdot.net/~ko1/activities/ricsin2009_pro.pdf">スライドの PDF</a></li>
+</ul>
+
+<p>Ruby Inline という、Ruby の中に C 拡張ライブラリを記述してしまうためのライブラリはありますが、Ricisn はそれをさらに進めたものになります。Ruby Inline では、C でメソッドを記述していましたが、Ricsin では Ruby のメソッドの中にちょびっとだけ C プログラム片を挟むことで、もっと気楽に C を利用した Ruby プログラムを記述できるようになります。</p>
+
+<p>イメージ的には、C のインラインアセンブラが適当で、<strong>C</strong> “…” と書いたとき、”…” の部分に C プログラムを記述できるというものです。他にも、いろいろ工夫はやっています。気持ち悪い機能としては、C の中に Ruby の変数を直接参照する方法があったりなどです。</p>
+
+<p>技術的には、埋め込んだ C のプログラム片を VM の 1 命令として扱ってしまおう、というものです。というか、VM の命令を自由に拡張できる VM はどんなものか、そんなことを考えてこの研究を行いました。</p>
+
+<p>質疑応答では、こういう機能を入れると、あとでそれに依存したプログラムがあったとき、処理系の開発で困らないか、といった質問がありました。</p>
+
+<h2 id="ruby-における実用的な多言語処理の実装-松本-行弘">Ruby における実用的な多言語処理の実装 (松本 行弘)</h2>
+
+<p>我らがまつもとさんの論文です。</p>
+
+<blockquote>
+  <p>多くのスクリプト言語において多言語テキスト処理は Unicode を固定的な内部文字コードとして採用しているが，その場合，Unicode 以外の文字集合で表現されたテキストを処理するためには文字集合間の変換が必要になり，文字集合間の互換性や文字集合における歴史的な事情などによりさまざまな問題を引き起こす可能性がある．そこで筆者が開発しているスクリプト言語 Ruby に対して，固定的な内部文字集合を持たない文字集合独立方式を採用し，文字集合間の変換をできるだけ行わないテキスト処理機能を実装した．本発表で述べる Ruby の多言語テキスト処理機能は，Unicode を固定的な内部文字集合とする他スクリプト言語 (Perl および Python) と比して，テキスト処理におけるプログラムの簡潔さおよび性能において劣らない実用的なものであることを示す．本発表で述べる多言語テキスト処理機能は Ruby バージョン 1.9 として公開されている．</p>
+</blockquote>
+
+<p>m17n を、こんな実装にしたよ、他の言語処理系と比べて、例えばパフォーマンスはこんな感じ、書きやすさはこんな感じ、といったことを議論する場でした。色々悩んで決めた仕様、こういう形できちんとまとめて公開するというのは大事ですね。</p>
+
+<h2 id="atomic-ruby-世界でたった一つだけの-ruby-奈須-翔太辻-良繁相川-光笹田-耕一竹内-郁雄">atomic-Ruby: 世界でたった一つだけの Ruby (奈須 翔太　辻 良繁　相川 光　笹田 耕一　竹内 郁雄)</h2>
+
+<p>最後はまた私の関係の論文です。これも学生さんの発表でした。</p>
+
+<blockquote>
+  <p>本発表では，省リソース環境にも適応可能でコンパクトな Ruby 処理系を作成するシステム“atomic-Ruby”のコンセプトについて述べる．Ruby はその使いやすさから世界中で利用されているオブジェクト指向プログラミング言語である．この使いやすさを実現するため，Ruby 処理系にはさまざまな機能拡張が行われてきた．しかし，その結果として Ruby 処理系は肥大化する傾向にあり，組み込みソフトウェアのようなリソースの限られた計算機には向かないという問題点がある．そこで我々は，実行する Ruby スクリプトに応じて必要な機能のみを備える Ruby 処理系の生成システム“atomic-Ruby”を提案する．atomic-Ruby は，この目標を達成するために 3 つのコンポーネントからなる．まず，Ruby スクリプトの実行に必要な最低限のクラス，メソッドを適切に判別着脱する機能を有する．次に，正規表現，ガーベッジコレクション（GC），スレッドといった機能の取捨選択を可能にする．そして，Ruby スクリプトをあらかじめ Ruby 仮想マシン上の命令列に事前コンパイルするすることで，プログラム実行の効率化やパーサ・コンパイラの着脱を可能にする．本発表では，atomic-Ruby を紹介し，現在の進捗と今後の展望について述べる．</p>
+</blockquote>
+
+<p>Ruby 1.9 には様々な機能が追加され、便利な言語処理系になりました。しかし、いろんな機能を節操なく追加したため、とても大きく、取り回しの難しいソフトウェアになったとも言えます。とくに、「ちょっと Ruby をアプリケーションに搭載する」とか、「リソースの限られた環境や機器に Ruby を載せよう」といったときに、この大きさは足かせになります。</p>
+
+<p>そこで我々はこの問題を解決するために、アプリケーションや環境に最適な、世界でたった一つだけの Ruby を生成するためのシステムである atomic-Ruby を開発しており、この発表はその紹介を行うものでした。</p>
+
+<p>実は、先の発表での「スナップショット GC」の話も、atomic-Ruby で利用するための要素技術という文脈です。</p>
+
+<p>これは、3 つのアイデアからなっています。</p>
+
+<ol>
+  <li>必要な機能だけ追加する機能（動的：実行時、静的：ビルド時）</li>
+  <li>パーサ・コンパイラが不要なら削除する機能</li>
+  <li>コア機能（スレッドや正規表現など）の実装を選択する機能</li>
+</ol>
+
+<p>atomic-Ruby 自体はまだ構想段階であり、まとまったものが出来るのはまだまだ先なのですが（とくに、学生さんには Ruby 処理系全体を把握してリストラするというのは、思った以上に困難な作業のようです）、Ruby 処理系に関わる一つの取り組みとして覚えておいてもらえるとよいなぁと思います。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は、直接 Ruby の仕様、および Ruby の処理系に関する発表を紹介しました。</p>
+
+<p>Ruby の実装などには、もちろん Ruby をベースにしていない論文からもたくさん参考にしています。この記事に反響があれば、もしかしたらそういう記事の紹介もしていくかもしれません。</p>
+
+<p>Ruby の実装なんかに限らず、学会やら研究会やらでは興味深い発表が行われています。私はプログラミングが好きなので、プログラミング研究会がぴったりな場所でした。いつも楽しく参加しています。もし、お近くで、興味のある分野の学会が開催されるのであれば、一度参加してみるとよいのではないかと思います。ぜひ、学会を利用してみて下さい。</p>
+
+<h2 id="著者紹介">著者紹介</h2>
+
+<p>ささだこういち。最近、助教という肩書きになっているのをよく見ます。Ruby 1.9.1 がリリースされたので、我慢してきた変更をどんどん入れたいと思います。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>研究テーマは「プログラミング言語の基本概念」、「設計原理」、「実装技術」、「プログラミング方法論」、「プログラミング環境」、「その他、プログラミングに関する面白い話題」と、まぁプログラミングに関することであればなんでもいいようです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

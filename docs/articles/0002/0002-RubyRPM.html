@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>rpm を Ruby でいじる</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0002/0002-RubyRPM.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>rpm を Ruby でいじる</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0002/0002-RubyRPM.html" class="hatena-bookmark-button" data-hatena-bookmark-title="rpm を Ruby でいじる" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0002/0002-RubyRPM.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0002/0002-RubyRPM.html" data-text="rpm を Ruby でいじる">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#ruby-rpm-のインストール" id="markdown-toc-ruby-rpm-のインストール">ruby-rpm のインストール</a>    <ul>
+      <li><a href="#ビルド手順" id="markdown-toc-ビルド手順">ビルド手順</a></li>
+    </ul>
+  </li>
+  <li><a href="#windows-で-rpm" id="markdown-toc-windows-で-rpm">Windows で RPM</a></li>
+  <li><a href="#ruby-rpm-を使う前に" id="markdown-toc-ruby-rpm-を使う前に">ruby-rpm を使う前に</a>    <ul>
+      <li><a href="#バックアップのとり方" id="markdown-toc-バックアップのとり方">バックアップのとり方</a></li>
+      <li><a href="#リカバリの仕方" id="markdown-toc-リカバリの仕方">リカバリの仕方</a></li>
+      <li><a href="#テスト用の-rpm-db-を用意する" id="markdown-toc-テスト用の-rpm-db-を用意する">テスト用の RPM DB を用意する</a></li>
+      <li><a href="#ruby-rpm-での-initdb-rebuilddb" id="markdown-toc-ruby-rpm-での-initdb-rebuilddb">ruby-rpm での –initdb, –rebuilddb</a></li>
+    </ul>
+  </li>
+  <li><a href="#ruby-rpm-を使ってみよう" id="markdown-toc-ruby-rpm-を使ってみよう">ruby-rpm を使ってみよう</a>    <ul>
+      <li><a href="#rpm-db-に問い合わせる-rpm--q" id="markdown-toc-rpm-db-に問い合わせる-rpm--q">RPM DB に問い合わせる (rpm -q)</a>        <ul>
+          <li><a href="#外部イテレータ" id="markdown-toc-外部イテレータ">外部イテレータ</a></li>
+          <li><a href="#引数の形式" id="markdown-toc-引数の形式">引数の形式</a></li>
+          <li><a href="#-q-requires" id="markdown-toc--q-requires">-q –requires</a></li>
+          <li><a href="#-qf-rpmtag_basenames" id="markdown-toc--qf-rpmtag_basenames">-qf (RPM::TAG_BASENAMES)</a></li>
+        </ul>
+      </li>
+      <li><a href="#パッケージをアップグレードする-rpm--u" id="markdown-toc-パッケージをアップグレードする-rpm--u">パッケージをアップグレードする (rpm -U)</a>        <ul>
+          <li><a href="#note" id="markdown-toc-note">note</a></li>
+          <li><a href="#tscommit-に渡すブロック" id="markdown-toc-tscommit-に渡すブロック">ts.commit に渡すブロック</a></li>
+        </ul>
+      </li>
+      <li><a href="#パッケージをインストールする-rpm--i" id="markdown-toc-パッケージをインストールする-rpm--i">パッケージをインストールする (rpm -i)</a></li>
+      <li><a href="#パッケージを削除する-rpm--e" id="markdown-toc-パッケージを削除する-rpm--e">パッケージを削除する (rpm -e)</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+  <li><a href="#参考文献" id="markdown-toc-参考文献">参考文献</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>もりきゅうです。
+本稿では ruby-rpm を解説します。
+ruby-rpm は Ruby で RPM を扱うための拡張ライブラリです。
+RPM については <a href="http://www.linux.or.jp/JF/JFdocs/RPM-HOWTO.html">RPM HOWTO</a> や <a href="http://www.rpm.org/max-rpm/">Maximum RPM</a> をご参照ください。</p>
+
+<p>ruby-rpm を用いると、rpm コマンドを経由せずに Ruby から RPM DB を扱え、問い合わせ・インストール・アップグレード・削除の処理を実行できます。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>私が <a href="http://www.momonga-linux.org/">Momonga Project</a> に誘われて ruby-rpm をいじるようになったのは、つい最近のことです。
+RPM についてもあまり理解していなかったので、ruby-rpm と一緒に調べていくことにしました。
+本稿はその調査記録として ruby-rpm の簡単な使い方を紹介します。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p>RPM は Red Hat によって開発が進められています。RPM の機能は C ライブラリとして提供されており、これを用いた Python による拡張ライブラリ (rpm-python) が Red Hat によって提供されています (rpm-python は RPM のソースツリーに含まれています)。</p>
+
+<p>拡張ライブラリという点で、ruby-rpm は rpm-python の Ruby 版と考えてよいのですが、仕様を見る限りでは特に rpm-python を参考にして開発されているわけでもないようです。</p>
+
+<p>ruby-rpm はいくぶん古い API を元にしているので、最近の RPM を扱うために少々いびつな修正が行われています。
+また、独自の仕様がいくつか見られます。これはおそらく momonga からの要請に沿ったものでしょう。
+このような理由から、その実装は少々見通しが悪くなっています。改善の余地は大いにあります。</p>
+
+<p>Momonga Project では Ruby を積極的に利用していますが、特にパッケージ管理ツールである OmoiKondara, mph-get は Ruby を用いた momonga 独自のツールです。そして、これらを支えているのが ruby-rpm です (でした)。
+残念ながら、現在の OmoiKondara, mph-get は直接 rpm, rpmbuild コマンドを呼び出しており、ruby-rpm をあまり利用していません。
+それは、ruby-rpm にいくつかバグがあった (また、RPM のバージョンを上げたときに十分対応できていなかった) ことが原因ではないかと考えられます。</p>
+
+<p>ほとんどの場合、直接コマンドを呼び出しても十分な結果を得られます。しかし、ディストリビューションに含まれる全パッケージの依存関係を元にするようなツールを書くとき、コマンド呼び出しでは効率が悪かったり、きれいに実装できないところが出てくると思います (その前に、そのような問題が出てくるようなアイデアが必要なわけですけど)。
+そこで ruby-rpm の出番というわけです。</p>
+
+<p>どのような拡張ライブラリでも同じことが言えますが、ruby-rpm の開発を通して RPM の実装 (ソース) に対する理解を深めることができます。RPM は今後も多くのディストリビューションで使われていくパッケージングシステムであると思います。Ruby を通して RPM の理解を深めるのもまた一興ではないでしょうか。興味のある方は是非 ruby-rpm の開発にご協力ください。そして Momonga Project へご参加ください。</p>
+
+<h2 id="ruby-rpm-のインストール">ruby-rpm のインストール</h2>
+
+<p>ホームページを確認すると、MURATA さんによって公開されている ruby-rpm の最終リリースは ruby-rpm-1.1.1 のようです。その README:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Requirements
+ ------------
+
+ * ruby 1.6
+ * gcc
+ * rpm 4.0.0</code></pre></figure>
+
+<p>今となっては少々古い環境であることは否めません。ここでは momonga で配布されているより新しい ruby-rpm を試してみたいと思います。</p>
+
+<h3 id="ビルド手順">ビルド手順</h3>
+
+<p>momonga は svn で管理されています。現在の <a href="http://developer.momonga-linux.org/viewcvs/trunk/pkgs/ruby-rpm/">trunk/pkgs/ruby-rpm/</a> に置かれているのは次のファイルです。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<ul>
+  <li>ruby-rpm-1.2.0.tar.bz2</li>
+  <li>ruby-rpm-1.2.0.diff</li>
+  <li>ruby-rpm.spec</li>
+</ul>
+
+<p>momonga ではパッケージを作るときに、基礎となるソースはそのまま置き、そこにいくつかのパッチをあてて momonga としてリリースしています。
+ここで扱う ruby-rpm では ruby-rpm-1.2.0.tar.bz2 に ruby-rpm-1.2.0.diff というパッチをあてて作ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ tar xvjf ruby-rpm-1.2.0.tar.bz2
+ $ cd ruby-rpm-1.2.0
+ $ patch -p1 &lt; ruby-rpm-1.2.0.diff</code></pre></figure>
+
+<p>このようなパッケージを作るときに必要なソースやパッチのあて方は、RPM で扱う際には spec ファイルという設定ファイルに記述しておき、rpmbuild というコマンドにこの spec ファイルを渡します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ rpmbuild --rcfile rpmrc --target i586 -ba ruby-rpm.spec</code></pre></figure>
+
+<p>さらに momonga では OmoiKondara が rpmbuild コマンドを呼び出してくれます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ../tools/OmoiKondara ruby-rpm</code></pre></figure>
+
+<p>というわけで、実際には手間要らずなのでした。
+ただデバッグのときには手動で rpmbuild を使うことがあります。</p>
+
+<h2 id="windows-で-rpm">Windows で RPM</h2>
+
+<p>RPM の実験を Windows 上で行いたい方も居られるでしょう (私もそのひとりです)。</p>
+
+<p>まず、Cygwin の RPM を導入する手があります。しかし今のところ Cygwin は RPM のヘッダとライブラリを配布に含めていません。ですから ruby-rpm を作ることができません。</p>
+
+<p>それでも Cygwin で ruby-rpm を使おうとするなら RPM をソースからビルドする必要があります。私の試した rpm-4.1 では Cygwin でもビルドできました。そして ruby-rpm も (少し Makefile をいじる必要がありましたが) ビルドできました。</p>
+
+<p>Cygwin を使わない方法として X on Win パッケージがあります。
+Cygwin で RPM を使う方法を探していると、HOLON Linux が提供している X on Win パッケージを見つけることができました。<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
+X on Win のブートパッケージを使えば Windows 上で一から RPM 環境を作ることができるようです。興味のある方はお試しください。</p>
+
+<h2 id="ruby-rpm-を使う前に">ruby-rpm を使う前に</h2>
+
+<p>ruby-rpm はまだ十分にテストできていません (テストケースを書きましょう！)。そのため、何らかの拍子に RPM DB が壊れてしまうことがあります。
+実行する前に、RPM DB のバックアップをとる手順と、壊れたときのリカバリの手順を確認しておきます。</p>
+
+<h3 id="バックアップのとり方">バックアップのとり方</h3>
+
+<p>/var/lib/rpm を tar などで固めれば ok です。</p>
+
+<h3 id="リカバリの仕方">リカバリの仕方</h3>
+
+<p>壊れると</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> rpmdb: PANIC: fatal region error detected; run recovery
+ error: db4 error(-30978) from db-&gt;open: DB_RUNRECOVERY: Fatal error, run database recovery
+ rpmdb: PANIC: fatal region error detected; run recovery
+ error: db4 error(-30978) from db-&gt;close: DB_RUNRECOVERY: Fatal error, run database recovery
+ error: cannot open Group index using db3 -  (-30978)</code></pre></figure>
+
+<p>このようなエラーが延々と出ます。
+こうなってしまったら RPM DB を再構築するために</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> sudo rpm --rebuilddb</code></pre></figure>
+
+<p>を実行してください。/var/lib/rpm/Packages さえあれば再構築できるようです。</p>
+
+<h3 id="テスト用の-rpm-db-を用意する">テスト用の RPM DB を用意する</h3>
+
+<p>RPM DB の位置は RPM の root という設定項目で決まります。デフォルトでは /var/lib/rpm に作られます (この場合 root=/ です。どこに root を設定したとしても必ず #{root}/var/lib/rpm ディレクトリは作られます)。
+root を明示的に指定するには –root オプションを与えます。
+例えば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> rpm --initdb --root ~</code></pre></figure>
+
+<p>とすれば ~/var/lib/rpm/Packages という DB (Berkeley DB) が作られます。
+すでに DB が存在するときは rpm –initdb は何も行いません。
+でも、からっぽの DB を用意してもあまり使い道がないですね。</p>
+
+<h3 id="ruby-rpm-での-initdb-rebuilddb">ruby-rpm での –initdb, –rebuilddb</h3>
+
+<p>ruby-rpm 上でも rpm –initdb, rpm –rebuilddb と同様の操作を行えます (あまり使う機会はないかもしれませんけど)。</p>
+
+<ul>
+  <li>rpm –initdb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/ruby
+ require 'rpm'
+ RPM::DB.init</code></pre></figure>
+
+<ul>
+  <li>rpm –rebuilddb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/ruby
+ require 'rpm'
+ RPM::DB.rebuild</code></pre></figure>
+
+<h2 id="ruby-rpm-を使ってみよう">ruby-rpm を使ってみよう</h2>
+
+<p>ruby-rpm を使って RPM DB に問い合わせる方法、パッケージをインストール・アップグレード・削除する方法を見ていきます。
+対応する rpm コマンドも書いておきます (オプション・フラグの類は今回扱いません)。</p>
+
+<h3 id="rpm-db-に問い合わせる-rpm--q">RPM DB に問い合わせる (rpm -q)</h3>
+
+<p>インストール済みのパッケージについて問い合わせるには RPM::DB オブジェクトを用います。</p>
+
+<ul>
+  <li>rpm -q ruby-rpm</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/ruby
+ require 'rpm'
+ db = RPM::DB.open
+ db.each_match(RPM::TAG_NAME, "ruby-rpm") {|i|
+   p i
+ }</code></pre></figure>
+
+<p>RPM::DB.open で RPM DB を開き、db.each_match(RPM::TAG_NAME, “ruby-rpm”) で ruby-rpm という名前を持つパッケージを問い合わせています。
+同じ名前であってもバージョンが異なるパッケージをインストールできますから、each_match の結果は複数になることもあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/ruby
+ db = RPM::DB.open
+ db.each_match(RPM::DBI_LABEL, "ruby-rpm") {|i|
+   p i
+ }</code></pre></figure>
+
+<p>RPM::DBI_* 系のタグは大きなくくりになりますが、RPM::TAG_NAME と RPM::DBI_LABEL で違いはないと思われます。</p>
+
+<h4 id="外部イテレータ">外部イテレータ</h4>
+
+<p>db.each, db.each_match は内部で db.init_iterator, mi.next_iterator を呼び出しており、外部イテレータから内部イテレータへ変換しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # mi は RPM::MatchIterator オブジェクト
+ mi = db.init_iterator(RPM::TAG_NAME, "ruby-rpm")
+ while i = mi.next_iterator
+   p i
+ end</code></pre></figure>
+
+<p>db.each_match を Ruby で実装すれば次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def db.each_match(tag, val)
+   mi = db.init_iterator(tag, val)
+   while i = mi.next_iterator
+     yield i
+   end
+ end</code></pre></figure>
+
+<h4 id="引数の形式">引数の形式</h4>
+
+<p>引数の形式として正規表現やグロブを与えることもできます。
+現在の ruby-rpm の仕様では、引数の形式を指定するために mi.set_iterator_re を用いなければならず、結果的に外部イテレータの形で記述する必要があります。
+rpm コマンドではグロブ形式で引数を与えることができます。
+これを ruby-rpm で表現するためには、次のように書きます。</p>
+
+<ul>
+  <li>rpm -qa “py*”</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> mi = db.init_iterator(RPM::DBI_PACKAGES, nil)
+ mi.set_iterator_re(RPM::TAG_NAME, RPM::MIRE_GLOB, "py*")
+ while i = mi.next_iterator
+   p i
+ end</code></pre></figure>
+
+<p>mi.set_iterator_re の第二引数 mode=RPM::MIRE_GLOB が引数の形式を表します。RPM::MIRE_GLOB のほかに RPM::MIRE_DEFAULT, RPM::MIRE_STRCMP, RPM::MIRE_REGEX を与えることができます。</p>
+
+<h4 id="-q-requires">-q –requires</h4>
+
+<p>rpm -q (–query) のオプションは多彩です。
+これらの多くは popt ライブラリによる alias として実現されています。
+alias の設定は rpm-4.3.2 ならば /usr/lib/rpm/rpmpopt-4.3.2 にあります。また、ユーザごとに ~/.popt に記述することができます。</p>
+
+<p>この設定を見ると</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> -q --requires</code></pre></figure>
+
+<p>は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> -q --qf "[%{RequireName} %{RequireFlags:depflags} %{RequireVersion}\n]"</code></pre></figure>
+
+<p>と同等であることがわかります。
+–qf (–queryformat) は ruby-rpm では RPM::Package#sprintf として指定できます。</p>
+
+<ul>
+  <li>rpm -q –requires ruby-rpm</li>
+  <li>rpm -qR ruby-rpm</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/ruby
+ require 'rpm'
+ db = RPM::DB.open
+ db.each_match(RPM::TAG_NAME, "ruby-rpm") {|i|
+   puts i.sprintf("[%{RequireName} %{RequireFlags:depflags} %{RequireVersion}\n]")
+ }</code></pre></figure>
+
+<h4 id="-qf-rpmtag_basenames">-qf (RPM::TAG_BASENAMES)</h4>
+
+<p>ファイル名からパッケージを得るには -qf を用います。これを ruby-rpm で実現するためには、タグとして RPM::TAG_BASENAMES を与えます。</p>
+
+<ul>
+  <li>rpm -qf /bin/sh</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/ruby
+ require 'rpm'
+ db = RPM::DB.open
+ db.each_match(RPM::TAG_BASENAMES, "/bin/sh") {|i|
+   p i
+ }</code></pre></figure>
+
+<h3 id="パッケージをアップグレードする-rpm--u">パッケージをアップグレードする (rpm -U)</h3>
+
+<p>RPM DB を更新する処理 (トランザクションを扱う処理) では、RPM::DB.open の第 1 引数として true を指定する必要があります。
+また、rpm コマンドと同様、RPM DB を更新する場合は sudo が必要になります。</p>
+
+<p>パッケージをアップグレードするには次のようにします。</p>
+
+<ul>
+  <li>rpm -U ~/PKGS/i586/mph-0.92.7-11m.i586.rpm</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/ruby
+ require 'rpm'
+ db = RPM::DB.open(true)
+ db.transaction {|ts|
+   p ts
+   pkg_filename = "#{ENV["HOME"]}/PKGS/i586/mph-0.92.7-11m.i586.rpm"
+   pkg = RPM::Package.open(pkg_filename)
+   pkg_key = "mph"
+   ts.upgrade(pkg, pkg_key)
+   ts.check
+   ts.order
+   pkg_file = nil # block global scope
+   ts.commit {|cb|
+     p [cb.type , cb.key , cb.package , cb.amount , cb.total]
+     case cb.type
+     when RPM::CALLBACK_INST_OPEN_FILE
+       if cb.key == pkg_key
+         pkg_file = open(pkg_filename)
+         next pkg_file
+       end
+     when RPM::CALLBACK_INST_CLOSE_FILE
+       if cb.key == pkg_key
+         pkg_file.close
+       end
+     end
+   }
+   p :last
+ }
+ p :done</code></pre></figure>
+
+<p>ちょっと長くて読みにくいですが、長くなっている commit {} のブロックを外してみてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> db.transaction {|ts|
+   p ts
+   pkg_filename = "#{ENV["HOME"]}/PKGS/i586/mph-0.92.7-11m.i586.rpm"
+   pkg = RPM::Package.open(pkg_filename)
+   pkg_key = "mph"
+   ts.upgrade(pkg, pkg_key)
+   ts.check
+   ts.order
+   ts.commit {}
+   p :last
+ }</code></pre></figure>
+
+<p>ts.upgrade(pkg, pkg_key) でアップグレードトランザクションを追加しています。</p>
+
+<p>ts.check で依存関係を確認します。</p>
+
+<p>ts.order で処理順序を決定します。</p>
+
+<p>ts.commit でトランザクションを実行します。</p>
+
+<h4 id="note">note</h4>
+
+<p>RPM の API ではトランザクションセットにトランザクションを追加していくと考えます。
+db.transaction が返す ts は Transaction Set なのです。
+でもロールバックは ts 単位なんですよね……謎。
+ちょっとこの辺り ruby-rpm の名前付け (というより RPM の API 名) は混乱しています。</p>
+
+<h4 id="tscommit-に渡すブロック">ts.commit に渡すブロック</h4>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   pkg_file = nil # block global scope
+   ts.commit {|cb|
+     p [cb.type , cb.key , cb.package , cb.amount , cb.total]
+     case cb.type
+     when RPM::CALLBACK_INST_OPEN_FILE
+       if cb.key == pkg_key
+         pkg_file = open(pkg_filename)
+         next pkg_file
+       end
+     when RPM::CALLBACK_INST_CLOSE_FILE
+       if cb.key == pkg_key
+         pkg_file.close
+       end
+     end
+   }</code></pre></figure>
+
+<p>commit にブロックを渡すと、コミット処理の進行状況に応じてブロックが評価されます (このようなブロックの使い方をコールバック (callback) といいます)。
+ブロックを渡さないとデフォルトのコールバックを実行します (キャラクタベースのプログレスバーが表示されます)。</p>
+
+<p>ts.commit を呼ばなかったときは ts.transaction {} を抜けるときに内部で ts.commit が呼ばれます。
+この際、ブロック呼び出しが妙なことになって、ts.transaction に渡したブロックが ts.commit を読んだ際にも呼ばれてしまいます (これはおそらく Ruby の不具合だと思います<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>)。</p>
+
+<h3 id="パッケージをインストールする-rpm--i">パッケージをインストールする (rpm -i)</h3>
+
+<p>パッケージをインストールするときは、アップグレードの例の ts.upgrade を ts.install に置き換えればいいです。</p>
+
+<ul>
+  <li>rpm -i [package]</li>
+</ul>
+
+<h3 id="パッケージを削除する-rpm--e">パッケージを削除する (rpm -e)</h3>
+
+<p>パッケージを削除するには次のようにします。</p>
+
+<ul>
+  <li>rpm -e ruby-rpm</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/usr/bin/ruby
+ require 'rpm'
+ db = RPM::DB.open(true)
+ db.transaction {|ts|
+   p ts
+   ts.delete("ruby-rpm")
+   ps = ts.check
+   p ps
+   ts.abort if ps
+   ts.order
+   ts.commit {}
+   p :last
+ }
+ p :done</code></pre></figure>
+
+<p>ts.check の結果、依存関係に問題があれば ps (Problem Set) は RPM::Require オブジェクトを要素とする配列になります。問題がなければ ps は nil になります。</p>
+
+<p>削除のトランザクションでは (インストールやアップグレードとは違って) 依存関係に問題があっても ts.commit は abort しないことに注意してください。
+明示的に ts.abort しなければ、依存関係に問題があっても削除のトランザクションは実行され、あろうことか成功してしまいます (そしておそらく RPM DB は panic に陥り、–rebuilddb のお世話になります)。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<ul>
+  <li>ruby-rpm は RPM の Ruby 拡張ライブラリです。</li>
+  <li>ruby-rpm を用いると、rpm コマンドを経由せずに Ruby から RPM DB を扱え、問い合わせ・インストール・アップグレード・削除の処理を実行できます。これらの機能を元に、さまざまなツールを開発できます。</li>
+  <li>ruby-rpm は現在 Momonga Project で開発が続けられています。開発の成果はパッチとして提供されます。現在いくつか不具合が見つかっています。rpm-python などと比較して、見直すべき点もあります。</li>
+  <li>ruby-rpm の開発を通して RPM に対する理解を深めることができます。</li>
+</ul>
+
+<h2 id="参考文献">参考文献</h2>
+
+<p>[1] Red Hat RPM Guide
+Eric Foster-Johnson
+Published by Wiley Publishing, Inc.
+Copyright (c) 2003 by Red Hat, Inc.</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>もりきゅうは異業種社長 4 名 + 主婦 2 名 + 私という妙なパーティで運営している会社<a href="http://www.mitta-sys.jp/">ミッタシステム</a>のプログラマです。</p>
+
+<p>著者の連絡先は moriq@moriq.com です。</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>本稿を書き始める前には、これらの処理は当然できるものと考えていました。しかし、テストしてみると不具合が見つかりました。幸いなことに直し方が判ったので、パッチを投げつつその成果を元に執筆することになりました。これぞ執筆駆動開発！&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>実は、ruby-rpm の開発過程も書くつもりでした。しかし、ruby-rpm が何なのか事前に説明しておかないと話を始められないのでした。というわけで、このような紹介記事になりました。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>現在パッチは増えています。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>http://www.mars.dti.ne.jp/~sohda/cygwin/holon.html に詳しい。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>[[ruby-dev:24252]] で報告済み&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Nora チュートリアル 【第 3 回】</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0003/0003-NoraTutorial.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Nora チュートリアル 【第 3 回】</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0003/0003-NoraTutorial.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Nora チュートリアル 【第 3 回】" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0003/0003-NoraTutorial.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0003/0003-NoraTutorial.html" data-text="Nora チュートリアル 【第 3 回】">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#nora-チュートリアル-第-3-回" id="markdown-toc-nora-チュートリアル-第-3-回">Nora チュートリアル 第 3 回</a>    <ul>
+      <li><a href="#アプリケーションフレームワーク" id="markdown-toc-アプリケーションフレームワーク">アプリケーションフレームワーク</a></li>
+      <li><a href="#webcontrollersimple" id="markdown-toc-webcontrollersimple">Web::Controller::Simple</a></li>
+      <li><a href="#画面の遷移" id="markdown-toc-画面の遷移">画面の遷移</a></li>
+      <li><a href="#フォームボタンによる画面遷移" id="markdown-toc-フォームボタンによる画面遷移">フォーム、ボタンによる画面遷移</a></li>
+      <li><a href="#コントローラ内部でのリダイレクト" id="markdown-toc-コントローラ内部でのリダイレクト">コントローラ内部でのリダイレクト</a></li>
+      <li><a href="#次回予告" id="markdown-toc-次回予告">次回予告</a></li>
+      <li><a href="#参考文献" id="markdown-toc-参考文献">参考文献</a></li>
+      <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="nora-チュートリアル-第-3-回">Nora チュートリアル 第 3 回</h2>
+
+<p>MoonWolf (<a href="mailto:moonwolf@moonwolf.com">moonwolf@moonwolf.com</a>)</p>
+
+<p><a href="http://www.moonwolf.com/">MoonWolf Development</a></p>
+
+<p>2004 年 11 月 9 日</p>
+
+<p><img src="/images/0003-NoraTutorial/nora_neko.png" alt="nora_neko.png" />そろそろ多機能なアプリケーションを作りたくなってきたでしょう？　多機能なアプリケーションは複数の画面を持ち、画面の遷移を必要とします。今回はそれらを綺麗にまとめ上げるためのアプリケーションフレームワークについて紹介します。</p>
+
+<h3 id="アプリケーションフレームワーク">アプリケーションフレームワーク</h3>
+
+<p>Blog、掲示板、Wiki など多機能なWebアプリケーションは入力画面、設定画面、結果表示画面などの複数の画面を持ち、それらの画面の間をリンク、フォームなどで遷移します。</p>
+
+<p>CGI で複数の画面を実現する最も単純な方法は、各画面毎に CGI ファイルを作成していく方法です。<a href="http://raa.ruby-lang.org/project/eruby/">eruby</a>、<a href="http://www.ruby-lang.org/ja/man/index.cgi?cmd=view;name=ERB">ERB</a> もこの方法に含まれます。
+この方法は最初はうまくいくのですが、画面が増えてくると CGI ファイルの中で機能が重複したり画面の遷移が複雑化してメンテナンスのコストが急激に増えていきます。</p>
+
+<p>Nora のアプリケーションフレームワークでは CGI ファイルを一つのクラスにまとめ、各画面をメソッドとして定義することでコードの重複を減らし、複雑な画面遷移を単純化します。</p>
+
+<h3 id="webcontrollersimple">Web::Controller::Simple</h3>
+
+<p>Perl の <a href="http://homepage3.nifty.com/hippo2000/perltips/CGI/Application.htm">CGI::Application</a> を参考に作られたシンプルなアプリケーションフレームワークです。
+アプリケーションを実行モード (Run-Mode) の集まりとして扱い、共通のインターフェースを持つメソッドとしてまとめます。アプリケーションは Web とのやりとりを集中的に管理するコントローラと呼ばれるクラスで構成されます。</p>
+
+<p>使い方としてはまず Web::Controller::Simple を継承したコントローラクラスを作成して setup、teardown メソッドを記述します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'web'</span>
+<span class="nb">require</span> <span class="s1">'web/controller/simple'</span>
+
+<span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
+  <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">opt</span><span class="o">=</span><span class="p">{})</span>
+    <span class="c1"># インスタンス変数の初期化、データベース接続などを行う</span>
+    <span class="c1"># @dbh = DBI.connect(...</span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">teardown</span>
+    <span class="c1"># アプリケーションの後始末。データベース接続の切断などを行う</span>
+    <span class="c1"># @dbh.disconnect</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>そして、実行モード (=画面) に対応したメソッドを定義します。
+メソッドは ‘do_’ + 実行モード という名前で定義するきまりになっています。
+実行モードを明示的に指定しない場合はデフォルトの実行モード ‘start’ が選択されるので、まず ‘do_start’ を定義します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
+  <span class="k">def</span> <span class="nf">do_start</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">rsp</span><span class="p">)</span>
+    <span class="n">rsp</span><span class="p">.</span><span class="nf">content_type</span> <span class="o">=</span> <span class="s1">'text/plain'</span>
+    <span class="n">rsp</span><span class="p">.</span><span class="nf">write</span> <span class="n">req</span><span class="p">[</span><span class="s1">'text1'</span><span class="p">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>メソッドにはリクエスト (Web::Request) とレスポンス (Web::Response) の 2 つのオブジェクトが渡されます。
+<a href="/articles/0001/0001-NoraTutorial.html">第 1 回</a>、<a href="/articles/0002/0002-NoraTutorial.html">第 2 回</a> でやったようにリクエストからデータを取り出してレスポンスに出力します。
+メソッドの戻り値は無視されるので何も考えないで良くなっています。</p>
+
+<p>実行する CGI ファイルはコントローラの初期化と API とのやりとりを書くだけと非常にシンプルになります。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<span class="nb">require</span> <span class="s1">'web'</span>
+<span class="nb">require</span> <span class="s1">'simple'</span>
+
+<span class="n">ctrl</span> <span class="o">=</span> <span class="no">MyApp</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">ctrl</span><span class="p">.</span><span class="nf">setup</span>
+
+<span class="n">api</span> <span class="o">=</span> <span class="no">Web</span><span class="o">::</span><span class="no">Interface</span><span class="o">::</span><span class="no">AUTO</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="n">api</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span><span class="o">|</span><span class="n">req</span><span class="o">|</span>
+  <span class="n">rsp</span> <span class="o">=</span> <span class="n">ctrl</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+  <span class="n">api</span><span class="p">.</span><span class="nf">response</span> <span class="n">req</span><span class="p">,</span> <span class="n">rsp</span>
+<span class="p">}</span>
+
+<span class="n">ctrl</span><span class="p">.</span><span class="nf">teardown</span>
+
+</code></pre>
+</div>
+
+<h3 id="画面の遷移">画面の遷移</h3>
+
+<p>次を指定して複数の画面を遷移してみましょう。
+実行モードは CGI の ‘rm’ (run mode) というパラメータで指定します。
+リンクを使って遷移する場合、クエリとして ‘?rm=edit’ とすることでコントローラの do_edit メソッドが起動され、実行モード edit の画面が表示されます。</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"?rm=edit;page=foo"</span><span class="nt">&gt;</span>fooの編集<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+</div>
+
+<p>do_edit メソッドではパラメタを取得して画面を組み立てます。一般的には <a href="/articles/0002/0002-NoraTutorial.html">前回</a> 使った Web::Template でテンプレートを使って画面出力します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
+  <span class="k">def</span> <span class="nf">do_edit</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">rsp</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">req</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span>
+    <span class="n">param</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="s1">'page'</span> <span class="o">=&gt;</span> <span class="n">page</span>
+    <span class="p">}</span>
+    <span class="n">tmpl</span> <span class="o">=</span> <span class="no">Web</span><span class="o">::</span><span class="no">Template</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'filename'</span><span class="o">=&gt;</span><span class="s1">'edit.html'</span><span class="p">)</span>
+    <span class="n">tmpl</span><span class="p">.</span><span class="nf">param</span> <span class="o">=</span> <span class="n">param</span>
+    <span class="n">tmpl</span><span class="p">.</span><span class="nf">output</span><span class="p">(</span><span class="n">rsp</span><span class="p">)</span>
+    <span class="n">rsp</span><span class="p">.</span><span class="nf">content_type</span> <span class="o">=</span> <span class="s1">'text/html; charset=UTF-8'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<h3 id="フォームボタンによる画面遷移">フォーム、ボタンによる画面遷移</h3>
+
+<p>フォームを使う場合には実行モードは隠しフィールドを使って指定します。</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"rm"</span> <span class="na">value=</span><span class="s">"save"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">"タイトル"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"body"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+</code></pre>
+</div>
+
+<p>Wiki や日記でよくみられる「プレビュー」「保存」など、ボタンによって処理を変えたい場合があります。その場合は隠しフィールドではなくボタンの name 属性に ‘rm_’ で始まる名前を付けることで対応します。</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"rm_preview"</span> <span class="na">value=</span><span class="s">"プレビュー"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"rm_save"</span> <span class="na">value=</span><span class="s">"保存"</span><span class="nt">&gt;</span>
+
+</code></pre>
+</div>
+
+<p>このようにするとクリックしたボタンによって do_preview,do_save ボタンが起動されます。</p>
+
+<h3 id="コントローラ内部でのリダイレクト">コントローラ内部でのリダイレクト</h3>
+
+<p>保存した後に、通常の表示画面を表示したいなど、リダイレクトが必要になることがあります。
+Location ヘッダを出力したり、&lt;meta http-equiv=”Refresh” content=”0;URL=<a href="http://example.com/">http://example.com/</a>“&gt;のような HTML を出力するなどの方法がありますが、Web::Controller::Simple ではコントローラ内部でのリダイレクトが使えます。</p>
+
+<p>たとえば xxx から yyy にリダイレクトしたい場合、do_xxx メソッドで保存処理など必要な処理が終わった後、リクエストオブジェクトをリダイレクト後画面用に変更して do_yyy メソッドを起動します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
+  <span class="k">def</span> <span class="nf">do_xxx</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">rsp</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">req</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span>
+    <span class="nb">open</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="s1">'w'</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="o">|</span>
+      <span class="n">f</span><span class="p">.</span><span class="nf">write</span> <span class="n">req</span><span class="p">[</span><span class="s1">'body'</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">req</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Top'</span>
+    <span class="n">do_yyy</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">rsp</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">do_yyy</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">rsp</span><span class="p">)</span>
+    <span class="n">page</span> <span class="o">=</span> <span class="n">req</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span>
+    <span class="c1"># ...</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<h3 id="次回予告">次回予告</h3>
+
+<p>今回紹介した内容で Wiki や  Blog、掲示板といった簡単な画面遷移のアプリケーションであれば組めるようになったと思います。
+次回は複雑な画面遷移のためのセッション管理について紹介します。</p>
+
+<h3 id="参考文献">参考文献</h3>
+
+<ul>
+  <li><a href="http://raa.ruby-lang.org/project/nora/">RAA - nora</a></li>
+  <li><a href="http://rwiki.moonwolf.com/rw-cgi.cgi?cmd=view;name=Nora">Nora ホームページ</a></li>
+</ul>
+
+<h3 id="著者について">著者について</h3>
+
+<p><img src="/images/0003-NoraTutorial/20041101_0.jpg" alt="20041101_0.jpg" /> MoonWolf は半導体メーカに勤めるプログラマです。2000 年に Ruby に触れ、それ以降 RAA (Ruby Application Archive) にてライブラリ・アプリケーションを発表し続けています。登録プロジェクト数 41 と世界 1 位です。今後も 1 位を維持するため日夜ライブラリの書けそうなネタを探しています。Ruby 関連の記事の執筆もしますので出版関係者のかた連絡お願いします。著者の連絡先は <a href="mailto:moonwolf@moonwolf.com">moonwolf@moonwolf.com</a> です。</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

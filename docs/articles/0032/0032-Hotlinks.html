@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist Hotlinks 【第 26 回】 cuzic さん</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0032/0032-Hotlinks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist Hotlinks 【第 26 回】 cuzic さん</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0032/0032-Hotlinks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist Hotlinks 【第 26 回】 cuzic さん" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0032/0032-Hotlinks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0032/0032-Hotlinks.html" data-text="Rubyist Hotlinks 【第 26 回】 cuzic さん">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>著名な Rubyist にインタビューを行う企画「Rubyist Hotlinks」。今回は関西編第 3 弾をお送りします。関西編 (3) は、Rubyist Magazine から書籍化された「Rubyist Magazine 出張版 Ruby on Windows」の著者である cuzic さんにお話を伺いました。お楽しみください。</p>
+
+<h2 id="プロフィール">プロフィール</h2>
+
+<p><img src="/images/0032-Hotlinks/cuzic02.jpg" alt="cuzic02.jpg" />
+関西を中心に勉強会や読書会を主催されるなど、精力的に活動されている cuzic さん。最近は Kindle を購入し、Ruby で Web Scraping した記事を読んでいらっしゃいます。趣味は芸能ニュース。</p>
+
+<dl>
+  <dt>好きな言葉</dt>
+  <dd>ここはカンザスじゃない</dd>
+  <dt>尊敬する人</dt>
+  <dd>Ruby 会議で発表する人たち</dd>
+  <dt>ご本人のサイト</dt>
+  <dd><a href="http://www.cuzic.com/">http://www.cuzic.com/</a></dd>
+</dl>
+
+<h2 id="インタビュー">インタビュー</h2>
+<p>: <img src="/images/0032-Hotlinks/cuzic08.jpg" alt="cuzic08.jpg" /></p>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>okkez さん</dd>
+  <dt>語り手</dt>
+  <dd>cuzic さん</dd>
+  <dt>野次馬</dt>
+  <dd>Yuya さん、西山さん、Sixeight さん、morphine57 さん</dd>
+  <dt>日にち</dt>
+  <dd>2010 年 11 月 10 日</dd>
+  <dt>場所</dt>
+  <dd>大阪市内の某所</dd>
+</dl>
+
+<p>（右の写真について。左から、Sixeight さん、Yuya さん、西山さん、cuzic さん、okkez さん、morphine57 さん。）</p>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#プロフィール" id="markdown-toc-プロフィール">プロフィール</a></li>
+  <li><a href="#インタビュー" id="markdown-toc-インタビュー">インタビュー</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+      <li><a href="#プロフィール-1" id="markdown-toc-プロフィール-1">プロフィール</a>        <ul>
+          <li><a href="#生年月日出身地現住所家族構成" id="markdown-toc-生年月日出身地現住所家族構成">生年月日、出身地、現住所、家族構成</a></li>
+          <li><a href="#好きな言葉座右の銘" id="markdown-toc-好きな言葉座右の銘">好きな言葉、座右の銘</a></li>
+          <li><a href="#尊敬する人" id="markdown-toc-尊敬する人">尊敬する人</a></li>
+          <li><a href="#代表作" id="markdown-toc-代表作">代表作</a></li>
+          <li><a href="#好きなメソッド嫌いなメソッド" id="markdown-toc-好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</a></li>
+        </ul>
+      </li>
+      <li><a href="#ruby-に関して" id="markdown-toc-ruby-に関して">Ruby に関して</a>        <ul>
+          <li><a href="#rubyist-になったきっかけ" id="markdown-toc-rubyist-になったきっかけ">Rubyist になったきっかけ</a></li>
+          <li><a href="#現在の-ruby-との付き合い" id="markdown-toc-現在の-ruby-との付き合い">現在の Ruby との付き合い</a></li>
+          <li><a href="#ruby-の好きなところ嫌いなところ" id="markdown-toc-ruby-の好きなところ嫌いなところ">Ruby の好きなところ、嫌いなところ</a></li>
+          <li><a href="#rubyを使った成功事例" id="markdown-toc-rubyを使った成功事例">Rubyを使った成功事例</a></li>
+          <li><a href="#ruby-のキラーアプリケーション" id="markdown-toc-ruby-のキラーアプリケーション">Ruby のキラーアプリケーション</a></li>
+          <li><a href="#ruby-の習得" id="markdown-toc-ruby-の習得">Ruby の習得</a></li>
+        </ul>
+      </li>
+      <li><a href="#プログラミング全般" id="markdown-toc-プログラミング全般">プログラミング全般</a>        <ul>
+          <li><a href="#初めてのプログラミング" id="markdown-toc-初めてのプログラミング">初めてのプログラミング</a></li>
+          <li><a href="#美しいソースコード" id="markdown-toc-美しいソースコード">美しいソースコード</a></li>
+          <li><a href="#興味を持っているテーマ" id="markdown-toc-興味を持っているテーマ">興味を持っているテーマ</a></li>
+        </ul>
+      </li>
+      <li><a href="#生い立ち" id="markdown-toc-生い立ち">生い立ち</a>        <ul>
+          <li><a href="#生い立ちについて" id="markdown-toc-生い立ちについて">生い立ちについて</a></li>
+          <li><a href="#普段の生活スタイル" id="markdown-toc-普段の生活スタイル">普段の生活スタイル</a></li>
+          <li><a href="#仕事とプライベートの両立" id="markdown-toc-仕事とプライベートの両立">仕事とプライベートの両立</a></li>
+          <li><a href="#使っているマシン" id="markdown-toc-使っているマシン">使っているマシン</a></li>
+          <li><a href="#好きな女性のタイプ" id="markdown-toc-好きな女性のタイプ">好きな女性のタイプ</a></li>
+        </ul>
+      </li>
+      <li><a href="#今後について" id="markdown-toc-今後について">今後について</a>        <ul>
+          <li><a href="#今後の展望将来の夢など" id="markdown-toc-今後の展望将来の夢など">今後の展望、将来の夢など</a></li>
+          <li><a href="#次のインタビューイ" id="markdown-toc-次のインタビューイ">次のインタビューイ</a></li>
+          <li><a href="#若手に一言" id="markdown-toc-若手に一言">若手に一言</a></li>
+          <li><a href="#読者へ一言" id="markdown-toc-読者へ一言">読者へ一言</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+  <li><a href="#rubyist-hotlinks-連載一覧" id="markdown-toc-rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</a></li>
+</ul>
+
+<h3 id="プロフィール-1">プロフィール</h3>
+
+<p><strong>okkez</strong> では、はじめます。</p>
+
+<p><strong>全員</strong> いぇー。</p>
+
+<p><strong>okkez</strong> 場所は大阪市内の某所です。なぞの秘密基地に集まりました。</p>
+
+<h4 id="生年月日出身地現住所家族構成">生年月日、出身地、現住所、家族構成</h4>
+
+<p><strong>okkez</strong> では簡単にざざーっと行きましょう。プロフィール。生年月日、出身地、現住所、家族構成。</p>
+
+<p><strong>cuzic</strong> 生年月日は、昭和の生まれです、くらいで。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> なんなら代わりに言おうか？</p>
+
+<p><strong>cuzic</strong> え、知ってんの？昭和 54 年くらいで。</p>
+
+<p><strong>okkez</strong> で、6 月やったっけ？</p>
+
+<p><strong>cuzic</strong> 4 月。ま、それくらいで。</p>
+
+<p><strong>okkez</strong> で、出身地は？</p>
+
+<p><strong>cuzic</strong> 出身地は大阪。現住所も大阪。家族構成は奥さんが 1 人。子供もいないし、親もいないみたいな。別居ですね (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> 親もわりとすぐ近くに住んでるんじゃなかったっけ？</p>
+
+<p><strong>cuzic</strong> まあ、大阪市内に住んでるけど。</p>
+
+<p><strong>okkez</strong> そうだよね。</p>
+
+<p><strong>西山</strong> 実家の家族構成は？</p>
+
+<p><strong>cuzic</strong> 実家の家族構成は、父、母、兄、兄、俺かな。</p>
+
+<p><strong>Yuya</strong> 末っ子なんですね。男 3 人兄弟？</p>
+
+<p><strong>cuzic</strong> そうそう。で、祖父、祖母とかは家にいなかったタイプですね。ま、普通です。</p>
+
+<p><strong>西山</strong> 何をされてるんですか？</p>
+
+<p><strong>cuzic</strong> えー、まあ普通の建築系のお仕事かな。</p>
+
+<p><strong>okkez</strong> cuzic 組とかみたいなんがあるの？</p>
+
+<p><strong>cuzic</strong> まあ、そんなでかいもんじゃなかったけど。</p>
+
+<p><strong>Sixeight</strong> お兄さんは家の仕事をされてる？</p>
+
+<p><strong>cuzic</strong> 兄はね、わりと IT 業界で生きてるけどね。まあ、その流れと言えばその流れなんかな。</p>
+
+<p><strong>Yuya</strong> その兄たちと IT 話はしたりします？</p>
+
+<p><strong>cuzic</strong> あんま無いなぁ。</p>
+
+<h4 id="好きな言葉座右の銘">好きな言葉、座右の銘</h4>
+
+<p><strong>okkez</strong> 次、好きな言葉座右の銘。なんかあれば。</p>
+
+<p><strong>cuzic</strong> うーん、何にしようかな？「ここはカンザスじゃない」ぐらいにしようかな。ちょっとマイナー。分からない人多いかも。</p>
+
+<p><strong>okkez</strong> 分からん。</p>
+
+<p><strong>Yuya</strong> 分かんなかったです。</p>
+
+<p><strong>cuzic</strong> オズの魔法使いと言う映画があって。まあ、ミュージカルでもあるんだけど。ドロシーっていう女の子が竜巻で飛ばされた後、魔女を下敷きにして、竜巻に飛ばされた家が落ちてくるんやけど。で、落ちてきた後、ドロシーが魔法がおきてることに気がついて、「あ、ここはカンザスじゃないんだわ」みたいな台詞があって。で、慣用句的に今まで慣れ親しんだ世界とは違うんやみたいな意味でよく使われると言う。</p>
+
+<p><strong>okkez</strong> よく使われるんや。</p>
+
+<p><strong>Yuya</strong> それは何？英語圏で？</p>
+
+<p><strong>cuzic</strong> 英語圏で。オズの魔法使いはみんな知ってること前提。別に「ここはカンザスじゃない」って、なんか「ビバリーヒルズ青春白書」のドラマタイトルかなんかで使われてたよ <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<p><strong>okkez</strong> ほんまや、使われてる。アメリカンカルチャーやねんな。</p>
+
+<p><strong>morphine57</strong> ほんまや。</p>
+
+<p><strong>cuzic</strong> アメリカンカルチャーやねん。</p>
+
+<p><strong>okkez</strong> でも君、日本人だよね。</p>
+
+<p><strong>cuzic</strong> 日本人だよ。まあ、なんやろね。要は、色々変化していくんやけど、変化することに気づきましょうみたいな感じですかね？</p>
+
+<h4 id="尊敬する人">尊敬する人</h4>
+
+<p><strong>okkez</strong> じゃあ、尊敬する人。</p>
+
+<p><strong>cuzic</strong> okkez さんとか Yuya さんとかかな。</p>
+
+<p><strong>okkez</strong> ここにいる人だけ言わんといてください。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> 尊敬する人っていっぱいいるよね。歴史上の人物もいっぱいいれば、実際に生きてる人もいっぱいいるし。</p>
+
+<p><strong>okkez</strong> いいっすよ、2 時間ずっと言ってもらって。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> これは難しいね。</p>
+
+<p><strong>okkez</strong> まあ、いっぱいいると。</p>
+
+<p><strong>cuzic</strong> いっぱいいるね。Ruby 会議で発表する人はみんなすごいと思うな。尊敬しまくりやな。尊敬尊敬の毎日です。</p>
+
+<p><strong>Sixeight</strong> cuzic さんは発表したこと無いんですか？</p>
+
+<p><strong>cuzic</strong> Ruby 会議には LT で発表したことあるよ<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。逆に LT くらいしか無いな。</p>
+
+<p><strong>okkez</strong> じゃあ、次回はぜひ。</p>
+
+<p><strong>cuzic</strong> そんな晴れがましい舞台にに出るようなあれじゃないんで。</p>
+
+<h4 id="代表作">代表作</h4>
+
+<p><strong>okkez</strong> じゃあ、次。代表作。</p>
+
+<p><strong>cuzic</strong> 代表作。これも難しいね。まあ特に無いんで。</p>
+
+<p><strong>okkez</strong> でも『Ruby On Windows』は？
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51PXVm6-xDL._SL160_.jpg" /></p>
+
+<p><strong>cuzic</strong> 『Ruby On Windows』にしときましょか。本を書きましたと言うことで。</p>
+
+<p><strong>okkez</strong> だよね。</p>
+
+<p><strong>cuzic</strong> あと、るびまに記事 <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> 書いてましたって言うのを代表作にしといてください。</p>
+
+<p><strong>okkez</strong> でもライブラリはちょいちょい書いてるよね？</p>
+
+<p><strong>cuzic</strong> でもあんまり公開してないからね。</p>
+
+<p><strong>okkez</strong> してないね。</p>
+
+<p><strong>cuzic</strong> してない、してない。</p>
+
+<p><strong>okkez</strong> してほしいねんけど。</p>
+
+<p><strong>cuzic</strong> あれは何でやろね？あれは単に公開するのが面倒でしないことが多いからね。</p>
+
+<p><strong>okkez</strong> むしろ俺にソースコードくれたら俺が公開するわ。</p>
+
+<p><strong>cuzic</strong> そんなやり方が……。ドキュメントもついてくれたら嬉しいな。</p>
+
+<p><strong>okkez</strong> もう zip でまとめて送って。</p>
+
+<p><strong>cuzic</strong> おれさ、Yuya さんとかと違ってさ、パソコンのハードディスクのデータのバックアップを全然取らない派だからさ、昔のファイルはどんどん消えてるんだよね。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> だから、買い変えてから作ったものしか残ってないんだよね。基本的には。</p>
+
+<p><strong>okkez</strong> これはひどい (笑)</p>
+
+<p><strong>cuzic</strong> で、今のパソコンがクラッシュとかしたらすべて失われるだよね。</p>
+
+<p><strong>Sixeight</strong> (笑)</p>
+
+<p><strong>cuzic</strong> まあ、俺って過去を振り返らない男だからさ。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>Yuya</strong> 潔い。</p>
+
+<p><strong>okkez</strong> せめて、なんかさ、<a href="http://www.dropbox.com/">Dropbox</a> とか <a href="https://github.com/">github</a> に上げようよ。</p>
+
+<p><strong>Yuya</strong> いや、別に普通に DVD-R とかでいいやん。楽ですよ、楽。</p>
+
+<p><strong>cuzic</strong> なんかさ、トルネコの大冒険的な感じでさ、同じことに何回もトライすることに喜びを感じるみたいな。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> まったく同じプログラムが、前は 2 時間かかってたのに、今は 10 分くらいで書けたりとかして嬉しい見たいな。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>Yuya</strong> さらに構造が綺麗になってるみたいな。</p>
+
+<p><strong>cuzic</strong> そうそう、さらに綺麗になってるみたいな。だけど、そもそも 10 分の努力は cp でよかったんじゃないか、みたいな。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> なんかそんなこと言ってはいけないみたいな。そんな感じの毎日ですわ。</p>
+
+<p><strong>okkez</strong> 1 回バックアップ取っとけばすむことだよね。</p>
+
+<p><strong>cuzic</strong> そうなんだよ。でも検索するコストもあるからね、実は。</p>
+
+<p><strong>Yuya</strong> いや、でも作り直すコストよりは低いと思いますよ。</p>
+
+<p><strong>okkez</strong> 検索は 10 分かからへんと思う、俺も。</p>
+
+<p><strong>Yuya</strong> 10 分あったらかなりの世界を巡れますよ。</p>
+
+<p><strong>cuzic</strong> やっぱり？まあでもいいかな、みたいな。</p>
+
+<p><strong>okkez</strong> ふーん。じゃあ、代表作は毎日消滅していくと。</p>
+
+<p><strong>cuzic</strong> (笑)。そうやね、残っていかないね。俺の場合は。</p>
+
+<p><strong>okkez</strong> じゃあ、今、手元にある代表作は zip でまとめて送ってください。代わりに公開しますんで。</p>
+
+<p><strong>cuzic</strong> じゃあ、要相談と言うことで。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>okkez</strong> 要相談なんや。まだ逃げるか。</p>
+
+<h4 id="好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</h4>
+
+<p><strong>okkez</strong> 好きなメソッドは何ですか？</p>
+
+<p><strong>cuzic</strong> 好きなメソッドねぇ。なんやろねぇ。いっぱいあるよねぇ。なんか Ruby は好きなメソッドがいっぱいあるよねぇ。でも最近は class_eval とかよく使うけどね。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>okkez</strong> <a href="/articles/0031/0031-Hotlinks.html">前回</a>に続き eval 系で。</p>
+
+<p><strong>cuzic</strong> eval 系で。ちなみに map と collect だったら map 派でございます。これはちょっと主張しとこか。理由はつづりが短いからです。</p>
+
+<p><strong>okkez</strong> 嫌いなメソッドはありますか？</p>
+
+<p><strong>cuzic</strong> 嫌いなメソッドは無いんちゃうかな、あんまり。なんやろな。全然無いですね、思い浮かばない。</p>
+
+<p><strong>Yuya</strong> class_eval じゃないんですか？</p>
+
+<p><strong>cuzic</strong> そうやねぇ。あ、p の返り値にイラっときたりとか。</p>
+
+<p><strong>Yuya</strong> えっ？その値であってほしい？</p>
+
+<p><strong>cuzic</strong> その値であってほしい派かな。どっちかって言うと。</p>
+
+<p><strong>Yuya</strong> それは分からないでもない。</p>
+
+<p><strong>okkez</strong> 最近は、1.9 では引数が返るようになってるよ。</p>
+
+<p><strong>Yuya</strong> じゃあ、好きなクラスとか嫌いなクラスは？ちょっとレベルを上げて。</p>
+
+<p><strong>cuzic</strong> 好きなクラスは、Ruby の Numeric 系のクラス体系はちょっと好きかな。ちゃんとそれぞれ + とか - とか C で実装されててすばやくキビキビ動くし、しかも Fixnum から Bignum とかにナチュラルに変わっていくし。あれは結構いいと思うな。</p>
+
+<p><strong>Yuya</strong> そうですね。</p>
+
+<p><strong>cuzic</strong> あのクラス設計は素晴らしいと思うな。</p>
+
+<p><strong>okkez</strong> 数学な人たちは、もうちょっとちゃんと考えたいとか思ってるみたいですけど。</p>
+
+<p><strong>cuzic</strong> あ、そうなんですか？</p>
+
+<p><strong>okkez</strong> Rational とか、Complex とか、あの辺。</p>
+
+<p><strong>cuzic</strong> でもそういう一般化をするとさ、普通の人にとって使いにくいからね。だから平均的なニーズをよく満たしてると思うけどな。今の実装は。</p>
+
+<p><strong>Yuya</strong> 最初から有理数とかは……</p>
+
+<p><strong>cuzic</strong> そうなんだよ。あんまり有理数とか言うニーズはあまり平均的じゃないと思うけどな。ま、それぞれの考え方があると思うけど。</p>
+
+<p><strong>okkez</strong> うん。</p>
+
+<p><strong>cuzic</strong> IO クラスとかは、C 言語的というかカーネルコールの write とか read とか、自然に呼べていい感じかなと思ったりするかな。</p>
+
+<p><strong>Yuya</strong> オプションですか？</p>
+
+<p><strong>cuzic</strong> puts もできるし、sysread、syswrite もできると。</p>
+
+<p><strong>Yuya</strong> sysread、syswrite って使ったこと無いんですけど。</p>
+
+<p><strong>okkez</strong> 俺も無い。</p>
+
+<p><strong>cuzic</strong> ネットワークプログラミングとかをしないと使わないかもしれない。テキスト処理には使わないと思う。</p>
+
+<p><strong>Yuya</strong> 何が違うんですか？何をするものなのか分かってない。</p>
+
+<p><strong>西山</strong> えっと、C 言語で言う fread と read の違い。</p>
+
+<p><strong>cuzic</strong> えっ？sysread と read の違いを説明されたかったんじゃなくて、read と gets とかの違いを説明されたかったんじゃ無いの？</p>
+
+<p><strong>Yuya</strong> いやいや、sysread と read の違い。ファイルディスクリプタを指定する的な？</p>
+
+<p><strong>西山</strong> システムコールの read とか write を直接呼ぶのが sysread や syswrite。</p>
+
+<p><strong>Yuya</strong> うーん……。ま、いいや。後で自習します。</p>
+
+<h3 id="ruby-に関して">Ruby に関して</h3>
+
+<h4 id="rubyist-になったきっかけ">Rubyist になったきっかけ</h4>
+
+<p><strong>okkez</strong> じゃあ、Ruby について。まず Rubyist になったきっかけは何でしょう？</p>
+
+<p><strong>cuzic</strong> 元々 Perl 使いで、Perl の <a href="http://search.cpan.org/~jdb/Win32-OLE-0.1709/lib/Win32/OLE.pm">Win32::OLE</a> とか Perl で scraping とかやってたんですけど、なんか scraping してるとどうしてもスレッドを使いたくなって。でも、Perl のスレッドに、あまりにもハマりまくって。アホかボケかってなって。で、もう Perl を捨てて Ruby っていう新しい言語を使ってみようかなと思ったわけ。あと Perl の Win32::OLE の実装は、なんか性に合わなかったけど、Ruby の Win32OLE は比較的しっくりきたので。その 2 つがきっかけですね。あとテキスト処理なんかも Ruby の方がいい感じに使えたから Ruby を使い始めましたって感じかな？</p>
+
+<p><strong>okkez</strong> 何年くらいですかね？</p>
+
+<p><strong>cuzic</strong> もう 10 年くらいじゃないですかね、2000 年くらい。1.4 から 1.6 くらいの時代かな。</p>
+
+<p><strong>okkez</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> 本格的には 1.6 から使い始めた感じかな。1.4 も使ってなかったわけじゃないけど。</p>
+
+<p><strong>okkez</strong> すごい。</p>
+
+<p><strong>cuzic</strong> Yuya さんは 1.2 から使ってたってことなんで。</p>
+
+<p><strong>Yuya</strong> いや、1.4 ですよ。1.2 は使ったこと無い。</p>
+
+<p><strong>okkez</strong> そんな感じですかね。Perl が嫌で Ruby を使い始めた。</p>
+
+<p><strong>cuzic</strong> まあ、そうやな。Perl のスレッド実装がもうちょっとよかったら Ruby 使ってなかったかもしれへん。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> あれはあまりにもひどかったなあ。どんなけ segfault するねん、みたいな。</p>
+
+<p><strong>okkez</strong> 別にオブジェクト指向とかは関係ないと？</p>
+
+<p><strong>cuzic</strong> うん、別にオブジェクト指向で Perl 書いてたからねぇ、元々。別に自分で書く分には、Perl のオブジェクト指向はそんなに嫌じゃなかったなぁ。</p>
+
+<p><strong>okkez</strong> ふーん。</p>
+
+<p><strong>cuzic</strong> 他人のオブジェクト指向の Perl を読むと、うがーみたいな、嫌気が差すことがあるけど、自分で書いてる分には。</p>
+
+<p><strong>okkez</strong> Perl の欠点は他人のコードが読めないことやね。</p>
+
+<p><strong>cuzic</strong> 読めない (笑)。</p>
+
+<h4 id="現在の-ruby-との付き合い">現在の Ruby との付き合い</h4>
+
+<p><strong>okkez</strong> 現在の Ruby との付き合い。</p>
+
+<p><strong>cuzic</strong> 現在の Ruby との付き合いは、勉強会とかを主催したりとかするような感じの付き合い方ですかね？あ、意味分からんな、これ (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> あ、でもいっぱい主催してる。させられてると言うか。</p>
+
+<p><strong>cuzic</strong> まあ、事務局として働いてます。</p>
+
+<p><strong>okkez</strong> <a href="http://jp.rubyist.net/?RubyKansai">Ruby 関西</a>では最近あまり働いてないけど、他で働いてるよね。</p>
+
+<p><strong>cuzic</strong> Ruby 関西遠いんやもん <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+
+<p><strong>okkez</strong> Ruby 関西は働いてくれる人いっぱいいてるからね。</p>
+
+<p><strong>cuzic</strong> そうそう。やっぱね、ゆるふわな勉強会も必要とされてると思うんですよね。時代はゆるふわっていうことで。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>okkez</strong> でも、あんま Ruby との付き合いになってないような。</p>
+
+<p><strong>cuzic</strong> いやーね、なんやろな？</p>
+
+<p><strong>Yuya</strong> 仕事では使わないんですか？</p>
+
+<p><strong>cuzic</strong> 仕事ではね、最近は <a href="http://www.autoitscript.com/autoit3/index.shtml">AutoIT</a> っていうスクリプト言語があるんだけど、そっちが好きになってるから。なんか Excel とかもいっぱい使えて。もちろん Yuya さんがお作りになった <a href="http://exerb.sourceforge.jp/">Exerb</a> も素晴らしいと思うんだけど。</p>
+
+<p><strong>Yuya</strong> (笑)。別のやつ言ってから言わないでください。</p>
+
+<p><strong>cuzic</strong> すごく、ちっちゃくなるんだよね、exe がさ。で、exe の小ささに魅力を感じて (笑)</p>
+
+<p><strong>Yuya</strong> 2 テラのディスクが 7000 円で買える時代に、ディスクサイズを仰いますか。</p>
+
+<p><strong>cuzic</strong> え、だけどさ、メールに添付しようと思ったら……</p>
+
+<p><strong>Yuya</strong> exe を添付したらダメですよ (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>Yuya</strong> スクリプトを添付すりゃいいじゃないですか。</p>
+
+<p><strong>cuzic</strong> あ、だけど、Ruby の実行環境を向こうが持ってる前提になっちゃうんじゃん。</p>
+
+<p><strong>Yuya</strong> うん。</p>
+
+<p><strong>okkez</strong> それ、AutoIT もいっしょやんな？ あ、でも AutoIT は exe に出来るんか。</p>
+
+<p><strong>cuzic</strong> うん。それで exe にした時に比較的小さい。</p>
+
+<p><strong>okkez</strong> ああー。</p>
+
+<p><strong>cuzic</strong> で、Windows API はなんでも呼べるし。まあ、文法は VB ライクで気持ち悪いけど。オブジェクト指向じゃないし。</p>
+
+<p><strong>Yuya</strong> でも、まあちょこちょこっとしたスクリプトを書くにはいい？</p>
+
+<p><strong>cuzic</strong> まあ、そうやね。20 行から 30 行くらいなら不満を感じないレベルやな。100 行を超え始めると大分イライラし始めるかな。</p>
+
+<p><strong>okkez</strong> その言語仕様で 100 行超えるのはちょっとしんどいな。</p>
+
+<dl>
+  <dt><strong>cuzic</strong> オブジェクト指向がないと 100 行超えるとイライラするな。</dt>
+  <dd><img src="/images/0032-Hotlinks/cuzic06.jpg" alt="cuzic06.jpg" /></dd>
+</dl>
+
+<p><strong>Yuya</strong> AutoIT はどこで知ったんですか？</p>
+
+<p><strong>cuzic</strong> Excel とかの自動化系の文書を読んでるとよく紹介されてて、使ってみようかなと思ったら COM も公開されてたし、Ruby からもいじくれるぜと思っていじってたんだけど、なんか AutoIT もスクリプト言語を持ってるし、まあ、そっちで書いてもいいかなみたいな。</p>
+
+<p><strong>okkez</strong> マウスとかも動かせるのもあったと思うんやけど。</p>
+
+<p><strong>cuzic</strong> <a href="http://www.autohotkey.com/">AutoHotKey</a> じゃないですか？</p>
+
+<p><strong>okkez</strong> AutoHotKey ですね。AutoHotKey はダメなん？</p>
+
+<p><strong>cuzic</strong> AutoHotKey は COM が公開されてないからダメなんです。</p>
+
+<p><strong>okkez</strong> なるほど。Ruby から動かせない。</p>
+
+<p><strong>cuzic</strong> Ruby から動かせない。だから AutoIT で作ってても、AutoIT の COM を使ってそのスクリプトを Ruby から使うように作り変えることは、すごいコストが低い作業なので。</p>
+
+<p><strong>Yuya</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> だから、大きくなって来たら、Ruby に移行することも出来る。と言うことで Ruby との付き合いがあまり出てないなぁ。Ruby はね、Kindle <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> っていう新しい電子書籍端末を買ったんだけど……</p>
+
+<p><strong>okkez</strong> それは後にしましょう。</p>
+
+<p><strong>cuzic</strong> あ、そうやね。まあ、それをRubyでごにょごにょうまいことやってますと言うことで。</p>
+
+<p><strong>Sixeight</strong> scraping？</p>
+
+<p><strong>cuzic</strong> まあ、そうですね。</p>
+
+<h4 id="ruby-の好きなところ嫌いなところ">Ruby の好きなところ、嫌いなところ</h4>
+
+<p><strong>okkez</strong> じゃあ、Ruby の好きなところ。何かありますか？</p>
+
+<p><strong>cuzic</strong> Thread がいい感じに実装されてるところ。さっきと同じやけど。あと、日本語対応も素晴らしいと思います。それからライブラリが Perl よりずっと整理整頓されてると言うか、大クラス主義で分かりやすいのがいいと思いますね。</p>
+
+<p><strong>okkez</strong> ふんふん。</p>
+
+<p><strong>cuzic</strong> なんか、Java っていう言語があるんやけど、IO とかが細かく分類されてるのがイライラっとして (笑)。Ruby は IO がすごい分かりやすい。</p>
+
+<p><strong>okkez</strong> Stream とか？</p>
+
+<p><strong>cuzic</strong> そう、Stream。</p>
+
+<p><strong>Yuya</strong> Ruby は IO と File しかない。</p>
+
+<p><strong>cuzic</strong> Ruby はすごい分かりやすいと思うな。まあ、人によって考え方が違うかも知れんけど、あんな Bufferd なんたらみたいな長い文字を置くのが嫌だな、みたいな。</p>
+
+<p><strong>okkez</strong> どれを使うのが適切なのかが分からない (笑)</p>
+
+<p><strong>cuzic</strong> 考えなあかんことが多すぎる。Ruby はなんでも IO で出来るからすごい便利。いいよね、それで。Text も Binary も同じでいいよね。</p>
+
+<p><strong>Yuya</strong> スクリプト言語は大クラス主義の方がやっぱり使いやすいですね。</p>
+
+<p><strong>cuzic</strong> うん。使いやすいと思うな。</p>
+
+<p><strong>okkez</strong> 好きなところは大クラス主義。嫌いなところは何かありますか？</p>
+
+<p><strong>cuzic</strong> 嫌いなところは、そんな特にはないんやけどな……。やっぱ動かないサーバとかがあるところかな。レンタルサーバとかで Ruby がもっとバンバン動いてもっと安かったらいいのに、みたいな。でもそれはレンタルサーバの嫌いなところか？</p>
+
+<p><strong>okkez</strong> うん、Ruby は悪くない (笑)</p>
+
+<p><strong>Yuya</strong> でも最近は動かない所は少なくなってきたと思いますね。</p>
+
+<p><strong>okkez</strong> VPS <sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> もあるから別に……。Java が動いたら JRuby 動くし。</p>
+
+<p><strong>cuzic</strong> Web ホスティング業者で Rails が普通に動いたらええのになぁ。けっこうハックっぽいことをやらないと Rails が動かない気がして。そこはちょっと不満点やなぁ。</p>
+
+<p><strong>okkez</strong> なんかインストールが大変。</p>
+
+<p><strong>cuzic</strong> そうそう。その辺がなんか楽チンになればいいなぁって思うのに。まあ、<a href="http://heroku.com/">Heroku</a> <sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> みたいのがもっと安くなればそれだけでいい、みたいなのがあるのかもしれないけどね。</p>
+
+<p><strong>okkez</strong> Heroku はある程度無料で動かせるやん。</p>
+
+<p><strong>cuzic</strong> まあ、そうやねぇ。それで満足しましょうって言うことかもしれへんねぇ。</p>
+
+<p><strong>okkez</strong> autoscale とかし始めたとたん、お金がめっちゃかかり始めるけど。</p>
+
+<h4 id="rubyを使った成功事例">Rubyを使った成功事例</h4>
+
+<p><strong>okkez</strong> じゃあ、次、Ruby を使った成功事例。これいっぱいあるんじゃないですか？</p>
+
+<p><strong>cuzic</strong> えー、なんにしよう？さっき話し始めた Kindle の話をしようか？</p>
+
+<p><strong>okkez</strong> Kindle の前に Excel のオートメーションとか。</p>
+
+<p><strong>cuzic</strong> Excel のオートメーションとかはねぇ、かなり頑張ってますよ。</p>
+
+<p><strong>Yuya</strong> 無いと生きていけない？</p>
+
+<p><strong>cuzic</strong> (笑)。まあ、せやなぁ。なんで Excel でこんな面倒くさい仕事がいっぱいあるんやろね。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> 不思議やねぇ。しかもみんな綺麗な Excel じゃないしねぇ。まあ、それは置いといて。具体的にはなんやろねぇ。このまえ KOF <sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup> と言うところでしゃべったんですけど、Excel から GUI コンポーネントがちゃんと配置されてるかを調べるとか、SQL を作ってみましょうとか、いろんなテクを紹介した。あんなんは Ruby を使って役に立ってる事例かなと。</p>
+
+<p><strong>okkez</strong> 資料は公開したんだっけ？</p>
+
+<p><strong>cuzic</strong> 資料は公開してるよ <sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。</p>
+
+<p><strong>okkez</strong> でも scraping して、手で持つ端末で見るみたいなことは、ずっとやってはりますよね。</p>
+
+<p><strong>cuzic</strong> ずっとやってるよ。元々はガラケー <sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup> でやってて、不満点は特に無かったんだけど、Docomo の端末だと 100KB までしか一度に読み込めないっていう制限があって。100KB だとちょっと長めの記事だと、すぐ超えちゃって不便だったんですよね。そいで、Kindle という端末を買って。Kindle だと何十メガでも一気に読めるからすごい楽チン。全ての記事をつなげて読んでるけど、全然問題なく動いてる。</p>
+
+<p><strong>Sixeight</strong> 繋げてって、1 ページに？</p>
+
+<p><strong>cuzic</strong> そうそう。1 日分の僕が読みたい記事をすべて scraping して 1 ページにつなげて、それを電子書籍の形式に変えて読んでる。<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup></p>
+
+<p><strong>okkez</strong> 1 ページって、1 つの HTML ファイルにしてるってこと？</p>
+
+<p><strong>cuzic</strong> 1 ページの HTML にして、それを Kindle のメールアドレスに送ったら、1 つの電子書籍になるみたいな。</p>
+
+<p><strong>okkez</strong> へぇー。HTML を送ったら、勝手に epub に変換してくれるの？それは便利だ。</p>
+
+<p><strong>cuzic</strong> それも、Wi-Fi で自動でつながって、自動的にダウンロードされるから、ダウンロード操作もいらない。超便利。</p>
+
+<p><strong>Yuya</strong> おおー。</p>
+
+<p><strong>Sixeight</strong> 超便利じゃないですか。</p>
+
+<p><strong>okkez</strong> え、それはあれ？ 3G で受信するん？</p>
+
+<dl>
+  <dt><strong>cuzic</strong> あ、それも出来る。3G だとお金がかかるんだけど、3G で受信することも出来る。Wi-Fi だったら無料で出来る。</dt>
+  <dd><img src="/images/0032-Hotlinks/cuzic07.jpg" alt="cuzic07.jpg" /></dd>
+</dl>
+
+<p><strong>okkez</strong> なんか、メールを送ったら Wi-Fi で自動でダウンロードされるって言うのがよく分からなかったんだけど……。</p>
+
+<p><strong>cuzic</strong> 多分、ポーリングしてるんだと思うね、Kindle から。</p>
+
+<p><strong>okkez</strong> あー、Wi-Fi が常にここでは飛んでるから？</p>
+
+<p><strong>cuzic</strong> そうそう。定期的にポーリングしてて、新しいのがあったら取りに行くと。</p>
+
+<p><strong>okkez</strong> へぇー、なるほど。便利だねぇ。</p>
+
+<p><strong>cuzic</strong> 便利やと思うな。</p>
+
+<p><strong>Yuya</strong> ポーリングをしてると電池の持ちは？</p>
+
+<p><strong>cuzic</strong> それは全然落ちて、元々 Wi-Fi も 3G も OFF にしてたら 30 日間は無充電でいけるそうなんだけど、Wi-Fi とかを使うと 1 週間くらいしか持たない。</p>
+
+<p><strong>Yuya</strong> でも、1 週間も保つんですね。</p>
+
+<p><strong>morphine57</strong> どこのネットワーク使ってるんですか？</p>
+
+<p><strong>cuzic</strong> 日本だと Docomo と Softbank が使える。世界中どこでも使える。超便利。みんな Kindle 買いましょう。</p>
+
+<p><strong>morphine57</strong> (笑)。宣伝が入った。</p>
+
+<p><strong>Yuya</strong> (笑)。</p>
+
+<p><strong>cuzic</strong> Kindle すごいよ。もうなんかね、日本まで届くの 2 日くらいだしね、意味分かんね。</p>
+
+<p><strong>Yuya</strong> アフィリエイトしとくべきではないでしょうか。</p>
+
+<p><strong>西山</strong> で、scraping のソフトも公開すると。</p>
+
+<p><strong>okkez</strong> 携帯版のやつは公開してなかったっけ？</p>
+
+<p><strong>cuzic</strong> github に公開したやつは動かないんだよね。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> だから動くようにしないといけないんだよね、実は。それの作業はしてるんだけど、公開はしてないね。<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup></p>
+
+<p><strong>okkez</strong> いや、こまめに push しましょうよ。</p>
+
+<p><strong>cuzic</strong> そういうのは認識してると言うことで。</p>
+
+<p><strong>morphine57</strong> 使ってみたいです。</p>
+
+<h4 id="ruby-のキラーアプリケーション">Ruby のキラーアプリケーション</h4>
+
+<p><strong>okkez</strong> Ruby のキラーアプリケーション。でもさっき Thread とか言ってたよね。アプリケーションじゃねーやん。</p>
+
+<p><strong>cuzic</strong> まあ、scraping やってた頃は、Thread がちゃんと動いてくれないと困るような感じで。</p>
+
+<p><strong>Yuya</strong> つまり Ruby 自身がキラーアプリだったと。</p>
+
+<p><strong>cuzic</strong> まあ、そうだね。Ruby の機能の一部かな。でも Ruby の Thread はよく考えられてると思うな。だって普通の人は IO の多重化をしたいんであって、真の意味で Thread 化したいわけじゃないと思うんだよね。どうなんだろ、1.9 ではそうなったんだけど。</p>
+
+<p><strong>Sixeight</strong> ネイティブかそうじゃないかってこと？</p>
+
+<p><strong>cuzic</strong> IO の多重化の実装手段として Thread という話が多くて、1.8 の Thread は非常に有効に働いてたなと。どんな環境でも動くし。まあ、今はマルチコア化されたからね。それはちょっと事情が違うと思うけど。</p>
+
+<p><strong>Yuya</strong> そうですね。</p>
+
+<p><strong>okkez</strong> で、キラーアプリは何ですかね (笑)</p>
+
+<p><strong>cuzic</strong> (笑)。キラーアプリね。なんやろな。ま、自分が作ったアプリみたいな感じになっちゃうんですかね。</p>
+
+<p><strong>okkez</strong> 人が作ったアプリはあまり使わない？</p>
+
+<p><strong>cuzic</strong> 普通に Web の記事をいっぱい読むとか。やりたいことが多くないからかもしれないな。で、自分のやりたいことについて深くやりたいみたいな感じなので、あんまり人が作ったアプリで満たされることが少ないのかもしれない。</p>
+
+<p><strong>okkez</strong> ああー。</p>
+
+<p><strong>Yuya</strong> でも Ruby のキラーアプリって難しくないですかね？</p>
+
+<p><strong>cuzic</strong> まあ、Rails とかの汎用フレームワークになっちゃうもんね。</p>
+
+<p><strong>okkez</strong> 昔の人だと、tDiary がキラーアプリだったとか。</p>
+
+<p><strong>cuzic</strong> だから、ライブラリがキラーアプリになるんじゃないかな。Win32OLE とか thread とか。</p>
+
+<p><strong>okkez</strong> そういう機能になるよね、プログラマとして考えるとそうなるよな。</p>
+
+<p><strong>Yuya</strong> ねぇ、アプリで考えると。</p>
+
+<p><strong>cuzic</strong> まず、Ruby で書かれたアプリを使ってないからね。たとえば、<a href="http://joruri-jin.jp/">Joruri</a> すごいなと思うけど、使ってないからね。</p>
+
+<p><strong>okkez</strong> 俺、<a href="http://redmine.jp/">Redmine</a> は使ってる。</p>
+
+<p><strong>Yuya</strong> <a href="https://github.com/jugyo/termtter">Termtter</a> とかは？</p>
+
+<p><strong>cuzic</strong> あ、Termtter はね、パスワードが平文で出来た時代は使ってたよ。</p>
+
+<p><strong>Yuya</strong> (笑)。</p>
+
+<p><strong>okkez</strong> oauth は w3m でいけたよ。</p>
+
+<p><strong>cuzic</strong> あ、そうなの？あれはやりたいなぁと言うか、やるべきなんだけど。</p>
+
+<p><strong>okkez</strong> oauth の PIN コードもらうのは w3m でも出来た。</p>
+
+<p><strong>cuzic</strong> え？PIN コードさえもらえば、その PIN コードを流用したら Termtter でいけるようになるの？</p>
+
+<p><strong>okkez</strong> たしか出来たと思うけど。PIN コードを発行して……</p>
+
+<p><strong>cuzic</strong> ちょっと調べないといけないな。使えないまま放置になってるんだけどね。</p>
+
+<p><strong>Yuya</strong> 使ってないキラーアプリ (笑)</p>
+
+<p><strong>cuzic</strong> 2010 年 6 月の出来事やね。もう何ヶ月経ってるんや。</p>
+
+<p><strong>okkez</strong> まあ、出来るからやってみてください。</p>
+
+<p><strong>cuzic</strong> はい。Termtter は素晴らしく便利だと思いますね。</p>
+
+<p><strong>okkez</strong> では、キラーアプリケーションは特に無し？</p>
+
+<p><strong>cuzic</strong> はい。で、ライブラリとかが優れてると思います。Exerb は特に優れてると思います。</p>
+
+<p><strong>okkez</strong> じゃあ、キラーアプリは Exerb じゃない？。</p>
+
+<p><strong>cuzic</strong> ほんまやな、じゃあ Exerb やな。</p>
+
+<p><strong>Yuya</strong> そうなんですか (笑)。アプリだけど、キラーアプリになりえないアプリですよ。</p>
+
+<p><strong>cuzic</strong> (笑)。ライブラリと一緒やで、立ち位置は (笑)。</p>
+
+<p><strong>Yuya</strong> コンパイラとかと同じ立ち位置じゃないですか。</p>
+
+<p><strong>cuzic</strong> そうそうそう。</p>
+
+<p><strong>Yuya</strong> キラーアプリって難しいよな、今となっては。</p>
+
+<p><strong>okkez</strong> うん、そうなんだよね。この質問は今後なくなるかも知れへんな。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h4 id="ruby-の習得">Ruby の習得</h4>
+
+<p><strong>okkez</strong> じゃあ、次。Ruby の習得は簡単でしたか？</p>
+
+<p><strong>cuzic</strong> 元々、Perl でオブジェクト指向やってたからね。そんなに難しいとは思わへんかったなぁ。</p>
+
+<p><strong>Yuya</strong> さすが cuzic 先生。</p>
+
+<p><strong>okkez</strong> さすが。cuzic 大先生。</p>
+
+<p><strong>cuzic</strong> なんで…… (笑)。ブロックもちょっと奇妙やなと思ったけど。だけど元々ブロック的なものがほしいなと、ブロックに触れる前から思ってたから、むしろ自然に感じたなぁ。</p>
+
+<p><strong>okkez</strong> なるほど。</p>
+
+<p><strong>cuzic</strong> Ruby がいい言語やと思ったのは、学んでて楽しかったもんなぁ。なんか特異メソッドが作れるとか。だから僕の Rubyist Magazine に書いてた記事は特異メソッドがやたら使われていたと言う。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> 僕、その頃はオブジェクト指向よりもプロトタイプ指向の方がいいんじゃないかと思ってた時期で、だから Rubyist Magazine の記事はそういう方向で書いた。あれを読んだアユちゃんとかは、一時期、特異メソッドがすごい大好きっ子になってたらしいという話を聞いた。</p>
+
+<p><strong>Yuya</strong> そんな悪の道に。</p>
+
+<p><strong>cuzic</strong> そんな悪の道じゃないと思うけどなぁ。いい使い方やと思うけどな。Module を Extend してメソッドをいっぱい増やせるみたいな。</p>
+
+<p><strong>okkez</strong> 適切な場面で適切な使い方をしたいよな。</p>
+
+<p><strong>Yuya</strong> いい道具ですよね。</p>
+
+<p><strong>cuzic</strong> うん。クラスが必ずしもいい道具じゃないからね。特に継承とかは依存関係が強くなる。</p>
+
+<h3 id="プログラミング全般">プログラミング全般</h3>
+
+<h4 id="初めてのプログラミング">初めてのプログラミング</h4>
+
+<p><strong>okkez</strong> 次。プログラミング全般について。初めてのプログラミングは？</p>
+
+<p><strong>cuzic</strong> なんやろねぇ、昔からやってたけど、たとえば Basic でオセロゲームを作ったみたいな。だけどそういうのは基本的には大学に入ってからじゃないかな？</p>
+
+<p><strong>okkez</strong> 中学校の時とか小学校の時は全然やってない？</p>
+
+<p><strong>cuzic</strong> やってたけど、あんまり中身を理解してなかったと言うか。大学に入ってから中身を理解して書くようになったっていう感じかな。</p>
+
+<p><strong>okkez</strong> じゃあ、結構遅い？</p>
+
+<p><strong>cuzic</strong> Yuya 大先生みたいな、生まれた時から Hello, world を書いてるとかは全然。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> 大学に入って初めて作った物はなんですか？</p>
+
+<p><strong>cuzic</strong> もちろん、最初は Hello, world を作って。当たり前やね。</p>
+
+<p><strong>okkez</strong> それは何の言語で？</p>
+
+<p><strong>cuzic</strong> C 言語。カーニハン &amp; リッチーだよね。それにしたがってカレンダーを作ったりとか、そういう演習問題的な内容をやったりとか。あれは本当に好きになれへんかったなぁ。僕には K&amp;R は肌には合わへんかったみたいやな。林晴比古の「新Ｃ言語入門」やったっけ？あれで勉強してた気がするわ。
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/518%2BHbruwHL._SL160_.jpg" /></p>
+
+<p><strong>okkez</strong> ああー、あれか。あの人の本、嫌いなんだよなぁ。</p>
+
+<p><strong>cuzic</strong> あれ、そうか。分かれてしまった。</p>
+
+<p><strong>Yuya</strong> 今でも C 言語書けます？</p>
+
+<p><strong>cuzic</strong> 今でも書けるんじゃないかなぁ。だけどほとんど関数を調べないといけないんじゃないかな。昔みたいにプロトタイプ宣言は標準やったら全部覚えてる見たいな事は無いと思うな。</p>
+
+<p><strong>Yuya</strong> それ覚えてたんですか？</p>
+
+<p><strong>cuzic</strong> string.h とかはちょっと調べんと無理やわ。</p>
+
+<p><strong>Yuya</strong> C++ も大学の時ですか？</p>
+
+<p><strong>cuzic</strong> そうやね。C++ はあの頃は結構好きやったね。C++ は非常マニアックな要素が強いので、あれはなかなか心沸き踊る感じがするね。</p>
+
+<p><strong>Yuya</strong> 大学の頃から、相変わらずのマニアックだったと 笑)</p>
+
+<p><strong>cuzic</strong> なんかね、奇妙な言語仕様には心踊る物があるよね。</p>
+
+<p><strong>Yuya</strong> さすが。</p>
+
+<p><strong>cuzic</strong> 男のロマンだよね。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> じゃあ、Ruby 以外のプログラミング言語は C と C++ と？</p>
+
+<p><strong>cuzic</strong> そうやね、あとは Perl と PHP をやってて。まあ、PHP はずっとやってるけど。あと Java もやったね、当然。Java もあんまり好きになれへんかった。昔、携帯アプリをやってた時期があって。あの頃は携帯アプリは Java でしか作れなかったから、Java を勉強して作ってたみたいな感じですかね？</p>
+
+<p><strong>Yuya</strong> JavaScript は？</p>
+
+<p><strong>cuzic</strong> JavaScript は、昔に Outlook Express っていう名前のメーラーがあった頃に。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>Yuya</strong> 今でもありますよ (笑)</p>
+
+<p><strong>cuzic</strong> 今はもう無い。今は Windows Live Mail っていう名前に変わってる。</p>
+
+<p><strong>okkez</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> ま、今でも使ってる人はいると思うけど。で、あの頃は何でもありの時代で、自分で HTML と JavaScript を書いて、メールを送ったら、そのまま JavaScript が実行されてた時代で。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> いろんな作品を作って、友達に勝手に送りつけて感想を求めると言う謎めいた活動をしてたりしてました。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> メールで送って動くって言うのが嬉しかったんよね。普通、びっくりするよね。なんか突然音楽が流れ始めたりとか、桜ひらひらみたいなんも作ったし。</p>
+
+<p><strong>Yuya</strong> そんなコードも残ってないと。</p>
+
+<p><strong>cuzic</strong> 残ってないに決まってるじゃない。</p>
+
+<p><strong>Yuya</strong> あ、でもメールだと相手側に。</p>
+
+<p><strong>cuzic</strong> 相手側は、持ってるかもしれへんね。俺は昔のメールは一切残ってないからね。</p>
+
+<p><strong>Yuya</strong> ほんとに振り返らない男ですね。</p>
+
+<p><strong>cuzic</strong> え、みんな残ってるの？そんなの。</p>
+
+<p><strong>Yuya</strong> 小学生の頃のが残ってますね。</p>
+
+<p><strong>cuzic</strong> え、絶対信じられへん。</p>
+
+<p><strong>Yuya</strong> でも今はさすがに読み出せるかは分かんない。PD <sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup> に入ってる。</p>
+
+<p><strong>西山</strong> ええー！すごい。</p>
+
+<p><strong>Yuya</strong> メディアコンバータ屋さんにお願いしないといけない。</p>
+
+<p><strong>cuzic</strong> 自分ストーカーやな。</p>
+
+<p><strong>全員</strong> (笑)。</p>
+
+<p><strong>cuzic</strong> でも、俺は全然残す気ないし、これからも残そうとしてないからね。</p>
+
+<p><strong>Yuya</strong> でも残そうとしてなくても、案外 Google 様がずーっと残しててくれてるかもしれない。</p>
+
+<p><strong>cuzic</strong> あ、それはあると思うけどね。</p>
+
+<p><strong>cuzic</strong> web とかに残ってる部分はあえて消そうとは思ってないけどね。でもあえて残そうともしてない感じや。</p>
+
+<p><strong>okkez</strong> そこは今後は残そうよ。</p>
+
+<p><strong>cuzic</strong> (笑)。自分の作ったものやもんなぁ。</p>
+
+<p><strong>Yuya</strong> せっかく作ったんですし。</p>
+
+<p><strong>cuzic</strong> まあ、そうかもしれんな。</p>
+
+<p><strong>Yuya</strong> 触れる場所にあると誰かが喜ぶかもしれない。</p>
+
+<h4 id="美しいソースコード">美しいソースコード</h4>
+
+<p><strong>okkez</strong> 次は、美しいソースコード。なんか今まで読んで美しいと思ったコードはありますか？</p>
+
+<p><strong>cuzic</strong> いっぱいあるけどねぇ、そんなん。だけどね、初期に僕が Ruby を一番最初に勉強した頃にね、高林哲さん <sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup> っていう方が作った <a href="http://quickml.com/">quickml</a> とか、この前、KOF で発表 <sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup> してた江渡浩一郎さん <sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup> の <a href="http://qwik.jp/">qwikWeb</a> とかをよく読んだ覚えがありますね。それは結構、両方とも綺麗やったなぁ。</p>
+
+<p><strong>okkez</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> なんか Ruby で書かれてる方が綺麗なものが多いと思うな。</p>
+
+<p><strong>Yuya</strong> Ruby 以外の言語で綺麗と感じたものは？</p>
+
+<p><strong>cuzic</strong> Ruby 以外の言語はそんなに読んでないからかもしれんけど、まあ、どうしても読まなあかんかった C 言語のコードとかで、「おお、これは綺麗だぜ」と思った経験はあまり無いなぁ。なんか頑張ってるなぁって思ったことはもちろんあるけど。</p>
+
+<h4 id="興味を持っているテーマ">興味を持っているテーマ</h4>
+
+<dl>
+  <dt><strong>okkez</strong> 今、興味を持っているテーマ。</dt>
+  <dd><img src="/images/0032-Hotlinks/cuzic03.jpg" alt="cuzic03.jpg" /></dd>
+</dl>
+
+<p><strong>cuzic</strong> さっき言った Kindle 系が、まだまだやらなあかんことが残っていてて。具体的には今は RSS をベースにしてるけど、RSS じゃないような部分を対応させなあかんなと思ってて。例えば、元々ガラケーで作ってた頃は Twitter を読めたりとかしたんやけど、Kindle 版はまだ対応してないから。</p>
+
+<p><strong>Yuya</strong> なんか Kindle で Twitter 読んでるって不思議な感じですね。しかも遅れて (笑)</p>
+
+<p><strong>cuzic</strong> ま、1 日遅れで Twitter を全部見ると。</p>
+
+<p><strong>okkez</strong> まあ、発言してないからねぇ。</p>
+
+<p><strong>cuzic</strong> あと、mixi も昔、作った 2 世代前のアプリでは……。まあ、それはもう失われてしまったんだけど。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> それは mixi を巡回する機能があって、その巡回する機能を復活させたいなぁと思ってて。</p>
+
+<p><strong>Yuya</strong> まあ、確かに変わってるからそのまま使えるわけないですよね。</p>
+
+<p><strong>cuzic</strong> web scraping なんて、トルネコの大冒険を 100 回くらい解いた俺なら、昔 1 時間だけど、今は 10 分だぜみたいな、そういう感じやから (笑)</p>
+
+<p><strong>Yuya</strong> <a href="http://nokogiri.org/">Nokogiri</a> とかすごい使いやすいですよね。</p>
+
+<p><strong>cuzic</strong> すごい使いやすい。昔、net/http を使ってた俺は馬鹿だったんじゃないか見たいな。そんな感じやな。Nokogiri すごいよ。</p>
+
+<p><strong>Yuya</strong> さっきの open-uri と Nokogiri？</p>
+
+<p><strong>cuzic</strong> そう、ほんとにそう。</p>
+
+<p><strong>Yuya</strong> ま、POST があったら別だけど。あ、今は POST もできるのか？出来るんでしたっけ？</p>
+
+<p><strong>okkez</strong> open-uri？出来ると言ううわさは聞いたことがあるけど。</p>
+
+<p><strong>cuzic</strong> POST を出来るようにするパッチがあるよ <sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>。</p>
+
+<p><strong>okkez</strong> でも、POST まであるんやったら <a href="http://mechanize.rubyforge.org/mechanize/">Mechanize</a> を使うな。</p>
+
+<p><strong>Yuya</strong> そうですね、そこまで言ったら Mechanize ですね。生 Nokogiri じゃつらい。</p>
+
+<p><strong>cuzic</strong> そうなったら、最近は wget を使うんだよな。バッククオートして、<code class="highlighter-rouge">wget</code>。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> 一番楽チン。しかもいろんなことに対していい感じに処理して返してくれる。</p>
+
+<p><strong>Yuya</strong> とは言え、オプションを調べるのが大変じゃないですか。</p>
+
+<p><strong>cuzic</strong> でも 動いたんだよね。</p>
+
+<p><strong>西山</strong> 動いたんですか。</p>
+
+<p><strong>okkez</strong> man 読めばいいし。</p>
+
+<p><strong>cuzic</strong> いや、下手したらさ、Mechanize とかはソース読まないと使い方が分からない部分があったりしてさ、それだったら wget で man 読んだ方が早いんよね。でも wget で cookie をヘッダーに追加してやれば、かなりのことが出来て、それで突破できない web サイトはそんなに多くないから。ま、それでいいかなっていうかんじで。</p>
+
+<p><strong>okkez</strong> でもあれだよね、JavaScript をグリグリやってるようなところは、ちょっと無理？</p>
+
+<p><strong>cuzic</strong> ちょっと無理やけど、それ Mechanize でもなかなか難しい。</p>
+
+<p><strong>okkez</strong> Mechanize でも無理。もうだからそこは対象外。フィード入ってれば、それ読めばいいけど。</p>
+
+<p><strong>cuzic</strong> *wget は web scraping に向いてると思うな。</p>
+
+<p><strong>Yuya</strong> 今興味を持ってるテーマは scraping 全般？必要としてるものか、興味を持ってるというよりは。</p>
+
+<p><strong>cuzic</strong> そうやね、すでに失われてしまったテクノロジを復活させるために (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> 復活させるんだ。</p>
+
+<p><strong>cuzic</strong> 古代ローマの遺産を……って、違うけど。</p>
+
+<p><strong>okkez</strong> 古代 cuzic 遺産を。</p>
+
+<p><strong>okkez</strong> もうこれしゃべりながら作ってもいいよ。終わった頃に出来たって。</p>
+
+<p><strong>Yuya</strong> 読者プレゼントにしましょうか。</p>
+
+<p><strong>okkez</strong> じゃあ、今お使いの Kindle を読者プレゼントに。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h3 id="生い立ち">生い立ち</h3>
+
+<h4 id="生い立ちについて">生い立ちについて</h4>
+
+<p><strong>okkez</strong> 次、生い立ち。</p>
+
+<p><strong>cuzic</strong> 生い立ちって何を言えばいいんやろうな。中学時代とかの話をすればいいってこと？</p>
+
+<p><strong>okkez</strong> うんうん。</p>
+
+<p><strong>cuzic</strong> 大して何もしてなかったな。普通の中学時代やったんじゃないかな。</p>
+
+<p><strong>okkez</strong> 普通なの？</p>
+
+<p><strong>morphine57</strong> ほんとに？</p>
+
+<p><strong>cuzic</strong> うん、成績はほんと、すごい悪かったしね。</p>
+
+<p><strong>okkez</strong> 意外。</p>
+
+<p><strong>Yuya</strong> 部活とかは？</p>
+
+<p><strong>cuzic</strong> 部活も特にやってないよね。平日はドラマを見なあかんやんか。</p>
+
+<dl>
+  <dt><strong>全員</strong> (笑)</dt>
+  <dd><img src="/images/0032-Hotlinks/cuzic05.jpg" alt="cuzic05.jpg" /></dd>
+</dl>
+
+<p><strong>cuzic</strong> ドラマって 4 時台から始まるやんか。</p>
+
+<p><strong>Yuya</strong> どんな主婦ですか (笑)</p>
+
+<p><strong>cuzic</strong> 忙しいからさ。</p>
+
+<p><strong>okkez</strong> それほんま、終わって 3 時 15 分くらいにダッシュしないとあかんやん。</p>
+
+<p><strong>cuzic</strong> (笑)。だから、忙しいねんて、ほんと。だから部活してる人はさ、どうやって昼のドラマの再放送を見てるんやろね？</p>
+
+<p><strong>okkez</strong> いや、見ないって。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> うそやん、見ないの？</p>
+
+<p><strong>okkez</strong> 見ない見ない。俺、中学校の時はそんなん見てなかった。</p>
+
+<p><strong>cuzic</strong> 見てなかったの？</p>
+
+<p><strong>okkez</strong> 小学校の頃は見てる日もあったけど。中学は見てなかった。</p>
+
+<p><strong>cuzic</strong> 僕はまあ、そういうドラマを見てない okkez さんとは違って、ちゃんとドラマを見てる普通の中学生でした。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> そんな感じかな。高校もそんな感じかな。</p>
+
+<p><strong>okkez</strong> 部活には所属せず帰宅部？</p>
+
+<p><strong>cuzic</strong> 所属してないよ。帰宅部っていうかドラマ部。</p>
+
+<p><strong>Yuya</strong> それなら学校にちゃんと公認で。予算もちゃんとついたかもしれないですよ。</p>
+
+<p><strong>okkez</strong> じゃあ、ちゃんと 5 人以上集めないと。</p>
+
+<p><strong>cuzic</strong> うん。でも活動費はいらない。</p>
+
+<p><strong>okkez</strong> 最初は同好会からやね。</p>
+
+<p><strong>Yuya</strong> テレビ同好会？ドラマ同好会？</p>
+
+<p><strong>西山</strong> テレビ同好会だとチャンネル権争いが……</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> 今やったらワンセグがあるから。</p>
+
+<p><strong>cuzic</strong> まあ、高校もそんな感じで。で、高校くらいからさ、「俺、このままやったら普通のチンピラになるしかないなぁ」と思って。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> 生きていかれへんなぁ、みたいな。</p>
+
+<p><strong>okkez</strong> この辺、多分ウソが入ってる。</p>
+
+<p><strong>cuzic</strong> いや、崖っぷち人生ですよ、ほんまに。何のとりえも無い俺がどうなったらいいかなぁ、見たいな感じで。まあ、とりあえず、焦って勉強してたみたいな。</p>
+
+<p><strong>okkez</strong> へぇー。いつから勉強を真剣にやったんですか？</p>
+
+<p><strong>cuzic</strong> いやだけど、高一くらいからかなぁ。なんか俺、このままじゃ、アウトローの道に行くしかないなぁ見たいな感じやったから、さすがに一念発起して、真面目になったみたいな。</p>
+
+<p><strong>okkez</strong> ちなみに真面目になる前の成績はどれくらいですか？</p>
+
+<p><strong>cuzic</strong> そんなん、ほとんど最下位付近じゃないですか。</p>
+
+<p><strong>Yuya</strong> ええー？</p>
+
+<p><strong>okkez</strong> でもたしか、賢い学校行ってた気がすんねんけどな。</p>
+
+<p><strong>Yuya</strong> (笑)。つまりそこで最下位でも、ほとんどの高校では上位と。</p>
+
+<p><strong>okkez</strong> なんかそんな感じがすんねんけど、気のせいかな。</p>
+
+<p><strong>cuzic</strong> 気のせい、気のせい。まあ、そういうヤサぐれてた時代があったからこそ、俺は勉強しないとまずいと思って勉強して大学入ったんよ。大学入ったってすごいな。しかも四年制大学やもんな。</p>
+
+<p><strong>Yuya</strong> (笑)。超高学歴 (笑)</p>
+
+<p><strong>okkez</strong> 超高学歴。大学は？</p>
+
+<p><strong>cuzic</strong> 大学はね、普通にバイトしながらプログラマとして働いてましたよ。</p>
+
+<p><strong>okkez</strong> バイトはどこでしてたんですか？</p>
+
+<p><strong>cuzic</strong> 最初時代はね、選挙の応援とかやってて、選挙の名簿作りとかやってましたよ。</p>
+
+<p><strong>okkez</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> 当時は郵便番号が 7 ケタ化したばかりやって、7 ケタ化した情報を使って、入力を簡単にしたりとか、選挙のドサ廻りのルートを作ったりとかしてましたよ。</p>
+
+<p><strong>okkez</strong> はいはいはい。俺が郵便局でバイトしてた頃にそんなことを。</p>
+
+<p><strong>cuzic</strong> あ、そう。</p>
+
+<p><strong>okkez</strong> 俺は配達の最適化をしてたけど。</p>
+
+<p><strong>Yuya</strong> 2 人とも最適化問題を。</p>
+
+<p><strong>okkez</strong> いや、俺は俺の最適化だけ。そんな他人の最適化はできん。</p>
+
+<p><strong>cuzic</strong> あとはなんやったっけ？あとさっき言った携帯アプリも大学の時代に作った。</p>
+
+<p><strong>okkez</strong> 大学の時はそんな感じで、大学院は？</p>
+
+<p><strong>cuzic</strong> 大学院もそんな感じ。ざっくりと言えば。で、大学時代は暇やったから、ひたすらプログラミング言語の仕様とか読んでた気がするなぁ。</p>
+
+<p><strong>Yuya</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> ARM とか。The Anorted Reference Manual？C++ の本。日本語のタイトルが思い出せないんだよね。なんだろ？
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41T17HKP28L._SL160_.jpg" /></p>
+
+<p><strong>西山</strong> 「注解 C++ リファレンスマニュアル」？</p>
+
+<p><strong>cuzic</strong> あ、それそれ。これはいい本だったと思うよ。めっちゃ読んでたなぁ。</p>
+
+<p><strong>okkez</strong> 2001 年やで。そんなもんか？</p>
+
+<p><strong>cuzic</strong> そんなもん、そんなもん。暇やった時代やね。あとは、<a href="http://ja.wikipedia.org/wiki/%E3%83%93%E3%83%A3%E3%83%BC%E3%83%8D%E3%83%BB%E3%82%B9%E3%83%88%E3%83%AD%E3%83%B4%E3%82%B9%E3%83%88%E3%83%AB%E3%83%83%E3%83%97">ビャーネ・ストロヴストルップ</a>の『C++ の設計と進化』とかも読んだなぁ。でも最近は、コンピュータの本はあまり読んでないかもしれへんな。だって、コンピュータのほんまにマニアックな内容って、ブログで読まないと無理じゃないですか。あと、リファレンスマニュアルとかをちゃんと読むとか。もしくはソースコードを読むとか。</p>
+
+<p><strong>okkez</strong> そうやな、最近本で読むって言ったら、網羅的な知識を体系的に得たい時やからなぁ。</p>
+
+<p><strong>cuzic</strong> そういうシーンが最近あまり多くないんかもしれへんなぁ。</p>
+
+<p><strong>okkez</strong> Ruby に出会ったのも大学時代だよね？</p>
+
+<p><strong>cuzic</strong> そうそう。ま、色々やってたからね。Ruby もやってたし、C++ もやってたし、Java もやってた。同じ時期に。</p>
+
+<p><strong>okkez</strong> Python には行かなかった？
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41DMWJQbRmL._SL160_.jpg" /></p>
+
+<p><strong>cuzic</strong> Python はね、zope 調べてたけどね。Python ってあんまり萌えーっとせんかってんな。Python って萌え要素少ないと思うな。萌え要素で判断するのもなんやけど (笑)</p>
+
+<p><strong>Yuya</strong> むしろ他の言語で萌え要素のある言語ってなんだったんだろう。</p>
+
+<p><strong>okkez</strong> なんで萌えになるの？</p>
+
+<p><strong>cuzic</strong> なんやろ、C++ のテンプレートってなんか萌えーっとするやん。</p>
+
+<p><strong>okkez</strong> その萌えーってするっていうのは、エンドルフィンがでるとかそういう意味？</p>
+
+<p><strong>cuzic</strong> そうそう、そういうこと。ドーパミン、ドピュッドピュッ、みたいな。</p>
+
+<p><strong>Yuya</strong> 今のなんか、いいんですか？</p>
+
+<p><strong>okkez</strong> そろそろインタビューやめていいですか。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> なんか、Ruby もね、面白かったと思うけどな。さっき言うてたけど、特異メソッドとか、Module の考え方とか、なんか奇妙な private な考え方とか。結構面白かったと思うな。</p>
+
+<p><strong>okkez</strong> そっか、そんな感じで、高校以前の生い立ちについては詳しくは語られませんでした (笑)</p>
+
+<p><strong>cuzic</strong> (笑)。それは言わなくてもいいじゃないですか。ドラマを見てたって言うのも伝わったし (笑)</p>
+
+<p><strong>okkez</strong> 当時のドラマってなんやろ？</p>
+
+<p><strong>cuzic</strong> 当時はね、一番面白かったよ。これはちょっと力説したい。</p>
+
+<p><strong>okkez</strong> 80 年代のドレンディードラマの再放送がバンバンやってた時期か？</p>
+
+<p><strong>cuzic</strong> やってた、やってた。しかも俺の中学から、「ラブストーリーは突然に」とかさ「101 回目のプロポーズ」とかさ、「東京ラブストーリー」とかさ、「29 歳のクリスマス」とかさ、めっちゃいっぱいあるわけじゃない、いいドラマがさ。で、リアルタイムのドラマも全盛でさ、月 9 とかのドラマがあったわけじゃない。もうねぇ、忙しくてたまらなかった。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> なんか、見るものが多すぎて。しかもあの頃は音楽番組がね、毎週、すべての地上派でやっててさ。それも全部見なあかんやんか。</p>
+
+<p><strong>okkez</strong> 全部見なあかんの？</p>
+
+<p><strong>cuzic</strong> 見なあかん。</p>
+
+<p><strong>okkez</strong> 当時は録画機器はあんまりなかったと。</p>
+
+<p><strong>cuzic</strong> まあ、VHS があったけどねぇ。</p>
+
+<p><strong>okkez</strong> あ、でも家族共用やから使えへんのか？</p>
+
+<p><strong>cuzic</strong> まあ、俺しか使ってなかったけどね。なんか全部録画するのは面倒くさいじゃないですか？テープを入れ替えなあかんもん。</p>
+
+<p><strong>okkez</strong> 兄弟とは遊んだりはしなかったんですか？</p>
+
+<p><strong>cuzic</strong> 兄弟はドラマ見なかったねぇ。そういえば。</p>
+
+<p><strong>okkez</strong> 年離れるんでしたっけ？</p>
+
+<p><strong>cuzic</strong> そんなに離れてないけど。なぜか見なかったね。</p>
+
+<p><strong>okkez</strong> なんか男兄弟がいたら、弟はお兄ちゃんが行くところに 100% 付いていくっていうのが俺の中にあるんやけど。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> 俺はなかったなぁ、全然。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h4 id="普段の生活スタイル">普段の生活スタイル</h4>
+
+<p><strong>okkez</strong> 普段の生活スタイル。今は普通に会社員してるんですよね？</p>
+
+<p><strong>cuzic</strong> 会社員してしてますね。</p>
+
+<p><strong>Yuya</strong> 朝は何時に起きますか？</p>
+
+<p><strong>cuzic</strong> 朝は、早い日は 6 時で、遅い日は 7 時。6 時に起きた日はジムに行ってから会社に行って。で、まあ定時ダッシュして、7 時前には家についてご飯を食べて、2 時間テレビを見て 10 時には寝る、みたいな。そんな感じが普段の生活ですかね。</p>
+
+<p><strong>Yuya</strong> 朝は、どれくらいの時間、ジムで運動するんですか？</p>
+
+<p><strong>cuzic</strong> 運動時間は 20 分くらいかな。服着替えたり、風呂入ったりするから 1 時間くらいかかるけど。</p>
+
+<p><strong>Yuya</strong> ウェイトですか？</p>
+
+<p><strong>cuzic</strong> ウェイトトレーニングですね。</p>
+
+<p><strong>Yuya</strong> ほぼ毎日？</p>
+
+<p><strong>cuzic</strong> 今は膝が痛かったからあまり行ってないけど、前はほぼ毎日行ってたね。</p>
+
+<p><strong>Yuya</strong> いいなぁ。家から会社までってどれくらいですか？</p>
+
+<p><strong>cuzic</strong> 30 分くらいじゃないかな。</p>
+
+<p><strong>Sixeight</strong> 近い。</p>
+
+<p><strong>cuzic</strong> そのために引越したのもあるから。だけど、また話がそれてしまうけど、大阪から遠くてもここまでやったらいいかなと思ったところが芦屋 <sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup> やったんやけど、芦屋までで賃貸料金の推移を考えたら、なんか我が家のある辺りが一番手ごろな料金体系になってたので。</p>
+
+<p><strong>Yuya</strong> 体系は一緒だと思いますよ (笑)</p>
+
+<p><strong>cuzic</strong> 料金ね遠くなればなるほど安くなる、みたいなそういうグラフを思い描いてたんだけど、全然そんなことなくって、芦屋に近づけば近づくほど高くなっていくという。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> 芦屋が頂点で西宮はちょっと下で、尼崎はもっと下でみたいな。</p>
+
+<p><strong>okkez</strong> そりゃそうだ。高級住宅地があるんやもん。</p>
+
+<p><strong>Yuya</strong> 間は安いけど (笑)</p>
+
+<p><strong>cuzic</strong> だからそう考えたら、遠くのところに住むってありえないな見たいな。ここは大阪に近づいてて、さらにリーズナブルなんで、ここに住む以外に考えれれへんよね、みたいな。</p>
+
+<p><strong>okkez</strong> 安いのがよければ、三田 <sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup> に住んだらいいんですよ。</p>
+
+<p><strong>cuzic</strong> そんなん、遠すぎじゃない (笑)。検索範囲に含まれてない。</p>
+
+<p><strong>okkez</strong> じゃ、夜は 10 時に寝るんですか？早いなぁ。</p>
+
+<p><strong>cuzic</strong> でも 10 時に寝て、6 時に起きるんですよ。8 時間だから普通じゃないですか。</p>
+
+<p><strong>okkez</strong> 早寝早起きでいい感じか。</p>
+
+<p><strong>cuzic</strong> 6 時に起きないと 6 時 50 分に家を出れないからね。</p>
+
+<p><strong>Yuya</strong> 会社に着くのは？</p>
+
+<p><strong>cuzic</strong> 会社は 8 時半位に着くから、1 時間ジムで、30 分移動でそんなもんじゃないかな。</p>
+
+<p><strong>okkez</strong> 9 時始業？</p>
+
+<p><strong>cuzic</strong> うん。まあ 8 時半くらいに着くようにしてる。</p>
+
+<h4 id="仕事とプライベートの両立">仕事とプライベートの両立</h4>
+
+<p><strong>okkez</strong> じゃあ、仕事とプライベートの両立。</p>
+
+<p><strong>cuzic</strong> うーん。それは、仕事を大量に高速に実現できるための仕組み作りっていうのを普段から頑張ることを……</p>
+
+<p><strong>Yuya</strong> ライフハックをしまくっている。</p>
+
+<p><strong>cuzic</strong> 別に仕事は定時で終わるようにして、問題なく終わると言う。</p>
+
+<p><strong>Yuya</strong> 残業はほとんどしてないですか？</p>
+
+<p><strong>cuzic</strong> ほとんどしてないですね。ま、作業とかがあればしてますけど。</p>
+
+<p><strong>Yuya</strong> きっぱりといい一日を。</p>
+
+<p><strong>okkez</strong> 優秀なサラリーマン現る。</p>
+
+<p><strong>cuzic</strong> どうなんやろね？</p>
+
+<p><strong>Yuya</strong> じつはスーツ？</p>
+
+<p><strong>cuzic</strong> 会社やから常時ですよ。</p>
+
+<p><strong>okkez</strong> え、そうなの？</p>
+
+<p><strong>cuzic</strong> うん。だからスーツで会社に行って、会社に着いたら作業着に着替える。</p>
+
+<p><strong>Yuya</strong> (笑)。へぇー。</p>
+
+<p><strong>okkez</strong> 知らんかった。</p>
+
+<p><strong>morphine57</strong> cuzic さんのことがよくわかるので嬉しいですね。いつも隠してる感じがあるから。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>Yuya</strong> なんか秘密が多いから。</p>
+
+<p><strong>cuzic</strong> そんなこと無いよ。</p>
+
+<p><strong>okkez</strong> cuzic の 108 の秘密って言う本を<a href="http://tatsu-zine.com/">達人出版会</a>から出したいな。</p>
+
+<p><strong>Yuya</strong> Kindle で読めます、みたいな。</p>
+
+<p><strong>okkez</strong> cuzic の視力は 0.いくらだぞ、みたいな。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>cuzic</strong> それ嬉しいの (笑)。それを読んでどんな気持ちになるん。嬉しくないやろ。</p>
+
+<p><strong>okkez</strong> とにかく、仕事とプライベートはばっちり両立してると。</p>
+
+<p><strong>cuzic</strong> うん、まあ、そういう言い方もできるね。</p>
+
+<p><strong>okkez</strong> でも、仕事ってさ、そんな頑張ってやるもんじゃないやん。</p>
+
+<p><strong>cuzic</strong> 切り上げればいいだけだよね、たいていの場合。で、あと決めればいいことをさっさと決めれば、すぐ終わるよね。</p>
+
+<p><strong>okkez</strong> そうそう。</p>
+
+<p><strong>cuzic</strong> なんか、決めないまま、検討しといてよ、見たいなんをどんどん増やすと、残業時間が増えると。とにかくさっさと決めることが重要。</p>
+
+<p><strong>okkez</strong> あと、プラン B を持っておく。プラン A がダメな時にプラン B をすぐ実行できるようにしておくとか。</p>
+
+<p><strong>Yuya</strong> 最初から両方実行したところで、プログラミングの場合はコストがそんなにかかんない。</p>
+
+<p><strong>cuzic</strong> ま、よっぽど大変じゃない限り、両方やっちゃえばいいよね、ほんと。なんか、コードが 10 行かかるか、1 行で済むかみたいなのが延々議論されてる気がして。1 万行と 100 行だったら、真面目に議論しないとダメだけどさ、そんなの頑張らなくてもいいよね。どっちかに決めればいいよね。</p>
+
+<p><strong>okkez</strong> 1 行と 10 行なら両方書いて動かしたらいいやん。</p>
+
+<p><strong>cuzic</strong> そうそう。ダメになったら変えればいいよね。そんなにコストがかからない。</p>
+
+<p><strong>okkez</strong> それは昔の人がよく言ってたよ。早すぎる最適化は悪みたいな話 <sup id="fnref:20"><a href="#fn:20" class="footnote">20</a></sup>。</p>
+
+<p><strong>cuzic</strong> 検討をばっちりして、100% の時点に最初から到達しようとしなくていいよね、別に。ま、大体いければいいかな、みたいな。</p>
+
+<p><strong>okkez</strong> 8 割出来たら、後の 2 割は後でつめていけば。</p>
+
+<p><strong>cuzic</strong> うん、出来る。どんどん経験値貯まって行くからね。貯まってない状態で、完璧を目指すからうまくいかないんだと思うな。</p>
+
+<p><strong>Yuya</strong> 完璧に理解できてない可能性の方が高いですから。</p>
+
+<p><strong>cuzic</strong> そうそう、とりあえず経験値貯めるっていうのが。</p>
+
+<p><strong>Yuya</strong> それ、最後の若手への言葉で必要そうな言葉なので。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> ほんまや。まあ、あとでもう 1 回言ったらいいんちゃうかな。</p>
+
+<h4 id="使っているマシン">使っているマシン</h4>
+
+<p><strong>okkez</strong> じゃあ、使っているマシン。なんかいっぱい持ってるよね？</p>
+
+<p><strong>cuzic</strong> いや、そんなことない。今使ってるのこれだけだもん。</p>
+
+<p><strong>okkez</strong> え、そうなんや。</p>
+
+<p><strong>cuzic</strong> これはパソコン工房で 3 年前に買ったパソコンですね。</p>
+
+<p><strong>okkez</strong> デスクトップはもう全然無いの？</p>
+
+<p><strong>cuzic</strong> ないない。Dell くんがまだ置かれてるけどね。もう全然使われてない。物置に置いてるね。</p>
+
+<p><strong>okkez</strong> 新しいマシンを用意する予定は？無し？</p>
+
+<p><strong>cuzic</strong> まあ、買ってもいいかなと思いつつ、別にこれでもいいかなと思ったり。</p>
+
+<p><strong>Yuya</strong> 必要性は感じていない？</p>
+
+<p><strong>cuzic</strong> まあ、そうやね。Windows7 のために買うかどうかって感じですね。</p>
+
+<p><strong>okkez</strong> Let’s note の N シリーズとか S シリーズがいいですか？</p>
+
+<p><strong>cuzic</strong> Let’s note はバランス取れてるよね。まあ、いろいろ検討してますってことで。<sup id="fnref:21"><a href="#fn:21" class="footnote">21</a></sup></p>
+
+<h4 id="好きな女性のタイプ">好きな女性のタイプ</h4>
+
+<p><strong>okkez</strong> 次、定番質問。好きな女性のタイプは？</p>
+
+<p><strong>Yuya</strong> チャーチャンッ。</p>
+
+<p><strong>cuzic</strong> これはどうすればいいんだろう……</p>
+
+<p><strong>Yuya</strong> ダダダダダダ。どうぞっ！</p>
+
+<p><strong>cuzic</strong> お、奥様と言うことで……、お願いいたします……</p>
+
+<p><strong>Yuya</strong> なんでそんなにビビってるんですか。</p>
+
+<p><strong>cuzic</strong> (笑)</p>
+
+<p><strong>okkez</strong> 今日は奥さんいないですよ。</p>
+
+<p><strong>Yuya</strong> 「（棒読み）」とか付けときましょうか？</p>
+
+<p><strong>cuzic</strong> 付けなくていいです (笑)。奥さん以外は考えられないに決まってるじゃないですか。</p>
+
+<p><strong>Yuya</strong> じゃあ、奥さん以外ではどんなタイプの女性が好きですか？</p>
+
+<p><strong>cuzic</strong> また難しい質問を。まあ、好きになった女性がタイプですってことで。</p>
+
+<p><strong>okkez</strong> そんな日和った回答が許されると思ってるんですか。</p>
+
+<p><strong>cuzic</strong> なんで (笑)</p>
+
+<p><strong>okkez</strong> この Hotlinks は人気企画なんですよ。</p>
+
+<p><strong>cuzic</strong> (笑)</p>
+
+<p><strong>Yuya</strong> かつ、もっとも重要な質問ですよ。</p>
+
+<p><strong>okkez</strong> もっと読者のことを考えてください。</p>
+
+<p><strong>cuzic</strong> なんでやねん (笑)</p>
+
+<p><strong>Yuya</strong> 2 人目の奥さん作るとしたらどんな感じの人ですか？</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> 日本では重婚は認められてませんが、もし仮にと言う話で。</p>
+
+<p><strong>cuzic</strong> 今の奥さんともう 1 回……、みたいな。</p>
+
+<p><strong>Yuya</strong> 誰がそんな (笑)。じゃあ、芸能人では？</p>
+
+<p><strong>cuzic</strong> 俺、ドラマとかいっぱい見てる割に、この人好きっていうのあまり無いんだよね。なんでか分かんないんですけど。</p>
+
+<p><strong>okkez</strong> 船越英一郎が好きとかさ、及川光博が好きとかさ。</p>
+
+<p><strong>Yuya</strong> 男性 (笑)</p>
+
+<p><strong>cuzic</strong> 及川光博は意外と好きだねぇ。ミッチーとかGackt とか、ちゃんと世界観を持ってる人たちはいいと思うな。</p>
+
+<p><strong>Yuya</strong> へぇー。</p>
+
+<p><strong>okkez</strong> 女性では？</p>
+
+<p><strong>cuzic</strong> 戸田恵梨香とかはかわいいなぁと思ってんけどなぁ。デスノートの時とかは。</p>
+
+<p><strong>okkez</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> 他は誰やろうなぁ。女性で、すげー、これかわいいと思ったことはあまりない。だけど、小西真奈美と福山雅治が結婚したのは大ショックやったな。どっちにショック何やろう？</p>
+
+<p><strong>Yuya</strong> そうですよ、どっちにショックだったんですか (笑)</p>
+
+<p><strong>cuzic</strong> 福山にショックやったかなぁ、小西真奈美もまあまあショックやったけど。でもあれはガセってうわさらしいから、やっぱねって感じやったけど <sup id="fnref:22"><a href="#fn:22" class="footnote">22</a></sup>。</p>
+
+<p><strong>Yuya</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> 嵐のスキャンダルもショックやったなぁ。</p>
+
+<p><strong>okkez</strong> 何で (笑)</p>
+
+<p><strong>Yuya</strong> まあまあ、芸能ネタ押さえてますね。</p>
+
+<p><strong>okkez</strong> だってさ、Kindle でいつも見てるの芸能ニュースやで。</p>
+
+<p><strong>cuzic</strong> そうそう、芸能ニュースね、全部読んだらめっちゃ量あるんやんか。こんなに！みたいな。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>okkez</strong> 話がずれましたが、好きな女性のタイプは奥さんと言うことで。</p>
+
+<p><strong>cuzic</strong> あ、俺、奥さんすげぇ愛してるやん。仕方がないな。</p>
+
+<p><strong>Yuya</strong> そこはばっちり載せときます。ボールドで。</p>
+
+<p><strong>okkez</strong> ボールドでっていうか、h1 くらいで。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h3 id="今後について">今後について</h3>
+
+<h4 id="今後の展望将来の夢など">今後の展望、将来の夢など</h4>
+
+<p><strong>okkez</strong> では、今後について。今後の展望、将来の夢。</p>
+
+<p><strong>cuzic</strong> なんやろなぁ？まあ、生き延びることかなぁ？</p>
+
+<p><strong>okkez</strong> サバイバル？</p>
+
+<p><strong>cuzic</strong> ほんと、そうやで。やっぱ俺って、ロスジェネじゃないですか。</p>
+
+<p><strong>Yuya</strong> (笑)。生き延びることですか？<a href="http://ja.wikipedia.org/wiki/%E8%87%AA%E5%B7%B1%E5%AE%9F%E7%8F%BE%E7%90%86%E8%AB%96">マズローの欲求段階説</a> <sup id="fnref:23"><a href="#fn:23" class="footnote">23</a></sup> で言うところの第一段階。</p>
+
+<p><strong>cuzic</strong> うーん、みんなそうなんじゃないかなぁ？違うんかなぁ？夢とかがあるんかなぁ、生き延びるよりもさらに強い。でもそうなんかもしれんなぁ。「俺は命なんかはどうでもいいから、ロマンを求めるんだ」みたいなの、カッコいいなぁ。俺はそうじゃないけど。</p>
+
+<p><strong>Yuya</strong> (笑)</p>
+
+<p><strong>cuzic</strong> でも俺はそうじゃないなぁ。まずは生き延びることやなぁ。</p>
+
+<p><strong>Yuya</strong> じゃあ、生き延びれたと仮定して、そこが絶対安全だとしての上位のものはなんかないですか？</p>
+
+<p><strong>cuzic</strong> 何を目指すんやろなぁ？だけどやっぱりそのコミュニティの中での承認欲求が満たされることみたいな感じじゃないかなぁ。</p>
+
+<p><strong>Yuya</strong> 第 3 まであがった。第 4 か？生理的欲求、安全の欲求、所属の欲求、承認の欲求だっけ？じゃ、第 5 の欲求いってみましょうか。自己実現の欲求。</p>
+
+<dl>
+  <dt><strong>cuzic</strong> 自己実現ってどうなんかなぁ。よく分からんけど。でもあの欲求段階説、嘘やと思うんやけどな。そんな単純じゃないんじゃないかな。</dt>
+  <dd><img src="/images/0032-Hotlinks/cuzic04.jpg" alt="cuzic04.jpg" /></dd>
+</dl>
+
+<p><strong>Yuya</strong> マズローを否定。</p>
+
+<p><strong>okkez</strong> うーん、哲学的なことは置いといて、将来の夢は？</p>
+
+<p><strong>Yuya</strong> 理想の老後とか。何歳でリタイアしたいとか。</p>
+
+<p><strong>cuzic</strong> だけど俺、ずっと働いてたいタイプやけどな。</p>
+
+<p><strong>okkez</strong> へぇー。</p>
+
+<p><strong>cuzic</strong> まったり、普通のプログラマとして。</p>
+
+<p><strong>Yuya</strong> あんまり忙しくなく、忙しくないのがこのまま続く？</p>
+
+<p><strong>cuzic</strong> そうそう。仕事を受注して、喜んでもらえて、いい仕事をしていけたらいいかな、みたいな。って感じですね。でもコミュニティ活動をある時期にリタイアするとかは無いんじゃないかなぁ？ずっと細く長く続けていくんじゃないですかね？</p>
+
+<p><strong>okkez</strong> 長くは大事だよね。</p>
+
+<p><strong>cuzic</strong> うん、継続は大事やと思うな。</p>
+
+<p><strong>okkez</strong> 一時期、ガッと頑張っちゃうと疲れるからね。</p>
+
+<p><strong>cuzic</strong> 継続重要。継続は力なり。</p>
+
+<p><strong>okkez</strong> 将来の夢は細く長く生きていくと言うことで。</p>
+
+<p><strong>cuzic</strong> 細く長くサバイブし続ける。</p>
+
+<p><strong>okkez</strong> なんかちょっとよく分からなくなってるけど (笑)</p>
+
+<h4 id="次のインタビューイ">次のインタビューイ</h4>
+
+<p><strong>okkez</strong> 次のインタビューイ。</p>
+
+<p><strong>cuzic</strong> 小波先生にしようと思ってオファーしたけど、返事が来てないんだよね。</p>
+
+<p><strong>okkez</strong> 小波先生、なかなか返事返してくれへんからさ、それはまあ、電話したりして。</p>
+
+<p><strong>cuzic</strong> 小波先生とはスケジュールさえ合わせれば、まあ大丈夫じゃないかな。</p>
+
+<p><strong>Yuya</strong> 問題は誰がインタビューアになるかですね。</p>
+
+<p><strong>cuzic</strong> それは俺になるんちゃうん？オファーしてやろうかな。まあ、タイアップ企画的にね、本を売るために。そういう風にするのがいいかなと。</p>
+
+<h4 id="若手に一言">若手に一言</h4>
+
+<p><strong>okkez</strong> 若手に一言。</p>
+
+<p><strong>cuzic</strong> なんやろな？色々やりましょうかな？まあ、空気読まずにいっぱいいろんなことをやるのがいいんじゃないですかね？</p>
+
+<p><strong>Yuya</strong> あえて空気を読まない？</p>
+
+<p><strong>cuzic</strong> あえて空気を読まずに。っていうか、縮こまらずにいっぱいやるのがいいなぁと思うけどね。</p>
+
+<p><strong>Yuya</strong> 我が道を行けですか。</p>
+
+<p><strong>cuzic</strong> なんかサバイブするって実はアンビバレントな部分があって、生き残りたい人って、どんどん正統派を目指していくんだよね、一般的に。つまり、当たり障りの無い、誰も文句の言わない部分だけをやろうとするんだけど、実はそれはたいしてサバイブできる方法じゃなくって、ちょっと毛色の変わったあんまり前に誰も通ってないような道を、梅田望夫さんが「けものみち」とか言ってるんだけど、そういうところを目指していく方が、実はサバイブしやすかったりして。なんかジレンマと言うかパラドックス的なところがあってですね、そういうあえて空気を読まないでやる方が、実は道が開けたりとかするんじゃないかなと思うので、色々やってみたらいいんじゃないかなと言うのが、若手への言葉と言うことで。</p>
+
+<p><strong>Yuya</strong> いいこと言った。</p>
+
+<p><strong>okkez</strong> いいこと言った。</p>
+
+<p><strong>cuzic</strong> 最後まとまった。</p>
+
+<p><strong>okkez</strong> 最後じゃないで。まだある。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h4 id="読者へ一言">読者へ一言</h4>
+
+<p><strong>okkez</strong> 読者へ一言。</p>
+
+<p><strong>cuzic</strong> 読者へ一言？なんやろうな……</p>
+
+<p><strong>西山</strong> 本買ってくださいじゃないんですか？</p>
+
+<p><strong>cuzic</strong> 本、俺が手に入らないくらいだからね。</p>
+
+<p><strong>okkez</strong> もう絶版になったから。『Ruby on Windows』は。</p>
+
+<p><strong>Yuya</strong> じゃあ、次書く本を言ってください。</p>
+
+<p><strong>okkez</strong> 達人出版会からなんか出そうよ。『Ruby on Windows』の Excel のやつだけ切り取って出すやつ、進めようよ。</p>
+
+<p><strong>cuzic</strong> あ、それは確かにありえる選択肢やな。だって、俺、あの頃は若かったけど、さらにノウハウが貯まってるから、そのノウハウを入れ込んで。</p>
+
+<p><strong>okkez</strong> しかもさ、試し読みが、るびまで出来るわけやんか。</p>
+
+<p><strong>cuzic</strong> まあ、そうだね。Excel だけ 100 ページか 200 ページくらいに膨らまして。あと、Exerb とかその周辺の部分を載せたら、それだけで欲しい人はいる気がするな。</p>
+
+<p><strong>okkez</strong> 思う。</p>
+
+<p><strong>cuzic</strong> と言うことで、そういう本をもし将来、私が書くことになれば買ってくださいと。</p>
+
+<p><strong>okkez</strong> はい。では、これで終わりたいと思います。ありがとうございました。</p>
+
+<p><strong>cuzic</strong> いえいえ、こちらこそありがとうございました。</p>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回は「Ruby on Windows」の著者である cuzic さんにお話を伺いました。お忙しい中、本当にありがとうございました。次回の Rubyist Hotlinks は小波秀雄さんにお話を伺います。お楽しみに。</p>
+
+<p>(インタビュー：okkez、編集：くげ)</p>
+
+<h2 id="rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-Hotlinks.html">Rubyist Hotlinks 【第 36 回】 須藤功平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0052/0052-Hotlinks.html">Rubyist Hotlinks 【第 35 回】 島田浩二さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0045/0045-Hotlinks.html">Rubyist Hotlinks 【第 34 回】 大場さん夫妻 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0044/0044-Hotlinks.html">Rubyist Hotlinks 【第 33 回】 大場さん夫妻 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0042/0042-Hotlinks.html">Rubyist Hotlinks 【第 32 回】 卜部昌平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-Hotlinks.html">Rubyist Hotlinks 【第 31 回】 樽家昌也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0038/0038-Hotlinks.html">Rubyist Hotlinks 【第 30 回】 遠藤侑介さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-Hotlinks.html">Rubyist Hotlinks 【第 29 回】 松田明さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0035/0035-Hotlinks.html">Rubyist Hotlinks 【第 28 回】 Yugui さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-Hotlinks.html">Rubyist Hotlinks 【第 27 回】 小波秀雄 さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-Hotlinks.html">Rubyist Hotlinks 【第 26 回】 cuzic さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0031/0031-Hotlinks.html">Rubyist Hotlinks 【第 25 回】 加藤勇也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0030/0030-Hotlinks.html">Rubyist Hotlinks 【第 24 回】 okkez さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0029/0029-Hotlinks.html">Rubyist Hotlinks 【第 23 回】 yhara さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-Hotlinks.html">Rubyist Hotlinks 【第 22 回】 nari さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0023/0023-Hotlinks.html">Rubyist Hotlinks 【第 21 回】 原信一郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Hotlinks.html">Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-Hotlinks.html">Rubyist Hotlinks 【第 19 回】 伊尾木将之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Hotlinks.html">Rubyist Hotlinks 【第 18 回】 立石孝彰さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Hotlinks.html">Rubyist Hotlinks 【第 16 回】 essa さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Hotlinks.html">Rubyist Hotlinks 【第 15 回】 arton さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Hotlinks.html">Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Hotlinks.html">Rubyist Hotlinks 【第 13 回】 関将俊さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Hotlinks.html">Rubyist Hotlinks 【第 12 回】 後藤兄弟 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Hotlinks.html">Rubyist Hotlinks 【第 11 回】 後藤兄弟 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Hotlinks.html">Rubyist Hotlinks 【第 10 回】 わたなべひろふみさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Hotlinks.html">Rubyist Hotlinks 【第 9 回】 中田伸悦さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks.html">Rubyist Hotlinks 【第 8 回】 田中哲さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-3.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その3</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-2.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その2</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-1.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その1</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Hotlinks.html">Rubyist Hotlinks 【第 7 回】 江渡浩一郎さん 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Hotlinks.html">Rubyist Hotlinks 【第 6 回】 江渡浩一郎さん 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Hotlinks.html">Rubyist Hotlinks 【第 5 回】 増井俊之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Hotlinks.html">Rubyist Hotlinks 【第 4 回】 ただただしさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Hotlinks.html">Rubyist Hotlinks 【第 3 回】 かずひこさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-Hotlinks.html">Rubyist Hotlinks 【第 2 回】 前田修吾さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>新ビバリーヒルズ青春白書の第 1 回のタイトル。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>日本 Ruby カンファレンス 2006。「Ruby On Rails の Relative Path プラグイン」&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>『<a href="/articles/0003/0003-Win32OLE.html">Win32OLE 活用法</a>』の連載 (第 4 回は除く)。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Ruby 関西が主催する、Ruby 勉強会は京都女子大学で開催されることが多い。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Amazon が製造した電子書籍リーダ端末。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>Virtual private server。仮想専用サーバ。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>Ruby のプラットフォームを提供するサービス。Rails などの Rack 上で動くフレームワークであれば、なんでもホスティングできる。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p><a href="http://k-of.jp/2010/">関西オープンソース 2010</a>。2008 年から、関西Ruby会議を同時開催している。2010 年は 3 回目。(<a href="http://regional.rubykaigi.org/kansai03">関西Ruby会議03</a>)&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>「<a href="http://www.slideshare.net/cuzic/ruby-5690082">リアルビジネス Ruby</a>」&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>スマートフォンではない、普通の携帯電話。電子マネー、ワンセグなど世界ではあまり見られない日本独自の機能を持っているため、ガラパゴスケータイと呼ばれるようになり、略してガラケーとなった。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>今は takibi という新しいプロジェクトを開始しているので状況は違います。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>今は公開しています。<a href="http://www.github.com/cuzic/takibi/">takibi</a>&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p><a href="http://ja.wikipedia.org/wiki/Phase-change_Dual">Phase-change Disc</a>。書き換え可能な光ディスク。CDと同じサイズで、カートリッジに入っている。&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>全文検索エンジン「Namazu」や、メーリングリストシステムの「quickml」などの作者。&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p><a href="http://www.slideshare.net/eto/ruby-6134530">メディアアートにおけるプログラミング言語Rubyの役割</a>。&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>インターネット上の集合知の研究者。「qwikWeb」の作者。&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p><a href="http://d.hatena.ne.jp/tarte/20061129">tarte 記録 - open-uriを無理やりPOST対応にする</a>&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>大阪と神戸の間にある市。関西では有名な高級住宅街。&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p>大阪から 40 分ほどのところにある市。「みた」ではなく「さんだ」と読む。&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:20">
+      <p>クイックソートを開発したアントニー・ホーアの格言。&nbsp;<a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:21">
+      <p>その後 Let’s note の N シリーズを買いました。&nbsp;<a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:22">
+      <p>2010 年 11 月に、福山主演の大河ドラマ「龍馬伝」終了後、年内に結婚と報じられたが、2011 年 1 月現在、結局結婚報道は無し。&nbsp;<a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:23">
+      <p>アメリカの心理学者、A・マズローが提唱した理論。人間の欲求は 5 段階のピラミッド状になっていると言う理論。&nbsp;<a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

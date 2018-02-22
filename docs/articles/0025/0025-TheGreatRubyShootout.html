@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby 仮想マシン・ガチンコバトル (2008 年 12 月版)</title>
+  <meta name="description" content="〔訳注: 本記事は The Great Ruby Shootout の翻訳です。〕">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0025/0025-TheGreatRubyShootout.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby 仮想マシン・ガチンコバトル (2008 年 12 月版)</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0025/0025-TheGreatRubyShootout.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby 仮想マシン・ガチンコバトル (2008 年 12 月版)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0025/0025-TheGreatRubyShootout.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0025/0025-TheGreatRubyShootout.html" data-text="Ruby 仮想マシン・ガチンコバトル (2008 年 12 月版)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>〔訳注: 本記事は <a href="http://antoniocangiano.com/2008/12/09/the-great-ruby-shootout-december-2008/">The Great Ruby Shootout</a> の翻訳です。〕</p>
+
+<p>著者: <a href="http://antoniocangiano.com/about/">Antonio Cangiano</a>、作成日: 2008 年 12 月 9 日  〔翻訳: 桑田 誠〕</p>
+
+<hr />
+
+<p>長らくお待たせした、Ruby 仮想マシン・ガチンコバトルを公開します。
+このレポートでは、総合的なベンチマーク集を使って複数の Ruby 実装のパフォーマンスを比較しています。
+テストした実装は、<a href="http://www.ruby-lang.org/en/">Ruby 1.8</a> (通称 MRI), <a href="http://www.ruby-lang.org/en/downloads/">Ruby 1.9</a> (通称 Yarv), <a href="http://www.rubyenterpriseedition.com/">Ruby Enterprise Edition</a> (通称 REE), <a href="http://jruby.codehaus.org/">JRuby 1.1.6RC1</a>, <a href="http://rubini.us/">Rubinius</a>, <a href="http://ruby.gemstone.com/">MagLev</a>, <a href="http://www.macruby.org/trac/wiki/MacRuby">MacRuby 0.3</a>, <a href="http://www.ironruby.net/">IronRuby</a> です。</p>
+
+<h2 id="免責事項">免責事項</h2>
+
+<p><a href="http://antoniocangiano.com/2007/12/03/the-great-ruby-shootout/">前回の対決</a>と同様、結果を紹介する前に、読者には以下の重要事項を考慮することを強くお勧めします。</p>
+
+<ul>
+  <li>
+    <p><a href="http://www.engineyard.com/">Engine Yard</a> はこの Web サイト (訳注：<a href="http://antoniocangiano.com/">Zen and the Art of Programming</a>) のスポンサーであり、Rubinius プロジェクトの非常に広範囲なスポンサーでもあります。言うまでもありませんが、これらのことによって Rubinius に関してのデータに何らかの手心を加えて報告するようなことはありません。</p>
+  </li>
+  <li>
+    <p>本稿を深読みしすぎないように。またどんな最終的な結論も下さないように。これらの面白いプロジェクトはそれぞれ異なる利点と欠点があり、またそれぞれに存在理由があります。それらについては本稿では取り上げません。各プロジェクトの成熟度と完全性はそれぞれ異なってます。もっといえば、すべての実装が同じ最適化レベルを享受しているわけではありません。本稿は、こういうものと受け止めてください – これは、現状のRuby の実装についての、興味深くて面白そうな比較記事です。</p>
+  </li>
+  <li>
+    <p>本稿に掲載されている結果はほんの数ヶ月のうちに変わる可能性があります。そうなればこのブログでまた対決を行なうでしょう。もしお望みなら、<a href="http://feeds.feedburner.com/ZenAndTheArtOfRubyProgramming">フィードを購読してください</a>;</p>
+  </li>
+  <li>
+    <p>ベンチマークした範囲は限定されています。なぜなら、各実装における単一機能すべてをテストすることも、また可能なプログラムをすべて含めることもできないからです。スピードという観点で、一般的な見解を提供してくれるマイクロベンチマーク集であるに過ぎません。現実世界のパフォーマンスを予言してくれるような絶対的に正確なものというわけではありません。</p>
+  </li>
+  <li>
+    <p>多くの人にとって興味があるのは、テストで使用した各 VM が、Ruby on Rails 配備スタックにどれだけの改善をもたらしてくれるかという点です。ある VM A が VM B より 3 倍速いとして、Rails が 1 分あたりに処理できるリクエスト数も 3 倍になるだろうという仮定はしないでください。そんなことはないですから。とはいっても、VM がより速いというのはいいニュースだし、稼働中の Rails アプリケーションにプラスの影響を与えるのは間違いありません。</p>
+  </li>
+  <li>
+    <p>これらのテストは筆者が自由に使えるマシンで行なっています。皆さんの環境では、結果が変わってくるでしょう。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。自分が興味を持った VM と、自分のハードウェアと、自分が必要とする/使用するプログラムを使ってテストを行なうようお願いします。</p>
+  </li>
+  <li>
+    <p>本稿では簡単のため、「仮想マシン」と「インタプリタ」をはっきり区別せず、どちらも単に「仮想マシン (VM)」と呼んでいます。</p>
+  </li>
+  <li>
+    <p>いくつかのベンチマークは、エンドユーザより VM 実装者にとって大変興味深いでしょう。というわけで、もしテストで使用したベンチマークがばかばかしい/不適切/説得力のないものだと思ったら、<a href="http://github.com/acangiano/ruby-benchmark-suite/tree/master">Ruby Benchmark Suite</a> にコードを寄贈してください。受理されれば、次回の対決に含まれるでしょう。</p>
+  </li>
+  <li>
+    <p>最後に、世の中には 3 種類のウソがあることを頭に入れておいてください: <a href="http://en.wikipedia.org/wiki/Lies,_damned_lies,_and_statistics">ウソ、ひどいウソ、そして統計</a>。</p>
+  </li>
+</ul>
+
+<h2 id="テストで使用された-ruby-実装">テストで使用された Ruby 実装</h2>
+
+<p>メイン対決には、現在の Ruby Benchmark Suite を実行できた Ruby 実装をすべて含めています。
+これに含まれるのは、Ruby 1.8.7 (p72、ソースからコンパイルしたものと、apt-get でインストールしたもの)、Ruby 1.9.1 (trunk、p5000、リビジョン 20560)、Ruby Enterprise Edition (1.8.6-20081205)、JRuby 1.1.6RC1、Rubinius (trunk から)、Ruby 1.8.6 (p287、One-Click Installer を使用) です。
+最後の Ruby 1.8.6 は Windows Vista Ultimate x64 で、それ以外は Ubuntu 8.10 x64 でテストしています。
+ベンチマークに使用したハードウェアは筆者のデスクトップワークステーションで、CPU が Intel Core 2 Quad Q6600 (2.4 GHz)、メモリが 8GB です。
+JRuby は -J-server オプションつきで実行され、スタックサイズは 4MB を指定しています (これはある再帰的なベンチマークを最後まで実行するのに必要でした)。
+タイムは 5 回繰り返したうちの最もよいものを報告しており、また起動時間や、クラスやメソッドを最初に構文解析したりコンパイルするのにかかる時間は含まれていません。
+いくつか新しいテストでは、さまざまな入力サイズが使われています。</p>
+
+<p>MagLev チームは筆者に、今回のベンチマークのために MagLev の初期アルファバージョンを提供してくれました。
+この VM はまだ十分には成熟しておらず Ruby Benchmark Suite を実行できないため、古いバージョンの Ruby Benchmark Suite とカスタムスクリプトを使い、Ubuntu 8.10 x86 上でテストしています。
+MagLev のテストは、(メインベンチマークと同じ名前であっても) ベンチマークは異なりますが、メイン対決で使用したのと同じマシンで Ruby 1.8.6 (p287) と一緒にテストしています。</p>
+
+<p>MacRuby 0.3 と Ruby 1.8.6 (p114) は、前のバージョンの Ruby Benchmark Suite を使って Mac OS X Leopard 上でテストしました。
+筆者の MacBook Pro は死んじゃったので (あーあ)、このベンチマークは Quad-Core Intel Xeon 2.8 GHz プロセッサを 2 つと 18 GB RAM を搭載した Mac Pro で行なっています。</p>
+
+<p>IronRuby (trunk より) と Ruby 1.8.6 (p287) は、前のバージョンの Ruby Benchmark Suite を使い、メイン対決で使ったのと同じクアッドコアマシンを使って Windows Vista x64 上でテストされました。
+MagLev と MacRuby と IronRuby についての数々のレポートは 5 回繰り返したうちの最もよいものを採用しており、起動時間も含まれています。
+IronRuby on Mono は、IronRuby の複数のバージョンと Mono の 2 つのバージョンを使って試行錯誤したにも関わらず、筆者のマシンでは動かなかったのでテストできませんでした。
+Ruby 1.8.6 (p287) は Windows 上で 2 回テストされていることに注意してください。
+1 つ目は現在の Ruby Benchmark Suite を使ったメイン対決で、2 つ目は IronRuby と比較するために古いベンチマークを実行したときです。</p>
+
+<p><strong>注意</strong>: すごくやりたくなるだろうとは思いますが、別々の対決での結果を使って各実装を比較するのはやめてください。
+異なるベンチマークおよび/または異なるマシンを使ってテストした VM を直接比較するのは大変危険です。
+唯一意味のある比較ができるのは、4 つのグループそれぞれの中においてだけです。</p>
+
+<h2 id="メイン対決">メイン対決</h2>
+
+<p>下の表は、メインの実装における実行時間を表しています。
+表はかなり幅が広いので、リンクをクリックして新しいタブにデータを表示させてください。</p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/main_time_small.gif" alt="main_time_small.gif" /></p>
+
+<p>(<a href="http://tinyurl.com/6r58lc">詳細はここをクリック</a>)</p>
+
+<p>緑の太字で表示されているデータは、(今回の基準としている) GNU/Linux での Ruby 1.8.7 より高速な VM であることを表しています。
+また背景が黄色のデータはそのベンチマークで最高速の実装であることを、赤字で示されたデータは基準より遅いことをそれぞれ表しています。
+Timeout はスクリプトの実行が現実的な時間では終わらなかったため (自動的に) 中断させられたことを表しています。
+最終行に示された値は、すべての VM でエラーにならずに実行されたベンチマークだけを共通部分集合として取り出し、それらの実行時間の合計値 (秒) を表しています。
+Vista 上での Ruby 1.8.7 をはじめとして、基準となる VM で実行がエラーとなった場合は他のものを使っています (色づけのためだけに使用)。</p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/main_geomean_small.gif" alt="main_geomean_small.gif" /></p>
+
+<p>(<a href="http://tinyurl.com/599a3b">詳細はここをクリック</a>)</p>
+
+<p>基準値となる時間をベンチマークの時間で割っています。
+こうすることで、各実装がそのベンチマークにおいて「何倍速いか」がわかります。
+2.0 であれば 2 倍高速であり、0.5 であれば半分の速度しかない (2 倍遅い) ことになります。
+また表の最後にある幾何平均 (geometric mean) を見れば、メインとなる Ruby インタプリタに対して「平均として」どのくらい速いかまたは遅いかが分かります。
+これらの値は前述の合計時間と同じように、各 VM で問題なく実行できた 101 個のテストだけを対象にして計算されています。</p>
+
+<p>もっと簡単にするために、各実装でのテストの比率の幾何平均を棒グラフにしてみました:</p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/chart_geomean_small.png" alt="chart_geomean_small.png" /></p>
+
+<p>筆者は、データそれ自身に語らせることが好きですが、これらの結果について簡単にコメントしておきましょう。
+いくつかの簡単な考察だけですが。</p>
+
+<p>問題なく実行できたテストでの比率の<a href="http://en.wikipedia.org/wiki/Geometric_mean">幾何平均</a>は置いといて、ソースからコンパイルされた Ruby MRI は Ubuntu でインストールされている Ruby と Vista 上の One-Click Installer より 2 倍高速でした。
+./configure &amp;&amp; make &amp;&amp; sudo make install と sudo apt-get install ruby-full との間にはまさに超えられない壁があり、本番環境では容易に採用するわけにはいきません。
+これらの数字は私たちの多くがすでに知っている事実を再度見せつけてくれました: Ruby は Windows 上ではとりわけ遅いのです (しかし <a href="http://groups.google.com/group/capistrano/msg/f5213577eaeadc47?pli=1">世の中では Windows ユーザが多数を占めている</a>のも確かです)。</p>
+
+<p>パフォーマンスの点でいえば、Rubinius が Ruby 1.8.7 や他の高速な VM に追いつくためにはまだすべきことが残っています。
+特にタイムアウトとなったテストの数が多いことは問題です。
+しかし Rubinius は過去 1 年で改善されており、正しい道筋を辿っていると筆者は思います。</p>
+
+<p>Ruby Enterprise Edition はソースからコンパイルされた Ruby 1.8.7 と同等の速度です。
+これは、Ruby Enterprise Edition が Ruby 1.8.6 にメモリ消費量を削減するためのパッチをあてたバージョンであることを考えると、妥当な結果でしょう (メモリ消費量は現在のベンチマークでは測定されないパラメータです)。</p>
+
+<p>優秀な結果について話すと、Ruby 1.9.1 と JRuby 1.1.6 は両方とも__たいへん__優秀でした。
+遅いメインインタプリタに対して、相対的に速い 2 つの代替物を私たちは遂に手に入れたのではないでしょうか。
+前述の結果と 2、3 のテストでの例外とを考えると、この 2 つの実装は (ソースからコンパイルされた) Ruby 1.8.7 よりも平均して約 2〜2.5 倍速く、また apt-get でインストールされた Ruby 1.8.7 や Vista 上の One-Click installer より約 4〜5 倍高速です。
+繰り返しますが、すべてのプログラム (特に Rails) が同じだけ速くなるわけではありません。
+しかしそれでも、これらの結果には勇気づけられます。</p>
+
+<h2 id="maglev">MagLev</h2>
+
+<p>数ヶ月前に Avi Bryant が最初のベンチマークを公開してからというもの、MagLev については数多くの噂が飛び交っていました。
+今回、私たちは遂に MagLev を使ったテストを行うことができました。
+下の表は、古いバージョンの Ruby Benchmark Suite をもとにした MagLev のベンチマーク集を、MagLev と Ruby 1.8.6 (p287) で実行して得られた時間を表しています:</p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/maglev_time.png" alt="maglev_time.png" /></p>
+
+<p>そしてこちらが比率です:</p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/maglev_geomean.png" alt="maglev_geomean.png" /></p>
+
+<p>これを見ると、MagLev が MRI よりずっと高速な部分もあれば、ずっと遅い部分もあることがわかるでしょう。
+改善できる部分はたくさんあると思っていますが、少なくとも MRI より 2 倍は高速であり、初期段階でこの結果であれば間違いなく将来有望です。</p>
+
+<h2 id="macruby">MacRuby</h2>
+
+<p>MacRuby 0.3 を Mac OS X 10.5.5 上で実行した時間です:</p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/macruby_time.png" alt="macruby_time.png" /></p>
+
+<p>そして MRI を基準にした比率です:</p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/macruby_geomean.png" alt="macruby_geomean.png" /></p>
+
+<p>MacRuby は比較的新しいので、これらの結果はそう悪くありません。
+まだ多くの作業が必要ですが、始まったばかりのプロジェクトとしてはよい成績です。</p>
+
+<h2 id="ironruby">IronRuby</h2>
+
+<p>最後に (これが最後だと約束しましょう)、IronRuby と Ruby 1.8.6 の表を 2 つ紹介します:</p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/ironruby_time.png" alt="ironruby_time.png" /></p>
+
+<p><img src="http://antoniocangiano.com/images/shootout3/ironruby_geomean.png" alt="ironruby_geomean.png" /></p>
+
+<p>IronRuby は Windows 上の Ruby 1.8.6 より遅く、また GNU/Linux 上の Ruby 1.8.7 よりずっと遅いという結果になりました。
+これは驚くようなことではありません。
+このプロジェクトは .NET との統合に注力しており、また RSpec 通過比率を改善することで言語実装に追いつこうとしています。
+反対に、パフォーマンスの最適化および/またはチューニングはあまり注力されていません (RubyConf 2008 での <a href="http://rubyconf2008.confreaks.com/ironruby.html">John Lam によるプレゼンテーション</a> による)。
+次回の対決では改善されたもので測定できるでしょう。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>全体的に、素晴らしい結果が出たと思います。
+遅くてメモリリークもある Ruby 1.8 (MRI) は過去のものです。
+今こそコミュニティは前に進み、よりよく、より速いものに移行すべき時期です -
+そして現在のところそのための興味深い代替物を私たちは手に入れています。</p>
+
+<p>筆者の希望としては、次回の対決では、MagLev、MacRuby、IronRuby がベンチマーク集を実行できるようになり、かつ互いに直接比較できるようになっていることを望みます。
+また Tim Bray の XML ベンチマークや、Rails や Merb アプリケーションでの「Pet Shop」サンプルのようなものや、とりわけメモリ使用量の統計を含めたいと思います。</p>
+
+<p>メイン対決の Excel ファイルは<a href="http://antoniocangiano.com/files/MainShootout3.0.xls">こちら</a>になります。
+差し当たり、これで全部です。
+<a href="http://antoniocangiano.com/2008/12/09/the-great-ruby-shootout-december-2008/#respond">この記事にコメント</a>したり、<a href="http://feeds.feedburner.com/ZenAndTheArtOfRubyProgramming">筆者のフィードを購読</a>したり、<a href="http://news.ycombinator.com/item?id=391301">Hacker News</a> や <a href="http://www.reddit.com/r/programming/comments/7ic05/the_great_ruby_shootout_december_2008/">Reddit</a> や <a href="http://www.dzone.com/links/the_great_ruby_shootout_december_2008.html">DZone</a> や StumbleUpon や <a href="http://twitter.com/">Twitter</a> などでこのリンクを共有したり宣伝するのは自由に行なっていただいて構いません。
+この対決をまとめあげるのは骨の折れる作業でしたので、これについての評判を広めてくれる人全員にたいへん感謝します。
+次回までは……</p>
+
+<p><strong>追記 (2008 年 12 月 10 日)</strong>:
+本記事は 2 つの重要事項について昨日の結果を修正するために更新されました。
+筆者のコメントも同様に、修正された図に対する見解へと修正しました。
+〔訳注: 日本語版は修正後のものを翻訳〕</p>
+
+<p>本記事を楽しんでいただけたら、<a href="http://antoniocangiano.com/table-of-contents/">目次</a>もチェックしてください。
+また <a href="http://feeds.feedburner.com/ZenAndTheArtOfRubyProgramming">RSS フィード</a>も購読してみてください。</p>
+
+<h2 id="編集くげ">(編集：くげ)</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>訳注: “your mileage may vary.” って何???&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>訳注: “「あなたの状況は異なるかもしれません」というような意味です。もともとは車のCMで燃費(mileage)は乗り方によって異なることを明示する注釈として使われたフレーズから誕生したものだそうです - matz&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

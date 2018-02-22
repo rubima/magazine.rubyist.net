@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby M17N の設計と実装</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0025/0025-Ruby19_m17n.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby M17N の設計と実装</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0025/0025-Ruby19_m17n.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby M17N の設計と実装" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0025/0025-Ruby19_m17n.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0025/0025-Ruby19_m17n.html" data-text="Ruby M17N の設計と実装">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#多言語化概論" id="markdown-toc-多言語化概論">多言語化概論</a>    <ul>
+      <li><a href="#m17n-とは" id="markdown-toc-m17n-とは">M17N とは</a>        <ul>
+          <li><a href="#l10n" id="markdown-toc-l10n">L10N</a></li>
+          <li><a href="#i18n" id="markdown-toc-i18n">I18N</a></li>
+          <li><a href="#m17n" id="markdown-toc-m17n">M17N</a></li>
+          <li><a href="#i18n-等の語源" id="markdown-toc-i18n-等の語源">I18N 等の語源</a></li>
+        </ul>
+      </li>
+      <li><a href="#ucs-normalization-と-csi" id="markdown-toc-ucs-normalization-と-csi">UCS Normalization と CSI</a>        <ul>
+          <li><a href="#ucs-normalization-方式" id="markdown-toc-ucs-normalization-方式">UCS Normalization 方式</a>            <ul>
+              <li><a href="#perls-case-utf-8" id="markdown-toc-perls-case-utf-8">Perl’s case (UTF-8)</a></li>
+              <li><a href="#javas-case-utf-16" id="markdown-toc-javas-case-utf-16">Java’s case (UTF-16)</a></li>
+              <li><a href="#moshs-case-utf-32" id="markdown-toc-moshs-case-utf-32">Mosh’s case (UTF-32)</a></li>
+              <li><a href="#trons-case-tron-コード" id="markdown-toc-trons-case-tron-コード">TRON’s case (TRON コード)</a></li>
+            </ul>
+          </li>
+          <li><a href="#csi-方式" id="markdown-toc-csi-方式">CSI 方式</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#ruby-m17n-の概念" id="markdown-toc-ruby-m17n-の概念">Ruby M17N の概念</a>    <ul>
+      <li><a href="#csi-方式-1" id="markdown-toc-csi-方式-1">CSI 方式</a></li>
+      <li><a href="#string-がエンコーディングを持つ" id="markdown-toc-string-がエンコーディングを持つ">String がエンコーディングを持つ</a></li>
+      <li><a href="#script-encoding" id="markdown-toc-script-encoding">Script Encoding</a></li>
+      <li><a href="#magic-comment" id="markdown-toc-magic-comment">Magic Comment</a></li>
+      <li><a href="#外部エンコーディングと内部エンコーディング" id="markdown-toc-外部エンコーディングと内部エンコーディング">外部エンコーディングと内部エンコーディング</a>        <ul>
+          <li><a href="#default_external-と-default_internal" id="markdown-toc-default_external-と-default_internal">default_external と default_internal</a></li>
+          <li><a href="#command-line-option--e-と--u" id="markdown-toc-command-line-option--e-と--u">Command Line option -E と -U</a></li>
+        </ul>
+      </li>
+      <li><a href="#ロケールエンコーディング" id="markdown-toc-ロケールエンコーディング">ロケールエンコーディング</a></li>
+      <li><a href="#ファイルシステムエンコーディング" id="markdown-toc-ファイルシステムエンコーディング">ファイルシステムエンコーディング</a>        <ul>
+          <li><a href="#windows-の場合" id="markdown-toc-windows-の場合">Windows の場合</a></li>
+          <li><a href="#unix-系の場合" id="markdown-toc-unix-系の場合">Unix 系の場合</a></li>
+          <li><a href="#mac-os-x-の場合" id="markdown-toc-mac-os-x-の場合">Mac OS X の場合</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#ruby-m17n-の実装" id="markdown-toc-ruby-m17n-の実装">Ruby M17N の実装</a>    <ul>
+      <li><a href="#ruby-の扱うエンコーディング" id="markdown-toc-ruby-の扱うエンコーディング">Ruby の扱うエンコーディング</a>        <ul>
+          <li><a href="#ascii-compatible-encoding" id="markdown-toc-ascii-compatible-encoding">ASCII Compatible Encoding</a>            <ul>
+              <li><a href="#ascii-の範囲" id="markdown-toc-ascii-の範囲">ASCII の範囲</a></li>
+              <li><a href="#ascii-only" id="markdown-toc-ascii-only">ASCII ONLY</a></li>
+              <li><a href="#ascii-8bit" id="markdown-toc-ascii-8bit">ASCII-8BIT</a></li>
+              <li><a href="#emacs-mule" id="markdown-toc-emacs-mule">Emacs-Mule</a></li>
+            </ul>
+          </li>
+          <li><a href="#ascii-incompatible-encoding" id="markdown-toc-ascii-incompatible-encoding">ASCII Incompatible Encoding</a>            <ul>
+              <li><a href="#utf-16--utf-32" id="markdown-toc-utf-16--utf-32">UTF-16 &amp; UTF-32</a></li>
+            </ul>
+          </li>
+          <li><a href="#dummy-encoding" id="markdown-toc-dummy-encoding">Dummy Encoding</a></li>
+          <li><a href="#エンコーディングの追加" id="markdown-toc-エンコーディングの追加">エンコーディングの追加</a></li>
+          <li><a href="#special-encoding-name" id="markdown-toc-special-encoding-name">Special Encoding Name</a></li>
+        </ul>
+      </li>
+      <li><a href="#encoding" id="markdown-toc-encoding">Encoding</a>        <ul>
+          <li><a href="#エンコーディングの取得" id="markdown-toc-エンコーディングの取得">エンコーディングの取得</a></li>
+          <li><a href="#個別エンコーディングの情報取得" id="markdown-toc-個別エンコーディングの情報取得">個別エンコーディングの情報取得</a></li>
+          <li><a href="#その他" id="markdown-toc-その他">その他</a></li>
+        </ul>
+      </li>
+      <li><a href="#string" id="markdown-toc-string">String</a>        <ul>
+          <li><a href="#文字列のエンコーディング" id="markdown-toc-文字列のエンコーディング">文字列のエンコーディング</a></li>
+          <li><a href="#文字オブジェクト" id="markdown-toc-文字オブジェクト">文字オブジェクト</a></li>
+          <li><a href="#string-1" id="markdown-toc-string-1">String#[]</a></li>
+          <li><a href="#文字リテラル" id="markdown-toc-文字リテラル">文字リテラル</a></li>
+          <li><a href="#stringord-と-integerchr" id="markdown-toc-stringord-と-integerchr">String#ord と Integer#chr</a></li>
+          <li><a href="#文字列リテラル" id="markdown-toc-文字列リテラル">文字列リテラル</a></li>
+          <li><a href="#stringlength" id="markdown-toc-stringlength">String#length</a></li>
+          <li><a href="#stringeach_" id="markdown-toc-stringeach_">String#each_*</a></li>
+          <li><a href="#文字列の比較結合" id="markdown-toc-文字列の比較結合">文字列の比較・結合</a></li>
+          <li><a href="#バイト列としての-string" id="markdown-toc-バイト列としての-string">バイト列としての String</a></li>
+          <li><a href="#stringforce_encoding" id="markdown-toc-stringforce_encoding">String#force_encoding</a></li>
+          <li><a href="#stringvalid_encoding" id="markdown-toc-stringvalid_encoding">String#valid_encoding?</a></li>
+          <li><a href="#stringgsubpattern-hash" id="markdown-toc-stringgsubpattern-hash">String#gsub(pattern, hash)</a></li>
+          <li><a href="#stringinspect--stringdump" id="markdown-toc-stringinspect--stringdump">String#inspect / String#dump</a></li>
+        </ul>
+      </li>
+      <li><a href="#regexp" id="markdown-toc-regexp">Regexp</a>        <ul>
+          <li><a href="#正規表現とエンコーディング" id="markdown-toc-正規表現とエンコーディング">正規表現とエンコーディング</a></li>
+          <li><a href="#ascii-only-1" id="markdown-toc-ascii-only-1">ASCII ONLY</a></li>
+          <li><a href="#キャプチャ構文" id="markdown-toc-キャプチャ構文">キャプチャ構文</a></li>
+          <li><a href="#バイト列とのマッチ" id="markdown-toc-バイト列とのマッチ">バイト列とのマッチ</a></li>
+        </ul>
+      </li>
+      <li><a href="#io" id="markdown-toc-io">IO</a>        <ul>
+          <li><a href="#外部エンコーディングと内部エンコーディング-1" id="markdown-toc-外部エンコーディングと内部エンコーディング-1">外部エンコーディングと内部エンコーディング</a></li>
+          <li><a href="#エンコーディングの設定変換" id="markdown-toc-エンコーディングの設定変換">エンコーディングの設定･変換</a></li>
+          <li><a href="#バイト文字バイト列文字列" id="markdown-toc-バイト文字バイト列文字列">バイト・文字・バイト列・文字列</a></li>
+          <li><a href="#ioexternal_encoding-と-iointernal_encoding" id="markdown-toc-ioexternal_encoding-と-iointernal_encoding">IO#external_encoding と IO#internal_encoding</a></li>
+          <li><a href="#ファイルパスのエンコーディング" id="markdown-toc-ファイルパスのエンコーディング">ファイルパスのエンコーディング</a>            <ul>
+              <li><a href="#unix" id="markdown-toc-unix">Unix</a></li>
+              <li><a href="#mac-os-x" id="markdown-toc-mac-os-x">Mac OS X</a></li>
+              <li><a href="#windows" id="markdown-toc-windows">Windows</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#191-で廃止されたもの" id="markdown-toc-191-で廃止されたもの">1.9.1 で廃止されたもの</a>        <ul>
+          <li><a href="#kcode" id="markdown-toc-kcode">$KCODE</a></li>
+          <li><a href="#レプリカエンコーディングとベースエンコーディング" id="markdown-toc-レプリカエンコーディングとベースエンコーディング">レプリカエンコーディングとベースエンコーディング</a></li>
+          <li><a href="#command-line-option--k" id="markdown-toc-command-line-option--k">Command Line Option -K</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#エンコーディングの変換" id="markdown-toc-エンコーディングの変換">エンコーディングの変換</a>    <ul>
+      <li><a href="#stringencode" id="markdown-toc-stringencode">String#encode</a></li>
+      <li><a href="#encodingconverter" id="markdown-toc-encodingconverter">Encoding::Converter</a>        <ul>
+          <li><a href="#encodingconverterconvert" id="markdown-toc-encodingconverterconvert">Encoding::Converter#convert</a></li>
+          <li><a href="#encodingconverterprimitive_convert" id="markdown-toc-encodingconverterprimitive_convert">Encoding::Converter#primitive_convert</a></li>
+        </ul>
+      </li>
+      <li><a href="#kconv" id="markdown-toc-kconv">Kconv</a></li>
+      <li><a href="#nkf" id="markdown-toc-nkf">NKF</a></li>
+      <li><a href="#iconv" id="markdown-toc-iconv">Iconv</a></li>
+    </ul>
+  </li>
+  <li><a href="#実践編" id="markdown-toc-実践編">実践編</a>    <ul>
+      <li><a href="#ライブラリ" id="markdown-toc-ライブラリ">ライブラリ</a></li>
+      <li><a href="#19-csi" id="markdown-toc-19-csi">1.9 CSI</a></li>
+      <li><a href="#19-ucs" id="markdown-toc-19-ucs">1.9 UCS</a></li>
+      <li><a href="#18-互換-ucs" id="markdown-toc-18-互換-ucs">1.8 互換 UCS</a></li>
+      <li><a href="#18-互換-csi" id="markdown-toc-18-互換-csi">1.8 互換 CSI</a></li>
+    </ul>
+  </li>
+  <li><a href="#変更履歴" id="markdown-toc-変更履歴">変更履歴</a>    <ul>
+      <li><a href="#2009-年-2-月-12-日" id="markdown-toc-2009-年-2-月-12-日">2009 年 2 月 12 日</a></li>
+      <li><a href="#2009-年-2-月-8-日" id="markdown-toc-2009-年-2-月-8-日">2009 年 2 月 8 日</a></li>
+    </ul>
+  </li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#成瀬nkf-とかやってます" id="markdown-toc-成瀬nkf-とかやってます">成瀬。<a href="http://sourceforge.jp/projects/nkf/">nkf</a> とかやってます。</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>2007 年 12 月 25 日 (UTC) についに Ruby 1.9.0-0 がリリースされ、さらに 1 年余の開発を経て、2009 年 1 月 31 日 (JST) に Ruby 1.9.1 がリリースされました。</p>
+
+<p>Ruby 1.9 では 1.8 と非互換な物を含む、多くの拡張・変更がなされました。評価器の YARV への移行、正規表現エンジン鬼車の採用、Enumerator の組み込みなどなどなど。それらに並んで大きな変更が Ruby M17N の導入です。</p>
+
+<p>Ruby 1.9 における多言語化仕様 Ruby M17N では、多くの言語・システムで採用されている Unicode 正規化方式でなく、CSI 方式を採用したり、独自のエンコーディング変換エンジンである transcode を搭載したりと、野心的な目標を掲げ、なんとか実現することができました。この記事では、多言語とは何かから、Ruby M17N の内容、実際に対応させる際の指針までを見ていきます。</p>
+
+<h2 id="多言語化概論">多言語化概論</h2>
+
+<h3 id="m17n-とは">M17N とは</h3>
+
+<p>そもそも M17N とは Multilingualization の略、つまり多言語化を意味します。
+元来、コンピュータはビットやそれを束ねたバイト、そしてその列しか扱うことが出来ません。US-ASCII やその他 1 byte 系のエンコーディングを一つだけ使っている場合にはそれでもなんとかやっていけますが、複数のエンコーディングを扱おうとした場合や、1 byte に収まらないエンコーディングを用いる場合には工夫が必要です。</p>
+
+<h4 id="l10n">L10N</h4>
+
+<p>L10N とは Localization の略で、地域化を意味しています。(cf. nls / national language support) 具体的には、それぞれの地域・言語に適したように変更することとなります。日本で用いられるソフトウェアのうち、一定の割合は欧米で作られたソフトウェアが占めています。これらを日本で用いる際には、様々なメッセージの日本語化が当然必要になります。また、欧米の言語はシングルバイトエンコーディングで表されていますが、日本語は Shift_JIS にしても EUC-JP にしてもマルチバイトエンコーディングで表されています。そのため、欧米のソフトウェアで日本語を扱おうとすると、そのままでは文字送りや文字境界の判定に際して不具合が発生します。</p>
+
+<p>日本における多言語化は、まず欧米のシングルバイトエンコーディングを前提としたソフトウェアをマルチバイトエンコーディングに対応させることから始まりました。</p>
+
+<h4 id="i18n">I18N</h4>
+
+<p>I18N とは Internationalization の略で、国際化を意味しています。I18N とは、</p>
+
+<ul>
+  <li>ソフトウェアのマルチバイト対応</li>
+  <li>各種メッセージや通貨記号等を地域ごとに容易に切り替えられる仕組みの整備</li>
+</ul>
+
+<p>を行うことです。マルチバイト対応は当初は ISO 2022 フレームワークの構築であったり、後には Unicode 化と同義となっていきました。また、後者はあらかじめソフトウェア側を gettext 等で抽象化しておくこと言語を切り替えて利用できるような環境が整備されていきました。Rails では後者の意味での I18N が整備されつつあります。</p>
+
+<h4 id="m17n">M17N</h4>
+
+<p>M17N は Multilingualization の略で、多言語化を意味しています。M17N は</p>
+
+<ul>
+  <li>複数の言語などで利用できるようにするためにローカライズすることを指すこと <a href="http://www.jpnic.net/ja/research/200605-dom/chapter1-2.pdf">http://www.jpnic.net/ja/research/200605-dom/chapter1-2.pdf</a></li>
+  <li>同時に複数の言語を扱えるようにすること <a href="http://www.m17n.org/m17n-lib-ja/">http://www.m17n.org/m17n-lib-ja/</a></li>
+</ul>
+
+<p>と言った意味がありますが、Ruby M17N では後者の意味で用いています。</p>
+
+<h4 id="i18n-等の語源">I18N 等の語源</h4>
+
+<p>ちなみに、「最初の 1 文字 + 間の文字数 + 最後の文字」という略し方は、DEC 起源だそうです。</p>
+
+<ul>
+  <li><a href="http://q.hatena.ne.jp/1159582709">http://q.hatena.ne.jp/1159582709</a></li>
+  <li><a href="http://blog.miraclelinux.com/yume/2007/01/i18n_8bc0.html">http://blog.miraclelinux.com/yume/2007/01/i18n_8bc0.html</a></li>
+</ul>
+
+<h3 id="ucs-normalization-と-csi">UCS Normalization と CSI</h3>
+
+<p>多言語化の手法には、UCS 正規化方式と CSI 方式が存在します。両者はシステム内部で文字列のエンコーディングをどうするかにおいて異なり、それぞれ利点と欠点が存在します。</p>
+
+<h4 id="ucs-normalization-方式">UCS Normalization 方式</h4>
+
+<p>UCS 正規化方式では、システムの内部コードを一つの文字集合 (Universal Character Set) に統一し、システムではこのコードに決め打ちして文字を扱います。このため、基本的な部分においては、それまでのロケールに決め打ちしたスタイルを続けることができる点が、この方式の最大のメリットになります。入出力に際しては、内部コードへのデコード・内部コードからのエンコードを行います。具体的には、入力時に外部から入ってくるバイト列は全て内部コードに変換してから取り扱います。また、出力時には内部コードからバイト列に変換を行ってから出力を行います。このような、唯一特別な内部コードに正規化し、入出力を変換するというアプローチは、現在多くの言語・環境で採用されており、Perl, Python, Java, .NET, Windows, Mac OS X などなど。つまるところ、Ruby 以外のほとんどがこの手法を採用しています。</p>
+
+<h5 id="perls-case-utf-8">Perl’s case (UTF-8)</h5>
+
+<p>例えば <a href="http://www.perl.org/">Perl</a> は <a href="http://unicode.org/">Unicode</a> による UCS Normalization 方式を採用しています。扱える文字の集合は Unicode のバージョンに依存します。UTF-8 は可変長のエンコーディングですので、Perl を始めとして UTF-8 を内部コードとして採用した環境では、何文字目かと何バイト目かの変換で苦労することになります。Perl では位置をキャッシュする等かなり手を入れているそうです。通常 Unicode が内部コードの場合、文字とは Unicode Scalar Value の事であると定義します。結合文字を考慮した概念である <a href="http://unicode.org/reports/tr29/">書記素クラスタ (Graphem Cluster)</a> をいかにうまく扱うかが今後の課題でしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$str   = decode("UTF-8", "\xE3\x81\x82"); #=&gt; "あ"
+$bytes = encode("UTF-8", "あ"); #=&gt; "\xE3\x81\x82"</code></pre></figure>
+
+<h5 id="javas-case-utf-16">Java’s case (UTF-16)</h5>
+
+<p><a href="http://java.sun.com/">Java</a> の内部は UTF-16 です。Java 1.5 より前では、U+0000-U+FFFF の範囲、つまり 今の Unicode や ISO/IEC 10646 の基本多言語面 (Basic Multilingual Plane, BMP) を 16bit の固定長で表していました<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。しかし、16bit では世界中の文字が収まらないことが明らかになり<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>、Unicode 2.0 からはサロゲートペアという、16bit の code unit を 2 つ用いて BMP 外を表す仕組みを導入しました<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。このため、<a href="http://java.sun.com/developer/technicalArticles/Intl/Supplementary/index_ja.html">Java 1.5 以降</a> や <a href="http://msdn.microsoft.com/ja-jp/library/9b1s4yhz.aspx">.NET Framework</a> のような UTF-16 を内部コードに採用した言語では、「文字」の単位がサロゲートペアを構成する片方の unit のみになってしまっている場合があることに注意する必要があります。</p>
+
+<p>ちなみに、<a href="http://www.python.org/">Python</a> もデフォルトでは内部コードに UTF-16 を用います。 (2.x は –enable-unicode=ucs4、3.0 では –with-wide-unicode で UTF-32 を用いるようにも変更可能。なお、Fedora や Ubuntu では UTF-32 を用いるものが配布されている)</p>
+
+<h5 id="moshs-case-utf-32">Mosh’s case (UTF-32)</h5>
+
+<p>Scheme 処理系である <a href="http://code.google.com/p/mosh-scheme/">Mosh</a> は内部 UTF-32 です。UTF-32 は通信用のエンコーディングとしてはほとんど使われないため、入出力ではほぼ常に変換が必要になりますが、一方で文字が固定長になるので処理が簡単になります。</p>
+
+<h5 id="trons-case-tron-コード">TRON’s case (TRON コード)</h5>
+
+<p><a href="http://www.tron.org/">TRON</a> も UCS Normalization 方式を採用していますが、内部コードが Unicode ではありません。TRON プロジェクトでは Unicode 2.0 を内包した TRON コードを定義し、それを内部コードとして利用しています。TRON 以外には <a href="http://sourceforge.jp/projects/soopy">soopy</a> が TRON コードを内部コードとして採用しています。</p>
+
+<h4 id="csi-方式">CSI 方式</h4>
+
+<p>Code Set Independent 方式の場合には UCS 正規化方式のように、唯一絶対の内部コードというようなものは存在しません。全てのエンコーディングを対等に扱っています。また、この方式の場合、外部で用いられているコードと内部で用いられるコードが一致するため、不必要な変換が行われません。ここから、変換にかかる処理の削減を図ることができるだけでなく、変換による思わぬ情報の欠落を未然に防ぐことができます。CSI は Ruby 以外に、<a href="http://docs.sun.com/app/docs/doc/819-0400/6n2r2lc26?l=ja&amp;a=view">Solaris</a>、<a href="http://citrus.bsdclub.org/">Citrus</a> といった、<strong>STDC_ISO_10646</strong> でない C を用いて構築された環境で用いられています。<strong>STDC_ISO_10646</strong> が定義されている C の場合、wchar_t の中の数値が 0x3042 ならば、それはひらがなの「あ」を意味しています。しかし、CSI の場合、そうだとは限りません。よって、メモリの中に入っている値を覗き見て、その意味を勝手に断定することは、バグの元となります。CSI 方式で文字を扱う場合は、必ず文字を扱う関数を通して文字列を扱わなければなりません。</p>
+
+<h2 id="ruby-m17n-の概念">Ruby M17N の概念</h2>
+
+<h3 id="csi-方式-1">CSI 方式</h3>
+
+<p>先述の通り、Ruby は他のほとんどの言語が採用している UCS 正規化方式ではなく、Code Set Independent 方式、つまり文字集合独立な手法を選択しています。これにより、不必要なエンコーディングの変換のオーバーヘッドを減らすことが可能であったり、Unicode 以外の文字集合に基づくエンコーディングに無理なく対応することができたりします。</p>
+
+<h3 id="string-がエンコーディングを持つ">String がエンコーディングを持つ</h3>
+
+<p>Ruby M17N では CSI 方式を採用しているので、文字列のエンコーディングを決めうちすることができません。String ごとに全く別のエンコーディングである可能性もあります。よって、Ruby M17N の String は自分のエンコーディングを知っています。そして、全ての文字列処理はそのエンコーディングに基づいて行われています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: UTF-8
+ "あいうえお".encoding #=&gt; #&lt;Encoding:UTF-8&gt;</code></pre></figure>
+
+<h3 id="script-encoding">Script Encoding</h3>
+
+<p>ソースコード中のリテラルのエンコーディングは、基本的に script encoding によって決定されます。script encoding はソースファイルごとに異なり、Ruby からは <strong>ENCODING</strong> で取得することができます。なお、script encoding として利用できるのは ASCII 互換なエンコーディングに限られます。後で述べる magic comment を記述しなかった場合、script encoidng は US-ASCII になります。よって、ソースコード中に 非 ASCII な文字列を書きたい場合は、次に説明する magic comment を書く必要があります。</p>
+
+<p>なお、標準入力から読み込んだスクリプトや、コマンドラインオプション -e で与えたスクリプトの場合は、magic comment がなかった場合、ロケールが script encoding として用いられます。このため、1 行スクリプトを書く場合にまでいちいち magic comment を書く必要はありません。</p>
+
+<dl>
+  <dt>通常のスクリプトの優先順位</dt>
+  <dd>magic comment &gt; コマンドラインの -K &gt; RUBYOPT の -K &gt; shebang の -K &gt; US-ASCII</dd>
+  <dt>-e や標準入力の優先順位</dt>
+  <dd>magic comment &gt; コマンドラインの -K &gt; RUBYOPT の -K &gt; locale</dd>
+</dl>
+
+<h3 id="magic-comment">Magic Comment</h3>
+
+<p>magic comment は XML でいう XML 宣言の encoding 属性のようなもので、これを記述することで script encoding を指定できます。magic comment を書かなかった場合、script encoding は US-ASCII とみなされます。magic comment は 1 行目が shebang 行ならば 2 行目、なければ 1 行目に、正規表現で /coding[:=]\s*[\w.-]+/ にマッチする形式、一般的には Emacs か Vim の modeline の形式でエンコーディングを表記します。なお、magic comment はその名の通りコメントとして記述する必要があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #!/bin/env ruby
+ # -*- coding: utf-8 -*-
+ puts "Emacs 風"</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # vim:fileencoding=utf-8
+ puts "Vim 風 1"</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # vim:set fileencoding=utf-8 :
+ puts "Vim 風 2"</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> #coding:utf-8
+ puts "シンプル"</code></pre></figure>
+
+<p>なお、非 ASCII な文字を含むリテラルを magic comment なしに書いていた場合、US-ASCII ではない文字が存在しているとして、invalid multibyte char というエラーになります。これはソースコードの可搬性を確保するための処置です。スクリプトの作者は自分の書いたスクリプトがどのエンコーディングで記述されているかを知っています。しかし、そのスクリプトを入手した第三者が後からエンコーディングを知ることは簡単ではありません。日本語ならば NKF.guess 等でエンコーディングを推測することも不可能ではありませんが、ヨーロッパ系のエンコーディングの場合は、後から推測することが不可能な場合もあります。このため、Ruby 1.9 では ASCII 外の文字をソースコード中に記述する場合は、magic comment が必須、という方針になっています。以上のような理由から、magic comment の効果は書かれたスクリプトのみに限定され、例えば script encoding を指定して require するといった機能は提供されていません。</p>
+
+<h3 id="外部エンコーディングと内部エンコーディング">外部エンコーディングと内部エンコーディング</h3>
+
+<p>Ruby 1.9 では IO は入力された文字列にエンコーディングを設定したり、エンコーディングを変換したりします。また、出力も自動変換させることが出来ます。この挙動を決定するのが、それぞれの IO の外部エンコーディングと内部エンコーディングです。</p>
+
+<p>ある IO からの入力を String#force_encoding したくなったら、その IO に外部エンコーディングを指定できないか考えてみるべきです。また、String#encode したくなったら、内部エンコーディングを指定できないか考えてみるべきでしょう。</p>
+
+<p>IO については後に詳しく説明しています。</p>
+
+<h4 id="default_external-と-default_internal">default_external と default_internal</h4>
+
+<p><a href="http://doc.okkez.net/1.9.3/view/method/Encoding/s/default_external">Encoding.default_external</a> は IO のデフォルトの外部エンコーディングを、<a href="http://doc.okkez.net/1.9.3/view/method/Encoding/s/default_internal">Encoding.default_internal</a> は IO のデフォルトの内部エンコーディングを返します。これらは標準入出力、コマンドライン引数、open 等で開くファイル等で、明示的な指定を行わなかった場合に外部または内部エンコーディングとして用いられます。</p>
+
+<p>Encoding.default_internal が設定されている場合は、全ての入力された String のエンコーディングは Encoding.default_internal の返すエンコーディングと等しいと仮定することが可能になります。この場合、ライブラリが返す文字列も Encoding.default_internal になっているべきです。</p>
+
+<p>ライブラリ等が返す文字列のエンコーディングの初期値を、Encoding.default_external にすることは避けるべきです。なぜならば、あくまでこれはデフォルトの外部エンコーディングであって、内部エンコーディングについては一言も触れていないからです。Encoding.default_internal は一見この基準として用いることができるかのように見えます。しかし、デフォルトでは Encoding.default_internal が nil であることを忘れてはいけません。</p>
+
+<dl>
+  <dt>default_external</dt>
+  <dd>コマンドラインオプションの -E / -U / -K &gt; RUBYOPT の -E 等 &gt; shebang の -E 等 &gt; locale</dd>
+  <dt>default_internal</dt>
+  <dd>コマンドラインオプションの -E / -U &gt; RUBYOPT の -E 等 &gt; shebang の -E 等 &gt; nil</dd>
+</dl>
+
+<h4 id="command-line-option--e-と--u">Command Line option -E と -U</h4>
+
+<p>コマンドラインオプション -E は、-Eex[:in] という形式で、Encoding.default_external と Encoding.default_internal を与えます。また、-U は両者に UTF-8 を設定します。これらは標準入力から与えたスクリプトやコマンドラインオプション -e で与えたスクリプトの script encoding にも影響します。通常の引数として与えたスクリプトの script encoding には影響しません。</p>
+
+<h3 id="ロケールエンコーディング">ロケールエンコーディング</h3>
+
+<p>ロケールエンコーディングを決定するには、まず locale_charmap を決定します。まず、Unix 環境でも Windows 環境でも、環境変数 $LANG が設定されていた場合は、そこエンコーディング名を決定します。Windows (cygwin を含む) で $LANG が設定されていなかった場合、GetConsoleCP<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> を用います。以上から決定された名前は <a href="http://doc.okkez.net/1.9.3/view/method/Encoding/s/locale_charmap">Encoding.locale_charmap</a> で取得することができます。なお、Encoding.locale_charmap は、miniruby では ASCII-8BIT を、nl_langinfo 等がない環境では nil を返します。</p>
+
+<p>こうして得られた locale_charmap からロケールエンコーディングは決定されます。基本的には Encoding.find(Encoding.locale_charmap) の値と等しくなりますが、locale_charmap が nil だった場合には US-ASCII、Ruby が理解できない名前の場合には ASCII-8BIT になります。以上で決定されたロケールエンコーディングを取得するには、Encoding.find(“locale”) を用います。</p>
+
+<p>ロケールエンコーディングの Ruby 内での主な利用用途は、前述の default_external のデフォルト値を与えることです。先述のとおり、default_external は IO の外部エンコーディングのデフォルトですが、ファイル等を開く際には別にエンコーディングを指定することが推奨されるので、default_external が影響するのは Ruby が最初から開いている IO、つまり $stdin、$stdout、$stderr になります。通常これらはコンソールとの入出力となるため、コンソールで用いられるエンコーディング、すなわち、基本的には $LANG、Windows では GetConsoleCP を用いるのが妥当だと判断されました。なお、Windows においては入出力に Unicode 版 API を用いて、UTF-16LE を使うという方法も存在はしますが、Ruby 1.8 系との互換性を著しく損なうため採用されていません。<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></p>
+
+<p>以上の通り、ロケールエンコーディングは「default_external のデフォルト値」やコンソールとの関係を念頭に決定されているため、特に Windows においてはそれ以外の用途で用いた場合、期待とは異なるエンコーディングが返る可能性があります。「default_external のデフォルト値」以外の意味で用いる場合には ruby-dev に一報を入れておいた方がよいかも知れません。また、将来的に GetConsoleCP から GetACP への切り替えが行われる可能性があります。</p>
+
+<h3 id="ファイルシステムエンコーディング">ファイルシステムエンコーディング</h3>
+
+<p>ファイルシステムとのやりとりに用いられるエンコーディングは、ロケールエンコーディングとは別に決定されるファイルシステムエンコーディングに基づきます。具体的には、システムから取得したファイル名等を表す文字列のエンコーディングとしてファイルシステムエンコーディングは用いられます。このエンコーディングを取得するための Ruby API は提供されていません<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+
+<h4 id="windows-の場合">Windows の場合</h4>
+
+<p>FAT32 や NTFS など、ロングファイルネーム対応ファイルシステムの場合、ファイル名は UTF-16LE<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> で格納されています。また、FAT でも NT 系ならばシステムに読み込んだ後は UTF-16LE で扱われます。つまり、Windows、特に NT 系においてはシステム内部では UTF-16LE でファイル名を扱っています。</p>
+
+<p>Ruby 1.9.1 は ANSI 版 API を用いているので、この文字列は、Windows によって ANSI または OEM コードページ<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup> の文字列に変換されて Ruby へと渡されます。つまり、結局 Ruby 1.9.1 から見るとファイル名は常に ANSI または OEM コードページとして見えることになるので、ファイルシステムエンコーディングは ANSI または OEM コードページになります。Ruby はこの文字列を ANSI または OEM コードページとしてエンコーディングを設定し、さらにオプションでエンコーディングが設定されていた場合はそのエンコーディングに変換して返します。</p>
+
+<p>将来 Unicode 版 API を用いるようになった場合は、UTF-16LE のファイル名を Ruby は取得し、オプションでエンコーディングが指定されている場合にはこれを直接そのエンコーディングへ、指定されていない場合はファイルシステムエンコーディングに変換して返すようになるでしょう。ファイルシステムエンコーディングを UTF-16LE や UTF-8 に変えてしまうと、Ruby 1.8 系との互換性を著しく損なうため、この場合でもそのまま ANSI または OEM コードページになります。</p>
+
+<h4 id="unix-系の場合">Unix 系の場合</h4>
+
+<p>Unix 系の場合、ファイルシステムに保存されているファイル名のエンコーディングは一般には特定できません。よって、ロケールエンコーディングをファイルシステムエンコーディングとし、取得したファイル名を表すバイト列にはこれを設定して返します。</p>
+
+<h4 id="mac-os-x-の場合">Mac OS X の場合</h4>
+
+<p>Mac OS X の HFS+ の場合、ファイル名はアップルによって修正された Normalization Form D (分解済み) という形式の UTF-16 で格納されており、POSIX API ではこれを UTF-8 形式に変換して返します。つまり、Carbon 経由で保存したファイルの名前は UTF8-MAC として返されることになります。よって、ファイルシステムエンコーディングは UTF8-MAC としています。ただし、POSIX API はファイル名をバイト列として扱うため、POSIX API から書き込んだファイルの扱いは Unix と同様になります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Windows の場合</td>
+      <td>ファイルシステム自体のエンコーディング<br />→システムの内部エンコーディング (UTF-16LE) へと変換 (Windows 内部)<br />→Ruby のファイルシステムエンコーディングへと変換 (Ruby 内部)</td>
+    </tr>
+    <tr>
+      <td>Unix 系の場合</td>
+      <td>ファイルシステムにはバイト列として保存<br />→Ruby のファイルシステムエンコーディングを設定</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>こちらの詳細は「ファイルパスのエンコーディング」を参照してください。</p>
+
+<h2 id="ruby-m17n-の実装">Ruby M17N の実装</h2>
+
+<p>Ruby M17N では以上のような概念を元に実装が行われています。しかし、実装ではただその概念を実装するだけでなく、開発リソースによる制約や、使い勝手を考慮した調整、過去との互換性を考慮した機能など、様々な要素が混在しています。</p>
+
+<h3 id="ruby-の扱うエンコーディング">Ruby の扱うエンコーディング</h3>
+
+<p>Ruby は多くのエンコーディング (Ruby 1.9.1 にて Encoding.list.length #=&gt; 83) をサポートしています。と、言ってもここでの「サポート」とは、Unicode 正規化方式を採用したシステムのように、そのエンコーディングから Unicode への変換表を持っているという意味ではありません。Ruby M17N は CSI 方式ですので、そのエンコーディングで符号化された文字列の扱い方を知っている、ということになります。
+Ruby M17N では主に開発リソース的な理由から、全てのエンコーディングを平等に扱うのではなく、エンコーディングを 3 種類にわけ、それぞれの段階に応じたサポートを提供しています。具体的には、ASCII 互換エンコーディング、ASCII 非互換エンコーディング、ダミーエンコーディングの 3 つです。</p>
+
+<h4 id="ascii-compatible-encoding">ASCII Compatible Encoding</h4>
+
+<p>US-ASCII に含まれる文字を \x00-\x7F で表すエンコーディングのことを、ASCII 互換エンコーディングと呼びます。Ruby はこのエンコーディングの文字列をフルサポートします。Ruby のソースコードで用いるエンコーディングはこの ASCII 互換エンコーディングに限られます。また、最も大きな特徴として、本来同じエンコーディング同士でしか比較・結合等ができないところ、ASCII 互換エンコーディングの文字列は、ASCII のみを含む文字列 (String#ascii_only? が真 な文字列) と比較・結合することができます。</p>
+
+<h5 id="ascii-の範囲">ASCII の範囲</h5>
+
+<p>コードポイント 0x00-0x7F はどのエンコーディングでも常に US-ASCII と一致すると仮定しています。そのため、Ruby M17N では Shift_JIS もこの範囲は JIS X 0201 Roman ではなく、US-ASCII とみなしています。(なお、transcode による変換については一般的な Shift_JIS の定義に準じている)</p>
+
+<h5 id="ascii-only">ASCII ONLY</h5>
+
+<p>文字列の内容が ASCII のみでかつ、ASCII 互換エンコーディングである場合、この文字列を ASCII ONLY であると呼びます。ASCII ONLY な文字列は、他の ASCII 互換エンコーディングの文字列と自由に比較・結合・正規表現マッチさせることができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: UTF-8
+ a = "いろは".encode("Shift_JIS") # Shift_JIS にする
+ a.ascii_only? #=&gt; false
+ b = "ABC".encode("EUC-JP") # EUC-JP にする
+ b.ascii_only? #=&gt; true
+ c = a + b #=&gt; "いろはABC" # a と b のエンコーディングが異なっていてもよい
+ c.encoding #=&gt; #&lt;Encoding:Shift_JIS&gt;</code></pre></figure>
+
+<h5 id="ascii-8bit">ASCII-8BIT</h5>
+
+<p>ASCII 互換エンコーディングに属するエンコーディングの中に、ASCII-8BIT があります。これは「ASCII 互換オクテット列」に与えられるエンコーディングです。言い換えると、一般的な「文字列」とは異なっているが、バイナリとも異なり ASCII 互換であるということです。
+つまり、後で述べる ASCII 非互換なエンコーディングな文字列と異なり、ASCII のみの文字列と結合・比較等を行うことが可能です。なお、Ruby 1.9.1 では ASCII 非互換なバイナリエンコーディングは必要性がないと思われたので用意されていません。</p>
+
+<h5 id="emacs-mule">Emacs-Mule</h5>
+
+<p><a href="http://www.m17n.org/mule/pricai96/mule.en.html">Emacs/Mule が内部で用いているエンコーディング</a> です。ISO 2022 的なアプローチでの多言語化を目指しつつ、ステートレスな可変長のエンコーディングとなっています。独自の ISO-2022-JP をステートレスに扱うためのエンコーディング、stateless-ISO-2022-JP はこのエンコーディングを元に実装されています。</p>
+
+<h4 id="ascii-incompatible-encoding">ASCII Incompatible Encoding</h4>
+
+<p>US-ASCII に含まれる文字を \x00-\x7F 以外で表すエンコーディングを ASCII 非互換なエンコーディングと呼びます。これらに対しては限定的なサポートが提供されます。ASCII 非互換なエンコーディングはソースコードで用いることはできませんし、先述の ASCII のみの文字列との結合もサポートされません。Ruby 1.9.1 では UTF-16BE、UTF-16LE、UTF-32BE、UTF-32LE の 4 つがこれに該当します。</p>
+
+<h5 id="utf-16--utf-32">UTF-16 &amp; UTF-32</h5>
+
+<p>先述の通り、Ruby 1.9.1 では UTF-16BE、UTF-16LE、UTF-32BE、UTF-32LE がサポートされています。これらは全て BOM <sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>なしのエンコーディングです。よって、U+FEFF は ZERO WIDTH NO-BREAK SPACE として認識されるので、BOM であることがわかっている場合は適宜削ってください。また、Ruby 1.9.1 では、”UTF-16” と “UTF-32” はサポートしていないことに注意してください。</p>
+
+<p>なお、BOM 付きの UTF-16 と UTF-32 がサポートされていないのは、開発リソース上の問題です。一時本格サポートが検討はされましたが、BOM を考慮しながらのバイト位置計算や、1 つのエンコーディングでのエンディアンに応じた処理の提供、IO が絡んだ際の処理の複雑さ等から、1.9.1 でのサポートは断念されました。取り込むこと自体への反対はないので、誰かが手を挙げてパッチを作成すればおそらく取り込まれることでしょう。</p>
+
+<p>ASCII 非互換なエンコーディングは一部の先述の通りサポートが限定されているので、本格的に扱いたい場合は UTF-8 に変換して扱うことが推奨されます。</p>
+
+<p>ちなみに、UCS-2BE というエイリアス名が UTF-16BE のエイリアス名として定義されていますが、これはあくまで UCS-2BE と名付けられたデータを読み込む際の便宜を図ったもので、Ruby 1.9.1 は UCS-2BE をサポートしません。</p>
+
+<h4 id="dummy-encoding">Dummy Encoding</h4>
+
+<p>ダミーエンコーディングは Ruby が名前を知っているだけのエンコーディングです。Ruby はただバイト列としてのみこれらを扱い、文字列としてのサポートは一切提供されません。もちろん ASCII のみの文字列との結合・比較等も行うことができません。もっぱらステートフルなエンコーディングがこれにあたり、Ruby 1.9.1 では ISO-2022-JP や UTF-7 がこれに該当します。
+これらのエンコーディングを Ruby で扱う場合は、stateless-ISO-2022-JP や UTF-8 に変換してから扱うことが推奨されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Encoding::ISO_2022_JP.dummy? #=&gt; true
+ a = "いろは".encode("ISO-2022-JP") # ISO-2022-JP にする
+ b = "ABC".encode("EUC-JP") # EUC-JP にする
+ b.ascii_only? #=&gt; true
+ c = a + b
+ #=&gt; Encoding::CompatibilityError: incompatible character encodings: ISO-2022-JP and EUC-JP</code></pre></figure>
+
+<h4 id="エンコーディングの追加">エンコーディングの追加</h4>
+
+<p>拡張ライブラリは自分で新しいエンコーディングを定義することが可能です。全く新規に定義するのは手間ですが、C API の rb_enc_replicate で他のエンコーディングのレプリカを作ったり (「レプリカ」の概念は C API からのみ扱うことができ、Ruby のレイヤーからは触れることができない)、rb_define_dummy_encoding でダミーエンコーディングを作ったりできます。もっとも未サポートのエンコーディングを追加したい場合は標準サポートの要望を出すのが原則です。</p>
+
+<p>やむをえず新たなエンコーディングを追加する際は、極力既存のエンコーディングから近いものをレプリカ元にするべきです。また、ダミーエンコーディングを定義する場合は、ダミーは ASCII ONLY な文字列と結合できないことを思い出し、本当にダミーでいいのか一度考え直しましょう。</p>
+
+<h4 id="special-encoding-name">Special Encoding Name</h4>
+
+<p>これら以外に、Ruby 内部で用いているエンコーディング、locale encoding, default external encoding, default internal encoding を参照するための名前、”locale”, “external”, “internal” が定義されています。
+なお、それぞれのソースファイルの script encoding を参照するには、特殊変数 <strong>ENCODING</strong> を用います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: UTF-8
+ locale = Encoding.find("locale")
+ external = Encoding.find("external") # Encoding.default_external でも取得可能
+ internal = Encoding.find("internal") # Encoding.default_internal でも取得可能
+ __ENCODING__ #=&gt; #&lt;Encoding:UTF-8&gt;</code></pre></figure>
+
+<h3 id="encoding">Encoding</h3>
+
+<p>以上に挙げたエンコーディングのリストや特殊なエンコーディング等の管理、さらにそれぞれのエンコーディングの情報を司るのが <a href="http://doc.okkez.net/1.9.3/view/class/Encoding">Encoding</a> です。なお、Ruby の Encoding オブジェクトが内部に持っているのは変換表ではなく、そのエンコーディングのバイト構造や文字の情報 (具体的には鬼車用のエンコーディングモジュール) が入っています。変換表は、transcode 管轄となる、Encoding::Converter の中に入っています。</p>
+
+<h4 id="エンコーディングの取得">エンコーディングの取得</h4>
+
+<p>Ruby のサポートしているエンコーディングのリストを得るには、Encoding.list や Encoding.name_list、Encoding.aliases を用います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p Encoding.list # サポートするエンコーディングのオブジェクトの配列
+ #=&gt; [#&lt;Encoding:ASCII-8BIT&gt;, #&lt;Encoding:UTF-8&gt;, #&lt;Encoding:US-ASCII&gt;, ...]
+
+ p Encoding.name_list # サポートするエンコーディング名とエイリアス名の配列
+ #=&gt; ["ASCII-8BIT", "UTF-8", "US-ASCII", ..., "locale", "external", "internal"]
+
+ p Encoding.aliases # エイリアス名とエンコーディング名のハッシュ
+ #=&gt; {"BINARY"=&gt;"ASCII-8BIT", "SJIS"=&gt;"Shift_JIS", "CP932"=&gt;"Windows-31J", ...}</code></pre></figure>
+
+<p>特定のエンコーディングオブジェクトを得るには、Encoding.find を用います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p Encoding.find("UTF-8") #=&gt; #&lt;Encoding:UTF-8&gt;
+
+ p Encoding.find("eucJP") #=&gt; #&lt;Encoding:EUC-JP&gt;
+
+ p Encoding.find("locale") #=&gt; #&lt;Encoding:Windows-31J&gt; # 日本語 Windows の場合
+
+ p Encoding.find("jis") #=&gt; ArgumentError: unknown encoding name - jis</code></pre></figure>
+
+<p>また、Encoding を表す定数を用いることもできます。定数名はエンコーディング名やエイリアス名を全て大文字にし、- を _ にしたものです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p Encoding::UTF_8  #=&gt; #&lt;Encoding:UTF-8&gt;
+
+ p Encoding::EUC_JP #=&gt; #&lt;Encoding:EUC-JP&gt;
+ p Encoding::EUCJP  #=&gt; #&lt;Encoding:EUC-JP&gt;</code></pre></figure>
+
+<p>デフォルトの外部・内部エンコーディング等を得るには Encoding.default_external 等を用います。また、Encoding.find を用いる方法もあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p Encoding.default_external #=&gt; #&lt;Encoding:Windows-31J&gt; # 日本語 Windows のデフォルト
+p Encoding.find("external")
+
+p Encoding.default_internal #=&gt; nil
+p Encoding.find("internal")</code></pre></figure>
+
+<h4 id="個別エンコーディングの情報取得">個別エンコーディングの情報取得</h4>
+
+<p><a href="http://doc.okkez.net/1.9.3/view/method/Encoding/i/name">Encoding#name</a> や <a href="http://doc.okkez.net/1.9.3/view/method/Encoding/i/inspect">Encoding#inspect</a> 以外に、そのエンコーディングが dummy encoding かどうかを得る <a href="http://doc.okkez.net/1.9.3/view/method/Encoding/i/dummy=3f">Encoding#dummy?</a> が存在します。</p>
+
+<p>なお、ある Encoding が ASCII 互換かどうかを知るには Encoding クラスのメソッドでなく、<a href="http://doc.okkez.net/1.9.3/view/method/Encoding=Converter/s/asciicompat_encoding">Encoding::Converter.asciicompat_encoding</a> を用いるのがよいでしょう。このメソッドは ASCII 互換なエンコーディングや存在しないエンコーディングの場合には nil を、ASCII 非互換なエンコーディングやダミーエンコーディングの場合は、同じ文字集合を持つ ASCII 互換エンコーディングを返します。</p>
+
+<h4 id="その他">その他</h4>
+
+<p>これらの他に、2 つの String や Encoding が比較・結合できるか判断し、結合した場合の結果となる Encoding を返す <a href="http://doc.okkez.net/1.9.3/view/method/Encoding/s/compatible=3f">Encoding.compatible?(str1, str2)</a> などがあります。
+これ以外の Encoding オブジェクトの機能については、<a href="http://doc.okkez.net/1.9.3/view/class/Encoding">るりまの Encoding の項目</a> を参照ください。</p>
+
+<h3 id="string">String</h3>
+
+<p>Ruby 1.8 では String とは、基本的にただのバイト列でした。バイト列ゆえに自由度は高く、それが Shift_JIS だと思えば Shift_JIS に、それが EUC-JP だと思えば EUC-JP に、それが UTF-8 だと思えば UTF-8 にと、どのエンコーディングでも一応扱うことはできましたが、
+「文字列」としてのサポートは $KCODE を設定した場合の正規表現等や jcode.rb を通して提供される、限定的だったり使いづらいものに留まっていました。</p>
+
+<p>Ruby 1.9 の Ruby M17N では String それぞれにエンコーディングが関連付けられています。これにより、Ruby はバイト列に対してそのエンコーディングに沿った扱いをすることが可能となります。Ruby が知っているエンコーディングで符号化された String は、その String がどのようなエンコーディングで符号化されているかに関わらず、文字列として扱うことができます。さて、これから 1.9 で String オブジェクトがどう変わったか見ていきましょう。</p>
+
+<h4 id="文字列のエンコーディング">文字列のエンコーディング</h4>
+
+<p>先述の通り、Ruby 1.9 では文字列それぞれが自分のエンコーディングを持っています。String#encoding で、その文字列のエンコーディングを表す Encoding オブジェクトを取得することができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: EUC-JP
+ "あいうえお".encoding #=&gt; #&lt;Encoding:EUC-JP&gt;
+ "\u{3042}".encoding #=&gt; #&lt;Encoding:UTF-8&gt;</code></pre></figure>
+
+<h4 id="文字オブジェクト">文字オブジェクト</h4>
+
+<p>まず、文字列は「文字」の「列」なので、「文字」について見ていきます。Ruby M17N にはいわゆる文字オブジェクト、文字を表す専用のクラスは存在しません。Ruby M17N では文字を表す際に、内容が 1 文字の String を用いています。</p>
+
+<p>Ruby M17N 開発初期には文字専用のクラスの導入が検討されていました。しかし、「文字オブジェクト」に必要な要素が、コードポイント、エンコーディング、バイト列であるところ、String はこれらをすべて持っているため、大クラス主義をとる Ruby では文字を表現する際に 1 文字 String を用いることになりました。</p>
+
+<p>この方法は文字列中の文字位置の取得が可変長のエンコーディングで遅くなる代わりに、外部から読み込んだバイト列にエンコーディングをつけるだけで文字列として扱えたり、文字の単位をエンコーディングの付け替えだけで変えられたりと、応用の範囲が広がるというメリットもあります。</p>
+
+<h4 id="string-1">String#[]</h4>
+
+<p>文字列から文字を取得するには、<a href="http://doc.okkez.net/1.9.3/view/method/String/i/=5b=5d">String#[]</a> を用います。1.8 では String インデクサの戻り値は、そのインデックスの示すバイトの値、つまり数値でした。つまり、この例でインデックスが「0」ならば、バイト列の 0 バイト目の値、この例では 0xE3 が返ります。</p>
+
+<p>1.9 ではインデクサの戻り値はその添え字の示す文字 (1 文字 String)。つまり、添え字が 0 ならば、0 文字目の「あ」が返ります。Ruby 1.9 の String はまさに「文字」の「列」となっているわけです。</p>
+
+<dl>
+  <dt>1.8</dt>
+  <dd></dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> String#[] #=&gt; Fixnum (1 byte)
+ "あいう"[0] #=&gt; 0xE3 # UTF-8 の場合</code></pre></figure>
+
+<dl>
+  <dt>1.9</dt>
+  <dd></dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> String#[] #=&gt; 1 文字 String
+ "あいう"[0] #=&gt; "あ"</code></pre></figure>
+
+<h4 id="文字リテラル">文字リテラル</h4>
+
+<p>文字オブジェクトは存在しませんが、実際に文字をプログラム中に記述する際には文字リテラルを用いることができます。旧来通りの ?a といった表記だけでなく、 ?あ のように日本語の文字も同様に書くことができるようになっています。また、ASCII コードをエスケープして記述する記法と似た、Unicode 記法も導入されました。
+その文字のエンコーディングは、Unicode 記法を用いた場合は UTF-8 に、それ以外ではそのソースコードの script encoding が設定されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">?a
+?\t
+?あ
+?\u3042</code></pre></figure>
+
+<h4 id="stringord-と-integerchr">String#ord と Integer#chr</h4>
+
+<p>こうしてできた文字をコードポイントに変換したい場合は、String#ord を用います。ひらがなの「あ」の場合、”あ”.ord はどのような値になるでしょうか。正解はエンコーディングに依存し、例えば UTF-8 なら 12354 になります。
+逆にこの、例えば 12354 を chr すると・・・例外が出ます。正しくは、エンコーディングを与える必要があります。12354.chr(“UTF-8”) と指定してやると、「あ」を得られるようになります。
+以上の通り、Ruby M17N のような CSI 方式を採用するシステムでは、コードポイントを直接操作する処理はエンコーディングに依存し、無用な複雑さを導入することになります。よって、コードポイントやバイト列を直接操作することは極力避け、文字列として操作することを心がけましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: utf-8
+ "あ".ord #=&gt; 12354
+
+ 12354.chr("UTF-8") #=&gt; "あ" in UTF-8</code></pre></figure>
+
+<h4 id="文字列リテラル">文字列リテラル</h4>
+
+<p>文字列リテラルの基本は Ruby 1.8 から変わりません。変更点として、従来の \OOO \xHH に加えて、Unicode エスケープとして \uXXXX と \u{XXXX} が追加されました。</p>
+
+<p>なお、文字列リテラルから作られた String のエンコーディングは、基本的に書かれたソースコードの script encoding に一致します。例外として、Unicode エスケープを用いた場合、その String のエンコーディングは UTF-8 となります。また、script encoding が US-ASCII の場合にバイトエスケープを用いて生成された非 ASCII な String のエンコーディングは ASCII-8BIT になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: EUC-JP
+ "あ".encoding #=&gt; #&lt;Encoding:EUC-JP&gt;
+ "\u3042".encoding #=&gt; #&lt;Encoding:UTF-8&gt;
+ "\u{3042 3044 3046}" #=&gt; "あいう"
+
+ "abc".encoding #=&gt; #&lt;Encoding:US-ASCII&gt;
+ "\x82\xA0".encoding #=&gt; #&lt;Encoding:ASCII-8BIT&gt;</code></pre></figure>
+
+<h4 id="stringlength">String#length</h4>
+
+<p><a href="http://doc.okkez.net/1.9.3/view/method/String/i/length">String#length</a> も文字を意識するように変わりました。1.8 では String のバイト列としての長さを返していましたが、1.9 では文字列としての長さを返すようになっています。
+なお、バイト列としての長さが欲しい場合は新しく追加された、<a href="http://doc.okkez.net/1.9.3/view/method/String/i/bytesize">String#bytesize</a> メソッドを使用します。</p>
+
+<dl>
+  <dt>1.8</dt>
+  <dd></dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> * String#length   #=&gt; byte length
+ "あいう".length #=&gt; 9 (UTF-8)</code></pre></figure>
+
+<dl>
+  <dt>1.9</dt>
+  <dd></dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> * String#length   #=&gt; character length
+ * String#bytesize #=&gt; byte length
+ "あいう".length #=&gt; 3
+ "あいう".bytesize #=&gt; 9 (UTF-8)</code></pre></figure>
+
+<h4 id="stringeach_">String#each_*</h4>
+
+<p>Ruby 1.9 では String#each は削除されました (つまり、String は Enumerable ではない)。なぜかというと、String の何について繰り返すのかが明確ではないためです。</p>
+
+<p>その代わり、4 つの each 系メソッドが追加されました。バイトごとの <a href="http://doc.okkez.net/1.9.3/view/method/String/i/each_byte">String#each_byte</a>、コードポイントごとの <a href="http://doc.okkez.net/1.9.3/view/method/String/i/each_codepoint">String#each_codepoint</a>、文字ごとの <a href="http://doc.okkez.net/1.9.3/view/method/String/i/each_char">String#each_char</a>、行ごとの <a href="http://doc.okkez.net/1.9.3/view/method/String/i/each_line">String#each_line</a> が追加されています。これらのメソッドはブロックを取った場合は従来の each の様に振る舞い、ブロックを省略すると Enumerator を返します。また、それぞれに対応する複数形メソッド <a href="http://doc.okkez.net/1.9.3/view/method/String/i/bytes">String#bytes</a>、<a href="http://doc.okkez.net/1.9.3/view/method/String/i/codepoints">String#codepoints</a>、<a href="http://doc.okkez.net/1.9.3/view/method/String/i/chars">String#chars</a>、<a href="http://doc.okkez.net/1.9.3/view/method/String/i/lines">String#lines</a> も追加されています。これは、今でも Ruby の String がただ文字の列であるだけでなく、バイトの列や、コードポイントの列、行の列をも表していることを意味しています。</p>
+
+<p>なお、これらのうち、each_codepoint 以外のメソッドは 1.8 系にもバックポートされ、1.8.7 から実装されています。</p>
+
+<h4 id="文字列の比較結合">文字列の比較・結合</h4>
+
+<p>Ruby 1.9 では文字列の比較・結合に大きな変更が入っています。まず、文字列の比較ではバイト列として一致していても、エンコーディングが異なる場合は <a href="http://doc.okkez.net/1.9.3/view/method/String/i/=3d=3d">String#==</a> は false を返します。バイト列表現とエンコーディングの両方が一致して初めて true を返すのです。なお、双方が ASCII 互換エンコーディングでかつ、内容が ASCII 文字のみの場合は、エンコーディングが異なっていても true を返します。</p>
+
+<p>文字列の結合では、双方のエンコーディングが異なる場合、基本的には例外 Encoding::CompatibilityError が発生します。ただし、双方が ASCII 互換エンコーディングで、少なくとも一方が ASCII 文字のみで構成される場合は結合が可能です。また、片方が空文字の場合はエンコーディングにかかわらず結合が可能となります。</p>
+
+<h4 id="バイト列としての-string">バイト列としての String</h4>
+
+<p>ここまで文字列としての String を取り上げてきましたが、今でも String はバイト列をもサポートしています。しかし、現在、Ruby 1.9 におけるバイト列のサポートは限定的なものに留まっています。1 バイト読み込む <a href="http://doc.okkez.net/1.9.3/view/method/String/i/getbyte">String#getbyte(index)</a>、1 バイト書き込む <a href="http://doc.okkez.net/1.9.3/view/method/String/i/setbyte">String#setbyte(index, value)</a>、バイト長を取得する <a href="http://doc.okkez.net/1.9.3/view/method/String/i/bytesize">String#bytesize</a> の 3 つが現在のバイト関係のメソッドです。
+より高レベルな機能の案がある方は提案してみるといいかもしれません。</p>
+
+<h4 id="stringforce_encoding">String#force_encoding</h4>
+
+<p><a href="http://doc.okkez.net/1.9.3/view/method/String/i/force_encoding">String#force_encoding</a> は String のエンコーディングを設定する破壊的メソッドです。同じバイト列で異なるエンコーディングを持つ新しい String を生成したい場合は、<a href="http://doc.okkez.net/1.9.3/view/method/Object/i/dup">Object#dup</a> と組み合わせます。</p>
+
+<p>たいていの場合は文字列を生成したとき、ファイル等から読み込んだときに、エンコーディング名を指定することで、String にエンコーディングが設定されているはずですから、明示的に String#force_encoding を呼ぶ機会は滅多にないはずです。例えば、ネットワークライブラリや XML のライブラリ等が、HTTP ヘッダや XML 宣言など別のレイヤーで与えられるエンコーディングを、ライブラリ内部で設定したい場合。また、文字列として処理していた String をバイト列として処理したい場合に str.force_encoding(“ASCII-8BIT”) したい場合など、限られたケースになるでしょう。</p>
+
+<p>ライブラリのユーザが自分で String#force_encoding を呼ばなければならないならば、多くの場合それはライブラリの設計が間違っています。このメソッドの名前が set_encoding や encoding= でなく、また破壊的メソッドしか用意されているのは、安易な利用を戒める意図もあります。</p>
+
+<h4 id="stringvalid_encoding">String#valid_encoding?</h4>
+
+<p><a href="http://doc.okkez.net/1.9.3/view/method/String/i/valid_encoding=3F">String#valid_encoding?</a> はそのエンコーディングにおけるバイト構造に、その String の内容が沿っているかを判断します。このメソッドではある String がそのエンコーディングにおいて「正しい」かをバイト構造のレベルでは判断できますが、その String に含まれる文字が全て実際に定義されているかまでは保証しません。文字が定義されているかどうかまでを判断するには、Encoding::Converter 等を用いて変換を行ってみるという方法があります。</p>
+
+<h4 id="stringgsubpattern-hash">String#gsub(pattern, hash)</h4>
+
+<p>Ruby 1.9.1 では <a href="http://doc.okkez.net/1.9.3/view/method/String/i/gsub">String#gsub(pattern, hash)</a> が追加されました。旧来の String#gsub では置換文字列をマッチした文字列によって変えたい場合、ブロックを与える方法しか用意されていませんでした。しかし、ブロックの呼び出しはそれなりにコストのかかる処理です。</p>
+
+<p>str.gsub(pattern, hash) は str.gsub(pattern){hash[$&amp;]} と等しい処理になります。しかし、前者ではブロックを呼び出さず C レベルでハッシュ引きまでを行うため、より高速な処理が可能となります。主に特定の文字をエスケープするような処理で効果を発揮すると思われます。</p>
+
+<h4 id="stringinspect--stringdump">String#inspect / String#dump</h4>
+
+<p>これは 1.9 での変更点ではありませんが、念のため。<a href="http://doc.okkez.net/1.9.3/view/method/String/i/inspect">String#inspect</a> は人がパッと見てそれが何か知るための簡易メソッドです。String をエスケープしたりダンプしたい場合は <a href="http://doc.okkez.net/1.9.3/view/method/String/i/dump">String#dump</a> や <a href="http://doc.okkez.net/1.9.3/view/method/Marshal/m/dump">Marshal.dump</a> を使ってください。なお、String#dump は元の文字列のエンコーディングを、ASCII 互換エンコーディングの場合は戻り値のエンコーディングとして保持するので、ファイルに書き出す場合などは、読み込み時に別途エンコーディングを指定する必要があります。</p>
+
+<ul>
+  <li>String#inspect #=&gt; p 等でのぱっと見用</li>
+  <li>String#dump    #=&gt; ダンプ用 (str == eval(str.dump) が保障される)</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: UTF-8
+ "あいう".inspect #=&gt; "あいう" (UTF-8)
+ "あいう".dump #=&gt; "\u{3042}\u{3044}\u{3046}" (UTF-8)
+
+ "あいう".encode("EUC-JP").inspect #=&gt; "あいう" (EUC-JP)
+ "あいう".encode("EUC-JP").dump #=&gt; "\xA4\xA2\xA4\xA4\xA4\xA6" (EUC-JP)
+
+ "あいう".encode("UTF-16LE").inspect #=&gt; "B0D0F0" (US-ASCII)
+ "あいう".encode("UTF-16LE").dump #=&gt; "B0D0F0".force_encoding("UTF-16LE") (ASCII-8BIT)
+
+ "あいう".encode("ISO-2022-JP").inspect #=&gt; "\e$B$\"$$$&amp;\e(B" (US-ASCII)
+ "あいう".encode("ISO-2022-JP").dump #=&gt; "\e$B$\"$$$&amp;\e(B".force_encoding("ISO-2022-JP") (ASCII-8BIT)</code></pre></figure>
+
+<p>ちなみに、Kernel#p の戻り値は 1.8 では nil でしたが、1.9 では引数をそのまま返すようになっています。</p>
+
+<h3 id="regexp">Regexp</h3>
+
+<p>意識されることは少なかったと思われますが、正規表現には以前からエンコーディングが存在していました。例えば Ruby 1.8 では、/a/e.kcode は “euc” を返していました。しかし、Ruby 1.8 における GNU regex ベースの実装では SJIS、EUC、UTF8 にしか対応しておらず、機能的にも戻り読みがないなど一歩後れを取っていました。</p>
+
+<p>Ruby 1.9 では <a href="http://www.geocities.jp/kosako3/oniguruma/index_ja.html">鬼車 5.9.1 相当</a> がエンジンとして用いられています。利用できる語彙は大幅に増え、従来用いることができなかった戻り読みや、名前付き捕獲式集合、さらには文脈自由文法へのマッチが可能となる部分式呼び出し等が可能になります。</p>
+
+<ul>
+  <li><a href="http://doc.okkez.net/1.9.3/view/spec/regexp">正規表現＠るりま</a></li>
+  <li><a href="http://www.geocities.jp/kosako3/oniguruma/doc/RE.ja.txt">鬼車 正規表現</a></li>
+</ul>
+
+<h4 id="正規表現とエンコーディング">正規表現とエンコーディング</h4>
+
+<p>正規表現マッチの場合でももちろん、エンコーディングが考慮されます。つまり、/./ は改行以外の文字に対してマッチします。この場合も比較・結合の場合と同様、エンコーディングが一致しない場合は Encoding::CompatibilityError が発生します。</p>
+
+<p>Regexp#force_encoding は immutable なのでありません。Regexp.new(reg.source.force_encoding(enc)) を使ってください。また、Regexp#encode も存在しないので、正規表現のエンコーディングを変更したい場合は Regexp.new(reg.source.encode(enc)) などとします。ASCII 非互換なエンコーディングの正規表現を作りたい場合も同様に Regexp.new を用います。なお、正規表現にコードポイントの値や順番に依存した記述を行っている場合は、エンコーディングの変換によって意図しない動きとなってしまうことに注意してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: UTF-8
+ kanji_of_jis_lv1_and_lv2_in_euc_jp = Regexp.new('[亜-煕]'.encode("EUC-JP"))
+ broken_regexp = Regexp.new(kanji_of_jis_lv1_and_lv2_in_euc_jp.source.encode("UTF-8"))
+ # U+4E9C-U+7155 にマッチしても特にうれしくない</code></pre></figure>
+
+<h4 id="ascii-only-1">ASCII ONLY</h4>
+
+<p>正規表現でも ASCII ONLY に似た概念は存在します。Regexp が ASCII 互換エンコーディングを持ち、かつ内容が ASCII のみである場合、ASCII 互換エンコーディングを持つ String にマッチさせることが可能になります。このとき、<a href="http://doc.okkez.net/1.9.3/view/method/Regexp/i/fixed_encoding=3F">Regexp#fixed_encoding?</a> は false を返します。</p>
+
+<h4 id="キャプチャ構文">キャプチャ構文</h4>
+
+<p>従来、正規表現でマッチさせた文字列をロジックで扱う際は、$&amp; や Regexp.last_match、$1、$2 等を用いたり、<a href="http://doc.okkez.net/1.9.3/view/method/String/i/match">String#match</a> の戻り値を用いたり、それらをさらに別の変数に代入したりしていました。</p>
+
+<p>正規表現のキャプチャ構文を用いると、キャプチャした文字列を直接ローカル変数に代入することができます。具体的には、名前付き捕獲集合を含むが #{} 等の動的な展開を含まない正規表現リテラルが =~ の左辺にある状態で正規表現マッチを行ったとき、変数名として正しい名前付き捕獲集合名を持つキャプチャ文字列を、対応するローカル変数に代入します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> /(?&lt;foo&gt;f\w+)(?&lt;bar&gt;b\w+)/i =~ "foobar2000"
+ p [foo, bar] #=&gt; ["foo", "bar2000"]
+
+ /(?&lt;foo&gt;f\w+)(?&lt;bar&gt;b\w+)/i =~ "FreeBSD"
+ p [foo, bar] #=&gt; ["Free", "BSD"]
+
+ /(?&lt;foo&gt;f\w+)(?&lt;bar&gt;b\w+)/i =~ "Firebug"
+ p [foo, bar] #=&gt; ["Fire", "bug"]</code></pre></figure>
+
+<p>ちなみに、この構文によって既存のローカル変数を上書きしてしまうのが心配な場合は、コマンドラインオプション -w を指定することで警告を出すことができます。</p>
+
+<h4 id="バイト列とのマッチ">バイト列とのマッチ</h4>
+
+<p>何らかの文字列に対して、エスケープしたバイト列の正規表現をマッチするのは、たまに行う処理ではないかと思います。しかし、これは例えば ASCII-8BIT と UTF-8 で互換性がないと怒られます。 これはなぜかというと、このような処理は文字列処理ではなく、バイト列の処理だからです。この正規表現はバイト列に対する正規表現ですし、実際に使う際には右辺には不正なバイト列が現れることもあるでしょう。よって、この場合は両者を ASCII-8BIT にして処理を行うのが原則です。なお、2 つめの例が可能なのは、ASCII-8BIT が ASCII 互換であるがゆえに可能な、ASCII ONLY な正規表現に対するマッチ処理です。ASCII 非互換な encoding では、1 つめの例と同様 ArgumentError になってしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: UTF-8
+ /\xE3\x81\x82/n =~ "あ"
+ #=&gt; ArgumentError: incompatible encoding regexp match (ASCII-8BIT regexp with UTF-8 string)
+ # これはバイト列処理であって、文字列処理ではないため
+
+ #両者とも ASCII-8BIT にして行うのが正しい
+ bytes = "aあ".force_encoding("ASCII-8BIT")
+ /\xE3\x81\x82/n =~ bytes #=&gt; 1
+ /a/ =~ bytes #=&gt; 0</code></pre></figure>
+
+<h3 id="io">IO</h3>
+
+<p><a href="http://doc.okkez.net/1.9.3/view/class/IO">IO</a> クラスもエンコーディングを意識するようになっています。ゆえに、戻り値が文字列なのかバイト列なのかを意識する必要があります。また、文字列のエンコーディングの指定や変換を制御する「外部エンコーディング」と「内部エンコーディング」という概念が導入されました。</p>
+
+<h4 id="外部エンコーディングと内部エンコーディング-1">外部エンコーディングと内部エンコーディング</h4>
+
+<p>外部エンコーディングと内部エンコーディングは IO によるエンコーディングの設定や、自動変換を制御します。内部エンコーディングが設定されていない場合、入力された String には外部エンコーディングが設定されます。この詳細な動作は後に表で示します。</p>
+
+<p>IO の外部エンコーディングや内部エンコーディングは、<a href="http://doc.okkez.net/1.9.3/method/IO/s/open">IO#open</a> の第 2 引数や、オプションのハッシュ、開いた後は <a href="http://doc.okkez.net/1.9.3/method/IO/i/set_encoding">IO#set_encoding</a>で指定できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p [Encoding.default_external, Encoding.default_internal]
+ #=&gt; [#&lt;Encoding:UTF-8&gt;, nil] # UTF-8 ロケールの場合
+
+ open(path, "r")        {|f| p [f.external_encoding, f.internal_encoding] }
+ #=&gt; [#&lt;Encoding:UTF-8&gt;, nil]</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> open(path, "r:Shift_JIS")        {|f| p [f.external_encoding, f.internal_encoding] }
+ #=&gt; [#&lt;Encoding:Shift_JIS&gt;, nil]
+ open(path, "r:Shift_JIS:EUC-JP") {|f| p [f.external_encoding, f.internal_encoding] }
+ #=&gt; [#&lt;Encoding:Shift_JIS&gt;, #&lt;Encoding:EUC-JP&gt;]
+
+ open(path, "r", :encoding =&gt; "Shift_JIS")        {|f| p [f.external_encoding, f.internal_encoding] }
+ #=&gt; [#&lt;Encoding:Shift_JIS&gt;, nil]
+ open(path, "r", :encoding =&gt; "Shift_JIS:EUC-JP") {|f| p [f.external_encoding, f.internal_encoding] }
+ #=&gt; [#&lt;Encoding:Shift_JIS&gt;, #&lt;Encoding:EUC-JP&gt;]
+
+ open(path, "r", :external_encoding =&gt; "Shift_JIS", :internal_encoding =&gt; "EUC-JP") \
+   {|f| p [f.external_encoding, f.internal_encoding] }
+ #=&gt; [#&lt;Encoding:Shift_JIS&gt;, #&lt;Encoding:EUC-JP&gt;]
+
+ open(path, "r", :encoding =&gt; "Shift_JIS:EUC-JP") do |f|
+   p [f.external_encoding, f.internal_encoding]
+   #=&gt; [#&lt;Encoding:Shift_JIS&gt;, #&lt;Encoding:EUC-JP&gt;]
+
+   f.set_encoding(nil)
+   p [f.external_encoding, f.internal_encoding]
+   #=&gt; [#&lt;Encoding:UTF-8&gt;, nil]
+ end</code></pre></figure>
+
+<h4 id="エンコーディングの設定変換">エンコーディングの設定･変換</h4>
+
+<p>IO は前述の外部エンコーディングと内部エンコーディングの設定の有無を見て、読み込んだ文字列や書き込む文字列を変換したりエンコーディングを設定したりします。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>外部</td>
+      <td>内部</td>
+      <td>default_internal</td>
+      <td>読み込み時の動作</td>
+      <td>書き込み時の動作</td>
+    </tr>
+    <tr>
+      <td>未指定</td>
+      <td>未指定</td>
+      <td>nil</td>
+      <td>default_external を設定</td>
+      <td>バイト列をそのまま出力</td>
+    </tr>
+    <tr>
+      <td>未指定</td>
+      <td>未指定</td>
+      <td>指定</td>
+      <td>default_external から default_internal に変換</td>
+      <td>バイト列をそのまま出力</td>
+    </tr>
+    <tr>
+      <td>指定</td>
+      <td>未指定</td>
+      <td>nil</td>
+      <td>外部エンコーディングを設定</td>
+      <td>外部エンコーディングに変換</td>
+    </tr>
+    <tr>
+      <td>指定</td>
+      <td>未指定</td>
+      <td>指定</td>
+      <td>外部エンコーディングから default_internal に変換</td>
+      <td>外部エンコーディングに変換</td>
+    </tr>
+    <tr>
+      <td>指定</td>
+      <td>指定</td>
+      <td>nil</td>
+      <td>外部エンコーディングから内部エンコーディングに変換</td>
+      <td>外部エンコーディングに変換</td>
+    </tr>
+    <tr>
+      <td>指定</td>
+      <td>指定</td>
+      <td>指定</td>
+      <td>外部エンコーディングから内部エンコーディングに変換</td>
+      <td>外部エンコーディングに変換</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="バイト文字バイト列文字列">バイト・文字・バイト列・文字列</h4>
+
+<p>IO のメソッドは何を扱うかによって、バイト、文字、バイト列、文字列、の 4 種類に分類できます。</p>
+
+<p>文字を扱う <a href="http://doc.okkez.net/1.9.3/view/method/IO/i/getc">IO#getc</a> や <a href="http://doc.okkez.net/1.9.3/method/IO/i/ungetc">IO#ungetc</a>、<a href="http://doc.okkez.net/1.9.3/method/IO/i/readchar">IO#readchar</a> は、文字を Fixnum でなく、String で表すようになりました。<a href="http://doc.okkez.net/1.9.3/method/IO/i/chars">IO#each_char</a> も文字を扱うメソッドです。これらの戻り値には上記ルールに則ったエンコーディングが設定された上で返されます。</p>
+
+<p>IO#getc が文字を扱うメソッドとして変更されたことに伴い、バイトを扱う <a href="http://doc.okkez.net/1.9.3/view/method/IO/i/getbyte">IO#getbyte</a> と <a href="http://doc.okkez.net/1.9.3/view/method/IO/i/readbyte">IO#readbyte</a> が追加されています。<a href="http://doc.okkez.net/1.9.3/method/IO/i/each_byte">IO#each_byte</a> もこれに分類できるでしょう。</p>
+
+<p><a href="http://doc.okkez.net/1.9.3/method/IO/i/binread">IO#binread</a>、<a href="http://doc.okkez.net/1.9.3/method/IO/i/read">IO#read(size)</a>、<a href="http://doc.okkez.net/1.9.3/method/IO/i/read_nonblock">IO#read_nonblock</a>、<a href="http://doc.okkez.net/1.9.3/method/IO/i/readpartial">IO#readpartial</a>、<a href="http://doc.okkez.net/1.9.3/method/IO/i/sysread">IO#sysread</a> がバイト列を扱うメソッドです。バイト列の場合は常に ASCII-8BIT がセットされます。</p>
+
+<p>サイズ指定のない <a href="http://doc.okkez.net/1.9.3/method/IO/i/read">IO#read</a> など、文字列を扱うメソッドの場合は状況に応じたエンコーディングが設定されます。</p>
+
+<h4 id="ioexternal_encoding-と-iointernal_encoding">IO#external_encoding と IO#internal_encoding</h4>
+
+<p><a href="http://doc.okkez.net/1.9.3/method/IO/i/external_encoding">IO#external_encoding</a> と <a href="http://doc.okkez.net/1.9.3/method/IO/i/internal_encoding">IO#internal_encoding</a> は、最終的に変換等で判定で用いられる外部エンコーディングと内部エンコーディングを返します。単純に IO が持っている外部エンコーディングと内部エンコーディングを返すのではないことに注意する必要があります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>default_internal</td>
+      <td>外部</td>
+      <td>内部</td>
+      <td>モード: w / w+ / r+</td>
+      <td>モード: r</td>
+    </tr>
+    <tr>
+      <td>未指定</td>
+      <td>未指定</td>
+      <td>未指定</td>
+      <td>external_encoding: nil<br />internal_encoding: nil</td>
+      <td>external_encoding: default_external<br />internal_encoding: nil</td>
+    </tr>
+    <tr>
+      <td>未指定</td>
+      <td>未指定</td>
+      <td>指定</td>
+      <td>external_encoding: default_external<br />internal_encoding: 内部</td>
+      <td>external_encoding: default_external<br />internal_encoding: 内部</td>
+    </tr>
+    <tr>
+      <td>未指定</td>
+      <td>指定</td>
+      <td>未指定</td>
+      <td>external_encoding: 外部<br />internal_encoding: nil</td>
+      <td>external_encoding: 外部<br />internal_encoding: nil</td>
+    </tr>
+    <tr>
+      <td>未指定</td>
+      <td>指定</td>
+      <td>指定</td>
+      <td>external_encoding: 外部<br />internal_encoding: 内部</td>
+      <td>external_encoding: 外部<br />internal_encoding: 内部</td>
+    </tr>
+    <tr>
+      <td>指定</td>
+      <td>未指定</td>
+      <td>未指定</td>
+      <td>external_encoding: default_external<br />internal_encoding: default_internal</td>
+      <td>external_encoding: default_external<br />internal_encoding: default_internal</td>
+    </tr>
+    <tr>
+      <td>指定</td>
+      <td>未指定</td>
+      <td>指定</td>
+      <td>external_encoding: default_external<br />internal_encoding: 内部</td>
+      <td>external_encoding: default_external<br />internal_encoding: 内部</td>
+    </tr>
+    <tr>
+      <td>指定</td>
+      <td>指定</td>
+      <td>未指定</td>
+      <td>external_encoding: 外部<br />internal_encoding: default_internal</td>
+      <td>external_encoding: 外部<br />internal_encoding: default_internal</td>
+    </tr>
+    <tr>
+      <td>指定</td>
+      <td>指定</td>
+      <td>指定</td>
+      <td>external_encoding: 外部<br />internal_encoding: 内部</td>
+      <td>external_encoding: 外部<br />internal_encoding: 内部</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="ファイルパスのエンコーディング">ファイルパスのエンコーディング</h4>
+
+<p>ファイルパスのエンコーディングは基本的にはプラットフォームごとに決定されるファイルシステムエンコーディングに基づきますが、その周りの挙動もプラットフォームによって異なります。なお、このファイルシステムエンコーディングを取得する Ruby API は提供されていません。</p>
+
+<h5 id="unix">Unix</h5>
+
+<p>Unix 系の OS では一般にはファイルシステムのエンコーディングは決定できません。よって、ファイル名を返す際は、システムから得たファイル名を表すバイト列に、ファイルシステムエンコーディング、またはオプションで与えたエンコーディングを設定して返します。このとき、バイト列の変換等は行いません。また、ファイル名を渡す際は渡された String のバイト列をそのままシステムに渡します。</p>
+
+<h5 id="mac-os-x">Mac OS X</h5>
+
+<p>Mac OS X におけるファイルシステムエンコーディングは UTF8-MAC です。よって、ファイル名を返す際は UTF8-MAC、またはオプションで与えたエンコーディングを設定して返します。一方、ファイル名を渡す際は、渡された文字列のエンコーディングが ASCII-8BIT ならばバイト列とみなしてそのままシステムに、それ以外では UTF8-MAC へと変換した上でシステムに渡します。なお、この動作は検討が不十分なため、将来変更が行われる可能性があります (Unix に動作は合わせるなど)。</p>
+
+<h5 id="windows">Windows</h5>
+
+<p>Windows の ANSI 版 API が返す文字列は ANSI または OEM コードページと一致します。よって、ファイル名を返す際は基本的にはファイルシステムエンコーディングの文字列が返されます。ただし、オプションでエンコーディングが指定された場合この文字列を指定したエンコーディングへと変換して返します。ファイル名を渡す際は、渡された文字列のエンコーディングが ASCII-8BIT ならばバイト列とみなしてそのままシステムに、それ以外では 渡された文字列をファイルシステムエンコーディングへと変換した上でシステムに渡します。</p>
+
+<p>1.9.1 では開発リソースの関係から上述のような動作ですが、1.9.2 では Unicode 版 API を用いるように変更される予定です。つまり、ファイル名を返す際はオプションで Unicode 系のエンコーディングを指定すると、ANSI または OEM コードページに変換することなくそのまま Unicode で返します。また、ファイル名を渡す際も Unicode 系のエンコーディングで渡した場合は Unicode のままシステムに渡します。これにより、ロケールのエンコーディングでは表現できない文字を含むファイル名を取得したり、そうしたファイル名のファイルを扱えるようになるでしょう。</p>
+
+<h3 id="191-で廃止されたもの">1.9.1 で廃止されたもの</h3>
+
+<h4 id="kcode">$KCODE</h4>
+
+<p>Ruby 1.9 では $KCODE は廃止されました。$KCODE を見て処理を変更していた場合は、そのコードを変更する必要があります。
+代替となりうるスクリプトの内部エンコーディングを与えるものとして、Ruby 1.9.1 からは Encoding.default_internal が提供されますが、デフォルトでは nil がセットされていること、Encoding.default_internal を設定すると IO においてエンコーディングの自動変換が行われることに注意してください。</p>
+
+<h4 id="レプリカエンコーディングとベースエンコーディング">レプリカエンコーディングとベースエンコーディング</h4>
+
+<p>1.9.0 に存在した「レプリカエンコーディング」や「ベースエンコーディング (Encoding#base_encoding)」という概念は Ruby 1.9.1 では Ruby 上の概念としては廃止されました。これらはもともと、同じバイト構造をもつエンコーディング間で実装を流用するために作られた「レプリカエンコーディング」という実装と概念を、文字集合の包含関係を定義するものとしても用いようとしたものでした。</p>
+
+<p>しかし、エンコーディングのバイト構造と文字集合の関係は EUC-JP 系や Shift_JIS 系の場合でこそ使えるものの、他の世界のエンコーディングのことまで考慮すると別に定義しなければならないケースが多かったため、現時点では整備不可能と判断され、削除されることになりました。</p>
+
+<p>なお、C API からはこれらの概念に今も触れることができます。</p>
+
+<h4 id="command-line-option--k">Command Line Option -K</h4>
+
+<p>コマンドラインオプション -K は Ruby 1.9 でも非推奨ながら健在です。Ruby 1.9 での -K は script encoding のデフォルト (-K が無ければ US-ASCII) と、Encoding.default_external に影響します。(Encoding.default_internal は nil のままになります)</p>
+
+<p>なお、-K が script encoding に影響するのは、あくまで互換性確保のための処置で、1.8 のコードを修正なしに 1.9 でも動かしたい場合に利用するものです。1.8 でも 1.9 でも動くようにしたい場合や、1.9 用に新規に書く場合は magic comment を用いてください。</p>
+
+<h2 id="エンコーディングの変換">エンコーディングの変換</h2>
+
+<p>Ruby には旧来から Kconv とその実装である NKF、そして Iconv が文字コード変換ライブラリとして標準添付されてきました。しかし、これらのライブラリでは、サポートするエンコーディングに制限があったり、プラットフォームに依存したりといった欠点が存在していました。そこで、Ruby 1.9 では Martin さんによる transcode が組み込まれ、それを利用したメソッド String#encode やクラス Encoding::Converter が提供されています。</p>
+
+<p>Ruby 1.9 のエンコーディング変換ライブラリは、String の内容のバイト列と、設定されているエンコーディング双方を変更します。設定されているエンコーディング情報のみを差し替える場合は、前述の String#force_encoding を用いてください。</p>
+
+<p>transcode の実装に関する詳細は <a href="http://www.sw.it.aoyama.ac.jp/2008/pub/RubyKaigiM17N.html">Martin さんによる RubyKaigi での発表</a> を、旧来の変換 API に関する情報は <a href="http://jp.rubyist.net/magazine/?0009-BundledLibraries">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a>も参照してください。</p>
+
+<h3 id="stringencode">String#encode</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="http://doc.okkez.net/1.9.3/view/method/String/i/encode">String#encode</a> および <a href="http://doc.okkez.net/1.9.3/view/method/String/i/encode=21">String#encode!</a> は、Ruby 1.9 における最も基本的なエンコーディング変換ための手段です。オプションをハッシュで与えることができ、変換元のエンコーディングにおいて不正なバイトがあった場合や (:invalid =&gt; nil</td>
+      <td>:replace) 、エンコーディングにおいて文字が定義されていない場合 (:undef =&gt; nil</td>
+      <td>:replace) の処理方法を指定したり、変換した文字列を XML 中に用いたい場合のエスケープの指定 (:xml =&gt; :text</td>
+      <td>:attr)、LF 改行への置換 (:universal_newline =&gt; true) などがあります。</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # coding: UTF-8
+ u = "いろは"
+ puts u.dump #=&gt; "\u{3044}\u{308d}\u{306f}"
+ p u.encoding #=&gt; #&lt;Encoding:UTF-8&gt;
+
+ e = u.encode("EUC-JP") # u.encode("EUC-JP", u.encoding) と同義
+ puts e.dump #=&gt; "\xA4\xA4\xA4\xED\xA4\xCF"</code></pre></figure>
+
+<p>これ以上細かい指定を行いたい場合は、後述の Encoding::Converter#convert を用いましょう。</p>
+
+<h3 id="encodingconverter">Encoding::Converter</h3>
+
+<p><a href="http://doc.okkez.net/1.9.3/class/Encoding=Converter">Encoding::Converter</a> は transcode の変換器をオブジェクトにした物で、String#encode より細やかな変換が可能となります。Encoding::Converter を用いて変換を行う場合は、<a href="http://doc.okkez.net/1.9.3/view/method/Encoding=Converter/i/convert">Encoding::Converter#convert</a> か、より細かな変換処理が可能な <a href="http://doc.okkez.net/1.9.3/view/method/Encoding=Converter/i/primitive_convert">Encoding::Converter#primitive_convert</a> が利用できます。</p>
+
+<p>Encoding::Converter オブジェクトは <a href="http://doc.okkez.net/1.9.3/method/Encoding=Converter/s/new">Encoding::Converter.new</a> に変換元・変換先のエンコーディングを与えたり、変換経路の配列を与えて生成します。Encoding::Converter.new では String#encode でのハッシュオプションに加えて、以下の定数が利用可能です。</p>
+
+<ul>
+  <li>Encoding::Converter::INVALID_REPLACE</li>
+  <li>Encoding::Converter::UNDEF_REPLACE</li>
+  <li>Encoding::Converter::UNDEF_HEX_CHARREF</li>
+  <li>Encoding::Converter::UNIVERSAL_NEWLINE_DECORATOR</li>
+  <li>Encoding::Converter::CRLF_NEWLINE_DECORATOR</li>
+  <li>Encoding::Converter::CR_NEWLINE_DECORATOR</li>
+  <li>Encoding::Converter::XML_TEXT_DECORATOR</li>
+  <li>Encoding::Converter::XML_ATTR_CONTENT_DECORATOR</li>
+  <li>Encoding::Converter::XML_ATTR_QUOTE_DECORATOR</li>
+</ul>
+
+<h4 id="encodingconverterconvert">Encoding::Converter#convert</h4>
+
+<p><a href="http://doc.okkez.net/1.9.3/view/method/Encoding=Converter/i/convert">Encoding::Converter#convert</a> を用いると、文字列の一部を渡して変換を行うことができます。よって、不正なバイトを意識せずにストリームから読み出した文字列を変換したいときには Encoding::Converter#convert が適します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ec = Encoding::Converter.new("EUC-JP", "UTF-8")
+ dst = ec.convert("あいうえお")</code></pre></figure>
+
+<p>Encoding::Converter#convert の処理中に、不正なバイト列があった場合には Encoding::InvalidByteSequenceError が、未定義文字があった場合には Encoding::UndefinedConversionError が発生します。なお Encoding::Converter#convert では、これらの例外を捕獲しても、例外を起こしたところから変換を再開することはできません。不正なバイトや未定義文字をエスケープしたい場合やさらに細かい指定を行いたい場合は、後述の Encoding::Converter#primitive_convert を用います。</p>
+
+<h4 id="encodingconverterprimitive_convert">Encoding::Converter#primitive_convert</h4>
+
+<p><a href="http://doc.okkez.net/1.9.3/view/method/Encoding=Converter/i/primitive_convert">Encoding::Converter#primitive_convert</a> はエンコーディング変換のためのメソッドの中で、もっとも緻密な扱いが可能なメソッドです。可搬性を確保しつつ、不正なバイトや変換先で未定義な文字の扱いを細かに指定したいときは、Encoding::Converter#primitive_convert が唯一の方法になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ec = Encoding::Converter.new("UTF-8", "EUC-JP")
+ src = "abc\x81あいう\u{20bb7}\xe3"
+ dst = ''
+
+ begin
+   ret = ec.primitive_convert(src, dst)
+   p [ret, src, dst, ec.primitive_errinfo]
+   case ret
+   when :invalid_byte_sequence
+     ec.insert_output(ec.primitive_errinfo[3].dump[1..-2])
+     redo
+   when :undefined_conversion
+     c = ec.primitive_errinfo[3].dup.force_encoding(ec.primitive_errinfo[1])
+     ec.insert_output('\x{%X:%s}' % [c.ord, c.encoding])
+     redo
+   when :incomplete_input
+     ec.insert_output(ec.primitive_errinfo[3].dump[1..-2])
+   hen :finished
+   end
+   break
+ end while nil</code></pre></figure>
+
+<p>不正なバイトや変換先で未定義なバイトをエスケープしつつ変換する例です。以上のように、戻り値で分岐させつつ、Encoding::Converter#primitive_errinfo の情報を参照して処理していくことになります。</p>
+
+<h3 id="kconv">Kconv</h3>
+
+<p>変換結果に encoding を付加するようになった以外は基本的に 1.8 から変わっていません。バックエンドの NKF に対する変更は、基本的に Kconv には影響しないはずです。</p>
+
+<h3 id="nkf">NKF</h3>
+
+<p>古からある漢字コード変換ライブラリ nkf のラッパーです。Ruby 1.9.1 では nkf 2.0.9 相当のライブラリが標準添付されています。</p>
+
+<ul>
+  <li><a href="http://doc.okkez.net/1.9.3/view/class/NKF">NKF</a></li>
+  <li><a href="http://sourceforge.jp/projects/nkf/">The nkf Project</a></li>
+</ul>
+
+<h3 id="iconv">Iconv</h3>
+
+<p>Unix 系プラットフォームで搭載されている文字コード変換ライブラリのラッパーです。環境によってサポートするエンコーディングや動作が異なるので、Ruby 1.9.1 では transcode を用いたメソッドを用いた方がよいでしょう。</p>
+
+<ul>
+  <li><a href="http://doc.okkez.net/1.9.3/view/class/Iconv">Iconv</a></li>
+</ul>
+
+<h2 id="実践編">実践編</h2>
+
+<h3 id="ライブラリ">ライブラリ</h3>
+
+<p>Ruby 1.9 でライブラリを書く場合、基本的に US-ASCII のみで書くのがよいでしょう。magic comment を書けば非 ASCII な文字列リテラルを埋め込むことも可能ですが、特定のエンコーディング・文字集合に依存することは避けるべきです。ひらがなカタカナ変換等、依存せざるをえないときは、引数のエンコーディングにあわせて変換を行い、引数の文字列を変換することは避けるのが無難です。</p>
+
+<p>出力時のエンコーディングは、引数があれば引数のエンコーディングに、Encoding.default_internal が指定されていればそれに (String#encode が使えます)、さもなければ元の文字列のエンコーディングをいじらずに出力するのがよいでしょう。</p>
+
+<p>ライブラリはよほど大きい物や、XML や YAML など、仕様上 Unicode 前提の処理になっている物でない限りは、CSI 方式で処理するべきです。</p>
+
+<h3 id="19-csi">1.9 CSI</h3>
+
+<ul>
+  <li>US-ASCII のみで書く</li>
+  <li>String は常に「文字列」として扱い、処理は常に文字単位で行う。</li>
+  <li>文字を扱っている時にバイトやコードポイントをいじらない。</li>
+</ul>
+
+<h3 id="19-ucs">1.9 UCS</h3>
+
+<ul>
+  <li>UCS をどれか一つ決める (UTF-8 でも EUC-JP でもなんでもよい)</li>
+  <li>Encoding.default_internal に そのエンコーディングをセットする</li>
+  <li>UCS 以外は UCS に変換して処理する。</li>
+  <li>文字とバイトを区別するのは上に同じ。</li>
+</ul>
+
+<h3 id="18-互換-ucs">1.8 互換 UCS</h3>
+
+<ul>
+  <li>Ruby 1.8 は内部コードとして 1 つのエンコーディングしか利用することが出来ない。よって、基本的に UCS 方式を採用することになる</li>
+  <li>自動変換を利用するとトラブルの元なので、Encoding.default_internal は nil。</li>
+  <li>文字列操作メソッドは 1.9 のものを用いる、1.8.7 より前ならば自分で定義。</li>
+  <li>バイト列を操作する場合も 1.9 のものを用いる、1.8.7 より前ならば自分で定義。</li>
+</ul>
+
+<h3 id="18-互換-csi">1.8 互換 CSI</h3>
+
+<p>正規表現エンジンが SJIS, EUC, UTF8 しか対応していないので、なかなか難しい。</p>
+
+<h2 id="変更履歴">変更履歴</h2>
+
+<h3 id="2009-年-2-月-12-日">2009 年 2 月 12 日</h3>
+
+<ul>
+  <li>Ruby 1.9.1 の UCS-2 に対する態度を追記</li>
+  <li>その他 Unicode について追記</li>
+  <li>ファイルシステムエンコーディングについて追記</li>
+  <li>ロケールエンコーディング等について<a href="http://www.garbagecollect.jp/~usa/d/200902a.html#id20090209_P1">うささんの意見</a>を反映</li>
+  <li>Emacs 用の magic comment の例を小文字に修正 (<a href="http://d.hatena.ne.jp/mamamoto/20090210">mamamoto さんの指摘</a>)</li>
+</ul>
+
+<h3 id="2009-年-2-月-8-日">2009 年 2 月 8 日</h3>
+
+<ul>
+  <li>目次を追加</li>
+  <li>BOM 付きの UTF-16 と UTF-32 に対する言及を追加</li>
+  <li>ロケールエンコーディングとファイルシステムエンコーディングについて追記</li>
+  <li>Encoding 定数についての言及を追加</li>
+  <li>レプリカエンコーディングについて追記</li>
+  <li>String#inspect の文言修正と、Kernel#p に対する言及を追加</li>
+  <li>IO#binread への言及を追加</li>
+  <li>その他細かな文言修正</li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<h2 id="成瀬nkf-とかやってます">成瀬。<a href="http://sourceforge.jp/projects/nkf/">nkf</a> とかやってます。</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>つまり、UCS-2 を用いていた&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>明らかになった正確な時期は調べきれなかったが、<a href="http://std.dkuug.dk/jtc1/sc2/wg2/docs/n1300.txt">N833 Proposal for Extended UCS-2</a> や <a href="http://unicode.org/Public/TEXT/ALLOC.TXT">Concerning Future Allocations</a> を見るに、ISO/IEC 10646-1: 1993 制定時点ですでに明らかだったようだ&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>実際にBMP 外の追加多言語面 (Supplementary Multilingual Plane, SMP) と 追加漢字面 (Supplementary Ideographic Plane, SIP) への収録が開始されたのはUnicode 3.1 から&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>chcp に追従して欲しいため。また、GetConsoleOutputCP ではない。なお、将来のバージョンで変更されうる&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>コンソールへの出力でかつ、出力する文字列が Unicode 系エンコーディングの場合に Unicode 版 API を用いるといった実験は <a href="http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/branches/win32-unicode-test/">win32-unicode-test ブランチ</a> で行われている&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>C API は rb_filesystem_encoding()&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>正確には今もなお UCS-2 らしい。つまり、サロゲートペアの片方のみの場合がある&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>AreFileApisANSI() が真なら ANSI、偽なら OEM&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>Byte Order Mark。ビッグエンディアンとリトルエンディアンの判定をするための符号。文字列の先頭に付加される U+FEFF。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

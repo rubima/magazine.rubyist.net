@@ -1,0 +1,2747 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist Hotlinks 【第 9 回】 中田伸悦さん</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0009/0009-Hotlinks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist Hotlinks 【第 9 回】 中田伸悦さん</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0009/0009-Hotlinks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist Hotlinks 【第 9 回】 中田伸悦さん" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0009/0009-Hotlinks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0009/0009-Hotlinks.html" data-text="Rubyist Hotlinks 【第 9 回】 中田伸悦さん">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p><img src="/images/0009-Hotlinks/nakada0.jpg" alt="nakada0.jpg" />著名な Rubyist にインタビューを行う企画「Rubyist Hotlinks」。前回の田中哲さんからの紹介で、今回は Ruby のメンテナとして著名な中田伸悦さんにインタビューさせていただきました。</p>
+
+<p>また今回のインタビューには、高橋編集長が同席しました。</p>
+
+<h2 id="プロフィール">プロフィール</h2>
+
+<dl>
+  <dt>座右の銘</dt>
+  <dd>そのうちなんとかなるだろう</dd>
+  <dt>尊敬する人</dt>
+  <dd>田中正造</dd>
+  <dt>ご本人のサイト</dt>
+  <dd><a href="http://www.rubyist.net/~nobu/">~nobu</a> ・ <a href="http://www.rubyist.net/~nobu/t/">A Strolling Programmer</a></dd>
+</dl>
+
+<h2 id="インタビュー">インタビュー</h2>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>ささだ</dd>
+  <dt>語り手</dt>
+  <dd>中田さん</dd>
+  <dt>野次馬</dt>
+  <dd>高橋さん</dd>
+  <dt>日にち</dt>
+  <dd>2005 年 8 月 7 日</dd>
+  <dt>場　所</dt>
+  <dd>東京駅近くの居酒屋</dd>
+</dl>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#プロフィール" id="markdown-toc-プロフィール">プロフィール</a></li>
+  <li><a href="#インタビュー" id="markdown-toc-インタビュー">インタビュー</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+      <li><a href="#好きな言葉尊敬する人" id="markdown-toc-好きな言葉尊敬する人">好きな言葉・尊敬する人</a></li>
+      <li><a href="#代表作" id="markdown-toc-代表作">代表作</a>        <ul>
+          <li><a href="#代表するパッチ" id="markdown-toc-代表するパッチ">代表するパッチ</a></li>
+          <li><a href="#optionparser" id="markdown-toc-optionparser">OptionParser</a></li>
+        </ul>
+      </li>
+      <li><a href="#好きなメソッドと嫌いなメソッド" id="markdown-toc-好きなメソッドと嫌いなメソッド">好きなメソッドと嫌いなメソッド</a></li>
+      <li><a href="#rubyist-になったきっかけ" id="markdown-toc-rubyist-になったきっかけ">Rubyist になったきっかけ</a>        <ul>
+          <li><a href="#初めてのコンタクトがパッチ" id="markdown-toc-初めてのコンタクトがパッチ">初めてのコンタクトがパッチ</a></li>
+          <li><a href="#committer-として" id="markdown-toc-committer-として">committer として</a></li>
+        </ul>
+      </li>
+      <li><a href="#ruby-とのつきあい" id="markdown-toc-ruby-とのつきあい">Ruby とのつきあい</a></li>
+      <li><a href="#ruby-の好きなところと嫌いなところ" id="markdown-toc-ruby-の好きなところと嫌いなところ">Ruby の好きなところと嫌いなところ</a></li>
+      <li><a href="#ruby-を使って成功だったこと" id="markdown-toc-ruby-を使って成功だったこと">Ruby を使って成功だったこと</a></li>
+      <li><a href="#よく使うアプリケーション" id="markdown-toc-よく使うアプリケーション">よく使うアプリケーション</a></li>
+      <li><a href="#ruby-の習得" id="markdown-toc-ruby-の習得">Ruby の習得</a></li>
+      <li><a href="#生い立ち" id="markdown-toc-生い立ち">生い立ち</a>        <ul>
+          <li><a href="#初めてのプログラム" id="markdown-toc-初めてのプログラム">初めてのプログラム</a></li>
+          <li><a href="#olivetti-の思い出" id="markdown-toc-olivetti-の思い出">Olivetti の思い出</a></li>
+          <li><a href="#履歴" id="markdown-toc-履歴">履歴</a></li>
+          <li><a href="#熱気球-1" id="markdown-toc-熱気球-1">熱気球 (1)</a></li>
+          <li><a href="#c-との出会い" id="markdown-toc-c-との出会い">C との出会い</a></li>
+          <li><a href="#職歴" id="markdown-toc-職歴">職歴</a></li>
+          <li><a href="#現在の仕事" id="markdown-toc-現在の仕事">現在の仕事</a></li>
+        </ul>
+      </li>
+      <li><a href="#他の好きな言語" id="markdown-toc-他の好きな言語">他の好きな言語</a></li>
+      <li><a href="#今まで読んだ中で最も美しいコード" id="markdown-toc-今まで読んだ中で最も美しいコード">今まで読んだ中で最も美しいコード</a></li>
+      <li><a href="#興味を持っているテーマ" id="markdown-toc-興味を持っているテーマ">興味を持っているテーマ</a>        <ul>
+          <li><a href="#国際化" id="markdown-toc-国際化">国際化</a></li>
+          <li><a href="#sydney-vs-yarv" id="markdown-toc-sydney-vs-yarv">Sydney VS. YARV</a></li>
+        </ul>
+      </li>
+      <li><a href="#中田邸" id="markdown-toc-中田邸">中田邸</a></li>
+      <li><a href="#普段の生活" id="markdown-toc-普段の生活">普段の生活</a>        <ul>
+          <li><a href="#生活スタイル" id="markdown-toc-生活スタイル">生活スタイル</a></li>
+          <li><a href="#仕事とプライベート" id="markdown-toc-仕事とプライベート">仕事とプライベート</a></li>
+        </ul>
+      </li>
+      <li><a href="#趣味" id="markdown-toc-趣味">趣味</a>        <ul>
+          <li><a href="#熱気球-2" id="markdown-toc-熱気球-2">熱気球 (2)</a></li>
+          <li><a href="#酒" id="markdown-toc-酒">酒</a></li>
+          <li><a href="#sf" id="markdown-toc-sf">SF</a></li>
+          <li><a href="#その他の趣味" id="markdown-toc-その他の趣味">その他の趣味</a></li>
+        </ul>
+      </li>
+      <li><a href="#マシンのスペック" id="markdown-toc-マシンのスペック">マシンのスペック</a>        <ul>
+          <li><a href="#pc-の件で困っている中田さんに愛の手を" id="markdown-toc-pc-の件で困っている中田さんに愛の手を">PC の件で困っている中田さんに愛の手を</a></li>
+          <li><a href="#ディスプレイの件で困っている中田さんに愛の手を" id="markdown-toc-ディスプレイの件で困っている中田さんに愛の手を">ディスプレイの件で困っている中田さんに愛の手を</a></li>
+        </ul>
+      </li>
+      <li><a href="#好きな女性のタイプ" id="markdown-toc-好きな女性のタイプ">好きな女性のタイプ</a>        <ul>
+          <li><a href="#奥様との出会い" id="markdown-toc-奥様との出会い">奥様との出会い</a></li>
+        </ul>
+      </li>
+      <li><a href="#パッチを作ることに関する情熱" id="markdown-toc-パッチを作ることに関する情熱">パッチを作ることに関する情熱</a></li>
+      <li><a href="#パッチ袋はどこにあるんですか" id="markdown-toc-パッチ袋はどこにあるんですか">パッチ袋はどこにあるんですか</a></li>
+      <li><a href="#今後の展望" id="markdown-toc-今後の展望">今後の展望</a></li>
+      <li><a href="#rubyist-の輪" id="markdown-toc-rubyist-の輪">Rubyist の輪</a></li>
+      <li><a href="#若手への一言" id="markdown-toc-若手への一言">若手への一言</a>        <ul>
+          <li><a href="#笹田に一言" id="markdown-toc-笹田に一言">笹田に一言</a></li>
+        </ul>
+      </li>
+      <li><a href="#読者への一言" id="markdown-toc-読者への一言">読者への一言</a></li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#rubyist-hotlinks-連載一覧" id="markdown-toc-rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</a></li>
+</ul>
+
+<h3 id="好きな言葉尊敬する人">好きな言葉・尊敬する人</h3>
+
+<p><strong>笹田</strong>　本日はどうもありがとうございます。酔いも回る前にお話を伺いたいと思うのですが。</p>
+
+<p><strong>中田</strong>　どう答えたもんかな。</p>
+
+<p><strong>笹田</strong>　今日はビールもあることですし。</p>
+
+<p><strong>中田</strong>　ていうか、毎回いつも何か飲みながらやるの？</p>
+
+<p><strong>笹田</strong>　いや、今回が初めてですよ。</p>
+
+<p><strong>中田</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　では、好きな言葉。</p>
+
+<p><strong>中田</strong>　「そのうちなんとかなるだろう」</p>
+
+<p><strong>笹田</strong>　あのシグネチャに書いてるフレーズ<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>は？</p>
+
+<p><strong>中田</strong>　あれは高村光太郎[^2]だっけ。</p>
+
+<p><strong>高橋</strong>　「道程」。</p>
+
+<p><strong>笹田</strong>　あれをもじって？</p>
+
+<p><strong>中田</strong>　なんとなく。</p>
+
+<p><strong>高橋</strong>　昔はなかったんじゃなかったんでしたっけ。</p>
+
+<p><strong>中田</strong>　その前はなんだっけ、「Bugるくらいがちょうどいいかも;-)」[^3]ってやつか。
+その前は、ふつうに名前と、気球の AA[^4]。</p>
+
+<p><strong>高橋</strong>　それはわかんないかも。</p>
+
+<p><strong>中田</strong>　(AA を口で説明している)</p>
+
+<p><strong>笹田</strong>　nifty のログ調べれば出てきますかね。</p>
+
+<p><strong>中田</strong>　シグネチャは RCS ファイルに残ってると思う。</p>
+
+<p><strong>笹田</strong>　(笑)　シグネチャも RCS で管理。</p>
+
+<p><strong>中田</strong>　その辺は。</p>
+
+<p><strong>笹田</strong>　で、好きな言葉は「そのうちなんとかなるだろう」と。</p>
+
+<p><strong>高橋</strong>　なんとかなってますか。</p>
+
+<p><strong>中田</strong>　なんとかなってるんじゃないかなぁ。なんとかなってないことについては気にしてないからね。わからないんだと思う。</p>
+
+<p><strong>高橋</strong>　憶えてることはではとりあえずなんとかなってると。</p>
+
+<p><strong>中田</strong>　なんとかなってることしかおぼえてないんだと思う。なんとかならなかったことは憶えてても意味ないから。</p>
+
+<p><strong>笹田</strong>　では、尊敬する人。</p>
+
+<p><strong>中田</strong>　田中正造[^5]とか。一応地元の偉人。</p>
+
+<p><strong>高橋</strong>　足尾銅山の人でしたっけ。</p>
+
+<p><strong>中田</strong>　そうそう。</p>
+
+<h3 id="代表作">代表作</h3>
+<p><img src="/images/0009-Hotlinks/nakada1.jpg" alt="nakada1.jpg" /></p>
+
+<p><strong>笹田</strong>　代表作は何かありますか。</p>
+
+<p><strong>中田</strong>　特に何も作ってないよ。</p>
+
+<p><strong>笹田</strong>　何もってことはないと思いますが。</p>
+
+<p><strong>中田</strong>　独自でなんか作ってるのってあんまり無いじゃん。</p>
+
+<h4 id="代表するパッチ">代表するパッチ</h4>
+
+<p><strong>高橋</strong>　じゃあ、代表するパッチとか。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>高橋</strong>　代表するメールとか。このメールを出してなければ今の Ruby はこうなってはいなかったかも、とか。</p>
+
+<p><strong>中田</strong>　文字列リテラルのパッチはでかかったと思う。サイズで言うと。</p>
+
+<p><strong>高橋</strong>　文字列リテラル？</p>
+
+<p><strong>中田</strong>　リテラルの展開のやつ。式埋め込みの。</p>
+
+<p><strong>笹田</strong>　文字列の中に式入れてその中に文字列が、とか。</p>
+
+<p><strong>中田</strong>　そうそう。あれは 1.8 だっけ、変わったのは。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>中田</strong>　あとはメソッドローカルのスレッドローカル変数？　じゃなくて $_ とか、あの辺の実装を変えたのが結構長引いて。</p>
+
+<p><strong>笹田</strong>　あれ、前は違ったんですか？</p>
+
+<p><strong>中田</strong>　スレッド間でいろいろと大変なことがあった。</p>
+
+<p><strong>高橋</strong>　スレッド間で見えて欲しくないものが見えたり。</p>
+
+<p><strong>笹田</strong>　あれやめましょう。だって $ 付いてるんだからグローバルでいいじゃないですか。いや、冗談だけど。</p>
+
+<p><strong>中田</strong>　せめてスレッドローカルぐらいかなぁ。</p>
+
+<p><strong>笹田</strong>　スレッドローカルだったら非常に楽なんですけどね。</p>
+
+<p><strong>中田</strong>　それは確かに。こないだも core か talk にあれをスレッドローカルにして欲しいという要望があったなぁ。</p>
+
+<p><strong>笹田</strong>　$_ や $~ は、格納されている値がどこからどこまでなら有効かがわかりづらくて。このメソッドの後は上書きされちゃう、とか。</p>
+
+<p><strong>中田</strong>　内部の実装によっちゃうから。</p>
+
+<p><strong>笹田</strong>　ええ。だから、いっそのことスレッドローカルにして、欲しいタイミングで必ず値をストアしておく、という規約を作ったほうがいいんじゃないかな、とか。</p>
+
+<p><strong>中田</strong>　それは俺に言われても困る (笑)</p>
+
+<p><strong>笹田</strong>　あれは内部でどこに格納するか、というのが面倒なんですよね。</p>
+
+<p><strong>中田</strong>　だろうなぁ。たしかにそれは思う。フレーム変数というのを作ろう、と提案したことがあるんだけど。いろいろとそれはそれで面倒くさいものがあって。</p>
+
+<p><strong>笹田</strong>　フレーム変数あるじゃないですか。事実上使っているというものでいえばたとえばフリップフロップで使ってる変数とか。</p>
+
+<p><strong>中田</strong>　フレームごとはフレームごとなんだけど。</p>
+
+<p><strong>笹田</strong>　メソッドローカルで共有してますよね。</p>
+
+<p><strong>中田</strong>　あれも同じように、あの二つ[^6]の特殊変数と同じ扱いで。逆に言うと、その実装を使ってフリップフロップも実装している。だから同じなのよ。そういう意味では、フレーム変数という独立したものはなくて、メソッドトップレベルでのローカル変数か、ダイナミックな奴か、どっちか、ダイナミックがあればそっち、なければローカル変数という蝙蝠みたいなやつしかなくて。このフレーム固有の、というのはない。</p>
+
+<p><strong>笹田</strong>　ああ、なるほど。</p>
+
+<p><strong>中田</strong>　だから、前に言ってた、ダイナミック変数？　あれを順番にリストで辿っていくんじゃなくて、っていうのもそのときには考えてたんだけど、なんでやめたんだろうな。ノード[^7]の容量が足りなかったのかな。</p>
+
+<p><strong>笹田</strong>　なんかそんなこと言ってましたね。ノードで全部やろうとするのがよくないんですよ。</p>
+
+<p><strong>中田</strong>　まあね。それは言えてるんだけど。だから、それをネストしているレベルと、インデックスと、という二つ必要になってくる。他の奴で足りなくなっちゃうという都合があって。まぁインデックスとネストのレベルを制限すれば出来なくはないんだけど。そんな 6 万個以上も使うとは思えない [^8]。</p>
+
+<p><strong>笹田</strong>　かなり話がずれちゃってすみません。</p>
+
+<h4 id="optionparser">OptionParser</h4>
+
+<p><strong>中田</strong>　単独のプログラムだと、OptionParser が一番でっかいのかな。うーん。</p>
+
+<p><strong>笹田</strong>　ほんとにいろんなものを作っていらして。いろんなものに手を出しているというか。</p>
+
+<p><strong>中田</strong>　それは言えてる。なんかつい余計なものに手を出してしまうというのは悪い癖だな。</p>
+
+<p><strong>笹田</strong>　著作ってありますか。</p>
+
+<p><strong>中田</strong>　ないないない。いや、一昨年の LL Saturday の資料[^9]を文章にまとめろ[^10]っていうのがあったので、それくらいかなぁ。</p>
+
+<h3 id="好きなメソッドと嫌いなメソッド">好きなメソッドと嫌いなメソッド</h3>
+
+<p><strong>笹田</strong>　では次、好きなメソッドと嫌いなメソッド。</p>
+
+<p><strong>中田</strong>　yycompile ……ってメソッドじゃないしなぁ。</p>
+
+<p><strong>笹田</strong>　好きな関数 (笑)</p>
+
+<p><strong>中田</strong>　ワイワイと。……なんでもないです。</p>
+
+<p><strong>笹田</strong>　好きな理由があるんですか？　名前が好きなんですか。</p>
+
+<p><strong>中田</strong>　ややこしいから。</p>
+
+<p><strong>笹田</strong>　ややこしいのが好きなんですか？</p>
+
+<p><strong>中田</strong>　そういうわけでもないな。よくバグるから？</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>中田</strong>　まぁ、あの関数がバグるわけじゃないんだけどね。そういう意味で言ったら rb_eval とかいっぱいあるかな。とくに嫌いなメソッドはない。基本的にそういう好き嫌いはないから。</p>
+
+<p><strong>笹田</strong>　自分で好きになるように書き換えちゃうから？</p>
+
+<p><strong>中田</strong>　そういうこともあるかもしれないけど。</p>
+
+<h3 id="rubyist-になったきっかけ">Rubyist になったきっかけ</h3>
+
+<p><strong>笹田</strong>　では、次。Rubyist になったきっかけ。いつごろでしょう。</p>
+
+<p><strong>中田</strong>　96 か 97 年くらい。</p>
+
+<p><strong>笹田</strong>　それだと、1.0 が出てた？[^11]　で、Ruby は何で知ったんですか？</p>
+
+<p><strong>中田</strong>　知ったのは、ネットか何かで見たのかな。知った後で『TRY! PC』の紹介記事[^12]は見た。</p>
+
+<p><strong>高橋</strong>　『Internet Watch』に載った Ruby の紹介[^13]？</p>
+
+<p><strong>中田</strong>　そうかも。</p>
+
+<p><strong>笹田</strong>　使い出した原因は？</p>
+
+<p><strong>中田</strong>　ちょっと Perl で書いてたのがめんどくさくなって。Perl 5 は使いたくなかった。ひたすら矢印矢印になってめんどくさいんで。他の、もうちょっと無いかなと探してて、Ruby なら我慢できる範囲かな、と。思い出した。文が無かったから。全部が式にできる、優先順位の制限で括弧を必要とするけど、全部が値を持てて、式にできるっていうのがよかった。</p>
+
+<p><strong>笹田</strong>　それでこれだと。</p>
+
+<p><strong>中田</strong>　とりあえずこいつで書いてみようかな、と。やってたんだけど、どうも動作がおかしいな、と。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　そのときに書いてた仕事ってなんですか。</p>
+
+<h4 id="初めてのコンタクトがパッチ">初めてのコンタクトがパッチ</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td><strong>中田</strong>　仕事じゃなくて、Linux のファイルシステムのドライバをマルチバイト化しようと思って。VFAT とかその辺。で、Unicode テーブルを変換するときに最初 Perl で書いてたんだけど、Ruby に書き換えて。Hash への要素への代入を</td>
+      <td> </td>
+      <td>= でやると、その代入した値が返ってこない[^14]というのがあって。これは他のと比べるとどうもバグじゃないかなあと。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>笹田</strong>　それで報告した[^15]と。パッチ付で？</p>
+
+<p><strong>中田</strong>　そうそう。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　初めてのコンタクトがパッチだったんですか？</p>
+
+<p><strong>中田</strong>　うん。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>中田</strong>　じゃなきゃわざわざメール送ったりしないし。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　最初はパッチだった、と。</p>
+
+<p><strong>中田</strong>　ML にうまく入れなくて、まつもとさんに直接送っちゃったんだけど。</p>
+
+<p><strong>笹田</strong>　で、直してもらった、と。</p>
+
+<p><strong>中田</strong>　そのころは、代入は自動的に右辺を返すようになってなかったから。そのころはメソッドごとに返す値によって値が決まっちゃった。代入式でも。</p>
+
+<p><strong>笹田</strong>　そうだ、インタビューとはまた関係ないんだけど、あれはやっぱりメソッドが返す値を返したほうがいいんじゃないでしょうか。</p>
+
+<p><strong>中田</strong>　うーん、そうなのかなぁ。</p>
+
+<p><strong>笹田</strong>　いや、作るのが面倒くさいというのはあるんだけど。</p>
+
+<p><strong>中田</strong>　あはは。あぁ、代入する値を取っとかなきゃいけないから？</p>
+
+<p><strong>笹田</strong>　そうそう。って、じゃなくて、そういう挙動を期待する人もいると思うんですよね。Hash なんて Hash に入れた値をセッターが返せばいいじゃないですか。</p>
+
+<p><strong>中田</strong>　うーん。</p>
+
+<p><strong>笹田</strong>　それをちょっといじって、変わるだろうと思って変えたら変わらなかった、とか。というか、あそこだけ特殊なやり方をしていて気持ち悪かった。</p>
+
+<p><strong>中田</strong>　うーん。</p>
+
+<p><strong>笹田</strong>　まぁ、まつもとさんに言ってということかもしれないけど。</p>
+
+<p><strong>中田</strong>　うーん、そうだねぇ。あれ、拡張ライブラリ書いてるときにはありがたい仕様なんだよね。</p>
+
+<p><strong>笹田</strong>　そうなんですか。</p>
+
+<p><strong>中田</strong>　セットして、self を返すとか、なんか別の値を返せるメソッドと、代入演算子を同じ関数で共有できる。だから、Ruby-GNOME とかそういうことやってるんだよね。</p>
+
+<p><strong>笹田</strong>　あれに依存した書き方でやってる、と。</p>
+
+<p><strong>中田</strong>　だったはず。いや今はわかんない、あんまり最近のは追ってないんだけどね。</p>
+
+<p><strong>笹田</strong>　わかりました。じゃぁあきらめます。</p>
+
+<p><strong>中田</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　えーと、じゃあきっかけは、パッチだった。じゃないや、自分の書こうとしたものにマッチしてた、と。それでずるずると。</p>
+
+<p><strong>高橋</strong>　それ以降もずっとおかしいと思ったらパッチを送る、おかしいと思ったらパッチを送る、と。</p>
+
+<p><strong>中田</strong>　まあね。</p>
+
+<h4 id="committer-として">committer として</h4>
+
+<p><strong>笹田</strong>　committer になったのは？</p>
+
+<p><strong>中田</strong>　いつだったっけ。</p>
+
+<p><strong>笹田</strong>　結構すぐ？</p>
+
+<p><strong>中田</strong>　いや、しばらくしてから[^16]。しばらくっていうか、3 年ぐらい経ってたと思うけど。</p>
+
+<p><strong>笹田</strong>　それが今じゃ、まつもとさんよりもパッチを、ってまつもとさんはパッチを書かないか。</p>
+
+<p><strong>中田</strong>　まつもとさんの commit は、一気にでかいから。</p>
+
+<p><strong>高橋</strong>　だから中田さんのほうが回数では多い。</p>
+
+<p><strong>中田</strong>　ロールバックしやすいように。あれ、一気に手元にあるソースから commit してるわけじゃないから。必要な変更ごとに差分のファイルを作っておいて、そいつを一気にやるって形をとってるから。用途ごとにわけといて、じゃあそれでいこうという話になったら、そいつを commit して、という形になるから、どうしても小分けになる。</p>
+
+<h3 id="ruby-とのつきあい">Ruby とのつきあい</h3>
+
+<p><strong>笹田</strong>　現在の Ruby とのつきあいっていうのは、パッチ？</p>
+
+<p><strong>中田</strong>　パッチって (苦笑)</p>
+
+<p><strong>笹田</strong>　仕事でも使われてると思うんですが、プログラミングとか。</p>
+
+<p><strong>中田</strong>　自分のマシンで動くプログラムはよく Ruby で。最初、だから、なんかやってるのは、shell script で。とりあえずコマンドラインでやってるのを shell script になおして、それでおっつかなくなれば Ruby になおすとか。</p>
+
+<p><strong>笹田</strong>　仕事では使わない？</p>
+
+<p><strong>中田</strong>　Ruby で書けという仕事はうけたことが無い。ただ、そのときに個人的に使うツールは Ruby で書いたりはするけど。</p>
+
+<h3 id="ruby-の好きなところと嫌いなところ">Ruby の好きなところと嫌いなところ</h3>
+
+<p><strong>笹田</strong>　Ruby の好きなところと嫌いなところ。</p>
+
+<p><strong>中田</strong>　好きなところねぇ。</p>
+
+<p><strong>笹田</strong>　俺のこと言うのもあれなんだけど、まつもとさんが日本人と言うのはありかなと。だってパッチ投げても英語書くのめんどくさいじゃないですか、説明するのが。それ関係ない？</p>
+
+<p><strong>中田</strong>　日本語でも面倒くさい。</p>
+
+<p><strong>笹田</strong>　あはは。</p>
+
+<p><strong>中田</strong>　かといってあんまりでっかいの投げると、でかくてわかんないって言われるし。まあそりゃそうだろうと思うんだけど。</p>
+
+<p><strong>笹田</strong>　じゃあ好きなところというと。</p>
+
+<p><strong>中田</strong>　言語仕様で言うとなんだろうな。</p>
+
+<p><strong>笹田</strong>　全部式ってのは先ほど言ってましたけど。</p>
+
+<p><strong>中田</strong>　ああ、そうそうそれは思い出した。最近それを考えてなかったなあんまり。ていうかあの。</p>
+
+<p><strong>高橋</strong>　当たり前？</p>
+
+<p><strong>中田</strong>　そう。GCC なんかでもできちゃうしね。C で[^17]。あ、そうそう、だから Python が好きになれないんだよな。</p>
+
+<p><strong>笹田</strong>　他に好きなところは？</p>
+
+<p><strong>中田</strong>　動的な部分かなあ。</p>
+
+<p><strong>笹田</strong>　eval？</p>
+
+<p><strong>中田</strong>　eval までじゃなくてもいいけど、Duck Typing と最近言われているようなスタイルとか。</p>
+
+<p><strong>笹田</strong>　とりあえずメソッドを投げてみるとか。</p>
+
+<p><strong>中田</strong>　そうそう。</p>
+
+<p><strong>笹田</strong>　再定義とかまではいかなくて、適当にやったら適当に動いちゃうみたいな。</p>
+
+<p><strong>中田</strong>　実行時に再定義まではしてくれなくていいけど。</p>
+
+<p><strong>高橋</strong>　ああ、してくれなくていいんですかそこは。</p>
+
+<p><strong>笹田</strong>　再定義不可能にしてくれたらいいんだけど。だってあれのために最適化できないじゃないですか。いろいろと。</p>
+
+<p><strong>中田</strong>　できないできない。ていうかメソッドディスパッチのためにもできないんだけど、そのへんが辛いところではあるね。</p>
+
+<p><strong>笹田</strong>　別にそれはいらないと。</p>
+
+<p><strong>中田</strong>　うーん、全面的にそこまでは要求しない。</p>
+
+<p><strong>笹田</strong>　動的なところが好きと。では、嫌いなところは？</p>
+
+<p><strong>中田</strong>　……動的なところかなあ。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>中田</strong>　最適化できないから。実装面で言うとね。</p>
+
+<p><strong>高橋</strong>　中田さんはわりと実装を最適化したいとかって思ったりするんですか？</p>
+
+<p><strong>中田</strong>　それはあるソースを見て、どう見たって効率悪いだろと思ったら、バグってると思ったら直したいのと一緒で。</p>
+
+<p><strong>笹田</strong>　直す対象ではある？</p>
+
+<p><strong>中田</strong>　うん、可能な限り。ただそれが本来の設計的な意図から反するものだと意味がないというか、それは逆にバグなわけで、だからコンパイラが一生懸命オプティマイズしても最初のオプティマイズしてないときと違う動作をするようじゃオプティマイザのバグと言うのと同じ話で。</p>
+
+<p><strong>笹田</strong>　文法的に嫌いなところはない？</p>
+
+<p><strong>中田</strong>　文法的には……なんかあったような気もするな……。</p>
+
+<p><strong>笹田</strong>　まあ思い出したら後で話しましょう (笑)</p>
+
+<h3 id="ruby-を使って成功だったこと">Ruby を使って成功だったこと</h3>
+
+<p><strong>笹田</strong>　Ruby を使ってこれは成功だったなというのは。</p>
+
+<p><strong>中田</strong>　それは成功の基準によるんだけど。</p>
+
+<p><strong>笹田</strong>　オレ的成功みたいの。これやったていう。なんか抽象的かな。</p>
+
+<p><strong>高橋</strong>　では Ruby を使ってよかったていうことは？</p>
+
+<p><strong>中田</strong>　えーわかんないな。そういう意味で言うと比較対象がないから。ある程度の規模になったときにだいたいすぐに Ruby にいっちゃって、他のものを使わない。</p>
+
+<p><strong>笹田</strong>　Perl とかはぜんぜん使わないんですか？</p>
+
+<p><strong>中田</strong>　Perl は最近ぜんぜん使ってない (笑)　4 の時代まで。</p>
+
+<h3 id="よく使うアプリケーション">よく使うアプリケーション</h3>
+
+<p><strong>笹田</strong>　えーと、よく使う Ruby のライブラリとかアプリケーションというのは。</p>
+
+<p><strong>中田</strong>　アプリケーションは tDiary は使ってる。ライブラリでいうとコマンドラインでインターフェース持つ奴は OptionParser をとりあえず使うから。あとなんだろう。open-uri も使うなあ、比較的。</p>
+
+<p><strong>笹田</strong>　open-uri は使うの楽ですよね。使い方覚える必要がない。OptionParser は使い方がわからないところが多いので (笑)</p>
+
+<p><strong>中田</strong>　あれはだから、個人的に使いやすいように作ってあるから。</p>
+
+<p><strong>高橋</strong>　(笑)</p>
+
+<p><strong>中田</strong>　ていうかね、みんな複雑に考えすぎるんだよね (笑)　あれは行き当たりばったりで書けるように作ってあるライブラリなので。</p>
+
+<p><strong>笹田</strong>　じゃあその辺の解説を書いてもらわないと。</p>
+
+<p><strong>中田</strong>　えー。</p>
+
+<p><strong>笹田</strong>　やった (笑)</p>
+
+<h3 id="ruby-の習得">Ruby の習得</h3>
+<p><img src="/images/0009-Hotlinks/nakada2.jpg" alt="nakada2.jpg" /></p>
+
+<p><strong>笹田</strong>　Ruby の習得は簡単でしたか？</p>
+
+<p><strong>中田</strong>　まあ簡単だったと思う。</p>
+
+<p><strong>笹田</strong>　特に何も悩むところはなかったと。Perl 4 から問題なく移行できた？</p>
+
+<p><strong>中田</strong>　うん、その辺は特に抵抗はなかった。あ、イテレータの概念を他にその前に触ってなかったから、そこはちょっと考えた。悩んだ。</p>
+
+<p><strong>笹田</strong>　外部イテレータとかはもちろん知ってた、と。</p>
+
+<p><strong>中田</strong>　もちろん知ってたけども、ブロックを渡して yield するという形が。あれが文法的にサポートされたコールバックだと納得したらあとは特に簡単だった。</p>
+
+<p><strong>笹田</strong>　じゃあ Lisp だとかは触ってなかった。</p>
+
+<p><strong>中田</strong>　Lisp は触っていた。</p>
+
+<p><strong>笹田</strong>　え、だってラムダじゃないですか。</p>
+
+<p><strong>中田</strong>　いやそれはイテレータってよばないじゃん。</p>
+
+<p><strong>笹田</strong>　え、メソッドに一個のラムダを渡すのに最適化した書き方があれだと思ってるんですが、私は。</p>
+
+<p><strong>中田</strong>　うん、だからそういうふうに噛み砕いて納得するまではイテレータって何という。</p>
+
+<p><strong>高橋</strong>　よくわかんないけど、ブロックがあって、メソッドがあって、よくわかんないけど yield があって。</p>
+
+<p><strong>中田</strong>　うんうん、そうそう。まあクロージャみたいなもんだと、自分で納得しちゃえばあとは簡単なんだけど。別にたいして引っかかったわけではないけど、解説記事を最初に読んだときにえっと思っただけ。</p>
+
+<p><strong>笹田</strong>　結構すんなりと。</p>
+
+<p><strong>中田</strong>　まあ特に抵抗はなく。</p>
+
+<p><strong>高橋</strong>　特にクロージャがどうしたとうのは最初の頃は説明してなかったんですよ。イテレータというのがありまして、イテレータというのはこういう風に使いますよっていう話だけがあって、それがクロージャみたいなものでっていうのがあんまりなくって。</p>
+
+<p><strong>笹田</strong>　最近、Lisp を知ってる人たちに説明するときには、これはラムダだよっていって教えてちゃっています。</p>
+
+<p><strong>中田</strong>　うんうん、それは早いかもしれない。</p>
+
+<h3 id="生い立ち">生い立ち</h3>
+
+<h4 id="初めてのプログラム">初めてのプログラム</h4>
+
+<p><strong>笹田</strong>　他の言語の話が出たんで、プログラミングの話、一般の話をちょっと。初めてプログラムのコードを書いたのはいつごろなんですか？</p>
+
+<p><strong>中田</strong>　高校生かな。</p>
+
+<p><strong>笹田</strong>　高校のとき？</p>
+
+<p><strong>中田</strong>　高校に数学クラブというのが正課のクラブであってたまたまそこに入ったんだけど。</p>
+
+<p><strong>笹田</strong>　え、たまたまだったんですか？</p>
+
+<p><strong>中田</strong>　たまたま。</p>
+
+<p><strong>笹田</strong>　ふーん。運動系とかは？</p>
+
+<p><strong>中田</strong>　めんどくさかったから。体弱かったから。</p>
+
+<p><strong>笹田</strong>　え、ぜんぜん見えないですよ！</p>
+
+<p><strong>中田</strong>　何言ってるんですか。ひ弱だったのよ。ひ弱なのよ。</p>
+
+<p><strong>笹田と高橋</strong>　へぇ?へぇ?。</p>
+
+<p><strong>中田</strong>　2 へぇ?。</p>
+
+<p><strong>笹田</strong>　あはは。</p>
+
+<p><strong>中田</strong>　喘息もちだったから。今でもあるんだけど。だから中学までは……高校ぐらいからかなあんまり起きなくなってきたのは。</p>
+
+<h4 id="olivetti-の思い出">Olivetti の思い出</h4>
+
+<p><strong>笹田</strong>　その数学クラブでしたっけ、そこで何使ってたのですか？</p>
+
+<p><strong>中田</strong>　えっとね、Olivetti[^18] のねぇ。</p>
+
+<p><strong>笹田</strong>　何ですかそれ。</p>
+
+<p><strong>中田</strong>　イタリアかなあ。タイプライターが有名だと思うけど、今は IBM 互換機とか出してる[^19]。それのねえ、電算機ってやつ。入力がテンキーと記号がいくつかついてるやつがあって、で出力がロールペーパーっていう。で、そういう特殊な記号を使ったアセンブラみたいので。</p>
+
+<p><strong>笹田</strong>　プログラム電卓みたいなの。</p>
+
+<p><strong>中田</strong>　近い近い、そういう感じ。それで 120 ステップまでしか組めない。</p>
+
+<p><strong>笹田</strong>　へぇ?。それで何組んでたんですか？</p>
+
+<p><strong>中田</strong>　三角関数とか。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>中田</strong>　あと指数関数とか、Zeller の公式[^20]使って曜日を出したりとか。</p>
+
+<p><strong>高橋</strong>　はあはあはあはあ。なるほどそっか。</p>
+
+<p><strong>中田</strong>　それを組み合わせてバイオリズム計算させたりとか。高校三年くらいになって、NEC の 88 だっけ？　80？　88 だったと思ったな。それが入ってきて BASIC を見てすごいと思った。あの GOTO でジャンプ先がいくつでも作れるっていう。GOTO のラベルが確か 6 つくらいしか作れなかった。</p>
+
+<p><strong>高橋</strong>　Olivetti の次が BASIC？</p>
+
+<p><strong>中田</strong>　いや BASIC はほとんど触らなかった。</p>
+
+<p><strong>笹田</strong>　高校三年のときに BASIC 使えるマシンがそのクラブに来たんですか？</p>
+
+<p><strong>中田</strong>　そうそう。でも高校三年だからほとんど触れる暇が機会がなかった。</p>
+
+<p><strong>笹田</strong>　では先に生い立ちのほうを。</p>
+
+<h4 id="履歴">履歴</h4>
+
+<p><strong>笹田</strong>　中学とかではまだそういうのには関わってなかった？</p>
+
+<p><strong>中田</strong>　ぜんぜん。だって手に入る環境になかったし。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>中田</strong>　田舎だったから、なんせ。</p>
+
+<p><strong>笹田</strong>　ずっと栃木？</p>
+
+<p><strong>中田</strong>　栃木の田舎で。</p>
+
+<p><strong>笹田</strong>　ずっと生まれてから？</p>
+
+<p><strong>中田</strong>　そうそう。高校までずっと。</p>
+
+<p><strong>笹田</strong>　ふーん。で、小学校とかがちょっと喘息とかで大変だったと。</p>
+
+<p><strong>中田</strong>　まあ中学校くらいまでは。</p>
+
+<p><strong>笹田</strong>　その頃の趣味とかその辺は？　興味のあったこととか。</p>
+
+<p><strong>中田</strong>　本かなぁ。本読んでるくらいか。</p>
+
+<p><strong>笹田</strong>　みんな本とは言うんですが。</p>
+
+<p><strong>中田</strong>　小学校はよく覚えてないけど、中学校くらいになると図書館の本は全部読んだ。</p>
+
+<p><strong>笹田</strong>　みんなほんと本読んでますよね。</p>
+
+<p><strong>中田</strong>　あまり代わり映えのしない話で。</p>
+
+<p><strong>笹田</strong>　本ばっか読んでる少年が数学クラブに入って変わったとか。</p>
+
+<p><strong>中田</strong>　あまりやってることは変わんなかったと思う。だって、多分今までインタビューしてきた人も似たような感じだったと思うけど、SF はよく読んでたから。</p>
+
+<p><strong>高橋</strong>　あー (笑)</p>
+
+<p><strong>中田</strong>　あ、ここにいた (笑)</p>
+
+<p><strong>高橋</strong>　私はあんまり読んでなかったんですけど。</p>
+
+<p><strong>中田</strong>　そうなの？</p>
+
+<p><strong>高橋</strong>　高校くらいから。</p>
+
+<p><strong>中田</strong>　小学校の頃だったかな、あれがあった。NHK のドラマシリーズ、えーっと「夕ばえ作戦」とか「タイムトラベラー」とか。あのへんからかな。</p>
+
+<p><strong>高橋</strong>　SF 話で盛り上がったほうがいいんですか。</p>
+
+<p><strong>笹田</strong>　いや終わんなくなっちゃうから (笑)　短くしろって言われてるんで (笑)</p>
+
+<p><strong>高橋</strong>　控えます (笑)</p>
+
+<p><strong>笹田</strong>　で、高校の頃の趣味はプログラミングというよりは数学だったんですか？</p>
+
+<p><strong>中田</strong>　いやそれはプログラミングのほうが。数学クラブって言ってても数学の定理がどうしたとかっていうんじゃなくて、Olivetti ばかりだったから。</p>
+
+<p><strong>笹田</strong>　ふーん。</p>
+
+<p><strong>中田</strong>　どこが数学クラブなんだよって感じだった。</p>
+
+<p><strong>笹田</strong>　で、大学のほうは？</p>
+
+<p><strong>中田</strong>　大学は物理に。</p>
+
+<p><strong>笹田</strong>　SF だから？</p>
+
+<p><strong>中田</strong>　かなぁ。きっかけとしてはそれがあるのかもしれないけど。</p>
+
+<p><strong>笹田</strong>　宇宙に行きたいとか宇宙を知りたいとか。</p>
+
+<p><strong>中田</strong>　まあ物理は好きだったから。</p>
+
+<p><strong>笹田</strong>　何専攻？</p>
+
+<p><strong>中田</strong>　うーん、中退しちゃったからね。特に専攻っていうのは。</p>
+
+<p><strong>笹田</strong>　中退はなんかやりたいことを見つけて？</p>
+
+<p><strong>中田</strong>　うーん、つか、遊びすぎたのかなあ。クラブの顧問の研究室のところに入り浸ってそこにあったパソコンであそんでたから。</p>
+
+<p><strong>笹田</strong>　大学のクラブ？</p>
+
+<p><strong>中田</strong>　うん。</p>
+
+<p><strong>笹田</strong>　その時は何クラブ？</p>
+
+<p><strong>中田</strong>　それは熱気球。</p>
+
+<h4 id="熱気球-1">熱気球 (1)</h4>
+
+<p><strong>笹田</strong>　そう、中田さんといえば気球っていうのがあると思うんですけど。</p>
+
+<p><strong>中田</strong>　べつに俺といえばじゃないよ。</p>
+
+<p><strong>笹田</strong>　大学の頃からですか。</p>
+
+<p><strong>中田</strong>　大学から。</p>
+
+<p><strong>笹田</strong>　気球クラブがあるっていうのもなんか珍しいですよね。</p>
+
+<p><strong>中田</strong>　えーっとねー、特に最近一時期に比べて減ってるから。</p>
+
+<p><strong>笹田</strong>　グライダー部はうちの大学にもあるんだけど気球クラブはない。</p>
+
+<p><strong>中田</strong>　あそう。滑空機のやつも確かにあったんだけど。航空宇宙研とか。
+できたばかりで、まだ俺が入ったときは一機目を裁断してる最中だったかな。</p>
+
+<p><strong>笹田</strong>　買ってくるんじゃなくて作るんですか。</p>
+
+<p><strong>中田</strong>　その当時は学生は金ないから、自分で作る。</p>
+
+<p><strong>笹田</strong>　それは新歓かなんかで気球クラブがあるっていう説明で行った？</p>
+
+<p><strong>中田</strong>　新歓のときじゃない、そのあとで、連休のあとぐらいで同じクラスのやつに誘われてちょっと行ってみて入った。</p>
+
+<p><strong>笹田</strong>　へー。</p>
+
+<p><strong>高橋</strong>　入ったきっかけは誘われたから？</p>
+
+<p><strong>中田</strong>　そそ。なんとなく。</p>
+
+<p><strong>笹田</strong>　で気球クラブで計算機触って遊んでたの？　気球じゃなくて。</p>
+
+<p><strong>中田</strong>　いやあれは平日にはできないから。</p>
+
+<p><strong>笹田</strong>　なるほど。休日にどっかもって行って膨らまして飛ぶ。</p>
+
+<p><strong>中田</strong>　そそ。
+関わりといえば二機目はそのパソコンで設計したりした。</p>
+
+<p><strong>笹田</strong>　えらい計算量にならないんですか。</p>
+
+<p><strong>中田</strong>　あの当時で言うととんでもなかった。すんげー時間かかってた。だって PC-98 の F2、VF2 だったかな。</p>
+
+<p><strong>高橋</strong>　うわー。</p>
+
+<p><strong>中田</strong>　で、フロッピーしかない状態で、いくつかの段階に分かれるわけ。
+まずこういう縦の形を、こういう風な形がどういう風なラインをとるかっていうのを、まず数値積分で求める。</p>
+
+<p><strong>笹田</strong>　へー。</p>
+
+<p><strong>中田</strong>　テンションと内部からの圧力と重力の釣りあいの式があって、それを数値積分でグーッと求めて、ラインを。ナチュラルラインっていうやつをだして、それをぐるっと、そこからさらにふくらみをつける形でやって、三次元の座標になるから、それを平面に展開する、っていう三段階。</p>
+
+<p><strong>笹田</strong>　展開も計算機でやったの？</p>
+
+<p><strong>中田</strong>　もちろん。じゃないとあんなもんできない。</p>
+
+<p><strong>笹田</strong>　で布をそのとおりに切って。</p>
+
+<p><strong>中田</strong>　そそ。十ポイントくらいずつ座標を出しておいて、方眼紙をばっと貼り付けたやつにプロットしていって、それにあわせてヒートナイフで。</p>
+
+<p><strong>笹田</strong>　へー。それ間違うと落ちちゃうんですかね。</p>
+
+<p><strong>中田</strong>　多少のことじゃ落ちない。</p>
+
+<p><strong>笹田</strong>　プログラミング言語は何を使って書いたんですか。</p>
+
+<p><strong>中田</strong>　それは C で書いた。で、一機目のときは工学部の先生がやってくれたらしいんだけど、入る前だったから。で、なんだかわかんないけども「下斜め三十度から見たときにかっこいい形」とかいって。</p>
+
+<p><strong>一同</strong>　(笑)
+<img src="/images/0009-Hotlinks/nakada6.jpg" alt="nakada6.jpg" /></p>
+
+<p><strong>中田</strong>　どういう基準なんだよって、今聞いたら思うんだけど。で、こういう形になって、あとで持っていって飛ばしてるとみんなに「きのこ雲」とか「さかさニンニク」とか散々にいわれてた。</p>
+
+<p><strong>笹田</strong>　二機目は中田さんが設計？</p>
+
+<p><strong>中田</strong>　もうひとりいて、そいつがクラブに誘った張本人なんだけど、ふたりがかりでやってた。一回作ってみたんだけど、上のほうにぐるっとしわがよっちゃってて。
+一部にしわが寄るんだったら裁断と縫製のときの誤差で、っていう可能性もあるんだけど、ぐるっとわっか状に出てるっていうのは、設計段階でおかしい。</p>
+
+<p><strong>高橋</strong>　計算ミス (笑)</p>
+
+<p><strong>中田</strong>　で、ずっと調べてみたんだけど計算ミスと思えるとことがなくて、これはどうもたぶん計算誤差が大きすぎるんだろうと。</p>
+
+<p><strong>笹田</strong>　ほう。</p>
+
+<p><strong>中田</strong>　最初にもうひとりのやつが書いたやつが、三角関数と逆三角関数を繰り返すようなやつ[^21]だったんで、お前これじゃあやっぱり計算誤差は大きいだろうっていうことで、Matrix 使って計算しなおすように書き換えた。それが一週間くらいかかったのかな。</p>
+
+<p><strong>笹田</strong>　プログラミングに一週間？</p>
+
+<p><strong>中田</strong>　全部書き直すのに。</p>
+
+<p><strong>笹田</strong>　そこで patch。</p>
+
+<p><strong>中田</strong>　その当時は diff なかったから (笑)</p>
+
+<p><strong>高橋</strong>　diff も patch も。</p>
+
+<p><strong>笹田</strong>　まあでも直したと。ちなみにその計算量というか計算時間は。</p>
+
+<p><strong>中田</strong>　どのくらいかかったかなぁ。</p>
+
+<p><strong>笹田</strong>　一晩とか。</p>
+
+<p><strong>中田</strong>　考えてみればあれ全部を計算させたことないんだよね。全部を作り直したら金かかりすぎるから、上のほう五パネル分、パネルって横長の布のやつを一パネルって言うんだけど、それを上から五パネル分だけを作り直すということにして、三パネル分くらいのところにしわが寄ってたんで、途中からだけ計算できるように作り直したから、っていうかもっと全面的に書き直したんだけど、だから、下から全部計算させたことはない。実のところ。</p>
+
+<p><strong>笹田</strong>　なるほど。じゃあそんなでもなかったのか。</p>
+
+<p><strong>中田</strong>　そう。そんなでもないようにするために苦労した。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<h4 id="c-との出会い">C との出会い</h4>
+
+<p><strong>笹田</strong>　その頃にはじゃあ C はもう知ってたんですか？　それとも、そのために C やったの？</p>
+
+<p><strong>中田</strong>　うーん、C である程度書いたプログラムは初めてかもしれないなあ。</p>
+
+<p><strong>笹田</strong>　大学の授業とかであったんですか？</p>
+
+<p><strong>中田</strong>　ないないない。その当時だってぇ。</p>
+
+<p><strong>笹田</strong>　FORTRAN とか？</p>
+
+<p><strong>中田</strong>　計算機センターで使ってたのは FORTRAN ぐらい。</p>
+
+<p><strong>高橋</strong>　Pascal すらない？</p>
+
+<p><strong>中田</strong>　Pascal はあった。Turbo Pascal とかはいじったことないから。</p>
+
+<p><strong>高橋</strong>　あーなるほど。</p>
+
+<p><strong>笹田</strong>　じゃ、ほんとに計算機にはすごい興味があったと。</p>
+
+<h4 id="職歴">職歴</h4>
+
+<p><strong>中田</strong>　そう言われればたしかにそうかな。で、そのクラブを作った先輩がいて、その当時から面識あったのかな、で、大学にいつまでもいてもしょうがないからそろそろどうしようかなって言ったら、バイトに来いって言われて。</p>
+
+<p><strong>笹田</strong>　うちで仕事しないかと？</p>
+
+<p><strong>中田</strong>　そう。で、一度その面接を、とか言っているうちに、いつの間にか正社員ということになってて。</p>
+
+<p><strong>高橋</strong>　あはは。バイトのはずだったのに。いつの間にか名刺も出来てて (笑)</p>
+
+<p><strong>中田</strong>　寮があって、寮に入るためには社員じゃないといけないから正社員にしてやるからって言われて、それはいいんだけど研修かよっていう (笑)</p>
+
+<p><strong>笹田</strong>　それは何の会社？</p>
+
+<p><strong>中田</strong>　えーと、何の会社って言えばいいんだろうな、やっぱりまあそういう業界。</p>
+
+<p><strong>笹田</strong>　計算機系。気球じゃなくて？</p>
+
+<p><strong>中田</strong>　(笑)　気球関係の会社はそう多くはないんで。</p>
+
+<p><strong>笹田</strong>　ええ。</p>
+
+<p><strong>中田</strong>　だからなんだろな。</p>
+
+<p><strong>笹田</strong>　青田買い？</p>
+
+<p><strong>中田</strong>　青田買いではないと思うんだ。だって 7 年大学行ってる人間だから。</p>
+
+<p><strong>高橋</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　中退って三年の時とかじゃなくって？</p>
+
+<p><strong>中田</strong>　うん。</p>
+
+<p><strong>笹田</strong>　ずっと気球やってたんですか？</p>
+
+<p><strong>中田</strong>　やってたやってた。みんな一年生で入ってきてどんどんいくんだけど、だんだん、中田さん、中田君、中田になってくって言われてた。さすがにそこまで露骨に変わる奴はいないけど。</p>
+
+<p><strong>笹田</strong>　(笑)　へぇー。</p>
+
+<p><strong>中田</strong>　気球の会社にいたこともあるけども。</p>
+
+<p><strong>高橋</strong>　それはいつぐらい？</p>
+
+<p><strong>中田</strong>　えっとねえ、92、3 年。それはもう前にいた会社を辞めて実家に戻ってごろごろしているときに誘われていって、あの長野オリンピックのときに。</p>
+
+<p><strong>高橋</strong>　へぇー。</p>
+
+<p><strong>笹田</strong>　何したんですか？</p>
+
+<p><strong>中田</strong>　あのハト風船を飛ばしたりした。</p>
+
+<p><strong>笹田</strong>　へえ。</p>
+
+<p><strong>中田</strong>　その前のオリンピック[^22]のときにハトが聖火台に止まってピーみたいな映像が流れたでしょ。だらかそういうことがないように生きてるハトじゃなくてハト型の風船にヘリウム詰めて飛ばすということにしたらしくって、それの手伝いに呼ばれていって。</p>
+
+<p><strong>高橋</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　んーなるほど。それは計算機がうんぬんっていう仕事ではなく？</p>
+
+<p><strong>中田</strong>　全然関係ない。</p>
+
+<p><strong>笹田</strong>　ほんとに気球というか空になにか飛ばすようなことを？</p>
+
+<p><strong>中田</strong>　そうそう。ガス扱ったりとかっていう。ヘリウムガスを。</p>
+
+<h4 id="現在の仕事">現在の仕事</h4>
+
+<p><strong>笹田</strong>　で、また今は計算機。今さすらいのプログラマーなんだっけ？</p>
+
+<p><strong>中田</strong>　流しのプログラマー (笑)　さすらいのプログラマーって、ちっちっち[^23]とかやってるわけじゃないんだから。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　流しのプログラマーを今はされている？</p>
+
+<p><strong>中田</strong>　でも今やっている仕事はあまりプログラマーじゃないんだよね。なんかサポート係……。</p>
+
+<p><strong>笹田</strong>　プログラマーのサポート？</p>
+
+<p><strong>中田</strong>　じゃない。</p>
+
+<p><strong>高橋</strong>　ユーザーのサポート？　ほぅ。</p>
+
+<p><strong>笹田</strong>　電話でなんか受けたりして？</p>
+
+<p><strong>中田</strong>　電話ではない。電話ではないけども、バグトラッキングシステムみたいのがあって、そこに入ってきたやつをサポートする。</p>
+
+<p><strong>笹田</strong>　へぇ。</p>
+
+<p><strong>高橋</strong>　パッチを書くみたいな？</p>
+
+<p><strong>中田</strong>　そういうのは全然ない。というか今のところで使ってるシステムっていうのはブラックボックスになっちゃってて中が見らんないから。</p>
+
+<p><strong>高橋</strong>　え、見られないんですか。見てもわけわかんないじゃなくて？　見させてもらえない？</p>
+
+<p><strong>中田</strong>　ない。</p>
+
+<p><strong>笹田</strong>　ない？　ソースがない？　バイナリがあるけどソースがない？</p>
+
+<p><strong>中田</strong>　ていうかね、オラクルの PL/SQL かなんかっていうか、オラクルのクライアント用になんかそういうシステムがあるらしくってそれで作ってあるもんだからぜんぜん見えない。簡単なところだったらホスト側の SQL とか見て調べられるんだけど、細かいことになると全部日本オラクルのほうに問い合わせないとわからないっていう。</p>
+
+<p><strong>笹田</strong>　プログラミングする、というのは今は Ruby だけなんですか？</p>
+
+<p><strong>中田</strong>　今？　今はそうかな。とりあえず自分にあてがわれたマシンには Cygwin を突っ込んで。ていうか Cygwin ないと使えないしね。</p>
+
+<p><strong>高橋</strong>　あはは (笑)</p>
+
+<h3 id="他の好きな言語">他の好きな言語</h3>
+
+<p><strong>笹田</strong>　他のプログラミング言語とかを勉強してたときとかはどれくらい、大学のときとか。</p>
+
+<p><strong>中田</strong>　言語はまあいろいろと勉強するけど。使うときになってからかな。</p>
+
+<p><strong>高橋</strong>　そうそうそう、最初に気球で C を使ってたときっていうのは C はどこで覚えたんですか。そのとき覚えたんですか？</p>
+
+<p><strong>中田</strong>　本で覚えた。</p>
+
+<p><strong>高橋</strong>　高校のとき？</p>
+
+<p><strong>中田</strong>　いや、高校のころは C は出てない…… C って公表されたのいつごろだっけ？</p>
+
+<p><strong>高橋</strong>　70 年代に発表しましたね。</p>
+
+<p><strong>中田</strong>　でも 80 年代頭だとぜんぜんそんな普通の大学生が手に入れられるような処理系はなかった。</p>
+
+<p><strong>笹田</strong>　普通の大学生じゃなかった？</p>
+
+<p><strong>中田</strong>　普通、普通、普通 (笑)</p>
+
+<p><strong>笹田</strong>　洋書で勉強？</p>
+
+<p><strong>高橋</strong>　一応『K&amp;R』[^24]は日本語訳が出てたのでは。</p>
+
+<p><strong>中田</strong>　うん出てた出てた。うーんだから。</p>
+
+<p><strong>高橋</strong>　でも Unix とか誰も持ってなくて。</p>
+
+<p><strong>中田</strong>　そう。</p>
+
+<p><strong>笹田</strong>　あー。</p>
+
+<p><strong>高橋</strong>　それこそ Turbo C とかその辺あたりからやっと普通の人が。</p>
+
+<p><strong>中田</strong>　そうそう Turbo C、Turbo C は買った。パソコン用のソフトで自分で買ったのは Turbo C と VZ エディターとマクロアセンブラくらいかな。</p>
+
+<p><strong>笹田</strong>　MS-DOS は？</p>
+
+<p><strong>中田</strong>　その当時はバンドルされてたから。</p>
+
+<p><strong>笹田</strong>　あーそうか、98 買ったら……ちなみに98？</p>
+
+<p><strong>中田</strong>　98、98。自分のはなかった。研究室の置いてあったマシンは 98 でその DISK-BASIC か DOS かっていう時代。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>高橋</strong>　でもそこに C があったんですよね、C のコンパイラ。</p>
+
+<p><strong>中田</strong>　C のコンパイラは自分で買った。</p>
+
+<p><strong>高橋</strong>　ああそうなんだ。</p>
+
+<p><strong>中田</strong>　その当時はみんな RAM ディスクで動かしたりしてた。ハードディスクなんて高嶺の花だったから。</p>
+
+<p><strong>笹田</strong>　ちなみにあの Ruby 以外のプログラミング言語では、なにかこれは好きなとか。</p>
+
+<p><strong>中田</strong>　好きな？</p>
+
+<p><strong>笹田</strong>　好きでもいいですし、よく使うでもいいですし。まあ C はよく使ってらっしゃるとは思いますが。</p>
+
+<p><strong>中田</strong>　ああまあ確かに C はよく使うかな。好きなのっていうと FORTH とか。FORTH は好き。</p>
+
+<p><strong>笹田</strong>　え、どのへんが？</p>
+
+<p><strong>中田</strong>　なんっていうかな、素朴さ？</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>高橋</strong>　FORTH を使うっていうのはどの辺で使うんですか？</p>
+
+<p><strong>中田</strong>　いや使う機会はないけど (笑)</p>
+
+<p><strong>笹田</strong>　BIOS を作ろうとかいう仕事は来てない？</p>
+
+<p><strong>中田</strong>　それは来たことない。いや確かに SPARC の Sun のモニターでうんたらかんたらっていうのは可能だったかもしんないけど。使えてた当時だったら。</p>
+
+<h3 id="今まで読んだ中で最も美しいコード">今まで読んだ中で最も美しいコード</h3>
+
+<p><strong>笹田</strong>　今まで読んだ中で最も美しいコードは。</p>
+
+<p><strong>中田</strong>　わっかんないなぁー。これはわかんない。</p>
+
+<p><strong>笹田</strong>　まあ美しいの基準もいろいろあるでしょうが。あまりこだわらない？　みてくれには。</p>
+
+<p><strong>中田</strong>　こだわらない。</p>
+
+<p><strong>笹田</strong>　自分で作るときも適当にやっちゃう？　こだわりなくやっちゃう？</p>
+
+<p><strong>中田</strong>　うーん、よいと思う方向があればそれをとるけども、それが美しいかどうかはよくわからない。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>中田</strong>　難しい。誰かが書いてたけど「健全なソース」っていうのは……。たしかに、できれば健全なように書きたいとは思うけども。美しいとまでは、そこまでは欲はかかない。</p>
+
+<p><strong>笹田</strong>　健全なソース？</p>
+
+<p><strong>中田</strong>　だれか書いてなかったっけ。日記で。</p>
+
+<p><strong>笹田</strong>　知らない。まあいいか。</p>
+
+<h3 id="興味を持っているテーマ">興味を持っているテーマ</h3>
+
+<h4 id="国際化">国際化</h4>
+
+<p><strong>笹田</strong>　なんか興味を持ってるテーマとか。</p>
+
+<p><strong>中田</strong>　テーマねえ。……ないよなあ。刹那的に生きてるからなぁ。</p>
+
+<p><strong>笹田</strong>　バグがあればそれが興味あるテーマ？</p>
+
+<p><strong>中田</strong>　うん、それは興味あるといえばある。あとずっと気になるのはやっぱり国際化関係って言っていいのかな。</p>
+
+<p><strong>高橋</strong>　国際化関係を最初に意識したのは？　っていうか、Ruby を使うときにファイルシステムで Unicode が云々とかって言ってたときにはもうすでに？</p>
+
+<p><strong>中田</strong>　そうそう。それも確かにある。あれは最初やってたときには、もう wide character == Unicode っていうか、UTF……UTF16 じゃないなあれは、UCS2 で、まあいいやと思ってやってたんだけども、そのあとでまあ、それをやめちゃった理由はいくつかあるんだけど、だんだんやってるうちに UCS2 固定っていうのは良くないなと思うようになったのと。</p>
+
+<p><strong>高橋</strong>　それはどのへんで？</p>
+
+<p><strong>中田</strong>　うーん、結局融通利かなかったんだね。かなり具体的な話で言うと、その当時 VFAT の SJIS 化パッチっていうのもあったんだけど、それは半角から変換とか濁点を濁点つきの文字にまとめたりとかっていうことが可能だったんだけど、UCS2 固定でやっちゃうと、そういうことができない。UCS2 でマッピングできないやつは使えないことになっちゃう。だからファイルシステム上のイメージと内部で使うイメージとを内部で繋ぐものが必要になる。それを全面的に書き換えなきゃいけないなと。っていう部分と、あとバージョンいくつだかで、ファイルシステムのドライバの構造が変わっちゃって、それまでのが全部使えなくなっちゃった (笑)</p>
+
+<p>あとはもともとマルチバイト化しようとした動機のやつがクリアしちゃったんで、モチベーションが下がったって言うのが一番大きいのかな。</p>
+
+<p><strong>高橋</strong>　なにがそういう国際化で問題にぶち当たったときは必要なんでしょう。</p>
+
+<p><strong>中田</strong>　うーん、その後はねぇ、巧妙に避けてる。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>中田</strong>　だって、ようするにどう拙いところを避けるかっていう話になってるから。</p>
+
+<p><strong>笹田</strong>　工夫したら負けですよね。</p>
+
+<p><strong>中田</strong>　うーん、ていうか、「ここに入ったらダメになる」っていうのは分かってるんだからぁ。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>中田</strong>　そこには踏み込まないようにするっていう。</p>
+
+<p><strong>高橋</strong>　たとえばどこへ？　仮名の正規化とかそういう話ですか。</p>
+
+<p><strong>中田</strong>　いろいろややこしいからねー。簡単な話で言うと round trip 問題[^25]とか。</p>
+
+<p><strong>高橋</strong>　あー。</p>
+
+<p><strong>中田</strong>　もう仕様上どうしようもない話だからあきらめると。</p>
+
+<p><strong>笹田</strong>　今の Ruby の国際化は？</p>
+
+<p><strong>中田</strong>　進んでないなぁ。</p>
+
+<p><strong>高橋</strong>　中田さん的なアプローチは何かないですか。「まつもとさんがやってくれたらうれしいな」なのか、それともやっぱりこうしたほうがいいっていう意見を持ってるとか。
+それとももう見ないことにしてるとか？</p>
+
+<p><strong>笹田</strong>　中田さんといえば iconv というイメージがあるのですが。</p>
+
+<p><strong>中田</strong>　iconv は確かにその流れもあるんだけど。Ruby に関して言うと、unicodization[^26] に行かなかったのはありがたい。</p>
+
+<p><strong>一同</strong>　あー。</p>
+
+<p><strong>高橋</strong>　でも、いつまで行かないで済むのか。</p>
+
+<p><strong>中田</strong>　あれは国際化じゃないんだよね。Unicode 化でしかないから、あれはあれで問題を先送りにして、っていうか目をつぶって……。
+三十年前にあれをできていればねえ。よかったんだろうけど。</p>
+
+<p><strong>笹田</strong>　とくに中田さんから何か積極的にアプローチしていこうって言うのはない？</p>
+
+<p><strong>中田</strong>　何に関して？</p>
+
+<p><strong>笹田</strong>　いや Ruby の国際化に関して。</p>
+
+<p><strong>中田</strong>　国際化ねー。今ちょっと multilingualization のパッチっていうかブランチっていうのがあるけど。</p>
+
+<p><strong>高橋</strong>　遠い昔にできたやつですか。</p>
+
+<p><strong>中田</strong>　あれを弄るだけの余裕は今ちょっとないなぁ。</p>
+
+<p><strong>高橋</strong>　あれはでも捨てられるんじゃないんですか、あのブランチ自体は。</p>
+
+<p><strong>中田</strong>　ブランチ自体は捨てられると思うけども、でも。</p>
+
+<p><strong>高橋</strong>　あれと同じことを今からもう一回ブランチ作って？</p>
+
+<p><strong>中田</strong>　その後の変更がいろいろと大きすぎるから、そのままって言うのは無理だろうけど、でもあれを生かすことはできると思う。</p>
+
+<p><strong>高橋</strong>　まああれはあれであのときの成果っていうことで。</p>
+
+<p><strong>中田</strong>　成果はあると思う。</p>
+
+<p><strong>高橋</strong>　それなりに使えるは使えるんだけど、そのままでは使わないっていう話になってるんですよね。</p>
+
+<p><strong>中田</strong>　うん。あれをそのまま適用するのは無理だと思う。</p>
+
+<p><strong>高橋</strong>　まあそのへんは YARV でなんとかなるかもしれない。</p>
+
+<p><strong>笹田</strong>　YARV 関係ないでしょ (笑)</p>
+
+<p><strong>高橋</strong>　えー？</p>
+
+<p><strong>笹田</strong>　文字列ライブラリの、ようするに String クラスの挙動をどうするかって言う話ですよね。YARV 関係ない[^27]。もうあれなんですよ。おじいちゃんに文字コードには触るなって言われてるんですから (笑)</p>
+
+<p><strong>高橋</strong>　おじいさんの遺言で？(笑)</p>
+
+<p><strong>笹田</strong>　まだ生きてるけど (笑)</p>
+
+<p><strong>中田</strong>　未来の遺言 (笑)</p>
+
+<p><strong>高橋</strong>　そうか、でも国際化のほうは実際的にもう対応しないとという話になっていて、みんなとって付けたような国際化をあっちこっちで繰り返してるような状態で。</p>
+
+<p><strong>笹田</strong>　そうだよね。</p>
+
+<p><strong>高橋</strong>　Rails は Rails で i18n library を pure Ruby で作ったぜとかって言って gettext もどきを作ったりとかしてるわけですよ。それはそれでいかがなものかと思うんだけど、かといってまあ gettext がないと動かないよね、とかっていうのじゃあ困るよねっていう話にもなっていて。えてしてそれは Unicode でできていて。難しいねえ、っていう。</p>
+
+<p><strong>中田</strong>　他に使わない人間にとっては Unicode 便利なのよ。</p>
+
+<p><strong>高橋</strong>　ええ。っていうのと、結局何を使うにしても何かをベースにする必要はあって。で、その上にややこしい国際化層が必要になると。Unicode 使ってる人の問題点っていうのは、Unicode 使った == 国際化になってるんじゃないかという幻想を抱きやすいっていうのが。</p>
+
+<p><strong>中田</strong>　その辺の誤解はある。</p>
+
+<p><strong>高橋</strong>　その誤解を取っ払った上でも、やっぱりベースになるものは必要なんだから、って言ったときに、わりと Unicode のほうが物がそろっていてというか。</p>
+
+<p><strong>中田</strong>　まあ楽ではあると。
+どこまで他のものを捨てられるかっていう話になっちゃうと思うんだけど、これからなにか出てくるかもしれないものを、あの中途半端な仕様で吸収できるとは思えないね。</p>
+
+<p><strong>笹田</strong>　まあ多言語化の話をしだすとまたアレなので。</p>
+
+<p><strong>中田</strong>　長いよね。</p>
+
+<p><strong>笹田</strong>　ざくざくと行きましょう。</p>
+
+<p><strong>高橋</strong>　あと他に興味のあるテーマは？</p>
+
+<p><strong>中田</strong>　興味あるテーマ？　あー、Sydney[^28] は取り込みたいよね。</p>
+
+<h4 id="sydney-vs-yarv">Sydney VS. YARV</h4>
+
+<p><strong>笹田</strong>　えー！？</p>
+
+<p><strong>中田</strong>　なんで？</p>
+
+<p><strong>笹田</strong>　えー。</p>
+
+<p><strong>中田</strong>　かちあう？</p>
+
+<p><strong>笹田</strong>　……もあるし、あれでいいの？</p>
+
+<p><strong>中田</strong>　いや、そこまで見てない。まだ検討中なんだけど、検討する前の段階のハードルが高くて (笑)</p>
+
+<p><strong>笹田</strong>　あれはいくらなんでも。</p>
+
+<p><strong>中田</strong>　まずい？</p>
+
+<p><strong>笹田</strong>　いやまだコンパイルもしてないんですけど、私も。動かしました？</p>
+
+<p><strong>中田</strong>　ぜんぜん。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>中田</strong>　っていうか、1.8.2 からのブランチなんてありえないじゃん。</p>
+
+<p><strong>笹田</strong>　いや、だって、あれ排他制御何も入れてないじゃないですか[^29]。</p>
+
+<p><strong>中田</strong>　あー、やっぱり？</p>
+
+<p><strong>笹田</strong>　で、オブジェクト共有してるから。だってちょっと見たけど Array とかにも何も入ってなかったんで。</p>
+
+<p><strong>中田</strong>　それは Ruby レベルでなんか書けってことなのかな。</p>
+
+<p><strong>笹田</strong>　でも田中さんが言ってたんだけど、結局 core を吐けるパターンっていうのがあるわけですよね、それだと。</p>
+
+<p><strong>中田</strong>　あるある。</p>
+
+<p><strong>笹田</strong>　で、まあそれはよろしくないっていうんで、中田さんがたくさんパッチ入れたわけですが。call/cc のために。でもそれと同じ話が、Array にも入れましたよね。Array に排他制御がないっていうのはそれと同じ話だと思うんですけど。</p>
+
+<p><strong>中田</strong>　そか。その辺ぜんぜん考えてないか。だから今のをベースにやるとしたら、やっぱり giant lock が必要になるんだよね。</p>
+
+<p><strong>笹田</strong>　それ意味ないですよ、あんまり。まあ意味ある人にはあるけど。あと Sydney で本当に並列化して速くなるのかっていうのは試さなきゃいけないと思って試してないんですよね。</p>
+
+<p><strong>中田</strong>　うーん。検討には値すると思う。</p>
+
+<p><strong>笹田</strong>　あれだけやったのはいいと思うんだけど、あれを入れるのはかなりダメだろうと。</p>
+
+<p><strong>中田</strong>　いや、あれをそのまま入れることは無理だと思う。そもそもが。</p>
+
+<p><strong>笹田</strong>　ネイティブスレッドの上に、Ruby の VM を二つに分けるというかそんなイメージなんですよ。ネイティブスレッド二つになったらその二つにそれぞれ VM が、っていうような。</p>
+
+<p><strong>高橋</strong>　あー、はいはい。</p>
+
+<p><strong>笹田</strong>　それはそれでモデルとしてはいいんだけど。YARV ではぜんぜん違うアプローチだから。ただ Syndey は微妙にオブジェクトを共有してたりするので。</p>
+
+<p><strong>中田</strong>　あ、共有してる？　やっぱり。</p>
+
+<p><strong>笹田</strong>　してないのかなぁ。わかんない。ObjectSpace の扱いはちょっと見てなかったんで。</p>
+
+<p><strong>中田</strong>　rb_cObject を pthread のスレッドローカルに置いて、そこからの Tree で管理してる。</p>
+
+<p><strong>笹田</strong>　本当？</p>
+
+<p><strong>中田</strong>　うん……そのように見てるんだけども。</p>
+
+<p><strong>笹田</strong>　ObjectSpace もそうだった？</p>
+
+<p><strong>中田</strong>　あー、GC の？</p>
+
+<p><strong>笹田</strong>　そうそう。</p>
+
+<p><strong>中田</strong>　それは確認してないなぁ。</p>
+
+<p><strong>笹田</strong>　GC はじゃあローカルなのかな。スレッドごとに ObjectSpace 持つなら。</p>
+
+<p><strong>中田</strong>　GC 関係がね、すっごい変わってて。</p>
+
+<p><strong>笹田</strong>　あ、ホントですか。へー。じゃあそれはちゃんと見ないとダメですね。私も見ます。</p>
+
+<p><strong>中田</strong>　Sydney には興味は惹かれるんだけど。</p>
+
+<p><strong>笹田</strong>　YARV には興味惹かれないの？(笑)</p>
+
+<p><strong>中田</strong>　え？　いや惹かれる惹かれる (笑)　惹かれてるけど、いやー。</p>
+
+<p><strong>笹田</strong>　まだ何も出してないっていうのはあるんですけど。</p>
+
+<p><strong>中田</strong>　何も言わなくても着手できてるから。</p>
+
+<p><strong>笹田</strong>　じゃあマージしたら見てくれます？</p>
+
+<p><strong>中田</strong>　えー。YARV のここんところがおかしいなっていうところまで調べて、回すとか。</p>
+
+<p><strong>笹田</strong>　パッチ投げてくれないんですか。</p>
+
+<p><strong>中田</strong>　回避するパッチとか投げるか (笑)</p>
+
+<p><strong>笹田</strong>　YARV のひとつの障壁に、今の committer のひとたちにどう YARV が浸透していくかなっていうのがちょっと気になってて。eval.c 弄ってる人が「eval.c なくなっちゃうんだよ」って言われると……。</p>
+
+<p><strong>中田</strong>　なくなるの？</p>
+
+<p><strong>笹田</strong>　なくなると思う。少なくとも rb_eval とかはなくなる。</p>
+
+<p><strong>中田</strong>　あー、なるほど。そういう意味か。</p>
+
+<p><strong>笹田</strong>　で、スレッド関係全部変わります。</p>
+
+<p><strong>中田</strong>　だろうねえ。</p>
+
+<p><strong>笹田</strong>　その辺がやっぱり気になってる。</p>
+
+<p><strong>高橋</strong>　そこはやっぱり笹田さんが菓子折りを持って中田さんのところに訪れてですね、「こういう風になるんですいかがなものでしょう」というふうにご説明差し上げるという (笑)</p>
+
+<h3 id="中田邸">中田邸</h3>
+<p><img src="/images/0009-Hotlinks/nakada3.jpg" alt="nakada3.jpg" /></p>
+
+<p><strong>中田</strong>　あ、月末か来月頭に引っ越すから[^30]。遊びに来て。</p>
+
+<p><strong>高橋</strong>　え、どこに引っ越すんですか。</p>
+
+<p><strong>中田</strong>　近所だけど、うちが建つから。</p>
+
+<p><strong>笹田</strong>　あ、じゃあそのあとにインタビューすればよかったんだ。</p>
+
+<p><strong>中田</strong>　だって 8 月 10 日とか言うんだもん。無理無理。そんなすぐには建たない。</p>
+
+<p><strong>笹田</strong>　おめでとうございます。</p>
+
+<p><strong>中田</strong>　いえいえ。</p>
+
+<p><strong>高橋</strong>　今もう建ててるんですか。</p>
+
+<p><strong>中田</strong>　もうほとんど建ってる。あとはね、壁紙と電気系統。明かりがついてない。ぜんぜん。あと水回り。</p>
+
+<p><strong>笹田</strong>　じゃあ hack 合宿。中田邸。</p>
+
+<p><strong>高橋</strong>　中田邸できる前に hack ……中田邸を hack？(笑)</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>中田</strong>　できる前にってなんだ (笑)</p>
+
+<p><strong>高橋</strong>　いやぁ、電気がないからみんなで電球を (笑)</p>
+
+<p><strong>中田</strong>　LAN も繋がらないよ (笑)</p>
+
+<p><strong>笹田</strong>　新築祝いでみんなで押し寄せて hack。</p>
+
+<p><strong>中田</strong>　やるなら九月中か十月前半くらいかな。嫁が帰ってくる前に[^31]。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>中田</strong>　いないうちに。</p>
+
+<p><strong>笹田</strong>　でも、奥さんがいないうちにそんなへんなやつらが押しかけていったら奥さん怒りますよ。</p>
+
+<p><strong>高橋</strong>　いやバレないようにしておけば大丈夫ですよ (笑)</p>
+
+<p><strong>笹田</strong>　(笑)　きれいな家なのに……。</p>
+
+<p><strong>中田</strong>　まあ大丈夫、他の連中も来るからきっと。</p>
+
+<h3 id="普段の生活">普段の生活</h3>
+
+<p><strong>笹田</strong>　プライベートの話になってきたんで、そっちの話に行きましょうか。</p>
+
+<p>普段のお仕事、最近のお仕事……はさっき言ったサービスのやつ？</p>
+
+<p><strong>中田</strong>　まあ八月いっぱいで終わりになった[^32]んで。</p>
+
+<p><strong>高橋</strong>　その前にやってたのは？</p>
+
+<p><strong>中田</strong>　そのまえはえっと、今年の一月ぐらいで、二、三ヶ月ピンポイントで入った開発の手伝いだよな。その前になるとなんだろ。
+しばらくごろごろしてたからな。</p>
+
+<p><strong>笹田</strong>　今後は？</p>
+
+<p><strong>中田</strong>　いや未定。</p>
+
+<p><strong>笹田</strong>　じゃあ今なんかこれで「いい仕事ない？」って言っておくと……。</p>
+
+<p><strong>高橋</strong>　まつもとさんから魔の手が、とか (笑)</p>
+
+<p><strong>中田</strong>　それもいいなあ。松江まで行かなくてすむならそれもいい。</p>
+
+<p><strong>高橋</strong>　じゃあ東京のほうとか。</p>
+
+<p><strong>笹田</strong>　募集中ではある？</p>
+
+<p><strong>中田</strong>　まあいつでもそれは。</p>
+
+<p><strong>笹田</strong>　いつでもなんだ。</p>
+
+<p><strong>中田</strong>　流しのプログラマですから。</p>
+
+<p><strong>笹田</strong>　なんだ、どっかのポストに入れておくと……。</p>
+
+<p><strong>中田</strong>　妖怪ポストかよ (笑)</p>
+
+<p><strong>笹田</strong>　パッチポスト (笑)</p>
+
+<p><strong>高橋</strong>　あんまり長い間ひとつのプロジェクトに関わって開発やってるってことはないんですか？</p>
+
+<p><strong>中田</strong>　あー、特にないかな。今まで長かったのが 2000 年くらいに一年半くらいやってたのがあるけど。</p>
+
+<p><strong>高橋</strong>　一年半で長い？</p>
+
+<p><strong>中田</strong>　最初の会社を辞めて以降では、開発関係では一番長いのが一年半くらい。</p>
+
+<p><strong>笹田</strong>　それで家が建つっていうのはすごいですよね。</p>
+
+<p><strong>中田</strong>　いや親に借りてるけどね。</p>
+
+<p><strong>笹田</strong>　これからまあ。</p>
+
+<p><strong>高橋</strong>　がんばって返す。</p>
+
+<h4 id="生活スタイル">生活スタイル</h4>
+
+<p><strong>笹田</strong>　生活スタイルは？</p>
+
+<p><strong>中田</strong>　生活スタイル？　今非常に健全に朝七時くらいに起きて八時半過ぎに家を出て、片道三十キロ走って。</p>
+
+<p><strong>笹田</strong>　三十キロ？　え、走って会社に行くの？</p>
+
+<p><strong>中田</strong>　車で。</p>
+
+<p><strong>笹田</strong>　車でか (笑)　車で三十キロね。</p>
+
+<p><strong>中田</strong>　鉄人じゃないんだから。</p>
+
+<p><strong>笹田</strong>　三十キロ朝からランニングかと思った (笑)</p>
+
+<p><strong>中田</strong>　仕事にならないってそんなの。ついたら昼だよ (笑)</p>
+
+<p><strong>笹田</strong>　で、おしごとして。何時くらいに帰る？</p>
+
+<p><strong>中田</strong>　九時半から今やってるから六時過ぎまでが一応定時なのかな。</p>
+
+<p><strong>笹田</strong>　ほー。</p>
+
+<p><strong>中田</strong>　八時間働くと。で帰ってきて夕飯作って。</p>
+
+<p><strong>笹田</strong>　家事というか部屋のお掃除とかは奥さん？</p>
+
+<p><strong>中田</strong>　うーん、ここしばらくは家にいたんでやってたみたいなんだけど、これからはやんなきゃいけない。</p>
+
+<h4 id="仕事とプライベート">仕事とプライベート</h4>
+
+<p><strong>笹田</strong>　仕事とプライベートの両立。</p>
+
+<p><strong>中田</strong>　プライベートねえ。プライベートってどの部分を言うのかな。</p>
+
+<p><strong>笹田</strong>　なんだろう、自分の hack？</p>
+
+<p><strong>中田</strong>　そういう方向か。</p>
+
+<p><strong>笹田</strong>　自分の趣味。</p>
+
+<p><strong>中田</strong>　えー、ま、ここだけの話、仕事先でもやってたりするんだけど。</p>
+
+<p><strong>笹田</strong>　まあ、この辺は「ピー」になるのかな。</p>
+
+<p><strong>中田</strong>　ていうかその、個人的には道具として使ってたりするから。</p>
+
+<h3 id="趣味">趣味</h3>
+
+<h4 id="熱気球-2">熱気球 (2)</h4>
+
+<p><strong>笹田</strong>　えっとじゃあ趣味の話のほうに、行きたいと思うんですが、気球はスポーツとしてされているということだと思うんですけども、大学のときから始めてたっていうことで、ずーっと続けてたんですか？</p>
+
+<p><strong>中田</strong>　うん、いちおう。</p>
+
+<p><strong>笹田</strong>　大学とは関係ないクラブかなんかでやってたんですか。</p>
+
+<p><strong>中田</strong>　OB のクラブっていうのが一応あって。</p>
+
+<p><strong>高橋</strong>　あー。</p>
+
+<p><strong>笹田</strong>　じゃあいつも「これから飛んでくる」とかいう話はその OB のクラブでされてるんですか。</p>
+
+<p><strong>中田</strong>　あー、でもそこは人がぜんぜん最近集まらなくて、だから何チームかで集まってやってるような状態だから。</p>
+
+<p>うちのチームがシャンブロー。で、あとは一昨年あたりから一緒にやってるサボテンっていうチームがあって、サボシャンとかいう名前でグランプリとかはエントリーしてるんだけども、今年はさらに人が足りなくなって (笑)　もう一チーム、コールドベアーっていう立教の OB のグループと一緒になって、サボシャンベアーといって (笑)</p>
+
+<p><strong>笹田</strong>　気球やりたいといってもどこに行ったらいいかわかんないですよね、普通の人って。</p>
+
+<p><strong>中田</strong>　あー、たしかにメジャーじゃないからね。日本気球連盟[^33]とかに連絡すると、紹介してくれることもあるかもしれない。</p>
+
+<p><strong>笹田</strong>　月に一回とか集まってやったりするんですか。</p>
+
+<p><strong>中田</strong>　いや、だいたい週末。</p>
+
+<p><strong>笹田</strong>　毎週末に、練習したりとか？</p>
+
+<p><strong>中田</strong>　そうそう。</p>
+
+<p><strong>笹田</strong>　今の設備とかって？　その気球の機体とかどういうふうなものを用意してるんですか。</p>
+
+<p><strong>中田</strong>　機体は持ち寄りで買ったやつがあって、そいつを主に使ったりとか。</p>
+
+<p><strong>笹田</strong>　もう作らない？</p>
+
+<p><strong>中田</strong>　作るのは時間がないからなぁ。</p>
+
+<p><strong>笹田</strong>　みんな社会人？</p>
+
+<p><strong>中田</strong>　学生が今少ないよねえ。</p>
+
+<p><strong>高橋</strong>　ふーん。</p>
+
+<p><strong>中田</strong>　学生で今続いてるのっていうと関東だと茨城大学とか、あとは中大と、中大は横国を吸収して横ラークとか言ってるんだけど。</p>
+
+<p><strong>笹田</strong>　へー。</p>
+
+<p><strong>中田</strong>　どこも学生だけ単独ではあんまりできないのかな。都立[^34]も人がいないみたいだし、昔は……、あれ、笹田さんって大学どこだっけ。</p>
+
+<p><strong>笹田</strong>　農工大。</p>
+
+<p><strong>中田</strong>　農工大昔あったな多分。</p>
+
+<p><strong>笹田</strong>　え゛。</p>
+
+<p><strong>中田</strong>　二十年くらい前、二十年以上前。</p>
+
+<p><strong>笹田</strong>　へー。</p>
+
+<p><strong>中田</strong>　東大とか慶応、早稲田、上智、立教、筑波、千葉、横国、えーっと、和光。関東でいうとそのへんかなぁ。あ、東京理科大もあったんだ昔は。</p>
+
+<p><strong>笹田</strong>　昔はたくさんあった？</p>
+
+<p><strong>中田</strong>　昔は、一時期はたくさんあった。自作してた頃は。</p>
+
+<p><strong>笹田</strong>　今は買ってきたのを使ってやってると。</p>
+
+<p><strong>中田</strong>　学生自体がすごい減っちゃってるから。</p>
+
+<p><strong>笹田</strong>　人口もじゃあだんだん尻すぼみと。</p>
+
+<p><strong>中田</strong>　に、なりそうなかんじ。全国で言っても学生多いところは、茨城と……。</p>
+
+<p><strong>笹田</strong>　茨城の学生さんたちって言うのはどのくらいいるんですか。</p>
+
+<p><strong>中田</strong>　二十人くらいいるのかなぁ。</p>
+
+<p><strong>高橋</strong>　顧問が熱心とか OB が熱心とか？</p>
+
+<p><strong>中田</strong>　OB が熱心というのはある。あとは佐賀かな。あと帯広も多いのかな、帯畜。</p>
+
+<p><strong>高橋</strong>　帯畜はなんかやってそうですよね (笑)</p>
+
+<p><strong>中田</strong>　帯広畜産大、結構あそこも OB が近くにいるから続いてるっていう事かな。佐賀も佐賀で町で根付いてるから。</p>
+
+<p><strong>笹田</strong>　バルーンフェスタ？</p>
+
+<p><strong>中田</strong>　そうそう、二十年以上もやってると。</p>
+
+<p><strong>高橋</strong>　北大にもあるのかな。</p>
+
+<p><strong>中田</strong>　北大？　北大も。</p>
+
+<p><strong>高橋</strong>　昔はあったような気がしたんですが。</p>
+
+<p><strong>中田</strong>　北大は昔はあったと思う。今は聞かないな。北海道は他にもいくつかあったと思う。</p>
+
+<p><strong>笹田</strong>　まあ、やるの大変そうですよね。一日がかりなんですか？　気球って。</p>
+
+<p><strong>中田</strong>　いや、朝。</p>
+
+<p><strong>笹田</strong>　朝だけ？　あ、風が少ない時っていう話だったっけ。</p>
+
+<p><strong>中田</strong>　そうそう。ただまあ競技になると夕方もやるけど。</p>
+
+<p><strong>笹田</strong>　気球で乗ったり補助したりってローテーションなんですか？　大体決まってる？</p>
+
+<p><strong>中田</strong>　まあチームによって違うかな。</p>
+
+<p><strong>笹田</strong>　飛ばないと面白くなさそうな気がするんだけどそうじゃない？</p>
+
+<p><strong>中田</strong>　んー、まあそうでもないっていえばそうでもない。追っかけるほうもそれなりに面白い。</p>
+
+<p><strong>笹田</strong>　追っかけるほうは走っていくの？　車で？</p>
+
+<p><strong>中田</strong>　車で。<em>車で</em>。三十キロも走って行ったりはしないから。</p>
+
+<p><strong>笹田</strong>　そんなに何十キロも飛ぶんですか、あれ。</p>
+
+<p><strong>中田</strong>　場合による。普通に競技とかやってれば五、六キロは最低でも飛ぶし、茂木なんかだと二、三十キロ飛ぶこともあるから。山を越えていくから。
+走っていって追いかけていくことはできる人間もいるかもしれないけど、機材を持って帰ってこられない。</p>
+
+<p><strong>笹田</strong>　あー。</p>
+
+<p><strong>中田</strong>　降りたところで回収して、それを積んで帰ってこなきゃいけない。</p>
+
+<p><strong>笹田</strong>　そっか。そこでもう一回飛んで元に戻るって事はできないんだ。</p>
+
+<p><strong>中田</strong>　風上に進める気球なんてないから。</p>
+
+<p><strong>笹田</strong>　あれ完全に風任せですか。</p>
+
+<p><strong>中田</strong>　完全に。いちおう上下は動けるけど。</p>
+
+<p><strong>笹田</strong>　じゃあ風を計算してコントロールとか。</p>
+
+<p><strong>中田</strong>　そうそう。下から無線で風を教えたりとか。</p>
+
+<p><strong>笹田</strong>　上には Air H” かなんかでこう、気象何とかをずっと受信しておくとか、そういうのはない？</p>
+
+<p><strong>中田</strong>　今んとこないかな。ていうか今気象のそういうふうな気象台とかで出してる情報っていうのは、五千メーターとかもっと上の情報しかないのね。その下っていうのはもう擾乱が激しすぎて、気象台とかでは対象にしてないから。</p>
+
+<p><strong>笹田</strong>　じゃあどんな情報を送るんですか、下の人たちは。</p>
+
+<p><strong>中田</strong>　地上の風とか、途中の気球がどう動いてるかとか、あとはターゲットにいってターゲットの近辺の情報がどうのとか。まあ地味な。</p>
+
+<p><strong>笹田</strong>　でも見た目はすごく派手だと思うけどな。</p>
+
+<p><strong>中田</strong>　うーん。</p>
+
+<p><strong>笹田</strong>　準備とか地味で大変そうだけど。</p>
+
+<p><strong>高橋</strong>　飛行機のようにエンジンをがーっとかけて飛ばすとかっていうのに比べるとすごいちまちまとした感じ。</p>
+
+<p><strong>笹田</strong>　まあのんびりしてそうですよね。</p>
+
+<p><strong>高橋</strong>　のんびりなのか、逆に大変そう。</p>
+
+<p><strong>笹田</strong>　見た目のんびりっぽくない？</p>
+
+<p><strong>中田</strong>　まあ乗ってる人は、お客さんだったらすごいのんびりしてられるんだけど、競技とかだと時間との競争になることもあるから、日没が迫ってたりとか、速度を考えると十五分以内に飛ばないと絶対間に合わないとかあるから、十分で立ち上げて離陸するとか。</p>
+
+<p><strong>笹田</strong>　気球を続けてるのは二十年くらい？</p>
+
+<p><strong>中田</strong>　二十年ちょっと。だから考えてみると俺も古いほうになっちゃって。去年の、去年じゃねえや結婚する前だから一昨年か、一昨年の年末に日本気球連盟の三十周年記念パーティとかあったんだけど、だから日本でそういう今のスポーツ気球っていうのが始まって、三十年ちょっとしか経ってない。</p>
+
+<p><strong>高橋</strong>　まだそれしか経ってないんですか。</p>
+
+<p><strong>中田</strong>　経ってない。っていうか、今のスポーツ気球っていうのが始まって、世界的にもそんなもん。三十数年くらい。日本に入って来たのは比較的早い。</p>
+
+<p><strong>高橋</strong>　へー。</p>
+
+<p><strong>笹田</strong>　スポーツ気球っていうものがあるっていう事自体私は知らなかったんだけど、中田さんが日記にいろいろ書いてて、初めて知ったっていう。知名度はやっぱりないかな。</p>
+
+<p><strong>中田</strong>　知名度は低いと思う。</p>
+
+<p><strong>高橋</strong>　具体的に何やってるかよくわかんないですからね。そういう競技があるらしいとしか。</p>
+
+<p><strong>中田</strong>　あー、略称を知らないので？</p>
+
+<p><strong>高橋</strong>　ええ。</p>
+
+<p><strong>中田</strong>　MND とか FIA とか DQN とか？　……DQN はないけどね。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　他に趣味は？　酒？　酒は趣味って言わないか。</p>
+
+<p><strong>中田</strong>　うーん、デバッグ？</p>
+
+<p><strong>笹田</strong>　デバッグ趣味なんですか (笑)</p>
+
+<p><strong>中田</strong>　うん。</p>
+
+<p><strong>笹田</strong>　ちょっと暇だからデバッグするかって？</p>
+
+<p><strong>高橋</strong>　それはありそうだ。</p>
+
+<p><strong>中田</strong>　なんとも言えない。</p>
+
+<h4 id="酒">酒</h4>
+
+<p><strong>笹田</strong>　お酒は毎日飲むんですか。</p>
+
+<p><strong>中田</strong>　最近はそうでもないけど。結婚してからがくんと減ったっていう。飲ましてもらえなくなった。</p>
+
+<p><strong>高橋</strong>　結婚前は？</p>
+
+<p><strong>中田</strong>　一日二合くらいとか。</p>
+
+<p><strong>笹田</strong>　二升じゃなくて？</p>
+
+<p><strong>中田</strong>　水だってそんなに飲めない。</p>
+
+<p><strong>高橋</strong>　それは学生っていうか大学をやめるくらいからもうずっとそんな感じで？</p>
+
+<p><strong>笹田</strong>　やめる前からとか。</p>
+
+<p><strong>中田</strong>　大学で覚えてきたのが、だから酒と気球とコンピュータだから。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　酒は気球のところで飲んでたりとか？</p>
+
+<p><strong>中田</strong>　そうそう。方々行くと、最近ずっと行ってないけど秋田の大会とか、今でもあるんだけど今は日本グランプリとかぶっちゃっててなかなか行けないんだけど、そこでまあ。</p>
+
+<p><strong>笹田</strong>　秋田に行ったら飲みますよね。</p>
+
+<p><strong>中田</strong>　当然飲む。佐賀に行ったら佐賀の酒がうまいし。新潟に行ったら、こないだ地震のあった小千谷とかあのへんで昔からやってるから、行けば飲む。
+北海道はあんまり日本酒ないけどね。</p>
+
+<p><strong>高橋</strong>　なくはないですけどね。</p>
+
+<p><strong>中田</strong>　男山くらいかな。</p>
+
+<p><strong>高橋</strong>　男山とか國稀とか。</p>
+
+<p><strong>中田</strong>　まああっち行くとビールになっちゃう。</p>
+
+<p><strong>笹田</strong>　そっか。</p>
+
+<p><strong>中田</strong>　肉食いながらビールで。</p>
+
+<p><strong>高橋</strong>　ジンギスカン。</p>
+
+<p><strong>笹田</strong>　さすがに気球に乗って飲むとかはない？　危ないか。</p>
+
+<p><strong>中田</strong>　そう多くはない。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>中田</strong>　前に富山に行って一緒に乗ったときに缶ビールもって行ってね。飲んでたらば「信じらんない」とかいわれた。</p>
+
+<p>お前が信じるか信じないかはこの際問題じゃないんだよっ。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<h4 id="sf">SF</h4>
+
+<p><strong>笹田</strong>　ほかの趣味は？</p>
+
+<p><strong>中田</strong>　ほか。ほか最近何もやってないな。</p>
+
+<p><strong>笹田</strong>　本とか。</p>
+
+<p><strong>中田</strong>　本……。</p>
+
+<p><strong>笹田</strong>　SFは？</p>
+
+<p><strong>中田</strong>　読まなくはないけど減ってる。</p>
+
+<p><strong>笹田</strong>　読書とソースコードの読書、読ソースコード？　どっちが多いですか。</p>
+
+<p><strong>中田</strong>　そらソース読んでるほうが多い。てか本屋に寄る機会があんまりなくって、最近。本屋に寄っちゃうと一時間とか二時間とかずーっといるから、とっとと帰って来いって怒られる。</p>
+
+<p><strong>笹田</strong>　最近の課題図書とかないですか。</p>
+
+<p><strong>中田</strong>　なんか面白いのある？　お勧めは。</p>
+
+<p><strong>高橋</strong>　お勧めはなんでしょうね、なんだったっけ、『<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51RQK4CX0GL._SL160_.jpg" />』[^35]？　ハヤカワ SF シリーズ、じゃない J コレか、J コレの新シリーズがはじまって、それの一発目が出てきて、それが何かわりとがんばってるっていう噂。藤崎慎吾っていう。</p>
+
+<p><strong>中田</strong>　ぜんぜん知らない。</p>
+
+<p><strong>高橋</strong>　何年か前に厚いの[^36]をバーンと出して、それからずっとそれを書いてたっていう[^37]。</p>
+
+<p><strong>中田</strong>　へー。</p>
+
+<p><strong>高橋</strong>　沖縄のほうの民間伝承と、結構ハードな SF を足して二で割ったらしい。</p>
+
+<p><strong>中田</strong>　へー。それちょっと興味を引かれるけど。</p>
+
+<p><strong>高橋</strong>　割とオーソドックスな小松左京スタイルっていうか、ネタ的に『<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41KQ89SXG1L._SL160_.jpg" />』みたいな感じの海洋、もともと海洋物理をやってた人らしいので。</p>
+
+<p><strong>中田</strong>　珍しい。</p>
+
+<p><strong>高橋</strong>　そういういかにも地球物理みたいな感じのやつを、伝承をうまく絡めて。ファンタジーっぽい味付けもして。とりあえずハヤカワは押したがってるっぽいというか売りたがってるっぽい[^38]。</p>
+
+<p>とかっていう話をしていいんですか。</p>
+
+<p><strong>笹田</strong>　たぶんこのへんは切るので (笑)</p>
+
+<p>まあ中田さん的には読みたい本があれば読むと。</p>
+
+<p><strong>中田</strong>　うーん。</p>
+
+<h4 id="その他の趣味">その他の趣味</h4>
+
+<p><strong>笹田</strong>　映画とかは見ない？</p>
+
+<p><strong>中田</strong>　映画ねえ。</p>
+
+<p><strong>高橋</strong>　『スターウォーズ』は見ましたか。</p>
+
+<p><strong>中田</strong>　テレビで (笑)</p>
+
+<p><strong>笹田</strong>　このあいだやってたやつ？</p>
+
+<p><strong>中田</strong>　嫌いじゃないんだけど。でも映画館てもうずーっと足運んでないから。</p>
+
+<p><strong>笹田</strong>　音楽。</p>
+
+<p><strong>中田</strong>　音楽もあんまり聴かないなぁ。しばらく前にミュージカルバトンとかって流行ってたけども、来ても何も答えられねーよなあとか思って。</p>
+
+<p><strong>笹田</strong>　じゃあゲーム。</p>
+
+<p><strong>中田</strong>　ゲームはねえ、ゲームは一番最近やったのはあれかなぁ、『桃鉄』[^39]。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>高橋</strong>　いつですか。</p>
+
+<p><strong>中田</strong>　『桃鉄 USA』[^40]とか。いや一人じゃなくて複数でできるやつ。嫁が好きで。お前資格試験勉強しねえのかよって言いつつゲームやってた。</p>
+
+<h3 id="マシンのスペック">マシンのスペック</h3>
+
+<p><strong>笹田</strong>　使っているマシンのスペック。</p>
+
+<p><strong>中田</strong>　えーとね。</p>
+
+<p><strong>笹田</strong>　こないだ、ディスプレイがどうのこうの、って言ってたけど？</p>
+
+<p><strong>中田</strong>　ディスプレイは死にそう。</p>
+
+<p><strong>笹田</strong>　で、マシンのほうは？</p>
+
+<p><strong>中田</strong>　Celeron の 500 メガ。</p>
+
+<p><strong>笹田</strong>　えーっ？</p>
+
+<h4 id="pc-の件で困っている中田さんに愛の手を">PC の件で困っている中田さんに愛の手を</h4>
+
+<p><strong>中田</strong>　デュアル。マザーボードが BP6 だったかな？　すんげー不安定で、寒くなると、落ちる。</p>
+
+<p><strong>笹田</strong>　(笑)　寒くなると！　今は大丈夫ですか？</p>
+
+<h4 id="ディスプレイの件で困っている中田さんに愛の手を">ディスプレイの件で困っている中田さんに愛の手を</h4>
+
+<p><strong>中田</strong>　今はねぇ、ディスプレイが、死んでる[^41]。</p>
+
+<p><strong>笹田</strong>　奥様から許可は出たんですか？</p>
+
+<p><strong>中田</strong>　まだ (笑)</p>
+
+<p><strong>笹田</strong>　(笑)　みんな持っているんだよ?、っていう、あの作戦[^42]は？　だめだった？</p>
+
+<p><strong>中田</strong>　鼻であしらわれた。</p>
+
+<p><strong>笹田</strong>　(笑)　DELL の 19 インチ？　21 インチでしたっけ？</p>
+
+<p><strong>中田</strong>　20 インチだったかな？</p>
+
+<p><strong>笹田</strong>　20 インチが 7 万とかいう話があって、「買っていい？」という話をしたらしくて。</p>
+
+<p><strong>中田</strong>　フッ、そういうことを言っていたかな？</p>
+
+<p><strong>笹田</strong>　でも、中田さんのマシンを豪華にする、ということは、何かこう、Ruby の発展を促進すると思うんですよ。どうでしょう、会長？(笑)</p>
+
+<p><strong>高橋</strong> それ、20 インチが必要なんですか？</p>
+
+<p><strong>笹田</strong>　えー、あってもいいと思うんですよ。マシン自体もねぇ。500 のデュアルよりは。</p>
+
+<p><strong>高橋</strong>　500 のデュアルよりいいマシンが余っている人は、何かいそうな気がするよねぇ？　でも、20 インチがあまっている人はあまりいないと思うんですけど。</p>
+
+<p><strong>中田</strong>　いないと思う。それはさすがに。</p>
+
+<p><strong>高橋</strong>　いや、でも、15 インチぐらいだったらあまっていますよね。普通に。15 インチのちゃんと良いやつ。</p>
+
+<p><strong>中田</strong>　15 インチだといくつなんだろう？　1280x1024 くらい？</p>
+
+<p><strong>高橋</strong>　をやると、ちょっとつらい。</p>
+
+<p><strong>中田</strong>　あー、小さくなるんだなぁ。</p>
+
+<p><strong>高橋</strong>　15 インチから 17 インチに切り替えました。とかっていう人、結構いると思うんですよ。で、15 インチのほうが余ってて。</p>
+
+<p><strong>中田</strong>　今はね。</p>
+
+<p><strong>高橋</strong>　で、まぁ、そろそろ 20 とか思ってて、17 があまっているという人もいないことはないかも、ぐらい。</p>
+
+<p><strong>中田</strong>　いや、20 インチはいらないんだけれども、17 インチで 1600x1200 ぐらい出るのがあるとありがたいんだけど。</p>
+
+<p><strong>高橋</strong>　私がつい最近買ったんですけど。てゆーか、普通のモニターのがイカれたんで。どうにもならなくなっちゃって。
+こう、上半分がこう、揺れるっていうか、波打った状態になってて、しかも波打った状態で止まってるんですよ。</p>
+
+<p><strong>中田</strong>　波？　ちぢれる？</p>
+
+<p><strong>高橋</strong>　いや、波が。</p>
+
+<p><strong>中田</strong>　あっ、曲がった状態で。</p>
+
+<p><strong>高橋</strong>　そうそう、ぐにょぐにょってなってて。下半分は何とか読めるので、こう、無理矢理下半分のディスプレイに縮めてやると、メールも読める、という。
+普通に読んでると、誰から来たか良く分かんない、っていう、凄い状態だったんで。
+しょうがないから液晶モニタを買ってきたんです。</p>
+
+<p><strong>中田</strong>　それは何インチ？</p>
+
+<p><strong>高橋</strong>　17 インチ。</p>
+
+<p><strong>中田</strong>　解像度は？</p>
+
+<p><strong>高橋</strong>　1600 とか。</p>
+
+<p><strong>中田</strong>　えっ？　17 インチでできるやつがあるんだ？</p>
+
+<p><strong>高橋</strong>　一応できるはずですよ？</p>
+
+<p><strong>中田</strong>　へー。それにしようかなぁ。</p>
+
+<p><strong>高橋</strong>　あっ、違ったかな？　嘘だったかもしれません (笑)　調べてみます[^43]。</p>
+
+<p><strong>笹田</strong>　さっきの話だけど、「寄付金の宛先をどうしようか？」っていう話だけど。</p>
+
+<p><strong>中田</strong>　俺に寄付されてもなぁ。</p>
+
+<p><strong>笹田</strong>　それで、中田さんを縛って、一日、こう、自分専用で先生に (笑)　パッチ一個書かないと使えません、とか (笑)</p>
+
+<p><strong>中田</strong>　えー、いや、そりゃ、バグがくれば直すけどさ?ぁ。</p>
+
+<p><strong>笹田</strong>　青木さんがマシンを余らせてたかもしれませんね。Alpha がきたりして (笑)</p>
+
+<p><strong>中田</strong>　うーん、賞味期限切れの Alpha とか。</p>
+
+<h3 id="好きな女性のタイプ">好きな女性のタイプ</h3>
+
+<p><strong>笹田</strong>　好きな女性のタイプは？</p>
+
+<p><strong>中田</strong>　えー……。</p>
+
+<p><strong>笹田</strong>　ちょっとお酒、足りないですかね？</p>
+
+<p><strong>中田</strong>　えー、いい笑顔のものに。ニコニコしてくれているといいんだけれどもねぇ。</p>
+
+<p><strong>笹田</strong>　(笑)　ここからグチが始まるんですか？</p>
+
+<p><strong>中田</strong>　いやいやいや。めっそうもない。</p>
+
+<p><strong>笹田</strong>　そういえば、既婚者では初めて「奥さん」じゃなかったですね[^44]、答えが。「ニコニコしてくれる人」</p>
+
+<p><strong>中田</strong>　いゃ?ぁ。</p>
+
+<p><strong>笹田</strong>　奥さんはそうじゃない？</p>
+
+<p><strong>中田</strong>　ちょっとその辺ひねり過ぎ。いや?、ニコニコしている時はいいんだ。</p>
+
+<p><strong>笹田</strong>　「ニコニコしている奥さん」が理想のタイプ？</p>
+
+<p><strong>中田</strong>　まぁ、そういうことにしておいたほうが無難かなぁ？</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>中田</strong>　「そんなこと言って、後でどうなるか分かっとるんじゃろうね！」とか。</p>
+
+<p><strong>笹田</strong>　それでクッと構えるんですか？</p>
+
+<p><strong>中田</strong>　グーで構えられる。</p>
+
+<h4 id="奥様との出会い">奥様との出会い</h4>
+
+<p><strong>笹田</strong>　奥様との出会いとかは？　何年前ですか？</p>
+
+<p><strong>中田</strong>　2002 年？</p>
+
+<p><strong>笹田</strong>　気球ですか？</p>
+
+<p><strong>中田</strong>　佐賀で。佐賀でその年は、熱飛行船の手伝いを頼まれていて。
+で、それで行ったときに、スタッフで来ていた。スタッフっていうか、そこのボランティアクルー。</p>
+
+<p><strong>笹田</strong>　佐賀がご実家？</p>
+
+<p><strong>中田</strong>　いや、地元は広島。えーと、短大は佐賀だった。で、卒業してからボランティアクルーを始めた。だからあまり実は詳しくない、あいつは。</p>
+
+<p><strong>笹田</strong>　で、見事射止められた。</p>
+
+<p><strong>中田</strong>　あー。まぁ、そういう感じ。</p>
+
+<p><strong>笹田</strong>　何でそう嫌そうに。</p>
+
+<p><strong>中田</strong>　いやいや、何て言うか。……受身形？</p>
+
+<p><strong>笹田</strong>　(笑)　あー、なるほど。</p>
+
+<p><strong>中田</strong>　まぁ、そんなこんなで、昨年結婚して。</p>
+
+<p><strong>笹田</strong>　今は見事、お子様も。</p>
+
+<p><strong>中田</strong>　あー、でかくなりつつあるところで。ちょっとまぁ、あっちの実家に預けてきて、ちょっとホッとしている感じ。</p>
+
+<h3 id="パッチを作ることに関する情熱">パッチを作ることに関する情熱</h3>
+
+<p><strong>笹田</strong>　ちょっと話はかわって、田中さんからの質問で、何でパッチを作ることに対して、そんなに情熱を燃やせるのか？</p>
+
+<p><strong>中田</strong>　別に情熱を燃やしているワケでも。そのー、パッチを作ることに関して、燃えてるワケでもないんだけれども。</p>
+
+<p><strong>笹田</strong>　なぜあんなに沢山パッチが、次から次へと。</p>
+
+<p><strong>中田</strong>　うーん。え、それはどうなのかな？　そのパッチという形でくることに関してなのかな？　それとも……。</p>
+
+<p><strong>笹田</strong>　「修正」という意味で。</p>
+
+<p><strong>中田</strong>　いやまぁ、そりゃなんかー、あったら直したくなるじゃん。</p>
+
+<p><strong>高橋</strong>　(笑)　じゃあ、直すところを一生懸命探すんですか？　それとも、自然に見つかってしまう？</p>
+
+<p><strong>中田</strong>　あぁ、報告があってから？</p>
+
+<p><strong>高橋</strong>　いやいやいや、パッチを作る前に。パッチを作るということは、何か問題があることに気づくから作るワケですよね？</p>
+
+<p><strong>中田</strong>　勿論。</p>
+
+<p><strong>高橋</strong>　その「気づく」のは、どうして気づくんですか？　なんとなく気づくのか、それとも探しておかしいところに気づくのか？</p>
+
+<p><strong>中田</strong>　それは「次のようにすると core を吐きます」とかっていうメールがくるから。</p>
+
+<p><strong>笹田</strong>　(笑)　じゃあ、基本的には誰かが言った不具合とかに対して、あ、これは、と思ってささっと作って、さーっと送る、とか。</p>
+
+<p><strong>中田</strong>　まぁ、自分じゃなかなか気づかないっていうか。自分が気がついて直す、っていうのもあるはあるけれど。</p>
+
+<p><strong>笹田</strong>　そんなに多くはない？</p>
+
+<p><strong>中田</strong>　うーん、率でいうと、多くないんじゃないかな。</p>
+
+<p><strong>笹田</strong>　え、でも、中田さんと言えば、「パッチ袋」なり「タイムマシン」なり、いろいろ異名がありますが。</p>
+
+<p><strong>中田</strong>　いやいや、だからその。ああそうか、用意してあったものにマッチする、ということはあるけど。</p>
+
+<p><strong>笹田</strong>　(笑)　何で用意してあるんですか？</p>
+
+<p><strong>中田</strong>　これどうしようかなぁ、とか、思っていたとか、そういう場合かな？</p>
+
+<p><strong>高橋</strong>　あぁ、とりあえず問題があるのは分かってて、こうすれば出なくはなるのは分かるんだけれども、実行しちゃっていいか、ちょっと、うーん……とかですね。</p>
+
+<p><strong>中田</strong>　まぁ、考え中だったり、とか。</p>
+
+<h3 id="パッチ袋はどこにあるんですか">パッチ袋はどこにあるんですか</h3>
+
+<p><strong>笹田</strong>　「パッチ袋」はどこにあるんですか？</p>
+
+<p><strong>中田</strong>　いや?、それはみんな持っているんだよ。_心の中_に。</p>
+
+<p><strong>一同</strong>　(爆笑)</p>
+
+<p><strong>中田</strong>　透明な心で見れば、みんな見つかるはずなのに。</p>
+
+<p><strong>笹田</strong>　だそうですよ akr さん！</p>
+
+<p><strong>高橋</strong>　でも、気づかないと、と。</p>
+
+<p><strong>中田</strong>　みんな心が曇っているんだよ。</p>
+
+<p><strong>高橋</strong>　(笑)　そうだったのかぁ！</p>
+
+<h3 id="今後の展望">今後の展望</h3>
+
+<p><strong>笹田</strong>　えーっとじゃあ今後の展望・将来の夢など。</p>
+
+<p><strong>中田</strong>　うーん。とりあえず引っ越して、子供が生まれて、後は養ってもらうっていうのがいいかな。</p>
+
+<p><strong>笹田</strong>　お子さんに？</p>
+
+<p><strong>中田</strong>　途中ちょっと走ったけど。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　けっこうありますよね、それは (笑)</p>
+
+<p>お子さんには教えるんですか？　バグの見つけ方とか。</p>
+
+<p><strong>中田</strong>　バグの見つけ方は……。</p>
+
+<p><strong>笹田</strong>　それは田中さんか。パッチの書き方か。プログラマとして何か教えられたりとかされたりは。</p>
+
+<p><strong>高橋</strong>　とりあえず patch と diff の使い方を (笑)</p>
+
+<p><strong>中田</strong>　今のやり方が十年後まで通用するかどうかはちょっと分かんないけどなー。</p>
+
+<p><strong>笹田</strong>　うーん。</p>
+
+<p><strong>中田</strong>　まあなんか仕込んでやりたいとは思うけどね。</p>
+
+<p><strong>笹田</strong>　なるほど。パッチモンスタージュニア。</p>
+
+<p><strong>中田</strong>　いやまだ男か女かわかんないから。史上最年少の女性 Rubyist かもしれないし。</p>
+
+<p><strong>高橋</strong>　それを目指している？　史上最年少パッチとか (笑)</p>
+
+<p><strong>中田</strong>　「ここがバグってまちゅ」とか (笑)</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>中田</strong>　姪っ子に仕込むかな。姪っ子は 5 歳だから。</p>
+
+<p><strong>高橋</strong>　じゃあもう今から。</p>
+
+<p><strong>中田</strong>　まだまだ無理そうだけど。キーに指が届かない。</p>
+
+<p><strong>高橋</strong>　とりあえず人差し指で。</p>
+
+<p><strong>中田</strong>　アルファベット読めるのかな。まだ小学校上がってないから。</p>
+
+<h3 id="rubyist-の輪">Rubyist の輪</h3>
+
+<p><strong>笹田</strong>　えっと、じゃあまとめという感じで。前のインタビュイーとの関係。田中さんとの関係。</p>
+
+<p><strong>中田</strong>　特に……。</p>
+
+<p><strong>笹田</strong>　報告されてパッチを書くという (笑)</p>
+
+<p><strong>中田</strong>　それは別に固定した関係じゃない (笑)　顔を合わせたことはもちろん何度もあるけど。</p>
+
+<p><strong>笹田</strong>　まあ committer 仲間ということで。</p>
+
+<p><strong>中田</strong>　そういう感じかなぁ。</p>
+
+<p><strong>笹田</strong>　次は決まりました？</p>
+
+<p><strong>中田</strong>　えっ？　なんだろう。</p>
+
+<p><strong>高橋</strong>　次のインタビュイー。</p>
+
+<p><strong>中田</strong>　じゃ、また committer 仲間ということで eban さんを。</p>
+
+<h3 id="若手への一言">若手への一言</h3>
+
+<p><strong>笹田</strong>　じゃあ若手への一言という感じで何か若い人へ。</p>
+
+<p><strong>中田</strong>　えー。</p>
+
+<p><strong>笹田</strong>　どうでもいい？</p>
+
+<p><strong>中田</strong>　年寄りの仲間入りですか。</p>
+
+<p><strong>笹田</strong>　さっき自分で言ってたじゃないですか。</p>
+
+<p><strong>中田</strong>　何が？</p>
+
+<p><strong>笹田</strong>　あ、言ってないか。気球か。古いほうって言ったの。</p>
+
+<p><strong>中田</strong>　うん。</p>
+
+<p><strong>笹田</strong>　若い人指導したりはしないんですか。</p>
+
+<p><strong>中田</strong>　しなーい。指導して欲しいくらいだから。わかんないこと多いから。</p>
+
+<p><strong>笹田</strong>　でもきっと中田さんって言ったら尊敬してる人たくさんいますよ。</p>
+
+<p><strong>中田</strong>　いるわけないじゃん。</p>
+
+<p><strong>笹田</strong>　いやいやいや。私は尊敬してますよ。尊敬してます。</p>
+
+<p><strong>高橋</strong>　海外の Rubyist でまつもとさんの次か同じくらいに有名なのが中田さんなんですから。</p>
+
+<p><strong>笹田</strong>　そっか。</p>
+
+<p><strong>中田</strong>　日本語わかんないからね。彼らはね。</p>
+
+<p><strong>高橋</strong>　でもとりあえずソースは分かってパッチも分かるんで。</p>
+
+<p><strong>中田</strong>　英語もだからこっちも不器用に書いてるから。</p>
+
+<p><strong>高橋</strong>　いやいやでもなんでも nobu が治してくれるとみんな思ってるんですよ。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>高橋</strong>　でも絶対そうですよ。</p>
+
+<p><strong>中田</strong>　だいたいあの signature は英語に直せなかったから。</p>
+
+<p><strong>高橋</strong>　あれは英語にそのまま訳しても意味が通じないので。彼らとは教養が違うので。</p>
+
+<p><strong>中田</strong>　ちょっとそこらへんのギャップというか。</p>
+
+<p><strong>高橋</strong>　ええ。がんばってシェイクスピアにでも訳せば通じるのかもしれませんが。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>中田</strong>　as you bug it</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>高橋</strong>　それどうしたバグですか (笑)</p>
+
+<p><strong>中田</strong>　as you enbug it? なんか嫌だな。で、何？</p>
+
+<p><strong>高橋</strong>　若手への一言。</p>
+
+<p><strong>笹田</strong>　若手へ何か。</p>
+
+<p><strong>高橋</strong>　日本人じゃなくてもいいですよ。</p>
+
+<p><strong>笹田</strong>　多分誰も訳さないけど。</p>
+
+<p><strong>高橋</strong>　年寄りに一言でもいいですよ。</p>
+
+<p><strong>中田</strong>　としよりにねえ。難しいよなあ。</p>
+
+<p><strong>高橋</strong>　最近気になる若手とかいますか。</p>
+
+<p><strong>中田</strong>　ネットだけだと誰が若手だか年寄りだかわかんないけどね。</p>
+
+<p><strong>高橋</strong>　まあそうですけど。</p>
+
+<p><strong>中田</strong>　じゃあ、笹田さんに。若手だよね。</p>
+
+<h4 id="笹田に一言">笹田に一言</h4>
+
+<p><strong>高橋</strong>　あー。</p>
+
+<p><strong>笹田</strong>　まあ。</p>
+
+<p><strong>高橋</strong>　一言なんかないですか。</p>
+
+<p><strong>中田</strong>　俺なんかが言うようなことないよなぁ。</p>
+
+<p><strong>高橋</strong>　笹田に一言。若手に一言だと抽象的過ぎるかなと。</p>
+
+<p><strong>中田</strong>　抽象的過ぎるよなあ。</p>
+
+<p>関数定義の brace は行頭に置いて欲しいけど。</p>
+
+<p><strong>笹田</strong>　えー (笑)</p>
+
+<p><strong>中田</strong>　一回 vi とか emacs とか使うとねー、行頭にないとすげー不便なのよ。</p>
+
+<p><strong>高橋</strong>　え、そうですか？</p>
+
+<p><strong>中田</strong>　うん。</p>
+
+<p><strong>高橋</strong>　emacs はべつに不便じゃないような気がしますけどね。</p>
+
+<p><strong>中田</strong>　あの、なんだっけ、begin-defun で行頭の brace 探すじゃん。</p>
+
+<p><strong>高橋</strong>　ん？</p>
+
+<p><strong>中田</strong>　begin-defun、\C-\M-f</p>
+
+<p><strong>笹田</strong>　ふーん。そんなものが。</p>
+
+<p><strong>中田</strong>　思わず関数の頭に飛ぼうとしてファイルの頭に行っちゃったりする。</p>
+
+<p><strong>高橋</strong>　(笑)　なるほど。</p>
+
+<p><strong>笹田</strong>　それはその機能が悪いってやつですね。</p>
+
+<p><strong>中田</strong>　でもそれ逆に実装側から考えてみるとね、brace のネストをずーっと辿っていって、一番外側まで行ったら、とかいう、いろいろやんなきゃいけないし、C++ 考えると、namespace とかクラス定義文とかまで飛んでほしいかっていうとすげー微妙なの。</p>
+
+<p><strong>笹田</strong>　あー、はいはい、なるほど。わかりましたじゃあちょっと考えます。</p>
+
+<p><strong>中田</strong>　いえいえ。それはどうでもいいんだけど (笑)　vi だと本当にそういう機能しかない。行頭の brace に飛ぶっていう機能しかないとか。</p>
+
+<p><strong>笹田</strong>　vi なんか使わないからなぁ。</p>
+
+<p><strong>中田</strong>　あ、これが年寄りの愚痴か。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>中田</strong>　大学時分は俺もそういう型の宣言からパラメタから brace まで全部一行に書くスタイルだった。で、就職して vi を使って、こりゃまずいと思って即座にそれだけは改めた。その次の行に brace を持っていくっていうのだけ即座に変えた。</p>
+
+<p><strong>笹田</strong>　でも型定義はまだ一行で？</p>
+
+<p><strong>中田</strong>　ああでも、それも変えた。もちろん。だって Sun4 の cc は prototype 通んないもん。</p>
+
+<p><strong>笹田</strong>　おー。</p>
+
+<p><strong>中田</strong>　それは否応なしに変えざるを得なかった。</p>
+
+<p><strong>笹田</strong>　で、まだそれを引きずってるの？</p>
+
+<p><strong>中田</strong>　引きずってるわけでもないけど。</p>
+
+<p><strong>高橋</strong>　じゃあ若手は Sun4 を使えと。</p>
+
+<p><strong>中田</strong>　っていうか、ひとつのプラットフォームじゃなくていろんなプラットフォームで試してほしいなとは思う。</p>
+
+<p><strong>笹田</strong>　なかなか Sun4 を見つけてくるのも大変じゃないですか。</p>
+
+<p><strong>中田</strong>　Sun4 とは言わないけど。っていうかこれ、そういう経験してないとわかんないのかな。</p>
+
+<p><strong>笹田</strong>　手頃にあるっていうと Linux と Windows と BSD 系ぐらいしかないから。</p>
+
+<p><strong>高橋</strong>　あとは Mac ぐらい？</p>
+
+<p><strong>笹田</strong>　あ、そか、Mac か。</p>
+
+<p><strong>中田</strong>　Mac も今はねぇ。</p>
+
+<p><strong>笹田</strong>　BSD といえば BSD。</p>
+
+<p><strong>中田</strong>　に、なっちゃったから。</p>
+
+<p><strong>高橋</strong>　広い意味では Unix っぽい感じの。</p>
+
+<p><strong>中田</strong>　うん。</p>
+
+<p><strong>高橋</strong>　でも IDE 使ってる連中と vi や emacs 使ってる連中とは違うかもしれませんけどね。</p>
+
+<p><strong>中田</strong>　たしかにね。</p>
+
+<p><strong>高橋</strong>　とりあえずいろいろ使えということですか。</p>
+
+<p><strong>中田</strong>　それは思う。これは若手っていうのはその、るびまを読む若手？</p>
+
+<p><strong>笹田</strong>　まあそうなりますかね。</p>
+
+<p><strong>中田</strong>　Ruby を使ってる人間限定って言う話なの？</p>
+
+<p><strong>高橋</strong>　別に Ruby を使ってなくてもとりあえずるびまを読んでるっていう。</p>
+
+<p><strong>中田</strong>　読んでない人間に言ってもしょうがない。</p>
+
+<p><strong>高橋</strong>　なんか「あの中田さん」っていう風に。</p>
+
+<p><strong>笹田</strong>　「中田さんが言ってたよ」っていう風に言えるから、それは。ここに書けば。</p>
+
+<p><strong>中田</strong>　うーん、わかんないな。今仕事で使ってるマシンが Windows でやってるけど、Windows のフリーウェアとか使ってると基本を知らずに遠回りして無駄な苦労をしてる人間って多いような気がしなくもないんだけど。いや、苦労は買ってでもしろという見方もあるんだろうけどね。</p>
+
+<p><strong>笹田</strong>　それは違うっていうことが、なかなか分からないところがある。</p>
+
+<p><strong>中田</strong>　その苦労が苦労として生かされないと思うんだけどね。一人で自分の苦労を体系付けられる人間はなかなかいないから。</p>
+
+<p><strong>笹田</strong>　やっぱり他の環境でやったり他の人のソース見たり？</p>
+
+<p><strong>中田</strong>　うーん、だからまあ、ようするに人のやってることもまあよく見たほうがいいんじゃないの、っていう感じはする。じじいの繰言として言うと。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>中田</strong>　まああんまり人のこと言えないけど。</p>
+
+<h3 id="読者への一言">読者への一言</h3>
+
+<p><strong>笹田</strong>　最後に読んでる一般の読者の方に一言。</p>
+
+<p><strong>中田</strong>　こんなもん読んでる暇があったらもうちょっとなんかましなことができるんじゃないの。</p>
+
+<p><strong>笹田</strong>　(笑)　いいんですかそれ書いちゃって。</p>
+
+<p><strong>中田</strong>　編集長からダメだしが出そうなんですか。</p>
+
+<p><strong>高橋</strong>　いやいや別にいいですよ。</p>
+
+<p><strong>中田</strong>　酔っ払いのたわごと気にすることないじゃん。</p>
+
+<p><strong>笹田</strong>　一言はそういうことで。</p>
+
+<p><strong>中田</strong>　まあ。</p>
+
+<p><strong>笹田</strong>　他に言いたい事はない？</p>
+
+<p><strong>高橋</strong>　とりあえずこの場を借りて一言いっておきたいとか。</p>
+
+<p><strong>中田</strong>　もう一杯。</p>
+
+<p><strong>一同</strong>　(爆笑)
+<img src="/images/0009-Hotlinks/nakada4.jpg" alt="nakada4.jpg" /></p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回はパッチモンスターとして有名な中田さんのインタビューをお届けしました。るびまインタビュー初の居酒屋での収録でしたが、お酒の勢いもあって色々と面白い話を伺うことができました。お忙しい中わざわざ東京駅までお出でいただき、ありがとうございました。</p>
+
+<p>次回は、これまた Ruby のメンテナとして有名な eban ことわたなべひろふみさんです。お楽しみに。</p>
+
+<p>(インタビュー:ささだ、編集:石原夫妻、卜部、ささだ、だん、なかむら、西山 (50 音順))</p>
+
+<h2 id="rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-Hotlinks.html">Rubyist Hotlinks 【第 36 回】 須藤功平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0052/0052-Hotlinks.html">Rubyist Hotlinks 【第 35 回】 島田浩二さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0045/0045-Hotlinks.html">Rubyist Hotlinks 【第 34 回】 大場さん夫妻 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0044/0044-Hotlinks.html">Rubyist Hotlinks 【第 33 回】 大場さん夫妻 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0042/0042-Hotlinks.html">Rubyist Hotlinks 【第 32 回】 卜部昌平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-Hotlinks.html">Rubyist Hotlinks 【第 31 回】 樽家昌也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0038/0038-Hotlinks.html">Rubyist Hotlinks 【第 30 回】 遠藤侑介さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-Hotlinks.html">Rubyist Hotlinks 【第 29 回】 松田明さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0035/0035-Hotlinks.html">Rubyist Hotlinks 【第 28 回】 Yugui さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-Hotlinks.html">Rubyist Hotlinks 【第 27 回】 小波秀雄 さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-Hotlinks.html">Rubyist Hotlinks 【第 26 回】 cuzic さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0031/0031-Hotlinks.html">Rubyist Hotlinks 【第 25 回】 加藤勇也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0030/0030-Hotlinks.html">Rubyist Hotlinks 【第 24 回】 okkez さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0029/0029-Hotlinks.html">Rubyist Hotlinks 【第 23 回】 yhara さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-Hotlinks.html">Rubyist Hotlinks 【第 22 回】 nari さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0023/0023-Hotlinks.html">Rubyist Hotlinks 【第 21 回】 原信一郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Hotlinks.html">Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-Hotlinks.html">Rubyist Hotlinks 【第 19 回】 伊尾木将之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Hotlinks.html">Rubyist Hotlinks 【第 18 回】 立石孝彰さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Hotlinks.html">Rubyist Hotlinks 【第 16 回】 essa さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Hotlinks.html">Rubyist Hotlinks 【第 15 回】 arton さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Hotlinks.html">Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Hotlinks.html">Rubyist Hotlinks 【第 13 回】 関将俊さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Hotlinks.html">Rubyist Hotlinks 【第 12 回】 後藤兄弟 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Hotlinks.html">Rubyist Hotlinks 【第 11 回】 後藤兄弟 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Hotlinks.html">Rubyist Hotlinks 【第 10 回】 わたなべひろふみさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Hotlinks.html">Rubyist Hotlinks 【第 9 回】 中田伸悦さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks.html">Rubyist Hotlinks 【第 8 回】 田中哲さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-3.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その3</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-2.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その2</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-1.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その1</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Hotlinks.html">Rubyist Hotlinks 【第 7 回】 江渡浩一郎さん 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Hotlinks.html">Rubyist Hotlinks 【第 6 回】 江渡浩一郎さん 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Hotlinks.html">Rubyist Hotlinks 【第 5 回】 増井俊之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Hotlinks.html">Rubyist Hotlinks 【第 4 回】 ただただしさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Hotlinks.html">Rubyist Hotlinks 【第 3 回】 かずひこさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-Hotlinks.html">Rubyist Hotlinks 【第 2 回】 前田修吾さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<p>– 
+ — 僕の前にBugはない。
+ — 僕の後ろにBugはできる。
+     中田 伸悦
+[^2]: 高村光太郎: 1883?1956。彫刻家、詩人。本職は彫刻家だが、一般にはむしろ『道程』『智恵子抄』などの詩作で知られる
+[^3]: Bugるくらいがちょうどいいかも: これの元ネタは OVA『それゆけ！宇宙戦艦ヤマモト・ヨーコ』のオープニングテーマ「そうだ、ぜったい。」
+ – 
+ そうだ 強気に ちょっと インチキに☆彡
+      中田 “Bugるくらいがちょうどいいかも;-)” 伸悦
+[^4]: 気球の AA:
+ — 中田<code class="highlighter-rouge">だってサルなんだもん'伸悦@B.C.Shambleau ---    （( | )）
+ ---                                              ---      ?|／  ／</code>/^?
+ —       <a href="mailto:nobu.nokada@softhome.net">nobu.nokada@softhome.net</a>             —   <em>–  g     –__ ~~
+[^5]: 田中正造: 1841?1913。衆議院議員。足尾銅山の鉱毒問題に対して私財を投げ打って戦った
+[^6]: 二つ: $</em> と $~
+[^7]: ノード: struct RNode のこと。ポインタ5個分の大きさしかない
+[^8]: 6 万個 : どうせネストが 6 万回も発生することはないから、ネストレベルをそんなに記憶しておく必要はない (けど、今はリストにして記憶している)
+[^9]: LL Saturday の資料: 『<a href="http://ll.jus.or.jp/lls2003/document/p2-ruby.pdf">Ruby のオブジェクト指向機能について</a>』
+[^10]: 文章にまとめろ: 「Lightweight Language Magazine」の同名の記事
+[^11]: 1.0: 1996 年 12 月 25 日リリース
+[^12]: 『TRY! PC』の紹介記事: 1997 年 11 月号の「ちょーわかりやすい！Perl&amp;ruby 入門」と思われる
+[^13]: 『Internet Watch』に載った Ruby の紹介: 1997 年 9 月
+[^14]: Hash 要素への代入: たとえば
+ h = {}
+ def h.[]= (*argv)
+    return true
+ end
+ p(h[:foo] ||= false) # =&gt; ???
+がどうなるか。昔は true だったが今は false になる
+[^15]: 報告: <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/7122">[ruby-dev:7122]</a>。このメールによれば、実際には Hash ではなく Array への要素の代入またはアクセサへの代入だったらしい。いずれにせよ問題の本質は同じ
+[^16]: しばらくしてから: 2001 年 7 月
+[^17]: gcc: gcc では任意の文を ({…}) で括ると、その中の文の最後の評価値を式として取り出せる。gcc 拡張の中でももっとも便利な拡張のひとつである
+[^18]: Olivetti: http://www.olivetti.it/
+[^19]: IBM 互換機とか出してる: 1999 年に PC 事業からは撤退
+[^20]: Zeller の公式: 年月日からその曜日を計算する式。
+ ((year + year / 4 - year / 100 + year / 400 + (13 * month + 8) / 5 + day) % 7
+ただし一月と二月は前年の十三月と十四月として扱うこと
+[^21]: 計算誤差: 計算精度の問題から、パソコンで計算させると arctan(tan(x)) は x とややずれた値になる
+[^22]: オリンピック: ソウル五輪の時に話題になった
+[^23]: ちっちっち: 『怪傑ズバット』の主人公である、自称「さすらいのヒーロー」早川健の決め台詞より
+[^24]: 『K&amp;R』: 『プログラミング言語 C』
+[^25]: round trip 問題: ある文字列での複数の文字エンコーディング間での変換が不可逆であるという問題
+[^26]: unicodization: Unicode で表せる範囲だけ考えること
+[^27]: YARV: このように、Ruby コミュニティでは YARV の出現でどんな問題点でも魔法のように解決されるに違いないという、無根拠かつ楽天的な意見がたまに聞こえる。それだけ YARV が期待されているということでもある
+[^28]: Sydney: http://rubyforge.org/projects/sydney/
+[^29]: 排他制御: ささだはえらそうなことを言っているが、あんまり真面目に見ていないので、排他制御要らないのかもしれない。ObjectSpace の実装をきちんと見ればわかると思うのだが
+[^30]: 引っ越すから: 今号の発行直前に<a href="http://www.rubyist.net/~nobu/t/20050904.html#p01">引っ越された模様</a>
+[^31]: 帰ってくる前に: 出産のために、現在は実家にいらっしゃるらしい
+[^32]: 終わりになった: その後、九月いっぱいまで延びたらしい
+[^33]: 日本気球連盟: http://www.jballoon.jp/
+[^34]: 都立: 現在は首都大学東京
+[^35]: 『ハイドゥナン』: ちなみに文庫サイズではないので、ハヤカワ文庫の棚を探しても見つからない。本屋さんに探しにいく時は要注意である
+[^36]: 『厚いの』: 『クリスタル・サイレンス』
+[^37]: 『ずっとそれを書いてた』: SFマガジン2005年9月号のインタビューでそう言ってたと思ったら、構想はそれ以前からあったらしい
+[^38]: この辺りはまだ本は未読でSFMインタビューの記憶だけで書いているのでいまいち嘘っぽいので本気にしないように
+[^39]: 『桃鉄』: ハドソンの『桃太郎電鉄』シリーズ
+[^40]: 『桃鉄 USA』: 『桃太郎電鉄 USA』
+[^41]: 死んでる: 今号の発行直前に<a href="http://www.rubyist.net/~nobu/t/20050904.html#p01">購入された模様</a>
+[^42]: 作戦: みんな 19 インチディスプレイ持ってるんだよ?　僕だけ持ってないんだよ?　買ってよ?　という作戦
+[^43]: 嘘だったかも: すみません、1600じゃありませんでした。17 インチで 1600x1200 の解像度のモデルは存在しないそうです
+[^44]: 初めて: 実際には<a href="/articles/0003/0003-Hotlinks.html">第 3 回</a>でかずひこさんが奥様以外を答えている</p>
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>シグネチャ:&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

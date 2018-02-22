@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>0021-RubyEventCheck</title>
+  <meta name="description" content="編集：しまだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0021/0021-RubyEventCheck.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>0021-RubyEventCheck</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0021/0021-RubyEventCheck.html" class="hatena-bookmark-button" data-hatena-bookmark-title="0021-RubyEventCheck" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0021/0021-RubyEventCheck.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0021/0021-RubyEventCheck.html" data-text="0021-RubyEventCheck">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>編集：しまだ</p>
+
+<h2 id="ruby-関連イベント">Ruby 関連イベント</h2>
+
+<h3 id="rails-勉強会東北-第-4-回"><a href="http://wiki.fdiary.net/rails/?RailsMeetingTohoku-0004">Rails 勉強会＠東北 第 4 回</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 9 月 24 日 (月)</dd>
+  <dt>時間</dt>
+  <dd>12:00〜16:30</dd>
+  <dt>場所</dt>
+  <dd>株式会社フライトシステムコンサルティング　ＳＩセンター</dd>
+  <dt>費用</dt>
+  <dd>無料</dd>
+</dl>
+
+<p>仙台で開催されている勉強会です。今回はランチョンセミナー形式で「Railsと複合主キー」や「RJS」などについての勉強を行います。多くの方のご参加をお待ちしております。</p>
+
+<p>詳しくは <a href="http://wiki.fdiary.net/rails/?RailsMeetingTohoku-0004">Rails 勉強会＠東北 第 4 回</a> を参照してください。</p>
+
+<h3 id="ruby-勉強会関西-第-19-回"><a href="http://jp.rubyist.net/?KansaiWorkshop19">Ruby 勉強会＠関西 第 19 回</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 9 月 29 日 (土)</dd>
+  <dt>時間</dt>
+  <dd>13:00〜17:00</dd>
+  <dt>場所</dt>
+  <dd>京都女子大学 B514教室</dd>
+  <dt>費用</dt>
+  <dd>実費（講師の交通費、配布物の印刷代等）の人数割をご負担ください。</dd>
+</dl>
+
+<p>「ScalaからみたRuby」や「入門Kagemusha - 影武者」、「初級者レッスン(講義+演習) 」などの勉強を行います。多くの方のご参加をお待ちしております。</p>
+
+<p>詳しくは <a href="http://jp.rubyist.net/?KansaiWorkshop19">Ruby 勉強会＠関西-19</a> を参照してください。</p>
+
+<h3 id="ruby-勉強会札幌-第-5-回"><a href="http://jp.rubyist.net/?SapporoWorkshop5">Ruby 勉強会＠札幌 第 5 回</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 9 月 29 日 (土)</dd>
+  <dt>時間</dt>
+  <dd>14:00〜17:00</dd>
+  <dt>場所</dt>
+  <dd>北海道情報大学 札幌サテライト</dd>
+  <dt>費用</dt>
+  <dd>無料</dd>
+</dl>
+
+<p>「Rails開発ツールガイド」や「Pluginが広げるRailsの魅力」、「デプロイ、レンタルサーバ周りについて(仮)」といった内容を企画しています。多くの方のご参加をお待ちしております。</p>
+
+<p>参加方法などの詳細は <a href="http://jp.rubyist.net/?SapporoWorkshop5">Ruby 勉強会＠札幌-5</a> を参照してください。</p>
+
+<h3 id="phpプログラマの為の-ruby-on-rails入門セミナー"><a href="http://www.web-career.com/p_r/rails_for_phpuser.html">PHPプログラマの為の Ruby on Rails入門セミナー</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 9 月 29 日 (土)</dd>
+  <dt>時間</dt>
+  <dd>13:00〜19:30</dd>
+  <dt>場所</dt>
+  <dd>東京都港区東新橋1-9-2 汐留住友ビル 16F セミナールーム</dd>
+  <dt>定員</dt>
+  <dd>60名(※満席になり次第締め切らせていただきます)</dd>
+  <dt>費用</dt>
+  <dd>3,000円（懇親会費用含む）</dd>
+</dl>
+
+<p>PukiWiki入門 まとめサイトを作ろう！(翔泳社)」や「Ajax 実装のための基礎テクニック(技術評論社)」で知られる増井 雄一郎氏を講師に招き、「普段仕事ではPHPを使っていて興味はあるけど Railsをなかなか勉強するきっかけがない。」というプログラマの方向けに Rubyの基礎や実際のアプリケーション構築を通してRailsがどのように成り立っているかを解説していきます。</p>
+
+<p>参加方法などの詳細は<a href="http://www.web-career.com/p_r/rails_for_phpuser.html">PHPプログラマの為の Ruby on Rails入門セミナー</a>を参照してください。</p>
+
+<h3 id="ceatec-japan-2007"><a href="http://www.ceatec.com/2007/ja/visitor/">CEATEC JAPAN 2007</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 10 月 2 日 (火) 〜 6 日 (土)</dd>
+  <dt>時間</dt>
+  <dd>2日：12:00〜17:00、3日〜6日：10:00〜17:00</dd>
+  <dt>場所</dt>
+  <dd><a href="http://www.m-messe.co.jp/">幕張メッセ</a></dd>
+</dl>
+
+<p>アジア最大級の規模を誇る映像・情報・通信の国際展示会 CEATEC で、(株)東芝が Ruby を使った次世代家電プラットフォームのデモを東芝ブース (8C12) にて行います。Cell Linux 環境の上に Ruby + Cairo(rcairo) + DirectFB を用意し、ほとんどの画面描画や操作を Ruby 経由で実施しているとのことです。</p>
+
+<p><a href="https://service.ceatecjapan.net/ja/">事前登録</a>などの詳細は<a href="http://www.ceatec.com/2007/ja/visitor/">CEATEC JAPAN 2007</a>を参照してください。</p>
+
+<h3 id="オープンソースカンファレンス-2007-tokyofall"><a href="http://www.ospn.jp/osc2007-fall/">オープンソースカンファレンス 2007 Tokyo/Fall</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 10 月 5 日 (金)、6 日 (土)</dd>
+  <dt>時間</dt>
+  <dd>10:00〜18:30</dd>
+  <dt>場所</dt>
+  <dd><a href="http://www.pio.or.jp/plaza/access/index.htm">大田区産業プラザ(PiO)</a> (東京都大田区・京急蒲田駅徒歩3分)</dd>
+</dl>
+
+<p><a href="http://www.fdiary.net/ml/ruby/msg/1622">[ruby:1622]</a> にあるように日本 Ruby の会 もブースの出展を予定しており、ご協力いただける方を募集しています。関心のある方は<a href="http://jp.rubyist.net/?Admission">メーリングリスト</a>にご参加の上、是非手を (声を？) 挙げてください。</p>
+
+<p>詳しくは<a href="http://www.ospn.jp/osc2007-fall/">オープンソースカンファレンス 2007 Tokyo/Fall</a> を参照してください。</p>
+
+<h3 id="開発集会札幌-第-1-回"><a href="http://jp.rubyist.net/?SapporoProgrammingMeeting1">開発集会＠札幌 第 1 回</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 10 月 20 日 (土), 21 日 (日)</dd>
+  <dt>時間</dt>
+  <dd>8:00〜22:00</dd>
+  <dt>場所</dt>
+  <dd>北海道情報大学 札幌サテライト</dd>
+  <dt>費用</dt>
+  <dd>無料</dd>
+</dl>
+
+<p>Ruby札幌主催の開発集会です。Ruby札幌としては参加者の方が集中して開発できる(と期待される)場所の提供のみを行います。参加される方は各自自分の開発ネタに集中していただけます。Ruby関連の書籍なども多数取り揃えておきますので、開発ネタはないけど、Rubyの勉強したい!という方もご参加いただけます。多くの方のご参加をお待ちしております。</p>
+
+<p>参加方法などの詳細は <a href="http://jp.rubyist.net/?SapporoProgrammingMeeting1">開発集会＠札幌 第 1 回</a> を参照してください。</p>
+
+<h3 id="第7回-codegearデベロッパーキャンプ"><a href="http://dn.codegear.com/jp/article/36936/">第7回 CodeGearデベロッパーキャンプ</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 10 月 23 日 (火)</dd>
+  <dt>時間</dt>
+  <dd>10:00〜20:00</dd>
+  <dt>場所</dt>
+  <dd>秋葉原コンベンションホール</dd>
+  <dt>費用</dt>
+  <dd>無料</dd>
+</dl>
+
+<p>ボーランド株式会社CodeGear事業本部の主催による第7回CodeGearデベロッパーキャンプが秋葉原コンベンションホールで開催されます。かくたにさんによるRubyセッション「{:from =&gt; ‘Java’, :to =&gt; ‘Ruby’}」もありますので、<a href="http://dn.codegear.com/jp/article/36936/">第7回 CodeGearデベロッパーキャンプ</a> を参照の上、是非ご参加ください。</p>
+
+<h3 id="ruby-sapporo-night-vol3"><a href="http://jp.rubyist.net/?SapporoNight3">Ruby Sapporo Night vol.3</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 10 月 31 日 (土)</dd>
+  <dt>時間</dt>
+  <dd>19:00〜20:00</dd>
+  <dt>場所</dt>
+  <dd>アップルストア札幌</dd>
+  <dt>費用</dt>
+  <dd>無料</dd>
+</dl>
+
+<p>Ruby On Railsを使ったデモなどを交えながら、Rubyによるプログラミングの魅力をご紹介します。参加登録などは特に必要ではありませんので、札幌近郊にお住まいの方は是非お気軽にご参加ください。</p>
+
+<h3 id="rubyconf-2007"><a href="http://www.rubyconf.org/">RubyConf 2007</a></h3>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2007 年 11 月 2〜4 日</dd>
+  <dt>場所</dt>
+  <dd>Omni Charlotte Hotel in Charlotte, North Carolina</dd>
+</dl>
+
+<p>毎年おなじみとなった Ruby Conference です。今年で 7 回目の開催となります。
+今回の開催地はノースカロライナです。</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

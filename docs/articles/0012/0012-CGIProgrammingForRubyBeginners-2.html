@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 2</title>
+  <meta name="description" content="前ページへ目次ページへ次ページへ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0012/0012-CGIProgrammingForRubyBeginners-2.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 2</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0012/0012-CGIProgrammingForRubyBeginners-2.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 2" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0012/0012-CGIProgrammingForRubyBeginners-2.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0012/0012-CGIProgrammingForRubyBeginners-2.html" data-text="Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 2">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-1.html">前ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners.html">目次ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-3.html">次ページへ</a></p>
+
+<ul id="markdown-toc">
+  <li><a href="#html-フォームについて" id="markdown-toc-html-フォームについて">HTML フォームについて</a>    <ul>
+      <li><a href="#name-属性" id="markdown-toc-name-属性">name 属性</a></li>
+    </ul>
+  </li>
+  <li><a href="#山彦もどき" id="markdown-toc-山彦もどき">山彦もどき</a>    <ul>
+      <li><a href="#html-フォーム-と-cgi-プログラム-の関係" id="markdown-toc-html-フォーム-と-cgi-プログラム-の関係">HTML フォーム と CGI プログラム の関係</a>        <ul>
+          <li><a href="#フォームへの書き込み---掲示板への投稿を例にして" id="markdown-toc-フォームへの書き込み---掲示板への投稿を例にして">フォームへの書き込み - 掲示板への投稿を例にして</a></li>
+          <li><a href="#実際にフォームに書き込んでみる" id="markdown-toc-実際にフォームに書き込んでみる">実際にフォームに書き込んでみる</a></li>
+          <li><a href="#form-タグの-action-属性" id="markdown-toc-form-タグの-action-属性">form タグの action 属性</a></li>
+          <li><a href="#フォームから-cgi-プログラムを実行" id="markdown-toc-フォームから-cgi-プログラムを実行">フォームから CGI プログラムを実行</a></li>
+        </ul>
+      </li>
+      <li><a href="#フォームデータの受け取り" id="markdown-toc-フォームデータの受け取り">フォームデータの受け取り</a>        <ul>
+          <li><a href="#フォームデータと環境変数" id="markdown-toc-フォームデータと環境変数">フォームデータと環境変数</a></li>
+          <li><a href="#フォームのデータを表示させる" id="markdown-toc-フォームのデータを表示させる">フォームのデータを表示させる</a></li>
+          <li><a href="#フォームデータを作る" id="markdown-toc-フォームデータを作る">フォームデータを作る</a></li>
+          <li><a href="#フォームデータを分ける" id="markdown-toc-フォームデータを分ける">フォームデータを分ける</a></li>
+        </ul>
+      </li>
+      <li><a href="#山彦もどきを作る" id="markdown-toc-山彦もどきを作る">「山彦もどき」を作る</a>        <ul>
+          <li><a href="#文字列の分割---split-命令" id="markdown-toc-文字列の分割---split-命令">文字列の分割 - split 命令</a></li>
+          <li><a href="#命令のパラメーター" id="markdown-toc-命令のパラメーター">命令のパラメーター</a></li>
+          <li><a href="#split-を使ってフォームデータを分ける" id="markdown-toc-split-を使ってフォームデータを分ける">split を使ってフォームデータを分ける</a></li>
+          <li><a href="#山彦もどきの実行" id="markdown-toc-山彦もどきの実行">「山彦もどき」の実行</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="html-フォームについて">HTML フォームについて</h2>
+
+<p>皆さんの中には HTML フォームについて知らない人もいるかもしれません。
+ここで簡単に HTML フォームについて触れておきましょう。
+下に HTML フォームのスクリーンショットを載せています。
+とりあえず図を眺めてみて下さい。</p>
+
+<p>HTML フォームのスクリーンショット
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/form_example.jpg" alt="form_example.jpg" /></p>
+
+<p>スクリーンショットを見ると、
+このフォームには下のような部品があることが分かりますね。</p>
+
+<ul>
+  <li>自由に書き込みが出来るところ (テキストフィールド)</li>
+  <li>チェックするところ (チェックボックス)</li>
+  <li>投稿ボタン (サブミットボタン)</li>
+</ul>
+
+<p>Web ページの読者はこうした部品を通じて
+投稿内容をテキストフィールドに書き込んだり、
+チェックボックスの項目を選択したりします。
+読者がフォームに書き込んだ内容は
+サブミットボタンが押されると CGI プログラムに渡ります。</p>
+
+<p>フォームのデータを受け取った CGI プログラムは
+そのデータに従って処理の方法を決めたり、
+実際にデータを処理したりします。
+掲示板への書き込みもその 1 例です。
+フォームデータの処理については後ほど詳しく説明しますので、
+今は処理の流れを大まかにつかんで下さい。</p>
+
+<p>上記の図の HTML ソースを読んでみましょう。
+下にソースを示します。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/form.html" alt="form.html" /></p>
+
+<p>目に付くのは form タグと input タグですね。
+form タグに囲まれた部分がフォーム全体で、
+その中には部品を表すタグを配置出来ます。
+この例では部品となるタグに input タグが使われています。</p>
+
+<p>input タグは type 属性によって部品の種類を変えられます。
+この例ではテキストフィールド、チェックボックス、サブミットボタン
+の 3 種類の部品が使われています。
+input タグ以外にも部品を表すタグは存在します。
+それについては一般的な HTML の説明を読んで下さい。</p>
+
+<h3 id="name-属性">name 属性</h3>
+
+<p>上記の HTML の input タグをもう一度見てみましょう。
+全ての input タグに name 属性が付いていますね。
+<strong>name 属性というのはそれぞれの部品についた名前です</strong>
+(input タグ以外の部品を表すタグにも name 属性が付きます)。</p>
+
+<p>name 属性は部品の名前で、
+それぞれの部品を区別するために使われます。
+name 属性にはいくつかの利用法があり、
+もっとも頻繁に使われる場面の一つがフォームデータを送信する時です。
+フォームデータを送信する時は各部品の name 属性と
+その値が一緒に送信されます。
+name 属性はそれぞれの部品を区別するために利用されます。</p>
+
+<p>例えば、上記の HTML のテキストフィールドに書かれたデータが欲しい時は
+t という名前を使ってテキストフィールドの値を調べることが出来ます。
+その具体的な方法については後ほど説明します。</p>
+
+<p>いくつか例外はありますが、
+name 属性は部品ごとに違う値にしておく方が良いでしょう。
+実生活で別人 2 人が同じ名前だと、
+名前を呼ぶ時に困りますよね。
+それと同じで name 属性を同じにすると、
+名前が重なってしまって各部品のデータを調べる時に困ることがあります。</p>
+
+<h2 id="山彦もどき">山彦もどき</h2>
+
+<p>さて、今号最初の CGI プログラムです。
+ここでは「山彦もどき」を作ります。
+皆さん知っているように山彦というのは
+山や谷にしゃべった内容が返ってくることで、
+「山彦もどき」というのは HTML フォームのテキストフィールドに書かれた内容が
+そのまま表示される CGI プログラムのことです 
+(勝手に筆者が命名しました)。</p>
+
+<p>前号では CGI プログラムでデータを表示する方法を学びましたから、
+HTML フォームのデータを受け取ることが出来れば
+そのデータを表示して「山彦もどき」は完成です。
+そういうわけで、まずは HTML フォームのデータを受け取る方法を
+学んでいきましょう。</p>
+
+<h3 id="html-フォーム-と-cgi-プログラム-の関係">HTML フォーム と CGI プログラム の関係</h3>
+
+<p>既に述べましたが、
+HTML フォームは Web ページの読者が
+情報を入力するところです。
+そして、ページの読者が入力したデータは
+CGI プログラムに渡されます。
+この時の HTML フォームと CGI プログラム のデータの流れを
+見ていきましょう。</p>
+
+<h4 id="フォームへの書き込み---掲示板への投稿を例にして">フォームへの書き込み - 掲示板への投稿を例にして</h4>
+
+<p>最初は皆さんにとって馴染みのある掲示板への
+投稿を例にして考えてみます。
+その流れは下のようになります。
+ここまでは皆さん自身が経験したことがあると思います。</p>
+
+<ol>
+  <li>投稿するために HTML フォームをブラウザに表示させる</li>
+  <li>投稿内容を書く</li>
+  <li>フォームのボタンを押す</li>
+  <li>投稿内容が掲示板に書きこまれて、表示される</li>
+</ol>
+
+<p>フォームを利用した CGI プログラムを作る時には
+上の 3, 4 の間の処理が重要となります。
+3, 4 の間でフォームのデータがどのように処理されるか
+さらに詳しく追ってみましょう。</p>
+
+<h4 id="実際にフォームに書き込んでみる">実際にフォームに書き込んでみる</h4>
+
+<p>具体的に話を進めるために
+ここから先は下に示す HTML フォームを使います。
+前号と同じように server.rb を起動して 
+<a href="http://localhost:8080/bar0.html">http://localhost:8080/bar0.html</a> を表示させてみて下さい。
+テキストフィールドとサブミットボタンが表示されますね。</p>
+
+<p>bar0.html
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/bar0.html" alt="bar0.html" />
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/bar0.jpg" alt="bar0.jpg" /></p>
+
+<p>試しにテキストフィールドにアルファベットか数字を書いて、
+サブミットボタンを押してみましょう。
+ここでは「dddd」 と入力したと仮定して話を進めます。</p>
+
+<p>ボタンを押すと、下のように Not Found と表示されると思います。
+これは一般にファイルが無い時に表示されるメッセージです。
+何故こうなるのでしょうか？
+皆さんも少し考えてみてください。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/not_found.jpg" alt="not_found.jpg" /></p>
+
+<h4 id="form-タグの-action-属性">form タグの action 属性</h4>
+
+<p>この答えは bar0.html の内容と関係します。
+もう一度 bar0.html をよく見てみましょう。
+bar0.html の form タグに action 属性というのがありますね。
+ここに ./not_found.rb という値があります。
+ボタンを押した時にブラウザのアドレスバーに表示されている URL にも
+<a href="http://localhost:8080/not_found.rb?t=dddd&amp;s=Button">http://localhost:8080/not_found.rb?t=dddd&amp;s=Button</a> のように
+not_found.rb が含まれています。
+この 2 つは偶然同じ値が使われているわけではなく、
+ちゃんと関連があります。</p>
+
+<p>action 属性にはサブミットボタンを押した時に
+フォームのデータを処理する CGI プログラムを指定します。
+つまり、サブミットボタンが押された時には
+__action 属性に指定された CGI プログラムが実行される__わけです。
+例えば、form タグの action 属性が ./not_found.rb なら、
+サーバーは bar0.html と同じフォルダーにある not_found.rb 
+という CGI プログラムを実行しようとします。</p>
+
+<p>この例の場合、not_found.rb という CGI プログラムが無いので、
+サーバーは「Not Found」というメッセージを出して
+CGI プログラムを実行するのを諦めてしまいます。</p>
+
+<h4 id="フォームから-cgi-プログラムを実行">フォームから CGI プログラムを実行</h4>
+
+<p>CGI プログラムが無いのなら、
+とりあえず何でも良いので CGI プログラムを作って、
+そのプログラムの名前を action 属性に指定してみます。
+ここでは bar1.rb を用意しました。</p>
+
+<p>bar1.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+<span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;OK?&lt;/body&gt;&lt;/html&gt;"</span>
+
+</code></pre>
+</div>
+
+<p>bar1.rb という CGI プログラムは前号で作った
+HTML を表示させるプログラムと構造は同じです。
+<a href="http://localhost:8080/bar1.html">http://localhost:8080/bar1.html</a> にアクセスして試してみて下さい。
+bar1.html は action 属性を bar1.rb に変更しているだけで
+他は bar0.html と同じです。
+今度は下図のように OK? と表示されていると思います。</p>
+
+<p>でも、bar1.rb はフォームデータを取得していませんから、
+フォームの内容と関係の無い HTML しか表示出来ません。
+どうしたら良いのでしょうか？
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/form_get2.jpg" alt="form_get2.jpg" /></p>
+
+<h3 id="フォームデータの受け取り">フォームデータの受け取り</h3>
+
+<p>すでに気づいている人もいるかもしれませんが、
+フォームのサブミットボタンを押した後、アドレスバーには</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> http://localhost:8080/bar1.rb?t=dddd&amp;s=Button</code></pre></figure>
+
+<p>のように「?」の後ろに
+テキストフィールドのデータが含まれています。
+このデータを使えばフォームの内容に合わせて
+CGI プログラムの表示する内容を変更出来ます。</p>
+
+<h4 id="フォームデータと環境変数">フォームデータと環境変数</h4>
+
+<p>では、アドレスバーの URL に含まれる
+フォームのデータを取得してみましょう。
+先程、環境変数 ENV というデータを紹介しましたが、
+<strong>CGI プログラムでは ENV を使ってフォームのデータを文字列として取得出来ます</strong>。</p>
+
+<p>前ページで見たように環境変数にはたくさんのデータが含まれています。
+たくさんの環境変数のデータのうち 
+<strong>「QUERY_STRING」という「名前」の環境変数に対応する「値」がフォームデータです</strong>。
+これは CGI のお約束の 1 つです。</p>
+
+<h4 id="フォームのデータを表示させる">フォームのデータを表示させる</h4>
+
+<p>では、ENV を使った「山彦もどき」のプログラムを見てみましょう。</p>
+
+<p>bar_echo1.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+<span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;"</span>
+<span class="nb">print</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'QUERY_STRING'</span><span class="p">]</span>
+<span class="nb">print</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
+
+</code></pre>
+</div>
+
+<p>ENV の使い方さえ分かれば難しいところは無いと思います。
+試しに <a href="http://localhost:8080/bar_echo1.html">http://localhost:8080/bar_echo1.html</a> を表示させて
+テキストフィールドに「dddd」と入力し、
+サブミットボタンを押して下さい。</p>
+
+<p>ちなみに bar_echo1.html も bar0.html とほとんど同じです。
+違うのは action 属性だけです。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1_1.jpg" alt="bar_echo1_1.jpg" /></p>
+
+<p>確かに URL の「?」より後ろの文字列が表示されていますね。
+でも、フォームに入力した内容が「dddd」なのに
+それ以外に余計なものがいっぱい付いています。</p>
+
+<h4 id="フォームデータを作る">フォームデータを作る</h4>
+
+<p>「dddd」以外のものを取り除く方法は幾つかありますが、
+ここでは環境変数 QUERY_STRING がどのように作られているかを考え、
+その方法の逆をたどって余計な部分を取り除いてみます。</p>
+
+<p>フォームのデータは HTML に書かれた内容から作られるので、
+まずは bar_echo1.html のフォームを見てみましょう。</p>
+
+<p>bar_echo1.html
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1.html" alt="bar_echo1.html" /></p>
+
+<p>このフォームは二つの部品から構成されています。</p>
+
+<ul>
+  <li>t という name 属性で、何も書かれていないテキストフィールド</li>
+  <li>s という name 属性で、Button と表示されるサブミットボタン (value 属性は Button)</li>
+</ul>
+
+<p>環境変数 QUERY_STRING を見れば分かるように
+環境変数 QUERY_STRING には「dddd」以外に
+「s」「t」「Button」が含まれていますね。
+環境変数 QUERY_STRING の値は「t=dddd&amp;s=Button」なので、
+フォームの各部品の name 属性や value 属性などが
+組み合わさってフォームデータが作られていることが分かります。
+テキストフィールドの場合 value 属性の代わりに
+サブミットボタンが押された時のテキストフィールドの内容が使われますが、
+今号では value 属性でまとめてしまいます。</p>
+
+<p>フォームデータを作る方法は下のようになります。
+細かい部分は省いていますが、大筋はこのやり方に従って作られます。</p>
+
+<ol>
+  <li>各部品の name 属性と value 属性に必要なら前処理を行う (アルファベットや数字には前処理はしない)</li>
+  <li>各部品の name 属性と value 属性を「=」でつなぐ</li>
+  <li>それぞれの組を「&amp;」で結合する</li>
+</ol>
+
+<p>例えば、「dddd」とフォームに書いてサブミットボタンを押した場合、
+手順 1 では前処理が行われないので
+「t」「dddd」「s」「Button」の 4 つのデータが用意されます。
+次の手順 2 では「t」と「dddd」、「s」と「Button」を「=」でつなげて
+「t=dddd」「s=Button」の 2 つの組が作られます。
+さらに手順 3 では 2 つの組が「&amp;」でつながって
+「t=dddd&amp;s=Button」という 1 つの文字列になります。
+これが 環境変数 QUERY_STRING の値になります。</p>
+
+<h4 id="フォームデータを分ける">フォームデータを分ける</h4>
+
+<p>それでは、フォームデータから必要なデータだけを取り出したい時は
+どうすれば良いのでしょうか？
+その方法を簡単に言うと、フォームデータを作る手順を逆に辿ります。
+具体的には下のようになります。</p>
+
+<ol>
+  <li>「&amp;」で分解する。</li>
+  <li>「&amp;」で分解して得られた組をさらに「=」で分解し、name 属性と value 属性を得る</li>
+  <li>各部品の name 属性と value 属性に前処理と逆のことを行う(アルファベットや数字はしないで良い)</li>
+</ol>
+
+<p>実際の処理はこの後に 「山彦もどき」を作る で実際に説明します。</p>
+
+<h3 id="山彦もどきを作る">「山彦もどき」を作る</h3>
+
+<p>フォームのデータを取得する方法が分かったところで、
+「山彦もどき」を作りましょう。
+まずは「山彦もどき」全体を示します。</p>
+
+<p>bar_echo2.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+<span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;"</span>
+
+<span class="n">str</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">[</span><span class="s2">"QUERY_STRING"</span><span class="p">]</span>
+<span class="nb">print</span> <span class="n">str</span>
+<span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+
+<span class="n">arr1</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">"&amp;"</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">arr1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+<span class="nb">print</span> <span class="n">arr1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span> <span class="s2">"&lt;br&gt;"</span>
+
+<span class="n">arr2</span> <span class="o">=</span> <span class="n">arr1</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">split</span><span class="p">(</span><span class="s2">"="</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">arr2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
+
+</code></pre>
+</div>
+
+<h4 id="文字列の分割---split-命令">文字列の分割 - split 命令</h4>
+
+<p>6 行目で環境変数 QUERY_STRING のデータ
+(フォームのデータ) に変数 str という目印を付けます。
+7 行目では変数 str のデータを表示させています。
+これで CGI プログラムに渡されたフォームデータを確認出来ます。</p>
+
+<p>ポイントは 10 行目です。
+変数 str の目印の付いた文字列を「&amp;」で区切って分割しています。
+split は文字列に対する命令です。
+先程 Array のデータの後ろに「.」を付けて Array のデータに
+命令を実行させていましたね。
+それと同じで文字列にも実行可能な命令があり、
+その命令の 1 つが split です。 
+split は英語で「分割する」という意味があり、
+括弧の中のデータに従って文字列を分割します。</p>
+
+<p>実際に split を使ったプログラムを試してみましょう。
+下に split を使った 4 行のプログラムを示します。
+1 行目の “123”.split(“2”) では () の中の “2” が split に渡され、
+split は “123” を “2” で分割します。
+その結果、”1” と “3” の 2 つに分かれて
+[“1”, “3”] という Array になり、そのデータが puts で表示されます。
+5 行目でも同様の処理が行われます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">arr1 = "123".split("2")
+puts arr1[0]
+puts arr1[1]
+
+arr2 = "aaabbbcccbbbaaa".split("bbb")
+puts arr2[0]
+puts arr2[1]
+puts arr2[2]</code></pre></figure>
+
+<h4 id="命令のパラメーター">命令のパラメーター</h4>
+
+<p>ちょっと横にそれますが、
+ここで命令の使い方について触れておきます。
+これまで出てきた命令には split 以外にも 
+rand のようにパラメーター付きの命令がありました。
+<strong>一般に命令の後ろの () の中には命令を実行する時のパラメーターを指定します</strong>。
+「嘘付け、前号で rand 命令を紹介した時には 
+rand 10 や rand 5 のように () を付けなかったじゃないか」と
+後ろ指を刺されそうですが、
+それは Ruby では命令の後ろに () を付けても付けなくても同じ意味になるからです。
+例えば、rand 10 は rand(10) と、rand 5 は rand(5) と同じ意味を持ちます。</p>
+
+<p>一般に命令を使う時には () を付ける方が良いとされていますが、
+本連載で扱う範囲では () を付けないことも多いです。
+それはプログラムが簡単だからです。
+どんなプログラムや命令に () を付けて
+どんなプログラムや命令に () を付けないかというのは
+個人の好みがあるので、一概には言えませんが、
+皆さんがプログラムを読んだり書いたりするうちに
+自分の中のルールが決まってくると思います。
+例えば、筆者は Array の length のように
+パラメータ無しの命令に関しては () を付けない方が好きです。</p>
+
+<h4 id="split-を使ってフォームデータを分ける">split を使ってフォームデータを分ける</h4>
+
+<p>話を split 命令に戻しましょう。
+bar_echo2.rb の 10 行目 の split 命令のパラメーターに
+「&amp;」を指定して環境変数 QUERY_STRING の値を分割するのでしたね。</p>
+
+<p>「dddd」をテキストフィールドに書いた場合、
+フォームのデータは「t=dddd&amp;s=Button」となります。
+それを split で「&amp;」で分割すれば
+「t=dddd」と「s=Button」の 2 つに分かれることになります。
+split 命令の結果 (Array) には変数 arr1 の目印が付きます。
+split の結果を図で表すと、下のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>“t=dddd”</td>
+      <td>”s=Button”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>欲しいのは dddd が付いた方ですので、
+この図から分かるように添字に 0 を使って
+arr1[0] で “t=dddd” のデータにアクセスします。</p>
+
+<p>これでもまだ余分なものが付いていますので、
+今度は arr1[0] の “t=dddd” を「=」で分解します。
+16 行目で split をもう一度使っているのはそういう理由です。
+2 回目の split の結果は下図のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>“t”</td>
+      <td>“dddd”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>今度は添字の 1 に “dddd” があります。
+そのため 17 行目では arr2[1] を表示し、
+テキストフィールドに書かれたデータを
+そのまま返しています。</p>
+
+<h4 id="山彦もどきの実行">「山彦もどき」の実行</h4>
+
+<p>「山彦もどき」の実行結果は下図のようになります。
+実際に試す時は 
+<a href="http://localhost:8080/bar_echo2.html">http://localhost:8080/bar_echo2.html</a> にアクセスして下さい。
+フォームにアルファベットや数字を入れて
+どのように表示されるか遊んでみましょう。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1_2.jpg" alt="bar_echo1_2.jpg" /></p>
+
+<p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-1.html">前ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners.html">目次ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-3.html">次ページへ</a></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

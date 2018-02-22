@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>標準添付ライブラリ紹介 【第 10 回】 ERB</title>
+  <meta name="description" content="書いた人：西山">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0017/0017-BundledLibraries.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>標準添付ライブラリ紹介 【第 10 回】 ERB</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0017/0017-BundledLibraries.html" class="hatena-bookmark-button" data-hatena-bookmark-title="標準添付ライブラリ紹介 【第 10 回】 ERB" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0017/0017-BundledLibraries.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0017/0017-BundledLibraries.html" data-text="標準添付ライブラリ紹介 【第 10 回】 ERB">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：西山</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Ruby には便利な標準添付ライブラリがたくさんありますが、なかなか知られていないのが現状です。そこで、この連載では Ruby の標準添付ライブラリを紹介していきます。</p>
+
+<p>今回は、ERB について紹介します。</p>
+
+<h2 id="eruby-eruby-erb-erb">eRuby, eruby, ERb, ERB</h2>
+
+<p>まず用語について説明します。</p>
+
+<p>厳密には以下のような使い分けが可能ですが、(Perl と perl の使い分けと違って) 大文字で始まる Ruby と小文字で始まる ruby が使い分けられていないのと同じように、使い分けにはあまりこだわらなくても構いません。</p>
+
+<dl>
+  <dt>eRuby</dt>
+  <dd>任意のテキストファイルに Ruby スクリプトを埋め込む書式の仕様</dd>
+  <dt>eruby</dt>
+  <dd>前田修吾さん作の eRuby の C による実装</dd>
+  <dt>ERB</dt>
+  <dd>関将俊さん作の eRuby の Ruby による実装</dd>
+  <dt>ERb</dt>
+  <dd>ERB が標準添付になる前のバージョン (ERb と ERbLight があった)</dd>
+</dl>
+
+<h2 id="eruby">eRuby</h2>
+
+<p>eRuby では任意のテキストファイルに Ruby スクリプトを埋め込めます。
+基本的には、次のマークアップ (eRuby タグ) を使って Ruby スクリプトを埋め込みます。</p>
+
+<dl>
+  <dt>&lt;% … %&gt;</dt>
+  <dd>Ruby スクリプト片をその場で実行</dd>
+  <dt>&lt;%= … %&gt;</dt>
+  <dd>式を評価した結果をその場に挿入</dd>
+  <dt>&lt;%# … %&gt;</dt>
+  <dd>eRuby のコメント (ERB#src (後述) にも埋め込まれない)</dd>
+  <dt>&lt;%%</dt>
+  <dd>「&lt;%」をその場に挿入 (「&lt;% … %&gt;」の中ではそのまま)</dd>
+  <dt>%%&gt;</dt>
+  <dd>「&lt;% … %&gt;」などの中で「%&gt;」になる (「&lt;% … %&gt;」の外では「%%&gt;」のまま)</dd>
+  <dt>% で始まる行</dt>
+  <dd>ERB で trim_mode (後述) が ‘%’ の時、また、eruby ではいつでも、Ruby スクリプト片をその場で実行</dd>
+  <dt>%% で始まる行</dt>
+  <dd>ERB で trim_mode (後述) が ‘%’ の時、また、eruby ではいつでも、% で始まる行になる</dd>
+</dl>
+
+<p>その他の部分 (地の文) はそのまま出力されます。</p>
+
+<p>eRuby は HTML や XML に限らず、任意のテキストファイルの出力に使用できます。</p>
+
+<h2 id="erb">ERB</h2>
+
+<p>では、eRuby を実際に使うためのライブラリである ERB について解説します。</p>
+
+<h3 id="基本的な使い方">基本的な使い方</h3>
+
+<p>ERB の一番基本的な使い方では、eRuby スクリプトを ERB.new の第一引数に指定して ERB オブジェクトを生成して、result メソッドで結果を文字列で取得します。</p>
+
+<p>例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+str = "hoge"
+erb = ERB.new("value = &lt;%= str %&gt;")
+puts erb.result(binding)</code></pre></figure>
+
+<p>出力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">value = hoge</code></pre></figure>
+
+<p>あまり良い例ではありませんが、ここでは例としてかけ算の九九の表を生成するスクリプトを作ってみました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+puts ERB.new(DATA.read).result(binding)
+__END__
+ &lt;% (1..9).each do |y| %&gt;  &lt;%= y %&gt;&lt;% end %&gt;
+&lt;%
+(1..9).each do |x|
+%&gt;&lt;%= x %&gt;&lt;%
+  (1..9).each do |y|
+%&gt;&lt;%= sprintf '%3d', x*y %&gt;&lt;%
+  end
+%&gt;
+&lt;% end %&gt;</code></pre></figure>
+
+<p>出力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   1  2  3  4  5  6  7  8  9
+1  1  2  3  4  5  6  7  8  9
+2  2  4  6  8 10 12 14 16 18
+3  3  6  9 12 15 18 21 24 27
+4  4  8 12 16 20 24 28 32 36
+5  5 10 15 20 25 30 35 40 45
+6  6 12 18 24 30 36 42 48 54
+7  7 14 21 28 35 42 49 56 63
+8  8 16 24 32 40 48 56 64 72
+9  9 18 27 36 45 54 63 72 81</code></pre></figure>
+
+<p>まず 1 行目で ERB を使うために erb ライブラリを require しています。</p>
+
+<p>次に DATA.read で <strong>END</strong> 以降の内容を読み込んでいます。
+ここでは例を簡単にするために Ruby スクリプトの末尾に <strong>END</strong> を使って eRuby スクリプトを埋め込んでいますが、普通は別ファイルから読み込みます。</p>
+
+<p>そして読み込んだ eRuby スクリプトを使って ERB オブジェクトを生成して、result メソッドを使って結果の文字列を取得しています。
+result メソッドの引数に組み込み関数 binding を使って取得した Binding オブジェクトを指定しています。</p>
+
+<p>最後に結果の文字列を puts を使って出力しています。</p>
+
+<h3 id="erbrun">ERB#run</h3>
+
+<p>ERB#run は ERB#result の結果をそのまま標準出力に出力します。
+結果の文字列を加工したり、他の処理に利用したりする場合は ERB#result を使う必要がありますが、出力するだけなら ERB#run が使えます。</p>
+
+<p>先ほどの例ではそのまま出力するだけだったので、ERB#result の値を puts する代わりに ERB#run を使っても同じ出力が得られます。</p>
+
+<p><strong>END</strong> 以降と出力例は同じなので省略します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+ERB.new(DATA.read).run(binding)
+__END__</code></pre></figure>
+
+<h3 id="erbsrc">ERB#src</h3>
+
+<p>ERB#src は eRuby を Ruby スクリプトに変換したソースを返します。
+Ruby スクリプトに変換した結果をキャッシュしたり、eval で実行したりすることが出来ます。</p>
+
+<p>上記の例のように Ruby スクリプトに直接 eRuby を埋め込んだ場合、eRuby 部分で例外が発生すると実際のファイル名と行番号とは違っていて、エラーの場所を特定しにくくなります。
+そういう場合は ERB#src と eval を使って、ファイル名と行番号を指定することによってエラーの場所がわかりやすくなります。</p>
+
+<p>たとえば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#!/usr/bin/ruby -Ke
+require 'erb'
+now = Time.now
+puts eval(ERB.new(DATA.read).src, binding, __FILE__, __LINE__+2)
+__END__
+今日は&lt;%= now.stftime("%Y-%m-%d") %&gt;です。</code></pre></figure>
+
+<p>というスクリプトなら</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">e.rb:6: undefined method `stftime' for Sat Nov 11 12:09:15 JST 2006:Time (NoMethodError)
+        from e.rb:4</code></pre></figure>
+
+<p>のようになります。</p>
+
+<h3 id="erbfilename-erbfilename">ERB#filename, ERB#filename=</h3>
+
+<p>attr_accessor で定義されている ERB#filename, ERB#filename= を使って、エラーメッセージ用のファイル名の取得や設定が出来ます。</p>
+
+<p>ファイル名を変更するだけなら ERB#src で取得した Ruby スクリプトを eval する代わりに ERB#filename= が使えます。</p>
+
+<p>使用例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#!/usr/bin/ruby -Ke
+require 'erb'
+fname = ARGV.shift
+erb = ERB.new(File.read(fname))
+erb.filename = fname
+puts erb.result(binding)</code></pre></figure>
+
+<h3 id="binding-引数">binding 引数</h3>
+
+<p>ローカル変数やインスタンス変数を eRuby スクリプトの中で使いたい場合は、適切な場所の Binding オブジェクトを ERB#result や ERB#run に指定する必要があります。</p>
+
+<p>どこで実行しても同じ結果になるスクリプトの場合は result メソッドの引数の binding を省略してデフォルトの TOPLEVEL_BINDING でも構いません。
+上記の九九の例の場合は x と y というローカル変数を使っているので、eRuby スクリプトの実行前にローカル変数 x または y を使っていると、どちらも 9 に変わってしまいます。</p>
+
+<p><strong>END</strong> 以降は同じなので省略します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+x = y = nil
+ERB.new(DATA.read).result(binding)
+p x, y
+__END__</code></pre></figure>
+
+<p>出力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">9
+9</code></pre></figure>
+
+<h3 id="trim_mode">trim_mode</h3>
+
+<p>先ほどの例の eRuby スクリプトでは余分な改行や空白が入らないようにするために「&lt;%」や「%&gt;」などの位置がわかりにくくなっています。</p>
+
+<p>HTML の場合は改行の位置や空白などは気にせずに書いても、ブラウザで表示させたときに連続する空白は単独の空白と同じ扱いになるので気にならないのですが、HTML を直接見た場合には気になってしまいます。</p>
+
+<p>そこで ERB には trim_mode という機能がついています。</p>
+
+<h4 id="trim_mode---">trim_mode = ‘-‘</h4>
+
+<p>’-‘　という trim_mode では、以下の違いがあります。</p>
+
+<dl>
+  <dt>&lt;%-</dt>
+  <dd>(「&lt;%-」のインデントに使われている) 行頭の空白文字を削除</dd>
+  <dt>-%&gt;</dt>
+  <dd>直後の改行を出力しない</dd>
+</dl>
+
+<p>「&lt;%-」と行頭の間に空白以外の文字があったり、「-%&gt;」と改行の間に (空白も含めて) 他の文字があったりすると、「&lt;%」や「%&gt;」と同じ挙動になります。</p>
+
+<h4 id="trim_mode-の使用例">trim_mode の使用例</h4>
+
+<p>先ほどの九九の例を、ここでは Rails でデフォルトとして使われている ‘-‘ という trim_mode を使って書き直してみます。</p>
+
+<p>出力例は同じなので省略します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+puts ERB.new(DATA.read, nil, '-').result(binding)
+__END__
+ &lt;% (1..9).each do |y| %&gt;  &lt;%= y %&gt;&lt;% end %&gt;
+&lt;%- (1..9).each do |x| -%&gt;
+&lt;%= x -%&gt;
+  &lt;%- (1..9).each do |y| -%&gt;
+&lt;%= sprintf '%3d', x*y -%&gt;
+  &lt;%- end %&gt;
+&lt;%- end -%&gt;</code></pre></figure>
+
+<p>「&lt;%」(または「「&lt;%=」) と「%&gt;」の対応がそれぞれの行に収まっていたり、
+内側のループがインデント出来たりして、最初の例より読みやすく出来ています。</p>
+
+<p>読みやすく出来るようになったところで HTML (の一部) を出力するように変更してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+puts ERB.new(DATA.read, nil, '-').result(binding)
+__END__
+&lt;table&gt;
+  &lt;tr&gt;
+  &lt;%- (1..9).each do |y| -%&gt;
+    &lt;th&gt;&lt;%= y %&gt;&lt;/th&gt;
+  &lt;%- end -%&gt;
+  &lt;/tr&gt;
+&lt;%- (1..9).each do |x| -%&gt;
+  &lt;tr&gt;
+    &lt;th&gt;&lt;%= x %&gt;&lt;/th&gt;
+  &lt;%- (1..9).each do |y| -%&gt;
+    &lt;td&gt;&lt;%= x*y %&gt;&lt;/td&gt;
+  &lt;%- end -%&gt;
+  &lt;/tr&gt;
+&lt;%- end -%&gt;
+&lt;/table&gt;</code></pre></figure>
+
+<p>出力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;1&lt;/th&gt;
+    &lt;th&gt;2&lt;/th&gt;
+    &lt;th&gt;3&lt;/th&gt;
+    &lt;th&gt;4&lt;/th&gt;
+    &lt;th&gt;5&lt;/th&gt;
+    &lt;th&gt;6&lt;/th&gt;
+    &lt;th&gt;7&lt;/th&gt;
+    &lt;th&gt;8&lt;/th&gt;
+    &lt;th&gt;9&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;1&lt;/th&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;3&lt;/td&gt;
+    &lt;td&gt;4&lt;/td&gt;
+    &lt;td&gt;5&lt;/td&gt;
+    &lt;td&gt;6&lt;/td&gt;
+    &lt;td&gt;7&lt;/td&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;9&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th&gt;2&lt;/th&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;4&lt;/td&gt;
+    &lt;td&gt;6&lt;/td&gt;
+    &lt;td&gt;8&lt;/td&gt;
+    &lt;td&gt;10&lt;/td&gt;
+    &lt;td&gt;12&lt;/td&gt;
+    &lt;td&gt;14&lt;/td&gt;
+    &lt;td&gt;16&lt;/td&gt;
+    &lt;td&gt;18&lt;/td&gt;
+  &lt;/tr&gt;
+(中略)
+  &lt;tr&gt;
+    &lt;th&gt;9&lt;/th&gt;
+    &lt;td&gt;9&lt;/td&gt;
+    &lt;td&gt;18&lt;/td&gt;
+    &lt;td&gt;27&lt;/td&gt;
+    &lt;td&gt;36&lt;/td&gt;
+    &lt;td&gt;45&lt;/td&gt;
+    &lt;td&gt;54&lt;/td&gt;
+    &lt;td&gt;63&lt;/td&gt;
+    &lt;td&gt;72&lt;/td&gt;
+    &lt;td&gt;81&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre></figure>
+
+<p>長いので途中を省略しましたが、eRuby スクリプトも出力結果も読みやすく出来るようになりました。</p>
+
+<h4 id="trim_mode--">trim_mode = ‘%’</h4>
+
+<p>trim_mode に ‘%’ を指定すると「%」で始まる行を「&lt;% … %&gt;」と同じように Ruby スクリプトとして実行します。その行の改行は出力しません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+puts ERB.new(DATA.read, nil, '%').result(binding)
+__END__
+% require 'mathn'
+&lt;%= 1/2 + 1/3 %&gt;</code></pre></figure>
+
+<p>出力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">5/6</code></pre></figure>
+
+<h4 id="その他の-trim_mode">その他の trim_mode</h4>
+
+<p>’-‘ と ‘%’ の他に改行の扱いを変える ‘&gt;’ と ‘&lt;&gt;’ があります。</p>
+
+<p>‘&gt;’ は行末が「%&gt;」の時に改行を出力しません。
+すべての「%&gt;」が trim_mode が ‘-‘ の「-%&gt;」相当になるようなものです。
+「%&gt;」と改行 (“\n”) の間に空白を含めて他の文字が入っていると改行が出力されます。</p>
+
+<p>‘&lt;&gt;’ は行頭が「&lt;%」かつ行末が「%&gt;」の行の改行を出力しません。
+「&lt;% end %&gt;」とそれに対応する「&lt;% if … %&gt;」や「&lt;% ….each do %&gt;」などの改行を出力したくない時に使えます。
+行頭と行末の両方を見て改行を出力するかどうかを決めているので、trim_mode が ‘-‘ の時の「&lt;%- … -%&gt;」と違って、行頭がインデントされていると行頭の空白も改行も出力されてしまいます。</p>
+
+<h4 id="trim_mode-のまとめ">trim_mode のまとめ</h4>
+
+<p>まとめると以下のようになります。</p>
+
+<dl>
+  <dt>nil または ‘’ または 0</dt>
+  <dd>(デフォルト)</dd>
+  <dt>‘&gt;’ または 1</dt>
+  <dd>行末が「%&gt;」の時に改行を出力しない</dd>
+  <dt>‘&lt;&gt;’ または 2</dt>
+  <dd>行頭が「&lt;%」で行末が「%&gt;」の時に改行を出力しない</dd>
+</dl>
+
+<p>’-‘:行頭が「&lt;%-」の時に (インデントに使われている) 行頭の空白文字を削除、行末が「-%&gt;」の時に直後の改行を出力しない
+‘%’:「%」で始まる行を「&lt;% … %&gt;」と同じように Ruby スクリプトとして実行して改行は出力しない
+‘%&gt;’ または ‘&gt;%’:’&gt;’ と ‘%’ の両方
+‘%&lt;&gt;’ または ‘&lt;&gt;%’:’&lt;&gt;’ と ‘%’ の両方
+‘%-‘:’-‘ と ‘%’ の両方</p>
+
+<p>改行文字は “\n” のみを想定しているため、行末を見て改行を出力しないようになっているものは、改行が “\n” ではなく “\r\n” になっている場合も改行が出力されてしまいます。</p>
+
+<p>具体的には、’&gt;’ または ‘&lt;&gt;’ の時に “&lt;% … %&gt;\r\n” となっている、または ‘-‘ の時に “… -%&gt;\r\n” になっていると、行末に “\r” が入っていることになってしまって、改行が出力されてしまいます。</p>
+
+<h3 id="erbnew-のその他の引数">ERB.new のその他の引数</h3>
+
+<h4 id="safe_level">safe_level</h4>
+
+<p>ERB.new の第 2 引数で eRuby スクリプトが実行されるときのセーフレベルを指定することが出来ます。CGI の中で使われる時は 1 が指定されることが多いようです。</p>
+
+<p>safe_level を気にしない場合は nil を指定します。</p>
+
+<p>間違えて 0 や今のセーフレベルを指定すると、ERB#result が呼ばれたときのセーフレベルで実行可能な内容だったとしても、実行前にセーフレベルを変更しようとして SecurityError になってしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+erb = ERB.new('', $SAFE)
+$SAFE = 1
+erb.run</code></pre></figure>
+
+<p>実行例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/usr/lib/ruby/1.8/erb.rb:736:in `result': tried to downgrade safe level from 1 to 0 (SecurityError)
+        from /usr/lib/ruby/1.8/erb.rb:739:in `value'
+        from /usr/lib/ruby/1.8/erb.rb:739:in `result'
+        from /usr/lib/ruby/1.8/erb.rb:722:in `run'
+        from e.rb:4</code></pre></figure>
+
+<h4 id="eoutvar">eoutvar</h4>
+
+<p>ERB.new の第 4 引数で eRuby スクリプトの中で出力をためていく変数を変更することが出来ます。
+eRuby スクリプトの中で eRuby スクリプトを使う場合は変更する必要がありますが、普通は変更する必要はありません。</p>
+
+<p>変更する必要がある場合というのは、たとえば以下のようなスクリプトの場合です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+erb1 = ERB.new("erb1")
+erb2 = ERB.new("erb2: &lt;%= erb1.result(binding) %&gt;")
+puts "erb2 without eoutvar:"
+puts erb2.result
+erb2 = ERB.new("erb2: &lt;%= erb1.result(binding) %&gt;", nil, nil, '_erbout2')
+puts "erb2 with eoutvar:"
+puts erb2.result</code></pre></figure>
+
+<p>出力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">erb2 without eoutvar:
+erb1
+erb2 with eoutvar:
+erb2: erb1</code></pre></figure>
+
+<p>この例では erb2 の方で変更しましたが、erb1 の方を変更しても良いでしょう。</p>
+
+<h3 id="メソッドとして使う">メソッドとして使う</h3>
+
+<p>今までの例では ERB オブジェクトを直接扱っていましたが、メソッドとして定義することによって、binding などを気にせずに普通のメソッドとして扱えるようになります。</p>
+
+<p>eRuby をメソッドとして使う例としては、header や footer のように HTML の断片を返すといった使い方があります。</p>
+
+<h4 id="erbdef_method">ERB#def_method</h4>
+
+<p>ERB#def_method を使うことで eRuby をメソッドとして使うことが出来ます。</p>
+
+<p>メソッドということで、ここではメソッドの引数やインスタンス変数を使う例を作ってみました。</p>
+
+<p>age.rb:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+class Hoge
+  def initialize
+    @year = 1993
+  end
+end
+erb = File.open('age.erb') {|f| ERB.new(f.read)}
+erb.def_method(Hoge, 'age(this_year)', 'age.erb')
+puts Hoge.new.age(Time.now.year)</code></pre></figure>
+
+<p>age.erb:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">生まれた年: &lt;%= @year %&gt;
+数え年: &lt;%= this_year - @year + 1%&gt;</code></pre></figure>
+
+<p>出力例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">生まれた年: 1993
+数え年: 14</code></pre></figure>
+
+<p>ERB#def_method(mod, methodname, fname=’(ERB)’) の引数は以下の通りです。</p>
+
+<dl>
+  <dt>mod</dt>
+  <dd>メソッドを定義するモジュール (またはクラス)</dd>
+  <dt>methodname</dt>
+  <dd>メソッド定義の def の右の部分</dd>
+  <dt>fname</dt>
+  <dd>エラー表示用のファイル名</dd>
+</dl>
+
+<p>methodname は def の右の部分なので、例のように引数を付けたり、「foo(bar=’bar’)」のようにデフォルト引数をつけたりすることも出来ます。</p>
+
+<h4 id="erbdefmethoddef_erb_method">ERB::DefMethod.def_erb_method</h4>
+
+<p>def_erb_method(methodname, erb) を使って、もっと簡単にファイル名だけでメソッド定義ができるようになります。</p>
+
+<p>使い方は、ERbMethod を extend して、def_erb_method の引数にメソッド名とファイル名を指定します。</p>
+
+<p>例:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+class Hoge
+  extend ERB::DefMethod
+  def_erb_method('to_html', 'hoge.rhtml')
+end
+puts Hoge.new.to_html</code></pre></figure>
+
+<p>def_erb_method(methodname, erb) の引数は以下の通りです。</p>
+
+<dl>
+  <dt>methodname</dt>
+  <dd>ERB#def_method の methodname と同じ</dd>
+  <dt>erb</dt>
+  <dd>文字列ならファイル名として読み込んで ERB に変換してメソッドとして定義</dd>
+</dl>
+
+<p>erb には直接 ERB オブジェクトを渡すことも出来ます。
+そのときは「erb.def_method(self, methodname)」と同じ意味になります。</p>
+
+<p>先ほどの例を ERB::DefMethod を使って書き直すと、以下のようになります。</p>
+
+<p>age.rb:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'erb'
+class Hoge
+  extend ERB::DefMethod
+
+  def initialize
+    @year = 1993
+  end
+
+  def_erb_method('age(this_year)', 'age.erb')
+end
+puts Hoge.new.age(Time.now.year)</code></pre></figure>
+
+<h4 id="erbdef_module-erbdef_class">ERB#def_module, ERB#def_class</h4>
+
+<p>ERB#def_module(methodname=’erb’) と ERB#def_class(suplerklass=Object, methodname=’erb’) というメソッドもあります。
+これはそれぞれメソッドを定義した無名のモジュール、無名のクラスを返すメソッドです。</p>
+
+<h3 id="erbutil">ERB::Util</h3>
+
+<p>ERB::Util を include することで、HTML などを生成するときに便利な</p>
+
+<ul>
+  <li>HTML の「&amp;“&lt;&gt;」のエスケープをする html_escape, h</li>
+  <li>URL エンコードする url_encode, u</li>
+</ul>
+
+<p>という 4 つのメソッドが使えるようになります。</p>
+
+<p>h と u は eRuby の中で「&lt;a href=”&lt;%=u url %&gt;“&gt;&lt;%=h str %&gt;&lt;/a&gt;」のように使うことで、「&lt;%=h … %&gt;」や「&lt;%=u … %&gt;」という見やすい書き方が出来るようになっています。</p>
+
+<h3 id="標準出力">標準出力</h3>
+
+<p>元々の eRuby では標準出力への出力もその場所に埋め込まれるようになっていたので、eRuby 内の Ruby スクリプト片で標準出力を行った場合、eruby や (旧) ERb では出力内容がその場所に埋め込まれます。
+一方、ERB とその元になった ERbLight では「&lt;%= … %&gt;」を使わないと、そのまま標準出力に出力されてしまいます。</p>
+
+<p>hello.erb:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Hello, &lt;% print "World" %&gt;.</code></pre></figure>
+
+<p>という eRuby で、 eruby と ERB では次のような違いが出てきます。</p>
+
+<p>eruby:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Hello, World.</code></pre></figure>
+
+<p>ERB:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">WorldHello, .</code></pre></figure>
+
+<p>その場所に出力を埋め込みたい場合は、普通は print などは使わず「&lt;%= … %&gt;」だけを使うようにすれば良いと思います。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は ERB を中心に eRuby について紹介しました。</p>
+
+<p>ruby 1.8.5 の ERB では、<a href="http://www.druby.org/ilikeruby/erbquote.html">ERB, quote</a> の脚注に書かかれているように、<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/41960">ruby-list:41960</a> で紹介されている &lt;%= … %&gt; の出力内容を自動的にエスケープに対応するためのインターフェイスが入っています。興味があれば試してみてください。</p>
+
+<h2 id="関連リンク">関連リンク</h2>
+
+<ul>
+  <li><a href="ruby-man:ERB">ruby-man:ERB</a></li>
+  <li><a href="http://www.druby.org/ilikeruby/erb.html">ERB</a></li>
+  <li><a href="http://www.druby.org/ilikeruby/erbway.html">the erb way</a></li>
+  <li><a href="http://www.druby.org/ilikeruby/erbmore.html">ERB More</a></li>
+</ul>
+
+<h2 id="著者について">著者について</h2>
+
+<p>西山和広。
+<a href="http://www.rubyist.net/~kazu/samidare/">Ruby hotlinks 五月雨版</a>や
+現在の <a href="http://www.ruby-lang.org/ja/man/">Ruby リファレンスマニュアル</a>のメンテナをやっています。
+<a href="http://www.ruby-lang.org/ja/man/">Ruby リファレンスマニュアル</a>はいつでも<a href="ruby-man:執筆者募集">執筆者募集中</a>です。
+何かあれば、マニュアル執筆編集に関する議論をするためのメーリングリスト rubyist@freeml.com (<a href="http://www.freeml.com/ctrl/html/MLInfoForm/rubyist">参加方法</a>) へどうぞ。</p>
+
+<p>Ruby リファレンスマニュアルは現在青木さんによる新システムに移行準備中です。
+手伝っていただける方は <a href="http://www.loveruby.net/d/20060904.html#p01">ruby-reference-manual ML</a> に入ってください。</p>
+
+<h2 id="標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-BundledLibraries.html">標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-BundledLibraries.html">標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-BundledLibraries.html">標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-BundledLibraries.html">標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-BundledLibraries.html">標準添付ライブラリ紹介 【第 11 回】 zlib</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-BundledLibraries.html">標準添付ライブラリ紹介 【第 10 回】 ERB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-BundledLibraries.html">標準添付ライブラリ紹介 【第 9 回】 PStore</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-BundledLibraries.html">標準添付ライブラリ紹介 【第 8 回】 uri, pathname</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-BundledLibraries.html">標準添付ライブラリ紹介 【第 7 回】 net/http</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-BundledLibraries.html">標準添付ライブラリ紹介 【第 6 回】 委譲</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-BundledLibraries.html">標準添付ライブラリ紹介 【第 5 回】 enumerator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-BundledLibraries.html">標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-BundledLibraries.html">標準添付ライブラリ紹介 【第 2 回】 Logger</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-BundledLibraries.html">標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

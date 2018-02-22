@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Emacs 上の調べ物は langhelp で!</title>
+  <meta name="description" content="書いた人：rubikitch">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0017/0017-langhelp.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Emacs 上の調べ物は langhelp で!</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0017/0017-langhelp.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Emacs 上の調べ物は langhelp で!" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0017/0017-langhelp.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0017/0017-langhelp.html" data-text="Emacs 上の調べ物は langhelp で!">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：rubikitch</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>プログラミングなどの知的作業の効率を上げるために、Emacs 上でスムーズに調べ事ができるようにするツール <a href="http://www.rubyist.net/~rubikitch/computer/langhelp/">langhelp</a> を紹介します。</p>
+
+<p>langhelp は名前の通り「言語」を扱うことを助けるツールです。
+この業界で「言語」といえばプログラミングを連想しますが、それだけではありません。
+何十ものオプションがあるコマンドのコマンドラインはまさに言語と呼ぶにふさわしいです。
+ソフトウェアの設定ファイルも、制御構造がないものの言語です。
+このように目的に応じた大小様々な言語が存在するのです。</p>
+
+<p>本稿では「るびま」の名前通り Ruby プログラミングに焦点をしぼって話を進めていきます。</p>
+
+<h3 id="対象読者">対象読者</h3>
+
+<p>Emacs の操作に一通り慣れ、もっと便利に使おうとする「言語」使い達が対象です。
+langhelp を使うだけならとくに Ruby の知識を必要としません。</p>
+
+<h2 id="背景">背景</h2>
+
+<p>langhelp 作成に至った背景について軽く流しておきます。</p>
+
+<h3 id="プログラミングは調べ事の連続">プログラミングは調べ事の連続</h3>
+
+<p>コンピュータというのはとても気難しい相手です。
+プログラミングはプログラミング言語を使ってコンピュータに命令を伝える作業です。
+厳格なので、少しでも言語の使い方を間違ってしまうと言うことを聞いてくれません。
+人間と違って融通がきかないのです。
+そのため、語法を_正確に_記憶する必要があります。</p>
+
+<p>しかし筆者はコンピュータの天才ではないです。
+記憶力にも自信がありません。
+少しでも疑問に思ったら調べないといけません。
+調べる手段として、ブラウザでオンラインリファレンスマニュアルを開いたり、本を読んだり、ウェブ検索をしたり……多種多様ですね。</p>
+
+<p>対象言語の熟練度が低いと一歩進むごとに調べないといけないのでいつまでたっても問題解決ができません。
+苦痛そのものですね。
+長年親しんだ言語でも、新しいライブラリを使いこなせるまでには時間がかかります。</p>
+
+<p>多くの人にとって_プログラミングは調べ事の連続_なのは間違いないです。</p>
+
+<h3 id="多種多様なフォーマットのドキュメント検索ツールも様々">多種多様なフォーマットのドキュメント。検索ツールも様々。</h3>
+
+<p>調べ事はプログラマの悩みの種なので、労力を軽減するためのツールが開発されるのは自然な流れです。
+Ruby の場合は標準添付の ri と <a href="http://i.loveruby.net/ja/projects/refe/">ReFe</a> が有名ですね。
+筆者もかつて RDindex というツールを作っていました。(RDindex は現在メンテナンスされていません。)
+決まった書式でドキュメントを書いていれば、あとはツールが面倒見てくれます。
+これらのツールは開発を劇的に効率よくしてくれました。標準万歳！！</p>
+
+<p>けれども、時とともに状況は変わってくるものです。
+昔は RD がデファクトスタンダードだったので RD さえ扱えればよかったです。
+今は RDoc が世界標準となり RD の利用率は減少一方です。
+マニュアルにおいては、日本語が RD、英語が RDoc というふうに棲み分けされているのが現状です。
+こうなると ReFe と ri を使い分ける必要がでてきました。</p>
+
+<p>さらに追い討ちをかけるのが、標準に従っていないドキュメントです。
+構造化もされていない plain text だったり、ウェブ上の HTML だったり、自分の日記だったり……
+こういうものはいちいちファイルを開いて手検索しなければならず、
+検索ツールに慣れた人にとっては耐えがたいです。</p>
+
+<h3 id="情報をまとめて検索するツールが欲しい">情報をまとめて検索するツールが欲しい。</h3>
+
+<p>この現状を打破するために、情報源によらず情報の目次を一箇所に固めておく必要性を感じました。
+もちろん目次から内容を参照することができるべきです。本がそうであるように。
+Ruby の場合、ReFe へのリンク、ri へのリンク、RD の特定行などで目次を構成します。
+情報を一元化することで、使うツールを選択することなくすかさず検索にうつれます。</p>
+
+<h2 id="s-式ハイパーリンク">S 式ハイパーリンク</h2>
+
+<p>langhelp のリンク機能そのものは自分で実装していません。
+既存の機能をうまく使っています。
+EmacsLisp 式 (S 式) をハイパーリンクとみなすのです。</p>
+
+<p>たとえば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (find-file "~/.emacs")</code></pre></figure>
+
+<p>の行末へカーソルを持っていって C-x C-e を押してください。
+すぐさま ~/.emacs が開かれてバッファが切り替わりました。
+C-x C-e はマイナーだと思いますが、カーソル直前の S 式を評価するコマンドです。</p>
+
+<p>S 式の評価というと、どうしても変数の値や関数の戻り値に注目されがちですが、
+この場合はファイルを開くという_副作用_が目的です。
+ブラウザのリンクをクリックするとリンク先のページが表示されることを思い出してください。
+C-x C-e は一種のハイパーリンクと思えませんか？
+さらに S 式に色をつけてみると、見た目上ブラウザのリンクと変わらないでしょう？</p>
+
+<p>もちろん langhelp を使う上では押しやすいキーにバインドしていますが、S 式ハイパーリンクは langhelp の中核をなすものです。</p>
+
+<p>このアイデアのおかげで、「目次作成」と「内容閲覧」を完全に別個の問題として扱え、限りない柔軟性を得ることができました。
+○○へのリンク機能が欲しいならば、関数を書くだけでいいのです。</p>
+
+<p>このアイデアのもうひとつの利点は、S 式が Emacs 上のどこでも評価できることです。
+langhelp で調べた結果を表示する S 式をソースコードや自分のメモに簡単に貼り付けることができます。
+極論すると、あらゆるテキストが Wiki になるのです。
+同じことを調べなおさずにすむので未来の自分へのメッセージになります。
+共同開発者が langhelp を使ってくれれば、情報交換もできるでしょう。</p>
+
+<h2 id="インストール設定">インストール・設定</h2>
+
+<h3 id="cygwin-windows-環境の場合">Cygwin (Windows 環境の場合)</h3>
+
+<p>langhelp は Unix 指向のプログラムです。
+そのため Windows 使いの人は Cygwin をインストールする必要があります。
+Ruby も Cygwin 版を使うほうがいいと思います。</p>
+
+<p><a href="http://www.bookshelf.jp/cgi-bin/goto.cgi?file=meadow&amp;node=cygwin">Meadow Memo - Cygwin</a></p>
+
+<p>あと、環境変数 HOME も忘れずに設定しておいてください。
+ホームディレクトリを指定します。</p>
+
+<p>以後、Unix 系 OS を前提に話をすすめていきます。</p>
+
+<h3 id="el4r-と-langhelp-のインストール">el4r と langhelp のインストール</h3>
+
+<p>langhelp は el4r (Emacs Lisp for Ruby) に依存しています。
+el4r は Emacs を Ruby でコントロールするプログラムです。
+Emacs をコントロールするための Lisp を EmacsLisp と呼ぶように、Emacs をコントロールするための Ruby を EmacsRuby と呼んでいます。
+langhelp は EmacsRuby で書かれているため、最初に el4r をインストールする必要があるのです。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<h4 id="debian-gnulinux">Debian GNU/Linux</h4>
+
+<p>Debian GNU/Linux ならばインストールは簡単です。
+以下の行を /etc/apt/sources.list に加えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> deb http://alysse.dyndns.org/~bdaix/debian/packages unstable/
+ deb-src http://alysse.dyndns.org/~bdaix/debian/packages unstable/</code></pre></figure>
+
+<p>そして</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> apt-get update
+ apt-get install langhelp</code></pre></figure>
+
+<p>としてください。</p>
+
+<h4 id="その他のシステム">その他のシステム</h4>
+
+<p>その他のシステムではソースからインストールする必要があります。
+まず el4r からインストールしてください。執筆時点でバージョン 1.0.4 です。
+以下のコマンドを実行してください。
+ruby -ropen-uri の行はブラウザや wget でダウンロードしても構いません。
+なお ruby setup.rb でインストールするので sudo が必要な環境もあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby -ropen-uri -e 'URI("http://www.rubyist.net/~rubikitch/archive/el4r-1.0.4.tar.gz").read.display' &gt; el4r-1.0.4.tar.gz
+ tar xzf el4r-1.0.4.tar.gz
+ cd el4r-1.0.4
+ ruby setup.rb</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby -S el4r-rctool -p
+ ruby -S el4r-rctool -d   # 変更点を diff で表示
+ ruby -S el4r-rctool -i</code></pre></figure>
+
+<p>次は langhelp をインストールします。執筆時点でバージョン 0.9.8 です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby -ropen-uri -e 'URI("http://www.rubyist.net/~rubikitch/archive/langhelp-0.9.8.tar.gz").read.display' &gt; langhelp-0.9.8.tar.gz
+ tar xzvf langhelp-0.9.8.tar.gz
+ cd langhelp-0.9.8
+ ruby setup.rb</code></pre></figure>
+
+<h3 id="langhelp-が利用するパッケージのインストール">langhelp が利用するパッケージのインストール</h3>
+
+<p>langhelp はいろいろなツールを統合するものです。
+そのため、外部プログラムを利用しまくります。
+langhelp を試用してみるだけなら、とくにインストールする必要はありません。
+単体でも Ri と RD の目次は作成できます。
+ツールが多ければ多いほど langhelp は力を発揮します。</p>
+
+<p>本稿では Ruby プログラミングに便利なツールを紹介しておきます。
+ほかのツールについては附属ドキュメントを参照してください。</p>
+
+<h4 id="refe">ReFe</h4>
+
+<p>ri は英語ですが、 ReFe は日本語でメソッドのドキュメントを参照できます。
+日本人 Rubyist 必携です。
+是非ともインストールしましょう。</p>
+
+<p><a href="http://i.loveruby.net/ja/projects/refe/">ReFe</a></p>
+
+<h4 id="ri-for-xemacs">Ri for (X)Emacs</h4>
+
+<p>ri をコマンドラインで使うと出力されるまで数秒待たされますが、これを入れることで一瞬でドキュメントを参照することができます。
+Emacs 使いは是非ともインストールしておきましょう。</p>
+
+<p><a href="http://rubyforge.org/projects/ri-emacs/">Ri for (X)Emacs</a></p>
+
+<h4 id="w3m-と-emacs-w3m">w3m と emacs-w3m</h4>
+
+<p>Unix 系 OS の世界で有名なページャ兼テキストブラウザ兼 HTML → Text 変換器です。
+動作が軽いのが特徴です。
+emacs-w3m は Emacs 内で w3m を使うれっきとしたウェブブラウザです。
+emacs-w3m があると HTML ドキュメントを langhelp 内で参照できます。</p>
+
+<p><a href="http://emacs-w3m.namazu.org/">emacs-w3m</a></p>
+
+<p>Debian GNU/Linux ならば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> apt-get install w3m-el</code></pre></figure>
+
+<p>一発でおしまいです。</p>
+
+<p>Windows 使いの人は Cygwin → w3m → emacs-w3m とインストール作業が大変ですが、がんばってください。
+ちょっとした調べ物のためにいちいちブラウザを立ち上げるのは面倒でしょう？</p>
+
+<p><a href="http://www.bookshelf.jp/cgi-bin/goto.cgi?file=meadow&amp;node=cygwin">Meadow Memo - Cygwin</a>
+<a href="http://www.bookshelf.jp/cgi-bin/goto.cgi?file=meadow&amp;node=w3m%20mode">Meadow Memo - emacs-w3m</a></p>
+
+<h4 id="bmel">bm.el</h4>
+
+<p>はっきりと印がつくバッファ内ブックマークです。
+通常の編集・閲覧作業にもとても便利なのでインストールする価値は十分あります。
+langhelp では後で参照できるように簡単にブックマークできるようになっています。</p>
+
+<p><a href="http://cvs.savannah.gnu.org/viewcvs/*checkout*/bm/bm/bm.el?rev=HEAD&amp;content-type=text/plain">bm.el</a></p>
+
+<h4 id="migemo">migemo</h4>
+
+<p>ローマ字で日本語が検索できる優れ物です。
+古いコンピュータでなければかなり快適に動作します。
+langhelp は検索ベースのツールなのでインストールして損はありません。</p>
+
+<p><a href="http://0xcc.net/migemo/">Migemo</a></p>
+
+<h3 id="まず初めにやること">まず初めにやること</h3>
+
+<p>初めて langhelp を使う人はサンプル設定ファイルをコピーしてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> mkdir -p ~/.langhelp; cp data/langhelp/config.sample ~/.langhelp/config</code></pre></figure>
+
+<p>そして、とりあえずすべての言語の目次を作成しておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> mklanghelp --all</code></pre></figure>
+
+<p>を実行して langhelp で定義されているすべての言語の目次ファイルを生成してください。
+目次ファイル名は言語名に .e という拡張子をつけたものです。</p>
+
+<p>この際、エラーがたくさん出てくると思いますが、慌てないように。
+あくまで設定ファイルは筆者の環境をもとに作られているため、指定された場所にドキュメントが存在しないからです。
+それでも現時点でやれるだけのことはしてくれます。</p>
+
+<h3 id="様々な言語の様々な形式のドキュメントをサポートしてるため設定ファイルは複雑">様々な言語の様々な形式のドキュメントをサポートしてるため設定ファイルは複雑</h3>
+
+<p>のっけからエラー連発で前途多難な思いをさせて申し訳ありません。
+設定ファイルは Ruby スクリプトですが、Ruby を知らない人はぎょっとするかもしれません。
+langhelp は様々な形式のドキュメントをサポートする必要があるため、柔軟性が高くないといけません。
+悲しいことにドキュメント事情は複雑なのです。</p>
+
+<p>Ruby を知る人が見たら、設定ファイルはたんなるインスタンス変数定義の羅列であることがわかるでしょう。
+いろいろな変数が定義されていますが、設定で最重要なのが @lang 変数です。</p>
+
+<h3 id="lang-の構造">@lang の構造</h3>
+
+<p>複雑な設定ファイルですが、コツさえ理解すれば設定はそんなに難しくありません。
+langhelp は様々な言語やコマンドをサポートしていますが、_使いたい言語のみ設定する_のが鉄則です。
+Ruby の @lang 設定を見てみましょう。(コメントは省略しています)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> @lang["ruby"] =        [
+   {:RubyRefm =&gt; "~/doc/rubyrefm/", :title=&gt;"Ruby Reference Manual (Japanese)"},
+   {:Ri =&gt; true, :title=&gt;"RI"},
+   {:Refe =&gt; true, :cmd=&gt;"refe", :title=&gt;"ReFe (Japanese)"},
+   {:MoonWolfRubyDoc =&gt; "~/ruby/htmlsplit.html", :title=&gt;"HTMLSplit (Japanese)"},
+   {:RD =&gt; "~/compile/sys-proctable-0.6.4/doc/linux.rd", :title=&gt;"ProcTable"},
+   {:Grep =&gt; "~/compile/narray-0.5.7/SPEC.ja", :regexp=&gt;/^(\S.|    \S)/,  :title=&gt;"NArray SPEC"},
+   {:RD =&gt; "~/compile/numru-units-1.5/doc/units.rd", :title=&gt;"units"},
+ ]</code></pre></figure>
+
+<p>見てわかるように @lang[“ruby”] は Hash を要素とする配列です。
+Hash のキー定義順は大文字から始まるシンボルから始まり、小文字から始まるシンボルがずらりと並んでいます。
+もちろん Hash のキー定義順は Ruby 的にどうでもいいですが、可読性のために先頭に書いています。
+言い換えると、 langhelp が処理するドキュメントを定義する今流行の「ドメイン特化言語 (DSL)」として見てください。
+「ドキュメント定義言語」は次の仕様を満たしています。</p>
+
+<ul>
+  <li>ドキュメント定義は一行のひとつの Hash で定義されます。</li>
+  <li>ドキュメント定義の配列順に目次が並びます。</li>
+  <li>ドキュメント定義の先頭の大文字シンボルはドキュメントを処理するクラス名です。</li>
+  <li>クラス名に対応するハッシュの値は (多くの場合) 処理対象のドキュメントファイル名です。</li>
+  <li>クラス名に対応するハッシュの値が true の場合は、専用のコマンドを使います。</li>
+  <li>残りは雑多なパラメータです。</li>
+  <li>:title の値がドキュメントのタイトルで、一番最後に書きます。</li>
+</ul>
+
+<h3 id="設定のコツ">設定のコツ</h3>
+
+<p>mklanghelp –all のエラーを修正するコツを紹介します。</p>
+
+<h4 id="使わない言語の設定は放置">使わない言語の設定は放置</h4>
+
+<p>初回の mklanghelp –all でエラーがでたもののうち、使わない言語の設定は_無視_しちゃってください。
+エラーを放置するのは気持ち悪いと思いますが、当該言語の目次が生成されないだけなので無視してもかまいません。
+コンピュータの世界では一般に、理解できないもの・得体の知れないものは放置するのが安全です。</p>
+
+<h4 id="使わないドキュメントはコメントアウト">使わないドキュメントはコメントアウト</h4>
+
+<p>筆者はできる限りたくさんのドキュメントの目次を設定していますが、利用者が使わないドキュメントもあるでしょう。
+そういうドキュメントはコメントアウトしてください。</p>
+
+<p>たとえば HTMLSplit は使わないという人は次のように行頭に # を入れます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # {:MoonWolfRubyDoc =&gt; "~/ruby/htmlsplit.html", :title=&gt;"HTMLSplit (Japanese)"},</code></pre></figure>
+
+<p>こうすることで mklanghelp は ~/ruby/htmlsplit.html を読みに行かなくなります。</p>
+
+<p>また、 w3m と emacs-w3m を使わない人は RubyRefm もコメントアウトしてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # {:RubyRefm =&gt; "~/doc/rubyrefm/", :title=&gt;"Ruby Reference Manual (Japanese)"},</code></pre></figure>
+
+<p>また、段階的に設定したい場合もコメントアウトは有効です。</p>
+
+<p>「ドキュメント定義言語」でドキュメント定義を一行にしているのは、Ruby を知らない人でも簡単にコメントアウトできるようにするためです。</p>
+
+<h4 id="ドキュメントファイル名の書き換え">ドキュメントファイル名の書き換え</h4>
+
+<p>処理したいドキュメントにもかかわらず、筆者と利用者で置いている場所が異なる場合もあります。
+そういう場合はファイル名 (ディレクトリ名) を書き換える必要があります。</p>
+
+<p>みなさんはどこに何のファイルがあるか意識しているでしょうか？
+Unix 系 OS に親しんでいる人は自分のホームディレクトリに何があるかほとんど把握していると思います。
+自分の家でどこに何があるかを覚えているようなものです。
+Windows のみの人は……覚えていないかもしれませんね。</p>
+
+<p>langhelp ではドキュメントを見付ける労力を軽減するために最大限の努力をしています。
+設定ファイル中の [EVAL IT] 行を見てください。
+これは先程触れた S 式ハイパーリンクです。
+[EVAL IT] 行にカーソルを置いて C-e C-x C-e を押してください。
+実行の exe と覚えればいいですね。</p>
+
+<p>locate を使う行もありますが、使うためには予め GNU Findutils をインストールして updatedb しておきましょう。
+locate はファイル名の一部を入力すると、ファイル名データベース内でマッチするファイル名がフルパスで出力されます。</p>
+
+<p>また、ファイル名を書き換える際には、 ffap と hippie-exp を使うといいでしょう。
+ともに Emacs 標準添付です。
+hippie-exp を使うと任意の場所でファイル名 (他いろいろ) の補完入力ができます。
+ffap はファイル名にカーソルがある場合、 C-x C-f などでそのファイル名を拾ってくれます。
+そのため、ファイルの存在確認にうってつけです。
+筆者は次のように .emacs に設定しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (ffap-bindings)
+ (define-key esc-map  " " 'hippie-expand)</code></pre></figure>
+
+<h2 id="使い方">使い方</h2>
+
+<p>なんとか設定を終え、さっそく使い方の説明に入れます。</p>
+
+<h3 id="目次作成">目次作成</h3>
+
+<p>設定ファイルを書き換えた後、その設定を反映しなければなりません。
+最初は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> mklanghelp --all</code></pre></figure>
+
+<p>で全言語の目次を作成しましたが、今回は設定を変えた Ruby の目次を作成してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> mklanghelp ruby</code></pre></figure>
+
+<p>エラーが出なければ無事に目次が完成しました。
+エラーが出た場合は設定ファイルに書いてあるドキュメントファイルが存在するか確認してください。
+ほかの言語についても同様です。</p>
+
+<p>これで設定ファイルとの格闘はおしまいです。
+Emacs で検索を楽しんでください。</p>
+
+<h3 id="emacs-で使ってみましょう">Emacs で使ってみましょう</h3>
+
+<p>Emacs を起動します。
+起動後すぐに langhelp が使えるようになっています。
+ここで .emacs に設定を加えていないのになぜいきなり langhelp が使えるのか疑問に思うでしょう。</p>
+
+<p>langhelp は el4r を使って書かれた <em>EmacsRuby</em> プログラムです。
+また、 el4r のインストール時に el4r-rctool で .emacs を書き換えています。
+そのため Emacs 起動時に el4r が使えるようになっています。
+その時点で EmacsRuby プログラムの初期化は済んでいます。</p>
+
+<h4 id="現在使用中の目次を開く">現在使用中の目次を開く</h4>
+
+<p>langhelp は現在の major-mode で使用言語を決定します。
+ruby の目次から検索するためには、 ruby-mode にしてください。
+一般に major-mode の名前から -mode を抜いたのが言語名です。
+graphviz-dot-mode の言語名は graphviz-dot で、 ratpoisonrc-mode の言語名は ratpoisonrc です。</p>
+
+<p>まずは簡単な例からやってみましょう。
+配列の値の合計を計算したい場面で、 Enumerable#inject <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>の使い方がよくわからないとしましょう。
+デフォルトの langhelp 起動キーは C-c s ですが、好みに応じて変えて構いません。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>
+本稿ではデフォルトのままで説明します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> C-c s inject</code></pre></figure>
+
+<p>とさくっと打ってみましょう。
+langhelp のポイントは起動した瞬間に incremental search に入っていることです。
+これは、頭によぎった瞬間に検索できるようにするためです。
+この 2 つのリンクが見付かるはずです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # (lh-ri "Enumerable#inject")
+ # (lh-refe "Enumerable#inject")</code></pre></figure>
+
+<p>そして、リンクの行で Enter <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>か l を押せば内容を見ることができます。
+incremental search の終了と同時に見たいならば、 Enter をポンポン♪と 2 回叩けばいいでしょう。</p>
+
+<p>リンク先は別窓で表示されます。
+別窓のスクロールは c と v です。
+通常、 Emacs のスクロールは C-v なのでそれを連想する v と、その隣の c を割り当ててみました。
+ページャのように SPC と b を押したら目次がスクロールします。
+これは好みの問題なので、この挙動が気に入らない場合は config の @KEY_BINDING を書き換えて</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> M-x el4r-boot</code></pre></figure>
+
+<p>すれば反映されます。</p>
+
+<p>ReFe や ri の目次はクラス・モジュール順に配列しています。
+クラス名やモジュール名で検索すると、そのメソッドを一覧することができます。</p>
+
+<p>こうして ReFe と ri の双方のドキュメントを統一的な方法で見ることができました！！
+Ruby に限らずすべての言語で同様に調べることができるのです。</p>
+
+<h4 id="言語名の目次を開く">言語名の目次を開く</h4>
+
+<p>プログラミング中にふと他の言語・コマンドのドキュメントを見たいこともたまにあります。
+こういう場合、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> C-u C-c s</code></pre></figure>
+
+<p>を押してください。
+言語名がずらりと並んでいます。
+さきほどと同様に incremental search に入っているので、そこから見たい言語を検索・選択してください。</p>
+
+<p>langhelp のウィンドウになっている場合は d でも言語選択画面になります。</p>
+
+<h4 id="カーソル位置の単語を目次から検索">カーソル位置の単語を目次から検索</h4>
+
+<p>カーソル位置の単語を目次から検索することができます。
+この場合、目次のうち単語を含むもののみ表示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> C-u C-u C-c s</code></pre></figure>
+
+<p>あるいは</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> M-x langhelp-at-point</code></pre></figure>
+
+<p>としてください。キーに割り当ててもいいですね。</p>
+
+<h4 id="絞り込み検索">絞り込み検索</h4>
+
+<p>langhelp 検索中に候補を絞り込むこともできます。
+検索中に</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> C-o</code></pre></figure>
+
+<p>で目次のうち検索語を含むもののみ表示します。
+一覧されていて見易いし、さらに別の検索語で検索をかけることもできます。</p>
+
+<p>これはいろんなクラスで定義されているメソッドのドキュメントを探すのに適しています。</p>
+
+<h4 id="リファレンスマニュアル検索">リファレンスマニュアル検索</h4>
+
+<p>Ruby リファレンスマニュアルも目次に含まれています。
+emacs-w3m がインストールされている必要があります。</p>
+
+<p>たとえば組み込み変数について調べたい場合、 Migemo もインストールされていると、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> C-c s kumikomiHensuu</code></pre></figure>
+
+<p>でリファレンスマニュアルの総目次の組み込み変数リンクへ飛びます。</p>
+
+<h2 id="ドキュメント処理クラスリファレンス">ドキュメント処理クラスリファレンス</h2>
+
+<p>現在サポートしているドキュメント処理クラスを挙げます。
+一貫した仕様として、クラス名に対応するハッシュの値はドキュメントのファイル名 (かそれに準ずるもの) です。
+ファイル名中の ~ は展開されます。</p>
+
+<p>regexp パラメータを指定するドキュメント処理クラスがいくつかあります。
+正規表現にマッチした行を目次にするものです。</p>
+
+<p>title パラメータはドキュメントのタイトルを指定します。
+title はすべてのクラスで使えます。
+どのドキュメントを読んでいるのかがわかるので、 title は指定しておくべきです。</p>
+
+<p>動作確認には</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> mklanghelp --eval='ドキュメント定義'</code></pre></figure>
+
+<p>を使うと便利です。
+標準出力に目次が出力されます。</p>
+
+<h3 id="汎用のもの">汎用のもの</h3>
+
+<p>構造化された文書はこれらのクラスで処理できます。</p>
+
+<h4 id="info">Info</h4>
+
+<p>GNU Info 形式のドキュメントを処理します。
+サンプル設定ファイルにも Info クラスが多いです。
+GNU 標準なので当然といったら当然ですが。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Info</td>
+      <td>必須</td>
+      <td>Info ファイル。ワイルドカードも指定できます。</td>
+    </tr>
+    <tr>
+      <td>regexp</td>
+      <td> </td>
+      <td>正規表現にマッチする行を抜き出します。省略した場合は主要な情報のみ目次になります。</td>
+    </tr>
+    <tr>
+      <td>extract</td>
+      <td> </td>
+      <td>どの情報を目次として抜き出すかを配列で指定します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>extract に指定できるのは :node, :regexp, :section, :description です。
+それぞれノード、正規表現、見出し、定義リストを意味します。
+省略時はそれらすべてを目次にします。
+もし冗長すぎるならば、 extract パラメータを指定してください。</p>
+
+<h5 id="使用例">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Info =&gt; "/usr/share/info/elisp-ja*", :title=&gt;"EmacsLisp manual (Japanese)"}</code></pre></figure>
+
+<p>日本語版 EmacsLisp マニュアルを処理します。
+このようにファイルが複数に分かれているのでワイルドカードで指定しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> /usr/share/info/elisp-ja.gz
+ /usr/share/info/elisp-ja-1.gz
+ ...
+ /usr/share/info/elisp-ja-26.gz</code></pre></figure>
+
+<h4 id="grep">Grep</h4>
+
+<p>Plain Text のドキュメントで正規表現にマッチするものを目次にします。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Grep</td>
+      <td>必須</td>
+      <td>処理対象ファイル名。</td>
+    </tr>
+    <tr>
+      <td>regexp</td>
+      <td>必須</td>
+      <td>抜き出す正規表現。</td>
+    </tr>
+    <tr>
+      <td>exclude</td>
+      <td> </td>
+      <td>regexp にマッチしたもののうち除外するものを正規表現や文字列を要素とする配列で指定します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>旧来の定義 (src) も動作しますが、一貫性を保つために変更しました。</p>
+
+<h5 id="使用例-1">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Grep =&gt; "~/compile/narray-0.5.7/SPEC.ja", :regexp=&gt;/^(\S.|    \S)/,  :title=&gt;"NArray SPEC"},
+ {:Grep =&gt; "/usr/share/doc/apel/README.en.gz", :regexp=&gt;/^\*/, :title=&gt;"apel manual"},</code></pre></figure>
+
+<p>説明不要ですね。</p>
+
+<h4 id="manpage">Manpage</h4>
+
+<p>Unix 系 OS の man の目次を作成します。
+Manpage クラスは例外で Manpage パラメータの値はファイル名では_ありません_。</p>
+
+<p>Manpage クラスは 2 つの使い方があります。
+<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></p>
+
+<h5 id="単数の-man-を処理する場合">単数の man を処理する場合</h5>
+
+<p>単数の man を処理する場合は man の内容を読みます。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Manpage</td>
+      <td>必須</td>
+      <td>コマンド・項目名。</td>
+    </tr>
+    <tr>
+      <td>section</td>
+      <td>必須</td>
+      <td>セクション番号。</td>
+    </tr>
+    <tr>
+      <td>regexp</td>
+      <td> </td>
+      <td>抜き出す正規表現。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="セクション中すべての-man-を処理する場合">セクション中すべての man を処理する場合</h5>
+
+<p>C や Tcl の関数やシェルコマンドは 1 項目 1 manpage になっています。
+そういうものを処理します。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Manpage</td>
+      <td>必須</td>
+      <td>セクション番号の配列。</td>
+    </tr>
+    <tr>
+      <td>manpath</td>
+      <td>必須</td>
+      <td>man が格納されているディレクトリの配列。</td>
+    </tr>
+    <tr>
+      <td>glob</td>
+      <td> </td>
+      <td>処理するファイル名をワイルドカードで指定。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="使用例-2">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Manpage=&gt;"sgrep", :section=&gt;1, :regexp=&gt;/^       v\(/, :title=&gt;"manpage"},</code></pre></figure>
+
+<p>コマンド sgrep の man を処理する例です。
+通常のコマンドなのでセクションは 1 です。
+sgrep の言語仕様はこのように v(〜) という形で書かれているので、正規表現で抜き出しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">      v(phrase):=
+      v('start'):=
+      v('end'):=
+      ...</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Manpage =&gt; [1,5,6,7,8], :manpath=&gt;manpath, :title=&gt;"Manpages" },</code></pre></figure>
+
+<p>シェルコマンドや設定ファイルの仕様などがセクション 1、5、6、7、8 に含まれています。</p>
+
+<p>manpath は config の初めの方に定義されているローカル変数です。
+<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> manpath = %w[ /usr/share/man/ /usr/local/man/ /usr/local/share/man /usr/X11R6/man ]</code></pre></figure>
+
+<p>環境に応じて manpath の定義を書き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Manpage =&gt; [2,3], :manpath=&gt;manpath, :title=&gt;"Manpages"},</code></pre></figure>
+
+<p>C の関数などがセクション 2、3 に含まれています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Manpage =&gt; [3], :manpath=&gt;manpath, :glob=&gt;"*.3tcl*", :title=&gt;"Tcl Manpages"},</code></pre></figure>
+
+<p>Tcl のコマンドはセクション 3 でファイル名に .3tcl を含んでいます。</p>
+
+<h3 id="html-を処理するもの">HTML を処理するもの</h3>
+
+<p>ブラウザで見られるよう HTML でドキュメントが配布されていることも多いです。
+HTML ドキュメントは構成が多種多様なので臨機応変にクラスを使い分ける必要があります。</p>
+
+<h4 id="w3mlink">W3MLink</h4>
+
+<p>HTML ファイルへのハイパーリンクのみを作成します。
+HTML の内容は読みに行きません。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>W3MLink</td>
+      <td>必須</td>
+      <td>リンクする HTML ファイル。</td>
+    </tr>
+    <tr>
+      <td>label</td>
+      <td> </td>
+      <td>リンクの名前。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="使用例-3">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:W3MLink =&gt; "/usr/share/doc/stl-manual/html/index.html", :label=&gt;"STL Guide", :title=&gt;"Useful links"}</code></pre></figure>
+
+<p>このドキュメント定義は次のハイパーリンクを作成します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # STL Guide   (lh-w3m nil "/usr/share/doc/stl-manual/html/index.html")</code></pre></figure>
+
+<h4 id="html">HTML</h4>
+
+<p>論理構造でマークアップされた HTML を処理するクラスです。
+見出し (H1 〜 H6) と用語定義 (DT の内容) を目次にします。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HTML</td>
+      <td>必須</td>
+      <td>処理する HTML ファイル。ワイルドカード可。</td>
+    </tr>
+    <tr>
+      <td>noconv</td>
+      <td> </td>
+      <td>true ならば文字コード変換を無効にします。</td>
+    </tr>
+    <tr>
+      <td>recursive</td>
+      <td> </td>
+      <td>:next を指定すると LINK 要素で指定された次の HTML を見に行きます。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="使用例-4">使用例</h5>
+
+<p>かなり多いです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:HTML =&gt; "~/doc/srfi-*.html", :title=&gt;"SRFI"},
+ {:HTML=&gt;"~/.langhelp/subversion.bluegate.org/doc/pr01.html", :recursive=&gt;:next, :title=&gt;"subversion book (Japanese)"}</code></pre></figure>
+
+<h4 id="w3mgrep">W3MGrep</h4>
+
+<p>HTML を w3m -dump したもので正規表現にマッチしたものを目次にします。
+w3m -dump したものを扱う以外、 Grep クラスと同じです。</p>
+
+<p>HTML クラスが構造指向、 W3MGrep クラスが見た目指向です。
+mklanghelp –eval で試行錯誤してみるといいでしょう。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>W3MGrep</td>
+      <td>必須</td>
+      <td>処理する HTML ファイル。</td>
+    </tr>
+    <tr>
+      <td>regexp</td>
+      <td>必須</td>
+      <td>抜き出す正規表現。</td>
+    </tr>
+    <tr>
+      <td>exclude</td>
+      <td> </td>
+      <td>regexp にマッチしたもののうち除外するものを正規表現や文字列を要素とする配列で指定します。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="使用例-5">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:W3MGrep =&gt; "/usr/share/doc/graphviz/html/info/attrs.html", :regexp=&gt;/^\w+$/, :title=&gt;"Graph Attributes"}</code></pre></figure>
+
+<p>このファイルは HTML クラスでも処理できますが、筆者の好みで W3MGrep を使っています。</p>
+
+<h4 id="w3mextractlinks">W3MExtractLinks</h4>
+
+<p>HTML 内のリンクを目次にします。
+目次ページを処理するのに適しています。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>W3MExtractLinks</td>
+      <td>必須</td>
+      <td>処理する HTML ファイル。</td>
+    </tr>
+    <tr>
+      <td>exclude_label</td>
+      <td> </td>
+      <td>抜き出さないリンク名 (の配列)</td>
+    </tr>
+    <tr>
+      <td>exclude_url</td>
+      <td> </td>
+      <td>抜き出さない URL (の配列)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>exclude_url, exclude_url は単一の文字列・正規表現か、複数の場合はそれらの配列を指定します。
+目次ページを処理するときでも、ヘッダ・フッタなど余計なものがついてくるのでそれらで除外しておくといいです。</p>
+
+<h5 id="使用例-6">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:W3MExtractLinks =&gt; "/usr/share/doc/stl-manual/html/stl_index.html", :title=&gt;"STL index", :exclude_url=&gt;[/www.sgi.com/, /index.html/]}</code></pre></figure>
+
+<p>C++ の STL マニュアルです。
+Debian パッケージとして配布されています。
+その中でフッタに個々のマニュアルへのリンク以外のもの (会社のページなど) がついているので、除去しています。</p>
+
+<h3 id="検索コマンドを呼び出すもの">検索コマンドを呼び出すもの</h3>
+
+<p>ドキュメントそのものだけでなく、専用の検索コマンドが用意されていることもあります。
+Emacs 上で検索コマンドを実行して、その結果を別窓に表示します。
+クラスの仕様は共通です。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>クラス名</td>
+      <td>必須</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>cmd</td>
+      <td> </td>
+      <td>実行するコマンド</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>クラス名に対応するハッシュの値は必ず true になります。
+それは、検索コマンドを使用することを意味します。
+cmd を指定しない場合、クラス名を小文字にしたものが検索コマンド名となります。</p>
+
+<h4 id="refe-refec-ri-luahelp-">Refe, RefeC, Ri, LuaHelp …</h4>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Refe =&gt; true, :cmd=&gt;"refe", :title=&gt;"ReFe (Japanese)"},</code></pre></figure>
+
+<p>Refe クラスは、 ReFe でドキュメントを検索します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:RefeC =&gt; true, :cmd=&gt;"refe -e", :title=&gt;"Ruby/C API (Japanese)"},</code></pre></figure>
+
+<p>RefeC クラスは、 Ruby/C API を ReFe で検索します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Ri =&gt; true, :title=&gt;"RI"},</code></pre></figure>
+
+<p>Ri クラスは、 ri でドキュメントを検索します。</p>
+
+<h3 id="ruby-に特化したもの">Ruby に特化したもの</h3>
+
+<h4 id="rubyrefm">RubyRefm</h4>
+
+<p><a href="http://elbereth-hp.hp.infoseek.co.jp/files/ruby/refm/temp/list.html">Ruby リファレンスマニュアル分割 HTML</a> の総目次を取り込みます。</p>
+
+<p>デフォルトのままの設定で使いたいならば、 ~/doc/rubyrefm 上でアーカイブを展開してください。
+サブディレクトリを作らずにファイルを蒔き散らすのであらかじめディレクトリを作っておくのが肝心です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> mkdir -p ~/doc/rubyrefm
+ wget -O- http://elbereth-hp.hp.infoseek.co.jp/files/ruby/refm/temp/ruby-refm-rdp-1.9.0-ja-html.tar.gz | tar xzf -</code></pre></figure>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RubyRefm</td>
+      <td>必須</td>
+      <td>リファレンスマニュアルを置いているディレクトリ</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>RubyRefm には総目次のファイル名そのものも指定できますが、リファレンスマニュアルを更新したときには変化してるのでおすすめできません。
+ディレクトリを指定すれば、自動的に総目次を探してくれます。</p>
+
+<h5 id="使用例-7">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:RubyRefm =&gt; "~/doc/rubyrefm/", :title=&gt;"Ruby Reference Manual (Japanese)"}</code></pre></figure>
+
+<p>説明不要ですね。</p>
+
+<h4 id="moonwolfrubydoc">MoonWolfRubyDoc</h4>
+
+<p><a href="http://www.moonwolf.com/">MoonWolf</a> 氏考案の <a href="http://www.moonwolf.com/ruby/rubydoc/">RubyDoc</a> 仕様のうち <a href="http://www.moonwolf.com/ruby/rubydoc/html.html">RubyDoc/HTML</a>を扱います。
+しかし、その中では任意の HTML が書けてしまうので彼が書いた形式のみ動作します。
+あらかじめ <a href="http://www.moonwolf.com/ruby/archive/rubydoctool_20000926.zip">rubydoctool</a> で HTML に変換してから使ってください。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MoonWolfRubyDoc</td>
+      <td>必須</td>
+      <td>rubydoctool により変換された HTML ファイル名</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="使用例-8">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:MoonWolfRubyDoc =&gt; "~/ruby/htmlsplit.html", :title=&gt;"HTMLSplit (Japanese)"}</code></pre></figure>
+
+<p>~/ruby/htmlsplit.rb をあらかじめ rubydoctool で HTML を出力したものをファイル名に指定しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> cd ~/ruby; ruby rb2h.rb htmlsplit.rb htmlsplit.html</code></pre></figure>
+
+<h4 id="rd">RD</h4>
+
+<p>Ruby の伝統的なドキュメントフォーマット RD を扱います。
+書きやすく読みやすい<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>ので、筆者も含めドキュメントや日記やメモを書くのに RD を活用している人は多いと思います。
+HeadLine や DescList や MethodList を目次にします。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>パラメータ</th>
+      <th>必須</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RD</td>
+      <td>必須</td>
+      <td>RD ファイル名。</td>
+    </tr>
+    <tr>
+      <td>exclude</td>
+      <td> </td>
+      <td>抜き出さない行や正規表現の配列。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="使用例-9">使用例</h5>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:RD =&gt; "~/compile/sys-proctable-0.6.4/doc/linux.rd", :title=&gt;"ProcTable"}</code></pre></figure>
+
+<h3 id="他言語に特化したもの">他言語に特化したもの</h3>
+
+<p>Ruby 以外の言語に特化したクラスも存在します。</p>
+
+<p>Perl 用クラスには PodSections, PerlFunc, PerlDoc があります。
+どれも perldoc コマンドを使用するクラスです。</p>
+
+<p>Lua 用クラスには LuaHelp があります。
+LuaHelp は Lua のマニュアルを luahelp コマンドで検索するクラスです。
+LuaHelp は検索コマンドを使用する最も簡単な目次作成クラスなので、参考になると思います。</p>
+
+<p>PHP 用クラスには PHPManual があります。
+マニュアル中の膨大なファイルをワイルドカードで区別しています。</p>
+
+<p>Python 用クラスには PythonLib があります。</p>
+
+<h2 id="ハイパーリンク関数リファレンス">ハイパーリンク関数リファレンス</h2>
+
+<p>目次ファイルの行末に書かれているのが S 式ハイパーリンクです。
+その行がハイパーリンクであることを明示するため、S 式には色がついています。
+厳密には lh- で始まる行末の式のみ色がつきます。</p>
+
+<p>ハイパーリンク関数はどれも情報源を別窓に表示します。
+情報源はファイルだったり、manpage だったり、シェルコマンドの実行結果だったり、様々です。
+そういう詳細は関数内部に隠しています。</p>
+
+<p>また、時間とメモリの節約のためすでに開いたバッファは再利用されます。
+とくに man や emacs-w3m で開くのは時間がかかります。
+それに毎回新しいバッファを作成していてはすぐに大量のバッファに埋め尽くされてしまいます。</p>
+
+<p>引数 LINE が文字列で指定されている場合、バッファの先頭から LINE を検索し、見付かった行をウィンドウ最上部にして表示します。
+つまり、「ここから読んでほしい」という意思表示です。</p>
+
+<p>アンカーとは、&lt;&lt;&lt; と &gt;&gt;&gt; で囲まれた文字列です。
+ドキュメント定義で title を指定した文字列が目次のアンカーになっていることに気付くでしょう。
+引数 ANCHOR を取る関数は、アンカーを検索し、ウィンドウ最上部に表示します。
+末尾に「#文字列」がついている URL をブラウザで開くとページの途中から表示されますが、それと似ています。
+もちろんアンカーのかわりに LINE を取る関数に「&lt;&lt;&lt;アンカー文字列&gt;&gt;&gt;」を指定してもうまくいきますが、それだとカッコ悪いですね。</p>
+
+<h3 id="lh-language-index-lang">(lh-language-index LANG)</h3>
+
+<p>言語 LANG の目次を開きます。
+C-u C-c s で全言語の目次を開いたときにずらりと並びます。
+現在のところ全言語の目次以外に使っていませんが、関連言語を開くのに便利でしょう。</p>
+
+<h3 id="lh-sh-command-optional-line">(lh-sh COMMAND &amp;optional LINE)</h3>
+
+<p>シェルコマンド COMMAND の実行結果を表示します。</p>
+
+<h3 id="lh-file-line-filename">(lh-file LINE FILENAME)</h3>
+
+<p>ファイル FILENAME を開きます。</p>
+
+<h3 id="lh-view-line-filename">(lh-view LINE FILENAME)</h3>
+
+<p>ファイル FILENAME を view-mode で開きます。
+<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup></p>
+
+<h3 id="lh-anchor-anchor-filename">(lh-anchor ANCHOR FILENAME)</h3>
+
+<p>ファイルを開き、アンカーへ飛びます。</p>
+
+<h3 id="lh-man-manpage">(lh-man MANPAGE)</h3>
+
+<h3 id="lh-man-line-manpage">(lh-man* LINE MANPAGE)</h3>
+
+<p>MANPAGE を開きます。</p>
+
+<h3 id="lh-info-line-book">(lh-info LINE BOOK)</h3>
+
+<p>info を開きます。
+BOOK とは「(info名)ノード名」のことです。</p>
+
+<h3 id="lh-to-anchor">(lh-to ANCHOR)</h3>
+
+<p>目次内のアンカーへ飛びます。</p>
+
+<h3 id="lh-w3m-line-filename">(lh-w3m LINE FILENAME)</h3>
+
+<p>emacs-w3m で FILENAME を開きます。</p>
+
+<h3 id="lh-refe-meth">(lh-refe METH)</h3>
+
+<h3 id="lh-ri-meth">(lh-ri METH)</h3>
+
+<p>refe, ri コマンドを実行してメソッドのドキュメントを表示します。</p>
+
+<h3 id="lh-sexp">(lh SEXP)</h3>
+
+<p>SEXP を評価するだけです。
+これは明示的に色付けをするためだけに使います。
+<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></p>
+
+<h3 id="lh-ow-sexp">(lh-ow SEXP)</h3>
+
+<p>SEXP を評価すると同じウィンドウが選択されてしまう式を評価するのに使います。
+実用性のない例ですが</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (shell)</code></pre></figure>
+
+<p>は <em>shell</em> バッファが選択されます。一方</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (lh-ow (shell))</code></pre></figure>
+
+<p>は <em>shell</em> バッファが別窓に出てきます。</p>
+
+<p>ow は other window の略です。</p>
+
+<h2 id="実装の詳細">実装の詳細</h2>
+
+<p>langhelp は目次作成スクリプト mklanghelp と、Emacs をコントロールする EmacsRuby スクリプト langhelp.rb の 2 つで構成されています。</p>
+
+<p>設定ファイルは両者で共有します。
+適用場所こそ違うものの、どちらも Ruby スクリプトだからこそ可能なのです。</p>
+
+<h3 id="新たな目次作成クラスの書き方">新たな目次作成クラスの書き方</h3>
+
+<p>目次作成クラスはどれも AbstractIndex を継承しています。
+新たな目次作成クラスを作成するときは、 AbstractIndex かそのサブクラスを継承しましょう。
+ユーザ定義目次作成クラスは ~/.langhelp/mklanghelp-init.rb に書いてください。</p>
+
+<h4 id="initx">init(x={})</h4>
+
+<p>クラスの初期化には init メソッドが使われます。
+initialize ではないことに注意してください。
+ちなみに initialize では目次作成クラス共通の初期化をして最後に init を呼んでいます。
+init の引数には「ドキュメント定義」が Hash で渡ります。
+慣習上ドキュメント定義は x という変数名を使っています。
+<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>
+init では目次作成処理のために必要なインスタンス変数の定義をします。
+実際の目次作成処理は書いてはいけません。</p>
+
+<p>さて、ドキュメント定義の「(字面上) 最初」のキーはクラス名だったことを思い出してください。
+クラス名に対応するハッシュの値を取り出すには</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> x[self.class.to_s.intern]</code></pre></figure>
+
+<p>と書けますが、長いしかっこ悪いので</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> arg1</code></pre></figure>
+
+<p>というアクセサを設けました。
+(くどいですがあくまで字面上) 最初の引数という意味です。</p>
+
+<p>使えるアクセサをまとめておきます。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>arg1</td>
+      <td>最初の引数。処理される主体 (ファイル名など) が入る。</td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>ドキュメント定義で :title に指定されたもの。</td>
+    </tr>
+    <tr>
+      <td>conf</td>
+      <td>config を Hash のようにアクセスできる。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>必要な情報をインスタンス変数に取り出した後、ファイル名を normalize します。
+ドキュメント定義ではホームディレクトリの ~ をファイル名に含めることができます。
+「ドキュメント定義言語」はドメイン特化言語なので_人間にやさしく_なくてはなりません。
+この段階で File.expand_path しておきます。
+<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>
+簡単のため、normalize_filename! メソッドを用意しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> normalize_filename! 変数, [変数...]</code></pre></figure>
+
+<p>と使います。
+もちろんファイル名を格納しているインスタンス変数を指定するのです。
+破壊的に更新されます。</p>
+
+<p>また、ドキュメント定義中配列が指定できるパラメータがありますが、1 要素の場合は配列ではなくてそのまま指定できます。
+これも同じく「人間にやさしく」という理由です。
+そのため配列を指定するパラメータについては mkarray メソッドで明示的に配列化してください。</p>
+
+<p>init がやるのはあくまでここまでです。
+言い換えると init は「ドキュメント定義」を解釈するメソッドです。</p>
+
+<h4 id="to_eio">to_e(io)</h4>
+
+<p>サブクラスで定義するもうひとつのメソッドが to_e です。
+このメソッドで実際に目次を書き出します。
+e というのは目次ファイルの拡張子 e だと思ってください。
+引数の io は出力のための IO オブジェクトかそれと同じインターフェースを持つオブジェクトです。
+おおまかな構造はこんな感じになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 目次オブジェクトの配列.each do |目次オブジェクト|
+   io &lt;&lt; 目次オブジェクトから S 式ハイパーリンクに変換した文字列
+ end</code></pre></figure>
+
+<p>ここの部分も抽象化してしまうと、かえってわかりにくくなると判断したため、to_e をサブクラスで再定義させました。
+目次オブジェクトの配列はサブクラスでメソッドに切り分けていることが多いです。</p>
+
+<p>それぞれのクラスの to_e メソッドを参考にしてください。</p>
+
+<h4 id="ユーティリティメソッド">ユーティリティメソッド</h4>
+
+<p>目次作成クラスを書くときに、これらのメソッドを使ってください。</p>
+
+<h5 id="normalize_filenamevariables">normalize_filename!(*variables)</h5>
+
+<p>変数に格納されているファイル名を破壊的に normalize します。
+現時点では File.expand_path したものに置き換えるだけです。</p>
+
+<h5 id="mkarrayobj">mkarray(obj)</h5>
+
+<p>obj が配列ならばそのまま、配列以外ならば obj のみを要素とする配列を返します。
+Object#to_a とほぼ同じです。
+<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>
+配列が指定できるパラメータに使用してください。</p>
+
+<h5 id="kconvblock">kconv(&amp;block)</h5>
+
+<p>ブロック評価結果の文字コードを config の @ENCODING に応じて統一します。
+ドキュメントにどの文字コードが使われていても、目次内では統一する必要があります。
+さもないと文字化けが起きてしまいます。</p>
+
+<p>なお、Emacs は自動で文字コードを判別してくれるので、目次とドキュメントの文字コードが異なっても大丈夫です。</p>
+
+<h3 id="検索コマンドを実行するハイパーリンク関数の書き方">検索コマンドを実行するハイパーリンク関数の書き方</h3>
+
+<p>検索コマンドを使う場合はドキュメント定義を書くだけで自動的にハイパーリンク関数が定義されます。
+ドキュメント定義にてクラス名に対応するハッシュの値を true にします。
+config は mklanghelp 側でも EmacsRuby 側でも読み込まれます。
+<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup></p>
+
+<p>ハイパーリンク関数は次の仕様を満たしています。</p>
+
+<ul>
+  <li>コマンドを実行して結果を表示します。</li>
+  <li>定義される関数名は “lh-#{クラス名.downcase}” です。</li>
+  <li>cmd パラメータは実行するコマンドを定義します。</li>
+  <li>cmd パラメータが定義されていない場合は「クラス名.downcase」になります。</li>
+  <li>コマンドの引数は関数の引数です。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:Refe =&gt; true, :title=&gt;"ReFe (Japanese)"}</code></pre></figure>
+
+<p>このドキュメント定義から、refe コマンドを実行する lh-refe 関数が定義されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> {:RefeC =&gt; true, :cmd=&gt;"refe -e", :title=&gt;"Ruby/C API (Japanese)"}</code></pre></figure>
+
+<p>このドキュメント定義から、refe -e コマンドを実行する lh-refec 関数が定義されます。</p>
+
+<p>なお、 Ri for (X)Emacs がインストールされている場合、それで定義された
+ri 関数を利用するように lh-ri 関数を override しています。
+ちょっとしたトリックなので詳しくは langhelp.rb の LangHelp::FindXXX クラスを見てください。</p>
+
+<p>もちろんこういうクラスでも to_e メソッドを定義しなくてはいけません。
+一番単純な例は他言語ですが langhelp/lh_lua.rb です。</p>
+
+<h2 id="質問は随時受付中">質問は随時受付中</h2>
+
+<p>設定ファイルは煩雑なので、</p>
+
+<ul>
+  <li>うまく設定できない</li>
+  <li>動かない</li>
+</ul>
+
+<p>などの質問はいつも受け付けています。
+また、 config.sample に書かれていないファイルの設定例も大募集です。
+動作確認次第、次期リリースに反映させます。
+みなさんの力で langhelp を育てていきましょう。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>一風変わった汎用ドキュメント検索ツール langhelp を紹介しました。
+ドキュメントを素早く参照することで、みなさんの生産力が向上すれば作者として最高の喜びです。</p>
+
+<h2 id="著者紹介">著者紹介</h2>
+
+<p>rubikitch</p>
+
+<p>Emacs と CUI をこよなく愛する rubyist です。
+Ruby 歴は8年で、 Debian GNU/Linux を10年ほど使っています。
+ratpoison, GNU Screen, GNU eev, conkeror などのキーボード指向のプログラムを愛用しています。</p>
+
+<p>Ruby や Emacs の雑誌記事・書籍を執筆します。
+rubikitch at ruby-lang dot org までお気軽に御連絡ください。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>EmacsRuby の実用的なサンプルという目的もあります.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>inject は慣れるまでけっこう曲者です。今は筆者の大好きなメソッドのひとつ。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>筆者は C-@ C-s にしています。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>当然 C-m でもよい。筆者は C-m 派。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>いい名前が思い付かなかったため、パラメータの有無で動作制御しています。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>%w 記法は空白を含まない文字列の配列です。空白で区切ります。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>しかし Inline が入ると読み辛い。筆者もめったに Inline は使わない。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>筆者は view-mode を多用します。 view-mode では w3m に似たキー割り当てをしています。そのため閲覧のみの場合は指に負担をかけずにすみます。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>「(lh」という文字列で始まり行末までを色付けする仕組みから。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>短いから。数学の関数 f(x) の入力である x というイメージ。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>将来ほかのファイル名拡張記法を用意するかもしれない。その場合も normalize で展開しておくだろう。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>あえて用意しているのは、Object#to_a は obsolete だから。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>DRY 原則遵守。&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>エンドツーエンドテストの自動化は Cucumber から Turnip へ</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0042/0042-FromCucumberToTurnip.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>エンドツーエンドテストの自動化は Cucumber から Turnip へ</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0042/0042-FromCucumberToTurnip.html" class="hatena-bookmark-button" data-hatena-bookmark-title="エンドツーエンドテストの自動化は Cucumber から Turnip へ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0042/0042-FromCucumberToTurnip.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0042/0042-FromCucumberToTurnip.html" data-text="エンドツーエンドテストの自動化は Cucumber から Turnip へ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#テストについてのおさらい" id="markdown-toc-テストについてのおさらい">テストについてのおさらい</a>    <ul>
+      <li><a href="#テストの種類" id="markdown-toc-テストの種類">テストの種類</a>        <ul>
+          <li><a href="#内部テストと外部テスト" id="markdown-toc-内部テストと外部テスト">内部テストと外部テスト</a>            <ul>
+              <li><a href="#内部テスト" id="markdown-toc-内部テスト">内部テスト</a></li>
+              <li><a href="#外部テスト" id="markdown-toc-外部テスト">外部テスト</a></li>
+            </ul>
+          </li>
+          <li><a href="#テストファーストとテストラスト" id="markdown-toc-テストファーストとテストラスト">テストファーストとテストラスト</a>            <ul>
+              <li><a href="#テストファースト" id="markdown-toc-テストファースト">テストファースト</a></li>
+              <li><a href="#テストラスト" id="markdown-toc-テストラスト">テストラスト</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#テストツールの進化変遷" id="markdown-toc-テストツールの進化変遷">テストツールの進化・変遷</a>        <ul>
+          <li><a href="#web-周りテストツールの変遷" id="markdown-toc-web-周りテストツールの変遷">Web 周りテストツールの変遷</a></li>
+          <li><a href="#テストツールもベタからメタへ" id="markdown-toc-テストツールもベタからメタへ">テストツールもベタからメタへ</a>            <ul>
+              <li><a href="#第一世代testunit" id="markdown-toc-第一世代testunit">第一世代：Test::Unit</a></li>
+              <li><a href="#第二世代-rspec" id="markdown-toc-第二世代-rspec">第二世代： RSpec</a></li>
+              <li><a href="#第三世代-gherkin-cucumberturnip" id="markdown-toc-第三世代-gherkin-cucumberturnip">第三世代： Gherkin (Cucumber/Turnip)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#実装者側と利用者側の接点" id="markdown-toc-実装者側と利用者側の接点">実装者側と利用者側の接点</a></li>
+    </ul>
+  </li>
+  <li><a href="#エンドツーエンドテストツールとしての-cucumber" id="markdown-toc-エンドツーエンドテストツールとしての-cucumber">エンドツーエンドテストツールとしての Cucumber</a>    <ul>
+      <li><a href="#継続的インテグレーションツールの普及とエンドツーエンドテストの需要の高まり" id="markdown-toc-継続的インテグレーションツールの普及とエンドツーエンドテストの需要の高まり">継続的インテグレーションツールの普及とエンドツーエンドテストの需要の高まり</a></li>
+      <li><a href="#エンドツーエンドテストツールとしての-cucumber-のメリット" id="markdown-toc-エンドツーエンドテストツールとしての-cucumber-のメリット">エンドツーエンドテストツールとしての Cucumber のメリット</a></li>
+      <li><a href="#なぜ-cucumber-がそれほど普及していないのか" id="markdown-toc-なぜ-cucumber-がそれほど普及していないのか">なぜ Cucumber がそれほど普及していないのか</a></li>
+    </ul>
+  </li>
+  <li><a href="#cucumber-から-turnip-へ" id="markdown-toc-cucumber-から-turnip-へ">Cucumber から Turnip へ</a>    <ul>
+      <li><a href="#turnip-とは" id="markdown-toc-turnip-とは">Turnip とは</a></li>
+      <li><a href="#turnip-の作者" id="markdown-toc-turnip-の作者">Turnip の作者</a></li>
+      <li><a href="#cucumber-から-turnip-で改善された点" id="markdown-toc-cucumber-から-turnip-で改善された点">Cucumber から Turnip で改善された点</a></li>
+    </ul>
+  </li>
+  <li><a href="#turnip-まわりで使われるテスト自動化の為のツール" id="markdown-toc-turnip-まわりで使われるテスト自動化の為のツール">Turnip まわりで使われるテスト自動化の為のツール</a>    <ul>
+      <li><a href="#メインツール" id="markdown-toc-メインツール">メインツール</a>        <ul>
+          <li><a href="#rspec" id="markdown-toc-rspec">RSpec</a></li>
+          <li><a href="#gherkin" id="markdown-toc-gherkin">Gherkin</a></li>
+          <li><a href="#capybara" id="markdown-toc-capybara">Capybara</a></li>
+          <li><a href="#capybara-webkit" id="markdown-toc-capybara-webkit">capybara-webkit</a></li>
+          <li><a href="#selenium" id="markdown-toc-selenium">selenium</a></li>
+        </ul>
+      </li>
+      <li><a href="#ci-ツール" id="markdown-toc-ci-ツール">CI ツール</a>        <ul>
+          <li><a href="#jenkins" id="markdown-toc-jenkins">Jenkins</a></li>
+        </ul>
+      </li>
+      <li><a href="#周辺ツール" id="markdown-toc-周辺ツール">周辺ツール</a>        <ul>
+          <li><a href="#spork" id="markdown-toc-spork">Spork</a></li>
+          <li><a href="#spring" id="markdown-toc-spring">Spring</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#turnip-入門" id="markdown-toc-turnip-入門">Turnip 入門</a>    <ul>
+      <li><a href="#turnip-本家" id="markdown-toc-turnip-本家">Turnip 本家</a></li>
+      <li><a href="#rspec-準備" id="markdown-toc-rspec-準備">RSpec 準備</a></li>
+      <li><a href="#turnip-インストール" id="markdown-toc-turnip-インストール">Turnip インストール</a></li>
+      <li><a href="#turnip-テストコンテンツ配置場所" id="markdown-toc-turnip-テストコンテンツ配置場所">Turnip テストコンテンツ配置場所</a></li>
+      <li><a href="#steps-ファイルの配置場所の指定" id="markdown-toc-steps-ファイルの配置場所の指定">steps ファイルの配置場所の指定</a></li>
+      <li><a href="#turnip-実行" id="markdown-toc-turnip-実行">Turnip 実行</a></li>
+    </ul>
+  </li>
+  <li><a href="#turnip-のテスト実装" id="markdown-toc-turnip-のテスト実装">Turnip のテスト実装</a>    <ul>
+      <li><a href="#feature-ファイルの作成" id="markdown-toc-feature-ファイルの作成">feature ファイルの作成</a>        <ul>
+          <li><a href="#機能-feature" id="markdown-toc-機能-feature">機能 (feature)</a></li>
+          <li><a href="#ストーリー-story" id="markdown-toc-ストーリー-story">ストーリー (story)</a></li>
+          <li><a href="#シナリオ-scenario" id="markdown-toc-シナリオ-scenario">シナリオ (scenario)</a></li>
+          <li><a href="#ステップ-step" id="markdown-toc-ステップ-step">ステップ (step)</a></li>
+          <li><a href="#feature-ファイルサンプル" id="markdown-toc-feature-ファイルサンプル">feature ファイルサンプル</a></li>
+        </ul>
+      </li>
+      <li><a href="#step-定義ファイルの作成" id="markdown-toc-step-定義ファイルの作成">step 定義ファイルの作成</a></li>
+      <li><a href="#ステップ記述サンプル" id="markdown-toc-ステップ記述サンプル">ステップ記述サンプル</a></li>
+    </ul>
+  </li>
+  <li><a href="#リモートアクセス" id="markdown-toc-リモートアクセス">リモートアクセス</a></li>
+  <li><a href="#ステップ実装-tips" id="markdown-toc-ステップ実装-tips">ステップ実装 Tips</a>    <ul>
+      <li><a href="#div-の-class-で絞り込む方法" id="markdown-toc-div-の-class-で絞り込む方法">div の class で絞り込む方法</a></li>
+      <li><a href="#同一文言が複数存在する場合に-xpath-を使って特定する方法" id="markdown-toc-同一文言が複数存在する場合に-xpath-を使って特定する方法">同一文言が複数存在する場合に XPath を使って特定する方法</a></li>
+      <li><a href="#javascript-の-confirm-box-の文言チェック" id="markdown-toc-javascript-の-confirm-box-の文言チェック">JavaScript の confirm box の文言チェック</a></li>
+      <li><a href="#ブラウザドライバjavascript-ドライバの切換え" id="markdown-toc-ブラウザドライバjavascript-ドライバの切換え">ブラウザドライバ/JavaScript ドライバの切換え</a></li>
+    </ul>
+  </li>
+  <li><a href="#補足" id="markdown-toc-補足">補足</a>    <ul>
+      <li><a href="#capybara-情報" id="markdown-toc-capybara-情報">Capybara 情報</a></li>
+      <li><a href="#step-予約語" id="markdown-toc-step-予約語">step 予約語</a>        <ul>
+          <li><a href="#ステップ予約語と英語表記と役割" id="markdown-toc-ステップ予約語と英語表記と役割">ステップ予約語と英語表記と役割</a></li>
+          <li><a href="#コラム-前提もしならばの使い分け" id="markdown-toc-コラム-前提もしならばの使い分け">コラム: 「前提」「もし」「ならば」の使い分け</a></li>
+        </ul>
+      </li>
+      <li><a href="#webkit-の賞味期限" id="markdown-toc-webkit-の賞味期限">Webkit の賞味期限</a></li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a>    <ul>
+      <li><a href="#福井修-ir3" id="markdown-toc-福井修-ir3">福井修 (<a href="https://twitter.com/iR3">@iR3</a>)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>書いた人: 福井 修 (<a href="https://github.com/ir3">ir3</a>)</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>皆さん、テストしていますか？　<a href="http://cukes.info/">Cucumber</a> は使っていますか？　<a href="http://rspec.info/">RSpec</a> は？　テストなんか書いてない派ですか？　<a href="http://test-unit.rubyforge.org/index.html.ja">Test::Unit</a> 派ですか？　あるいは <a href="http://doc.ruby-lang.org/ja/2.0.0/library/minitest=2funit.html">minitest</a> ばりばりですか？</p>
+
+<p>もちろんテストなしのリリースは有り得ませんので、何らかの方法でテストを実施されていることでしょう。</p>
+
+<p>TDD/BDD といった、テストを仕様・ふるまい記述手段として利用する「テストファースト」で開発を進める方式が浸透してきていますが、全てがその方式で開発される訳ではありません。</p>
+
+<p>この記事では、「テストファースト」にこだわらず、「テストラスト」でもエンドツーエンドテスト自動化 (内部詳細構造に立ち入らず、外部インターフェースにて挙動を確認する) を進める際に有利に使える便利なツール「<a href="https://github.com/jnicklas/turnip">Turnip</a>」を紹介します。</p>
+
+<h2 id="テストについてのおさらい">テストについてのおさらい</h2>
+
+<p>Turnip の解説に入る前に、「テストとは何か」ということを簡単におさらいしておきたいと思います。</p>
+
+<h3 id="テストの種類">テストの種類</h3>
+
+<p>Ruby の世界で『テスト』というとユニットテストの自動化の話が中心になりがちですが、それは広大なテストの世界の一部でしかありません。たとえば、システム構築の世界でよく言われる「単体テスト」「結合テスト」「総合テスト」という考え方があります。</p>
+
+<ul>
+  <li>単体テスト (Unit Test)</li>
+  <li>結合テスト (Integration Test)<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></li>
+  <li>総合テスト (General Test)<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></li>
+</ul>
+
+<p>テスト屋さんの世界では、次のように分類し各種テストや評価を実施する整理もあります。</p>
+
+<ol>
+  <li>機能テスト</li>
+  <li>境界値テスト</li>
+  <li>レアケーステスト</li>
+  <li>セキュリティ検証</li>
+  <li>性能評価</li>
+  <li>可用性評価</li>
+  <li>データ保全性評価</li>
+</ol>
+
+<p>そこにはあまり立ち入らないでざっと大きく分けると、「内部テスト」と「外部テスト」ということになります。</p>
+
+<h4 id="内部テストと外部テスト">内部テストと外部テスト</h4>
+
+<p>テストを内部テストと外部テストという観点で整理してみます。内部テストは実装者だけの世界、外部テストは実装者以外でもできる世界です。</p>
+
+<h5 id="内部テスト">内部テスト</h5>
+
+<p>内部テストはいわゆる「ホワイトボックステスト」で、プログラマが意図したとおりにプログラムが動作することを確認するテストのことです。具体的には、プログラマが変数の値を変えながらコードを直接実行して、期待する結果が得られるかどうかを検証していくことになります。</p>
+
+<p>たとえばゲームプログラミングであれば、「キャラクターの経験値が特定の値になったらレベルアップする」ということを確かめるために、実際にプログラム内部のキャラクターの経験値を直接書き換えてみて、本当にレベルアップするかどうかを確かめてみるようなことが内部テストとなります。</p>
+
+<h5 id="外部テスト">外部テスト</h5>
+
+<p>外部テストはいわゆる「ブラックボックステスト」で、プログラムのコードに立ち入ることなくプログラムの外部インターフェース (画面 etc.) を介して評価していきます。</p>
+
+<p>またゲームプログラミングを例にすると、先ほど同様「キャラクターの経験値が特定の値になったらレベルアップする」ということを確かめるために、実際にゲームをプレイしてみて経験値をためて、条件を満たしたらきちんとレベルアップすることを確かめてみるようなことが外部テストとなります。</p>
+
+<h4 id="テストファーストとテストラスト">テストファーストとテストラスト</h4>
+
+<p>さらにテストは、テストファーストとテストラストという観点でも整理できます。</p>
+
+<h5 id="テストファースト">テストファースト</h5>
+<p><img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51G6YEDVRKL._SL160_.jpg" /></p>
+
+<p>テストを最初に書いて、そのテストを満たすようにコードを実装する開発手法をテストファーストと言います。テストを「作りながらの仕様記述方法」として利用するわけで、TDD (Test Driven Development: テスト駆動開発) や BDD (Behavior Driven Development: 振舞駆動開発) とも呼ばれます。テストファーストの利点は、Kent Beck の著書『テスト駆動開発入門』や本誌るびまの連載「<a href="/articles/0021/0021-Rspec.html">スはスペックのス</a>」などを参照ください。</p>
+
+<p>テストファーストでのテストは、テストを記述してから実際に検証するまでを短いサイクルで回す単体テストや結合テスト段階で用いられるのが自然です。総合テスト (エンドツーエンドテスト) をテストファーストで行うことも可能ですが、テストを記述してから実際に検証するまでのサイクルがどうしても長くなりますので、「仕様を明確にすること」と「仕様を実現すること」の因果関係が遠くなってしまい、あまり向いていません。
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51w7z1%2BBLXL._SL160_.jpg" /></p>
+
+<p>近年注目を集めている開発手法である「継続的インテグレーション」では「自動テスト」を実施しますが、これには「仕様が満たされていることをテストするためのテストコード」が存在していることが前提になります。テストファーストを実施していると、その前提を自然と満たすことができます。</p>
+
+<h5 id="テストラスト">テストラスト</h5>
+
+<p>出来上がったシステムがきちんと動作することを確認する、というのがテストの基本です。従って出来上がったあとの評価の為のテスト、すなわちテストラスト (という言葉があるわけではありませんが、テストファーストの対義語として便宜的にこう呼びます) という本来のテスト方法も脈々と流れています。</p>
+
+<p>テストラストで実施するテストは、テスト項目を Microsoft Excel などのスプレッドシート (表計算ソフト) で記述することが多いようです<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。仕様書からテストすべき項目を洗い出し、スプレッドシートに列挙します。またテスト実施後にはテスト結果をスプレッドシートに追記し、保存し管理します。</p>
+
+<p>テスト項目を Excel で列挙し、テストを実施し、テスト結果の管理を行うという方式は、脈々と行われています。特に開発者がテストするのではない第三者テストでは、それが主流でしょう。それはそれで磨き抜かれた方法ではあります。テストコードが無くても人間がテスト項目に基づいて動作チェックするので、いろいろな観点でテストができます。しかし労力 (すなわちコスト) と時間がかかるのが宿命です。</p>
+
+<p>テストラストでは、単体テスト、結合テスト、総合テストのすべての段階をカバーできますが、単体テストを網羅して記述するのには冗長でかつ膨大になるので向いていません。逆に出荷テストや受け入れテストはテストラストで行われるのが普通ですので、「テストファーストだけ」または「テストラストだけ」ですべてのテストを網羅するのではなく、適材適所で使い分けるのが良いでしょう。</p>
+
+<h3 id="テストツールの進化変遷">テストツールの進化・変遷</h3>
+
+<p>テストの本質は変わらなくても、ツールは次々と変遷してゆきます。ここでは、Ruby や Rails で使われるテストツールの進化・変遷を見ていきます。</p>
+
+<p>Ruby には Ruby 1.8 まで xUnit の流れを汲む Test::Unit が標準添付されていましたので、RSpec<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> 登場以前は Test::Unit を使うのが当然で、その方式は今でも脈々と流れているところはあります (Ruby 1.9 からは minitest が標準添付)。</p>
+
+<p>RSpec が登場して、ベタベタなコードでなくふるまいを記述してテストするというスタイルが DSL<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> の流行とともに普及しています。</p>
+
+<p>さらに後述する Cucumber が登場し、feature ファイルによるもう一段メタな記述 (feature: 機能) から順番に具体化 (シナリオ、ステップ) する方式 (Gherkin 書式) で、feature 記述部分はコードに依存せず、プログラマ以外のステークホルダ (関係者) によっても仕様記述や評価が可能となる世界が開けました。</p>
+
+<p>Cucumber は、実装者だけの「内部テスト」「テストファースト」の枠から、実装者以外の「外部テスト」「テストラスト」へ枠の拡がりの突破口を開きました。</p>
+
+<h4 id="web-周りテストツールの変遷">Web 周りテストツールの変遷</h4>
+
+<p>Ruby の Web 周りでのテストツールの変遷を見てみましょう。現在 (2013.5) は、「4. Rails3」時代の円熟期で Rails4 も間近です<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+
+<ol>
+  <li>CGI 時代
+    <ul>
+      <li>RubyUnit, Test::Unit</li>
+    </ul>
+  </li>
+  <li>Rails1 時代
+    <ul>
+      <li>Test::Unit</li>
+    </ul>
+  </li>
+  <li>Rails2 時代
+    <ul>
+      <li>RSpec, Cucumber + Webrat</li>
+    </ul>
+  </li>
+  <li>Rails3 時代
+    <ul>
+      <li>RSpec(should), Cucumber + Capybara</li>
+      <li>RSpec(expect to) + Turnip + Capybara ← 今ここ (移行期)</li>
+    </ul>
+  </li>
+  <li>Rails4 時代
+    <ul>
+      <li>minitest + Turnip 改 + Capybara さてどうなりますか?<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></li>
+    </ul>
+  </li>
+</ol>
+
+<p>昔はテストは xUnit で assert するものであったところ、RSpec 時代 になって should が定着したと思ったら、expect to でないと時代遅れ<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>となってしまうという、何とも進化の早い世界であることが分かると思います。</p>
+
+<h4 id="テストツールもベタからメタへ">テストツールもベタからメタへ</h4>
+
+<p>ソフトウェアで注目されるトピックは時代とともに変わり、OSからミドルウェアへ、そしてアプリケーションへと移ってきました。</p>
+
+<p>テストツールもそれに合わせて「ベタベタのプログラムコードそのままの記述」から「DSL を利用した振る舞いの記述」へ進化しています。その流れを言葉で表現してみると、「ベタからメタへ」となります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">　『テストツールもベタからメタへ』
+
+　ベタ ←――――――――――――――→ メタ
+
+　Test::Unit → RSpec → Gherkin (Cucumber/Turnip)</code></pre></figure>
+
+<h5 id="第一世代testunit">第一世代：Test::Unit</h5>
+
+<p>テストの記述は Ruby プログラムそのもので、通常 test_xxx.rb (xxx はテスト対象を表す文字列) というファイルにテストを記述します<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。</p>
+
+<h5 id="第二世代-rspec">第二世代： RSpec</h5>
+
+<p>テストの記述は RSpec の DSL (Ruby プログラムでありながら、自然言語 (英語) としても読める) で、通常 xxx_spec.rb (xxx はテスト対象を表す文字列) というファイルにテストを記述します。</p>
+
+<p>RSpec は Test::Unit でやっていることを DSL で別の書き方にしたもので、その「書き方」によってテストの記述がわかりやすくなりました。以下に例として<a href="http://tech.recompile.net/post/21340599029/rspec">高井さんの「RSpecによるユニットテストの書き方」</a> を引用させていただきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">describe 'テスト対象' do
+  context '状態' do
+    describe 'テスト対象メソッド' do
+      context '与える入力' do
+        it '期待する出力'
+      end
+    end
+  end
+end</code></pre></figure>
+
+<h5 id="第三世代-gherkin-cucumberturnip">第三世代： Gherkin (Cucumber/Turnip)</h5>
+
+<p>テストの記述は Cucumber により拡張された Gherkin 書式 (Cucumber の特徴である、システムの振る舞いを記述するための自然言語に近い書式のこと。Business Readable DSLとも呼ばれます) で、ベタなテストコードにメタな説明 (機能・シナリオ・ステップ) の層 (レイヤ) を付加し、プログラムの実装者でなく第三者や受け入れ者が記述し理解できる (日本語でも記述できる) 道が開かれました。</p>
+
+<p>Gherkin 書式は、テスト記述を機能とシナリオそしてステップを次の 2 段階のファイルに分割して記述します。</p>
+
+<ol>
+  <li>仕様記述の feature ファイル
+    <ul>
+      <li>Cucumber で受け入れテストの対象となるアプリケーションの機能 (フィーチャ) を記述するファイル</li>
+      <li>テストの記述は非実装者や日本語でもわかりやすい表現で記述できる</li>
+      <li>通常 xxx.feature (xxx はテスト対象を表す文字列) というファイル名にする</li>
+    </ul>
+  </li>
+  <li>xxx.feature を具体的に実行する step_definitions ファイル
+    <ul>
+      <li>Cucumber でテストシナリオの手順 (ステップ) の定義を記述するファイル</li>
+      <li>プログラマの実装の世界の記述をする</li>
+      <li>慣例として xxx_steps.rb (xxx はテスト対象を表す文字列) というファイル名にする</li>
+    </ul>
+  </li>
+</ol>
+
+<p>諸橋さんの著書「<a href="http://tatsu-zine.com/books/cuke">はじめる！ Cucumber</a>」から feature ファイルのサンプルを内容を一部改変して引用すると、次の記述となります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#language: ja
+フィーチャ: ログインしてユーザを識別できる
+　ユーザとして、
+　ログイン機能などで自分の情報を識別したい。
+　なぜなら、メッセージなどを「自分のもの」として区別したいからだ。
+　シナリオ: ユーザ登録してログインする
+　　前提"新規ユーザ登録"ページを表示している
+　　もし"ログイン名"に"moro"と入力する
+　　かつ"E メール"に"xxxxxxxxx@xxx.xxx"と入力する
+　　かつ"作成"ボタンをクリックする
+
+　　ならば"こんにちは moro さん"と表示されていること</code></pre></figure>
+
+<p>テストの記述に自然な日本語が使えるというのは、実にうれしいところです。</p>
+
+<h3 id="実装者側と利用者側の接点">実装者側と利用者側の接点</h3>
+
+<p>ここまでの内容のまとめとして、実装者側の視点での TDD/BDD と利用側の視点でのシステムテスト (エンドツーエンドテスト) を図 1. でもう少しわかり易く図解してみましょう。
+<img src="/images/0042-FromCucumberToTurnip/gherkin_base2.png" alt="gherkin_base2.png" /></p>
+
+<p>図 1. 実装者側と利用者側の接点</p>
+
+<h2 id="エンドツーエンドテストツールとしての-cucumber">エンドツーエンドテストツールとしての Cucumber</h2>
+
+<h3 id="継続的インテグレーションツールの普及とエンドツーエンドテストの需要の高まり">継続的インテグレーションツールの普及とエンドツーエンドテストの需要の高まり</h3>
+
+<p>先ほども述べましたが、近年では「継続的インテグレーション」による迅速で効率的な開発に関心が高まり、テストの自動化を実現する継続的インテグレーションのためのツールも普及してきています。</p>
+
+<p>TDD/BDD を実践している場合は、作りためたテストを整理してまとめて動かせばボトムアップテストとなりますので、継続的インテグレーションツールによるテスト自動化は自然の流れです。</p>
+
+<p>しかし、<em>TDD/BDD でテストを作り溜めていない場合はどうやってテスト自動化に取り組めばよいのでしょうか？</em>　そこで登場するのが Cucumber です。Cucumber を使うことで、ボトムアップで行う単体テスト・結合テスト段階を越えて、トップダウンで行う総合テストを自動化することができます。Web 周りの開発であれば、<a href="http://docs.seleniumhq.org/docs/05_selenium_rc.js">Selenium-RC</a> や <a href="https://github.com/jnicklas/capybara">Capybara</a> といった Web ブラウザ上のユーザー操作を自動化するツールを Cucumber のステップ内で使うことにより、これまで自動化が難しく手動での目視確認となっていたエンドツーエンドテストを自動化することができます。エンドツーエンドテストの自動化が完成すれば、リグレッションテストの迅速化・省力化に寄与できます。これは開発コストの相当な割合を占めるテストを合理化する有利な手段となります。</p>
+
+<p>まとめると、継続的インテグレーションツールでの自動テストのニーズは、単体テスト・結合テスト段階から総合テストへと範囲が拡がってきています。その流れを言葉で表現してみると、やはり「ベタからメタへ」となります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">『自動テストのニーズもベタからメタへ』
+
+　ベタ ←――――――――――――――→ メタ
+
+　Unit Test → Integration Test → General Test</code></pre></figure>
+
+<h3 id="エンドツーエンドテストツールとしての-cucumber-のメリット">エンドツーエンドテストツールとしての Cucumber のメリット</h3>
+
+<p>先ほども説明しましたが、Cucumber ではフィーチャ (機能) ・シナリオ・ステップの 3 段階で振る舞いをテストでき、コードの世界とは別次元の「テスト記述の世界」が展開できるというのが画期的でした。また「テストを日本語で記述できる」という点で、第三者にもわかりやすいというのも大きなメリットです。</p>
+
+<p>TDD/BDD は、ボトムアップで断片から全体が構成されるというスタイルです。Cucumber もその方式を踏襲できるのはもちろんですが、フィーチャ (機能) ありきで出発することもできるので、トップダウンでの機能テスト構成の記述が可能となったのです。</p>
+
+<p>このボトムアップかトップダウンかという違いは実はシステム全体のテスト・評価という観点から見るとかなりの違いであり、トップダウンでの機能テストが記述できるというのはテスト自動化への大きな進歩です。</p>
+
+<h3 id="なぜ-cucumber-がそれほど普及していないのか">なぜ Cucumber がそれほど普及していないのか</h3>
+
+<p>「日本語でテストを記述できる」という特長は、実装者以外にもわかりやすく、また実装フェーズとは独立してテストを記述できるので、テストのやり方の大きな流れとして普及することが期待されましたが、実際には Cucumber はあまり普及していないようです。著者が考える Cucumber の普及が遅い理由を 4 点挙げてみます。</p>
+
+<ol>
+  <li>具体的な要素ツールの進化が激しく、バージョンが異なるとすぐに動作しなくなる。</li>
+  <li>機能・シナリオ・手順 (ステップ) を記述する .feature ファイルは良いとして、実際のプログラムレベルを記述するステップファイルの実装にはそれなりのスキルが要求され、スケジュールが確保されていないと負荷が高い。</li>
+  <li>正規表現を扱う箇所が敷居を高くしている。</li>
+  <li>RSpec でテストしてさらに Cucumber でもテストをするとなると 2 重にテストすることになり、結構な手間がかかる。</li>
+</ol>
+
+<p>まとめると「Cucumber よさげだけど、結構面倒じゃ orz」というのが実態なのではないでしょうか。</p>
+
+<h2 id="cucumber-から-turnip-へ">Cucumber から Turnip へ</h2>
+
+<p>さて、やっと本題に入ります。</p>
+
+<h3 id="turnip-とは">Turnip とは</h3>
+
+<p>Turnip は、受け入れテストのフレームワークである Cucumber によって整備されてきた feature ファイルと step_definitions ファイルの構成 (Gherkin 書式) を RSpec 内でテスト実行することができる新鋭のライブラリで、Cucumber の改善案として提案されました。Cucumberの後継としてWeb システムでのエンドツーエンドのテストを自動化する際に利用できます。</p>
+
+<p>Cucumber の問題点を改善して実装されている筋の良さで、今後の普及が期待されています。</p>
+
+<h3 id="turnip-の作者">Turnip の作者</h3>
+
+<p>Turnip の作者は、Capybara 開発者 の <a href="https://github.com/jnicklas/">Jonas Nicklas さん</a>です。当然 Capybara との相性もばっちりです。Turnip は「Mapping steps to regexps is hard」という問題意識で開発されたライブラリです。</p>
+
+<h3 id="cucumber-から-turnip-で改善された点">Cucumber から Turnip で改善された点</h3>
+
+<p>Cucumber から Turnip で改善された点を次にまとめます。</p>
+
+<ol>
+  <li>Cucumber では正規表現を用いるためにステップ記述が煩雑になりがちであった点を、Turnip では正規表現を使わずにプレースホルダーを使用するため、ステップ記述がスッキリしました。この「正規表現を使わないことで一段階複雑さが軽減された」点は、結構大きな効果があります。
+    <ul>
+      <li>「Cucumber のステップファイル記述と差異は、feature を解釈するステップファイルの記述に正規表現を使っていない点です。プレースホルダー (:keys, :link_name, ..) を使って、テストに使うパラメーターを取り出しています」<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup></li>
+    </ul>
+  </li>
+  <li>従来は RSpec と Cucumber の 2 本立てとなっていたテストを RSpec に一本化できるので、テストの管理や操作の面倒さが解消されます。</li>
+</ol>
+
+<h2 id="turnip-まわりで使われるテスト自動化の為のツール">Turnip まわりで使われるテスト自動化の為のツール</h2>
+
+<p>テスト自動化のツールとして、Turnip のまわりに次のライブラリ群があります。</p>
+
+<h3 id="メインツール">メインツール</h3>
+
+<h4 id="rspec">RSpec</h4>
+
+<p>RSpec はテストを記述するためのドメイン特化言語 (DSL: Domain Specific Language) を提供するフレームワークです。</p>
+
+<h4 id="gherkin">Gherkin</h4>
+
+<p>Gherkin は「Business Readable DSL」と称されるところの機能とシナリオとステップを定義してゆく feature ファイルの記述方式 (Gherkin 書式) の操作ライブラリです。
+Cucumber で開拓され、gherkin の gem として括り出されているので、Turnip でも共通で利用できます。ここは大きなポイントです。</p>
+
+<h4 id="capybara">Capybara</h4>
+
+<p>Capybara はブラウザの UI の自動テストをする際に、テキスト入力やボタンクリックや表示結果を確認するなどに便利な API (語彙) を提供するヘルパーライブラリです。</p>
+
+<h4 id="capybara-webkit">capybara-webkit</h4>
+
+<p><a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a> は、Capybara の JavaScript ドライバのひとつです。</p>
+
+<h4 id="selenium">selenium</h4>
+
+<p>selenium は ブラウザ/JavaScript ドライバの老舗です。</p>
+
+<h3 id="ci-ツール">CI ツール</h3>
+
+<h4 id="jenkins">Jenkins</h4>
+
+<p>Jenkins は、Java で実装された CI (Continuous Integration: 継続的インテグレーション) 支援ツールです。</p>
+
+<h3 id="周辺ツール">周辺ツール</h3>
+
+<h4 id="spork">Spork</h4>
+
+<p>Spork は druby を使って Rails 環境をプレロードする高速化ツールです。</p>
+
+<h4 id="spring">Spring</h4>
+
+<p>Spring もプレロードする高速化ツールです。</p>
+
+<h2 id="turnip-入門">Turnip 入門</h2>
+
+<h3 id="turnip-本家">Turnip 本家</h3>
+
+<p>基本的な情報源は <a href="https://github.com/jnicklas/turnip">jnicklas さんの github</a> です。</p>
+
+<h3 id="rspec-準備">RSpec 準備</h3>
+
+<p>RSpec 環境がまだ未構築であれば RSpec の設定ファイルを生成する準備をします。</p>
+
+<p>Gemfile で gem ‘rspec-rails’ を指定します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">group :development, :test do
+  gem 'rspec-rails'
+end</code></pre></figure>
+
+<p>RSpec 環境を生成します。(次の例の “rails g” は “rails generate” の alias です)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ bundle install
+   :
+$ rails g rspec:install
+      create  .rspec
+      create  spec
+      create  spec/spec_helper.rb</code></pre></figure>
+
+<h3 id="turnip-インストール">Turnip インストール</h3>
+
+<p>Gemfile に呼び出しを追加して bundle 実行します。
+Capybara も capybara-webkit を指定すると一緒にインストールされます。
+Capybara の現在 (2013.5.25) 時点最新版は Capybara 2.1 で capybara-webkit 1.0.0 で対応となりました。</p>
+
+<p>Capybara 2.1 にしてエラーが出る場合 Capybara は 2.0.3 バージョン指定して利用します。</p>
+
+<p>RSpec 環境に加えて Gemfile に turnip と JavaScript ドライバの capybara-webkit の利用宣言を追加し bundle install します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara', '2.0.3'
+  gem 'capybara-webkit'
+  gem 'turnip'
+end</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ bundle install</code></pre></figure>
+
+<h3 id="turnip-テストコンテンツ配置場所">Turnip テストコンテンツ配置場所</h3>
+
+<p>spec ディレクトリ配下に features (.feature ファイル群置場) と steps (steps.rb ファイル群置場) ディレクトリを配置するのがよいでしょう。自由です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">~/spec/features # .feature ファイル群置場
+~/spec/steps    # steps.rb ファイル群置場</code></pre></figure>
+
+<h3 id="steps-ファイルの配置場所の指定">steps ファイルの配置場所の指定</h3>
+
+<p>Turnip のステップファイルの配置場所を spec_helper.rb に記述し、また Turnip ライブラリなどの呼び出しも指定します。これで RSpec にめでたく組み込まれることになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Dir.glob("spec/**/*steps.rb") { |f| load f, true }
+
+require 'capybara/dsl'
+require 'capybara/rspec'
+require 'capybara/webkit'
+require 'capybara/poltergeist'
+require 'rspec/rails'
+require 'rspec/autorun'
+require 'turnip'
+require 'turnip/capybara'</code></pre></figure>
+
+<h3 id="turnip-実行">Turnip 実行</h3>
+
+<p>feature ファイルを引数にして rspec を実行します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rspec -r turnip/rspec spec/features/hogehoge.feature</code></pre></figure>
+
+<p>hogehoge.feature に記述されたステップに呼応して該当するステップ名が定義されているところの xxx_steps.rb が呼び出されて実行されます。</p>
+
+<h2 id="turnip-のテスト実装">Turnip のテスト実装</h2>
+
+<p>Turnip でテストを実行するには、次の feature ファイルと step定義ファイルの 2 種類のファイルを記述します。</p>
+
+<h3 id="feature-ファイルの作成">feature ファイルの作成</h3>
+
+<p>feature ファイルは、機能 (フィーチャ) を記述するファイルです。拡張子は .feature です。
+テストする内容を、機能 (とストーリー)、シナリオ、ステップの 3 階層で記述します。日本語で書けるのが重要なポイントです。
+この Gherkin 書式は、Cucumber と共通です。</p>
+
+<h4 id="機能-feature">機能 (feature)</h4>
+
+<p>アプリケーションの特長となる機能 (群)。個々の機能だけではなく、特性や使い勝手など、ユーザにとって何らかの価値を提供できる単位で書きます。</p>
+
+<h4 id="ストーリー-story">ストーリー (story)</h4>
+
+<p>機能 (feature) の補足説明を記述します。要するにコメントなので、無くても OK です。</p>
+
+<h4 id="シナリオ-scenario">シナリオ (scenario)</h4>
+
+<p>機能 (feature) を検証するためのテストシナリオ。要約した見出し。詳細は次のステップにて記述します。</p>
+
+<h4 id="ステップ-step">ステップ (step)</h4>
+
+<p>テストシナリオでの操作や検証などの具体的な手続きをステップで記述します。テスト実行時に、ステップで記述した内容に 1 対 1 で step_definitions ファイルにあるステップ定義スクリプトが実行されます。</p>
+
+<h4 id="feature-ファイルサンプル">feature ファイルサンプル</h4>
+
+<p>Gherkin 書式の feature ファイルサンプル (hoge.feature) です。
+キーワードに日本語を使うには # language: ja を指定します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># encoding: utf-8
+# language: ja
+機能: ポータル画面からログイン
+　シナリオ: トップページにアクセスしてログインする
+　　前提 hoge サイトにアクセスする
+　　もしトップページを表示する
+　　ならば 画面にようこそと表示されていること
+　　かつ id と password を入力する
+　　かつ サインインボタンをクリックする
+　　ならば 画面にユーザ名 testuser が表示されること</code></pre></figure>
+
+<p>この日本語による「機能」「シナリオ」「ステップ」の feature ファイルの記述に対応して 次に steps.rb ファイルでスクリプトでの操作を記述します。</p>
+
+<h3 id="step-定義ファイルの作成">step 定義ファイルの作成</h3>
+
+<p>step 定義ファイルは feature ファイルのステップに記述した文言についてステップ毎に具体的な動作を Ruby スクリプトで記述します。ファイル名は xxx_steps.rb です。</p>
+
+<p>このステップ定義 (step_definitions) が実装されていないと rspec spec/features/hogehoge.feature で実行した際に黄色の未定義メッセージが出力されます。この step 定義ファイルの実装には、Ruby の実装力が求められます。</p>
+
+<h3 id="ステップ記述サンプル">ステップ記述サンプル</h3>
+
+<p>Turnip ステップ記述サンプル hoge_steps.rb</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># encoding: utf-8
+
+step 'hoge サイトにアクセスする' do
+  Capybara.app_host = "http://www.hoge.jp/"
+end
+
+step 'トップページを表示する' do
+  visit '/'
+end
+
+step '画面にようこそと表示されていること' do
+#  page.should have_content('ようこそ') # should はもう古い
+  expect(page).to have_content('ようこそ')
+end
+
+step 'id と password を入力する' do
+  fill_in 'session_login', :with =&gt; 'testuser'
+  fill_in 'session_password', :with =&gt; 'password'
+end
+
+step 'サインインボタンをクリックする'
+  click_button 'サインイン'
+end
+
+step "画面にユーザ名 :user が表示されること" do |user|
+  expect(page).to have_content(user)
+end</code></pre></figure>
+
+<p>Web 操作には、Capybara が使用されます。その習得にはそれなりに初期コストが必要です。</p>
+
+<p>Capybara の Web 操作は Capybara Node Action<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup> に解説があります。よく使うのは fill_in や click_link、click_button です。</p>
+
+<h2 id="リモートアクセス">リモートアクセス</h2>
+
+<p>最近の Capybara では Capybara 本体でリモートアクセスをサポートしているので、capybara-mechanize を呼ばなくても</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  Capybara.app_host = "http://google.jp/"</code></pre></figure>
+
+<p>などのように app_host にリモートの url を指定することでリモート Web にアクセスできます。</p>
+
+<h2 id="ステップ実装-tips">ステップ実装 Tips</h2>
+
+<h3 id="div-の-class-で絞り込む方法">div の class で絞り込む方法</h3>
+
+<p>within で要素を絞り込みます。div の class で絞り込む例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  within :xpath, "//div[@class='hoge fuga']" do
+    click_link '削除'
+  end</code></pre></figure>
+
+<p>ただし絞り込みの結果、要素が複数存在すると</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">     Capybara::Ambiguous:
+       Ambiguous match, found 3 elements matching xpath "//div[@class='hoge fuga']"</code></pre></figure>
+
+<p>とエラーになってしまいます。よくある話です。</p>
+
+<p>ここで先頭要素であれば first メソッドが使えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  within first(:xpath, "//div[@class='hoge fuga']") do
+    click_link '削除'
+  end</code></pre></figure>
+
+<p>これで Ambiguous: と怒られることなく先頭要素に絞り込めます。</p>
+
+<h3 id="同一文言が複数存在する場合に-xpath-を使って特定する方法">同一文言が複数存在する場合に XPath を使って特定する方法</h3>
+
+<p>複数ユーザの複数行の中から指定するユーザの行の「削除」をリンクする例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">within :xpath, "//tr[td='#{user}']" do
+        click_link '削除'
+ end</code></pre></figure>
+
+<p>XPath 自体は XML などでのグラフ構造内を汎用的に走査する仕様なので、なかなか奥深いです。
+[…] の述語を使うのがポイントです。<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup><sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup></p>
+
+<h3 id="javascript-の-confirm-box-の文言チェック">JavaScript の confirm box の文言チェック</h3>
+
+<p>　capybara-webkit を使用すると JavaScript の動作に追随できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># In Ruby:
+page.driver.alert_messages
+=&gt; ["Hi"]
+page.driver.confirm_messages
+messages
+=&gt; ["Number?"]</code></pre></figure>
+
+<p>しかしながら、この返り値は配列であるため 通常のチェック文がそのままでは使えません。おなじみの古い書き方を、次のように新しい書き方に変えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 古い書き方
+page.should have_content('hoge')
+# 新しい書き方
+expect(page).to have_content 'hoge'</code></pre></figure>
+
+<p>この page は、Capybara オブジェクトです。この構文の page の箇所に配列や文字列をもってきても should などのメソッドを持っていないのでエラーとなります。</p>
+
+<p>従って配列を配列として、配列要素をチェックする構文で対応します<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   page.driver.confirm_messages.should =~ ['hoge']</code></pre></figure>
+
+<h3 id="ブラウザドライバjavascript-ドライバの切換え">ブラウザドライバ/JavaScript ドライバの切換え</h3>
+
+<p>ブラウザドライバ/JavaScript ドライバは各種あります。必要に応じて使い分けます。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>No.</td>
+      <td>名称</td>
+      <td>備考</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>rack_test</td>
+      <td>capybara で default のドライバ。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>selenium</td>
+      <td>ブラウザを呼び出して操作できますが JavaScript の操作が弱い。遅い。　　　　　　　　　　　　　</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>webkit</td>
+      <td>headless なので速い。JavaScript もそこそこ操作でき、capybara ではメジャー。　　　　　　　　　</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>poltergeist</td>
+      <td>headless (だから名付けの所以) なので速い。Phantom.js を抱えるので機能豊富。絶賛盛り上がり中。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>xxx_steps.rb の中で、利用指定して切換えられます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#  Capybara.javascript_driver = :selenium
+#  Capybara.javascript_driver = :webkit
+#  Capybara.javascript_driver = :poltergeist
+#  Capybara.current_driver = :poltergeist
+  Capybara.current_driver = :webkit
+#  Capybara.current_driver = :selenium
+#  Capybara.current_driver = :rack_test</code></pre></figure>
+
+<h2 id="補足">補足</h2>
+
+<h3 id="capybara-情報">Capybara 情報</h3>
+
+<ul>
+  <li>@netwillnet さんの <a href="http://d.hatena.ne.jp/willnet/20110704/1309782442">Capybara README 意訳</a> より</li>
+</ul>
+
+<blockquote>
+  <p>Capybara の DSL は Webrat からインスパイアしています。多くのケースで後方互換性を保っている一方、重要な違いもいくつかあります。Webrat とは異なり、Capybara は 全ての検索で case sensitive です。これは、 Capybara は case insensivity をサポートしていない XPath をヘビーに使っているためです。</p>
+</blockquote>
+
+<ul>
+  <li>@okitan さんの <a href="https://docs.google.com/presentation/d/1FF302e39AzYGfq6gU9jDtP1rwLJowogb6Qv95VNaL8g/edit?pli=1#slide=id.p">「take a glance at capybara2.0」</a>
+    <ul>
+      <li>capybara 1.0 から capybara 2.0 へのバージョンアップでは互換性が失われた部分がありますが、そこが解説されています。</li>
+    </ul>
+  </li>
+  <li>@netwillnet さんの <a href="http://willnet.in/24">「Capybara 2.0 アップグレードガイド」</a>
+    <ul>
+      <li>Capybara 2.0 Upgrade Guide - Funding Gates の意訳。有り難い。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="step-予約語">step 予約語</h3>
+
+<p>step 予約語の一覧および日本語対応は、Cucumber の i18n 機能にて確認できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ cucumber --i18n ja
+      | feature          | "フィーチャ", "機能"|
+      | background       | "背景"|
+      | scenario         | "シナリオ"|
+      | scenario_outline | "シナリオアウトライン", "シナリオテンプレート", "テンプレ", "シナリオテンプレ" |
+      | examples         | "例", "サンプル"|
+      | given            | "* ", "前提"|
+      | when             | "* ", "もし"|
+      | then             | "* ", "ならば"|
+      | and              | "* ", "かつ"|
+      | but              | "* ", "しかし", "但し", "ただし"|
+      | given (code)     | "前提"|
+      | when (code)      | "もし"|
+      | then (code)      | "ならば"|
+      | and (code)       | "かつ"|
+      | but (code)       | "しかし", "但し", "ただし"|</code></pre></figure>
+
+<h4 id="ステップ予約語と英語表記と役割">ステップ予約語と英語表記と役割</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td>ステップ予約語</td>
+      <td>英語表記</td>
+      <td>役割</td>
+    </tr>
+    <tr>
+      <td>前提</td>
+      <td>Given</td>
+      <td>データのセットアップなど、テストシナリオの前提条件を組み立てる</td>
+    </tr>
+    <tr>
+      <td>もし</td>
+      <td>When</td>
+      <td>リンクをクリックするなど、ユーザ操作に対応する</td>
+    </tr>
+    <tr>
+      <td>ならば</td>
+      <td>Then</td>
+      <td>データを検証する</td>
+    </tr>
+    <tr>
+      <td>かつ</td>
+      <td>And</td>
+      <td>すぐ上のステップと同じ役割をする</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="コラム-前提もしならばの使い分け">コラム: 「前提」「もし」「ならば」の使い分け</h4>
+
+<p>「前提」「もし」「ならば」は等価なので、この使い分けに頑張らなくてもよい。
+「はじめる！ Cucumber より」</p>
+
+<blockquote>
+  <p>これまでみてきたように、Cucumber の各ステップには、「前提」や「ならば」などといった予約語がついています。 これらは、機能的には同じものです。極端な話、すべてのステップを「前提」などで書いても、まったく問題なく動作します。とはいえ、読みやすさやステップのやっている種類を明示するために、適切に使い分けるのが一般的です。</p>
+</blockquote>
+
+<h3 id="webkit-の賞味期限">Webkit の賞味期限</h3>
+
+<p>流れは速く Webkit も時代の主流から外れてゆきそうです。<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup></p>
+
+<p>ということである時点で Capybara-webkit は衰退するかもしれません。phantom.js も QtWebkit ベースなので Blink 対応の新しい JavaScript ドライバに置き換わってゆくのでしょう。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>エンドツーエンドテストに利用しようとした Cucumber の面倒さにうんざりしていたところで Turnip に出会ってしまいました。正規表現を使わないだけでずいぶんスッキリしますし、RSpec と Cucumber の 2 本だてから 1 本化できるだけでも楽になりました。</p>
+
+<p>テストラストでエンドツーエンドテストを自動化して迅速な CI を回すのは、時代のニーズになっていると思います。そのニーズに応えるために Turnip を採用して良かったので、記事を書いてみました。皆様の参考になれば幸いです。</p>
+
+<p>feature ファイル作成や step_definitions ファイル作成時の定型部分の作成支援ツールやテストの計画・実績管理を Excel から WebDB に移すツールや、テスト周りの環境改善にはテーマが詰まっています。Ruby の魅力をどんどん活用してゆきたいところです。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<h3 id="福井修-ir3">福井修 (<a href="https://twitter.com/iR3">@iR3</a>)</h3>
+
+<p>2001年まだマイナーだったRubyで英会話学校向け教材配信システムを構築<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>
+して以来Ruby大好きしてます。関西OPENSOURCE+FREEWARE2002<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>からRuby関西<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>を立ち上げたり
+2006年は<a href="http://www.ivia.or.jp">IVIA</a>の監事したり2007年からは東京に移り2009年から<a href="http://irubysystems.com">iRubySystems</a>やってます。2012年RubyKaja<sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>のひとりです。
+—-</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>組み合わせテスト (Association Test) と呼ばれることもあります&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>システムテスト (System Test) と呼ばれることもあります&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>本誌記事「<a href="/articles/0039/0039-TestingWithAxlsx.html">Axlsx でテスト支援</a>」もご参照&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>RSpec については、本誌連載「<a href="/articles/0021/0021-Rspec.html">スはスペックのス</a>」もご参照。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Domain Specific Language の略。ドメイン固有言語。ある特定の問題に特化してデザインされたプログラミング言語のこと。RSpec はテストに特化した DSL となる。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>「Rails4 で MiniTest + Spork + Guard - @tkeo」をご参考。 http://tkeo.hatenablog.com/entry/2013/01/17/143315&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>「MiniTest offers a simpler approach for testing Ruby code. And its the default in Rails 4. 」https://twitter.com/iR3/status/314542747103133696&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>https://twitter.com/iR3/status/271547557350621185&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>たとえば Ruby 本体に付属しているテストを参考にしてみて下さい。 https://github.com/ruby/ruby/tree/trunk/test&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>「Solving Cucumber’s Problems ? Elabs」をご参照。 http://www.elabs.se/blog/30-solving-cucumber-s-problems&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>http://rubydoc.info/github/jnicklas/capybara/master/Capybara/Node/Actions&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>http://itref.fc2web.com/xml/xpath.html&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>http://dyo.jp/blog/archives/401&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>http://d.hatena.ne.jp/mothprog/20090506/1241622080&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>https://twitter.com/iR3/status/323719859286462464&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>日経オープンシステム2002/2 p.122&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>http://k-of.jp/2002/event.html&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>http://jp.rubyist.net/?RubyKansai&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p>http://kaja.rubyist.net/2012/kaja&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

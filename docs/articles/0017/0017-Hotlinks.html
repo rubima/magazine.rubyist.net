@@ -1,0 +1,2998 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist Hotlinks 【第 17 回】 青木峰郎さん</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0017/0017-Hotlinks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist Hotlinks 【第 17 回】 青木峰郎さん</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0017/0017-Hotlinks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist Hotlinks 【第 17 回】 青木峰郎さん" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0017/0017-Hotlinks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0017/0017-Hotlinks.html" data-text="Rubyist Hotlinks 【第 17 回】 青木峰郎さん">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>著名な Rubyist にインタビューを行う企画「Rubyist Hotlinks」。
+今回は『Rubyソースコード完全解説』著者として有名な青木さんにお話を伺いました。今回はいつもとはちょっと違って野次馬も居なかったこともあり、とてもフランクな会話となっています。お楽しみください。</p>
+
+<h2 id="プロフィール">プロフィール</h2>
+
+<p><img src="/images/0017-Hotlinks/aoki1.jpg" alt="aoki1.jpg" />
+『Rubyソースコード完全解説』はじめ多数のプログラム関係書籍の執筆などでご活躍中。標準ライブラリメンテナで、ドキュメントメンテナで、なんでもやる人、とは本人の談。</p>
+
+<dl>
+  <dt>好きな言葉</dt>
+  <dd>なし</dd>
+  <dt>尊敬する人</dt>
+  <dd>なし</dd>
+  <dt>ご本人のサイト</dt>
+  <dd><a href="http://i.loveruby.net">LoveRuby.Net</a></dd>
+</dl>
+
+<h2 id="インタビュー">インタビュー</h2>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>ささださん</dd>
+  <dt>語り手</dt>
+  <dd>青木さん</dd>
+  <dt>日にち</dt>
+  <dd>2006 年 10 月 14 日</dd>
+  <dt>場　所</dt>
+  <dd>秋葉原</dd>
+</dl>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#プロフィール" id="markdown-toc-プロフィール">プロフィール</a></li>
+  <li><a href="#インタビュー" id="markdown-toc-インタビュー">インタビュー</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a>        <ul>
+          <li><a href="#グダグダ" id="markdown-toc-グダグダ">グダグダ</a></li>
+        </ul>
+      </li>
+      <li><a href="#やっとインタビュー開始" id="markdown-toc-やっとインタビュー開始">やっとインタビュー開始</a>        <ul>
+          <li><a href="#プロフィール-1" id="markdown-toc-プロフィール-1">プロフィール</a></li>
+          <li><a href="#代表作" id="markdown-toc-代表作">代表作</a></li>
+          <li><a href="#著作" id="markdown-toc-著作">著作</a></li>
+          <li><a href="#好きなメソッド嫌いなメソッド" id="markdown-toc-好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</a></li>
+        </ul>
+      </li>
+      <li><a href="#ruby-とのかかわり" id="markdown-toc-ruby-とのかかわり">Ruby とのかかわり</a>        <ul>
+          <li><a href="#rubyist-になったきっかけ" id="markdown-toc-rubyist-になったきっかけ">Rubyist になったきっかけ</a></li>
+          <li><a href="#ruby-とのつきあい" id="markdown-toc-ruby-とのつきあい">Ruby とのつきあい</a></li>
+          <li><a href="#ruby-の好きなところ嫌いなところ" id="markdown-toc-ruby-の好きなところ嫌いなところ">Ruby の好きなところ嫌いなところ</a></li>
+          <li><a href="#ruby-を使ってうまくいった事例" id="markdown-toc-ruby-を使ってうまくいった事例">Ruby を使ってうまくいった事例</a></li>
+          <li><a href="#キラーアプリ" id="markdown-toc-キラーアプリ">キラーアプリ</a></li>
+          <li><a href="#もう少しキラーアプリ" id="markdown-toc-もう少しキラーアプリ">もう少しキラーアプリ</a></li>
+          <li><a href="#ruby-の習得" id="markdown-toc-ruby-の習得">Ruby の習得</a></li>
+        </ul>
+      </li>
+      <li><a href="#プログラミング全般" id="markdown-toc-プログラミング全般">プログラミング全般</a>        <ul>
+          <li><a href="#プログラミングの学習について" id="markdown-toc-プログラミングの学習について">プログラミングの学習について</a></li>
+          <li><a href="#初めてのプログラミング" id="markdown-toc-初めてのプログラミング">初めてのプログラミング</a></li>
+          <li><a href="#ruby-以外のプログラミング言語" id="markdown-toc-ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</a></li>
+          <li><a href="#美しいソースコード" id="markdown-toc-美しいソースコード">美しいソースコード</a></li>
+          <li><a href="#いま興味のあるテーマ" id="markdown-toc-いま興味のあるテーマ">いま興味のあるテーマ</a></li>
+        </ul>
+      </li>
+      <li><a href="#生い立ちとか" id="markdown-toc-生い立ちとか">生い立ちとか</a>        <ul>
+          <li><a href="#生い立ち" id="markdown-toc-生い立ち">生い立ち</a></li>
+          <li><a href="#読んだ本" id="markdown-toc-読んだ本">読んだ本</a></li>
+          <li><a href="#ロープレ談議" id="markdown-toc-ロープレ談議">ロープレ談議</a></li>
+          <li><a href="#陸上の話" id="markdown-toc-陸上の話">陸上の話</a></li>
+          <li><a href="#大学での話" id="markdown-toc-大学での話">大学での話</a></li>
+          <li><a href="#本の話" id="markdown-toc-本の話">本の話</a></li>
+          <li><a href="#普段の仕事" id="markdown-toc-普段の仕事">普段の仕事</a></li>
+          <li><a href="#仕事とプライベートの両立" id="markdown-toc-仕事とプライベートの両立">仕事とプライベートの両立</a></li>
+          <li><a href="#普段家ですること" id="markdown-toc-普段家ですること">普段家ですること</a></li>
+          <li><a href="#映画とか" id="markdown-toc-映画とか">映画とか</a></li>
+          <li><a href="#音楽とか" id="markdown-toc-音楽とか">音楽とか</a></li>
+          <li><a href="#スポーツ" id="markdown-toc-スポーツ">スポーツ</a></li>
+          <li><a href="#好きな女性のタイプ" id="markdown-toc-好きな女性のタイプ">好きな女性のタイプ</a></li>
+        </ul>
+      </li>
+      <li><a href="#今後" id="markdown-toc-今後">今後</a>        <ul>
+          <li><a href="#将来の展望" id="markdown-toc-将来の展望">将来の展望</a></li>
+          <li><a href="#前のインタビュイーとの関係" id="markdown-toc-前のインタビュイーとの関係">前のインタビュイーとの関係</a></li>
+          <li><a href="#次のインタビュイー" id="markdown-toc-次のインタビュイー">次のインタビュイー</a></li>
+          <li><a href="#その他の雑多な質問" id="markdown-toc-その他の雑多な質問">その他の雑多な質問</a></li>
+          <li><a href="#椅子の話" id="markdown-toc-椅子の話">椅子の話</a></li>
+          <li><a href="#若手に一言" id="markdown-toc-若手に一言">若手に一言</a></li>
+          <li><a href="#読者に一言" id="markdown-toc-読者に一言">読者に一言</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#rubyist-hotlinks-連載一覧" id="markdown-toc-rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</a></li>
+</ul>
+
+<h4 id="グダグダ">グダグダ</h4>
+
+<p><strong>ささだ</strong>　今日はどういう感じでやります？ いつもみたいに質問項目をきっちりやる？
+たまには適当な感じでやるのもいいかなと思うんだけど。</p>
+
+<p><strong>青木</strong>　雑談ぽいのでいいんじゃないかな。ラジオの深夜番組みたいにグダグダにしようぜ。</p>
+
+<p>というわけで、グダグダ喋ったのはこちらに: <a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+
+<h3 id="やっとインタビュー開始">やっとインタビュー開始</h3>
+
+<h4 id="プロフィール-1">プロフィール</h4>
+
+<p><strong>ささだ</strong>　<a href="/articles/0017/0017-Hotlinks-misc.html">かなりダラダラしてた</a>ので、ちょっとインタビューっぽくしましょうか (笑)。
+えっと、生年月日、出身地、現在住所、家族構成、血液型。書いて無いけど。</p>
+
+<p><strong>青木</strong>　東京出身、B 型です。</p>
+
+<p><strong>ささだ</strong>　B 型。で、一人暮らし？</p>
+
+<p><strong>青木</strong>　はい。</p>
+
+<p><strong>ささだ</strong>　彼女募集中？</p>
+
+<p><strong>青木</strong>　うん。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　好きな言葉に座右の銘ねえ。そんなものはない。</p>
+
+<p><strong>ささだ</strong>　そんなものはないと。ないの？ 哲学とかやってるからさ、たくさんあるんじゃないの？</p>
+
+<p><strong>青木</strong>　座右の銘がいっぱいあるのはダメだろ。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　座右の銘とかさ、そういうのを決めちゃうと引きずられるから、決めないようにしてるんだ。</p>
+
+<p><strong>ささだ</strong>　あー。何かこう、汎用的な、あってもなくても同じような、
+変わんないようなのにしておけばさ、何かこう…… (笑)</p>
+
+<p><strong>青木</strong>　なるようになる、とか？</p>
+
+<p><strong>ささだ</strong>　中田さんだっけ、それ。</p>
+
+<p><strong>青木</strong>　そうなんだ。</p>
+
+<p><strong>ささだ</strong>　単に好きな言葉でも、全然いいんだけど。</p>
+
+<p><strong>青木</strong>　好きな言葉ねぇ、それもない。</p>
+
+<p><strong>ささだ</strong>　賞味期限とか。</p>
+
+<p><strong>青木</strong>　それは好きじゃない！</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　「尊敬する人」もね、
+そういうのを決めちゃうとその人の言葉に影響を受けすぎてしまうから、
+決めないようにしてる。もしあっても言わないし書かない。</p>
+
+<p><strong>ささだ</strong>　本当にないの？ Alpha 作った人すげーとかさ。</p>
+
+<p><strong>青木</strong>　別に Alpha 作った人がすごいと思わないだろう。作ったものはかっこいいと思うけど。</p>
+
+<p><strong>ささだ</strong>　尊敬する人も、好きな言葉も、座右の銘もなし？</p>
+
+<p><strong>青木</strong>　なし。</p>
+
+<h4 id="代表作">代表作</h4>
+
+<p><strong>ささだ</strong>　代表作。</p>
+
+<p><strong>青木</strong>　精神的代表作であれば、Ruby Hacking Guide (『<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51MQAYG70TL._SL160_.jpg" />』のこと)。</p>
+
+<p><strong>ささだ</strong>　あー、なるほど。</p>
+
+<p><strong>青木</strong>　売り上げベースであれば「ふつりな」だけど (『<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41KHt9YEIyL._SL160_.jpg" />』のこと)。</p>
+
+<p><strong>ささだ</strong>　それは著作のほうだから。</p>
+
+<p><strong>青木</strong>　あ、そうか。ソフトウェアの代表作か。</p>
+
+<p><strong>ささだ</strong>　まぁ、RHG が代表作でもいいけど。</p>
+
+<p><strong>青木</strong>　ソフトウェアはあんまりパッとしないからなあ。</p>
+
+<p><strong>ささだ</strong>　(笑)。でもみんな使ってるじゃん、fileutils.rb とか。</p>
+
+<p><strong>青木</strong>　あれは代表作とは言いがたいよね。</p>
+
+<p><strong>ささだ</strong>　中田さんが optparse ですっていうのと同じだよね。</p>
+
+<p><strong>青木</strong>　代表作っていうとこう、もうちょっとデカくてさ。</p>
+
+<p><strong>ささだ</strong>　<a href="http://www.rubyonrails.org/">Rails</a> みたいな。</p>
+
+<p><strong>青木</strong>　そうそう。Rails とか、そういうやつでしょ。</p>
+
+<p><strong>ささだ</strong>　じゃ、<a href="http://i.loveruby.net/w/BitChannel.html">BitChannel</a>。</p>
+
+<p><strong>青木</strong>　あれはマニア受けしてるだけじゃん。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　一番使われているのはたぶん <a href="http://i.loveruby.net/ja/projects/tmail/">TMail</a> なんだけど。</p>
+
+<p><strong>ささだ</strong>　あー、Rails 経由で？</p>
+
+<p><strong>青木</strong>　うん。検索もすごいもん。ウェブサイトに来るのもやっぱ TMail が一番多い。</p>
+
+<p><strong>ささだ</strong>　なるほど。代表作は TMail？
+でも TMail ってあんまり知っている人いないんじゃないの？ 日本人で。</p>
+
+<p><strong>青木</strong>　そうなんだよね。</p>
+
+<p><strong>ささだ</strong>　Ruby でメールって調べたら、ぐぐったら、あ、何か TMail ってのがあるんだ、って。
+青木さんのって知らないんだよね、きっと。</p>
+
+<p><strong>青木</strong>　そうかもしれない。</p>
+
+<p><strong>ささだ</strong>　<a href="http://i.loveruby.net/ja/projects/setup/">setup.rb</a> とかは？</p>
+
+<p><strong>青木</strong>　あれはまぁ、なんというか、消え行くものだし (笑)</p>
+
+<p><strong>ささだ</strong>　消えていくの？</p>
+
+<p><strong>青木</strong>　<a href="http://rubyforge.org/projects/rubygems/">RubyGems</a> に置き換わるんじゃないの？</p>
+
+<p><strong>ささだ</strong>　RubyGems の中で setup.rb 使ってるんじゃないの？</p>
+
+<p><strong>青木</strong>　え、使ってるの？</p>
+
+<p><strong>ささだ</strong>　いや、知らない。見たこと無いんだけど。</p>
+
+<p><strong>青木</strong>　使ってないと思うよ。</p>
+
+<p><strong>ささだ</strong>　使ってないんだ。</p>
+
+<p><strong>青木</strong>　RubyGems をインストールするのに setup.rb 使うけど、それくらいじゃないかな。</p>
+
+<p><strong>ささだ</strong>　あ、そうなんだ。そっかそっか、そうだよね。
+RubyGems ってインストールしても shbang 変わんないからさ、使いづらいんだよね。
+Ruby インタプリタが何個もインストールされている環境だと。</p>
+
+<p>(<a href="http://i.loveruby.net/ja/projects/">LoveRuby.Net Projects</a>を見つつ) あ、Ripper があるじゃん。</p>
+
+<p><strong>青木</strong>　あれは別に、代表作でもなんでもないでしょー。</p>
+
+<p><strong>ささだ</strong>　なんでもないの？</p>
+
+<p><strong>青木</strong>　使われるのかどうかも怪しいし。</p>
+
+<p><strong>ささだ</strong>　<a href="http://i.loveruby.net/ja/projects/strscan/">strscan</a> なんかは？</p>
+
+<p><strong>青木</strong>　あれもねぇ。使うけどさ、まつもとさんが String クラスを代表作というかどうかっていう話だよね。</p>
+
+<p><strong>ささだ</strong>　(笑)。そうね。</p>
+
+<p><strong>青木</strong>　やっぱ、どれもこれもユーティリティの域を出ない。</p>
+
+<p><strong>ささだ</strong>　まぁでも、ないと困るということで。じゃぁ、<a href="http://i.loveruby.net/ja/projects/refe/">ReFe</a>。</p>
+
+<p><strong>青木</strong>　ReFe もねぇ、ユーティリティだよね。</p>
+
+<p><strong>ささだ</strong>　いや、使ってる人多いと思うよ。
+たぶんこの話はまた後で<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>やった方が良いんでしょうね</p>
+
+<p><strong>青木</strong>　そうね。</p>
+
+<p><strong>ささだ</strong>　じゃあ、<a href="http://i.loveruby.net/ja/projects/href/">href</a> (Haskell 用の ReFe 類似ツール)？</p>
+
+<p><strong>青木</strong>　ありえねー。</p>
+
+<p><strong>ささだ</strong>　本書けたから <a href="http://i.loveruby.net/ja/projects/racc/">Racc</a> とか。</p>
+
+<p><strong>青木</strong>　Racc はあまり好きじゃないんだよ。</p>
+
+<p><strong>ささだ</strong>　あ、そうなんだ。</p>
+
+<p><strong>青木</strong>　いまいち設計が古いし。
+俺のプログラムってプログラマなりたてのころ設計したやつが多くて、
+そんで初期に作ったやつは設計が好きじゃないので好きになれない、と。</p>
+
+<p><strong>ささだ</strong>　じゃ、作り直す？</p>
+
+<p><strong>青木</strong>　いちおう Racc は今作り直してる。
+こないだしばらく前の日記にずっと書いてたんだけどさ、
+その場でパーサを生成できるようなヤツ。</p>
+
+<p><strong>ささだ</strong>　要するに文法をもっと書きやすくする？
+Ruby を DSL (Domain Specific Language) として使える？</p>
+
+<p><strong>青木</strong>　そうそう。そういうのがいいなぁと思って。</p>
+
+<p><strong>ささだ</strong>　じゃあ、乞うご期待ということで。</p>
+
+<p><strong>青木</strong>　そうですね。</p>
+
+<p><strong>ささだ</strong>　今年中に出るの？</p>
+
+<p><strong>青木</strong>　知らない。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　忙しくてさ今年は。</p>
+
+<p><strong>ささだ</strong>　まぁ、そうね。</p>
+
+<p><strong>青木</strong>　やっぱり 3 本はきついね。3 本の上にリファレンスマニュアル入れちゃったしなぁ。</p>
+
+<p><strong>ささだ</strong>　3 本？</p>
+
+<p><strong>青木</strong>　大学の論文と、るびま本と、「ふつう」シリーズの 3 つめ。
+それにリファレンスマニュアルでしょ。
+4 スレッドもあったら、コンテキストスイッチだけで埋まるっつーの。</p>
+
+<p><strong>ささだ</strong>　それ、ずいぶん古いよ (笑)。ずいぶん古いアーキテクチャだな。</p>
+
+<p><strong>青木</strong>　まあ、ヒトアーキテクチャの設計が古いのはしょうがない (笑)。
+ほら、ちょっと前にウェブに出たじゃない。人間の脳はコンテキストスイッチに弱いって言う話が。</p>
+
+<p><strong>ささだ</strong>　知らない。</p>
+
+<p><strong>青木</strong>　あ、そう？ つい昨日見たんだけど。</p>
+
+<p><strong>ささだ</strong>　どこのニュース？</p>
+
+<p><strong>青木</strong>　えっとね、IT 系の何とかニュース<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+
+<h4 id="著作">著作</h4>
+
+<p><strong>ささだ</strong>　えっと、著作。Racc 本に、RHG に、<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51C7PR6W5QL._SL160_.jpg" />に。</p>
+
+<p><strong>青木</strong>　「ふつう」シリーズが 2 冊……。それこそ<a href="http://i.loveruby.net/ja/">サイト</a>を見たほうがいいな。</p>
+
+<p><strong>ささだ</strong>　たくさん書いてるよね。</p>
+
+<p><strong>青木</strong>　上に行けばずらっと並んでるはず。
+えーと、Ruby 256 倍に、RHG、Java、ふつう、ふつう、というところですね。
+あとレシピブックか。</p>
+
+<p><strong>ささだ</strong>　あ、<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/514H6QV4PTL._SL160_.jpg" />も書いてるのか。</p>
+
+<p><strong>青木</strong>　え？</p>
+
+<p><strong>ささだ</strong>　え、無道編ってここに。</p>
+
+<p><strong>青木</strong>　それが最初のやつだよ。</p>
+
+<p><strong>ささだ</strong>　あれ、これが Racc？</p>
+
+<p><strong>青木</strong>　そう。</p>
+
+<p><strong>ささだ</strong>　あ、<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51PJS0RFNEL._SL160_.jpg" />は Racc をちょこっと足したって事ね。</p>
+
+<p><strong>青木</strong>　あの、黒歴史にしたいやつ。</p>
+
+<p><strong>ささだ</strong>　黒歴史なんだ。</p>
+
+<p><strong>青木</strong>　小説仕立て。</p>
+
+<p><strong>ささだ</strong>　小説仕立てなんだ。</p>
+
+<p><strong>青木</strong>　あれ、読んだことないこれ？</p>
+
+<p><strong>ささだ</strong>　俺、256 は Racc 本しか読んでないから。……えー、後で晒すということで。</p>
+
+<p><strong>青木</strong>　(声にならない声で) ああっ。</p>
+
+<p><strong>ささだ</strong>　(笑)。小説仕立て……。なんかさ、<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/515831AYG1L._SL160_.jpg" />って最近でてるじゃない？</p>
+
+<p><strong>青木</strong>　しらねー (笑)。……ツンデレもそろそろ飽和状態だよね……って、あ、そうか、本か。</p>
+
+<p><strong>ささだ</strong>　そうそうそう。いや、ディストリビューションでツンデレは嫌だ (笑)</p>
+
+<p><strong>青木</strong>　(笑)。<a href="http://sourceforge.jp/projects/tomoyo/">TOMOYO Linux</a> とか巫女ぐにょ Linux ってあるじゃん。
+あれ系のやつかと思った。</p>
+
+<p><strong>ささだ</strong>　これがなんか、小説というか。</p>
+
+<p><strong>青木</strong>　ツンデレなんだ。キーワード入れれば売れると思ってるのかな。</p>
+
+<p><strong>ささだ</strong>　って、どっかにも書いてあったよね。
+「何でもかんでもツンデレといえば売れるのか」って。</p>
+
+<p><strong>青木</strong>　ツンデレ部分がそれだけでも面白ければ別に良いんだけど、つまんないじゃん。
+それが嫌だよね。</p>
+
+<p><strong>ささだ</strong>　で、えーっと、代表著作は RHG と。</p>
+
+<p><strong>青木</strong>　売り上げベースなら「ふつりな」だけどね。</p>
+
+<p><strong>ささだ</strong>　ふつりな良いですか？</p>
+
+<p><strong>青木</strong>　売れてるねぇ。</p>
+
+<p><strong>ささだ</strong>　Haskell (『<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41mJTrvw2pL._SL160_.jpg" />』) よりも良い？</p>
+
+<p><strong>青木</strong>　Haskell よりも全然売れてるよ。</p>
+
+<p><strong>ささだ</strong>　あ、そうなんだ。Haskell ブームは、ふつうの Linux には勝てないの？</p>
+
+<p><strong>青木</strong>　うん。やっぱベース人口が違うということでしょう。</p>
+
+<p><strong>ささだ</strong>　はー、すごいね。RHG はどのくらい？</p>
+
+<p><strong>青木</strong>　RHG は Haskell よりさらにガクッと減るね。</p>
+
+<p><strong>ささだ</strong>　なるほど (笑)。Java はどうだったの？</p>
+
+<p><strong>青木</strong>　Java は RHG と同じようなもんです。実は。</p>
+
+<p><strong>ささだ</strong>　あ、そうなんだ。RHG は売れてないって言ったのにね。</p>
+
+<p><strong>青木</strong>　Java はもうちょっと売れても良さそうなんだけど。</p>
+
+<p><strong>ささだ</strong>　結城さんとかに帯を書いてもらってさ、そうすれば売れたんじゃないかな。</p>
+
+<p><strong>青木</strong>　売れるかなぁ。</p>
+
+<p><strong>ささだ</strong>　結城浩氏絶賛とか書いて。まつもとゆきひろ氏絶賛とか (笑)</p>
+
+<p><strong>青木</strong>　そうかー、カバーが駄目だったのかなぁ (笑)</p>
+
+<p><strong>ささだ</strong>　Java 売れなかったんだ。
+RHG、なんか品切れでマーケットプレイスで一万円っていうひどい値段がついていた件。あれは再販はするんですか？</p>
+
+<p><strong>青木</strong>　しません。</p>
+
+<p><strong>ささだ</strong>　しないの？ 再販というか重版というか。</p>
+
+<p><strong>青木</strong>　増刷はしない……というかできない。</p>
+
+<p><strong>ささだ</strong>　なんか結構学会というか、私の周りで紹介したりすると、
+「あー、すごい良い本だね、買おう」って言われるんだけど、もう売ってない。</p>
+
+<p><strong>青木</strong>　あー。出せるもんなら出したいけどねえ。
+無理だろうなあ。決めるのは俺じゃないしさ。</p>
+
+<p><strong>ささだ</strong>　RHG の次の版というか、RHG 2.0 っていうのは出すんですか？</p>
+
+<p><strong>青木</strong>　それは余計無理だから (笑)</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　どっかの出版社が出す気になれば別だけど、そんなところはないだろうし。</p>
+
+<p><strong>ささだ</strong>　書く気はないの？ 最近の仕様に合わせて。1.8 だったらあんまり変わってないけど。</p>
+
+<p><strong>青木</strong>　RHG 2.0 かぁ。個人ベースで書きたい気持ちはあるけど。</p>
+
+<p><strong>ささだ</strong>　Ruby 2.0 は 2030 年って言ってたから。</p>
+
+<p><strong>青木</strong>　まぁ、それぐらいには出せるかもしれないね。</p>
+
+<p><strong>ささだ</strong>　2ch に書いてあったね。最近のやつに書き直して出してくれって。
+何人欲しがるか分かんないけどね。</p>
+
+<p><strong>青木</strong>　どれだけ手間がかかると思ってるんだよぅー。</p>
+
+<p><strong>ささだ</strong>　(笑)。著作の話はこんな感じで。しかしよく書いてるよね。</p>
+
+<p><strong>青木</strong>　そうだね。まったく、よく書くよね。暇だから。</p>
+
+<p><strong>ささだ</strong>　暇なんだ。</p>
+
+<h4 id="好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</h4>
+
+<p><strong>ささだ</strong>　好きなメソッド、嫌いなメソッド。レシピブックの自己紹介と変わんない？</p>
+
+<p><strong>青木</strong>　変わってないかな。好きなメソッドは String#slice(regexp, n)。
+引数も重要ね。この引数じゃないとだめ。で、嫌いなのは……なんだろう。find_all とかかな。</p>
+
+<p><strong>ささだ</strong>　find_all？ 何が嫌なの？</p>
+
+<p><strong>青木</strong>　アンダースコアが。</p>
+
+<p><strong>ささだ</strong>　(笑)。アンダースコアがあるのたくさんあるじゃん。</p>
+
+<p><strong>青木</strong>　そうなんだけど、特に find_all は見た目がなんかムカつく。</p>
+
+<p><strong>ささだ</strong>　(<a href="http://www.ruby-lang.org/ja/man/index.cgi?cmd=view;name=String#slice">リファレンスマニュアルの String#slice の項目</a>を見て) String#slice。self[] と同じです。</p>
+
+<p><strong>青木</strong>　self[] より slice のほうがかっこいいよ。</p>
+
+<p><strong>ささだ</strong>　えー。俺、slice って書いたことないんだけど。</p>
+
+<p><strong>青木</strong>　俺は引数に正規表現を書くときは slice にするなあ。
+string[] で正規表現書くのって、なんか気持ち悪い。</p>
+
+<p><strong>ささだ</strong>　あ、そう？</p>
+
+<p><strong>青木</strong>　なんかインデックスアクセスしてる気がして……。</p>
+
+<p><strong>ささだ</strong>　あー。Ruby プログラムとしては、ブラケットで書くのは全然問題ない。</p>
+
+<p><strong>青木</strong>　そうか？</p>
+
+<p><strong>ささだ</strong>　ていうか、書きやすい。けど、VM の作者としては、すごく嫌ですね。</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<p><strong>ささだ</strong>　([] は) インデックスだけにしろよ！っていう。
+最適化できないじゃないか！ って思わない？ 2 引数だったらコンパイル時に分かるから良いんだけど。</p>
+
+<p><strong>青木</strong>　え、だったらあれはどうするの？ Proc 呼び出すのに [] が使えるじゃん。</p>
+
+<p><strong>ささだ</strong>　あー、ウザイよね。そんなの禁止だよね。</p>
+
+<p><strong>青木</strong>　(笑)。あれは俺も嫌い。あと、Dir.glob の代わりにも使えるでしょ。あれも嫌だ。</p>
+
+<p><strong>ささだ</strong>　え、Dir[]っていうの？ あー、なるほど。ほんとだほんとだ。</p>
+
+<p><strong>青木</strong>　これは Dir.glob の方がいいと思うね。</p>
+
+<p><strong>ささだ</strong>　これは glob の方がいいね。……でも slice は、なんか嫌。</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<p><strong>ささだ</strong>　で、嫌いなのは find_all。アンダースコアはたくさんあると思うけどな。</p>
+
+<p><strong>青木</strong>　いっぱいあるんだけど、find_all は特に字面が嫌なんだよ。
+なんと表現したらいいのかわからないけど、「倒れやすい」字面ってあるじゃない？
+あの、煙突みたいに立ってるのが嫌なの。</p>
+
+<p><strong>ささだ</strong>　あー。</p>
+
+<p><strong>青木</strong>　字面がこう、f もそうだし、d もそうだし、all もそうだし。</p>
+
+<p><strong>ささだ</strong>　しかもアンダースコアがある。</p>
+
+<p><strong>青木</strong>　そうそう。だから何か嫌だ。同じ理由で、if を一行に書くのもあんまり好きじゃない。</p>
+
+<p><strong>ささだ</strong>　「if cond then expr end」ってこと？</p>
+
+<p><strong>青木</strong>　そう。1 行で書くのは好きじゃない。</p>
+
+<p><strong>ささだ</strong>　これ別に立ってないじゃん。</p>
+
+<p><strong>青木</strong>　全体的に右に傾いて見えない？</p>
+
+<p><strong>ささだ</strong>　えー？</p>
+
+<p><strong>青木</strong>　「if」がさぁ、「i」より「f」の方が背が高いじゃん。
+「end」も「d」の方が高いじゃん。だから全体的に重心が右にかかって見える。</p>
+
+<p><strong>ささだ</strong>　そんなの気にするのは変だよ。</p>
+
+<p><strong>青木</strong>　いやいや。ぜったい嫌だってば。</p>
+
+<p><strong>ささだ</strong>　へぇー。じゃ、なんだろう。
+一行で if を書くのはそもそもあれだと思うけど、それだったら三項演算子とか、後置の if とか使う。
+後置の if はいいの？</p>
+
+<p><strong>青木</strong>　後置の if はいい。</p>
+
+<p><strong>ささだ</strong>　end が後ろに無いから問題ない？</p>
+
+<p><strong>青木</strong>　うん。if も真ん中にあるしね。</p>
+
+<p><strong>ささだ</strong>　へぇー、変なの。まあいいや。</p>
+
+<h3 id="ruby-とのかかわり">Ruby とのかかわり</h3>
+
+<h4 id="rubyist-になったきっかけ">Rubyist になったきっかけ</h4>
+
+<p><strong>ささだ</strong>　Ruby について。やっと Ruby ですよ。Rubyist になったきっかけは、いつから？</p>
+
+<p><strong>青木</strong>　えーっと、きっかけはねぇ、
+今は亡き Linux Japan の前田さんの記事を読んだのが最初かな。</p>
+
+<p><strong>ささだ</strong>　99 年とかだっけ？</p>
+
+<p><strong>青木</strong>　98 年。で、使おうかなぁ、と思いつつもそのときはまだ使わなかった。
+けど、そのころ dojo ML ってのがあって。</p>
+
+<p><strong>ささだ</strong>　ドウジョウ ML？</p>
+
+<p><strong>青木</strong>　生越さんがやってたやつ。プログラミング道場みたいなノリの。</p>
+
+<p><strong>ささだ</strong>　あー、そっちか。ドウジョウって、「同上」かと思った。</p>
+
+<p><strong>青木</strong>　違う違う (笑)。その ML で
+「メーラーを作りたいんですけど、Ruby と C と Perl で迷っています」って書いたら、
+まつもとさんがいてね。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　それで「Ruby がいいよ」って言われた。
+でまぁ、そのときメールをほとんど使ったことがなくってさぁ。
+ほとんど初めて他人からもらったメールがまつもとさんからだった。</p>
+
+<p><strong>ささだ</strong>　ほう。そのメールって家の環境？ 大学？</p>
+
+<p><strong>青木</strong>　家。それこそあの、28kbps みたいなやつで繋いでたわけ。
+モデムで。で、メールをもらったのが初めてで、しかもまつもとさんからで、
+Ruby が良いよって言われてしまった。</p>
+
+<p><strong>ささだ</strong>　まつもとさんは知ってたの？</p>
+
+<p><strong>青木</strong>　それはもちろん。それで、これはまぁ、Ruby しかないなって思って Ruby にした。</p>
+
+<p><strong>ささだ</strong>　(笑)。あー、じゃあまつもとさんは良いところで。</p>
+
+<p><strong>青木</strong>　良いところで宣伝活動をしてたね (笑)</p>
+
+<p><strong>ささだ</strong>　こんな、青木さんみたいな人材を発掘できたというのは、それはすごいね。</p>
+
+<p><strong>青木</strong>　その頃はほんとに、偶然が連続しててねぇ。
+Ruby にたどり着いたのも本当に偶然だよ。</p>
+
+<p><strong>ささだ</strong>　最初、Perl を調べてたって言ってなかったっけ。</p>
+
+<p><strong>青木</strong>　うん。最初は、本だけで C を知ってたんだよ。
+でも、C はなんかめんどくさくて、メーラを全部 C で書く気は起きなかった。
+ところが『初めての Perl』読んだら Perl がすごい便利っぽい。
+でも Linux Japan 読んだら Ruby は Perl よりすごいって書いてあったわけさ。
+それにまぁ、なんか Ruby の作者の人にも応援されてしまったし。</p>
+
+<p><strong>ささだ</strong>　それまではプログラミング経験はなかったわけですか？</p>
+
+<p><strong>青木</strong>　そうね。本だけ。</p>
+
+<p><strong>ささだ</strong>　あー。で、TMail 作ってたと。</p>
+
+<p><strong>青木</strong>　うん。</p>
+
+<p><strong>ささだ</strong>　まず strscan だっけ？ 先に Racc だっけ？</p>
+
+<p><strong>青木</strong>　最初に作り始めたのは net/smtp。そのときは名前が違ったけど。
+それと net/pop。何でかって言うと、たぶん作りやすかったから。</p>
+
+<p><strong>ささだ</strong>　あれ。SMTP 作るために Racc 作ったんじゃないの？</p>
+
+<p><strong>青木</strong>　ちゃう。Racc は TMail のため。</p>
+
+<p><strong>ささだ</strong>　あ、そうか。RFC822 だっけ、あれを解析するため。</p>
+
+<p><strong>青木</strong>　そうそう。</p>
+
+<p><strong>ささだ</strong>　なるほど。</p>
+
+<p><strong>青木</strong>　SMTP と POP は立石さんの作ったやつが先にあったから、作りやすかったんだね、きっと。</p>
+
+<p><strong>ささだ</strong>　パクったってこと？</p>
+
+<p><strong>青木</strong>　そう。</p>
+
+<p><strong>ささだ</strong>　それを参考に。</p>
+
+<p><strong>青木</strong>　コード見てたら作り直せそうだったんで、作り直した。</p>
+
+<p><strong>ささだ</strong>　なるほど。きっかけはそんなことと。</p>
+
+<p><strong>青木</strong>　そんなきっかけでした。</p>
+
+<h4 id="ruby-とのつきあい">Ruby とのつきあい</h4>
+
+<p><strong>ささだ</strong>　現在の Ruby との付き合い。</p>
+
+<p><strong>青木</strong>　さあー？(笑)</p>
+
+<p><strong>ささだ</strong>　執筆？</p>
+
+<p><strong>青木</strong>　いまんとこ Ruby 方面は執筆してないなあ。るびま本くらい。
+あと C コンパイラを Ruby で書いてるけど。</p>
+
+<p><strong>ささだ</strong>　標準ライブラリメンテナ。</p>
+
+<p><strong>青木</strong>　標準ライブラリメンテナで、ドキュメントメンテナで、書籍も書きましたと。
+何でもやる人、ってことで。</p>
+
+<h4 id="ruby-の好きなところ嫌いなところ">Ruby の好きなところ嫌いなところ</h4>
+
+<p><strong>ささだ</strong>　Ruby の好きなところと嫌いなところ。</p>
+
+<p><strong>青木</strong>　好きなところはですねぇ……。</p>
+
+<p><strong>ささだ</strong>　作者がメールをくれる。</p>
+
+<p><strong>青木</strong>　(笑)。それもいいねぇ。C の作者はくれないもんな。</p>
+
+<p><strong>ささだ</strong>　くれないね。</p>
+
+<p><strong>青木</strong>　Perl もちょっと難しいしなぁ。Python はくれるかな。</p>
+
+<p><strong>ささだ</strong>　まぁ、ちゃんとネタが面白ければ。</p>
+
+<p><strong>青木</strong>　そうか。でも日本語で書きたいよね。</p>
+
+<p><strong>ささだ</strong>　あ、でもなでしこ<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>の作者は日本語でくれるよ。</p>
+
+<p><strong>青木</strong>　(笑) でも、なでしこ使う気はしないね。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　好きなとこなぁ。割と全部好きなんだよな。Ruby 脳だからさ、俺。</p>
+
+<p><strong>ささだ</strong>　そうだよね。それは分かる。
+好きというよりか、Ruby じゃないとしっくり来ないってことだよね。
+基準が Ruby、みたいな。Ruby 脳患者として、Haskell はどうだった？</p>
+
+<p><strong>青木</strong>　うーん、面白いとは思うけど、書きたいとは思わないなぁ。</p>
+
+<p><strong>ささだ</strong>　(笑)。本書いてる人がそんなこと言っていいのか (笑)</p>
+
+<p><strong>青木</strong>　いやまぁ、あくまであの本は勉強しようというスタンスだから、いいんよ。</p>
+
+<p><strong>ささだ</strong>　好きなところは全部と。嫌いなところは？</p>
+
+<p><strong>青木</strong>　嫌いなところは……
+なんか最近、いまいち好きじゃない方向に行きつつあるような気がしなくもない。</p>
+
+<p><strong>ささだ</strong>　Ruby の仕様がってこと？</p>
+
+<p><strong>青木</strong>　仕様が。</p>
+
+<p><strong>ささだ</strong>　あー。</p>
+
+<p><strong>青木</strong>　Symbol が String の下位クラスとか。<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<p><strong>ささだ</strong>　あー、どうなのかね、あれ。</p>
+
+<p><strong>青木</strong>　あれはちょっとなあ……(笑)。うーん。</p>
+
+<p><strong>ささだ</strong>　なんか、Symbol で String のメソッドが使えるって言うのは、
+なんか結構ありかなって、最初は思ってたんだけど、
+西尾さんっていう、LL で Python のワンライナー書いた人が、
+Immutable String っていう名前で良いんじゃない？ っていう。</p>
+
+<p><strong>青木</strong>　それは違うよなぁ。</p>
+
+<p><strong>ささだ</strong>　いや、それで納得しちゃって (笑)</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<p><strong>ささだ</strong>　いや、だから Symbol という風に今まで言っていたのを全部捨てて、
+ImmutableString を作るという。今回の変更って言うのは、まさにそういうことだよね。</p>
+
+<p><strong>青木</strong>　うーん……。その変更は気に食わないなあ。</p>
+
+<p><strong>ささだ</strong>　Symbol を捨てるかどうかは置いておいて、
+名前を ImmutableString にすれば今回の変更ってのは、収まるなと。</p>
+
+<p><strong>青木</strong>　ま、そうね。でも、ImmutableString って、同じ内容なら必ず共有されるの？</p>
+
+<p><strong>ささだ</strong>　ID は同じになるよね。
+ID を同じにするものイコール ImmutableString みたいな。
+だから、Java の intern ていう風に考える。</p>
+
+<p><strong>青木</strong>　ああそれでわかった。うーん。</p>
+
+<p><strong>ささだ</strong>　それが良いかどうかっていうのは、考え直すと、なんかな。
+で、Symbol を #sub かなんかで変えたいと言うのとかは、
+でも、現在の 1.9 の実装って、Symbol#gsub とかやっても、帰ってくるのは String なんだよね？
+そこがなんかあまり意味がないなとか。</p>
+
+<p><strong>青木</strong>　そうだね。特に、Rails 発の変更というのが一番気に食わないな。</p>
+
+<p><strong>ささだ</strong>　(笑)。Hash で同値になるっていうのはありえないじゃんというのは思うんだけどね。</p>
+
+<p><strong>青木</strong>　あんがい、継承するっていうのが嫌なのかもしれないな。
+継承しなければ、割と納得できるのかもしれない。
+単に同じメソッドを持つっていうだけなら。</p>
+
+<p><strong>ささだ</strong>　Duck Typing 用にっていう。
+ただ、String が返るんだったら、Symbol 返して欲しいな。</p>
+
+<p><strong>青木</strong>　……そう考えると、やっぱ Symbol を使ってはいけないような気がするなぁ。</p>
+
+<p><strong>ささだ</strong>　あ、Symbol を文字列で操作するって言うのは、
+Symbol イコールアイデンティティの確保だから、やってる意味が違うと。</p>
+
+<p><strong>青木</strong>　うん。なんか意味違うよね。やっぱり。</p>
+
+<p><strong>ささだ</strong>　そう言われるとそうかなって思ってしまうな。じゃあ、今の 1.9 は嫌いだと。</p>
+
+<p><strong>青木</strong>　うん。</p>
+
+<p><strong>ささだ</strong>　いま騒げばまだ直るんじゃないの？</p>
+
+<p><strong>青木</strong>　どうなんだろうな？ あれは直るかな？</p>
+
+<p><strong>ささだ</strong>　直したいよね。</p>
+
+<p><strong>青木</strong>　YARV でこう……(笑)</p>
+
+<p><strong>ささだ</strong>　勝手に (笑)</p>
+
+<p><strong>青木</strong>　駄目っすかねぇ。うーん、他はまぁでもあまり気に食わないのはないかな。</p>
+
+<p><strong>ささだ</strong>　to_splat の ruby-core でのスレッドって見てる？</p>
+
+<p><strong>青木</strong>　見てない。なにあれ？</p>
+
+<p><strong>ささだ</strong>　obj.m(*args) みたいに書いたときに引数展開する、あそこで呼ばれる。</p>
+
+<p><strong>青木</strong>　いまは to_ary だけど、それが to_splat になるってこと？
+じゃ、to_ary は……暗黙の変換だけで呼ぶってことか。</p>
+
+<p><strong>ささだ</strong>　そうそう。で、to_ary で何で駄目なのかが分かんなくて。
+分けたい場合ももしかしたらあるかもしれないけど、その「もしかしたら」がどれくらいあるかが分かんなくて。to_ary を使ったほうがきっと便利な場面の方が多いと思うんだけれども、どうなんですかね。</p>
+
+<p><strong>青木</strong>　うーん。</p>
+
+<p><strong>ささだ</strong>　たぶん、デフォルトの to_splat は to_ary になるんだろうけど。
+to_splat 自体も名前が変わるらしいけど。</p>
+
+<p><strong>青木</strong>　なんか名前で ruby-talk で揉めてたよね。</p>
+
+<p><strong>ささだ</strong>　名前よりももっと前に考えることがあるだろう (笑)</p>
+
+<p><strong>青木</strong>　(笑)。そこで名前に行っちゃうところが Ruby なんですかね。</p>
+
+<p><strong>ささだ</strong>　Ruby っていうか、あっちの人。splat は動詞だから……とか。</p>
+
+<p><strong>青木</strong>　(笑)。分かる。分かるような気がする。</p>
+
+<p><strong>ささだ</strong>　後なんかあったっけ。やばそうなの。色々ある？</p>
+
+<p><strong>青木</strong>　Rails 関係は、非常に気に食わない。俺、Rails 大嫌いだよ。</p>
+
+<p><strong>ささだ</strong>　Rails が嫌い？</p>
+
+<p><strong>青木</strong>　Rails 嫌い。Rails の、特に ActiveSupport が嫌い。</p>
+
+<p><strong>ささだ</strong>　あー。</p>
+
+<p><strong>青木</strong>　あれはひどいよね。「これはひどい」だよ。</p>
+
+<p><strong>ささだ</strong>　あー、なるほど。でも Rails が無いとさ、色々と売り上げが下がったりとか (笑)</p>
+
+<p><strong>青木</strong>　そうなんだよなー。そこが余計にムカつく。</p>
+
+<p><strong>ささだ</strong>　Rails 様々ですよ。</p>
+
+<p><strong>青木</strong>　でも ActiveSupport は気に食わないんだー！</p>
+
+<p><strong>ささだ</strong>　(笑)。ActiveSupport はちゃんと見てる？ 機能。全然チェックしてないんだけど。</p>
+
+<p><strong>青木</strong>　nil.empty? とかさぁ。あんなもんいらねえ。</p>
+
+<p><strong>ささだ</strong>　あれ絶賛してる人が多いよね。</p>
+
+<p><strong>青木</strong>　絶賛されてるのがまたムカつく。おまいら分かってねえよ！</p>
+
+<p><strong>ささだ</strong>　(笑)。あと、あれは？ Symbol#to_proc <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+
+<p><strong>青木</strong>　あれは最低。</p>
+
+<p><strong>ささだ</strong>　あれ駄目？</p>
+
+<p><strong>青木</strong>　分かってないね！</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　名前から実体を作るのはよろしくない。</p>
+
+<p><strong>ささだ</strong>　ほお。</p>
+
+<p><strong>青木</strong>　例えばさ、Pathname に対して mkdir するとディレクトリが出来るって、おかしくない？</p>
+
+<p><strong>ささだ</strong>　あー、Pathname と、ディレクトリは違うか。なるほど。</p>
+
+<p><strong>青木</strong>　名前になんかすると実物が存在するようになるというのは (Ruby 哲学的に) 許せん。
+名前はあくまでもすでに存在するモノにつけるべきでしょ。
+少なくともプログラミングでは、
+モノが先にあってそれに名前を付けるという順番を維持すべき。</p>
+
+<p><strong>ささだ</strong>　Ruby っぽくないという事ですね。なるほど、そうか。他にそういう例ってあった？</p>
+
+<p><strong>青木</strong>　名前が先にある例？ うーん、そうだな……。</p>
+
+<p><strong>ささだ</strong>　Class オブジェクトとかは？</p>
+
+<p><strong>青木</strong>　Class オブジェクトも、先に Class 作って定数に入れてるじゃん。</p>
+
+<p><strong>ささだ</strong>　クラスオブジェクトではあるけど。
+クラスを名前として捉えて、まぁ、namespace オブジェクトとして捉えてというのもあるけど。
+関係ないかな。</p>
+
+<p><strong>青木</strong>　あれもモノが先にあって、名前はあとから付けてる。
+実装もそうだよね。先にオブジェクト作って、定数に代入。</p>
+
+<p><strong>ささだ</strong>　名前ねぇ。便利だという気は……。</p>
+
+<p><strong>青木</strong>　Symbol#to_proc が？</p>
+
+<p><strong>ささだ</strong>　うん。いや、使いたいとは思わないけど。</p>
+
+<p><strong>青木</strong>　あれってようするに Ruby でも関数合成したいですって話でしょ。
+それだったら素直に関数型言語使えばいいんだよ。
+それをねぇ、Ruby で小手先の技で何とかしようとする根性が気に食わない。</p>
+
+<p><strong>ささだ</strong>　(笑)。いやでも、Ruby って小手先の技をがんばってるんじゃないの？</p>
+
+<p><strong>青木</strong>　えー、そうかなぁ？ 意外と普通だと思うけどな。</p>
+
+<p><strong>ささだ</strong>　それは Ruby 脳だよ。</p>
+
+<p><strong>青木</strong>　えー、そうかなあ。でも Symbol#to_proc は小手先過ぎるよー。</p>
+
+<p><strong>ささだ</strong>　そうだね。小手先過ぎるというのは分かる。</p>
+
+<p><strong>青木</strong>　せめてもうちょっと拡張性のある手法にしてほしいよ。
+任意の数のメソッドを合成できるとかさ。
+いまのは見ためも実装も気持ち悪すぎる。</p>
+
+<h4 id="ruby-を使ってうまくいった事例">Ruby を使ってうまくいった事例</h4>
+
+<p><strong>ささだ</strong>　Ruby を使って成功だった、うまく行ったという事例。</p>
+
+<p><strong>青木</strong>　えー。原稿の処理は Ruby でやると楽でした。</p>
+
+<p><strong>ささだ</strong>　ほう。地味ですね (笑)</p>
+
+<p><strong>青木</strong>　地味です (笑)。俺はやっぱりアプリケーション作る人じゃないしなぁ。</p>
+
+<p><strong>ささだ</strong>　最初に出会えて良かったというのはあるんですか？</p>
+
+<p><strong>青木</strong>　そうだね。色々こう、勉強にはなるよね。
+プログラミング自体について学ぶには、非常に良い言語だと思うよ。</p>
+
+<p><strong>ささだ</strong>　つまり添削本を買えと。</p>
+
+<p><strong>青木</strong>　うん (笑)</p>
+
+<p><strong>ささだ</strong>　添削本の話はあとでしますかね。
+<img src="/images/0017-Hotlinks/aoki3.jpg" alt="aoki3.jpg" /></p>
+
+<h4 id="キラーアプリ">キラーアプリ</h4>
+
+<p><strong>ささだ</strong>　自分にとってキラーアプリと言うのは。</p>
+
+<p><strong>青木</strong>　キラーアプリなぁ。</p>
+
+<p><strong>ささだ</strong>　tDiary？</p>
+
+<p><strong>青木</strong>　使ってるけど、キラーではないな。
+……それに tDiary って、実はあんまり設計が好きじゃなくて。</p>
+
+<p><strong>ささだ</strong>　3 タブだね。</p>
+
+<p><strong>青木</strong>　3 タブ？</p>
+
+<p><strong>ささだ</strong>　あ、インデント。</p>
+
+<p><strong>青木</strong>　あー。うんうんうん。ハードタブもいまいちだよねぇ。</p>
+
+<p><strong>ささだ</strong>　プラグインの設計が……(笑)</p>
+
+<p><strong>青木</strong>　確かにあの辺もよくない。あとデータベースの設計が好きじゃない。</p>
+
+<p><strong>ささだ</strong>　あ、そうなんだ。データベースはまだ見てないんで。</p>
+
+<p><strong>青木</strong>　データベースは月別のファイルで……。</p>
+
+<p><strong>ささだ</strong>　PStore だっけ？</p>
+
+<p><strong>青木</strong>　今はテキストファイルになってるよ。
+本体、ツッコミ、リファラがそれぞれ別のファイルで、月別なのね。
+そこがまず気に食わない。日単位で記事と突っ込みとリファラをまとめたファイルがいいと思うんだよ。</p>
+
+<p><strong>ささだ</strong>　それも全部分ければいいじゃん。</p>
+
+<p><strong>青木</strong>　全部分けても良いんだけどさ、分けすぎると今度はディスク食うから。</p>
+
+<p><strong>ささだ</strong>　いや、いいじゃんもう。</p>
+
+<p><strong>青木</strong>　いやいやいや。あのさー、ReFe がそれ系というか、
+すごい細かいたくさんのファイルを作るんだけど、あれはやっぱりすごいディスクを食うんだよね。</p>
+
+<p><strong>ささだ</strong>　3 バイトのファイルも 4KB をつかうみたいな。</p>
+
+<p><strong>青木</strong>　うん。ファイルがたくさんあると、無駄にハードディスクの実容量を食う。</p>
+
+<p><strong>ささだ</strong>　じゃあ、ReFe とかはこれからはデータベースになっちゃったりするの？</p>
+
+<p><strong>青木</strong>　なりません。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　なりませんけど、まぁちょっとは自粛しようかなと思う。
+基本的にはファイルでガンガン分ける qmail スタイルが好きだから、できれば分けたいんだけど。</p>
+
+<p><strong>ささだ</strong>　じゃ、Ruby のアプリケーションは使ってないの？</p>
+
+<p><strong>青木</strong>　使ってなくはないよ。tDiary と、BitChannel と、
+あと TMail はシステムの、あまり外には見えないところで活用されてるし。</p>
+
+<p><strong>ささだ</strong>　TMail って何に使うの？</p>
+
+<p><strong>青木</strong>　tDiary の記事をメール経由で送ってるんだけど、それの処理で常に動いている。
+あとは POP サーバーが Ruby で書いてある。<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></p>
+
+<p><strong>ささだ</strong>　おお？</p>
+
+<p><strong>青木</strong>　POP サーバー。自宅サーバの。</p>
+
+<p><strong>ささだ</strong>　どっからどこに行くの？</p>
+
+<p><strong>青木</strong>　自宅のサーバーマシンから、メインマシンに。</p>
+
+<p><strong>ささだ</strong>　あ、そういうことか。POP サーバーがサーバー機で動いてるのか。
+それを POP クライアントで取ってきてる。何でわざわざ作ったんですか？</p>
+
+<p><strong>青木</strong>　え、何でって？ 他に何を使えば？</p>
+
+<p><strong>ささだ</strong>　Debian だったよね。POP サーバーって無かったっけ？</p>
+
+<p><strong>青木</strong>　Qpopper とかあるけど、設定がめんどくさかった。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　だってさ、APOP と Maildir 使うためだけになんかいろいろやんなきゃいけないんだもん。
+それに対して俺が作った POP サーバは APOP + Maildir 専用で色々とすっきりしてるので、
+設定なんて 1 行も無い。楽だ。</p>
+
+<p><strong>ささだ</strong>　つーかそれって、コードに全部自分の好きな設定書いてるって事だよね (笑)</p>
+
+<p><strong>青木</strong>　そうね (笑)</p>
+
+<p><strong>ささだ</strong>　そうだ。関係ないけどさ、メールの振り分けとかってやってる？</p>
+
+<p><strong>青木</strong>　メインマシンで？</p>
+
+<p><strong>ささだ</strong>　うん。例えばさ、いわゆるメールのフォルダ分けみたいな。</p>
+
+<p><strong>青木</strong>　メーリングリストだけ分けてるよ。</p>
+
+<p><strong>ささだ</strong>　え、それは Ruby かなんかでバーっと書いてる？</p>
+
+<p><strong>青木</strong>　いや、メーラーで。</p>
+
+<p><strong>ささだ</strong>　メーラーは何を使ってるの？</p>
+
+<p><strong>青木</strong>　Mew。</p>
+
+<p><strong>ささだ</strong>　メーラーの設定で、バーっと。</p>
+
+<p><strong>青木</strong>　うん。ひたすら書く。</p>
+
+<p><strong>ささだ</strong>　書きやすい？</p>
+
+<p><strong>青木</strong>　いや、全然。あと、Mew は設定を起動中にその場で変えらんないのがめんどくさい。</p>
+
+<p><strong>ささだ</strong>　あー、起動し直しとか？</p>
+
+<p><strong>青木</strong>　うん。そうなっちゃうんだよ。</p>
+
+<p><strong>ささだ</strong>　Thunderbird で振り分けやろうとするとさ、こうやってクリックしてさぁ (笑)
+新規ってやってガチャガチャってやって。これ辛いんだよね。</p>
+
+<p><strong>青木</strong>　うは、これはめんどくさい。自動フィルタってないんだ？</p>
+
+<p><strong>ささだ</strong>　あー、まぁそういう……。私はまさにそのために TMail を使って。</p>
+
+<p><strong>青木</strong>　あ、そうなんだ。</p>
+
+<p><strong>ささだ</strong>　TMail があれば TMail を使って。無ければ標準添付の mailread.rb。
+あれ使ってるの俺しかいないんじゃないかと思うんだけど (笑)</p>
+
+<p><strong>青木</strong>　あれもちょっとひどいよねぇ。
+だいたい、なんで mailread.rb っていうライブラリ名で Mail なんて一般的なクラス名を……。
+あれ許せないんだけど！</p>
+
+<p><strong>ささだ</strong>　あれすごいよね。……で、まぁあれのユーザーなんですけど (笑)</p>
+
+<p><strong>青木</strong>　あれなくして欲しい。</p>
+
+<p><strong>ささだ</strong>　いや、でもなくされると私困るんだよ。</p>
+
+<p><strong>青木</strong>　まずライブラリに別名を付けて、それから徐々になくしていく感じでさ。</p>
+
+<p><strong>ささだ</strong>　あー、そうね。こんな感じでメールは分けるようにしてるけど。
+こういうので書けるやつって無くてさ、こんなの誰でも作るだろうと思ってたら。
+で、procmail がまさにこれをやるみたいだけど。設定がわかんなくてさ。</p>
+
+<p><strong>青木</strong>　なんで procmail は誰も書き直さないんだろうね。</p>
+
+<p><strong>ささだ</strong>　ねぇ。</p>
+
+<p><strong>青木</strong>　あんなの書きたくないよな。</p>
+
+<p><strong>ささだ</strong>　なんかねぇ、それこそほんと Ruby で好きなアクションできたほうが嬉しいなとか思うんだけど。</p>
+
+<p><strong>青木</strong>　誰か書いてるような気もしなくもないけどね。</p>
+
+<p><strong>ささだ</strong>　あとさ、メーリングリストにも色々あるじゃん。
+なんか X-ML-Name だったり List-Id だったり。それ統一してくれないのかね。</p>
+
+<p><strong>青木</strong>　それは無理じゃない？</p>
+
+<p><strong>ささだ</strong>　RFC か何かでさ、こう ML だったら ML の名前がどうとかさ。</p>
+
+<p><strong>青木</strong>　うーん、クライアント側でがんばるしかないのかな、今のところはさ。</p>
+
+<p><strong>ささだ</strong>　それがめんどくさくてさ。あと最近ウザイのがさ、エイリアスを ML と称している人たち。</p>
+
+<p><strong>青木</strong>　あー、あるねぇ。</p>
+
+<p><strong>ささだ</strong>　X-ML-Name 付けてくれよせめて、みたいな。</p>
+
+<p><strong>青木</strong>　あるある。システムに弱い人が使いたがるよね。</p>
+
+<p><strong>ささだ</strong>　弱く無い人もめんどくさいから ML のシステムを入れなくて。</p>
+
+<p><strong>青木</strong>　ML 関係はもうちょっと楽になってもいいね。
+QuickML みたいに楽で、それでいてちょっとだけ管理できる、みたいなのがいいなぁ。</p>
+
+<p><strong>ささだ</strong>　QuickML って、何が足りないの？</p>
+
+<p><strong>青木</strong>　誰でも ML に入れてしまうのがちょっと。</p>
+
+<p><strong>ささだ</strong>　いまは認証あるよ。</p>
+
+<p><strong>青木</strong>　あ、そうなの？あー、それじゃそれでいいのか。</p>
+
+<p><strong>ささだ</strong>　なんか、アドミンにメールが来て、OK かどうかっていう。そういう設定がある。</p>
+
+<p><strong>青木</strong>　へー、それならいいか。</p>
+
+<p><strong>ささだ</strong>　使ったことないんだけどさ、俺も。</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<p><strong>ささだ</strong>　Debian ならパッケージあるし。</p>
+
+<p><strong>青木</strong>　QuickML は設定も簡単？</p>
+
+<p><strong>ささだ</strong>　うん。Debian だと apt-get install だけ。</p>
+
+<p><strong>青木</strong>　おー、それは素晴らしい。使ってみようかな。</p>
+
+<p><strong>ささだ</strong>　というか、confirmation ml creation……。あ、ごめんなさい。参加の認証は無いんだ。</p>
+
+<p><strong>青木</strong>　あ、ないの？</p>
+
+<p><strong>ささだ</strong>　ML を作るときに confirmation メールが来る。</p>
+
+<p><strong>青木</strong>　あー、そうか、ML を作るときね。</p>
+
+<p><strong>ささだ</strong>　参加はまだ無いんだ。</p>
+
+<p><strong>青木</strong>　でも Ruby なら書き換えられるからいいか。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　高林さんは、そういうのは入れたくないって書いてたたような気がするけど……。</p>
+
+<p><strong>ささだ</strong>　QuickML 2.0 で。</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<p><strong>ささだ</strong>　良くないね、そういうなんか、安易なネーミングは。
+<img src="/images/0017-Hotlinks/aoki4.jpg" alt="aoki4.jpg" /></p>
+
+<h4 id="もう少しキラーアプリ">もう少しキラーアプリ</h4>
+
+<p><strong>ささだ</strong>　えっと、次。Ruby を使って成功だったところ……ってそれはさっきやったな。
+キラーアプリが今の話でしたね。</p>
+
+<p><strong>青木</strong>　別に Ruby の……あ、キラーアプリね。</p>
+
+<p><strong>ささだ</strong>　Ruby はだから結局使ってなかったって事で (笑)。
+キラーアプリっぽいのは特に。自分の使ってるものぐらい……あ、TMail の話になったんだっけ、それで。
+自分で使ってる Ruby の。</p>
+
+<p><strong>青木</strong>　TMail……はキラーではないな別に。</p>
+
+<p><strong>ささだ</strong>　じゃ、使ってないんじゃない、Ruby。</p>
+
+<p><strong>青木</strong>　いやいや、入ってないとやっぱり、
+突然いろんなところで困り始めるんだよ。空気のような存在。</p>
+
+<p><strong>ささだ</strong>　ああ、また綺麗にまとめてくれた。</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<h4 id="ruby-の習得">Ruby の習得</h4>
+
+<p><strong>ささだ</strong>　Ruby の習得は簡単でしたか。</p>
+
+<p><strong>青木</strong>　どうなんでしょうか。</p>
+
+<p><strong>ささだ</strong>　初めてのプログラミングとして。詰まるところとか、なかった？</p>
+
+<p><strong>青木</strong>　つまんなくはなかったよ。初めてだから比較できなくてよく分からない。</p>
+
+<p><strong>ささだ</strong>　どれくらい使うようになったの。</p>
+
+<p><strong>青木</strong>　どのくらいのレベルになれば「習得」になるの？</p>
+
+<p><strong>ささだ</strong>　ここまで来るのにどれくらい、とかそういう。</p>
+
+<p><strong>青木</strong>　うーん、プログラムが書けるかどうかというレベルでは、
+Racc が 1 年で書けてる訳だから、早いんじゃない？</p>
+
+<p><strong>ささだ</strong>　そうね。そもそも Racc ……その LALR とかあの辺をしっかりと出来るというのは、
+Ruby と関係ないところですごいよね。</p>
+
+<p><strong>青木</strong>　LALR はめんどくさいけど、あれは全部イチからやったわけじゃないから。
+ほとんど Dragon Book の丸写しだよね、アルゴリズムは。</p>
+
+<p><strong>ささだ</strong>　あー、なるほど。</p>
+
+<p><strong>青木</strong>　あと難しいところは、bison のソースコードを見て、パチると。</p>
+
+<p><strong>ささだ</strong>　でも、C 知らなかったんでしょ？</p>
+
+<p><strong>青木</strong>　本で読んだ。</p>
+
+<p><strong>ささだ</strong>　あ、本では前から知っていた。</p>
+
+<p><strong>青木</strong>　そう、いちおう本では読んでたし、
+Racc と TMail の拡張ライブラリを同時に書いていたので、それで書けるようになった。
+だから結局 Ruby と C はほとんど同時に覚えたんだよね。</p>
+
+<p><strong>ささだ</strong>　ふーん。特にインピーダンスミスマッチ、っていう言葉を使うのは良くないかな。概念って違うじゃん、Ruby と C って。そこで迷いはしなかった？
+こっちはこっち、あっちはあっちっていうのは。</p>
+
+<p><strong>青木</strong>　あんまり迷わなかったなぁ。</p>
+
+<p><strong>ささだ</strong>　こっちでは参照が、とか。こっちではコピーが、とか何か。</p>
+
+<p><strong>青木</strong>　あんまり、違いはなくない？</p>
+
+<p><strong>ささだ</strong>　ポインタ使ってればね。</p>
+
+<p><strong>青木</strong>　うん。それにやっぱ Ruby の拡張ライブラリなら、GC あるし。</p>
+
+<p><strong>ささだ</strong>　あ、まぁね。</p>
+
+<p><strong>青木</strong>　VALUE だけ使ってれば大したことは。ほんとに最初の頃は、C を使うというよりも、
+Ruby のコードを C で書くっていう感じで始めたのね。だから全部もう……。</p>
+
+<p><strong>ささだ</strong>　じゃ、C のこれからの勉強はそれで (笑)</p>
+
+<p><strong>青木</strong>　これからは Ruby の拡張ライブラリで全部覚えろって？ 売れなそー（笑)</p>
+
+<p><strong>ささだ</strong>　(笑)。いや、売れるんじゃないの？
+『ふつうの C プログラミング』とかでさ、いきなり Ruby の拡張ライブラリの作り方が入ってる。</p>
+
+<p><strong>青木</strong>　もうなんか、Amazon のコメントが目に見えるようだな。
+「まったくふつうではありません。注意してください。」</p>
+
+<p><strong>ささだ</strong>　それ、いつも言われてるんじゃないの (笑)。
+『ふつうの Linux プログラミング』ではどう書かれてたのかな。
+(<a href="https://www.amazon.co.jp/%E3%81%B5%E3%81%A4%E3%81%86%E3%81%AELinux%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-Linux%E3%81%AE%E4%BB%95%E7%B5%84%E3%81%BF%E3%81%8B%E3%82%89%E5%AD%A6%E3%81%B9%E3%82%8Bgcc%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E7%8E%8B%E9%81%93-%E9%9D%92%E6%9C%A8-%E5%B3%B0%E9%83%8E/dp/4797328355?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4797328355">‘Amazon のページ’</a>を見て) ……ない。</p>
+
+<p><strong>青木</strong>　ないね。</p>
+
+<p><strong>ささだ</strong>　なんと。<a href="https://www.amazon.co.jp/%E3%81%B5%E3%81%A4%E3%81%86%E3%81%AEHaskell%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%81%B5%E3%81%A4%E3%81%86%E3%81%AE%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E9%96%A2%E6%95%B0%E5%9E%8B%E8%A8%80%E8%AA%9E%E5%85%A5%E9%96%80-%E9%9D%92%E6%9C%A8-%E5%B3%B0%E9%83%8E/dp/4797336021?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4797336021">‘Haskell’</a> は……これもないね。</p>
+
+<p><strong>青木</strong>　ないなあ。あ、でもカスタマーレビュー数 1 って書いてあるよ。</p>
+
+<p><strong>ささだ</strong>　あれ、これ見えてないだけ？ どこどこ？ なんで見えないの？</p>
+
+<p><strong>青木</strong>　何でだろう。何かがいけないのかな。</p>
+
+<p><strong>ささだ</strong>　見えないね。</p>
+
+<h3 id="プログラミング全般">プログラミング全般</h3>
+
+<h4 id="プログラミングの学習について">プログラミングの学習について</h4>
+
+<p><strong>青木</strong>　引っかかるといえばさ、再帰がまず引っかかったよ。</p>
+
+<p><strong>ささだ</strong>　再帰のどこに？</p>
+
+<p><strong>青木</strong>　再帰がでてくる前は、ソースコードで一回だけ書いてあるものは、
+実際にも一個しかインスタンスが存在しないじゃない。
+関数って、呼び出すとスタックにつむけど、それを考えずに、
+Fortran みたいにスタティックな確保すると考えても問題ない。
+つまり、それまでは、見た目にあるものだけがそのまま確保されるものだと思ってればいいんだけど、
+再帰が出てくると、ソースコードとは別に、
+スタック上にある関数呼び出し履歴みたいなものを別に考えないといけない。
+akr さんの日記にもちょっと書いてあったけど。</p>
+
+<p><strong>ささだ</strong>　あー、そこのギャップがっていう。</p>
+
+<p><strong>青木</strong>　そういうのがむしろ難しい。</p>
+
+<p><strong>ささだ</strong>　そこの学習曲線がちょっと高かったという。</p>
+
+<p><strong>青木</strong>　そんなの入門書にはふつう書いてないじゃん。アクティベーションレコードが生成されますとか。</p>
+
+<p><strong>ささだ</strong>　うーん、いや、プログラミングの教科書には書いてあるよ。最近の。</p>
+
+<p><strong>青木</strong>　書いてある？ プログラミング入門書に？</p>
+
+<p><strong>ささだ</strong>　Ruby 入門には書いてないよ。</p>
+
+<p><strong>青木</strong>　うん。『はじめての C』とかにも書いてないじゃん。</p>
+
+<p><strong>ささだ</strong>　あ、書いてない？ 入門書はあまり読んだことがないのであまり詳しくないんだけど。</p>
+
+<p><strong>青木</strong>　ないと思うよ。</p>
+
+<p><strong>ささだ</strong>　そうか。授業ではやるけどね。</p>
+
+<p><strong>青木</strong>　あ、そうなんだ。</p>
+
+<p><strong>ささだ</strong>　プログラミングの授業とかだと。再帰とは、っていう。</p>
+
+<p><strong>青木</strong>　あー、やってくれるんだ。
+やっぱりそういうのをきっちりやってくれるところが大学で学ぶ長所かな。</p>
+
+<p><strong>ささだ</strong>　そうかもね。</p>
+
+<h4 id="初めてのプログラミング">初めてのプログラミング</h4>
+
+<p><strong>ささだ</strong>　初めてコードを書いたのは Ruby？ さっきの話。</p>
+
+<p><strong>青木</strong>　ほんとうーに初めてだと、小学校のとき。</p>
+
+<p><strong>ささだ</strong>　えっ。</p>
+
+<p><strong>青木</strong>　BASIC で線を描きました。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　LINE 0,0 みたいな。そういうので線を描いた。
+で、それはなぜかというと、うちの親は SE なんだけど、家に会社の機械を置いてたの。
+モニタ一体型で 8 インチフロッピーが 2 つ付いてる機械ね。
+その機械で BASIC インタプリタが動いていて、いきなり BASIC が書けた。
+その BASIC は本当に BASIC ね。N88 BASIC だっけ？ 行番号書くやつ。</p>
+
+<p><strong>ささだ</strong>　はいはい。</p>
+
+<p><strong>青木</strong>　それで FF (Final Fantasy) みたいな RPG が書きたいなと思ったけど、
+さすがに FF は作れなかった。</p>
+
+<p><strong>ささだ</strong>　小学校？ LINE から FF (笑)</p>
+
+<p><strong>青木</strong>　んで、何はともあれとにかく絵を出そうと思ったんだけど、
+その機械はモノクロモニタだったので色が出せなくて、
+結局 LINE 命令を書いただけでやめちゃった。
+だからそのときの BASIC の経験はカウントしないことにしてんの。</p>
+
+<p><strong>ささだ</strong>　小学校で FF って……2？</p>
+
+<p><strong>青木</strong>　3。……ああ、年がばれる。</p>
+
+<p><strong>ささだ</strong>　(笑)。FF3 か。FF3 は作るのも大変だよね。</p>
+
+<p><strong>青木</strong>　大変そうだよね。</p>
+
+<p><strong>ささだ</strong>　今でも作れって言われたら大変だよね (笑)</p>
+
+<p><strong>青木</strong>　大変だね (笑)。でもまぁ、グラフィックさえもらえれば書けそうな気はするよね。まあ、そんな感じで。</p>
+
+<p>やっぱ最初に BASIC なんか使おうとしたのがよくなかったんだよ。BASIC は難しいよね。</p>
+
+<p><strong>ささだ</strong>　あ、そう？</p>
+
+<p><strong>青木</strong>　BASIC の方が難しいよ、C より。</p>
+
+<p><strong>ささだ</strong>　どの辺が？</p>
+
+<p><strong>青木</strong>　だって、GOTO でさぁ、関数の真ん中に飛んでこれるじゃん。
+関数ってないけど。それがそもそも信じられん。</p>
+
+<p><strong>ささだ</strong>　えっと、小学校の頃に信じられなかったの？</p>
+
+<p><strong>青木</strong>　うん。だって飛んでくるということは、常に意識して書かなければならないということで。</p>
+
+<p><strong>ささだ</strong>　いや、小学生は意識しないよそんなこと。</p>
+
+<p><strong>青木</strong>　意識したんだよ！</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　それが嫌だった。これは俺には書けないと思ったよ。</p>
+
+<p><strong>ささだ</strong>　えー、嫌だなそんな小学生 (笑)</p>
+
+<p><strong>青木</strong>　どうも俺は昔の方が頭が良かったらしいんだよ。
+それは親から話を聞いててもそう思う。3 歳のときがたぶんピークだった。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　だって、3 歳…… 6 歳かなぁ。その頃にゼロの概念を理解して、
+「ゼロということはつまり何もないということなの？」とか、哲学的な問いを発していたらしいよ。</p>
+
+<p><strong>ささだ</strong>　3 歳で。</p>
+
+<p><strong>青木</strong>　6 歳かな。3 歳か 6 歳かどっちかで。</p>
+
+<p><strong>ささだ</strong>　6 歳って幼稚園だっけ？ 嫌な幼稚園児だね (笑)</p>
+
+<p><strong>青木</strong>　まったくだ。その辺がたぶんピークで、それから下がり続けてる。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　まあそういうわけで、初心者に BASIC を教えるのはダメです。</p>
+
+<p><strong>ささだ</strong>　HSP とか駄目なの？</p>
+
+<p><strong>青木</strong>　だめでしょ。</p>
+
+<p><strong>ささだ</strong>　というかさ、もちろん意識しなければいけないんだけども、対比が無かったわけでしょ？　意識しなくてもよい言語を知らないのに、こっちは意識しなければいけないから嫌だっていうのがわかんない。</p>
+
+<p><strong>青木</strong>　比較して思ったじゃなくて、プログラミング全般がそういうものだと思ったわけ。
+いつどこから飛んでくるか分かんないから、常に注意しながら書かないといけないものだと。</p>
+
+<p><strong>ささだ</strong>　そうか、行番号だから、ラベルじゃないのね。</p>
+
+<p><strong>青木</strong>　そうそう。だからいつでも飛んでこれるわけじゃん。</p>
+
+<p><strong>ささだ</strong>　それってさ、デバッグしてるときに気づくもんじゃないの？</p>
+
+<p><strong>青木</strong>　さっきも言ったけど、
+BASIC で書いたのって本当に LINE 命令くらいでさ、
+残りは本で読んだだけなんだよ、基本的に。
+だからデバッグとかもしてないので、気付きようがなかった。</p>
+
+<p><strong>ささだ</strong>　でかいプログラムを見てとか。本で読んで。</p>
+
+<p><strong>青木</strong>　いや、見てない。逆に、見なかったから、
+普通はそんなことは気にしなくていいということが分からなかった。</p>
+
+<p><strong>ささだ</strong>　書かないでそれを気づくというのはすごいね。</p>
+
+<p><strong>青木</strong>　そうかな？</p>
+
+<p><strong>ささだ</strong>　本にそれは書いてなかったんでしょ、別に。</p>
+
+<p><strong>青木</strong>　飛んでくる可能性はあるから気をつけなきゃいけないねーぐらいのことは軽く書いてあったよ。
+それで、やばいと感じた。しかもグローバル変数しかないじゃん。
+いつ変数の値が変わるのか分からないのに、
+こんなのどうやって書くんだろうーと思ったよ。</p>
+
+<p><strong>ささだ</strong>　そこで高級言語的アプローチは思いつかなかったの？
+そういうのを意識して管理すれば、結構簡単だ、みたいな。</p>
+
+<p><strong>青木</strong>　だから、そこがまず一つ目の壁だったんだね。
+つまり、プログラムってのはある程度は決め付けて進めなきゃいけない、というのが分からなかった。</p>
+
+<p><strong>ささだ</strong>　最初にルールをつければ、まぁそれなりに何とかなるというのが。</p>
+
+<p><strong>青木</strong>　分からなかった。そこがまず結構難しかった。</p>
+
+<p><strong>ささだ</strong>　その思い込みがずっと来て、で大学で Ruby を始めた？</p>
+
+<p><strong>青木</strong>　そう。その間違いに気づいたのはアセンブラをやったときだから。
+まとめると、小学校のころにちょっとだけ BASIC をさわるも色が出せなくて即あきらめ、
+そのあとは実機をさわれなくて本だけ (ごく稀に) 読んでて、
+大学になって初めて Ruby と C を実機でさわった。
+あと同時にアセンブラもやってたかな。
+もはやその辺の前後関係がよくわかんなくなってきてるけど。</p>
+
+<p><strong>ささだ</strong>　同時にアセンブラって、なにそれ (笑)</p>
+
+<p><strong>青木</strong>　C やってるとアセンブラやりたくならない？</p>
+
+<p><strong>ささだ</strong>　いや、それはすごい分かるけど。</p>
+
+<p><strong>青木</strong>　とにかく、その当時は分かんないことだらけだから、分かんないこと Driven だったわけよ。
+で、Ruby やってどうも分かんないので C をやるでしょ。
+で、C やってもよく分かんないので、アセンブラに。</p>
+
+<p><strong>ささだ</strong>　Ruby やってて分かんないから C ってのは、たぶんあまり無いと思うよ。</p>
+
+<p><strong>青木</strong>　そうかな？</p>
+
+<p><strong>ささだ</strong>　だって、全然違うじゃん。やっぱり。</p>
+
+<p><strong>青木</strong>　違うけど、分かんないからしょうがないじゃん。やるしかないよ。
+それに当時はソースコードを読まないとメソッドの使いかたが分からなかったし。</p>
+
+<p><strong>ささだ</strong>　分かんないときはネットで訊くとか。
+今だったら。分かんねぇようわーんって言って、はてなダイアリーでこう……。</p>
+
+<p><strong>青木</strong>　その時代にはまだはてな無いから (笑)。
+それに、インターネットアクセスもそんなに自由じゃなかったしさ。
+3 分 10 円かかる時代じゃん？ ちょっと気が引けるよ。</p>
+
+<p><strong>ささだ</strong>　そうか。その頃アセンブラを普通に使えたんだね。</p>
+
+<p><strong>青木</strong>　使えたというのは？</p>
+
+<p><strong>ささだ</strong>　要するに、アセンブラを買わなくて良かったとか。</p>
+
+<p><strong>青木</strong>　ああそういうことか。
+大学でプログラミング始めたときは Linux だから、GNU as が入ってたよ。
+もっとも、アセンブラは書いてなくて本で読んだだけだから、それはあんま関係ないけど。</p>
+
+<p><strong>ささだ</strong>　あー。で、本は普通に。初めて読む 486 とかそんな感じ？</p>
+
+<p><strong>青木</strong>　そうそう。『はじめて読む 8086』、『486』って読んで、ようやく納得した。</p>
+
+<p><strong>ささだ</strong>　はいはい。俺の場合、高校の頃にさ、やっぱり C やってて、アセンブラ分かんなくて。でも高校のころで金無くてさ。本買えなかった。本がそんなにあるとは知らなくてさ。
+で、マシンコード見てさ。逆アセンブラのツールはあったんだよね。パソコン通信で配ってた。で、ダンプして。この命令どういう意味なんだろうって。
+命令パターン見ながら、これどういう意味だろう、いや、ここでこう使ってるんだからこれこういう意味なのかな……とか想像しながら。
+馬鹿だよね (笑)</p>
+
+<p><strong>青木</strong>　難しそうだ (笑)。それはちょっとやってられないな。</p>
+
+<p><strong>ささだ</strong>　今思うとさ、あの頃でもちょっと奮発するなりなんなりして、
+本を買っていれば、たったそれだけの投資でさ、
+今はもっとよく出来てたと思うと馬鹿らしいなって思うよね。</p>
+
+<p><strong>青木</strong>　いやでもそういう経験が実は結構役に立ってるんじゃないの？</p>
+
+<p><strong>ささだ</strong>　いやいや、かなり無駄にしていると思う。ほんとにね、本から入るってのは正しいよ。</p>
+
+<p><strong>青木</strong>　そうかな。今は本はわりとどうでもいいって思うけど。
+ま、最初の頃はやっぱ本がいいのか。</p>
+
+<p><strong>ささだ</strong>　無くても何とかなると思ったのが間違いだった。
+あと、物がやっぱりなくて。コンパイラが数万とか、そんなんだよね。</p>
+
+<h4 id="ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</h4>
+
+<p><strong>ささだ</strong>　Ruby 以外のプログラミング言語では何を使ってますか、何が好きですか。</p>
+
+<p><strong>青木</strong>　C かな。C が好き。</p>
+
+<p><strong>ささだ</strong>　C 使ってる？</p>
+
+<p><strong>青木</strong>　拡張ライブラリとかで。</p>
+
+<p><strong>ささだ</strong>　(笑)。Haskell は好きじゃないと (笑)</p>
+
+<p><strong>青木</strong>　Haskell はねぇ、名前が好きじゃない。</p>
+
+<p><strong>ささだ</strong>　あ、そうなの？ いいじゃん。なんかかっこいいじゃん。</p>
+
+<p><strong>青木</strong>　人名だからやだ。</p>
+
+<p><strong>ささだ</strong>　まつもとさんが、Matz とか付けたら嫌なんだ。</p>
+
+<p><strong>青木</strong>　うん。</p>
+
+<p><strong>ささだ</strong>　(笑)。他にありますか。使ってる言語なり、好きな言語。</p>
+
+<p><strong>青木</strong>　使ってる言語……。Ruby と C 以外だとシェルスクリプトくらいかねえ。
+あと、間接的にお世話になってるのは Perl かな。</p>
+
+<p><strong>ささだ</strong>　間接的？</p>
+
+<p><strong>青木</strong>　あ、ごめん、今は Mew は Perl じゃないのか。
+そうか。そしたら、Emacs lisp。……あれ嫌いなんだよね。なんか嫌いなのばっかだな俺。</p>
+
+<p><strong>ささだ</strong>　(笑)。Debian だったら、Python がたくさん使われてるよね。</p>
+
+<p><strong>青木</strong>　あ、そうね。Python も嫌だね。</p>
+
+<p><strong>ささだ</strong>　嫌なんだ。</p>
+
+<p><strong>青木</strong>　名前が。</p>
+
+<p><strong>ささだ</strong>　また名前 (笑)？</p>
+
+<p><strong>青木</strong>　俺は名前で決めるので。
+あ、そうそう、Ruby に決めたのは名前がいいというのもあってさ。
+Perl はなんとなく白っぽいじゃん。</p>
+
+<p><strong>ささだ</strong>　うん。Ruby は赤っぽい？</p>
+
+<p><strong>青木</strong>　青っぽい。</p>
+
+<p><strong>ささだ</strong>　え、青っぽい？ Ruby が？</p>
+
+<p><strong>青木</strong>　青っぽいよ。</p>
+
+<p><strong>ささだ</strong>　え、赤じゃない？ Ruby って言われたら。</p>
+
+<p><strong>青木</strong>　最初に Ruby を知った Linux Japan の表紙が青かったからだと思う。
+前田さんの記事が載ってたやつ。</p>
+
+<p><strong>ささだ</strong>　あー、なるほど。そのイメージが最初なんだ。原体験がそれだという。</p>
+
+<p><strong>青木</strong>　そうそう。それに Ruby って名前がかっこいいじゃん。</p>
+
+<p><strong>ささだ</strong>　まあね。</p>
+
+<p><strong>青木</strong>　Ruby と Perl だったら、名前は Ruby の方がいいなと思って。
+Linux と FreeBSD で迷ったときも、やっぱり Linux の方が名前が良いなぁと思って決めた。
+FreeBSD は 2 語だからね。</p>
+
+<p><strong>ささだ</strong>　うん。駄目なの？</p>
+
+<p><strong>青木</strong>　2 語だから駄目なの。BSD だけなら良い。かっこいい。</p>
+
+<p><strong>ささだ</strong>　あー。4.2BSD とか。</p>
+
+<p><strong>青木</strong>　うん。Free とか Net とか付いちゃうと、ちょっと情けない。</p>
+
+<p><strong>ささだ</strong>　(笑)。BitChannel とか二語じゃん。</p>
+
+<p><strong>青木</strong>　あれは良いのさ。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　名詞が 2 個だから良いの。形容詞が付くと良くない。</p>
+
+<p><strong>ささだ</strong>　NetBSD は？ Net は形容詞？</p>
+
+<p><strong>青木</strong>　形容詞っぽくない？</p>
+
+<p><strong>ささだ</strong>　Dragonfly も？</p>
+
+<p><strong>青木</strong>　あー、Dragonfly なぁ、あれは 3 語だしなぁ。</p>
+
+<p><strong>ささだ</strong>　ああ、そうね。</p>
+
+<p><strong>青木</strong>　長いし、発音も良くないし。</p>
+
+<p><strong>ささだ</strong>　ちなみに、Windows は？</p>
+
+<p><strong>青木</strong>　いいんじゃない？</p>
+
+<p><strong>ささだ</strong>　Windows はいいんだ。</p>
+
+<p><strong>青木</strong>　いいと思うよ別に。少なくとも名前は嫌いではない。
+<img src="/images/0017-Hotlinks/aoki2.jpg" alt="aoki2.jpg" /></p>
+
+<h4 id="美しいソースコード">美しいソースコード</h4>
+
+<p><strong>ささだ</strong>　今まで読んだ中で、最も美しいソースコード。</p>
+
+<p><strong>青木</strong>　(しばし考えて) 最も美しい……？</p>
+
+<p><strong>ささだ</strong>　自分のコード？</p>
+
+<p><strong>青木</strong>　いや、さすがにそれは。……「最も美しい」レベルになると、結構幅があるよね。
+そうだな、NetBSD のカーネルとか。あと Ruby のごく一部を除くコードとか、WEBrick とか。</p>
+
+<p><strong>ささだ</strong>　NetBSD のカーネルは良いんだ。</p>
+
+<p><strong>青木</strong>　いいんじゃん？ あれ綺麗だよ。
+きっちりモジュール化してるし、名前の付け方も統一性があるし、ソースツリーも綺麗だし。
+ただあの、Java とかは、ディレクトリ階層が深すぎてあまり好きじゃない。
+Ruby のソースコードみたいに、フラットなのが割りと好き。</p>
+
+<p><strong>ささだ</strong>　(Ruby は) フラットすぎると思うんだけどなぁ。</p>
+
+<p><strong>青木</strong>　そうかなあ。ただ、フラットでも qmail までいくとちょっとね。
+qmail は、関数 1 個でファイルひとつ、ぐらいの勢いで、しかもフラットなんだよな。
+ビルドしたあとに ls すると 3 画面ぐらい流れていく (笑)。
+あれはちょっと耐えられない。あと gcc もけっこうきついな。</p>
+
+<p><strong>ささだ</strong>　でも、Ruby くらいまでは良いと。</p>
+
+<p><strong>青木</strong>　うん。綺麗なのは、Ruby とか、NetBSD とか、WEBrick とか。
+あとはまぁ、BitChannel も何とかそういうのに対抗できるぐらいになってきたかなぁと思ってるところ。
+ほんとに最近、満足の行くものが書けるようになって来たかな。</p>
+
+<p><strong>ささだ</strong>　(BitChannel は) まだ触ってるんだ。</p>
+
+<p><strong>青木</strong>　触ってるよ、もちろん。</p>
+
+<h4 id="いま興味のあるテーマ">いま興味のあるテーマ</h4>
+
+<p><strong>ささだ</strong>　今興味を持ってるテーマは何ですか。プログラミング関係で。</p>
+
+<p><strong>青木</strong>　リレーショナルデータベースかな。</p>
+
+<p><strong>ささだ</strong>　ほう。</p>
+
+<p><strong>青木</strong>　つーか、データベース全般。あれは面白いね。
+オブジェクト指向データベースも面白いし、リレーショナルデータベースも、それはそれで面白い。</p>
+
+<p><strong>ささだ</strong>　Postgres みたいなのを作りたいとか、そういうこと？</p>
+
+<p><strong>青木</strong>　作りたいとなると、オブジェクト指向データベースかな。
+リレーショナルデータベースは作るより使いたい。使ったことないから。
+どうせ暇だし、たまには SQL でも書くか、みたいな。</p>
+
+<p><strong>ささだ</strong>　暇なのかよ (笑)</p>
+
+<p><strong>青木</strong>　えー、各出版社の編集の皆様には言葉通り受け取らないでいただきたく (笑)</p>
+
+<p><strong>ささだ</strong>　でも、会社とか行ったら、嫌でも SQL 使わなきゃいけないんじゃない？</p>
+
+<p><strong>青木</strong>　書きまくりだろうねえ。</p>
+
+<p><strong>ささだ</strong>　そういえば、SQL インジェクションとか何とか言ってるけどさ、SQL 生書きする自体でなんか腐ってると思うんだけど。そういう意識無いのかなぁ。</p>
+
+<p><strong>青木</strong>　そうかな？</p>
+
+<p><strong>ささだ</strong>　なんか DSL 作ってさ、それを変換するように作れば絶対起こんないじゃん。</p>
+
+<p><strong>青木</strong>　それはそうだけど、やっぱうまく行かないんじゃない？
+リレーショナルデータベースと、オブジェクト指向言語のミスマッチ、みたいなさ。</p>
+
+<p><strong>ささだ</strong>　せめてさ、SQL の構文要素を、
+例えば Ruby なら Symbol にしちゃって、Symbol で渡して、
+で、それの Array を渡すようにすれば、絶対に起こんないんじゃないの？</p>
+
+<p><strong>青木</strong>　うーん……。</p>
+
+<p><strong>ささだ</strong>　ちょっと書き方めんどくさくなるけど。</p>
+
+<p><strong>青木</strong>　Ruby なら、それでいいと思うんだけど。
+Java でやるのがめんどくさいという話じゃないの？</p>
+
+<p><strong>ささだ</strong>　Java だとどうするのかな。分かんないな。</p>
+
+<p><strong>青木</strong>　なんかめんどくさそうじゃない？</p>
+
+<p><strong>ささだ</strong>　そうか。method_missing とか無いもんね。</p>
+
+<p><strong>青木</strong>　そうだよ (笑)。Ruby なら Hash とか配列とか使って Lisp の S 式みたく表現する「わびさびメソッド」とかあるけどさ、Java ではそういうのってやりにくそうじゃない？</p>
+
+<p><strong>ささだ</strong>　やりづらいのかな。</p>
+
+<p><strong>青木</strong>　と思うよ。クラス調べて動的にってのがめんどくさいじゃん。
+リフレクション使わないといけないから。</p>
+
+<p><strong>ささだ</strong>　まぁ、そもそもリテラル書けないから。書けないと言うか。
+ていうか、リテラル書けない言語は駄目だよね。</p>
+
+<p><strong>青木</strong>　そうだね。リテラル弱いよね。</p>
+
+<p><strong>ささだ</strong>　C とかでさ、せめて配列ぐらいはさ、なんか作らせてくれよ、みたいな。
+イニシャライズのときしかできないというのはちょっとめんどくさいですよ。</p>
+
+<p><strong>青木</strong>　GCC だと出来るんだっけ？</p>
+
+<p><strong>ささだ</strong>　あ、そうなの？ その辺はめんどくさいので調べてないけど。</p>
+
+<p><strong>青木</strong>　まあどっちにしろ GCC だけじゃ使わないね。</p>
+
+<p><strong>ささだ</strong>　『ふつうのデータベース』は出すの？</p>
+
+<p><strong>青木</strong>　一応提案はしてみたけど却下されました。</p>
+
+<p><strong>ささだ</strong>　なるほどね。これを読んだ人が、出版社に 100 人ぐらいリクエストすれば出るかも。</p>
+
+<p><strong>青木</strong>　出るかもねぇ。あとはまぁ、仕事で使ってネタが溜まれば書けるかもしれないね。</p>
+
+<p><strong>ささだ</strong>　arton さんすごいよね。仕事やりながら、あれだけ数出して。</p>
+
+<p><strong>青木</strong>　あー、すごいよねぇ。</p>
+
+<p><strong>ささだ</strong>　10 冊超えたんだっけ？</p>
+
+<p><strong>青木</strong>　たぶん。言ってたね。どうやってあんなに書いてるんだろう。
+書くのすごい速いよね、arton さんは。</p>
+
+<p><strong>ささだ</strong>　そんな感じで量産を。「ふつうの」がたくさん出る。月刊「ふつうに」で。</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<h3 id="生い立ちとか">生い立ちとか</h3>
+
+<h4 id="生い立ち">生い立ち</h4>
+
+<p><strong>ささだ</strong>　生い立ち。</p>
+
+<p><strong>青木</strong>　生い立ち？ 何を言えばいいの？</p>
+
+<p><strong>ささだ</strong>　生まれて、3 歳か 6 歳でゼロの概念を……。</p>
+
+<p><strong>青木</strong>　(笑)。幼稚園に行って小学校に行って中学校に行って高校に行って大学に行きました。</p>
+
+<p><strong>ささだ</strong>　はぁ。「はぁ」とか言って (笑)</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<p><strong>ささだ</strong>　えーっと、神童として名高い、近所の……。</p>
+
+<p><strong>青木</strong>　(笑)。いやー、神童とかないだろ。東京だしさ。神童とか言われるのってだいたい田舎じゃん。</p>
+
+<p><strong>ささだ</strong>　あー、そっか。</p>
+
+<p><strong>青木</strong>　そういうのないよね東京は。</p>
+
+<p><strong>ささだ</strong>　普通の公立に行って、普通に？</p>
+
+<p><strong>青木</strong>　んー、ずっと某国立付属校で上がってった。</p>
+
+<p><strong>ささだ</strong>　やっぱ頭良かったんだ。</p>
+
+<p><strong>青木</strong>　頭でなくて、運が良かったんだよ。小学校はくじだから、運があれば入れる。</p>
+
+<p><strong>ささだ</strong>　え、くじなの？</p>
+
+<p><strong>青木</strong>　面接もあるけど、面接はほんとに駄目なやつをはじくだけ。だからやっぱ運。</p>
+
+<p><strong>ささだ</strong>　へぇー。</p>
+
+<p><strong>青木</strong>　で、小学校で半分より上にいれば中学校にも入れる。
+高校ではまともに試験があるんだけど、それも外部から入るよりは全然簡単。</p>
+
+<p><strong>ささだ</strong>　はー。じゃあ、人生勝ち組のロードを突っ走ったわけですね。</p>
+
+<p><strong>青木</strong>　これで勝ち組なのか (笑)</p>
+
+<p><strong>ささだ</strong>　で、どんな小学生、中学生とか。</p>
+
+<p><strong>青木</strong>　小学校はあまり思い出したくないなぁ。</p>
+
+<p><strong>ささだ</strong>　思い出したくない？</p>
+
+<p><strong>青木</strong>　そして中学校もあんまり思い出したくない (笑)</p>
+
+<p><strong>ささだ</strong>　クラブとかは？</p>
+
+<p><strong>青木</strong>　高校で陸上部に入りました。</p>
+
+<p><strong>ささだ</strong>　あ、高校からだったんだ。</p>
+
+<p><strong>青木</strong>　そう。中学校までは運動嫌いだったから。</p>
+
+<p><strong>ささだ</strong>　頭良いと大変だね。</p>
+
+<p><strong>青木</strong>　そういう問題か？ 小学校がほんとに嫌でさぁ。ほんとに嫌な学校でした。中学校はけっこう面白かったんだけど、まだ小の呪縛から抜け切れなかった。水泳が好きな学校でさ、すげーしごかれるんだよ。</p>
+
+<p><strong>ささだ</strong>　先生に？</p>
+
+<p><strong>青木</strong>　うん。
+6 年生のときに一時間の遠泳をやるんだけど、それも嫌で嫌でしょうがなかった。</p>
+
+<p><strong>ささだ</strong>　休んだらもう、怒られる、みたいな。</p>
+
+<p><strong>青木</strong>　ひたすら根性ですな。6 年生の夏休み中にも水泳の練習があるんだけど、
+「とりあえず 1000 メートルぐらいバタ足で」って来るわけ。小学校で。</p>
+
+<p><strong>ささだ</strong>　あり得ないね。小学校って言ったら、少し泳がされて、じゃあ、これから自由時間です、っていうイメージでしたよ、私は。</p>
+
+<p><strong>青木</strong>　あれはきつかった。その頃は運動が苦手でさ、自分には絶対出来ないと思ってたわけ。
+だからそもそも最初からやる気ないので、伸びるわけもない。伸びないので、さらに嫌んなる。
+そんな感じで鬱々とした小学校生活を送っていたわけですよ。
+その頃は勉強も全然出来なかったしさ。まあ今は勉強できるかというと非常に怪しいけど (笑)、
+そのころは特に出来なかった。だって分数の計算がちゃんとできるようになったのも中学校になってからだもん。</p>
+
+<p><strong>ささだ</strong>　それは遅いよね。</p>
+
+<p><strong>青木</strong>　でしょ。一応計算は出来るんだけど、ちゃんと理解したのは中学校でさ。</p>
+
+<p><strong>ささだ</strong>　あー、なるほど。中学校の最初にさ、なんかマイナスとかやるじゃん。
+あの辺ってすんなりいったの？</p>
+
+<p><strong>青木</strong>　あの辺は大丈夫だった……え、中学校だっけ、マイナスって。</p>
+
+<p><strong>ささだ</strong>　俺は中学校の最初にやった。学校によっては違うかもしれないけど。</p>
+
+<p><strong>青木</strong>　マイナスって、高校じゃない？</p>
+
+<p><strong>ささだ</strong>　いやいや、それだったら方程式できないじゃん。</p>
+
+<p><strong>青木</strong>　あ、そっか。じゃ、中学校か。</p>
+
+<p><strong>ささだ</strong>　いや、分数の掛け算とかで、何でちっちゃくなっちゃうのとかそういう話じゃなく？</p>
+
+<p><strong>青木</strong>　うんそうかな。その辺の話かな。</p>
+
+<p><strong>ささだ</strong>　なんか、マイナス掛けるマイナスはプラスになるとかそんなのとか同じような、
+よく分からん、ってのがあるじゃん。それはすんなり行く？</p>
+
+<p><strong>青木</strong>　よく分かんなかったね。まぁ、答えは何となく出るんだけど。</p>
+
+<p><strong>ささだ</strong>　公式としてはなんか、大したことは無いけど、じゃあ、何でって言われると、うーんって。</p>
+
+<p><strong>青木</strong>　それでまぁ、中学校行ってから、比較的勉強が出来るようになったんだよ。
+……そういや塾に行ってたんだけど、そこの先生がまた、凄い人でね。</p>
+
+<p><strong>ささだ</strong>　凄い人で (笑)</p>
+
+<p><strong>青木</strong>　いやまぁ、面白かったからいいんだけど。
+何が凄いかというと、授業中に寝てると椅子が飛んでくる。</p>
+
+<p><strong>ささだ</strong>　椅子！？</p>
+
+<p><strong>青木</strong>　マジでマジで。パイプ椅子がドカーンと。</p>
+
+<p><strong>ささだ</strong>　怪我するんじゃないの？</p>
+
+<p><strong>青木</strong>　そんなことは考えてないと思う。
+隣の部屋でくっちゃべってるやつがいたときも椅子が飛んだな。</p>
+
+<p><strong>ささだ</strong>　それ、親、何にも言わないの？</p>
+
+<p><strong>青木</strong>　言わなかったんだよ、その頃は。今だったらやばいかもしれないけど、その頃はまかり通りました。</p>
+
+<p><strong>ささだ</strong>　へぇー。</p>
+
+<p><strong>青木</strong>　まぁ、面白い人ではあったけどね。
+で、さすがにそこで勉強はちゃんとやったので、勉強は出来るようになって。
+そうなってから小学校の呪縛からも開放されまして。
+中学校に行ったら水泳も自由時間が出来て楽になったし、小学校で鍛えられてたから結構泳げるし。
+ああ、これは良いなぁと思ったよー。で、高校になったらさらに気楽になって人生楽しくなりました。</p>
+
+<h4 id="読んだ本">読んだ本</h4>
+
+<p><strong>ささだ</strong>　本とかは読んだ？</p>
+
+<p><strong>青木</strong>　何の？</p>
+
+<p><strong>ささだ</strong>　いや、なんか本全般。</p>
+
+<p><strong>青木</strong>　SF とか？</p>
+
+<p><strong>ささだ</strong>　うん。……(笑)。</p>
+
+<p><strong>青木</strong>　いや、なんか Rubyist は SF 読んでる人多いからさ。</p>
+
+<p><strong>ささだ</strong>　ねぇ。</p>
+
+<p><strong>青木</strong>　SF は読まなかったよ。探偵物は好きだったけど。江戸川乱歩とか。探偵になりたかったんだけどさ。</p>
+
+<p><strong>ささだ</strong>　探偵に (笑)。</p>
+
+<p><strong>青木</strong>　探偵に……でも中学校ぐらいになるとやはりねぇ。
+探偵なんて離婚調査ぐらいだということが分かり。</p>
+
+<p><strong>ささだ</strong>　中学校で分かるの？ それ。</p>
+
+<p><strong>青木</strong>　え、分かるでしょ。</p>
+
+<p><strong>ささだ</strong>　おおー。</p>
+
+<p><strong>青木</strong>　それで、じゃあ探偵はいいやと思った。</p>
+
+<p><strong>ささだ</strong>　なるほど。プログラマーとかは全然なかったんだよね、たぶん。</p>
+
+<p><strong>青木</strong>　うん。……そういや探偵って近くない？ プログラミングと。</p>
+
+<p><strong>ささだ</strong>　ああ……うーん？</p>
+
+<p><strong>青木</strong>　トリックとかさ。
+デバッグでこう、全然違うところを探してたけど原因は実はこっちだった、みたいな。
+そういうとこが結構近いと思う。</p>
+
+<p><strong>ささだ</strong>　なるほど。でも浮気調査は無いよね (笑)。</p>
+
+<p><strong>青木</strong>　浮気調査は無いね (笑)。このプロセスが浮気してるから調べてくださいとか？(笑)</p>
+
+<p><strong>ささだ</strong>　でも、監視とかはそういう……(笑)</p>
+
+<p><strong>青木</strong>　張り込んだりはしないな (笑)</p>
+
+<p><strong>ささだ</strong>　効率よく張り込む方法とか。まぁ、なんかそんな感じに。
+探偵になりたかった小学校で、中学校で。
+<img src="/images/0017-Hotlinks/aoki6.jpg" alt="aoki6.jpg" /></p>
+
+<h4 id="ロープレ談議">ロープレ談議</h4>
+
+<p><strong>青木</strong>　あ、あとはひたすら RPG をやっておりました。</p>
+
+<p><strong>ささだ</strong>　ああ、ファミコン、スーファミ。</p>
+
+<p><strong>青木</strong>　うん。最初はドラクエ 2。</p>
+
+<p><strong>ささだ</strong>　ドラクエ 2 から！？ それはすごいね。</p>
+
+<p><strong>青木</strong>　すごいか？ ドラクエ 2 やって、3 やって。</p>
+
+<p><strong>ささだ</strong>　ドラクエ 2 よくできたね。</p>
+
+<p><strong>青木</strong>　あ、クリアはできなかったけどね。</p>
+
+<p><strong>ささだ</strong>　あ、出来なかった？ ロンダルキアの洞窟<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>？</p>
+
+<p><strong>青木</strong>　えーっと……、渇きのつぼを使って……じゃないな、月のかけら？
+とにかく海に浮かんでる洞窟のところで止まってしまった。<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup></p>
+
+<p><strong>ささだ</strong>　何するんだっけ、そこで。</p>
+
+<p><strong>青木</strong>　月のかけらを使うと干潟が干上がって洞窟に入れるようになるんじゃなかったっけ。
+その、海のど真ん中にある洞窟がクリアできなかった。</p>
+
+<p><strong>ささだ</strong>　中でマグマが出ているような演出とかそういう。そこに入れなかったと。</p>
+
+<p><strong>青木</strong>　そう。そこがクリアできなかった。入れたんだけど。</p>
+
+<p><strong>ささだ</strong>　あ、なるほど。</p>
+
+<p><strong>青木</strong>　なんか面倒になってやめちゃったんだよね。ドラクエ 3 はクリアしました。がんばって。</p>
+
+<p><strong>ささだ</strong>　私、3 が最初でしたね。</p>
+
+<p><strong>青木</strong>　おー。微妙に世代が違うな。</p>
+
+<p><strong>ささだ</strong>　ドラクエ 3……ドラクエを初めてみたときに、何が面白いのかさっぱり分かんなくて。</p>
+
+<p><strong>青木</strong>　えー、そう？</p>
+
+<p><strong>ささだ</strong>　人の家に行って、なんか楽しそうにやってるんだけど、なにこれ？
+ポチポチ押して文字が出て。こんなの何が面白いんだろうって、やってみたらはまっちゃったの。</p>
+
+<p><strong>青木</strong>　あー、なるほど。俺も最初は友達の家で見せてもらったな……で、FF2<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup> やったんだよね。</p>
+
+<p><strong>ささだ</strong>　また 2 か。</p>
+
+<p><strong>青木</strong>　そうそう。FF2 は自由度高くてよかったねぇ。あれも結局クリアできなかったな。</p>
+
+<p><strong>ささだ</strong>　えっ、なんで？</p>
+
+<p><strong>青木</strong>　だって最後の方の敵が強いんだもん。</p>
+
+<p><strong>ささだ</strong>　ブラッドソード<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>でばっさばっさと。</p>
+
+<p><strong>青木</strong>　ブラッドソード売っちゃった。</p>
+
+<p><strong>ささだ</strong>　えー！ そりゃきついね。</p>
+
+<p><strong>青木</strong>　だから、ひたすら素手で戦う。</p>
+
+<p><strong>ささだ</strong>　素手が強いんだっけ？</p>
+
+<p><strong>青木</strong>　うん。普通の敵には、素手が一番強い。
+ただ、(ラスボスの) 皇帝は固いので、皇帝だとエクスカリバーの方が強い。</p>
+
+<p><strong>ささだ</strong>　皇帝はブラッドソードでサクサクッっと倒しちゃった。</p>
+
+<p><strong>青木</strong>　ブラッドソードを使うと楽になりすぎるかなぁと思って。
+なんか卑怯だという意識が。で、取っておけば良いのに、売っちゃったんだよね。
+FF2 って持てるアイテム数が少ないから、使わない武器を持ってるくらいならエリクシャー持ちたい<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>。</p>
+
+<p><strong>ささだ</strong>　(笑)。ヒットポイントはどれぐらいまで上げました。</p>
+
+<p><strong>青木</strong>　えー、6000 か 7000 かな。</p>
+
+<p><strong>ささだ</strong>　それでもきつかったんだ。</p>
+
+<p><strong>青木</strong>　きつかった。きついよあれは。アルテマ弱いしさ<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>。</p>
+
+<p><strong>ささだ</strong>　つか、魔法使えないでしょ、あれ。</p>
+
+<p><strong>青木</strong>　そうね。</p>
+
+<p><strong>ささだ</strong>　全然こう……何のためにアルテマをがんばって取りにいったんだって感じだよね<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup>。</p>
+
+<p><strong>青木</strong>　だよな。アルテマ弱すぎ。
+あ、レベル 16 まで上げれば皇帝にだけはちょっと効くか。</p>
+
+<p><strong>ささだ</strong>　16 まで鍛えたんだ (笑)。1600 回使って。</p>
+
+<p><strong>青木</strong>　うん。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　ただほら、裏技が使えるでしょ。</p>
+
+<p><strong>ささだ</strong>　え、あるの？</p>
+
+<p><strong>青木</strong>　知らない？ 「たたかう、たたかう、たたかう、キャンセル、キャンセル、キャンセル」するやつ<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>。</p>
+
+<p><strong>ささだ</strong>　ああ、それ裏技じゃないじゃんべつに。</p>
+
+<p><strong>青木</strong>　え、裏技でしょ？</p>
+
+<p><strong>ささだ</strong>　あ、そうか。ごめんなさい。そうかそうか。</p>
+
+<p><strong>青木</strong>　あれで魔法も鍛えられるから、それでがんばる。</p>
+
+<p><strong>ささだ</strong>　なるほどね。私、一生懸命、ひらがなになるまでヒットポイント上げた<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>。暇だったよねー。</p>
+
+<p><strong>青木</strong>　(笑)</p>
+
+<p><strong>ささだ</strong>　チェンジで<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>。ゴブリンと。</p>
+
+<p><strong>青木</strong>　あー、あれね。弱いやつと入れ替えるの。</p>
+
+<p><strong>青木</strong>　で、FF2 のあと FF3 かな。……順番ってどうだっけ？ その辺でドラクエ 4 が来るんだっけ？</p>
+
+<p><strong>ささだ</strong>　私は後から適当にやったので、ちょっと分かんない。</p>
+
+<p><strong>青木</strong>　ドラクエ 4 だ。あれはファミコンだから。で、その次が FF4 だ。</p>
+
+<p><strong>ささだ</strong>　スーファミの。</p>
+
+<p><strong>青木</strong>　そうそう。FF4、FF5 と来て。でも DQ5 はやんなかったんだよ。しばらく。</p>
+
+<p><strong>ささだ</strong>　え、DQ5 やんなかったの？</p>
+
+<p><strong>青木</strong>　やらなかったんだよね。FF4、FF5、FF6 とやって、その辺でようやく DQ5 をやった。
+何でやんなかったって言うと、DQ5 のモンスターが仲間に出来るって言うのがさ、
+なんかメガテン (女神転生) っぽいじゃん<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>。</p>
+
+<p><strong>ささだ</strong>　あー、メガテンはその頃やってなかったから知らない。</p>
+
+<p><strong>青木</strong>　そか。DQ がメガテンになっちゃったんならもういいや、と思って。</p>
+
+<p><strong>ささだ</strong>　DQ、FF 以外は？</p>
+
+<p><strong>青木</strong>　ロマサガとか<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>。スクウェア<sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>に魂を捧げておりました。</p>
+
+<p><strong>ささだ</strong>　なるほどね。聖剣<sup id="fnref:20"><a href="#fn:20" class="footnote">20</a></sup>とか。</p>
+
+<p><strong>青木</strong>　聖剣もやった。聖剣は 1 がいいよね<sup id="fnref:21"><a href="#fn:21" class="footnote">21</a></sup>。</p>
+
+<p><strong>ささだ</strong>　いいですね。</p>
+
+<p><strong>青木</strong>　1 のリメイクは酷かったらしいけど。</p>
+
+<p><strong>ささだ</strong>　何で出たんだっけ？</p>
+
+<p><strong>青木</strong>　ゲームボーイアドバンス？ 違う、ワンダースワンか。</p>
+
+<h4 id="陸上の話">陸上の話</h4>
+
+<p><strong>ささだ</strong>　で、高校で陸上部になって、スポーツ少年。</p>
+
+<p><strong>青木</strong>　そうね。陸上ばっかりやってた。</p>
+
+<p><strong>ささだ</strong>　プログラミングなんか全然知らない？</p>
+
+<p><strong>青木</strong>　全然知らない。陸上ばっかりだったねぇ。そう、あの高校の陸上部もスパルタでさぁ。
+夏休みの合宿とかがすごくてさ。
+1 日目の午前は移動で、その午後にいきなり、1000、2000、3000、2000、1000 の全力走。</p>
+
+<p><strong>ささだ</strong>　んー、それはあり得ないなぁ。</p>
+
+<p><strong>青木</strong>　次の日の午前が 600 インターバル 20 本。</p>
+
+<p><strong>ささだ</strong>　600 のインターバル自体、あり得ない気がするんだけど (笑)。
+せめて 400 が 10 本とか、そんぐらいだったなぁ。</p>
+
+<p><strong>青木</strong>　400 の 10 本なんて、ぬるくない？</p>
+
+<p><strong>ささだ</strong>　えー。でも 600 はなんかすごいね。</p>
+
+<p><strong>青木</strong>　すごかったよ。その先生自身もかなりすごい選手でさ。
+箱根駅伝で優勝したとか。で、めちゃめちゃ鍛えられたわけ。</p>
+
+<p><strong>ささだ</strong>　なるほど。</p>
+
+<p><strong>青木</strong>　……なんでそういう人ばっかなんだろうね (笑)。鍛えたがる人ばっかり。</p>
+
+<p><strong>ささだ</strong>　それで陸上をやりに大学行ったわけじゃないんですよね。</p>
+
+<p><strong>青木</strong>　という訳ではないです。陸上はめちゃ弱かったので。</p>
+
+<h4 id="大学での話">大学での話</h4>
+
+<p><strong>ささだ</strong>　で、大学に普通に入って。</p>
+
+<p><strong>青木</strong>　普通に入って。で、プログラミング。</p>
+
+<p><strong>ささだ</strong>　プログラミングに傾倒しだして。</p>
+
+<p><strong>青木</strong>　まぁ、それいらい、色々ありました (笑)</p>
+
+<p><strong>ささだ</strong>　で、大学の哲学を。最初から哲学に入ったの？ どういう入り方したの？</p>
+
+<p><strong>青木</strong>　それは色々変わってるんだよね。
+俺が入った学部は社会学部って言って、色々ある学部だから、中に入っても色々変えられるんだよ。
+学科とかの縛りもすごいゆるいから、取る講義次第で何でもできる感じ。
+それで最初は政治がやりたかったんだけど、そのうち国際社会学がやりたくなって、
+次に社会学になって、歴史になって、思想史になって、ちょっと社会心理学に浮気しつつ、
+最後に哲学に行きついた。</p>
+
+<p><strong>ささだ</strong>　それを 4 年間ぐらいで変遷してって。</p>
+
+<p><strong>青木</strong>　そう。</p>
+
+<p><strong>ささだ</strong>　長いな (笑)。ころころ変わるもん……でも、根底は結構近いところはある。</p>
+
+<p><strong>青木</strong>　そうだね。今思えば、政治学でもアレント<sup id="fnref:22"><a href="#fn:22" class="footnote">22</a></sup>みたいに半分思想に足つっこんでる人もいるし、ハーバーマス<sup id="fnref:23"><a href="#fn:23" class="footnote">23</a></sup>なんかもそうだし。</p>
+
+<p><strong>ささだ</strong>　大学ではたくさん本を読んだの？</p>
+
+<p><strong>青木</strong>　うーん、まぁ比較的。</p>
+
+<p><strong>ささだ</strong>　授業でそういう本をたくさん？</p>
+
+<p><strong>青木</strong>　紹介はされたけど、最初のうちはあんまり読んでなかったと思う。
+不真面目でした。何しろ、プログラミングばっかりやってた。</p>
+
+<p><strong>ささだ</strong>　(笑)。書籍はたくさん買ってるよね、プログラミングの。</p>
+
+<p><strong>青木</strong>　買ってるね。100 万くらい使ったかなあ。</p>
+
+<p><strong>ささだ</strong>　なるほど。</p>
+
+<h4 id="本の話">本の話</h4>
+
+<p><strong>ささだ</strong>　で、著作業みたいなことを始めて。</p>
+
+<p><strong>青木</strong>　あれも成り行きだよねー。</p>
+
+<p><strong>ささだ</strong>　成り行き？</p>
+
+<p><strong>青木</strong>　だって最初はあれだよ。いきなりメールをもらって。</p>
+
+<p><strong>ささだ</strong>　あ、そうか。「書きませんか」だよね。
+で、書きます、と。全然書く気は無かったの？ 最初、言われるまでは。</p>
+
+<p><strong>青木</strong>　言われるまでは、ほんとに何も考えてなかった。</p>
+
+<p><strong>ささだ</strong>　なるほど。で、書いたらいけるじゃんと。</p>
+
+<p><strong>青木</strong>　うん。</p>
+
+<p><strong>ささだ</strong>　なるほどね。
+本書けるってのは何かやったの？ 書けるってのは、能力的な意味で。
+文章を書く訓練みたいなことはやってなかった？</p>
+
+<p><strong>青木</strong>　やってない。</p>
+
+<p><strong>ささだ</strong>　初めて？ ああいう長い文章を書くのは。</p>
+
+<p><strong>青木</strong>　だね。ただ、思い当たることがないでもない。
+小学校の 6 年生で「生い立ちの記」ってのを書かされたのね。
+それは自分のそれまでの生涯の自分史を書くんだよ。</p>
+
+<p><strong>ささだ</strong>　6 年生で？</p>
+
+<p><strong>青木</strong>　うん。原稿用紙 100 枚が標準。</p>
+
+<p><strong>ささだ</strong>　あり得ない (笑)。原稿用紙 100 枚？</p>
+
+<p><strong>青木</strong>　うん。4 万字。
+まあ俺は文章書くのがめちゃくちゃ苦手だったから 70 枚強だったけど、それ書かされた。</p>
+
+<p><strong>ささだ</strong>　それ、今日日の卒論より長いんじゃない？</p>
+
+<p><strong>青木</strong>　そう思う。……そういうのがあったし、
+小学校のときは事あるごとに文章を書かされたんだよ。
+なんか事あるごとに、レポートを書けー、新聞を書けー、○○についてまとめろー、
+っていう課題があった。そういうのの影響も、もしかしたらあるのかもしれない。
+実は自分では全然そんな気はしないんだけど。</p>
+
+<p><strong>ささだ</strong>　じゃ、この人の本が良いから読んでいって、
+そういうのに影響うけて文章書けるようになったとか、そういう話はないの？</p>
+
+<p><strong>青木</strong>　そういうのはない。全然。むしろ文章を書くのは嫌いだし苦手だった。</p>
+
+<p><strong>ささだ</strong>　じゃ、オリジナル？</p>
+
+<p><strong>青木</strong>　そうだね。いざ本を書くっていう段になってから一冊だけ本田勝一の本を読んで、
+それでちょっと良くなったかなと思ってる。</p>
+
+<h4 id="普段の仕事">普段の仕事</h4>
+
+<p><strong>ささだ</strong>　普段の仕事って何をしてるんですか？</p>
+
+<p><strong>青木</strong>　よく分かりません。</p>
+
+<p><strong>ささだ</strong>　今はどんな感じなんですか？</p>
+
+<p><strong>青木</strong>　普通に大学に行きつつ。</p>
+
+<p><strong>ささだ</strong>　で、家に帰って執筆と。</p>
+
+<p><strong>青木</strong>　執筆。……最近執筆してないけど。</p>
+
+<p><strong>ささだ</strong>　してないの？</p>
+
+<p><strong>青木</strong>　リファレンスマニュアルのあればっかりやってる。
+つい、いい逃避活動があるとねぇ。やっちゃうんだよねぇ。
+リファレンスマニュアルを書くだけじゃなくて、システム (BitClust) もいじれるじゃん。
+あれが楽しくてさ。逃避活動にはもってこいだよ。</p>
+
+<p><strong>ささだ</strong>　(笑)。分かる分かる。これからの著作について、飛ばしてったんだけど。
+ふつうのコンパイラと、るびまの添削本を、3 月？</p>
+
+<p><strong>青木</strong>　3 月に出せるといいねえ。</p>
+
+<p><strong>ささだ</strong>　コンパイラの宣伝しとく？</p>
+
+<p><strong>青木</strong>　いや、そっちは止めておいた方が。</p>
+
+<p><strong>ささだ</strong>　しない？</p>
+
+<p><strong>青木</strong>　うん。書けるかどうか、正直ほんっとに分かんない。</p>
+
+<p><strong>ささだ</strong>　るびま添削本は、「Rubyist Magazine 添削記事をまとめた非常に良い本ですので……」</p>
+
+<p><strong>青木</strong>　買ってくださいと (笑)。書き下ろしもちょっと入るし。
+……そういえば、るびま今月号の添削記事はどうしたらいいんだろう。</p>
+
+<p><strong>ささだ</strong>　11 月かな。</p>
+
+<p><strong>青木</strong>　うん。あった方が、るびま的にも助かるよね。</p>
+
+<p><strong>ささだ</strong>　でも、依頼が無いんだよね。</p>
+
+<p><strong>青木</strong>　そうなんだよね。誰か応募してください。</p>
+
+<p><strong>ささだ</strong>　俺の書いたやつ……全部書き直しだよな (笑)。とりあえず括弧。</p>
+
+<p><strong>青木</strong>　なんか適当なのを誰か投稿してくれると良い。</p>
+
+<p><strong>ささだ</strong>　ですね。ここでお願いしてもしょうがないんだよな。</p>
+
+<p><strong>青木</strong>　日記で書けば良いのか<sup id="fnref:24"><a href="#fn:24" class="footnote">24</a></sup>。あの日記だとラインナップが激しく偏りそうだけど。</p>
+
+<p><strong>ささだ</strong>　インタプリタとか (笑)</p>
+
+<p><strong>青木</strong>　うわー、ありそうー。</p>
+
+<p><strong>ささだ</strong>　普通の。</p>
+
+<p><strong>青木</strong>　普通のプログラム送ってください。</p>
+
+<h4 id="仕事とプライベートの両立">仕事とプライベートの両立</h4>
+
+<p><strong>ささだ</strong>　仕事とプライベートの両立は？</p>
+
+<p><strong>青木</strong>　学生にそんなこと聞かれても。</p>
+
+<p><strong>ささだ</strong>　執筆業は？</p>
+
+<p><strong>青木</strong>　んー、あれは仕事か。でも、両立できてないので、聞かないでください。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<h4 id="普段家ですること">普段家ですること</h4>
+
+<p><strong>ささだ</strong>　普段家では何をしてるんですか。プログラミング以外。</p>
+
+<p><strong>青木</strong>　プログラミング以外で？ 執筆も除いて？</p>
+
+<p><strong>ささだ</strong>　あ、執筆。</p>
+
+<p><strong>青木</strong>　執筆。と、ゲームとか？</p>
+
+<p><strong>ささだ</strong>　ゲーム、最近何してるの？</p>
+
+<p><strong>青木</strong>　あー、最近は FF5 とか。</p>
+
+<p><strong>ささだ</strong>　FF5？ あのアドバンスのやつ？</p>
+
+<p><strong>青木</strong>　いやいや、スーファミ。オリジナル。</p>
+
+<p><strong>ささだ</strong>　あー。FF12 とかやんないの？</p>
+
+<p><strong>青木</strong>　欲しいけど、プレステ 2 持ってない。</p>
+
+<p><strong>ささだ</strong>　はー。いや 12 ね、良いっすよ。</p>
+
+<p><strong>青木</strong>　面白い？</p>
+
+<p><strong>ささだ</strong>　いや、なんか新鮮で。FF11 オフラインみたいな。
+一々エンカウントで変わんないというのが新鮮。私はあんまりやったことが無かったので。</p>
+
+<p><strong>青木</strong>　そうかあ。やってみたいとは思ってるんだけどね。</p>
+
+<p><strong>ささだ</strong>　ただ、(音楽が) 植松さんじゃ無かったので。</p>
+
+<p><strong>青木</strong>　あ、そうなの？ それは許せない。</p>
+
+<p><strong>ささだ</strong>　許せない。まぁでも、楽な気持ちで。</p>
+
+<p><strong>青木</strong>　でもそれだとなんか先にロマサガ 1 のリメイクをやりたくなってきたなぁ。</p>
+
+<p><strong>ささだ</strong>　あ、そういうのあるんだ。</p>
+
+<p><strong>青木</strong>　あるんだよ。ロマンシングサガ・ミンストレルソング。あれはオリジナルの人がやってるから。</p>
+
+<p><strong>ささだ</strong>　伊藤さんだっけ？</p>
+
+<p><strong>青木</strong>　そう、イトケンサウンド、いいですよ。</p>
+
+<p><strong>ささだ</strong>　いいですね、彼も。</p>
+
+<h4 id="映画とか">映画とか</h4>
+
+<p><strong>ささだ</strong>　映画とか観ないの？</p>
+
+<p><strong>青木</strong>　こないだ「時かけ」 (時をかける少女) を観た。</p>
+
+<p><strong>ささだ</strong>　あー。</p>
+
+<p><strong>青木</strong>　それだけ。それは 5 年ぶりぐらいに観ました。映画を。</p>
+
+<p><strong>ささだ</strong>　なんでまた？</p>
+
+<p><strong>青木</strong>　なんか、ウェブニュース見てると、イイ、イイって人がいっぱいいるから。</p>
+
+<p><strong>ささだ</strong>　多いよね。</p>
+
+<p><strong>青木</strong>　まぁ、観とこうかなって。</p>
+
+<p><strong>ささだ</strong>　なるほど。</p>
+
+<h4 id="音楽とか">音楽とか</h4>
+
+<p><strong>ささだ</strong>　音楽。</p>
+
+<p><strong>青木</strong>　音楽はあまり聴かないかなあ。</p>
+
+<p><strong>ささだ</strong>　何か作業中に音楽は聴かない？</p>
+
+<p><strong>青木</strong>　作業中は、クラシックとかゲームの BGM をかけたりとか。</p>
+
+<p><strong>ささだ</strong>　そうですか。</p>
+
+<p><strong>青木</strong>　あれって BGM だからさ、便利なんだよね聞き流すには。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<h4 id="スポーツ">スポーツ</h4>
+
+<p><strong>ささだ</strong>　スポーツ。走ってもいない？</p>
+
+<p><strong>青木</strong>　走ってない。ごく稀に走ったり泳いだり。</p>
+
+<p><strong>ささだ</strong>　あ、するんだ。もうね、全然しないからさ。ちゃんとしてるのは偉いですね。</p>
+
+<p><strong>青木</strong>　いや、ちゃんとはしてないよ。いやーほんとにね、走りたいんだけどね。
+やっぱ時間食うからさ。昔は 2 時間、3 時間平気で走ってたけんだけどなあ。</p>
+
+<p><strong>ささだ</strong>　あー、変態だ。</p>
+
+<p><strong>青木</strong>　(笑)。今はそれはちょっと。</p>
+
+<p><strong>ささだ</strong>　使ってるマシンのスペックとか……は、さっきたくさん話したからもういいよね。</p>
+
+<p><strong>青木</strong>　そうね。</p>
+
+<h4 id="好きな女性のタイプ">好きな女性のタイプ</h4>
+
+<p><strong>ささだ</strong>　好きな女性のタイプは。</p>
+
+<p><strong>青木</strong>　えー、じゃぁとりあえずは松たか子と答えておく。</p>
+
+<p><strong>ささだ</strong>　松たか子。きちんと好みのタイプを言う人、初めてじゃない？</p>
+
+<p><strong>青木</strong>　ねぇ！ 何でみんなちゃんと答えないんだよ！</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　みんな卑劣だよ。</p>
+
+<p><strong>ささだ</strong>　そういうのがパッと出てくるのがすごいね。</p>
+
+<p><strong>青木</strong>　時々訊かれるからさ、定番を用意してあるんだよ。</p>
+
+<p><strong>ささだ</strong>　あー、なるほど。みんな言うんだったら良いんだろうみたいな。
+なんかこう、芸能人とかの名前も分かんないし。顔も分かんないから言いようが無いんだよね。</p>
+
+<p><strong>青木</strong>　適当に作っておけばいいじゃん、そんなの。</p>
+
+<h3 id="今後">今後</h3>
+
+<h4 id="将来の展望">将来の展望</h4>
+
+<p><strong>ささだ</strong>　今後の展望、将来の夢。</p>
+
+<p><strong>青木</strong>　えー、行き当たりばったりです。</p>
+
+<p><strong>ささだ</strong>　行き当たりばったり？</p>
+
+<p><strong>青木</strong>　行き当たりばったり人生。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<h4 id="前のインタビュイーとの関係">前のインタビュイーとの関係</h4>
+
+<p><strong>ささだ</strong>　前のインタビューイ (essa さん) との関係は。</p>
+
+<p><strong>青木</strong>　何だろう。<a href="http://jp.rubyist.net/RubyKaigi2006/">RubyKaigi</a> のときに初めて会って、
+アレントの話をしました。それぐらい。</p>
+
+<p><strong>ささだ</strong>　あー、哲学の人。</p>
+
+<p><strong>青木</strong>　ちょっと意外だ。essa さんから来るのは珍しい。</p>
+
+<p><strong>ささだ</strong>　うん。</p>
+
+<h4 id="次のインタビュイー">次のインタビュイー</h4>
+
+<p><strong>ささだ</strong>　次、誰にしようか？</p>
+
+<p><strong>青木</strong>　次ね。難しいね。主だった人はそろそろ出尽くしてるよね。</p>
+
+<p><strong>ささだ</strong>　うーん。</p>
+
+<p><strong>青木</strong>　コミッターだと誰がいたかな。あ、立石さんとかどう？ 俺が一番最初にパクった人でもあるし。</p>
+
+<p><strong>ささだ</strong>　なるほど。なんか、最近あれですね。編集者が増えてきている。そろそろそういう時期なのか。</p>
+
+<p><strong>ささだ</strong>　次のインタビューイへの質問はなんかある？</p>
+
+<p><strong>青木</strong>　Ruby 関係とかだと定番の質問にすでにあるしなぁ。
+うーん……。「そういえば dl2 はどうなってるんですか」</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<h4 id="その他の雑多な質問">その他の雑多な質問</h4>
+
+<p><strong>ささだ</strong>　「たくさんあるマシンはそれぞれどの頻度で使っているか」。
+これはこの間の DECon で言ってたから飛ばす？</p>
+
+<p><strong>青木</strong>　まあいちおう一言で。一番良く使うのは、でかいの。AlphaServer DS20E。</p>
+
+<p><strong>ささだ</strong>　え、メインマシンじゃなくて？</p>
+
+<p><strong>青木</strong>　ああ、もちろん一番使うのはメインマシンです。
+ていうか、一番使うマシンをメインマシンと言うのでは。</p>
+
+<p><strong>ささだ</strong>　メインマシン以外でってことね。</p>
+
+<p><strong>青木</strong>　これはそういう話じゃないの？</p>
+
+<p><strong>ささだ</strong>　いや、分かんない。何が言いたいんだろう。まあいいや。</p>
+
+<p><strong>ささだ</strong>　「一番起動頻度が低いのは」。</p>
+
+<p><strong>青木</strong>　低いの？</p>
+
+<p><strong>ささだ</strong>　まぁ、起動してないってのも言ってたよね、さっき。</p>
+
+<p><strong>青木</strong>　うん。一度も起動してないのもいくつかある。ゴミみたいなやつ。</p>
+
+<p><strong>ささだ</strong>　「本はどれくらい売れてますか」。さっきあったけど。</p>
+
+<p><strong>青木</strong>　どれくらいといわれてもなー。具体的には言えないので、
+一番売れた「ふつりな」は中ヒットぐらい行きましたとだけ言っておこうかな。</p>
+
+<h4 id="椅子の話">椅子の話</h4>
+
+<p><strong>ささだ</strong>　「なぜアーロンではなくコンテッサなのか」。</p>
+
+<p><strong>青木</strong>　色です。</p>
+
+<p><strong>ささだ</strong>　えー！</p>
+
+<p><strong>青木</strong>　色だよ。</p>
+
+<p><strong>ささだ</strong>　アーロンチェアーにオレンジ無かったっけ？</p>
+
+<p><strong>青木</strong>　いや、俺のコンテッサは緑だもの。</p>
+
+<p><strong>ささだ</strong>　緑は (アーロンに) 無かったっけ？</p>
+
+<p><strong>青木</strong>　無いと思うよ。</p>
+
+<p><strong>ささだ</strong>　じゃ、色があったらアーロンでよかったの？</p>
+
+<p><strong>青木</strong>　うん。</p>
+
+<p><strong>ささだ</strong>　えー。</p>
+
+<p><strong>青木</strong>　それに、ハンズで買おうと思ったときにはアーロンがなくて、コンテッサしかなかった。</p>
+
+<p><strong>ささだ</strong>　ヘッドレストとかじゃないの？</p>
+
+<p><strong>青木</strong>　それもあるけど、やっぱ色。</p>
+
+<p><strong>ささだ</strong>　あとさ、肘当てをガチャガチャやるのがかっこいいじゃん。</p>
+
+<p><strong>青木</strong>　それもあるけど、やはり色。</p>
+
+<p><strong>ささだ</strong>　色なんだ。一番は色なんだ。</p>
+
+<p><strong>青木</strong>　かっこよければ良いんだよ！</p>
+
+<p><strong>ささだ</strong>　えー。アーロンは古いって感じ？ かなり前からあるよね、あれ。</p>
+
+<p><strong>青木</strong>　そうだね。あと、アーロンって言うと、
+『ONE PIECE』っていう漫画にアーロンっていう敵キャラがいるんだけどさ。魚人の。</p>
+
+<p><strong>ささだ</strong>　あー、はいはい。</p>
+
+<p><strong>青木</strong>　あれを思い出してしまうので。</p>
+
+<p><strong>ささだ</strong>　(笑)。それはどうなのさ。……分かりました。</p>
+
+<p><strong>青木</strong>　コンテッサは名前もかっこいいしさ。かっこよければいいんだよ。</p>
+
+<h4 id="若手に一言">若手に一言</h4>
+
+<p><strong>ささだ</strong>　若手に一言。</p>
+
+<p><strong>青木</strong>　えー。根性入れろ。</p>
+
+<p><strong>ささだ</strong>　自分もスパルタじゃない (笑)</p>
+
+<p><strong>青木</strong>　そだね (笑)</p>
+
+<h4 id="読者に一言">読者に一言</h4>
+
+<p><strong>ささだ</strong>　読者に一言。</p>
+
+<p><strong>青木</strong>　えー。知らん。それぞれ好きにやればいいじゃん。</p>
+
+<p><strong>ささだ</strong>　(笑)</p>
+
+<p><strong>青木</strong>　知らないよ、そんなもの！ だって色々な人がいるしさ。一概には言えないよ。</p>
+
+<p><strong>ささだ</strong>　媚びておいたほうが良いんじゃないの？</p>
+
+<p><strong>青木</strong>　本買ってくださいとか？ 別にいいよ。</p>
+
+<p><strong>ささだ</strong>　いいんだ (笑)。分かりました。</p>
+
+<p><strong>青木</strong>　ツンデレだから。</p>
+
+<p><strong>ささだ</strong>　デレ期があるんだ (笑)</p>
+
+<p>他に特にない？ たくさんしゃべったからいい？</p>
+
+<p><strong>青木</strong>　うん。けっこう長くしゃべったし。まあいいんじゃないでしょうか。</p>
+
+<p><strong>ささだ</strong>　どうも長々とありがとうございました。</p>
+
+<p><strong>青木</strong>　お疲れ様でした。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は賞味期限と Alpha をこよなく愛する青木さんにお話を伺いました。お忙しい中、本当にありがとうございました。次回はいろんな Ruby ライブラリを開発している立石さんにお話を伺います。お楽しみに。</p>
+
+<p>(インタビュー：ささだ、編集：いむら、むらまさ、ささだ、青木)</p>
+
+<h2 id="rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-Hotlinks.html">Rubyist Hotlinks 【第 36 回】 須藤功平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0052/0052-Hotlinks.html">Rubyist Hotlinks 【第 35 回】 島田浩二さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0045/0045-Hotlinks.html">Rubyist Hotlinks 【第 34 回】 大場さん夫妻 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0044/0044-Hotlinks.html">Rubyist Hotlinks 【第 33 回】 大場さん夫妻 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0042/0042-Hotlinks.html">Rubyist Hotlinks 【第 32 回】 卜部昌平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-Hotlinks.html">Rubyist Hotlinks 【第 31 回】 樽家昌也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0038/0038-Hotlinks.html">Rubyist Hotlinks 【第 30 回】 遠藤侑介さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-Hotlinks.html">Rubyist Hotlinks 【第 29 回】 松田明さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0035/0035-Hotlinks.html">Rubyist Hotlinks 【第 28 回】 Yugui さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-Hotlinks.html">Rubyist Hotlinks 【第 27 回】 小波秀雄 さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-Hotlinks.html">Rubyist Hotlinks 【第 26 回】 cuzic さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0031/0031-Hotlinks.html">Rubyist Hotlinks 【第 25 回】 加藤勇也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0030/0030-Hotlinks.html">Rubyist Hotlinks 【第 24 回】 okkez さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0029/0029-Hotlinks.html">Rubyist Hotlinks 【第 23 回】 yhara さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-Hotlinks.html">Rubyist Hotlinks 【第 22 回】 nari さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0023/0023-Hotlinks.html">Rubyist Hotlinks 【第 21 回】 原信一郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Hotlinks.html">Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-Hotlinks.html">Rubyist Hotlinks 【第 19 回】 伊尾木将之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Hotlinks.html">Rubyist Hotlinks 【第 18 回】 立石孝彰さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Hotlinks.html">Rubyist Hotlinks 【第 16 回】 essa さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Hotlinks.html">Rubyist Hotlinks 【第 15 回】 arton さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Hotlinks.html">Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Hotlinks.html">Rubyist Hotlinks 【第 13 回】 関将俊さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Hotlinks.html">Rubyist Hotlinks 【第 12 回】 後藤兄弟 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Hotlinks.html">Rubyist Hotlinks 【第 11 回】 後藤兄弟 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Hotlinks.html">Rubyist Hotlinks 【第 10 回】 わたなべひろふみさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Hotlinks.html">Rubyist Hotlinks 【第 9 回】 中田伸悦さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks.html">Rubyist Hotlinks 【第 8 回】 田中哲さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-3.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その3</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-2.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その2</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-1.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その1</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Hotlinks.html">Rubyist Hotlinks 【第 7 回】 江渡浩一郎さん 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Hotlinks.html">Rubyist Hotlinks 【第 6 回】 江渡浩一郎さん 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Hotlinks.html">Rubyist Hotlinks 【第 5 回】 増井俊之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Hotlinks.html">Rubyist Hotlinks 【第 4 回】 ただただしさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Hotlinks.html">Rubyist Hotlinks 【第 3 回】 かずひこさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-Hotlinks.html">Rubyist Hotlinks 【第 2 回】 前田修吾さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>「後で」とは、インタビューの後に行われたリファレンスマニュアル検討会のこと。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://www.radiumsoftware.com/0610.html#061013">Radium Software Developemnet: Multitasking is inefficient</a> のことのようです&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>日本語プログラミング言語。詳しくは前号の記事 [[0016-Legwork]]を参照。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>最近、そうじゃなくなりました。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Ruby 1.9 にはこの機能が標準で入っている。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>青木さんによる解説記事：<a href="http://codezine.jp/a/article.aspx?aid=687">CodeZine：Rubyで簡易POP3サーバを作る（Ruby, サーバ, メール, POP3, UNIX）</a>&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>ロンダルキアの洞窟：ドラクエ 2 のラスト一歩前のダンジョン。えらく長くて複雑。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>デンゴンダルの西の海にある浅瀬で、「月のかけら」を使うと表れる海底洞窟。ここで邪神の像を手に入れることができる。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>FF2：Final Fantasy シリーズの 2 作目。キャラクターがレベルでなく熟練度により成長するのが特徴。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>ブラッドソード：攻撃対象の最大HPに対する割合でダメージ量が決まる武器。強い敵でも弱い敵でも同じ攻撃回数で倒せてしまう。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>エリクシャー：ヒットポイントとマジックポイントを完全回復するアイテム。のちの FF で言うところの「エリクサー」。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>アルテマ：FF2 の最強魔法、ということになっているが使えなさすぎて泣ける。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>アルテマをがんばって取りに：FF2 の物語後半は大部分がアルテマ争奪戦である。&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>FF2 の裏技：FF2 では「たたかう」を入力した回数で武器や魔法のレベルが上がるが、キャンセルしても (実際に使わなくても) カウントされるため、これを利用してレベルをガンガン上げるという裏技がある。&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>ひらがなになるまで：FF2 では最大ヒットポイントが 9999 を越えると上一桁がひらがなになり「あ005」のように表示される。&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>チェンジ：魔法をかけた相手と自分の HP/MP を入れ替える魔法。弱い敵にチェンジを使うと効率よく自分の HP/MP を減らすことができて、結果として最大 HP/MP を鍛えられる。&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>メガテンっぽい：女神転生は敵の悪魔を「仲魔」にできるのが特徴。&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>ロマサガ：ロマンシングサガのこと。成長システムとストーリーの両面で自由度が高い。「殺してでもうばいとる」というセリフが有名。&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p>スクウェア：FF とかロマサガとか聖剣伝説を発売していた会社。現スクウェアエニックス。&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:20">
+      <p>聖剣：「聖剣伝説」のこと。&nbsp;<a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:21">
+      <p>聖剣は 1 がいいよね：ゲームボーイで発売された初代聖剣伝説のこと。&nbsp;<a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:22">
+      <p>アレント：政治学の偉い人。&nbsp;<a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:23">
+      <p>ハーバーマス：社会学の偉い人。&nbsp;<a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:24">
+      <p>応募してくれてありがとうございました。&nbsp;<a href="#fnref:24" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

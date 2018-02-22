@@ -1,0 +1,4071 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0021/0021-Hotlinks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0021/0021-Hotlinks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist Hotlinks 【第 20 回】 石塚圭樹さん" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0021/0021-Hotlinks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0021/0021-Hotlinks.html" data-text="Rubyist Hotlinks 【第 20 回】 石塚圭樹さん">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>著名な Rubyist にインタビューを行う企画「Rubyist Hotlinks」。今回は記念すべき Rubyist Magazine 3 周年を飾るにふさわしく、Ruby の名付け親である石塚 圭樹さんにお話を伺いました。非常に盛りだくさんの内容となっています。お楽しみください。</p>
+
+<h2 id="プロフィール">プロフィール</h2>
+
+<p><img src="/images/0021-Hotlinks/ishitsuka1.jpg" alt="ishitsuka1.jpg" />
+irb の作者であり、Ruby の名付け親でもある石塚さん。代表著作は『オブジェクト指向スクリプト言語 Ruby 』。</p>
+
+<dl>
+  <dt>好きな言葉</dt>
+  <dd>無為自然</dd>
+  <dt>尊敬する人</dt>
+  <dd>なし</dd>
+  <dt>ご本人のサイト</dt>
+  <dd>なし</dd>
+</dl>
+
+<h2 id="インタビュー">インタビュー</h2>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>ささだ</dd>
+  <dt>語り手</dt>
+  <dd>石塚さん</dd>
+  <dt>野次馬</dt>
+  <dd>arton さん</dd>
+  <dt>日にち</dt>
+  <dd>2007 年 8 月 5 日</dd>
+  <dt>場　所</dt>
+  <dd>秋葉原</dd>
+</dl>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#プロフィール" id="markdown-toc-プロフィール">プロフィール</a></li>
+  <li><a href="#インタビュー" id="markdown-toc-インタビュー">インタビュー</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+      <li><a href="#プロフィール-1" id="markdown-toc-プロフィール-1">プロフィール</a>        <ul>
+          <li><a href="#年齢" id="markdown-toc-年齢">年齢</a></li>
+          <li><a href="#出身地" id="markdown-toc-出身地">出身地</a></li>
+          <li><a href="#家族構成" id="markdown-toc-家族構成">家族構成</a></li>
+          <li><a href="#好きな言葉座右の銘" id="markdown-toc-好きな言葉座右の銘">好きな言葉、座右の銘</a></li>
+          <li><a href="#尊敬する人" id="markdown-toc-尊敬する人">尊敬する人</a></li>
+          <li><a href="#代表作" id="markdown-toc-代表作">代表作</a></li>
+          <li><a href="#著作" id="markdown-toc-著作">著作</a></li>
+          <li><a href="#好きなメソッド嫌いなメソッド" id="markdown-toc-好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</a></li>
+        </ul>
+      </li>
+      <li><a href="#ruby-に関して" id="markdown-toc-ruby-に関して">Ruby に関して</a>        <ul>
+          <li><a href="#rubyist-になったきっかけとruby-昔話" id="markdown-toc-rubyist-になったきっかけとruby-昔話">Rubyist になったきっかけと、Ruby 昔話</a></li>
+          <li><a href="#現在の-ruby-との付き合い" id="markdown-toc-現在の-ruby-との付き合い">現在の Ruby との付き合い</a></li>
+          <li><a href="#ruby-の好きなところと嫌いなところ" id="markdown-toc-ruby-の好きなところと嫌いなところ">Ruby の好きなところと嫌いなところ</a></li>
+          <li><a href="#ruby-を使った成功例" id="markdown-toc-ruby-を使った成功例">Ruby を使った成功例</a></li>
+          <li><a href="#ruby-のキラーアプリケーションライブラリ" id="markdown-toc-ruby-のキラーアプリケーションライブラリ">Ruby のキラーアプリケーション、ライブラリ</a></li>
+          <li><a href="#ruby-の習得" id="markdown-toc-ruby-の習得">Ruby の習得</a></li>
+        </ul>
+      </li>
+      <li><a href="#プログラミング全般" id="markdown-toc-プログラミング全般">プログラミング全般</a>        <ul>
+          <li><a href="#初めてのプログラミング" id="markdown-toc-初めてのプログラミング">初めてのプログラミング</a></li>
+          <li><a href="#ruby-以外のプログラミング言語" id="markdown-toc-ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</a></li>
+          <li><a href="#美しいソースコード" id="markdown-toc-美しいソースコード">美しいソースコード</a></li>
+          <li><a href="#興味を持ってるテーマ" id="markdown-toc-興味を持ってるテーマ">興味を持ってるテーマ</a></li>
+        </ul>
+      </li>
+      <li><a href="#生い立ち" id="markdown-toc-生い立ち">生い立ち</a></li>
+      <li><a href="#その他" id="markdown-toc-その他">その他</a>        <ul>
+          <li><a href="#普段の生活スタイル" id="markdown-toc-普段の生活スタイル">普段の生活スタイル</a></li>
+          <li><a href="#仕事とプライベートの両立" id="markdown-toc-仕事とプライベートの両立">仕事とプライベートの両立</a></li>
+          <li><a href="#趣味" id="markdown-toc-趣味">趣味</a></li>
+          <li><a href="#マシンのスペック" id="markdown-toc-マシンのスペック">マシンのスペック</a></li>
+          <li><a href="#好きな女性のタイプ" id="markdown-toc-好きな女性のタイプ">好きな女性のタイプ</a></li>
+          <li><a href="#今後の展望将来の夢" id="markdown-toc-今後の展望将来の夢">今後の展望、将来の夢</a></li>
+          <li><a href="#伊尾木さんとの関係" id="markdown-toc-伊尾木さんとの関係">伊尾木さんとの関係</a></li>
+          <li><a href="#次のインタビューイ" id="markdown-toc-次のインタビューイ">次のインタビューイ</a></li>
+          <li><a href="#次のインタビューイへの質問" id="markdown-toc-次のインタビューイへの質問">次のインタビューイへの質問</a></li>
+          <li><a href="#若手に一言" id="markdown-toc-若手に一言">若手に一言</a></li>
+          <li><a href="#読者へ一言" id="markdown-toc-読者へ一言">読者へ一言</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#rubyist-hotlinks-連載一覧" id="markdown-toc-rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</a></li>
+</ul>
+
+<h3 id="プロフィール-1">プロフィール</h3>
+
+<p><strong>ささだ</strong>  今日はお忙しいところありがとうございます。どんどん質問させていただきたいと思います。生年月日、出身地、現住所、家族構成はいかがでしょう。</p>
+
+<h4 id="年齢">年齢</h4>
+
+<p><strong>石塚</strong>  1963 年。昭和 38 年だな。 1963 年？ あってるよね？</p>
+
+<p><strong>arton</strong>  あってますね。</p>
+
+<p><strong>石塚</strong>  7 月 3 日ですね。Ruby の月ですね。</p>
+
+<p><strong>arton</strong>  ちなみに私も 7 月。</p>
+
+<p><strong>ささだ</strong>  おお。arton さんは何年？</p>
+
+<p><strong>arton</strong>  61 年だから、僕の方が二つ上か。</p>
+
+<p><strong>ささだ</strong>  まつもとさんはどの辺ですかね？</p>
+
+<p><strong>石塚</strong>  まつもとさんはねぇ……忘れた。3 月<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>だよ。</p>
+
+<p><strong>arton</strong>  俺達よりちょっと若い。 64 年か 65 年じゃないかな。</p>
+
+<p><strong>石塚</strong>  ああ、僕より二つ下だ。 65 年じゃないかな。</p>
+
+<p><strong>ささだ</strong>  65 年ですか 。へー。私は 79 年ですよ。</p>
+
+<p><strong>石塚</strong>  ずいぶん差がある。ギャップがあるなぁ。</p>
+
+<p><strong>ささだ</strong>  お二人の近くに中田さんが入るんですかね。</p>
+
+<p><strong>arton</strong>  たぶん。咳さんとか、意外と年なんだよね。</p>
+
+<p><strong>石塚</strong>  咳さん……どうなんだろうな。</p>
+
+<p><strong>ささだ</strong>  RWiki に昔、年齢の話が書いてありましたよね。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p><strong>石塚</strong>  やっぱ年取ってるグループなんだよな。二つ下……たぶんまつもとさんは二つ下なんだよね。三つかも。でも二つだよ、たぶん。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<h4 id="出身地">出身地</h4>
+
+<p><strong>ささだ</strong>  出身地は。</p>
+
+<p><strong>石塚</strong>  一応、埼玉ね。現住所は、横浜。</p>
+
+<p><strong>ささだ</strong>  じゃあ、あんまりウロウロはしていないというか。</p>
+
+<p><strong>石塚</strong>  浜松に居たことはあるんだよね。そこでまつもとさんと一緒に仕事やってた。</p>
+
+<p><strong>ささだ</strong>  そうかそうか。ではその話は後で。</p>
+
+<p><strong>石塚</strong>  浜松は Ruby 発祥の地なのかなぁ。たぶん、誕生したのは浜松なんだよね (笑)。ものが実際できたのは……浜松なんだろうな。</p>
+
+<p><strong>arton</strong>  やっぱり浜松っていうと、夜のプログラミング言語っていう感じだね。</p>
+
+<p><strong>ささだ</strong>  何で？</p>
+
+<p><strong>arton</strong>  え、夜のお菓子っていう有名なお菓子があるじゃん。</p>
+
+<p><strong>ささだ</strong>  あ、そうなんですか。</p>
+
+<p><strong>石塚</strong>  知らない？うなぎパイ、うなぎパイ<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<p><strong>ささだ</strong>  うなぎパイは知ってますけど。夜なんですか、あれは。</p>
+
+<p><strong>石塚</strong>  夜のお菓子。ノーマルのやつは夜のお菓子で、あと、うなぎパイ VSOP ってのがあって、それは真夜中のお菓子なんだ (笑)。ブランデーが入ってるさらに高級版で。</p>
+
+<p><strong>ささだ</strong>  へー。</p>
+
+<p><strong>石塚</strong>  あと、お昼のお菓子っていうのがあるんだよ。これはえび塩パイっていう、何かちょっと違うやつなんだけど。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  浜松は何年居たんですか？</p>
+
+<p><strong>石塚</strong>  浜松……よく覚えてないんだけど、何年ぐらいだろう。たぶん 5 年ぐらいかな。</p>
+
+<p><strong>ささだ</strong>  そういう知識がたまるぐらいには (笑)</p>
+
+<p><strong>石塚</strong>  奥さんの実家が浜松だしね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<h4 id="家族構成">家族構成</h4>
+
+<p><strong>ささだ</strong>  家族構成。</p>
+
+<p><strong>石塚</strong>  二人。奥さんと。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<h4 id="好きな言葉座右の銘">好きな言葉、座右の銘</h4>
+
+<p><strong>ささだ</strong>  好きな言葉、座右の銘。</p>
+
+<p><strong>石塚</strong>  好きな言葉……好きな言葉ねぇ。あんま無いよねぇ、普通 (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  座右の銘とか、ちょっとねぇ。そういえば高校の時にさ、篆刻ってハンコ作ったことがあるんだけどさ、ひとつは自分の名前で、もうひとつは中国のことわざみたいなやつで、四文字熟語というか、四文字とは限らないんだけど、何か彫れっていうのがあったんだけど。それだと『無為自然』って作ったな。その時はそれが良いと思ったに違いない。一所懸命考えた結果。</p>
+
+<p><strong>ささだ</strong>  それはなぜ彫ろうと思ったんですか？</p>
+
+<p><strong>石塚</strong>  それは授業で。書道の中の一環として、そういう彫る話があった。</p>
+
+<p><strong>arton</strong>  かっこいい書道だな。書道って、これ(筆で書を書く手振り)しかやんないのかと思ってた。</p>
+
+<p><strong>石塚</strong>  高校の頃はそういうのをやるみたい。うちの学校ではやってた。そのハンコのやつは、県の大会とかあったみたいで、そういうのに出したりしてたみたい。自分の名前のやつは、一応入選ぐらいなんだけど、県の大会とかに発表されていたみたい。</p>
+
+<p><strong>ささだ</strong>  すばらしい。</p>
+
+<p><strong>arton</strong>  そういうデザインセンスが、今も生きているっていうやつだな。</p>
+
+<p><strong>石塚</strong>  それ、デザインもあるのかな、確か。</p>
+
+<p><strong>ささだ</strong>  『無為自然』は老子の言葉。と、Wikipedia に書いてありました。</p>
+
+<p><strong>石塚</strong>  確かに。良く分からんけど、意味は (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  高校の頃って、漢文とかもやるしね。</p>
+
+<p><strong>ささだ</strong>  あー、なるほど。</p>
+
+<p><strong>arton</strong>  『無為自然』っていうのは、政治のひとつの理想じゃん。王様は民を居るを知らず、民は王様を居るを知らず。それでもちゃんと税金が自然に集まって皆仲良く暮らせる。</p>
+
+<p><strong>ささだ</strong>  というのが、いい態度？</p>
+
+<p><strong>arton</strong>  そういう政治を理想とする道徳観というか、国家感か。</p>
+
+<p><strong>ささだ</strong>  でかいですね。</p>
+
+<p><strong>石塚</strong>  よく分かんないね、今となっては (笑)</p>
+
+<p><strong>arton</strong>  老子の言葉って、コアしか書いてなくて、コンテキストが何にも無いからさ。どうとでも解釈できるんだよね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>arton</strong>  コンテキストが無い。</p>
+
+<p><strong>石塚</strong>  コンテキストフリーだったのか。それ、意味無いじゃんね。意味が分からないってことじゃん。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>arton</strong>  好きなように解釈して良い。</p>
+
+<p><strong>ささだ</strong>  じゃ、座右の銘は『無為自然』。勝手に作ってる感じですよね、これ (笑)</p>
+
+<h4 id="尊敬する人">尊敬する人</h4>
+
+<p><strong>ささだ</strong>  尊敬する人。</p>
+
+<p><strong>石塚</strong>  尊敬する人もねぇ。今となっては中々ねぇ。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  尊敬する人、難しいよなぁ。ちょっといないかな。いないっていうのもあれだけど。尊敬っていうか、偉いなと思うのは、まつもとさんとかは偉いなと思う。</p>
+
+<p><strong>ささだ</strong>  ほう。</p>
+
+<p><strong>石塚</strong>  偉いって言うか、何て言うんだろう。個人的な付き合いもあるから、人間性とかも含めてね。あるかなとおもうね。後は、まぁそうだなぁ。偉い人と個人的に付き合えてないから、分からないけど (笑)</p>
+
+<p><strong>ささだ</strong>  別にこういうのって、個人的な付き合いってのは無いんじゃないんですか？</p>
+
+<p><strong>石塚</strong>  いや、やっぱし尊敬するっていうのは、人格的に尊敬できなきゃ駄目じゃん (笑)</p>
+
+<p><strong>arton</strong>  そこで『無為自然』で老子とか出てくるのかと思うじゃん。</p>
+
+<p><strong>石塚</strong>  老子ね、確かにね。でも老子とか……尊敬するとかいうレベルではなさそうだね (笑)</p>
+
+<h4 id="代表作">代表作</h4>
+
+<p><strong>ささだ</strong>  代表作。</p>
+
+<p><strong>石塚</strong>  代表作？やっぱあれかな。シェルかな。</p>
+
+<p><strong>ささだ</strong>  シェル？</p>
+
+<p><strong>石塚</strong>  shell.rb ってあるんだけど (笑) 知らないでしょ？</p>
+
+<p><strong>ささだ</strong>  いやいやいや。知ってますけど。確か誰かが 1.9 から外そうよとか言ってた (笑)</p>
+
+<p><strong>石塚</strong>  ほんとに？(笑)</p>
+
+<p><strong>arton</strong>  代表作は irb でいいと思うんですけど (笑)</p>
+
+<p><strong>ささだ</strong>  ぱっと思いつくのは irb ですよね。まぁ、Ruby って言ってもいいのかもしれませんが。Ruby の名付け親として。</p>
+
+<p><strong>石塚</strong>  名付け親ねぇ。でも僕が作ったわけじゃないからな。この辺が中々微妙な話でね。</p>
+
+<p><strong>ささだ</strong>  shell.rb は……</p>
+
+<p><strong>石塚</strong>  外せって？それもひとつの案だよな。</p>
+
+<p><strong>ささだ</strong>  namespace が、すごいの取るから嫌だっていう話だったかなぁ。</p>
+
+<p><strong>石塚</strong>  namespace？Shell って名前使ってるから？</p>
+
+<p><strong>ささだ</strong>  そうそう。Shell クラス。</p>
+
+<p><strong>石塚</strong>  だって、shell.rb なんだもん、Shell でいいじゃん。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<h4 id="著作">著作</h4>
+
+<p><strong>ささだ</strong>  著作。</p>
+
+<p><strong>石塚</strong>  著作？ 本？</p>
+
+<p><strong>ささだ</strong>  たくさんありますよね。私は<a href="http://www.amazon.co.jp/dp/4756119093">オブジェクト指向データベース</a>の本は買いましたけど。</p>
+
+<p><strong>石塚</strong>  本当？ありがとう。</p>
+
+<p><strong>ささだ</strong>  古本屋で。</p>
+
+<p><strong>石塚</strong>  古本屋で？ そうか。古本屋でしか手に入らないのか、もしかしたら<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+
+<p><strong>ささだ</strong>  そうかもしれないですね。あれは面白かったですよ。</p>
+
+<p><strong>石塚</strong>  それとか……一応最初は、オブジェクト指向プログラミングってやつなんだよね。</p>
+
+<p><strong>ささだ</strong>  あー、はいはいはい。</p>
+
+<p><strong>石塚</strong>  あれは私が会社に入ってすぐだから、昭和 63 年か。西暦何年だか良く覚えてないけど。</p>
+
+<p><strong>ささだ</strong>  Amazon で検索すると、『<a href="http://www.amazon.co.jp/dp/4894712415">ソフトウェア要求管理</a>』っていうのが一番上に来てるんですけど。</p>
+
+<p><strong>石塚</strong>  それはね、翻訳っていうか監訳。</p>
+
+<p><strong>ささだ</strong>  これは新しいんですか？</p>
+
+<p><strong>石塚</strong>  新しいっていうか……それは Rational のやつだよね？</p>
+
+<p><strong>ささだ</strong>  ピアソンで 2002 年。そんなに新しくは無いですね。</p>
+
+<p><strong>石塚</strong>  それが最後の本なんだよね。僕が関わっている本というと。</p>
+
+<p><strong>ささだ</strong>  『<a href="http://www.amazon.co.jp/dp/4894712679">UML リファレンスマニュアル</a>』。2002 年 1 月。1993 年 4 月、『<a href="http://www.amazon.co.jp/dp/4871483126">オブジェクト指向プログラミング</a>』。</p>
+
+<p><strong>石塚</strong>  ん、何年？</p>
+
+<p><strong>ささだ</strong>  二つ出てますね、同じのが。</p>
+
+<p><strong>石塚</strong>  ああ、そう。改訂版とね。</p>
+
+<p><strong>ささだ</strong>  88 年が最初。</p>
+
+<p><strong>石塚</strong>  そうだそうだ、88 年だ。古いな……。あ、その前にもう一個あるんだよね。</p>
+
+<p><strong>ささだ</strong>  何ですか？</p>
+
+<p><strong>石塚</strong>  1983 年、『<a href="http://www.amazon.co.jp/dp/4871481859/">Smalltalk 入門</a>』ってやつ。これは僕が書いたって訳じゃないんだけどね。たぶん出てこないんじゃない、これ。</p>
+
+<p><strong>ささだ</strong>  出てこないですね。</p>
+
+<p><strong>arton</strong>  これ、どこの会社のやつ？</p>
+
+<p><strong>石塚</strong>  これはアスキー。</p>
+
+<p><strong>ささだ</strong>  あと、『<a href="http://www.amazon.co.jp/dp/4756132545">プログラミング言語 Ruby</a>』と。</p>
+
+<p><strong>石塚</strong>  そうそう。これを忘れちゃいけないじゃないですか。これは 99 年か……。本当は 2005 年に出てなくちゃいけないのがあるんだけど、出てないね。3 年毎ぐらいにでてるみたいだからな。</p>
+
+<p><strong>ささだ</strong>  今度何かドカンと。</p>
+
+<p><strong>石塚</strong>  いやー、中々ね (笑)。書くのも大変なんだよね。</p>
+
+<p><strong>ささだ</strong>  大変ですよね。</p>
+
+<h4 id="好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</h4>
+
+<p><strong>ささだ</strong>  好きなメソッド、嫌いなメソッド。</p>
+
+<p><strong>石塚</strong>  そうねぇ、好きなやつはなんとなくやっぱしあれかな、僕の場合は。やっぱ module_eval かな。</p>
+
+<p><strong>ささだ</strong>  ええ！</p>
+
+<p><strong>arton</strong>  ただの eval じゃなくて、module_eval なんですか？</p>
+
+<p><strong>石塚</strong>  やっぱ、メソッド定義しないとね (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  いや、eval も使ってるけど……。</p>
+
+<p><strong>ささだ</strong>  define_method ではなくて、module_eval を使うと。</p>
+
+<p><strong>石塚</strong>  だって、define_method って知らないもん (笑)</p>
+
+<p><strong>ささだ</strong>  その頃は無かった？</p>
+
+<p><strong>石塚</strong>  その頃は無かったというか……。define_method って、そういう高度なやつがあるのね、最近は。</p>
+
+<p><strong>ささだ</strong>  最近はあるんですよ。</p>
+
+<p><strong>arton</strong>  define_method っていうのは？。</p>
+
+<p><strong>石塚</strong>  文字列を渡すわけ？ どうなってるのそれは。</p>
+
+<p><strong>ささだ</strong>  define_method は、ブロックを渡して、そのブロックがメソッドになるっていう。</p>
+
+<p><strong>arton</strong>  ほー。</p>
+
+<p><strong>石塚</strong>  ブロックってことは、式そのままっていう話だよね？ 静的なんだよね？ 文字列じゃないんだよね？</p>
+
+<p><strong>ささだ</strong>  文字列じゃないです。</p>
+
+<p><strong>石塚</strong>  そっかそっか。</p>
+
+<p><strong>ささだ</strong>  そこでスコープがぐちゃぐちゃなんですよ。ブロックだから上の参照が取れちゃうっていう。そうすると、クラスの中で定義したローカル変数に対して参照ができるので、C++ の static 変数みたいなことができる。</p>
+
+<p><strong>arton</strong>  それは module_eval とどう違うの？</p>
+
+<p><strong>ささだ</strong>  module_eval でメソッドを普通に定義する場合だと、文字列も渡せるし、ブロックも渡せるけど、定義したメソッドはコンテキストが全然違う。スコープが切れるので、そこは取れないんですよ。</p>
+
+<p><strong>arton</strong>  そうか、なるほど。</p>
+
+<p><strong>石塚</strong>  そうか、define_method か。</p>
+
+<p><strong>arton</strong>  define_method は、1.9 feature？</p>
+
+<p><strong>ささだ</strong>  いや、define_method は昔からありますよ。</p>
+
+<p><strong>arton</strong>  え、そうなの？</p>
+
+<p><strong>石塚</strong>  うそー。</p>
+
+<p><strong>ささだ</strong>  何言ってるんですか！</p>
+
+<p><strong>石塚</strong>  昔からは無いでしょー。</p>
+
+<p><strong>ささだ</strong>  1.6 にはありましたよ。</p>
+
+<p><strong>石塚</strong>  ほんとに？</p>
+
+<p><strong>ささだ</strong>  私が Ruby を使い始めたのは 1.6 ですが、define_method はあったと思いますよ。</p>
+
+<p><strong>石塚</strong>  何か怪しいな。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  今、中村(う)さんに聞いてみたら、俺が物心ついたときにあったと言ってるんですが。</p>
+
+<p><strong>石塚</strong>  あ、ほんとだ。1.6 では、って書いてあるから、1.6 なんだなぁ……。でも、文字列渡せないと駄目なんだよ、たぶん (笑)</p>
+
+<p><strong>ささだ</strong>  メソッド名が変わるんですよ、その場合。define_method は、メソッド名は自由に選べて、上のローカル変数が取りたいっていう。よく Lisp とかだと普通にできる話なんで。</p>
+
+<p><strong>石塚</strong>  Lisp で普通にできるか。できなさそうな Lisp はあるけど。Common Lisp とかできないんじゃないの？</p>
+
+<p><strong>ささだ</strong>  Common Lisp だとどうなんですかね。</p>
+
+<p><strong>石塚</strong>  静的スコープしか許さないですよ。</p>
+
+<p><strong>ささだ</strong>  静的スコープだけど……。</p>
+
+<p><strong>石塚</strong>  静的スコープなのか、それは。</p>
+
+<p><strong>ささだ</strong>  嫌いなメソッドは？</p>
+
+<p><strong>石塚</strong>  嫌いなのっていうか、後悔したのは一杯あるよね。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  結構、色々リクエストして作ってもらったのも一杯あるんだけど、一番馬鹿みたいなのが。これは消してほしいんだよな。</p>
+
+<p><strong>ささだ</strong>  どれどれ？</p>
+
+<p><strong>石塚</strong>  Array の中に……ええっとねぇ。たぶん、nil の数を数えるメソッドがあると思うんだよね。</p>
+
+<p><strong>ささだ</strong>  nil でないアイテムだったら、nitems というのがあるけど。</p>
+
+<p><strong>石塚</strong>  それかな？</p>
+
+<p><strong>ささだ</strong>  私、今まで知らなかったな、これ。</p>
+
+<p><strong>石塚</strong>  だから、意味無いんだって (笑)</p>
+
+<p><strong>ささだ</strong>  arton さん、知ってました？ nitems って。</p>
+
+<p><strong>arton</strong>  使わねぇなあ。</p>
+
+<p><strong>石塚</strong>  絶対使わないと思うよね (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど。その辺が後悔していると。他はありますか？</p>
+
+<p><strong>arton</strong>  知られざるメソッドの発掘の機会みたいな (笑) それでみんな使うようになっちゃったりしてね。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  これは難しいよね、使いこなすのは……。使いこなすといえば、これは後悔しているとかじゃないんだけど、正規表現の match とか良く分からないんだよね。</p>
+
+<p><strong>ささだ</strong>  match？ MatchData オブジェクト？ Regexp#match？</p>
+
+<p><strong>石塚</strong>  そういうの無かったっけ？ これはねぇ、何が返ってくるか良く分からないんだよね (笑)</p>
+
+<p><strong>ささだ</strong>  MatchData オブジェクトを返すと書いてあります。</p>
+
+<p><strong>石塚</strong>  MatchData オブジェクト？ match じゃなくてもう一個の方かな……。</p>
+
+<p><strong>ささだ</strong>  この辺は確かに難しいですよね。</p>
+
+<p><strong>石塚</strong>  何か、配列とか、配列の配列とか返ってこない？</p>
+
+<p><strong>arton</strong>  グループが、0 にマッチした全部で、括弧の順番で 1,2,3 って返ってくるのかな。だから配列みたいにも扱える。</p>
+
+<p><strong>ささだ</strong>  String#scan じゃないですか、それ。</p>
+
+<p><strong>石塚</strong>  そうだ、そっちかもしれない。String の方の scan か。そっちだきっと。これはねぇ、何か使いたい用途に合っているようで何か良く分からないっていう。色々考えないと使えないという。使えないって言うか、間違っちゃうっていうね。これがねぇ……。普通に正規表現で、=~ でマッチして、変数取り出せばいいっていう話なのかもしれないね。</p>
+
+<p><strong>ささだ</strong>  何が難しいですか？ 多重配列で返ってくるので、括弧で囲むって所ですか？</p>
+
+<p><strong>石塚</strong>  括弧っていうか、返ってくるのが配列の配列になっていて、良く分からない。こうじゃないと困るんだろうけどね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  いつもこれ、使ってるときに悩む (笑)</p>
+
+<h3 id="ruby-に関して">Ruby に関して</h3>
+
+<h4 id="rubyist-になったきっかけとruby-昔話">Rubyist になったきっかけと、Ruby 昔話</h4>
+
+<p><strong>ささだ</strong>  Rubyist になったきっかけ。</p>
+
+<p><strong>石塚</strong>  きっかけ。きっかけは難しいんだよね。最初っからでもないんだよね。一回離れてるからねぇ。</p>
+
+<p><strong>ささだ</strong>  というと？</p>
+
+<p><strong>石塚</strong>  最初に Ruby って名前をつけるきっかけになったのは何年だっけ？</p>
+
+<p><strong>ささだ</strong>  93 年ですか？ 94 年？</p>
+
+<p><strong>arton</strong>  94 年っていうのは、メーリングリストで公開した時？あ、メーリングリストじゃなくて、NetNews か。14 歳になったっていうのは、どこからだっけ？</p>
+
+<p><strong>ささだ</strong>  名前が決まった日じゃなかったっけ。</p>
+
+<p><strong>arton</strong>  っていうことは、まだ fj とかで評価しているわけじゃないから、その頃か。</p>
+
+<p><strong>ささだ</strong>  fj デビューが 95 年？ 94 年とかそんな頃？</p>
+
+<p><strong>石塚</strong>  一番最初は 93 年か。93 年の 2 月 17 日？ 違うのかなぁ。正式な Ruby の誕生日っていつになってたんだっけ。</p>
+
+<p><strong>ささだ</strong>  2 月 24 日です。</p>
+
+<p><strong>石塚</strong>  24 日？ 24 日に名前が決定したのかな。</p>
+
+<p><strong>arton</strong>  それまでは何て名前だったんだっけ？</p>
+
+<p><strong>石塚</strong>  いや、とりあえず Ruby ってことにしたんだよね。</p>
+
+<p><strong>arton</strong>  名前がつく前から、まつもとさんは作ってたんですよね、きっと。</p>
+
+<p><strong>石塚</strong>  いや……。</p>
+
+<p><strong>arton</strong>  コマンドにまだなってなかったのかな。</p>
+
+<p><strong>ささだ</strong>  それは、2006 年の Ruby 会議で、高橋さんが紹介した ruby-dev の記事がありまして (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/5173">ruby-dev:5173</a>)。</p>
+
+<p><strong>石塚</strong>  これが 2 月 17 日なんだよね。</p>
+
+<p><strong>arton</strong>  Tish とか言ってたのか。</p>
+
+<p><strong>ささだ</strong>  このチャットのきっかけって言うか、言語の話をしだしたのは、何かあったんですか？きっかけみたいなのは。</p>
+
+<p><strong>石塚</strong>  きっかけ？</p>
+
+<p><strong>ささだ</strong>  普通にお隣に居たとか、そういう感じなんですか？</p>
+
+<p><strong>石塚</strong>  まつもと君は上の階に居たんだけど (笑)。上の階にいたっていうのも変な話なんだけど。</p>
+
+<p><strong>ささだ</strong>  同じ会社？</p>
+
+<p><strong>石塚</strong>  同じ会社。</p>
+
+<p><strong>ささだ</strong>  やってる仕事は全然違う？</p>
+
+<p><strong>石塚</strong>  近い。近いって言うか、一応同じようなことをやってたんだけどね。ま、それとは関係ない。仕事とは関係ないんだよね、これ。たぶん、まつもと君の席に行ったら何かやってたんだよね。そのときにたぶん、そういう言語が欲しいなってやってたんだと思うんだけどさ。</p>
+
+<p><strong>ささだ</strong>  何かやってたというのは、言語設計してたとか？</p>
+
+<p><strong>石塚</strong>  言語設計って言うか……そういうレベルになるのは、たぶんもうちょっと経たないと始まらないから。</p>
+
+<p><strong>ささだ</strong>  席に行って何をやってたんですか？</p>
+
+<p><strong>石塚</strong>  何かモゾモゾやってたんだよな (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  僕も、もうよく覚えてないんだよね (笑) 何かモゾモゾやってて、話して、それで何かそういう言語が欲しいねぇという話になったのかなぁ。良く覚えていないんだよな。立ち話のことは記録に残ってないからね (笑)</p>
+
+<p><strong>arton</strong>  その頃は、コンピュータは何を使われてたんですか。その頃から Linux じゃないですよね、無いから。</p>
+
+<p><strong>石塚</strong>  NEWS。NEWS だから、4.3BSD だね。</p>
+
+<p><strong>ささだ</strong>  仕事中にチャットして？ では無くて？</p>
+
+<p><strong>石塚</strong>  チャットじゃなくて、直接話したんだよね、その時ね。</p>
+
+<p><strong>ささだ</strong>  このログは？</p>
+
+<p><strong>石塚</strong>  これはチャットで話してるんだね。これは仕事中だな (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  いつの間にかそんな話になっていたと。</p>
+
+<p><strong>石塚</strong>  いつの間にかって言うか、そういう話をしたんだと思うんだよね。</p>
+
+<p><strong>ささだ</strong>  Perl みたいな言語を作ろうと。オブジェクト指向でもっとまともなやつ。</p>
+
+<p><strong>石塚</strong>  そうそう。っていうか、その前にね、実は別のやつをやってたんだよ。僕はその頃研究部って所にいて、まつもとさんにもやってもらってたんだけど。研究部でやってたのは、もうちょっと硬い言語だったんだよ。</p>
+
+<p><strong>ささだ</strong>  それはお仕事でやってた？</p>
+
+<p><strong>石塚</strong>  そうそう。仕事。</p>
+
+<p><strong>ささだ</strong>  硬い言語っていうと、型とかそういうのがきっちりしているという意味で硬い？</p>
+
+<p><strong>石塚</strong>  僕も良く覚えてないんだよな。昔のことで……。</p>
+
+<p><strong>ささだ</strong>  こっちの仕事の方の言語は成功したんですか？</p>
+
+<p><strong>石塚</strong>  いや、途中で研究部自身がなくなったんだよね (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  大体、そのころの会社はもう無くなってるし。無くなったって言うか、どっかに吸収されちゃってるしね。</p>
+
+<p><strong>ささだ</strong>  なるほど。で、それを話していたらその中で Ruby っていうのを自分で作りたいって言う。</p>
+
+<p><strong>石塚</strong>  話してっていうか、それをやってて、それをやっているときは研究部は無くなるって決まった後に、何かモゾモゾやってたんだよ、たぶん。まつもとさんが。で、もうちょっとパーソナルなやつがやりたかったんじゃないの<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>？ よく知らないけど (笑) そっち(研究部でやっていた言語)は今の(Rubyのこと)と似ているところもあるけどね。動的だけど型があった気がするな。</p>
+
+<p><strong>ささだ</strong>  そういう言語をお仕事としてやってたんですね。</p>
+
+<p><strong>石塚</strong>  僕が？</p>
+
+<p><strong>ささだ</strong>  ええ。その辺の人たち。</p>
+
+<p><strong>石塚</strong>  やってた。ちょこっとだけね。</p>
+
+<p><strong>ささだ</strong>  もっと他の仕事がある中で？</p>
+
+<p><strong>石塚</strong>  それは言語というより、プログラミングシステムというテーマだったから。言語が好きなのはまつもとさんね (笑) 環境が好きなのはこっちなんだよ (笑)</p>
+
+<p><strong>arton</strong>  あー、なるほど。</p>
+
+<p><strong>ささだ</strong>  へぇー。Ruby と irb の関係みたいなね。言語と環境かぁ。</p>
+
+<p><strong>石塚</strong>  そうそう。それで、最初は一緒にやろうっていう話……これはあまり威張れる話じゃないのであまり話してないんだけど、やろうって言うことで始めたんだよね。で、最初は、言語担当がまつもとさんで、やっぱりライブラリは僕がやるっていう話で進んでたんだけどさ、途中で僕が転職しちゃってさ。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  そのまま……半年ぐらいはそんな感じでやってたんだよね。で、転職したんだけどさ、転職先がメールとか使える環境じゃなかったんだよね。93 年だもんね。10 年以上前の話だからメールとかネットとかそういう時代じゃなかったんだよね。仕方ないので放っぽっていたら、まつもとさんが頑張ってやっていたと (笑)</p>
+
+<p><strong>ささだ</strong>  おー。じゃあ、いつの間にか大きくなっていて感動の再開みたいな感じだったんですか？</p>
+
+<p><strong>石塚</strong>  それ以来ずっと音沙汰が無かっただろうな。僕も良く覚えてないけど。わざわざ紙の手紙をやり取りするような間柄じゃないしね。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  じゃあ、fj とかでの議論はまだ後なんですね、きっと。</p>
+
+<p><strong>石塚</strong>  そうそう。fj に流したのが……それはまつもとさんに訊いたほうが分かりやすいのかな。</p>
+
+<p><strong>ささだ</strong>  まつもとさんはたぶん 95 年ぐらいに 0.9 を流して。</p>
+
+<p><strong>石塚</strong>  その頃ケーラムに居たのかな？ まだ NTS かなぁ？</p>
+
+<p><strong>ささだ</strong>  95 年 12 月 21 日に、ニュースグループに、fj.sources に、という感じですね。</p>
+
+<p><strong>石塚</strong>  95 年 12 月？</p>
+
+<p><strong>ささだ</strong>  そうですね。</p>
+
+<p><strong>石塚</strong>  それはまだ新しいな。もっと古いのがあるな。12 月の何日だって？</p>
+
+<p><strong>ささだ</strong>  12 月 21 日。</p>
+
+<p><strong>石塚</strong>  じゃあ、その前があるんだよ。よくわかんないんだけど、Ruby アルファテストメーリングリストってのがあって、それが 95 年の 2 月。僕が入ったのは最初っからじゃないんで、もうちょっと前からあるんだと思う。</p>
+
+<p><strong>arton</strong>  そのメーリングリストには誰がいたんですか？</p>
+
+<p><strong>石塚</strong>  これ？これはメンバーの一覧とか採ってないんだよね。残念なんだよなぁ。でも何か、ほとんど誰も知らないような気がするんだけど (笑) 残ってる人って……。</p>
+
+<p><strong>arton</strong>  95 年って、どうやって募集したんだろう？</p>
+
+<p><strong>石塚</strong>  fj に流してるんだと思うんだよね。アルファテスト始めますので来ませんかって言って集まってきたんだと思うんだよね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  この頃は、Ruby 0.65 とか言ってたんだよね。</p>
+
+<p><strong>ささだ</strong>  へぇー。0.65 なんてバージョンが。</p>
+
+<p><strong>石塚</strong>  この頃は毎日のようにバージョンが上がっていったっていうか、なんていうか。</p>
+
+<p><strong>ささだ</strong>  それを色々まとめて、0.9 としてリリースしたと。</p>
+
+<p><strong>石塚</strong>  12 月はたぶんね、このアルファテストメーリングリストが 12 月 18 日なので、たぶんこれが終わって ruby-list メーリングリストに変わったんだろうな。この頃はもうケーラムに居るんだな……。と言っても、この頃はそんなに Ruby をいじってないんだよね。</p>
+
+<p><strong>ささだ</strong>  片手間という感じですか？</p>
+
+<p><strong>石塚</strong>  本格的に、メーリングリストにちょくちょく出るようになったのが、たぶん Ruby にはまった頃っていうことになるんだよね。96 年ぐらいかな。96 年ぐらいからは、結構ちょくちょく。</p>
+
+<p><strong>ささだ</strong>  ruby-dev は最初は無かったんですもんね。</p>
+
+<p><strong>石塚</strong>  ruby-list が ruby-dev なんだよね (笑)</p>
+
+<p><strong>ささだ</strong>  97 年に、ruby-list から ruby-dev が分離されたと。高木浩光さんが「分離した」って書いてますね。</p>
+
+<p><strong>arton</strong>  ruby-list が新しく生まれた感じなのかな。最初から居る人って、ただのユーザーじゃなくて、dev とイコールだよね。ただ、ruby-list って名前を使っちゃったもんで。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>ささだ</strong>  まぁ要するに、開発＝ユーザーだった時代だってことですよね。</p>
+
+<p><strong>石塚</strong>  今はあんまり流量が無いけど、昔は ruby-list にかなりのメールが流れていた。</p>
+
+<p><strong>ささだ</strong>  まぁ、今でもそれが引きずられているみたいですね。敷居が高いっていうか。</p>
+
+<p><strong>arton</strong>  返事、返ってこないし。</p>
+
+<p><strong>石塚</strong>  返事ねぇ。</p>
+
+<p><strong>ささだ</strong>  簡単なのは結構返ってくるけど。</p>
+
+<p><strong>arton</strong>  俺が出して返事が返ってこないのはどうなったんだろう。</p>
+
+<p><strong>ささだ</strong>  どれどれ？</p>
+
+<p><strong>arton</strong>  Hash の最後の引数の括弧を must にするって日記に書いてたやつ。撤回されたんですよね？って訊いたんだけど……。</p>
+
+<p><strong>ささだ</strong>  それは ruby-list じゃないんですよ。</p>
+
+<p><strong>arton</strong>  え、list だろあれは、どう考えたって。</p>
+
+<p><strong>ささだ</strong>  まぁ、分かんないけど……。 93 年とかなんですね。まつもとさんとのお付き合いみたいなのは、もっと前からなんですか？</p>
+
+<p><strong>石塚</strong>  えーっと、彼が会社に入ったときからだから。もっと前だよ、それは。それより一、二年ぐらい前かな。</p>
+
+<p><strong>ささだ</strong>  なるほど。91 年ぐらいから？</p>
+
+<p><strong>石塚</strong>  同じ部なんだけど、違うのは作っていたんだよね。</p>
+
+<p><strong>ささだ</strong>  ふんふん。その頃から言語マニアの人が居るっていうのは？</p>
+
+<p><strong>石塚</strong>  言語マニアっていうか、その頃は言語って感じでやってないんだよね。普通のソフトウェアを書いてたから、言語は必要ないもんね。</p>
+
+<p><strong>ささだ</strong>  はー。じゃ、まだ隠してたんですね。</p>
+
+<p><strong>石塚</strong>  隠してたっていうか、そういうのを専攻してたっていうのは知っていたけどね。自分で作ったライブラリとかは、メソッドを動的に結合っていうか、動的に呼び出すようなやつで作ってたよ。</p>
+
+<p><strong>ささだ</strong>  へぇー。</p>
+
+<p><strong>石塚</strong>  そこは、許せなかったんだろうね。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<h4 id="現在の-ruby-との付き合い">現在の Ruby との付き合い</h4>
+
+<p><strong>ささだ</strong>  現在の Ruby との付き合い。</p>
+
+<p><strong>石塚</strong>  現在の Ruby との付き合い。仕事ではないからな。趣味 (笑) ていうか、あれだよね……。</p>
+
+<p><strong>ささだ</strong>  メンテナ？</p>
+
+<p><strong>石塚</strong>  メンテナ……まぁ、そういうのもやってるけど、自分の環境をサポートするために使っている感じかな。</p>
+
+<p><strong>ささだ</strong>  それは普通に？</p>
+
+<p><strong>石塚</strong>  色々。まつもとさんなんかは、シェルスクリプトが多いみたいなことを言ってたけど、僕は大体、今は Ruby で書いてるよね。一行だったらシェルで書くかもしれないけど。Makefile の中身はシェルで書くしかないんだけど、あとは Ruby で書いてることが多いよ。</p>
+
+<p><strong>ささだ</strong>  Ruby は最新版を使ってるんですか？</p>
+
+<p><strong>石塚</strong>  最新版ってどれ？ 1.9 系のこと？ (笑)</p>
+
+<p><strong>ささだ</strong>  いや、1.8.6 のこと。</p>
+
+<p><strong>石塚</strong>  昔は開発版を使ってたんだけどさ、デバッグできないでしょ、最近の1.9 系って (笑)</p>
+
+<p><strong>ささだ</strong>  debug.rb が使えないということですか？</p>
+
+<p><strong>石塚</strong>  ついこの間まで使えなかったじゃない。</p>
+
+<p><strong>ささだ</strong>  いや、今でも使えないですけど (笑)</p>
+
+<p><strong>石塚</strong>  でしょ (笑)</p>
+
+<p><strong>ささだ</strong>  じゃあ、debugger はよく使う、と。</p>
+
+<p><strong>石塚</strong>  いや、debugger っていうか、トレーサーを使うことが多いんだよね。スレッド周りとかを見るときに使うことが多くて。</p>
+
+<p><strong>ささだ</strong>  トレーサーはあまり使ったこと無いなぁ。</p>
+
+<p><strong>arton</strong>  普段のちょっとしたことに、トレースを使う必要のあるプログラミングをしているのかっていうのがちょっとした疑問なんだけど。</p>
+
+<p><strong>石塚</strong>  ちょっとした時じゃない時なんだろうね。さっき言った、シェルなんかちょっとしたことじゃないんだけど。スレッド一杯立ち上がるからね。デバッグするの大変なんだよね。どれが何処で何が動いているのか分からないんで。で、あれは 1.8 でデバッグして、それで動きそうになったら 1.9 で動くなーってやってたんだけど。でも 1.8 で動くからって 1.9 で動くとは限らないからね。</p>
+
+<p><strong>ささだ</strong>  昔のバージョンでは使えないとかで、1.1 使ってますとかそういう答えが返ってくるかと思ってたけど、そんなことはない？</p>
+
+<p><strong>石塚</strong>  全然。</p>
+
+<p><strong>ささだ</strong>  原先生が、まさに blade を 1.1 で動かしてる説っていうのがあるから。</p>
+
+<p><strong>石塚</strong>  いや、結構騒がれるけどね。そんなに互換性が無いと思ったことは無いけどね。でも、あるんだよね？</p>
+
+<p><strong>ささだ</strong>  細かいところが変わっていて。騒がれるほどではないと思うんですけどね。</p>
+
+<p><strong>arton</strong>  分かってる人は、地雷を踏まない。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  1.9 であれが変わったよね。メソッド名（Object#methods などが返す値）が Symbol になったよね。</p>
+
+<p><strong>ささだ</strong>  そうそう。</p>
+
+<p><strong>石塚</strong>  あれが大きく変わったよね。で、さらに途中までは変わってよかったと思ったけど、Symbol が String のサブクラスだったでしょ？</p>
+
+<p><strong>ささだ</strong>  はい。</p>
+
+<p><strong>石塚</strong>  その頃はたぶん動いてたんだけど、そうじゃなくなったでしょ、最近。それで動かなくなったのが結構あったな。</p>
+
+<p><strong>ささだ</strong>  あ、そうですね。あれはまつもとさんのせいですから (笑)</p>
+
+<p><strong>石塚</strong>  他に何か変わったのがあったよね。……文字が数字じゃなくなった？ いや、そんなこと無いよな……。</p>
+
+<p><strong>ささだ</strong>  あー。はいはい。?a って書いたら、これは文字列 “a” という意味になると。</p>
+
+<p><strong>arton</strong>  えっ、1.9 ってそうなの？</p>
+
+<p><strong>ささだ</strong>  うん。0x64<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> だっけ、こういうのじゃなくなる。</p>
+
+<p><strong>arton</strong>  それ、困るんじゃない？</p>
+
+<p><strong>石塚</strong>  これは結構大きな違いかなと思ってるんだけど。</p>
+
+<p><strong>ささだ</strong>  あと、もっと大きな違いがあって、String#each が無くなる。</p>
+
+<p><strong>石塚</strong>  あー。何で？</p>
+
+<p><strong>arton</strong>  each_byte は残る？</p>
+
+<p><strong>ささだ</strong>  えっと、String#each 自体が無くなる。each_lines か each_bytes か、どっちを取るのか分からないので消してしまえ、という議論に。each_byte、each_char、each_lines の三種類があるから。</p>
+
+<p><strong>arton</strong>  それは良いんじゃない？</p>
+
+<p><strong>石塚</strong>  三つに分けるのね。</p>
+
+<p><strong>ささだ</strong>  たしか前から、ありませんでしたっけ？ each_lines は無いのか？ 1.8 にはそういうのが無かったので、どれになるか分からないから、無くそうっていう。</p>
+
+<p><strong>石塚</strong>  無くすって、デフォルトの振る舞いでいいんじゃないの？</p>
+
+<p><strong>ささだ</strong>  デフォルトの振る舞いだと、色々文句が出るからという。</p>
+
+<p><strong>arton</strong>  each_line とか each_byte とか、スペシャライズされたやつはあるんだけど、ただの each ってのはなくなるんだ。</p>
+
+<p><strong>ささだ</strong>  無くなる。each_lines と each_bytes は 1.8 にもありますね。</p>
+
+<p><strong>arton</strong>  each_char が無いんだ、今は。each_char って、当然 M17N を意識した char？</p>
+
+<p><strong>ささだ</strong>  そうそう。</p>
+
+<p><strong>arton</strong>  良いね。すごく良いな。</p>
+
+<p><strong>石塚</strong>  でも irb は動いてるから平気なんだろうな。</p>
+
+<p><strong>ささだ</strong>  その辺は動いてなければ、もう手を入れていると思うので。</p>
+
+<p><strong>石塚</strong>  知らないうちに手が入ってることがあるんだよね (笑)</p>
+
+<p><strong>ささだ</strong>  まつもとさんとか。</p>
+
+<p><strong>石塚</strong>  ちゃんと見てないと、いじられたということも分からない (笑)</p>
+
+<p><strong>ささだ</strong>  確かに。String#each はなくなります。それはでかいですよね。</p>
+
+<p><strong>arton</strong>  あれ、おかしいな？ each_bytes？ each_byte？</p>
+
+<p><strong>ささだ</strong>  each_line と each_byte でした。</p>
+
+<p><strong>arton</strong>  全部単数だよね。</p>
+
+<p><strong>ささだ</strong>  単数でした。で、青木さんなんかは、each_line を each にしようって言ってたんだけど、それは通らなかった。</p>
+
+<p><strong>arton</strong>  俺は char が each なのかなって気がするけどな。だって、文字列なんだからさ。</p>
+
+<p><strong>石塚</strong>  split でやってるから大丈夫なのか。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  何でだろう。文字として扱いたかったのかな。String として扱いたかったのかな、一文字一文字を。</p>
+
+<h4 id="ruby-の好きなところと嫌いなところ">Ruby の好きなところと嫌いなところ</h4>
+
+<p><strong>ささだ</strong>  Ruby の好きなところと嫌いなところ。</p>
+
+<p><strong>石塚</strong>  好きなところ……。難しいな。でもやっぱ触ってて楽しいかな (笑)</p>
+
+<p><strong>ささだ</strong>  ほう。</p>
+
+<p><strong>石塚</strong>  Smalltalk を最初にやってたときも、結構楽しかったけど、それと同じような感じはあるかもしれないね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>arton</strong>  歴史的に――バージョン 0.6 になって、0.9 になってということだけど――その場その場でこの feature が良いなとか、なくなっちゃってがっかりだなとか、これが付いて良くなったなとか、長い歴史を追ってきた人として、そういうのはありますか？</p>
+
+<p><strong>石塚</strong>  そんなに細かいことは覚えてないよね (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  メタレベルプログラミングを行う機能が多いのはうれしいのかね。</p>
+
+<p><strong>ささだ</strong>  はいはい。</p>
+
+<p><strong>石塚</strong>  嫌だって人も多いけど (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  リフレクションとかですよね。</p>
+
+<p><strong>石塚</strong>  うん。スーパークラスを変えられるようにしてほしいんだけどな。</p>
+
+<p><strong>ささだ</strong>  Ruby で数少ない、コンパイル時に分かる情報なんですよね。super って。</p>
+
+<p><strong>石塚</strong>  別にコンパイル時に分かるからって、変えちゃいけないって理由にはなってないよね。自分のクラスを変えられるっていうのもあるけどね。今はその辺もできないよね。</p>
+
+<p><strong>ささだ</strong>  確か Smalltalk にはある？</p>
+
+<p><strong>石塚</strong>  become: でしょ。</p>
+
+<p><strong>ささだ</strong>  become:。確か、2004 年 の Ruby カンファレンスで、まつもとさんにそれをつけろって言った人が居て。それは駄目だっていう風に。</p>
+
+<p><strong>石塚</strong>  そうか。</p>
+
+<p><strong>ささだ</strong>  Ruby の内部実装で T_FOO 何とかってあるじゃないですか。タイプを指定する。あれが変わったときにバグるのでっていう。</p>
+
+<p><strong>石塚</strong>  バグるかなぁ？</p>
+
+<p><strong>ささだ</strong>  例えば、String が Array になったときに、そこの変換をきちんとやってないとバグるっていう。</p>
+
+<p><strong>石塚</strong>  丸ごと全部変わるんだったら関係ないと思う。変数にそういう型の情報は入ってないでしょ？</p>
+
+<p><strong>ささだ</strong>  いや、入ってます。RValue が変わるから、RString から RArray に変わったときにそこの変換をきちんとやらないといけない。</p>
+
+<p><strong>石塚</strong>  いや、丸ごとコピーすればいいんでしょ？ だって固定幅なんだからね。</p>
+
+<p><strong>ささだ</strong>  いやいや、RValue の 5 ワード制限があるじゃないですか。</p>
+
+<p><strong>石塚</strong>  become: ってスワップなんだよね。こうあるじゃない。5 ワードごとの……。</p>
+
+<p><strong>ささだ</strong>  あれ、クラスが変わるんじゃないんですか？ become: って、RBasic の、クラスの情報をぱっと入れ替えるっていう、その話かと思ってたんだけど。</p>
+
+<p><strong>石塚</strong>  そこ以外を入れ替える。
+<img src="/images/0021-Hotlinks/ishitsuka3.jpg" alt="ishitsuka3.jpg" /></p>
+
+<p><strong>ささだ</strong>  あ、そうなんですか。どう使うんですか？</p>
+
+<p><strong>石塚</strong>  どう使う？ become: って、Smalltalk で良くあるのは、配列のサイズを変えたりするのに使ってるんだよね。Ruby 流に言えば、クラスの…… Array じゃないな。何かコンテナ。これだと変数宣言できないからあれだよね (笑) 何かちょっとあれ何だけど。例えば変数で、contents とかあったとするじゃない。固定の配列。(図に書いて説明)<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。例えばコンテナと、これを become の B のコンテナってやると、この先自身が入れ替わるんだよね。</p>
+
+<p><strong>ささだ</strong>  なんだろう。Array の replace とかそういうイメージですか？</p>
+
+<p><strong>石塚</strong>  そうそう。そうすると、このオブジェクト自身は変わらないんだけど、中身の参照しているこれが入れ替わるので。</p>
+
+<p><strong>ささだ</strong>  入れ替わるんですか？共有するんですか？</p>
+
+<p><strong>石塚</strong>  共有じゃない。入れ替わる。become: って、スワップなんだよね、本当は。</p>
+
+<p><strong>ささだ</strong>  ふーん。スワップだったら良いですね。</p>
+
+<p><strong>arton</strong>  B の方のコンテントは、逆に A になるの？</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>ささだ</strong>  へー。</p>
+
+<p><strong>石塚</strong>  だから、こっち側は一時的に作ったものであれば、GC されてそのうち消えて無くなる。</p>
+
+<p><strong>arton</strong>  でも、become: って名前が良くないよね。</p>
+
+<p><strong>石塚</strong>  使いたいのは become(〜になる) だからね (笑)</p>
+
+<p><strong>arton</strong>  become だったら、B を共有だとしか思えない。</p>
+
+<p><strong>ささだ</strong>  最初に Smalltalk がどうしてこんな名前に作ったのかっていう。</p>
+
+<p><strong>石塚</strong>  だから、そういう配列のサイズを変えるとか、そういうのに使ってるんですよね。</p>
+
+<p><strong>ささだ</strong>  あんまり become という感じではない。</p>
+
+<p><strong>石塚</strong>  それは、まつもとさんとも同じ話をした覚えがあるんだけど (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  スワップなんだよっていう話をした。スワップはできるはずなんだよね。</p>
+
+<p><strong>ささだ</strong>  スワップだったら、全然問題なく。</p>
+
+<p><strong>石塚</strong>  クラスを変えるのは無理だろう。</p>
+
+<p><strong>ささだ</strong>  クラスを変えるものだとばっかり思ってました。</p>
+
+<p><strong>石塚</strong>  クラスを変えるのは難しいか。確かに、File とかは変えられないもんね。かえると動かなくなっちゃうもんね。</p>
+
+<p><strong>ささだ</strong>  そうそう。すぐバグります……。へー、知らなかった。良い話を聞きました。</p>
+
+<p><strong>石塚</strong>  Ruby ってオブジェクトのテーブルってあるじゃない？ 同じように Smalltalk もオブジェクトのテーブルってあるから。名前は忘れちゃったけど。だから、同じようにできるはずなんだよね。</p>
+
+<p><strong>ささだ</strong>  そこを入れ替えればいいっていう。</p>
+
+<p><strong>石塚</strong>  そうそう。入れ替えができると、何か色々楽しいんだよね、本当はね。成り済ましができるからね、知らん振りして。</p>
+
+<p><strong>ささだ</strong>  スパゲッティがますます (笑)</p>
+
+<p><strong>石塚</strong>  いや、これはメンテナンスの機能だから、別に普通に使えって話じゃないからね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>arton</strong>  A と B っていうのは、同じクラスのインスタンスなんですか？</p>
+
+<p><strong>石塚</strong>  いや、別になんでもかまわない。</p>
+
+<p><strong>arton</strong>  何でもかまわない？ ああ、でもそうか。元ネタがあるから、大きくなってるわけじゃないのか。</p>
+
+<p><strong>石塚</strong>  え？大きくなっても大丈夫。オブジェクトテーブルの入れ替えだけだから、何だっていいんだよね、オブジェクトはね。</p>
+
+<p><strong>ささだ</strong>  確かに。それだったら全然問題なくできますね。</p>
+
+<p><strong>石塚</strong>  変なのとスワップすると動かなくなるけどね。クラスと普通のオブジェクトとかね。</p>
+
+<p><strong>ささだ</strong>  後で大変なことになりますね。</p>
+
+<p><strong>石塚</strong>  やっぱ、宣言しないと駄目なのか。任意は無理なのね<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+
+<p><strong>arton</strong>  ものによっては、最初に呼び出したときと、次に呼び出すときとで変わってると前提しないと、戻ってきたのをさわったら地雷になってたってのもありそうですね。</p>
+
+<p><strong>石塚</strong>  それは、たぶん無いんだと思う (笑) スワップだからね、たぶん大丈夫なんだよね。スレッドがらみでどうなのかなって、気になったりするけど。</p>
+
+<p><strong>ささだ</strong>  考えたくないですね、これは (笑) というわけで、そろそろ話を戻しますか。</p>
+
+<p><strong>arton</strong>  嫌いなメソッドは言ったけど、嫌いな所は言ってない。</p>
+
+<p><strong>石塚</strong>  嫌いな所ね。</p>
+
+<p><strong>ささだ</strong>  そもそも好きな所も言ってない？</p>
+
+<p><strong>arton</strong>  好きなところは、スワップが無い。違うね (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  何でスワップの話になったんだっけ。</p>
+
+<p><strong>arton</strong>  become が無いって話で。</p>
+
+<p><strong>石塚</strong>  それは嫌いなところじゃないけどね、別に。</p>
+
+<p><strong>ささだ</strong>  歴史の話をして……という。</p>
+
+<p><strong>石塚</strong>  そうね、嫌いな所ね……。うーん、メソッドがファーストオブジェクトじゃない所かな。</p>
+
+<p><strong>ささだ</strong>  欲しいですか？</p>
+
+<p><strong>石塚</strong>  最近、APL とかやってみてたんだけどさ<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>……。そういう理由で文句を言うのは変な話なんだけど (笑)</p>
+
+<p><strong>ささだ</strong>  いや、よく言われてますよね。Python だったら括弧を付けなかったらメソッドオブジェクトが返ってくるのにって。</p>
+
+<p><strong>石塚</strong>  そうそう。そうなってても良かった気もするんだけどね。</p>
+
+<p><strong>ささだ</strong>  いやー。</p>
+
+<p><strong>石塚</strong>  Python でできるってことは、別にできるんだよね。</p>
+
+<p><strong>ささだ</strong>  括弧っていうのは、apply 演算子であって、メソッドオブジェクトが返ってきて、それにアプライしてるっていうのが、Python のモデルじゃ無いかなと勝手に思ってるんですけど。</p>
+
+<p><strong>石塚</strong>  うんうん。</p>
+
+<p><strong>ささだ</strong>  で、括弧が無いと、Ruby の場合は普通に呼んじゃうので。</p>
+
+<p><strong>石塚</strong>  括弧が無いと呼ぶけど、それが悪いのか？ 良くわかんないな。</p>
+
+<p><strong>ささだ</strong>  メソッドオブジェクトがあると、何が嬉しいんですか？</p>
+
+<p><strong>石塚</strong>  関数の演算ができる (笑)</p>
+
+<p><strong>ささだ</strong>  lambda、proc とかじゃだめ？</p>
+
+<p><strong>石塚</strong>  proc ……足し算、引き算ができないもんね (笑) 僕も良く分からないんだけどさ。</p>
+
+<p><strong>ささだ</strong>  足し算する proc を返しちゃ駄目？</p>
+
+<p><strong>石塚</strong>  ん？足し算する Proc？ それはきれいに呼べればいいんだけど。呼べないんだよなー。</p>
+
+<p><strong>ささだ</strong>  ああ、.call って書かないといけないし。</p>
+
+<p><strong>石塚</strong>  そうそう。そこがファーストオブジェクトかどうかの違いなんだろうけど。ま、そんなこと文句言ってもしょうがないんだろうけどね。</p>
+
+<p><strong>ささだ</strong>  なるほど。環境責任者として……。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  責任者じゃないけど (笑)</p>
+
+<p><strong>ささだ</strong>  環境に対して文句は？</p>
+
+<p><strong>石塚</strong>  環境、何も無いもんね、だってねぇ。いや、そんなことは無いのか。何か色々あるみたいだけどね、知らないうちに。</p>
+
+<p><strong>ささだ</strong>  まぁ、IDE でもいいですし、ライブラリ環境でもいいですし。本当はこれ作りたかったけど、まだ無いから嫌だとか。</p>
+
+<p><strong>arton</strong>  何で、completion って最初から入ってないの？</p>
+
+<p><strong>石塚</strong>  completion？ 何の話？</p>
+
+<p><strong>arton</strong>  irb の話。</p>
+
+<p><strong>石塚</strong>  それ、Ruby の文句なの？(笑)</p>
+
+<p><strong>arton</strong>  いや、環境の話。readline ライブラリが入っていない環境があるからとか。</p>
+
+<p><strong>ささだ</strong>  arton さんが、irb に対して文句を言っている (笑)</p>
+
+<p><strong>石塚</strong>  入っては居ますよね。ただ、引数つけないと駄目なだけで。completion って Emacs で動かしている人には関係ないしなぁ。いや、関係なくも無いのかなぁ。</p>
+
+<p><strong>arton</strong>  でも、入ってても別に困んないですよね。</p>
+
+<p><strong>石塚</strong>  確かに。何もいえない。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  最初、僕は readline ライブラリを持ってなかったら。いや、関係ないのかな？ 関係あるんだよね。</p>
+
+<p><strong>arton</strong>  多少は関係するかもしれない。</p>
+
+<p><strong>石塚</strong>  でも、readline は自動的に読み込むんだよね、今は。</p>
+
+<p><strong>ささだ</strong>  そうなんですか？ completion 使わないから分からない。</p>
+
+<p><strong>石塚</strong>  completion はねぇ、完全なら良いんだけど、あんまり完全じゃない所が僕は好きじゃないのかな。例えば、ごまかしているところがいくつかある。別にそれが悪いっていう話じゃないと思うんだけど。rtags もそうなんだけどさ、ちょっといまいちなんだよね。</p>
+
+<p><strong>ささだ</strong>  irb の completion がどの位まできちんとやっているのか知らないんですけど、検索する範囲ってどれ位なんですか？</p>
+
+<p><strong>石塚</strong>  検索っていうか、そのオブジェクトっていうか……。</p>
+
+<p><strong>arton</strong>  現在の self でやってるだけなんじゃないの？いや、実は知らないんだけど。</p>
+
+<p><strong>ささだ</strong>  でも、オブジェクトのクラスは分からないじゃないですか。</p>
+
+<p><strong>石塚</strong>  分かるから、そういうのは平気なの。分からないのは例えば、(書いて説明しながら) Hash っていうか、文字列として何かこう言う風にきたところで、complete されたらどうしようかなとか。</p>
+
+<p><strong>ささだ</strong>  それは Hash だと分かる。</p>
+
+<p><strong>石塚</strong>  Hash か proc か分からないんだよね。</p>
+
+<p><strong>ささだ</strong>  ああー。</p>
+
+<p><strong>arton</strong>  確かに。</p>
+
+<p><strong>ささだ</strong>  それでも単純に、メソッドの引数が arg って渡ってきて、これこう completion やったらどうなるとか。</p>
+
+<p><strong>石塚</strong>  それは、変数ならやるんだけど、関数だと駄目なんだよね。関数を呼び出したら副作用出ちゃうからね。</p>
+
+<p><strong>arton</strong>  確かに。</p>
+
+<p><strong>石塚</strong>  ああ、ref の中はどうしてるんだろう。見てないような気がする。</p>
+
+<p><strong>ささだ</strong>  completion ってここの話じゃないのか。そうかそうか。分かりました。</p>
+
+<p><strong>arton</strong>  String#split が、spr かっていう人はあんまり居ないけど、そういうときに便利だよね。</p>
+
+<p><strong>ささだ</strong>  どうやってるのか分かった。irb だと変数の中を読めちゃうから。それでクラスが分かると。</p>
+
+<p><strong>石塚</strong>  これ、何が出てきてるんだろう。でも何か出るな。</p>
+
+<p><strong>ささだ</strong>  Ruby の組み込みクラスのシンボルを全部読んでも、シンボルの数は千六百いくつなんですよ、確か。だから、それ全部を検索対象にしてしまえばいいじゃないか、とは思う。</p>
+
+<p><strong>石塚</strong>  あー。制約できるところはしてるだけなんだよね。制約というか。</p>
+
+<p><strong>ささだ</strong>  分かるところだけ分かって、分からないところは現在のコンテキストにあるシンボル全部取ってきて。</p>
+
+<p><strong>石塚</strong>  だから、そうなってるの (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  だから、その辺が逆にいまいちかなと。</p>
+
+<p><strong>ささだ</strong>  あー、それは駄目なんだ。</p>
+
+<p><strong>石塚</strong>  駄目とは言わないけど。</p>
+
+<p><strong>ささだ</strong>  候補がバーっと出てくるんですか？</p>
+
+<p><strong>石塚</strong>  そうそう。変数にちゃんと代入されていれば出る。さっきのはどうなるんだろう。全部出たのかな。</p>
+
+<p><strong>arton</strong>  フィルタリングされてるから、そんなにたくさんは出ないんですよね。ドット(.)でいきなり押すことはあんまり無いから。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  確かに。ドットの後に何か入れればね。確かにその通りかもしれない。</p>
+
+<p><strong>ささだ</strong>  まぁ、大体分かりますもんね。</p>
+
+<p><strong>arton</strong>  うん。とりあえず、長いメソッドを打たなくていいから楽だよね。</p>
+
+<p><strong>石塚</strong>  でも、僕はあんまり使ってないですよね。</p>
+
+<p><strong>ささだ</strong>  completion を？</p>
+
+<p><strong>石塚</strong>  Emacs 上で使うことが多いので。ちょっと Emacs 上に組み込めばいいんだけどね。めんどくさくてやってないという。</p>
+
+<p><strong>ささだ</strong>  completion を有効にするオプションってどれですかね。</p>
+
+<p><strong>arton</strong>  require ‘irb/completion’</p>
+
+<p><strong>石塚</strong>  最初にオプションで、-rirb/completion でもいいけど。</p>
+
+<p><strong>ささだ</strong>  ほう、出た。おおー、知らなかった。こんなにメソッドがあるんだって。</p>
+
+<p><strong>石塚</strong>  そうそう。確かにそうなんだよね。</p>
+
+<p><strong>ささだ</strong>  ただ、1. ってやってみただけなんですけど。496 possible。へぇー。</p>
+
+<p><strong>石塚</strong>  使えないじゃん、それじゃ (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>arton</strong>  候補が 100 以上の八回続けて押したら、あなたはまだ使うべきではありませんっていって、off にしちゃうとかね。</p>
+
+<p><strong>石塚</strong>  そうか。ドットで使うからいけないんだな。ちょっと入れるんだな。当たり前か。シェルでもそうですもんね。ちょっとは入れますもんね。そうか、もうちょっと使い込まないといけないな。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  completion をね。irb は普段使ってるんですけどね。</p>
+
+<p><strong>ささだ</strong>  それこそ、電卓代わりから、プログラムまで？</p>
+
+<p><strong>石塚</strong>  いや、電卓はね、bc なんだけど (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  なぜか知らないけど。</p>
+
+<p><strong>ささだ</strong>  じゃあ、シェル代わりですか？</p>
+
+<p><strong>石塚</strong>  シェルじゃなくて、Ruby の振る舞いをちょっと見たいときとかに使うんだよね。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  いや、何かね。Perl だと -de0 ってあるじゃないですか。</p>
+
+<p><strong>ささだ</strong>  ええ。</p>
+
+<p><strong>石塚</strong>  それやると、デバッガが動く。デバッガというか、インタラクティブに評価してくれるモードになって、そこで式を入れると何かやってくれるんですけど。それが欲しかったんですよね、きっとね。bc じゃないよきっと (笑)</p>
+
+<p><strong>ささだ</strong>  irb の名前、最初は rbc だったって話は。</p>
+
+<p><strong>石塚</strong>  rbc って名前だったんだよね、確かに。</p>
+
+<p><strong>ささだ</strong>  計算したかったわけじゃない？ 計算機が欲しかった？</p>
+
+<p><strong>石塚</strong>  計算機が欲しかったんだけど、確かに。</p>
+
+<p><strong>ささだ</strong>  でも、bc の方が慣れてるし、と。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  bc もね、いちいち scale とか入れなくちゃいけないから、めんどくさいんだよね。でも最近 bc の話題が Ruby の何かで出てましたよね。</p>
+
+<p><strong>arton</strong>  出てた出てた。</p>
+
+<p><strong>石塚</strong>  x/1 が 0 になるとかあったけど、1.0 って入れればよかったんだね、これ。知らなかった (笑) 見た目で有効数字が決まるようになってるとは知らなかったなと思って。いつも scale って入れてたのに。scale って、文字打つの長いし、めんどくさいなと思って。</p>
+
+<p><strong>ささだ</strong>  なるほど。じゃ、irb で何かユーティリティー的というか、仕事でちょこっと使うってことはやらないんですか？</p>
+
+<p><strong>石塚</strong>  仕事？</p>
+
+<p><strong>ささだ</strong>  仕事というか、ちょっとしたシェルスクリプトの代わりにちょこちょこって書くときに。普通は ruby -e？</p>
+
+<p><strong>石塚</strong>  いや、ruby -e は無いよね。それだったら irb だと思うけど。</p>
+
+<p><strong>ささだ</strong>  田中哲さんは、絶対に -e なんですよ。</p>
+
+<p><strong>石塚</strong>  あー、そうかもしれないね。irb は怪しいバグを生んでたからね、昔。コンテキストは、今は何のコンテキストを使ってるか良く覚えてないけど。</p>
+
+<p><strong>arton</strong>  -e は一気に打てるから楽だって。irb は一瞬またないと駄目じゃん。</p>
+
+<p><strong>ささだ</strong>  起動しっぱなしにしておくんですよ、そこは。</p>
+
+<p><strong>石塚</strong>  テストとかやるときは、いつも起動しっぱなし。</p>
+
+<p><strong>ささだ</strong>  じゃあ、Ruby の挙動チェックにしか使わないんですか、irb を。</p>
+
+<p><strong>石塚</strong>  そういうことになるね (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  それは私も同じなんだけど。irb は Ruby の仕様を調べるとき使う。あれ、石塚さんは irb を便利に使ってはいないんじゃないですか (笑)</p>
+
+<p><strong>石塚</strong>  これ以上便利なことは無いと思ったんだけど違うのかな、おかしいなぁ (笑) だって、シェルの代わりにはならないでしょ。ls ってやってリストするわけじゃないし。</p>
+
+<p><strong>ささだ</strong>  いや、シェルスクリプトの代わりって言ってたじゃないですか。それは普通に Ruby スクリプトを書く？</p>
+
+<p><strong>石塚</strong>  あー、そうそう。シェルスクリプトっていうか、バッチの話だよね。それは irb で書く必要は無い (笑) バッチ的に使うときに、Ruby を使うのね。</p>
+
+<p><strong>ささだ</strong>  Ruby のプログラムを書くときに、ちょっとこれはどうかなって時に、irb でちょこちょこってテストしながら書く。</p>
+
+<p><strong>石塚</strong>  そうそう。確かに、シェルみたいなことがしやすいのを作れば良いんだけどね。</p>
+
+<p><strong>ささだ</strong>  それこそ、lib/shell.rb は。</p>
+
+<p><strong>石塚</strong>  いや、それだけだと……。</p>
+
+<p><strong>ささだ</strong>  足りない？</p>
+
+<p><strong>石塚</strong>  何ていうのかな、いちいちファイル名入れるのに、ダブルクォート入れたくないでしょ。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  ちょっと違う言語になっちゃうんだろうね、結局。</p>
+
+<p><strong>ささだ</strong>  なるほど。よくネタで起動時のシェルを irb にするっていうのが。</p>
+
+<p><strong>石塚</strong>  (笑) ……無理があるよね (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど……。嫌いな所ってなんでしたっけ、結局。arton さんが、completion が無いのが嫌いって話か (笑)</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>arton</strong>  環境 の話になってたからね。</p>
+
+<p><strong>石塚</strong>  嫌いなところ、って無いよね。嫌いって言うか、この間 Java にあって、Ruby に無いものを調べてたんだけどさ、一杯無いよね (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  そういう状況ではあるよね、やっぱね。</p>
+
+<p><strong>ささだ</strong>  特にこれが無いというのは。たくさんあるからあまり特定のものは無い感じですかね？</p>
+
+<p><strong>石塚</strong>  やっぱ GUI 系とかはあっていいと思うんだよね。</p>
+
+<p><strong>ささだ</strong>  Tk じゃなくて？</p>
+
+<p><strong>石塚</strong>  僕はそういうの嫌いなんだよね。何か他から持ってくるっていうのは。</p>
+
+<p><strong>ささだ</strong>  なるほど。ちゃんとした Ruby 標準のインターフェースを作って、後は下が何とかしろと。</p>
+
+<p><strong>石塚</strong>  あると嬉しいなとは思うけど、作る人は大変だよね。</p>
+
+<p><strong>ささだ</strong>  まぁでも、API を偉い人がガッって決めちゃえば何か作れるような気がするんですけど。たぶん API をそろえるのが難しいんじゃないかと。</p>
+
+<p><strong>石塚</strong>  そうですよね。Java とかならあるからなぁ。</p>
+
+<p><strong>ささだ</strong>  AWT とか Swing とか。</p>
+
+<p><strong>石塚</strong>  それで書いてる人居るのかな、今。居るんでしょうねまだね。</p>
+
+<p><strong>ささだ</strong>  まだ居るんですかね。</p>
+
+<p><strong>arton</strong>  居るみたいだよ。</p>
+
+<p><strong>石塚</strong>  Swing とか？</p>
+
+<p><strong>arton</strong>  Swing 使って。RIA の時代だよ。リッチ何とかアプリケーション<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>。</p>
+
+<p><strong>石塚</strong>  そうか。逆に戻ってきてるのかそっちに。</p>
+
+<p><strong>arton</strong>  いや、やっと今のパソコンがまともに Swing 動けるようなスペックになった。</p>
+
+<p><strong>ささだ</strong>  あー。</p>
+
+<p><strong>arton</strong>  スカスカ動く。</p>
+
+<p><strong>ささだ</strong>  重いって言うことは無くなったと。</p>
+
+<p><strong>arton</strong>  うん。</p>
+
+<p><strong>石塚</strong>  そうか。うちのツールとは思えんな、良く考えたら。</p>
+
+<p><strong>arton</strong>  だって、Eclipse とか NetBeans とか、みんな、ニコニコしながら使ってるんですよ。90 年代には考えられないじゃないですか。</p>
+
+<p><strong>石塚</strong>  確かにね。時代は変わったよね。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  昔は画面一枚出すのにも大騒ぎだったもんね。</p>
+
+<p><strong>arton</strong>  なんだったかな。なんとかスタジオクリエイターかな。なんちゃらカフェとか。起動するだけで、コンビニにでも買い物に行くか、みたいな (笑)</p>
+
+<p><strong>石塚</strong>  たしかに (笑) ……嫌いなところって言ったら、さっき言ったあれ、関数の奴。</p>
+
+<p><strong>arton</strong>  ファーストクラスオブジェクト。</p>
+
+<p><strong>石塚</strong>  別にそうしろって言っているわけでも、嫌いだといっているわけでもないんだけど、そうだったら良かったのではなかろうかって、今思うような感じかな (笑)</p>
+
+<h4 id="ruby-を使った成功例">Ruby を使った成功例</h4>
+
+<p><strong>ささだ</strong>  Ruby を使って、成功だった、うまく行った事例。難しいですか？</p>
+
+<p><strong>石塚</strong>  なんだこれ (笑) 成功？ irb とかね、みんな使ってくれてるよね……。失敗だったのは shell かな。</p>
+
+<p><strong>一同</strong> (笑)</p>
+
+<p><strong>ささだ</strong>  shell のどの辺が。</p>
+
+<p><strong>石塚</strong>  使ってないでしょ、誰も (笑)</p>
+
+<p><strong>一同</strong> (笑)</p>
+
+<p><strong>arton</strong>  さっきの話にちょっと戻っていいかな。メソッドがファーストクラスオブジェクトじゃないっていうのは、引数のための括弧がいらないというのと、矛盾してるんだよね？</p>
+
+<p><strong>ささだ</strong>  はい。</p>
+
+<p><strong>arton</strong>  b(a) ってしたときに、ここで b っていうメソッドを呼ぶときの引数として、a って単に書いたときに、これが今だとメソッド呼び出しになっちゃう。そういうことだよね？ a.call ……だから今はこう呼ばないとだめですよ、もし呼びたいなら。ただこれが入れた proc オブジェクトがそのまま渡ります。で、どっちが得かって言ったら、今のところは括弧を書かないでメソッドが呼べるほうが幸せな人たちが Rails の方にいっぱいいるから。</p>
+
+<p><strong>ささだ</strong>  Rails じゃなくても、私は幸せですけど。</p>
+
+<p><strong>arton</strong>  僕も幸せ。</p>
+
+<p><strong>石塚</strong>  括弧を使わないで良いって、Pascal からだよね<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>。Pascal とかはどうなんだろうね。ファーストオブジェクトじゃないのか。</p>
+
+<p><strong>ささだ</strong>  Pascal は良く知らないです。</p>
+
+<p><strong>arton</strong>  Pascal って違うんじゃないのかなぁ。</p>
+
+<p><strong>石塚</strong>  そういうものは扱えないよね、きっとね。硬すぎて。関数なんて型は無さそうだよね。</p>
+
+<p><strong>ささだ</strong>  確かに。</p>
+
+<p><strong>石塚</strong>  まつもとさんに訊いたほうが分かるかな (笑)</p>
+
+<p><strong>ささだ</strong>  今度機会があれば。</p>
+
+<h4 id="ruby-のキラーアプリケーションライブラリ">Ruby のキラーアプリケーション、ライブラリ</h4>
+
+<p><strong>ささだ</strong>  Ruby のキラーアプリとかライブラリ。</p>
+
+<p><strong>石塚</strong>  僕ね、UNIX の色々なマシンを持ってるじゃないですか。過去の歴史も含めてね。それ毎に画面のサイズが違ったり、微妙に環境に違ったりしてるじゃないですか。それをログイン時に環境変数とかその他設定するようなプログラムを作ってるんですよ。これがないとログインもできないっていう (笑)</p>
+
+<p><strong>一同</strong> (笑)</p>
+
+<p><strong>ささだ</strong>  環境整備用の Ruby スクリプトがあると。</p>
+
+<p><strong>石塚</strong>  Ruby スクリプトというか、コンフィグレーションファイルがマクロ言語みたくなってるんですけど、それを Ruby で。昔は Perl だったんだけど、Ruby に置き換えたという。だから、昔は Perl が無いと生きていけなかった (笑)</p>
+
+<p><strong>一同</strong> (笑)</p>
+
+<p><strong>石塚</strong>  やっとのことで Ruby に置き換えた。やっとのことっていうか、結構最近ですよね、置き換えたのね。あとは、ネットワークにつなぐ奴か。普通、UNIX とか Windows とかでもいいけど、どうしてるのかなって。会社から接続したり家につないだり、あとモデムでつないだり、色々あるじゃないですか。自分のところの DNS サーバー立ち上げてるから、DNS サーバーのコンフィグレーションを変えたりしてるのね。で、そういうのを変える Ruby のスクリプトがある。</p>
+
+<p><strong>ささだ</strong>  その辺は、普通の人は全部 DHCP で全部お任せだからいいんじゃないですか。</p>
+
+<p><strong>石塚</strong>  DHCP じゃできないんだよね。自分が DHCP のサーバーだから。</p>
+
+<p><strong>ささだ</strong>  自分が？</p>
+
+<p><strong>石塚</strong>  これが DHCP のサーバーになってるから、DHCP のサーバーの上のやつを設定する。DHCP コンフィグレーションファイルそのものを変えなくちゃいけないから。DHCP の普通の接続の仕方じゃ変えてくれないから。そこまでは。何でこうなってるのか良く分からないけど、ネットワークに接続していないときに、DHCP サーバーが無いとエラーが返ってくるのが遅いので、こういう風にしたんだよね。</p>
+
+<p><strong>ささだ</strong>  へえ。</p>
+
+<p><strong>石塚</strong>  普通、接続しない場合はローカルっていう DHCP のモードになっていて、アドレス解決しようとするとすぐエラーを返すのね。こんなものは知らんって。そうしたかったがためにこうなってる。それとあと、キャッシュしたかったんだろうね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  モデム環境は遅いからね。キラーアプリって言っていいのか知らないけど、無いと生活できないからね (笑)</p>
+
+<h4 id="ruby-の習得">Ruby の習得</h4>
+
+<p><strong>ささだ</strong>  Ruby の習得は簡単でしたか。</p>
+
+<p><strong>石塚</strong>  あー。</p>
+
+<p><strong>ささだ</strong>  習得って言うかどうか、よく分からないですけどね。まつもとさんに、こんな仕様どうって言って、それをすぐ納得できたとかそういう感じですかね。</p>
+
+<p><strong>石塚</strong>  うーん、特に……。でも昔は色々聞いてはいるみたいだね。ここどういう意味ですかとかね。でもまぁ、そんなに苦労した感じではないね。</p>
+
+<p><strong>ささだ</strong>  バックグラウンドが。</p>
+
+<p><strong>石塚</strong>  何か変な仕様だなと思ったところはあるかもしれないけど。でも何かチュートリアルとか見て何か質問とかしてるよね。チュートリアルで、ハッシュのキーを何で比較してるかとかね。この辺は昔と今では仕様がたぶん違うんだよね。</p>
+
+<p><strong>ささだ</strong>  分かんないですね、あの辺は。考えたくないですね。</p>
+
+<p><strong>石塚</strong>  eql?</p>
+
+<p><strong>ささだ</strong>  うん。</p>
+
+<p><strong>石塚</strong>  昔は == だったんだよな。でもだめじゃないのって変えたんじゃないかな。</p>
+
+<p><strong>ささだ</strong>  デフォルトは eql? と == は一緒で、変えられますよねっていう。</p>
+
+<p><strong>石塚</strong>  そういう風になったんだよね。</p>
+
+<p><strong>ささだ</strong>  まぁ、一緒に作ってるんだから、そんな……。</p>
+
+<p><strong>石塚</strong>  いや、作ったって言うレベルじゃないので (笑) 最初の方の仕様しかやってないからね。それも何か、できたものが同じかっていうとずいぶん違うような気がしないでもないし。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  そうそう、仕様の話で言ったら、面白いのがあったよ。今って、+ とかで終わって明らかに行が継続してると、自動的に次につながるじゃないですか。あれが無かった (笑) 無いような仕様にするって言ってるのを、やめてくれって頼んでいるところがあった。</p>
+
+<p><strong>一同</strong> (笑)</p>
+
+<p><strong>ささだ</strong>  じゃ、これはシンタックスエラーになった？</p>
+
+<p><strong>石塚</strong>  バックスラッシュで継続するんだろうね、きっと。</p>
+
+<p><strong>ささだ</strong>  なるほど。まつもとさんは、バックスラッシュで継続すればいいじゃないと。</p>
+
+<p><strong>石塚</strong>  そうそう。そんな感じだったんだよね。</p>
+
+<p><strong>ささだ</strong>  じゃ、配列とかも改行できなかったんですかね。</p>
+
+<p><strong>石塚</strong>  それを許さないと怒られちゃうから、きっとそういうのもあって、そうなったのかなぁ。この間昔の奴を見てたんだけど、結構昔は面白かった。面白かったじゃなくて、こうだったんだっていう。カンマも無かったんだよね、引数に。</p>
+
+<p><strong>ささだ</strong>  カンマ？</p>
+
+<p><strong>石塚</strong>  メソッドの引数にカンマなし。だから本当にシェルっぽくしたかったんだよね。</p>
+
+<p><strong>ささだ</strong>  おおー。</p>
+
+<p><strong>arton</strong>  何が困るかって言うと、メソッド呼び出しができなくなる。</p>
+
+<p><strong>ささだ</strong>  いや、それは呼べるんじゃないですか？</p>
+
+<p><strong>arton</strong>  ああ、括弧を入れればいいからか。</p>
+
+<p><strong>ささだ</strong>  えっと、括弧の省略ができない。</p>
+
+<p><strong>arton</strong>  うん。結局それに尽きるね。</p>
+
+<p><strong>ささだ</strong>  Haskell とかは無いんですよね、カンマ。</p>
+
+<p><strong>arton</strong>  うん。</p>
+
+<p><strong>ささだ</strong>  あれができないですね。if 1+2 ……これが……。</p>
+
+<p><strong>石塚</strong>  何か、四角括弧でくくれって書いてあるな。</p>
+
+<p><strong>ささだ</strong>  四角？</p>
+
+<p><strong>一同</strong> (笑)</p>
+
+<p><strong>石塚</strong>  1+2 のところ、四角括弧でくくれってなってるよ。何だろうこれ。良く分からないんだけど。ほんとうかなぁ。違う言語かこれ。</p>
+
+<p><strong>arton</strong>  それ、配列渡してるんだか何だか分からないな。3 っていう一要素の配列なのかもしれない。</p>
+
+<p><strong>石塚</strong>  ああそうか。ここで決まったから 2 月 24 日なのか。コードネームが Ruby って決まったのは確かに 2 月 24 日か 25 日なんだな。</p>
+
+<p><strong>ささだ</strong>  なるほど。それはチャットの話ですか？</p>
+
+<p><strong>石塚</strong>  チャットじゃなくて、これはメール。いや、直接話してたのを何かしてたのか良く分からないんだけどね。……なんでこんな話になったんだっけ？</p>
+
+<p><strong>ささだ</strong>  習得の話。</p>
+
+<p><strong>石塚</strong>  習得の話か。それで歴史の話になっちゃったんだね。習得といえば、call/cc とかは良く分からないよね (笑)</p>
+
+<p><strong>ささだ</strong>  私もよく分からないですね。</p>
+
+<h3 id="プログラミング全般">プログラミング全般</h3>
+
+<h4 id="初めてのプログラミング">初めてのプログラミング</h4>
+
+<p><strong>ささだ</strong>  プログラミング全般の話。初めてコードを書いたのはいつですか。</p>
+
+<p><strong>石塚</strong>  これはねぇ。もう大学 1 年のときだから、いつだろう。18？</p>
+
+<p><strong>ささだ</strong>  大学 1 年のとき。何を触ったんですか？</p>
+
+<p><strong>石塚</strong>  最初はアセンブラ。</p>
+
+<p><strong>ささだ</strong>  アセンブラ？その頃は何のアセンブラなんですか？</p>
+
+<p><strong>石塚</strong>  Z80。PC88<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>。</p>
+
+<p><strong>ささだ</strong>  あー、はいはい。それは大学 1 年だから、授業ではなく趣味？</p>
+
+<p><strong>石塚</strong>  1 年はそう、趣味で。バイトして買ったんだな、パソコンを。</p>
+
+<p><strong>ささだ</strong>  それまではそういうのに興味が無かったんですか？</p>
+
+<p><strong>石塚</strong>  無かったって言うか、一応数学一辺倒だったからな (笑) そんなことも無いのか。あんまりコンピュータって感じじゃなかったよね。</p>
+
+<p><strong>ささだ</strong>  なんでそんなところで、ゼッパチを。</p>
+
+<p><strong>石塚</strong>  ゼッパチは買わないよ。PC88。何かコンピュータをやりたくなった。</p>
+
+<p><strong>ささだ</strong>  数学にはコンピュータであるっていうわけではなく。</p>
+
+<p><strong>石塚</strong>  数学科にコンピュータは必要ないんだよね。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  何か欲しかったんだね。友達の影響かもしれないね。</p>
+
+<p><strong>arton</strong>  その頃買えるようになったっていうのも、一個あるよ。</p>
+
+<p><strong>石塚</strong>  そうそう。一所懸命、夏の間、アルバイトしてね (笑)</p>
+
+<p><strong>ささだ</strong>  パソコンのために。パソコンじゃないのか。</p>
+
+<p><strong>arton</strong>  いや、PC はパソコンだからいいんだよ。逆に、パソコンという言い方は NEC くさいから嫌、という人も居たぐらい。</p>
+
+<p><strong>石塚</strong>  NEC だったけどね。そうそう。</p>
+
+<p><strong>ささだ</strong>  それでアセンブラで？</p>
+
+<p><strong>石塚</strong>  最初はアセンブラ……だって、まだ C とかもまともに走らないしね。</p>
+
+<p><strong>arton</strong>  ROM BASIC か何かが入ってますよね。</p>
+
+<p><strong>石塚</strong>  普通の BASIC は入ってるけどね。</p>
+
+<p><strong>ささだ</strong>  BASIC は使わずに？</p>
+
+<p><strong>arton</strong>  最初から無視なんだ。あっさり。</p>
+
+<p><strong>石塚</strong>  無視っていうか、使わないことは無いけどね。BASIC もね。</p>
+
+<p><strong>arton</strong>  8801 っていきなり ROM BASIC が動く奴ですよね？</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>arton</strong>  だからアセンブラ書くって言っても、実際は BASIC で PEEK、POKE って世界じゃないですか？</p>
+
+<p><strong>石塚</strong>  いやいや、アセンブラは別に買わないといけないんですよね。CP/M とか。あと、ASCII からへんなアセンブラが書けるツール<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup>とかがあって、それを使ったんだと思う。何だったかな。名前は忘れちゃった。</p>
+
+<p><strong>arton</strong>  最初から力 (りき) が入ってるな。</p>
+
+<p><strong>ささだ</strong>  いきなりアセンブラってすごいですよね。</p>
+
+<p><strong>石塚</strong>  だって、アセンブラでしか作れないんだよ、(実用的な)ものは。</p>
+
+<p><strong>一同</strong> (笑)</p>
+
+<p><strong>ささだ</strong>  それは、何か作りたいものがあって買ったんですか？</p>
+
+<p><strong>石塚</strong>  それがね、不思議だよね。別に無いんじゃないのかなぁ (笑) ゲームを一所懸命やったっていうのはあるかもしれないけど。それで、大学二年から、コンピュータ関連のところにアルバイトに行ってるんだよね。大学一年の時から行ってるのかな。その頃は Pascal とかもやったし、あとは Lisp とかも。ちっちゃい Lisp なんだ。μ Lisp とかがあったから、そういうのとかをやったりしてたけどね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  で、多分大学 3 年か 4 年に Smalltalk と出会うんだな、きっと。大学 4 年かな？ あれ何年だったかな……。1985 年というと、22 歳。というと、やっぱり 4 年のときか。4 年のときに Smalltalk と出会ったんだな。で、それからしばらく Smalltalk にハマってたと。</p>
+
+<p><strong>ささだ</strong>  それは大学にあったんですか？</p>
+
+<p><strong>石塚</strong>  大学じゃない。その頃 ASCII でアルバイトをやってて、ASCII で Smalltalk の本を作るっていう理由で、Smalltalk のマシンを買ったんだよね。Tektronix 4404 っていうマシンだったんだけど。当時、多分 500 万円ぐらいしたんじゃないかな。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  本を出すためにマシンが買えるという。良かった時代だったよね。</p>
+
+<p><strong>ささだ</strong>  それは誰向けの本になるんですか？ 500 万とかのマシンで……。</p>
+
+<p><strong>石塚</strong>  それは別にどうだって良いんじゃないの。企画さえ通れば。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  この頃はね、出版もまだバブルの頃だから良かったんじゃないのかな<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>。</p>
+
+<p><strong>ささだ</strong>  あー、なるほど。</p>
+
+<p><strong>石塚</strong>  でも本が出た後は、そのマシンを使う人がいないから、そのまま僕が貰った。貰ったというわけじゃないけど、しばらく借りてた。</p>
+
+<p><strong>ささだ</strong>  まぁ、占有して、という感じですね。</p>
+
+<p><strong>石塚</strong>  そうそう。家に持ち帰ってたもんね。</p>
+
+<p><strong>ささだ</strong>  え、ちっちゃいマシンだった？</p>
+
+<p><strong>石塚</strong>  ちっちゃくないよ。でかいよ。こんなにでかいんだよ。それを車で持ってったんだよ。</p>
+
+<p><strong>arton</strong>  電源は普通の 100V で良いんですか？</p>
+
+<p><strong>石塚</strong>  110V なんだけど、一応動くんだよ (笑)</p>
+
+<p><strong>ささだ</strong>  専用マシンなんですね。</p>
+
+<p><strong>石塚</strong>  あれはね、専用マシンって言うか、一応変な OS<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup> があって、その上で Smalltalk って形になるんですけどね。でも結構ね、サクサク動いたんだよ。</p>
+
+<p><strong>ささだ</strong>  では、Smalltalk でオブジェクト指向にがっつりつかったっていう。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>ささだ</strong>  アセンブラはがんがんやってたんですか? それとも、アセンブラでちょっと基本やって。</p>
+
+<p><strong>石塚</strong>  アセンブラはね、ゲーム作ったり (笑) 僕ゲームの本も絡んでるんだよね。何かね。</p>
+
+<p><strong>ささだ</strong>  ゲームの本？</p>
+
+<p><strong>石塚</strong>  そう。何かそう、ゲームを作りましょうっていう本。それ用のゲームを作ったりもしてるんだよね。</p>
+
+<p><strong>ささだ</strong>  アセンブラで。</p>
+
+<p><strong>石塚</strong>  うん、アセンブラ。だから、アセンブラで結構やってるんだよね。</p>
+
+<p><strong>arton</strong>  代表作は。代表ゲームは？</p>
+
+<p><strong>石塚</strong>  代表ゲーム (笑) 別に売りもんじゃないからな。その本の題材のやつで。なんかスクロール型のやつを作ったんだよね。</p>
+
+<p><strong>ささだ</strong>  でも昔の雑誌だと、そういうゲームとかを投稿して載せるとか。そういうのやってたみたいですけど、そういうのにも？</p>
+
+<p><strong>石塚</strong>  投稿したことない。てか、もうそういうところでアルバイトしてるもんね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  アスキーとかね。</p>
+
+<p><strong>ささだ</strong>  載せる方だったと。で、Smalltalk でもゲームとかやってたんですか？</p>
+
+<p><strong>石塚</strong>  Smalltalk で？</p>
+
+<p><strong>ささだ</strong>  Smalltalk で。まあ、作っても誰も動かせないような気はしますが (笑)</p>
+
+<p><strong>石塚</strong>  ゲームは作ってないなあ (笑)</p>
+
+<p><strong>ささだ</strong>  じゃ、まあ自分で使うと。使うっていうか、何に使うんですか？家持って帰って。</p>
+
+<p><strong>石塚</strong>  家持って帰って？ でも、いろんなライブラリとか、何か 3 次元表示のライブラリとかね、作ったりしてたよなあ。3 次元関係、Smalltalk にはその当時無かったからね。あと、何かフラクタルのやつを何か表示して遊んだりしてたよ、何か。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  あと何作ってたかなあ、なんかよく覚えてないなあ。</p>
+
+<p><strong>ささだ</strong>  大学のレポートを書いたりとか。</p>
+
+<p><strong>石塚</strong>  大学は数学だから、コンピュータ要らないんだって (笑)</p>
+
+<p><strong>ささだ</strong>  レポートとか要らないんですか？</p>
+
+<p><strong>石塚</strong>  コンピュータは必要ないね、少なくとも。</p>
+
+<p><strong>ささだ</strong>  あー、なるほど。</p>
+
+<p><strong>石塚</strong>  ワープロ機能ないしね、Smalltalk ね。</p>
+
+<p><strong>ささだ</strong>  なるほど、確かに。</p>
+
+<h4 id="ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</h4>
+
+<p><strong>ささだ</strong>  えーっと、Ruby 以外のプログラミング言語で何を使いますか？ 何が好きですか？</p>
+
+<p><strong>石塚</strong>  最近使ってるのは、Ruby、使えるのはね、C とか C++ とか。</p>
+
+<p><strong>ささだ</strong>  Smalltalk は使ってないんですか。</p>
+
+<p><strong>石塚</strong>  Smalltalk 最近使ってない (笑) それこそ、確かめるのに使うくらいだよね。Smalltalk ってここどうだったかなって (笑) Smalltalk はやっぱね、環境が閉じてるからね、やっぱ、ちょっと今イチだよね、何か今となっては。あとは elisp かなあ、よく使うのはね。</p>
+
+<p><strong>ささだ</strong>  じゃ、環境は Emacs と。</p>
+
+<p><strong>石塚</strong>  Emacs だね。Emacs ないと生きていけない。Emacs というか、XEmacs だけどね。</p>
+
+<p><strong>ささだ</strong>  なるほど。Java とか使わないんですか？</p>
+
+<p><strong>石塚</strong>  Java? Java ね、全然知らないんだよね (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  そうなんだ、それスゴい意外ですね。</p>
+
+<p><strong>石塚</strong>  そうそう、だから僕、最後に仕事でプログラムしたの、もう 10 年くらい前なんだよね。</p>
+
+<p><strong>ささだ</strong>  ほー。</p>
+
+<p><strong>石塚</strong>  それ、C++ でやったやつだけど。それ以降やってないね、Java も。あー、言語といえば UML を使うけれどさ。そっちが仕事なのね (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  うん、そっちだもんね、分析とか設計とか、そっちの方の話。</p>
+
+<h4 id="美しいソースコード">美しいソースコード</h4>
+
+<p><strong>ささだ</strong> えっと、今まで読んだ中でもっとも美しいソースコードは何ですか？</p>
+
+<p><strong>石塚</strong>  美しいも何もよくわからないけどさ。何か参考にしたのっていうと何かな、あのー、X10 のサーバのソースコードとか、よく読んだよね。</p>
+
+<p><strong>ささだ</strong>  それはわかりやすかったとか。</p>
+
+<p><strong>石塚</strong>  わかりやすいっていうよりは綺麗っていう。まあ、わかりやすいはわかりやすかったけどね。結局あれって、クライアントと繋いでさ、いろんな処理をするわけじゃない。マルチクライアントの処理をやってくれるシステムではないですか。</p>
+
+<p><strong>ささだ</strong>  うんうん。</p>
+
+<p><strong>石塚</strong>  で、その当時、手元でソースコードが、そういうの手に入るっていったら X くらいだったんだろうなあ、きっと。あと NFS もあるけど、NFS より X の方がちゃんとやってるしなあ。その頃データベースのサーバっていうか、今で言うところのトランザクションモニターみたいの作ってて、で、そういうマルチクライアントのデータベースのトランザクション処理をしようってやってたんだけど、そういうのにいろいろと参考にさせてもらいましたね。</p>
+
+<p><strong>ささだ</strong>  なるほど、若者は X を読めと。</p>
+
+<p><strong>石塚</strong>  X10 だよね。</p>
+
+<p><strong>ささだ</strong>  X10 (笑)</p>
+
+<p><strong>石塚</strong>  うん、10 はたぶん単純でいいと思う。今さら手に入らないと思うけど (笑) あとは、まあ、人のソースコードって読まないからさあ<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  なんか、なんだろ、影響されるじゃん (笑)  (他人のソースコードを読んで勉強しないことは)あんま良くないって話もあるんだろうけど<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>。</p>
+
+<h4 id="興味を持ってるテーマ">興味を持ってるテーマ</h4>
+
+<p><strong>ささだ</strong>  今の興味を持ってるテーマ。</p>
+
+<p><strong>石塚</strong>  テーマ？ あー、あのー、さっき言ったかな、APL の話は。</p>
+
+<p><strong>ささだ</strong>  APL を最近調べてる？</p>
+
+<p><strong>石塚</strong>  APL を Ruby でシミュレートします、ってがんばってる (笑) シミュレートじゃない、なんか APL の配列のあたりの振る舞いね。</p>
+
+<p><strong>ささだ</strong>  Ruby で出来ないですか？</p>
+
+<p><strong>石塚</strong>  いや、だから今がんばってやっているところなの。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  出来ないのは、関数の値、だからさっき言った、関数そのもののオペレーションは出来るんだけど、Ruby だと、だから、こう、関数同士を結合したり、足すとかないな、こう引数入れ替えるとか、こう何かいろいろあるんだけど、そういうのって Ruby でも書けるけど、書いたからって、それを、それこそ call で呼ばないと意味ないんで (笑) その辺はちょっと無理なのかなあって。なんか工夫のしがいがあるっていうか、工夫すれば出来るのかなって、いろいろ今ちょっと考えようとしているところなんだよね。</p>
+
+<p><strong>ささだ</strong>  なるほど。今その辺が興味を持っていると。</p>
+
+<p><strong>石塚</strong>   そうそう。それくらいかな。あとはあれか、RubyKaigi2006 で発表したのがあったじゃない、あの辺はちょっと言ったっきりで終ってるので、やんなくちゃいけいかなって (笑)</p>
+
+<p><strong>ささだ</strong>  続編があるんですよね (笑) 「じゃ、また来年」とか言った記憶があります。</p>
+
+<p><strong>石塚</strong>  来年とは言ってない。その 1 って書いたから、その 2 が有るはずなのに無いっていう (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど (笑)</p>
+
+<p><strong>石塚</strong>  そんなもんかな、あと何があるかな。結構やりたいのはあるんだけどね。</p>
+
+<p><strong>ささだ</strong>  オブジェクトデータベースとかっていうのは、まあ、あんまり？</p>
+
+<p><strong>石塚</strong>  あー、それもね、気にはなるんだけどね。ちょっと……<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup></p>
+
+<p><strong>ささだ</strong>  咳さんとかすごく好きそう。</p>
+
+<p><strong>石塚</strong>  咳さんやりたいって言ってたよね。</p>
+
+<p><strong>arton</strong>  UML っていう意味では MDA とかは？</p>
+
+<p><strong>石塚</strong>  だから、それは例のやつでしょ。(RubyKaigi)2006 のやつ。</p>
+
+<p><strong>arton</strong>  あー、そっかそっか。</p>
+
+<p><strong>石塚</strong>  でも、なんか、それ MDA とか言うと、Ruby とか何とかって話ではないから、ちょっと微妙なんだよね。モデリングツールも必要になっちゃうしね。</p>
+
+<p><strong>arton</strong>  いや、そこら辺は IDE とか。</p>
+
+<p><strong>ささだ</strong>  MDA っていうと最近はマスコットドリブン<sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>という (笑)</p>
+
+<p><strong>arton</strong>  最近聴かなくなっちゃったよね (笑)</p>
+
+<p><strong>石塚</strong>  え、何が？</p>
+
+<p><strong>arton</strong>  MDA。</p>
+
+<h3 id="生い立ち">生い立ち</h3>
+
+<p><strong>ささだ</strong>  じゃ、続きますかね、さくさくと。じゃ生い立ち。</p>
+
+<p><strong>石塚</strong>  生い立ち？</p>
+
+<p><strong>ささだ</strong>  たとえば小学生のときにどういう子供だったとか。数学にかなり一直線だったというのは、さっきちらっと話にありましたけど、どうして数学が好きになったかみたいな。</p>
+
+<p><strong>石塚</strong>  そんな話 (笑)</p>
+
+<p><strong>ささだ</strong>  小学校のときから、数学やってたとか。</p>
+
+<p><strong>石塚</strong>  数学……数学ねえ。やっぱ考えるのが好きだからなんだろうね。数学とかは、題材があって考えて答えが出れば、それで、何だろう、正しいかどうかわかるじゃない、ね (笑)</p>
+
+<p><strong>ささだ</strong>  アウトドアでしたか？ インドアでしたか？</p>
+
+<p><strong>石塚</strong>  それはインドアかな。あんまし外に出たことがないような気はするけど (笑)。</p>
+
+<p><strong>ささだ</strong>  子供のころから、外で遊びに走り回ってるイメージではないと。</p>
+
+<p><strong>石塚</strong>  いや、そんなことはないな。一番汚れてると言われてた (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  子供の頃はっていうか、本当に小さいころは大変だったよね (笑) いつも親に言われるんだよ、大変だったって。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  それがいつの間にインドア派に。</p>
+
+<p><strong>石塚</strong>  何故だろうね。</p>
+
+<p><strong>ささだ</strong>  中学とかですかね、部活とか。スポーツとか、クラブ活動とか。</p>
+
+<p><strong>石塚</strong>  スポーツとか、あんましやらなかったね。中学校くらいかな、小学校もあんましやらなかったかな。どういう風にいったらいいのかよく分からないけど。外で遊ぶっていうか、スポーツをあんまりやらなかったかな。</p>
+
+<p><strong>ささだ</strong>  で、クラブ活動とかは何か。</p>
+
+<p><strong>石塚</strong>  特にやってないよね。スポーツ系とか、なんか無理矢理やらされた覚えはあるけど (笑)</p>
+
+<p><strong>ささだ</strong>  数学との出会いとかは、どの辺にあったんですか？ 考えることが好きだということに自ら自覚したという。</p>
+
+<p><strong>石塚</strong>  気がついたのは今 (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  結論としてそうなのかなって (笑) 子供の頃はコンピュータとかなかったけど、同じようなことでくっつけるとそういうことなのかなって思っただけなんだけどね。でもやっぱ小学校の頃から、数学っていうか算数は好きだった。</p>
+
+<p><strong>ささだ</strong>  すげー。で、大学も、そういう数学関連がやりたくて、はいってみたら、パソコン買って。</p>
+
+<p><strong>arton</strong>  アスキーでバイトしてたっていう (笑)</p>
+
+<p><strong>石塚</strong>  大学時代はまだ良かったんだけど。まだちゃんと学業もやってたんだけどさ（笑）</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  大学院は良くなかった (笑)</p>
+
+<p><strong>ささだ</strong>  大学院も数学で、情報処理とかにはいかなかったんですか？</p>
+
+<p><strong>石塚</strong>  いかなかったね、やっぱ数学命と思ってたんだね。まあ、本当かな、よくわかんないけど。そこが人生の失敗だったかな……違うか (笑)</p>
+
+<p><strong>ささだ</strong>  え、それで数学の研究ほったらかしにして、計算機の方やってたとか。</p>
+
+<p><strong>石塚</strong>  そうなんだよね、ほとんど大学院は行ってないというか。</p>
+
+<p><strong>ささだ</strong>  入ったけど、バイトばっかしてた？</p>
+
+<p><strong>石塚</strong>  バイトばっかやってたよね。</p>
+
+<p><strong>ささだ</strong>  で、Smalltalk とか。</p>
+
+<p><strong>石塚</strong>  Smalltalk で遊んでたよね。</p>
+
+<p><strong>ささだ</strong>  良い生活ですよね (笑)</p>
+
+<p><strong>arton</strong>  楽しそうだよね。</p>
+
+<p><strong>石塚</strong>  Smalltalk というか、その頃から、次のヤツ、オブジェクト指向プログラミングの本を書いてみたんだよね。</p>
+
+<p><strong>ささだ</strong>  大学院の先生とか、何か言ってました？</p>
+
+<p><strong>石塚</strong>  最終的に中退したんだけどさ、最後に「そんなことやってたのか」と怒られてしまった（笑）というおまけつきだった（笑）</p>
+
+<p><strong>arton</strong>  そんなことって。</p>
+
+<p><strong>石塚</strong>  そうそう、古いっていっちゃいけないんだけどさ、読んでるかもしれないからさ。</p>
+
+<p><strong>arton</strong>  「そういうのもあるよね」って言って欲しかったよね。</p>
+
+<p><strong>石塚</strong>  いや、なんかね、先生の時代はみんな、寝ても覚めても数学ばっかしやってるわけだよ。まあそれは、情報だって同じでしょ？ 数学の研究ばかりやってるわけじゃない。で、計算機(とか他のこと)はやってないわけだからね (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  そんな感じですかね。</p>
+
+<p><strong>ささだ</strong>  大学院を中退されて、就職されたのが、どの辺ですか？</p>
+
+<p><strong>石塚</strong>  日本タイムシェアって会社に、まつもとさんとかと一緒の。</p>
+
+<p><strong>ささだ</strong>  そこで出会いがあったと。</p>
+
+<p><strong>石塚</strong>  出会うのはその 2 年後だけどね。僕より 2 年後輩なんで。</p>
+
+<p><strong>ささだ</strong>  そこには研究職として入ったんですか？</p>
+
+<p><strong>石塚</strong>  なんかそのころまだ子供でさぁ。研究所が出来るって話を聞いてさ、じゃいいかなと思って入ったらさ、研究所って名前の開発拠点だったわけね (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  会社の規模がけっこう大きかったという話を聞いてますけど。</p>
+
+<p><strong>石塚</strong>  その当時けっこう大きかったんだよ、たぶん。</p>
+
+<p><strong>ささだ</strong>  うん、なるほど。</p>
+
+<p><strong>arton</strong>  名前から言って、確かにすごそうな感じですな。</p>
+
+<p><strong>石塚</strong>  古いんだよね、タイムシェアって(言葉が)。</p>
+
+<p><strong>ささだ</strong>  別に Smalltalk でなんとかって話ではないんですよね、きっと。</p>
+
+<p><strong>石塚</strong>  あー、でもいちおう、そういうの(オブジェクト指向とか Smalltalk とか)やってたって話で、なんだろ威張ってはいたけど。違うか  (笑) いちおうね、普通の開発といっても、なんていうのかな、その社内用の開発ツールをつくる部署なのね。</p>
+
+<p><strong>ささだ</strong>  ふんふん。</p>
+
+<p><strong>石塚</strong>  昔だとシグマ(プロジェクト)とかあったじゃないですか。あれとはちょっと違うんだけど、社内開発用のツールを作ろうとかっていってさ。一生懸命、社内でがんばってた時代で、その部署に僕もまつもとさんも入ったんだよね。</p>
+
+<p><strong>ささだ</strong>  なるほど。なら、まだ研究よりと言う感じ、でもその頃からまさに興味のある環境の整備という。</p>
+
+<p><strong>石塚</strong>  研究開発と言う感じ。環境の整備っていってもいろいろ……なんだろ、それはまあいいや（笑） まあ、でも研究っていうとちょっとあれだけど、まあでも新しい技術ではあったね。NEWS とかやって、そうやって、大体まだ画面がでるような一般の業務系で画面とか無いもんね。ウィンドウシステムとか無い時代だからさ。</p>
+
+<p><strong>ささだ</strong>  はいはい。みんな端末だった時代。</p>
+
+<p><strong>石塚</strong>  だいたい何で NEWS だったかっていうと、PC で動く、ウィンドウズなかったもんね、まだね、いや出てたのかなー。</p>
+
+<p><strong>arton</strong>  1.0 とかはあったかもしれないけど、現実問題として DOS しかない時代。</p>
+
+<p><strong>石塚</strong>  そうだよね。そういう時代だから。</p>
+
+<p><strong>arton</strong>  昔は、ほら 80 カラムのね、タイプライターみたいにぱっぱっぱっぱって書いていく時代だったから。</p>
+
+<p><strong>石塚</strong>  そういう時代だったからね。ま、そういう意味で進んでたのかもしれないな。</p>
+
+<p><strong>ささだ</strong>  インターネットに繋がってたってことですからね。</p>
+
+<p><strong>石塚</strong>  えーっとインターネットというか、そのころは JUNET。繋いであったのは、いつから繋がったんだったかな。入ったときにはまだ繋がってなかったんだよね。もうちょっとたってから繋ぐようにしたのかな。よく僕もその辺は覚えてない。そういうのがすごく好きな人がいて、その人ががんばって繋げたっていう。</p>
+
+<p><strong>ささだ</strong>  なるほど。でも、まだ日本にもそんなに無い時代ですよね。きっと。</p>
+
+<p><strong>石塚</strong>  うん、だからうちの上に。あれ、どこに繋がせてもらったんだっけな。JUNET は繋いでいいよって言ってくれる上流がないと繋げない仕組みじゃないですか。大学のどっか知り合いに繋がせてもらったんだと思う。</p>
+
+<p><strong>ささだ</strong>  なんだろ、今の学部生とかって、もう、あって当たり前ですからね。UUCP とか全然しらない、私も知らないけど、そういう時代という。</p>
+
+<p><strong>石塚</strong>  UUCP だったね、その頃はね、確かにね。</p>
+
+<p><strong>ささだ</strong>  先進的な環境ではあったんですね。職場環境。</p>
+
+<p><strong>石塚</strong>  社外はあれだね<sup id="fnref:20"><a href="#fn:20" class="footnote">20</a></sup>、社内はまあ、ネットワークとか当たり前に繋がってたからさ、社内環境。</p>
+
+<p><strong>ささだ</strong>  チャットしたりとか（笑）</p>
+
+<p><strong>石塚</strong>  そう、チャットとかね。チャットは自製のやつなんだよね。</p>
+
+<p><strong>ささだ</strong>  へー。</p>
+
+<p><strong>石塚</strong>  僕が作った訳じゃなくて、同僚がつくったやつなんだけど。</p>
+
+<p><strong>ささだ</strong>  へー、面白い職場だったんですね。</p>
+
+<p><strong>石塚</strong>  みんなチャットを開いててさ、なんか仕事やっててシーンとしてるんだけどさ、突然みんながどっと笑ったりして、危険だよなって。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど。それで、えーっと、そこの会社を何年かされて、次、ラショナル。</p>
+
+<p><strong>石塚</strong>  いや、違う。次はね、三井造船なんだよね。オブジェクト指向データベースの ObjectStore。オブジェクト指向データベースも ObjectStore とか Objectivity/DB とかいろいろあるけどね。でも、今はあんまり聞かないもんね。</p>
+
+<p><strong>ささだ</strong>  うん。もう SQL でいいじゃん、RDB でいいじゃんみたいな。</p>
+
+<p><strong>石塚</strong>  私的には RDB じゃよくないんだけど、まあ、その話はいいとして (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  オブジェクト指向データベースをもっとやりたかったから、その会社にいったんですか。</p>
+
+<p><strong>石塚</strong>  やりたかったっていうか、それは、なんだろ。自分から選んだじゃなくて、なんか声がかかってきたんだよね。</p>
+
+<p><strong>ささだ</strong>  はー。詳しいやついねえかと。</p>
+
+<p><strong>石塚</strong>  なんかね、僕もよくわかんないんだけど。どっかから紹介されて、声がかかってきたらしい  (笑) で、三井造船でそういうやつをはじめようとしていたんだよね。ま、それでまつもとさんも、それがらみでちょっと。まつもとさんにもちょっと。</p>
+
+<p><strong>arton</strong>  ケーラムに入ってる。</p>
+
+<p><strong>石塚</strong>  ケーラムにきたのは、僕がそのそっちに入ってもらったんじゃなかろうかと。違う、自分から入ったんじゃなくて紹介、なんかある仕事をやることになって、それでまつもとさんが欲しいぞって、人ごとじゃなくなって、それで良く覚えてない (笑)</p>
+
+<p><strong>ささだ</strong>  Ruby が云々って話はもちろんないわけですね、その頃は。</p>
+
+<p><strong>石塚</strong>  そうそう、Ruby 云々じゃなくて。</p>
+
+<p><strong>ささだ</strong>  まつもとさん個人が。</p>
+
+<p><strong>石塚</strong>  そう。その間に Ruby はどんどん出来てたと (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど、じゃラショナルはその次ってことですか？</p>
+
+<p><strong>石塚</strong>  ま、基本的にはね。でも三井造船の子会社に一回移ってるんだけどね。そのデータベースの仕事がまるまるそっちに移るってことで。</p>
+
+<p><strong>ささだ</strong>  ちなみにデータベースは成功したんですか。</p>
+
+<p><strong>石塚</strong>  成功してないんじゃないの (笑)</p>
+
+<p><strong>arton</strong>  いやーだって。</p>
+
+<p><strong>石塚</strong>  今の状況見ればわかるじゃん (笑)</p>
+
+<p><strong>ささだ</strong>  いやいや、その作ったのはデータベースシステムじゃなくて、そのデータベースシステムつかったシステムをつくってたってわけじゃないんですか？</p>
+
+<p><strong>石塚</strong>  あーちがう。販売したり、そのコンサルティングするみたいな仕事だったんだよね。</p>
+
+<p><strong>ささだ</strong>  御社の仕事にはこれをこういう風に使うと素晴らしいよ、みたいな。</p>
+
+<p><strong>石塚</strong>  そうそうそう。それ営業だけどね。まあ、そういうのもやってたし、コンサルティングみたいな実際の開発したりとかして。</p>
+
+<p><strong>arton</strong>  実際どうでした？やりやすいですか？オブジェクトデータベース</p>
+
+<p><strong>石塚</strong>  オブジェクト指向データベースはけっこう、けっこうじゃなくて楽だと思うけどね。ただ C++ なんだよね。それに SQL と違ってインタラクティブなクエリとかアップデートとかって出来ないんだよね<sup id="fnref:21"><a href="#fn:21" class="footnote">21</a></sup>。</p>
+
+<p><strong>ささだ</strong>  あーなるほど。</p>
+
+<p><strong>石塚</strong>  C++ なんてスクリプトじゃないじゃない。SQL っていちおうスクリプトでしょ。そうじゃないから、データベースってね、あれなんだよね、やっぱバグあって当たり前だから。データの間違えとか。だから、簡単に修正できないとダメなんだけど、それが出来ないんだよね。</p>
+
+<p><strong>ささだ</strong>  それはなんだろ、Perl とかのスクリプト言語なんかから、ちょいちょいってやれるようなのにしようとかは無かったんですか。</p>
+
+<p><strong>arton</strong>  そこで、まつもとさんだ。</p>
+
+<p><strong>石塚</strong>  それとは関係ないけどね (笑) あー、でも近いところはある<sup id="fnref:22"><a href="#fn:22" class="footnote">22</a></sup>。もともと、全然違う目的だけど。で、そういうのはなかったんじゃない。そのころ Perl はあったけど、仕事ではまだ使われてないもんね。</p>
+
+<p><strong>ささだ</strong>  あー。</p>
+
+<p><strong>石塚</strong>  まだウェブとかないもん。そのころは。</p>
+
+<p><strong>arton</strong>  ないね。ウェブだって。</p>
+
+<p><strong>ささだ</strong>  perl なんてふざけるなとそういう時代だったと。遊びじゃないんだ、みたいな。</p>
+
+<p><strong>arton</strong>  いや、存在知らないんじゃない、普通の人は。</p>
+
+<p><strong>石塚</strong>  んー、そうかもしれない。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  お仕事。それこそ、まだネットでね、情報が広まるなんてこともなかったし。</p>
+
+<p><strong>ささだ</strong>  ちなみに、オブジェクトデータベースは普通の RDB とかとくらべて性能は遜色ない？</p>
+
+<p><strong>石塚</strong>  遜色ないというより、速いんだよね。速いっていうか、そういうふうに最適化された構造でデータをセーブするからさ。</p>
+
+<p><strong>ささだ</strong>  へー。</p>
+
+<p><strong>石塚</strong>  なんていったらいいんだろ。RDB ってね結局ね、こうレコード縦にならべて、まあインデックスとかつければちょっと変わるんだけど、ならんでるだけで、それを検索するって仕組みじゃない。</p>
+
+<p><strong>ささだ</strong>  はい。</p>
+
+<p><strong>石塚</strong>  オブジェクト指向データベースっていうのは、こう、あるところにオブジェクトが入ってたら、それと一緒によく使うものを近くに置いておけば、1 回のキャッシュというか、1 回で持って来れるわけじゃないですか。だから、原理的には速くできるはずなんだよね。</p>
+
+<p><strong>ささだ</strong>  すっごい大変そうですけどね。最適化問題ですよね。</p>
+
+<p><strong>石塚</strong>  最適化って、そこまで考えなくてもよいんだけどね。</p>
+
+<p><strong>ささだ</strong>  なんか配置を、なんだろ。</p>
+
+<p><strong>石塚</strong>  そこまで考えなくて良いんだって (笑) だいたい速ければ良いんだから(笑)。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  なんかそれこそ、モデリングっていうか、そういうのと近いところあるよね、きっとね。そういったオブジェクトのアクセス・パターンの分析とかね。</p>
+
+<p><strong>ささだ</strong>  で、そういうのが飽きてラショナル。いや、飽きてとか嘘ですけど (笑)</p>
+
+<p><strong>石塚</strong>  飽きてっていうよりは、だから、そこでそういう仕事やめるって話になったから。他に移るって話になったんよね。</p>
+
+<p><strong>ささだ</strong>  あー。もうオブジェクトデータベースは商売にならんと。</p>
+
+<p><strong>石塚</strong>  結局はそういうことなのかな。いいのかな、そんなこといって (笑) まあ、いいや。</p>
+
+<p><strong>ささだ</strong>  なかなかクライアントがつかないと。</p>
+
+<p><strong>石塚</strong>  会社が本腰をいれてなかったって話も、あるかもしれないんだけどね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  実際に作っていたのはオブジェクトデザイン社と言う会社なんだけども、そこは今でもあるからね<sup id="fnref:23"><a href="#fn:23" class="footnote">23</a></sup>。</p>
+
+<p><strong>ささだ</strong>  なるほど。そっか、じゃあ三井造船がもっと気合い入れてれば今頃は。そういえば、フリーの実装って無いんですかね。</p>
+
+<p><strong>石塚</strong>  知らん。</p>
+
+<p><strong>ささだ</strong>  じゃ、無いんですかねー。</p>
+
+<p><strong>arton</strong>  オブジェクト指向データベース？</p>
+
+<p><strong>ささだ</strong>  なんだろ、Postgres とか MySQL みたいな存在は。なんか、今流行ってるのは、それがあるからっていうのもありますよね。</p>
+
+<p><strong>arton</strong>  なんかありそうな気もするが、それこそ、咳さんが自分で作ってるやつとか。でも使いたい人はむしろ作りたいんじゃない。</p>
+
+<p><strong>石塚</strong>  フリー、フリー、ただのやつ、うーん、なんか ObjectStore も一応今は、Java のただのやつとかあるみたいだけどね。ちょっと PSE って形ですけどね。</p>
+
+<p><strong>ささだ</strong>  PSE というのは</p>
+
+<p><strong>石塚</strong>  Persistent Storage Engine。よくわからないんだけど、トランザクションがないとかそういうやつなのかもしれない。または Pstore と同じレベルなのかもしれない、まあ、それはないか (笑)</p>
+
+<p><strong>ささだ</strong>  えーと、で UML とかそういう方のお仕事に。</p>
+
+<p><strong>石塚</strong>  そう、それからラショナルに移ったんだよね。で今に至るんだね。IBM に買われちゃったからね、あそこも。</p>
+
+<p><strong>ささだ</strong>  で、UML 云々っていうのは、前からそのような話は、オブジェクトデータベースとかやってるところから、がんがん使ってたんですか。</p>
+
+<p><strong>石塚</strong>  あのころは OMT だね。ちょうど辞めるころに UML がでてきたのかな。</p>
+
+<p><strong>ささだ</strong>  で、モデリングみたいなのをコンサルティングでがんがんやってたと。</p>
+
+<p><strong>石塚</strong>  えーっと、うんとモデリング、どの時代に？ えーっと ObjectStore とかをやってたころ？</p>
+
+<p><strong>ささだ</strong>  なんでそんなラショナルに、みたいな。</p>
+
+<p><strong>石塚</strong>  オブジェクト指向繋がり (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  それもお声がかかったんですか？</p>
+
+<p><strong>石塚</strong>  いや、それはね、いろいろあったんだよね。</p>
+
+<p><strong>ささだ</strong>  いろいろですか。</p>
+
+<p><strong>石塚</strong>  そのころオブジェクト指向っていうとオージス総研とか有名だったんだけど。今でも有名か。で、あとそこと、それこそ ObjectStore がらみでオブジェクトデザイン社とでどっちにしようかと思ってたんだけどさ。なんか、オージスとはいろいろと交渉したんだけどなかなか条件面等で合わないので、行くのはやめるといったら、、実はなんかこういう会社が出来るって紹介されたんだよね。</p>
+
+<p><strong>arton</strong>  オージスにラショナルを。</p>
+
+<p><strong>石塚</strong>  そう。</p>
+
+<p><strong>arton</strong>  そうか、あー、オージスも関連してなくはなかったのか。</p>
+
+<p><strong>石塚</strong>  半分ずつの出資なんだよね。ラショナルって。</p>
+
+<p><strong>ささだ</strong>  へえ、日本の方は。</p>
+
+<p><strong>石塚</strong>  そう、オージスとラショナル社が 50% ずつの出資で作ったんだよね。</p>
+
+<p><strong>arton</strong>  確かに Rose の売り込みはオージスだったからな。</p>
+
+<p><strong>石塚</strong>  それがらみでね。そういう話があったんですよ。</p>
+
+<p><strong>ささだ</strong>  じゃ、Rose とか使ったのは入ってから？</p>
+
+<p><strong>石塚</strong>  んーっとね、Rose はね、その、オージスとは付き合いあったから、前の会社でも使ってたよ。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  すごいバグ多くてさ (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  すごいんだよ、なんかね、こまめにセーブしないと二度と立ち上がらなくなったりするんだよね。どうしようもない商品でさ。</p>
+
+<p><strong>arton</strong>  でも高いと (笑)</p>
+
+<p><strong>石塚</strong>  まあ、高いっちゃ高いんだけど、ああいうツールはみんな同じようなもんだよね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  まあ、とにかくあっちはデータベースの Objectivity ってやつやってたんだよね。えーなんでオージスなんだろ。オージスの人も知ってたんだよね。だから会社としても関係があったのもあるし、それになんだろ、そのころ既にオブジェクト指向データベースの本書いて出てたんだけど、それでなんかちょっと、うちの事例だけじゃ面白くないんで、逆にちょっとそっちの事例も紹介してくれって頼みに行ったこともあるんだよね。それがらみかな<sup id="fnref:24"><a href="#fn:24" class="footnote">24</a></sup>。</p>
+
+<p><strong>arton</strong>  あとオブジェクト倶楽部ってあるじゃないですか、オージスには。</p>
+
+<p><strong>石塚</strong>  うん。</p>
+
+<p><strong>arton</strong>  あれより前の話なんですか？</p>
+
+<p><strong>石塚</strong>  そんなもんないんじゃないの、きっと（笑）よくわかんないけど、ていうかまだウェブとか一般的でないんだから（笑） 何年のころなんだろう。まだ 10 年以上も前の話だよね。96 年か 97 年かぐらい。ラショナルに移ってからちょうど 10 年か。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  オージスの人は、どうしても行かせたくなかったみたい。商売敵に (笑) 結果としては良かった気がするけどな。あそこはひどい目にあったみたいだからね。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  で、ラショナルで、社員一号でさ。最初、健康保険も何も無いんだよね。</p>
+
+<p><strong>ささだ</strong>  へぇー。</p>
+
+<p><strong>石塚</strong>  何か、社員が居ないと健康保険組合に入れなくてさ、一号の人はそういう目にあうんだなって。一ヶ月間。</p>
+
+<p><strong>ささだ</strong>  へぇー。何人くらいなんですか、最初は。</p>
+
+<p><strong>石塚</strong>  ていうかね、細かいことを言うと、ラショナルって会社はその当時アメリカで、モデリングツール作ってるラショナルと、ピューリファイ。知ってる？</p>
+
+<p><strong>ささだ</strong>  はいはい。</p>
+
+<p><strong>石塚</strong>  あれ作ってる会社と、あとパフォーマンス関係でやってた、PEA か PC か何か良く分からない会社があって、その三つが合併したのね。</p>
+
+<p><strong>ささだ</strong>  ふーん。</p>
+
+<p><strong>石塚</strong>  で、実は残り二つは日本に法人があったの。</p>
+
+<p><strong>arton</strong>  ピューリファイの会社はあったね。ピューリファイって、バグを見せるやつですよね。メモリの開放を忘れてるとか。</p>
+
+<p><strong>石塚</strong>  そうそう。それで、日本にも法人が作られることになったんだよ。タイミングから言うと、まずラショナル社ができて、それに二つの会社が入ってきた感じになった。だから最初は(社員は)一人しか居なかった。あと、社長が一人。</p>
+
+<p><strong>ささだ</strong>  (笑) それがどんどん大きくなって。</p>
+
+<p><strong>石塚</strong>  そう。一気に大きくなった。元々あったから。</p>
+
+<p><strong>ささだ</strong>  普段、どんな感じで仕事をやってるんですか？ 客先に行って、要件聞いてとか。客先に行って、客先の設計を見て、これはどうだとか。</p>
+
+<p><strong>石塚</strong>  どっちかっていうと、そういう感じなのかな。レビューとかが中心だよね、メンタリングのときは。まぁ、色々なのがあるんだけどさ。本当に初心者レベルの人のレビューってのもあるけどさ、そうじゃなくて結構、本当に難しい問題をどう解決するかとか。</p>
+
+<p><strong>ささだ</strong>  複雑なシステムがあって、それをこんな風に作ろうと思うんだけどって言われて、それをもっとこうしたほうがいいんじゃないかとか。</p>
+
+<p><strong>石塚</strong>  そういうんじゃなくて、問題って、分かってなかったら多分、さっきみたいな一般的な話になっちゃうんだろうけど。大体抱えてる問題って、見えてることが多いんだよね。で、通常の技法だと解決するのは難しいわけ。それをどうやってモデル的に解決するのかとか。モデリング的にか、それ以上やそれより下のことも含めてなんだけど。そんな感じの話をしてる。</p>
+
+<p><strong>ささだ</strong>  IBM と一緒になって何か変わりました？</p>
+
+<p><strong>石塚</strong>  管理がうるさくなった (笑) 色々な意味でね。</p>
+
+<p><strong>ささだ</strong>  IBM の製品ばっかりやらされるとか、そういうわけではない？</p>
+
+<p><strong>石塚</strong>  だって、うちらはそういう意味ではソフトウェアグループって製品を売る部署なので、一緒にバンドルして売ることもあるかもしれないけど。</p>
+
+<p><strong>ささだ</strong> IBMでは Ruby の勉強会があると聞きましたが?</p>
+
+<p><strong>石塚</strong>  そうそう。何かやってるみたいだよね。</p>
+
+<p><strong>ささだ</strong>  そこに、石塚さんも時々いらっしゃるって言う。</p>
+
+<p><strong>石塚</strong>  時々って言うか、まだ一回しか行ったことないけど。まだ入ったばっかりなんだけどね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  そうなんですよ。結構好きでやってる人も多いみたい。</p>
+
+<p><strong>arton</strong>  IBM って人数が一杯いるから、ああいう人が一人か二人いなかったら逆におかしいですよね。</p>
+
+<p><strong>ささだ</strong>  仕事の話なんですけど、大体客先ですか？</p>
+
+<p><strong>石塚</strong>  大体客先。客先にいることも多いし、そうじゃないことも多い。</p>
+
+<p><strong>ささだ</strong>  持ち帰ってうーんとうなるって言う。</p>
+
+<p><strong>石塚</strong>  僕の場合は、基本的には持ち帰るってことはしないんだよね。その場で答えを出すようにしている。何だか良く分からないけど (笑) よっぽど難しければ……よっぽどっていうのはちょっと違うか。さっきの話だと、こういう問題があるっていう話を聞いてれば、それに対するソリューションというか答えは前もって考えていくよね。でも、モデリングって前から順番にしていくからすぐには問題になっているところまでいかない。問題に対する答えが出てくるのはずっと後になるという意味では、考えてはいるのか。この間、電子カルテの機能モデルをどう表現するのかってことを考えなくちゃいけないことがあったけど、やっぱりそれも前もって考えてきたな<sup id="fnref:25"><a href="#fn:25" class="footnote">25</a></sup>。</p>
+
+<p><strong>ささだ</strong>  あー。</p>
+
+<p><strong>石塚</strong>  こういうのになるとその場ではこうすればだいたい行けるかな? ぐらいは出てくるけど、確実に大丈夫と言うところまでは行かないからね。モデルって言うか、機能モデルって何か似ているような似てないような感じなんだけどね。電子カルテとは言っても、ソフトウェアシステムであることは確かだからね。</p>
+
+<p><strong>ささだ</strong>  たいていの問題は、そういうパターンにぱたって当てはまっちゃうものなんですか？ すぐぱっと答えが出てくる。</p>
+
+<p><strong>石塚</strong>  その辺がどうなんだろう。その辺がメンターとしてリスクがあるところなんだけど、逆に楽しいところなんだよね、その辺がね。即座に答えるところが。</p>
+
+<p><strong>ささだ</strong>  そのモデリングって言うのは、かなり抽象度が高い話ですよね。例えばコードを書くレベルまで考えを至らしたりするんですか？</p>
+
+<p><strong>石塚</strong>  作りはしないけど、大丈夫だってことは頭の中では考えるよね。</p>
+
+<p><strong>ささだ</strong>  どの程度までは下に下りますか。この件数だとちょっとこれだとまずそうだなとか。</p>
+
+<p><strong>石塚</strong>  パフォーマンスに関するところはね、モデルレベルで確認するのは難しいような気がする。実際に動かしてみないとわからないよね。</p>
+
+<p><strong>ささだ</strong>  その辺は考えずに、やればできるだろうって。</p>
+
+<p><strong>arton</strong>  基本要件のところだけでいいんじゃないの？ モデルって。</p>
+
+<p><strong>石塚</strong>  そうそう。FURPS(フープス)って言って、Functionality(機能)、Usability(使いやすさ)、Reliability(信頼性)、Performance(パフォーマンス)、Supportability(サポートのしやすさ) の頭文字をとったものなんだけど、ソフトウェアに求める要求のカテゴリみたいなものがあるんだ。その他もあるんだけど。分析モデルって、大体ここ (Functionality) だよね。</p>
+
+<p><strong>ささだ</strong>  ほー。</p>
+
+<p><strong>石塚</strong>  特に、最初の分析レベルって言ったら。機能レベルで、信頼性、使いやすさ、パフォーマンスとかこういうのは、アーキテクチャレベルの要素も大きいし、そういうのはやっぱり動かして確認しないとね。機能だってそうなんだけどさ (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  こういう下のほうっていうか、作っているところから実際にフィードバックが来て、やっぱりここのところはこうだったねっていうのってあるんですか？</p>
+
+<p><strong>石塚</strong>  一応 RUP とかだと反復開発だからなぁ。</p>
+
+<p><strong>arton</strong>  なるほど。機能はもう決まったんで、後はこれに合わせて変えてくれってことになるんだろうけど、そういうんじゃないんだ。</p>
+
+<p><strong>石塚</strong>  うん。一応うちは、Architecture Centricってのを謳ってるからさ。(訳すと)アーキテクチャ中心っていうでしょうか。</p>
+
+<p><strong>arton</strong>  これ全部ひっくるめて、ぐるぐる回るからってことですか？</p>
+
+<p><strong>石塚</strong>  そうそう。こういう視点で考えたことは無いんだけど……。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  これ、RUP だと、何かこうフェーズってあるんですけど、知ってます？</p>
+
+<p><strong>arton</strong>  大雑把にしか知らないです。</p>
+
+<p><strong>石塚</strong>  なんかね、反復でもフェーズってのがあって、これ毎に反復がいくつか入ってるって考えるんですけど。こっちがアーキテクチュアルなリスクを解決するところ、こっちは一所懸命機能を作りこむ方。……ちょっとすみません。これは作成の「作」、これは推敲。これは方向付け。
+<img src="/images/0021-Hotlinks/ishitsuka2.jpg" alt="ishitsuka2.jpg" /></p>
+
+<p><strong>ささだ</strong>  F って言うところは、「方(向付け)」っていう所？</p>
+
+<p><strong>石塚</strong>  違う違う。この切り分けで見たことが無いんだけど、本当は F を一生懸命作るのはここ(作成)なんだよね。</p>
+
+<p><strong>ささだ</strong>  作るって言うのは、実装するということ？</p>
+
+<p><strong>石塚</strong>  実装も設計も含めてね。推敲フェーズはアーキテクチャ的なリスクを解決するところなんで。こっち(URPS: 機能外要求)が中心なんだよね。当然確認するためには動かなくちゃいけないんで、これ(F: 機能)も作るんだけど。そんなに作らないね、そういった意味では。</p>
+
+<p><strong>arton</strong>  これは分かるし、これはもちろん無いと困るし、これは面白いな。</p>
+
+<p><strong>石塚</strong>  これはアーキテクチャ。動くアーキテクチャを作るっていう。何か、XP も反復してるから似たようなもんだんだろうけど (笑)、一応こう分けてる。方向付けは、言葉通りなんだけど、どういったシステムを作りましょうかって決めるような段階で。その後の反復どのようにかするかっていう決める段階なんだよね。</p>
+
+<p><strong>ささだ</strong>  でも、ソフトウェアって一個作ってみないとっていう気も。プロトタイプとかちょっと作ってみて。それもこの中に入ってるの？</p>
+
+<p><strong>石塚</strong>  ちょっと違うんだよね。自分が言ってるのは研究レベルのやつでしょ？</p>
+
+<p><strong>arton</strong>  プロトタイプも 作らないんですね。</p>
+
+<p><strong>石塚</strong>  そうそう。物を作らない段階なんで(方向づけ)<sup id="fnref:26"><a href="#fn:26" class="footnote">26</a></sup>。こっち(推敲)が、そういう意味じゃ R&amp;D 的で、こっち(作成)が一所懸命作る。コンストラクションだから D なのか (笑) そういう感じ。普通の研究の人の気分だと、ここらへんを一所懸命やってる感じじゃないかと。</p>
+
+<p><strong>arton</strong>  普通のビジネスの人は、ここなんだよね。</p>
+
+<p><strong>石塚</strong>  そうそう。こっちが一杯ある。</p>
+
+<p><strong>ささだ</strong>  最後の「移」ってのは。</p>
+
+<p><strong>石塚</strong>  移行はね、ここ(作成の最後)でベータリリース。(移行は)お客さんに移しましょうってフェーズ。</p>
+
+<p><strong>ささだ</strong>  なるほど。デプロイ……。</p>
+
+<p><strong>arton</strong>  じゃなくて、これも回すんですよね。</p>
+
+<p><strong>石塚</strong>  普通は一回だけど、お客さんの要望によっては、段階的にリリースするとかあるじゃない。そういう時は、ここは複数ある。後は、結構複雑なシステムならね、二回ぐらいやるとか。この辺も反復の数はシステムとかによって色々違うんですよね。あと、そういった研究的な色彩が強いのか、機能が多いのかによって違ってくるし。</p>
+
+<p><strong>ささだ</strong>  こういうスケジューリングもやったりするんですか。</p>
+
+<p><strong>石塚</strong>  必要であればやるんだけど、あんまり好きじゃないね、プロセスはね。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  ちなみに、何プロジェクトぐらい面倒を見てるんですか。</p>
+
+<p><strong>石塚</strong>  何プロジェクト？ そうねぇ……。多いときには一度に三つぐらいは見てたことがあるけど、三つぐらいが限度だよね。大体週に一回とかになるから、三つあると週に三日でしょ。そうすると、多分なんやかんやで、ほとんど毎日どっかに行っているっていう感じになっちゃうんで。</p>
+
+<p><strong>ささだ</strong>  三つとか、頭切り替えるの大変ですね。</p>
+
+<p><strong>石塚</strong>  全然違うからね。全然違うというか、自分は知らないんだよね、そのシステムね (笑) 知らないのに大きいことを言ってるっていうのはさらに素晴らしいんだけど (笑)</p>
+
+<p><strong>arton</strong>  結構、モデルのところって、抽象的って言うか、普遍性があるからっていうことですか？ 要するに、特化したところは知らないじゃないですか。にも拘らず、モデリング出来るってことは、普遍化できるものなのかな。</p>
+
+<p><strong>石塚</strong>  いや、モデリングはしないんだよね、僕は。モデリングするのはお客さん。</p>
+
+<p><strong>arton</strong>  あ、そっか。モデルの仕方をメンタリングする。</p>
+
+<p><strong>石塚</strong>  モデリングの仕方とか、出来た結果を。やってみてここが良く分からないとかがあればそれに答える。見て、やっぱここはこうしたほうがいいんじゃないかとか、そういう感じ。</p>
+
+<p><strong>ささだ</strong>  そういうのって、たまには失敗するわけじゃないですか。</p>
+
+<p><strong>石塚</strong>  うん。</p>
+
+<p><strong>ささだ</strong>  でも、そういうのって、コンサルって自信満々に言わなきゃならないじゃないですか。その辺はどうですか？</p>
+
+<p><strong>石塚</strong>  いや、だから自信満々に言うんだよね。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  内心ドキドキしている時もあるんですか？ それとも、たいてい合ってるから、全然オッケーなのか。</p>
+
+<p><strong>石塚</strong>  まったく出来ないってことは、多分無いからさ (笑) でも、やっぱり違いましたって言ったこともあるかな。</p>
+
+<p><strong>ささだ</strong>  私は今なぜか教員みたいなことをやってるんですけど、学生を持つと、こうだっていう風に指導しないといけないじゃないですか。でも、今の自分を考えると、絶対にそんな自信を持っていえないなと思って (笑) 似たような話だなという。</p>
+
+<p><strong>石塚</strong>  それに近いのは、どっちかというとトレーニングの方なのかなぁ。でもちょっと違うかな。</p>
+
+<p><strong>arton</strong>  メンタリングなんだから、相手がもうスキルがあるというのを前提にすればいいんだから。相手を納得させることが出来ればいいんですよね。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>arton</strong>  だから、確かに私の目から見ても、これは整合性が取れていて、まったく問題ないようですね。って、それは問題あるかどうかは、実は分からない。それを聞いた、それを出して来た側が、うん、じゃこれで行けますねっと、こう自信を持たせるのが味噌なんじゃない？ コンサルってのは。</p>
+
+<p><strong>石塚</strong>  そうそう。出来た結果に対して、まったく責任取らないしね。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど。分かりきった事実を教えるとか、分かりきった仕事をするとか、何か要件を満たすプログラムを作るとかだったら、大体やり方は分かってきてるんですけど、その辺が経験が全然無いので。</p>
+
+<p><strong>石塚</strong>  経験していくしかないんだろうね。それこそメタレベルなんだ、これは。</p>
+
+<p><strong>arton</strong>  俺、この手の話で初めて納得が言った話があって。それまでは、コンサルってくだらない仕事だなって思ってたわけ。でも違うんだよ、と。人間って言うのは、自分だけでは納得が出来ないんだと。例えば、タイガー・ウッズにゴルフのコーチは必要ですか？というとやっぱり必要で、実際に名コーチってのが付いている。いるんだけど、ゴルフの技術を教えるわけじゃないし、そもそもウッズにゴルフを教えることができる人間なんていない。では彼はいったい何のためにいるのかというと、うまくいった時の感触を思い出させたり、認めたり励ましたりして、納得させるんだということらしい。でもそれにはやっぱり技術がいるし、それで本来の実力以上のものを引き出すことが出来るっていうんだ。だからそこで金を取るのは当たり前で、むしろ教えれば済む人間に教えるのと違って、教える必要の無い人間を納得させるのは、すごく難しい技術がいるのだ。というのを、聞いて、そうかなるほど、言われてみればそうだなと。</p>
+
+<p><strong>石塚</strong>  教えなくちゃいけないほどのレベルでもないかも知れないけどね。大体、初めてやる人の方が多いんで (笑)</p>
+
+<p><strong>ささだ</strong>  それはそれで、トレーニングっぽい話になると。</p>
+
+<p><strong>石塚</strong>  そういう意味では、システムっていうか、自分のやることは良く知ってるんだよね。それは確かだね。想像も付かないようなことをやっている人もいたからね。口では言えないけど (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  確かに疑わしい仕事だよね。そう言われてみればね。</p>
+
+<p><strong>ささだ</strong>  Web とかでは、コンサル？ っていうのは多いですけどね。</p>
+
+<p><strong>石塚</strong>  だから、コンサルっていう言葉は使わないんだよね。メンタリ……余計分からないか (笑)</p>
+
+<p><strong>arton</strong>  コンサルって、逆に幅が広すぎるしな。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>ささだ</strong>  学生が、コンサル行きたいって言ってて。何するのそんな所行ってって。私が良く知らないので聞いてしまった。</p>
+
+<p><strong>arton</strong>  悪い言い方をしちゃうと、確かに人を丸め込む詐欺師的な戦略コンサルの考えがそうだよね。社長のところに行って、社長、こういう事したほうがいいですよって。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>arton</strong>  でも、社長が一番良く知っていて、でも迷っていて決断できないんだから、その戦略がコンサルが、あんたの考え方が正しい、っていって背中を押すのが金を払う価値がある点だって。</p>
+
+<p><strong>石塚</strong>  給料高いからね。アンダーセン<sup id="fnref:27"><a href="#fn:27" class="footnote">27</a></sup>ってまだあるんだっけ。</p>
+
+<p><strong>arton</strong>  ありますね。</p>
+
+<p><strong>石塚</strong>  そっか。</p>
+
+<p><strong>arton</strong>  でも、技術者視点から見ると、くっだらない仕事だなって思うところはあるよね (笑)</p>
+
+<p><strong>石塚</strong>  そうそう。だからそういう意味じゃ、技術的にしっかりして無いとまずいよね。個人的な考えだけど。うちも技術的にどうなのかなって思う人が、やってるとは言わないけどさ (笑)</p>
+
+<p><strong>ささだ</strong>  石塚さんに頼めば大丈夫と。</p>
+
+<p><strong>石塚</strong>  (笑) いや、大丈夫かどうかは知らないけど。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<h3 id="その他">その他</h3>
+
+<h4 id="普段の生活スタイル">普段の生活スタイル</h4>
+
+<p><strong>ささだ</strong>  普段の生活スタイル。</p>
+
+<p><strong>石塚</strong>  普段の生活スタイル？ だれた生活してるかな (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  でも、お客さんのところに行くのにはやっぱり朝は早いですよね。</p>
+
+<p><strong>arton</strong>  お客さんのところに行くほうが、むしろ楽なんじゃないのかなぁ。</p>
+
+<p><strong>ささだ</strong>  そうなの？</p>
+
+<p><strong>arton</strong>  ネクタイするとかそういうのは別の話にすると、朝 9 時に来いって客はあんまりいないよね。</p>
+
+<p><strong>石塚</strong>  9 時はあまりいない。</p>
+
+<p><strong>ささだ</strong>  自分たちも準備あるし？</p>
+
+<p><strong>arton</strong>  そう。そこに対して、直接お客さんのところに回すって行ったら、その時点で 9 時に行かなくても済むって話になるじゃん。</p>
+
+<p><strong>石塚</strong>  9 時、8 時半……、なんかそういう会社もある。どういう会社とは言わないけどさ。</p>
+
+<p><strong>ささだ</strong>  9 時は大変？</p>
+
+<p><strong>石塚</strong>  大変だよなぁ。朝早いし。。。</p>
+
+<p><strong>ささだ</strong>  で、何時ぐらいまでやってるんですか？</p>
+
+<p><strong>石塚</strong>  終わるのは、そんなに遅くまでやってないんだよね。</p>
+
+<p><strong>ささだ</strong>  今日のインタビューは 18 時からって話でしたけど、無理していただいた感じですか？ それとも 18 時ぐらいだったら大丈夫？</p>
+
+<p><strong>石塚</strong>  裁量労働制だからさ、時間は比較的自由になるんだよね。</p>
+
+<p><strong>ささだ</strong>  なるほど。ちゃんとパフォーマンスさえ出せば。</p>
+
+<p><strong>石塚</strong>  パフォーマンスが出てるかって問題もあるんだけどさ (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど。普通に週二日は休んでる？</p>
+
+<p><strong>石塚</strong>  そう。</p>
+
+<p><strong>ささだ</strong>  素晴らしい。</p>
+
+<p><strong>石塚</strong>  今はそんなに忙しくないからな。最近は、土日に出たことは無いと思うけどね。その場で仕事するのが基本だからさ (笑) いいのかなって思わないでもないけど。まぁいいんじゃないのかな (笑)</p>
+
+<h4 id="仕事とプライベートの両立">仕事とプライベートの両立</h4>
+
+<p><strong>ささだ</strong>  仕事とプライベートの両立は。これは答えづらいですよね。</p>
+
+<p><strong>石塚</strong>  仕事は今遅くなることも無いしね。</p>
+
+<p><strong>arton</strong>  仕事で irb 作ってるって事もなさそうだし、家帰ってモデル考えてるってこともあまりなさそうな気もするし<sup id="fnref:28"><a href="#fn:28" class="footnote">28</a></sup>。</p>
+
+<p><strong>石塚</strong>  家でって言うか、在宅勤務も可だから。そういう意味では境界があいまいなところが無くは無いんだけどね。</p>
+
+<p><strong>ささだ</strong>  在宅勤務って日もあるんですか？</p>
+
+<p><strong>石塚</strong>  今日は在宅勤務って日もあるよ。箱崎の場合は、そこで仕事をしなくちゃいけないって所ではないんだよね。</p>
+
+<h4 id="趣味">趣味</h4>
+
+<p><strong>ささだ</strong>  家で何かしていること。趣味。</p>
+
+<p><strong>石塚</strong>  普段家で何をしてるか？ Ruby でプログラムを組んでるか。違うか (笑) プログラムが趣味なんだよね、一応ね。仕事じゃないんだよね。今は仕事はモデリングなんだけど。</p>
+
+<p><strong>ささだ</strong>  じゃ、プログラミングは結構な時間を。で、それは Ruby でやってると。</p>
+
+<p><strong>石塚</strong>  Ruby か、Elisp か。ぐらいかな。TeX もちょっとやるけどね。</p>
+
+<p><strong>ささだ</strong>  TeX で何をやるんですか？</p>
+
+<p><strong>石塚</strong>  決まりきったフォーマットを印刷するのに。</p>
+
+<p><strong>ささだ</strong>  それは趣味なんですか？</p>
+
+<p><strong>石塚</strong>  趣味じゃない (笑) なんかの趣味を、TeX で書くんだろうね。</p>
+
+<p><strong>ささだ</strong>  あー。で、そのほかの趣味というのは。</p>
+
+<p><strong>石塚</strong>  趣味って言うか、旅行の計画とかを TeX で書いたりとか。いや、TeX じゃないんだけど、何かアウトラインのやつを TeX に変換する。印刷する手段として TeX を使うんだね。</p>
+
+<p><strong>ささだ</strong>  それは分かります。しかし、旅行に行くために、プランを書くんだ、ちゃんと。</p>
+
+<p><strong>石塚</strong>  スケジュール立てるよ。結構細かいのを立てるよ。</p>
+
+<p><strong>ささだ</strong>  それは会社の研修旅行とか、社員旅行とかじゃなくて。</p>
+
+<p><strong>石塚</strong>  自分ちの。</p>
+
+<p><strong>ささだ</strong>  自分ちの (笑) 立てます？</p>
+
+<p><strong>arton</strong>  でも、京都に何とかの旅行に行ったら、9 時 40 分の新幹線に乗るからとか、そういうことの話じゃなくて？</p>
+
+<p><strong>ささだ</strong>  いや、Web で見るけど、そんなのをメモするぐらいですよ、私は。大体この辺で間に合うとか、そんな。</p>
+
+<p><strong>arton</strong>  鉄道とか凝ったりする人は、きちんとやるんじゃないの？ ここでこう乗り換えて、この電車に乗ってとか。</p>
+
+<p><strong>石塚</strong>  まぁ、電車じゃないけどね。車だけど、車でもさ、その日のうちに何処を周って何処を周って、何処に行けるとかさ、計画立てないと何処に行けるかわからないじゃん。大体時間を読まないと。</p>
+
+<p><strong>ささだ</strong>  あー、なるほど。すげー。そもそもそういう旅行を全然していないので。</p>
+
+<p><strong>石塚</strong>  そうか。</p>
+
+<p><strong>arton</strong>  そこで TeX が出てくるところがすごいな。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  まぁ、やるとしてもパンフレット見たいのに丸書いて、ここに行きたいとかで。で、適当に行くかって。まぁ、それでもちろん時間とかぐちゃぐちゃになるんですけど。</p>
+
+<p><strong>石塚</strong>  そうでしょ。まぁ、計画立てたからって、まともに着くのかは別なんだけどね。</p>
+
+<p><strong>ささだ</strong>  旅行とかはよく行くんですか。</p>
+
+<p><strong>石塚</strong>  旅行は結構ね。沖縄以外は全部車で行った。</p>
+
+<p><strong>ささだ</strong>  それは、通ったじゃなくて、そこが目的地で？</p>
+
+<p><strong>石塚</strong>  通っただけってのもあるかな。</p>
+
+<p><strong>arton</strong>  埼玉県あたりは通っただけとかありそうだな。</p>
+
+<p><strong>石塚</strong>  埼玉県は元々住んでるとこだから (笑) でも、宿泊とかメインの旅行地として行っていないのは、多分ね、一県か二県ぐらいしかない。</p>
+
+<p><strong>ささだ</strong>  それはすごいですね。</p>
+
+<p><strong>arton</strong>  車は何ですか？</p>
+
+<p><strong>石塚</strong>  車はセフィーロなんですけど。</p>
+
+<p><strong>arton</strong>  おー。</p>
+
+<p><strong>石塚</strong>  あんまり車は関係ないのかもしれない。</p>
+
+<p><strong>arton</strong>  いや、あんまり乗り心地が悪いと、車で色々な所に行かないんじゃ無いかなって。</p>
+
+<p><strong>石塚</strong>  あー、それはあるかもしれないよね。一回で大体、一週間から十日ぐらいでぐるぐる周るんだよ。</p>
+
+<p><strong>ささだ</strong>  そんなに休暇が取れるんですか。</p>
+
+<p><strong>石塚</strong>  休暇は思いっきり取っちゃうよね。外資系は結構取りやすいんだよね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  ちゃんとスケジュール合わせないといけないんだよね。こういうのをやってるときはね。</p>
+
+<p><strong>ささだ</strong>  これが空くから、このプロジェクトが終わったら行こうとか。</p>
+
+<p><strong>石塚</strong>  一所懸命前倒ししたりとか。</p>
+
+<p><strong>arton</strong>  労働時間って、アクティビティ図で描くとか、そういうことはしないんですか？</p>
+
+<p><strong>石塚</strong>  計画を？ しないしない (笑) アクティビティ図は描かないもん、とか言って違うか (笑) ……旅行は結構しましたね。</p>
+
+<p><strong>ささだ</strong>  年に何回も行かなきゃいけないですよね。</p>
+
+<p><strong>石塚</strong>  いやもう、結婚してから十年ぐらいだから、年に一、二回ぐらいで大丈夫なんじゃないかな。</p>
+
+<p><strong>arton</strong>  一回あたり四県入れば、一年に一回でも四十県。</p>
+
+<p><strong>ささだ</strong>  あー、なるほど。</p>
+
+<p><strong>石塚</strong>  大体、三年で一周期なのかな。北の方か、真ん中か、南のほうかなんだよね。</p>
+
+<p><strong>ささだ</strong>  そうか、一回の旅行で一つの所にずっといるという訳ではないんですね。</p>
+
+<p><strong>石塚</strong>  そう。転々と移動していくんだよね。北の方に行くと、最後は北海道に入ってフェリーで帰ってくるとかさ。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>arton</strong>  だから TeX が要るんじゃない、考えたら。一箇所行って、そこで泊まっちゃったら別に要らないから。</p>
+
+<p><strong>ささだ</strong>  スケジュールはそんなにキッチリしなくても良いと。</p>
+
+<p><strong>石塚</strong>  そう。京都とかも行くけど、(計画は)立てるけどあんまし役に立たないよね (笑)</p>
+
+<p><strong>ささだ</strong>  へぇー。旅行以外だと何かあります？</p>
+
+<p><strong>石塚</strong>  本とかだと、最近はあんまり読んでないけど SF とかね。</p>
+
+<p><strong>ささだ</strong>  やっぱり SF だ。</p>
+
+<p><strong>石塚</strong>  SF の本は結構一杯あるよね、うちね。本が多いってのは SF に限らないんだよな。</p>
+
+<p><strong>ささだ</strong>  どんな本を読むんですか？</p>
+
+<p><strong>石塚</strong>  それが最近はんまり読んでないんだよね。</p>
+
+<p><strong>ささだ</strong>  SF が多い？他も満遍なく多い？</p>
+
+<p><strong>石塚</strong>  小説系は SF が多いんじゃないかな (笑) あとはまぁ、数学とか物理とかそういう本もあるよ。化学とかも。あと、美術関係も結構多い。</p>
+
+<p><strong>ささだ</strong>  出てれば買うって感じなんですか？</p>
+
+<p><strong>石塚</strong>  抑えてるんだけどね。本って重いしね。増えるしね。今だから壁一面が書棚になってるんだよね。横が五メートルぐらいあるのかな。結構入ってるみたい。</p>
+
+<p><strong>ささだ</strong>  なるほど。濫読ってほどでもないのか。抑えてると。</p>
+
+<p><strong>石塚</strong>  抑えてるって言うか、買うのを抑えてるんだよね。</p>
+
+<p><strong>ささだ</strong>  買って読むわけではないということ？</p>
+
+<p><strong>石塚</strong>  そこが問題なんだけど、積読っていうのかな (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  SF とかも、サンリオ文庫って知ってる？あれが無くなったじゃん。あん時にね、一杯買いだめしたんだよ。P・K・ディックはあそこでほとんど出てたからね。全部買ったよ、頑張って。</p>
+
+<p><strong>ささだ</strong>  でも結構早川とかで出てますよね。</p>
+
+<p><strong>石塚</strong>  復活してきてるよね。</p>
+
+<p><strong>arton</strong>  でもザップガン<sup id="fnref:29"><a href="#fn:29" class="footnote">29</a></sup>とか出てすぐにまた無くなっちゃったけどね。</p>
+
+<p><strong>ささだ</strong>  そうなんだ。一番最近読んだ本は？</p>
+
+<p><strong>石塚</strong>  読んだ本？ Rails 本 (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  全部は読んでないけど。</p>
+
+<p><strong>arton</strong>  小説では？</p>
+
+<p><strong>石塚</strong>  小説で読んだのって言ったら、なんだろうな。スタニスワフ・レムの「捜査」だったかな。いや「枯草熱」だったかな？どっちか良く覚えてないな。結構レムとか P・K・ディックとか好きかな。</p>
+
+<p><strong>arton</strong>  ディックとレムって別に近いジャンルって感じがしないんだけど。</p>
+
+<p><strong>石塚</strong>  おかしいなぁ。近いんだけどなぁ。うーん、近くないのかな。</p>
+
+<p><strong>arton</strong>  ジャンルは違うけど、リアリティがあるようでないっていう意味では近いのかな。</p>
+
+<p><strong>石塚</strong>  レムも好きだけど、J・G・バラードが一番好きだよね。バラードが絡むと、関係性があるのかな。何だろう。環境なのかな。環境オタクなんだよね(笑)。</p>
+
+<p><strong>arton</strong>  あー、なるほど。</p>
+
+<p><strong>石塚</strong>  なんていうんだろうな。バラードは完全にそうだよね。</p>
+
+<p><strong>arton</strong>  何か変な世界があって、そこに放り込まれて困ったりとか。</p>
+
+<p><strong>石塚</strong>  そうそう。困っているようで、実は、喜んでるんだよね<sup id="fnref:30"><a href="#fn:30" class="footnote">30</a></sup>。</p>
+
+<p><strong>arton</strong>  そうだな。</p>
+
+<p><strong>石塚</strong>  ディックも何か似ているような気がする。</p>
+
+<p><strong>arton</strong>  楽しいですよね。レムもそうなのかな。</p>
+
+<p><strong>石塚</strong>  レム……ソラリスとかそうなんじゃないの。</p>
+
+<p><strong>arton</strong>  あー、そうか。</p>
+
+<p><strong>石塚</strong>  もうちょっと違うんでしょうけどね。レムは国が違うからね。</p>
+
+<p><strong>ささだ</strong>  分かる人には楽しんでもらえる会話なんですかね (笑)</p>
+
+<p><strong>石塚</strong>  全然 SF とかは読まない？</p>
+
+<p><strong>ささだ</strong>  いや、読むんですけど、そこまではあんまり読まないですね。ディックとかはこの間読みましたけど。</p>
+
+<p><strong>arton</strong>  ザップガン？</p>
+
+<p><strong>ささだ</strong>  いや、ザップガンじゃなくて。</p>
+
+<p><strong>arton</strong>  そうか、残念だな。</p>
+
+<p><strong>ささだ</strong>  何だったかな。麻薬のやつなんだけど、みんな麻薬が出てくるか。</p>
+
+<p><strong>arton</strong>  ヴァリス？</p>
+
+<p><strong>ささだ</strong>  ヴァリスとか。</p>
+
+<p><strong>arton</strong>  ザップガンみたいな、読んで楽しいやつを読みなよ。</p>
+
+<p><strong>石塚</strong>  ザップガンはまだ読んでない気がするな。</p>
+
+<p><strong>ささだ</strong>  積読ですか。</p>
+
+<p><strong>石塚</strong>  やっぱ一生かけて読まないともったいないじゃん。P・K・ディックの本はもう出ないんだから (笑)</p>
+
+<p><strong>ささだ</strong>  なるほどね。</p>
+
+<p><strong>石塚</strong>  趣味の話だったよね？最近はベランダ園芸にはまっててさ (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  それはご夫婦で。</p>
+
+<p><strong>石塚</strong>  僕がほとんどやってるような感じだけどさ (笑)</p>
+
+<p><strong>arton</strong>  花ですか。それともハーブとかそういうやつですか。</p>
+
+<p><strong>石塚</strong>  食べ物。</p>
+
+<p><strong>ささだ</strong>  何を作るんですか。</p>
+
+<p><strong>石塚</strong>  ハーブ類とか結構多いよ。思い出すだけでも結構大変なんだけど。</p>
+
+<p><strong>ささだ</strong>  ほー。</p>
+
+<p><strong>石塚</strong>  聞きたい？</p>
+
+<p><strong>ささだ</strong>  聞きたい。</p>
+
+<p><strong>石塚</strong>  本当に？ あ、これは Excel で管理してるんだな。だめだな。</p>
+
+<p><strong>ささだ</strong>  Excel ？</p>
+
+<p><strong>石塚</strong>  Excel からは結構離れられないんだよね。</p>
+
+<p><strong>ささだ</strong>  Excel で何を管理してるんですか？</p>
+
+<p><strong>石塚</strong>  日記。</p>
+
+<p><strong>ささだ</strong>  日記？</p>
+
+<p><strong>石塚</strong>  日記というより日誌だな。水をやったとか、いつ肥料をやったとか。書いておかないと忘れちゃうんで。</p>
+
+<p><strong>ささだ</strong>  おー、すげー。</p>
+
+<p><strong>arton</strong>  これ、るびまにさぁ、載せたいね。園芸管理。</p>
+
+<p><strong>石塚</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  すげー。雰囲気が出るのできっと。</p>
+
+<p><strong>石塚</strong>  今は何個あるんだろう。</p>
+
+<p><strong>ささだ</strong>  え、ベランダにそんなに植えてるんですか？</p>
+
+<p><strong>石塚</strong>  (黙々と数えて) 40 鉢以上あるな。種類だと、20 種類ぐらいかな。</p>
+
+<p><strong>ささだ</strong>  ベランダって、そんなにでかいんですか？</p>
+
+<p><strong>石塚</strong>  うちは、結構広いよ。今、80 平米ぐらいあるかな。</p>
+
+<p><strong>ささだ</strong>  ベランダが！？</p>
+
+<p><strong>arton</strong>  本棚で壁一面で五メートルだからさ。</p>
+
+<p><strong>ささだ</strong>  それはベランダじゃなくて、庭ではなく？</p>
+
+<p><strong>石塚</strong>  庭じゃない。マンションなので。</p>
+
+<p><strong>ささだ</strong>  すごいですね、何か。</p>
+
+<p><strong>石塚</strong>  (園芸がやりたいがためにバルコニーが)大きいところにしたんだもん。でも、昔のそうじゃなかった頃も結構やってたんだよ。去年、おととしぐらいだと……。</p>
+
+<p><strong>ささだ</strong>  最近引っ越されたんですか？</p>
+
+<p><strong>石塚</strong>  そう。去年引っ越して。でも少ないなやっぱり。今年は多いかも。数えられるもんな、これ。15 株ぐらいかな。これ普通のマンションですね。ベランダの中が鉢だらけで身動きできなかった。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  (バルコニー等は)70 だか 80 ぐらいはあると思う。東西南北にあるから。東西南北にあると言うのは変な表現だけど。</p>
+
+<p><strong>arton</strong>  ベランダが東西南北にあるんですか？</p>
+
+<p><strong>石塚</strong>  なんとなくそうなんですよね。</p>
+
+<p><strong>arton</strong>  塔みたいなマンション？</p>
+
+<p><strong>石塚</strong>  いや、これは不思議なんだけど、一応角部屋なんでね。部屋の形が大体こんな感じで、ここが玄関があって……。ここがメインの部屋なんだけど、ここが吹き抜けなんだよ。こっちが南なんだよね。こっち側と、ここが入れないエリアで、バルコニーっていうか、外になっているのはこことこことこことここにあるんですよね。なんとなく東西南北にあるって言う。</p>
+
+<p><strong>arton</strong>  こういう塔がどーんと建ってるんじゃなくて、こういうなんかぼこんぼこんっていう吹き抜けをうまく利用してるのか。</p>
+
+<p><strong>石塚</strong>  そうそう。こっち側はこっち側で、吹き抜けがこんな感じであるんですよ。もったいないつくりなんだけど。ここ部屋にすればいいだろうって話も無いでもないんだけど (笑) ここなんか(別の号室をさして)すごいんだ。ここは風呂場になっていて、ここで出入りできるの。外に。</p>
+
+<p><strong>arton</strong>  へぇー。</p>
+
+<p><strong>石塚</strong>  どこもそうなんだけど、ミストサウナが付いていて、ここのうちは素晴らしい。暑くなったら外で涼めるという。</p>
+
+<p><strong>ささだ</strong>  何階ですか？</p>
+
+<p><strong>石塚</strong>  七階。まぁ、一番上なんだけど。</p>
+
+<p><strong>ささだ</strong>  すげー。IBM 儲かるんだなぁ (笑)</p>
+
+<p><strong>石塚</strong>  IBM は関係ないんじゃない。その前からあんまり給料は変わってないので。</p>
+
+<p><strong>ささだ</strong>  そうなんだ。なるほど。でもいい趣味ですよね。仕事とかで忙しい週とかあるじゃないですか。そういう時は、世話はどうするんですか？</p>
+
+<p><strong>石塚</strong>  夜。</p>
+
+<p><strong>ささだ</strong>  夜。水遣りはこういう日記をちゃんとつけて。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>ささだ</strong>  へぇー。</p>
+
+<p><strong>石塚</strong>  夏は結構つらいんだよね。私も知らなかったんだけど、ルーフバルコニーっていうのは、今年初めてなんですよ。昔は東側で屋根付きだったんで、午前中にしか日が当たらないのね。でもここって、朝は日が当たらないけど、午前 11 時過ぎると日が当たり始めて、その後ずっと当たってるんで。結構苛酷な環境なのね。まぁ、普通の畑もみんなそうだけどね。</p>
+
+<p><strong>ささだ</strong>  生き物ってみんな待った無しですよね。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>ささだ</strong>  忙しいからちょっと、みたいなのはあれなので。</p>
+
+<p><strong>石塚</strong>  だから、一個鉢を枯らしちゃったけどさ。</p>
+
+<p><strong>ささだ</strong>  やっぱ難しい。</p>
+
+<p><strong>石塚</strong>  昔と違って日当たりが強烈なので、植物も疲れちゃうのがあるみたいね。</p>
+
+<p><strong>ささだ</strong>  うちのじいちゃん家は、午後 3 時とかになるとシャワーでガーっと水やりするようなのを作ってましたよ。</p>
+
+<p><strong>石塚</strong>  本当？ それは良いな。僕もそれにしようかな。</p>
+
+<p><strong>arton</strong>  それは自分でプログラムを作ったの？</p>
+
+<p><strong>ささだ</strong>  プログラムって言うか、そういう職だったんですよね。色々作るじいちゃんだったので。自分家でもそういう風につくったとか言ってましたけど。</p>
+
+<p><strong>石塚</strong>  昔、浜松で花博とかそういうのがあったんだけど、それでそういう暑さに弱いやつ向けにミストっていうか、何か出して温度を下げるとかやってたけどね。昔からあったんだろうね……。何の話だろう。</p>
+
+<p><strong>ささだ</strong>  趣味、趣味。</p>
+
+<p><strong>石塚</strong>  昔は結構旅行とか行って、一週間とか二週間とかいないことがあったんだけど。</p>
+
+<p><strong>ささだ</strong>  そうですよね。</p>
+
+<p><strong>石塚</strong>  ここはたぶん、屋根が付いてるんで大丈夫なんで、多分こっちに全部集めるのかなとか色々考えてるんだけどね。今の水遣りの頻度だと、とても多分耐えられないよね。</p>
+
+<p><strong>ささだ</strong>  水遣りのバイトを雇う。</p>
+
+<p><strong>石塚</strong>  そういう手もあるよね。今は自動で水をやる機械とかがあるんで、そういうのを入れるというのもあるかなと思うんだよね。あと、旅行行こうと思ったら、その年は作らないとかね。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  移動できないのもあるんだよね。今は苦瓜作ってるんだけどさ。西日対策を兼ねて。うち、ここが実はね、こうなってて、ここ全面ガラスになってるんですよ。真西から日がまともに当たるって言う素晴らしい環境なんだけどさ (笑) こことここに苦瓜を育てている。</p>
+
+<p><strong>arton</strong>  苦瓜って、吊るして作るんですか？</p>
+
+<p><strong>石塚</strong>  そうそう<sup id="fnref:31"><a href="#fn:31" class="footnote">31</a></sup>。</p>
+
+<p><strong>arton</strong>  それでいい感じなのか。</p>
+
+<p><strong>石塚</strong>  そうなんですよ。学校とかで、緑のカーテンとか言って広めてるみたいですよ。</p>
+
+<p><strong>arton</strong>  しかも苦い。</p>
+
+<p><strong>石塚</strong>  苦いけどカーテンにもなるし食べれるし、一石二鳥だよね。素晴らしい。</p>
+
+<p><strong>arton</strong>  苦瓜でカーテンって気が利いてるなぁ。</p>
+
+<p><strong>石塚</strong>  うん、そうそう。見た目は結構かわいいし。</p>
+
+<p><strong>arton</strong>  ぶつぶつしてて面白いですよね。</p>
+
+<p><strong>石塚</strong>  そうじゃなくて、茎って言うか幹とか葉っぱが。</p>
+
+<p><strong>arton</strong>  あ、そうなんだ。</p>
+
+<p><strong>石塚</strong>  やっぱね、ヘチマは大丈夫なのかも知れないけど、キュウリとかインゲンとか、ああいう野菜系は幹が頑丈なんだよね。で、見た目が良くないからイマイチだね (笑) だって、なんかごついのがさ、ここの窓の前にあってもさ、それは見栄えしないでしょ (笑) 苦瓜でいいのかなって。それで。</p>
+
+<p><strong>ささだ</strong>  なるほど。ちなみに作ったのを食べるんですか？</p>
+
+<p><strong>石塚</strong>  たべるために作ってるんじゃない、苦瓜とかはさ (笑) 食べてるよ。</p>
+
+<p><strong>ささだ</strong>  おいしいですか？</p>
+
+<p><strong>石塚</strong>  なんとなく (笑) 地面に植わってるんじゃなくて、鉢でしょ？ だからちょっと小さい感じがするけどね。でも、トマトも作ってるんだけど、これは結構旨いよね。甘いし。普通の(売り物の)野菜って、結構緑のときに取っちゃう。で、取った後に熟成させるってやるじゃない。</p>
+
+<p><strong>ささだ</strong>  スーパーで買うトマトって、全然甘くないですよね。</p>
+
+<p><strong>石塚</strong>  そうそう。でも、自分家でやると、完全に熟成したのが採れるからね。トマトは良かったなと思って。</p>
+
+<p><strong>ささだ</strong>  なるほど。いい趣味ですね、それは。</p>
+
+<p><strong>石塚</strong>  いい趣味かどうかは分からないよ。結構手間が掛かってるからね。会社換算で、時間単位に直すと、これはいくらコストが掛かってるんだって思っちゃうんだけど。</p>
+
+<p><strong>ささだ</strong>  (笑) 他に何かありますか？ 趣味で。</p>
+
+<p><strong>石塚</strong>  趣味で？他に何かあったかな。ま、そんなもんかな。威張れるといえば、この間、旅行で青函トンネルを歩いたんだよね。</p>
+
+<p><strong>arton</strong>  歩くんですか？</p>
+
+<p><strong>石塚</strong>  うん。青函トンネルの中を。時々そういうツアーをやっててさ<sup id="fnref:32"><a href="#fn:32" class="footnote">32</a></sup>。</p>
+
+<p><strong>ささだ</strong>  それはどっちかに車を置いておいて？</p>
+
+<p><strong>石塚</strong>  あの時は、青森まで車で行って、青森から電車で。海底駅が二つあるのね。北海道側と青森側で。で、北海道側の海底駅から、青森側の海底駅まで。二十何キロ歩いたんですけどね。</p>
+
+<p><strong>ささだ</strong>  へぇー。</p>
+
+<p><strong>arton</strong>  やっぱり、上り坂でつらいとかそういうのがあるんですか？</p>
+
+<p><strong>石塚</strong>  死んだ。最後。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  最後、地下から地上まで歩いて上がるんだけど<sup id="fnref:33"><a href="#fn:33" class="footnote">33</a></sup>、それは死にましたね (笑) それに、行って楽しいところじゃないんだよね、これが (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>arton</strong>  別にガラス張りになっていて、魚が見えるとかそういうんじゃ無いんですよね。</p>
+
+<p><strong>石塚</strong>  ただのトンネルなんで。それに結構湿度が高い。すべるし、良い所じゃないね。</p>
+
+<p><strong>arton</strong>  それを聞くと、最悪なところじゃないですか (笑)</p>
+
+<p><strong>石塚</strong>  そうそう。でもね、うちらはただ青函トンネルの中を見物したいと思って行っただけなんだけど、結構ウォーキング系の人が参加してたみたい<sup id="fnref:34"><a href="#fn:34" class="footnote">34</a></sup>。</p>
+
+<p><strong>arton</strong>  空気ってどうなんですか？ ここで排気ガスがバンバンやりながら車が来てって、どう考えても死にそうな気がするんですけど。</p>
+
+<p><strong>石塚</strong>  青函トンネルって車は無いから。</p>
+
+<p><strong>arton</strong>  あ、車は無いんだ。電車だけだっけ。</p>
+
+<p><strong>石塚</strong>  そう。ただ、結構風は強いんですよね。どっちからどっちに流してるんだったかな。青森側から北海道側に流してるのかな。</p>
+
+<p><strong>arton</strong>  ちょっとまてよ。車が通らなくても、空気をどっかから入れないと、どう考えても……。</p>
+
+<p><strong>ささだ</strong>  だから風を。</p>
+
+<p><strong>arton</strong>  あ、そうか。風が強いって、人工的に入れてるのか。</p>
+
+<p><strong>石塚</strong>  そうそう。それで、中は湿度 100%<sup id="fnref:35"><a href="#fn:35" class="footnote">35</a></sup>。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  あれが起こる。霧箱現象が起こる。霧箱現象って言って分かるかな。</p>
+
+<p><strong>arton</strong>  分からない。</p>
+
+<p><strong>石塚</strong>  電車が通りすぎると、急激に圧力が下がるじゃないですか。すると、それによって結露するって言うか、空気中の水蒸気が水に変わる。つまり霧が発生するんですよね。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  写真を撮りたかったんだけど、撮れないんだな、これが。</p>
+
+<p><strong>arton</strong>  涼しければいいけど、暑い？</p>
+
+<p><strong>石塚</strong>  涼しいってほどでもないけど、暑いってほどでもないな。</p>
+
+<p><strong>arton</strong>  あ、じゃあどうってことは無いのかな。</p>
+
+<p><strong>ささだ</strong>  いつ行ったんですか？</p>
+
+<p><strong>石塚</strong>  それはね、真夏。たしか 8 月 20 日ぐらいじゃなかったかな、行ったの。</p>
+
+<p><strong>ささだ</strong>  じゃあ、むちゃくちゃ暑い……。</p>
+
+<p><strong>石塚</strong>  トンネルの中は関係ない。一定なんだよ、やっぱ。</p>
+
+<p><strong>ささだ</strong>  へぇー。</p>
+
+<p><strong>石塚</strong>  大体、二十何度だったかな……<sup id="fnref:36"><a href="#fn:36" class="footnote">36</a></sup>。</p>
+
+<p><strong>arton</strong>  でも歩いてたらやっぱ蒸し暑いな。</p>
+
+<p><strong>石塚</strong>  うん、ちょっと蒸し暑い感じ。でも汗はかいてないから、もうちょっと低かったのかも。</p>
+
+<p><strong>arton</strong>  汗は出ないんじゃないんですか？湿度 100% だと。</p>
+
+<p><strong>石塚</strong>  いや、汗は出るけど、乾かない。</p>
+
+<p><strong>arton</strong>  あ、そっかそっか。</p>
+
+<p><strong>石塚</strong>  後、カミオカンデも行きましたけどね。</p>
+
+<p><strong>ささだ arton</strong>  おー。</p>
+
+<p><strong>石塚</strong>  カミオカンデも抽選でツアーやってるんで。</p>
+
+<p><strong>ささだ</strong>  こんなのの上を歩く？</p>
+
+<p><strong>石塚</strong>  上を歩いたんだけど、ちょうど修理のための工事中で、あんまり中は見れなかった。カミオカンデって、もう一個カムランドってのを作ってるんだったかな。</p>
+
+<p><strong>ささだ</strong>  へぇー。そんなのがあるんだ。</p>
+
+<p><strong>石塚</strong>  そうそう。それもトンネルの中で。そこは寒い。めちゃくちゃ寒かったな、そこは。それこそ真夏に行ったたんだけど、中はすごい寒くて。</p>
+
+<p><strong>ささだ</strong>  なるほど。色々なところに行ってますね。</p>
+
+<p><strong>石塚</strong>  その頃は、ある病院の仕事をやってたんだけど、大人の社会見学シリーズで流行ったんですよね。その病院の人も、神岡の方は抽選で当たって行ったみたい。</p>
+
+<p><strong>arton</strong>  確かに、社会見学って面白いよ。</p>
+
+<p><strong>石塚</strong>  そうそう。そうなんですよ。</p>
+
+<h4 id="マシンのスペック">マシンのスペック</h4>
+
+<p><strong>ささだ</strong>  使ってるマシンのスペック。</p>
+
+<p><strong>石塚</strong>  これ？ T41 ってやつ。</p>
+
+<p><strong>ささだ</strong>  T41。やっぱ IBM。</p>
+
+<p><strong>石塚</strong>  IBM しか許さないよね、IBM はね。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  Lenovo になっちゃって、どうしようって言う。</p>
+
+<p><strong>石塚</strong>  あー、どうするんだろうね (笑) でも、Lenovo のマシン使ってる人もいますよね。</p>
+
+<h4 id="好きな女性のタイプ">好きな女性のタイプ</h4>
+
+<p><strong>ささだ</strong>  好きな女性のタイプ。</p>
+
+<p><strong>石塚</strong>  これねぇ。誰だって良いっていうのはあるんだけど (笑) 別にこう、っていうのは無いよ。でも絶対駄目っていうのはあるよね、例えば汚い人とかさ (笑) 性格が悪いのとかさ。いるじゃない。そうじゃなければ良いって訳でもないと思うんだけれども。</p>
+
+<p><strong>arton</strong>  大人の社会見学に付き合ってくれる人じゃないといやだとか。</p>
+
+<p><strong>石塚</strong>  (笑) ま、確かにそれはそうかもしれないね。でも付き合ってるときに分かるかどうか、分からないからね (笑)</p>
+
+<p><strong>arton</strong>  性格が良くても、嫌よって言われると悲しいね、ちょっと (笑)</p>
+
+<p><strong>石塚</strong>  そんな感じかな。好きって言われると中々。範囲は広いよね、きっとね。</p>
+
+<h4 id="今後の展望将来の夢">今後の展望、将来の夢</h4>
+
+<p><strong>ささだ</strong>  今後の展望、将来の夢など。</p>
+
+<p><strong>石塚</strong>  なんだろうな。</p>
+
+<p><strong>ささだ</strong>  家庭菜園をもっとすごくするとか。</p>
+
+<p><strong>石塚</strong>  そういう話？(笑)</p>
+
+<p><strong>ささだ</strong>  それでも良いし、今後の展望ですよ。将来の夢。</p>
+
+<p><strong>石塚</strong>  将来の夢？ やっぱ Ruby で世界制覇かな。ね。</p>
+
+<p><strong>ささだ</strong>  世界制覇 (笑) 何を？</p>
+
+<p><strong>石塚</strong>  やっぱ、IBM の中で、全員 Ruby しか使っちゃ駄目とかかな。</p>
+
+<p><strong>ささだ</strong>  IBM で Ruby 使っちゃ駄目とか聞いたけど (笑)。</p>
+
+<p><strong>石塚</strong>  Ruby 使っちゃ駄目？</p>
+
+<p><strong>ささだ</strong>  あんまり表立って使えないって言ってましたよ。納品は出来ないねぇって言ってましたね。</p>
+
+<p><strong>石塚</strong>  そうねぇ。納品はまだ出来ないねぇ。でも変わるんじゃないの？今、Project Zero って知ってる？何か、Groovy で Rails みたいなのを作ってる。</p>
+
+<p><strong>ささだ</strong>  あー、だからそれは Ruby は駄目だから、そっちやってるって言う話を聞きました。</p>
+
+<p><strong>石塚</strong>  使えないからなの？ だって Ruby でそれをやったって、すでにあるんだから駄目じゃん、ていうことじゃないの？(笑)</p>
+
+<p><strong>ささだ</strong>  あー、売れないってことで。</p>
+
+<p><strong>石塚</strong>  多分、VM で動かないと駄目という話じゃないのかな。VM で動いてるのが前提なんじゃないの。じゃ、JRuby で良かったんじゃないのって話もあるかもしれないけど。</p>
+
+<p><strong>ささだ</strong>  それは何か、制約が厳しくってという話もあるみたいで。</p>
+
+<p><strong>石塚</strong>  そういう理由なのかな。僕も良く知らないんだけどね。だって Groovy だと制約無いの？</p>
+
+<p><strong>arton</strong>  JCP で標準化されてるからオッケーとか、そういう話かもしれないですよ。</p>
+
+<p><strong>石塚</strong>  JCP？</p>
+
+<p><strong>arton</strong>  Java Community Process。Ruby って仕様あるの？って聞かれたときに、ん？ ってなってるじゃないですか。仕様が無いものは、サポートしようが無いものだっていう考え方でやってますよね。</p>
+
+<p><strong>石塚</strong>  それは……あんまり関係ないような気がするな、多分。</p>
+
+<p><strong>arton</strong>  いや、僕も関係ないと思うんだけど、でも、IBM さんだとうるさそうだなって気がする。仕様が無いものをどうやってサポートするのかねって言われると、うーん、としか反応するのは難しいかなと。お客さんから、この仕様はどうなってるって聞かれたときに、出せますかね。</p>
+
+<p><strong>石塚</strong>  うーん、難しいところだね。でも関係ないんじゃないの？出来たもんなんだから。</p>
+
+<p><strong>arton</strong>  それはそうなんだけど、その辺はうるさそうだなーって言うイメージがあるところだよね。</p>
+
+<p><strong>石塚</strong>  そうだよね、僕よりもたぶん良く知ってるから、IBM のこと。そうなのかもしれない。じゃあ、IBM を Ruby で制覇できないじゃんね (笑)<sup id="fnref:37"><a href="#fn:37" class="footnote">37</a></sup></p>
+
+<p><strong>ささだ</strong>  じゃ、それが野望ということで。制覇することが。何とか Ruby を作るの？ ECMA Ruby を作るとか。</p>
+
+<p><strong>arton</strong>  あー、そういうことかな。</p>
+
+<p><strong>ささだ</strong>  エンタープライズ Ruby 仕様とか言って。</p>
+
+<p><strong>arton</strong>  要らねぇじゃん、そんなの。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  夢ねぇ……。分かった。Ruby で食っていきたいというのが夢かな。何か最近は (Ruby で食べている人) 結構増えてきてさ。ささださんもそうだけどさ。一応そうだよね？</p>
+
+<p><strong>ささだ</strong>  まぁ、雇われた理由はそれですよね。</p>
+
+<p><strong>石塚</strong>  僕はまだ食べてないけど (笑) Ruby では食べれてないんだよね (笑)</p>
+
+<p><strong>ささだ</strong>  なるほど。Ruby で食べる。</p>
+
+<p><strong>arton</strong>  そういう意味では、俺は 1/4 ぐらい Ruby で食ってるわ。</p>
+
+<p><strong>石塚</strong>  1/4 か。もうちょっとリースを上げないと。僕は 0 だからな。</p>
+
+<p><strong>arton</strong>  いや、あんまり上げたくないな。</p>
+
+<p><strong>石塚</strong>  そうか (笑)</p>
+
+<p><strong>ささだ</strong>  食ってるって、出版？</p>
+
+<p><strong>arton</strong>  違う違う。会社の仕事で、自分のプロダクティビティのうち、1/4 ぐらいは Ruby ですねって感じかな。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<p><strong>石塚</strong>  今の仕事をやってるかぎり、プログラムすることないからね。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  無いことも無いのか。スクリプトとかはないことはないか。</p>
+
+<p><strong>ささだ</strong>  直接的な話はあまりないということですよね。</p>
+
+<p><strong>石塚</strong>  うん。
+<img src="/images/0021-Hotlinks/ishitsuka4.jpg" alt="ishitsuka4.jpg" /></p>
+
+<p><strong>ささだ</strong>  IBM が Ruby に本腰を入れて、Ruby の処理系のモデリングにガガガっと金を出すと。</p>
+
+<p><strong>石塚</strong>  処理系のモデリングって何？</p>
+
+<p><strong>ささだ</strong>  処理系の設計。</p>
+
+<p><strong>arton</strong>  処理系の設計を IBM がやるの？</p>
+
+<p><strong>ささだ</strong>  うん。</p>
+
+<p><strong>arton</strong>  要らないや、そんなもん。</p>
+
+<p><strong>ささだ</strong>  要らないのかなぁ。</p>
+
+<p><strong>arton</strong>  あんな楽しそうな Groovy が、あんなつまんない言語になっちゃったっていうのと同じ話になりそう。</p>
+
+<p><strong>ささだ</strong>  それは言語設計の話だから。処理系の実装の話。</p>
+
+<p><strong>arton</strong>  実装するに当たって、当然仕様に口出してきて、Groovy と同じようになっちゃう。</p>
+
+<p><strong>ささだ</strong>  でもそれは IronRuby でなりそうな話。</p>
+
+<p><strong>arton</strong>  IronRuby はならないでしょ。</p>
+
+<p><strong>ささだ</strong>  いやー……。ま、MS 仕様になると思うな、俺は。</p>
+
+<p><strong>arton</strong>  いや、むしろね、ウルトラサブセットにしかならないような気がするな。</p>
+
+<p><strong>ささだ</strong>  それだったら良いんですけどね。変な機能とか。</p>
+
+<p><strong>arton</strong>  変な機能っていうか、win32ole みたいなのが生ではいるとかそういう話になるんじゃないか。</p>
+
+<p><strong>ささだ</strong>  まぁ、それは全然いいですけど……。話がずれてきましたね。将来の夢は Ruby で食う。</p>
+
+<p><strong>石塚</strong>  それかな。</p>
+
+<h4 id="伊尾木さんとの関係">伊尾木さんとの関係</h4>
+
+<p><strong>ささだ</strong>  前のインタビューイ機械猫さんとの関係は?</p>
+
+<p><strong>石塚</strong>  機械猫っていうの？ あの人。</p>
+
+<p><strong>arton</strong>  そうなんですよ。</p>
+
+<p><strong>石塚</strong>  そうそう、あの人と出会ったのがさ、豆蔵の方で、Rails の紹介を夜にするって話で。</p>
+
+<p><strong>arton</strong>  いましたね、あの夜。</p>
+
+<p><strong>ささだ</strong>  俺もいたよ。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  ささださんもいたんでしたっけ、あの時。</p>
+
+<p><strong>arton</strong>  いたいた。</p>
+
+<p><strong>石塚</strong>  そっか。それで豆蔵で…。</p>
+
+<p><strong>ささだ</strong>  あれが最初だったんですか？</p>
+
+<p><strong>石塚</strong>  初めて会ったの。</p>
+
+<p><strong>ささだ</strong>  私もその時は確か、石塚さんと初めて会って。</p>
+
+<p><strong>石塚</strong>  そっか。全然覚えてない (笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  ということで, 前のインタビューイ伊尾木さんとの関係は。</p>
+
+<p><strong>arton</strong>  勉強会つながりでいいじゃん。</p>
+
+<p><strong>ささだ</strong>  では, 勉強会つながりで。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  勉強会っていうか、まぁそう言うことにしましょう(笑)</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<h4 id="次のインタビューイ">次のインタビューイ</h4>
+
+<p><strong>ささだ</strong>  次のインタビューイ。</p>
+
+<p><strong>石塚</strong>  どうしようかな。考えてなかったんだけど。</p>
+
+<p><strong>ささだ</strong>  誰がいいですかね。</p>
+
+<p><strong>石塚</strong>  東京都内がいいんだよね？</p>
+
+<p><strong>ささだ</strong>  ま、そうですね。</p>
+
+<p><strong>石塚</strong>  原さんが良かったかなと思ったんだけどさ。</p>
+
+<p><strong>ささだ</strong>  あ、原さん。お会いしてみたいですね、一度。俺、行こうかな。</p>
+
+<p><strong>arton</strong>  いいなぁ。</p>
+
+<p><strong>ささだ</strong>  頑張れば行けなくも無いんですけど、何処でしたっけ？</p>
+
+<p><strong>石塚</strong>  長岡。</p>
+
+<p><strong>ささだ</strong>  新潟かぁ。新潟まで行くのかぁ。どうやって行く口実を作ろう。</p>
+
+<p><strong>石塚</strong>  blade の引継ぎとか。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>arton</strong>  いやー、でも blade の話もそうだけど、色々と楽しそうだね。</p>
+
+<p><strong>ささだ</strong>  一度お会いして話は聞いてみたいとは思ってました。</p>
+
+<p><strong>石塚</strong>  原さんとは結構昔からなんだよね。</p>
+
+<p><strong>ささだ</strong>  Ruby の前から？</p>
+
+<p><strong>石塚</strong>  いや、Ruby で。</p>
+
+<p><strong>arton</strong>  最初の Ruby 本が圭樹さんとまつもとさんで、二冊目が原先生だよね。</p>
+
+<p><strong>ささだ</strong>  じゃ、原先生にちょっとお願いしてみますかね<sup id="fnref:38"><a href="#fn:38" class="footnote">38</a></sup>。</p>
+
+<h4 id="次のインタビューイへの質問">次のインタビューイへの質問</h4>
+
+<p><strong>ささだ</strong>  次のインタビューイへの質問。</p>
+
+<p><strong>石塚</strong>  原さん……この間の地震、大丈夫でしたかって聞いといて。</p>
+
+<p><strong>ささだ</strong>  それは大丈夫だったって ML に。</p>
+
+<p><strong>石塚</strong>  ML に出てた？</p>
+
+<p><strong>ささだ</strong>  出てた気がします。私が知ってるってことは。</p>
+
+<p><strong>arton</strong>  じゃ、僕も質問。石塚さんから、blade は Ruby 1.2 で動いているって話がありましたが、本当ですか。<sup id="fnref:39"><a href="#fn:39" class="footnote">39</a></sup></p>
+
+<p><strong>石塚</strong>  それ僕からなの？(笑)</p>
+
+<p><strong>arton</strong>  さっきそういう話してたじゃん。</p>
+
+<p><strong>ささだ</strong>  それは俺が。</p>
+
+<p><strong>arton</strong>  あそっか。</p>
+
+<p><strong>石塚</strong>  1.2 って、それはずいぶん古いよなぁ。</p>
+
+<p><strong>arton</strong>  ML の最初からってことなの？</p>
+
+<p><strong>石塚</strong>  かなり最初のころから出来てたよね。</p>
+
+<p><strong>ささだ</strong>  バージョンが変わると動かなくなるという。</p>
+
+<p><strong>arton</strong>  よくある話だ。</p>
+
+<p><strong>石塚</strong>  そんなに細かいところまでやってるのかなぁ。</p>
+
+<p><strong>arton</strong>  どうですかね。大雑把に動かなくなりますよ。例えば、検索とか入れちゃってると、Ruby/Namazu のバージョンが違って動かないとかあるし。</p>
+
+<p><strong>石塚</strong>  あー。それは blade と同じような話だな (笑)</p>
+
+<h4 id="若手に一言">若手に一言</h4>
+
+<p><strong>ささだ</strong>  若手に一言。</p>
+
+<p><strong>石塚</strong>  若手……モデリングしましょう、かな。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>ささだ</strong>  モデリングしましょう。では、具体的に何をすれば良いですか？例えばこの本を読め、とか。モデリングとは何ぞやとか、私も含めて分かってないので。</p>
+
+<p><strong>石塚</strong>  いや、それを言われると困るけどさ (笑) それを話し始めると一杯かかっちゃうけどさ。さっき、プログラマの時代がどうのこうのと行ったけど<sup id="fnref:40"><a href="#fn:40" class="footnote">40</a></sup>、モデリングももうちょっとやって欲しいなと。</p>
+
+<p><strong>ささだ</strong>  何すればいいですか？</p>
+
+<p><strong>石塚</strong>  UML で書くんだろうね。ソフトウェアのモデル化だからね。</p>
+
+<p><strong>ささだ</strong>  どういう訓練をすればいいんですかね。</p>
+
+<p><strong>石塚</strong>  訓練というか、そりゃ UML で書けばいいんだけどさ(笑)。</p>
+
+<p><strong>ささだ</strong>  たくさん書けば、いつかは？</p>
+
+<p><strong>石塚</strong>  やっぱり Ruby らしさとか、良いプログラムとかがあるというのと同じで、良いモデルっていうのもあるんだよね。</p>
+
+<p><strong>ささだ</strong>  それは数をこなしていけば？</p>
+
+<p><strong>石塚</strong>  数っていうか、何が良いモデルかっていうのは、一言では言えないけどさ。</p>
+
+<p><strong>ささだ</strong>  何か定番の本とか。何だっけ、あの表紙の黄色い本。</p>
+
+<p><strong>石塚</strong>  黄色い表紙？</p>
+
+<p><strong>ささだ</strong>  リファクタリングとかのと同じ表紙のやつで。</p>
+
+<p><strong>石塚</strong>  ああ、『UML ユーザーマニュアル』<sup id="fnref:41"><a href="#fn:41" class="footnote">41</a></sup>とか。でもそういうところまで書いてないよね。そんなモデリングの中身まで書いてある本なんてあんまり無い。でもリファクタリングっていうか、デザインパターンなんかはね、モデリングと近いよね。UML っぽいので書いてるじゃない。わざわざああいう図をだしてるのはさ、コードで示すより図で示したほうがわかりやすいからでしょ。モデリングってそういう複雑なものを分かりやすくする効果はあるよね。</p>
+
+<p><strong>arton</strong>  そうか。確かにデザインパターンはそうなのかな。あれ、あんまり分かりやすいとは思えないな。本に書いてあることが分かりやすいかじゃなくて、あれを……、モデルを俯瞰して眺めるっていう方法が分かりやすいとは、あまり思えないな。</p>
+
+<p><strong>石塚</strong>  そうか (笑)</p>
+
+<p><strong>arton</strong>  だって、抽象に抽象化されているようなもんじゃん。たぶん、分かりたい人が分かりやすいものっていうのは、具体的なイメージとひきつけて考えられることができるものじゃないのかなぁ。と思うと、あれが意外と良いのかな。昔からある奴だけど、アメリカの大学の先生か何かが、UML が何とかっていう。何か POS か何かを題材にして、こういう風にやっていくんですよっていう。（<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51QGXG52GCL._SL160_.jpg" />）</p>
+
+<p><strong>石塚</strong>  POS？</p>
+
+<p><strong>arton</strong>  たしか POS だと思った。</p>
+
+<p><strong>石塚</strong>  マーチンファウラーじゃない？</p>
+
+<p><strong>arton</strong>  いや、マーチンファウラーじゃない。</p>
+
+<p><strong>石塚</strong>  分析パターンとか？</p>
+
+<p><strong>arton</strong>  違う違う。もうちょっと下っぽい。</p>
+
+<p><strong>石塚</strong>  高いよね。あれが分かるのは難しいと思うけど。でも、マーチンファウラーの『UML モデリングのエッセンス』とかあったね、そういえばね。あの辺りはいいかもしれないけど、最近売ってるのかな。</p>
+
+<p><strong>arton</strong>  売ってます売ってます。<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51P6D4Q7T8L._SL160_.jpg" />が出てます。</p>
+
+<p><strong>石塚</strong>  そうか。</p>
+
+<p><strong>ささだ</strong>  へぇー。</p>
+
+<p><strong>arton</strong>  ただ、あれはどちらかというと、心構えみたいなことは書いてあるけど、あれ読んでモデリングしてくれって言われても、多分誰も出来ないと思うよ (笑) あれは分かってる人は UML で書く時どうすればいいかって本だから。</p>
+
+<p><strong>石塚</strong>  確かにそういわれると困るんだけどさ。</p>
+
+<p><strong>ささだ</strong>  ま、あるという事を忘れずに、精進しろと。</p>
+
+<p><strong>石塚</strong>  参考資料ねぇ。何か色々 UML の本もあるけど、ひどいのに当たると駄目だからね。</p>
+
+<p><strong>arton</strong>  でも逆に、ひどいかどうかはとりあえずどうでも良いんじゃないかな。ひどくても、それを信じ込んで何かやってみて、おかしいなって気が付けば、それはそれで良いことのような気がする。逆に、それに気が付かなかったら、きっと合ってたんだと思う。レベルが。</p>
+
+<p><strong>石塚</strong>  そういえば、<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/31EOxYbzEHL._SL160_.jpg" />があるじゃない。僕が書いた奴。あれでモデリングを勉強したって人が居たなぁ。データベースの設計って、モデリングと近いんで、ある意味では。でも静的な部分だけなんですけどね。あと、UML じゃなくて OMT だし。でもこれ、年取ってる人にも言いたいよね。若い人だけじゃなくて。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  僕って、UML っていうか、そういうのやってるし、実装とかそういう細かいのもやってるというか、知ってるレベルだけど。若い人は若い人で、モデリングとかそういうのを知らないし、逆に年取ってるほうは、あんまり実装技術が無いよね。そういう細かいことを知らないで設計とかしてるのが多いからさ、それはそれで良くないなと思って。もうちょっと下のほうも勉強して欲しいかな (笑)</p>
+
+<p><strong>arton</strong>  ユースケースドリヴンなんちゃらって奴って、最近あるような気がするんだけど、そのモデリングって言ってるのって、ユースケースとそれ以外って分かれるじゃないですか、明らかに。</p>
+
+<p><strong>石塚</strong>  ユースケースはずいぶん簡単ですからね。</p>
+
+<p><strong>arton</strong>  今、石塚さんが言われているのは、ユースケースじゃないほうのモデリング？</p>
+
+<p><strong>石塚</strong>  うんそう。</p>
+
+<p><strong>arton</strong>  ユースケースがモデルかっていわれると……。</p>
+
+<p><strong>ささだ</strong>  ユースケースで要求仕様を客とあわせて……。</p>
+
+<p><strong>arton</strong>  システムには、こういうユースケースが必要です、のモデルか。</p>
+
+<p><strong>ささだ</strong>  登場人物がこうあって、なるほどそうだねって納得するという。</p>
+
+<p><strong>石塚</strong>  そういうのもあるけど、それは Ruby の話じゃないよねこれ(笑)。</p>
+
+<p><strong>ささだ</strong>  まぁ、何でもいいです、言いたいことであれば (笑) 私はそういうのが分からないから、とりあえずユースケースというか、シナリオをかなりきちんと作ってみて、という風には言ってますね。モデリングでどうこうしたっていうのは、中々こう、俺自身が分からないので、言えない。</p>
+
+<p><strong>arton</strong>  UML を使ってくださいって普通に言っちゃうと、何のこと？ っていうところがあるじゃないですか。UML って要するに Unified されてるから。</p>
+
+<p><strong>石塚</strong>  確かに。そういう意味では、アーキテクチャレベルのモデリングをして欲しいよね (笑) すばらしいやつ。アーキテクチャって何だって言われそうだけど (笑)</p>
+
+<p><strong>ささだ</strong>  ソフトウェアアーキテクチャ。</p>
+
+<p><strong>石塚</strong>  そう。</p>
+
+<p><strong>ささだ</strong>  こっちの分野でアーキテクチャっていうと、プロセスアーキテクチャになってしまうんですよね、なぜか。あれはすごい不思議で。</p>
+
+<p><strong>石塚</strong>  プロセスって、どのプロセス？</p>
+
+<p><strong>ささだ</strong>  プロセッサ。</p>
+
+<p><strong>石塚</strong>  あー。</p>
+
+<p><strong>ささだ</strong>  CPU のアーキテクチャのことを、アーキテクチャって言うんですよ。</p>
+
+<p><strong>arton</strong>  というか、むしろ一般論ではそっちの方が普通じゃない？</p>
+
+<p><strong>石塚</strong>  そうか？</p>
+
+<p><strong>arton</strong>  我々は、システムのアーキテクチャを考えるけど、たぶん普通に ITmedia とかああいうのを読んでる人たちは、アーキテクチャとは CPU アーキテクチャだと思ってるよ。</p>
+
+<p><strong>ささだ</strong>  よく、違和感があって。</p>
+
+<p><strong>石塚</strong>  でも、元々アーキテクチャって概念はハードっていうか、そっちの方から来てるからだろうね。ソフトウェアアーキテクチャって、いつから意識されるようになってきたんだろうな。</p>
+
+<p><strong>ささだ</strong>  え、意識しないですか？作るときに。</p>
+
+<p><strong>石塚</strong>  いや、だから意識してモデル化してくれって言ってるじゃない。</p>
+
+<p><strong>arton</strong>  EA からじゃないですか？</p>
+
+<p><strong>石塚</strong>  EA って、結構最近、それ？</p>
+
+<p><strong>arton</strong>  最近じゃない。あれはアメリカの政府調達と絡んでるから。そこでああいう言い方がでて。それを知らなかったら調達のリクエストが取れない。</p>
+
+<p><strong>ささだ</strong>  UNIX だったら、あれはアーキテクチャな訳じゃないですか。</p>
+
+<p><strong>石塚</strong>  UNIX だってアーキテクチャを持ってるよね、当然。</p>
+
+<p><strong>ささだ</strong>  だからそういう意味で、みんな昔からやっている話だと思うんだけど。</p>
+
+<p><strong>石塚</strong>  ま、そうかな。そう言われるとそうかも知れない。</p>
+
+<p><strong>ささだ</strong>  それを意識しないで、適当なプログラムを書く人が多いということですかね？改めて意識しろっていう話は。</p>
+
+<p><strong>石塚</strong>  それは僕だって小さいスクリプトとかは意識しないわけで。どのぐらいからって話になってくると、結構閾値が微妙なところではあるんだろうけどね。</p>
+
+<p><strong>ささだ</strong>  それを意識するかしないかはもちろんあると思うんですが。</p>
+
+<p><strong>石塚</strong>  アーキテクチャを意識しろじゃなくて、モデリングしましょうって話で、アーキテクチャレベルのモデリングをしましょうっていう話。</p>
+
+<p><strong>ささだ</strong>  なるほど。</p>
+
+<h4 id="読者へ一言">読者へ一言</h4>
+
+<p><strong>ささだ</strong>  読者へ。</p>
+
+<p><strong>石塚</strong>  shell.rb を使ってください。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>arton</strong>  どんな良い事があるんですか、shell.rb を使うと。</p>
+
+<p><strong>石塚</strong>  shell の構文を知らなくても……何が出来るんだろう (笑)</p>
+
+<p><strong>ささだ</strong>  fileutils があればなんか使えちゃうというか (笑)</p>
+
+<p><strong>石塚</strong>  だから一応さ、pipe 結合とか作ったわけですよ。でもそんなの使ってないな、僕も。</p>
+
+<p><strong>一同</strong>  (笑)</p>
+
+<p><strong>arton</strong>  なんか、Rake と fileutils があれば、他はいらないやって気がする (笑) でも shell.rb を使えば、Windows でも UNIX でも関係なく動くよ、というんであれば、それは結構いいかもしれない。</p>
+
+<p><strong>ささだ</strong>  Windows でも動くんですか？</p>
+
+<p><strong>arton</strong>  パイプが微妙な気がするな。</p>
+
+<p><strong>石塚</strong>  どうなってるんだろう。動くんだろうか。動かないんだろうか。</p>
+
+<p><strong>ささだ</strong>  fork を使ってなければ。</p>
+
+<p><strong>石塚</strong>  それこそ、シェルスクリプトレベルのやつを置き換えたりするんだよね。</p>
+
+<p><strong>arton</strong>  それ、単にありがたみが分からないから使ってないわけで、実はそれが分かると、こんな便利なものが世の中にあるのかってなったり。</p>
+
+<p><strong>石塚</strong>  いやいや、便利っていうかさ、shell 使える人だったらそれでいいと思うんだけど (笑) いや、そんなことは無いのかな。一応、Ruby の制御構造は使えるから、それは便利なのかな。</p>
+
+<p><strong>ささだ</strong>  なんと、Ruby の機能が全部使える！</p>
+
+<p><strong>石塚</strong>  使えすぎて、あれなところもあるんだよね。コマンドでバッティングしたりするからね。</p>
+
+<p><strong>ささだ</strong>  あー、なるほど。じゃあ、shell.rb を使ってくださいで良いですか。</p>
+
+<p><strong>石塚</strong>  そうそう。</p>
+
+<p><strong>ささだ</strong>  他に何か、言いたいことはありますか。</p>
+
+<p><strong>石塚</strong>  え、後？irb の内部メソッドを直接呼ぶの早めましょうとか。</p>
+
+<p><strong>ささだ</strong>  (笑)</p>
+
+<p><strong>石塚</strong>  なんか、知らないうちに結構内部が……内部は公開してないからさ後で動かなくなっても知らないんだけどさ (笑)</p>
+
+<p><strong>ささだ</strong>  それを使っている人が居ると。</p>
+
+<p><strong>石塚</strong>  何か使ってるんだよね。使わないと動くわけが無いものが色々あるじゃん。</p>
+
+<p><strong>ささだ</strong>  はいはい。でもなんか lib に入ってるから使っても良いって言うイメージがあるのかもしれない。</p>
+
+<p><strong>石塚</strong>  ああそうか。lib って名前じゃないところに置かなくちゃいけなかったのかな。そうか。irb ってディレクトリを作ってもらえばよかったのか。いや、それは無いなやっぱし。lib にしか入らないよね。</p>
+
+<p><strong>ささだ</strong>  アプリケーションですよね、あれは。</p>
+
+<p><strong>arton</strong>  bin の下か？無理やり。</p>
+
+<p><strong>石塚</strong>  bin の下に、irb の最初のスタートアップのは入ってるけど。他は全部 lib の下なんですよね。</p>
+
+<p><strong>ささだ</strong>  どうするんですかね。</p>
+
+<p><strong>石塚</strong>  まぁ、だから公開していないから、あんまし中身を触ると痛い目に合うよって話ですかね。</p>
+
+<p><strong>ささだ</strong>  分かりました。</p>
+
+<p><strong>石塚</strong>  それは日本でやってるっていうより、外国でやってる人が多いのかな。何だっけ、rails とかもなんかあるよね。</p>
+
+<p><strong>arton</strong>  うん。script/console か。</p>
+
+<p><strong>石塚</strong>  何をやってるのか良く知らないけど。ただ実行してるだけならいいんだけど、直接内部の何かを呼んでやってるんだよね。</p>
+
+<p><strong>arton</strong>  うん。呼んでそうな気がする。</p>
+
+<p><strong>石塚</strong>  でも、そういうのを用意してないからいけないのかな。でもあんまし嬉しくないですよね。何か実行して、入力で input とかあるじゃない。それの代わりに irb みたいなのが立ち上がって、入力させて、その式を読み込むとか、嬉しくないよね、別にね。大体、式が終わって終わられると困るんだよね、きっとね。入力の終わりが分からないから。作ってもしょうがないよなと思って。</p>
+
+<p><strong>ささだ</strong>  なんか、REPL はぱっと出したいっていうのは。</p>
+
+<p><strong>石塚</strong>  何？</p>
+
+<p><strong>ささだ</strong>  REPL。Read Eval Print Loop。</p>
+
+<p><strong>石塚</strong>  あー。</p>
+
+<p><strong>ささだ</strong>  ところどころで、irb の機能が欲しいというのは。</p>
+
+<p><strong>石塚</strong>  そう。どっかから呼び出せるよな。でも呼び出し方も色々あるからな。ちゃんと調べないと、公開できないんだよな。と、思いつついろんな人が使っているという (笑) それ言うと、あれもそうだよね。Ruby のソースのスクリプト、HTML に落としてあげるの、何か無かったっけ。irb っていうか、それの字句解析のやつを使って何かやってるがあったような気がする。ああいうのとかは、完全にコピーして別にやってるんだろうけどね。</p>
+
+<p><strong>ささだ</strong>  多分、ripper が換わるものになるとは思うんですけどね。</p>
+
+<p><strong>arton</strong>  irbsh <sup id="fnref:42"><a href="#fn:42" class="footnote">42</a></sup> ってのがあるよね。</p>
+
+<p><strong>石塚</strong>  irbsh。それは何だろう。</p>
+
+<p><strong>arton</strong>  irb とシェルが結合したやつ。</p>
+
+<p><strong>石塚</strong>  るびきちさんのやつ？ あれは Emacs 上でやってるんじゃないのかな。違うのかな<sup id="fnref:43"><a href="#fn:43" class="footnote">43</a></sup>。</p>
+
+<p><strong>arton</strong>  Emacs 上の irb がもっと便利になるよ系のやつ。</p>
+
+<p><strong>石塚</strong>  僕も使ってないからよく分からない。シェルっぽいこともできるやつですよね。スペースが最初に入っているかどうかで、OS のシェルになるのか、Ruby になるのかっていう感じだった気がするけど。</p>
+
+<p><strong>arton</strong>  なるほど。</p>
+
+<p><strong>ささだ</strong>  色々と長々となりすぎた気がするんですけど、本当に長い時間ありがとうございました。</p>
+
+<p><strong>石塚</strong>  話が飛んで飛んで (笑)</p>
+
+<p><strong>ささだ</strong>  どうもありがとうございました。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は irb の作者であり、Ruby の名づけ親でもある 石塚 圭樹 さんにお話を伺いました。お忙しい中本当にありがとうございました。次回は Ruby 草創期から Ruby 関連活動をされている原 信一郎さんにお話を伺います (交渉中)。お楽しみに。</p>
+
+<h2 id="rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-Hotlinks.html">Rubyist Hotlinks 【第 36 回】 須藤功平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0052/0052-Hotlinks.html">Rubyist Hotlinks 【第 35 回】 島田浩二さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0045/0045-Hotlinks.html">Rubyist Hotlinks 【第 34 回】 大場さん夫妻 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0044/0044-Hotlinks.html">Rubyist Hotlinks 【第 33 回】 大場さん夫妻 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0042/0042-Hotlinks.html">Rubyist Hotlinks 【第 32 回】 卜部昌平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-Hotlinks.html">Rubyist Hotlinks 【第 31 回】 樽家昌也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0038/0038-Hotlinks.html">Rubyist Hotlinks 【第 30 回】 遠藤侑介さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-Hotlinks.html">Rubyist Hotlinks 【第 29 回】 松田明さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0035/0035-Hotlinks.html">Rubyist Hotlinks 【第 28 回】 Yugui さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-Hotlinks.html">Rubyist Hotlinks 【第 27 回】 小波秀雄 さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-Hotlinks.html">Rubyist Hotlinks 【第 26 回】 cuzic さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0031/0031-Hotlinks.html">Rubyist Hotlinks 【第 25 回】 加藤勇也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0030/0030-Hotlinks.html">Rubyist Hotlinks 【第 24 回】 okkez さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0029/0029-Hotlinks.html">Rubyist Hotlinks 【第 23 回】 yhara さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-Hotlinks.html">Rubyist Hotlinks 【第 22 回】 nari さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0023/0023-Hotlinks.html">Rubyist Hotlinks 【第 21 回】 原信一郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Hotlinks.html">Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-Hotlinks.html">Rubyist Hotlinks 【第 19 回】 伊尾木将之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Hotlinks.html">Rubyist Hotlinks 【第 18 回】 立石孝彰さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Hotlinks.html">Rubyist Hotlinks 【第 16 回】 essa さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Hotlinks.html">Rubyist Hotlinks 【第 15 回】 arton さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Hotlinks.html">Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Hotlinks.html">Rubyist Hotlinks 【第 13 回】 関将俊さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Hotlinks.html">Rubyist Hotlinks 【第 12 回】 後藤兄弟 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Hotlinks.html">Rubyist Hotlinks 【第 11 回】 後藤兄弟 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Hotlinks.html">Rubyist Hotlinks 【第 10 回】 わたなべひろふみさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Hotlinks.html">Rubyist Hotlinks 【第 9 回】 中田伸悦さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks.html">Rubyist Hotlinks 【第 8 回】 田中哲さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-3.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その3</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-2.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その2</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-1.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その1</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Hotlinks.html">Rubyist Hotlinks 【第 7 回】 江渡浩一郎さん 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Hotlinks.html">Rubyist Hotlinks 【第 6 回】 江渡浩一郎さん 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Hotlinks.html">Rubyist Hotlinks 【第 5 回】 増井俊之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Hotlinks.html">Rubyist Hotlinks 【第 4 回】 ただただしさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Hotlinks.html">Rubyist Hotlinks 【第 3 回】 かずひこさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-Hotlinks.html">Rubyist Hotlinks 【第 2 回】 前田修吾さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>4 月でした。他の同僚と勘違いしたみたいです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>RRRWiki に年表というページがあって、生まれた年を書いていた。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>うなぎパイの製造元にも載ってる。結構有名らしい。http://www.shunkado.co.jp/unagipai/unagipai_talk.htm&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>そんなことないです。まだ、発売しています&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>このインタビューの後確認したら、また別な言語を考えていたらしい。なので、Rubyを作るきっかけになったのは、この時の会話ということになる。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>?a は 0x61&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>図は頑張って想像してください！&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>Squeakで試したら、やっぱ落ちました。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>正確には J&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>リッチインターネットアプリケーションのこと。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>引数のない手続きや関数は括弧が省略できる&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>NEC の販売していたパーソナルコンピュータ PC-8800 シリーズ&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>へんなは失礼ですよね。DUAD88というアセンブラを使ってた。&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>というのは言い過ぎかも。少なくとも今のような出版不況とかではなかった。&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>変な OS というのはしつれいかも、flex という OS だったと思う&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>ごめんなさい、Smalltalk のコードはかなり読み込みました。これでオブジェクト指向を理解しました。&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>というわけで、かなり Smalltalk には影響されています&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>実現するのはかなり大変だと言いたかった&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p>RubyKaigi2007 の「<a href="http://jp.rubyist.net/RubyKaigi2007/Log0610-S1-04.html">AP4R ： Ruby のための非同期メッセージングライブラリ</a>」で大ブレイクした。ちなみに MDA ではなく MDD。&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:20">
+      <p>社外との接続等は対したことなかったと言いたかったんだと思う。&nbsp;<a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:21">
+      <p>その当時は&nbsp;<a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:22">
+      <p>実はなかなか鋭い。あるドメイン専用のインタラクティブなデータベース操作言語を開発したかった。&nbsp;<a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:23">
+      <p>社名は変わっています&nbsp;<a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:24">
+      <p>後で思い出しましたがいっしょに仕事をやったこともありました。&nbsp;<a href="#fnref:24" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:25">
+      <p>Yuki Sumita, Mami Takata, Keiju Ishitsuka, Yasuyuki Tominaga and Kazuhiko OHE: Building a reference functional model for EHR systems International Journal of Medical Informatics, 76(5), 688-700, 2007.&nbsp;<a href="#fnref:25" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:26">
+      <p>厳密には方向づけでプロトタイプを作成することもある。推敲段階で作っているものがプロトタイプと言えないことはない。ただし、プロトタイプというとそれが製品になるとは限らないが、推敲で作るものはそのまま製品に進化していくところが大きく違う。&nbsp;<a href="#fnref:26" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:27">
+      <p>アクセンチュアになっていました。&nbsp;<a href="#fnref:27" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:28">
+      <p>そんなことないです。&nbsp;<a href="#fnref:28" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:29">
+      <p>『ザップ・ガン』は早川じゃなくて東京創元社から再刊された。&nbsp;<a href="#fnref:29" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:30">
+      <p>というか、溺れている感じか?&nbsp;<a href="#fnref:30" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:31">
+      <p>間違い。吊すんじゃなくてネットを垂直に張って、それに絡ませた。&nbsp;<a href="#fnref:31" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:32">
+      <p>青函トンネルは新幹線の工事をやっているので今はやっていないようだ。新幹線が開業したらやらない(やれない)ということなのでもうやらないのかもしれない。&nbsp;<a href="#fnref:32" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:33">
+      <p>龍飛海底駅から斜坑のの階段を歩いて登った。斜坑は長さ約800mで、斜度が15°なので、高低差が約210mになる。超高層ビルなみの高さがあるらしい。知っていたら歩いて登らなかったかも。。。&nbsp;<a href="#fnref:33" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:34">
+      <p>本州から九州四国へは歩いて渡れるので、ウォーキングで日本縦断しようとする人にとっては、青函トンネルの中を歩くことはかなり価値があるようだ。&nbsp;<a href="#fnref:34" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:35">
+      <p>実際は 80 から 90% らしい&nbsp;<a href="#fnref:35" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:36">
+      <p>実際は 20 度ぐらいらしい&nbsp;<a href="#fnref:36" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:37">
+      <p>この辺りは想像で話しているのであまりまともにとらないでください。&nbsp;<a href="#fnref:37" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:38">
+      <p>交渉中です。&nbsp;<a href="#fnref:38" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:39">
+      <p>このインタビューの後、blade をクリーンインストールしたため ruby はバージョンアップしたそうです。[[ruby-list:44095]]&nbsp;<a href="#fnref:39" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:40">
+      <p>インタビューが始まる前の雑談で出てきた&nbsp;<a href="#fnref:40" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:41">
+      <p>『UML リファレンスマニュアル』ではない&nbsp;<a href="#fnref:41" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:42">
+      <p>http://www.rubyist.net/~rubikitch/&nbsp;<a href="#fnref:42" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:43">
+      <p>こちらは el4r のこと。http://www.rubyist.net/~rubikitch/&nbsp;<a href="#fnref:43" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

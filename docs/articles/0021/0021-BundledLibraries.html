@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</title>
+  <meta name="description" content="書いた人：西山">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0021/0021-BundledLibraries.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0021/0021-BundledLibraries.html" class="hatena-bookmark-button" data-hatena-bookmark-title="標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0021/0021-BundledLibraries.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0021/0021-BundledLibraries.html" data-text="標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：西山</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Ruby には便利な標準添付ライブラリがたくさんありますが、なかなか知られていないのが現状です。そこで、この連載では Ruby の標準添付ライブラリを紹介していきます。</p>
+
+<p>今回も正規表現についての話の続きです。</p>
+
+<h2 id="オプション">オプション</h2>
+
+<p>正規表現のオプションとは、リテラルの場合は「/ruby/i」のように書いたときの「i」などのことで、
+「Regexp.new(‘ruby’, ‘i’)」や「Regexp.new(‘ruby’, Regexp::IGNORECASE)」のように Regexp.compile や Regexp.new の第 2 引数で指定することもできます。</p>
+
+<p>オプションは正規表現の途中で「/(?i:r)uby/」のように書くことで一時的に変更できるものもあります。
+これは「/〜/.to_s」で「(?-mix:〜)」のように使われていているのを見たことがあるかもしれません。ここでは一時的に m と i と x オプションを無効にするという意味になっています。
+たとえば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">re = /hoge/
+p /foo #{re} bar/i #=&gt; /foo (?-mix:hoge) bar/i</code></pre></figure>
+
+<p>のように他の正規表現に埋め込んだときに /hoge/ の部分は i オプションが無効になります。</p>
+
+<h3 id="i-オプション">i オプション</h3>
+
+<p>i オプションは大文字小文字を区別しない (同一視する) という意味です。</p>
+
+<p>「/abc/i」や「/ABC/i」で「abc」にも「ABC」にも「Abc」にも「aBC」にもマッチするようになります。つまり、以下の例はすべてマッチします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/abc/i =~ "abc"
+/abc/i =~ "ABC"
+/ABC/i =~ "abc"
+/ABC/i =~ "ABC"
+/ABC/i =~ "Abc"
+/ABC/i =~ "aBC"</code></pre></figure>
+
+<p>ただし 1.8 では「/Ａ/i =~ “ａ”」のようないわゆる全角文字の大文字小文字は区別されます。
+1.9 以降ではこのような場合でもマッチすることがあるようです。(encoding 依存かもしれません。)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">% ruby18 -v -Ku -e 'p(/Ａ/i =~ "ａ")'
+ruby 1.8.6 (2007-09-01 patchlevel 5000) [i686-linux]
+nil
+% ruby-trunk -v -Ku -e 'p(/Ａ/i =~ "ａ")'
+ruby 1.9.0 (2007-09-01 patchlevel 0) [i686-linux]
+0
+%</code></pre></figure>
+
+<h3 id="nseu-オプション">n,s,e,u オプション</h3>
+
+<p>正規表現オブジェクトはグローバルな $KCODE とは別に kcode を持っています。
+その kcode を設定するのが n,s,e,u オプションです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p //.kcode #=&gt; nil
+p //n.kcode #=&gt; "none"
+p //s.kcode #=&gt; "sjis"
+p //e.kcode #=&gt; "euc"
+p //u.kcode #=&gt; "utf8"</code></pre></figure>
+
+<p>指定しなかった場合は上の例のように nil になります。
+その場合はマッチ時の $KCODE の値を使うという意味になります。</p>
+
+<p>バイナリデータとしてマッチしたいときに n を使ったり、$KCODE が UTF8 とは限らないプログラムの中で UTF-8 の XML などを処理するときに u を使ったりすることがあります。</p>
+
+<p>m,i,x オプションと違って kcode 関係オプションは正規表現を「#{}」で埋め込むときなどに混ぜることは出来ません。
+Regexp#to_s で残らないので、外側の正規表現の kcode だけになってしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p //e       #=&gt; //e
+p //e.to_s  #=&gt; "(?-mix:)"
+p /#{//e}/s #=&gt; /(?-mix:)/s</code></pre></figure>
+
+<h3 id="x-オプション">x オプション</h3>
+
+<p>x オプションを使うと正規表現の中に空白やコメントを入れて読みやすく書くことが出来るようになります。</p>
+
+<p>マッチさせたい空白を入れたい場合は「\」でエスケープして「\ 」のように書きます。
+目的によっては「[ ]」のように文字クラスを使ったりいわゆる半角空白に限定しなくても良いなら「\s」を使ったりすると読みやすくなるかもしれません。</p>
+
+<p>コメントはエスケープされていない「#」から行末までです。
+正規表現リテラルの中では、コメント中でも正規表現リテラルの区切り文字をそのまま書くと正規表現リテラルが閉じられて SyntaxError などの原因になることがあるので注意してください。</p>
+
+<p>openssl/x509.rb では</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">        AttributeValue = /
+          (?!["#])((?:#{StringChar}|#{Pair})*)|
+          \#(#{HexString})|
+          "((?:#{QuoteChar}|#{Pair})*)"
+        /x</code></pre></figure>
+
+<p>のように使われています。
+この例では空白を入れるだけコメントは使っていませんが、「#」にマッチさせたいのでエスケープして書いています。
+式展開は正規表現のコンパイル前で、空白文字やコメントの無視はマッチ時なので式展開の「#」はそのまま書かれています。</p>
+
+<h3 id="o-オプション">o オプション</h3>
+
+<p>o オプションを付けると、一番最初に正規表現の評価が行われた時に一度だけ式展開され、同じ正規表現オブジェクトを返すようになります。
+速度を最適化するためのオプションで、誤用されることもあるようなので、必要かどうかわからなければ付けないことをお勧めします。</p>
+
+<p>jcode.rb ではこのように使われています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def end_regexp
+    case $KCODE[0]
+    when ?s, ?S
+      /#{PATTERN_SJIS}$/on
+    when ?e, ?E
+      /#{PATTERN_EUC}$/on
+    when ?u, ?U
+      /#{PATTERN_UTF8}$/on
+    else
+      /.$/on
+    end
+  end</code></pre></figure>
+
+<p>上の 3 個は PATTERN_SJIS などの式展開の内容が定数で固定なので、毎回正規表現オブジェクトを生成しなおすのは無駄なので正しい使い方です。
+下の「/.$/on」はパターン部分がリテラルで固定文字列なので o オプションがなくても毎回同じ正規表現オブジェクトになるため、o オプションは不要です。他とあわせるためにあえて付けているとも考えられるので、この例では誤用とまではいいきれません。</p>
+
+<p>base64.rb ではこのように誤用されていました。(すでに報告済みで現在は直っているので、最新のリリースでは修正されているはずです。)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def b64encode(bin, len = 60)
+    encode64(bin).scan(/.{1,#{len}}/o) do
+      print $&amp;, "\n"
+    end
+  end</code></pre></figure>
+
+<p>これは len という毎回変化する可能性のある式を式展開で埋め込んでいるのに o オプションを使っているので、以下のように len の値が変わるように呼び出すと、最初の len の値で生成された正規表現が毎回使われてしまいます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'base64'
+Base64.b64encode("a"*100)
+Base64.b64encode("a"*100, 10)</code></pre></figure>
+
+<h3 id="m-オプション">m オプション</h3>
+
+<p>m オプションは「.」が改行にもマッチするようになります。
+複数行モードという呼び方もあるようですが、Perl などの他の言語とは意味が違います。</p>
+
+<p>Ruby の m オプションは Perl の正規表現の s オプション (単一行モード) と同じ意味です。Java の java.util.regex.Pattern の DOTALL や C# の System.Text.RegularExpressions の Singleline に相当します。
+Perl の m オプション (複数行モード) は「^」と「$」が Ruby の正規表現の「\A」と「\Z」相当から「^」と「$」相当に変わるという意味です。Java の java.util.regex.Pattern の MULTILINE や C# の System.Text.RegularExpressions の Multiline に相当します。
+現在の Ruby の正規表現では「^」と「$」が「\A」と「\Z」の意味になることはありません。昔は p オプションというものがありましたが、今は気にしなくても良いでしょう。</p>
+
+<h2 id="-記法">% 記法</h2>
+
+<p>正規表現リテラルは % 記法でも書くことができます。</p>
+
+<p>「%r!https?://!」や「%r!/usr/(local/)?bin/ruby!」のように「/」を含む場合に使うと読みやすく書けます。</p>
+
+<p>「%Q!!」に対応する「%q!!」のような式展開をしないものはありません。</p>
+
+<p>詳しいことはリファレンスマニュアルなどを参照してください。</p>
+
+<h2 id="base64">base64</h2>
+
+<p>o オプションのところでちょっと話題に出した base64 について紹介します。</p>
+
+<p>base64 を使うと Base64.encode64 と Base64.decode64 で簡単に Base64 の変換が出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require "base64"
+enc = Base64.encode64("some string")
+puts enc                  #=&gt; c29tZSBzdHJpbmc=
+puts Base64.decode64(enc) #=&gt; some string</code></pre></figure>
+
+<p>中で pack と unpack をしているだけなので、60 オクテットごと (と最後) に改行コードが付加されるのは pack の m の仕様のままです。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は正規表現のオプションについてと base64 の紹介を書きました。</p>
+
+<p>kcode まわりの挙動は m17n が入って 1.9 では今後変わっていくはずなので、<a href="http://pub.cozmixng.org/~the-rwiki/rw-cgi.rb?cmd=view;name=m17nQuestions">The RWiki の m17nQuestions</a> などをチェックしておくといいかもしれません。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>西山和広。</p>
+
+<p>base64 のバグは<a href="http://jp.rubyist.net/?KansaiWorkshop17">第 17 回 Ruby 勉強会＠関西</a>の Q&amp;A セッションのときに気付いて、その場で報告メールを ruby-dev に投げました。そのときの話が今回の記事のきっかけになりました。</p>
+
+<h2 id="標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-BundledLibraries.html">標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-BundledLibraries.html">標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-BundledLibraries.html">標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-BundledLibraries.html">標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-BundledLibraries.html">標準添付ライブラリ紹介 【第 11 回】 zlib</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-BundledLibraries.html">標準添付ライブラリ紹介 【第 10 回】 ERB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-BundledLibraries.html">標準添付ライブラリ紹介 【第 9 回】 PStore</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-BundledLibraries.html">標準添付ライブラリ紹介 【第 8 回】 uri, pathname</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-BundledLibraries.html">標準添付ライブラリ紹介 【第 7 回】 net/http</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-BundledLibraries.html">標準添付ライブラリ紹介 【第 6 回】 委譲</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-BundledLibraries.html">標準添付ライブラリ紹介 【第 5 回】 enumerator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-BundledLibraries.html">標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-BundledLibraries.html">標準添付ライブラリ紹介 【第 2 回】 Logger</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-BundledLibraries.html">標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

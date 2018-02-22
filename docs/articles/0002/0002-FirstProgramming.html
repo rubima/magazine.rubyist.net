@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ではじめるプログラミング 【第 1 回】</title>
+  <meta name="description" content="著者：だん">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0002/0002-FirstProgramming.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby ではじめるプログラミング 【第 1 回】</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0002/0002-FirstProgramming.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ではじめるプログラミング 【第 1 回】" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0002/0002-FirstProgramming.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0002/0002-FirstProgramming.html" data-text="Ruby ではじめるプログラミング 【第 1 回】">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>著者：だん</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="rubyでプログラミングを体験しよう">Rubyでプログラミングを体験しよう</h3>
+
+<p><strong>「これからプログラミングをはじめたい！」</strong></p>
+
+<p><strong>「今までプログラムには興味があったけど難しそうでなかなか手を出せなかった……」</strong></p>
+
+<p>そんな人に Ruby のプログラミングを紹介します。</p>
+
+<p>筆者はゲームプログラマー<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+なので、簡単なゲームプログラムを作りながらプログラムの基本的な部分を連載形式で解説します。この連載では原則として Windows で Ruby を使うことを前提に解説します。
+プログラミングははじめてだけど HTML くらいなら知っているというような、ある程度コンピュータを使い慣れている方が対象です。</p>
+
+<h3 id="プログラムは魔法">プログラムは魔法！？</h3>
+<p>: <img src="/images/0002-FirstProgramming/mage_s.png" alt="mage_s.png" /></p>
+
+<p>プログラムはコンピュータを使う人にとって魔法です。その魔法は__○○○の血を引いた者にしか使うことのできない摩訶不思議な超能力__ではありません。決められたルールを覚えれば誰にでも唱えることのできる呪文です。</p>
+
+<p>この呪文、つまりプログラムとはコンピュータを動かすために人間が作る命令のことです。この命令はコンピュータが理解する特別な言葉です。この言葉を「プログラム言語」といいます。</p>
+
+<p>現在、より簡単で便利にプログラムが作れるようにたくさんのプログラム言語が開発されています。そして、Ruby もプログラム言語のひとつです。Ruby は__簡単に楽しく__プログラミングできることを目的として開発されました。</p>
+
+<h3 id="ruby-はオブジェクト指向スクリプト言語">Ruby はオブジェクト指向スクリプト言語</h3>
+
+<p><img src="/images/0002-FirstProgramming/dengaku_s.png" alt="dengaku_s.png" />Ruby は、便利な機能がたくさんあって、いろいろな分野<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>で使うことができるとても強力なプログラム言語ですが、簡単な機能を使うだけでも十分にプログラミングを楽しむことができます。また、オブジェクト指向<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>を知らなくても大丈夫です。</p>
+
+<p>Ruby はまつもと ゆきひろ氏が中心となって開発している__フリーソフトウェア__なので、誰でも無料で使用することができます。</p>
+
+<h2 id="ruby-のインストール">Ruby のインストール</h2>
+
+<p>Ruby のインストールにはさまざまな方法がありますが、ここでは <strong>One-Click Installer - Windows</strong> を使ったインストール方法を紹介します。
+Windows 以外の OS にインストールする場合や他のインストール方法を試す場合は
+<a href="http://www.ruby-lang.org/ja/install.cgi?cmd=view;name=top">Ruby インストールガイド</a>を参考にしてください。</p>
+
+<h3 id="ダウンロード">ダウンロード</h3>
+
+<p><a href="http://rubyforge.org/projects/rubyinstaller/">RubyForge: Project Info- One-Click Ruby Installer のページ</a>からダウンロードすることができます。本稿執筆時点での最新版は 1.8.2-14_rc8 です。ここでは ruby182-14_RC8a.exe をダウンロードしたものとして話を進めます。</p>
+
+<h3 id="インストール">インストール</h3>
+
+<p>ダウンロードした ruby182-14_RC8a.exe を起動してください。英語のインストーラが立ち上がります。</p>
+
+<ol>
+  <li><strong>Next</strong> を選択してインストールを開始します</li>
+  <li>ライセンスに同意するなら <strong>I Agree</strong> を押します</li>
+  <li>コンポーネントの選択画面になります。このまま <strong>Next</strong> を押します</li>
+  <li>インストールディレクトリを決めます。 c:\ruby でよければそのまま <strong>Install</strong> を押します</li>
+</ol>
+
+<p><strong>Install</strong> を押すとインストールがスタートします。無事に終了したら <strong>Finish</strong> を押してインストーラを閉じます。これでインストールは完了です。</p>
+
+<h3 id="コマンド-プロンプトを使う">コマンド プロンプトを使う</h3>
+
+<p><strong>コマンド プロンプト</strong> を起動しましょう。Windows XP なら次の手順で起動することができます。</p>
+
+<ol>
+  <li><strong>スタート</strong> ボタンをクリック</li>
+  <li><strong>すべてのプログラム</strong> をクリック</li>
+  <li><strong>アクセサリ</strong> をクリック</li>
+  <li><strong>コマンド プロンプト</strong> をクリック</li>
+</ol>
+
+<p><em><img src="/images/0002-FirstProgramming/dos.png" alt="dos.png" /></em></p>
+
+<p>コマンド プロンプトが起動したらキーボードから、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby -v</code></pre></figure>
+
+<p>と入力して Enter キーを押してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby 1.8.2 (2004-07-29) [i386-mswin32]</code></pre></figure>
+
+<p>と表示されれば無事にインストールが完了しています。
+以降ではコマンド プロンプトを使って Ruby のプログラムを実行することを前提に話を進めます。</p>
+
+<p>コマンド プロンプトで動かす「文字の表示がメインのプログラム」は見た目が地味ですが、基本的な考え方は派手なグラフィックを扱うプログラムも__同じ__です。まずは簡単なプログラムでプログラミングの基礎をマスターしましょう。</p>
+
+<h2 id="はじめてのプログラム">はじめてのプログラム</h2>
+
+<h3 id="エディタでプログラムのソースを書く">エディタでプログラムのソースを書く</h3>
+
+<p><img src="/images/0002-FirstProgramming/usa_s.png" alt="usa_s.png" /> プログラムを実行するにはプログラムが書かれたファイルを作成しなければなりません。
+このプログラムが書かれたファイルのことを__ソースファイル__と呼びます。
+ただ単に__ソース__と呼ぶこともあります。</p>
+
+<p>ソースファイルはエディタ<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>というアプリケーションで作成します。
+Windows には「メモ帳」というエディタがはじめから用意されています。プログラムのソースを書くにはあまり便利ではありませんが、今回はこれでも十分です。</p>
+
+<h3 id="hello-world">hello world</h3>
+
+<p>ここでは <strong>C:\src</strong> というディレクトリ (フォルダ) <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>にソースファイルを置くことにします。Cドライブのルートに src というディレクトリを作成してください。src は半角文字にしてください。</p>
+
+<p>エディタ (メモ帳) を起動して次のように入力してください。必ず全ての文字を半角で入力してください。全角のスペースも使わないでください。アルファベットの大文字と小文字も区別されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 'hello world'</code></pre></figure>
+
+<p><em><img src="/images/0002-FirstProgramming/notepad.png" alt="notepad.png" /></em></p>
+
+<p>入力し終わったらファイルを C:\src に hello.rb という名前で保存してください。</p>
+
+<h3 id="実行する">実行する</h3>
+
+<p>コマンド プロンプトを起動します。筆者の環境ではコマンド プロンプトを起動すると、このように表示されています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">C:\Documents and Settings\dan&gt;</code></pre></figure>
+
+<p>まずは作業ディレクトリに移動します。ディレクトリの移動には cd コマンドを使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">cd \src</code></pre></figure>
+
+<p>と入力して Enter を押してください。 cd とはチェンジディレクトリの意味です。ディレクトリを移動するとコマンド プロンプトに</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">C:\src&gt;</code></pre></figure>
+
+<p>と表示されるはずです。ではプログラムを実行しましょう。Ruby のプログラムはコマンド プロンプトから次のように入力することで実行できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby ソースファイル名</code></pre></figure>
+
+<p>次のように入力して hello.rb を実行しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby hello.rb</code></pre></figure>
+
+<p>画面に</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">hello world</code></pre></figure>
+
+<p>と表示されればプログラムがうまく実行されたことになります。もし、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby: No such file or directory -- hello.rb (LoadError)</code></pre></figure>
+
+<p>とエラーメッセージが表示されてしまった場合は、そこに hello.rb というファイルがないということです。もう一度手順やファイル名を確認してみましょう。</p>
+
+<h2 id="基礎">基礎</h2>
+
+<p>さっそく簡単なプログラムを作って実行してみましょう。</p>
+
+<h3 id="文字を表示する">文字を表示する</h3>
+
+<p>test.rb というファイルを作成し、次の一行を書き込んでください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 'hello!'</code></pre></figure>
+
+<p>ファイルを作成したら</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby test.rb</code></pre></figure>
+
+<p>で実行してみましょう。実行すると「 __hello! __」という文字列が画面に表示されるはずです。この puts というのは文字を表示するための命令で Ruby ではこのような命令のことを__メソッド__といいます。</p>
+
+<p>数字を表示することもできます。プログラムを次のように書き換えて実行してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 2004</code></pre></figure>
+
+<p>こんどは「 <strong>2004</strong> 」という数字が表示されたはずです。プログラム中に文字列を書く場合は ‘ (シングルコーテーション) で文字列を囲んでください。
+数字は ‘ で囲まなくても OK です。</p>
+
+<h3 id="日本語の表示">日本語の表示</h3>
+
+<p>Ruby では日本語を表示することもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts '日本語を表示します'</code></pre></figure>
+
+<p>ただし、プログラム中で日本語を使う場合、漢字コードを指定しないとプログラムが正しく動作しないことがあります。Windows では通常__シフト JIS (SJIS)__ という漢字コードが使われます。 シフト JIS を使用する場合は、Ruby のオプションに -Ks をつけることで Ruby の認識する漢字コードを指定できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ruby -Ks test.rb</code></pre></figure>
+
+<p>漢字コードに EUC を使う場合は -Ke をつけます。UTF-8 を使う場合は -Ku をつけます。</p>
+
+<h3 id="コメントをつける">コメントをつける</h3>
+
+<p>プログラム中にコメントをつけるには # (シャープ) を使います。コメントはプログラムの実行には影響しないので、コメント機能を使うとプログラム中に好きな事を書き込むことができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># このプログラムは画面に 2004 を表示します
+puts 2004</code></pre></figure>
+
+<p>Ruby では # から行末までがコメントになるので、このような書き方をすることもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 2004 # 画面に 2004 を表示します</code></pre></figure>
+
+<h3 id="プログラムの流れ">プログラムの流れ</h3>
+
+<p>次に test.rb を次のように書き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 1
+puts 2
+puts 3</code></pre></figure>
+
+<p>プログラムは上から順に実行されていきます。このプログラムを実行すると表示結果はこのようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1
+2
+3</code></pre></figure>
+
+<p>また、puts の代わりに print を使うと改行を行わずに文字を表示させることができます。print も文字を表示するメソッド (命令) です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">print '今は'
+print 11
+print '時です。'</code></pre></figure>
+
+<p>test.rb を書き換えてこのプログラムを実行してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">今は11時です。</code></pre></figure>
+
+<p>このように表示され、今度は改行されませんでした。</p>
+
+<p>このテストプログラムは一瞬のうちに全てが表示されてしまいます。
+このくらいの仕事は現代のコンピュータにとって朝飯前なのです。
+そこで sleep というメソッドを使って一時的に流れを止めてみましょう。sleep 1 と書くとそこで 1 秒間プログラムが停止します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">print '私は'
+sleep 1
+print 15
+sleep 1
+print '歳です。'</code></pre></figure>
+
+<p>このサンプルを実行すると「私は」「15」「歳です。」とそれぞれの文字列が 1 秒おきに表示されます。 sleep 1 の部分でプログラムの流れが 1 秒間止まっているのがわかると思います。
+このようにプログラムは上から一行ずつ順番に実行されていきます。</p>
+
+<p>; (セミコロン) で区切ると複数の行を一行にまとめることもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">print '私は'     ; sleep 1
+print 15         ; sleep 1
+print '歳です。'</code></pre></figure>
+
+<p>このプログラムは先ほどのテストプログラムと全く同じように動作します。; で区切られたプログラムは左から順に実行されます。</p>
+
+<p>さらに、このように全ての行を ; でつなげることもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">print '私は' ; sleep 1 ; print 15 ; sleep 1 ; print '歳です。'</code></pre></figure>
+
+<p>プログラムには流れがあります。どんなに大きなプログラムでも必ず流れがあり、一行ずつ (一文ずつ) 順番に実行されていきます。今回のサンプルは流れがひとつしかなく、このようなプログラムをシングルスレッド<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>と言います。Ruby では明示的にスレッド機能を使わない限り自動的にシングルスレッドのプログラムになります。</p>
+
+<h3 id="変数-へんすう">変数 (へんすう)</h3>
+
+<p><strong>変数__はプログラムではとても重要な仕組みで、いろいろな場面で使用します。
+ここでは数値や文字列の__データを入れることのできる箱</strong><sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>のようなものだと考えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 1
+b = 50</code></pre></figure>
+
+<p>このプログラムでは、a という変数に 1 を、b という変数に 50 を入れています。この、変数にデータを入れる操作を__代入__と言います。</p>
+
+<p>変数を puts や print 命令 (メソッド) に渡して内容を表示することもできま
+す。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 1
+s = 'こんにちは'
+puts a # 1 を表示
+puts s # こんにちは を表示</code></pre></figure>
+
+<p>変数にはもっと長い名前をつけることもできます。実際はその変数の中身を連想
+できるような名前をつけて、プログラムがわかりやすくなるように工夫します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">length = 25
+message = ' 南に行くと洞窟があるよ'
+print length
+puts message</code></pre></figure>
+
+<p>変数名に使うことのできる文字はあらかじめ決められています。最もよく使
+うローカル変数は先頭の文字をアルファベットの小文字にして、続く文字にはア
+ルファベットか数字かアンダースコアを使います。例えばこんな変数名を作るこ
+とができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a
+b2
+aBc_123_XyZ</code></pre></figure>
+
+<h3 id="メソッドと引数">メソッドと引数</h3>
+
+<p>これまでのテストプログラムに登場した puts 、print、sleep は__メソッド__と呼ばれます。
+puts と print は文字を表示するメソッドです。
+sleep はプログラムの実行を一時停止するメソッド<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>です。</p>
+
+<p>メソッドの後ろに書くパラメータを__引数 (ひきすう) __といいます。puts メソッドでは引数に与える文字列や数字によっていろいろな表示を行うことができます。</p>
+
+<p>テストプログラムではメソッドの後ろの () を省略していましたが、メソッドの引数は <strong>()</strong> で囲むこともできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts('おはようございます')
+puts(100)</code></pre></figure>
+
+<p>sleep の引数はプログラムを停止させる秒数です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">sleep 60  # 60秒間停止
+sleep(60) # 60秒間停止</code></pre></figure>
+
+<h3 id="演算">演算</h3>
+<p>: <img src="/images/0002-FirstProgramming/hebi_s.gif" alt="hebi_s.gif" /></p>
+
+<p>プログラムの中では簡単に四則演算を行うことができます。次のプログラムを実行するとそれぞれの演算結果が表示されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 5 + 5 # 足し算
+puts 5 - 5 # 引き算
+puts 5 * 5 # かけ算
+puts 5 / 5 # わり算</code></pre></figure>
+
+<p>演算と変数を組み合わせて使うこともできます。このプログラムでもそれぞれ puts の引数の演算結果が表示されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 3
+b = 2
+puts a + b
+puts a - b
+puts a * b + 5</code></pre></figure>
+
+<p>演算結果を変数に入れることもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 5 + 3
+b = a * 2
+c = a + b
+puts c</code></pre></figure>
+
+<p>かけ算 (*)、わり算 (/) は 足し算 (+)、引き算 (-) よりも先に計算されます。次のプログラムを実行すると 30 が表示されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts 5 + 5 * 5</code></pre></figure>
+
+<p>足し算を先に行いたい場合は <strong>()</strong> を使います。次のプログラムを実行すると (5 + 5) × 5 の計算結果の 50 が実行されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts (5 + 5) * 5</code></pre></figure>
+
+<h3 id="文字を入力する">文字を入力する</h3>
+
+<p>これまでは画面に文字を出力 (表示) するプログラムばかりだったので、今度はキーボードから文字を入力できるプログラムを作ってみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">input_value = gets
+puts input_value</code></pre></figure>
+
+<p>まずはこのプログラムを実行してみてください。実行したらキーボードから何か文字を入力して Enter キーを押してください。 Enter キーを押すと入力した文字列の下に同じ文字列が表示されたと思います。</p>
+
+<p>今回のプログラムソースにはなにやら見慣れないコードがたくさん出てきましたが、落ち着いてひとつひとつ見ていきましょう。
+まず、1 行目の = より右側に注目してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">gets</code></pre></figure>
+
+<p>というコードがあります。 <strong>gets</strong> はコマンド プロンプトの端末から文字の入力を求めるメソッドです。 = より左側の input_value はただの変数です。とても偉そうな名前ですが、プログラムをわかりやすくするために格納するデータの内容を示した名前をつけてあります。もちろん input_value を a などの変数名に変えてもプログラムは同じように動作します。</p>
+
+<p>入力された文字列は input_value という変数に代入されます。順序としてはまず gets が実行されて、そこで入力された文字列が input_value に渡されます。
+このようなプログラムでは = の右側から実行され、その結果が左側の input_value に代入されます。</p>
+
+<p>gets は文字列の入力処理を行い、入力された文字列を返すメソッドです。メソッドが返す値を__戻り値__といいます。メソッドの戻り値は = を使って変数に代入することができます。</p>
+
+<p>2 行目は変数 input_value の中身をただ画面に表示しているだけですね。</p>
+
+<h3 id="入力された文字列を数値にして-2-倍する">入力された文字列を数値にして 2 倍する</h3>
+
+<p>ちょっと難しくなるのでここは読み飛ばして頂いても結構です。興味ある方は次
+のプログラムを見てください。入力された数字を 2 倍して表示するプログラム
+です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">input_value = gets
+num = input_value.to_i
+puts num * 2</code></pre></figure>
+
+<p>: <img src="/images/0002-FirstProgramming/fat_s.png" alt="fat_s.png" /></p>
+
+<p>プログラムを実行したら、数字を入力して Enter キーを押してください。例え
+ば 100 と入力すれば 200 という数字が表示されると思います。</p>
+
+<p>このプログラムは 2 行目で入力された文字列を数値 (整数) に変換しています。
+変数の内容を数値として計算するにはデータが数値である必要があります。</p>
+
+<p>表示された結果は__文字列__も__数値__も同じ文字列に見えますが、プログラム中では文
+字列と数値は明確に区別されています。gets が返すデータ (戻り値) は文字列に
+なります。100 と入力しても input_value には必ず文字列の ‘100’ が代入され
+ます。</p>
+
+<p>そこで 2 行目の</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">input_value.to_i</code></pre></figure>
+
+<p>で文字列から整数を作り出しています。この to_i はメソッドです。文字列から
+数値を作り出すメソッドです。</p>
+
+<p>そして .(ドット) でつながれた to_i は input_value 、つまり ‘100’ という文
+字列データに対する操作になります。 (何か文字列).to_i は、その文字列を整
+数に変換して返すメソッドです。その戻り値が変数 num に代入されます。つまり、num は 100 になるわけです。</p>
+
+<p>3 行目ではこの整数が格納された変数 num と 2 をかけ算して結果を表示してい
+ます。</p>
+
+<p>ちなみに、こんな書き方もできます。次のプログラムも文字列と .to_i を使っ
+た例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts '100'.to_i * 2</code></pre></figure>
+
+<p>少し複雑な話になってしまいましたが、慣れるとプログラムの流れが直感的に見
+えてくるようになります。</p>
+
+<p>はじめのサンプルプログラムはこのように書き換えることもできます。num を
+省略してしまった形です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">input_value = gets
+puts input_value.to_i * 2</code></pre></figure>
+
+<p>input_value を省略してしまうこともできます。最初のプログラムはこの一行だ
+けでも全く同じ動作をします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts gets.to_i * 2</code></pre></figure>
+
+<h2 id="制御構造">制御構造</h2>
+
+<p>前に説明したとおりプログラムには流れがあります。プログラムにはその流れに変化を与えるための__制御構造__という仕組みがあります。制御構造を使ってプログラムの流れをコントロールしましょう。</p>
+
+<h3 id="if-文を使って条件分岐">if 文を使って条件分岐</h3>
+
+<p>if を使うとプログラムを分岐させることができます。プログラムを分岐させるには条件が必要です。
+数値が代入されている変数 a があった場合、例えばこのような条件が指定できます。</p>
+
+<ul>
+  <li>a がある値だったら</li>
+  <li>a がある値でなかったら</li>
+  <li>a がある値より大きかったら</li>
+</ul>
+
+<p>これは if を使ったプログラムの例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 0
+if a == 0
+  puts 'a は 0 です'
+end</code></pre></figure>
+
+<p>このプログラムでは 2 行目で条件判断が行われます。このとき a の内容が 0 であれば 3 行目の puts メソッドが実行されます。
+if 文では if の後に書かれた条件が成立したときだけ if と end に囲まれた部分<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>が実行されます。2 行目の条件の部分で a と 0 の間に <strong>==</strong> が使われています。
+この == は a と 0 が__等しかったら__という意味を表す記号で__比較演算子__といいます。このプログラムでは1行目で a の中身には 0 がセットされているので if 文の条件が成立し、 3 行目が実行されます。比較演算子にはいくつか種類があります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>==</td>
+      <td>等しい</td>
+    </tr>
+    <tr>
+      <td>!=</td>
+      <td>等しくない</td>
+    </tr>
+    <tr>
+      <td>&gt;</td>
+      <td>より大きい</td>
+    </tr>
+    <tr>
+      <td>&lt;</td>
+      <td>より小さい</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>これは比較演算子に != を使ったプログラムです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 0
+if a != 1
+ puts 'a は 1 ではありません。a は'
+ puts a
+ puts 'です'
+end</code></pre></figure>
+
+<p>if 文では変数と変数を比べることもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 10 ; b = 5
+if a &gt; b
+ puts 'a は b より大きいです'
+end</code></pre></figure>
+
+<p><strong>else</strong> を使うと if の条件が成立しなかった時の処理を実行することもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 5 ; b = 10
+if a &gt; b
+ puts 'a は b より大きいです'
+else
+ puts 'a は b と同じか小さいです'
+end</code></pre></figure>
+
+<p>このプログラムでは if の条件が成立しないので else と end にはさまれた puts が実行されます。</p>
+
+<h3 id="while-で繰り返し">while で繰り返し</h3>
+
+<p>Ruby のループ処理にはいくつかの方法がありますが、ここでは while を紹介します。
+次のプログラムは while を使ってループ処理を行うプログラムです。 2 行目から 5 行目までが while によるループ処理です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ct = 0
+while ct &lt; 5
+  puts ct
+  ct += 1
+end
+puts 'ループが終了しました'
+puts ct</code></pre></figure>
+
+<p>書き方は if と同じです。 while の後ろに条件を書きます。while と対になる end も必要です。 ct はただの変数です。プログラムが実行されて処理が while の行まで来ると条件判定が行われます。条件が成立するとまず end の一行手前までが実行されます。プログラムの処理が end まで来るとプログラムの流れは while の行にジャンプします。そこでまた条件判定が行われ条件が成立していれば end 手前までの行が実行されます。そしてまた while の行までジャンプして条件判定が行われます。while の後ろの条件が成立している限りはこの繰り返しです。</p>
+
+<p>4 行目にこのような処理があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ct += 1</code></pre></figure>
+
+<p>この処理は変数 ct の内容を 1 加算するという意味です。ct には、はじめ 0 が代入されているのでここを通ると ct の内容は 0 に 1 が足されて 1 に変わります。次に通るときは 1 に 1 が足されるので ct の中身は 2 に変わります。また次に通るときにはさらに 1 が足されて ct が 3 に変わります。</p>
+
+<p>while の条件は ct &lt; 5 となっています。つまり ct が 5 より小さければ条件成立です。ct の内容はループする度に 1 ずつ加算されていき ct が 5 になったときに条件が成立しなくなります。するとプログラムは while の行から end の次の行へジャンプします。</p>
+
+<h3 id="無限ループ">無限ループ</h3>
+
+<p>次のプログラムでは条件が必ず成立するのでプログラムが終了しません。このようなループを無限ループといいます。
+このプログラムを停止させるには Ctrl キーを押しながら C キーを押して Ruby を強制終了させてください。<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">while 1 &gt; 0
+  puts 'とまらないよ'
+  sleep 1
+end</code></pre></figure>
+
+<p>1 &gt; 0 は必ず成立する条件です。これは 100 &gt; 10 でも 5 == 5 でも OK です。また、必ず成立する条件を書く場合、普通は true を使います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">while true
+  # 繰り返したい処理
+end</code></pre></figure>
+
+<p>これも無限ループのプログラムです。</p>
+
+<h3 id="times-を使ったループ">times を使ったループ</h3>
+
+<p>times はある決まった回数だけループさせたいときに便利なメソッドです。次のプログラムは 10 回の繰り返し処理を行います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">10.times do
+  # 繰り返したい処理
+  puts 'hello'
+end</code></pre></figure>
+
+<p>10 の部分には変数を書くこともできます。</p>
+
+<h2 id="じゃんけんゲーム">じゃんけんゲーム</h2>
+
+<p>これまでの知識を使ってじゃんけんゲームに挑戦します。
+グー、チョキ、パーのいずれかを出してくる__じゃんけんロボット__とプレイヤーがじゃんけん対決をして、勝敗結果を表示するプログラムを作ってみましょう。</p>
+
+<h3 id="乱数-らんすう">乱数 (らんすう)</h3>
+
+<p>じゃんけんゲームを作る前に乱数という機能を説明します。
+じゃんけんロボットはグー、チョキ、パーの三つのうちのどれかひとつを出してきます。
+プログラムが実行されるまで何が出されるかわからないようにするために乱数を使用します。</p>
+
+<h3 id="さいころ">さいころ</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts rand(6) + 1</code></pre></figure>
+
+<p><img src="/images/0002-FirstProgramming/saikoro_s.png" alt="saikoro_s.png" />
+これは 1 ? 6 の数値をランダムで画面に表示するプログラムです。rand(6) は 0 ? 5 の整数をランダムで返します。
+rand の引数に1 以上の整数を与えると「 <strong>0</strong> 以上で __与えた引数 -1 __以下の整数」のいずれかの値が取得できます。</p>
+
+<p>次のプログラムでは画面に 0 ? 19 の数値がランダムで表示されることになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts rand(20)</code></pre></figure>
+
+<p>ループを使えばさいころを 10 回繰り返して振ることもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">10.times do
+  puts rand(6) + 1
+end</code></pre></figure>
+
+<h3 id="じゃんけんロボット">じゃんけんロボット</h3>
+
+<p>じゃんけんゲームを作る前にじゃんけんロボットを作ってみます。じゃんけんロボットはグー、チョキ、パーのいずれかを画面に表示するプログラムです。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span> <span class="s1">'じゃんけん'</span>
+<span class="nb">sleep</span> <span class="mi">1</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">1</span>
+  <span class="nb">puts</span> <span class="s1">'グー'</span>
+<span class="k">elsif</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">2</span>
+  <span class="nb">puts</span> <span class="s1">'チョキ'</span>
+<span class="k">elsif</span> <span class="n">r</span> <span class="o">==</span> <span class="mi">3</span>
+  <span class="nb">puts</span> <span class="s1">'パー'</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<dl>
+  <dt><em>※プログラムの各行の頭にある数字と縦棒は説明しやすくするための行番号なので、プログラムには書き込まないでくださいね。</em></dt>
+  <dd><img src="/images/0002-FirstProgramming/robo_s.png" alt="robo_s.png" /></dd>
+</dl>
+
+<p>3 行目で変数 r に 1 か 2 か 3 のどれかの数字が代入されます。6 行目と 8 行目ではじめてみる elsif というコードがあります。これは 4 行目の if に対応していて 4 行目の if の条件が成立しなかった場合に elsif までプログラムの処理がジャンプしてきます。 elsif の行までくると if 文と同じようにここで条件判定が行われます。つまりこの if から end までの処理はこういう意味です。</p>
+
+<ol>
+  <li><strong>r が 1 なら</strong> ⇒ <strong>「グー」を表示する</strong></li>
+  <li>r が 1 ではないときに <strong>r が 2 なら</strong> ⇒ <strong>「チョキ」を表示する</strong></li>
+  <li>r が 1 ではなくかつ r が 2 ではないときに <strong>r が 3 なら</strong> ⇒ <strong>「パー」を表示する</strong></li>
+</ol>
+
+<p>整理するとこういうことです。</p>
+
+<ol>
+  <li>r が 1 なら ⇒ 「グー」を表示する</li>
+  <li>r が 2 なら ⇒ 「チョキ」を表示する</li>
+  <li>r が 3 なら ⇒ 「パー」を表示する</li>
+</ol>
+
+<h3 id="case-と-when-を使う">case と when を使う</h3>
+
+<p>先ほどのじゃんけんロボットのプログラムは <strong>case</strong> 文を使って書くこともできます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span> <span class="s1">'じゃんけん'</span>
+<span class="nb">sleep</span> <span class="mi">1</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">case</span> <span class="n">r</span>
+<span class="k">when</span> <span class="mi">1</span> <span class="c1"># r が 1 のとき</span>
+  <span class="nb">puts</span> <span class="s1">'グー'</span>
+<span class="k">when</span> <span class="mi">2</span> <span class="c1"># r が 2 のとき</span>
+  <span class="nb">puts</span> <span class="s1">'チョキ'</span>
+<span class="k">when</span> <span class="mi">3</span> <span class="c1"># r が 3 のとき</span>
+  <span class="nb">puts</span> <span class="s1">'パー'</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>ひとつの同じ変数を何度も == で比較する場合は case 文を使ったほうが便利です。</p>
+
+<h3 id="じゃんけんゲームのプログラム">じゃんけんゲームのプログラム</h3>
+
+<p>以下が完成したじゃんけんプログラムです。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span> <span class="s1">'じゃんけんゲーム開始'</span>
+<span class="nb">sleep</span> <span class="mi">1</span>
+
+<span class="c1"># プレイヤーのじゃんけん入力</span>
+<span class="nb">puts</span> <span class="s1">'何を出しますか？'</span>
+<span class="nb">puts</span> <span class="s1">'1 グー'</span>
+<span class="nb">puts</span> <span class="s1">'2 チョキ'</span>
+<span class="nb">puts</span> <span class="s1">'3 パー'</span>
+<span class="n">input_value</span> <span class="o">=</span> <span class="nb">gets</span>
+
+<span class="c1"># じゃんけんロボットの処理</span>
+<span class="n">robo</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">case</span> <span class="n">robo</span>
+<span class="k">when</span> <span class="mi">1</span>
+  <span class="nb">puts</span> <span class="s1">'ロボットはグーを出した！'</span>
+<span class="k">when</span> <span class="mi">2</span>
+  <span class="nb">puts</span> <span class="s1">'ロボットはチョキを出した！'</span>
+<span class="k">when</span> <span class="mi">3</span>
+  <span class="nb">puts</span> <span class="s1">'ロボットはパーを出した！'</span>
+<span class="k">end</span>
+
+<span class="c1"># じゃんけん結果判定</span>
+<span class="n">player</span> <span class="o">=</span> <span class="n">input_value</span><span class="p">.</span><span class="nf">to_i</span>
+<span class="k">case</span> <span class="n">player</span>
+<span class="k">when</span> <span class="mi">1</span>
+  <span class="nb">puts</span> <span class="s1">'あなたはグーを出した！'</span>
+  <span class="k">case</span> <span class="n">robo</span>
+  <span class="k">when</span> <span class="mi">1</span> <span class="c1"># ロボットがグーなら</span>
+    <span class="nb">puts</span> <span class="s1">'引き分けです'</span>
+  <span class="k">when</span> <span class="mi">2</span> <span class="c1"># ロボットがチョキなら</span>
+    <span class="nb">puts</span> <span class="s1">'あなたの勝ちです'</span>
+  <span class="k">when</span> <span class="mi">3</span> <span class="c1"># ロボットがパーなら</span>
+    <span class="nb">puts</span> <span class="s1">'あなたの負けです'</span>
+  <span class="k">end</span>
+<span class="k">when</span> <span class="mi">2</span>
+  <span class="nb">puts</span> <span class="s1">'あなたはチョキを出した！'</span>
+  <span class="k">case</span> <span class="n">robo</span>
+  <span class="k">when</span> <span class="mi">1</span> <span class="c1"># グー</span>
+    <span class="nb">puts</span> <span class="s1">'あなたの負けです'</span>
+  <span class="k">when</span> <span class="mi">2</span> <span class="c1"># チョキ</span>
+    <span class="nb">puts</span> <span class="s1">'引き分けです'</span>
+  <span class="k">when</span> <span class="mi">3</span> <span class="c1"># パー</span>
+    <span class="nb">puts</span> <span class="s1">'あなたの勝ちです'</span>
+  <span class="k">end</span>
+<span class="k">when</span> <span class="mi">3</span>
+  <span class="nb">puts</span> <span class="s1">'あなたはパーを出した！'</span>
+  <span class="k">case</span> <span class="n">robo</span>
+  <span class="k">when</span> <span class="mi">1</span> <span class="c1"># グー</span>
+    <span class="nb">puts</span> <span class="s1">'あなたの勝ちです'</span>
+  <span class="k">when</span> <span class="mi">2</span> <span class="c1"># チョキ</span>
+    <span class="nb">puts</span> <span class="s1">'あなたの負けです'</span>
+  <span class="k">when</span> <span class="mi">3</span> <span class="c1"># パー</span>
+    <span class="nb">puts</span> <span class="s1">'引き分けです'</span>
+  <span class="k">end</span>
+<span class="k">else</span> <span class="c1"># どの when の条件も成立しなかったとき</span>
+  <span class="nb">puts</span> <span class="s1">'あなたは何も出さなかった！'</span>
+  <span class="nb">puts</span> <span class="s1">'あなたの負けです'</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>case 文の中に case 文が入っていることに注意してください。</p>
+
+<p>55 行目の else は 24 行目の case に対応していて変数 player が 1、2、3 ではなかったときに else と end に囲まれた部分が実行されます。</p>
+
+<h2 id="ゲームブックを作る">ゲームブックを作る</h2>
+
+<p>最後に、今まで紹介した機能を使ってゲームブックプログラムを作ってみました。
+まずはこのプログラムを実行してみてください。
+選択肢が表示されたら数字を入力してから「Enter」を押してください。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">scene</span> <span class="o">=</span> <span class="s1">'opening'</span>
+<span class="k">while</span> <span class="kp">true</span>
+  <span class="k">case</span> <span class="n">scene</span>
+  <span class="k">when</span> <span class="s1">'opening'</span>
+    <span class="nb">puts</span> <span class="s1">'３本の分かれ道があります。どの道を進みますか。'</span>
+    <span class="nb">puts</span> <span class="s2">"  1 左の道"</span>
+    <span class="nb">puts</span> <span class="s2">"  2 真ん中の道"</span>
+    <span class="nb">puts</span> <span class="s2">"  3 右の道"</span>
+    <span class="n">input_value</span> <span class="o">=</span> <span class="nb">gets</span>
+    <span class="k">case</span> <span class="n">input_value</span><span class="p">.</span><span class="nf">to_i</span>
+    <span class="k">when</span> <span class="mi">1</span>
+      <span class="n">scene</span> <span class="o">=</span> <span class="s1">'left'</span>
+    <span class="k">when</span> <span class="mi">2</span>
+      <span class="n">scene</span> <span class="o">=</span> <span class="s1">'center'</span>
+    <span class="k">when</span> <span class="mi">3</span>
+      <span class="n">scene</span> <span class="o">=</span> <span class="s1">'right'</span>
+    <span class="k">end</span>
+  <span class="k">when</span> <span class="s1">'left'</span>
+    <span class="nb">puts</span> <span class="s1">'あっ！'</span>
+    <span class="nb">sleep</span> <span class="mi">1</span>
+    <span class="nb">puts</span> <span class="s1">'落とし穴に落ちてしまいました。'</span>
+    <span class="nb">puts</span> <span class="s1">'〜 GAME OVER 〜'</span>
+    <span class="nb">exit</span> <span class="c1"># プログラムを終了</span>
+  <span class="k">when</span> <span class="s1">'center'</span>
+    <span class="nb">puts</span> <span class="s1">'真ん中の道をまっすぐ歩いていくと……'</span>
+    <span class="nb">sleep</span> <span class="mi">1</span>
+    <span class="nb">puts</span> <span class="s1">'宝箱をみつけました！'</span>
+    <span class="nb">puts</span> <span class="s2">"  1 そのままにしておく"</span>
+    <span class="nb">puts</span> <span class="s2">"  2 あける"</span>
+    <span class="n">input_value</span> <span class="o">=</span> <span class="nb">gets</span>
+    <span class="k">case</span> <span class="n">input_value</span><span class="p">.</span><span class="nf">to_i</span>
+    <span class="k">when</span> <span class="mi">1</span>
+      <span class="n">scene</span> <span class="o">=</span> <span class="s1">'leave'</span>
+    <span class="k">when</span> <span class="mi">2</span>
+      <span class="n">scene</span> <span class="o">=</span> <span class="s1">'ending'</span>
+    <span class="k">end</span>
+  <span class="k">when</span> <span class="s1">'right'</span>
+    <span class="nb">puts</span> <span class="s1">'しばらく歩き続けると　もとの場所にもどってしまいました。'</span>
+    <span class="nb">sleep</span> <span class="mi">1</span>
+    <span class="n">scene</span> <span class="o">=</span> <span class="s1">'opening'</span>
+  <span class="k">when</span> <span class="s1">'leave'</span>
+    <span class="nb">puts</span> <span class="s1">'宝箱には見向きもせず　お家に帰りました。'</span>
+    <span class="nb">puts</span> <span class="s1">'〜 GAME OVER 〜'</span>
+    <span class="nb">exit</span> <span class="c1"># プログラムを終了</span>
+  <span class="k">when</span> <span class="s1">'ending'</span>
+    <span class="nb">puts</span> <span class="s1">'パカッ'</span>
+    <span class="nb">sleep</span> <span class="mi">1</span>
+    <span class="nb">puts</span> <span class="s1">'まばゆい光があふれだす……'</span>
+    <span class="nb">sleep</span> <span class="mi">1</span>
+    <span class="nb">puts</span> <span class="s1">'１００枚の金貨を手に入れました！'</span>
+    <span class="nb">sleep</span> <span class="mi">2</span>
+    <span class="nb">puts</span> <span class="s1">'〜 CONGRATULATIONS! 〜'</span>
+    <span class="nb">sleep</span> <span class="mi">2</span>
+    <span class="nb">puts</span> <span class="s1">'    シナリオ だん'</span>
+    <span class="nb">sleep</span> <span class="mi">2</span>
+    <span class="nb">puts</span> <span class="s1">'   プログラム だん'</span>
+    <span class="nb">sleep</span> <span class="mi">2</span>
+    <span class="nb">puts</span> <span class="s1">'      〜 END 〜'</span>
+    <span class="nb">exit</span> <span class="c1"># プログラムを終了</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>乱数を使っていないので、同じ選択肢を選べば毎回同じ結果になります。</p>
+
+<p><strong>exit</strong> はプログラムを終了させるメソッドです。</p>
+
+<p>exit 以外はこれまでに紹介した機能しか使っていないのでじっくりソースを読んでみてください。
+一行ずつ理解しながら読んでいけば頭の中でプログラムの流れをイメージすることができると思います。</p>
+
+<p>読者のみなさんもこのプログラムを参考にゲームブックプログラムを是非作ってみてください<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>。乱数の機能を使えば新たなゲーム性をプラスすることもできるでしょう。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>だん (dan at dgames dot jp)</p>
+
+<p>ゲームメーカーに勤めるゲームクリエイター。</p>
+
+<p>最近までずっとコンシューマーゲームソフトの開発という閉じた世界にいた。この春からこっち、オープンソースというものに興味を持ちはじめオープンソースで面白いゲームが作れないかと<a href="http://www.dgames.jp/dan/">開発日記</a>にて試行錯誤している。</p>
+
+<h2 id="ruby-ではじめるプログラミング-連載一覧">Ruby ではじめるプログラミング 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0005/0005-FirstProgramming.html">Ruby ではじめるプログラミング 【最終回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-FirstProgramming.html">Ruby ではじめるプログラミング 【第 3 回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-FirstProgramming.html">Ruby ではじめるプログラミング 【第 2 回】</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-FirstProgramming.html">Ruby ではじめるプログラミング 【第 1 回】</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>プログラムを書いていることが多いのでそう言われますが、自分ではあくまでゲームデザイナーだと思っています！&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>もちろんゲームだって作れます。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>オブジェクト指向プログラミングとはプログラミング技法のひとつです。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>エディタとはテキストファイルを編集するツールのことです。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>ディレクトリとはフォルダのことです。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>流れが複数あるプログラムはマルチスレッドと言います。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>実はこのたとえは正確ではありません。 Ruby の世界では、複数の箱に同時に同じデータが入ることがあります。変数とはオブジェクトに付ける名札と言ってもいいかもしれません。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>ここでは詳しい解説はしませんが、オブジェクト指向プログラミングにおいてメソッドとはデータに対する「手続き」のことを指します。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>上のプログラムでは puts の前にスペースが挿入してありますが、これはプログラムを見やすくするためのものでインデント (字下げ) といいます。インデントをしなくてもプログラムは同じように動作します。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>Windows の場合です。例えば Linux ならばターミナル画面で、Ctrl + D です。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>このゲームを作るのに一番気を使ったのは sleep です。sleep のタイミングは何度もプログラムを実行しながら調整しました。微妙な数値で印象がガラリと変わってしまうからアプリケーションって不思議ですね。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

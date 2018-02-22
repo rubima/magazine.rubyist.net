@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RubyOnRails を使ってみる 【第 8 回】 Rails はまり道</title>
+  <meta name="description" content="書いた人：Yu_kata">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0015/0015-RubyOnRails.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>RubyOnRails を使ってみる 【第 8 回】 Rails はまり道</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0015/0015-RubyOnRails.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RubyOnRails を使ってみる 【第 8 回】 Rails はまり道" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0015/0015-RubyOnRails.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0015/0015-RubyOnRails.html" data-text="RubyOnRails を使ってみる 【第 8 回】 Rails はまり道">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：Yu_kata</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>昨年より、Ruby on Rails と Ruby の勉強を始めた Yu_kata といいます。</p>
+
+<p>今回の記事では、学習しながら作っていった Rails アプリの開発コードの変遷を紹介します。
+これから Rails を学ぼうとしている方の学習の参考になれば幸いです。</p>
+
+<p>なお、実際の Rails アプリ (簡略版) もご用意しましたので、ご参照ください。
+<a href="/images/0015-RubyOnRails/workmanagement.tar.gz">workmanagement.tar.gz</a></p>
+
+<p>本記事中、初期コードとなっているコードも、コントローラ・モデルはファイル名の頭、ビューはフォルダ名の頭に old_ と付けた形で収録してあります (ActiveRecord2 の項、改善後のコードその 1 だけは、old_timecard ではなく old_management に入れてあります)。</p>
+
+<p>ちなみに、作っていた Rails アプリは社内で勤怠を管理するアプリです。</p>
+
+<h2 id="actioncontroller">ActionController</h2>
+
+<h3 id="初期コード画面">初期コード・画面</h3>
+<p><img src="/images/0015-RubyOnRails/select_date.gif" alt="select_date.gif" /></p>
+
+<ul>
+  <li>app/views/management/_date_user_select.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;%= start_form_tag :action =&gt;'date_user_list' %&gt;
+&lt;table class='confirm'&gt;
+  &lt;tr&gt;
+    &lt;th&gt;選択日の出勤表表示&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;%= select_date(session[:currentdate],:use_month_numbers =&gt; true) %&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;%= submit_tag "選択" %&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;%= end_form_tag %&gt;</code></pre></figure>
+
+<p><img src="/images/0015-RubyOnRails/date_user.gif" alt="date_user.gif" /></p>
+
+<ul>
+  <li>app/controllers/management_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class ManagementController &lt; ApplicationController
+  before_filter :login_required,:access_limitation
+  before_filter :session_nil,:only =&gt;[:show,:edit,:r_index]
+
+  def date_user_list
+    unless session[:choice_date]
+      session[:choice_date]={:year =&gt; params[:date][:year],
+                                          :month =&gt; params[:date][:month],
+                                          :day =&gt; params[:date][:day]}
+    end
+    @timecard_pages,@timecards = paginate(:timecard,
+                                                  :order =&gt;'input_date',
+                                                  :include =&gt; [:workcode],
+                                                  :conditions =&gt; ["input_date= ?",
+                                                                   Date.new(session[:choice_date]].to_i,
+                                                                            session[:choice_date][:month].to_i,
+                                                                            session[:choice_date][:day].to_i)])
+    @workcodes=Workcode.find_all
+  end
+
+  protected
+  def session_nil
+    session[:choice_user]=nil
+    session[:choice_date]=nil
+  end</code></pre></figure>
+
+<h3 id="問題点">問題点</h3>
+
+<p>セレクトボックスから日付を選択、その日付の勤怠データを一覧表示する画面に遷移という流れです。
+上記のコードでは、session を使用して、選択されたパラメータを保持・遷移させています。
+edit や r_index といった別アクションに遷移したら session をクリアするよう、session_nil というメソッドを before_filter に登録しています。</p>
+
+<p>しかし、このやり方には問題があります。</p>
+
+<p>そこでブラウザの「戻る」ボタンを使った場合はどうなるでしょうか？
+<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+その場合、session がクリアされず、セレクトボックスから別の日付を新たに選択しても、前に選んだ日付のデータが表示されることになります。</p>
+
+<h3 id="改善後コード画面">改善後コード・画面</h3>
+<p><img src="/images/0015-RubyOnRails/date_user2.gif" alt="date_user2.gif" /></p>
+
+<ul>
+  <li>app/views/management/_date_user_select.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;%= start_form_tag :action =&gt;'through_date_user_list' %&gt;
+&lt;table class='confirm'&gt;
+  &lt;tr&gt;
+    &lt;th&gt;選択日の出勤表表示&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;%= select_date(session[:currentdate],:use_month_numbers =&gt; true) %&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;%= submit_tag "選択" %&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt; &lt;%= end_form_tag %&gt;</code></pre></figure>
+
+<ul>
+  <li>app/controllers/management_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def through_date_user_list
+    redirect_to :action =&gt;'date_user_list',
+                      :year =&gt; params[:date][:year],
+                      :month =&gt; params[:date][:month],
+                      :day =&gt; params[:date][:day]
+  end
+
+ def date_user_list
+   @workcodes=Workcode.find_all
+   @timecard_pages,@timecards = paginate(:timecard,
+                                         :order =&gt;'input_date',
+                                         :include =&gt; [:workcode],
+                                         :conditions =&gt; ["input_date= ?",Date.new(params[:year].to_i,
+                                                                                  params[month].to_i,
+                                                                                  params[:day].to_i)])
+  end</code></pre></figure>
+
+<ul>
+  <li>config/routes.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># year/month/dayを表示
+ map.connect 'management/:action/:year/:month/:day',
+   :controller =&gt; 'management',
+   :action =&gt; 'd_u_list',
+   :requirements =&gt; {:year =&gt; /(19|20)\d\d/,
+     :month =&gt; /[01]?\d/,
+     :day =&gt; /[0-3]?\d/},
+     :day =&gt; nil,
+     :month =&gt; nil</code></pre></figure>
+
+<h3 id="改善点">改善点</h3>
+
+<p>ルーティングを良く分かっていなかったので、
+id, controller, action以外の任意のパラメータを渡せることに気づかず、なんでも session で対応しようとしていました。
+改善後は、上記のように、ルーティングを使って日付のパラメータを渡すように修正しています。</p>
+
+<p>ついでに、date_user_list?day=2&amp;month=7&amp;year=2006 という表示を、Rails 風に 2006/07/02 と表示するよう、config/routes.rb にルーティング設定を追加してあります。</p>
+
+<p>session を使う必要性がなくなったので、session_nil は不要になりました。
+ブラウザの「戻る」を使った場合でも、ちゃんと選択された日付が表示されるようになっています。</p>
+
+<p>また、副作用として、日付やメンバのセレクトボックスを常に表示しても問題なくなりました。</p>
+
+<h2 id="actionview">ActionView</h2>
+
+<h3 id="初期コード画面-1">初期コード・画面</h3>
+<p><img src="/images/0015-RubyOnRails/cycle_list.png" alt="cycle_list.png" /></p>
+
+<ul>
+  <li>app/views/timecard/_list.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;% col = "#D6ECFA"
+   white = "white"
+   bool = true
+   for timecard in @timecards
+     bool = !bool
+     color = case bool
+             when true
+               col
+             else
+               white
+             end
+%&gt;
+...</code></pre></figure>
+
+<h3 id="問題点-1">問題点</h3>
+
+<p>テーブルで1行毎に色を変えて表示する為、rhtmlにこのようにメソッドをべた書きしていました。
+しかし、同じように表示させたいテーブルが出てきた場合、毎回書かなければいけなくなります。</p>
+
+<h3 id="改善後コード">改善後コード</h3>
+
+<ul>
+  <li>app/views/timecard/_list.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;%- for timecard in @timecards -%&gt;
+ &lt;tr bgcolor="&lt;%= cycle("white", "#D6ECFA") %&gt;"&gt;
+...</code></pre></figure>
+
+<h3 id="改善点-1">改善点</h3>
+
+<p>この様な場合、ヘルパモジュールにメソッドとして定義するのが妥当です。
+ですが、Rails に cycle というメソッドが追加されたので、そもそもヘルパに定義する必要もなくなりました。</p>
+
+<p>便利なメソッドが追加されていたりするので、最新版は追いかけていた方が幸せになれます。
+自分で追いかけるのが大変という方は、<a href="http://wota.jp/ac/">くまくまーさん</a>や <a href="http://d.hatena.ne.jp/secondlife/">secondlife さん</a>、<a href="http://blog.masuidrive.jp/">masuidrive さん</a>のブログを見ておくといいと思います。</p>
+
+<h2 id="activesupport">ActiveSupport</h2>
+
+<h3 id="初期コード">初期コード</h3>
+
+<ul>
+  <li>app/controllers/timecard_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> protected
+ def select_timecards_and_sum
+   @start_month_first=Date.new(session[:currentdate].year,session[:currentdate].month,1)
+   @next_month_first=Date.new(session[:currentdate].year,session[:currentdate].month,1)&gt;&gt;1
+   @timecards =
+     session[:user].timecards.find_month(@start_month_first,
+                                         @next_month_first)
+   @previous_timecards =
+     session[:user].timecards.find_month(Date.new(session[:currentdate].year,1,1),
+                                         @start_month_first)</code></pre></figure>
+
+<h3 id="問題点-2">問題点</h3>
+
+<p>上記のように日付を生成する時に毎回 Date.new(year,month,day) と冗長に書いていました。
+各所の find で日付を条件として使っていたため、記述するのが相当面倒で無駄な記述が発生してしまいました。</p>
+
+<h3 id="改善後のコード">改善後のコード</h3>
+
+<ul>
+  <li>app/controllers/application_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def conv_start_month(date)
+   date.to_time.beginning_of_month.to_date
+ end
+
+ def conv_end_month(date)
+   date.to_time.end_of_month.to_date
+ end
+
+ def conv_prev_month(date)
+   date.to_time.last_month.end_of_month.to_date
+ end
+
+ def conv_start_year(date)
+   date.to_time.beginning_of_year.to_date
+ end
+
+ def conv_end_year(date)
+   date.to_time.beginning_of_year.months_since(11).end_of_month.to_date
+ end</code></pre></figure>
+
+<ul>
+  <li>app/controllers/timecard_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">protected
+ def select_timecards_and_sum
+   @timecards =
+     session[:user].timecards.find_month(conv_start_month(session[:currentdate]),
+                                         conv_end_month(session[:currentdate]))
+   @total_time_view=
+     session[:user].timecards.overtime_total_sum(conv_start_month(session[:currentdate]),
+                                                 conv_end_month(session[:currentdate]))</code></pre></figure>
+
+<h3 id="改善点-2">改善点</h3>
+
+<p>ActiveSupport の Time 拡張を知って、ApplicationController に上記のメソッドを追加しました。
+その結果、各所で記述量が減りました。
+ActiveSupport には、他にも便利なメソッドがたくさんあるので、一通り目を通しておくといいと思います。</p>
+
+<h2 id="activerecord1">ActiveRecord1</h2>
+
+<h3 id="初期コード画面-2">初期コード・画面</h3>
+<p><img src="/images/0015-RubyOnRails/cycle_list.png" alt="cycle_list.png" /></p>
+
+<ul>
+  <li>app/views/timecard/_list.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  &lt;td&gt;&lt;%=h wday_kanji(timecard.input_date.wday) %&gt;曜日&lt;/td&gt;
+  &lt;td&gt;&lt;%=h timecard.workcode.workcode_name %&gt;&lt;/td&gt;
+  &lt;%- end -%&gt;
+  &lt;td&gt;&lt;%=h timecard.workcode.use_time %&gt;&lt;/td&gt;
+    &lt;%- unless timecard.request_date.nil? -%&gt;
+    &lt;td&gt;&lt;%=h timecard.request_date.strftime("%m月%d日") %&gt;&lt;/td&gt;
+    &lt;%- else -%&gt;
+    &lt;td&gt;&lt;br /&gt;&lt;/td&gt;
+    &lt;%- end -%&gt;</code></pre></figure>
+
+<ul>
+  <li>app/models/timecard.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Timecard &lt; ActiveRecord::Base
+  belongs_to :user
+  belongs_to :workcode
+
+ def self.find_month(start_month_date,next_month_first)
+   find(:all,
+        :conditions =&gt; ["input_date &gt;=? AND input_date &lt; ?",
+          start_month_date,next_month_first],
+          :order =&gt; "input_date")
+ end</code></pre></figure>
+
+<h3 id="問題点-3">問題点</h3>
+
+<p>上記のコードは app/controllers/timecard_controller.rb の index などから呼ばれ、一月分の勤怠データを表示しています。
+一見すると問題なさそうに見えます。</p>
+
+<p>しかし、実際にアクセスして、log/development.log に記録されたログを見てみると、結構な量の SQL が発行されています。
+これは、関連するテーブルを参照する度に SQL が発行されているためです。
+この場合、_list.rhtml の timecard.workcode で、workcode テーブルに対する SQL が発行されています。</p>
+
+<p>確かに SQL がたくさん発行され、パフォーマンスが落ちてるかもしれないけど、
+表示されているし、それの何が問題なのと思われるかもしれません。
+しかし、もっと呼びださなければいけない関連テーブルがあった場合はどうでしょうか？　
+今回のサンプルでは簡略化しているため、モデルに定数として書いてあるマスタや省略したものがありますが、実際のアプリでは、さらに多くの関連テーブルが存在しています。
+それなりのアプリを作ろうとした場合にも、テーブル数は結構な数になると思います。
+これらを表示させようとした場合、パフォーマンスに多大な影響を与えることになってしまいます。</p>
+
+<h3 id="改善後のコード-1">改善後のコード</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def self.find_month(start_month_date,end_month_date)
+   find(:all,
+        :include =&gt; [:workcode],
+        :conditions =&gt; ["input_date &gt;=? AND input_date &lt;= ?",
+          start_month_date,end_month_date],
+          :order =&gt; "input_date")</code></pre></figure>
+
+<h3 id="改善点-3">改善点</h3>
+
+<p>実は :include オプションを使えばいいだけです。
+<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<p>上記コードの様に、:include を使えば一回の SQL で関連テーブルデータもまとめて取ってきてくれます。
+恥ずかしい話ですが、私の場合、そもそも :include オプションというか、SQL の join を良く理解していなかったというのが根本的な原因でした。
+この為、<a href="https://www.amazon.co.jp/%E3%81%99%E3%82%89%E3%81%99%E3%82%89%E3%81%A8%E6%89%8B%E3%81%8C%E5%8B%95%E3%81%8F%E3%82%88%E3%81%86%E3%81%AB%E3%81%AA%E3%82%8BSQL%E6%9B%B8%E3%81%8D%E6%96%B9%E3%83%89%E3%83%AA%E3%83%AB-%E7%BE%BD%E7%94%9F-%E7%AB%A0%E6%B4%8B/dp/4774122998?SubscriptionId=1PE38HKS6CPYCN0NM382&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4774122998">‘SQL 書き方ドリル’</a>を読んで、手を動かしながら SQL を勉強しました。</p>
+
+<h2 id="activerecord2">ActiveRecord2</h2>
+
+<h3 id="初期コード画面-3">初期コード・画面</h3>
+<p><img src="/images/0015-RubyOnRails/sum.gif" alt="sum.gif" /></p>
+
+<ul>
+  <li>app/views/timecard/index.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   &lt;%- unless @vacation.nil? -%&gt;
+   &lt;td&gt;&lt;%=h @previous_month_sum %&gt;&lt;/td&gt;
+   &lt;%- else -%&gt;
+   &lt;td&gt;&lt;br /&gt;&lt;/td&gt;
+   &lt;%- end -%&gt;</code></pre></figure>
+
+<ul>
+  <li>app/controllers/timecard_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> protected
+ def select_timecards_and_sum
+ -省略-
+   @vacation=session[:user].vacations.find_by_year(session[:currentdate].year)
+   @previous_month_sum=@vacation.yearly_vacation - vacation_sum(@previous_timecards)
+   @current_month_sum=vacation_sum(@timecards)
+   @overtime_total_view=overtime_total_sum(@timecards_confirm)
+ end
+
+ protected
+ def vacation_sum(array)
+   vacation=0
+   array.each do |array|
+     unless array.workcode.use_time==nil
+       vacation=vacation+array.workcode.use_time
+     end
+   end
+   return vacation
+ end</code></pre></figure>
+
+<h3 id="問題点-4">問題点</h3>
+
+<p>画面の年休日数や、一月の時間外勤務時間等、合計を表示させるためのコードです。
+開発を始めた当初、ActiveRecord に count はあったのですが、sum はありませんでした。
+また、私がそもそも sum 自体を SQL で書いたことがありませんでした。
+そのため、合計を出すためだけに、find で取得した ActiveRecord オブジェクトを、timecard_controller.rb に定義したメソッドで each を使って回すという、コストのかかることをしてしまっています。</p>
+
+<h3 id="改善後のコードその1">改善後のコードその1</h3>
+
+<ul>
+  <li>app/views/timecard/index.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   &lt;%- unless @vacation.nil? -%&gt;
+     &lt;td&gt;&lt;%=h @vacation.yearly_vacation - @previous_month_sum[:vac_sum].to_f %&gt;&lt;/td&gt;
+   &lt;%- else -%&gt;
+     &lt;td&gt;&lt;br /&gt;&lt;/td&gt;
+   &lt;%- end -%&gt;</code></pre></figure>
+
+<ul>
+  <li>app/models/timecard.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def self.vacation_sum(user_id,start_month_date,next_month_first)
+   find_by_sql(["SELECT user_id,SUM(workcodes.use_time) AS vac_sum
+                 FROM timecards
+                 LEFT JOIN workcodes
+                 ON timecards.workcode_id = workcodes.id
+                 WHERE
+                 timecards.user_id = ?
+                 AND
+                 input_date &gt;= ?
+                 AND
+                 input_date &lt;? GROUP BY user_id",
+                 user_id,start_month_date,next_month_first]).first
+ end</code></pre></figure>
+
+<ul>
+  <li>app/controllers/timecard.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> protected
+ def select_timecards_and_sum
+ -省略-
+   @vacation=session[:user].vacations.find_by_year(session[:currentdate].year)
+   @previous_month_sum=
+     Timecard.vacation_sum(session[:user].id,
+                              Date.new(session[:currentdate].year,1,1),
+                              @start_month_first)
+   @current_month_sum=
+     Timecard.vacation_sum(session[:user].id,@start_month_first,
+                              @next_month_first)
+   if @previous_month_sum.nil?
+     @previous_month_sum ={'vac_sum' =&gt; 0,'user_id' =&gt; @user.id }
+     if @previous_month_sum[:vac_sum].nil?
+       @previous_month_sum[:vac_sum]=0
+     end
+   end
+   if @current_month_sum.nil?
+     @current_month_sum ={'vac_sum' =&gt; 0,'user_id' =&gt; @user.id }
+     if @current_month_sum[:vac_sum].nil?
+       @current_month_sum[:vac_sum]=0
+     end
+   end</code></pre></figure>
+
+<h3 id="改善点その1">改善点その1</h3>
+
+<p>SQL をそこそこ理解し、書けるようになったので、find_by_sql で上記のように書き、controller に書いていた先のメソッドが不要になっています。
+また、コスト的にも SQL 一回の取得で済んでいます。
+しかし、find_by_sql で取得しているため、ビューへの表示のために処理が若干必要になってしまっています。</p>
+
+<h3 id="改善後のコードその2">改善後のコードその2</h3>
+
+<ul>
+  <li>app/views/timecard/index.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   &lt;%- unless @vacation.nil? -%&gt;
+   &lt;td&gt;&lt;%=h @vacation.yearly_vacation - @previous_month_sum.to_f %&gt;&lt;/td&gt;
+   &lt;%- else -%&gt;
+   &lt;td&gt;&lt;br /&gt;&lt;/td&gt;
+   &lt;%- end -%&gt;</code></pre></figure>
+
+<ul>
+  <li>app/models/timecard.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def self.vacation_sum(start_month_date,end_month_date)
+   sum('workcodes.use_time',
+       :conditions =&gt;["input_date &gt;= ? AND input_date &lt;= ? ",start_month_date,end_month_date],
+       :joins =&gt; "LEFT JOIN workcodes ON timecards.workcode_id = workcodes.id" )
+ end</code></pre></figure>
+
+<ul>
+  <li>app/controllers/timecard_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> protected
+ def select_timecards_and_sum
+-省略-
+   @total_time_view=
+     session[:user].timecards.overtime_total_sum(conv_start_month(session[:currentdate]),
+                                                 conv_end_month(session[:currentdate]))
+   @vacation=session[:user].vacations.find_by_year(session[:currentdate].year)
+   @previous_month_sum=
+     session[:user].timecards.vacation_sum(conv_start_year(session[:currentdate]),
+                                           conv_prev_month(session[:currentdate]))
+   @current_month_sum=
+     session[:user].timecards.vacation_sum(conv_start_month(session[:currentdate]),
+                                           conv_end_month(session[:currentdate]))
+ end</code></pre></figure>
+
+<h3 id="改善点その2">改善点その2</h3>
+
+<p>その後、calculations プラグインを発見、導入して上記のようになっています。
+<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<p>ある程度 SQL が遮蔽されているからといって、SQL を知らないで書いているというのはまずかったです。
+Web ページを作成する際、オーサリングツールでしか作れないよりも、実際にどんなタグで書かれているのか知っていたほうがいいのと同様ですね。</p>
+
+<h2 id="activerecordactionview">ActiveRecord&amp;ActionView</h2>
+
+<h3 id="初期コード画面-4">初期コード・画面</h3>
+<p><img src="/images/0015-RubyOnRails/multi.gif" alt="multi.gif" /></p>
+
+<ul>
+  <li>app/views/management/_timecard.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;% col = "#D6ECFA"
+   white = "white"
+   bool = true
+   i = 0
+   @timecards.each do |timecard|
+     i = i + 1
+     bool = !bool
+     color = case bool
+             when true
+               col
+             else
+               white
+             end
+%&gt;
+&lt;tr bgcolor="&lt;%= color %&gt;"&gt;
+  &lt;td&gt;&lt;%=h timecard.input_date.strftime("%m月%d日") %&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;%=h wday_kanji(timecard.input_date.wday) %&gt;曜日&lt;/td&gt;
+      &lt;td&gt;&lt;%=h const_display(User::SECTION,timecard.user.section_code)  %&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;%=h timecard.user.full_name %&gt;&lt;/td&gt;
+  &lt;td&gt;
+    &lt;select name="timecard_&lt;%= i.to_s %&gt;_workcode_id" id="timecard_&lt;%= i.to_s %&gt;_workcode_id"&gt;
+  &lt;%= options_from_collection_for_select(@workcodes,"id","workcode_name",timecard.workcode_id) %&gt;</code></pre></figure>
+
+<ul>
+  <li>app/controllers/management_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   def multi_update
+     @timecards = Timecard.find_month_confirm(Date.new(session[:currentdate].year,
+                                                       session[:currentdate].month,1),
+                                                       Date.new(session[:currentdate].year,
+                                                                session[:currentdate].month,1)&gt;&gt;1,
+                                                                3)
+     i = 0
+     @timecards.each do |timecard|
+       i = i + 1
+       timecard.workcode_id=params['timecard_'+i.to_s+'_workcode_id']
+       timecard.start_time_h=params['timecard_'+i.to_s+'_start_time_h']
+       timecard.start_time_m=params['timecard_'+i.to_s+'_start_time_m']
+       timecard.end_time_h=params['timecard_'+i.to_s+'_end_time_h']
+       timecard.end_time_m=params['timecard_'+i.to_s+'_end_time_m']
+       timecard.request_date=params['timecard_'+i.to_s+'_request_date']
+       timecard.card_comment=params['timecard_'+i.to_s+'_card_comment']
+       timecard.overtime_start_time_h=params['timecard_'+i.to_s+'_overtime_start_time_h']
+       timecard.overtime_start_time_m=params['timecard_'+i.to_s+'_overtime_start_time_m']
+       timecard.overtime_end_time_h=params['timecard_'+i.to_s+'_overtime_end_time_h']
+       timecard.overtime_end_time_m=params['timecard_'+i.to_s+'_overtime_end_time_m']
+       timecard.overtime_total_h=params['timecard_'+i.to_s+'_overtime_total_h']
+       timecard.overtime_total_m=params['timecard_'+i.to_s+'_overtime_total_m']
+       timecard.confirmation_code=params['timecard_'+i.to_s+'_confirmation_code']
+       total_time =
+         (params['timecard_'+i.to_s+'_end_time_h'].to_i*60+params['timecard_'+i.to_s+'_end_time_m'].to_i)-
+         (timecard.user.position.work_end_time_h*60+timecard.user.position.work_end_time_m)
+       if total_time&gt;0
+         timecard.actual_time=total_time
+       else
+         timecard.actual_time=0
+       end
+       timecard.overtime_total=params['timecard_'+i.to_s+'_overtime_total_h'].to_i*60+
+       params['timecard_'+i.to_s+'_overtime_total_m'].to_i
+       timecard.save
+     end
+     flash[:notice]='出勤表を更新しました'
+     redirect_to :action =&gt;'index'
+   end</code></pre></figure>
+
+<h3 id="問題点-5">問題点</h3>
+
+<p>監督者が複数レコードをまとめて更新するフォームとメソッドです。
+複数レコードで、JavaScript を使用していたりしますので、各エレメントを一意に特定する必要があります。
+しかし、私は普通の FormHelper で生成される HTML 自体も、そもそも良く分かっていませんでした。
+実際、私は name 部分を何故か object_name_method だと思いこんでいました (正しくは object_name[method] です)。
+そのため、複数レコードになった途端、フォームエレメントをどのような id や name にすれば良いのかよくわからず、
+HTML をべた書きし、上記のような冗長的で複雑な書き方をしてしまいました。
+その結果、controller での params でも長ったらしくなっています。</p>
+
+<p>セーブする処理もいただけません。
+each で回して 1 レコード毎に処理していますが、各カラム毎に値を入れており、冗長です。
+しかも validation 処理がされていません。
+一応ユーザ側からレコードが上がってくる時に、validation はかかっていますが、あまり褒められたものではありません。</p>
+
+<p>save 前に処理すべきロジックもメソッドにべた書きされてしまっており、ますますコードが長く無駄が多くなっています。
+これは timecard_controller.rb にも言えることです。
+app/controller/old_timecard_controller.rb もご覧になってみてください。</p>
+
+<h3 id="改善後のコード-2">改善後のコード</h3>
+
+<ul>
+  <li>app/views/management/_timecard.rhtml</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;%- for @timecard in @timecards -%&gt;
+&lt;tr bgcolor="&lt;%= cycle("white","#D6ECFA") %&gt;"&gt;
+  &lt;td&gt;&lt;%=h @timecard.input_date.strftime("%m月%d日") %&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;%=h wday_kanji(@timecard.input_date.wday) %&gt;曜日&lt;/td&gt;
+      &lt;td&gt;&lt;%=h const_display(User::SECTION,@timecard.user.section_code)  %&gt;&lt;/td&gt;
+  &lt;td&gt;&lt;%=h @timecard.user.full_name %&gt;&lt;/td&gt;
+  &lt;td&gt;
+    &lt;select name="timecard[&lt;%= @timecard.id %&gt;][workcode_id]" id="timecard_&lt;%= @timecard.id %&gt;_workcode_id"&gt;
+          &lt;%= options_from_collection_for_select(Workcode.find_all,"id","workcode_name",@timecard.workcode_id) %&gt;
+        &lt;/select&gt;
+  -省略-
+  &lt;td&gt;&lt;%= text_field "timecard[]","start_time_h",:size =&gt;2 %&gt;時
+    &lt;%= text_field "timecard[]","start_time_m",:size =&gt;2 %&gt;分&lt;/td&gt;</code></pre></figure>
+
+<ul>
+  <li>app/controllers/management_controller.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def multi_update
+   unless params[:timecard].nil?
+     catch (:timecard_valid) do
+       params[:timecard].each do |key,value|
+         @timecard = Timecard.find(key)
+         @timecard.update_attributes(value)
+         throw :timecard_valid unless @timecard.valid?
+       end
+       @timecards=Timecard.find(:all,
+                                :conditions =&gt;["id IN (?)",params[:timecard].keys])
+       session[:timecards]=@timecards
+       flash[:notice]='出勤表を更新しました'
+       return redirect_to :action =&gt;'list'
+     end
+     select_timecard_pages(3)
+     @workcodes=Workcode.find_all
+     render :action =&gt;'index'
+   else
+     redirect_to :action =&gt;'index'
+   end
+ end</code></pre></figure>
+
+<ul>
+  <li>app/models/timecard.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> before_update :add_actual_time,:add_overtime_total
+
+ def add_actual_time
+     total_time=(self.end_time_h*60 + self.end_time_m) -(self.user.position.work_end_time_h*60 +
+      self.user.position.work_end_time_m)
+     if self.workcode_id==2||total_time&gt;0
+      self.actual_time=total_time
+     else
+      self.actual_time=0
+     end
+ end
+
+ def add_overtime_total
+   self.overtime_total=self.overtime_total_h*60+self.overtime_total_m
+ end</code></pre></figure>
+
+<h3 id="改善点-4">改善点</h3>
+
+<p>save 時のロジック (実際の残業時間と命令上の残業時間を記録する) を、モデルのコールバック before_update として、追い出しています <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。
+また、上記の for @object in @objects のように、ローカル変数ではなくインスタンス変数を使うと、FormHelper で id と value が上手く取れます。このため、ビューの記述量も減っています。
+render :partial =&gt; ‘object’, :collection =&gt; @objects などと、ローカル変数を使用する場合には、FormHelper 使用時に :index オプションを使うと、同様に上手く取れます (ただし select 系は取れません)。
+また、object の id をキーとした params が取れるため、Timecard.update(params[:timecard].keys, params[:timecard].values) などとして一気に更新できます。
+上記改善コードでは validation チェックを行っているため、使っていませんが、それでも初期コードに比べて、更新処理が大分すっきりしたと思います。app/controllers/timecard_controller.rb も普通の update 処理になっていますので覗いてみてください。</p>
+
+<p>実際に生成された HTML か、Helper メソッドのソースを見れば、どんな HTML が生成されているかわかります。
+直近のだけでもいいので、ソースを追いかけておけば私のようにはならないと思います。</p>
+
+<p>また、:index などの話はちゃんと Rdoc に載っているので、一通り眺めておくといいと思います。
+全部見るのは大変という方は、とりあえず Base だけでも眺めておくと良いかと思います。
+ちなみに、Rails API の検索には、gorou さんの <a href="http://api.rails2u.com/">http://api.rails2u.com/</a> を利用させていただいてます。masuidrive さんの <a href="http://railsapi.masuidrive.jp/">http://railsapi.masuidrive.jp/</a> もお勧めです。</p>
+
+<h2 id="デバッグ環境">デバッグ環境</h2>
+
+<h3 id="初期">初期</h3>
+
+<p>当初、Windows で gvim を使用して開発していました。
+log/development.log は問題が発生した時だけ gvim で開き、params等は必要な時に view に &lt;%= debug() %&gt; と書いて追いかけていました。
+常時ログを開いていなかったため、データがどのように流れていっているのか、つかみづらかったです。</p>
+
+<h3 id="現在">現在</h3>
+<p><img src="/images/0015-RubyOnRails/tail_console.png" alt="tail_console.png" /></p>
+
+<p>OSX のターミナルで screen を使用し、常時 tail -f log/development.log と script/console を立ち上げています。</p>
+
+<p>script/console はとても便利です。
+例えば、ユーザ作成時に、社員とバイトを全員逆に入力してしまった！　なんてことがあっても、script/console からささっと修正することができます。
+Ruby 使いの方は irb を使っているでしょうから常識なのでしょうが、
+Rails と共に Ruby を始めた私には目から鱗でした。</p>
+
+<p>仕事でサーバ監視に tail を使っていたのに Rails では全く使っていなかったのは阿呆すぎでした。
+もし、Windows 機ローカルで開発しているのでしたら、<a href="http://www.microsoft.com/japan/windows/sfu/">SFU</a>・<a href="http://www.microsoft.com/technet/itsolutions/reskits/rktmain.mspx">リソースキット</a>・<a href="http://www.cygwin.com/">Cygwin</a> から tail を入手できるので是非入れましょう。そんな大仰なものは入れたくないという方は、<a href="http://www.vector.co.jp/soft/winnt/util/se241763.html">Tail for Windows</a> などのソフトを入手すればいいかと思います。</p>
+
+<h2 id="恥ずかしい失敗の数々">恥ずかしい失敗の数々</h2>
+
+<p>参考までに、今までに犯した恥ずかしい失敗の数々も挙げておきます。</p>
+
+<ol>
+  <li>上の方にも出てきた、ActiveSupport を使ったメソッドで、end_of_month と last_month の順番を間違えてしまい、31 日あるはずの月なのに、30 日で where 節を発行してしまっていました。</li>
+</ol>
+
+<ul>
+  <li>正</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def conv_prev_month(date)
+   date.to_time.last_month.end_of_month.to_date
+ end</code></pre></figure>
+
+<ul>
+  <li>誤</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def conv_prev_month(date)
+   date.to_time.end_of_month.last_month.to_date
+ end</code></pre></figure>
+
+<ol>
+  <li>
+    <p>DBでテーブル作成時に、テーブル名をスペルミス。または datebase.yml でデータベース名を間違う。</p>
+  </li>
+  <li>
+    <p>prototype.js を読み込み忘れて、JavaScript が全く動かず。しばらく悩む。</p>
+  </li>
+  <li>
+    <p>LoginGenerator を使用し、SHA1 によるパスワード暗号化を使っていましたが、パスワードが時折変更になっていました。</p>
+  </li>
+</ol>
+
+<p>原因は、user モデルのレコードをユーザ管理画面以外でも更新していて、パスワードが更新の都度変更されていたという間抜けなものでした。
+これは Typo を参考に、元のパスワードのままで user を更新するよう、user.rb の validates_presence_of から、:password, :password_confirmation を外したためです。詳しくは app/controllers/account_controller.rb の edit と app/models/user.rb を見てください。</p>
+
+<p>手を入れていない LoginGenerator で普通に generate した user モデルを、ユーザ管理画面以外で password, password_confirmation を入れずに更新しようとした場合は、validation にひっかかってエラーとなるので気づくと思います。</p>
+
+<ol>
+  <li>
+    <p>MySQL で tinyint 型で作ったカラムに 128 以上を保存しようとしてしばらくはまりました (tinyint の範囲は -128 から 127)。</p>
+  </li>
+  <li>
+    <p>View で Object_name.method を “” で括ってしまい、object_name.method とそのまま表示させてしまう。</p>
+  </li>
+  <li>
+    <p>エラーメッセージの error_messages_for をよく書き忘れます。さらにその後に書く ‘model’ も忘れてしまったりします。おまけに save で if 文も忘れて、エラーをスルーしてしばらくはまったりします。</p>
+  </li>
+  <li>
+    <p>本来文字に使う validates_length_of を数字に使ってしまい、validation が皆通ってしまっていました。</p>
+  </li>
+</ol>
+
+<p>オブジェクトである Fixnum の size が検証されるので、:within や :maxnum に 4 以上の値を指定すると皆通ってしまいます。</p>
+
+<ol>
+  <li>each を回して複数レコード作成時の挙動にはまる。</li>
+</ol>
+
+<ul>
+  <li>db/migrate/008_create_timecard_record.rb</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class CreateTimecardRecord &lt; ActiveRecord::Migration
+  def self.up
+    @holidays=Holiday.find_all
+    @users=User.find_all
+    @date_array=[]
+    start_date=Date.new(2006,1,1)
+    end_date=Date.new(2006,12,31)
+    start_date.upto(end_date) do |date|
+      @date_array&lt;&lt; date
+    end
+
+    for date in @date_array
+      for user in @users
+        @timecard=user.timecards.build
+        @timecard.input_date = date
+        if date.wday ==0 || date.wday ==6
+          @timecard.workcode_id=5
+          @timecard.confirmation_code=2
+        else
+          @timecard.workcode_id=1
+          @timecard.confirmation_code=1
+        end
+        for holiday in @holidays
+          if holiday.holiday_date==date
+           @timecard.workcode_id=5
+           @timecard.confirmation_code=2
+           break
+          else
+          end
+        end
+        @timecard.save
+      end
+    end
+
+  end</code></pre></figure>
+
+<p>上記のコードは、祝日かどうか判定しながら、ユーザがいるだけ勤怠データを一年分生成するコードです。
+このように複数レコードを作成しているような例で、validation でひっかかったレコードが出てくると、
+そのレコードは作成されず、次のレコードに処理が移ります。
+つまり、上記の場合は一年分のデータを作成するわけですが、validation にひっかかると綺麗に日が欠けたレコードが作成されます。
+後からモデルに validation を追加したりした時に思いっきりはまり、しばらく悩みました。</p>
+
+<h2 id="さいごに">さいごに</h2>
+
+<p>Rails は、Web アプリケーションにある程度の理解がある方が使えば、すぐに使いこなせ、素晴らしく生産性が上がるけど、
+私のように、あまりスキルの無い者が始めると、最初は苦労すると感じました。</p>
+
+<p>Rails は、フルスタックであるために、前提条件として、広範な知識が必要とされていると思います。
+Ruby 自体の知識、オブジェクト指向の知識、SQL の知識、Web の知識等々です。</p>
+
+<p>例えば、こういうことを実現したい、と思ったときに、Rails に用意されたライブラリにあるメソッドで実現できるのか、
+Ruby の標準ライブラリにあるメソッドで実現できるのか、
+または、すでにどちらかのライブラリで実現されているのかということも、私には初めはまったくわかりませんでした。</p>
+
+<p>また、Typo などのソースを参考に覗きこんだ時にも、ちょっとしたメソッドが、Ruby 標準のものか、Rails 標準のものか、
+Typo で定義されているものか良く分からず、ソースを追いかけるのも苦労しました。</p>
+
+<p>やはりある程度の理解がないと厳しいと感じ、Ruby のリファレンスは、主要なクラスだけですが、一通り眺めました (<a href="https://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0Ruby%E2%80%95%E9%81%94%E4%BA%BA%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%83%BC%E3%82%AC%E3%82%A4%E3%83%89-%E3%83%87%E3%83%93%E3%83%83%E3%83%88-%E3%83%88%E3%83%BC%E3%83%9E%E3%82%B9/dp/4894714531?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4894714531">‘プログラミング Ruby ― 達人プログラマーガイド’</a>のリファレンス)。
+Rails も、とりあえず各ライブラリの Readme と Base 部分だけは読みました。</p>
+
+<p>これから勉強される方で、もし私のようにあまり知識を持っていない方は、浅くでもいいので、軽く勉強されることをお勧めします。
+もっとも Rails に興味を持つような方は、そもそも PHP などで Web アプリを作っていそうで、私のような例は珍しいのかもしれませんが。</p>
+
+<p>今回の記事は今までの記事とは違って、あまり大したことのない内容です。
+Rails をバリバリやっている方には物足りないとは思いますが、私と同じようなレベルの方や、これから始めようと思っている方の参考になれば幸いです。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>Yu_kata は 200 台弱の機器を管理するネットワーク、サーバ管理者です。
+エクセルなどの使い方の説明から、パソコンの修理、LAN ケーブルの結線など、なんでも屋でもあります。
+Rails 以前は、vi を常用し、シェルスクリプトでちょっとしたバッチスクリプトを書き、クライアント側は Windows のフリーアプリに頼る程度でした。
+社内業務を少しでも楽にしてあげようと、Web アプリを作れるようになろうと一大決心。
+無謀にも WebObjects!! (何故……) に挑戦し、Java のハイブローに苦しみながら、云ヶ月もかけて、4 ページ程作った所で、あまりにも無謀な挑戦ということに気づき、別なものを探しはじめます。
+Sun Java Studio Creator!! (だから何故……) を発見し、これだーと思い、作り直しはじめたところで、
+Ruby と Ruby on Rails に出会い、現在に至ります。
+この 2 つに出会わないまま迷走していたら、今頃は大変なことになっていたでしょう。
+最近では社内の色々な仕事に Ruby と Ruby on Rails を使おうと画策中です。</p>
+
+<h2 id="rubyonrails-を使ってみる-連載一覧">RubyOnRails を使ってみる 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0019/0019-RubyOnRails.html">RubyOnRails を使ってみる 【第 10 回】 パフォーマンスチューニング</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-RubyOnRails.html">RubyOnRails を使ってみる 【第 9 回】 Rails で XML-DB にチャレンジ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-RubyOnRails.html">RubyOnRails を使ってみる 【第 8 回】 Rails はまり道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-RubyOnRails.html">RubyOnRails を使ってみる 【第 7 回】 RJS を使ってみる</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-RubyOnRails.html">RubyOnRails を使ってみる 【第 6 回】 テストの書き方</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-RubyOnRails.html">RubyOnRails を使ってみる 【第 5 回】 ActiveHeart</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-RubyOnRails.html">RubyOnRails を使ってみる 【第 4 回】 ActionPack</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RubyOnRails.html">RubyOnRails を使ってみる 【第 3 回】 ActiveRecord</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RubyOnRails.html">RubyOnRails を使ってみる 【第 2 回】 (続・RubyOnRails を使ってみる)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-RubyOnRails.html">RubyOnRails を使ってみる 【第 1 回】</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>開発者が思っている以上にブラウザの「戻る」「進む」ボタンは使われるものです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>:joins オプションという選択肢もありますが割愛。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>calculations プラグインは Rails1.1 で取り込まれ、現在は標準のメソッドになっています。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>労働基準局に入られたら大変ですね。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ragel 入門： 簡単な使い方から JSON パーサまで</title>
+  <meta name="description" content="著者: 桑田 誠">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0023/0023-Ragel.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ragel 入門： 簡単な使い方から JSON パーサまで</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0023/0023-Ragel.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ragel 入門： 簡単な使い方から JSON パーサまで" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0023/0023-Ragel.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0023/0023-Ragel.html" data-text="Ragel 入門： 簡単な使い方から JSON パーサまで">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>著者: 桑田 誠</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#インストール" id="markdown-toc-インストール">インストール</a></li>
+  <li><a href="#基礎編-ragel-の使い方" id="markdown-toc-基礎編-ragel-の使い方">基礎編: Ragel の使い方</a>    <ul>
+      <li><a href="#状態遷移図を生成する" id="markdown-toc-状態遷移図を生成する">状態遷移図を生成する</a></li>
+      <li><a href="#パターンに別名をつける" id="markdown-toc-パターンに別名をつける">パターンに別名をつける</a></li>
+      <li><a href="#ruby-コードを生成する" id="markdown-toc-ruby-コードを生成する">Ruby コードを生成する</a></li>
+      <li><a href="#字句解析-scanner-を作成する" id="markdown-toc-字句解析-scanner-を作成する">字句解析 (Scanner) を作成する</a></li>
+    </ul>
+  </li>
+  <li><a href="#応用編-json-パーサ" id="markdown-toc-応用編-json-パーサ">応用編: JSON パーサ</a>    <ul>
+      <li><a href="#字句解析部-scanner" id="markdown-toc-字句解析部-scanner">字句解析部 (Scanner)</a></li>
+      <li><a href="#構文解析部-parser" id="markdown-toc-構文解析部-parser">構文解析部 (Parser)</a></li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p><a href="http://www.cs.queensu.ca/~thurston/ragel/">Ragel</a> とは、Adrian Thurston によって作られたステートマシンコンパイラです。
+Ragel を使うと、コンパイラやパーサの字句解析部を簡単に作れます。
+また Ragel は複数の言語に対応しており、現在のところ C/C++/Objective-C/D/Java/Ruby のソースコードを生成することができます。</p>
+
+<p>ステートマシン (状態機械) とは、簡単にいえば状態遷移図のことです。
+ステートマシンは入力をひとつずつ読み込むたびに状態を遷移します。
+そして入力が終了した時点でどの状態に遷移しているかを調べることで、入力が正しいかどうか等を知ることができます。</p>
+
+<p>ステートマシンの使い道は様々です。</p>
+
+<ul>
+  <li>コンパイラの字句解析として使う。</li>
+  <li>データが正しい形式かどうかを確かめるために使う。</li>
+  <li>正規表現の代わりとして使う。</li>
+  <li>Web アプリケーションの画面遷移を設計するのに使う。</li>
+</ul>
+
+<p>実際に Ragel を使っているプロダクトとしては以下のものがあります (<a href="http://www.cs.queensu.ca/~thurston/ragel/">Ragel</a> のページより抜粋)。</p>
+
+<ul>
+  <li><a href="http://mongrel.rubyforge.org/">Mongrel</a> (Ruby 用の高速な Web サーバ)</li>
+  <li><a href="http://code.whytheluckystiff.net/hpricot/">Hpricot</a> (Ruby 用の HTML 操作ライブラリ)</li>
+  <li><a href="http://json.rubyforge.org/">json</a> (Ruby1.9 に同梱される高速な JSON ライブラリ)</li>
+</ul>
+
+<p>本稿では、Ruby における Ragel の基本的な使い方を説明し、そのあと応用例として JSON パーサを作成してみます。</p>
+
+<p>なお本稿を読む上で、構文解析や字句解析の知識はあったほうが望ましいですが、必須ではありません。
+少なくとも試してみるだけなら誰にでもできますので、構文解析や字句解析を知らなくても問題はありません。</p>
+
+<p>また Ragel についての詳細は、<a href="http://www.cs.queensu.ca/~thurston/ragel/ragel-guide-6.0.pdf">Ragel User Guide</a> をご覧下さい。</p>
+
+<h2 id="インストール">インストール</h2>
+
+<p>Ragel は <a href="http://www.cs.queensu.ca/~thurston/ragel/">Rabel の Web サイト</a> からダウンロードできます。
+Windows 用のバイナリも用意されています。
+ソースからコンパイルする場合は次の手順で行ってください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ wget http://www.cs.queensu.ca/~thurston/ragel/ragel-6.0.tar.gz
+$ tar xzf ragel-6.0.tar.gz
+$ cd ragel-6.0/
+$ ./configure --prefix=/usr/local
+$ make
+$ sudo make install
+$ which ragel
+/usr/local/bin/ragel
+$ ragel -v
+Ragel State Machine Compiler version 6.0 January 2008
+Copyright (c) 2001-2007 by Adrian Thurston</code></pre></figure>
+
+<p>また必須ではありませんが、状態遷移を可視化するために、<a href="http://www.graphviz.org/">Graphviz</a> をインストールすることをお勧めします。</p>
+
+<p>Graphviz をインストールするには、<a href="http://www.graphviz.org/Download.php">http://www.graphviz.org/Download.php</a> にアクセスし、一番下の「Agree」をクリックします。
+するとダウンロードページになるので、そこから OS 別のバイナリをダウンロードしてください (依存するライブラリが多いので、自力でコンパイルするのはお勧めしません)。
+MacOS X で MacPorts を使っている場合は、「sudo port install graphiz」でインストールできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo port install graphviz</code></pre></figure>
+
+<h2 id="基礎編-ragel-の使い方">基礎編: Ragel の使い方</h2>
+
+<p>Ragel はステートマシンコンパイラです。
+Ragel の使い方を知るために、まずは簡単なサンプルを作ってみましょう。</p>
+
+<h3 id="状態遷移図を生成する">状態遷移図を生成する</h3>
+
+<p>ステートマシンを説明するために、まずは Ragel の文法定義から状態遷移図を生成してみます。</p>
+
+<p>list-1 をご覧下さい。これは整数と小数を認識するためのサンプルです。</p>
+
+<p>list-1. ex1.rl: 整数と小数を認識する文法</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{{*%%{*}}
+
+  ## ステートマシンの名前
+  {{*machine ex1;*}}
+
+  ## 文法定義
+  {{*main := ('+' | '-')? [0-9]+ ('.' [0-9]+)? ;*}}
+
+{{*}%%*}}</code></pre></figure>
+
+<p>ポイントは次の通りです。</p>
+
+<ul>
+  <li>1, 9行目: Ragel のステートマシン定義は、「%%{」から「}%%」までの間に書きます。または 1 行だけなら「%%」で始まる行に書くこともできます。</li>
+  <li>Ragel では、ステートマシンに名前をつける必要があります。この名前は、Ruby や C のコードを生成した場合の、変数名の接頭辞になります。</li>
+  <li>7行目: 「main :=」から「;」までが文法定義になります<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。ここに、文法のパターンを書きます。
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>「(‘+’</td>
+              <td>’-‘)?」は、符号があってもなくてもいいことを表します。</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>「[0-9]+」は、数字が 1 回以上繰り返されることを表します。</li>
+      <li>「(‘.’ [0-9]+)?」は、ピリオドのあとに数字が 1 回以上繰り返されることを表します。また「?」があるので、全体が省略可能であることがわかります。</li>
+      <li>「#」で始まる行はコメントです。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>文法を見てみると、正規表現によく似ていることがわかります。
+実際、Ragel の文法で書けるのは正規言語といい、表現能力は正規表現と (概念的には) 同じです (ただし Ruby の正規表現は本来の正規表現と比べて拡張されているので、Ragel とまったく同じというわけではありません)。</p>
+
+<p>これをコンパイルして、状態遷移図の画像ファイルに変換してみましょう (list-2)。</p>
+
+<p>list-2. ステートマシンのコンパイルと表示</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### Ragel でコンパイル
+$ ragel -Vp ex1.rl &gt; ex1.dot
+### Graphviz で画像ファイルに変換
+$ dot -Tpng ex1.dot &gt; ex1.png</code></pre></figure>
+
+<p>これを実行すると、fig-1 のような画像が生成されます。
+以下はその説明です。</p>
+
+<ul>
+  <li>「○」と「◎」は状態を表します。「◎」は受理状態といい、入力が終了した時点でその状態になっていれば入力が文法にマッチした (== 入力が受理された) ことを表します。</li>
+  <li>矢印は状態遷移を表します。矢印についてる文字は、その遷移が起こる入力を表します。</li>
+</ul>
+
+<p>fig-1. ex.rl から作成された状態遷移図
+<img src="/images/0023-Ragel/fig1.png" alt="fig1.png" /></p>
+
+<p>この図から、次のことがわかります。</p>
+
+<ul>
+  <li>状態数は全部で 5 つ</li>
+  <li>初期状態は 1</li>
+  <li>受理状態は 4 と 5</li>
+</ul>
+
+<p>このように、Ragel を使うと状態遷移図が簡単に作成できます。</p>
+
+<p>なお Ragel では、受理状態につけられる番号は、そうでない状態につけられる番号よりも大きくなります。
+fig-1 で状態の番号が左から「1 2 3 4 5」ではなく「1 2 4 3 5」となっているのはこれが理由です。
+このおかげで、ある状態番号 N が与えられたとき、それが受理状態かどうかを簡単に判定できます。
+例えば fig-1 では N &gt;= 4 なら受理状態であることが分かります。</p>
+
+<p>また図には現れていませんが、Ragel ではエラーがあった場合に遷移する状態 0 が用意されています。</p>
+
+<h3 id="パターンに別名をつける">パターンに別名をつける</h3>
+
+<p>Ragel では、パターンに別名をつけることができます。</p>
+
+<p>list-3 をご覧下さい。
+先ほどの定義ファイルに加え、符号を表す「sign」と、数値を表す「d」の、2 つの別名を定義しました<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。
+また文法の定義も、別名を使うように変更しています。</p>
+
+<p>list-3. ex2.rl: パターンに別名を追加</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">%%{
+
+  ## ステートマシンの名前
+  machine ex2;
+
+  {{*## 別名の定義*}}
+  {{*sign = '+' | '-';*}}
+  {{*d    = [0-9];*}}
+  
+  ## 文法定義
+  main := {{*sign*}}? d+ ('.' {{*d*}}+)? ;
+
+}%%</code></pre></figure>
+
+<p>この定義ファイルを使って状態遷移図を生成すると、fig-1 とまったく同じものが得られます。</p>
+
+<p>なお Ragel では、以下のような別名があらかじめ定義されてあります。
+詳しくは <a href="http://www.cs.queensu.ca/~thurston/ragel/ragel-guide-6.0.pdf">Ragel User Guide, Section 2.3 Basic Machines</a> をご覧下さい。</p>
+
+<dl>
+  <dt>any</dt>
+  <dd>任意の文字</dd>
+  <dt>ascii</dt>
+  <dd>アスキー文字。文字コードだと 0 から 127 まで。</dd>
+  <dt>alpha</dt>
+  <dd>アルファベット。「[A-Za-z]」と同じ。</dd>
+  <dt>digit</dt>
+  <dd>数字。「[0-9]」と同じ。</dd>
+  <dt>alnum</dt>
+  <dd>アルファベットまたは数字。「[0-9A-Za-z]」と同じ。</dd>
+  <dt>xdigit</dt>
+  <dd>16進数で使う文字。「0-9A-Fa-f」と同じ。</dd>
+  <dt>space</dt>
+  <dd>空白文字。「[\t\v\f\n\r ]」と同じ。</dd>
+</dl>
+
+<h3 id="ruby-コードを生成する">Ruby コードを生成する</h3>
+
+<p>実際に状態遷移を行うコードは、Ragel が自動生成してくれます。
+そのためには、ソースコードに以下を記述します。</p>
+
+<dl>
+  <dt>%% write data;</dt>
+  <dd>ステートマシンに必要なデータを生成します。</dd>
+  <dt>%% write init;</dt>
+  <dd>ステートマシンに必要な変数を初期化します。</dd>
+  <dt>%% write exec;</dt>
+  <dd>ステートマシンを実行します。</dd>
+</dl>
+
+<p>また、パターンに一致したときに任意の Ruby コードを実行させることができます。
+これをアクションといいます。
+アクションには名前を付けることができ、文法定義において実行したいアクション名をパターンの中に埋め込みます。</p>
+
+<p>実際のコードは list-4 のようになります。
+このコードでは、ステートマシンを実行するのに必要なコードもすべて書いてあります。
+ここでのポイントは次の通りです。</p>
+
+<dl>
+  <dt>12, 19, 24行目</dt>
+  <dd>符号、整数部、小数部のそれぞれにマッチしたときのアクションを定義しています。</dd>
+  <dt>32行目</dt>
+  <dd>文法定義のパターンの中に、アクション名を指定しています。</dd>
+  <dt>40行目</dt>
+  <dd>Ragel によって、ステートマシンに必要なデータを生成する Ruby コードに変換されます。</dd>
+  <dt>47行目</dt>
+  <dd>入力文字列をバイトの配列に変換します。Ragel では「data」という名前の配列に格納されたバイトを 1 つずつ読み込んで、状態遷移を実行します。</dd>
+  <dt>60行目</dt>
+  <dd>Ragel によって、ステートマシンに必要な変数を初期化するコードに変換されます。この場合なら、「p」(現在位置を表す)、「pe」(終了位置を表す)、「cs」(現在の状態番号を表す) というローカル変数が初期化されます。</dd>
+  <dt>63行目</dt>
+  <dd>Ragel によって、状態遷移を実行する Ruby コードに変換されます。</dd>
+  <dt>69行目</dt>
+  <dd>受理状態かどうかを調べます。「cs」は現在の状態を表す番号が入った変数で、「ext3_first_final()」は受理状態のうち最も小さい番号を返すメソッドです。受理状態であれば、cs &gt;= ext3_first_final() が true となるはずです。</dd>
+</dl>
+
+<p>list-4. ex3.rl: アクション定義</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">%%{
+
+  ## ステートマシンの名前
+  machine ex3;
+
+  ## 別名の定義
+  sign = '+' | '-';
+  #d    = [0-9];
+
+  ## アクションの定義
+  ##  (アクションとは、パターンにマッチしたとき実行される処理のこと)
+  {{*action on_sign {*}}
+    ## 「fc」は現在読み込んでいる文字のことであり、
+    ## Ragel によって「data[p]」に展開される。
+    ## (「data」と「p」については後述)
+    sign_char = {{*fc*}}
+    puts "*** on_sign: sign_char=#{sign_char.inspect}" if $DEBUG
+  {{*}*}}
+  {{*action on_int {*}}    # 整数部のアクション
+    ch = {{*fc*}}
+    puts "*** on_integer: ch=#{ch.inspect}" if $DEBUG
+    val = val * 10 + (ch - ?0)
+  {{*}*}}
+  {{*action on_float {*}}  # 小数部のアクション
+    ch = {{*fc*}}
+    puts "*** on_float: ch=#{ch.inspect}" if $DEBUG
+    e = 0.1 * e
+    val += e * (ch - ?0)
+  {{*}*}}
+  
+  ## 文法定義において、アクション名を指定する。
+  main := sign? {{*@on_sign*}} digit+ {{*@on_int*}} ('.' digit+)? {{*@on_float*}} ;
+
+}%%
+
+class Ex3Scanner
+
+  def initialize
+    ## ステートマシンに必要なデータを生成する
+    {{*%% write data;*}}
+  end
+
+  def scan(input)
+    ## 入力文字列をバイトの配列に変換する。
+    ## (Ragel では 1 バイトずつ読んで状態遷移するため。)
+    ## なお「data」という変数名は Ragel により決めうち。
+    {{*data = input.unpack('c*')*}}
+
+    ## アクションで使う変数
+    sign_char = nil
+    val = 0
+    e = 1.0
+
+    ## ステートマシンを初期化する
+    ##  (Ragel により
+    ##      p ||= 0              # 現在位置 (pointer)
+    ##      pe ||= data.length   # 終了位置 (end pointer)
+    ##      cs = ex3_start       # 現在の状態 (current state)
+    ##   に展開される)
+    {{*%% write init;*}}
+    
+    ## ステートマシンの実行
+    {{*%% write exec;*}}
+
+    ## エラーチェック
+    ##  (cs は現在の状態を表す番号、
+    ##   ext3_first_final() は受理状態を表す番号のうち
+    ##   最も小さいもの (今回なら 4) を返す。)
+    unless {{*cs &gt;= ex3_first_final*}}  # 受理状態でなければエラー
+      raise "** syntax error (p=#{p}, data[p]='#{data[p].chr}')"
+    end
+
+    ## 解析した値を返す
+    return sign_char == ?- ? -val : val
+  end
+
+end
+
+if $0 == __FILE__
+  scanner = Ex3Scanner.new
+  while line = gets()
+    line.chomp!
+    val = scanner.scan(line)
+    puts "val=#{val.inspect}"
+    puts "OK."
+  end
+end</code></pre></figure>
+
+<p>実際に動作させるには、Ragel を使ってこのコードをコンパイルし、Ruby のソースコードを生成します(list-5)。</p>
+
+<p>list-5. コンパイルと実行</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ragel -R ex3.rl     # ex3.rl から ex3.rb を生成
+$ ruby ex3.rb
+-123
+val=-123
+OK.
+3.14
+val=3.14
+OK.
+123daa!
+ex3.rb:277:in `scan': ** syntax error (p=3, data[p]='d') (RuntimeError)
+        from ex3.rb:290</code></pre></figure>
+
+<p>なお Ragel には、アクションのより高度な指定方法や細かい変数が存在します。
+詳しくは <a href="http://www.cs.queensu.ca/~thurston/ragel/ragel-guide-6.0.pdf">Ragel User Guide, Chapter 3 User Actions</a> をご覧下さい。</p>
+
+<h3 id="字句解析-scanner-を作成する">字句解析 (Scanner) を作成する</h3>
+
+<p>ステートマシンは、コンパイラを作成する際の字句解析 (Scanner) によく使われます。
+そのため、Ragel ではわざわざ字句解析用の機能を用意しています。</p>
+
+<p>Ragel のこの機能を使うには、文法定義において「|<em>」と「</em>|」を使い、その中にトークンのパターンとアクションを記述します。
+具体的には list-6 のような書き方になります。</p>
+
+<p>list-6. Ragel における字句解析部の書き方</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">%%{
+    main := |*
+       {{/pattern1/}}  {  {{/action1/}}  };
+       {{/pattern2/}}  {  {{/action2/}}  };
+       {{/pattern3/}}  {  {{/action3/}}  };
+    *|;
+}%%</code></pre></figure>
+
+<p>またステートマシンを初期化する「%% write init;」においても、次のように初期化する変数が増えます。</p>
+
+<dl>
+  <dt>ts</dt>
+  <dd>トークンの開始位置を表す変数。</dd>
+  <dt>te</dt>
+  <dd>トークンの終了位置を表す変数。</dd>
+  <dt>act</dt>
+  <dd>直前に成功したパターンを表す変数。バックトラックで使用される。</dd>
+</dl>
+
+<p>実際の例は list-7 をご覧下さい。
+この例ではトークンとして整数と小数と識別子を認識します。
+また空白文字は、アクションに何も記述しないことで読み飛ばしています。</p>
+
+<p>list-7. ex4.rl: 字句解析</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">%%{
+
+  ## ステートマシンの名前
+  machine ex4;
+
+  ## 別名の定義
+  sign = '+' | '-';
+
+  ## 文法定義
+  main := {{*|**}}
+
+    ## 空白
+    {{*space+ {*}}
+      ## 読み飛ばす
+    {{*};*}}
+
+    ## 整数
+    {{*sign? digit+ {*}}
+      {{*token = :INT*}}
+      {{*fbreak;*}}        # 状態遷移のループを抜ける
+    {{*};*}}
+
+    ## 小数
+    {{*sign? digit+ '.' digit+ =&gt; {*}}
+      {{*token = :FLOAT*}}
+      {{*fbreak;*}}        # 状態遷移のループを抜ける
+    {{*};*}}
+
+    ## 識別子
+    {{*[a-zA-Z_] [a-zA-Z0-9_]* {*}}
+      {{*token = :IDENT*}}
+      {{*fbreak;*}}        # 状態遷移のループを抜ける
+    {{*};*}}
+  
+  {{**|;*}}
+
+}%%
+
+
+class Ex4Scanner
+
+  def initialize
+    ## ステートマシンのデータ
+    %% write data;
+  end
+
+  def scan_all(input)
+    ## 入力文字列をバイトの配列に変換する。
+    ## なお「data」という変数名は Ragel により決めうち。
+    data = input.unpack('c*')
+
+    ## ステートマシンの初期化
+    ##  (Ragel により
+    ##      p ||= 0              # 現在位置 (pointer)
+    ##      pe ||= data.length   # 終了位置 (end pointer)
+    ##      cs = ex4_start       # 現在の状態 (current state)
+    ##      ts = nil             # トークン開始位置 (token start)
+    ##      te = nil             # トークン終了位置 (token end)
+    ##      act = 0              # バックトラックで使う変数
+    ##   に展開される)
+    %% write init;
+
+    ## 変数 eof を設定する (必須)
+    {{*eof = data.length*}}      # eof = pe でもよい
+
+    ## メインループ
+    while true
+      token = nil
+
+      ## ステートマシンの実行
+      %% write exec;
+
+      ## エラーチェック
+      unless cs &gt;= ex4_first_final
+        s = data[p].chr
+        raise "** syntax error (cs=#{cs}, p=#{p}, data[p]='#{s}')"
+      end
+
+      ## 入力の終わりならループを抜ける
+      break unless token
+
+      ## トークンを表示する
+      ## (ts と te はトークンの開始位置と終了位置を表す)
+      token_str = {{*input[ts...te]*}}
+      puts "** token=#{token.inspect}, str=#{token_str.inspect}"
+    end
+
+  end
+
+end
+
+
+if $0 == __FILE__
+  scanner = Ex4Scanner.new
+  while line = gets()
+    scanner.scan_all(line)
+    puts "OK."
+  end
+end</code></pre></figure>
+
+<p>これを Ragel でコンパイルして実行してみましょう。
+整数や小数や識別子がトークンとして認識されること、空白が読み飛ばされること、記号があるとエラーとなることが確認できます (list-8)。</p>
+
+<p>list-8. コンパイルと実行</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ragel -R ex4.rl     # ex4.rl をコンパイルして ex4.rb を生成
+$ ruby ex4.rb
+123  -3.14   foo
+** token=:INT, str="123"
+** token=:FLOAT, str="-3.14"
+** token=:IDENT, str="foo"
+OK.
+func(123)
+** token=:IDENT, str="func"
+ex4.rb:418:in `scan_all': ** syntax error (cs=0, p=4, data[p]='(') (RuntimeError)
+        from ex4.rb:438</code></pre></figure>
+
+<p>Ragel の字句解析機能についての詳細は、<a href="http://www.cs.queensu.ca/~thurston/ragel/ragel-guide-6.0.pdf">Ragel User Guide, Section 6.3 Scanners</a> を参照して下さい。</p>
+
+<h2 id="応用編-json-パーサ">応用編: JSON パーサ</h2>
+
+<p>具体的な応用例として、Ragel を使ってJSONパーサを作ってみましょう。</p>
+
+<p>ちょっと小難しい話をすると、<a href="http://www.json.org">JSON の仕様</a>は文脈自由文法を使って定義されるため、正規言語を使う Ragel では JSON パーサを記述できません<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。
+そのため、今回は JSON パーサ自体は再帰下降法を使って手書きし、字句解析部分を Ragel で作成します。</p>
+
+<p>ただし、今回はあくまで Ragel の使い方を紹介するのが目的なので、JSON の仕様に忠実に従ったパーサではなく、都合の良いところで改変しています。
+その点はご注意ください。</p>
+
+<h3 id="字句解析部-scanner">字句解析部 (Scanner)</h3>
+
+<p>字句解析部は、次のような仕様にしました。
+一部、JSON の仕様と合わない点がありますが、サンプルですので目を瞑ってください。</p>
+
+<ul>
+  <li>次のものを読み飛ばす。
+    <ul>
+      <li>空白、改行、タブ文字</li>
+      <li>行コメント (//…)</li>
+      <li>範囲コメント (/* … */)</li>
+    </ul>
+  </li>
+  <li>次のものをトークンとして認識する (カッコ内はトークン記号)。
+    <ul>
+      <li>10進数整数 (:DECIMAL)</li>
+      <li>16進数整数 (:HEXADEC)</li>
+      <li>小数 (:FLOAT)</li>
+      <li>識別子 (:IDENT)</li>
+      <li>文字列 (:STRING)</li>
+      <li>予約語 (:TRUE, :FALSE, :NULL)</li>
+      <li>記号 (?{, ?}, ?[, ?], ?:, ?,)</li>
+    </ul>
+  </li>
+  <li>これら以外の記号があればエラー。</li>
+  <li>文字列中の “\n” や “\uXXX” はエンコードしない。</li>
+  <li>「3.0e5」のような表記はサポートしない。</li>
+</ul>
+
+<p>実際のコードは list-9 の通りです。
+ここでのポイントは次の通りです。</p>
+
+<ul>
+  <li>6, 9行目: ステートマシンの状態を、ローカル変数ではなくインスタンス変数に格納するようにする。これはトークンを返すメソッド (JsonScanner#scan()) をパーサから呼び出せるようにするため。</li>
+  <li>ステートマシンの初期化は JsonScanner オブジェクト作成時に行う。トークンを返すメソッド (JsonScanner#scan()) の中で行ってはならない。</li>
+  <li>25行目: 行コメントを表すパターンは「’//’ [^\n]* ‘\n’」である。</li>
+  <li>29行目: 範囲コメントを表すパターンは「’/<em>’ any</em> :&gt;&gt; ‘*/’」である。ここで「any」は任意の文字を表す。また「:&gt;&gt;」はその直後のパターンにより高い優先順位を与える演算子 (詳しくは <a href="http://www.cs.queensu.ca/~thurston/ragel/ragel-guide-6.0.pdf">Ragel User Guide, Section 4.2.2 Finish-Guarded Concatenation</a> を参照)。</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>72行目: 文字列を表すパターンは「’”’ ( [^”\]</td>
+          <td>( ‘\’ any ) ) ‘”‘」となる。ただしこのままだと見にくいので、実際のコードでは別名を使って 2 つに分割している。</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<p>また字句解析部で発生するエラーは、次の通りです。</p>
+
+<ol>
+  <li>141行目: 不正な文字が見つかったとき。</li>
+  <li>148行目: 「”」で始まった文字列が閉じずに EOF になったとき。</li>
+  <li>150行目: 「/*」で始まった範囲コメントが閉じずに EOF になったとき。</li>
+  <li>152行目: 「//」で始まった行コメントが改行で終わらずに EOF になったとき。</li>
+</ol>
+
+<p>このうち、4 番目はエラーにしなくても構わないので、例外を投げないようにしています。</p>
+
+<p>list-9. json_scanner.rb: 字句解析部</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">%%{
+
+    ## ステートマシンの名前 (接頭辞)
+    machine json;
+
+    ## 変数 cs の頭に「@」をつける
+    access @;
+
+    ## 変数 p, pe, eof も同様
+    variable p   @p;
+    variable pe  @pe;
+    variable eof @eof;
+
+    ## 別名の定義
+    sign = ('+' | '-');
+
+    ## 文法定義
+    main :=  |*
+
+        ## 空白類を読み飛ばす
+        space+ {     # (「space」は「[ \t\v\f\n\r]」の別名)
+        };
+
+        ## '//' から改行まで読み飛ばす (行コメント)
+        '//' [^\n]* '\n' {
+        };
+
+        ## '/*' から '*/' まで読み飛ばす (範囲コメント)
+        '/*' any* :&gt;&gt; '*/' {   # 「any」は任意の文字を表す
+        };
+
+        ## 小数 (float)
+        sign? [0-9]+ '.' [0-9]+ {
+            @token = :FLOAT;
+            fbreak;
+        };
+
+        ## 10進数 (decimal)
+        sign? [0-9]+ {
+            @token = :DECIMAL;
+            fbreak;
+        };
+
+        ## 16進数 (hexadecimal)
+        sign? '0x' [0-9a-fA-F]+ {
+            @token = :HEXADEC;
+            fbreak;
+        };
+
+        ## 予約語 (keyword)
+        ##  (末尾の i は大文字小文字を区別しないことを表す)
+        'true'i {
+            @token = :TRUE;
+            fbreak;
+        };
+        'false'i {
+            @token = :FALSE;
+            fbreak;
+        };
+        'null'i {
+            @token = :NULL;
+            fbreak;
+        };
+
+        ## 識別子 (identifier)
+        [a-zA-Z_] [a-zA-Z0-9_]* {
+            @token = :IDENT;
+            fbreak;
+        };
+
+        ## 文字列 (string)
+        dqchar = [^"\\] | ( '\\' any );    #"
+        '"' . dqchar* . '"' {
+            @token = :STRING;
+            ## 先頭と末尾の '"' を取り除く
+            ## ("\n" や "\uXXX" のデコード処理は省略)
+            @token_str = @input[(@ts+1)...(@te-1)]
+            fbreak;
+        };
+
+        ## 記号 (symbol)
+        [\{\}\[\]:,]  {
+            @token = fc;
+            fbreak;
+        };
+
+    *|;
+
+}%%
+
+
+##
+## 字句解析クラス
+##
+## 使い方:
+##   scanner = JsonScanner.new(File.read('file.json'))
+##   while token = scanner.scan()
+##     token_str = scanner.token_str
+##     puts "** token=#{token.inspect}, str=#{token_str.inspect}
+##   end
+##
+class JsonScanner
+
+  def initialize(input=nil)
+    ## ステートマシンのデータを生成
+    %% write data;
+    ## 文字列があればそれを使って初期化
+    setup(input) if input
+  end
+
+  def setup(input)
+    @input = input
+    ## 入力文字列をバイトの配列に変換
+    @data = input ? input.unpack('c*') : []
+    ## ステートマシンに必要な変数を初期化
+    %% write init;
+    #@p  ||= 0;
+    #@pe ||= @data.length;
+    #@cs  = json_start
+    #@ts  = nil
+    #@te  = nil
+    #@act = 0
+    @eof = @pe;
+  end
+  attr_reader :cs, :p, :pe, :eof, :ts, :te, :act
+  attr_reader :input, :token, :token_str
+
+  def scan
+    @token = @token_str = nil
+    ## ステートマシンを実行
+    %% write exec;
+    ## エラーチェック
+    handle_error() unless @cs &gt;= self.json_first_final
+    ## トークンの文字列を設定する
+    @token_str = @input[@ts...@te] if !@token_str &amp;&amp; @token
+    ## トークンを返す
+    return @token
+  end
+
+  def handle_error
+    if @cs == self.json_error   ## 不正な文字があった場合
+      ch = @data[@p]
+      s = [ch].pack('c')
+      _raise "#{s.dump}: invalid character."
+    else
+      s = @input[@ts..-1]
+      case s
+      when /\A"/     ## 文字列が閉じるまえに EOF になった場合
+        _raise "string literal is not closed by '\"'."
+      when /\A\/\*/  ## 範囲コメントが閉じずに EOF になった場合
+        _raise "region comment is not closed by '*/'."
+      when /\A\/\//  ## 行コメントが改行で終わらずに EOF になった場合
+        ## これはエラーにしなくてよい
+      end
+    end
+  end
+  private :handle_error
+
+  def _raise(mesg)
+    linenum, column = get_position()
+    err = StandardError.new("#{linenum}:#{column}: #{mesg}")
+    err.set_backtrace(caller())
+    raise err
+  end
+  private :_raise
+
+  def get_position(index=nil)
+    index ||= @ts
+    s = @input[0..index]
+    linenum = s.count("\n") + 1
+    column  = s.length - (s.rindex("\n") || -1) - 1
+    return linenum, column
+  end
+
+end
+
+
+## 字句解析クラスの使い方
+if __FILE__ == $0
+  input = ARGF.read()
+  scanner = JsonScanner.new(input)
+  while token = scanner.scan()
+    token_str = scanner.token_str
+    puts "** token='#{token.chr}', token_str=#{token_str.dump}"
+  end
+end</code></pre></figure>
+
+<h3 id="構文解析部-parser">構文解析部 (Parser)</h3>
+
+<p>構文解析部 (Parser) では Ragel は使わず、再帰下降法を使って手書きしています。
+JSON 程度であれば、これがいちばん簡単で分かりやすいでしょう。</p>
+
+<p>ここでのポイントは次の通りです。</p>
+
+<ul>
+  <li>36行目: parse_object() はオブジェクト ({…}) を構文解析するメソッドです。トークンが ?{ のときに呼び出されます。</li>
+  <li>71行目: parse_array() は配列 ([…]) を構文解析するメソッドです。トークンが ?[ のときに呼び出されます。</li>
+  <li>95行目: parse_value() は任意の値を解析するメソッドです。トークンの値を調べ、適切な値を返します。</li>
+  <li>49, 52, 106行目: オブジェクトのキーに識別子がある場合は、文字列と同じように扱います。それ以外の場所に識別子があると、エラーになります。</li>
+</ul>
+
+<p>list-10. json_parser.rb: 構文解析部 (Parser)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'json_scanner'
+
+##
+## 構文解析クラス
+##
+## 使い方:
+##   parser = JsonParser.new
+##   obj = parser.parse(File.read('file.json'))
+##   p obj
+##
+class JsonParser
+
+  def initialize()
+    @scanner = JsonScanner.new
+  end
+
+  def setup(input)
+    @scanner.setup(input)
+  end
+
+  def parse(input)
+    setup(input)
+    token = @scanner.scan()
+    unless token == ?{
+      _raise "not started with '{'."
+    end
+    obj = parse_object()
+    token = @scanner.scan()
+    unless token.nil?
+      s = @scanner.token_str
+      _raise "EOF expected but got #{s.inspect}."
+    end
+    return obj
+  end
+
+  def parse_object()
+    #assert @scanner.token == ?{
+    obj = {}
+    while true
+      ## key
+      token = @scanner.scan()
+      if token == ?}
+        if obj.empty?  # '}' が '{' の直後なら空 Hash を返す
+          break
+        else           # '}' が ',' の直後なら文法エラー
+          _raise "extra ',' found before '}'."
+        end
+      end
+      unless token == :STRING || token == :IDENT
+        _raise "object key should be string."
+      end
+      key = @scanner.token_str
+      ## ':'
+      token = @scanner.scan()
+      unless token == ?:
+        _raise "':' expected."
+      end
+      ## value
+      token = @scanner.scan()
+      value = parse_value(token)
+      obj[key] = value
+      ## ',' or '}'
+      token = @scanner.scan()
+      next  if token == ?,
+      break if token == ?}
+      _raise "object is not closed by '}'."
+    end
+    return obj
+  end
+
+  def parse_array()
+    #assert @scanner.token == ?[
+    arr = []
+    while true
+      ## value
+      token = @scanner.scan()
+      if token == ?]
+        if arr.empty?  # ']' が '{' の直後なら空 Array を返す
+          break
+        else           # ']' が ',' の直後なら文法エラー
+          _raise "extra ',' found before ']'."
+        end
+      end
+      value = parse_value(token)
+      arr &lt;&lt; value
+      ## ',' or ']'
+      token = @scanner.scan()
+      next  if token == ?,
+      break if token == ?]
+      _raise "array is not closed by ']'."
+    end
+    return arr
+  end
+
+  def parse_value(token)
+    case token
+    when :STRING  ; return @scanner.token_str
+    when :DECIMAL ; return @scanner.token_str.to_i
+    when :FLOAT   ; return @scanner.token_str.to_f
+    when :HEXADEC ; return Integer(@scanner.token_str)
+    when ?{       ; return parse_object()
+    when ?[       ; return parse_array()
+    when :TRUE    ; return true
+    when :FALSE   ; return false
+    when :NULL    ; return nil
+    when :IDENT
+      s = @scanner.token_str
+      _raise "#{s}: unexpected identifier."
+    when nil
+      _raise "unexpected EOF."
+    else
+      s = @scanner.token_str
+      _raise "#{s.dump}: unexpected token."
+    end
+  end
+
+  def _raise(mesg)
+    linenum, column = @scanner.get_position()
+    err = StandardError.new("#{linenum}:#{column}: #{mesg}")
+    err.set_backtrace(caller())
+    raise err
+  end
+  private :_raise
+
+end
+
+
+## 構文解析クラスの使い方
+if __FILE__ == $0
+  require 'pp'
+  input = ARGF.read()
+  parser = JsonParser.new
+  obj = parser.parse(input)
+  pp obj
+end</code></pre></figure>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>本稿では、ステートマシンコンパイラである Ragel の簡単な使い方を紹介しました。
+また具体的な応用例として、JSON パーサを作成しました。
+Ragel を使うと、字句解析部が簡単に作成できます。</p>
+
+<p>ただし Ragel が生成するコードは、C であれば効率がいいのですが、Ruby のコードはそれほど効率がよくありません<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。
+字句解析部を作るなら、Ruby では StringScanner がありますので、もしかしたらそちらのほうが実行効率がいいかもしれません。
+興味のある人は両方試してみてください。
+—-</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>正確には、文法定義ではなく「ステートマシンのインスタンス化」というそうです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>正確には、別名ではなくて「新しいステートマシンの定義」だそうです。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>実は、Ragel だけでも工夫次第で JSON パーサぐらいは書けるそうなのですが、筆者には難しかったのであきらめました。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>実際のところ、Mongrel も Hpricot も json も、Ruby ではなく C のソースコードを生成するのに Ragel を使っています。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

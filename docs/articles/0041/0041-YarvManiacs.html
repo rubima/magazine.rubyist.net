@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>YARV Maniacs 【第 11 回】 最近の YARV の事情</title>
+  <meta name="description" content="書いた人：ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0041/0041-YarvManiacs.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>YARV Maniacs 【第 11 回】 最近の YARV の事情</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0041/0041-YarvManiacs.html" class="hatena-bookmark-button" data-hatena-bookmark-title="YARV Maniacs 【第 11 回】 最近の YARV の事情" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0041/0041-YarvManiacs.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0041/0041-YarvManiacs.html" data-text="YARV Maniacs 【第 11 回】 最近の YARV の事情">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：ささだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>YARV: Yet Another RubyVM を解説するこの連載。お久しぶりです。前回が 2011 年 04 月に更新されているようなので、2 年ぶり、ということになります。また、随分間が空いてしまいました。間が空いている間に、Ruby 2.0.0 がリリースされていたり、<a href="https://github.com/mruby/mruby">mruby</a> がリリースされたりと世の中は随分と変わってしまいました。</p>
+
+<p>YARV はどうかと言いますと、Ruby 2.0.0 でも利用されています。Ruby 2.0.0 にあたって、少し高速化しました。が、メジャーなところはあまり変わっていません。</p>
+
+<p>ただ、mruby が盛り上がってきており、今後は mruby の処理系を CRuby/MRI として利用しよう、みたいな話が出てくるかもしれません。また、Python を高速化することを目的として開発されている <a href="http://pypy.org/">PyPy プロジェクト</a>のツールチェインを利用した Ruby 実装である <a href="http://docs.topazruby.com/en/latest/blog/announcing-topaz/">Topaz</a> がリリースされました。ベンチマークでは CRuby の 5 倍くらい速いそうで、凄いですね。YARV が 1.8 系の CRuby/MRI に取って代ったように、次の Ruby では YARV をこういうのに換えようって話もあるかもしれません。JRuby も相変わらず元気で、ますます人気を博しています。そんな感じで色々出てきています。負けてられません。</p>
+
+<p>今回は、そういう流れとはまったく関係無く、最近の YARV 事情をご紹介します。といっても、沢山書いてご紹介しよう、というわけではなく、YARV を紹介した記事を紹介しよう、という感じで、つまり、<a href="/articles/0006/0006-YarvManiacs.html">YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説</a> と同じようなことをやって 1 つ記事をでっち上げよう、というものです。</p>
+
+<p>今回ご紹介するのは、Ruby 1.9 の処理系の中身を概観する <a href="http://patshaughnessy.net/ruby-under-a-microscope">Ruby Under a Microscope</a> (英語) と、ささだが 2012 年の年末にまとめました Ruby VM アドベントカレンダー (日本語) になります。</p>
+
+<h2 id="ruby-under-a-microscope">Ruby Under a Microscope</h2>
+<p><img src="/images/0041-YarvManiacs/ruby-under-a-microscope.png" alt="ruby-under-a-microscope.png" /></p>
+
+<p><a href="http://patshaughnessy.net/ruby-under-a-microscope">Ruby Under a Microscope</a> は、Pat Shaughnessy さんによってまとめられた、Ruby 処理系がなぜ動くのか、を解き明かす電子書籍です。英語で書かれていますが、英文は比較的平易であり、日本人にも読みやすいと思います<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。20 USD なので、円安になっている昨今ですが、そんなに高くないので買うといいと思います。オススメです。</p>
+
+<p>冒頭で「My approach in this book: theory and experiment」と、本書のアプローチが理論と実験であることが紹介されています。まず、ソースコードを読んで理論を立て、そして実際に動かして確認する、という手順を踏んでいます。この理論の部分はわかりやすい図で紹介されており、簡単に概要を把握することができるでしょう。</p>
+
+<p><a href="http://i.loveruby.net/ja/rhg/book/">RHG</a> では C 言語で書かれた Ruby 本体のソースコード 1 行 1 行を丁寧に解説していくスタイルでしたが、こちらはソースコードはほとんど出てきません。筆者は冒頭で「RHG は C プログラマための本であるが、この Ruby Under a Microscope は Ruby プログラマが Ruby に関する理解を深めるための本である」と紹介しています<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。実際に、C の知識は必要無い、と言い切っています。凄いですね。ちなみに、内容はいくつかのトピックに限定されており、Ruby 処理系のすべてが解説されているわけではありません。</p>
+
+<p>Ruby Under a Microscope を読んで Ruby 処理系の理解を深めることで、読者は次のような利点が得られるよ、と紹介しています。</p>
+
+<ul>
+  <li>より良い Ruby プログラマになることができる</li>
+  <li>コンピュータサイエンスに関する理解を深めることが出来る</li>
+  <li>楽しい！</li>
+</ul>
+
+<p>あと、JRuby、Rubinius ではどうなっているか、という点も書いてあります。1 実装だけではないのでとても親切に思います。</p>
+
+<p>なんと、この本は、Pat さんが 6 ヶ月休職して書き上げたそうです。凄いですね。</p>
+
+<p>以降は、Ruby Under a Microscope の各章を紹介し、本書の内容を概観しようと思います。</p>
+
+<h3 id="1-tokenization-parsing-and-compilation">1. Tokenization, Parsing and Compilation</h3>
+
+<ul>
+  <li>Tokens: the words that make up the Ruby language</li>
+  <li>Parsing: how Ruby understands the code you write</li>
+  <li>Compilation: how Ruby translates your code into a new language</li>
+  <li>Tokenization, parsing and compilation in JRuby</li>
+  <li>Tokenization, parsing and compilation in Rubinius</li>
+</ul>
+
+<p>パーサに関する内容が書いてあります。</p>
+
+<h3 id="2-how-ruby-executes-your-code">2. How Ruby Executes Your Code</h3>
+<p><img src="/images/0041-YarvManiacs/click.png" alt="click.png" /></p>
+
+<ul>
+  <li>YARV’s internal stack and your Ruby stack</li>
+  <li>Local and dynamic access of Ruby variables</li>
+  <li>How YARV controls your program’s execution flow</li>
+  <li>How JRuby executes your code</li>
+  <li>How Rubinius executes your code</li>
+</ul>
+
+<p>主に VM の実行について書いてあります。
+いやー、YARV ってこうやって動いてるんですねえ。
+ちなみに、1.9 ベースであり、2.0 の構造とはちょっと違います。</p>
+
+<h3 id="3-objects-classes-and-modules">3. Objects, Classes and Modules</h3>
+
+<ul>
+  <li>What’s inside a Ruby object?</li>
+  <li>Deducing what’s inside the RClass structure</li>
+  <li>How Ruby implements modules and method lookup</li>
+  <li>Objects, classes and modules in JRuby</li>
+  <li>Objects, classes and modules in Rubinius</li>
+</ul>
+
+<p>オブジェクトの表現と、クラスやモジュールの表現について書いてあります。</p>
+
+<h3 id="4-hash-tables">4. Hash Tables</h3>
+
+<ul>
+  <li>Hash tables in Ruby</li>
+  <li>How hash tables expand to accommodate more values</li>
+  <li>How Ruby implements hash functions</li>
+  <li>Hash tables in JRuby</li>
+  <li>Hash tables in Rubinius</li>
+</ul>
+
+<p>ハッシュテーブル (Hash) について書いてあります。
+3 章の内容もそうですが、RHG だとまず最初にこの辺のデータ表現の話をするんですよね。ソースコードを読むためにはこれらの知識が必要になるからだと思いますが、RHG と本書の性格の違いがわかって面白いですよね。</p>
+
+<h3 id="5-how-ruby-borrowed-a-decades-old-idea-from-lisp">5. How Ruby borrowed a decades old idea from Lisp</h3>
+
+<ul>
+  <li>Blocks: Closures in Ruby</li>
+  <li>Lambdas and Procs: treating functions as a first class citizen</li>
+  <li>Metaprogramming and closures: eval, instance_eval and binding</li>
+  <li>Closures in JRuby</li>
+  <li>Closures in Rubinius</li>
+</ul>
+
+<p>クロージャ (Ruby の Proc) について語る章ですが、いきなり Lisp の歴史から始まっていて驚きます。</p>
+
+<h2 id="ruby-vm-アドベントカレンダー">Ruby VM アドベントカレンダー</h2>
+
+<p>今回もう 1 つ紹介したいのは 2012 年の年末に書かれた Ruby VM アドベントカレンダーです。書いたのは笹田耕一、つまり私です。アドベントカレンダーというよりは、単に日記のエントリー集です。</p>
+
+<p>下記に全記事へのリンクを示します。</p>
+
+<ul>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d1">#1 RubyVM::InstructionSequence の拡張</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d2">#2 Kernel#caller_locations の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d3">#3 Kernel#caller_locations の性能</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d4">#4 vm_backtrace.c</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d5">#5 メソッドディスパッチの高速化 (RubyConf 2012 の紹介)</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d6">#6 Thread.async_interrupt_timing の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d7">#7 Thread.async_interrupt_timing の #6 の話の訂正</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d8">#8 ObjectSpace.reachable_objects_from() の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d9">#9 ObjectSpace::InternalObjectWrapper の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d10">#10 Flonum の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d11">#11 Flonum の実装</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d12">#12 TracePoint の紹介 (1)</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d13">#13 TracePoint の紹介 (2)</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d14">#14 TracePoint の紹介 (3)</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d15">#15 TracePoint C API の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d16">#16 TracePoint の実装</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d17">#17 DTrace の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d18">#18 DebugInspector API</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d19">#19 Module#prepend の紹介</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d20">#20 Module#prepend の応用</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d21">#21 VM のスタックサイズチューニング</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d22">#22 VM のメソッドディスパッチの高速化 (1)</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d23">#23 VM のメソッドディスパッチの高速化 (2)</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d24">#24 VM のメソッドディスパッチの高速化 (3)</a></li>
+  <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d25">#25 Ruby 2.0.0 でやり残したこと</a></li>
+</ul>
+
+<p>主に、Ruby 2.0.0 で VM に関係が深そうなところ、というか私が弄ったところをまとめたものです。Ruby VM と題したので、もうちょっと一般的な話を書こうかと思ったのですが、新機能紹介が多いものになってしまいました。</p>
+
+<p>内容を分類すると次のような感じです。</p>
+
+<ul>
+  <li>性能まわり
+    <ul>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d5">#5 メソッドディスパッチの高速化 (RubyConf 2012 の紹介)</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d10">#10 Flonum の紹介</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d11">#11 Flonum の実装</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d22">#22 VM のメソッドディスパッチの高速化 (1)</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d23">#23 VM のメソッドディスパッチの高速化 (2)</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d24">#24 VM のメソッドディスパッチの高速化 (3)</a></li>
+    </ul>
+  </li>
+  <li>バックトレースまわり
+    <ul>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d1">#1 RubyVM::InstructionSequence の拡張</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d2">#2 Kernel#caller_locations の紹介</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d3">#3 Kernel#caller_locations の性能</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d4">#4 vm_backtrace.c</a></li>
+    </ul>
+  </li>
+  <li>スレッドまわり
+    <ul>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d6">#6 Thread.async_interrupt_timing の紹介</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d7">#7 Thread.async_interrupt_timing の #6 の話の訂正</a></li>
+    </ul>
+  </li>
+  <li>メモリ管理まわり
+    <ul>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d8">#8 ObjectSpace.reachable_objects_from() の紹介</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d9">#9 ObjectSpace::InternalObjectWrapper の紹介</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d21">#21 VM のスタックサイズチューニング</a></li>
+    </ul>
+  </li>
+  <li>デバッグサポートまわり
+    <ul>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d12">#12 TracePoint の紹介 (1)</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d13">#13 TracePoint の紹介 (2)</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d14">#14 TracePoint の紹介 (3)</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d15">#15 TracePoint C API の紹介</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d16">#16 TracePoint の実装</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d17">#17 DTrace の紹介</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d18">#18 DebugInspector API</a></li>
+    </ul>
+  </li>
+  <li>Module#prepend まわり
+    <ul>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d19">#19 Module#prepend の紹介</a></li>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d20">#20 Module#prepend の応用</a></li>
+    </ul>
+  </li>
+  <li>まとめ
+    <ul>
+      <li><a href="http://www.atdot.net/~ko1/diary/201212.html#d25">#25 Ruby 2.0.0 でやり残したこと</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>一部、記事が忘却の彼方に忘れ去られているところもあり残念ですが、なるべく例を多めに作ったつもりですので、よかったら参考にして下さい。デバッグサポートまわりは、まだどこにも書かれていないんじゃないかな。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>というわけで久しぶりの YARV Maniacs、今回は (今回も) 人の文献を紹介するという技で終わらせました。でも、それぞれ、力の入った資料 (とくに、Ruby Under a Microscope) なので、とっても参考になるんじゃないかと思います。</p>
+
+<p>次はまた 2 年後だったりするんでしょうか。お楽しみに。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>ささだこういち。Heroku, Inc. に転職しました。CRuby/MRI の開発者として雇われています。本当に CRuby/MRI の開発しかやっていないです。通称、フルタイムコミッタです。ありがたい話です。あ、時々 @ayumin に命令されて雑用をやってます。まぁ、いいか。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-YarvManiacs.html">YARV Maniacs 【第 13 回】 事前コンパイルへの道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-YarvManiacs.html">YARV Maniacs 【第 11 回】 最近の YARV の事情</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0033/0033-YarvManiacs.html">YARV Maniacs 【第 10 回】 例外処理（初級編）</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-YarvManiacs.html">YARV Maniacs 【第 9 回】 特化命令</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-YarvManiacs.html">YARV Maniacs 【第 8 回】 命令列のシリアライズ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-YarvManiacs.html">YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-YarvManiacs.html">YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-YarvManiacs.html">YARV Maniacs 【第 5 回】 命令セット (2) リテラル・変数・定数</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-YarvManiacs.html">YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-YarvManiacs.html">YARV Maniacs 【第 3 回】 命令ディスパッチの高速化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-YarvManiacs.html">YARV Maniacs 【第 2 回】 VM ってなんだろう</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-YarvManiacs.html">YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>なぜなら、私がサクサク読み進められたから。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>その割には、紹介している内容はちょっと深すぎるようにも思いますが。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

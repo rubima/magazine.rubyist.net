@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby Library Report 【第 6 回】 正規表現と構文解析</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0008/0008-RLR.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby Library Report 【第 6 回】 正規表現と構文解析</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0008/0008-RLR.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby Library Report 【第 6 回】 正規表現と構文解析" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0008/0008-RLR.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0008/0008-RLR.html" data-text="Ruby Library Report 【第 6 回】 正規表現と構文解析">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>正規表現やpack/unpackは、設定、ログ、プロトコルメッセージなどのような
+構造を持つテキストデータまたはバイナリデータの処理において非常に役立つ
+機能です。
+しかし、構造が複雑になると、正規表現やunpackを用いたコードを作成するこ
+とが難しく、また、メンテナンスも難しい場合があります。
+このような困難さを克服するためのツールやライブラリとして、文法やフォー
+マットによって構造のあるデータを扱う際に便利な abnf, racc, syntax.rb, tdp4r,
+OpenSSL::ASN1 を簡単に概要だけを紹介します。</p>
+
+<p>一般的に、記述された文法から、その文法やフォーマットに従うデータを、プロ
+グラム内で扱いやすいように変換するコードを生成するものを、パーサジェネレ
+ータと呼びます。
+多くのパーサジェネレータはツールとして提供されており、文法を記述したファ
+イルを用意して、そしてそれをパーサジェネレータの入力として文法に従ったテ
+キストデータなどを処理するコードを生成します。
+このようなパーサジェネレータは、プログラミング言語を作成する際によく利用
+されていますが、設定ファイルやログファイルなどの解析に対しても有効です。
+パーサジェネレータを使う利点に、文法(データの構造)と、それに対する処理を
+明確に区別できます。そして、文法に見落としがないかなどのチェックを行いや
+すくなります。</p>
+
+<p>パーサジェネレータについて議論を行うとき、まず扱える
+文法の範囲<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+や、解析方法<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+に着目することが多いです。
+しかし、これらの詳細な説明は RLR では行いませんので、詳しくは教科書[4,5] を
+参照して下さい。
+RLR では、扱える文法の強力さよりも、どのように文法を記述できるか、あるいは、
+どのように ruby から利用できるかという点に着目します。</p>
+
+<p>一方で、今回扱うツールやライブラリを、
+<a href="http://martinfowler.com/bliki/DomainSpecificLanguage.html">DSL(Domain Specific Language)</a> [1,2]
+の視点から見ると多少興味深いかもしれません。
+DSL とは、特定ドメインのモデリングを行うための言語のことで、ドメインの専門家
+がプログラムを行えることを期待しています。
+このような言語を扱うツールには、<a href="Wikipedia-en:yacc">yacc</a>　や <a href="http://xmlsoft.org/XSLT/xsltproc2.html">xsltproc</a>
+などがあります。
+同様に、今回 RLR で扱うツールとライブラリが扱う対象も DSL であると言えます。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>
+yacc は、BNF という文法を記述する言語によってプログラミングを行います。
+また、xsltproc は、<a href="W3C:xslt">XSLT</a> という変換言語によって、XMLの変換方法をプログラミングします。
+そして、DSL により記述されたモデルは、ツールなどにより汎用的な言語へ変換する
+か、または、その DSL のためのエンジンによって処理されます。
+一部では、DSL を、External DSL と Internal DSL に分けて呼ぶことがあります。
+Internal DSL は、汎用的な言語の中で定義した DSL のことで、
+逆に、External DSL は、汎用的な言語の外で定義した DSL です。
+この分類に従うと、abnf と racc の記述言語は External DSL であり、tdp4r と syntax.rb
+は、Internal DSL として実現されていると言えます。
+Internal DSL は、その DSL を実装するための言語の文法などの制約を受けることがあります。
+このため、一見すると分かり難い記述を強いられることもあります。
+しかし、実装言語の機能を活用することもでき、記述コストなどを削減できる場合もあります。
+このような利点と欠点は、ツールやライブラリの選択の基準の一つになります。</p>
+
+<h2 id="試用レポート--abnf">試用レポート – abnf</h2>
+
+<h3 id="登録データ">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="http://raa.ruby-lang.org/project/abnf">RAA:abnf</a></li>
+  <li>[作成者] 田中 哲</li>
+  <li>[URL] <a href="http://cvs.m17n.org/~akr/abnf/">http://cvs.m17n.org/~akr/abnf/</a></li>
+  <li>[バージョン] cvsより最新版を取得</li>
+  <li>[レポート環境] ruby-1.8(cygwin)</li>
+</ul>
+
+<h3 id="概要">概要</h3>
+
+<p>abnf は、<a href="RFC:2234">ABNF</a> による文法記述からその文法に一致する正規表現を生成
+するライブラリです。
+ABNF は、BNF と基本的に文法は同じであり、表現形式が拡張されているものです。
+ABNF(あるいは似たようなBNF)を用いて文法を定義したものに、
+IPアドレス <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
+やURI <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> があります。
+このような文法記述から、IPアドレスやURLに一致する正規表現を生成すること
+によって、文法に従った正確な正規表現を生成できます。</p>
+
+<p>abnf は、保守性に貢献します。
+例えば文法が多少変更になった場合でも、どの部分を変更すれば良いのか比較的楽に
+判断できます。
+ただし、ABNF により表せる文字集合と、正規表現で記述できる文字集合では、
+前者の方が広い集合となります。このため、abnf では正規表現に変換できな
+い場合があります。少なくとも、再帰を含まない文法は正規表現に変換できます。</p>
+
+<h3 id="サンプル">サンプル</h3>
+
+<p>abnf には、IPv6とURIに関するサンプルプログラムが付属していますが、
+ここでは、サンプルとして、整数の四則演算を行う算術式にマッチする正規表現
+を記述してみます。
+そして、文字列 str 中に現れる算術式を、その計算結果に置き換えます。
+通常は、意味との一致を考慮して、再帰的な文法により定義するのですが、複雑
+な再帰的な文法は abnf では扱えませんので、フォーマットだけを考えて記述
+します。</p>
+
+<p><a href="/images/0008-RLR/sample_abnf_1.rb">sample_abnf_1.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOS</span><span class="sh">
+  expr  = prim 0*(op prim)
+  prim  = ["("] num [")"]
+  num   = 1*("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")
+  op    = "+" | "-" | "*" | "/"
+</span><span class="no">EOS</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="no">ABNF</span><span class="p">.</span><span class="nf">regexp</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+<span class="n">str</span> <span class="o">=</span> <span class="s2">"3+(2-1)は4です。33(23)は33と(23)に区別されます。"</span>
+<span class="nb">puts</span><span class="p">(</span> <span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">reg</span><span class="p">){</span><span class="o">|</span><span class="n">expr</span><span class="o">|</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">)}</span> <span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>abnf を用いると、全体がマッチすることは分かるのですが、例えば、算術式となる
+文字列を抽出したときに、その算術式における num に相当する文字列も同時に検出
+するということなど細かい制御ができないようです。
+恐らく、抽出したものに対して再びパターンマッチを行う必要がありそうです。
+そこで、文法を分けて記述します。この例が、次のsample_abnf_2.rb です。</p>
+
+<p><a href="/images/0008-RLR/sample_abnf_2.rb">sample_abnf_2.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOS</span><span class="sh">
+  expr  = prim 0*(op prim)
+  prim  = ["("] num [")"]
+  op    = "+" | "-" | "*" | "/"
+</span><span class="no">EOS</span>
+<span class="n">numfmt</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOS</span><span class="sh">
+  num   = 1*("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")
+</span><span class="no">EOS</span>
+<span class="n">r1</span>  <span class="o">=</span> <span class="no">ABNF</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+<span class="n">r2</span>  <span class="o">=</span> <span class="no">ABNF</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">numfmt</span><span class="p">)</span>
+<span class="n">r1</span><span class="p">.</span><span class="nf">merge</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">r1</span><span class="p">.</span><span class="nf">regexp</span><span class="p">()</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">r2</span><span class="p">.</span><span class="nf">regexp</span><span class="p">()</span>
+<span class="n">str</span> <span class="o">=</span> <span class="s2">"3+(2-1)は4です。33(23)は33と(23)に区別されます。"</span>
+<span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">reg</span><span class="p">){</span><span class="o">|</span><span class="n">expr</span><span class="o">|</span> <span class="nb">p</span> <span class="n">expr</span><span class="p">;</span> <span class="n">expr</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">num</span><span class="p">){</span><span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="nb">p</span> <span class="n">n</span><span class="p">}</span> <span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p>10,11行目の parse メソッドによって、記述した文法のパースを行います。
+文法のパースの段階では、num の定義が欠けていても構いません。
+もし、sample_abnf_1.rb のように regexp メソッドによって正規表現を生成
+しているとエラーになります。
+12行目で expr の文法に num の文法をマージします。
+そして、13,14行目の regexp メソッドによってそれぞれの正規表現を生成して
+います。
+このようにすると、文法の再利用を行うことが可能です。</p>
+
+<p>以上のサンプルと同様に、ログファイルからIPアドレスとホスト名を抽出すること
+などにも利用できます。
+抽出すること以外にも、設定ファイルの簡単な文法チェックなどにも利用できるでしょう。</p>
+
+<h2 id="試用レポート--racc">試用レポート – racc</h2>
+
+<h3 id="登録データ-1">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="http://raa.ruby-lang.org/project/racc">RAA:racc</a></li>
+  <li>[作成者] 青木 峰郎</li>
+  <li>[URL] <a href="http://www.loveruby.net/ja/prog/racc.html">http://www.loveruby.net/ja/prog/racc.html</a></li>
+  <li>[バージョン] 1.4.4</li>
+  <li>[レポート環境] ruby-1.8(cygwin)</li>
+</ul>
+
+<h3 id="概要-1">概要</h3>
+
+<p>racc は、文法の記述方法は若干異なりますが、yacc と同様のパーサジェネレータです。
+racc についての解説書 [7] も存在し、すでに確固とした地位を築いていると思います。
+ランタイム時のパース速度の向上などのために、racc で生成したパーサは、いくつか
+ライブラリを必要とします。
+しかし、ruby-1.8 では、そのようなランタイムライブラリはすでに含まれています。
+このため、raccを用いてアプリケーションの開発を行っても、そのアプリケーションの
+ユーザがraccをインストールする必要はありません。
+文法そのものの記述方法は BNF で記述します。</p>
+
+<h3 id="サンプルコード">サンプルコード</h3>
+
+<p>ここでは、abnf の場合と同様に、四則演算を含む算術式を計算する計算機クラス
+Calcを作成します。
+コンパイラやインタプリタの作成では、一般的に、パーサによって解析木という
+入力データに対する内部表現を一度作成しますが、ここでは、直接計算を行う
+ことにします。この Calc クラスを生成する racc の文法ファイルが、以下の
+sample_racc_1.racc です。</p>
+
+<p><a href="/images/0008-RLR/sample_racc_1.racc">sample_racc_1.racc</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Calc</span>
+  <span class="n">token</span> <span class="no">NUM</span>
+<span class="n">prechigh</span>
+  <span class="n">left</span>  <span class="s1">'*'</span> <span class="s1">'/'</span>
+  <span class="n">left</span>  <span class="s1">'+'</span> <span class="s1">'-'</span>
+<span class="n">preclow</span>
+<span class="n">rule</span>
+   <span class="n">expr</span> <span class="p">:</span> <span class="n">expr</span> <span class="s1">'+'</span> <span class="n">expr</span> <span class="p">{</span> <span class="n">result</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">val</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">}</span>
+        <span class="o">|</span> <span class="n">expr</span> <span class="s1">'-'</span> <span class="n">expr</span> <span class="p">{</span> <span class="n">result</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">val</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">}</span>
+        <span class="o">|</span> <span class="n">expr</span> <span class="s1">'*'</span> <span class="n">expr</span> <span class="p">{</span> <span class="n">result</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">val</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">}</span>
+        <span class="o">|</span> <span class="n">expr</span> <span class="s1">'/'</span> <span class="n">expr</span> <span class="p">{</span> <span class="n">result</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="n">val</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">}</span>
+        <span class="o">|</span> <span class="n">prim</span>          <span class="p">{</span> <span class="n">result</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">}</span>
+
+   <span class="n">prim</span> <span class="p">:</span> <span class="no">NUM</span>            <span class="p">{</span> <span class="n">result</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">}</span>
+        <span class="o">|</span> <span class="s1">'('</span> <span class="n">expr</span> <span class="s1">')'</span>   <span class="p">{</span> <span class="n">result</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">}</span>
+<span class="k">end</span>
+<span class="o">----</span> <span class="n">inner</span>
+  <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="vi">@tokens</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/([\(\)\+\-\*\/])/</span><span class="p">).</span><span class="nf">select</span><span class="p">{</span><span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="o">!</span><span class="n">c</span><span class="p">.</span><span class="nf">nil?</span> <span class="o">&amp;&amp;</span> <span class="n">c!</span><span class="o">=</span><span class="s2">""</span><span class="p">}</span>
+    <span class="n">do_parse</span><span class="p">()</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">next_token</span><span class="p">()</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="vi">@tokens</span><span class="p">.</span><span class="nf">shift</span><span class="p">()</span>
+    <span class="k">case</span> <span class="n">token</span>
+    <span class="k">when</span> <span class="sr">/^\d+\z/</span>
+      <span class="k">return</span> <span class="p">[</span><span class="ss">:NUM</span><span class="p">,</span> <span class="n">token</span><span class="p">.</span><span class="nf">to_i</span><span class="p">]</span>
+    <span class="k">when</span> <span class="kp">nil</span>
+      <span class="k">return</span> <span class="kp">nil</span>
+    <span class="k">else</span>
+      <span class="k">return</span> <span class="p">[</span><span class="n">token</span><span class="p">,</span> <span class="kp">nil</span><span class="p">]</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>’—- inner’ という行より後ろには、Calc クラス内のコードを書きます。
+parse メソッドは、与えられた算術式の計算を行うためのメソッドです。
+まず式を分解してトークンの列を生成しています。トークンとは、構文解析
+における単位データです。
+そして、そのトークン列からトークンを逐次取り出すものが next_token メソッド
+です。
+Calc クラスは、next_token メソッドにより取り出されるトークン列に対して、
+構文解析を行います。
+このような、トークンを取り出すメソッドは、racc で予め決まっていますが、
+ここでは、その一つである next_token メソッドを定義しました。
+方法は他にもありますが、詳しくは racc のマニュアルを参照してください。</p>
+
+<p>次に、この文法ファイルから、Calc クラスを生成します。このためには、次の
+コマンドを用います。ここで、’-o’ というオプションによって出力ファイルを
+指定します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ racc -o sample_racc_1.rb sample_racc_1.racc</code></pre></figure>
+
+<p>sample_racc_1.rb のファイル中に、Calc クラスのコードがあります。
+このため、Calc クラスを実体化して、計算を行うためのコードは次の通りです。</p>
+
+<p><a href="/images/0008-RLR/sample_racc_2.rb">sample_racc_2.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_racc_1'</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="no">Calc</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
+<span class="nb">p</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"3+(2-1)"</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>さて、abnf の例題 sample_abnf_1.rb では、eval() (10行目) を用いて算術式の
+計算を行っていました。
+eval() は、便利な機能ですが、使い方を間違えると脆弱性の原因となることも少
+なくありません。そこで、sample_racc_1.racc によって生成されたパーサを用いて
+計算を行うように書き換えたものが以下の sample_racc_3.rb です。</p>
+
+<p><a href="/images/0008-RLR/sample_racc_3.rb">sample_racc_3.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
+<span class="nb">require</span> <span class="s1">'sample_racc_1'</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOS</span><span class="sh">
+  expr  = prim 0*(op prim)
+  prim  = ["("] num [")"]
+  num   = 1*("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")
+  op    = "+" | "-" | "*" | "/"
+</span><span class="no">EOS</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="no">ABNF</span><span class="p">.</span><span class="nf">regexp</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+<span class="n">str</span> <span class="o">=</span> <span class="s2">"3+(2-1)は4です。33(23)は33と(23)に区別されます。"</span>
+<span class="n">calc</span> <span class="o">=</span> <span class="no">Calc</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
+<span class="nb">puts</span><span class="p">(</span> <span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">reg</span><span class="p">){</span><span class="o">|</span><span class="n">expr</span><span class="o">|</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">expr</span><span class="p">)}</span> <span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>このように、文字列から算術式に一致する部分文字列を abnf を用いて抽出し、その
+文字列を racc で生成したパーサを用いて構文解析と計算を行うことができました。</p>
+
+<h2 id="試用レポート--tdp4r">試用レポート – tdp4r</h2>
+
+<h3 id="登録データ-2">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="RubyForge:tdp4r">RubyForge:tdp4r</a></li>
+  <li>[作成者] 立石 孝彰</li>
+  <li>[URL] <a href="http://rubyforge.org/projects/tdp4r">http://rubyforge.org/projects/tdp4r</a></li>
+  <li>[バージョン] 1.1.0</li>
+  <li>[レポート環境] ruby-1.8(cygwin)</li>
+</ul>
+
+<h3 id="概要-2">概要</h3>
+
+<p>tdp4r は、単純な再帰下降解析(recursive descent parsing)を行うパーサを動的に
+作成するためのライブラリです。
+再帰下降解析の特徴の一つに、文法とメソッドを1:1に対応できる点があります。
+つまり、ある文法を用いることが、あるメソッドを呼び出すことに対応しています。
+この特徴を活かして、文法を Ruby のプログラムとして記述できます。
+このため、実行時に Ruby を用いて文法を制御できるなどの柔軟性があります。
+文法は、<a href="https://javacc.dev.java.net/">JavaCC</a> [3] と類似した書式によって
+記述します。</p>
+
+<h3 id="サンプルコード-1">サンプルコード</h3>
+
+<p>一般的に、再帰下降パーサでは、A = A b | a のような左再帰を含む文法を記述でき
+ません。しかし、このような文法により生成できる文字は、abbbbbbb… となります。
+つまり、繰り返し記号「*」を導入すると、A = a b * という文法を記述することと等
+しくなります。
+tdp4r でも、繰り返し記号を用いた文法を記述できますので、繰り返しを用いて文法
+を記述し、その文法に従って算術式の計算を行うことにします。</p>
+
+<p><a href="/images/0008-RLR/sample_tdp4r_1.rb">sample_tdp4r_1.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'tdp'</span>
+<span class="k">class</span> <span class="nc">MyCalc</span>
+  <span class="kp">include</span> <span class="no">TDParser</span>
+
+  <span class="k">def</span> <span class="nf">expr1</span>
+    <span class="n">rule</span><span class="p">(</span><span class="ss">:expr2</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="n">token</span><span class="p">(</span><span class="s2">"+"</span><span class="p">)</span><span class="o">|</span><span class="n">token</span><span class="p">(</span><span class="s2">"-"</span><span class="p">))</span> <span class="o">-</span> <span class="n">rule</span><span class="p">(</span><span class="ss">:expr2</span><span class="p">))</span><span class="o">*</span><span class="mi">0</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">each</span><span class="p">{</span><span class="o">|</span><span class="n">y</span><span class="o">|</span>
+        <span class="k">case</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">when</span> <span class="s2">"+"</span><span class="p">;</span> <span class="n">n</span> <span class="o">+=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">when</span> <span class="s2">"-"</span><span class="p">;</span> <span class="n">n</span> <span class="o">-=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">end</span>
+      <span class="p">}</span>
+      <span class="n">n</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">expr2</span>
+    <span class="n">rule</span><span class="p">(</span><span class="ss">:prim</span><span class="p">)</span> <span class="o">-</span> <span class="p">((</span><span class="n">token</span><span class="p">(</span><span class="s2">"*"</span><span class="p">)</span><span class="o">|</span><span class="n">token</span><span class="p">(</span><span class="s2">"/"</span><span class="p">))</span> <span class="o">-</span> <span class="n">rule</span><span class="p">(</span><span class="ss">:prim</span><span class="p">))</span><span class="o">*</span><span class="mi">0</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">each</span><span class="p">{</span><span class="o">|</span><span class="n">y</span><span class="o">|</span>
+        <span class="k">case</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">when</span> <span class="s2">"*"</span><span class="p">;</span> <span class="n">n</span> <span class="o">*=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">when</span> <span class="s2">"/"</span><span class="p">;</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">end</span>
+      <span class="p">}</span>
+      <span class="n">n</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">prim</span>
+    <span class="n">token</span><span class="p">(</span><span class="sr">/\d+/</span><span class="p">)</span>                           <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">to_i</span> <span class="p">}</span> <span class="o">|</span>
+    <span class="n">token</span><span class="p">(</span><span class="s2">"("</span><span class="p">)</span> <span class="o">-</span> <span class="n">rule</span><span class="p">(</span><span class="ss">:expr1</span><span class="p">)</span> <span class="o">-</span> <span class="n">token</span><span class="p">(</span><span class="s2">")"</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="n">tokens</span> <span class="o">=</span> <span class="n">str</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/(?:\s+)|([\(\)\+\-\*\/])/</span><span class="p">).</span><span class="nf">select</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span> <span class="o">!=</span> <span class="s2">""</span><span class="p">}</span>
+    <span class="n">expr1</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">calc</span> <span class="o">=</span> <span class="no">MyCalc</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span><span class="p">(</span><span class="s2">"5-2*(5-2*2) = "</span> <span class="o">+</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"5-2*(5-2*2)"</span><span class="p">).</span><span class="nf">to_s</span><span class="p">())</span>
+
+</code></pre>
+</div>
+
+<p>tdp4r では、文法を Ruby のコードとして記述します。
+このために、まず Calc クラスを用意して、TDParser モジュールをインクルードします。
+TDParser モジュールには、rule や token などの文法を定義するために利用するメソッド
+が定義されています。
+rule メソッドによって、ルールの適用を行い、token メソッドによって、トークン
+を一つ読み取ります。
+ここで、ルールは、構文解析においては、別の構文定義のことであり、実装において
+は、別のメソッドに相当します。
+rule と token を連接「-」、選択「|」、繰り返し「*」の記号を用いて結合させて、
+ルールを定義します。
+このような仕組みによって、文法の定義を行うため、構文解析を行うコードは実行時
+に作成されます。このため、動的にルールを取り替えるなどが可能です。</p>
+
+<p>解析されたデータを処理は、「&gt;&gt;」の後ろの Proc オブジェクトにより行います。
+このような処理の記述は、実はルール中に埋め込むようにも書くことができますが、
+文法そのものとの区別が付きにくくなる場合があります。</p>
+
+<p><a href="/images/0008-RLR/sample_tdp4r_2.rb">sample_tdp4r_2.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_tdp4r_1'</span>
+<span class="k">class</span> <span class="nc">MyCalc</span>
+  <span class="k">def</span> <span class="nf">expr1</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">;</span>
+    <span class="p">(</span><span class="n">rule</span><span class="p">(</span><span class="ss">:expr2</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">})</span> <span class="o">-</span>
+    <span class="p">((</span><span class="n">token</span><span class="p">(</span><span class="s2">"+"</span><span class="p">)</span><span class="o">|</span><span class="n">token</span><span class="p">(</span><span class="s2">"-"</span><span class="p">))</span> <span class="o">-</span> <span class="n">rule</span><span class="p">(</span><span class="ss">:expr2</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+      <span class="k">case</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="k">when</span> <span class="s2">"+"</span><span class="p">;</span> <span class="n">n</span> <span class="o">+=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="k">when</span> <span class="s2">"-"</span><span class="p">;</span> <span class="n">n</span> <span class="o">-=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="k">end</span>
+      <span class="n">n</span>
+    <span class="p">})</span><span class="o">*</span><span class="mi">0</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span> <span class="n">n</span> <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">expr2</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">;</span>
+    <span class="p">(</span><span class="n">rule</span><span class="p">(</span><span class="ss">:prim</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">n</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">})</span> <span class="o">-</span>
+    <span class="p">((</span><span class="n">token</span><span class="p">(</span><span class="s2">"*"</span><span class="p">)</span><span class="o">|</span><span class="n">token</span><span class="p">(</span><span class="s2">"/"</span><span class="p">))</span> <span class="o">-</span> <span class="n">rule</span><span class="p">(</span><span class="ss">:prim</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+      <span class="k">case</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+      <span class="k">when</span> <span class="s2">"*"</span><span class="p">;</span> <span class="n">n</span> <span class="o">*=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="k">when</span> <span class="s2">"/"</span><span class="p">;</span> <span class="n">n</span> <span class="o">/=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+      <span class="k">end</span>
+      <span class="n">n</span>
+    <span class="p">})</span><span class="o">*</span><span class="mi">0</span> <span class="o">&gt;&gt;</span> <span class="nb">proc</span><span class="p">{</span> <span class="n">n</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">calc</span> <span class="o">=</span> <span class="no">MyCalc</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span><span class="p">(</span><span class="s2">"5-2*(5-2*2) = "</span> <span class="o">+</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"5-2*(5-2*2)"</span><span class="p">).</span><span class="nf">to_s</span><span class="p">())</span>
+
+</code></pre>
+</div>
+
+<p>また、サンプルコードから分かる通り、tdp4r では演算子の優先順位は、文法を工夫す
+ることによって実現しなければなりません。このあたりは、racc に比べると非常に不便
+な点となるでしょう。
+また、解析速度も racc より明らかに遅くなります。
+詳細な議論は RLR ではしませんが、少しでも速くするために次のように一度構成した
+文法を再利用できるようにする方法があります。</p>
+
+<p><a href="/images/0008-RLR/sample_tdp4r_3.rb">sample_tdp4r_3.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_tdp4r_1'</span>
+<span class="k">class</span> <span class="nc">FastCalc</span> <span class="o">&lt;</span> <span class="no">MyCalc</span>
+  <span class="k">def</span> <span class="nf">expr1</span>
+    <span class="vi">@expr1</span> <span class="o">||=</span> <span class="k">super</span><span class="p">()</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">expr2</span>
+    <span class="vi">@expr2</span> <span class="o">||=</span> <span class="k">super</span><span class="p">()</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">prim</span>
+    <span class="vi">@prim</span> <span class="o">||=</span> <span class="k">super</span><span class="p">()</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">calc</span> <span class="o">=</span> <span class="no">FastCalc</span><span class="p">.</span><span class="nf">new</span>
+<span class="nb">puts</span><span class="p">(</span><span class="s2">"5-2*(5-2*2) = "</span> <span class="o">+</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"5-2*(5-2*2)"</span><span class="p">).</span><span class="nf">to_s</span><span class="p">())</span>
+
+</code></pre>
+</div>
+
+<h2 id="試用レポート--syntaxrb">試用レポート – syntax.rb</h2>
+
+<h3 id="登録データ-3">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="http://raa.ruby-lang.org/project/syntax">RAA:syntax</a></li>
+  <li>[作成者] Eric Mahurin</li>
+  <li>[URL] <a href="http://raa.ruby-lang.org/cache/syntax/syntax.rb">http://raa.ruby-lang.org/cache/syntax/syntax.rb</a></li>
+  <li>[バージョン] 0.1</li>
+  <li>[レポート環境] ruby-1.8(cygwin)</li>
+</ul>
+
+<h3 id="概要-3">概要</h3>
+
+<p>syntax.rb は、tdp4r とほとんど狙いは同じライブラリです。
+文法を Ruby のコードとして記述できます。
+特徴的なことは、トークンへの分解<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>も
+syntax.rb によって行うことができ、また、ルールの定義がオブジェクトのみ
+で実現できることです。</p>
+
+<h3 id="サンプルコード-2">サンプルコード</h3>
+
+<p><a href="/images/0008-RLR/sample_syntax_1.rb">sample_syntax_1.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'syntax'</span>
+
+<span class="no">INF</span> <span class="o">=</span> <span class="o">+</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span>
+<span class="no">LOOP0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="no">INF</span><span class="p">)</span>
+<span class="no">LOOP1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="no">INF</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="p">((</span><span class="s2">"0"</span><span class="p">.</span><span class="nf">.</span><span class="s2">"9"</span><span class="p">)</span><span class="o">*</span><span class="no">LOOP1</span><span class="p">).</span><span class="nf">qualify</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">.</span><span class="nf">to_s</span><span class="p">().</span><span class="nf">to_i</span><span class="p">()}</span>
+
+<span class="n">expr</span> <span class="o">=</span> <span class="no">Syntax</span><span class="o">::</span><span class="no">Pass</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
+
+<span class="n">prim</span> <span class="o">=</span> <span class="n">num</span><span class="p">.</span><span class="nf">qualify</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span> <span class="o">|</span> <span class="p">(</span><span class="s2">"("</span> <span class="o">+</span> <span class="n">expr</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">).</span><span class="nf">qualify</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+
+<span class="n">expr2</span> <span class="o">=</span> <span class="p">(</span><span class="n">prim</span> <span class="o">+</span> <span class="p">((</span><span class="s2">"*"</span> <span class="o">|</span> <span class="s2">"/"</span><span class="p">)</span> <span class="o">+</span> <span class="n">prim</span><span class="p">)</span><span class="o">*</span><span class="no">LOOP0</span><span class="p">).</span><span class="nf">qualify</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">val</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">each</span><span class="p">{</span><span class="o">|</span><span class="n">y</span><span class="o">|</span>
+    <span class="k">case</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">when</span> <span class="s2">"*"</span><span class="p">;</span> <span class="n">val</span> <span class="o">*=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">when</span> <span class="s2">"/"</span><span class="p">;</span> <span class="n">val</span> <span class="o">/=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">end</span>
+  <span class="p">}</span>
+  <span class="n">val</span>
+<span class="p">}</span>
+
+<span class="n">expr</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">expr2</span> <span class="o">+</span> <span class="p">((</span><span class="s2">"+"</span> <span class="o">|</span> <span class="s2">"-"</span><span class="p">)</span> <span class="o">+</span> <span class="n">expr2</span><span class="p">)</span><span class="o">*</span><span class="no">LOOP0</span><span class="p">).</span><span class="nf">qualify</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">val</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nf">each</span><span class="p">{</span><span class="o">|</span><span class="n">y</span><span class="o">|</span>
+    <span class="k">case</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">when</span> <span class="s2">"+"</span><span class="p">;</span> <span class="n">val</span> <span class="o">+=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">when</span> <span class="s2">"-"</span><span class="p">;</span> <span class="n">val</span> <span class="o">-=</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">end</span>
+  <span class="p">}</span>
+  <span class="n">val</span>
+<span class="p">}</span>
+
+<span class="nb">p</span><span class="p">(</span><span class="n">expr</span> <span class="o">===</span> <span class="no">RandomAccessStream</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"5-2*2"</span><span class="p">))</span>
+
+</code></pre>
+</div>
+
+<h2 id="試用レポート--reg">試用レポート – reg</h2>
+
+<h3 id="登録データ-4">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] <a href="RubyForge:reg">RubyForge:reg</a></li>
+  <li>[作成者] Caleb Clausen</li>
+  <li>[URL] <a href="http://rubyforge.org/projects/reg/">http://rubyforge.org/projects/reg/</a></li>
+  <li>[バージョン] 0.4.5</li>
+  <li>[レポート環境] ruby-1.8(cygwin)</li>
+</ul>
+
+<h3 id="概要-4">概要</h3>
+
+<p>reg は、正規表現によるパターンマッチングを、Ruby の基本的なデータ構造に適用
+できるようにするライブラリです。
+多くの人は、文字列に対して部分文字列を抽出・置換する場合、正規表現を利用する
+ことが多いと思います。これは、正規表現が適度な手軽さを提供するためです。
+同様に、reg では、基本的なデータ構造に対しても、この手軽さを実現しようと試み
+ています。</p>
+
+<p>将来的には、パターンマッチの過程において、部分的にマッチしたデータを他のデータ
+に置き換えることなども視野に入れているようです。
+このような置換を伴うパターンマッチが行えると、パターンによって処理を行うべき
+データを検出し、さらにその検出したデータを逐次的に他のデータに置換できます。
+このような処理は、abnf と tdp4r/syntax.rb を組み合わせたような処理に似ています。
+現在は、そのような置換を行う機能は実装されていないので、パターンマッチを用いた
+データの妥当性チェックの方法を次節にて示します。</p>
+
+<h3 id="サンプルコード-3">サンプルコード</h3>
+
+<p>データの構造が、妥当であるかどうかのチェックを行うことを考えます。
+例えば、トークンの列を考えた場合、配列中に “” の文字を含めたくない
+場合を考えます。このような場合、配列 ary に対して</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ary.select{|x| x != ""}</code></pre></figure>
+
+<p>というコードを実行することによって “” を取り除くことが可能です。
+また、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ary.all?{|x| x != ""}</code></pre></figure>
+
+<p>によってすべての配列要素が “” ではないことをチェックできます。
+一方で、このようなチェックを reg を用いて記述すると次の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> +[~"".reg + 0] === ary</code></pre></figure>
+
+<p>reg では、+[] によって基本データの列(シーケンス)を表す正規表現を表し、+0 によって、
+0回以上の繰り返しを表します。
+そして、=== によって正規表現にマッチした要素をグループ化して返します。
+例えば、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> +[String.reg + 0] === ["a","b","c"]</code></pre></figure>
+
+<p>は、[ [ [“a”,”b”,”c”] ] ] が返りますが、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> +[String.reg, String.reg + 0] === ["a","b","c"]</code></pre></figure>
+
+<p>は、[ [ [“a”] ], [ [“b”, “c”] ] ] が返ります。つまり、最初の String にマッチする
+グループと、String の繰り返しにマッチするグループに分かれたことになります。
+また、=== によってマッチングを行っているので、case 文の when 節で利用することもできます。</p>
+
+<h2 id="試用レポート--opensslasn1">試用レポート – OpenSSL::ASN1</h2>
+
+<h3 id="登録データ-5">登録データ</h3>
+
+<ul>
+  <li>[プロジェクト名] OpenSSL::ASN1</li>
+  <li>[作成者] 後藤 ゆうぞう</li>
+  <li>[URL]</li>
+  <li>[バージョン] ruby-1.8 に添付</li>
+  <li>[レポート環境] ruby-1.8(cygwin)</li>
+</ul>
+
+<h3 id="概要-5">概要</h3>
+
+<p><a href="Wikipedia-en:ASN1">ASN.1</a> は、Abstract Syntax Notation One というデータ構造
+を記述するための文法です。
+<a href="Wikipedia:SSL">SSL</a>, <a href="Wikipedia:SNMP">SNMP</a>, <a href="Wikipedia:LDAP">LDAP</a> と呼ば
+れるプロトコルにおいて、メッセージデータを定義するために利用されています。
+OpenSSL::ASN1 は、そのような ASN.1 に従ってデータを構成するためのライブラリで、
+OpenSSL 拡張モジュールの一部として提供されています。
+ただし、ASN.1 の構文を解釈して、その構文に従うデータを処理するコードを自動生成
+しません。開発者が、データを構文に従って組み立てるための、基本的な枠組だけを
+提供しています。</p>
+
+<p>データ構造をエンコーディングする方法として BER (Basic Encoding Rules)
+, CER (Canonical Encoding Rules), DER (Distinguished Encoding Rules) など複数
+の方法があります。OpenSSL::ASN1 では、DER エンコーディングのみがサポートされて
+います。</p>
+
+<h3 id="サンプルコード-4">サンプルコード</h3>
+
+<p>Windows をご利用の方であれば、[インターネットオプション]-&gt;[コンテンツ]-&gt;[証明書]
+のウィンドウから、一つ証明書を選択し、エクスポートを行うことができます。
+このとき、エンコーディング方法として DER を選択できます。
+そこで、このような DER によりエンコーディングされた電子証明書を OpenSSL::ASN1 を
+用いて閲覧します。<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>
+ここでは DER 形式でエンコーディングされた証明書を foo.der という名前のファイル
+とします。</p>
+
+<p>まず、証明書(foo.cer) の中身を解析するためには、その構造を知る必要があります。
+電子証明書の構造は、<a href="RFC:3280">RFC:3280</a> で記述されています。
+<a href="RFC:3280">RFC:3280</a> の 4.1 “Basic Certificate Profile” を見ると以下の文法が掲載され
+ています。これが ASN.1 で記述されたデータ構造の定義です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  Certificate  ::=  SEQUENCE  {
+       tbsCertificate       TBSCertificate,
+       signatureAlgorithm   AlgorithmIdentifier,
+       signatureValue       BIT STRING }</code></pre></figure>
+
+<p>ここで定義していることは、証明書の中身が、まず tbsCertificate, signatureAlgorithm,
+signatureValue の3つのデータから構成されていることを表しています。
+そして、それぞれのデータは、それぞれ TBSCertificate, AlgorithmIdentifier, BIT STRING
+という構造を持つことも表しています。TBSCertificate の構造は多少複雑ですので、簡単な
+AlgorithmIdentifier の定義を参考として挙げます。これは、4.1.1.2 節において記載されて
+います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  AlgorithmIdentifier  ::=  SEQUENCE  {
+       algorithm               OBJECT IDENTIFIER,
+       parameters              ANY DEFINED BY algorithm OPTIONAL  }</code></pre></figure>
+
+<p>このような、データ構造を読み込み、再び再構成してファイルへ出力するプログラムが
+以下の sample_asn1_1.rb です。</p>
+
+<p><a href="/images/0008-RLR/sample_asn1_1.rb">sample_asn1_1.rb</a></p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'openssl'</span>
+<span class="nb">require</span> <span class="s1">'pp'</span>
+<span class="kp">include</span> <span class="no">OpenSSL</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="no">ASN1</span><span class="p">.</span><span class="nf">decode</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="no">ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">'rb'</span><span class="p">){</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">()})</span>
+
+<span class="n">tbsCertificate</span><span class="p">,</span> <span class="n">signatureAlgorithm</span><span class="p">,</span> <span class="n">signatureValue</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="nf">value</span>
+<span class="n">pp</span> <span class="n">tbsCertificate</span>
+<span class="n">pp</span> <span class="n">signatureAlgorithm</span>
+<span class="n">pp</span> <span class="n">signatureValue</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="no">ASN1</span><span class="o">::</span><span class="no">Sequence</span> <span class="p">[</span>
+  <span class="n">tbsCertificate</span><span class="p">,</span>
+  <span class="n">signatureAlgorithm</span><span class="p">,</span>
+  <span class="n">signatureValue</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="no">ARGV</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'wb'</span><span class="p">){</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="nf">to_der</span><span class="p">())}</span>
+
+</code></pre>
+</div>
+
+<p>5 行目でファイルから証明書のデータを読み込み DER 形式のデコードを行っています。
+そして、7 行目では、データ構造の定義に従って、それらを tbsCertificate,
+signatureAlgorithm, signatureValue の3つのデータに分割しています。
+次に、12 行目では、これら 3 つを再び一つの証明書として構成しています。
+一見すると、ASN.1 の定義に似ていることが分かります。
+そして、17 行目では、再構成したデータを to_der により DER 形式でエンコードを行い、
+ファイルへ出力しています。
+このため、このプログラムを例えば ruby sample_asn1_1.rb foo.der bar.der として
+実行すると、foo.der と中身が等しい bar.der というファイルができているはずです。
+このことは、md5sum や cmp などのコマンドで確認できます。</p>
+
+<p>以上のように、OpenSSL::ASN1 では、データの構成と、エンコードとデコードが主な役割
+です。今後、ASN.1 の文法を記述することによって、その文法に従うデータを処理するため
+のコードを生成できることを期待します。
+例えば、Certificate の例ですと、以下のように Internal DSL 風に ASN.1 を記述でき、
+自動的にデータを読み込むことができると、さらに使い易いと思います。
+もちろん、ASN.1 を記述言語として、以下のような Internal DSL のコードを生成すると
+いうことも可能でしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class Certificate
+   sequence [
+     [:tbsCertificate, :TBSCertificate],
+     [:algorithmIdentifier, :AlgorithmIdentifier],
+     [:signatureValue, :BitString]]
+ end
+ class AlgorithmIdentifier
+   sequence [
+     [:algorithm, :ObjectIdentifier,
+      :parameters, :OPTIONAL]]
+ end
+ ...
+ cert = Certificate.read("foo.der")  # 証明書の読み込み
+ cert.tbsCertificate</code></pre></figure>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>今回は、正規表現や構文解析に関係するデータ処理のためのツールとライブラリ
+を紹介しました。
+abnf は、複雑になりがちな正規表現の記述を支援できます。
+racc は、対象データの文法(つまり、構造)に沿って処理方法を簡潔に記述することがで
+きます。
+tdp4r と syntax.rb は、racc と同様の目的で使えますが、文法を Ruby のコードとして
+記述できます。このため、Ruby の記述力を活かした動的な文法定義などが興味深いです。
+reg と OpenSSL::ASN1 は、データ処理という観点からは、今後の発展が非常に楽しみな
+ライブラリです。</p>
+
+<h2 id="参考リソース">参考リソース</h2>
+
+<p>[1] DSL(Domain Specific Language) については、
+<a href="http://martinfowler.com/bliki/DomainSpecificLanguage.html">「Domain Specific Language」</a>
+に簡潔な説明があります。</p>
+
+<p>[2] <a href="http://lab.msdn.microsoft.com/teamsystem/Workshop/DSLTools/">「Domain-Specific Language (DSL) Tools」</a>
+には、マイクロソフトが提供する DSL 関連のツールを見ることができます。</p>
+
+<p>[3] <a href="http://www.cobase.cs.ucla.edu/pub/javacc/">「JavaCC Grammar Repository」</a>
+には、様々な JavaCC の文法ファイルを見つけることができます。
+tdp4r や syntax.rb などを扱う場合の参考になります。</p>
+
+<p>[4] <a href="GoogleJ:ISBN:4-621-03999-7">「コンパイラ」</a> は、日本語で書かれたコンパイラの教科書です。
+しかし、ツールやライブラリを使う限りにおいて内容を知る必要はありません。</p>
+
+<p>[5] <a href="GoogleJ:ISBN:4-320-02382-X">「コンパイラの理論と実現」</a> では、
+実際に C– という例題を基に、簡単にコンパイラの構成方法を説明しています。</p>
+
+<p>[6] <a href="http://lionet.info/asn1c/">ASN.1 Compiler</a> は、
+オープンソースの ASN.1 コンパイラです。</p>
+
+<p>[7] <a href="http://www.ascii.co.jp/books/detail/4-7561/4-7561-3709-1.html">「Rubyを256倍使うための本　無道編」</a> 
+は、racc を用いたインタプリタの作成について解説しています。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>著者(立石)は、ソフトウェアの研究開発職に従事しています。</p>
+
+<h2 id="ruby-library-report-連載一覧">Ruby Library Report 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0008/0008-RLR.html">Ruby Library Report 【第 6 回】 正規表現と構文解析</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RLR.html">Ruby Library Report 【第 5 回】 数値計算と可視化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RLR.html">Ruby Library Report 【第 4 回】 Win32Utils</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RLR-en.html">Ruby Library Report [No.4] Using Win32Utils (en)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-RLR.html">Ruby Library Report 【第 3 回】 O/R マッピング</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-RLR.html">Ruby Library Report 【第 2 回】 Java との連携</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-RLR.html">Ruby Library Report 【第 1 回】 IoC コンテナ</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>有名なものに、正規文法、文脈自由文法 、LALR(1) 文法、LL(k) 文法 などの文法のクラスがあります。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>LR解析、LALR(1)解析、再帰下降解析などの解析方法があります。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>これらは、パーサやXMLというドメインに特化した言語ですが、ビジネスドメインを記述するものも同様に DSL です。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>[[RFC:2373]]のAPPENDIX B&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>[[RFC:2393]]のAPPENDIX A&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>一般的に字句解析と言います&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>Linux や *BSD をお使いの方も、適当な DER によりエンコーディングされた電子証明書をご用意ください。(編注: 適当な証明書が無い場合は <a href="http://www.cacert.org/index.php?id=3&amp;lang=ja_JP">CAcert.org</a> からダウンロードすると良いでしょう)&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

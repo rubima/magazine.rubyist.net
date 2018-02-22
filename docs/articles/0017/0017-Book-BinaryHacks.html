@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>書籍紹介『Binary Hacks』</title>
+  <meta name="description" content="編集：ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0017/0017-Book-BinaryHacks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>書籍紹介『Binary Hacks』</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0017/0017-Book-BinaryHacks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="書籍紹介『Binary Hacks』" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0017/0017-Book-BinaryHacks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0017/0017-Book-BinaryHacks.html" data-text="書籍紹介『Binary Hacks』">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>編集：ささだ</p>
+
+<h2 id="書籍紹介binary-hacks">書籍紹介『Binary Hacks』</h2>
+<p><img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51yVHZxEmuL._SL160_.jpg" /></p>
+
+<dl>
+  <dt>書名</dt>
+  <dd>Binary Hacks</dd>
+  <dt>サブタイトル</dt>
+  <dd>ハッカー秘伝のテクニック 100 選</dd>
+  <dt>著者</dt>
+  <dd>高林哲、鵜飼文敏、佐藤祐介、浜地慎一郎、首藤一幸</dd>
+  <dt>出版社</dt>
+  <dd>オライリー・ジャパン</dd>
+  <dt>定価</dt>
+  <dd>3,360 円 (税込)</dd>
+  <dt>ページ数</dt>
+  <dd>412 ページ</dd>
+  <dt>ISBN</dt>
+  <dd>4-87311-288-5</dd>
+</dl>
+
+<p>発売日 2006 年 11 月 11 日</p>
+
+<dl>
+  <dt>版型</dt>
+  <dd>A5</dd>
+  <dt>書籍のページ</dt>
+  <dd><a href="http://www.oreilly.co.jp/books/4873112885/">http://www.oreilly.co.jp/books/4873112885/</a></dd>
+  <dd><a href="http://0xcc.net/binhacks/">http://0xcc.net/binhacks/</a></dd>
+  <dt>目次</dt>
+  <dd><a href="http://www.oreilly.co.jp/books/4873112885/toc.html">http://www.oreilly.co.jp/books/4873112885/toc.html</a></dd>
+</dl>
+
+<p><a href="http://www.oreilly.co.jp/books/4873112885/">oreilly.co.jp – Online Catalog: Binary Hacks</a> より引用:</p>
+
+<blockquote>
+  <p>本書のテーマは低レイヤのプログラミング技術です。低レイヤとは「生」のコンピュータに近いことを意味します。ソフトウェアの世界は抽象化の積み重ねによって進歩してきました。抽象化は低レイヤの複雑な部分を隠蔽し、より生産性、安全性の高い方法でプログラミングする手段を開発者に提供します。しかし、低レイヤの技術を完全に忘れてプログラミングできるかというと、そうもいきません。性能をとことん追求したい、信頼性をできるだけ高めたい、ときおり発生する「謎のエラー」を解決したい、といった場面では低いレイヤに降りていく必要に迫られます。残念ながら、抽象化は万全ではないためです。本書の目的は、そういった場面で使えるたくさんのノウハウ「Binary Hack」を紹介することです。本書では、Binary Hack を「ソフトウェアの低レイヤの技術 を駆使したプログラミングノウハウ」と定義し、基本的なツールの使い方から、セキュアプログラミング、OS やプロセッサの機能を利用した高度なテクニックまで広くカバーします。(「はじめに」より)</p>
+</blockquote>
+
+<h2 id="本書の紹介-by-ささだ">本書の紹介 (by ささだ)</h2>
+
+<p>はっきり言ってしまうと、本書はあんまり「バイナリ」って感じがしません。バイナリとか、バイナリアンとかいう言葉を聞くと、私は <img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41DYYQAGRDL._SL160_.jpg" /> のような書籍を想像するんですが、先に引用した「はじめに」にもあるように、低レベルプログラミングについての技法の解説が主になっています。</p>
+
+<p>ただし、低レベルプログラミングの本質的な解説というわけではなく、各プラットホーム固有の、低レベルプログラミングを行うための便利機能の紹介を行う書籍になっています。細かい内容は<a href="http://www.oreilly.co.jp/books/4873112885/toc.html">Binary Hacks の目次</a> を見てもらうとわかるかと思います。ライブラリの紹介やツールの使い方などがほとんどなので、マニュアルを読めばわかる内容ではありますし、「ふつう」のハッカーなら、ほとんど知っていてもおかしくないかも、とも思います。</p>
+
+<p>ただ、私はまだまだ「ふつう」のハッカーの域に達していないので、全然知らない知識ばかりで、色々なツールなどの知識を得ることが出来てとても参考になりました。「そうそう、こんな機能が欲しかったんだよなー」という機能がいろいろ紹介されています。</p>
+
+<p>本書は多分、バイナリアン育成のための書籍ではなく、バイナリアンが読んで喜ぶ書籍ではないかと思います。なので、自分がバイナリアンであるんではないか、と思う人は、一度手にとって読んでみるといいんじゃないかと思います。「これは便利そうだな〜」と、読んでみて思った人は、きっと他の記事も気に入るかと思います。</p>
+
+<p>話は変わるのですが、ではバイナリアンになるための網羅的な、教科書的な書籍というのは存在するんでしょうか。「このご時勢、なんでバイナリなどと低レベルな層を触らなければならないのか」という疑問には、川合史朗さんが「本書に寄せて」で理由を書いているのですが、本書は「よし、これからは低レベルの層をもっと勉強するぞ！」と思った人がまず最初に読む本ではないと思います。「Hack#100 文献案内」を見てみると色々と書いてあるので、まずはそこを読んで修行してから、本書へ戻ってきて更に感動する、というのが理想系なんでしょうかね。</p>
+
+<p>バイナリアンが経験しているであろう低レベルプログラミングが持つ「ドキドキ感」は、書籍で学ぶものでもないのかもしれませんので、そのような書籍はありえないのかもしれません。ただ、本書を読んで、なんだかよくわからないけど「ドキドキ感」を感じるという人は、すでにバイナリアンなのかもしれません。</p>
+
+<h3 id="実際に使ってみた事例">実際に使ってみた事例</h3>
+
+<p>言葉を繕ってもあまり意味がない、というか、ありそうな紹介が書けそうに無いので、自分が開発している YARV に、本書によって得た知識を実際に利用してみた、という事例をご紹介します。</p>
+
+<p>お題は「Hack#63 C でバックトレースを表示する」です。ここでは、glibc が持つ backtrace() 関数を利用して、C 関数のバックトレースを表示する方法を紹介しています。</p>
+
+<p>この機能を積極的に使って、Ruby の例外処理をこの機能を利用して実現することも考えられますが (プログラムカウンタ &lt;-&gt; 例外処理情報の対応表を先に作る)、glibc 環境でないと使えない技、もしくはマシン語命令を用いた関数フレームの解析を行わないといけないので、Ruby の「なるべく処理系は環境非依存に作る」という原則から反してしまうので、そこまではしませんでした。</p>
+
+<p>実際につけた機能は、処理系に何かしらのバグが発生したとき (具体的には SEGV シグナルハンドラを受け取ったとき)、終了時にこの機能を用いて C のバックトレースをアドレスで表示する機能を付けました。backtrace 関数を利用できる環境でのみ、この機能が有効になります。</p>
+
+<p>実際のコードは次のようになっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#if HAVE_BACKTRACE
+#include &lt;execinfo.h&gt;
+#define MAX_NATIVE_TRACE 1024
+    {
+	static void *trace[MAX_NATIVE_TRACE];
+	int n = backtrace(trace, MAX_NATIVE_TRACE);
+	int i;
+
+	fprintf(stderr, "-- backtrace of native function call (Use addr2line) --\n");
+	for (i=0; i&lt;n; i++) {
+	    fprintf(stderr, "%p\n", trace[i]);
+	}
+	fprintf(stderr, "-------------------------------------------------------\n");
+    }
+#endif</code></pre></figure>
+
+<p>処理系にバグがあると、次のような出力を表示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">-- stack frame ------------
+0000 (0x2aaaaacd7010): 00000004
+0001 (0x2aaaaacd7018): 00000005
+0002 (0x2aaaaacd7020): 00000004
+0003 (0x2aaaaacd7028): 00000001
+0004 (0x2aaaaacd7030): 2aaaaac202c0
+0005 (0x2aaaaacd7038): 00000004
+0006 (0x2aaaaacd7040): 00000001 &lt;- lfp &lt;- dfp
+-- control frame ----------
+c:0004 p:---- s:0007 b:0007 l:000006 d:000006 CFUNC  :SDR
+c:0003 p:0007 s:0004 b:0004 l:000003 d:000003 TOP    ../trunk/test.rb:1
+c:0002 p:---- s:0002 b:0002 l:000001 d:000001 FINISH
+c:0001 p:---- s:0000 b:-001 l:000000 d:000000 ------
+---------------------------
+DBG&gt; : "../trunk/test.rb:1:in `&lt;main&gt;'"
+-- backtrace of native function call (Use addr2line) --
+0x4949cf
+0x4955e9
+0x490a0c
+0x492b1d
+0x4956cd
+0x414713
+0x414755
+0x4184bd
+0x411f63
+0x3f8d21c784
+0x411e99
+-------------------------------------------------------</code></pre></figure>
+
+<p>アドレスの列が出力されるため、addr2line コマンドを利用してソース上の場所を特定することが出来ます。普段は gdb 経由で実行するしか取れなかった C の関数呼び出しのバックトレース情報が、処理系のエラー時に必ず出力されるようになったので、今後はバグの解析が楽になるのではないかと期待しています。</p>
+
+<h3 id="この記事について">この記事について</h3>
+
+<p>ところで、書籍紹介の記事は、いつもなら Ruby 関連書籍が出たときに、出版社、執筆者の方に「載せませんか？/載せる内容ください」とお伺いをたてるだけという、こちらはほとんど何もしないで楽に記事が一本増えてラッキーと思う記事なのですが (いや、冗談ですよ)、執筆者の一人の方に本をあげるからるびまで紹介しろ、と、もとい紹介してくださいませんか、と言われたのでささだが筆を取った次第です。</p>
+
+<p>えーと、いい本だと思いますのでぜひお買い求めください。はい。</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

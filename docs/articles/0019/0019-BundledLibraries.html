@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</title>
+  <meta name="description" content="書いた人：西山">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0019/0019-BundledLibraries.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0019/0019-BundledLibraries.html" class="hatena-bookmark-button" data-hatena-bookmark-title="標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0019/0019-BundledLibraries.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0019/0019-BundledLibraries.html" data-text="標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：西山</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Ruby には便利な標準添付ライブラリがたくさんありますが、なかなか知られていないのが現状です。そこで、この連載では Ruby の標準添付ライブラリを紹介していきます。</p>
+
+<p>今回は、正規表現に関係するライブラリについて紹介します。
+ということにして (連載タイトル上の建前) 正規表現の話をいろいろと書きます。
+都合により次回にも続きます。</p>
+
+<h2 id="正規表現">正規表現</h2>
+
+<p>リファレンスや入門書などを見ればわかることは省略します。
+基本的なことや詳しいことは<a href="ruby-man:正規表現">リファレンスマニュアルの正規表現</a>や「詳説 正規表現 第 2 版」などを参照してください。</p>
+
+<p>今回は「\」によるエスケープ、アトム、優先順位、先読みと戻り読みの話です。</p>
+
+<h3 id="そのは誰が解釈するのか">その「\」は誰が解釈するのか</h3>
+
+<p>正規表現に限らず、エスケープがあるものを扱うときに意識しなければならないのは、そのエスケープは誰が解釈するのかと言うことです。</p>
+
+<p>たとえば</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> echo \\\\\\\\ | ruby -pe "gsub(/\\\\\\\\/,'[\\\\\\\\]')"</code></pre></figure>
+
+<p>というコマンドを実行したときに何が表示されるのか、そしてその理由が説明できますか?</p>
+
+<p>筆者が試したところ、</p>
+
+<ul>
+  <li>bash や zsh と linux 版 ruby で「[]」</li>
+  <li>cmd.exe と mswin32 版 ruby で「[\][\]」</li>
+  <li>cmd.exe と cygwin 版 ruby で「[][][][]」</li>
+</ul>
+
+<p>が出力されました。</p>
+
+<p>まず、「echo \\\\」部分です。bash や zsh の場合、</p>
+
+<ol>
+  <li>シェルが「echo \\\\」を解釈して、「echo」と「\\」になる。</li>
+  <li>「echo」が「\\」を引数として実行される。</li>
+  <li>「echo」が「\\」を解釈して「\」を出力する。</li>
+</ol>
+
+<p>という流れになります。</p>
+
+<p>cmd.exe の場合は</p>
+
+<ol>
+  <li>シェルが「echo \\\\」を解釈して、「echo」と「\\\\」になる。</li>
+  <li>「echo」が「\\\\」を引数として実行される。</li>
+  <li>「echo」が「\\\\」を解釈して「\\\\」を出力する。</li>
+</ol>
+
+<p>という流れになります。</p>
+
+<p>次に「ruby -pe “gsub(/\\\\/,’[\\\\]’)”」の部分です。
+これも同様に bash や zsh の場合、</p>
+
+<ol>
+  <li>シェルが「ruby -pe “gsub(/\\\\/,’[\\\\]’)”」を解釈して、「ruby」と「-pe」「gsub(/\\/,’[\\]’)」になる。</li>
+  <li>ruby のパーサが「gsub(/\\/,’[\\]’)」を解釈して、gsubの引数が「\\」という内容の正規表現と「[\]」という内容の文字列になる。</li>
+  <li>gsub の第一引数の正規表現「\\」がコンパイルされて、「\」にマッチする正規表現になる。</li>
+  <li>gsub の第二引数「[\]」は「$1」などの代わりに「\1」などのメタ文字を解釈して、置換後の文字列は「[]」となる。</li>
+</ol>
+
+<p>という流れになります。
+このプログラムに「\」が入力されて、置換が 1 回実行されて「[]」が出力されます。</p>
+
+<p>cmd.exe と mswin32 版 ruby の場合は</p>
+
+<ol>
+  <li>シェルが「ruby -pe “gsub(/\\\\/,’[\\\\]’)”」を解釈して、「ruby」と「-pe」「gsub(/\\\\/,’[\\\\]’)」になる。</li>
+  <li>ruby のパーサが「gsub(/\\\\/,’[\\\\]’)」を解釈して、gsubの引数が「\\\\」という内容の正規表現と「[\\]」という内容の文字列になる。</li>
+  <li>gsub の第一引数の正規表現「\\\\」がコンパイルされて、「\\」にマッチする正規表現になる。</li>
+  <li>gsub の第二引数「[\\]」は「$1」などの代わりに「\1」などのメタ文字を解釈して、置換後の文字列は「[\]」となる。</li>
+</ol>
+
+<p>という流れになります。
+このプログラムに「\\\\」が入力されて、置換が 2 回実行されて「[\][\]」が出力されます。</p>
+
+<p>cmd.exe と cygwin 版 ruby の場合は</p>
+
+<ol>
+  <li>シェルが「ruby -pe “gsub(/\\\\/,’[\\\\]’)”」を解釈して、「ruby」と「-pe」「gsub(/\\\\/,’[\\\\]’)」になる。</li>
+  <li>cygwin がコマンドライン全体の「ruby -pe “gsub(/\\\\/,’[\\\\]’)”」を再度解釈して、「ruby」と「-pe」「gsub(/\\/,’[\\]’)」になる。</li>
+  <li>ruby のパーサが「gsub(/\\/,’[\\]’)」を解釈して、gsubの引数が「\\」という内容の正規表現と「[\]」という内容の文字列になる。</li>
+  <li>gsub の第一引数の正規表現「\\」がコンパイルされて、「\」にマッチする正規表現になる。</li>
+  <li>gsub の第二引数「[\]」は「$1」などの代わりに「\1」などのメタ文字を解釈して、置換後の文字列は「[]」となる。</li>
+</ol>
+
+<p>という流れになります。
+このプログラムに「\\\\」が入力されて、置換が 4 回実行されて「[][][][]」が出力されます。</p>
+
+<p>このような点を理解した上で、String#gsub の説明や <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=trap%3A%3A%5C%A4%CE%B1%C6%B6%C1">\ の影響</a> を読むと、慣れないうちはブロックを使う方が良い理由がわかると思います。</p>
+
+<h3 id="アトム">アトム</h3>
+
+<p>正規表現は Perl の正規表現の用語を使うと、アトムから成り立っています。</p>
+
+<p>アトムには</p>
+
+<ul>
+  <li>文字そのもの</li>
+  <li>メタ文字</li>
+  <li>文字クラス</li>
+</ul>
+
+<p>などがあります。</p>
+
+<p>文字そのものとは「a」や「あ」などの文字そのものにマッチするものです。</p>
+
+<h4 id="メタ文字">メタ文字</h4>
+
+<p>Ruby の正規表現のメタ文字には</p>
+
+<ul>
+  <li>「\ を伴わない英数字」はメタ文字ではない</li>
+  <li>「\ を伴う記号」はメタ文字ではない (「*」は「繰り返し」でなく「アスタリスク」)</li>
+</ul>
+
+<p>という規則があります。
+「\ を伴う英数字」は必ずメタ文字というわけではありませんが、将来メタ文字になる可能性があるので、現在メタ文字になっていないものは使わない方が良いでしょう。</p>
+
+<p>メタ文字に含まれるのかどうかはわからないのですが、改行文字を意味する「\n」なども正規表現では使えます。</p>
+
+<p>これらは「\」の話のところで書いたように誰が解釈するのかを知っておくと、
+文字列から「Regexp.new」などで正規表現オブジェクトを生成するときに「\」がいくつ必要なのかを理解しやすくなります。</p>
+
+<p>例えば「/\n/」というリテラルなら、Ruby のパース時には「\n」という内容の正規表現になり、
+正規表現のコンパイル時に改行文字にマッチするアトムとして解釈されます。
+「Regexp.new(“\n”)」でもマッチする対象は同じになるのですが、
+文字列として改行文字になっていて、
+正規表現のコンパイル時には「\」の解釈がないという違いがあります。
+そして「/\n/」と同じ意味になるのは</p>
+
+<ul>
+  <li>Regexp.new(“\n”)</li>
+  <li>Regexp.new(‘\n’)</li>
+  <li>Regexp.new(‘\n’)</li>
+</ul>
+
+<p>などです。
+この 3 つは文字列リテラルの書き方の違いだけで、「Regexp.new」の引数に渡るオブジェクトの内容は同じです。</p>
+
+<p>参考として irb での実行例を載せておきます。
+「Regexp.new(“\n”)」だけ違うことがわかると思います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ irb --simple-prompt -f
+&gt;&gt; /\n/
+=&gt; /\n/
+&gt;&gt; Regexp.new("\n")
+=&gt; /
+/
+&gt;&gt; Regexp.new("\\n")
+=&gt; /\n/
+&gt;&gt; Regexp.new('\n')
+=&gt; /\n/
+&gt;&gt; Regexp.new('\\n')
+=&gt; /\n/
+&gt;&gt; "\\n"
+=&gt; "\\n"
+&gt;&gt; '\n'
+=&gt; "\\n"
+&gt;&gt; '\\n'
+=&gt; "\\n"
+&gt;&gt; </code></pre></figure>
+
+<h4 id="後方参照-1-2-">後方参照 (\1, \2, …)</h4>
+
+<p>後方参照は、改行文字のように正規表現のコンパイル時でも意味が同じということはなく、
+「\」の数を間違えると全く違う意味になるので注意が必要です。
+例えば「Regexp.new(“\1”)」なら文字コード 1 の文字にマッチする正規表現になり、
+「Regexp.new(“\1”)」なら後方参照する括弧がないので、単独では何にもマッチしない正規表現になり (「/(\d)#{Regexp.new(“\1”)}/」のように他の括弧を含む正規表現に埋め込むとマッチする)、
+「Regexp.new(“(\d)\1”)」なら「00」などのように同じ数字が続くものにマッチする正規表現になります。</p>
+
+<p>「/\01/」は inspect では「/\01/」になりますが、「/\001/」と同じ意味です。
+0 から始まって 3 桁までの数字の場合は 8 進数での文字コードの指定になります。
+4 桁以上の場合は、例えば「\0001」なら「\000」と「1」の意味になります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">% irb --simple-prompt -f
+&gt;&gt; "\1"
+=&gt; "\001"
+&gt;&gt; '\1'
+=&gt; "\\1"
+&gt;&gt; "\x01"
+=&gt; "\001"
+&gt;&gt; Regexp.new("\1")
+=&gt; /\001/
+&gt;&gt; Regexp.new("\\1")
+=&gt; /\1/
+&gt;&gt; Regexp.new('\1')
+=&gt; /\1/
+&gt;&gt; Regexp.new("\1") =~ "\1"
+=&gt; 0
+&gt;&gt; Regexp.new('\1') =~ "\1"
+=&gt; nil
+&gt;&gt; Regexp.new('(\d)\1') =~ "00"
+=&gt; 0
+&gt;&gt; Regexp.new('(\d)\1') =~ "01"
+=&gt; nil
+&gt;&gt; /\1/
+=&gt; /\1/
+&gt;&gt; /\01/
+=&gt; /\01/
+&gt;&gt; /\001/
+=&gt; /\001/
+&gt;&gt; /\0001/
+=&gt; /\0001/
+&gt;&gt; /\1/ =~ "\1"
+=&gt; nil
+&gt;&gt; /\01/ =~ "\1"
+=&gt; 0
+&gt;&gt; /\001/ =~ "\1"
+=&gt; 0
+&gt;&gt; /\0001/ =~ "\1"
+=&gt; nil
+&gt;&gt; /\0001/ =~ "\0"+"1"
+=&gt; 0
+&gt;&gt; </code></pre></figure>
+
+<h4 id="幅のあるメタ文字">幅のあるメタ文字</h4>
+
+<p>「.」が普通は改行にはマッチしないことに注意が必要です。
+改行もマッチさせるには「m」オプションを使って、
+「/./m」のように正規表現リテラルを書くか、
+「Regexp.new(‘.’, Regexp::MULTILINE)」のように「Regexp::MULTILINE」を指定した「Regexp.new」使うか、
+「(?m:.)」のようにクロイスタと呼ばれる記法を使って「m」オプションを指定します。</p>
+
+<p>「\ を伴う英数字」のうち幅のあるメタ文字の主なものは「\w」や「\D」のように文字クラスのような意味のものです。</p>
+
+<h4 id="幅-0-のメタ文字">幅 0 のメタ文字</h4>
+
+<p>幅 0 のメタ文字とは、正規表現のその位置が特定の条件にあっていればマッチするアトムです。</p>
+
+<ul>
+  <li>「^」:行頭</li>
+  <li>「$」:行末</li>
+  <li>「\A」:文字列先頭</li>
+  <li>「\Z」:文字列末尾または末尾が改行ならその改行の直前</li>
+  <li>「\z」:文字列末尾</li>
+  <li>「\b」:(文字クラスの外では) 語境界 (\w と \W の間)</li>
+  <li>「\B」:非語境界</li>
+  <li>「\G」:前回マッチした箇所 (の直後) か初回のみ先頭 (\A と同じ)</li>
+</ul>
+
+<p>青木さんの添削にもありましたが、文字列先頭や文字列末尾の意味で「^」や「$」を使ってはいけません。Perl などの他の言語の正規表現とは意味が違うので気をつけてください。
+たとえば、CGI の入力のチェックで間違って「^\d+$」のように使ってしまうと、「数字だけからなる文字列」を受け付けたつもりでも「数字のみの行」を含む文字列を受け付けることになってしまいます。</p>
+
+<p>「\Z」も普通は使うことはないでしょう。「\A」とセットで文字列全体をチェックするのなら「\z」を使うべきです。「\Z」は「^」に対応する「$」のように「\A」に対応するものとして存在するだけで、普通は使うものではないと思います。行を意識して処理をしたいのなら、「\A」と「\Z」ではなく「^」と「$」が向いていることの方が多いはずです。</p>
+
+<p>「\b」は文字クラスの中と外で意味が変わるメタ文字です。
+文字クラスの中と外は正規表現の中と外のように別言語だと思った方が良いでしょう。
+文字クラスの外の「\b」は「\w」と「\W」(または文字列の端) の間にマッチします。
+たとえば「”abc.”.gsub(/\b/, ‘!’)」なら「!abc!.」になります。</p>
+
+<p>「\B」は逆の意味になります。
+たとえば「”abc.”.gsub(/\B/, ‘!’)」なら「a!b!c.!」になります。</p>
+
+<p>「\G」は使用頻度が低いため説明は省略します。
+用途によっては「\G」の代わりに strscan を使うことを検討してください。</p>
+
+<h4 id="文字クラス">文字クラス</h4>
+
+<p>文字クラスは「[]」内に列挙した文字にマッチするアトムです。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>たとえば「(a</td>
+      <td>b</td>
+      <td>c</td>
+      <td>d</td>
+      <td>e</td>
+      <td>f)」と「[abcdef]」はほぼ同じ意味になります。</td>
+    </tr>
+    <tr>
+      <td>しかし、マッチしたいものが一文字とわかっているのなら、「</td>
+      <td>」による選択を使うよりも、文字クラスを使った方が無駄なバックトラックが発生しないため速いです。</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>文字クラスの使い方でよくある間違いとして「[foo]」や「[^(foo)]」のようなものがあります。
+それぞれ</p>
+
+<ul>
+  <li>「[fo]」と同じで「f」または「o」</li>
+  <li>「[^()fo]」と同じで「()fo」以外の一文字</li>
+</ul>
+
+<p>という意味になります。</p>
+
+<p>文字クラスはうまく組み合わせるといろいろな表現が可能です。
+例えば、</p>
+
+<ul>
+  <li>[\s\S] : 全ての文字</li>
+  <li>[^\W_] : 「\w」から「_」を除いたもの</li>
+</ul>
+
+<h3 id="優先順位">優先順位</h3>
+
+<p>Perl の正規表現の優先順位は 4 つあります。
+Ruby の正規表現の優先順位について明記されているものは見たことがないのですが、
+同じと思って良いでしょう。</p>
+
+<ol>
+  <li>括弧など</li>
+  <li>「?」「*」「{m,n}」などの繰り返し</li>
+  <li>シーケンス (アトムの並び)</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>「</td>
+          <td>」による選択</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ol>
+
+<p>一番優先順位の高い括弧とは「(〜)」や「(?:〜)」などです。
+算術演算の括弧で「(1+2)*3」のように使うのと同じで、優先順位の低い選択をまとめたいときに「^(class|def)\s\w+$」の使えるように優先順位が高くなっているのだと思います。</p>
+
+<p>次に繰り返しです。繰り返しはシーケンスよりも優先順位が高いので「\s\w+」の場合、「\s\w」の繰り返しではなく「\w」の繰り返しという意味になります。「\s\w」の繰り返しという意味にしたい場合は「(\s\w)+」のように括弧を使う必要があります。</p>
+
+<p>次にシーケンスです。シーケンスとは「ab」のように「a」と「b」が並んでいるときに「a」の次に「b」があるという意味になることです。
+数式で「ab」と書いてあれば「a×b」という意味なのと同じような感じだと思えば良いと思います。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>最後に「</td>
+      <td>」による選択です。「^class</td>
+      <td>def\s\w+$」は選択がシーケンスよりも優先順位が低いため、「^class」または「def\s\w+$」という意味になります。</td>
+    </tr>
+    <tr>
+      <td>「^class\s\w+$」または「^def\s\w+$」とほぼ同じ意味にするには「^(class</td>
+      <td>def)\s\w+$」のように括弧を使う必要があります。</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="先読み--">先読み (?=〜), (?!〜)</h3>
+
+<p>先読み (lookahead) は、幅 0 の正規表現です。
+「^」や「$」と同じような「幅 0 の正規表現」ということをわかっておくことが重要です。</p>
+
+<p>たとえば、左に「a」がない「b」という正規表現を書きたいとします。
+このとき、先読みの意味を勘違いしていると「(?!a)b」と書いてしまうことになります。</p>
+
+<p>ここでは「/(?!a)b/ =~ “abb”」という処理で考えてみます。
+希望としては、左に「a」がない「b」ということで 3 文字目の「b」にマッチしてほしいはずです。
+(以下の流れはあくまでも筆者のイメージなので、実際の実装がこうなっていることを確認したわけではありません。)</p>
+
+<ol>
+  <li>まず文字列「abb」の「a」の前の位置を考えます。ここで「(?!a)」という正規表現の括弧の中に入ります。</li>
+  <li>括弧の中の正規表現「a」の頭のアトム「a」は幅 0 の正規表現ではないので文字列の次の位置を調べます。</li>
+  <li>文字列の次の「a」の位置で正規表現のアトム「a」がマッチします。</li>
+  <li>括弧の中の正規表現の末尾に到達したので、先読みの括弧の中全体としてはマッチしたことになります。</li>
+  <li>括弧の中の正規表現「a」全体としてはマッチしてしまったので、「(?!a)」という正規表現としてはマッチしなかったことになります。</li>
+  <li>外に戻って「a」の前の位置からの正規表現「(?!a)b」全体のマッチも他の選択肢がないので失敗です。</li>
+  <li>バックトラックして正規表現の頭からやり直しです。同じところから調べても意味がないので、文字列側は次の位置に進みます。</li>
+  <li>正規表現の先頭が幅 0 の正規表現なので、「a」の位置は飛ばして次に進みます。</li>
+  <li>次の「a」と「b」の間の位置を考えます。ここで再び「(?!a)」という正規表現の括弧の中に入ります。</li>
+  <li>括弧の中の正規表現「a」の頭のアトム「a」は幅 0 の正規表現ではないので文字列の次の位置を調べます。</li>
+  <li>文字列の次の「b」の位置で正規表現のアトム「a」がマッチしません。</li>
+  <li>マッチしなかったのでここで括弧の中の正規表現のマッチは、マッチしなかったという結果で終了です。</li>
+  <li>括弧の中の正規表現「a」としてはマッチしなかったので、「(?!a)」という正規表現としてはマッチしたことになります。</li>
+  <li>正規表現の次のアトム「b」を調べます。幅 0 のアトムではないので、文字列の次の位置に進みます。</li>
+  <li>文字列の次の位置「b」は正規表現のアトム「b」とマッチします。</li>
+  <li>正規表現全体としては「a__b__b」の 2 文字目の「b」にマッチしたことになります。</li>
+</ol>
+
+<p>結果的に左に「a」があるかどうかに関係なく最初の「b」にマッチしてしまいました。</p>
+
+<p>ここで本当に書きたかった正規表現は、次に説明する戻り読みがなければ簡単にはできません。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>代わりに「(?:\A</td>
+      <td>[^a])b」のように文字列先頭または「a」以外の文字に続く「b」としてマッチさせて、一緒にマッチさせた「b」の前の文字は別途処理する方法などがあります。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>先読みが有用な例として、<a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=%C0%B5%B5%AC%C9%BD%B8%BD#a.a5.b5.a5.f3.a5.d7.a5.eb">Rubyリファレンスマニュアル - 正規表現の数字を 3 桁ずつコンマで区切るサンプル</a>の方法 2 をあげておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">p "tone of 12345Hz".gsub(/(\d)(?=(?:\d\d\d)+(?!\d))/, '\1,')
+=&gt; ruby 1.8.0 (2003-08-07) [i586-linux]
+   "tone of 12,345Hz"</code></pre></figure>
+
+<p>この例での処理の大まかな流れは</p>
+
+<ol>
+  <li>正規表現の最初の「\d」が文字列の「1」より左ではマッチしない。</li>
+  <li>正規表現の最初の「\d」が文字列の「1」でマッチする。括弧がついているので後方参照用に覚えておく。</li>
+  <li>先読みの部分のうち「(?:\d\d\d)+」の部分が「234」にマッチする。
+    1. 「(?!\d)」の中の「\d」が「5」にマッチするので「(?!\d)」全体としてはマッチしない。</li>
+  <li>「(?=(?:\d\d\d)+(?!\d))」全体としてもマッチしない。</li>
+  <li>正規表現全体としてもマッチしない。</li>
+  <li>正規表現の最初の「\d」が文字列の「2」でマッチする。括弧がついているので後方参照用に覚えておく。</li>
+  <li>先読みの部分のうち「(?:\d\d\d)+」の部分が「345」にマッチする。
+    1. 「(?!\d)」の中の「\d」が「H」にマッチしないので全体としてはマッチする。</li>
+  <li>「(?=(?:\d\d\d)+(?!\d))」全体としてもマッチする。</li>
+  <li>正規表現全体としてもマッチする。</li>
+  <li>「\1,」つまり「\1」は後方参照なので覚えておいた「2」を使って「2,」に置き換える。</li>
+  <li>正規表現の最初の「\d」が文字列の「3」でマッチする。括弧がついているので後方参照用に覚えておく。</li>
+  <li>先読みの部分のうち「(?:\d\d\d)+」の部分がマッチしないので、先読み全体としてもマッチしない。</li>
+  <li>正規表現全体としてもマッチしない。</li>
+  <li>正規表現の最初の「\d」が文字列の「4」でマッチする。括弧がついているので後方参照用に覚えておく。</li>
+  <li>先読みの部分のうち「(?:\d\d\d)+」の部分がマッチしないので、先読み全体としてもマッチしない。</li>
+  <li>正規表現全体としてもマッチしない。</li>
+  <li>正規表現の最初の「\d」が文字列の「5」でマッチする。括弧がついているので後方参照用に覚えておく。</li>
+  <li>先読みの部分のうち「(?:\d\d\d)+」の部分がマッチしないので、先読み全体としてもマッチしない。</li>
+  <li>正規表現全体としてもマッチしない。</li>
+  <li>正規表現の最初の「\d」が文字列の「5」より右でもマッチしない。</li>
+</ol>
+
+<p>となると思います。</p>
+
+<h4 id="戻り読み--">戻り読み (?&lt;=〜), (?&lt;!〜)</h4>
+
+<p>Ruby 1.8 以前では使えませんが、Ruby 1.9 以降では使えるようになっているため、戻り読み (lookbehind) も説明しておきます。</p>
+
+<p>先ほどの例は戻り読みを使うと「(?&lt;!a)b」と書くことが出来ます。</p>
+
+<p>ここでは Ruby 1.9 を使って「/(?&lt;!a)b/ =~ “abb”」という処理をすることを考えてみます。
+(以下の流れはあくまでも筆者のイメージなので、実際の実装がこうなっていることを確認したわけではありません。)</p>
+
+<ol>
+  <li>まず文字列「abb」の「a」の前の位置を考えます。ここで「(?&lt;!a)」という正規表現の括弧の中に入ります。</li>
+  <li>括弧の中の正規表現「a」の長さは 1 なので、現在の位置より 1 文字分左の位置からマッチするかどうか調べます。(戻り読みでは、長さのわかる正規表現しか使えないようで、「(?&lt;=a.*b)」のような正規表現は使えません。)</li>
+  <li>1 文字分左の位置には文字がないので、正規表現「a」にはマッチしません。</li>
+  <li>括弧の中の正規表現「a」としてはマッチしなかったので、「(?&lt;!a)」という正規表現全体としてはマッチしたことになります。</li>
+  <li>正規表現の次のアトムの「b」を調べます。幅 0 のアトムではないので、文字列の次の位置に進みます。</li>
+  <li>文字列の次の位置「a」は正規表現のアトム「b」とマッチしません。</li>
+  <li>正規表現「(?&lt;!a)b」全体としてもマッチしなかったことになります。</li>
+  <li>バックトラックして正規表現の頭からやり直しです。同じところから調べても意味がないので、文字列側は次の位置に進みます。</li>
+  <li>文字列の次の位置「a」を調べます。最初が幅 0 の正規表現なので、次に進みます。</li>
+  <li>次の位置「a」と「b」の間を調べます。ここで再び「(?&lt;!a)」という正規表現の括弧の中に入ります。</li>
+  <li>括弧の中の正規表現「a」の長さは 1 なので、現在の位置より 1 文字分左の位置からマッチするかどうか調べます。つまり「a」の前の位置になります。</li>
+  <li>括弧の中の正規表現「a」の最初は幅 0 の正規表現ではないので文字列の次の位置を調べます。</li>
+  <li>文字列の次の「a」の位置で正規表現がマッチします。</li>
+  <li>括弧の中の正規表現の末尾に到達したので、戻り読みの括弧の中全体としてはマッチしたことになります。</li>
+  <li>括弧の中の正規表現「a」としてはマッチしたので、「(?&lt;!a)」という正規表現全体としてはマッチしなかったことになります。</li>
+  <li>外に戻って「a」と「b」の間の位置からの正規表現「(?&lt;!a)b」全体もマッチしなかったことになります。</li>
+  <li>バックトラックして正規表現の頭からやり直しです。同じところから調べても意味がないので、文字列側は次の位置に進みます。</li>
+  <li>マッチしなかったので、文字列の次の位置「b」を調べます。最初が幅 0 の正規表現なので、次に進みます。</li>
+  <li>次の位置「b」と「b」の間を調べます。ここで再び「(?&lt;!a)」という正規表現の括弧の中に入ります。</li>
+  <li>括弧の中の正規表現「a」の長さは 1 なので、現在の位置より 1 文字分左の位置からマッチするかどうか調べます。つまり「a」と「b」の間の位置になります。</li>
+  <li>括弧の中の正規表現「a」の最初は幅 0 の正規表現ではないので文字列の次の位置を調べます。</li>
+  <li>文字列の次の「b」の位置で正規表現がマッチしません。</li>
+  <li>マッチしなかったのでここで括弧の中の正規表現のマッチは、マッチしなかったという結果で終了です。</li>
+  <li>
+    <p>括弧の中の正規表現「a」としてはマッチしなかったので、「(?&lt;!a)」という正規表現としてはマッチしたことになります。</p>
+  </li>
+  <li>正規表現の次のアトム「b」を調べます。幅 0 のアトムではないので、文字列の次の位置に進みます。</li>
+  <li>文字列の次の位置「b」は正規表現のアトム「b」とマッチします。</li>
+  <li>正規表現全体としては「ab__b__」の 3 文字目の「b」にマッチしたことになります。</li>
+</ol>
+
+<p>希望通り、左に「a」がない「b」ということで 3 文字目の「b」にマッチしました。</p>
+
+<h2 id="eregex">eregex</h2>
+
+<p>eregex というライブラリは <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/1028">[ruby-dev:1028] Regexp#operators</a> からのスレッドで、
+こういうものもライブラリとして作ることが出来るという例として作られたものです。
+eregex.rb の中にも</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># this is just a proof of concept toy.</code></pre></figure>
+
+<p>と書いています。</p>
+
+<p>どういうものかというと、eregex.rb の末尾の</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if __FILE__ == $0
+  p "abc" =~ /b/|/c/
+  p "abc" =~ /b/&amp;/c/
+end</code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>のように Regexp の「</td>
+      <td>」(or) や「&amp;」(and) のようなことが出来るようになります。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>さらに and や or をとったりできない、
+マッチ後の MatchData がどちらのマッチ結果になるのかわからないなど、
+実用するには不向きな点があるので、
+あくまでも例として見るのが良いのではないかと思います。</p>
+
+<p>今の Ruby で正規表現の or に相当することがしたい場合は Regexp.union を使えば良いのではないかと思います。
+Regexp.union は正規表現ならそのまま、文字列なら Regexp.quote して繋げてくれるため、
+「Regexp.new(Regexp.quote(str))」の代わりに使うというのもありかもしれません。</p>
+
+<p>参考として irb での簡単な実行例を載せておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">% irb --simple-prompt -f
+&gt;&gt; Regexp.union /./, '.'
+=&gt; /(?-mix:.)|\./
+&gt;&gt; Regexp.union /./
+=&gt; /./
+&gt;&gt; Regexp.union '.'
+=&gt; /\./
+&gt;&gt; </code></pre></figure>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>この前の<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/43358">るびま本読書会</a>で正規表現が苦手な人が多そうだと思ったので、正規表現について書いてみました。
+正規表現の優先順位については Effective Perl で知りました。
+正規表現の優先順位についての説明は滅多に見かけないのですが、
+参考になれば幸いです。</p>
+
+<p>正規表現は言語ごとに細かい違いがあり、日本語での用語の統一もされてないようで、
+「後方参照」といえば「back reference」の訳語として使われることが多い (Ruby のリファレンスマニュアルでもそうなっている) のですが、「lookbehind」の訳語として使われることもあるようです。
+この記事の草稿の段階では lookbehind の訳語として後方参照と書いていたのを、途中で気付いて直したりしました。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>西山和広。
+最近は自己紹介でこの連載を書いてます、と言っています。
+<a href="http://www.rubyist.net/~kazu/samidare/">Ruby hotlinks 五月雨版</a>のメンテナンスもたまにやってます。</p>
+
+<p>Ruby リファレンスマニュアル刷新計画は一番人手が必要そうな第 3 段階が進行中なので、<a href="http://doc.loveruby.net/wiki/">るりま Wiki</a> を参考にしてお手伝いをお願いします。</p>
+
+<h2 id="標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-BundledLibraries.html">標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-BundledLibraries.html">標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-BundledLibraries.html">標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-BundledLibraries.html">標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-BundledLibraries.html">標準添付ライブラリ紹介 【第 11 回】 zlib</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-BundledLibraries.html">標準添付ライブラリ紹介 【第 10 回】 ERB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-BundledLibraries.html">標準添付ライブラリ紹介 【第 9 回】 PStore</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-BundledLibraries.html">標準添付ライブラリ紹介 【第 8 回】 uri, pathname</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-BundledLibraries.html">標準添付ライブラリ紹介 【第 7 回】 net/http</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-BundledLibraries.html">標準添付ライブラリ紹介 【第 6 回】 委譲</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-BundledLibraries.html">標準添付ライブラリ紹介 【第 5 回】 enumerator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-BundledLibraries.html">標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-BundledLibraries.html">標準添付ライブラリ紹介 【第 2 回】 Logger</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-BundledLibraries.html">標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
