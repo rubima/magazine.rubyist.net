@@ -1,0 +1,2706 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist Hotlinks 【第 22 回】 nari さん</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0028/0028-Hotlinks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist Hotlinks 【第 22 回】 nari さん</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0028/0028-Hotlinks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist Hotlinks 【第 22 回】 nari さん" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0028/0028-Hotlinks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0028/0028-Hotlinks.html" data-text="Rubyist Hotlinks 【第 22 回】 nari さん">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>著名な Rubyist にインタビューを行う企画「Rubyist Hotlinks」。
+今回は Ruby の最年少コミッタで GC の改善に尽力されている nari さんにお話を伺いました。お楽しみください。</p>
+
+<h2 id="プロフィール">プロフィール</h2>
+
+<p><img src="/images/0028-Hotlinks/nari1.jpg" alt="nari1.jpg" />
+角谷さんの「Java から Ruby へ」のプレゼンをきっかけに Rubyist になった nari さん。RHG で GC に目覚め、独学で GC を学び、現在は Ruby の GC 改善のコミッタとなる。座右の銘は「あきらめない」。</p>
+
+<dl>
+  <dt>好きな言葉</dt>
+  <dd>あきらめない</dd>
+  <dt>尊敬する人</dt>
+  <dd>まつもとさん、前田さん、Rubyのコミッタの方々、竹内先生、角谷さん、松田さん、高橋会長</dd>
+  <dt>ご本人のサイト</dt>
+  <dd><a href="http://d.hatena.ne.jp/authorNari/">I am Cruby!</a></dd>
+</dl>
+
+<h2 id="インタビュー">インタビュー</h2>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>ささだ</dd>
+  <dt>語り手</dt>
+  <dd>nari さん</dd>
+  <dt>野次馬</dt>
+  <dd>まつもとさん、竹内郁雄先生、高橋会長 <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>、ごとうゆうぞうさん、角谷信太郎さん、松田さん、yhara さん、あんどうさん</dd>
+  <dt>日にち</dt>
+  <dd>2009 年 9 月 8 日</dd>
+  <dt>場　所</dt>
+  <dd>NaCl</dd>
+</dl>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#プロフィール" id="markdown-toc-プロフィール">プロフィール</a></li>
+  <li><a href="#インタビュー" id="markdown-toc-インタビュー">インタビュー</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+      <li><a href="#プロフィール-1" id="markdown-toc-プロフィール-1">プロフィール</a>        <ul>
+          <li><a href="#生年月日出身地現住所家族構成" id="markdown-toc-生年月日出身地現住所家族構成">生年月日、出身地、現住所、家族構成</a></li>
+          <li><a href="#好きな言葉座右の銘" id="markdown-toc-好きな言葉座右の銘">好きな言葉、座右の銘</a></li>
+          <li><a href="#尊敬する人" id="markdown-toc-尊敬する人">尊敬する人</a></li>
+          <li><a href="#代表作" id="markdown-toc-代表作">代表作</a></li>
+          <li><a href="#著作" id="markdown-toc-著作">著作</a></li>
+          <li><a href="#好きなメソッド嫌いなメソッド" id="markdown-toc-好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</a></li>
+        </ul>
+      </li>
+      <li><a href="#ruby-に関して" id="markdown-toc-ruby-に関して">Ruby に関して</a>        <ul>
+          <li><a href="#rubyist-になったきっかけ" id="markdown-toc-rubyist-になったきっかけ">Rubyist になったきっかけ</a></li>
+          <li><a href="#現在の-ruby-との付き合い" id="markdown-toc-現在の-ruby-との付き合い">現在の Ruby との付き合い</a></li>
+          <li><a href="#ruby-の好きなところ嫌いなところ" id="markdown-toc-ruby-の好きなところ嫌いなところ">Ruby の好きなところ、嫌いなところ</a></li>
+          <li><a href="#ruby-を使った成功事例" id="markdown-toc-ruby-を使った成功事例">Ruby を使った成功事例</a></li>
+          <li><a href="#ruby-のキラーアプリケーション" id="markdown-toc-ruby-のキラーアプリケーション">Ruby のキラーアプリケーション</a></li>
+          <li><a href="#ruby-の習得" id="markdown-toc-ruby-の習得">Ruby の習得</a></li>
+          <li><a href="#一般人の-ruby-に対する認識" id="markdown-toc-一般人の-ruby-に対する認識">一般人の Ruby に対する認識</a></li>
+        </ul>
+      </li>
+      <li><a href="#プログラミング全般" id="markdown-toc-プログラミング全般">プログラミング全般</a>        <ul>
+          <li><a href="#初めてのプログラミング" id="markdown-toc-初めてのプログラミング">初めてのプログラミング</a></li>
+          <li><a href="#ruby-以外のプログラミング言語" id="markdown-toc-ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</a></li>
+          <li><a href="#美しいソースコード" id="markdown-toc-美しいソースコード">美しいソースコード</a></li>
+          <li><a href="#今興味を持っているテーマ" id="markdown-toc-今興味を持っているテーマ">今興味を持っているテーマ</a></li>
+        </ul>
+      </li>
+      <li><a href="#生い立ち" id="markdown-toc-生い立ち">生い立ち</a>        <ul>
+          <li><a href="#生い立ちについて" id="markdown-toc-生い立ちについて">生い立ちについて</a></li>
+          <li><a href="#nacl-入社" id="markdown-toc-nacl-入社">NaCl 入社</a></li>
+          <li><a href="#普段の生活スタイル" id="markdown-toc-普段の生活スタイル">普段の生活スタイル</a></li>
+          <li><a href="#仕事とプライベートの両立" id="markdown-toc-仕事とプライベートの両立">仕事とプライベートの両立</a></li>
+          <li><a href="#使っているマシン" id="markdown-toc-使っているマシン">使っているマシン</a></li>
+          <li><a href="#好きな女性のタイプ" id="markdown-toc-好きな女性のタイプ">好きな女性のタイプ</a></li>
+        </ul>
+      </li>
+      <li><a href="#今後について" id="markdown-toc-今後について">今後について</a>        <ul>
+          <li><a href="#今後の展望将来の夢など" id="markdown-toc-今後の展望将来の夢など">今後の展望、将来の夢など</a></li>
+          <li><a href="#次のインタビューイ" id="markdown-toc-次のインタビューイ">次のインタビューイ</a></li>
+          <li><a href="#若手に一言" id="markdown-toc-若手に一言">若手に一言</a></li>
+          <li><a href="#読者への一言" id="markdown-toc-読者への一言">読者への一言</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+  <li><a href="#rubyist-hotlinks-連載一覧" id="markdown-toc-rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</a></li>
+</ul>
+
+<h3 id="プロフィール-1">プロフィール</h3>
+<p>: <img src="/images/0028-Hotlinks/nari5.jpg" alt="nari5.jpg" /></p>
+
+<p><strong>ささだ</strong> 今日は久しぶりのインタビューです。お忙しい中ありあがとうございました。 Ruby ワールドカンファレンスの終わった後にこんなことやってすみません。</p>
+
+<p><strong>nari</strong> いえいえ……、緊張します。</p>
+
+<p><strong>ささだ</strong> 今回はたくさん野次馬が来ています。まつもとさん、竹内郁雄先生、ごとうゆうぞうさん、角谷信太郎さん、松田さん。</p>
+
+<p><strong>まつもと</strong> 史上最多のギャラリーじゃないか。</p>
+
+<p><strong>竹内</strong> 史上最低のギャラリー (笑)</p>
+
+<p><strong>まつもと</strong> いや、最低かどうかは…… (笑)</p>
+
+<p>(右の写真について：左上から角谷さん、竹内先生、yhara さん、ささださん、高橋会長、左下から松田さん、nari さん、ごとうゆうぞうさん。)</p>
+
+<h4 id="生年月日出身地現住所家族構成">生年月日、出身地、現住所、家族構成</h4>
+
+<p><strong>ささだ</strong> 生まれた年、出身地、現住所、家族構成。いずれも差し支えなければ。</p>
+
+<p><strong>nari</strong> 生年月日は、1985 年 3 月 21 日です。</p>
+
+<p><strong>ささだ</strong> 80 年代の人にインタビューするのは初めてなんじゃないかという気がします。</p>
+
+<p><strong>nari</strong> 出身地は福岡の八女っていうところで、お茶が有名な場所です<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+
+<p><strong>ささだ</strong> 福岡でお茶を作るんですか？</p>
+
+<p><strong>nari</strong> お茶作りますよ (笑)</p>
+
+<p><strong>まつもと</strong> 日本中、どこだって作るじゃんね。</p>
+
+<p><strong>ささだ</strong> 福岡では知らなかった。</p>
+
+<p><strong>nari</strong> あと、現住所は松江です。家族構成は、兄と母です。親父はいたんですけど、小五ぐらいのときに亡くなりまして。そんな感じです。</p>
+
+<h4 id="好きな言葉座右の銘">好きな言葉、座右の銘</h4>
+
+<p><strong>ささだ</strong> 好きな言葉、座右の銘。</p>
+
+<p><strong>nari</strong> 座右の銘ですか……。座右の銘……。「あきらめない」とか、そんな感じ。</p>
+
+<p><strong>ささだ</strong> 普通ですね。</p>
+
+<p><strong>nari</strong> はい (笑)</p>
+
+<p><strong>まつもと</strong> それは座右の銘じゃないんじゃない (笑)。</p>
+
+<p><strong>ささだ</strong> 何かあるんですか、理由は。</p>
+
+<p><strong>nari</strong> や、あんまり特には無いんですけど (笑)。今まで考えると、あんまりあきらめてこなかったな、という。</p>
+
+<p><strong>まつもと</strong> いくら GC パッチをリジェクトされてもですね、いつかは。</p>
+
+<p><strong>nari</strong> いつか日の目を見ることを夢見て。</p>
+
+<p><strong>まつもと</strong> つらいよね。</p>
+
+<p><strong>nari</strong> つらいですね。</p>
+
+<h4 id="尊敬する人">尊敬する人</h4>
+
+<p><strong>ささだ</strong> 尊敬する人。</p>
+
+<p><strong>nari</strong> 尊敬する人は……。</p>
+
+<p><strong>まつもと</strong> ささださん。</p>
+
+<p><strong>ささだ</strong> まつもとさんが答えないでください (笑)</p>
+
+<p><strong>nari</strong> いっぱいいるんですけど。</p>
+
+<p><strong>ささだ</strong> どうぞいっぱい言ってください。</p>
+
+<dl>
+  <dt><strong>nari</strong> まつもとさんと、前田さん。</dt>
+  <dd><img src="/images/0028-Hotlinks/nari2.jpg" alt="nari2.jpg" /></dd>
+</dl>
+
+<p><strong>まつもと</strong> 聞かなかったことにしよう。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> これは何だろう、給料対策？<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<p><strong>nari</strong> いや違います (笑)</p>
+
+<p><strong>まつもと</strong> 僕、人事権ないから (笑)。そういう権利は奪われているので、リリースマネージメントと一緒で。</p>
+
+<p><strong>nari</strong> あと、Ruby のコミッタの方々です。</p>
+
+<p><strong>ささだ</strong> そう言っておけば、パッチが通りやすいと (笑)</p>
+
+<p><strong>nari</strong> いや (笑)。前田さんが直属の上司なんですけど、良く色々教えてもらってですね。ああ、すごい人だなというか、すごい人とはこういうことを言うんだみたいな。</p>
+
+<p><strong>竹内</strong> 上司と部下の関係があるわけね、NaCl には。</p>
+
+<p><strong>まつもと</strong> NaCl にはあります。あんまりそこまでフラットじゃなくて、二階層ぐらいは。社長、前田、中村。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>竹内</strong> 社員が 3 人しかいないってことは無いでしょう (笑)</p>
+
+<p><strong>まつもと</strong> もうちょっといます (笑)</p>
+
+<p><strong>ささだ</strong> 他にいれば。</p>
+
+<p><strong>nari</strong> 他に……。誰でしょう……。竹内先生とか。</p>
+
+<p><strong>ささだ</strong> 遅いよ (笑)</p>
+
+<p><strong>竹内</strong> よく言うよね。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>竹内</strong> 明らかに、周りの雰囲気に言わされてるよね (笑)</p>
+
+<p><strong>nari</strong> 萎縮してるんです (笑)</p>
+
+<p><strong>まつもと</strong> 圧迫面接 (笑)</p>
+
+<p><strong>竹内</strong> じゃあ、次は松田君ですとか (笑)</p>
+
+<p><strong>nari</strong> そうですね。松田さんと角谷さんです。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>竹内</strong> やっぱ帰らないでよかったね。</p>
+
+<p><strong>nari</strong> あと、高橋会長ですね。<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<p><strong>ささだ</strong> じゃあここで今、なんでとか聞いたら、困りますか？</p>
+
+<p><strong>nari</strong> それはちょっと。</p>
+
+<h4 id="代表作">代表作</h4>
+
+<p><strong>ささだ</strong> 代表作。</p>
+
+<p><strong>nari</strong> 代表作……。あんまり、そんなに凝って作ったものは無くてですね。</p>
+
+<p><strong>ささだ</strong> ソフトウェアはあんまり作ってこなかった？</p>
+
+<p><strong>nari</strong> 細かいものは作ってきたんですけど。</p>
+
+<p><strong>まつもと</strong> nario <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+
+<p><strong>ささだ</strong> nario。はいはい。</p>
+
+<p><strong>yhara</strong> なんで<a href="http://www.takao7.net/brushup/">絶対復習</a>を言わないの。</p>
+
+<p><strong>nari</strong> ああ、絶対復習が。</p>
+
+<p><strong>ささだ</strong> 絶対復習。それ、Web サイトですよね。</p>
+
+<p><strong>nari</strong> はい。</p>
+
+<p><strong>ささだ</strong> 趣味で作ったんですか？</p>
+
+<p><strong>nari</strong> あれは趣味です。夜寝てて、ぱっと起きてこれはイケる、みたいな。</p>
+
+<p><strong>竹内</strong> かな漢字変換してもらえますか？</p>
+
+<p><strong>ささだ</strong> ぜったいふくしゅう？</p>
+
+<p><strong>竹内</strong> 「ふくしゅう」がリベンジなのかどうか。</p>
+
+<p><strong>nari</strong> あ、リベンジじゃないです (笑)</p>
+
+<p><strong>竹内</strong> 「絶対復讐」だと思ったよ。</p>
+
+<p><strong>まつもと</strong> 予習復習の復習なんですけど (笑)</p>
+
+<p><strong>竹内</strong> 予習復習だよね、やっぱり。</p>
+
+<p><strong>nari</strong> それぐらいですかね。あとは GC のパッチですか。代表作っていうほどじゃないんですけど。ささやかなものです。</p>
+
+<p><strong>ささだ</strong> 絶対復習って使ったこと無いんですけど、イケると思ったサービスってどんなサービスなんですか。</p>
+
+<p><strong>nari</strong> 自分が忘れっぽいのでどうにかしたいなと思っていて。それで本を読んだら、忘却曲線みたいなのが書いてありまして、一週間経つと 20% ぐらいしか覚えていないというのがあって、それにしたがって何回か復習していくというのを作って。それでずっと今やってるんですけど、だいたい覚えてるんで。</p>
+
+<p><strong>ささだ</strong> 忘却曲線とサービスの関係は？</p>
+
+<p><strong>nari</strong> 僕もよく覚えてないんですよね。</p>
+
+<p><strong>ささだ</strong> いやいやいや (笑)。毎日使ってるんでしょ？</p>
+
+<p><strong>yhara</strong> そこは復習してなかった？</p>
+
+<p><strong>nari</strong> そこは復習して無かったですね。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>nari</strong> 登録した復習内容を、一日後と、一週間後と、一ヶ月後と、半年後に教えてくれるんですね。それでそのたびに復習して、知識を定着していくっていう。</p>
+
+<p><strong>ささだ</strong> こんなことを勉強したよというトピックだけを入れておいて、勉強した内容自体は、自分でやると。そろそろ復習するんじゃないのというサービスを作ったと。</p>
+
+<p><strong>nari</strong> そうです。</p>
+
+<p><strong>ささだ</strong> それで色々な GC のアルゴリズムを復習している……、わけではない？</p>
+
+<p><strong>nari</strong> はい。してます (笑)</p>
+
+<p><strong>ささだ</strong> 何に使ってるのかなと思って。</p>
+
+<p><strong>nari</strong> なんですかね？英語の意味とか。最初の頃はやっぱり GC のアルゴリズムをやってました。</p>
+
+<p><strong>ささだ</strong> 最初の頃にそういうことをやって、後は？</p>
+
+<p><strong>nari</strong> あとは、英語とか。あ、卜部さんの「O(1) の Hash を作るには」<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>とか、そういうやつですね。後は「宴もたけなわ」の意味とか。</p>
+
+<p><strong>角谷</strong> 英語ですか？</p>
+
+<p><strong>nari</strong> いや、日本語の。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>竹内</strong> でも「宴もたけなわ」の「たけなわ」を漢字で書ける人はほとんどいないと思いますよ。</p>
+
+<p><strong>全員</strong> (ここでみんな漢字を調べ始める)</p>
+
+<p><strong>まつもと</strong> 2 つあるみたいですね。</p>
+
+<p><strong>竹内</strong> 酒には酒が甘くてもいいんですよ。</p>
+
+<p><strong>まつもと</strong> 酒に甘いでもいいし、門構えに東みたいな字でもいいと。<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></p>
+
+<p><strong>ささだ</strong> nario はまだやってるんですか。</p>
+
+<p><strong>nari</strong> nario はあんまりやらないようにしていて。</p>
+
+<p><strong>ささだ</strong> え、なんで？　京都の方からいろいろ言われたくない？(笑)</p>
+
+<p><strong>nari</strong> あんまり蒸し返したくないというのがあって、あんまりやらないというのを会社の中で宣言してて……。黒歴史みたいな (笑)</p>
+
+<p><strong>ささだ</strong> 会社でやるのはどうかと思うけど (笑)</p>
+
+<p><strong>nari</strong> 会社で、そういうプレゼン <sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup> はいたしません、みたいな。</p>
+
+<p><strong>ささだ</strong> 誓約書を書かされて？</p>
+
+<p><strong>nari</strong> そういうわけじゃないですけど (笑)。昼ごはん食べながら、そういう話をして。</p>
+
+<p><strong>yhara</strong> まあ、社会人ですからね (笑)</p>
+
+<h4 id="著作">著作</h4>
+
+<p><strong>ささだ</strong> 著作。本でも記事でも。あ、るびまで記事を書いてくれましたね<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。ありがとうございました。</p>
+
+<p><strong>nari</strong> るびまの記事が初めてですね。</p>
+
+<p><strong>ささだ</strong> そうなんですか。何度でも書いてください。</p>
+
+<p><strong>nari</strong> はい。本は今度出させていただけることになったので。</p>
+
+<p><strong>ささだ</strong> GC の本？</p>
+
+<p><strong>nari</strong> GC 本です。</p>
+
+<p><strong>まつもと</strong> GC 専門本はあんまり無いんですからね。</p>
+
+<p><strong>竹内</strong> 本当に無いです。リチャード・ジョーンズの本 <sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup> が唯一じゃないですかね。
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51LGTTfaCKL._SL160_.jpg" /></p>
+
+<p><strong>まつもと</strong> 日本版ジョーンズ？</p>
+
+<p><strong>nari</strong> あんまり僕、アルゴリズムに詳しくないんで、本の中では実装編を 6 割ぐらいにしようかなと思って。実装を紹介するんですけど、実装を結構多めに取って。</p>
+
+<p><strong>ささだ</strong> ペーパーの紹介とかは、4 割ぐらい？</p>
+
+<p><strong>nari</strong> そうです。</p>
+
+<p><strong>ささだ</strong> 書くきっかけはなんだったんですか？</p>
+
+<p><strong>nari</strong> きっかけは、blog にですね、酔っ払いながら 「GC 本が無いんだけど、誰か書かせてくれませんか」っていうのを梅酒を飲みながら書いたんですけど(笑) <sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>。そしたら、次の週ぐらいに「本を書きませんか」っていうメールをいただいて。</p>
+
+<p><strong>ささだ</strong> おー。</p>
+
+<p><strong>まつもと</strong> じゃあ、何か書きたいものがあったら blog に書けと。</p>
+
+<p><strong>nari</strong> blog に書くと、拾ってくれる人がいるかもしれないです。</p>
+
+<p><strong>ささだ</strong> まぁ、GC の本を書きたいと言う人はいないですよね。買いたいって言う人もどれぐらいいるか分からないですけど (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> それは大きな大問題 (笑)。僕は買うから。</p>
+
+<p><strong>ささだ</strong> 僕も。献本もらえる気がするけど。</p>
+
+<p><strong>まつもと</strong> わかった、献本もらっても買うわ。献本は貰う。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> 会社用と家用と。</p>
+
+<p><strong>nari</strong> 是非是非。ここで 10 部ぐらい (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> 宣伝しておいた方がいいですよ。</p>
+
+<p><strong>nari</strong> えーと、買ってください。</p>
+
+<p><strong>ささだ</strong> いやいや、何か売り文句とかは。</p>
+
+<p><strong>nari</strong> 売り文句ですか。</p>
+
+<p><strong>まつもと</strong> 出たら買ってください。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> これがいいよとか、こう言う人は買った方が良いよとか。Rails アプリケーション作るときは、これを読んでないと、とか。</p>
+
+<p><strong>まつもと</strong> 違うだろうな (笑)。GC を実装する人は買った方がいいよね。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> 日本に何人いるんだ (笑)</p>
+
+<p><strong>nari</strong> Ruby とかから入った人は、多分メモリをあんまり意識しないで使っちゃったりすると思うんで、その辺の人とか、イメージできて良いかなぁと思って。</p>
+
+<p><strong>ささだ</strong> 結局、GC があってもメモリを気にしないとダメだと。</p>
+
+<p><strong>まつもと</strong> パフォーマンスに悩む Java プログラマは買った方が良いかも知れない。もちろん、VB プログラマも。なぜ、ここで何もしていないはずなのに遅いのか。GC じゃん、というのが分かるかも知れない。</p>
+
+<p><strong>nari</strong> そうですね。</p>
+
+<p><strong>ささだ</strong> 大学の授業とかでも買わせた方がいいんですか。</p>
+
+<p><strong>まつもと</strong> 大学で GC の授業をしているところあるの？電通大？</p>
+
+<p><strong>竹内</strong> GC は私は教えてたよ。大学の授業で。</p>
+
+<p><strong>ささだ</strong> まえ、和田英一先生が、非常勤で電通大に来られたことがあって、そのときにもぐったら、GC の授業をやってました。</p>
+
+<p><strong>まつもと</strong> 素晴らしいね。</p>
+
+<p><strong>nari</strong> すごいですね。</p>
+
+<p><strong>ささだ</strong> 自分で GC を書いて、色々 Lisp でこうやって、っていう話を。</p>
+
+<p><strong>まつもと</strong> 筑波で集中講義をしたときに、GC ちょっとやりましたよ。皆に ID 持たせて、まずリファレンスカウントでやってみましょうって。自分のリファレンスカウントが 0 になった人は席に戻ってくださいって。</p>
+
+<p><strong>竹内</strong> なんと面白いことを。</p>
+
+<p><strong>全員</strong> おー。</p>
+
+<p><strong>竹内</strong> 人をゴミ扱いにするという (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> あの人は見事生き残りましたとか言って (笑)。じゃ、次の 10 人出てきてくださいとか言って、また ID 振られて。で、今度は Copy GC して見ましょうって、こっちに移ってくださいって(笑)。</p>
+
+<p><strong>ささだ</strong> じゃそんな感じで、教科書指定すればよい。そうすれば学生が買うじゃん。</p>
+
+<p><strong>まつもと</strong> そういう授業で。じゃ、ささだ先生が教科書指定で。ゼミで。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> 何人いるんだ (笑)</p>
+
+<p><strong>竹内</strong> 去年なんか、3 人しか授業を受けてなかった (笑)</p>
+
+<p><strong>まつもと</strong> それじゃしょうがない (笑)</p>
+
+<p><strong>nari</strong> じゃ、3 部売れますね (笑)</p>
+
+<p><strong>まつもと</strong> でもね、いまどきは小部数出版になってるからね。</p>
+
+<p><strong>ささだ</strong> でも RHG が 2500 冊らしいので。まあ、いまプレミアついてますけどね。非常にいい本なんだけどすぐ売り切れちゃって、さすがにもう 1 回出しても売れないだろうということで出さなくて、15000 円くらいになってるらしいんです。
+Image not found. ISBN = 978-4844317210</p>
+
+<p><strong>ささだ</strong> でも web で全部公開しちゃってるからね <sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>。じゃあ、それを目指すと (笑)</p>
+
+<p><strong>まつもと</strong> それを目指すということでいいのか？ (笑)</p>
+
+<p><strong>nari</strong> じゃあ、初版で売れなくて web で公開すると。</p>
+
+<p><strong>ささだ</strong> それでマーケットプレイスですごく高く売れて 2 冊持ってる人がウハウハになるとか。</p>
+
+<p><strong>まつもと</strong> うっへっへ (笑)</p>
+
+<p><strong>ささだ</strong> wiki 作ってましたよね？ GC の wiki <sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup>。あれは何か関係あるんですか。書籍の話と。</p>
+
+<p><strong>nari</strong> いやー、あんまり。執筆を依頼していただいた編集者の方はご存じでしたけど。</p>
+
+<p><strong>まつもと</strong> いや、関係が無いわけはないよ。</p>
+
+<p><strong>ささだ</strong> これだけ書いている人だったらまかせても良かろうと。</p>
+
+<p><strong>nari</strong> そういう話なんですかね。あと、Ruby の GC の話を本に書こうと思ったんですけど。でも Ruby の GC って、RHG に載っているので、それは止めてですね。</p>
+
+<p><strong>まつもと</strong> えっ (笑)</p>
+
+<p><strong>nari</strong> どきっ (笑)。それでですね、<a href="http://rubini.us/">Rubinius</a> の GC を今書いてます。</p>
+
+<p><strong>まつもと</strong> またマイナーな。</p>
+
+<p><strong>ささだ</strong> 多分、来年には変わってるよ。</p>
+
+<p><strong>nari</strong> Copy GC の部分だけなので、そこぐらいだったら変わらないんじゃないかなぁと思います。</p>
+
+<p><strong>ささだ</strong> Copy GC って、結局 copy-on-write friendly じゃないじゃないですか。で、散々何か copy-on-write friendly いいよいいよとか言ってる人たちがいて。</p>
+
+<p><strong>まつもと</strong> 良くわかんないよね、あれ。何だろうね。</p>
+
+<p><strong>ささだ</strong> その点から見ると、Copy GC って絶対ダメじゃないですか。</p>
+
+<p><strong>まつもと</strong> ダメだね。何を言ってるんだろうね。みんな自分の立場から好きなことを言うからね。</p>
+
+<p><strong>ささだ</strong> まぁ、Rails のお客さんが大事じゃないですか、色々。</p>
+
+<p><strong>nari</strong> 今日も Jeremy Kemper さんが言ってましたね、プレゼンで <sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>。</p>
+
+<p><strong>松田</strong> むしろ、お客さんを突き放すようなことしか言ってなかった気が。</p>
+
+<p><strong>nari</strong> copy-on-write が入ればいいかなぁとか。</p>
+
+<p><strong>ささだ</strong> で、どうやってプロファイリングとか取ってるのとか聞いたら、1.8 の RubyProfile でやってるとか言われて。1.9 でやってないんだみたいな。</p>
+
+<h4 id="好きなメソッド嫌いなメソッド">好きなメソッド、嫌いなメソッド</h4>
+
+<p><strong>ささだ</strong> 好きなメソッド、嫌いなメソッド。あ、そうだ、2004 年の 8 月に最初のインタビューをしたんですよ。それから 5 年ぶりですね、ちょうど。</p>
+
+<p><strong>まつもと</strong> ああ、それぐらいだったかねぇ。</p>
+
+<p><strong>ささだ</strong> 私が最初のインタビューで初めてここ (松江のNaCl) に来て、ここでやりました。5 年間、俺同じ質問してる！</p>
+
+<p><strong>まつもと</strong> まぁね。そんな変わるもんじゃないから。</p>
+
+<p><strong>yhara</strong> セカンドシーズンですね。</p>
+
+<p><strong>ささだ</strong> 2 周目。松江から。</p>
+
+<p><strong>まつもと</strong> 好きなメソッドは？<a href="http://doc.okkez.net/187/view/class/ObjectSpace">ObjectSpace</a>.each_object ですとか。そんなはずは無い (笑)</p>
+
+<p><strong>nari</strong> ObjectSpace.each_object ですかー (笑)</p>
+
+<p><strong>まつもと</strong> 発狂するようなメソッドだよね。</p>
+
+<p><strong>nari</strong> ObjectSpace って、何で入っちゃったんですか。経緯みたいなのは。</p>
+
+<p><strong>まつもと</strong> いや、ObjectSpace が必要だったから。</p>
+
+<p><strong>ささだ</strong> 必要じゃないでしょ、作れちゃったからでしょ、あれは。</p>
+
+<p><strong>まつもと</strong> うん、作れたから。</p>
+
+<p><strong>ささだ</strong> Continuation と同じで。きっと。で、他の処理系を実装している人たちが困る。</p>
+
+<p><strong>まつもと</strong> っていうか、GC に関するメソッドを入れるところは要るじゃん。で、ObjectSpace。</p>
+
+<p><strong>ささだ</strong> でも、GC っていうクラス<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>があるじゃないですか。GC 関係は。</p>
+
+<p><strong>まつもと</strong> GC っていうクラスは、最初は無かった。</p>
+
+<p><strong>nari</strong> へぇー。</p>
+
+<p><strong>ささだ</strong> ああそう。だから、ObjectSpace.gc_start でも良かったかもしれない。</p>
+
+<p><strong>まつもと</strong> ObjectSpace.garbage_collect っていうメソッドあるぜ。</p>
+
+<p><strong>ささだ</strong> えっ！</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> 昔っから。</p>
+
+<p><strong>ささだ</strong> 何するんですか。</p>
+
+<p><strong>まつもと</strong> いや、ガベージコレクトをするに決まってるじゃん(笑)。GC をスタートするに決まってるじゃん。</p>
+
+<p><strong>ささだ</strong> あ、全然知りませんでした。</p>
+
+<p><strong>yhara</strong> どうして GC モジュールが出来たんですか？</p>
+
+<p><strong>まつもと</strong> なんだったかな……。enable とか disable とかつけるのに、ObjectSpace につけるのはおかしいって話だったのかな。考えてみれば、ObjectSpace.gc_enable とかにすればよかったかもしれないけど。</p>
+
+<p><strong>ささだ</strong> 何か、2 文字って少なすぎますよね。</p>
+
+<p><strong>まつもと</strong> すみません。GC が好きなんです。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> この間、田中哲さんがプロシンで、短い名前より長い名前を先にした方が良いという話をしてたじゃないですか。</p>
+
+<p><strong>竹内</strong> あー、言っていましたね。</p>
+
+<p><strong>ささだ</strong> 先に長い名前にしておけば、後で短く出来るからっていう。</p>
+
+<p><strong>yhara</strong> GarbageCollect モジュールの方がよいと。</p>
+
+<p><strong>ささだ</strong> いや、分からないけど。そうすれば誰も使わなくなるから。</p>
+
+<p><strong>nari</strong> 僕が困る気がします。</p>
+
+<p><strong>ささだ</strong> 一人が困るのは良いんだよ。</p>
+
+<p><strong>nari</strong> あ、好きなメソッド……。GC.start。</p>
+
+<p><strong>角谷</strong> 予定調和的な (笑)。言わされてる？</p>
+
+<p><strong>竹内</strong> 自分で陽に GC を始めるってこと？</p>
+
+<p><strong>nari</strong> そうですね。</p>
+
+<p><strong>まつもと</strong> それは悪手じゃないのか？もしかして (笑)</p>
+
+<p><strong>竹内</strong> 暇そうだから？</p>
+
+<p><strong>まつもと</strong> そうそう。</p>
+
+<p><strong>竹内</strong> 昼飯行くから GC.start とかやって。</p>
+
+<p><strong>ささだ</strong> ゲームプログラミングだと、フレームの単位で、フレーム処理が終わったら GC してっていう風にやるそうですね。と、星君が言ってました。</p>
+
+<p><strong>まつもと</strong> もうここは暇だってはっきり分かってるときに、GC かけるってことかな。</p>
+
+<p><strong>nari</strong> アプリケーション書いている人しか、暇なところが判断しづらいと思うんで、GC.start は結構僕は好きかもしれません。</p>
+
+<p><strong>ささだ</strong> でもさ、GC 実装者としては負けじゃないの、それ。</p>
+
+<p><strong>まつもと</strong> そう、負けな気がする。</p>
+
+<p><strong>ささだ</strong> 自動的に勝手にメモリ管理してくれるってのが大事なんじゃないの？</p>
+
+<p><strong>まつもと</strong> いかに賢く出来るか。</p>
+
+<p><strong>nari</strong> そうですよね……。</p>
+
+<p><strong>ささだ</strong> まぁ、でも好きだと (笑)。じゃ、嫌いなメソッド。</p>
+
+<p><strong>nari</strong> GC.disable じゃないですか。</p>
+
+<p><strong>まつもと</strong> 止めちゃダメなんだ (笑)。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> でも disable はほんとに負けな気がする、たしかに。</p>
+
+<p><strong>竹内</strong> disable ってどういうこと？</p>
+
+<p><strong>まつもと</strong> このリージョンではメモリがいっぱいになっても必ず GC はしない。</p>
+
+<p><strong>竹内</strong> いっぱいになったらどうすんの？</p>
+
+<p><strong>まつもと</strong> もう落ちるしかないですね。MemoryFailure で。</p>
+
+<p><strong>竹内</strong> ObjectSpace を増やすってのは無いの？ ObjectSpace.increase とか。</p>
+
+<p><strong>まつもと</strong> それは勝手に malloc でメモリ空間から切り取ってくるんで、どんどん膨れ上がるんですけど。</p>
+
+<p><strong>竹内</strong> GC はしてほしくないと。それが disable ですか。</p>
+
+<p><strong>まつもと</strong> disable です。すごい負けな気がする。たしかに嫌いだ。</p>
+
+<h3 id="ruby-に関して">Ruby に関して</h3>
+
+<h4 id="rubyist-になったきっかけ">Rubyist になったきっかけ</h4>
+
+<p><strong>ささだ</strong> Ruby について。Rubyist になったきっかけ。つーか、Rubyist なの？あ、そっか、Ruby 検定受けてましたよね。</p>
+
+<p><strong>nari</strong> 認定されました<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>。</p>
+
+<p><strong>ささだ</strong> 認定された。</p>
+
+<p><strong>まつもと</strong> 仕事でも Ruby 書いてるし。</p>
+
+<p><strong>nari</strong> きっかけはですね、前の会社では 2 年ぐらいずっと Java を使ってたんですけど、Ruby っていうのがちょこちょこニュースとかで出てきてですね。で、角谷さんのプレゼン動画を見たんですよ。</p>
+
+<p><strong>ささだ</strong> おっ。いないじゃん今！<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>　何て人だ (笑)。何のプレゼンですか？</p>
+
+<p><strong>nari</strong> Google Video に入ってるやつなんですけど……。</p>
+
+<p><strong>ささだ</strong> いつ頃の？</p>
+
+<p><strong>nari</strong> 2 年ぐらい前じゃないですかね。</p>
+
+<p><strong>ささだ</strong> デブサミかなんかすかね。</p>
+
+<p><strong>nari</strong> いや、デブサミじゃなかったですね。</p>
+
+<p><strong>ささだ</strong> 2 年前……。今、角谷さん褒められてますよ。</p>
+
+<p><strong>角谷</strong> えっ。なんですか。</p>
+
+<p><strong>ささだ</strong> なんか Ruby を始めたきっかけが、2 年ぐらい前に角谷さんのプレゼンを見たことだって。</p>
+
+<p><strong>角谷</strong> ありがとうございます。</p>
+
+<p><strong>nari</strong> Google Videoに……。</p>
+
+<p><strong>ささだ</strong> で、なんのビデオかと。</p>
+
+<p><strong>角谷</strong> サッカーじゃなくて？</p>
+
+<p><strong>ささだ</strong> サッカーじゃなくて (笑)</p>
+
+<p><strong>角谷</strong> Google Video に上げてた頃は大分昔ですね。</p>
+
+<p><strong>nari</strong> あ、社内向けの「Java から Ruby へ」です。</p>
+
+<p><strong>角谷</strong> ああ、あの話。おおー。</p>
+
+<p><strong>ささだ</strong> あの本<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>を書いた後で？
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/51oFREOTcmL._SL160_.jpg" /></p>
+
+<p><strong>角谷</strong> 出す前ですね。間に合わなくて。</p>
+
+<p><strong>ささだ</strong> これ<sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>ですね。</p>
+
+<p><strong>角谷</strong> おおー。品川でやってた奴ですね。恥ずかしいから再生しないで (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>角谷</strong> いや、おかげで GC のコミッタが釣れたという (笑)。貢献してる、俺 (笑)。Ruby の開発に貢献した！</p>
+
+<p><strong>ささだ</strong> それを見て、Ruby が良いなと。</p>
+
+<p><strong>nari</strong> はい。</p>
+
+<p><strong>ささだ</strong> そこで普通さ、Ruby で書こうってなるよね。</p>
+
+<p><strong>nari</strong> 最初は書いてたんですよ。最初は Rails で何か作ったんですよ。</p>
+
+<p><strong>ささだ</strong> 趣味で？</p>
+
+<p><strong>nari</strong> はい。UFO を捕まえるようなアプリケーションを作ってですね。</p>
+
+<p><strong>まつもと</strong> やっぱりゲームなんだ。</p>
+
+<p><strong>ささだ</strong> Rails で？</p>
+
+<p><strong>nari</strong> Rails で。</p>
+
+<p><strong>ささだ</strong> Web アプリで UFO つかまえるの？</p>
+
+<p><strong>nari</strong> Google Map に UFO が乗ってですね、瞬間移動するんで、そこの座標に行って捕まえると言う。それをやりましたね。あと、<a href="http://www.aoky.net/articles/why_poignant_guide_to_ruby/">ホワイの (感動的) Ruby ガイド</a>を読んで、すごいなーと思って。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>nari</strong> それがきっかけですかね。</p>
+
+<p><strong>ささだ</strong> で、思い余って NaCl に来た。</p>
+
+<p><strong>nari</strong> そうです (笑)</p>
+
+<h4 id="現在の-ruby-との付き合い">現在の Ruby との付き合い</h4>
+
+<p><strong>ささだ</strong> 現在の Ruby との付き合いを教えてください。</p>
+
+<p><strong>nari</strong> ほぼ Ruby というか、仕事でも Ruby を使ってますし。家でも……家ではそんなに使ってないですね、今は。前は使ってましたけど。でも、GC についてどうにかできないかなっていうのを考えたりするようなポジションですかね。</p>
+
+<p><strong>ささだ</strong> このタイミングしかないような気がするので。何かアイデアがあれば。Ruby の GC について。</p>
+
+<p><strong>nari</strong> なんか、ゲームのライブラリを作ってる人の blog<sup id="fnref:20"><a href="#fn:20" class="footnote">20</a></sup> でですね、結構止まるっていうのがちょこちょこ載ってて。それはどうにかしてあげたいなと思うんですけど。</p>
+
+<p><strong>ささだ</strong> では、パフォーマンスはあんまり気にしないんですか？　GC のモチベーションって、今どこにあるんですか？　何したい？</p>
+
+<p><strong>まつもと</strong> たたみかけるような質問ですね。答える間がない (笑)</p>
+
+<p><strong>nari</strong> 僕のですか？</p>
+
+<p><strong>ささだ</strong> うん。何をしたいの？</p>
+
+<p><strong>nari</strong> なんでしょう。何がしたいんでしょうね。あ、でも普通に GC について知ったり、アルゴリズムについて知ったり、こういうやり方もあるんだって、それの目標は Ruby の GC にどうやって改善していくかみたいな。</p>
+
+<p><strong>ささだ</strong> 改善の方向って、色々あるじゃん。</p>
+
+<p><strong>nari</strong> まず、手近なとこだと、LazySweep 入れたいなと思ってます。</p>
+
+<p><strong>ささだ</strong> じゃあ、リアルタイム性をあげたいとか、スループットをあげたいとか。</p>
+
+<p><strong>nari</strong> 選択できるのがいいかな。</p>
+
+<p><strong>ささだ</strong> ああ、選択可能にしたい。</p>
+
+<p><strong>nari</strong> はい。</p>
+
+<p><strong>ささだ</strong> おー、GC アルゴリズムを変えられるようにしたいと。</p>
+
+<p><strong>nari</strong> したいです。</p>
+
+<p><strong>ささだ</strong> なんか、EngineYard の人たちが喜びそうですよね。</p>
+
+<p><strong>まつもと</strong> うん。でも大変だよね。</p>
+
+<p><strong>ささだ</strong> 竹内先生が GC 作ってたときは、GC はこれだけっていう感じだったんですか？それともなんか選べるように作ったんですか？</p>
+
+<p><strong>竹内</strong> いやー、もちろん 1 つだけですよ。私が作ったのは 10 年以上前ですけど、ポーズタイムは 100 マイクロ sec 以下ですからね。しかも、まだメガヘルツの時代ですよ。60MHz のマシンですよ。ようするに concurrent GC なので、GC のプロセスだけで全部で 8 つ走るんですよ。</p>
+
+<p><strong>まつもと</strong> えっ？</p>
+
+<p><strong>竹内</strong> 普通の意味で言うとスレッドなんだけども、マーキングのスレッドが 2 つと専用のデータタイプ別コレクションのスレッドが同時に走って、必要なやつからどんどん、どんどん足りなくなったやつから優先度で走るわけ。で、GC のマーキングが 2 つあるのはですね、snapshot at the beggining じゃなくて、dynamic のやつな方なので、ようするに pointer が付け替えられたときに、snapshot は前のやつを取っとくでしょ？</p>
+
+<p><strong>まつもと</strong> とりますね。</p>
+
+<p><strong>竹内</strong> でもそれは無駄だからやらなくて。どっちかっていうとすぐゴミになりそうなもんじゃない？だからそれはやらなくて付け替える先のものをマークするというそういう方式なんですよ。そっちの方が基本的にコンサバティブじゃないのでゴミの出る確率がすくない。というか、ゴミの回収効率が高い！</p>
+
+<p><strong>まつもと</strong> まあ、仕事は減りそうですね。</p>
+
+<p><strong>竹内</strong> そのためにどうしてもですね、尻拭いのマーキングってのが必要になって、尻拭い専用のマーキングプロセスがあるんですよ。そこでほんちゃんマーキングと尻拭いマーキングのバランスが悪くなると、尻拭いが走って、尻拭いのやつを少し負荷を減らしてからまたほんちゃんマーキングが走るようになってるんです。</p>
+
+<p><strong>ささだ</strong> それをコンカレントで管理してという。</p>
+
+<p><strong>まつもと</strong> 正直発狂しそうなんですけど、実装する方は (笑)</p>
+
+<p><strong>ささだ</strong> GC するまえにガーってやるのかと思っていました。</p>
+
+<p><strong>竹内</strong> そんなことない、そんなことない。普通に dynamic にやってた。スケジューラは GC の残りのメモリひっぱぐために GC 中は優先度を dynamic に変えるんですよ。だから非常にメモリが足りない！しかしもう速く終わらないといけない！というときはどんどん GC の優先度が高くなっていくわけ。</p>
+
+<p><strong>ささだ</strong> なんか、プロセッサから OS からすべてのレイヤを作ってたからこそできるっていう。</p>
+
+<p><strong>竹内</strong> そうそうそう。だからプロセッサステートワードに GC に関する bit があるわけですから、ブランチがただでできる。</p>
+
+<p><strong>nari</strong> たしかに。そうですよね。</p>
+
+<p><strong>ささだ</strong> 書かないと、本に。</p>
+
+<p><strong>nari</strong> (笑)</p>
+
+<p><strong>竹内</strong> あ、後で論文送ってあげます。読むのしんどいと思いますけど。</p>
+
+<p><strong>nari</strong> ぜひぜひ。</p>
+
+<p><strong>まつもと</strong> タイプタグとかあったんですよね？</p>
+
+<p><strong>竹内</strong> もちろんあります。だから GC のマーキングは 64way branch なんですよ。データタイプごとにズボって 1 発あるんです。だから今のパイプラインじゃ無理ですね。</p>
+
+<p><strong>まつもと</strong> そうですね。</p>
+
+<p><strong>竹内</strong> だから 60MHz のマシンでそんなスピードが出るんですよ。</p>
+
+<p><strong>ささだ</strong> だから、それ 1 個でいいっていう判断だったんですね。アルゴリズムを変えるというのは、ハードウェアだから変えるのがしんどい？</p>
+
+<p><strong>竹内</strong> だからそれは変える意味があんまりないんですよ。それが 1 つあれば。ベストのものを 1 つ作ればそれで終わりなんですよ。</p>
+
+<p><strong>ささだ</strong> GC でベストのものってなかなか言いづらいですよね？</p>
+
+<p><strong>まつもと</strong> 上から下まであるから言えることだよね。</p>
+
+<p><strong>竹内</strong> だからね、OS に非依存で作らないといけないとか言うと大変だよね。</p>
+
+<p><strong>まつもと</strong> すいません、死にそうです(笑)。なんか、湯淺先生と話するとそんなの簡単じゃんって言われるんですけど、どうしたらいいんでしょうか (笑)</p>
+
+<p><strong>竹内</strong> いやー、私はあんまりそういうとこには突っ込みたくないなぁ。</p>
+
+<p><strong>ささだ</strong> 簡単って何が？</p>
+
+<p><strong>まつもと</strong> いや、ライトバリア作って、速い実装書くのって簡単じゃんっとかって言って。いやー、どうしたらいいんだろうかって (笑)</p>
+
+<p><strong>竹内</strong> 私は GC は昔から密接ですけども、Virtual Memory と同じで、ハードウェアサポートが無いとやってられない、だからもう OS の下からやらないとというのが私の持論。だっていくらでも速くできるんだから。</p>
+
+<p><strong>まつもと</strong> GC のある OS って無いですよね。</p>
+
+<p><strong>ささだ</strong> って、なんの話でしたっけ (笑)</p>
+
+<p><strong>まつもと</strong> 全然インタビューになって無いじゃん (笑)</p>
+
+<p><strong>ささだ</strong> そうか、モチベーションの話をして、selective にって話でしたね。インクリメンタル化したいんだっけ？</p>
+
+<p><strong>nari</strong> したいです。</p>
+
+<p><strong>まつもと</strong> 割とゲーム畑の人だから、やっぱりリアルタイム性っていうか、ポーズタイムが気になる。</p>
+
+<p><strong>nari</strong> 気になりますね。</p>
+
+<p><strong>ささだ</strong> スループットはあまり気にしない。</p>
+
+<p><strong>nari</strong> うーん。</p>
+
+<p><strong>ささだ</strong> サーバー系のアプリケーションって、リアルタイム性って要るんですか。要するに GC で止まって欲しくないとか。</p>
+
+<p><strong>松田</strong> あんまり無いんじゃないですかね。そんなピンポイントで止まるって言うのは。</p>
+
+<p><strong>ささだ</strong> ひとつのリクエストが 1 秒かかっちゃったみたいな。そんなの気にしない？</p>
+
+<p><strong>まつもと</strong> あんまりひどいとあるとは思うけど。Web 系はスループットが重視されるんじゃないかなぁ。</p>
+
+<p><strong>ささだ</strong> ライフゲームのインタラクティブ性よりは、ライフゲームが何回進化できたかみたいな。</p>
+
+<p><strong>まつもと</strong> ライフゲームで言うの、それ。まぁ、いいけど (笑)</p>
+
+<p><strong>ささだ</strong> まつもとさんの論文にはいつもライフゲームでの評価が出てくるから。</p>
+
+<p><strong>まつもと</strong> すみません。そういう意味でね (笑)。僕はスループット主義。</p>
+
+<p><strong>竹内</strong> るびまの初心読者のために教えて欲しいんですけど、Ruby の GC って、どういうアルゴリズムなんですか。</p>
+
+<p><strong>まつもと</strong> すっごいシンプルな Mark &amp; Sweep です。</p>
+
+<p><strong>竹内</strong> インクリメンタルでもなんでもなくて？</p>
+
+<p><strong>まつもと</strong> なんでもないです。</p>
+
+<p><strong>竹内</strong> LazySweep もやってない。</p>
+
+<p><strong>まつもと</strong> LazySweep もやってないです。彼 (nari さん) はそういうパッチを書いてるんですけど、まだ取り込まれてない。バグが取れないとね。</p>
+
+<p><strong>竹内</strong> LazySweep なんて、物凄く簡単……、あ、でも簡単でもないか。</p>
+
+<p><strong>まつもと</strong> いや、簡単は簡単ですし、パッチもそんなに大きくなかったよね。</p>
+
+<p><strong>nari</strong> バグは一応直ったんですけど。</p>
+
+<dl>
+  <dt><strong>まつもと</strong> そうなんだ。じゃ、入れようか。</dt>
+  <dd><img src="/images/0028-Hotlinks/nari4.jpg" alt="nari4.jpg" /></dd>
+</dl>
+
+<p><strong>nari</strong> (笑)　オプションで選択できるようにしてからにしたいなーと。</p>
+
+<p><strong>まつもと</strong> なんでオプションにするの。LazySweep にして不利なことってあった？</p>
+
+<p><strong>竹内</strong> マークビットが立ったやつがあったままで、ミューテーターが走らないといけないんで。そいつをどうするかだね。めんどくさいでしょ、それは。</p>
+
+<p><strong>ささだ</strong> どれくらい Lazy にやるかで、ある一定区間は足りなければまとめて Sweep してっていう風にやれば、その問題はたぶんないので。</p>
+
+<p><strong>まつもと</strong> Ruby の GC でやってるのは、スタックが深くなりすぎたときに、再帰をあきらめちゃうっていう Knuth のアルゴリズムだけは入れてるんですけど。</p>
+
+<p><strong>竹内</strong> うわー、そんなことやってるんだ。</p>
+
+<p><strong>まつもと</strong> Ruby の場合は、物凄い長いオブジェクトのチェーンとか作る人がいるんで<sup id="fnref:21"><a href="#fn:21" class="footnote">21</a></sup>、再帰でやってるとスタックオーバーフローとか言われちゃうんで。その、Knuth のアルゴリズムだけは入れました。そこであきらめてしまって、今マークがあるところから、もう一回 Mark &amp; Sweep を再開すると言うアルゴリズム。</p>
+
+<p><strong>竹内</strong> 分かりました。</p>
+
+<p><strong>ささだ</strong> 私もどちらかと言うとスループット派です。インクリメンタル化すると遅くなるじゃん、ベンチマークが。</p>
+
+<p><strong>nari</strong> そうなんですよね。遅くなるので、オプションで出来る人だけ出来るようにして、通常はそんなに遅くならない。</p>
+
+<p><strong>ささだ</strong> でも、ライトバリアの有り無しを選択するのって大変じゃない？起動時に。</p>
+
+<p><strong>nari</strong> ライトバリアの有り無しのオプション？</p>
+
+<p><strong>まつもと</strong> LazySweep はライトバリア要らないでしょ？</p>
+
+<p><strong>ささだ</strong> LazySweep は大丈夫ですけど、ちょっと遅くなるかな。</p>
+
+<p><strong>まつもと</strong> 遅くはなるけど、ライトバリアは要らないでしょ。</p>
+
+<p><strong>ささだ</strong> Mark まで考えたら、ということ。Mark はライトバリアかリードバリアが要るじゃん。</p>
+
+<p><strong>nari</strong> インクリメンタルはそうですね。</p>
+
+<p><strong>まつもと</strong> そっちは大変。</p>
+
+<p><strong>ささだ</strong> (角谷さんに) あ、もうお帰りで。お疲れ様です。何か聞いておきたいこととかありますか。</p>
+
+<p><strong>角谷</strong> GC は外国人が気にしてるのでがんばってください。</p>
+
+<p><strong>nari</strong> はい、わかりました (笑)</p>
+
+<p><strong>ささだ</strong> 彼らはなんであんなに気にするんですかね。</p>
+
+<p><strong>角谷</strong> すごく、「GC tuning! GC tuning!」って言ってますよね。</p>
+
+<p><strong>ささだ</strong> Ruby on Rails やってる人たちは、みんな GC、GC って言ってて。GC 知らないくせに。</p>
+
+<p><strong>竹内</strong> そこで反応がパカッと止まるってこと？</p>
+
+<p><strong>まつもと</strong> 何なんだろうね。</p>
+
+<p><strong>ささだ</strong> なぜなのか、よく分からないですけど。</p>
+
+<p><strong>松田</strong> エンタープライズエディション <sup id="fnref:22"><a href="#fn:22" class="footnote">22</a></sup>ってやつをわざわざ作って、GC のチューニングを変えてて <sup id="fnref:23"><a href="#fn:23" class="footnote">23</a></sup>。それで Twitter が 30% 速くなったとか言ってましたね <sup id="fnref:24"><a href="#fn:24" class="footnote">24</a></sup>。</p>
+
+<p><strong>竹内</strong> 良く分からないな。なんで GC が関係あるんだろう。</p>
+
+<p><strong>ささだ</strong> Ruby on Rails で Twitter を作ってたんで、そこでパフォーマンスが改善したって話だと思うんですけど。</p>
+
+<p><strong>松田</strong> GC をチューニングしたら 30% 速度向上したぞ、と。</p>
+
+<p><strong>竹内</strong> 何の速度なんですか。何を速度といっているのか。投稿してから、皆のところに出てくるまでの速度なのか。</p>
+
+<p><strong>ささだ</strong> それか、1 時間に何リクエストさばいたか。</p>
+
+<p><strong>竹内</strong> さばける数か。GC が延々と走ったらやっぱ遅くなると。</p>
+
+<p><strong>まつもと</strong> どうなんでしょう。</p>
+
+<p><strong>ささだ</strong> 例えば、fork できる限界ってメモリ優先度によるので、それが copy-on-write friendly にすると、たくさんプロセスが出来てスループットがあがったっていうのがありそうな。</p>
+
+<p><strong>竹内</strong> そういうあがり方ね。</p>
+
+<p><strong>ささだ</strong> 無いですか？</p>
+
+<p><strong>まつもと</strong> 無いとは言わないけど、良くわかんないな。自分で見てないし。それは確かにそういう人がいるよね、ぐらいしか言えなくて。</p>
+
+<p><strong>ささだ</strong> ちょっと真面目に取らないとなと思って。アプリケーションどうしようっていう。</p>
+
+<p><strong>まつもと</strong> あの辺が謎なんですけど。copy-on-write friendly パッチが遅くなる。</p>
+
+<p><strong>ささだ</strong> 今ちょっと、その辺を速くするのは作ろうと思ってて。</p>
+
+<p><strong>まつもと</strong> どうやって？</p>
+
+<p><strong>ささだ</strong> 昨日言ってた、mmap がどうとかそういう話で。4KB 境界にするから。</p>
+
+<p><strong>まつもと</strong> そうか、4KB 境界にするから、ビット操作でだせるって？</p>
+
+<p><strong>竹内</strong> 去年の研究会の発表ね。</p>
+
+<p><strong>まつもと</strong> 発表みたいな無駄なことはやらずに、もっと。</p>
+
+<p><strong>竹内</strong> 何が無駄だったの？</p>
+
+<p><strong>まつもと</strong> 境界が分からないので、境界の部分にあたるワードに、先頭を示すインダイレクトなポインタを置きましょうっていう。</p>
+
+<p><strong>竹内</strong> あー。</p>
+
+<p><strong>まつもと</strong> すべてを malloc でアラインして……。</p>
+
+<p><strong>竹内</strong> なんでそうしないのかなと思ってたんだけど、4KB だったらちょっとぐらい端っこの 2,3KB ぐらい無駄があってもいいじゃないとかって、あの時は私もそう思った。</p>
+
+<p><strong>まつもと</strong> ちゃんとアライメントとるポータブルなのが無かったとか言う話かな。</p>
+
+<p><strong>ささだ</strong> posix_memalign があるじゃないですか！　POSIX ではできるので。Windows じゃできないとか言ってるけど、とりあえず POSIX で評価とらないと。</p>
+
+<p><strong>まつもと</strong> それって、ささだ君のパッチだと、VirtualAlloc でやったとかじゃなかったっけ？それはアライメントあるの？</p>
+
+<p><strong>ささだ</strong> はい。基本的にページ単位なので。</p>
+
+<p><strong>まつもと</strong> じゃ、その問題も無いのね。</p>
+
+<p><strong>ささだ</strong> はい。で、その辺をちょっとやってみて、ほらすごいだろうって言ってみようかなと。</p>
+
+<p><strong>まつもと</strong> copy-on-write friendly にしたよって？</p>
+
+<p><strong>nari</strong> いいですね。</p>
+
+<p><strong>ささだ</strong> で、停止時間の話なんだけど、最近だと、Java の GC をインクリメンタルにしてるじゃないですか。エンタープライズなサーバで。何十ギガもつんでるマシンだと、停止時間が馬鹿にならないからとか。それだとやっぱりインクリメンタル GC が要るんじゃないかな？サーバマシンでは。</p>
+
+<p><strong>まつもと</strong> ポーズタイムそのものが結構馬鹿にならないからね。。</p>
+
+<p><strong>ささだ</strong> 5 秒とか待つらしいよ。</p>
+
+<p><strong>nari</strong> そうなんですか。めちゃめちゃでかいメモリ。</p>
+
+<p><strong>まつもと</strong> ギガバイト単位でメモリがあれば時間かかるからね。</p>
+
+<p><strong>nari</strong> Java にコンカレントの奴があるじゃないですか、すでに。Java 7 で入った、G1GC でしたっけ。</p>
+
+<p><strong>ささだ</strong> そのためのはずでしょ、確か。</p>
+
+<p><strong>nari</strong> そのためです。でも、その前にコンカレントなGC<sup id="fnref:25"><a href="#fn:25" class="footnote">25</a></sup>がありましたが……。</p>
+
+<p><strong>ささだ</strong> 2000 年か 2001 年の。</p>
+
+<p><strong>nari</strong> あれだとダメだったんですかね。</p>
+
+<p><strong>ささだ</strong> 何かその辺は良く分からないので。</p>
+
+<p><strong>まつもと</strong> コンカレントって言ってたやつも、結局は単なる世代別 GC だったので。マイナー GC は問題ないんだけど、メジャー GC がおきたときに、同じことがおきて、フル GC で例えば 5 秒止まるのは、受け入れられるかって話で、それはダメじゃんとかいう話でなかったかな。</p>
+
+<p><strong>nari</strong> フル GC はコンカレントでは無かったですね。</p>
+
+<p><strong>まつもと</strong> そうそう。で、G1GC は、何だか良く分からないんだけど、メジャー GC って無いんだよね、あれ。</p>
+
+<p><strong>ささだ</strong> 世代別 GC なんですか？</p>
+
+<p><strong>まつもと</strong> 世代別……、セグメント別っていうのかな。</p>
+
+<p><strong>nari</strong> 割合を見てそこに退避して、みたいな。</p>
+
+<p><strong>まつもと</strong> 良くわかんないんだけど、ライトバリアで、どのぐらい生きているかの大体の目安を取ってるんで、一番ゴミが多そうなセグメントがマイナー GC するとかいうアルゴリズムなんだわさ。</p>
+
+<p><strong>nari</strong> 論文<sup id="fnref:26"><a href="#fn:26" class="footnote">26</a></sup>読んだんですけど、わかんなかったですね。</p>
+
+<p><strong>まつもと</strong> 僕も。で、なんか G1GC 特許取ってるしさ。</p>
+
+<p><strong>ささだ</strong> Ruby には入れらんない。</p>
+
+<p><strong>nari</strong> 本に書いて良いんですかね。</p>
+
+<p><strong>まつもと</strong> 説明する分にはいいんじゃない？</p>
+
+<p><strong>ささだ</strong> でも、特許とってるって書かないといけないのか。</p>
+
+<p><strong>まつもと</strong> その情報はあった方がいいよね。</p>
+
+<p><strong>ささだ</strong> クックパッドの人に、memory usage で困ってないんですかって聞いたんですよ。聞いてみたら、「クックパッドのマシンは、メモリ 16 ギガ載せてるので、全然メモリ困ってません」とか言われて。</p>
+
+<dl>
+  <dt><strong>全員</strong> (笑)</dt>
+  <dd><img src="/images/0028-Hotlinks/nari6.jpg" alt="nari6.jpg" /></dd>
+</dl>
+
+<p><strong>まつもと</strong> GC しないんじゃないの、もしかして (笑)</p>
+
+<p><strong>ささだ</strong> copy-on-write friendly とか要らないですとか言われてしまって。</p>
+
+<p><strong>nari</strong> GC が要らない世界って来るんですかね。</p>
+
+<p><strong>まつもと</strong> それはさすがに。僕が生きている間には来ない気がする。</p>
+
+<p><strong>ささだ</strong> 昔、ジョークで「ハードディスクが 1GB になったときに、全部ハードディスクに入れちゃえばいいから要らないよね」っていうのがあった。</p>
+
+<p><strong>まつもと</strong> 1TB になっても、まだ GC っぽいことはあるしね。</p>
+
+<p><strong>竹内</strong> あるでしょう。無駄遣いする人いっぱいいるから。</p>
+
+<h4 id="ruby-の好きなところ嫌いなところ">Ruby の好きなところ、嫌いなところ</h4>
+
+<p><strong>ささだ</strong> Ruby の好きなところ、嫌いなところ。</p>
+
+<p><strong>nari</strong> 好きなところは、やっぱり使ってて書き易いというか、気持ち良いというか。その辺ですかね。あと GC が僕でも改善できそうなところとか。</p>
+
+<p><strong>ささだ</strong> GC がダメだってこと？</p>
+
+<p><strong>nari</strong> いや、ダメじゃないですけど (笑)。僕なんかでも改善できそうな余地がありそうな。</p>
+
+<p><strong>ささだ</strong> Ruby の嫌いな所は。</p>
+
+<p><strong>nari</strong> GC に関しては、いじれそうなんですけど、実際にいじるとすごい難しいっていう。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> 下手にいじると、何か怒られるし。</p>
+
+<p><strong>まつもと</strong> 僕は怒らないよ。</p>
+
+<p><strong>nari</strong> 嫌いじゃないですけど、そんなところです。</p>
+
+<h4 id="ruby-を使った成功事例">Ruby を使った成功事例</h4>
+
+<p><strong>ささだ</strong> Ruby の成功事例。本が書けたぜ。</p>
+
+<p><strong>nari</strong> ああ、本が書けました。「本を書くよ」って偉そうに地元の友人に言ったんですけど。そしたらその後「先生、先生」って感じでビールを注ぎに来てですね。冗談でこびを沢山売られました。</p>
+
+<p><strong>ささだ</strong> ああ、そうか。これから私も先生ということでやんなきゃいけないと。お酌しなきゃいけないんですね (笑)</p>
+
+<p><strong>nari</strong> まさか自分が本を書くとは思ってなかったので、5 年ぐらい前までは。</p>
+
+<p><strong>まつもと</strong> 5 年前って、19 歳？</p>
+
+<p><strong>nari</strong> はい、まだ工場にいたときです。</p>
+
+<p><strong>ささだ</strong> 同人誌とか。</p>
+
+<p><strong>nari</strong> 同人誌 (笑)</p>
+
+<h4 id="ruby-のキラーアプリケーション">Ruby のキラーアプリケーション</h4>
+
+<p><strong>ささだ</strong> Ruby のキラーアプリケーションとかあります？使ってる方。他人のでも、自分のでも。</p>
+
+<p><strong>nari</strong> あー、<a href="http://www.sinatrarb.com/">Sinatra</a> とか結構。キラーアプリじゃないですけど。自分でちょこっと作るにはすごい良かったり。最近は Sinatra が結構好き。</p>
+
+<p><strong>ささだ</strong> へー。流行ってますよね。</p>
+
+<h4 id="ruby-の習得">Ruby の習得</h4>
+
+<p><strong>ささだ</strong> Ruby の習得はいかがでしたか。</p>
+
+<p><strong>nari</strong> Java から入ったんで、全部オブジェクトっていうのが良く分からなくてですね、その辺がわかんないなーと思いながらやってました。クラスはあるんですけど、オブジェクトってどういうことなんだろうっていう感じでした。でも、あんまり今も分かってない気はしますけど。</p>
+
+<p><strong>ささだ</strong> GC のことが分かっていれば、大体どんなゴミがあるか分かってるんじゃ。</p>
+
+<p><strong>nari</strong> (笑)。中を知って「あー」みたいな感じ。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<h4 id="一般人の-ruby-に対する認識">一般人の Ruby に対する認識</h4>
+
+<p><strong>竹内</strong> 全然関係ないけど、昨日会場からバスでホテルまで送ってくれた運転手さんとずいぶん親しくなったんだよ。で、その運転手さんが「この Ruby なんたらカンファレンスってのは、Ruby の会ですよね。」って聞いてきたから「そうですよ。」って言ったんだけど、どうみてもあの Ruby だと思ってるわけ。</p>
+
+<p><strong>まつもと</strong> 宝石ね。</p>
+
+<p><strong>竹内</strong> 宝石の Ruby。なんかね、宝石を磨く技術に関する会だと思ったらしいんだよ。で「カンファレンス」の意味がわからなかったから辞書を引いたんだよ、彼は。そしたら「会議」だから、「Ruby の磨き方に関する会議ですよね」って言われて、うーん……と。だから、一般人はそうらしいんだよ。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> あ、でもそうだと思いますよ。昔、中京大学で公開講座したんですけど、地下鉄にポスターを貼ってたらしいんですよ。そしたら問い合わせが来てですね、「あのー、私も聞きたいんですけど、宝石の鑑定ができるようになるんでしょうか？」って。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> ちょっと誤解は深いなと。</p>
+
+<p><strong>竹内</strong> 深いね。</p>
+
+<p><strong>まつもと</strong> Python とかにしとけばよかったですね。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> 逆にヘビ好きなんですけど、って人が来そうだな (笑)</p>
+
+<p><strong>ささだ</strong> まあ、確かにあの宝石を見ても、プログラミング言語とはわかんないですよね。</p>
+
+<p><strong>まつもと</strong> プロが見るとこれは Ruby のカットじゃないって思うんですけどね。ブリリアントカットでダイヤモンド用でしょって突っ込みが。</p>
+
+<p><strong>竹内</strong> 遠くから見ると何にもわかんない？</p>
+
+<p><strong>まつもと</strong> ソフトウェアとはわかんないですね。</p>
+
+<p><strong>あんどう</strong> それらしい情報が無いですよね。</p>
+
+<p><strong>まつもと</strong> なんて不親切な (笑)</p>
+
+<p><strong>竹内</strong> Ruby を削るテクノロジーの会議で Ruby の標準化の話をして <sup id="fnref:27"><a href="#fn:27" class="footnote">27</a></sup>。あ、Ruby のケーススタディは、Ruby をどんな箱に入れればいいかを検討する会だね。</p>
+
+<p><strong>まつもと</strong> どうしよう (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h3 id="プログラミング全般">プログラミング全般</h3>
+
+<h4 id="初めてのプログラミング">初めてのプログラミング</h4>
+
+<p><strong>ささだ</strong> 初めてコードを書いたのはいつぐらいですか。Ruby じゃ無くて一般的な話。</p>
+
+<p><strong>nari</strong> 多分、高校一年生ぐらい。ポケコンを貰ってですね、学校から。そのポケコンで BASIC を書いたっていうのが初ですね。じゃんけんゲームか何か作ったんですけど。それが初だと思います。</p>
+
+<p><strong>ささだ</strong> すぐ飽きた？</p>
+
+<p><strong>nari</strong> 飽きました (笑) そこからは全然やらなかったですね。</p>
+
+<p><strong>ささだ</strong> で、お仕事でプログラミング？やってたからお仕事を選んだっていうわけじゃなくて？</p>
+
+<p><strong>nari</strong> あ、その時のことを思い出して転職した、という感じですかね。やっぱり面白かったんだなぁというか。</p>
+
+<p><strong>ささだ</strong> じゃんけんゲームが？</p>
+
+<p><strong>nari</strong> 中学校ぐらいのときにパソコンを買ってもらったんですよ、すごいおねだりして。当時はすごい高くて、30 万ぐらいしたんですけど。</p>
+
+<p><strong>ささだ</strong> したした。</p>
+
+<p><strong>nari</strong> すごい無理して買ってもらったんで、何かやろうと思ったんですけど、ネットにつながってなくて。</p>
+
+<p><strong>ささだ</strong> 中学っていつぐらい？</p>
+
+<p><strong>nari</strong> 10 年前ですね。まだ ISDN だった時代です。うちの田舎は ISDN が来てなくてですね、電話線でネットやってたらすごい高くて。ネットやるなって怒られて。それで全然広がらなくて、そのまま放っといたんですね、PC を。で、それが悪いなという気持ちもあって、将来なんかやりたいなというのが、心の奥の方にあったみたいな。</p>
+
+<h4 id="ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</h4>
+
+<p><strong>ささだ</strong> Ruby 以外のプログラミング言語はどうですか。</p>
+
+<p><strong>nari</strong> Ruby 以外は、Java ですかね。</p>
+
+<p><strong>ささだ</strong> C じゃなくて Java なんだ。</p>
+
+<p><strong>nari</strong> あ、C と Java。</p>
+
+<p><strong>ささだ</strong> でも Java が好き。</p>
+
+<p><strong>nari</strong> いや。好きな言語だと C ですかね。</p>
+
+<p><strong>まつもと</strong> C いいよね。</p>
+
+<p><strong>nari</strong> (笑)</p>
+
+<p><strong>まつもと</strong> これ、脅されてるんじゃないの (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>竹内</strong> 発言頻度が、中村さんが一番少ない気がする (笑)</p>
+
+<p><strong>まつもと</strong> もう黙ります (笑)</p>
+
+<p><strong>nari</strong> C ですかね、やっぱり。</p>
+
+<p><strong>ささだ</strong> Java は使うけど嫌い？</p>
+
+<p><strong>nari</strong> もう使ってないですね。2 年ぐらい使ってないですね。</p>
+
+<p><strong>ささだ</strong> 仕事が変わってから使ってないってこと？</p>
+
+<p><strong>nari</strong> はい。</p>
+
+<h4 id="美しいソースコード">美しいソースコード</h4>
+
+<p><strong>ささだ</strong> 今まで読んだ中でもっとも美しいソースコードはなんですか。</p>
+
+<p><strong>nari</strong> あー。</p>
+
+<p><strong>ささだ</strong> GC の実装を読んでるでしょ、たくさん。</p>
+
+<p><strong>nari</strong> あ、はい。</p>
+
+<p><strong>ささだ</strong> 読みやすかった奴。</p>
+
+<p><strong>nari</strong> Rubinius のやつはかなり読みやすかったです。C++ で書かれてるので、ゲッと思ったんですけど、慣れると結構読みやすいなと。あと、Python がすごいコメント書いてあってですね、うれしいなと。</p>
+
+<p><strong>ささだ</strong> Python、コメントがあっても私はそんなに読みやすいとは思わなかったんだけどな。</p>
+
+<p><strong>nari</strong> あ、そうですか？</p>
+
+<p><strong>ささだ</strong> でも、ドキュメントがあるのはいいですよね。</p>
+
+<p><strong>nari</strong> 何でこのコードがあるのかが書いてあると、最初に入りやすい。</p>
+
+<p><strong>ささだ</strong> 私は一切書かないんでダメなんですよ。書かなきゃなと思って。</p>
+
+<p><strong>まつもと</strong> 僕もあんまり書かないな。</p>
+
+<p><strong>ささだ</strong> まつもとさんは書かないですよね。</p>
+
+<p><strong>竹内</strong> 10 年後に、自分で読んで分からなくなるよ。</p>
+
+<p><strong>まつもと</strong> 分かりますよ。</p>
+
+<p><strong>ささだ</strong> 10 年後じゃなくても、分かってないです、私 (笑)</p>
+
+<p><strong>まつもと</strong> 僕はあんまりそういうのは無いな。未来の自分が読んで分からないなと思ったコードには、コメントを書く。</p>
+
+<p><strong>竹内</strong> それは正しいかもね。見積もりを誤ると大変だね。</p>
+
+<p><strong>まつもと</strong> 大変ですね(笑)。思ったより能力が下がってたりとかね。今のところ、まだ大丈夫みたいです (笑)</p>
+
+<p><strong>nari</strong> Ruby って、コメント少ないですよね。</p>
+
+<p><strong>まつもと</strong> 少ないですね。僕はそう言う人なんで。</p>
+
+<p><strong>ささだ</strong> 今、yugui さんが、<a href="http://www.doxygen.jp/">Doxygen</a> のコメントシステムを作ってくれたんで。きっと何とかなるに違いない……と。綺麗なコードは Rubinius。Rubinius は、みんな読むべきである。</p>
+
+<p><strong>nari</strong> (笑)。……はい。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>竹内</strong> これさ、おかしいよね (笑)</p>
+
+<p><strong>まつもと</strong> なんという誘導尋問 (笑)</p>
+
+<p><strong>ささだ</strong> いや、「あんなの読まなくてもいい」でもいいんで (笑)</p>
+
+<p><strong>nari</strong> いや、読んだ方がいいんじゃないですかね。</p>
+
+<p><strong>ささだ</strong> 分かりました。Rubinius 完全解説を次回作で。</p>
+
+<p><strong>nari</strong> GC の部分しか (笑)</p>
+
+<h4 id="今興味を持っているテーマ">今興味を持っているテーマ</h4>
+
+<p><strong>ささだ</strong> 今興味を持っているテーマは何ですか。</p>
+
+<p><strong>nari</strong> GC です。</p>
+
+<p><strong>ささだ</strong> GC 以外は無いんですか。</p>
+
+<p><strong>nari</strong> 前田さんとかにも、それ以外の奴をなんか見つけた方が良いってよく言われるんですけど、今のところはあんまり……。</p>
+
+<p><strong>まつもと</strong> Python の GC。GC なの？今でも GC じゃないんじゃないの？</p>
+
+<p><strong>ささだ</strong> リファレンスカウントじゃないですか。</p>
+
+<p><strong>nari</strong> あ、リファレンスカウントって、GC って呼ばないですか？</p>
+
+<p><strong>竹内</strong> GC ですよ。立派に GC です。</p>
+
+<p><strong>まつもと</strong> GC ……。うーん……。</p>
+
+<p><strong>ささだ</strong> 異論があるみたいですけど。</p>
+
+<p><strong>まつもと</strong> いや、はい。GC です。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h3 id="生い立ち">生い立ち</h3>
+
+<h4 id="生い立ちについて">生い立ちについて</h4>
+
+<p><strong>ささだ</strong> 生い立ち。小中高、何かやってたか。</p>
+
+<p><strong>nari</strong> 中学校のときは、田舎だったんで、30 人ぐらいのクラスなんですよ。1 クラス。</p>
+
+<p><strong>ささだ</strong> 学校が 30 人とかじゃなくて。</p>
+
+<p><strong>nari</strong> 全部で 100 人ぐらいでした。みんな和気藹々とやってて、すごい楽しかったなーっていう。で、工業高校行って。情報科を受験したんですけど、落ちちゃってですね。転科になって、電子機械科に入ったんですね。で、卒業してアイス工場に入るんですよ。機械系で。</p>
+
+<p><strong>ささだ</strong> 旋盤がどうのっていう機械？工業高校でそういうことをやってたんですか？</p>
+
+<p><strong>nari</strong> やってました。旋盤でぐいーんとやったり、CAD で設計したり。</p>
+
+<p><strong>ささだ</strong> アイス工場では、メンテナンスをしてたの？</p>
+
+<p><strong>nari</strong> 最初はメンテナンスっていうことで入ったんですけど、途中ぐらいから流れ作業をやっててですね。アイスがこう、ボコって抜けて包装機にヒューって入ってくんですけど、そこの途中の板にアイスがくっつくので、そこからアイスを引っぺがすっていうのを 1 時間ぐらいやったり。</p>
+
+<p><strong>ささだ</strong> メンテナンスする対象が無くて暇だろうお前、やれよみたいな。</p>
+
+<p><strong>nari</strong> ある時に社員がガーっと辞めちゃって、君もやれよという。</p>
+
+<p><strong>ささだ</strong> 不景気でとか、そういう話？</p>
+
+<p><strong>nari</strong> 何でだろう。嫌だったのかも。</p>
+
+<p><strong>まつもと</strong> 嫌で (笑)</p>
+
+<p><strong>ささだ</strong> 集団で？</p>
+
+<p><strong>nari</strong> なぜか集団で。ぞろぞろ 5、6 人辞めちゃって。そういうのをやってましたね。そこでは、ダンボールをいかに速く作るか、みたいなこと真剣に考えてやってました。いい経験でした。</p>
+
+<p><strong>ささだ</strong> おお。その経験から GC？</p>
+
+<p><strong>nari</strong> (笑)。そうですね……。そうですねじゃなくて。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>nari</strong> そうですねって言っちゃダメですね (笑)</p>
+
+<p><strong>ささだ</strong> じゃ、計算機は全然関係なかった。</p>
+
+<p><strong>nari</strong> 全然関係ないです。</p>
+
+<p><strong>ささだ</strong> で、アイス工場を嫌で辞めたってこと？</p>
+
+<p><strong>nari</strong> 嫌ではなかったんですけど。何か、流れ作業をやってて、これで一生終わるっていうのはちょっといかんなということで (笑)<sup id="fnref:28"><a href="#fn:28" class="footnote">28</a></sup>。そんなときに友人の結婚式があって、そこで、色んな職業の人と話をしてですね。あ、でもこういう世界もあるなって思って、コンピュータ系の方に行こうと思いました。</p>
+
+<p><strong>ささだ</strong> 友人の結婚式で、彼女じゃなくて職を見つけた。</p>
+
+<p><strong>nari</strong> 職を見つけました (笑)</p>
+
+<p><strong>ささだ</strong> すごい。</p>
+
+<p><strong>nari</strong> で、そこからは、半年ぐらいコンピュータスクールに行って。そこの学費は今考えると結構高くて……。</p>
+
+<p><strong>ささだ</strong> それは民間？</p>
+
+<p><strong>nari</strong> 民間です。</p>
+
+<p><strong>ささだ</strong> 民間のは高そうだよね。</p>
+
+<p><strong>nari</strong> 半年で 100 万ぐらい。</p>
+
+<dl>
+  <dt><strong>まつもと</strong> でもそんなもんじゃない？</dt>
+  <dd><img src="/images/0028-Hotlinks/nari3.jpg" alt="nari3.jpg" /></dd>
+</dl>
+
+<p><strong>nari</strong> で、それがまるごと借金になってですね、その次の会社では借金を返すまで働きました。</p>
+
+<p><strong>ささだ</strong> 友人の結婚式があって、思い立って、まず辞めて？</p>
+
+<p><strong>nari</strong> まず思い立ってですね、そんな時にちょうど新聞にコンピュータスクールのチラシが入っていて、これだと思って行こうって決めて。どうやったらプログラマになれるのかっていう情報があんまり僕の中に無くてですね。</p>
+
+<p><strong>ささだ</strong> あ、そうか。周りもいないから。</p>
+
+<p><strong>nari</strong> そうです。なので、そういう所に行けば、とりあえず就職は出来るかなと。</p>
+
+<p><strong>ささだ</strong> それこそ、2ch とかみたりとか (笑)</p>
+
+<p><strong>nari</strong> そのときも、ネットはモデムだったんですよ。</p>
+
+<p><strong>ささだ</strong> 携帯とかではみてなかった？</p>
+
+<p><strong>nari</strong> 見てないですね。</p>
+
+<p><strong>竹内</strong> 何年前の話？　ずいぶん昔の話なんじゃないの？</p>
+
+<p><strong>まつもと</strong> 彼はずいぶん新しいので (笑)</p>
+
+<p><strong>竹内</strong> 携帯でそんなもの見る時代じゃないんじゃないの？</p>
+
+<p><strong>ささだ</strong> 2005 年ぐらいですよね？ i モードは？</p>
+
+<p><strong>nari</strong> i モードはありました。</p>
+
+<p><strong>まつもと</strong> 我々を振り返ると、何もかも最近に感じる (笑)</p>
+
+<p><strong>ささだ</strong> 他業種に行くっていうのは、人づてで無いと情報が無いっていう感じ？</p>
+
+<p><strong>まつもと</strong> 割と業界の情報っていうのは、外に出てないかも知れないね。だから、いわゆる情報系の学校に行って、そういう感じのリクルーティングを受けて入るって言う。スタンダードトラック以外の道だと、確かに中々情報は入ってこないかもしれないし。でも、そういう人は、いわゆるブラックなところに吸い込まれていくんだろうか。</p>
+
+<p><strong>ささだ</strong> おー。ブラックな専門学校とか。</p>
+
+<p><strong>まつもと</strong> ブラックかどうかは知らないよ (笑)。中村さんがそうかどうかは知らないけど、でもそういう話は良く聞くよね。</p>
+
+<p><strong>ささだ</strong> 学校は、どこからどこまでやるの？「Hello, World」の使い方の学校とかじゃなくて？</p>
+
+<p><strong>nari</strong> 学校は、Java を教えていて。最初は「Hello, World」みたいな所から始めて、最後はオブジェクト指向とは何ぞやみたいなことを全部。</p>
+
+<p><strong>ささだ</strong> 二進数とはとか、そういうのは？</p>
+
+<p><strong>nari</strong> そういうとこもやりました。今思えば結構な範囲をきちんと教えてくれてました。</p>
+
+<p><strong>ささだ</strong> あ、それはちゃんとやるんだ。クイックソートがどうとかそういうのは？</p>
+
+<p><strong>nari</strong> それは無かったですね。</p>
+
+<p><strong>まつもと</strong> アルゴリズムには届かない感じだよね。半年じゃ届かないかな。</p>
+
+<p><strong>nari</strong> 学校が福岡市内だったんで、家から 2 時間かかるんですよ。帰りも 2 時間かかる。往復 4 時間です。でも、授業は 6 時間くらいで…。</p>
+
+<p><strong>ささだ</strong> それを半年。すごいですね。</p>
+
+<p><strong>nari</strong> あと生活費と交通費がすごい高くてですね。学費分のお金は貯めてたんですけど、生活費と交通費で全部なくなってしまって、学費丸々マイナスになってしまいました。</p>
+
+<p><strong>ささだ</strong> その学校の伝手で就職したんですか？</p>
+
+<p><strong>nari</strong> そうです。伝手で就職させてもらって。で、2 年ぐらいやりましたね。仕事。</p>
+
+<p><strong>ささだ</strong> Java で？</p>
+
+<p><strong>nari</strong> はい。</p>
+
+<p><strong>ささだ</strong> その仕事、いかがでした？</p>
+
+<p><strong>nari</strong> すごくいい経験でしたね。初めてだったんで、こんな業界なんだって。</p>
+
+<p><strong>ささだ</strong> 何やってたんですか？</p>
+
+<p><strong>nari</strong> web アプリケーションを作ってました。フレームワークは <a href="http://struts.apache.org/">Struts</a> です。最後の方は <a href="http://www.seasar.org/">Seasar</a> を使った気がします。</p>
+
+<p><strong>ささだ</strong> いわゆるコンピュータサイエンス的なのが無くても、そう言うところは何も問題なく？</p>
+
+<p><strong>nari</strong> 意外と行けましたね (笑)</p>
+
+<p><strong>まつもと</strong> そこは行くんじゃない？　だって、Rails 使って web アプリケーション作るのにアルゴリズムとかコンピュータサイエンスが要るかっていうと、要らないよね。</p>
+
+<p><strong>ささだ</strong> 何か、パフォーマンスがちょっとでも気になると必要になるとか？</p>
+
+<p><strong>竹内</strong> 要らない要らない。</p>
+
+<p><strong>まつもと</strong> マジックだよね、その辺はきっと。</p>
+
+<p><strong>ささだ</strong> 逆に、その辺を隠蔽しているからフレームワークとして優秀であると言う。</p>
+
+<p><strong>まつもと</strong> IT 業界って、たぶん一歩踏み出さないとコンピュータサイエンスは必要ないんだよね。それはそれで間違いだと思うんだけど。</p>
+
+<p><strong>ささだ</strong> Java の仕事をやりながら GC に興味を持った？GC に興味を持ったのと、Ruby に興味を持ったのはどっちが先なの？</p>
+
+<p><strong>nari</strong> Ruby が先です。その会社で 1 年ぐらい東京に行くんですね。で、そこで RHG を買うんですけど、そもそも C を全然知らなくてですね。</p>
+
+<p><strong>ささだ</strong> っていうか、何で買うの？</p>
+
+<p><strong>nari</strong> 何で買ったんですかね？</p>
+
+<p><strong>ささだ</strong> Ruby の本と間違えた？</p>
+
+<p><strong>nari</strong> いやいや、ちゃんと買おうと思って(笑)。</p>
+
+<p><strong>まつもと</strong> 間違えて RHG 買ったらそれはそれで不幸な気がしないでもない (笑)</p>
+
+<p><strong>yhara</strong> 入門書のつもりで RHG を買った？</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> それは大いなる間違いだ (笑)</p>
+
+<p><strong>nari</strong> 青木さんのるびまの出張編があって、それを読んでいて、青木さんの文章はすごい読みやすいなって思って RHG を買ったんですね。で、それを読んでも C が分からないので、何だこりゃ何だこりゃって感じで 2 周か 3 周ぐらいずっと読んでてですね。それで最後の方に GC はまだ改善の余地がある、みたいなことがつらつら書いてあって、じゃあ GC やろう、みたいな。</p>
+
+<p><strong>まつもと</strong> その一言が。</p>
+
+<p><strong>ささだ</strong> おー。</p>
+
+<p><strong>竹内</strong> すごい。</p>
+
+<p><strong>まつもと</strong> 青木さんの影響、大きいなぁ。</p>
+
+<p><strong>nari</strong> あと、東京でまつもとさんの講演に行ってですね。</p>
+
+<p><strong>まつもと</strong> 僕、何か喋ったっけ。</p>
+
+<p><strong>nari</strong> Linux か何かのイベントで。</p>
+
+<p><strong>まつもと</strong> LinuxWorld？</p>
+
+<p><strong>nari</strong> はい、多分。まつもとさんにお会いして。多分覚えてらっしゃらないと思うんですけど。</p>
+
+<p><strong>まつもと</strong> わかんない、ごめん。まつもとが何か悪い影響を与えたんじゃないかな。</p>
+
+<p><strong>nari</strong> いや、握手してもらって。</p>
+
+<p><strong>まつもと</strong> 握手した？　そうなんだ (笑)</p>
+
+<p><strong>nari</strong> ああ、もうやろうと。GC やろうって。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>nari</strong> GC をやらなければと。</p>
+
+<p><strong>まつもと</strong> だけど、僕、この業界の色んな人を見てるけど、大概の人は大学とかでコンピュータサイエンスの教育を受けている人で、そうじゃない中村君はかなり例外的で、その辺は非常に興味深いよね。</p>
+
+<p><strong>ささだ</strong> そういう段階から GC 書けるレベルまで行けるんだっていうのがすごい。大学の教育って何だろうみたいな。</p>
+
+<p><strong>まつもと</strong> 良いかどうかっていう話をしたら、間違いなく良いんだけど。だって、他の人よりもはるかに GC のこと知ってるから。</p>
+
+<p><strong>竹内</strong> すごいよね。</p>
+
+<p><strong>まつもと</strong> だけど、普通はつながらないよね。全然コンピュータと関係なくて、民間の学校に行って、全然コンピュータサイエンスとは関係ない web アプリケーションを作るだけの仕事をしていたのに、途中で何かあって(笑)、いきなりこう、多分日本でも上から数えた方が速いぐらいの GC の専門家になってるわけで。</p>
+
+<p><strong>nari</strong> その会社でですね、すごく良い先輩にめぐり合ってですね。その先輩がオープンソースとかこういうのがあるっていうか、Seasar とかもあるよみたいな話で僕を導いてくれてですね。で、そこでトントントントンと Ruby の方に行ったっていう。</p>
+
+<p><strong>まつもと</strong> そこでモーメントができた。</p>
+
+<p><strong>nari</strong> その先輩にはかなり感謝してます。</p>
+
+<p><strong>ささだ</strong> なるほど。</p>
+
+<p><strong>竹内</strong> けど、それでここまで来るって言うのが俄かには信じがたいよね。</p>
+
+<p><strong>ささだ</strong> 最高学府の大学院生に負けてないですね。</p>
+
+<p><strong>まつもと</strong> 全然負けてないですね。</p>
+
+<p><strong>nari</strong> 皆様のおかげです。</p>
+
+<p><strong>ささだ</strong> 何もしない方がいいんですかね？</p>
+
+<p><strong>まつもと</strong> わかんない。</p>
+
+<p><strong>ささだ</strong> 色々な面白いテーマを与えていったら、勝手に。</p>
+
+<p><strong>まつもと</strong> 若者に関していえば、可能性を与えると、ある一定の割合とんでもないのが出てきますよね。とんでもないっていうのは、良い方でとんでもないだけど。</p>
+
+<p><strong>竹内</strong> RHG ですか、それを読んで、ずっと分からないままに 2 週間も読んだっていう、それがさすがだね。</p>
+
+<p><strong>ささだ</strong> 2 週間じゃなくて、2 周。2 回。</p>
+
+<p><strong>竹内</strong> 2 周読んだの！？だからこれが普通の人にはできないよ。だからそこでもう他の人と決定的に違うところがあると思う。</p>
+
+<p><strong>まつもと</strong> 何かあると思うね。</p>
+
+<p><strong>竹内</strong> 普通、1 周読んだらおしまいだよね。</p>
+
+<p><strong>まつもと</strong> RHG はわかんないまま読める本じゃないよ。正直。</p>
+
+<p><strong>nari</strong> 座右の銘は「あきらめない」</p>
+
+<p><strong>全員</strong> おー (拍手)</p>
+
+<p><strong>nari</strong> ポインタが分からなかったです。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> ポインタが分からないのに読むのは大変だと思うわぁ。</p>
+
+<p><strong>yhara</strong> Ruby に無いもんね。Java にもないし。</p>
+
+<p><strong>nari</strong> Java にも無いし。ポインタってなんだろうなーみたいな感じで。RHG の対象読者は、関数ポインタまで使える人って書いてあってですね。これは何だろうなみたいな感じで。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> ポインタじゃなくて関数ポインタだったか。</p>
+
+<p><strong>ささだ</strong> Java やりながら、Ruby に興味を持って、GC の話に興味を持って、悶々としていたと。wiki <sup id="fnref:29"><a href="#fn:29" class="footnote">29</a></sup> を作り出したのはその辺？</p>
+
+<p><strong>nari</strong> wiki はですね、そこから 1 年ぐらいしてからです。</p>
+
+<p><strong>ささだ</strong> GC に目覚めてその後は？</p>
+
+<p><strong>nari</strong> 目覚めた後は、Ruby の GC ってこんなもんなんだって感じでですね。論文って何か遠い存在のように思ってたんですけど。</p>
+
+<p><strong>まつもと</strong> そりゃ当然だね。</p>
+
+<p><strong>ささだ</strong> 論文って、ご存知でした？</p>
+
+<p><strong>nari</strong> いや、もう全然知らないです。</p>
+
+<p><strong>ささだ</strong> 論文の存在。</p>
+
+<p><strong>nari</strong> 論文の存在自体もまったくでした。その時は。RHG に木山さんの論文が載ってて、こういうものがあるんだという。</p>
+
+<p><strong>ささだ</strong> うんうん。</p>
+
+<p><strong>nari</strong> 木山さんの論文を分からないんですけど読んでて。あーうーん、みたいな感じで。</p>
+
+<p><strong>まつもと</strong> あれが分かりにくいんだ。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>nari</strong> 情報処理学会があるじゃないですか。あれに入らないと論文が 1 個 600 円ぐらいするんですよね。高いけど買おうかな、みたいな感じで GC の論文をポコポコ買ってたら、5000 円ぐらい 1 ヶ月に行って。</p>
+
+<p><strong>ささだ</strong> 情報処理学会の論文買ってるの？　初めて聞いた！</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>nari</strong> このお金は著者に行くんだろうかみたいな疑問を。</p>
+
+<p><strong>ささだ</strong> 行かない行かない (笑)。お金払って出してるからね、論文って。</p>
+
+<p><strong>竹内</strong> 論文誌を取らないというあれがあるからね。デフォルトで論文誌取ってるから。全然。</p>
+
+<p><strong>まつもと</strong> そういう人たちは自動的にいくらでも見れるんですけど。</p>
+
+<p><strong>nari</strong> 情報処理学会は、その時は入ってないんですよ。</p>
+
+<p><strong>竹内</strong> 研究会のときは入ってたの？</p>
+
+<p><strong>nari</strong> 直前ぐらいに入りました。</p>
+
+<p><strong>ささだ</strong> 論文を読もうって言うのが素晴らしいですね。</p>
+
+<p><strong>まつもと</strong> RHG を 2 周読んで、論文を読もうと思って。</p>
+
+<p><strong>ささだ</strong> 私は大学 4 年まで論文と言うものを知らなかったので。</p>
+
+<p><strong>まつもと</strong> それもどうかと思うけど(笑)</p>
+
+<p><strong>ささだ</strong> え、だってどういうタイミングで知るんですか、論文って。</p>
+
+<p><strong>まつもと</strong> 僕は大学の 2、3 年のときに図書館に篭って論文読んでたもん。</p>
+
+<p><strong>竹内</strong> ゼミで論文読めって言われなかった？</p>
+
+<p><strong>ささだ</strong> だからそれは 4 年生なんですよ。研究室入ってから。それで、何て素晴らしいものが世の中にはあるんだって思って感動した記憶が。</p>
+
+<p><strong>まつもと</strong> 僕も、筑波大の図書館が充実していいたので、日がな一日図書館にいて、なんて素晴らしいんだって思って読みまくってた。</p>
+
+<p><strong>nari</strong> GC を調べようとすると、あまりにも情報が web に無くてですね。で、論文が引っかかってくるんで、必然的に論文を読むという。</p>
+
+<p><strong>ささだ</strong> すぐ英語の論文になりませんでした？</p>
+
+<p><strong>nari</strong> そうですね。でも英語も全然分からないんですけど。苦労しながら読んでます。今もめちゃめちゃ苦労してます。</p>
+
+<p><strong>まつもと</strong> まぁねぇ。唯一の GC の情報といえばリチャード・ジョーンズの本ね。</p>
+
+<p><strong>nari</strong> ああ、あれを買ったのは大きかったですね。あれは一時期ずっと持ち歩いてですね。これ重いなぁって。</p>
+
+<p><strong>まつもと</strong> あれをあげようかって話をしたんだけど、もう持ってるっていう (笑)</p>
+
+<p><strong>ささだ</strong> で、そういう風にサーベイの期間があって、サーベイを 1 年ぐらいして、で wiki を作り出したと。</p>
+
+<p><strong>nari</strong> そうですね。wiki を作り出したのは多分年末だったと思うんで。正月にこたつに入って、 GC の日本語情報 wiki を作ろうと思って、ペコペコ打ち込みはじめました。</p>
+
+<h4 id="nacl-入社">NaCl 入社</h4>
+<p>: <img src="/images/0028-Hotlinks/nari8.jpg" alt="nari8.jpg" /></p>
+
+<p><strong>ささだ</strong> で、さらに時が進んで、NaCl に行こうという風になったの？</p>
+
+<p><strong>nari</strong> そうですね。パッチを出してですね。パッチって言うか、blog にちょこちょこと書いてたんですね。こういう GC はどうかなみたいなので。そしたら 1 回まつもとさんにコメントを貰ったんですよ<sup id="fnref:30"><a href="#fn:30" class="footnote">30</a></sup>。で、おぉ、まつもとさんが僕のブログを見てくれてる！と思ってですね。で、次は ML に出そうと思って ML に出して。で、今度はまつもとさんが記事にしてくれてですね、blog の <sup id="fnref:31"><a href="#fn:31" class="footnote">31</a></sup>。</p>
+
+<p><strong>まつもと</strong> してたかもしれない。LazySweep だっけ？</p>
+
+<p><strong>nari</strong> はい。</p>
+
+<p><strong>ささだ</strong> こんなことやってる人がいる。すごい、と。</p>
+
+<p><strong>まつもと</strong> それは結構前から知ってたんだけど。wiki とか。</p>
+
+<p><strong>ささだ</strong> でも、blog に乗せてくれたからって転職しないでしょ (笑)。</p>
+
+<p><strong>まつもと</strong> でも、僕は正直この人欲しいなと思ってたんだ。で、と思ってたらさ、その後 2 週間ぐらいしたら、中村って人が応募してきてとか言って。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> この人はもしかして、って(笑)。で、僕は面接の担当じゃなくて。人事権が無いんで。是非欲しいってつっついたり、前田君とかに吹き込んどいて (笑)。</p>
+
+<p><strong>nari</strong> すごい緊張してですね。最初の面接が後藤裕蔵さんだったんですけど、あ、裕蔵さんだと思って。緊張してしどろもどろになりながら。</p>
+
+<p><strong>ささだ</strong> どうでした、第一印象。</p>
+
+<p><strong>後藤</strong> うんとね、プログラム書いてもらったら間違えてたんだよね (笑)</p>
+
+<p><strong>ささだ</strong> 間違えてた(笑)。</p>
+
+<p><strong>nari</strong> ワンライナーで書こうと思ってがんばったんですけど。</p>
+
+<p><strong>ささだ</strong> かっこつけすぎた。</p>
+
+<p><strong>nari</strong> 括弧が無かったんです。</p>
+
+<p><strong>後藤</strong> Range とメソッドの呼び出しの優先順位が間違ってて。</p>
+
+<p><strong>nari</strong> 裕蔵さんに「これ括弧がいるんじゃないの」って言われてですね。「あ、どうですかね、いらないんじゃないですかね」って。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>nari</strong> 帰った後で打つと、あ、間違ってる。これは落ちたなと思いました。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> どこを見るんですか？　面接は。</p>
+
+<p><strong>後藤</strong> えっ、さらさらっと書ければいいんじゃない？</p>
+
+<p><strong>ささだ</strong> さらさらっと書けば、間違ってても？</p>
+
+<p><strong>まつもと</strong> パニックを起こさないとか、プログラム書けないとかいうのじゃなければ。</p>
+
+<p><strong>ささだ</strong> 止まっちゃうのじゃなければ OK と。</p>
+
+<p><strong>あんどう</strong> 書いてもらった後に説明してもらうんですよ。そこで説明してもらっているのが、論理が通っていれば OK。</p>
+
+<p><strong>ささだ</strong> なるほど。どっかで聞いたような話ですね。で、無事に転職できたと。</p>
+
+<p><strong>nari</strong> はい、無事になんとか入れてもらえました。</p>
+
+<p><strong>ささだ</strong> 良かった良かった。</p>
+
+<p><strong>竹内</strong> それはいつなんですか？</p>
+
+<p><strong>nari</strong> 去年の 5 月です。</p>
+
+<p><strong>竹内</strong> ほんと。じゃ、ほんとにほやほやなんだ。</p>
+
+<p><strong>後藤</strong> 確か前田さんとかがインフルエンザかなんかで。みんなばたばた倒れてて、松江にきたら一人でレッスンとか。</p>
+
+<p><strong>ささだ</strong> で、今、NaCl で幸せに Ruby の仕事をしていると。</p>
+
+<p><strong>nari</strong> そうですね。NaCl に来たのは、Ruby を使ってやりたかったんですよ。仕事を。</p>
+
+<p><strong>まつもと</strong> Ruby を使って。Ruby を作るんじゃなくて。</p>
+
+<p><strong>nari</strong> 作るのもやりたいですけど、Ruby を使って仕事を楽に。</p>
+
+<p><strong>まつもと</strong> とりあえず、そこまではクリアできてるね。</p>
+
+<p><strong>ささだ</strong> じゃ、まつもとさんがいるから行こうとかじゃないんだ。</p>
+
+<p><strong>nari</strong> あ、もちろん、それもあります。</p>
+
+<p><strong>ささだ</strong> まつもとさんがいるから COBOL でもいいやとかそういうのは無かった？</p>
+
+<p><strong>まつもと</strong> 一歩間違えれば、あっちだったら COBOL だよね。</p>
+
+<p><strong>nari</strong> そうですね (笑)</p>
+
+<p><strong>まつもと</strong> 大きく分けて、この事務所は三つ部屋があるんですけど、この部屋はひとつで、向こう側の部屋がRuby部屋で、こっち側の部屋が COBOL 部屋なんですよ。</p>
+
+<p><strong>竹内</strong> あまり情報交流はなし？</p>
+
+<p><strong>まつもと</strong> そんなことは無いですけど、やっぱり文化はだいぶ違いますよね。</p>
+
+<p><strong>ささだ</strong> 時間がとんでもないとか。</p>
+
+<p><strong>まつもと</strong> それはない。割りとラフな感じだけど。文化が違うって言うのは、プログラミングの文化ね。</p>
+
+<p><strong>ささだ</strong> 何かこう、上司には逆らうなとかそういうのではなくて。</p>
+
+<p><strong>nari</strong> 転職する前に、大学に行きたいなとか思ってたんですよ。まぁ、お金が無くてですね、やっぱりお金が無いと厳しいなと思って、働けるとこで、すごくスキルが付くのはどこだろうかと考えて、すごい人がいるところじゃないかと。前田さんとか。</p>
+
+<p><strong>ささだ</strong> 確かにすごい人がいるよね。</p>
+
+<p><strong>まつもと</strong> 周りに有名な人がいるしね。</p>
+
+<p><strong>nari</strong> 間違ってなかったかなと。</p>
+
+<p><strong>まつもと</strong> スキル付いたかな。</p>
+
+<p><strong>nari</strong> かなり教えてもらいました。</p>
+
+<p><strong>ささだ</strong> 少なくとも、論文がかけるようになったと言うのはでかいんじゃないですか。</p>
+
+<p><strong>まつもと</strong> 確かに。PRO<sup id="fnref:32"><a href="#fn:32" class="footnote">32</a></sup> の論文のときも、アウトラインだけ書いてもらって、あとは全部僕が仕上げないといけないかなと思ってたら、ちゃんと書いてきてさ、感心したんだよね。正直。</p>
+
+<p><strong>nari</strong> 論文がかけるとは思ってませんでした。書かせてもらえるとは。</p>
+
+<p><strong>ささだ</strong> 日本語、すごいですよね。文章が書ける。</p>
+
+<p><strong>まつもと</strong> 掲載はされなかったけどね。</p>
+
+<p><strong>nari</strong> (笑)。良い経験です。</p>
+
+<p><strong>ささだ</strong> 今度、東京大学への入学もひとつ、ご検討いただけると。</p>
+
+<p><strong>まつもと</strong> リモートで受けられるんだっけ？</p>
+
+<p><strong>ささだ</strong> テレビ会議室でも置いてやるかな。</p>
+
+<p><strong>ささだ</strong> 色々ありがとうございました。普段の仕事は、Ruby？ Rails？</p>
+
+<p><strong>nari</strong> Rails やってます。</p>
+
+<h4 id="普段の生活スタイル">普段の生活スタイル</h4>
+
+<p><strong>ささだ</strong> 普段の生活スタイル。</p>
+
+<p><strong>nari</strong> 朝に掃除があるんですよ。掃除に来る日もありますし、遅刻してしまう日もあって、今は遅刻してしまう割合が多いかもしれないです。</p>
+
+<p><strong>まつもと</strong> 偉くなったなぁ (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>nari</strong> 恐縮です (笑)</p>
+
+<p><strong>ささだ</strong> 新人は、先輩が来る前に掃除しろと。</p>
+
+<p><strong>nari</strong> あ、そういうわけじゃないですけど。前田さんとかも来たら掃除されてますし。</p>
+
+<p><strong>まつもと</strong> 偉いね。僕は 12 年間 1 回も掃除したことが無い。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> それは人間としてどうよって感じがするよね (笑)</p>
+
+<p><strong>竹内</strong> 掃除させたら、余計汚くなるとかそういう。</p>
+
+<p><strong>まつもと</strong> だいぶあると思う (笑)。掃除させてもらえない。</p>
+
+<p><strong>nari</strong> 僕が最初に出社したときにですね、まつもとさん、いらっしゃらなくてですね。まつもとさんは別のオフィスにいるんだなと思ったんですけど、4 時ぐらいにまつもとさんが来てですね、本当にまつもとさんが来るんだ、みたいな。</p>
+
+<p><strong>まつもと</strong> 夕方になって来て、7 時ぐらいに帰っちゃうんだよね (笑)。何のために会社にいるんだっていう。</p>
+
+<p><strong>nari</strong> びっくりしました。</p>
+
+<p><strong>yhara</strong> おはようございますって。</p>
+
+<p><strong>竹内</strong> 何時だろうと。</p>
+
+<p><strong>まつもと</strong> 僕に対しては、おはようございます。</p>
+
+<p><strong>ささだ</strong> 全社的にじゃなくて？</p>
+
+<p><strong>まつもと</strong> 全社的には違うよね。</p>
+
+<p><strong>ささだ</strong> 4 時には来ないから、他の人は。</p>
+
+<p><strong>まつもと</strong> そう。他の人はそんな時間に来ないから。直行で行って、夕方戻ってくる人はいるかもしれないけど。</p>
+
+<p><strong>nari</strong> おはようございますですね、僕も。</p>
+
+<p><strong>竹内</strong> 駅前のテルサ <sup id="fnref:33"><a href="#fn:33" class="footnote">33</a></sup> だっけ、あそこは行かないんですか、あんまり。</p>
+
+<p><strong>まつもと</strong> あそこは僕の机は無いので。行ったら会議室の一角で作業するだけなんで。行ったり行かなかったり。</p>
+
+<p><strong>ささだ</strong> 常駐している人もいるんですか？</p>
+
+<p><strong>まつもと</strong> テルサの周辺には、サテライトオフィスっていううちの事務所があるんで、そこには 4 人ぐらい常駐しています。</p>
+
+<p><strong>ささだ</strong> 基本、営業事務所なんですか？</p>
+
+<p><strong>まつもと</strong> 営業が多いよね。</p>
+
+<p><strong>ささだ</strong> 市役所とかに行きやすいとか。</p>
+
+<p><strong>まつもと</strong> 街中だからね。</p>
+
+<p><strong>あんどう</strong> 駅にまず皆さん来るじゃないですか。で、そこでピックアップできるので。ここまで来るのに迷子になるので。</p>
+
+<p><strong>ささだ</strong> あー、お客さんを呼ぶときに、あそこはすごくいいですよね。</p>
+
+<p><strong>まつもと</strong> 僕も取材とか受けるときはあっちに行ったりするし。東京から来てくれる人に、じゃ、松江駅で、って言うと分かりやすいけど、松江駅からタクシーに乗ってここまでっていうと、みんなめんどくさい。</p>
+
+<p><strong>ささだ</strong> 確かに、松江駅から結構ありますよね。</p>
+
+<p><strong>あんどう</strong> たまに間違って、テクノプロジェクトさんっていう、通り挟んで向かいに同じ Ruby 系の会社があって、そっちにつれてかれて、このビルじゃないですとか。</p>
+
+<p><strong>ささだ</strong> なるほど。生活スタイルは、来たり来なかったりと言う感じですか。</p>
+
+<p><strong>nari</strong> まぁ、大体来てます。</p>
+
+<p><strong>竹内</strong> ひょっとして、一番新人なんですか？</p>
+
+<p><strong>ささだ</strong> コミッタでは一番若いし、一番最近だと思います。</p>
+
+<p><strong>まつもと</strong> 成瀬さんはいくつ？</p>
+
+<p><strong>ささだ</strong> 成瀬さんの方がちょっと上。26, 7 歳じゃなかったかな。<sup id="fnref:34"><a href="#fn:34" class="footnote">34</a></sup></p>
+
+<p><strong>まつもと</strong> 最初に会ったときが 19 歳だったと言うのがすごいインパクトがすごくて。</p>
+
+<p><strong>ささだ</strong> そうそう。彼が大学を卒業して、こないだ就職したから。</p>
+
+<p><strong>竹内</strong> NaCl の中では、もっとも若い？</p>
+
+<p><strong>まつもと</strong> そんなことはない。あ、でも新人が何歳か分からないな。</p>
+
+<p><strong>nari</strong> 同い年ですね。Ruby 部隊では最年少です。</p>
+
+<p><strong>yhara</strong> 年齢的には？</p>
+
+<p><strong>nari</strong> 年齢的には最年少です。</p>
+
+<p><strong>竹内</strong> 年齢的には、最年少………。まぁ、年齢的にはつけなくても最年少とは言いますけど。</p>
+
+<p><strong>まつもと</strong> まぁ、新卒とかね。かれは一応中途なんで。</p>
+
+<p><strong>nari</strong> NaCl の中では新人ではないという。</p>
+
+<p><strong>まつもと</strong> この春入った子もいるので。</p>
+
+<p><strong>竹内</strong> ああ、そういう意味ね。</p>
+
+<p><strong>まつもと</strong> 去年の 5 月に入った彼は、そういう意味では新人ではない。</p>
+
+<p><strong>nari</strong> 僕は中途でしたね。そういえば。</p>
+
+<p><strong>竹内</strong> 九州ですよね。</p>
+
+<p><strong>nari</strong> はい、九州です。</p>
+
+<p><strong>竹内</strong> で、ここに来られる方で、この県内じゃなくて他所から来てる人って、どのぐらいの割合なんですか。</p>
+
+<p><strong>まつもと</strong> ここ数年だと、半分以上が県外ですね。ここ数年の入社は、島根県の会社だからというよりも、面白そうな仕事が出来るっていう感じで来る人の方が多いです。</p>
+
+<p><strong>ささだ</strong> まつもとさんがいるから、という人が多い？</p>
+
+<p><strong>まつもと</strong> えっと、面と向かって聞くのも気恥ずかしいんですけど。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> まぁ、まつもとがいるからとか、オープンソースや Ruby で仕事が出来るから、っていうので、来てくださる人はそれなりに。</p>
+
+<p><strong>ささだ</strong> 今だったら、Ruby で仕事が出来るっていうのは他にも東京でもあるから、やっぱりわざわざ松江に来てるのは、まつもとさんなのかなぁという気はしますけど。原さんは何で？</p>
+
+<p><strong>yhara</strong> 面白そうだったから。</p>
+
+<p><strong>まつもと</strong> 今日、実行委員をしてくれた前田君とかは、彼が入ったときはまだ有限会社だったんですよ。人数もまだずっとちっちゃくてですね。親御さんが心配されて、うちの息子はちゃんと大学は良い所を出たのに、そんな田舎のいつ無くなるか分からない有限会社に行っていいのかっていう (笑)。面接するときも本当にいいのかって、みんなで聞いて、はいって答えて、今の彼があるわけですけど。彼も、愛知の出身なんで。結構島根出身者は少ないですね。</p>
+
+<p><strong>竹内</strong> 人口はどれくらいの町なの？</p>
+
+<p><strong>まつもと</strong> 松江市は、20 万をやや切る感じですね。小さいですね。平成の合併でそうなった感じなんで、それ以前は、15 万とか、14 万とか、そんな感じですね。</p>
+
+<p><strong>竹内</strong> 駅を降りて、くにびきメッセって数分ですよね。くにびきメッセに行く途中にも、田んぼがあるので。県庁所在地の、歩いて数分のところに田んぼがあるっていう。</p>
+
+<p><strong>まつもと</strong> 特異な土地ではありますよね。</p>
+
+<p><strong>竹内</strong> なんかね、人が住むにはとても良い土地だなと。</p>
+
+<p><strong>nari</strong> 最初来たときには、タヌキが歩いてたんですよ。駅の近くの辺りに。田んぼの辺りにタヌキがいるなって思って。</p>
+
+<p><strong>竹内</strong> 田んぼの辺りにタヌキがいるってことは、農薬があんまり使われてないってことかな。</p>
+
+<p><strong>まつもと</strong> そうでしょうね。</p>
+
+<p><strong>nari</strong> びっくりしました。</p>
+
+<p><strong>ささだ</strong> さすがに福岡の方にはいなかった？</p>
+
+<p><strong>nari</strong> 僕の実家はすっごい田舎なんですよ。なんで、いることはいたんですけど。</p>
+
+<p><strong>まつもと</strong> (松江は)県庁所在地だからね。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h4 id="仕事とプライベートの両立">仕事とプライベートの両立</h4>
+
+<p><strong>ささだ</strong> かなりずれましたが。仕事とプライベートの両立。</p>
+
+<p><strong>nari</strong> 全然区別が無いです。</p>
+
+<p><strong>ささだ</strong> ここに来てプライベートなことをやってる？</p>
+
+<p><strong>nari</strong> も、やってますし。帰って仕事をやることもあります。</p>
+
+<p><strong>ささだ</strong> 普段家では何してますか。</p>
+
+<p><strong>nari</strong> ほとんど PC を触ってますね。外に出ないんで。</p>
+
+<p><strong>ささだ</strong> 趣味的なものとか。</p>
+
+<p><strong>nari</strong> 前、サッカーやってたんですけど。</p>
+
+<p><strong>ささだ</strong> サッカー。おお。やる方？見る方？</p>
+
+<p><strong>nari</strong> やる方です。地元では友達とチーム作ってやってました。ですけど、こっちに来てからまったくやってないですね。</p>
+
+<p><strong>ささだ</strong> 運動部とか無いんですか？</p>
+
+<p><strong>まつもと</strong> うちはボート部しかないですね。</p>
+
+<p><strong>ささだ</strong> ボート部。</p>
+
+<p><strong>まつもと</strong> 社長がボート大好きなんですよ。レガッタ。</p>
+
+<p><strong>ささだ</strong> マシン室にありましたよね。</p>
+
+<p><strong>まつもと</strong> 今はマシン室じゃないところにもあるんですけど (笑)。開発部屋にも既に。ボートマシンていって、ガーっと引く機械があるんですけど。その辺に転がってるんですよ。で、毎週水曜日は少なくとも誰かがこうやって、ガーってやってるんですけど (笑)</p>
+
+<p><strong>竹内</strong> 会社にチームがあるの？</p>
+
+<p><strong>まつもと</strong> 2 つあります。</p>
+
+<p><strong>竹内</strong> 社長が乗ってるのは強い方？ 弱い方？</p>
+
+<p><strong>まつもと</strong> 強い方ですね。</p>
+
+<p><strong>nari</strong> あ、スノーボードもあります。</p>
+
+<p><strong>まつもと</strong> スノーボードもあるね。冬にね。ここは大山 <sup id="fnref:35"><a href="#fn:35" class="footnote">35</a></sup>っていう山が近いので。</p>
+
+<p><strong>竹内</strong> あそこは雪降るんですか。</p>
+
+<p><strong>まつもと</strong> 降ります。だいぶ減りましたけどね。昔に比べたら。</p>
+
+<p><strong>ささだ</strong> 何かには所属してるんですか？</p>
+
+<p><strong>nari</strong> スノーボードに。部じゃないですけど、冬になったらスノボーに結構行ってます。</p>
+
+<p><strong>ささだ</strong> スポーツ派なんですね。</p>
+
+<p><strong>nari</strong> やるときはやりますね。</p>
+
+<p><strong>まつもと</strong> 僕も見習わないと (笑)</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>nari</strong> ささださんは陸上をやられてたんですよね。</p>
+
+<p><strong>ささだ</strong> 高校の頃。高校までなので、もう走れません。</p>
+
+<p><strong>まつもと</strong> 陸上って、走る方？飛ぶんじゃなくて？</p>
+
+<p><strong>ささだ</strong> はい。</p>
+
+<p><strong>竹内</strong> 今回のインタビューは一石二鳥だね。二人ともインタビューしたことになりますね。</p>
+
+<p><strong>ささだ</strong> (笑)</p>
+
+<p><strong>竹内</strong> 今体重何キロですか？中村さん、聞いてください。</p>
+
+<p><strong>ささだ</strong> いやいや (笑)。</p>
+
+<p><strong>ささだ</strong> えっと、映画とか本とか音楽とか、インドア系の趣味はあります？</p>
+
+<p><strong>nari</strong> 音楽は一時期ハマってましたね。60 年代のロックみたいなのを聴いてました。映画も大体、えり好みせずほとんど観るみたいな感じですね。</p>
+
+<p><strong>ささだ</strong> ゲームとか。</p>
+
+<p><strong>nari</strong> ゲームはもう、最近やらないですね。Wii を買ったんですけど、最近は全然やらなくてですね。どうしようかなと思ってるところですけど。</p>
+
+<p><strong>yhara</strong> 会社に置けばいいと思うよ。</p>
+
+<p><strong>nari</strong> ここに置きますか (笑)</p>
+
+<p><strong>竹内</strong> 社長の机の上においておけば。社運が変わるかもしれない (笑)</p>
+
+<p><strong>まつもと</strong> カレンダーの影に、ダーツボードがあるんですよ。</p>
+
+<p><strong>竹内</strong> あーなるほど。</p>
+
+<p><strong>まつもと</strong> そういえば、ダーツ部ずっとやってたね。</p>
+
+<p><strong>nari</strong> ダーツ部もありました。</p>
+
+<p><strong>竹内</strong> 時計にぶつけたら大変じゃない。</p>
+
+<p><strong>まつもと</strong> この辺の連中は、みんな上手いんで。そういうことは無いみたいですけど (笑)。どうしたらいいんですかね、ブルズアイ<sup id="fnref:36"><a href="#fn:36" class="footnote">36</a></sup>連発されたりすると (笑)</p>
+
+<h4 id="使っているマシン">使っているマシン</h4>
+
+<p><strong>ささだ</strong> 使ってるマシンはそれですか。</p>
+
+<p><strong>nari</strong> あ、これですね。</p>
+
+<p><strong>ささだ</strong> ThinkPad。はい。</p>
+
+<h4 id="好きな女性のタイプ">好きな女性のタイプ</h4>
+
+<p><strong>ささだ</strong> あと、好きな女性のタイプ。</p>
+
+<p><strong>nari</strong> 好きな女性のタイプですか。なんでしょうね……。おとなしい人。</p>
+
+<p><strong>ささだ</strong> おとなしい人。</p>
+
+<p><strong>まつもと</strong> そうなんだ。</p>
+
+<p><strong>nari</strong> おとなしい、清純そうな人。</p>
+
+<p><strong>まつもと</strong> いいな。</p>
+
+<p><strong>竹内</strong> 逆インタビュー、逆インタビュー。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> これはインタビューの山場なので。おとなしい人。おとなしく GC してる人。</p>
+
+<p><strong>nari</strong> いやいや (笑)。GC はしなくていいです (笑)。あ、掃除ってことですか。</p>
+
+<p><strong>ささだ</strong> うん。</p>
+
+<p><strong>nari</strong> 掃除はしてくれるとありがたいですね。</p>
+
+<h3 id="今後について">今後について</h3>
+
+<h4 id="今後の展望将来の夢など">今後の展望、将来の夢など</h4>
+<p>: <img src="/images/0028-Hotlinks/nari7.jpg" alt="nari7.jpg" /></p>
+
+<p><strong>ささだ</strong> 今後の展望、将来の夢など。</p>
+
+<p><strong>nari</strong> 今後の展望ですか。何でしょう。あ、アメリカで働きたいなていうのはあるんですけど。</p>
+
+<p><strong>ささだ</strong> また転職ですか？ EngineYard ？</p>
+
+<p><strong>nari</strong> いやいや。30 歳までには行きたいなぁと思ってるんですけど。</p>
+
+<p><strong>ささだ</strong> 職も変える？アイスクリームの機械をアメリカに売りに行くとか？</p>
+
+<p><strong>nari</strong> そんなことはしないですけど (笑)。向こうでプログラマーをやってみたいなーと思うんです。</p>
+
+<p><strong>ささだ</strong> なるほど。教育コストを全部ムダになっちゃいますよ。</p>
+
+<p><strong>nari</strong> (笑)</p>
+
+<p><strong>まつもと</strong> まぁ、教育コストっていうか、うちはそういうコストをあんまりかけてないよね、正直。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> 早めに NaCl を見限って。</p>
+
+<p><strong>まつもと</strong> 見捨てないで。</p>
+
+<p><strong>nari</strong> そんなことは無いです (笑)。でもまぁ、いつかはそうなればいいなぁと。</p>
+
+<p><strong>ささだ</strong> 海外で働くというのは、本場っていうのも変ですけど、本場ですもんね。もっと、Ruby 以外のところにもって感じなんですか？</p>
+
+<p><strong>nari</strong> いや、なんか漠然としてるんですけど。すごく。向こうで、ちょっとやってみたいなぁっていう。</p>
+
+<p><strong>まつもと</strong> EngineYard に口利こうか？</p>
+
+<p><strong>nari</strong> いや (笑)</p>
+
+<p><strong>ささだ</strong> NaCl の海外支店。</p>
+
+<p><strong>nari</strong> それがあるとすごくいいですね。</p>
+
+<p><strong>ささだ</strong> まつもとさんを輸出すればすごい。</p>
+
+<p><strong>まつもと</strong> まつもと輸出業。そんなに、数無いんで。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>まつもと</strong> 1 回輸出したら終わっちゃう (笑)。ビジネスにならない。</p>
+
+<p><strong>nari</strong> 輸出したら困るんじゃないですか、日本が。</p>
+
+<p><strong>竹内</strong> まず、まつもと人形を作る。</p>
+
+<p><strong>まつもと</strong> 十分に教育して、コピーしてありますとかいって。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<h4 id="次のインタビューイ">次のインタビューイ</h4>
+
+<p><strong>ささだ</strong> 次、誰ってあります？</p>
+
+<p><strong>まつもと</strong> 竹内先生。</p>
+
+<p><strong>竹内先生</strong> ダメだよ (笑)</p>
+
+<p><strong>ささだ</strong> もうもう、大変なことに。</p>
+
+<p><strong>nari</strong> 原さんにしましょう。</p>
+
+<p><strong>まつもと</strong> NaCl ツアー。</p>
+
+<p><strong>ささだ</strong> また来週来ますんで。</p>
+
+<h4 id="若手に一言">若手に一言</h4>
+
+<p><strong>ささだ</strong> 若手に一言。</p>
+
+<p><strong>nari</strong> 若手に一言ですか？</p>
+
+<p><strong>まつもと</strong> 自分も若いからとかいうのが最近の流行。</p>
+
+<p><strong>ささだ</strong> 高校生とか、中学生とか、小学生とか。読んでないと思うけど。</p>
+
+<p><strong>まつもと</strong> 小学生、中学生は読んでないよな、きっと。</p>
+
+<p><strong>nari</strong> コードを書いてない人にはあんまり言うことは無いんですけど、コードをずっと書いている人は、読むことも大事なのかなと。</p>
+
+<p><strong>まつもと</strong> 良いことを言う。</p>
+
+<p><strong>竹内</strong> やっぱり 2 周読んだから。</p>
+
+<p><strong>まつもと</strong> あと、あきらめないね。</p>
+
+<p><strong>竹内</strong> 本人の体験に基づいているから。</p>
+
+<p><strong>まつもと</strong> 言葉に重みがありますね。</p>
+
+<p><strong>nari</strong> (笑)</p>
+
+<h4 id="読者への一言">読者への一言</h4>
+
+<p><strong>ささだ</strong> 読者に一言。</p>
+
+<p><strong>nari</strong> 読者に一言ですか。いやー……。ありがとうございました、じゃおかしいですね。</p>
+
+<p><strong>ささだ</strong> 本買ってくださいとか。</p>
+
+<p><strong>nari</strong> あ、本買ってください。はい。</p>
+
+<p><strong>ささだ</strong> どうもありがとうございました。</p>
+
+<p><strong>nari</strong> Hotlinks に出るのが夢だったんですよ。Rubyをはじめた頃に読んで、るびまの中で一番好きな連載です。ついに出れる日が来たんですね。感慨深いですね。</p>
+
+<p><strong>ささだ</strong> 素晴らしい。俺も出てみたい。インタビューされたい。</p>
+
+<p><strong>竹内</strong> ささだ君はインタビュー出たことないの？</p>
+
+<p><strong>ささだ</strong> いやだって、インタビュアーですもん。</p>
+
+<p><strong>まつもと</strong> じゃ、僕がしてあげよう。原くん、次はささだ君を指定してください (笑)。</p>
+
+<p><strong>全員</strong> (笑)</p>
+
+<p><strong>ささだ</strong> どうもありがとうございました。</p>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>今回は Ruby の最年少コミッタで GC の改善に尽力されている nari さんにお話を伺いました。お忙しい中、本当にありがとうございました。次回は、<a href="http://yhara.github.com/ruby-station/index_ja.html">RubyStation</a> や <a href="http://route477.net/w/?RubySDLStarterKit">Ruby/SDL スターターキット</a> の作者である yhara さんにお話を伺います。お楽しみに。</p>
+
+<p>(インタビュー：ささだ、編集：いそべ、くげ)</p>
+
+<h2 id="rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-Hotlinks.html">Rubyist Hotlinks 【第 36 回】 須藤功平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0052/0052-Hotlinks.html">Rubyist Hotlinks 【第 35 回】 島田浩二さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0045/0045-Hotlinks.html">Rubyist Hotlinks 【第 34 回】 大場さん夫妻 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0044/0044-Hotlinks.html">Rubyist Hotlinks 【第 33 回】 大場さん夫妻 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0042/0042-Hotlinks.html">Rubyist Hotlinks 【第 32 回】 卜部昌平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-Hotlinks.html">Rubyist Hotlinks 【第 31 回】 樽家昌也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0038/0038-Hotlinks.html">Rubyist Hotlinks 【第 30 回】 遠藤侑介さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-Hotlinks.html">Rubyist Hotlinks 【第 29 回】 松田明さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0035/0035-Hotlinks.html">Rubyist Hotlinks 【第 28 回】 Yugui さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-Hotlinks.html">Rubyist Hotlinks 【第 27 回】 小波秀雄 さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-Hotlinks.html">Rubyist Hotlinks 【第 26 回】 cuzic さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0031/0031-Hotlinks.html">Rubyist Hotlinks 【第 25 回】 加藤勇也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0030/0030-Hotlinks.html">Rubyist Hotlinks 【第 24 回】 okkez さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0029/0029-Hotlinks.html">Rubyist Hotlinks 【第 23 回】 yhara さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-Hotlinks.html">Rubyist Hotlinks 【第 22 回】 nari さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0023/0023-Hotlinks.html">Rubyist Hotlinks 【第 21 回】 原信一郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Hotlinks.html">Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-Hotlinks.html">Rubyist Hotlinks 【第 19 回】 伊尾木将之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Hotlinks.html">Rubyist Hotlinks 【第 18 回】 立石孝彰さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Hotlinks.html">Rubyist Hotlinks 【第 16 回】 essa さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Hotlinks.html">Rubyist Hotlinks 【第 15 回】 arton さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Hotlinks.html">Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Hotlinks.html">Rubyist Hotlinks 【第 13 回】 関将俊さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Hotlinks.html">Rubyist Hotlinks 【第 12 回】 後藤兄弟 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Hotlinks.html">Rubyist Hotlinks 【第 11 回】 後藤兄弟 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Hotlinks.html">Rubyist Hotlinks 【第 10 回】 わたなべひろふみさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Hotlinks.html">Rubyist Hotlinks 【第 9 回】 中田伸悦さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks.html">Rubyist Hotlinks 【第 8 回】 田中哲さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-3.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その3</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-2.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その2</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-1.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その1</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Hotlinks.html">Rubyist Hotlinks 【第 7 回】 江渡浩一郎さん 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Hotlinks.html">Rubyist Hotlinks 【第 6 回】 江渡浩一郎さん 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Hotlinks.html">Rubyist Hotlinks 【第 5 回】 増井俊之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Hotlinks.html">Rubyist Hotlinks 【第 4 回】 ただただしさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Hotlinks.html">Rubyist Hotlinks 【第 3 回】 かずひこさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-Hotlinks.html">Rubyist Hotlinks 【第 2 回】 前田修吾さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>高橋会長はインタビュー開始前に帰られました。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p><a href="http://ja.wikipedia.org/wiki/%E5%85%AB%E5%A5%B3%E8%8C%B6">八女茶 - Wikpedia - </a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>前田さんが上司らしい。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>松田さん、角谷さんはインタビュー前に帰る予定でしたが、途中まで参加されました。高橋会長はインタビュー前に帰られました。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p><a href="http://d.hatena.ne.jp/authorNari/20080422/1208880928">スーパーマリオブラザーズのようなものをRubyで作ってみた〜Super Nario GC〜 - I am Cruby (2008/4/22)</a>&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p><a href="http://shyouhei.tumblr.com/post/103275104/o-1-hash">検索と挿入がともにO(1)であるようなHashを作るにはコツがいる - 卜部昌平のあまりreblogしないtumblr</a>&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>「宴も酣」「宴も闌」のいずれでもよいそうです。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>http://ll.jus.or.jp/2008/slides/6/authorNari.pdf&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p><a href="/articles/0025/0025-RareAreGCTalk.html">RubyistMagazine 0025号「レアでアレなGCの話」</a>&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>Richard Jones「Garbage Collection: Algorithms for Automatic Dynamic Memory Management」。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p><a href="http://d.hatena.ne.jp/authorNari/20090413/1239625384">GC本の必要性 - I am Cruby! (2009/4/13)</a>&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p><a href="http://www.loveruby.net/ja/rhg/book/">『Rubyソースコード完全解説』サポートページ</a>&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p><a href="http://wiki.livedoor.jp/author_nari/">GCアルゴリズム詳細解説</a>&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>http://www.rubyworld-conf.org/ja/program/abstract/a-5/&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>正確にはクラスではなく<a href="http://doc.okkez.net/187/view/class/GC">GCモジュール</a>&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p><a href="http://d.hatena.ne.jp/authorNari/20080920/1221900292">コミッタがRuby技術者認定試験に挑んだ話 - I am Cruby! (2008/09/20)</a>&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>ちょっと席を外していたらしい。&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>http://www.amazon.co.jp/dp/4873113202&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p><a href="http://video.google.com/videoplay?docid=-6128162668211216368#">実践『JavaからRubyへ』</a>&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:20">
+      <p><a href="http://d.hatena.ne.jp/mirichi/">mirichiの日記</a>。Rubyist Magazine 0027 号で DXRuby の記事を執筆。([[0027-DXRuby]])&nbsp;<a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:21">
+      <p>Ruby 1.9 から仮想マシンが導入されたので、ここで問題になるマシンスタックの枯渇の問題は起こりづらくなっています。多分。&nbsp;<a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:22">
+      <p><a href="http://www.rubyenterpriseedition.com/">Ruby Enterprise Edition</a>。Ruby on Rails の実行速度やメモリ使用量を改善する目的で GC やメモリアロケータを修正した Ruby の実装。&nbsp;<a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:23">
+      <p>copy-on-write friendly な GC を使っている。&nbsp;<a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:24">
+      <p>http://blog.phusion.nl/2009/09/29/ruby-enterprise-edition-1-8-7-20090928-released/&nbsp;<a href="#fnref:24" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:25">
+      <p><a href="http://www.nminoru.jp/~nminoru/java/cms/concurrent_mark_sweep.html">Mostly-Concurrent Mark &amp; Sweep GC のアルゴリズム</a>&nbsp;<a href="#fnref:25" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:26">
+      <p>http://research.sun.com/jtech/pubs/04-g1-paper-ismm.pdf&nbsp;<a href="#fnref:26" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:27">
+      <p>RubyWorld Conference 2009 で Ruby の標準化についてセッションがあった。&nbsp;<a href="#fnref:27" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:28">
+      <p>流れ作業をやっていると考える時間だけは豊富にあります&nbsp;<a href="#fnref:28" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:29">
+      <p>上にも出てきた GC の wiki のこと。&nbsp;<a href="#fnref:29" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:30">
+      <p><a href="http://d.hatena.ne.jp/authorNari/20071109/1194610910">RubyGCHack - I am Cruby! (2007/11/09)</a>&nbsp;<a href="#fnref:30" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:31">
+      <p>http://www.rubyist.net/~matz/20080312.html#p03&nbsp;<a href="#fnref:31" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:32">
+      <p>http://www.math.nagoya-u.ac.jp/~garrigue/pro71/&nbsp;<a href="#fnref:32" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:33">
+      <p>http://www.sanbg.com/terrsa/&nbsp;<a href="#fnref:33" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:34">
+      <p>25です、半年違いですね&nbsp;<a href="#fnref:34" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:35">
+      <p>鳥取県西部にある山。中国地方の最高峰。麓にはスキー場が豊富にある。&nbsp;<a href="#fnref:35" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:36">
+      <p>ダーツで、中央の丸のこと。点数が高いが、狙って命中させるのはとても難しい。&nbsp;<a href="#fnref:36" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

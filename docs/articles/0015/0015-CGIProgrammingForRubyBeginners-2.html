@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ビギナーのための CGI 入門 【第 4 回】 2 ページ</title>
+  <meta name="description" content="前のページへ目次へ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0015/0015-CGIProgrammingForRubyBeginners-2.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby ビギナーのための CGI 入門 【第 4 回】 2 ページ</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0015/0015-CGIProgrammingForRubyBeginners-2.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ビギナーのための CGI 入門 【第 4 回】 2 ページ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0015/0015-CGIProgrammingForRubyBeginners-2.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0015/0015-CGIProgrammingForRubyBeginners-2.html" data-text="Ruby ビギナーのための CGI 入門 【第 4 回】 2 ページ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p><a href="/articles/0015/0015-CGIProgrammingForRubyBeginners-1.html">前のページへ</a>
+<a href="/articles/0015/0015-CGIProgrammingForRubyBeginners.html">目次へ</a></p>
+
+<h2 id="目次">目次</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+  <li><a href="#今号の-cgi-プログラム" id="markdown-toc-今号の-cgi-プログラム">今号の CGI プログラム</a></li>
+  <li><a href="#フォームデータの扱いと-get-post" id="markdown-toc-フォームデータの扱いと-get-post">フォームデータの扱いと GET, POST</a>    <ul>
+      <li><a href="#form-タグの-method-属性" id="markdown-toc-form-タグの-method-属性">form タグの method 属性</a></li>
+      <li><a href="#修正方法" id="markdown-toc-修正方法">修正方法</a></li>
+    </ul>
+  </li>
+  <li><a href="#新着順表示" id="markdown-toc-新着順表示">新着順表示</a>    <ul>
+      <li><a href="#投稿データ-bbsdat-について" id="markdown-toc-投稿データ-bbsdat-について">投稿データ bbs.dat について</a></li>
+      <li><a href="#改造方針" id="markdown-toc-改造方針">改造方針</a></li>
+      <li><a href="#file-クラス-の-gets" id="markdown-toc-file-クラス-の-gets">File クラス の gets</a></li>
+      <li><a href="#bbsrb-への変更" id="markdown-toc-bbsrb-への変更">bbs.rb への変更</a></li>
+    </ul>
+  </li>
+  <li><a href="#デザイン" id="markdown-toc-デザイン">デザイン</a>    <ul>
+      <li><a href="#tdiary-のテーマ" id="markdown-toc-tdiary-のテーマ">tDiary のテーマ</a></li>
+      <li><a href="#css" id="markdown-toc-css">CSS</a>        <ul>
+          <li><a href="#css-の利点" id="markdown-toc-css-の利点">CSS の利点</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#分割表示" id="markdown-toc-分割表示">分割表示</a>    <ul>
+      <li><a href="#前半部分の変更点" id="markdown-toc-前半部分の変更点">前半部分の変更点</a></li>
+      <li><a href="#中盤の変更点" id="markdown-toc-中盤の変更点">中盤の変更点</a>        <ul>
+          <li><a href="#その-1" id="markdown-toc-その-1">その 1</a></li>
+          <li><a href="#その-2" id="markdown-toc-その-2">その 2</a></li>
+        </ul>
+      </li>
+      <li><a href="#後半部分の変更点" id="markdown-toc-後半部分の変更点">後半部分の変更点</a></li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#筆者についてというか残業時間について" id="markdown-toc-筆者についてというか残業時間について">筆者についてというか残業時間について</a></li>
+</ul>
+
+<h2 id="今号の-cgi-プログラム">今号の CGI プログラム</h2>
+
+<p>今号以降は基本的に 12 号で作った掲示板を拡張していきます。
+構成も同じで、bbs.rb, bbs.html, update.rb, bbs.dat となります。
+これらのプログラムを改良したり、
+問題を修正したりするのが今後の課題となります。</p>
+
+<p>12 号の掲示板は動作はしますが、実用には耐えません。
+今号では下記の点を修正をすることで実用レベルに近づけましょう。
+その内容についてはそれぞれの項で詳しく説明します。</p>
+
+<ul>
+  <li>フォームデータの扱いと GET, POST</li>
+  <li>新着順表示</li>
+  <li>デザイン</li>
+  <li>分割表示</li>
+</ul>
+
+<p>参考のために元の一行掲示板を rubima015-cgi\rubima12 に、
+修正後の掲示板を rubima015-cgi\bbs 
+というフォルダーに保存してあります。
+どこが変わったのか知りたい時は
+それぞれのプログラムを比べて見て下さい。</p>
+
+<h2 id="フォームデータの扱いと-get-post">フォームデータの扱いと GET, POST</h2>
+
+<h3 id="form-タグの-method-属性">form タグの method 属性</h3>
+
+<p>form タグには method 属性というものがあり、
+その値によってフォームデータの処理方法が決定されます。</p>
+
+<p>気づいた方もいるかもしれませんが、
+14 号までのプログラムは method 属性に GET が指定されています。
+GET の場合、これまでと同じく
+URL の「?」の後ろにフォームのデータが付加されます。</p>
+
+<p>具体例を見てみましょう。
+12 号ではフォームデータのやり取りの際、
+下のような URL が使われていました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">http://localhost:8080/bar1.rb?t=dddd&amp;s=Button</code></pre></figure>
+
+<p>この方法だとフォームのデータが URL に付加されるので、
+どんなデータが CGI プログラムに送られるのか URL を見れば分かります。</p>
+
+<p>method 属性には GET だけでなく、POST という値も使用出来ます。
+こちらは URL に付加せずにフォームデータをやり取りします。
+その処理は CGI オブジェクトがやってくれるので、
+今は知らなくても結構です。</p>
+
+<p>一般に GET は何かの情報を取得する時に使い、
+POST は新しいデータを書き込んだりする時に使います。
+掲示板は投稿、つまり、書き込みなので、
+POST を使う方が良いとされています。</p>
+
+<p>ちなみに GET では URL の「?」後ろに
+フォームデータを付加するだけなので、
+実はフォームを介する必要はありません。
+例えば、ブラウザの URL の入力部部分に
+フォームデータ付きの URL を直接入力しても
+フォームを介した場合と同じように処理されます。</p>
+
+<h3 id="修正方法">修正方法</h3>
+
+<p>修正は簡単です。
+bbs.html の form タグの method 属性を post に変えるだけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;form action="./update.rb" method="post"&gt;</code></pre></figure>
+
+<p>自分でフォームデータを処理している場合、
+GET から POST への変更はプログラム自体の修正が必要になります。
+しかし、CGI オブジェクトを利用している場合は
+このような場合でも自動的に対応してくれます。
+CGI クラスの便利な点の一つです。</p>
+
+<h2 id="新着順表示">新着順表示</h2>
+
+<p>ここでは 12 号で指摘した、古い順に表示される
+という問題を修正しましょう。
+同時にデザインのための修正も行います。</p>
+
+<h3 id="投稿データ-bbsdat-について">投稿データ bbs.dat について</h3>
+
+<p>まずは投稿データの bbs.dat の復習です。</p>
+
+<p>12 号で作った一行掲示板では一回の投稿につき
+bbs.dat に一行ずつデータが追加されます。
+つまり、bbs.dat の一行は一投稿に対応します。</p>
+
+<p>前回の一行掲示板では一括してこのデータを読み込んで
+そのまま表示させていました。
+そのために一番古いデータが先頭に表示されていました。</p>
+
+<h3 id="改造方針">改造方針</h3>
+
+<p>新着順表示するために bbs.dat の最終行のデータが
+先頭に表示されるように変更しましょう。</p>
+
+<p>ここからは下のような bbs01.dat を使って説明します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">1 初めての投稿です。
+2 テストです。
+3 うまく表示されると良いですね。
+4 うーん、どうかなあ。</code></pre></figure>
+
+<p>このデータを新しい順に表示するとなると、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">4 うーん、どうかなあ。
+3 うまく表示されると良いですね。
+2 テストです。
+1 初めての投稿です。</code></pre></figure>
+
+<p>となります。</p>
+
+<p>新着順に表示させるには幾つか方法があります。
+今号ではデータを一行ずづ読み込んで Array に格納し、
+その Array を逆順に表示させる方法をとります。
+上の bbs.dat のデータを Array に格納すると、
+下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["1 初めての投稿です。",
+ "2 テストです。",
+ "3 うまく表示されると良いですね。",
+ "4 うーん、どうかなあ。"]</code></pre></figure>
+
+<p>逆順に Array の中身を表示させる方法は
+前ページと同じく while を使います。</p>
+
+<h3 id="file-クラス-の-gets">File クラス の gets</h3>
+
+<p>一行ずつデータを読み込むには
+File オブジェクトの gets メソッドを利用します。
+ここでは gets を利用したプログラムを書いて、
+RDE から実行してみましょう。</p>
+
+<p>gets.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"bbs.dat"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">gets</span>
+
+<span class="k">while</span> <span class="n">l</span> 
+  <span class="n">arr</span> <span class="o">&lt;&lt;</span> <span class="n">l</span>
+  <span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">gets</span>
+<span class="k">end</span>
+
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span> 
+  <span class="nb">print</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>最初の 3 行は準備です。
+gets.rb の 3 行目で f.gets によって変数 l に
+bbs.dat の 1 行目が読み込まれます。</p>
+
+<p>この後、5 行目の while の条件チェックに入ります。
+1 行もデータが無い場合は gets の結果は nil になりますので、
+変数 l は nil となり while 文は無視されることになります。
+逆に 1 行分のデータが変数 l にあれば、
+while 文の繰り返しが実行されます。</p>
+
+<p>while 文の繰り返しでは読み込みんだ 1 行分のデータを
+変数 arr に格納しています。
+その後に次の 1 行分のデータを f.gets で変数 l に代入します。
+データをすべて読み込んでしまった場合、
+f.gets は nil を返すので、変数 l に nil が代入されて
+while 文の条件が偽になり、繰り返しが中止されます。</p>
+
+<h3 id="bbsrb-への変更">bbs.rb への変更</h3>
+
+<p>では、bbs.rb を変更します。</p>
+
+<p>元の bbs.rb と区別するために
+変更後の bbs.rb を bbs01.rb とします。
+では、最初に bbs01.rb を示します。</p>
+
+<p>bbs01.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<span class="nb">require</span> <span class="s1">'cgi'</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"bbs01.dat"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> 
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">gets</span>
+
+<span class="k">while</span> <span class="n">l</span> 
+  <span class="n">arr</span> <span class="o">&lt;&lt;</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escapeHTML</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+  <span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">gets</span>
+<span class="k">end</span>
+
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+
+
+
+<span class="nb">print</span> <span class="s2">"Content-type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+
+<span class="nb">print</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS"&gt;
+  &lt;link rel="stylesheet" href="theme/blue-border/blue-border.css" type="text/css"&gt;
+  &lt;title&gt;simple BBS &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;簡易掲示板&lt;/h1&gt;
+&lt;hr class="sep"&gt;
+
+</span><span class="no">EOF</span>
+
+
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span> 
+<span class="nb">print</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+  &lt;div class="day"&gt;
+    &lt;div class="body"&gt;
+      &lt;div class="section"&gt;
+      </span><span class="si">#{</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="sh">
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</span><span class="no">EOF</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">end</span>
+
+
+
+<span class="nb">print</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+
+&lt;hr class="sep"&gt;
+
+&lt;div class="footer"&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</span><span class="no">EOF</span>
+
+
+</code></pre>
+</div>
+
+<p>12 号の掲示板と比較すると、
+かなり大きな変更が加わっています。
+順に見ていきましょう。</p>
+
+<p>4-13 行は掲示板データの読み込みです。
+先ほどの gets.rb と同じようにデータを
+読み込んで Array に格納しています。
+気をつける点は Array の中身が
+HTML エスケープ済みになっている点です。</p>
+
+<p>17-32 行は掲示板の HTML の一部を表示させています。
+ここでは link タグに変更が加わっていたり、
+h1 タグが使われたりしていますが、
+基本的にデザインや表示に関するものです。</p>
+
+<p>次の 36-48 行が今回のメインの部分です。
+前ページの 繰り返し で説明したように
+Array の中身を逆順に参照しています。
+繰り返される部分は 38-47 行の print と添字の減少部分です。
+文字列の変数埋め込みで Array の中身が利用されています。
+仮に、変数 arr が [“first”, “second”, “third”] なら、
+36-48 行で下のように表示されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;div class="day"&gt;
+   &lt;div class="body"&gt;
+     &lt;div class="section"&gt;
+     third
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;div class="day"&gt;
+   &lt;div class="body"&gt;
+     &lt;div class="section"&gt;
+     second
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;div class="day"&gt;
+   &lt;div class="body"&gt;
+     &lt;div class="section"&gt;
+     first
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;</code></pre></figure>
+
+<p>52-61 行も掲示板としての HTML を表示させているだけです。
+hr タグや div タグが新たに付け加わっていますが、
+これらも表示の問題です。</p>
+
+<h2 id="デザイン">デザイン</h2>
+
+<p>デザインは既存のものを再利用しましょう。
+全部自分で作るのは労力がかかりますからね。</p>
+
+<h3 id="tdiary-のテーマ">tDiary のテーマ</h3>
+
+<p>先ほど逆順表示とデザイン用の変更を施しましたが、
+本来はあれだけでは掲示板の見た目に大きな変化はありません。
+上で行った変更は
+<a href="http://www.tdiary.org/20021001.html">tDiaryのテーマ</a>
+をデザインに利用することを前提にしています。</p>
+
+<p>上記の URL にある tDiary のテーマのうち 
+少なくとも GPL でライセンスされたテーマは
+自由に使うことが可能です。
+(ただし、修正したテーマを他人に使われても文句は言わないで下さい。
+詳細については <a href="http://www.gnu.org/licenses/gpl.ja.html">GPL</a>
+もしくは <a href="http://www.gnu.org/licenses/gpl.ja.html">GPL日本語訳</a> を参照して下さい)。
+他のライセンスのテーマに関しては
+ご自分でそのライセンスを読んで利用可能か確認しなければなりません。</p>
+
+<p>今号の掲示板にはあらかじめ rubima015-cgi\bbs\theme
+というフォルダーにテーマを 2 つ保存してあり、
+bbs.rb は  bule-border というテーマを利用するようになっています。</p>
+
+<p>テーマを利用するには bbs01.rb が表示する HTML のうち
+link タグの href 属性を変更します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS"&gt;
+  &lt;link rel="stylesheet" href="theme/blue-border/blue-border.css" type="text/css"&gt;
+  &lt;title&gt;simple BBS &lt;/title&gt;
+&lt;/head&gt;</code></pre></figure>
+
+<p>例えば、同梱されている mini-g に変えたい場合は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;link rel="stylesheet" href="theme/mini-g/mini-g.css" type="text/css"&gt;</code></pre></figure>
+
+<p>と変更します。</p>
+
+<p>さらに別のテーマに変えたい場合は tDiary のテーマを
+rubima015-cgi\bbs\theme 以下のフォルダーに保存して、
+その中の xxx.css (xxx はテーマ名によって異なります) を
+link タグの href 属性に指定します。</p>
+
+<h3 id="css">CSS</h3>
+
+<p>tDiaryのテーマは CSS を利用しています。
+自分でテーマを書いたり、改造したりするには
+HTML や CSS の知識が必要になります。
+その詳細は HTML と CSS に関する文章を参照して下さい。</p>
+
+<h4 id="css-の利点">CSS の利点</h4>
+
+<p>大雑把に言って CSS はデザインするためのものです。
+しかし、HTML にもデザインのための色々なタグや属性があります。
+そのため CSS の利点は HTML だけを書いている時には
+あまり感じないかもしれません。</p>
+
+<p>CSS の利点の 1 つはデザイン部分を HTML から
+分離することが出来ることです。
+例えば、今回の掲示板プログラムの HTML に
+文字の大きさや色を変えるタグや属性を入れてしまうと、
+デザインを変えたいと思った時に CGI プログラムそのものを
+変更しなければなりません。
+プログラムの変更は大変ですが、
+CSS を利用すればこうしたわずらわしさはなくなります。</p>
+
+<p>上の bbs01.rb でも  blue-border と mini-g では見た目が違いますが、
+プログラムの変更は最小限度にとどまっています。</p>
+
+<h2 id="分割表示">分割表示</h2>
+
+<p>新着順表示の変更はうまくいきましたが、
+掲示板データが100件や1000件になると、
+そのデータがすべて表示されてしまい実用的ではありません。
+そこで、掲示板データを分割して表示するように改造しましょう。
+今回は10, 20, 50, 100件ごとに表示されるようにします。</p>
+
+<p>分割表示するのは良いのですが、
+一度に表示する件数や表示する番号などを
+どのように CGI プログラムに伝えれば良いのでしょうか。
+ヒントは先ほど説明した
+form タグの method 属性の GET にあります。</p>
+
+<p>上で述べたように GET ではフォームを介さずに CGI プログラムに
+データを渡すことが出来ます。
+HTML の a タグの href 属性でも「?」の後ろにデータを
+付加することで、CGI プログラムにデータを渡す事が出来ます。
+この性質を利用します。</p>
+
+<p>掲示板にアクセスがあった時、
+現在表示されているページの表示件数や
+表示している掲示板データの最終番号
+(表示されたデータの中で一番最後のデータのbbs.datにおける行数)をチェックしておきます。
+掲示板データを表示する時に
+これらの値を使って 次のページ、前のページへのリンク、
+表示件数を変更するリンク をいっしょに作り、
+簡単にページ間を移動出来るようにします。</p>
+
+<p>例えば、現在表示している掲示板データの最終番号が 30 で、
+表示件数が 20 番とします。
+この時、bbs.dat の 11-30 行目のデータが表示されています。
+それとともに下記の 6 つのリンクが作られます。
+それぞれのリンクにはデータ付きの URL が
+href 属性に指定されおり、
+それぞれのリンクをクリックすると表示件数と最終番号が
+CGI プログラムに渡されてそれに対応するページが表示されます。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>リンク名</td>
+      <td>表示件数</td>
+      <td>最終番号</td>
+    </tr>
+    <tr>
+      <td>前のページ</td>
+      <td>20</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>次のページ</td>
+      <td>20</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>10件ごと</td>
+      <td>10</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>20件ごと</td>
+      <td>20</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>50件ごと</td>
+      <td>50</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>100件ごと</td>
+      <td>100</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>href 属性に指定する値は
+フォームデータの形式に従うと下のようになります。
+num や en は表示件数と最終番号に相当します。
+使用する名前は num や en である必要はありません。
+自分に分かりやすい名前を付けてもらって結構です。</p>
+
+<ul>
+  <li>bbs02.rb?num=20&amp;en=10</li>
+  <li>bbs02.rb?num=20&amp;en=50</li>
+  <li>bbs02.rb?num=10&amp;en=30</li>
+  <li>bbs02.rb?num=20&amp;en=30</li>
+  <li>bbs02.rb?num=50&amp;en=30</li>
+  <li>bbs02.rb?num=100&amp;en=30</li>
+</ul>
+
+<p>この値を a タグの href 属性とすることで
+ユーザーがそのリンクをクリックすると、
+num や en のデータが掲示板プログラムに渡されます。
+上の例で「次のページ」がクリックされると、
+num の 20、en の 50 という値が掲示板プログラムに渡されます。
+この値を受け取った掲示板プログラムは
+31 から 50 までの bbs.dat の掲示板データを表示させる事になります。</p>
+
+<p>フォームデータは CGI クラスのオブジェクトを介して
+CGI プログラム側から参照出来るようになります。
+表示件数と最終番号を受け取った CGI プログラムは
+それに対応する掲示板データを表示させ、
+それに加えて上の6つのリンクも表示させます。</p>
+
+<p>改造後の bbs02.rb を示します。
+主に前半に大きな変更が加わっています。
+順に変更点を見ていきましょう。</p>
+
+<p>bbs02.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+
+<span class="nb">require</span> <span class="s1">'cgi'</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">"bbs02.rb"</span>
+<span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"bbs02.dat"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> 
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">gets</span>
+
+<span class="k">while</span> <span class="n">l</span> 
+  <span class="n">arr</span> <span class="o">&lt;&lt;</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">escapeHTML</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+  <span class="n">l</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">gets</span>
+<span class="k">end</span>
+
+<span class="n">f</span><span class="p">.</span><span class="nf">close</span>
+
+<span class="n">cgi</span> <span class="o">=</span> <span class="no">CGI</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="n">en</span> <span class="o">=</span> <span class="n">cgi</span><span class="p">[</span><span class="s2">"en"</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">en</span> <span class="o">==</span> <span class="s2">""</span>
+  <span class="n">en</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">else</span>
+  <span class="n">en</span> <span class="o">=</span> <span class="n">en</span><span class="p">.</span><span class="nf">to_i</span>
+  <span class="k">if</span> <span class="n">en</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="n">or</span> <span class="n">en</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">en</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="n">cgi</span><span class="p">[</span><span class="s2">"num"</span><span class="p">].</span><span class="nf">to_i</span>
+<span class="k">if</span> <span class="n">num</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="n">or</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">100</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="k">end</span>
+
+<span class="n">st</span> <span class="o">=</span> <span class="n">en</span> <span class="o">-</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">if</span> <span class="n">st</span> <span class="o">&lt;</span> <span class="mi">0</span> 
+  <span class="n">st</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">end</span>
+
+<span class="n">link</span> <span class="o">=</span> <span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">navi</span><span class="se">\"</span><span class="s2">&gt;"</span>
+<span class="k">if</span> <span class="n">st</span> <span class="o">&gt;</span> <span class="mi">0</span> 
+  <span class="n">link</span> <span class="o">=</span> <span class="n">link</span> <span class="o">+</span> <span class="s2">" &lt;a href=</span><span class="se">\"</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">?num=</span><span class="si">#{</span><span class="n">num</span><span class="si">}</span><span class="s2">&amp;en=</span><span class="si">#{</span><span class="n">st</span><span class="o">-</span><span class="mi">1</span><span class="si">}</span><span class="se">\"</span><span class="s2">&gt;前のページ&lt;/a&gt; "</span>
+<span class="k">else</span>
+  <span class="n">link</span> <span class="o">=</span> <span class="n">link</span> <span class="o">+</span> <span class="s2">" 前のページ "</span>
+<span class="k">end</span>  
+
+<span class="k">if</span> <span class="n">en</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="nf">length</span><span class="o">-</span><span class="mi">1</span>
+  <span class="n">link</span> <span class="o">=</span> <span class="n">link</span> <span class="o">+</span> <span class="s2">" &lt;a href=</span><span class="se">\"</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">?num=</span><span class="si">#{</span><span class="n">num</span><span class="si">}</span><span class="s2">&amp;en=</span><span class="si">#{</span><span class="n">en</span><span class="o">+</span><span class="n">num</span><span class="si">}</span><span class="se">\"</span><span class="s2">&gt;次のページ&lt;/a&gt; "</span>
+<span class="k">else</span>  
+  <span class="n">link</span> <span class="o">=</span> <span class="n">link</span> <span class="o">+</span> <span class="s2">" 次のページ "</span>
+<span class="k">end</span>
+<span class="n">num_list</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+  <span class="n">link</span> <span class="o">=</span> <span class="n">link</span> <span class="o">+</span> <span class="s2">" &lt;a href=</span><span class="se">\"</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">?num=</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">&amp;en=</span><span class="si">#{</span><span class="n">en</span><span class="si">}</span><span class="se">\"</span><span class="s2">&gt;</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2">件ごと&lt;/a&gt; "</span>
+<span class="k">end</span>
+<span class="n">link</span> <span class="o">=</span> <span class="n">link</span> <span class="o">+</span> <span class="s2">"&lt;/div&gt;"</span>
+
+
+<span class="nb">print</span> <span class="s2">"Content-type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
+
+<span class="nb">print</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS"&gt;
+  &lt;link rel="stylesheet" href="theme/blue-border/blue-border.css" type="text/css"&gt;
+  &lt;title&gt;simple BBS &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;簡易掲示板&lt;/h1&gt;
+</span><span class="si">#{</span><span class="n">link</span><span class="si">}</span><span class="sh">
+
+&lt;hr class="sep"&gt;
+</span><span class="no">EOF</span>
+
+
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">en</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">st</span> 
+<span class="nb">print</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+  &lt;div class="day"&gt;
+    &lt;div class="body"&gt;
+      &lt;div class="section"&gt;
+      </span><span class="si">#{</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="sh">
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</span><span class="no">EOF</span>
+  <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="k">end</span>
+
+
+
+<span class="nb">print</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+
+&lt;hr class="sep"&gt;
+</span><span class="si">#{</span><span class="n">link</span><span class="si">}</span><span class="sh">
+&lt;div class="footer"&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</span><span class="no">EOF</span>
+
+
+</code></pre>
+</div>
+
+<h3 id="前半部分の変更点">前半部分の変更点</h3>
+
+<p>まず 5-6 行目です。
+filename というのは bbs02.rb のファイル名です。
+リンクを作る際に bbs02.rb の名前が必要になるので、
+ここで変数に代入しておきます。
+この値は頻回に使うので、変数に代入しておき、
+プログラムの変更が必要になった時に
+何度も同じような修正をしないで済むようにしておきます。
+次の num_list には表示件数の値が格納されてます。
+今回は 10, 20, 50, 100 件ずつ表示させるので、
+その 4 つの値が格納されてます。
+この値もリンクを作る時に利用します。</p>
+
+<p>8 行目は掲示板データのファイル名が変わっていますが、
+説明のために変更しているだけです。</p>
+
+<h3 id="中盤の変更点">中盤の変更点</h3>
+
+<p>19-59 行が今回のメインの変更点になります。
+ここの前半部分では GET で取得したデータのチェックが行われます。
+後半では前後のページへの移動や件数表示変更のためのリンクを生成します。</p>
+
+<h4 id="その-1">その 1</h4>
+
+<p>前半部分は 19-39 行になります。</p>
+
+<p>19 行では今までと同じように CGI クラスのオブジェクトが作られます。</p>
+
+<p>21 行で CGI のオブジェクトから en に対応するフォームのデータを取得しています。
+このデータが今回表示する掲示板のデータの最終番号に
+相当するということは既に述べました。</p>
+
+<p>22−29 行は取得したデータのチェック部分です。
+2回 if 文が使われているので、少しとまどうかもしれませんが、
+ゆっくりと考えてみましょう。</p>
+
+<p>22 行目のif 文では en に対応するフォームデータあるかどうかを
+チェックしています。例えば、最初に掲示板にアクセスした場合、
+最終番号や表示件数は指定されていません。
+そのためにこうしたチェックが必要になります。
+通常、何も指定が無い場合は
+最新の投稿、すなわち、一番最後の投稿を表示させますので、
+一番最後の投稿にあたる Array の数より 1 小さい値を指定します。</p>
+
+<p>25-28 行は en に対応するフォームデータが存在した場合です。
+25 行目では to_i というメソッドが使われています。
+これはオブジェクトに数字になれという命令です。
+フォームデータは文字列のデータなので、
+25 行目までは “1” や “56” のようなデータが変数 en に代入されています。
+しかし、変数 en の値には数字としての役割が期待されるので、
+ここで to_i メソッドで数字に変更します。
+こうした処理が必要なのは Ruby
+では数字の 1 と 文字列の “1” が別物だからです。
+この点をしっかりと覚えておいて下さい。
+ちなみに to_i では数字に変換できない場合は 0 になります。</p>
+
+<p>26-28 行では最終番号としての変数 en の値が妥当かどうかをチェックしています。
+変数 en の値が投稿データの最終番号より大きかったり、
+0 より小さいということはありえません。
+そうした場合、指定が無い場合と同じように最新の投稿が表示されます。
+26 行目の en &lt; 0 or en &gt; arr.length - 1 はそのチェックです。
+この行は 変数 en が 0 より小さいか、
+Array の中身の個数より 1 小さい数より大きいか否か という意味です。
+or はその前後のいずれかが真になれば全体で真となります。
+つまり、en &lt; 0 もしくは en &gt; arr.length - 1 のいずれか
+一方が成立すれば 27 行目が実行されます。</p>
+
+<p>31-34 行は表示件数のチェックです。
+32 行では表示件数の値をチェックしています。
+今回は 10, 20, 50, 100の4つを使うので、
+その範囲に変数 num の値が含まれるかどうかをチェックします。
+範囲にない場合、 20 が変数 num に代入されます。
+前回と違って 31行 ではいきなり to_i を実行しています。
+フォームデータが無い場合、変数 num には “” が代入され、
+num.to_i で 0 になります。
+0 以下の場合も表示件数としては不適ですので、
+変数 num に 20 を代入します。
+一方、22-29行では 0 が最終番号として妥当な値なので、
+指定が無い場合と 0 が指定された場合とをしっかりと
+区別しないければなりません。
+その違いがプログラムに出ています。
+31-34行を22-29行と同じように書くと下のようになりますが、
+長くて少し面倒ですね。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">num = cgi["num"]
+if num == ""
+  num = 20
+else
+  num = num.to_i
+  if num &lt;= 0 or num &gt; 100
+    num = 20
+  end
+end</code></pre></figure>
+
+<p>次の 36-39 行は変数 st の代入とチェックを行っています。
+変数 st は表示される掲示板データの一番古いデータの
+番号にあたります。変数 en の数で終わって、
+変数 num の数だけ投稿を表示させるには
+en - num + 1 の番号から表示させることになります。</p>
+
+<h4 id="その-2">その 2</h4>
+
+<p>ここからは残った 41-59行の説明です。
+ここでは前後のページへのリンクや
+件数表示を変更するためのリンクを作成します。</p>
+
+<p>説明を始める前に
+これまで使った変数とその役割について見ておきましょう。
+下表のようになります。
+このうち変数 cgi はリンクの生成部分では使用しません。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>変数名</td>
+      <td>役割</td>
+    </tr>
+    <tr>
+      <td>en</td>
+      <td>表示する掲示板データの最後の番号</td>
+    </tr>
+    <tr>
+      <td>st</td>
+      <td>表示する掲示板データの最初の番号</td>
+    </tr>
+    <tr>
+      <td>num</td>
+      <td>一度に表示する掲示板データの個数</td>
+    </tr>
+    <tr>
+      <td>cgi</td>
+      <td>CGI クラスのオブジェクト</td>
+    </tr>
+    <tr>
+      <td>filename</td>
+      <td>bbs02.rb の名前</td>
+    </tr>
+    <tr>
+      <td>num_list</td>
+      <td>表示件数の一覧</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>では、説明に戻りましょう。
+41 行以降では変数 link にリンク部分の HTML が付け加わっていきます。
+41 行では最初に div タグをつけています。
+これは HTML のタグをまとめるために使用します。
+「\“」 というのは <a href="/articles/0011/0011-CGIProgrammingForRubyBeginners.html">11 号</a>で紹介しましたが、覚えていますか？
+これは文字列の区切りとしての「”」ではなく、
+「”」そのものを意味しています。</p>
+
+<p>次の 42-46 行は前のページへのリンクを生成しています。
+42 行では一番古いページかどうかをチェックしています。
+変数 st は表示される掲示板データの始まりの番号です。
+これが 0 より大きければ、まだ表示するデータが残っているはずです。
+その場合は 43 行で前のページへのリンクを作ります。
+そうでない場合は 45 行で前のページという表示だけにします。
+両方で link = link + “…” という部分がありますが、
+これは変数 link に “…” の部分を追加するという意味です。
+例えば、”1” + “2” は “12” になります。
+43 行では前ページへのリンクを作っています。
+前ページの最終番号は今表示している始めの番号より 1 小さくなるはずです。
+そのため en=#{st-1} となります。
+他の部分は変数の意味がわかれば、難しくないと思います。</p>
+
+<p>48-52 行は次のページへのリンクを作っています。
+次ページの最終番号は現在表示している最終番号より
+表示件数分大きくなります。
+現在表示している掲示板データの最後が en なので、
+次のページの最初の番号が en + 1 になります。
+そこから num の分だけ表示させると、
+次ページの最終番号は en + num になります。</p>
+
+<p>53-55 行は表示件数の変更リンクを作っています。
+num_list に表示件数の数字が格納されていて、
+each メソッドを使って順に追加しています。</p>
+
+<p>56 行は div タグを閉じているだけです。</p>
+
+<h3 id="後半部分の変更点">後半部分の変更点</h3>
+
+<p>59行より後ろの部分には大きな変更点はほとんどありません。
+順に見ていきましょう。</p>
+
+<p>まず 61-75 行の HTML 表示部分で変数 link の埋め込みがあります。
+上で作ったリンクをここで利用しています。</p>
+
+<p>次の変更点は 79-80 行です。
+変数 en は最終番号で、
+ここから始まって保存順とは逆順に表示させていきます。
+表示部分や繰り返しに関しては bbs01.rb と大きな変化はありません。
+一番最初に表示される番号や while 文の条件部分のみが異なります。</p>
+
+<p>最後の変更点は 98 行です。変数 link をここでも
+表示しています。これは無くても良いのですが、
+あったほうが利用者には便利です。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は主に bbs.rb 側の変更を行いました。
+新着順表示、分割表示が実装されて
+表示部はかなり改善されました。</p>
+
+<p>次回以降は更新側の update.rb について
+変更を加えていきます。</p>
+
+<h2 id="筆者についてというか残業時間について">筆者についてというか残業時間について</h2>
+
+<p>えーと、最近、忙しくてなかなか帰れません。で、当然残業になります。
+それは良いのですが、
+何故かうちの職場は 1 日あたりの残業時間が2時間単位で分類されています。
+自分で記録する時は 1 分単位なのに…。
+そんな適当で良いのかよ＞うちの職場。</p>
+
+<p><a href="/articles/0015/0015-CGIProgrammingForRubyBeginners-1.html">前のページへ</a>
+<a href="/articles/0015/0015-CGIProgrammingForRubyBeginners.html">目次へ</a></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

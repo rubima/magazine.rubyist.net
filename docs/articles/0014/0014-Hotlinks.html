@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0014/0014-Hotlinks.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0014/0014-Hotlinks.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist Hotlinks 【第 14 回】 角谷信太郎さん" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0014/0014-Hotlinks.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0014/0014-Hotlinks.html" data-text="Rubyist Hotlinks 【第 14 回】 角谷信太郎さん">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p>著名な Rubyist にインタビューを行う企画「Rubyist Hotlinks」。今回は、<a href="http://www.cozmixng.org/~rwiki/?cmd=view;name=Rabbit%3A%3AUsersGroup.ja">Rabbit ユーザーズグループ</a>代表の角谷信太郎さんにお話を伺いました。</p>
+
+<h2 id="プロフィール">プロフィール</h2>
+
+<p><img src="/images/0014-Hotlinks/gogogo_290x271.jpg" alt="gogogo_290x271.jpg" />あとで書く。</p>
+
+<dl>
+  <dt>好きな言葉</dt>
+  <dd>「肖像画に/まちがって髭を書いてしまったので/仕方なく髭を生やすことにした」</dd>
+  <dt>尊敬する人</dt>
+  <dd>ピーター・ジャクソン</dd>
+  <dt>ご本人のサイト</dt>
+  <dd><a href="http://kakutani.com/">角谷 HTML 化計画</a></dd>
+</dl>
+
+<h2 id="インタビュー">インタビュー</h2>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>ささだ</dd>
+  <dt>語り手</dt>
+  <dd>角谷さん</dd>
+  <dt>野次馬</dt>
+  <dd>須藤さん、卜部さん</dd>
+  <dt>日にち</dt>
+  <dd>2006 年 4 月 12 日</dd>
+  <dt>場　所</dt>
+  <dd>秋葉原のどこか</dd>
+</dl>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#プロフィール" id="markdown-toc-プロフィール">プロフィール</a></li>
+  <li><a href="#インタビュー" id="markdown-toc-インタビュー">インタビュー</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+      <li><a href="#開始前の一コマ" id="markdown-toc-開始前の一コマ">開始前の一コマ</a>        <ul>
+          <li><a href="#プレゼント本の人気" id="markdown-toc-プレゼント本の人気">プレゼント本の人気</a></li>
+          <li><a href="#東京に来たばかりの須藤さん" id="markdown-toc-東京に来たばかりの須藤さん">東京に来たばかりの須藤さん</a></li>
+        </ul>
+      </li>
+      <li><a href="#プロフィール-1" id="markdown-toc-プロフィール-1">プロフィール</a>        <ul>
+          <li><a href="#生年月日とか" id="markdown-toc-生年月日とか">生年月日とか</a></li>
+          <li><a href="#韋駄天のバートホールド" id="markdown-toc-韋駄天のバートホールド">韋駄天のバートホールド</a></li>
+          <li><a href="#座右の銘" id="markdown-toc-座右の銘">座右の銘</a></li>
+          <li><a href="#好きなスタンド" id="markdown-toc-好きなスタンド">好きなスタンド</a></li>
+          <li><a href="#尊敬する人" id="markdown-toc-尊敬する人">尊敬する人</a></li>
+          <li><a href="#代表作" id="markdown-toc-代表作">代表作</a></li>
+        </ul>
+      </li>
+      <li><a href="#ruby-とのインタラクション" id="markdown-toc-ruby-とのインタラクション">Ruby とのインタラクション</a>        <ul>
+          <li><a href="#好きなメソッド嫌いなメソッド" id="markdown-toc-好きなメソッド嫌いなメソッド">好きなメソッド嫌いなメソッド</a></li>
+          <li><a href="#ruby-との出会い" id="markdown-toc-ruby-との出会い">Ruby との出会い</a></li>
+          <li><a href="#ruby-とのつきあい" id="markdown-toc-ruby-とのつきあい">Ruby とのつきあい</a></li>
+          <li><a href="#入団の儀式" id="markdown-toc-入団の儀式">入団の儀式</a></li>
+          <li><a href="#ruby-とのかかわり-続" id="markdown-toc-ruby-とのかかわり-続">Ruby とのかかわり (続)</a></li>
+          <li><a href="#好きなところと嫌いなところ" id="markdown-toc-好きなところと嫌いなところ">好きなところと嫌いなところ</a></li>
+          <li><a href="#リファクタリングブラウザ欲しい" id="markdown-toc-リファクタリングブラウザ欲しい">リファクタリングブラウザ欲しい！</a></li>
+          <li><a href="#コーディング規約" id="markdown-toc-コーディング規約">コーディング規約</a></li>
+          <li><a href="#エディタ選びの基準" id="markdown-toc-エディタ選びの基準">エディタ選びの基準</a></li>
+          <li><a href="#事例" id="markdown-toc-事例">事例</a></li>
+          <li><a href="#キラーアプリ" id="markdown-toc-キラーアプリ">キラーアプリ</a></li>
+          <li><a href="#ruby-の習得" id="markdown-toc-ruby-の習得">Ruby の習得</a></li>
+        </ul>
+      </li>
+      <li><a href="#プログラミング全般" id="markdown-toc-プログラミング全般">プログラミング全般</a>        <ul>
+          <li><a href="#はじめて書いたコード" id="markdown-toc-はじめて書いたコード">はじめて書いたコード</a></li>
+          <li><a href="#ruby-以外のプログラミング言語" id="markdown-toc-ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</a></li>
+          <li><a href="#美しかった-あるいはキモかった-ソース" id="markdown-toc-美しかった-あるいはキモかった-ソース">美しかった (あるいはキモかった) ソース</a></li>
+          <li><a href="#g-からはじまる言語について" id="markdown-toc-g-からはじまる言語について">G からはじまる言語について</a></li>
+        </ul>
+      </li>
+      <li><a href="#生い立ち" id="markdown-toc-生い立ち">生い立ち</a>        <ul>
+          <li><a href="#陸上部" id="markdown-toc-陸上部">陸上部</a></li>
+          <li><a href="#大学時代" id="markdown-toc-大学時代">大学時代</a></li>
+          <li><a href="#si-ベンダーに就職" id="markdown-toc-si-ベンダーに就職">SI ベンダーに就職</a></li>
+          <li><a href="#ペアプログラミングの世界" id="markdown-toc-ペアプログラミングの世界">ペアプログラミングの世界</a></li>
+        </ul>
+      </li>
+      <li><a href="#普段の生活のスタイル" id="markdown-toc-普段の生活のスタイル">普段の生活のスタイル</a>        <ul>
+          <li><a href="#普段の生活" id="markdown-toc-普段の生活">普段の生活</a></li>
+          <li><a href="#今後の展望将来の夢など" id="markdown-toc-今後の展望将来の夢など">今後の展望将来の夢など</a></li>
+        </ul>
+      </li>
+      <li><a href="#rubyist-の輪" id="markdown-toc-rubyist-の輪">Rubyist の輪</a></li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#rubyist-hotlinks-連載一覧" id="markdown-toc-rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</a></li>
+</ul>
+
+<h3 id="開始前の一コマ">開始前の一コマ</h3>
+
+<h4 id="プレゼント本の人気">プレゼント本の人気</h4>
+
+<p><strong>卜部</strong>　なんかねえ、四月のやつ (<a href="http://jp.rubyist.net/PerlMa/">Perlish Magazine</a>) があまりにマジすぎたのでだれもネタと思ってくれなかったらしく。</p>
+
+<p><strong>角谷</strong>　いやあ、あれはすごかった。ネタのような外見で中身がマジ、という。感動しちゃいました。</p>
+
+<p><strong>須藤</strong>　感動しちゃいましたか。</p>
+
+<p><strong>笹田</strong>　みんなネタだと思っててまともに読まなかったという話もあって。</p>
+
+<p><strong>卜部</strong>　プレゼント応募来たの？</p>
+
+<p><strong>笹田</strong>　結構来てるよ<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<p><strong>須藤</strong>　普段はどれくらいなんですか？</p>
+
+<p><strong>笹田</strong>　普段は……内緒 (笑)</p>
+
+<p><strong>卜部</strong>　ものによるよね。</p>
+
+<p><strong>笹田</strong>　ものによる。<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41E6PZX7ZNL._SL160_.jpg" />はすごくたくさん応募が来ました。みんな基礎講座欲しかったんですね。私あんまり基礎講座はちょっとこう、基本的すぎてつまんないのかなと思ってたんだけど。</p>
+
+<h4 id="東京に来たばかりの須藤さん">東京に来たばかりの須藤さん</h4>
+
+<p><img src="/images/0014-Hotlinks/sutou_dododo_320x236.jpg" alt="sutou_dododo_320x236.jpg" /><strong>須藤</strong>　卜部さんはどこに住んでるんですか？</p>
+
+<p><strong>卜部</strong>　住んでるのは調布ですが。</p>
+
+<p><strong>須藤</strong>　調布って言うと山手線からだとどれぐらい？</p>
+
+<p><strong>卜部</strong>　山手線から言うと新宿から三十分とか。三十分かかんないときもありますね<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+
+<p><strong>笹田</strong>　で、須藤さんは今どこに行ってるの？</p>
+
+<p><strong>須藤</strong>　会社はグのつくところですけど。会社の位置ですか？　水道橋です。だからここ (秋葉原) の隣の隣ですね。</p>
+
+<p><strong>笹田</strong>　じゃあ今度遊びにとか。</p>
+
+<p><strong>須藤</strong>　もちろんじゃないですか。来てください。</p>
+
+<p><strong>角谷</strong>　もう仕事はしてるんですか？</p>
+
+<p><strong>須藤</strong>　仕事……ああ、いまはちょっと微妙なんですよね (笑)　東京は事務所作ったばっかりで。この間、っていうか昨日までナローバンドでした。</p>
+
+<p><strong>角谷</strong>　東京は仕事としてはこれからなんですか。</p>
+
+<p><strong>笹田</strong>　大阪しか聞いたことなかったので、須藤さんは大阪に行くんだとばかり……。</p>
+
+<p><strong>須藤</strong>　私もびっくりですよ、今年の二月か三月に聞きましたから。大阪に行く気満々だったのに。</p>
+
+<p><strong>角谷</strong>　大阪って言ってましたもんね。だから、あんまり会えないんだ、残念だなーと思ってたのに。結局は、ここへ気軽に来れちゃうという。</p>
+
+<p><strong>須藤</strong>　複雑な気持ちですよ。</p>
+
+<h3 id="プロフィール-1">プロフィール</h3>
+
+<h4 id="生年月日とか">生年月日とか</h4>
+
+<p><strong>笹田</strong>　じゃあ、えっと……就職おめでたい須藤さん今日はありがとうございます。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>角谷</strong>　ちゃんと<a href="http://slashdot.jp/comments.pl?sid=283268&amp;cid=821484">スラド認定スーパーハカー</a>の Rubyist を連れてきましたので。あとは若い人たちでゆっくりと (笑)</p>
+
+<p><strong>笹田</strong>　(笑) ……じゃなくて、角谷さんどうもお忙しいところありがとうございます。</p>
+
+<p><strong>角谷</strong>　はい。よろしくおねがいします。</p>
+
+<p><strong>笹田</strong>　まずプロフィール。出身とか生年月日住所家族構成とかまあ言えるところで。</p>
+
+<p><strong>角谷</strong>　言えないところは特に無いので。生まれは 1975 年、なので 31 歳です。出身は大阪で、今は両国に住んでます。</p>
+
+<p><strong>笹田</strong>　大阪出身だったんですか。</p>
+
+<p><strong>角谷</strong>　はい大阪です。就職して東京に出てきました。</p>
+
+<p><strong>笹田</strong>　全然関西弁っぽくないですよね。</p>
+
+<p><strong>角谷</strong>　そうですね。周りに関西人がいないと。</p>
+
+<p><strong>笹田</strong>　昔はもう普通に関西弁だったんですか。</p>
+
+<p><strong>角谷</strong>　まあ、普通に関西弁。こないだ、友人の結婚式で大阪に帰省した後に東京に戻ってきたときは関西弁は半月ぐらい抜けませんでした。</p>
+
+<h4 id="韋駄天のバートホールド">韋駄天のバートホールド</h4>
+
+<p><strong>笹田</strong>　ご家族は。</p>
+
+<p><strong>角谷</strong>　家族は妻と息子と、あと亀。亀も家族です。リクガメ。</p>
+
+<p><strong>須藤</strong>　名前なんでしたっけ？</p>
+
+<p><strong>角谷</strong>　<a href="http://berthold.kakutani.com/">バートホールド</a>です。</p>
+
+<p><strong>笹田</strong>　名前の由来はあるんですか？</p>
+
+<p><strong>角谷</strong>　名前の由来ありますよ。</p>
+
+<p><strong>須藤</strong>　おおっ。</p>
+
+<p><strong>角谷</strong>　あるよ、ちゃんと。</p>
+
+<p><strong>須藤</strong>　なんかいろいろありそうですもんね。</p>
+
+<p><strong>角谷</strong>　テリー・ギリアム<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>の映画に<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51FEYDRG7PL._SL160_.jpg" />っていうのがありまして。そこに、すごく足の速い人が出てくるんですよ。韋駄天のバートホールドっていうのが。普段は足に重い錘をつけてるけど、それを外すと超速い。エリック・アイドルが演じてます。</p>
+
+<p><strong>須藤</strong>　じゃあ亀も速い？</p>
+
+<p><strong>角谷</strong>　これが意外に速い。「速いよ」って言っても誰も信じてくれないんですけどね。ヘルマンリクガメは速いです。</p>
+
+<p><strong>笹田</strong>　お子さんはお一人なんですか。</p>
+
+<p><strong>角谷</strong>　はい。一人です。一人でもういっぱいいっぱいです。</p>
+
+<h4 id="座右の銘">座右の銘</h4>
+
+<p><strong>笹田</strong>　好きな言葉、座右の銘などありましたら。</p>
+
+<p><strong>角谷</strong>　最近はねえ、こっち方面だと……</p>
+
+<p>えっと、<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51YQa%2BrTYPL._SL160_.jpg" /> の 2 ページ目に「人生は、自分の仕事を憎むにはあまりに短いのだ。」というのがあって。丁度「愚痴ぐち言うのやめよう、やめたいなー」と思っていた時に出会ったので。</p>
+
+<p><strong>須藤</strong>　角谷さんにはもっとガーと言ってほしいですよね。「いや、これはだめなんだよ！　とかこうしよう！　こうしよう！」ってガーっと。</p>
+
+<p><strong>角谷</strong>　個人的に長く座右の銘なものでいうと……今回のるびまのインタビューもそうなんですけど、寺山修司<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>の「わたしのイソップ」という詩の冒頭。「肖像画に/まちがって髭を書いてしまったので/仕方なく髭を生やすことにした」っていうのがある。「門番を雇ってしまったので/門を作ることにした」と続くんですけど。これが非常に自分らしくて気に言ってます。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>角谷</strong>　「Rubyist Hotlinks に呼ばれたから Ruby がんばって書くことにした」とか。</p>
+
+<p><strong>須藤</strong>　ああ、いいっすね、それ。</p>
+
+<h4 id="好きなスタンド">好きなスタンド</h4>
+
+<p><strong>笹田</strong>　えーと、好きなスタンドは？</p>
+
+<p><strong>角谷</strong>　スタンド……。私、スタンド世代じゃないんですよ。</p>
+
+<p><strong>笹田</strong>　波紋？</p>
+
+<p><strong>角谷</strong>　そうそう。世界には二種類の人間が居まして。ジャンプで、荒木飛呂彦の新連載を、ジョジョの初回を、めくって見ちゃった人と、そうでない人の二種類が。ディオが馬車からジャンプしてバァーン!! と見開きで降りてくるのを 20 年前に目撃しちゃった人たち。私のジョジョとの付き合いはそこからなので、どのスタンドが、というよりもディオが好き。</p>
+
+<p><strong>笹田</strong>　じゃあ好きなセリフは？</p>
+
+<p><strong>角谷</strong>　「覚悟したものは幸いである」。</p>
+
+<p><strong>須藤</strong>　好きな効果音は？</p>
+
+<p><strong>角谷</strong>　好きな効果音は「ドギャーン」。あと「ゴゴゴゴゴ」。</p>
+
+<h4 id="尊敬する人">尊敬する人</h4>
+
+<p><strong>笹田</strong>　では、尊敬する人はどうでしょう。</p>
+
+<p><strong>角谷</strong>　最近だとピーター・ジャクソン<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>かな。『ロード・オブ・ザ・リング』の人。</p>
+
+<p><strong>笹田</strong>　ほう。</p>
+
+<p><strong>角谷</strong>　彼は映画を撮ることがすごく好きで、好きで、それを極めて世界を獲った。で、その勢いで自分が映画の道を志すきっかけになった『キング・コング』をリメイクしてやりたい放題。すばらしいね。</p>
+
+<p><strong>卜部</strong>　<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51PR0DN5DCL._SL160_.jpg" />いいんですか。</p>
+
+<p><strong>角谷</strong>　『キング・コング』は映画として云々ということは置いといて、自分の好きなことを好きなようにやる。そのためにお金をいっぱい使って。自分の好きなことを通して世界を獲るって素敵だな、と。</p>
+
+<p><strong>笹田</strong>　じゃあ、映画とかよく見るんですか。</p>
+
+<p><strong>角谷</strong>　昔はよく見てましたけど、最近はダメですね。</p>
+
+<p><strong>笹田</strong>　忙しくて？</p>
+
+<p><strong>角谷</strong>　「忙しい」は言い訳でしかないと思うんで。実態として映画館にぜんぜん通えてない。ダメダメです。</p>
+
+<h4 id="代表作">代表作</h4>
+
+<p><strong>笹田</strong>　代表作というと。</p>
+
+<p><strong>角谷</strong>　代表作なしです。</p>
+
+<p><strong>笹田</strong>　なし？</p>
+
+<p><strong>角谷</strong>　強いて言えば <a href="http://raa.ruby-lang.org/project/rabbit">RAA:rabbit</a> のファイルとかテーマ。</p>
+
+<p><strong>須藤</strong>　角谷さんのテーマはいいですね。</p>
+
+<p><strong>笹田</strong>　別に Ruby でなくても構いませんけれども。</p>
+
+<p><strong>角谷</strong>　代表作というか……石井勝さんが亡くなられてしまったので、遺作の Eclipse プラグイン、Quick-Junit は引き取ってます (<a href="http://kakutani.com/20060426.html#p01">角谷HTML化計画 - Quick JUnit Plugin for Eclipse 0.3.0.1をリリースしました</a>)。</p>
+
+<p>元々はソースコードは公開されてなかったんですけれども、去年の頭に石井さんに「オープンソースにして欲しい」とお願いして。お忙しいなか、少しずつ公開に向けた作業をされていた途中であの事故が起きちゃって。</p>
+
+<p>で、引き取ったといっても、大したメンテもしてなくて……いちおう動くようにだけはしてあるんですが……。といっても、新しいバージョンで動くようにしてくれたのも私じゃなくて<a href="id:koichik">小林さん</a>で。私じしんは全然拡張とかもしてない。申し訳ないなあと思ってます。</p>
+
+<p><strong>笹田</strong>　プラグイン、というと？</p>
+
+<p><strong>角谷</strong>　プロダクトのコードとテストクラスとをワンキーで行ったり来たりできたり、テストを実行したり、っていうプラグインなんですけど。すごく便利で。ちゃんとメンテしていかないとなーと思いつつもう一年が経とうとしている。</p>
+
+<p><strong>須藤</strong>　リリースもしてない？</p>
+
+<p><strong>角谷</strong>　リリースはまあちょこちょこっとは。といっても、引き取ってすぐに一度リリースして、小林さんが対応してくれてから後は、Eclipse のバージョンが上がっても動いちゃってるからリリースしてない。いろいろネタはあるんだけどやれてないですね。</p>
+
+<p>(その後、石井勝さんの命日に合わせてリリースを行おうとしたのだけれど、日にちは変わってしまうわ (<a href="http://kakutani.com/20060425.html#p01">角谷HTML化計画 - Quick JUnit Plugin for Eclipse 0.3.0をリリースしました</a>)、Javaのバージョンによっては動かないわ (<a href="http://kakutani.com/20060426.html#p01">角谷HTML化計画 - Quick JUnit Plugin for Eclipse 0.3.0.1をリリースしました</a>) と情けないことこの上ないリリースでした)</p>
+
+<p>だから自分としての代表作は無いです。</p>
+
+<p><strong>須藤</strong>　このために作ってきましたとか。</p>
+
+<p><strong>角谷</strong>　それができればカッコいいんですけど、やりきれないからダメですねえ。</p>
+
+<p><strong>笹田</strong>　では、著作というと。</p>
+
+<p><strong>角谷</strong>　著作もない。著作なし。</p>
+
+<p><strong>須藤</strong>　雑誌記事とかありますよね。</p>
+
+<p><strong>角谷</strong>　あっそうか。Amazon のデータベースに自分の名前のレコードがあるものとしては、すごく売れてるという噂の <img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51ZAZJT1WDL._SL160_.jpg" />、</p>
+
+<p>……のなかで、Life Hacks と全然関係ないことを書いてます。</p>
+
+<p><strong>須藤</strong>　かっこいい。</p>
+
+<p><strong>笹田</strong>　どんなことを書いたんですか？</p>
+
+<p><strong>角谷</strong>　「勉強会やりましょう」みたいな感じの記事を。他の記事は、平林さんのプレゼンとか田口さんの GTD とかね。知り合いの皆さんも <a href="http://capsctrl.que.jp/kdmsnr/diary/">kdmsnr</a> さんとか <a href="id:t-wada">id:t-wada</a> さんとか、がマインドマップや文房具を。みんな「Life Hacks!!」って感じだけど、一人だけなんかポジションペーパーやろうとか <a href="http://qwik.jp">qwikWeb</a> イイよとか。勉強会を無理矢理 Life Hacks だと言い張りつつ。</p>
+
+<p><strong>笹田</strong>　すごい売れてるんだ。</p>
+
+<p><strong>角谷</strong>　売れてるらしいですよ。でもまあ、全然私は売れ行きに関係ないんですけど。エゴサーチ<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>してみつかるレビューとかでは大抵、最後に「勉強会もあるよ」みたいな (笑)　とりあえず触れとくか、みたいな。あ、そうだ。お一人だけ、すごく誉めてくださってる方 (<a href="http://d.hatena.ne.jp/dshina/20060329/p1">dshinaの日記 - Life Hacks PRESS ~デジタル世代の「カイゼン」術~</a>) がいらっしゃって。光栄です。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>角谷</strong>　あと、今年は Ruby の記事を<a href="http://www.unixuser.jp/">オープンソースマガジン</a>の Rails 特集に書きました。Ruby のことを商業誌に書けてすごーく嬉しかったです。高橋さんありがとうございます。</p>
+
+<p><strong>須藤</strong>　Rails 特集？ <a href="http://raa.ruby-lang.org/project/rake">RAA:rake</a> の記事じゃありませんでしたっけ。</p>
+
+<p><strong>角谷</strong>　そう。Rails 特集で Rake のことを書く (笑)　私が記事を書くときはアウェイが基本のようで。</p>
+
+<p>あと、私が書いたもので、たぶん一番読まれてるのは、Dependency Injection の翻訳 (<a href="http://kakutani.com/trans/fowler/injection.html">Inversion of Control コンテナと Dependency Injection パターン</a>) ですね……って、私が、じゃなくてファウラーが良い記事を書いたからですけど。元が良いこともあって、あれは評判が良いです。「分かりやすかったです」とか直接メールをもらったりして、嬉しかったです。</p>
+
+<p><strong>須藤</strong>　翻訳は結構やってませんでしたっけ？</p>
+
+<p><strong>角谷</strong>　結構、というほど翻訳はやってないですよ (<a href="http://kakutani.com/wiki/articles/?TranslationsIndex">かくたにのWiki - 翻訳記事の一覧</a>)。</p>
+
+<p><strong>須藤</strong>　<a href="http://capsctrl.que.jp/kdmsnr/wiki/bliki/?FrontPage">bliki_ja</a> のほうで。</p>
+
+<p><strong>角谷</strong>　ああ、少し前は、kd さんのとこ……kd さんって児玉サヌールさんですけど、kd さんとこの bliki_ja の小人っていうか、時どきこぼれ玉を拾うみたいな感じのことはやってましたけど。</p>
+
+<h3 id="ruby-とのインタラクション">Ruby とのインタラクション</h3>
+
+<h4 id="好きなメソッド嫌いなメソッド">好きなメソッド嫌いなメソッド</h4>
+
+<p><strong>笹田</strong>　好きなメソッド嫌いなメソッド。そろそろもうこれもなんかマンネリ化してますが。</p>
+
+<p><strong>角谷</strong>　いやあ、これは Ruby の文化じゃないんですか？　他の言語コミュニティにはこの文化は無いんですかね。私の印象では、Ruby の人たちはみんなこれを言ってるんですが。</p>
+
+<p>私はこれを言えれば一人前の Rubyist だと思い込んでいて。こないだデブサミで喋ったときは、プロフィールに聞かれてもないのに勝手に (笑)</p>
+
+<p><strong>須藤</strong>　一人前宣言ですね。</p>
+
+<p><strong>角谷</strong>　前の年に咳さんが、頼まれてもいないのに「好きな言語は Ruby」とか書いてたから。「俺もやろう」と思って。形から入る。</p>
+
+<p><strong>笹田</strong>　なるほど。</p>
+
+<p><strong>角谷</strong>　……で。好きなメソッドというか、最初に感動したのは <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=Object#extend">Object#extend</a>。</p>
+
+<p><strong>卜部</strong>　あー。</p>
+
+<p><strong>角谷</strong>　「ををっ、そうなんだ」みたいな感動を。</p>
+
+<p><strong>笹田</strong>　私は <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=Module#include">Module#include</a> と Object#extend の違い<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>が分からなくて。</p>
+
+<p><strong>角谷</strong>　そそ、最初は分かんなくて、あれが分かったときに。</p>
+
+<p><strong>笹田</strong>　うんうん。</p>
+
+<p><strong>角谷</strong>　「あ、そっか、Object に！」みたいなのを理解できたときに感動しました。あと、よく使うのは <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=Enumerable#collect">Enumerable#collect</a> 、っていうのは定番ですよね。</p>
+
+<p><strong>卜部</strong>　collect 派ですか<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+
+<p><strong>角谷</strong>　最近は背伸びをして map を。</p>
+
+<p><strong>須藤</strong>　えー。</p>
+
+<p><strong>笹田</strong>　map は背伸びなんだ (笑)</p>
+
+<p><strong>角谷</strong>　私の中では。関数型言語も知ってるよ、みたいな。</p>
+
+<p><strong>須藤</strong>　いやダメですよ。Ruby で map 使っちゃいけないですよ<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。</p>
+
+<p><strong>角谷</strong>　ダメなのか……。</p>
+
+<p><strong>笹田</strong>　だって collect って全然 collect っぽくないじゃん<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>。</p>
+
+<p><strong>須藤</strong>　集めてる感じするじゃないですか。</p>
+
+<p><strong>笹田</strong>　集めてるのって <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=Enumerable#select">Enumerable#select</a> っぽいんだけど。</p>
+
+<p><strong>須藤</strong>　select は選んでる感じしない？</p>
+
+<p><strong>笹田</strong>　これとこれとこれを集めるっていう感じで。</p>
+
+<p><strong>須藤</strong>　select して collect してるじゃないですか (笑)</p>
+
+<p><strong>笹田</strong>　やっぱり map だと写像っていう感じかなあ、と。</p>
+
+<p><strong>須藤</strong>　えーなんか Scheme っぽくなって嫌です。</p>
+
+<p><strong>笹田</strong>　だってあれ MatzLisp なんだから。</p>
+
+<p><strong>角谷</strong>　でも、まつもとさんは map じゃないんですよね<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>。違ったっけ？</p>
+
+<p><strong>須藤</strong>　collect 派じゃなかったでしたっけ。</p>
+
+<p><strong>角谷</strong>　あとはねえ、<a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=Module#const_get">Module#const_get</a> がびっくりしました。なんだこりゃ、と。Java とかやってるとね。</p>
+
+<p><strong>須藤</strong>　あー、リフレクションするんだ、と。</p>
+
+<p><strong>角谷</strong>　うん。びゅっとクラスが取れちゃって、うわっ、new できちゃった (笑)　インスタンス作れるんだ、みたいなのが。</p>
+
+<p><strong>卜部</strong>　const_get みたいなことは Java ではできないんですか。</p>
+
+<p><strong>角谷</strong>　できないのかな？ リフレクションでがんばればできると思うけど。</p>
+
+<p><strong>卜部</strong>　Java の処理系を作ったことがあるささださん的にはどうですか。</p>
+
+<p><strong>笹田</strong>　だってあれライブラリじゃん。リフレクションの話だからさ、リフレクションまでは手入れてなかったから。昔作ったときには。</p>
+
+<p><strong>角谷</strong>　クラス取ってきて new と同じようなことはできたと思いますけど、Ruby は定数もクラスも同じように取れちゃうじゃないですか。というかクラス名が定数という。あれが面白いっていうか、extend と近いびっくりを感じましたね。</p>
+
+<p><strong>須藤</strong>　メタっぽいのけっこう好きだったりするんですか。</p>
+
+<p><strong>角谷</strong>　映画が好きだったり Web に日記を書くような人間は大抵、自己言及が好きなんです。といっても私はメタは好きだけど、あまり使いこなせてない。さらに、他人の書いたメタはよく分からない。</p>
+
+<p><strong>笹田</strong>　嫌いなメソッドとかは？</p>
+
+<p><strong>角谷</strong>　嫌いというか、困るのがですね、Ruby コアのメソッドじゃないんですけど、 test/unit の  <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=Test%3A%3AUnit#assert_equal">assert_equal</a>。私は Java を書いてる時間が長いので、Java 書いた後に Ruby に戻ると assert_equals って書いていつも怒られる。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>須藤</strong>　あれはどっちがいいんですか。個人的に。</p>
+
+<p><strong>角谷</strong>　どっち、といっても、 Ruby は三単現の s はつけない派じゃないですか。だから……JUnit が assert_equal になってくれるのが理想 (笑)</p>
+
+<p><strong>笹田</strong>　Ruby に alias つけちゃえば早いんじゃないの？</p>
+
+<p><strong>須藤</strong>　いやでも、ここはるびまですから (笑)　Java が Ruby に合わせるということで。</p>
+
+<p><strong>角谷</strong>　あと、Java から戻ってくると、super が。Java だと super は親の参照だけど Ruby だと親のメソッド呼んじゃうのが混乱する。さらに、引数なしの super でハマる。引数そのまま親に渡っちゃうというのもよく忘れる。自分ではあんまり super は使わないんですけど、あんまり使わないので、逆に使う場合はいつもハマる。それくらいですかねえ。</p>
+
+<h4 id="ruby-との出会い">Ruby との出会い</h4>
+
+<p><strong>笹田</strong>　Rubyist になったきっかけはいつごろからでしたか。</p>
+
+<p><strong>角谷</strong>　まつもとさんと石塚さんの書いたアスキーの最初の本 (<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/41A6ZQVF71L._SL160_.jpg" />) が最初の出会い。</p>
+
+<p><strong>笹田</strong>　Ruby本？　1999 年。</p>
+
+<p><strong>角谷</strong>　といっても、買ったのは出版よりも少し後です。先日、まつもとさんにハチドリのハンコを押してもらうために、久々に書棚から出して確認したら三刷だった。なので、1999 年の終わりか、2000 年入ったか、それくらいの頃。</p>
+
+<p><strong>笹田</strong>　はい。</p>
+
+<p><strong>角谷</strong>　当時、私は Oracle の PL/SQL<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup> のバッチを書くプログラマで。PL/SQL よりもイマドキっぽいのをやりたいなぁと思ってて。その頃というのは、Java がサーバサイドで利用されて仕事にも使われはじめていた頃で。「これからはオブジェクト指向だ」と。あとその頃は、PL/SQL 以外ではちょっと Perl を書いてましたね。 Perl が楽しくて。</p>
+
+<p><strong>笹田</strong>　楽しかった？</p>
+
+<p><strong>角谷</strong>　スクリプト言語だから、書いてたらすぐ動くじゃないですか。PL/SQL みたいにめんどくさいコンパイルは要らなくて。それが面白くて。といっても、普通にダラダラと手続を並べて書いてたんですけど。で、Perl で難しかったのが、オブジェクト指向。これが全然分かんなくて。ぶ、bless？　はあ……みたいな感じで。躓いちゃいました。</p>
+
+<p><strong>卜部</strong>　たしかに、あれからオブジェクト指向に入門するのは辛いですね。</p>
+
+<p><strong>角谷</strong>　いちおう、 PL/SQL の前は PowerBuilder<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup> っていうちょっと変わった言語というか環境を仕事で使ってて、それもオブジェクト指向だったんですけど。</p>
+
+<p><strong>卜部</strong>　そんなんあるんだ。</p>
+
+<p><strong>角谷</strong>　新人の頃の仕事で。オブジェクト指向とは差分プログラミングである、みたいな資料を渡されてやってたんですけど、オブジェクト指向はよくわかってなかった。Java もオブジェクト指向だと聞いて触ってみたけど、それもやっぱりオブジェクト指向がよく分かんなかった。</p>
+
+<p>で、Ruby を触ったら、……ある日突然、わかった。どうしてわかったかはもう覚えてないですけど、オブジェクト指向って「ああこういうことか」という納得感は Ruby で体験した。</p>
+
+<p><strong>笹田</strong>　それは Ruby 本を読んで分かった？</p>
+
+<p><strong>角谷</strong>　いやいや、Ruby 本じたいは難しかったですよ。いまでもちゃんと理解できるかどうか (笑)　ただ、Ruby がきっかけになったことは確か。リファレンスのサンプルコード (あれはイイですね) を見ながら、irb を使ってプログラムをちょこちょこっと書いて。</p>
+
+<p><strong>笹田</strong>　使ってたら分かった、と。</p>
+
+<p><strong>角谷</strong>　そうそう。irb のオブジェクトと対話してる感じが良かったのかも。オブジェクト指向が分かった気になると、Ruby がもっと面白くなって。なので、当時にいっぱい出てた Ruby 関連本は片っ端から買ってました。</p>
+
+<p><strong>笹田</strong>　じゃあ Ruby 本棚があったりとか。</p>
+
+<p><strong>角谷</strong>　ありましたよ、っていうか今もある。須藤さんの (<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/510M962AQVL._SL160_.jpg" />) も持ってますよ。著者のふりがなが「スドウコウヘイ」って書いてあるやつ。</p>
+
+<p><strong>須藤</strong>　……ちょっと今日はその話題はナシで。</p>
+
+<p><strong>笹田</strong>　<a href="http://raa.ruby-lang.org/project/rexml">RAA:rexml</a> って読み方は レックスエムエル でいいんだっけ？</p>
+
+<p><strong>須藤</strong>　読めないですよね。私は、アールイーとかリとかいってましたよ。<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup></p>
+
+<p><strong>笹田</strong>　でも REXML って日本語のまとまった文献ってないですよね。</p>
+
+<p><strong>角谷</strong>　<a href="http://www.cozmixng.org/~kou/ruby/rexml/">須藤さんが翻訳した REXML のドキュメント</a>……こないだ見ようとしたら見れなかった<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>んですけど。</p>
+
+<p><strong>須藤</strong>　あれは訳がひどかったので、最近翻訳し直したんですよ。今はここ (<a href="http://pub.cozmixng.org/~kou/rexml-doc-ja/">REXML API document (ja)</a>) に置いてあります。前よりはましになったと思います。</p>
+
+<p><strong>角谷</strong>　REXML は難しいですね。使い方が Ruby っぽくないというか。うまく言えないんですけど……いつまでたっても使い方を覚えられない。</p>
+
+<p><strong>須藤</strong>　思い通り動かないんですよね。あれ。</p>
+
+<p><strong>角谷</strong>　インデックスの取り方とかよくわかんないです。</p>
+
+<p><strong>笹田</strong>　この前、REXML を 1.8 にしたら私の日記がなんか変になっちゃって。あとで直し方教えてください<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<h4 id="ruby-とのつきあい">Ruby とのつきあい</h4>
+
+<p><strong>笹田</strong>　現在の Ruby とのつきあいといいますと。</p>
+
+<p><strong>角谷</strong>　「Ruby Ruby 言ってる人」です。</p>
+
+<p><strong>笹田</strong>　エヴァンジェリスト？</p>
+
+<p><strong>角谷</strong>　エヴァンジェリストっていうとカッコいいですけど。「いま Ruby に投資しないことはリスクである」とか IT 投資を煽ったりして。エヴァンジェリストというと、広めてる人になんか経済的な利益がある感じがしますけど、私の場合は……なんか Ruby Ruby 言ってるだけ、という (笑)</p>
+
+<p><strong>須藤</strong>　利益あるじゃないですか。ここに呼ばれたっていう。</p>
+
+<p><strong>角谷</strong>　まあ、Ruby Ruby 言ってるだけでここまで来れたという意味では利益はあるか (笑)　こんな私でも呼んでくれる Ruby コミュニティはナイスですね。なので、Ruby とのつきあいは「Ruby Ruby 言ってる人」。言ってるだけ。エヴァンジェリストというか応援団。</p>
+
+<p><strong>笹田</strong>　応援団団長ということで。</p>
+
+<p><strong>須藤</strong>　いろんな団長してますね。</p>
+
+<p><strong>角谷</strong>　色々はしてないですよ。</p>
+
+<p><strong>須藤</strong>　いやー、してくれてるじゃないですか。Rabbit の応援団長。</p>
+
+<h4 id="入団の儀式">入団の儀式</h4>
+
+<p><strong>須藤</strong>　団長といえば、あげたいものがあるんですけど。ショッカー<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>のしるしを。ショッカーマニア。
+<img src="/images/0014-Hotlinks/shocker-mania350x255.jpg" alt="shocker-mania350x255.jpg" /></p>
+
+<p><strong>角谷</strong>　おっきいね、これ。</p>
+
+<p><strong>須藤</strong>　違うんですよ。中にちっちゃいショッカーが二十一体入ってるんです。ユーザーズグループにはいっぱい人がいるんで。すでに四体渡してますから。角谷さんには団長を (笑)
+<img src="/images/0014-Hotlinks/ceremony300x268.jpg" alt="ceremony300x268.jpg" /></p>
+
+<p>(贈呈される)</p>
+
+<p><strong>須藤</strong>　これで待ち合わせのときはみんなショッカー持って集合 (笑)</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<h4 id="ruby-とのかかわり-続">Ruby とのかかわり (続)</h4>
+
+<p><strong>卜部</strong>　自分で Ruby で書いたりはしないんですか。</p>
+
+<p><strong>角谷</strong>　コードを、ってことですか？　使うぶんには普通に。</p>
+
+<p><strong>笹田</strong>　何に使ってますか。</p>
+
+<p><strong>角谷</strong>　普段のこまごまとしたファイル弄りとか。仕事だと、ビルドとか自動化に Rake を。あとは Java ソースコードの生成。</p>
+
+<p><strong>須藤</strong>　おー、凄くメタじゃないですか。</p>
+
+<p><strong>角谷</strong>　メタっていうほどでは。 ダラダラ書いてある ERB のテンプレートに Java のクラス名を差してるだけ、とかそういうちっちゃいのが多いです。アプリケーションって言うよりは細かいスクリプト的な使い方が多い。</p>
+
+<h4 id="好きなところと嫌いなところ">好きなところと嫌いなところ</h4>
+
+<p><strong>笹田</strong>　Ruby の好きなところと嫌いなところ。</p>
+
+<p><strong>角谷</strong>　好きなところは楽しいところですかね。</p>
+
+<p><strong>笹田</strong>　楽しい。</p>
+
+<p><strong>角谷</strong>　やっぱ書いてて楽しいのと、癒される (笑)　最近は、仕事の周りでも Ruby に興味のある人とかでてきたので、Ruby の話をするんですよ。するとね、癒される。自分で仕事で辛いことがあったら、Ruby を書く。「ムシャクシャしてやった。Ruby だったら何でもよかった」と。</p>
+
+<p><strong>須藤</strong>　じゃあ、角谷さんがヘコんでそうなときは、そばに行って「いやぁ Ruby でさあ」って言えばもう (笑)</p>
+
+<p><strong>角谷</strong>　「なになに Ruby がどうしたの？」みたいな感じで。癒されると。</p>
+
+<h4 id="リファクタリングブラウザ欲しい">リファクタリングブラウザ欲しい！</h4>
+
+<p><strong>角谷</strong>　あとは、嫌いなところっていうわけでもないんですけど、リファクタリングブラウザが無い。Eclipse みたく気軽に使えるやつがなかなか出てこないなー、と。</p>
+
+<p><strong>笹田</strong>　大林さんのやつ<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>はダメ？</p>
+
+<p><strong>角谷</strong>　いやいや、ダメってわけではないんですけど。</p>
+
+<p><strong>須藤</strong>　Eclipse のやつの凄いところというか、使いやすいところっていうのはどういうところなんですか。リファクタリングブラウザの。</p>
+
+<p><strong>角谷</strong>　プロジェクトっていう単位で一貫してリファクタリングができるところですかね。名前変えたりとか。</p>
+
+<p><strong>笹田</strong>　それは型があるからできるんだよね。</p>
+
+<p><strong>角谷</strong>　ただ、リファクタリンクブラウザの故郷は Smalltalk だったりするんだけど、そのへんは Ruby 的にはどうなんですか？</p>
+
+<p><strong>笹田</strong>　どうするんだろう……え、できるの？</p>
+
+<p><strong>角谷</strong>　リファクタリングブラウザのそもそもは、たしか Smalltalk じゃなかったっけか。マーチン・ファウラーの<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51885S48YPL._SL160_.jpg" />で言及されてたのは Smalltalk のリファクタリングブラウザだったような。Smalltalk の宇宙ではそういうのも簡単にできるんですかねえ。私にはよくわからない世界なんですが。</p>
+
+<p>だから同じ動的言語なんだし Ruby にも凄いの出てくればいいのになー、と素人考えで思ってるんですが。<a href="http://capsctrl.que.jp/kdmsnr/wiki/rdt/">RDT</a> にはそこに期待してるんですが、、リファクタリング機能は後で、みたいな雰囲気で。 <a href="http://freeride.rubyforge.org/">FreeRIDE</a> にも RRB 対応みたいなことは書いてあったような気はしますが、どこまで対応してるんだろう……。商用の IDE が時どき出てきますが、どれもデバッガはみんな積んでるけど、リファクタリングブラウザは搭載していないような。出てこないかなー、リファクタリングブラウザ。すごく欲しい。</p>
+
+<p><strong>須藤</strong>　出ないかなー、出ない、出ない、……書いちゃおうかなー。</p>
+
+<p><strong>角谷</strong>　と言って、書けるとカッコいいんですけど (笑)　自分では全然、力足りないので。誰か作って。自分としても、<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51MQAYG70TL._SL160_.jpg" /> をちょっとずつ読んでみたんですけど。ところで、RHG はすごいですね。自分は全然ついていけないですけど。</p>
+
+<p><strong>笹田</strong>　RHG 読んでもリファクタリングブラウザはできないんじゃないかなあ…… Parser の構成がわかるとできるのか。</p>
+
+<p><strong>卜部</strong>　Parser の構造が分かんないとできないかもしれないけど、Evaluator のほうは別に知ってても意味がないと思う。</p>
+
+<p><strong>須藤</strong>　<a href="http://i.loveruby.net/w/Ripper.html">Ripper</a> とかあると楽になるとかそういうんじゃないんですかね</p>
+
+<p><strong>角谷</strong>　青木さんのサイトのドキュメントに、かつてはそんなことが書いてあったような気がするんですが。</p>
+
+<p><strong>笹田</strong>　最近、結城さん……じゃなくて、<a href="id:rubyco">id:rubyco</a> さんが書いてましたけど、Ruby には Pretty Print がないよね、と。Ruby スクリプトを読んできれいにする。<a href="http://perltidy.sourceforge.net/">PerlTidy</a> の Ruby 版。</p>
+
+<p><strong>角谷</strong>　ああ、Dr. Evil のコードをびゅーっと整形する感じの<sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>？　インデントは全部 3 になっちゃうとか。</p>
+
+<p><strong>須藤</strong>　えー、3 なんですかー嫌だなー。</p>
+
+<p><strong>笹田</strong>　それは設定で変えられるわけで。</p>
+
+<p><strong>須藤</strong>　でも、デフォルトは 3 なんですよね。</p>
+
+<h4 id="コーディング規約">コーディング規約</h4>
+
+<p><strong>角谷</strong>　それで思いだしたんですけど、Ruby の良いところは、コーディング標準っていうかコーディング規約が「好きにしろ」っていうのがコーディング規約なところが。</p>
+
+<p><strong>卜部</strong>　前田さんが……。</p>
+
+<p><strong>角谷</strong>　前田さん (<a href="http://shugo.net/ruby-codeconv/codeconv.html">Rubyコーディング規約</a>) や青木さん (<a href="http://www.loveruby.net/w/RubyCodingStyle.html">RubyCodingStyle</a>) がまとめてくれてたりはするんですが、それはそれとして、Matz 日記には「自分で勝手に決めて」(<a href="http://www.rubyist.net/~matz/20041006.html#p02">Matzにっき(2004-10-06) コーディングスタンダード</a>) と。そうゆう規約なんだ、と。</p>
+
+<p><strong>笹田</strong>　(笑)</p>
+
+<p><strong>須藤</strong>　じゃあ、変数名はどういうふうにつけるんですか。角谷さんはときどき camelCase で変数名をつけてますけど。</p>
+
+<p><strong>角谷</strong>　あれはですね、Java で書いてた直後に Ruby を書いたりするとですね、ローカル変数名とかメソッド名を camelCase で書いちゃったりするんです。Java の残り香で。</p>
+
+<p><strong>須藤</strong>　じゃあ、角谷さんが camelCase で書いてたら、もう</p>
+
+<p><strong>角谷</strong>　「さっきまで Java 書いてたんだな」と。</p>
+
+<h4 id="エディタ選びの基準">エディタ選びの基準</h4>
+
+<p><strong>須藤</strong>　エディタは何使ってるんですか？</p>
+
+<p><strong>角谷</strong>　エディタ基本的には Emacs<sup id="fnref:20"><a href="#fn:20" class="footnote">20</a></sup>。最近は背伸びして vim も少々。</p>
+
+<p><strong>笹田</strong>　じゃあ rrb でいいじゃん (笑)</p>
+
+<p><strong>角谷</strong>　リファクタリング対象をあらかじめ全部バッファで全部開いとかないといけない、というのがちょっと……。やっぱあれだなあ、IDE っていうか……</p>
+
+<p><strong>須藤</strong>　Java のときは IDE なんですか？</p>
+
+<p><strong>角谷</strong>　Java のときは IDE ですね。Eclipse。</p>
+
+<p><strong>笹田</strong>　NetBeans は？</p>
+
+<p><strong>角谷</strong>　NetBeans は、<a href="http://arton.no-ip.info/diary/">arton さん</a>や<a href="http://d.hatena.ne.jp/nowokay/">きしださん</a>がイイって言ってるので「いいのかー」とは思ってますけど。少し前に試したときはリファクタリングがまだイマイチだったので。といっても、NetBeans4 の頃なので。今はまた違ってると思います。結局、私にとっては、IDE というかリファクタリングなんですよ。</p>
+
+<p><strong>須藤</strong>　一番普段使うのが？</p>
+
+<p><strong>角谷</strong>　リファクタリングをどれだけ手軽にできて、単体テストと統合されてるか。テストとリファクタリングがアジャイルなコーディングの両輪なので。ここが充実してくれば NetBeans もいいんじゃないかなと。</p>
+
+<h4 id="事例">事例</h4>
+
+<p><strong>笹田</strong>　では Ruby を使って成功だったとか、うまくいった事例というのはなにかありますか？</p>
+
+<p><strong>角谷</strong>　事例と呼べるようなものは特に無くて……プロジェクトの中の自動化の作業に混ぜてます。他は……昔 PL/SQL で バッチを書いてときに PL/SQL のユニットテストのフレームワークみたいなやつをがんばって Ruby で書いてました。</p>
+
+<p><strong>卜部</strong>　それは凄そうですね。</p>
+
+<p><strong>角谷</strong>　実際は凄くないですよ。バッチで帳票を出力するんですが、その帳票はテキストファイルなんですよ。データベースからデータ取ってきて加工して、テキストで A4 ぴっちりにレイアウトする。改ページとかも入れながら。そのテキスト出力を検証するだけなので。</p>
+
+<p><strong>須藤</strong>　それの公開は？</p>
+
+<p><strong>角谷</strong>　公開はしてない、というか、自分の力ではそこまで仕上げられなかったですねえ。あくまで自分用。それが多分、仕事に混ぜた一番最初の事例かなあ。そのときはすごく仕事が楽しかったです。</p>
+
+<p><strong>笹田</strong>　仕事の自動化には Ruby 以外で何か使わないんですか？</p>
+
+<p><strong>角谷</strong>　Java ……っていうか <a href="http://maven.apache.org/">Maven</a><sup id="fnref:21"><a href="#fn:21" class="footnote">21</a></sup>。</p>
+
+<p><strong>須藤</strong>　<a href="http://ant.apache.org/">Ant</a><sup id="fnref:22"><a href="#fn:22" class="footnote">22</a></sup> 捨てたんですか？</p>
+
+<p><strong>角谷</strong>　Ant はねえ。大変ですね。依存ライブラリの管理と XML が。XML は Maven でも大変ですけど。</p>
+
+<p><strong>笹田</strong>　なるほど。Java と Ruby。シェルスクリプトは使わないですか。</p>
+
+<p><strong>角谷</strong>　シェルスクリプトはあんまり書かないです。シェルスクリプトを書くような場面でも Ruby で書いちゃえ、みたいな。最近はそれもいかんな、ということでちょっとずつシェルスクリプトも書いてますけど。</p>
+
+<h4 id="キラーアプリ">キラーアプリ</h4>
+
+<p><strong>ささだ</strong>　Ruby でキラーアプリというと。</p>
+
+<p><strong>角谷</strong>　Rabbit (即答)。</p>
+
+<p><strong>須藤</strong>　やらしい (笑)</p>
+
+<p><strong>角谷</strong>　Rabbit といえば、私は「Rabbit！　Rabbit！」と触れて回っていることもあって、時どき「Rabbit 面白そうなので使ってみたいんですけど……」っていう方に会うんです。そこで話を聞いてみると、大抵みなさん Mac や Windows を使っているんですが、インストールで死屍累々。あれはどうしたらいいんですかね？ ちょっと気になってます。</p>
+
+<p><strong>須藤</strong>　対応したほうがいいとは思うんですけど、私が困ってないというのが一番大きい。</p>
+
+<p><strong>角谷</strong>　私も Debian なので困ってないんですよ。</p>
+
+<p><strong>須藤</strong>　困ってる人が作ってくれればいいのに。オープンソースなんだから。</p>
+
+<p><strong>卜部</strong>　とりあえず Gems になってればいいんじゃない？</p>
+
+<p><strong>須藤</strong>  Gem とか Rabbit とかの話の前に Ruby/GTK2 の問題がデカい。</p>
+
+<p>(その後、木村さんが Mac OS X のパッケージシステムである DarwinPorts 用に <a href="http://kimuraw.txt-nifty.com/d/2006/04/rabbit_ready.html">Rabbit の Portfile</a> と<a href="http://homepage.mac.com/kimuraw/archive/rabbit-0.4.1-ppc.tar.bz2">バイナリ</a>を作成してくれました。次は Windows 上で One-Click-Rabbit-Installer ？)</p>
+
+<p><strong>角谷</strong>　キラーアプリは Rabbit と、あと Rake。</p>
+
+<p><strong>須藤</strong>　Rake 推してますね。</p>
+
+<p><strong>笹田</strong>　Rabbit は置いておいて。</p>
+
+<p><strong>角谷</strong>　いやいや置かないでください (笑)　Rabbit もそうだし、Rake でしょ、それから <a href="http://www.tdiary.org">tDiary</a> 、あと <a href="http://hikiwiki.org">Hiki</a> 。それと <a href="http://bsfilter.org">bsfilter</a>。</p>
+
+<p><strong>須藤</strong>　bsfilter 派だったんですか？</p>
+
+<p><strong>角谷</strong>　スパムフィルタっていろいろありますよね。 spamassasin とあと……ええと、三つとか四つとか。名前が出てきませんが。その中で Ruby で実装されてたのが bsfilter だけだった。</p>
+
+<p><strong>笹田</strong>　重そうで使ってないんですけど…… Ruby が重そうで (笑)</p>
+
+<p><strong>須藤</strong>　それを速くするのがあなたの仕事じゃないですかあ。</p>
+
+<p><strong>笹田</strong>　bsfilter は全部 Ruby で書いてあるんですか？</p>
+
+<p><strong>角谷</strong>　全部 Ruby なんじゃないかなあ。隅から隅までは見てないですけど。</p>
+
+<p><strong>須藤</strong>　Gem とかは？</p>
+
+<p><strong>角谷</strong>　Gem については、私は「便利じゃん」と思ってるんですが。私なんかよりも、みなさんはどう思われてるんですか (笑)？</p>
+
+<p><strong>笹田</strong>　Rails 入れるときに (笑)</p>
+
+<p><strong>卜部</strong>　みんながあれに乗ればきっと便利なんでしょうね。</p>
+
+<p><strong>須藤</strong>　……なんか気持ち悪いんですよね。</p>
+
+<p><strong>角谷</strong>　やっぱり setup.rb？</p>
+
+<p><strong>須藤</strong>　ちゃんとインストールしてる感が欲しい。</p>
+
+<p><strong>笹田</strong>　apt ぐらいまできちんと整備されると凄くいいですよね。</p>
+
+<p><strong>須藤</strong>　なんか前そういうのなかったでしたっけ、apt 風 Ruby のパッケージマネージャーみたいなの<sup id="fnref:23"><a href="#fn:23" class="footnote">23</a></sup></p>
+
+<p><strong>卜部</strong>　apt 風まで行かなくていいから CPAN<sup id="fnref:24"><a href="#fn:24" class="footnote">24</a></sup> くらいになってほしいんですけど。</p>
+
+<p><strong>角谷</strong>　CPAN みたいなのは Ruby にはないんですかねえ。Ruby には昔から RAA がありますけど、Perl の人たちが CPAN に言及するのとはまた違うし。こないだの <a href="http://jp.rubyist.net/PerlMa/wiki.cgi?page=20060401%2DYAPCAsiaReport">YAPC::Asia</a> に行って改めて感じた……というか Perl の人たちの話を聞くたびにいつも思うんですけど、やはり Perl の人たちは CPAN が好きなんだなあ、というか、あれが Perl の強さというか。</p>
+
+<p><strong>須藤</strong>　二言目には「CPAN 見ろよ」</p>
+
+<p><strong>笹田</strong>　Perl じゃなくて CPAN かよ (笑)</p>
+
+<p><strong>角谷</strong>　あれぞ文化ですね。すごい。「Perl って CPAN 使うのに要るやつだよね」みたいな。</p>
+
+<p><strong>笹田</strong>　CPAN は非常にいいですよね。Ruby への指摘として、CPAN はドキュメントのフォーマットがきちんと決まってる、と。だから Ruby でもきちんと何と何と何を書くっていうの決まってるといいんじゃないの、と。</p>
+
+<p><strong>角谷</strong>　そのへんは Ruby 方面の人たちはどうなの (笑)？</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>角谷</strong>　やはり「ドキュメントが無ければソースを読めばいいじゃない」っていう？</p>
+
+<p><strong>笹田</strong>　いやそれはないと思うけど。</p>
+
+<p><strong>須藤</strong>　でも Ruby だとドキュメント読んでもちょっとわかんないことがあるとソース見ちゃいません？　C だと見ないんですよ。手元にないから。</p>
+
+<p><strong>角谷</strong>　ああ、Ruby は見るよね。ていうか Rabbit は、ソース読まないとテーマが書けませんが (笑)</p>
+
+<h4 id="ruby-の習得">Ruby の習得</h4>
+
+<p><strong>笹田</strong>　Ruby の習得は簡単でしたか。</p>
+
+<p><strong>角谷</strong>　あんまり使い倒してないってところもあるかもしれないですけど。つまったとかはなかったです。Ruby の前に<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51C59GNSC3L._SL160_.jpg" />だとか<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51CF5F9VFRL._SL160_.jpg" />だとかを読んでいたのが、自分としては助かったかなあ。</p>
+
+<p><strong>須藤</strong>　基本的な概念とか？</p>
+
+<p><strong>角谷</strong>　そうそう、スクリプト言語としての雰囲気がわかった。</p>
+
+<p><strong>笹田</strong>　さっきのリフレクション系っていうのは。あれもすんなりサクサク分かりました？</p>
+
+<p><strong>角谷</strong>　すんなりは分からないですよ。</p>
+
+<p><strong>笹田</strong>　リファレンスマニュアルをじっくり読んで「なんだこれは！」っていう感じ？</p>
+
+<p><strong>角谷</strong>　そそそ。</p>
+
+<p><strong>卜部</strong>　const_get って Ruby 本に書いてあったっけ？</p>
+
+<p><strong>角谷</strong>　Ruby 本には無かったと思いますけど、って覚えてないだけかもしれませんが。ruby-list あたりには時々出てきてましたよね、const_get の話題。で、手元でやると「うわなんだこれ」と (笑)</p>
+
+<p><strong>卜部</strong>　const_get 最初知らなくて。ObjectSpace を linear search して書いていたとかしたことがあるので (<a href="http://mput.dip.jp/mput/?date=20040908#p01">mputの日記。 - 文字列 =&gt; クラスには const_get が使えたのか!</a>)。const_get とかがあるとか知ってこれは凄いと思ったけどね。</p>
+
+<p><strong>笹田</strong>　ブロックはすぐにわかりましたか。</p>
+
+<p><strong>角谷</strong>　ブロックって最初は難しいですよね。コードに書かれる処理って、プログラムの流れでだんだん奥に進んでいく感じだけど、ブロックの場合は、そうなってなくて。奥じゃなくて手元のコードかよ、と。</p>
+
+<p><strong>笹田</strong>　ループはすぐ書けました？　Ruby には C の for 文がないじゃないですか。</p>
+
+<p><strong>角谷</strong>　それはもう each。 each すばらしいですね。</p>
+
+<p><strong>笹田</strong>　私は times を知らなくて n 回ループが書けなくて:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> n = 0
+ while(n &lt; 10) do
+    ...
+    n += 1
+ end</code></pre></figure>
+
+<p>で。++ がねえ、と。</p>
+
+<p>最初、そんな感じで。ブロックを知ったころから何とかわかるようになってきたんだけど、それまでがすごく長かったですね……私の話はいいんだ。じゃあ、ブロックではそんなにはつまずかなかった、と。</p>
+
+<p><strong>角谷</strong>　「ああ、そうか」みたいな理解はだいぶ経って後からついてきたと思います。ただ、私は Ruby では Perl と違って、ある時点で何かが分からなくて投げ出しちゃった、みたいなことはなかったです。分からないところはいっぱいあるんだけど、まあ動いちゃうしみたいな。</p>
+
+<h3 id="プログラミング全般">プログラミング全般</h3>
+
+<h4 id="はじめて書いたコード">はじめて書いたコード</h4>
+
+<p><strong>笹田</strong>　はじめてコード書いたのはいつですか。</p>
+
+<p><img src="/images/0014-Hotlinks/kakutani300x225.jpg" alt="kakutani300x225.jpg" /><strong>角谷</strong>　沖縄に叔父がいて、彼がアマチュア無線とかそういうのが好きな人で、母屋から離れたところにプレハブで建てた自分の城みたいなのがあって。そこにパソコンも置いてあったんですね。その部屋に雑誌が置いてあったんですよ。プログラムのリストが載ってたような雑誌が昔はありましたよね。で、夏休みに祖母のところに遊びに行った時には、その短かいものを打ち込んでました。</p>
+
+<p><strong>須藤</strong>　じゃあだいぶ若かったんですか？</p>
+
+<p><strong>角谷</strong>　多分小学校……何年生だったのかな。少なくともアルファベットは読めなかった。同じ記号というか同じ絵のやつを、パズル感覚で。</p>
+
+<p><strong>笹田</strong>　そもそも、なんで打とうというモチベーションが……。</p>
+
+<p><strong>角谷</strong>　暇だったんです (笑)　やってみようと思ったのか、教えてもらったのか、どっちだったか覚えてないんですけど。一生懸命リストと突き合わせしてたことは覚えてます。「A」すらも読めない。山になって、そこに横棒が、とか、そういうレベルで。何日もかけて、ひたすら打ち込みと突き合わせ。夏休みの間はずっーと祖母のところにいたんで、時間はあった。一ヶ月以上。夏休みの最初のほうは色々連れていってもらえるんでいいんだけど、だんだん暇になってくる。すると日がな一日そういうのをやってました。</p>
+
+<p><strong>笹田</strong>　それは何に打ってたんですか？</p>
+
+<p><strong>角谷</strong>　たぶん NEC のやつだと思いますけど。色が NEC のパソコンの色だった。</p>
+
+<p><strong>笹田</strong>　ベージュの？</p>
+
+<p><strong>角谷</strong>　そうそう。それが最初です。</p>
+
+<h4 id="ruby-以外のプログラミング言語">Ruby 以外のプログラミング言語</h4>
+
+<p><strong>笹田</strong>　Ruby 以外のプログラミング言語と言うと？</p>
+
+<p><strong>角谷</strong>　Java です (即答)。</p>
+
+<p><strong>卜部</strong>　そのほかは？</p>
+
+<p><strong>角谷</strong>　言語そのものはあまりやらないんですよね。よくないなあと思ってるんですけど。最近は流行に乗って Haskell を少々。</p>
+
+<p><strong>笹田</strong>　JavaScript じゃないんだ。</p>
+
+<p><strong>角谷</strong>　JavaScript もいいんだけど、一人前の Rubyist になるにはやっぱり Haskell かなあ、みたいな<sup id="fnref:25"><a href="#fn:25" class="footnote">25</a></sup>。</p>
+
+<p><strong>須藤</strong>　Haskell いいですか？</p>
+
+<p><strong>角谷</strong>　Haskell 面白いですね、やっとちょっと面白さが……。</p>
+
+<p><strong>卜部</strong>　おお、Haskell の面白さが分かるレベルまで達しているとは<sup id="fnref:26"><a href="#fn:26" class="footnote">26</a></sup>。</p>
+
+<p><strong>角谷</strong>　Ruby とはぜんぜん違うじゃないですか。あれが新鮮。Haskell は型推論がすごいですね。Haskell の中の人が頑張ってる感じが面白い。</p>
+
+<h4 id="美しかった-あるいはキモかった-ソース">美しかった (あるいはキモかった) ソース</h4>
+
+<p><strong>笹田</strong>　では次。今まで呼んだソースで一番美しかったものは。</p>
+
+<p><strong>角谷</strong>　美しいかどうかはよく分からないですけど、 <a href="http://rspec.rubyforge.org">RSpec</a> っていう BDD<sup id="fnref:27"><a href="#fn:27" class="footnote">27</a></sup> のフレームワークがあって。BDD といっても、要するにテスティング・フレームワークなんですが。</p>
+
+<p><strong>須藤</strong>　あの気持ち悪いやつですね。</p>
+
+<p><strong>角谷</strong>　そうそう。そこでは期待値を:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (1 + 1).should.be 2</code></pre></figure>
+
+<p>って書ける。で、中を見たら Object に should とか定義したモジュールを include してて。そう来ますか、と。 should.not.be とか書けちゃって。</p>
+
+<p><strong>笹田</strong>　せめてアンダースコアかなんか should_be とかするといいのかなとか<sup id="fnref:28"><a href="#fn:28" class="footnote">28</a></sup>。でも、それを定義してる RSpec のソースは美しくはないよね (笑)</p>
+
+<p><strong>角谷</strong>　まあ、美しくはないかも……。</p>
+
+<p><strong>笹田</strong>　でも、それを使って書けるコードは美しいといえるかもしれないですね。</p>
+
+<p><strong>角谷</strong>　個人的にはそっちのほうが大事。</p>
+
+<p><strong>須藤</strong>　角谷さんはソースコードの見た目けっこう大事にしますよね。こういう風に見えるように書きたいとか。</p>
+
+<p><strong>角谷</strong>　Rabbit のテーマにブツブツ文句言ってるのとかそうですね。でも、テストを先に書くようになると、だんだんそういう考え方になっていきませんか？　こんなふうになると、書きやすいよね、っていうか使いやすいよね、っていうか読みやすいね、と。</p>
+
+<p><strong>須藤</strong>　でも、私は括弧は省略したくないんですよね。</p>
+
+<p><strong>笹田</strong>　えー<sup id="fnref:29"><a href="#fn:29" class="footnote">29</a></sup>。</p>
+
+<p><strong>須藤</strong>　ささださんに嫌われる要素が増えた (笑)</p>
+
+<h4 id="g-からはじまる言語について">G からはじまる言語について</h4>
+
+<p><strong>笹田</strong>　ちなみに Groovy はどこへ行ってしまったんでしょうか。角谷さんの中でどこらへんに……。</p>
+
+<p><strong>角谷</strong>　あれは良いプログラミング言語でしたね (棒読みで)。</p>
+
+<p><strong>笹田</strong>　もう一切、手を引いちゃってる？ 引退？</p>
+
+<p><strong>角谷</strong>　そもそも引退もなにも大した活動もしてないですし。あきらめたっていうか、当時 (2004 年頃) は、Ruby で仕事するというか、納品するコードが Ruby というのは全然考えられなくて。個人的には Ruby で仕事できたらなあ、とは思ってましたけど、SI という産業の構造というか、ある技術を採用しない理由は幾らでも挙げられるので、なかなか難しくて。自分がヘタレだというのもありますが。</p>
+
+<p>ところが、Groovy だと JVM 上で動いて、Duck Typing みたいなのことやブロックみたいなのが使えるというのが個人的にツボで。<a href="http://kakutani.com/articles/LLW2004-LanguageUpdate-Groovy.live.pdf">LL Weekend で高井さんの代打で発表</a> した頃だから……もう一昨年？　2004 年、あの当時は「これだ!!」と思ってましたけど。その後ねえ、Ruby 本体がボーンと来ちゃったので、だったら Ruby で、と (笑)　JSR になってから文法も変わっちゃって Ruby っぽくなくなっちゃったし<sup id="fnref:30"><a href="#fn:30" class="footnote">30</a></sup>。</p>
+
+<p><strong>須藤</strong>　Rails 様様。</p>
+
+<p><strong>角谷</strong>　Rails 様様。流行は凄いですね。流行るっていいね (笑)</p>
+
+<p><strong>笹田</strong>　ほんと Rails 様様ですよね。</p>
+
+<h3 id="生い立ち">生い立ち</h3>
+
+<p><strong>笹田</strong>　生い立ちを切々と語っていただきたいんですが。</p>
+
+<p><strong>角谷</strong>　生い立ちは語ることないんですよね。小中高大。大学出るまで実家にいて。</p>
+
+<p><strong>笹田</strong>　小学校とかで興味持っていたこととか覚えてますか？</p>
+
+<p><strong>角谷</strong>　いや……ちっちゃいときっていうか学生時代のこととか、覚えてないというか、思い出したくないみたい (笑)</p>
+
+<p><strong>笹田</strong>　喋りたくない過去がたくさんあるんですか？</p>
+
+<p><strong>角谷</strong>　特に語るようなことはないというか。平凡。</p>
+
+<p><strong>卜部</strong>　体を動かすほうが好きだったとか。</p>
+
+<p><strong>角谷</strong>　それはもう大っ嫌いでした。運動全然ダメです。球技とか。サッカーとかまけたら私のせいでしたから (笑)</p>
+
+<p><strong>須藤</strong>　それいじめられてたんじゃないですか (笑)</p>
+
+<p><strong>笹田</strong>　じゃあ、本とか読んでました？</p>
+
+<p><strong>角谷</strong>　本とかもねえ、読んでましたねえ。図書館の本とかを。</p>
+
+<p><strong>卜部</strong>　特にどんな分野を？</p>
+
+<p><strong>角谷</strong>　あんまり鮮明に覚えてない。幼い頃の記憶が……やっぱり、いじめられてたからか？ いじめられてたのかなぁ、俺。そんなことないと思うんだけど。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　でも PC との出会いっていうのは小学校の頃にあったんですよね？</p>
+
+<p><strong>角谷</strong>　そうですね、さっきの沖縄の叔父がね、要らなくなったパソコンを送ってきてくれたんです。着払いで (笑)　まあ、欲しいな、とは言ってたんですけど。で、着払い。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>角谷</strong>　でも、プログラミングとかじゃなくてゲームとかでしたねえ、使い道は。</p>
+
+<p><strong>卜部</strong>　雑誌のダンプを打ち込んだりとかしてない？</p>
+
+<p><strong>角谷</strong>　アルファベット読めるようになってからは打ち込んだりとかはしてないですねえ。根気がないから。</p>
+
+<h4 id="陸上部">陸上部</h4>
+
+<p><img src="/images/0014-Hotlinks/interview300x225.jpg" alt="interview300x225.jpg" /><strong>笹田</strong>　中学校とかでなんか部活とかはしてましたか？</p>
+
+<p><strong>角谷</strong>　陸上部でした。</p>
+
+<p><strong>笹田</strong>　陸上部仲間だ。なにしてました？</p>
+
+<p><strong>角谷</strong>　根気がないので短距離です。そんな速くもなかったしね。あと球技がダメなんですよ。</p>
+
+<p><strong>笹田</strong>　でも運動が嫌いだって言う割には……。</p>
+
+<p><strong>角谷</strong>　ここでやんないとと思ったんでしょうね。体を動しとかないと、と思った。</p>
+
+<p><strong>須藤</strong>　ささださんは陸上部で何をやってたんですか？</p>
+
+<p><strong>笹田</strong>　ああ、長距離……だったんだけど、根性がないので中距離。</p>
+
+<p><strong>角谷</strong>　中距離って 400 とか 800 でしょ？　しんどいじゃないですか<sup id="fnref:31"><a href="#fn:31" class="footnote">31</a></sup>。</p>
+
+<p><strong>笹田</strong>　いやだって、五キロとか走りたくないじゃん。だらだら走るのがなんか嫌でした。短距離は短距離ですぐ終わっちゃうので。</p>
+
+<p><strong>角谷</strong>　短距離は、すぐ終わるからいっぱい走らされるんですよね。すごく嫌だった。もう一生分走ったなあ。</p>
+
+<p><strong>笹田</strong>　では、高校。</p>
+
+<p><strong>角谷</strong>　高校ではなんもしてないです。帰宅部。</p>
+
+<p><strong>笹田</strong>　なんか思い出は……</p>
+
+<p><strong>角谷</strong>　思い出は、ないねえ。</p>
+
+<p><strong>笹田</strong>　いわゆる理系と文系で分けたら？</p>
+
+<p><strong>角谷</strong>　ぜんぜん文系です。数学とか全然できなかった。今も当然できないですけど。</p>
+
+<p><strong>笹田</strong>　じゃあなんだろう、それこそパソコンとか。パソコンはその頃だとまだ高嶺の花っていうかんじですかね？</p>
+
+<p><strong>角谷</strong>　パソコンは買ってもらった。パソコンあれば何でもできるんだみたいな、みたいなことを熱く語って。でも実際は、あんまり使いこなせてなかったという。ゲームするかワープロ。</p>
+
+<h4 id="大学時代">大学時代</h4>
+
+<p><strong>笹田</strong>　では、大学時代。</p>
+
+<p><strong>角谷</strong>　これまた、大学は思い出が……あるけどあんまり喋りたくない。</p>
+
+<p><strong>一同</strong>　(笑)</p>
+
+<p><strong>笹田</strong>　大学は何系ですか？</p>
+
+<p><strong>角谷</strong>　大学は法学部です。法学部だけど法律じゃなくて、政治と行政。</p>
+
+<p><strong>笹田</strong>　じゃあ国家公務員とか目指してたんですか？</p>
+
+<p><strong>角谷</strong>　回りはみんなそういう人たちが多かったですね。ゼミとか語学のクラスで自己紹介すると、国家公務員とか司法試験とか行政書士が……とか言うのばっかりで。なんだお前らケッって思ってて (笑)</p>
+
+<p><strong>笹田</strong>　角谷さんなんでそこにいったんですか？</p>
+
+<p><strong>角谷</strong>　消去法で。とりあえず文系。でも、文学部は就職が大変そうだなーとか、社会学部とかも、なんか華やかそうでちょっとねー、みたいな。</p>
+
+<p><strong>笹田</strong>　え、国家公務員になりたいというわけで入ったわけではない？</p>
+
+<p><strong>角谷</strong>　壮大な目的とかもなく……。しかも大学ってほとんど行ってなくて。大学時代は学習塾でバイトしてて。そっちにずっと入り浸り。それで留年までして。親には迷惑かけました。</p>
+
+<p><strong>笹田</strong>　塾の先生？</p>
+
+<p><strong>角谷</strong>　先生は、ときどきやるくらいで (笑)　主に事務です。事務で学生のバイトがいっぱいいて。そこがサークルみたいな感じで。関西のいろんな大学の学生がそこでバイトしてました。</p>
+
+<p><strong>須藤</strong>　そっちは大好きだったんですね</p>
+
+<p><strong>角谷</strong>　大好きというか、お金もらえるから (笑)</p>
+
+<p><strong>笹田</strong>　じゃあ塾で働くとかそういう選択肢とかなかったですか。就職されるときに。</p>
+
+<p><strong>角谷</strong>　うん。なかったです。塾で自分がやっていける自信は無くて。私の授業はあんまり評価も良くなかったし。</p>
+
+<h4 id="si-ベンダーに就職">SI ベンダーに就職</h4>
+
+<p><strong>角谷</strong>　で、留年していわゆる SI ベンダーと言われるところに就職して。</p>
+
+<p><strong>笹田</strong>　それはなんで？</p>
+
+<p><strong>角谷</strong>　大学のときにモデム買ったんですよ。パソコン通信。パソコン通信はあんまりよくわかんないっていうか、なんか、怖いところだなあと。ニフティで喧嘩をよく眺めてました。</p>
+
+<p><strong>笹田</strong>　法学部から SI ベンダーってあんまりいなかったんじゃないですか？</p>
+
+<p><strong>角谷</strong>　いや、私の頃はもう割とそういう流れが出来つつある感じでしたけどね。まわりも理系ばかりというわけでもなくて。なので、本格的なプログラミングは就職してから。社会人デビュウ。</p>
+
+<p><strong>須藤</strong>　なんで東京だったんですか？</p>
+
+<p><strong>角谷</strong>　東京に行きたかった。実家から逃げ出したくて。</p>
+
+<p><strong>須藤</strong>　でも都会を離れたくない。</p>
+
+<p><strong>角谷</strong>　東京は本屋と映画館がいっぱいあるから。</p>
+
+<p><strong>卜部</strong>　映画にはもうそのとき目覚めていたんですか。</p>
+
+<p><strong>角谷</strong>　そうですねえ高校の終わりくらいからかな。</p>
+
+<p><strong>笹田</strong>　どんな映画を？</p>
+
+<p><strong>角谷</strong>　邦画洋画アジア映画。</p>
+
+<p><strong>笹田</strong>　とにかく見る？　手当たり次第。</p>
+
+<p><strong>角谷</strong>　手当たり次第とまではいわないけど。</p>
+
+<p><strong>須藤</strong>　誰かのお勧めだったら見るとかいうやつだったんですか。自分で探しに行くとか。雑誌とか読んでたとか。</p>
+
+<p><strong>角谷</strong>　それはもう<a href="http://www.yosensha.co.jp/hihotop.html">映画秘宝</a>とかで。</p>
+
+<h4 id="ペアプログラミングの世界">ペアプログラミングの世界</h4>
+
+<p><strong>笹田</strong>　えーと普段の仕事って何してるんですか。言える範囲で。</p>
+
+<p><strong>角谷</strong>　Java でアジャイルっぽい感じのことを。今はプロダクト作る手伝いやってます。ペアプロ。</p>
+
+<p><strong>笹田</strong>　五時に帰って？</p>
+
+<p><strong>角谷</strong>　五時じゃないですけど、あんまり残業はしない。</p>
+
+<p><strong>卜部</strong>　オンサイト顧客はどうするんですか？</p>
+
+<p><strong>角谷</strong>　オンサイト顧客は、仕様を握ってる人が一緒にいるので、聞きながらやっていく。</p>
+
+<p><strong>笹田</strong>　ペアプロってずっと付きっ切りですか。付きっ切りっていうかずっと二人？ 気疲れしませんか？</p>
+
+<p><strong>角谷</strong>　疲れます。疲れるけど……でも、もう私は一人でコード書いてもろくなことがないので。</p>
+
+<p><strong>笹田</strong>　ほんとにずっと朝から晩までペアプロですか？</p>
+
+<p><strong>角谷</strong>　朝から晩までっていうか、まず、朝ミーティングを立ってやって。一定の時間のあとに三十分休憩で区切って、という感じで。今のチームは二時間でやってるんですけど、以前のチームは一時間半でした。</p>
+
+<p><strong>笹田</strong>　二時間で三十分休んで二時間。</p>
+
+<p><strong>角谷</strong>　そんな感じです。朝は一コマ分やって昼休み。昼休みは一時間半。で、午後またもう二時間やって、三十分休憩して、最後にもう一セッションしたらちょうど夕方。</p>
+
+<p><strong>笹田</strong>　休みが三十分って、けっこう時間は贅沢に使うんですね。それくらい休みがないとやっていけない？ 二人でいると緊張するからとか？</p>
+
+<p><strong>角谷</strong>　純粋に疲れる。ずっと喋ってたりするので、それくらいは休憩がないとやってらんない。だんだん頭がもわーんとしてきて、夕方くらいになると使いものにならなくなる。だから、これでもやりすぎなんじゃないかなー、と思うこともあります。</p>
+
+<p><strong>笹田</strong>　ちなみにそれは毎日？</p>
+
+<p><strong>角谷</strong>　コードを書くときは基本的に。ただ、完全に毎日というわけでもなくて。ミーティングもやるし、作業はコードを書くことだけでもないので。</p>
+
+<p><strong>一同</strong>　「疲れるね」「聞いてるだけで疲れた」</p>
+
+<p><strong>須藤</strong>　最初に就職した会社でもそういうのは同じだったんですか？</p>
+
+<p><strong>角谷</strong>　前の会社はまだそういうムーヴメントが来る前だったので。</p>
+
+<p><strong>須藤</strong>　アジャイルに目覚めてから会社移動したんですか？</p>
+
+<p><strong>角谷</strong>　そうですね。アジャイルっぽいことがやりたくて今の会社に拾ってもらった。</p>
+
+<p><strong>笹田</strong>　ちなみに、まあちょっとあれな話ですけど。前の会社と今の会社って待遇はどっちがいいんですか。</p>
+
+<p><strong>角谷</strong>　待遇は特に変わってないです。</p>
+
+<p><strong>笹田</strong>　じゃあ転職してよかったっていう感じですか？</p>
+
+<p><strong>角谷</strong>　そうですね。このインタビュイーの席まで来ることができたのも、転職したからだともいえるので。転職する前は、ひねくれてたんですよね。自分の仕事を憎んでいて。とっとと仕事は終わらせて、家に帰って自分の好きなことやろう、みたいな。</p>
+
+<p><strong>笹田</strong>　プログラミングなんて仕事の中でしかやりたくない、みたいな。</p>
+
+<p><strong>角谷</strong>　仕事のプログラミングは。プログラミングは好きだったんだけど、仕事はあんまり好きじゃなかった。</p>
+
+<h3 id="普段の生活のスタイル">普段の生活のスタイル</h3>
+
+<p><strong>笹田</strong>　では普段の生活のスタイルはどんな感じでしょうか。</p>
+
+<p><strong>角谷</strong>　がんばって凄く早起きをしようと思ってて。九時半とか十時とかに寝ちゃって、三時半とか四時に起きるような感じ。でも、三月に体調崩しちゃってからはグダグダで。</p>
+
+<p><strong>卜部</strong>　それ頑張りすぎなんじゃないかという気がするんですけど。</p>
+
+<p><strong>角谷</strong>　でも六時間ぐらい寝れますよ。で、起きたら、パソコン開いてごそごそする。</p>
+
+<p><strong>須藤</strong>　朝パソコン開く派なんですか。</p>
+
+<p><strong>角谷</strong>　そこしか集中してやれる時間が無いので。</p>
+
+<p><strong>須藤</strong>　帰ってからだと？</p>
+
+<p><strong>角谷</strong>　帰ってすぐはしんどいし、家族も居るのでやっちゃいけないなあ、と。でも、やっちゃうんですけど。よくない。あれは非常によくない。</p>
+
+<p><strong>須藤</strong>　そう思います。</p>
+
+<p><strong>角谷</strong>　朝は、みんな起きてきたら、ごはん食べて息子を保育園に送って会社行って、ペアプロ。夜は、家に早く帰ってこれたら子供をお風呂入れて、寝かしつけて。それで九時半ぐらい。後は夫婦の時間。</p>
+
+<p><strong>須藤</strong>　あれ、亀の散歩時間はいつなんですか？</p>
+
+<p><strong>角谷</strong>　散歩はやるとしても土日ですね。平日はできない。散歩っていうか、家ん中に放したりとかですけど。以前はときどき外に連れて行ってたんですけど、最近はスボラして連れて行ってないです。</p>
+
+<p><strong>須藤</strong>　外は天敵が多いんじゃないですか。カラスさんとか。</p>
+
+<p><strong>笹田</strong>　え、どれくらいの大きさ？</p>
+
+<p><strong>角谷</strong>　このくらい (手のひらからちょっとハミ出るぐらい。甲長 20cm ぐらい)。</p>
+
+<p><strong>卜部</strong>　見張らずにおったら逃げる<sup id="fnref:32"><a href="#fn:32" class="footnote">32</a></sup></p>
+
+<p><strong>角谷</strong>　うん。逃げますね。</p>
+
+<p><strong>笹田</strong>　でまあ休みはきちんと休むと。</p>
+
+<p><strong>角谷</strong>　休みの日は公園行ったりとか。</p>
+
+<p><strong>笹田</strong>　じゃあ仕事とプライベートの両立はもう全然問題なく。きっちりと分かれて。会社の仕事をおうちにもって帰ってやったりとかは？</p>
+
+<p><strong>角谷</strong>　やりたくないけど、やらざるを得ないときはありますよ。</p>
+
+<h4 id="普段の生活">普段の生活</h4>
+
+<p><strong>笹田</strong>　ではプライベートの時間。普段家では何をされているんでしょう。</p>
+
+<p><strong>須藤</strong>　映画？</p>
+
+<p><strong>角谷</strong>　いやあ、だから映画はぜんぜん見れてなくて。映画館になかなか行けてない。</p>
+
+<p><strong>須藤</strong>　東京って映画館どこにあるんですか？</p>
+
+<p><strong>笹田</strong>　たくさんあるじゃないですか<sup id="fnref:33"><a href="#fn:33" class="footnote">33</a></sup>。新宿とか渋谷とか。</p>
+
+<p><strong>須藤</strong>　そっち側行かないですもん。こうまわって行かないと (新宿経由ではなくて東京経由という意味。須藤さんは西大井在住)。</p>
+
+<p><strong>角谷</strong>　東京は映画館でいろいろやってるのは西のほうだからねえ。西大井のほうだと……大森にキネカ大森っていうイイ映画館があります。</p>
+
+<p><strong>須藤</strong>　高いんですか。東京の映画館って。</p>
+
+<p><strong>角谷</strong>　日本は映画館は大抵どこいってもみんな一緒でしょう。最近前売りとかでうまく使えば、多少安い。あと二番館。</p>
+
+<p><strong>須藤</strong>　千円で見れます？</p>
+
+<p><strong>角谷</strong>　それぐらいで見ることもできますよ。</p>
+
+<p><strong>角谷</strong>　と、いうわけで、休みは公園に行くかパソコン弄ってるか本読むか。そんな内向的な感じです。</p>
+
+<p><strong>卜部</strong>　いやその、休日に読む本って言うのはどんなものを？　『Agile Web Development with Rails』とかですか？</p>
+
+<p><strong>角谷</strong>　ああ Rails 本もそうですし、どうしても技術系のが多いですね。あと、最近は岡本太郎 (<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/511X21XT8EL._SL160_.jpg" />) を少々。</p>
+
+<p><strong>須藤</strong>　いいですか。</p>
+
+<p><strong>角谷</strong>　いいですねえ。</p>
+
+<p><strong>笹田</strong>　たとえば？</p>
+
+<p><strong>角谷</strong>　たとえば。いや<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51qB03NprSL._SL160_.jpg" />は、いわゆる熱い人なんですよ。だから書いてるものも熱い (<img class="" src="https://images-fe.ssl-images-amazon.com/images/I/410M520SH5L._SL160_.jpg" />)。</p>
+
+<p><strong>須藤</strong>　書き物をしてる人だったんですね。</p>
+
+<p><strong>角谷</strong>　ああそうですねえ。</p>
+
+<p><strong>須藤</strong>　作ってるばっかりだと思ってました。</p>
+
+<p><strong>角谷</strong>　これが書き物も面白いんです。</p>
+
+<p><strong>笹田</strong>　話は変わって、マシンのスペックは？</p>
+
+<p><strong>角谷</strong>　マシンは ThinkPad X40。最初期モデル。これに Debian を入れてます。</p>
+
+<p><strong>笹田</strong>　好きな女性のタイプは？</p>
+
+<p><strong>角谷</strong>　妻。</p>
+
+<p><strong>須藤</strong>　そういわないと妻が怒るから。</p>
+
+<p><strong>角谷</strong>　いやいや、怒られるからとかじゃなくて(笑)　心から。</p>
+
+<h4 id="今後の展望将来の夢など">今後の展望将来の夢など</h4>
+
+<p><strong>角谷</strong>　今日のインタビューでも分かったように、私は至って平凡なので、コード書き以外のところで、ナイスな Ruby コミュニティに何か貢献したいなー、と。</p>
+
+<p><strong>笹田</strong>　もっと長い夢とかありますか。もっと先の。</p>
+
+<p><strong>角谷</strong>　Ruby で仕事したい。スゴい人は昼の仕事は昼の仕事で、夜に自分で世界を変えるソフトウェアを書いたりしますけど、私にはそういう能力はないので、昼間の仕事で Ruby を書けるようになりたいなあ、と思ってます。</p>
+
+<h3 id="rubyist-の輪">Rubyist の輪</h3>
+
+<p><strong>笹田</strong>　前のインタビュイーの咳さんとの関係は？</p>
+
+<p><strong>角谷</strong>　咳さんとの関係は……ファンです。咳さんがですね、かっこよくて。今日は咳さんのかっこいい言葉をメモって来たんですけど。幸福の王子本じゃなくて、最初の dRuby の本のまえがき。幸福の王子本では無くなってるんですが、「本書について」というところで:</p>
+
+<blockquote>
+  <p>考えのいくつかは dRuby の同梱されているソースコードになりましたが、ソースコードには残せないものも多くありました。
+サンプルやリファレンスマニュアルには残せない多くの何かを、少しでも残したくてこの本を書きました</p>
+</blockquote>
+
+<p>というのがありまして。考えたことはだいたいソースにあるからソースにないことを本に書きました、と。これがかっこいいな、とずっと思ってて。</p>
+
+<p><strong>須藤</strong>　かっこいい。</p>
+
+<p><strong>角谷</strong>　で、一方的に咳さんのことをかっこいいな、と思ってて。 それが、<a href="http://kakutani.com/articles/LLW2004-LanguageUpdate-Groovy.live.pdf">LL Weekend での Groovy のプレゼン</a>とかその前の <a href="http://kakutani.com/articles/XPmatsuri2004-LT.kakutani.pdf">XP 祭り 2004 のライトニングトークス</a>とか、そういうのがきっかけになって声をかけてもらえるようになって。その後咳さんには、なぜかよくわからないけれどよく相手をしてもらってます。</p>
+
+<p><strong>角谷</strong>　プレゼンをやったことは、咳さんだけじゃなく、Ruby 方面の皆さんにも顔と名前を覚えてもらえたのがよかったです。あと、咳さんとのつながりでは、勤務先がやってる<a href="http://objectclub.jp/">オブジェクト倶楽部</a>のイベントでもライトニング・トークスでしゃべってくれたり、というのもありますね。だから、咳さんとの直接のつながりはアジャイルつながり。</p>
+
+<p><strong>笹田</strong>　なるほど。では、次のインタビュイーはどうしましょう。</p>
+
+<p><strong>角谷</strong>　次回は arton さんに是非。arton はどうやったら出来上がるのか。すごく興味があります。あと、ささださんと濃い話をしてもらいたい。</p>
+
+<p><strong>笹田</strong>　若手へ一言。</p>
+
+<p><strong>角谷</strong>　特にないですね。</p>
+
+<p><strong>須藤</strong>　一言お願いします。</p>
+
+<p><strong>角谷</strong>　若手っていうか私じしん、ポッと出なので……ええと、大森さんという方がいらっしゃいまして。日経ソフトウェアの編集の方なんですけど。その大森さんが、 <img class="" src="https://images-fe.ssl-images-amazon.com/images/I/51X%2Br%2BOdV3L._SL160_.jpg" /> の読書会のポジションペーパーに「優秀な人はだいたい自分より年下だから、年のことは気にしないようになりました」みたいなことを書いてらして。自分もそういう思いです。</p>
+
+<p><strong>角谷</strong>　つまり、若い人には私が教えてもらうことのほうが多い。若い人は大抵、私よりも優秀なので。ここにいらっしゃるみなさんも、私より若くて優秀なわけですし。</p>
+
+<p><strong>笹田</strong>　では、読者へ最後に一言。</p>
+
+<p><strong>角谷</strong>　「読者へ」って、これまた普段、私はいち読者なんですけど。……自分が好きだな、面白いな、と思うのことについて、どこかで発表したり日記に何かを書いたり、メール投げたりどこかへ出かけたり、とか自分が動くことについて、最初は、世の中には凄い人がいっぱいいるので、どうしても引っ込み思案になったり、萎縮したりするんですけど、実際に動いてみると意外に受け入れられるというか、ちゃんと相手してもらえるんだな、ということを最近強く感じてます。</p>
+
+<p><strong>角谷</strong>　なので、普通の人たちがもっと動くと Ruby 界隈ももっと楽しくなるんじゃないかなあ、と。Ruby を面白いとか、Ruby に興味を持っているという人は、自分のやれる範囲でも少しずつ活動していくと、豊かな文化がそこから生まれてくるかもしれない。普通のみなさん、一緒にがんばりましょう。</p>
+
+<p><strong>笹田</strong>　他に何かありますか。最後に。言っておきたいこと。</p>
+
+<p><strong>角谷</strong>　他に言うこと……これからもよろしくお願いします (笑)</p>
+
+<p><strong>笹田</strong>　本日はありがとうございました。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回はイベントなどで活躍されている角谷信太郎さんにお話を伺いました。Ruby を現場で活用されている様子などは参考になりますね。お忙しい中、インタビューをさせていただきましてありがとうございました。</p>
+
+<p>次回は、ActiveScriptRuby の開発者として有名な arton さんにインタビューします。お楽しみに。</p>
+
+<p>(インタビュー：ささだ、編集：卜部、ささだ)</p>
+
+<h2 id="rubyist-hotlinks-連載一覧">Rubyist Hotlinks 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-Hotlinks.html">Rubyist Hotlinks 【第 36 回】 須藤功平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0052/0052-Hotlinks.html">Rubyist Hotlinks 【第 35 回】 島田浩二さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0045/0045-Hotlinks.html">Rubyist Hotlinks 【第 34 回】 大場さん夫妻 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0044/0044-Hotlinks.html">Rubyist Hotlinks 【第 33 回】 大場さん夫妻 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0042/0042-Hotlinks.html">Rubyist Hotlinks 【第 32 回】 卜部昌平さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-Hotlinks.html">Rubyist Hotlinks 【第 31 回】 樽家昌也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0038/0038-Hotlinks.html">Rubyist Hotlinks 【第 30 回】 遠藤侑介さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-Hotlinks.html">Rubyist Hotlinks 【第 29 回】 松田明さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0035/0035-Hotlinks.html">Rubyist Hotlinks 【第 28 回】 Yugui さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-Hotlinks.html">Rubyist Hotlinks 【第 27 回】 小波秀雄 さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-Hotlinks.html">Rubyist Hotlinks 【第 26 回】 cuzic さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0031/0031-Hotlinks.html">Rubyist Hotlinks 【第 25 回】 加藤勇也さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0030/0030-Hotlinks.html">Rubyist Hotlinks 【第 24 回】 okkez さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0029/0029-Hotlinks.html">Rubyist Hotlinks 【第 23 回】 yhara さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0028/0028-Hotlinks.html">Rubyist Hotlinks 【第 22 回】 nari さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0023/0023-Hotlinks.html">Rubyist Hotlinks 【第 21 回】 原信一郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Hotlinks.html">Rubyist Hotlinks 【第 20 回】 石塚圭樹さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-Hotlinks.html">Rubyist Hotlinks 【第 19 回】 伊尾木将之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Hotlinks.html">Rubyist Hotlinks 【第 18 回】 立石孝彰さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Hotlinks-misc.html">Rubyist Hotlinks 【第 17 回】 青木峰郎さん　インタビューイントロ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Hotlinks.html">Rubyist Hotlinks 【第 16 回】 essa さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Hotlinks.html">Rubyist Hotlinks 【第 15 回】 arton さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Hotlinks.html">Rubyist Hotlinks 【第 14 回】 角谷信太郎さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Hotlinks.html">Rubyist Hotlinks 【第 13 回】 関将俊さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Hotlinks.html">Rubyist Hotlinks 【第 12 回】 後藤兄弟 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Hotlinks.html">Rubyist Hotlinks 【第 11 回】 後藤兄弟 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Hotlinks.html">Rubyist Hotlinks 【第 10 回】 わたなべひろふみさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Hotlinks.html">Rubyist Hotlinks 【第 9 回】 中田伸悦さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks.html">Rubyist Hotlinks 【第 8 回】 田中哲さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-3.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その3</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-2.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その2</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Hotlinks-1.html">Rubyist Hotlinks 【第 8 回】 田中哲さん その1</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-Hotlinks.html">Rubyist Hotlinks 【第 7 回】 江渡浩一郎さん 後編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-Hotlinks.html">Rubyist Hotlinks 【第 6 回】 江渡浩一郎さん 前編</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-Hotlinks.html">Rubyist Hotlinks 【第 5 回】 増井俊之さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-Hotlinks.html">Rubyist Hotlinks 【第 4 回】 ただただしさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0003/0003-Hotlinks.html">Rubyist Hotlinks 【第 3 回】 かずひこさん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0002/0002-Hotlinks.html">Rubyist Hotlinks 【第 2 回】 前田修吾さん</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0001/0001-Hotlinks.html">Rubyist Hotlinks 【第 1 回】 まつもとゆきひろさん</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>プレゼント : Perlish Magazine プレゼントの受付は終了しました。たくさんのご応募ありがとうございました。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>卜部注:最速で十六分、ただしその電車に乗るのに十分以上待つことがある。庶民の感覚としては三十分を見込んでおくのが無難と思う&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>テリー・ギリアム : アメリカの映画監督だが「モンティ・パイソン」のメンバーとしても有名。代表作は『バロン』のほかに『未来世紀ブラジル』など。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>寺山修司 : 劇作家。詩人。「力石葬儀」をやった人として一部方面には有名&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>ピーター・ジャクソン : 最近ダイエットしたらしい。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>エゴサーチ:自分の名前や著作のタイトルで Google 検索したりすること。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>違い: include は  Module のメソッドだけど extend は Object のメソッド。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>collect 派: 本連載では繰り返し触れられているが、Rubyist  <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=Enumerable#collect">Enumerable#collect</a>  を主に使う派閥と <a href="http://www.ruby-lang.org/ja/man/?cmd=view;name=Enumerable#map">Enumerable#map</a> を主に使う派閥があり (これらのメソッドは効能および用法用量が同じ)、互いに血で血を洗う派閥抗争に明け暮れている&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>この発言からも分かるように須藤さんは collect 派&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>一方ささださんは map 派&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>[[0001-Hotlinks]] によると collect 派らしい。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>PL/SQL : SQL と Ada を合体させたという、「どうやったらそういうことを思いつくんだ」みたいな言語 (ちなみにラリー・エリソンがペンタゴン向けシステムを Ada で作っていた経緯で発想したらしい)。[[http://otn.oracle.co.jp/tech/pl_sql/index.html]]&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>PowerBuilder : 現在は Sybase が保有している RAD ツールというか言語というか。[[http://www.sybase.com/products/internetappdevttools/powerbuilder]]&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>REXML の読み方 : REXML はもともとは Java の Electric XML というライブラリを Ruby に移植したものらしい（参考 : <a href="http://pub.cozmixng.org/~kou/rexml-doc-ja/classes/REXML/Document.html#method-M000456">REXML::Document.new</a>）ので、語源的には Ruby Electric XML の略だと思われる。ということで、アールイーでいいんじゃないかなぁ。&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>今はリンク先を後述の新しいものに修正してある。&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>ささだ注：直した。Shift-JIS のドキュメントを読ませたときの挙動が最近の REXML だと変わっていたらしい&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>なぜ Rabbit ユーザーズグループが「ショッカー」なのか。それは<a href="http://kazuhiko.tdiary.net/20051028.html#p01">ゆうなさんが須藤さんを「ショッカーみたい」と呼んだ</a>ことに由来する。&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>RRB : [[0010-RubyRefactoringBrowser]]を参照&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:19">
+      <p>Dr. Evil 云々というのは <a href="http://jp.rubyist.net/PerlMa/wiki.cgi?page=20060401%2DYAPCAsiaReport">YAPC::Asia 2006 Tokyo</a> で Damian Conway が使っていたネタ。&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:20">
+      <p>Emacs : navi2ch から riece までなんでもそろう廃人専用エディタ。Ruby の配布物の misc ディレクトリに ruby-mode.el が入っているので、Emacs 使いはインストールしてみよう。&nbsp;<a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:21">
+      <p>Java 向けのプロジェクト管理ツール。プロジェクトのビルド、レポーティング、ドキュメント生成作業を、(だいたい) 一元化された情報をベースに一貫性のあるやり方で一括して管理する。2.0 でアーキテクチャが見直され、ほぼ全部書き直された。2.0 はなかなか良い感じだが、国際化周りの挙動がまだビミョウ。&nbsp;<a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:22">
+      <p>Java 専用 Make みたいなもの。ビルドファイルを XML で記述し、ほとんど XML をプログラミング言語として扱っている。XML をプログラミング言語とみなす試みは、<a href="http://codezine.jp/a/article.aspx?aid=78">arton さんの『CodeZine』の記事「Java と SAX パーサで XML ベースのプログラミング言語を作る」</a>が参考になる。&nbsp;<a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:23">
+      <p>apt 風 : たぶん[[RAA:rpa-base]]のこと&nbsp;<a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:24">
+      <p>CPAN : CPAN をクパンと読む人は実は一定数いるらしい&nbsp;<a href="#fnref:24" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:25">
+      <p>「Rubyist が集まっていると、そこでは Haskell の話をしている。それは世界中で見られる光景だ」という都市伝説がある (かくたには [[id:ogijun]] さんから聞いた)。&nbsp;<a href="#fnref:25" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:26">
+      <p>卜部注:卜部はまだそこまで開眼していない&nbsp;<a href="#fnref:26" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:27">
+      <p>BDD: Behavior Driven Development。詳しくは「<a href="http://log.giantech.jp/BDDIntro-ja.html">テスト駆動開発についての新しい考え方</a>」を参照。&nbsp;<a href="#fnref:27" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:28">
+      <p>最近の trunk ではアンダースコアも利用できるようになりました。&nbsp;<a href="#fnref:28" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:29">
+      <p>括弧 : collect/map 対立以外にも、Ruby コミュニティには括弧を省略すべきでない派と省略できるところでは省略すべし派の対立がある。須藤さんは省略しない派だが、ささだは省略する派。省略する派をささだ以外見たことがないのだけれど。ちなみに、優先順位の影響などがあるために、完全に括弧を排除した Ruby スクリプトを書くというのは結構難しい。&nbsp;<a href="#fnref:29" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:30">
+      <p>Groovy : 文法詳細などは [[0012-Legwork]] を参照&nbsp;<a href="#fnref:30" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:31">
+      <p>中距離: 持久力も瞬発力も必要なので、中距離は短距離・長距離に比べて過酷と言われている&nbsp;<a href="#fnref:31" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:32">
+      <p>逃げる:卜部はまだ幼稚園くらいの頃にバケツに亀を入れて遊んでたら目を放した隙に逃げられたことがある (リクガメじゃないけど)。&nbsp;<a href="#fnref:32" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:33">
+      <p>東京の映画館:ちなみに都道府県別で見ると、映画館が最も多いのは東京で 211、次に多いのがなぜか愛知で 178、最低は島根で 10。<a href="http://www.meti.go.jp/statistics/tokusabi/2004k/h16-t-08.pdf">経済産業省の統計</a>より。&nbsp;<a href="#fnref:33" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>他言語からの訪問 【第 1 回】 Groovy (前編)</title>
+  <meta name="description" content="書いた人：上原潤二 (NTT ソフトウェア/JGGUG)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0034/0034-GuestTalk.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>他言語からの訪問 【第 1 回】 Groovy (前編)</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0034/0034-GuestTalk.html" class="hatena-bookmark-button" data-hatena-bookmark-title="他言語からの訪問 【第 1 回】 Groovy (前編)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0034/0034-GuestTalk.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0034/0034-GuestTalk.html" data-text="他言語からの訪問 【第 1 回】 Groovy (前編)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：上原潤二 (NTT ソフトウェア/JGGUG)</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#この記事はなんのため" id="markdown-toc-この記事はなんのため">この記事はなんのため？</a></li>
+      <li><a href="#対象読者" id="markdown-toc-対象読者">対象読者</a></li>
+      <li><a href="#バージョン" id="markdown-toc-バージョン">バージョン</a></li>
+    </ul>
+  </li>
+  <li><a href="#groovy-概要" id="markdown-toc-groovy-概要">Groovy 概要</a>    <ul>
+      <li><a href="#groovy-の特徴" id="markdown-toc-groovy-の特徴">Groovy の特徴</a></li>
+      <li><a href="#コード例を通じて-ruby-と比較してみる" id="markdown-toc-コード例を通じて-ruby-と比較してみる">コード例を通じて Ruby と比較してみる</a>        <ul>
+          <li><a href="#コード例その-1ハローワールド他" id="markdown-toc-コード例その-1ハローワールド他">コード例その 1、ハローワールド他</a></li>
+          <li><a href="#コード例その-2person-クラスの定義" id="markdown-toc-コード例その-2person-クラスの定義">コード例その 2、Person クラスの定義</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#groovy-の機能紹介-前編" id="markdown-toc-groovy-の機能紹介-前編">Groovy の機能紹介 (前編)</a>    <ul>
+      <li><a href="#オプショナルタイピング" id="markdown-toc-オプショナルタイピング">オプショナルタイピング</a></li>
+      <li><a href="#ast-変換" id="markdown-toc-ast-変換">AST 変換</a>        <ul>
+          <li><a href="#ast-変換の概要" id="markdown-toc-ast-変換の概要">AST 変換の概要</a></li>
+          <li><a href="#ast-変換でできること" id="markdown-toc-ast-変換でできること">AST 変換でできること</a></li>
+          <li><a href="#ast-変換の例-1-ー-tupleconstructor" id="markdown-toc-ast-変換の例-1-ー-tupleconstructor">AST 変換の例 1 ー @TupleConstructor</a></li>
+          <li><a href="#ast-変換の例-2-ー-power-assert" id="markdown-toc-ast-変換の例-2-ー-power-assert">AST 変換の例 2 ー Power Assert</a></li>
+          <li><a href="#ast-変換の例-3-ー-groovy" id="markdown-toc-ast-変換の例-3-ー-groovy">AST 変換の例 3 ー Groovy++</a></li>
+          <li><a href="#ast-変換の例-4-ー-grapegrab" id="markdown-toc-ast-変換の例-4-ー-grapegrab">AST 変換の例 4 ー Grape(@Grab)</a></li>
+          <li><a href="#ast-変換を使った開発" id="markdown-toc-ast-変換を使った開発">AST 変換を使った開発</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#前編のまとめ" id="markdown-toc-前編のまとめ">前編のまとめ</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#バックナンバー" id="markdown-toc-バックナンバー">バックナンバー</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Rubyist の皆さんこんにちは。Groovy についての記事を書くことになりました上原と申します。Groovy についてはるびまでも、「<a href="/articles/0012/0012-Legwork.html">Rubyist のための他言語探訪 【第 5 回】 Groovy</a>」で 2005 年にみずしまさんの手による紹介がありますが、あらためて Groovy についてご紹介していきたいと思います。</p>
+
+<h3 id="この記事はなんのため">この記事はなんのため？</h3>
+
+<p>Groovy は Ruby から多大な影響を受けたオブジェクト指向スクリプト言語です。具体的には、構文やライブラリの設計について、あるいは動的言語としての特性について、Ruby から大きな影響を受けて設計されています。しかしながら、その後、Groovy は他の言語からもアイデアを貪欲に取り込んだり <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>、また独自のアイデアで急速な発展を続けてきました。今回は、その中で「Groovy にあって Ruby には無いか、あっても大きく異っている機能」を紹介します。</p>
+
+<p>本記事の目的は、Ruby の利用者・開発者の皆さんにとってなんらかの参考になり、「へーこんな(機能/見方/アプローチ)があるんだ」と思う情報が1つか2つでも提供できることです。本記事をきっかけとして、Ruby もしくは Groovy コミュニティにおいて、両言語の何らかの発展に寄与するようなアイデアや活動に繋がれば存外の喜びです。</p>
+
+<h3 id="対象読者">対象読者</h3>
+
+<ul>
+  <li>Ruby だけを知っていて、他の言語もそろそろ勉強したいなーと思っている人</li>
+  <li>Ruby に新規機能を追加したいなと考えていて何かネタがないかなーと探している人</li>
+  <li>Ruby での開発から Java での開発にジョブチェンジして、Java の冗長さ、厳格さなどにうんざりしている人</li>
+</ul>
+
+<h3 id="バージョン">バージョン</h3>
+
+<p>本記事で記述する対象の Groovy のバージョンは 1.8.0 です。</p>
+
+<h2 id="groovy-概要">Groovy 概要</h2>
+
+<p>Groovy は Java VM で動作するスクリプト言語であり、__ぶっちゃけ JRuby みたいなもん__です。
+ただし、Groovy は、Java と__徹底的に仲良くしよう__という思想でつくられています。具体的にはツールやライブラリ、フレームワーク、セキュリティモデルなど Java と共通する部分がきわめて大きいので、Java の経験があれば修得は比較的容易です。さらに Java と Ruby の両方を知っていれば、その修得は極めて自然かつスムーズなものとなるでしょう。</p>
+
+<h3 id="groovy-の特徴">Groovy の特徴</h3>
+
+<p>ここでは Groovy の機能を全部紹介することはできませんので、特徴を箇条書きにすることに留めておきます。</p>
+
+<ul>
+  <li>Java との互換・相互運用性についての特徴
+    <ul>
+      <li>文法はほぼ Java の上位互換</li>
+      <li>Groovy クラスは Java クラスでもある</li>
+      <li>Groovy コードはかならず Java バイトコードにコンパイルされた上で実行される</li>
+      <li>ライブラリは独自の体系はもたず Java 標準 API を基本として Groovy 独自のクラスを追加
+        <ul>
+          <li>ただし「大クラス主義」を実現すべく Java API に対し大量のメソッドが追加されている</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>文法上の特徴
+    <ul>
+      <li>クロージャがあり中核的に重要なものとして使われている</li>
+      <li>決まりきったコード (ボイラープレートコード)」は省略可能</li>
+    </ul>
+  </li>
+  <li>型システムについての特徴
+    <ul>
+      <li>プリミティブを排して「すべてがオブジェクト」</li>
+      <li>型指定は省略可能。省略しなくても良い (オプショナルタイピング、後述)</li>
+      <li>メソッドは動的にクラスやインスタンスに追加可能で実行時に探索する (Ruby のオープンクラス的な動作)</li>
+      <li>(Java で定義されたオブジェクトを含む) オブジェクトの振舞いはメタオブジェクトプロトコル (MOP)<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>で定義・操作される</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="コード例を通じて-ruby-と比較してみる">コード例を通じて Ruby と比較してみる</h3>
+
+<p>Ruby と対比して Groovy のコード例をいくつか示してみます。</p>
+
+<h4 id="コード例その-1ハローワールド他">コード例その 1、ハローワールド他</h4>
+
+<p>まずは、「Hello World」を含むちょっとした Ruby コードです<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts "hello world"
+[1,2,3].each { | it |
+  puts it
+}
+p (1..100).find_all{|v| v % 3 == 0} # 3 の倍数を表示
+map = {a: 1, b: 2, c: 3} # ハッシュリテラル</code></pre></figure>
+
+<p>Groovy ではこれに対応するコードは以下のようになります<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">println "hello world"
+[1,2,3].each {
+  println it
+}
+println((1..10).findAll{ it % 3 == 0 }) // 3 の倍数を表示
+map = [a:1, b:2, c:3] // マップリテラル</code></pre></figure>
+
+<p>いかがでしょうか、「確かに似ている」と感じられたのではないでしょうか。留意点としては、Groovy の「it」はクロージャに渡されている暗黙の引数を表すので、クロージャの引数が 1 つの場合は引数の宣言が不要となります。もし it を使いたくなければ明示的にクロージャ引数を定義することもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[1,2,3].each { v -&gt;
+  println v
+}</code></pre></figure>
+
+<table>
+  <tbody>
+    <tr>
+      <td>「-&gt;」は、クロージャの仮引数と本体を区切る記号です (Ruby の</td>
+      <td>……</td>
+      <td>に対応)。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="コード例その-2person-クラスの定義">コード例その 2、Person クラスの定義</h4>
+
+<p>別の例として、name や age というフィールドを持つ Person というクラスを定義してみます。まずは Ruby から。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Person
+  attr_accessor :name, :age
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+  def to_s
+    "Name is #{@name}, age is #{@age}."
+  end
+end
+
+p = Person.new('taro', 30)
+puts p</code></pre></figure>
+
+<p>Groovy では、上は例えば以下のように定義できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class Person {
+  def name
+  def age
+  String toString() {
+    "Name is $name, age is $age."
+  }
+}
+def p = new Person(name:'taro', age:30)
+println p</code></pre></figure>
+
+<p>Groovy ではコンストラクタを明示的に定義しない場合、「new Person(name:’taro’, age:30)」の様に名前引数の形式で呼び出してフィールドを初期化できるコンストラクタが暗黙に生成されるため、コンストラクタの定義を省略しています。
+また、アクセッサメソッド (Getter, Setter) 群はフィールドを定義するだけで自動的に生成されます<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+
+<p>さらに、以下のようにクラスに「@TupleConstructor」というアノテーション<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>を指定すると「コンストラクタ引数の並んでいる順番でフィールドを順に初期化するコンストラクタ」が自動的に生成されるので、「new Person(‘taro’, 30)」でインスタンスを生成できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@groovy.transform.TupleConstructor
+class Person {
+  def name
+  def age
+  String toString() { "Name is $name, age is $age." }
+}
+def p = new Person('taro', 30)</code></pre></figure>
+
+<p>このように、「決まりきったコード (ボイラープレートコード)」を書かなくて済むことに血道を上げるのが Groovy のポリシーと言えます<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</p>
+
+<h2 id="groovy-の機能紹介-前編">Groovy の機能紹介 (前編)</h2>
+
+<p>以降、Groovy の機能を紹介していきます。</p>
+
+<h3 id="オプショナルタイピング">オプショナルタイピング</h3>
+
+<p>Groovy と Ruby で異る点として、まず Groovy では型指定を行うことができる、ということが挙げられます。
+前述の Person の例におけるpの定義</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def p = new Person('taro', 30)</code></pre></figure>
+
+<p>は以下のように p を Person 型として宣言することができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Person p = new Person('taro', 30)</code></pre></figure>
+
+<p>フィールドやメソッド引数、メソッドの返り値などでも同様です。これをオプショナルタイピングと呼び、静的型宣言と動的型を任意に使いわけることができます。
+ただし、型エラー検出の観点からすると、Groovy では任意の代入が型エラーかどうかをコンパイル時には決定できない<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>ので、代入時の型チェックは実行時<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>に行われます。</p>
+
+<p>私見ですが、Groovy のオプショナルタイピングは今のところ、型チェックという意味よりも、どちらかというと型情報をドキュメントとして書くことによるコードの可読性向上についての利点が大きいと感じています<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>。</p>
+
+<h3 id="ast-変換">AST 変換</h3>
+
+<p>次に Groovy の AST 変換について説明します。Groovy の AST 変換は、2009 年にリリースされた Groovy 1.7 以降で導入された比較的新しい機能です。</p>
+
+<h4 id="ast-変換の概要">AST 変換の概要</h4>
+
+<p>Groovy に限らず、Ruby を含め多くの言語処理系では、内部的には実行までの過程でコードの中間表現として AST (Abstract Syntax Tree, 抽象構文木 ) を使用します。</p>
+
+<p>Groovy では、この AST を加工・操作するための API を開放<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>しており、AST の変換モジュールもしくは変換処理を AST 変換と呼んでいます。AST 変換には、標準 AST 変換として Groovy が提供しているものや、フレームワークやツール提供者が提供しているものが多くあり、もちろん Groovy プログラマが自ら AST 変換を定義することもできます。</p>
+
+<p>以下に AST 変換が適用される様子を示します。
+<img src="/images/0034-GuestTalk/astxform.png" alt="astxform.png" /></p>
+
+<h4 id="ast-変換でできること">AST 変換でできること</h4>
+
+<p>AST 変換で実現できることは多岐に渡っています。AST を自由に変更できるので、コードの意味を全く変えてしまうこともできます。以降、いくつか例を示します。</p>
+
+<h4 id="ast-変換の例-1-ー-tupleconstructor">AST 変換の例 1 ー @TupleConstructor</h4>
+
+<p>前節で出てきた「@TupleConstructor」アノテーションは、実は AST 変換です。AST 変換はこのようにアノテーションの指定をきっかけとして起動することができます。TupleConstructor で起動される AST 変換はクラス定義の AST をたどって、定義されているフィールドからコンストラクタのコードを自動生成しクラス定義に挿入します。</p>
+
+<h4 id="ast-変換の例-2-ー-power-assert">AST 変換の例 2 ー Power Assert</h4>
+
+<p>Groovy の特徴に「assert のメッセージが妙に詳しい」というものがあります。例を示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">s = "abc"
+assert (s.capitalize() * 2).size() == 7</code></pre></figure>
+
+<p>上を「test.groovy」として保存し、実行すると以下が表示されます(等幅フォント推奨)。
+Assert の引数の部分式ごとに値が表示されるので、Assert に失敗した理由を探るために、式の値をデバッガで追ったりする手間を減らすことができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ groovy test.groovy
+
+Caught: Assertion failed:
+
+assert (s.capitalize() * 2).size() == 7
+        | |            |    |      |
+        | Abc          |    6      false
+        abc            AbcAbc
+
+  at powerassert.run(powerassert.groovy:2)</code></pre></figure>
+
+<p>この背後では、Assert 引数の式の AST がツリーとして解析され、「部分式ごとに計算した値をカラムを調整して Assert のメッセージに構築するコード」が AST 変換により生成されて実行されています。Power Assert は言語処理系本体 (Groovy のコンパイラやコード生成部)に手を入れることなく、標準の AST 変換として実現されています<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>。</p>
+
+<h4 id="ast-変換の例-3-ー-groovy">AST 変換の例 3 ー Groovy++</h4>
+
+<p>「<a href="http://code.google.com/p/groovypptest/">Groovy++</a>」という「静的 Groovy」とも呼ぶべき Groovy の拡張があります。以下コード例です。</p>
+
+<ul>
+  <li>Groovy のコード:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def sum(i) {
+  i == 0 ? 0 : i+sum(i-1)
+}</code></pre></figure>
+
+<ul>
+  <li>Groovy++ のコード:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@Typed
+int sum(int i) {
+  i == 0 ? 0 : i+sum(i-1)
+}</code></pre></figure>
+
+<p>int などの型指定は、Groovy でも付けても構わないので、違いは「@Typed アノテーション」の有無のみなのですが、@Typed アノテーションが指定された Groovy コードが Groovy++ として解釈されます。Groovy++ では変数や引数に型指定が必須となり、オプショナルタイピングではなくなります。そして型指定の情報を静的型のチェックに使用した上で、静的なコードを生成するので、動作速度は Java とほぼ同等になります。ただし、Groovy++ ではクラスやインスタンスに動的にメソッドを追加することはできなくなります。</p>
+
+<p>Groovy++ の基本的な動作は AST 変換として実現されています。AST 変換は、Groovy におけるコンパイル処理の各ステージに介在することができますが、「型チェック」や「コード生成ステージ」の処理に介入して実現しているのです。</p>
+
+<h4 id="ast-変換の例-4-ー-grapegrab">AST 変換の例 4 ー Grape(@Grab)</h4>
+
+<p>Groovy には Grape<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup> という言語組み込みのライブラリ管理機構があります。Groovy コードに</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@Grab('net.sourceforge.htmlunit:htmlunit:2.8')
+import com.gargoylesoftware.htmlunit.WebClient
+
+page = new WebClient().getPage("http://..")</code></pre></figure>
+
+<p>というように @Grab アノテーションを指定するだけで、スクリプトの初回実行時に指定した Java のライブラリとそれが依存するライブラリ群をインターネット経由でダウンロードし実行することができます。Ruby Gems のようなものですが、明示的なインストール操作は必要ありません。</p>
+
+<p>Grab の仕組みは AST 変換も使って実現されています。</p>
+
+<h4 id="ast-変換を使った開発">AST 変換を使った開発</h4>
+
+<p>標準 Groovy には、AST 変換が数多く定義されています。たとえばデザインパターンを実現するもの<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>、特定のコーディングパターンを実現するもの<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>、Java を強化もしくは弱点を補足するもの<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>、記述を簡潔にするもの<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>、決りきったコードを生成するもの<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>などです。</p>
+
+<p>これらの AST 変換を利用すると、記述を簡潔にするなどの利点がある反面、どのような動作をするかが見えにくくなるという問題があります。</p>
+
+<p>この問題を軽減するために、AST 変換の結果、どのようにコードが加工されているかを見ることができる「AST ブラウザ」が助けになります。以下が AST ブラウザの画面です。
+<img src="/images/0034-GuestTalk/astbrowser.png" alt="astbrowser.png" /></p>
+
+<p>AST ブラウザでは、コンパイルの各段階で Groovy の AST が中間段階として、もしくは最終的にどのような状態であるかを、AST のツリービューおよび AST から再現された Groovy コードとして表示することができます。AST ブラウザは GroovyConsole の機能としてメニューから呼びだすことができます。以下は、GroovyConsole の画面です。
+<img src="/images/0034-GuestTalk/groovyconsole.png" alt="groovyconsole.png" /></p>
+
+<h2 id="前編のまとめ">前編のまとめ</h2>
+
+<p>今回の前編では、Groovy のオプショナルタイピングと AST 変換について解説しました。
+次回は、実行時メタプログラミング、およびビルダーについて紹介する予定です。
+<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41GxM8yHw4L._SL160_.jpg" /></p>
+
+<p>最後に宣伝になりますが、現在筆者は Groovy に関する日本初のオリジナル書籍「プログラミング Groovy」を執筆中であり、近々技術評論社より発刊予定(<a href="http://www.amazon.co.jp/gp/product/4774147273">予約受け付け中</a>)です。本記事で Groovy に興味を持たれた方は乞うご期待です。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<dl>
+  <dt>上原潤二</dt>
+  <dd>NTT ソフトウェア株式会社所属。JGGUG ( 日本 Grails/Groovy ユーザ会) 運営委員。Java 技術および言語処理系実装に興味がある。「<a href="http://www.amazon.co.jp/exec/obidos/ASIN/4798117366/uehaj-22">Grails 徹底入門</a>」執筆メンバーの1人。Groovy 技術に関する<a href="http://d.hatena.ne.jp/uehaj/">ブログ「Grな日々」</a>を主宰している。Groovy の起動を高速化する OSS ソフトウェアである <a href="http://www.infoq.com/jp/articles/groovyserv">GroovyServ</a> の開発者の1人。<br />URL: <a href="http://d.hatena.ne.jp/uehaj/">http://d.hatena.ne.jp/uehaj/</a>, Twitter: <a href="http://twitter.com/uehaj">@uehaj</a></dd>
+</dl>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0044/0044-GuestTalk.html">他言語からの訪問 【第 3 回】 Perl</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0037/0037-GuestTalk.html">他言語からの訪問 【第 2 回】 Groovy (後編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0034/0034-GuestTalk.html">他言語からの訪問 【第 1 回】 Groovy (前編)</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Groovy は Ruby 以外の言語の影響も受けています。影響が圧倒的に大きいのは Java ですが、Scala や Clojure などからも精力的に機能を取り込んでおり、その自重しなさが Groovy らしさの一つではないかと私は思います。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>MOP は、「オープンかつ拡張可能なプログラムの意味の解釈機構」です(<a href="http://en.wikipedia.org/wiki/Metaobject#Metaobject_protocol">Wikipediaより</a>)。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>筆者は Ruby に詳しくないので、Ruby らしくない、もしくは最適ではないコードかもしれませんがご容赦下さい。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Groovy は Java とほぼ上位互換なので、Java 風にも書けますが、ここではなるべく Java らしく無いように書いています。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>アクセス修飾子や final を指定することでアクセッサメソッドの自動生成を抑制・コントロールすることができます。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>アノテーションはクラスや変数などに任意のメタデータを付与する Java の機構であり、Groovy でも利用可能です。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>おそらく、ボイラープレートコードを書かなくて済む、ということを Java との違いとして強調する必要がある、という「言語の進化圧」があり、このように発達しています。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>asType()というキャスト用メソッドがクラスやインスタンスに実行時に注入されると任意の代入は正しいかもしれないため。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:9">
+      <p>実行時ではありますが、ダックタイピングと比べると、メソッドの呼び出し時にメソッドが無いことで型エラーが発覚するのではなく、代入時(引数としてメソッドを渡した時点、返り値を受けとった時点)にチェックのタイミングが前倒しになるので、ダックタイピングよりは早いタイミングで検出できるとは言えます。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:10">
+      <p>Groovy 1.8.0 では int 型に限って特別な最適化が導入されたので、性能向上面の効果もあります。ただし現時点では限定的です。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:11">
+      <p>なお、Groovy のコンパイル処理は Groovy 1.7 以前からもともと内部的に AST 変換の集合体でした。1.7 以降は、Groovy 処理系の開発者以外からも容易に利用できるようにAPIとして整備された、ということです。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:12">
+      <p>Groovy プログラマは Power Assertが AST 変換で実現されていると意識する必要ありません。ただの言語拡張に見えます。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:13">
+      <p>The Groovy Adaptable Packaging Engine または Groovy Advanced Packaging Engine&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:14">
+      <p>@Immutable, @Delegate, @ListenerList&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:15">
+      <p>@WithReadLock,@WithWriteLock&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:16">
+      <p>@Synchronized, @ThreadInterrupt,@TimedInterrupt,@ConditionalInterrupt&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:17">
+      <p>@Newify, @TupleConstructor, @InheritConstructor, @Log(@Commons,@Log4j,@Slf4j)&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:18">
+      <p>@AutoClone, @AutoExternalize, @ToString, @EqualsAndHashCode, @Canonical, @IndexedProperties&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

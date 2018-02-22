@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ビギナーのための CGI 入門 【第 5 回】文字コードと排他処理 3 ページ</title>
+  <meta name="description" content="前のページへ目次へ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0017/0017-CGIProgrammingForRubyBeginners-3.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby ビギナーのための CGI 入門 【第 5 回】文字コードと排他処理 3 ページ</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0017/0017-CGIProgrammingForRubyBeginners-3.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ビギナーのための CGI 入門 【第 5 回】文字コードと排他処理 3 ページ" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0017/0017-CGIProgrammingForRubyBeginners-3.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0017/0017-CGIProgrammingForRubyBeginners-3.html" data-text="Ruby ビギナーのための CGI 入門 【第 5 回】文字コードと排他処理 3 ページ">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p><a href="/articles/0017/0017-CGIProgrammingForRubyBeginners-2.html">前のページへ</a>
+<a href="/articles/0017/0017-CGIProgrammingForRubyBeginners.html">目次へ</a></p>
+
+<h2 id="目次">目次</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+  <li><a href="#掲示板の設置" id="markdown-toc-掲示板の設置">掲示板の設置</a>    <ul>
+      <li><a href="#準備" id="markdown-toc-準備">準備</a>        <ul>
+          <li><a href="#設置する掲示板" id="markdown-toc-設置する掲示板">設置する掲示板</a></li>
+          <li><a href="#設置する場所サーバー" id="markdown-toc-設置する場所サーバー">設置する場所(サーバー)</a></li>
+        </ul>
+      </li>
+      <li><a href="#設置する際の手順" id="markdown-toc-設置する際の手順">設置する際の手順</a></li>
+      <li><a href="#サーバーの各種条件を確認する" id="markdown-toc-サーバーの各種条件を確認する">サーバーの各種条件を確認する</a>        <ul>
+          <li><a href="#ruby-の本体の場所パス" id="markdown-toc-ruby-の本体の場所パス">Ruby の本体の場所(パス)</a></li>
+          <li><a href="#url-とサーバーのファイルの対応" id="markdown-toc-url-とサーバーのファイルの対応">URL とサーバーのファイルの対応</a></li>
+          <li><a href="#cgi-プログラムの実行可能な場所" id="markdown-toc-cgi-プログラムの実行可能な場所">CGI プログラムの実行可能な場所</a></li>
+          <li><a href="#その他" id="markdown-toc-その他">その他</a></li>
+        </ul>
+      </li>
+      <li><a href="#shebang" id="markdown-toc-shebang">shebang</a></li>
+      <li><a href="#アクセス権と所有者" id="markdown-toc-アクセス権と所有者">アクセス権と所有者</a></li>
+      <li><a href="#掲示板を転送する" id="markdown-toc-掲示板を転送する">掲示板を転送する</a>        <ul>
+          <li><a href="#ftp-によるアップロード" id="markdown-toc-ftp-によるアップロード">FTP によるアップロード</a></li>
+          <li><a href="#アクセス権の設定" id="markdown-toc-アクセス権の設定">アクセス権の設定</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#参考文献というかリンク集" id="markdown-toc-参考文献というかリンク集">参考文献というかリンク集</a></li>
+  <li><a href="#筆者について" id="markdown-toc-筆者について">筆者について</a></li>
+</ul>
+
+<h2 id="掲示板の設置">掲示板の設置</h2>
+
+<p>この連載で作ってきた掲示板もようやく設置できる程度になりました。
+そこで、今までのようにテスト環境で動かすのではなく、
+掲示板をご自分の Web サイトに設置してみましょう。
+自分が作ったものが実際に動くというのは
+プログラムの醍醐味の一つですからね。</p>
+
+<h3 id="準備">準備</h3>
+
+<h4 id="設置する掲示板">設置する掲示板</h4>
+
+<p>ダウンロードしてもらった rubima017-cgi.zip に
+修正済みの掲示板が入っています。
+まだダウンロードしていない人は
+<a href="/articles/0017/0017-CGIProgrammingForRubyBeginners-1.html">1 ページ目</a> からダウンロードして下さい。</p>
+
+<p>設置する掲示板は rubima017-cgi\upload というフォルダに入っています。
+内容は図のとおりです。
+<img src="/images/0017-CGIProgrammingForRubyBeginners-3/upload.jpg" alt="upload.jpg" /></p>
+
+<h4 id="設置する場所サーバー">設置する場所(サーバー)</h4>
+
+<p>設置する CGI プログラムは用意できていますが、1 つ問題があります。
+それは設置する場所(サーバー)です。</p>
+
+<p>この連載では Ruby で CGI プログラムを作ってきました。
+そして、作った CGI プログラムはすべて自分のコンピューターで
+動いているサーバー (server.rb) に実行してもらっていました。</p>
+
+<p>当然、これから掲示板を設置する環境でも
+同じような条件が整っていなければなりません。
+もし、必要な環境が整っていなければ
+掲示板を設置してもそのプログラムは動作しません。</p>
+
+<p>Ruby の CGI プログラムを動かすために
+必要なものは <a href="/articles/0011/0011-CGIProgrammingForRubyBeginners.html">初回</a> に説明しました。
+下の 2 つです。</p>
+
+<ul>
+  <li>Ruby 本体</li>
+  <li>サーバー</li>
+</ul>
+
+<p>掲示板などの CGI プログラムを設置する時は
+設置場所にこれらが準備されているかどうかを
+確認しなければなりません。</p>
+
+<p>皆さんの中にはご自分の Web サイト (いわゆるホームページ) を
+持っている方もいるでしょう。
+一般的には掲示板などの CGI プログラムは
+Web サイトの中の 1 つの要素として
+その Web サイトを置いているサーバーに設置されます。</p>
+
+<p>最初に Web サイトを持っていない方の場合について説明していきましょう。
+Web サイトをお持ちでない場合、
+まずは Web サイト(ホームページ) を持つ必要があります。
+今回作った掲示板はその Web サイトに設置します。
+この時、注意する点は</p>
+
+<ul>
+  <li>Web サイトのあるサーバーで CGI が許可されている</li>
+  <li>Ruby プログラムを CGI プログラムとして使うことが出来る(Ruby が使用可能)</li>
+</ul>
+
+<p>の 2 点です。最低でもこの二つの条件を満たしていないと、
+今回作った掲示板を設置することは出来ません。
+Web サイトは無料ホームページ、無料サーバーなどの言葉を
+Google などで検索すれば、無料の Web サイトを提供している
+サービスを見つけることが出来ます。
+そうしたサービスの中から Ruby プログラムを CGI プログラムとして
+使用できるサービスを探してもらうことになります
+(有料のサービスを使っても構いませんが、最初は無料サービスで十分でしょう)。</p>
+
+<p>ちなみに筆者は <a href="http://www.xrea.com/">xrea</a> のサービスを利用しています。
+ここのサービスは人気のようで、無料サーバーへの登録はなかなか出来ません。 
+<a href="http://jp.rubyist.net/?RubyAvailableServers">http://jp.rubyist.net/?RubyAvailableServers</a> に Ruby の使える
+サーバーの一覧がありますので、参考にしてみて下さい。</p>
+
+<p>次に自分の Web サイトを既に持っている場合です。
+もし、その Web サイトのサーバーが CGI の設置が可能で、
+かつ、Ruby が使える場合、
+その Web サイトに自分の掲示板を設置することが出来ます。</p>
+
+<p>ご自分の Web サイトのサーバーが上記の条件を満たしているかどうかは
+サーバーの管理者に問い合わせたり、
+サーバーの機能を記したページを見てもらったりするしかありません。
+こうした条件はサーバーによって違うので、
+このサイトは使用可能で、
+このサイトで使用不可だと決め付けることができません。</p>
+
+<h3 id="設置する際の手順">設置する際の手順</h3>
+
+<p>ここで大雑把に掲示板を設置する際の手順について説明しておきましょう。
+箇条書きにすると下のようになります。</p>
+
+<ol>
+  <li>サーバーの各種条件を確認</li>
+  <li>掲示板を構成する各ファイルを用意</li>
+  <li>各ファイルの設定や細かい修正</li>
+  <li>掲示板の各ファイルをサーバーに転送</li>
+</ol>
+
+<p>1 つ目のステップは CGI プログラムを実行するための条件を確認します。
+サーバーによっては CGI プログラムの実行に
+制限がかかっている場合があります。
+こうした条件をしっかり確認しないと、
+せっかく CGI プログラムを設置しても
+CGI プログラムとして使うことができません。
+それ以外にも確認しておきたいことがいくつかあります。</p>
+
+<p>2 つ目のステップに関しては今回は考慮する必要はありません。
+掲示板はすでに用意してありますからね。
+他人が作ったCGIプログラムを設置する時には、
+前ページで紹介した文字コードを統一するなどの作業も必要かもしれません。</p>
+
+<p>3 つ目のステップでは掲示板の各ファイルの設定を行います。
+今までなら CGI プログラムを作ればすぐに試すことができましたが、
+実際には掲示板を設置する時には細かい設定が必要になります。
+実は server.rb では簡単に CGI プログラムを試せるように
+細かい設定を server.rb 側で済ませています。
+一般のサーバーではこの部分を省略出来ず、自分で設定する必要があります。</p>
+
+<p>最後のステップでは掲示板の各ファイルをサーバーに置いていきます。
+この時には FTP を用いて転送を行います。</p>
+
+<p>では、それぞれのステップについて詳しくみていきましょう。</p>
+
+<h3 id="サーバーの各種条件を確認する">サーバーの各種条件を確認する</h3>
+
+<p>サーバーによって CGI プログラムを実行するための条件は異なります。
+そのため細かい部分まで説明することはできませんが、
+最低限これだけはチェックしておいて欲しいという項目を説明していきます。</p>
+
+<h4 id="ruby-の本体の場所パス">Ruby の本体の場所(パス)</h4>
+
+<p>初回で説明したように Ruby プログラムを実行するには
+Ruby の言葉を理解するプログラムが必要です。
+Windows ではこのプログラムの名前は ruby.exe です。
+RDE の設定をする時に ruby.exe の場所 (この場所のことをパスといいます) を指定したのですが、覚えていますか？</p>
+
+<p>通常、サーバーでは Unix 系 OS が使われており、
+そこでは Ruby の言葉を理解するプログラムの名前が Windows とは少し違います。
+Unix 系 OS では Windows の ruby.exe に相当するプログラムのことを ruby と言います。</p>
+
+<p>RDE で ruby.exe の場所を指定したように 
+CGI プログラムで Ruby の言葉を使用する場合も
+どこに ruby があるのか知っておく必要があります。
+一般的には</p>
+
+<ul>
+  <li>/usr/bin/ruby</li>
+  <li>/usr/local/bin/ruby</li>
+</ul>
+
+<p>といった場所に ruby は置かれていますが、
+ruby のパス(ruby のある場所)　はサーバーによって違うために確認が必要です。</p>
+
+<p>上で示したパスは Windows の C:\ruby\bin\ruby.exe というパスと書き方が違いますね。
+Unix 系 OS では C: などのドライブレターは使用されません。
+また、Windows では多くの人が「\」をフォルダの区切りに使いますが、
+Unix 系 OS では「/」がフォルダの区切りになります。</p>
+
+<p>例えば、/usr/bin/ruby は一番上のフォルダの下にある
+usr フォルダの中の bin フォルダの中の ruby という意味になります
+(一番上のフォルダというのが分かりにくい人は
+Windows のマイコンピューターのようなものと思って下さい。非常に大雑把ですが)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/
+|
++-- usr
+     |
+     +-- bin
+          |
+          +-- ruby</code></pre></figure>
+
+<p>ちなみに Unix 系 OS ではフォルダのことをディレクトリと言います。
+今後は Unix 系 OS でフォルダのことを指す時はディレクトリという言葉を使いますので、
+よく覚えておいて下さい。</p>
+
+<h4 id="url-とサーバーのファイルの対応">URL とサーバーのファイルの対応</h4>
+
+<p>既に Web サイトを持っている人にとっては必要ないことかもしれませんが、
+ここで URL とサーバー上のファイルの対応について説明しておきます。</p>
+
+<p>普段、私たちはブラウザに URL を打ち込むなり、
+リンクをたどるなりしてサーバーにあるデータにアクセスしています。
+この時、 URL とサーバー上のファイルのパスとの関係は
+どのようになっているのでしょう。
+この関係を知っておかないと、掲示板をサーバーに設置しても、
+どの URL で掲示板にアクセスできるのか分からなくなってしまいます。</p>
+
+<p>例えば、server.rb を自分のコンピューターで動かし、
+server.rb と同じフォルダにあるデータにアクセスしたいとします。
+ここでは説明のために hoge.html が server.rb と同じ場所にあると仮定しましょう。
+この場合、今までなら <a href="http://localhost/hoge.html">http://localhost/hoge.html</a> で hoge.html にアクセスできました
+(本当は localhost:8080 なのですが、少し難しいのでその点は省略します)。</p>
+
+<p>実は <a href="http://localhost/hoge.html">http://localhost/hoge.html</a> のうち localhost は自分のコンピューターのことを指します。
+localhost が自分のコンピューターであるという決まりがあるのです。
+その後ろの /hoge.html は公開されたフォルダの直下にある hoge.html のことを示しています。
+server.rb は server.rb のあるフォルダを公開フォルダとするように設定されていますので、
+/hoge.html は server.rb のあるフォルダの中にある hoge.html に相当することになります。</p>
+
+<p>server.rb の <a href="http://localhost/hoge.html">http://localhost/hoge.html</a></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>localhost</td>
+      <td>自分のコンピューター</td>
+    </tr>
+    <tr>
+      <td>/hoge.html</td>
+      <td>server.rb と同じフォルダの hoge.html</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>もう 1 つ <a href="http://localhost/foo/hoge.html">http://localhost/foo/hoge.html</a> を考えて見ましょう。
+この場合、localhost は同じです。/foo/hoge.html というのは
+server.rb のフォルダにある foo フォルダの hoge.html という意味になります。</p>
+
+<p>server.rb の <a href="http://localhost/foo/hoge.html">http://localhost/foo/hoge.html</a></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>localhost</td>
+      <td>自分のコンピューター</td>
+    </tr>
+    <tr>
+      <td>/foo/hoge.html</td>
+      <td>server.rb と同じフォルダにある foo フォルダの中の hoge.html</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>では、 <a href="http://www.hogehoge.com/index.html">http://www.hogehoge.com/index.html</a> ならどうでしょう？
+この場合は www.hogehoge.com というコンピューターの
+/index.html というファイルにアクセスしにいきます。
+/index.html は www.hogehoge.com の公開フォルダ (ディレクトリ) の中にある
+index.html になります。</p>
+
+<p>これまでの例から分かるように
+URL にはサーバーの名前と公開ディレクトリ (フォルダ) からのパスが含まれており、
+逆にいえば この 2 つの組み合わせで URL が決まることになります。</p>
+
+<p>公開ディレクトリからのパスというのは以下のようになります。
+仮に公開ディレクトリを /www としましょう。
+この時 /www にあるデータを index.html とすると、
+この index.html のパスは /www/index.html になります。
+公開ディレクトリからのパスというのは 2 つのパスの共通部分を取り除いた部分です。
+この例なら /www/index.html から /www を 取り除いた /index.html になります。
+もう 1 つ別の例を考えてみましょう。
+公開ディレクトリが /home/html、
+ファイルのパスが /home/html/foo/bar/foo.html の場合です。
+この時は公開ディレクトリからのパスは /foo/bar/foo.html になります。</p>
+
+<p>公開ディレクトリからのパスの説明が済んだところで、
+2 つほど具体例を見てみましょう。
+1 つ目は筆者の使っている xrea です。
+筆者が xrea から指定された条件では、サーバーの名前は radio.s14.xrea.com で、
+公開ディレクトリには /public_html になっています。
+この場合、<a href="http://radio.s14.xrea.com/index.html">http://radio.s14.xrea.com/index.html</a> は
+radio.s14.xrea.com にある /public_html/index.html に相当することになります。
+逆にブラウザで /public_html/bbs/bbs.html にアクセスしたい場合は
+<a href="http://radio.s14.xrea.com/bbs/bbs.html">http://radio.s14.xrea.com/bbs/bbs.html</a> という URL を使用すれば良いということになります。</p>
+
+<p>もう 1 つ少し特殊な例を考えてみましょう。
+サーバーによっては /home/hogehoge/public_html が
+公開フォルダ となっていることがあります
+(hogehoge は人によって異なります)。
+この場合、サーバーが fugafuga.com という名前なら
+/home/hogehoge/public_html/index.html に
+相当する URL は <a href="http://fugafuga.com/~hogehoge/index.html">http://fugafuga.com/~hogehoge/index.html</a> となります。
+/home/hogehoge/public_html が /~hogehoge に
+短縮されてしまっていると思ってもらえば分かりやすいでしょう。
+逆に <a href="http://fugafuga.com/~hogehoge/foo/index.html">http://fugafuga.com/~hogehoge/foo/index.html</a> は
+/home/hogehoge/public_html/foo/index.html になります。
+この例は Unix 系 OS をお使いの人ならしばしば見るのですが、
+Windows をお使いの人にとっては分かりにくいでしょう。</p>
+
+<p>サーバーの名前は使用するサーバーによって違いますし、
+公開ディレクトリの場所もサーバーによって違います。
+そのため URL とファイルのパスとの関係は
+サーバーを利用する皆さんが自分で確認する必要があります。
+他にも色々な例があります。実際に試してみるのが一番でしょう。</p>
+
+<h4 id="cgi-プログラムの実行可能な場所">CGI プログラムの実行可能な場所</h4>
+
+<p>掲示板を設置する際は
+どの場所 (パス) に CGI プログラムを置いて良いのかを調べておかなければなりません。</p>
+
+<p>特定のディレクトリに置いたファイルだけが公開可能となっている場合があります。
+例えば、一番上のディレクトリに hoge, fuga, foo, bar のディレクトリがあったとしましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">/
+|
++-- hoge
+|
++-- fuga
+|
++-- foo
+|
++-- bar</code></pre></figure>
+
+<p>このすべてが公開されることもありますし、
+hoge ディレクトリの下にあるファイルだけが公開できて、
+それ以外は公開できないということもあります。
+後者の場合、fuga の下に Web サイトのファイルを置いたり、
+掲示板を設置したりしてもそれを公開することはできません。</p>
+
+<p>また、特定のディレクトリにしか CGI プログラムを設置できないこともあります。
+上の例ならば、foo ディレクトリにしか CGI プログラムを設置できない等、
+時おり設置場所の制限が見られます。注意が必要です。</p>
+
+<h4 id="その他">その他</h4>
+
+<p>サーバーによっては .htaccess というファイルを置かないと、
+CGI プログラムを動かせない場所もあります。
+できればそういったサーバーは避けるようにしましょう。
+慣れない人が .htaccess を作った場合、
+大きな問題を起こすことがあります。
+もし、そういうサーバーをお使いの場合は
+別のサーバーを利用することも考慮してみて下さい。</p>
+
+<p>もう 1 つ注意する点はファイルの拡張子です。
+拡張子というのは hoge.rb ならば .rb、ruby.exe なら .exe のように
+「.」より後ろの部分です
+(人によっては Windows の Exploerer の設定で拡張子を表示していない場合があります。
+その時は Exploerer のメニューから
+ツール → フォルダオプション と選んで、ダイアログを表示させ、
+そのダイアログの 表示タブ → 登録されていないファイルの拡張子は表示しない 
+の項目のチェックを外して下さい。拡張子が見えるようになります)。</p>
+
+<p>サーバーによっては特定の拡張子でないと、
+CGI プログラムを実行できないという制限があります。
+例えば、サーバーによっては .cgi しか使えないという制限があります。
+この場合は bbs.rb や update.rb の拡張子を .cgi に変更しなければなりません。</p>
+
+<h3 id="shebang">shebang</h3>
+
+<p>shebang というのは何でしょうか。
+主に Unix 系 OS でプログラムを実行するために利用されるのが shebang です。
+CGI プログラムを実行するサーバーでは Unix 系 OS が使われることが多いため
+shebang について知っておく必要があります。</p>
+
+<p>これまで Ruby プログラムをいくつか作ってきました。
+実は RDE などで作った Ruby プログラムは普通のテキストファイルで、
+メモ帳などで開くことができます(すでにご存知の方も多いかもしれません)。</p>
+
+<p>それ単体は単なるテキストファイルであるため
+Ruby プログラムをプログラムとして利用可能にするには 
+ruby.exe のようなRuby の言葉を理解するプログラム (ruby.exe) が必要です。
+そして、Ruby プログラムとして実行するには
+毎回 ruby.exe (あるいは ruby) に実行をお願いしなくてはなりません。
+実行するたびに毎回 ruby.exe にお願いするのが面倒だったので、
+この連載では RDE を使っていましたが、
+Unix 系 OS では違う方法を使うことができます。
+それが shebang です。</p>
+
+<p>Unix 系 OS などでは Ruby プログラムの最初の行に</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#!/usr/bin/ruby</code></pre></figure>
+
+<p>のような行を付けると毎回 ruby に実行をお願いする必要がなくなります
+(OS が代行してくれます)。
+/usr/bin/ruby というのは ruby の本体があるパスです。
+先ほど ruby のパスを確認して下さいと書いたのはこのためです。</p>
+
+<p>実は shebang を付けないと、Ruby プログラムは CGI プログラムとして動作しません。
+CGI で プログラムを実行する時は自分で ruby に Ruby プログラムの実行を頼むことができないからです。
+shebang を付けてあげれば自分で頼まなくても OS が代行してくれますので、
+CGI プログラムとして実行することが可能になります。</p>
+
+<p>shebang を付ける時は Ruby プログラムの最初の行でなければなりません。
+また、#!… の順 (…は ruby のパス) にも注意して下さい。
+この順番でなければなりません。</p>
+
+<h3 id="アクセス権と所有者">アクセス権と所有者</h3>
+
+<p>アクセス権というのはファイルに対してどのような操作が可能であるかを示しており、
+所有者というのはファイルを所有している人が誰なのかということです。</p>
+
+<p>普段、Windows を使っている人はあまり気にしていませんが、
+各ファイルには所有者とアクセス権が設定されていることがあります
+(設定されていないこともあります)。
+一方、Unix 系 OS では多くの場合、
+多くのファイルやディレクトリに所有者やアクセス権が設定されています。</p>
+
+<p>アクセス権によってファイルの</p>
+
+<ul>
+  <li>読み込み</li>
+  <li>書き込み</li>
+  <li>実行</li>
+</ul>
+
+<p>が可能かどうかが決まります。
+例えば、CGI プログラムは実行できないといけませんので、
+実行可能にする必要があります。
+また、修正したいことも多いでしょうから、
+読み込み・書き込みも可能にするでしょう。
+そのため通常 CGI プログラムは上記の 3 つすべてを可にすることが多いです。</p>
+
+<p>もう少し詳しくアクセス権について見ていきましょう。
+上の読み込み・書き込み・実行の 3 つには数字が割り当てられており、
+その数字を使ってアクセス権を設定したり、現在のアクセス権の状態を表したりします。
+毎回、読み込み・書き込み・実行と書くのは面倒ですからね。
+具体的な数字は下のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>読み込み</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>書き込み</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>実行</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>例えば、読み・書き・実行のすべてを可能とするなら、4 + 2 + 1 の 7 になりますし、
+読み書きを可能にするなら 4 + 2 の 6 になります。
+読みと実行なら 4 + 1 の 5 になります。
+要するに読み・書き・実行のうち可能のものの数字を合計するわけです。
+サーバーに掲示板を設置する際は
+この数字で CGI プログラムのアクセス権を設定しておかなければなりません。</p>
+
+<p>ファイルやディレクトリにはアクセス権だけでなく、所有者、所有グループが決まっており、
+所有者、所有グループ、その他の人のそれぞれに対してアクセス権を設定することが可能です。
+例えば、</p>
+
+<ul>
+  <li>所有者は 7 (読み・書き・実行)、所有グループは 5 (読み・実行)、そうでない人は 5 (読み・実行)</li>
+  <li>所有者は 6 (読み・書き)、所有グループは 6 (読み・書き)、そうでない人は 4 (読み)</li>
+</ul>
+
+<p>と色々と設定することが出来ます。</p>
+
+<p>ファイルのアクセス権は所有者・所有グループ・その他の人の
+それぞれの数字を三つ並べて、状態を表すことになります。
+例えば、777 なら所有者・グループ・その他の人のいずれも読み・書き・実行が可能になります。
+666 なら所有者・グループ・その他の人のいずれも読み・書きが可能です。
+755 なら所有者のみ読み・書き・実行が可能で、グループ・その他の人は読み・実行が可能になります。</p>
+
+<p>また、数字ではなくアルファベットを並べることもあります。
+読みを r、 書きを w、実行を x で表し、アクセス権がないことを - で表します。
+例えば、777なら rwxrwxrwx に、755 なら rwxr-xr-x に、644 なら rw-r–r– になります。
+このような表記を使って Unix 系 OS ではファイルやディレクトリに
+アクセス権を設定していきます。</p>
+
+<p>では、掲示板を設定する時はアクセス権をどのように設定したら良いのでしょうか。
+具体的には掲示板の Ruby プログラム (bbs.rb や update.rb など) は 755 に、
+bbs.html や bbs.dat を 644 にします。
+ディレクトリのアクセス権については説明していませんが、
+今回に限って言えば 755 にしておけば問題はないでしょう。</p>
+
+<p>細かい設定は他にもあるのですが、
+とりあえずこうしておけば CGI プログラムの実行はできると思います。
+まとめると下のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>bbs.html</td>
+      <td>644</td>
+    </tr>
+    <tr>
+      <td>bbs.rb</td>
+      <td>755</td>
+    </tr>
+    <tr>
+      <td>update.rb</td>
+      <td>755</td>
+    </tr>
+    <tr>
+      <td>bbs.dat</td>
+      <td>644</td>
+    </tr>
+    <tr>
+      <td>themeの中のファイル、ディレクトリ</td>
+      <td>ファイルは 644、ディレクトリは 755</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="掲示板を転送する">掲示板を転送する</h3>
+
+<p>以上で説明は終了です。
+掲示板を転送していきましょう。
+転送のことをアップロードするという言い方をすることもあります。</p>
+
+<h4 id="ftp-によるアップロード">FTP によるアップロード</h4>
+
+<p>自分の Web サイトをお持ちの方ならご存知かもしれませんが、
+サーバーにWeb サイトのデータを転送するには
+少しややこしい手順があります。</p>
+
+<p>転送には ブラウザを使って転送する、FTP で転送する、など幾つかの方法があります。
+多くの人が利用しているのはブラウザによる転送とFTPによる転送の 2 つでしょう。
+残念ながらブラウザによる転送はサーバーによって方法が異なりますし、
+細かい制御が出来ないので、掲示板を設置する時は FTP による転送をお勧めします。</p>
+
+<p>FTP というのは簡単に言うとファイルを転送するための約束事だと思って下さい。
+この約束事にしたがってファイルを転送するソフトウェアを 
+FTP クライアントといいます。</p>
+
+<p>FTP クライアントにはたくさんの種類があります。
+例えば、<a href="http://ftp.hm/ffftp/">FFFTP</a> というソフトがあります。
+こうしたソフトを使えば FTP でファイルを転送することが出来ます。
+ここでは FFFTP を使って説明します。
+インストールや簡単な使い方 に関しては
+<a href="http://ftp.hm/ffftp/manual.shtml">FFFTP の初心者マニュアル</a> を読んで下さい。</p>
+
+<p>最初に気をつけるべき点は初期設定です。
+サーバーにファイルを転送するには
+サーバーの名前(ホスト名)、ユーザ名、パスワードが必要になります。
+これらはサーバーの管理者から何らかの形で通知されているはずです。</p>
+
+<ul>
+  <li>ホスト名（アドレス）</li>
+  <li>ユーザ名</li>
+  <li>パスワード</li>
+</ul>
+
+<p>これらをメモしておきます。
+FFFTP を実行したら、ホスト一覧 のダイアログが出るので、
+そのダイアログの「新規ホスト」ボタンを押します。
+そこで、上記の 3 つを入力して「OK」ボタンを押します。
+ダイアログに接続先が現れますので、それを選択して「接続」ボタンを押します。</p>
+
+<p>接続に成功すると、右に接続先のファイル一覧が現れます。
+接続が成功したら、左に表示されている自分のコンピューターのファイル一覧を選んで
+掲示板を置いてあるフォルダまで移動します。
+今の場合は rubima017-cgi というフォルダですね。
+次に右の一覧をサーバーの公開ディレクトリにします。
+これで準備完了です。
+upload フォルダを選んで右クリックでアップロードを行います。
+後は勝手に upload フォルダの内容を転送してくれます。</p>
+
+<h4 id="アクセス権の設定">アクセス権の設定</h4>
+
+<p>転送が終わったら、アクセス権の設定を行います。
+FFFTP ではアクセス権のことを属性と言います。
+各ファイルの現在のアクセス権はファイルの一覧の属性のところにアルファベットで表されています。
+アクセス権を変える時はファイル(bbs.rb など)を選んで
+右クリックから属性変更を選びます。
+オーナー、グループ、その他と出てきますので、それぞれの権限を設定します。</p>
+
+<p>bbs.rb なら 755 に設定するので、
+オーナーに読み、書き、実行の権限を持たせます
+(FFFTP なら呼出、書込、実行のところにチェックを入れます)。
+グループ、その他に関しては読み、実行の権限を持たせます。
+設定が済んだら OK ボタンを押して下さい。
+これを必要なファイルにすべて行っていきます。
+設置が終了したら、ご自分の掲示板にアクセスしてみて下さい。
+うまく表示されたでしょうか？</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は排他制御や文字コードなどの細かい部分を修正しました。
+また、掲示板の設置など実際に CGI プログラム にアクセスできるようにしました。
+今後、自分の CGI プログラム を作成する時には
+こうした経験が役立つと思います。</p>
+
+<p>次回は一行掲示板の部分を改造します。
+また、データの保存形式についても変更を施す予定です。</p>
+
+<h2 id="参考文献というかリンク集">参考文献というかリンク集</h2>
+
+<p>文字コード</p>
+
+<ul>
+  <li><a href="http://www.atmarkit.co.jp/fwin2k/win2ktips/395codeconv/codeconv.html">＠IT：Windows TIPS – Tips：文字コードを変換する </a></li>
+  <li><a href="http://e-words.jp/p/r-ascii.html">ASCII文字コード ： IT用語辞典 e-Words</a></li>
+  <li><a href="http://www.shuiren.org/chuden/teach/code/index-j.html">文字コード入門</a></li>
+  <li><a href="http://euc.jp/i18n/charcode.ja.html">文字コードの話</a></li>
+  <li><a href="http://www.us.debian.org/doc/manuals/intro-i18n/">Introduction to i18n</a> 英語です。</li>
+</ul>
+
+<p>排他処理</p>
+
+<ul>
+  <li><a href="http://mt-net.vis.ne.jp/follow/flw_exclusive.htm">http://mt-net.vis.ne.jp/follow/flw_exclusive.htm</a></li>
+</ul>
+
+<p>FTP</p>
+
+<ul>
+  <li><a href="http://e-words.jp/w/FTP.html">FTPとは 【File Transfer Protocol】： IT用語辞典 e-Words</a></li>
+  <li><a href="http://www2.biglobe.ne.jp/~sota/ffftp.html">FFFTP</a></li>
+  <li><a href="http://ftp.hm/ffftp/">FFFTP Support Page.</a></li>
+</ul>
+
+<h2 id="筆者について">筆者について</h2>
+
+<p>最近、筆者の身に起きた不幸について。</p>
+
+<ul>
+  <li>ノートパソコンが壊れた</li>
+  <li>腰痛が悪化</li>
+  <li>猫に引っかかれた</li>
+</ul>
+
+<p>小さな不幸が多いですねえ。</p>
+
+<p>ところで、「Ruby に馴れよう」の頭につけている言葉は
+某時代劇シリーズからとっていたのですが、
+ついに尽きてしまいました。次号からどうしようかなあ。</p>
+
+<p><a href="/articles/0017/0017-CGIProgrammingForRubyBeginners-2.html">前のページへ</a>
+<a href="/articles/0017/0017-CGIProgrammingForRubyBeginners.html">目次へ</a></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

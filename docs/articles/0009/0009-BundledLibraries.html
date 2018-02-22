@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0009/0009-BundledLibraries.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0009/0009-BundledLibraries.html" class="hatena-bookmark-button" data-hatena-bookmark-title="標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0009/0009-BundledLibraries.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0009/0009-BundledLibraries.html" data-text="標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#この連載について" id="markdown-toc-この連載について">この連載について</a></li>
+      <li><a href="#今回の記事について" id="markdown-toc-今回の記事について">今回の記事について</a></li>
+    </ul>
+  </li>
+  <li><a href="#文字コード" id="markdown-toc-文字コード">文字コード</a>    <ul>
+      <li><a href="#文字コードとは" id="markdown-toc-文字コードとは">文字コードとは</a></li>
+      <li><a href="#文字コードの種類" id="markdown-toc-文字コードの種類">文字コードの種類</a></li>
+    </ul>
+  </li>
+  <li><a href="#ruby-の文字コード変換ライブラリ" id="markdown-toc-ruby-の文字コード変換ライブラリ">Ruby の文字コード変換ライブラリ</a></li>
+  <li><a href="#kconv" id="markdown-toc-kconv">Kconv</a>    <ul>
+      <li><a href="#基本的な変換" id="markdown-toc-基本的な変換">基本的な変換</a></li>
+      <li><a href="#文字コードを明示した変換" id="markdown-toc-文字コードを明示した変換">文字コードを明示した変換</a></li>
+      <li><a href="#文字コードの推測" id="markdown-toc-文字コードの推測">文字コードの推測</a></li>
+      <li><a href="#bugs" id="markdown-toc-bugs">BUGS</a>        <ul>
+          <li><a href="#文字コードの自動判定の精度が低い" id="markdown-toc-文字コードの自動判定の精度が低い">文字コードの自動判定の精度が低い</a></li>
+          <li><a href="#stringkconv-及び-kconvkconv-で-unicode-系の文字コードが指定できない" id="markdown-toc-stringkconv-及び-kconvkconv-で-unicode-系の文字コードが指定できない">String#kconv 及び Kconv.kconv で Unicode 系の文字コードが指定できない</a></li>
+        </ul>
+      </li>
+      <li><a href="#関連リンク" id="markdown-toc-関連リンク">関連リンク</a></li>
+    </ul>
+  </li>
+  <li><a href="#nkf" id="markdown-toc-nkf">NKF</a>    <ul>
+      <li><a href="#基本的な変換-1" id="markdown-toc-基本的な変換-1">基本的な変換</a></li>
+      <li><a href="#主なオプション" id="markdown-toc-主なオプション">主なオプション</a>        <ul>
+          <li><a href="#-e--s--j--w--w16" id="markdown-toc--e--s--j--w--w16">-e, -s, -j -w, -w16</a></li>
+          <li><a href="#-e--s--j--w--w16-1" id="markdown-toc--e--s--j--w--w16-1">-E, -S, -J -W, -W16</a></li>
+          <li><a href="#-l--c--d" id="markdown-toc--l--c--d">-L, -c, -d</a></li>
+          <li><a href="#-m--m" id="markdown-toc--m--m">-m, -M</a></li>
+          <li><a href="#-x--x" id="markdown-toc--x--x">-x, -X</a></li>
+        </ul>
+      </li>
+      <li><a href="#その他の便利なオプション" id="markdown-toc-その他の便利なオプション">その他の便利なオプション</a>        <ul>
+          <li><a href="#cp932" id="markdown-toc-cp932">–cp932</a></li>
+          <li><a href="#hiragana-katakana" id="markdown-toc-hiragana-katakana">–hiragana, –katakana</a></li>
+          <li><a href="#-f--f" id="markdown-toc--f--f">-f, -F</a></li>
+        </ul>
+      </li>
+      <li><a href="#bugs-1" id="markdown-toc-bugs-1">BUGS</a>        <ul>
+          <li><a href="#文字コードの自動判定の精度が低い-1" id="markdown-toc-文字コードの自動判定の精度が低い-1">文字コードの自動判定の精度が低い</a></li>
+        </ul>
+      </li>
+      <li><a href="#関連リンク-1" id="markdown-toc-関連リンク-1">関連リンク</a></li>
+    </ul>
+  </li>
+  <li><a href="#iconv" id="markdown-toc-iconv">Iconv</a>    <ul>
+      <li><a href="#基本的な変換-2" id="markdown-toc-基本的な変換-2">基本的な変換</a></li>
+      <li><a href="#cp932-や-eucjp-ms-の変換" id="markdown-toc-cp932-や-eucjp-ms-の変換">CP932 や eucJP-ms の変換</a></li>
+      <li><a href="#iconv-がインストールされない" id="markdown-toc-iconv-がインストールされない">Iconv がインストールされない</a></li>
+      <li><a href="#関連リンク-2" id="markdown-toc-関連リンク-2">関連リンク</a></li>
+    </ul>
+  </li>
+  <li><a href="#uconv" id="markdown-toc-uconv">Uconv</a>    <ul>
+      <li><a href="#unicode-系と-cp932-および-euc-jp-との相互変換" id="markdown-toc-unicode-系と-cp932-および-euc-jp-との相互変換">Unicode 系と CP932 および EUC-JP との相互変換</a></li>
+      <li><a href="#unicode-系でのバイトスワップ" id="markdown-toc-unicode-系でのバイトスワップ">Unicode 系でのバイトスワップ</a></li>
+      <li><a href="#関連リンク-3" id="markdown-toc-関連リンク-3">関連リンク</a></li>
+    </ul>
+  </li>
+  <li><a href="#その他の関連リンク" id="markdown-toc-その他の関連リンク">その他の関連リンク</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#標準添付ライブラリ紹介-連載一覧" id="markdown-toc-標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</a></li>
+</ul>
+
+<p>書いた人: 成瀬</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<h3 id="この連載について">この連載について</h3>
+
+<p>Ruby 1.8 になって標準添付ライブラリが増えました。そんなライブラリをどんどん紹介していこうという連載です。</p>
+
+<h3 id="今回の記事について">今回の記事について</h3>
+
+<p>今回は Kconv, NKF, Iconv といった、文字コード変換のためのライブラリを紹介します。</p>
+
+<h2 id="文字コード">文字コード</h2>
+
+<h3 id="文字コードとは">文字コードとは</h3>
+
+<p>文章を読もうとしたら文字化けしてしまっていて困った、という経験は誰しもあるでしょう。しょうがないので調べると、文字コードを変換すれば読めるようになる、などとの説明を見つけることが出来るでしょう。多くの方の「文字コードとの出会い」は、おそらくこのあたりなのではないでしょうか。さて、そんな文字コードですが、そもそもいったい何者なのでしょうか。</p>
+
+<p>文章をコンピュータで扱おう思うと、文字をコンピュータで扱わなければなりません。しかし、ご存知のとおり、基本的にコンピュータは 0 と 1 しか扱えないため、文字をコンピュータが扱える形に変換する (符号化する) 仕組みが必要となります。この仕組みが文字符号化であり、符号化の仕方の一つ一つが文字コードです。</p>
+
+<p>コンピュータの扱う情報量の最小単位は 0 か 1 によって表される情報量であり、これを bit と呼びます。通常は 8bit (1octet) を一組にして 1byte とし、これを基本にしてコンピュータは情報をやりとりします。文字も同様に byte を一単位としてやりとりすることになります。つまり、文字コード<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>とは、文字を byte の列に変換する体系のことと言えるのです。</p>
+
+<h3 id="文字コードの種類">文字コードの種類</h3>
+
+<p>文字コードは一つではありません。例えば日本語を表すのに用いられる文字コードには、主に以下のようなものがあります。</p>
+
+<ul>
+  <li>ISO-2022-JP (JIS)</li>
+  <li>Shift_JIS (亜種として CP932)</li>
+  <li>EUC-JP</li>
+  <li>UTF-8</li>
+  <li>UTF-16</li>
+</ul>
+
+<p>異なる文字コードで表された文章は、一般に異なるバイト列に変換されます。そのため、例えば Shift_JIS で表された文書を、 EUC-JP として表示しようとすると、正しくその文書を見ることが出来ません。これが文字化けです。</p>
+
+<p>文字化けの解決方法は二つあります。</p>
+
+<p>一つはその文書を正しい文字コードで表示することです。多くのプログラムはいくつかの文字コードに対応しているので、正しい文字コードで表示しなおせば、文書を見ることが出来ます。この例の場合では、 Shift_JIS として文書を開きなおせば文字化けせずに読めます。</p>
+
+<p>もう一つはその文書を都合のいい文字コードに変換する事です。文字コード変換プログラムによって、自分の扱いやすい文字コードに変換してしまえば、後は気楽にその文書を扱う事が出来ます。この例の場合では、 Shift_JIS から EUC-JP に文書の文字コードを変換してしまえばいいのです。</p>
+
+<h2 id="ruby-の文字コード変換ライブラリ">Ruby の文字コード変換ライブラリ</h2>
+
+<p>さて、では実際に Ruby で文字コードを変換してみましょう。Ruby では主に以下のような文字コード変換ライブラリが用いられており、このうち最初の三つの文字コード変換ライブラリは ruby に標準で添付されています。</p>
+
+<ul>
+  <li>Kconv</li>
+  <li>NKF</li>
+  <li>Iconv</li>
+  <li>Uconv</li>
+</ul>
+
+<p>なお、紛らわしい名称のライブラリとして、 <a href="ruby-man:jcode.rb">jcode.rb</a> が存在しますが、これは Perl の <a href="http://srekcah.org/jcode/">jcode.pl</a> とは役割が異なり、Ruby に文字志向の処理を行わせるためのモジュールです。</p>
+
+<h2 id="kconv">Kconv</h2>
+
+<p>Ruby 1.8.2以降においては、日本語の文字コード変換は Kconv を使えば、たいていの場合は事足りるでしょう。それ以前の Kconv でも、 Unicode 系の変換は出来ませんが、Shift_JIS, EUC-JP, ISO-2022-JP の相互変換が可能です。</p>
+
+<p>なお、 Kconv は自動的に、 MIME をデコードしたり、半角カタカナを全角カタカナに変換したりしてしまいますが、このような動作を好まない場合は、後述のとおり、 NKF モジュールを直接用いる必要があります。</p>
+
+<h3 id="基本的な変換">基本的な変換</h3>
+
+<p>最も容易なのは Kconv#to* を用いる事でしょう。これでは変換元の文字列の文字コードを推測し、文字コードを変換します。以下に例を示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'kconv'
+
+str = 'Hello, るびま！'     # 何かしらの文字コードの文字列
+
+str_eucjp     = str.toeuc   # 文字コードを自動判定し、 EUC-JP に変換
+
+str_shiftjis  = str.tosjis  # Shift_JIS に変換
+
+str_iso2022jp = str.tojis   # ISO-2022-JP (JIS) に変換
+
+str_utf8      = str.toutf8  # UTF-8 に変換
+
+str_utf16     = str.toutf16 # BOM 無し UTF-16BE に変換</code></pre></figure>
+
+<h3 id="文字コードを明示した変換">文字コードを明示した変換</h3>
+
+<p>先述の Kconv#to* では変換元の文字コードを推測しているため、推測が外れていた場合は変換結果が文字化けしてしまいます。このような危険性を避けるため、変換元の文字コードが分かっている場合は、なるべく文字コードを明示的に指定するようにしましょう。</p>
+
+<p>Kconv では文字コードは定数で指定します。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>定数</td>
+      <td>値</td>
+      <td>文字コード</td>
+    </tr>
+    <tr>
+      <td>JIS</td>
+      <td>1</td>
+      <td>ISO-2022-JP</td>
+    </tr>
+    <tr>
+      <td>EUC</td>
+      <td>2</td>
+      <td>EUC-JP</td>
+    </tr>
+    <tr>
+      <td>SJIS</td>
+      <td>3</td>
+      <td>Shift_JIS</td>
+    </tr>
+    <tr>
+      <td>BINARY</td>
+      <td>4</td>
+      <td>バイナリ</td>
+    </tr>
+    <tr>
+      <td>ASCII</td>
+      <td>5</td>
+      <td>ASCII</td>
+    </tr>
+    <tr>
+      <td>UTF8</td>
+      <td>6</td>
+      <td>UTF-8</td>
+    </tr>
+    <tr>
+      <td>UTF16</td>
+      <td>8</td>
+      <td>UTF-16</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>これらの定数を用いて、例えば以下のように変換を行います。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># EUC-JP で表された 'Hello, るびま！'
+str_eucjp     = "\x48\x65\x6c\x6c\x6f\x2c\x20\xa4\xeb\xa4\xd3\xa4\xde\xa1\xaa"
+
+str_shiftjis  = str.kconv(Kconv::SJIS,  Kconv::EUC) # EUC-JP から Shift_JIS に変換
+
+str_iso2022jp = str.kconv(Kconv::JIS,   Kconv::EUC) # EUC-JP から ISO-2022-JP (JIS) に変換
+
+str_utf8      = str.kconv(Kconv::UTF8,  Kconv::EUC) # EUC-JP から UTF-8 に変換
+
+str_utf16     = str.kconv(Kconv::UTF16, Kconv::EUC) # EUC-JP から BOM 無し UTF-16BE に変換</code></pre></figure>
+
+<h3 id="文字コードの推測">文字コードの推測</h3>
+
+<p>Kconv.guess によって与えられた文字列の文字コードを推測することができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># ISO-2022-JP で表された 'Hello, るびま！'
+str_iso2022jp = "\x48\x65\x6c\x6c\x6f\x2c\x20\x1b\x24\x42\x24\x6b\x24\x53\x24\x5e\x21\x2a\x1b\x28\x42"
+
+Kconv.guess(str_iso2022jp) # =&gt; 1 == Kconv::JIS
+
+# EUC-JP で表された 'Hello, るびま！'
+str_eucjp     = "\x48\x65\x6c\x6c\x6f\x2c\x20\xa4\xeb\xa4\xd3\xa4\xde\xa1\xaa"
+
+Kconv.guess(str_eucjp)     # =&gt; 2 == Kconv::EUC
+
+# Shift_JIS で表された 'Hello, るびま！'
+str_shiftjis  = "\x48\x65\x6c\x6c\x6f\x2c\x20\x82\xe9\x82\xd1\x82\xdc\x81\x49"
+
+Kconv.guess(str_shiftjis)  # =&gt; 3 == Kconv::SJIS
+
+# UTF-8 で表された 'Hello, るびま！'
+str_utf8 = "\x48\x65\x6c\x6c\x6f\x2c\x20\xe3\x82\x8b\xe3\x81\xb3\xe3\x81\xbe\xef\xbc\x81"
+
+Kconv.guess(str_utf8)      # =&gt; 6 == Kconv::UTF8
+
+# UTF-16BE (BOM 付き) で表された 'Hello, るびま！'
+str_utf16be = "\xfe\xff\x0\x48\x0\x65\x0\x6c\x0\x6c\x0\x6f\x0\x2c\x0\x20\x30\x8b\x30\x73\x30\x7e\xff\x1"
+
+Kconv.guess(str_utf16be)   # =&gt; 8 == Kconv::UTF16
+
+# UTF-16LE (BOM 付き) で表された 'Hello, るびま！'
+str_utf16le = "\xff\xfe\x48\x0\x65\x0\x6c\x0\x6c\x0\x6f\x0\x2c\x0\x20\x0\x8b\x30\x73\x30\x7e\x30\x1\xff"
+
+Kconv.guess(str_utf16le)   # =&gt; 8 == Kconv::UTF16</code></pre></figure>
+
+<p>なお、Kconv.guess による文字コードの推測は、 UTF-16 については BOM 付きにのみ対応しています。</p>
+
+<h3 id="bugs">BUGS</h3>
+
+<p>ruby 1.8.2 の Kconv には以下のようなバグが存在します。</p>
+
+<h4 id="文字コードの自動判定の精度が低い">文字コードの自動判定の精度が低い</h4>
+
+<p>NKF モジュール由来のバグで、文字コードの自動判定精度が下がっています。変換元の文字コードが分かっている場合は、to* 系のメソッドを用いず、 String#kconv や Kconv.kconv 、 NKF.nkf を用いて、変換元の文字コードを明示的に指定するようにしましょう。</p>
+
+<p>なお、この問題は ruby 1.9 及び ruby 1.8 系の最新版では既に修正されており、 ruby 1.8.3 では修正された版が添付されます。</p>
+
+<p>ruby 1.8.2 でこの問題を回避したい場合は以下のような方法が挙げられます。</p>
+
+<ul>
+  <li>Kconv.guess の代わりに Kconv.guess_old を用いる</li>
+  <li>ruby 1.9 や ruby 1.8 の最新の NKF モジュールを用いる</li>
+</ul>
+
+<p>i386-freebsd4 ならば、 <a href="https://sourceforge.jp/projects/nkf/files/?release_id=15690#15690">2.0.5-i386-freebsd4</a> を用いることもできます。一応さくらインターネットのレンタルサーバでの動作を確認はしています、保障は出来ませんが。</p>
+
+<h4 id="stringkconv-及び-kconvkconv-で-unicode-系の文字コードが指定できない">String#kconv 及び Kconv.kconv で Unicode 系の文字コードが指定できない</h4>
+
+<p>ruby 1.8.2 に添付されている kconv.rb では String#kconv 及び Kconv.kconv において、 Unicode系の文字コードの指定ができないバグが存在します。</p>
+
+<p>なお、この問題は ruby 1.9 及び ruby 1.8 系の最新版では既に修正されており、 ruby 1.8.3 では修正された版が添付されます。</p>
+
+<p>ruby 1.8.2 でこの問題を回避したい場合は以下のような方法が挙げられます。</p>
+
+<ul>
+  <li>NKF.nkf を直接用いる</li>
+  <li><a href="http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/ruby/ext/nkf/lib/kconv.rb?only_with_tag=ruby_1_8">ruby 1.8 の kconv.rb</a> を用いる</li>
+  <li><a href="http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/ruby/ext/nkf/lib/kconv.rb?only_with_tag=HEAD">ruby 1.9 の kconv.rb</a> を用いる</li>
+</ul>
+
+<h3 id="関連リンク">関連リンク</h3>
+
+<dl>
+  <dt><a href="ruby-man:Kconv">ruby-man:Kconv</a></dt>
+  <dd>Kconv クラスについてのマニュアル。</dd>
+  <dt><a href="ruby-man:kconv.rb">ruby-man:kconv.rb</a></dt>
+  <dd>Kconv が String クラスに追加するメソッドについてのマニュアル。</dd>
+  <dt><a href="ruby-man:trap::Kconv">ruby-man:trap::Kconv</a></dt>
+  <dd>Kconv で陥りやすい罠</dd>
+</dl>
+
+<h2 id="nkf">NKF</h2>
+
+<p>ものすごく古い漢字コード変換プログラムである nkf を Ruby から用いるためのライブラリです。1.8.2 から nkf 2.0 ベースになったため、 Unicode 系の変換に対応しました。上記の Kconv は、内部では NKF を用いて変換を行っています。</p>
+
+<h3 id="基本的な変換-1">基本的な変換</h3>
+
+<p>NKF は変換を converted = NKF.nkf( option_string, string ) といった文法で行います。オプションを文字列として与える方法は複雑で覚えづらいものではありますが、その一方で Kconv を使う場合に比べてはるかに複雑な処理を行うことが可能となります。なお、オプションは NKF モジュールのベースとなっている nkf のオプションをほぼ全て使うことが出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'nkf'
+
+str = 'Hello, るびま！'            # 何かしらの文字コードの文字列
+
+str_eucjp     = NKF.nkf('-e', str) # 文字コードを自動判定し、 EUC-JP に変換
+
+str_shiftjis  = NKF.nkf('-s', str) # Shift_JIS に変換
+
+str_iso2022jp = NKF.nkf('-j', str) # ISO-2022-JP (JIS) に変換
+
+str_utf8      = NKF.nkf('-w', str) # UTF-8 に変換</code></pre></figure>
+
+<h3 id="主なオプション">主なオプション</h3>
+
+<h4 id="-e--s--j--w--w16">-e, -s, -j -w, -w16</h4>
+
+<p>出力する文字コードを指定します。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>文字コード</td>
+      <td>オプション</td>
+      <td>ロングオプション</td>
+    </tr>
+    <tr>
+      <td>EUC-JP</td>
+      <td>-e</td>
+      <td>–euc</td>
+    </tr>
+    <tr>
+      <td>Shift_JIS</td>
+      <td>-s</td>
+      <td>–sjis</td>
+    </tr>
+    <tr>
+      <td>ISO-2022-JP</td>
+      <td>-j</td>
+      <td>–jis</td>
+    </tr>
+    <tr>
+      <td>UTF-8N</td>
+      <td>-w</td>
+      <td>–utf8</td>
+    </tr>
+    <tr>
+      <td>UTF-8 BOM</td>
+      <td>-w8</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-8N</td>
+      <td>-w80</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-16BE N</td>
+      <td>-w16</td>
+      <td>–utf16</td>
+    </tr>
+    <tr>
+      <td>UTF-16BE BOM</td>
+      <td>-w16B</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-16BE N</td>
+      <td>-w16B0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-16LE BOM</td>
+      <td>-w16L</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-16LE N</td>
+      <td>-w16L0</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="-e--s--j--w--w16-1">-E, -S, -J -W, -W16</h4>
+
+<p>入力する文字コードを指定します。指定しなくても自動判定が効きますが、誤判定のリスクを避ける意味でも、入力する文字コードが分かっている場合は明示的に指定するべきです。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>文字コード</td>
+      <td>オプション</td>
+      <td>ロングオプション</td>
+    </tr>
+    <tr>
+      <td>EUC-JP</td>
+      <td>-E</td>
+      <td>–euc-input</td>
+    </tr>
+    <tr>
+      <td>Shift_JIS</td>
+      <td>-S</td>
+      <td>–sjis-input</td>
+    </tr>
+    <tr>
+      <td>ISO-2022-JP</td>
+      <td>-J</td>
+      <td>–jis-input</td>
+    </tr>
+    <tr>
+      <td>UTF-8N</td>
+      <td>-W</td>
+      <td>–utf8-input</td>
+    </tr>
+    <tr>
+      <td>UTF-8 BOM</td>
+      <td>-W8</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-8N</td>
+      <td>-W80</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-16BE N</td>
+      <td>-W16</td>
+      <td>–utf16-input</td>
+    </tr>
+    <tr>
+      <td>UTF-16BE BOM</td>
+      <td>-W16B</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-16BE N</td>
+      <td>-W16B0</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-16LE BOM</td>
+      <td>-W16L</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>UTF-16LE N</td>
+      <td>-W16L0</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="-l--c--d">-L, -c, -d</h4>
+
+<p>改行コードを変換します。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>改行</td>
+      <td>オプション</td>
+      <td>使われるシステム</td>
+    </tr>
+    <tr>
+      <td>LF</td>
+      <td>-Lu, -d</td>
+      <td>Unix系</td>
+    </tr>
+    <tr>
+      <td>CRLF</td>
+      <td>-Lw, -c</td>
+      <td>Windows</td>
+    </tr>
+    <tr>
+      <td>CR</td>
+      <td>-Lm</td>
+      <td>Macintosh</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="-m--m">-m, -M</h4>
+
+<p>MIME decode/encode のためのオプションです。 nkf はデフォルトで MIME encoded-word のデコードを試みるため、この動作を望まない場合は -m0 を指定してください。</p>
+
+<h4 id="-x--x">-x, -X</h4>
+
+<p>-X を指定すると、 nkf は半角カタカナを自動的に全角カタカナに変換します。 -X はデフォルトで指定されているため、この動作を望まない場合は -x を指定してください。</p>
+
+<h3 id="その他の便利なオプション">その他の便利なオプション</h3>
+
+<h4 id="cp932">–cp932</h4>
+
+<p>Windows 互換の文字コード変換、つまり  CP932 や eucJP-ms 互換の変換を行います。具体的には、「??????｜」のような文字を Unicode へと変換した時に化ける問題や、 Windows の機種依存文字が変換できない問題は、このオプションを指定する事によって回避することができます。</p>
+
+<h4 id="hiragana-katakana">–hiragana, –katakana</h4>
+
+<p>ひらがなやカタカナを相互に変換します。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>オプション</td>
+      <td>ロングオプション</td>
+      <td>機能</td>
+    </tr>
+    <tr>
+      <td>-h1</td>
+      <td>–hiragana</td>
+      <td>カタカナをひらがなに変換</td>
+    </tr>
+    <tr>
+      <td>-h2</td>
+      <td>–katakana</td>
+      <td>ひらがなをカタカナに変換</td>
+    </tr>
+    <tr>
+      <td>-h3</td>
+      <td>–katakana-hiragana</td>
+      <td>カタカナとひらがなを交換</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="-f--f">-f, -F</h4>
+
+<p>禁則を考慮した折り返しを行います。禁則は通常半角 60 文字で行われますが、明示的に -f40 と指定すると半角 40 文字で、 -f80 と指定すると半角 80 文字で折り返します。</p>
+
+<p>通常、禁則は半角 10 文字までの範囲で禁則文字をぶら下げ、それ以上は強制的に改行しますが、明示的に -f40-5 と指定すると強制改行の余地 (fold-margin) を半角 5 文字に指定できます。禁則処理を行わない場合は -f40-0 などと指定します。</p>
+
+<p>-f では改行が全て半角空白に置き換えられてしまいますが、 -F では改行が保存されます。</p>
+
+<h3 id="bugs-1">BUGS</h3>
+
+<p>ruby 1.8.2 の NKF には以下のようなバグが存在します。</p>
+
+<h4 id="文字コードの自動判定の精度が低い-1">文字コードの自動判定の精度が低い</h4>
+
+<p>NKF モジュール由来のバグで、文字コードの自動判定精度が下がっています。変換元の文字コードが分かっている場合は、 NKF.nkf を用いて、変換元の文字コードを明示的に指定するようにしましょう。</p>
+
+<p>なお、この問題は ruby 1.9 及び ruby 1.8 系の最新版では既に修正されており、ruby 1.8.3 では修正された版が添付されます。</p>
+
+<p>ruby 1.8.2 でこの問題を回避したい場合は以下のような方法が挙げられます。</p>
+
+<ul>
+  <li>NKF.guess の代わりに NKF.guess1 を用いる</li>
+  <li>ruby 1.9 や ruby 1.8 の最新の NKF モジュールを用いる</li>
+</ul>
+
+<p>i386-freebsd4 ならば、 <a href="https://sourceforge.jp/projects/nkf/files/?release_id=15690#15690">2.0.5-i386-freebsd4</a> を用いることもできます。一応さくらインターネットのレンタルサーバでの動作を確認はしています、保障は出来ませんが。</p>
+
+<h3 id="関連リンク-1">関連リンク</h3>
+
+<dl>
+  <dt><a href="ruby-man:NKF">ruby-man:NKF</a></dt>
+  <dd>NKF クラスについてのマニュアル。</dd>
+  <dt><a href="ruby-man:trap::NKF">ruby-man:trap::NKF</a></dt>
+  <dd>NKF で陥りやすい罠</dd>
+  <dt><a href="https://sourceforge.jp/projects/nkf/">プロジェクト: nkf Network Kanji Filter</a></dt>
+  <dd>nkf の配布サイト</dd>
+</dl>
+
+<h2 id="iconv">Iconv</h2>
+
+<p>UNIX 系で主に使われる iconv を Ruby から利用するためのライブラリです。そのシステムに存在する iconv を利用するため、実際にどのような文字コードを利用できるかはプラットフォームに依存します。</p>
+
+<h3 id="基本的な変換-2">基本的な変換</h3>
+
+<p>Iconv クラスには様々なメソッドがありますが、通常は Iconv.conv を用いればいいでしょう。</p>
+
+<p>Iconv.conv は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">result = Iconv.conv(to, from, str)</code></pre></figure>
+
+<p>のように用います。</p>
+
+<p>それぞれの引数の意味は以下の通りです。</p>
+
+<dl>
+  <dt>result</dt>
+  <dd>変換された文字列</dd>
+  <dt>to</dt>
+  <dd>変換先の文字コード</dd>
+  <dt>from</dt>
+  <dd>変換元の文字コード</dd>
+  <dt>str</dt>
+  <dd>変換元の文字列</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'iconv'
+
+# EUC-JP で表された 'Hello, るびま！'
+str_eucjp     = "\x48\x65\x6c\x6c\x6f\x2c\x20\xa4\xeb\xa4\xd3\xa4\xde\xa1\xaa"
+
+str_shiftjis  = Iconv.conv('Shift_JIS', 'EUC-JP', str_eucjp)   # EUC-JP から Shift_JIS に変換
+
+str_utf8      = Iconv.conv('UTF-8', 'Shift_JIS', str_shiftjis) # Shift_JIS から UTF-8 に変換</code></pre></figure>
+
+<p>なお、変換先・変換元の文字コードを指定する文字列も、プラットフォームに依存します。しかし、この問題は charset_alias.rb という仕組みによって解決が図られており、日本語では ‘Shift_JIS’, ‘cp932’, ‘EUC-JP’, ‘UTF-8’ は、実装されていれば、それぞれの文字列で指定できるようになっています。</p>
+
+<h3 id="cp932-や-eucjp-ms-の変換">CP932 や eucJP-ms の変換</h3>
+
+<p>Windows 機種依存文字等の日本語関係の文字コード変換を Iconv モジュールで行うには、対策を施してある iconv ライブラリを用いる必要があります。具体的には以下のライブラリを使う事になるでしょう。</p>
+
+<ul>
+  <li><a href="http://www.gnu.org/software/libc/libc.html">glibc-2.3.3</a> 以降</li>
+  <li>glibc-2.2.5/2.3.1/2.3.2 に<a href="http://www2d.biglobe.ne.jp/~msyk/software/glibc/">パッチ</a>を適用したもの</li>
+  <li><a href="http://www.gnu.org/software/libiconv/">libiconv</a> に<a href="http://www2d.biglobe.ne.jp/~msyk/software/libiconv-patch.html">パッチ</a>を適用したもの</li>
+</ul>
+
+<p>その他の iconv 、例えば NetBSD Iconv (Citrus Iconv) では、いくつか<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>の機種依存文字が変換できないため、 pkgsrc 等から libiconv を別途インストールして用いる必要があります。</p>
+
+<p>また、 Windows の機種依存文字を含んだ Shift_JIS は cp932 を、 EUC-JP は eucJP-ms を指定する必要があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">roman_one = "\x87\x54" # cp932 での ローマ数字の I
+
+str_eucjpms = Iconv.conv('eucJP-ms', 'cp932', roman_one) # cp932 から eucJP-ms に変換</code></pre></figure>
+
+<h3 id="iconv-がインストールされない">Iconv がインストールされない</h3>
+
+<p>FreeBSD 等のように標準で、 iconv 等が /usr/local 下にインストールされる OS の場合、ruby を自分で make すると Iconv 等がインストールされない場合があります。このような場合には、 configure する際に iconv 等の位置を指定しましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">./configure --with-opt-dir=/usr/local</code></pre></figure>
+
+<h3 id="関連リンク-2">関連リンク</h3>
+
+<dl>
+  <dt><a href="ruby-man:Iconv">ruby-man:Iconv</a></dt>
+  <dd>Iconv クラスについてのマニュアル。</dd>
+  <dt><a href="http://www.gnu.org/software/libiconv/">GNU libiconv</a></dt>
+  <dd>GNU libiconv の配布サイト</dd>
+  <dt><a href="http://citrus.bsdclub.org/">Citrus Project</a></dt>
+  <dd>NetBSD の iconv 実装を行った、 Citrus Project のサイト</dd>
+  <dt><a href="http://www.miraclelinux.com/technet/samba30/iconv_issues.html">ミラクルリナックス:Samba 国際化プロジェクト &gt; iconvについて</a></dt>
+  <dd>iconv における CP932 と eucJP-ms への対応について</dd>
+</dl>
+
+<h2 id="uconv">Uconv</h2>
+
+<p>Uconv は Unicode 系と CP932 および EUC-JP との相互変換を行います。また、その他 UTF のバイトオーダーに関する処理等も行う事が出来ます。なお、レンタルサーバーを使っている等の事情で C 言語版の Uconv を用いる事が出来ない場合は、 PureRuby 版である <a href="http://www.yoshidam.net/Ruby_ja.html#rbuconv">rbuconv</a> を用いるとよいでしょう。</p>
+
+<h3 id="unicode-系と-cp932-および-euc-jp-との相互変換">Unicode 系と CP932 および EUC-JP との相互変換</h3>
+
+<p>ここにおいては、基本的に UTF-16 および UTF-32 は常にリトルエンディアンです。ビッグエンディアンでの文字列が欲しい場合は後述の u16swap または u4swap によって、エンディアンを変更する必要があります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>変換元?変換先</td>
+      <td>EUC-JP</td>
+      <td>CP932</td>
+      <td>UTF-8</td>
+      <td>UTF-16LE</td>
+      <td>UTF-32LE</td>
+    </tr>
+    <tr>
+      <td>EUC-JP</td>
+      <td>?</td>
+      <td>-</td>
+      <td>euctou8</td>
+      <td>euctou16</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>CP932</td>
+      <td>-</td>
+      <td>?</td>
+      <td>sjistou8</td>
+      <td>sjistou16</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>UTF-8</td>
+      <td>u8toeuc</td>
+      <td>u8tosjis</td>
+      <td>?</td>
+      <td>u8tou16</td>
+      <td>u8tou4</td>
+    </tr>
+    <tr>
+      <td>UTF-16LE</td>
+      <td>u16toeuc</td>
+      <td>u16tosjis</td>
+      <td>u16tou8</td>
+      <td>?</td>
+      <td>u16tou4</td>
+    </tr>
+    <tr>
+      <td>UTF-32LE</td>
+      <td>-</td>
+      <td>-</td>
+      <td>u4tou8</td>
+      <td>u4tou16</td>
+      <td>?</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'uconv'
+
+# EUC-JP で表された 'Hello, るびま！'
+str_eucjp   = "\x48\x65\x6c\x6c\x6f\x2c\x20\xa4\xeb\xa4\xd3\xa4\xde\xa1\xaa"
+str_utf8    = Uconv.euctou8(str_eucjp)     # UTF-8 に変換
+str_utf16le = Uconv.euctou16(str_eucjp)    # UTF-16LE に変換
+
+# CP932 で表された 'Hello, るびま！'
+str_cp932   = "\x48\x65\x6c\x6c\x6f\x2c\x20\x82\xe9\x82\xd1\x82\xdc\x81\x49"
+str_utf8    = Uconv.sjistou8(str_cp932)    # UTF-8 に変換
+str_utf16le = Uconv.sjistou16(str_cp932)   # UTF-16LE に変換
+
+# UTF-8 で表された 'Hello, るびま！'
+str_utf8    = "\x48\x65\x6c\x6c\x6f\x2c\x20\xe3\x82\x8b\xe3\x81\xb3\xe3\x81\xbe\xef\xbc\x81"
+str_euc     = Uconv.u8toeuc(str_utf8)      # EUC-JP に変換
+str_cp932   = Uconv.u8tosjis(str_utf8)     # CP932 に変換
+str_utf16le = Uconv.u8tou16(str_utf8)      # UTF-16LE に変換
+str_utf32le = Uconv.u8tou4(str_utf8)       # UTF-32LE に変換
+
+# UTF-16LE (BOM 付き) で表された 'Hello, るびま！'
+str_utf16le = "\xff\xfe\x48\x0\x65\x0\x6c\x0\x6c\x0\x6f\x0\x2c\x0\x20\x0\x8b\x30\x73\x30\x7e\x30\x1\xff"
+str_euc     = Uconv.u16toeuc(str_utf16le)  # EUC-JP に変換
+str_cp932   = Uconv.u16tosjis(str_utf16le) # CP932 に変換
+str_utf8    = Uconv.u16tou8(str_utf16le)   # UTF-8 に変換
+str_utf32le = Uconv.u16tou4(str_utf16le)   # UTF-32LE に変換
+
+# UTF-32LE (BOM 付き) で表された 'Hello, るびま！'
+str_utf32le = "\xff\xfe\x00\x00\x48\x00\x00\x00\x65\x00\x00\x00\x6c\x00\x00\x00" \
+  + "\x6c\x00\x00\x00\x6f\x00\x00\x00\x2c\x00\x00\x00\x20\x00\x00\x00" \
+  + "\x8b\x30\x00\x00\x73\x30\x00\x00\x7e\x30\x00\x00\x01\xff\x00\x00"
+str_utf8    = Uconv.u4tou8(str_utf32le)    # UTF-8 に変換
+str_utf16le = Uconv.u4tou16(str_utf32le)   # UTF-16LE に変換</code></pre></figure>
+
+<h3 id="unicode-系でのバイトスワップ">Unicode 系でのバイトスワップ</h3>
+
+<p>Unicode でのバイトオーダー変更、つまりビッグエンディアンとリトルエンディアンを相互変換します。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>エンコーディング</td>
+      <td>メソッド名</td>
+    </tr>
+    <tr>
+      <td>UTF-16</td>
+      <td>u16swap</td>
+    </tr>
+    <tr>
+      <td>UTF-32</td>
+      <td>u4swap</td>
+    </tr>
+  </tbody>
+</table>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># UTF-16 のバイトスワップ
+str_utf16be  = Uconv.u16swap(str_utf16le) # UTF-16BE に変換
+str_utf16le  = Uconv.u16swap(str_utf16be) # UTF-16LE に変換
+
+# UTF-32 のバイトスワップ
+str_utf32be  = Uconv.u4swap(str_utf32le)  # UTF-32BE に変換
+str_utf32le  = Uconv.u4swap(str_utf32be)  # UTF-32LE に変換</code></pre></figure>
+
+<h3 id="関連リンク-3">関連リンク</h3>
+
+<dl>
+  <dt><a href="http://www.yoshidam.net/Ruby_ja.html">Uconv/rbuconv</a></dt>
+  <dd>よしだむさんによる Uconv と rbuconv の配布サイト</dd>
+</dl>
+
+<h2 id="その他の関連リンク">その他の関連リンク</h2>
+
+<dl>
+  <dt><a href="http://www.unicode.org/reports/tr17/">Unicode Technical Report #17: Character Encoding Model</a></dt>
+  <dd>Unicode Consortium による文字コードについての説明</dd>
+  <dt><a href="http://www2d.biglobe.ne.jp/~msyk/charcode/cp932/index.html">Windows-31J 情報</a></dt>
+  <dd>Windows-31J (CP932) と eucJP-ms についての情報</dd>
+</dl>
+
+<h2 id="著者について">著者について</h2>
+
+<p><a href="http://airemix.com/">成瀬ゆい</a></p>
+
+<p>様々な界隈に首を突っ込む多趣味な子。最近は文字コード関連に興味を持っているが、なんとも難しくて、わからないことだらけ。</p>
+
+<h2 id="標準添付ライブラリ紹介-連載一覧">標準添付ライブラリ紹介 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0029/0029-BundledLibraries.html">標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-BundledLibraries.html">標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0020/0020-BundledLibraries.html">標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-BundledLibraries.html">標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-BundledLibraries.html">標準添付ライブラリ紹介 【第 11 回】 zlib</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-BundledLibraries.html">標準添付ライブラリ紹介 【第 10 回】 ERB</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-BundledLibraries.html">標準添付ライブラリ紹介 【第 9 回】 PStore</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-BundledLibraries.html">標準添付ライブラリ紹介 【第 8 回】 uri, pathname</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-BundledLibraries.html">標準添付ライブラリ紹介 【第 7 回】 net/http</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-BundledLibraries.html">標準添付ライブラリ紹介 【第 6 回】 委譲</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-BundledLibraries.html">標準添付ライブラリ紹介 【第 5 回】 enumerator</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-BundledLibraries.html">標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-BundledLibraries.html">標準添付ライブラリ紹介 【第 2 回】 Logger</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-BundledLibraries.html">標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>ここで言う文字コード (charset, codeset) は符号化文字集合 (CCS) と符号化方式 (CES) をあわせたもの&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>NetBSD 2.0.2 付属の iconv で試したところ、 CP932 から UTF-8 では 74 文字&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

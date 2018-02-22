@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyistが知りたいかもしれないRGSSの世界</title>
+  <meta name="description" content="2005.2.9 サイロス誠">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0005/0005-RGSS.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyistが知りたいかもしれないRGSSの世界</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0005/0005-RGSS.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyistが知りたいかもしれないRGSSの世界" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0005/0005-RGSS.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0005/0005-RGSS.html" data-text="Rubyistが知りたいかもしれないRGSSの世界">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>2005.2.9 サイロス誠</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>エンターブレインから発売された「RPG ツクール XP (以降、”ツクール XP”) (参考文献 (1) 参照)」には、Ruby を拡張した「Ruby Game Scripting System (略して RGSS)」が搭載されています。これによってゲームのシステムを Ruby スクリプトで構築することが可能になっています。</p>
+
+<p>でも、この RGSS、オープンソースではない、RPG ツクール XP のサイトからダウンロードできる体験版では、閲覧できる RGSS の詳細がほとんど分からない (かろうじて、RGSS が Ruby に似ていると言うことはわかりますが……)、ヘルプも利用できないといった問題で、ツクール XP の製品版を持たずに得られる情報は非常に限られたものとなっています。</p>
+
+<p>そこで、本コラムでは、意外と中身について知られていない RGSS で一体何ができるのか、そこらへんをツラツラと書いてみようと思います。</p>
+
+<p>なるべく分かり易いように記述するつもりですが、至らないところが多数有るかとは思います。そのときはなにぶんご容赦を。</p>
+
+<h2 id="rgssが登場した背景">「RGSS」が登場した背景</h2>
+
+<p>2004年の7月に、エンターブレインから「RPG ツクール XP」というソフトが発売されました。</p>
+
+<p>「RPG ツクールシリーズ」は 1980 年代から RPG コンストラクションツール (なんと PC-8801 シリーズから！　懐かしい！) として発売されていましたが、この「ツクール XP」では、他のシリーズには無かった大きな特徴として、「RGSS」の搭載が挙げられます。</p>
+
+<h2 id="rgss-って何">RGSS って何？</h2>
+
+<p>「RGSS」は「Ruby Game Scripting System」の略で、機能を拡張した Ruby を使ってゲームシステムを構築してしまおうというものです。これまでの「RPG ツクール」シリーズでは困難だった「ゲームシステムそのものの改変や追加」を、RGSS を使って実装できるようになりました。</p>
+
+<p>「ツクール XP」では、メイン作業として、マップ作成やイベント編集、敵キャラクター情報作成等ができるのですが、RGSS では、これらの成果物をすべてオブジェクトとして扱うことができます。
+たとえば、プロジェクトを新規作成すると、デフォルトでの状態の RGSS スクリプトを「ツクール XP」内蔵のスクリプトエディタを使用して確認できますが、そこでマップのスクロールや戦闘時のダメージ計算も RGSS で行っていることが確認できます。</p>
+
+<p>ということは、そこに書かれてあるスクリプトを改変して、思い通りのシステムに修正できるということになります。これはウレシイですねぇ。また、グラフィックやサウンドなどの煩雑な手続きを踏む必要がある箇所は、RGSS 内部で処理してくれて、しかも比較的容易に記述できるようにクラス設計がなされていますので、細かいグラフィック処理などを考えることなくロジック記述に専念しやすくなるというのは非常にウレシイことです。</p>
+
+<p>また、「今、新しいゲーム考えているんだけど、デフォルトで用意してくれるスクリプトだと無駄が多いなぁ」と思ったら、一から全て書き直すということも可能です。必要最低限の約束事を守れば、自分好みのコーディングでゲームシステムを作成できます。</p>
+
+<p>ということは、やろうと思えば、シューティングやアクションなんかも作れます。RGSS が搭載されていない従来のツクールを使った別ジャンルのゲームを作った、という作品もありますので (たとえば、「ツクール XP」サンプルゲームの「ししむら」はアクション RPG となっています)、購入されている方は参考にしてみるといいでしょう。</p>
+
+<p>これだけ自由度の高いゲーム製作が可能になると分かると、RGSS そのもののシステムに興味が沸かれるかと思います (沸かない？　沸いてくださいよぉ)。次では、その RGSS で何が出来るか、そこらへんを説明したいと思います。</p>
+
+<h2 id="rgss-でできること">RGSS でできること</h2>
+
+<p>さて、RGSS でできることといえば……</p>
+
+<ul>
+  <li>Ruby でできること</li>
+</ul>
+
+<p>……い、いや、ヲレは正気ですよ。でもこれは凄いことですよ。</p>
+
+<p>最初、RGSS が「Ruby をベースにしたスクリプト言語システム」ということで、「Ruby のサブセットちゃうかなぁ〜」と考えていたのですが、ところがどっこい、実際触ってみると、Ruby で出来ることは大抵出来てしまうではありませんか。また、バッククォートも使えてしまいます……あまり有用ではありませんが (笑)。</p>
+
+<p>また「ツクール XP」のヘルプには RGSS の Ruby 部分の解説もあるのですが、いくつか便利なメソッドの説明が掲載されていません (例：String クラスの split メソッド)。でも、ただ単にヘルプに明記されていないだけで (Ruby というか、スクリプト言語に慣れていない人のための配慮？)、実際は使うことが出来ます。ヘルプにないからと言って、メソッドが使えないことは無いようです。</p>
+
+<p>更に、Ruby から追加されている項目は以下の５点です。</p>
+
+<ol>
+  <li>グラフィックの表示・管理 (スプライトの実装、画像データのキャッシュ、画面の更新等)</li>
+  <li>音楽の演奏・管理 (音楽の演奏・停止等)</li>
+  <li>入力情報の取得 (キーボードやゲームパッド等のボタン押下状態など)</li>
+  <li>「RPG ツクール XP」のエディタで作成したデータとのインタフェース (「ツクール XP」側で作ったデータを読み込んでオブジェクトして扱うことが出来る)</li>
+  <li>Table クラス (C による拡張クラスで、中身は int 型の配列)</li>
+</ol>
+
+<p>　
+普段は拡張ライブラリを C や C++ でいちいち書かなくても良く、簡単に思い通りのグラフィックを表示できるは非常に気持ちが良いものです。</p>
+
+<h2 id="rgss-では思い通りに行かないこと">RGSS では思い通りに行かないこと</h2>
+
+<p>先ほどでは、ゲーム作る際にできて嬉しいなぁと思える機能ばかりでしたが、勿論、自由気ままにというわけにはいかないのが辛いところです。たとえば…</p>
+
+<ul>
+  <li>外部ライブラリが添付されていない</li>
+</ul>
+
+<p>　
+Ruby の標準添付ライブラリ (date クラスなど) は RGSS には添付されていません。
+しかし、”require” は普通に使えますので、自分で作った外部ライブラリ (全て Ruby で書かれたライブラリなら問題なく) を使うことは可能です。
+でも、扱う内容が内容なので、Win32API ライブラリは組み込まれているようです(参考文献(2)参照)。</p>
+
+<p>(バイナリを使った拡張ライブラリについては未確認です……。が、「RPG ツクール XP」の作者によると、これ自体は VisualC++ で作られているということで (参考文献(3)参照)、 VisualC++ で作られた拡張ライブラリは動くのでは……と予感しています。いつかはやってみようと考えているのですが……)</p>
+
+<ul>
+  <li>フレームレートを要求するゲームには不向き</li>
+</ul>
+
+<p>RGSS では、画面の描画は 20fps (1 秒間に 20 回画面が切り替わる)に固定されています (実際は 40fps にすることもできるが、動作にハイスペックなマシンが要求されるため、使われることが少ないと思われる)。そのため、30fps や 40fps といった高いフレームレートを要求するゲーム (FPS とか) を作るには不向きです (え、さすがに FPS は作れないだろうって？　ごもっとも……)。
+リアルタイム描画が少ない RPG やアドベンチャーには十分だとは思いますが……</p>
+
+<ul>
+  <li>フリーの RGSS 開発環境が存在しない</li>
+</ul>
+
+<p>今のところ、RGSS の開発環境が用意されているのは「RPG ツクール XP」のみ。つまり、RGSS を試すためには現状では「RPG ツクール XP」を買わなければ行けないわけです……これはちょっと痛いかも。ちなみに、今現在での Amazon.co.jp での値段は1万円強 (参考文献 (4) 参照)……中々下がらないねぇ……。</p>
+
+<p>今後、RGSS のエディタと実行環境のみをフリーでダウンロードできるようにして、簡単にプログラムを楽んでから本格的に「RPG ツクール XP」で……ということも考えられると思いますが……どうなんやろ？</p>
+
+<p>さて、次からは、実際に RGSS を組みたいのですが、その前に必要な作業が有りますので、その点について説明していきましょう。</p>
+
+<h2 id="rgss-を組む前準備">RGSS を組む前準備</h2>
+
+<p>ここでは、RGSS でスクリプトを組むために必要な前準備を説明していきましょう。</p>
+
+<p>まず、「ツクール XP」を立ち上げて、プロジェクト (このソフトでは、ゲームを「プロジェクト」という単位で管理しています。勿論、RGSS のスクリプトもその一部です) を新規に作成しておきます。</p>
+
+<p><img src="/images/0005-RGSS/rpgxp_001.png" alt="rpgxp_001.png" />
+なにはさておき、肝心のスクリプトですが、ツールチップか、メニューの「ツール」−「スクリプトエディタ」を選ぶとスクリプトの編集画面になります。</p>
+
+<p><img src="/images/0005-RGSS/rpgxp_002.png" alt="rpgxp_002.png" />
+<strong><img src="/images/0005-RGSS/spacer.gif" alt="spacer.gif" /></strong></p>
+
+<p>画面の右側がスクリプトエディタで、左側がセクションリスト (スクリプト内容の表題) です。
+　
+ここまで来たら、早速スクリプトを解析＆編集といきたいところですが……。ここでちょっとストップ。
+　
+実際ソースを解析してみると分かるのですが、このデフォルト状態では、ゲームの動作や画面まわり、イベントの詳細 (イベントエディタで選べるイベントも、実装は RGSS です！) などがこの RGSS で実装されています。しかも、RGSS は「RPG ツクール XP」で設定したデータに依存しているわけではありませんので、使おうと思ったら使う程度の感覚でゲームを作成することが可能と言うことが分かります。
+　
+確かに、デフォルトのスクリプトを修正して、プログラムの動作をチェックする方法もありますが、デフォルトがかなりタイミング取りとかなんとかで複雑になってまして……それらを一つずつ解析するよりかは、最低限の動作原理を理解して、それから解析を始めたほうがより理解が早そうと考えたので、イチからスクリプトを組んでみましょう。
+　
+それでは、デフォルトのスクリプトを全部削除してしまいましょう。</p>
+
+<p>削除するときは、セクションごと消していく方法が便利です。セクションごと削除するときは、セクションリストでセクション名をクリックして、DELキーを押すとセクションごと消去できます (ただし、最低限一つのセクションは残るので、最後の一つはスクリプトエディタで全てのスクリプトを消去します)。
+　
+完全にスクリプトを消去した状態だと下図のようになります。この状態で一からスクリプトを組んでいきます。</p>
+
+<p><img src="/images/0005-RGSS/rpgxp_003.png" alt="rpgxp_003.png" />
+<strong><img src="/images/0005-RGSS/spacer.gif" alt="spacer.gif" /></strong></p>
+
+<p>次の章では、簡単なスクリプトをもとに、RGSS に必要な構造について説明してみましょう。</p>
+
+<p>(注：この章で採用しているスクリーンショットは、全てエンターブレインの「RPGツクールXP」の実行画面を撮ったものです)
+　</p>
+
+<h2 id="rgss-の基本的な構造">RGSS の基本的な構造</h2>
+
+<p>それでは、Main セクションに以下のスクリプトを記述してみます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Util</span>
+  <span class="vc">@@dx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+  <span class="vc">@@dy</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+  
+  <span class="k">def</span> <span class="nc">Util</span><span class="o">.</span><span class="nf">a2d</span><span class="p">(</span><span class="n">dir</span><span class="p">)</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="n">dir</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>
+    <span class="p">[</span><span class="vc">@@dx</span><span class="p">[</span><span class="n">dp</span><span class="p">],</span> <span class="vc">@@dy</span><span class="p">[</span><span class="n">dp</span><span class="p">]]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">Spr</span>
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">vp</span><span class="p">)</span>
+    <span class="vi">@final</span> <span class="o">=</span> <span class="kp">false</span>
+    <span class="vi">@sp</span> <span class="o">=</span> <span class="no">Sprite</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">vp</span><span class="p">)</span>
+    <span class="vi">@sp</span><span class="p">.</span><span class="nf">bitmap</span> <span class="o">=</span> <span class="no">Bitmap</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+    <span class="vi">@sp</span><span class="p">.</span><span class="nf">x</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="vi">@sp</span><span class="p">.</span><span class="nf">y</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="vi">@sp</span><span class="p">.</span><span class="nf">visible</span> <span class="o">=</span> <span class="kp">true</span>
+    <span class="vi">@stride</span> <span class="o">=</span> <span class="mi">8</span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">adjustment</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">min</span><span class="p">,</span> <span class="n">max</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">min</span>
+      <span class="n">min</span>
+    <span class="k">elsif</span> <span class="n">n</span> <span class="o">+</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="n">max</span>
+      <span class="n">max</span> <span class="o">-</span> <span class="n">size</span>
+    <span class="k">else</span>
+      <span class="n">n</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">update</span>
+    <span class="n">br</span> <span class="o">=</span> <span class="vi">@sp</span><span class="p">.</span><span class="nf">bitmap</span><span class="p">.</span><span class="nf">rect</span>
+    <span class="n">sr</span> <span class="o">=</span> <span class="vi">@sp</span><span class="p">.</span><span class="nf">viewport</span><span class="p">().</span><span class="nf">rect</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="no">Input</span><span class="p">.</span><span class="nf">dir4</span>
+    <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="no">Util</span><span class="p">.</span><span class="nf">a2d</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="vi">@sp</span><span class="p">.</span><span class="nf">x</span> <span class="o">=</span> <span class="n">adjustment</span><span class="p">(</span><span class="vi">@sp</span><span class="p">.</span><span class="nf">x</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">*</span> <span class="vi">@stride</span><span class="p">,</span> <span class="n">sr</span><span class="p">.</span><span class="nf">x</span><span class="p">,</span> <span class="n">sr</span><span class="p">.</span><span class="nf">width</span><span class="p">,</span> <span class="n">br</span><span class="p">.</span><span class="nf">width</span><span class="p">)</span>
+    <span class="vi">@sp</span><span class="p">.</span><span class="nf">y</span> <span class="o">=</span> <span class="n">adjustment</span><span class="p">(</span><span class="vi">@sp</span><span class="p">.</span><span class="nf">y</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="vi">@stride</span><span class="p">,</span> <span class="n">sr</span><span class="p">.</span><span class="nf">y</span><span class="p">,</span> <span class="n">sr</span><span class="p">.</span><span class="nf">height</span><span class="p">,</span> <span class="n">br</span><span class="p">.</span><span class="nf">height</span><span class="p">)</span>
+    
+    <span class="vi">@final</span> <span class="o">=</span> <span class="no">Input</span><span class="p">.</span><span class="nf">trigger?</span><span class="p">(</span><span class="no">Input</span><span class="o">::</span><span class="no">B</span><span class="p">)</span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">final?</span>
+    <span class="vi">@final</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">def_viewport</span> <span class="o">=</span> <span class="no">Viewport</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">640</span><span class="p">,</span> <span class="mi">480</span><span class="p">)</span> <span class="c1"># 引数は、（左上x座標、左上y座標、幅、高さ）の順</span>
+<span class="n">sp</span> <span class="o">=</span> <span class="no">Spr</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"ruby.png"</span><span class="p">,</span> <span class="n">def_viewport</span><span class="p">)</span>
+<span class="kp">loop</span><span class="p">{</span>
+  <span class="no">Graphics</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+  <span class="no">Input</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+  <span class="n">sp</span><span class="p">.</span><span class="nf">update</span><span class="p">()</span>
+  <span class="k">if</span> <span class="n">sp</span><span class="p">.</span><span class="nf">final?</span><span class="p">()</span>
+    <span class="k">break</span>
+  <span class="k">end</span>
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p><img src="/images/0005-RGSS/rpgxp_004.png" alt="rpgxp_004.png" />
+<strong><img src="/images/0005-RGSS/spacer.gif" alt="spacer.gif" /></strong></p>
+
+<p>このスクリプトを実行してみると、「ruby.png」にセーブした画像がキーパッドを押した方向に移動します。また、画面の端っこまで移動するとそこで止まるようになっています。
+　
+上記スクリプトの基本的な流れは以下の通りです。これらの処理に対応したスクリプトの行を併記しておきます。
+　</p>
+
+<ol>
+  <li>クラス定義 (1〜48行目)</li>
+  <li>データ初期化 (50〜51行目)</li>
+  <li>グラフィックまわりの更新 ( Graphics.update メソッドを呼び出す) (53行目)</li>
+  <li>入力まわりの更新 ( Input.update メソッドを呼び出す) (54行目)</li>
+  <li>ユーザ定義の操作 (ロジック部処理やグラフィック操作、タイミング同期など) (55行目)</li>
+  <li>(3) へ戻ってあとは繰り返し (なんらかのタイミングでループを抜ける (56〜58行目))</li>
+</ol>
+
+<p>最低限これらの流れを把握しておけば、あとは (5) の部分に専念すれば問題は無いと思います。
+　
+プログラム自体はそんなにトリッキーなことはしておりませんので、Rubyist の皆さんならスクリプトを読めば大体の感触は掴めると思います。ので、必要最低限の説明にとどめて、詳しい解説は割愛いたします (笑)。
+　</p>
+
+<h3 id="14行目のspriteクラス">14行目の「Sprite」クラス</h3>
+
+<p>クラスに関連づけたビットマップオブジェクト (これも Bitmap クラスのインスタンス) をスプライト表示するためのクラスです。x, y プロパティで表示する位置を設定して、visible プロパティで表示の ON/OFF を設定します。表示を行うのは、必ず Sprite クラスを通じて行います。</p>
+
+<h3 id="15行目のbitmapクラス">15行目の「Bitmap」クラス</h3>
+
+<p>ビットマップデータを管理するクラスで、画像の取り込みだけではなく、ビットマップの複写、文字の描画なども行えます。ビットマップの大きさは rect プロパティで取得できます。</p>
+
+<h3 id="36行目のinputdir4メソッド">36行目の「Input.dir4」メソッド</h3>
+
+<p>キーパッドの方向ボタンを押しているときは、それに応じた数値を返却します。但し、その値が 2(下), 4(左), 6(右), 8(上) となっていますので、1〜9 行目のような処理を一度噛ませてから移動時の座標を求めています。</p>
+
+<h3 id="50-行目のviewportクラス">50 行目の「Viewport」クラス</h3>
+
+<p>スプライトの表示範囲を設定します。たとえば、「RPG ツクール XP」の場合、ゲーム画面の大きさは 640x480 ですので、画面一杯を表示範囲にしたいときは (0, 0, 640, 480) の大きさで Viewport クラスのインスタンスを作成します。また、画面の左上、4 分の 1 を表示範囲にしたければ、(0, 0, 320, 240) の大きさで作成すればその範囲だけでスプライトを表示できますし、右下 4 分の 1 を範囲にするときは (320, 240, 320, 240) でインスタンスを作成すればいいわけです。
+　
+(注：この章で採用しているスクリーンショットは、全てエンターブレインの「RPG ツクールXP」の実行画面を撮ったものです)
+　</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>ここまで、RGSS について簡単に説明致して参りましたが、いかがでしたか？</p>
+
+<p>基本的には、80 年代に沢山出ていた「BASIC で簡単ゲームプログラミング」のようなノリでプログラムを初めて、デフォルトのスクリプトを参考に、次第に機能を拡張していって慣れていけば、有る程度のゲームは作れるのではないかと思います。
+　
+また、今回は説明致しませんでしたが、「RPG ツクール XP」本体で設定・登録しておいたデータ (グラフィック・サウンド・各種パラメータ) を RGSS で簡単に呼び出せるようになっていますので、グラフィックデータなどを本体で管理しておけば RGSS 上で面倒なデータ管理に悩まされずに済みますので、ガシガシ使ってみることをお奨めします。
+　
+これらの便利な機能を駆使していけば、行く末には、皆があっと驚くゲームを開発できるのは夢ではないと考えています (実際、これらのスクリプトを駆使して、非常に効果的な演出やシステムのゲームも「RPG ツクール XP」のサンプルゲームとして収録されています)。
+　
+それでは、この文章が「RGSS」もしくは「RPG ツクール XP」ユーザ数増加の一翼を担えることを願って、本記事を締めたいと思います。</p>
+
+<h2 id="最後に自己紹介なぞ-著者紹介">最後に自己紹介なぞ (著者紹介)</h2>
+
+<p>京都の南端でプログラムを書いている (でも住んでいるのは大阪) サイロス誠と申します。数年前に Ruby に出会って、そのおもしろさにハマって以来、スクリプト言語で出来ることは大抵 Ruby でこなしています (やや誇張アリ)。</p>
+
+<p>また、ゲーム作成についても興味があり、幾つかゲームコンストラクションツール (勿論、「RPG ツクール」シリーズも含まれています) を試してみたのですが、プリセットの機能を選択して貼り付けるタイプのモノがほとんどでしたので、ゲームシステムを改変できるくらい自由度の高いツールは中々ありませんでした (昔のツールでは金額の単位を「G」以外変更できない等といった制限がありました。どうやって日本風 RPG を作ればいいのか……)。</p>
+
+<p>そんなある日、「RPG ツクール」最新版の「RPG ツクール XP」の発売が発表され、そこに RGSS が搭載されることを知ったわけです。早速購入していろいろ弄ってみたところ、直感的に分かり易い Ruby のゲーム作成環境としても使えることがわかり、それが今回の記事に繋がったわけです。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<ol>
+  <li><a href="http://www.enterbrain.co.jp/tkool/RPG_XP/index.html">「ツクール Web」内「RPG ツクール XP」紹介ページ</a></li>
+  <li><a href="http://www.enterbrain.co.jp/tkool/rpgxp_update.html">「ツクール Web」内「RPG ツクール XP」アップデートページ</a></li>
+  <li>テックウィン 2004 年 7 月号 (尾島陽児氏インタビュー)</li>
+  <li><a href="https://www.amazon.co.jp/%E3%82%A8%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%96%E3%83%AC%E3%82%A4%E3%83%B3-RPG%E3%83%84%E3%82%AF%E3%83%BC%E3%83%AB-XP/dp/B0002CCN38?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B0002CCN38">‘Amazon.co.jp 内「RPG ツクール XP」商品紹介ページ’</a></li>
+</ol>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

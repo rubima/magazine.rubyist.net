@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Nvu と CGIKit2 による Web アプリケーション開発</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0009/0009-CGIKit-2.x.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Nvu と CGIKit2 による Web アプリケーション開発</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0009/0009-CGIKit-2.x.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Nvu と CGIKit2 による Web アプリケーション開発" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0009/0009-CGIKit-2.x.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0009/0009-CGIKit-2.x.html" data-text="Nvu と CGIKit2 による Web アプリケーション開発">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#概要" id="markdown-toc-概要">概要</a>    <ul>
+      <li><a href="#対象とする読者" id="markdown-toc-対象とする読者">対象とする読者</a></li>
+      <li><a href="#必要なもの" id="markdown-toc-必要なもの">必要なもの</a></li>
+    </ul>
+  </li>
+  <li><a href="#nvuってなあに食べ物" id="markdown-toc-nvuってなあに食べ物">Nvuってなあに？食べ物？</a></li>
+  <li><a href="#サンプルの説明をそろそろはじめろよー" id="markdown-toc-サンプルの説明をそろそろはじめろよー">サンプルの説明をそろそろはじめろよー。</a></li>
+  <li><a href="#registration-プロジェクト---初めの一歩" id="markdown-toc-registration-プロジェクト---初めの一歩">Registration プロジェクト - 初めの一歩？</a></li>
+  <li><a href="#registrationrb---webrick-起動スクリプト" id="markdown-toc-registrationrb---webrick-起動スクリプト">Registration.rb - WEBrick 起動スクリプト</a></li>
+  <li><a href="#indexhtml---スタート地点だね" id="markdown-toc-indexhtml---スタート地点だね">index.html - スタート地点だね</a></li>
+  <li><a href="#registrationregisterpage---そろそろ-ruby-のプログラムを書けよー" id="markdown-toc-registrationregisterpage---そろそろ-ruby-のプログラムを書けよー">Registration::RegisterPage - そろそろ Ruby のプログラムを書けよー</a>    <ul>
+      <li><a href="#registerpagehtml" id="markdown-toc-registerpagehtml">RegisterPage.html</a>        <ul>
+          <li><a href="#cgikit-のテンプレートへ" id="markdown-toc-cgikit-のテンプレートへ">CGIKit のテンプレートへ</a></li>
+        </ul>
+      </li>
+      <li><a href="#registerpageckd" id="markdown-toc-registerpageckd">RegisterPage.ckd</a></li>
+      <li><a href="#registerpagerb" id="markdown-toc-registerpagerb">RegisterPage.rb</a>        <ul>
+          <li><a href="#registrationuserinfo" id="markdown-toc-registrationuserinfo">Registration::UserInfo</a></li>
+          <li><a href="#registrationregisterpagenext_page" id="markdown-toc-registrationregisterpagenext_page">Registration::RegisterPage#next_page</a></li>
+        </ul>
+      </li>
+      <li><a href="#スクリーンショット" id="markdown-toc-スクリーンショット">スクリーンショット</a></li>
+    </ul>
+  </li>
+  <li><a href="#registrationconfirmpage---確認確認確認" id="markdown-toc-registrationconfirmpage---確認確認確認">Registration::ConfirmPage - 確認、確認、確認</a>    <ul>
+      <li><a href="#confirmpagehtml" id="markdown-toc-confirmpagehtml">ConfirmPage.html</a></li>
+      <li><a href="#confirmpageckd" id="markdown-toc-confirmpageckd">ConfirmPage.ckd</a></li>
+      <li><a href="#confirmpagerb" id="markdown-toc-confirmpagerb">ConfirmPage.rb</a></li>
+      <li><a href="#スクリーンショット-1" id="markdown-toc-スクリーンショット-1">スクリーンショット</a></li>
+    </ul>
+  </li>
+  <li><a href="#thankspage---おしまいー" id="markdown-toc-thankspage---おしまいー">ThanksPage - おしまいー</a>    <ul>
+      <li><a href="#スクリーンショット-2" id="markdown-toc-スクリーンショット-2">スクリーンショット</a></li>
+    </ul>
+  </li>
+  <li><a href="#宿題" id="markdown-toc-宿題">宿題</a></li>
+  <li><a href="#リンク" id="markdown-toc-リンク">リンク</a>    <ul>
+      <li><a href="#cgikit" id="markdown-toc-cgikit">CGIKit</a></li>
+      <li><a href="#nvu" id="markdown-toc-nvu">Nvu</a></li>
+    </ul>
+  </li>
+  <li><a href="#謝辞" id="markdown-toc-謝辞">謝辞</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<p>バックナンバー</p>
+
+<ul>
+  <li><a href="/articles/0006/0006-CGIKit-2.x.html">CGIKit2.x を用いたアルバム CGI/Web アプリケーション</a></li>
+  <li><a href="/articles/0007/0007-CGIKit-2.x.html">CGIKit2 によるリファレンスマニュアル作り </a></li>
+</ul>
+
+<p>0009号の付録ページ</p>
+
+<ul>
+  <li><a href="/articles/0009/0009-CGIKit-2.x-Nvu-Brushup.html">0009号のCGIKit2の付録ページ</a></li>
+</ul>
+
+<p>著者: speakillof &lt;speakillof at yahoo dot co dot jp&gt;</p>
+
+<h2 id="概要">概要</h2>
+
+<p>今回は <a href="http://www.nvu.com/">Nvu </a> という HTML オーサリングツールと
+CGIKit を使って Web アプリケーションを作ってみます。
+Nvu を使えば HTML デザイナーの方が作った HTML を
+ほぼ無修正で CGIKit から利用することも可能です。</p>
+
+<p>筆者はデザインが得意ではないので、これを読んだ皆さんが
+Nvu を使って色々とデザインしてくれることを期待しています。</p>
+
+<h3 id="対象とする読者">対象とする読者</h3>
+
+<ul>
+  <li>Ruby がそれなりに分かる方</li>
+  <li>CGIKit-2.x  のるびま記事を読んだ方
+    <ul>
+      <li>CGIKit の wiki のチュートリアルをやった方でも結構です。</li>
+    </ul>
+  </li>
+  <li>Nvu に興味のある方</li>
+  <li>HTML の知識がそれなりにある方
+    <ul>
+      <li>CSS の知識があると良いですが、必須ではありません。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="必要なもの">必要なもの</h3>
+
+<ul>
+  <li>Ruby-1.8.2
+    <ul>
+      <li>標準添付されている WEBrick、 REXML</li>
+    </ul>
+  </li>
+  <li>cgikit-2.0.0-preview1</li>
+  <li>Nvu-1.0</li>
+  <li>サンプルのソース <a href="/images/0009-CGIKit-2.x/rubima-ck0009.zip">rubima-ck0009.zip</a></li>
+</ul>
+
+<p>CGIKit のインストールの方法については
+<a href="http://wiki.fdiary.net/.RubiMa/?0006-CGIKit-2.x">前々回の記事</a>
+や<a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi">CGIKit の Wiki</a>
+を参照してください。</p>
+
+<p>Nvu に関しては Windows で動作確認をとっていますので、
+同じ環境で試すことをお勧めします。</p>
+
+<h2 id="nvuってなあに食べ物">Nvuってなあに？食べ物？</h2>
+
+<p>… Nvu は食べ物じゃないです。
+<a href="http://www.nvu.com/">Nvuのサイト</a> に書かれているように
+Nvu は Windows, Mac, Linux で動く
+WYSISYG(What you see is what you get の略) な HTML の
+オーサリングツールです。
+ちなみに Nvu の読み方は New View という意味を込めて「エヌビュー」らしいです。</p>
+
+<p><strong>スクリーンショット</strong>
+<img src="/images/0009-CGIKit-2.x/demo.jpg" alt="demo.jpg" /></p>
+
+<p>Nvu には様々な特徴がありますが、
+<a href="http://www.nvu.com/features.html">http://www.nvu.com/features.html</a> に書かれているものから抜粋して
+下に載せます。</p>
+
+<ul>
+  <li>レンダリングに Gecko を使用</li>
+  <li>CSS Editor(CaScadeS)</li>
+  <li>ユーザーインターフェースの改良(タブ、色選択ダイアログ、ツールバーなど)</li>
+  <li>Markup Cleaner</li>
+  <li>FTP サイトの管理機能</li>
+</ul>
+
+<p>上の中には含まれていませんが、CGIKit-2.x を使う立場から Nvu を見ると、
+XHTML のサポートという点が大きいです。
+CGIKit-2.x ではXHTML (正確には XML と言うべきですが) を使用しますので、
+Nvu の XHTML サポートとは相性が良い(はず)です。</p>
+
+<p>Nvu の インストール・起動・設定 については本文とは関係ないので、
+別ページに分割しています。詳細は 
+<a href="/articles/0009/0009-CGIKit-2.x-Nvu-Brushup.html">今号のCGIKit2の付録ページ</a> へどうぞ。</p>
+
+<h2 id="サンプルの説明をそろそろはじめろよー">サンプルの説明をそろそろはじめろよー。</h2>
+
+<p>はいはい、分かりましたよ。急かさないで下さい。
+今回はサンプルとしてユーザー登録ページを作ります。
+ページの流れは下のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 登録のお願い          (index.html)
+    ｜
+    ↓
+ユーザー情報入力 ←┐  (Registration::RegisterPage)
+    ｜↑   │      │
+    ↓｜   └───┘
+  入力確認             (Registration::ConfirmPage)
+    ｜
+    ↓
+登録終了のお知らせ     (Registration::ThanksPage)</code></pre></figure>
+
+<p>各ページの HTML の大部分を Nvu で作ります。
+そのため CGIKit や Ruby と関係のない部分が多くなりますが、ご了承ください。</p>
+
+<h2 id="registration-プロジェクト---初めの一歩">Registration プロジェクト - 初めの一歩？</h2>
+
+<p>最初に Registration プロジェクトを作ります。
+前回の記事と同じように</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby ckproject Registration</code></pre></figure>
+
+<p>として Registration プロジェクトを作ります。
+Windows では which コマンドが無いためエラーになることがあります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">``': No such file or directory - which ruby (Errno::ENOENT)</code></pre></figure>
+
+<p>この場合は <a href="http://www.atmarkit.co.jp/fwin2k/win2ktips/319which/which.html">whichコマンドを作る</a>
+を参考にして which.bat を ckproject と同じフォルダーに
+置いてから実行してみてください。</p>
+
+<p>ckproject が終了すると、
+Registration というフォルダーができます。
+この時にいっしょに Registration の中に www というフォルダーを作っておきます。
+この中には CSS やテンプレートではない
+普通の HTML が保存されることになります。</p>
+
+<h2 id="registrationrb---webrick-起動スクリプト">Registration.rb - WEBrick 起動スクリプト</h2>
+
+<p>今回も WEBrick で開発します。起動用スクリプトは
+Registration/Registration.rb です。
+起動方法は今までといっしょで Registration フォルダーに移動して</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby Registration.rb</code></pre></figure>
+
+<p>とします。One-Click Installer for Windows を
+使用されている場合は Registration.rb をダブルクリックして
+起動することも可能です。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+
+<span class="c1"># Registration.rb [port]</span>
+
+<span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="s1">'lib'</span><span class="p">)</span>
+<span class="nb">require</span> <span class="s1">'webrick'</span>
+<span class="nb">require</span> <span class="s1">'cgikit'</span>
+<span class="nb">require</span> <span class="s1">'cgikit/webrick'</span>
+<span class="nb">require</span> <span class="s1">'application'</span>
+<span class="nb">require</span> <span class="s1">'session'</span>
+<span class="nb">require</span> <span class="s1">'directaction'</span>
+<span class="nb">require</span> <span class="s1">'kconv'</span>
+
+<span class="k">module</span> <span class="nn">Registration</span>
+  
+  <span class="k">module</span> <span class="nn">UserInfo</span>
+    <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">,</span> <span class="ss">:sex</span><span class="p">,</span> <span class="ss">:year</span><span class="p">,</span> <span class="ss">:month</span><span class="p">,</span> <span class="ss">:day</span><span class="p">,</span> <span class="ss">:address</span><span class="p">,</span> <span class="ss">:phone</span>
+    
+    <span class="k">def</span> <span class="nf">to_utf8</span>
+      <span class="vi">@name</span> <span class="o">=</span> <span class="no">Kconv</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
+      <span class="vi">@age</span> <span class="o">=</span> <span class="no">Kconv</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">(</span><span class="vi">@age</span><span class="p">)</span>
+      <span class="vi">@sex</span> <span class="o">=</span> <span class="no">Kconv</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">(</span><span class="vi">@sex</span><span class="p">)</span>
+      <span class="vi">@year</span> <span class="o">=</span> <span class="no">Kconv</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">(</span><span class="vi">@year</span><span class="p">)</span>
+      <span class="vi">@month</span> <span class="o">=</span> <span class="no">Kconv</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">(</span><span class="vi">@month</span><span class="p">)</span>
+      <span class="vi">@day</span> <span class="o">=</span> <span class="no">Kconv</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">(</span><span class="vi">@day</span><span class="p">)</span>
+      <span class="vi">@address</span> <span class="o">=</span> <span class="no">Kconv</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">(</span><span class="vi">@address</span><span class="p">)</span>
+      <span class="vi">@phone</span> <span class="o">=</span> <span class="no">Kconv</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">(</span><span class="vi">@phone</span><span class="p">)</span>
+    <span class="k">end</span>    
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">copy_info</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span>
+    <span class="n">to</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="nf">name</span>
+    <span class="n">to</span><span class="p">.</span><span class="nf">age</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="nf">age</span>
+    <span class="n">to</span><span class="p">.</span><span class="nf">sex</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="nf">sex</span>
+    <span class="n">to</span><span class="p">.</span><span class="nf">year</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="nf">year</span>
+    <span class="n">to</span><span class="p">.</span><span class="nf">month</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="nf">month</span>
+    <span class="n">to</span><span class="p">.</span><span class="nf">day</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="nf">day</span>
+    <span class="n">to</span><span class="p">.</span><span class="nf">address</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="nf">address</span>
+    <span class="n">to</span><span class="p">.</span><span class="nf">phone</span> <span class="o">=</span> <span class="n">from</span><span class="p">.</span><span class="nf">phone</span>
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+
+<span class="n">port</span> <span class="o">=</span> <span class="p">(</span><span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span> <span class="o">||</span> <span class="mi">8080</span><span class="p">).</span><span class="nf">to_i</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="no">Registration</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">load_all_components</span><span class="p">(</span><span class="s1">'./components'</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">load_configuration</span><span class="p">(</span><span class="s1">'./cgikitconf.rb'</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="nf">main</span> <span class="o">=</span> <span class="no">Registration</span><span class="o">::</span><span class="no">RegisterPage</span>
+
+<span class="n">server</span> <span class="o">=</span> <span class="no">WEBrick</span><span class="o">::</span><span class="no">HTTPServer</span><span class="p">.</span><span class="nf">new</span><span class="p">({</span><span class="ss">:Port</span> <span class="o">=&gt;</span> <span class="n">port</span><span class="p">})</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">mount</span><span class="p">(</span><span class="s1">'/'</span><span class="p">,</span> <span class="no">WEBrick</span><span class="o">::</span><span class="no">HTTPServlet</span><span class="o">::</span><span class="no">FileHandler</span><span class="p">,</span> <span class="s2">"www"</span><span class="p">)</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">mount</span><span class="p">(</span><span class="s1">'/register.cgi'</span><span class="p">,</span> <span class="no">WEBrick</span><span class="o">::</span><span class="no">CGIKitServlet</span><span class="o">::</span><span class="no">ApplicationHandler</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span>
+
+<span class="nb">trap</span><span class="p">(</span><span class="s2">"INT"</span><span class="p">){</span> <span class="n">server</span><span class="p">.</span><span class="nf">shutdown</span> <span class="p">}</span>
+<span class="n">server</span><span class="p">.</span><span class="nf">start</span>
+
+</code></pre>
+</div>
+
+<p>各ページを作る前に ckproject が作ったスクリプトにいくつか修正を加えます。
+一つ目は Kconv を使えるように require ‘kconv’ を追加することです。
+Kconv は後で文字コードの推定・変更のために利用します。
+二つ目は Registration::UserInfo と Registration.copy_info を定義することです。
+前者はページ間でやり取りされるユーザー情報で、
+後者はそのデータをコピーするためのクラスメソッドです。
+後者はもう少しスマートに定義することができますが、
+コードが読みにくくなるので今回は泥臭く定義します。
+三つ目は URL と表示する内容の関連付けです。
+下の部分が関連付けを行う部分です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">server.mount('/', WEBrick::HTTPServlet::FileHandler, "www")
+server.mount('/register.cgi', WEBrick::CGIKitServlet::ApplicationHandler, app)</code></pre></figure>
+
+<p>URL の / は Registration.rb 実行時の Registration/www 
+フォルダーに関連付けられ、/register.cgi は
+コンポーネントを表示するページに関連付けられます。</p>
+
+<p>最後の4つ目は /register.cgi で表示されるコンポーネントの指定です。
+実際に指定しているのは46行目の下の部分です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> app.main = Registration::RegisterPage</code></pre></figure>
+
+<p>前回までに説明したように CGIKit::Application#main に表示させたい
+コンポーネントのクラスを指定します。</p>
+
+<h2 id="indexhtml---スタート地点だね">index.html - スタート地点だね</h2>
+
+<p>最初に作るのは普通の HTML です。
+このページが登録ページのスタートになります。</p>
+
+<p>ここから実際に Nvu を使って HTML を作っていきます。
+Nvu の使い方は簡単です。
+Microsoft Word や OpenOffice のような
+ドキュメント作成ツールと同じように文章を入力するだけです。
+Nvu は HTML オーサリングツールとしては比較的まともな HTML を生成してくれるので、
+Nvu で作った HTML を手で修正するのも容易です。</p>
+
+<p>初めにメニューの File -&gt; New から 新しいページを作ります。
+下のようなダイアログが現れるので、create a XHTML document にチェックが
+入っていることを確認してから Create のボタンを押してください。
+<img src="/images/0009-CGIKit-2.x/nvu_file_new.jpg" alt="nvu_file_new.jpg" /></p>
+
+<p>次に index.html として保存します。メニューの File -&gt; Save を選ぶと
+タイトルを聞かれるので、適当にタイトル名をつけます。
+<img src="/images/0009-CGIKit-2.x/nvu_file_save.jpg" alt="nvu_file_save.jpg" /></p>
+
+<p>保存先は先ほど作った Registration/www です。
+index.html として保存します。</p>
+
+<p>最後に本文と登録ページへのリンクを作ります。
+リンク(aタグ)は Insert -&gt; Link から挿入します。
+リンク先は /register.cgi とします。
+<img src="/images/0009-CGIKit-2.x/nvu_insert_link.jpg" alt="nvu_insert_link.jpg" /></p>
+
+<p>リンクを挿入した後に細かい修正を行って、下の図のようにします。
+この図は HTML のソースを手動で編集するモードになっています。
+Nvu の下にある Source というタブがあり、これをクリックすることで
+ソースを直接編集するモードになります。
+元のモードに戻したい場合は Normal を押します。
+<img src="/images/0009-CGIKit-2.x/index_page.jpg" alt="index_page.jpg" /></p>
+
+<p>index.html
+<img src="/images/0009-CGIKit-2.x/index.html" alt="index.html" /></p>
+
+<p>これで少しは Nvu に馴れたでしょうか?
+デザインは CGIKit と関係ないので、ここでは扱いません。
+<a href="/articles/0009/0009-CGIKit-2.x-Nvu-Brushup.html">付録ページ</a>に CSS を
+使ってデザインする方法を説明していますので、
+興味のある方はそちらをご覧ください。</p>
+
+<h2 id="registrationregisterpage---そろそろ-ruby-のプログラムを書けよー">Registration::RegisterPage - そろそろ Ruby のプログラムを書けよー</h2>
+
+<p>そうですね。CGIKit の記事なのですから、いい加減 Ruby のコードを
+書かないと怒られてしまいますね。とはいえ、最初は Nvu で HTML を作ります。
+ユーザー情報の登録ページなので、</p>
+
+<ul>
+  <li>名前</li>
+  <li>性別</li>
+  <li>年齢</li>
+  <li>生年月日</li>
+  <li>住所</li>
+  <li>電話番号</li>
+</ul>
+
+<p>を入力するためのフォームを作り、
+いっしょにエラーメッセージも入れます。
+HTMLが一区切りついたら、それに Nvu で CGIKit と連携させるための
+修正を少し加えます。後は前回までの記事と同様に *.ckd
+や *.rb  に Ruby のコードを書いていくだけです。</p>
+
+<h3 id="registerpagehtml">RegisterPage.html</h3>
+
+<p>Nvu を使ってテンプレート(HTML)を作成します。
+index.html と同じようにして新しい HTML を作り、
+RegisterPage.html として Registration/components 以下に保存します。</p>
+
+<p>次にフォームを挿入します。
+Form のボタンを押すかメニューの Insert -&gt; Form -&gt; Define Form 
+で下の図のようなダイアログを表示させます。
+何か入力しても良いのですが、後で CGIKit によって上書きされるので、
+何も入力せずに OK を押します。alert が出ますが、無視して挿入します。
+<img src="/images/0009-CGIKit-2.x/nvu_form.jpg" alt="nvu_form.jpg" /></p>
+
+<p>次に名前を入力するテキストフィールドを作ります。
+フォームが水色の破線で表されているので、その中に
+「名前」と入力します。そして、その後ろにテキストフィールドを挿入します。
+Insert -&gt; Form -&gt; Form Field を選ぶと、ダイアログが出現します。
+Field Type に Text を選択し、name 属性を適当に入力します。
+name 属性を設定しないと、OKが押せませんので注意してください。
+<img src="/images/0009-CGIKit-2.x/nvu_textfield.jpg" alt="nvu_textfield.jpg" /></p>
+
+<p>以下、同じ要領で Nvu に入力していきます。
+おおよそ下のような図になるようにします。
+<img src="/images/0009-CGIKit-2.x/nvu_regsiter_page1.jpg" alt="nvu_regsiter_page1.jpg" /></p>
+
+<p>性別に関しては Insert -&gt; Form -&gt; Form Field で 
+Field Type に Radio Button を選択します。
+OK ボタンを挿入するには Insert -&gt; Form -&gt; Form Field -&gt; Submit Button 
+を選んで Name Value に「OK」 を入力します。</p>
+
+<p>「ユーザー情報」「名前」などを目次として扱いたい場合は Heading である
+h1 や h2 タグを使います。目次にしたい部分を選んで、
+アイコンの列の下にある Body Text の部分を好みの Heading に変えてください。
+Heading 1 は h1 タグに、Heading 2 は h2 に対応します。</p>
+
+<p>フォームが完成したら、各項目にエラーメッセージを挿入します。</p>
+
+<h4 id="cgikit-のテンプレートへ">CGIKit のテンプレートへ</h4>
+
+<p>ここから CGIKit のテンプレートとして使用できるように
+HTML を直接修正します。注意する点は下の 2 点です。</p>
+
+<ul>
+  <li>form, input タグに ckid 属性を設定し、name 属性を削除</li>
+  <li>エラーメッセージを ckid 属性の付いた span タグで囲う</li>
+</ul>
+
+<p>name 属性は自分で付けても良いのですが、重複してはいけません。
+重複させる不安があるのならば name 属性を消去したほうが無難でしょう。
+name 属性が無い場合は 実行時に CGIKit が自動的に割り振ってくれます。</p>
+
+<p>また、デザイン用にいくつかの div を追加します。
+修正の結果、最終的に下のようになります。
+<img src="/images/0009-CGIKit-2.x/RegisterPage.html" alt="RegisterPage.html" /></p>
+
+<p>編集が完了したら修正した部分が
+正しいのかどうかを ckparse を使って検証します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ruby ckparse Registration/components/RegisterPage.html</code></pre></figure>
+
+<p>下のように出力されたら文法的には OK です。失敗したら
+ckparse のエラーメッセージを見たり、 Nvu の メニューから
+Tools -&gt; Validate HTML で XHTML として適合するかどうか
+チッェクしたりしてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#&lt;CGIKit::HTMLParser::RootNode:0x1016fa18
+ @content="",
+ @name="",
+ @node=
+  [#&lt;CGIKit::HTMLParser::TextNode:0x100c6bd0
+    @content=
+     "&lt;!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transiti...</code></pre></figure>
+
+<p>ckparse の出力から ckid 属性が正しく付加されているかどうかもチェックできますので、
+興味のある人は試してみてください。</p>
+
+<h3 id="registerpageckd">RegisterPage.ckd</h3>
+
+<p>次に RegisterPage.ckd を作ります。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:form</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Form</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:name</span><span class="p">,</span>    
+  <span class="p">},</span>
+  
+  <span class="ss">:male</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Radio</span><span class="p">,</span>
+    <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"sex"</span><span class="p">,</span>
+    <span class="ss">:selection</span> <span class="o">=&gt;</span> <span class="ss">:sex</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="s2">"M"</span>
+  <span class="p">},</span> 
+  
+  <span class="ss">:female</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Radio</span><span class="p">,</span>
+    <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"sex"</span><span class="p">,</span>
+    <span class="ss">:selection</span> <span class="o">=&gt;</span> <span class="ss">:sex</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="s2">"F"</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:age</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:year</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:year</span><span class="p">,</span>    
+  <span class="p">},</span>
+  
+  <span class="ss">:month</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:month</span><span class="p">,</span>    
+  <span class="p">},</span>
+  
+  <span class="ss">:day</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:day</span><span class="p">,</span>    
+  <span class="p">},</span>
+  
+  <span class="ss">:address</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:address</span><span class="p">,</span>    
+  <span class="p">},</span>
+  
+  <span class="ss">:phone</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:phone</span><span class="p">,</span>    
+  <span class="p">},</span>
+  
+  <span class="ss">:submit</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Submit</span><span class="p">,</span>
+    <span class="ss">:action</span> <span class="o">=&gt;</span> <span class="ss">:next_page</span>
+  <span class="p">},</span>
+  
+  
+  
+  
+  <span class="ss">:error_name</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
+    <span class="ss">:condition</span> <span class="o">=&gt;</span> <span class="ss">:error_name</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:error_age</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
+    <span class="ss">:condition</span> <span class="o">=&gt;</span> <span class="ss">:error_age</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:error_sex</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
+    <span class="ss">:condition</span> <span class="o">=&gt;</span> <span class="ss">:error_sex</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:error_date</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
+    <span class="ss">:condition</span> <span class="o">=&gt;</span> <span class="ss">:error_date</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:error_address</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
+    <span class="ss">:condition</span> <span class="o">=&gt;</span> <span class="ss">:error_address</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:error_phone</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
+    <span class="ss">:condition</span> <span class="o">=&gt;</span> <span class="ss">:error_phone</span><span class="p">,</span>
+  <span class="p">},</span>
+<span class="p">}</span>
+
+
+</code></pre>
+</div>
+
+<p>前回までの記事で説明した部分がほとんどです。
+基本的に HTML のタグに対応するエレメントを HTML に割り振っていきます。
+たとえば、input の type 属性の指定無しであれば TextField エレメント、
+input type=”submit” なら Submit エレメントという感じです。</p>
+
+<p>今回新しく使うエレメントは Radio です。
+Radio によってグループ化されたボタンは
+その中の一つだけ選択することが出来ます。
+Radio の設定部分を下に載せます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> :male =&gt; {
+   :element =&gt; Radio,
+   :name =&gt; "sex",
+   :selection =&gt; :sex,
+   :value =&gt; "M"
+ },
+
+ :female =&gt; {
+   :element =&gt; Radio,
+   :name =&gt; "sex",
+   :selection =&gt; :sex,
+   :value =&gt; "F"
+ },</code></pre></figure>
+
+<p>male, female の ckid 属性が付いているのは
+RegisterPage.html の input タグの radio です。
+男性と女性を選択する部分ですね。</p>
+
+<p>この二つをグループ化するには二つの Radio エレメントに同じ name 属性を与えます。
+上の例では sex という名前でグループ化しています。
+選択されたときに使用されるデータは selection と value で指定します。
+value は選択されたときに代入される値で、
+selection はその値が代入されるメソッド名(もしくはインスタンス変数)です。</p>
+
+<p>この ckd ファイルの設定で OK ボタンが押されると、
+Registration::RegisterPage#sex に 男性なら “M” が
+女性なら “F” が代入されます。</p>
+
+<p>これ以外のエレメントについては過去の記事に説明があります。
+<a href="/articles/0009/0009-CGIKit-2.x-Nvu-Brushup.html">付録ページ</a>でも説明していますので、
+気になる方はそちらをご覧ください。また、CGIKit で使用する HTML の説明も
+ありますので、合わせて読んでみてください。</p>
+
+<h3 id="registerpagerb">RegisterPage.rb</h3>
+
+<p>最後に RegisterPage.rb です。
+ここにコンポーネントのクラスを定義します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'date'</span>
+
+<span class="k">module</span> <span class="nn">Registration</span>
+    
+  <span class="k">class</span> <span class="nc">RegisterPage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
+    
+    <span class="kp">include</span> <span class="no">UserInfo</span>
+    
+    <span class="k">def</span> <span class="nf">next_page</span>
+      <span class="n">to_utf8</span>
+      
+      <span class="vi">@error_name</span> <span class="o">=</span> <span class="p">(</span><span class="vi">@name</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">==</span> <span class="s2">""</span><span class="p">)</span>
+      <span class="vi">@error_age</span> <span class="o">=</span> <span class="p">(</span><span class="sr">/\A\d+\z/</span> <span class="o">!~</span> <span class="vi">@age</span><span class="p">.</span><span class="nf">to_s</span> <span class="p">)</span>
+      <span class="vi">@error_sex</span> <span class="o">=</span> <span class="p">(</span><span class="sr">/\A[MF]\z/</span> <span class="o">!~</span> <span class="vi">@sex</span><span class="p">.</span><span class="nf">to_s</span><span class="p">)</span>      
+      <span class="vi">@error_address</span> <span class="o">=</span> <span class="p">(</span><span class="vi">@address</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">==</span> <span class="s1">''</span><span class="p">)</span>
+      <span class="vi">@error_phone</span> <span class="o">=</span> <span class="p">(</span><span class="sr">/\A[0-9-]+\z/</span> <span class="o">!~</span> <span class="vi">@phone</span><span class="p">.</span><span class="nf">to_s</span> <span class="p">)</span>
+      
+      <span class="n">y</span> <span class="o">=</span> <span class="vi">@year</span><span class="p">.</span><span class="nf">to_i</span>
+      <span class="n">m</span> <span class="o">=</span> <span class="vi">@month</span><span class="p">.</span><span class="nf">to_i</span>
+      <span class="n">d</span> <span class="o">=</span> <span class="vi">@day</span><span class="p">.</span><span class="nf">to_i</span>
+      <span class="vi">@error_date</span> <span class="o">=</span> <span class="kp">false</span>
+      <span class="k">begin</span>
+        <span class="no">Date</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
+      <span class="k">rescue</span> <span class="no">ArgumentError</span>
+        <span class="vi">@error_date</span> <span class="o">=</span> <span class="kp">true</span>
+      <span class="k">end</span>
+      
+      <span class="n">error</span> <span class="o">=</span> <span class="vi">@error_name</span> <span class="o">||</span> <span class="vi">@error_age</span> <span class="o">||</span> <span class="vi">@error_sex</span> <span class="o">||</span> <span class="vi">@error_address</span> <span class="o">||</span> <span class="vi">@error_phone</span> <span class="o">||</span> <span class="vi">@error_date</span>      
+      <span class="k">unless</span> <span class="n">error</span>
+        <span class="n">p1</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">ConfirmPage</span><span class="p">)</span>
+        <span class="no">Registration</span><span class="p">.</span><span class="nf">copy_info</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+        <span class="n">p1</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+
+</code></pre>
+</div>
+
+<p>今までと同じように CGIKit::Component を継承しています。
+これはコンポーネントを作る際に必須になります。
+CGIKit::Component を継承しないと
+コンポーネントとして使えませんので注意してください。</p>
+
+<h4 id="registrationuserinfo">Registration::UserInfo</h4>
+
+<p>RegisterPage は Registration::UserInfo を include しています。
+これはユーザーが入力した情報を各ページで
+参照・変更を可能にするためのモジュールです。
+UserInfo にはアクセサと to_utf8 という文字コード変換の
+ためのメソッドがあるだけで、機能としては単純です。
+コードについてはすでに Registration.rb で出てきていますので、
+そちらをご覧下さい。</p>
+
+<p>UserInfo#to_utf8 は入力データの文字コードを UTF-8 に変換します。
+UTF-8 への変換のために Registration::UserInfo#to_utf8 では
+Kconv#toutf8 を用います。
+<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<p>今号の <a href="/articles/0009/0009-BundledLibraries.html">標準添付ライブラリ紹介【第 3 回】Kconv/NKF/Iconv</a>
+には Kconv/NKF の紹介があります。Ruby-1.8.2 に付属する Kconv/NKF 
+のバグについても説明されていますので、一読されることをお勧めします。</p>
+
+<p>Kconv の代わりに Uconv, Iconv で文字コード変換を
+したい人はそれでも結構です。
+CGIKit では rbuconv が同梱されているので、
+Kconv の代替には Uconv を使うことをお勧めします。</p>
+
+<h4 id="registrationregisterpagenext_page">Registration::RegisterPage#next_page</h4>
+
+<p>サブミットボタンが押されたときに実行されるメソッドです。
+内容はエラーチェックと次のページへの移動です。
+以前説明したようにフォームに入力されたデータは
+RegisterPage に戻ってきて、そこで next_page が実行されます。
+next_page が実行されるときには CGIKit によって
+変数にフォームのデータが自動的に入っています。</p>
+
+<p>エラーチェックは 12-26 行で行われています。
+ここでは入力内容が適切かどうかを正規表現や Date クラスでチェックします。
+エラーがあると該当部分の @error_… に true が代入されます。
+エラーチェックの結果一つでもエラーがあると、
+error というローカル変数が true になります。
+最終的にこの error が表示されるページを決定します。
+@error_… は Conditional エレメントの condition 属性に
+指定されているので、@error_… に true が代入されると
+最初に表示されなかったエラーメッセージが表示されるようになります。</p>
+
+<p>error が false であれば、
+29-33行で次のページになる
+Registration::ConfirmPage の オブジェクトが作られ、
+入力された情報がコピーされて next_page の返り値になります。
+こうすることで CGIKit が今作った 
+Registration::ConfirmPage を表示してくれます。
+もし、error が true であれば、next_page の返り値がないため
+そのまま self(Registration::RegisterPage) が表示されます。
+すでに紹介したように self には
+各項目についてエラーの有無が設定されていて、
+それに基づいて Conditional エレメントがエラーメッセージを表示します。
+また、ユーザーが入力した情報はエラーがあってもそのままフォームに表示されます。</p>
+
+<p>例えば、名前だけを空欄にしたまま OK ボタンを押すとします。
+こうすると、@error_name が true になり、next_page の返り値が 
+self(Registration::RegisterPage) になります。
+この時、それまで入力されていた内容が CGIKit によって
+フォームに表示され、いっしょに @error_name に対応する
+名前のエラーメッセージも表示されます。</p>
+
+<h3 id="スクリーンショット">スクリーンショット</h3>
+
+<p>CSS でデザインしてこんな感じなります。
+<img src="/images/0009-CGIKit-2.x/registerpage.jpg" alt="registerpage.jpg" /></p>
+
+<h2 id="registrationconfirmpage---確認確認確認">Registration::ConfirmPage - 確認、確認、確認</h2>
+
+<p>RegisterPage で入力された内容をチェックするページです。
+Registration::RegisterPage#next_page で入力情報が
+Registration::ConfirmPage のオブジェクトにコピーされています。
+そのデータに基づいて入力情報確認用のフォームを表示させます。</p>
+
+<p>ここで重要になるのは下の2点です。</p>
+
+<ul>
+  <li>入力情報を表示させること</li>
+  <li>その情報を次のページに渡すこと</li>
+</ul>
+
+<h3 id="confirmpagehtml">ConfirmPage.html</h3>
+
+<p>テーブルとフォームを使って RegisterPage で入力された内容を表示させます。
+HTML は Nvu で作りますが、ここでもフォームを使います。
+CGIKit ではフォームを使う方がデータを簡単に次のページに渡すことができます。</p>
+
+<p>最初にフォームを作って、その中にテーブルを入れます。
+Nvu でテーブルを作るには Table ボタンを押すか、メニューの
+Insert -&gt; Table を選択します。
+<img src="/images/0009-CGIKit-2.x/nvu_table.jpg" alt="nvu_table.jpg" /></p>
+
+<p>上図ようなダイアログが現れるので、6x2 のテーブルを作ります。
+テーブルの各セルには入力データの種類の名前とその内容を
+表示するテキストフィールドを入力します。
+それに加えてテーブルの下に二つのサブミットボタンを追加します。
+以上で下のような図になると思います。
+(この図では CSS で装飾を加えています)
+<img src="/images/0009-CGIKit-2.x/nvu_confirm.jpg" alt="nvu_confirm.jpg" /></p>
+
+<p>このままだと、各フィールドの内容をユーザーが自由に修正できます。
+そのため HTML タグの readonly 属性を使って
+修正を不可能にしなければなりません。
+各フィールドを選択して右クリックするとメニューが出現します。
+その中に Form Field Properties という項目があり、
+これをクリックするとフィールドの設定を行うことが出来ます。
+readonly というチェックがあるので、
+ここをチェックして readonly 属性を設定します。
+<img src="/images/0009-CGIKit-2.x/nvu_field_prop.jpg" alt="nvu_field_prop.jpg" /></p>
+
+<p>この後は RegisterPage.html のように ckid 属性を付けていきます。
+下に修正後の HTML のソースを載せます。この HTML には簡単に CSS も記述してあります。
+<img src="/images/0009-CGIKit-2.x/ConfirmPage.html" alt="ConfirmPage.html" /></p>
+
+<h3 id="confirmpageckd">ConfirmPage.ckd</h3>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:form</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Form</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:name</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:sex</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:sex</span><span class="p">,</span>
+  <span class="p">},</span> 
+  
+  <span class="ss">:age</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:age</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:year</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:year</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:month</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:month</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:day</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:day</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:address</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:address</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:phone</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">TextField</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:phone</span><span class="p">,</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:ok</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Submit</span><span class="p">,</span>
+    <span class="ss">:action</span> <span class="o">=&gt;</span> <span class="ss">:next_page</span>
+  <span class="p">},</span>
+  
+  <span class="ss">:back</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Submit</span><span class="p">,</span>
+    <span class="ss">:action</span> <span class="o">=&gt;</span> <span class="ss">:prev_page</span>
+  <span class="p">},</span>
+
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<p>ConfirmPage.ckd と RegisterPage.ckd はほとんど同じです。
+説明の必要は無いでしょう。</p>
+
+<p>でも、ConfirmPage.ckd を作るのは面倒ではないでしょうか？
+ConfirmPage.ckd と RegisterPage.ckd がほとんど同じであれば
+RegisterPage.ckd の内容を ConfirmPage.ckd に渡せたらと
+思うのは自然なことです。</p>
+
+<p>結論から言えば ckd の内容を共有することは可能です。
+それには付録ページで述べた Ruby スクリプトに ckd ファイルの内容を
+混ぜるという方法を使います。
+しかし、この機能は CGIKit-2.0.0-preview1 では使わない方が無難なので、
+ここでは紹介しません。興味のある方は挑戦してみてください。
+この記事では RegisterPage.ckd の内容を ConfirmPage.ckd にコピーして
+から手動で修正をするという方法を取りました。</p>
+
+<h3 id="confirmpagerb">ConfirmPage.rb</h3>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Registration</span>
+  
+  <span class="k">class</span> <span class="nc">ConfirmPage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
+    
+    <span class="kp">include</span> <span class="no">UserInfo</span>
+    
+    <span class="k">def</span> <span class="nf">next_page</span>
+      <span class="n">to_utf8</span>
+            
+      <span class="n">p1</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">ThanksPage</span><span class="p">)</span>
+      <span class="n">p1</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="nb">self</span><span class="p">.</span><span class="nf">name</span>
+      <span class="n">p1</span>
+    <span class="k">end</span>
+    
+    <span class="k">def</span> <span class="nf">prev_page</span>
+      <span class="n">to_utf8</span>
+      
+      <span class="n">p1</span> <span class="o">=</span> <span class="n">page</span><span class="p">(</span><span class="no">RegisterPage</span><span class="p">)</span>
+      <span class="no">Registration</span><span class="p">.</span><span class="nf">copy_info</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
+      
+      <span class="n">p1</span>
+    <span class="k">end</span>
+    
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>ここでは OK ボタンを押したときや 戻るボタン を押したときの挙動に関して
+述べることにします。</p>
+
+<p>OK ボタンや 戻るボタン には ConfirmPage.ckd で
+next_page と prev_page が action 属性に割り当てられています。
+前者のメソッドは Registration::RegisterPage#next_page と同じく
+入力データ(名前)を最終ページである Registration::ThanksPage のオブジェクトに
+コピーして、メソッドの返り値にしてページを表示させます。
+後者のメソッドでは元のページに戻るために Registration::RegisterPage の
+オブジェクトを作って入力情報をコピーして
+prev_page のメソッドの返り値にします。</p>
+
+<p>要するにページの移動は CGIKit のコンポーネントのオブジェクトを
+渡してやれば良いわけです。
+この時注意が必要なのは値の受け渡しです。
+ConfirmPage.html でも述べたようにページ間のデータの受け渡しは
+フォーム(正確には Form エレメント)を介して行います。
+注意してください。</p>
+
+<h3 id="スクリーンショット-1">スクリーンショット</h3>
+<p><img src="/images/0009-CGIKit-2.x/confirmpage.jpg" alt="confirmpage.jpg" /></p>
+
+<h2 id="thankspage---おしまいー">ThanksPage - おしまいー</h2>
+
+<p>最後は入力された名前を表示させておしまいです。
+新しいことは何も無いので、説明は省略します。</p>
+
+<p>ThanksPage.html
+<img src="/images/0009-CGIKit-2.x/ThanksPage.html" alt="ThanksPage.html" /></p>
+
+<p>ThanksPage.ckd</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="ss">:name</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
+    <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:name</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+</code></pre>
+</div>
+
+<p>ThanksPage.rb</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Registration</span>
+  
+  <span class="k">class</span> <span class="nc">ThanksPage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
+    
+    <span class="kp">attr_accessor</span> <span class="ss">:name</span>
+        
+  <span class="k">end</span>
+  
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<h3 id="スクリーンショット-2">スクリーンショット</h3>
+<p><img src="/images/0009-CGIKit-2.x/thankspage.jpg" alt="thankspage.jpg" /></p>
+
+<h2 id="宿題">宿題</h2>
+
+<ul>
+  <li>ConfirmPage の性別の選択のところで男性は M が女性は F が表示されます。これを分かりやすい表示に変えてください。</li>
+  <li>今回は WEBrick で開発しましたが、実行環境を CGI に変更してみてください。何に注意しなければならないでしょうか。</li>
+  <li>ThanksPage で表示されるページの内容が寂しいです。ConfirmPage#next_page の実装を変えて色々な入力データを ThanksPage に渡し、その情報に基づいて ThanksPage で表示させる内容を変えてみてください(例えば、誕生日石を表示させたり、占いを表示させたり)</li>
+</ul>
+
+<h2 id="リンク">リンク</h2>
+
+<h3 id="cgikit">CGIKit</h3>
+
+<ul>
+  <li><a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi">CGIKit Wiki </a></li>
+  <li><a href="http://www.gesource.jp/weblog/archives/2005/06/windowscgikit2c.html">WindowsでCGIKit2のckprojectが使えない </a></li>
+</ul>
+
+<h3 id="nvu">Nvu</h3>
+
+<ul>
+  <li><a href="http://www.nvu.com/">Nvuの本家</a></li>
+  <li><a href="http://hp.vector.co.jp/authors/VA030090/NvuUGj/transj.htm">Nvu User Guide 日本語訳 </a></li>
+  <li><a href="http://www.geocities.jp/maple4estry/nvu2.html">Nvu を使って管理しやすいHTML文書を作る </a></li>
+  <li><a href="http://www.geocities.jp/nvubeginner/">初心者が Nvu でつくるホームページ講座 </a></li>
+  <li><a href="http://ghaint.no-ip.org:8942/~k2/moz/Cascades_Nvu.html">The 15 minute Guide to CaScadeS </a></li>
+</ul>
+
+<h2 id="謝辞">謝辞</h2>
+
+<p>上記のサイトの管理者の皆様方には快くリンクの許可を頂きました。
+本当にありがとうございました。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>10月まで暇になってしまいました。暇にまかせてJavascript で遊んだり、
+世界は残酷だなあとか訳のわからないことを考えたりしています。</p>
+
+<p>私はあまり関係ないけど、Rails な人は Multilingual Rails で良いんですかね？
+本家の ML でむとうさんが反対していますが、
+あのまま広がると後で悲しくなりそうです。
+(世界の片隅で私一人が心配しても何の影響力も無いですけどね･･･)
+—-</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>本来であれば Kconv ではなく、NKF を直接使って文字コードの変換を行うべきです。しかし、それを行うと説明が冗長になること、標準添付ライブラリ紹介【第 3 回】に説明が載っているということ、を考え今回は割愛させていただきました。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

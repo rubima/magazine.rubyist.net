@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>6 月 11 日 午前の部</title>
+  <meta name="description" content="二日目も天気のぐずつく中で、熱気にあふれるカンファレンスとなりました。">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/rubykaigi2006/RubyKaigi2006-0611-1.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>6 月 11 日 午前の部</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/rubykaigi2006/RubyKaigi2006-0611-1.html" class="hatena-bookmark-button" data-hatena-bookmark-title="6 月 11 日 午前の部" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/rubykaigi2006/RubyKaigi2006-0611-1.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/rubykaigi2006/RubyKaigi2006-0611-1.html" data-text="6 月 11 日 午前の部">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>二日目も天気のぐずつく中で、熱気にあふれるカンファレンスとなりました。</p>
+
+<p>二日目午前中の演題は、話題のスペクトルが広く、Ruby 用途の果てしない広がりを伺わせる一幕となりました。
+また、話題の幅がただ広いだけでなく、とりあげる話題や題材に、昨日から午後の講演へと収斂する流れを感じさせる、配列の妙がありました。</p>
+
+<p>……昨日よりちょっとお客さんが少ない？
+いやべつに、たださんの『集客力がない』というわけではないんですけど…</p>
+
+<h2 id="ただただしruby-anywhere--ruby-普及のためにアプリケーションができること">ただただし「Ruby anywhere 〜 Ruby 普及のためにアプリケーションができること」</h2>
+
+<dl>
+  <dt>スピーカー</dt>
+  <dd>ただただし氏 (tDiary.org) tDiary のメイン開発者です。</dd>
+  <dt>時間</dt>
+  <dd>10:00〜10:30</dd>
+  <dt>セッション概要</dt>
+  <dd>Ruby 普及へのアプリケーションの貢献について、tDiary の開発を通じて学んだことを語る。</dd>
+  <dt>講演資料</dt>
+  <dd><a href="http://sho.tdiary.net/images/RubyKaigi2006.tadatadashi.pdf">http://sho.tdiary.net/images/RubyKaigi2006.tadatadashi.pdf</a>
+<img src="/images/RubyKaigi2006-0611-1/s06110002.jpg" alt="s06110002.jpg" /></dd>
+</dl>
+
+<ul>
+  <li>BR(Before Rails) 度 ★★★</li>
+  <li>実装自覚度 ★★</li>
+  <li>一貫ポリシー度 ★★★★</li>
+  <li>プレゼン技度 ★★★</li>
+  <li>格好悪くなんてないですよ〜 DHH とか見れば度 ★★★</li>
+</ul>
+
+<h3 id="おはようございます">おはようございます。</h3>
+
+<ul>
+  <li>けっこう元気ですな。</li>
+  <li>いろいろ挙手で調査。</li>
+</ul>
+
+<h4 id="注意">注意</h4>
+
+<ul>
+  <li>昔話です。</li>
+  <li>マーケティングに近い。</li>
+  <li>成功体験なので眉につばを (一般論ではない)。</li>
+</ul>
+
+<h3 id="普及ということ">普及ということ</h3>
+
+<ul>
+  <li>「Ruby の人は Perl に喧嘩を売ったりしない。平和主義的なんでしょうか？」</li>
+  <li>「普及はカッコ悪いことじゃない」</li>
+</ul>
+
+<h4 id="場所への普及-使える場所が増える">場所への普及 (使える「場所」が増える)</h4>
+
+<ul>
+  <li>今やあらゆるレンタルサーバに、あたりまえのように最新の Ruby が入っている</li>
+  <li>Linux ディストリビューションに最新の Ruby のパッケージがある</li>
+  <li>と、_おれが_嬉しい</li>
+</ul>
+
+<h4 id="人への普及-使う人が増える">人への普及 (使う「人」が増える)</h4>
+
+<ul>
+  <li>ライブラリやアプリケーションが増える</li>
+  <li>Ruby のお仕事が増える</li>
+  <li>と、_おれが_嬉しい</li>
+</ul>
+
+<h3 id="おれがうれしいから普及は善である">おれがうれしいから普及は善である</h3>
+
+<ul>
+  <li>「おれが嬉しい」というと聞こえが悪くとも、「おれ」というのを「ユーザー」と置き換えればよいはずです。</li>
+  <li>「普及は悪いことでも恥ずかしがることでもない」。</li>
+  <li>普及のためには、場所・人、両面から攻める。そのためにアプリケーションを作った。</li>
+</ul>
+
+<h3 id="tdiary-2001-br-3-年">tDiary (2001〜; BR 3 年)</h3>
+
+<ul>
+  <li>tDiary は 2001 年 (BR 3 年) 開発開始。</li>
+  <li>BR というのは “Before Rails Era”。「Rails が無い時代があったんです」</li>
+  <li>当時の日本の Web シーンでは Web 日記というものが結構重要な位置を占めていた。今で言う Blog に近いが、当時は Blog という言葉も無かった。そこで、Ruby で Web 日記システムを作った。</li>
+</ul>
+
+<h4 id="キャッチフレーズ">キャッチフレーズ</h4>
+
+<ul>
+  <li>アプリケーションにはキャッチフレーズをつけることにしている。</li>
+  <li>tDiary のキャッチフレーズはずばり「<strong>日記コミュニケーションを加速する</strong>」</li>
+  <li>コミュニケーションのことなら貪欲にやる、と決めた。
+    <ul>
+      <li>ツッコミ (今でいうコメント機能)</li>
+      <li>リンク元表示 (今でいうトラックバック機能)</li>
+      <li>携帯電話対応。書きたいときに書け，読みたいときに読める。今では日本の Web ブラウザの半数以上は携帯端末であり、「日本で Web アプリケーション作る以上、意識しないなんてありえない」。これを作ったとき、たださんは携帯を持っていなかったそう。</li>
+      <li>テーマ。デザインを CSS に分離した。テーマは現在は 300 個以上提供されており、Blog、Wiki、はてな、ゆびとま、MyWiki… などと共通に使ってもらっている。</li>
+    </ul>
+  </li>
+  <li>これらは今の Blog ツールからすると当り前だが、当時は画期的な機能だった。コメントをメールでもらってはページを編集してアップロードして、アクセスログを解析してはリンク元を見付けて、そういうことを全部手動でやっていた。</li>
+  <li>こうして普通の人にアピールしていった。「普通の人重要」。</li>
+  <li>「おたくにアピールしたって普及には結びつかない」。</li>
+</ul>
+
+<h3 id="開発を始めた当時の時代背景">開発を始めた当時の時代背景</h3>
+
+<ul>
+  <li>256 本出はじめ</li>
+  <li>www.ruby-lang.org のドメインが軌道に乗った頃</li>
+  <li>レンタルサーバーには Ruby など入っていない</li>
+  <li>世間では「CGI ≒ Perl」という認識</li>
+</ul>
+
+<p>知名度も環境もまだまだで、なにか Ruby で書いても使ってもらえない状況でした……なにも考えなかったら。</p>
+
+<h3 id="場所">場所</h3>
+
+<p>そこでプロモーション戦略を練った。</p>
+
+<ol>
+  <li>魅力的なものを作る</li>
+  <li>使いたい人が増える</li>
+  <li>レンタルサーバー業者に対する「Ruby をインストールしろ」という圧力が強くなる</li>
+  <li>場所が増える</li>
+  <li>おれが嬉しい</li>
+</ol>
+
+<p>そのためには、</p>
+
+<ul>
+  <li>Easy to Install (え゛ とかいわない！)
+    <ul>
+      <li>変なライブラリ要求しない「Ruby 以外は何もいらない」作戦を取る。</li>
+      <li>どうしても ERb (ERbLight) だけが問題になったので「同梱させてください」と作者に頼んで同梱リリースする、という掟破りのこともやった。</li>
+    </ul>
+  </li>
+  <li>露出を増やす。
+    <ul>
+      <li>はやっているかのように見せる作戦。</li>
+      <li>tDiary.Net ドメインを立ち上げて無料ユーザを募った (2002 年)。</li>
+      <li>tDiary.Net には一気に数百人が加入した。当時は数百人という時点で一大事件であり、急速に目立つことになった。</li>
+      <li>また tDiary.Net の制約を嫌ってよそへ流出する人も出てきて、他サーバーへ移転し、これによりますますレンタルサーバー業者への Ruby 標準インストール圧力が強まった。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="人">人</h3>
+
+<ul>
+  <li>tDiary では、人を増やすためにプラグインを簡単に書けるような仕組みを取り入れた。</li>
+  <li>メソッドを増やすだけ</li>
+  <li>Plugin インスタンスに instance_eval するだけ</li>
+</ul>
+
+<p>結果として名前空間の分離はなく、実行順序がファイル名依存というように、欠点も多い「うわ ださっ」な仕組みになったが、これは戦略。こうしてプラグイン開発のハードルを思い切り下げ、人々を Ruby プログラミングへと誘導した。</p>
+
+<h3 id="まとめ">まとめ</h3>
+
+<ul>
+  <li>普及は善</li>
+  <li>場所を増やす</li>
+  <li>人を増やす</li>
+</ul>
+
+<h3 id="ちなみに-rails-は">ちなみに Rails は</h3>
+
+<ul>
+  <li>人を増やす戦略がうまい。</li>
+  <li>使える場所はまだまだ少ない。</li>
+  <li>依存ライブラリが多いし、gem は敷居が高い。</li>
+  <li>Rails 普及を促すアプリケーションの登場を期待したい。</li>
+</ul>
+
+<h3 id="qa">Q&amp;A</h3>
+
+<dl>
+  <dt>Q1 (前田さん)</dt>
+  <dd>プラグインが eRuby なんですが、$SAFE=4 でうごかせば安全という建前ですけど……</dd>
+  <dt>A1</dt>
+  <dd>建前どおりに捉えています。自分だけで使うだけでなく、他人に貸せるようにしたかった。開発を始めたのが 5 年前だったので、eRuby で $SAFE=4 とするしか選択肢はなかったのです。</dd>
+  <dt>C1 (前田さん)</dt>
+  <dd>たださんのせいではないです。まつもとさんのせい？</dd>
+  <dt>Q2 (後藤 (ごとけん) さん)</dt>
+  <dd>会社で使っていて、使っていた人が退社したときなど、アカウント管理したいのですがベストプラクティスは？パスワードをうまく扱えるやり方があったらいいな。</dd>
+  <dt>A2</dt>
+  <dd>フォーム内にそういうフィールドを設ける？</dd>
+  <dt>Q2 (後藤 (ごとけん) さん)</dt>
+  <dd>パスワード忘れたときに、email アドレス打てばメールで返すようなものは、なぜないの？</dd>
+  <dt>A2</dt>
+  <dd>できるだけ自前で実装するポリシーなので、手間はかけたくなかった。認証は Web サーバまかせ。Basic 認証を書き換えるだとか、やろうと思えばできる世界だろう。</dd>
+  <dt>C2 (後藤 (ごとけん) さん)</dt>
+  <dd>Basic 認証に対応できない人が多い。あのダイアログをみるとひくらしい。</dd>
+  <dt>A2</dt>
+  <dd>それを裏付ける調査結果もあります。時代は変わった、ということなのでしょう。</dd>
+  <dt>Q3 (松岡さん)</dt>
+  <dd>2001 〜 2006 年で野望の達成度は？</dd>
+  <dt>A</dt>
+  <dd>今時点というのであれば、普及はほぼ 100% 達成できた。その 100% が tDiary のおかげというつもりはないが、自分の希望するレベルには達した、と考えている。</dd>
+</dl>
+
+<h2 id="関将俊druby-をもう一度">関将俊「dRuby をもう一度」</h2>
+
+<dl>
+  <dt>スピーカー</dt>
+  <dd>関将俊氏 (druby.org) drb, erb などの標準添付ライブラリの作者さんです。</dd>
+  <dt>時間</dt>
+  <dd>10:31〜11:02</dd>
+  <dt>セッション概要</dt>
+  <dd>dRuby を使った分散オブジェクトプログラミング</dd>
+  <dt>講演資料</dt>
+  <dd><a href="http://www.druby.org/dRubyAgain.pdf">http://www.druby.org/dRubyAgain.pdf</a>
+<img src="/images/RubyKaigi2006-0611-1/s06110010.jpg" alt="s06110010.jpg" /></dd>
+</dl>
+
+<ul>
+  <li>BR 度 ★★</li>
+  <li>時代を呼び戻す度 ★★★★</li>
+  <li>未来も語り度 ★★★</li>
+  <li>自著・他著公平に宣伝度 ★★</li>
+  <li>高齢化社会になるわけです度 ★</li>
+</ul>
+
+<h3 id="druby-をもう一度思い出してみよう">dRuby をもう一度思い出してみよう</h3>
+
+<p>今日も古い話ばっかり。</p>
+
+<h3 id="重要なことを先に">重要なことを先に</h3>
+
+<h4 id="本">本</h4>
+
+<ul>
+  <li><a href="https://www.amazon.co.jp/dRuby%E3%81%AB%E3%82%88%E3%82%8B%E5%88%86%E6%95%A3%E3%83%BBWeb%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E9%96%A2-%E5%B0%86%E4%BF%8A/dp/4274066096?SubscriptionId=0J9Z9W8W4CJ3TQ5VWY02&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4274066096">‘dRubyによる分散・Webプログラミング’</a></li>
+</ul>
+
+<h4 id="私">私</h4>
+
+<ul>
+  <li>今日は Agile の人じゃない</li>
+  <li>内向的なプログラマ
+    <ul>
+      <li>コードにつぶやく</li>
+    </ul>
+  </li>
+  <li>たださんみたいにアプリケーション調停することが苦手</li>
+  <li>作るものは部品ばっか
+    <ul>
+      <li>作ったものの、ユーザ数 1 とか。</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="erb">ERB</h4>
+
+<ul>
+  <li>テンプレートだけで動かすなんて思ってもみなかった</li>
+  <li>たださん + arton さんの本『網道編』、「こう感動してほしい」がある！</li>
+  <li>Rails 様様で ERB 利用者急増中</li>
+</ul>
+
+<h3 id="今日は-druby-の話をしましょう">今日は dRuby の話をしましょう</h3>
+
+<h4 id="再入門の前に忘れていた歴史の話">再入門の前に、忘れていた歴史の話</h4>
+
+<ul>
+  <li>HTTP サーバ shttpsrv (原さん、1998) を拡張して遊ぶ。</li>
+  <li>やっぱり bookmark 機能が好き。(タグ付けする)</li>
+  <li>RDB を shttpsrv で隠す</li>
+  <li>UI の shttpsrv と http でつなぐ</li>
+</ul>
+
+<h4 id="遊んでいるうちに発見">遊んでいるうちに、発見</h4>
+
+<ul>
+  <li>Ruby としてしか使ってなかった。クライアント対サーバではなくて、Ruby の分散環境が欲しいのでは？</li>
+  <li>shttpsrv の実装をマネる。</li>
+  <li>要求ごとにスレッドつくるのかっこいい。</li>
+  <li>書いてみようかな、と思ったら書けた。200 行くらい。Ruby すごい。</li>
+</ul>
+
+<h3 id="再入門">再入門</h3>
+
+<p>dRuby では、オブジェクトにメッセージを送ると、そのメッセージが他のプロセスに転送され、その転送先でメソッドが起動される。</p>
+
+<h3 id="実験">実験</h3>
+
+<h3 id="調査-drb-つかってる人">調査: drb つかってる人</h3>
+
+<p>手を挙げてください……(20 〜 30 人くらい)。いる！</p>
+
+<ul>
+  <li>irb ふたつで対話しよう (y&lt;=&gt;b)</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">y: {} を front
+b: front を参照</code></pre></figure>
+
+<ul>
+  <li>{} をいじると Hash を公開できる</li>
+  <li>オブジェクトを交換するときに、自動的に値でか参照でかを仕分けして渡す</li>
+  <li>Thread は参照渡し。</li>
+  <li>ブロック付メソッドもふつうに動く。ブロックは Proc で出来てる。Proc は参照渡し。yield は Proc への操作である。</li>
+  <li>ブロック付メソッドが動いている。(例: リモート each)</li>
+  <li>Ruby なので IDL が不要。</li>
+  <li>Thread 同期の仕組みもそのまま。</li>
+</ul>
+
+<h3 id="で-何に使うの">で？ 何に使うの？</h3>
+
+<ul>
+  <li>いろんな分散</li>
+  <li>配置 - プロセス - マシン</li>
+</ul>
+
+<h3 id="配置と寿命">配置と寿命</h3>
+
+<p>オブジェクトって、結局そのプロセスにしかない。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">寿命: プロセス &lt; オブジェクト</code></pre></figure>
+
+<p>「相対的」永続化がほとんどだろう (たとえば CGI より長生きさせたい、というのが要求の肝)。
+それはもしかして OODB じゃないの？</p>
+
+<h3 id="実装-rwiki--オンメモリ-oodb">実装: RWiki == オンメモリ OODB</h3>
+
+<p>再起動のときの手がかりとして中身を RD に落とす。変更のログ。
+実行中は一切 RD を読まない。書き込むだけ。起動時の再構築に使う。</p>
+
+<ul>
+  <li>RD data という構想があったけどパス。</li>
+  <li>StoryCard 拡張。gotoken さんのいうチケットシステムのようなもの。</li>
+  <li>ストーリーをオブジェクトに。たぶんスケールしないけど、要るときに考える。</li>
+</ul>
+
+<h3 id="長生きなオブジェクト">長生きなオブジェクト</h3>
+
+<p>Web の UI とか、長生きが自然。コンテキストは細切れ (ユーザーはそう思ってない)</p>
+
+<h3 id="遺言作戦">遺言作戦</h3>
+
+<p>どこに書くの？ 相続問題が発生する。
+「遺言に苦労するなら、死ななきゃいいじゃん！」</p>
+
+<h3 id="web-ui-20-druby-の-web-ui-への応用">Web UI 2.0; dRuby の Web UI への応用</h3>
+
+<ul>
+  <li>Div/Tofu</li>
+</ul>
+
+<h3 id="もっとかっこいいやつ">もっとかっこいいやつ</h3>
+
+<h4 id="並列処理糊言語-linda-rinda">並列処理糊言語 Linda, Rinda</h4>
+
+<p>処理の協調が出来る。参加者がマスターしか知らなくてもちゃんと動くのがミソ。超かっこいい！</p>
+
+<ul>
+  <li>Linda: in out</li>
+  <li>Rinda: write take, 待ち合わせが出来る。→安全なカウンター</li>
+</ul>
+
+<h4 id="動的な構成言語-ring-front-と-uri-again">動的な構成言語 Ring (front と URI, Again)</h4>
+
+<p>dRuby では結局だれかのことを知らないと動かない。ので Ring。これは TupleSpace を探す仕組 (RingFinger)。</p>
+
+<p>参加者は lookup で自サービスを登録、取得する。参加者がこけたら、賞味期限切れで削除。完全ではないがまあまあ動く。
+個人サイト druby.org の維持・運用に使っている。</p>
+
+<h3 id="やっと未来を語れる">やっと未来を語れる</h3>
+
+<p>少しだけ。proxy ネタで</p>
+
+<ul>
+  <li>Koya</li>
+  <li>ARb</li>
+</ul>
+
+<h4 id="arb">ARb</h4>
+
+<p>$SAFE=4 だとログも残せない。ログを残すサービスなどを、$SAFE=4 のスレッドに公開したかったので書いてみた。でも $SAFE=4 がいまいちだめっぽいので ARb の出番は……。</p>
+
+<h3 id="qa-1">Q&amp;A</h3>
+
+<dl>
+  <dt>Q1 (森脇さん)</dt>
+  <dd>サーバ側がマシンがトラブるとエラーになります。マスターを複数に出来るといいなと思うんですが。</dd>
+  <dt>A1</dt>
+  <dd>今聞いたんで、これから考えます。</dd>
+  <dt>Q2 (Yuguiさん)</dt>
+  <dd>Rinda、TupleSpace 管理側に HeartBeat を送るとか (……) 出来ないのか？</dd>
+  <dt>A2</dt>
+  <dd>今の Rinda だと、Tuple エントリの参照を返せる。キャンセルもできる。もうすぐ期限というときに「まだ生きてる？」と質問も返せる。</dd>
+</dl>
+
+<h2 id="中島拓amrita2-の紹介">中島拓「Amrita2 の紹介」</h2>
+
+<dl>
+  <dt>スピーカー</dt>
+  <dd>中島拓氏 ((株) ブレーン) いまや blog の世界の有名人です。hack のセカイへお帰りなさい essa さん。</dd>
+  <dt>時間</dt>
+  <dd>11:03〜11:32</dd>
+  <dt>セッション概要</dt>
+  <dd>HTML テンプレートライブラリ Amrita2 の設計思想と実装の紹介</dd>
+  <dt>講演資料</dt>
+  <dd><a href="http://amrita.s14.xrea.com/files/rubyconf2006/rubyconf2006.tar.gz">http://amrita.s14.xrea.com/files/rubyconf2006/rubyconf2006.tar.gz</a> , <a href="http://amrita.s14.xrea.com/files/rubyconf2006/rubyconf2006.xul">http://amrita.s14.xrea.com/files/rubyconf2006/rubyconf2006.xul</a> (Firefox が必要)
+<img src="/images/RubyKaigi2006-0611-1/s06110019.jpg" alt="s06110019.jpg" /></dd>
+</dl>
+
+<ul>
+  <li>AR(After Rails) 度 ★★</li>
+  <li>一貫思想度 ★★★</li>
+  <li>控室から拍手度 (by DRY な男) ★★★</li>
+  <li>もんた度 ★★</li>
+</ul>
+
+<p>今日話す Amrita2 の構想は「だいぶ前にはだいたい固まりつつあったのだが、blog にはまってしまって開発が中断していた」とのこと。</p>
+
+<h3 id="テンプレートとは何か">テンプレートとは何か？</h3>
+
+<h4 id="文字列なのか構造化されたドキュメント-html-や-xml-なのか">文字列なのか構造化されたドキュメント (HTML や XML) なのか？</h4>
+
+<ul>
+  <li>HTML/XML は構造化されているので、テンプレートも構造化ドキュメントとして扱った方がいい。</li>
+  <li>大半のテンプレートエンジンはテンプレートを文字列として扱っている</li>
+</ul>
+
+<h3 id="テンプレートエンジンとは何か">テンプレートエンジンとは何か？</h3>
+
+<h4 id="実行環境か演算か">実行環境か演算か？</h4>
+
+<ul>
+  <li>「実行環境派」はテンプレートがプログラムで、エンジンが環境（変数やロジックをテンプレートに与える）と考える。</li>
+  <li>Amrita はテンプレートに対してエンジンがデータを適用する。テンプレートを単にオペレータとして、受身の存在と考える。テンプレートにデータを‘演算’すると結果が返る形。</li>
+</ul>
+
+<h4 id="違いがどこに効くか">違いがどこに効くか？</h4>
+
+<p>セキュリティ。</p>
+
+<ul>
+  <li>エンジンが環境だと、個々のテンプレートを検証する必要がある。ERB で &lt;%=h %&gt; にするだけ？ でも検証は「個々に」だから面倒。</li>
+  <li>Amrita でセキュリティの責任はエンジン側。エンジンが演算なら、エンジンだけを検証すればよい。</li>
+</ul>
+
+<h3 id="amrita-とはなにか">Amrita とはなにか？</h3>
+
+<ul>
+  <li>上記の選択、いずれも後者を採る。
+    <ul>
+      <li>エンジンはアクティブで演算をする</li>
+      <li>データは構造化されている</li>
+    </ul>
+  </li>
+  <li>データの構造を利用することで、セキュリティの自然な解を得られる。
+    <ul>
+      <li>データが文字列なら置換する</li>
+      <li>配列なら繰り返しになる</li>
+      <li>真偽値なら表示条件になる</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="コード">コード</h4>
+
+<p>API は、ほとんど expand 一個だけ。
+結果、テンプレートと組み合わせて、スカラーでも配列でも true/false/nil でも扱える。Ruby の素のオブジェクトも扱えるので、たとえば現在時刻が表示できる。</p>
+
+<h3 id="amrita2-とは何か">Amrita2 とは何か？</h3>
+
+<h4 id="多少妥協した部分がある">多少妥協した部分がある</h4>
+
+<ul>
+  <li>綺麗に決まるところはビシッと決まる。しかしすべての現実に対応はできない。その結果、よく分からないはまり方を招きやすかった。</li>
+  <li>Partial ERb template (ところどころ埋め込むことが出来るように)。</li>
+</ul>
+
+<h4 id="amrita-on-rails">Amrita on Rails</h4>
+
+<ul>
+  <li>Amrita2 は Rails の View として使うことができる</li>
+  <li>豊富なヘルパーメソッドを使えるように部分的に ERb を埋め込める: tmpl.use_erb(binding)</li>
+  <li>&lt;![CDATA[ ]]&gt; を書かないと ERb が埋め込めないので、だったら、これを目印として使う。</li>
+</ul>
+
+<h4 id="amritatype">amrita:type</h4>
+
+<p>HTML to Ruby コンパイラ。amrita:type 属性はコンパイラオプション。API として公開はしていないが一応拡張可能な形。</p>
+
+<ul>
+  <li>例: amrita:type=’link’, amrita:type=’use_args’</li>
+</ul>
+
+<h4 id="使い方">使い方</h4>
+
+<ul>
+  <li>ループはコントローラ側に移した。コントローラがふくらむ。</li>
+  <li>テストが手で書いてもカンタン。</li>
+  <li>ビューの logic を presentation から分離した。あまり速くはないが。</li>
+</ul>
+
+<h3 id="schedule">Schedule</h3>
+
+<p>なんとも…… どんどんせかしてください。
+はてなにある開発ブログのタイトル変更: 「Amrita2 強化月間」→<a href="http://d.hatena.ne.jp/amrita2/">「gem 戦記」</a></p>
+
+<h3 id="おわり">おわり</h3>
+
+<p>控室から拍手が聞こえます。めずらしい。</p>
+
+<h3 id="qa-2">Q&amp;A</h3>
+
+<p>ここで控室から長身痩躯碧眼の男性が登場、登壇者に英語で質問を浴びせ始めます。
+DHH でした (二日目のみの参加者のみなさんの中には、ここで初めて Ruby on Rails 作者をごらんになった方もおありでしょう)。</p>
+
+<ul>
+  <li>essa、DHH に連れられて別室に拉致される</li>
+</ul>
+
+<p>(質問は 2 つあったとのこと、<a href="http://d.hatena.ne.jp/amrita2/20060612#1150122008">登壇者のブログに詳しく紹介</a>されています。)</p>
+
+<h2 id="secondlife-舘野祐一-perl-の会社で使われる-ruby-の利用法とは">secondlife (舘野祐一) 「Perl の会社で使われる Ruby の利用法とは！？」</h2>
+
+<dl>
+  <dt>スピーカー</dt>
+  <dd>secondlife (舘野祐一氏) (株式会社はてな) 何かと話題の会社の中の人であり、rail2u.com の中の人でもあります。</dd>
+  <dt>時間</dt>
+  <dd>11:33〜11:59</dd>
+  <dt>セッション概要</dt>
+  <dd>はてなの裏側で Ruby こっそり</dd>
+  <dt>講演資料</dt>
+  <dd><a href="http://rails2u.com/misc/rubyka2006/">http://rails2u.com/misc/rubyka2006/</a>
+<img src="/images/RubyKaigi2006-0611-1/s06110032.jpg" alt="s06110032.jpg" /></dd>
+</dl>
+
+<ul>
+  <li>Ad(After dRuby) 度 ★★</li>
+  <li>他著宣伝度 ★★</li>
+  <li>「へんな会社」度 ★★</li>
+  <li>活用の場開拓「それ Ruby でできるじゃん」度 ★★★★</li>
+  <li>プレゼン技度 ★★</li>
+</ul>
+
+<h3 id="自己紹介">自己紹介</h3>
+
+<p>好きなアイドルの項を立てたのは、結局 secondlife さんだけでした。</p>
+
+<h3 id="デプロイツール">デプロイツール</h3>
+
+<ul>
+  <li>2006年、社内バージョン管理システム (VCS) を CVS から subversion へ移行</li>
+  <li>いいデプロイツールが無かった</li>
+  <li>SwitchTower (→現 Capistrano) 使ったらどうか？
+    <ul>
+      <li>Ruby で書かれている</li>
+      <li>規約に沿って書かれたものなら OK</li>
+      <li>Rails に向いている</li>
+      <li>さまざまなバージョンコントロールシステムで利用可能</li>
+      <li>実行はレシピ (Rake のコード) を置くだけ。</li>
+    </ul>
+  </li>
+  <li>実際に使ってみた。
+    <ul>
+      <li>けっこう使えた。</li>
+      <li>SwitchTower の deploy の流れは、ほとんどの LL な Web アプリの管理にあてはまる。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="しかし使い込むと罠が">しかし使い込むと罠が……</h3>
+
+<ul>
+  <li>Rake のオプションでつまづく。::CLI ラップして使う……</li>
+  <li>コマンドラインユーティリティ自作しちゃったほうがよくね？ サーバの棲み分け</li>
+  <li>構成（アプリサーバ + DBサーバ + Webサーバ）が定型から外れると、hatena_recipe.rb を作ることになる</li>
+  <li>production 環境だけしか deploy できない？ →本体拡張して</li>
+</ul>
+
+<h3 id="はてなの中での使い方起きたこと">はてなの中での使い方、起きたこと……</h3>
+
+<ul>
+  <li>全サーバ同時にしかリスタートできない
+    <ol>
+      <li>全部リスタート</li>
+      <li>2, 3 秒サービスが止まってしまう</li>
+      <li>ロードバランサー混乱</li>
+      <li>「時間差リスタート」が欲しい</li>
+    </ol>
+  </li>
+  <li>ロールバック
+    <ul>
+      <li>途中で 1 台がリスタート失敗したら、その 1 台だけやり直しができない</li>
+      <li>全部ロールバック</li>
+    </ul>
+  </li>
+  <li>本気で改善して、いまは、わりと幸せな感じになった。</li>
+</ul>
+
+<h3 id="サービス">サービス</h3>
+
+<p>いままでは社内システムは全部 Perl で書かれていた。でも Perl は……今後どうなるの？ そろそろ転換期？でも Ruby で Web サービスといっても決定打はないし……</p>
+
+<h4 id="そこで-rails-の登場">そこで Rails の登場</h4>
+
+<ul>
+  <li>Webアプリが作りやすくなった。FCGI とか mongrel とか。</li>
+  <li>まともな速度で安定して動く。</li>
+  <li>CPAN が無くても gems が使える。</li>
+</ul>
+
+<h4 id="もちろんこれからはみんな-ruby-ですよあいーよーとはならないので">もちろん「これからはみんな Ruby ですよ」「あ、いーよー」とはならないので。</h4>
+
+<ul>
+  <li>さくっと作って社内アピール。
+    <ul>
+      <li>はてな SNS。</li>
+      <li>はてなスクリーンショット、5 月下旬リリース。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="はてなスクリーンショット">はてなスクリーンショット</h3>
+
+<ul>
+  <li>Rails アプリ
+    <ul>
+      <li>lighttp が静的ページ担当。</li>
+      <li>mongrel が動的ページ担当。いまはそれほどアクセスないので余裕。</li>
+    </ul>
+  </li>
+  <li>proxy 他サービスとの共用、一台で。他の一台は app, db 込み込み。</li>
+  <li>DB は MySQL</li>
+  <li>スクリーンショットを実際巡回しに行くサーバはさらに別建て (後記の理由で Windows)。</li>
+  <li>dRuby で URL をクライアントがもらって、スクリーンショットを撮って、dRuby で返す</li>
+</ul>
+
+<h4 id="他の社内-perl-サービスとの連携">他の社内 Perl サービスとの連携</h4>
+
+<ul>
+  <li>疎結合で、REST。といっても GET のみだけど。</li>
+</ul>
+
+<h4 id="ショットは実際にはどう撮るか">ショットは実際にはどう撮るか？</h4>
+
+<ul>
+  <li>Linux→不安定、遅い。じつは Windows (IE コンポーネント)→速い、全然きれい。</li>
+</ul>
+
+<h4 id="さてここで-druby-ですよ">さてここで dRuby ですよ。</h4>
+
+<ul>
+  <li>ある程度のスケーラビリティは確保。dRuby 最高！</li>
+  <li>去年良書が出版された。まだ初版が買えるので。</li>
+  <li>私事ですが、るびまの読者プレゼントに当選しなかったら、はてなスクリーンショットは今この世になかったかもしれない。</li>
+</ul>
+
+<h3 id="勉強法">勉強法</h3>
+
+<p>オススメは、はてな。</p>
+
+<h4 id="はてなダイアリー">はてなダイアリー</h4>
+
+<ul>
+  <li>キーワードで Ruby のチェック</li>
+  <li>id:ruby* もオススメ</li>
+  <li>実は rubywo は社内の</li>
+</ul>
+
+<h4 id="はてなグループ">はてなグループ</h4>
+
+<ul>
+  <li>rubyist グループというものがある。</li>
+  <li>ソース貼るとすべてのメソッドにリンクが貼られて、Ruby Quiz の答えを貼ったりすると、添削に非常に便利。</li>
+  <li>最近は割と活発。</li>
+</ul>
+
+<h3 id="qa-3">Q&amp;A</h3>
+
+<dl>
+  <dt>Q1 (たださん)</dt>
+  <dd>dRuby の使い方で、Rinda でやった方が、実装きれいっぽくならない？</dd>
+  <dt>A1</dt>
+  <dd>TupleSpace つかうときれいだろうなあ。と今なら思います。作った当時は知らなかった……。</dd>
+</dl>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

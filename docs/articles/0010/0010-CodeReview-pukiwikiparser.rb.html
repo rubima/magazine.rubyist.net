@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukiwikiparser.rb</title>
+  <meta name="description" content="あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb で解説した、改善後のソースです。">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0010/0010-CodeReview-pukiwikiparser.rb.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukiwikiparser.rb</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0010/0010-CodeReview-pukiwikiparser.rb.html" class="hatena-bookmark-button" data-hatena-bookmark-title="あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukiwikiparser.rb" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0010/0010-CodeReview-pukiwikiparser.rb.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0010/0010-CodeReview-pukiwikiparser.rb.html" data-text="あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukiwikiparser.rb">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p><a href="/articles/0010/0010-CodeReview.html">あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb</a> で解説した、改善後のソースです。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'uri'</span>
+
+<span class="k">module</span> <span class="nn">HTMLUtils</span>
+  <span class="no">ESC</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'&amp;'</span> <span class="o">=&gt;</span> <span class="s1">'&amp;amp;'</span><span class="p">,</span>
+    <span class="s1">'"'</span> <span class="o">=&gt;</span> <span class="s1">'&amp;quot;'</span><span class="p">,</span>
+    <span class="s1">'&lt;'</span> <span class="o">=&gt;</span> <span class="s1">'&amp;lt;'</span><span class="p">,</span>
+    <span class="s1">'&gt;'</span> <span class="o">=&gt;</span> <span class="s1">'&amp;gt;'</span>
+  <span class="p">}</span>
+
+  <span class="k">def</span> <span class="nf">escape</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="n">table</span> <span class="o">=</span> <span class="no">ESC</span>   <span class="c1"># optimize</span>
+    <span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/[&amp;"&lt;&gt;]/n</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">s</span><span class="o">|</span> <span class="n">table</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="p">}</span>
+  <span class="k">end</span>
+  
+  <span class="k">def</span> <span class="nf">urlencode</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/[^\w\.\-]/n</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">ch</span><span class="o">|</span> <span class="nb">sprintf</span><span class="p">(</span><span class="s1">'%%%02X'</span><span class="p">,</span> <span class="n">ch</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="p">}</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="nc">PukiWikiParser</span>
+  <span class="kp">include</span> <span class="no">HTMLUtils</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">logger</span><span class="p">)</span>
+    <span class="vi">@logger</span> <span class="o">=</span> <span class="n">logger</span>
+    <span class="vi">@h_start_level</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">to_html</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="n">page_names</span><span class="p">,</span> <span class="n">base_uri</span> <span class="o">=</span> <span class="s1">'/'</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span> <span class="s1">'/'</span><span class="p">)</span>
+    <span class="vi">@page_names</span> <span class="o">=</span> <span class="n">page_names</span>
+    <span class="vi">@base_uri</span> <span class="o">=</span> <span class="n">base_uri</span>
+    <span class="vi">@pagelist_suffix</span> <span class="o">=</span> <span class="n">suffix</span>
+    <span class="vi">@inline_re</span> <span class="o">=</span> <span class="kp">nil</span>   <span class="c1"># invalidate cache</span>
+
+    <span class="n">buf</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">src</span><span class="p">.</span><span class="nf">rstrip</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/\r?\n/</span><span class="p">).</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">line</span><span class="o">|</span> <span class="n">line</span><span class="p">.</span><span class="nf">chomp</span> <span class="p">}</span>
+    <span class="k">while</span> <span class="n">lines</span><span class="p">.</span><span class="nf">first</span>
+      <span class="k">case</span> <span class="n">lines</span><span class="p">.</span><span class="nf">first</span>
+      <span class="k">when</span> <span class="s1">''</span>
+        <span class="n">lines</span><span class="p">.</span><span class="nf">shift</span>
+      <span class="k">when</span> <span class="sr">/\A----/</span>
+        <span class="n">lines</span><span class="p">.</span><span class="nf">shift</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="s1">'&lt;hr /&gt;'</span>
+      <span class="k">when</span> <span class="sr">/\A\*/</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="n">parse_h</span><span class="p">(</span><span class="n">lines</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span>
+      <span class="k">when</span> <span class="sr">/\A\s/</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">concat</span> <span class="n">parse_pre</span><span class="p">(</span><span class="n">take_block</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="sr">/\A\s/</span><span class="p">))</span>
+      <span class="k">when</span> <span class="sr">/\A&gt;/</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">concat</span> <span class="n">parse_quote</span><span class="p">(</span><span class="n">take_block</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="sr">/\A&gt;/</span><span class="p">))</span>
+      <span class="k">when</span> <span class="sr">/\A-/</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">concat</span> <span class="n">parse_list</span><span class="p">(</span><span class="s1">'ul'</span><span class="p">,</span> <span class="n">take_block</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="sr">/\A-/</span><span class="p">))</span>
+      <span class="k">when</span> <span class="sr">/\A\+/</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">concat</span> <span class="n">parse_list</span><span class="p">(</span><span class="s1">'ol'</span><span class="p">,</span> <span class="n">take_block</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="sr">/\A\+/</span><span class="p">))</span>
+      <span class="k">when</span> <span class="sr">/\A:/</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">concat</span> <span class="n">parse_dl</span><span class="p">(</span><span class="n">take_block</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="sr">/\A:/</span><span class="p">))</span>
+      <span class="k">else</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="s1">'&lt;p&gt;'</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">concat</span> <span class="n">parse_p</span><span class="p">(</span><span class="n">take_block</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="sr">/\A(?![*\s&gt;:\-\+]|----|\z)/</span><span class="p">))</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="s1">'&lt;/p&gt;'</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">buf</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">take_block</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">marker</span><span class="p">)</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">until</span> <span class="n">lines</span><span class="p">.</span><span class="nf">empty?</span>
+      <span class="k">break</span> <span class="k">unless</span> <span class="n">marker</span> <span class="o">=~</span> <span class="n">lines</span><span class="p">.</span><span class="nf">first</span>
+      <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="n">lines</span><span class="p">.</span><span class="nf">shift</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="n">marker</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+    <span class="k">end</span>
+    <span class="n">buf</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse_h</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="vi">@logger</span><span class="p">.</span><span class="nf">debug</span> <span class="s2">"h: </span><span class="si">#{</span><span class="n">line</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">level</span> <span class="o">=</span> <span class="vi">@h_start_level</span> <span class="o">+</span> <span class="p">(</span><span class="n">line</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="sr">/\A\*{1,4}/</span><span class="p">).</span><span class="nf">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sr">/\A\*+/</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+    <span class="s2">"&lt;h</span><span class="si">#{</span><span class="n">level</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">#{</span><span class="n">parse_inline</span><span class="p">(</span><span class="n">content</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/h</span><span class="si">#{</span><span class="n">level</span><span class="si">}</span><span class="s2">&gt;"</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse_list</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">lines</span><span class="p">)</span>
+    <span class="vi">@logger</span><span class="p">.</span><span class="nf">debug</span> <span class="s2">"</span><span class="si">#{</span><span class="n">type</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">lines</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">marker</span> <span class="o">=</span> <span class="p">((</span><span class="n">type</span> <span class="o">==</span> <span class="s1">'ul'</span><span class="p">)</span> <span class="p">?</span> <span class="sr">/\A-/</span> <span class="p">:</span> <span class="sr">/\A\+/</span><span class="p">)</span>
+    <span class="n">parse_list0</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">marker</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse_list0</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">lines</span><span class="p">,</span> <span class="n">marker</span><span class="p">)</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;</span><span class="si">#{</span><span class="n">type</span><span class="si">}</span><span class="s2">&gt;"</span><span class="p">]</span>
+    <span class="n">closeli</span> <span class="o">=</span> <span class="kp">nil</span>
+    <span class="k">until</span> <span class="n">lines</span><span class="p">.</span><span class="nf">empty?</span>
+      <span class="k">if</span> <span class="n">marker</span> <span class="o">=~</span> <span class="n">lines</span><span class="p">.</span><span class="nf">first</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">concat</span> <span class="n">parse_list0</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">take_block</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">marker</span><span class="p">),</span> <span class="n">marker</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="n">closeli</span> <span class="k">if</span> <span class="n">closeli</span><span class="p">;</span>  <span class="n">closeli</span> <span class="o">=</span> <span class="s1">'&lt;/li&gt;'</span>
+        <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="s2">"&lt;li&gt;</span><span class="si">#{</span><span class="n">parse_inline</span><span class="p">(</span><span class="n">lines</span><span class="p">.</span><span class="nf">shift</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+    <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="n">closeli</span> <span class="k">if</span> <span class="n">closeli</span><span class="p">;</span>  <span class="n">closeli</span> <span class="o">=</span> <span class="s1">'&lt;/li&gt;'</span>
+    <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="s2">"&lt;/</span><span class="si">#{</span><span class="n">type</span><span class="si">}</span><span class="s2">&gt;"</span>
+    <span class="n">buf</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse_dl</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="vi">@logger</span><span class="p">.</span><span class="nf">debug</span> <span class="s2">"dl: </span><span class="si">#{</span><span class="n">lines</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+    <span class="n">buf</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;dl&gt;"</span><span class="p">]</span>
+    <span class="n">lines</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">line</span><span class="o">|</span>
+      <span class="n">dt</span><span class="p">,</span> <span class="n">dd</span> <span class="o">=</span> <span class="o">*</span><span class="n">line</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">'|'</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+      <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="s2">"&lt;dt&gt;</span><span class="si">#{</span><span class="n">parse_inline</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/dt&gt;"</span>
+      <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="s2">"&lt;dd&gt;</span><span class="si">#{</span><span class="n">parse_inline</span><span class="p">(</span><span class="n">dd</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/dd&gt;"</span> <span class="k">if</span> <span class="n">dd</span>
+    <span class="k">end</span>
+    <span class="n">buf</span><span class="p">.</span><span class="nf">push</span> <span class="s2">"&lt;/dl&gt;"</span>
+    <span class="n">buf</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse_quote</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="vi">@logger</span><span class="p">.</span><span class="nf">debug</span> <span class="s2">"quote: </span><span class="si">#{</span><span class="n">lines</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">[</span> <span class="s2">"&lt;blockquote&gt;&lt;p&gt;"</span><span class="p">,</span> <span class="n">lines</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">),</span> <span class="s2">"&lt;/p&gt;&lt;/blockquote&gt;"</span><span class="p">]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse_pre</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="vi">@logger</span><span class="p">.</span><span class="nf">debug</span> <span class="s2">"pre: </span><span class="si">#{</span><span class="n">lines</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">[</span> <span class="s2">"&lt;pre&gt;&lt;code&gt;</span><span class="si">#{</span><span class="n">lines</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">line</span><span class="o">|</span> <span class="n">escape</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="si">}</span><span class="s2">.join("</span><span class="p">\</span><span class="n">n</span><span class="s2">")}"</span><span class="p">,</span>
+      <span class="s1">'&lt;/code&gt;&lt;/pre&gt;'</span><span class="p">]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse_p</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">lines</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">line</span><span class="o">|</span> <span class="n">parse_inline</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">parse_inline</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+    <span class="vi">@inline_re</span> <span class="o">||=</span> <span class="sr">%r&lt;
+        ([&amp;&lt;&gt;"])                             # $1: HTML escape characters
+      | </span><span class="se">\[\[</span><span class="sr">(.+?):</span><span class="se">\s</span><span class="sr">*(https?://</span><span class="se">\S</span><span class="sr">+)</span><span class="se">\s</span><span class="sr">*</span><span class="se">\]\]</span><span class="sr">   # $2: label, $3: URI
+      | (</span><span class="si">#{</span><span class="n">autolink_re</span><span class="p">()</span><span class="si">}</span><span class="sr">)                   # $4: Page name autolink
+      | (</span><span class="si">#{</span><span class="no">URI</span><span class="p">.</span><span class="nf">regexp</span><span class="p">(</span><span class="s1">'http'</span><span class="p">)</span><span class="si">}</span><span class="sr">)              # $5...: URI autolink
+      &gt;x</span>
+    <span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="vi">@inline_re</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">case</span>
+      <span class="k">when</span> <span class="n">htmlchar</span> <span class="o">=</span> <span class="vg">$1</span> <span class="k">then</span> <span class="n">escape</span><span class="p">(</span><span class="n">htmlchar</span><span class="p">)</span>
+      <span class="k">when</span> <span class="n">bracket</span>  <span class="o">=</span> <span class="vg">$2</span> <span class="k">then</span> <span class="n">a_href</span><span class="p">(</span><span class="vg">$3</span><span class="p">,</span> <span class="n">bracket</span><span class="p">,</span> <span class="s1">'outlink'</span><span class="p">)</span>
+      <span class="k">when</span> <span class="n">pagename</span> <span class="o">=</span> <span class="vg">$4</span> <span class="k">then</span> <span class="n">a_href</span><span class="p">(</span><span class="n">page_uri</span><span class="p">(</span><span class="n">pagename</span><span class="p">),</span> <span class="n">pagename</span><span class="p">,</span> <span class="s1">'pagelink'</span><span class="p">)</span>
+      <span class="k">when</span> <span class="n">uri</span>      <span class="o">=</span> <span class="vg">$5</span> <span class="k">then</span> <span class="n">a_href</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">uri</span><span class="p">,</span> <span class="s1">'outlink'</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="k">raise</span> <span class="s1">'must not happen'</span>
+      <span class="k">end</span>
+    <span class="p">}</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">a_href</span><span class="p">(</span><span class="n">uri</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">cssclass</span><span class="p">)</span>
+    <span class="sx">%Q[&lt;a class="</span><span class="si">#{</span><span class="n">cssclass</span><span class="si">}</span><span class="sx">" href="</span><span class="si">#{</span><span class="n">escape</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span><span class="si">}</span><span class="sx">"&gt;</span><span class="si">#{</span><span class="n">escape</span><span class="p">(</span><span class="n">label</span><span class="p">)</span><span class="si">}</span><span class="sx">&lt;/a&gt;]</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">autolink_re</span>
+    <span class="no">Regexp</span><span class="p">.</span><span class="nf">union</span><span class="p">(</span><span class="o">*</span> <span class="vi">@page_names</span><span class="p">.</span><span class="nf">reject</span> <span class="p">{</span><span class="o">|</span><span class="nb">name</span><span class="o">|</span> <span class="nb">name</span><span class="p">.</span><span class="nf">size</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="p">})</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">page_uri</span><span class="p">(</span><span class="n">page_name</span><span class="p">)</span>
+    <span class="s2">"</span><span class="si">#{</span><span class="vi">@base_uri</span><span class="si">}#{</span><span class="n">urlencode</span><span class="p">(</span><span class="n">page_name</span><span class="p">)</span><span class="si">}#{</span><span class="vi">@pagelist_suffix</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

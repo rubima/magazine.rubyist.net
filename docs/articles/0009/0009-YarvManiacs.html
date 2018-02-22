@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</title>
+  <meta name="description" content="書いた人: ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0009/0009-YarvManiacs.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0009/0009-YarvManiacs.html" class="hatena-bookmark-button" data-hatena-bookmark-title="YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0009/0009-YarvManiacs.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0009/0009-YarvManiacs.html" data-text="YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人: ささだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>YARV: Yet Another RubyVM を解説するこの連載。連載 4 回目にして、やっと YARV を触ります。</p>
+
+<p>YARV は Ruby プログラムをコンパイラによって YARV 命令列に変換して、その命令列を実行します。今回は、Ruby プログラムがどのような YARV 命令列に変換されるか、簡単なところを紹介します。</p>
+
+<h3 id="その前にyarv-030031---yarv-と-ruby-のマージ">その前に：YARV 0.3.0、0.3.1 - YARV と Ruby のマージ</h3>
+
+<p>今まで YARV は Ruby の拡張ライブラリとして開発してきましたが、先日 Ruby から従来の評価器を取り除き、YARV だけを使うバージョンを作りました (YARV 0.3.0)。今後はこれをさらに拡張し、レガシーなコードを取り除いていく作業をやっていきます。</p>
+
+<p>今回の連載はこいつを使って解説していきたいので、ビルド方法を紹介します。ただし、今現在のビルド方法を解説しますので、将来はこの方法ではビルド出来ないかもしれません。いや、多分出来ないっぽい。</p>
+
+<h4 id="yarv-のビルド方法">YARV のビルド方法</h4>
+
+<p>まず、YARV を取ってきます。現在の最新版は <a href="http://www.atdot.net/yarv/yarv-0.3.1.tar.gz">YARV 0.3.1</a> です。また、Subversion リポジトリを公開していますので、Subversion がインストールされている環境では以下のコマンドで最新版を取ってくることができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ svn checkout http://www.atdot.net/svn/yarv/trunk yarv</code></pre></figure>
+
+<p>このコマンドで、yarv というディレクトリにソースコード一式がダウンロードされます。</p>
+
+<p>さて、その状態で YARV をビルドしましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ mkdir build
+ $ cd build
+ $ ../yarv/configure
+ $ make</code></pre></figure>
+
+<p>ふつーに Ruby のソースコードをビルドする方法と同じですね。Windows で VC な人は ../yarv/win32/configure.bat を configure の代わりに実行してください (make の代わりに nmake にするのも忘れずに)。</p>
+
+<p>では、テストしましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ make yarv-test-all</code></pre></figure>
+
+<p>テストがガンガン走り出すはずです。問題がなければ</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 147 tests, 378 assertions, 0 failures, 0 errors</code></pre></figure>
+
+<p>みたいなメッセージが表示されると思います。そうじゃなかったら、バグですのでご連絡ください。</p>
+
+<p>これで準備は整いました。</p>
+
+<h4 id="yarv-を使ってみる">YARV を使ってみる</h4>
+
+<p>では、ちょっと使ってみましょう。yarv/test.rb というファイルに、とてつもなく簡単な Ruby プログラムを書いてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> puts "Hello World!"</code></pre></figure>
+
+<p>その上で、YARV をビルドしたディレクトリ (build/) で、make run と入力してみてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ make run
+ ./miniruby.exe ../trunk/test.rb
+ Hello World!</code></pre></figure>
+
+<p>実行されました。成功です。miniruby 云々は make コマンドが実行するコマンドラインを表示しているだけですので無視してください。ちなみに、この実行は cygwin 上で行いました (だから、”.exe” が付いている)。</p>
+
+<p>ここで、miniruby を動かしていることに注目してください。ruby コマンドじゃないです。これは、現在の YARV の実装では、ruby コマンドを作るにはちょっと足りない部分があるので、とりあえず miniruby だけ動かしている、という意味です。</p>
+
+<p>さて、もうちょっと頑張りましょう。make run の代わりに、make runp と入力してみてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ make runp
+./miniruby.exe ../trunk/rb/parse.rb ../trunk/test.rb
+puts "Hello World!"
+
+== disasm: &lt;ISeq:&lt;main&gt;@../trunk/test.rb&gt;===============================
+local scope table (size: 1, argc: 0)
+
+0000 putself                                                          (   1)
+0001 putstring       "Hello World!"
+0003 send            :puts, 1, false, 0, &lt;ic&gt;
+0009 end
+./miniruby.exe ../trunk/test.rb
+Hello World!</code></pre></figure>
+
+<p>なにやらずらずらと出てきました。ここで表示されるのは、「yarv/test.rb に記述した Ruby プログラム」と、「Ruby プログラムを YARV 命令セットに変換した命令列」、そして「実際にそれを実行した結果」です。</p>
+
+<p>今回は、この「ずらずらと出てきた命令列」についてご紹介します。</p>
+
+<h2 id="yarv-命令セットの初歩の初歩">YARV 命令セットの初歩の初歩</h2>
+
+<p>では、上記の「ずらずらと出てきた命令列」の例を解説します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts "Hello World!"</code></pre></figure>
+
+<p>という Ruby プログラムをコンパイルした結果、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">== disasm: &lt;ISeq:&lt;main&gt;@../yarv/test.rb&gt;===============================
+local scope table (size: 1, argc: 0)
+
+0000 putself                                                          (   1)
+0001 putstring       "Hello World!"
+0003 send            :puts, 1, false, 0, &lt;ic&gt;
+0009 end</code></pre></figure>
+
+<p>このような出力が得られたのでした。</p>
+
+<p>この例の最初の 3 行はいわゆるヘッダで、命令列に関する付加的な情報を表示しています。たとえば、1 行目に &lt;ISeq:&lt;main&gt;@../yarv/test.rb&gt; と書いてあるのは、この命令列が ../yarv/test.rb というファイルに書いてあるトップレベルのプログラム (メソッド内などではない) であることを表しています。</p>
+
+<p>まぁ、そういうのはおいといて、4 行目の表示を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putself                                                          (   1)</code></pre></figure>
+
+<p>ここには、命令番地、命令名、命令オペランド、そして行番号が表示されます。ただし、putself 命令の場合、命令オペランドは無いのでこの例では表示されていません。</p>
+
+<p>命令番地は 0 から数えるため、0000 と表示されています。行番号はもちろん 1 行目から数えるので (1) になっています。</p>
+
+<p>さて、putself というのが、もちろん命令名なのですが、何をするんでしょうね。名前から想像すると、self と関係ありそうです。でも、元のプログラムには self なんて単語は一切書かれていません。</p>
+
+<p>そもそも、put ってなんでしょうね。どこに put するんでしょうか。次の命令は putstring ですね。こっちも put。命令オペランドは “Hello World!” という文字列なので、きっとプログラム中に現れた文字列をあらわしていると思うのですが。</p>
+
+<h3 id="スタックマシン">スタックマシン</h3>
+
+<p>putself 命令はどこに何を put するのか、ですが、まずは「どこに put するのか」という疑問に先に答えておきましょう。YARV はスタックマシンなので、そのものずばり、スタックトップに置きます。</p>
+
+<p>putself は、ご想像のとおり、スタックに self を積みます。putstring は文字列を dup してスタックに積みます。</p>
+
+<p>pushself のほうがわかりやすいじゃん、と思われるかもしれませんが、…あまり考えて命名しませんでした。</p>
+
+<p>Ruby のコードで書いてみると、こんな感じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> VMStack.push(self)
+ VMStack.push("Hello World!".dup)</code></pre></figure>
+
+<p>というか、まさにこれだけです。</p>
+
+<p>さて、積むだけ積んでみました。では、誰かが pop すると思うんですが、誰が pop するんですかね。</p>
+
+<h3 id="メソッドの起動">メソッドの起動</h3>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0003 send            :puts, 1, false, 0, &lt;ic&gt;</code></pre></figure>
+
+<p>という行が 3 番目に来ています。:puts という命令オペランドがあるので、きっと puts メソッドの起動を表しているんでしょう。よくみると、命令名は send です。Ruby でメソッドを起動するメソッドは Object#send でした。まぁ、そのまんまですね。そういうわけで、これがメソッドを起動する YARV の命令です。</p>
+
+<p>命令オペランドが :puts の後にもまだ続いていますね。1 は、引数を 1 つで起動、という意味です。そのほかは、面倒なんで今は説明しません。</p>
+
+<p>この命令は、引数の数分だけの値と、レシーバをスタック上から取って (pop して)、メソッドを起動する、という意味になります。つまり、先ほど push した値は、ここで利用され、pop されます。</p>
+
+<p>ちょっとわかりづらいですね。Ruby で書いてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> recv = VMStack[-argc-1]      # スタックの奥のほうからレシーバを取得
+ args = VMStack[-argc...-1]   # 引数の数だけスタックから取得
+ VMStack = VMStack[0...-argc] # スタックから値を pop
+ recv.send(*args)             # メソッドの起動</code></pre></figure>
+
+<p>ということを、send 命令 1 つでやっています (実際にはこんな複雑なことはやっていませんが、Ruby で書くとこんな感じ、という意味です)。</p>
+
+<p>ちょっとおさらいしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putself                                                          (   1)
+0001 putstring       "Hello World!"
+0003 send            :puts, 1, false, 0, &lt;ic&gt;</code></pre></figure>
+
+<p>という命令列は、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">                ## stack : [] # 実行前は stack は空
+ putself        # self を積む
+                ## stack : [self]
+ putstring ".." # 文字を積む
+                ## stack : [self, "Hello World!"]
+ send :puts, 1  # メソッドを起動する。
+                # stack 上の 2 つの値 (引数とレシーバ) はポップされる
+                # スタックには返り値 (puts の返り値は nil) が詰まれる
+                ## stack : [nil]</code></pre></figure>
+
+<p>というようになります。</p>
+
+<p>最後に end という命令がありますが、これはこのスコープから抜けろ、という意味です。スコープについては次号で紹介する予定です。まぁ、これで終わり、と思っていただければ間違いじゃないです。積まれているスタックトップを持って前のスコープに戻ります。</p>
+
+<p>ちなみに、self を最初に積んでいるのは、Ruby では self.puts も self (レシーバ) を書かないで puts だけ記述するのも、「ほぼ」同じ意味だからです。厳密にはほんのちょっとだけ違うんですが、このレベルでは同じです。なので、self.puts に合わせている、ということです。</p>
+
+<h3 id="ほかの例を試してみる">ほかの例を試してみる</h3>
+
+<p>ほかの例を試して見ましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> p 1+2</code></pre></figure>
+
+<p>人を馬鹿にしてるのか、というくらい簡単な Ruby プログラムですが、この命令列を見てみると、こんな感じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putself
+0001 putobject       1
+0003 putobject       2
+0005 send            :+, 1, false, 0, &lt;ic&gt;
+0011 send            :p, 1, false, 0, &lt;ic&gt;
+0017 end</code></pre></figure>
+
+<p>1+2 を実行しているのが 1番地から5番地の</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">0001 putobject       1
+0003 putobject       2
+0005 send            :+, 1, false, 0, &lt;ic&gt;</code></pre></figure>
+
+<p>この部分です。1+2 は、Ruby では立派なメソッド呼び出しですから (1.+(2)と同じ意味) 、このようにコンパイルされるのです。このとき、1 がレシーバオブジェクト、2 が引数として、:+ メソッドが呼ばれています。さっきの例と同じですね。</p>
+
+<p>そして、最後に self.p(arg) を実行 (arg は 1+2 の結果) して、end でその返り値 (p の返り値は nil) を返します。</p>
+
+<h3 id="命令の一覧">命令の一覧</h3>
+
+<p>さて、では他にどんな命令があるんでしょうか。</p>
+
+<p><a href="http://www.atdot.net/yarv/insnstbl.html">YARV: Yet another RubyVM / Instruction Table</a> というページがあります。ここに、命令一覧をまとめてあります。ただし、このページの内容は最新の YARV に追従していない場合もありますのでご注意ください。</p>
+
+<p>この命令一覧の見方を説明します。</p>
+
+<p>type はどんな命令か、を示しています。Index は、とりあえず命令に番号を付けています。Instruction には命令名、Operands は命令オペランドが示されています。Stacks には、その命令を実行したら、スタックの状態がどのように変化するかを示しています。</p>
+
+<p>たとえば、putnil という命令なら、Stacks には</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> =&gt; val</code></pre></figure>
+
+<p>と、記述されていますが、これは val (なんらかの値) が putnil 命令実行後にスタックに詰まれる、という意味です。val はもちろん nil です。スタックサイズは一個増えました。</p>
+
+<p>たとえば、putnot という命令では、Stacks には</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> obj =&gt;  val</code></pre></figure>
+
+<p>とありますが、これはスタックトップに積んである値を取り出し (pop)、その値を obj として、!obj を val として、val をスタックトップに積みます (push)。pop して push したので、スタックサイズの増減はありません。</p>
+
+<p>Ruby で擬似コードを書いてみるとこんな感じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> obj = VMStack.pop
+ val = !obj
+ VMStack.push(val)</code></pre></figure>
+
+<h3 id="各命令の詳細">各命令の詳細</h3>
+
+<p>各命令がどんなことをするのか、というのは名前をじーっと見るとわかる気がするんですが、わからないような気もします。</p>
+
+<p>各命令が具体的に何をやっているかを詳しく知りたい人は、YARV ソースツリーの <a href="http://www.atdot.net/svn/yarv/trunk/insns.def">yarv/insns.def</a> を見てください。このファイルに、色々と細かいことが書いてあります。具体的には、日本語、英語での簡単な説明と、C プログラムでその命令が何をするか詳細に記述してあります。これを見れば、わかる人にはわかるんじゃないかと思います。</p>
+
+<p>yarv/insns.def の書式は、普通の C 言語の書式ではないし、そもそも拡張子が “.def” という怪しげなものになっていますが、このファイルは YARV のビルド時に Ruby プログラムによって C 言語プログラムに変換されます。これについては、いつか解説します。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>本稿では YARV の命令セットの紹介のさわりを書きました。次号からは、もうちょっと大きなプログラムを YARV 命令セットに変換してみて、その内容を解説していこうと思っています。</p>
+
+<p>YARV のビルドが出来た方は、今回紹介した方法を使っていろいろな Ruby プログラムを YARV 命令列に変換してみてください (いわゆる逆アセンブル)。YARV がどんなことをするのか、少しずつ見えてくると思います。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<p>今回は YARV に特化した内容でしたので、他に参照するところはありません。</p>
+
+<p>YARV 命令の一覧は <a href="http://www.atdot.net/yarv/insnstbl.html">YARV: Yet another RubyVM / Instruction Table</a> に用意してあります。</p>
+
+<p>各命令の詳細は本文中で紹介したソースコード <a href="http://www.atdot.net/svn/yarv/trunk/insns.def">yarv/insns.def</a> を見てください。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>ささだこういち。学生。</p>
+
+<p>最近マシンを新しくしたので、家で YARV の開発ができるぜー、と思っていたら、なんか事務処理とかばかりしている気がする。LLDN の準備とか研究会の準備とか若手の会の準備とか色々。まぁいいか。</p>
+
+<h2 id="yarv-maniacs-連載一覧">YARV Maniacs 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-YarvManiacs.html">YARV Maniacs 【第 13 回】 事前コンパイルへの道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-YarvManiacs.html">YARV Maniacs 【第 11 回】 最近の YARV の事情</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0033/0033-YarvManiacs.html">YARV Maniacs 【第 10 回】 例外処理（初級編）</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-YarvManiacs.html">YARV Maniacs 【第 9 回】 特化命令</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-YarvManiacs.html">YARV Maniacs 【第 8 回】 命令列のシリアライズ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-YarvManiacs.html">YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-YarvManiacs.html">YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-YarvManiacs.html">YARV Maniacs 【第 5 回】 命令セット (2) リテラル・変数・定数</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-YarvManiacs.html">YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-YarvManiacs.html">YARV Maniacs 【第 3 回】 命令ディスパッチの高速化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-YarvManiacs.html">YARV Maniacs 【第 2 回】 VM ってなんだろう</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-YarvManiacs.html">YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

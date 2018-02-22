@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>プログラマーのための YAML 入門 (初級編)</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0009/0009-YAML.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>プログラマーのための YAML 入門 (初級編)</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0009/0009-YAML.html" class="hatena-bookmark-button" data-hatena-bookmark-title="プログラマーのための YAML 入門 (初級編)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0009/0009-YAML.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0009/0009-YAML.html" data-text="プログラマーのための YAML 入門 (初級編)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#yaml-について" id="markdown-toc-yaml-について">YAML について</a></li>
+  <li><a href="#基本的な書き方" id="markdown-toc-基本的な書き方">基本的な書き方</a>    <ul>
+      <li><a href="#配列" id="markdown-toc-配列">配列</a></li>
+      <li><a href="#ハッシュ" id="markdown-toc-ハッシュ">ハッシュ</a></li>
+      <li><a href="#配列とハッシュのネスト" id="markdown-toc-配列とハッシュのネスト">配列とハッシュのネスト</a></li>
+      <li><a href="#ブロックスタイルとフロースタイル" id="markdown-toc-ブロックスタイルとフロースタイル">ブロックスタイルとフロースタイル</a></li>
+      <li><a href="#コメント" id="markdown-toc-コメント">コメント</a></li>
+      <li><a href="#スカラーとデータ型" id="markdown-toc-スカラーとデータ型">スカラーとデータ型</a></li>
+      <li><a href="#複数行の文字列" id="markdown-toc-複数行の文字列">複数行の文字列</a></li>
+      <li><a href="#アンカーとエイリアス" id="markdown-toc-アンカーとエイリアス">アンカーとエイリアス</a></li>
+      <li><a href="#タブ文字について" id="markdown-toc-タブ文字について">タブ文字について</a></li>
+      <li><a href="#その他" id="markdown-toc-その他">その他</a></li>
+    </ul>
+  </li>
+  <li><a href="#xml-との比較" id="markdown-toc-xml-との比較">XML との比較</a>    <ul>
+      <li><a href="#表記法について" id="markdown-toc-表記法について">表記法について</a></li>
+      <li><a href="#概念について" id="markdown-toc-概念について">概念について</a></li>
+      <li><a href="#インライン要素について" id="markdown-toc-インライン要素について">インライン要素について</a></li>
+      <li><a href="#データ型について" id="markdown-toc-データ型について">データ型について</a></li>
+      <li><a href="#改行や半角スペースの扱いについて" id="markdown-toc-改行や半角スペースの扱いについて">改行や半角スペースの扱いについて</a></li>
+      <li><a href="#データバインディングについて" id="markdown-toc-データバインディングについて">データバインディングについて</a></li>
+      <li><a href="#ツールについて" id="markdown-toc-ツールについて">ツールについて</a></li>
+      <li><a href="#その他-1" id="markdown-toc-その他-1">その他</a></li>
+    </ul>
+  </li>
+  <li><a href="#終わりに" id="markdown-toc-終わりに">終わりに</a></li>
+  <li><a href="#参考文献" id="markdown-toc-参考文献">参考文献</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#プログラマーのための-yaml-入門-連載一覧" id="markdown-toc-プログラマーのための-yaml-入門-連載一覧">プログラマーのための YAML 入門 連載一覧</a></li>
+</ul>
+
+<p>書いた人：kwatch</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p><a href="http://www.yaml.org/start.html">YAML</a> とは、構造化されたデータを表現するためのフォーマットです。
+目的は XML と似ていますが、XML と比べて「読みやすい」「書きやすい」「わかりやすい」という利点があります。</p>
+
+<p>また YAML はあくまで「仕様」であり、それを処理するライブラリの「実装」が必要です。
+Ruby 1.8 では <a href="http://www.whytheluckystiff.net/syck/">Syck</a> というライブラリが標準で含まれています。</p>
+
+<p>本稿では 3 回に渡り、YAML および Ruby のライブラリである <a href="http://www.whytheluckystiff.net/syck/">Syck</a> について解説します。</p>
+
+<dl>
+  <dt>プログラマーのための YAML 入門 (初級編) − YAML の書き方と、XML との比較について</dt>
+  <dd>YAML は構造化されたデータを表現するためのフォーマットであり、主にインデントを使って構造を表現します。初級編では、YAML フォーマットの書き方を中心に説明します。また XML と YAML の比較も行います。</dd>
+  <dt>プログラマーのための YAML 入門 (中級編) − Syck の機能について</dt>
+  <dd>Syck には、YAML フォーマットをツリー構造に変換して XPath のようにトラバースする機能や、トランザクションを使ってデータをファイルに保存する機能などがあります。中級編では、このような Syck の機能について解説します。</dd>
+  <dt>プログラマーのための YAML 入門 (実践編) − 実用的なアプリケーションの作成例</dt>
+  <dd>YAML はアプリケーションのデータストア層に適していますが、ビュー層には eRuby が適しています。実践編では、YAML データを読み込んで加工し、eRuby で出力する実用的なアプリケーションを作成します。</dd>
+</dl>
+
+<p>本稿では Ruby 1.8 以上を前提にします。Ruby 1.6 系をお使いの方は、<a href="http://www.whytheluckystiff.net/syck/">Syck</a> をインストールしてください。</p>
+
+<p>なお XML と YAML の比較についてだけ興味のある方は、セクション『<a href="/articles/0009/0009-YAML.html">XML との比較</a>』をご覧ください。</p>
+
+<h2 id="yaml-について">YAML について</h2>
+
+<p>まず、YAML について簡単に説明します。</p>
+
+<p><a href="http://www.yaml.org/start.html">YAML</a> (YAML Ain’t Markup Language) とは、構造化されたデータを表現するためのフォーマットです。YAML は次のような用途に向いています。</p>
+
+<ul>
+  <li>各種設定ファイル</li>
+  <li>データ保存用 (シリアライゼーション)</li>
+  <li>データ交換用フォーマット</li>
+  <li>ログファイル</li>
+</ul>
+
+<p>YAML の目的は XML と似ていますが、XML と比べて次のような利点があります (YAML と XML との詳しい比較はセクション『<a href="#l13">XML との比較</a>』をご覧ください)。</p>
+
+<ul>
+  <li>読みやすい ―― YAML ではインデントを使ってデータの階層構造を表すため、人間にとって非常に読みやすいです。</li>
+  <li>書きやすい ―― YAML では XML のような終了タグが必要ないので、人間にとって非常に書きやすいです。</li>
+  <li>わかりやすい ―― YAML ではデータを「配列」「ハッシュ」「スカラー (数値や文字列や真偽値)」だけで表すため、人間にとって非常に理解しやすく、またプログラミングも容易です。</li>
+</ul>
+
+<p>YAML の仕様では、正式には配列ではなく「シーケンス (Sequence)」、ハッシュではなく「マッピング (Mapping)」という用語を使用しています。これは、「配列」や「ハッシュ」という用語がデータ構造の具体的な実装を表すため、仕様書で使うのはふさわしくないと判断されたのだと思われます。しかし本稿ではわかりやすさを優先して、Ruby ユーザになじみの深い「配列」や「ハッシュ」を用語として使用します。正式な用語については、YAML の仕様書である『<a href="http://yaml.org/spec/current.html">YAML Ain’t Markup Language Version 1.1</a>』をご覧ください。</p>
+
+<p>また YAML はあくまで「仕様」であり、それを処理するライブラリの「実装」が必要です。Ruby 1.8 では <a href="http://www.whytheluckystiff.net/syck/">Syck</a> というライブラリが標準で含まれています。Syck の本体は C 言語で書かれており、それを Ruby などのスクリプト言語から使えるようになっています。現時点では Syck は以下の言語に対応しています (対応状況については、Ruby 以外の言語ではまだ使えない機能も多いみたいです)。</p>
+
+<ul>
+  <li>Ruby</li>
+  <li>Python</li>
+  <li>PHP</li>
+  <li><del>OCaml</del></li>
+</ul>
+
+<p>〔追記 (2005-09-28) OCamlのサポートはなくなりました。また新たに Lua と Cocoa がサポートされたようです。〕</p>
+
+<p>そのほかの実装については <a href="http://www.yaml.org/download.html">YAML ホームページのダウンロードページ</a>をご覧ください。</p>
+
+<h2 id="基本的な書き方">基本的な書き方</h2>
+
+<p>YAML では、主に次の 3 つの組み合わせでデータを表現します。</p>
+
+<ul>
+  <li>配列</li>
+  <li>ハッシュ</li>
+  <li>スカラー（文字列、数値、真偽値など）</li>
+</ul>
+
+<p>このセクションではまず配列とハッシュの書き方を説明し、そのあとにスカラーについて説明します。</p>
+
+<h3 id="配列">配列</h3>
+
+<p>YAML では、行頭に「-」をつけることで配列を表現します。「-」のあとには半角スペースを入れてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">- aaa
+- bbb
+- ccc</code></pre></figure>
+
+<p>また YAML ファイルを読み込んで表示する Ruby スクリプト「print-yaml.rb」は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">#!/usr/bin/ruby
+
+###
+### print-yaml.rb
+###
+### 使い方： ruby print-yaml.rb file.yaml [file2.yaml ...]
+###
+require 'yaml'
+require 'pp'
+
+str  = ARGF.read()      # 入力をすべて読み込む
+data = YAML.load(str)   # パースする
+pp data                 # データを表示する</code></pre></figure>
+
+<p>「YAML.load()」は YAML データを Ruby オブジェクトに変換するメソッドであり、引数として文字列または IO オブジェクトが指定できます。</p>
+
+<p>実行するには次のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby print-yaml.rb example01.yaml</code></pre></figure>
+
+<p>なお上記のスクリプトを使わなくても、次のように 1 行で済ませることもできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby -r yaml -r pp -e 'pp YAML.load(ARGF.read())' example01.yaml</code></pre></figure>
+
+<p>実行結果は次のようになります。
+YAML のデータが配列になっていることがわかります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["aaa", "bbb", "ccc"]</code></pre></figure>
+
+<p>半角スペースでインデントすると、配列をネストさせることができます。タブ文字は使えませんので注意してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">- aaa
+-
+  - b1
+  - b2
+  -
+    - b3.1
+    - b3.2
+- ccc</code></pre></figure>
+
+<p>実行結果は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["aaa", ["b1", "b2", ["b3.1", "b3.2"]], "ccc"]</code></pre></figure>
+
+<p>なお箇条書きのように書くことはできません。例えば次の例では、配列の要素が「”A”」なのか「[“a1”,”a2”,”a3”]」なのか決められません (実際にはすべて文字列として解釈されます)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">- A
+  - a1
+  - a2
+  - a3</code></pre></figure>
+
+<p>実行結果は次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["A - a1 - a2 - a3"]</code></pre></figure>
+
+<h3 id="ハッシュ">ハッシュ</h3>
+
+<p>ハッシュは「キー: 値」の形式で表します。コロン「:」のあとに半角スペースを 1 つ以上入れてください (タブ文字は使えません)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">A: aaa
+B: bbb
+C: ccc</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"A"=&gt;"aaa", "B"=&gt;"bbb", "C"=&gt;"ccc"}</code></pre></figure>
+
+<p>半角スペースでインデントすることで、ハッシュをネストさせることができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">A: aaa
+B:
+  B1: bbb1
+  B2: bbb2
+C: ccc</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"A"=&gt;"aaa", "B"=&gt;{"B1"=&gt;"bbb1", "B2"=&gt;"bbb2"}, "C"=&gt;"ccc"}</code></pre></figure>
+
+<p>また次のように書くことはできません。なぜなら、キー「”A”」に対応する値が「”foo”」なのか「{“a1”=&gt;“bar”,”a2”=&gt;“baz”}」なのか分からないからです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">A: foo
+  a1: bar
+  a2: baz</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby print-yaml.rb exampe13.yaml
+/usr/lib/ruby/1.8/yaml.rb:39:in `load': parse error on line 1, col 5: `  a1: bar
+' (ArgumentError)
+        from /usr/lib/ruby/1.8/yaml.rb:39:in `load'
+        from print-yaml.rb:11</code></pre></figure>
+
+<h3 id="配列とハッシュのネスト">配列とハッシュのネスト</h3>
+
+<p>配列とハッシュはお互いにネストさせることができます。</p>
+
+<p>次の例は、配列の中にハッシュをネストさせる例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">- name:  Hanako
+  email: flower@mail.com
+- name:  Sumire
+  email: garnet@mail.net
+- name:  Momoko
+  email: peach@mail.org</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[{"name"=&gt;"Hanako", "email"=&gt;"flower@mail.com"},
+ {"name"=&gt;"Sumire", "email"=&gt;"garnet@mail.net"},
+ {"name"=&gt;"Momoko", "email"=&gt;"peach@mail.org"}]</code></pre></figure>
+
+<p>次はハッシュの中に配列をネストさせる例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">names:
+  - Hanako
+  - Sumire
+  - Momoko
+emails:
+  - flower@mail.com
+  - garnet@mail.net
+  - peach@mail.org</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"emails"=&gt;["flower@mail.com", "garnet@mail.net", "peach@mail.org"],
+ "names"=&gt;["Hanako", "Sumire", "Momoko"]}</code></pre></figure>
+
+<p>ネストはいくらでも深くできます。次の例は、「ハッシュをもつ配列をもつハッシュをもつ配列をもつハッシュ」の例です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">database:
+  host:     localhost
+  port:     5432
+  user:     dbuser
+  passwd:   dbpasswd
+
+tables:
+
+  - name:   users
+    desc:   User master table
+    columns:
+      - name:     id
+        type:     integer
+        primary-key:  true
+      - name:     user
+        type:     varchar(32)
+        not-null: true
+        unique:   true
+      - name:     password
+        type:     varchar(32)
+        not-null: true
+      - name:     group_id
+        type:     integer
+        not-null: true
+
+  - name:   groups
+    desc:   Group master table
+    columns:
+      - name:     id
+        type:     integer
+        primary-key:  true
+      - name:     group
+        type:     varchar(32)
+        not-null: true
+        unique:   true</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"tables"=&gt;
+  [{"columns"=&gt;
+     [{"name"=&gt;"id", "type"=&gt;"integer", "primary-key"=&gt;true},
+      {"name"=&gt;"user",
+       "not-null"=&gt;true,
+       "type"=&gt;"varchar(32)",
+       "unique"=&gt;true},
+      {"name"=&gt;"password", "not-null"=&gt;true, "type"=&gt;"varchar(32)"},
+      {"name"=&gt;"group_id", "not-null"=&gt;true, "type"=&gt;"integer"}],
+    "name"=&gt;"users",
+    "desc"=&gt;"User master table"},
+   {"columns"=&gt;
+     [{"name"=&gt;"id", "type"=&gt;"integer", "primary-key"=&gt;true},
+      {"name"=&gt;"group",
+       "not-null"=&gt;true,
+       "type"=&gt;"varchar(32)",
+       "unique"=&gt;true}],
+    "name"=&gt;"groups",
+    "desc"=&gt;"Group master table"}],
+ "database"=&gt;
+  {"user"=&gt;"dbuser", "passwd"=&gt;"dbpasswd", "port"=&gt;5432, "host"=&gt;"localhost"}}</code></pre></figure>
+
+<h3 id="ブロックスタイルとフロースタイル">ブロックスタイルとフロースタイル</h3>
+
+<p>今まで見てきたような、インデントを使って構造を表す書き方を「ブロックスタイル」といいます。ブロックスタイルではデータを複数行にわたって記述します。</p>
+
+<p>これに対し、「{}」や「[]」を使って構造を表すこともできます。この書き方を「フロースタイル」といいます。フロースタイルではデータを 1 行にまとめて記述できます。</p>
+
+<p>次の例はフロースタイルによる配列の例です。コンマ「,」のあとには半角空白を入れてください。またエラーになる場合は Ruby のバージョンを 1.8.2 にあげてみてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[aaa, bbb, ccc]</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["aaa", "bbb", "ccc"]</code></pre></figure>
+
+<p>次の例はフロースタイルによるハッシュの例です。コロン「:」のあとには半角空白を入れてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{ A: aaa, B: bbb, C: ccc }</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"A"=&gt;"aaa", "B"=&gt;"bbb", "C"=&gt;"ccc"}</code></pre></figure>
+
+<p>フロースタイルでもネストさせることができます。またブロックスタイルとの併用もできます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">route1: [ {x: 0, y: 0}, {x: 0, y: 5}, {x: 5, y: 5} ]
+route2:
+  - {x: 0, y: 0}
+  - {x: 5, y: 0}
+  - {x: 5, y: 5}</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"route1"=&gt;[{"x"=&gt;0, "y"=&gt;0}, {"x"=&gt;0, "y"=&gt;5}, {"x"=&gt;5, "y"=&gt;5}],
+ "route2"=&gt;[{"x"=&gt;0, "y"=&gt;0}, {"x"=&gt;5, "y"=&gt;0}, {"x"=&gt;5, "y"=&gt;5}]}</code></pre></figure>
+
+<p>なおフロースタイルを使うと、<a href="http://www.crockford.com/JSON/index.html">JSON</a> と同じにすることができます。つまり JSON を YAML としてみなすことができます。
+詳しくは <a href="http://redhanded.hobix.com/inspect/yamlIsJson.html">YAML is JSON</a> をご覧ください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{ "menu": {
+    "id": "file",
+    "value": "File:",
+    "popup": {
+      "menuitem": [
+        {"value": "New", "onclick": "CreateNewDoc()"},
+        {"value": "Open", "onclick": "OpenDoc()"},
+        {"value": "Close", "onclick": "CloseDoc()"}
+      ]
+    }
+  }
+}</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"menu"=&gt;
+  {"popup"=&gt;
+    {"menuitem"=&gt;
+      [{"value"=&gt;"New", "onclick"=&gt;"CreateNewDoc()"},
+       {"value"=&gt;"Open", "onclick"=&gt;"OpenDoc()"},
+       {"value"=&gt;"Close", "onclick"=&gt;"CloseDoc()"}]},
+   "id"=&gt;"file",
+   "value"=&gt;"File:"}}</code></pre></figure>
+
+<h3 id="コメント">コメント</h3>
+
+<p>「#」から行末までがコメントになります。範囲コメントはありません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># コメント行
+# コメント行
+- aaa
+- bbb        # これもコメント行
+- ccc</code></pre></figure>
+
+<p>なお「#」のようにバックスラッシュでエスケープできます。</p>
+
+<h3 id="スカラーとデータ型">スカラーとデータ型</h3>
+
+<p>〔追記 (2005-10-01) : 真偽値のパターンとして “on/off” を追加。Symbol のパターンを追加。Syck のソースである lib/impplicit.re についての言及を追加。 〕</p>
+
+<p>配列やハッシュのような、他のデータを要素としてもつデータは「コレクション (Collection)」といいます。それ以外のデータ (数値や文字列など) は「スカラー (Scalar)」といいます。</p>
+
+<p>YAML では、以下のデータ型を自動的に判別します。</p>
+
+<ul>
+  <li>整数</li>
+  <li>浮動小数点</li>
+  <li>真偽値 (true, yes, false, no)</li>
+  <li>Null値 (null, ~)</li>
+  <li>日付 (yyyy-mm-dd)</li>
+  <li>タイムスタンプ (yyyy-mm-dd hh:mm:ss [+-]hh:mm)</li>
+</ul>
+
+<p>これら以外は文字列として認識されます。また引用符「’」や二重引用符「”」で囲むと、強制的に文字列として認識されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">decimal1:  123                           # 整数 (10 進数)
+decimal2:  1,234,567,890                 # 整数 (10 進数)
+octal:     0644                          # 整数 (8 進数)
+hexa:      0xFF                          # 整数 (16 進数)
+float1:    0.05                          # 浮動小数点
+bool1:     true                          # 真
+bool2:     yes                           # 真
+bool3:     on                            # 真
+bool4:     false                         # 偽
+bool5:     no                            # 偽
+bool6:     off                           # 偽
+null1:     ~                             # Null 値
+null2:     null                          # Null 値
+date:      2005-01-01                    # 日付
+stamp:     2005-01-01 00:00:00 +09:00    # タイムスタンプ
+str1:      'true'                        # 文字列
+str2:      "2005"                        # 文字列
+symbol:    :foo                          # シンボル (Syck の独自機能)</code></pre></figure>
+
+<p>実行結果 (順番は変更しています) ：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"decimal1"=&gt;123,
+ "decimal2"=&gt;1234567890,
+ "octal"=&gt;420,
+ "hexa"=&gt;255,
+ "float1"=&gt;0.05,
+ "bool1"=&gt;true,
+ "bool2"=&gt;true,
+ "bool4"=&gt;false,
+ "bool5"=&gt;false,
+ "bool6"=&gt;false,
+ "null1"=&gt;nil,
+ "null2"=&gt;nil,
+ "date"=&gt;#&lt;Date: 4906743/2,0,2299161&gt;,
+ "stamp"=&gt;Sat Jan 01 00:00:00 GMT+9:00 2005,
+ "str1"=&gt;"true",
+ "str2"=&gt;"2005",
+ "symbol"=&gt;:foo}</code></pre></figure>
+
+<p>また「!」を使うと、データの型を明示的に指定できます。これを使うと、Ruby における Regexp や Symbol のように処理系の言語に依存した型も指定できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">- !str 123            # 文字列
+- !pairs              # 組 (要素が 2 つの配列)
+  - A: aaa
+  - B: bbb
+- !ruby/sym  foo      # Ruby の Symbol
+- !ruby/regexp /^$/   # Ruby の Regexp</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["123", [["A", "aaa"], ["B", "bbb"]], :foo, /^$/]</code></pre></figure>
+
+<p>どのようなデータ型が指定できるかは『<a href="http://yaml.org/type/index.html">Language-Independent Types for YAML</a>』をご覧ください。ただし、そこで説明されたすべてのデータ型に Syck が対応しているわけではないようです。</p>
+
+<p>またデータ型のパターンは、Syck のソースでは lib/implicit.re で定義されています。独自のパターンを追加するには、このファイルを変更して Syck を最コンパイルする必要があり、Ruby スクリプトから追加する方法はありません。</p>
+
+<h3 id="複数行の文字列">複数行の文字列</h3>
+
+<p>文字列も、フロースタイルとブロックスタイルがあります。今まで見てきたのはフロースタイルであり、 1 行に収まる文字列の場合に適しています。
+ブロックスタイルは複数行にわたる文字列に適しており、次のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 各行の改行を保存する
+text1: |
+  aaa
+  bbb
+  ccc
+
+
+## 各行の改行と、最終行に続く改行を保存する
+text2: |+
+  aaa
+  bbb
+  ccc
+
+
+## 各行の改行は保存するが、最終行の改行は取り除く
+text3: |-
+  aaa
+  bbb
+  ccc
+
+
+## 改行を半角スペースに置き換える、ただし最終行の改行は保存される
+text4: &gt;
+  aaa
+  bbb
+  ccc
+
+
+## 改行を半角スペースに置き換え、最終行に続く改行を保存する
+text5: &gt;+
+  aaa
+  bbb
+  ccc
+
+
+## 改行を半角スペースに置き換え、最終行の改行を取り除く
+text6: &gt;-
+  aaa
+  bbb
+  ccc</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"text1"=&gt;"aaa\nbbb\nccc\n",
+ "text2"=&gt;"aaa\nbbb\nccc\n\n\n",
+ "text3"=&gt;"aaa\nbbb\nccc",
+ "text4"=&gt;"aaa bbb ccc\n",
+ "text5"=&gt;"aaa bbb ccc\n\n\n",
+ "text6"=&gt;"aaa bbb ccc"}</code></pre></figure>
+
+<p>各方法において、空行も保存されます。</p>
+
+<p>またインデント幅を明示することもできます。ただし0は指定できないようです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">- |2
+     foo
+     bar
+     baz
+
+- |0
+     foo
+     bar
+     baz
+
+- &gt;2
+     foo
+     bar
+     baz
+
+- &gt;0
+     foo
+     bar
+     baz</code></pre></figure>
+
+<p>実行結果：</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">["   foo\n   bar\n   baz\n",
+ "foo\nbar\nbaz\n",
+ "   foo\n   bar\n   baz\n",
+ "foo bar baz\n"]</code></pre></figure>
+
+<p>ブロックスタイルを使うと、YAML ドキュメントの中に別の YAML ドキュメントを埋め込むことが簡単にできます。このとき、XML と違って記号をエスケープする必要はありません。</p>
+
+<h3 id="アンカーとエイリアス">アンカーとエイリアス</h3>
+
+<p>YAML では、データに「&amp;<em>name</em>」で印をつけ、「*<em>name</em>」で参照することができます (C 言語におけるアドレスやポインタと同じ表記です)。前者をアンカー (Anchor)、後者をエイリアス (Alias) といいます。</p>
+
+<p>配列の要素にアンカーをつけるには、次のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">- &amp;mark foo
+- bar
+- *mark
+- *mark</code></pre></figure>
+
+<p>これは次の Ruby スクリプトと同じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">mark = "foo"
+[mark, "bar", mark, mark]</code></pre></figure>
+
+<p>ハッシュの要素にアンカーをつけるには、次のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">A: &amp;mark
+   foo
+B: bar
+C: *mark</code></pre></figure>
+
+<p>これは次の Ruby スクリプトと同じです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">mark = foo
+{ "A"=&gt;mark, "B"=&gt;"bar", "C"=&gt;mark }</code></pre></figure>
+
+<p>より複雑な例を次に示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## 役職
+posts:
+  - &amp;p91
+    id:     91
+    name:   重役
+  - &amp;p92
+    id:     92
+    name:   管理職
+  - &amp;p93
+    id:     93
+    name:   平社員
+
+
+## 社員
+employees:
+
+  ## 山田は重役、上司はなし
+  - &amp;e1001
+    id:     1001
+    name:   山田○○
+    post:   *p91
+    supervisor: ~
+
+  ## 田中は管理職、上司は山田
+  - &amp;e1002
+    id:     1002
+    name:   田中○○
+    post:   *p92
+    supervisor: *e1001
+
+  ## 中村は平社員、上司は田中
+  - &amp;e1003
+    id:     1003
+    name:   中村○○
+    post:   *p93
+    supervisor: *e1002</code></pre></figure>
+
+<p>アンカーとエイリアスを使うことで、木構造だけでなく、DAG やネットワーク構造を直接表現できます。これは、基本的に木構造しか表現できない XML と比べて、YAML の利点です。</p>
+
+<h3 id="タブ文字について">タブ文字について</h3>
+
+<p>YAML では、半角空白のかわりにタブ文字を使うことはできません。タブ文字の表示幅は何かの規格で決まっているわけではなく、環境によって異なります (8 文字が多いのはあくまで習慣にすぎません)。そのため、YAML ではタブ文字を使わないようになっています。</p>
+
+<p>しかし、タブ文字が使えたほうが便利だという人もいるでしょう。その場合は、次のようにするとタブ文字を半角スペース 8 個に展開することができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require 'yaml'
+
+## データを読み込む
+str = ARGF.read()
+
+## インデントが 8 文字単位になるように空白に置き換える
+s = ''
+str.each_line do |line|
+   s &lt;&lt; line.gsub(/([^\t]{8})|([^\t]*)\t/n) { [$+].pack("A8") }
+end
+
+## パースする
+yaml = YAML.load(s)</code></pre></figure>
+
+<h3 id="その他">その他</h3>
+
+<ul>
+  <li>本稿では「配列」「ハッシュ」という用語を使用していますが、YAML の用語ではそれぞれ「シーケンス (Sequence)」、「マッピング (Mapping)」といいます。またシーケンスやマッピングのように、他のデータを入れるようなデータ型を「コレクション (Collection)」といい、そうではないデータ型を「スカラー (Scalar)」といいます。</li>
+  <li>コレクションには他に次のようなものがあります。ただし、シーケンスとマッピング以外はあまり使わないうえに、Syck できちんと解釈できないようなので、本稿では説明を割愛します。興味のある方は『<a href="http://yaml.org/type/index.html">Language-Independent Types for YAML Version 1.1</a>』をご覧ください。
+    <ul>
+      <li>シーケンス (Sequence)</li>
+      <li>マッピング (Mapping)</li>
+      <li>順序つきマッピング (Ordered Mapping)</li>
+      <li>組 (Pairs)</li>
+      <li>集合 (Set)</li>
+    </ul>
+  </li>
+  <li>「—」で区切ることで、ひとつのファイルに複数の YAML ドキュメントを含めることができます。またひとつのファイルから複数の YAML ドキュメントを読み込むには、YAML.load_stream() を使います。これについては次回に説明します。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">---
+name: foo
+email: foo@mail.com
+---
+name: bar
+email: bar@mail.org
+---
+name: baz
+email: baz@mail.net</code></pre></figure>
+
+<ul>
+  <li>「…」だけの行があると、それ以降は読み込まれません。これは Ruby における「<strong>END</strong>」と同じようなものです。この機能は、エラーがあった箇所を絞り込むときに便利です。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">- aaa
+- bbb
+...
+- ccc      # 読み込まれない</code></pre></figure>
+
+<ul>
+  <li>先頭に「%YAML 1.1」と書くことで、YAML のバージョンを指定できます。これをディレクティブといいます。ディレクティブは省略可能であり、また今のところ特に役にたつわけではないので、通常は省略します。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">--- %YAML 1.1
+- aaa
+- bbb</code></pre></figure>
+
+<ul>
+  <li>YAML 仕様書によると、ドキュメントの文字コードはユニコードのみが使えるとされていますが、EUC などを使っても特に問題はないようです。また文字コードを明示的に指定する方法はありません。</li>
+  <li>ドメインを指定できます。ドメインとは名前空間のようなものです。データ型は必ず何らかのドメインに所属します。必要度は低いので本稿では割愛します。</li>
+  <li>配列やハッシュを、ハッシュのキーとして指定することができます。有用性は低いので本稿では割愛します。</li>
+</ul>
+
+<p>これ以外にも、YAML の仕様では様々な記述方法が定められています。
+YAML はシンプルなようでいて、実は思ったよりも仕様は複雑です。
+今回はよく使われる機能だけを紹介し細かいところは省略していますが、興味のある方は『<a href="http://yaml.org/spec/current.html">YAML Ain’t Markup Language (YAML) Version 1.1</a>』をご覧ください。</p>
+
+<h2 id="xml-との比較">XML との比較</h2>
+
+<p>YAML も XML も、どちらも構造化されたデータを表現するフォーマットです。しかし両者には歴然とした違いがあります。</p>
+
+<p>このセクションでは、YAML と XML との比較を行い、両者の利点と欠点をみていきます。客観的に比較したつもりですが、おかしな点があればご指摘ください。</p>
+
+<h3 id="表記法について">表記法について</h3>
+
+<p>今まで見てきたように、YAML は終了タグを使うかわりにインデントを使うことで、データ構造のネストを表現しています。これは人間にとって読みやすく、かつ書きやすい表記法です。これだけでも XML から乗り換える価値があります。</p>
+
+<p>XML はご存知のように、書きやすくも読みやすくもありません。終了タグを必要とするため、XML データを自動生成するような場面では都合がいいのですが、人間が直接読んだり書いたりするには向きません。</p>
+
+<p>これは、なにやら Ruby と Java の関係に似ています。やたら簡潔な表記を好む Ruby 派と、長くても正確な名前を好む Java 派は、そのまま YAML 派と XML 派にきれいに分かれるんじゃないでしょうか。XML の冗長な表記に耐えられる人は Java と XML を使い、耐えられない人は Ruby と YAML を好んでいるような気がします (煽っているわけじゃないので怒らないでね)。</p>
+
+<p>なお XML でも、空要素タグと属性をうまく使えば、そこそこ簡潔な表記は可能です。
+また現在では <a href="http://groovy.codehaus.org/GroovyMarkup">Groovy Markup</a> や <a href="http://okmij.org/ftp/Scheme/SXML.html">SXML</a> のように XML と等価な簡易表記法があるので、「表記法が簡単だから」という理由で YAML へ乗り換える必要性は薄れています。</p>
+
+<p>筆者は、表記法が簡単なことは YAML の利点ではあるが本質ではないと考えています。</p>
+
+<h3 id="概念について">概念について</h3>
+
+<p>XML では「エレメント」やら「ノード」やら「属性」やら「テキストノード」やら、いろんな面倒くさい概念を導入しています。これらを理解していないと XML を扱うことができないため、習得が困難です。また DOM にしろ SAX にしろ、プログラミングが非常に面倒くさいものになります。</p>
+
+<p>これに対し YAML では、データを配列とハッシュとスカラーの組み合わせで表現します。新しい概念を導入していないので、非常にわかりやすく、習得が容易です。また扱うものが配列とハッシュとスカラーだけですので、プログラミングも簡単です。</p>
+
+<p>つまり YAML は、表記法が簡単なだけでなく、概念も簡単なのです。XML でも簡易記法を用いることで、読みやすさと書きやすさは改善されます。しかし XML の概念はどうやっても簡単になるわけではありません。</p>
+
+<p>XML に毒されている人はよく考えてみて下さい：たかが設定ファイルを読み込むだけのことに、DOM プログラミングが本当に必要でしょうか？簡単なアドレス帳を作りたいだけなのに、XML の難しい概念を覚えなきゃいけないのでしょうか？あなたが必要としているデータは、配列とハッシュでは表現できないのでしょうか？</p>
+
+<p>筆者は、__データを配列とハッシュとスカラーだけで表現する簡易性こそが YAML の本質である__と考えています。</p>
+
+<h3 id="インライン要素について">インライン要素について</h3>
+
+<p>XML では、「文章の途中で&lt;strong&gt;強調&lt;/strong&gt;する」というようなインライン要素を自然に表現できます。これは開始タグと終了タグを使っているおかげです。そのため、記事や論文のような文章、もっといえば非定型的なデータを表現するのに適しています。<a href="http://www.docbook.org/">DocBook</a> などは最もよい例でしょう。</p>
+
+<p>YAML では、インライン要素をうまく表現できません。表現できないわけではないのですが、うまくは表現できません。そのため、文章のような非定型的なデータよりは、アドレス帳や設定ファイルのように定型化されたデータを表現するのに適しています。</p>
+
+<p>筆者は、「猫も杓子も XML」という現状に辟易しています。が、「猫も杓子も YAML」という世界もどうかと思います。文章のような非定型的なデータを扱うなら XML、定型化されたデータを扱うなら YAML、という世界が望ましいと考えています。</p>
+
+<p>なお文章を記述するなら、XML よりも各種 Wiki 文法や <a href="http://www2.pos.to/~tosh/ruby/rdtool/ja/whats.html">RD</a> や <a href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> などをお勧めします。</p>
+
+<h3 id="データ型について">データ型について</h3>
+
+<p>XML では、データ型はスキーマ定義で指定します。つまり、XML ドキュメント自身はデータ型の情報を持たず、別ファイルにしています。</p>
+
+<p>またデータ型の指定はタグや属性に対して行います。そのためデータ型はタグや属性によって決まり、データ自身で決まるわけではありません。
+例えば「&lt;age&gt;タグは整数をとる」というスキーマ定義があったとします。このとき「&lt;age&gt;19&lt;/age&gt;」というエレメントがあると「&lt;age&gt;タグだから19は整数」と決まるのであり、「19 だから整数」と決まるわけではありません。
+そのため、&lt;age&gt;タグの値をとってくると必ず整数であることが期待できます。</p>
+
+<p>YAML では、YAML ドキュメント中にデータ型の情報を埋め込みます。別ファイルにすることはありませんし、スキーマ定義も必要としません。</p>
+
+<p>またデータ型はデータによって決まります。例えば「age: 19」とあった場合、「19 が整数である」ということが「19」というデータによって決まるのであり、「age:」というキーによって決まるわけではありません。
+そのため age: キーの値をとってきても、必ず整数であるという保証はありません (文字列や真偽値なども指定できてしまうため)。</p>
+
+<p>どちらのアプローチがいいかは好みによります。タグや属性によってデータ型が決まり、その型の値しかとらないという XML のアプローチは、なにやら静的な型の言語とよく似ています。逆に YAML のように、データ自身によって型が決まり、どこにどんな型のデータがくるかわからないというのは、まさに動的な型の言語をみているようです。Java では XML が流行って、Ruby では YAML が流行るのは、こんなところにも原因の一端があるのでしょう。</p>
+
+<h3 id="改行や半角スペースの扱いについて">改行や半角スペースの扱いについて</h3>
+
+<p>XML では、見やすくするために改行やインデントを入れると、それがそのままテキストノードとなってしまいます。これが結構悩みの種で、この余計なテキストノードを読み飛ばすためにプログラミングが (若干ですが) 複雑になります。しかしプログラミングを楽にしようとして改行やインデントを取り除けば、今度は XML ドキュメントが非常に読みづらくなります。</p>
+
+<p>YAML はインデントがそのまま構造を表現し、かつ改行がデータの終わりを表すため、このような問題はありません。</p>
+
+<h3 id="データバインディングについて">データバインディングについて</h3>
+
+<p>XML では、スキーマ定義を読み込んで、その XML ドキュメントを処理するようなクラスを自動生成するツールが存在します。これをデータバインディングツールというそうです。Java でいうと <a href="http://jakarta.apache.org/commons/digester/">Digester</a> や <a href="http://jakarta.apache.org/commons/betwixt/">Betwixt</a> や <a href="http://www.asahi-net.or.jp/~dp8t-asm/java/tools/Relaxer/index_ja.html">Relaxer</a> というツールがあり、また <a href="http://java.sun.com/xml/jaxb/">JAXB</a> という Java の標準規格もあります (<a href="http://www-6.ibm.com/jp/developerworks/xml/030314/j_x-databdopt.html">developerWorks の記事</a>をご覧ください)。これらを用いると、複雑な DOM プログラミングをしなくて済みます (だれだって DOM プログラミングはいやですからね)。</p>
+
+<p>YAML は標準でバインディング機能を持ちます。これは、YAML ではデータ型の情報をドキュメント中に埋め込めるためであり、YAML の利点です。具体的な方法は次回で紹介しますが、XML と違ってスキーマ定義なしで利用できるので便利です。</p>
+
+<h3 id="ツールについて">ツールについて</h3>
+
+<p>XML ではツールやライブラリのサポートが発達しています。パーサだけで DOM パーサ、SAX パーサ、StAX パーサの 3 種類ありますし、スキーマバリデータも主なものだけでDTD、XML Schema、RelaxNG の 3 つあります。他にも XSLT プロセッサ、データバインディングなど数も種類も豊富です。しかし裏を返せば、これらはすべて、扱いにくい XML をなんとか扱いやすくしようとする努力の成果でもあり、また XML をまともに扱おうと思えばこれらのツールを習得しなければならずコストがかかるということでもあります。</p>
+
+<p>YAML のツールとしては、<a href="http://www.whytheluckystiff.net/syck/">Syck</a> が事実上の標準実装です。作者である why the lucky stiff の尽力によりメジャーなスクリプト言語 (Ruby, Python, PHP, OCaml) で利用できるようになっていますが、他のツールはあまり見かけません。というのも、Syck があればたいがいにおいて事足りるため、他のツールを必要とすることがないからです。
+ただし本格的なスキーマバリデータがないことは大きな弱点です。簡単なものなら存在しますが、DTD や RelaxNG や XML Schema に比べてかなり低機能です。</p>
+
+<h3 id="その他-1">その他</h3>
+
+<ul>
+  <li>XML ではドキュメントの文字コードを指定できます。YAML ではユニコードを前提にしており、文字コードを指定できません。</li>
+  <li>XML ではデータは木構造となります。YAML ではアンカーとエイリアスを使うことで、ネットワーク構造も表現できます。</li>
+  <li>XML では実体参照 (Entity Reference) があります。YAML には相当する機能はありません。</li>
+  <li>XML を DOM ツリーに変換すると、子ノードから親ノードをたどることができます。YAML は配列とハッシュを使うため、子から親をたどることはできません。</li>
+</ul>
+
+<h2 id="終わりに">終わりに</h2>
+
+<p>本稿では YAML の書き方を中心に説明し、また XML との比較を行いました。YAML は文章を表現するのにはあまり向きませんが、定型化されたデータは簡潔に表現できます。
+また配列とハッシュとスカラー (文字列や数値など) でデータを表現するため、わかりやすく習得も容易です。</p>
+
+<p>構造化されたデータを表現するものとしては、XML や YAML 以外にも、JSON などがあります。用途によってはそれらのほうがふさわしい場合もありますので、ご覧ください。</p>
+
+<p>次回の中級編では、Syck の機能を掘り下げて紹介します。</p>
+
+<h2 id="参考文献">参考文献</h2>
+
+<dl>
+  <dt><a href="http://www.yaml.org/">YAML Ain’t Markup Language</a></dt>
+  <dd>YAML のホームページです。<a href="http://www.yaml.org/refcard.html">リファレンス</a>、<a href="http://www.yaml.org/spec/">仕様書</a>、<a href="http://www.yaml.org/start.html">サンプル</a>などがあります。</dd>
+  <dt><a href="http://yaml4r.sourceforge.net/cookbook/">Yaml Cookbook</a></dt>
+  <dd>Syck の作者である why the lucky stiff による、たいへんわかりやすい YAML の解説です。</dd>
+  <dt><a href="http://www-6.ibm.com/jp/developerworks/xml/030124/j_x-matters23.html">XML の論考: YAML は XML に改良を加える</a></dt>
+  <dd>developerWorks による YAML の紹介記事です。</dd>
+  <dt><a href="http://www.rubyist.net/~matz/20030508.html#p04">Matz 日記：XML と YAML</a></dt>
+  <dd>まつもとさんが YAML と XML とを比較しています。</dd>
+  <dt><a href="http://www.artima.com/intv/plain.html">Plain Text and XML</a></dt>
+  <dd>達人プログラマー Andy Hunt と Dave Thomas が XML を批判しています。</dd>
+  <dt><a href="http://www.pault.com/pault/pxml/xmlalternatives.html">XML Alternatives</a></dt>
+  <dd>XML の代替となるマークアップのリストです。数多すぎ。</dd>
+</dl>
+
+<h2 id="著者について">著者について</h2>
+
+<p>名前：kwatch。三流プログラマー。いろんな言語に手を出したあげくRubyに行き着き、「これ以上のものは自分には作られへん」と悟ってオレ言語の作成をあきらめてからはや数年。最近のお気に入りは「きっこの日記」。</p>
+
+<h2 id="プログラマーのための-yaml-入門-連載一覧">プログラマーのための YAML 入門 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0013/0013-YAML.html">プログラマーのための YAML 入門 (探索編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-YAML.html">プログラマーのための YAML 入門 (検証編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-YAML.html">プログラマーのための YAML 入門 (実践編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-YAML.html">プログラマーのための YAML 入門 (中級編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-YAML.html">プログラマーのための YAML 入門 (初級編)</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

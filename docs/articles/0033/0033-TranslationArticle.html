@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>海外記事翻訳シリーズ 【第 2 回】 Rack 仕様</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0033/0033-TranslationArticle.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>海外記事翻訳シリーズ 【第 2 回】 Rack 仕様</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0033/0033-TranslationArticle.html" class="hatena-bookmark-button" data-hatena-bookmark-title="海外記事翻訳シリーズ 【第 2 回】 Rack 仕様" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0033/0033-TranslationArticle.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0033/0033-TranslationArticle.html" data-text="海外記事翻訳シリーズ 【第 2 回】 Rack 仕様">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#rack-applications-rack-アプリケーション" id="markdown-toc-rack-applications-rack-アプリケーション">Rack applications (Rack アプリケーション)</a>    <ul>
+      <li><a href="#the-environment-環境" id="markdown-toc-the-environment-環境">The Environment (環境)</a>        <ul>
+          <li><a href="#the-input-stream-入力ストリーム" id="markdown-toc-the-input-stream-入力ストリーム">The Input Stream (入力ストリーム)</a></li>
+          <li><a href="#the-error-stream-エラーストリーム" id="markdown-toc-the-error-stream-エラーストリーム">The Error Stream (エラーストリーム)</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-response-レスポンス" id="markdown-toc-the-response-レスポンス">The Response (レスポンス)</a>        <ul>
+          <li><a href="#the-status-ステータス" id="markdown-toc-the-status-ステータス">The Status (ステータス)</a></li>
+          <li><a href="#the-headers-ヘッダ" id="markdown-toc-the-headers-ヘッダ">The Headers (ヘッダ)</a></li>
+          <li><a href="#the-content-type-content-type-ヘッダ" id="markdown-toc-the-content-type-content-type-ヘッダ">The Content-Type (Content-Type ヘッダ)</a></li>
+          <li><a href="#the-content-length-content-length-ヘッダ" id="markdown-toc-the-content-length-content-length-ヘッダ">The Content-Length (Content-Length ヘッダ)</a></li>
+          <li><a href="#the-body-ボディ" id="markdown-toc-the-body-ボディ">The Body (ボディ)</a></li>
+        </ul>
+      </li>
+      <li><a href="#thanks-謝辞" id="markdown-toc-thanks-謝辞">Thanks (謝辞)</a></li>
+    </ul>
+  </li>
+  <li><a href="#訳者について" id="markdown-toc-訳者について">訳者について</a></li>
+  <li><a href="#バックナンバー" id="markdown-toc-バックナンバー">バックナンバー</a></li>
+</ul>
+
+<p>翻訳: 桑田誠</p>
+
+<p>〔訳注: 本稿は <a href="http://rack.rubyforge.org/doc/SPEC.html">http://rack.rubyforge.org/doc/SPEC.html</a> の翻訳です。〕</p>
+
+<p>This specification aims to formalize the Rack protocol. You can (and should) use <a href="http://rack.rubyforge.org/doc/Rack/Lint.html">Rack::Lint</a> to enforce it. When you develop middleware, be sure to add a Lint before and after to catch all mistakes.</p>
+
+<p>本仕様は、Rack プロトコルを形式的に定義することを目的としている。<a href="http://rack.rubyforge.org/doc/Rack/Lint.html">Rack::Lint</a> を使うと (ぜひ使うべきだ)、仕様に従うことを強制できる。ミドルウェアを開発するときは、ミスをすべて捕捉するために Lint を前後に付け加えるようにすること。</p>
+
+<h2 id="rack-applications-rack-アプリケーション">Rack applications (Rack アプリケーション)</h2>
+
+<p>A Rack application is an Ruby object (not a class) that responds to call. It takes exactly one argument, the environment and returns an Array of exactly three values: The status, the headers, and the body.</p>
+
+<p>Rack アプリケーションは、call() メソッドが呼び出せる Ruby のオブジェクトである (クラスではない)。call() は「環境 (environment)」を表す引数を 1 つだけとり、「ステータス」「ヘッダ」「ボディ」の 3 つを要素とする配列 (Array) を戻り値として返す<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<h3 id="the-environment-環境">The Environment (環境)</h3>
+
+<p>The environment must be an instance of Hash that includes CGI-like headers. The application is free to modify the environment. The environment is required to include these variables (adopted from PEP333), except when they’d be empty, but see below.</p>
+
+<p>環境 (environment) は CGI ライクなヘッダを持った Hash のインスタンスオブジェクトである。アプリケーションは好きなように環境を変更してよい。環境は以下のような変数を含む必要がある (これは PEP333<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> に倣った)。ただし値が空である場合は含まなくてもよい。</p>
+
+<dl>
+  <dt>REQUEST_METHOD</dt>
+  <dd></dd>
+  <dd>The HTTP request method, such as “GET” or “POST”. This cannot ever be an empty string, and so is always required.</dd>
+  <dd>「GET」や「POST」のような、HTTP リクエストメソッドを表す。これは決して空文字列であってはならず、省略もできない。</dd>
+  <dt>SCRIPT_NAME</dt>
+  <dd>The initial portion of the request URL’s “path” that corresponds to the application object, so that the application knows its virtual “location”. This may be an empty string, if the application corresponds to the “root” of the server.</dd>
+  <dd>アプリケーションオブジェクトに対応するリクエスト URL の「パス」における、最初の部分を表す。これによってアプリケーションは自分自身の仮想的な「位置 (location)」を知ることができる。この値は、アプリケーションがサーバの「ルート (root)」に対応する場合は、空の文字列でもよい。</dd>
+  <dt>PATH_INFO</dt>
+  <dd>The remainder of the request URL’s “path”, designating the virtual “location” of the request’s target within the application. This may be an empty string, if the request URL targets the application root and does not have a trailing slash. This value may be percent-encoded when I originating from a URL.</dd>
+  <dd>リクエスト URL の「パス」における、残りの部分を表す。これはつまり、アプリケーション内におけるリクエスト対象の仮想的な「位置 (location)」を意味する。この値は、リクエスト URL がアプリケーションのルートでありかつスラッシュで終わっていない場合は、空の文字列でもよい。またこの値が URL をもとに決定された場合はパーセントエンコーディングされている可能性がある。</dd>
+  <dt>QUERY_STRING</dt>
+  <dd>The portion of the request URL that follows the ?, if any. May be empty, but is always required!</dd>
+  <dd>リクエスト URL において「?」のあとに続く部分 (もしあれば)。空文字列でもよいが、省略はできない！</dd>
+  <dt>SERVER_NAME, SERVER_PORT</dt>
+  <dd>When combined with SCRIPT_NAME and PATH_INFO, these variables can be used to complete the URL. Note, however, that HTTP_HOST, if present, should be used in preference to SERVER_NAME for reconstructing the request URL. SERVER_NAME and SERVER_PORT can never be empty strings, and so are always required.</dd>
+  <dd>SCRIPT_NAME や PATH_INFO と組み合わせることで、これらの変数は完全な URL を構築するのに用いることができる。しかし、もし HTTP_HOST があるなら、リクエスト URL を再構築するときには SERVER_NAME よりそちらを使うべきである。SERVER_NAME と SERVER_PORT は空文字列であってはならない。また省略もできない。</dd>
+  <dt>HTTP_ Variables (HTTP_ 変数)</dt>
+  <dd>Variables corresponding to the client-supplied HTTP request headers (i.e., variables whose names begin with HTTP_). The presence or absence of these variables should correspond with the presence or absence of the appropriate HTTP header in the request.</dd>
+  <dd>これらの変数はクライアントが発した HTTP リクエストヘッダに対応する (つまり名前が「HTTP_」で始まる変数)。これらの変数が設定されるかどうかは、リクエスト中において適切な HTTP ヘッダが存在するかどうかによって決まる。</dd>
+</dl>
+
+<p>In addition to this, the Rack environment must include these Rack-specific variables:</p>
+
+<p>これらに加え、Rack の環境は以下のような Rack 特有の変数を含なければならない。</p>
+
+<dl>
+  <dt>rack.version</dt>
+  <dd>The Array [1,1], representing this version of Rack.</dd>
+  <dd>「[1, 1]」という配列オブジェクト。Rack のバージョンを表す。</dd>
+  <dt>rack.url_scheme</dt>
+  <dd>http or https, depending on the request URL.</dd>
+  <dd>「http」または「https」。現在のリクエスト URL によって決まる。</dd>
+  <dt>rack.input</dt>
+  <dd>See below, the input stream.</dd>
+  <dd>以下の「入力ストリーム」を参照のこと。</dd>
+  <dt>rack.errors</dt>
+  <dd>See below, the error stream.</dd>
+  <dd>以下の「エラーストリーム」を参照のこと。</dd>
+  <dt>rack.multithread</dt>
+  <dd>true if the application object may be simultaneously invoked by another thread in the same process, false otherwise.</dd>
+  <dd>アプリケーションオブジェクトが、同じプロセスの別スレッドから同時に実行される可能性がある場合は true、それ以外は false。</dd>
+  <dt>rack.multiprocess</dt>
+  <dd>true if an equivalent application object may be simultaneously invoked by another process, false otherwise.</dd>
+  <dd>アプリケーションオブジェクトが、他のプロセスから同時に実行される可能性があるなら true、それ以外は false<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</dd>
+  <dt>rack.run_once</dt>
+  <dd>true if the server expects (but does not guarantee!) that the application will only be invoked this one time during the life of its containing process. Normally, this will only be true for a server based on CGI (or something similar).</dd>
+  <dd>サーバがそのプロセスにおいて、アプリケーションを一度しか実行しないと期待される場合 (ただし保証はしないことに注意！) は true。通常は、CGI (あるいはそれに類するもの) として実行される場合にのみ true である。</dd>
+</dl>
+
+<p>Additional environment specifications have approved to standardized middleware APIs. None of these are required to be implemented by the server.</p>
+
+<p>これらに加え、以下のような付加的な環境が標準ミドルウェア API において承認されている。サーバはこれらを実装する必要はない。</p>
+
+<dl>
+  <dt>rack.session</dt>
+  <dd>A hash like interface for storing request session data. The store must implement: store(key, value) (aliased as []=); fetch(key, default = nil) (aliased as []); delete(key); clear;</dd>
+  <dd>リクエストセッションデータを保持するオブジェクト。ハッシュに似たインターフェースを持つ。セッションオブジェクトは以下のメソッドを実装している必要がある: store(key, value) (aliased as []=); fetch(key, default = nil) (aliased as []); delete(key); clear;</dd>
+  <dt>rack.logger</dt>
+  <dd>A common object interface for logging messages. The object must implement:</dd>
+  <dd>メッセージのログをとるためのインターフェースを持つ、共通のオブジェクト。オブジェクトは以下を実装している必要がある:</dd>
+</dl>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> info(message, &amp;block)
+ debug(message, &amp;block)
+ warn(message, &amp;block)
+ error(message, &amp;block)
+ fatal(message, &amp;block)</code></pre></figure>
+
+<p>The server or the application can store their own data in the environment, too. The keys must contain at least one dot, and should be prefixed uniquely. The prefix rack. is reserved for use with the Rack core distribution and other accepted specifications and must not be used otherwise. The environment must not contain the keys HTTP_CONTENT_TYPE or HTTP_CONTENT_LENGTH (use the versions without HTTP_). The CGI keys (named without a period) must have String values. There are the following restrictions:</p>
+
+<p>サーバまたはアプリケーションは、独自のデータも環境に追加できる。キーは最低限 1 つのピリオドを含まなければならず、接頭辞は一意に識別されるべきである。接頭辞「rack.」は Rack コアおよび他の受理された仕様のために予約されており、他の目的で使ってはならない。環境は「HTTP_CONTENT_TYPE」または「HTTP_CONTENT_LENGTH」を含んではいけない (かわりに「HTTP_」を取り除いた名前を使う)。CGI キー (ピリオドなしの名前) は文字列の値を持たなければならない。そのほか以下のような制限事項がある:</p>
+
+<ul>
+  <li>rack.version must be an array of Integers.</li>
+  <li>rack.url_scheme must either be http or https.</li>
+  <li>There must be a valid input stream in rack.input.</li>
+  <li>There must be a valid error stream in rack.errors.</li>
+  <li>The REQUEST_METHOD must be a valid token.</li>
+  <li>The SCRIPT_NAME, if non-empty, must start with /</li>
+  <li>The PATH_INFO, if non-empty, must start with /</li>
+  <li>The CONTENT_LENGTH, if given, must consist of digits only.</li>
+  <li>
+    <p>One of SCRIPT_NAME or PATH_INFO must be set. PATH_INFO should be / if SCRIPT_NAME is empty. SCRIPT_NAME never should be /, but instead be empty.</p>
+  </li>
+  <li>rack.version は Integer の配列でなければならない。</li>
+  <li>rack.url_schema は「http」または「https」でなければならない。</li>
+  <li>rack.input は妥当な入力ストリームでなければならない。</li>
+  <li>rack.errors は妥当なストリームでなければならない。</li>
+  <li>REQUEST_METHOD は妥当なトークンでなければならない。</li>
+  <li>SCRIPT_NAME は、もし空でなければ「/」で始まってなければならない。</li>
+  <li>PATH_INFO は、もし空でなければ「/」で始まってなければならない。</li>
+  <li>CONTENT_LENGTH は、もし指定されていれば、数字のみで構成されてなければならない。</li>
+  <li>SCRIPT_NAME または PATH_INFO の少なくとも一方が設定されてなければならない。SCRIPT_NAME が空の場合、PATH_INFO は「/」でなければならない。SCRIPT_NAME は決して「/」であってはならないが、そのかわりに空であってよい。</li>
+</ul>
+
+<h4 id="the-input-stream-入力ストリーム">The Input Stream (入力ストリーム)</h4>
+
+<p>The input stream is an IO-like object which contains the raw HTTP POST data. When applicable, its external encoding must be “ASCII-8BIT” and it must be opened in binary mode, for Ruby 1.9 compatibility. The input stream must respond to gets, each, read and rewind.</p>
+
+<p>入力ストリーム (input stream) は IO に似たオブジェクトであり、HTTP POST の生データを保持している。もし適用可能であれば、その外部エンコーディングは「ASCII-8BIT」でなければならず、バイナリモードでオープンされてないといけない (これは Ruby 1.9 との互換性のためである)。入力ストリームは gets() と each() と read() と rewind() を実装していなければならない。</p>
+
+<ul>
+  <li>gets must be called without arguments and return a string, or nil on EOF.</li>
+  <li>read behaves like IO#read. Its signature is read([length, [buffer]]). If given, length must be an non-negative Integer (&gt;= 0) or nil, and buffer must be a String and may not be nil. If length is given and not nil, then this method reads at most length bytes from the input stream. If length is not given or nil, then this method reads all data until EOF. When EOF is reached, this method returns nil if length is given and not nil, or “” if length is not given or is nil. If buffer is given, then the read data will be placed into buffer instead of a newly created String object.</li>
+  <li>each must be called without arguments and only yield Strings.</li>
+  <li>rewind must be called without arguments. It rewinds the input stream back to the beginning. It must not raise Errno::ESPIPE: that is, it may not be a pipe or a socket. Therefore, handler developers must buffer the input data into some rewindable object if the underlying input stream is not rewindable.</li>
+  <li>
+    <p>close must never be called on the input stream.</p>
+  </li>
+  <li>gets() は引数なしで呼ばれ、文字列を返す。ただし EOF の場合は nil を返す。</li>
+  <li>read() は IO#read() のように振る舞う。シグニチャは read([length, [buffer]]) である。もし length が指定された場合は、正の Integer か 0 か nil でなければならない。もし buffer が指定された場合は String でなければならず、nil であってはならない。もし length に nil 以外の値が指定された場合、read() は入力ストリームから最大 length バイトを読み込む。length が指定されなかった場合または nil の場合は、EOF になるまでのデータをすべて読み込む。EOF に達した場合は、length に nil 以外の値が指定されていれば read() は nilを返し、length が指定されてないか nil であれば read() は「”“」(空文字列) を返す。引数に buffer が指定されていれば、新しく文字列オブジェクトが生成されるかわりに、読み込まれたデータが buffer に追加される。</li>
+  <li>each() は引数なしで呼び出され、文字列を yield する。</li>
+  <li>rewind() は引数なしで呼び出され、入力ストリームを先頭に巻き戻す。またこのとき例外 Errno::ESPIPE を発生してはならない: つまり、入力ストリームはパイプやソケットであってはならない。それゆえ、入力ストリームが巻き戻しできないものであった場合、ハンドラ開発者は入力データを何らかの巻き戻し可能なオブジェクトにバッファリングしなければならない。</li>
+  <li>close() は入力ストリームに対して呼び出されることはない。</li>
+</ul>
+
+<h4 id="the-error-stream-エラーストリーム">The Error Stream (エラーストリーム)</h4>
+
+<p>The error stream must respond to puts, write and flush.</p>
+
+<p>エラーストリームは puts() と write() と flush() を実装しなければならない。</p>
+
+<ul>
+  <li>puts must be called with a single argument that responds to to_s.</li>
+  <li>write must be called with a single argument that is a String.</li>
+  <li>flush must be called without arguments and must be called in order to make the error appear for sure.</li>
+  <li>
+    <p>close must never be called on the error stream.</p>
+  </li>
+  <li>puts() は to_s() を実装している引数 1 つで呼び出される。</li>
+  <li>write() は文字列の引数 1 つで呼び出される。</li>
+  <li>flush() は引数なしで呼ばれ、エラーが確実に出力されたことを保証するために呼び出される。</li>
+  <li>close() はエラーストリームに対して呼び出されることはない。</li>
+</ul>
+
+<h3 id="the-response-レスポンス">The Response (レスポンス)</h3>
+
+<h4 id="the-status-ステータス">The Status (ステータス)</h4>
+
+<p>This is an HTTP status. When parsed as integer (to_i), it must be greater than or equal to 100.</p>
+
+<p>HTTP ステータスを表す。整数としてパースされた場合 (to_i)、100 以上でなければならない。</p>
+
+<h4 id="the-headers-ヘッダ">The Headers (ヘッダ)</h4>
+
+<p>The header must respond to each, and yield values of key and value. The header keys must be Strings. The header must not contain a Status key, contain keys with : or newlines in their name, contain keys names that end in - or _, but only contain keys that consist of letters, digits, _ or - and start with a letter. The values of the header must be Strings, consisting of lines (for multiple header values, e.g. multiple Set-Cookie values) seperated by “n”. The lines must not contain characters below 037.</p>
+
+<p>ヘッダは each() を実装し、キーと値の組を yield しなければならない。ヘッダのキーは文字列でなければならない。ヘッダは「Status」キーを含んではならない。また名前に「:」や改行があるキーや、「-」や「<em>」で終わるようなキーを含んでもいけない。キーは文字<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>と数字と「</em>」と「-」のみで構成され、文字で始まらなければならない。ヘッダの値は文字列でなければならない。値は複数行である場合もあり (これは値が複数であるヘッダのため、たとえば Set-Cookie を複数回指定した場合など)、その場合は「\n」で区切られてなければならない。行は 037 より小さい文字<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>を含んではならない。</p>
+
+<h4 id="the-content-type-content-type-ヘッダ">The Content-Type (Content-Type ヘッダ)</h4>
+
+<p>There must be a Content-Type, except when the Status is 1xx, 204 or 304, in which case there must be none given.</p>
+
+<p>「Content-Type」は、ステータスが「1xx」「204」「304」のときは何も指定されてはならず、それ以外のときは必ず指定されなければならない。</p>
+
+<h4 id="the-content-length-content-length-ヘッダ">The Content-Length (Content-Length ヘッダ)</h4>
+
+<p>There must not be a Content-Length header when the Status is 1xx, 204 or 304.</p>
+
+<p>「Content-Length」ヘッダは、ステータスが「1xx」「204」「304」のときは何も指定されてはならない。</p>
+
+<h4 id="the-body-ボディ">The Body (ボディ)</h4>
+
+<p>The Body must respond to each and must only yield String values. The Body itself should not be an instance of String, as this will break in Ruby 1.9. If the Body responds to close, it will be called after iteration. If the Body responds to to_path, it must return a String identifying the location of a file whose contents are identical to that produced by calling each; this may be used by the server as an alternative, possibly more efficient way to transport the response. The Body commonly is an Array of Strings, the application instance itself, or a File-like object.</p>
+
+<p>ボディは each() を実装し、文字列のみを yield しなければならない。ボディ自体は文字列であってはならない (なぜなら Ruby 1.9 では動かないから<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>)。もしボディが close() を実装している場合は、繰り返しのあとで呼び出される。ボディが to_path() を実装している場合は、to_path() はファイルの場所を表す文字列を返さなければならず、そのファイルの内容は each() を呼び出しているときに生成される; この方法は、サーバによってはレスポンスを効率よく転送するための代替手段として使われることがある。ボディは、通常は文字列を要素とした配列か、アプリケーションインスタンスそのものか、ファイルに似たオブジェクトである。</p>
+
+<h3 id="thanks-謝辞">Thanks (謝辞)</h3>
+
+<p>Some parts of this specification are adopted from PEP333: Python Web Server Gateway Interface v1.0 (<a href="http://www.python.org/dev/peps/pep-0333/">www.python.org/dev/peps/pep-0333/</a>). I’d like to thank everyone involved in that effort.</p>
+
+<p>本仕様のいくつかの部分は、PEP333: Python Web Server Gateway Interface v1.0<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> (<a href="http://www.python.org/dev/peps/pep-0333/">www.python.org/dev/peps/pep-0333/</a>) から取り込まれた。その仕様策定に尽力された方全員に感謝の意を表する。</p>
+
+<h2 id="訳者について">訳者について</h2>
+
+<p>桑田誠。
+『<a href="http://movie.goo.ne.jp/contents/movies/MOVCSTD17913/">新・のび太と鉄人兵団</a>』はドラえもん映画として<a href="http://blog.goo.ne.jp/hballoon/e/819a9fd171a3c4cfb4b35b929ab3368c">ひさびさの傑作</a>。<a href="http://coco.to/movie/7990">ネットでの評判も高い</a>ので、見てない人はぜひ。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0033/0033-TranslationArticle.html">海外記事翻訳シリーズ 【第 2 回】 Rack 仕様</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0032/0032-TranslationArticle.html">海外記事翻訳シリーズ 【第 1 回】 RSpec ベストプラクティス</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>訳注: call() が引数として受け取る Hash オブジェクトが HTTP リクエストを表し、戻り値である配列が HTTP レスポンスを表す。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>訳注: 「PEP333」とは、Rack のもとになった <a href="http://www.python.org/dev/peps/pep-0333/">Python WSGI</a> の仕様のこと。「PEP」とは「Python Enhancement Proposals」のことで、その中の番号 333 が WSGI である。Rack は WSGI をうまく Ruby 流にアレンジしており、結果として WSGI よりわかりやすくなっている (高階関数を使うかわりに戻り値を配列にするなど)。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>訳注: つまりサーバプロセスが複数あれば true になる。通常は true。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>訳注: 原文は「letters」だがおそらくアルファベット限定。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>訳注: アスキーコードで「037 より小さい文字」は制御文字にあたる。なお 037 も制御文字なので、正確には「アスキーコードで 037 以下の文字」が正しい。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>訳注: String#each() は Ruby 1.9 で削除された。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>訳注: WSGI (Web Server Gateway Interface) の最新仕様は <a href="http://www.python.org/dev/peps/pep-3333/">WSGI v1.0.1</a> である。実は Python 3 では WSGI v1.0 がうまく動作しないため、v1.0.1 ではそれへの対応がなされている。なお Python 3 の登場を機に、Rack の仕様を一部取り込んだ <a href="http://www.python.org/dev/peps/pep-0444/">Web3</a> という仕様が WSGI の後継として提案されたが、より保守的な WSGI v1.0.1 が登場したため、<a href="http://docs.python.org/release/3.2/whatsnew/3.2.html#pep-3333-python-web-server-gateway-interface-v1-0-1">Python 3.2 ではそちらが採用された</a>。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>YARV Maniacs 【第 9 回】 特化命令</title>
+  <meta name="description" content="書いた人：ささだ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0017/0017-YarvManiacs.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>YARV Maniacs 【第 9 回】 特化命令</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0017/0017-YarvManiacs.html" class="hatena-bookmark-button" data-hatena-bookmark-title="YARV Maniacs 【第 9 回】 特化命令" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0017/0017-YarvManiacs.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0017/0017-YarvManiacs.html" data-text="YARV Maniacs 【第 9 回】 特化命令">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：ささだ</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p><a href="http://www.atdot.net/yarv">YARV: Yet Another RubyVM</a> を解説するこの連載。今回は、特化命令による処理の最適化手法についてご紹介します。命令セットの続きを解説しようと思ったのですが、簡単に解説できる内容が思いつかなかったので (すみません、今とても余裕がないのです)、親戚みたいな特化命令のお話です。</p>
+
+<h3 id="rubyconf-2006">RubyConf 2006</h3>
+
+<p>毎年恒例の RubyConf 2006 が行われました。今年も枠をもらえたので、YARV: on Rails? というタイトルで発表をしてきました。内容は現在の YARV の内容と、実際に YARV どうなのよ、という内容でした。発表資料は <a href="http://www.atdot.net/yarv/rc2006_sasada_yarv_on_rails.pdf">http://www.atdot.net/yarv/rc2006_sasada_yarv_on_rails.pdf</a> においておきます。</p>
+
+<p>発表時に、なんとか Rails を動かすデモを行いたかったのですが、なかなか動かなくて困りました。日本人参加者を巻き込んだ徹夜のデバッグ作業で、なんとか発表の 3 時間くらい前に動くようになりました<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<h3 id="デンバー合意">デンバー合意</h3>
+
+<p>さて、RubyConf 2006 が終わった夜、日本人参加者が集まって今後の Ruby について語り合いました。そこで、1.8 の今後、そして 1.9 の今後について、色々と議論しました。その結果が デンバー合意という名前でまとめられています。</p>
+
+<p>1.8 については ruby-dev で今議論していますが、1.9 (というか YARV) については、</p>
+
+<ul>
+  <li>2006 年 11 月中には YARV をマージ</li>
+  <li>今後 Ruby の開発は Subversion へ移行</li>
+  <li>2007 年 12 月には 1.9.1 としてリリース (これは前から言っているか)</li>
+</ul>
+
+<p>という内容になりました。</p>
+
+<p>ちなみに、デンバー合意という名前は、国同士の戦争終結時に「なんとか合意」のような、敗戦国にとって不利な条件を勝戦国によってほぼ決められてしまう様をもじって、今回のように (まつもとさんとかささだとかが置いてけぼりで)、なんかどんどん決められてしまった様子を表しています。</p>
+
+<p>というわけで、今 YARV のマージ作業を行っています。最新の Ruby への追従がだいたい終わったので、あとは YARV のソース整理ということになっています。</p>
+
+<h3 id="yarv-ソースコード勉強会">YARV ソースコード勉強会</h3>
+
+<p><a href="http://d.hatena.ne.jp/hzkr/about">B の葉桜さん</a>による、YARV ソースコード勉強会という記録がはてなダイアリーで週 1 回くらいのペースで執筆されています。実際に YARV のソースコードを読んで、それについて詳細な解説を述べていらっしゃいます。なんて素晴らしいんでしょう。</p>
+
+<ul>
+  <li><a href="http://d.hatena.ne.jp/hzkr/20061027">YARV ソースコード勉強会 (1)</a></li>
+  <li><a href="http://d.hatena.ne.jp/hzkr/20061103">YARV ソースコード勉強会 (2)</a></li>
+  <li><a href="http://d.hatena.ne.jp/hzkr/20061110">YARV ソースコード勉強会 (3)</a></li>
+  <li><a href="http://d.hatena.ne.jp/hzkr/20061120">YARV ソースコード勉強会 (4)</a></li>
+  <li><a href="http://d.hatena.ne.jp/hzkr/20061124">YARV ソースコード勉強会 (5)</a></li>
+</ul>
+
+<p>私が読んでも、ふんふん、なるほどなるほど、そうだったのか、と思うところしきり (要するに、自分が何を書いたのか、もうあんまり覚えていない) なので、YARV の細かい挙動に興味がある方は読んでみることをお奨めします。</p>
+
+<p>しかし、今後やーまにはこの日記のリンクを貼るだけでいいような気がしてきたな。</p>
+
+<h3 id="2006-年度下期未踏ソフトウェア創造事業">2006 年度下期未踏ソフトウェア創造事業</h3>
+
+<p>なんというか、またか、って感じですが、2006年度下期未踏ソフトウェア創造事業に「Ruby 用仮想マシン YARV の完成度向上」という地味なタイトルで千葉滋プロジェクトマネージャに採択していただきました (<a href="http://www.ipa.go.jp/jinzai/esp/2006mito2/koubokekka.html">ＩＰＡ：未踏ソフトウェア創造事業：2006 年下期未踏ソフト　公募結果</a>)。</p>
+
+<p>やることは、1.9.1 リリースに向けたもろもろです。これでまた逃げられなくなりました。いろいろ頑張ります。多分。</p>
+
+<h2 id="特化命令">特化命令</h2>
+
+<p>Ruby プログラムで行われる操作は、たいていメソッド呼び出しによって実現されています。例えば「1 + 2」のように一見メソッド呼び出しに見えない操作も、実は内部では「1.+(2)」というメソッド呼び出しだと解釈されます。</p>
+
+<p>Ruby では今までこれをそのままメソッド呼び出しとして実行しており、これが「Ruby は遅い」と言われる原因になってきました。とくに、よく評価に利用されるマイクロベンチマーク (つまり、すごーく単純な性能評価のためのプログラム) では、この「1 + 2」のような単純な計算のコストが実行時間全体に対して多くの比率を占めるので、ここが遅い Ruby は不利になっていました。これに対して、例えば JavaVM では 1 などの整数値を特別扱いすることで性能の向上をはかっています。</p>
+
+<p>そこで YARV では「1 + 2」のような単純な計算を高速に実行する工夫をしています。それが特化命令です。</p>
+
+<p>すでに述べたように「1 + 2」のようなプログラムは Ruby では「1.+(2)」と解釈されますが、コンパイル時にチェックして、</p>
+
+<ul>
+  <li>呼び出すメソッドが “+”</li>
+  <li>引数の数が 1 つ</li>
+  <li>ブロックなどは付かない</li>
+</ul>
+
+<p>という場合には汎用の “send” 命令ではなく、”opt_plus” 命令にコンパイルします (compile.c の iseq_specialized_instruction() によってチェック、変換を行っています)。</p>
+
+<p>実際に試してみましょう。以下に Ruby プログラムと、その YARV 命令列へのコンパイル結果を示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># Ruby プログラム (1)
+p(1 + 2)</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># Ruby プログラム (1) のコンパイル結果
+0000 putself                                                          (   1)
+0001 putobject        1
+0003 putobject        2
+0005 opt_plus
+0006 send             :p, 1, nil, 4, &lt;ic&gt;
+0012 leave</code></pre></figure>
+
+<p>p メソッド呼び出し時には send 命令を使っていますが、+ メソッド呼び出しには opt_plus 命令を使っているのがわかるかと思います。</p>
+
+<h3 id="opt_plus-命令の中身">opt_plus 命令の中身</h3>
+
+<p>さて、では opt_plus 命令は何をしているのでしょうか。とても簡単にしたコードを書いてみます。「1 + 2」、つまり「1.+(2)」では、1 がレシーバ (recv)、2 が引数 (val) となることを踏まえて見てください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if (recv と val は Fixnum？) {
+    if (Fixnum#+ は再定義されていない？) {
+        return fix_plus(recv, val);
+    }
+}
+return send(:+, recv, val);</code></pre></figure>
+
+<p>まず最初に recv と val が Fixnum クラスであるかどうかチェックします。もしそうであれば、次に Fixnum#+ が再定義されていないかチェックします。Ruby のメソッドはたいてい再定義可能なので (再定義できないのは freeze された module か class のメソッド)、このチェックを行わないと再定義された挙動に追従することができなくなります。Fixnum#+ なんて、再定義する人はいないとは思うのですが……。</p>
+
+<p>このチェックを通ったあと、Fixnum 同士の足し算の処理に移ります。Fixnum 同士の足し算はオーバフローを起こしたら Bignum へ変換するなどの処理が必要なので、少し長めの処理になります。</p>
+
+<p>どちらかのチェックでひっかかったら、通常のメソッド呼び出しの処理へ移行します。</p>
+
+<p>この命令を導入することで、「1 + 2」のような単純な操作を、メソッド呼び出し処理 (メソッドフレームの準備、破棄など) を行わなずに実現できるようになりました。実際、結構速くなります。</p>
+
+<h3 id="他のクラス他のメソッド">他のクラス、他のメソッド</h3>
+
+<p>さて、先ほどの例で高速化できるのは、レシーバと引数が Fixnum で、オペレータ (メソッド名) が + のときだけでした。しかしもちろん同じような考えかたは他のクラス、他のメソッドにも応用できます。</p>
+
+<h4 id="他のクラスへの対応">他のクラスへの対応</h4>
+
+<p>先ほどの例では、レシーバ、引数が Fixnum クラス限定でしたが、たとえば両方とも Float だった場合にも同じような高速化が可能です。この場合、opt_plus の処理は次のようになるでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if (recv と val は Fixnum？) {
+    if (Fixnum#+ は再定義されていない？) {
+        return fix_plus(recv, val);
+    }
+}
+else if (recv と val は Float？) {
+    if (Float#+ は再定義されていない？) {
+        return float_plus(recv, val);
+    }
+}
+return send(:+, recv, val);</code></pre></figure>
+
+<p>こんな感じでチェックを追加していけば、いろんな型 (クラス) に対する「+」メソッド呼び出しを高速化できます。実際、opt_plus 命令は今現在、「Fixnum + Fixnum」と「Float + Float」以外に、「String + String」、「Array + 任意の型」<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> という型に対応しています。</p>
+
+<p>ただし、対応する型を増やせばいいというものではありません。たしかに「Fixnum + Fixnum」のような処理は高速になりますが、他のメソッド呼び出し、たとえば独自に定義したクラスの Foo#+ メソッドを呼び出すためのプログラム「foo + 任意の値」は、上記型チェックを行ったあと (当然、どのチェックにもひっかからない)、通常のメソッド呼び出し処理を行うので、チェックの分だけオーバヘッドがかかります。</p>
+
+<p>というわけで、このチェックを入れても十分に利益があるような「よく呼ばれる」、「メソッド呼び出しのオーバヘッドが実際の処理に比べて十分大きい」場合に導入するようにしなければなりません。</p>
+
+<h4 id="他のメソッドの対応">他のメソッドの対応</h4>
+
+<p>さて、例として opt_plus、つまり「recv + val」の最適化について紹介しましたが、似たような最適化を他のメソッドでも行っています。以下にその一覧を示します。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>特化命令名</td>
+      <td>最適化するメソッド</td>
+    </tr>
+    <tr>
+      <td>opt_plus</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <td>opt_minus</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>opt_mult</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <td>opt_div</td>
+      <td>/</td>
+    </tr>
+    <tr>
+      <td>opt_mod</td>
+      <td>%</td>
+    </tr>
+    <tr>
+      <td>opt_eq</td>
+      <td>==</td>
+    </tr>
+    <tr>
+      <td>opt_lt</td>
+      <td>&lt;</td>
+    </tr>
+    <tr>
+      <td>opt_le</td>
+      <td>&lt;=</td>
+    </tr>
+    <tr>
+      <td>opt_ltlt</td>
+      <td>&lt;&lt;</td>
+    </tr>
+    <tr>
+      <td>opt_aref</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <td>opt_aset</td>
+      <td>[]=</td>
+    </tr>
+    <tr>
+      <td>opt_length</td>
+      <td>length</td>
+    </tr>
+    <tr>
+      <td>opt_succ</td>
+      <td>succ</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ほとんどは数値計算に関するメソッドですが、[] や succ なんてメソッドも最適化するようにしています。</p>
+
+<p>特化命令によって対応する型が違いますので、詳しくは YARV ソースコードの insns.def をご覧ください。</p>
+
+<h3 id="特化命令が対象とするメソッドの再定義チェック">特化命令が対象とするメソッドの再定義チェック</h3>
+
+<p>さて、特化命令が対象とするメソッド (以下、基本メソッド) の再定義のチェックですが、メソッド定義をまとめている eval_method.h の rb_add_method() 関数内でチェックしています。もしそのメソッド追加が再定義を意味している場合、vm.c で定義している yarv_check_redefinition_opt_method() 関数によって再定義フラグを設定します。</p>
+
+<p>現在、再定義フラグは Fixnum#+ や Float#+ のように、各メソッドごとに用意するのではなく、+ メソッドのどれかが再定義されているか、というフラグになっているため、Float#+ を再定義すると Fixnum#+ も再定義されたと思うような実装になっています。まぁ、ほとんど基本メソッドの再定義なんかしないだろう、という予測の元で、こういう仕様にしています。</p>
+
+<h3 id="定数畳み込み最適化は">定数畳み込み最適化は？</h3>
+
+<p>ところで、「1 + 2」のような式は、C 言語などではコンパイル時に「3」に変換してしまいます。この最適化を定数畳み込みといいます。Ruby (YARV) では定数畳み込みをしていないのですが、それはなぜでしょうか。</p>
+
+<p>これはもちろんメソッドの再定義、この場合は Fixnum#+ の再定義に対応するためです。再定義はいつ、どの時点で起こるかコンパイル時にはわからないので、再定義にきちんと対応するには、定数を畳み込むわけにはいかないのです。</p>
+
+<p>Ruby で定数畳み込みを実行するには、基本メソッドが再定義された時点でコンパイルしなおす、などの手法が考えられますが、これを実現するには他の問題 (on stack replacement が必要だったり) があるので、なかなか難しいです。</p>
+
+<p>ただ、書きながら思いついたのですが、基本メソッド全てが再定義されていない場合は定数畳み込みをした値を push してプログラムカウンタを進めるような処理を書いておくのはいいかもしれませんね。ちょっと考えてみよう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  # もし再定義されていなければ 3 を push して lend へジャンプ
+  opt_putobject_without_redefinition 3, lend
+  putobject 1
+  putobject 2
+  send :+, 1
+lend:</code></pre></figure>
+
+<p>こんな感じ。</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>今回は特化命令について解説しました。とても簡単な最適化でしたが、YARV のベンチマークが高速になるのは、この特化命令による最適化の効果が大変大きいです。また、この命令によって、Ruby が苦手としてきた数値処理の分野でも、Ruby を利用できる可能性が広がったのではないかと思います。</p>
+
+<p>ところで、特化命令については以前 <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/05591">ruby-core:05591</a> で触れたとおり、もっと他の実装方法もあると思っています。色々なトレードオフがあるとは思うのですが、少し落ち着いたら、考えてみたい問題です。</p>
+
+<p>次回はいつやるか、何をやるかまったく検討が付かないのですが、多分やると思いますので気長にお待ちください。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>ささだこういち。非学生。最近、いろんな余裕がなくなってきた感じ。まぁ、いいか。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0053/0053-YarvManiacs.html">YARV Maniacs 【第 13 回】 事前コンパイルへの道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0041/0041-YarvManiacs.html">YARV Maniacs 【第 11 回】 最近の YARV の事情</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0033/0033-YarvManiacs.html">YARV Maniacs 【第 10 回】 例外処理（初級編）</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-YarvManiacs.html">YARV Maniacs 【第 9 回】 特化命令</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-YarvManiacs.html">YARV Maniacs 【第 8 回】 命令列のシリアライズ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-YarvManiacs.html">YARV Maniacs 【第 7 回】 YARV 命令セット (4) 分岐</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-YarvManiacs.html">YARV Maniacs 【第 6 回】 YARV 命令セット (3) メソッドディスパッチ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-YarvManiacs.html">YARV Maniacs 【第 5 回】 命令セット (2) リテラル・変数・定数</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-YarvManiacs.html">YARV Maniacs 【第 4 回】 命令セット (1) YARV 命令セットの初歩の初歩</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-YarvManiacs.html">YARV Maniacs 【第 3 回】 命令ディスパッチの高速化</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0007/0007-YarvManiacs.html">YARV Maniacs 【第 2 回】 VM ってなんだろう</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-YarvManiacs.html">YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説</a></p>
+  </li>
+</ul>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>このあたりの個人的な感想文は自分の日記に書きました (<a href="http://www.atdot.net/~ko1/diary/200610.html#d26">DA 10/26 (Thu)</a>)&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>ここでは rb_ary_plus() という API を直接呼び出しているが、引数の型はその API 中でチェックするので、opt_plus 命令がチェックする必要は無い&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RegionalRubyKaigi レポート (51) 松江 Ruby 会議 06</title>
+  <meta name="description" content="RegionalRubyKaigi レポート 松江 Ruby 会議 06">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0051/0051-MatsueRubyKaigi06Report.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>RegionalRubyKaigi レポート (51) 松江 Ruby 会議 06</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0051/0051-MatsueRubyKaigi06Report.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RegionalRubyKaigi レポート (51) 松江 Ruby 会議 06" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0051/0051-MatsueRubyKaigi06Report.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0051/0051-MatsueRubyKaigi06Report.html" data-text="RegionalRubyKaigi レポート (51) 松江 Ruby 会議 06">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="regionalrubykaigi-レポート-松江-ruby-会議-06">RegionalRubyKaigi レポート 松江 Ruby 会議 06</h2>
+
+<h3 id="はじめに">はじめに</h3>
+
+<p>2014 年 12 月 20 日 (土) に松江 Ruby 会議 06 が開催されました。今年のテーマは松江 Ruby 会議の発表を通して、一人でも多くの人に Ruby の楽しさを知ってもらいながら、Matsue.rb をよりにぎやかにするというものでした。57 名の方々に参加いただきました。また、Ustream の合計視聴数は 159 名 (2014 年 12 月 31 日現在) でした。</p>
+
+<ul>
+  <li>日時：2014 年 12 月 20 日 (土) 13:00 ～ 17:45 (懇親会: 18:00 ～)</li>
+  <li>場所：松江オープンソースラボ</li>
+  <li>主催：Matsue.rb (まつえるびー)</li>
+  <li>後援：日本 Ruby の会</li>
+  <li>動画による中継 (USTREAM)：<a href="http://www.ustream.tv/channel/matsuerubykaigi06">http://www.ustream.tv/channel/matsuerubykaigi06</a></li>
+  <li>Togetter まとめ：<a href="http://togetter.com/li/760234">http://togetter.com/li/760234</a></li>
+  <li>公式タグ・Twitter：<a href="https://twitter.com/hashtag/matrk06">#matrk06</a></li>
+</ul>
+
+<p><img src="/images/0051-MatsueRubyKaigi06Report/07_closing.jpg" alt="07_closing.jpg" /></p>
+
+<h3 id="オープンソースの力-基調講演">オープンソースの力 (基調講演)</h3>
+
+<ul>
+  <li>発表者
+    <ul>
+      <li>まつもとゆきひろ氏 (<a href="https://twitter.com/yukihiro_matz">@yukihiro_matz</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/0051-MatsueRubyKaigi06Report/01_keynote.jpg" alt="01_keynote.jpg" /></p>
+
+<p>松江ならではの毎年恒例のまつもとゆきひろ氏の講演です (贅沢)。タイトルの「オープンソースの力」とはオープンソース採用などで発生する外向きの力ではなく、オープンソースコミュニティ内での (内向きの) 力について講演いただきました。生き残ってきたオープンソースプロダクトを複数持つ経験を振り返った内容でした。スタートアップで成功する人は「IQ の高い人」ではなく「パターン認識のできる人」という記事の内容を元に以下の成功パターンを振り返りました。</p>
+
+<ol>
+  <li>(完璧ではなくていいので) 動作する実装</li>
+  <li>継続的進歩</li>
+  <li>ソーシャルコーディング</li>
+</ol>
+
+<p>1.と 2.のサイクルがあれば一見実現が難しいと思われる新機能も貢献してくれる方が現れる場合があるという事でしたが、これは「期待」を提供する事でも代替できるのではないかという事でした。日経 Linux の連載中で作る言語 Streem が話題になった事からそう思ったという事でしたが、この時に「敗北を知りたい」などと冗談を仰られて会場が盛り上がりました。</p>
+
+<p>最後に継続するためには面白がる事、面白がり続ける事も重要という事で「Happy Hacking!」という言葉とともに話を締めくくられました。2015 年は Matsue.rb でも何か公開できるといいですね。</p>
+
+<h3 id="フルタイムの-ruby-コミッターとして働くこと-ショートセッション">フルタイムの Ruby コミッターとして働くこと (ショートセッション)</h3>
+
+<ul>
+  <li>発表者
+    <ul>
+      <li>笹田耕一氏 (<a href="https://twitter.com/_ko1">@_ko1</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/0051-MatsueRubyKaigi06Report/02_short.jpg" alt="02_short.jpg" /></p>
+
+<p>笹田氏は、YARV を作りはじめてから 2014 年で 10 周年、現在は Heroku 社で Ruby のフルタイムコミッタとして Ruby の品質を上げる作業をされています。主に以下の内容について講演いただきました。</p>
+
+<ol>
+  <li>1 日の生活</li>
+  <li>仕事内容</li>
+  <li>成果を出す</li>
+</ol>
+
+<p>1.については、起きて仕事を家かオフィスで行って、家に帰ってから仕事して寝る。というもので、マネージャであるまつもとゆきひろ氏が遠方に居るため、わりと緩い出勤形態ということでした。</p>
+
+<p>2.は調査と設計、開発、公開についてでした。開発や設計よりも調査が多く、カンファレンスやバグトラッカー、学術論文、ブログや SNS、実世界でどのように使われるかを調査して、なにをどのように開発するかを考えるということでした。また、一人でも多くの仲間を作るために、自分がなぜこのコードを書いたか、その面白さをプレゼンテーションやドキュメントで共有しているとのことでした。</p>
+
+<p>3.については、2014 年は 8 回のカンファレンスで発表していて、「良い発表をするために開発がのびる」とアピールして呼んでもらえるようになったとうかがいました。また、海外の人は日本人にしゃべってもらいたいというのがあって日本人の情報に飢えているのでどんどん行ってほしいと話されました。</p>
+
+<p>最後に「全てが自由で自分でなにをするかは選ぶことができる。代わりに自分の価値を外へ出していかないといけなくて、雇用主とのコミュニケーションも大事にしている。その結果が Ruby 2.2 に入っていて、いろいろ良くなっているのでぜひ見てください。」ということでした。2.2 が楽しみですね (2014 年末当時)。</p>
+
+<h3 id="ライブコーディング大喜利">ライブコーディング大喜利</h3>
+
+<p>ライブコーディング大喜利では配列をランダムに並べ替えたり、トランプを引いた結果に関する確率を求める問題などを 2 session に分かれて 3 人ずつで回答の出来を競い合いました。</p>
+
+<ul>
+  <li>session1
+    <ul>
+      <li>岩石嶺 氏</li>
+      <li>井上裕之 氏</li>
+      <li>進藤元明 氏</li>
+    </ul>
+  </li>
+  <li>session2
+    <ul>
+      <li>前田修吾 氏</li>
+      <li>内部高志 氏</li>
+      <li>田上健太 氏</li>
+    </ul>
+  </li>
+  <li>表彰</li>
+</ul>
+
+<p>回答者には先に問題を確認していただき、どのように回答するのかを検討していただきました。大喜利ということで参加者の中には、捻った回答で会場を盛り上げてくれる方もいました。
+session1 については、あらかじめ問題の回答を参加者には考えていただいていましたが、事前に gem パッケージを用意しておき、そちらを利用する方法を取り、短い時間で回答する方もいました。</p>
+
+<p>session2 については、残念ながら必要なファイルがインターネット上にある問題の時に無線 LAN の調子が悪くなりました。参加者の方が作成したプログラムを実行するタイミングで不調になったので、エラーが出力されて参加者の方が戸惑う展開もありました。</p>
+
+<p>表彰では会場を盛り上げるコードを書いた岩石嶺氏と前田修吾氏がそれぞれ表彰されて景品が渡されました。
+<img src="/images/0051-MatsueRubyKaigi06Report/03_livecoding.jpg" alt="03_livecoding.jpg" /></p>
+
+<h3 id="納品のない受託開発とエンジニアの働きかたのこれから-ゲスト講演">「納品のない受託開発」と、エンジニアの働きかたのこれから (ゲスト講演)</h3>
+
+<ul>
+  <li>発表者
+    <ul>
+      <li>倉貫義人氏 (<a href="https://twitter.com/kuranuki">@kuranuki</a>)</li>
+    </ul>
+  </li>
+  <li>資料
+    <ul>
+      <li><a href="http://www.slideshare.net/kuranuki/ss-42979624">http://www.slideshare.net/kuranuki/ss-42979624</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>これからのエンジニアの働き方について、「納品のない受託開発」「地方」「Ruby」「ギルド」といったキーワードとともに講演いただきました。</p>
+
+<p>講演ではまず、納品のない受託開発についてご紹介いただきました。納品のない受託開発は以下のような特徴があります。</p>
+
+<ul>
+  <li>月額定額で、開発と運用を続ける</li>
+  <li>顧問として全ての工程を担当する</li>
+  <li>働く時間でなく、成果を提供する</li>
+</ul>
+
+<p>事例として、<a href="http://www.sonicgarden.jp/157">子育てシェアサービスの AsMama のケース</a>をご紹介いただきました。</p>
+
+<p>また、納品のない受託開発を始めた動機についてもご講演いただきました。</p>
+
+<ol>
+  <li>従来の受託開発での発注者と受注者でゴールが異なるという問題を解決するために、納品を無くすことにした</li>
+  <li>会社を独立した時、受託開発がやりたいという想いを再認識し、少人数でも大企業と戦えるようにビジネスモデルを変えた</li>
+</ol>
+
+<p>倉貫氏の会社であるソニックガーデンでは、リモートワークを推奨しているそうです。</p>
+
+<p>ソフトウェア開発はプログラミングを用いた再現性のない問題解決であり、さらに現代では問題が複雑化しているため、トップダウンの管理ではなく、信頼関係に基づいたセルフマネジメントを中心とした組織作りを目指しているとのことでした。</p>
+
+<p>そうした場合、いつ・どこで働くかは問題ではなく、地方に住んでいることはハンディキャップにはならないとおっしゃっていました。</p>
+
+<p>むしろ問題となるのは、多重請負の枠組みの中で仕事を請けようとすることであり、その問題を解決するために、納品のない受託開発のオープン化に取り組んでおられるそうです。</p>
+
+<p>最後に、その取り組みとして<a href="http://www.sonicgarden.jp/guild">ギルド</a>とアカデミーについてご紹介いただきました。
+<img src="/images/0051-MatsueRubyKaigi06Report/04_guest.jpg" alt="04_guest.jpg" /></p>
+
+<h3 id="matsuerb-のふりかえり---2014--">Matsue.rb のふりかえり - 2014 -</h3>
+
+<ul>
+  <li>発表者
+    <ul>
+      <li>吉岡隆行氏 (<a href="https://twitter.com/murateku">@murateku</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>2014 年の Matsue.rb の活動について講演いただきました。主に以下の内容について講演いただきました。</p>
+
+<ol>
+  <li>Sprout.rb の活動報告</li>
+  <li>Ruby で作ったイラストが MEDIBANG 青空文庫の表紙に採用</li>
+  <li>Matsue.rb のメンバである橋本氏が RubyKaja 2014 を受賞</li>
+</ol>
+
+<p>上記の内容について発表者である吉岡氏から紹介いただいた後、ご紹介いただいた活動に関わった Matsue.rb のメンバからも一言ずつ感想をお話いただきました。
+1.については、2014 年から始めた活動であり、初心者が継続的に学習できる場があると良いと考えられて始められたとのことでした。Sprout.rb の参加者からの感想でも分からないことを質問できる場ができて助かったとのことでした。</p>
+
+<p>2.については、Ruby スクリプトでイラストを作成され、そのイラストが MEDIBANG 青空文庫の表紙に採用 (<a href="https://medibang.com/book/ox1408111444087910000000003">こちらなど</a>) されたとのことでした。作成されたスクリプトは GitHub でも公開されており、ぜひイラストや WEB サイトで画像を作成するのにご使用くださいとのことでした。</p>
+
+<p>3.については、Matsue.rb のメンバである橋本氏が RubyKaja 2014 で受賞した件に関することでした。残念ながら御本人は家族が風邪を引いたのでお世話をしに帰ったとのことで発表時には会場に不在でしたが、Twitter のお祝いコメントは御本人も家から確認していただけたようでした。</p>
+
+<p>他にも Matsue.rb のメンバのプログラミングについて触れながら和やかに発表を終えられました。
+<img src="/images/0051-MatsueRubyKaigi06Report/05_matsuerb.jpg" alt="05_matsuerb.jpg" /></p>
+
+<h3 id="スモウルビーでライブコーディング">スモウルビーでライブコーディング</h3>
+
+<ul>
+  <li>発表者
+    <ul>
+      <li>本多展幸氏 (<a href="https://twitter.com/nobyuki">@nobyuki</a>)</li>
+    </ul>
+  </li>
+  <li>資料
+    <ul>
+      <li><a href="https://github.com/nobyuki/matrk06">https://github.com/nobyuki/matrk06</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/images/0051-MatsueRubyKaigi06Report/06_smalruby.jpg" alt="06_smalruby.jpg" /></p>
+
+<p>本多氏は、松江市内の<a href="http://smalruby.jp/">プログラミング少年団</a>で毎月 1 回第三日曜日島根家庭の日に子供たちに Ruby を教えていらっしゃいます。10 月からはコーダー道場松江として高校生以下の子供を対象にプログラミングを教える活動をされています。</p>
+
+<p>本日は、これら勉強会で使っている<a href="https://github.com/smalruby">Smalruby</a>でどんなプログラムを作られるのかを実際に作りながら説明なされました。講演は次の流れで、猫と蛙が玉を打ち合ってどちらかの壁に当たったら勝負が決まるゲームを作っていきました。</p>
+
+<ol>
+  <li>自キャラクタを作って画面に表示</li>
+  <li>キーボードで自キャラクタの移動を実装</li>
+  <li>相手キャラクタ表示と壁に当たったら跳ね返るボールの実装</li>
+  <li>ボールに合わせて相手キャラクタの移動を実装</li>
+  <li>ボールがキャラクタにぶつかったときの跳ね返りを実装</li>
+  <li>勝ち負けの条件を実装</li>
+  <li>ブロックから生成された Ruby のコードを確認</li>
+  <li>キャラクタに当たるごとにボールのスピード増加を実装</li>
+  <li>自キャラクタの左右位置によるボールの跳ね返り角度変化を実装したものを披露</li>
+  <li>Arduino と接続して前後左右の移動を 2 つのセンサから取得するようにしたものを披露</li>
+</ol>
+
+<p>パラメータにもよると思いますが作成した相手キャラクタはなかなか強く、講演内では 1 度も勝てませんでした。</p>
+
+<p>ライブコーディング全体を通して次がわかりました。</p>
+
+<ul>
+  <li>ブロックの組み合わせでプログラムを作る流れ。</li>
+  <li>ブロックから Ruby のコードを生成する。その逆も可能である。</li>
+  <li>PC 上だけでなくセンサーと組み合わせてコントローラを作るようなこともできる。</li>
+</ul>
+
+<p>プログラミング少年団やコーダー道場松江をきっかけとして、将来ハッカーが出てくることに期待ですね。</p>
+
+<h3 id="来て見て感じた日本松江rubynacl-パネルディスカッション">来て、見て、感じた、日本、松江、Ruby、NaCl (パネルディスカッション)</h3>
+
+<ul>
+  <li>発表者
+    <ul>
+      <li>レナト正氏</li>
+      <li>多根チアゴ氏、</li>
+      <li>高尾コウジ氏 (司会・進行)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>残念ながら、本編では進行の関係で中止になった本セッションですが、懇親会にて盛り上がっている中での発表となりました。2014 年の後半にブラジルから来てくれた長期インターンの二人に対して、司会の高尾コウジ氏からの質問形式で以下に関する感想を聞く事ができました。</p>
+
+<ol>
+  <li>どうして日本に来たか</li>
+  <li>松江はどう感じたか</li>
+  <li>Ruby と NaCl はどうだったか</li>
+</ol>
+
+<p>1.については二人とも主に学習のためという事でしたが、多根さんは来日前からまつもとさんの事をご存知だったとの事で本当にビックリしたという事でした (インターン先を希望した訳ではなかったようです)。</p>
+
+<p>2.については二人とも自転車での移動が簡単である点を最初に挙げていました。交通機関の正確さや郵便の便利さに驚いたといったあるある系の感想から、景色を見ながらの移動が好き、四季がはっきりしているのが楽しいといった感想なども聞く事ができました。松江での生活がそれなりに楽しめたようで何よりです。</p>
+
+<p>3.については本人いわく地元ブラジルでの英語が早口だったためか、英語でのコミュニケーションに最初苦労したようです。Ruby を学ぶ点でも苦労した事はあったようですが、慣れてくるにつれて来日前にイメージしていた日本の会社 (ルールだらけ) と違い地元に近い自由な空気感のある職場という事がわかって来てリラックスして作業できたという事でした。今では Ruby もプログラマが使いやすいように設計してある事がわかって楽しく使えるようになったそうです。</p>
+
+<p>もうすぐインターン生活も終わります (2014 年末当時)。地球の裏側から何か Ruby に関連したリリースを正座して待ちながらも、こちらからも何か届くような事をしたいものです。</p>
+
+<h3 id="lt">LT</h3>
+
+<p>本編で行われたスポンサートーク、懇親会での LT と合計 6 件の発表が行われました。</p>
+
+<ul>
+  <li>永田町に届けられるサービス tmix (本編)
+    <ul>
+      <li>発表者
+        <ul>
+          <li>五十嵐邦明氏 (<a href="https://twitter.com/igaiga555">@igaiga555</a>)</li>
+        </ul>
+      </li>
+      <li>資料
+        <ul>
+          <li><a href="https://speakerdeck.com/igaiga/matrk06-tmix">https://speakerdeck.com/igaiga/matrk06-tmix</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>松江のいいところ (懇親会)
+    <ul>
+      <li>発表者
+        <ul>
+          <li>五十嵐邦明氏 (<a href="https://twitter.com/igaiga555">@igaiga555</a>)</li>
+        </ul>
+      </li>
+      <li>資料
+        <ul>
+          <li><a href="https://speakerdeck.com/igaiga/matrk06-lt">https://speakerdeck.com/igaiga/matrk06-lt</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Ruby 2.2 の紹介
+    <ul>
+      <li>発表者
+        <ul>
+          <li>笹田耕一氏 (<a href="https://twitter.com/_ko1">@_ko1</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>僕らが東京で学んだこと
+    <ul>
+      <li>発表者
+        <ul>
+          <li>杉原建司氏 (<a href="https://twitter.com/tobaken">@tobaken</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>「感情認識ロボット Pepper、ようこそ島根県へ♪」
+    <ul>
+      <li>発表者
+        <ul>
+          <li>槇原綾子氏 (<a href="https://twitter.com/makiaya55">@makiaya55</a>)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>「新たなプログラミングスタイルの確立を目指して」
+    <ul>
+      <li>発表者
+        <ul>
+          <li>後藤雅樹氏 (<a href="https://twitter.com/goto_jpn">@goto_jpn</a>)</li>
+        </ul>
+      </li>
+      <li>資料
+        <ul>
+          <li><a href="http://www.slideshare.net/gototgz/ruby-20141220">http://www.slideshare.net/gototgz/ruby-20141220</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="ジャンケン大会">ジャンケン大会</h3>
+
+<p>懇親会では<a href="https://github.com/KatoAtsue/">@KatoAtsue</a>さんデザインの宍道湖モチーフにした Matsue.rb T シャツを競ってジャンケン大会が行われました。
+(T シャツは<a href="http://tmix.jp">株式会社 spice life さんのオリジナル T シャツ作成サービス tmix</a>からご提供いただきました！)</p>
+
+<p><img src="/images/0051-MatsueRubyKaigi06Report/08_party01.jpg" alt="08_party01.jpg" /> <img src="/images/0051-MatsueRubyKaigi06Report/08_party02.jpg" alt="08_party02.jpg" /></p>
+
+<h2 id="著者について">著者について</h2>
+
+<h3 id="西田-雄也-nishidayuya">西田 雄也 (<a href="https://twitter.com/nishidayuya">@nishidayuya</a>)</h3>
+
+<p>もうすぐ「プログラマー 35 歳定年説」の該当プログラマ。</p>
+
+<h3 id="佐田-明弘-sada4">佐田 明弘 (<a href="https://twitter.com/sada4">@sada4</a>)</h3>
+
+<p>Matsue.rb にひっそりといるプログラマ。</p>
+
+<h3 id="井上-裕之-ino_h">井上 裕之 (<a href="https://twitter.com/ino_h">@ino_h</a>)</h3>
+
+<p>Ruby といろんなものをまぜるが好き。</p>
+
+<h3 id="本多-展幸-nobyuki">本多 展幸 (<a href="https://twitter.com/nobyuki">@nobyuki</a>)</h3>
+
+<p>プログラミング教育おじさん</p>
+
+<h3 id="橋本-将-sho_hashimoto">橋本 将 (<a href="https://twitter.com/sho_hashimoto">@sho_hashimoto</a>)</h3>
+
+<p>Matsue.rb の雑用係。<a href="http://matsue.rubyist.net/about_us/#matsuerb">定例会</a>にはだいたい出席してます</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

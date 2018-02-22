@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>cgi.rb がイケてない 12 の理由</title>
+  <meta name="description" content="著者: 桑田 誠">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0023/0023-Cgirb.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>cgi.rb がイケてない 12 の理由</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0023/0023-Cgirb.html" class="hatena-bookmark-button" data-hatena-bookmark-title="cgi.rb がイケてない 12 の理由" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0023/0023-Cgirb.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0023/0023-Cgirb.html" data-text="cgi.rb がイケてない 12 の理由">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>著者: 桑田 誠</p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#cgirb-の問題点" id="markdown-toc-cgirb-の問題点">cgi.rb の問題点</a>    <ul>
+      <li><a href="#ファイルが分割されていない" id="markdown-toc-ファイルが分割されていない">ファイルが分割されていない</a></li>
+      <li><a href="#余計な-html-タグ生成機能が含まれている" id="markdown-toc-余計な-html-タグ生成機能が含まれている">余計な HTML タグ生成機能が含まれている</a></li>
+      <li><a href="#cgi-クラスが-http-リクエストと-http-レスポンスの両方を担当している" id="markdown-toc-cgi-クラスが-http-リクエストと-http-レスポンスの両方を担当している">CGI クラスが HTTP リクエストと HTTP レスポンスの両方を担当している</a></li>
+      <li><a href="#コードが洗練されていない" id="markdown-toc-コードが洗練されていない">コードが洗練されていない</a></li>
+      <li><a href="#読み込みが遅い" id="markdown-toc-読み込みが遅い">読み込みが遅い</a></li>
+      <li><a href="#動作が遅い" id="markdown-toc-動作が遅い">動作が遅い</a></li>
+      <li><a href="#任意のサイズの-http-リクエストデータを受け取ってしまう" id="markdown-toc-任意のサイズの-http-リクエストデータを受け取ってしまう">任意のサイズの HTTP リクエストデータを受け取ってしまう</a></li>
+      <li><a href="#任意の数のパラメータを受け取ってしまう" id="markdown-toc-任意の数のパラメータを受け取ってしまう">任意の数のパラメータを受け取ってしまう</a></li>
+      <li><a href="#multipart-形式のときにすべての値を-tempfile-にしてしまう" id="markdown-toc-multipart-形式のときにすべての値を-tempfile-にしてしまう">multipart 形式のときにすべての値を Tempfile にしてしまう</a></li>
+      <li><a href="#パラメータが単一の値をとるのか複数の値をとるのかわからない" id="markdown-toc-パラメータが単一の値をとるのか複数の値をとるのかわからない">パラメータが単一の値をとるのか複数の値をとるのかわからない</a></li>
+      <li><a href="#cgi-以外のプロトコルに対応できるだけの柔軟性がない" id="markdown-toc-cgi-以外のプロトコルに対応できるだけの柔軟性がない">CGI 以外のプロトコルに対応できるだけの柔軟性がない</a></li>
+      <li><a href="#テストスクリプトが用意されていない" id="markdown-toc-テストスクリプトが用意されていない">テストスクリプトが用意されていない</a></li>
+    </ul>
+  </li>
+  <li><a href="#最後に" id="markdown-toc-最後に">最後に</a></li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>cgi.rb は、Ruby に標準添付されている CGI アプリケーション用のライブラリです。
+この cgi.rb (と erb.rb) のおかげで、Ruby でも CGI アプリケーションが簡単に作成できるようになりました。
+その功績は計り知れないものがあります。</p>
+
+<p>しかし各所で言われているように、cgi.rb はさまざまな問題点を抱えているのも事実です。
+本稿では、cgi.rb の具体的な問題点と解決案を紹介します。</p>
+
+<p>なお、まつもとさんは <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/33581">cgi.rb に代わるライブラリを公募する</a>とおっしゃっています。
+締め切りや条件などは特に決まってないようですが、我こそはと思う方は新しいライブラリを提案してみてください。</p>
+
+<p>(注意: 本稿の内容は Ruby 1.8.6 patchlevel 114 に基づいており、より新しいバージョンでは修正されている可能性があります。)</p>
+
+<h2 id="cgirb-の問題点">cgi.rb の問題点</h2>
+
+<h3 id="ファイルが分割されていない">ファイルが分割されていない</h3>
+
+<p>cgi.rb では、すべての機能を単一のファイルに押し込めています。
+そのため、cgi.rb の機能のうち例えば CGI::escapeHTML() だけ使いたいと思っても、cgi.rb 全体を読み込む必要があります。</p>
+
+<p>本来であれば、たとえば次のように機能ごとに複数のファイルに分割すべきです。</p>
+
+<ul>
+  <li>cgi/core.rb – コアとなる機能</li>
+  <li>cgi/util.rb – CGI::escapeHTML() などのユーティリティ関数郡</li>
+  <li>cgi/cookie.rb – クッキー機能</li>
+  <li>cgi/html.rb – CGI::HtmlExtension モジュールの定義</li>
+  <li>cgi.rb – これらをすべて読み込むファイル</li>
+</ul>
+
+<p>こうすることで、例えば CGI::escapeHTML() だけが必要であれば、cgi/util.rb だけ読み込めばよく、CGI プログラムの動作が軽くなります。</p>
+
+<h3 id="余計な-html-タグ生成機能が含まれている">余計な HTML タグ生成機能が含まれている</h3>
+
+<p>cgi.rb には、HTML タグを生成する機能 (CGI::HtmlExtension モジュール関連) が含まれています。
+しかし、eRuby やテンプレートエンジンを使うのが定番となった現在では、この機能は無用の長物です。</p>
+
+<p>そもそも CGI クラスが担当すべきは HTTP リクエストと HTTP レスポンスのはずです。
+HTML タグの生成という機能は範囲外ですし、この機能を CGI クラスが提供しなければならない理由はありません。</p>
+
+<p>しかもこの機能のせいで cgi.rb のコードサイズが膨れ上がっており、「require “cgi”」に時間がかかる原因のひとつとなっています。</p>
+
+<p>しかし過去との互換性を考えると簡単に廃止するわけにもいきません。
+妥協案としては、CGI::HtmlExtension 関連を別ファイルに分離し、参照されたときだけ自動的に require されるようにするのがいいでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class CGI
+  ## CGI::HtmlExtension 関連が cgi/html.rb に分離されたとする
+  autoload :HtmlExtension, 'cgi/html'
+  autoload :Html3,   'cgi/html'
+  autoload :Html4,   'cgi/html'
+  autoload :Html4Tr, 'cgi/html'
+  autoload :Html4Fr, 'cgi/html'
+  ...</code></pre></figure>
+
+<h3 id="cgi-クラスが-http-リクエストと-http-レスポンスの両方を担当している">CGI クラスが HTTP リクエストと HTTP レスポンスの両方を担当している</h3>
+
+<p>cgi.rb では、CGI クラスが HTTP リクエストと HTTP レスポンスの両方を担当しています。
+しかし、本来であれば両者は別のクラスにすべきでした。
+両者が 1 つになっているせいで、リクエストに対する操作とレスポンスに対する操作が混じってしまい、見通しが悪くなります。</p>
+
+<p>HTTP リクエストと HTTP レスポンスの両方を 1 つのクラスでまかなっているライブラリは、珍しいのではないでしょうか。
+筆者が知る限り、他のフレームワークやライブラリではリクエストとレスポンスは別クラスに分かれているのが普通です。</p>
+
+<p>例えば Java Servlet でも HttpRequest と HttpResponse という 2 つのクラスが用意されています。
+別に「Java でそうだから、分かれているのが正しい」というつもりはありませんが、少なくとも CGI クラスについていえば、Request と Response が分かれている Java のほうが正しいと思います。</p>
+
+<h3 id="コードが洗練されていない">コードが洗練されていない</h3>
+
+<p>cgi.rb のコードは無駄が多く、洗練されていません。</p>
+
+<p>例えば CGI::Cookie#to_s() は、次のようなコードになっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    # Convert the Cookie to its string representation.
+    def to_s
+      buf = ""
+      buf += @name + '='
+
+      if @value.kind_of?(String)
+        buf += CGI::escape(@value)
+      else
+        buf += @value.collect{|v| CGI::escape(v) }.join("&amp;")
+      end
+
+      if @domain
+        buf += '; domain=' + @domain
+      end
+
+      if @path
+        buf += '; path=' + @path
+      end
+
+      if @expires
+        buf += '; expires=' + CGI::rfc1123_date(@expires)
+      end
+
+      if @secure == true
+        buf += '; secure'
+      end
+
+      buf
+    end</code></pre></figure>
+
+<p>一見して分かるように、洗練されているとはいい難いコードです。
+具体的には次のような点が気になります。</p>
+
+<ul>
+  <li>buf を空文字列で作成した直後に文字列を追加している</li>
+  <li>String#&lt;&lt; ではなく += を使っている</li>
+  <li>if 文の後置記法を使ってない</li>
+  <li>無駄に行が空いている</li>
+</ul>
+
+<p>これを書き換えると、次のように大変簡潔になりました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    # Convert the Cookie to its string representation.
+    def to_s
+      val = @value.kind_of?(String) ? CGI::escape(@value) \
+                    : @value.collect{|v| CGI::escape(v) }.join("&amp;")
+      buf = "#{@name}=#{val}"
+      buf &lt;&lt; "; domain=#{@domain}" if @domain
+      buf &lt;&lt; "; path=#{@path}"     if @path
+      buf &lt;&lt; "; expires=#{CGI::rfc1123_date(@expires)}" if @expires
+      buf &lt;&lt; "; secure"            if @secure == true
+      buf
+    end</code></pre></figure>
+
+<p>他にも、たとえば 989 行目では「10240」というマジックナンバーがでてきます。
+実はその前の 973 行目で「bufsize = 10 * 1024」という変数を設定しているのですが、なぜかそれを使わず、マジックナンバーを直接使ってしまっています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">973:  bufsize = 10 * 1024
+...
+989:  if 10240 &lt; content_length</code></pre></figure>
+
+<p>これら以外にも、格好悪いコードが目立ちます。
+筆者は、標準添付されるライブラリは初心者が読んで勉強になるコードであってほしいと思っているので、cgi.rb のコードには残念な感が否めません。
+cgi.rb もぜひ<a href="http://jp.rubyist.net/magazine/?0010-CodeReview">添削してほしい</a>ところです。</p>
+
+<p>読者にひとつ問題を出しましょう。
+次のコードは CGI::unescapeHTML() のコードです。
+これを書き換えるとしたら、みなさんならどうしますか？
+挑戦される方はご自分のブログに書いて、本記事に trackback してください。
+解答された方から抽選で豪華賞品が! …… 当たるわけありませんのであしからず。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  # Unescape a string that has been HTML-escaped
+  #   CGI::unescapeHTML("Usage: foo &amp;quot;bar&amp;quot; &amp;lt;baz&amp;gt;")
+  #      # =&gt; "Usage: foo \"bar\" &lt;baz&gt;"
+  def CGI::unescapeHTML(string)
+    string.gsub(/&amp;(amp|quot|gt|lt|\#[0-9]+|\#x[0-9A-Fa-f]+);/n) do
+      match = $1.dup
+      case match
+      when 'amp'                 then '&amp;'
+      when 'quot'                then '"'
+      when 'gt'                  then '&gt;'
+      when 'lt'                  then '&lt;'
+      when /\A#0*(\d+)\z/n       then
+        if Integer($1) &lt; 256
+          Integer($1).chr
+        else
+          if Integer($1) &lt; 65536 and ($KCODE[0] == ?u or $KCODE[0] == ?U)
+            [Integer($1)].pack("U")
+          else
+            "&amp;##{$1};"
+          end
+        end
+      when /\A#x([0-9a-f]+)\z/ni then
+        if $1.hex &lt; 256
+          $1.hex.chr
+        else
+          if $1.hex &lt; 65536 and ($KCODE[0] == ?u or $KCODE[0] == ?U)
+            [$1.hex].pack("U")
+          else
+            "&amp;#x#{$1};"
+          end
+        end
+      else
+        "&amp;#{match};"
+      end
+    end
+  end</code></pre></figure>
+
+<h3 id="読み込みが遅い">読み込みが遅い</h3>
+
+<p>cgi.rb の読み込みは結構遅いです。
+どのくらい遅いか調べるために、次のようなスクリプト「bench.rb」を用意しました。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## usage: ruby -s bench.rb -N=100 -C='require "cgi"'
+code = $C || 'require "cgi"'
+command = "ruby -e '#{code}'"
+ntimes = ($N || 100).to_i
+print "command: #{command}"; $stdout.flush
+ntimes.times { `#{command}` }</code></pre></figure>
+
+<p>これを使って、</p>
+
+<ul>
+  <li>Ruby の起動時間</li>
+  <li>「require “cgi”」を伴う Ruby の起動時間</li>
+  <li>「require “erb”」を伴う Ruby の起動時間</li>
+</ul>
+
+<p>を調べてみました (erb は比較のためです)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### Ruby の起動時間
+$ time ruby -s bench.rb -N=100 -C='nil'
+command: ruby -e 'nil'
+real    0m2.329s
+user    0m0.954s
+sys     0m1.252s
+### 「require "cgi"」を伴う Ruby の起動時間
+$ time ruby -s bench.rb -N=100 -C='require "cgi"'
+command: ruby -e 'require "cgi"'
+real    0m4.904s
+user    0m2.973s
+sys     0m1.640s
+### 「require "erb"」を伴う Ruby の起動時間
+$ time ruby -s bench.rb -N=100 -C='require "erb"'
+command: ruby -e 'require "erb"'
+real    0m3.297s
+user    0m1.614s
+sys     0m1.503s</code></pre></figure>
+
+<p>これを見れば分かるように、「require “cgi”」にかかる時間は Ruby プロセスの起動よりも時間がかかっています。
+「require “erb”」にはそれほど時間がかかってませんが、これは cgi.rb が 2303 行あるのに対し、erb.rb が 826 行と少ないためです。
+ということは、cgi.rb のサイズが大きい以上、require にかかる時間は早くできないのでしょうか。</p>
+
+<p>実はそうでもありません。
+cgi.rb の読み込みが遅いのは、ファイルサイズも原因ですが、最大の原因は CGI::Cookie クラスが親クラスとして DelegateClass(Array) を指定していることです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  class Cookie &lt; DelegateClass(Array)</code></pre></figure>
+
+<p>CGI::Cookie クラスは、1 つのクッキー名に対して複数の値をとることができるようになっています。
+そのため、CGI::Cookie クラスを Array クラスのように見せかけるために、DelegateClass(Array) を使っているのだと思われます。</p>
+
+<p>しかし DelegateClass() を使うのはかなりコストのかかる処理であるため、毎回ライブラリを読み込む必要のある CGI プログラムにはうれしくありません。
+そもそもクッキーの仕様 (<a href="http://www.ietf.org/rfc/rfc2965">RFC2965</a>) では複数の値を取るようには書かれていませんし、かりに複数の値を取ることができたとしても Array と完全互換である必要はまったくないはずです。</p>
+
+<p>そこで、DelegateClass(Array) を使わないように書き換えてみましょう。
+以下がそのパッチです<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">--- /usr/local/lib/ruby/1.8/cgi.rb	2007-05-23 06:58:09.000000000 +0900
++++ cgi.rb	2008-02-05 12:27:26.000000000 +0900
+@@ -734,11 +734,10 @@
+   #   cgi.print    # default:  cgi.print == $DEFAULT_OUTPUT.print
+   def print(*options)
+     stdoutput.print(*options)
+   end
+ 
+-  require "delegate"
+ 
+   # Class representing an HTTP cookie.
+   #
+   # In addition to its specific fields and methods, a Cookie instance
+   # is a delegator to the array of its values.
+@@ -769,11 +768,11 @@
+   #   cookie1.value   = ['value1', 'value2', ...]
+   #   cookie1.path    = 'path'
+   #   cookie1.domain  = 'domain'
+   #   cookie1.expires = Time.now + 30
+   #   cookie1.secure  = true
+-  class Cookie &lt; DelegateClass(Array)
++  class Cookie
+ 
+     # Create a new CGI::Cookie object.
+     #
+     # The contents of the cookie can be specified as a +name+ and one
+     # or more +value+ arguments.  Alternatively, the contents can
+@@ -856,10 +855,40 @@
+       end
+ 
+       buf
+     end
+ 
++    ##--
++    ## define methods instead of DelegateClass(Array)
++    ##++
++
++    include Enumerable  ##:nodoc:
++
++    def [](*args)  ##:nodoc:
++      @value[*args]
++    end
++
++    def []=(index, value)  ##:nodoc:
++      @value[index] = value
++    end
++
++    def each(&amp;block)  ##:nodoc:
++      @value.each(&amp;block)
++    end
++
++    def method_missing(m, *args)  ##:nodoc:
++      @value.respond_to?(m) ? @value.__send__(m, *args) : super
++    end
++
++    def respond_to?(m)  ##:nodoc:
++      super(m) || @value.respond_to?(m)
++    end
++
++    #def inspect;  @value.inspect;  end
++    #def ==(arg);  @value == arg;  end
++    #def ===(arg);  @value === arg;  end
++
+   end # class Cookie
+ 
+ 
+   # Parse a raw cookie string into a hash of cookie-name=&gt;Cookie
+   # pairs.</code></pre></figure>
+
+<p>これを適用して再度計測してみると、筆者の環境で 4.904 秒かかってたのが 4.081 秒 になりました。
+約 20 % の改善です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">### 「require "cgi"」を伴う Ruby の起動時間
+$ time ruby -s bench.rb -N=100 -C='require "cgi"'
+command: ruby -e 'require "cgi"'
+real    0m4.081s
+user    0m2.311s
+sys     0m1.544s</code></pre></figure>
+
+<p>これ以上の改善となると、コードサイズを減らす必要があります。
+筆者が試した限りでは、3.5 秒を切るくらいまで高速化できました。</p>
+
+<p>このことから分かるように、CGI プログラムにおいてはプロセスの起動よりもライブラリの読み込みのほうが時間がかかります。
+特に Ruby 1.8 ではライブラリを毎回パースする必要があるため、どうしても遅くなります。
+Ruby 1.9 ではバイトコードインタプリタになるので、Python のようにバイトコードをファイルにキャッシュするようにすれば、CGI プログラムにおいてもライブラリの読み込みがかなり高速化されるはずです。
+今のところ、Ruby 1.9 にはそのような機能がないようですが、将来的には期待したいところです。</p>
+
+<h3 id="動作が遅い">動作が遅い</h3>
+
+<p>CGI クラスは、動作が遅いです。
+特に CGI オブジェクトを生成するのが遅いです。</p>
+
+<p>プロファイラで調べてみると、以下の点がボトルネックになっているようでした。</p>
+
+<ul>
+  <li>QUERY_STRING の解析</li>
+  <li>HTTP_COOKIE の解析</li>
+  <li>CGI::Cookie オブジェクトの生成</li>
+</ul>
+
+<p>QUERY_STRING と HTTP_COOKIE の解析が遅いのは、結局は CGI::unescape() が遅いのが原因でした。
+CGI::unescape() は、たとえば「word=%E6%97%A5%E6%9C%AC%E8%AA%9E」のように URL エンコードされた文字列を「word=日本語」に戻す関数です。
+このような処理は、C 言語で文字列の先頭から 1 文字ずつ辿って処理すれば高速なのですが、Ruby は文字列を 1 文字ずつ処理するのが苦手であり、重くなります。
+同様のことは CGI::escapeHTML() にも言えます。</p>
+
+<p>そこで、これらを C 言語で書き直してみました。
+<a href="http://cgiext.rubyforge.org/">CGIExt</a> というライブラリがそれです。
+結果は目覚ましく、CGI::unescape() や CGI::escapeHTML() が 5 倍から 10 倍高速になり、CGI.new も 2 倍以上高速化しました (ベンチマーク結果の詳細は <a href="http://cgiext.rubyforge.org/">CGIExt のページ</a>を参照してください)。</p>
+
+<p>CGI::escapeHTML() のような関数は、Web ページを 1 つ生成するのに平気で数十回呼び出されます。
+こういった基本的な関数は、標準で拡張モジュールとして提供してほしいところです。</p>
+
+<p>また CGI::Cookie オブジェクトの生成が遅い原因として、CGI::Cookie#initialize() とそれを呼び出す CGI::Cookie::parse() での無駄な処理が挙げられます。</p>
+
+<p>まず CGI::Cookie::parse() ですが、CGI::Cookie.new() を呼び出すときに、名前と値から Hash を生成して渡しています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def Cookie::parse(raw_cookie)
+    cookies = Hash.new([])
+    return cookies unless raw_cookie
+
+    raw_cookie.split(/[;,]\s?/).each do |pairs|
+      name, values = pairs.split('=',2)
+      next unless name and values
+      name = CGI::unescape(name)
+      values ||= ""
+      values = values.split('&amp;').collect{|v| CGI::unescape(v) }
+      if cookies.has_key?(name)
+        values = cookies[name].value + values
+      end
+      cookies[name] = Cookie::new({{*{ "name" =&gt; name, "value" =&gt; values }*}})
+    end
+
+    cookies
+  end</code></pre></figure>
+
+<p>しかし CGI::Cookie.new() は Hash に変換しなくても名前と値をそのまま受け取ることができるので、Hash に変換するのをやめます<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def Cookie::parse(raw_cookie)
+    cookies = Hash.new([])
+    return cookies unless raw_cookie
+
+    raw_cookie.split(/[;,]\s?/).each do |pairs|
+      name, values = pairs.split('=',2)
+      next unless name and values
+      name = CGI::unescape(name)
+      values ||= ""
+      values = values.split('&amp;').collect{|v| CGI::unescape(v) }
+      if cookies.has_key?(name)
+        values = cookies[name].value + values
+      end
+      cookies[name] = Cookie.new({{*name, *values*}})
+    end
+
+    cookies
+  end</code></pre></figure>
+
+<p>また CGI::Cookie#initialize() のほうも、せっかく名前と値を引数として受け取っても、内部でそれを Hash に変換して使っています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    def initialize(name = "", *value)
+      options = if name.kind_of?(String)
+                  {{*{ "name" =&gt; name, "value" =&gt; value }*}}
+                else
+                  name
+                end
+      unless options.has_key?("name")
+        raise ArgumentError, "`name' required"
+      end
+
+      @name = options["name"]
+      @value = Array(options["value"])
+      # simple support for IE
+      if options["path"]
+        @path = options["path"]
+      else
+        %r|^(.*/)|.match(ENV["SCRIPT_NAME"])
+        @path = ($1 or "")
+      end
+      @domain = options["domain"]
+      @expires = options["expires"]
+      @secure = options["secure"] == true ? true : false
+
+      super(@value)
+    end</code></pre></figure>
+
+<p>これもやはり無駄なので、引数が Hash かどうかを調べ、Hash でないときはより単純で高速な処理となるようにしました<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。
+これにより、余計な Hash が生成されるのを回避できます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">    def initialize(name = "", *value)
+      {{*if name.kind_of?(String)*}}
+        {{*@name = name*}}
+        {{*@value = value*}}
+        {{*%r|^(.*/)|.match(ENV["SCRIPT_NAME"])*}}
+        {{*@path = ($1 or "")*}}
+        {{*@secure = false*}}
+        {{*return super(@value)*}}
+      {{*end*}}
+
+      {{*options = name*}}
+      unless options.has_key?("name")
+        raise ArgumentError, "`name' required"
+      end
+
+      @name = options["name"]
+      @value = Array(options["value"])
+      # simple support for IE
+      if options["path"]
+        @path = options["path"]
+      else
+        %r|^(.*/)|.match(ENV["SCRIPT_NAME"])
+        @path = ($1 or "")
+      end
+      @domain = options["domain"]
+      @expires = options["expires"]
+      @secure = options["secure"] == true ? true : false
+
+      super(@value)
+    end</code></pre></figure>
+
+<p>こういった細かい改善を必要とする箇所が、cgir.b では随所に見られます。</p>
+
+<h3 id="任意のサイズの-http-リクエストデータを受け取ってしまう">任意のサイズの HTTP リクエストデータを受け取ってしまう</h3>
+
+<p>cgi.rb では、受信する HTTP リクエストデータのサイズを確認していません。
+そのため、例えば 10GB の動画ファイルを送られてきた場合、それを正直に受け取ってしまうため、サーバ資源を食い荒らされてしまいます。</p>
+
+<p>これを防ぐには、Content-Length の値を確認し、大きすぎるようであれば受信しないようにする必要があります。
+以下がそのためのパッチです<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">--- /usr/local/lib/ruby/1.8/cgi.rb	2008-02-05 17:10:03.000000000 +0900
++++ cgi.rb	2008-02-05 13:16:03.000000000 +0900
+@@ -905,10 +905,18 @@
+     end
+ 
+     params
+   end
+ 
++
++  # Maximum content length of post data
++  MAX_CONTENT_LENGTH  = 2 * 1024 * 1024
++
++  # Maximum content length of multipart data
++  MAX_MULTIPART_LENGTH  = 128 * 1024 * 1024
++
++
+   # Mixin module. It provides the follow functionality groups:
+   #
+   # 1. Access to CGI environment variables as methods.  See 
+   #    documentation to the CGI class for a list of these variables.
+   #
+@@ -1104,11 +1112,15 @@
+     def initialize_query()
+       if ("POST" == env_table['REQUEST_METHOD']) and
+          %r|\Amultipart/form-data.*boundary=\"?([^\";,]+)\"?|n.match(env_table['CONTENT_TYPE'])
+         boundary = $1.dup
+         @multipart = true
+-        @params = read_multipart(boundary, Integer(env_table['CONTENT_LENGTH']))
++        content_length = Integer(env_table['CONTENT_LENGTH'])
++        unless content_length &lt;= MAX_MULTIPART_LENGTH
++          raise StandardError.new("too large multipart data.")
++        end
++        @params = read_multipart(boundary, content_length)
+       else
+         @multipart = false
+         @params = CGI::parse(
+                     case env_table['REQUEST_METHOD']
+                     when "GET", "HEAD"
+@@ -1117,11 +1129,15 @@
+                       else
+                         env_table['QUERY_STRING'] or ""
+                       end
+                     when "POST"
+                       stdinput.binmode if defined? stdinput.binmode
+-                      stdinput.read(Integer(env_table['CONTENT_LENGTH'])) or ''
++                      content_length = Integer(env_table['CONTENT_LENGTH'])
++                      unless content_length &lt;= MAX_CONTENT_LENGTH
++                        raise StandardError.new("too large post data.")
++                      end
++                      stdinput.read(content_length) or ''
+                     else
+                       read_from_cmdline
+                     end
+                   )
+       end</code></pre></figure>
+
+<p>ここでは簡単のためにデータの制限値を定数で指定していますが、柔軟性を高めるためにクラス変数やインスタンス変数にしてもいいでしょう。</p>
+
+<h3 id="任意の数のパラメータを受け取ってしまう">任意の数のパラメータを受け取ってしまう</h3>
+
+<p>cgi.rb では、HTTP リクエストにおいてパラメータの数をチェックしていません。
+しかしこれだと、multipart 時に問題になります。
+なぜなら、multipart 時には cgi.rb はパラメータの値を Tempfile オブジェクト (または StringIO オブジェクト) に格納するためです。
+つまり、たとえば 1 万個のパラメータがあれば 1 万個のテンポラリファイルがサーバに作成されてしまいます。</p>
+
+<p>これだと都合が悪いので、multipart 時にはパラメータの数をチェックすべきです。
+以下がそのためのパッチです(<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">--- /usr/local/lib/ruby/1.8/cgi.rb	2008-02-05 17:10:03.000000000 +0900
++++ cgi.rb	2008-02-05 13:16:03.000000000 +0900
+@@ -905,10 +905,15 @@
+     end
+ 
+     params
+   end
+ 
++
++  # Maximum number of request parameters when multipart
++  MAX_MULTIPART_COUNT = 128
++
++
+   # Mixin module. It provides the follow functionality groups:
+   #
+   # 1. Access to CGI environment variables as methods.  See 
+   #    documentation to the CGI class for a list of these variables.
+   #
+@@ -982,11 +987,15 @@
+         raise EOFError, "no content body"
+       elsif boundary + EOL != status
+         raise EOFError, "bad content body"
+       end
+ 
++      count = MAX_MULTIPART_COUNT
+       loop do
++        unless (count -= 1) &gt;= 0
++          raise StandardError.new("too many parameters.")
++        end
+         head = nil
+         if 10240 &lt; content_length
+           require "tempfile"
+           body = Tempfile.new("CGI")
+         else</code></pre></figure>
+
+<h3 id="multipart-形式のときにすべての値を-tempfile-にしてしまう">multipart 形式のときにすべての値を Tempfile にしてしまう</h3>
+
+<p>cgi.rb では、HTTP リクエストが multipart 形式かどうかを自動的に判定します。
+それ自体は問題ないのですが、multipart だった場合にはどのデータも Tempfile (または StirngIO) オブジェクトに入れてしまいます。</p>
+
+<p>これが問題で、たとえば本来 multipart でないはずのフォームで悪意あるユーザが multipart 形式の HTTP リクエストを送ってきた場合、CGI#[] で取り出した値が文字列ではなく Tempfile になってしまいます。</p>
+
+<p>これを防ぐには、次のように値を取り出すときにいちいち multipart かどうかを調べる必要があります。
+しかしこれはあまりに面倒です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">value = cgi.multipart? ? cgi['name'].read() : cgi['name']</code></pre></figure>
+
+<p>ここで、multipart 形式が実際にどのようなものかを見てみましょう。
+たとえば次のようなフォームがあったとします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;html&gt;
+ &lt;body&gt;
+  &lt;form action="/cgi-bin/example.cgi" enctype="multipart/form-data"&gt;
+   &lt;input type="file" name="upfile" /&gt;
+   &lt;input type="text" name="comment" /&gt;
+   &lt;input type="submit" /&gt;
+  &lt;/form&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre></figure>
+
+<p>このフォームでデータを送信すると、たとえば次のような multipart 形式の HTTP リクエストが送信されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">POST /cgi-bin/example.cgi HTTP/1.1
+Host: www.example.com
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryAC5j+Mcb61ZiI+mZ
+Content-Length: 352
+
+------WebKitFormBoundaryAC5j+Mcb61ZiI+mZ
+Content-Disposition: form-data; name="upfile"; filename="hoge.txt"
+Content-Type: text/plain
+
+foo
+bar
+baz
+
+------WebKitFormBoundaryAC5j+Mcb61ZiI+mZ
+Content-Disposition: form-data; name="comment"
+
+sample file
+------WebKitFormBoundaryAC5j+Mcb61ZiI+mZ</code></pre></figure>
+
+<p>これを見れば分かるように、&lt;input type=”file”&gt; で送信したデータには Content-Disposition ヘッダに「filename=”…“」が付くのに対し、&lt;input type=”text”&gt; で送信したデータには付きません。
+つまり、「filename=”…“」が付いたデータは Tempfile オブジェクトを作成し、そうでないデータは (multipart でない場合と同様に) String として扱えばよいことが分かります。</p>
+
+<p>またデータが Tempfile のときと String のときとで、データを格納する Hash オブジェクトを分けるべきです。
+たとえば通常のデータは cgi[‘name’] で取り出し、ファイルの場合は cgi.files[‘name’] で取り出すようにすれば、悪意あるユーザが multipart 形式で送ってきても、cgi[‘name’] では必ず String が得られることが保証されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">comment = cgi['comment']      ## データは必ず String である
+upfile = cgi.files['upfile']  ## データは必ず Tempfile である</code></pre></figure>
+
+<p>以上をまとめると次のようになります。</p>
+
+<ul>
+  <li>multipart 形式でかつ filename が指定されているデータだけ、Tempfile にする。filename がない場合は、たとえ multipart 形式でも String にする。</li>
+  <li>Tempfile と String とで、データを格納する先を分ける。</li>
+</ul>
+
+<p>こうすることで、悪意あるユーザが悪意ある multipart データを送ってきても、サーバ側で安全に値を取り出すことができますし、いちいち multipart かどうか調べる必要がありません。</p>
+
+<p>なお上記 2 番目のアイデアは、PHP から拝借したものです。
+PHP では通常の値は $_REQUEST[‘name’] で取り出し、ファイルの場合は $_FILES[‘name’] で取り出します。
+このおかげで、PHP では multipart かどうか気にせずプログラムすることができます。</p>
+
+<p>次のコードは、上記を満たすように CGI::QueryExtension::read_multipart() を変更した場合の疑似コードです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def read_multipart(boundary, content_length)
+    params = Hash.new('')   ## 通常の値を格納する Hash
+    files  = Hash.new       ## Tempfile を格納する Hash
+    while パラメータがある
+      if ファイル名がある
+        filename = ファイル名
+        value = Tempfile.new
+      else
+        filename = nil
+        value = ''
+      end
+      while データの終わりでない
+        value &lt;&lt; $stdin.read(bufsize)
+      end
+      if filename
+        params[key] = value
+      else
+        files[key] = value
+      end
+    end
+    return params, files
+  end</code></pre></figure>
+
+<p>なお Ruby 1.9 の cgi.rb では、データサイズによって Tempfile と StringIO とを使い分けるようになっていますが、本来このようなことは不要であり、上記の仕様を満たせば StringIO を使わずすべて Tempfile でよいと筆者は考えています。</p>
+
+<h3 id="パラメータが単一の値をとるのか複数の値をとるのかわからない">パラメータが単一の値をとるのか複数の値をとるのかわからない</h3>
+
+<p>HTTP リクエストでは、同じパラメータ名を複数回指定することができます。
+例えば「<a href="http://localhost/?a=1&amp;b=2&amp;b=3&amp;b=4">http://localhost/?a=1&amp;b=2&amp;b=3&amp;b=4</a>」というリクエストがあった場合、パラメータ「a」の値は「1」ですが、パラメータ「b」の値は「2」と「3」と「4」になります。
+つまり HTTP リクエストの仕様では、パラメータ名を見ただけでは値が複数あるかどうかを判定することはできません。</p>
+
+<p>そのため、cgi.rb ではすべてのパラメータにおいて配列を用意しています。
+具体的には、CGI::parse_query() が次のような定義になっています (コメントは筆者による追記)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def CGI::parse(query)
+    params = Hash.new([].freeze)  ## 配列を値とする Hash オブジェクト
+    ## QUERY_STRING を '&amp;' または ';' で分割
+    query.split(/[&amp;;]/n).each do |pairs|
+      key, value = pairs.split('=',2).collect{|v| CGI::unescape(v) }
+      if params.has_key?(key)
+        params[key].push(value)  ## 配列に追加
+      else
+        params[key] = [value]    ## 配列を作成
+      end
+    end
+    ## Hash オブジェクトを返す
+    params
+  end</code></pre></figure>
+
+<p>しかしこれだと、パラメータの値を取り出すのにいちいち「params[‘a’][0]」のようにしなければならず、面倒です。
+またほとんどのパラメータは値を 1 つしかとらないのに、すべてのパラメータで配列を用意しなければならないのも無駄が大きいです。</p>
+
+<p>この問題の根本的な原因は、パラメータ名だけでは値を複数とるのか否かがわからないことです。
+つまり、パラメータ名を見ただけで値が複数かそうでないかを判定できればいいわけです。</p>
+
+<p>これは HTTP リクエストの仕様だと無理のように思うかもしれませんが、そうではありません。
+単に、複数の値をとるようなパラメータ名のルールをライブラリ側で決めればいいだけです。</p>
+
+<p>たとえば PHP では、パラメータ名が「[]」で終わっていれば複数の値をとり、そうでなければ 1 つの値だけをとると決めています。
+このようなルールを設定することで、上述のような問題を避けています。</p>
+
+<p>cgi.rb と PHP の仕様を比べると、これは明らかに PHP のほうがよくできた仕様だといえます。
+筆者としては、値が複数あることを表すなら「[]」よりも「*」のほうが好みなのですが、それはともかく、パラメータ名に何らかのルールを設定することで、値が複数かどうかにまつわる問題を回避できることがわかります。</p>
+
+<p>以下に、「パラメータ名の末尾が「<em>」なら複数の値をとり、そうでなければ値を 1 つだけとる」というルールにした場合の、CGI::parse() の定義を載せておきます。
+こうすることで、params[‘a’] で単一の値が、params[‘b</em>’] で複数の値が取り出せるようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">  def CGI::parse(query)
+    params = Hash.new('')
+    ## QUERY_STRING を '&amp;' または ';' で分割
+    query.split(/[&amp;;]/n).each do |pairs|
+      items = pairs.split('=', 2)
+      key   = CGI::unescape(items.first)
+      value = CGI::unescape(items.last)
+      if key[-1] == ?*
+        (params[key] ||= []) &lt;&lt; value  ## 配列に追加
+      else
+        params[key] = value            ## 単一の値を設定
+      end
+    end
+    ## Hash オブジェクトを返す
+    params
+  end</code></pre></figure>
+
+<h3 id="cgi-以外のプロトコルに対応できるだけの柔軟性がない">CGI 以外のプロトコルに対応できるだけの柔軟性がない</h3>
+
+<p>cgi.rb は CGI の仕様に強く依存しており、他のプロトコルである mod_ruby や FastCGI や SCGI には十分対応できていません。</p>
+
+<p>これは cgi.rb に求めることがそもそも間違いとは思いますが、現在の Web プログラミング事情は複雑であり、いくつものプロトコルが乱立するのは避けられない以上、それらを抽象化して統一的に扱えるだけの柔軟性が cgi.rb にも求められます。</p>
+
+<p>たとえば cgi.rb は標準で mod_ruby に対応していますが、コードを見ると「if defined?(MOD_RUBY)」による条件分岐が多数出現するなど、かなり「やっつけ仕事」感が漂っています。
+やはりここはオブジェクト指向らしく、CGI と mod_ruby とで別クラスを用意し、継承やコンポジションを使うなどして柔軟性を高めてほしかったです。
+そうすれば FastCGI や SCGI に対応させるときも、それ用のクラスを追加するだけで済んだことでしょう。</p>
+
+<p>また、たとえば Ruby 用の FastCGI ライブラリである fcgi の中の fcgi.rb を見ると、CGI クラスを FastCGI でも使えるようにするため、かなりトリッキーなことをしています。
+作者の苦労が偲ばれます<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># There is no C version of 'each_cgi'
+# Note: for ruby-1.6.8 at least, the constants CGI_PARAMS/CGI_COOKIES
+# are defined within module 'CGI', even if you have subclassed it
+
+class FCGI
+  def self::each_cgi(*args)
+    require 'cgi'
+    
+    eval(&lt;&lt;-EOS,TOPLEVEL_BINDING)
+    class CGI
+      public :env_table
+      def self::remove_params
+        if (const_defined?(:CGI_PARAMS))
+          remove_const(:CGI_PARAMS)
+          remove_const(:CGI_COOKIES)
+        end
+      end
+    end # ::CGI class
+
+    class FCGI
+      class CGI &lt; ::CGI
+        def initialize(request, *args)
+          ::CGI.remove_params
+          @request = request
+          super(*args)
+          @args = *args
+        end
+        def args
+          @args
+        end
+        def env_table
+          @request.env
+        end
+        def stdinput
+          @request.in
+        end
+        def stdoutput
+          @request.out
+        end
+      end # FCGI::CGI class
+    end # FCGI class
+    EOS
+    
+    if FCGI::is_cgi?
+      yield ::CGI.new(*args)
+    else
+      exit_requested = false
+      FCGI::each {|request|
+        $stdout, $stderr = request.out, request.err
+
+        yield CGI.new(request, *args)
+        
+        request.finish
+      }
+    end
+  end
+end</code></pre></figure>
+
+<p>これを見ると、cgi.rb の設計に引きずられて他のライブラリの設計もまずくなるという悪循環を感じます<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。
+これが、たとえば CGI クラスが CGI#env_table() や CGI#stdinput() や CGI#stdoutput() ではなく、インスタンス変数を使うように作られていたら、fcgi.rb がこんなに悲惨なコードになることはなかったでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class CGI
+  def initialize(type="query", opts={})
+    ## @env, @stdin, @stdout, @stderr を用意して、
+    ## メソッド env_table, stdinput, stdoutput を廃止
+    @env    = opts[:env] || ENV
+    @stdin  = opts[:stdin] || $stdin
+    @stdout = opts[:stdout] || $stdout
+    @stderr = opts[:stdout] || $stderr
+    ...
+  end
+  ...</code></pre></figure>
+
+<p>cgi.rb が作られたときに、CGI 以外のプロトコルを考慮していなかったのは仕方ないことです。
+しかし今もなお対応できないのは問題だと思います。
+cgi.rb でうまく対応できないというのであれば、やはり「次世代 cgi.rb」が求められます。</p>
+
+<p>なお複数のプロトコルをサポートするためのライブラリとして、<a href="http://rack.rubyforge.org/">Rack</a> が注目されています。<a href="http://rubywaves.com/">Waves</a> などのフレームワークでも採用されているので、興味のある人は Rack を調べてみてください。</p>
+
+<h3 id="テストスクリプトが用意されていない">テストスクリプトが用意されていない</h3>
+
+<p>cgi.rb には、テストスクリプトが用意されていません。
+そのため、バグを修正するためにパッチを適用したとしても、別のバグを発生させていないかをチェックすることができません。</p>
+
+<p>cgi.rb が開発された当時はまだ UnitTest が一般的ではなかったので仕方ないとはいえ、いまだに用意されていないのは大きな問題です。</p>
+
+<p>筆者は cgi.rb で使えるテストスクリプトを用意したので、それを Ruby 本体にいれてくれるよう<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/44331">提案した</a>のですが、何の反応もありませんでした。
+残念です。</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>cgi.rb は、Ruby による Web プログラミングを促した、大変功績のあるライブラリです。
+と同時に、数々の問題点を内包しているのも事実です。</p>
+
+<p>本稿では、cgi.rb における問題点を具体的に挙げてみました。
+またそれらに対する解決策を提案しました。
+cgi.rb にとって代わる「次世代 cgi.rb」を作ろうという方は、参考にしてください。</p>
+
+<p>なお筆者は cgi.rb を書き直した <a href="http://cgialt.rubyforge.org/">CGIAlt</a> というライブラリを開発しています<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。
+本稿の内容は、この CGIAlt を開発したときの経験がもとになっています。
+興味のある人は使ってみてください。</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>[ruby-dev:33606] で提案済みですが、採用には至ってません。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>[ruby-dev:34049] で採用されました。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>[ruby-dev:34049] で採用されました。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>[ruby-dev:33606] で提案済みですが、採用には至ってません。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>[ruby-dev:33606] で提案済みですが、採用には至ってません。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>ただし、FCGI::each_cgi() の中でクラス定義を毎回 eval() する必要はないように思います。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>必ずしも cgi.rb だけのせいとは言いませんが。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>CGIAlt は、cgi.rb との互換性を保つという制限があるため、残念ながら次世代 cgi.rb にはなり得ません。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

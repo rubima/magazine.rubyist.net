@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 1</title>
+  <meta name="description" content="目次ページへ次ページへ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0012/0012-CGIProgrammingForRubyBeginners-1.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 1</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0012/0012-CGIProgrammingForRubyBeginners-1.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 1" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0012/0012-CGIProgrammingForRubyBeginners-1.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0012/0012-CGIProgrammingForRubyBeginners-1.html" data-text="Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 1">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners.html">目次ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-2.html">次ページへ</a></p>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#対象読者" id="markdown-toc-対象読者">対象読者</a></li>
+      <li><a href="#準備" id="markdown-toc-準備">準備</a></li>
+    </ul>
+  </li>
+  <li><a href="#今号で作る-cgi-プログラム" id="markdown-toc-今号で作る-cgi-プログラム">今号で作る CGI プログラム</a></li>
+  <li><a href="#続-ruby-プログラムに馴れよう" id="markdown-toc-続-ruby-プログラムに馴れよう">続 Ruby プログラムに馴れよう</a></li>
+  <li><a href="#前号の復習" id="markdown-toc-前号の復習">前号の復習</a></li>
+  <li><a href="#データの集まり---array-と-hash" id="markdown-toc-データの集まり---array-と-hash">データの集まり - Array と Hash</a>    <ul>
+      <li><a href="#array" id="markdown-toc-array">Array</a>        <ul>
+          <li><a href="#array-の中のデータへのアクセス" id="markdown-toc-array-の中のデータへのアクセス">Array の中のデータへのアクセス</a></li>
+          <li><a href="#array-にデータを追加" id="markdown-toc-array-にデータを追加">Array にデータを追加</a></li>
+          <li><a href="#array-の中のデータの個数を調べる---length" id="markdown-toc-array-の中のデータの個数を調べる---length">Array の中のデータの個数を調べる - length</a></li>
+        </ul>
+      </li>
+      <li><a href="#hash" id="markdown-toc-hash">Hash</a>        <ul>
+          <li><a href="#hash-の中のデータへのアクセス" id="markdown-toc-hash-の中のデータへのアクセス">Hash の中のデータへのアクセス</a></li>
+          <li><a href="#hash-にデータを追加" id="markdown-toc-hash-にデータを追加">Hash にデータを追加</a></li>
+        </ul>
+      </li>
+      <li><a href="#array-と-hash-の-each-命令" id="markdown-toc-array-と-hash-の-each-命令">Array と Hash の each 命令</a></li>
+    </ul>
+  </li>
+  <li><a href="#環境変数---env" id="markdown-toc-環境変数---env">環境変数 - ENV</a>    <ul>
+      <li><a href="#環境変数を見てみる" id="markdown-toc-環境変数を見てみる">環境変数を見てみる</a></li>
+      <li><a href="#環境変数の使い方" id="markdown-toc-環境変数の使い方">環境変数の使い方</a></li>
+      <li><a href="#環境変数-env-の中のデータを見てみる" id="markdown-toc-環境変数-env-の中のデータを見てみる">環境変数 ENV の中のデータを見てみる</a></li>
+    </ul>
+  </li>
+  <li><a href="#if-文" id="markdown-toc-if-文">if 文</a>    <ul>
+      <li><a href="#処理の流れを分岐させる" id="markdown-toc-処理の流れを分岐させる">処理の流れを分岐させる</a></li>
+      <li><a href="#if-文の使い方" id="markdown-toc-if-文の使い方">if 文の使い方</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>前号ではデータを表示する CGI プログラムを作りました。
+HTML を表示させたり、ランダムに画像を表示させたりと
+CGI プログラムを使う事で
+Web ページに動きが出てきたのが感じられたと思います。</p>
+
+<p>それはそれで面白いのですが、
+どのプログラムもプログラム側が一方的にデータを
+表示させていましたね。
+皆さんが普段利用する CGI プログラムでは
+プログラムが一方的にデータを表示するのではなく、
+Web ページの読者の投稿を受けたり、
+読者のリクエストによって表示するデータが変わったりします。
+要するに CGI プログラムと読者とやりとりがあるわけです。
+自分でそういう CGI プログラムを作れれば
+もっと面白くなりそうですよね。</p>
+
+<p>そこで、今号では読者からの投稿を受け取る
+CGI プログラムを作ってみましょう。
+CGI プログラムで読者からの投稿を
+受ける時には HTML フォームを使います。
+HTML フォームと CGI プログラムを組み合わせることで
+CGI プログラミングの幅が広がり、
+作れる CGI プログラムも増えてきます。</p>
+
+<h3 id="対象読者">対象読者</h3>
+
+<p>この記事は以下のような人を対象としています。</p>
+
+<ul>
+  <li><a href="/articles/0011/0011-CGIProgrammingForRubyBeginners.html">前号</a> の記事を読んだ人</li>
+  <li>HTML を書ける人</li>
+  <li>Windows 98/98SE/Me/2000/XP のいずれかを使っている人</li>
+</ul>
+
+<p>この連載は前号の記事を読んでいる人を対象として書かれています。
+今号を読む前に前号の内容を把握しておいて下さい。</p>
+
+<h3 id="準備">準備</h3>
+
+<p>必要なものはの下の 2 つです。</p>
+
+<ul>
+  <li>サーバー</li>
+  <li>Ruby</li>
+</ul>
+
+<p>この他に RDE を使います。
+これらの準備の方法は前号で述べたので、
+詳しくはそちらを参照してください。
+また、今号で使うプログラムを zip ファイルにまとめてあります。
+前号と同じようにダウンロードし C:\ に展開して下さい。
+<a href="/images/0012-CGIProgrammingForRubyBeginners-1/rubima012-cgi.zip">rubima012-cgi.zip</a></p>
+
+<h2 id="今号で作る-cgi-プログラム">今号で作る CGI プログラム</h2>
+
+<p>HTML フォームの使い方を知るには
+フォームを使った CGI プログラムを自分で書いてみるのが一番です。
+今号ではフォームを使った CGI プログラムを 3 つ作ります。
+3 つのプログラムを通じて HTML フォームの使い方に
+馴れていきましょう。
+3 つのプログラムは以下のようなものです。</p>
+
+<ul>
+  <li>「山彦もどき」</li>
+  <li>「山彦もどき改」</li>
+  <li>一行掲示板</li>
+</ul>
+
+<p>1 つ目の「山彦もどき」というのはフォームに書かれた内容をそのまま
+表示する CGI プログラムです。
+フォームに書かれた内容をそのまま返すくらい
+簡単と思われるかもしれませんが、
+CGI プログラムではなかなか難しいのです。
+ここでは CGI プログラムでフォームの内容を受け取る方法を学びます。
+フォームデータを処理するために文字列を分割する方法も学びます。</p>
+
+<p>2 つ目の「山彦もどき改」は「山彦もどき」の問題点を修正したものです。
+ここでは「山彦もどき」を修正するために
+CGI プログラミングを支援する仕組みを使います。
+この仕組みを使えば CGI プログラミングが楽になるので、
+使い方を是非覚えてもらいたいと思います。
+また、「山彦もどき改」には プログラムに
+ちょっとした仕掛けを 仕込んでみます。</p>
+
+<p>3 つ目は一行掲示板です。ごくごく簡単な掲示板を
+作成します。簡単なものとはいえ、立派な掲示板です。
+ここでは掲示板のおおよその構造について学びます。
+掲示板では投稿されたデータを保存したり表示したりするので、
+ファイルの読み書きの方法についても学びます。</p>
+
+<p>3 つとも前号よりかなり難しくなっていますが、
+ここを乗り越えれば皆さんが一般に目にする
+CGI プログラムに近いものを作れるようになります。
+是非チャレンジして下さい。</p>
+
+<h2 id="続-ruby-プログラムに馴れよう">続 Ruby プログラムに馴れよう</h2>
+
+<p>今号も CGI プログラムの説明を行う前に Ruby の機能の説明を行います。
+前号の知識では太刀打ち出来ない CGI プログラムが出てくるので、
+まずはそうしたプログラムを作るための Ruby の知識を身に付けておきます。</p>
+
+<p>プログラムが紹介された時には必ず自分で試してみて下さい。
+RDE を使えば簡単に試せます。
+Ruby に慣れるには、自分で試してみるのが一番です。</p>
+
+<h2 id="前号の復習">前号の復習</h2>
+
+<p>最初に<a href="/articles/0011/0011-CGIProgrammingForRubyBeginners.html">前号</a>の復習をしましょう。
+前号では下のような Ruby の機能を使いました。</p>
+
+<ul>
+  <li><a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-3.html">print, puts 命令</a></li>
+  <li><a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-3.html">文字列の使い方</a></li>
+  <li><a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-4.html">変数</a></li>
+  <li><a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-4.html">変数の文字列埋め込み</a></li>
+  <li><a href="/articles/0011/0011-CGIProgrammingForRubyBeginners-4.html">rand 命令</a></li>
+</ul>
+
+<p>print, puts はデータを表示させる命令でしたね。
+前号ではその print, puts を使って文字列や数値を表示させる
+CGI プログラムを作りました。
+変数というのはデータへ目印を付けて、
+後でそのデータが必要になった時に使いまわしが出来るという機能でした。
+変数の文字列埋め込みや rand 命令は今号でも使います。
+どんな機能だったか覚えていますか？</p>
+
+<p>上の各項目はそれぞれの機能を説明したページへのリンクになっています。
+もし、使い方に不安があるようでしたら、
+リンク先の説明を読み直してみて下さい。</p>
+
+<h2 id="データの集まり---array-と-hash">データの集まり - Array と Hash</h2>
+
+<p>ここではデータの集まりを扱う方法を紹介します。
+そのためによく使われるのが Array や Hash です。
+この 2 つは数値や文字列等と同じで Ruby のデータの一種なのですが、
+大きく異なる点が 1 つあります。
+それは <strong>複数のデータをまとめて扱うことが出来る</strong> という点です。
+言葉だけではなかなか把握しづらいでしょうから、
+これから順に説明していきます。</p>
+
+<p>Array や Hash が必要な場面はたくさんあります。
+その 1 つが掲示板で多数のメッセージを処理する時です。
+仮に表示したいメッセージが 100 個あったとして
+100 個すべてを表示するにはどうしたら良いでしょうか？
+print を使えばそれぞれのメッセージを表示することは可能です。
+しかし、そのやり方だと print “hogehoge” のような行を 100 回も
+書くことになってしまい、とても面倒ですね。
+そんな時に Array や Hash が役立ちます。</p>
+
+<h3 id="array">Array</h3>
+
+<p>Array がデータの集まりだというのは先程言ったとおりです。
+でも、データの集め方には色々な方法がありますよね。
+<strong>Array の場合は整理番号の付いた箱にデータが集められている</strong>
+と考えれば良いでしょう。</p>
+
+<p>抽象的な話をしていても難しいだけなので、
+実際に Array を使ったプログラムを書いてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">[10,20,30]</code></pre></figure>
+
+<p>[10,20,30] というのが Array です。
+[] で囲まれた部分が Array になり、
+Array の中のデータは「,」で区切られます。
+この場合は数値の 10 と 20 と 30 が 1 つの Array にまとめられています。</p>
+
+<p>この Array を整理番号と一緒に図で表してみましょう。
+下図のようになります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>20</td>
+      <td>30</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>上の段が整理番号で下の段が整理番号に対応するデータです。
+整理番号の 0 には 10 が、整理番号の 1 には 20 が、
+整理番号の 2 には 30 が対応することが分かりますね。</p>
+
+<p>Array の整理番号は 0 から始まり、
+中に含まれるデータが 1 つ増えると整理番号も 1 つ増えます。
+そのため最後の整理番号はデータの個数より必ず 1 小さくなります。
+例えば、Array に含まれるデータの個数が
+10 個なら整理番号は 0 から9 までの範囲になりますし、
+データの個数が 100 個なら 0 から 99 までの範囲になります。</p>
+
+<p>整理番号の始まりが 1 でないと
+嫌だという人もいるでしょうが、諦めて下さい。
+そのうち馴れます。
+馴れてくれば 0 から始まらない方が
+気持ち悪いと感じるようになります
+(筆者もそのうちの一人です)。</p>
+
+<p>ところで、今まで整理番号という言葉を使ってきましたが、
+これは正しい用語ではありません。
+<strong>Array では整理番号に相当する数値を 添字 と言います</strong>。
+以後の説明では添字で統一するので、是非覚えて下さい。</p>
+
+<h4 id="array-の中のデータへのアクセス">Array の中のデータへのアクセス</h4>
+
+<p><strong>Array の中のデータには [] と添字を使ってアクセスします</strong>。
+下のようなプログラムを実行すると
+添字の 0 に対応する 10 が表示されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = [10,20,30]
+puts a[0]</code></pre></figure>
+
+<p>Array はデータの一種ですから、
+変数で目印を付けることが出来ます
+(変数がデータへの目印だということを覚えていますか？)。
+変数 a の目印が付いているデータは [10,20,30] ですから、
+2 行目の a[0] は [10,20,30] の添字 0 のデータ (つまり、10) を意味します。</p>
+
+<p>上のプログラムの 1 行目を
+前号のように図を使って表すと下のようになります。
+少しは分かりやすいでしょうか？
+<img src="/images/0012-CGIProgrammingForRubyBeginners-1/array.png" alt="array.png" /></p>
+
+<p>今度は Array の中のデータを順番に表示させてみましょう。
+上の例であれば Array の中には 3 個の数値が
+入っているので、0, 1, 2 の添字を使って
+データにアクセスします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = [10,20,30]
+puts a[0]
+puts a[1]
+puts a[2]</code></pre></figure>
+
+<p>今度はさっきと逆の順番で表示してみましょう。
+簡単ですね。
+先程のプログラムの 2 行目と 4 行目を入れ換えるだけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = [10,20,30]
+puts a[2]
+puts a[1]
+puts a[0]</code></pre></figure>
+
+<p>Array の中に含まれるデータは数値だけではありません。
+また、違う種類のデータとの混在も可能です。
+下の例では数値と文字列を混在させています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = ["url", 2005, 12, "rubima", "http://www.ruby-lang.org/"]
+puts a[0]
+puts a[1]
+puts a[2]
+puts a[3]
+puts a[4]</code></pre></figure>
+
+<h4 id="array-にデータを追加">Array にデータを追加</h4>
+
+<p>これまで Array の中のデータにアクセスする方法を見てきました。
+次は新しいデータを Array に追加してみましょう。
+<strong>Array にデータを追加する時は 「&lt;&lt;」を使います</strong>。
+Array の箱の中に「&lt;&lt;」でデータを押し込むというイメージを持てば
+覚えやすいと思います。
+実際に「&lt;&lt;」を使って Array にデータを追加にしてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = []
+a &lt;&lt; 3
+a &lt;&lt; 4
+puts a[0]
+puts a[1]</code></pre></figure>
+
+<p>上のプログラムは
+データの無い空の Array に 3, 4 を追加しています。
+1 行目の [] は空の Array を表し、
+その行で空の Array に変数 a の目印を付けています。
+その後の 2, 3 行目では「&lt;&lt;」を使って
+それぞれ数値の 3, 4 を Array に追加しています。
+その結果、空だった Array が
+4 行目では [3,4] になります。</p>
+
+<p>他の例も試してみましょう。
+下のようにデータを追加する時にも違う種類のデータを混在出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = ["るびま", "Ruby", 1]
+a &lt;&lt; "Rubima"
+a &lt;&lt; "CGI"
+a &lt;&lt; 2005</code></pre></figure>
+
+<h4 id="array-の中のデータの個数を調べる---length">Array の中のデータの個数を調べる - length</h4>
+
+<p>最後に Array の中のデータの個数を調べる方法を紹介しましょう。
+Array のデータの個数が分からないと、
+どの数値が添字として使えるのか分かりませんよね。</p>
+
+<p>下の例であれば変数 a の目印が付いている Array 
+(つまり、[10,20,30]) には 3 個のデータが含まれています。
+この場合、3 という数値が欲しいわけです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = [10,20,30]</code></pre></figure>
+
+<p>結論から言えば
+<strong>[10,20,30] に legnth 命令を実行してもらうことでデータの個数を知ることが出来ます</strong>。
+データに命令を実行してもらうというと
+ちょっと変な感じがするかもしれませんが、
+<strong>Ruby のデータ (数値、文字列、Array、Hashなどなど) はデータ自身が実行出来る命令を持っています</strong>。
+Ruby のデータは皆さんが考えているよりは
+ずっと賢いデータなんですね。
+このことは今後重要な意味を持ってきます。
+余裕のある人は覚えておきましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = [10,20,30]
+puts a.length</code></pre></figure>
+
+<p>上のプログラムの「.」には
+データに命令を実行しろという意味があり、
+実行して欲しい命令を「.」の後ろに書きます。
+そのため上のプログラムを Ruby の立場から解釈すれば
+[10,20,30] に length を実行して欲しいという意味になります。
+[10,20,30] は length という命令で何をするのか知っていて、
+ちゃんと自分に含まれるデータの個数を教えてくれます。
+この場合は 3 ですね。
+これで添字に使える範囲が 0 から 2 までと分かります。</p>
+
+<p>他の Array でも試してみましょう。
+プログラムとその実行結果を下に示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts [33, 22, 11].length
+puts ["rubima", "cgi", "url", "html"].length
+puts ["Ruby", "CGI", 2005, "http://jp.rubyist.net/magazine/", "number 2"].length</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">3
+4
+5</code></pre></figure>
+
+<p>Array に含まれるデータの個数が表示されていますね。</p>
+
+<h3 id="hash">Hash</h3>
+
+<p>Hash も Array と同じくデータの集まりです。
+Hash と Array では細かい違いがいくつかありますが、
+ここでは大きな違いを 1 つ説明します。
+それは <strong>Hash では Array で言うところの添字に自分の好きなデータを使える</strong>
+という点です。実際の例を見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{"name" =&gt; "rubima", "number" =&gt; 12, "url" =&gt; "http://jp.rubyist.net/magazine/" }</code></pre></figure>
+
+<p>Ruby では {} で囲まれた部分が Hash になります。
+「=&gt;」の左と右のデータが組になっていて、
+それぞれの組が Array と同じく「,」で区切られています。
+「=&gt;」の左側のデータが Array の添字に相当し、
+右側のデータがその添字に対応するデータになります。
+この Hash の場合なら下の 3 つの組が含まれていることになります。</p>
+
+<ul>
+  <li>“name” には “rubima”</li>
+  <li>“number”  には 12</li>
+  <li>“url”  には “<a href="http://jp.rubyist.net/magazine/">http://jp.rubyist.net/magazine/</a>”</li>
+</ul>
+
+<p>この Hash を図で表してみましょう。
+上の段が Array で言うところの添字で
+下の段がその添字に対応するデータです。
+今回の例では添字に相当する部分が文字列
+(“name”, “number”, “url”) になっていますから、
+数値以外のデータも使えることが分かります。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>“name”</td>
+      <td>“number”</td>
+      <td>“url”</td>
+    </tr>
+    <tr>
+      <td>“rubima”</td>
+      <td>12</td>
+      <td>“<a href="http://jp.rubyist.net/magazine/">http://jp.rubyist.net/magazine/</a>”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ここでまた言葉の説明をしておきましょう。
+Array では図の上の段のデータのことを添字と言いましたが、
+<strong>Hash の場合、上の段のデータのことをキー、下の段のデータのことをバリューと言います</strong>。
+これも覚えて下さい。</p>
+
+<h4 id="hash-の中のデータへのアクセス">Hash の中のデータへのアクセス</h4>
+
+<p>Hash の紹介が済んだところで
+そろそろ Hash を使ったプログラムを書いてみましょう。
+最初は Hash に含まれるデータを表示させてみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = {"name" =&gt; "rubima", "number" =&gt; 12, "url" =&gt; "http://jp.rubyist.net/magazine/" }
+puts a["name"]
+puts a["number"]
+puts a["url"]</code></pre></figure>
+
+<p>順に rubima, 12, <a href="http://jp.rubyist.net/magazine/">http://jp.rubyist.net/magazine/</a> と表示されますね。
+上のプログラムを見れば分かると思いますが、
+<strong>Hash の中のデータにアクセスするためには [] とキーを使います</strong>。
+添字がキーに変わっただけでデータへのアクセス方法は
+Hash も Array も同じですね。</p>
+
+<h4 id="hash-にデータを追加">Hash にデータを追加</h4>
+
+<p>次に Hash に新しいデータを登録してみましょう。
+下のプログラムは変数 a の目印の付いた Hash に
+データを追加しています。
+1 行目で Hash を用意し、
+2 行目で追加の処理が行われています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = {"name" =&gt; "rubima" }
+a["number"] = 12</code></pre></figure>
+
+<p>[] を使ってキー (この場合は “number”) とバリュー (この場合は 12) の組を
+「=」で登録します。
+この結果、変数 a の目印の付いた Hash には
+「”name” と “rubima”」「”number” と 12」という対応が含まれることになります。</p>
+
+<p>もう 1 つ別の例を見てみましょう。
+下のプログラムはデータの無い空の Hash にデータを登録していくプログラムです。
+{} は空の Hash を表します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = {}
+a["hoge"] = 3
+a["bar"] = 2
+a["baz"] = 1
+a[3] = "hoge"
+a[2] = "bar"
+a[1] = "baz"</code></pre></figure>
+
+<p>1, 4, 7 行目が実行された後、
+変数 a の Hash を図で表すと下のようになります。
+Hash のキーにもバリューにも違う種類のデータを使用可能なことが分かりますね。
+図ではなんとなく順番に並んでいるように見えますが、
+それは筆者がそのように並べただけで、
+実際の順番は滅茶苦茶です。</p>
+
+<p>余裕のある人は print を使って
+Hash の中のデータを表示させてみて下さい。</p>
+
+<p>1 行目</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>4 行目</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>“hoge”</td>
+      <td>“bar”</td>
+      <td>“baz”</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>7 行目</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>“hoge”</td>
+      <td>“bar”</td>
+      <td>“baz”</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>“hoge”</td>
+      <td>“bar”</td>
+      <td>“baz”</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="array-と-hash-の-each-命令">Array と Hash の each 命令</h3>
+
+<p>これまで Array と Hash を使って、
+データをまとめる方法を見てきました。
+Array や Hash にまとめられたデータを表示したり、
+データを追加したり出来るようになったと思います。
+でも、こうした処理だけでは
+100 個のメッセージを扱うのは大変そうです。</p>
+
+<p>そういう時のために Array や Hash には専用の命令があり、
+その命令を使う事でたくさんのデータを扱うのが楽になります。
+それらの命令の中で最もよく使われるのが each 命令です。
+each 命令の使い方は難しいので、
+ここでは紹介だけにとどめますが、
+Array や Hash を使ってデータをまとめることの意味が実感できると思います。</p>
+
+<p>下のプログラムは Array の中のデータをすべて表示させます。
+Array に each 命令を実行してもらうことで
+何回も print や puts を書かないで済ませることが出来ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> [10,12,13,15,3,34,"abc",12,87,23,"dddd",456,7345].each do |i|
+   puts i
+ end</code></pre></figure>
+
+<p>次は Hash です。
+次のプログラムは Hash の中に含まれるキーとバリューを表示させます。
+こちらも Hash に each 命令を実行してもらうことで
+Hash の中のキーとバリューをすべて表示させます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">{1=&gt;2, "aaa"=&gt;"AAAA", "rubima" =&gt; "http://jp.rubyist.net/magazine/"}.each do |k, v|
+  puts k
+  puts v
+end</code></pre></figure>
+
+<p>each の詳しい使い方はこの連載で後ほど説明します。
+Ruby の特徴の 1 つが each に見られるのですが、
+その説明は皆さんにはまだ少し難しいと思います。
+each は後の楽しみとしてとっておきましょう。</p>
+
+<h2 id="環境変数---env">環境変数 - ENV</h2>
+
+<p>次に紹介するのは環境変数というデータです。
+フォームを使った CGI プログラムでは環境変数が頻繁に使用されるのですが、
+その説明はまた後ですることにして、
+ここでは環境変数のことだけを紹介します。
+一言でいうと
+__環境変数というのは OS やプログラムを動かすためのデータが格納されているところ__です。</p>
+
+<h3 id="環境変数を見てみる">環境変数を見てみる</h3>
+
+<p>まずは皆さんがお使いの Windows にどんな環境変数が
+あるのか見てみましょう。
+Windows では環境変数はあまり利用されないので、
+ほとんどの方は環境変数なんて使ったことも見たことも無いと思います。
+筆者も Windows だけを使っている間は
+環境変数なんて存在すら知りませんでした。</p>
+
+<p>環境変数を見る方法は Windows のバージョンによって違います。
+Windows 2000/XP であれば スタートメニュー  → コントロールパネル → システム 
+とたどっていって、システムのプロパティのダイアログを表示させます。
+XP でコントロールパネルのカテゴリ表示をしている人は
+スタートメニュー → コントロールパネル → パフォーマンスとメンテナンス → システム 
+とたどらなければなりません。
+下図は XP でパフォーマンスとメンテナンスの画面を出したところです。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-1/performance_xp.jpg" alt="performance_xp.jpg" /></p>
+
+<p>システムのプロパティのダイアログが出てきたら
+詳細設定タブ (Windows 2000では詳細タブ) をクリックし、
+その中の環境変数ボタンをクリックします。
+XP と 2000では環境変数のボタンの位置が違うので、
+注意してください。</p>
+
+<p>Windows XP
+<img src="/images/0012-CGIProgrammingForRubyBeginners-1/details_xp.jpg" alt="details_xp.jpg" /></p>
+
+<p>Windows 2000
+<img src="/images/0012-CGIProgrammingForRubyBeginners-1/env_w2k_1.jpg" alt="env_w2k_1.jpg" /></p>
+
+<p>環境変数ボタンを押すと、
+現在使われている環境変数の一覧が出てきます。
+システム環境変数とユーザー環境変数の 2 つに分かれていますが、
+それは無視してもらって結構です。
+下の図は Windows 2000 の場合です。
+<strong>編集や削除のボタンがありますが、この 2 つには無闇に触らないようにしましょう</strong>。
+最悪の場合、Windows が動かなくなるかもしれません
+(怖いので筆者は試していません…)。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-1/env_w2k_2.jpg" alt="env_w2k_2.jpg" /></p>
+
+<p>「変数」や「値」という項目があって、その下に文字が並んでいます。
+例えば、ユーザー環境変数の「変数」には PATH や TMP といった項目があり、
+その横には「値」が表示されています
+(図ではデータを塗りつぶしています)。</p>
+
+<p>これらは組を作っています。その説明はのちほど行います。
+とりあえずこんな値があるんだということだけ理解して下さい。</p>
+
+<h3 id="環境変数の使い方">環境変数の使い方</h3>
+
+<p>環境変数の使い方は OS やプログラムが決める事なので、
+その使用方法は多岐にわたります。
+そのため環境変数の使い方をこうだと決め付けることが出来ません。
+代わりにここでは環境変数の使用例を 2 つほど紹介しましょう。</p>
+
+<p>1 つ目は Ruby の翻訳機です
+(意外かもしれませんが、Ruby の翻訳機もプログラムの 1 つです)。
+One-Click Ruby Installer で Ruby をインストールした方の Windows には、
+システム環境変数のところに RUBYOPT という項目があるはずです。
+これは Ruby プログラムが実行される時に Ruby が参照する環境変数の 1 つです。
+Ruby プログラムが実行される時、Ruby は RUBYOPT で
+指定された名前のファイルを読み込みにいきます。
+(Ruby がファイルを読み込んだらどうなるとか、
+詳細は今は分からなくても構いません。
+環境変数にこんな使い方があるんだということを掴んで下さい)。</p>
+
+<p>もう 1 つの例は環境変数 TMP です。
+OS や各種プログラムは環境変数の TMP の「値」のフォルダーに
+一時的なファイルを置きます。</p>
+
+<p>下図は環境変数 TMP に
+C:\Documents and Settings\administrator\Local Settings\Temp
+が指定されている時のフォルダーの内容です。
+C:\Documents and Settings\administrator\Local Settings\Temp
+のフォルダーが一時ファイル置き場として使われていて、
+色々なファイルがあります。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-1/env_tmp.jpg" alt="env_tmp.jpg" /></p>
+
+<h3 id="環境変数-env-の中のデータを見てみる">環境変数 ENV の中のデータを見てみる</h3>
+
+<p>Ruby のプログラムからも環境変数のデータを使えます。
+その時には ENV を使います。
+ENV は変数のようなもので、あるデータへの目印になっています。
+何のデータに目印が付いているのかというと、それは環境変数そのものです。</p>
+
+<p>まずは環境変数 ENV について詳しく見てみましょう。
+環境変数 ENV には「名前」とその「名前」に対応する「値」が組になって含まれています。
+例えば、RUBYOPT の場合は「RUBYOPT」という「名前」に
+「rubygems rubygems」という「値」が組になります。
+この関係は Hash のキーとバリューに似ていて、
+環境変数の「名前」が Hash のキーに、「値」がバリューに対応します。
+環境変数にはこうした「名前」と「値」の組がたくさん含まれています。</p>
+
+<p>先程の RUBYOPT や TMP を例に取れば、
+下のような組が ENV に含まれると考えられます。
+「C:\Documents …」 の「\」が「/」に変わっていますが、それは気にしないで下さい。</p>
+
+<ul>
+  <li>“RUBYOPT” と “rubygems rubygems “</li>
+  <li>“TMP” と “C:/Documents and Settings/administrator/Local Settings/Temp”</li>
+</ul>
+
+<p>図にすると下のようになります。
+イメージとして ENV は Hash に似ていますね。</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>“RUBYOPT”</td>
+      <td>“TMP”</td>
+    </tr>
+    <tr>
+      <td>“rubygems rubygems “</td>
+      <td>“C:/Documents and Settings/administrator/Local Settings/Temp”</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>先程表示させた環境変数ダイアログでは
+環境変数が「変数」と「値」の組として表示されていますが、
+それだと Ruby の変数と紛らわしいので、
+この連載では環境変数の説明の際に「変数」の代わりに「名前」を使うことにします。</p>
+
+<p>次に環境変数のデータを Ruby プログラムから表示させてみます。
+下のプログラムは環境変数の RUBYOPT の「名前」に対応する「値」を表示させます
+(実際に表示される値は “rubygems rubygems “ です)。
+RDE で試してみて下さい。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> puts ENV["RUBYOPT"]</code></pre></figure>
+
+<p><strong>Ruby から ENV を使う時も「名前」と [] を使って「値」にアクセスします</strong>。
+データへのアクセス方法も環境変数と Hash はよく似ていますね。
+環境変数には文字列が格納されていて、
+ENV から取り出した「値」には文字列をつなげたり出来ます。
+試しに RUBYOPT の「値」に “rubyruby” をつなげてみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = ENV["RUBYOPT"] + "rubyruby"
+puts a</code></pre></figure>
+
+<p>他の環境変数も表示させてみます。
+下のプログラムはそれぞれ TMP, PATH, OS に
+対応する環境変数の「値」を表示します。
+環境変数ダイアログで見た「値」と一致しているかどうか確認してみて下さい。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">puts ENV["TMP"]
+puts ENV["PATH"]
+puts ENV["OS"]</code></pre></figure>
+
+<p>ここでは環境変数の説明を行いました。
+最初に言ったように環境変数は
+フォームを使った CGI プログラムで必要になります。
+CGI プログラムを作る時に「ENV って何？」とならないように
+ENV のデータへのアクセス方法を覚えておいて下さい。</p>
+
+<h2 id="if-文">if 文</h2>
+
+<p>Ruby の勉強でもうお腹いっぱいという人は
+ここを飛ばしてもらって結構です。
+ただし、後で必要になるので、その時にはここに戻ってきて読み直して下さい。</p>
+
+<p>データの値によって処理を変えたいというのはよくある事です。
+現在の時刻によって挨拶の言葉を変えたり、
+投稿内容のタグを消したり、という
+CGI プログラムは Web サイトを回れば時々見かけます。</p>
+
+<p>こういう時に必要となるのが if 文です。
+if 文を使うと指定した条件に合わせて処理の内容を
+変化させることが出来ます。</p>
+
+<h3 id="処理の流れを分岐させる">処理の流れを分岐させる</h3>
+
+<p>試しに if 文を使ってみましょう。
+下のプログラムを実行すると、「a」 は表示されますが、
+「b」 は表示されません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">a = 1
+if a == 1
+  print "a"
+else
+  print "b"
+end</code></pre></figure>
+
+<p>これは if 文によって処理の流れが分岐したからです。
+通常、Ruby のプログラムは上から順番に実行されますが、
+<strong>if 文を使うことで処理の流れを分岐させる事が出来ます</strong>。</p>
+
+<p>プログラムの内容はすぐ後で説明するので、
+まずは処理の流れを追ってみましょう。
+上のプログラムを図で示してみました。
+図の上から順番に処理が実行されていきます。
+最初は 1 行目の a = 1 が実行され、
+次の 2 行目の if 文が実行されます。
+この図では 2 行目が赤丸で表されていて、
+ここで処理が分岐します。
+今回の場合は左側へ処理の流れが進んで 3 行目が実行されて、
+「a」が表示されます。
+右側は無視されるので、「b」は表示されません。
+このように処理を分岐させたい時に if 文を使います。
+<img src="/images/0012-CGIProgrammingForRubyBeginners-1/if.jpg" alt="if.jpg" /></p>
+
+<h3 id="if-文の使い方">if 文の使い方</h3>
+
+<p>if 文の使い方は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if (条件)
+  (処理の内容 1)
+end</code></pre></figure>
+
+<p>もしくは</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">if (条件)
+  (処理の内容 1)
+else
+  (処理の内容 2)
+end</code></pre></figure>
+
+<p>とします。</p>
+
+<p>(条件) を満たしている時に (処理の内容 1) が実行されます。
+else の付いた形では (条件) を満たしていない時、
+(処理の内容 1) の代わりに (処理の内容 2) が実行されます。
+(条件) を満たさない時に処理することが無ければ
+else とそれに続く処理の内容を省くことが出来ます。</p>
+
+<p>上のプログラムの場合、条件というのは赤丸の a == 1 です。
+これは「変数 a の目印の付いたデータが 1 と等しいならば」という意味です。
+<strong>「==」は Ruby では等しいという意味があります</strong>。
+上のプログラムでは変数 a は 1 への目印ですので、
+if 文の条件を満たすことになり、
+(処理の内容 1) にあたる 3 行目の print “a” が実行されます。</p>
+
+<p>試しに a = 1 の行を a = 2 に変えて実行してみて下さい。
+今度は b が表示されますね。
+変数 a が 2 への目印になると a == 1 が正しくなくなり、
+if 文の条件を満たさなくなって (処理の内容 2) の
+5 行目が実行されます。</p>
+
+<p>if 文は CGI プログラムの色々な場面で活躍します。
+例えば、if 文を使ってフォームのデータが
+何らかの条件と合致するかを調べれば、
+フォームのデータに合わせて処理を分岐させることが可能になります。</p>
+
+<p><a href="/articles/0012/0012-CGIProgrammingForRubyBeginners.html">目次ページへ</a>
+<a href="/articles/0012/0012-CGIProgrammingForRubyBeginners-2.html">次ページへ</a></p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

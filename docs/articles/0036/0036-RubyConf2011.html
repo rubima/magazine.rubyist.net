@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RubyConf2011レポート</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0036/0036-RubyConf2011.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>RubyConf2011レポート</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0036/0036-RubyConf2011.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RubyConf2011レポート" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0036/0036-RubyConf2011.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0036/0036-RubyConf2011.html" data-text="RubyConf2011レポート">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#1日目" id="markdown-toc-1日目">1日目</a>    <ul>
+      <li><a href="#how-getting-buff-can-make-you-a-better-rubyist" id="markdown-toc-how-getting-buff-can-make-you-a-better-rubyist">How Getting Buff Can Make You a Better Rubyist</a></li>
+      <li><a href="#implementation-of-ruby-193-and-later" id="markdown-toc-implementation-of-ruby-193-and-later">Implementation of Ruby 1.9.3 and later</a></li>
+      <li><a href="#writing-solid-ruby-code" id="markdown-toc-writing-solid-ruby-code">Writing Solid Ruby Code</a>        <ul>
+          <li><a href="#assert-yourself" id="markdown-toc-assert-yourself">Assert Yourself</a></li>
+          <li><a href="#fortify-your-subsystems" id="markdown-toc-fortify-your-subsystems">Fortify your subsystems</a></li>
+          <li><a href="#step-through-your-code" id="markdown-toc-step-through-your-code">Step through your code</a></li>
+          <li><a href="#candy-machine-interfaces" id="markdown-toc-candy-machine-interfaces">Candy Machine Interfaces</a></li>
+          <li><a href="#risky-business" id="markdown-toc-risky-business">Risky Business</a></li>
+          <li><a href="#treacheries-of-the-trace" id="markdown-toc-treacheries-of-the-trace">Treacheries of the Trace</a></li>
+          <li><a href="#rest-is-attitude" id="markdown-toc-rest-is-attitude">Rest is Attitude</a></li>
+        </ul>
+      </li>
+      <li><a href="#blueprint-configuration-management-for-busy-people" id="markdown-toc-blueprint-configuration-management-for-busy-people">Blueprint: configuration management for busy people</a></li>
+      <li><a href="#matzキーノート-ruby-everywhere" id="markdown-toc-matzキーノート-ruby-everywhere">matzキーノート “Ruby Everywhere”</a></li>
+      <li><a href="#powerful-but-easy-data-visualization-with-the-graph-gem" id="markdown-toc-powerful-but-easy-data-visualization-with-the-graph-gem">Powerful (but easy) Data Visualization with the Graph Gem</a></li>
+    </ul>
+  </li>
+  <li><a href="#2日目" id="markdown-toc-2日目">2日目</a>    <ul>
+      <li><a href="#mongodb-to-mysql-the-how-and-the-why-sarah-mei" id="markdown-toc-mongodb-to-mysql-the-how-and-the-why-sarah-mei">MongoDB to MySQL: the How and the Why (Sarah Mei)</a></li>
+      <li><a href="#lightning-talks" id="markdown-toc-lightning-talks">Lightning Talks</a>        <ul>
+          <li><a href="#eric-hodel-rdoc" id="markdown-toc-eric-hodel-rdoc">Eric Hodel, “RDoc”</a></li>
+          <li><a href="#alex-sharp-bldr---a-minimalist-json-templating-dsl" id="markdown-toc-alex-sharp-bldr---a-minimalist-json-templating-dsl">Alex Sharp, “Bldr - A minimalist JSON templating DSL”</a></li>
+          <li><a href="#ken-robertson-metis---merging-nagios-ruby-and-tdd-to-make-your-systems-safer" id="markdown-toc-ken-robertson-metis---merging-nagios-ruby-and-tdd-to-make-your-systems-safer">Ken Robertson, “Metis - Merging Nagios, Ruby, and TDD to make your systems safer”</a></li>
+          <li><a href="#ray-hightower-four-steps-five-minutes-based-on-steve-blanks-book" id="markdown-toc-ray-hightower-four-steps-five-minutes-based-on-steve-blanks-book">Ray Hightower, “Four Steps, Five Minutes (Based on Steve Blank’s book.)”</a></li>
+          <li><a href="#ernie-miller-you-should-write-a-ruby-gem" id="markdown-toc-ernie-miller-you-should-write-a-ruby-gem">Ernie Miller, “You Should Write a Ruby Gem”</a></li>
+          <li><a href="#corey-haines-what-madness-have-i-unleashed-twitterbots-made-easy" id="markdown-toc-corey-haines-what-madness-have-i-unleashed-twitterbots-made-easy">Corey Haines, “What madness have I unleashed (twitterbots made easy)”</a></li>
+          <li><a href="#aaron-patterson-betabrite-led-sign" id="markdown-toc-aaron-patterson-betabrite-led-sign">Aaron Patterson, “BetaBrite LED sign”</a></li>
+          <li><a href="#tim-connor-company_fitshould_not--monoculture" id="markdown-toc-tim-connor-company_fitshould_not--monoculture">Tim Connor, “Company_fit.should_not == monoculture”</a></li>
+          <li><a href="#jonan-scheffler-you-are-going-to-die" id="markdown-toc-jonan-scheffler-you-are-going-to-die">Jonan Scheffler, “You are going to die”</a></li>
+          <li><a href="#phil-nash-stop-building-features" id="markdown-toc-phil-nash-stop-building-features">Phil Nash, “Stop building features”</a></li>
+          <li><a href="#coby-randquist-regional-ruby-conferences---tones--flavors" id="markdown-toc-coby-randquist-regional-ruby-conferences---tones--flavors">Coby Randquist, “Regional Ruby Conferences - Tones &amp; Flavors”</a></li>
+          <li><a href="#gary-bernhardt-raptor" id="markdown-toc-gary-bernhardt-raptor">Gary Bernhardt, “Raptor”</a></li>
+          <li><a href="#michael-bumann-awesomebotfactory" id="markdown-toc-michael-bumann-awesomebotfactory">Michael Bumann, “Awesomebotfactory”</a></li>
+          <li><a href="#joshua-ballanco-keyword-8211-a-new-gem-for-keyword-method-arguments" id="markdown-toc-joshua-ballanco-keyword-8211-a-new-gem-for-keyword-method-arguments">Joshua Ballanco, “Keyword &amp;#8211; A new gem for keyword method arguments”</a></li>
+          <li><a href="#toshiaki-koshiba--lets-go-to-shibuya-rubyist-lunch-at-shibuya-japan" id="markdown-toc-toshiaki-koshiba--lets-go-to-shibuya-rubyist-lunch-at-shibuya-japan">Toshiaki Koshiba,  “Let’s go to Shibuya Rubyist Lunch at Shibuya, Japan”</a></li>
+          <li><a href="#evan-light-conference-different" id="markdown-toc-evan-light-conference-different">Evan Light, “Conference Different”</a></li>
+          <li><a href="#ayumu-aizawa-lokka-cms-for-cloud" id="markdown-toc-ayumu-aizawa-lokka-cms-for-cloud">Ayumu AIZAWA, “Lokka CMS for Cloud”</a></li>
+          <li><a href="#chris-parsons-three-things-i-wish-wed-done-before-the-big-launch" id="markdown-toc-chris-parsons-three-things-i-wish-wed-done-before-the-big-launch">Chris Parsons, “Three things I wish we’d done before the big launch”</a></li>
+          <li><a href="#stephen-touset-twitter-bootstrap-forms" id="markdown-toc-stephen-touset-twitter-bootstrap-forms">Stephen Touset, “Twitter Bootstrap Forms”</a></li>
+          <li><a href="#paul-wilson-the-hierarchy-of-values-or-why-we-passionately-disagree" id="markdown-toc-paul-wilson-the-hierarchy-of-values-or-why-we-passionately-disagree">Paul Wilson, “The hierarchy of values, or why we passionately disagree”</a></li>
+          <li><a href="#ryan-davis-rubyparser-and-19" id="markdown-toc-ryan-davis-rubyparser-and-19">Ryan Davis, “RubyParser and 1.9”</a></li>
+          <li><a href="#john-paul-ashenfelter-muscle-driven-development-and-cardiovascular-coding-treadmill-desks-ftw" id="markdown-toc-john-paul-ashenfelter-muscle-driven-development-and-cardiovascular-coding-treadmill-desks-ftw">John Paul Ashenfelter, “Muscle-driven development and cardiovascular coding (treadmill desks ftw)”</a></li>
+          <li><a href="#nick-howard-how-do-i-love-thee-enumerators-let-me-count-the-ways" id="markdown-toc-nick-howard-how-do-i-love-thee-enumerators-let-me-count-the-ways">Nick Howard, “How do I love thee Enumerators? Let me count the ways.”</a></li>
+          <li><a href="#david-kapp-how-to-be-more-easily-understood-by-non-native-english-speakers" id="markdown-toc-david-kapp-how-to-be-more-easily-understood-by-non-native-english-speakers">David Kapp, “How to be more easily understood by non-native English speakers”</a></li>
+          <li><a href="#pawel-szymczykowski-usrlib---building-a-dead-tree-library-for-techies" id="markdown-toc-pawel-szymczykowski-usrlib---building-a-dead-tree-library-for-techies">Pawel Szymczykowski, “/usr/lib - building a dead tree library for techies”</a></li>
+          <li><a href="#brian-guthrie-the-cult-of-magical-thinking" id="markdown-toc-brian-guthrie-the-cult-of-magical-thinking">Brian Guthrie, “The Cult of Magical Thinking”</a></li>
+          <li><a href="#konstantin-haase-live-release-of-sinatra-130" id="markdown-toc-konstantin-haase-live-release-of-sinatra-130">Konstantin Haase, “Live Release Of Sinatra 1.3.0”</a></li>
+        </ul>
+      </li>
+      <li><a href="#jruby-polygrot-heaven" id="markdown-toc-jruby-polygrot-heaven">JRuby: Polygrot Heaven</a></li>
+      <li><a href="#nikita-the-ruby-secret-agent" id="markdown-toc-nikita-the-ruby-secret-agent">Nikita: The Ruby Secret Agent</a></li>
+      <li><a href="#services-inception-with-ruby" id="markdown-toc-services-inception-with-ruby">Services Inception with Ruby</a></li>
+    </ul>
+  </li>
+  <li><a href="#3日目" id="markdown-toc-3日目">3日目</a>    <ul>
+      <li><a href="#qa" id="markdown-toc-qa">Q&amp;A</a>        <ul>
+          <li><a href="#質問-1" id="markdown-toc-質問-1">質問 1</a></li>
+          <li><a href="#質問-2" id="markdown-toc-質問-2">質問 2</a></li>
+          <li><a href="#質問-3" id="markdown-toc-質問-3">質問 3</a></li>
+          <li><a href="#質問-4" id="markdown-toc-質問-4">質問 4</a></li>
+          <li><a href="#質問-5" id="markdown-toc-質問-5">質問 5</a></li>
+          <li><a href="#質問-6" id="markdown-toc-質問-6">質問 6</a></li>
+          <li><a href="#質問-7" id="markdown-toc-質問-7">質問 7</a></li>
+          <li><a href="#質問-8" id="markdown-toc-質問-8">質問 8</a></li>
+          <li><a href="#質問-9" id="markdown-toc-質問-9">質問 9</a></li>
+          <li><a href="#質問-10" id="markdown-toc-質問-10">質問 10</a></li>
+          <li><a href="#質問-11" id="markdown-toc-質問-11">質問 11</a></li>
+          <li><a href="#質問-12" id="markdown-toc-質問-12">質問 12</a></li>
+          <li><a href="#質問-13" id="markdown-toc-質問-13">質問 13</a></li>
+          <li><a href="#質問-14" id="markdown-toc-質問-14">質問 14</a></li>
+          <li><a href="#質問-15" id="markdown-toc-質問-15">質問 15</a></li>
+          <li><a href="#質問-16" id="markdown-toc-質問-16">質問 16</a></li>
+          <li><a href="#質問-17" id="markdown-toc-質問-17">質問 17</a></li>
+          <li><a href="#質問-18" id="markdown-toc-質問-18">質問 18</a></li>
+          <li><a href="#質問-19" id="markdown-toc-質問-19">質問 19</a></li>
+          <li><a href="#質問-20" id="markdown-toc-質問-20">質問 20</a></li>
+          <li><a href="#質問-21" id="markdown-toc-質問-21">質問 21</a></li>
+        </ul>
+      </li>
+      <li><a href="#advanced-api-design-how-an-awesome-api-can-attract-friends-make-you-rich-and-change-the-world" id="markdown-toc-advanced-api-design-how-an-awesome-api-can-attract-friends-make-you-rich-and-change-the-world">Advanced API design: how an awesome API can attract friends, make you rich, and change the world</a></li>
+      <li><a href="#how-github-uses-github-to-build-github" id="markdown-toc-how-github-uses-github-to-build-github">How GitHub Uses GitHub to Build GitHub</a></li>
+      <li><a href="#complex-ruby-concepts-dummified" id="markdown-toc-complex-ruby-concepts-dummified">Complex Ruby concepts dummified</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="1日目">1日目</h2>
+
+<h3 id="how-getting-buff-can-make-you-a-better-rubyist">How Getting Buff Can Make You a Better Rubyist</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Rob Sanheim</dd>
+  <dt>書いた人</dt>
+  <dd>みうら</dd>
+</dl>
+
+<p>ストレッチから始まったのは、「健康」に関するセッションでした。両手を身体の前で合わせて力を入れるストレッチ(祈るようなポーズ)では、「through test…」などとジョークを交えながら世界のRubyist がストレッチを行う姿はとても壮観な光景でした。</p>
+
+<p>食事や運動、休憩や瞑想など色々な事柄がこのセッションで触れられました。
+これを機会に身体に気遣ってなにか初めてみるのはいかがでしょうか？</p>
+
+<h3 id="implementation-of-ruby-193-and-later">Implementation of Ruby 1.9.3 and later</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Koichi Sasada</dd>
+  <dt>書いた人</dt>
+  <dd>みうら</dd>
+</dl>
+
+<p>「Engine Yard is very Nice! Engine Yard is very Nice!」と大事な事を 2 回言うアイスブレイクから始まった笹田さんのセッション。
+RubyKaigi でも発表されていた Ruby 1.9.3 の大きな変更やパフォーマンスに関する研究成果の報告、今後の Ruby に欲しい機能について会場の Rubyist とのディスカッションを行いました。</p>
+
+<p>また Ruby1.9.3rc1 (2011/09/30 現在) を使ってみて何か不具合を発見したら報告してくださいとのことでした。
+ぜひ Ruby1.9.3rc1 を使ってよりよい Ruby にしましょう !</p>
+
+<h3 id="writing-solid-ruby-code">Writing Solid Ruby Code</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Jim Weirich</dd>
+  <dt>書いた人</dt>
+  <dd>kei-s</dd>
+</dl>
+
+<p>Rake の作者である Jim Weirich さんの発表です。Writing Solid Code <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> という本を紹介しました。
+この本では、コーディングにおける 7 つのノウハウが C 言語を対象にして説明されています。これらのノウハウを Ruby に当てはめてコードをよりよくするにはどうすればいいかをトークしました。</p>
+
+<h4 id="assert-yourself">Assert Yourself</h4>
+
+<p>実行の前提になる条件自体をプログラム自身に判別させるノウハウです。
+Ruby の場合は、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">ASSERT { !pbTo.nil? &amp;&amp; !pbFrom.nil? }</code></pre></figure>
+
+<p>などとして nil 判定を行ったり、Duck Typing による型判定などをするといいと説明しました。また、respond_to?
+を使ってメソッドが定義されているかを判別することを “Chicken Typing” と呼んでいました。
+Assetion を使うことはコードの正当性を高めることであり、そのためには “Write Test!”
+とフォントを巨大にして訴えました。アドバイスとして、仕様のようにテストを書くこと、可読性の高いテストを書くために RSpec を使おうと述べました。</p>
+
+<h4 id="fortify-your-subsystems">Fortify your subsystems</h4>
+
+<p>ユーザの入力やデータベースからの入力、外部システムからの入力を信じずに、自分のコードを範囲を意識しようと述べました。</p>
+
+<h4 id="step-through-your-code">Step through your code</h4>
+
+<p>「<a href="http://rubyforge.org/projects/ruby-debug/">Ruby Debugger</a>を使ったことがある人 ?」と問いかけ、「最初は使っていなかったが、使ってみたところ探していたものにぴったりだった」と自身の経験を語りました。また、<a href="http://pry.github.com/">pry</a> という名前の、cd などのコマンドでオブジェクトのコンテキストに移動して中身を調べることができる irb like なツールを紹介しました。</p>
+
+<h4 id="candy-machine-interfaces">Candy Machine Interfaces</h4>
+
+<p>商品の番号と金額が区別しにくいキャンディの自動販売機を例にあげ、API Interface
+の重要性を述べました。また、悪いインタフェースの例として、C 言語の getchar() 関数の返り値が int 型であるという例も挙げていました。</p>
+
+<h4 id="risky-business">Risky Business</h4>
+
+<p>1 つのメソッドが大きすぎる等のリスクになりうるコードを見つける方法として<a href="http://ja.wikipedia.org/wiki/%E5%BE%AA%E7%92%B0%E7%9A%84%E8%A4%87%E9%9B%91%E5%BA%A6">循環的複雑度</a>
+という指標を紹介しました。これはメソッド内の分岐やループの数を複雑さの指標とするもので、この指標を使って Rake ライブラリでの複雑なメソッドを洗い出す例をあげていました。</p>
+
+<h4 id="treacheries-of-the-trace">Treacheries of the Trace</h4>
+
+<p>case when と三項演算子だらけのコードを紹介し、アジャイルな言語は簡単にコードを書くことができるが、汚いコードも容易につくりだしてしまうと述べました。これに対して、簡単な問題に複雑な解決策を使うなとアドバイスし、例としてモンキーパッチ、メタプログラミング、alias
+method chain は必要なときだけ使うようにと言い、”Don’t be overly clever.” と述べました。</p>
+
+<h4 id="rest-is-attitude">Rest is Attitude</h4>
+
+<p>「バグは勝手に無くならない。”あとで直そう”ではなくいますぐ直せ。」と訴えました。</p>
+
+<p>最後に 「Your code is your responsibility.」 と述べ、より良いコードを書く重要性を改めて訴えました。</p>
+
+<h3 id="blueprint-configuration-management-for-busy-people">Blueprint: configuration management for busy people</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Richard Crowley</dd>
+  <dt>書いた人</dt>
+  <dd>いわもと</dd>
+</dl>
+
+<p><a href="https://github.com/devstructure/blueprint">Blueprint</a> は <a href="http://puppetlabs.com/">Puppet</a> や <a href="http://wiki.opscode.com/display/chef/Home">Chef</a> と同じように、サーバの設定を統合管理するためのシステムです。(Blueprint については、別のカンファレンスで発表された<a href="http://rcrowley.org/talks/sf-devops-2011-08-23/#1">資料</a>も参考にしてください。)</p>
+
+<p>Puppet や Chef がトップダウンのアプローチ(マニフェストを書いて、設定を適用) に対し、
+Blueprint はボトムアップのアプローチ(設定をして、マニフェストを生成) というような印象を受けました。</p>
+
+<p>また、生成したマニフェストを Puppet/Chef の形式にも export できるので、
+既存のシステムに設定ファイルの統合管理を導入したいといったときに、Bluprintを使うと便利だと思いました。</p>
+
+<p>トップダウンとボトムアップを組み合わせて、「かゆいところに手が届く」統合管理ができるのではないかという期待を抱かせてもらえたセッションでした！</p>
+
+<h3 id="matzキーノート-ruby-everywhere">matzキーノート “Ruby Everywhere”</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>まつもと ゆきひろ</dd>
+  <dt>書いた人</dt>
+  <dd>五十嵐邦明</dd>
+</dl>
+
+<p>「私は言語開発者です。すごい言語の開発者です。」で会場から笑いと拍手をもって迎えられ、まつもとさんのキーノートが始まりました。</p>
+
+<p>最初に新しい肩書きの <a href="http://blog.heroku.com/archives/2011/7/12/matz_joins_heroku_japanese/">Heroku チーフアーキテクト</a>となったことを紹介。セールスフォースの Marc Benioff との「君を雇いたいんだけど」「えっ」
+という馴れ初めを紹介されました。「私を雇ったら私の収入は増えてうれしいけど、Ruby を推進するためには Ruby デベロッパーを雇った方がいいよ。」というやりとりを紹介し、同じく Heroku にフルタイムで雇用された<a href="/articles/0009/0009-Hotlinks.html">中田さん (nobu)</a> を紹介しました。中田さんはパッチモンスターと呼ばれるコミット数 1 位のコミッターです。紹介された中田さんは、いつも通りの自然体で会場からの拍手を受けていました。そして、これからも Ruby のコアコミッターを雇用する企業があれば歓迎したいとのことでした。</p>
+
+<p>去年の RubyConf のキーノートから引き続き、今年もまつもとさんは「もっと多くの開発者を Ruby で幸せにしたい」という想いを語りました。例えば、JRuby は Java 開発者に Ruby を使えるようにし、Rubot は JRuby を Android 上を使えるようにし、Rhodes はモバイルフォン向けのアプリを Ruby で書けるようにしたという事例を紹介。まつもとさんは携帯や、ロボット、車といったモバイルの分野にリーチしたいとのことでした。</p>
+
+<p>去年の Ruby 会議でも紹介した RiteVM と組み込み Ruby の mruby。今年はついに「動いている！」と宣言し（会場拍手）、マンデルブロー図形を描くデモを披露しました。（のちに twitter で -O オプションを付け忘れた、付けてたらもっと速かったのに！とコメントしてらっしゃいました。）（Rite と mruby の関係については、Rite は VM の部分、mruby は Ruby としての名前とのことです。Ruby1.9 と YARV の関係と同じで、YARV にあたるのが Rite, Ruby1.9 にあたるのが mruby です。）</p>
+
+<p>mruby はまだ若くて弱い存在だけど、ロボットや、TV の中とか、いろんな可能性があると、まつもとさんは語ってくれました。完璧な言語はない、Ruby でさえも完璧ではないとのこと。だからこそ選択を提供するのだと。
+最後にまつもとさんは、会場の Rubyist へ「私は Ruby で世界の幸せをもっと増やしたいと思ってる。今、私たちが Ruby を使って感じているように。Ruby を愛してくれているみなさんに感謝します。ありがとう。」というメッセージを贈り、キーノートを締めくくられました。</p>
+
+<h3 id="powerful-but-easy-data-visualization-with-the-graph-gem">Powerful (but easy) Data Visualization with the Graph Gem</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Aja Hammerly</dd>
+  <dt>書いた人</dt>
+  <dd>五十嵐邦明</dd>
+</dl>
+
+<p><a href="http://ja.wikipedia.org/wiki/DOT%E8%A8%80%E8%AA%9E">DOT</a> は graph を書くためのシンプルな言語です。graphViz や Tulip といったツールを使うとレンダリングできます。</p>
+
+<p>これを Ruby で使うための <a href="http://rgl.rubyforge.org/rgl/index.html">RubyGraphLibrary</a>というライブラリがあり、gem install graph でインストール可能です。
+graph を使うと、以下のコードで A→B という図が書けるようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">diagraph do
+  edge "A","B"
+end</code></pre></figure>
+
+<p>save メソッドを使うと “foo”, “png”
+で png や jpg へ export でき、ほかにも色を付ける機能もあります。Ruby で書くことができるので、XML からデータを読み込んでグラフにすることもできます。さらに応用例としては、Rubygems
+や Homebrew などのデータからモジュールの依存関係を図にするなんてこともできるとのことです。</p>
+
+<p>フローチャートなどはグラフィカルなツールを使うと要素と要素の間に挿入するといった操作が面倒です。Ruby Graph Library を使うと簡単に図を書けるだけでなく、コードで図を表現できるのでメンテナンスが容易になるといったメリットがあると思いました。</p>
+
+<h2 id="2日目">2日目</h2>
+
+<h3 id="mongodb-to-mysql-the-how-and-the-why-sarah-mei">MongoDB to MySQL: the How and the Why (Sarah Mei)</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Sarha Mei</dd>
+  <dt>書いた人</dt>
+  <dd>いわもと</dd>
+</dl>
+
+<p><a href="http://diasporafoundation.org/get_involved">Diaspora</a> というオープンソースのソーシャルネットワークプラットフォームにて、開発当初より採用してきた<a href="http://www.mongodb.org/">MongoDB</a> を、9ヶ月の運用の末 MySQL に乗り換えた理由について述べていました。セッションの序盤で「MongoDBを採用したことがあり人はいますか?」という問いかけがあり、会場内では20人ほどの人が挙手しました。しかし、「継続的に利用している人は?」という質問になると、挙手していた人の半数ほどになりました。</p>
+
+<p>乗り換えた理由の一つは、データの性質によるものでした。
+当初は、よくあるソーシャル系アプリに見られるフレキシブルなデータ構造を考慮して MongoDB を採用したとのことでしたが、
+開発を進めていくうえでリレーションを持つデータが増えていき、SQL でいう JOIN をサポートしない MongoDB では効率的な実装に限界があったとのことでした。
+QA では、「Q. いくつまでのリレーションなら許容できるか？」「A. 明確ではないが、よくて2つ、3つを超えてくると転換点だと感じている」 とのやりとりがありました。</p>
+
+<p>もう一つの理由は、MongoDBの mapper に関係するものです。
+これに関しては、コミュニティの未成熟な点を指摘していました。
+bugが存在する、 ドキュメントが少ない、検索しても明確な答えは得られない、コミュニティも活発ではない。
+それによって開発のスピードが思うように加速できなかったとのことでした。(もうひとつ、migration についても述べていましたが、うまく聞き取れませんでした。orz)</p>
+
+<p>KVS と RDBMS はそれぞれに得手・不得手があると思いますが、その境界がまだ不明確な部分があるのではないかという印象を受けました。</p>
+
+<p>コミュニティという点では、個人的には最近東京での MongoDB に関する活動が活性化してきた感がありますが、そのような活動がうまく英語圏のコミュニティと連携して知識が蓄積されていければ、きっと多くの開発者がハッピーなことになるのではないかなと思いました :)</p>
+
+<h3 id="lightning-talks">Lightning Talks</h3>
+
+<dl>
+  <dt>書いた人</dt>
+  <dd>卜部</dd>
+</dl>
+
+<h4 id="eric-hodel-rdoc">Eric Hodel, “RDoc”</h4>
+
+<p>新バージョン出すよ。</p>
+
+<h4 id="alex-sharp-bldr---a-minimalist-json-templating-dsl">Alex Sharp, “Bldr - A minimalist JSON templating DSL”</h4>
+
+<p>プロダクト紹介。</p>
+
+<h4 id="ken-robertson-metis---merging-nagios-ruby-and-tdd-to-make-your-systems-safer">Ken Robertson, “Metis - Merging Nagios, Ruby, and TDD to make your systems safer”</h4>
+
+<p>プロダクト紹介だけどプレゼン下手でちょっと残念。</p>
+
+<h4 id="ray-hightower-four-steps-five-minutes-based-on-steve-blanks-book">Ray Hightower, “Four Steps, Five Minutes (Based on Steve Blank’s book.)”</h4>
+
+<p>アントプレナーが失敗するまでの 4 つのステップについて。</p>
+
+<h4 id="ernie-miller-you-should-write-a-ruby-gem">Ernie Miller, “You Should Write a Ruby Gem”</h4>
+
+<p>シャット・ザ・ファッキン・アップ・アンド・ライト・ア・ジェム</p>
+
+<h4 id="corey-haines-what-madness-have-i-unleashed-twitterbots-made-easy">Corey Haines, “What madness have I unleashed (twitterbots made easy)”</h4>
+
+<p>これはひどい。</p>
+
+<h4 id="aaron-patterson-betabrite-led-sign">Aaron Patterson, “BetaBrite LED sign”</h4>
+
+<p>電子工作系。Ruby を使った USB 電光掲示板のエレガントな制御 DSL の紹介。慣れてる。</p>
+
+<h4 id="tim-connor-company_fitshould_not--monoculture">Tim Connor, “Company_fit.should_not == monoculture”</h4>
+
+<p>プログラミングはべつに男の仕事じゃねえだろ、という。まったくそのとおりです。</p>
+
+<h4 id="jonan-scheffler-you-are-going-to-die">Jonan Scheffler, “You are going to die”</h4>
+
+<p>椅子座ったままコード書いてると死ぬよ! ウォーキングマシンで歩きながらコードを書こう! …しかしウォーキングマシンで歩いても結局は死ぬと思うが…</p>
+
+<h4 id="phil-nash-stop-building-features">Phil Nash, “Stop building features”</h4>
+
+<p>プロダクトが成功するのに必要なのは新機能じゃなくて、バグのないクリーンなコードじゃねのという話。</p>
+
+<h4 id="coby-randquist-regional-ruby-conferences---tones--flavors">Coby Randquist, “Regional Ruby Conferences - Tones &amp; Flavors”</h4>
+
+<p>これはregional ruby confのアナウンス</p>
+
+<h4 id="gary-bernhardt-raptor">Gary Bernhardt, “Raptor”</h4>
+
+<p>プロダクト紹介。<a href="https://github.com/garybernhardt/raptor">raptor</a>という革命的にシンプル過ぎるweb frameworkについて</p>
+
+<h4 id="michael-bumann-awesomebotfactory">Michael Bumann, “Awesomebotfactory”</h4>
+
+<p>じかんぎれ。</p>
+
+<h4 id="joshua-ballanco-keyword-8211-a-new-gem-for-keyword-method-arguments">Joshua Ballanco, “Keyword &amp;#8211; A new gem for keyword method arguments”</h4>
+
+<p>キーワード引数を (lambda のカリー化を用いて) 無理やり実装する方法について。実装面白い。</p>
+
+<h4 id="toshiaki-koshiba--lets-go-to-shibuya-rubyist-lunch-at-shibuya-japan">Toshiaki Koshiba,  “Let’s go to Shibuya Rubyist Lunch at Shibuya, Japan”</h4>
+
+<p>うけてた</p>
+
+<h4 id="evan-light-conference-different">Evan Light, “Conference Different”</h4>
+
+<p>俺の話を聞いてるそこのおまえら! カンファレンスは座って聞いてるもんじゃねえ! おまえらもイベントをオーガナイズしろ yp! という話。 “open space technology”でぐぐれ、だそうです。</p>
+
+<h4 id="ayumu-aizawa-lokka-cms-for-cloud">Ayumu AIZAWA, “Lokka CMS for Cloud”</h4>
+
+<p>プロダクト紹介。そつなく危なげもない感じで。</p>
+
+<h4 id="chris-parsons-three-things-i-wish-wed-done-before-the-big-launch">Chris Parsons, “Three things I wish we’d done before the big launch”</h4>
+
+<p>突然の炎上をのりきるためにローンチの段階でやっとくべきことについて。</p>
+
+<h4 id="stephen-touset-twitter-bootstrap-forms">Stephen Touset, “Twitter Bootstrap Forms”</h4>
+
+<p><a href="https://github.com/stouset/twitter_bootstrap_form_for">twitter_bootstrap_form_for</a>というライブラリの紹介。Web のフォームを作成。発表短すぎてほとんど何も分からん。</p>
+
+<h4 id="paul-wilson-the-hierarchy-of-values-or-why-we-passionately-disagree">Paul Wilson, “The hierarchy of values, or why we passionately disagree”</h4>
+
+<p>これはわかんなかったなあ、価値観の話をしているのは分かった</p>
+
+<h4 id="ryan-davis-rubyparser-and-19">Ryan Davis, “RubyParser and 1.9”</h4>
+
+<p>Ruby Parser が 1.9「をパースできる」んだけど 1.9「では走らない」のでだれか直して pull request くれというおねがい。</p>
+
+<h4 id="john-paul-ashenfelter-muscle-driven-development-and-cardiovascular-coding-treadmill-desks-ftw">John Paul Ashenfelter, “Muscle-driven development and cardiovascular coding (treadmill desks ftw)”</h4>
+
+<p>筋肉! 脳ミソで考えるな筋肉で考えるんだ! つうかメリケンどもはプログラム組むときノンストップでポテチ食ってんのか? そりゃ死ぬよ</p>
+
+<h4 id="nick-howard-how-do-i-love-thee-enumerators-let-me-count-the-ways">Nick Howard, “How do I love thee Enumerators? Let me count the ways.”</h4>
+
+<p>Enumerable::Enumerator の紹介。知ってるといちだん差がつくね。</p>
+
+<h4 id="david-kapp-how-to-be-more-easily-understood-by-non-native-english-speakers">David Kapp, “How to be more easily understood by non-native English speakers”</h4>
+
+<p>日本で英語教えてたけどニホンジンはマジで英語わからんね、</p>
+
+<ol>
+  <li>ゆっくり</li>
+  <li>短いセンテンス</li>
+  <li>明瞭に</li>
+  <li>スラングは通じない</li>
+</ol>
+
+<p>この4点を守ると通じるよ。という経験談。これはよい++</p>
+
+<h4 id="pawel-szymczykowski-usrlib---building-a-dead-tree-library-for-techies">Pawel Szymczykowski, “/usr/lib - building a dead tree library for techies”</h4>
+
+<p>dead tree library って図書館のことかよ。 usrlib.org 図書館ソフトウエアネタとか Wifi の運用とか。あまり深いことは言ってないかなー。5分だししょうがないか。</p>
+
+<h4 id="brian-guthrie-the-cult-of-magical-thinking">Brian Guthrie, “The Cult of Magical Thinking”</h4>
+
+<p>黒魔術な意味で。どのようなコードが黒魔術でありどのように生まれてくるかについて。20 分くらいの内容を超早口で…。</p>
+
+<h4 id="konstantin-haase-live-release-of-sinatra-130">Konstantin Haase, “Live Release Of Sinatra 1.3.0”</h4>
+
+<p>リリース失敗。</p>
+
+<h3 id="jruby-polygrot-heaven">JRuby: Polygrot Heaven</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Thomas E Enebo, Charles Oliver Nutter</dd>
+  <dt>書いた人</dt>
+  <dd>中村</dd>
+</dl>
+
+<p>JRuby と JVM 上で動く他の言語をどうやって一緒に使うか、という発表でした。<a href="https://github.com/mkristian/ruby-maven">ruby-maven</a> を使って rhino を入れてユーザが書いた Javascript を rhino 上で制限を付けた状態で実行する例や、Clojure の <a href="http://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AB%E3%83%A1%E3%83%A2%E3%83%AA">SoftwareTransactionalMemory</a> を Ruby から使う例、Scala の <a href="http://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC%E3%83%A2%E3%83%87%E3%83%AB">Actor</a> を Ruby から使うといった例を上げて、他の言語の機能を Ruby から使う様々な方法を紹介していました。Closure の STM を使う時は <a href="https://github.com/headius/cloby">cloby</a>を，Scala の Actor を使う場合は<a href="https://github.com/iconara/mikka">mikka</a> を使うといいようです。</p>
+
+<p>発表の最初の方で、JRuby を –1.9 付きで使っている人に手を挙げさせていましたが、まだ –1.9 を付けて使っている人は少ないようでした。わかりやすく、面白いプレゼンテーションだと感じました。</p>
+
+<h3 id="nikita-the-ruby-secret-agent">Nikita: The Ruby Secret Agent</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Brian Ford</dd>
+  <dt>書いた人</dt>
+  <dd>中村</dd>
+</dl>
+
+<p>途中からこのセッションに移動してきました。入った時に去年の OSCON で行われた Twitter の<a href="http://www.youtube.com/watch?v=ohHdZXnsNi8">プレゼンテーションの動画</a>を流していました。”From
+ruby on rails to JVM” というこの動画では、Ruby の問題点として、</p>
+
+<ol>
+  <li>GC</li>
+  <li>concurrency</li>
+  <li>performance</li>
+  <li>toolsの不足</li>
+</ol>
+
+<p>以下の 4 つ挙げ、その為 Twitter では、Scala 等の JVM 上で動く言語に切り替えたという話をしていました。</p>
+
+<p>ここで Brian さんは「また Java を使わなければならないのか? Ruby を使い続けることはできないのか?」という話をした後に、Rubinius ではこれらの問題をどう解決しているかという話に進みました。Rubinius では GC は世代別 GC を持っていて、true
+concurrency であり、JIT によってパフォーマンスの問題を解決したと言っていました。そして 4 番目のクラスの状況やコードがどう動いているかを調べるツールの不足に対しては、to_ast、
+to_sexp によるコードの解析機能がついていたり、compiled
+method のデータを見る事ができるため、ツールを作ることはできる環境がそろっていて、解決できる問題だとしていました(だからみんなツール作ってよとも言っていました)。この発表のタイトルにもなっている <a href="https://github.com/brixen/nikita">Nikita</a> は、まだアイディアの段階で実際になにかものができているわけではないけれど、client/server モデルを使ったアプリケーションで、server 側に compiled
+method の情報をストアするデータベースを持ち、モニタリングやクラスの情報を見るブラウザを実装するとの事でした。来年には、Rubinius はツールを持っているだろうとの事でしたので、楽しみですね。</p>
+
+<h3 id="services-inception-with-ruby">Services Inception with Ruby</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Dave McCrory</dd>
+  <dt>書いた人</dt>
+  <dd>中村</dd>
+</dl>
+
+<p>Cloud Foundry の DaveMcCroy さんによる発表。PasS を使ってアプリケーションをデプロイする時には、アプリケーションが使う MySQL や Redis などの他のサービスを PaaS 側が知っている必要があります。これを自動的に行うにはどうすればよいかという話でした。</p>
+
+<p>例として resque と resque-mongo を挙げ、resque の場合は Redis と MySQL, 
+resque-mongodb の場合は Redis, MySQL,
+MongoDB がないと動かないといことを紹介しました。特に resque-mongo の場合は、MongoDB のバージョンなど，README を読んで手動で設定を行うのが大変で、こういった外部のサービスへの依存性を PaaS が、自動的に解決する為の方法をいくつか提示していました。</p>
+
+<ol>
+  <li>マニフェストに書くようにする</li>
+  <li>Chef や Puppet の設定に追加する形にする</li>
+  <li>コードの中に外部サービスへの依存性を書けるようにする</li>
+</ol>
+
+<p>という3つの選択肢を挙げ、3 番目のコードの中に依存性の解決を書けるようにする為の機能を実装した話をしました。この発表は発表自体は短めで、最後に「ちゃんと動いたし自分はいい解決方法だと思うが、どうだろう？」という問いに会場に投げかけ、議論をしていました。</p>
+
+<p>Manifest や Chef の設定でいいじゃないかという人や複雑な場合、例えば MySQL に依存するにしても複数の master/slave が欲しい場合はどうするんだという議論が展開されているようでした。</p>
+
+<h2 id="3日目">3日目</h2>
+
+<h3 id="qa">Q&amp;A</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>まつもと ゆきひろ</dd>
+  <dt>書いた人</dt>
+  <dd>卜部</dd>
+</dl>
+
+<p>Q&amp;Aのログなので参考程度に。</p>
+
+<h4 id="質問-1">質問 1</h4>
+
+<p>Q. mruby はいつ MRI のコアに入りますか ?</p>
+
+<p>A. 入りません。mruby はコア機能のサブセットです。</p>
+
+<h4 id="質問-2">質問 2</h4>
+
+<p>Q. Heroku/SFDC は今後も継続的にコアコミッターの採用を続けますか ?</p>
+
+<p>A. とりあえず予算の都合というものがあるが、採りたいとは思っている。また Heroku 以外の企業にも働きかけていきたい。</p>
+
+<h4 id="質問-3">質問 3</h4>
+
+<p>Q. 1.9.3 と 2.0 のおすすめ機能はありますか ?</p>
+
+<p>A. 1.9.3 は GC が強化されてます。2.0 は… Module#prepend</p>
+
+<h4 id="質問-4">質問 4</h4>
+
+<p>Q. rubyspec の中の人として。現在、Ruby でメソッドディスパッチが遅いのを特定の引数の時だけ最適化しようとすると、C でメソッドを書き直す (VM ループから抜ける) しかありません。これはどうにかなりませんか。</p>
+
+<p>A. インラインキャッシュを強化してたとえば整数引数の場合だけ特別な最適化をしたバージョンに振るとかの最適化 (脱最適化) は考えられる。</p>
+
+<h4 id="質問-5">質問 5</h4>
+
+<p>Q. 以前のインタビューで Ruby に今後追加したい機能として Actor を挙げていたように思うが 2.0 に入るのか ?</p>
+
+<p>A. 2.0 は 1.9 の延長線上であまり大きな変更は入れない予定なので、Actor が入るとしたらその次の 3.0 とか。</p>
+
+<h4 id="質問-6">質問 6</h4>
+
+<p>Q. で、次は 1.9.4 なの? 2.0 なの?</p>
+
+<p>A. 1.9.3 が出たら trunk はともかく 2.0 にする。1.9.4 の可能性は否定しないが出すとしたら1.9.3 (の枝の分岐?) から。</p>
+
+<h4 id="質問-7">質問 7</h4>
+
+<p>Q. 会社で QA 部隊に Cucumber 使わせようとしてみたわけよ。したら、QA のやつらってWindows好きじゃん?  Windows の 1.9 で Cucumber を feature 流すと 1.8 の 10 倍以上遅いわけよ。まあそんで、そのときは結局 JRuby に逃げたんだけど、MRI は Windows のことを何だと思ってんの ?</p>
+
+<p>A. 何、というか、ようするにコアデベロッパに Windows で Cucumber を実行するとかいう人がいないのでしょうがない。人的リソースの問題。Windows の Ruby に継続的に関わろうとする人大歓迎。</p>
+
+<h4 id="質問-8">質問 8</h4>
+
+<p>Q. 新規の参加者も多いと思いますので、2.0 の新機能をざっとまとめて教えてください。</p>
+
+<p>A. Module まわりで mix(注 : その後の議論により、mix の導入は中止となりました。)とか prepend とか。あとキーワード引数。それからまだちょっと流動的だけど selector namespace</p>
+
+<h4 id="質問-9">質問 9</h4>
+
+<p>Q. サイン(電子署名)についてどう思いますか?</p>
+
+<p>A. gem に署名する機能はちゃんと作れば便利なんじゃないかなあ。</p>
+
+<h4 id="質問-10">質問 10</h4>
+
+<p>Q. Matz、あなた自身も最近は “MRI” という言い方をしますが、あなたが言ってる時には “My Ruby Interpreter” の略なのですか ?</p>
+
+<p>A. いやあ(笑) 。MRI と言ってるときは大抵 1.9 のことだけど、1.9 のインタープリタは _ko1 の作品だし、違うんじゃない。</p>
+
+<h4 id="質問-11">質問 11</h4>
+
+<p>Q. じゃあCRubyの事を呼ぶ新しい名前考えようぜ。</p>
+
+<p>A. いや MRI でいいよ。</p>
+
+<h4 id="質問-12">質問 12</h4>
+
+<p>Q. 2.0 に向けてコミュニティが、何か行えることはありますか</p>
+
+<p>A. 処理系実装の人たちとのデザインミーティングはまたやりたい。けど前の時のは、IRC 固有の問題 (時間調整とか) もあったから、なんか別のツールを試すべきかも。あとそれ以外の人は、rubyspec に参加するといいんじゃないでしょうか。</p>
+
+<h4 id="質問-13">質問 13</h4>
+
+<p>Q. Rite と mruby の関係がよく分からない</p>
+
+<p>A. それらは別プロジェクト。Rite は日本の政府からスポンサーされてる案件で、6 ヶ月後くらいにオープンソースになります。Herokuの人とかも使えるようになるよ。</p>
+
+<h4 id="質問-14">質問 14</h4>
+
+<p>Q. Syck がぶっ壊れてから長い時間がたつわけだが。こういうのは掃除しないの?</p>
+
+<p>A. 言っている通り 2.0 では大規模な変更は行わない予定です。削除はないかな。ただ gem にできるやつは gem に移行するのはありうる。</p>
+
+<h4 id="質問-15">質問 15</h4>
+
+<p>Q. 削るとしたら何を?</p>
+
+<p>A. getoptとか古いのはあるよね</p>
+
+<h4 id="質問-16">質問 16</h4>
+
+<p>Q. 2.0 の classboxing について、他の言語にあるような別のディスパッチ方法も考えられるのでは ?</p>
+
+<p>A. パフォーマンスがどうなるかだよね。 Rubinius とかなら他の方式もトライしてみてもいいんじゃない。</p>
+
+<h4 id="質問-17">質問 17</h4>
+
+<p>Q. -wって使う?</p>
+
+<p>A. ええまあ。たまには。</p>
+
+<h4 id="質問-18">質問 18</h4>
+
+<p>Q. お子さんに Ruby を教えるとしたら何才くらいから</p>
+
+<p>A. 実は子供はもういるんだ。一番上はもう 19 だけど Ruby に興味があるようには見えないし、強制しようとも思わないよ。自分も親からプログラミングを強制された記憶もない。</p>
+
+<h4 id="質問-19">質問 19</h4>
+
+<p>Q. 長時間動きつづける Ruby プロセスのデバッグが面倒なんですけど。introspection API のようなものは提供する予定はないの?</p>
+
+<p>A. DTrace のプローブを入れようという試みはある。</p>
+
+<h4 id="質問-20">質問 20</h4>
+
+<p>Q. 2.0 のパフォーマンスはどうなりますか?</p>
+
+<p>A. パフォーマンスは専門じゃないからよく分からない部分も多いが _ko1 は継続的に改善しようとしていると思う。</p>
+
+<h4 id="質問-21">質問 21</h4>
+
+<p>Q. Ruby プログラマが誤解している事の中でもっとも重要なのは?</p>
+
+<p>A. パフォーマンスかな(笑) マイクロベンチマーキングでは何も分からないよ。</p>
+
+<h3 id="advanced-api-design-how-an-awesome-api-can-attract-friends-make-you-rich-and-change-the-world">Advanced API design: how an awesome API can attract friends, make you rich, and change the world</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Jonathan Dahl</dd>
+  <dt>書いた人</dt>
+  <dd>いわもと</dd>
+</dl>
+
+<p>API, 特に Web 業界における、API のよいデザインとはどのようなものか ? という話でした。</p>
+
+<p>近年 Web サービスが成長していくうえで重要な要素として API があるとし、
+API の実装にあたってケアすべき点をいくつか挙げて、それに対して「例えばこんな場合、みんなならどう実装する ?」というような参加者との対話が多く見られるセッションでした。</p>
+
+<p>API デザインの質と価値の関係は、スポーツのそれに似ているとの例え、
+質がある一定の基準にならなければその価値はさほど上がらない (あまり使われない)  と述べ、より良いデザインの重要さを強調していました。</p>
+
+<p>また API は UI でもあり、実社会に存在している様々なインタフェースにも学ぶところがあるはずだ、という議論もされていました。</p>
+
+<p>個人的には結論は発散的な印象でしたが、もしかしたら API 実装のベストプラクティス集や、
+API 実装のためのライブラリやフレームワーク などがあれば需要があるのかもしれないな、と感じました。</p>
+
+<h3 id="how-github-uses-github-to-build-github">How GitHub Uses GitHub to Build GitHub</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>Zach Holman</dd>
+  <dt>書いた人</dt>
+  <dd>いわもと</dd>
+</dl>
+
+<p>「みんなgithub 使ってるよな？いえーい!」
+とでも言わんばかりの、サービスの勢いがそのまま現れているような、かなりノリノリのセッションでした。</p>
+
+<p>github 内でのワークスタイルについての話でした。キーワードとして、</p>
+
+<ol>
+  <li>asynchronous (非同期)</li>
+  <li>simple</li>
+</ol>
+
+<p>が挙げられており、より集中しやすい (いわゆる “zone” に入りやすい) 環境で仕事して生産性を高めようぜ、という話でした。</p>
+
+<p>資料は<a href="http://zachholman.com/talk/how-github-uses-github-to-build-github">こちら</a>。</p>
+
+<p>発表内容もそうですが、自信に満ち溢れた発表者も含め思わず「cool!」と言えるようなセッションでした:)</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">simple tool + better process = awesome product.</code></pre></figure>
+
+<h3 id="complex-ruby-concepts-dummified">Complex Ruby concepts dummified</h3>
+
+<dl>
+  <dt>話した人</dt>
+  <dd>MATT AIMONETTI</dd>
+  <dt>書いた人</dt>
+  <dd>五十嵐邦明</dd>
+</dl>
+
+<p>「Rubyの難しいところを簡単に解説するよ !」というセッション。parser, Lexer, AST, VM,
+GC といった Ruby の内部の様々な話題を幅広く、分かり易く解説していました。例えばスレッドに関しては 1.8 と 1.9 のそれぞれの仕組みの違い、GIL など存在する問題、そして GIL を解消する際に新たに発生する問題と、RubyConf のほかのセッションでも話題になった内容に関して説明していました。断片的に聞いたことはあるけどよく知らなかった、という各種の情報を分かり易くまとめてあるこの発表はとてもありがたかったです。資料を後で読み返したいです。</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>“ライティングソリッドコード―バグのないプログラミングを目指して” http://www.amazon.co.jp/dp/4756103642&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

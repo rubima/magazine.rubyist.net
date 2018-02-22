@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RubyOnRails を使ってみる 【第 10 回】 パフォーマンスチューニング</title>
+  <meta name="description" content="著者：masuidrive">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0019/0019-RubyOnRails.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>RubyOnRails を使ってみる 【第 10 回】 パフォーマンスチューニング</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0019/0019-RubyOnRails.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RubyOnRails を使ってみる 【第 10 回】 パフォーマンスチューニング" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0019/0019-RubyOnRails.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0019/0019-RubyOnRails.html" data-text="RubyOnRails を使ってみる 【第 10 回】 パフォーマンスチューニング">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>著者：masuidrive</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>Rails が日本で流行り初めて約 2 年。
+特に去年は技術系雑誌やニュースサイトなどでも Rails の名前を見ることが非常に多い 1 年でした。
+しかしその一方で、信頼性や速度に対する情報不足、プログラマの確保の難しさなどから、実際にサービス構築まで踏み込めないケースもよく聞かれます。</p>
+
+<p>Rails で作ったサービスを公開する上では、安定性とパフォーマンスは抜きにして語れない話題です。
+安定性については、自分が過去に作ったサービスや、海外のRailsで作られたサービスを引き合いに出して、納得してもらえるのですが、
+Rails のパフォーマンスがどの程度のものなのか、数字を出して示している資料は、ほとんど見つかりませんでした。</p>
+
+<p>そこでここでは Rails のパフォーマンスチューニングを通じて、実際に Rails のパフォーマンスを見てみましょう。</p>
+
+<h2 id="パフォーマンスを計測しよう">パフォーマンスを計測しよう</h2>
+
+<p>遅いと言われることが多い Rails ですが、実際にどれぐらいの速度が出るのか、
+Rails アプリケーションのパフォーマンスを計測してみましょう。</p>
+
+<p>パフォーマンスを計測するには、ターゲットアプリケーションが必要です。
+<a href="http://www.ajaxscaffold.com/">Ajax scaffold</a> を使って簡単なアプリケーションを作ってみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo gem install ajax_scaffold_generator mongrel --include-dependencies
+$ rails sample1
+$ cd sample1
+$ echo "require File.join(File.dirname(__FILE__), 'boot'); Rails::Initializer.run { |config| config.action_controller.session_store = :active_record_store }" &gt; config/environment.rb
+$ vi config/database.yml  ←適当な設定をする
+$ rake db:sessions:create
+$ ./script/generate model person name:string address:text note:text
+$ rake db:migrate
+$ rake db:migrate RAILS_ENV=production
+$ ./script/generate ajax_scaffold --force person addressbook</code></pre></figure>
+
+<p>続いてテストデータを投入します。
+Rakefile に下記のレシピを追加してください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">task :test_data do
+  require './config/environment'
+  (1..40).each do |index|
+    Person.create :name =&gt; "テスト#{index}", :address =&gt; "住所#{index}"*10, :note =&gt; "ノート#{index}"*10
+  end
+end</code></pre></figure>
+
+<p>このテストデータを Development (開発) 環境と Production (実行) 環境に投入して、サーバを Production 環境で起動します。
+今回は Rails の起動に mongrel を使っています。
+この Rails の起動方法によっても Rails のパフォーマンスは大きく変わってきます。
+サーバとパフォーマンスについては、舞波さんの<a href="http://wota.jp/ac/?date=20060608">優しいRailsの育て方 運用サーバ速度比較</a>で比較されているので、こちらも参考にしてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake test_data
+$ rake test_data RAILS_ENV=production
+$ mongrel_rails start --environment=production</code></pre></figure>
+
+<p>何もオプションを付けずに mongrel を実行すると、デバッグがしやすいように Development 環境で実行されるため、パフォーマンスが大幅に低下します。
+パフォーマンスチューニングの際には必ず Production 環境を指定して実行してください。</p>
+
+<p>続いて、別のコンソールを開き、ログを表示させます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ tail -f log/production.log</code></pre></figure>
+
+<p>さて、起動したアプリケーションにブラウザからアクセスしてみましょう。
+「<a href="http://localhost:3000/addressbook/list">http://localhost:3000/addressbook/list</a>」をブラウザで開きます。</p>
+
+<p><a href="http://www.flickr.com/photos/31561567@N00/486038112/">Ajax Scaffold Generatorで作ったサンプル</a>
+<img src="http://farm1.static.flickr.com/175/486038112_13985ac782_m.jpg" alt="486038112_13985ac782_m.jpg" /></p>
+
+<p>同時に、先ほど別に開いたコンソールに、下記のようなログが出力されています。
+このログには色々な情報が記載されていますので、まずはこれを読んでみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Processing AddressbookController#list (for 127.0.0.1 at 2007-05-11 06:45:29) [GET]
+  Session ID: 2e8657b2292c23148677c36dcef2a49c
+  Parameters: {"action"=&gt;"list", "controller"=&gt;"addressbook"}
+Rendering  within layouts/addressbook
+Rendering addressbook/list
+Start rendering component ({:action=&gt;"component", :params=&gt;{"action"=&gt;"list", "controller"=&gt;"addressbook", "page"=&gt;1, "sort_direction"=&gt;"asc", "sort"=&gt;nil, "scaffold_id"=&gt;"person"}, :controller=&gt;"/addressbook"}):
+
+
+Processing AddressbookController#component (for 127.0.0.1 at 2007-05-11 06:45:29) [GET]
+  Session ID: 2e8657b2292c23148677c36dcef2a49c
+  Parameters: {"action"=&gt;"component", "id"=&gt;nil, "controller"=&gt;"addressbook", "scaffold_id"=&gt;"person", "sort"=&gt;nil, "sort_direction"=&gt;"asc", "page"=&gt;1}
+Rendering addressbook/component
+Completed in 0.05320 (18 reqs/sec) | Rendering: 0.04846 (91%) | DB: 0.00312 (5%) | 200 OK [http://localhost/addressbook/list]
+
+
+End of component rendering
+Completed in 0.05583 (17 reqs/sec) | Rendering: 0.05558 (99%) | DB: 0.00000 (0%) | 200 OK [http://localhost/addressbook/list]</code></pre></figure>
+
+<p>これは 1 アクセス分のログです。
+ブラウザからアクセスされ起動されたメソッドとパラメータが Processing 行以降に書かれ、カッコ内の部分がそれぞれの実行時間になります。</p>
+
+<p>Ajax Scaffold はちょっと複雑になっていて、list アクションが呼ばれると、内部で component アクションを呼び出して処理を委譲してしまいます。
+そのため 1 アクセスで二つの Processing が出力されています。</p>
+
+<p>このアクセスでは /addressbook/list を実行するのに 0.05583 秒かかり、
+そのうち HTML を生成する View 部分が 0.05246 (0.05558-0.00312) 秒で、
+データベースの実行時間が 0.00312+0.000000 秒で 0.00312 秒になります。
+内部で component を使っている場合、
+View 部分は最後の Completed の行の時間から他の Completed 行の DB を引いた時間、
+DB は全ての Complated の行を足した時間になります。</p>
+
+<p>最後の「Completed in 0.05583 (17 reqs/sec) 」から読むと、
+このサーバでは 1 秒間に 17 リクエスト処理ができることになります。</p>
+
+<h3 id="httperf-を使って-rails-の性能を計測する">httperf を使って Rails の性能を計測する</h3>
+
+<p>しかし、このログが出している実行時間は Rails 内部の実行時間のみです。
+実際には Web サーバの処理などがこれに加算されます。
+外部からアクセスした場合の実際の性能を計るには、HTTP のベンチマークソフトを使います。
+最も有名な HTTP ベンチマークソフトは、Apache httpd に付属している、ab (apache bench) ですが、
+最近ではこれより高性能な <a href="http://www.hpl.hp.com/research/linux/httperf/">httperf</a> がよく使われています。
+多くのディストリビューションでパッケージとして配布されていますので、
+それを利用してインストールしてください。
+Mac OS X の場合は、MacPorts でインストールすることができます。</p>
+
+<p>httperf を使って、先ほどのアプリの実際の性能を計測してみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ httperf --server=localhost --port=3000 --uri=/addressbook/list --num-conns=100 --num-calls=1</code></pre></figure>
+
+<p>httperf の使い方を簡単に見ていきましょう。
+–server –port –uri の 3 つのオプションでアクセスするページを指定しています。
+–num-calls では Keep Alive 時に 1 接続で何回アクセスするかを指定し、
+–num-conns で総接続数を指定します。
+今回は <a href="http://localhost:3000/addressbook/list">http://localhost:3000/addressbook/list</a> に 100 接続で 100 アクセスします。</p>
+
+<p>httperf の出力結果は下記のようになります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">httperf --client=0/1 --server=localhost --port=3000 --uri=/addressbook/list --send-buffer=4096 --recv-buffer=16384 --num-conns=100 --num-calls=1
+httperf: warning: open file limit &gt; FD_SETSIZE; limiting max. # of open files to FD_SETSIZE
+Maximum connect burst length: 1
+
+Total: connections 100 requests 100 replies 100 test-duration 31.146 s
+
+Connection rate: 3.2 conn/s (311.5 ms/conn, &lt;=1 concurrent connections)
+Connection time [ms]: min 276.1 avg 311.5 max 577.7 median 289.5 stddev 47.6
+Connection time [ms]: connect 0.1
+Connection length [replies/conn]: 1.000
+
+Request rate: 3.2 req/s (311.5 ms/req)  ← *
+Request size [B]: 76.0
+
+Reply rate [replies/s]: min 3.2 avg 3.2 max 3.2 stddev 0.0 (6 samples)
+Reply time [ms]: response 309.4 transfer 1.9
+Reply size [B]: header 276.0 content 44166.0 footer 0.0 (total 44442.0)
+Reply status: 1xx=0 2xx=100 3xx=0 4xx=0 5xx=0
+
+CPU time [s]: user 6.25 system 24.41 (user 20.1% system 78.4% total 98.4%)
+Net I/O: 139.6 KB/s (1.1*10^6 bps)  ← *</code></pre></figure>
+
+<p>このログのうち、Rails のパフォーマンスチェックに使う指針は
+「Request rate: 3.2 req/s (311.5 ms/req)」になります。
+これは、1秒間の処理リクエスト数が 3.2 回で、1 リクエスト当たり 311.5 ミリ秒かかっていることを示しています。
+要するにこのサーバでは、1 秒当たり 3.2 回以上のリクエストを受け取ると処理能力を超えてしまい、
+ユーザからすると「レスポンスが悪く、重いサービス」ということになってしまいます。</p>
+
+<p>またもうひとつの指針として「転送速度」があります。
+先ほどのログの最後の部分「Net I/O: 139.6 KB/s (1.1*10^6 bps)」がそれを示しています。
+これはこのページに連続アクセスした場合、139.6Kbytes/sec (1.1Mbps) のデータ転送量になることを示しています。</p>
+
+<p>転送速度がネットワークの速度よりも速い場合は、
+アプリケーションのチューニングの前にネットワークの増強が必要です。
+例えばサーバを家の ADSL に設置していて、上りが 1Mbps しか出ない場合には、
+ユーザからのアクセス速度はネットワークに制限されることになります。</p>
+
+<p>さて、この値を見ると、先ほど確認した Rails のログの
+「Completed in 0.05583 (17 reqs/sec)」と差違が生じていることに気づかれましたか。
+Rails のログでは、Web サーバの部分や Rails 内部の一部の速度が含まれていないためです。</p>
+
+<h3 id="web-サーバ部のパフォーマンスを計測する">Web サーバ部のパフォーマンスを計測する</h3>
+
+<p>では、ログに現れていない部分のパフォーマンスを少し詳しく調べてみましょう。
+まずは Web サーバ部分のパフォーマンスです。
+Web サーバのみのパフォーマンスを計測するために、先のページを静的な HTML にした後、サーバに設置して、それの速度を計測してみましょう。</p>
+
+<p>まずは、wget で現在のページを静的な HTML にします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ wget http://localhost:3000/addressbook/list --output-document=public/static_list.html</code></pre></figure>
+
+<p>そしてそれを静的ファイルとして public ディレクトリに置き、httperf で計測します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ httperf --server=localhost --port=3000 --uri=/static_list.html --num-conns=100 --num-calls=1
+(中略)
+Request rate: 274.3 req/s (3.6 ms/req)
+(中略)
+Net I/O: 11904.0 KB/s (97.5*10^6 bps)
+(中略)</code></pre></figure>
+
+<p>静的ファイルだけだと、274.3 アクセス/秒で処理されています。
+これを転送量に直すと 97.5Mbps 出ているので、静的ファイルを公開する上では、十分なスペックでしょう。</p>
+
+<h3 id="フレームワーク部分のパフォーマンスを計測する">フレームワーク部分のパフォーマンスを計測する</h3>
+
+<p>続いて何もしないで同じサイズのファイルを返すアクションを作り、速度を計測してみましょう。
+これでフレームワーク部分のオーバーヘッドが計測できます。
+先ほどと同じように wget でファイルをダウンロードし、それを view に設置して速度を計測します。
+今度は public フォルダ以下ではなく、app/views 以下に置くことで、フレームワークを通って処理されます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ./script/generate controller ab_static
+$ wget http://localhost:3000/addressbook/list --output-document=app/views/ab_static/list.rhtml
+$ httperf --server=localhost --port=3000 --uri=/ab_static/list --num-conns=100 --num-calls=1
+(中略)
+Request rate: 3.8 req/s (264.5 ms/req)
+(中略)
+Net I/O: 164.3 KB/s (1.3*10^6 bps)</code></pre></figure>
+
+<p>ここでは、48.3 リクエスト/秒まで落ちています。
+転送速度では 13.6Mbps です。
+静的なファイルのリクエスト時間が 3.6 ミリ秒で、今回が 264.5 ミリ秒ですから、260.9 ミリ秒がフレームワークの処理時間になります。
+正確には app/views/ab_static/list.rhtml の出力時間を含みますが、これは非常に少ないので、ここでは無視します。</p>
+
+<h2 id="フレームワーク部分の高速化">フレームワーク部分の高速化</h2>
+
+<p>まずは、フレームワークの処理時間を速くすることはできないでしょうか？　
+個々のアクションの高速化も大切ですが、
+全てのアクションで実行されるフレームワーク部分の高速化は、
+全体のパフォーマンスに非常に大きな影響をもたらします。
+この部分を速くする方法はないのでしょうか？</p>
+
+<p>実は、不要な機能を停止したり、複雑になってしまう部分をシンプルにすることで、
+ある程度高速化することができます。</p>
+
+<h3 id="セッションをオフにする">セッションをオフにする</h3>
+
+<p>今回はログイン機能などを使っていないので、セッション機能をオフにしましょう。
+app/controllers/application.rb の session 行を下記のように書き換えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">class ApplicationController &lt; ActionController::Base
+  # Pick a unique cookie name to distinguish our session data from others'
+  session :session_key =&gt; '_sample1_session_id'
+end
+↓ session 行を変更
+class ApplicationController &lt; ActionController::Base
+  # Pick a unique cookie name to distinguish our session data from others'
+  session :disabled =&gt; true
+end</code></pre></figure>
+
+<p>そして、計測してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ httperf --server=localhost --port=3000 --uri=/ab_static/list --num-conns=100 --num-calls=1
+(中略)
+Request rate: 168.8 req/s (5.9 ms/req)
+(中略)
+Net I/O: 7326.1 KB/s (60.0*10^6 bps)</code></pre></figure>
+
+<p>264.5 ミリ秒から 5.9 ミリ秒へ高速化されました。
+「addressbook/list」へアクセスしてベンチマークをとっても、
+「14.3 req/s (70.0 ms/req)」と、ほぼ同じだけ高速化されました。</p>
+
+<p>実はこのように、フレームワークの処理におけるセッションの処理は、非常に重い処理のひとつです。
+セッションありのアクセスの場合、処理時間の 97% がセッションの処理に当てられていたことになります。</p>
+
+<p>特に今回の実験では SQLite3 でセッションの保存を行っているため、ディスク IO がネックになっているものと思われます。
+MySQL で別のサーバでセッションを保存している場合には、ここまでの差は出ない場合もあります。</p>
+
+<p>Rails ではセッションの利用をコントローラごとやアクションごとに指定できます。
+例えば、トップページのアクションでセッションが要らない場合はそこだけ無効にするなど、
+こまめにセッションを無効にすることで、パフォーマンスを上げることができます。</p>
+
+<h3 id="高速なセッションストアを使う">高速なセッションストアを使う</h3>
+
+<p>しかし、これではセッションを保存するアプリケーションを速くすることができません。
+実はセッションの保存が遅い理由のひとつが保存方法です。
+標準ではデータベースに保存するときに ActiveRecord 経由で保存されます。
+SQLSessionStore というプラグインを使えば、ActiveRecord を経由せず直接SQLを使ってセッションを保存することができます。</p>
+
+<p>このプラグインの導入は非常に簡単なので試してみましょう。
+まずはプラグイン本体をインストールします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ cd vender/plugins
+$ svn co http://railsexpress.de/svn/plugins/sql_session_store/trunk sql_session_store
+$ cd ../..</code></pre></figure>
+
+<p>そして、セッションの保存方法を変更するために、
+config/environement.rb の config.action_controller.session_store をコメントアウトし、
+セッションの保存先を SqlSessionStore に変更します。</p>
+
+<p>また、今までのテストでは、データベースに SQLite3 を使っていましたが、
+SqlSessionStore ではサポートされていないので、
+このテストのみデータベースを MySQL へ変更して行います。</p>
+
+<p>まずは比較のため、MySQL で ActiveRecordStore を使ったベンチマークを計測しておきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ httperf --server=localhost --port=3000 --uri=/ab_static/list --num-conns=100 --num-calls=1
+(中略)
+Request rate: 164.7 req/s (6.1 ms/req)</code></pre></figure>
+
+<p>次に config/environment.rb を下記のように修正し、SqlSessionStore を有効にします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"># 下記をコメントアウトし
+config.action_controller.session_store = :active_record_store
+↓
+# config.action_controller.session_store = :active_record_store
+
+# ファイルの最後に下記の 2 行を追加します。
+ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS.update(:database_manager =&gt; SqlSessionStore)
+SqlSessionStore.session_class = MysqlSession</code></pre></figure>
+
+<p>そして、セッションを保存するテーブルを SQLSessionStore 用に変更します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ ./script/generate sql_session_store mysql
+$ rake db:migrate RAILS_ENV=production</code></pre></figure>
+
+<p>さて、もう一度計測してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ httperf --server=localhost --port=3000 --uri=/ab_static/list --num-conns=100 --num-calls=1
+(中略)
+Request rate: 184.1 req/s (5.4 ms/req)</code></pre></figure>
+
+<p>MySQL で ActiveRecordStore を使った場合には 6.1 ミリ秒でしたが、SqlSessionStore を使うと 5.4 ミリ秒と 12% 高速化されました。
+ここではあまり差が開きませんでしたが、同時に多くのセッションを扱うようになれば、この差は開いていくものと思われます。</p>
+
+<p>セッションを使わないのであればオフに、使うのであれば SQLSessionStore を使うことで、速度を上げることができます。</p>
+
+<h3 id="必要のないプラグインを削除する">必要のないプラグインを削除する</h3>
+
+<p>今回はサンプルアプリケーションなので、プラグインの導入は必要最低限しか行っていませんが、
+本格的なアプリケーション構築の場合、かなりの数のプラグインを導入することがあります。
+プラグインによっては、インストールしておくだけで速度が低下するものがあります。</p>
+
+<p>速度を気にするケースの場合、プラグインの導入前後でベンチマークをとってみることをおすすめします。</p>
+
+<h2 id="view-を高速化">View を高速化</h2>
+
+<p>さて、セッションを無効、もしくは高速なセッションに切り替えることで、フレームワーク部の速度向上が図れることが分かりました。
+続いて、アプリケーションの中を見てみましょう。
+アプリケーションの中のチューニングにまず役に立つのは Rails のログです。
+「パフォーマンスを計測しよう」の章で確認した Rails のログをもう一度見てみます。</p>
+
+<p>そこでも説明しましたが、Rendering と呼ばれる HTML の生成部分に 40 ミリ秒以上かかっていることが分かります。
+このアプリケーションでは実行時間のほとんどが HTML の生成にかかることが分かります。</p>
+
+<p>Rails では、View を中心とした高速化の手法として、キャッシュ機構を内蔵しています。
+これを使えば同じ HTML を二度生成することなく、その分の処理がまるごと省けるので、かなりの高速化が見込めます。
+しかし、キャッシュの導入は、適用範囲やキャッシュの破棄などにより、プログラムが複雑になりがちです。
+特に HTML の構造がたびたび変更されるときには、そのたびにキャッシュの範囲を再設計する必要があるなど手間がかかってしまいます。
+できれば最後の手段に取っておきたい手法です。</p>
+
+<h3 id="render-が犯人">render が犯人</h3>
+
+<p>では、それ以外に View を高速化する方法を探ってみます。
+ログからもう少し情報を探れないか、ログの出力レベルを :debug にします。
+config/environment.rb を下記のように変更します (見やすいように改行を入れてあります)。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">require File.join(File.dirname(__FILE__), 'boot');
+Rails::Initializer.run { |config|
+  config.action_controller.session_store = :active_record_store
+}
+↓ 1 行追加
+require File.join(File.dirname(__FILE__), 'boot');
+Rails::Initializer.run { |config|
+  config.action_controller.session_store = :active_record_store
+  config.log_level = :debug
+}</code></pre></figure>
+
+<p>一度、ブラウザから「/addressbook/list」にアクセスして、ログを見てみましょう。
+そうすると、今度は前回に比べ、下記のようなログが同時に出力されています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Rendering addressbook/component
+Rendered addressbook/_column_headings (0.00200)
+Rendered addressbook/_messages (0.00075)
+Rendered addressbook/_person (0.00170)
+Rendered addressbook/_person (0.00136)
+(中略)
+Rendered addressbook/_person (0.00137)
+Rendered addressbook/_person (0.00155)
+Rendered addressbook/_pagination_links (0.00035)</code></pre></figure>
+
+<p>これは、実際に HTML をレンダリングしたログです。
+_ (アンダースコア) で始まるファイルは partial です。
+Ajax Scaffold では、ページを 5 つの partial に分けてそれを呼び出してレンダリングしています。</p>
+
+<p>ひとつひとつの partial はさほど遅くないのですが、
+特に「_person」の数が多く、これによる速度低下が激しいようです。
+なんとかこれを速くする方法はないでしょうか？</p>
+
+<p>実は Rails の render 命令は結構遅く、
+特にひとつの View の中で大量に呼び出すと、それだけでかなりのコストになってきます。
+実際に app/views/addressbook/component.rhtml の 37 行目を下記のように展開してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">      &lt;%= render :partial =&gt; 'person', :collection =&gt; @people, :locals =&gt; { :hidden =&gt; false } %&gt;
+↓ 展開
+&lt;% hidden = false; @people.each do |person| %&gt;
+  # app/views/addressbook/_person.rhtml の内容を直接書く
+&lt;% end %&gt;</code></pre></figure>
+
+<p>これで Rails ログを見てみると
+「Completed in 0.04629 (21 reqs/sec)」と、
+元の 0.05558 秒に比べて 9 ミリ秒 (17%) も速くなっています。</p>
+
+<p>httperf でも見てみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Request rate: 14.5 req/s (69.2 ms/req)
+(中略)
+Net I/O: 614.6 KB/s (5.0*10^6 bps)</code></pre></figure>
+
+<p>上記のように、やはり同じ程度速くなっています。
+しかし、これではあまりに可読性が落ちてしまうので、
+ERB の命令を使って partial ファイルをヘルパーメソッド化して使いましょう。</p>
+
+<p>app/helpers/addressbook_helper.rb を下記のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">module AddressbookHelper
+  extend ERB::DefMethod
+  def_erb_method('render_person(person, hidden)', "#{RAILS_ROOT}/app/views/addressbook/_person.rhtml")
+end</code></pre></figure>
+
+<p>そして、先ほどの render 部分を、次は下記のように書き換えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">      &lt;%= @people.collect{|person|render_person(person, false)}.join %&gt;</code></pre></figure>
+
+<p>これで、可読性をあまり落とさず、なおかつ render 命令を省くことで高速化できます。
+なおこの場合、変数スコープは元の View と同じになっていますので、気をつけてください。</p>
+
+<h2 id="さいごに">さいごに</h2>
+
+<p>最近では <a href="http://twitter.com/">twitter</a> というサービスが Rails で作られていることが話題になっています。
+twitter は高いトラフィックをさばいていることから、
+「Rails でもこういうトラフィックに対応したサイトを構築できる」という評判が出始めており、
+Rails でのサービス構築の大きな後押しになるのではないかと思っています。</p>
+
+<p>今回の記事では、あまり個別の高速化には触れずに、多くのケースで手軽に使える手法や、パフォーマンスチェックの手法について書いてきました。
+しかし、あまり高速化しすぎると、Rails の特徴である DRY や可読性の高いソースが失われてしまうので、そこはバランスが重要です。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>masuidrive (Yuichiro MASUI) <a href="http://masuidrive.jp/">http://masuidrive.jp/</a> BLOG: <a href="http://blog.masuidrive.jp">masuidrive on rails</a></p>
+
+<p>昔は <a href="http://pukiwiki.sourceforge.jp">PukiWiki</a> のメンテナとして活動してましたが、今は <a href="http://masuidrive.jp/rails">10 分 Rails ムービー</a>の方が有名かも。</p>
+
+<p>1998 年ぐらいから本格的に Ruby を使い始めてましたが、なかなか表だって使う機会がなかったのですが、
+Rails がリリースされて以来、すっかり Rails 漬けの生活を送っています。
+去年は Rails で Ruby な仕事しかせず、幸せな毎日を送ってました。</p>
+
+<p>昨年まではフリーランスでしたが、2007 年 4 月から<a href="http://www.wiseknot.co.jp">株式会社ワイズノット</a>/<a href="http://www.osri.co.jp/">OSRI</a> で働いています。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0019/0019-RubyOnRails.html">RubyOnRails を使ってみる 【第 10 回】 パフォーマンスチューニング</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-RubyOnRails.html">RubyOnRails を使ってみる 【第 9 回】 Rails で XML-DB にチャレンジ</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-RubyOnRails.html">RubyOnRails を使ってみる 【第 8 回】 Rails はまり道</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-RubyOnRails.html">RubyOnRails を使ってみる 【第 7 回】 RJS を使ってみる</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-RubyOnRails.html">RubyOnRails を使ってみる 【第 6 回】 テストの書き方</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-RubyOnRails.html">RubyOnRails を使ってみる 【第 5 回】 ActiveHeart</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-RubyOnRails.html">RubyOnRails を使ってみる 【第 4 回】 ActionPack</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0006/0006-RubyOnRails.html">RubyOnRails を使ってみる 【第 3 回】 ActiveRecord</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0005/0005-RubyOnRails.html">RubyOnRails を使ってみる 【第 2 回】 (続・RubyOnRails を使ってみる)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0004/0004-RubyOnRails.html">RubyOnRails を使ってみる 【第 1 回】</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

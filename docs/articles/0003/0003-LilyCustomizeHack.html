@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>lily でブログカスタマイズ 【第 1 回】</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0003/0003-LilyCustomizeHack.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>lily でブログカスタマイズ 【第 1 回】</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0003/0003-LilyCustomizeHack.html" class="hatena-bookmark-button" data-hatena-bookmark-title="lily でブログカスタマイズ 【第 1 回】" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0003/0003-LilyCustomizeHack.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0003/0003-LilyCustomizeHack.html" data-text="lily でブログカスタマイズ 【第 1 回】">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#自分カスタムのブログを持ってみる" id="markdown-toc-自分カスタムのブログを持ってみる">自分カスタムのブログを持ってみる</a>    <ul>
+      <li><a href="#lilyって何" id="markdown-toc-lilyって何">lilyって何？</a></li>
+    </ul>
+  </li>
+  <li><a href="#lilyの入手とインストール" id="markdown-toc-lilyの入手とインストール">lilyの入手とインストール</a>    <ul>
+      <li><a href="#lilyのダウンロード" id="markdown-toc-lilyのダウンロード">lilyのダウンロード</a></li>
+      <li><a href="#設定する" id="markdown-toc-設定する">設定する</a></li>
+      <li><a href="#rbuconvの導入" id="markdown-toc-rbuconvの導入">rbuconvの導入</a></li>
+      <li><a href="#サーバにアップロードする" id="markdown-toc-サーバにアップロードする">サーバにアップロードする</a>        <ul>
+          <li><a href="#first-post" id="markdown-toc-first-post">First Post</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#記事を書いてみる" id="markdown-toc-記事を書いてみる">記事を書いてみる</a>    <ul>
+      <li><a href="#ftpを使った記事のアップロード" id="markdown-toc-ftpを使った記事のアップロード">FTPを使った記事のアップロード</a></li>
+      <li><a href="#各種フィルタの書き方と利用法" id="markdown-toc-各種フィルタの書き方と利用法">各種フィルタの書き方と利用法</a>        <ul>
+          <li><a href="#自分でフィルタプログラムを作ってみる" id="markdown-toc-自分でフィルタプログラムを作ってみる">自分でフィルタプログラムを作ってみる</a></li>
+          <li><a href="#フィルタの改良" id="markdown-toc-フィルタの改良">フィルタの改良</a></li>
+        </ul>
+      </li>
+      <li><a href="#ブラウザから記事を投稿する" id="markdown-toc-ブラウザから記事を投稿する">ブラウザから記事を投稿する</a></li>
+    </ul>
+  </li>
+  <li><a href="#あとがき" id="markdown-toc-あとがき">あとがき</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<p>書いた人：ふしはらかん</p>
+
+<h2 id="自分カスタムのブログを持ってみる">自分カスタムのブログを持ってみる</h2>
+
+<p>ブログ、という言葉も大分浸透して来た昨今、あえてブログは何なのか語るのは「るびま」読者の方々には釈迦に説法でしょう。</p>
+
+<p>最近ではISPをはじめとして様々な会社がブログを運営できるサービスを展開しています。手軽に自分のブログをもつことが出来て便利ですが、当然ながら隅から隅まで自分の使いやすいようにカスタマイズする、というわけにはいきません。やはり、ブログをカスタマイズするなら自分でサーバを借りて…ということになります。</p>
+
+<p>以前はRubyのCGIを試そう、という場合、まずRubyを使えるサーバを探すのが一苦労だったのですが、幸いなことにRubyを使うことの出来るレンタルサーバーは増えてきているようです。中には無料のサービスもあるので、「ブログにもRubyにも興味はあるけど金は無い」という人にはピッタリです。</p>
+
+<p>無事レンタルサーバーのサービスが見つかったら、ブログ運営プログラムとして何を選ぶか、ということになります。</p>
+
+<h3 id="lilyって何">lilyって何？</h3>
+
+<p>Rubyでブログというと、tDiaryが頭に浮かぶ人も多いと思います。「Rubyって、tDiaryを動かすのに必要な奴だよね」と言わしめた程、Rubyを使ったプログラムの中でも利用実績、知名度共に圧倒的です。</p>
+
+<p>しかし、ここでは敢えて「自分の手でブログをいじる」という観点からlilyをお勧めしようと思います。tDiaryの最新バージョン(2.0)は、テーマを同梱しない基本セットで134KB(圧縮時)のサイズがあります。これに対し、lily(0.1.5)は4分の1の31KBしかありません。プログラム本体であるlily.cgiに至ってはわずか500行（プログラム自体は400行ちょっと）です。</p>
+
+<p>もちろん、軽量であるかわりにlilyには大した機能はありません。FTPでアップロードしたファイルをブログの記事として表示する、という基本的な機能以外は自分でRubyのプログラムを書いてカスタマイズしていくことになります。…それを聞いて「なんだか面白そう」と思ったあなた、しばらくお付き合い下さればと思います。</p>
+
+<h2 id="lilyの入手とインストール">lilyの入手とインストール</h2>
+
+<h3 id="lilyのダウンロード">lilyのダウンロード</h3>
+
+<p>lilyの公式サイトからダウンロード可能です。下記URLから「lily0.1.5 標準セット」をダウンロードしてください。ZIP形式で圧縮されているので、解凍ソフトが必要です。</p>
+
+<p><a href="http://www.mikihoshi.com/lily/download/lilyset.html">http://www.mikihoshi.com/lily/download/lilyset.html</a></p>
+
+<p>ダウンロードした「lilyset015.zip」を解凍すると、lilyのプログラム本体と、設定やデザインのためのファイル類が入ったディレクトリが展開されます。</p>
+
+<h3 id="設定する">設定する</h3>
+
+<p>ディレクトリの中にある「lily.cfg」というファイルが設定ファイルになります。エディタで開いて編集していきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">blog_title          lily
+blog_description    シンプルなサイト構築システム
+blog_language       ja
+datadir             log
+flavourdir          flavour
+depth               0
+num_entries         10
+default_flavour     flav
+file_extension      txt
+show_future_entries 0
+plugindir           plugin
+encode              utf-8
+url                 http://www.mikihoshi.com/lily</code></pre></figure>
+
+<p>これは、<a href="http://www.mikihoshi.com/lily">lily配布サイト</a>のlily.cfgです。lily.cfgでは、上記のように「キー名（タブ）値」の書式で1行ずつ設定を書いていきます。以下で、それぞれのキーの意味を説明します。</p>
+
+<dl>
+  <dt>blog_title</dt>
+  <dd>ブログのタイトルです。ページ上部とHTMLのtitleタグに設定される値になります。</dd>
+  <dt>blog_description</dt>
+  <dd>ブログの説明文です。通常はブログタイトルの近くに 表示されます。</dd>
+  <dt>blog_language</dt>
+  <dd>何の言語で記事を書くかを指定します。通常はja(日本語)で問題ないです。</dd>
+  <dt>datadir</dt>
+  <dd>記事ファイル（後述）のあるディレクトリを指定します。</dd>
+  <dt>flavourdir</dt>
+  <dd>フレーバー（後述）のあるディレクトリを指定します。</dd>
+  <dt>plugindir</dt>
+  <dd>プラグイン（後述）のあるディレクトリを指定します。</dd>
+  <dt>depth</dt>
+  <dd>0を指定すると、datadirで指定したディレクトリの直下のファイルしか、トップページに表示しません。通常は1を指定して、datadirのサブディレクトリ下のファイルも表示します。lily配布サイトでは0に指定し、直下にはバージョンアップ告知などのニュース記事を置き、サブディレクトリにダウンロードページの記事などを置くことで、トップにニュース記事のみが表示されるようにしています。</dd>
+  <dt>num_entries</dt>
+  <dd>トップページに何件の記事を表示するか指定します。例えば10だと、最新の記事から数えて新しいもの10件がトップページに表示されます。</dd>
+  <dt>default_flavour</dt>
+  <dd>後述します。</dd>
+  <dt>file_extension</dt>
+  <dd>後述します。</dd>
+  <dt>show_future_entries</dt>
+  <dd>1を指定すると、作成日付が未来のファイルを表示します。通常は0なので表示しません。これを利用して、UNIX等のコマンドでファイルの作成日時を未来にしておくと、その日になって表示される投稿予約（Movable Typeでは最近実装されました）を行うことが出来ます。</dd>
+  <dt>encode</dt>
+  <dd>ページをどのような文字コードで出力するか指定します。lilyではデフォルトでRSSを出力するようになっていますが、RSSの出力文字コードがutf-8になっているので、ブログ本文（HTML）のほうも合わせることをお勧めします。</dd>
+  <dt>url</dt>
+  <dd>通常は指定しません。後述するmod_rewriteを使ったテクニックの際に使用します。</dd>
+</dl>
+
+<p>実際にはblog_title,blog_description以外は凝った使い方をしない限り変更する必要はありません。</p>
+
+<h3 id="rbuconvの導入">rbuconvの導入</h3>
+
+<p>前の章で設定したように、lilyでは出力するHTMLの文字コードを指定することが出来ます。日本語を使う場合は、Windowsで主に使われるShift-JIS、Unix系で主に使われるEUC、それ以外ではUnicodeなどを使う場合が殆どです。</p>
+
+<p>lilyの標準の設定では文字コードはUnicodeを使用するようになっています（プログラムソースはEUCで記述されています）。しかし、Windowsを使っている人は記事のファイルをShift-JISで書く場合が殆どでしょう。また、lilyにはオプションとしてTrackBackを受信する機能があります。TrackBackは基本的にUnicodeで送信するのがルールですが、中にはそれ以外の文字コードでTrackBackを送ってくるツールもあるようです。</p>
+
+<p>上記の問題を解決するために、lilyでは<a href="http://www.yoshidam.net">吉田氏</a>の<a href="http://www.yoshidam.net/Ruby_ja.html">Uconvモジュール</a>を使って文字コードの変換を行っています。Uconvモジュールの導入にはソースのコンパイルが必要なため、lilyに同梱していませんでしたが、現在では吉田氏によってrubyだけで動くUconvの互換モジュール<a href="http://www.yoshidam.net/diary/rbuconv-0.1.2.tar.gz">rbuconv</a>が開発されており、次バージョンからはlilyに同梱する予定です。</p>
+
+<p>今回はrbuconvを別途入手して、lilyに適用することにします。rbconvをダウンロードして、解凍したファイルの中のuconv.rbとrbuconv.rb、uconvディレクトリをlily.cgiと同じディレクトリに置いて下さい。</p>
+
+<h3 id="サーバにアップロードする">サーバにアップロードする</h3>
+
+<p>FTPでファイルをサーバにアップロードします。lilyset015.zipを解凍して出来たディレクトリ中の、以下のファイルをアップロードしてください。</p>
+
+<ul>
+  <li>lily.cgi</li>
+  <li>lily.cfg</li>
+  <li>rbuconv.rb</li>
+  <li>uconv.rb</li>
+</ul>
+
+<p>また、以下のディレクトリは中身のファイルごとアップロードします。</p>
+
+<ul>
+  <li>flavour</li>
+  <li>plugin</li>
+  <li>log</li>
+  <li>uconv</li>
+</ul>
+
+<p>アップロードが終わったら、lily.cgiのパーミッションを755に設定します。また、以下のディレクトリに書き込み権を設定してください（パーミッションを755などにして下さい）。</p>
+
+<ul>
+  <li>plugin/referer</li>
+  <li>plugin/comment</li>
+  <li>plugin/trackback</li>
+  <li>log</li>
+  <li>log/test</li>
+</ul>
+
+<p>作業が終わったらWebブラウザでアップロードしたばかりのブログが見えるかどうか試してみましょう。lily.cgiにアクセスして、設定したタイトルとテストの記事が表示されれば成功です。lilysetには以下のようなテスト記事が同梱されています。
+<img src="/images/0003-LilyCustomizeHack/test.txt" alt="test.txt" /></p>
+
+<p>テスト記事は以下のように出力されます。</p>
+
+<h4 id="first-post">First Post</h4>
+
+<p>このエントリーはテストです。</p>
+
+<ul>
+  <li>list1</li>
+  <li>list2</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> def foo
+   bar
+ end</code></pre></figure>
+
+<blockquote>
+  <p>hogehoge</p>
+</blockquote>
+
+<p><strong>太字</strong>  <del>取り消し</del>  <a href="http://www.mikihoshi.com/lily">アンカー</a></p>
+
+<h2 id="記事を書いてみる">記事を書いてみる</h2>
+
+<h3 id="ftpを使った記事のアップロード">FTPを使った記事のアップロード</h3>
+
+<p>いよいよ記事の投稿になります。既に説明したように、lilyはサーバ上のlily.cfgで指定したディレクトリ（datadir）下にあるファイルのうち、指定された拡張子（file_extension）のファイルを記事として読み込んで表示します。そのため、lilyに記事を投稿する最も単純な方法は、手元のPCで記事を（エディタ等で）書いて、FTPでアップロードすることになります。</p>
+
+<p>lily.cfgの設定を変えない場合、記事になるファイルの拡張子はtxt（テキストファイル）です。このファイルの１行目が、ブログとしてWeb上に表示されるときの、記事のタイトルになります。以降は記事本文になります。標準の設定ではHTMLを直接入力することになります。</p>
+
+<h3 id="各種フィルタの書き方と利用法">各種フィルタの書き方と利用法</h3>
+
+<p>前章の方法は、FTPやHTMLに慣れている人にとってはtDiaryやMovable Type等のWeb上からの更新作業よりもわずらわしさが無く楽かもしれません。しかし一般的にはHTMLを毎回手で書くのはなかなか面倒です。</p>
+
+<p>最近のWebアプリケーションであるBlogやWikiは、HTMLより簡単に文書構造を記述することが出来る特殊な記法を用意しています。ここではRubyで実装された代表的なWikiの一つである、Hikiの記法で記事を書く方法を解説します。
+<a href="/images/0003-LilyCustomizeHack/wiki_style.rb">wiki_style.rb</a></p>
+
+<p>上記ファイルをダウンロードし、lilyを動かしているサーバのプラグインディレクトリ(lily.cfgでplugindirで指定したディレクトリ)にFTPでアップロードします。</p>
+
+<p>次に、lily.cfgの内容を一部修正します。file_extensionの行を以下のように書き換えてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">     file_extension      txt wiki</code></pre></figure>
+
+<p>このように、file_extensionには半角スペースで区切って複数の拡張子を指定することが出来ます。修正したlily.cfgをアップロードすると、拡張子wikiのファイルは、Hiki書式で書かれているものとして変換されます。例えば、前章のtest.txtと同じ記事を表示するtest.wikiは以下のようになります。
+<img src="/images/0003-LilyCustomizeHack/test.wiki.txt" alt="test.wiki.txt" /></p>
+
+<p>なお、このWikiスタイルフィルタは<a href="http://tokuhirom.dnsalias.org/~tokuhirom/cl/">とくひろ氏</a>の<a href="http://tokuhirom.dnsalias.org/~tokuhirom/cl/2004-05-04.html#2004-05-04-2">公開されているソース</a>を修正してlilyのフィルタ形式にしたものです。</p>
+
+<h4 id="自分でフィルタプログラムを作ってみる">自分でフィルタプログラムを作ってみる</h4>
+
+<p>HTMLを書くのも面倒だけど、Wikiの文法も結構複雑だし、覚えるの面倒くさい…というものぐさな方、10分時間を下さい。たったそれだけの時間で、簡単に記事を書くことのできるプラグインが作れます。</p>
+
+<p>まず、ものぐさ用記法のルールを決めておきます。以下のようにします。</p>
+
+<ul>
+  <li>文中の改行はHTMLでも改行になる</li>
+  <li>httpで始まる文字列（URL）はリンクになる</li>
+  <li>HTMLのタグは使いたければ使える</li>
+</ul>
+
+<p>エディタを開いて、簡単なrubyのメソッドを書きます。ものぐさ記法のフィルタなので、名前はlazy_style_filterとしましょう。フィルタのメソッドは「_filter」で終わるようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def lazy_style_filter
+  @body.gsub!(URI.regexp(["http","https","ftp","mailto"])){|m| %[&lt;a href="#{m}"&gt;#{m}&lt;/a&gt;] }
+  @body = "&lt;pre&gt;#{@body}&lt;/pre&gt;"
+end</code></pre></figure>
+
+<p>ちなみにURI#regexpはrubyのバージョン1.8.1以降のみで使えます。バージョン1.6.8などの環境で動作させたい場合は「<a href="http://">http://</a>\S*」などURIとマッチする適当なパターンを指定してください。</p>
+
+<p>また、HTMLタグは全く使わないので、&gt;などをそのまま表示させたいという究極のものぐさ向けには、以下のようにタグをエスケープする方法があります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">@body = CGI.escapeHTML(@body)</code></pre></figure>
+
+<p>フィルタメソッドでは、@bodyと@titleという変数を操作します。@bodyには記事の本文が、@titleには記事のタイトルが入っています。上のlazy_style_filterでは、見てのとおり文中のURLをリンクに変換し、最後に文全体を&lt;pre&gt;で囲むことで、改行などの文章整形がそのまま画面に表示されるようにしています。</p>
+
+<p>このソースをファイルに保存します。ファイル名は、先ほど決めたメソッド名から「_filter」を除いたものになります（拡張子は.rbです）。この場合は「lazy_style.rb」になります。</p>
+
+<p>lazy_style.rbをプラグインディレクトリにアップロードしてみましょう。今まで変換なしで表示されていた、拡張子txtのファイルがものぐさ記法で変換表示されるようになったことが、テスト記事にあるGoogleのURLがリンクになることで簡単に確認できます。</p>
+
+<h4 id="フィルタの改良">フィルタの改良</h4>
+
+<p>実は、このプログラムには大きな問題があります。wiki_styleフィルタは、拡張子wikiのファイルしか変換しませんでしたが、lazy_styleフィルタはfile_extensionで定義した全ての拡張子のファイルを変換してしまいます。そのため、wiki_styleフィルタとlazy_styleフィルタを併用すると、出力されるHTMLが滅茶苦茶になってしまいます。</p>
+
+<p>フィルタのメソッドで、編集中のファイルの拡張子を知るには、@fext変数を参照します。@fext変数がtxtの時のみ変換を行うようにするには、lazy_style.rbを以下のように書き換えます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def lazy_style_filter
+  if @fext == 'txt'
+    @body.gsub!(URI.regexp(["http","https","ftp","mailto"])){|m| %[&lt;a href="#{m}"&gt;#{m}&lt;/a&gt;] }
+    @body = "&lt;pre&gt;" + @body + "&lt;/pre&gt;"
+  end
+end</code></pre></figure>
+
+<p>これを応用して、1つのフィルタメソッドで、拡張子に応じて変換方法を変えることも出来ます。</p>
+
+<h3 id="ブラウザから記事を投稿する">ブラウザから記事を投稿する</h3>
+
+<p>フィルタを使って簡単に記事を書くことが出来るようになりましたが、FTPを使ってファイルをいちいちアップロードするのが大変、という人も多いと思います。</p>
+
+<p>tDiaryは、独自のファイル形式（テキストですが）で日記のデータを記録しています。Movable Typeはデータベースに記事を記録しています。これらのシステムに比べると、ただのテキストファイルに記事を記録するlily用の更新CGIを作るのはそんなに難しくありません。</p>
+
+<p>lilyの次バージョンには、Webからの記事投稿を可能にする「lilypad」というプログラムが付属します。今回、lilypadのプロトタイプというか、α版にもならない簡易的なプログラムを5分ほどで書いてみました。(<a href="/images/0003-LilyCustomizeHack/lilypad.zip">lilypad.zip</a>)解凍して出てくるlilypad.cgiとMainPageディレクトリを、lily.cgiと同じディレクトリにアップロードしてください。別途、<a href="http://www.spice-of-life.net/cgikit/">CGIKit</a>が必要になりますのでご注意を。</p>
+
+<p>このプログラムはlily.cfgを読み込んでdatadirと、file_extensionを利用しますが、逆に言うとそれ以外は単にファイルを作るだけのアプリケーションです。ちょっと考えるだけでも</p>
+
+<ul>
+  <li>既存の記事の読み込みと編集</li>
+  <li>投稿時にPingを打つ</li>
+  <li>フィルタを通してどのように出力されるかプレビュー表示</li>
+</ul>
+
+<p>などの機能が欲しくなります。これらの機能は（恐らく）正式配布版のlilypadではサポートされますが、今回のソースをベースに自分で改造してみるとrubyプログラミングの練習になると思います。</p>
+
+<p>一例として、MainPageディレクトリ下のMainPage.rbを編集して、投稿時にPingを打つサンプルを載せておきます。今号でも連載を執筆されているMoonWolf氏の<a href="http://raa.ruby-lang.org/project/blogping/">Blog::Pingライブラリ</a>を使った改造です。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'fileutils'</span>
+
+<span class="k">class</span> <span class="nc">MainPage</span> <span class="o">&lt;</span> <span class="no">CKComponent</span>
+  <span class="k">def</span> <span class="nf">init</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="no">Hash</span><span class="p">.</span><span class="nf">new</span>
+
+    <span class="no">File</span><span class="o">::</span><span class="nb">open</span><span class="p">(</span><span class="s2">"./lily.cfg"</span><span class="p">,</span><span class="s2">"r"</span><span class="p">){</span><span class="o">|</span><span class="n">f</span><span class="o">|</span>
+      <span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">.</span><span class="nf">each_line</span> <span class="k">do</span> <span class="o">|</span><span class="n">line</span><span class="o">|</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="nf">chomp</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="sr">/\s+/</span><span class="p">)</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="nf">shift</span>
+        <span class="n">env</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">item</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="p">}</span>
+    
+    <span class="vi">@datadir</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'datadir'</span><span class="p">]</span>
+    <span class="vi">@file_extension</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'file_extension'</span><span class="p">].</span><span class="nf">split</span><span class="p">(</span><span class="sr">/ /</span><span class="p">)</span>
+    <span class="vi">@flavour</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'default_flavour'</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">env</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span> <span class="o">==</span> <span class="s2">""</span>
+      <span class="vi">@root_url</span> <span class="o">=</span> <span class="s2">"http://</span><span class="si">#{</span><span class="n">request</span><span class="p">.</span><span class="nf">server_name</span><span class="p">()</span><span class="si">}</span><span class="s2">/lily.cgi"</span>
+    <span class="k">else</span>
+      <span class="vi">@root_url</span> <span class="o">=</span> <span class="n">env</span><span class="p">[</span><span class="s1">'url'</span><span class="p">]</span>
+    <span class="k">end</span>
+
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">update</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s2">"%Y%m%d%H%M%S"</span><span class="p">)</span>
+  
+    <span class="no">FileUtils</span><span class="p">.</span><span class="nf">mkdir_p</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="vi">@datadir</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="vi">@entry_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"log/</span><span class="si">#{</span><span class="vi">@entry_path</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="vi">@extension</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span><span class="s1">'w'</span><span class="p">){</span><span class="o">|</span><span class="n">f</span><span class="o">|</span>
+      <span class="n">f</span><span class="p">.</span><span class="nf">puts</span> <span class="vi">@title</span>
+      <span class="n">f</span><span class="p">.</span><span class="nf">print</span> <span class="vi">@body</span>
+    <span class="p">}</span>
+    
+    <span class="vi">@url</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="vi">@root_url</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="vi">@entry_path</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="vi">@flavour</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>余談ですが、lilypadプログラムで使用しているCGIKitというWebアプリケーションフレームワークは非常に便利なのでお勧めです。CGIプログラムというと、どうしてもソース中にHTMLが混在して読みづらくなりがちですが、lilypadでは上記のMainPage.rbのようにrubyによる処理部分がHTMLと分離するので可読性が上がります。POST値とクラス変数のマッピングなども簡単な定義で出来たり、エラーになったときに原因を追いやすい（CGIKitのエラー画面が表示され、rubyのエラーのダンプを見られる）のもポイントです。</p>
+
+<h2 id="あとがき">あとがき</h2>
+
+<p>今回はlilyの導入と記事の書き方についてでしたが、いかがでしたでしょうか。</p>
+
+<p>次回はlilyのデザインを行う上で重要な「フレーバー」について書いていきたいと思います。本家であるblosxomのフレーバーを使う方法や、tDiaryのテーマ、Movable TypeのCSSを流用する方法などをまとめていく予定です。お楽しみに。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p><img src="/images/0003-LilyCustomizeHack/deka.jpg" alt="deka.jpg" />
+なまえ：ふしはらかん。kanとかfushihara kanとか伏原幹とかaliasは色々。<a href="http://d.hatena.ne.jp/mikihoshi/">mikihoshiというサブクラス</a>があります。</p>
+
+<p>構想1ヶ月のlilyをリリースしてruby界(?)に殴り込みをかけたものの、直後に構想10分で作った<a href="http://www.mikihoshi.com/wiki">wema(変なもの)</a>のほうが反響が大きく、密かに落ち込む。</p>
+
+<p>最近は変なもの2の作成に勤しみつつ、この号が発行される頃には発売されているSHARPの4GBHDD内蔵ザウルス、SL-C3000を借金覚悟で購入して弄り倒そうと目論んでいます。</p>
+
+<p>その他は<a href="http://www.mikihoshi.com">http://www.mikihoshi.com</a>を見て頂ければ、と。</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RegionalRubyKaigi レポート (41) 関西 Ruby 会議 05</title>
+  <meta name="description" content="書いた人：無量井 (@muryoimpl)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0045/0045-KansaiRubyKaigi05Report.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>RegionalRubyKaigi レポート (41) 関西 Ruby 会議 05</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0045/0045-KansaiRubyKaigi05Report.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RegionalRubyKaigi レポート (41) 関西 Ruby 会議 05" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0045/0045-KansaiRubyKaigi05Report.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0045/0045-KansaiRubyKaigi05Report.html" data-text="RegionalRubyKaigi レポート (41) 関西 Ruby 会議 05">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人：無量井 (<a href="https://twitter.com/muryoimpl">@muryoimpl</a>)</p>
+
+<h2 id="regionalrubykaigiレポート関西-ruby-会議-05">RegionalRubyKaigiレポート関西 Ruby 会議 05</h2>
+
+<h3 id="はじめに">はじめに</h3>
+
+<p>5 回目の開催となりました関西 Ruby 会議。<br />
+これまでは <a href="https://k-of.jp/">KOF</a> と併催というかたちでの開催でしたが、今回初めての単独開催に挑戦しました。これはその開催当日の様子を伝えるレポートです。</p>
+
+<h4 id="開催概要">開催概要</h4>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/all.jpg" alt="all.jpg" /></p>
+
+<dl>
+  <dt>開催日</dt>
+  <dd>2013 年 8 月 31 日 (土) 10:00 〜 18:00</dd>
+  <dt>開催場所</dt>
+  <dd>TIS株式会社 大阪本社</dd>
+  <dt>主催</dt>
+  <dd>関西 Ruby 会議 05 実行委員会</dd>
+  <dt>後援</dt>
+  <dd><a href="http://ruby-no-kai.org/">日本 Ruby の会</a>、 <a href="https://github.com/rubykansai/workshops/wiki">Ruby 関西</a></dd>
+  <dt>協賛</dt>
+  <dd><a href="http://ruby-b.com/">Ruby ビジネス推進協議会</a>、 <a href="http://agileware.jp/">株式会社アジャイルウェア</a>、 <a href="http://resocia.jp/">ヒューマンリソシア株式会社</a>、 <a href="http://www.railscp.org/">Rails 技術者認定試験運営委員会</a></dd>
+  <dt>公式ページ</dt>
+  <dd><a href="http://regional.rubykaigi.org/kansai05">http://regional.rubykaigi.org/kansai05</a> (スライドへのリンクあり)</dd>
+  <dt>公式ハッシュタグ</dt>
+  <dd>#kanrk05</dd>
+  <dt>togetter</dt>
+  <dd><a href="http://togetter.com/li/560708">http://togetter.com/li/560708</a></dd>
+</dl>
+
+<p><br /><br /><br />
+　photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918489512970742642?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918489512970742642&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h3 id="テーマ-survive">テーマ: survive</h3>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/survive.jpg" alt="survive.jpg" /></p>
+
+<p>仕事で使う Ruby、趣味として使う Ruby、学びの道具として使う Ruby。</p>
+
+<p>いろんな Ruby の使い方があると思いますが、Rubyist が日々生きていく上で努力したこと、成し遂げたこと、失敗したことを共有できる場としたい、そういう想いからこのテーマを選びました。</p>
+
+<p>開催趣意書は<a href="https://github.com/rubykansai/kanrk05/wiki/%E9%96%8B%E5%82%AC%E8%B6%A3%E6%84%8F%E6%9B%B8">コチラ</a></p>
+
+<p>(某カップ麺のCM流れる前から委員会はこのテーマ、選んでたんだからね！)</p>
+
+<p>photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172129063699042?authkey=CPKEwsbvycXi_gE&amp;pid=5920172129063699042&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<h3 id="当日の様子">当日の様子</h3>
+
+<p>会場には関西地区からだけでなく全国各地から訪れたたくさんの Rubyist にご参加いただきました。ちょっとした電車のトラブルとかあって、開始時刻が遅れたのはご愛嬌(^_^;)</p>
+
+<dl>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/kanpa.jpg" alt="kanpa.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/kaigiscreen.jpg" alt="kaigiscreen.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/scene1.jpg" alt="scene1.jpg" /></dt>
+  <dd></dd>
+</dl>
+
+<p>左から photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172020302591426?authkey=CPKEwsbvycXi_gE&amp;pid=5920172020302591426&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920171850663200306?authkey=CPKEwsbvycXi_gE&amp;pid=5920171850663200306&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172041140296082?authkey=CPKEwsbvycXi_gE&amp;pid=5920172041140296082&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<p><br /><br /><br /><br /><br /><br /><br /><br /></p>
+
+<dl>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/receipt.jpg" alt="receipt.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/frontview.jpg" alt="frontview.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/rearview.jpg" alt="rearview.jpg" /></dt>
+  <dd></dd>
+</dl>
+
+<p>左から photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920171996777165090?authkey=CPKEwsbvycXi_gE&amp;pid=5920171996777165090&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918238040769615426?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918238040769615426&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172172847773170?authkey=CPKEwsbvycXi_gE&amp;pid=5920172172847773170&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<p><br /><br /><br /><br /><br /><br /><br /><br /></p>
+
+<dl>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/meeting.jpg" alt="meeting.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/committee.jpg" alt="committee.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/setontable.jpg" alt="setontable.jpg" /></dt>
+  <dd></dd>
+</dl>
+
+<p>左から photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920171881746037650?authkey=CPKEwsbvycXi_gE&amp;pid=5920171881746037650&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918432396531169826?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918432396531169826&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172583283242194?authkey=CPKEwsbvycXi_gE&amp;pid=5920172583283242194&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<h2 id="rubyist-によるアジャイル開発-by-川端光義さん-agilekawabata-">Rubyist によるアジャイル開発 by 川端光義さん( <a href="https://twitter.com/agilekawabata">@agilekawabata</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/kawabata.jpg" alt="kawabata.jpg" /></p>
+
+<p>いきなり「Ruby の話はしません。」から始まった発表は、川端さんの経営する<a href="http://agileware.jp">アジャイルウェア</a>の事例紹介から普段の仕事のやり方やお客様の巻き込み方についてのお話でした。</p>
+
+<p>お客様を開発により深く巻き込んで一緒にリリース計画を作って納期を決定し、お客様との距離を近くすることでフィードバックとプログラムの修正・リリースを行うサイクルをより小さくする。このことを実際に行ってきたプロジェクトを例に働き手の募集なんかも入れつつお話されていました。</p>
+
+<p>「決め手は短納期」という言葉が頻出したのですが、無駄な作業を省き、お客様を開発のサイクルに巻き込んでより早く作ったモノを確認してもらうことで、要件の確認、開発、確認のサイクルを小さくしてこれを実現しているようです。</p>
+
+<p>サイクルが小さくなってくるとコミュニケーションのやり方がより良い方向に変わってきて、お客様のレスポンスが上がる、機能の実現にかかる時間が短くなるなどお客様にとってわかりやすいメリットになっていく。開発者も機能の実現に対して知りたいことを早く知ることができるため、ストレスが少ない開発ができるよい循環が早さを生み出しているようです。</p>
+
+<p>お客様にとってこのメリットがわかりやすいかたちで実現されるとプロジェクトがよりよい方向に進んでいく、というのは、中の人の一人として実感しているところでもあります。やはり、モノの開発の進捗ができたもので確認できるっていうのはお客様にとってわかりやすいので、改めて重要なんだなと思いました。
+<br /></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172145008264354?authkey=CPKEwsbvycXi_gE&amp;pid=5920172145008264354&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<h2 id="migrate-to-magazinerubyistnet-by-kazuhiro-nishiyama-さん-znz-">migrate to magazine.rubyist.net by Kazuhiro Nishiyama さん( <a href="https://twitter.com/znz">@znz</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/nishiyama.jpg" alt="nishiyama.jpg" /></p>
+
+<p>Ruby コミッターである西山さんの発表は、<a href="http://rabbit-shocker.org/">うさぎと亀が動くプレゼンツール</a>を使って、<a href="http://magazine.rubyist.net/">Rubyist Magazine</a> サーバの移行で実行したことについてお話いただきました。</p>
+
+<p>るびまサーバの移行や <a href="https://github.com/rubima/hiki">hiki</a> の改修は、柴田さんと西山さんが主に担当されていて、サーバの移行の問題だけでなく、稼働させる Ruby のバージョンもあがったことで発生した問題や、文字コードの変換問題など、ぶち当たった問題を積極的に解決されていました。</p>
+
+<p>西山さんは、手順書やチェックスクリプトを作成して公開し第三者が確認できるようにしたり、環境の移行によって発生する問題の回避だけでなく移行後に利用しやすいよう改善案を実装をしたり、積極的に活動されていました。</p>
+
+<p>公開できるところはどんどん公開し、修正できるところはどんどん修正していくというのはOSS、特に <a href="http://github.com/">github</a> を使った運用らしい感じでいいですね。</p>
+
+<p>筆者もるびまの移行時に編集に参加していたのですが、西山さんと柴田さんの問題の発見と解決が非常に早く、移行後の最初のリリースも今現在も大きな問題はなく、るびまが安定して運用されています。縁の下の力持ちな人がいると助かります。感謝、感謝ですね！</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172260528120562?authkey=CPKEwsbvycXi_gE&amp;pid=5920172260528120562&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<h2 id="no-test-no-ruby-by-福井修さん-ir3">No Test No Ruby by 福井　修さん( <a href="https://twitter.com/iR3">@iR3</a>)</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/fukui.jpg" alt="fukui.jpg" /></p>
+
+<p><a href="http://rubykansai.doorkeeper.jp/">Ruby 関西</a>の co-founder である福井さん。発表は、Ruby と Ruby で使えるテストツールを使って「検証」をしよう、更にはその「検証」を自動化しようというお話でした。</p>
+
+<p>「No Ruby No Test (Ruby なしでは Test できない、Ruby のない Test なんて)」という言葉を挙げて、Ruby 界の充実したテストツールやその種類の話や CI の話を交えながら、受け入れテストやシステムテストを開発の早い段階で実施し、期待する動作が正しいことを検証できる環境を作ろう、それが俊敏に繰り返しできるように自動化するのがよい、Ruby には良いツールが揃っているので積極的に使っていこうと熱く語られました。</p>
+
+<p>「検証(Verification)」をキーワードに、開発( Dev )のテストから運用( Ops )のテストまでの間に、仕様の妥当性を検証( Ver )するフェーズを入れる。この検証にエンドツーエンド検証に使える <a href="https://github.com/jnicklas/turnip">turnip</a> を使っていこうということで、この日のために <a href="http://mogok.jp/">MOGOK</a> に環境を作って <a href="https://github.com/jnicklas/turnip">turnip</a> による 検証のデモを見せてくださいました。</p>
+
+<p>私は <a href="https://github.com/jnicklas/turnip">turnip</a> をまだちゃんと触ったことないんですが良さそうですね。まだちゃんと触ってない方は、福井さんの書かれた <a href="http://magazine.rubyist.net/?0042-FromCucumberToTurnip">『エンドツーエンドテストの自動化は Cucumber から Turnip へ』</a> を見に行きましょう。</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918238179145421954?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918238179145421954&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h2 id="jugyo-さんを支える技術-by-jugyo-さん-jugyo-">@jugyo さんを支える技術 by jugyo さん( <a href="https://twitter.com/jugyo">@jugyo</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/jugyo.jpg" alt="jugyo.jpg" /></p>
+
+<p><a href="https://twitter.com/">Twitter</a> 社の jugyo さん。今の働いている環境や、過去の失敗や経験を交えてjugyo さんを支えているものについてお話いただきました。</p>
+
+<p>jugyo さんは、同僚の住む地域との時差から朝 6 時からミーティングをして、リモートながらスクラムのような体制で、いわゆるガラケー向けの Twitter の開発に参加されているそうです。本社が英語圏にあることもあり、会議もメールも英語で本当にキツイらしいです。「英語なめてたわ〜、完全になめてたわ〜」というくらいキツイらしいです……</p>
+
+<p>jugyo さんを支えているのは主に、OSS、Ruby、<a href="https://github.com/">github</a> での活動なのだそうです。</p>
+
+<p>社内のツールは Ruby 製のものが多く、Ruby がとっても重宝しているとのことでした。「開発とは、ソースコードによる人間と人間のコミュニケーションである」と jugyo さんも格言を残されているように、この 3 つが jugyo さんの開発ライフを支えているようでした。</p>
+
+<p>ただ、仕事をするうえではいわゆる「技術」だけでなく、人と人との関係や目的を見失わずになるべく自分にとってよいボジションに身を置けるように意識されているとのことで、開発力だけでなくそういう行動が jugyo さんを支えているんだな、とわかる発表でした。また、jugyo さんのキャラからあふれる面白さの中に、環境を自分で選ぶ強さみたいなものを感じました。</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918238403561133922?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918238403561133922&amp;oid=106027193808506964705">Nobihiro IMAI</a></p>
+
+<h2 id="no-sugar-私はどのようにして-rails-開発に貢献したか-by-梶原寿宣さん-kennyj_jp-">No Sugar 〜私はどのようにして Rails 開発に貢献したか〜 by 梶原　寿宣さん( <a href="https://twitter.com/kennyj_jp">@kennyj_jp</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/kajihara.jpg" alt="kajihara.jpg" /></p>
+
+<p>今会議の開催に伴い、選考委員の中で最も「聴きたい！」という人が多かった梶原さんの発表です。</p>
+
+<p>梶原さんは、どのような経緯で <a href="http://rubyonrails.org/">Rails</a> に貢献するようになったか、どのようなことを意識したか、どうやって継続してきたかを自身のパッチや失敗談を交えてお話いただきました。</p>
+
+<p>15分で blog サイトを作ることができたり、ActiveRecord に数行書くだけで validation がかかったり、TDD や DRY 原則など先人の知恵が詰まった <a href="http://rubyonrails.org/">Ruby on Rails</a> に惹かれ、是非仕事で使いたい、そう思ったそうです。</p>
+
+<p>理解のある上司や仲間のおかげで <a href="http://rubyonrails.org/">Rails</a> を使った案件を獲得でき、業務で使うことができるようになったのですが、梶原さん自身の仕事内容が変わってきて昼間は <a href="http://rubyonrails.org/">Rails</a> を使った実装ができなくなってしまったそうです。</p>
+
+<p>そんなときに飲み会から帰ってたまたま Tera Term で VPS にアクセスして作成した Pull Request が取り込まれたのが、<a href="http://rubyonrails.org/">Rails</a> にコントリビュートするきっかけなのだそうです。</p>
+
+<p>問題の切り分けが好きだったことと、既存の <a href="http://rubyonrails.org/">Rails</a> の構造が学べることから、バグ対策に注力するように意識して取り組み、英語が不得意でも(完了形を忘れていても！) 言い回しのパターンを作成して組み合わせて使ってコミュニケーションをとり、積極的に多くの問題に取り組んでいったそうです。</p>
+
+<p><a href="http://rubyonrails.org/">Rails</a> に貢献したい、<a href="http://rubyonrails.org/">Rails</a> に貢献するという目的に集中して積み重ねていったことで、コントリビュートを継続でき、その結果が実を結んで <a href="http://weblog.rubyonrails.org/2012/11/21/the-people-behind-rails-4/">Rails 4 の貢献者として公式ブログで発表</a>されました。すばらしい！</p>
+
+<p>印象に残ったのは、何かを「選ぶこと」「捨てること」は為すべきことへの集中につながる、ということ。やはり断捨離って大事なんですね。でも、梶原さん、睡眠は十分にとってくださいね。睡眠大事よ！</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918239391218834962?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918239391218834962&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h2 id="平凡なエンジニアと-rails-by-jun-fukaya-さん-fukajun-">平凡なエンジニアと Rails by Jun Fukaya さん( <a href="https://twitter.com/fukajun">@fukajun</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/fukaya.jpg" alt="fukaya.jpg" /></p>
+
+<p><a href="http://www.circleaf.com/groups/1">sendagaya.rb</a> の founder である fukajun さんには、<a href="http://rubyonrails.org/">Rails</a> を使って仕事をするまでどのようなことをしてきたか、仕事で使い始めてからどんなことをしてきたかを発表いただきました。</p>
+
+<p>もともとは <a href="http://www.php.net/">PHP</a> を使った仕事をしてたのですが、<a href="http://rubyonrails.org/">Rails</a> と出会って親の会社の HP を <a href="http://rubyonrails.org/">Rails</a> で自作したそうです。ただ「これでいいのか？」と自分の実装に疑問をもったことがきっかけで、Ruby  コミュニティに参加し始めるようになったとのこと。</p>
+
+<p>東京の勉強会に参加したことがきっかけで、東京で <a href="http://rubyonrails.org/">Rails</a> を使った仕事に従事するようになったときに、周りとのレベルの差を感じ始めたそうです。このとき、生産性を上げられるよう自分の道具( <a href="http://www.vim.org/">vim</a> を使えるように)を磨き、自分のやったことをアウトプットするようにしたそうです。</p>
+
+<p><a href="http://decknotes.herokuapp.com/">DeckNotes</a> というサービスを自分で作ってコミュニティで相談したところ、コードレビューや話のネタにすることができ、また、自分でサービスを作ったことで使いたい技術を試す場ができ、アウトプットすることで周りにも教えてもらえるようになったとのことです。自分でサービスを作ってみるといろいろと勉強になる、発見があるというのが強く伝わってきました。</p>
+
+<p>一人で何もかもやってみるというのは悩みも多くなりますが、発見が非常に多いので怖れずにやってみるのがいいと思います(私は業務でしかできていませんが)。コミュニティをうまく活用し、なければ作ってしまえばいいじゃないというのが fukajun さんらしい感じですね。人は世間の荒波にもまれ、いじられて成長するってことですね。</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918247794493886226?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918247794493886226&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h2 id="京都の大学生が-rubyist-として生活費を稼ぎながら生きていくためにしたこと-by-足立壮大さん-takehiro0740-">京都の大学生が Rubyist として生活費を稼ぎながら生きていくためにしたこと by 足立　壮大さん( <a href="https://twitter.com/takehiro0740">@takehiro0740</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/adachi.jpg" alt="adachi.jpg" /></p>
+
+<p>この日が発表デビュー(すばらしい！)という足立さんは、学生さんながらフリーランスとして働いているそうで、その仕事のやり方の紹介と仕事欲しい！という熱意が伝わる発表でした。</p>
+
+<p>足立さんはフルタイムの学生さんらしいのですが、<a href="http://lang-8.jp/">Lang-8</a>  や  <a href="http://qiita.com/">Qiita</a> を運営する <a href="http://increments.co.jp/">Increments</a> でアルバイトをしながらフリーランスで仕事をしているというなかなか稀有な存在です。</p>
+
+<p>足立さんの場合、関西にあって Ruby を使って開発をする会社と、東京にあってリモートで働くことができる会社が働く条件になるのだそうですが、リモート勤務の場合は Chat の環境をヴァーチャルな仕事場として活用しているそうで、<a href="https://www.atlassian.com/ja/software/hipchat/overview">HipChat</a> と、<a href="http://www.pivotaltracker.com/">Pivotal Tracker</a>、<a href="https://circleci.com/">Circle CI</a>、github、<a href="https://teams.qiita.com/">Qiita:Team</a> を API で連携させてすべてが  <a href="https://www.atlassian.com/ja/software/hipchat/overview">HipChat</a> に統合されるようにしてとのこと。これとても便利そう……。</p>
+
+<p>リモートで働くためには、OSS 活動で自分をアピールしたり、実際にその会社(このときの話では東京)に行ってみることも重要とのことでした。リモートだと手軽な分、他の人よりも何かアドバンテージをもっておかないと難しいともおっしゃっていました。</p>
+
+<p>また、リモート勤務の残念なところは、仕事終わりに同僚とビールを飲めないことだ、と本当に残念そうにおっしゃっていました。(ビールは大事ですよねｗ)</p>
+
+<p>学生さんや、リモートで働いてみたいと考えている方には非常に参考になる話だったのではないでしょうか。ひとつの仕事のかたちとして、「リモートで働く」というのがもっと一般化されるといいですね。また、コミュニケーションツールや利用しているツールが一箇所にまとまっているっていうのは本当に助かります。環境を作る際には是非参考にしたいですね。</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918248192021514866?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918248192021514866&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h2 id="スイーツタイム-presented-by-ひがきさん-higaki-">スイーツタイム presented by ひがきさん( <a href="https://twitter.com/higaki">@higaki</a> )</h2>
+
+<p>最近、ひがきさんがエバンジェリストとして活躍している<a href="http://www.canele.jp/">カヌレ堂</a>のカヌレが参加者に配られました。3個入り。</p>
+
+<p>参加者からはかなり評判がよく、各所で「おいしい」との声が聞こえました。大阪に立ち寄った際は、<a href="http://www.canele.jp/">カヌレ堂</a>のカヌレを食べてみてはいかがでしょうか？
+<br /></p>
+
+<dl>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/kanele_setontable.jpg" alt="kanele_setontable.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/kanele_ontable.jpg" alt="kanele_ontable.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/kanele.jpg" alt="kanele.jpg" /></dt>
+  <dd></dd>
+</dl>
+
+<p>左から photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172610466814626?authkey=CPKEwsbvycXi_gE&amp;pid=5920172610466814626&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172644420634306?authkey=CPKEwsbvycXi_gE&amp;pid=5920172644420634306&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918248769858431410?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918248769858431410&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h2 id="lightning-talk">Lightning Talk</h2>
+
+<p>今回のLTは割と掲載して大丈夫か？というキワドい内容が多かったので簡単にw
+<br /></p>
+
+<ol>
+  <li>.Netで仕事するプログラマがスクリプト言語として使うRuby by <a href="https://twitter.com/shin_asou">shin_asou</a> さん
+    <ul>
+      <li>パッケージ開発で Ruby 使ってくれない……じゃ、コードのジェネレータとして使う！</li>
+    </ul>
+  </li>
+  <li>C# から Ruby に乗り換えた by <a href="https://twitter.com/mollifier">mollifier</a> さん
+    <ul>
+      <li>哲学って難しいですよね……</li>
+    </ul>
+  </li>
+  <li>たのしい mruby(仮) by <a href="https://twitter.com/murase_syuka">kyara</a> さん
+    <ul>
+      <li><a href="http://www.gnu.org/software/emacs/">Emacs</a> でプレゼンするの初めて見た！</li>
+    </ul>
+  </li>
+  <li>プログラマブル営業 by <a href="https://twitter.com/ukitazume">ukitazume</a> さん
+    <ul>
+      <li>イベントを Web から Ruby で収集してきて……これに参加している営業さん、すごい！</li>
+    </ul>
+  </li>
+  <li>コードを読もう by <a href="https://twitter.com/yalab">yalab</a> さん
+    <ul>
+      <li>おもしろコードやメソッドがいっぱい！ <a href="http://sidekiq.org/">sidekiq</a> の顔文字メソッド！</li>
+    </ul>
+  </li>
+  <li>CuratorsTVとMoPAについて by <a href="https://twitter.com/Suzuki_Daisuke">Suzuki_Daisuke</a> さん
+    <ul>
+      <li>Public Art が Web から探せる <a href="http://www.mopa.jp.net/">MoPA</a> は OSS で開発中。興味のある方は<a href="http://www.mopa.jp.net/top/how_to_join">こちら</a> へ</li>
+    </ul>
+  </li>
+  <li>javascriptがモテないのはどう考えてもお前らが悪い！ by <a href="https://twitter.com/cyross">cyross</a> さん
+    <ul>
+      <li>かっこいい UI に javascript を。 <a href="https://github.com/cyross/M4W">M4W</a> の紹介とかとか。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>(写真は発表順)</p>
+
+<dl>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/asou.jpg" alt="asou.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/mollifier.jpg" alt="mollifier.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/kyara.jpg" alt="kyara.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/kitazume.jpg" alt="kitazume.jpg" /></dt>
+  <dd></dd>
+</dl>
+
+<p>左から photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918248910550357586?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918248910550357586&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918249654494329970?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918249654494329970&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918250180587396626?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918250180587396626&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918250711566024178?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918250711566024178&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<p><br /><br /><br /><br /><br /><br /><br /><br /></p>
+
+<dl>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/yalab.jpg" alt="yalab.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/suzuki.jpg" alt="suzuki.jpg" /></dt>
+  <dd></dd>
+  <dt><img src="/images/0045-KansaiRubyKaigi05Report/cyross.jpg" alt="cyross.jpg" /></dt>
+  <dd></dd>
+</dl>
+
+<p>左から photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918250845198498434?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918250845198498434&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918251378030274130?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918251378030274130&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<p>photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918251605529233570?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918251605529233570&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h2 id="5-年前に関西を飛び出したruby初級者が自分なりに重ねてきたコードと行動-by-toshiaki-koshiba-さん-bash0c7-">5 年前に関西を飛び出したRuby初級者が自分なりに重ねてきたコードと行動 by Toshiaki Koshiba さん( <a href="https://twitter.com/bash0C7">@bash0C7</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/koshiba.jpg" alt="koshiba.jpg" /></p>
+
+<p>こしばさんは、「後追いする」、「次本気だす」という一見ネガティブに見えるこれらの言葉を、非常にポジティブに捉えて実践されています。これまでに作ったコードと行動を挙げて、こしばさんの生き様をご紹介いただきました。</p>
+
+<p>業務ィなコードを頑張って作っていると、業務多忙に陥って頭も帯域もいっぱいいっぱいになるし、コードも公開できない。そこで、日常業務で良く使う、一般利用できそうな俺得ツールを先達の作ったコードをなぞりながら作ったそうです。(こしばさんの作った俺得ツールは<a href="https://github.com/bash0C7">コチラ</a>)</p>
+
+<p>また、コード以外の行動としては、継続して何かを続けるというのは得意ではないものの単発ものならできるということで、イベントに一般参加から始めて LT 登壇、運営スタッフとして参加、登壇、主催と段階を追って進めてきたそうです。特に主催をしたときは、提供者となれること、先達と同じ経験ができること、自分だけの体験が得られることに感極まったそうです。(発表では、「やばい」という表現でした。)</p>
+
+<p>先達の知恵や経験を拝借して(後追いして)、必要に迫られた時、次の機会にそれを発揮する(次本気出す)ということが「後追いする」「次本気出す」いう表現に集約されているのがすばらしいと思いました。最後に「新しいことに挑戦したい」とおっしゃっていたように、改めてこしばさんはチャレンジャー精神をお持ちで積極的な方、バイタリティのある方だな、と感じました。</p>
+
+<p>私もこしばさんの姿勢を見習って次に本気を出す機会を作らないと……</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918252481329456722?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918252481329456722&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h2 id="hobbynewrubyto_work-by-tomohiro-hashidate-さん-joker1007-">Hobby.new(“Ruby”).to_work by Tomohiro Hashidate さん( <a href="https://twitter.com/joker1007">@joker1007</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/hashidate.jpg" alt="hashidate.jpg" /></p>
+
+<p>当日あまり寝てねーわーという橋立さんでしたが、力強く発表をしていただきました。</p>
+
+<p>就職後、プログラムを触りたかったのに Excel をひたすら触るという暗黒面に落とされてしまった橋立さんは、Ruby とコミュニティとの出会いにより見事、Ruby を触ることができる仕事を獲得し、暗黒面から脱出されたそうです。</p>
+
+<p>暗黒面の脱出に役立ったのは、継続的に行なってきた趣味での開発とコミュニティとの交わりだったそうです。</p>
+
+<p>開発面では TDD による素振りを身につけたことによって、コードのシンプルさを保つ力や、問題を分解して全体を俯瞰してから筋道を立てて取り組む力を養うことができ、プログラマとしての素養を磨くことができたそうです。</p>
+
+<p>また、コミュニティとの交わりによって外の世界を知り、仕事をしていく上でどのような能力が必要とされているのか、今の自分はどのくらいの位置にいるのかを知ることができたそうです。</p>
+
+<p>最も大事なことは「自分を売り込むことだ」ということで発表を締めくくった橋立さん。自分を売り込む、最初の一歩ってちょっと難しいですよね。でも大丈夫。そんなあなたのために <a href="http://rubykansai.doorkeeper.jp/">Ruby 関西</a>ってコミュニティが(ry</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172968758501810?authkey=CPKEwsbvycXi_gE&amp;pid=5920172968758501810&amp;oid=106947570136338985096">Ryo Nagai</a></p>
+
+<h2 id="rubykaigirebuildas-intl_conf-by-shintaro-kakutani-さん-kakutani-">RubyKaigi.rebuild(as: intl_conf) by Shintaro Kakutani さん( <a href="https://twitter.com/kakutani">@kakutani</a> )</h2>
+<p>: <img src="/images/0045-KansaiRubyKaigi05Report/kakutani.jpg" alt="kakutani.jpg" /></p>
+
+<p>関西 Ruby 会議が開催されるときには毎回ご参加いただいている角谷さんには、今年見事に復活した <a href="http://rubykaigi.org/2013">RubyKaigi 2013</a> を再構築したお話をしていただきました。途中から参加者との突然の質問タイムが始まって参加者を巻き込んだ、とてもよい時間になりました。</p>
+
+<p>2011 年の <a href="http://rubykaigi.org/2011/ja">Final RubyKaigi</a> の後、海外のカンファレンスに参加するたびに海外の Rubyists に RubyKaigi どしたん？ って訊かれるので開催したほうがええな、と思って今回の再構築に取り掛かったそうです。(一旦終了したのは、Director が本当にたいへんだから。)</p>
+
+<p>今回の再構築にあたり、参加者数を絞る意味も含めいろいろな試みを行ったそうです。</p>
+
+<ol>
+  <li><a href="http://rubyconf.org/">RubyConf</a> のように最終日を土曜にした。
+    <ul>
+      <li>割と参加者来た。</li>
+    </ul>
+  </li>
+  <li>参加費を変えた。
+    <ul>
+      <li><a href="http://rubyconf.org/">RubyConf</a> は 5 日で $800。内容負けてない(勝ってる？)ので上げてみた。</li>
+    </ul>
+  </li>
+  <li><a href="http://lanyrd.com/">Lanyrd</a> にも<a href="http://lanyrd.com/2013/rubykaigi/">登録した。</a>
+    <ul>
+      <li>海外の Rubyists にも伝わるように、世界のカンファレンスに名を連ねたかったから。</li>
+    </ul>
+  </li>
+  <li>International 色を強くした。
+    <ul>
+      <li>過度に海外のカンファレンスに合わせることはないけど、海外の人たちにもわかってもらえるようにはしたいと思っている。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>そのほかにも以下のお話が出ました。</p>
+
+<ul>
+  <li><strong>英語は頑張れ</strong></li>
+  <li>今回の会議で見限らないでねｗ</li>
+  <li>地域 Ruby 会議は勝手にやれ(もちろん、いい意味で好き勝手にやってくださいって意味ですよ！)</li>
+  <li>今後について
+    <ul>
+      <li>次は秋にやろうと思っている。2015 年くらいには春にやるようにしたい。</li>
+    </ul>
+  </li>
+</ul>
+
+<p>ここに書いてもいいのかも迷うようなぶっちゃけ話もありました。(もう書いちゃってるやつもあるかもしれないけど)</p>
+
+<p>下はQAで出たお話。</p>
+
+<ol>
+  <li>Q: 意見の衝突はどう扱うか
+    <ul>
+      <li>最初にやりたいと思ったことを開催趣意書に残す。なるべくブレーキはかけずに、やってみてもらうということが大事だと思っている。</li>
+    </ul>
+  </li>
+  <li>Q: スタッフ間で意見や反応自体がない場合は？
+    <ul>
+      <li>どうしてほしいの？という感じの質問をこっちから投げるようにしている</li>
+    </ul>
+  </li>
+  <li>Q: international != 英語化 の意味は？
+    <ul>
+      <li>英語圏の人たちのやり方がベストとは思わないけれど、海外の人たちにも伝わるようにはしたい。決して、英語のできない人は来るなというものではない。海外のやりかたでいいものがあれば取り込むよ、というスタンス。いろんなバックグラウンドを持った人を巻き込みたいので、いろんなバックグラウンドを持った人達に助けてもらえればいいなぁ</li>
+    </ul>
+  </li>
+  <li>Q: モチベーションの維持は？
+    <ul>
+      <li>人生のほうが大事なので、そちらを優先してもらってもいいけど、やめるときは一言いってね、と言っている。主要メンバーはいろいろたいへんなので、間にいる人ががんばれ。(角谷さん自身のモチベーション維持は)特に意識していない。自分のやったことが他の人に影響を与えているな、とわかったときに喜びを感じる。あと、睡眠重要。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>過去に開催したものとは違うよ、と言っても再構築って過去の実績があればあるほど難しいと思うんです。それをかなりの変化を取り込んだうえで開催した角谷さんはじめ日本 Ruby の会、RubyKaigi を運営していたスタッフの方々には頭が下がります。ありがとうございます。</p>
+
+<p><br />
+photo by <a href="https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918431713149084098?banner=pwa&amp;authkey=COSLyt-Btdvm0QE&amp;pid=5918431713149084098&amp;oid=106027193808506964705">Nobuhiro IMAI</a></p>
+
+<h2 id="開催してみて">開催してみて</h2>
+
+<p>今回の会議は、イベントの運営としての活動、コミュニティ活動、仕事とは別の開発者としての活動、仕事を獲得するための活動、自分の殻を破るための活動というような Rubyists の本当の生き様に触れることができた、いい会議だったと思います。</p>
+
+<ul>
+  <li>スライドへのリンクは <a href="http://regional.rubykaigi.org/kansai05">コチラから</a></li>
+  <li>ライブな感じは <a href="http://togetter.com/li/560708">togetter のまとめから</a></li>
+</ul>
+
+<p>私たちの開催した会議が何かに影響してくれればいいなぁ思っていたところ、後日、関西エリアから新たに <a href="http://wakayamarb.doorkeeper.jp/">Wakayama.rb</a> が立ち上がったとの情報を見て嬉しく思いました。また、コミュニティだけでなく、個人に対して何かしらプラスになる影響があったとすれば、それはとっても嬉しいなって思います。一度、コミュニティやイベントの主催を小さいものでもやってみると、いろいろなことがわかって良い経験になります。皆さんも try してみてはいかがでしょうか。</p>
+
+<p>では次回、どんな規模になるかわかりませんが、またお会いしましょう！</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

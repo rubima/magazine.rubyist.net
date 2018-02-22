@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Introducing ruby-dev Translation</title>
+  <meta name="description" content="Author: yhara (Network Applied Communication Laboratory)">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0036/0036-ruby-dev-translation-en.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Introducing ruby-dev Translation</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0036/0036-ruby-dev-translation-en.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Introducing ruby-dev Translation" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0036/0036-ruby-dev-translation-en.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0036/0036-ruby-dev-translation-en.html" data-text="Introducing ruby-dev Translation">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>Author: yhara (Network Applied Communication Laboratory)</p>
+
+<p>Translator: @cwgem (Engine Yard)</p>
+
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#what-is-ruby-dev" id="markdown-toc-what-is-ruby-dev">What is ruby-dev?</a></li>
+  <li><a href="#ruby-dev-translation-features" id="markdown-toc-ruby-dev-translation-features">ruby-dev translation features</a>    <ul>
+      <li><a href="#browsing-messages" id="markdown-toc-browsing-messages">Browsing messages</a></li>
+      <li><a href="#submitting-translations" id="markdown-toc-submitting-translations">Submitting translations</a></li>
+      <li><a href="#translation-request" id="markdown-toc-translation-request">Translation request</a></li>
+    </ul>
+  </li>
+  <li><a href="#issues" id="markdown-toc-issues">Issues</a>    <ul>
+      <li><a href="#its-difficultbothersome-for-non-japanese-speakers-to-find-interesting-messages" id="markdown-toc-its-difficultbothersome-for-non-japanese-speakers-to-find-interesting-messages">It’s difficult/bothersome for non-Japanese speakers to find interesting messages</a></li>
+      <li><a href="#reader-barrier-of-entry" id="markdown-toc-reader-barrier-of-entry">Reader barrier of entry</a></li>
+      <li><a href="#not-enough-advertising" id="markdown-toc-not-enough-advertising">Not enough advertising</a></li>
+    </ul>
+  </li>
+  <li><a href="#what-now" id="markdown-toc-what-now">What now?</a>    <ul>
+      <li><a href="#the-original-plan" id="markdown-toc-the-original-plan">The original plan</a></li>
+      <li><a href="#making-translation-fun" id="markdown-toc-making-translation-fun">Making translation fun</a></li>
+      <li><a href="#feature-addition" id="markdown-toc-feature-addition">Feature Addition</a></li>
+    </ul>
+  </li>
+  <li><a href="#conclusion" id="markdown-toc-conclusion">Conclusion</a>    <ul>
+      <li><a href="#about-the-author" id="markdown-toc-about-the-author">About the author</a></li>
+      <li><a href="#about-the-translator" id="markdown-toc-about-the-translator">About the translator</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>ruby-dev translation (<a href="http://ruby-dev.info">http://ruby-dev.info</a>) is a web site personally maintained by the author to assist with the translation of the developer oriented Ruby implementation mailing list “ruby-dev” into English, and in doing so help break the language barrier.</p>
+
+<p>This article is meant to serve as an overview of ruby-dev translation, possible issues, and what lies ahead for the project.</p>
+
+<h2 id="what-is-ruby-dev">What is ruby-dev?</h2>
+
+<p>First we’ll take a look at what ruby-dev itself is. There are many <a href="http://www.ruby-lang.org/ja/community/mailing-lists/">official Ruby mailing lists</a>, but the four lists below are the most frequently utilized:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>English</td>
+      <td>Japanese</td>
+    </tr>
+    <tr>
+      <td>User Oriented</td>
+      <td>ruby-talk</td>
+      <td>ruby-list</td>
+    </tr>
+    <tr>
+      <td>Developer Oriented</td>
+      <td>ruby-core</td>
+      <td>ruby-dev</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ruby-dev is a mailing list for “CRuby<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> developers to participate in discussions in the Japanese language.”</p>
+
+<p>Ruby is a programming language that has gained worldwide adoption, but the number of Japanese CRuby developers is <a href="http://rubycommitters.org/">considerably high</a>.</p>
+
+<p>The main reason for splitting up the developer oriented mailing lists into English and Japanese was so that the Japanese developers could participate in discussions with ease. On the other hand, developers unable to comprehend Japanese might see the list as a place where extremely useful information is being presented which they are unable to access. It could also be perceived as a place where “secret talks” occur.</p>
+
+<ul>
+  <li><a href="http://www.atmarkit.co.jp/news/201009/13/rubykaigi.html">Held at RubyKaigi, the theme was “Conflict and Resolution” − ＠IT</a></li>
+</ul>
+
+<p>With this in mind, the ruby-dev translation project is meant to resolve issues regarding the language barrier, that is to say, the separation of Japanese and English communication.</p>
+
+<h2 id="ruby-dev-translation-features">ruby-dev translation features</h2>
+
+<p>Now then I’ll introduce the (present) features of ruby-dev translation. The top page can be found here.</p>
+
+<ul>
+  <li><a href="http://ruby-dev.info/">http://ruby-dev.info/</a> <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></li>
+</ul>
+
+<h3 id="browsing-messages">Browsing messages</h3>
+
+<p>ruby-dev sorts messages from newest to oldest. Messages in the same topic are displayed in expanded thread format on the same page.</p>
+
+<p>Messages can also be searched via keyword, and clicking on an author’s name will display a list of emails they have written.</p>
+
+<h3 id="submitting-translations">Submitting translations</h3>
+
+<p>Click the “Sign in with Twitter” link in the upper right to login. Once logged in, you will be able to submit translations for specific messages. Existing translations by other users can also be edited.</p>
+
+<p>In the event that translating the entire message body is too much, just the title alone can be translated. When logged in, you will find an “(edit)” link next to message titles which are only provided in Japanese, when present on the <a href="http://ruby-dev.info/posts">Recent Posts</a> page.</p>
+
+<h3 id="translation-request">Translation request</h3>
+
+<p>When reading the message listing while logged in, a star mark “☆” is displayed next to each message. This mark is meant to indicate that a user wishes a message to be translated. The idea is that it will be used by non-Japanese speakers to indicate which messages are deemed important to them.</p>
+
+<p>A listing of marked messages can be accessed from the menu
+(<a href="http://ruby-dev.info/posts?view=recent_requested">Ordered By Date|</a> / <a href="http://ruby-dev.info/posts?view=top_requested">Ordered By Popularity</a>).</p>
+
+<h2 id="issues">Issues</h2>
+
+<p>Now then, some of you may have realized that there are not many starred messages in the previously noted links. Unfortunately I can’t say that ruby-dev translation could be considered a highly active project at its current state. I’ve thought of a few reasons for this.</p>
+
+<h3 id="its-difficultbothersome-for-non-japanese-speakers-to-find-interesting-messages">It’s difficult/bothersome for non-Japanese speakers to find interesting messages</h3>
+
+<p>Messages with the title translated are quite numerous, but the body itself is, with the exception of English words, often written with lots of kanji and hiragana. For English speakers, finding messages that they wish to read can be quite a laborious task.</p>
+
+<p>On the other hand there is the possibility that there are message they will read if translated, but searching through them all can be quite troublesome.</p>
+
+<h3 id="reader-barrier-of-entry">Reader barrier of entry</h3>
+
+<p>Topics on ruby-dev tend to be highly technical content related to the Ruby interpreter, and as such might prove problematic for those who are more interested in Rails and other forms of application development.</p>
+
+<h3 id="not-enough-advertising">Not enough advertising</h3>
+
+<p>At the moment ruby-dev translation has been advertised a bit on Twitter and ruby-talk/ruby-core, so submissions to sites such as <a href="http://www.rubyflow.com/">rubyflow</a> is all that remains. This article happens to be one such advertising method. :-)</p>
+
+<h2 id="what-now">What now?</h2>
+
+<h3 id="the-original-plan">The original plan</h3>
+
+<p>To continue translation work, some feedback is necessary. It is difficult to be motivated to translate when there is a lack of response. The following design points were considered before going live with the site.</p>
+
+<dl>
+  <dt>“Translation Requested” Mark</dt>
+  <dd>This makes it apparent that one’s translations are important to others. The hope is that even if translators are few in numbers, this will make it easy to distribute the work.</dd>
+  <dt>Translation Editing</dt>
+  <dd>Corrections by native speakers are useful in study of English for those doing translations (of course the task of translation itself is also useful).</dd>
+</dl>
+
+<h3 id="making-translation-fun">Making translation fun</h3>
+
+<p>It would be great if the above model was materialized, but there remains a large problem. With this model, there needs to be an increase of readers and translators for everything to work as planned. However, for translations to occur readers are necessary, and for readers to gather translations are necessary. Herein lies a chicken and the egg problem.</p>
+
+<p>In order to bootstrap this properly, either a system attracting only readers, or a system attracting only translators is necessary. Readers gathering without translations is highly unlikely, so the later method is most suitable.</p>
+
+<p>Proceeding with translations on a site without readers is a deviation from the original object. However even in the extreme case that there are no English speaking readers, and the site becomes primarily used by Japanese speakers, it is still possible to make translation an interesting activity. Also, if translations are provided in a steady stream, readers are more likely to gather little by little.</p>
+
+<p>The reality of the current situation is that it will take time for the project to bear fruit. Until then I’ve conceived ideas such as a translation ranking, or a badge system much like <a href="https://foursquare.com/">Foursquare</a> uses.</p>
+
+<h3 id="feature-addition">Feature Addition</h3>
+
+<p>Putting these long term goals aside, I’ve thought of more short term items that can help to improve the site.</p>
+
+<dl>
+  <dt>Use Google Translate By Default</dt>
+  <dd>For those messages without a translation, utilize the <a href="http://www.google.com/webelements/#!/translate">Google Natural Language Translation API</a> to provide machine based translation.</dd>
+  <dt>Mark Items In English As Already Translated</dt>
+  <dd>For messages already in English, such as those cross posted to ruby-core, mark as already translated.</dd>
+  <dt>Tweet Button, Like Button, etc.</dt>
+  <dd>Easily introduce a message on other sites.</dd>
+  <dt>Ability For Anonymous Users To Add ☆s</dt>
+  <dd>Make it easier to participate. Also, make it so that it’s not just one person one star, but instead the ability to add multiple stars such as used by <a href="http://s.hatena.ne.jp/">Hatena Star</a>.</dd>
+</dl>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This concludes the introduction to ruby-dev translation, including an overview of the system, and the challenges faced hereon.</p>
+
+<p>For now, those using <a href="http://blade.nagaokaut.ac.jp/ruby/ruby-dev/index.shtml">blade</a> to view ruby-dev, please use <a href="http://ruby-dev.info/">ruby-dev translation</a> instead. The same topic can be read on one screen, threads can be grouped by Redmine units, and other adjustments have been made to make reading easier.</p>
+
+<p>For those interested in contributing, please login and give translating a try. Even if it’s just the title that’s translated, it is help enough. Helpful features such as automated translation of Redmine system strings are available as assistance, but there are many more improvements that can be made. If you think up any ideas, please contact me on Twitter (<a href="http://twitter.com/yhara">@yhara</a>), or utilize <a href="https://github.com/yhara/dev-ruby/issues">github’s ITS</a>.</p>
+
+<p>The source code is available on <a href="https://github.com/yhara/dev-ruby">github</a>, and patches are more than welcome. Rails3 is the framework used, and hosting is done on <a href="http://www.heorku.com">Heroku</a>.</p>
+
+<h3 id="about-the-author">About the author</h3>
+
+<dl>
+  <dt>yhara(Yutaka HARA)</dt>
+  <dd>Network Applied Communication Laboratory member. It has been 4 years since the move from Shiga prefecture to Matsue. Please also check out <a href="http://www.biwascheme.org/">BiwaScheme</a>.</dd>
+</dl>
+
+<h3 id="about-the-translator">About the translator</h3>
+
+<p>@cwgem (Chris White) - Software Engineer at Engine Yard. Lives in Southern California where he enjoys the relatively calm weather. Japanese studies include 2 years of college courses and self study, and has been to Japan 4 times in his lifetime. Likes Starbucks, Mac, Ruby, JRuby, Rubinius, MacRuby, and anything else Ruby related.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>In contrast with JRuby, MacRuby, Rubinius, etc., CRuby is a Ruby implementation created in the C programming language&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>A special thanks to @mrkn for providing the domain name&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

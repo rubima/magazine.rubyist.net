@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RubyMotion のご紹介</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0039/0039-IntroductionToRubyMotion.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>RubyMotion のご紹介</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0039/0039-IntroductionToRubyMotion.html" class="hatena-bookmark-button" data-hatena-bookmark-title="RubyMotion のご紹介" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0039/0039-IntroductionToRubyMotion.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0039/0039-IntroductionToRubyMotion.html" data-text="RubyMotion のご紹介">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a></li>
+  <li><a href="#rubymotion-とは" id="markdown-toc-rubymotion-とは">RubyMotion とは</a>    <ul>
+      <li><a href="#rubymotion-の特徴" id="markdown-toc-rubymotion-の特徴">RubyMotion の特徴</a></li>
+    </ul>
+  </li>
+  <li><a href="#rubymotion-の始め方" id="markdown-toc-rubymotion-の始め方">RubyMotion の始め方</a>    <ul>
+      <li><a href="#購入インストール" id="markdown-toc-購入インストール">購入〜インストール</a></li>
+      <li><a href="#動かしてみよう" id="markdown-toc-動かしてみよう">動かしてみよう</a></li>
+    </ul>
+  </li>
+  <li><a href="#screenshot1png" id="markdown-toc-screenshot1png"><a href="/images/0039-IntroductionToRubyMotion/screenshot1.png">screenshot1.png</a></a>    <ul>
+      <li><a href="#テストを書こう" id="markdown-toc-テストを書こう">テストを書こう</a></li>
+    </ul>
+  </li>
+  <li><a href="#開発おすすめツールライブラリ" id="markdown-toc-開発おすすめツールライブラリ">開発おすすめツール、ライブラリ</a>    <ul>
+      <li><a href="#テキストエディタのプラグイン--拡張" id="markdown-toc-テキストエディタのプラグイン--拡張">テキストエディタのプラグイン / 拡張</a></li>
+      <li><a href="#dash" id="markdown-toc-dash"><a href="http://itunes.apple.com/jp/app/dash-docs-snippets/id458034879?mt=12">Dash</a></a></li>
+      <li><a href="#testflight" id="markdown-toc-testflight"><a href="https://testflightapp.com/">TestFlight</a></a></li>
+      <li><a href="#定番ライブラリ" id="markdown-toc-定番ライブラリ">定番ライブラリ</a>        <ul>
+          <li><a href="#motion-cocoapods" id="markdown-toc-motion-cocoapods"><a href="https://github.com/HipByte/motion-cocoapods">motion-cocoapods</a></a></li>
+          <li><a href="#motion-testflight" id="markdown-toc-motion-testflight"><a href="https://github.com/HipByte/motion-testflight">motion-testflight</a></a></li>
+          <li><a href="#bubblewrap" id="markdown-toc-bubblewrap"><a href="http://bubblewrap.io">BubbleWrap</a></a></li>
+          <li><a href="#rm-redgreen" id="markdown-toc-rm-redgreen"><a href="https://github.com/mdks/rm-redgreen">rm-redgreen</a></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#情報源コミュニティ" id="markdown-toc-情報源コミュニティ">情報源、コミュニティ</a>    <ul>
+      <li><a href="#英語" id="markdown-toc-英語">英語</a></li>
+      <li><a href="#日本語" id="markdown-toc-日本語">日本語</a></li>
+      <li><a href="#rubymotionjp-について" id="markdown-toc-rubymotionjp-について">RubyMotionJP について</a></li>
+    </ul>
+  </li>
+  <li><a href="#まとめ" id="markdown-toc-まとめ">まとめ</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+</ul>
+
+<p>書いた人 : 海老沢 聡 (<a href="https://twitter.com/satococoa/">@satococoa</a>)</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>この記事では 2012 年 5 月に発売された、Ruby で iOS アプリが開発できる <a href="http://www.rubymotion.com/">RubyMotion</a> を紹介します。</p>
+
+<p>今後購入を考えている個人や導入を検討中の企業の方、買ってはみたけれども次にどうして良いかわからない、という方などの参考になると幸いです。</p>
+
+<h2 id="rubymotion-とは">RubyMotion とは</h2>
+
+<p><a href="http://www.rubymotion.com/">RubyMotion</a> とは Ruby で iOS アプリを作るための製品です。
+開発には使い慣れたテキストエディタ、テストは spec、ビルドは rake コマンドという、Rubyist にとっては普段慣れ親しんだ環境で開発を行うことができます。</p>
+
+<p><a href="http://macruby.org">MacRuby</a> をベースに開発されていてソースコードの多くが MacRuby と同一だそうです。
+RubyMotion 自体はリリースが 2012 年 5 月と非常に若い製品ではありますが、実績のある MacRuby をベースとしているのでその分安心感があります。
+また主要開発者である、開発元の <a href="http://www.hipbyte.com/">HipByte 社</a>創業者の Laurent Sansonetti さんは以前 Apple で MacRuby の開発をされていた方です。</p>
+
+<p>なお RubyMotion は有料であり、お試しプランなどもありません。
+RubyMotion の実際に動作しているところを見たい場合は、公式サイトの <a href="http://www.rubymotion.com/getting-started/">RubyMotion - Getting Started</a> に掲載されている動画や、 <a href="http://pragmaticstudio.com/">The Pragmatic Studio</a> の <a href="http://pragmaticstudio.com/screencasts/rubymotion">RubyMotion Screencast</a> をご覧になるのがおすすめです。
+(企業等での多数のライセンスの導入や、学割などを希望される場合は直接サポートに連絡すると優遇を受けられるそうです。)</p>
+
+<h3 id="rubymotion-の特徴">RubyMotion の特徴</h3>
+
+<p>RubyMotion の良いところは以下の 3 点だと思います。(一番良い点は「慣れ親しんだ Ruby で iOS のアプリが作れる」というただそれだけに尽きると感じていますが。)</p>
+
+<ol>
+  <li>Ruby で記述したコードは LLVM によって直接バイナリコードに変換されるため、性能面でのデメリットの心配がありません。</li>
+  <li>再コンパイルすること無く REPL から任意のコードを実行でき、View の調整やちょこっと API の挙動を確かめたり、ということが容易にできます。</li>
+  <li>Test コードを Ruby で書くことができます。モデルのユニットテストから UIAutomation 相当のテストまですべて Ruby で書けます。</li>
+</ol>
+
+<p>逆に気をつけた方がいいのは以下の点です。</p>
+
+<ol>
+  <li>Android アプリは開発できません。</li>
+  <li>eval や define_method などの一部のメソッドが使えません。(define_methodは近いうちに対応予定とのことです。)</li>
+  <li>require は使用できません。つまり既存の gem はほとんど使えません。ライブラリは基本的には RubyMotion 用に作られた gem か、Objective-C でできたものを使います。</li>
+</ol>
+
+<h2 id="rubymotion-の始め方">RubyMotion の始め方</h2>
+
+<h3 id="購入インストール">購入〜インストール</h3>
+
+<p><a href="http://sites.fastspring.com/hipbyte/product/rubymotion">RubyMotion Store</a> からライセンスを購入します。支払いはクレジットカード、もしくは PayPal アカウントで購入が可能です。</p>
+
+<p>ライセンスは 1 年間有効で期間中はソフトウェアのアップデートとサポートチケットによるサポートを受けることができます。
+アップデートとサポートが不要の場合は一度購入するだけでずっと製品を使い続けることもできます。
+なおライセンスの継続料金は新規料金の半額となります。(参照: <a href="http://www.rubymotion.com/support/">RubyMotion - Support</a>)</p>
+
+<p>購入が完了するとライセンスキーとインストーラの URL が購入時に登録したメールアドレスあてに送られてきますので、記載された指示に従ってインストールを行ってください。</p>
+
+<p>インストールが完了すると、motionというコマンドが使えるようになります。</p>
+
+<p>また、/Library/RubyMotion以下に必要なファイルがインストールされます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ which motion
+/usr/bin/motion
+$ motion -v
+1.20 # この原稿執筆時の最新バージョンです。
+$ motion -h
+Usage:
+  motion [-h, --help]
+  motion [-v, --version]
+  motion &lt;command&gt; [&lt;args...&gt;]
+
+Commands:
+  create       Create a new project
+  activate     Activate the software license
+  update       Update the software
+  support      Create a support ticket</code></pre></figure>
+
+<h3 id="動かしてみよう">動かしてみよう</h3>
+
+<p>インストールが完了したら、さっそく簡単なプロジェクトを作ってみたいと思います。
+まずはmotionコマンドでコードを生成します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ motion create Hello
+    Create Hello
+    Create Hello/.gitignore
+    Create Hello/Rakefile
+    Create Hello/app
+    Create Hello/app/app_delegate.rb
+    Create Hello/resources
+    Create Hello/spec
+    Create Hello/spec/main_spec.rb</code></pre></figure>
+
+<dl>
+  <dt>Rakefile</dt>
+  <dd>アプリの設定や gem の require などはここに記述します。</dd>
+  <dt>app/app_delegate.rb</dt>
+  <dd>Xcode を用いて開発する場合の AppDelegate.h, AppDelegate.m に相当するのがこのファイルです。</dd>
+  <dt>resources/</dt>
+  <dd>画像や Storyboard、CoreData のモデルファイルなどのリソースをここに置きます。</dd>
+  <dt>spec/</dt>
+  <dd>テストはこのディレクトリに置きます。</dd>
+</dl>
+
+<p>早速テキストエディタ (エディタ用の拡張等については後述) で app/app_delegate.rb を開いてみます。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
+  <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">application</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span><span class="ss">:launchOptions</span><span class="p">)</span>
+    <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>デフォルトでこのようなコードが書いてあると思います。
+2 行目をご覧ください。Ruby 2.0 で取り入れられるという噂のキーワード引数のようなメソッド定義になっています。</p>
+
+<p>これは RubyMotion 独自の拡張ではなく、MacRuby で拡張されたものです。ちなみに MacRuby は CRuby 1.9 系をベースに開発されていて、同様に RubyMotion の処理系も基本的には 1.9 系に準拠しています。</p>
+
+<p>早速実行してみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake
+     Build ./build/iPhoneSimulator-5.1-Development
+   Compile ./app/app_delegate.rb
+    Create ./build/iPhoneSimulator-5.1-Development/Hello.app
+      Link ./build/iPhoneSimulator-5.1-Development/Hello.app/Hello
+    Create ./build/iPhoneSimulator-5.1-Development/Hello.app/Info.plist
+    Create ./build/iPhoneSimulator-5.1-Development/Hello.app/PkgInfo
+    Create ./build/iPhoneSimulator-5.1-Development/Hello.dSYM
+  Simulate ./build/iPhoneSimulator-5.1-Development/Hello.app
+(main)&gt; </code></pre></figure>
+
+<p>./app/app_delegate.rb がコンパイルされ、iOS アプリとして動作するために必要なファイルが生成されたり、といった一連の処理が行われた後、自動的に iOS シミュレータが起動します。</p>
+
+<p>まだ何も描画するコードを書いていませんので、シミュレータには真っ黒の画面が表示されるのみです。</p>
+
+<p>ここでrakeコマンドを実行した端末の方に注目すると、入力待ちになっています。
+実は RubyMotion には REPL が実装されていて、irb のように直接コードを打ち込んで実行することができます。</p>
+
+<p>少し実験してみましょう。プロンプトに続いてコードを入力してみてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(main)&gt; RUBY_VERSION
+=&gt; "1.9.2"
+(main)&gt; RUBY_DESCRIPTION
+=&gt; "RubyMotion 0.12 (ruby 1.9.2) [universal-darwin12.0, i386]"
+(main)&gt; str = 'Hello, world'
+=&gt; "Hello, world"
+(main)&gt; puts str
+Hello, world
+=&gt; nil</code></pre></figure>
+
+<p>さて驚きは次です。引き続き端末にコードを打ち込んでください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(main)&gt; str.class
+=&gt; String
+(main)&gt; str.class.ancestors
+=&gt; [String, NSMutableString, NSString, Comparable, NSObject, Kernel]</code></pre></figure>
+
+<p>なんとクラスツリーにNSMutableStringやNSStringといった Objective-C 由来のクラスが混ざり込んでいます。正確にはこれも RubyMotion というよりは MacRuby の特徴なのですが、実は Ruby コードから Objective-C で定義されているメソッドまで呼び出すことができてしまいます。</p>
+
+<p>試してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(main)&gt; str.upcase # Ruby の String#upcase
+=&gt; "HELLO, WORLD"
+(main)&gt; str.uppercaseString # NSString クラスに定義された - (NSString *)uppercaseString
+=&gt; "HELLO, WORLD"
+(main)&gt; 'Hello, world'.insert(7, 'foo ') # Ruby の String#insert
+=&gt; "Hello, foo world"
+(main)&gt; 'Hello, world'.insertString('foo ', atIndex: 7) # NSMutableString クラスに定義された - (void)insertString:(NSString *)aString atIndex:(NSUInteger)anIndex
+=&gt; "Hello, foo world"</code></pre></figure>
+
+<p>面白いですね。</p>
+
+<p>では REPL を終了します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(main)&gt; exit</code></pre></figure>
+
+<p>いつまでも真っ黒な画面では寂しいので、app_delegate.rb にコードを記述してみましょう。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
+  <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">application</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span><span class="ss">:launchOptions</span><span class="p">)</span>
+    <span class="vi">@window</span> <span class="o">=</span> <span class="no">UIWindow</span><span class="p">.</span><span class="nf">alloc</span><span class="p">.</span><span class="nf">initWithFrame</span><span class="p">(</span><span class="no">UIScreen</span><span class="p">.</span><span class="nf">mainScreen</span><span class="p">.</span><span class="nf">bounds</span><span class="p">)</span>
+    <span class="n">controller</span> <span class="o">=</span> <span class="no">UIViewController</span><span class="p">.</span><span class="nf">new</span>
+    <span class="n">controller</span><span class="p">.</span><span class="nf">view</span><span class="p">.</span><span class="nf">backgroundColor</span> <span class="o">=</span> <span class="no">UIColor</span><span class="p">.</span><span class="nf">whiteColor</span>
+    <span class="vi">@window</span><span class="p">.</span><span class="nf">rootViewController</span> <span class="o">=</span> <span class="n">controller</span>
+    <span class="vi">@window</span><span class="p">.</span><span class="nf">makeKeyAndVisible</span>
+    <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>コードの中身については Objective-C でアプリを開発した経験が無いと理解が難しいかもしれませんが、筆者は Objective-C 経験ほぼゼロの状態で RubyMotion を始めましたので、平行して勉強していくことも十分可能です。
+これで先ほど同様にrakeコマンドを実行すると今度は白い背景の画面が表示されるようになったと思います。</p>
+
+<p>では画面にボタンなどの部品を置いてみようと思います。
+Storyboard を使うこともできますが、ここではコードのみで GUI を構築します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
+  <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">application</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span><span class="ss">:launchOptions</span><span class="p">)</span>
+    <span class="vi">@window</span> <span class="o">=</span> <span class="no">UIWindow</span><span class="p">.</span><span class="nf">alloc</span><span class="p">.</span><span class="nf">initWithFrame</span><span class="p">(</span><span class="no">UIScreen</span><span class="p">.</span><span class="nf">mainScreen</span><span class="p">.</span><span class="nf">bounds</span><span class="p">)</span>
+    <span class="n">controller</span> <span class="o">=</span> <span class="no">UIViewController</span><span class="p">.</span><span class="nf">new</span>
+    <span class="n">controller</span><span class="p">.</span><span class="nf">view</span><span class="p">.</span><span class="nf">backgroundColor</span> <span class="o">=</span> <span class="no">UIColor</span><span class="p">.</span><span class="nf">whiteColor</span>
+
+    <span class="n">label</span> <span class="o">=</span> <span class="no">UILabel</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span>
+      <span class="n">l</span><span class="p">.</span><span class="nf">text</span> <span class="o">=</span> <span class="s1">'foo'</span>
+      <span class="n">l</span><span class="p">.</span><span class="nf">frame</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">60</span><span class="p">]]</span>
+    <span class="k">end</span>
+    <span class="n">controller</span><span class="p">.</span><span class="nf">view</span><span class="p">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+    <span class="n">button</span> <span class="o">=</span> <span class="no">UIButton</span><span class="p">.</span><span class="nf">buttonWithType</span><span class="p">(</span><span class="no">UIButtonTypeRoundedRect</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span>
+      <span class="n">b</span><span class="p">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s1">'Say Hello!'</span><span class="p">,</span> <span class="n">forState</span><span class="ss">:UIControlStateNormal</span><span class="p">)</span>
+      <span class="n">b</span><span class="p">.</span><span class="nf">frame</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">60</span><span class="p">]]</span>
+    <span class="k">end</span>
+    <span class="n">controller</span><span class="p">.</span><span class="nf">view</span><span class="p">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+    <span class="vi">@window</span><span class="p">.</span><span class="nf">rootViewController</span> <span class="o">=</span> <span class="n">controller</span>
+    <span class="vi">@window</span><span class="p">.</span><span class="nf">makeKeyAndVisible</span>
+    <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>UILabelとUIButtonを追加してみました。実行してみると、ラベルの位置が気になりませんか？
+REPL で位置の調整を試してみましょう。</p>
+
+<hr />
+<p><img src="/images/0039-IntroductionToRubyMotion/screenshot1_small.png" alt="screenshot1_small.png" /></p>
+
+<h2 id="screenshot1png"><a href="/images/0039-IntroductionToRubyMotion/screenshot1.png">screenshot1.png</a></h2>
+
+<p>コマンドキーを押しながらシミュレータ上でポインタを動かすと、赤い枠線がポインタの下の UI 部品を囲み、それと同時に端末上のプロンプトが (main)&gt; から (#&lt;UILabel:0x6a015c0&gt;)&gt; に変わるのが確認できましたでしょうか？(0x6a015c0 は同じ数字ではなくても大丈夫です。)</p>
+
+<p>この状態でクリックすると、REPL が 選択されたオブジェクトをselfとした状態で入力待ちになります。以下のコードを入力してみましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">(#&lt;UILabel:0x6c08f60&gt;)&gt; self.frame = [[110, 100], [100, 20]]
+=&gt; [[110, 100], [100, 20]]</code></pre></figure>
+
+<p>ラベルの位置が変更できたと思います。
+何度もコンパイルし直して位置を調整するよりも簡単に UI 部品の位置、大きさの調整ができることを実感できますね。
+忘れずに元の app_delegate.rb の 9 行目を今確認したframeの値に変更しておきましょう。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>    <span class="n">label</span> <span class="o">=</span> <span class="no">UILabel</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span>
+      <span class="n">l</span><span class="p">.</span><span class="nf">text</span> <span class="o">=</span> <span class="s1">'foo'</span>
+      <span class="n">l</span><span class="p">.</span><span class="nf">frame</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+    <span class="k">end</span>
+    <span class="n">controller</span><span class="p">.</span><span class="nf">view</span><span class="p">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+</code></pre>
+</div>
+
+<p>さて、今はボタンをタップしても何も起きません。
+タップするとラベルの文字列が変更されるように修正したいと思いますが、このまま app_delegate.rb にコードを書いていくと複雑になってしまうので、UIViewControllerを継承したMyViewControllerクラスを定義し、ファイルを分けるリファクタリングを行います。</p>
+
+<p>リファクタリング後の 2 ファイルは以下のようになります。
+実行して、先ほどと同じ結果になることを確認してください。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/app_delegate.rb</span>
+<span class="k">class</span> <span class="nc">AppDelegate</span>
+  <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">application</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span><span class="ss">:launchOptions</span><span class="p">)</span>
+    <span class="vi">@window</span> <span class="o">=</span> <span class="no">UIWindow</span><span class="p">.</span><span class="nf">alloc</span><span class="p">.</span><span class="nf">initWithFrame</span><span class="p">(</span><span class="no">UIScreen</span><span class="p">.</span><span class="nf">mainScreen</span><span class="p">.</span><span class="nf">bounds</span><span class="p">)</span>
+    <span class="n">my_view_controller</span> <span class="o">=</span> <span class="no">MyViewController</span><span class="p">.</span><span class="nf">new</span>
+
+    <span class="vi">@window</span><span class="p">.</span><span class="nf">rootViewController</span> <span class="o">=</span> <span class="n">my_view_controller</span>
+    <span class="vi">@window</span><span class="p">.</span><span class="nf">makeKeyAndVisible</span>
+    <span class="kp">true</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># app/my_view_controller.rb</span>
+<span class="k">class</span> <span class="nc">MyViewController</span> <span class="o">&lt;</span> <span class="no">UIViewController</span>
+  <span class="k">def</span> <span class="nf">viewDidLoad</span>
+    <span class="k">super</span>
+
+    <span class="n">view</span><span class="p">.</span><span class="nf">backgroundColor</span> <span class="o">=</span> <span class="no">UIColor</span><span class="p">.</span><span class="nf">whiteColor</span>
+
+    <span class="n">label</span> <span class="o">=</span> <span class="no">UILabel</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span>
+      <span class="n">l</span><span class="p">.</span><span class="nf">text</span> <span class="o">=</span> <span class="s1">'foo'</span>
+      <span class="n">l</span><span class="p">.</span><span class="nf">frame</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+    <span class="k">end</span>
+    <span class="n">view</span><span class="p">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+    <span class="n">button</span> <span class="o">=</span> <span class="no">UIButton</span><span class="p">.</span><span class="nf">buttonWithType</span><span class="p">(</span><span class="no">UIButtonTypeRoundedRect</span><span class="p">).</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span>
+      <span class="n">b</span><span class="p">.</span><span class="nf">setTitle</span><span class="p">(</span><span class="s1">'Say Hello!'</span><span class="p">,</span> <span class="n">forState</span><span class="ss">:UIControlStateNormal</span><span class="p">)</span>
+      <span class="n">b</span><span class="p">.</span><span class="nf">frame</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">60</span><span class="p">]]</span>
+    <span class="k">end</span>
+    <span class="n">view</span><span class="p">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>あれ？と思った方もいらっしゃるかもしれません。RubyMotion ではrequireが使えない代わりに、app ディレクトリ以下のファイルは自動的に読み込まれるようになっています。
+(もし読み込まれる順序が問題でコンパイルできない場合は Rakefile で app.files_dependencies メソッドを使って指定できます。<a href="http://www.rubymotion.com/developer-center/guides/project-management/#_files_dependencies">2.1. Files Dependencies</a>)</p>
+
+<p>ではボタンをタップしたときの動作を追加してみます。
+変更点を diff 形式で掲載します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ git diff
+diff --git a/app/my_view_controller.rb b/app/my_view_controller.rb
+index d29b2cc..03a06a3 100644
+--- a/app/my_view_controller.rb
++++ b/app/my_view_controller.rb
+@@ -4,17 +4,24 @@ class MyViewController &lt; UIViewController
+ 
+     view.backgroundColor = UIColor.whiteColor
+ 
+-    label = UILabel.new.tap do |l|
++    @label = UILabel.new.tap do |l|
+       l.text = 'foo'
+       l.frame = [[110, 100], [100, 20]]
+     end
+-    view.addSubview(label)
++    view.addSubview(@label)
+ 
+     button = UIButton.buttonWithType(UIButtonTypeRoundedRect).tap do |b|
+       b.setTitle('Say Hello!', forState:UIControlStateNormal)
+       b.frame = [[110, 300], [100, 60]]
++      b.addTarget(self,
++        action:'say_hello',
++        forControlEvents:UIControlEventTouchUpInside)
+     end
+     view.addSubview(button)
+ 
+   end
++
++  def say_hello
++    @label.text = 'Hello!'
++  end
+ end
+\ No newline at end of file</code></pre></figure>
+
+<p>まず別のメソッドからラベルが見えるようにUILabelのオブジェクトをインスタンス変数に格納するように変更しました。
+さらに、say_helloというメソッドを定義し、その中でラベルのプロパティを変更しています。
+そしてボタンがタップされたときに呼び出されるメソッドをaddTarget:action:forControlEvents:メソッドで指定して完成です。</p>
+
+<p>実行してみて意図通り動作することを確認してください。</p>
+
+<h3 id="テストを書こう">テストを書こう</h3>
+
+<p>現在の RubyMotion では <a href="https://github.com/chneukirchen/bacon/">Bacon</a> という rspec クローンを Objective-C 用に拡張した <a href="https://github.com/alloy/MacBacon">MacBacon</a> を利用してテストを書くことができます。</p>
+
+<p>ユニットテストのレイヤーから、バージョン 1.15 以降では UIAutomation 相当の View, Controller のテストが書けるようになっています。</p>
+
+<p>エディタで spec/main_spec.rb を開いてください。以下のようなコードが記述されています。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"Application 'Hello'"</span> <span class="k">do</span>
+  <span class="n">before</span> <span class="k">do</span>
+    <span class="vi">@app</span> <span class="o">=</span> <span class="no">UIApplication</span><span class="p">.</span><span class="nf">sharedApplication</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">"has one window"</span> <span class="k">do</span>
+    <span class="vi">@app</span><span class="p">.</span><span class="nf">windows</span><span class="p">.</span><span class="nf">size</span><span class="p">.</span><span class="nf">should</span> <span class="o">==</span> <span class="mi">1</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>アプリケーションに一つのwindowがあることをテストしています。
+実行してみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake spec
+     Build ./build/iPhoneSimulator-5.1-Development
+   Compile /Library/RubyMotion/lib/motion/spec.rb
+   Compile /Library/RubyMotion/lib/motion/spec/helpers/ui.rb
+   Compile ./spec/main_spec.rb
+    Create ./build/iPhoneSimulator-5.1-Development/Hello_spec.app
+      Link ./build/iPhoneSimulator-5.1-Development/Hello_spec.app/Hello
+    Create ./build/iPhoneSimulator-5.1-Development/Hello_spec.app/Info.plist
+    Create ./build/iPhoneSimulator-5.1-Development/Hello_spec.app/PkgInfo
+    Create ./build/iPhoneSimulator-5.1-Development/Hello_spec.dSYM
+  Simulate ./build/iPhoneSimulator-5.1-Development/Hello_spec.app
+Application 'Hello'
+  - has one window
+
+1 specifications (1 requirements), 0 failures, 0 errors</code></pre></figure>
+
+<p>図らずも既に仕様を満たしていたのでテストが通りました。
+(筆者はテストが一発で通ることに恐怖を感じるので、一応@app.windows.size.should == 0としてテストが失敗することも確認しました。)</p>
+
+<p>では先ほど作ったプロジェクトのテストを書いてみましょう。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"Application 'Hello'"</span> <span class="k">do</span>
+  <span class="n">before</span> <span class="k">do</span>
+    <span class="vi">@app</span> <span class="o">=</span> <span class="no">UIApplication</span><span class="p">.</span><span class="nf">sharedApplication</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">"has one window"</span> <span class="k">do</span>
+    <span class="vi">@app</span><span class="p">.</span><span class="nf">windows</span><span class="p">.</span><span class="nf">size</span><span class="p">.</span><span class="nf">should</span> <span class="o">==</span> <span class="mi">1</span>
+  <span class="k">end</span>
+
+  <span class="n">describe</span> <span class="s2">"rootViewController"</span> <span class="k">do</span>
+    <span class="n">before</span> <span class="k">do</span>
+      <span class="vi">@controller</span> <span class="o">=</span> <span class="vi">@app</span><span class="p">.</span><span class="nf">keyWindow</span><span class="p">.</span><span class="nf">rootViewController</span>
+    <span class="k">end</span>
+
+    <span class="n">it</span> <span class="s2">"is an instance of MyViewController"</span> <span class="k">do</span> 
+      <span class="vi">@controller</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">should</span> <span class="o">==</span> <span class="no">MyViewController</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>コントローラのクラスが正しく MyViewController であることをテストしました。
+テストを実行してみてください。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake spec
+     Build ./build/iPhoneSimulator-5.1-Development
+   Compile ./spec/main_spec.rb
+      Link ./build/iPhoneSimulator-5.1-Development/Hello_spec.app/Hello
+    Create ./build/iPhoneSimulator-5.1-Development/Hello_spec.dSYM
+  Simulate ./build/iPhoneSimulator-5.1-Development/Hello_spec.app
+Application 'Hello'
+  - has one window
+
+rootViewController
+  - is an instance of MyViewController
+
+2 specifications (2 requirements), 0 failures, 0 errors</code></pre></figure>
+
+<p>正しく通りましたでしょうか。</p>
+
+<p>では次にボタンをタップしたときの動作を検証します。
+spec/my_view_controller_spec.rb を作成し、以下のように記述します。</p>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"The 'My View Controller' view"</span> <span class="k">do</span>
+  <span class="n">tests</span> <span class="no">MyViewController</span>
+
+  <span class="n">before</span> <span class="k">do</span>
+    <span class="vi">@label</span> <span class="o">=</span> <span class="n">view</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="n">it</span> <span class="s2">"change label's title"</span> <span class="k">do</span>
+    <span class="n">tap</span><span class="p">(</span><span class="s1">'Say Hello!'</span><span class="p">)</span>
+    <span class="vi">@label</span><span class="p">.</span><span class="nf">text</span><span class="p">.</span><span class="nf">should</span> <span class="o">==</span> <span class="s1">'Hello'</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>実行してみます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake spec
+     Build ./build/iPhoneSimulator-5.1-Development
+  Simulate ./build/iPhoneSimulator-5.1-Development/Hello_spec.app
+Application 'Hello'
+  - has one window
+
+rootViewController
+  - is an instance of MyViewController
+
+The 'My View Controller' view
+  - change label's title [FAILED]
+
+Bacon::Error: "Hello!".==("Hello") failed
+        spec.rb:553:in `satisfy:': The 'My View Controller' view - change label's title
+        spec.rb:567:in `method_missing:'
+        spec.rb:183:in `block in run_spec_block'
+         4:in `execute_block'
+        spec.rb:183:in `run_spec_block'
+        spec.rb:198:in `run'
+
+3 specifications (3 requirements), 1 failures, 0 errors</code></pre></figure>
+
+<p>おっと、残念ながらエラーが出てしまいました。
+spec の中で typo したようです。修正は皆さんにおまかせします。</p>
+
+<h2 id="開発おすすめツールライブラリ">開発おすすめツール、ライブラリ</h2>
+
+<p>RubyMotion で開発を行うにあたって、定番のツールを紹介したいと思います。</p>
+
+<h3 id="テキストエディタのプラグイン--拡張">テキストエディタのプラグイン / 拡張</h3>
+
+<dl>
+  <dt><a href="https://github.com/haraken3/SublimeRubyMotionBuilder">SublimeRubyMotionBuilder</a></dt>
+  <dd>最近人気の <a href="http://www.sublimetext.com">Sublime Text</a> 用の拡張です。筆者もこれを使っています。</dd>
+  <dt><a href="https://github.com/libin/RubyMotion.tmbundle">RubyMotion.tmbundle</a></dt>
+  <dd><a href="http://macromates.com">TextMate</a> の方はこちら。</dd>
+  <dt><a href="https://github.com/rcyrus/snipmate-snippets-rubymotion">snipmate-snippets-rubymotion</a></dt>
+  <dd>vim の方はこの snippets と ctags を使うといいと思います。</dd>
+  <dt><a href="http://stirredbits.com/blog/2012/05/06/rubymotion-completion-with-emacs/">Rubymotion Completion With Emacs</a></dt>
+  <dd>Emacs な方はこのエントリに従って設定するのが良さそうです。</dd>
+</dl>
+
+<h3 id="dash"><a href="http://itunes.apple.com/jp/app/dash-docs-snippets/id458034879?mt=12">Dash</a></h3>
+
+<p>iOS SDK のリファレンスを参照するために使います。
+Ruby や Rails のリファレンスも参照できる優れものです。</p>
+
+<h3 id="testflight"><a href="https://testflightapp.com/">TestFlight</a></h3>
+
+<p>iOS 開発では定番！
+Adhoc 版アプリを素早く手軽に配布するために使います。</p>
+
+<h3 id="定番ライブラリ">定番ライブラリ</h3>
+
+<h4 id="motion-cocoapods"><a href="https://github.com/HipByte/motion-cocoapods">motion-cocoapods</a></h4>
+
+<p>Bundler と同様にライブラリの依存関係の管理を行う <a href="http://cocoapods.org">CocoaPods</a> を RubyMotion から簡単に使えるようにした gem です。</p>
+
+<p>これのおかげで Objective-C で作られた <a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a> などの定番ライブラリもとても手軽に使うことができます。</p>
+
+<h4 id="motion-testflight"><a href="https://github.com/HipByte/motion-testflight">motion-testflight</a></h4>
+
+<p>上述の TestFlight を RubyMotion から手軽に使うための gem です。</p>
+
+<p>この gem を利用するとrake testflight notes=”foo”のように、コマンドラインから TestFlight を通じたテスト版の配布ができてしまいます。</p>
+
+<h4 id="bubblewrap"><a href="http://bubblewrap.io">BubbleWrap</a></h4>
+
+<p>RubyMotion を使った iOS 開発をさらに Ruby らしく書けるようにした gem です。</p>
+
+<h4 id="rm-redgreen"><a href="https://github.com/mdks/rm-redgreen">rm-redgreen</a></h4>
+
+<p>spec の実行結果に色を付ける gem です。</p>
+
+<p>他にも <a href="https://github.com/mattgreen/nitron">nitron</a>, <a href="https://github.com/clayallsopp/formotion">formotion</a> なども人気の高い gem です。</p>
+
+<h2 id="情報源コミュニティ">情報源、コミュニティ</h2>
+
+<p>まだ若い製品であるため、日本語のまとまった情報はまだ多くはありません。
+しばらくは英語の情報を主に見るようにするといいでしょう。</p>
+
+<h3 id="英語">英語</h3>
+
+<ul>
+  <li><a href="http://www.rubymotion.com/developer-center/">Developer Center</a> (公式)</li>
+  <li><a href="http://groups.google.com/group/rubymotion">Google Group</a> (公式)</li>
+  <li><a href="https://github.com/HipByte/RubyMotion">HipByte/RubyMotion</a> (公式)</li>
+  <li><a href="http://rubymotion-tutorial.com">RubyMotion Tutorial</a></li>
+</ul>
+
+<h3 id="日本語">日本語</h3>
+
+<ul>
+  <li><a href="https://www.facebook.com/groups/149315595198329/">Facebook グループ</a></li>
+  <li><a href="http://rubymotion.jp/">RubyMotionJP</a></li>
+</ul>
+
+<h3 id="rubymotionjp-について">RubyMotionJP について</h3>
+
+<p>先日<a href="http://connpass.com/event/665/">第1回 RubyMotion 勉強会</a>を東京にて開催いたしました。</p>
+
+<p>その懇親会の席でそろそろ日本語の RubyMotion の情報をどこかに集約した方がいいのでは……という話になり、Github 上に Organization を立ち上げました。(<a href="https://github.com/RubyMotionJP">RubyMotionJP</a>)</p>
+
+<p>当面は <a href="http://rubymotion-tutorial.com">RubyMotion Tutorial</a> の翻訳を進めていこうと考えております。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>やや駆け足ではありますが、これから RubyMotion を始めたいと考える方のスタートダッシュをお手伝いできるよう、広く浅くまとめてみました。</p>
+
+<p>また、簡単なコード例をご覧頂くことで開発の雰囲気や手順、メリット／デメリットをある程度感じていただくことができたのではないかと思います。</p>
+
+<p>何か質問等がございましたらどうぞお気軽に <a href="https://www.facebook.com/groups/149315595198329/">Facebook グループ</a>や Twitter の #rubymotionjp ハッシュタグで相談していただけると、拾える範囲で拾って回答を差し上げることができると思います。</p>
+
+<p>RubyMotion は若くて勢いのあるプロジェクトです。バグも相当減ってきた実感がありますし、次々と便利で新しい機能が追加されています。近々デバッガやdefine_methodの追加などの大きなアップデートも控えています。</p>
+
+<p>RubyMotion やこの記事を通じて、多くの方が楽しく iOS アプリの開発ができるようになることを願っています。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>海老沢 聡 (<a href="https://twitter.com/satococoa/">@satococoa</a>)<br />
+原宿のとある会社でスマートフォンアプリの開発をしています。現在 Rails + RubyMotion でアプリ開発中。</p>
+
+<p>先日 RubyMotion で開発した自身初の iPhone アプリをリリースし、見事 AppStore 無料のトップを頂きました！</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

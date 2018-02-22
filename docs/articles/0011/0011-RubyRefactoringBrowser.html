@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み</title>
+  <meta name="description" content="">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0011/0011-RubyRefactoringBrowser.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0011/0011-RubyRefactoringBrowser.html" class="hatena-bookmark-button" data-hatena-bookmark-title="解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0011/0011-RubyRefactoringBrowser.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0011/0011-RubyRefactoringBrowser.html" data-text="解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#この文章が対象とする読者" id="markdown-toc-この文章が対象とする読者">この文章が対象とする読者</a></li>
+      <li><a href="#なぜ組み込むのか" id="markdown-toc-なぜ組み込むのか">なぜ組み込むのか</a></li>
+      <li><a href="#準備" id="markdown-toc-準備">準備</a></li>
+    </ul>
+  </li>
+  <li><a href="#内部構造" id="markdown-toc-内部構造">内部構造</a></li>
+  <li><a href="#実装の方針" id="markdown-toc-実装の方針">実装の方針</a></li>
+  <li><a href="#emacs-での例" id="markdown-toc-emacs-での例">Emacs での例</a>    <ul>
+      <li><a href="#実現する仕様" id="markdown-toc-実現する仕様">実現する仕様</a></li>
+      <li><a href="#binrrb-コマンド" id="markdown-toc-binrrb-コマンド">bin/rrb コマンド</a></li>
+      <li><a href="#実装" id="markdown-toc-実装">実装</a></li>
+      <li><a href="#rrb-コマンドに関する注意" id="markdown-toc-rrb-コマンドに関する注意">rrb コマンドに関する注意</a></li>
+      <li><a href="#rrb_なんとかコマンド" id="markdown-toc-rrb_なんとかコマンド">「rrb_なんとか」コマンド</a></li>
+    </ul>
+  </li>
+  <li><a href="#vim-での例" id="markdown-toc-vim-での例">Vim での例</a>    <ul>
+      <li><a href="#コアライブラリの仕様" id="markdown-toc-コアライブラリの仕様">コアライブラリの仕様</a></li>
+      <li><a href="#vim-での実装" id="markdown-toc-vim-での実装">Vim での実装</a></li>
+    </ul>
+  </li>
+  <li><a href="#さらなる開発のために" id="markdown-toc-さらなる開発のために">さらなる開発のために</a>    <ul>
+      <li><a href="#ui-の問題" id="markdown-toc-ui-の問題">UI の問題</a></li>
+      <li><a href="#エラー処理" id="markdown-toc-エラー処理">エラー処理</a></li>
+      <li><a href="#複数のファイルを対象にする" id="markdown-toc-複数のファイルを対象にする">複数のファイルを対象にする</a></li>
+    </ul>
+  </li>
+  <li><a href="#最後に" id="markdown-toc-最後に">最後に</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#解説-ruby-refactoring-browser-連載一覧" id="markdown-toc-解説-ruby-refactoring-browser-連載一覧">解説 Ruby Refactoring Browser 連載一覧</a></li>
+</ul>
+
+<p>文章: 大林一平</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p>この文章では Ruby Refactoring Browser を様々な IDE、エディタに組み込み、
+利用できるようにするために必要なことを解説します。</p>
+
+<p>Ruby Refactoring Browser に関する基本的な事柄や Emacs での使いかたなどについて
+知りたい方は、前回の記事 (<a href="/articles/0010/0010-RubyRefactoringBrowser.html">解説 Ruby Refactoring Browser - Emacs でリファクタリング</a>) を参照してください。</p>
+
+<h3 id="この文章が対象とする読者">この文章が対象とする読者</h3>
+
+<p>この文章の読者には、少なくともリファクタリングについて一定の知識を持って
+いることと、Ruby についてそれなりの知識があることを仮定します。</p>
+
+<p>また、例としては Emacs と Vim での実装を挙げるので、それらについて
+知識があったほうが理解しやすいでしょう。</p>
+
+<h3 id="なぜ組み込むのか">なぜ組み込むのか</h3>
+
+<p>なぜリファクタリングブラウザを組み込むのでしょうか。
+仮に、リファクタリングブラウザが IDE とは独立したツールであった場合を考えましょう。
+そのときには、以下の手順でこのツールを利用することになります。</p>
+
+<ol>
+  <li>IDE 上のファイルをすべてセーブする。</li>
+  <li>リファクタリングブラウザにそのファイルを読み込む。</li>
+  <li>リファクタリングする。</li>
+  <li>リファクタリングした後のファイルを IDE へロードする。</li>
+</ol>
+
+<p>リファクタリングをしようとするとこれを何度も繰り返す必要があります。
+これは非常に面倒です。</p>
+
+<p>よって、快適にリファクタリングするためには、自分の開発環境
+になんらかの形でリファクタリングブラウザを組込み、手軽に使えるよう
+にする必要があるのです。</p>
+
+<h3 id="準備">準備</h3>
+
+<p>あらかじめ Ruby Refactoring Browser をインストールし、正しく動作するかテストして
+おいてください。</p>
+
+<h2 id="内部構造">内部構造</h2>
+
+<p>組み込み方を説明する前に内部構造を解説します。</p>
+
+<p>まず全体像を図示しましょう。
+図の上の方が EmacsLisp で、下のほうが Ruby で実装されています。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> -----------------------------
+ |  emacs interface(rrb.el)  |
+ -----------------------------
+     |
+     | pipe によるプロセス間通信
+     |
+ -----------------------------
+ |     bin/rrb               |
+ |---------------------------|
+ |     コアライブラリ        |
+ |---------------------------|</code></pre></figure>
+
+<p>下部から解説していきましょう。</p>
+
+<p>まず、リファクタンリング機能を実現するコアの部分です。
+ソースコードとリファクタリングに必要なパラメータ
+(例えば古い変数名と新しい変数名など)
+をうけとり、リファクタリング可能かを判定し、
+可能ならばその結果を返す、という機能を実現しています。
+ここは Ruby で書かれています。</p>
+
+<p>次に、 Emacs とのやりとりをする部分の Ruby 側の部分です。
+これは bin/rrb というコマンドとして実現されています。
+その実体は lib/rrb/emacs_interface.rb です。</p>
+
+<p>最後に EmacsLisp で書かれた部分です。基本的にユーザからの入力を受けとり、
+bin/rrb を呼びだしている (call-process、call-process-region) だけです。</p>
+
+<h2 id="実装の方針">実装の方針</h2>
+
+<p>実際に組み込む方法を解説していきます。
+まずは、どのようにして対象のエディタに組込むのかを考えていきます。
+以下の 3 つの方針を考えましょう。</p>
+
+<ol>
+  <li>コアライブラリの部分だけ利用する。</li>
+  <li>bin/rrb コマンド部も利用する。</li>
+  <li>新たなプロセス間インターフェースを作る。</li>
+</ol>
+
+<p>1 は対象の IDE / エディタに Ruby が組込まれている場合、
+もしくはそれが Ruby で書かれている場合に有効です。
+この方針は面倒なプロセス間通信をしなくてよい分プログラムが簡潔に
+なることが期待できます。</p>
+
+<p>2 は対象の IDE / エディタが Ruby を直接利用できない場合につかいます。</p>
+
+<p>3 は COM や CORBA のインターフェースを作ってしまおうというアイデアです。
+面倒なので今のところやっていませんが、Windows などでは有用かもしれません。</p>
+
+<h2 id="emacs-での例">Emacs での例</h2>
+
+<p>まずは上の方針 2 に従った実装例として Emacs での例をあげましょう。
+Ruby Refactoring Browser の配布物には Emacs 用インターフェースとして
+rrb.el が付属していますが、これはエラー処理や便利な機能の実現のため複雑
+になっています。そのためここでは
+それを非常に簡略化したものを例として挙げます。</p>
+
+<p>Emacs や Emacs Lisp に詳しくない人にとっては少々わかりにくいかもしれませんが
+elisp の解説 (info など) を読んで補完してください。</p>
+
+<p>また、以下の例は Debian testing 上の Emacs のバージョン 21.4.1 で動作することを
+確認しています。</p>
+
+<h3 id="実現する仕様">実現する仕様</h3>
+
+<p>まずどんな仕様にするかを考えましょう。簡単のため、以下のようにします。</p>
+
+<ol>
+  <li>リファクタリングの対象となるファイルはカレントバッファのファイルのみ</li>
+  <li>Rename local variable のみ実装する</li>
+  <li>ユーザに「どのクラス」の「どのメソッド」に含まれる「どのローカル変数」を「どのような名前」に変更するかを指定させる</li>
+</ol>
+
+<p>注: カレントバッファとは現在編集しているファイルのこと</p>
+
+<h3 id="binrrb-コマンド">bin/rrb コマンド</h3>
+
+<p>まずは rrb コマンドの仕様について解説します。コマンドライン上で</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> rrb</code></pre></figure>
+
+<p>とだけ打つと、以下のようなヘルプメッセージが得られます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> Usage: rrb refactoring-type refactoring-parameter io-type
+
+   refactoring-type
+     * --rename-local-variable  Class#method old_var new_var
+     * --rename-method-all  old_method new_method
+     * --rename-class-variable  Class old_var new_var
+     * --rename-instance-variable  Class old_var new_var
+     * --rename-global-variable  old_var new_var
+     * --extract-method path new_method start_lineno end_lineno
+     * --rename-method "old-class1 old-class2..." old_method new_method
+     * --rename-constant old_const new_const
+     * --pullup-method old_class#method new_class path lineno
+     * --pushdown-method old_class#method new_class path lineno
+     * --remove-parameter class#method parameter
+     * --extract-superclass namespace new_class "target-class1 target-class2..." path lineno
+
+   io-type
+     * --stdin-stdout
+     * --filein-overwrite FILES..
+     * --filein-stdout FILES..
+     * --marshalin-overwrite FILE
+     * --marshalin-stdout FILE</code></pre></figure>
+
+<p>まずどのリファクタリングをするかを refactoring-type オプション群から選び、
+そのリファクタリングに必要なパラメータ (例えば新しい変数名など) を
+二番目以降の引数 (refactoring-parameter) に指定します。
+最後にリファクタリングの対象となるファイルのやりとりの方法を
+io-type オプション群から選んで指定します。</p>
+
+<p>Heke::Hoge クラスの f というメソッドの中の i というローカル変数を index に変更する
+リファクタリングをさせる場合の例を下に挙げましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> rrb --rename-local-variable Heke::Hoge#f i index --stdin-stdout</code></pre></figure>
+
+<p>また、/home/ohai/test.rb の 10 行目から 17 行目までを foo というメソッドとして
+抽出する場合は以下のようにします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> rrb --extract-method /home/ohai/test.rb foo 10 17 --stdin-stdout</code></pre></figure>
+
+<p>「–stdin-stdout」というオプションは、リファクタリング対象の
+ファイルを標準入力に渡し、リファクタリングした結果を標準出力から得る、
+ということを指定しています。</p>
+
+<p>そして受け渡しのフォーマットは以下の通りです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ファイル 1 のパス \C-a ファイル 1 の内容
+ \C-a ファイル 2 のパス \C-a ファイル 2 の内容
+   …
+ \C-a ファイル n のパス \C-a ファイル n の内容
+ \C-a-- END --\C-a</code></pre></figure>
+
+<p>ここで \C-a はアスキーコード 1 の文字を表しています。</p>
+
+<h3 id="実装">実装</h3>
+
+<p>まずはインターフェースから実装していきましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (defun rrbs-rename-local-variable (class method old-var new-var)
+   (interactive "sClass: \nsMethod: \nsOldVariable: \nsNewVariable: ")
+   )</code></pre></figure>
+
+<p>入力部分はこれで OK です。interactive を使って 4 つの文字列を入力させ、
+それぞれ class, method, old-var, new-var という変数に束縛します。</p>
+
+<p>ちなみに関数名のプリフィクスになっている rrbs は「rrb simple」の省略形です。この後も使います。</p>
+
+<p>つぎに入力データの準備をしましょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (defun rrbs-rename-local-variable (class method old-var new-var)
+   (interactive "sClass: \nsMethod: \nsOldVariable: \nsNewVariable: ")
+   (let ((path (buffer-file-name (current-buffer)))
+         (content (buffer-string))
+         (input-buf (get-buffer-create " *rrbs-input*"))
+         (output-buf (get-buffer-create " *rrbs-output*")))
+     (save-excursion
+       (set-buffer input-buf)
+       (erase-buffer)
+       (insert path)
+       (insert "\C-a")
+       (insert content)
+       (insert "\C-a")
+       (insert "-- END --")
+       (insert "\C-a"))))</code></pre></figure>
+
+<p>(buffer-file-name (current-buffer)) でカレントバッファのファイル名を、
+(buffer-string) でカレントバッファの中身を得ています。</p>
+
+<p>また、入出力用のバッファを別に “ <em>rrbs-input</em>” 、 “ <em>rrbs-output</em>” という
+名前で用意します。そして (insert 文字列) で入力用バッファに文字列
+を書き込みます。</p>
+
+<p>これで</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> class Heke
+   def f(x,y)
+     x ** 2 + y ** 2
+   end
+ end</code></pre></figure>
+
+<p>というソース (/home/ohai/test.rb) に対し</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> /home/ohai/test.rb^Aclass Heke
+   def f(x,y)
+     x ** 2 + y ** 2
+   end
+ end
+ ^A-- END --^A</code></pre></figure>
+
+<p>という内容のデータが” <em>rrbs-input</em> “に用意されます。</p>
+
+<p>次に rrb コマンドを呼びだします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (defun rrbs-rename-local-variable (class method old-var new-var)
+   (interactive "sClass: \nsMethod: \nsOldVariable: \nsNewVariable: ")
+   (let ((buf (current-buffer))
+         (path (buffer-file-name (current-buffer)))
+         (content (buffer-string))
+         (input-buf (get-buffer-create " *rrbs-input*"))
+         (output-buf (get-buffer-create " *rrbs-output*")))
+     (save-excursion
+       (set-buffer input-buf)
+       ;; clear input buffer
+       (erase-buffer)
+
+       ;; setup input data
+       (insert path)
+       (insert "\C-a")
+       (insert content)
+       (insert "\C-a")
+       (insert "-- END --")
+       (insert "\C-a")
+
+       ;; clear output buffer
+       (set-buffer output-buf)
+       (erase-buffer)
+       (set-buffer input-buf)
+
+       ;; call "rrb" command
+       (call-process-region (point-min) (point-max) "rrb" nil output-buf nil
+                            "--rename-local-variable"
+                            (concat class "#" method)
+                            old-var new-var))))</code></pre></figure>
+
+<p>call-process-region でプロセスを起動し、rrb コマンドを呼びだします。
+引数の詳しい意味は info を見てください。
+この結果、リファクタリングされたソースコードが “ <em>rrbs-output</em>” に出力されます。</p>
+
+<p>例えば上の例で Heke#f の x を u にリネームすると</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> /home/ohai/test.rb^Aclass Heke
+   def f(u,y)
+     u ** 2 + y ** 2
+   end
+ end
+ ^A-- END --^A</code></pre></figure>
+
+<p>という内容となります。</p>
+
+<p>最後に出力結果をもとのバッファに反映します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> (defun rrbs-rename-local-variable (class method old-var new-var)
+   (interactive "sClass: \nsMethod: \nsOldVariable: \nsNewVariable: ")
+   (let ((buf (current-buffer))
+         (path (buffer-file-name (current-buffer)))
+         (content (buffer-string))
+         (result)                        ; Result string
+         (input-buf (get-buffer-create " *rrbs-input*"))
+         (output-buf (get-buffer-create " *rrbs-output*")))
+     (save-excursion
+       (set-buffer input-buf)
+       ;; clear input buffer
+       (erase-buffer)
+
+       ;; setup input data
+       (insert path)
+       (insert "\C-a")
+       (insert content)
+       (insert "\C-a")
+       (insert "-- END --")
+       (insert "\C-a")
+
+       ;; clear output buffer
+       (set-buffer output-buf)
+       (erase-buffer)
+       (set-buffer input-buf)
+
+       ;; call "rrb" command
+       (call-process-region (point-min) (point-max) "rrb" nil output-buf nil
+                            "--rename-local-variable"
+                            (concat class "#" method)
+                            old-var new-var)
+
+       ;; set refactored code to 'result'
+       (set-buffer output-buf)
+       (setq result (cadr (split-string (buffer-string) "\C-a"))))
+     ;; clear old ruby source
+     (erase-buffer)
+     ;; insert new ruby source
+     (insert result)))</code></pre></figure>
+
+<p>(setq result (cadr (split-string (buffer-string) “\C-a”)))
+で必要な部分を取りだし、
+(erase-buffer) でもとの内容を全消去、 (insert result) で新たな内容を反映
+して終わりです。</p>
+
+<h3 id="rrb-コマンドに関する注意">rrb コマンドに関する注意</h3>
+
+<p>「–pushdown-method」「–pullup-method」「–extract-superclass」
+の 3 つのオプションは、
+どのファイルのどの行に新しいメソッド/クラスを生成するのかを
+引数 path と lineno で指定します。</p>
+
+<p>「–extract-superclass」オプションのように複数のクラスを指定するときは、
+一つのコマンドライン引数でまとめて渡す必要があります。
+したがってコマンドラインから使うときは “Class1 Class2 Class3”
+のようにクオートでくくらなければいけません。</p>
+
+<p>上の例では一切エラー処理をしていませんが、rrb コマンドの返り値が 0 でない場合は
+エラーで、エラーの原因は stderr から得られます。ちゃんとした実装をしようとし
+た場合はきちんとエラー処理する必要があるでしょう。</p>
+
+<h3 id="rrb_なんとかコマンド">「rrb_なんとか」コマンド</h3>
+
+<p>Ruby Refactoring Browser の配布物のなかには、rrb コマンドの他にも、
+rrb_marshal, rrb_compinfo, rrb_default_value というコマンドがあります。
+それぞれ引数無しで呼べば引数の種類等がわかります。</p>
+
+<dl>
+  <dt>rrb_compinfo INFOTYPE IOTYPE</dt>
+  <dd></dd>
+  <dd>Ruby スクリプトをパースし、含まれる識別子のリストを得るコマンドです。クラス名のリスト、ローカル変数名のリストなどが得られます。この情報を補完をするためなどに利用します。</dd>
+  <dt>rrb_default_value PATH LINENO INFOTYPE IOTYPE</dt>
+  <dd></dd>
+  <dd>Ruby スクリプトをパースし、指定したファイルの指定した行のところのメソッド名/クラス名は何か、を得るためのコマンドです。得た文字列をユーザに入力させる値のデフォルト値として利用します。</dd>
+  <dt>rrb_marshal</dt>
+  <dd></dd>
+  <dd>上で挙げたコマンドを利用すると、スクリプトのパースと構文木の構築を何度も実行することになります。これは実行コストが高いので、あらかじめスクリプトをパースし、生成した構文木を Marshal を利用してファイルに出力することで高速化できる場合があります。rrb_marshal はそのためのコマンドです。rrb コマンドの –marshalin-stdout などはこれを利用するためにあります。</dd>
+</dl>
+
+<p>以上のコマンドで、出力される内容やその形式など詳しいことは
+それぞれのソースを読んでください。</p>
+
+<h2 id="vim-での例">Vim での例</h2>
+
+<p>Emacs の次は Vim で実装してみましょう。Vim には独自のスクリプト言語があり、
+そこから ruby のインタプリタとやりとりすることができます。
+これを利用しましょう。</p>
+
+<p>仕様は以下の通りにしましょう。</p>
+
+<ol>
+  <li>リファクタリングの対象となるファイルはカレントバッファのファイルのみ</li>
+  <li>Rename local variable のみ実装する</li>
+  <li>リネームする変数はカーソルの下にあるものとする</li>
+  <li>新しい変数名はユーザに入力させる</li>
+</ol>
+
+<p>以下での例を実行するためには、
+Vim のコンパイル時に ruby インターフェースを有効にしておく必要があります。
+この例は Debian testing 上で ruby インターフェースを有効にした Vim 6.3 で
+動作を確認しています。</p>
+
+<p>Vim スクリプトや Ruby インターフェースについては詳しく解説
+しませんので、Vim のヘルプを参考にしてください。</p>
+
+<h3 id="コアライブラリの仕様">コアライブラリの仕様</h3>
+
+<p>まず、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require 'rrb/rrb'</code></pre></figure>
+
+<p>でライブラリをロードします。</p>
+
+<p>コアライブラリの中で中心的なクラスは RRB::Script と RRB::ScriptFile です。
+RRB::ScriptFile が個々のファイルで、それを集約したものが RRB::Script です。</p>
+
+<dl>
+  <dt>RRB::ScriptFile.new(str, path)</dt>
+  <dd></dd>
+  <dd>新しい ScriptFile のインスンタンスを生成し返す。str はそのファイルの中身の文字列、path はファイルパス文字列。</dd>
+  <dt>RRB::Script.new(files)</dt>
+  <dd></dd>
+  <dd>新しい Script のインスンタンスを生成し返す。files は ScriptFile のインスタンスの配列。</dd>
+  <dt>RRB::Script#files</dt>
+  <dd></dd>
+  <dd>含まれる RRB::ScriptFile のインスタンス全ての配列。</dd>
+  <dt>RRB::Script#rename_local_var?(method, old_var, new_var)</dt>
+  <dd></dd>
+  <dd>そのファイル群が Rename Local variable 可能かどうか判定する。method は RRB::Method のインスタンスでどのメソッドのローカル変数を変更するかを指定する。old_var は古い変数名、new_var は新しい変数名。</dd>
+  <dt>RRB::Script#rename_local_var(method, old_var, new_var)</dt>
+  <dd></dd>
+  <dd>実際に変換する。引数の意味は RRB::Script#rename_local_var? と同じ。</dd>
+  <dt>RRB::ScriptFile#new_script</dt>
+  <dd></dd>
+  <dd>変換した結果の文字列。nil ならば変更点がないことを示している。</dd>
+  <dt>class RRB::Method</dt>
+  <dd></dd>
+  <dd>クラス名とメソッド名の組を表すクラス。</dd>
+  <dt>RRB::Method[str]</dt>
+  <dd></dd>
+  <dd>新しいインスタンスを作成する。str は “Foo::Bar#baz” という形式の文字列で与える。</dd>
+</dl>
+
+<p>この他にも様々なクラス、メソッドがあります。</p>
+
+<p>Ruby Refactoring Browser の配布物の doc/dev/rrb_embed.ja.rd に解説が書かれています。
+また、これだけでは不十分な場合はすいませんが直接ソースを見てください。</p>
+
+<h3 id="vim-での実装">Vim での実装</h3>
+
+<p>全体の枠組みを作っていきます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> command -nargs=1 RRBRenameLocalVariable :call s:RRBRenameLocalVariable(expand("&lt;args&gt;"))
+
+ ruby &lt;&lt; EOS
+ # here is ruby script
+ def rename_local_var(new_var)
+ end
+ EOS
+
+ function s:RRBRenameLocalVariable(newvar)
+   execute "ruby rename_local_var(\"" . a:newvar . "\");"
+ endfunction</code></pre></figure>
+
+<p>これで vim に RRBRenameLocalVariable というコマンドが登録され、</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> :RRBRenameLocalVariable foo</code></pre></figure>
+
+<p>とすることで foo という文字列が ruby の rename_local_var というメソッドに
+渡されるようになりました。</p>
+
+<p>カーソルのある位置にある識別子を取る処理を書きます
+VIM::Window#cursor でカーソルの位置を得、VIM::Buffer#[] で一行分の文字列
+を得ます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> command -nargs=1 RRBRenameLocalVariable :call s:RRBRenameLocalVariable(expand("&lt;args&gt;"))
+
+ ruby &lt;&lt; EOS
+ # here is ruby script
+ require 'rrb/rrb'
+ def vim_buffer_content(buf)
+   (1..(buf.count)).inject(""){|r, i| r &lt;&lt; buf[i] &lt;&lt; "\n"; r}
+ end
+
+ def search_id(str, col)
+   st = (str.rindex(/[^a-zA-Z_]/, col) || -1) + 1
+   ed = (str.index(/[^a-zA-Z_]/, col) || str.size + 1) - 1
+   str[st..ed]
+ end
+
+ def rename_local_var(new_var)
+   path = VIM::Buffer.current.name
+   lineno, col = VIM::Window.current.cursor
+   old_var = search_id(VIM::Buffer.current[lineno], col)
+ end
+ EOS
+
+ function s:RRBRenameLocalVariable(newvar)
+   execute "ruby rename_local_var(\"" . a:newvar . "\");"
+ endfunction</code></pre></figure>
+
+<p>次にカーソルのある行のクラスの名前およびメソッドの名前を作ります。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> command -nargs=1 RRBRenameLocalVariable :call s:RRBRenameLocalVariable(expand("&lt;args&gt;"))
+
+ ruby &lt;&lt; EOS
+ # here is ruby script
+ require 'rrb/rrb'
+ def vim_buffer_content(buf)
+   (1..(buf.count)).inject(""){|r, i| r &lt;&lt; buf[i] &lt;&lt; "\n"; r}
+ end
+
+ def search_id(str, col)
+   st = (str.rindex(/[^a-zA-Z_]/, col) || -1) + 1
+   ed = (str.index(/[^a-zA-Z_]/, col) || str.size + 1) - 1
+   str[st..ed]
+ end
+
+ def rename_local_var(new_var)
+   path = VIM::Buffer.current.name
+   lineno, col = VIM::Window.current.cursor
+   old_var = search_id(VIM::Buffer.current[lineno], col)
+
+   content = vim_buffer_content(VIM::Buffer.current)
+   script = RRB::Script.new([RRB::ScriptFile.new(content, path)])
+
+   method = script.get_method_on_cursor(path, lineno).name
+
+ end
+ EOS
+
+ function s:RRBRenameLocalVariable(newvar)
+   execute "ruby rename_local_var(\"" . a:newvar . "\");"
+ endfunction</code></pre></figure>
+
+<p>上で説明したように RRB::Script のインスタンスを作ります。そして
+RRB::Script#get_method_on_cursor(path, lineno) でその行がどのメソッド
+に含まれているかを得ます。
+これで変数 methodname に “Hoge#f” という形の文字列が代入されます。</p>
+
+<p>今度はリファクタリングが可能かどうかの判定をします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> command -nargs=1 RRBRenameLocalVariable :call s:RRBRenameLocalVariable(expand("&lt;args&gt;"))
+
+ ruby &lt;&lt; EOS
+ # here is ruby script
+ require 'rrb/rrb'
+ def vim_buffer_content(buf)
+   (1..(buf.count)).inject(""){|r, i| r &lt;&lt; buf[i] &lt;&lt; "\n"; r}
+ end
+
+ def search_id(str, col)
+   st = (str.rindex(/[^a-zA-Z_]/, col) || -1) + 1
+   ed = (str.index(/[^a-zA-Z_]/, col) || str.size + 1) - 1
+   str[st..ed]
+ end
+
+ def rename_local_var(new_var)
+   path = VIM::Buffer.current.name
+   lineno, col = VIM::Window.current.cursor
+   old_var = search_id(VIM::Buffer.current[lineno], col)
+
+   content = vim_buffer_content(VIM::Buffer.current)
+   script = RRB::Script.new([RRB::ScriptFile.new(content, path)])
+
+   method = script.get_method_on_cursor(path, lineno).name
+
+   unless script.rename_local_var?(RRB::Method[method], old_var, new_var)
+     VIM.message(script.error_message)
+     return
+   end
+ end
+ EOS
+
+ function s:RRBRenameLocalVariable(newvar)
+   execute "ruby rename_local_var(\"" . a:newvar . "\");"
+ endfunction</code></pre></figure>
+
+<p>RRB#script#rename_local_var? で判定します。真なら可能、偽なら不可能です。
+ローカル変数のリネームの場合、同じ名前の新しい名前の変数がすでに存在
+する場合などに偽が帰ってきます。</p>
+
+<p>そして失敗した場合は VIM.message で Vim にメッセージを表示させ終了するように
+しました。</p>
+
+<p>最後に実際に変換して、その結果を反映させます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> command -nargs=1 RRBRenameLocalVariable :call s:RRBRenameLocalVariable(expand("&lt;args&gt;"))
+
+ ruby &lt;&lt; EOS
+ # here is ruby script
+ require 'rrb/rrb'
+ def vim_buffer_content(buf)
+   (1..(buf.count)).inject(""){|r, i| r &lt;&lt; buf[i] &lt;&lt; "\n"; r}
+ end
+
+ def search_id(str, col)
+   st = (str.rindex(/[^a-zA-Z_]/, col) || -1) + 1
+   ed = (str.index(/[^a-zA-Z_]/, col) || str.size + 1) - 1
+   str[st..ed]
+ end
+
+ def clear_vim_buffer(buf)
+   buf.delete(1) until buf.count == 1
+   buf[1] = ""
+ end
+
+ def append_vim_buffer(buf, content)
+   content.split(/\n/).reverse_each do |line|
+     buf.append(0, line)
+   end
+ end
+
+ def rename_local_var(new_var)
+   path = VIM::Buffer.current.name
+   lineno, col = VIM::Window.current.cursor
+   old_var = search_id(VIM::Buffer.current[lineno], col)
+
+   content = vim_buffer_content(VIM::Buffer.current)
+   script = RRB::Script.new([RRB::ScriptFile.new(content, path)])
+
+   method = script.get_method_on_cursor(path, lineno).name
+
+   unless script.rename_local_var?(RRB::Method[method], old_var, new_var)
+     VIM.message(script.error_message)
+     return
+   end
+
+   script.rename_local_var(RRB::Method[method], old_var, new_var)
+   new_script = script.files[0].new_script
+   if new_script != nil
+     clear_vim_buffer(VIM::Buffer.current)
+     append_vim_buffer(VIM::Buffer.current, new_script)
+   end
+ end
+ EOS
+
+ function s:RRBRenameLocalVariable(newvar)
+   execute "ruby rename_local_var(\"" . a:newvar . "\");"
+ endfunction</code></pre></figure>
+
+<p>RRB::Script#rename_local_var で変換をします。変換した結果は
+RRB::ScriptFile#new_script から取りだせます。</p>
+
+<h2 id="さらなる開発のために">さらなる開発のために</h2>
+
+<p>ここまで説明してきたことはごく基本的な内容です。さらにきちんとしようと
+考えると以下のような問題が考えられます。</p>
+
+<h3 id="ui-の問題">UI の問題</h3>
+
+<p>上で挙げた Emacs の例のような UI を作るのであれば補完入力は必須でしょう。
+また、Rename Method では任意個のクラスを指定できるので、これに対応するた
+めの UI を作るのは面倒になるかもしれません。各開発環境に合わせて適切な
+UI を考えてください。</p>
+
+<h3 id="エラー処理">エラー処理</h3>
+
+<p>上に挙げた例はエラー処理等を殆どしていません。実用的なものに仕上げるには
+きちんとエラー処理をする必要があるでしょう。</p>
+
+<h3 id="複数のファイルを対象にする">複数のファイルを対象にする</h3>
+
+<p>ある程度大規模なプログラムであればプログラムが複数のファイルに
+分かれている場合が考えられるでしょう。その場合どのファイルをリファクタリング
+の対象とし、どれを対象としないかを判別するのは結構難しい問題です。</p>
+
+<p>RDT のようにプロジェクトという単位でファイルを管理している場合は
+簡単ですが、そうでない場合はどうすれば良いのでしょうか。
+Emacs インターフェースでは、その
+Emacs プロセスで開いているファイルをすべてひとかたまりのものとして
+扱っています。複数のファイルが開けるエディタならこの方法が良いかも
+しれません。Vim ではそのファイルと同じディレクトリにある Ruby スクリプト
+全体を対象にしてしまっても良いかもしれません。</p>
+
+<p>これに対する一般的な回答はありません。そのエディタや IDE の性質に
+合わせて適宜決めてください。</p>
+
+<h2 id="最後に">最後に</h2>
+
+<p>参考資料としてはやはり Ruby Refactoring Browser のソースが一番でしょう。
+lib/rrb/cui_interface.rb、lib/rrb/emacs_interface.rb は Ruby 側の例として
+参考になるでしょう。 FreeRIDE に付属しているリファクタリングプラグイン
+や、elisp/rrb.el も見てください。</p>
+
+<p>わからないことがあれば遠慮なく筆者 (ohai@kmc.gr.jp) に質問してください。</p>
+
+<p>筆者の個人的願望としては RDT や RDE、xyzzy などが対応してくれないかなあ、
+と思っています。</p>
+
+<p>様々な環境で Ruby Refactoring Browser が使えるようになることを
+願っています。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>私 (大林) は京都で大学院生をしています。専門は数学です。
+また KMC (京大マイコンクラブ) 部員でもあります。
+Ruby Refactoring Browser の主要開発者です。
+Ruby Refactoring Browser は最初 KMC 内部のプロジェクトとして開発を開始しました。</p>
+
+<h2 id="解説-ruby-refactoring-browser-連載一覧">解説 Ruby Refactoring Browser 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0011/0011-RubyRefactoringBrowser.html">解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-RubyRefactoringBrowser.html">解説 Ruby Refactoring Browser - Emacs でリファクタリング</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

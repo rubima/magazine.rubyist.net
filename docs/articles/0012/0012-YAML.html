@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>プログラマーのための YAML 入門 (検証編)</title>
+  <meta name="description" content="書いた人: kwatch">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0012/0012-YAML.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>プログラマーのための YAML 入門 (検証編)</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0012/0012-YAML.html" class="hatena-bookmark-button" data-hatena-bookmark-title="プログラマーのための YAML 入門 (検証編)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0012/0012-YAML.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0012/0012-YAML.html" data-text="プログラマーのための YAML 入門 (検証編)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>書いた人: kwatch</p>
+
+<h2 id="はじめに">はじめに</h2>
+
+<p><a href="http://www.yaml.org">YAML</a> (YAML Ain’t Markup Language) とは、データシリアライゼーション用のフォーマットです。読み書きのしやすさを考慮して設計されたため、構造化されたデータを表現するためによく用いられます。「構造化されたデータを表現する」という点では XML と似ていますが、XML と比べて読みやすい、書きやすい、わかりやすいという特徴があります。</p>
+
+<p>今回は、YAML および <a href="http://www.crockford.com/JSON/">JSON</a> 用のスキーマバリデータである <a href="http://www.kuwata-lab.com/kwalify/">Kwalify</a> について説明します。Kwalify を使うと、YAML ドキュメントの内容が正しいかどうかを簡単に検証することができます。XML 用のスキーマと比べると Kwalify の機能は少ないですが、最低限の機能は揃っており、またスクリプトで簡単に拡張できるようになっています。</p>
+
+<p>なお本連載では Ruby ユーザにとってのわかりやすさを優先し、用語として「配列」と「ハッシュ」を使ってきました。しかし今回はスキーマを説明するため、YAML の用語である「シーケンス」と「マッピング」を使って説明します。YAML の「シーケンス」は Ruby の「配列」に、また「マッピング」は「ハッシュ」にそれぞれ対応します。ご注意ください。</p>
+
+<h3 id="目次">目次</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#はじめに" id="markdown-toc-はじめに">はじめに</a>    <ul>
+      <li><a href="#目次" id="markdown-toc-目次">目次</a></li>
+    </ul>
+  </li>
+  <li><a href="#kwalify-について" id="markdown-toc-kwalify-について">Kwalify について</a>    <ul>
+      <li><a href="#概要" id="markdown-toc-概要">概要</a></li>
+      <li><a href="#インストール" id="markdown-toc-インストール">インストール</a></li>
+      <li><a href="#使い方" id="markdown-toc-使い方">使い方</a></li>
+    </ul>
+  </li>
+  <li><a href="#kwalify-スキーマ詳細" id="markdown-toc-kwalify-スキーマ詳細">Kwalify スキーマ詳細</a>    <ul>
+      <li><a href="#シーケンス" id="markdown-toc-シーケンス">シーケンス</a></li>
+      <li><a href="#マッピング" id="markdown-toc-マッピング">マッピング</a></li>
+      <li><a href="#マッピングを要素とするシーケンス" id="markdown-toc-マッピングを要素とするシーケンス">マッピングを要素とするシーケンス</a></li>
+      <li><a href="#シーケンスを要素とするマッピング" id="markdown-toc-シーケンスを要素とするマッピング">シーケンスを要素とするマッピング</a></li>
+      <li><a href="#一意制約" id="markdown-toc-一意制約">一意制約</a></li>
+      <li><a href="#制約とルール" id="markdown-toc-制約とルール">制約とルール</a></li>
+    </ul>
+  </li>
+  <li><a href="#yaml-の機能を使ったスキーマ定義のテクニック" id="markdown-toc-yaml-の機能を使ったスキーマ定義のテクニック">YAML の機能を使ったスキーマ定義のテクニック</a>    <ul>
+      <li><a href="#ルールの共有" id="markdown-toc-ルールの共有">ルールの共有</a></li>
+      <li><a href="#再帰的なルールの定義" id="markdown-toc-再帰的なルールの定義">再帰的なルールの定義</a></li>
+      <li><a href="#デフォルトルール" id="markdown-toc-デフォルトルール">デフォルトルール</a></li>
+      <li><a href="#ルールのマージと差分定義" id="markdown-toc-ルールのマージと差分定義">ルールのマージと差分定義</a></li>
+    </ul>
+  </li>
+  <li><a href="#kwalify-ライブラリ" id="markdown-toc-kwalify-ライブラリ">Kwalify ライブラリ</a>    <ul>
+      <li><a href="#ruby-スクリプトから-kwalify-を使う" id="markdown-toc-ruby-スクリプトから-kwalify-を使う">Ruby スクリプトから Kwalify を使う</a></li>
+      <li><a href="#ruby-スクリプトでスキーマファイルを検証する" id="markdown-toc-ruby-スクリプトでスキーマファイルを検証する">Ruby スクリプトでスキーマファイルを検証する</a></li>
+      <li><a href="#フックメソッドを用いて独自の検証を行う" id="markdown-toc-フックメソッドを用いて独自の検証を行う">フックメソッドを用いて独自の検証を行う</a></li>
+    </ul>
+  </li>
+  <li><a href="#スキーマのサンプル" id="markdown-toc-スキーマのサンプル">スキーマのサンプル</a></li>
+  <li><a href="#おわりに" id="markdown-toc-おわりに">おわりに</a></li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a></li>
+  <li><a href="#プログラマーのための-yaml-入門-連載一覧" id="markdown-toc-プログラマーのための-yaml-入門-連載一覧">プログラマーのための YAML 入門 連載一覧</a></li>
+</ul>
+
+<h2 id="kwalify-について">Kwalify について</h2>
+
+<h3 id="概要">概要</h3>
+
+<p><a href="http://www.kuwata-lab.com/kwalify/">Kwalify</a> は、YAML 用のスキーマおよびスキーマバリデータです。スキーマとはドキュメントのデータ構造を記述したものであり、スキーマバリデータとはドキュメントがスキーマに沿って正しく書かれているかどうかを検証するツールです。</p>
+
+<p>ドキュメントが正しく記述されているかどうかを調べることは、とても重要です。例をあげると、</p>
+
+<ul>
+  <li>設定ファイルが正しければプログラムを起動し、誤りがあればエラーを出力してプログラムを終了する。</li>
+  <li>入力データファイルに誤りがあればどの箇所が間違っていたかを報告する。</li>
+  <li>受注データが正しければ受け取り、誤りがあれば拒否する。</li>
+</ul>
+
+<p>など、利用範囲は多岐に渡ります。</p>
+
+<p>スキーマバリデータがあると、YAML ドキュメントが正しく書かれているかどうかを検証できます。例えば次のような YAML ドキュメントがあった場合、内容が正しくないことを検出し、それを報告してくれます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - name:                       # ← 名前が入力されていない
+   email:  foo(at)mail.com     # ← メールアドレスに「@」が含まれていない
+   age:    twenty              # ← 年齢が整数でない
+   birth:  1985/01/01          # ← 日付のフォーマットが違う
+   gender: boy                 # ← 値は M または F のみ</code></pre></figure>
+
+<p>こういった内容の検証は自分でプログラムを書いてもできますが、スキーマバリデータを使うともっと簡単に検証できます。またスキーマだけでは検証しにくいような複雑なことも、Kwalify では Ruby スクリプトを使って検証できるようになっています (もっというと「宣言的に書きやすいことは宣言的に、宣言的に書きにくいことは手続き的に」書けるようになっています)。</p>
+
+<p>XML では主なスキーマとして <a href="http://www.w3.org/TR/REC-xml/">DTD</a>、<a href="http://www.w3.org/XML/Schema">XML Schema</a>、<a href="http://www.relaxng.org/">RelaxNG</a> の3つがあり、どれもよく使われています。それに比べると YAML 用のスキーマは貧弱で、過去にいろいろ<a href="http://sourceforge.net/search/?type_of_search=mlists&amp;forum_id=1771&amp;group_id=27393&amp;atid=0&amp;words=schema&amp;Search=Search">議論</a>や<a href="http://yaml.kwiki.org/index.cgi?SchemaProposals">提案</a>があったようですが、今のところちゃんとした実装があるのは (筆者が知る限り) Kwalify だけです。</p>
+
+<p>Kwalify では以下のような検証ができます。</p>
+
+<ul>
+  <li>データの型
+    <ul>
+      <li>スカラー (文字列、数値 (整数または浮動小数点)、真偽値、日付、時刻)</li>
+      <li>シーケンス</li>
+      <li>マッピング</li>
+    </ul>
+  </li>
+  <li>必須項目 (SQL の not null 制約に相当)</li>
+  <li>一意性 (SQL の unique 制約に相当)</li>
+  <li>列挙型</li>
+  <li>正規表現によるパターン</li>
+  <li>値の範囲 (最大値と最小値)</li>
+  <li>文字列の長さの範囲 (最大値と最小値)</li>
+</ul>
+
+<p>Kwalify ではスキーマを YAML で表現します (XML Schema や RelaxNG がスキーマを XML で表現するのと同じです)。そのため、アンカーとエイリアスを使ってスキーマ定義を共有したり再帰的に定義することが簡単にできます。また Kwalify では、スキーマ定義の検証も Kwalify 自身で行っています。</p>
+
+<p>また Kwalify は Ruby と Java の実装があります。本稿では Ruby 版を解説しますが、Java 版でも動作は同じです。Java 版については <a href="http://www.kuwata-lab.com/kwalify/users-guide.html">Kwalify ユーザーズガイド</a>を参照してください。</p>
+
+<p>なお Kwalify は「50%-5% の法則」という精神に基づいています。これは「5% の労力で目的の 50% がカバーできる」という発想であり、「80%-20% の法則」(パレートの法則) をより極端にしたものです。そのため Kwalify は RelaxNG や XML Schema などと比べるとできることは少ないですが、シンプルでかつ全体を理解するのも簡単です。また日常使う分には十分なだけの機能を持っています。</p>
+
+<h3 id="インストール">インストール</h3>
+
+<p>Kwalify のインストールについて説明します。対象となるバージョンは Kwalify 0.5.1 です。</p>
+
+<p>なおインストール例は一般的な UNIX 環境で bash を使った場合とします。</p>
+
+<ul>
+  <li>RubyGems をインストールしている場合は、root 権限で「gem install –remote kwalify」とタイプしてください。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   $ sudo gem install --remote kwalify</code></pre></figure>
+
+<ul>
+  <li>RubyGems はインストールしてないが root 権限がある場合は、<a href="http://www.kuwata-lab.com/kwalify/download.cgi">kwalify_0.5.1.tar.bz2 をダウンロード</a>し、同梱されている setup.rb を使って次の手順でインストールしてください。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   ### Kwalify のアーカイブを解凍
+   $ tar xjf kwalify_0.5.1.tar.bz2
+   $ cd kwalify_0.5.1/
+   ### 同梱の setup.rb を使ってインストール
+   $ ruby setup.rb config
+   $ ruby setup.rb setup
+   $ sudo ruby setup.rb install</code></pre></figure>
+
+<ul>
+  <li>RubyGems をインストールしてなくて root 権限もない場合は、<a href="http://www.kuwata-lab.com/kwalify/download.cgi">kwalify_0.5.1.tar.bz2 をダウンロード</a>し、Kwalify のスクリプトとライブラリを適切なディレクトリに手動でコピーしてください。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   ### Kwalify のアーカイブを解凍
+   $ tar xjf kwalify_0.5.1.tar.bz2
+   $ cd kwalify_0.5.1/
+   ### スクリプトを $HOME/bin にコピー
+   $ mkdir -p $HOME/bin
+   $ cp -a bin/* $HOME/bin
+   $ export PATH=$PATH:$HOME/bin
+   ### ライブラリを $HOME/lib/ruby にコピー
+   $ mkdir -p $HOME/lib/ruby
+   $ cp -a lib/* $HOME/lib/ruby
+   $ export RUBYLIB=$HOME/lib/ruby</code></pre></figure>
+
+<ul>
+  <li>または同梱されている contrib/inline-require を使うと、Kwalify のライブラリとスクリプトをひとつにまとめてくれますので、これを $HOME/bin などにコピーしてもいいでしょう。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">   ### Kwalify のアーカイブを解凍
+   $ tar xjf kwalify_0.5.1.tar.bz2
+   $ cd kwalify_0.5.1/
+   ### contrib/inline-require を実行
+   $ unset RUBYLIB
+   $ ruby contrib/inline-require -I ./lib bin/kwalify &gt; $HOME/bin/kwalify
+   ### できたスクリプトを実行可能にする
+   $ chmod a+x $HOME/bin/kwalify</code></pre></figure>
+
+<h3 id="使い方">使い方</h3>
+
+<p>Kwalify の使い方を簡単に説明しておきます。</p>
+
+<p>Kwalify の使い方は主に2つあります。スキーマファイルを指定して YAML ドキュメントを検証する場合と、スキーマファイル自身を検証する場合です。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> ## YAML ドキュメントを検証するとき
+ $ kwalify [...options...] -f スキーマファイル  ドキュメント1 ドキュメント2 ...
+
+ ## スキーマファイル自身を検証するとき
+ $ kwalify [...options...] -m スキーマファイル</code></pre></figure>
+
+<p>また以下のようなコマンドオプションが指定できます。</p>
+
+<dl>
+  <dt>-h, –help</dt>
+  <dd>ヘルプを表示</dd>
+  <dt>-v</dt>
+  <dd>バージョンを表示</dd>
+  <dt>-s</dt>
+  <dd>サイレントモード (表示を最小限に押さえる)</dd>
+  <dt>-f schema.yaml</dt>
+  <dd>スキーマファイル</dd>
+  <dt>-m</dt>
+  <dd>メタバリデーション (スキーマファイル自身を検証する)</dd>
+  <dt>-t</dt>
+  <dd>タブ文字を 8 桁区切りの半角スペースに展開する</dd>
+  <dt>-l</dt>
+  <dd>エラー箇所の行番号を表示する (注：まだ実験的)</dd>
+  <dt>-E</dt>
+  <dd>Emacsが解釈できるフォーマットでエラーを出力する (C-x ` でジャンプできる)</dd>
+</dl>
+
+<h2 id="kwalify-スキーマ詳細">Kwalify スキーマ詳細</h2>
+
+<p>Kwalify では、スキーマ定義も YAML 形式で記述します。</p>
+
+<p>このセクションでは、Kwalify のスキーマについて説明します。</p>
+
+<h3 id="シーケンス">シーケンス</h3>
+
+<p>文字列のシーケンスをあらわすスキーマは次のようになります。</p>
+
+<p>schema01.yaml : 文字列のシーケンス</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*type:   seq*\}\}           # データ型はシーケンス
+\{\{*sequence:*\}\}             # シーケンスの要素は
+  - type:   str       #   データ型が文字列
+
+</code></pre>
+</div>
+
+<p>ポイントは次のとおりです。</p>
+
+<ul>
+  <li>「type: seq」は、全体がシーケンスであることを表します。</li>
+  <li>シーケンスの要素は「sequence:」の下に記述します。この場合は「type: str」なので、文字列になります。</li>
+  <li>「type: seq」のとき、「sequence:」は省略できません。</li>
+  <li>「sequence:」には要素をひとつしか記述できません。そのため、「文字列または日付のシーケンス」のような指定はできません。</li>
+</ul>
+
+<p>次の例は、上のスキーマに適合する YAML ドキュメントです。ドキュメントがスキーマに適合することを、一般に「妥当である (valid)」といいます。</p>
+
+<p>valid01.yaml : 妥当な YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - foo
+ - bar
+ - baz</code></pre></figure>
+
+<p>Kwalify を使って、実際に検証してみましょう。「valid.」と表示されれば成功です。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -f schema01.yaml valid01.yaml
+ valid01.yaml#0: valid.</code></pre></figure>
+
+<p>次に、上のスキーマに適合しない YAML ドキュメントの例を示します。ドキュメントがスキーマに適合しないことを、一般に「妥当でない (invalid)」といいます。</p>
+
+<p>invalid01.yaml : 妥当でない YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - foo
+ - 123         # ← 文字列ではなく数値が指定されている
+ - baz</code></pre></figure>
+
+<p>これを、Kwalify を使って検証してみます。「INVALID」と表示されて、妥当でないことがわかります。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -f schema01.yaml invalid01.yaml
+ invalid01.yaml#0: INVALID
+   - [/1] '123': not a string.</code></pre></figure>
+
+<p>妥当でなかった箇所は「/1」のように YPath 形式で示されます。この場合だと、シーケンスにおける 2 番目の要素 (YPath では先頭が 0 から始まるため) が文字列ではないと表示されています。</p>
+
+<p>なお Kwalify では、妥当でなかった箇所の行番号をデフォルトでは表示しません。これは、Syck の YAML パーサが YAML ドキュメントをパースしたあとに行番号の情報を捨ててしまうためです。コマンドオプション「-l」をつけると、パース後も行番号を保持する独自の YAML パーサを使って、エラー箇所の行番号を表示します。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema01.yaml invalid01.yaml
+ invalid01.yaml#0: INVALID
+   - (line 2) [/1] '123': not a string.</code></pre></figure>
+
+<p>この YAML パーサは所詮「なんちゃってパーサ」であり、あまり信用できるものではありません。しかし本稿で説明するくらいのドキュメントなら問題なくパースできるようですので、以降では「-l」オプションをつけて行番号を表示させてみます。</p>
+
+<h3 id="マッピング">マッピング</h3>
+
+<p>マッピングを表すスキーマは次のようになります。</p>
+
+<p>schema02.yaml : マッピングを表すスキーマ</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*type:       map*\}\}                 # マッピング型
+\{\{*mapping:*\}\}
+ "name":
+    type:      str              # 文字列型
+    required:  yes              # 必須である
+ "email":
+    type:      str              # 文字列型
+    pattern:   /@/              # パターンとして「@」を含む
+ "age":
+    type:      int              # 整数型
+ "birth":
+    type:      date             # 日付型
+
+</code></pre>
+</div>
+
+<p>ポイントは次のとおりです。</p>
+
+<ul>
+  <li>「type: map」は、全体がマッピングであることを表します。</li>
+  <li>マッピングの要素は「mapping:」の下に記述します。この場合では、次のようになります。
+    <ul>
+      <li>キー「name」は文字列型で、必須要素 (省略できない)</li>
+      <li>キー「email」は文字列型で、パターンとして「@」を含む</li>
+      <li>キー「age」は整数型</li>
+      <li>キー「birth」は日付型</li>
+    </ul>
+  </li>
+  <li>「type: map」のとき、「mapping:」は省略できません。</li>
+  <li>キーの名前は「”…“」で囲む必要はありませんが、見やすさのために囲んでおいたほうがいいでしょう。</li>
+</ul>
+
+<p>妥当な YAML ドキュメントの例は次のようになります。</p>
+
+<p>valid02.yaml : 妥当な YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> name:   foo
+ email:  foo@mail.com
+ age:    20
+ birth:  1985-01-01</code></pre></figure>
+
+<p>検証結果は次のとおりです。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema02.yaml valid02.yaml
+ valid02.yaml#0: valid.</code></pre></figure>
+
+<p>妥当でない YAML ドキュメントの例は次のようになります。</p>
+
+<p>invalid02.yaml : 妥当でない YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> name:                          # 値が設定されていない
+ email:  foo(at)mail.com        # 「@」を含んでいない
+ age:    twenty                 # 整数でない
+ birth:  Jun 01, 1985           # 日付の形式が正しくない</code></pre></figure>
+
+<p>検証すると次のようなエラーがでます。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema02.yaml invalid02.yaml
+ invalid02.yaml#0: INVALID
+   - (line 1) [/name] value required but none.
+   - (line 2) [/email] 'foo(at)mail.com': not matched to pattern /@/.
+   - (line 3) [/age] 'twenty': not a integer.
+   - (line 4) [/birth] 'Jun 01, 1985': not a date.</code></pre></figure>
+
+<h3 id="マッピングを要素とするシーケンス">マッピングを要素とするシーケンス</h3>
+
+<p>マッピングを要素とするようなシーケンスを考えます。これを表すスキーマの例は次のようになります。</p>
+
+<p>schema03.yaml :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*type:      seq*\}\}                 # シーケンス型
+\{\{*sequence:*\}\}                      # シーケンスの要素
+  - \{\{*type:      map*\}\}             #   マッピング型
+    \{\{*mapping:*\}\}                   #   マッピングの要素
+     "name":
+        type:      str
+        required:  true
+     "email":
+        type:      str
+
+</code></pre>
+</div>
+
+<p>妥当な YAML ドキュメントの例は次のようになります。</p>
+
+<p>valid03.yaml : 妥当な YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - name:   foo
+   email:  foo@mail.com
+ - name:   bar
+   email:  bar@mail.net
+ - name:   baz
+   email:  baz@mail.org</code></pre></figure>
+
+<p>検証結果は次のとおりです。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema03.yaml valid03.yaml
+ valid03.yaml#0: valid.</code></pre></figure>
+
+<p>妥当でない YAML ドキュメントの例は次のようになります。</p>
+
+<p>invalid03.yaml : 妥当でない YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - name:   foo
+   email:  foo@mail.com
+ - naem:   bar               # 「name:」が「naem:」になっている
+   email:  bar@mail.net
+ - name:   baz
+   mail:   baz@mail.org      # 「email:」が「mail:」になっている</code></pre></figure>
+
+<p>検証すると次のようなエラーがでます。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema03.yaml invalid03.yaml
+ invalid03.yaml#0: INVALID
+   - (line 3) [/1] key 'name:' is required.
+   - (line 3) [/1/naem] key 'naem:' is undefined.
+   - (line 6) [/2/mail] key 'mail:' is undefined.</code></pre></figure>
+
+<h3 id="シーケンスを要素とするマッピング">シーケンスを要素とするマッピング</h3>
+
+<p>今度は逆に、シーケンスを要素とするマッピングの例です (実際には、「マッピングを要素とするシーケンスを要素とするマッピング」の例です)。</p>
+
+<p>schema04.yaml : シーケンスを要素とするマッピングのスキーマ</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*type:      map*\}\}                  # マッピング型
+\{\{*mapping:*\}\}                        # マッピングの要素
+ "company":
+    type:      str
+    required:  yes
+ "email":
+    type:      str
+ "employees":
+    \{\{*type:      seq*\}\}              #   シーケンス型
+    \{\{*sequence:*\}\}                   #   シーケンスの要素
+      - type:    map            #     マッピング型
+        mapping:                #     マッピングの要素
+         "code":
+            type:      int
+            required:  yes
+         "name":
+            type:      str
+            required:  yes
+         "email":
+            type:      str
+
+</code></pre>
+</div>
+
+<p>妥当な YAML ドキュメントの例は次のようになります。</p>
+
+<p>valid04.yaml : 妥当な YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> company:    Ruby lab.
+ email:      webmaster@ruby-lab.com
+ employees:
+   - code:   101
+     name:   foo
+     email:  foo@ruby-lab.com
+   - code:   102
+     name:   bar
+     email:  bar@ruby-lab.com</code></pre></figure>
+
+<p>検証結果は次のとおりです。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema04.yaml valid04.yaml
+ valid04.yaml#0: valid.</code></pre></figure>
+
+<p>妥当でない YAML ドキュメントの例は次のようになります。</p>
+
+<p>invalid04.yaml : 妥当でない YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> company:    ruby Lab.
+ email:      webmaster@ruby-lab.com
+ employees:
+   - code:   A101                   # 値が整数ではない
+     name:   foo
+     email:  foo@ruby-lab.com
+   - code:   102
+     name:   bar
+     mail:   bar@ruby-lab.com       # 「email:」が「mail:」になっている</code></pre></figure>
+
+<p>検証すると次のようなエラーが出ます。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema04.yaml invalid04.yaml
+ invalid04.yaml#0: INVALID
+   - (line 4) [/employees/0/code] 'A101': not a integer.
+   - (line 9) [/employees/1/mail] key 'mail:' is undefined.</code></pre></figure>
+
+<h3 id="一意制約">一意制約</h3>
+
+<p>「unique:」を使うと、シーケンスやマッピングの要素に対して一意制約をつけることができます。これは SQL の unique 制約と同じです。
+次の例は、マッピングの要素とシーケンスの要素に一意制約をつけた例です。</p>
+
+<p>schema05.yaml : 一意制約を使ったスキーマ</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type: seq
+sequence:
+  - type:     map
+    required: yes
+    mapping:
+     "name":
+        type:     str
+        required: yes
+        \{\{*unique:   yes*\}\}       # マッピングの要素に対して一意制約
+     "email":
+        type:     str
+     "groups":
+        type:     seq
+        sequence:
+          - type: str
+            \{\{*unique:   yes*\}\}   # シーケンスの要素に対して一意制約
+
+</code></pre>
+</div>
+
+<p>妥当な YAML ドキュメントの例は次のようになります。</p>
+
+<p>valid05.yaml : 妥当な YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - name:   foo
+   email:  admin@mail.com
+   groups:
+     - users
+     - foo
+     - admin
+ - name:   bar
+   email:  admin@mail.com
+   groups:
+     - users
+     - admin
+ - name:   baz
+   email:  baz@mail.com
+   groups:
+     - users</code></pre></figure>
+
+<p>検証結果は次のとおりです。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema05.yaml valid05.yaml
+ valid05.yaml#0: valid.</code></pre></figure>
+
+<p>妥当でない YAML ドキュメントの例は次のようになります。</p>
+
+<p>invalid05.yaml : 妥当でない YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - name:   foo
+   email:  admin@mail.com
+   groups:
+     - foo
+     - users
+     - admin
+     - foo                    # 値が重複している
+ - name:   bar
+   email:  admin@mail.com
+   groups:
+     - admin
+     - users
+ - name:   bar                # 値が重複している
+   email:  baz@mail.com
+   groups:
+     - users</code></pre></figure>
+
+<p>検証すると次のようなエラーがでます。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema05.yaml invalid05.yaml
+ invalid05.yaml#0: INVALID
+   - (line 7) [/0/groups/3] 'foo': is already used at '/0/groups/0'.
+   - (line 13) [/2/name] 'bar': is already used at '/1/name'.</code></pre></figure>
+
+<h3 id="制約とルール">制約とルール</h3>
+
+<p>Kwalify のスキーマで指定できる制約は次のとおりです。</p>
+
+<ul>
+  <li>「required:」‥‥値が必須かどうかを表します。真偽値を指定します。デフォルトは偽です。</li>
+  <li>「enum:」‥‥とり得る値を列挙して指定します。スカラーのシーケンスを指定します。</li>
+  <li>「pattern:」‥‥文字列のパターンを指定します。正規表現のように「/…./」という形式で指定します。</li>
+  <li>「type:」‥‥値の型を指定します。省略されたときは「str」とみなされます。以下が指定できます。
+    <ul>
+      <li>str (文字列)</li>
+      <li>int (整数)</li>
+      <li>float (浮動小数点)</li>
+      <li>number (int または float)</li>
+      <li>text (str または number)</li>
+      <li>bool (真偽値)</li>
+      <li>date (日付)</li>
+      <li>timestamp (日付と時刻)</li>
+      <li>seq (シーケンス)</li>
+      <li>map (マッピング)</li>
+      <li>scalar (スカラー)</li>
+      <li>any (どんなデータでも可)</li>
+    </ul>
+  </li>
+  <li>「range:」‥‥値がとり得る範囲をスカラーのマッピングで指定します。「{max: 10, min: 0}」のようにフロースタイルを使うのがよいでしょう。キーとしては次が指定できます。
+    <ul>
+      <li>max (最大値、その値を含める)</li>
+      <li>min (最小値、その値を含める)</li>
+      <li>max-ex (最大値、その値を含めない)</li>
+      <li>min-ex (最小値、その値を含めない)</li>
+    </ul>
+  </li>
+  <li>「length:」‥‥文字列の長さを整数のマッピングで指定します。「{max: 16, min: 8}」のようにフロースタイルを使うのがよいでしょう。「range:」と同じキー (max, min, max-ex, min-ex) が指定できます。</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>「assert:」‥‥値が守るべき条件を式で指定します。このとき、値は「val」という変数で指定し、例えば「assert: val &lt; 0</td>
+          <td> </td>
+          <td>10 &lt; val」のように指定します。なおこの機能は実験的であり、将来変更される可能性があります。</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>「unique:」‥‥シーケンスまたはマッピングにおいて、値が一意であることを表します。真偽値を指定します。デフォルトは偽です。</li>
+  <li>「name:」‥‥そのルールに名前をつけます (ルールについては後述)。名前をつけるのが目的であり、値の検証は行いません。文字列を指定します。</li>
+  <li>「desc:」‥‥そのルールの簡単な説明をつけます。値の検証では使われません。文字列を指定します。</li>
+</ul>
+
+<p>Kwalify では、制約が集まったひとかたまりをルールと読んでいます (図1参照)。シーケンスまたはマッピングを使うことでルールをネストさせることができ、スキーマはネストしたルールで表されます。またルールに名前をつけておくと、Ruby スクリプトからそのルールを参照できます (これについては後ほど説明します)。
+<img src="/images/0012-YAML/kwalify-schema-rule.gif" alt="kwalify-schema-rule.gif" /></p>
+
+<p>次の例は、様々な制約を使ったスキーマの例です。</p>
+
+<p>schema06.yaml : 様々な制約を使ったスキーマ</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>name:      address-book            # 名前
+desc:      アドレス帳              # 説明
+type:      seq
+sequence:
+  - type:      map
+    mapping:
+     "name":
+        type:       str
+        required:   yes            # 必須項目
+     "email":
+        type:       str
+        required:   yes            # 必須項目
+        pattern:    /@/            # パターン
+     "password":
+        type:       str
+        length:     { max: 16, min: 8 }      # 長さ指定
+     "age":
+        type:       int
+        range:      { max: 30, min: 18 }     # 範囲指定
+        # or assert: 18 &lt;= val &amp;&amp; val &lt;= 30  # 条件式
+     "blood":
+        type:       str
+        enum:                      # 列挙
+          - A
+          - B
+          - O
+          - AB
+     "birth":
+        type:       date
+     "memo":
+        type:       any            # データ型は任意
+
+</code></pre>
+</div>
+
+<p>妥当でない YAML ドキュメントの例は次のようになります。</p>
+
+<p>invalid06.yaml : 妥当でない YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - name:     foo
+   email:    foo(at)mail.com      # 「@」が含まれない
+   password: xxx123               # 長さが短すぎる
+   age:      twenty               # 整数でない
+   blood:    a                    # 値が小文字
+   birth:    1985-01-01
+ - given-name:  bar               # 不明なキー
+   family-name: Bar               # 不明なキー
+   email:    bar@mail.net
+   age:      15                   # 値が小さすぎる
+   blood:    AB
+   birth:    1980/01/01           # 日付の形式が違う</code></pre></figure>
+
+<p>検証すると次のようなエラーが出ます。</p>
+
+<p>実行結果</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema06.yaml invalid06.yaml
+ invalid06.yaml#0: INVALID
+   - (line 2) [/0/email] 'foo(at)mail.com': not matched to pattern /@/.
+   - (line 3) [/0/password] 'xxx123': too short (length 6 &lt; min 8).
+   - (line 4) [/0/age] 'twenty': not a integer.
+   - (line 5) [/0/blood] 'a': invalid blood value.
+   - (line 7) [/1/given-name] key 'given-name:' is undefined.
+   - (line 7) [/1] key 'name:' is required.
+   - (line 8) [/1/family-name] key 'family-name:' is undefined.
+   - (line 10) [/1/age] '15': too small (&lt; min 18).
+   - (line 12) [/1/birth] '1980/01/01': not a date.</code></pre></figure>
+
+<h2 id="yaml-の機能を使ったスキーマ定義のテクニック">YAML の機能を使ったスキーマ定義のテクニック</h2>
+
+<p>YAML では標準で以下のような機能が使用できます。</p>
+
+<ul>
+  <li>アンカーとエイリアスを使ってデータを共有する</li>
+  <li>マッピングのデフォルト値を指定する</li>
+  <li>マッピングに他のマッピングをマージする</li>
+</ul>
+
+<p>このセクションでは、これらの機能を使ったスキーマ定義のテクニックを紹介します。</p>
+
+<h3 id="ルールの共有">ルールの共有</h3>
+
+<p>YAML には、データに「印」をつけておき、他の場所からそのデータを参照することができます。これをアンカーとエイリアスといいます。</p>
+
+<p>例えば次のような YAML ドキュメントがあるとします。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- \{\{*&amp;a*\}\}                # アンカー
+  name: foo
+  parent: ~
+- name: bar
+  parent: \{\{**a*\}\}        # エイリアス
+- name: baz
+  parent: \{\{**a*\}\}        # エイリアス
+
+</code></pre>
+</div>
+
+<p>これは次のような Ruby スクリプトと同じです。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>foo = \{\{*a*\}\} = { "name"=&gt;"foo", "parent"=&gt;nil }
+bar = { "name"=&gt;"bar", "parent"=&gt;\{\{*a*\}\} }
+baz = { "name"=&gt;"baz", "parent"=&gt;\{\{*a*\}\} }
+[ foo, bar, baz ]
+
+</code></pre>
+</div>
+
+<p>アンカーとエイリアスを使うと、ひとつのルールを複数の箇所で共有することができます。次の例では著作者についてのルールを翻訳者でも共有しています。</p>
+
+<p>schema07.yaml : ルールを共有するスキーマ</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>desc:   書籍リスト
+type:   seq
+sequence:
+  - type:   map
+    mapping:
+     "title":
+        type:   str
+        required: yes
+     "author":  \{\{*&amp;persons*\}\}       # アンカー
+        type:   seq
+        sequence:
+          - type: str
+     "translator": \{\{**persons*\}\}     # エイリアス
+     "publisher":
+        type:   str
+     "year":
+        type:   int
+
+</code></pre>
+</div>
+
+<p>妥当な YAML ドキュメントの例は次のようになります。</p>
+
+<p>valid07.yaml : 妥当な YAML ドキュメントの例</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> - title: コンピュータの構成と設計
+   author:
+     - John L. Hennessy
+     - David A. Patterson
+   translator:
+     - 成田 光彰
+   publisher:  日経BP社
+   year: 1999
+
+ - title: プログラミングRuby―達人プログラマーガイド
+   author:
+     - David Thomas
+     - Andrew Hunt
+   translator:
+     - 田和 勝
+     - まつもと ゆきひろ
+   publisher: ピアソンエデュケーション
+   year: 2001</code></pre></figure>
+
+<p>検証結果は次のとおりです。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema07.yaml invalid07.yaml
+ valid07.yaml#0: valid.</code></pre></figure>
+
+<h3 id="再帰的なルールの定義">再帰的なルールの定義</h3>
+
+<p>アンカーとエイリアスを使うと、再帰的なルールを定義することもできます。木構造のようなデータを表現するときに便利です。</p>
+
+<p>次の例では、タスクが複数のサブタスクから構成され、かつタスクとサブタスクが同じルールを共有することで、再帰的な定義となっています。</p>
+
+<p>schema08.yaml : 再帰的なルールの定義</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*&amp;task*\}\}                  # アンカー
+desc:   作業分解図
+type:   map
+mapping:
+ "name":      { type: str, required: yes }
+ "assigned":  { type: str }
+ "deadline":  { type: date }
+ "subtasks":
+    type:  seq
+    sequence:
+      - \{\{**task*\}\}          # エイリアス
+
+</code></pre>
+</div>
+
+<p>妥当な YAML ドキュメントの例は次のようになります。</p>
+
+<p>valid08.yaml : 妥当な YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> name:   まんがを描く
+ deadline:  2005-12-08
+ subtasks:
+   - name: 調査
+     deadline: 2005-12-01
+     subtasks:
+       - name: ネットで検索
+       - name: 図書館で資料をコピー
+         assigned: 編集者
+       - name: 関係者にインタビュー
+         assigned: 作者
+   - name: ネーム
+     deadline: 2005-12-03
+   - name: 下絵
+     deadline: 2005-12-05
+   - name: ペン入れ
+     assigned: アシ1
+     deadline: 2005-12-06
+   - name: 仕上げ
+     assigned: アシ2
+     deadline: 2005-12-07</code></pre></figure>
+
+<p>検証結果は次のとおりです。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema11.yaml valid08.yaml
+ valid08.yaml#0: valid.</code></pre></figure>
+
+<h3 id="デフォルトルール">デフォルトルール</h3>
+
+<p>YAML では、マッピングのデフォルト値を指定できます。キーとして「=」を使用すると、その値がマッピングのデフォルト値として使われます。</p>
+
+<p>例えば次の YAML ドキュメントがあるとします。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>A: 10
+B: 20
+\{\{*=*\}\}: -1             # デフォルト値
+
+</code></pre>
+</div>
+
+<p>これは次の Ruby コードと同じです。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>map1= {"A"=&gt;10, "B"=&gt;20}
+\{\{*map1.default = -1*\}\}
+
+</code></pre>
+</div>
+
+<p>YAML のこの機能を使って、Kwalify ではマッピングにおいて一致するキーの名前が見つからなかった場合のデフォルトルールを指定できるようになっています。これは、キー名が事前にはわからない場合に使用します。</p>
+
+<p>例えば、アプリケーションの設定ファイルを YAML 形式で書くことにしたとします。設定ファイルには、ユーザが独自のプロパティ名とその値を指定できるようにします。</p>
+
+<p>通常であれば、次のように名前と値を別々に定義するでしょう。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> properties:
+   - name:   tmpdir
+     value:  /tmp
+   - name:   logdir
+     value:  /var/log</code></pre></figure>
+
+<p>これを、次のように「名前: 値」にすることで、より簡潔な記述にしたいとします。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> properties:
+   tmpdir:  /tmp
+   logdir:  /var/log</code></pre></figure>
+
+<p>このとき問題になるのは、マップのキーが何になるか、事前にはわからないことです。これではスキーマ定義を書くことができません。</p>
+
+<p>このようなときは、キーに「=」を指定することでデフォルトのルールを指定します。こうすることで、任意のキーにマッチするようになります。</p>
+
+<p>schema09.yaml : デフォルトのルールを指定したスキーマ</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type: map
+mapping:
+ "properties":
+    type: map
+    mapping:
+     \{\{*=*\}\}:              # 任意のキーにマッチ
+        type: any    # 値はどんなデータ型でもよい
+
+</code></pre>
+</div>
+
+<p>また他のキーと共に使用することもできます。次の例は、アドレス帳に任意のキーと値を追加できるようにした例です。</p>
+
+<p>schema10.yaml : ユーザが自由にキーと値を追加できるアドレス帳</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type: seq
+sequence:
+  - type: map
+    mapping:
+     "name":
+        type: str
+        required: yes
+     "email":
+        type: str
+     "birth":
+        type: date
+     \{\{*=*\}\}:             # キーが「name」「email」「birth」以外の場合
+        type: any   # 値はどんなデータ型でもよい
+
+</code></pre>
+</div>
+
+<p>デフォルトルールは、いわばどんなキーにもマッチするルールです。そのため、これを使うとキーのタイプミスが発見できなくなります。それを考慮したうえでお使いください。</p>
+
+<h3 id="ルールのマージと差分定義">ルールのマージと差分定義</h3>
+
+<p>YAML では、「&lt;&lt;」を使って複数のマッピングをマージする機能があります。またマージしたマッピングでキーと値の上書や追加ができます。</p>
+
+<p>例えば次のような YAML ドキュメントがあるとします。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- &amp;m1
+  A: 10
+  B: 20
+- \{\{*&lt;&lt;*\}\}: *m1            # マージ
+  A: 15              # 上書き
+  C: 30              # 追加
+
+</code></pre>
+</div>
+
+<p>これは次の Ruby コードと同じです。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=20}
+m2 = {}
+\{\{*m2.update(m1)*\}\}        # マージ
+m2["A"] = 15         # 上書き
+m2["C"] = 30         # 追加
+[m1, m2]
+
+</code></pre>
+</div>
+
+<p>また複数のマッピングをマージすることができます。
+例えば次のような YAML ドキュメントがあるとします。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>- &amp;m1
+  A: 10
+  B: 20
+- &amp;m2
+  C: 30
+  D: 40
+- \{\{*&lt;&lt;: [*m1, *m2]*\}\}    # 複数のマッピングをマージ
+
+</code></pre>
+</div>
+
+<p>これは次の Ruby コードと同じです。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=&gt;20}
+m2 = {"C"=&gt;10, "D"=&gt;20}
+m3 = {}
+\{\{*m3.update(m1)*\}\}       # マージ
+\{\{*m3.update(m2)*\}\}       # マージ
+[m1, m2, m3]
+
+</code></pre>
+</div>
+
+<p>YAML のこの機能を使うと、Kwalify でルールのマージや差分定義（上書きと追加）ができます。次の例では、グループについてのルールに追加・上書きすることで、ユーザについてのルールを定義しています。</p>
+
+<p>schema11.yaml : ルールのマージと差分定義を行う例</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type: map
+mapping:
+ "group":
+    type: map
+    mapping:
+     "name": \{\{*&amp;name*\}\}
+        type: str
+        required: yes
+     "email": \{\{*&amp;email*\}\}
+        type: str
+        pattern: /@/
+        required: no
+ "user":
+    type: map
+    mapping:
+     "name":
+        \{\{*&lt;&lt;: *name*\}\}             # マージ
+        \{\{*length: { max: 16 }*\}\}   # 追加
+     "email":
+        \{\{*&lt;&lt;: *email*\}\}            # マージ
+        \{\{*required: yes*\}\}         # 上書き
+
+</code></pre>
+</div>
+
+<p>次のような、妥当でない YAML ドキュメントで試してみましょう。</p>
+
+<p>invalid11.yaml : 妥当でない YAML ドキュメントの例</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> group:
+   name: foo
+   email: foo@mail.com
+ user:
+   name: toooooo-looooong-name</code></pre></figure>
+
+<p>検証してみると、次のようなエラーがでます。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf schema11.yaml invalid11.yaml
+ invalid11.yaml#0: INVALID
+   - (line 4) [/user] key 'email:' is required.
+   - (line 5) [/user/name] 'toooooo-looooong-name': too long (length 21 &gt; max 16).</code></pre></figure>
+
+<h2 id="kwalify-ライブラリ">Kwalify ライブラリ</h2>
+
+<p>このセクションでは、Ruby スクリプトから Kwalify を使う方法を説明します。</p>
+
+<h3 id="ruby-スクリプトから-kwalify-を使う">Ruby スクリプトから Kwalify を使う</h3>
+
+<p>Ruby スクリプトにおいて、Kwalify のライブラリを使って YAML ドキュメントを検証するには、Kwalify::Validator クラスを使います。</p>
+
+<p>script1.rb : Kwalify ライブラリを使って検証するサンプル</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>require 'kwalify'
+
+## スキーマファイルを読み込み、バリデータを作成する。
+## スキーマ定義にエラーがあると、例外 Kwalify::SchemaError が発生する。
+schema = YAML.load_file('schema.yaml')
+\{\{*validator = Kwalify::Validator.new(schema)*\}\}
+
+## YAML ドキュメントを読み込み、バリデータで検証する。
+## エラーがあれば Kwalify::ValidationError の配列が、なければ空の配列が返される。
+document = YAML.load_file('document.yaml')
+\{\{*errors = validator.validate(document)*\}\}
+if !errors || errors.empty?
+  puts "valid."
+else
+  errors.each do |error|
+    puts "[#{error.path}] #{error.message}"
+  end
+end
+
+</code></pre>
+</div>
+
+<p>この例でわかるように、Kwalify では YAML ドキュメントをパースするときに検証するのではなく、読み込んだあとの YAML ドキュメントに対して検証を行います。そのため、Syck の YAML パーサのように行番号をパース中にしか保持しないパーサだと、エラー箇所の行番号がわかりません。</p>
+
+<p>コマンドラインオプション「-l」と同じようにエラー箇所を行番号で表示したい場合は、Syck の YAML パーサではなく Kwalify::YamlParser を使用する必要があります。ただしこのパーサは実験的であり、YAML の仕様をすべて満たしているわけではありませんので注意してください。</p>
+
+<p>script2.rb : Kwalify::YamlParser を使って行番号を表示するサンプル</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>## Kwalify::Parse を使って YAML ドキュメントを読み込む。
+## (このパーサは行番号を保持している。)
+str = ARGF.read()
+\{\{*parser = Kwalify::Parser.new(str)*\}\}
+\{\{*document = parser.parse()*\}\}
+
+## スキーマファイルを読み込み (これは Syck を使ってもよい)、
+## バリデータを作成して検証する。
+schema = YAML.load_file('schema.yaml')
+\{\{*validator = Kwalify::Validator.new(schema)*\}\}
+\{\{*errors = validator.validate(document)*\}\}
+
+## エラーがあれば、行番号を設定して表示する。
+## 行番号を設定するには、Kwalify::Parser が必要。
+if !errors || errors.empty?
+  puts "valid."
+else
+  \{\{*parser.set_errors_linenum(errors)*\}\}        # YPath をもとに行番号を設定
+  errors.sort.each do |err|                # 行番号でソートし、表示する
+    print "line %d: path %s: %s" % [err.linenum, err.path, err.message]
+  end
+end
+
+</code></pre>
+</div>
+
+<p>また読み込んだあとの YAML ドキュメントは配列とハッシュとスカラーの組み合わせであり、これは JSON と同じです。つまり JSON を読み込んで、それを Kwalify で検証することが可能です。ほかにも、CGIパラメータの検証などに使用できるでしょう。</p>
+
+<p>なお Kwalify のバリデータはステートレスであり、ひとつのバリデータで複数の YAML ドキュメントを検証することができます。YAML ドキュメントごとにバリデータを生成する必要はありません。</p>
+
+<h3 id="ruby-スクリプトでスキーマファイルを検証する">Ruby スクリプトでスキーマファイルを検証する</h3>
+
+<p>スキーマファイル自身が正しいかどうかを検証するバリデータを「メタバリデータ」と呼んでいます。メタバリデータは Kwalify::MetaValidator.instance() または Kwalify.meta_validator() で取得できます。また検証の仕方はふつうのバリデータと同じです。</p>
+
+<p>script3.rb : スキーマファイル自身を検証するサンプル</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>## メタバリデータを取得する
+require 'kwalify'
+\{\{*meta_validator = Kwalify::MetaValidator.instance()*\}\}
+
+## スキーマファイルを検証する
+schema = File.load_file('schema.yaml')
+\{\{*errors = meta_validator.validate(schema)*\}\}
+if !errors || errors.empty?
+  puts "valid."
+else
+  errors.each do |error|
+    puts "- [#{error.path}] #{error.message}"
+  end
+end
+
+</code></pre>
+</div>
+
+<h3 id="フックメソッドを用いて独自の検証を行う">フックメソッドを用いて独自の検証を行う</h3>
+
+<p>Kwaify では、Kwalify::Validator#validate_hook() というフックメソッドが用意されています。これは、Kwalify::Validator#validate() から呼ばれるメソッドであり、プログラマーがサブクラスで拡張できます。</p>
+
+<p>フックメソッドを用いると、複数の項目にまたがるような検証など、Kwalify のスキーマでは検証しにくいような内容を検証できます。
+例えば次の例では、「アンケートで『悪い』と答えた人はその理由を書かなければならない」という検証をしていますが、これは「アンケートの答え」によって「理由」が必須かそうでないかが変わっています。</p>
+
+<p>script4.rb : フックメソッドの例</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+
+<span class="nb">require</span> <span class="s1">'kwalify'</span>
+<span class="nb">require</span> <span class="s1">'yaml'</span>
+
+<span class="c1">## Kwalify::Validator のサブクラスを定義</span>
+<span class="k">class</span> <span class="nc">AnswersValidator</span> <span class="o">&lt;</span> <span class="no">Kwalify</span><span class="o">::</span><span class="no">Validator</span>
+
+  <span class="c1">## スキーマ定義を読み込む</span>
+  <span class="vc">@@schema</span> <span class="o">=</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">load_file</span><span class="p">(</span><span class="s1">'answers.schema.yaml'</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">initialize</span><span class="p">()</span>
+    <span class="k">super</span><span class="p">(</span><span class="vc">@@schema</span><span class="p">)</span>
+  <span class="k">end</span>
+
+  <span class="c1">## Validator#validate() から呼び出されるフックメソッド</span>
+  <span class="k">def</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">validate_hook</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
+    <span class="c1"># ルールの名前が 'Answer' である場合だけ実行</span>
+    <span class="k">case</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">rule</span><span class="p">.</span><span class="nf">name</span><span class="o">*</span><span class="p">\}\}</span>
+    <span class="k">when</span> <span class="p">\{\{</span><span class="o">*</span><span class="s1">'Answer'</span><span class="o">*</span><span class="p">\}\}</span>
+      <span class="c1"># 解答が 'bad' であれば、理由の記入が必須である</span>
+      <span class="k">if</span> <span class="n">value</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'bad'</span>
+        <span class="k">if</span> <span class="n">value</span><span class="p">[</span><span class="s1">'reason'</span><span class="p">]</span> <span class="o">==</span> <span class="kp">nil</span> <span class="o">||</span> <span class="n">value</span><span class="p">[</span><span class="s1">'reason'</span><span class="p">].</span><span class="nf">empty?</span>
+          <span class="n">msg</span> <span class="o">=</span> <span class="s2">"reason is required when answer is 'bad'."</span>
+          <span class="p">\{\{</span><span class="o">*</span><span class="n">errors</span> <span class="o">&lt;&lt;</span> <span class="no">Kwalify</span><span class="o">::</span><span class="no">ValidationError</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
+        <span class="k">end</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+<span class="k">end</span>
+
+
+<span class="c1">## YAML ドキュメントを読み込む</span>
+<span class="c1">## (エラー行番号を表示するために、Kwalify::YamlParser を使う。)</span>
+<span class="n">input</span> <span class="o">=</span> <span class="no">ARGF</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="no">Kwalify</span><span class="o">::</span><span class="no">YamlParser</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
+<span class="n">document</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="nf">parse</span><span class="p">()</span>
+
+<span class="c1">## バリデータを作成し、検証する</span>
+<span class="n">validator</span> <span class="o">=</span> <span class="no">AnswersValidator</span><span class="p">.</span><span class="nf">new</span>
+<span class="n">errors</span> <span class="o">=</span> <span class="n">validator</span><span class="p">.</span><span class="nf">validate</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+
+<span class="c1">## エラーがあれば行番号つきで表示する</span>
+<span class="k">if</span> <span class="o">!</span><span class="n">errors</span> <span class="o">||</span> <span class="n">errors</span><span class="p">.</span><span class="nf">empty?</span>
+  <span class="nb">puts</span> <span class="s2">"Valid."</span>
+<span class="k">else</span>
+  <span class="n">parser</span><span class="p">.</span><span class="nf">set_errors_linenum</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+  <span class="n">errors</span><span class="p">.</span><span class="nf">sort</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">error</span><span class="o">|</span>
+    <span class="nb">puts</span> <span class="s2">" - line </span><span class="si">#{</span><span class="n">error</span><span class="p">.</span><span class="nf">linenum</span><span class="si">}</span><span class="s2">: [</span><span class="si">#{</span><span class="n">error</span><span class="p">.</span><span class="nf">path</span><span class="si">}</span><span class="s2">] </span><span class="si">#{</span><span class="n">error</span><span class="p">.</span><span class="nf">message</span><span class="si">}</span><span class="s2">"</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+</code></pre>
+</div>
+
+<p>スキーマは次のようになります。「name:」を使ってルールに名前をつけ、それを上のスクリプトで参照しているのがポイントです。</p>
+
+<p>answers.schema.yaml : スキーマ</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type:      map
+mapping:
+  answers:
+    type:      seq
+    sequence:
+      - type:      map
+        \{\{*name:      Answer*\}\}    # ルールに名前をつける
+        mapping:
+         "name":
+            type:      str
+            required:  yes
+         "answer":
+            type:      str
+            required:  yes
+            enum:
+              - good
+              - not bad
+              - bad
+         "reason":
+            type:      str
+
+</code></pre>
+</div>
+
+<p>妥当でない YAML ドキュメントの例は次のようになります。</p>
+
+<p>answers.data.yaml : 妥当でない YAML ドキュメント</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> answers:
+   - name:    Foo
+     answer:   good
+   - name:    Bar
+     answer:   bad     #「answer:」が bad のときは「reason:」が必要
+   - name:    Baz
+     answer:   not bad</code></pre></figure>
+
+<p>スクリプトによる検証結果は次のとおりです。</p>
+
+<p>実行結果 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ruby script4.rb answers.data.yaml
+  - line 4: [/answers/1] reason is required when answer is 'bad'.</code></pre></figure>
+
+<p>スキーマによる検証とプログラムによる検証を比べると、一般的に次のような特徴があります。</p>
+
+<ul>
+  <li>スキーマによる検証は「宣言的」であり、記述が簡単なかわりに複雑な検証はできません。</li>
+  <li>プログラムによる検証は「手続き的(逐次的)」であり、複雑な検証ができるかわりに記述は煩雑になります。</li>
+</ul>
+
+<p>Kwalify では、宣言的に書きやすいことは宣言的に、宣言的に書くのが難しいことは手続き的に書くことができるため、両者のいいとこどりができます。</p>
+
+<p>なお Kwalify のバリデータはステートレスとなっていますが、フックメソッドの中でインスタンス変数を使う場合はステートフルになるので注意してください。</p>
+
+<h2 id="スキーマのサンプル">スキーマのサンプル</h2>
+
+<p>Kwalify のアーカイブには、スキーマのサンプルがいくつか用意されています。</p>
+
+<ul>
+  <li>examples/address-book ‥‥ アドレス帳のサンプルです。</li>
+  <li>examples/invoice ‥‥ インボイス (受注データのようなもの) のスキーマです。<a href="http://www.yaml.org/start.html">YAMLホームページ</a> からの拝借です。</li>
+  <li>examples/tapkit ‥‥ <a href="http://www.spice-of-life.net/tapkit/index_ja.html">TapKit</a> におけるモデルファイルのスキーマです。</li>
+</ul>
+
+<p>これとは別に、前回作成した creatable ツールのスキーマを定義してみました。ポイントは次の通りです。</p>
+
+<ul>
+  <li>「defaults:」と「tables:」ではどちらも「columns:」を使うので、アンカーとエイリアスを使って同じルールを共有しています。</li>
+  <li>外部キーを表す「ref:」は再帰的な定義になるので、これもアンカーとエイリアスを使います。</li>
+</ul>
+
+<p>Kwalify ではスキーマを YAML 形式で定義するので、アンカーとエイリアスを使ってこのようなことが簡単にできます。</p>
+
+<p>creatable.schema.yaml : creatable のためのスキーマ</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>type:     map
+mapping:
+ "defaults":
+    type:     map
+    mapping:
+     "columns":
+        type:     seq
+        sequence:
+          - \{\{*&amp;column-rule*\}\}                 # アンカー
+            type:     map
+            mapping:
+             "name":   { type: str, required: yes }
+             "desc":   { type: str }
+             "type":   { type: str }
+             "width":  { type: int }
+             "primary-key": { type: bool }
+             "serial":      { type: bool }
+             "not-null":    { type: bool }
+             "unique":      { type: bool }
+             "enum":
+                type: seq
+                sequence:
+                  - type:     scalar
+             \{\{*"ref": *column-rule*\}\}         # エイリアスで再帰的な定義
+
+ "tables":
+    type:     seq
+    sequence:
+      - type:     map
+        mapping:
+         "name":   { type: str, required: yes }
+         "class":  { type: str }
+         "desc":   { type: str }
+         "columns":
+            type:     seq
+            sequence:
+              - \{\{**column-rule*\}\}              # エイリアスでルールを共有
+
+</code></pre>
+</div>
+
+<p>前回のデータファイル (<a href="/images/0012-YAML/datafile.yaml">datafile.yaml</a>) を使って検証してみましょう。</p>
+
+<p>実行例 :</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> $ kwalify -lf creatable.schema.yaml datafile.yaml
+ datafile.yaml#0: valid.</code></pre></figure>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>本稿では、YAML 用のスキーマバリデータである Kwalify について説明しました。Kwalify は次のような特徴を持ちます。</p>
+
+<ul>
+  <li>Kwalify では次のような検証が可能です。
+    <ul>
+      <li>データの型 (シーケンス、マッピング、スカラー)</li>
+      <li>必須項目 (SQL の not null 制約に相当)</li>
+      <li>一意性 (SQL の unique 制約に相当)</li>
+      <li>列挙型</li>
+      <li>正規表現によるパターン</li>
+      <li>値の範囲 (最大値と最小値)</li>
+      <li>文字列の長さの範囲 (最大値と最小値)</li>
+    </ul>
+  </li>
+  <li>Kwalify ではパースしたあとの YAML ドキュメントを検証します。そのため、YAML ドキュメントだけでなく JSON ドキュメントも同じように検証できます。</li>
+  <li>Kwalify ではスキーマを YAML フォーマットで記述します。そのため、アンカーとエイリアスを使って検証ルールの共有や再帰的な定義が簡単にできます。</li>
+  <li>Kwalify ではスキーマ定義自身の検証も Kwalify で行います。スキーマ定義を検証するバリデータをメタバリデータといいます。</li>
+  <li>Kwalify のバリデータは Ruby スクリプトで簡単に拡張できます。このとき、宣言的に書きやすいことは宣言的に、宣言的に書きにくいことは手続き的に検証できるよう設計されています。</li>
+</ul>
+
+<p>Kwalify は決して高機能ではありませんし、RelaxNG のような数学的なバックグラウンドを持つわけでもありません。しかし普通に使う分には十分な機能を持っていますし、なによりスクリプトでいくらでも拡張できるため、大変便利です。</p>
+
+<p>なお本当は XML のスキーマ (DTD, XML Schema, RelaxNG) と Kwalify とを比較してみたかったのですが、筆者の力不足でできませんでした。機会があればチャレンジしたいと思います。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>名前：kwatch。三流プログラマー。もし世の中に「ソフトウェア構造計算書」なんてものが存在したらほとんどのプロジェクトでは偽造されるんやろなーと思ったが、バグを「仕様です」なんて言い切ってる時点で偽造してるのと変わらんやんと気づき、やや鬱。最近のお気に入りは「チャングム」。</p>
+
+<h2 id="プログラマーのための-yaml-入門-連載一覧">プログラマーのための YAML 入門 連載一覧</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0013/0013-YAML.html">プログラマーのための YAML 入門 (探索編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-YAML.html">プログラマーのための YAML 入門 (検証編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-YAML.html">プログラマーのための YAML 入門 (実践編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-YAML.html">プログラマーのための YAML 入門 (中級編)</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-YAML.html">プログラマーのための YAML 入門 (初級編)</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

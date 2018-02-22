@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>NaCl 訪問記</title>
+  <meta name="description" content="はじめに">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0001/0001-NaClReport.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>NaCl 訪問記</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0001/0001-NaClReport.html" class="hatena-bookmark-button" data-hatena-bookmark-title="NaCl 訪問記" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0001/0001-NaClReport.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0001/0001-NaClReport.html" data-text="NaCl 訪問記">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <h2 id="はじめに">はじめに</h2>
+
+<p><img src="/images/0001-NaClReport/sDSCF1274.jpg" alt="sDSCF1274.jpg" />
+まつもとさん、前田さん、かずひこさんなどが勤めておられる<a href="http://www.netlab.jp/">株式会社ネットワーク応用通信研究所 (NaCl)</a> に行ってきたので、ついでに色々と聞いてきました。</p>
+
+<p>とくに、まつもとさんは Ruby を作ってお給料貰ってるそうなので、Rubyist 的には大変興味深い会社です。</p>
+
+<p>本稿では NaCl ってどんな会社？　など、見てきた、聞いてきた内容についてレポートします。</p>
+
+<h2 id="インタビュー">インタビュー</h2>
+
+<p>とりあえず、どんな会社？　ってことで、聞いてみました。</p>
+
+<dl>
+  <dt>聞き手</dt>
+  <dd>ささだ</dd>
+  <dt>語り手</dt>
+  <dd>まつもとさん、前田さん、かずひこさん</dd>
+  <dt>日にち</dt>
+  <dd>2004 年 8 月 30 日</dd>
+  <dt>場　所</dt>
+  <dd>株式会社ネットワーク応用通信研究所　本社</dd>
+</dl>
+
+<hr />
+
+<dl>
+  <dt>ささだ</dt>
+  <dd><a href="http://www.netlab.jp/">ネットワーク応用通信研究所 (NaCl)</a> ってどういう会社なんですか？</dd>
+  <dt>前田</dt>
+  <dd>いい会社です。素晴らしい会社です。</dd>
+  <dt>かずひこ</dt>
+  <dd>横に社長がいるからめったなことがいえないよね (笑)</dd>
+  <dt>まつもと</dt>
+  <dd>ソフトウェアを開発しています。ウェブページにかいてあるようなこと。</dd>
+  <dt>かずひこ</dt>
+  <dd>あれは、あんまり見ちゃいけないらしい。</dd>
+  <dt>前田</dt>
+  <dd>設立当初からあんまりかわってないような。</dd>
+</dl>
+
+<h3 id="仕事の話">仕事の話</h3>
+
+<h4 id="orca">ORCA</h4>
+
+<dl>
+  <dt>ささだ</dt>
+  <dd>最近は何してるんですか？</dd>
+  <dt>まつもと</dt>
+  <dd>最近稼いでるのは <a href="http://www.orca.med.or.jp/">ORCA (日本医師会研究事業プロジェクト［オルカプロジェクト］) </a> かなぁ。レセプトってあるんだけど、保険の請求書。で、それを計算する計算機が病院に一台ずつあるんだけど、従来はオフコンとかだったりして、結構値段がするんだよね。500 万とか。大きいところだと何千万とか。で、高いし、オフコンってはやってなくて、ディスコンになってるのも結構ある。じゃぁ、別のに載せ換えようか、となると、また 500 万。データの移行はできたりできなかったりして、できても別に何百万とります、とか。で、それはちょっといやだろうっていって。日本医師会ってところが、オープンソースで作りましょう、プラットホームは安い Linux マシン、いいの買っても数十万、ソフトウェアは無償ってことに。で、実際うちがそれを作ってる。ということで、うちはオープンソースを作って開発費をもらってる。これが一番でかいのかな。</dd>
+  <dt>ささだ</dt>
+  <dd>日本医師会ってところから出るんですか？</dd>
+  <dt>まつもと</dt>
+  <dd>そうそう。</dd>
+  <dt>ささだ</dt>
+  <dd>で、全国のお医者さんに？</dd>
+  <dt>まつもと</dt>
+  <dd>まぁ対応規模とかあるんだけど、今は導入、導入テスト中で 800 を超えてる。全国には何万のお医者さんが居るので、まだまだだけど。</dd>
+  <dt>ささだ</dt>
+  <dd>バグは許されませんよね、そういうの。</dd>
+  <dt>まつもと</dt>
+  <dd>ライセンスが微妙で、OSD 準拠じゃない。日医の俺オープンソース。テーブルを弄っちゃいけないってのがある。</dd>
+  <dt>社長さん</dt>
+  <dd>2 が出て、public comment 募集中です。</dd>
+  <dt>ささだ</dt>
+  <dd>開発はこちらで？</dd>
+  <dt>まつもと</dt>
+  <dd>メインはこっち。カスタマイズする会社はいくつかあるけど。COBOL で書いたアプリケーション。</dd>
+</dl>
+
+<h4 id="実は-cobol-の会社">実は COBOL の会社</h4>
+
+<dl>
+  <dt>ささだ</dt>
+  <dd>COBOL 使ってるんですか。</dd>
+  <dt>まつもと</dt>
+  <dd>がりがり使ってるよ。</dd>
+  <dt>前田</dt>
+  <dd>この部屋 (ささだ注：普段まつもとさんたちが居る部屋の隣の部屋にきて聞いてます) の人はみんなコボラー。実は。</dd>
+  <dt>まつもと</dt>
+  <dd>今はコボラーのほうが多いのかなぁ。Ruby の人より。</dd>
+  <dt>かずひこ</dt>
+  <dd>ええ、Rubyist 90% みたいなのは誤解ですから (笑)</dd>
+  <dt>ささだ</dt>
+  <dd>COBOL の会社だったんですか。</dd>
+  <dt>まつもと</dt>
+  <dd>そうそう。</dd>
+  <dt>前田</dt>
+  <dd>西田圭介さんが <a href="http://open-cobol.sourceforge.net/">OpenCOBOL</a> 書かれたのはそのため。</dd>
+  <dt>まつもと</dt>
+  <dd>それまではまともな COBOL コンパイラがなかった。で、商用レベルに使えるものができあがった。</dd>
+  <dt>前田</dt>
+  <dd>生越さんと仕様でもめてましたよね。文化的なバックグラウンドが違うんですよね。</dd>
+</dl>
+
+<h4 id="ほかにも色々">ほかにも色々</h4>
+
+<dl>
+  <dt>ささだ</dt>
+  <dd>ほかの人は？　 COBOL 以外。</dd>
+  <dt>前田</dt>
+  <dd>単発の仕事で全然違うことをやってることが多いですけど。</dd>
+  <dt>まつもと</dt>
+  <dd>どこどこのウェブアプリケーション作って、とか。</dd>
+  <dt>前田</dt>
+  <dd>自社の製品作るって感じじゃなくて、仕事がまわってきてそれを作る。</dd>
+  <dt>ささだ</dt>
+  <dd>仕事に応じて環境とか言語とかは全然違う、と。</dd>
+  <dt>前田</dt>
+  <dd>そうですね。</dd>
+  <dt>まつもと</dt>
+  <dd>Linux-Ruby はあったりも。うちの受託は Ruby でつくるのが結構多いんだけど、Ruby か C か。C++ 使ったケースってあったっけ？</dd>
+  <dt>前田</dt>
+  <dd>C++ はコードいじるのは。</dd>
+  <dt>まつもと</dt>
+  <dd>いちから作ったことはないかな。受注で Java をうけたことがあるね。</dd>
+  <dt>前田</dt>
+  <dd>C#で Windows ってのがありましたよ。</dd>
+  <dt>まつもと</dt>
+  <dd>まぁ、いろいろ。</dd>
+</dl>
+
+<h3 id="就職の話">就職の話</h3>
+
+<dl>
+  <dt>ささだ</dt>
+  <dd>就職は？</dd>
+  <dt>まつもと</dt>
+  <dd>随時受け付けております。</dd>
+  <dt>かずひこ</dt>
+  <dd>最近多いですよね。しょっちゅう申し込みが。</dd>
+  <dt>まつもと</dt>
+  <dd>ここ一年くらい増えたかなあ。</dd>
+  <dt>前田</dt>
+  <dd>あんまり普通の経路で入ってくる人は多くなかったんで。</dd>
+  <dt>まつもと</dt>
+  <dd>今でも普通の経路じゃないと思うんだけど。</dd>
+  <dt>ささだ</dt>
+  <dd>どういうところを見るんですか。</dd>
+  <dt>まつもと</dt>
+  <dd>普通に出す書類と、職務経歴票とか職務動機とか今まで書いたプログラムとかを、メールで提出してもらうんだよね。で、この人は自ら学べないなと思った人は、一次審査にはとおらないことが多いかもしれない。でも、僕は一次審査はしてないので、なんともいえないんだけど。</dd>
+  <dt>前田</dt>
+  <dd>全部ワードで送ってくる人とかいますよ。メール本文がなくて、全部ワード。</dd>
+  <dt>まつもと</dt>
+  <dd>メール本文とワードが同じ内容とか。あと、募集からなにから全部携帯メールだったとか。いろんなのがあって。</dd>
+  <dt>ささだ</dt>
+  <dd>ポストスクリプトだけとかはないですか。</dd>
+  <dt>まつもと</dt>
+  <dd>まだないねえ。</dd>
+  <dt>ささだ</dt>
+  <dd>何次審査まであるんですか？</dd>
+  <dt>まつもと</dt>
+  <dd>二次まで。二次が面接。</dd>
+</dl>
+
+<h4 id="特殊なかずひこさん">特殊なかずひこさん</h4>
+
+<dl>
+  <dt>前田</dt>
+  <dd>かずひこさんの面接って雑談しかしてないですよね。</dd>
+  <dt>まつもと</dt>
+  <dd>かずひこくんはプレ面接があったから。</dd>
+  <dt>かずひこ</dt>
+  <dd>遊びに来たときに社長さんとかが出てきて、あらまどうも、みたいなところである程度話していたし。技術的なことは、一応面接のときに聞かれるのかと思ってたら、社長のほうから「彼のスキルはまつもとくんが知ってるんだよね」とかっていって、「ええ、書いたプログラム見てますから」というその二言で終了して、あと雑談。オープンソース方面で活躍してたら、面接のスキル的なところとか、コミュニケーション能力とか、お互いわかってるから。あとはこういう顔ですねぇ、みたいな。</dd>
+  <dt>まつもと</dt>
+  <dd>そういうことが多いかなあ。でも、かずひこくんはちょっと特殊だけど。まぁ、デザイン系はうりだよね。</dd>
+  <dt>前田</dt>
+  <dd>うちの会社のウェブがアレで。ねぇかずひこさん。</dd>
+  <dt>まつもと</dt>
+  <dd>割と知られてきたのかなぁ。LL weekend で決心した、とかいう人がいたし。</dd>
+  <dt>かずひこ</dt>
+  <dd>私の就職が微妙に勇気を与えてしまったらしい。</dd>
+</dl>
+
+<h2 id="nacl-の風景">NaCl の風景</h2>
+
+<p>写真を撮らせてもらったので、その写真を掲載します。</p>
+
+<h3 id="仕事場">仕事場</h3>
+
+<h4 id="まつもとさんの机">まつもとさんの机</h4>
+<p><img src="/images/0001-NaClReport/sDSCF1226.jpg" alt="sDSCF1226.jpg" /></p>
+
+<h4 id="前田さんかずひこさんの机">前田さん、かずひこさんの机</h4>
+
+<p><img src="/images/0001-NaClReport/sDSCF1227.jpg" alt="sDSCF1227.jpg" />
+<img src="/images/0001-NaClReport/sDSCF1266.jpg" alt="sDSCF1266.jpg" /></p>
+
+<h3 id="サーバ室">サーバ室</h3>
+
+<h4 id="たくさんのマシンとなぞの物体">たくさんのマシンとなぞの物体</h4>
+
+<p><img src="/images/0001-NaClReport/sDSCF1267.jpg" alt="sDSCF1267.jpg" />
+<img src="/images/0001-NaClReport/sDSCF1271.jpg" alt="sDSCF1271.jpg" /></p>
+
+<h4 id="fdiarynet-のマシンrubyistnet-のマシン噂の-helium">fdiary.net のマシン、rubyist.net のマシン、噂の helium</h4>
+
+<p><img src="/images/0001-NaClReport/sDSCF1268.jpg" alt="sDSCF1268.jpg" />
+<img src="/images/0001-NaClReport/sDSCF1269.jpg" alt="sDSCF1269.jpg" />
+<img src="/images/0001-NaClReport/sDSCF1270.jpg" alt="sDSCF1270.jpg" /></p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>いかがでしたでしょうか。</p>
+
+<p>本稿執筆にあたり、いろいろお世話になったまつもとさん、前田さん、かずひこさん、ネットワーク応用通信研究所の方々に感謝します。</p>
+
+<p>(ささだ - ko1 at atdot dot net)</p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

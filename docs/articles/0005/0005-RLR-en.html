@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby Library Report [No.4] Using Win32Utils (en)</title>
+  <meta name="description" content="Author: Daniel Berger, Editor: Takaaki Tateishi">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0005/0005-RLR-en.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Ruby Library Report [No.4] Using Win32Utils (en)</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0005/0005-RLR-en.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Ruby Library Report [No.4] Using Win32Utils (en)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0005/0005-RLR-en.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0005/0005-RLR-en.html" data-text="Ruby Library Report [No.4] Using Win32Utils (en)">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>Author: Daniel Berger, Editor: Takaaki Tateishi</p>
+
+<h3 id="preface">Preface</h3>
+
+<p>Win32Utils is a set of libraries for handling various functions on Windows.
+I’m sure that this helps you to do more various work on Windows than ever
+before.
+In this article, Daniel Berger, who is an author of Win32Utils, presents
+an overview of it by himself.
+(by Takaaki Tateishi)</p>
+
+<h3 id="registration-information">Registration information</h3>
+
+<ul>
+  <li>[Project] Win32Utils</li>
+  <li>[Author] Daniel Berger</li>
+  <li>[URL] <a href="http://rubyforge.org/projects/win32utils">http://rubyforge.org/projects/win32utils</a></li>
+</ul>
+
+<h2 id="using-win32utils">Using Win32Utils</h2>
+
+<h3 id="quick-introduction">Quick introduction</h3>
+
+<p>My work on the Win32Utils project originally stemmed from a need to make a
+TCP/IP client-server application, which myself and a colleague had written
+for work, cross platform.  It was then that I learned about Windows services.
+It was also then that I realized how woefully few libraries there were for
+Ruby on Windows.</p>
+
+<p>I decided to look at what both Perl and Python had in
+terms of Windows libraries and began porting them,
+learning the Windows API as I went.  I created the
+Win32Utils project on RubyForge, and recruited both
+Park Heesob and Shashank Date to help me.  Together,
+we started the process of bringing Ruby up to the
+level of Perl and Python in terms of available
+libraries for Windows, including a library for Windows
+services.</p>
+
+<p>There are now over a dozen packages forming the Win32Utils project.
+They include interfaces for native mutexes, semaphores and events,
+as well as eventlog and service information, user and group information
+and administration, process information, native file methods, the
+clipboard, pipes, the taskscheduler, shortcuts and the SAPI library.
+We’ll look over a few of these packages today.</p>
+
+<h3 id="a-closer-look-at-a-few-libraries">A closer look at a few libraries</h3>
+
+<h4 id="win32-clipboard">WIN32-CLIPBOARD</h4>
+
+<p>This package provides an interface to the Windows clipboard.
+With this you can retrieve data copied to the clipboard, insert
+data into the clipboard, or just clear it.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> # Example:
+ require "win32/clipboard"
+ include Win32
+
+ # Get the data on the clipboard
+ puts "Data on clipboard was: " + Clipboard.data
+
+ # Set the data on the clipboard
+ Clipboard.data = "test"
+
+ # Printing the data again, we get “test”
+ puts "Data on clipboard is now: " + Clipboard.data
+
+ # Clear the clipboard
+ Clipboard.empty</code></pre></figure>
+
+<p>Note that the current release does not support any non-textual formats,
+i.e. You can’t copy and paste images with this package.  Support for this
+will be added in a future release.</p>
+
+<h4 id="win32-etc">WIN32-ETC</h4>
+
+<p>This package allows you to retrieve information about current users and
+groups on a local or remote system.  You can also administer users and
+groups using the Admin module.</p>
+
+<p>The API for win32-etc was modelled on the ‘etc’ package that comes as
+part of the standard library.  The API is, in fact, nearly identical to
+one of the ‘etc’ package as it would be used on Unix systems.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/etc"
+ include Win32
+
+ # Print users on a remote system
+ Etc.passwd('\\some_machine'){ |pwstruct|
+   p pwstruct
+ }
+
+ # Print groups on the system
+ Etc.group{ |gstruct|
+   p gstruct
+ }</code></pre></figure>
+
+<p>There are two differences between this version and the version that comes with the standard library.  First, you can specify a host as an argument to most of the Etc methods to retrieve information from remote machines.  Second, the members of the struct yielded to Etc.passwd and Etc.group will be different, though similar, to its Unix counterpart.</p>
+
+<p>In order to add users or groups, or do any sort of adminstration in general, use the Admin module.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/etc"
+ include Win32
+
+ # Add a user
+ Etc::Admin.add_user(
+   :user_name   =&gt; "some_user",
+   :password    =&gt; "abc123def",
+   :home_dir    =&gt; "C:\\foo_user",
+   :description =&gt; "random text",
+   :host	        =&gt; "\\some_machine",
+   :flags       =&gt; Etc::Admin::ACCOUNTDISABLE
+ )
+
+ # Add a group
+ Etc::Admin.add_group(
+   :group_name  =&gt; "foo",
+   :description =&gt; "Test Group",
+   :local?      =&gt; true,
+   :users       =&gt; %w/matz guido larry/
+ )</code></pre></figure>
+
+<p>With the Admin module you can also configure and delete existing users 
+and groups, as well as set passwords.</p>
+
+<h4 id="win32-file">WIN32-FILE</h4>
+
+<p>This package provides additional, win32-specific methods to Ruby’s 
+builtin File class, and replaces a couple of the existing methods.</p>
+
+<p>One of the features of files on Win32 systems is that they have 
+extended properties.  If you were to use your Explorer window,
+right click  on a file and select “properties”, you would see the 
+additional properties for that file.  You can get and set these 
+using Ruby by using the win32-file package.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/file"
+ # Find out information about 'foo.txt'
+ my_file = "C:\\Temp\\foo.txt"
+ File.compressed?(my_file) 	# true or false
+ File.read_only?(my_file)	# true or false
+
+ # Set some attributes for 'foo.txt'
+ File.open(my_file,"w+"){ |fh|
+   fh.compressed = true
+   fh.read_only = true
+ }</code></pre></figure>
+
+<p>In addition, you can get and set the security settings of files.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+Use File.get_permissions to retrieve a hash of key value pairs that
+describe the security settings.  However, the values are integer values.
+To turn those into human readable strings, we need to pass the flag to
+the File.securities method.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/file"
+
+ # Get the current security settings for 'foo.txt'
+ File.get_permissions("C:\\Temp\\foo.txt").each{ |acct,perms|
+   puts "Account: #{acct}:"
+   puts File.securities(perms).join("\n\t")
+ }</code></pre></figure>
+
+<p>It is also possible to set file permissions using the
+File.set_permissions method.</p>
+
+<p>Other capabilities of the win32-file package include encrypting 
+and decrypting files, native IO read and write methods, and many 
+more attribute related methods.</p>
+
+<p>On a final note, a few of the core File methods have been reimplemented 
+in the win32-file package, either because they weren’t implemented for 
+Win32 systems, or they didn’t work properly.  At the time of this writing 
+this included File.blockdev?, File.chardev? and File.size.<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+
+<h4 id="win32-sound">WIN32-SOUND</h4>
+
+<p>This package allows you to play sounds on Win32 systems, including .wav 
+files and system sounds.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/sound"
+ include Win32
+
+ # Play a .wav file
+ Sound.play("foo.wav")
+
+ # Play a system sound
+ Sound.play("SystemAsterisk",Sound::ALIAS)</code></pre></figure>
+
+<p>It is also possible to play a simple beep, retrieve information about 
+sound devices on your system, check the volume or stop any currently 
+playing sounds.</p>
+
+<h4 id="win32-shortcut">WIN32-SHORTCUT</h4>
+
+<p>This package allows you to create and configure shortcuts on Win32 
+systems.  Shortcuts are links (.lnk files) to other files or programs, 
+typically represented by an icon  on your Desktop or in an Explorer 
+window, with a little arrow in the lower left hand corner.<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/shortcut"
+ include Win32
+
+ s = Shortcut.new('c:\test.lnk')
+ s.description = "test link"
+ s.path = 'c:\winnt\notepad.exe'
+ s.show_cmd = Shortcut::SHOWNORMAL
+ s.working_directory = "C:\\"
+ s.save</code></pre></figure>
+
+<p>In the above example, we’ve created a shortcut called “test.lnk” 
+in the ‘C:' directory and gives it a description of “test link”.<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>
+The shortcut is a link to the Notepad executable.<br />
+The Shortcut#working_directory method tells it to consider ‘C:' 
+the starting directory for that executable when started.<br />
+The Shortcut#show_cmd method indicates how GUI applications should 
+start – normal, minimized or maximized.</p>
+
+<p>There are also methods for setting and retrieving information about 
+associated icons, arguments, hotkeys, and more.</p>
+
+<h4 id="win32-taskscheduler">WIN32-TASKSCHEDULER</h4>
+
+<p>This package allows you to manage and create scheduled tasks on a 
+local or remote system.  Scheduled tasks are similar to the Unix 
+‘cron’ utility, in that they allow you to execute programs at 
+specified intervals.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/taskscheduler"
+ include Win32
+
+ t = TaskScheduler.new
+
+ # Enumerate over all existing tasks
+ t.enum.each{ |task|
+   puts "Task name: #{task}"
+ }</code></pre></figure>
+
+<p>Note that creating a new TaskScheduler object doesn’t actually 
+create a new task.  It merely creates an object used to interface 
+with the TaskScheduler program.  If we want to create a task, 
+we need to add a work item and a trigger, then save it.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> trigger = {
+   "start_month"  =&gt; 4,
+   "start_day"    =&gt; 11,
+   "start_hour"   =&gt; 7,
+   "start_minute"	 =&gt; 14,
+   "trigger_type"	 =&gt; TaskScheduler::DAILY,
+   "type"         =&gt; { "days_interval" =&gt; 2 }
+ }</code></pre></figure>
+
+<p>A trigger is written as a hash.<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>
+The above trigger sets a task to start on April 11th
+(of the current year if not specified), starting at 7:14am 
+and will run daily, every other day.  With a trigger 
+prepared, a new work item can be created.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> t.new_work_item("foo",trigger)
+ t.application_name = "ruby foo.exe"
+ t.save</code></pre></figure>
+
+<p>This sample actually creates the work item in the Task Scheduler.<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup><br />
+Note that we have to specify the actual program to execute, as well 
+as save the work item.  The work item is notcreated until 
+TaskScheduler#save is called.  For convenience, the samples I have 
+shown you here could have been condensed:</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> t = TaskScheduler.new("foo",trigger)
+ t.save</code></pre></figure>
+
+<p>In addition to creating new work items, you can configure or 
+delete existing items, set priority, find out information regarding 
+the task such as the most recent run time, or terminate a task as 
+it runs.  You can even add multiple triggers to the same work item.</p>
+
+<h3 id="other-libraries">Other Libraries</h3>
+
+<p>There are also packages for enumerating, configuring and creating 
+Windows services (win32-service), reading from and writing to the 
+Event Log (win32-eventlog), native pipes (win32-pipe), a series of 
+packages related to interprocess communication and/or events 
+(win32-ipc, win32-event, win32-semaphore, win32-mutex), extended 
+process handling, including a version of fork for Win32 (win32-process), 
+a native memory mapped file interface (win32-mmap), a library for 
+watching directories or files for changes (win32-changenotify), an 
+library for interfacing with the MS Sound API that allows you to do 
+speech creation and recognition using Ruby (win32-sapi), and a version 
+of popen3 that works on Win32 as it does on Unix systems (win32-open3).</p>
+
+<p>There is also an experimental native thread library (win32-thread), 
+with an interface for the Windows fiber API<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>
+in the works.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>The goal of this article was to demonstrate that there are several 
+useful Ruby libraries for Win32 systems at your disposal that you 
+may not have known about previously.  With the help of these libraries 
+I hope you can now use Ruby in production code on Win32 systems.</p>
+
+<h2 id="short-biography">SHORT BIOGRAPHY</h2>
+
+<p>Daniel Berger has been a programmer since 1996, and a Ruby programmer since 2000.  He currently uses Ruby for everything from client-server applications to report generation, plus whatever other uses he can think of.  He is also the author of the upcoming Pragmatic Bookshelf title “Programming Ruby on Win32”, courtesy of the Pragmatic Programmers.</p>
+
+<hr />
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>This is only possible on NTFS filesystems.&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>I may alter this in a future release to simply return an array.&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>The core File.size method works fine so long as the file size is less than 2 GB.&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:4">
+      <p>Note that shortcuts on Win32 are not the same thing as symlinks.&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>You can see this if you right-click on the .lnk file and select “properties”.&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:6">
+      <p>See the docs for all possible valid keys.  Note that the “type” key takes a hash as its argument.&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:7">
+      <p>If you want visual evidence, you can select Start -&gt; Control Panel -&gt; Scheduled Tasks.&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:8">
+      <p>Fiber is a concept of Windows. It is a sort of thread created by <a href="http://msdn.microsoft.com/library/en-us/dllproc/base/createfiber.asp">CreateFiber()</a>.&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

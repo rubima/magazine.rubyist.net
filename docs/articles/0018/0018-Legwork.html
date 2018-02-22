@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rubyist のための他言語探訪 【第 11 回】 C++</title>
+  <meta name="description" content="著者：まつもとゆきひろ">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+
+  <link rel="canonical" href="http://magazine.rubyist.net/articles/0018/0018-Legwork.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/rubima_logo_l.png">
+                        <h1>Rubyist のための他言語探訪 【第 11 回】 C++</h1>
+                        <div class="social-buttons">
+                            <a href="http://b.hatena.ne.jp/entry//articles/0018/0018-Legwork.html" class="hatena-bookmark-button" data-hatena-bookmark-title="Rubyist のための他言語探訪 【第 11 回】 C++" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<span id="fb-root"></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-like" data-href="/articles/0018/0018-Legwork.html" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></span>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="/articles/0018/0018-Legwork.html" data-text="Rubyist のための他言語探訪 【第 11 回】 C++">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+                        </div>
+                        <p>著者：まつもとゆきひろ</p>
+
+<h2 id="c">C++</h2>
+
+<p>今回はオブジェクト指向言語としては古典の一つと言っても良い C++ について紹介しようと思います。
+とはいえ、この連載で今まで紹介してきた他の言語と違って C++ に関する紹介は世にあふれていますから、ここではあまり知られていない (かもしれない) C++ の歴史や思想などもからめて紹介します。</p>
+
+<h2 id="c-プラス">C プラス……</h2>
+
+<p>C++ は AT&amp;T (当時) の Bjarne Stroustrup によって開発された C with Classes の後継言語です。
+Bjarne は Cambridge 大学の学位論文を当初 Simula で快適に書いていたのですが、Simula のプログラムはデータ量が増加するにつれ処理時間が長くなりすぎてしまったので、実行性能の理由からプログラムを BCPL で書き直さざるを得ませんでした。
+BCPL は C の先祖にあたる言語で、データ型も整数しかないような低レベル言語です。
+そこで、Bjarne は Simula のオブジェクト指向プログラミング機能と、C の高速性を兼ね備えた言語として C++ を開発しました。</p>
+
+<p>C++ は C との互換性を重要視し、C ほとんどそのままにいくつかの機能を追加しました。</p>
+
+<dl>
+  <dt>クラスと継承</dt>
+  <dd>構造体 (struct) にクラス (class) という別名を与えました。また、class は継承ができるようにしました。出自からして Simula の直接の影響を受けている C++ では継承関係にあるクラスをベースクラス (base class) と導出クラス (derived class) と呼びます。ただし、本連載では Ruby との比較のため、Ruby の流儀にならいスーパークラスとサブクラスと呼ぶことにします。</dd>
+  <dt>new 演算子</dt>
+  <dd>クラスのインスタンスは new 演算子によって生成することができます。C++ にはガーベージコレクタが提供されませんから、インスタンスは明示的に開放する必要があります。それには delete 演算子を使います。</dd>
+  <dt>可視性</dt>
+  <dd>クラス (と構造体) のメンバにどこから見えるかどうかを指定できるようにしました。可視性にはどこからでも見える public、自分自身とサブクラスから見える protected、自クラスからしか見えない private の 3 種類があります。</dd>
+  <dt>メンバ関数</dt>
+  <dd>C++ ではクラスメンバとして関数を定義することができ、それはいわゆるメソッドとして動作します。効率を重視する C++ ではメンバ関数はデフォルトでは動的結合しません。virtual 宣言を行ったメンバ関数だけが、レシーバ (これも Ruby 用語です。C++ ではメッセージセンドというモデルを採用していませんので、厳密にはレシーバは存在しません) の動的な型に応じてメンバ関数の選択が行われます。</dd>
+  <dt>関数オーバーロード</dt>
+  <dd>C++ では引数の数や型に応じて同名の関数を複数定義することができます。これを関数オーバーロードと呼びます。</dd>
+  <dt>演算子オーバーロード</dt>
+  <dd>C++ では演算子も再定義できます。複素数型の乗算を「*」演算子で行うなど、データ型の自然な拡張が可能です。</dd>
+</dl>
+
+<p>C のいいところも悪いところもそのまま取り込んで、オブジェクト指向という新しいスタイルを提供しようと言う言語が C++ です。</p>
+
+<h2 id="静的型オブジェクト指向言語の必須機能">静的型オブジェクト指向言語の必須機能</h2>
+
+<p>個人的なことで、あまり知られていないのですが、私は Ruby の開発を始めるずっと前、学生時代にはむしろ静的型のオブジェクト指向言語の擁護者でした。
+私の好みだったのは C++ ではなく、Eiffel だったのですが。
+当時はオブジェクト指向言語と言えば Smalltalk (や CLOS) に代表される動的型の言語が主流で (もっともオブジェクト指向と言う考え方そのものがまだマイナーだったのですが)、それに対抗して新しい考え方を応援するつもりだったのです。
+Eiffel の設計者である Bertand Meyer の著書『<a href="https://www.amazon.co.jp/Object-Oriented-Software-Construction-Prentice-Hall-International/dp/0136291554?SubscriptionId=1PE38HKS6CPYCN0NM382&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0136291554">‘Object-Oriented Software Construction’</a>』を読んで強い影響を受けただけだという説もありますが。
+いずれにしても動的言語の権化のような Ruby の設計者にもそんな過去があったということで。</p>
+
+<p>そんな私が静的型のオブジェクト指向言語について考察を行った結果、「まともな」静的型オブジェクト指向言語には以下の二つの機能が必要であると言う結論に達しました。</p>
+
+<ul>
+  <li>多重継承 (multiple inheritance)</li>
+  <li>総称型 (generics)</li>
+</ul>
+
+<p>静的型言語は型が適合しなければポリモルフィズムを発揮できませんから、ある機能を呼び出すためにはかならず共通のスーパークラスを持つ必要があります。
+しかし、そのような共通のスーパークラスがひとつに決まるとは限りませんから、静的型言語において継承の重要な役割である機能共有を制限無く実践するためにはなんらかの多重継承が必要です。
+これは DuckTyping が可能な動的言語にはない制約です。</p>
+
+<p>また、コンテナクラスのような「他のクラスを格納するクラス」によって、せっかくの静的型チェックが疎外されないためには、総称型、つまり「型をパラメタに取る型」が必要です。
+これはつい最近まで総称型を持たなかった Java がコンテナクラスからオブジェクトを取り出すたびに Object の参照になってしまうため、キャストによって動的にチェックしなければならなかったことを考えるとわかりやすいでしょう。</p>
+
+<p>当初の C++ にはこの二つが両方とも欠けていましたから、1980 年代後半当時、オブジェクト指向好きの間では、C++ の評価は「性能は出るし、実用的かもしれないけど、オブジェクト指向言語としては二級品」というものだったように思います。</p>
+
+<p>しかし、そのような評価をそのままにしておかないのが C++ の良いところ (恐ろしいところ) です。
+バージョンを重ねるにつれ、C++ は上記の多重継承も、総称型も両方とも提供するようになりました。
+しかも、大方の予想を越えるレベルで。</p>
+
+<h2 id="c-の多重継承">C++ の多重継承</h2>
+
+<p>C++ の多重継承はデフォルトではスーパークラスを重複して持ちます。
+A というクラスがあり、B クラスと C クラスがそれぞれ A クラスを継承していた時、B と C を両方継承した D クラスの構造体としてのメンバレイアウトは</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>A に属するメンバ (B から見える)</td>
+    </tr>
+    <tr>
+      <td>B に属するメンバ</td>
+    </tr>
+    <tr>
+      <td>A に属するメンバ (C から見える)</td>
+    </tr>
+    <tr>
+      <td>C に属するメンバ</td>
+    </tr>
+    <tr>
+      <td>D に属するメンバ</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>になります。</p>
+
+<p>CLOS 流の多重継承に慣れた身からは、A に属するメンバが重複するなんて「なんととんでもない」と感じますが、実用性と実行性能という観点からは納得できます。
+D クラスのオブジェクトを B クラスのオブジェクトとして扱う時には単純継承同様そのままポインタを渡せば良いわけですし、C クラスのオブジェクトとして扱う時には単純にオフセットを加えるだけですみます。</p>
+
+<p>CLOS 流の同一のスーパークラスは共有される継承が行いたければ、継承時に明示的に virtual を指定します。
+実行速度が低下する選択肢に対して明示的に virtual 指定が必要なところはメンバ関数の virtual 指定と似ています。
+C++ が一貫した設計原理に則っていることをうかがわせます。</p>
+
+<h2 id="総称的プログラミング">総称的プログラミング</h2>
+
+<p>もうひとつの総称的プログラミングはテンプレートによって実現されました。
+テンプレートは Eiffel などに見られる総称型と C がもともと持っていたマクロの中間のような不思議な存在です。
+当初多くの人が「とりあえず総称型は実現できるが、なんだか不格好な機能」と感じたはずです。</p>
+
+<p>しかし、C++ のテンプレートは、ここからほとんどの人が想像もしなかった方向に発展していったのです。</p>
+
+<p>まず、テンプレートの基本から見てみましょう。大変ベタな例ですが、テンプレートを使ってスタッククラスを定義するとしましょう。
+そのクラス宣言は以下のようなものになるに違いありません。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">template &lt;class T&gt;
+class Stack {
+  T* s;
+  int size;
+public:
+  void stack(void);
+  void push(T);
+  T pop(void);
+};</code></pre></figure>
+
+<p>これにより T として任意の型 (クラスに限らない) を格納できるスタックが出来上がります。
+使い方は</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">Stack&lt;int&gt;* stack = new Stack&lt;int&gt;;
+
+stack-&gt;push(5);
+int v = stack-&gt;pop();</code></pre></figure>
+
+<p>のようになります。
+総称型としてはごく普通の使い方だと思います。</p>
+
+<p>しかし、テンプレートをうまく使うと動的言語における DuckTyping と同様のことを行うことができます。
+次の Ruby プログラムは DuckTyping の例としてよく用いられるものです。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">def log_puts(out, message)
+  out.write(message)
+  out.write("\n")
+end</code></pre></figure>
+
+<p>log_puts は出力先として out オブジェクトが文字列一つを引数に取る write メソッドを持つことしか要求しません。
+ですから、出力先が実際のファイルであるか、あるいは StringIO であるか、はたまた
+ユーザ定義の「なにか」であるかを問いません。
+静的言語では静的な型チェックが行われるため、out がある特定の型に属している必
+要があり、そのためあらかじめ共通のクラス (または Java であればインタフェース) を継承するように設計する必要があります。</p>
+
+<p>と、言われていたのですが、C++ では log_puts 関数はテンプレートを使って以下のように書くことができます。</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">template&lt;class OUT, class MESG&gt;
+log_puts(OUT out, MESG message) {
+   //...実装は省略...
+}</code></pre></figure>
+
+<p>こうすれば、out に任意の型を取る log_puts 関数が実現できます。
+さらに、out に指定する型が必要とする操作を定義していなければ、コンパイル時にエラーになります。</p>
+
+<p>総称型プログラミングは大変さまざまな可能性が開けています。最近の C++ 標準規格には、オブジェクト指向よりもむしろ総称型指向のライブラリ STL (Standard Template Library) が含まれていますし、さらに挑戦的な Boost C++ Library では、lambda などの関数型プログラミングを含めた今まで見たこともない世界が展開されています。</p>
+
+<h2 id="c-の設計思想">C++ の設計思想</h2>
+
+<p>Bjarne Stroustrup 自身による『<a href="https://www.amazon.co.jp/Design-Evolution-C-Bjarne-Stroustrup/dp/0201543303?SubscriptionId=1ZYN93KGC2KDTSNXKHG2&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0201543303">‘The Design and Evolution of C++’</a>』では、C++ の設計目標と設計原則として以下のようなものがあげられています。</p>
+
+<h3 id="設計目標">設計目標</h3>
+
+<ul>
+  <li>C++ は本格的なプログラマにとってプログラミングをもっと楽しいものにする</li>
+  <li>C++ は次の資質を持った汎用プログラミング言語である:
+    <ul>
+      <li>ベター C</li>
+      <li>データ抽象型をサポートする</li>
+      <li>オブジェクト指向プログラミングをサポートする</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="設計原則-抜粋">設計原則 (抜粋)</h3>
+
+<ul>
+  <li>C++ の進化は現実の問題をその動因とする</li>
+  <li>完全主義にはこだわらない</li>
+  <li>C++ は今現在役に立つ言語でなければならない</li>
+  <li>人に何かを強制しない</li>
+  <li>静的タイプシステムに対する暗黙の違反が無い</li>
+  <li>同じ機能なら人に教えやすい方を選ぶ</li>
+  <li>C のプリプロセッサは使わないように</li>
+  <li>C との正当でない非互換性が無い</li>
+  <li>C++ 以外に他の低レベル言語を必要としない (アセンブラは除く)</li>
+  <li>使わない機能はコストを発生させない</li>
+</ul>
+
+<p>すばらしい設計原則です。
+この本全体を通じて、Bjarne の正直で誠実で一貫性のある態度は尊敬に値します。
+また、彼は C++ の長年の開発過程にあったことをきちんと記憶 (記録) して、紹介しています。
+このような態度は見習いたいものです。
+私が将来『Ruby の設計と進化』というタイトルの本を書くことがあったとしても、これだけの情報を集めて整理することなどできそうにありません。
+私はとてつもなく忘れっぽいのです (えへん)。</p>
+
+<h2 id="c-はなぜ嫌われるか">C++ はなぜ嫌われるか</h2>
+
+<p>このように、一貫性のある設計原則と長年の経験に裏打ちされた C++ はすばらしい言語のように思えます。
+実際、私でさえ『<a href="https://www.amazon.co.jp/C-%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E9%80%B2%E5%8C%96-Bjarne-Stroustrup/dp/4797328541?SubscriptionId=1ZYN93KGC2KDTSNXKHG2&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4797328541">‘C++ の設計と進化’</a>』を読み返した直後には、(過去の悲惨な経験を忘れて)「もう一度 C++ を使ってみようかな」という気になりましたから。一瞬ですけど。</p>
+
+<p>しかし、一方で C++ はかなり嫌われている言語でもあります。
+これだけ熱心に設計されているのに嫌われてしまうのはいったいどうしたことでしょう。
+まあ、広く使われている言語は、どうしても悪く言われるものではありますが、C++ の不人気さは相当です。</p>
+
+<p><a href="http://www.aoky.net/articles/steve_yegge/tour_de_babel.htm">バベル案内</a>より引用。</p>
+
+<blockquote>
+  <p>C++</p>
+
+  <p>C++はバカであり、バカな言語で賢いシステムを書くことはできない。言語は世界を形作る。バカな言語はバカな世界を作る。</p>
+
+  <p>…</p>
+
+  <p>こんなことを言うのが異端であるのはわかっている。
+固有名詞の異端だ。
+私だって大学生のときは C++ が好きだったのだが、それは私がそれしか知らなかったからだ。</p>
+</blockquote>
+
+<p>えらい言われようです。</p>
+
+<p>これはおそらくは C++ が低レベルを切り捨てることができなかったからではないでしょうか。
+C++ は C の代替物として誕生した故に組み込みプログラミングのような低レベル層でも使えるよう、実行性能を犠牲にするような機能 (たとえばデフォルトでポリモルフィズム
+を適用するとか、ガーベージコレクションの採用とか) を導入することができませんでした。
+しかし、その抽象化機能により、もともと C++ が対象するよりももっと高レベルな領域でも使われています。
+「C++ は速い」という事実は、他の言語を押しのけて C++ を採用する大きな動機となります。
+その事実はプログラマの負担によって実現されているという別の事実の方はめったに目を向けられることがありません。</p>
+
+<p>かくして、マネージャは (性能のゆえに) C++ を選択し、プログラマは性能を実現するために (生産性を犠牲にして) 日々 C++ と格闘するのです。
+そのギャップこそが C++ の不人気の理由ではないでしょうか。
+しかし、高レベル層をより (遅いかもしれない) 高級な言語 (たとえば Ruby とか ;-) でカバーし、低レベル領域だけを C++ をカバーするとなると、今度は C との差別化がほとんど行えなくなってしまうという皮肉な事態が待っています。</p>
+
+<p>適材適所と言う言葉がありますが、C++ は適材適所の選び方が難しい言語でもあります。</p>
+
+<p>しかし、希望もあります。
+現時点では C++ はもっとも進歩した総称型プログラミング言語です。
+たとえば、Boost C++ ライブラリは古典的な C++ 観からは想像もできないような総称型プログラミングの世界を見せてくれています。</p>
+
+<p>オブジェクト指向機能もある総称型プログラミング言語。
+これがこれからの C++ の立ち位置になるのかもしれません。</p>
+
+<h2 id="c-の情報">C++ の情報</h2>
+
+<p>C++ の情報は世の中にあふれていますが、その中でも未来を感じさせてくれる以下のものを紹介します。<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/5172AXJF7TL._SL160_.jpg" /><img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41DMWJQbRmL._SL160_.jpg" /></p>
+
+<dl>
+  <dt>『<a href="https://www.amazon.co.jp/C-%E3%81%AE%E8%A8%AD%E8%A8%88%E3%81%A8%E9%80%B2%E5%8C%96-Bjarne-Stroustrup/dp/4797328541?SubscriptionId=1ZYN93KGC2KDTSNXKHG2&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4797328541">‘C++ の設計と進化’</a>』 Bjarne Stroustrup (原題『<a href="https://www.amazon.co.jp/Design-Evolution-C-Bjarne-Stroustrup/dp/0201543303?SubscriptionId=1ZYN93KGC2KDTSNXKHG2&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0201543303">‘The Design and Evolution of C++’</a>』)</dt>
+  <dd>C++ の各機能について「なぜそのようにしたか」、「どう変化してきたか」という他では手に入らない情報が満載です。言語設計者による文章の模範といってもよいと思います。</dd>
+  <dt><a href="http://www.boost.org/">Boost C++ ライブラリ</a></dt>
+  <dd>C++ の新しい世界を開く (かもしれない) ライブラリです。本文中で紹介した関数型プログラミングだけではなく、日付操作、スレッド機能など、ごく普通 (で、すごく便利) な機能も満載です。</dd>
+</dl>
+
+<h2 id="著者について">著者について</h2>
+
+<p><img src="/images/0018-Legwork/matz.jpg" alt="matz.jpg" />まつもとゆきひろは自他ともに認める日本を代表する言語オタクです。
+言語好きが昂じて自分の言語を設計してしまった大馬鹿者です。
+が、オタクとかハッカーとか呼ばれる人種はみんな多かれ少なかれそんなものじゃないでしょうか。</p>
+
+<h2 id="バックナンバー">バックナンバー</h2>
+
+<ul>
+  <li>
+    <p><a href="/articles/0022/0022-Legwork.html">Rubyist のための他言語探訪 【第 14 回】 Whitespace</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0021/0021-Legwork.html">Rubyist のための他言語探訪 【第 13 回】 Prolog</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0019/0019-Legwork.html">Rubyist のための他言語探訪 【第 12 回】 APL と J</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0018/0018-Legwork.html">Rubyist のための他言語探訪 【第 11 回】 C++</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0017/0017-Legwork.html">Rubyist のための他言語探訪 【第 10 回】 Erlang</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0016/0016-Legwork.html">Rubyist のための他言語探訪 【第 9 回】 日本語プログラミング言語「なでしこ」</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0015/0015-Legwork.html">Rubyist のための他言語探訪 【第 8 回】 Forth</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0014/0014-Legwork.html">Rubyist のための他言語探訪 【第 7 回】 Icon</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0013/0013-Legwork.html">Rubyist のための他言語探訪 【第 6 回】 Dylan</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0012/0012-Legwork.html">Rubyist のための他言語探訪 【第 5 回】 Groovy</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0011/0011-Legwork.html">Rubyist のための他言語探訪 【第 4 回】 Tcl</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0010/0010-Legwork.html">Rubyist のための他言語探訪 【第 3 回】 Io</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0009/0009-Legwork.html">Rubyist のための他言語探訪 【第 2 回】 CLU</a></p>
+  </li>
+  <li>
+    <p><a href="/articles/0008/0008-Legwork.html">Rubyist のための他言語探訪 【第 1 回】 Python</a></p>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
