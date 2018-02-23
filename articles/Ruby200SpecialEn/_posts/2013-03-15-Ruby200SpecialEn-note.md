@@ -4,6 +4,7 @@ title: Ruby 2.0.0： Note
 short_title: Ruby 2.0.0： Note
 tags: Ruby200SpecialEn note
 ---
+{% include base.html %}
 
 
 * Table of content

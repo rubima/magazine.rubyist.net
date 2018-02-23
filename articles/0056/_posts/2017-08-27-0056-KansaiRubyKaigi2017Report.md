@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (63) 関西 Ruby 会議 2017
 short_title: RegionalRubyKaigi レポート (63) 関西 Ruby 会議 2017
 tags: 0056 KansaiRubyKaigi2017Report
 ---
+{% include base.html %}
 
 
 ## 関西Ruby会議2017

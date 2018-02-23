@@ -4,6 +4,7 @@ title: なるほど Erlang プロセス
 short_title: なるほど Erlang プロセス
 tags: 0056 naruhodo_erlang_process
 ---
+{% include base.html %}
 
 
 ## なるほど Erlang プロセス

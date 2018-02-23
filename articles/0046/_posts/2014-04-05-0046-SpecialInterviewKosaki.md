@@ -4,6 +4,7 @@ title: Rubyist インタビュー特別編 小崎資広さん 前編
 short_title: Rubyist インタビュー特別編 小崎資広さん 前編
 tags: 0046 SpecialInterviewKosaki
 ---
+{% include base.html %}
 
 
 ## はじめに

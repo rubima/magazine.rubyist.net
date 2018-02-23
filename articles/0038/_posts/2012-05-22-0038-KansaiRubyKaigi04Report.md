@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (28) 関西 Ruby 会議 04
 short_title: RegionalRubyKaigi レポート (28) 関西 Ruby 会議 04
 tags: 0038 KansaiRubyKaigi04Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigiレポート関西 Ruby 会議 04

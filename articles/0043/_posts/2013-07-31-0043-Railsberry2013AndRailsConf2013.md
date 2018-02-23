@@ -4,6 +4,7 @@ title: Railsberry 2013 And RailsConf 2013
 short_title: Railsberry 2013 And RailsConf 2013
 tags: 0043 Railsberry2013AndRailsConf2013
 ---
+{% include base.html %}
 
 
 ## Railsberry &amp; Railsconf  2013

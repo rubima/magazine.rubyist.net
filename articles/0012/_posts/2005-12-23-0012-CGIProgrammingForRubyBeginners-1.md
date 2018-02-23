@@ -4,6 +4,7 @@ title: Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 1
 short_title: Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 1
 tags: 0012 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
 [目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})

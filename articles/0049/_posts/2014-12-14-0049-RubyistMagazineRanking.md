@@ -4,6 +4,7 @@ title: 0049 号 アクセスランキング
 short_title: 0049 号 アクセスランキング
 tags: 0049 RubyistMagazineRanking
 ---
+{% include base.html %}
 
 
 書いた人: takkanm

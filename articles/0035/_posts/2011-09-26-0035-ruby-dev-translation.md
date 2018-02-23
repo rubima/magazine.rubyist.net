@@ -4,6 +4,7 @@ title: ruby-dev translationのご紹介
 short_title: ruby-dev translationのご紹介
 tags: 0035 ruby
 ---
+{% include base.html %}
 
 
 書いた人：yhara (ネットワーク応用通信研究所)

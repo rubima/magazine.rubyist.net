@@ -4,6 +4,7 @@ title: C# と Ruby を連携させる
 short_title: C# と Ruby を連携させる
 tags: 0021 RubyWithCSharp
 ---
+{% include base.html %}
 
 
 書いた人：星一

@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報
 short_title: 標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報
 tags: 0010 BundledLibraries
 ---
+{% include base.html %}
 
 
 * Table of content

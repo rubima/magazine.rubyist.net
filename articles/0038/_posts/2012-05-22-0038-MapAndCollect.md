@@ -4,6 +4,7 @@ title: map と collect、reduce と inject ―― 名前の違いに見る発想
 short_title: map と collect、reduce と inject ―― 名前の違いに見る発想の違い
 tags: 0038 MapAndCollect
 ---
+{% include base.html %}
 
 
 * Table of content

@@ -4,6 +4,7 @@ title: 解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込�
 short_title: 解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み
 tags: 0011 RubyRefactoringBrowser
 ---
+{% include base.html %}
 
 
 * Table of content

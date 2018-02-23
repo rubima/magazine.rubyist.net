@@ -4,6 +4,7 @@ title: Rubyist Magazine 八周年
 short_title: Rubyist Magazine 八周年
 tags: 0039 EditorComment
 ---
+{% include base.html %}
 
 
 著者：郡司啓

@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv
 short_title: 標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv
 tags: 0009 BundledLibraries
 ---
+{% include base.html %}
 
 
 * Table of content

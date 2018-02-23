@@ -4,6 +4,7 @@ title: 書籍紹介『たのしい Ruby 第 2 版』
 short_title: 書籍紹介『たのしい Ruby 第 2 版』
 tags: 0016 Book
 ---
+{% include base.html %}
 
 
 編集：ささだ

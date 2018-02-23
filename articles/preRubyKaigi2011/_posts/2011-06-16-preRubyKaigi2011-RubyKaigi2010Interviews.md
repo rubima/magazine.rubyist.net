@@ -4,6 +4,7 @@ title: ! はじめに
 short_title: ! はじめに
 tags: preRubyKaigi2011 RubyKaigi2010Interviews
 ---
+{% include base.html %}
 
 
 RubyKaigi2010 では gihyo.jp での [RubyKaigi2010 のレポート](http://gihyo.jp/news/report/01/rubykaigi2010)が日々更新されていましたが、実はそこには掲載されていない、開催終了後のインタビューがありました。KaigiFreaks レポート班と gihyo.jp 編集部が RubyKaigi2010 の運営委員長 (角谷さん) と運営委員長補佐 (島田さん) へインタビューした内容をるびまへ掲載します。お楽しみください。

@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 6 回】 委譲
 short_title: 標準添付ライブラリ紹介 【第 6 回】 委譲
 tags: 0012 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山

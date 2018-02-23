@@ -4,6 +4,7 @@ title: 0020-RubyEventCheck
 short_title: 0020-RubyEventCheck
 tags: 0020 RubyEventCheck
 ---
+{% include base.html %}
 
 
 編集：しまだ

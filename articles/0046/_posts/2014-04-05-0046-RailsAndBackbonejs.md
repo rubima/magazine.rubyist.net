@@ -4,6 +4,7 @@ title: Backbone.js on Rails 始めの一歩
 short_title: Backbone.js on Rails 始めの一歩
 tags: 0046 RailsAndBackbonejs
 ---
+{% include base.html %}
 
 
 * Table of content

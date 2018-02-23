@@ -4,6 +4,7 @@ title: Axlsx でテスト支援
 short_title: Axlsx でテスト支援
 tags: 0039 TestingWithAxlsx
 ---
+{% include base.html %}
 
 
 * Table of content

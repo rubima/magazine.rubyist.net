@@ -4,6 +4,7 @@ title: Ruby 2.0.0 Release special articles
 short_title: 2.0.0 Special (EN)
 tags: Ruby200SpecialEn index
 ---
+{% include base.html %}
 
 
 * Table of content

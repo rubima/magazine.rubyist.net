@@ -4,6 +4,7 @@ title: よちよち.rb みんなで LT デビューしよう会 イベントレ�
 short_title: よちよち.rb みんなで LT デビューしよう会 イベントレポート
 tags: 0050 YochiyochiRbLtEventReport
 ---
+{% include base.html %}
 
 
 * Table of content

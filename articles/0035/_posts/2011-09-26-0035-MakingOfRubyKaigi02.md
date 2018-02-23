@@ -4,6 +4,7 @@ title: Making of RubyKaigi - Making of KaigiFreaks ネットワーク班
 short_title: Making of RubyKaigi - Making of KaigiFreaks ネットワーク班
 tags: 0035 MakingOfRubyKaigi02
 ---
+{% include base.html %}
 
 
 ## はじめに

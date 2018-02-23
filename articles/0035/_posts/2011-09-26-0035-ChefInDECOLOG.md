@@ -4,6 +4,7 @@ title: Chef でサーバ管理を楽チンにしよう！ (第 1 回)
 short_title: Chef でサーバ管理を楽チンにしよう！ (第 1 回)
 tags: 0035 ChefInDECOLOG
 ---
+{% include base.html %}
 
 
 * Table of content

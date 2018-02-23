@@ -4,6 +4,7 @@ title: クックパッドを Ruby 2.0.0 に対応させた話
 short_title: クックパッドを Ruby 2.0.0 に対応させた話
 tags: 0042 MigratingARailsApplicationToRuby200
 ---
+{% include base.html %}
 
 
 書いた人：村田賢太 ([@mrkn](http://twitter.com/mrkn))

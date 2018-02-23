@@ -4,6 +4,7 @@ title: Monban どうでしょう
 short_title: Monban どうでしょう
 tags: 0051 IntroduceMonban
 ---
+{% include base.html %}
 
 
 * Table of content

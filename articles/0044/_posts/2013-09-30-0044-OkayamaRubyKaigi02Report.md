@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (40) 岡山 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (40) 岡山 Ruby 会議 02
 tags: 0044 OkayamaRubyKaigi02Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート岡山 Ruby 会議 02

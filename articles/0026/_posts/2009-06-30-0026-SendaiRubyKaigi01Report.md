@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (05) 仙台 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (05) 仙台 Ruby 会議 01
 tags: 0026 SendaiRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (05) 仙台 Ruby 会議 01

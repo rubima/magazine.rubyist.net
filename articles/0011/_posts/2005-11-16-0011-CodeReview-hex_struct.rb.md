@@ -4,6 +4,7 @@ title: 0011-CodeReview-hex_struct.rb
 short_title: 0011-CodeReview-hex_struct.rb
 tags: 0011 CodeReview
 ---
+{% include base.html %}
 
 
 [あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb]({% post_url articles/0011/2005-11-16-0011-CodeReview %}) で解説した、添削前のソースコードです。

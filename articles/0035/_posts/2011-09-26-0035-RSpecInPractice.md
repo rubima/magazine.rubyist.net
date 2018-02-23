@@ -4,6 +4,7 @@ title: 改めて学ぶ RSpec
 short_title: 改めて学ぶ RSpec
 tags: 0035 RSpecInPractice
 ---
+{% include base.html %}
 
 
 * Table of content

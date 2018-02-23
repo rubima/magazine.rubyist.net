@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (特別編) RegionalRubyKaigiKaigi
 short_title: RegionalRubyKaigi レポート (特別編) RegionalRubyKaigiKaigi
 tags: 0027 RegionalRubyKaigiKaigiReport
 ---
+{% include base.html %}
 
 
 書いた人: tanabe sunao、Rust/OGAWA(conceal_rs)、榊祐介

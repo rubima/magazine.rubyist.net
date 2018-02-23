@@ -4,6 +4,7 @@ title: Ruby ビギナーのための CGI 入門 【第 3 回】 エラーの修�
 short_title: Ruby ビギナーのための CGI 入門 【第 3 回】 エラーの修正
 tags: 0014 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
 書いた人: speakillof at yahoo dot co dot jp

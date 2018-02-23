@@ -4,6 +4,7 @@ title: ライブラリー開発者になろう
 short_title: ライブラリー開発者になろう
 tags: 0043 BeALibraryDeveloper
 ---
+{% include base.html %}
 
 
 * Table of content

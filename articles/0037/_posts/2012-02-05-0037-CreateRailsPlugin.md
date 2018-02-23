@@ -4,6 +4,7 @@ title: Jeweler で作る Rails 用 RubyGems パッケージとそのテストに
 short_title: Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて
 tags: 0037 CreateRailsPlugin
 ---
+{% include base.html %}
 
 
 * Table of content

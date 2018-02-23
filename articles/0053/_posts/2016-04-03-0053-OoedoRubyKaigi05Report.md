@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (57) 大江戸 Ruby 会議 05
 short_title: RegionalRubyKaigi レポート (57) 大江戸 Ruby 会議 05
 tags: 0053 OoedoRubyKaigi05Report
 ---
+{% include base.html %}
 
 
 ## 大江戸 Ruby 会議 05

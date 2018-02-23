@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (13) 札幌 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (13) 札幌 Ruby 会議 02
 tags: 0030 SapporoRubyKaigi02Report
 ---
+{% include base.html %}
 
 
 ## はじめに

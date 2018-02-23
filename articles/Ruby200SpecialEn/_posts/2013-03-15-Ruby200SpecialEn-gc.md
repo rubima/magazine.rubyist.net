@@ -4,6 +4,7 @@ title: Ruby 2.0.0： GC improvements
 short_title: Ruby 2.0.0： GC improvements
 tags: Ruby200SpecialEn gc
 ---
+{% include base.html %}
 
 
 Author: nari ([@nari3](https://twitter.com/nari3)) 

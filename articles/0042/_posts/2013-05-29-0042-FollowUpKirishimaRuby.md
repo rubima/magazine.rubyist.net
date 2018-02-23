@@ -4,6 +4,7 @@ title: 桐島、Rubyやめるってよ
 short_title: 桐島、Rubyやめるってよ
 tags: 0042 FollowUpKirishimaRuby
 ---
+{% include base.html %}
 
 
 書いた人：nari ([@nari3](http://twitter.com/nari3))

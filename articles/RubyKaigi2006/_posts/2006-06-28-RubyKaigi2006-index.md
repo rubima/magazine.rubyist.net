@@ -4,6 +4,7 @@ title: 日本 Ruby カンファレンス 2006 特別号
 short_title: 日本 Ruby カンファレンス 2006 特別号
 tags: rubykaigi2006 index
 ---
+{% include base.html %}
 
 ![boom1-2-3.png]({{site.baseurl}}/images/rubykaigi2006/boom1-2-3.png)
 

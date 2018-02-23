@@ -4,6 +4,7 @@ title: 0050-EffectiveRuby_ja]
 short_title: 0050-EffectiveRuby_ja]
 tags: 0050 EffectiveRuby_ja]
 ---
+{% include base.html %}
 
 
 書いた人：takkanm

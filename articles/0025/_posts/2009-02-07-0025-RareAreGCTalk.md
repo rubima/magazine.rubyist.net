@@ -4,6 +4,7 @@ title: レアでアレなGCの話
 short_title: レアでアレなGCの話
 tags: 0025 RareAreGCTalk
 ---
+{% include base.html %}
 
 
 書いた人: nari

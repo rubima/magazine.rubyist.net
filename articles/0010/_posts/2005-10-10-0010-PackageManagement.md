@@ -4,6 +4,7 @@ title: シリーズ パッケージマネジメント 【第 2 回】 RubyGems (
 short_title: シリーズ パッケージマネジメント 【第 2 回】 RubyGems (2)
 tags: 0010 PackageManagement
 ---
+{% include base.html %}
 
 
 ## はじめに

@@ -4,6 +4,7 @@ title: 8-bit風ゲームをつくるフレームワークburnの紹介
 short_title: 8-bit風ゲームをつくるフレームワークburnの紹介
 tags: 0047 IntroductionToBurn
 ---
+{% include base.html %}
 
 
 * Table of content

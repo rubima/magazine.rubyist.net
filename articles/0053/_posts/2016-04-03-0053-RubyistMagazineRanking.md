@@ -4,6 +4,7 @@ title: 0053 号 アクセスランキング
 short_title: 0053 号 アクセスランキング
 tags: 0053 RubyistMagazineRanking
 ---
+{% include base.html %}
 
 
 書いた人: kurotaky

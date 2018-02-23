@@ -4,6 +4,7 @@ title: Chad Fowler on Ruby
 short_title: Chad Fowler on Ruby
 tags: 0033 ChadFowlerOnRuby
 ---
+{% include base.html %}
 
 
 本記事は [PragPub Issue 18, December 2010](http://pragprog.com/magazines) に掲載された Michael Swaine によるインタビュー記事 ["Chad Fowler on Ruby"](http://www.pragprog.com/magazines/2010-12/chad-fowler-on-ruby) を原著者の許可を得て翻訳・公開するものです。

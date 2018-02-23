@@ -4,6 +4,7 @@ title: プレゼント当選者からのフィードバック
 short_title: プレゼント当選者からのフィードバック
 tags: 0052 present
 ---
+{% include base.html %}
 
 
 ## はじめに

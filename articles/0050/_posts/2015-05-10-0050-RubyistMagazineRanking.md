@@ -4,6 +4,7 @@ title: 0050 号 アクセスランキング
 short_title: 0050 号 アクセスランキング
 tags: 0050 RubyistMagazineRanking
 ---
+{% include base.html %}
 
 
 書いた人: 郡司

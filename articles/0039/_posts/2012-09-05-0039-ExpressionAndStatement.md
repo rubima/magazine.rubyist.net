@@ -4,6 +4,7 @@ title: 式と文、評価と実行、そして副作用 ―― プログラム�
 short_title: 式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか【前編】
 tags: 0039 ExpressionAndStatement
 ---
+{% include base.html %}
 
 
 * Table of content

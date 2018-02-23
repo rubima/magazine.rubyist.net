@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (41) 関西 Ruby 会議 05
 short_title: RegionalRubyKaigi レポート (41) 関西 Ruby 会議 05
 tags: 0045 KansaiRubyKaigi05Report
 ---
+{% include base.html %}
 
 
 書いた人：無量井 ([@muryoimpl](https://twitter.com/muryoimpl))

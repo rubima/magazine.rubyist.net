@@ -4,6 +4,7 @@ title: CRuby Committers Who's Who in 2013
 short_title: CRuby Committers Who's Who in 2013
 tags: 0044 CRubyCommittersWhosWho2013
 ---
+{% include base.html %}
 
 
 ## CRuby Committers Who's Who

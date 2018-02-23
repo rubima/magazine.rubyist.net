@@ -4,6 +4,7 @@ title: Linux 体験講座潜入記
 short_title: Linux 体験講座潜入記
 tags: 0001 RubyCourseReport
 ---
+{% include base.html %}
 
 
 ## Linux 体験講座潜入記

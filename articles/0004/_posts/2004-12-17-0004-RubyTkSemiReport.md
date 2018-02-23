@@ -4,6 +4,7 @@ title: Ruby/Tk 講習会レポート
 short_title: Ruby/Tk 講習会レポート
 tags: 0004 RubyTkSemiReport
 ---
+{% include base.html %}
 
 
 書いた人：講習会参加者

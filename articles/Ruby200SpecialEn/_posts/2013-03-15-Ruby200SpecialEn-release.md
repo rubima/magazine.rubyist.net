@@ -4,6 +4,7 @@ title: Ruby 2.0.0： Release Progress
 short_title: Ruby 2.0.0： Release Progress
 tags: Ruby200SpecialEn release
 ---
+{% include base.html %}
 
 
 Author: Yusuke Endoh ([@mametter](https://twitter.com/mametter)), Translator: Shota Fukumori ([sorah.jp](http://sorah.jp/))

@@ -4,6 +4,7 @@ title: OSSC2004　Ruby BoF レポート
 short_title: OSSC2004　Ruby BoF レポート
 tags: 0002 OSSC2004RubyBoFReport
 ---
+{% include base.html %}
 
 
 書いた人：日本 Ruby の会 助田雅紀 

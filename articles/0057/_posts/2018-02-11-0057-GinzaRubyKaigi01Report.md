@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
 short_title: RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
 tags: 0057 GinzaRubyKaigi01Report
 ---
+{% include base.html %}
 
 ## RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
 

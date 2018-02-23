@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (09) 名古屋 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (09) 名古屋 Ruby 会議 01
 tags: 0028 NagoyaRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 書いた人: 豊吉隆一郎

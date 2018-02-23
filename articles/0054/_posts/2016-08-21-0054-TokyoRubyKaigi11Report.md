@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (58) 東京 Ruby 会議 11
 short_title: RegionalRubyKaigi レポート (58) 東京 Ruby 会議 11
 tags: 0054 TokyoRubyKaigi11Report
 ---
+{% include base.html %}
 
 
 ## 開催概要

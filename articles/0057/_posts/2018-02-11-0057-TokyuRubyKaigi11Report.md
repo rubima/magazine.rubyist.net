@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (64) Tokyu Ruby 会議 11
 short_title: RegionalRubyKaigi レポート (64) Tokyu Ruby 会議 11
 tags: 0057 TokyuRubyKaigi11Report
 ---
+{% include base.html %}
 
 ## はじめに
 

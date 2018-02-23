@@ -4,6 +4,7 @@ title: 10 周年記念：あの記事を振り返って
 short_title: 10 周年記念：あの記事を振り返って
 tags: 0048 LookBackTenYears
 ---
+{% include base.html %}
 
 
 ## はじめに

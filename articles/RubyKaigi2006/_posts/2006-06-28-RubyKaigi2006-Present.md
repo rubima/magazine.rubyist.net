@@ -4,6 +4,7 @@ title: プレゼント
 short_title: プレゼント
 tags: RubyKaigi2006 Present
 ---
+{% include base.html %}
 
 
 ## はじめに

@@ -4,6 +4,7 @@ title: 権限管理のgem、Punditの紹介
 short_title: 権限管理のgem、Punditの紹介
 tags: 0047 IntroductionToPundit
 ---
+{% include base.html %}
 
 
 * Table of content

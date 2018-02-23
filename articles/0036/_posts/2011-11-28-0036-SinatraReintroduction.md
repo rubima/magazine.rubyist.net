@@ -4,6 +4,7 @@ title: Sinatra 再入門、 Padrino / Rack / その先の何か
 short_title: Sinatra 再入門、 Padrino / Rack / その先の何か
 tags: 0036 SinatraReintroduction
 ---
+{% include base.html %}
 
 
 * Table of content

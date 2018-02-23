@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (54) 関西 Ruby 会議 06
 short_title: RegionalRubyKaigi レポート (54) 関西 Ruby 会議 06
 tags: 0051 KansaiRubyKaigi06Report
 ---
+{% include base.html %}
 
 
 書いた人：ogom

@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (50) TokyuRuby 会議 08
 short_title: RegionalRubyKaigi レポート (50) TokyuRuby 会議 08
 tags: 0051 TokyuRubyKaigi08Report
 ---
+{% include base.html %}
 
 
 ## はじめに

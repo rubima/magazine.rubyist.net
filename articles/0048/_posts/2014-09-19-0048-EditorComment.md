@@ -4,6 +4,7 @@ title: Rubyist Magazine 十周年
 short_title: Rubyist Magazine 十周年
 tags: 0048 EditorComment
 ---
+{% include base.html %}
 
 
 著者： 郡司啓 ([@gunjisatoshi](https://twitter.com/gunjisatoshi))

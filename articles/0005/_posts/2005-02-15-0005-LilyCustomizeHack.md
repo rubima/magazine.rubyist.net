@@ -4,6 +4,7 @@ title: lily でブログカスタマイズ 【最終回】
 short_title: lily でブログカスタマイズ 【最終回】
 tags: 0005 LilyCustomizeHack
 ---
+{% include base.html %}
 
 
 * Table of content

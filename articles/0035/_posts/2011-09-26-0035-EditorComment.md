@@ -4,6 +4,7 @@ title: Rubyist Magazine 七周年
 short_title: Rubyist Magazine 七周年
 tags: 0035 EditorComment
 ---
+{% include base.html %}
 
 
 著者：笹田耕一、たなべすなお

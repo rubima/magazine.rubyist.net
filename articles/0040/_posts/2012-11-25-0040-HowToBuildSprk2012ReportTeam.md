@@ -4,6 +4,7 @@ title: レポートチーム史上最大の作戦
 short_title: レポートチーム史上最大の作戦
 tags: 0040 HowToBuildSprk2012ReportTeam
 ---
+{% include base.html %}
 
 
 書いた人 : 前鼻毅

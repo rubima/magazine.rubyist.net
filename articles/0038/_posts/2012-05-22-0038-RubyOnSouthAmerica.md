@@ -4,6 +4,7 @@ title: あなたが南米のRubyカンファレンスに参加するべきn個�
 short_title: あなたが南米のRubyカンファレンスに参加するべきn個の理由【後編】
 tags: 0038 RubyOnSouthAmerica
 ---
+{% include base.html %}
 
 
 書いた人：yhara (注釈：nari3)[^1]

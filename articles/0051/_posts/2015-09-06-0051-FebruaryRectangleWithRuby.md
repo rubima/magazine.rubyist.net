@@ -4,6 +4,7 @@ title: Ruby で暦を研究する
 short_title: Ruby で暦を研究する
 tags: 0051 FebruaryRectangleWithRuby
 ---
+{% include base.html %}
 
 
 * Table of content

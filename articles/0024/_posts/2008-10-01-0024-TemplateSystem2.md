@@ -4,6 +4,7 @@ title: テンプレートシステム入門 (2) 基礎編
 short_title: テンプレートシステム入門 (2) 基礎編
 tags: 0024 TemplateSystem2
 ---
+{% include base.html %}
 
 
 * Table of content

@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (35) 東京 Ruby 会議 10 中断後の 3 
 short_title: RegionalRubyKaigi レポート (35) 東京 Ruby 会議 10 中断後の 3 日目
 tags: 0042 TokyoRubyKaigi10Report_2nd
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート東京 Ruby 会議 10 中断後の 3 日目

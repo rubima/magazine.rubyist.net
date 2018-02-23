@@ -4,6 +4,7 @@ title: RubyKaigi 2017 直前特集号
 short_title: RubyKaigi 2017 直前特集号
 tags: preRubyKaigi2017 index
 ---
+{% include base.html %}
 
 
 『るびま』は、Ruby に関する技術記事はもちろんのこと、Rubyist へのインタビューやエッセイ、その他をお届けするウェブ雑誌です。

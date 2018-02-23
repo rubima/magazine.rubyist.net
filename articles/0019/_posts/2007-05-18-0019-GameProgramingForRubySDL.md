@@ -4,6 +4,7 @@ title: Ruby/SDL で始めるゲームプログラミング【後編】
 short_title: Ruby/SDL で始めるゲームプログラミング【後編】
 tags: 0019 GameProgramingForRubySDL
 ---
+{% include base.html %}
 
 
 書いた人：yhara

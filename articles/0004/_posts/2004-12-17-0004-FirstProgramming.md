@@ -4,6 +4,7 @@ title: Ruby ではじめるプログラミング 【第 3 回】
 short_title: Ruby ではじめるプログラミング 【第 3 回】
 tags: 0004 FirstProgramming
 ---
+{% include base.html %}
 
 
 著者：だん

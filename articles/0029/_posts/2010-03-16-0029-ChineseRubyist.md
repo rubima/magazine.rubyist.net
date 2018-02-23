@@ -4,6 +4,7 @@ title: 中国の若きエンジニアの肖像 【第 3 回】ロビン・ルー
 short_title: 中国の若きエンジニアの肖像 【第 3 回】ロビン・ルー(北京IN-SRC)さん
 tags: 0029 ChineseRubyist
 ---
+{% include base.html %}
 
 
 ## はじめに

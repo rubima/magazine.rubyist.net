@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile
 short_title: 標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile
 tags: 0029 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山

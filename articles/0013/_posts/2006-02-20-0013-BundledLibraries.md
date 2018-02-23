@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 7 回】 net/http
 short_title: 標準添付ライブラリ紹介 【第 7 回】 net/http
 tags: 0013 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：cuzic

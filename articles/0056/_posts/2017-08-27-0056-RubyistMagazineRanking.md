@@ -4,6 +4,7 @@ title: 0056号 アクセスランキング
 short_title: 0056号 アクセスランキング
 tags: 0056 RubyistMagazineRanking
 ---
+{% include base.html %}
 
 
 書いた人: みよひで

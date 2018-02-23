@@ -4,6 +4,7 @@ title: 世界の Rubyist
 short_title: 世界の Rubyist
 tags: 0013 WorldRubyistReport
 ---
+{% include base.html %}
 
 
 * Table of content

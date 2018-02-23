@@ -4,6 +4,7 @@ title: lily でブログカスタマイズ 【第 1 回】
 short_title: lily でブログカスタマイズ 【第 1 回】
 tags: 0003 LilyCustomizeHack
 ---
+{% include base.html %}
 
 
 * Table of content

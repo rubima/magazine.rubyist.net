@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (26) TokyuRuby 会議 04
 short_title: RegionalRubyKaigi レポート (26) TokyuRuby 会議 04
 tags: 0037 TokyuRubyKaigi04Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート TokyuRuby 会議 04

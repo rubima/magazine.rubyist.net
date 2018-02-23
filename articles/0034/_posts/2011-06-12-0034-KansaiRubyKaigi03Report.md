@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (22) 関西 Ruby 会議 03
 short_title: RegionalRubyKaigi レポート (22) 関西 Ruby 会議 03
 tags: 0034 KansaiRubyKaigi03Report
 ---
+{% include base.html %}
 
 
 書いた人: Aki ([@spring_aki](http://twitter.com/spring_aki))、ひがきまさる ([@higaki](http://twitter.com/higaki))、今井伸広 ([@no6v](http://twitter.com/no6v))

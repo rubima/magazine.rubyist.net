@@ -4,6 +4,7 @@ title: 書籍紹介『Rubyist Magazine 出張版　正しい Ruby コードの�
 short_title: 書籍紹介『Rubyist Magazine 出張版　正しい Ruby コードの書き方講座』
 tags: 0021 Book
 ---
+{% include base.html %}
 
 
 紹介文：青木峰郎

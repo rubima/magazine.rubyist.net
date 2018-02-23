@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (32) 札幌 Ruby 会議 2012
 short_title: RegionalRubyKaigi レポート (32) 札幌 Ruby 会議 2012
 tags: 0040 SapporoRubyKaigi2012Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート札幌 Ruby 会議 2012

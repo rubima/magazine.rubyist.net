@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)
 short_title: 標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)
 tags: 0019 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山

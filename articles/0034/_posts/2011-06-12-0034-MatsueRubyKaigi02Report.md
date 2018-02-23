@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (21) 松江 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (21) 松江 Ruby 会議 02
 tags: 0034 MatsueRubyKaigi02Report
 ---
+{% include base.html %}
 
 
 ## 書いた人

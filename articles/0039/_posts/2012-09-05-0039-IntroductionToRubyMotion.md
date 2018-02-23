@@ -4,6 +4,7 @@ title: RubyMotion のご紹介
 short_title: RubyMotion のご紹介
 tags: 0039 IntroductionToRubyMotion
 ---
+{% include base.html %}
 
 
 * Table of content

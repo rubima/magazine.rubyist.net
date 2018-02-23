@@ -4,6 +4,7 @@ title: Making of RubyKaigi2011 第一回
 short_title: Making of RubyKaigi2011 第一回
 tags: 0035 MakingOfRubyKaigi2011
 ---
+{% include base.html %}
 
 
 * Table of content

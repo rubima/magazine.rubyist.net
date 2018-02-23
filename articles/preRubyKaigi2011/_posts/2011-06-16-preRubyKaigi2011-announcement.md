@@ -4,6 +4,7 @@ title: ! RubyKaigi2011 からのお知らせ
 short_title: ! RubyKaigi2011 からのお知らせ
 tags: preRubyKaigi2011 announcement
 ---
+{% include base.html %}
 
 
 RubyKaigi2011 から、お知らせしたいことを随時掲載していきます。

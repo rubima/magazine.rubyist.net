@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (36) ぐんま Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (36) ぐんま Ruby 会議 01
 tags: 0042 GunmaRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 書いた人：中内章一、米澤慎

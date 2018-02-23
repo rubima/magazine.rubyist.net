@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (60) 川崎 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (60) 川崎 Ruby 会議 01
 tags: 0055 KawasakiRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート 川崎 Ruby 会議 01

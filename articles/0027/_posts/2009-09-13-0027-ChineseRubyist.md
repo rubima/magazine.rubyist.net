@@ -4,6 +4,7 @@ title: 中国の若きエンジニアの肖像 【第 1 回】　バオ＝クゲ
 short_title: 中国の若きエンジニアの肖像 【第 1 回】　バオ＝クゲンさん
 tags: 0027 ChineseRubyist
 ---
+{% include base.html %}
 
 
 ## はじめに

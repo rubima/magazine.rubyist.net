@@ -4,6 +4,7 @@ title: 書籍紹介『Effective Ruby』
 short_title: 書籍紹介『Effective Ruby』
 tags: 0050 EffectiveRuby_ja
 ---
+{% include base.html %}
 
 
 書いた人：takkanm

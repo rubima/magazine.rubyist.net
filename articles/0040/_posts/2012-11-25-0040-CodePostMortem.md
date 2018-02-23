@@ -4,6 +4,7 @@ title: Ruby コードの感想戦 【第 1 回】 WikiR
 short_title: Ruby コードの感想戦 【第 1 回】 WikiR
 tags: 0040 CodePostMortem
 ---
+{% include base.html %}
 
 
 * Table of content

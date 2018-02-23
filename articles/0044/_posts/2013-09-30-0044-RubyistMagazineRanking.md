@@ -4,6 +4,7 @@ title: 0044 号 アクセスランキング
 short_title: 0044 号 アクセスランキング
 tags: 0044 RubyistMagazineRanking
 ---
+{% include base.html %}
 
 
 書いた人: hsbt

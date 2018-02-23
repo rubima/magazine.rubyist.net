@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R
 short_title: 標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R
 tags: 0007 BundledLibraries
 ---
+{% include base.html %}
 
 
 * Table of content

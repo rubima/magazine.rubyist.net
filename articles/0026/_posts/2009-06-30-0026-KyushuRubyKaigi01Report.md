@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (04) 九州 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (04) 九州 Ruby 会議 01
 tags: 0026 KyushuRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (04) 九州 Ruby 会議 01

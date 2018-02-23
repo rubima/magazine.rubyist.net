@@ -4,6 +4,7 @@ title: Ruby 20 周年記念パーティーレポート ―― プログラミン
 short_title: Ruby 20 周年記念パーティーレポート ―― プログラミング初心者の運営スタッフが見た Ruby コミュニティ
 tags: 0042 Ruby20thAnniversaryPartyReport
 ---
+{% include base.html %}
 
 
 * Table of content

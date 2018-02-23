@@ -4,6 +4,7 @@ title: Ruby 2.0.0： Keyword arguments
 short_title: Ruby 2.0.0： Keyword arguments
 tags: Ruby200SpecialEn kwarg
 ---
+{% include base.html %}
 
 
 Author: Yusuke Endoh

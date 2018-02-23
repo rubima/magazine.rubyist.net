@@ -4,6 +4,7 @@ title: tDiary 15th anniversary party レポート
 short_title: tDiary 15th anniversary party レポート
 tags: 0054 tDiary15thAnniversary
 ---
+{% include base.html %}
 
 
 tDiary の 15 周年をお祝いするイベントが開催されました。tDiary は Web 日記を実現するオープンソースソフトウェアで、少なくとも 25 年間は日記を書き続けられることを目標としています。2001 年 4 月に誕生し、15 周年となる今でも開発が続けられています。

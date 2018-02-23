@@ -4,6 +4,7 @@ title: 書籍紹介 『パーフェクト Ruby』
 short_title: 書籍紹介 『パーフェクト Ruby』
 tags: 0043 BookPerfectRuby
 ---
+{% include base.html %}
 
 
 書いた人：ryopeko ([@ryopeko](https://twitter.com/ryopeko))

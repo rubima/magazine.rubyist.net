@@ -4,6 +4,7 @@ title: ! お題：「会議」といえば
 short_title: ! お題：「会議」といえば
 tags: preRubyKaigi2011 EditorsNote
 ---
+{% include base.html %}
 
 
 __hokkai7go__

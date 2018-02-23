@@ -4,6 +4,7 @@ title: Making of RubyKaigi - Making of KaigiFreaks 配信班
 short_title: Making of RubyKaigi - Making of KaigiFreaks 配信班
 tags: 0035 MakingOfRubyKaigi01
 ---
+{% include base.html %}
 
 
 書いた人：鈴木則夫

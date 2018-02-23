@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 5 回】 enumerator
 short_title: 標準添付ライブラリ紹介 【第 5 回】 enumerator
 tags: 0011 BundledLibraries
 ---
+{% include base.html %}
 
 
 * Table of content

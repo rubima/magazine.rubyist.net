@@ -4,6 +4,7 @@ title: Ruby 2.0.0： require improvements
 short_title: Ruby 2.0.0： require improvements
 tags: Ruby200SpecialEn require
 ---
+{% include base.html %}
 
 
 Author: Masaya TARUI, Translator: Tatsuya Ono ([@ono](https://twitter.com/ono))

@@ -4,6 +4,7 @@ title: 0051 号 アクセスランキング
 short_title: 0051 号 アクセスランキング
 tags: 0051 RubyistMagazineRanking
 ---
+{% include base.html %}
 
 
 書いた人: 郡司

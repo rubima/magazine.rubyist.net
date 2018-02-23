@@ -4,6 +4,7 @@ title: Ruby ビギナーのための CGI 入門 【第 4 回】 同じような�
 short_title: Ruby ビギナーのための CGI 入門 【第 4 回】 同じようなことを繰り返して実行する
 tags: 0015 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
 書いた人: speakillof at yahoo dot co dot jp

@@ -4,6 +4,7 @@ title: Ruby ビギナーのための CGI 入門 【第 1 回】 初めての CGI
 short_title: Ruby ビギナーのための CGI 入門 【第 1 回】 初めての CGI プログラム
 tags: 0011 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
 書いた人 : speakillof  &lt;speakillof at yhaoo dot co dot jp&gt; 

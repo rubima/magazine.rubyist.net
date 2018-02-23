@@ -4,6 +4,7 @@ title: 書籍紹介『Ruby プログラミング基礎講座』
 short_title: 書籍紹介『Ruby プログラミング基礎講座』
 tags: 0013 BasicLectureBook
 ---
+{% include base.html %}
 
 
 ## 『Ruby プログラミング基礎講座』

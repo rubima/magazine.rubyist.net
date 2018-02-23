@@ -4,6 +4,7 @@ title: Rubyで始めるゲームプログラミング - DXOpal編 -
 short_title: Rubyでゲーム
 tags: 0057 GameProgramingWithDXOpal
 ---
+{% include base.html %}
 
 ## はじめに
 

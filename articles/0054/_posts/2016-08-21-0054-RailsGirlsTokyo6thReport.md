@@ -4,6 +4,7 @@ title: Rails Girls Tokyo 6th 開催レポート
 short_title: Rails Girls Tokyo 6th 開催レポート
 tags: 0054 RailsGirlsTokyo6thReport
 ---
+{% include base.html %}
 
 
 2016年7月22日（金）23日（土）に グーグル株式会社さまで[Rails Girls Tokyo](http://railsgirls.com/tokyo)が開催されました。

@@ -4,6 +4,7 @@ title: Ruby ビギナーのための CGI 入門 【第 5 回】 文字コード�
 short_title: Ruby ビギナーのための CGI 入門 【第 5 回】 文字コードと排他処理
 tags: 0017 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
 書いた人: speakillof at yahoo dot co dot jp

@@ -4,6 +4,7 @@ title: テンプレートシステム入門 (1) 歴史編
 short_title: テンプレートシステム入門 (1) 歴史編
 tags: 0024 TemplateSystem
 ---
+{% include base.html %}
 
 
 * Table of content

@@ -4,6 +4,7 @@ title: 組み込み向けウェブインターフェースフレームワーク�
 short_title: 組み込み向けウェブインターフェースフレームワーク「Alone」とその応用機器の紹介
 tags: 0035 AloneFramework
 ---
+{% include base.html %}
 
 
 * Table of content

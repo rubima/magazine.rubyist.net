@@ -4,6 +4,7 @@ title: エンドツーエンドテストの自動化は Cucumber から Turnip �
 short_title: エンドツーエンドテストの自動化は Cucumber から Turnip へ
 tags: 0042 FromCucumberToTurnip
 ---
+{% include base.html %}
 
 
 * Table of content

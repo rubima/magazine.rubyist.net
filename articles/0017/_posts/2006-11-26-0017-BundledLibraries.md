@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 10 回】 ERB
 short_title: 標準添付ライブラリ紹介 【第 10 回】 ERB
 tags: 0017 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山

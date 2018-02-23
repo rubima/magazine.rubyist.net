@@ -4,6 +4,7 @@ title: Making of RubyKaigi - Making of KaigiFreaks レポート班
 short_title: Making of RubyKaigi - Making of KaigiFreaks レポート班
 tags: 0037 MakingOfRubyKaigi04
 ---
+{% include base.html %}
 
 
 書いた人：O-Show, takkanm

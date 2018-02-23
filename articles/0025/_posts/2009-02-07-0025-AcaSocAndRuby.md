@@ -4,6 +4,7 @@ title: 学術会議とRuby
 short_title: 学術会議とRuby
 tags: 0025 AcaSocAndRuby
 ---
+{% include base.html %}
 
 
 書いた人：ささだ

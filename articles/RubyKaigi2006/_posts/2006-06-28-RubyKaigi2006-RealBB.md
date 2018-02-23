@@ -4,6 +4,7 @@ title: RubyKaigi 2006 付箋掲示板
 short_title: RubyKaigi 2006 付箋掲示板
 tags: RubyKaigi2006 RealBB
 ---
+{% include base.html %}
 
 
 ## 付箋掲示板

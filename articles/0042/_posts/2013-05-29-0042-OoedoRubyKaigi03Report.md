@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03
 short_title: RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03
 tags: 0042 OoedoRubyKaigi03Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03

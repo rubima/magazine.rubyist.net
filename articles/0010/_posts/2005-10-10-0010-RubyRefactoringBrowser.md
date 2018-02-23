@@ -4,6 +4,7 @@ title: 解説 Ruby Refactoring Browser - Emacs でリファクタリング
 short_title: 解説 Ruby Refactoring Browser - Emacs でリファクタリング
 tags: 0010 RubyRefactoringBrowser
 ---
+{% include base.html %}
 
 
 * Table of content

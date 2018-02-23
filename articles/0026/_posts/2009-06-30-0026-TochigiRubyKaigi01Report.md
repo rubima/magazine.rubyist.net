@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (07) とちぎ Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (07) とちぎ Ruby 会議 01
 tags: 0026 TochigiRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 書いた人: 渋川よしき

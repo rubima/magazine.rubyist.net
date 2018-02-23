@@ -4,6 +4,7 @@ title: 東京 Ruby 会議 11 運営記録
 short_title: 東京 Ruby 会議 11 運営記録
 tags: 0054 TokyoRubyKaigi11OrganizeReport
 ---
+{% include base.html %}
 
 
 書いた人：笹田耕一（東京Ruby会議11実行委員長）

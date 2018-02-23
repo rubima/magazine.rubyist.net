@@ -4,6 +4,7 @@ title: ! お題：「週刊連載」といえば
 short_title: ! お題：「週刊連載」といえば
 tags: preRubyKaigi2010 EditorsNote
 ---
+{% include base.html %}
 
 
 __takkanm__

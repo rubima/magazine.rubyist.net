@@ -4,6 +4,7 @@ title: RegionalRubyKaigiレポート 福岡Ruby会議02
 short_title: RegionalRubyKaigiレポート 福岡Ruby会議02
 tags: 0057 FukuokaRubyKaigi02Report
 ---
+{% include base.html %}
 
 ## RegionalRubyKaigiレポート 福岡Ruby会議02
 

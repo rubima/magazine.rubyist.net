@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (11) 関西 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (11) 関西 Ruby 会議 02
 tags: 0029 KansaiRubyKaigi02Report
 ---
+{% include base.html %}
 
 
 書いた人: Tagawa

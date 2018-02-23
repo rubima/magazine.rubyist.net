@@ -4,6 +4,7 @@ title: Ruby ビギナーのための CGI 入門 【第 2 回】 フォームを�
 short_title: Ruby ビギナーのための CGI 入門 【第 2 回】 フォームを利用した CGI プログラム
 tags: 0012 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
 書いた人: speakillof at yahoo dot co dot jp

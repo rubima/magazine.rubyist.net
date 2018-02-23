@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 9 回】 PStore
 short_title: 標準添付ライブラリ紹介 【第 9 回】 PStore
 tags: 0016 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山

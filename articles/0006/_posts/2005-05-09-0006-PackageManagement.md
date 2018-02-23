@@ -4,6 +4,7 @@ title: シリーズ パッケージマネジメント 【第 1 回】 RubyGems (
 short_title: シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)
 tags: 0006 PackageManagement
 ---
+{% include base.html %}
 
 
 編集: babie

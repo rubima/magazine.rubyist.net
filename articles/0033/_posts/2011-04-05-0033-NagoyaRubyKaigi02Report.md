@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02
 tags: 0033 NagoyaRubyKaigi02Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02

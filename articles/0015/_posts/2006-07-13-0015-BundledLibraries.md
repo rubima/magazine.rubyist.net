@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 8 回】 uri, pathname
 short_title: 標準添付ライブラリ紹介 【第 8 回】 uri, pathname
 tags: 0015 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山

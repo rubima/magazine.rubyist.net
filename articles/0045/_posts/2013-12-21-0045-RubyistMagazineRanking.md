@@ -4,6 +4,7 @@ title: 0045 号 アクセスランキング
 short_title: 0045 号 アクセスランキング
 tags: 0045 RubyistMagazineRanking
 ---
+{% include base.html %}
 
 
 書いた人: hsbt

@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (53) とちぎ Ruby 会議 06
 short_title: RegionalRubyKaigi レポート (53) とちぎ Ruby 会議 06
 tags: 0051 TochigiRubyKaigi06Report
 ---
+{% include base.html %}
 
 
 ## とちぎ Ruby 会議 06
