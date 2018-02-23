@@ -67,7 +67,7 @@ Matz 先生 「うむ(カチャカチャカチャ。ッタァーン!)」
 パッチモンスターこと nobu、なかださんです。
 なかださんは CRuby に対して最も多くのコミットをしているコミッターで、不具合の報告をすると既にそれを修正するパッチを持っていてどこからかそれを取り出してくるということから「パッチ袋を持っている」「パッチモンスター」と呼ばれるようになりました。
 なかださんは現在 Heroku 社に所属して CRuby の開発を本業としているフルタイムコミッターのひとりでもあります。
-![committers_rank.png]({{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/committers_rank.png)
+![committers_rank.png]({{base}}{{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/committers_rank.png)
 
 これは CRuby のコミッターである卜部さん(svn アカウント shyouhei)が公開された CRuby へのコミット件数の遷移をコミッター毎にプロットしたグラフです。
 赤い線がなかださんで、圧倒的に多くのコミットをしていることがわかります。
@@ -79,12 +79,12 @@ Matz 先生 「うむ(カチャカチャカチャ。ッタァーン!)」
 
 これはスタックオーバフローの検出と例外処理などの大域脱出のしくみの組み合わせて発生していた不具合の修正です。
 変更点は実質1行だけで、構造体のメンバの順番を入れ替えているだけなので、一見してなぜこれで修正になるのかわかりません。
-![guard_page.png]({{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/guard_page.png)
+![guard_page.png]({{base}}{{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/guard_page.png)
 
 CRuby では新たに生成する Fiber のマシンスタックのオーバフロー検出のために、Guard Page といってアクセスするとシグナルが発生するように設定したメモリ領域をスタックの最後に配置するようにしています。
 関数の呼び出しが深く入れ子になりマシンスタックを使いきってしまうと、この Guard Page にアクセスすることで SIGSEGV が発生して、それを検出した CRuby インタプリタは SystemStackError 例外を発生させます。
 なおこのしくみは Fiber でのみ有効で Thread では別の方法でオーバフロー検出をしているはずです。
-![rb_vm_tag.png]({{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/rb_vm_tag.png)
+![rb_vm_tag.png]({{base}}{{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/rb_vm_tag.png)
 
 そして大域脱出の処理時にマシンスタックを巻き戻すためのTH_PUSH_TAG()というマクロで、マシンスタック上に rb_vm_tag という構造体を置きます。
 この構造体はリンクリストを構成していて、Ruby のスレッドを表す rb_thread_t 構造体のメンバ tag から、大域脱出時に巻き戻すべき状態(rescue や ensure など処理を挟むべきポイント)を順に辿れるようになっています。
@@ -94,7 +94,7 @@ CRuby では新たに生成する Fiber のマシンスタックのオーバフ�
 TH_PUSH_TAG() で rb_vm_tag の linked list に繋ぐ処理までは rb_jmpbuf_t のメンバにはアクセスしないので、繋ぐことには成功してしまうのですが、現在の状態を rb_jumpbuf_t に保存しようとすると Guard Page へアクセスするため SIGSEGV が発生して、
 スタックオーバフローを検出して例外の発生を行おうとするのですが、既に rb_vm_tag の linked list に最新の構造体が繋がれてしまっているため、まずその状態に復元しようとして再度 rb_jumpbuf_t のメンバにアクセスして SIGSEGV が発生、という
 ある種の無限ループ状態に陥ってしまっていました。
-![infinite_exception.png]({{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/infinite_exception.png)
+![infinite_exception.png]({{base}}{{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/infinite_exception.png)
 
 そこで rb_vm_tag の構造体のレイアウトを変更して、linked list に繋ぐ操作の時に初期化を行う tag と prev というメンバが構造体の先頭と末尾に配置されるようにして、構造体が一部でも Guard Page にひっかかるように置かれたら linked list に繋ぐ前にオーバフローを検出するようにしています。
 
@@ -138,7 +138,7 @@ akr さんは組込みクラスの Time や socket, stringio, open-uri, pathname
 akr さんのコミットは1つではなくて、同じテーマに沿った一連のコミットを挙げます。 r33652 から始まる約3ヶ月強にも渡る、拡張ライブラリ dbm のビルド回りの一連の変更です。
 
 [https://github.com/ruby/ruby/commit/e4e5b7df4cca2cedba1ec2b52f75c450a0c618ce](https://github.com/ruby/ruby/commit/e4e5b7df4cca2cedba1ec2b52f75c450a0c618ce)
-![dbm_commits.png]({{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/dbm_commits.png)
+![dbm_commits.png]({{base}}{{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/dbm_commits.png)
 
 この変更では拡張ライブラリ dbm が利用する DBM のライブラリの豊富な亜種のうち、どのプラットフォームでどのバージョンが使えるというのを検出する方法をひたすら精密にしています。
 
@@ -180,7 +180,7 @@ Ruby は 1.9 から文字列がエンコーディングを持つようになり�
 成瀬さんが ruby のビルドやテストを様々なプラットフォームで実行した結果をまとめて表示する [rubyci.org](http://rubyci.org/) というサイトを運営しています。
 実際にビルド・テストを実行しているのはそれぞれ別の管理者が管理しているサーバですが、その結果を収集して一覧できるようにしてくれています。
 各プラットフォーム毎のサーバでの自動テストの仕組みは akr さんの chkbuild というプロジェクトが利用されています。
-![rubyci_org.png]({{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/rubyci_org.png)
+![rubyci_org.png]({{base}}{{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/rubyci_org.png)
 
 このようにいろいろなブランチとプラットフォームの test-all の結果や RubySpec の実行結果が一覧できます。
 複数のプラットフォームでの動作確認ができるため、安定版ブランチのメンテナンスのためにも非常に重要なサービスです。
@@ -235,7 +235,7 @@ GC の権化のように思われている nari さんですが、こんな変�
 
 これは 2.0.0 のリリース直前に、Refinements の仕様を大きく絞って、スクリプトのトップレベルでしか使えないようにする変更です。
 本来はもっと機能が豊富だったのですが、JRuby など他の実装で同じ仕様を効率的に実装できないなどの理由で議論が収束せずに、2.0.0 では一部だけリリースすることになってしまいました。
-![shrink_refinements.png]({{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/shrink_refinements.png)
+![shrink_refinements.png]({{base}}{{site.baseurl}}/images/0044-CRubyCommittersWhosWho2013/shrink_refinements.png)
 
 Github 上でのこのコミットの差分を表示したスクリーンショットを取ってみました。これでも実は全体の 2/3 くらいです。赤く色付けされているのが削除された行なので、こうしてみると折角作った実装をかなりの量削ることになってしまったのがわかります。
 現在 2.1 では Module のスコープ内でも Module#using が利用できるようになり、Refinements の機能が復活しつつあるので、2.1 のリリースをお楽しみに。

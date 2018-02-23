@@ -33,7 +33,7 @@ tags: 0052 MatsueRubyKaigi07Report
 * 発表者
   * Toshi MARUYAMA 氏 ([@marutosijp](https://twitter.com/marutosijp))
 
-![02_guest.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/02_guest.jpg)
+![02_guest.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/02_guest.jpg)
 
 Redmine コミッタの Toshi MARUYAMA 氏に「Redmine の歴史とアーキテクチャ」と題してご講演いただきました。
 氏は Mercurial overhaul とその他 SCM 周りのチケットにテスト付きのパッチを送っていたら 2010-12 に誘われてコミッタになったということでした。
@@ -129,18 +129,18 @@ Redmine が Rails 5 に対応するための課題として、strong parameter �
     * 小嵜英治氏 ([@eijik](https://github.com/eijik))
 
 
-![03_lt01.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt01.jpg)
-![03_lt02.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt02.jpg)
-![03_lt03.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt03.jpg)
-![03_lt04.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt04.jpg)
-![03_lt05.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt05.jpg)
+![03_lt01.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt01.jpg)
+![03_lt02.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt02.jpg)
+![03_lt03.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt03.jpg)
+![03_lt04.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt04.jpg)
+![03_lt05.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/03_lt05.jpg)
 
 ### Ruby にみるプログラミングの進化 (基調講演)
 
 * 発表者
   * まつもとゆきひろ氏 ([@yukihiro_matz](https://twitter.com/yukihiro_matz))
 
-![04_keynote.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/04_keynote.jpg)
+![04_keynote.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/04_keynote.jpg)
 
 我らが松江名誉市民！　ということで、今年もまつもとさんにご講演いただきました。いつもありがとうございます。
 
@@ -198,7 +198,7 @@ Happy Hacking!
 * 資料
   * [https://prezi.com/0y1e6-b9-f2k/matsuerbproduct20142015/](https://prezi.com/0y1e6-b9-f2k/matsuerbproduct20142015/)
 
-![05_matsuerb.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/05_matsuerb.jpg)
+![05_matsuerb.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/05_matsuerb.jpg)
 
 橋本氏による前回の松江 Ruby 会議から今回の松江 Ruby 会議までの Matsue.rb における活動内容のうち、GitHub で見られるようなものをまとめて紹介する内容でした (以下はその一部)。
 
@@ -222,7 +222,7 @@ Happy Hacking!
   * 倉橋 徹 氏 ([@ToruKurahashi](https://github.com/ToruKurahashi))
   * 本多 展幸 氏 ([@nobyuki](https://twitter.com/nobyuki))
 
-![06_sproutrb.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/06_sproutrb.jpg)
+![06_sproutrb.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/06_sproutrb.jpg)
 
 松岡氏の発表で Sprout.rb の活動についてご紹介いただきました。
 前回の発表では参加者目線での紹介でしたが今回はコーチ目線でのお話をいただきました。
@@ -256,7 +256,7 @@ Sprout.rb は早くも 1 周年を迎えたそうで松岡氏は "コミュニ�
 * 発表者
   * 吉岡隆行氏 ([@murateku](https://twitter.com/murateku))、内部 高志氏 ([@Takashi-U](https://github.com/Takashi-U))、倉橋 徹氏 ([@ToruKurahashi](https://github.com/ToruKurahashi))、本多 展幸氏 ([@nobyuki](https://twitter.com/nobyuki))、橋本 将氏 ([@sho_hashimoto](https://twitter.com/sho_hashimoto)) と受賞者の皆さん
 
-![07_contest.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/07_contest.jpg)
+![07_contest.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/07_contest.jpg)
 
 松江 Ruby 会議 07 では paiza さんとの協賛で[オンラインでのプログラミングコンテスト](https://paiza.jp/poh/joshibato/matsue-ruby)が行われました。ゲームセンターあらし (アーケードゲーマーふぶき?) が元ネタに思えるキャラクターや島根県をイメージしたという巫女さんなど paiza さんの本気ぶりまで含めて委員長の吉岡氏から説明があった後で以下の流れで解説が進みました。
 
@@ -306,7 +306,7 @@ paiza オンラインハッカソンは次回開催予定もあるとの事で�
 * 発表者
   * 藤井貴氏
 
-![08_bijisen.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/08_bijisen.jpg)
+![08_bijisen.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/08_bijisen.jpg)
 
 松江総合ビジネスカレッジの学生である藤井貴氏に学校でおこなったシステムの更新作業についてご講演いただきました。
 システムとは、学校でペットのトリミングの授業があり、その授業のモデルとして他の方が飼われているペットのわんちゃんをお預かりするため、その予約をするためのシステムとのことでした。
@@ -328,7 +328,7 @@ paiza オンラインハッカソンは次回開催予定もあるとの事で�
   * 高尾宏治 氏 ([@takaokouji](https://twitter.com/takaokouji))
   * 本多展幸 氏 ([@nobyuki](https://twitter.com/nobyuki))
 
-![09_progshou.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/09_progshou.jpg)
+![09_progshou.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/09_progshou.jpg)
 
 Ruby プログラミング少年団理事長、副理事長のお二人によるスモウルビーの新機能を紹介するためのライブコーディング (本多氏) 及びその解説 (高尾氏) でした。
 
@@ -345,7 +345,7 @@ Ruby プログラミング少年団理事長、副理事長のお二人による
 また、身近に高校生以下のプログラミングに興味がありそうな方がいらっしゃいましたら、[本セッションの動画](https://www.youtube.com/watch?v=y-trBvQ0NLg)と[スモウルビー甲子園公式サイト](https://smalruby-koshien.jp)のリンクをご紹介してみてはいかがでしょうか。2016/01/10 まで応募を受け付けているとの事です。
 
 ### Ruby Quiz
-![10_rubyquiz.jpg]({{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/10_rubyquiz.jpg)
+![10_rubyquiz.jpg]({{base}}{{site.baseurl}}/images/0052-MatsueRubyKaigi07Report/10_rubyquiz.jpg)
 
 観客・スタッフ全員参加型の Ruby Quiz を開催しました。
 Matsue.rb スタッフ考案の Ruby に関する択一問題が出題されました。

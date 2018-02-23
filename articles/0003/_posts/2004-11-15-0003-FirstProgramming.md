@@ -12,7 +12,7 @@ tags: 0003 FirstProgramming
 ## はじめに
 
 前回 ([Ruby ではじめるプログラミング 【第 1 回】]({% post_url articles/0002/2004-10-16-0002-FirstProgramming %})) は次のこのようなプログラムの基本的な部分を紹介しました。
-: ![mage2_s.png]({{site.baseurl}}/images/0003-FirstProgramming/mage2_s.png)
+: ![mage2_s.png]({{base}}{{site.baseurl}}/images/0003-FirstProgramming/mage2_s.png)
 
 * Ruby を実行するまでの手順
 * 変数やメソッド（命令）呼び出し

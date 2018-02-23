@@ -346,7 +346,7 @@ load_file(file)
 
 内容は短いのでここに全文を載せます。
 
-[xmlstore.rb]({{site.baseurl}}/images/0016-BundledLibraries/xmlstore.rb)
+[xmlstore.rb]({{base}}{{site.baseurl}}/images/0016-BundledLibraries/xmlstore.rb)
 
 ```ruby
 #

@@ -334,7 +334,7 @@ UNIXユーザー向けには、こういう_難しい_やり方がある：
 {% endraw %}
 {% endhighlight %}
 
-![gem_server_screenshot.jpg]({{site.baseurl}}/images/0010-PackageManagement/gem_server_screenshot.jpg)
+![gem_server_screenshot.jpg]({{base}}{{site.baseurl}}/images/0010-PackageManagement/gem_server_screenshot.jpg)
 
 gem_server の話はもうちょっと後でしよう。
 

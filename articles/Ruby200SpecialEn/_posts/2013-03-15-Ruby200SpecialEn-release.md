@@ -64,8 +64,8 @@ Finally we started 2.0.0 development. People seem to not work until a deadline a
 I didn't see any problems with setting deadlines loosely. This lesson will take effect later.
 
 ## Spring and Summer 2012: Reviewing feature requests
-: ![dm1.jpg]({{site.baseurl}}/images/Ruby200SpecialEn-release/dm1.jpg)
-: ![dm2.jpg]({{site.baseurl}}/images/Ruby200SpecialEn-release/dm2.jpg)
+: ![dm1.jpg]({{base}}{{site.baseurl}}/images/Ruby200SpecialEn-release/dm1.jpg)
+: ![dm2.jpg]({{base}}{{site.baseurl}}/images/Ruby200SpecialEn-release/dm2.jpg)
 
 As the deadline approached I organized an offline meeting to discuss feature requests for 2.0.0. ([[ruby-dev:45708]](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/45708))
 I requested an 1 page slide to introduce each feature request and we discussed the feature requests as we viewed the slides.

@@ -8,7 +8,7 @@ tags: 0054 TokyoRubyKaigi11Report
 
 
 ## 開催概要
-![IMG_6732.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_6732.JPG)
+![IMG_6732.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_6732.JPG)
 
 開催日
 :  2016/5/28 (土)
@@ -32,11 +32,11 @@ tags: 0054 TokyoRubyKaigi11Report
 {:toc}
 
 
-![26816711484_cdb2d48dcc_o.jpg]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/26816711484_cdb2d48dcc_o.jpg)
+![26816711484_cdb2d48dcc_o.jpg]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/26816711484_cdb2d48dcc_o.jpg)
 
 ## はじめに
 
-![27391441416_1604a37692_o.jpg]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/27391441416_1604a37692_o.jpg)
+![27391441416_1604a37692_o.jpg]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/27391441416_1604a37692_o.jpg)
 実行委員長の笹田さんが白衣で登壇して、東京 Ruby 会議 11 が始まりました。ロビーには書籍の展示やコーヒーがあり、いろいろなポスターが掲示されています。コンベンションホールには 2 列の通路ができるように椅子が並んでいます。それぞれの通路の前の方にはマイクスタンドとマイク[^1]。
 
 「秋葉原ダイビル、『Steins;Gate』で何かを隠しておいたロッカーの向こうにあるビルなんですけど、ロッカーは撤去されてしまいました。そんなわけで白衣[^2]でまいりました。」とのこと。地域 Ruby 会議は「テーマ性を持ってやりたい人がやる」というわけで、東京 Ruby 会議 11 では「血湧き肉躍るハックの話をしてください。質疑応答は前方のマイクで。意見を戦わせましょう。」
@@ -60,7 +60,7 @@ UI や API デザインの原則やデータ構造、アルゴリズムを知る
 是非、みなさんも自作の言語を作ってみてはいかがでしょうか？
 
 なお、Streem については、[日経 Linux「まつもとゆきひろの作りながら学ぶプログラミング言語」](https://bizboard.nikkeibp.co.jp/kijiken/summary/20140310/LIN0175H_2642104a.html)で連載しております。
-![DSC05559.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05559.JPG)
+![DSC05559.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05559.JPG)
 
 ### mruby/c - 田中 和明さん
 
@@ -78,7 +78,7 @@ mruby/c においては3つの重要な技術的要素があります。1つ目�
 3つ目は Boot についてです。組み込みシステムでは Boot 処理が大切です。というのも、mruby/c は IoT の文脈等で動くことを想定しており、システムが動作すべきタイミングで即座に処理ができないといけません。そこで Boot 処理は非常に短くある必要があります。
 
 mruby/c は絶賛開発中であり、まだ多くのクラスやメソッドが実装されていません。しかし mruby が動作しない環境で動作するなど利点も多くあり、協力者を募集しているとのことでした。mruby、mruby/c 共に OSS として公開されていますので、興味がある方は是非ご覧ください。
-![DSC05568_.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05568_.JPG)
+![DSC05568_.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05568_.JPG)
 
 ### Rubyに型があると便利か - 栗原 勇樹さん
 
@@ -109,11 +109,11 @@ String === nil #=> false
 なお、Ruby 3 の型[^7][^8]は、今回の発表のものとは違います。静的チェックがあります。Ruby レベルでは、Annotation を書きません。C では、Annotation を書きます。たいへんそう。
 
 講演後の質疑応答。まつもとさん何かコメントはありませんか？という問いかけにたいして、「こういうのが便利な時もあるとは思いますが、型は絶対書きたくないでござる。」とコメントされていました。「型がいやとか嫌いなわけではなく、書きたくないのです。」とのことでした。
-![DSC05573.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05573.JPG)
+![DSC05573.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05573.JPG)
 
 ## ランチ
 
-![DSC05529.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05529.JPG)
+![DSC05529.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05529.JPG)
 ここまでの講演を聴いて、お昼の休憩時間となりました。休憩中に、ロビーに展示されていたポスターのうち技術的な内容のものを順不同で紹介しておきましょう。
 
 * 「CRuby 組込ライブラリ Rational の最適化[^9]」
@@ -153,7 +153,7 @@ Yahoo や Google (……プレゼンでは Google の資料でした) などの�
 その実現方法として 2 つの最適化の例を挙げられました。
 一つ目は poll threshold の設定をして通信効率を上げること、二つ目は、server-push という機能を使って機能を使ってサーバー側でのプロセッシング中に先に JS および CSS を返すようにすることです。
 詳しくは発表資料や動画を御覧ください。
-![DSC05581.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05581.JPG)
+![DSC05581.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05581.JPG)
 
 ### アプリケーションへの Ruby インタープリターの組み込み - 須藤功平さん
 
@@ -179,7 +179,7 @@ Milter manager は数十万人規模のユーザーが居るサービスでも�
 Groonga では、mruby にリソース管理を任せないようにしました。現状では、mruby の GC にまかせず、Ruby レベルの ensure や file.close でリソースを解放しています。また、C レベルで確保したリソースは C レベルで管理するようにしています。mruby に GC を任せるには、アプリケーションでのメモリ確保量を知らせてあげたいのです。「誰か相談させてください。」
 
 講演後の質疑応答では RUBY_INIT_STACK を呼ぶタイミングや、複数言語のインタプリタの読み込みについて活発な議論が交わされました。複数言語のインタプリタを同時に動かせたら「かっこいいでしょう？」「ひとことで Ruby を使うと言ってもいろんな使い方があるということですね。」という笹田さんの一言で、次の講演に進みました。というわけで、質疑応答のていねいな補足が、[東京 Ruby 会議 11 での発表「アプリケーションへの Ruby インタープリターの組み込み」と OSS Gate ワークショップ 2016-05-28 #tkrk11 #oss_gate - ククログ(2016-06-01)](http://www.clear-code.com/blog/2016/6/1.html) に掲載されています。ぜひご覧ください。
-![IMG_6820.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_6820.JPG)
+![IMG_6820.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_6820.JPG)
 
 ### Re: Pattern Matching in Ruby - 辻本 和樹さん
 
@@ -195,11 +195,11 @@ Ruby コミッタである辻本和樹さんは、[札幌 Ruby 会議 2012 で p
 マッチ処理は「マッチ用のツリーの構築」、「ツリーとオブジェクトのマッチ」、「マッチ結果の"変数"への代入」という流れで処理されます。本発表ではそれぞれの実装方法をツリーやコードを用いて詳しく紹介しています。例えば「ツリーとオブジェクトのマッチ」では変数を抽出する必要があります。これは with 構文内に出て来た method_missing を捕捉し、これを変数と見なすメタプログラミングを行っています。その他、Refinements をオプショナル機能として採用したことや、「ツリーとオブジェクトのマッチ」で callcc を利用していることなど、実装方法についての詳細が紹介されています。
 
 パターンマッチと一口に言っても様々なバリエーションがあり、どのような形が便利なのかを是非議論して行きたいとのことでした。
-![IMG_4454.jpg]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_4454.jpg)
+![IMG_4454.jpg]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_4454.jpg)
 
 ## 休憩 - OSS Gate について
 
-![IMG_6861.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_6861.JPG)
+![IMG_6861.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_6861.JPG)
 濃い講演はいったん休憩。
 
 ロビーに出ると須藤さんも参加している OSS Gate の紹介がありました。[今日のワークショップは東京 Ruby 会議 11と同じ建物で開催](http://oss-gate.github.io/announce/update/2016/05/18/workshop-with-tokyo-rubykaigi-11.html)とのこと。「OSS 開発に参加する人を増やす取り組み」、[ワークショップは今後も開かれるようです](https://oss-gate.doorkeeper.jp/)。参加したい！
@@ -286,7 +286,7 @@ $ ./dilute.rb fib.rb | ./dilute.rb | ruby
 おしまい。
 
 会場を疑問の渦に巻き込んだまま、講演は終わりました。質疑応答。「どうやって記憶させてるの？」「魔法です。」「GitHub は phuby を何に使ってるのですか？」「Wordpress を Rails に組み込んで走らせてます。冗談ですが。」
-![DSC05600.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05600.JPG)
+![DSC05600.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05600.JPG)
 
 ### IMF: Image Manipulation Framework - 村田 賢太さん
 
@@ -317,7 +317,7 @@ multi-dimensional array conversion
 ……実は既存のライブラリでも画像処理に対するそれぞれの機能が実装されています。さらに、機械学習に必要になるその後の tensor calculation に対しても ruby-opencv (CvMat)、hornetseye (MultiArray)、NArray (Numo)、NMatrix が対応しています。Python の Numpy のように標準的な Tensor 化の仕組みはそれぞれの gem で提供されていますが、相互にデータをやり取りすることは簡単にはできません。Tensor は component type、dimension、shape、steps/strides の4要素で構成されており、音や画像やアニメーションなどの全ての計測データは Tensor で表現できます。Tensor のメモリ上のデータ表現は共通なので、既存の gem が提供している Tensor データを相互にやり取りできれば、画像データを簡単に機械学習で利用できるようになります。
 
 講演では、Tensor データを相互交換するためのブリッジとなる NumBuffer と[IMF](https://github.com/mrkn/IMF) (両者とも村田さんが自作した gem) を用いて、IMF の画像データを NumBuffer を経由して tensorflow に渡すコードを紹介していました。NumBuffer については今年の RubyKaigi までに gem をリリース予定だそうです。
-![DSC05601.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05601.JPG)
+![DSC05601.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05601.JPG)
 
 ### Optcarrot: A pure-ruby NES emulator - 遠藤侑介さん
 
@@ -335,11 +335,11 @@ NES (ファミコン) は 60 fps で動作しているとのことですが、�
 最後に、60 fps に向けて……と話す遠藤さんですが、実は「実験的な」最適化を押し進めて 60 fps を達成していました。メソッド呼び出しが低速なため、全て処理を展開したり、インスタンス変数ではなく全てローカル変数にするなどいくつもの最適化を行いました。
 
 実用的なベンチマークとして Optcarrot を利用することで、Ruby 処理系をよりよくしていきたいと語る遠藤さん。更に詳しい話は [2016 年 8 月に行われる川崎 Ruby 会議 01](http://regional.rubykaigi.org/kwsk01/) で話す予定とのことで、こちらも是非ご確認ください。
-![DSC05607.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05607.JPG)
+![DSC05607.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05607.JPG)
 
 ## 休憩 - Speaker's award
 
-![DSC05528.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05528.JPG)
+![DSC05528.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05528.JPG)
 充実したいちにちもキーノートを残すのみとなって、最後の休憩です。ここで、スピーカーに、 誰かを表彰してもらおう、という企画、Speaker's award のご紹介です。[詳細は PDF](http://regional.rubykaigi.org/tokyo11/tokyorubykaigi11_speakers_award.pdf)になっていますので併せてご参照ください。
 
 * Aaron Patterson さんは、頑張っているで賞を、Charles Nutter さんとTom Enebo さんに
@@ -374,11 +374,11 @@ Distributed task execution を行うためには、DAG で表されたタスク�
 * [Digdag 公式ドキュメント](http://www.digdag.io/)
 * [Digdag GitHub](https://github.com/treasure-data/digdag)
 
-![DSC05619.JPG]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05619.JPG)
+![DSC05619.JPG]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/DSC05619.JPG)
 
 ## まとめ
 
-![IMG_4442.jpg]({{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_4442.jpg)
+![IMG_4442.jpg]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_4442.jpg)
 さて、血湧き肉躍るハックのいちにちはいかがだったでしょうか？「[技術的好奇心を改めて呼び起こし、プログラミングの難しさ、そして楽しさを再発見する](http://regional.rubykaigi.org/tokyo11/about/)」ことができたように思います。笹田さんからの「われこそは、という人は次回やってみましょう」という呼びかけで、東京 Ruby 会議 11 は閉幕しました。興味の出た方は、とりあえず、日本 Ruby の会の Wiki の [RegionalRubyKaigiのページ](https://github.com/ruby-no-kai/official/wiki/Regionalrubykaigi) を見てみてください。
 
 ## 執筆者

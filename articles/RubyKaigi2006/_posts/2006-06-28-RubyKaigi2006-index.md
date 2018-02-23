@@ -6,7 +6,7 @@ tags: rubykaigi2006 index
 ---
 {% include base.html %}
 
-![boom1-2-3.png]({{site.baseurl}}/images/rubykaigi2006/boom1-2-3.png)
+![boom1-2-3.png]({{base}}{{site.baseurl}}/images/rubykaigi2006/boom1-2-3.png)
 
 ## はじめに
 
@@ -38,48 +38,48 @@ tags: rubykaigi2006 index
 
 ## カンファレンスレポート：2006 年 6 月 10 日 (土)
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0610-1](RubyKaigi2006-0610-1)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0610-1](RubyKaigi2006-0610-1)
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0610-2](RubyKaigi2006-0610-2)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0610-2](RubyKaigi2006-0610-2)
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0610-3](RubyKaigi2006-0610-3)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0610-3](RubyKaigi2006-0610-3)
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0610-4](RubyKaigi2006-0610-4)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0610-4](RubyKaigi2006-0610-4)
 
 初日 ([プログラム](http://jp.rubyist.net/RubyKaigi2006/program0610.html)) のレポートです。
 
 ### 懇親会
-![s06100088.jpg]({{site.baseurl}}/images/rubykaigi2006/s06100088.jpg)
+![s06100088.jpg]({{base}}{{site.baseurl}}/images/rubykaigi2006/s06100088.jpg)
 
 日本科学未来館にて懇親会を行いました。
 
 ## カンファレンスレポート：2006 年 6 月 11 日 (日)
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0611-1](RubyKaigi2006-0611-1)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0611-1](RubyKaigi2006-0611-1)
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0611-2](RubyKaigi2006-0611-2)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0611-2](RubyKaigi2006-0611-2)
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0611-3](RubyKaigi2006-0611-3)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0611-3](RubyKaigi2006-0611-3)
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0611-4](RubyKaigi2006-0611-4)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-0611-4](RubyKaigi2006-0611-4)
 
 二日目 ([プログラム](http://jp.rubyist.net/RubyKaigi2006/program0611.html)) のレポートです。
 
 ## 特設
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-DHH](RubyKaigi2006-DHH)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-DHH](RubyKaigi2006-DHH)
 
 カンファレンスの基調講演のために来日した、Ruby on Rails の作者こと、David Heinemeier Hansson 氏を追いました。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-RealBB](RubyKaigi2006-RealBB)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-RealBB](RubyKaigi2006-RealBB)
 
 カンファレンス期間、ロビーに設置された掲示板の様子を紹介します。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-Present](RubyKaigi2006-Present)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-Present](RubyKaigi2006-Present)
 
 カンファレンス関連書籍と、カンファレンス特製 T シャツのプレゼントがあります。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-EditorsNote](RubyKaigi2006-EditorsNote)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi2006-EditorsNote](RubyKaigi2006-EditorsNote)
 
 ## 特別号に関しての FAQ
 

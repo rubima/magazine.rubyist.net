@@ -568,7 +568,7 @@ Ruby のバージョンアップでは、バージョン間の差をモンキー
 Ruby をバージョンアップすることで、2点うれしいことがありました。
 
 1つ目はサービスの平均レスポンスタイムが大きく改善されたことです。以下は、試験環境で計測したレスポンスタイムの比較です。クックパッドは本番環境での平均レスポンスタイムを 200ms 未満にすることを目標にしていますが、Ruby Enterprise Edition を使用していたときは目標を 100ms 以上も越えていることが多かったのに対して、Ruby を 1.9 にバージョンアップしただけで達成でき、かつ EC2 のインスタンス数を減らすこともできました。
-![Screenshot_5_12_13_8_20_PM.png]({{site.baseurl}}/images/0042-MigratingARailsApplicationToRuby200/Screenshot_5_12_13_8_20_PM.png)
+![Screenshot_5_12_13_8_20_PM.png]({{base}}{{site.baseurl}}/images/0042-MigratingARailsApplicationToRuby200/Screenshot_5_12_13_8_20_PM.png)
 
 2 つ目は、クックパッドが抱える大量の spec ファイルの実行時間が大幅に短縮されたことです。Ruby Enterprise Edition を使用しているときは、分散 RSpec で使用するワーカーの台数をいくら増やしても実行時間は 14 分を越えていました。ところが Ruby 1.9 へ移行することでサーバ 8 台で 12 分、Ruby 2.0 へ移行するとサーバ 6 台で 8 分台にまで短縮されました。
 

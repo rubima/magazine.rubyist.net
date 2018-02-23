@@ -10,7 +10,7 @@ tags: 0004 RubyTkSemiReport
 書いた人：講習会参加者
 
 ## Ruby/Tk 講習会
-![SANY0074.jpg]({{site.baseurl}}/images/0004-RubyTkSemiReport/SANY0074.jpg)
+![SANY0074.jpg]({{base}}{{site.baseurl}}/images/0004-RubyTkSemiReport/SANY0074.jpg)
 
 12/11 に福岡天神 IMS で開催された RubyTk 講習会の模様をお伝えします。
 
@@ -41,11 +41,11 @@ Linux と Windows の環境で最新の Ruby/Tk 環境をセットアップで�
 
 ### 写真
 
-![dscf0519.jpg]({{site.baseurl}}/images/0004-RubyTkSemiReport/dscf0519.jpg)
-![dscf0520.jpg]({{site.baseurl}}/images/0004-RubyTkSemiReport/dscf0520.jpg)
-![dscf0521.jpg]({{site.baseurl}}/images/0004-RubyTkSemiReport/dscf0521.jpg)
-![dscf0522.jpg]({{site.baseurl}}/images/0004-RubyTkSemiReport/dscf0522.jpg)
-![SANY0075.jpg]({{site.baseurl}}/images/0004-RubyTkSemiReport/SANY0075.jpg)
-![SANY0076.jpg]({{site.baseurl}}/images/0004-RubyTkSemiReport/SANY0076.jpg)
+![dscf0519.jpg]({{base}}{{site.baseurl}}/images/0004-RubyTkSemiReport/dscf0519.jpg)
+![dscf0520.jpg]({{base}}{{site.baseurl}}/images/0004-RubyTkSemiReport/dscf0520.jpg)
+![dscf0521.jpg]({{base}}{{site.baseurl}}/images/0004-RubyTkSemiReport/dscf0521.jpg)
+![dscf0522.jpg]({{base}}{{site.baseurl}}/images/0004-RubyTkSemiReport/dscf0522.jpg)
+![SANY0075.jpg]({{base}}{{site.baseurl}}/images/0004-RubyTkSemiReport/SANY0075.jpg)
+![SANY0076.jpg]({{base}}{{site.baseurl}}/images/0004-RubyTkSemiReport/SANY0076.jpg)
 
 

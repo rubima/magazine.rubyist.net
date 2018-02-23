@@ -8,7 +8,7 @@ tags: 0033 SapporoRubyKaigi03Report
 
 
 ## はじめに
-: ![sapporo03_0.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_0.jpeg)
+: ![sapporo03_0.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_0.jpeg)
 
 2010 年 12 月 4 日に、札幌で開催される地域 Ruby 会議として今年で 3 回目となる、札幌Ruby 会議 03 が開催されました。 
 今回は、まつもとゆきひろさんによる基調講演があり、道内外の Rubyist たちが数多く参加されました。
@@ -60,7 +60,7 @@ RubyKaigi2010 で ThoughtWorks の Sudhindra Rao さんが言われていた
 この"非常に成熟したテスト文化とツール"とは何かを説明してくださりました。
 
 #### 永和システムマネジメントでのソフトウェア開発の文化
-: ![sapporo03_1.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_1.jpeg)
+: ![sapporo03_1.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_1.jpeg)
 
 * 文化その 1:テストを書く
 
@@ -106,7 +106,7 @@ CI 環境とは、継続的にソフトウェアのビルドとテストを行�
 テスト駆動開発にすぐ役立ちそうなたくさんのツールを紹介していただけました。
 
 ### 「高速な乗除算の実現と性能評価」村田 賢太 (@mrkn) - 株式会社ジェネティックラボ &amp;&amp; Ruby 札幌
-: ![sapporo03_2.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_2.jpeg)
+: ![sapporo03_2.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_2.jpeg)
 
 札幌が誇る Ruby コミッタである村田さんが Ruby での高速な演算とその性能評価についてお話されました。
 
@@ -133,7 +133,7 @@ CI 環境とは、継続的にソフトウェアのビルドとテストを行�
 発表ではそれぞれのアルゴリズムについてどのように計算回数を減らしているかの説明も行っているので興味が有る方は、是非動画やスライドを御覧になっていただければと思います。Ruby の数値系ライブラリの今後が楽しみなセッションでした。
 
 ### 「Ruby の未来/未来の Ruby」まつもと ゆきひろ (@yukihiro_matz) - (株)ネットワーク応用通信研究所
-: ![sapporo03_3.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_3.jpeg)
+: ![sapporo03_3.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_3.jpeg)
 
 Ruby の父である、まつもとゆきひろさんが基調講演としてこれからの Ruby について話してくださりました。
 1993 年に作られたという Ruby も 18 歳になり、高校生になったと言えます。
@@ -176,7 +176,7 @@ Lua 言語の VM を参考にし、Ruby の膨大なクラスライブラリの�
 途中からプロジェクトに参加する方法がないことが明らかにされました。
 
 ### 「北の Rails 開発現場から'10」前田 智樹 (@tmaeda) - 株式会社アンタス、Ruby札幌
-: ![sapporo03_4.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_4.jpeg)
+: ![sapporo03_4.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_4.jpeg)
 
 Ruby 札幌運営であり、RubyKaigi2010 実行委員、そして今回の札幌 Ruby 会議 03 運営委員長である前田さんが株式会社アンタスによるスポンサーセッションとして、「ペアプログラミング」(以下ペアプロ) の導入の経緯と感想について話して下さいました。セッション開始時に Mac が起動しなくなるというトラブルが起きてしまい、急遽順番を入れ替えての発表でしたが復帰までのトラブルシューティングの内容もネタにするなど、和やかな雰囲気で発表がスタートしました。
 
@@ -196,7 +196,7 @@ Ruby 札幌運営であり、RubyKaigi2010 実行委員、そして今回の札�
 など生の回答を聞くことができました。同じような悩みをもっている皆さんは是非参考にされると良いのではないでしょうか。
 
 ### 「Ruby の教えてくれたこと」島田 浩二 (@snoozer05) - 株式会社えにしテック、Ruby札幌
-: ![sapporo03_5.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_5.jpeg)
+: ![sapporo03_5.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_5.jpeg)
 
 Ruby 札幌主宰の島田さんによる、えにしテックのスポンサーセッションでは、
 島田さんが Ruby について感じている良さについてお話されていました。
@@ -267,7 +267,7 @@ Ruby を書いていて気持ちいいと思うのはなぜか？そう考える
 ソフトウェアを育てていくために、どんな価値を大切にしたらよいのかという示唆を与えてくれるセッションでした。
 
 ### 「(カーリングとRuby) 2 投目 - Making Ricochet with the Ruby stone into Granites.」はしむかい としかつ (@curler_hashi) - 妹背牛カーリング協会
-: ![sapporo03_6.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_6.jpeg)
+: ![sapporo03_6.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_6.jpeg)
 
 前回の LT で大好評だった、はしむかいさんの発表がセッションになって帰ってきました。
 氏は北海道の妹背牛で稲作農家をされており、橋向農場謹製のお米のプレゼントも行われ
@@ -617,7 +617,7 @@ Github や Pivotal Tracker、IRC というツールを用いてコミュニケ�
 ----
 
 ### 「ご自宅用ツール間同期メカニズム兼ストレージのご提案 」 - 関将俊 (@m_seki) - druby.org
-: ![sapporo03_8.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_8.jpeg)
+: ![sapporo03_8.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_8.jpeg)
 
 分散オブジェクト技術の Ruby 実装である dRuby の作者である関さんが、Drop についてお話してくれました。
 Drop は Rinda の実用的な応用的の 1 つとのことです。
@@ -678,7 +678,7 @@ Drop は待つことができるので Drop からコールバックする必要
 (RubyDrop という全く別のプロジェクトができたため、2010/12/23以降 Drop は Drip というプロジェクト名で公開されています。)
 
 ### 「Railsアプリ開発 野生のカン」- 大場 寧子 (@nay3) - 株式会社 万葉
-: ![sapporo03_9.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_9.jpeg)
+: ![sapporo03_9.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_9.jpeg)
 
 株式会社万葉で社長を勤められている大場さんがお話してくれました。
 
@@ -718,7 +718,7 @@ Rails アプリを作る際のプラクティスを丁寧に説明してくれ�
 集合体の一部としてコードを書くことの大切さをしっかりと教えてくれた発表でした。
 
 ### 「 私のプロフィール」高橋征義 (@takahashim) - 株式会社達人出版会/日本Rubyの会会長
-: ![sapporo03_10.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_10.jpeg)
+: ![sapporo03_10.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_10.jpeg)
 
 高橋さん個人のお話ということで、達人出版会とそこに至るまでの流れについてのお話をしてもらいました。
 
@@ -772,7 +772,7 @@ ReVIEW は書籍執筆用マークアップ言語で、元原稿からコマン�
 というメッセージをいただきました。
 
 ### 「There Is No Spoon:Revisited」 - 角谷 信太郎 (@kakutani) - (株)永和システムマネジメント、rubykaigi.org
-: ![sapporo03_11.jpeg]({{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_11.jpeg)
+: ![sapporo03_11.jpeg]({{base}}{{site.baseurl}}/images/0033-SapporoRubyKaigi03Report/sapporo03_11.jpeg)
 
 角谷さんは今回 RubyKaigi2010 での発表時に、話し切れなかった内容をこの札幌 Ruby 会議 03 で語るということで
 これからの Ruby コミュニティを考えるための材料としての、これまでの Ruby コミュニティでの自身の活動、経験を通しての思いや考えを語られていました。

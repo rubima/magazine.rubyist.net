@@ -64,10 +64,10 @@ Windows 用の Ruby のライブラリを手に入れます。 mswin32 版でも
 ### プロジェクトに DLL を追加する
 
 下図のように、 DLL を追加してやります。
-![project_tree.png]({{site.baseurl}}/images/0021-RubyWithCSharp/project_tree.png)
+![project_tree.png]({{base}}{{site.baseurl}}/images/0021-RubyWithCSharp/project_tree.png)
 
 さらに DLL の「出力ディレクトリにコピー」プロパティを「常にコピーする」に設定します。
-![dll_property.png]({{site.baseurl}}/images/0021-RubyWithCSharp/dll_property.png)
+![dll_property.png]({{base}}{{site.baseurl}}/images/0021-RubyWithCSharp/dll_property.png)
 
 参照の設定は要りません。
 

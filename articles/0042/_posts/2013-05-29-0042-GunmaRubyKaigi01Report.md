@@ -12,7 +12,7 @@ tags: 0042 GunmaRubyKaigi01Report
 ## RegionalRubyKaigi レポートぐんま Ruby 会議 01
 
 ### 開催概要
-: ![002_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/002_s.jpg)
+: ![002_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/002_s.jpg)
 
 開催日
 :  2013/03/09(日)
@@ -32,7 +32,7 @@ tags: 0042 GunmaRubyKaigi01Report
 ### はじめに
 
 群馬で毎月勉強会を開催している 「guRubyの会」 (guRuby) が中心となって、はじめての“ぐんま”でのRuby会議が開催されました。会全体のテーマは「puts "Hello, World!"」とプログラミング入門のような空気の会議と思わせつつ、講演に対するテーマは“Rubyに関わり見てきた世界、ソフトウェア開発に対する世界観”とかなり斜め上なものでした。
-: ![001_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/001_s.jpg)
+: ![001_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/001_s.jpg)
 
 ぐんまのソウルフードを食べる昼食イベントや、[toRuby](http://pub.cozmixng.org/~the-rwiki/rw-cgi.rb?cmd=view;name=toRuby), [Gunma.web](http://gunma-web.org/) など guRuby 周辺のコミュニティの応援もあり、参加人数は当初の予定人数をはるかに上回る人数で大盛況の会議になりました。
 
@@ -42,7 +42,7 @@ tags: 0042 GunmaRubyKaigi01Report
 
 * [http://yugui.jp/articles/874](http://yugui.jp/articles/874)
 
-: ![003_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/003_s.jpg)
+: ![003_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/003_s.jpg)
 
 Yugui さんが考えるソフトウエア開発者としての世界観として、次のように話されていました。現実社会では情報が少ないことで発生する人の属性への誤解、ある人物に対する安易なモデリングを行ってしまう。それにたいして、ネットワーク社会では情報量の豊富さや人と人とのつながりによって、現実社会での問題を用意に変化させられるかもしれない可能性がある。だから Yugui さんはそのネットワーク社会に貢献しやすい、もしくは変化させる手段として有効な Ruby という言語を選び、関わっているのだそうです。
 
@@ -56,7 +56,7 @@ Yugui さんご自身が「flgを使った処理になる」という御本人�
 
 * [http://slide.rabbit-shocker.org/authors/kou/gurk-01/](http://slide.rabbit-shocker.org/authors/kou/gurk-01/)
 
-: ![004_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/004_s.jpg)
+: ![004_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/004_s.jpg)
 
 Yugui さんと同じ年齢の須藤さんの発表。Ruby は「応援したい」言語。“作る”、“直す”、“使う”の３つの応援があるそうですが、須藤さんは日常、スクリプト言語として『使う』ことで Ruby を応援しながら関わってきたと話されていました。
 
@@ -68,7 +68,7 @@ Yugui さんと同じ年齢の須藤さんの発表。Ruby は「応援したい
 
 * [https://speakerdeck.com/koichiro/salaryman](https://speakerdeck.com/koichiro/salaryman)
 
-: ![005_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/005_s.jpg)
+: ![005_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/005_s.jpg)
 
 ご本人曰く、ロールプレイング3部作の最後の登壇者で、いつも楽しいお話を聞かせてくれる「サラリーマン」大場さんの講演です。落ちを務めるとおっしゃっていましたが、全編笑いの絶えない楽しい内容でした。
 
@@ -79,7 +79,7 @@ Yugui さんと同じ年齢の須藤さんの発表。Ruby は「応援したい
 ### 早川真也
 
 #### フリーランスとして。
-: ![006_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/006_s.jpg)
+: ![006_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/006_s.jpg)
 
 群馬枠 1 人目は、プラチナスポンサーにもなっているツルマウソフトの早川真也さんの発表。これまでの活動を振り返りつつ、仕事に関わるときの姿勢や考え方など、またその中で悩んできたことを赤裸々に語っていました。さまざまな分野の本質を吸収しながら、『これ』といった自分の強みを見つけて武器にすることが大切だとおっしゃってました。
 
@@ -93,14 +93,14 @@ Yugui さんと同じ年齢の須藤さんの発表。Ruby は「応援したい
 
 * [http://www.slideshare.net/e2esound.com/ss-17075330](http://www.slideshare.net/e2esound.com/ss-17075330)
 
-: ![007_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/007_s.jpg)
+: ![007_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/007_s.jpg)
 
 群馬枠 2 人目は東京では [Mitaka.rb](http://groups.google.co.jp/group/mitakarb) などに所属していた、ぐんまに戻ってきて 18 ヶ月目の寺嶋裕也さんの発表。メインはぐんまの観光紹介としながらも、過疎化の進む地方での IT インフラの厳しさ、地方で仕事するという環境の難しさなど、実際に体験された話を聞くことができました。仕事の多くは東京の会社から依頼されるのものなので、実際の運用では距離的な問題で大変苦労されているようでした。厳しい状況の中、自分の地元が廃れていくのは忍びないという思いから、その好転を意識して活動されているそうです。情報の活性化を行い、東京圏から多くの「外貨」を収集する等、地域の職の多様化に自分のできる範囲のことで貢献したいとおっしゃっていました。道は険しそうですが、いまはまだ少ない地元から発注がすこしずつでも増えていけば、寺嶋さんの夢はそう遠くないと感じました。
 
 ### LT
 
 LT (ライトニングトークス) は、招待トーカーの「アーティスト」関将俊さんから始まり、計6名の方が話をされました。
-: ![008_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/008_s.jpg)
+: ![008_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/008_s.jpg)
 
 * 「アーティスト」 関 将俊
 * 「自由ソフトウェア GnuPG と Gnuk Token」 g新部 裕
@@ -127,19 +127,19 @@ LT (ライトニングトークス) は、招待トーカーの「アーティ�
 ### 勉強会
 
 2011 年、RubyKaigi で行われた「[ゆRuby](http://atnd.org/events/17851)」と同じ形式で、Yugui さんの書かれた『初めてのRuby』をご本人に朗読してもらいながら、南齋さんの司会で進行する勉強会でした。
-: ![009_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/009_s.jpg)
+: ![009_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/009_s.jpg)
 
 約 2 年かけて読んできた『初めてのRuby』もこの日で読み終わりました。その最後をこのぐんま Ruby 会議に設定できたのは偶然とは思えないタイミングの良さですね。最後に著者の Yugui さんから、この本は「Reference Manual を読むための導入という位置づけにある」とのコメントがありました。参加者のみなさんも各々、または隣の方とペアで写経をして理解を深めていたようでした。
 
 ### さいごに
-: ![010_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/010_s.jpg)
+: ![010_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/010_s.jpg)
 
 いきなり発表資料を表示していた PC がロックするトラブルがありましたが、司会の金子さんの巧みな話術で笑いに昇華させたオープニングから、和やかでありつつも内容の濃い会になったと思います。最後、実行委員長の南齋さんが
 
 > 「自分とは少し違う世界を見る事は、新たな視点を与えてくれるものです。
 > できれば、この会場を出るときに、自分の目の前に広がる世界が昼間ここに入ってきたときと違って見えてればうれしいです」
 
-: ![011_s.jpg]({{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/011_s.jpg)
+: ![011_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/011_s.jpg)
 
 と話されていたように、参加したみなさんも発表された方々の世界を見て、新しい視点を手に入れたのではないかと思います。ぐんまRuby会議02の告知もありました。次回もとても楽しみです。
 

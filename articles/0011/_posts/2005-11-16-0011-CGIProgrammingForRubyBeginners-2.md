@@ -112,7 +112,7 @@ __その1__
 ページを下の方へスクロールさせると
 下図のような「最新ファイルリリース」というところがあるので、
 そこの 「ダウンロード」のリンクをクリックします。
-![rubyforge_installer.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rubyforge_installer.jpg)
+![rubyforge_installer.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rubyforge_installer.jpg)
 
 __その2__
 
@@ -122,13 +122,13 @@ One-Click Installer - Windows と書かれた項目があります。
 インストーラーは rubyXXX-YY.exe (XXXとYYは数字) で示されています。
 これをクリックしてダウンロードします。
 筆者がダウンロードした時には ruby182-15.exe が最新版でした。
-![rubyforge_download.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rubyforge_download.jpg)
+![rubyforge_download.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rubyforge_download.jpg)
 
 __その3__
 
 ダウンロードが完了すると、下のようなファイルが作成
 されていると思います。
-![installer_donwloaded.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_donwloaded.jpg)
+![installer_donwloaded.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_donwloaded.jpg)
 
 #### インストール
 
@@ -142,7 +142,7 @@ __その1__
 インストーラーを実行すると、
 下のようなダイアログが表示されるはずです。
 「Next」 を選択するとインストールが開始されます。
-![installer_startup.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_startup.jpg)
+![installer_startup.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_startup.jpg)
 
 __その2__
 
@@ -154,7 +154,7 @@ Ruby のライセンスが英語で書かれていて
 Ruby ライセンスの日本語の説明がありますので、
 そちらを参照して下さい。
 納得出来たら「I Agree」を押して下さい。
-![installer_argeed.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_argeed.jpg)
+![installer_argeed.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_argeed.jpg)
 
 __その3__
 
@@ -164,7 +164,7 @@ __その3__
 最低でも RubyGems と OpenSSL と Tcl/Tk GUI Libraries の 3 つを
 選択することをお勧めします。
 その他はお好みで選択して良いと思います。
-![installer_content.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_content.jpg)
+![installer_content.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_content.jpg)
 
 __その4__
 
@@ -177,12 +177,12 @@ Ruby のインストール場所を指定します。
 トラブルの原因になります。
 
 「Install」を押すとファイルがインストールされます。
-![installer_path.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_path.jpg)
+![installer_path.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_path.jpg)
 
 __その5__
 
 これでインストールは終了です。「Finish」を押してインストーラーを終了させます。
-![installer_done.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_done.jpg)
+![installer_done.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/installer_done.jpg)
 
 #### インストールの確認
 
@@ -216,7 +216,7 @@ tkline.rb
 というファイルをダブルクリックして実行してみて下さい。
 黒い画面 (コマンドプロンプト) と何かウィンドウが現れるはずです。
 これが出てきたらインストールは完了しています。
-![confirm_installation_tk.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/confirm_installation_tk.jpg)
+![confirm_installation_tk.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/confirm_installation_tk.jpg)
 
 __方法その2__
 
@@ -241,7 +241,7 @@ ruby -v
 と入力して、「Enter」キーを押します。下図のように 
 Ruby のバージョン・リリースの日付・プラットフォームが
 表示されれば OK です。
-![confirm_installation.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/confirm_installation.jpg)
+![confirm_installation.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/confirm_installation.jpg)
 
 ### サーバーの準備
 
@@ -252,7 +252,7 @@ Ruby のバージョン・リリースの日付・プラットフォームが
 そこで、この連載では Ruby で書かれたサーバーを用意しました。
 設定をせずに CGI プログラムを試すことが出来ます。
 
-* [rubima011-cgi.zip]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rubima011-cgi.zip)
+* [rubima011-cgi.zip]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rubima011-cgi.zip)
 
 
 上のリンクをクリックして
@@ -298,14 +298,14 @@ Sourceforge の RDE のページに移動します。
 そこから RDE をダウンロードすることが出来ます。
 Download RDE1.x.x_setup.exe (x は数字) と書かれたリンクを
 クリックします。
-![rde_sourceforge1.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge1.jpg)
+![rde_sourceforge1.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge1.jpg)
 
 __その3__
 
 RDE をダウンロードするところを選択します。
 「Download」 の下の 「xxxx kb」 (x は数字) の
 左隣のアイコンをどれでもいいので、クリックして下さい。
-![rde_sourceforge2.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge2.jpg)
+![rde_sourceforge2.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge2.jpg)
 
 __その4__
 
@@ -320,7 +320,7 @@ http://.../RDE1.x.x_setup.exe (x は数字)
 
 
 というリンクをクリックして下さい。
-![rde_sourceforge3.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge3.jpg)
+![rde_sourceforge3.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_sourceforge3.jpg)
 
 #### インストール
 
@@ -332,12 +332,12 @@ __その1__
 
 インストーラーが使用する言語を指定します。
 通常は「Japanese」のままで良いです。
-![rde_installer_startup.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_startup.jpg)
+![rde_installer_startup.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_startup.jpg)
 
 __その2__
 
 そのまま「次へ」を選びます。
-![rde_installer_startup2.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_startup2.jpg)
+![rde_installer_startup2.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_startup2.jpg)
 
 __その3__
 
@@ -351,47 +351,47 @@ One-Click Ruby Installer で Ruby (の翻訳機) のインストール時に
 D:\app\ruby\bin\ruby.exe になりますし、
 C:\ruby に Ruby をインストールしたら
 C:\ruby\bin\ruby.exe になります。
-![rde_installer_ruby.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_ruby.jpg)
+![rde_installer_ruby.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_ruby.jpg)
 
 __その4__
 
 RDE をインストールする場所を指定します。
 これも「次へ」を押します。
-![rde_installer_path.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_path.jpg)
+![rde_installer_path.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_path.jpg)
 
 __その5__
 
 インストールする内容を選びます。
 内容を選ぶのが面倒なら「次へ」を選んで下さい。
-![rde_installer_content.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_content.jpg)
+![rde_installer_content.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_content.jpg)
 
 __その6__
 
 これも「次へ」を選べば良いです。
-![rde_installer_rde.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_rde.jpg)
+![rde_installer_rde.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_rde.jpg)
 
 __その7__
 
 今までの設定で問題なければ「インストール」を選びます。
-![rde_installer_install.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_install.jpg)
+![rde_installer_install.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_install.jpg)
 
 __その8__
 
 インストール終了です。「終了」を押して下さい。
-![rde_installer_finish.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_finish.jpg)
+![rde_installer_finish.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_installer_finish.jpg)
 
 #### RDEの設定
 
 最初に起動すると、下の図のようなダイアログが出ます。
 後で設定出来るので、「Submit」ボタンを押しましょう。
-![rde_startup.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_startup.jpg)
+![rde_startup.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_startup.jpg)
 
 「Submit」ボタンを押すと、下のようなウィンドウが
 表示されるはずです。
 もしかするとツールバーが 4 種類見えないかもしれません。
 その場合は各ツールバーの左端の縦線をドラッグして
 ツールバーを動かしてみて下さい。
-![rde_main_window.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_main_window.jpg)
+![rde_main_window.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_main_window.jpg)
 
 #### メニューの日本語表示
 
@@ -403,7 +403,7 @@ __その8__
 その中の一番上の TranslationFile に 
 RDE がインストールされた場所の
 「Translations\Japanese_XXXX.xml」(Xは数字) を翻訳ファイルとして指定します。
-![rde_translation.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_translation.jpg)
+![rde_translation.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_translation.jpg)
 
 上の図は RDE を C:\Program Files\RDE にインストールした場合です。
 他の場所に RDE をインストールした場合は適宜変更する必要があります。
@@ -418,7 +418,7 @@ RDE を再起動すればメニューが日本語表示になります。
 その場合はメニューの ツール → エディタ設定 を選び、
 タブの一番上にあるフォントと書かれたボタンを押します。
 こうすることで下図のようなフォント選択のダイアログが出ます。
-![rde_editor_font.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_editor_font.jpg)
+![rde_editor_font.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_editor_font.jpg)
 
 好みのフォントが無ければ下記のようにすれば良いでしょう。
 
@@ -435,17 +435,17 @@ RDE を再起動すればメニューが日本語表示になります。
 * メニュー の ツール → 設定 を選ぶ
 * コードウィンドウ → 文字コード変換 を選ぶ
 
-![rde_charcode.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_charcode.jpg)
+![rde_charcode.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_charcode.jpg)
 
 * 「追加」 のボタンを押す
 * RDE のインストール先の japanese.dll を選択
 
-![rde_japanese_dll.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_japanese_dll.jpg)
+![rde_japanese_dll.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_japanese_dll.jpg)
 
 * コードウィンドウ → 文字コード を選ぶ
 * 標準文字コードを デフォルト から SJIS に変更
 
-![rde_default_charcode.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_default_charcode.jpg)
+![rde_default_charcode.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-2/rde_default_charcode.jpg)
 
 #### Ruby の Help との連動
 

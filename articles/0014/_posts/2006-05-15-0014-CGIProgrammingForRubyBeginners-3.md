@@ -47,7 +47,7 @@ priny "hogehoge"
 サーバーを起動して、ブラウザで [http://localhost:8080/baz01.rb](http://localhost:8080/baz01.rb) にアクセスして、
 実行してみましょう。
 実行結果は下のようになります。
-![baz01.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz01.jpg)
+![baz01.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz01.jpg)
 
 #### エラー探し
 
@@ -108,7 +108,7 @@ CGI プログラムに固有のエラーではなく、Ruby プログラムと�
 下に RDE で baz01.rb を実行した場合のスクリーンショットを載せます。
 CGI で実行した場合と同じエラーが出ていることが分かります。
 このような方法でもエラーの原因を見つけることが出来ます。
-![baz01-rde.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz01-rde.jpg)
+![baz01-rde.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz01-rde.jpg)
 
 このエラーを修正するには priny を print に変えます。
 これで Ruby プログラムとして実行可能になります。
@@ -235,7 +235,7 @@ print m
 ```
 
 [http://localhost:8080/baz02.html](http://localhost:8080/baz02.html) にフォームがあります。
-![baz02.html]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02.html)
+![baz02.html]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02.html)
 
 フォームに入力してOKボタンを押して、baz02.rb を実行してみましょう。
 baz02.rb が実行されると、baz01.rb と同じエラーがブラウザに表示されます。
@@ -272,7 +272,7 @@ http://localhost:8080/baz02.html -> /baz02.rb?message=hoge&s=OK
 "cgi " の部分を修正したら、一度 RDE で実行してみましょう。
 RDE で実行すると、プログラムが実行の途中で止まり、
 実行結果を表示する部分が灰色のままになってしまいます。
-![baz02-input.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-input.jpg)
+![baz02-input.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-input.jpg)
 
 CGI クラスのオブジェクトを使った CGI プログラムを実行すると、
 CGI オブジェクトはフォームの値が欲しくて
@@ -286,14 +286,14 @@ RDE を経由して CGI オブジェクトにフォームの値を入力すれ�
 フォームの値を入力するには RDE のメニューの デバッグ → 一行入力 を選びます。
 こうすると一行入力と書かれたダイアログが出てくるので、
 ここにフォームの値を入力します。
-![baz02-oneline.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-oneline.jpg)
+![baz02-oneline.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-oneline.jpg)
 
 今は何も入力をしないで CGI プログラムを再開させましょう。
 何も打たずに「入力」のボタンを押します。
 次に RDE のメニューの 編集 → EOFを入力 を選びます。
 これで Ruby プログラムが再開されます。
 下にその結果を載せます。
-![baz02-outcome.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-outcome.jpg)
+![baz02-outcome.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-outcome.jpg)
 
 RDE で実行できたらもう一度 [http://localhost:8080/baz02.html](http://localhost:8080/baz02.html)
 を表示させてフォームに入力し、CGI プログラムとして実行してみましょう。
@@ -301,7 +301,7 @@ RDE で実行できたらもう一度 [http://localhost:8080/baz02.html](http://
 
 山彦もどき なので入力した値が表示されるはずなのですが、
 どうしてこうなるのでしょうか？
-![baz02-white.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-white.jpg)
+![baz02-white.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-white.jpg)
 
 実は baz02.rb にはエラーがもう一つあります。
 そのエラーを見つける方法としてこれから下の 2 種類の方法を紹介します。
@@ -370,12 +370,12 @@ RDE から実行する時はフォームの値を入力してあげなくては�
 そのためには下図のように baz02-print.rb がフォームの入力待ちになった時に
 フォームのデータを入れてあげます。
 フォームのデータは前号で説明した URL の「?」の後ろの部分です。
-![baz02-print.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-print.jpg)
+![baz02-print.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-print.jpg)
 
 一行入力に対し図のように message=hogehoge と入力し、
 その後でメニューから 編集 -&gt; EOF を入力 を選択します。
 これで baz02-print.rb が実行されます。
-![baz02-print2.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-print2.jpg)
+![baz02-print2.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/baz02-print2.jpg)
 
 実行結果は
 
@@ -648,7 +648,7 @@ print "OK"
 実はこのプログラムにはエラーがあります。
 エラーを見つけるためにとりあえず実行してみましょう。
 [http://localhost:8080/access.rb](http://localhost:8080/access.rb) にアクセスしてみて下さい。
-![access-ok.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/access-ok.jpg)
+![access-ok.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/access-ok.jpg)
 
 OK と表示されたので、ちょっと見ただけでは
 うまく実行出来ているように見えますね。
@@ -666,7 +666,7 @@ OK と表示されたので、ちょっと見ただけでは
 アクセスログとしての意味はありません。
 こうしてみると、何もエラーは無いように思えます。
 書き込み先の access.txt にもアクセス記録が残っています。
-![access.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/access.jpg)
+![access.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-3/access.jpg)
 
 では、何度か 
 [http://localhost:8080/access.rb](http://localhost:8080/access.rb) にアクセスしてから、

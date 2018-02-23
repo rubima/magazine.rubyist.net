@@ -18,7 +18,7 @@ tags: 0033 TochigiRubyKaigi03Report
 その 50 回を記念して何か開催しようという話が出て、そこから、03 をやろうという流れになりました。50 回記念ということで、還暦を迎えられた、とちぎ Ruby の池澤さんと、とちぎ Ruby 会議 03 直前に最年少コミッターになった、栃木県の sora_h 君の年の差約 50 歳のコラボを行いました。
 
 50 回目を記念したイベントではありますが、「ふつうの toRuby を体験してもらう」という、趣旨で開催しました。参加された方々にも楽しんでもらえた会にできたのではないかと思います。
-: ![DSC_0029.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0029.jpg)
+: ![DSC_0029.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0029.jpg)
 
 ### とちぎ Ruby 会議 03 について
 
@@ -38,7 +38,7 @@ tags: 0033 TochigiRubyKaigi03Report
 ### 振り返り
 
 まずはとちぎ Ruby 会議が始まる前に、いつもの toRuby のメンバーが集まって、50 回の振り返りをしました。「あのイベントの時はあの人が来てくれたんだよね」とか、「ここで○○さんが toRuby に来るきっかけになったんですよね」など、多くの話題が出ました。このような場っていいですよね。改めて、とちぎ Ruby の歴史の長さを感じることができました。
-: ![DSC_0039.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0039.jpg)
+: ![DSC_0039.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0039.jpg)
 
 ### 一般講演
 
@@ -54,8 +54,8 @@ tags: 0033 TochigiRubyKaigi03Report
 
 * [発表資料](http://www.slideshare.net/tadd/decimal-7089783)
 
-: ![DSC_0064.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0064.jpg)
-: ![DSC_0067.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0067.jpg)
+: ![DSC_0064.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0064.jpg)
+: ![DSC_0067.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0067.jpg)
 
 #### ぼくとわたしの Vim &amp;&amp; 詳解！ parallel_test (sora_h さん)
 
@@ -70,8 +70,8 @@ Ruby のパラレルテストを実装しようとしたきっかけは、「Rub
 * [発表資料 1](http://www.slideshare.net/sorah/vim-7111377)
 * [発表資料 2](http://www.slideshare.net/sorah/ruby-testall-parallel-running)
 
-: ![DSC_0097.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0097.jpg)
-: ![DSC_0101.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0101.jpg)
+: ![DSC_0097.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0097.jpg)
+: ![DSC_0101.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0101.jpg)
 
 #### 10 年前の Ruby、10 年後の Ruby (それでも石は廻っている) arton (田島あきお) さん
 
@@ -85,7 +85,7 @@ arton さんが後半で説明されていたのは「おもちゃ」である�
 
 * [発表資料](http://www.slideshare.net/artonx/decades-around-here)
 
-: ![DSC_0132.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0132.jpg)
+: ![DSC_0132.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0132.jpg)
 
 #### リファクタリングの感情 越水智之さん
 
@@ -94,7 +94,7 @@ toRuby でも独特な雰囲気を持ち続けている tko こと越水さん�
 まずはリファクタリングを巡る様々な感情についての紹介がありました。越水さんがリファクタリングが必要なコードを見たときに、最初に覚える感情は「怒り」だそうです。これが燃料となるそうです。その後は「悲しみ」、「哀れみ」、最後に「慈悲」を感じるとのことです。経験のあるプログラマーほど「きまぐれ」と言われるのは、「コードを見たときに感じる気持ちが強く、感情が乱されるからだろう」と考察されていました。また、Kent Beck が「どうしたらリファクタリングをマスターしたと言えるのか」と聞かれたときに「諦観」という言葉を使って説明した、ということも紹介されていました。
 
 後半は急に雰囲気が変わり、日本の Ruby 界のイケメン紹介でした。資料は公開されるのでしょうか？　もし「自分はイケメンだと思うのだけど、紹介されなかった」と苦情のある方は、とちぎ Ruby の事務局まで。
-: ![DSC_0164.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0164.jpg)
+: ![DSC_0164.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0164.jpg)
 
 #### 50 回をふりかえって 池澤一廣さん
 
@@ -105,7 +105,7 @@ toRuby でも独特な雰囲気を持ち続けている tko こと越水さん�
 池澤さん自身の振り返りとして、00 年代は今までの 50 年間を超える、濃い 10 年だったそうです。演劇、ダンス、社会学、toRuby。さまざまなことに挑戦しつつも、いろいろな所で、同じような相似形のものが見えていたそうです。10 年代は「救世主は現れない」「自分達で自分達の生きやすい世界を作るしかない」ということを 00 年代からの学びで感じられているそうです。toRuby はそのための実験であり、今後挑戦していくことは「eXtreme Social Design」だそうです。
 
 最後に、還暦を迎えられた池澤さんに対して、お花が贈られました。おめでとうございます。
-: ![DSC_0202.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0202.jpg)
+: ![DSC_0202.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0202.jpg)
 
 ### ライトニングトークス
 
@@ -119,7 +119,7 @@ toRuby でも独特な雰囲気を持ち続けている tko こと越水さん�
 
 * [発表資料](http://www.slideshare.net/track8/darkness-on-the-edge-of-gunma)
 
-: ![DSC_0219.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0219.jpg)
+: ![DSC_0219.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0219.jpg)
 
 #### リック・サンダースさん / "去年の社会人一年生の Ruby 研修"
 
@@ -129,14 +129,14 @@ toRuby でも独特な雰囲気を持ち続けている tko こと越水さん�
 
 * [発表資料](http://www.slideshare.net/toRuby/t-ruby)
 
-: ![DSC_0227.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0227.jpg)
+: ![DSC_0227.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0227.jpg)
 
 #### Glass_sagaさん / "Reudy on Ruby1.9"
 
 人工無能の Reudy の 1.9 対応と、より Ruby らしく動作するようにといったリファクタリングをしたという報告でした。Reudy の動作の原理の紹介があり、いかに人間的な振る舞いをするのか、ということを丁寧に紹介されていました。
 
 一番聞いている人達が湧いたのは、Twitter で自分が follow から外された時にそれを通知する、「りむられったー」だった気がします。
-: ![DSC_0245.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0245.jpg)
+: ![DSC_0245.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0245.jpg)
 
 #### 坪井創吾さん / "王子様本の Ruby1.9 対応を調べる"
 
@@ -144,7 +144,7 @@ toRuby でも独特な雰囲気を持ち続けている tko こと越水さん�
 
 * [発表資料](http://www.slideshare.net/toRuby/ruby19)
 
-: ![DSC_0250.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0250.jpg)
+: ![DSC_0250.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0250.jpg)
 
 #### 樽家昌也さん / "Ruby と構文解析と私"
 
@@ -152,7 +152,7 @@ toRuby でも独特な雰囲気を持ち続けている tko こと越水さん�
 
 * [発表資料](http://www.slideshare.net/tarui/tork03-lt)
 
-: ![DSC_0276.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0276.jpg)
+: ![DSC_0276.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0276.jpg)
 
 #### 五十嵐邦明 (igaiga) さん / "北陸.rb x 高専カンファレンス - 学生さんと一緒に Ruby イベントを つくっている"
 
@@ -162,18 +162,18 @@ toRuby でも独特な雰囲気を持ち続けている tko こと越水さん�
 
 * [発表資料](http://www.slideshare.net/igaiga/ruby-7075645)
 
-: ![DSC_0285.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0285.jpg)
+: ![DSC_0285.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0285.jpg)
 
 ### ふつうの勉強会
-: ![DSC_0326.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0326.jpg)
+: ![DSC_0326.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0326.jpg)
 
 とちぎ Ruby 伝統の、ふつうの勉強会です。今回はとちぎ Ruby 会議スペシャルということで、「Ruby レシピブック 303 の技」を教科書に、執筆者の高橋さん自らの朗読で行われました。一番揉めそうな所ということで、ソースコードの文字コードのレシピと、Float の丸めのレシピを使って勉強会をしました。
 
 まずはレシピ 19 のソースコードの文字コードの解説でした。1.8 では文字コードをあまり厳密に扱ってこなかったそうです。1.9 からはここに手が入り (リリース直前まで色々揉めていたような？)、Emacs などと同じようなマジックコメントを使って指定するようになりました。1.9 からは「指定されたコードでは表現できないはずの文字が出現したら、エラーとする」といったように、処理が厳密になったそうです。このような本に書かれていない所まで解説がありました。
 
 お次はレシピ 149 の数字の丸め。ここでは「このような丸めを Float で行うのはおかしい」といった指摘があったり、すべてを受け流すことなく意見を聞く高橋さんの姿が印象的でした。それなりに時間をとって行いましたが、4 ページしか進んでいません。小さいところで大きく盛り上がるのはとちぎ Ruby の「ふつう」の姿です。toRuby のふつうが多くの方に伝わったのではないか、と思います。
-: ![DSC_0341.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0341.jpg)
-: ![DSC_0346.jpg]({{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0346.jpg)
+: ![DSC_0341.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0341.jpg)
+: ![DSC_0346.jpg]({{base}}{{site.baseurl}}/images/0033-TochigiRubyKaigi03Report/DSC_0346.jpg)
 
 ### 執筆、編集者
 

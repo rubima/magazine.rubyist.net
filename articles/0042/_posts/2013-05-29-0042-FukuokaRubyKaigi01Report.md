@@ -13,7 +13,7 @@ tags: 0042 FukuokaRubyKaigi01Report
 
 福岡でほぼ隔週で開催されている [Fukuoka.rb](http://www.facebook.com/groups/fukuokarb/) のメンバーの [@Spring_MT](https://twitter.com/Spring_MT) が中心となって、福岡での Ruby 会議が開催されました。
 福岡では 2008 年に「九州 Ruby 会議 01」が開催されていますが、それ以来 4 年ぶりの開催となりました。
-![001s.jpg]({{site.baseurl}}/images/0042-FukuokaRubyKaigi01Report/001s.jpg)
+![001s.jpg]({{base}}{{site.baseurl}}/images/0042-FukuokaRubyKaigi01Report/001s.jpg)
 
 開催日
 :  2012 年 12 月 1 日 14:00 〜 18:00
@@ -24,7 +24,7 @@ tags: 0042 FukuokaRubyKaigi01Report
 主催
 :   [@Spring_MT](https://twitter.com/Spring_MT)
 
-![logo-300.jpg]({{site.baseurl}}/images/0042-FukuokaRubyKaigi01Report/logo-300.jpg)
+![logo-300.jpg]({{base}}{{site.baseurl}}/images/0042-FukuokaRubyKaigi01Report/logo-300.jpg)
 :  
 <br />
 : <br />
@@ -39,7 +39,7 @@ tags: 0042 FukuokaRubyKaigi01Report
 : 
 
 ### DCI: Let the code do the talking (招待講演)
-![002s.jpg]({{site.baseurl}}/images/0042-FukuokaRubyKaigi01Report/002s.jpg)
+![002s.jpg]({{base}}{{site.baseurl}}/images/0042-FukuokaRubyKaigi01Report/002s.jpg)
 
 * 発表者
   * [@kakutani](https://twitter.com/kakutani)

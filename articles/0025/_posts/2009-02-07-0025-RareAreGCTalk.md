@@ -119,7 +119,7 @@ GC が初めて実装されたのは1960年代だそうです。
 さて、どのようにすればそれを見つけることができるでしょうか。
 
 下の図は一応本棚を表しています。。
-![bookshelf_ms_01.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_ms_01.jpg)
+![bookshelf_ms_01.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_ms_01.jpg)
 
 ### Mark&amp;Sweep
 
@@ -137,7 +137,7 @@ GC が初めて実装されたのは1960年代だそうです。
 
 
 この手順を終えると本棚の本は以下の図の様に変化しました。
-![bookshelf_ms_02.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_ms_02.jpg)
+![bookshelf_ms_02.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_ms_02.jpg)
 
 この手順では「必要な本」には赤いシールで印付けを、「不要な本」は何もせずにそのままにしています。
 これで「必要な本」と「不要な本」を確実かつ完全に区別する事ができました。
@@ -157,7 +157,7 @@ GC が初めて実装されたのは1960年代だそうです。
 
 
 この手順を終えると本棚の本は以下の図の様に変化しました。
-![bookshelf_ms_03.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_ms_03.jpg)
+![bookshelf_ms_03.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_ms_03.jpg)
 
 この手順では「必要な本」を本棚に戻し、「不要な本」をゴミ箱に捨てました。
 すると本棚には「必要な本」だけが残り、全ての「不要な本」を処分することができました。
@@ -177,7 +177,7 @@ GC が初めて実装されたのは1960年代だそうです。
 それは本同士の隙間がスカスカに空いてしまった事です。
 
 こうなってしまうと少し大きめの本は本棚にしまうことができなくなります。
-![bookshelf_ms_04.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_ms_04.jpg)
+![bookshelf_ms_04.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_ms_04.jpg)
 
 この問題を「断片化」（フラグメンテーション）と呼びます。
 
@@ -189,7 +189,7 @@ GC が初めて実装されたのは1960年代だそうです。
 
 一つの本棚だけで整理するのは断片化などの様々な問題を起こしそうです。
 なので、次は二つの本棚をうまく使って本の整理を行うことにしましょう。
-![bookshelf_cp_01.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_cp_01.jpg)
+![bookshelf_cp_01.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_cp_01.jpg)
 
 具体的には以下の様な手順で行います。
 
@@ -201,7 +201,7 @@ GC が初めて実装されたのは1960年代だそうです。
 
 
 この手順を終えると本棚の本は以下の図の様に変化しました。
-![bookshelf_cp_02.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_cp_02.jpg)
+![bookshelf_cp_02.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_cp_02.jpg)
 
 この手順では「必要な本」は右の本棚に移動、「不要な本」は何もせずにそのままにしました。
 
@@ -217,7 +217,7 @@ Mark&amp;Sweep では印付けをする事で「不要な本」を区別しま�
 
 
 この手順を終えると本棚の本は以下の図の様に変化しました。
-![bookshelf_cp_03.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_cp_03.jpg)
+![bookshelf_cp_03.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_cp_03.jpg)
 
 何も考えずに左の本棚の本をゴッソリとゴミ箱に捨ててしまいましょう。
 
@@ -265,7 +265,7 @@ Mark&amp;Sweepでは｢不要な本｣を捨てる際に、一度本棚の本を
 なのでそういう方法を考えてみました。
 
 それは「捨てないでねカード」を作る方法です。
-![bookshelf_rf_01.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_rf_01.jpg)
+![bookshelf_rf_01.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_rf_01.jpg)
 
 「捨てないでねカード」は名前の通り、この本を捨てて欲しくない（必要だ！）と思う人が名前を書き込むカードです。
 このカードは本一冊につき一枚作成し、本の間にでも挟んでおくことにします。
@@ -282,7 +282,7 @@ Mark&amp;Sweepでは｢不要な本｣を捨てる際に、一度本棚の本を
 
 
 この時、「捨てないでねカード」は以下の図の様になっています。
-![bookshelf_rf_02.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_rf_02.jpg)
+![bookshelf_rf_02.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_rf_02.jpg)
 
 こうして、どんどんA君が買ってきた本の「捨てないでねカード」には名前が増えていきます。
 
@@ -301,7 +301,7 @@ Mark&amp;Sweepでは｢不要な本｣を捨てる際に、一度本棚の本を
 
 
 これで無事に不要な本を捨てることができました。
-![bookshelf_rf_03.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_rf_03.jpg)
+![bookshelf_rf_03.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/bookshelf_rf_03.jpg)
 
 この方法を「 ReferenceCount アルゴリズム」と呼びます。
 
@@ -384,7 +384,7 @@ GC.start
 このプログラムを動作させた場合に実際に CRuby 内部ではどういう動きをしているのかを見ていきます。
 
 Child クラスを定義し、配列を生成します。
-![crubygc_ms_01.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_01.jpg)
+![crubygc_ms_01.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_01.jpg)
 
 まず、上の図のヒープ領域から説明していきます。
 
@@ -399,23 +399,23 @@ RVALUE という構造体の配列の配列という形で、Ruby のヒープ�
 その後、ルート内部に上記で確保した RArray のポインタが入ります。これは Ruby 上では arry1 と同じ役割です。
 
 ルートについての詳細は後で述べます。今はローカル変数を管理している所と思って貰えばいいでしょう。
-![crubygc_ms_02.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_02.jpg)
+![crubygc_ms_02.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_02.jpg)
 
 Childクラスのインスタンスが生成されました。
 
 CRuby 内部では RObject という構造体でヒープ領域に確保されます。
 
 また、RArray 内部には上記で生成した RObject のポインタが挿入されます。
-![crubygc_ms_03.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_03.jpg)
+![crubygc_ms_03.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_03.jpg)
 
 先ほどと同じくルートに RArray のポインタが入り、RArray 構造体がヒープ領域に確保されます。
-![crubygc_ms_04.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_04.jpg)
+![crubygc_ms_04.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_04.jpg)
 
 　
-![crubygc_ms_05.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_05.jpg)
+![crubygc_ms_05.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_05.jpg)
 
 ここも先ほど説明した内容と同じです。
-![crubygc_ms_06.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_06.jpg)
+![crubygc_ms_06.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_06.jpg)
 
 ローカル変数 arry2 に nil が入りました。
 
@@ -424,12 +424,12 @@ CRuby 内部では RObject という構造体でヒープ領域に確保され�
 図を見れば分かるようにRArrayは誰からも参照されていない、つまり不要なゴミのオブジェクトになりました。
 
 それに紐付いている RObject も、生きているオブジェクトから参照されていませんのでゴミのオブジェクトとなります。
-![crubygc_ms_07.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_07.jpg)
+![crubygc_ms_07.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_07.jpg)
 
 おまちかねの GC が始まります。
 
 どのようにして、不要なオブジェクトを解放するでしょうか。
-![crubygc_ms_08.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_08.jpg)
+![crubygc_ms_08.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_08.jpg)
 
 Mark 処理の始まりです。
 
@@ -442,22 +442,22 @@ Mark 処理ではルートから必要なオブジェクトを再帰的に Mark 
 さて、ここで重要な事はどこからも参照されていないオブジェクトには Mark されていない事です。本棚の話と同じですね。
 
 これで「必要なオブジェクト」と「不要なオブジェクト」が区別することができました。
-![crubygc_ms_09.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_09.jpg)
+![crubygc_ms_09.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_09.jpg)
 
 つづいて Sweep 処理です。
 
 Sweep 処理では Ruby のヒープ領域を一つずつ Mark がついていないかチェックしていきます。
-![crubygc_ms_10.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_10.jpg)
+![crubygc_ms_10.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_10.jpg)
 
 もし、Mark ビットが立っている場合はそれを0に戻します。
 
 これは次回の GC の際に不具合を起こさないようにするためです。
-![crubygc_ms_11.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_11.jpg)
+![crubygc_ms_11.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_11.jpg)
 
 もし、Mark ビットが立っていない場合はそのオブジェクトを解放します。
 
 これで GC は終了です。
-![crubygc_ms_12.jpg]({{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_12.jpg)
+![crubygc_ms_12.jpg]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/crubygc_ms_12.jpg)
 
 ゴミのオブジェクトは捨てられ、必要なオブジェクトのみ残りました。
 
@@ -695,7 +695,7 @@ MostlyCopyingGC とは保守的な GC で何とか Copying しようというア
 まさかと思いますが、皆さんの頭のGCはこの記事をゴミ判定してたりしないですよね？ :-)
 
 ## 著者について
-![profile_kao.png]({{site.baseurl}}/images/0025-RareAreGCTalk/profile_kao.png)
+![profile_kao.png]({{base}}{{site.baseurl}}/images/0025-RareAreGCTalk/profile_kao.png)
 
 [nari](http://d.hatena.ne.jp/authorNari/)
 

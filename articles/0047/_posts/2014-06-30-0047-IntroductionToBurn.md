@@ -20,7 +20,7 @@ tags: 0047 IntroductionToBurn
 本稿では、駆け出しの Rubyist であるところの著者が burn を作るにあたって、C 言語ジェネレータや ruby2c トランスレータ開発の試みの一部を含めて悪戦苦闘した結果をつまびらかにします。
 
 ## デモ
-![rubima-wars.png]({{site.baseurl}}/images/0047-IntroductionToBurn/rubima-wars.png)
+![rubima-wars.png]({{base}}{{site.baseurl}}/images/0047-IntroductionToBurn/rubima-wars.png)
 
 今回るびまに掲載して頂くにあたって、デモ代わりに burn で簡単なシューティングゲーム [RUBIMA WARS!](http://k.swd.cc/burn/resource/example/rubima-wars/emulator.html) を作ってみました。リンクを踏むと音が鳴るので注意。Chrome か Firefox で動きますが、burn v0.1.3 現在ではスマホには対応しておらず、PC のキーボード入力のみ受け付けます。Enter キーでゲームスタートして、x キーで弾を発射します。3 面が激ムズで、著者もまだクリアできていません。
 
@@ -67,7 +67,7 @@ burn を使うとこの ROM イメージを簡単に作成することができ�
 ### burn の C 言語ジェネレータ
 
 本節では実際の例を通して、burn が Fuel DSL から C 言語のソースコードをどのように生成していくのかを見ていきます。例えば以下のようなシンプルな Hello world だけを表示するアプリについて考えます。
-![hello-world.png]({{site.baseurl}}/images/0047-IntroductionToBurn/hello-world.png)
+![hello-world.png]({{base}}{{site.baseurl}}/images/0047-IntroductionToBurn/hello-world.png)
 
 この画面は、Fuel DSL では以下のように記述します。
 
@@ -105,7 +105,7 @@ void main(void){
 ### 実装した ruby2c トランスレータ
 
 次のような動的な表現について、どのように内部的に処理されるかを見てみましょう。
-![star.gif]({{site.baseurl}}/images/0047-IntroductionToBurn/star.gif)
+![star.gif]({{base}}{{site.baseurl}}/images/0047-IntroductionToBurn/star.gif)
 
 この画面は、Fuel DSL では以下のように記述します。
 

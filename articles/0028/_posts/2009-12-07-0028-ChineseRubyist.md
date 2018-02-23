@@ -20,7 +20,7 @@ tags: 0028 ChineseRubyist
 
 語り手
 : ダニエル Lv さん
-![3974205599_ba020a1aa8.jpg]({{site.baseurl}}/images/0028-ChineseRubyist/3974205599_ba020a1aa8.jpg)
+![3974205599_ba020a1aa8.jpg]({{base}}{{site.baseurl}}/images/0028-ChineseRubyist/3974205599_ba020a1aa8.jpg)
 
 ### まずは簡単に自己紹介してください。
 

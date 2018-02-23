@@ -138,7 +138,7 @@ Web サーバの名前、ポート番号、Web ページのパスを使って、
 これは、リファレンスマニュアルに記載の例を焼きなおしただけですが、
 net/http での GET リクエストの例は次のようになります。
 
-[get.rb]({{site.baseurl}}/images/0013-BundledLibraries/get.rb)
+[get.rb]({{base}}{{site.baseurl}}/images/0013-BundledLibraries/get.rb)
 
 ```ruby
 require 'net/http'
@@ -229,7 +229,7 @@ get.rb では GET リクエストを利用した例について解説しまし�
 net/http を利用すると POST リクエストは、とても簡単に行えます。
 次のようになります。
 
-[hatena_search.rb]({{site.baseurl}}/images/0013-BundledLibraries/hatena_search.rb)
+[hatena_search.rb]({{base}}{{site.baseurl}}/images/0013-BundledLibraries/hatena_search.rb)
 
 ```ruby
 require 'net/http'
@@ -277,7 +277,7 @@ end.join("&")
 Basic 認証が必要な [http://www.notwork.org/~gotoken/uu200410/basic/](http://www.notwork.org/~gotoken/uu200410/basic/)
 のページにログインします。
 
-[basic_auth.rb]({{site.baseurl}}/images/0013-BundledLibraries/basic_auth.rb)
+[basic_auth.rb]({{base}}{{site.baseurl}}/images/0013-BundledLibraries/basic_auth.rb)
 
 ```ruby
 require 'net/http'

@@ -26,7 +26,7 @@ tags: 0050 ShibuyaRubyKaigi01Report
 ## はじめに
 
 2014 年 11 月 1 日に Shibuya.rb の初の地域 Ruby 会議である「渋谷 Ruby 会議 01」を開催しました。 余談ですが今回の開催が Shibuya.rb の記念すべき (無理矢理カウントを合わせたら) 40 回目の開催でした。
-: ![tyabe.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/tyabe.jpg)
+: ![tyabe.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/tyabe.jpg)
 
 ## Unconference ～ shibuyarb lunch
 
@@ -34,7 +34,7 @@ tags: 0050 ShibuyaRubyKaigi01Report
 全体的になごやかな空気を作ることができたかなと思います。
 
 ## Keynote
-: ![bash0C7.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/bash0C7.jpg)
+: ![bash0C7.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/bash0C7.jpg)
 
 [資料](https://speakerdeck.com/bash0c7/i-am-ruby-ecosystem)
 
@@ -52,35 +52,35 @@ Ruby のエコシステムを見ると圧倒的に作る側の数が少ないで
 Shibuya.rb のご近所さんのような存在で、今回は地域 Ruby コミュニティの Ginza.rb と Sendagaya.rb、2 つのコミュニティからゲストが来てくれました。
 
 ### Sendagaya.rb
-: ![fukajun.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/fukajun.jpg)
+: ![fukajun.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/fukajun.jpg)
 
 まずは隔週月曜日に開催しているという Sendagaya.rb。主催の 1 人である @fukajun さんのやや緊張したトークで始まりました。「Ruby や Rails に興味のある仲間が気軽に来れる部室のような場所」を目指しているそう。初めて来た人にも「参加できてよかった！」と思ってもらえるようにして疎外感のないように工夫しているとのこと。後の LT でもありますが実際に参加して楽しいと感じる人もおり、雰囲気の良さを感じます。
 
 2012 年 5 月から始め 2014 年 10 月で 90 回開催を達成と、深みのある地域 Ruby コミュニティとなっています。千駄ヶ谷で始まり新宿開催を経て、現在では渋谷周辺で開催していることが多いのだとか。これまでの活動を振り返ると、基本はもくもく会と相談会をメインにしていて、中には HerokuDevCenter 読書会や REST に詳しい人を呼び RESTfulMeetup を開催したり、vim や git の勉強会になったりと、多彩な活動を行っていました。
 
 #### 役に立つかもしれないステータスコードの話 @tkawa さん
-: ![tkawa.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/tkawa.jpg)
+: ![tkawa.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/tkawa.jpg)
 
 続いては Sendagaya.rb に参加したメンバーによる LT です。
 Sendagaya.rb 共同主催の @tkawa さんによる、Web アプリケーションを開発していると意識しない訳にはいかない HTTP ステータスコードのお話がありました。その数あるステータスコードから「これ本当にあるの？」と役に立つかもしれないステータスコードの解説です。お話の中でも強い印象があるのはジョーク RFC である「418 I'm a teapot」でした。知っておくとどこかで役に立つかもしれないですね。
 
 #### コマンドライン E2E @iR3 さん
-: ![iR3.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/iR3.jpg)
+: ![iR3.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/iR3.jpg)
 
 2 番手は @iR3 さんによるコマンドラインで E2E テストを行うには、という内容の LT です。Capybara をコマンドラインからテストを実行するにはどうしたらよいか、という話。systemu を使うことで STDOUT、STDERR を配列で介してくれるため、テスト自動化には有用です。
 
 #### API 担当者が知りたい iOS のこと @satococoa さん
-: ![satococoa.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/satococoa.jpg)
+: ![satococoa.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/satococoa.jpg)
 
 3 番手は @satococoa さん。Sendagaya.rb ではずっと iOS アプリを書いていたそうで、iOS アプリで必要となるライブラリの管理や各種ライブラリ、認証や通知などのお話です。CocoaPods という管理システムを使うことで Gem と同じように管理できるというのは iOS アプリの開発者でなければ得られない知見でした。その他、iOS アプリを作るときに必要なアプリ内課金・ Push 通知・ OAuth2 の解説と使用ライブラリの紹介がありました。
 
 #### Web 業界未経験から就職した時の話 @nomnel さん
-: ![nomnel.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/nomnel.jpg)
+: ![nomnel.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/nomnel.jpg)
 
 Sendagaya.rb の最後は、初めての LT という @nomnel さんの Web 系に就職して学びがあったという話です。「ハッカーと画家」を読み退職。その後 komagata さんのツイートがきっかけでフィヨルドのリモートインターンに応募。チーム開発を体験したことやモダンな開発プロセスなど、初心者でかつ 1 人では得られない体験ができたということでした。フィヨルドで得られたことはそのまま今の職場でも新人教育に応用出来ていることで、 @fukajun さんも絶賛でした。
 
 ### Ginza.rb @netwillnet さん
-: ![netwillnet.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/netwillnet.jpg)
+: ![netwillnet.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/netwillnet.jpg)
 
 Ginza.rb からは主催の 1 人である前島さんがスピーカーとして参加されました。パーフェクト Ruby on Rails の著者の一人で、epub 版がこの渋谷 Ruby 会議の前日に発売されました。Ginza.rb には 3 人の主催がおり (@netwillnet さん、@y-yagi さん、@ken1flan さん) 2013 年 6 月から始めて 1 年半ほど。月に一度、第 3 火曜日に銀座周辺の会場を使って開催しています。これまではリクルートライフスタイル、みんなのウェディングなどを使わせてもらっているけれども、毎回使えるわけではないため会場提供してくれる会社を募集中だそうです。
 
@@ -97,7 +97,7 @@ Ginza.rb からは主催の 1 人である前島さんがスピーカーとし�
 ## Member Talks
 
 ### Grape による API 実装 in action: @kyanny
-: ![kyanny.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/kyanny.jpg)
+: ![kyanny.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/kyanny.jpg)
 
 [資料](https://speakerdeck.com/kyanny/grape-niyoru-api-shi-zhuang-in-action)
 
@@ -112,7 +112,7 @@ Grape を Rails で使うには、Grape 単体で使わず Rails とセットで
 Grape だけでは、外部連携まわりなどで辛くなることがあるので、Rails のちからを借りるか、自力で頑張る覚悟が必要と結論づけ、発表を終えられました。
 
 ### すこやか Rails: @onk
-: ![onk.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/onk.jpg)
+: ![onk.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/onk.jpg)
 
 [資料](http://www.slideshare.net/takafumionaka/rails-41084470)
 
@@ -127,7 +127,7 @@ Grape だけでは、外部連携まわりなどで辛くなることがある�
 複数サービスを運用しているからこその視点と戦略であり、非常に興味深いお話でした。
 
 ### 開発フローの作り方: @yaotti
-: ![yaotti.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/yaotti.jpg)
+: ![yaotti.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/yaotti.jpg)
 
 [資料](https://speakerdeck.com/yaotti/kai-fa-hurofalsezuo-rifang)
 
@@ -141,7 +141,7 @@ Grape だけでは、外部連携まわりなどで辛くなることがある�
 ソフトウェア開発をより良いものにするという目標の元で、Qiita を使っている人の開発だけではなく、自分達の開発も常により良くしようとしているんだなと感じる発表でした。
 
 ### インターネットカラオケマンを支える技術: @joker1007
-: ![joker1007.jpg]({{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/joker1007.jpg)
+: ![joker1007.jpg]({{base}}{{site.baseurl}}/images/0050-ShibuyaRubyKaigi01Report/joker1007.jpg)
 
 趣味として作り続けている自分用インターネットカラオケシステムのお話と実演デモでした。
 

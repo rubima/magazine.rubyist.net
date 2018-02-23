@@ -81,7 +81,7 @@ Kim Seungbum 氏は名刺ではなく、「Squeak アクションカード」と
 
 言葉の壁もあり、あまり細かい話ができなかった部分があるのですが、韓国の Rubyist も熱いです。Ruby と Rails の書籍を翻訳し、一気に韓国にも Ruby 旋風を巻き起こす意気込みでいます。
 
-![rubyist_korea1.jpg]({{site.baseurl}}/images/0013-WorldRubyistReport/rubyist_korea1.jpg) 写真は左より Seungbum 氏、あらい、June 氏、Nohmad 氏、Kabyeon 氏
+![rubyist_korea1.jpg]({{base}}{{site.baseurl}}/images/0013-WorldRubyistReport/rubyist_korea1.jpg) 写真は左より Seungbum 氏、あらい、June 氏、Nohmad 氏、Kabyeon 氏
 
 最後には Kim June 氏の提案によって、私と Nohmad 氏の二人が Ruby で Fibonacci 数を計算するコードを書いたりして遊んでから解散しました。
 
@@ -124,7 +124,7 @@ Ruby を Windows 実行ファイルに変えてしまう [exerb](http://exerb.so
 ### Rubyist 九州の風景
 
 Rubyist 九州はこれまでに 3 回おこなわれました。私のオフィスを利用して、気軽に皆で集まって話をするという形でやっています。とくに決まったテーマなどはなく、話したい人が話したいことを話します。プロジェクターがあるので、スライドも利用できます。
-![rubyist_kyushu1.jpg]({{site.baseurl}}/images/0013-WorldRubyistReport/rubyist_kyushu1.jpg)
+![rubyist_kyushu1.jpg]({{base}}{{site.baseurl}}/images/0013-WorldRubyistReport/rubyist_kyushu1.jpg)
 
 いままでは私の趣味により、半円形に椅子を配置して話し合うスタイルでやりました。テーブルがないのでカップが置けないなどの苦情もありますが、私は気に入っています。このやりかたは、ワインバーグの主催している [AYE Conference](http://www.ayeconference.com/) で体験してから取り入れました。
 

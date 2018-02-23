@@ -378,8 +378,8 @@ XML-RPC についての基本的な説明が終わったところで、
 XMLRPC4R を使って Blogger API を利用する実際のスクリプトを載せておきます。
 このスクリプトでは、利用可能なメソッド一覧を取得しています。
 
-[cocolog-mt_supportedMethods.rb]({{site.baseurl}}/images/0007-BundledLibraries/cocolog-mt_supportedMethods.rb)
-![cocolog-mt_supportedMethods.rb]({{site.baseurl}}/images/0007-BundledLibraries/cocolog-mt_supportedMethods.rb)
+[cocolog-mt_supportedMethods.rb]({{base}}{{site.baseurl}}/images/0007-BundledLibraries/cocolog-mt_supportedMethods.rb)
+![cocolog-mt_supportedMethods.rb]({{base}}{{site.baseurl}}/images/0007-BundledLibraries/cocolog-mt_supportedMethods.rb)
 
 この例では server_uri として、筆者が利用しているプロバイダの
 [@nifty の ココログ](http://www.cocolog-nifty.com/)

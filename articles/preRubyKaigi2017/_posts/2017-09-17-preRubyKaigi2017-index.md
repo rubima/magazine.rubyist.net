@@ -15,13 +15,13 @@ tags: preRubyKaigi2017 index
 
 ## RejectKaigi 2017
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RejectKaigi 2017](http://tech.speee.jp/entry/2017/08/25/121353)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RejectKaigi 2017](http://tech.speee.jp/entry/2017/08/25/121353)
 
 2017 年 8 月 19 日（土）に株式会社 Speee さまの Speee ラウンジで開催された RejectKaigi 2017 開催レポートへのリンクです。
 
 ## RubyKaigi 2017 タイムテーブル徹底解説
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) [RubyKaigi 2017 タイムテーブル徹底解説](preRubyKaigi2017-01)
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi 2017 タイムテーブル徹底解説](preRubyKaigi2017-01)
 
 RejectKaigi 2017 にて行われた RubyKaigi 2017 タイムテーブル徹底解説のるびまバージョンです。
 
@@ -29,7 +29,7 @@ RejectKaigi 2017 にて行われた RubyKaigi 2017 タイムテーブル徹底�
 
 RubyKaigi 2017 の Speaker による発表内容の事前資料集です。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) 9 月 18 日（月）
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 9 月 18 日（月）
 
 #### [9 月 18 日（月） 13:00 - 13:40 「Fiber in the 10th year」](http://www.atdot.net/%7Eko1/diary/201709.html#d17)
 
@@ -47,7 +47,7 @@ RubyKaigi 2017 の Speaker による発表内容の事前資料集です。
 
 9 月 18 日（月） 16:40 から行われる「Development of Data Science Ecosystem for Ruby」の事前情報です。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) 9 月 19 日（火）
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 9 月 19 日（火）
 
 #### [9 月 19 日（火）10:50 - 11:30 「An introduction and future of Ruby coverage library」](http://d.hatena.ne.jp/ku-ma-me/20170915/p1)
 
@@ -77,7 +77,7 @@ RubyKaigi 2017 の Speaker による発表内容の事前資料集です。
 
 9 月 19 日（火）16:40 から行われる「Progress of Ruby/Numo: Numerical Computing for Ruby」の事前情報です。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) 9 月 20 日（水）
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 9 月 20 日（水）
 
 #### [9 月 20 日（水） 10:00 - 10:40 「Introducing the Jet Programming Language」](https://gist.github.com/i2y/849a544ba8dc6f626644ee22e97a8e6e)
 
@@ -99,7 +99,7 @@ RubyKaigi 2017 の Speaker による発表内容の事前資料集です。
 
 RubyKaigi 2017 に向けて多くの企業や参加者、 Rubyist 、広島出身者の方々などから有益情報を記されています。その記事へのリンクです。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) スポンサー様から
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) スポンサー様から
 
 #### [Meet the RubyMine Team at RubyKaigi 2017!](https://blog.jetbrains.com/ruby/2017/09/rubymine-at-rubykaigi-2017/)
 
@@ -113,13 +113,13 @@ After Kaigi Sponsor のピクシブ株式会社様より、9 月 20 日（水）
 
 Platinum スポンサーの株式会社 SmartHR 様より、実際に回った 10 件のグルメ情報です。また、株式会社 SmartHR 様は、ビアバッシュを 9 月 19 日（火）に企画されているようです（[DoorKeeper](https://smarthr.doorkeeper.jp/events/65002)/[connpass](https://smarthr.connpass.com/event/66925/)）。 
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) 見どころ情報
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 見どころ情報
 
 #### [RubyのパパMatzさんに、RubyKaigi2017の見所を聞いてみた](http://tech.vasily.jp/entry/rubykaigi2017_matz)
 
 株式会社 VASILY さまの DEVELOPERS BLOG に投稿された Matz による RubyKaigi 2017 見どころインタビュー記事です。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) グルメ／おみやげ情報
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) グルメ／おみやげ情報
 
 #### [RubyKaigi 2017 に Gold Sponsor として協賛します＆広島のおみやげの話](https://developer.aiming-inc.com/ruby/rubykaigi-2017-gold-sponsor/)
 
@@ -137,7 +137,7 @@ eielh さんによる広島のグルメ情報です。
 
 いしすけさんによる広島のグルメ情報です。
 
-### ![title_mark.gif]({{site.baseurl}}/images/title_mark.gif) その他
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) その他
 
 #### [RubyKaigi (本体) が広島に来ることがいかに貴重なことか](https://nyoho.jp/diary/?date=20170908#p01)
 

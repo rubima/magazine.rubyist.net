@@ -203,7 +203,7 @@ Gherkin 書式は、テスト記述を機能とシナリオそしてステップ
 ### 実装者側と利用者側の接点
 
 ここまでの内容のまとめとして、実装者側の視点での TDD/BDD と利用側の視点でのシステムテスト (エンドツーエンドテスト) を図 1. でもう少しわかり易く図解してみましょう。
-![gherkin_base2.png]({{site.baseurl}}/images/0042-FromCucumberToTurnip/gherkin_base2.png)
+![gherkin_base2.png]({{base}}{{site.baseurl}}/images/0042-FromCucumberToTurnip/gherkin_base2.png)
 
 図 1. 実装者側と利用者側の接点
 

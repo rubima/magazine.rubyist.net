@@ -22,7 +22,7 @@ tags: 0029 ChineseRubyist
 
 語り手
 : ロビン・ルーさん
-![RobinLu_320_240.jpg]({{site.baseurl}}/images/0029-ChineseRubyist/RobinLu_320_240.jpg)
+![RobinLu_320_240.jpg]({{base}}{{site.baseurl}}/images/0029-ChineseRubyist/RobinLu_320_240.jpg)
 
 ### 簡単に自己紹介をお願いします。
 

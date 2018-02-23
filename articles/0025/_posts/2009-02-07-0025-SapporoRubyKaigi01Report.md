@@ -13,7 +13,7 @@ tags: 0025 SapporoRubyKaigi01Report
 
 ## はじめに
 
-![246_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/246_detail.jpg)
+![246_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/246_detail.jpg)
 10/25 に、全国で 2 回目に当たる [Regional Ruby Kaigi](http://www.fdiary.net/ml/ruby/msg/1929) である、 [札幌 Ruby 会議 01](http://regional.rubykaigi.org/sapporo01) が開催されました。地方での開催にも関わらず、参加者募集から 1 日で定員に達し、キャンセル待ちも発生するなど、期待の高さを伺わせました。
 
 ## 札幌 Ruby 会議 01 について
@@ -42,7 +42,7 @@ tags: 0025 SapporoRubyKaigi01Report
 ## プログラム
 
 ### 「Ruby On Windows」(arton (田島あきお) - [日本 Ruby の会](http://jp.rubyist.net/))
-: ![39_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/39_detail.jpg)
+: ![39_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/39_detail.jpg)
 
 Windows 用 Ruby の 1 つの実装である ActiveScriptRuby (ASR) の作者である arton さんが、Ruby を Windows で使うと問題になるであろう点と、それに対して ASR が用意している対策について解説されました。ASR は、COM の HOST として ruby.exe を実行できるようにするもので、Windows 上の様々な機構と Ruby を融合して使うことが可能になります。現在のところ、VC6 でコンパイルして ASR のパッケージを作ることが主流になっていますが、無償のコンパイラが提供された VC8 を使っていくことも可能なようです。
 
@@ -53,7 +53,7 @@ ASR の面白い使い方として、WSH と HTA での実例が紹介されま�
 arton さん一流の辛口＆ばっさりトークで度々会場は笑いに包まれていました。
 
 ### 「わたしと tDiary 」(柴田博志 (hsbt) - [tDiary.org](http://www.tdiary.org/))
-: ![41_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/41_detail.jpg)
+: ![41_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/41_detail.jpg)
 
 わたしと tDiary と題して、tDiary の管理者である柴田さんが、どういう風に tDiary コミュニティと関わり始め、どういう活動を経て管理者となったのか、その経緯を紹介してくださいました。
 
@@ -66,7 +66,7 @@ arton さん一流の辛口＆ばっさりトークで度々会場は笑いに�
 最後に、tDiary は 20 年間保守し続けることを目標としていますが、そのためには一緒にやっていく仲間が不可欠ということで、人材募集のお知らせがありました。今のところ、ユーザーサポーター、ドキュメントメンテナ、セキュリティチーム、レガシープラグインのメンテナ、プラットフォーム別のメンテナが特に足りてないとのことなので、興味のある方は[メーリングリストなど](http://www.tdiary.org/20021106.html)で手を挙げてみてはいかがでしょうか。
 
 ### 「dRuby and Rinda - その実装と応用を札幌で」(関将俊 - [druby.org](http://druby.org/))
-: ![45_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/45_detail.jpg)
+: ![45_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/45_detail.jpg)
 
 dRuby と Rinda の作者である関さんが、入門編として dRuby と Rinda についてお話ししてくれました。
 
@@ -87,14 +87,14 @@ Rinda が使われているアプリケーションはあまり有名なもの�
 ### Lightning Talks
 
 #### 「Ruby1.9 について」 (高橋征義 - [日本 Ruby の会](http://jp.rubyist.net/)会長 / 株式会社ツインスパーク)
-: ![271_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/271_detail.jpg)
+: ![271_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/271_detail.jpg)
 
 札幌生まれで、東京へ就職された高橋会長からの、札幌でこそ Ruby1.9 をというメッセージ。高橋会長の個人的な札幌時代の思い出を振り返ると、それなりに都会で何でもできるという全能感がありつつも、どこか閉塞感があったとのこと。特に、東京へ行ってから、毎日のようにどこかで勉強会が開かれているような巨大な世界を見てしまうと札幌にいたころの狭さというのをどうしても感じてしまう。
 
 だけど、そういう札幌だからこそ、今、Ruby1.9 を。Ruby1.9 は、過去バージョンとは、それなりの互換性を保ちつつも、それにとらわれすぎず新しいことをやろうとしている。アプリ開発には Ruby1.8 の枯れている形の方が便利なので、どうしてもそちらに人が集まり、Ruby1.9 はまだマイナーな場所になっている。そんなまだ人が少ないところであるからこそ、個人対個人の親近感が強くなり、距離のデメリットが薄まる。札幌のようなところにいる人間にとっては、Ruby1.9 は、すごい人と開発ができるかもしれない、むしろ世界を相手に開発ができるかもしれないチャンスだ、というメッセージでした。
 
 #### 「Ruby 勉強会@青森のご紹介」(木戸貞善 - Ruby 勉強会@青森)
-: ![275_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/275_detail.jpg)
+: ![275_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/275_detail.jpg)
 
 青森から 5 時間半かけてやってきたという木戸さんによる、青森で月 1 回、第 4 土曜日に開いているという Ruby 勉強会の紹介。北東北在住の Ruby ユーザの集まりという位置づけで、できる限り定期的に開催するように続けているとのこと (札幌 Ruby 会議 01 が開催されたのも第 4 土曜日だったので、今月は前週に開催してきたそうです）。
 
@@ -103,7 +103,7 @@ Rinda が使われているアプリケーションはあまり有名なもの�
 今後の活動課題としても、まだ、コミュニティの情報発信ができていないので、サイトの立ち上げなどをやっていきたいとのこと。木戸さんが、「ニートになれたのでようやく時間をさけるようになった」ということだそうで、近日中に Ruby 勉強会@青森のサイトが立ち上がる予定だそうです。
 
 #### 「Ruby のエラーメッセージを日本語にしよう」(arton (田島あきお) - [日本 Ruby の会](http://jp.rubyist.net/))
-: ![277_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/277_detail.jpg)
+: ![277_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/277_detail.jpg)
 
 arton さんによる、NLize という Ruby のエラーメッセージを多国語対応するためのライブラリの紹介。NLize は GitHub で公開中です。ソースコードからメッセージを抽出する仕組みと、ある程度翻訳したメッセージのデータ、そしてメッセージ置き換えエンジンが公開されています。
 
@@ -112,7 +112,7 @@ arton さん自身は、この仕組みが果たして実用的なのか、と�
 NLize は、Gem でもインストールすることは可能ですが、それは require 文をソースコード中に書かなければならなくなってしまうので非推奨とのことです。コマンドラインから実行するときに、-NLize オプションをつけて実行するようにするのがお薦めだそうです。実際に、ゼロ割のエラーを発生するプログラムを、-NLize オプションなしと、-NLize オプションつきで実行したときの様子がデモされましたが、日本語のエラーメッセージが表示されるというのは、なかなかインパクトがあり、arton さんもおっしゃるように、Ruby を初心者が使うときには有効かも知れません。
 
 #### 「宝石の探し方」(大路裕介 (おおみち　ゆうすけ/まいむぞう) )
-: ![278_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/278_detail.jpg)
+: ![278_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/278_detail.jpg)
 
 Ruby Gem を見つける方法と、そのために作成したサイトの紹介です。まいむぞうさんは、Rails で仕事をしていますが、「作っている時間より、情報を探している時間の方が長い」という状態になってしまったとのこと。それだけ Ruby や Rails の進化が早いし、「まずはソースを読め」という文化があり、必要な情報がなかなか提供されていないということのようです。
 
@@ -123,7 +123,7 @@ GemSpec では、その Gem で、「何ができるか」「どこがうれし�
 今後の課題としては、全文検索やレコメンドシステムなども実装してみたい、とのことです。
 
 #### 「改良した MySQL driver と、軽量な O/R Mapper の紹介」(桑田誠)
-: ![279_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/279_detail.jpg)
+: ![279_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/279_detail.jpg)
 
 MYSQL.rb の欠点を解消すべく作られた MySQL driver と、それを使用した O/R Mapper の紹介です。現在の MYSQL.rb には、Result クラスで Fetch した結果が必ず文字列になって返るようになっており、PreparedStatement では文字列以外の結果も受け取れるが、浮動小数点の誤差がでるようになってしまっている、などの欠点があります。この欠点を解消する、つまり、データ型を保ったまま Fetch するようにし、浮動小数点の誤差が発生しないようにしたのが、桑田さんが作られた MySQL driver です。さらに、従来の Driver では、Fetch 結果が配列か Hash になってしまっていたところを、クラスを指定して Fetch できるようにし、オブジェクトへの詰め直しの手間もなくされています。また、1 桁の integer を自動的に boolean に変換するような機能もつけられているとのことです。
 
@@ -132,7 +132,7 @@ MYSQL.rb の欠点を解消すべく作られた MySQL driver と、それを使
 時間の都合で、O/R Mapper については、簡単な説明になってしまったのですが、CGI で使えるような O/R Mapper を目指して作られており、モデルクラスは定義しても定義しなくてもよくなっていたり (モデルクラスを指定しなければ Hash が使用される）、Where 句や Order By はメソッドチェーンで指定できるようになっているとのことです。
 
 #### 「没ネタ探訪」 (関将俊 - [druby.org](http://druby.org/))
-: ![281_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/281_detail.jpg)
+: ![281_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/281_detail.jpg)
 
 「なぜ私はリリースにたどりつかなくなったのか -- いまふりかえる没ネタのしくみ」との演題で発表されました。関さんにとって、自分がなぜプログラムを書くのか、という動機を考えると、「自分のアイデアをあの上手い人たちに自慢したい」というところに行き着くとのことです。20 世紀のうちというのは、そうやって自慢するには、とにかく前もってこんなものをつくりますと宣言しておき、何かを作った上で ruby-list などのメーリングリストへ投稿しなければならなかった。だから没ネタになるということはめずらしかった。ところが 21 世紀になって、公開リポジトリというのができたのが「堕落の始まり」であった、と関さんはおっしゃいます。前もって作るぞとアナウンスする必要もないし、何か更新してもアナウンスする必要もない。それどころか、はてなや、Mixi や Twitter で、つぶやくだけで自慢ができるようになってしまった。「怠惰はテクノロジーによって加速する[^2]」というのは真理だと、関さんはおっしゃられます。
 
@@ -145,7 +145,7 @@ MYSQL.rb の欠点を解消すべく作られた MySQL driver と、それを使
 最後に、Koya 。これは、任意の時刻の時点の状態に復帰できる機能を持った OODB なのですが、まだ id:secondlife 氏 1 人くらいしか試してくれない、とのことでした。ストレージは QDBM を使っており、TokyoCabinet を使えるらしいので、実は特定用途では有効なのかも知れません。
 
 #### 「5 分で分かる Measure」 (mrkn)
-: ![282_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/282_detail.jpg)
+: ![282_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/282_detail.jpg)
 
 「この男の身長は 11 文字だ、それで簡単じゃないか。何っ！ フィートで身長をあらわせだとっ。どうしたら良いというのだ！？？」ユーモアたっぷりのテキストアートとお芝居つきのパフォーマンスで、プレゼンが開始されました。Measure という単位付き数値クラスライブラリの紹介です。このライブラリは Gem でインストール可能になっています。
 
@@ -154,7 +154,7 @@ MYSQL.rb の欠点を解消すべく作られた MySQL driver と、それを使
 今後の課題として、地域によって単位系の定義が異なる場合への対応、多次元の単位（例えば、キログラムメートル毎秒毎秒でニュートンという重力単位、など）への対応、変換処理のマルチスレッド対応化、などに取り組んでいきたいとのことでした。
 
 #### 「TechTalk 動画中継・配信のノウハウ」 (溝口浩二)
-: ![283_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/283_detail.jpg)
+: ![283_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/283_detail.jpg)
 
 「Live Streaming tech talk」と題して、勉強会の様子を Ustream で録画し、ニコニコ動画で配信するためノウハウが解説されました。この目的のためには、MacBook がカメラ付き・マイク付きであり、ソフトウェアも揃っているので、とにかくお薦めだそうです。
 
@@ -163,7 +163,7 @@ Ustream は、勉強会などの様子を中継・配信するだけではなく
 以上のような処理は、MacBook 1 台でもやることができますし、より高性能の画像や音声を追求するのならば、それに機材を追加していくことで対応していくことができるとのことです。
 
 #### 「そろそろカバレッジについて一言いっておくか」(和田卓人 (わだ たくと) - タワーズ・クエスト株式会社)
-: ![285_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/285_detail.jpg)
+: ![285_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/285_detail.jpg)
 
 「カバレッジは、誤用されている」と和田さんはおっしゃいます。本来、理論的にはカバレッジは、テストケースを減らすための指標であり、それ以上テストをしなくてもよいということを判断するための指標だったのに、あたかも 100% にすることに特別な意味があるように、100% にするためだけにテストやプログラム自体を変更するようなことが行われるようになってしまっていると。どうも「100% に近づけば近づくほど、馬鹿な話が増えてくる」ということがあるようです。
 
@@ -176,7 +176,7 @@ Ustream は、勉強会などの様子を中継・配信するだけではなく
 非常に、会場に大きなインパクトを与えた発表で、「LT ではなく、もっと長い時間の発表として聴きたかったと」いう感想も、会場に設けられた振り返りボードに記されていました。
 
 ### 「いきいきとしたレガシーコードとの暮らし」 (角谷信太郎 - [日本 Ruby の会](http://jp.rubyist.net/) || (株) 永和システムマネジメント)
-: ![288_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/288_detail.jpg)
+: ![288_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/288_detail.jpg)
 
 Working Effectively with Legacy tDiary Code using Cucumber and RSpec という副題で、レガシーコードとなってしまった tDiary について、おなじみの RSpec と、RSpec の次世代ストーリーランナーである Cucumber をつかって、いきいきと暮らしていくための考え方・心構え・ツールを、簡単な例と一緒に紹介していただけました。角谷さんと言えばテストというイメージなのですが、最近の Ruby 界隈はテストに関する新しい考え方が次々と試されていて熱いとのことで、そのあたりの最新事情も交えた話となりました。
 
@@ -208,7 +208,7 @@ tDiary に手を入れていく詳細は動画や発表資料を参照しても�
 テスト用モック / スタブライブラリである RR が便利という話にも興味を引かれましたが、RSpec プロジェクトの次世代ストーリーランナーとして採用が決定したという Cucumber がかなり実用的に感じました。既に角谷さんが国際化パッチを当ててくれているので、DSL (Domain Specific Language) 風に日本語でストーリー (受け入れテスト要件) を書くおくと、それを Cucumber が RSpec のテストコードに変換して実行してくれるというものです。その他にも実践的で魅力的な話をたくさん聞けました。これをきっかけに Cucumber が普及し、ノウハウが蓄積されていけばいいですね。
 
 ## おわりに
-: ![58_detail.jpg]({{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/58_detail.jpg)
+: ![58_detail.jpg]({{base}}{{site.baseurl}}/images/0025-SapporoRubyKaigi01Report/58_detail.jpg)
 
 大盛況のうちに終わった札幌 Ruby 会議 01 ですが、閉会の辞にて実行委員長のしまださんから、札幌 Ruby 会議 02 を開催すると宣言がありました。
 

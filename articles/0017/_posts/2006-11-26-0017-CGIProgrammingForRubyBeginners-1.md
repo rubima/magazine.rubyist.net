@@ -60,7 +60,7 @@ update.rb が担当するフォームデータの処理や掲示板データへ�
 詳しくはそちらを参照して下さい。
 今号で使うプログラムは zip ファイルにまとめてあります。
 これまでと同じようにダウンロードして C:\ に展開して下さい。
-[rubima017-cgi.zip]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/rubima017-cgi.zip)
+[rubima017-cgi.zip]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/rubima017-cgi.zip)
 
 ## ニュー Ruby に馴れよう
 
@@ -386,13 +386,13 @@ euc_jp.txt は EUC-JP で、iso_2022_jp.txt は ISO-2022-JP で書かれてい�
 iso_2022_jp.txt や euc_jp.txt を開くと文字化けします。
 
 Shift_JIS
-![memo_sjis.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_sjis.jpg)
+![memo_sjis.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_sjis.jpg)
 
 EUC-JP
-![memo_euc.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_euc.jpg)
+![memo_euc.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_euc.jpg)
 
 iso2022-jp
-![memo_jis.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_jis.jpg)
+![memo_jis.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_jis.jpg)
 
 では、EUC-JP や iso2022-jp のファイルを Windows のメモ帳で
 読めるようにするプログラムを書いてみましょう。
@@ -481,7 +481,7 @@ CGI プログラム (この場合は update.rb) は実行されると、
 コピー人間のように増えて同じ処理を行うプログラムが別々に動き出します。
 このためほぼ同時に掲示板への書込みがあると、ほぼ同じタイミングで update.rb という
 同じ CGI プログラムが 2 つ動作することになります。
-![conflict.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/conflict.jpg)
+![conflict.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/conflict.jpg)
 
 2 つの update.rb がほぼ同時に動作し始めて、
 bbs.datに書き込みをした場合、bbs.dat はどうなるのでしょうか。

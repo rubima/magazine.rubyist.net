@@ -10,7 +10,7 @@ tags: 0050 EffectiveRuby_ja]
 書いた人：takkanm
 
 ## 書籍情報
-: ![effective_ruby.jpg]({{site.baseurl}}/images/0050-EffectiveRuby_ja]/effective_ruby.jpg)
+: ![effective_ruby.jpg]({{base}}{{site.baseurl}}/images/0050-EffectiveRuby_ja]/effective_ruby.jpg)
 
 書籍名
 :  [Effective Ruby](http://www.shoeisha.co.jp/book/detail/9784798139821)

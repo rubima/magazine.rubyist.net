@@ -76,10 +76,10 @@ ustream による配信も行っていたのですが、
 
 九州 Ruby 会議 01 のロゴ (下記) は、
 他の Ruby 会議と同様にのりおさんに作成していただきました。
-また、ポスター兼チラシ ([kyushu01-poster.pdf]({{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/kyushu01-poster.pdf))は
+また、ポスター兼チラシ ([kyushu01-poster.pdf]({{base}}{{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/kyushu01-poster.pdf))は
 [S:III:S](http://siiis.jp/) 様にデザインしていただきました。
 この場を借りてお礼申し上げます。
-![kyushu.png]({{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/kyushu.png)
+![kyushu.png]({{base}}{{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/kyushu.png)
 
 ## 協賛および後援いただいた皆様
 
@@ -280,7 +280,7 @@ Ruby の活用事例を紹介する講演が続きました。
 |  女性 |     9 |   9.7|
 |  合計 |    93 | 100.0|
 
-![Q01.png]({{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q01.png)
+![Q01.png]({{base}}{{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q01.png)
 
 ### Q.02: 年代
 
@@ -295,7 +295,7 @@ Ruby の活用事例を紹介する講演が続きました。
 | 60歳以上 |  2|   2.1|
 | 合計     | 95|  100.0|
 
-![Q02.png]({{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q02.png)
+![Q02.png]({{base}}{{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q02.png)
 
 ### Q.03: 立場
 
@@ -321,7 +321,7 @@ Ruby の活用事例を紹介する講演が続きました。
 
 
 重複回答あり
-![Q03.png]({{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q03.png)
+![Q03.png]({{base}}{{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q03.png)
 
 ### Q.04: 本イベントを知ったきっかけ
 
@@ -338,7 +338,7 @@ Ruby の活用事例を紹介する講演が続きました。
 
 
 重複回答あり
-![Q04.png]({{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q04.png)
+![Q04.png]({{base}}{{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q04.png)
 
 #### メーリングリスト内訳
 
@@ -360,7 +360,7 @@ Ruby の活用事例を紹介する講演が続きました。
 |  SDC | 1|
 |  AIP からの案内| 1|
 
-![Q04-1.png]({{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q04-1.png)
+![Q04-1.png]({{base}}{{site.baseurl}}/images/0026-KyushuRubyKaigi01Report/Q04-1.png)
 
 ### Q.05: 参加セッション・ブースの感想・評価 (1 〜 5 点)
 

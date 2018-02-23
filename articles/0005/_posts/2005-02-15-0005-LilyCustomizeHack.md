@@ -109,7 +109,7 @@ Archives
 plugin の作り方を説明する前に、lily ではどのようにして plugin 機能を実現しているかを簡単に説明します。
 
 以下は、もっとも簡単な plugin である storytitle plugin について説明します。
-![storytitle.rb]({{site.baseurl}}/images/0005-LilyCustomizeHack/storytitle.rb)
+![storytitle.rb]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/storytitle.rb)
 
 3つのメソッドが定義されています。lily ではこれらのメソッドを instance_eval を使って、Lily クラスのレベルで実行します。
 
@@ -222,7 +222,7 @@ end
 
 
 結果、値を出力するメソッドはものすごく単純になりました。[サンプルページ](http://www.mikihoshi.com/rubima/d/)でこの plugin を動かしています。以下に全ソースのリンクを置いておきます。
-[counter.rb]({{site.baseurl}}/images/0005-LilyCustomizeHack/counter.rb)
+[counter.rb]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/counter.rb)
 
 ### LIRS plugin
 
@@ -274,7 +274,7 @@ end
 {% endraw %}
 {% endhighlight %}
 
-[lirs.rb]({{site.baseurl}}/images/0005-LilyCustomizeHack/lirs.rb)
+[lirs.rb]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/lirs.rb)
 
 この plugin を導入すると以下のようなURLでLIRS形式のデータを取得できるようになります。
 
@@ -328,7 +328,7 @@ end
 {% endraw %}
 {% endhighlight %}
 
-[delicious.rb]({{site.baseurl}}/images/0005-LilyCustomizeHack/delicious.rb)
+[delicious.rb]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/delicious.rb)
 
 Rubilicious クラスをnewする際に、引数として del.icio.us に登録しているログインIDとパスワードを渡す必要があります。上のソースでは @env というインスタンス変数を使っていますが、これは lily.cfg に記入されて内容を保持しているハッシュです。従って
 
@@ -384,7 +384,7 @@ lily でブログのデザインをカスタマイズするため、flavour と�
 
 ## 著者について
 
-![food.jpg]({{site.baseurl}}/images/0005-LilyCustomizeHack/food.jpg)
+![food.jpg]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/food.jpg)
 なまえ：ふしはらかん。
 [http://www.mikihoshi.com/d/](http://www.mikihoshi.com/d/) にて日記を書いてます。
 

@@ -40,26 +40,26 @@ gdgdiler@toRuby
 AM11:00開場ということで、希望者には[からあげ専門店マルトク](https://ja-jp.facebook.com/marutoku11/)のからあげ弁当が会場で販売されました。これが田舎の弁当らしく、味は悪くないが量で攻めるタイプの弁当。年齢層高めな人が多い会場は早くもグロッギーか？！
 
 そんな会場の雰囲気を一掃しようと登場したのが前座の@track8！当日の登壇者を80年代のプロレスラーに喩えて紹介するという荒技！胃もたれした聴衆も一気にヒートアップ！その仕事っぷりは80年代に前座で会場を沸かした[永源遙](https://ja.wikipedia.org/wiki/%E6%B0%B8%E6%BA%90%E9%81%99)を彷彿とさせるものでありました。
-![tochigi07_track8_m.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_track8_m.jpg)
+![tochigi07_track8_m.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_track8_m.jpg)
 
 まだ前座は続きます。[toruby](https://toruby.doorkeeper.jp/)の重鎮、@m_sekiの登場です！重鎮自ら前座を買って出る姿は、還暦を迎えてなおもリングに上がり続けた[ジャイアント馬場](https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E9%A6%AC%E5%A0%B4)を彷彿とさせます。そして、その@m_sekiのネタはなんと(リアルな)カードゲーム「[ショッピングモール](http://gamemarket.jp/game/%E3%80%90%EF%BD%9110%E3%80%91%E3%82%B7%E3%83%A7%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%83%A2%E3%83%BC%E3%83%AB/)」！しかも、会場でそのカードゲームを購入できるというダイレクトマーケティングっぷり！今や定番ムーヴとなった旅費ネタをぶっ込むのも忘れません！
-![tochigi07_seki_m.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_seki_m.jpg)
+![tochigi07_seki_m.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_seki_m.jpg)
 
 ### 一般講演
-![tochigi07_emori_m.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_emori_m.jpg)
+![tochigi07_emori_m.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_emori_m.jpg)
 
 さて、休憩をはさんでここから一般講演です。まずは@emorimaさんの「"mission critical"なシステムでも使えるThreadの作り方」の話です。防災情報をリアルタイムで処理するために100個のプロセスで各々100個のスレッドを回すという野心的なシステムだそうで、開発当初はruby 1.8系だったとのこと。1.8系というとまだ[グリーンスレッド](https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89)の時代。さすがにそれを聞いて@artonさんから「そりゃムチャだ！」とのツッコミが。[YARV](http://magazine.rubyist.net/?0006-YarvManiacs)が導入されてからRubyのスレッド周りは大きく改善されたものの、今でも[ジャイアントインタプリタロック](https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%AD%E3%83%BC%E3%83%90%E3%83%AB%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%97%E3%83%AA%E3%82%BF%E3%83%AD%E3%83%83%E3%82%AF)の話題が出るなど、Rubyにとってスレッドは鬼門の１つ。ご苦労が忍ばれます。
-![tochigi07_arton.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_arton.jpg)
+![tochigi07_arton.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_arton.jpg)
 
 続いて@artonさん。実際に仕事であった厄介事をRubyで簡単に解決できたよという話。Rubyのスクリプト言語としての側面に改めてスポットを当てました。AIだなんだと世間は騒ぎますが、身近な厄介事はなくならないし、そんなときにはやっぱりスクリプト言語が頼りになります。
 
 そうそう、@artonさんといえば[オペラがお好き](https://www.artonx.org/diary/20170409.html#p01)で。それで失礼ながら「オペラってストーリー(結末)は知ってて見るものですよね？どこらへんが面白いんですか？」って尋ねたんですよ。そうしたら@artonさんは「プログラムと同じよ。仕様が一緒でも実装は人によって違うじゃん？その違いを楽しむんだよ！」といったことを[おっしゃってました](https://www.artonx.org/diary/20170827.html#p01)。
-![tochigi07_gotoken_m.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_gotoken_m.jpg)
+![tochigi07_gotoken_m.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_gotoken_m.jpg)
 
 @artonさんのあとを受けて@gotokenさん。もやもやした話。そのタイトルのとおり、つかみどころのない話でしたけど「それ、わかるぅ～！」な内容。結局のところ「なぜRubyを使うのか？」ということになるんですけど、「pがいい」とか「ブロックがいい」とか、理由を１つ１つあげていくこともできるんですけど、やっぱり全体的なもやもやとした部分でRubyが好きということなんでしょうね。それは言語だけでなく、コミッタやユーザといった社会的な側面も含めて。
 
 @gotokenさんともお話させていただいたんですけど、「Windows 10いいよ～。仮想環境いらないって素晴らしい！」とおっしゃってました。例によってこういう夏フェスなんかではマカーが多いわけで、貴重なご意見ありがとうございました。それと、お仕事の関係で文字エンコーディングを扱うことも多いらしく、「Rubyの多言語化がんばった人たち、エライ！」と熱弁されてました。
-![tochigi07_ardbeg1958_m.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_ardbeg1958_m.jpg)
+![tochigi07_ardbeg1958_m.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_ardbeg1958_m.jpg)
 
 続いて@ardbeg1958さん。@ardbeg1958さんには何度もとちぎRuby会議で講演していただいています。今回は[形式仕様記述](https://ja.wikipedia.org/wiki/%E5%BD%A2%E5%BC%8F%E4%BB%95%E6%A7%98%E8%A8%98%E8%BF%B0)について。スケジュールの都合上、さすがに時間が少なく、サワリ程度の話で終わってしまいました。これを機会に形式仕様記述についてみなさんが興味を持っていただければと願います。
 
@@ -72,10 +72,10 @@ AM11:00開場ということで、希望者には[からあげ専門店マルト
 ### 招待講演
 
 #### @chomado + @okazuki
-![tochigi07_chomado_m.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_chomado_m.jpg)
+![tochigi07_chomado_m.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_chomado_m.jpg)
 
 ここから招待講演。@chomadoさんから。まずは自己紹介を兼ねて[はしれ！コード学園](https://codeiq.jp/magazine/category/programminggirls/)の紹介。いつもはC#の人たちをお相手されることが多いようで、Rubyの、しかも年齢層高めな人たちが聴衆ということで、ちょっと緊張気味でしたか。続いて紹介されたのが「松屋警察」。[松屋](https://www.matsuyafoods.co.jp/menu/)を愛する@chomadoさんが牛めしを判定するために作り出したスマホアプリ。その実装にはMicrosoftの[Custom Vision Service](https://azure.microsoft.com/ja-jp/services/cognitive-services/custom-vision-service/)と[Xamarin](https://www.xamarin.com/)が使われています。デモは、[Mac上のVisual Studio](https://www.visualstudio.com/ja/vs/visual-studio-mac/)で行われて、接続されたiPhoneの画面もリアルタイムに取り込まれていました。写真判定もバッチリ成功！
-![tochigi07_kazuki_m.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_kazuki_m.jpg)
+![tochigi07_kazuki_m.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_kazuki_m.jpg)
 
 で、@chomadoさん、さすがにRubyの話が出ないまま終わってはマズいと思ったのか(toruby的には全然OKなんですけど)、助っ人にバトンタッチとなりました。@okazukiさん、Xamarinガチ勢。@chomadoさんからの急な依頼であったにもかかわらず、サラサラッと書いたRubyで、Custom Vision Serviceにアクセスして、デモもバッチリ成功！オマケに[Microsoft](https://github.com/Microsoft)のイメージアップにも成功！
 
@@ -84,14 +84,14 @@ RubyからCustom Vision Serviceにつないだデモは、非常に「スクリ�
 余談なんですけど、あとで「なぜ@chomadoさんを呼ぼうと思ったの？」って聞いたら、@miwa719さんが「@chomadoさんの[デブサミでのお話](http://event.shoeisha.jp/devsumi/20170216/session/1282/)が素晴らしかったの！」といってました。
 
 #### @shugomaeda
-![tochigi07_shugo.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_shugo.jpg)
+![tochigi07_shugo.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_shugo.jpg)
 
 招待講演2人目は@shugomaedaさん。ピュアRubyで書かれたテキストエディタ、[texbringer](https://github.com/shugo/textbringer)の話。cursesライブラリを使った端末上で動作するEmacsライクなテキストエディタです。[cursesライブラリ](https://ja.wikipedia.org/wiki/Curses)というのはUnix由来の端末制御ライブラリです。@shugomaedaさんは、そのライブラリをRubyから利用する[curses gem](https://github.com/ruby/curses)の開発者でもあります。curses gemはもともとは標準添付ライブラリで歴史も古いのですが、そもそも@shugomaedaさんがcursesライブラリに手を出したのは「いつかテキストエディタを作りたい」と思ったからでした。それが20年前の話。その夢がようやく叶ったわけです。
 
 エディタの名前の由来の中二的な話や、細かい技術的な話もされていたのですが、個人的に「おっ！」と思ったのは「The Craft of Text Editing」の情報でした。この本、テキストエディタの製作者にはバイブルみたいなものとして有名だったのですが、日本語訳は絶版になったものの、[原書はネットで公開されている](https://www.finseth.com/craft/)そうです。
 
 #### @mametter
-![tochigi07_mame.jpg]({{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_mame.jpg)
+![tochigi07_mame.jpg]({{base}}{{site.baseurl}}/images/0057-TochigiRubyKaigi07Report/tochigi07_mame.jpg)
 
 招待講演3人目は@mametterさん。「Rubyでつくる型付Ruby」の話。Ruby 3.0では静的型が導入される可能性があり、どのような実装になるかという話でした。今回紹介されたのは[漸進的型付け](http://qiita.com/t2y/items/0a604384e18db0944398)で、これなら既存のコードを壊さなくて済むのでいいとのことでした。
 

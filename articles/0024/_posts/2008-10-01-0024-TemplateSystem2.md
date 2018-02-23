@@ -44,7 +44,7 @@ tags: 0024 TemplateSystem2
 仕組みとしては、ビジネス層であるメインプログラムがデータを用意し、それをプレゼンテーション層であるテンプレートシステムに渡すことでデータが表示されます (図 1)。
 
 図 1. ビジネス層とプレゼンテーション層
-![template-fig1.png]({{site.baseurl}}/images/0024-TemplateSystem2/template-fig1.png)
+![template-fig1.png]({{base}}{{site.baseurl}}/images/0024-TemplateSystem2/template-fig1.png)
 
 またビジネス層とプレゼンテーション層それぞれに、ロジックとデータが必要です (表 1)。
 これらはそれぞれ、ビジネスロジック、ビジネスデータ、プレゼンテーションロジック、プレゼンテーションデータといいます。
@@ -92,7 +92,7 @@ __プレゼンテーションロジックをどこに記述するかで、テン
 
 
 図 2. プレゼンテーションロジックを記述する場所
-![template-fig2.png]({{site.baseurl}}/images/0024-TemplateSystem2/template-fig2.png)
+![template-fig2.png]({{base}}{{site.baseurl}}/images/0024-TemplateSystem2/template-fig2.png)
 
 これらを詳しく見ていきます。
 

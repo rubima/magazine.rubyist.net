@@ -38,7 +38,7 @@ yokohama.rb
 #minatork01
 
 ### ソーシャルコーディング (書いた人: joker1007)
-: ![pairpro-intro.jpg]({{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/pairpro-intro.jpg)
+: ![pairpro-intro.jpg]({{base}}{{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/pairpro-intro.jpg)
 
 ソーシャルコーディングと題して、参加者の皆さんに実際にコードを書いてもらうセッションが行われました。スタッフが考えたお題に参加者同士のペアプロで挑戦する形式です。ちなみに、今回の参加者の内、ペアプロ経験があるのは 3 割程でした。
 
@@ -74,7 +74,7 @@ yokohama.rb
 ペアプロ未経験の方のために「ドライバー (コードの書き手) は頻繁に交代する」「積極的に考えていることを話してコミュニケーションを取る」等、簡単な心得について解説があった後、自己紹介 &amp; ペア決めタイムです。どちらの問題からやりたいか、使ってるエディタが一致するかなど、各テーブルで自由にペアを決めていき、奇数になってしまうところはスタッフが参加する形でペアを作っていきました。
 
 また、プログラマでは無い方のために、前方のスクリーンで挑戦してくれるペアを募集したところ、yokoken さん、r7kamura さんのペアに立候補していただきました (お二方には、後程 Ruby 関連の T シャツがプレゼントされました) 。
-: ![pairpro.jpg]({{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/pairpro.jpg)
+: ![pairpro.jpg]({{base}}{{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/pairpro.jpg)
 
 限られた時間で問題を解くという行為は結構熱くなってしまうのか、今回参加してくれた皆さんも、真剣な表情で課題に臨んでいました。今回、この企画を実施して非常に良かった点は、参加者同士がしっかり自己紹介して、お互いにコミュニケーションを取れたことです。続くトーキングセッションの前のアイスブレイクとしても最適だったのではないでしょうか。
 
@@ -91,7 +91,7 @@ yokohama.rb
 ### つじたさとみさん:「yokohama.rb と minami.rb のおいしい関係」 (書いた人: miyohide)
 
 大阪の地域コミュニティ minami.rb のファウンダーであるつじたさとみさんによる yokohama.rb と minami.rb の紹介と、ご自身が Ruby / Ruby on Rails を使った開発を続ける理由をお話しいただきました。
-: ![tsujita.jpg]({{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/tsujita.jpg)
+: ![tsujita.jpg]({{base}}{{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/tsujita.jpg)
 
 姉妹地域 Ruby コミュニティの関係を結んでいる yokohama.rb と minami.rb 。始まりはその場のノリで決めた姉妹地域 Ruby コミュニティの関係ですが、伊豆での Rails Hackathon 開催や、それぞれの地域コミュニティ参加者の交流など継続的かつ活発な活動が行われています。
 また、食い倒れの街・大阪での地域 Ruby コミュニティはおいしい食べ物、飲み物とは切っても切り離せないとのことで、 minami.rb から yokohama.rb に対して日本酒 2 本の贈呈が行われました。
@@ -108,12 +108,12 @@ yokohama.rb と minami.rb とのおいしい関係の紹介が終わった後は
 Ruby コミュニティが持つ懐の深さと、初心者から楽しさが分かる Ruby の楽しさをコミュニティを通じて体感し、自分でものを作って公開する。「体感 + 五感で Rails と遊ぶ」ということを強くお話されました。
 
 さらに、「体感 + 五感で Rails と遊ぶ」の一環として、11 月に Okinawa.rb との Rails Hackathon Okinawa の開催もアナウンス。Okinawa.rb の @yasulab さんによる飛び入り説明がありました。
-: ![okinawa.jpg]({{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/okinawa.jpg)
+: ![okinawa.jpg]({{base}}{{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/okinawa.jpg)
 
 発表全体として、地域 Ruby コミュニティの広がりを感じさせる発表でした。
 
 ### 大場寧子さん:「ごきげん Rails」 (書いた人: hokkai7go)
-: ![nay3.jpg]({{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/nay3.jpg)
+: ![nay3.jpg]({{base}}{{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/nay3.jpg)
 
 大場さんが Rails を使っていて、ごきげんになったことや Rails の魅力について話していただきました。まず、参加者のみなさんがどれだけ Rails で開発をしたことがあるか調査されていましたが、大半の参加者が Rails で開発をしたことがあるようでした。
 
@@ -153,7 +153,7 @@ RSpec についても触れられ、テストコードがプロダクトコー�
 また、Rails の情報を探す際には、英語の情報を避けないでほしい。英語のまま頑張って読んでほしいとおっしゃってました。
 
 ### 近永智之さん:「怠惰な Rubyist への道 - Enumerator::Lazy の使いかた」 (書いた人: joker1007)
-: ![nagachika.jpg]({{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/nagachika.jpg)
+: ![nagachika.jpg]({{base}}{{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/nagachika.jpg)
 
 Yokohama.rb から福岡に遠征中で、CRuby のコミッタでもある nagachika さんによる、Ruby 2.0 の新機能 Enumerator::Lazy についての発表です。現在開発中の Ruby 2.0 の機能という非常にホットな話題でありながらとても分かりやすい内容で、Ruby 熟練者にとっても非常に勉強になる話でした。
 
@@ -179,7 +179,7 @@ Ruby 2.0 のリリースが楽しみになるような、素晴らしい発表�
 ### Yabe さん「RubyKaja はじめます」 (書いた人: miyohide)
 
 yokohama.rb # 18 で発表された RubyKaja について、運営委員の Yabe さんから RubyKaja について説明されました。
-: ![rubykaja.jpg]({{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/rubykaja.jpg)
+: ![rubykaja.jpg]({{base}}{{site.baseurl}}/images/0039-MinatoRubyKaigi01Report/rubykaja.jpg)
 
 総じてシャイな日本の Rubyist 。そんなシャイな Rubyist を称えるための制度が RubyKaja 。選考基準は特に決められていないとのことですが、できれば普段スポットが当たっていない人に選ばれて欲しいという思いを語られていました。
 

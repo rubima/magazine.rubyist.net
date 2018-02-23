@@ -12,7 +12,7 @@ tags: 0026 TochigiRubyKaigi01Report
 ## RegionalRubyKaigi レポート (07) とちぎ Ruby 会議 01
 
 ## はじめに
-![3324123913_6fe266f7bb.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3324123913_6fe266f7bb.jpg)
+![3324123913_6fe266f7bb.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3324123913_6fe266f7bb.jpg)
 
 taken by [sinara.hara](http://www.flickr.com/photos/35956825@N03/)
 
@@ -45,7 +45,7 @@ taken by [sinara.hara](http://www.flickr.com/photos/35956825@N03/)
 * [発表資料](http://www.slideshare.net/sinara.h/toruby01a)
 * [Algebra (発表の中で紹介されていたソフトウェア)](http://blade.nagaokaut.ac.jp/%7Esinara/ruby/math/algebra/)
 
-![3298962590_7eee82c8e2.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3298962590_7eee82c8e2.jpg)
+![3298962590_7eee82c8e2.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3298962590_7eee82c8e2.jpg)
 
 taken by [recompile_net](http://www.flickr.com/photos/recompile_net/)
 
@@ -75,7 +75,7 @@ Ruby との接し方の哲学的なお話と、ものすごくピンポイント
 
 * [発表資料](http://www.slideshare.net/gotoken/20ruby)
 
-![3300465256_12384419ef.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3300465256_12384419ef.jpg)
+![3300465256_12384419ef.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3300465256_12384419ef.jpg)
 
 taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 
@@ -117,21 +117,21 @@ taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 
 * [発表資料](http://www.slideshare.net/vestige/20090221-toruby01-lt)
 
-![3300463790_73a4f22241.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3300463790_73a4f22241.jpg)
+![3300463790_73a4f22241.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3300463790_73a4f22241.jpg)
 
 taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 
 とちぎ Ruby でいつも司会進行をしていただいている米澤さんの 2 回目の LT。もっとやっているかと思われたのですが、意外でした。いろいろな言語でのライトニングタイマーを開発をして学んだ、「目的を持って開発すると勉強になる」というのがテーマでした。確かに題材としても、ライトニングトークスのタイマーはお手頃かもしれませんね。Ruby から Objective C までいろいろなタイマーの紹介がありました。COBOL 製のタイマーは作っている人はいないと思われますのでぜひお願いします。
 
 #### 森田尚 「組み込み Rake：Rake で作るお手軽ビルドツール」
-![3299633975_6fc286783a.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3299633975_6fc286783a.jpg)
+![3299633975_6fc286783a.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3299633975_6fc286783a.jpg)
 
 taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 
 今回の発表の中では、原さんと同じぐらい「Ruby を仕事にフル活用しています」という内容の発表でした。既存のツールを活用することで、コンパクトで効果の大きい開発をされていました。ムービーを使って、ツールが動作して Web サイトを PDF 化する過程を見せて頂きました。オープンソースならではのメリットを生かした、エンドユーザに近い場での活用方法ということで、Ruby を知らない人に Ruby の便利さを知ってもらうにも、この発表はいいかもしれません。
 
 #### 大川祐介 「Ruby 初心者！」
-![3299634479_7cd90431b3.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3299634479_7cd90431b3.jpg)
+![3299634479_7cd90431b3.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3299634479_7cd90431b3.jpg)
 
 taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 
@@ -141,7 +141,7 @@ taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 とちぎ Ruby に今年から加入した大川さんの発表でした。Ruby に触れたばかり、というフレッシュな視点で Ruby を語るというものでした。このような発表をすると、自分がどのような理解をしているのかが確認できますし、また、周りの人からのアドバイスももらいやすくなります。多少、次の toRuby で暖かい突っ込みや、補足が他のメンバーからされることと思いますが、IT 技術者の近道勉強法の実践例ですね。ぜひ、「初心者で LT なんかとんでもない」と思われている方は大川さんの発表は参考になると思います。
 
 #### stsuboi「最強の Ruby 環境獲得のために：Apple 製品格安購入術」
-![3304023308_775fff4089.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3304023308_775fff4089.jpg)
+![3304023308_775fff4089.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3304023308_775fff4089.jpg)
 
 taken by [you_ssk](http://www.flickr.com/photos/you_ssk/)
 
@@ -151,7 +151,7 @@ taken by [you_ssk](http://www.flickr.com/photos/you_ssk/)
 今回のライトニングトークスの中では、一番みんなが前のめりになって聞いていました。世界的な不景気の中、それを逆手にとって「Apple 製品を安く買うには？」という研究と実践の成果でした。Apple 製品の世界的な値付けの分析まで行われ、実際に韓国で買うためのアドバイスが含まれていました。新しい Mac mini が発表されたりしていますので、追加の研究発表が期待されます。資料を見ると物欲が刺激されてしまいますのでご注意を。
 
 #### 安藤葉子 (株式会社ネットワーク応用通信研究所) 「NaCl は塩化ナトリウムなのでエヌエーシーエルと読んでください」
-![3300464920_ba7fb05960.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3300464920_ba7fb05960.jpg)
+![3300464920_ba7fb05960.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3300464920_ba7fb05960.jpg)
 
 taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 
@@ -161,17 +161,17 @@ taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 
 * [発表資料](http://www.prx.jp/%7Etarui/tochigirubykaigi01/LT_d_test.pdf)
 
-![3298152941_69ee1b7c50.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3298152941_69ee1b7c50.jpg)
+![3298152941_69ee1b7c50.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3298152941_69ee1b7c50.jpg)
 
 taken by [recompile_net](http://www.flickr.com/photos/recompile_net/)
 
 ユニットテストの高速化のために、プロセスをフォークして CPU の能力をつかいこなしてみよう、というトークスでした。「前半はコードの変更が多いのでテストが重要」といった、実践者ならではの言葉や、caller を使って解析を行っていったり、「標準ライブラリをコードリーディングして勉強」など、数多くのテクニックを披露されていました。この過程の話はユニットテストの改良だけでなく、多くの開発者にとって汎用的にためになるお話でした。
 
 ### [toRuby](http://pub.cozmixng.org/%7Ethe-rwiki/rw-cgi.rb?cmd=view;name=toRuby)勉強会
-![3324156355_799ed6b649.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3324156355_799ed6b649.jpg)
+![3324156355_799ed6b649.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3324156355_799ed6b649.jpg)
 
 taken by [sinara.hara](http://www.flickr.com/photos/35956825@N03/)
-![3304023806_9fe261e257.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3304023806_9fe261e257.jpg)
+![3304023806_9fe261e257.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3304023806_9fe261e257.jpg)
 
 taken by [you_ssk](http://www.flickr.com/photos/you_ssk/)
 
@@ -190,21 +190,21 @@ taken by [you_ssk](http://www.flickr.com/photos/you_ssk/)
 最初の Puts サーバのサンプルが最初に動作するとすごくうれしい気持ちになれます。サーバを start_service で起動したら、ホワイトボードなどで IP アドレスを告知して、他の方からのメッセージを受信できるようにするといいでしょう。一人でやっても感動がありますが、ぜひとも仲間を集めて、マシンやOSを超えてやりとりしてみてください。勉強される場合には「dRuby による分散・Web プログラミング」をお買い求めください。初版買えます！
 
 ### KPT! と閉会
-![3299640143_6b9c79c55a.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3299640143_6b9c79c55a.jpg)
+![3299640143_6b9c79c55a.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3299640143_6b9c79c55a.jpg)
 
 taken by [mame_n](http://www.flickr.com/photos/mame_n/)
 
 最後に、KPT を使用してみんなでイベントの振り返りをしました。toRuby でも 毎回 KPT を行っています。振り返りとはいっても、堅苦しくなく「お菓子がおいしかった」みたいなものも気軽に入れるのが toRuby 流です。KPT をやって一緒に振り返ると、「単なる参加者」から「一緒にイベントを開催している仲間」という意識が芽生えてきます。とちぎ Ruby 会議クラスの 30 人ぐらいのイベントでしたら、ぜひともプログラムの中に入れることをオススメします。
 
 最後に実行委員長の中内さんからご挨拶がありました。このような場を継続して続けていきたい、という言葉はおそらく、あの場にいた参加者全員の共通の気持ちであったと思います。
-![3299007670_9fbd385dba.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3299007670_9fbd385dba.jpg)
+![3299007670_9fbd385dba.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3299007670_9fbd385dba.jpg)
 
 taken by [recompile_net](http://www.flickr.com/photos/recompile_net/)
 
 ## おわりに
 
 最後に、急な開催決定にもかかわらず、快く講演を引き受けて下さった原さん、後藤謙太郎さん、東京、群馬、秋田など遠いところからも来られた参加者の方々、そしてスタッフのみなさん、どうもお疲れ様でした。また、後援としてバックアップしてくださった日本 Ruby の会にも感謝申し上げます。そうそう、ご自分は参加できないからと、代わりに豪華なお花を送って下さった PFP の串田さんにも感謝です。とちぎ Ruby は毎月第一水曜日に継続的に勉強会を行っており、数ヶ月に一度、土曜日開催の増刊号を開催しています。次回のとちぎ Ruby か、もしくは増刊号 (とちぎ Ruby 会議 02?) でお会いしましょう！
-![3298856090_4341c1566d.jpg]({{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3298856090_4341c1566d.jpg)
+![3298856090_4341c1566d.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3298856090_4341c1566d.jpg)
 
 taken by [shibukawa](http://www.flickr.com/photos/shibukawa/)
 

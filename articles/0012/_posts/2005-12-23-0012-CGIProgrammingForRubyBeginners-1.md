@@ -65,7 +65,7 @@ CGI プログラミングの幅が広がり、
 詳しくはそちらを参照してください。
 また、今号で使うプログラムを zip ファイルにまとめてあります。
 前号と同じようにダウンロードし C:\ に展開して下さい。
-[rubima012-cgi.zip]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/rubima012-cgi.zip)
+[rubima012-cgi.zip]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/rubima012-cgi.zip)
 
 ## 今号で作る CGI プログラム
 
@@ -236,7 +236,7 @@ Array はデータの一種ですから、
 上のプログラムの 1 行目を
 前号のように図を使って表すと下のようになります。
 少しは分かりやすいでしょうか？
-![array.png]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/array.png)
+![array.png]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/array.png)
 
 今度は Array の中のデータを順番に表示させてみましょう。
 上の例であれば Array の中には 3 個の数値が
@@ -598,7 +598,7 @@ XP でコントロールパネルのカテゴリ表示をしている人は
 スタートメニュー → コントロールパネル → パフォーマンスとメンテナンス → システム 
 とたどらなければなりません。
 下図は XP でパフォーマンスとメンテナンスの画面を出したところです。
-![performance_xp.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/performance_xp.jpg)
+![performance_xp.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/performance_xp.jpg)
 
 システムのプロパティのダイアログが出てきたら
 詳細設定タブ (Windows 2000では詳細タブ) をクリックし、
@@ -607,10 +607,10 @@ XP と 2000では環境変数のボタンの位置が違うので、
 注意してください。
 
 Windows XP
-![details_xp.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/details_xp.jpg)
+![details_xp.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/details_xp.jpg)
 
 Windows 2000
-![env_w2k_1.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/env_w2k_1.jpg)
+![env_w2k_1.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/env_w2k_1.jpg)
 
 環境変数ボタンを押すと、
 現在使われている環境変数の一覧が出てきます。
@@ -620,7 +620,7 @@ Windows 2000
 __編集や削除のボタンがありますが、この 2 つには無闇に触らないようにしましょう__。
 最悪の場合、Windows が動かなくなるかもしれません
 (怖いので筆者は試していません…)。
-![env_w2k_2.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/env_w2k_2.jpg)
+![env_w2k_2.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/env_w2k_2.jpg)
 
 「変数」や「値」という項目があって、その下に文字が並んでいます。
 例えば、ユーザー環境変数の「変数」には PATH や TMP といった項目があり、
@@ -658,7 +658,7 @@ C:\Documents and Settings\administrator\Local Settings\Temp
 C:\Documents and Settings\administrator\Local Settings\Temp
 のフォルダーが一時ファイル置き場として使われていて、
 色々なファイルがあります。
-![env_tmp.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/env_tmp.jpg)
+![env_tmp.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/env_tmp.jpg)
 
 ### 環境変数 ENV の中のデータを見てみる
 
@@ -790,7 +790,7 @@ __if 文を使うことで処理の流れを分岐させる事が出来ます__�
 「a」が表示されます。
 右側は無視されるので、「b」は表示されません。
 このように処理を分岐させたい時に if 文を使います。
-![if.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/if.jpg)
+![if.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-1/if.jpg)
 
 ### if 文の使い方
 

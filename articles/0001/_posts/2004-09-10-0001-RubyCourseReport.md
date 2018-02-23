@@ -45,7 +45,7 @@ tags: 0001 RubyCourseReport
 
 #### 1. まずはログインとログアウト
 
-![20040820-1.jpg]({{site.baseurl}}/images/0001-RubyCourseReport/20040820-1.jpg)
+![20040820-1.jpg]({{base}}{{site.baseurl}}/images/0001-RubyCourseReport/20040820-1.jpg)
 初級ということで、ログインや認証から丁寧に説明されました。ちなみに OS は、Vine Linux を使っていました。
 
 #### 2. 初めてさわる GNOME デスクトップ
@@ -62,7 +62,7 @@ Mozilla と Netscape の二つがインストールされていて、今回は M
 
 #### 5. Ruby スクリプト学習環境 S@pphire とは
 
-![20040820-2.jpg]({{site.baseurl}}/images/0001-RubyCourseReport/20040820-2.jpg)
+![20040820-2.jpg]({{base}}{{site.baseurl}}/images/0001-RubyCourseReport/20040820-2.jpg)
 今回の講座では、[S@pphire](http://www.mag.shimane-u.ac.jp/ruby/sapphire.html) という簡易 IDE を使うということで、ツールの使い方が説明されました。
 まだ開発途中なので、バグが出るかもしれないということでした (実際、NaCl Ruby 班の面々は講義中にせっせとデバッグしていたようです)。
 
@@ -80,7 +80,7 @@ printf についても Web 上の資料に書いてありました、のちほ�
 
 #### 8. ものを数字や文字で扱うために　--変数と型--
 
-![20040820-3.jpg]({{site.baseurl}}/images/0001-RubyCourseReport/20040820-3.jpg)
+![20040820-3.jpg]({{base}}{{site.baseurl}}/images/0001-RubyCourseReport/20040820-3.jpg)
 簡単な計算プログラム (1 〜 100 までの和を求める) が例題として取り上げられました。
 Ruby は C 言語と違って型宣言が不必要であることや、「=」は数学と違って代入という意味であることなどが説明されました。
 
@@ -140,7 +140,7 @@ Ruby は C 言語と違って型宣言が不必要であることや、「=」�
 
 #### 15. 補足事項と役に立ちそうなスクリプト
 
-![20040820-4.jpg]({{site.baseurl}}/images/0001-RubyCourseReport/20040820-4.jpg)
+![20040820-4.jpg]({{base}}{{site.baseurl}}/images/0001-RubyCourseReport/20040820-4.jpg)
 最後に、Ruby のオブジェクト指向な面について、少しだけ紹介されました。
 
 今日の講習内容は Web で公開されています。

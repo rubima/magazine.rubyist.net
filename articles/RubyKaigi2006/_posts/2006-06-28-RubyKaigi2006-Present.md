@@ -75,8 +75,8 @@ L サイズ
 :  2 着
 
 胸のロゴ・背中のイラストは、こんな感じになっています。
-![shirt1FR.jpeg]({{site.baseurl}}/images/RubyKaigi2006-Present/shirt1FR.jpeg)
-![shirt2BK.jpeg]({{site.baseurl}}/images/RubyKaigi2006-Present/shirt2BK.jpeg)
+![shirt1FR.jpeg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-Present/shirt1FR.jpeg)
+![shirt2BK.jpeg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-Present/shirt2BK.jpeg)
 
 ## 応募要項
 

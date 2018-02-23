@@ -10,7 +10,7 @@ tags: 0040 OkayamaRubyKaigi01Report
 ## RegionalRubyKaigiレポート岡山 Ruby 会議 01
 
 ### 開催概要
-: ![top.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/top.jpg)
+: ![top.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/top.jpg)
 
 開催日
 :  2012 年 07 月 07 日 (土) 13:00 〜 17:30
@@ -39,7 +39,7 @@ tags: 0040 OkayamaRubyKaigi01Report
 ### 良い場所に、良い名前で - Good Names in the Right Places on Rails
 
 #### 大場寧子(@nay3)
-: ![ooba.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/ooba.jpg)
+: ![ooba.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/ooba.jpg)
 
 まずはじめのセッションは、招待講演ということで株式会社万葉の大場寧子さんにお話いただきました。タスク管理が出来る Web アプリケーションを、簡単な仕様の説明のあとに、ライブコーディングで作成しつつ使ったコマンドや、Rails のコマンドにより自動生成されたファイルの説明をするという形でした。時間の関係で全ての機能をその場で実装することは出来ませんでしたが、すでに出来上がっているものを見せていただきソースコードも github に公開されています。
 
@@ -56,7 +56,7 @@ Rails をはじめて MVC について知識が付いてきて、そしていざ
 ### RSpec でテストを書いてみよう
 
 #### 山本 和久(@kazuhisa1976)
-: ![kazu_green.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/kazu_green.jpg)
+: ![kazu_green.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/kazu_green.jpg)
 
 なぜテストを書くのか？　というお話から、実際に RSpec を使ってテストが通るまでのデモをしていただきました。
 
@@ -76,7 +76,7 @@ Rails をはじめて MVC について知識が付いてきて、そしていざ
 ### ところで Ruby ってどうやって勉強するの
 
 #### 吉田和弘(moriq)
-: ![moriq.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/moriq.jpg)
+: ![moriq.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/moriq.jpg)
 
 Ruby の勉強について、学習者ではなく教育者目線での Ruby 勉強法についてのお話でした。教育の難しい点として、Ruby を実践するにあたって、まずは Ruby の文化と理論を勉強する人になんとか伝えないといけない。理論については色々と資料があるからまだいいが、文化となると伝えるのが難しいそうです。文化は Ruby に慣れている人にとっては自明のことなので、誰も言及しない。それをどうにかしたいと悩んでいるとのことでした。
 
@@ -97,7 +97,7 @@ Ruby の勉強について、学習者ではなく教育者目線での Ruby 勉
 ### Rubyist Magazine - るびま の紹介
 
 #### 小西 雅也(@ore_public)
-: ![rubima.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/rubima.jpg)
+: ![rubima.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/rubima.jpg)
 
 るびまの紹介をしていただきました。るびまとは有志により作られている Web 雑誌です。岡山の Rubyist の方も記事を書かれているとのことで、
 
@@ -118,7 +118,7 @@ Ruby の勉強について、学習者ではなく教育者目線での Ruby 勉
 #### 吉井 英人 @hide_yoshii
 
 #### 福田 大志 @fukuda_h
-: ![uni.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/uni.jpg)
+: ![uni.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/uni.jpg)
 
 研究室で Rails を用いての開発事例のお話でした。研究室では、グループウェア、仕事の途中状態を保存、再現するツール、タスク管理機能を持つカレンダーなどを開発しているとのことで、2 週間に一度の開発打ち合わせ、Redmine を使ってのチケット管理、2 ヶ月に一度のリリースを行うなど研究での活用というよりは、実際の開発現場での事例という印象でした。
 
@@ -132,7 +132,7 @@ Ruby の勉強について、学習者ではなく教育者目線での Ruby 勉
 ### Ruby で楽々サーバー管理
 
 #### 小西 雅也(@ore_public)
-: ![konishi.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/konishi.jpg)
+: ![konishi.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/konishi.jpg)
 
 Ruby の構成管理ツールである Chef の紹介です。Ruby を使ってサーバー管理を楽にしようというテーマで、Chef でどんな事が出来るかや、Chef を使う上で理解しておくといい知識として、構成例、用語の解説、インストールでのつまりどころの解説をされていました。
 
@@ -145,7 +145,7 @@ Ruby の構成管理ツールである Chef の紹介です。Ruby を使って�
 ### Ruboto でアプリ開発を試みた
 
 #### 尾古 豊明(@patorash)
-: ![pato.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/pato.jpg)
+: ![pato.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/pato.jpg)
 
 当初予定していた Ruboto の発表者の方がこれなくなってしまい、急遽 @patorash さんに同じ Ruboto をテーマに発表していただきました。会議の 1 週間前に突然のお願いをしたにもかかわらず面白い発表を用意してくださいました。
 
@@ -189,13 +189,13 @@ LT 大会昼の部ということで、一般講演の終了後に LT を開き�
 
 以上の方々に発表していただきました。
 
-![lt1.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt1.jpg)
-![lt2.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt2.jpg)
-![lt3.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt3.jpg)
-![lt5.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt5.jpg)
-![lt6.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt6.jpg)
-![lt7.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt7.jpg)
-![lt8.jpg]({{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt8.jpg)
+![lt1.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt1.jpg)
+![lt2.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt2.jpg)
+![lt3.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt3.jpg)
+![lt5.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt5.jpg)
+![lt6.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt6.jpg)
+![lt7.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt7.jpg)
+![lt8.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/lt8.jpg)
 
 ### LT 大会夜の部
 

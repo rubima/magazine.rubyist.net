@@ -15,7 +15,7 @@ tags: 0005 FirstProgramming
 前回 ([Ruby ではじめるプログラミング 【第 3 回】]({% post_url articles/0004/2004-12-17-0004-FirstProgramming %})) 紹介したプログラムを改造してグラフィカルなプログラミングに挑戦します。
 
 ## ビジュアルノベル
-: ![ss02.jpg]({{site.baseurl}}/images/0005-FirstProgramming/ss02.jpg)
+: ![ss02.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/ss02.jpg)
 
 前回までは、コマンドプロンプトで動作するプログラムだけを扱ってきました。
 今回は、前回までに作成してきたゲームブックプログラムをグラフィカルにして、ビジュアルノベルを作ってみます。
@@ -24,7 +24,7 @@ tags: 0005 FirstProgramming
 
 ## 動かしてみよう
 
-まず [visualnovel.zip]({{site.baseurl}}/images/0005-FirstProgramming/visualnovel.zip) をダウンロードしてください。
+まず [visualnovel.zip]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/visualnovel.zip) をダウンロードしてください。
 ビジュアルノベルのサンプルプログラムと画像データが入っています。
 
 このサンプルプログラムを動かすには Ruby/Tk が動作する環境が必要です。Ruby/Tk とは、Ruby で GUI (グラフィカルユーザーインターフェース) を扱うためのライブラリで、Ruby に標準添付されています。
@@ -42,15 +42,15 @@ ruby visualnovel.rb
 
 次のような画面が表示されれば OK です。画面下に表示されている選択肢をマウスでクリックすると場面が切り替わります。
 
-_![ss00.jpg]({{site.baseurl}}/images/0005-FirstProgramming/ss00.jpg) ![ss01.jpg]({{site.baseurl}}/images/0005-FirstProgramming/ss01.jpg)_
+_![ss00.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/ss00.jpg) ![ss01.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/ss01.jpg)_
 
 ## ファイル構成
 
 visualnovel.zip には 3 つのソースファイルがあります。
 
 * guiutil.rb … GUI を使うためのユーティリティ
-* [scenario.rb]({{site.baseurl}}/images/0005-FirstProgramming/scenario.rb) … シナリオデータ
-* [visualnovel.rb]({{site.baseurl}}/images/0005-FirstProgramming/visualnovel.rb) … ゲームプログラム本体
+* [scenario.rb]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/scenario.rb) … シナリオデータ
+* [visualnovel.rb]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/visualnovel.rb) … ゲームプログラム本体
 
 
 ### guiutil.rb
@@ -451,12 +451,12 @@ start_gui
 {% endraw %}
 {% endhighlight %}
 
-: ![window.jpg]({{site.baseurl}}/images/0005-FirstProgramming/window.jpg)
+: ![window.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/window.jpg)
 
 start_gui を呼び出すと GUI のシステムが開始します。また start_gui を実行したときにはじめてウィンドウが表示されます。
 create_screen と start_gui は guiutil.rb で定義しているメソッドです。
 
-__![spacer.gif]({{site.baseurl}}/images/0005-FirstProgramming/spacer.gif)__
+__![spacer.gif]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/spacer.gif)__
 
 次のコードを見てください。
 
@@ -519,7 +519,7 @@ $bg_image = create_img 0, 0, bg_fname
 {% endraw %}
 {% endhighlight %}
 
-: ![bg.jpg]({{site.baseurl}}/images/0005-FirstProgramming/bg.jpg)
+: ![bg.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/bg.jpg)
 
 で背景画像を表示しています。create_img は画像を表示するためのメソッドです。引数には、横方向の表示座標 (X) , 縦方向の表示座標 (Y) , ファイル名を渡します。create_img が戻り値として返すのは、作成した画像を操作するためのオブジェクト (正確にはクラスのインスタンスといいます) です。それは guiutil.rb で定義されています。このオブジェクトを $bg_image に代入しておきます。
 $bg_image.delete を実行すると表示した背景を削除することができます。
@@ -547,7 +547,7 @@ $quit_button = create_img_button 0, 438, 180, "quiticon0.gif", "quiticon1.gif"
 {% endraw %}
 {% endhighlight %}
 
-: ![quit.jpg]({{site.baseurl}}/images/0005-FirstProgramming/quit.jpg)
+: ![quit.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/quit.jpg)
 
 create_img_button の引数は、ボタン ID , 表示座標 (X) , 表示座標 (Y) , 画像ファイル名 1 , 画像ファイル名 2 です。
 
@@ -569,7 +569,7 @@ $fonts.push font
 {% endraw %}
 {% endhighlight %}
 
-: ![mes.jpg]({{site.baseurl}}/images/0005-FirstProgramming/mes.jpg)
+: ![mes.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/mes.jpg)
 
 シーンデータから取り出した message をフォントとして画面に表示しています。24,218 は表示座標、$font_size はフォントのサイズです。戻り値を font に代入して、font を配列 $fonts に追加しています。
 
@@ -590,11 +590,11 @@ end
 {% endraw %}
 {% endhighlight %}
 
-: ![sel.jpg]({{site.baseurl}}/images/0005-FirstProgramming/sel.jpg)
+: ![sel.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/sel.jpg)
 
 選択肢の数はシーンによって異なるのでシーンデータ配列のサイズから表示数を求めています。シーンデータは以下のような配列でした。
 
-__![spacer.gif]({{site.baseurl}}/images/0005-FirstProgramming/spacer.gif)__
+__![spacer.gif]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/spacer.gif)__
 
 {% highlight text %}
 {% raw %}

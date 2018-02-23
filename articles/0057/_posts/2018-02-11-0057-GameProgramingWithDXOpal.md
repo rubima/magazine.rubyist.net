@@ -72,7 +72,7 @@ Use Ctrl-C to stop
 
 
 ブラウザで [http://localhost:7521/index.html](http://localhost:7521/index.html) を開くと、以下のように表示されるはずです。
-![18.50.07.png]({{site.baseurl}}/images/0057-GameProgramingWithDXOpal/18.50.07.png)
+![18.50.07.png]({{base}}{{site.baseurl}}/images/0057-GameProgramingWithDXOpal/18.50.07.png)
 
 ##### サンプルパックのダウンロード
 
@@ -101,7 +101,7 @@ Rubyのインストール方法がわからない、または調べるのがめ�
 [https://github.com/yhara/dxopal-starter-kit/releases](https://github.com/yhara/dxopal-starter-kit/releases) から最新のzipをダウンロードして展開してください。
 
 ブラウザで中に入っているindex.htmlを開くと、以下のように表示されるはずです。
-![18.55.19.png]({{site.baseurl}}/images/0057-GameProgramingWithDXOpal/18.55.19.png)
+![18.55.19.png]({{base}}{{site.baseurl}}/images/0057-GameProgramingWithDXOpal/18.55.19.png)
 
 (スターターキットには画像と効果音が入っているので、サンプルパックのダウンロードは必要ありません。)
 
@@ -206,7 +206,7 @@ end
 
 
 実行すると、地面の上にキャラクターが表示されます。少しゲームらしくなってきました。
-![22.43.11.png]({{site.baseurl}}/images/0057-GameProgramingWithDXOpal/22.43.11.png)
+![22.43.11.png]({{base}}{{site.baseurl}}/images/0057-GameProgramingWithDXOpal/22.43.11.png)
 
 ### 画像を動かしてみよう
 
@@ -444,7 +444,7 @@ end
 
 
 こんな感じになったでしょうか。
-![22.53.13.png]({{site.baseurl}}/images/0057-GameProgramingWithDXOpal/22.53.13.png)
+![22.53.13.png]({{base}}{{site.baseurl}}/images/0057-GameProgramingWithDXOpal/22.53.13.png)
 
 ItemクラスはPlayerクラスと同様に、Spriteクラスを継承しています。
 

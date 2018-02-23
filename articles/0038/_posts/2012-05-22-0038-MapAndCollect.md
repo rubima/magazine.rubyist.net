@@ -321,7 +321,7 @@ $
 ### map
 
 map は「データ構造を保ったまま[^3]、あるルールに従って元のデータ構造を別データ構造に変換する」という発想になります。図にすると、次のようになります。
-![map.png]({{site.baseurl}}/images/0038-MapAndCollect/map.png)
+![map.png]({{base}}{{site.baseurl}}/images/0038-MapAndCollect/map.png)
 
 それでは、先ほどの Lisp で map を使ったコードの例をもういちど見てみましょう。
 
@@ -339,7 +339,7 @@ map は「データ構造を保ったまま[^3]、あるルールに従って元
 ### collect
 
 collect は「データ構造内の全ての要素に対して、ある処理を繰り返し実行し、その結果を集めたもの」という発想になります。図にすると、次のようになります。
-![collect.png]({{site.baseurl}}/images/0038-MapAndCollect/collect.png)
+![collect.png]({{base}}{{site.baseurl}}/images/0038-MapAndCollect/collect.png)
 
 それでは、先ほどの Smalltalk で collect を使ったコードの例をもういちど見てみましょう。
 
@@ -365,7 +365,7 @@ collect は「データ構造内の全ての要素に対して、ある処理を
 ### reduce
 
 reduce は「あるルールに従ってデータ構造内の要素数を縮小していき、最後に残った値を返す」という発想になります。図にすると、次のようになります。
-![reduce.png]({{site.baseurl}}/images/0038-MapAndCollect/reduce.png)
+![reduce.png]({{base}}{{site.baseurl}}/images/0038-MapAndCollect/reduce.png)
 
 それでは、先ほどの Lisp で reduce を使ったコードの例をもういちど見てみましょう。
 
@@ -383,7 +383,7 @@ reduce は「あるルールに従ってデータ構造内の要素数を縮小�
 ### inject
 
 inject は「値をプールしておくバケツを用意しておき、データ構造内の全ての要素をひとつずつ、ある処理にしたがってバケツに注入していく」という発想になります。図にすると、次のようになります。
-![inject.png]({{site.baseurl}}/images/0038-MapAndCollect/inject.png)
+![inject.png]({{base}}{{site.baseurl}}/images/0038-MapAndCollect/inject.png)
 
 それでは、先ほどの Smalltalk で inject を使ったコードの例をもういちど見てみましょう。
 

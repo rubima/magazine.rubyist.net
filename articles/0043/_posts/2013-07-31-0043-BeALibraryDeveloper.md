@@ -47,7 +47,7 @@ tags: 0043 BeALibraryDeveloper
 
 この発表で伝えた「よいソフトウェアを開発する方法」は「ライブラリー開発者になること」です。どうしてこの方法につながるのか。キーとなる考えは「想像するよりも思い出す」です。
 
-[![slide-title.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/slide-title.png)](http://slide.rabbit-shocker.org/authors/kou/rubykaigi-2013/)
+[![slide-title.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/slide-title.png)](http://slide.rabbit-shocker.org/authors/kou/rubykaigi-2013/)
 ----
 
 ### よいソフトウェアとはどんなソフトウェアか
@@ -203,7 +203,7 @@ _save_ が前処理の部分、ブロックを抜けたところで実行する 
 
 キーとなる考えは、「想像するよりも思い出す」です。
 
-![remember-than-imagine.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/remember-than-imagine.png)
+![remember-than-imagine.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/remember-than-imagine.png)
 ----
 「想像すること」は難しいことです。これはまだ知らないことを思いつかなければいけないからです。0 から 1 にすることは難しいことです。
 
@@ -213,7 +213,7 @@ _save_ が前処理の部分、ブロックを抜けたところで実行する 
 
 思い出せるようになるには知っている必要があります。では、どうやって知ればよいでしょう。
 
-![how-to-get-knowledge.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/how-to-get-knowledge.png)
+![how-to-get-knowledge.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/how-to-get-knowledge.png)
 ----
 知るためには自分で経験する方法、人から聞く方法、観察して学ぶ方法などがあります。この中でも一番初めにやることは経験してみることです。経験すれば知っているので思い出せるようになります。
 
@@ -223,15 +223,15 @@ _save_ が前処理の部分、ブロックを抜けたところで実行する 
 
 それでは、「よいソフトウェアを開発する」ために「想像するよりも思い出す」というキーとなる考えを適用してみましょう。
 
-![apply-the-key-idea.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/apply-the-key-idea.png)
+![apply-the-key-idea.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/apply-the-key-idea.png)
 ----
 「よいソフトウェアを開発する」には、「似ているとはどういうことかを知って、それと同じようにする」とよいのでした。それでは、「似ているとはどういうことかを知る」ために何を経験すればよいでしょうか。
 
-![what-experience-is-needed-for-knowledge.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/what-experience-is-needed-for-knowledge.png)
+![what-experience-is-needed-for-knowledge.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/what-experience-is-needed-for-knowledge.png)
 ----
 それは「Rubyist」としての経験です。組み込みライブラリーや標準添付のライブラリーを何度も使っていればどのような API があるのかわかってきます。どのような API があるか知っていくと同じような使い方の API が見えてきます。○○の API が他の××の API と同じように使えたならそれらは似ています。例えば、_File.open_ と _Dir.open_ はどちらも同じように使えます。ブロックを受け取り、ブロックにファイル・ディレクトリーを渡し、ブロックの処理が終わったらファイル・ディレクトリーを _close_ します。
 
-![rubyist-experience-is-needed-for-knowledge.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/rubyist-experience-is-needed-for-knowledge.png)
+![rubyist-experience-is-needed-for-knowledge.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/rubyist-experience-is-needed-for-knowledge.png)
 ----
 
 #### 練習 1: プロパティーの値を取得する API
@@ -280,15 +280,15 @@ gtk2 gem は [GTK+](http://www.gtk.org/) という GUI ライブラリーを Rub
 
 ところで、_get_property_ のよりよい API を考えられましたか？　「思い出す」というのは意外と「難しい」と思いませんでしたか？[^8]　そう、難しいんです。「思い出せ！？」「Ruby らしいって何！？」そう思ったことでしょう。
 
-![remember-is-difficult.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/remember-is-difficult.png)
+![remember-is-difficult.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/remember-is-difficult.png)
 ----
 すでに知っているはずなのにどうして思い出すことが難しいのでしょう。それは、「想像するよりも思い出す」という経験をしていないからです。今のあなたの状態は「経験した」という状態ではなく、「読んだだけ」という状態です。
 
-![no-remember-experience.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/no-remember-experience.png)
+![no-remember-experience.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/no-remember-experience.png)
 ----
 それでは、もう一度。「よいソフトウェアを開発する」、「似ているとはどういうことかを知って、それと同じようにする」を実現するためには何を経験したらよいのでしょうか。それは、ライブラリー開発者としての経験です。ここでようやくこの話のタイトルがでてきました。
 
-![library-developer-experience-is-useful.png]({{site.baseurl}}/images/0043-BeALibraryDeveloper/library-developer-experience-is-useful.png)
+![library-developer-experience-is-useful.png]({{base}}{{site.baseurl}}/images/0043-BeALibraryDeveloper/library-developer-experience-is-useful.png)
 ----
 ライブラリー開発者は Rubyist として使いやすい API とはどういう API だろうと考えたり、ライブラリーのユーザーとしてわかりやすいドキュメントはどんなドキュメントだろうと考えたりします。他にもいろいろ考えます。そして、これらを何度も何度もたくさん考えます。考える機会がたくさんあるのです。「たくさん」というのはとてもよい練習になります。そのため、「想像するよりも思い出す」をうまくやるためにはライブラリー開発者になることをオススメします。
 

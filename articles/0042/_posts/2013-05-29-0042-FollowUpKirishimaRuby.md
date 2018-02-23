@@ -8,7 +8,7 @@ tags: 0042 FollowUpKirishimaRuby
 
 
 書いた人：nari ([@nari3](http://twitter.com/nari3))
-![title-logo.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/title-logo.png)
+![title-logo.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/title-logo.png)
 
 ## 注意
 
@@ -24,7 +24,7 @@ tags: 0042 FollowUpKirishimaRuby
 ## 話したいこと
 
 下の写真は大江戸 Ruby 会議 03 の会場の風景です。
-![kiri_conference_room.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_conference_room.jpg)
+![kiri_conference_room.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_conference_room.jpg)
 
 この会場でみなさんが間違いなく共通している点は、「プログラミング」ということだと思うんです。
 ですので、今回は私自身を例にして、みなさんに共通する「プログラミング」というものに対する向き合い方というか態度というか、そのあたりを考察してみます。
@@ -45,7 +45,7 @@ tags: 0042 FollowUpKirishimaRuby
 ということで、今回は『桐島、Rubyやめるってよ』という架空の作品を妄想してみました。
 
 ## 『桐島、Rubyやめるってよ』
-![kiri_ruby_epilogue.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_ruby_epilogue.png)
+![kiri_ruby_epilogue.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_ruby_epilogue.png)
 
 200X 年、Ruby を第一言語としたある企業が存在しました。
 
@@ -58,7 +58,7 @@ tags: 0042 FollowUpKirishimaRuby
 そんなヒロキの悩みが映画『桐島』の重要なテーマになっています。
 
 そんな優秀な彼らを抱える某社は大変な超エンタープライズな会社でした。数百人の PG（笑）を雇用していたのです。
-![kiri_ruby_meeting.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_ruby_meeting.png)
+![kiri_ruby_meeting.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_ruby_meeting.png)
 
 朝のスタンドアップミーティングはたっぷり数時間掛けておこなわれます。
 貧血で倒れる人がいそうですね。
@@ -74,15 +74,15 @@ tags: 0042 FollowUpKirishimaRuby
 「世界中のユーザから使われるサービスをつくるぞ！」という希望を胸に秘めて。
 
 しかし、その実情は…。
-![kiri_overtime_work.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_overtime_work.png)
+![kiri_overtime_work.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_overtime_work.png)
 
 連日、みんなであつまって深夜まで作業していたのです。
 しかも、ボランティアでやってるので残業手当が出るわけでもありません。
-![kiri_gomi_product.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_gomi_product.png)
+![kiri_gomi_product.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_gomi_product.png)
 
 そんなに大変な思いをしても出来上がるのはゴミみたいなプロダクトでした。
 なんかツイッタークローンみたいなやつとかが量産されたのです。
-![kiri_standing_leader_02.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_standing_leader_02.png)
+![kiri_standing_leader_02.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_standing_leader_02.png)
 
 リーダーにはやる気はありますが、技術力がありません。
 
@@ -93,40 +93,40 @@ tags: 0042 FollowUpKirishimaRuby
 #### なぜリーダーはゴミプロダクトをリリースし続けるのか？
 
 あるとき、ヒロキは自分の疑問をリーダーにぶつけました。
-![kiri_asking_leader.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_asking_leader.png)
+![kiri_asking_leader.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_asking_leader.png)
 
 「リーダーはなんのためにこの集まりを続けているのか？」ということです。
 なんの目的があるのか知りたかったのです。
 
 するとリーダーは
-![kiri_answering_leader.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_answering_leader.png)
+![kiri_answering_leader.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_answering_leader.png)
 
 「次のリリースではもしかしたら注目されるかもしれないじゃん…」的な回答するのでした。
 
 ### GC 研究部
 
 もうひとつの集まりが「GC 研究部」です。
-![kiri_gc_bushitu.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_gc_bushitu.png)
+![kiri_gc_bushitu.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_gc_bushitu.png)
 
 見ての通りすごいオタクの集まりで、なんかコソコソ喋ってニヤニヤしているような連中です。
 大抵が自分の好きな GC アルゴリズム（推し GC）の話で盛り上がります。
 そんな彼らは周りから見ると異質であり、他の社員からは白い目でみられています。
 
 女子からは笑われ。
-![kiri_girl_laughing.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_girl_laughing.png)
+![kiri_girl_laughing.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_girl_laughing.png)
 
 上司からも見放されています。
-![kiri_boss_ignoring.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_boss_ignoring.png)
+![kiri_boss_ignoring.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_boss_ignoring.png)
 
 彼らはヒロキや桐島とは対極であるアングラな存在です。
 しかし、彼ら自身はなぜかとても楽しそうだったのです。
 あんなに嘲笑されているのにもかかわらず…ッ。
-![kiri_gc_fun.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_gc_fun.png)
+![kiri_gc_fun.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_gc_fun.png)
 
 ### ヒロキの憂鬱
 
 その一方で、ヒロキは思い悩んでいました。
-![kiri_hiroki_thinking.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_hiroki_thinking.png)
+![kiri_hiroki_thinking.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_hiroki_thinking.png)
 
 ヒロキは某社内では人並み以上にプログラムが書ける自信があり、実際にエースとして扱われているわけです。
 しかし、ヘタに人並み以上にプログラムが書けてしまうがゆえ、自分が「スゴイ級」のプログラマではないことも痛感していました。
@@ -135,7 +135,7 @@ tags: 0042 FollowUpKirishimaRuby
 
 そんなときに GC 研究会の人たちを見て「彼らの原動力はどこにあるのか？」という疑問を持ちます。
 彼らはあんなに意味のなさそうなことばっかりやってるのに、どうしてあんなに楽しそうなのか。そして続けているのか。
-![kiri_why_overwork.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_why_overwork.png)
+![kiri_why_overwork.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_why_overwork.png)
 
 また、リーダーは狙ってもゴミみたいなものしかできないのに、なぜ流行りそうもないプロダクトを作りつづけ、なぜ深夜残業を続けるのでしょうか？
 
@@ -180,8 +180,8 @@ Perfume は彼女たちのダンスなどのモーションデータと音声デ
 
 徹夜して寝ぼけてたので「Perfume もずいぶん近未来的というか、アグレッシブな関節の使い方するんだな」とマジで誤解して、Youtube に上記の動画の上げて寝ました。
 この動画には次のような反響がありました。
-![kiri_watcher_1.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_watcher_1.png)
-![kiri_watcher_2.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_watcher_2.png)
+![kiri_watcher_1.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_watcher_1.png)
+![kiri_watcher_2.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_watcher_2.png)
 
 プログラマは HP よりも MP の方が大事だと思うので、とても邪悪な動画を作ってしまったことを深く反省しております。
 という冗談は置いといて、徹夜したにもかかわらず Perfume もろくに踊らさせられないなんて、と深く落胆したものです…orz
@@ -189,7 +189,7 @@ Perfume は彼女たちのダンスなどのモーションデータと音声デ
 ### ぽんこつ事例 その 2
 
 私は[絶対復習](http://brushup.narihiro.info)という Web サービスをほそぼそと動かし続けております。
-![kiri_brushup_logo.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_brushup_logo.png)
+![kiri_brushup_logo.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_brushup_logo.png)
 
 この Web サービスは三年くらい前に作ったもので、忘れたくない事柄を登録しておくと、RSS によって適切な復習のタイミングを知らせてくれるというものです。
 
@@ -241,15 +241,15 @@ Github には[スター](https://help.github.com/articles/stars)という機能�
 つまり、このスター数が多いほどみんなから注目をあつめているプロダクトとなり、社会的には価値があるっぽい印象を受けます。
 
 では、俺達の @a_matsuda さんの [github プロフィール](https://github.com/amatsuda)を見てみましょう。
-![kiri_github_amatsuda.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_github_amatsuda.png)
+![kiri_github_amatsuda.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_github_amatsuda.png)
 
 次に、私の [github プロフィール](https://github.com/authorNari)を見てみましょう。
-![kiri_github_nari.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_github_nari.png)
+![kiri_github_nari.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_github_nari.png)
 
 スター数に注目して見比べてください。まさに「ケタ違い」ですね。
 
 ### ロックスターにはなれない
-![kiri_rockstar.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_rockstar.png)
+![kiri_rockstar.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_rockstar.png)
 
 「ああ、私はロックスターになれないのだな」ということに気付きます。
 つまり、一般的に広く使われるプロダクトとかは作れそうもないんじゃないか、と。
@@ -259,7 +259,7 @@ Github には[スター](https://help.github.com/articles/stars)という機能�
 ## 「なぜプログラミングを続けてるんですか？」
 
 といったところで、『桐島』のセリフをもじって下記の問いについて考えてみましょう。
-![kiri_why_programming.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_why_programming.png)
+![kiri_why_programming.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_why_programming.png)
 
 何者にもなれない、きっと成功もできないであろう私はなぜプログラミングを続けているのか、そんな意味もないことを続けているのか、という点です。
 
@@ -310,7 +310,7 @@ Github には[スター](https://help.github.com/articles/stars)という機能�
 
 それでもなんでコードを書くのをやめなかったかというと、それは__コード書くのがすっげー面白かった__からなのです。
 もしコード書くのが楽しくなかったなら、きっと「ふーん」と言われたところで辞めているはずです。
-![kiri_keybord.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_keybord.png)
+![kiri_keybord.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_keybord.png)
 
 ### それは今も変わらない
 
@@ -326,7 +326,7 @@ Github には[スター](https://help.github.com/articles/stars)という機能�
 ### mame さん
 
 まずは mame さんについてです。
-![kiri_mamesan.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_mamesan.jpg)
+![kiri_mamesan.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_mamesan.jpg)
 
 mame さんの、表の顔は、Ruby2.0 のリリースマネージャであり、TAPL の翻訳者です。
 しかし、その裏の顔は、Quine を愛する世界的な変態紳士なのです。
@@ -346,7 +346,7 @@ Quine というのは簡単に言うと「自身のソースコードと完全�
 最凶のコミッタといわれる所以もよくわかります。
 
 #### 「なぜ Quine を書いてるの？」
-![kiri_why_quine.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_why_quine.png)
+![kiri_why_quine.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_why_quine.png)
 
 先日、[Ruby 20 周年記念パーティ](http://ruby20th.herokuapp.com/)の会場で mame さんに会う機会があり、せっかくの機会なので上記の質問をぶつけて見ました。
 その回答は次のようなものです。
@@ -365,13 +365,13 @@ Quine というのは簡単に言うと「自身のソースコードと完全�
 ### まつもとゆきひろさん
 
 次に紹介するのはまつもとさんです。
-![kiri_matz.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_matz.jpg)
+![kiri_matz.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_matz.jpg)
 
 みなさんご存知、Ruby のパパです。
 そのほか驚くべき数の肩書きを持ちますが、すべての肩書きをここに記すには余白が狭すぎるため、割愛させていただきます。
 
 #### 「なぜ Ruby を作ったのか？」
-![kiri_why_create_ruby.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_why_create_ruby.png)
+![kiri_why_create_ruby.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_why_create_ruby.png)
 
 まつもとさんが Ruby を作った理由としては、過去に以下のようなことを述べられていました。
 
@@ -383,7 +383,7 @@ Quine というのは簡単に言うと「自身のソースコードと完全�
 ### 竹内郁雄先生
 
 最後に紹介するのは竹内郁雄先生です。
-![kiri_tak.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak.jpg)
+![kiri_tak.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak.jpg)
 
 いわずとしれた LISP ハッカーで、TAO/ELIS の開発や、Takeuchi 関数を発案されています。
 私との竹内先生の個人的な関わりは通称「[GC 本](http://www.shuwasystem.co.jp/products/7980html/2562.html)」の監修をしてもらったことです。
@@ -396,7 +396,7 @@ GC 本に書かれている監修者のコメントとして、竹内先生は�
 
 これはなんか本格的に供養したそうで、どうも伊豆のどこかの神社で供養されているそうです（笑）。
 先生、なにやってんすかｗｗ
-![kiri_tak_jinja.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_jinja.png)
+![kiri_tak_jinja.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_jinja.png)
 
 #### 真鵺道記法
 
@@ -414,22 +414,22 @@ diff 形式だと行単位で変更点を示すので、typo などの細かい�
 
 GC 本を執筆中、挿入する絵の書き方で悩んでいたところ、竹内先生が昔かかれた手書きの論文をおくっていただきました。
 手書きはスゴイ時間がかかったそうですが、なんか味があっていいですねえ…。
-![kiri_tak_paper_01.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_paper_01.png)
+![kiri_tak_paper_01.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_paper_01.png)
 
 この論文の最初の章のタイトルは「もくろみ」ですｗｗ
-![kiri_tak_paper_02.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_paper_02.png)
+![kiri_tak_paper_02.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_paper_02.png)
 
 タイトルの横に顔写真が乗っていますが、これは当時極めて異例だったそうです。
 現在でもあまり見かけないような気がします。
-![kiri_tak_paper_03.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_paper_03.png)
+![kiri_tak_paper_03.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_paper_03.png)
 
 三章「ひらきなおれば」ｗｗｗ
-![kiri_tak_paper_04.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_paper_04.png)
+![kiri_tak_paper_04.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_paper_04.png)
 
 論文自体の内容も興味深いもので、楽しく読むことができました。
 
 ### 遊んでる？
-![kiri_mame_matz_tak.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_mame_matz_tak.jpg)
+![kiri_mame_matz_tak.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_mame_matz_tak.jpg)
 
 さて、あらためて振りかえってみますと、この三人のプログラミングへの取り組みを見ていると、なんか楽しそうな感じがしてきます。
 率直に言えば__なんかスゴイ遊んでる！__感じがするのです
@@ -475,7 +475,7 @@ __遊び__というのはとても大事だと感じています。だって遊�
 
 ### yharaさん
 
-![kiri_yhara.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_yhara.jpg)
+![kiri_yhara.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_yhara.jpg)
 （注: この写真は Dave Thomas[^6] が撮ったものですｗ）
 
 私の同僚であり、プロの esolang 作家でもある yhara さんは、遊ぶのがうまく、いろいろと大人の遊びを教えてもらいました。
@@ -498,16 +498,16 @@ yhara さんが弊社（NaCl）の社内 ML で共同の参加者を募ってい
 それからというもの、弊社の有志数人で ICFPC に参加するのが、毎年恒例の行事となっています。
 
 去年はなんか山に登った感のある集合写真を取ろうということで、以下のような写真を撮ってみました。
-![kiri_icfpc_01.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_icfpc_01.jpg)
+![kiri_icfpc_01.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_icfpc_01.jpg)
 
 毎年、こんな感じでホワイトボードを使って戦略などについてみんなで議論します。
-![kiri_icfpc_02.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_icfpc_02.jpg)
+![kiri_icfpc_02.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_icfpc_02.jpg)
 
 参加しはじめてからもう今年で 5 年目になろうとしていますが、われわれの成績はけっして上位ではありません。
 ですが、なぜ続けているかというと、それは__楽しいから__です。
 
 いや、ほんとに、楽しい、です…。
-![kiri_icfpc_03.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_icfpc_03.jpg)
+![kiri_icfpc_03.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_icfpc_03.jpg)
 
 今年の ICFPC は 8/8〜8/11 に開催されます。
 ぜひみなさんもチームを作って（ひとりでも楽しいでしょうけど）参加してみてください。
@@ -523,7 +523,7 @@ ICFPC は 1 年に 1 度しかありません。しかし、われわれには�
 
 NaCl では、有志が集まって隔週間隔で過去問を解いています。
 これはなかなかよいものですよ。
-![kiri_atcoder_00.jpg]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_atcoder_00.jpg)
+![kiri_atcoder_00.jpg]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_atcoder_00.jpg)
 
 プロコン勉強会、どうでしょうか。発表資料も必要ないし、楽ですよ。
 ぜひ御社でもご検討いただければ幸いです。
@@ -542,38 +542,38 @@ NaCl では、有志が集まって隔週間隔で過去問を解いています
 
 個人的には、はじめてプログラミングしたときの楽しさ、遊びの感覚を忘れないようにしたいと思います。
 これはわりと重要なことなんじゃないかなと考えています。
-![kiri_matz_quote.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_matz_quote.png)
+![kiri_matz_quote.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_matz_quote.png)
 
 上記はまつもとさんが札幌 RubyKaigi2012 でおっしゃられていた言葉です。
 周りからの評価とか、ソーシャルコーディングしててもプルリクが一件もこないとか、そういう成果物に対するフィードバックがないことにあんまりがっかりしないで欲しいと思います。
 もっとプログラミング、という行為自体を楽しんでほしいのです。
-![kiri_maeda_quote.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_maeda_quote.png)
+![kiri_maeda_quote.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_maeda_quote.png)
 
 いろいろ嫌なこともあると思いますけど、コード書くという遊びは楽しいものです。
 ストレス解消にもなりますし。
 私はコードを書くことを楽しんでいきたいと思っています。
 みなさんもコードを書いて遊んでみてはどうでしょうか、というのが私の願いです。
-![kiri_hunter_quote.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_hunter_quote.png)
+![kiri_hunter_quote.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_hunter_quote.png)
 
 そして、コードを書くという遊びをめいいっぱい楽しんでいる人が、最終的には強いんじゃないのかな、と思います。
 <object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/f9j4Qh5A3ys"></param><embed src="http://www.youtube.com/v/f9j4Qh5A3ys" type="application/x-shockwave-flash" width="560" height="315"></embed></object>
 
 テキトーに遊んでたら Perfume がキビキビ動くようになったので、ちょっと自慢しておきますね（キビキビ動かすために実は GC を止めている……のは内緒）。
-![kiri_mseki_quote.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_mseki_quote.png)
+![kiri_mseki_quote.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_mseki_quote.png)
 
 これは [OO エンジニアの輪](http://www.ogis-ri.co.jp/otc/hiroba/others/OORing/interview40.html)の中で関さんが「若いエンジニアに一言」というときに言ってた言葉ですね。
 もっとプログラミングしよう、という趣旨です。
 私はこの言葉が好きでちょくちょく思い出します。
 
 今回の記事を読んで、少しでもプログラミングしたいと思ってくれたのだとしたらとても嬉しいです。
-![kiri_zzak_quote.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_zzak_quote.png)
+![kiri_zzak_quote.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_zzak_quote.png)
 
 上記は zzak という Ruby コミッタの言葉です。彼の人柄がでていて、とてもよい言葉だと思います。
 どんなクソコードだったとしても無いよりあったほうがいいじゃん、ということで気軽に書いてください。
 別に車輪の再発明とかやっちゃっていいんすよ。
 
 書きたいネタがなければ [AtCoder](http://atcoder.jp/) で問題でも解いてみましょう。
-![kiri_tak_quote.png]({{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_quote.png)
+![kiri_tak_quote.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_tak_quote.png)
 
 最後は竹内先生の「最終講義」から上の言葉を持ってきました。
 これはもう、書いてあるとおりの意味ですね。

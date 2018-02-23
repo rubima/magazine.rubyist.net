@@ -70,7 +70,7 @@ package.serialize('example.xlsx')
 
 このファイルを実行すると、example.xlsx というファイルが生成されているかと思います。
 お手持ちのオフィスアプリケーションで開いてみてください。
-![example1.png]({{site.baseurl}}/images/0039-TestingWithAxlsx/example1.png)
+![example1.png]({{base}}{{site.baseurl}}/images/0039-TestingWithAxlsx/example1.png)
 
 また、Numbers をお使いの方であれば文字が表示されていないかと思います。
 これを解決するためには、文字列を sharedString.xml に保存するようにする必要があります。
@@ -94,7 +94,7 @@ package.workbook.styles do |style|
 end
 
 ```
-![example2.png]({{site.baseurl}}/images/0039-TestingWithAxlsx/example2.png)
+![example2.png]({{base}}{{site.baseurl}}/images/0039-TestingWithAxlsx/example2.png)
 
 また、画像を貼り付けることもできます。
 対応している形式は、PNG, GIF, JPEG の3種類です。
@@ -105,7 +105,7 @@ worksheet.add_image(image_src: '/path/to/your/image')
 ```
 
 この例では、筆者のアイコン画像を貼り付けてみました。
-![example3.png]({{site.baseurl}}/images/0039-TestingWithAxlsx/example3.png)
+![example3.png]({{base}}{{site.baseurl}}/images/0039-TestingWithAxlsx/example3.png)
 
 以上、ごく一部ですが Axlsx の簡単な例を試してみました。
 
@@ -213,7 +213,7 @@ RSpec の after/before を利用して、すべての検証が終わった後に
 
 
 これで、テストを実行するとレポートが作成されるようになりました。
-![array_spec.png]({{site.baseurl}}/images/0039-TestingWithAxlsx/array_spec.png)
+![array_spec.png]({{base}}{{site.baseurl}}/images/0039-TestingWithAxlsx/array_spec.png)
 
 しかし、これではテスト自体とは関係の無い処理がテストファイルの中に含まれてしまうため、
 新しく検証項目を追加する際に思考を阻害してしまいます。
@@ -344,7 +344,7 @@ end
 
 
 レポートの出力は以下のようになります。
-![rubima_spec.png]({{site.baseurl}}/images/0039-TestingWithAxlsx/rubima_spec.png)
+![rubima_spec.png]({{base}}{{site.baseurl}}/images/0039-TestingWithAxlsx/rubima_spec.png)
 
 せっかくなので、レポートに画面のスクリーンショットも貼り付けることにしましょう。
 
@@ -400,7 +400,7 @@ end
 
 
 これで、スクリーンショット付きのレポートを出力できるようになりました。
-![rubima_spec2.png]({{site.baseurl}}/images/0039-TestingWithAxlsx/rubima_spec2.png)
+![rubima_spec2.png]({{base}}{{site.baseurl}}/images/0039-TestingWithAxlsx/rubima_spec2.png)
 
 また、CI 環境でテストを実行し、その実行結果を出力することもできます。
 その場合には、ヘッドレスで実行できる Capybara のドライバを選択しましょう。
@@ -570,10 +570,10 @@ end
 
 
 レポートは以下のように出力されます。
-![rubima_feature1.png]({{site.baseurl}}/images/0039-TestingWithAxlsx/rubima_feature1.png)
+![rubima_feature1.png]({{base}}{{site.baseurl}}/images/0039-TestingWithAxlsx/rubima_feature1.png)
 
 スクリーンショットは以下のように貼付けられます。
-![rubima_feature2.png]({{site.baseurl}}/images/0039-TestingWithAxlsx/rubima_feature2.png)
+![rubima_feature2.png]({{base}}{{site.baseurl}}/images/0039-TestingWithAxlsx/rubima_feature2.png)
 
 ## 最後に
 

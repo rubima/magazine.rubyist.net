@@ -35,7 +35,7 @@ tags: 0017 CGIProgrammingForRubyBeginners
 
 設置する掲示板は rubima017-cgi\upload というフォルダに入っています。
 内容は図のとおりです。
-![upload.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-3/upload.jpg)
+![upload.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-3/upload.jpg)
 
 #### 設置する場所(サーバー)
 

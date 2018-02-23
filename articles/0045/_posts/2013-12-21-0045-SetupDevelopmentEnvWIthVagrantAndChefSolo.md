@@ -388,7 +388,7 @@ vagrant up
 ##### SEGV
 
 vagrant upを実行中、結構な頻度でSEGVで落ちます。
-![vagrant-dot_error.jpeg]({{site.baseurl}}/images/0045-SetupDevelopmentEnvWIthVagrantAndChefSolo/vagrant-dot_error.jpeg)
+![vagrant-dot_error.jpeg]({{base}}{{site.baseurl}}/images/0045-SetupDevelopmentEnvWIthVagrantAndChefSolo/vagrant-dot_error.jpeg)
 
 この場合は、vagrant provisionを実行して再度chefを実行しましょう。<br />
 (クックブックは冪等性を担保していることが前提となります。)

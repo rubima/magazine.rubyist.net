@@ -48,16 +48,16 @@ TokyuRuby 会議に初めて参加される方は驚かれるのですが、お�
 
 開会は、実行委員長の @tatsuosakurai からの挨拶と LT 王、飯王への投票の案内。<br />
 そして、既にほろ酔い感の漂う会場ではありましたが、乾杯！　<br />
-![tasuoSakurai01.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/tasuoSakurai01.jpg)![opening01.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/opening01.jpg)
+![tasuoSakurai01.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/tasuoSakurai01.jpg)![opening01.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/opening01.jpg)
 
 ### スポンサー LT
 
-![suntory01.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/suntory01.jpg)
+![suntory01.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/suntory01.jpg)
 ビールスポンサーのサントリーさんの LT は、プレモルセミナー TokyuRuby 会議バージョンです。<br />
 希望された数人に前へ出てもらい、プレモルの「美味しい注ぎ方」でグラスに注がれたプレモルと、缶のプレモルを飲み比べました。美味しい注ぎ方、美味しい！　<br />
 
 ----
-: ![suntory02.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/suntory02.jpg)
+: ![suntory02.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/suntory02.jpg)
 
 そして、もう一つキャンペーンのご案内 LT もありましたが、参加されたみなさまは、応募ハガキ、もちろん応募されましたよね？
 
@@ -88,7 +88,7 @@ TokyuRuby 会議に初めて参加される方は驚かれるのですが、お�
 
 
 ----
-: ![tdakak01.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/tdakak01.jpg)
+: ![tdakak01.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/tdakak01.jpg)
 
 受付時からプレモルを振る舞われているとはいえ、まだまだはじまったばかり、<br />
 Ruby や GitHub といった技術的な内容も多く、記憶が飛んでしまう前にいろいろ有用な話が聞けました。<br />
@@ -123,7 +123,7 @@ Ruby や GitHub といった技術的な内容も多く、記憶が飛んでし�
 
 
 ----
-: ![hg01.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/hg01.jpg)
+: ![hg01.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/hg01.jpg)
 
 この時間になるとアルコールの回り具合いも前半戦より進んで、ますますテンションが高くなってきましたが、後半戦開始早々 yui-knk さんの経理から pry のコミッターになりエンジニアになった話で始まり、
 2 人目平栗さんの「31 歳無職、ベンチャーへ行く」なんかは、会場が静かに聴き入ってしまうくらいカッコいいお話でした。<br />
@@ -161,7 +161,7 @@ TokyuRuby 会議では恒例の飯 (お持ち寄り料理) も、これまで以
 : TokyuRuby 会議 03 からはじまった、お持ち寄り料理に参加者が投票を行い、一番票を集めた料理を提供していただいた参加者に贈られる TokyuRuby 会議の称号です。
 
 #### 無冠の飯王が飯王に！
-: ![kwappa01.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/kwappa01.jpg)
+: ![kwappa01.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/kwappa01.jpg)
 
 回を追う毎に飯王争奪戦がレベルアップしています。<br />
 前飯王の @2celeb さんとの激戦の末、 @kwappa さんが新飯王の座に着きました。<br />
@@ -189,7 +189,7 @@ LT 王が話された内容も当日の感想もブログにしてくださっ�
 
 ### スタッフ T シャツ
 
-[![TokyuRubyKaigi07StaffT.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/TokyuRubyKaigi07StaffT.jpg)](http://tmix.jp/design/detail/836190)
+[![TokyuRubyKaigi07StaffT.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/TokyuRubyKaigi07StaffT.jpg)](http://tmix.jp/design/detail/836190)
 TokyuRubyKaigi06 から引き続き、今回も @yucao24hours にデザインしてもらいました。<br />
 Tokyu07 の実行委員 9 人 (と 2 人？？　ほど見え隠れしています) が並んでいます。<br />
 (@yucao24hours も今回から実行委員に加わりました。)<br />
@@ -228,20 +228,20 @@ tdakak さんが初参加にして突然の LT 王に選ばれるという劇的
 
 ### 三浦 美咲樹 (@yukaina)
 
-![yukaina.png]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/yukaina.png)TokyuRuby 会議 07 抽選 &amp; 受付係。<br />
+![yukaina.png]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/yukaina.png)TokyuRuby 会議 07 抽選 &amp; 受付係。<br />
 普段は Ruby on Rails でストックフォトサイトの開発しています。
 <br />
 
 ### 影山 勝彦 (@kishima)
 
-![kishima3.jpg]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/kishima3.jpg)TokyuRuby 会議 07 るびまレポート&amp;会計係。
+![kishima3.jpg]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/kishima3.jpg)TokyuRuby 会議 07 るびまレポート&amp;会計係。
 <br />
 組み込み技術系サラリーマン。Ruby や Android 関係に興味あり。最近は欧州辺りで仕事していることが多いです。
 <br />
 
 ### 櫻井 達生 (@tatsuoSakurai)
 
-![tatsuoSakurai.png]({{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/tatsuoSakurai.png)TokyuRuby 会議 07 実行委員長。<br />
+![tatsuoSakurai.png]({{base}}{{site.baseurl}}/images/0050-TokyuRubyKaigi07Report/tatsuoSakurai.png)TokyuRuby 会議 07 実行委員長。<br />
 岩手県生まれ東京育ち系 Rubyist。チーム関係に興味あり。趣味は映画鑑賞と徒歩とボルダリング。
 <br />
 tokyu.rb, #tkbb, #tkbjs, #crara4, デザインビギナーズ, 株式会社万葉 所属。

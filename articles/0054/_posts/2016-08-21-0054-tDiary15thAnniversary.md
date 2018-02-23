@@ -20,7 +20,7 @@ tDiary の 15 周年をお祝いするイベントが開催されました。tDi
 ## 「10 年後の tDiary」 by ただただしさん （基調祝辞講演）
 
 トップバッターは tDiary の創始者である、ただただしさんです。tDiary が 25 歳になる 10 年後に向け、今後の展望を静かに、でも熱く語ります。
-![DSC05081.JPG]({{site.baseurl}}/images/0054-tDiary15thAnniversary/DSC05081.JPG)
+![DSC05081.JPG]({{base}}{{site.baseurl}}/images/0054-tDiary15thAnniversary/DSC05081.JPG)
 
 ### これまでの 15 年とこれからの 10 年
 
@@ -80,7 +80,7 @@ tDiary の高速化で苦労したところは、テストの難しさだった�
 
 
 ## ケーキでお祝い！
-![DSC05086.JPG]({{site.baseurl}}/images/0054-tDiary15thAnniversary/DSC05086.JPG)
+![DSC05086.JPG]({{base}}{{site.baseurl}}/images/0054-tDiary15thAnniversary/DSC05086.JPG)
 
 party のために用意したお祝いのケーキを現在のメンテナ 3 人で入刀し、参加者全員でおいしく食べました。
 
@@ -128,7 +128,7 @@ party のために用意したお祝いのケーキを現在のメンテナ 3 �
 
 
 ## 自己紹介タイムと記念撮影
-![DSC05100.JPG]({{site.baseurl}}/images/0054-tDiary15thAnniversary/DSC05100.JPG)
+![DSC05100.JPG]({{base}}{{site.baseurl}}/images/0054-tDiary15thAnniversary/DSC05100.JPG)
 
 参加者のみなさんからも自己紹介や tDiary への想いを順番に話していただいた後、参加者全員で記念撮影をしてイベントを締めくくりました。
 

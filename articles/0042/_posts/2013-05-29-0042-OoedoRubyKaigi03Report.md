@@ -171,7 +171,7 @@ Ruby の GC は基本的には Mark&amp;Sweep 方式で実装されており、�
 
 ## 懇親会
 
-![1.JPG]({{site.baseurl}}/images/0042-OoedoRubyKaigi03Report/1.JPG)
+![1.JPG]({{base}}{{site.baseurl}}/images/0042-OoedoRubyKaigi03Report/1.JPG)
 懇親会は深川めしで有名な大正 13 年創業の老舗「割烹 みや古」で行われました。「古き良き下町の宴会場」という雰囲気の店内であったため席の移動もしやすく、参加者は Ruby の話題で大いに盛り上がりました。こうした懇親会では発表者の方々と交流することができるのもまた嬉しいところですね。
 
 ## 写真の提供

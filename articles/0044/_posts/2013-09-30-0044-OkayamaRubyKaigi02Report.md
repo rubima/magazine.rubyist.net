@@ -10,7 +10,7 @@ tags: 0044 OkayamaRubyKaigi02Report
 ## RegionalRubyKaigi レポート岡山 Ruby 会議 02
 
 ### 開催概要
-: ![title.jpg]({{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/title.jpg)
+: ![title.jpg]({{base}}{{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/title.jpg)
 
 開催日
 :  2013 年 07 月 06 日 (土) 10:00 〜 17:30
@@ -40,7 +40,7 @@ tags: 0044 OkayamaRubyKaigi02Report
 ### 私と Ruby の付き合い方
 
 #### 小西雅也 (@ore_public)
-: ![IMGP4902.JPG]({{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4902.JPG)
+: ![IMGP4902.JPG]({{base}}{{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4902.JPG)
 
 岡山 Ruby 会議の最初のセッションは Okayama.rb を主催し、るびま編集者としても活躍されている小西雅也さんです。「私と Ruby の付き合い方」というタイトルで、普段どのようなツールや開発環境を使って Ruby を楽しんでいるかを語っていただきました。
 
@@ -62,7 +62,7 @@ RVM
 ### Jenkins で行う並列テスト
 
 #### 山本和久 (@kazuhisa1976)
-: ![IMGP4921.JPG]({{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4921.JPG)
+: ![IMGP4921.JPG]({{base}}{{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4921.JPG)
 
 前回の[岡山 Ruby 会議]({% post_url articles/0040/2012-11-25-0040-OkayamaRubyKaigi01Report %})に続いて、テストについてのお話を聞かせてくれる株式会社リゾームの山本さんの講演です。
 
@@ -90,7 +90,7 @@ Jenkins のビルドパイプラインについてはデモ画面を見せなが
 ### 私と Ruby の3年間
 
 #### 行森奈雄 (@sutorada)
-: ![IMGP4942.JPG]({{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4942.JPG)
+: ![IMGP4942.JPG]({{base}}{{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4942.JPG)
 
 「Ruby を知って、人生が変わった」。
 
@@ -105,7 +105,7 @@ Jenkins のビルドパイプラインについてはデモ画面を見せなが
 ### Rubyist によるアジャイル開発
 
 #### 川端光義 (@agilekawabata)
-: ![IMGP4959.JPG]({{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4959.JPG)
+: ![IMGP4959.JPG]({{base}}{{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4959.JPG)
 
 遠路、大阪から来ていただきました。株式会社アジャイルウェアで受託開発をされている川端さんの発表です。
 川端さんは元々 Java エンジニアで、アジャイル開発を実践、その経験から書籍の執筆もされたそうです。[^2]
@@ -128,7 +128,7 @@ Jenkins のビルドパイプラインについてはデモ画面を見せなが
 ### Rails アプリのセキュリティ対策入門
 
 #### 大垣靖男 (@yohgaki)
-: ![IMGP5018.JPG]({{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP5018.JPG)
+: ![IMGP5018.JPG]({{base}}{{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP5018.JPG)
 
 PHP 界で有名な大垣さんがなんと岡山 Ruby 会議に登場です。セキュリティの専門家でもある大垣さんに Rails アプリのセキュリティ対策について語って頂きました。
 

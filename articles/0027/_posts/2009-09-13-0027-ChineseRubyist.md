@@ -24,7 +24,7 @@ tags: 0027 ChineseRubyist
 それでは、第一回目 (今後連載させていただければと松江の夜空に願いつつ…) 早速、ご報告開始です。
 
 ## バオ＝クゲンさんのプロフィール
-![kgenbao.png]({{site.baseurl}}/images/0027-ChineseRubyist/kgenbao.png)
+![kgenbao.png]({{base}}{{site.baseurl}}/images/0027-ChineseRubyist/kgenbao.png)
 
 * 中華人民共和国江蘇省無錫市梅村[^1]
 * キングアクシス有限公司　総経理

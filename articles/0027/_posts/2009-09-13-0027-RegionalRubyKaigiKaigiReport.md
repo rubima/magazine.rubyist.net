@@ -11,7 +11,7 @@ tags: 0027 RegionalRubyKaigiKaigiReport
 
 ## はじめに
 
-![regionalrubykaigikaigi.jpg]({{site.baseurl}}/images/0027-RegionalRubyKaigiKaigiReport/regionalrubykaigikaigi.jpg)
+![regionalrubykaigikaigi.jpg]({{base}}{{site.baseurl}}/images/0027-RegionalRubyKaigiKaigiReport/regionalrubykaigikaigi.jpg)
 日本 Ruby 会議の会期中に Regional RubyKaigi (地域 Ruby 会議) についての意見交換をする会として Regional RubyKaigi 会議 が開催されました。札幌、仙台、とちぎ、東京、関西、広島、松江、九州すべての Regional RubyKaigi の関係者 (運営または登壇者) が集まり、Regional RubyKaigi の集まりとして不足のない顔ぶれでした。また、青森や名古屋のように、これから Regional RubyKaigi を開催したいと考えている地域の Rubyist も参加してくれました。
 
 ## RegionalRubyKaigiKaigi について

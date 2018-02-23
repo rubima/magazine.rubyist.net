@@ -10,7 +10,7 @@ tags: 0042 TokyoRubyKaigi10Report_2nd
 ## RegionalRubyKaigi レポート東京 Ruby 会議 10 中断後の 3 日目
 
 ### 開催概要
-: ![centre_ohwada.png]({{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/centre_ohwada.png)
+: ![centre_ohwada.png]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/centre_ohwada.png)
 
 開催日
 :  2013/2/10(日)
@@ -39,7 +39,7 @@ tags: 0042 TokyoRubyKaigi10Report_2nd
 ### Ruby cruising Love
 
 #### 大和田純(@june29)
-: ![june29.jpg]({{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/june29.jpg)
+: ![june29.jpg]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/june29.jpg)
 
 東京 Ruby 会議 10 の 3日目最初のセッションは会場の渋谷区文化総合センター大和田にちなんで、大和田純さんによる大和田 Ruby 会議からスタートしました！
 大和田純さんが、Ruby を通して学んだこと、Rubyist やエンジニアとしてどう生きているかについて発表しました。
@@ -63,7 +63,7 @@ Web アプリケーションの開発では、Ruby 以外にも CSS や JavaScri
 ### Rails プログラマーの日常
 
 #### joker1007 (@joker1007)
-: ![joker1007.jpg]({{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/joker1007.jpg)
+: ![joker1007.jpg]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/joker1007.jpg)
 
 株式会社ウサギィの joker1007 さんが、プログラマになり Rails で受託開発を行ってきた一年間の中で考えてきたこと、学んできたことを発表しました。
 
@@ -88,7 +88,7 @@ Web アプリケーションの開発では、Ruby 以外にも CSS や JavaScri
 ### 沖縄に集まって Rails Hackathon をやってみた。
 
 #### 安川要平 (@yasulab)
-: ![yasulab.jpg]({{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/yasulab.jpg)
+: ![yasulab.jpg]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/yasulab.jpg)
 
 okinawa.rb から来た安川さんは、沖縄で行っているハッカソンを紹介しました。
 
@@ -107,7 +107,7 @@ okinawa.rb では、2012 年 11 月 24 日に shibuya.rb、minami.rb と合同�
 ### Introduction to Ember.js
 
 #### ursm(@ursm)
-: ![ursm.jpg]({{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/ursm.jpg)
+: ![ursm.jpg]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/ursm.jpg)
 
 株式会社永和システムマネジメントで普段は Ruby を書いていらっしゃる ursm さんはクライアント MVC フレームワークの一つである Ember.js に関する発表をされました。
 
@@ -139,7 +139,7 @@ MVC に基づくデータと表現の分離を主な目的とする、クライ�
 ### RubyMotion ではじめる！楽しい iOS アプリ開発
 
 #### 海老沢聡（@satococoa）
-: ![satococoa.jpg]({{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/satococoa.jpg)
+: ![satococoa.jpg]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/satococoa.jpg)
 
 Yokohama.rb の海老沢さんは P4D や RubyMotion JP の二つの勉強会も主催されています。
 
@@ -155,7 +155,7 @@ Ruby らしくかけるような wrapper もリリースされだしたので、
 ### 巻き込まれ型人間のボッチ脱出計画
 
 #### すがまさお (@sugamasao)
-: ![sugamasao.jpg]({{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/sugamasao.jpg)
+: ![sugamasao.jpg]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/sugamasao.jpg)
 
 すがまさおさんは、Ruby で自社サービスの開発を一人で行っています。そんなすがまさおさんが、どのように「ぼっち」の状態を解決してきたかを話しました。
 
@@ -170,7 +170,7 @@ Ruby らしくかけるような wrapper もリリースされだしたので、
 ### 自分の道具を知る
 
 #### @ryopeko (@ryopeko)
-: ![ryopeko.jpg]({{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/ryopeko.jpg)
+: ![ryopeko.jpg]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/ryopeko.jpg)
 
 株式会社ディー・エヌ・エーの ryopeko さんが、「自分の道具を知る」と題してソースコードを読むことの大事さについて話しました。
 

@@ -85,7 +85,7 @@ HTTP サーバーを動かします。
 
 
 localhost の 8080 番ポートで HTTP サーバーが起動しました。それでは、Web ブラウザーでアクセスしましょう。
-![cgi-fail.png]({{site.baseurl}}/images/0040-CodePostMortem/cgi-fail.png)
+![cgi-fail.png]({{base}}{{site.baseurl}}/images/0040-CodePostMortem/cgi-fail.png)
 
 CGI の実行に失敗しました。うまくいかないときはまずはログを確認します[^1]。HTTP サーバーのログを確認すると以下のようになっています。
 
@@ -149,7 +149,7 @@ index.rb:
 
 
 ふたたび Web ブラウザーでアクセスすると今度はトップページが表示されます。
-![cgi-work.png]({{site.baseurl}}/images/0040-CodePostMortem/cgi-work.png)
+![cgi-work.png]({{base}}{{site.baseurl}}/images/0040-CodePostMortem/cgi-work.png)
 
 これでスタート地点に立てました。それでは、コードを見ていきましょう。
 

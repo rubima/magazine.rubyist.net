@@ -51,7 +51,7 @@ tags: 0015 CGIProgrammingForRubyBeginners
 詳しくはそちらを参照して下さい。
 今号で使うプログラムを zip ファイルにまとめてあります。
 前号と同じようにダウンロードして C:\ に展開して下さい。
-[rubima015-cgi.zip]({{site.baseurl}}/images/0015-CGIProgrammingForRubyBeginners-1/rubima015-cgi.zip)
+[rubima015-cgi.zip]({{base}}{{site.baseurl}}/images/0015-CGIProgrammingForRubyBeginners-1/rubima015-cgi.zip)
 
 ## 新 Ruby に馴れよう
 

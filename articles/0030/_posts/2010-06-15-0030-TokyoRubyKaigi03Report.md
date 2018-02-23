@@ -8,7 +8,7 @@ tags: 0030 TokyoRubyKaigi03Report
 
 
 ## はじめに
-: ![tokyo03_rubima.jpg]({{site.baseurl}}/images/0030-TokyoRubyKaigi03Report/tokyo03_rubima.jpg)
+: ![tokyo03_rubima.jpg]({{base}}{{site.baseurl}}/images/0030-TokyoRubyKaigi03Report/tokyo03_rubima.jpg)
 
 2010 年 2 月 28 日、東京の青山にあるオラクル青山センターには、朝からの雨にもかかわらず、10 時 20 分からの開始を待たずに参加者が集まり始めました。参加者たちが期待にあふれる顔をしている反面、スタッフには不安な空気が流れています。
 

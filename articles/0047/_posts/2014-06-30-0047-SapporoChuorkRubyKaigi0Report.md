@@ -34,7 +34,7 @@ tags: 0047 SapporoChuorkRubyKaigi0Report
 
 
 ## Rails あるある ~現場での悩みとアンチパターン~ - 佐藤竜之介(@tricknotes)
-: ![tricknotes.jpg]({{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/tricknotes.jpg)
+: ![tricknotes.jpg]({{base}}{{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/tricknotes.jpg)
 
 __「『これはいい！』と思ってやったのに、手遅れ気味になったときに良くなかったことに気付いた！」__
 
@@ -71,7 +71,7 @@ Rails には魅力的な機能がたくさんあります。
 photo by [Shimada Koji](https://www.flickr.com/photos/snoozer/12410215243)
 
 ## ひでお(仮) - ヽ（´・肉・｀）ノ(@niku_name)
-: ![niku.jpg]({{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/niku.jpg)
+: ![niku.jpg]({{base}}{{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/niku.jpg)
 
 「ひでお」というタイトルは『__「ひ」とり 「で」ぶ(Dev) 「お」ぷす(Ops)__』という意味だそうです。
 このタイトルは、アプリケーション開発者でも運用環境構築の自動化をもっとやってみようという思いに由来するとのことです。
@@ -110,7 +110,7 @@ photo by [Shimada Koji](https://www.flickr.com/photos/snoozer/12410215243)
 photo by [@ayako119](https://twitter.com/ayako119)
 
 ## なるはや Ruby on Rails - 浦嶌啓太(@ursm)
-: ![ursm.jpg]({{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/ursm.jpg)
+: ![ursm.jpg]({{base}}{{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/ursm.jpg)
 
 「速さは正義です。」
 ということで、限られた開発リソースの中でいかに Rails アプリケーションを速くするかというテーマでお話されました。
@@ -182,7 +182,7 @@ Rails アプリケーションをなるはやにするために、
 photo by [@ayako119](https://twitter.com/ayako119)
 
 ## 趣味プロダクト開発で楽しいコードライフワークを送る - 小玉直樹(@volpe_hd28v)
-: ![kodama.jpg]({{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/kodama.jpg)
+: ![kodama.jpg]({{base}}{{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/kodama.jpg)
 
 トラスティア株式会社所属で、Ruby 札幌の RubyKaja に選ばれた小玉さんの発表です。
 
@@ -267,7 +267,7 @@ Web アプリケーション開発でのみ Ruby を使っていた方は、__�
 ファイル名を一括で変更したり、ファイルごとに圧縮したりするツールを作ることができますので、普段からやっていることをツール化してみると面白そうですね。
 
 ### デスクトップアプリケーション
-: ![myokoym.jpg]({{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/myokoym.jpg)
+: ![myokoym.jpg]({{base}}{{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/myokoym.jpg)
 
 デスクトップアプリケーションは GUI ツールキットを使って作っていきます。
 Ruby から GUI ツールキットを使う方法として、横山さん自身が開発に関わっているという Ruby-GNOME2 を紹介されました。
@@ -291,7 +291,7 @@ Rails でしか Ruby を使ったことがないという方は、この機会�
 photo by [@ayako119](https://twitter.com/ayako119)
 
 ## Ruby in Project-Based Learning - 梅本祥平
-: ![umemoto.jpg]({{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/umemoto.jpg)
+: ![umemoto.jpg]({{base}}{{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/umemoto.jpg)
 
 梅本さんが通われている公立はこだて未来大学には、
 プロジェクト学習というチームを組んでソフトウェアを開発する授業があります。
@@ -322,7 +322,7 @@ Ruby やアジャイル開発に詳しい人もいなかったそうです。
 photo by [Shimada Koji](https://www.flickr.com/photos/snoozer/12410074485)
 
 ## それ NArray でできるよ - 前田智樹(@tmaeda)
-: ![maeda.jpg]({{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/maeda.jpg)
+: ![maeda.jpg]({{base}}{{site.baseurl}}/images/0047-SapporoChuorkRubyKaigi0Report/maeda.jpg)
 
 株式会社えにしテックの前田さんの発表です。
 前田さんは 15 年間も Ruby を使われていて、友達のような存在なのだそうです。

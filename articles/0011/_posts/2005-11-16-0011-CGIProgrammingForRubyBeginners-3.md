@@ -69,7 +69,7 @@ RDE の下の方にあるコンソールウィンドウの色が変わり、
 その後に 123 と表示されます。
 「Completed」も表示されていますが、これは RDE が print.rb の
 実行が終了したよということを表示しています。
-![rde_execute.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-3/rde_execute.jpg)
+![rde_execute.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-3/rde_execute.jpg)
 
 RDE に Ruby プログラムを入力して
 それを保存してから、実行する方法もあります。

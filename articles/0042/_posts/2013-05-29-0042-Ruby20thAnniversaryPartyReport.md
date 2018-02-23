@@ -61,7 +61,7 @@ tags: 0042 Ruby20thAnniversaryPartyReport
 ### Matz と RubyFriends
 
 交流フリータイム中、Matz がドリンクを取りにきたのを見計らい、[RubyFrinds](http://rubyfriends.com/) をお願いした所、快く応じてくれました！
-: [![matz.jpg]({{site.baseurl}}/images/0042-Ruby20thAnniversaryPartyReport/matz.jpg)](http://instagram.com/p/WELiSDn9RR/)
+: [![matz.jpg]({{base}}{{site.baseurl}}/images/0042-Ruby20thAnniversaryPartyReport/matz.jpg)](http://instagram.com/p/WELiSDn9RR/)
 
 私が Matz に RubyFriends をお願いしたのがきっかけとなり、「俺も俺も」と人が集まり始め、あれよあれよと RubyFriends 大会となりました。さらにプチサイン会も始まり、技術書や中には Mac にサインしてもらっている強者もいました。自分も「たのしい Ruby」を持ってくれば良かったと後悔。Matz は気さくにサインや撮影に応じてくれたので、Matz が参加するイベントでは積極的に話しかけることをおすすめします。またサインしてもらう物を用意しておくとベターです。
 
@@ -69,7 +69,7 @@ tags: 0042 Ruby20thAnniversaryPartyReport
 
 さらに「話題の Ruby アイドル」こと池澤あやかさんとも RubyFriends していただきました。マネージャーさんに止められるかと思いつつ恐る恐るお願いした所、快く応じてくれました。少しだけ会話をしましたが、普通の年相応の女の子という印象を受けました。Matz 以上に話しかける難易度が高いと思いますが、会う機会があればぜひ話しかけてみてください。テレビや写真で見るよりもずっと綺麗です！
 
-[![ikeay.jpg]({{site.baseurl}}/images/0042-Ruby20thAnniversaryPartyReport/ikeay.jpg)](http://instagram.com/p/WETqBLn9Xm/)
+[![ikeay.jpg]({{base}}{{site.baseurl}}/images/0042-Ruby20thAnniversaryPartyReport/ikeay.jpg)](http://instagram.com/p/WETqBLn9Xm/)
 
 ※ツーショットよりも池澤さん単体の方が需要があると思いますので、単体の写真で。
 
@@ -78,7 +78,7 @@ tags: 0042 Ruby20thAnniversaryPartyReport
 ## 撤収
 
 スタッフとしての締めの仕事は会場の撤収です。撤収は会場を提供いただいた[楽天の吉岡さん](http://d.hatena.ne.jp/hyoshiok/)の仕切りにより、スムーズに完了しました。Rubyist は勉強会等イベント参加率が高そうなので、全体的に運営は小慣れているように感じました。スタッフを示すネックストラップは記念にいただきました。[RubyWorld Conference 2012](http://www.rubyworld-conf.org/ja/) のもので、「[秘密結社鷹の爪](http://xn--u9j429qiq1a.jp/)」などで有名な小野亮さんのイラスト入りです。
-: [![strap.jpg]({{site.baseurl}}/images/0042-Ruby20thAnniversaryPartyReport/strap.jpg)](http://instagram.com/p/XwOHo1n9So/)
+: [![strap.jpg]({{base}}{{site.baseurl}}/images/0042-Ruby20thAnniversaryPartyReport/strap.jpg)](http://instagram.com/p/XwOHo1n9So/)
 
 ## 感想
 
@@ -89,7 +89,7 @@ Ruby 20 周年記念パーティーにスタッフとして参加することで
 Ruby コミュニティは初心者も寛容に受け入れてくれる雰囲気があると思います。「自分は初心者だから」と気が引けている方がこのレポートを読んで、色々な Ruby コミュニティのイベントに積極的に関わるきっかけになれば幸いです。
 
 ここまでお読みいただき、ありがとうございました。またどこかの Ruby コミュニティのイベントでお会いしましょう！
-: [![staffs.jpg]({{site.baseurl}}/images/0042-Ruby20thAnniversaryPartyReport/staffs.jpg)](http://instagram.com/p/WERk7JImMK/)
+: [![staffs.jpg]({{base}}{{site.baseurl}}/images/0042-Ruby20thAnniversaryPartyReport/staffs.jpg)](http://instagram.com/p/WERk7JImMK/)
 
 撮影: [@kawaguti](http://twitter.com/kawaguti) さん
 

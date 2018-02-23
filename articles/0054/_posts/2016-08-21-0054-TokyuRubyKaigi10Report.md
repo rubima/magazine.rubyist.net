@@ -41,7 +41,7 @@ TokyuRuby 会議は、Ruby に興味のあるエンジニアが集う Tokyu.rb �
 ### 受付
 
 13:30 から受付を開始していますが、開始時刻 10 分前に既にかなりの参加者がこられました。会場に到着した参加者のみなさまには、受付手続きを終えると、早速ビールスポンサーのサントリーさんから注ぎたてのプレモルが振る舞われました。今回は工場直送の [ザ・プレミアムモルツ](http://www.suntory.co.jp/beer/premium/)、[マスターズドリーム](http://www.suntory.co.jp/beer/mastersdream/)、[香るプレミアム](http://www.suntory.co.jp/beer/premium/kaoru/)、[黒](http://www.suntory.co.jp/beer/premium/black/)、ほかほかなんと 7 種類の樽が！
-![suntory1.jpg]({{site.baseurl}}/images/0054-TokyuRubyKaigi10Report/suntory1.jpg)
+![suntory1.jpg]({{base}}{{site.baseurl}}/images/0054-TokyuRubyKaigi10Report/suntory1.jpg)
 
 ### 開会
 
@@ -131,17 +131,17 @@ TokyuRubyKaigi ではみんなの手作りのごはんを持ち寄ってみん�
 私は @shokolateday さんのお麩のラスク、 @tagomoris さんの牛バラ肉とシイタケの甘辛炒めをおいしくいただきました。
 
 今回の飯王は @ginkouno さん、史上初めて実行委員長と飯王を歴任する人物となりました。基調 LT では生ハムの原木の仕入れに関する人情話で会場を温かい気持ちで包みました。
-![ginkouno.jpg]({{site.baseurl}}/images/0054-TokyuRubyKaigi10Report/ginkouno.jpg)
+![ginkouno.jpg]({{base}}{{site.baseurl}}/images/0054-TokyuRubyKaigi10Report/ginkouno.jpg)
 
 ### LT 王 基調 LT
 
 LT 王はライブで会場を湧かせた @5t111111 さん。基調LTでは使用したgemの作者 @nagachika さんと @joker1007 さんに感謝しつつ、最後は @highwide さんのラップとコラボで会場は拍手大喝采で閉会しました。
-![5t111111.jpg]({{site.baseurl}}/images/0054-TokyuRubyKaigi10Report/5t111111.jpg)
+![5t111111.jpg]({{base}}{{site.baseurl}}/images/0054-TokyuRubyKaigi10Report/5t111111.jpg)
 
 ### スタッフ T シャツ
 
 TokyuRubyKaigi06 から引き続き、今回もスタッフの @yucao24hours がデザインしました。そして、T シャツの提供は、[カスタマイズTシャツプリントサービス TMIX](http://tmix.jp/) でした！
-![yucao.jpg]({{site.baseurl}}/images/0054-TokyuRubyKaigi10Report/yucao.jpg)
+![yucao.jpg]({{base}}{{site.baseurl}}/images/0054-TokyuRubyKaigi10Report/yucao.jpg)
 
 ### TokyuRuby 会議実行委員長システム
 

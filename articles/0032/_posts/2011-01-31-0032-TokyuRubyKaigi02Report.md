@@ -8,7 +8,7 @@ tags: 0032 TokyuRubyKaigi02Report
 
 
 ## はじめに
-: ![tokyu02_1.jpg]({{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_1.jpg)
+: ![tokyu02_1.jpg]({{base}}{{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_1.jpg)
 
 2010 年 5 月 29 日( Go !肉!の日)に、TokyuRuby 会議 02 が開催されました。TokyuRuby 会議 01 と同じくお酒＆食べ物持ち込み歓迎の LT 大会で、01 を上回る人数の方々に発表・参加して頂き、楽しい大会となりました。ありがとうございました。
 
@@ -27,7 +27,7 @@ tags: 0032 TokyuRubyKaigi02Report
 :  45 人
 
 ### 会場について
-: ![tokyu02_2.jpg]({{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_2.jpg)
+: ![tokyu02_2.jpg]({{base}}{{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_2.jpg)
 
 今回の会場も前回と同じく、大田区大森東地域センターです。2 部屋あり、一部屋が LT 本会場、もう一部屋が受付/ハッカソン会場になっています。
 
@@ -70,12 +70,12 @@ kuko
 前回参加頂いた方は、既に楽しみ方を心得ているようで、席を確保するなり飲み始めたり、手作りの料理を持参する方も多くいらっしゃいました。
 
 前半から既に会場には熱気と酒気が漂い、独特の雰囲気に包まれていました。
-: ![tokyu02_3.jpg]({{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_3.jpg)
+: ![tokyu02_3.jpg]({{base}}{{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_3.jpg)
 
 #### 抽選 LT
 
 kishima さん作成のプログラムによる厳正なるアミダクジにより決定された 5 人の方は、まるで心得ていたかのようにスムーズに発表していきます。
-: ![tokyu02_4.jpg]({{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_4.jpg)
+: ![tokyu02_4.jpg]({{base}}{{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_4.jpg)
 
 #### 後半戦
 
@@ -99,7 +99,7 @@ jugyo
 
 大場光一郎
 :  JRubyKaigi 2010のお知らせ
-: ![tokyu02_5.jpg]({{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_5.jpg)
+: ![tokyu02_5.jpg]({{base}}{{site.baseurl}}/images/0032-TokyuRubyKaigi02Report/tokyu02_5.jpg)
 
 この頃になると皆十分にお酒が回っており、部屋の外まであふれる熱気と酒気が会場を埋め尽くしました。硬軟バラエティに富んだ発表に会場は盛り上がり、後半戦を終えました。
 

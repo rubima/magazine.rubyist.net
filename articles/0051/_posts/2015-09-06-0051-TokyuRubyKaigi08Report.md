@@ -11,7 +11,7 @@ tags: 0051 TokyuRubyKaigi08Report
 
 TokyuRuby 会議 08 は、東京での RegionalRuby 会議として、2014 年 11 月 29 日に開催されました。<br />
 本記事はその様子をレポートしたものです。<br />
-![TokyuRuby会議08の雰囲気01.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/TokyuRuby会議08の雰囲気01.jpg)
+![TokyuRuby会議08の雰囲気01.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/TokyuRuby会議08の雰囲気01.jpg)
 
 ## 開催概要
 
@@ -59,12 +59,12 @@ TokyuRuby 会議は、Ruby に興味のあるエンジニアが集うTokyu.rb �
 
 ### 開場〜挨拶
 
-![開会の挨拶08_01.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/開会の挨拶08_01.jpg)
+![開会の挨拶08_01.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/開会の挨拶08_01.jpg)
 ----
 実行委員長からの諸注意等と挨拶の後、終焉を告げる者の募集がありました。<br />
 (5 分間の銅鑼を使ったタイマー係)<br />
 今回は、参加者のみなさんで持ち寄ったお酒で乾杯！<br />
-: ![終焉を告げる銅鑼を鳴らす者.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/終焉を告げる銅鑼を鳴らす者.jpg)
+: ![終焉を告げる銅鑼を鳴らす者.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/終焉を告げる銅鑼を鳴らす者.jpg)
 
 ### LT
 
@@ -74,7 +74,7 @@ TokyuRuby 会議は、Ruby に興味のあるエンジニアが集うTokyu.rb �
 今回のるびまでは、そちらにフォーカスしてご紹介します。<br />
 
 ----
-![igaiga555.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/igaiga555.jpg)<br />
+![igaiga555.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/igaiga555.jpg)<br />
 実行委員のトップバッターとして、<br />
 __いがいが(五十嵐邦明)「そろそろ TDD について一言いっておくか」__<br />
 TDD といっても、「tmix driven development」<br />
@@ -84,7 +84,7 @@ TokyuRuby 会議 08 の T シャツスポンサーである spice life 社のサ
 また、社員の皆さんは、tmix 製の T シャツを着てお仕事をされているそうです。<br />
 
 ----
-: ![tatsuosakurai.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/tatsuosakurai.jpg)<br />
+: ![tatsuosakurai.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/tatsuosakurai.jpg)<br />
 
 つづいて、二番手の実行委員は 07 では実行委員長を務めた<br />
 __tatsuoSakurai(櫻井達生)による「KPT@home」__<br />
@@ -95,13 +95,13 @@ Rubyistが家でもKPTを取り入れてみたというお話<br />
 初めて株式会社万葉さんへいらっしゃる方も安心ですね！<br />
 
 ----
-![cesare.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/cesare.jpg)<br />
+![cesare.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/cesare.jpg)<br />
 午前の最後には、<br />
 __沢田正 ([@cesare](https://twitter.com/cesare))「会社員→フリーランス→経営者→会社員 (予) だけど質問ある？」__<br />
 沢田さんの、これまでの道のりについて始まり、チームプレイのほうが性に合っているということで会社員 (予) へとのこと。<br />
 
 ----
-: ![ginkouno.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/ginkouno.jpg)<br />
+: ![ginkouno.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/ginkouno.jpg)<br />
 
 午後に入ると、参加者の酔いもピークになりかけているころ、いつものこれまでの TokyuRuby 会議なら、まだ始まる時間ということに気がつき、実働 8 時間の長さを実感していました。<br />
 まだまだ折り返したばかりのところで、TokyuRuby 会議 08 の実行委員長である [@ginkouno](https://twitter.com/ginkouno) の<br />
@@ -112,7 +112,7 @@ LT が終了するまでに正解をツイートした方になんと賞品に�
 残念ながら見事正解された方はおらず、賞品は LT 王への賞品となりました。<br />
 
 ----
-![publichtml.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/publichtml.jpg)<br />
+![publichtml.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/publichtml.jpg)<br />
 そして、実行委員の最後として、<br />
 [@publichtml](https://twitter.com/publichtml) __「私とRubyと彼氏(仮)」__<br />
 __(仮)__はタイトルに対してではなく「彼氏」についての仮。<br />
@@ -141,20 +141,20 @@ TokyuRuby 会議ではおなじみの抽選 LT です。LT 発表者ではない
 
 ### 投票結果
 
-![投票アプリ08.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/投票アプリ08.jpg)
+![投票アプリ08.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/投票アプリ08.jpg)
 ----
 
 #### 酒王
 
 [@tagomoris](https://twitter.com/tagomoris) さん
-: ![酒王.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/酒王.jpg)<br />
+: ![酒王.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/酒王.jpg)<br />
 
 たくさんの種類の素敵なお酒を持ってきていただき、基調講演では Ruby Conf サンディエゴに行かれた際の食べ物とお酒のお話をしてくださいました。<br />
 そちらで仕入れたフルーツワインが獲得票を延ばしたのかもしれないですね！<br />
 
 #### 飯王
 
-![飯王.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/飯王.jpg)<br />
+![飯王.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/飯王.jpg)<br />
 [@NEKOTENI](https://twitter.com/NEKOTENI) さん<br />
 LT「 Rails マダムへの道」の参加者の食いつき具合から、反響が一層増したのかもしれません！<br />
 「低糖質の食べ物」<br />
@@ -162,7 +162,7 @@ LT「 Rails マダムへの道」の参加者の食いつき具合から、反�
 基調講演では、「(前回の飯王)カッパさんごめんなさい。」で始まり、低糖質のご飯を作るにあたって、何を参考にしてきたのか、次回の TokyuRuby 会議の参戦目標について等、お話していただきました。<br />
 
 #### LT 王
-: ![LT_王になるための武器.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/LT_王になるための武器.jpg)
+: ![LT_王になるための武器.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/LT_王になるための武器.jpg)
 
 [@publichtml](https://twitter.com/publichtml) さん<br />
 入籍後の絶妙なタイミングでの TokyuRuby 会議ということもあり、<br />
@@ -199,18 +199,18 @@ LT 王とは、発表された LT の中から投票を行い、一番票を集�
 
 TokyuRubyKaigi07 から引き続き、今回も [@yucao24hours](https://twitter.com/yucao24hours) さんにデザインしてもらいました。<br />
 今回の T シャツデザインは [tmix ](http://tmix.jp/designs/1343791)さんのサイトにて公開されています。<br />
-![stuff_t-shirts.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/stuff_t-shirts.jpg)
+![stuff_t-shirts.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/stuff_t-shirts.jpg)
 
 ----
 
 ### [ NEW ] 投票システム
 
-![投票アプリ08_01.png]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/投票アプリ08_01.png)
+![投票アプリ08_01.png]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/投票アプリ08_01.png)
 これまで、LT 王、飯王を決める投票は、ホワイトボードでカウントしていましたが、今回からは、PC 、スマフォから、コメント付きで投票ができるシステムが導入されました。
 
 ### [ NEW ] 樽酒スポンサー
 
-![樽酒1_8L.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/樽酒1_8L.jpg)<br />
+![樽酒1_8L.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/樽酒1_8L.jpg)<br />
 株式会社 万葉 様<br />
 TokyuRuby 会議、念願の「鏡開き」のために、樽酒( 1.8L )を提供していただきました！<br />
 鏡開き前には「樽酒スポンサーセッション」もありました。<br />
@@ -225,7 +225,7 @@ TokyuRuby 会議、念願の「鏡開き」のために、樽酒( 1.8L )を提�
 
 とのことでした。
 <br />
-: ![鏡開き.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/鏡開き.jpg)<br />
+: ![鏡開き.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/鏡開き.jpg)<br />
 
 ### 会場スポンサー
 
@@ -242,7 +242,7 @@ TokyuRuby 会議 08 では [@ginkouno](https://twitter.com/ginkouno) が実行�
 
 ## まとめ
 
-![LT王.jpg]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/LT王.jpg)<br />
+![LT王.jpg]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/LT王.jpg)<br />
 実働8時間という長丁場でしたが、いざ終わってみると、あっという間に過ぎ去った一日でした。<br />
 それにしても、LT 登壇者だけでなく参加者のほとんどの方に LT をしていただき、これまで以上に、たくさんのお話が聞けたのではないでしょうか。<br />
 そのような激戦にも関わらず、人生をネタに捧げた実行委員( [@publichtml](https://twitter.com/publichtml) )が LT 王をとってしまうという展開に申し訳ないと思いつつも、めでたいことでしたのでお許しください。<br /><br />
@@ -269,7 +269,7 @@ TokyuRuby 会議 08 では [@ginkouno](https://twitter.com/ginkouno) が実行�
 
 ### 三浦 美咲樹 ( [@yukaina](https://twitter.com/yukaina) )
 
-![yukaina.png]({{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/yukaina.png)TokyuRuby 会議 08 抽選 &amp; 受付係。<br />
+![yukaina.png]({{base}}{{site.baseurl}}/images/0051-TokyuRubyKaigi08Report/yukaina.png)TokyuRuby 会議 08 抽選 &amp; 受付係。<br />
 普段は Ruby on Rails でストックフォトサイトの開発しています。<br />
 嫁が今回の LT 王( [@publichtml](https://twitter.com/publichtml) )になりました。<br />
 

@@ -16,7 +16,7 @@ tags: 0033 ChadFowlerOnRuby
 __Ruby のパイオニアへのインタビュー__
 
 インタビュアー： Michael Swaine
-: ![Chad-Fowler.jpg]({{site.baseurl}}/images/0033-ChadFowlerOnRuby/Chad-Fowler.jpg)
+: ![Chad-Fowler.jpg]({{base}}{{site.baseurl}}/images/0033-ChadFowlerOnRuby/Chad-Fowler.jpg)
 
 _Ruby に夢中になった人びとが出始めた頃から、Ruby がシリコンチップに載り、携帯電話で使われるようになる将来まで。Ruby コミュニティの伝説的人物がこれまでをふりかえり、その見識とこれからの期待を私たちに語ってくれます。_
 

@@ -13,10 +13,10 @@ tags: 0034 KansaiRubyKaigi03Report
 
 今回で 3 回目となる関西 Ruby 会議。
 今回は関西内外の交流をテーマに多くの Rubyist が集まりました。
-![KanRK03.jpg]({{site.baseurl}}/images/0034-KansaiRubyKaigi03Report/KanRK03.jpg)
+![KanRK03.jpg]({{base}}{{site.baseurl}}/images/0034-KansaiRubyKaigi03Report/KanRK03.jpg)
 
 ## 開催概要
-: ![ATC.jpg]({{site.baseurl}}/images/0034-KansaiRubyKaigi03Report/ATC.jpg)
+: ![ATC.jpg]({{base}}{{site.baseurl}}/images/0034-KansaiRubyKaigi03Report/ATC.jpg)
 
 日時
 : 2010 年 11 月 5 日 (金) 13:00 - 18:00
@@ -221,7 +221,7 @@ Nendo で実装された日本語 IME [Sekka](http://oldtype.sumibi.org/show-pag
 
 ライブコーディングで Rails アプリケーションを作成。
 アジャイルかわばたさんは 5 分間無言でコーディングに集中したので、よしだあつしさんが代わりに解説してくれました。
-![RubyLive.jpg]({{site.baseurl}}/images/0034-KansaiRubyKaigi03Report/RubyLive.jpg)
+![RubyLive.jpg]({{base}}{{site.baseurl}}/images/0034-KansaiRubyKaigi03Report/RubyLive.jpg)
 
 ## ジュンク堂サイン会
 

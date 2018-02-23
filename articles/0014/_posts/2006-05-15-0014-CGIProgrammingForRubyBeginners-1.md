@@ -67,7 +67,7 @@ CGI プログラムも例外ではありません。
 詳しくはそちらを参照してください。
 また、今号で使うプログラムを zip ファイルにまとめてあります。
 前回と同じようにダウンロードして C:\ に展開して下さい。
-[rubima014-cgi.zip]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-1/rubima014-cgi.zip)
+[rubima014-cgi.zip]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-1/rubima014-cgi.zip)
 
 ## エラーについて
 
@@ -946,11 +946,11 @@ String に関係したページが一覧で出てくるので、
 ここから ruby-refm-rdp-1.9.0-ja-htmlhelp.zip をダウンロード出来ます。
 この zip ファイルを解凍すると、
 下図のように rubymanjp.chm というファイルがあります。
-![html_help_folder.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-1/html_help_folder.jpg)
+![html_help_folder.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-1/html_help_folder.jpg)
 
 これをダブルクリックして実行すると、
 Ruby リファレンスマニュアルのウィンドウが表示されます。
-![html_help_window.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-1/html_help_window.jpg)
+![html_help_window.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-1/html_help_window.jpg)
 
 使い方はブラウザで使う場合とほとんど同じです。
 幾つかのリンクがありますので、

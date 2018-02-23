@@ -572,7 +572,7 @@ _Rack::Glitch_ は、Rubyist Magazine に出てくる「Ruby(ist)」と言う文
 
 
 ということをしているだけです。簡単そうでしょう？　HTTP 自体の仕組みに詳しければもっといろいろなイタズラが仕掛けられると思います。
-![padrino_glitch_s2.png]({{site.baseurl}}/images/0036-SinatraReintroduction/padrino_glitch_s2.png)
+![padrino_glitch_s2.png]({{base}}{{site.baseurl}}/images/0036-SinatraReintroduction/padrino_glitch_s2.png)
 
 [RubyistMagazine 35 号 巻頭言](http://jp.rubyist.net/magazine/?0035-ForeWord)を利用。Ruby、Rubyist と書かれた部分がグリッチされている
 
