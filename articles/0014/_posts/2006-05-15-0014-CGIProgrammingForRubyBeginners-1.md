@@ -7,8 +7,8 @@ tags: 0014 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %})
 
 ## このページの目次
 
@@ -25,7 +25,7 @@ tags: 0014 CGIProgrammingForRubyBeginners
 
 ### 今号の記事について
 
-[前回]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})は
+[前回]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})は
 HTML のフォームを使った CGI プログラムを作りました。
 その一環として最後には簡易掲示板に挑戦しました。
 掲示板としては荒削りでしたが、それなりに動作していましたね。
@@ -46,7 +46,7 @@ CGI プログラムも例外ではありません。
 
 この記事は以下のような人を対象としています。
 
-* [12 号]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %}) までの記事を読んだ人
+* [12 号]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %}) までの記事を読んだ人
 * HTML を書ける人
 * Windows 98/98SE/Me/2000/XP のいずれかを使っている人
 
@@ -63,7 +63,7 @@ CGI プログラムも例外ではありません。
 
 
 この他に RDE を使います。これらの準備の方法は
-[11 号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) で述べたので、
+[11 号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) で述べたので、
 詳しくはそちらを参照してください。
 また、今号で使うプログラムを zip ファイルにまとめてあります。
 前回と同じようにダウンロードして C:\ に展開して下さい。
@@ -92,7 +92,7 @@ CGI プログラムも例外ではありません。
 比較的簡単に見つけることが出来ます。
 
 2 つ目のエラーは CGI プログラムの約束事に反した場合です。
-[11 号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %}) で
+[11 号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %}) で
 CGI プログラムの最初に Content-Type … を表示させなければならないというルールを紹介しましたね。
 あれが CGI の 約束事の 1 つです。
 CGI プログラムにはこれ以外にもいくつかの約束事があり、
@@ -155,10 +155,10 @@ Ruby についての色々な文章や書籍を読む時にも役に立ちます
 前回で使った機能をもとに説明をしていきますので、
 下に挙げる機能を簡単に復習しておいて下さい。
 
-* [Array]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
-* [Hash]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
-* [環境変数 - ENV]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
-* [if 文]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
+* [Array]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
+* [Hash]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
+* [環境変数 - ENV]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
+* [if 文]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
 
 
 ### オブジェクトとは何か
@@ -699,7 +699,7 @@ Array、Hash の [] や数値の足し算の + もメソッドです。
 ### クラス
 
 次にクラスという用語を説明します。
-[前回]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %}) では CGI クラスを紹介しました。
+[前回]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %}) では CGI クラスを紹介しました。
 その時は CGI クラスには CGI プログラムを作るための
 便利な機能が集まっていると書きました。
 これは間違いではないのですが、実はクラスの説明としては不十分でした。
@@ -823,7 +823,7 @@ Array は [] で囲んで作りました。
 
 でも、違う方法でもオブジェクトを
 作ったことがありましたね。
-[前回]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %}) 使った CGI データです。
+[前回]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %}) 使った CGI データです。
 CGI データを作る時に
 
 {% highlight text %}
@@ -939,7 +939,7 @@ String に関係したページが一覧で出てくるので、
 #### HTML Help版 Ruby リファレンスマニュアル を使う
 
 また、Windows に限って言えば、Ruby リファレンスマニュアルの Windows HTML Help を使うことが可能です。
-これは [11号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
+これは [11号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
 でも簡単に紹介しました。
 
 必要なファイルは [http://elbereth-hp.hp.infoseek.co.jp/ruby.html](http://elbereth-hp.hp.infoseek.co.jp/ruby.html) にあります。
@@ -962,7 +962,7 @@ Ruby リファレンスマニュアルのウィンドウが表示されます。
 検索が終了すると、検索語句に一致するページがいくつかリストアップされるので、
 そこから該当しそうなページを選択します。
 
-[目次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %})
 
 

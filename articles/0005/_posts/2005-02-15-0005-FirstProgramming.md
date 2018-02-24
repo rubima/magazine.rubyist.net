@@ -12,7 +12,7 @@ tags: 0005 FirstProgramming
 ## はじめに
 
 今回は最終回です。
-前回 ([Ruby ではじめるプログラミング 【第 3 回】]({% post_url articles/0004/2004-12-17-0004-FirstProgramming %})) 紹介したプログラムを改造してグラフィカルなプログラミングに挑戦します。
+前回 ([Ruby ではじめるプログラミング 【第 3 回】]({{base}}{% post_url articles/0004/2004-12-17-0004-FirstProgramming %})) 紹介したプログラムを改造してグラフィカルなプログラミングに挑戦します。
 
 ## ビジュアルノベル
 : ![ss02.jpg]({{base}}{{site.baseurl}}/images/0005-FirstProgramming/ss02.jpg)
@@ -29,7 +29,7 @@ tags: 0005 FirstProgramming
 
 このサンプルプログラムを動かすには Ruby/Tk が動作する環境が必要です。Ruby/Tk とは、Ruby で GUI (グラフィカルユーザーインターフェース) を扱うためのライブラリで、Ruby に標準添付されています。
 
-[Ruby ではじめるプログラミング 第 1 回]({% post_url articles/0002/2004-10-16-0002-FirstProgramming %})で紹介した手順で [One-Click Ruby Installer](http://rubyforge.org/projects/rubyinstaller/) を使って Ruby をインストールした場合は、既に Ruby/Tk が使える状態になっています。これまでと同じ操作でプログラムを起動することができます。
+[Ruby ではじめるプログラミング 第 1 回]({{base}}{% post_url articles/0002/2004-10-16-0002-FirstProgramming %})で紹介した手順で [One-Click Ruby Installer](http://rubyforge.org/projects/rubyinstaller/) を使って Ruby をインストールした場合は、既に Ruby/Tk が使える状態になっています。これまでと同じ操作でプログラムを起動することができます。
 
 作業ディレクトリにダウンロードしたファイルを展開してコマンドプロンプトで次のように入力してください。
 

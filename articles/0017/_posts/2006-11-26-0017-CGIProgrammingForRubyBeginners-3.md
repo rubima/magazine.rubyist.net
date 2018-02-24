@@ -7,8 +7,8 @@ tags: 0017 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[前のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
-[目次へ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
+[前のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
+[目次へ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
 
 ## 目次
 
@@ -31,7 +31,7 @@ tags: 0017 CGIProgrammingForRubyBeginners
 ダウンロードしてもらった rubima017-cgi.zip に
 修正済みの掲示板が入っています。
 まだダウンロードしていない人は
-[1 ページ目]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-1 %}) からダウンロードして下さい。
+[1 ページ目]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-1 %}) からダウンロードして下さい。
 
 設置する掲示板は rubima017-cgi\upload というフォルダに入っています。
 内容は図のとおりです。
@@ -52,7 +52,7 @@ tags: 0017 CGIProgrammingForRubyBeginners
 掲示板を設置してもそのプログラムは動作しません。
 
 Ruby の CGI プログラムを動かすために
-必要なものは [初回]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) に説明しました。
+必要なものは [初回]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) に説明しました。
 下の 2 つです。
 
 * Ruby 本体
@@ -590,7 +590,7 @@ FTP
 某時代劇シリーズからとっていたのですが、
 ついに尽きてしまいました。次号からどうしようかなあ。
 
-[前のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
-[目次へ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
+[前のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
+[目次へ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
 
 

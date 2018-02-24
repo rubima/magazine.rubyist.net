@@ -7,7 +7,7 @@ tags: 0011 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
 
 * Table of content
 {:toc}
@@ -100,6 +100,6 @@ server.rb の時にあった「:8080」が消えたり、
 * [http://localhost/cgi-bin/foo5.rb](http://localhost/cgi-bin/foo5.rb)
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
 
 

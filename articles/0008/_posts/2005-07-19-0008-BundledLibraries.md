@@ -615,7 +615,7 @@ Logger では機能不足と思ったときに使うと良いと思います。
 
 ### win32-eventlog
 
-Win32 では [Ruby Library Report 【第 4 回】 Win32Utils]({% post_url articles/0005/2005-02-15-0005-RLR %}) で、その他のライブラリとして名前が出ていた
+Win32 では [Ruby Library Report 【第 4 回】 Win32Utils]({{base}}{% post_url articles/0005/2005-02-15-0005-RLR %}) で、その他のライブラリとして名前が出ていた
 win32-eventlog を使って、eventlog の読み書きが出来るようです。
 
 ## 終わりに

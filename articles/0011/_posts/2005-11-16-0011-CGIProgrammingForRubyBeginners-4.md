@@ -7,9 +7,9 @@ tags: 0011 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
-[付録ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
+[付録ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
 
 * Table of content
 {:toc}
@@ -156,7 +156,7 @@ __CGI のプログラムを実行する時は CGI プログラムの実行前に
 サーバーが起動しないと CGI プログラムは実行されません。
 
 もし、server.rb でどうしても上手くいかないという時には
-[付録ページ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
+[付録ページ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
 で違う方法を紹介しています。
 トライしてみて下さい。
 
@@ -773,8 +773,8 @@ CGI プログラムで使った写真は筆者の実家の猫をデジカメで�
   - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
-[付録ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
+[付録ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
 
 

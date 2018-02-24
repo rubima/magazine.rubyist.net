@@ -37,42 +37,42 @@ Regional RubyKaigi プロジェクトの背景や枠組みについては、角�
 
 最初は東京 Ruby 会議 01 です。東京 Ruby 会議 01 は、Rubykaigi2008 を終え RubyKaigi の方向性を見失っていた角谷さんが実行委員長となり「RubyKaigi の楽しさを取り戻したかった」という思いのもと、「RubyKaigi は主に Ruby を作っている人たちの自慢大会なので、Ruby を使っている人たちの話をメインに聞いてみたい」というコンセプトで開催された Regional RubyKaigi でした。
 
-* [RegionalRubyKaigi レポート (01) 東京 Ruby 会議 01]({% post_url articles/0024/2008-10-01-0024-TokyoRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (01) 東京 Ruby 会議 01]({{base}}{% post_url articles/0024/2008-10-01-0024-TokyoRubyKaigi01Report %})
 
 
 次に札幌 Ruby 会議 01 です。札幌 Ruby 会議 01 は「Ruby 会議の楽しさ (作る楽しさ、参加する楽しさ) を札幌のみんなに。」という思いで開催されました。
 
-* [RegionalRubyKaigi レポート (02) 札幌 Ruby 会議 01]({% post_url articles/0025/2009-02-07-0025-SapporoRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (02) 札幌 Ruby 会議 01]({{base}}{% post_url articles/0025/2009-02-07-0025-SapporoRubyKaigi01Report %})
 
 
 関西 Ruby 会議 01 は関西オープンフォーラム 2008 (KOF2008) との共催として開催されました。
 
-* [RegionalRubyKaigi レポート (03) 関西 Ruby 会議 01]({% post_url articles/0025/2009-02-07-0025-KansaiRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (03) 関西 Ruby 会議 01]({{base}}{% post_url articles/0025/2009-02-07-0025-KansaiRubyKaigi01Report %})
 
 
 九州 Ruby 会議 01 は福岡県の協力が得られるということもあり、きっちりしたものができるようがんばったそうです。その結果、初回の Regional RubyKaigi でありながら日本 Ruby 会議 2006 の規模を上回る最大規模の Regional RubyKaigi が開催されました。ただ、次はこの規模での開催は考えていないとのことでした。
 
-* [RegionalRubyKaigi レポート (04) 九州 Ruby 会議 01]({% post_url articles/0026/2009-06-30-0026-KyushuRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (04) 九州 Ruby 会議 01]({{base}}{% post_url articles/0026/2009-06-30-0026-KyushuRubyKaigi01Report %})
 
 
 仙台 Ruby 会議 01 は地元が東北の人を集めて話をしてもらうという形で開催されました。そのコンセプトもあってか発表でも自分のことを話す場面が見られるなど Regional ならではの楽しみがあったようです。
 
-* [RegionalRubyKaigi レポート (05) 仙台 Ruby 会議 01]({% post_url articles/0026/2009-06-30-0026-SendaiRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (05) 仙台 Ruby 会議 01]({{base}}{% post_url articles/0026/2009-06-30-0026-SendaiRubyKaigi01Report %})
 
 
 松江 Ruby 会議 01 は地の利を活かし松江での Ruby メンテナの開発合宿にあわせて開催されました。地元の中小企業の人や行政の人も来場するなど松江開催らしい Regional RubyKaigi だったようです。
 
-* [RegionalRubyKaigi レポート (06) 松江 Ruby 会議 01]({% post_url articles/0026/2009-06-30-0026-MatsueRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (06) 松江 Ruby 会議 01]({{base}}{% post_url articles/0026/2009-06-30-0026-MatsueRubyKaigi01Report %})
 
 
 とちぎ Ruby 会議 01 は「いつもどおりの toRuby でした。」の言葉のとおり、元々しっかりコミュニティの基盤があることを活かし toRuby 拡大版として開催されました。ここまで「(漢字名) Ruby 会議」という命名規約でやってきていた Regional RubyKaigi の名前が前例を踏襲できなくなったのもこのとちぎ Ruby 会議からでした。
 
-* [RegionalRubyKaigi レポート (07) とちぎ Ruby 会議 01]({% post_url articles/0026/2009-06-30-0026-TochigiRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (07) とちぎ Ruby 会議 01]({{base}}{% post_url articles/0026/2009-06-30-0026-TochigiRubyKaigi01Report %})
 
 
 広島 Ruby 会議 01 は行政が絡んだ Regional RubyKaigi だったためか参加者の大半がスーツ着用という異色の Regional RubyKaigi でした。島根も所属する中国経済産業局が Ruby への関心が高いらしくその色合いの濃い開催となったようです。
 
-* [RegionalRubyKaigi レポート (08) 広島 Ruby 会議 01]({% post_url articles/0026/2009-06-30-0026-HiroshimaRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (08) 広島 Ruby 会議 01]({{base}}{% post_url articles/0026/2009-06-30-0026-HiroshimaRubyKaigi01Report %})
 
 
 ### 今後開催したい地方の人たち

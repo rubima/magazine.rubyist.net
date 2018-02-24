@@ -101,8 +101,8 @@ Ruby の勉強について、学習者ではなく教育者目線での Ruby 勉
 
 るびまの紹介をしていただきました。るびまとは有志により作られている Web 雑誌です。岡山の Rubyist の方も記事を書かれているとのことで、
 
-* [Rubyイメージソングコンテスト]({% post_url articles/0033/2011-04-05-0033-ImagesongContest %})
-* [Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて]({% post_url articles/0037/2012-02-05-0037-CreateRailsPlugin %})
+* [Rubyイメージソングコンテスト]({{base}}{% post_url articles/0033/2011-04-05-0033-ImagesongContest %})
+* [Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて]({{base}}{% post_url articles/0037/2012-02-05-0037-CreateRailsPlugin %})
 
 
 の 2 つがその記事です。

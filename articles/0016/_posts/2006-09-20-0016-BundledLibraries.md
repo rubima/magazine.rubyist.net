@@ -195,7 +195,7 @@ YAML::Store は PStore と同じように Ruby のオブジェクトを YAML 形
 ### 基本的な使い方
 
 YAML::Store の使い方は基本的に PStore と全く同じです。
-[プログラマーのための YAML 入門 (中級編)]({% post_url articles/0010/2005-10-10-0010-YAML %}) も参考にしてください。
+[プログラマーのための YAML 入門 (中級編)]({{base}}{% post_url articles/0010/2005-10-10-0010-YAML %}) も参考にしてください。
 
 {% highlight text %}
 {% raw %}
@@ -475,7 +475,7 @@ to_json は Symbol が文字列になるなど、JavaScript の仕様にあわ�
 * [ruby-man:PStore](ruby-man:PStore)
 * [ruby-man:Marshal](ruby-man:Marshal)
 * [ruby-man:YAML::Store](ruby-man:YAML::Store)
-* [プログラマーのための YAML 入門 (中級編)]({% post_url articles/0010/2005-10-10-0010-YAML %})
+* [プログラマーのための YAML 入門 (中級編)]({{base}}{% post_url articles/0010/2005-10-10-0010-YAML %})
 * [http://yaml4r.sourceforge.net/doc/](http://yaml4r.sourceforge.net/doc/)
 * [http://yaml4r.sourceforge.net/doc/page/the_options_hash.htm](http://yaml4r.sourceforge.net/doc/page/the_options_hash.htm)
 * [http://cvs.sourceforge.jp/cgi-bin/viewcvs.cgi/ruexli/ruexli/lib/xmlstore.rb](http://cvs.sourceforge.jp/cgi-bin/viewcvs.cgi/ruexli/ruexli/lib/xmlstore.rb)

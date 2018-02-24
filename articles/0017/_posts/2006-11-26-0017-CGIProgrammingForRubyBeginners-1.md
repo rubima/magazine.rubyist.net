@@ -7,8 +7,8 @@ tags: 0017 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[目次へ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
-[次のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
+[目次へ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
+[次のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
 
 ## 目次
 
@@ -23,7 +23,7 @@ tags: 0017 CGIProgrammingForRubyBeginners
 手袋がないと手が痛くなって運転に支障があるからです。
 皆さん防寒対策はどのようにされていますか？
 
-[前回]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) は
+[前回]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) は
 bbs.rb が担当する表示部分を中心に改造していきました。
 見た目は良くなって、だいぶ掲示板らしくなってきましたが、
 それでも細かい改良がまだまだ必要です。
@@ -32,18 +32,18 @@ update.rb が担当するフォームデータの処理や掲示板データへ�
 こられの処理は目に見えにくいので、つまらないかもしれませんが、非常に重要です。
 しっかりと理解してください。
 この連載の掲示板における bbs.rb や update.rb の役割を知りたい方は
-[14 号]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %}) を参照して下さい。
+[14 号]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %}) を参照して下さい。
 
 ### 対象読者
 
 この記事は以下のような人を対象としています。
 
-* [前回]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) の記事を読んだ人
+* [前回]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) の記事を読んだ人
 * HTML を書ける人
 * Windows 98/98SE/Me/2000/XP のいずれかを使っている人
 
 
-この連載は [前回]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) 
+この連載は [前回]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) 
 までの記事を読んでいる方を対象として書かれています。
 今号を読む前に前回までの内容を把握しておいて下さい。
 
@@ -56,7 +56,7 @@ update.rb が担当するフォームデータの処理や掲示板データへ�
 
 
 この他に RDE を使います。これらの準備の方法は
-[11号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) で述べたので、
+[11号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) で述べたので、
 詳しくはそちらを参照して下さい。
 今号で使うプログラムは zip ファイルにまとめてあります。
 これまでと同じようにダウンロードして C:\ に展開して下さい。
@@ -570,7 +570,7 @@ close でファイルを閉じるまでの間行われています。
 次ページからは掲示板プログラムの
 文字コードや排他処理の対応を進めていきます。
 
-[目次へ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
-[次のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
+[目次へ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
+[次のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
 
 

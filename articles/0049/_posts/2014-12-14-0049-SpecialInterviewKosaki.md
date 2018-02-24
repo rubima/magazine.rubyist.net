@@ -9,7 +9,7 @@ tags: 0049 SpecialInterviewKosaki
 
 ## はじめに
 
-アメリカはフロリダ州マイアミビーチにて開催されていた [RubyConf 2013](http://confreaks.com/events/rubyconf2013) の会場にて、Ruby と Linux カーネルのデュアルコミッタとして有名な小崎資広さんにインタビューさせていただきました。二日間にわたるインタビューとなり、前編 ([Rubyist インタビュー特別編 小崎資広さん 前編]({% post_url articles/0046/2014-04-05-0046-SpecialInterviewKosaki %})) に続いて今回二日目となる後編をお送りします。まだお読みでない方は前編も合わせてお読みいただければと思います。
+アメリカはフロリダ州マイアミビーチにて開催されていた [RubyConf 2013](http://confreaks.com/events/rubyconf2013) の会場にて、Ruby と Linux カーネルのデュアルコミッタとして有名な小崎資広さんにインタビューさせていただきました。二日間にわたるインタビューとなり、前編 ([Rubyist インタビュー特別編 小崎資広さん 前編]({{base}}{% post_url articles/0046/2014-04-05-0046-SpecialInterviewKosaki %})) に続いて今回二日目となる後編をお送りします。まだお読みでない方は前編も合わせてお読みいただければと思います。
 
 では、お楽しみください。
 
@@ -18,13 +18,13 @@ tags: 0049 SpecialInterviewKosaki
 ## インタビュー (後編)
 
 聞き手
-: [卜部さん]({% post_url articles/0042/2013-05-29-0042-Hotlinks %}) ([@shyouhei](https://twitter.com/shyouhei))
+: [卜部さん]({{base}}{% post_url articles/0042/2013-05-29-0042-Hotlinks %}) ([@shyouhei](https://twitter.com/shyouhei))
 
 語り手
 : 小崎資広さん
 
 野次馬
-: 笹田さん[^1] ([@koichisasada](https://twitter.com/koichisasada))、[松田さん]({% post_url articles/0037/2012-02-05-0037-Hotlinks %}) ([@a_matsuda](https://twitter.com/a_matsuda))、[中村さん]({% post_url articles/0028/2009-12-07-0028-Hotlinks %}) ([@nari3](https://twitter.com/nari3))、瀬尾さん ([@sonots](https://twitter.com/sonots))、菅井さん ([@hokkai7go](https://twitter.com/hokkai7go))、三村さん ([@takkanm](https://twitter.com/takkanm))、郡司さん ([@gunjisatoshi](https://twitter.com/gunjisatoshi))
+: 笹田さん[^1] ([@koichisasada](https://twitter.com/koichisasada))、[松田さん]({{base}}{% post_url articles/0037/2012-02-05-0037-Hotlinks %}) ([@a_matsuda](https://twitter.com/a_matsuda))、[中村さん]({{base}}{% post_url articles/0028/2009-12-07-0028-Hotlinks %}) ([@nari3](https://twitter.com/nari3))、瀬尾さん ([@sonots](https://twitter.com/sonots))、菅井さん ([@hokkai7go](https://twitter.com/hokkai7go))、三村さん ([@takkanm](https://twitter.com/takkanm))、郡司さん ([@gunjisatoshi](https://twitter.com/gunjisatoshi))
 
 日にち
 : 2013 年 11 月 9 日、11 月 10 日[^2]

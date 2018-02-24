@@ -15,7 +15,7 @@ tags: 0039 ExpressionAndStatement
 
 ## はじめに
 
-オブジェクト指向のスクリプト言語として有名なプログラミング言語 Python は、同様にオブジェクト指向のスクリプト言語である Ruby とよく比較されているような気がします。たとえば Rubyist Magazine の記事「[Rubyist のための他言語探訪 【第 1 回】 Python]({% post_url articles/0008/2005-07-19-0008-Legwork %})」では、 Ruby の作者であるまつもとゆきひろさんご自身が Python と Ruby を比較しています。また「達人プログラマ」として有名な [Dave Thomas 氏](http://pragdave.pragprog.com/) も、 2007 年に行われた「[日本 Ruby 会議 2007](http://jp.rubyist.net/RubyKaigi2007/)」のキーノートスピーチ「[The Island of Ruby (島国としてのRuby) ](http://jp.rubyist.net/RubyKaigi2007/Log0610-S5.html)」にて、次のように Python と Ruby について述べています。
+オブジェクト指向のスクリプト言語として有名なプログラミング言語 Python は、同様にオブジェクト指向のスクリプト言語である Ruby とよく比較されているような気がします。たとえば Rubyist Magazine の記事「[Rubyist のための他言語探訪 【第 1 回】 Python]({{base}}{% post_url articles/0008/2005-07-19-0008-Legwork %})」では、 Ruby の作者であるまつもとゆきひろさんご自身が Python と Ruby を比較しています。また「達人プログラマ」として有名な [Dave Thomas 氏](http://pragdave.pragprog.com/) も、 2007 年に行われた「[日本 Ruby 会議 2007](http://jp.rubyist.net/RubyKaigi2007/)」のキーノートスピーチ「[The Island of Ruby (島国としてのRuby) ](http://jp.rubyist.net/RubyKaigi2007/Log0610-S5.html)」にて、次のように Python と Ruby について述べています。
 
 > PythonとRuby。
 > 2001年にアメリカでRubyのチュートリアルを開いた時は大盛況だった。

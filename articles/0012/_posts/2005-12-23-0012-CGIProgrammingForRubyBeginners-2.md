@@ -7,9 +7,9 @@ tags: 0012 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
 
 * Table of content
 {:toc}
@@ -461,8 +461,8 @@ arr1[0] で "t=dddd" のデータにアクセスします。
 どのように表示されるか遊んでみましょう。
 ![bar_echo1_2.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1_2.jpg)
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
 
 

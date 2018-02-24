@@ -15,7 +15,7 @@ tags: 0004 LilyCustomizeHack
 
 ## はじめに
 
-「[lilyでブログカスタマイズ第1回]({% post_url articles/0003/2004-11-15-0003-LilyCustomizeHack %})」では、lilyの導入と基本的な記事の投稿方法を解説しました。
+「[lilyでブログカスタマイズ第1回]({{base}}{% post_url articles/0003/2004-11-15-0003-LilyCustomizeHack %})」では、lilyの導入と基本的な記事の投稿方法を解説しました。
 
 さて、ブログをカスタマイズするとして、まず思い浮かぶのはデザイン面ではないでしょうか。特にlilyの場合、折角サーバーを借りて運用するわけですから、ブログホスティングサービスでは出来無い全面的なデザインカスタマイズをしてみたいところです。
 
@@ -29,7 +29,7 @@ lilyではこのテンプレート方式の一種である、flavour（フレー
 
 flavourの詳細について説明する前に、lilyがどのようにして出力する画面を決定しているかの仕組みを説明します。
 
-以下のように直接lily.cgiにアクセスすると、最近投稿した記事を何件か表示します（このときの件数はlily.cfgで設定します=&gt;[第1回]({% post_url articles/0004/2004-12-17-0004-LilyCustomizeHack %})）。
+以下のように直接lily.cgiにアクセスすると、最近投稿した記事を何件か表示します（このときの件数はlily.cfgで設定します=&gt;[第1回]({{base}}{% post_url articles/0004/2004-12-17-0004-LilyCustomizeHack %})）。
 
 [http://www.mikihoshi.com/rubima/d/lily.cgi](http://www.mikihoshi.com/rubima/d/lily.cgi)
 

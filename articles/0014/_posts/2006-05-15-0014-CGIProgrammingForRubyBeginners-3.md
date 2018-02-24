@@ -7,8 +7,8 @@ tags: 0014 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[前ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %})
-[目次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
 
 ## このページの目次
 
@@ -313,7 +313,7 @@ RDE で実行できたらもう一度 [http://localhost:8080/baz02.html](http://
 
 #### プリントデバッグ
 
-[2 ページ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %}) で紹介した
+[2 ページ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %}) で紹介した
 プリントデバッグを使って原因を調べてみましょう。
 
 プリントデバッグではプログラムのどこで
@@ -824,7 +824,7 @@ CGI プログラムとしてのエラーはなかなか見つけにくいので�
 大きいほうは 5kg もあるので、結構寝苦しいです。
 普段、からかって遊んでいる逆襲なのでしょうか・・・。
 
-[前ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %})
-[目次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
 
 

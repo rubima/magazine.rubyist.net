@@ -556,6 +556,6 @@ Rails で JavaScript を書く時は、アセットパイプラインの機能�
 
 ### 橋立 友宏 ([@joker1007](https://twitter.com/joker1007))
 
-(株) ウサギィ所属の Rails プログラマー。Rails を利用した中小規模の受託開発を中心に仕事をしている。最近は Rails 以外にも JavaScript や Scala を書く機会が多くなってきた。『[パーフェクト Ruby]({% post_url articles/0043/2013-07-31-0043-BookPerfectRuby %})』の著者の一人。
+(株) ウサギィ所属の Rails プログラマー。Rails を利用した中小規模の受託開発を中心に仕事をしている。最近は Rails 以外にも JavaScript や Scala を書く機会が多くなってきた。『[パーフェクト Ruby]({{base}}{% post_url articles/0043/2013-07-31-0043-BookPerfectRuby %})』の著者の一人。
 
 

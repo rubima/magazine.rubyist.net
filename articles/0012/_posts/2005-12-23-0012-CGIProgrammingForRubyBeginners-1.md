@@ -7,8 +7,8 @@ tags: 0012 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
 
 * Table of content
 {:toc}
@@ -44,7 +44,7 @@ CGI プログラミングの幅が広がり、
 
 この記事は以下のような人を対象としています。
 
-* [前号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) の記事を読んだ人
+* [前号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) の記事を読んだ人
 * HTML を書ける人
 * Windows 98/98SE/Me/2000/XP のいずれかを使っている人
 
@@ -120,14 +120,14 @@ Ruby に慣れるには、自分で試してみるのが一番です。
 
 ## 前号の復習
 
-最初に[前号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})の復習をしましょう。
+最初に[前号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})の復習をしましょう。
 前号では下のような Ruby の機能を使いました。
 
-* [print, puts 命令]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
-* [文字列の使い方]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
-* [変数]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
-* [変数の文字列埋め込み]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
-* [rand 命令]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
+* [print, puts 命令]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
+* [文字列の使い方]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
+* [変数]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
+* [変数の文字列埋め込み]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
+* [rand 命令]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
 
 
 print, puts はデータを表示させる命令でしたね。
@@ -844,7 +844,7 @@ if 文は CGI プログラムの色々な場面で活躍します。
 何らかの条件と合致するかを調べれば、
 フォームのデータに合わせて処理を分岐させることが可能になります。
 
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
 
 

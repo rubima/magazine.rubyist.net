@@ -64,7 +64,7 @@ RVM
 #### 山本和久 (@kazuhisa1976)
 : ![IMGP4921.JPG]({{base}}{{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/IMGP4921.JPG)
 
-前回の[岡山 Ruby 会議]({% post_url articles/0040/2012-11-25-0040-OkayamaRubyKaigi01Report %})に続いて、テストについてのお話を聞かせてくれる株式会社リゾームの山本さんの講演です。
+前回の[岡山 Ruby 会議]({{base}}{% post_url articles/0040/2012-11-25-0040-OkayamaRubyKaigi01Report %})に続いて、テストについてのお話を聞かせてくれる株式会社リゾームの山本さんの講演です。
 
 山本さんは 2011 年 7 月に開催された RubyKaigi 2011 に参加してテストに対する意識が高くなり、担当しているプロジェクトに自動テスト環境を導入して開発を行っていました。しかし、プロジェクトが進行するにつれてテストコードが膨らんでしまい、テストに時間がかかるようになってしまいました。
 

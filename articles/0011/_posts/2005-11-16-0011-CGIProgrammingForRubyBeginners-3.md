@@ -7,9 +7,9 @@ tags: 0011 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
-[次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
+[次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
 
 * Table of content
 {:toc}
@@ -382,8 +382,8 @@ Ruby のプログラムを作る時は print, puts のような Ruby の命令�
 CGI プログラムを作る時も全く同じです。
 大きく違うのは CGI というルールに従わなければならない点です。
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
-[次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
+[次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
 
 

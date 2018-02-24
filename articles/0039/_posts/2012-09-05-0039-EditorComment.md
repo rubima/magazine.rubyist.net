@@ -30,10 +30,10 @@ tags: 0039 EditorComment
 
 高橋編集長による毎回圧巻の巻頭言ですが、今年も変わらず継続されています。内容も昨今話題のソーシャルコーディングについてや、 Ruby の価値基準の根幹である「たのしさ」について、そして組み込み用途向けとして注目されている mruby のソースコードの読み方の紹介、RubyKaigi の実行委員長の引継ぎ？など、多岐に渡っています。
 
-* [0036 号 巻頭言]({% post_url articles/0036/2011-11-28-0036-ForeWord %})
-* [0037 号 巻頭言]({% post_url articles/0037/2012-02-05-0037-ForeWord %})
-* [0038 号 巻頭言]({% post_url articles/0038/2012-05-22-0038-ForeWord %})
-* [0039 号 巻頭言]({% post_url articles/0039/2012-09-05-0039-ForeWord %})
+* [0036 号 巻頭言]({{base}}{% post_url articles/0036/2011-11-28-0036-ForeWord %})
+* [0037 号 巻頭言]({{base}}{% post_url articles/0037/2012-02-05-0037-ForeWord %})
+* [0038 号 巻頭言]({{base}}{% post_url articles/0038/2012-05-22-0038-ForeWord %})
+* [0039 号 巻頭言]({{base}}{% post_url articles/0039/2012-09-05-0039-ForeWord %})
 
 
 Rubyist Magazine 常設記事となっている「Ruby の歩き方」ですが、内容がいい加減古くなってきているので、最近の事情に合わせて更新したいという話は何度か話題に上るものの、なかなか手を出せていないのが実情です。特にこれから Ruby を始めてみたいという方はこちらの記事を参照されると思いますので、どういった内容にすべきかも含めて良い案がありましたら編集部までご連絡いただけると幸いです。
@@ -43,66 +43,66 @@ Rubyist Magazine 常設記事となっている「Ruby の歩き方」ですが�
 
 インタビュー記事である Rubyist Hotlinks は、松田明さん、遠藤侑介さんと Ruby コミッタ編が続きました。お二方とも非常にいい意味でぶっ飛んだ方々で、面白いインタビュー記事となりましたので、少々長いのですがまだお読みでない方は是非どうぞ。次回以降もしばらくは Ruby コミッタ編が続きそうですが、そもそもインタビュー記事の作成に結構な負担がかかるという（編集者側の）問題は未解決のままなのが少々気になるところではあります。インタビュー記事自体はとても読み応えがあって、毎回楽しみにされている方も多いと思いますので、このあたりを今後もうまく回していけるようにする必要がありそうです。
 
-* [Rubyist Hotlinks 【第 29 回】 松田明さん]({% post_url articles/0037/2012-02-05-0037-Hotlinks %})
-* [Rubyist Hotlinks 【第 30 回】 遠藤侑介さん]({% post_url articles/0038/2012-05-22-0038-Hotlinks %})
+* [Rubyist Hotlinks 【第 29 回】 松田明さん]({{base}}{% post_url articles/0037/2012-02-05-0037-Hotlinks %})
+* [Rubyist Hotlinks 【第 30 回】 遠藤侑介さん]({{base}}{% post_url articles/0038/2012-05-22-0038-Hotlinks %})
 
 
 シリーズ物としては、「他言語からの訪問」の第二回、上原さんによる Groovy の後編が掲載されました。他のプログラミング言語と Ruby を比較することで Ruby の良さや足りないものが見えてきますので、複数言語使いで一家言お持ちの方はぜひ「他言語からの訪問」シリーズに向けた記事を投稿してみてはいかがでしょうか。
 
-* [他言語からの訪問 【第 2 回】 Groovy (後編)]({% post_url articles/0037/2012-02-05-0037-GuestTalk %})
+* [他言語からの訪問 【第 2 回】 Groovy (後編)]({{base}}{% post_url articles/0037/2012-02-05-0037-GuestTalk %})
 
 
 シリーズ物というわけではないのですが、私も他のプログラミング言語を引用したエッセイ記事を 2 つほど投稿させていただきました。雑誌記事的にはこうした軽めのエッセイがもっとあってもいいのかなあ、という個人的な思いから書いてみたものになります。Rubyist Magazine に投稿してみたいけど、難しい内容は書けないと思っているそこのあなた、Ruby を使っていて普段思ったこと、気がついたことなどをエッセイ記事として投稿してみませんか。
 
-* [map と collect、reduce と inject ―― 名前の違いに見る発想の違い]({% post_url articles/0038/2012-05-22-0038-MapAndCollect %})
-* [式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか【前編】]({% post_url articles/0039/2012-09-05-0039-ExpressionAndStatement %})
+* [map と collect、reduce と inject ―― 名前の違いに見る発想の違い]({{base}}{% post_url articles/0038/2012-05-22-0038-MapAndCollect %})
+* [式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか【前編】]({{base}}{% post_url articles/0039/2012-09-05-0039-ExpressionAndStatement %})
 
 
 またシリーズ物としては Regional RubyKaigi レポートが順調に続いています。おなじみの TokyuRuby 会議は 2 回も開催されていて実にハイペースなのと、とちぎ Ruby 会議、関西 Ruby 会議も 4 回目と回数を重ねてきていて、それぞれの特色が出てきているのではないでしょうか。みなと Ruby 会議は今回が初めてとなりましたが、主催コミュニティとなる Yokohama.rb の特色が出ていて良いですね。将来的にはパシフィコ横浜での開催を予定しているようですので、今後が楽しみです。
 
-* [RegionalRubyKaigi レポート (25) TokyuRuby 会議 03]({% post_url articles/0036/2011-11-28-0036-TokyuRubyKaigi03Report %})
-* [RegionalRubyKaigi レポート (26) TokyuRuby 会議 04]({% post_url articles/0037/2012-02-05-0037-TokyuRubyKaigi04Report %})
-* [RegionalRubyKaigi レポート (27) とちぎ Ruby 会議 04]({% post_url articles/0037/2012-02-05-0037-TochigiRubyKaigi04Report %})
-* [RegionalRubyKaigi レポート (28) 関西 Ruby 会議 04]({% post_url articles/0038/2012-05-22-0038-KansaiRubyKaigi04Report %})
-* [RegionalRubyKaigi レポート (29) みなと Ruby 会議 01]({% post_url articles/0039/2012-09-05-0039-MinatoRubyKaigi01Report %})
+* [RegionalRubyKaigi レポート (25) TokyuRuby 会議 03]({{base}}{% post_url articles/0036/2011-11-28-0036-TokyuRubyKaigi03Report %})
+* [RegionalRubyKaigi レポート (26) TokyuRuby 会議 04]({{base}}{% post_url articles/0037/2012-02-05-0037-TokyuRubyKaigi04Report %})
+* [RegionalRubyKaigi レポート (27) とちぎ Ruby 会議 04]({{base}}{% post_url articles/0037/2012-02-05-0037-TochigiRubyKaigi04Report %})
+* [RegionalRubyKaigi レポート (28) 関西 Ruby 会議 04]({{base}}{% post_url articles/0038/2012-05-22-0038-KansaiRubyKaigi04Report %})
+* [RegionalRubyKaigi レポート (29) みなと Ruby 会議 01]({{base}}{% post_url articles/0039/2012-09-05-0039-MinatoRubyKaigi01Report %})
 
 
 これまたシリーズ物というわけではないのですが、各種カンファレンス参加レポートやカンファレンス後日談など、Ruby に関するカンファレンスに関する記事が多いのも最近の傾向かと思います。特に海外との交流については今後も重要なテーマであると思われますので、海外のカンファレンスに参加したり、日本でも海外の Rubyist を呼んでイベントを開催したり、そうしたイベントに参加されたら是非レポート記事を投稿してみてください。
 
-* [EuRuKo2011レポート]({% post_url articles/0036/2011-11-28-0036-Euroko2011 %})
-* [RubyConf2011レポート]({% post_url articles/0036/2011-11-28-0036-RubyConf2011 %})
-* [あなたが南米のRubyカンファレンスに参加するべきn個の理由【前編】]({% post_url articles/0037/2012-02-05-0037-RubyOnSouthAmerica %})
-* [Making of RubyKaigi2011 第二回]({% post_url articles/0037/2012-02-05-0037-MakingOfRubyKaigi2011 %})
-* [あなたが南米のRubyカンファレンスに参加するべきn個の理由【後編】]({% post_url articles/0038/2012-05-22-0038-RubyOnSouthAmerica %})
-* [達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた]({% post_url articles/0039/2012-09-05-0039-MetPragdaveAtAsakusarb %})
+* [EuRuKo2011レポート]({{base}}{% post_url articles/0036/2011-11-28-0036-Euroko2011 %})
+* [RubyConf2011レポート]({{base}}{% post_url articles/0036/2011-11-28-0036-RubyConf2011 %})
+* [あなたが南米のRubyカンファレンスに参加するべきn個の理由【前編】]({{base}}{% post_url articles/0037/2012-02-05-0037-RubyOnSouthAmerica %})
+* [Making of RubyKaigi2011 第二回]({{base}}{% post_url articles/0037/2012-02-05-0037-MakingOfRubyKaigi2011 %})
+* [あなたが南米のRubyカンファレンスに参加するべきn個の理由【後編】]({{base}}{% post_url articles/0038/2012-05-22-0038-RubyOnSouthAmerica %})
+* [達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた]({{base}}{% post_url articles/0039/2012-09-05-0039-MetPragdaveAtAsakusarb %})
 
 
 個別記事は次のとおりです。
 
-* [Sinatra 再入門、 Padrino / Rack / その先の何か]({% post_url articles/0036/2011-11-28-0036-SinatraReintroduction %})
-* [Introducing ruby-dev Translation]({% post_url articles/0036/2011-11-28-0036-ruby-dev-translation-en %})
-* [Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて]({% post_url articles/0037/2012-02-05-0037-CreateRailsPlugin %})
-* [Chef でサーバ管理を楽チンにしよう！ (第 2 回)]({% post_url articles/0037/2012-02-05-0037-ChefInDECOLOG %})
+* [Sinatra 再入門、 Padrino / Rack / その先の何か]({{base}}{% post_url articles/0036/2011-11-28-0036-SinatraReintroduction %})
+* [Introducing ruby-dev Translation]({{base}}{% post_url articles/0036/2011-11-28-0036-ruby-dev-translation-en %})
+* [Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて]({{base}}{% post_url articles/0037/2012-02-05-0037-CreateRailsPlugin %})
+* [Chef でサーバ管理を楽チンにしよう！ (第 2 回)]({{base}}{% post_url articles/0037/2012-02-05-0037-ChefInDECOLOG %})
 * [AnnounceRubyKaja](AnnounceRubyKaja)
-* [RubyMotion のご紹介]({% post_url articles/0039/2012-09-05-0039-IntroductionToRubyMotion %})
-* [Axlsx でテスト支援]({% post_url articles/0039/2012-09-05-0039-TestingWithAxlsx %})
-* [【八周年記念企画】 Rubyist Magazine へのたより]({% post_url articles/0039/2012-09-05-0039-Comments %})
-  * [Rubyist Magazine 八周年]({% post_url articles/0039/2012-09-05-0039-EditorComment %})
+* [RubyMotion のご紹介]({{base}}{% post_url articles/0039/2012-09-05-0039-IntroductionToRubyMotion %})
+* [Axlsx でテスト支援]({{base}}{% post_url articles/0039/2012-09-05-0039-TestingWithAxlsx %})
+* [【八周年記念企画】 Rubyist Magazine へのたより]({{base}}{% post_url articles/0039/2012-09-05-0039-Comments %})
+  * [Rubyist Magazine 八周年]({{base}}{% post_url articles/0039/2012-09-05-0039-EditorComment %})
 
 
-Ruby のライブラリやフレームワーク、Ruby で書かれたツールの紹介記事のほか、0035 号に掲載された[ruby-dev translationのご紹介]({% post_url articles/0035/2011-09-26-0035-ruby-dev-translation %})の英訳記事が目を引くところです。何度もテーマになる「日本と海外との隔たり」を埋める活動は、これからも継続して行っていきたいですね。
+Ruby のライブラリやフレームワーク、Ruby で書かれたツールの紹介記事のほか、0035 号に掲載された[ruby-dev translationのご紹介]({{base}}{% post_url articles/0035/2011-09-26-0035-ruby-dev-translation %})の英訳記事が目を引くところです。何度もテーマになる「日本と海外との隔たり」を埋める活動は、これからも継続して行っていきたいですね。
 
 また今年はありがたいことに読者プレゼントが復活しました。
 
-* [0036 号 読者プレゼント]({% post_url articles/0036/2011-11-28-0036-Present %})
-* [0038 号 読者プレゼント]({% post_url articles/0038/2012-05-22-0038-Present %})
-* [0039 号 読者プレゼント]({% post_url articles/0039/2012-09-05-0039-Present %})
+* [0036 号 読者プレゼント]({{base}}{% post_url articles/0036/2011-11-28-0036-Present %})
+* [0038 号 読者プレゼント]({{base}}{% post_url articles/0038/2012-05-22-0038-Present %})
+* [0039 号 読者プレゼント]({{base}}{% post_url articles/0039/2012-09-05-0039-Present %})
 
 
 さらに献本いただいた方々から書籍紹介記事までお寄せいただきました。どうもありがとうございます。
 
-* [書籍紹介『―Ruby on Rails 3 で作る― jpmobile によるモバイルサイト構築』]({% post_url articles/0038/2012-05-22-0038-BookJpmobile %})
-* [書籍紹介『たのしい開発 スタートアップRuby』]({% post_url articles/0039/2012-09-05-0039-BookStartupRuby %})
+* [書籍紹介『―Ruby on Rails 3 で作る― jpmobile によるモバイルサイト構築』]({{base}}{% post_url articles/0038/2012-05-22-0038-BookJpmobile %})
+* [書籍紹介『たのしい開発 スタートアップRuby』]({{base}}{% post_url articles/0039/2012-09-05-0039-BookStartupRuby %})
 
 
 8 年間で 39 号ということで、平均 4.875 回リリース/年（去年は 5.00 回リリース/年）。特別号や号外、エイプリルフールを入れると 45 回リリースなので、5.625 回リリース/年。記事数は特別号を入れて 531 記事で、66.375 記事/年ということになります。

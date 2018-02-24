@@ -11,7 +11,7 @@ tags: 0004 FirstProgramming
 
 ## はじめに
 
-前回 ([Ruby ではじめるプログラミング 【第 2 回】]({% post_url articles/0003/2004-11-15-0003-FirstProgramming %})) はいくつかの便利な機能と配列を中心に解説しました。
+前回 ([Ruby ではじめるプログラミング 【第 2 回】]({{base}}{% post_url articles/0003/2004-11-15-0003-FirstProgramming %})) はいくつかの便利な機能と配列を中心に解説しました。
 
 今回も Ruby の新しい機能を 2 つ紹介します。
 

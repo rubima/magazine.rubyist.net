@@ -11,12 +11,12 @@ tags: 0019 GameProgramingForRubySDL
 
 ## はじめに
 
-[前編]({% post_url articles/0018/2007-02-28-0018-GameProgramingForRubySDL %})では、Ruby/SDL を利用して簡単なアクションゲームを作成しました。
+[前編]({{base}}{% post_url articles/0018/2007-02-28-0018-GameProgramingForRubySDL %})では、Ruby/SDL を利用して簡単なアクションゲームを作成しました。
 後編では効果音や点数表示の実装など、よりゲームとしての完成度を高めていきたいと思います。
 
 ## 準備
 
-まだ Ruby/SDL をインストールしていない場合は、[前編]({% post_url articles/0018/2007-02-28-0018-GameProgramingForRubySDL %})を参考に開発環境を整えてください。
+まだ Ruby/SDL をインストールしていない場合は、[前編]({{base}}{% post_url articles/0018/2007-02-28-0018-GameProgramingForRubySDL %})を参考に開発環境を整えてください。
 
 それができたら、[サンプルパック 2](http://mono.kmc.gr.jp/~yhara/files/rubima_sdl_sample2.zip) をダウンロードし解凍してください。音声やフォントなどゲームに必要なファイルが入っています。(Ruby/SDLスターターキットにはほぼ同じデータが入っているのですが、title.png と game_over.png だけ入っていないのでダウンロードして image/ 以下にコピーしてください。)
 

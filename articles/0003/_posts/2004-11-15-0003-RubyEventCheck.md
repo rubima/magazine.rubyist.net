@@ -109,7 +109,7 @@ Ruby 関連以外の、興味深いイベントを紹介します。
 開催場所
 :  パシフィコ横浜
 
-Wiki セッションに、今号の [Rubyist Hotlinks]({% post_url articles/0003/2004-11-15-0003-Hotlinks %}) のインタビュイー、かずひこさんが参加されるそうです。
+Wiki セッションに、今号の [Rubyist Hotlinks]({{base}}{% post_url articles/0003/2004-11-15-0003-Hotlinks %}) のインタビュイー、かずひこさんが参加されるそうです。
 
 なお、OpenSourceWay と Web &amp; Internet Application Day は [Internet Week](http://www.internetweek.jp/) の一部です。
 

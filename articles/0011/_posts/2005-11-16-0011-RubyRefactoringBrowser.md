@@ -19,7 +19,7 @@ tags: 0011 RubyRefactoringBrowser
 利用できるようにするために必要なことを解説します。
 
 Ruby Refactoring Browser に関する基本的な事柄や Emacs での使いかたなどについて
-知りたい方は、前回の記事 ([解説 Ruby Refactoring Browser - Emacs でリファクタリング]({% post_url articles/0010/2005-10-10-0010-RubyRefactoringBrowser %})) を参照してください。
+知りたい方は、前回の記事 ([解説 Ruby Refactoring Browser - Emacs でリファクタリング]({{base}}{% post_url articles/0010/2005-10-10-0010-RubyRefactoringBrowser %})) を参照してください。
 
 ### この文章が対象とする読者
 

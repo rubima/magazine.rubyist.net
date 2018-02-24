@@ -28,7 +28,7 @@ Linux と Windows の環境で最新の Ruby/Tk 環境をセットアップで�
 
 * [ruby-list:40396](http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/40396) Ruby/Tk 講習会の資料 (Re:  Re: Ruby/Tk の講習会 (開催します))
 * 講義に用いられた [配布資料とサンプルスクリプト集](http://www.dumbo.ai.kyutech.ac.jp/~nagai/RubyTk-seminar-20041211.tar.gz)
-* 本誌3号掲載記事 [0003-Ruby/Tk の動向]({% post_url articles/0003/2004-11-15-0003-RubyTkMovement %})
+* 本誌3号掲載記事 [0003-Ruby/Tk の動向]({{base}}{% post_url articles/0003/2004-11-15-0003-RubyTkMovement %})
 
 
 ### イベントデータ

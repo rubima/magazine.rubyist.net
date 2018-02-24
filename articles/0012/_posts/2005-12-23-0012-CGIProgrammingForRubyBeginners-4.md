@@ -7,8 +7,8 @@ tags: 0012 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
 
 * Table of content
 {:toc}
@@ -471,7 +471,7 @@ Ruby
 実は筆者の下宿は 64kbps で、編集の時にストレスが溜まっています。
 早くブロードバンド環境にしたいけど、もうすぐ引っ越すしなあ…。
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
 
 

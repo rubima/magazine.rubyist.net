@@ -7,9 +7,9 @@ tags: 0011 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-1 %})
-[次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-1 %})
+[次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
 
 * Table of content
 {:toc}
@@ -460,8 +460,8 @@ RDE から Ruby の Windows HTML Help を使うことが出来ます。
 中の rubymanjp.chm を RDE のインストール先にコピーします。
 これでメニューの ヘルプ → Rubyヘルプ から Ruby の HTML Help を使うことが出来るようになります。
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-1 %})
-[次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-1 %})
+[次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
 
 

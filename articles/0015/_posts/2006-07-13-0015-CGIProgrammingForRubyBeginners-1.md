@@ -7,8 +7,8 @@ tags: 0015 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[目次へ]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %})
-[次のページへ]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners-2 %})
+[目次へ]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %})
+[次のページへ]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners-2 %})
 
 ## 目次
 
@@ -30,7 +30,7 @@ tags: 0015 CGIProgrammingForRubyBeginners
 
 この記事は以下のような人を対象としています。
 
-* 前号 ([Ruby ビギナーのための CGI 入門 【第 3 回】 エラーの修正]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})) の記事を読んだ人
+* 前号 ([Ruby ビギナーのための CGI 入門 【第 3 回】 エラーの修正]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})) の記事を読んだ人
 * HTML を書ける人
 * Windows 98/98SE/Me/2000/XP のいずれかを使っている人
 
@@ -47,7 +47,7 @@ tags: 0015 CGIProgrammingForRubyBeginners
 
 
 この他に RDE を使います。これらの準備の方法は
-[11 号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) で述べたので、
+[11 号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) で述べたので、
 詳しくはそちらを参照して下さい。
 今号で使うプログラムを zip ファイルにまとめてあります。
 前号と同じようにダウンロードして C:\ に展開して下さい。
@@ -255,7 +255,7 @@ Array の添字の範囲にあるかをチェックしています。
 
 ### each を使った Array の内容の表示
 
-[12号 の each の説明]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %}) で紹介したように Array には each というメソッドがあります。
+[12号 の each の説明]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %}) で紹介したように Array には each というメソッドがあります。
 これを利用すると、while 文よりも間単に
 Array の中身を順番に処理することが出来ます。
 
@@ -487,7 +487,7 @@ end
 false と nil  が 偽、それ以外が真
 として扱われることを覚えておいて下さい。
 
-[目次へ]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %})
-[次のページへ]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners-2 %})
+[目次へ]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %})
+[次のページへ]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners-2 %})
 
 

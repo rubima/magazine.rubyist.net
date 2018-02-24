@@ -42,7 +42,7 @@ tags: 0042 OoedoRubyKaigi03Report
 
 2013 年 3 月 16 日に、地域 Ruby の会のひとつである Asakusa.rb の 200 回目の meetup を記念して「大江戸 Ruby 会議 03」が開催されましたので、本記事にてレポートをお送りします。
 
-前回の「[大江戸 Ruby 会議 01]({% post_url articles/0034/2011-06-12-0034-OoedoRubyKaigi01Report %})」から約 2 年が経っていますが、その間に欠番となる「[大江戸 Ruby 会議 02]({% post_url articles/0039/2012-09-05-0039-MetPragdaveAtAsakusarb %})」を挟んでいますので、おおむね 1 年に一度と順調に開催を重ねている地域 Ruby 会議のひとつと言えるのではないでしょうか。
+前回の「[大江戸 Ruby 会議 01]({{base}}{% post_url articles/0034/2011-06-12-0034-OoedoRubyKaigi01Report %})」から約 2 年が経っていますが、その間に欠番となる「[大江戸 Ruby 会議 02]({{base}}{% post_url articles/0039/2012-09-05-0039-MetPragdaveAtAsakusarb %})」を挟んでいますので、おおむね 1 年に一度と順調に開催を重ねている地域 Ruby 会議のひとつと言えるのではないでしょうか。
 
 ## 招待講演 1
 

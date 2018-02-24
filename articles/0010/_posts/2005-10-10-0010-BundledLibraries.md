@@ -76,7 +76,7 @@ webrick
 :  いくつかのメソッド追加やバグ修正などがありました。
 
 xmlrpc
-:  Content-Type に charset=utf-8 がつくようになりました（詳細は[標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R]({% post_url articles/0007/2005-06-19-0007-BundledLibraries %})参照）。FaultException が Exception を直接継承するのではなく StandardError を継承するようになりました。XMLRPC::Server が GServer ではなく WEBrick を使うようになりました。その他いくつかの修正がありました。
+:  Content-Type に charset=utf-8 がつくようになりました（詳細は[標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R]({{base}}{% post_url articles/0007/2005-06-19-0007-BundledLibraries %})参照）。FaultException が Exception を直接継承するのではなく StandardError を継承するようになりました。XMLRPC::Server が GServer ではなく WEBrick を使うようになりました。その他いくつかの修正がありました。
 
 yaml,syck
 :  YAML::VERSION が 0.45 から 0.60 になりました。詳細は YAML 入門の連載などをご覧ください。

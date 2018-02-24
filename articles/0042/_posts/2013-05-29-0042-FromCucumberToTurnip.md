@@ -72,7 +72,7 @@ Ruby の世界で『テスト』というとユニットテストの自動化の
 ##### テストファースト
 {% isbn_image_right('4894717115') %}
 
-テストを最初に書いて、そのテストを満たすようにコードを実装する開発手法をテストファーストと言います。テストを「作りながらの仕様記述方法」として利用するわけで、TDD (Test Driven Development: テスト駆動開発) や BDD (Behavior Driven Development: 振舞駆動開発) とも呼ばれます。テストファーストの利点は、Kent Beck の著書『テスト駆動開発入門』や本誌るびまの連載「[スはスペックのス]({% post_url articles/0021/2007-09-29-0021-Rspec %})」などを参照ください。
+テストを最初に書いて、そのテストを満たすようにコードを実装する開発手法をテストファーストと言います。テストを「作りながらの仕様記述方法」として利用するわけで、TDD (Test Driven Development: テスト駆動開発) や BDD (Behavior Driven Development: 振舞駆動開発) とも呼ばれます。テストファーストの利点は、Kent Beck の著書『テスト駆動開発入門』や本誌るびまの連載「[スはスペックのス]({{base}}{% post_url articles/0021/2007-09-29-0021-Rspec %})」などを参照ください。
 
 テストファーストでのテストは、テストを記述してから実際に検証するまでを短いサイクルで回す単体テストや結合テスト段階で用いられるのが自然です。総合テスト (エンドツーエンドテスト) をテストファーストで行うことも可能ですが、テストを記述してから実際に検証するまでのサイクルがどうしても長くなりますので、「仕様を明確にすること」と「仕様を実現すること」の因果関係が遠くなってしまい、あまり向いていません。
 {% isbn_image_right('482228395X') %}
@@ -739,8 +739,8 @@ feature ファイル作成や step_definitions ファイル作成時の定型部
 
 [^1]: 組み合わせテスト (Association Test) と呼ばれることもあります
 [^2]: システムテスト (System Test) と呼ばれることもあります
-[^3]: 本誌記事「[Axlsx でテスト支援]({% post_url articles/0039/2012-09-05-0039-TestingWithAxlsx %})」もご参照
-[^4]: RSpec については、本誌連載「[スはスペックのス]({% post_url articles/0021/2007-09-29-0021-Rspec %})」もご参照。
+[^3]: 本誌記事「[Axlsx でテスト支援]({{base}}{% post_url articles/0039/2012-09-05-0039-TestingWithAxlsx %})」もご参照
+[^4]: RSpec については、本誌連載「[スはスペックのス]({{base}}{% post_url articles/0021/2007-09-29-0021-Rspec %})」もご参照。
 [^5]: Domain Specific Language の略。ドメイン固有言語。ある特定の問題に特化してデザインされたプログラミング言語のこと。RSpec はテストに特化した DSL となる。
 [^6]: 「Rails4 で MiniTest + Spork + Guard - @tkeo」をご参考。 http://tkeo.hatenablog.com/entry/2013/01/17/143315
 [^7]: 「MiniTest offers a simpler approach for testing Ruby code. And its the default in Rails 4. 」https://twitter.com/iR3/status/314542747103133696

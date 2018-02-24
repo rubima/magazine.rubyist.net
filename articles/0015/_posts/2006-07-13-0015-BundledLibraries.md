@@ -118,7 +118,7 @@ URI::HTTP
 
 ### net/http と組み合わせる
 
-[前回]({% post_url articles/0013/2006-02-20-0013-BundledLibraries %}) の net/http を使って書かれていた get.rb のうち、
+[前回]({{base}}{% post_url articles/0013/2006-02-20-0013-BundledLibraries %}) の net/http を使って書かれていた get.rb のうち、
 URI を構成要素に分割する部分を uri ライブラリを使って書くと次のようになります。
 
 {% highlight text %}

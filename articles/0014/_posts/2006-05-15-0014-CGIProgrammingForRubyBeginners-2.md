@@ -7,9 +7,9 @@ tags: 0014 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[前ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-1 %})
-[目次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-3 %})
+[前ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-1 %})
+[目次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-3 %})
 
 ## このページの目次
 
@@ -403,8 +403,8 @@ error8.rb の 5 行目が表示されません。
 この方法は print や puts でも利用出来ますが、
 p の方がメソッド名が短いので、簡単にプリントデバッグを試すことが出来ます。
 
-[前ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-1 %})
-[目次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-3 %})
+[前ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-1 %})
+[目次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-3 %})
 
 

@@ -74,7 +74,7 @@ tags: 0021 Book
 毎日コミュニケーションズの御好意により、
 『Rubyist Magazine 出張版』3 冊を Rubyist Magazine 読者にプレゼントいたします。
 
-詳細は [0021 号 読者プレゼント]({% post_url articles/0021/2007-09-29-0021-Present %}) を参照してください。
+詳細は [0021 号 読者プレゼント]({{base}}{% post_url articles/0021/2007-09-29-0021-Present %}) を参照してください。
 
 ## 書誌情報
 

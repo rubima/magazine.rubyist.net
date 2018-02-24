@@ -11,7 +11,7 @@ tags: 0044 RubyistMagazineRanking
 
 ## Rubyist Magazine アクセスランキング
 
-こんにちは、hsbt です。[前号の編集後記に掲載していたアクセスランキング]({% post_url articles/0043/2013-07-31-0043-EditorsNote %})を今号から独立した記事として掲載することにしました。
+こんにちは、hsbt です。[前号の編集後記に掲載していたアクセスランキング]({{base}}{% post_url articles/0043/2013-07-31-0043-EditorsNote %})を今号から独立した記事として掲載することにしました。
 
 それでは 2013/08/30-2013/09/30 のアクセスランキングをお送りします。今回は"プログラマーのための YAML 入門 (初級編)"がトップとなりました。新しくランクインした記事としては[標準添付ライブラリ紹介 【第 10 回】 ERB](http://magazine.rubyist.net/?0017-BundledLibraries)や[Ruby でナゾ解き? 任天堂 Code Puzzle 解説&amp;裏話](http://magazine.rubyist.net/?0043-CodePuzzle)などがあります。
 

@@ -7,9 +7,9 @@ tags: 0012 CGIProgrammingForRubyBeginners
 {% include base.html %}
 
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-4 %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-4 %})
 
 * Table of content
 {:toc}
@@ -390,8 +390,8 @@ rand の結果だけ変数 s のデータ("nya" やら "nyan" やら)をつな�
 bar と入力してみて下さい。色んなメッセージや猫の絵が表示されると思います。
 ![bar_echo_improved_msg.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_msg.jpg)
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-4 %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-4 %})
 
 
