@@ -658,7 +658,7 @@ Ruby 関西というコミュニティで、Ruby 勉強会＠関西という活�
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

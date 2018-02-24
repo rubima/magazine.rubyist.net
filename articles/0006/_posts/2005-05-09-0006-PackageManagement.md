@@ -237,7 +237,7 @@ RPA の主要開発者 Mauricio FernaOdez 氏に開発の経緯等を述べて�
 ## シリーズ パッケージマネジメント 連載一覧
 
 {% for post in site.tags.PackageManagement %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

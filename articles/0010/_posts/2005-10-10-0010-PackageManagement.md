@@ -438,7 +438,7 @@ Ruby Central は非営利企業で、
 ## シリーズ パッケージマネジメント 連載一覧
 
 {% for post in site.tags.PackageManagement %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

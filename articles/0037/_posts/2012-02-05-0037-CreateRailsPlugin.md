@@ -23,7 +23,7 @@ tags: 0037 CreateRailsPlugin
 RubyGems は Ruby のパッケージ管理システムです。RubyGems が構築された経緯や使い方についてはすでにるびまの記事としてまとめられています。
 
 {% for post in site.tags.PackageManagement %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 Ruby のライブラリは gem 形式のファイルとしてパッケージ化することができます。このパッケージを集約しているのが RubyGems というサイトで、簡単に検索やインストールを行うことができます。また、 Rails3 系から標準採用された Bundler[^1] という仕組みを利用すればバージョン間の依存を考慮したインストールおよびアップデートを行うことができます。

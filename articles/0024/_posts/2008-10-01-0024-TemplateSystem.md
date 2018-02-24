@@ -622,7 +622,7 @@ XSLT (XML Stylesheet Language Transformations) とは、XML を別の形式の X
 ## テンプレートシステム入門 連載一覧
 
 {% for post in site.tags.TemplateSystem %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

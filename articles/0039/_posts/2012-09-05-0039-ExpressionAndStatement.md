@@ -463,7 +463,7 @@ Python では式と文は明確に分かれていて、式を書かないとい�
 ## 式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか 連載一覧
 
 {% for post in site.tags.ExpressionAndStatement %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

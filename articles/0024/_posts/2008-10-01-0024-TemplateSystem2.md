@@ -738,7 +738,7 @@ title 属性だと、属性値として使える文字列に制限がありま�
 ## テンプレートシステム入門 連載一覧
 
 {% for post in site.tags.TemplateSystem %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

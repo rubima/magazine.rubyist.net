@@ -453,7 +453,7 @@ Ruby を使ってオープンソースのゲームが開発できないかと模
 ## Ruby ではじめるプログラミング 連載一覧
 
 {% for post in site.tags.FirstProgramming %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

@@ -809,7 +809,7 @@ Ruby Refactoring Browser は最初 KMC 内部のプロジェクトとして開�
 ## 解説 Ruby Refactoring Browser 連載一覧
 
 {% for post in site.tags.RubyRefactoringBrowser %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

@@ -1029,7 +1029,7 @@ exit 以外はこれまでに紹介した機能しか使っていないのでじ
 ## Ruby ではじめるプログラミング 連載一覧
 
 {% for post in site.tags.FirstProgramming %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

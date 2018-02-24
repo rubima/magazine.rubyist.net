@@ -31,7 +31,7 @@ tags: 0057 RubyistMagazineRanking
 ## Rubyist Magazine アクセスランキング 連載一覧
 
 {% for post in site.tags.RubyistMagazineRanking %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

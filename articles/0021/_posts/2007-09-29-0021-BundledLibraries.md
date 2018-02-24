@@ -232,7 +232,7 @@ base64 のバグは[第 17 回 Ruby 勉強会＠関西](http://jp.rubyist.net/?K
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

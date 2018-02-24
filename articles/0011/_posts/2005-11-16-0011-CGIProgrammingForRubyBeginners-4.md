@@ -770,7 +770,7 @@ CGI プログラムで使った写真は筆者の実家の猫をデジカメで�
 ## バックナンバー
 
 {% for post in site.tags.CGIProgrammingForRubyBeginners %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 [目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})

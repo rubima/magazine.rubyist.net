@@ -504,7 +504,7 @@ each の中で URI オブジェクトと Pathname オブジェクトが同じよ
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

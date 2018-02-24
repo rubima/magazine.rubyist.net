@@ -47,7 +47,7 @@ Ruby プログラミングの基礎とともに CGI プログラミングを解�
 ## バックナンバー
 
 {% for post in site.tags.CGIProgrammingForRubyBeginners %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

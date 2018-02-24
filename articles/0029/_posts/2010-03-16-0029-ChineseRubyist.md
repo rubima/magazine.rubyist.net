@@ -157,7 +157,7 @@ Robin は、個人的にも筆者と仲のいいエンジニアである。偶�
 ## 中国の若きエンジニアの肖像 連載一覧
 
 {% for post in site.tags.ChineseRubyist %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

@@ -1059,7 +1059,7 @@ index.rb については以上です。
 ## Ruby コードの感想戦 連載一覧
 
 {% for post in site.tags.CodePostMortem %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

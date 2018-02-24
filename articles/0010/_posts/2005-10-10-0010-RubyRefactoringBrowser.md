@@ -454,7 +454,7 @@ Ruby Refactoring Browser の主要開発者です。 Ruby Refactoring Browser �
 ## 解説 Ruby Refactoring Browser 連載一覧
 
 {% for post in site.tags.RubyRefactoringBrowser %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

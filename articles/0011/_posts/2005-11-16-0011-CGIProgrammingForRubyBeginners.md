@@ -54,7 +54,7 @@ tags: 0011 CGIProgrammingForRubyBeginners
 ## バックナンバー
 
 {% for post in site.tags.CGIProgrammingForRubyBeginners %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

@@ -182,7 +182,7 @@ Daniel は 400 名以上の会員がいる中国最大の Ruby 及び Rails の�
 ## 中国の若きエンジニアの肖像 連載一覧
 
 {% for post in site.tags.ChineseRubyist %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

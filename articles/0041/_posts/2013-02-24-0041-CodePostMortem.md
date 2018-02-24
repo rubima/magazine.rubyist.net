@@ -390,7 +390,7 @@ httpdのログにはPOSTの内容が残らないので再現できないんで�
 ### バックナンバー
 
 {% for post in site.tags.CodePostMortem %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

@@ -221,7 +221,7 @@ Some parts of this specification are adopted from PEP333: Python Web Server Gate
 ## バックナンバー
 
 {% for post in site.tags.TranslationArticle %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----
