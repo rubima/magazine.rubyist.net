@@ -17,12 +17,12 @@ tags: 0044 EditorComment
 
 今年一年を振り返ってみると、号外の「Ruby 2.0.0 Release special articles (「[Ruby 2.0.0 リリース特集]({{base}}{% post_url articles/0041/2013-02-24-0041-200Special %})」の英訳号)」を含めると 6 回、リリースしています。
 
-* [0040](0040)
-* [0041](0041)
+* [0040]({{base}}{% post_url articles/0040/2012-11-25-0040-index %})
+* [0041]({{base}}{% post_url articles/0041/2013-02-24-0041-index %})
 * [Ruby200SpecialEn](Ruby200SpecialEn)
-* [0042](0042)
-* [0043](0043)
-* [0044](0044) &lt;- 今ここ
+* [0042]({{base}}{% post_url articles/0042/2013-05-29-0042-index %})
+* [0043]({{base}}{% post_url articles/0043/2013-07-31-0043-index %})
+* [0044]({{base}}{% post_url articles/0044/2013-09-30-0044-index %}) &lt;- 今ここ
 
 
 昨年が号外を含めて 5 回のリリースでしたので、今年は 1 回リリース回数が増えています。これは「RubyKaigi 効果」で、RubyKaigi での発表内容を記事にしていただけた方がいらっしゃったおかげで記事数が稼げたためにリリース回数を増やすことができました。
