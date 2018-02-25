@@ -20,7 +20,7 @@ tags: 0057 RubyistMagazineRanking
 | 2| -| [HanamiはRubyの救世主(メシア)となるか、愚かな星と散るのか]({{base}}{% post_url articles/0056/2017-08-27-0056-hanami %})|
 | 3| 2| [Ruby ではじめるプログラミング 【第 1 回】]({{base}}{% post_url articles/0002/2004-10-16-0002-FirstProgramming %})|
 | 4| 3| [値渡しと参照渡しの違いを理解する]({{base}}{% post_url articles/0032/2011-01-31-0032-CallByValueAndCallByReference %})|
-| 5| -| [preRubyKaigi2017](preRubyKaigi2017)|
+| 5| -| [preRubyKaigi2017]({{base}}{% post_url articles/preRubyKaigi2017/2017-09-17-preRubyKaigi2017-index %})|
 | 6| 4| [Ruby ではじめるプログラミング 【第 2 回】]({{base}}{% post_url articles/0003/2004-11-15-0003-FirstProgramming %})|
 | 7| 6| [エンドツーエンドテストの自動化は Cucumber から Turnip へ]({{base}}{% post_url articles/0042/2013-05-29-0042-FromCucumberToTurnip %})|
 | 8| -| [Ruby 初級者のための class << self の話 (または特異クラスとメタクラス)]({{base}}{% post_url articles/0046/2014-04-05-0046-SingletonClassForBeginners %})|

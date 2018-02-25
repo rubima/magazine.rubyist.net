@@ -22,7 +22,7 @@ tags: 0035 EditorComment
 * [0032]({{base}}{% post_url articles/0032/2011-01-31-0032-index %})
 * [0033]({{base}}{% post_url articles/0033/2011-04-05-0033-index %})
 * [0034]({{base}}{% post_url articles/0034/2011-06-12-0034-index %})
-* [preRubyKaigi2011](preRubyKaigi2011)
+* [preRubyKaigi2011]({{base}}{% post_url articles/preRubyKaigi2011/2011-06-16-preRubyKaigi2011-index %})
 * [0035]({{base}}{% post_url articles/0035/2011-09-26-0035-index %}) &lt;- 今ここ
 
 
@@ -112,7 +112,7 @@ Regional RubyKaigi レポートも順調に続いています。実はとくに�
 
 好評だった前年に引き続き RubyKaigi2011 直前特集号が今年も掲載されました。締切があると週刊でも出せるというるびまの締切駆動力がうかがえます。昼間の仕事を抱えながら記事を書き続けてくれたレポート班の皆さんへあらためて御礼を言わせてください。ありがとうございました。
 
-* [preRubyKaigi2011](preRubyKaigi2011)
+* [preRubyKaigi2011]({{base}}{% post_url articles/preRubyKaigi2011/2011-06-16-preRubyKaigi2011-index %})
 
 
 また、RubyKaigi2011 では「[一般社団法人日本Rubyの会と関連プロジェクト報告(るびま,るりま)](http://rubykaigi.org/2011/ja/schedule/details/18M01) 」 として活動内容の報告を行いました。[Rubyist Magazine 活動報告](http://www.slideshare.net/zep716/rubyist-magazine)として資料があがっています。紹介した enumerable_lz のやりとりについては [Enumerable#lazy](http://route477.net/d/?date=20110718#p02) として松江 Ruby 会議 03 でも発表されました。

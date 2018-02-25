@@ -376,7 +376,7 @@ CFP については、「技術的好奇心を改めて呼び起こし、プロ�
 
 ### 事前インタビュー
 
-発表者に、事前インタビューを行ないました。これを、るびまの特集号（[preTokyoRubyKaigi11](preTokyoRubyKaigi11)）としてまとめました。
+発表者に、事前インタビューを行ないました。これを、るびまの特集号（[preTokyoRubyKaigi11]({{base}}{% post_url articles/preTokyoRubyKaigi11/2016-05-14-preTokyoRubyKaigi11-index %})）としてまとめました。
 
 笹田がインタビューとテープ起こし、記事化を行ない、zunda さんに編集をして頂きました。
 
