@@ -20,7 +20,7 @@ tags: 0039 EditorComment
 * [0036]({{base}}{% post_url articles/0036/2011-11-28-0036-index %})
 * [0037]({{base}}{% post_url articles/0037/2012-02-05-0037-index %})
 * [0038]({{base}}{% post_url articles/0038/2012-05-22-0038-index %})
-* [AnnounceRubyKaja](AnnounceRubyKaja)
+* [AnnounceRubyKaja]({{base}}{% post_url articles/RubyKaja/2012-06-16-kaja %})
 * [0039]({{base}}{% post_url articles/0039/2012-09-05-0039-index %}) &lt;- 今ここ
 
 

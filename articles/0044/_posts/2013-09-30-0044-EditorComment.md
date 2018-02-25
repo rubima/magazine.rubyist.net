@@ -19,7 +19,7 @@ tags: 0044 EditorComment
 
 * [0040]({{base}}{% post_url articles/0040/2012-11-25-0040-index %})
 * [0041]({{base}}{% post_url articles/0041/2013-02-24-0041-index %})
-* [Ruby200SpecialEn](Ruby200SpecialEn)
+* [Ruby200SpecialEn]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-index %})
 * [0042]({{base}}{% post_url articles/0042/2013-05-29-0042-index %})
 * [0043]({{base}}{% post_url articles/0043/2013-07-31-0043-index %})
 * [0044]({{base}}{% post_url articles/0044/2013-09-30-0044-index %}) &lt;- 今ここ
@@ -118,16 +118,16 @@ tags: 0044 EditorComment
 
 これらの記事は海外においても有用ということもあり、「Ruby 2.0.0 リリース特集」を英訳した号外「Ruby 2.0.0 Release special articles」もリリースされました。多大な労力をかけて英訳に関わられた皆さま、大変ありがとうございました。
 
-* [Ruby200SpecialEn](Ruby200SpecialEn)
-  * [Ruby200SpecialEn-release](Ruby200SpecialEn-release)
-  * [Ruby200SpecialEn-kwarg](Ruby200SpecialEn-kwarg)
-  * [Ruby200SpecialEn-lazy](Ruby200SpecialEn-lazy)
-  * [Ruby200SpecialEn-refinement](Ruby200SpecialEn-refinement)
-  * [Ruby200SpecialEn-dtrace](Ruby200SpecialEn-dtrace)
-  * [Ruby200SpecialEn-gc](Ruby200SpecialEn-gc)
-  * [Ruby200SpecialEn-require](Ruby200SpecialEn-require)
-  * [Ruby200SpecialEn-note](Ruby200SpecialEn-note)
-  * [Ruby200SpecialEn-193](Ruby200SpecialEn-193)
+* [Ruby200SpecialEn]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-index %})
+  * [Ruby200SpecialEn-release]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-release %})
+  * [Ruby200SpecialEn-kwarg]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-kwarg %})
+  * [Ruby200SpecialEn-lazy]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-lazy %})
+  * [Ruby200SpecialEn-refinement]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-refinement %})
+  * [Ruby200SpecialEn-dtrace]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-dtrace %})
+  * [Ruby200SpecialEn-gc]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-gc %})
+  * [Ruby200SpecialEn-require]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-require %})
+  * [Ruby200SpecialEn-note]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-note %})
+  * [Ruby200SpecialEn-193]({{base}}{% post_url articles/Ruby200SpecialEn/2013-03-15-Ruby200SpecialEn-193 %})
 
 
 個別記事は次のとおりです。
