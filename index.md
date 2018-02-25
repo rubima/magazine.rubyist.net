@@ -2,6 +2,8 @@
 layout: default
 title: るびま
 ---
+{% include base.html %}
+
 ## Rubyist Magazine について
 
 『Rubyist Magazine』、略して『るびま』は、日本 Ruby の会の有志による Rubyist の Rubyist による、Rubyist とそうでない人のためのウェブ雑誌です。
@@ -9,13 +11,13 @@ title: るびま
 ## 最新号
 
 {% for post in site.tags.index limit: 1 %}
-- [{{ post.title }}]({{ post.url }})
+- [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ## バックナンバー
 
 {% for post in site.tags.index %}
-- [{{ post.title }}]({{ post.url }})
+- [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ## FAQ
