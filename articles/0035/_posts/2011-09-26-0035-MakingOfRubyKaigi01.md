@@ -4,6 +4,7 @@ title: Making of RubyKaigi - Making of KaigiFreaks 配信班
 short_title: Making of RubyKaigi - Making of KaigiFreaks 配信班
 tags: 0035 MakingOfRubyKaigi01
 ---
+{% include base.html %}
 
 
 書いた人：鈴木則夫
@@ -33,14 +34,14 @@ KaigiFreaks の配信班では、基本的に講演者の発表スライドを U
 更に今回は、HD ビデオカメラを撮影に加え、これを記録映像の第一候補として使う計画を立てました。もし、それが何らかの原因で録画失敗した場合には QuickTime 録画での映像を記録として利用、更に QuickTime 録画が失敗した場合には、Ustream 録画を記録として利用するという三段構成による冗長化を計画しました。
 
 これらを実現するために、RubyKaigi 2011 大ホールでの配信・記録用に設計した接続図の実物がこちらです。このような接続図を作る文化も先輩の KaigiFreaks から受け継いだ伝統 (笑) です。
-![diagram900.png]({{site.baseurl}}/images/0035-MakingOfRubyKaigi01/diagram900.png)
+![diagram900.png]({{base}}{{site.baseurl}}/images/0035-MakingOfRubyKaigi01/diagram900.png)
 
 今回の目玉は、講演者の姿を映すビデオカメラ (iVIS HV20) の HDMI 出力を HDMI ビデオキャプチャ (ADVC-HD50) で FireWIre 化しているところです。これにより、HD 映像をそのまま Ustream へ出力できるようにしました。さらにビデオキャプチャ (TwinPact100) の FireWire 出力を HUB にまとめ、MacBook Pro に2つの FireWire 機器を接続する形にしてあります。しかし、実はこの接続、正しくありません。詳細は後述しますが、もし、この記事を参考にする場合はお気をつけ下さい。
 
 それから、会期の後半で気がついたのですが、iVIS HV20 には FireWire 出力端子 (i.LINK 出力端子) が存在していました。つまり、実は ADVC-HD50 は不要だったと言うオチです。このビデオカメラはお借りしたものだったので、この辺りの調査が足りていませんでした。
 
 また、論理的な接続図の他に、ケーブル配線図も作成しました。これは、特に VGA ケーブルや LAN ケーブルなど、特に長いケーブルが必要になることを考えてのことです。今回、LAN ケーブルはネットワーク班が考えてくれていたので、あまり心配はしていなかったのですが、VGA ケーブルは毎回なかなか手強い相手なので、事前に必要な長さの目処を付けました。
-![cable900.png]({{site.baseurl}}/images/0035-MakingOfRubyKaigi01/cable900.png)
+![cable900.png]({{base}}{{site.baseurl}}/images/0035-MakingOfRubyKaigi01/cable900.png)
 
 この図は練馬文化センターが公開しているステージの平面図を元に、発表者の位置と KaigiFreaks の機材の位置を考えてケーブルレイアウトを組んだものです。これによれば必要な VGA ケーブルは 10m を超える程度で、15m あればなんとかなるだろうと考えました。
 

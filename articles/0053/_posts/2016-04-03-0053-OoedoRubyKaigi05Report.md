@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (57) 大江戸 Ruby 会議 05
 short_title: RegionalRubyKaigi レポート (57) 大江戸 Ruby 会議 05
 tags: 0053 OoedoRubyKaigi05Report
 ---
+{% include base.html %}
 
 
 ## 大江戸 Ruby 会議 05
@@ -18,7 +19,7 @@ tags: 0053 OoedoRubyKaigi05Report
 
 
 ### はじめに
-![open.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/open.jpg)
+![open.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/open.jpg)
 
 毎年大人気である大江戸 Ruby 会議。この記事では、その第五回である大江戸 Ruby 会議 05 の様子について、レポートします[^1]。
 
@@ -27,7 +28,7 @@ tags: 0053 OoedoRubyKaigi05Report
 ### Keynote
 
 #### あいおーのはなし
-![unak.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/unak.jpg)
+![unak.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/unak.jpg)
 
 * 発表者
   * なかむら (う) さん
@@ -44,7 +45,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 プログラムにある順番ではないのですが、ここではプログラムの順番でご紹介します。
 
 #### The Kaigi Must Go On
-![a_matsuda.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/a_matsuda.JPG)
+![a_matsuda.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/a_matsuda.JPG)
 
 * 発表者
   * 松田明さん
@@ -53,7 +54,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### mruby で mackerel のプラグインを作るはなし
-![hsbt.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/hsbt.JPG)
+![hsbt.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/hsbt.JPG)
 
 * 発表者
   * 柴田博志さん
@@ -62,7 +63,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### Best Commits of the year 2015
-![nobu.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/nobu.JPG)
+![nobu.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/nobu.JPG)
 
 * 発表者
   * 中田伸悦さん
@@ -71,7 +72,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### TODO
-![zzak.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/zzak.JPG)
+![zzak.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/zzak.JPG)
 
 * 発表者
   * Zachary Scott さん
@@ -79,7 +80,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### 超簡単! 英語でバグレポート
-![akr.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/akr.jpg)
+![akr.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/akr.jpg)
 
 * 発表者
   * 田中哲さん
@@ -88,7 +89,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### Information Security Programming in Ruby
-![nahi.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/nahi.JPG)
+![nahi.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/nahi.JPG)
 
 * 発表者
   * なひさん
@@ -97,7 +98,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### Go で拡張ライブラリを書くはなし
-![naruse.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/naruse.JPG)
+![naruse.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/naruse.JPG)
 
 * 発表者
   * 成瀬ゆいさん
@@ -106,7 +107,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### Re: Power Assert in Ruby
-![k_tsj.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/k_tsj.JPG)
+![k_tsj.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/k_tsj.JPG)
 
 * 発表者
   * 辻本和樹さん
@@ -115,7 +116,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### Ruby で実は writev(2)が使われているはなし
-![mmasaki.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/mmasaki.JPG)
+![mmasaki.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/mmasaki.JPG)
 
 * 発表者
   * 松下正樹さん
@@ -124,7 +125,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### 超絶技巧プログラミングと Ruby 3.0
-![mame.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/mame.JPG)
+![mame.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/mame.JPG)
 
 * 発表者
   * 遠藤侑介さん
@@ -133,7 +134,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 
 
 #### Functional Music Composition
-![nagachika.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/nagachika.JPG)
+![nagachika.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/nagachika.JPG)
 
 * 発表者
   * 近永智之さん
@@ -146,7 +147,7 @@ LT の順番は、Array#shuffle で直前に決められており、
 Asakusa.rb のメンバーによる Ninja Talk、その 1 グループ目です。
 
 #### Rails on Two DBs
-![knk.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/knk.jpg)
+![knk.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/knk.jpg)
 
 * 発表者
   * 金子悠一郎さん
@@ -157,7 +158,7 @@ Asakusa.rb のメンバーによる Ninja Talk、その 1 グループ目です�
 Rails で複数のサービスを運営している時に、ユーザーテーブルなどを他のサービスから利用したい場合の対処方法についての発表でした。Rails のみで複数のデータベースを扱えるものの、複雑なアソシエーションがうまく動かないなど、Rails コントリビューターならではの突っ込んだ解説を聞けました。
 
 #### 強羅で温泉に浸かりながらカードゲームのルールエンジンについて考えてみた
-![youchan.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/youchan.JPG)
+![youchan.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/youchan.JPG)
 
 * 発表者
   * 大崎瑶
@@ -168,7 +169,7 @@ Rails で複数のサービスを運営している時に、ユーザーテー�
 カードゲームのルールの解説し、それを Ruby で作成した DSL で表現する方法についての発表でした。最後に Slack をユーザーインターフェースにして大富豪が動くデモがありました。カードゲームの状態遷移の解説が興味深い話でした。
 
 #### SQL 脳から見た Ruby
-![yancya.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/yancya.jpg)
+![yancya.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/yancya.jpg)
 
 * 発表者
   * 小栁真太さん
@@ -182,7 +183,7 @@ Rubyist であり、PostgreSQList でもある小栁さんは、
 架空のタクシー会社の料金を SQL で解いてみるなど、面白い実践例が聞けました。
 
 #### 詳解 Burn
-![remone.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/remone.jpg)
+![remone.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/remone.jpg)
 
 * 発表者
   * Kei Sawada さん
@@ -199,7 +200,7 @@ Burn の開発は海外でも取り上げられ、台湾の Rubyist とも繋が
 Asakusa.rb のメンバーによる Ninja Talk、その 2 グループ目です。
 
 #### 「Ember コミュニティとわたし」
-![tricknotes.JPG]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/tricknotes.JPG)
+![tricknotes.JPG]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/tricknotes.JPG)
 
 * 発表者
   * 佐藤竜之介さん
@@ -211,7 +212,7 @@ Ember.js コミュニティに焦点を当て 2 部構成で話してくれま�
 1 部は「Ember.js の背景」創始者を筆頭にコミュニティ主導で開発するスタイルで、コンポーネントごとにエキスパートがいて、今後の展望は各々のブログで公開されているそうです。第 2 部の「Ember.js と私」は Ember.js への愛が溢れるお話でした。
 
 #### 「地獄のニューヨーク」
-![yuki24.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/yuki24.jpg)
+![yuki24.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/yuki24.jpg)
 
 * 発表者
   * 西嶋悠貴さん
@@ -223,7 +224,7 @@ Ember.js コミュニティに焦点を当て 2 部構成で話してくれま�
 ある人には地獄、でも他の人にも地獄とは限らない。話の断片だけを見て結論を出すのは良くない、ということを話してくれました。質疑応答では Ruby カンファレンスらしからぬ海外の保険事情に関する質問が殺到しました。
 
 #### And they lived happily ever after with ruby?
-![yamaz.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/yamaz.jpg)
+![yamaz.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/yamaz.jpg)
 
 * 発表者
   * 山崎大輔さん
@@ -236,7 +237,7 @@ Ember.js コミュニティに焦点を当て 2 部構成で話してくれま�
 生かしたビジネスのやりかたをするのが良いということを言われていたのがとても印象的でした。
 
 #### WebSocket for Web Rubyists
-![ryudoawaru.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/ryudoawaru.jpg)
+![ryudoawaru.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/ryudoawaru.jpg)
 
 * 発表者
   * Mu-Fan Teng
@@ -251,7 +252,7 @@ Mu-Fan Teng さんは RubyConf Taiwan や Rails Girls Taipei の主催もして�
 ### Special Talk
 
 #### 共創コミュニティのデザイン
-![eto.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/eto.jpg)
+![eto.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/eto.jpg)
 
 * 発表者
   * 江渡浩一郎さん
@@ -261,7 +262,7 @@ Mu-Fan Teng さんは RubyConf Taiwan や Rails Girls Taipei の主催もして�
 特別講演の江渡浩一郎さんは、自身の経歴を踏まえて、これまでの活動を紹介してくれました。日本科学未来館の「インターネット物理モデル」の展示や、2002 年に開発した qwikWeb という Wiki とメーリングリストを融合したシステムを紹介しました。また、「パターン、Wiki、XP」を著し Wiki の良さを伝えるためその歴史的経緯を明らかにしたこと、いま携わっているニコニコ学会βなどを紹介し、その裏にあった意図を教えてくれました。質疑応答では、開発を終了してしまった qwikWeb はオーパーツのようだったが、思想を引き継いだツールはあるのかとの質問に、（今は亡き） Google Wave は良かったと思う、いまなら GitHub もいいのでは、と回答していました。
 
 ### 懇親会
-![party.jpg]({{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/party.jpg)
+![party.jpg]({{base}}{{site.baseurl}}/images/0053-OoedoRubyKaigi05Report/party.jpg)
 
 懇親会はメディアテクノロジーラボ様のご好意でリクルート本社ビルのラウンジにて行いました。100 名近い Rubyist たちと寿司、刺身、フルーツと美味しいお酒を堪能しました。akr さんの飛び入り LT が聞けました。
 

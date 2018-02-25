@@ -4,6 +4,7 @@ title: Ruby 2.0.0： Note
 short_title: Ruby 2.0.0： Note
 tags: Ruby200SpecialEn note
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -315,7 +316,7 @@ Ruby 2.0.0 added some debugging functions
 * ObjectSpace.reachable_objects_from(), retrieves object reference relations
 
 
-The more detail is in Ruby VM advent calendar referred in [YARV Maniacs 【第 11 回】 最近の YARV の事情]({% post_url articles/0041/2013-02-24-0041-YarvManiacs %}) (sorry, they are written in Japanese).
+The more detail is in Ruby VM advent calendar referred in [YARV Maniacs 【第 11 回】 最近の YARV の事情]({{base}}{% post_url articles/0041/2013-02-24-0041-YarvManiacs %}) (sorry, they are written in Japanese).
 
 ---
 

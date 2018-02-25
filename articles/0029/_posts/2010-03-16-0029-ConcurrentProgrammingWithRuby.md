@@ -4,6 +4,7 @@ title: Ruby と並列プログラミング
 short_title: Ruby と並列プログラミング
 tags: 0029 ConcurrentProgrammingWithRuby
 ---
+{% include base.html %}
 
 
 ## 概要

@@ -6,13 +6,13 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
-  <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
-  <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="{{ site.baseurl }}/css/theme.css" rel="stylesheet" type="text/css">
-  <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet" type="text/css">
+  <script src="{{base}}{{ site.baseurl }}/js/jquery.min.js"></script>
+  <script src="{{base}}{{ site.baseurl }}/js/bootstrap.min.js"></script>
+  <link href="{{base}}{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="{{base}}{{ site.baseurl }}/css/theme.css" rel="stylesheet" type="text/css">
+  <link href="{{base}}{{ site.baseurl }}/css/syntax.css" rel="stylesheet" type="text/css">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="canonical" href="{{base}}{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="shortcut icon" href="{{ site.baseurl }}/images/favicon.ico">
+  <link rel="shortcut icon" href="{{base}}{{ site.baseurl }}/images/favicon.ico">
 </head>

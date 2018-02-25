@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (60) 川崎 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (60) 川崎 Ruby 会議 01
 tags: 0055 KawasakiRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート 川崎 Ruby 会議 01
@@ -44,7 +45,7 @@ tags: 0055 KawasakiRubyKaigi01Report
 
 
 ## 基調講演「Ruby で高速なプログラムを書く」 from 遠藤侑介
-![keynote.jpg]({{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/keynote.jpg)
+![keynote.jpg]({{base}}{{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/keynote.jpg)
 
 [GitHub](https://github.com/mame)
 [Twitter](https://twitter.com/mametter)
@@ -94,7 +95,7 @@ Ruby が遅くないというアピールや、
 普段から kawasaki.rb に参加しているメンバー 6 名が発表を行いました。
 
 ### 「mruby を C# に組み込んでみる」 from 秋山 亮介
-![presentation1.jpg]({{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation1.jpg)
+![presentation1.jpg]({{base}}{{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation1.jpg)
 
 [Twitter](https://twitter.com/kechako)
 [動画](https://www.youtube.com/watch?v=GpEru8yI4cI&list=PLFhrObr2eyduqJ6OgK0SXxWC6SE-3MJ7K&index=2)
@@ -110,7 +111,7 @@ Ruby が遅くないというアピールや、
 将来、秋山さんの csharp-mruby が完成すれば、C# から簡単に Ruby が使えるようになる日が来るのかも知れません。
 
 ### 「Rubyist を誘う Scala の世界 ver 2.0」 from ぺら
-![presentation2.jpg]({{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation2.jpg)
+![presentation2.jpg]({{base}}{{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation2.jpg)
 
 [Twitter](https://twitter.com/Peranikov)
 [動画](https://www.youtube.com/watch?v=GQCiJ-LF0p0&index=3&list=PLFhrObr2eyduqJ6OgK0SXxWC6SE-3MJ7K)
@@ -137,7 +138,7 @@ Ruby を主に使っているプログラマからすると、
 発表を見て、少なくとも Scala はそれに当てはまらない非常に柔軟な言語であるという認識を強くしました。
 
 ### 「Ruby で Roomba をハックする」 from kon_yu
-![presentation3.jpg]({{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation3.jpg)
+![presentation3.jpg]({{base}}{{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation3.jpg)
 
 [Twitter](https://twitter.com/kon_yu)
 [動画](https://www.youtube.com/watch?v=6-YBuQ8n1OE&index=4&list=PLFhrObr2eyduqJ6OgK0SXxWC6SE-3MJ7K)
@@ -155,7 +156,7 @@ iPhone のブラウザから Roomba を遠隔操作するシステムを完成�
 Roomba をいぶかしむ猫のかわいさも手伝って、会場が笑いに包まれていました。
 
 ### 「Fat settings.yml と向き合う」 from 1syo
-![presentation4.jpg]({{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation4.jpg)
+![presentation4.jpg]({{base}}{{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation4.jpg)
 
 [GitHub](https://github.com/1syo)
 [動画](https://www.youtube.com/watch?v=FkEOuk0LJS4)
@@ -176,7 +177,7 @@ config/settings.yml の運用方法の一つとして、
 特に Rails を運用しているエンジニアにとって大いに参考になったのではないかと思います。
 
 ### 「この 1 年くらいの Ruby 力の伸長状況」 from 蓑島 慎一
-![presentation5.jpg]({{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation5.jpg)
+![presentation5.jpg]({{base}}{{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation5.jpg)
 
 [Twitter](https://twitter.com/rojiuratech)
 [動画](https://www.youtube.com/watch?v=gxLgNnWlMrI&list=PLFhrObr2eyduqJ6OgK0SXxWC6SE-3MJ7K&index=5)
@@ -193,7 +194,7 @@ Ruby on Rails を触って得た知見を、仕事で活用したエピソード
 Web 系の会社で Ruby を使った開発をするのとは異なる生々しい内容で、会場がわきました。kawasaki.rb の多様性を参加者の皆様にもご理解いただけたと思います。
 
 ### 「Rails エンジニアがサーバーレスアーキテクチャに手を出したよ」 from 清水 雄太
-![presentation6.jpg]({{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation6.jpg)
+![presentation6.jpg]({{base}}{{site.baseurl}}/images/0055-KawasakiRubyKaigi01Report/presentation6.jpg)
 
 [Twitter](https://twitter.com/pachirel)
 [動画](https://www.youtube.com/watch?v=6xurzhDR2Vs&index=6&list=PLFhrObr2eyduqJ6OgK0SXxWC6SE-3MJ7K)

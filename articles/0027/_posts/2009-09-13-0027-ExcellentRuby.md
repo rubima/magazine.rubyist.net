@@ -4,6 +4,7 @@ title: VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へ�
 short_title: VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (前編)
 tags: 0027 ExcellentRuby
 ---
+{% include base.html %}
 
 
 著者：こしば としあき

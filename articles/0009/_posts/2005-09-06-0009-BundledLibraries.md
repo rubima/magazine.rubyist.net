@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv
 short_title: 標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv
 tags: 0009 BundledLibraries
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -537,7 +538,7 @@ str_utf32le  = Uconv.u4swap(str_utf32be)  # UTF-32LE に変換
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

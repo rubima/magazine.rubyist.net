@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 11 回】 zlib
 short_title: 標準添付ライブラリ紹介 【第 11 回】 zlib
 tags: 0018 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山
@@ -242,7 +243,7 @@ Ruby リファレンスマニュアルは現在青木さんによる新システ
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

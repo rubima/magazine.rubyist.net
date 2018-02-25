@@ -4,6 +4,7 @@ title: 海外記事翻訳シリーズ 【第 2 回】 Rack 仕様
 short_title: 海外記事翻訳シリーズ 【第 2 回】 Rack 仕様
 tags: 0033 TranslationArticle
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -220,7 +221,7 @@ Some parts of this specification are adopted from PEP333: Python Web Server Gate
 ## バックナンバー
 
 {% for post in site.tags.TranslationArticle %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

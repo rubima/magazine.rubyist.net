@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile
 short_title: 標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile
 tags: 0029 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山
@@ -343,7 +344,7 @@ make_err.close(true)
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

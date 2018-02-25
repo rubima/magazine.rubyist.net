@@ -4,11 +4,12 @@ title: Rubyist インタビュー特別編 小崎資広さん 前編
 short_title: Rubyist インタビュー特別編 小崎資広さん 前編
 tags: 0046 SpecialInterviewKosaki
 ---
+{% include base.html %}
 
 
 ## はじめに
 
-2013 年 11 月 8 日から 3 日間の日程で、アメリカはフロリダ州マイアミビーチにて  [RubyConf 2013](http://confreaks.com/events/rubyconf2013) が開催されました ([るびまにも参加レポートがあります]({% post_url articles/0045/2013-12-21-0045-RubyConf2013 %}))。
+2013 年 11 月 8 日から 3 日間の日程で、アメリカはフロリダ州マイアミビーチにて  [RubyConf 2013](http://confreaks.com/events/rubyconf2013) が開催されました ([るびまにも参加レポートがあります]({{base}}{% post_url articles/0045/2013-12-21-0045-RubyConf2013 %}))。
 
 その際に Ruby と Linux カーネルのデュアルコミッタとして有名な小崎資広さん (現在はボストン近郊在住) が参加されており、編集部からも数名が RubyConf 2013 に参加していたこともあり、せっかくですので (いつもの [Rubyist Hotlinks インタビュー](CategoryIndices#l2)とは別企画の特別編として) インタビューさせていただきました。二日間にわたるインタビューとなりましたので、前後編に分けてお送りします。
 
@@ -27,13 +28,13 @@ tags: 0046 SpecialInterviewKosaki
 ## インタビュー
 
 聞き手
-: [卜部さん]({% post_url articles/0042/2013-05-29-0042-Hotlinks %}) ([@shyouhei](https://twitter.com/shyouhei))
+: [卜部さん]({{base}}{% post_url articles/0042/2013-05-29-0042-Hotlinks %}) ([@shyouhei](https://twitter.com/shyouhei))
 
 語り手
 : 小崎資広さん
 
 野次馬
-: 笹田さん ([@koichisasada](https://twitter.com/koichisasada))、[松田さん]({% post_url articles/0037/2012-02-05-0037-Hotlinks %})[^1] ([@a_matsuda](https://twitter.com/a_matsuda))、[中村さん]({% post_url articles/0028/2009-12-07-0028-Hotlinks %}) ([@nari3](https://twitter.com/nari3))、瀬尾さん ([@sonots](https://twitter.com/sonots))、菅井さん ([@hokkai7go](https://twitter.com/hokkai7go))、三村さん ([@takkanm](https://twitter.com/takkanm))、郡司さん ([@gunjisatoshi](https://twitter.com/gunjisatoshi))
+: 笹田さん ([@koichisasada](https://twitter.com/koichisasada))、[松田さん]({{base}}{% post_url articles/0037/2012-02-05-0037-Hotlinks %})[^1] ([@a_matsuda](https://twitter.com/a_matsuda))、[中村さん]({{base}}{% post_url articles/0028/2009-12-07-0028-Hotlinks %}) ([@nari3](https://twitter.com/nari3))、瀬尾さん ([@sonots](https://twitter.com/sonots))、菅井さん ([@hokkai7go](https://twitter.com/hokkai7go))、三村さん ([@takkanm](https://twitter.com/takkanm))、郡司さん ([@gunjisatoshi](https://twitter.com/gunjisatoshi))
 
 日にち
 : 2013 年 11 月 9 日、11 月 10 日[^2]
@@ -179,7 +180,7 @@ __小崎__ まだ確定ではないけれど、もう一個 ON OFF のフラグ�
 
 __卜部__ でも Ubuntu ではデフォルトで ON になってしまう？
 
-__小崎__ それは Ruby 側で上書きすれば済む話なので。select.h を読む前に #undef しておくと。超苦労した所は、Ruby ってなぜか GCC は -include を使うので真っ先に select.h が include されてしまう仕様になってる。なので泣きながら -include 周りを変えまくって。[中田さん]({% post_url articles/0009/2005-09-06-0009-Hotlinks %})に戻されて。また壊れて。みたいな (笑)。しばらくせめぎ合いました。
+__小崎__ それは Ruby 側で上書きすれば済む話なので。select.h を読む前に #undef しておくと。超苦労した所は、Ruby ってなぜか GCC は -include を使うので真っ先に select.h が include されてしまう仕様になってる。なので泣きながら -include 周りを変えまくって。[中田さん]({{base}}{% post_url articles/0009/2005-09-06-0009-Hotlinks %})に戻されて。また壊れて。みたいな (笑)。しばらくせめぎ合いました。
 
 __笹田__ でもそれで直るなら、glibc に手を入れる必要はなかったのでは？
 
@@ -191,7 +192,7 @@ __小崎__ Linux だとそれらのメソッドがカーネル内で合流して
 
 __nari3__ ライブラリを変えよう、という発想には普通ならない気がします (笑)
 
-__小崎__ いやいやそんなことないですよ。[松田さん]({% post_url articles/0037/2012-02-05-0037-Hotlinks %})だって、作っている Rails アプリが思う通りに動かないと Rails を変えると言ってましたよ[^14]。
+__小崎__ いやいやそんなことないですよ。[松田さん]({{base}}{% post_url articles/0037/2012-02-05-0037-Hotlinks %})だって、作っている Rails アプリが思う通りに動かないと Rails を変えると言ってましたよ[^14]。
 
 __nari3__ 本人が Rails の開発をやっているから、というのもありそうですね。
 
@@ -506,14 +507,14 @@ __小崎__ でも GNU の場合は面倒くさい。ほとんどの会社では�
 [^6]: C 言語でメモリを動的に確保する関数。glibc に含まれている。
 [^7]: この解説は嘘ではないが、BoehmGC の作者と言った方が実はこのインタビューの参加者にはとおりがよかったかも
 [^8]: などと言っていたら glibc malloc に対しても同様の提案が libc コミュニティで出てきてびっくりした
-[^9]: [田中哲さん]({% post_url articles/0008/2005-07-19-0008-Hotlinks %})
+[^9]: [田中哲さん]({{base}}{% post_url articles/0008/2005-07-19-0008-Hotlinks %})
 [^10]: るびまの記事「[[0044-CRubyCommittersWhosWho2013#l10]]」も参照
 [^11]: Unicorn の作者として有名。ごく最近 Ruby のコミッターにも就任。
 [^12]: select はディスクリプタが読み書きできるようになった瞬間にビットがたつ。だからたとえばソケットが読み込み待ちとかのときは立たない。そんなもんで任意の場所を任意のビットパターンにするのは至難の技かと
 [^13]: 原稿を書いてる間に開発停止の表明が出てしまいました。 https://sourceware.org/ml/libc-alpha/2014-02/msg00060.html 現在 eglibc の Web ページトップにも "EGLIBC is no longer developed and such goals are now being addressed directly in GLIBC." と書いてあります
 [^14]: 野次馬に松田さんの名前がありますが、前編 (インタビュー初日) は欠席されていました。
 [^15]: sprintf: 今も #define している。BSD の sprintf に流れている
-[^16]: 浜地さん。[id:shinichiro_h](http://d.hatena.ne.jp/shinichiro_h/about) や[るびまゴルフ]({% post_url articles/0021/2007-09-29-0021-RubiMaGolf %})を参照。
+[^16]: 浜地さん。[id:shinichiro_h](http://d.hatena.ne.jp/shinichiro_h/about) や[るびまゴルフ]({{base}}{% post_url articles/0021/2007-09-29-0021-RubiMaGolf %})を参照。
 [^17]: GitHub のサイトは Ruby on Rails で実装されているそうです。 http://ja.wikipedia.org/wiki/GitHub
 [^18]: まつもとゆきひろさんはテストせずにコミットして Ruby のコミット権を剥奪されかけたことがある http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/29650
 [^19]: [第100回カーネル読書会にLinusが来た件 - 未来のいつか/hyoshiokの日記](http://d.hatena.ne.jp/hyoshiok/20091023)

@@ -4,6 +4,7 @@ title: 権限管理のgem、Punditの紹介
 short_title: 権限管理のgem、Punditの紹介
 tags: 0047 IntroductionToPundit
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -127,7 +128,7 @@ deviseを選んだ理由は、認証機能を持たせるgemの中では今の�
 ### 設計
 
 #### テーブル設計
-![pundit_sumple.png]({{site.baseurl}}/images/0047-IntroductionToPundit/pundit_sumple.png)
+![pundit_sumple.png]({{base}}{{site.baseurl}}/images/0047-IntroductionToPundit/pundit_sumple.png)
 
 #### 権限情報の持たせ方
 

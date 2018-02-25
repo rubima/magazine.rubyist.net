@@ -4,6 +4,7 @@ title: Ruby コードの感想戦 【第 2 回】 WikiR
 short_title: Ruby コードの感想戦 【第 2 回】 WikiR
 tags: 0041 CodePostMortem
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -389,7 +390,7 @@ httpdのログにはPOSTの内容が残らないので再現できないんで�
 ### バックナンバー
 
 {% for post in site.tags.CodePostMortem %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

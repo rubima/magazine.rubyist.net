@@ -4,6 +4,7 @@ title: 中国の若きエンジニアの肖像 【第 2 回】　ダニエルLv�
 short_title: 中国の若きエンジニアの肖像 【第 2 回】　ダニエルLvさん
 tags: 0028 ChineseRubyist
 ---
+{% include base.html %}
 
 
 ## はじめに
@@ -19,7 +20,7 @@ tags: 0028 ChineseRubyist
 
 語り手
 : ダニエル Lv さん
-![3974205599_ba020a1aa8.jpg]({{site.baseurl}}/images/0028-ChineseRubyist/3974205599_ba020a1aa8.jpg)
+![3974205599_ba020a1aa8.jpg]({{base}}{{site.baseurl}}/images/0028-ChineseRubyist/3974205599_ba020a1aa8.jpg)
 
 ### まずは簡単に自己紹介してください。
 
@@ -181,7 +182,7 @@ Daniel は 400 名以上の会員がいる中国最大の Ruby 及び Rails の�
 ## 中国の若きエンジニアの肖像 連載一覧
 
 {% for post in site.tags.ChineseRubyist %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

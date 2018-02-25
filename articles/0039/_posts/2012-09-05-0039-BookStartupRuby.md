@@ -4,6 +4,7 @@ title: 書籍紹介『たのしい開発 スタートアップRuby』
 short_title: 書籍紹介『たのしい開発 スタートアップRuby』
 tags: 0039 BookStartupRuby
 ---
+{% include base.html %}
 
 
 書いた人:櫻井 達生

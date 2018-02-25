@@ -4,6 +4,7 @@ title: Ruby/SDLで始めるゲームプログラミング【前編】
 short_title: Ruby/SDLで始めるゲームプログラミング【前編】
 tags: 0018 GameProgramingForRubySDL
 ---
+{% include base.html %}
 
 
 ## はじめに
@@ -145,7 +146,7 @@ ruby main.rb
 
 
 新しいウィンドウが開いて、2 秒後に閉じれば成功です。Ruby/SDL の世界へようこそ！
-![00_.png]({{site.baseurl}}/images/0018-GameProgramingForRubySDL/00_.png)
+![00_.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/00_.png)
 
 ### 初期化
 
@@ -188,7 +189,7 @@ sleep(2)
 
 
 空と大地が表示されましたか？:-)
-![01_.png]({{site.baseurl}}/images/0018-GameProgramingForRubySDL/01_.png)
+![01_.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/01_.png)
 
 ### 画面への描画
 
@@ -239,7 +240,7 @@ sleep(2)
 
 
 実行すると、地面の上にキャラクターが表示されます。少しゲームらしくなってきました。
-![02_.png]({{site.baseurl}}/images/0018-GameProgramingForRubySDL/02_.png)
+![02_.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/02_.png)
 
 ### 画像の読み込み
 
@@ -260,8 +261,8 @@ y 座標を計算しています。
 カラーキーを使うと、図のように画像のある色の部分だけ背景に溶け込ませることができます。
 ここでは白 (255,255,255) をカラーキーに設定しています。
 
-![colkey_off.png]({{site.baseurl}}/images/0018-GameProgramingForRubySDL/colkey_off.png)
-![colkey_on.png]({{site.baseurl}}/images/0018-GameProgramingForRubySDL/colkey_on.png)
+![colkey_off.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/colkey_off.png)
+![colkey_on.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/colkey_on.png)
 
 ## 関数を使ってみよう
 
@@ -722,7 +723,7 @@ A. 別に分けなくても構いません。
 
 さて、主人公だけでは寂しいので、他の物も描画してみましょう。
 手元にリンゴと爆弾の絵があるので、「爆弾を避けつつリンゴを集める」ゲームにしてみましょうか。
-![11_.png]({{site.baseurl}}/images/0018-GameProgramingForRubySDL/11_.png)
+![11_.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/11_.png)
 
 main.rb と同じディレクトリに items.rb というファイルを作り、
 以下のように書いてください。
@@ -873,7 +874,7 @@ A. 僕にもよく分かりません。：-P
 判定することにしましょう。この方法は当たり判定の範囲 (下図の青線) が円形になるので丸い画像に向いていますが、
 Math.sqrt(平方根) を利用しているので物体が多いと重くなる可能性があります (その場合は四角形で判定するのが
 良いでしょう)。
-![distance.png]({{site.baseurl}}/images/0018-GameProgramingForRubySDL/distance.png)
+![distance.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/distance.png)
 
 items.rb を以下のように書き換えてください。
 

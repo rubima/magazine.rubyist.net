@@ -4,6 +4,7 @@ title: 書籍紹介『Binary Hacks』
 short_title: 書籍紹介『Binary Hacks』
 tags: 0017 Book
 ---
+{% include base.html %}
 
 
 編集：ささだ

@@ -4,6 +4,7 @@ title: lily でブログカスタマイズ 【第 1 回】
 short_title: lily でブログカスタマイズ 【第 1 回】
 tags: 0003 LilyCustomizeHack
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -144,7 +145,7 @@ FTPでファイルをサーバにアップロードします。lilyset015.zipを
 
 
 作業が終わったらWebブラウザでアップロードしたばかりのブログが見えるかどうか試してみましょう。lily.cgiにアクセスして、設定したタイトルとテストの記事が表示されれば成功です。lilysetには以下のようなテスト記事が同梱されています。
-![test.txt]({{site.baseurl}}/images/0003-LilyCustomizeHack/test.txt)
+![test.txt]({{base}}{{site.baseurl}}/images/0003-LilyCustomizeHack/test.txt)
 
 テスト記事は以下のように出力されます。
 
@@ -183,7 +184,7 @@ lily.cfgの設定を変えない場合、記事になるファイルの拡張子
 前章の方法は、FTPやHTMLに慣れている人にとってはtDiaryやMovable Type等のWeb上からの更新作業よりもわずらわしさが無く楽かもしれません。しかし一般的にはHTMLを毎回手で書くのはなかなか面倒です。
 
 最近のWebアプリケーションであるBlogやWikiは、HTMLより簡単に文書構造を記述することが出来る特殊な記法を用意しています。ここではRubyで実装された代表的なWikiの一つである、Hikiの記法で記事を書く方法を解説します。
-[wiki_style.rb]({{site.baseurl}}/images/0003-LilyCustomizeHack/wiki_style.rb)
+[wiki_style.rb]({{base}}{{site.baseurl}}/images/0003-LilyCustomizeHack/wiki_style.rb)
 
 上記ファイルをダウンロードし、lilyを動かしているサーバのプラグインディレクトリ(lily.cfgでplugindirで指定したディレクトリ)にFTPでアップロードします。
 
@@ -197,7 +198,7 @@ lily.cfgの設定を変えない場合、記事になるファイルの拡張子
 
 
 このように、file_extensionには半角スペースで区切って複数の拡張子を指定することが出来ます。修正したlily.cfgをアップロードすると、拡張子wikiのファイルは、Hiki書式で書かれているものとして変換されます。例えば、前章のtest.txtと同じ記事を表示するtest.wikiは以下のようになります。
-![test.wiki.txt]({{site.baseurl}}/images/0003-LilyCustomizeHack/test.wiki.txt)
+![test.wiki.txt]({{base}}{{site.baseurl}}/images/0003-LilyCustomizeHack/test.wiki.txt)
 
 なお、このWikiスタイルフィルタは[とくひろ氏](http://tokuhirom.dnsalias.org/~tokuhirom/cl/)の[公開されているソース](http://tokuhirom.dnsalias.org/~tokuhirom/cl/2004-05-04.html#2004-05-04-2)を修正してlilyのフィルタ形式にしたものです。
 
@@ -267,7 +268,7 @@ end
 
 tDiaryは、独自のファイル形式（テキストですが）で日記のデータを記録しています。Movable Typeはデータベースに記事を記録しています。これらのシステムに比べると、ただのテキストファイルに記事を記録するlily用の更新CGIを作るのはそんなに難しくありません。
 
-lilyの次バージョンには、Webからの記事投稿を可能にする「lilypad」というプログラムが付属します。今回、lilypadのプロトタイプというか、α版にもならない簡易的なプログラムを5分ほどで書いてみました。([lilypad.zip]({{site.baseurl}}/images/0003-LilyCustomizeHack/lilypad.zip))解凍して出てくるlilypad.cgiとMainPageディレクトリを、lily.cgiと同じディレクトリにアップロードしてください。別途、[CGIKit](http://www.spice-of-life.net/cgikit/)が必要になりますのでご注意を。
+lilyの次バージョンには、Webからの記事投稿を可能にする「lilypad」というプログラムが付属します。今回、lilypadのプロトタイプというか、α版にもならない簡易的なプログラムを5分ほどで書いてみました。([lilypad.zip]({{base}}{{site.baseurl}}/images/0003-LilyCustomizeHack/lilypad.zip))解凍して出てくるlilypad.cgiとMainPageディレクトリを、lily.cgiと同じディレクトリにアップロードしてください。別途、[CGIKit](http://www.spice-of-life.net/cgikit/)が必要になりますのでご注意を。
 
 このプログラムはlily.cfgを読み込んでdatadirと、file_extensionを利用しますが、逆に言うとそれ以外は単にファイルを作るだけのアプリケーションです。ちょっと考えるだけでも
 
@@ -331,7 +332,7 @@ end
 
 ## 著者について
 
-![deka.jpg]({{site.baseurl}}/images/0003-LilyCustomizeHack/deka.jpg)
+![deka.jpg]({{base}}{{site.baseurl}}/images/0003-LilyCustomizeHack/deka.jpg)
 なまえ：ふしはらかん。kanとかfushihara kanとか伏原幹とかaliasは色々。[mikihoshiというサブクラス](http://d.hatena.ne.jp/mikihoshi/)があります。
 
 構想1ヶ月のlilyをリリースしてruby界(?)に殴り込みをかけたものの、直後に構想10分で作った[wema(変なもの)](http://www.mikihoshi.com/wiki)のほうが反響が大きく、密かに落ち込む。

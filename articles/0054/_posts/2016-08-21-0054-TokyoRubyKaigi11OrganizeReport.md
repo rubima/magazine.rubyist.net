@@ -4,6 +4,7 @@ title: 東京 Ruby 会議 11 運営記録
 short_title: 東京 Ruby 会議 11 運営記録
 tags: 0054 TokyoRubyKaigi11OrganizeReport
 ---
+{% include base.html %}
 
 
 書いた人：笹田耕一（東京Ruby会議11実行委員長）
@@ -375,7 +376,7 @@ CFP については、「技術的好奇心を改めて呼び起こし、プロ�
 
 ### 事前インタビュー
 
-発表者に、事前インタビューを行ないました。これを、るびまの特集号（[preTokyoRubyKaigi11](preTokyoRubyKaigi11)）としてまとめました。
+発表者に、事前インタビューを行ないました。これを、るびまの特集号（[preTokyoRubyKaigi11]({{base}}{% post_url articles/preTokyoRubyKaigi11/2016-05-14-preTokyoRubyKaigi11-index %})）としてまとめました。
 
 笹田がインタビューとテープ起こし、記事化を行ない、zunda さんに編集をして頂きました。
 
@@ -476,7 +477,7 @@ CFP については、「技術的好奇心を改めて呼び起こし、プロ�
 * 関係者打ち上げのセッティングと開催
 * 関係者向け資料の作成
 * スポンサー費用の回収
-* るびまレポート（[]({% post_url articles/0054/2016-08-21-0054-TokyoRubyKaigi11Report %})）の作成（るびま班）
+* るびまレポート（[]({{base}}{% post_url articles/0054/2016-08-21-0054-TokyoRubyKaigi11Report %})）の作成（るびま班）
 * このレポートの作成
 * 収支の締め
 

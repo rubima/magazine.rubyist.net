@@ -4,12 +4,13 @@ title: 書籍紹介『Effective Ruby』
 short_title: 書籍紹介『Effective Ruby』
 tags: 0050 EffectiveRuby_ja
 ---
+{% include base.html %}
 
 
 書いた人：takkanm
 
 ## 書籍情報
-: ![effective_ruby.jpg]({{site.baseurl}}/images/0050-EffectiveRuby_ja/effective_ruby.jpg)
+: ![effective_ruby.jpg]({{base}}{{site.baseurl}}/images/0050-EffectiveRuby_ja/effective_ruby.jpg)
 
 書籍名
 :  [Effective Ruby](http://www.shoeisha.co.jp/book/detail/9784798139821)

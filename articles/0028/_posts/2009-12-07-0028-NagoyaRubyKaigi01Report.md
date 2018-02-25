@@ -4,12 +4,13 @@ title: RegionalRubyKaigi レポート (09) 名古屋 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (09) 名古屋 Ruby 会議 01
 tags: 0028 NagoyaRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 書いた人: 豊吉隆一郎
 
 ## はじめに
-: ![4_large.jpg]({{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/4_large.jpg)
+: ![4_large.jpg]({{base}}{{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/4_large.jpg)
 
 2009 年 10 月 10 日に東海地方初の地域 Ruby 会議である名古屋 Ruby 会議 01 が開催されました。短い募集期間ながら予定人数を超える応募を頂き、今後の東海地方での Ruby でのさらなる盛り上がりを予感させるイベントとなりました。
 
@@ -59,12 +60,12 @@ tags: 0028 NagoyaRubyKaigi01Report
 名古屋 Ruby 会議 01 のロゴは、のりおさんに作成して頂きました。また、オフィシャル T シャツは名古屋のアーティスト[PHIRIP さん](http://www.phirip.com/)にデザインして頂きました。
 
 ## プログラム
-: ![9_large.jpg]({{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/9_large.jpg)
+: ![9_large.jpg]({{base}}{{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/9_large.jpg)
 
 プログラムはセクション A が東海地方のビジネス活用事例枠、B がゲストスピーカー枠、C が東海地方のスピーカー枠という 3 つのセクションで構成されました。
 
 ### セクション A (10:00 〜 12:10)
-: ![46_large.jpg]({{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/46_large.jpg)
+: ![46_large.jpg]({{base}}{{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/46_large.jpg)
 
 * __A0__ (10 分) オープニング：マツモトサトシ &lt;名古屋 Ruby 会議 01 実行委員長&gt;
   * 名古屋 Ruby 会議 01 の開会挨拶、協賛・協力紹介が行われました。
@@ -75,12 +76,12 @@ tags: 0028 NagoyaRubyKaigi01Report
 * __A3__ (40 分) 製造業向け 3D データ変換ソリューションにおける Ruby 活用事例：内山 滋 &lt;[株式会社エリジオン](http://www.elysium.co.jp/)&gt;
   * 静岡の企業で 3D データの変換やチェックの一部に Ruby を活用しているという事例紹介。Ruby が好きだからではなく、他の言語とも比べた結果 Ruby がよかったから開発に導入したというビジネス利用ならではの話が新鮮でした。
 
-: ![61_large.jpg]({{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/61_large.jpg)
+: ![61_large.jpg]({{base}}{{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/61_large.jpg)
 
 ### 昼食 (12:10 〜 13:00)
 
 ### セクション B (13:00 〜 14:30)
-: ![75_large.jpg]({{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/75_large.jpg)
+: ![75_large.jpg]({{base}}{{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/75_large.jpg)
 
 * __B1__ (60 分) Ruby のメモリ管理の改善：笹田 耕一 &lt;東京大学大学院情報理工学系研究科&gt;
   * 「最後まで話についてこられるのは 3 人程度でしょう。」という厳しい宣言のもと、タブレット PC を使った手書きプレゼンで Ruby の GC についての問題と改善の歴史と今後について話して頂き、対象を絞り込んでいない普段のセッションでは聞けない濃い話を楽しませて頂きました。
@@ -91,7 +92,7 @@ tags: 0028 NagoyaRubyKaigi01Report
 ### 小休止 (14:30 〜 15:00)
 
 ### セクション C (15:00 〜 17:30)
-: ![10_large.jpg]({{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/10_large.jpg)
+: ![10_large.jpg]({{base}}{{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/10_large.jpg)
 
 * __C1__ (30 分) Ruby でライフハッキング 10 連発♪：がぶちゃん &lt;[gabu(twitter)](http://twitter.com/gabu)&gt;
   * 自身の IPA での Ruby 利用の紹介の後、便利な使い方 10 連発と思いきや、途中からは Ruby1.9 の特徴紹介になり、東海地方の 1.9 移行完了宣言が行われました。
@@ -116,7 +117,7 @@ tags: 0028 NagoyaRubyKaigi01Report
 ### クロージング (〜 18:00)
 
 ### 懇親会
-: ![175_large.jpg]({{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/175_large.jpg)
+: ![175_large.jpg]({{base}}{{site.baseurl}}/images/0028-NagoyaRubyKaigi01Report/175_large.jpg)
 
 懇親会は 40 名ほどで行われ、オライリー・ジャパンさんから提供された本やオフィシャル T シャツのじゃんけん大会、当日のアンケートの集計発表などが行われ、大いに盛り上がりました。
 

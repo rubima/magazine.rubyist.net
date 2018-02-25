@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)
 short_title: 標準添付ライブラリ紹介 【第 12 回】 正規表現 (1)
 tags: 0019 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山
@@ -513,7 +514,7 @@ Ruby リファレンスマニュアル刷新計画は一番人手が必要そう
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

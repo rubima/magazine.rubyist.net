@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 2 回】 Logger
 short_title: 標準添付ライブラリ紹介 【第 2 回】 Logger
 tags: 0008 BundledLibraries
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -614,7 +615,7 @@ Logger では機能不足と思ったときに使うと良いと思います。
 
 ### win32-eventlog
 
-Win32 では [Ruby Library Report 【第 4 回】 Win32Utils]({% post_url articles/0005/2005-02-15-0005-RLR %}) で、その他のライブラリとして名前が出ていた
+Win32 では [Ruby Library Report 【第 4 回】 Win32Utils]({{base}}{% post_url articles/0005/2005-02-15-0005-RLR %}) で、その他のライブラリとして名前が出ていた
 win32-eventlog を使って、eventlog の読み書きが出来るようです。
 
 ## 終わりに
@@ -646,7 +647,7 @@ Log4r を使ったりすると良いのではないかと思います。
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

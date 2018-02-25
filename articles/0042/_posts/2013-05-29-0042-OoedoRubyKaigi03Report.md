@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03
 short_title: RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03
 tags: 0042 OoedoRubyKaigi03Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03
@@ -41,7 +42,7 @@ tags: 0042 OoedoRubyKaigi03Report
 
 2013 年 3 月 16 日に、地域 Ruby の会のひとつである Asakusa.rb の 200 回目の meetup を記念して「大江戸 Ruby 会議 03」が開催されましたので、本記事にてレポートをお送りします。
 
-前回の「[大江戸 Ruby 会議 01]({% post_url articles/0034/2011-06-12-0034-OoedoRubyKaigi01Report %})」から約 2 年が経っていますが、その間に欠番となる「[大江戸 Ruby 会議 02]({% post_url articles/0039/2012-09-05-0039-MetPragdaveAtAsakusarb %})」を挟んでいますので、おおむね 1 年に一度と順調に開催を重ねている地域 Ruby 会議のひとつと言えるのではないでしょうか。
+前回の「[大江戸 Ruby 会議 01]({{base}}{% post_url articles/0034/2011-06-12-0034-OoedoRubyKaigi01Report %})」から約 2 年が経っていますが、その間に欠番となる「[大江戸 Ruby 会議 02]({{base}}{% post_url articles/0039/2012-09-05-0039-MetPragdaveAtAsakusarb %})」を挟んでいますので、おおむね 1 年に一度と順調に開催を重ねている地域 Ruby 会議のひとつと言えるのではないでしょうか。
 
 ## 招待講演 1
 
@@ -170,7 +171,7 @@ Ruby の GC は基本的には Mark&amp;Sweep 方式で実装されており、�
 
 ## 懇親会
 
-![1.JPG]({{site.baseurl}}/images/0042-OoedoRubyKaigi03Report/1.JPG)
+![1.JPG]({{base}}{{site.baseurl}}/images/0042-OoedoRubyKaigi03Report/1.JPG)
 懇親会は深川めしで有名な大正 13 年創業の老舗「割烹 みや古」で行われました。「古き良き下町の宴会場」という雰囲気の店内であったため席の移動もしやすく、参加者は Ruby の話題で大いに盛り上がりました。こうした懇親会では発表者の方々と交流することができるのもまた嬉しいところですね。
 
 ## 写真の提供

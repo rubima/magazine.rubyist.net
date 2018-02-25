@@ -4,12 +4,13 @@ title: RegionalRubyKaigi レポート (33) 東京 Ruby 会議 10
 short_title: RegionalRubyKaigi レポート (33) 東京 Ruby 会議 10
 tags: 0041 TokyoRubyKaigi10Report_1st
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート東京 Ruby 会議 10
 
 ### 開催概要
-: ![mihama_culture_hall_with_snow.jpeg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/mihama_culture_hall_with_snow.jpeg)
+: ![mihama_culture_hall_with_snow.jpeg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/mihama_culture_hall_with_snow.jpeg)
 
 開催日
 :  2013/01/13(日)〜14(祝・月) 2日間
@@ -41,7 +42,7 @@ tags: 0041 TokyoRubyKaigi10Report_1st
 ### Ruby と過ごした半年間
 
 #### 井原正博 (@ihara2525)
-: ![day1_session01_ihara_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session01_ihara_350.jpg)
+: ![day1_session01_ihara_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session01_ihara_350.jpg)
 
 3 年前にクックパッド株式会社に入社した井原正博さんは最近 4 ヶ月でやったことの紹介をされました。
 
@@ -59,7 +60,7 @@ tags: 0041 TokyoRubyKaigi10Report_1st
 ### やさしい Rails 勉強会 @ 東京のつづけかた
 
 #### takkanm (@takkanm)
-: ![day1_session02_takkanm_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session02_takkanm_350.jpg)
+: ![day1_session02_takkanm_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session02_takkanm_350.jpg)
 
 株式会社永和システムマネジメントの takkanm さんが、Rails 勉強会 @ 東京を続けていくために考えていることや、改善のために行ったことを発表しました。
 
@@ -80,7 +81,7 @@ Rails 勉強会 @ 東京の続け方というタイトルの発表でしたが�
 ### 趣味と Ruby と私
 
 #### 生井智司 (@ainame)
-: ![day1_session03_ainame_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session03_ainame_350.jpg)
+: ![day1_session03_ainame_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session03_ainame_350.jpg)
 
 株式会社ミクシィの生井智司さんは、趣味として Ruby を勉強してきて感じたことを話しました。
 
@@ -97,7 +98,7 @@ Rails 勉強会 @ 東京の続け方というタイトルの発表でしたが�
 ### プログラミング未経験なんて怖くない
 
 #### 田垣亜季 (@akiinyo)
-: ![day1_session04_tagaki_from_igaiga555.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session04_tagaki_from_igaiga555.jpg)
+: ![day1_session04_tagaki_from_igaiga555.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session04_tagaki_from_igaiga555.jpg)
 
 株式会社永和システムマネジメントの田垣亜季さんが、プログラミング未経験でも恐れずに仕事としてのプログラミングを進めていく 3 つの方法について発表しました。
 
@@ -114,7 +115,7 @@ Rails 勉強会 @ 東京の続け方というタイトルの発表でしたが�
 ### 周囲の助けを得ながら楽しく開発するためのアレコレ
 
 #### 蓮尾高志 (@thso83)
-: ![day1_session05_hasuo_from_igaiga555.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session05_hasuo_from_igaiga555.jpg)
+: ![day1_session05_hasuo_from_igaiga555.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session05_hasuo_from_igaiga555.jpg)
 
 2012 年 7 月にメーカーエンジニアから株式会社万葉に転職し、 Ruby on Rails での開発やインフラエンジニアの仕事を始められた蓮尾高志さんは入社直後は Web 開発を始めたばかりなこともありわからない事が多く、人の助けを得ないと何も進まない状況だったそうです。<br />
 しかし人に助けてもらうことはその協力者にも負担を強いることになってしまうという悩みをもたれたそうです。そこで楽しい開発ができるよう負担を軽減すべく色々工夫をした経験を発表されました。
@@ -143,7 +144,7 @@ Rails 勉強会 @ 東京の続け方というタイトルの発表でしたが�
 ### 「co-meeting の作り方。」
 
 #### 吉田雄哉 (@yuya_lush)
-: ![day1_session06_yoshida_from_hasegawa.jpeg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session06_yoshida_from_hasegawa.jpeg)
+: ![day1_session06_yoshida_from_hasegawa.jpeg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session06_yoshida_from_hasegawa.jpeg)
 
 吉田パクえさんこと吉田雄哉さんが、普通の会社員4人が起業を決意してから今日までの奮闘記を発表しました。
 
@@ -160,7 +161,7 @@ Rails 勉強会 @ 東京の続け方というタイトルの発表でしたが�
 ### 初心者エンジニアのスタートアップにおけるシステム構築の失敗
 
 #### 春山誠 (@Spring_MT)
-: ![day1_session07_haruyama2_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session07_haruyama2_350.jpg)
+: ![day1_session07_haruyama2_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session07_haruyama2_350.jpg)
 
 株式会社 10xlab の春山誠さんは、前職でエンジニアに転向。転向前まではコードは書いた事がなく、営業などをされていたそうです。
 
@@ -177,7 +178,7 @@ Rails でアプリを作り始めようとした際に、様々な問題を想�
 ### Rails向けモバイルアプリ開発フレームワーク kanna (旧名：Pera) をリリース！
 
 #### 松村章弘 (@mat_aki)
-: ![day1_session08_matsumura_from_sorah.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session08_matsumura_from_sorah.jpg)
+: ![day1_session08_matsumura_from_sorah.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session08_matsumura_from_sorah.jpg)
 
 「DRY じゃないコードは嫌い」な株式会社ソニックガーデンの松村章弘さんが、Rails 向けモバイルアプリ開発フレームワークである kanna (旧名： Pera) についての紹介と、kanna を使ったサンプルアプリ実装例について発表しました。
 
@@ -192,7 +193,7 @@ Rails を採用しているプロジェクトでモバイルアプリを作る�
 ### The Everything Machine
 
 #### 中村涼 (@r7kamura)
-: ![day1_session09_nakamura_from_sorah.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session09_nakamura_from_sorah.jpg)
+: ![day1_session09_nakamura_from_sorah.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session09_nakamura_from_sorah.jpg)
 
 クックパッド株式会社の中村涼さんが、Ruby を Web フレームワークだけではなく、もっと日常生活で役立てたい！という思いから、中村さん自身が作成した様々な gem を紹介しました。
 
@@ -211,7 +212,7 @@ Rails を採用しているプロジェクトでモバイルアプリを作る�
 ### 本当はこわいエンコーディングの話
 
 #### とみたまさひろ (@tmtms)
-: ![day1_session10_tomita_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session10_tomita_350.jpg)
+: ![day1_session10_tomita_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session10_tomita_350.jpg)
 
 NSEG (長野ソフトウェア技術者グループ) で活動するとみたまさひろさんが、Ruby におけるエンコーディングの注意点について発表しました。
 
@@ -228,7 +229,7 @@ NSEG (長野ソフトウェア技術者グループ) で活動するとみたま
 ### 「Rails アプリケーションと継続的インテグレーション」
 
 #### 西川茂伸 (@shishi4tw)
-: ![day1_session11_nishikawa_from_sorah.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session11_nishikawa_from_sorah.jpg)
+: ![day1_session11_nishikawa_from_sorah.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session11_nishikawa_from_sorah.jpg)
 
 株式会社 Aiming の西川さんが、継続的インテグレーションと Jenkins による分散ビルドについて話しました。
 
@@ -257,7 +258,7 @@ Jenkins でのビルドは簡単ですが、単一サーバで複数ビルドを
 ### レシピ検索開発のレシピ
 
 #### 牧本 慎平 (@makimoto)
-: ![day1_session12_makimoto_from_sorah.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session12_makimoto_from_sorah.jpg)
+: ![day1_session12_makimoto_from_sorah.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session12_makimoto_from_sorah.jpg)
 
 クックパット株式会社の検索チームでお仕事をされている牧本慎平さんは、いつも検索チームがどのようなことをやってるかについて話しました。
 
@@ -278,7 +279,7 @@ Jenkins でのビルドは簡単ですが、単一サーバで複数ビルドを
 ### Ruby によるお手軽分散処理
 
 #### 前橋孝広 (@tmeb4)
-: ![day1_session13_maebashi_from_hasegawa.jpeg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session13_maebashi_from_hasegawa.jpeg)
+: ![day1_session13_maebashi_from_hasegawa.jpeg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session13_maebashi_from_hasegawa.jpeg)
 
 株式会社インターネットイニシアティブ (IIJ) の前橋孝広さんが、Ruby で Hadoop の MapReduce のような分散処理を実現する、pmux というソフトウェアを開発したことを発表しました。
 
@@ -293,7 +294,7 @@ pmux という名前は pipeline multiplexer に由来しており、標準入�
 ### できる！一人で作る Web サービス開発
 
 #### 瀬宮新 (@shin_semiya)
-: ![day1_session14_semiya_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session14_semiya_350.jpg)
+: ![day1_session14_semiya_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session14_semiya_350.jpg)
 
 「ハイパーレガシークリエイター」の瀬宮新さんが、一人で Web サービスを開発するためにやってきたことを、所々に画像ネタを挟みつつ軽快なテンポで発表しました。
 
@@ -308,7 +309,7 @@ pmux という名前は pipeline multiplexer に由来しており、標準入�
 ### Heroku でつくる 50 人のための Rails アプリ
 
 #### 鳥井雪 (@yotii23)
-: ![day1_session15_torii_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session15_torii_350.jpg)
+: ![day1_session15_torii_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session15_torii_350.jpg)
 
 株式会社万葉の鳥井雪さんは、Rails を使って小さなコミュニティのためのアプリを作った経験を話しました。
 
@@ -325,7 +326,7 @@ pmux という名前は pipeline multiplexer に由来しており、標準入�
 ### 日本酒評価サイトと xDD
 
 #### 河野誠 (@ginkouno)
-: ![day1_session16_kouno_from_sorah.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session16_kouno_from_sorah.jpg)
+: ![day1_session16_kouno_from_sorah.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session16_kouno_from_sorah.jpg)
 
 Tokyu.rb 幹事をされている河野誠さんは、日本酒評価サイトと、いくつかの○○駆動開発について発表しました。
 
@@ -342,7 +343,7 @@ Tokyu.rb 幹事をされている河野誠さんは、日本酒評価サイト�
 ### Padrino in production
 
 #### 塩谷啓 (@kwappa)
-: ![day1_session17_shioya_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session17_shioya_350.jpg)
+: ![day1_session17_shioya_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session17_shioya_350.jpg)
 
 kwappa さんこと塩谷さんが Padrino を本番環境で使ってみた体験談と、Padrino のサブアプリケーションの便利さについて発表しました。
 
@@ -366,7 +367,7 @@ Padrino のエンジニアや情報が足りないと紹介がありました。
 ### Inside Tripclip
 
 #### ダニー (@f96q)
-: ![day1_session18_danny_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session18_danny_350.jpg)
+: ![day1_session18_danny_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session18_danny_350.jpg)
 
 株式会社クレイのダニーさんは、自社サービスの Tripclip について、実装上の苦労や工夫した点を話しました。
 
@@ -383,7 +384,7 @@ Padrino のエンジニアや情報が足りないと紹介がありました。
 ### PHP と Ruby の架け橋
 
 #### do_aki (@do_aki)
-: ![day1_session19_do_aki_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session19_do_aki_350.jpg)
+: ![day1_session19_do_aki_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day1_session19_do_aki_350.jpg)
 
 株式会社もしもの do_aki さんが、PHP 上で Ruby を動かすこと、Ruby 上で PHP を動かすことを通じてわかったことを発表しました。
 
@@ -414,7 +415,7 @@ Ruby が世界を変える事ができた理由は2つあると、まつもと�
 ### 軽量 Ruby で実現する柔軟なルータ -SEIL への軽量 Ruby の組み込み -
 
 #### 曽我部崇 (@rev4t)
-: ![day2_session2_sogabe_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session2_sogabe_350.jpg)
+: ![day2_session2_sogabe_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session2_sogabe_350.jpg)
 
 株式会社インターネットイニシアティブ (IIJ) で企業向けのインターネットルータの開発などに従事している曽我部崇さんは現在会社で作っている企業向けアクセスルータ SEIL (ザイル) とそこで利用している mruby (軽量ruby) について発表しました。
 
@@ -433,7 +434,7 @@ mruby は組み込み機器以外にも適用できます。アプリへの組�
 ### Fluentd: The ruby-based middleware across the world
 
 #### 田籠聡 (@tagomoris)
-: ![day2_session3_tagomori_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session3_tagomori_350.jpg)
+: ![day2_session3_tagomori_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session3_tagomori_350.jpg)
 
 NHN Japan 株式会社の田籠さんが、ご自身もコミット権を持つ、Fluentd の便利さについて発表しました。
 まず、インストールが簡単であることや、容易にプラグインを書けること、安定した動作、スループットの高さといった Fluentd の特徴を紹介しました。
@@ -451,7 +452,7 @@ Fluentd のプラグイン開発には多くの人が携わっていますが、
 ### Ruby、RoR でのオフショア開発をハノイで行ってみたら・・・
 
 #### 本間紀史 (@norifumi777)
-: ![day2_session4_honma_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session4_honma_350.jpg)
+: ![day2_session4_honma_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session4_honma_350.jpg)
 
 株式会社フランジア・ジャパン CTO の本間紀史さんが、Ruby 経験者がほぼ居ないベトナム・ハノイで 1 年間オフショア開発の拠点づくりに邁進した経験談を発表しました。
 
@@ -468,7 +469,7 @@ Fluentd のプラグイン開発には多くの人が携わっていますが、
 ### 東京にきて僕が作ったものについて
 
 #### Jun Fukaya (@fukajun)
-: ![day2_session5_jun_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session5_jun_350.jpg)
+: ![day2_session5_jun_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session5_jun_350.jpg)
 
 Sendagaya.rb の主催者の一人である @fukajun さんが、Sendagaya.rb を作った経緯をなぞりつつ、勉強会の作り方について発表しました。
 
@@ -496,7 +497,7 @@ takkanm さんの発表にもあったように、開催者が苦しくならな
 ### Sole Rubyist's Fight
 
 #### yaotti (@yaotti)
-: ![day2_session06_yaotti_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session06_yaotti_350.jpg)
+: ![day2_session06_yaotti_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session06_yaotti_350.jpg)
 
 Increments 株式会社の yaotti さんは会社で唯一のエンジニアで、Qiita や Kobito などのサービスを開発しました。この経験をふまえ、一人で解決することの問題点や、その解決方法を話しました。
 
@@ -513,7 +514,7 @@ Increments 株式会社の yaotti さんは会社で唯一のエンジニアで�
 ### ブログのススメ
 
 #### 前島真一 (@netwillnet)
-: ![day2_session07_maeshima_350.jpg]({{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session07_maeshima_350.jpg)
+: ![day2_session07_maeshima_350.jpg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/day2_session07_maeshima_350.jpg)
 
 Ruby on Rails で開発をするフリーランスのエンジニア、前島真一さんは、自身のブログ netwill.in の運営経験から、技術系ブログを書くメリットを話しました。
 

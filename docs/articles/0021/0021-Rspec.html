@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
+  
+
+
+
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)</title>
-  <meta name="description" content="書いた人: かくたに、もろはし">
+  <meta name="description" content="">
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="/css/theme.css" rel="stylesheet" type="text/css">
-  <link href="/css/syntax.css" rel="stylesheet" type="text/css">
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../../css/theme.css" rel="stylesheet" type="text/css">
+  <link href="../../css/syntax.css" rel="stylesheet" type="text/css">
 
-  <link rel="canonical" href="http://magazine.rubyist.net/articles/0021/0021-Rspec.html">
+  <link rel="canonical" href="../..http://magazine.rubyist.net/articles/0021/0021-Rspec.html">
   <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="http://magazine.rubyist.net/feed.xml">
-  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="shortcut icon" href="../../images/favicon.ico">
 </head>
 
   <body>
@@ -30,133 +34,133 @@
 <h4>バックナンバー</h4>
 <ul>
     
-        <li><a href="/articles/0057/0057-index.html">0057号(2018-02)</a></li>
+        <li><a href="../../articles/0057/0057-index.html">0057号(2018-02)</a></li>
     
-        <li><a href="/articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+        <li><a href="../../articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
     
-        <li><a href="/articles/0056/0056-index.html">0056号(2017-08)</a></li>
+        <li><a href="../../articles/0056/0056-index.html">0056号(2017-08)</a></li>
     
-        <li><a href="/articles/0055/0055-index.html">0055号(2017-03)</a></li>
+        <li><a href="../../articles/0055/0055-index.html">0055号(2017-03)</a></li>
     
-        <li><a href="/articles/0054/0054-index.html">0054号(2016-08)</a></li>
+        <li><a href="../../articles/0054/0054-index.html">0054号(2016-08)</a></li>
     
-        <li><a href="/articles/pretokyorubykaigi11/preTokyoRubyKaigi11.html">東京 Ruby 会議 11 直前特集号</a></li>
+        <li><a href="../../articles/pretokyorubykaigi11/preTokyoRubyKaigi11-index.html">東京 Ruby 会議 11 直前特集号</a></li>
     
-        <li><a href="/articles/0053/0053-index.html">0053号(2016-04)</a></li>
+        <li><a href="../../articles/0053/0053-index.html">0053号(2016-04)</a></li>
     
-        <li><a href="/articles/0052/0052-index.html">0052号(2015-12)</a></li>
+        <li><a href="../../articles/0052/0052-index.html">0052号(2015-12)</a></li>
     
-        <li><a href="/articles/0051/0051-index.html">0051号(2015-09)</a></li>
+        <li><a href="../../articles/0051/0051-index.html">0051号(2015-09)</a></li>
     
-        <li><a href="/articles/0050/0050-index.html">0050号(2015-05)</a></li>
+        <li><a href="../../articles/0050/0050-index.html">0050号(2015-05)</a></li>
     
-        <li><a href="/articles/0049/0049-index.html">0049号(2014-12)</a></li>
+        <li><a href="../../articles/0049/0049-index.html">0049号(2014-12)</a></li>
     
-        <li><a href="/articles/0048/0048-index.html">0048号(2014-09)</a></li>
+        <li><a href="../../articles/0048/0048-index.html">0048号(2014-09)</a></li>
     
-        <li><a href="/articles/0047/0047-index.html">0047号(2014-06)</a></li>
+        <li><a href="../../articles/0047/0047-index.html">0047号(2014-06)</a></li>
     
-        <li><a href="/articles/0046/0046-index.html">0046号(2014-04)</a></li>
+        <li><a href="../../articles/0046/0046-index.html">0046号(2014-04)</a></li>
     
-        <li><a href="/articles/0045/0045-index.html">0045号(2013-12)</a></li>
+        <li><a href="../../articles/0045/0045-index.html">0045号(2013-12)</a></li>
     
-        <li><a href="/articles/0044/0044-index.html">0044号(2013-09)</a></li>
+        <li><a href="../../articles/0044/0044-index.html">0044号(2013-09)</a></li>
     
-        <li><a href="/articles/0043/0043-index.html">0043号(2013-07)</a></li>
+        <li><a href="../../articles/0043/0043-index.html">0043号(2013-07)</a></li>
     
-        <li><a href="/articles/0042/0042-index.html">0042号(2013-05)</a></li>
+        <li><a href="../../articles/0042/0042-index.html">0042号(2013-05)</a></li>
     
-        <li><a href="/articles/ruby200specialen/Ruby200SpecialEn.html">2.0.0 Special (EN)</a></li>
+        <li><a href="../../articles/ruby200specialen/Ruby200SpecialEn-index.html">2.0.0 Special (EN)</a></li>
     
-        <li><a href="/articles/0041/0041-index.html">0041号(2013-02)</a></li>
+        <li><a href="../../articles/0041/0041-index.html">0041号(2013-02)</a></li>
     
-        <li><a href="/articles/0040/0040-index.html">0040号(2012-11)</a></li>
+        <li><a href="../../articles/0040/0040-index.html">0040号(2012-11)</a></li>
     
-        <li><a href="/articles/0039/0039-index.html">0039号(2012-09)</a></li>
+        <li><a href="../../articles/0039/0039-index.html">0039号(2012-09)</a></li>
     
-        <li><a href="/articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+        <li><a href="../../articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
     
-        <li><a href="/articles/0038/0038-index.html">0038号(2012-05)</a></li>
+        <li><a href="../../articles/0038/0038-index.html">0038号(2012-05)</a></li>
     
-        <li><a href="/articles/0037/0037-index.html">0037号(2012-02)</a></li>
+        <li><a href="../../articles/0037/0037-index.html">0037号(2012-02)</a></li>
     
-        <li><a href="/articles/0036/0036-index.html">0036号(2011-11)</a></li>
+        <li><a href="../../articles/0036/0036-index.html">0036号(2011-11)</a></li>
     
-        <li><a href="/articles/0035/0035-index.html">0035号(2011-09)</a></li>
+        <li><a href="../../articles/0035/0035-index.html">0035号(2011-09)</a></li>
     
-        <li><a href="/articles/prerubykaigi2011/preRubyKaigi2011.html">RubyKaigi2011直前特集号</a></li>
+        <li><a href="../../articles/prerubykaigi2011/preRubyKaigi2011-index.html">RubyKaigi2011直前特集号</a></li>
     
-        <li><a href="/articles/0034/0034-index.html">0034号(2011-06)</a></li>
+        <li><a href="../../articles/0034/0034-index.html">0034号(2011-06)</a></li>
     
-        <li><a href="/articles/0033/0033-index.html">0033号(2011-04)</a></li>
+        <li><a href="../../articles/0033/0033-index.html">0033号(2011-04)</a></li>
     
-        <li><a href="/articles/0032/0032-index.html">0032号(2011-01)</a></li>
+        <li><a href="../../articles/0032/0032-index.html">0032号(2011-01)</a></li>
     
-        <li><a href="/articles/0031/0031-index.html">0031号(2010-10)</a></li>
+        <li><a href="../../articles/0031/0031-index.html">0031号(2010-10)</a></li>
     
-        <li><a href="/articles/prerubykaigi2010/preRubyKaigi2010.html">RubyKaigi2010直前特集号</a></li>
+        <li><a href="../../articles/prerubykaigi2010/preRubyKaigi2010-index.html">RubyKaigi2010直前特集号</a></li>
     
-        <li><a href="/articles/0030/0030-index.html">0030号(2010-06)</a></li>
+        <li><a href="../../articles/0030/0030-index.html">0030号(2010-06)</a></li>
     
-        <li><a href="/articles/0029/0029-index.html">0029号(2010-03)</a></li>
+        <li><a href="../../articles/0029/0029-index.html">0029号(2010-03)</a></li>
     
-        <li><a href="/articles/0028/0028-index.html">0028号(2009-12)</a></li>
+        <li><a href="../../articles/0028/0028-index.html">0028号(2009-12)</a></li>
     
-        <li><a href="/articles/0027/0027-index.html">0027号(2009-09)</a></li>
+        <li><a href="../../articles/0027/0027-index.html">0027号(2009-09)</a></li>
     
-        <li><a href="/articles/0026/0026-index.html">0026号(2009-06)</a></li>
+        <li><a href="../../articles/0026/0026-index.html">0026号(2009-06)</a></li>
     
-        <li><a href="/articles/0025/0025-index.html">0025号(2009-02)</a></li>
+        <li><a href="../../articles/0025/0025-index.html">0025号(2009-02)</a></li>
     
-        <li><a href="/articles/0024/0024-index.html">0024号(2008-10)</a></li>
+        <li><a href="../../articles/0024/0024-index.html">0024号(2008-10)</a></li>
     
-        <li><a href="/articles/0023/0023-index.html">0023号(2008-03)</a></li>
+        <li><a href="../../articles/0023/0023-index.html">0023号(2008-03)</a></li>
     
-        <li><a href="/articles/0022/0022-index.html">0022号(2007-12)</a></li>
+        <li><a href="../../articles/0022/0022-index.html">0022号(2007-12)</a></li>
     
-        <li><a href="/articles/0021/0021-index.html">0021号(2007-09)</a></li>
+        <li><a href="../../articles/0021/0021-index.html">0021号(2007-09)</a></li>
     
-        <li><a href="/articles/0020/0020-index.html">0020号(2007-08)</a></li>
+        <li><a href="../../articles/0020/0020-index.html">0020号(2007-08)</a></li>
     
-        <li><a href="/articles/0019/0019-index.html">0019号(2007-05)</a></li>
+        <li><a href="../../articles/0019/0019-index.html">0019号(2007-05)</a></li>
     
-        <li><a href="/articles/0018/0018-index.html">0018号(2007-02)</a></li>
+        <li><a href="../../articles/0018/0018-index.html">0018号(2007-02)</a></li>
     
-        <li><a href="/articles/0017/0017-index.html">0017号(2006-11)</a></li>
+        <li><a href="../../articles/0017/0017-index.html">0017号(2006-11)</a></li>
     
-        <li><a href="/articles/0016/0016-index.html">0016号(2006-09)</a></li>
+        <li><a href="../../articles/0016/0016-index.html">0016号(2006-09)</a></li>
     
-        <li><a href="/articles/0015/0015-index.html">0015号(2006-07)</a></li>
+        <li><a href="../../articles/0015/0015-index.html">0015号(2006-07)</a></li>
     
-        <li><a href="/articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+        <li><a href="../../articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
     
-        <li><a href="/articles/0014/0014-index.html">0014号(2006-05)</a></li>
+        <li><a href="../../articles/0014/0014-index.html">0014号(2006-05)</a></li>
     
-        <li><a href="/articles/0013/0013-index.html">0013号(2006-02)</a></li>
+        <li><a href="../../articles/0013/0013-index.html">0013号(2006-02)</a></li>
     
-        <li><a href="/articles/0012/0012-index.html">0012号(2005-12)</a></li>
+        <li><a href="../../articles/0012/0012-index.html">0012号(2005-12)</a></li>
     
-        <li><a href="/articles/0011/0011-index.html">0011号(2005-11)</a></li>
+        <li><a href="../../articles/0011/0011-index.html">0011号(2005-11)</a></li>
     
-        <li><a href="/articles/0010/0010-index.html">0010号(2005-10)</a></li>
+        <li><a href="../../articles/0010/0010-index.html">0010号(2005-10)</a></li>
     
-        <li><a href="/articles/0009/0009-index.html">0009号(2005-09)</a></li>
+        <li><a href="../../articles/0009/0009-index.html">0009号(2005-09)</a></li>
     
-        <li><a href="/articles/0008/0008-index.html">0008号(2005-07)</a></li>
+        <li><a href="../../articles/0008/0008-index.html">0008号(2005-07)</a></li>
     
-        <li><a href="/articles/0007/0007-index.html">0007号(2005-06)</a></li>
+        <li><a href="../../articles/0007/0007-index.html">0007号(2005-06)</a></li>
     
-        <li><a href="/articles/0006/0006-index.html">0006号(2005-05)</a></li>
+        <li><a href="../../articles/0006/0006-index.html">0006号(2005-05)</a></li>
     
-        <li><a href="/articles/0005/0005-index.html">0005号(2005-02)</a></li>
+        <li><a href="../../articles/0005/0005-index.html">0005号(2005-02)</a></li>
     
-        <li><a href="/articles/0004/0004-index.html">0004号(2004-12)</a></li>
+        <li><a href="../../articles/0004/0004-index.html">0004号(2004-12)</a></li>
     
-        <li><a href="/articles/0003/0003-index.html">0003号(2004-11)</a></li>
+        <li><a href="../../articles/0003/0003-index.html">0003号(2004-11)</a></li>
     
-        <li><a href="/articles/0002/0002-index.html">0002号(2004-10)</a></li>
+        <li><a href="../../articles/0002/0002-index.html">0002号(2004-10)</a></li>
     
-        <li><a href="/articles/0001/0001-index.html">0001号(2004-09)</a></li>
+        <li><a href="../../articles/0001/0001-index.html">0001号(2004-09)</a></li>
     
 </ul>
 <p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
@@ -165,7 +169,7 @@
             <div class="col-md-10 main">
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="/images/rubima_logo_l.png">
+                        <img src="../../images/rubima_logo_l.png">
                         <h1>スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)</h1>
                         <div class="social-buttons">
                             <a href="http://b.hatena.ne.jp/entry//articles/0021/0021-Rspec.html" class="hatena-bookmark-button" data-hatena-bookmark-title="スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
@@ -182,7 +186,8 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
                         </div>
-                        <p>書いた人: かくたに、もろはし</p>
+                        
+<p>書いた人: かくたに、もろはし</p>
 
 <ul id="markdown-toc">
   <li><a href="#この連載について" id="markdown-toc-この連載について">この連載について</a>    <ul>
@@ -718,7 +723,7 @@ Finished in 0.047857 seconds
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ gem install win32console</code></pre></figure>
 
 <p>……では、実際に実行してみましょう。
-<img src="/images/0021-Rspec/capture1.png" alt="capture1.png" /></p>
+<img src="../../images/0021-Rspec/capture1.png" alt="capture1.png" /></p>
 
 <p>すべてのテスト実行に成功したので、緑になっています。テストに失敗すれば、表示は赤くなります。わざとらしい例で試してみましょう。先ほどの array_spec.rb に、新しい振舞を追加します。</p>
 
@@ -737,7 +742,7 @@ describe Array, "when initialized with object" do
 end</code></pre></figure>
 
 <p>実行してみます。
-<img src="/images/0021-Rspec/capture2.png" alt="capture2.png" /></p>
+<img src="../../images/0021-Rspec/capture2.png" alt="capture2.png" /></p>
 
 <p>予想通り失敗しました。’F’ は example の実行に失敗したことを示しています。’F’ は Test::Unit と同じく「Failure (失敗)」の頭文字です。</p>
 
@@ -796,7 +801,7 @@ Finished in 0.009107 seconds
 
 <p>example のそれぞれの文字列がインデントされた箇条書きのようになって出力されます。
 -c オプションと組み合わせることもできます。実行してみましょう。
-<img src="/images/0021-Rspec/capture3.png" alt="capture3.png" /></p>
+<img src="../../images/0021-Rspec/capture3.png" alt="capture3.png" /></p>
 
 <p>失敗した example の表示が赤くなり、エラーメッセージが表示されました。</p>
 
@@ -817,7 +822,7 @@ describe Array, "when initialized with object" do
 end</code></pre></figure>
 
 <p>実行します。
-<img src="/images/0021-Rspec/capture4.png" alt="capture4.png" /></p>
+<img src="../../images/0021-Rspec/capture4.png" alt="capture4.png" /></p>
 
 <p>すべてグリーンになりました。緑の画面を見ると落ち着きますね。</p>
 
@@ -849,7 +854,7 @@ end</code></pre></figure>
 
 <p>it との繋がりがやや苦しいですが、日本語の説明として理解できなくもないです。
 試しに実行させてみましょう。
-<img src="/images/0021-Rspec/capture5.png" alt="capture5.png" /></p>
+<img src="../../images/0021-Rspec/capture5.png" alt="capture5.png" /></p>
 
 <p>状況が許すのであれば、日本語で説明を書いてしまってもよいと思います。た
 だし、生成されるメッセージが日本語として意味が通るように工夫する必要が
@@ -873,7 +878,7 @@ Test::Unit とスペックファイルとの大きな違いは、Test::Unit::Tes
 <p>「スペックファイルの構造」として紹介する内容を簡単な図にまとめておきま
 す。スペックファイルを構成するそれぞれの要素の論理的な関係だと思って眺
 めてください。
-<img src="/images/0021-Rspec/spec_file_structure.png" alt="spec_file_structure.png" /></p>
+<img src="../../images/0021-Rspec/spec_file_structure.png" alt="spec_file_structure.png" /></p>
 
 <p>いまの時点で、すべてを理解する必要はありません。どういった内容がこれから
 説明されるのか、という参考にしてください。以下をひと通り読んだあとに再
@@ -1374,7 +1379,7 @@ end</code></pre></figure>
 <h5 id="実行結果">実行結果</h5>
 
 <p>実行してみましょう。
-<img src="/images/0021-Rspec/capture6.png" alt="capture6.png" /></p>
+<img src="../../images/0021-Rspec/capture6.png" alt="capture6.png" /></p>
 
 <p>‘P’ は Pending の P です。1 つ目 (it “should do something”) は「Not Yet
 Implemented (未実装)」としてレポートされ、後の 2 つは Pending されたことがそ
@@ -1732,7 +1737,7 @@ end</code></pre></figure>
 <p>spec を実行します。既に紹介したように、rake 経由で RSpec を実行させることもできますが、今回の連載では script/spec で単一のスペックファイルを指定して実行することにします。</p>
 
 <p>script/spec 経由で実行する場合は、テスト用データベースの準備を手動で行う必要があります。
-<img src="/images/0021-Rspec/capture7.png" alt="capture7.png" /></p>
+<img src="../../images/0021-Rspec/capture7.png" alt="capture7.png" /></p>
 
 <p>失敗しました。</p>
 
@@ -1763,7 +1768,7 @@ Blog#valid? が false になることを期待したのに、true が返って�
 end</code></pre></figure>
 
 <p>blog.rb の修正を保存して、再度 spec を実行します。データベースに変更は無いので、そのまま script/spec コマンドを利用できます。
-<img src="/images/0021-Rspec/capture8.png" alt="capture8.png" /></p>
+<img src="../../images/0021-Rspec/capture8.png" alt="capture8.png" /></p>
 
 <p>成功しました。</p>
 
@@ -1791,7 +1796,7 @@ end</code></pre></figure>
 ですから、このテストも成功するはずです。</p>
 
 <p>ここでは、-fs オプションをつけて実行してみましょう。example で記述した説明文字列が、日本語として意味の通るものになっていることを確認するためです。
-<img src="/images/0021-Rspec/capture9.png" alt="capture9.png" /></p>
+<img src="../../images/0021-Rspec/capture9.png" alt="capture9.png" /></p>
 
 <p>ActiveRecord はちゃんと仕事をしてくれていました。</p>
 
@@ -1932,7 +1937,7 @@ fixtures との違いは、Rspec on Rails では「fixture_path」が
 entries テーブルを作成した際に、development 環境のデータベーススキーマは
 変更しましたが、この変更をまだ test 環境のデータベースには反映していない
 からです。
-<img src="/images/0021-Rspec/capture10.png" alt="capture10.png" /></p>
+<img src="../../images/0021-Rspec/capture10.png" alt="capture10.png" /></p>
 
 <p>テストに失敗しました。色が赤ではなく紫なのは、RSpecがエクスペクテーション不成立 (ExpectationNotMetError) とプログラミングエラー (NoMethodError) とを区別するからです。</p>
 
@@ -1949,7 +1954,7 @@ entries テーブルを作成した際に、development 環境のデータベー
 end</code></pre></figure>
 
 <p>spec を実行します。
-<img src="/images/0021-Rspec/capture11.png" alt="capture11.png" /></p>
+<img src="../../images/0021-Rspec/capture11.png" alt="capture11.png" /></p>
 
 <p>今度は成功しました。ActiveRecord のおかげですね。</p>
 
@@ -1974,7 +1979,7 @@ end</code></pre></figure>
 
 <p>この段階でテストを実行しても失敗するはずです。
 それというのも、まだ Blog から Entry への関連を設定していないからです。
-<img src="/images/0021-Rspec/capture12.png" alt="capture12.png" /></p>
+<img src="../../images/0021-Rspec/capture12.png" alt="capture12.png" /></p>
 
 <p>予想通り NoMethodError が発生して失敗しました。</p>
 
@@ -1990,7 +1995,7 @@ end</code></pre></figure>
 end</code></pre></figure>
 
 <p>今度はテストに成功するはずです。
-<img src="/images/0021-Rspec/capture13.png" alt="capture13.png" /></p>
+<img src="../../images/0021-Rspec/capture13.png" alt="capture13.png" /></p>
 
 <p>予想通りです。よかった。</p>
 
@@ -2107,7 +2112,7 @@ lambda {
 <p>話を戻して、blog_spec.rb を実行してみます。</p>
 
 <p>説明文字列が日本語として成立するかを確認したいので、-fs オプションをつけて実行します。
-<img src="/images/0021-Rspec/capture14.png" alt="capture14.png" /></p>
+<img src="../../images/0021-Rspec/capture14.png" alt="capture14.png" /></p>
 
 <h4 id="記事の投稿日に期待する振舞を定義する">記事の投稿日に期待する振舞を定義する</h4>
 
@@ -2155,7 +2160,7 @@ describe Entry, "#posted_on が入力されずに保存された場合:" do
 end</code></pre></figure>
 
 <p>投稿日が入力されていなかった場合については、まだ何も実装していません。テストは失敗するはずです。
-<img src="/images/0021-Rspec/capture15.png" alt="capture15.png" /></p>
+<img src="../../images/0021-Rspec/capture15.png" alt="capture15.png" /></p>
 
 <p>グレイト。失敗しました。</p>
 
@@ -2175,7 +2180,7 @@ end</code></pre></figure>
 
 <p>before_save メソッドは ActiveRecord の機能で、保存前に自動的に呼び出されるコールバックメソッドです。
 今度はテストに成功するはずです。
-<img src="/images/0021-Rspec/capture16.png" alt="capture16.png" /></p>
+<img src="../../images/0021-Rspec/capture16.png" alt="capture16.png" /></p>
 
 <p>期待通りに成功しました。</p>
 
@@ -2220,7 +2225,7 @@ end</code></pre></figure>
 <p>現状では before_save で問答無用に Date.today を設定しています。</p>
 
 <p>次の実行は失敗するはずです。
-<img src="/images/0021-Rspec/capture17.png" alt="capture17.png" /></p>
+<img src="../../images/0021-Rspec/capture17.png" alt="capture17.png" /></p>
 
 <p>予想通りの失敗!! すばらしいですね。</p>
 
@@ -2237,10 +2242,10 @@ end</code></pre></figure>
 end</code></pre></figure>
 
 <p>今度は成功するはずです。
-<img src="/images/0021-Rspec/capture18.png" alt="capture18.png" /></p>
+<img src="../../images/0021-Rspec/capture18.png" alt="capture18.png" /></p>
 
 <p>オーケイ。これまでに定義したスペックをまとめて実行して、どこも壊していないことを確認しておきましょう。
-<img src="/images/0021-Rspec/capture19.png" alt="capture19.png" /></p>
+<img src="../../images/0021-Rspec/capture19.png" alt="capture19.png" /></p>
 
 <p>大丈夫です。どこも壊していませんでした。</p>
 
@@ -2256,7 +2261,7 @@ end</code></pre></figure>
 
 <p><a href="http://kakutani.com">kakutani.com</a> 。日本 Ruby の会理事。(株) 永和システムマネジメント サービスプロバイディング事業部チーフプログラマ。<a href="https://www.amazon.co.jp/Java%E3%81%8B%E3%82%89Ruby%E3%81%B8-%E2%80%95%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E5%AE%9F%E8%B7%B5%E7%A7%BB%E8%A1%8C%E3%82%AC%E3%82%A4%E3%83%89-Bruce-Tate/dp/4873113202?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4873113202">‘『Java から Ruby へ』’</a>を翻訳した。好きなメソッドは Object#extend 。好きなアイドルは初音ミク。</p>
 
-<p><a href="https://www.amazon.co.jp/Rubyist-Magazine-%E5%87%BA%E5%BC%B5%E7%89%88-%E6%AD%A3%E3%81%97%E3%81%84Ruby%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E8%AC%9B%E5%BA%A7%E2%80%95Rubyist%E3%81%AERubyist%E3%81%AB%E3%82%88%E3%82%8B%E3%80%81Rubyist%E3%81%A8%E3%81%9D%E3%81%86%E3%81%A7%E3%81%AA%E3%81%84%E4%BA%BA%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE-%E9%9D%92%E6%9C%A8/dp/4839923205?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4839923205">‘『Rubyist Magazine 出張版』’</a>に「RSpec のことを寄稿する」と書いてから半年も経ってしまいました (奇しくも今号に<a href="/articles/0021/0021-Book-RubimaBook.html">『Rubyist Magazine 出張版』の紹介記事</a>が!) 。……何度も原稿を落としてるびま編集部の皆さまにはご迷惑をおかけしました(「伝説の記事」と呼ばれていたとのことで……)。これから力尽きるまで続けたいと思っています。よろしくお願いします。</p>
+<p><a href="https://www.amazon.co.jp/Rubyist-Magazine-%E5%87%BA%E5%BC%B5%E7%89%88-%E6%AD%A3%E3%81%97%E3%81%84Ruby%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E8%AC%9B%E5%BA%A7%E2%80%95Rubyist%E3%81%AERubyist%E3%81%AB%E3%82%88%E3%82%8B%E3%80%81Rubyist%E3%81%A8%E3%81%9D%E3%81%86%E3%81%A7%E3%81%AA%E3%81%84%E4%BA%BA%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE-%E9%9D%92%E6%9C%A8/dp/4839923205?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4839923205">‘『Rubyist Magazine 出張版』’</a>に「RSpec のことを寄稿する」と書いてから半年も経ってしまいました (奇しくも今号に<a href="../../articles/0021/0021-Book-RubimaBook.html">『Rubyist Magazine 出張版』の紹介記事</a>が!) 。……何度も原稿を落としてるびま編集部の皆さまにはご迷惑をおかけしました(「伝説の記事」と呼ばれていたとのことで……)。これから力尽きるまで続けたいと思っています。よろしくお願いします。</p>
 
 <h3 id="もろはし">もろはし</h3>
 
@@ -2268,10 +2273,10 @@ end</code></pre></figure>
 
 <ul>
   <li>
-    <p><a href="/articles/0023/0023-Rspec.html">スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)</a></p>
+    <p><a href="../../articles/0023/0023-Rspec.html">スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)</a></p>
   </li>
   <li>
-    <p><a href="/articles/0021/0021-Rspec.html">スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)</a></p>
+    <p><a href="../../articles/0021/0021-Rspec.html">スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)</a></p>
   </li>
 </ul>
 

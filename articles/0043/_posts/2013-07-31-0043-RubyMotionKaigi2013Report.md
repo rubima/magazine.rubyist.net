@@ -4,6 +4,7 @@ title: RubyMotion Kaigi 2013 レポート
 short_title: RubyMotion Kaigi 2013 レポート
 tags: 0043 RubyMotionKaigi2013Report
 ---
+{% include base.html %}
 
 
 ## RubyMotion Kaigi 2013 レポート

@@ -4,11 +4,12 @@ title: Ruby ビギナーのための CGI 入門 【第 1 回】 4 ページ
 short_title: Ruby ビギナーのための CGI 入門 【第 1 回】 4 ページ
 tags: 0011 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
-[付録ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
+[付録ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
 
 * Table of content
 {:toc}
@@ -123,7 +124,7 @@ CGI プログラムを実行するのはサーバーですから、
 サーバーを起動しないと CGI プログラムを実行出来ません。
 
 既に述べたようにサーバーはダウンロードしてもらった
-[rubima011-cgi.zip]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/rubima011-cgi.zip)
+[rubima011-cgi.zip]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/rubima011-cgi.zip)
 の中に含まれています。
 C:\ に rubima011-cgi.zip を展開した方は
 C:\rubima011-cgi のフォルダーに server.rb
@@ -136,7 +137,7 @@ CGI のプログラムを書くことですからね。
 この server.rb をダブルクリックで実行します。
 下のようなメッセージが表示されたらサーバーの起動は成功です。
 表示が微妙に違うかもしれませんが、それを気にする必要はありません。
-![server_invoke.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/server_invoke.jpg)
+![server_invoke.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/server_invoke.jpg)
 
 もし、コマンドプロンプト (黒いウィンドウ) だけが表示されて
 メッセージが表示されない場合はこのウィンドウに
@@ -147,7 +148,7 @@ CGI のプログラムを書くことですからね。
 [http://localhost:8080/](http://localhost:8080/) と打ち込むか、このリンクをたどって下さい。
 下図のように server.rb のあるフォルダーにあるファイルの一覧が表示されます。
 これで CGI のプログラムを実行する環境が整いました。
-![localhost.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/localhost.jpg)
+![localhost.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/localhost.jpg)
 
 念のためもう一度再度繰り返しますが、
 __CGI のプログラムを実行する時は CGI プログラムの実行前に server.rb を実行しておいて下さい__。
@@ -155,7 +156,7 @@ __CGI のプログラムを実行する時は CGI プログラムの実行前に
 サーバーが起動しないと CGI プログラムは実行されません。
 
 もし、server.rb でどうしても上手くいかないという時には
-[付録ページ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
+[付録ページ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
 で違う方法を紹介しています。
 トライしてみて下さい。
 
@@ -165,7 +166,7 @@ __CGI のプログラムを実行する時は CGI プログラムの実行前に
 こうする事でサーバーが foo.rb を
 CGI プログラムとして実行してくれます。
 ブラウザに「123」が表示されましたか？
-![foo.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo.jpg)
+![foo.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo.jpg)
 
 うまく「123」が表示されない場合、
 まずは foo.rb に Ruby の文法ミスがないかをチェックして下さい
@@ -245,7 +246,7 @@ print a
 print "\n"
 
 ```
-![foo2.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo2.jpg)
+![foo2.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo2.jpg)
 
 Hello World と表示されたでしょうか？　
 4, 5 行目の「a」というのが「変数」という機能です。
@@ -550,7 +551,7 @@ print "c = #{c}\n"
 
 ```
 
-![foo3.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo3.jpg)
+![foo3.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo3.jpg)
 
 a = 1 b = 2 c = 3 と表示されます。
 7行目までが実行された時点で
@@ -567,7 +568,7 @@ foo2.rb の CGI プログラムへのリンクを持った HTML を表示させ�
 [http://localhost:8080/foo4.rb](http://localhost:8080/foo4.rb) にアクセスしてみて下さい。
 
 foo4.rb は下の HTML と同じ内容を表示します。
-![foo4.html]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo4.html)
+![foo4.html]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo4.html)
 
 foo4.rb
 
@@ -586,7 +587,7 @@ print "</body>\n"
 print "</html>\n"
 
 ```
-![foo4.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo4.jpg)
+![foo4.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo4.jpg)
 
 foo4.rb では文字を何回かに分けて print で HTML を表示させます。
 もう少し簡単に表示する方法もありますが、
@@ -679,7 +680,7 @@ print "</html>\n"
 
 ```
 
-![foo5.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo5.jpg)
+![foo5.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-4/foo5.jpg)
 
 ## 後片付け
 
@@ -769,11 +770,11 @@ CGI プログラムで使った写真は筆者の実家の猫をデジカメで�
 ## バックナンバー
 
 {% for post in site.tags.CGIProgrammingForRubyBeginners %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
-[付録ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-3 %})
+[付録ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-Appendix %})
 
 

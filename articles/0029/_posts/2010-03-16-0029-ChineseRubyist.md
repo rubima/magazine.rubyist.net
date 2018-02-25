@@ -4,6 +4,7 @@ title: 中国の若きエンジニアの肖像 【第 3 回】ロビン・ルー
 short_title: 中国の若きエンジニアの肖像 【第 3 回】ロビン・ルー(北京IN-SRC)さん
 tags: 0029 ChineseRubyist
 ---
+{% include base.html %}
 
 
 ## はじめに
@@ -21,7 +22,7 @@ tags: 0029 ChineseRubyist
 
 語り手
 : ロビン・ルーさん
-![RobinLu_320_240.jpg]({{site.baseurl}}/images/0029-ChineseRubyist/RobinLu_320_240.jpg)
+![RobinLu_320_240.jpg]({{base}}{{site.baseurl}}/images/0029-ChineseRubyist/RobinLu_320_240.jpg)
 
 ### 簡単に自己紹介をお願いします。
 
@@ -156,7 +157,7 @@ Robin は、個人的にも筆者と仲のいいエンジニアである。偶�
 ## 中国の若きエンジニアの肖像 連載一覧
 
 {% for post in site.tags.ChineseRubyist %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

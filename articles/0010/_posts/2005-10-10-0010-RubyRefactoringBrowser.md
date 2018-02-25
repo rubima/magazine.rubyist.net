@@ -4,6 +4,7 @@ title: 解説 Ruby Refactoring Browser - Emacs でリファクタリング
 short_title: 解説 Ruby Refactoring Browser - Emacs でリファクタリング
 tags: 0010 RubyRefactoringBrowser
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -171,25 +172,25 @@ end
 
 
 さて emacs sample1.rb として起動します。
-![img1.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img1.png)
+![img1.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img1.png)
 
 M-x rrb-rename-local-variable とします。
-![img2.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img2.png)
+![img2.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img2.png)
 
 まずは「どのメソッド」のローカル変数を変更するか、を指定します。
 XComplex#+ ですね。 TAB による補完もできます。カーソル位置にある
 メソッドがデフォルト値になります。
 「XC[TAB]+[RET]」と入力すればよいでしょう。
-![img3.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img3.png)
+![img3.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img3.png)
 
 次に、ローカル変数の名前を選びます。これも TAB で補完できます。
 「o」とします。
 
 最後に、新しい名前を入力します。ここでは「other」とします。
-![img5.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img5.png)
+![img5.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img5.png)
 
 これで完了、下の図のように無事変数「o」が「other」に変更されました。
-![img6.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img6.png)
+![img6.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img6.png)
 
 ローカル変数の他にも、グローバル/インスタンス/クラス変数名、定数名、
 メソッド名の変更もだいたい同じようにします。例えばインスタンス変数なら
@@ -262,26 +263,26 @@ XComplex#+ ですね。 TAB による補完もできます。カーソル位置�
 
 まず、切り出したい部分の最初の行の適当な位置でマークをします。
 ただし、行の末尾でマークすると次の行からになるので注意してください。
-![img11.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img11.png)
+![img11.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img11.png)
 
 次に、切り出したい部分の最後の行にカーソルを移動させてください。
 これも行頭にカーソルを置くと前の行までになるのに注意してください。
-![img12.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img12.png)
+![img12.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img12.png)
 
 そして、M-x rrb-extract-method[RET] とします。
 新しいメソッドの名前を入力して C-m(Enter) を押せば実行されます。
-![img13.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img13.png)
+![img13.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img13.png)
 
 以下のようになります。切り出す部分で使われているローカル変数は
 新しいメソッドの引数になります。
-![img14.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img14.png)
+![img14.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img14.png)
 
 さて、 rrb-undo で元にもどしてから、今度は add という名前で切り出し
 てみます。
 
 すると、名前が重複しているため、以下のようなメッセージが
 表示されます。
-![img15.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img15.png)
+![img15.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img15.png)
 
 このように、ある程度はチェックをしてくれます。
 ただしこのチェックは完璧ではありません。名前の重複のような
@@ -356,18 +357,18 @@ Salesman#base_salary を Employee に移動させましょう。
 
 まず、カーソルを新しいメソッドが置かれる場所に移動させます。
 その行は空白行である必要があります。
-![img21.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img21.png)
+![img21.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img21.png)
 
 つぎに、 M-x rrb-pullup-method[RET] と入力します。
 
 移動するメソッドを入力します。 Salesman#base_salary と指定します。
-![img23.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img23.png)
+![img23.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img23.png)
 
 最後に、移動先のクラスを指定します。 Employee です。
-![img24.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img24.png)
+![img24.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img24.png)
 
 結果、以下の画像のようになります。
-![img25.png]({{site.baseurl}}/images/0010-RubyRefactoringBrowser/img25.png)
+![img25.png]({{base}}{{site.baseurl}}/images/0010-RubyRefactoringBrowser/img25.png)
 
 ここからさらに Engineer#salary をリファクタリングしていけますね。
 
@@ -453,7 +454,7 @@ Ruby Refactoring Browser の主要開発者です。 Ruby Refactoring Browser �
 ## 解説 Ruby Refactoring Browser 連載一覧
 
 {% for post in site.tags.RubyRefactoringBrowser %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

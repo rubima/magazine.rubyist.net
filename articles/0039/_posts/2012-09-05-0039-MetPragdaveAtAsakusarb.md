@@ -4,6 +4,7 @@ title: 達人プログラマ Dave Thomas が Asakusa.rb で話するというの
 short_title: 達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた
 tags: 0039 MetPragdaveAtAsakusarb
 ---
+{% include base.html %}
 
 
 書いた人 : たなべすなお

@@ -4,6 +4,7 @@ title: Chad Fowler on Ruby
 short_title: Chad Fowler on Ruby
 tags: 0033 ChadFowlerOnRuby
 ---
+{% include base.html %}
 
 
 本記事は [PragPub Issue 18, December 2010](http://pragprog.com/magazines) に掲載された Michael Swaine によるインタビュー記事 ["Chad Fowler on Ruby"](http://www.pragprog.com/magazines/2010-12/chad-fowler-on-ruby) を原著者の許可を得て翻訳・公開するものです。
@@ -15,7 +16,7 @@ tags: 0033 ChadFowlerOnRuby
 __Ruby のパイオニアへのインタビュー__
 
 インタビュアー： Michael Swaine
-: ![Chad-Fowler.jpg]({{site.baseurl}}/images/0033-ChadFowlerOnRuby/Chad-Fowler.jpg)
+: ![Chad-Fowler.jpg]({{base}}{{site.baseurl}}/images/0033-ChadFowlerOnRuby/Chad-Fowler.jpg)
 
 _Ruby に夢中になった人びとが出始めた頃から、Ruby がシリコンチップに載り、携帯電話で使われるようになる将来まで。Ruby コミュニティの伝説的人物がこれまでをふりかえり、その見識とこれからの期待を私たちに語ってくれます。_
 

@@ -4,12 +4,13 @@ title: RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02
 tags: 0033 NagoyaRubyKaigi02Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02
 
 ### はじめに
-: ![1.jpg]({{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/1.jpg)
+: ![1.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/1.jpg)
 
 　2011 年 02 月 26 日 (土) に 13 ヶ月ぶり 2 回目となる名古屋 Ruby 会議 02 が開催されました。今回は地域色の強い名古屋 (東海地方) っぽい Ruby 会議をテーマに企画を進めました。準備段階ではなぜか併催イベントである名古屋 Reject 会議のほうが先に発表者が埋まるというスタートになりましたが、最終的には多くの地元の方に発表していただくこともでき、参加者も予定を上回る応募があるなど、第 1 回より東海地方での Ruby の注目度の上昇を感じる地域 Ruby 会議となりました。
 
@@ -56,7 +57,7 @@ tags: 0033 NagoyaRubyKaigi02Report
 公式サイトデザインと T シャツデザインは [@hrstd](http://twitter.com/#!/hrstd) にデザインして頂きました。
 
 ### プログラム
-: ![2.jpg]({{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/2.jpg)
+: ![2.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/2.jpg)
 
 #### 13:00-13:10 オープニング
 
@@ -67,7 +68,7 @@ tags: 0033 NagoyaRubyKaigi02Report
 名古屋 Ruby 会議 02 の開会挨拶、協賛・協力紹介が行われました。
 
 #### 13:10-13:35 「Coq to Ruby による証明駆動開発」
-: ![3.jpg]({{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/3.jpg)
+: ![3.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/3.jpg)
 
 * 発表者
   * @mzp - CSNagoya
@@ -117,7 +118,7 @@ tags: 0033 NagoyaRubyKaigi02Report
 　Ruby と HTML で各種スマートフォンのネイティブアプリが作れるアプリケーションフレームワーク Rhodes の紹介とデモ。iOS や Android だけでなく BlackBerry や Windows Mobile などにも対応しているというのが面白い。ちなみに @the_haigo さんはまだ大学生でこれが初めての発表。すばらしい挑戦です。
 
 #### 15:00-15:30 「CGI を高速化する小手先テクニック」
-: ![4.jpg]({{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/4.jpg)
+: ![4.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/4.jpg)
 
 * 発表者
   * 桑田 誠
@@ -128,7 +129,7 @@ tags: 0033 NagoyaRubyKaigi02Report
 　CGI を高速化する小手先のテクニックだけを紹介。ライブラリを必要なときにだけ読み込むというような内容まではよくわかりましたが、中盤からはセッション ID の取り扱いが遅いから自力で生成するだとか、テンポラリファイルを別パーティションにつくるのは無駄といったネタなんじゃないかと思えるような本物の小手先のテクニックが次々と登場。しかし単なるおまじないとしてではなく実際のベンチマークと共に披露され私たちを驚かせてくれました。<br />　最後にあった「あなたのコードが遅いのはあなた自身のせいであって、Rubyのせいではない」という言葉はとても心に響きました。
 
 #### 15:30-16:00 Lightning Talks
-: ![5.jpg]({{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/5.jpg)
+: ![5.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/5.jpg)
 
 * Ruby 中級者への道 @suchi
   * Ruby 初心者から抜き出るにはということで発表者が取り組んだ方法を紹介。いろいろ模索した結果、脱初心者にはフルコースということで最初から最後まで読んだ何冊もの本を紹介していただきました。@suchi は決して (というか全く) 初心者ではないのですがそれでも逆引き本も最初から最後まで読む、時間がないならトイレでも読むという姿勢に背筋が伸びました。
@@ -189,14 +190,14 @@ tags: 0033 NagoyaRubyKaigi02Report
 [http://www.ustream.tv/channel/%E5%90%8D%E5%8F%A4%E5%B1%8Bruby%E4%BC%9A%E8%AD%B002](http://www.ustream.tv/channel/%E5%90%8D%E5%8F%A4%E5%B1%8Bruby%E4%BC%9A%E8%AD%B002)
 
 ### 併催イベント
-: ![6.jpg]({{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/6.jpg)
+: ![6.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/6.jpg)
 
 　『Ruby は Perl、Python、Smalltalk、Eiffel など多数の言語に受けた言語です。なので、他の言語の話をすることは未来の Ruby にとってとても大事なことです』と思ってしまった人たちが集まり、名古屋 Reject 会議というイベントが同フロアで開催されました。内容は関数型言語を中心に普通ではなかなか聞けない濃い話で盛り上がったようです。
 
 [http://partake.in/events/47ccda3b-82d2-4f89-aa83-395a26545b62](http://partake.in/events/47ccda3b-82d2-4f89-aa83-395a26545b62)
 
 ### アンケート結果
-: ![7.jpg]({{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/7.jpg)
+: ![7.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/7.jpg)
 
 参加者の方にアンケートに協力して頂きました (有効回答数 26) 。<br />
 以下、集計結果の概要です。
@@ -210,7 +211,7 @@ tags: 0033 NagoyaRubyKaigi02Report
 また今回懇親会を Paypal での支払い限定にするということをしたのですが、それに関しては「便利、普通」が 77% 、「面倒、Paypal 支払いのため参加できなかった」という方が 4% (1 票) でした。オンラインでの決済には抵抗があるという方もいると思いますが、懇親会の開催が負担になって開催をやめてしまうぐらいであれば先払いで事前に人数が確定できるこの方法はよいと思いました。
 
 ### おわりに
-: ![8.jpg]({{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/8.jpg)
+: ![8.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/8.jpg)
 
 　当日は当初の受付人数を超える 60 名以上の参加があり、盛況のうちにイベントを終えることができました。実行委員の立場としては多くの東海地方のスピーカーを迎えることができ、初めての発表の挑戦の場としても使ってもらえたことや、喫茶自由や併設イベントなどの新しい試みができたことに満足しています。
 

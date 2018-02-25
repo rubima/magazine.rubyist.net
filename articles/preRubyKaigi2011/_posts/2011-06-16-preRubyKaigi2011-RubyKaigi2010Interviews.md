@@ -4,6 +4,7 @@ title: ! はじめに
 short_title: ! はじめに
 tags: preRubyKaigi2011 RubyKaigi2010Interviews
 ---
+{% include base.html %}
 
 
 RubyKaigi2010 では gihyo.jp での [RubyKaigi2010 のレポート](http://gihyo.jp/news/report/01/rubykaigi2010)が日々更新されていましたが、実はそこには掲載されていない、開催終了後のインタビューがありました。KaigiFreaks レポート班と gihyo.jp 編集部が RubyKaigi2010 の運営委員長 (角谷さん) と運営委員長補佐 (島田さん) へインタビューした内容をるびまへ掲載します。お楽しみください。
@@ -448,7 +449,7 @@ __角谷__ 「こういうテーマだとしたら、どうします？　どう
 
 __大和田__ 最後に、RubyKaigi2011 の意気込みを
 
-__島田__ [札幌 Ruby 会議]({% post_url articles/0033/2011-04-05-0033-SapporoRubyKaigi03Report %})でお待ちしています。札幌 Ruby 会議なんですよぼくの頭の中は[^8]
+__島田__ [札幌 Ruby 会議]({{base}}{% post_url articles/0033/2011-04-05-0033-SapporoRubyKaigi03Report %})でお待ちしています。札幌 Ruby 会議なんですよぼくの頭の中は[^8]
 
 __島田__ そういう意味で言うと、運営委員長をやりたいです
 

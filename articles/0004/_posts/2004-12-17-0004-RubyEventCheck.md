@@ -4,6 +4,7 @@ title: 0004-RubyEventCheck
 short_title: 0004-RubyEventCheck
 tags: 0004 RubyEventCheck
 ---
+{% include base.html %}
 
 
 ## Ruby 関連イベント
@@ -30,7 +31,7 @@ Ruby に関連するイベントを紹介します。
 
 関西圏におけるRuby勉強会です。
 
-本誌連載[Win32OLE活用法 第 2 回]({% post_url articles/0004/2004-12-17-0004-Win32OLE %})の cuzic さんによる Win32OLE をテーマにした勉強会が予定されています。
+本誌連載[Win32OLE活用法 第 2 回]({{base}}{% post_url articles/0004/2004-12-17-0004-Win32OLE %})の cuzic さんによる Win32OLE をテーマにした勉強会が予定されています。
 
 詳細については、
 [日本 Ruby の会 公式 Wiki - Rubyist の集い](http://jp.rubyist.net/?RubyCircle)

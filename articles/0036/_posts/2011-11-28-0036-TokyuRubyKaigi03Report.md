@@ -4,12 +4,13 @@ title: RegionalRubyKaigi レポート (25) TokyuRuby 会議 03
 short_title: RegionalRubyKaigi レポート (25) TokyuRuby 会議 03
 tags: 0036 TokyuRubyKaigi03Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート  TokyuRuby 会議 03
 
 ### 開催概要
-: ![image01.jpg]({{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image01.jpg)
+: ![image01.jpg]({{base}}{{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image01.jpg)
 
 開催日
 : 2011-05-29 (日) 14:00 - 19:30
@@ -34,7 +35,7 @@ tags: 0036 TokyuRubyKaigi03Report
 TokyuRuby 会議 03 は、東京での 7 回目の RegionalRuby 会議として、2011 年 5 月 29 日に開催されました。本記事はその様子をレポートしたものです。
 
 ### TokyuRuby 会議とは
-: ![image04.jpg]({{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image04.jpg)
+: ![image04.jpg]({{base}}{{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image04.jpg)
 
 TokyuRuby 会議は、Ruby に興味のあるエンジニアが集う Tokyu.rb が主催する LT 大会です。第一回からの特徴として、「お酒・食べ物持ち込みあり」「その場でのあみだくじで参加者から LT 発表者を抽出する」「基調講演は当日の投票で選ぶ」などがあります。
 今回は色々なご縁を通じ、サントリー様に「ザ・プレミアムモルツを楽しむ会」を併設して頂けることとなり、約 3 時間にわたってザ・プレミアムモルツの生が提供されました。
@@ -57,19 +58,19 @@ __前半戦 LT 一覧__
 * kwappa: 仕事で Ruby を書いてみた (仮)
 * 2celeb (高木): Rubyist の為の構造化クッキング
 
-: ![image03.jpg]({{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image03.jpg)
+: ![image03.jpg]({{base}}{{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image03.jpg)
 
 トップバッターのサントリー様 LT ですが、本来であれば「ザ・プレミアムモルツを楽しむ会」では 15 分プレゼンなどを行う事が普通であるところを、一緒に盛り上がろうということで、LT 枠にて参加して頂きました。更に会場スポンサーである EC ナビ様 （現 VOYAGE GROUP 様） LT が続き、いよいよ今回の募集に応募して下さった方々の LT が始まります。
 
 前半戦に発表した皆様は、アルコールが飲める方はちょうど良い酔い加減だったのか、あるいは LT 慣れした猛者が揃っていたのか、大変スムーズに発表を進め、時間切れのドラはほとんど鳴りませんでした。裏の裏を行く謎のテクニックから、Ruby 周辺に関する思い、あるいは自分が良いと思う技術の紹介など、バリエーションに富んだ LT に場は盛り上がり、前半戦 LT は予定より10分以上早く終了しました。
 
 ### 抽選 LT
-: ![image06.jpg]({{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image06.jpg)
+: ![image06.jpg]({{base}}{{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image06.jpg)
 
 TokyuRuby 会議名物となっている抽選 LT は、事前に断りを入れた参加者以外の一般参加者の中から、あみだくじで数人を抽出し、１０ 分程度の準備の後に ３ 分間の LT をしてもらおう、というものです。スタッフである kishima 氏が作成したあみだくじプログラム （もちろん Ruby で書かれている） をスクリーンで表示しながら動かし、今回も ５ 人の方にご登壇頂きました。即興ですばらしいプレゼンを作った方もいれば、当選を期待して既にプレゼンを作ってある方もいて、完成度の高いプレゼンでスムーズに発表を済ませ、会場を驚かせていました。
 
 ### 後半戦 LT
-: ![image05.jpg]({{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image05.jpg)
+: ![image05.jpg]({{base}}{{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image05.jpg)
 
 後半戦の途中で、ザ・プレミアムモルツの提供が終了しました。
 
@@ -88,14 +89,14 @@ __後半選 LT 一覧__
 * こしばとしあき: 東京 Ruby 会議の作り方
 * あんどうやすし (technohippy): マイ・フェア・カリスマ
 
-: ![image02.jpg]({{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image02.jpg)
+: ![image02.jpg]({{base}}{{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image02.jpg)
 
 後半も予定よりも 30 分ほど早くプログラムが進行していたこともあり、前回・前々回の LT にて爆笑プレゼンで最多得票を得た「カリスマ」 technohippy 氏のプレゼンを残し、途中で「発表希望者は早いもの順で発表できる」という自由参加の AcceptLT を実施することになりました。
 
 AcceptLT の参加人数は 10 人を越え、のべ人数で 40 人以上が発表を行うという結果になりました。そして AcceptLT が終了した後、「カリスマ」 technohippy 氏の LT が行われ、全ての LT が終了しました。
 
 ### 投票結果
-: ![image00.jpg]({{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image00.jpg)
+: ![image00.jpg]({{base}}{{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image00.jpg)
 
 まず「酒」部門、これはダントツでザ・プレミアムモルツをご提供下さったサントリー様でした。
 

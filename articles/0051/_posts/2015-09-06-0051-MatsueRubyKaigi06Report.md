@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (51) 松江 Ruby 会議 06
 short_title: RegionalRubyKaigi レポート (51) 松江 Ruby 会議 06
 tags: 0051 MatsueRubyKaigi06Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート 松江 Ruby 会議 06
@@ -20,14 +21,14 @@ tags: 0051 MatsueRubyKaigi06Report
 * Togetter まとめ：[http://togetter.com/li/760234](http://togetter.com/li/760234)
 * 公式タグ・Twitter：[#matrk06](https://twitter.com/hashtag/matrk06)
 
-![07_closing.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/07_closing.jpg)
+![07_closing.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/07_closing.jpg)
 
 ### オープンソースの力 (基調講演)
 
 * 発表者
   * まつもとゆきひろ氏 ([@yukihiro_matz](https://twitter.com/yukihiro_matz))
 
-![01_keynote.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/01_keynote.jpg)
+![01_keynote.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/01_keynote.jpg)
 
 松江ならではの毎年恒例のまつもとゆきひろ氏の講演です (贅沢)。タイトルの「オープンソースの力」とはオープンソース採用などで発生する外向きの力ではなく、オープンソースコミュニティ内での (内向きの) 力について講演いただきました。生き残ってきたオープンソースプロダクトを複数持つ経験を振り返った内容でした。スタートアップで成功する人は「IQ の高い人」ではなく「パターン認識のできる人」という記事の内容を元に以下の成功パターンを振り返りました。
 
@@ -45,7 +46,7 @@ tags: 0051 MatsueRubyKaigi06Report
 * 発表者
   * 笹田耕一氏 ([@_ko1](https://twitter.com/_ko1))
 
-![02_short.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/02_short.jpg)
+![02_short.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/02_short.jpg)
 
 笹田氏は、YARV を作りはじめてから 2014 年で 10 周年、現在は Heroku 社で Ruby のフルタイムコミッタとして Ruby の品質を上げる作業をされています。主に以下の内容について講演いただきました。
 
@@ -83,7 +84,7 @@ session1 については、あらかじめ問題の回答を参加者には考�
 session2 については、残念ながら必要なファイルがインターネット上にある問題の時に無線 LAN の調子が悪くなりました。参加者の方が作成したプログラムを実行するタイミングで不調になったので、エラーが出力されて参加者の方が戸惑う展開もありました。
 
 表彰では会場を盛り上げるコードを書いた岩石嶺氏と前田修吾氏がそれぞれ表彰されて景品が渡されました。
-![03_livecoding.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/03_livecoding.jpg)
+![03_livecoding.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/03_livecoding.jpg)
 
 ### 「納品のない受託開発」と、エンジニアの働きかたのこれから (ゲスト講演)
 
@@ -119,7 +120,7 @@ session2 については、残念ながら必要なファイルがインター�
 むしろ問題となるのは、多重請負の枠組みの中で仕事を請けようとすることであり、その問題を解決するために、納品のない受託開発のオープン化に取り組んでおられるそうです。
 
 最後に、その取り組みとして[ギルド](http://www.sonicgarden.jp/guild)とアカデミーについてご紹介いただきました。
-![04_guest.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/04_guest.jpg)
+![04_guest.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/04_guest.jpg)
 
 ### Matsue.rb のふりかえり - 2014 -
 
@@ -142,7 +143,7 @@ session2 については、残念ながら必要なファイルがインター�
 3.については、Matsue.rb のメンバである橋本氏が RubyKaja 2014 で受賞した件に関することでした。残念ながら御本人は家族が風邪を引いたのでお世話をしに帰ったとのことで発表時には会場に不在でしたが、Twitter のお祝いコメントは御本人も家から確認していただけたようでした。
 
 他にも Matsue.rb のメンバのプログラミングについて触れながら和やかに発表を終えられました。
-![05_matsuerb.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/05_matsuerb.jpg)
+![05_matsuerb.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/05_matsuerb.jpg)
 
 ### スモウルビーでライブコーディング
 
@@ -151,7 +152,7 @@ session2 については、残念ながら必要なファイルがインター�
 * 資料
   * [https://github.com/nobyuki/matrk06](https://github.com/nobyuki/matrk06)
 
-![06_smalruby.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/06_smalruby.jpg)
+![06_smalruby.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/06_smalruby.jpg)
 
 本多氏は、松江市内の[プログラミング少年団](http://smalruby.jp/)で毎月 1 回第三日曜日島根家庭の日に子供たちに Ruby を教えていらっしゃいます。10 月からはコーダー道場松江として高校生以下の子供を対象にプログラミングを教える活動をされています。
 
@@ -238,7 +239,7 @@ session2 については、残念ながら必要なファイルがインター�
 懇親会では[@KatoAtsue](https://github.com/KatoAtsue/)さんデザインの宍道湖モチーフにした Matsue.rb T シャツを競ってジャンケン大会が行われました。
 (T シャツは[株式会社 spice life さんのオリジナル T シャツ作成サービス tmix](http://tmix.jp)からご提供いただきました！)
 
-![08_party01.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/08_party01.jpg) ![08_party02.jpg]({{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/08_party02.jpg)
+![08_party01.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/08_party01.jpg) ![08_party02.jpg]({{base}}{{site.baseurl}}/images/0051-MatsueRubyKaigi06Report/08_party02.jpg)
 
 ## 著者について
 

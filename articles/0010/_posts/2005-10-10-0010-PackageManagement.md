@@ -4,6 +4,7 @@ title: シリーズ パッケージマネジメント 【第 2 回】 RubyGems (
 short_title: シリーズ パッケージマネジメント 【第 2 回】 RubyGems (2)
 tags: 0010 PackageManagement
 ---
+{% include base.html %}
 
 
 ## はじめに
@@ -333,7 +334,7 @@ UNIXユーザー向けには、こういう_難しい_やり方がある：
 {% endraw %}
 {% endhighlight %}
 
-![gem_server_screenshot.jpg]({{site.baseurl}}/images/0010-PackageManagement/gem_server_screenshot.jpg)
+![gem_server_screenshot.jpg]({{base}}{{site.baseurl}}/images/0010-PackageManagement/gem_server_screenshot.jpg)
 
 gem_server の話はもうちょっと後でしよう。
 
@@ -437,7 +438,7 @@ Ruby Central は非営利企業で、
 ## シリーズ パッケージマネジメント 連載一覧
 
 {% for post in site.tags.PackageManagement %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

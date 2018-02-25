@@ -4,6 +4,7 @@ title: 書籍紹介『みんなの Python』
 short_title: 書籍紹介『みんなの Python』
 tags: 0016 Book
 ---
+{% include base.html %}
 
 
 編集：ささだ

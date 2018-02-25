@@ -4,6 +4,7 @@ title: Ruby で暦を研究する
 short_title: Ruby で暦を研究する
 tags: 0051 FebruaryRectangleWithRuby
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -714,7 +715,7 @@ puts febs_detail conv(2291..2303)
 ここまでの長旅ご苦労様でした。
 
 記事中で使用した Ruby コードをまとめておきます。
-興味のある方は、[rect_feb.rb]({{site.baseurl}}/images/0051-FebruaryRectangleWithRuby/rect_feb.rb) からダウンロードしてください。
+興味のある方は、[rect_feb.rb]({{base}}{{site.baseurl}}/images/0051-FebruaryRectangleWithRuby/rect_feb.rb) からダウンロードしてください。
 
 ## おまけ
 

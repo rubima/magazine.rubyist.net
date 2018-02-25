@@ -4,6 +4,7 @@ title: シリーズ パッケージマネジメント 【第 1 回】 RubyGems (
 short_title: シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)
 tags: 0006 PackageManagement
 ---
+{% include base.html %}
 
 
 編集: babie
@@ -236,7 +237,7 @@ RPA の主要開発者 Mauricio FernaOdez 氏に開発の経緯等を述べて�
 ## シリーズ パッケージマネジメント 連載一覧
 
 {% for post in site.tags.PackageManagement %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

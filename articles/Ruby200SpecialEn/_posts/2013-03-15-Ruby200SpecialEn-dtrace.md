@@ -4,6 +4,7 @@ title: Ruby 2.0.0： DTrace support
 short_title: Ruby 2.0.0： DTrace support
 tags: Ruby200SpecialEn dtrace
 ---
+{% include base.html %}
 
 
 Author：Aaron Patterson ([@tenderlove](https://twitter.com/tenderlove))

@@ -4,6 +4,7 @@ title: OSSC2004　Ruby BoF レポート
 short_title: OSSC2004　Ruby BoF レポート
 tags: 0002 OSSC2004RubyBoFReport
 ---
+{% include base.html %}
 
 
 書いた人：日本 Ruby の会 助田雅紀 
@@ -32,7 +33,7 @@ BoF 開始直前に日本 Ruby の会会長の高橋さんと話す機会があ�
 は残念です)。 
 
 ## BoF
-: ![0002-OSSC2004BoF.png]({{site.baseurl}}/images/0002-OSSC2004RubyBoFReport/0002-OSSC2004BoF.png)
+: ![0002-OSSC2004BoF.png]({{base}}{{site.baseurl}}/images/0002-OSSC2004RubyBoFReport/0002-OSSC2004BoF.png)
 
 BoF は、高橋さんの [「日本 Ruby の会」](http://jp.rubyist.net/) 発足の
 挨拶、そして、 (高橋さんが気にしていた) Ruby を知っている人、使っている

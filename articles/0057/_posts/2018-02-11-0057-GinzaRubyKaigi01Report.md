@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
 short_title: RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
 tags: 0057 GinzaRubyKaigi01Report
 ---
+{% include base.html %}
 
 ## RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
 
@@ -20,12 +21,12 @@ tags: 0057 GinzaRubyKaigi01Report
 Ginza.rb は 2013 年 6 月に発足し、毎月第 3 火曜日にミートアップを開催しています。 2017 年 8 月に 50 回目のミートアップを迎える事を記念して、 ぎんざ Ruby 会議 01 が開催されました。その様子についてレポートします。
 
 ### 開会挨拶
-![ken1flan.jpg]({{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/ken1flan.jpg)
+![ken1flan.jpg]({{base}}{{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/ken1flan.jpg)
 
 いつもミートアップ告知ページで愛嬌のある猫のイラストを書かれている ([@ken1flan](https://github.com/ken1flan)) さんによると、 Ruby on Rails 4 が出る頃に、ランチで話をしている間に「Rails 4 を勉強しなきゃね」という話題になり、 Ginza.rb が始まったそうです。Ruby on Rails 周辺の話題が多く聞けるミートアップという印象がありましたが、その理由を知ることができました。
 
 ### 基調講演「Rails コミュニティの話」 from 松田 明 ([@a_matsuda](https://github.com/amatsuda))
-![a_matsuda.jpg]({{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/a_matsuda.jpg)
+![a_matsuda.jpg]({{base}}{{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/a_matsuda.jpg)
 
 Ruby と Rails 両方のコミッターである松田さんから「 Ginza.rb というコミュニティが Rails 4.0 以降に始まったので、それ以前の Rails のコミュニティについて、語ろうかな」と話されました。
 
@@ -50,7 +51,7 @@ Rails にコミットを残すと名前が載る、[Rails Contributors](http://c
 ### 発表
 
 #### 「ActiveSupport::Multibyte::Unicode::UnicodeDatabase を消したかった」 from 松島 史秋  ([@mtsmfm](https://github.com/mtsmfm))
-![mtsmfm.jpg]({{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/mtsmfm.jpg)
+![mtsmfm.jpg]({{base}}{{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/mtsmfm.jpg)
 
 [資料](https://speakerdeck.com/mtsmfm/remove-as-mb-unicode-unicodedatabase)
 
@@ -59,14 +60,14 @@ Rails を使っている方は Rails で 1 番大きなファイルが何かご�
 ちょうど直前に基調講演をされた松田さんの Rails Conf 2016 での[講演資料](https://speakerdeck.com/a_matsuda/3x-rails) をヒントに、 Unicode 正規化について理解を深めながら、前述の処理を Ruby 本体のメソッドで置き換えていき、この巨大ファイルを使った処理を削減する挑戦について発表されました。最終的に Rails 本体に送ったプルリクエスト [#26743](https://github.com/rails/rails/pull/26743) ですが、 Rails 5 がサポートする Ruby のバージョンが比較的古いために、マージすることができないそうです。Rails 6.0 でマージされるのを楽しみにしたいと思います。
 
 #### 「マイクロサービス指向 Rails API 開発ガイド」 from 森 久太郎 ([@qsona](https://github.com/qsona))
-![qsona.jpg]({{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/qsona.jpg)
+![qsona.jpg]({{base}}{{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/qsona.jpg)
 
 [資料](https://speakerdeck.com/qsona/building-rails-api-on-microservices)
 
 森さんは、勤務先の会社のビジネス上、 Web API や マイクロサービスを大事にして開発されているそうです。Web API でよくある失敗を避けるために「強いリソース指向」というものを取り決めて開発しているということでした。強いリソース指向で定義したリソースを BFF (Backends For Frontend) でまとめあげる例が、実際に開発したスマートフォンアプリの画面で示されていました。 UI の柔軟さに対応するためにもドメインモデルの考察が重要だということでした。そして、 Rails で実装する詳細について話されました。
 
 #### 「Rails を仕事にする会社で新卒が1年間学んだこと」 from 小林 純一 ([@junk0612](https://github.com/junk0612))
-![junk0612.jpg]({{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/junk0612.jpg)
+![junk0612.jpg]({{base}}{{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/junk0612.jpg)
 
 [資料](https://speakerdeck.com/junk0612/railswoshi-shi-nisuruhui-she-dexin-zu-ga1nian-jian-xue-ndakoto)
 
@@ -81,14 +82,14 @@ Rails を使っている方は Rails で 1 番大きなファイルが何かご�
 この発表は、前月に行われたイベント [Rails Developers Meetup #3](https://rails-developers-meetup.connpass.com/event/60765/) で発表された、勤務先の先輩である伊藤浩一さんの発表([資料](https://www.slideshare.net/koic/stairway-to-the-pragmatic-rails-programmer)) と対をなすそうです。プルリクエストのレビューで同じ指摘をされないために、プルリクエストを出す前にチームメンバーになりきってレビューしてみたり、自分の性格を考慮して詳細が伝わるコミットを書く習慣づけをしたりといった工夫をされているそうです。新人エンジニアでなくとも役立ちそうでした。
 
 #### 「Spring Framework と比較して学ぶ、Web アプリケーションフレームワークの責務分担」 from 鈴木 雄大 ([@onigra](https://github.com/onigra))
-![onigra.jpg]({{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/onigra.jpg)
+![onigra.jpg]({{base}}{{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/onigra.jpg)
 
 [資料](https://speakerdeck.com/onigra/ginza-ruby-kaigi-01)
 
 Ruby on Rails という Webアプリケーションフレームワークには、批判が割りと多いそうです。鈴木さんは、現在お勤めの会社に転職後、 Java + Spring Framework (Spring Boot) に触れたことから、 Spring Framework との比較を通して、 Ruby on Rails への批判の内容を理解しようという発表をされました。2 つのフレームの機能を比較していくと、Rails はユースケースを絞って割り切った設計をしていて、マッチしないビジネス要件にはつらみが出ることもあるそうです。一方、 Spring Framework は、はじめから広いユースケースに対応するように設計されているため、複雑なビジネス要件や長期的な拡張性を考慮したユースケースに適しているが、その分、あらかじめ理解しなくてはいけないことも多いそうです。最後に、「どちらが優れていると優劣をつけるのではなく、フレームワークやアーキテクチャの思想とユースケースを理解して、適切な技術選定をしましょう」と締められました。
 
 #### 「Railsアプリケーションのパフォーマンス改善手法」 from 国分 崇志 ([@k0kubun](https://github.com/k0kubun))
-![k0kubun.jpg]({{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/k0kubun.jpg)
+![k0kubun.jpg]({{base}}{{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/k0kubun.jpg)
 
 [資料](https://speakerdeck.com/k0kubun/number-ginzarb)
 
@@ -117,7 +118,7 @@ Ruby on Rails という Webアプリケーションフレームワークには�
 
 
 ### 基調Q&amp;A from 上薗 竜太 ([@kamipo](https://github.com/kamipo))
-![kamipo_and_willnet.jpg]({{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/kamipo_and_willnet.jpg)
+![kamipo_and_willnet.jpg]({{base}}{{site.baseurl}}/images/0057-GinzaRubyKaigi01Report/kamipo_and_willnet.jpg)
 
 上薗さん (左) と聞き手の前島さん ([@willnet](https://github.com/willnet)) (右)
 

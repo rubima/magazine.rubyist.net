@@ -4,6 +4,7 @@ title: 8-bit風ゲームをつくるフレームワークburnの紹介
 short_title: 8-bit風ゲームをつくるフレームワークburnの紹介
 tags: 0047 IntroductionToBurn
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -19,7 +20,7 @@ tags: 0047 IntroductionToBurn
 本稿では、駆け出しの Rubyist であるところの著者が burn を作るにあたって、C 言語ジェネレータや ruby2c トランスレータ開発の試みの一部を含めて悪戦苦闘した結果をつまびらかにします。
 
 ## デモ
-![rubima-wars.png]({{site.baseurl}}/images/0047-IntroductionToBurn/rubima-wars.png)
+![rubima-wars.png]({{base}}{{site.baseurl}}/images/0047-IntroductionToBurn/rubima-wars.png)
 
 今回るびまに掲載して頂くにあたって、デモ代わりに burn で簡単なシューティングゲーム [RUBIMA WARS!](http://k.swd.cc/burn/resource/example/rubima-wars/emulator.html) を作ってみました。リンクを踏むと音が鳴るので注意。Chrome か Firefox で動きますが、burn v0.1.3 現在ではスマホには対応しておらず、PC のキーボード入力のみ受け付けます。Enter キーでゲームスタートして、x キーで弾を発射します。3 面が激ムズで、著者もまだクリアできていません。
 
@@ -66,7 +67,7 @@ burn を使うとこの ROM イメージを簡単に作成することができ�
 ### burn の C 言語ジェネレータ
 
 本節では実際の例を通して、burn が Fuel DSL から C 言語のソースコードをどのように生成していくのかを見ていきます。例えば以下のようなシンプルな Hello world だけを表示するアプリについて考えます。
-![hello-world.png]({{site.baseurl}}/images/0047-IntroductionToBurn/hello-world.png)
+![hello-world.png]({{base}}{{site.baseurl}}/images/0047-IntroductionToBurn/hello-world.png)
 
 この画面は、Fuel DSL では以下のように記述します。
 
@@ -104,7 +105,7 @@ void main(void){
 ### 実装した ruby2c トランスレータ
 
 次のような動的な表現について、どのように内部的に処理されるかを見てみましょう。
-![star.gif]({{site.baseurl}}/images/0047-IntroductionToBurn/star.gif)
+![star.gif]({{base}}{{site.baseurl}}/images/0047-IntroductionToBurn/star.gif)
 
 この画面は、Fuel DSL では以下のように記述します。
 
@@ -235,7 +236,7 @@ end
 ## まとめ
 {% isbn_image_right('4048687158') %}
 
-「メタプログラミング Ruby」や [Yugui さん]({% post_url articles/0035/2011-09-26-0035-Hotlinks %})の[ブログ](http://yugui.jp/)にお世話になった話とか、他にも書きたいことはたくさんあるのですが、書きすぎると本当に書きたいことが埋もれてしまうのでこの辺りで筆を置きます。
+「メタプログラミング Ruby」や [Yugui さん]({{base}}{% post_url articles/0035/2011-09-26-0035-Hotlinks %})の[ブログ](http://yugui.jp/)にお世話になった話とか、他にも書きたいことはたくさんあるのですが、書きすぎると本当に書きたいことが埋もれてしまうのでこの辺りで筆を置きます。
 
 burn は大変幸運なことに、[reddit で v0.1.3 のリリースをアナウンスした](http://www.reddit.com/r/programming/comments/226vf0/build_your_own_nes_rom_file_with_ruby/)ところホットエントリに入ったことがあり、海外の人に興味を持ってもらうことができました。逆に日本語での情報発信が全く出来ておらず、このるびま記事が日本語で書かれた初めての紹介ドキュメントです。なんて幸運な恵まれた gem でしょう。執筆の機会を頂いたるびま編集部の皆様に心から感謝します。
 

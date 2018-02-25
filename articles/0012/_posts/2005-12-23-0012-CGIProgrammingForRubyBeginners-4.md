@@ -4,10 +4,11 @@ title: Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 4
 short_title: Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 4
 tags: 0012 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
 
 * Table of content
 {:toc}
@@ -38,7 +39,7 @@ tags: 0012 CGIProgrammingForRubyBeginners
 ここでは一番シンプルな例を紹介します。
 
 C:\rubima012-cgi\message.txt
-![message.txt]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/message.txt)
+![message.txt]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/message.txt)
 
 file_read.rb
 
@@ -68,7 +69,7 @@ Windows のエクスプローラーのパス名に使われている値と同じ
 
 ちなみに Windows ではパス名に「\」と「/」の両方を使うことが出来ます。
 嘘だと思う人はエクスプローラーで試してみて下さい。
-![path_windows.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/path_windows.jpg)
+![path_windows.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/path_windows.jpg)
 
 open の処理はしばしば「ファイルを開く」と言われます。
 open は英語で「開く」という意味ですから、
@@ -169,7 +170,7 @@ update.rb という CGI プログラムによって処理されて、
 データを読み込んで、そのデータを元に掲示板を表示します。
 
 全体の流れを図にすると、下図のようになります。
-![bbs_flow.PNG]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/bbs_flow.PNG)
+![bbs_flow.PNG]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/bbs_flow.PNG)
 
 ### 投稿データを保存する
 
@@ -179,7 +180,7 @@ update.rb という CGI プログラムによって処理されて、
 投稿用の bbs.html と update.rb は下のようになります。
 
 bbs.html 
-![bbs.html]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/bbs.html)
+![bbs.html]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/bbs.html)
 
 update.rb
 
@@ -309,7 +310,7 @@ update.rb を「"」を使って書き直しみて下さい。
 ちゃんと書き込み完了のページが表示されたでしょうか？
 投稿データの書き込みが出来たなら、
 次は保存した投稿データを掲示板として表示させてみます。
-![update_bbs.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/update_bbs.jpg)
+![update_bbs.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/update_bbs.jpg)
 
 ### 掲示板データを表示する
 
@@ -387,7 +388,7 @@ HTML エスケープされた投稿データはヒアドキュメントの文字
 [http://localhost:8080/bbs.rb](http://localhost:8080/bbs.rb) にアクセスしてみて下さい。
 ちゃんと書き込みは出来ますし、
 投稿されたデータも表示されますね。
-![bbs.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/bbs.jpg)
+![bbs.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-4/bbs.jpg)
 
 でも、この一行掲示板には色々な問題があります。
 ちょっと試しただけでも
@@ -470,7 +471,7 @@ Ruby
 実は筆者の下宿は 64kbps で、編集の時にストレスが溜まっています。
 早くブロードバンド環境にしたいけど、もうすぐ引っ越すしなあ…。
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
 
 

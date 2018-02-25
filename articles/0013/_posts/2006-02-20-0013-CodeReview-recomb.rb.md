@@ -4,9 +4,10 @@ title: 0013-CodeReview-recomb.rb
 short_title: 0013-CodeReview-recomb.rb
 tags: 0013 CodeReview
 ---
+{% include base.html %}
 
 
-[あなたの Ruby コードを添削します 【第 3 回】 dbf.rb]({% post_url articles/0013/2006-02-20-0013-CodeReview %}) で解説した、添削後のサンプルコードです。
+[あなたの Ruby コードを添削します 【第 3 回】 dbf.rb]({{base}}{% post_url articles/0013/2006-02-20-0013-CodeReview %}) で解説した、添削後のサンプルコードです。
 
 ```ruby
 #!/usr/local/bin/ruby -Ke

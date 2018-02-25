@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (41) 関西 Ruby 会議 05
 short_title: RegionalRubyKaigi レポート (41) 関西 Ruby 会議 05
 tags: 0045 KansaiRubyKaigi05Report
 ---
+{% include base.html %}
 
 
 書いた人：無量井 ([@muryoimpl](https://twitter.com/muryoimpl))
@@ -16,7 +17,7 @@ tags: 0045 KansaiRubyKaigi05Report
 これまでは [KOF](https://k-of.jp/) と併催というかたちでの開催でしたが、今回初めての単独開催に挑戦しました。これはその開催当日の様子を伝えるレポートです。
 
 #### 開催概要
-: ![all.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/all.jpg)
+: ![all.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/all.jpg)
 
 開催日
 :  2013 年 8 月 31 日 (土) 10:00 〜 18:00
@@ -46,7 +47,7 @@ togetter
 　photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918489512970742642?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918489512970742642&oid=106027193808506964705)
 
 ### テーマ: survive
-: ![survive.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/survive.jpg)
+: ![survive.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/survive.jpg)
 
 仕事で使う Ruby、趣味として使う Ruby、学びの道具として使う Ruby。
 
@@ -62,13 +63,13 @@ photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums
 
 会場には関西地区からだけでなく全国各地から訪れたたくさんの Rubyist にご参加いただきました。ちょっとした電車のトラブルとかあって、開始時刻が遅れたのはご愛嬌(^_^;)
 
-![kanpa.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kanpa.jpg)
+![kanpa.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kanpa.jpg)
 : 
 
-![kaigiscreen.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kaigiscreen.jpg)
+![kaigiscreen.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kaigiscreen.jpg)
 : 
 
-![scene1.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/scene1.jpg)
+![scene1.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/scene1.jpg)
 : 
 
 左から photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172020302591426?authkey=CPKEwsbvycXi_gE&pid=5920172020302591426&oid=106947570136338985096)
@@ -79,13 +80,13 @@ photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums
 
 <br /><br /><br /><br /><br /><br /><br /><br />
 
-![receipt.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/receipt.jpg)
+![receipt.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/receipt.jpg)
 : 
 
-![frontview.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/frontview.jpg)
+![frontview.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/frontview.jpg)
 : 
 
-![rearview.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/rearview.jpg)
+![rearview.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/rearview.jpg)
 : 
 
 左から photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920171996777165090?authkey=CPKEwsbvycXi_gE&pid=5920171996777165090&oid=106947570136338985096)
@@ -96,13 +97,13 @@ photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums
 
 <br /><br /><br /><br /><br /><br /><br /><br />
 
-![meeting.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/meeting.jpg)
+![meeting.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/meeting.jpg)
 : 
 
-![committee.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/committee.jpg)
+![committee.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/committee.jpg)
 : 
 
-![setontable.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/setontable.jpg)
+![setontable.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/setontable.jpg)
 : 
 
 左から photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920171881746037650?authkey=CPKEwsbvycXi_gE&pid=5920171881746037650&oid=106947570136338985096)
@@ -112,7 +113,7 @@ photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172583283242194?authkey=CPKEwsbvycXi_gE&pid=5920172583283242194&oid=106947570136338985096)
 
 ## Rubyist によるアジャイル開発 by 川端光義さん( [@agilekawabata](https://twitter.com/agilekawabata) )
-: ![kawabata.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kawabata.jpg)
+: ![kawabata.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kawabata.jpg)
 
 いきなり「Ruby の話はしません。」から始まった発表は、川端さんの経営する[アジャイルウェア](http://agileware.jp)の事例紹介から普段の仕事のやり方やお客様の巻き込み方についてのお話でした。
 
@@ -128,7 +129,7 @@ photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums
 photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172145008264354?authkey=CPKEwsbvycXi_gE&pid=5920172145008264354&oid=106947570136338985096)
 
 ## migrate to magazine.rubyist.net by Kazuhiro Nishiyama さん( [@znz](https://twitter.com/znz) )
-: ![nishiyama.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/nishiyama.jpg)
+: ![nishiyama.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/nishiyama.jpg)
 
 Ruby コミッターである西山さんの発表は、[うさぎと亀が動くプレゼンツール](http://rabbit-shocker.org/)を使って、[Rubyist Magazine](http://magazine.rubyist.net/) サーバの移行で実行したことについてお話いただきました。
 
@@ -144,7 +145,7 @@ Ruby コミッターである西山さんの発表は、[うさぎと亀が動�
 photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172260528120562?authkey=CPKEwsbvycXi_gE&pid=5920172260528120562&oid=106947570136338985096)
 
 ## No Test No Ruby by 福井　修さん( [@iR3](https://twitter.com/iR3))
-: ![fukui.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/fukui.jpg)
+: ![fukui.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/fukui.jpg)
 
 [Ruby 関西](http://rubykansai.doorkeeper.jp/)の co-founder である福井さん。発表は、Ruby と Ruby で使えるテストツールを使って「検証」をしよう、更にはその「検証」を自動化しようというお話でした。
 
@@ -158,7 +159,7 @@ photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums
 photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918238179145421954?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918238179145421954&oid=106027193808506964705)
 
 ## @jugyo さんを支える技術 by jugyo さん( [@jugyo](https://twitter.com/jugyo) )
-: ![jugyo.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/jugyo.jpg)
+: ![jugyo.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/jugyo.jpg)
 
 [Twitter](https://twitter.com/) 社の jugyo さん。今の働いている環境や、過去の失敗や経験を交えてjugyo さんを支えているものについてお話いただきました。
 
@@ -174,7 +175,7 @@ jugyo さんを支えているのは主に、OSS、Ruby、[github](https://githu
 photo by [Nobihiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918238403561133922?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918238403561133922&oid=106027193808506964705)
 
 ## No Sugar 〜私はどのようにして Rails 開発に貢献したか〜 by 梶原　寿宣さん( [@kennyj_jp](https://twitter.com/kennyj_jp) )
-: ![kajihara.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kajihara.jpg)
+: ![kajihara.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kajihara.jpg)
 
 今会議の開催に伴い、選考委員の中で最も「聴きたい！」という人が多かった梶原さんの発表です。
 
@@ -196,7 +197,7 @@ photo by [Nobihiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918239391218834962?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918239391218834962&oid=106027193808506964705)
 
 ## 平凡なエンジニアと Rails by Jun Fukaya さん( [@fukajun](https://twitter.com/fukajun) )
-: ![fukaya.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/fukaya.jpg)
+: ![fukaya.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/fukaya.jpg)
 
 [sendagaya.rb](http://www.circleaf.com/groups/1) の founder である fukajun さんには、[Rails](http://rubyonrails.org/) を使って仕事をするまでどのようなことをしてきたか、仕事で使い始めてからどんなことをしてきたかを発表いただきました。
 
@@ -212,7 +213,7 @@ photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918247794493886226?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918247794493886226&oid=106027193808506964705)
 
 ## 京都の大学生が Rubyist として生活費を稼ぎながら生きていくためにしたこと by 足立　壮大さん( [@takehiro0740](https://twitter.com/takehiro0740) )
-: ![adachi.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/adachi.jpg)
+: ![adachi.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/adachi.jpg)
 
 この日が発表デビュー(すばらしい！)という足立さんは、学生さんながらフリーランスとして働いているそうで、その仕事のやり方の紹介と仕事欲しい！という熱意が伝わる発表でした。
 
@@ -236,13 +237,13 @@ photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 参加者からはかなり評判がよく、各所で「おいしい」との声が聞こえました。大阪に立ち寄った際は、[カヌレ堂](http://www.canele.jp/)のカヌレを食べてみてはいかがでしょうか？
 <br />
 
-![kanele_setontable.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kanele_setontable.jpg)
+![kanele_setontable.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kanele_setontable.jpg)
 : 
 
-![kanele_ontable.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kanele_ontable.jpg)
+![kanele_ontable.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kanele_ontable.jpg)
 : 
 
-![kanele.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kanele.jpg)
+![kanele.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kanele.jpg)
 : 
 
 左から photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172610466814626?authkey=CPKEwsbvycXi_gE&pid=5920172610466814626&oid=106947570136338985096)
@@ -274,16 +275,16 @@ photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 
 (写真は発表順)
 
-![asou.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/asou.jpg)
+![asou.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/asou.jpg)
 : 
 
-![mollifier.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/mollifier.jpg)
+![mollifier.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/mollifier.jpg)
 : 
 
-![kyara.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kyara.jpg)
+![kyara.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kyara.jpg)
 : 
 
-![kitazume.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kitazume.jpg)
+![kitazume.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kitazume.jpg)
 : 
 
 左から photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918248910550357586?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918248910550357586&oid=106027193808506964705)
@@ -296,13 +297,13 @@ photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 
 <br /><br /><br /><br /><br /><br /><br /><br />
 
-![yalab.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/yalab.jpg)
+![yalab.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/yalab.jpg)
 : 
 
-![suzuki.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/suzuki.jpg)
+![suzuki.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/suzuki.jpg)
 : 
 
-![cyross.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/cyross.jpg)
+![cyross.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/cyross.jpg)
 : 
 
 左から photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918250845198498434?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918250845198498434&oid=106027193808506964705)
@@ -312,7 +313,7 @@ photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918251605529233570?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918251605529233570&oid=106027193808506964705)
 
 ## 5 年前に関西を飛び出したRuby初級者が自分なりに重ねてきたコードと行動 by Toshiaki Koshiba さん( [@bash0C7](https://twitter.com/bash0C7) )
-: ![koshiba.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/koshiba.jpg)
+: ![koshiba.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/koshiba.jpg)
 
 こしばさんは、「後追いする」、「次本気だす」という一見ネガティブに見えるこれらの言葉を、非常にポジティブに捉えて実践されています。これまでに作ったコードと行動を挙げて、こしばさんの生き様をご紹介いただきました。
 
@@ -328,7 +329,7 @@ photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/albums/5918507063285425665/5918252481329456722?banner=pwa&authkey=COSLyt-Btdvm0QE&pid=5918252481329456722&oid=106027193808506964705)
 
 ## Hobby.new("Ruby").to_work by Tomohiro Hashidate さん( [@joker1007](https://twitter.com/joker1007) )
-: ![hashidate.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/hashidate.jpg)
+: ![hashidate.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/hashidate.jpg)
 
 当日あまり寝てねーわーという橋立さんでしたが、力強く発表をしていただきました。
 
@@ -346,7 +347,7 @@ photo by [Nobuhiro IMAI](https://plus.google.com/photos/106027193808506964705/al
 photo by [Ryo Nagai](https://plus.google.com/photos/106947570136338985096/albums/5920171787238053505/5920172968758501810?authkey=CPKEwsbvycXi_gE&pid=5920172968758501810&oid=106947570136338985096)
 
 ## RubyKaigi.rebuild(as: intl_conf) by Shintaro Kakutani さん( [@kakutani](https://twitter.com/kakutani) )
-: ![kakutani.jpg]({{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kakutani.jpg)
+: ![kakutani.jpg]({{base}}{{site.baseurl}}/images/0045-KansaiRubyKaigi05Report/kakutani.jpg)
 
 関西 Ruby 会議が開催されるときには毎回ご参加いただいている角谷さんには、今年見事に復活した [RubyKaigi 2013](http://rubykaigi.org/2013) を再構築したお話をしていただきました。途中から参加者との突然の質問タイムが始まって参加者を巻き込んだ、とてもよい時間になりました。
 

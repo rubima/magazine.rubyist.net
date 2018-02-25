@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (18) 東京 Ruby 会議 05
 short_title: RegionalRubyKaigi レポート (18) 東京 Ruby 会議 05
 tags: 0033 TokyoRubyKaigi05Report
 ---
+{% include base.html %}
 
 
 ## はじめに
@@ -12,7 +13,7 @@ tags: 0033 TokyoRubyKaigi05Report
 「もっと会議を、もっと対話を、もっと挑戦を」をテーマとし、より多くの Rubyist がしり込みすることなく、 アクティブにイベントや集まりに参加できるようなきっかけとなるべく、参加者同士の話し合いを中心に据えて企画しました。
 
 ## 東京 Ruby 会議 05 について
-: ![tork05_logo.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_logo.JPG)
+: ![tork05_logo.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_logo.JPG)
 
 開催日
 : 2011/2/4 (金) 20:00 〜 22:00
@@ -44,7 +45,7 @@ tags: 0033 TokyoRubyKaigi05Report
 ## 内容
 
 ### 高橋 征義さん「Ruby のたのしさについて」
-: ![tork05_takahashi.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_takahashi.JPG)
+: ![tork05_takahashi.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_takahashi.JPG)
 
 1 時間、スライドなしで、Ruby のたのしさについてお話しいただきました。
 いきなりホワイトボードに「私の名前は〜」と名前を書きだしたので、「今日からこのクラスの担任の〜」というシチュエーションが連想され笑いを誘っていましたが、参加者からの意見を交えた、講演というよりはセッションに近い形でお話をしていただきました。<br />
@@ -78,14 +79,14 @@ tags: 0033 TokyoRubyKaigi05Report
 以上箇条書きで紹介しましたが、「たのしさ」を軸に、普段 Rubyist たちがどんな考えで Ruby を使っているのかということが垣間見え、非常に興味深いセッションとなりました。
 
 ### テーマトーク
-: ![tork05_themetalk.png]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_themetalk.png)
+: ![tork05_themetalk.png]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_themetalk.png)
 
 後半のテーマトークでは、あらかじめ用意された 8 つ (+ フリー) のテーマについて約 25 分間、グループに分かれて思う存分語っていただきました。そして、参加者の皆さんには模造紙を渡し、語った内容を書き出していただきました。
 
 以下では、実際に作成された模造紙を紹介します。ただしこちらはメモ書きとして作成されたものなので決して読みやすいとは言えませんし、すべての内容について実行委員も把握できていないため十分な情報は伝わらないかもしれません。それでも、現場の臨場感が伝われば幸いです。
 
 #### 脱初心者の一歩
-: ![tork05_rookie.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_rookie.JPG)
+: ![tork05_rookie.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_rookie.JPG)
 
 * 「絡み力」をつける
   * 勉強会に出て話したりする
@@ -110,7 +111,7 @@ tags: 0033 TokyoRubyKaigi05Report
 
 
 #### Ruby on Rails
-: ![tork05_Rails.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_Rails.JPG)
+: ![tork05_Rails.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_Rails.JPG)
 
 * 初心者におすすめのプラグインを教えて
 * Rails 3 で何が変わったか
@@ -118,14 +119,14 @@ tags: 0033 TokyoRubyKaigi05Report
 
 
 #### メタプログラミング Ruby
-: ![tork05_metapro.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_metapro.JPG)
+: ![tork05_metapro.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_metapro.JPG)
 
 * メタプログラミング Ruby の「魔術書」の章、手法に名前をつけてくれてよかった。
 * デバッグが大変。。
 
 
 #### テストの書き方
-: ![tork05_test.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_test.JPG)
+: ![tork05_test.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_test.JPG)
 
 * カバレッジ
 * 自動化
@@ -136,7 +137,7 @@ tags: 0033 TokyoRubyKaigi05Report
 
 
 #### ソーシャルアプリ
-: ![tork05_SocialApp.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_SocialApp.JPG)
+: ![tork05_SocialApp.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_SocialApp.JPG)
 
 * プラットフォームのルールに振り回される部分もある
 * ソーシャルゲームは「当たる」と一気にスケールする。そこに耐えられる環境・設計が求められる
@@ -158,7 +159,7 @@ tags: 0033 TokyoRubyKaigi05Report
 といった 3 段階の一連の遷移をすることで、インスタンスを維持することで実行時間を稼ぐというもの。これのおかげで GAE上で JRuby で快適にアプリを動かすことができる。
 
 #### プログラマが知るべき 97 のこと
-: ![tork05_97kinoko.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_97kinoko.JPG)
+: ![tork05_97kinoko.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_97kinoko.JPG)
 
 * 恥ずかしいログやテストデータはやめよう
 * 不具合があればまずそれを再現するテストを記述し、それから修正する。それが Rubyist の掟。
@@ -177,7 +178,7 @@ tags: 0033 TokyoRubyKaigi05Report
 
 
 #### オススメのるびま記事
-: ![tork05_rubima.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_rubima.JPG)
+: ![tork05_rubima.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_rubima.JPG)
 
 * 添削します
 * RD
@@ -188,7 +189,7 @@ tags: 0033 TokyoRubyKaigi05Report
 
 
 #### JRuby
-: ![tork05_JRuby.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_JRuby.JPG)
+: ![tork05_JRuby.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_JRuby.JPG)
 
 * Java の資産が使える
 * JRuby on Rails on Tomacat 速い
@@ -198,7 +199,7 @@ tags: 0033 TokyoRubyKaigi05Report
 
 
 #### それ以外のテーマ (フリー)
-: ![tork05_others.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_others.JPG)
+: ![tork05_others.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_others.JPG)
 
 * コミュニティ (*.rb) の個性について
 * Unicode 正規化
@@ -206,7 +207,7 @@ tags: 0033 TokyoRubyKaigi05Report
 
 
 ## 今回のまとめと今後について
-: ![tork05_talking.JPG]({{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_talking.JPG)
+: ![tork05_talking.JPG]({{base}}{{site.baseurl}}/images/0033-TokyoRubyKaigi05Report/tork05_talking.JPG)
 
 今回は「もっと会議を、もっと対話を、もっと挑戦を」というスローガンにもある通り、より対話を重視すべく「全員がトーカーである」というコンセプトの元に運用を行いました。
 そのため、会議の内容が参加者の皆さんによってその場で作られるという、ある意味リスクを孕んだチャレンジングな試みでしたが、始まってみると各テーブルでは大いに盛り上がった様子が見られ、無事に終えることができました。

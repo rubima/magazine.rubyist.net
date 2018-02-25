@@ -4,6 +4,7 @@ title: Ruby 初級者のための class << self の話 (または特異クラス
 short_title: Ruby 初級者のための class << self の話 (または特異クラスとメタクラス)
 tags: 0046 SingletonClassForBeginners
 ---
+{% include base.html %}
 
 
 * Table of content

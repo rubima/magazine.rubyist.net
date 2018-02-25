@@ -4,6 +4,7 @@ title: RubyMotion のご紹介
 short_title: RubyMotion のご紹介
 tags: 0039 IntroductionToRubyMotion
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -268,9 +269,9 @@ UILabelとUIButtonを追加してみました。実行してみると、ラベ�
 REPL で位置の調整を試してみましょう。
 
 ----
-![screenshot1_small.png]({{site.baseurl}}/images/0039-IntroductionToRubyMotion/screenshot1_small.png)
+![screenshot1_small.png]({{base}}{{site.baseurl}}/images/0039-IntroductionToRubyMotion/screenshot1_small.png)
 
-[screenshot1.png]({{site.baseurl}}/images/0039-IntroductionToRubyMotion/screenshot1.png)
+[screenshot1.png]({{base}}{{site.baseurl}}/images/0039-IntroductionToRubyMotion/screenshot1.png)
 ----
 
 コマンドキーを押しながらシミュレータ上でポインタを動かすと、赤い枠線がポインタの下の UI 部品を囲み、それと同時に端末上のプロンプトが (main)&gt; から (#&lt;UILabel:0x6a015c0&gt;)&gt; に変わるのが確認できましたでしょうか？(0x6a015c0 は同じ数字ではなくても大丈夫です。)

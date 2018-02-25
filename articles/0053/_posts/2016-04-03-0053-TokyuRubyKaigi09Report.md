@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (56) TokyuRuby 会議 09
 short_title: RegionalRubyKaigi レポート (56) TokyuRuby 会議 09
 tags: 0053 TokyuRubyKaigi09Report
 ---
+{% include base.html %}
 
 
 ## はじめに
@@ -40,7 +41,7 @@ TokyuRuby 会議は、Ruby に興味のあるエンジニアが集う Tokyu.rb �
 ### 受付
 
 13:30 から受付を開始していますが、開始時刻までの 30 分の間でかなりの参加者がこられました。会場に到着した参加者のみなさまには、受付手続きを終えると、早速ビールスポンサーのサントリーさんから注ぎたてのプレモルが振る舞われました。今回は工場直送の [ザ・プレミアムモルツ](http://www.suntory.co.jp/beer/premium/)、[マスターズドリーム](http://www.suntory.co.jp/beer/mastersdream/)、[香るプレミアム](http://www.suntory.co.jp/beer/premium/kaoru/)、[黒](http://www.suntory.co.jp/beer/premium/black/)、となんと 4 つの樽を準備。さらにノンアルコールビールの[オールフリー](http://www.suntory.co.jp/beer/allfree/) まで用意してくださりいたれりつくせりでした。
-![suntory.jpg]({{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/suntory.jpg)
+![suntory.jpg]({{base}}{{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/suntory.jpg)
 
 ### 開会
 
@@ -133,17 +134,17 @@ Accept LT は、TokyuRuby 会議名物の一つです。勢い余って前倒し
 TokyuRubyKaigi ではみんなの手作りのごはんを持ち寄ってみんなで食べます。私は冷や汁をおいしくいただきました！特に飯王常連の @2celeb さんが料理を持ち込むと行列ができました。また、お酒もみんなで持ち寄っておいしくいただきました。
 
 今回の飯王は @2celeb さんが飯王に返り咲き、地力を見せつけました。基調 LT では最近読んだ料理書について語るなど、深い造詣が伺える基調 LT でした。
-![meshi.jpg]({{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/meshi.jpg)
+![meshi.jpg]({{base}}{{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/meshi.jpg)
 
 ### LT 王 基調 LT
 
 LT 王は会場を爆笑させた @dameninngenn さん。「第一回 チキチキ 独断と偏見と狭い観測範囲の中から選ぶコミットログ選手権」というタイトルで「餃　子　の　王　将」など、驚愕のコミットメッセージを紹介し喝采を浴びました。初参加での見事な LT 王獲得でした
-![kings.jpg]({{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/kings.jpg)
+![kings.jpg]({{base}}{{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/kings.jpg)
 
 ### スタッフ T シャツ
 
 TokyuRubyKaigi06 から引き続き、今回もスタッフの @yucao24hours がデザインしました。そして、T シャツの提供は、[カスタマイズ T シャツプリントサービス TMIX](http://tmix.jp/) でした！
-![yucao_t.jpg]({{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/yucao_t.jpg)
+![yucao_t.jpg]({{base}}{{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/yucao_t.jpg)
 
 ### TokyuRuby 会議実行委員長システム
 
@@ -174,7 +175,7 @@ TokyuRuby 会議 09 は、開始時間がまた午後からに変更になり、
 
 ### 五十嵐 邦明 (@igaiga555)
 
-![igaiga.png]({{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/igaiga.png) TokyuRuby 会議 09 撮影&amp;レポート係。<br />
+![igaiga.png]({{base}}{{site.baseurl}}/images/0053-TokyuRubyKaigi09Report/igaiga.png) TokyuRuby 会議 09 撮影&amp;レポート係。<br />
 株式会社spice life CTO。 [自作のTシャツが作れるサービスTMIX](http://tmix.jp/) を開発しています。全国の Ruby イベントのスタッフ T シャツを TMIX でスポンサーすべくく活動しています。
 
 ----

@@ -4,11 +4,12 @@ title: Ruby ビギナーのための CGI 入門 【第 1 回】 3 ページ
 short_title: Ruby ビギナーのための CGI 入門 【第 1 回】 3 ページ
 tags: 0011 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
-[次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
+[次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
 
 * Table of content
 {:toc}
@@ -68,7 +69,7 @@ RDE の下の方にあるコンソールウィンドウの色が変わり、
 その後に 123 と表示されます。
 「Completed」も表示されていますが、これは RDE が print.rb の
 実行が終了したよということを表示しています。
-![rde_execute.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-3/rde_execute.jpg)
+![rde_execute.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-3/rde_execute.jpg)
 
 RDE に Ruby プログラムを入力して
 それを保存してから、実行する方法もあります。
@@ -381,8 +382,8 @@ Ruby のプログラムを作る時は print, puts のような Ruby の命令�
 CGI プログラムを作る時も全く同じです。
 大きく違うのは CGI というルールに従わなければならない点です。
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[前ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
-[次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[前ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
+[次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-4 %})
 
 

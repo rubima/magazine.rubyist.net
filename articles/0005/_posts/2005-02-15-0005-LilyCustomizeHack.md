@@ -4,6 +4,7 @@ title: lily でブログカスタマイズ 【最終回】
 short_title: lily でブログカスタマイズ 【最終回】
 tags: 0005 LilyCustomizeHack
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -12,9 +13,9 @@ tags: 0005 LilyCustomizeHack
 
 ## はじめに
 
-「[lily でブログカスタマイズ第1回]({% post_url articles/0003/2004-11-15-0003-LilyCustomizeHack %})」では、lily の導入と基本的な記事の投稿方法を解説しました。
+「[lily でブログカスタマイズ第1回]({{base}}{% post_url articles/0003/2004-11-15-0003-LilyCustomizeHack %})」では、lily の導入と基本的な記事の投稿方法を解説しました。
 
-「[lily でブログカスタマイズ第2回]({% post_url articles/0004/2004-12-17-0004-LilyCustomizeHack %})」では、デザインをカスタマイズするための flavour という仕組みを解説しました。
+「[lily でブログカスタマイズ第2回]({{base}}{% post_url articles/0004/2004-12-17-0004-LilyCustomizeHack %})」では、デザインをカスタマイズするための flavour という仕組みを解説しました。
 
 ここまで連載を読んできてくださった方は、既に lily を使って自分の好みのデザインのブログを作ることが出来ます。しかし、実際に運用するブログを作る場合、ここまでの説明だけでは不十分な要素があります。
 
@@ -108,7 +109,7 @@ Archives
 plugin の作り方を説明する前に、lily ではどのようにして plugin 機能を実現しているかを簡単に説明します。
 
 以下は、もっとも簡単な plugin である storytitle plugin について説明します。
-![storytitle.rb]({{site.baseurl}}/images/0005-LilyCustomizeHack/storytitle.rb)
+![storytitle.rb]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/storytitle.rb)
 
 3つのメソッドが定義されています。lily ではこれらのメソッドを instance_eval を使って、Lily クラスのレベルで実行します。
 
@@ -221,7 +222,7 @@ end
 
 
 結果、値を出力するメソッドはものすごく単純になりました。[サンプルページ](http://www.mikihoshi.com/rubima/d/)でこの plugin を動かしています。以下に全ソースのリンクを置いておきます。
-[counter.rb]({{site.baseurl}}/images/0005-LilyCustomizeHack/counter.rb)
+[counter.rb]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/counter.rb)
 
 ### LIRS plugin
 
@@ -273,7 +274,7 @@ end
 {% endraw %}
 {% endhighlight %}
 
-[lirs.rb]({{site.baseurl}}/images/0005-LilyCustomizeHack/lirs.rb)
+[lirs.rb]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/lirs.rb)
 
 この plugin を導入すると以下のようなURLでLIRS形式のデータを取得できるようになります。
 
@@ -327,7 +328,7 @@ end
 {% endraw %}
 {% endhighlight %}
 
-[delicious.rb]({{site.baseurl}}/images/0005-LilyCustomizeHack/delicious.rb)
+[delicious.rb]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/delicious.rb)
 
 Rubilicious クラスをnewする際に、引数として del.icio.us に登録しているログインIDとパスワードを渡す必要があります。上のソースでは @env というインスタンス変数を使っていますが、これは lily.cfg に記入されて内容を保持しているハッシュです。従って
 
@@ -361,17 +362,17 @@ flavour 内では以下のようにしてサイドメニューの適当な位置
 
 ここでは、改めて今まで連載してきた内容をまとめてみます。今回から読まれる方は参考に、今までお付き合いくださった方は復習としてご確認下さい。
 
-### [第1回 lily の導入と基本的な記事の書き方]({% post_url articles/0003/2004-11-15-0003-LilyCustomizeHack %})
+### [第1回 lily の導入と基本的な記事の書き方]({{base}}{% post_url articles/0003/2004-11-15-0003-LilyCustomizeHack %})
 
 前半は、lily スクリプトを自分の Web サーバ (或いはレンタルサーバ) にアップロードし、最低限ブログの画面を表示するようになるまでの設定をまとめました。「FTP に余り慣れない」「パーミッションて何？」という人は、この章から見はじめた方が良いと思います。
 
 後半では、記事をファイルに書いて FTP でアップロードするという、lily 独特の記事の投稿方法を説明しています。また、Wiki 記法など HTML のタグを直書きせずに記事を書くための「フィルタ」の使い方についても解説しました。
 
-### [第2回 flavour のカスタマイズ方法]({% post_url articles/0004/2004-12-17-0004-LilyCustomizeHack %})
+### [第2回 flavour のカスタマイズ方法]({{base}}{% post_url articles/0004/2004-12-17-0004-LilyCustomizeHack %})
 
 lily でブログのデザインをカスタマイズするため、flavour と呼ばれる独特の仕組みについて解説しました。同じブログでも flavour を切り替えることで全く違った見た目になったり、RSS として表示したりするサンプルも紹介しています。tDiary のテーマを利用できる flavour も配布しているので、とにかくデザインの変更から始めたい方はこの章からどうぞ。
 
-### [第3回  plugin の仕組みと、作り方]({% post_url articles/0005/2005-02-15-0005-LilyCustomizeHack %})
+### [第3回  plugin の仕組みと、作り方]({{base}}{% post_url articles/0005/2005-02-15-0005-LilyCustomizeHack %})
 
 今号の記事です。コメントや TrackBack など、インタラクティヴな機能を実現する plugin という仕組みについて、若干 lily の内部構造も解説しつつ、いくつかの plugin 作成を通じて説明していきました。自分で plugin を作ろうという方の参考になったでしょうか？
 
@@ -383,7 +384,7 @@ lily でブログのデザインをカスタマイズするため、flavour と�
 
 ## 著者について
 
-![food.jpg]({{site.baseurl}}/images/0005-LilyCustomizeHack/food.jpg)
+![food.jpg]({{base}}{{site.baseurl}}/images/0005-LilyCustomizeHack/food.jpg)
 なまえ：ふしはらかん。
 [http://www.mikihoshi.com/d/](http://www.mikihoshi.com/d/) にて日記を書いてます。
 

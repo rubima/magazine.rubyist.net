@@ -4,11 +4,12 @@ title: VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へ�
 short_title: VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)
 tags: 0029 ExcellentRuby
 ---
+{% include base.html %}
 
 
 ## はじめに
 
-本記事は「[VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (前編)]({% post_url articles/0027/2009-09-13-0027-ExcellentRuby %})」の後編です。前回は Ruby を使ってちゃっかり手早く Excel を処理するスクリプトを組むためのテクニックについて解説しました。
+本記事は「[VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (前編)]({{base}}{% post_url articles/0027/2009-09-13-0027-ExcellentRuby %})」の後編です。前回は Ruby を使ってちゃっかり手早く Excel を処理するスクリプトを組むためのテクニックについて解説しました。
 
 今回は、じっくり作って長く運用する Excel 利用システムを作りたい場合に使いたいテクニックをご紹介します。
 
@@ -155,7 +156,7 @@ target_row = (key).Row
 Excel を使うクラスは1つに集中するとビジネスロジックと Excel そのものは直接関わらなくなります。しかし (当然ながら) Excel を使っているクラスとビジネスロジックとは密接に関連した状態です。
 
 <br /><br />
-![tight_coupling.png]({{site.baseurl}}/images/0029-ExcellentRuby/tight_coupling.png)
+![tight_coupling.png]({{base}}{{site.baseurl}}/images/0029-ExcellentRuby/tight_coupling.png)
 
 <br /><br />
 
@@ -164,7 +165,7 @@ Excel を使うクラスは1つに集中するとビジネスロジックと Exc
 具体的には、Excel 利用を担当するプログラムと、ビジネスロジックを担当するプログラムを別に作ります。この 2 プログラム間のインターフェイスとして、YAML や XML など Ruby の標準添付クラスで扱えるファイルを用います。
 
 <br /><br />
-![loose_coupling.png]({{site.baseurl}}/images/0029-ExcellentRuby/loose_coupling.png)
+![loose_coupling.png]({{base}}{{site.baseurl}}/images/0029-ExcellentRuby/loose_coupling.png)
 
 <br /><br />
 
@@ -191,7 +192,7 @@ __Happy Exceling!__
 ## 著者について
 
 ### こしば としあき
-![bash0C7.jpg]({{site.baseurl}}/images/0029-ExcellentRuby/bash0C7.jpg)
+![bash0C7.jpg]({{base}}{{site.baseurl}}/images/0029-ExcellentRuby/bash0C7.jpg)
 
 * 計画管理と設計が好きなソフトウェア技術者。Ruby &amp; Excel 使い。
 * ブログ : [http://d.hatena.ne.jp/bash0C7/](http://d.hatena.ne.jp/bash0C7/)

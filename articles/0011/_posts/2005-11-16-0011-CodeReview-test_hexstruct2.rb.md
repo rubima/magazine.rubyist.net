@@ -4,9 +4,10 @@ title: 0011-CodeReview-test_hexstruct2.rb
 short_title: 0011-CodeReview-test_hexstruct2.rb
 tags: 0011 CodeReview
 ---
+{% include base.html %}
 
 
-[あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb]({% post_url articles/0011/2005-11-16-0011-CodeReview %}) 添削後のテストスクリプトです。
+[あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb]({{base}}{% post_url articles/0011/2005-11-16-0011-CodeReview %}) 添削後のテストスクリプトです。
 
 ```ruby
 require 'test/unit'

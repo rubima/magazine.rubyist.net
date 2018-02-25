@@ -4,6 +4,7 @@ title: Ruby on Rails： The Bad Parts
 short_title: Ruby on Rails： The Bad Parts
 tags: 0041 RailsTheBadParts
 ---
+{% include base.html %}
 
 
 * Table of content

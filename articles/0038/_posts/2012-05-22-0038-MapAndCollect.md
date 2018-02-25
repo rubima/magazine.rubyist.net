@@ -4,6 +4,7 @@ title: map と collect、reduce と inject ―― 名前の違いに見る発想
 short_title: map と collect、reduce と inject ―― 名前の違いに見る発想の違い
 tags: 0038 MapAndCollect
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -16,7 +17,7 @@ tags: 0038 MapAndCollect
 
 「あなたは map 派？それとも collect 派？」
 
-Rubyist であれば、一度はこんな質問を受けたことがあるのではないでしょうか。たとえば Rubyist Magazine の過去の記事を紐解くと、[まつもとゆきひろさんのインタビュー]({% post_url articles/0001/2004-09-10-0001-Hotlinks %})や[角谷信太郎さんのインタビュー]({% post_url articles/0014/2006-05-15-0014-Hotlinks %})でその話題が出ていますね。
+Rubyist であれば、一度はこんな質問を受けたことがあるのではないでしょうか。たとえば Rubyist Magazine の過去の記事を紐解くと、[まつもとゆきひろさんのインタビュー]({{base}}{% post_url articles/0001/2004-09-10-0001-Hotlinks %})や[角谷信太郎さんのインタビュー]({{base}}{% post_url articles/0014/2006-05-15-0014-Hotlinks %})でその話題が出ていますね。
 
 ここでいう map と collect とは、[Enumerable#map](http://doc.ruby-lang.org/ja/1.9.3/method/Enumerable/i/map.html) メソッドと [Enumerable#collect](http://doc.ruby-lang.org/ja/1.9.3/method/Enumerable/i/collect.html) メソッドのことですが、リファレンスマニュアルを見ていただくと分かる通り、どちらも全く同じ動作をするメソッドになります。
 
@@ -320,7 +321,7 @@ $
 ### map
 
 map は「データ構造を保ったまま[^3]、あるルールに従って元のデータ構造を別データ構造に変換する」という発想になります。図にすると、次のようになります。
-![map.png]({{site.baseurl}}/images/0038-MapAndCollect/map.png)
+![map.png]({{base}}{{site.baseurl}}/images/0038-MapAndCollect/map.png)
 
 それでは、先ほどの Lisp で map を使ったコードの例をもういちど見てみましょう。
 
@@ -338,7 +339,7 @@ map は「データ構造を保ったまま[^3]、あるルールに従って元
 ### collect
 
 collect は「データ構造内の全ての要素に対して、ある処理を繰り返し実行し、その結果を集めたもの」という発想になります。図にすると、次のようになります。
-![collect.png]({{site.baseurl}}/images/0038-MapAndCollect/collect.png)
+![collect.png]({{base}}{{site.baseurl}}/images/0038-MapAndCollect/collect.png)
 
 それでは、先ほどの Smalltalk で collect を使ったコードの例をもういちど見てみましょう。
 
@@ -353,7 +354,7 @@ collect は「データ構造内の全ての要素に対して、ある処理を
 
 そして「collect:」という名前からも分かるとおり、配列の各要素にブロック「[:i | i + 1 ]」を適用して、その結果を集める、という動作が見えてきます。
 
-以前「[Fiber と Proc ―― 手続きを抽象化する二つの機能]({% post_url articles/0034/2011-06-12-0034-FiberForBeginners %})」という記事でも書きましたが、この collect: のように「ループしたり条件分岐したりといった、コンピューターがひとつひとつどのような処理をしているのかが目に浮かぶ」というのは、手続き型言語の発想ですよね。対して、map のように「やりたいことを宣言的に書いておけば、あとはコンピューターが頑張ってくれる」というのは、関数型言語の発想ですね。
+以前「[Fiber と Proc ―― 手続きを抽象化する二つの機能]({{base}}{% post_url articles/0034/2011-06-12-0034-FiberForBeginners %})」という記事でも書きましたが、この collect: のように「ループしたり条件分岐したりといった、コンピューターがひとつひとつどのような処理をしているのかが目に浮かぶ」というのは、手続き型言語の発想ですよね。対して、map のように「やりたいことを宣言的に書いておけば、あとはコンピューターが頑張ってくれる」というのは、関数型言語の発想ですね。
 
 つまり、「あなたは map 派？それとも collect 派？」という質問は、「あなたは関数型言語が好き？それとも手続き型言語が好き？」というのを暗に聞いているのかもしれませんね。
 
@@ -364,7 +365,7 @@ collect は「データ構造内の全ての要素に対して、ある処理を
 ### reduce
 
 reduce は「あるルールに従ってデータ構造内の要素数を縮小していき、最後に残った値を返す」という発想になります。図にすると、次のようになります。
-![reduce.png]({{site.baseurl}}/images/0038-MapAndCollect/reduce.png)
+![reduce.png]({{base}}{{site.baseurl}}/images/0038-MapAndCollect/reduce.png)
 
 それでは、先ほどの Lisp で reduce を使ったコードの例をもういちど見てみましょう。
 
@@ -382,7 +383,7 @@ reduce は「あるルールに従ってデータ構造内の要素数を縮小�
 ### inject
 
 inject は「値をプールしておくバケツを用意しておき、データ構造内の全ての要素をひとつずつ、ある処理にしたがってバケツに注入していく」という発想になります。図にすると、次のようになります。
-![inject.png]({{site.baseurl}}/images/0038-MapAndCollect/inject.png)
+![inject.png]({{base}}{{site.baseurl}}/images/0038-MapAndCollect/inject.png)
 
 それでは、先ほどの Smalltalk で inject を使ったコードの例をもういちど見てみましょう。
 

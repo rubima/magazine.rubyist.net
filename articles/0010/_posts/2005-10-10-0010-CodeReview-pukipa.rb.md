@@ -4,9 +4,10 @@ title: あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb -
 short_title: あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb - ソースコード：pukipa.rb
 tags: 0010 CodeReview
 ---
+{% include base.html %}
 
 
-[あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb]({% post_url articles/0010/2005-10-10-0010-CodeReview %}) で解説した、改善前のソースです。
+[あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb]({{base}}{% post_url articles/0010/2005-10-10-0010-CodeReview %}) で解説した、改善前のソースです。
 
 ```ruby
 #!/usr/bin/env ruby

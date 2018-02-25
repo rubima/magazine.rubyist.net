@@ -4,6 +4,7 @@ title: Making of RubyKaigi - Making of 闇 RubyKaigi
 short_title: Making of RubyKaigi - Making of 闇 RubyKaigi
 tags: 0035 MakingOfRubyKaigi03
 ---
+{% include base.html %}
 
 
 書いた人：こしばとしあき

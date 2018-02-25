@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)
 short_title: 標準添付ライブラリ紹介 【第 14 回】 正規表現 (3)
 tags: 0021 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山
@@ -231,7 +232,7 @@ base64 のバグは[第 17 回 Ruby 勉強会＠関西](http://jp.rubyist.net/?K
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

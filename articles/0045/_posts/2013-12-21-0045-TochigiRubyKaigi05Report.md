@@ -4,13 +4,14 @@ title: RegionalRubyKaigi レポート (42) とちぎ Ruby 会議 05
 short_title: RegionalRubyKaigi レポート (42) とちぎ Ruby 会議 05
 tags: 0045 TochigiRubyKaigi05Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigiレポート (42) とちぎ Ruby 会議 05
 
 ### はじめに
 
-![toruby.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/toruby.jpg)
+![toruby.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/toruby.jpg)
 「formal and casual」をテーマにした とちぎ Ruby 会議 05 が開催されました。
 
 「厳密な仕様を書くということ」に始まり、言語仕様、本の執筆、品質活動、新しい Ruby、モックアップとプロトタイプ、テストの事など様々な事が発表そして話し合われました。
@@ -37,7 +38,7 @@ tags: 0045 TochigiRubyKaigi05Report
 
 ##### 酒匂寛さん
 
-![sako.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/sako.jpg)
+![sako.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/sako.jpg)
 「わたしは見かけから分かるようにオールドプログラマ。というかオールドエンジニアです。」と和やかな自己紹介で酒匂寛さんによる招待講演が始まりました。
 
 テーマは"厳密な仕様を書くということ"。酒匂さんのここ 10 年のテーマである"形式手法"についての講演です。前半の講演、後半の大質問大会、合わせてご紹介します。
@@ -187,7 +188,7 @@ tags: 0045 TochigiRubyKaigi05Report
 * 資料: [http://es.slideshare.net/tsurumau/tochigi-rubykaigi05](http://es.slideshare.net/tsurumau/tochigi-rubykaigi05)
 
 
-![hayakawa.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/hayakawa.jpg)
+![hayakawa.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/hayakawa.jpg)
 自然言語、プログラミング言語を通しての実装、設計を発表していただきました。
 
 プログラミング言語が「コンピュータに命令を伝える道具」でもあり「人が読んで仕様、設計を理解する言語」でもある事を再確認させてもらえる内容でした。
@@ -221,7 +222,7 @@ tags: 0045 TochigiRubyKaigi05Report
     * class も object である事が意識できるようになると面白い
 
 
-![mimura.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/mimura.jpg)
+![mimura.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/mimura.jpg)
 書籍を書くまでにどうノウハウや経験を貯めて、アウトプット:「パーフェクト Ruby」するかを発表していただきました。
 
 これから、本を書こうとする人向けの話だけでなく、これから Ruby を始める人にとっても有益な「Ruby の学び方」を教えていただきました。
@@ -244,7 +245,7 @@ tags: 0045 TochigiRubyKaigi05Report
 * 自工程完結
 
 
-![takai.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/takai.jpg)
+![takai.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/takai.jpg)
 クックパッドの品質活動を通じて、感じたことを発表していただきました。
 
 他の業界でも言われている「リーンスタートアップ」や「自工程完結」は今後、IT業界にどう関わってくるのか興味深いですね。
@@ -278,7 +279,7 @@ tags: 0045 TochigiRubyKaigi05Report
 * 資料: [http://www.atdot.net/~ko1/activities/toruby05-ko1.pdf](http://www.atdot.net/~ko1/activities/toruby05-ko1.pdf)
 
 
-![sasada.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/sasada.jpg)
+![sasada.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/sasada.jpg)
 残念ながら発表時間が足らず全て聞けませんでしたが、2.1 の新たな展望を発表していただきました。
 
 ※資料から残りの発表されなかった部分を見る事が出来ます。
@@ -310,7 +311,7 @@ tags: 0045 TochigiRubyKaigi05Report
 * なるべく開発、企画に混ぜてもらわないと難しい..
 
 
-![gotoken.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/gotoken.jpg)
+![gotoken.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/gotoken.jpg)
 ご自身の経験上「モックアップとプロトタイプ」を通して様々な場面での定義を
 発表していただきました。
 
@@ -342,7 +343,7 @@ tags: 0045 TochigiRubyKaigi05Report
 * 資料:[http://sssslide.com/www.slideshare.net/FUKUIOsamu/20130921-toruby](http://sssslide.com/www.slideshare.net/FUKUIOsamu/20130921-toruby)
 
 
-![ir3.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/ir3.jpg)
+![ir3.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/ir3.jpg)
 今回のテーマであるカジュアルとフォーマルに沿ってのテストへのアプローチを発表していただきました。
 
 発表の中に [Turnip](https://github.com/jnicklas/turnip) の紹介があり、ご自身が書かれた記事(るびま) や ソースコード(github) のURL を教えていただきました。
@@ -382,7 +383,7 @@ tags: 0045 TochigiRubyKaigi05Report
     * ある変更が他の変更に対して直交しているかどうか?
 
 
-![t_wada.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/t_wada.jpg)
+![t_wada.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/t_wada.jpg)
 発表はまだまだ途中でしたが、設計や実装に関する「?性」の話をしていただきました。
 
 simple と easy は日常生活では同じように見えるのですがプログラミングとなると違うという事に気付かされました。
@@ -393,7 +394,7 @@ simple と easy は日常生活では同じように見えるのですがプロ�
 
 ### いつもの勉強会
 
-![arton.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/arton.jpg)
+![arton.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/arton.jpg)
 とちぎ Ruby 会議の開催母体となっている toRuby でいつも行っている勉強会を行いました。
 
 toRuby では現在「[さまざまなデータとアルゴリズム](http://www.amazon.co.jp/dp/4798118001/)」の朗読、写経を行っています。
@@ -417,7 +418,7 @@ toRuby では現在「[さまざまなデータとアルゴリズム](http://www
 
 　
 
-![trio.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/trio.jpg)
+![trio.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/trio.jpg)
 余談ですが、このような勉強会で写経に使う本を忘れると参加できないんじゃないかと思われる方がいらっしゃいますが、それは違います。隣の席の方とのペアプロのチャンスとポジティブに受け止めましょう。
 
 実は筆者も忘れてしまった一人です。しかし、忘れ物をしてもネガティブにならない。
@@ -438,13 +439,13 @@ toRuby では現在「[さまざまなデータとアルゴリズム](http://www
 
 　
 
-![ikezawa_sako.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/ikezawa_sako.jpg)
-![gouka_retsu.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/gouka_retsu.jpg)
+![ikezawa_sako.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/ikezawa_sako.jpg)
+![gouka_retsu.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/gouka_retsu.jpg)
 
 　
 
-![kakoi.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/kakoi.jpg)
-![shitsumon.jpg]({{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/shitsumon.jpg)
+![kakoi.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/kakoi.jpg)
+![shitsumon.jpg]({{base}}{{site.baseurl}}/images/0045-TochigiRubyKaigi05Report/shitsumon.jpg)
 
 ### さいごに
 

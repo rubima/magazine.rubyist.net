@@ -4,6 +4,7 @@ title: 値渡しと参照渡しの違いを理解する
 short_title: 値渡しと参照渡しの違いを理解する
 tags: 0032 CallByValueAndCallByReference
 ---
+{% include base.html %}
 
 
 
@@ -46,7 +47,7 @@ y = 20
 変数の実体は、メモリ上に確保された領域です。この場合なら、たとえば fig1 のような状態になります。
 
 fig1. 変数の実体はメモリ上に格納された領域
-![fig-01.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-01.png)
+![fig-01.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-01.png)
 
 fig1. では、以下のことが表現されています。
 
@@ -73,7 +74,7 @@ end
 このとき、関数 foo() で使われている引数 a と b も変数なので、メモリ上に領域が確保されます (fig2)。この領域は固定された場所ではなく、関数が呼ばれると確保され、関数の実行が終了すると解放されます。
 
 fig2. 引数 a や b にもメモリ領域が確保される
-![fig-02.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-02.png)
+![fig-02.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-02.png)
 
 以上が、変数とメモリ領域の説明です。これらのことを理解していただいた上で、「値渡し」と「参照渡し」について説明します。
 
@@ -103,12 +104,12 @@ puts y            #=> 20  # 変更されてない
 このとき、値渡しでは変数 x と y の値が、引数 a と b にコピーされます (fig3)。
 
 fig3. x と y の値が a と b にコピーされる
-![fig-03.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-03.png)
+![fig-03.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-03.png)
 
 このあと foo() の中身が実行され、a と b の値が変更されます (fig4)。このとき、a と b の値は変更されますがそれは x と y には反映されません。
 
 fig4. a と b の値が変更されるが x と y には反映されない
-![fig-04.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-04.png)
+![fig-04.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-04.png)
 
 値渡しでは、変数の値が引数にコピーされるため、次のような性質があります。
 
@@ -147,12 +148,12 @@ puts y            #=> 22   # 変更されている!
 この仕組みを説明します。「add(x, y)」のように関数が呼ばれると、参照渡しでは fig5. のように変数 x と y のメモリ番地が引数 a と b に渡されます。
 
 fig5. x と y のメモリ番地が a と b に渡される
-![fig-05.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-05.png)
+![fig-05.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-05.png)
 
 参照渡しでは変数の値は渡されないので、メモリ番地をたどって値を取得します。この場合なら変数 a に格納されたメモリ番地 0x8840 をたどって、10 という値を取り出します。また引数 a や b に別の値を代入すると、メモリ番地をたどって、変数 x や y の値が変更されます (fig6)。このとき、a や b に格納されたメモリ番地の値は変わりません。
 
 fig6. a や b を操作すると、x と y の値が変わる
-![fig-06.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-06.png)
+![fig-06.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-06.png)
 
 このような仕組みのため、参照渡しでは次のような性質があります。
 
@@ -200,7 +201,7 @@ puts numbers      #=> [11, 20]   # 中身が変更されている!
 これを図にすると fig7 のようになります。メモリ番地 0x8912 と 0x8916 が配列オブジェクトを表していると思ってください (実際はもっと複雑です)。
 
 fig7. numbers = [10, 20] を実行した状態
-![fig-07.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-07.png)
+![fig-07.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-07.png)
 
 fig7 でのポイントは次の通りです。
 
@@ -232,7 +233,7 @@ numbers = [11, 12]
 前掲の list5 において、「bar(numbers)」を呼び出した直後の状態を図で表すと fig8 のようになります。
 
 fig8. bar(numbers) を呼び出した直後
-![fig-08.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-08.png)
+![fig-08.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-08.png)
 
 ここでのポイントは次の通りです。
 
@@ -245,7 +246,7 @@ fig8. bar(numbers) を呼び出した直後
 ここで、関数 bar() の中身である「arr[0] += 1」が実行されたとします。その状態を図で表すと fig9 のようになります。
 
 fig9. bar() の中身である「arr[0] += 1」を実行した直後
-![fig-09.png]({{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-09.png)
+![fig-09.png]({{base}}{{site.baseurl}}/images/0032-CallByValueAndCallByReference/fig-09.png)
 
 これを見れば分かるように、__引数 arr の値は変わっていませんが引数 arr が指すオブジェクトの中身は変更されています__。そのせいで、引数を変更するとあたかももとの変数も変更されたように見えてしまうわけです。
 

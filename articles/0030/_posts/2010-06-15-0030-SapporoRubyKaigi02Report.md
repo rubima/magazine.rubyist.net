@@ -4,13 +4,14 @@ title: RegionalRubyKaigi レポート (13) 札幌 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (13) 札幌 Ruby 会議 02
 tags: 0030 SapporoRubyKaigi02Report
 ---
+{% include base.html %}
 
 
 ## はじめに
 
 2009 年 12 月 5 日に、札幌で開催される地域 Ruby 会議として今年で 2 回目となる、札幌 Ruby 会議 02 が開催されました。
 今回も[前回](http://jp.rubyist.net/magazine/?0025-SapporoRubyKaigi01Report)に引き続き、道外で活躍している方々もたくさん参加して頂きました。発表者の方ではなく純粋に札幌 Ruby 会議へ参加された方もいらっしゃいました。一時間ほどの懇親スイーツタイムでは道外の方々とも沢山お話することができ、「ここは本当に札幌なのだろうか！？」と思わせるような地域 Ruby 会議でした。
-![spkr02_rubima.jpg]({{site.baseurl}}/images/0030-SapporoRubyKaigi02Report/spkr02_rubima.jpg)
+![spkr02_rubima.jpg]({{base}}{{site.baseurl}}/images/0030-SapporoRubyKaigi02Report/spkr02_rubima.jpg)
 
 ## 札幌 Ruby 会議 02 について
 

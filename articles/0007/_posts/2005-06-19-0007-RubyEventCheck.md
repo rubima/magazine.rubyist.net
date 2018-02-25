@@ -4,6 +4,7 @@ title: 0007-RubyEventCheck
 short_title: 0007-RubyEventCheck
 tags: 0007 RubyEventCheck
 ---
+{% include base.html %}
 
 
 ## Ruby 関連イベント

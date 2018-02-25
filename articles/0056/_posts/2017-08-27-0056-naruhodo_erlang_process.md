@@ -4,6 +4,7 @@ title: なるほど Erlang プロセス
 short_title: なるほど Erlang プロセス
 tags: 0056 naruhodo_erlang_process
 ---
+{% include base.html %}
 
 
 ## なるほど Erlang プロセス
@@ -18,11 +19,11 @@ tags: 0056 naruhodo_erlang_process
 
 ## Erlang とは
 
-「[Rubyist のための他言語探訪 【第 10 回】 Erlang]({% post_url articles/0017/2006-11-26-0017-Legwork %})」によい記事があるので省略します。
+「[Rubyist のための他言語探訪 【第 10 回】 Erlang]({{base}}{% post_url articles/0017/2006-11-26-0017-Legwork %})」によい記事があるので省略します。
 
 ## Elixir とは
 
-「[書籍紹介「プログラミング Elixir」]({% post_url articles/0054/2016-08-21-0054-ElixirBook %})」によい記事があるので省略します。
+「[書籍紹介「プログラミング Elixir」]({{base}}{% post_url articles/0054/2016-08-21-0054-ElixirBook %})」によい記事があるので省略します。
 
 ## Erlang プロセスは ID を持っている
 

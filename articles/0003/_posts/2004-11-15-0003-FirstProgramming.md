@@ -4,14 +4,15 @@ title: Ruby ではじめるプログラミング 【第 2 回】
 short_title: Ruby ではじめるプログラミング 【第 2 回】
 tags: 0003 FirstProgramming
 ---
+{% include base.html %}
 
 
 著者：だん
 
 ## はじめに
 
-前回 ([Ruby ではじめるプログラミング 【第 1 回】]({% post_url articles/0002/2004-10-16-0002-FirstProgramming %})) は次のこのようなプログラムの基本的な部分を紹介しました。
-: ![mage2_s.png]({{site.baseurl}}/images/0003-FirstProgramming/mage2_s.png)
+前回 ([Ruby ではじめるプログラミング 【第 1 回】]({{base}}{% post_url articles/0002/2004-10-16-0002-FirstProgramming %})) は次のこのようなプログラムの基本的な部分を紹介しました。
+: ![mage2_s.png]({{base}}{{site.baseurl}}/images/0003-FirstProgramming/mage2_s.png)
 
 * Ruby を実行するまでの手順
 * 変数やメソッド（命令）呼び出し
@@ -926,7 +927,7 @@ Ruby 歴は 2 年と短く、まだまだ勉強中の初心者。
 ## Ruby ではじめるプログラミング 連載一覧
 
 {% for post in site.tags.FirstProgramming %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

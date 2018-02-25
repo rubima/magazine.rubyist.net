@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (61) 松江 Ruby 会議 08
 short_title: RegionalRubyKaigi レポート (61) 松江 Ruby 会議 08
 tags: 0056 MatsueRubyKaigi08Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート 松江 Ruby 会議 08
@@ -20,7 +21,7 @@ tags: 0056 MatsueRubyKaigi08Report
 * Togetterまとめ： [https://togetter.com/li/1061092](https://togetter.com/li/1061092)
 * 公式タグ・Twitter：[#matrk08](https://twitter.com/hashtag/matrk08)
 
-![07_all.jpg]({{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/07_all.jpg)
+![07_all.jpg]({{base}}{{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/07_all.jpg)
 
 ### 許可を得る前にプルリクしよう (ゲスト講演)
 
@@ -29,7 +30,7 @@ tags: 0056 MatsueRubyKaigi08Report
 * 資料
   * [https://speakerdeck.com/ppworks/matrk08](https://speakerdeck.com/ppworks/matrk08)
 
-![01_guest01_koshikawa.jpg]({{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/01_guest01_koshikawa.jpg)
+![01_guest01_koshikawa.jpg]({{base}}{{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/01_guest01_koshikawa.jpg)
 
 「許可を得る前にプルリクしよう」と題して、株式会社マネーフォワードの Rails エンジニアである越川氏([@ppworks](https://twitter.com/ppworks))に講演をいただきました。
 越川氏は初めての来松ということで、貴重なお話を持って松江に来ていただいたことに感謝です。
@@ -115,7 +116,7 @@ Pull Request の思想はチームでの意思決定のプロセスの民主化�
 * 発表者
   * まつもとゆきひろ氏([@yukihiro_matz](https://twitter.com/yukihiro_matz))
 
-![02_keynote_matz.jpg]({{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/02_keynote_matz.jpg)
+![02_keynote_matz.jpg]({{base}}{{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/02_keynote_matz.jpg)
 
 連日の講演で体調が悪い中、今回も松江Ruby会議でご講演いただきありがとうございます！
 愛犬が散歩中に引かれたようでしたが無事退院できたそうで安心しました。
@@ -187,7 +188,7 @@ Rubyという触媒を受けてここまでの人が集まり、各々でのRuby
 * 資料
   * [https://speakerdeck.com/a_matsuda/my-favorite-tools](https://speakerdeck.com/a_matsuda/my-favorite-tools)
 
-![03_guest02_amatsuda.jpg]({{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/03_guest02_amatsuda.jpg)
+![03_guest02_amatsuda.jpg]({{base}}{{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/03_guest02_amatsuda.jpg)
 
 株式会社マネーフォワードの松田明氏にご講演いただきました。
 「My Favorite Tool」と題して、松田明氏の開発環境の紹介・その他開発に使用するツールについてご紹介いただきました。
@@ -255,7 +256,7 @@ rfdは押されたキーの名前をsendして、対応する名前のメソッ�
 * 発表者
   * 吉岡隆行氏 ([@murateku](https://twitter.com/murateku))、西田 雄也氏 ([@nishidayuya](https://twitter.com/nishidayuya))と受賞者の皆さん、スポンサーの皆さん
 
-![04_procon.jpg]({{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/04_procon.jpg)
+![04_procon.jpg]({{base}}{{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/04_procon.jpg)
 
 前回の松江 Ruby 会議 07 では paiza さんとの協賛でオンラインでのプログラミングコンテストが行われました。[昨年度](https://paiza.jp/poh/joshibato/matsue-ruby)はpaizaさん協賛の形でしたが、今年度はスタッフで集まって実行環境を開発してみました。
 
@@ -401,7 +402,7 @@ nari3氏と方針としては同じでしたが表現の仕方が違いました
 * 発表者
   * 佐藤氏
 
-![05_livecoding_sato.jpg]({{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/05_livecoding_sato.jpg)
+![05_livecoding_sato.jpg]({{base}}{{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/05_livecoding_sato.jpg)
 
 島根大学ものづくり部 Pimの佐藤氏に「mruby/cで携帯回線のIoTデバイスを作ってみた」と題してライブコーディングをしていただきました。
 ライブコーディングは、会場に佐藤氏が持ってきたLEDライトやイルミネーションで飾り付けられたクリスマスツリーを時間内にmruby/cでプログラミングして光らせるという内容でした。
@@ -428,7 +429,7 @@ nari3氏と方針としては同じでしたが表現の仕方が違いました
 * 資料
   * [https://github.com/matsuerb/matrk/blob/master/08/ruby-quiz.md](https://github.com/matsuerb/matrk/blob/master/08/ruby-quiz.md)
 
-![06_rubyquiz.jpg]({{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/06_rubyquiz.jpg)
+![06_rubyquiz.jpg]({{base}}{{site.baseurl}}/images/0056-MatsueRubyKaigi08Report/06_rubyquiz.jpg)
 
 来場者全員参加型のクイズ大会を行いました。
 

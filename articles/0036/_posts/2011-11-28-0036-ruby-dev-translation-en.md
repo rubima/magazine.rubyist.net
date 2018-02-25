@@ -4,6 +4,7 @@ title: Introducing ruby-dev Translation
 short_title: Introducing ruby-dev Translation
 tags: 0036 ruby
 ---
+{% include base.html %}
 
 
 Author: yhara (Network Applied Communication Laboratory)

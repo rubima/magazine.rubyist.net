@@ -4,6 +4,7 @@ title: Fluentd v11 の噂
 short_title: Fluentd v11 の噂
 tags: 0044 FluentdV11NewFeatures
 ---
+{% include base.html %}
 
 
 書いた人: sonots ([@sonots](https://twitter.com/sonots))

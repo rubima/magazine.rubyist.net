@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 9 回】 PStore
 short_title: 標準添付ライブラリ紹介 【第 9 回】 PStore
 tags: 0016 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山
@@ -194,7 +195,7 @@ YAML::Store は PStore と同じように Ruby のオブジェクトを YAML 形
 ### 基本的な使い方
 
 YAML::Store の使い方は基本的に PStore と全く同じです。
-[プログラマーのための YAML 入門 (中級編)]({% post_url articles/0010/2005-10-10-0010-YAML %}) も参考にしてください。
+[プログラマーのための YAML 入門 (中級編)]({{base}}{% post_url articles/0010/2005-10-10-0010-YAML %}) も参考にしてください。
 
 {% highlight text %}
 {% raw %}
@@ -345,7 +346,7 @@ load_file(file)
 
 内容は短いのでここに全文を載せます。
 
-[xmlstore.rb]({{site.baseurl}}/images/0016-BundledLibraries/xmlstore.rb)
+[xmlstore.rb]({{base}}{{site.baseurl}}/images/0016-BundledLibraries/xmlstore.rb)
 
 ```ruby
 #
@@ -474,7 +475,7 @@ to_json は Symbol が文字列になるなど、JavaScript の仕様にあわ�
 * [ruby-man:PStore](ruby-man:PStore)
 * [ruby-man:Marshal](ruby-man:Marshal)
 * [ruby-man:YAML::Store](ruby-man:YAML::Store)
-* [プログラマーのための YAML 入門 (中級編)]({% post_url articles/0010/2005-10-10-0010-YAML %})
+* [プログラマーのための YAML 入門 (中級編)]({{base}}{% post_url articles/0010/2005-10-10-0010-YAML %})
 * [http://yaml4r.sourceforge.net/doc/](http://yaml4r.sourceforge.net/doc/)
 * [http://yaml4r.sourceforge.net/doc/page/the_options_hash.htm](http://yaml4r.sourceforge.net/doc/page/the_options_hash.htm)
 * [http://cvs.sourceforge.jp/cgi-bin/viewcvs.cgi/ruexli/ruexli/lib/xmlstore.rb](http://cvs.sourceforge.jp/cgi-bin/viewcvs.cgi/ruexli/ruexli/lib/xmlstore.rb)
@@ -495,7 +496,7 @@ Ruby リファレンスマニュアルは現在青木さんによる新システ
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

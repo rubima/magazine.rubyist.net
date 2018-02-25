@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (62) 名古屋Ruby会議03
 short_title: RegionalRubyKaigi レポート (62) 名古屋Ruby会議03
 tags: 0056 NagoyaRubyKaigi03Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigiレポート 名古屋Ruby会議03
@@ -19,7 +20,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 ### はじめに
 
 小雪がちらつく中、2017年02月11日に開催した名古屋Ruby会議03についてレポートします。
-![C4WLtXDVUAE1g_w_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4WLtXDVUAE1g_w_r.jpg)
+![C4WLtXDVUAE1g_w_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4WLtXDVUAE1g_w_r.jpg)
 
 名古屋Ruby会議03は、6年ぶりの開催になります。「Rubyを再発見」をテーマに日本3大演芸場の1つ大須演芸場で開催しました。
 
@@ -39,7 +40,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 前座で場が暖まり、午前の部が始まりました。
 
 #### Ruby/Railsはじめてチームの力をメキメキつけた！
-![C4WNFtRUEAAJFUr_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4WNFtRUEAAJFUr_r.jpg)
+![C4WNFtRUEAAJFUr_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4WNFtRUEAAJFUr_r.jpg)
 
 * 発表者
   * 小芝 敏明 (@bash0C7)
@@ -48,7 +49,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 
 
 #### ぺろぺろ: Github pull request bot framework
-![C4WTlysUEAArt-B_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4WTlysUEAArt-B_r.jpg)
+![C4WTlysUEAArt-B_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4WTlysUEAArt-B_r.jpg)
 
 * 発表者
   * mzp (@mzp)
@@ -57,7 +58,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 
 
 #### 招待講演 Apache ArrowのRubyバインディングをGObject Introspectionで
-![C4WZqFHVMAAZbaR_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4WZqFHVMAAZbaR_r.jpg)
+![C4WZqFHVMAAZbaR_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4WZqFHVMAAZbaR_r.jpg)
 
 * 発表者
   * 須藤 功平 (@ktou)
@@ -70,7 +71,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 スポンサー様のLT3本の後、午後の部が始まりました。
 
 #### mrubyのJIT
-![32856223675_7f31c92094_c_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/32856223675_7f31c92094_c_r.jpg)
+![32856223675_7f31c92094_c_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/32856223675_7f31c92094_c_r.jpg)
 
 * 発表者
   * 三浦 英樹 (@miura1729)
@@ -79,7 +80,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 
 
 #### Dynamic certificate internals with ngx_mruby
-![C4XIGPTUkAAnYPp_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4XIGPTUkAAnYPp_r.jpg)
+![C4XIGPTUkAAnYPp_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4XIGPTUkAAnYPp_r.jpg)
 
 * 発表者
   * 奥村 晃弘 (@hfm)
@@ -88,7 +89,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 
 
 #### 未来のサーバ基盤への Haconiwa/mruby の関わり - コンテナ仮想化のその先へ
-![C4XN_XqUcAAVOJq_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4XN_XqUcAAVOJq_r.jpg)
+![C4XN_XqUcAAVOJq_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4XN_XqUcAAVOJq_r.jpg)
 
 * 発表者
   * 近藤 宇智朗 (@udzura)
@@ -97,7 +98,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 
 
 #### Ruby で TensorFlow
-![32041351353_da0120aca7_c_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/32041351353_da0120aca7_c_r.jpg)
+![32041351353_da0120aca7_c_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/32041351353_da0120aca7_c_r.jpg)
 
 * 発表者
   * antimon2 (@antimon2)
@@ -106,7 +107,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 
 
 #### Fight with growing data on Rails
-![C4Xdr2RUMAA_T57_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4Xdr2RUMAA_T57_r.jpg)
+![C4Xdr2RUMAA_T57_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4Xdr2RUMAA_T57_r.jpg)
 
 * 発表者
   * joker1007 (Tomohiro Hashidate) (@joker1007)
@@ -115,7 +116,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 
 
 #### 招待講演 re: rinda
-![32041361433_21eb3a9d22_c_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/32041361433_21eb3a9d22_c_r.jpg)
+![32041361433_21eb3a9d22_c_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/32041361433_21eb3a9d22_c_r.jpg)
 
 * 発表者
   * 関 将俊 (@m_seki)
@@ -126,7 +127,7 @@ tags: 0056 NagoyaRubyKaigi03Report
 ### 大喜利
 
 再び、スポンサー様のLT3本の後、寄席らしい最後のプログラムとなる大喜利でした。
-![C4X-s38VcAAEkVR_r.jpg]({{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4X-s38VcAAEkVR_r.jpg)
+![C4X-s38VcAAEkVR_r.jpg]({{base}}{{site.baseurl}}/images/0056-NagoyaRubyKaigi03Report/C4X-s38VcAAEkVR_r.jpg)
 
 * 回答者
   * mzp

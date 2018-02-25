@@ -4,6 +4,7 @@ title: 詳解! test-all 並列化
 short_title: 詳解! test-all 並列化
 tags: 0033 ParallelizeTestAll
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -76,7 +77,7 @@ master と worker はパイプで繋がっており、後述するプロトコ�
 最近のマルチコア CPU であれば、複数の worker を同時に走らせることでテストが並列に実行されるので、結果としてテスト時間が短縮されます。
 
 図1: 並列動作の概要
-![overview.png]({{site.baseurl}}/images/0033-ParallelizeTestAll/overview.png)
+![overview.png]({{base}}{{site.baseurl}}/images/0033-ParallelizeTestAll/overview.png)
 
 ### パッチの提出
 
@@ -913,7 +914,7 @@ ensure 文で元の出力先へ確実に戻し、IO.pipe で開いた IO オブ�
 ### グラフ
 
 図2. 時間と比率のグラフ
-![graph.png]({{site.baseurl}}/images/0033-ParallelizeTestAll/graph.png)
+![graph.png]({{base}}{{site.baseurl}}/images/0033-ParallelizeTestAll/graph.png)
 
 ### 考察
 

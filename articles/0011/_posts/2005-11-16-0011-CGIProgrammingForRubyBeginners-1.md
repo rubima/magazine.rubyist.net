@@ -4,10 +4,11 @@ title: Ruby ビギナーのための CGI 入門 【第 1 回】 1 ページ
 short_title: Ruby ビギナーのための CGI 入門 【第 1 回】 1 ページ
 tags: 0011 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
 
 * Table of content
 {:toc}
@@ -214,7 +215,7 @@ Ruby のプログラムには Ruby の翻訳機が必要なんだということ
 しかし、一般にその二つを区別して書くことは少ないので、
 この連載でもそれぞれに対して同じ Ruby という表記を使います。
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners-2 %})
 
 

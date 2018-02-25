@@ -4,6 +4,7 @@ title: Rubyイメージソングコンテスト
 short_title: Rubyイメージソングコンテスト
 tags: 0033 ImagesongContest
 ---
+{% include base.html %}
 
 
 * Table of content

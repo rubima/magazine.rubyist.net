@@ -4,6 +4,7 @@ title: Ruby 2.0.0： require improvements
 short_title: Ruby 2.0.0： require improvements
 tags: Ruby200SpecialEn require
 ---
+{% include base.html %}
 
 
 Author: Masaya TARUI, Translator: Tatsuya Ono ([@ono](https://twitter.com/ono))
@@ -45,8 +46,8 @@ files.times{|j|
 {% endhighlight %}
 
 
-![require_bench_linux.png]({{site.baseurl}}/images/Ruby200SpecialEn-require/require_bench_linux.png)
-![require_bench_win.png]({{site.baseurl}}/images/Ruby200SpecialEn-require/require_bench_win.png)
+![require_bench_linux.png]({{base}}{{site.baseurl}}/images/Ruby200SpecialEn-require/require_bench_linux.png)
+![require_bench_win.png]({{base}}{{site.baseurl}}/images/Ruby200SpecialEn-require/require_bench_win.png)
 
 Since I have been putting a quite effort on opptimizing the performance, I am still bit annoyed with the fact 1.8.7 is the fastest ever.
 However you can see it is getting closer to 1.8.7 and most of you would not notice the difference when you develop an application.

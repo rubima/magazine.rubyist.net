@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (27) とちぎ Ruby 会議 04
 short_title: RegionalRubyKaigi レポート (27) とちぎ Ruby 会議 04
 tags: 0037 TochigiRubyKaigi04Report
 ---
+{% include base.html %}
 
 
 ## とちぎ Ruby 会議 04
@@ -47,7 +48,7 @@ tags: 0037 TochigiRubyKaigi04Report
 
 #### 第一部「オブジェクト指向ソーシャルコーディングスクリプト言語 Ruby 」
 
-![01.jpg]({{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/01.jpg)
+![01.jpg]({{base}}{{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/01.jpg)
 まず Ruby の成長と成長とともに表れた特徴について話されました。Ruby は日本で生まれアメリカで大きく成長したオブジェクト指向スクリプト言語で、日本の Ruby の歴史は逆輸入の歴史でもあったと述べます。RubyConf は 2001 年にはじまり日本 Ruby カンファレンスは 2006 年にはじまったし、Rails により Ruby でメシが食えるようになったと具体的な例をあげられます。 松田さん自身もここ数年は Rails でメシが食えていると述べられていました。
 
 松田さんは GitHub にいち早く注目し WEB+DB PRESS Vol.48 に GitHub に関する記事を書いています。そこには GitHub はプロジェクトではなく人にフォーカスをあてコードで語り合う SNS とかかれています。 また Rails は開発のリポジトリを GitHub に移行し、Ruby (特に Rails)を使う人にとって Git は既に欠かせない存在になっていたそうです。
@@ -84,7 +85,7 @@ Ruby Community では日本人の名前はあまり見かけないのは、日�
 
 館野さんとの出会いは RubyKaigi2006 で、館野さんがとても緊張して挨拶していたことを覚えているそうです。 当時、館野さんははてなスクリーンショットを dRuby を使って実装したというエピソードを披露されました。
 
-![02.jpg]({{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/02.jpg)
+![02.jpg]({{base}}{{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/02.jpg)
 関さんの講演ではおなじみですが幸福の王子本の宣伝からはじまりました。 ただし今回は"初刷"ではなく"日本先行発売"の幸福の王子本になっていました。 というのも"The dRuby Book"が Amazon で予約できるようになったためです。こちらの発売もたのしみですね(レポートを書いている時点では 2012 年 5 月発売予定)。
 
 今回は RubyKaigi2011 の Drip の再演といくつかの補足を話されました。
@@ -117,7 +118,7 @@ Drip#keys と Drip#each は一度作ったけど消したそうです。なん�
 
 ささたつさんは最初に CookPad のミッション"毎日の料理を楽しみにすることで、心からの笑顔を増やす"を紹介しました。 クックパッドでのものづくりはこのミッションを達成する、そのことだけを考えて実行しているそうです。
 
-![03.jpg]({{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/03.jpg)
+![03.jpg]({{base}}{{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/03.jpg)
 クックパッドの社員は約 90 名で、そのうちの 4 割がエンジニアだそうです。エンジニアは大きく 「サービス開発」、「インフラ」、「開発基盤」 の 3 つのグループに分かれているそうです。
 
 ものづくりにおいては"Best に集中"するそうです。 やりたい(情熱がある)＆得意(No.1 になれる)＆やるべき(儲かる仕組み)の3つを満たしているものが Best で、それ以外はやらないという意味だそうです。
@@ -134,7 +135,7 @@ arton さんは toRuby 勉強会拡大版(とちぎ RubyKaigi の前身(?))の�
 
 今回は "The Microsoft Conference 2011" で話された"オープンソースとマイクロソフトの良い関係 〜Ruby on Rails on Azure〜"をベースに、Windows 上での Ruby と Windows 上での Rails を中心にお話されました。
 
-![04.jpg]({{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/04.jpg)
+![04.jpg]({{base}}{{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/04.jpg)
 Ruby がサポートするプラットフォームはいくつかの段階にわかれていて、Supported なのは Debian GNU/Linux 4.0 on IA32 だけです。Windows は Best effort というレベルで、Mac OS X(Intel) などと同等であり高いレベルにあります。arton さんは usa さんをはじめとするメンテナの努力によるところが大きいとおっしゃいました。
 
 Windows での Ruby のバイナリパッケージはいくつかあるが、おすすめは Windows の作法に則っている ActiveScriptRuby (arton さんが作成)とのことです。
@@ -165,7 +166,7 @@ Windows に詳しい arton さんならではの発表になりました。
 
 最後の一般講演は mrkn さんです。mrkn さんは CRuby のコミッタで bigdecimal や Mac OS X のメンテナをされいます。 数値系に興味があるということで、Float や Rational の話をされました。
 
-![05.jpg]({{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/05.jpg)
+![05.jpg]({{base}}{{site.baseurl}}/images/0037-TochigiRubyKaigi04Report/05.jpg)
 まず Float について説明されました。Ruby の Float class は C でいう double のラッパで Boxing している。オブジェクトをアロケートする必要があるので生成コストは安くはない。また Float は実数の近似値であって、ほとんどの実数を正確に表せないという性質を詳しく説明されました。Ruby は小数の表記を Float として解釈するのだけれど、先に説明した Float の性質を知らない人によって Ruby の redmine にはたくさんの Float に関する issue があげられているそうです[^4]。Float に関しては ["What Every Computer Scientist Should Know About Floating-Point Arithmetic"](http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html) を読んでほしいと仰っていました。
 
 次に本題の Rational を紹介されました。Rational を使えば Float がもつ誤差なくすことができる。 けれでもリテラルがないので、知らない人には届かない。知っている人は Rational を使って書く、というジレンマがあります。そこで mrkn さんは小数表記を Rational に解釈してくれるパッチを書いたそうです。[^5]

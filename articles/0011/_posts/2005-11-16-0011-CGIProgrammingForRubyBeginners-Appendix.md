@@ -4,9 +4,10 @@ title: Ruby ビギナーのための CGI 入門 【第 1 回】 付録ページ
 short_title: Ruby ビギナーのための CGI 入門 【第 1 回】 付録ページ
 tags: 0011 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
 
 * Table of content
 {:toc}
@@ -49,7 +50,7 @@ AN HTTPD の zip ファイルを展開します。
 
 もし、皆さんが httpd142n かそれより古い AN HTTPD を使っている場合は
 このフォルダーの中の __Scripts\cmdIS.dll を必ず消去して下さい__。 
-![anhttpd_folder.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-Appendix/anhttpd_folder.jpg)
+![anhttpd_folder.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-Appendix/anhttpd_folder.jpg)
 
 ### 起動
 
@@ -57,7 +58,7 @@ httpd.exe がプログラム本体です。これをダブルクリックして
 サーバーを起動します。
 サーバーが起動したら [http://localhost/readme.html](http://localhost/readme.html) にアクセスしてみましょう。
 下図のように表示されたら起動成功です。
-![anhttpd_readme.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-Appendix/anhttpd_readme.jpg)
+![anhttpd_readme.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-Appendix/anhttpd_readme.jpg)
 
 ### CGI 用の設定
 
@@ -68,10 +69,10 @@ Windows のデスクトップの右下のタスクトレイにある AN HTTPD �
 すると、「オプション一般」という項目が出てくるので、これを選択します。
 下のような設定ダイアログが現れます。
 「一般タブ」の下の方に「追加」というボタンがあるので、それを押します。
-![anhttpd_dialog.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-Appendix/anhttpd_dialog.jpg)
+![anhttpd_dialog.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-Appendix/anhttpd_dialog.jpg)
 
 すると、下のようなダイアログが表示されます。
-![anhttpd_ruby.jpg]({{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-Appendix/anhttpd_ruby.jpg)
+![anhttpd_ruby.jpg]({{base}}{{site.baseurl}}/images/0011-CGIProgrammingForRubyBeginners-Appendix/anhttpd_ruby.jpg)
 
 図のように設定します。これで設定は終了です。
 「OK」ボタンを押しましょう。
@@ -99,6 +100,6 @@ server.rb の時にあった「:8080」が消えたり、
 * [http://localhost/cgi-bin/foo5.rb](http://localhost/cgi-bin/foo5.rb)
 
 
-[目次ページへ]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
+[目次ページへ]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})
 
 

@@ -4,6 +4,7 @@ title: Refinementsとは何だったのか
 short_title: Refinementsとは何だったのか
 tags: 0041 200Special
 ---
+{% include base.html %}
 
 
 書いた人：前田修吾 ([@shugomaeda](https://twitter.com/shugomaeda))

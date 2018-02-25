@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 8 回】 uri, pathname
 short_title: 標準添付ライブラリ紹介 【第 8 回】 uri, pathname
 tags: 0015 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山
@@ -117,7 +118,7 @@ URI::HTTP
 
 ### net/http と組み合わせる
 
-[前回]({% post_url articles/0013/2006-02-20-0013-BundledLibraries %}) の net/http を使って書かれていた get.rb のうち、
+[前回]({{base}}{% post_url articles/0013/2006-02-20-0013-BundledLibraries %}) の net/http を使って書かれていた get.rb のうち、
 URI を構成要素に分割する部分を uri ライブラリを使って書くと次のようになります。
 
 {% highlight text %}
@@ -503,7 +504,7 @@ each の中で URI オブジェクトと Pathname オブジェクトが同じよ
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 

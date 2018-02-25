@@ -4,6 +4,7 @@ title: よちよち.rb みんなで LT デビューしよう会 イベントレ�
 short_title: よちよち.rb みんなで LT デビューしよう会 イベントレポート
 tags: 0050 YochiyochiRbLtEventReport
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -20,9 +21,9 @@ tags: 0050 YochiyochiRbLtEventReport
 
 LT に慣れること、そして人前で話すことに慣れよう！　ということを目的としています。
 
-![Tomy.JPG]({{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Tomy.JPG)
+![Tomy.JPG]({{base}}{{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Tomy.JPG)
 ----
-![Audience.JPG]({{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Audience.JPG)
+![Audience.JPG]({{base}}{{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Audience.JPG)
 
 ## よちよち.rb とは？
 
@@ -51,7 +52,7 @@ LT 開催までの期間、twitter 上では「アカン、まだ 1 枚もでき
 LT のテーマは__「2014 年のふりかえり」__でした。
 
 初心者だからといって、時間オーバーは許されません。ドラ係 (通称：銅鑼マー) により容赦なく終了のドラが鳴らされます。
-![Drummer.JPG]({{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Drummer.JPG)
+![Drummer.JPG]({{base}}{{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Drummer.JPG)
 
 制限時間と戦い爆速でしゃべり続けた者、アプリのデモを交えながら話した者、美しい姉弟愛の話をした者、フォアボールの話をした者、実は剣士だった者、、、などなど色々な人がいて様々な話が聞けました。
 
@@ -296,7 +297,7 @@ LT の合間の休憩タイムにケーキをいただきました！
 元々「よちよち.rb の一周年祝にケーキを食べたいね」という話をしていたのですが (よちよち.rb は 2014 年 11 月 17 日開催の第 45 回ミートアップで 'ほぼ' 一周年を迎えております！)、残念ながら実現できませんでした。
 
 「一周年からは少し遅れたけど、LT 大会で今度こそケーキを食べよう！」ということで、ケーキ班の katorie さんに手配をしていただき、見事リベンジを果たすことができました！
-![Cake.JPG]({{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Cake.JPG)
+![Cake.JPG]({{base}}{{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Cake.JPG)
 
 Ruby と MacBook と主催者であるゆかおさんのアイコンをあしらった素敵なケーキでした！
 
@@ -315,7 +316,7 @@ LT の緊張から開放されてゆったりとした雰囲気の中、社内 L
 よちよち.rb 初の LT 大会は無事大成功を収めました！
 
 主催のゆかおさんを始め、発表者・聞き手として参加した皆様お疲れ様でした！
-![Gathering.JPG]({{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Gathering.JPG)
+![Gathering.JPG]({{base}}{{site.baseurl}}/images/0050-YochiyochiRbLtEventReport/Gathering.JPG)
 
 ## 著者について
 

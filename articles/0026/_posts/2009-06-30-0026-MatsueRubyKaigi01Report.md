@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (06) 松江 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (06) 松江 Ruby 会議 01
 tags: 0026 MatsueRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (06) 松江 Ruby 会議 01

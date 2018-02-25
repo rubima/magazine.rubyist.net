@@ -4,6 +4,7 @@ title: ! Lightning Talks の紹介
 short_title: ! Lightning Talks の紹介
 tags: preRubyKaigi2011 LT
 ---
+{% include base.html %}
 
 
 お馴染みのライトニングトークが、2 日目と 3 日目の 2 日間連続で開催されます！

@@ -4,6 +4,7 @@ title: vagrantとchef-soloを使った開発環境の構築
 short_title: vagrantとchef-soloを使った開発環境の構築
 tags: 0045 SetupDevelopmentEnvWIthVagrantAndChefSolo
 ---
+{% include base.html %}
 
 
 ## vagrant と chef-solo を使った開発環境の構築
@@ -387,7 +388,7 @@ vagrant up
 ##### SEGV
 
 vagrant upを実行中、結構な頻度でSEGVで落ちます。
-![vagrant-dot_error.jpeg]({{site.baseurl}}/images/0045-SetupDevelopmentEnvWIthVagrantAndChefSolo/vagrant-dot_error.jpeg)
+![vagrant-dot_error.jpeg]({{base}}{{site.baseurl}}/images/0045-SetupDevelopmentEnvWIthVagrantAndChefSolo/vagrant-dot_error.jpeg)
 
 この場合は、vagrant provisionを実行して再度chefを実行しましょう。<br />
 (クックブックは冪等性を担保していることが前提となります。)

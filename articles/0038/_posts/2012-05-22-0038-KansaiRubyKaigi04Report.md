@@ -4,12 +4,13 @@ title: RegionalRubyKaigi レポート (28) 関西 Ruby 会議 04
 short_title: RegionalRubyKaigi レポート (28) 関西 Ruby 会議 04
 tags: 0038 KansaiRubyKaigi04Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigiレポート関西 Ruby 会議 04
 
 ### 開催概要
-: ![top.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/top.jpg)
+: ![top.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/top.jpg)
 
 開催日
 :  2011 年 11 月 11 日 (金) 13:00 〜 18:00 <br /> 2011 年 11 月 12 日 (土) 10:00 〜 18:00
@@ -49,14 +50,14 @@ tags: 0038 KansaiRubyKaigi04Report
 
 会場が迷路のようにわかりにくいのはご愛嬌。。
 
-![scene01.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene01.jpg) ![scene02.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene02.jpg) ![scene03.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene03.jpg)
+![scene01.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene01.jpg) ![scene02.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene02.jpg) ![scene03.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene03.jpg)
 
-![scene04.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene04.jpg) ![scene05.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene05.jpg) ![scene06.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene06.jpg)
+![scene04.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene04.jpg) ![scene05.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene05.jpg) ![scene06.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/scene06.jpg)
 
 ### days.first
 
 #### アジャイル川端さんのお話 by アジャイルかわばたさん (書いた人：fukajun)
-: ![kawabata.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/kawabata.jpg)
+: ![kawabata.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/kawabata.jpg)
 
 川端さんの携わってきた Java での開発プロジェクトをとりあげてお話をされていました。
 
@@ -77,7 +78,7 @@ tags: 0038 KansaiRubyKaigi04Report
 Ruby on Rails の開発 DEMO も行われ、説明をしながらあっという間にアプリケーションを作ってしまったことに会場の注目も非常に熱かったです。
 
 #### Ruby イメージソング (書いた人：shizuto_a)
-: ![ouchi_cafe.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/ouchi_cafe.jpg)
+: ![ouchi_cafe.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/ouchi_cafe.jpg)
 
 音楽コンテストコミュニティ クレオフーガさんで行われた[Ruby イメージソングコンテスト](http://creofuga.net/contests/30) のイメージソング部門(歌もの)グランプリ曲、準グランプリ曲を、Ruby 関西 おうちカフェ部 (Ruby 関西／ Minami.rb )の 4 名によるバンドで演奏していただきました。
 
@@ -92,7 +93,7 @@ Ruby on Rails の開発 DEMO も行われ、説明をしながらあっという
 #### クックパッドのものづくりについて by クックパッド株式会社 (書いた人：shizuto_a)
 
 ##### クックパッドのものづくりを支える日々のこと by 高田悟史さん
-: ![cookpad.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/cookpad.jpg)
+: ![cookpad.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/cookpad.jpg)
 
 PC/携帯/スマートフォンなどで、レシピを探したり、自分のレシピをアップロードするサービスを提供しているクックパッドの裏方、インフラグループのお話をしていただだきました。
 
@@ -136,7 +137,7 @@ PC/携帯/スマートフォンなどで、レシピを探したり、自分の�
 ### days.last
 
 #### Social Coding with JRuby by 大場光一郎さん (書いた人：muryoimpl)
-: ![koichiroo.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/koichiroo.jpg)
+: ![koichiroo.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/koichiroo.jpg)
 
 JRuby に貢献されている大場さんによる JRuby の機能と歴史の紹介、大場さんがどのように Social Coding に関わって、恩恵を受けたかを Jobs コスプレで楽しくお話いただきました。
 
@@ -150,7 +151,7 @@ OSS に Contribute したことで人間関係がつながり JRuby 会議を開
 尚、質問した Rubyist には 素敵な JRuby ステッカーがプレゼントされていました。
 
 #### 「 TDD と RubyKaigi 運営技術」 by 角谷信太郎さん (書いた人：fukajun)
-: ![kakutani.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/kakutani.jpg)
+: ![kakutani.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/kakutani.jpg)
 
 角谷さんの近況から始まり、 TDD の魅力と RubyKaigi、コミュニティの面白さについて話されました。
 
@@ -196,7 +197,7 @@ FizzBuzz とは、もともとプログラマの入社面接の際に志望者�
 
 
 というものです。
-: ![higaki.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/higaki.jpg)
+: ![higaki.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/higaki.jpg)
 
 参加されたみなさんは、ひとくくりに Ruby 初心者とは言ってもプログラミング歴は様々で、プログラミング自体も初心者という方もいれば、Java 歴は長いという人までいらっしゃいました。課題のほうも、早々に書き上げてしまう方もいれば、ひとつひとつに悪戦苦闘される方も。
 
@@ -205,7 +206,7 @@ FizzBuzz とは、もともとプログラマの入社面接の際に志望者�
 Ruby 関西ではこれからも Rubyist コミュニティを盛り上げていけるよう、がんばります。
 
 #### 一般社団法人日本 Ruby の会のほうから来ました (書いた人：spring_aki)
-: ![nihon_ruby_no_kai.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/nihon_ruby_no_kai.jpg)
+: ![nihon_ruby_no_kai.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/nihon_ruby_no_kai.jpg)
 
 一般社団法人日本 Ruby の会 角谷理事、島田理事から法人化の経緯と今後の活動についてご報告いただきました。
 
@@ -217,7 +218,7 @@ Ruby 関西ではこれからも Rubyist コミュニティを盛り上げてい
 Ruby に関する問い合わせがあった時の問い合わせ先のルーティングや初めて Ruby を触る人の支援や初級者が中級者になる為の支援などを模索していくと共に、 Ruby に関する様々な相談に応じていくそうです。
 
 #### 私はいかにして Ruby によるオープンソース活動を楽しくやってきたか (書いた人：spring_aki)
-: ![jugyo.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/jugyo.jpg)
+: ![jugyo.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/jugyo.jpg)
 
 みなさんはコンプレックスとどのように付き合っているでしょうか。
 
@@ -230,7 +231,7 @@ Ruby に関する問い合わせがあった時の問い合わせ先のルーテ
 また「プログラマとしての能力アップのコツとして適当 (！？) なプロダクトを作って、小さなモノから初めてみるとやりやすいよ。」や「ひらめいたら作り始める。そしてそれはたいてい似たようなものが他にあります。たまたま誰も手を出していない分野を発見できるとラッキーなんです。」などスキルアップや楽しい開発を続けるアドバイスなども含めてお話頂きました。
 
 #### Ruby から教わったものづくり by 大和田 純さん (書いた人：muryoimpl)
-: ![june29.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/june29.jpg)
+: ![june29.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/june29.jpg)
 
 「弱肉強食」の世界で自分の立ち位置を再確認すると自分は「強」ではない、生存のためには自分の能力が発揮できる領域を見つけてその領域で生きていく必要がある、それを「適者生存」という言葉を使ってお話されていました。
 
@@ -241,9 +242,9 @@ Ruby に関する問い合わせがあった時の問い合わせ先のルーテ
 
 ### 懇親会
 
-![get-togetther01.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther01.jpg) ![get-togetther02.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther02.jpg) ![get-togetther03.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther03.jpg)
+![get-togetther01.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther01.jpg) ![get-togetther02.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther02.jpg) ![get-togetther03.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther03.jpg)
 
-![get-togetther04.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther04.jpg) ![get-togetther05.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther05.jpg) ![get-togetther06.jpg]({{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther06.jpg)
+![get-togetther04.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther04.jpg) ![get-togetther05.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther05.jpg) ![get-togetther06.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/get-togetther06.jpg)
 
 #### 謝辞
 

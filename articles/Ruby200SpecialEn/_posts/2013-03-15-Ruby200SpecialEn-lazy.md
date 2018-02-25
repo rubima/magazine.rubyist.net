@@ -4,6 +4,7 @@ title: Ruby 2.0.0： Enumerable#lazy
 short_title: Ruby 2.0.0： Enumerable#lazy
 tags: Ruby200SpecialEn lazy
 ---
+{% include base.html %}
 
 
 Author: Yutaka Hara ([@yhara_en](https://twitter.com/yhara_en))

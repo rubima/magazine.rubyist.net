@@ -4,6 +4,7 @@ title: Ruby 初心者の新卒エンジニアが gem パッケージ公開に至
 short_title: Ruby 初心者の新卒エンジニアが gem パッケージ公開に至るまで
 tags: 0046 RandexMultibyteGem
 ---
+{% include base.html %}
 
 
 * Table of content

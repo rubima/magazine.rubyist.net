@@ -4,6 +4,7 @@ title: Ruby ではじめるプログラミング 【第 1 回】
 short_title: Ruby ではじめるプログラミング 【第 1 回】
 tags: 0002 FirstProgramming
 ---
+{% include base.html %}
 
 
 著者：だん
@@ -23,7 +24,7 @@ __「今までプログラムには興味があったけど難しそうでなか
 プログラミングははじめてだけど HTML くらいなら知っているというような、ある程度コンピュータを使い慣れている方が対象です。
 
 ### プログラムは魔法！？
-: ![mage_s.png]({{site.baseurl}}/images/0002-FirstProgramming/mage_s.png)
+: ![mage_s.png]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/mage_s.png)
 
 プログラムはコンピュータを使う人にとって魔法です。その魔法は__○○○の血を引いた者にしか使うことのできない摩訶不思議な超能力__ではありません。決められたルールを覚えれば誰にでも唱えることのできる呪文です。
 
@@ -33,7 +34,7 @@ __「今までプログラムには興味があったけど難しそうでなか
 
 ### Ruby はオブジェクト指向スクリプト言語
 
-![dengaku_s.png]({{site.baseurl}}/images/0002-FirstProgramming/dengaku_s.png)Ruby は、便利な機能がたくさんあって、いろいろな分野[^2]で使うことができるとても強力なプログラム言語ですが、簡単な機能を使うだけでも十分にプログラミングを楽しむことができます。また、オブジェクト指向[^3]を知らなくても大丈夫です。
+![dengaku_s.png]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/dengaku_s.png)Ruby は、便利な機能がたくさんあって、いろいろな分野[^2]で使うことができるとても強力なプログラム言語ですが、簡単な機能を使うだけでも十分にプログラミングを楽しむことができます。また、オブジェクト指向[^3]を知らなくても大丈夫です。
 
 Ruby はまつもと ゆきひろ氏が中心となって開発している__フリーソフトウェア__なので、誰でも無料で使用することができます。
 
@@ -69,7 +70,7 @@ __コマンド プロンプト__ を起動しましょう。Windows XP なら次
 1. __コマンド プロンプト__ をクリック
 
 
-_![dos.png]({{site.baseurl}}/images/0002-FirstProgramming/dos.png)_
+_![dos.png]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/dos.png)_
 
 コマンド プロンプトが起動したらキーボードから、
 
@@ -98,7 +99,7 @@ ruby 1.8.2 (2004-07-29) [i386-mswin32]
 
 ### エディタでプログラムのソースを書く
 
-![usa_s.png]({{site.baseurl}}/images/0002-FirstProgramming/usa_s.png) プログラムを実行するにはプログラムが書かれたファイルを作成しなければなりません。
+![usa_s.png]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/usa_s.png) プログラムを実行するにはプログラムが書かれたファイルを作成しなければなりません。
 このプログラムが書かれたファイルのことを__ソースファイル__と呼びます。
 ただ単に__ソース__と呼ぶこともあります。
 
@@ -118,7 +119,7 @@ puts 'hello world'
 {% endhighlight %}
 
 
-_![notepad.png]({{site.baseurl}}/images/0002-FirstProgramming/notepad.png)_
+_![notepad.png]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/notepad.png)_
 
 入力し終わったらファイルを C:\src に hello.rb という名前で保存してください。
 
@@ -442,7 +443,7 @@ sleep(60) # 60秒間停止
 
 
 ### 演算
-: ![hebi_s.gif]({{site.baseurl}}/images/0002-FirstProgramming/hebi_s.gif)
+: ![hebi_s.gif]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/hebi_s.gif)
 
 プログラムの中では簡単に四則演算を行うことができます。次のプログラムを実行するとそれぞれの演算結果が表示されます。
 
@@ -546,7 +547,7 @@ puts num * 2
 {% endraw %}
 {% endhighlight %}
 
-: ![fat_s.png]({{site.baseurl}}/images/0002-FirstProgramming/fat_s.png)
+: ![fat_s.png]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/fat_s.png)
 
 プログラムを実行したら、数字を入力して Enter キーを押してください。例え
 ば 100 と入力すれば 200 という数字が表示されると思います。
@@ -787,7 +788,7 @@ puts rand(6) + 1
 {% endhighlight %}
 
 
-![saikoro_s.png]({{site.baseurl}}/images/0002-FirstProgramming/saikoro_s.png)
+![saikoro_s.png]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/saikoro_s.png)
 これは 1 ? 6 の数値をランダムで画面に表示するプログラムです。rand(6) は 0 ? 5 の整数をランダムで返します。
 rand の引数に1 以上の整数を与えると「 __0__ 以上で __与えた引数 -1 __以下の整数」のいずれかの値が取得できます。
 
@@ -830,7 +831,7 @@ end
 ```
 
 _※プログラムの各行の頭にある数字と縦棒は説明しやすくするための行番号なので、プログラムには書き込まないでくださいね。_
-: ![robo_s.png]({{site.baseurl}}/images/0002-FirstProgramming/robo_s.png)
+: ![robo_s.png]({{base}}{{site.baseurl}}/images/0002-FirstProgramming/robo_s.png)
 
 3 行目で変数 r に 1 か 2 か 3 のどれかの数字が代入されます。6 行目と 8 行目ではじめてみる elsif というコードがあります。これは 4 行目の if に対応していて 4 行目の if の条件が成立しなかった場合に elsif までプログラムの処理がジャンプしてきます。 elsif の行までくると if 文と同じようにここで条件判定が行われます。つまりこの if から end までの処理はこういう意味です。 
 
@@ -1028,7 +1029,7 @@ exit 以外はこれまでに紹介した機能しか使っていないのでじ
 ## Ruby ではじめるプログラミング 連載一覧
 
 {% for post in site.tags.FirstProgramming %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

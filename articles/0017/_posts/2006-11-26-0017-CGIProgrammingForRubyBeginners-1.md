@@ -4,10 +4,11 @@ title: Ruby ビギナーのための CGI 入門 【第 5 回】 文字コード�
 short_title: Ruby ビギナーのための CGI 入門 【第 5 回】 文字コードと排他処理 1 ページ
 tags: 0017 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[目次へ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
-[次のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
+[目次へ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
+[次のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
 
 ## 目次
 
@@ -22,7 +23,7 @@ tags: 0017 CGIProgrammingForRubyBeginners
 手袋がないと手が痛くなって運転に支障があるからです。
 皆さん防寒対策はどのようにされていますか？
 
-[前回]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) は
+[前回]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) は
 bbs.rb が担当する表示部分を中心に改造していきました。
 見た目は良くなって、だいぶ掲示板らしくなってきましたが、
 それでも細かい改良がまだまだ必要です。
@@ -31,18 +32,18 @@ update.rb が担当するフォームデータの処理や掲示板データへ�
 こられの処理は目に見えにくいので、つまらないかもしれませんが、非常に重要です。
 しっかりと理解してください。
 この連載の掲示板における bbs.rb や update.rb の役割を知りたい方は
-[14 号]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %}) を参照して下さい。
+[14 号]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %}) を参照して下さい。
 
 ### 対象読者
 
 この記事は以下のような人を対象としています。
 
-* [前回]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) の記事を読んだ人
+* [前回]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) の記事を読んだ人
 * HTML を書ける人
 * Windows 98/98SE/Me/2000/XP のいずれかを使っている人
 
 
-この連載は [前回]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) 
+この連載は [前回]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %}) 
 までの記事を読んでいる方を対象として書かれています。
 今号を読む前に前回までの内容を把握しておいて下さい。
 
@@ -55,11 +56,11 @@ update.rb が担当するフォームデータの処理や掲示板データへ�
 
 
 この他に RDE を使います。これらの準備の方法は
-[11号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) で述べたので、
+[11号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %}) で述べたので、
 詳しくはそちらを参照して下さい。
 今号で使うプログラムは zip ファイルにまとめてあります。
 これまでと同じようにダウンロードして C:\ に展開して下さい。
-[rubima017-cgi.zip]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/rubima017-cgi.zip)
+[rubima017-cgi.zip]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/rubima017-cgi.zip)
 
 ## ニュー Ruby に馴れよう
 
@@ -385,13 +386,13 @@ euc_jp.txt は EUC-JP で、iso_2022_jp.txt は ISO-2022-JP で書かれてい�
 iso_2022_jp.txt や euc_jp.txt を開くと文字化けします。
 
 Shift_JIS
-![memo_sjis.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_sjis.jpg)
+![memo_sjis.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_sjis.jpg)
 
 EUC-JP
-![memo_euc.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_euc.jpg)
+![memo_euc.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_euc.jpg)
 
 iso2022-jp
-![memo_jis.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_jis.jpg)
+![memo_jis.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/memo_jis.jpg)
 
 では、EUC-JP や iso2022-jp のファイルを Windows のメモ帳で
 読めるようにするプログラムを書いてみましょう。
@@ -480,7 +481,7 @@ CGI プログラム (この場合は update.rb) は実行されると、
 コピー人間のように増えて同じ処理を行うプログラムが別々に動き出します。
 このためほぼ同時に掲示板への書込みがあると、ほぼ同じタイミングで update.rb という
 同じ CGI プログラムが 2 つ動作することになります。
-![conflict.jpg]({{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/conflict.jpg)
+![conflict.jpg]({{base}}{{site.baseurl}}/images/0017-CGIProgrammingForRubyBeginners-1/conflict.jpg)
 
 2 つの update.rb がほぼ同時に動作し始めて、
 bbs.datに書き込みをした場合、bbs.dat はどうなるのでしょうか。
@@ -569,7 +570,7 @@ close でファイルを閉じるまでの間行われています。
 次ページからは掲示板プログラムの
 文字コードや排他処理の対応を進めていきます。
 
-[目次へ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
-[次のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
+[目次へ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
+[次のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-2 %})
 
 

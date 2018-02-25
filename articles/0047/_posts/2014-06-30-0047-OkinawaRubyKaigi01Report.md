@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (44) 沖縄 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (44) 沖縄 Ruby 会議 01
 tags: 0047 OkinawaRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (44) 沖縄 Ruby 会議 01

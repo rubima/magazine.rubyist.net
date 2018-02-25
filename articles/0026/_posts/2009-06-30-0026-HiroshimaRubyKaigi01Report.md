@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (08) 広島 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (08) 広島 Ruby 会議 01
 tags: 0026 HiroshimaRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (08) 広島 Ruby 会議 01
@@ -12,7 +13,7 @@ tags: 0026 HiroshimaRubyKaigi01Report
 
 ## はじめに
 
-![IMG_4666.jpg]({{site.baseurl}}/images/0026-HiroshimaRubyKaigi01Report/IMG_4666.jpg)
+![IMG_4666.jpg]({{base}}{{site.baseurl}}/images/0026-HiroshimaRubyKaigi01Report/IMG_4666.jpg)
 2009/3/11 に、[広島 Ruby 会議 01](http://regional.rubykaigi.org/hiroshima01) が開催され、予定人数を超えるご参加を頂きました。
 
 今回は特に Ruby の知名度の低い広島において、ビジネスユーザ向けにご案内の声をかけさせて頂いた事や平日開催ということもあって、スーツで来場して頂いた方が多く、ちょっと他の Ruby 会議とは趣の違うビジネスイベント的な雰囲気でした。

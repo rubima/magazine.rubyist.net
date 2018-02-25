@@ -4,13 +4,14 @@ title: Ruby ではじめるプログラミング 【第 3 回】
 short_title: Ruby ではじめるプログラミング 【第 3 回】
 tags: 0004 FirstProgramming
 ---
+{% include base.html %}
 
 
 著者：だん
 
 ## はじめに
 
-前回 ([Ruby ではじめるプログラミング 【第 2 回】]({% post_url articles/0003/2004-11-15-0003-FirstProgramming %})) はいくつかの便利な機能と配列を中心に解説しました。
+前回 ([Ruby ではじめるプログラミング 【第 2 回】]({{base}}{% post_url articles/0003/2004-11-15-0003-FirstProgramming %})) はいくつかの便利な機能と配列を中心に解説しました。
 
 今回も Ruby の新しい機能を 2 つ紹介します。
 
@@ -452,7 +453,7 @@ Ruby を使ってオープンソースのゲームが開発できないかと模
 ## Ruby ではじめるプログラミング 連載一覧
 
 {% for post in site.tags.FirstProgramming %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

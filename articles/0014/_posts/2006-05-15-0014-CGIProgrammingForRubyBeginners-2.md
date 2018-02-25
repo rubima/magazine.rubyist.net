@@ -4,11 +4,12 @@ title: Ruby ビギナーのための CGI 入門 【第 3 回】 ページ 2
 short_title: Ruby ビギナーのための CGI 入門 【第 3 回】 ページ 2
 tags: 0014 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[前ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-1 %})
-[目次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-3 %})
+[前ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-1 %})
+[目次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-3 %})
 
 ## このページの目次
 
@@ -40,7 +41,7 @@ print st
 
 このプログラムを RDE で実行すると、
 下のようなメッセージが表示されます。
-![error1.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error1.jpg)
+![error1.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error1.jpg)
 
 {% highlight text %}
 {% raw %}
@@ -73,7 +74,7 @@ Ruby がそんな変数は知らないとエラーを出して終了してしま
 priny "hogehoge"
 
 ```
-![error2.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error2.jpg)
+![error2.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error2.jpg)
 
 {% highlight text %}
 {% raw %}
@@ -115,7 +116,7 @@ print にすれば修正は完了です。
 print "aaa  bbbb ccccc".to_s(2, " ")
 
 ```
-![error3.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error3.jpg)
+![error3.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error3.jpg)
 
 エラーメッセージは下記のようになります。
 
@@ -159,7 +160,7 @@ puts "Program END"
 
 ```
 
-![error4.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error4.jpg)
+![error4.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error4.jpg)
 
 このプログラムを実行すると、
 
@@ -186,7 +187,7 @@ print 345
  
 ```
 
-![error5.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error5.jpg)
+![error5.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error5.jpg)
 
 2 行目で閉じ括弧を打ち忘れているため、
 どこまでが print の引数か分からず、エラーが起きています。
@@ -212,7 +213,7 @@ puts　123
 
 ```
 
-![error6.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error6.jpg)
+![error6.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error6.jpg)
 
 RDE で error6.rb を開いてプログラムの内容を見ると分かりますが、
 print と 123 の間に全角空白があり、
@@ -238,7 +239,7 @@ f.close
 
 ```
 
-![error7.jpg]({{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error7.jpg)
+![error7.jpg]({{base}}{{site.baseurl}}/images/0014-CGIProgrammingForRubyBeginners-2/error7.jpg)
 
 「No such file or directory - erro1.rb 」というエラーメッセージが出ています。
 これは erro1.rb なんてファイルは無いという意味です。
@@ -402,8 +403,8 @@ error8.rb の 5 行目が表示されません。
 この方法は print や puts でも利用出来ますが、
 p の方がメソッド名が短いので、簡単にプリントデバッグを試すことが出来ます。
 
-[前ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-1 %})
-[目次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-3 %})
+[前ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-1 %})
+[目次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0014/2006-05-15-0014-CGIProgrammingForRubyBeginners-3 %})
 
 

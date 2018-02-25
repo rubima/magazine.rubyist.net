@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (52) 浜松 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (52) 浜松 Ruby 会議 01
 tags: 0051 HamamatsuRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## はじめに
@@ -37,7 +38,7 @@ tags: 0051 HamamatsuRubyKaigi01Report
 : [YouTube 再生リスト](https://www.youtube.com/watch?v=f_pPGiWfMtY&list=PL5zvpY1TVrr9XW8-DrrxKzPptbAfJTm9Q)
 
 ## 午前の部
-![01opening.jpg]({{site.baseurl}}/images/0051-HamamatsuRubyKaigi01Report/01opening.jpg)
+![01opening.jpg]({{base}}{{site.baseurl}}/images/0051-HamamatsuRubyKaigi01Report/01opening.jpg)
 
 ### たのしい Ruby
 
@@ -172,7 +173,7 @@ Ruby on Rails がきっかけの学生起業について、サービスの開始
 映像: [エンジニアのためのモチベーション戦略 (小木悠斗)](https://www.youtube.com/watch?v=nVRAf2MMTbQ&list=PL5zvpY1TVrr9XW8-DrrxKzPptbAfJTm9Q&index=12)
 
 ## まとめ
-![99hmrk01.jpg]({{site.baseurl}}/images/0051-HamamatsuRubyKaigi01Report/99hmrk01.jpg)
+![99hmrk01.jpg]({{base}}{{site.baseurl}}/images/0051-HamamatsuRubyKaigi01Report/99hmrk01.jpg)
 
 今回初めての浜松における Regional RubyKaigi ということで、我々 Hamamatsu.rb のメンバーも緊張しながら、ご来場いただいた方々に満足してもらえるのかと不安を抱いていたのですが、蓋を開けてみれば非常に大盛り上がりなイベントとして成功できたことに、大きな喜びを感じています。
 

@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (03) 関西 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (03) 関西 Ruby 会議 01
 tags: 0025 KansaiRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 ## RegionalRubyKaigi レポート (03) 関西 Ruby 会議 01

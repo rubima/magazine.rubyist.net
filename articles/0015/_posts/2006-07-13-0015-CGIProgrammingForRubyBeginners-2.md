@@ -4,10 +4,11 @@ title: Ruby ビギナーのための CGI 入門 【第 4 回】 2 ページ
 short_title: Ruby ビギナーのための CGI 入門 【第 4 回】 2 ページ
 tags: 0015 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[前のページへ]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners-1 %})
-[目次へ]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %})
+[前のページへ]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners-1 %})
+[目次へ]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %})
 
 ## 目次
 
@@ -749,7 +750,7 @@ en - num + 1 の番号から表示させることになります。
 41 行以降では変数 link にリンク部分の HTML が付け加わっていきます。
 41 行では最初に div タグをつけています。
 これは HTML のタグをまとめるために使用します。
-「\\"」 というのは [11 号]({% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})で紹介しましたが、覚えていますか？
+「\\"」 というのは [11 号]({{base}}{% post_url articles/0011/2005-11-16-0011-CGIProgrammingForRubyBeginners %})で紹介しましたが、覚えていますか？
 これは文字列の区切りとしての「"」ではなく、
 「"」そのものを意味しています。
 
@@ -816,7 +817,7 @@ each メソッドを使って順に追加しています。
 自分で記録する時は 1 分単位なのに…。
 そんな適当で良いのかよ＞うちの職場。
 
-[前のページへ]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners-1 %})
-[目次へ]({% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %})
+[前のページへ]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners-1 %})
+[目次へ]({{base}}{% post_url articles/0015/2006-07-13-0015-CGIProgrammingForRubyBeginners %})
 
 

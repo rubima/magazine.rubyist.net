@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 7 回】 net/http
 short_title: 標準添付ライブラリ紹介 【第 7 回】 net/http
 tags: 0013 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：cuzic
@@ -137,7 +138,7 @@ Web サーバの名前、ポート番号、Web ページのパスを使って、
 これは、リファレンスマニュアルに記載の例を焼きなおしただけですが、
 net/http での GET リクエストの例は次のようになります。
 
-[get.rb]({{site.baseurl}}/images/0013-BundledLibraries/get.rb)
+[get.rb]({{base}}{{site.baseurl}}/images/0013-BundledLibraries/get.rb)
 
 ```ruby
 require 'net/http'
@@ -228,7 +229,7 @@ get.rb では GET リクエストを利用した例について解説しまし�
 net/http を利用すると POST リクエストは、とても簡単に行えます。
 次のようになります。
 
-[hatena_search.rb]({{site.baseurl}}/images/0013-BundledLibraries/hatena_search.rb)
+[hatena_search.rb]({{base}}{{site.baseurl}}/images/0013-BundledLibraries/hatena_search.rb)
 
 ```ruby
 require 'net/http'
@@ -276,7 +277,7 @@ end.join("&")
 Basic 認証が必要な [http://www.notwork.org/~gotoken/uu200410/basic/](http://www.notwork.org/~gotoken/uu200410/basic/)
 のページにログインします。
 
-[basic_auth.rb]({{site.baseurl}}/images/0013-BundledLibraries/basic_auth.rb)
+[basic_auth.rb]({{base}}{{site.baseurl}}/images/0013-BundledLibraries/basic_auth.rb)
 
 ```ruby
 require 'net/http'
@@ -657,7 +658,7 @@ Ruby 関西というコミュニティで、Ruby 勉強会＠関西という活�
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

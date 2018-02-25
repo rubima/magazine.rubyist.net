@@ -4,6 +4,7 @@ title: Ruby 2.0.0： refinement
 short_title: Ruby 2.0.0： refinement
 tags: Ruby200SpecialEn refinement
 ---
+{% include base.html %}
 
 
 Author: Shugo Maeda([@shugomaeda](https://twitter.com/shugomaeda))

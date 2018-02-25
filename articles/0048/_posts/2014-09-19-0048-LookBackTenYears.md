@@ -4,6 +4,7 @@ title: 10 周年記念：あの記事を振り返って
 short_title: 10 周年記念：あの記事を振り返って
 tags: 0048 LookBackTenYears
 ---
+{% include base.html %}
 
 
 ## はじめに
@@ -20,7 +21,7 @@ tags: 0048 LookBackTenYears
 
 ### YARV Maniacs
 
-* [YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説]({% post_url articles/0006/2005-05-09-0006-YarvManiacs %}) (連載)
+* [YARV Maniacs 【第 1 回】 『Ruby ソースコード完全解説』不完全解説]({{base}}{% post_url articles/0006/2005-05-09-0006-YarvManiacs %}) (連載)
 
 
 最初の記事が [2005 年 5 月号](0006)だったようなので、随分遠い昔です。
@@ -33,7 +34,7 @@ tags: 0048 LookBackTenYears
 
 ### 小アンケート企画「いまさら ruby 1.6？」
 
-* [小アンケート企画「いまさら ruby 1.6？」]({% post_url articles/0009/2005-09-06-0009-Enquete %})
+* [小アンケート企画「いまさら ruby 1.6？」]({{base}}{% post_url articles/0009/2005-09-06-0009-Enquete %})
 
 
 | るびま 1 周年の企画 | この企画、今だったら|
@@ -47,7 +48,7 @@ tags: 0048 LookBackTenYears
 
 ### あなたのRubyコードを添削します
 
-* [あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb]({% post_url articles/0010/2005-10-10-0010-CodeReview %}) (連載)
+* [あなたの Ruby コードを添削します 【第 1 回】 pukipa.rb]({{base}}{% post_url articles/0010/2005-10-10-0010-CodeReview %}) (連載)
 
 
 これ 2005 年ですか！　9 年もたったんですねえ。[書籍](http://i.loveruby.net/ja/rubimabook/)にもなったこの連載ですが、毎回やったら長くて書くの本当に大変でした。最終的にはネタ不足とマンネリ化が最大の敵でしたけど。
@@ -60,7 +61,7 @@ tags: 0048 LookBackTenYears
 
 ### 標準添付ライブラリ紹介
 
-* [標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R]({% post_url articles/0007/2005-06-19-0007-BundledLibraries %}) (連載)
+* [標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R]({{base}}{% post_url articles/0007/2005-06-19-0007-BundledLibraries %}) (連載)
 
 
 普通の連載記事の中で一番回数が多かった標準添付ライブラリ紹介の多くの回の記事を書きました。
@@ -72,7 +73,7 @@ tags: 0048 LookBackTenYears
 
 ### Rubyist のための他言語探訪
 
-* [Rubyist のための他言語探訪 【第 1 回】 Python]({% post_url articles/0008/2005-07-19-0008-Legwork %}) (連載)
+* [Rubyist のための他言語探訪 【第 1 回】 Python]({{base}}{% post_url articles/0008/2005-07-19-0008-Legwork %}) (連載)
 
 
 すっかり止まっててごめんなさい。書籍化の話なんかもあったんですが、私があまりにもノロマなので立ち消えてしまいました。そのぶん、日経 Linux で (自作) 言語ネタの連載をしてますので、そちらをどうぞよろしく。
@@ -81,7 +82,7 @@ tags: 0048 LookBackTenYears
 
 ### 詳解! test-all 並列化
 
-* [詳解! test-all 並列化]({% post_url articles/0033/2011-04-05-0033-ParallelizeTestAll %})
+* [詳解! test-all 並列化]({{base}}{% post_url articles/0033/2011-04-05-0033-ParallelizeTestAll %})
 
 
 若気の至りだ……若い……
@@ -97,7 +98,7 @@ tags: 0048 LookBackTenYears
 
 ### るびまゴルフ
 
-* [るびまゴルフ 【第 1 回】]({% post_url articles/0021/2007-09-29-0021-RubiMaGolf %})
+* [るびまゴルフ 【第 1 回】]({{base}}{% post_url articles/0021/2007-09-29-0021-RubiMaGolf %})
 
 
 #### 今から振り返っての感想
@@ -112,18 +113,18 @@ tags: 0048 LookBackTenYears
 
 ### 巻頭言
 
-* [0001 号 巻頭言]({% post_url articles/0001/2004-09-10-0001-ForeWord %}) ほか
+* [0001 号 巻頭言]({{base}}{% post_url articles/0001/2004-09-10-0001-ForeWord %}) ほか
 
 
 巻頭言については、今から振り返っても「〆切つらい（というか間に合ってない）」の感想ばかりで……（いつも遅くてすみません）。
 
-一番印象深いのは[第 6 号の巻頭言]({% post_url articles/0006/2005-05-09-0006-ForeWord %})で、その年の SF セミナーに参加してるときの休み時間に会場 (RubyKaigi 2007 をやった全電通労働会館ホール) 近くの喫茶店で泣きながら原稿修正してたのを、毎年 SF セミナーに参加するたびにふと思い出します。
+一番印象深いのは[第 6 号の巻頭言]({{base}}{% post_url articles/0006/2005-05-09-0006-ForeWord %})で、その年の SF セミナーに参加してるときの休み時間に会場 (RubyKaigi 2007 をやった全電通労働会館ホール) 近くの喫茶店で泣きながら原稿修正してたのを、毎年 SF セミナーに参加するたびにふと思い出します。
 
 ## 須藤功平さん
 
 ### cairo: 2 次元画像描画ライブラリ
 
-* [cairo: 2 次元画像描画ライブラリ]({% post_url articles/0019/2007-05-18-0019-cairo %})
+* [cairo: 2 次元画像描画ライブラリ]({{base}}{% post_url articles/0019/2007-05-18-0019-cairo %})
 
 
 #### エラッタ
@@ -140,14 +141,14 @@ rcairo についてのすべてが詰まっていて、立派だなぁと思い�
 
 ### Ruby コードの感想戦 【第 1 回】 WikiR
 
-* [Ruby コードの感想戦 【第 1 回】 WikiR]({% post_url articles/0040/2012-11-25-0040-CodePostMortem %})
+* [Ruby コードの感想戦 【第 1 回】 WikiR]({{base}}{% post_url articles/0040/2012-11-25-0040-CodePostMortem %})
 
 
 久しぶりに咳さんとセッションできたのが感慨深かったです。
 
 咳さんは相変わらず咳さんっぽいコードを書いていました。私は、一緒にコードを書いていると、このコードはあの人のコードっぽいというのを感じるようになるんですが、そういうのが好きなんだなぁと思いました。
 
-[咳さんの返事の回]({% post_url articles/0041/2013-02-24-0041-CodePostMortem %})の synchronize メソッドがあることの意味については、自分にはなかった視点で、あぁたしかにそうだなぁと思ったので、やってよかったです。勉強になりました。
+[咳さんの返事の回]({{base}}{% post_url articles/0041/2013-02-24-0041-CodePostMortem %})の synchronize メソッドがあることの意味については、自分にはなかった視点で、あぁたしかにそうだなぁと思ったので、やってよかったです。勉強になりました。
 
 この頃、編集してくれたたなべさんとは面識がなくて、たなべさんが提案してくれた「咳さんの返事の回の『延長戦』のところ」は「え、これ必要！？こんな感じでいいの！？」とだいぶピンとこないまま書いたものでした。咳さんも同じように感じていたみたいで、咳さんとは（実装の仕方は違うことが多いけど）感じ方は似ているのかもなぁと思ったものでした。
 
@@ -165,7 +166,7 @@ rcairo についてのすべてが詰まっていて、立派だなぁと思い�
 
 ### レアでアレなGCの話
 
-* [レアでアレなGCの話]({% post_url articles/0025/2009-02-07-0025-RareAreGCTalk %})
+* [レアでアレなGCの話]({{base}}{% post_url articles/0025/2009-02-07-0025-RareAreGCTalk %})
 
 
 なんともう 5 年も前ですか……。思えばはじめてちゃんと GC についてまとまった記事を書いたのがこれだったような。それからこの記事は[英訳](https://furious-waterfall-55.heroku.com/ruby-guide/internals/gc.html)されて英語圏でもわりといろんな人が読んでくれたいみたいですね。あと、この辺りを見てくれた編集者さんが GC 本の企画を持ち掛けてくださったりして、大分活躍の幅が広がったような気がします。
@@ -174,7 +175,7 @@ rcairo についてのすべてが詰まっていて、立派だなぁと思い�
 
 ### Rubyist Hotlinks 【第 22 回】 nari さん
 
-* [Rubyist Hotlinks 【第 22 回】 nari さん]({% post_url articles/0028/2009-12-07-0028-Hotlinks %})
+* [Rubyist Hotlinks 【第 22 回】 nari さん]({{base}}{% post_url articles/0028/2009-12-07-0028-Hotlinks %})
 
 
 Hotlinks も好きで読んでたんですけども、まさか自分がインタビューされる側になるとは。その当時は Hotlinks が止まっていて、RubyKaigi の懇親会にて酔った勢いでささださんに「また Hotlinks やってくださいよ～！」と言ったらインタビューされることになりまして、なんでも言ってみるもんだなぁと思います。
@@ -187,15 +188,15 @@ Hotlinks も好きで読んでたんですけども、まさか自分がイン�
 
 ### スはスペックのス
 
-* [スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)]({% post_url articles/0021/2007-09-29-0021-Rspec %})
-* [スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)]({% post_url articles/0023/2008-03-31-0023-Rspec %})
+* [スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)]({{base}}{% post_url articles/0021/2007-09-29-0021-Rspec %})
+* [スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)]({{base}}{% post_url articles/0023/2008-03-31-0023-Rspec %})
 
 
 2 回で止まっている連載です。すみません。
 
 当時と今とを比べると、ツール周りはすっかり変わってしまっていますね。Cucumber や Turnip が登場したり、should syntax が非標準になったりしてコード自体は完全に古くなっているところに、Ruby エコシステムの動きの速さを感じます。
 
-その一方で、[第 1 回]({% post_url articles/0021/2007-09-29-0021-Rspec %})の前半など、心がけや考え方、TDD とはなにかという視点は古びておらず、いまも通用しそうです。するといいな。なかなか良いことを言っていると思います(おもに かくたに が)。
+その一方で、[第 1 回]({{base}}{% post_url articles/0021/2007-09-29-0021-Rspec %})の前半など、心がけや考え方、TDD とはなにかという視点は古びておらず、いまも通用しそうです。するといいな。なかなか良いことを言っていると思います(おもに かくたに が)。
 
 TDD は開発手法、設計手法なのでツールの使い方以上に何を考えながらテストを書くかというのがとても大事です。そういう意味では、いまの道具立てですと [t-wada さんの「RSpec の入門とその一歩先へ」](http://d.hatena.ne.jp/t-wada/20100228/p1)を、[jnchito さんがアップデートしたもの](http://qiita.com/jnchito/items/624f6d5023c279046a1c)なんかがよさそうです。
 
@@ -203,35 +204,35 @@ TDD は開発手法、設計手法なのでツールの使い方以上に何を�
 
 ### Ruby/SDLで始めるゲームプログラミング【前編】
 
-* [Ruby/SDLで始めるゲームプログラミング【前編】]({% post_url articles/0018/2007-02-28-0018-GameProgramingForRubySDL %})
+* [Ruby/SDLで始めるゲームプログラミング【前編】]({{base}}{% post_url articles/0018/2007-02-28-0018-GameProgramingForRubySDL %})
 
 
 当時は学生だったようです。このリンゴの絵はマウスで適当に描いたやつですが、巡り巡って NHK の Ruby 特集で映ったりしました。数奇な運命です。
 
 ### Rubyist Hotlinks 【第 23 回】 yhara さん
 
-* [Rubyist Hotlinks 【第 23 回】 yhara さん]({% post_url articles/0029/2010-03-16-0029-Hotlinks %})
+* [Rubyist Hotlinks 【第 23 回】 yhara さん]({{base}}{% post_url articles/0029/2010-03-16-0029-Hotlinks %})
 
 
 「まだ Ruby で仕事をしたことがない」とか言ってますね。あれからいろいろ Ruby でお仕事をしました (Rails も non Rails も)。
 
 ### ruby-dev translationのご紹介
 
-* [ruby-dev translationのご紹介]({% post_url articles/0035/2011-09-26-0035-ruby-dev-translation %})
+* [ruby-dev translationのご紹介]({{base}}{% post_url articles/0035/2011-09-26-0035-ruby-dev-translation %})
 
 
 現在は開店休業中です。ruby-dev に流れるのはバグフィックスが主でそれほど翻訳が重要になる記事がなかったというのが主な理由です(作る前に気づけよ)。
 
 ### あなたが南米の Ruby カンファレンスに参加するべき n 個の理由【前編】
 
-* [あなたが南米のRubyカンファレンスに参加するべきn個の理由【前編】]({% post_url articles/0037/2012-02-05-0037-RubyOnSouthAmerica %})
+* [あなたが南米のRubyカンファレンスに参加するべきn個の理由【前編】]({{base}}{% post_url articles/0037/2012-02-05-0037-RubyOnSouthAmerica %})
 
 
 写真をたくさん入れてみました。何名かから「すごい楽しそう」という感想をいただいたので、目的は達せられたと思います。nari3 の脚注もいい仕事しています。
 
 ### 無限リストを map 可能にする Enumerable#lazy
 
-* [無限リストを map 可能にする Enumerable#lazy]({% post_url articles/0041/2013-02-24-0041-200Special-lazy %})
+* [無限リストを map 可能にする Enumerable#lazy]({{base}}{% post_url articles/0041/2013-02-24-0041-200Special-lazy %})
 
 
 るびまで[英訳](Ruby200SpecialEn-lazy)もしていただきました。Lazy は[解説動画](https://www.youtube.com/watch?v=Kg4aWWIsszw)ができたり反響があって喜んでいます。API を考えるより、「これは何に使えるものなのか」を整理する方が時間がかかった覚えがあります。
@@ -240,7 +241,7 @@ TDD は開発手法、設計手法なのでツールの使い方以上に何を�
 
 ### Ruby でソースコード検索エンジンの作り方 〜Milkode の内部実装解説〜
 
-* [Ruby でソースコード検索エンジンの作り方 〜Milkode の内部実装解説〜]({% post_url articles/0046/2014-04-05-0046-Milkode %})
+* [Ruby でソースコード検索エンジンの作り方 〜Milkode の内部実装解説〜]({{base}}{% post_url articles/0046/2014-04-05-0046-Milkode %})
 
 
 #### 今から振り返っての感想
@@ -251,21 +252,21 @@ TDD は開発手法、設計手法なのでツールの使い方以上に何を�
 
 #### その後どうなったのか
 
-おかげさまで Milkode の知名度は上がったのではないかと思います。並みいる強敵の中で[アクセスランキング]({% post_url articles/0047/2014-06-30-0047-RubyistMagazineRanking %})に (10 位だけど) ランクイン出来たのがとても嬉しかったです。いつも読んでいたるびまに自分の書いた記事が載った時は感動しました。
+おかげさまで Milkode の知名度は上がったのではないかと思います。並みいる強敵の中で[アクセスランキング]({{base}}{% post_url articles/0047/2014-06-30-0047-RubyistMagazineRanking %})に (10 位だけど) ランクイン出来たのがとても嬉しかったです。いつも読んでいたるびまに自分の書いた記事が載った時は感動しました。
 
 ## こしば としあきさん
 
 ### Excelの話
 
-* [VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (前編)]({% post_url articles/0027/2009-09-13-0027-ExcellentRuby %})
-* [VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)]({% post_url articles/0029/2010-03-16-0029-ExcellentRuby %})
+* [VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (前編)]({{base}}{% post_url articles/0027/2009-09-13-0027-ExcellentRuby %})
+* [VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)]({{base}}{% post_url articles/0029/2010-03-16-0029-ExcellentRuby %})
 
 
 最近わたし自身はめっきり Excel というプロダクトとはご無沙汰なのですが、この記事は今でも参照いただいているようで、大変ありがたい事です。
 
 ### 東京 Ruby 会議 05 レポート
 
-* [RegionalRubyKaigi レポート (18) 東京 Ruby 会議 05]({% post_url articles/0033/2011-04-05-0033-TokyoRubyKaigi05Report %})
+* [RegionalRubyKaigi レポート (18) 東京 Ruby 会議 05]({{base}}{% post_url articles/0033/2011-04-05-0033-TokyoRubyKaigi05Report %})
 
 
 レポートも書いた東京 Ruby 会議 05 の後、東京 Ruby 会議 10 という[難易度: 豪雪](0041#l18)な催しを開催しました。それ以来燃え尽き感があったのですが、最近またモチベーションが沸き上がってきているところです。
@@ -274,7 +275,7 @@ TDD は開発手法、設計手法なのでツールの使い方以上に何を�
 
 ### Ruby Conference 2007 レポート
 
-* [Ruby Conference 2007 レポート]({% post_url articles/0022/2007-12-17-0022-RubyConf2007Report %})
+* [Ruby Conference 2007 レポート]({{base}}{% post_url articles/0022/2007-12-17-0022-RubyConf2007Report %})
 
 
 Ruby のことを知ってからずっと RubyConf は憧れでした。「いつか行ってみたい」と思いながらもなかなか果たせず、毎年会期中は夜遅くまで "mput の日記" を F5 連打して寝不足で職場へ向かい、終わってからはるびまにレポートが掲載されるのを楽しみにしていました (イマドキの Rubyist は「mputって誰よ」って感じですよね……)。
@@ -285,20 +286,20 @@ Ruby のことを知ってからずっと RubyConf は憧れでした。「い�
 
 ### Rubyist Hotlinks 【第 14 回】 角谷信太郎さん、RubyKaigi2010 後の角谷さん・島田さんインタビュー
 
-* [Rubyist Hotlinks 【第 14 回】 角谷信太郎さん]({% post_url articles/0014/2006-05-15-0014-Hotlinks %})
-* [RubyKaigi2010 後の角谷さん・島田さんインタビュー]({% post_url articles/0035/2011-09-26-0035-rk10interview %})
+* [Rubyist Hotlinks 【第 14 回】 角谷信太郎さん]({{base}}{% post_url articles/0014/2006-05-15-0014-Hotlinks %})
+* [RubyKaigi2010 後の角谷さん・島田さんインタビュー]({{base}}{% post_url articles/0035/2011-09-26-0035-rk10interview %})
 
 
 いずれも自分が出てくるインタビュー記事なのですが、テープ起こしの状態では自分のトークがいずれも支離滅裂で話のつながりも妙で、そのままでは読めたもんじゃありませんでした。そこで、いずれの記事も発言を言い換えたり、トピックの順番を入れ替えるなど、全面的に手を入れました。特に RubyKaigi 2010 後のインタビュー記事はかなりの難産で、記事が仕上がる前に「最後の」RubyKaigi 2011 の会期が迫ってくる事態にいたりました (「はじめに」に警告が書いてある)。
 
 当たり前のことなのですが、「いつも読んでるるびま」は誰かが記事を書いているから続いているわけで、10 年間のるびまの記事執筆者の皆さん、編集者の皆さんの仕事に感謝します。ありがとうございます。次の 10 年も「Rubyist の Rubyist による、Rubyist とそうでない人のためのウェブ雑誌」を楽しく読み続けたいです。
 
-最後に、7 年前の記事なのにいまだるびまアクセスランキングで上位にランクインする(ありがとうございます)「[スはスペックのス]({% post_url articles/0021/2007-09-29-0021-Rspec %})」、更新できなくてごめんなさい……。いつかどこかでリベンジできたらなあ、と思ってはいますが……ばたり。
+最後に、7 年前の記事なのにいまだるびまアクセスランキングで上位にランクインする(ありがとうございます)「[スはスペックのス]({{base}}{% post_url articles/0021/2007-09-29-0021-Rspec %})」、更新できなくてごめんなさい……。いつかどこかでリベンジできたらなあ、と思ってはいますが……ばたり。
 
 ## 卜部さん
 
-* [Rubyist Hotlinks 【第 8 回】 田中哲さん]({% post_url articles/0008/2005-07-19-0008-Hotlinks %})
-* [Rubyist Hotlinks 【第 32 回】 卜部昌平さん]({% post_url articles/0042/2013-05-29-0042-Hotlinks %})
+* [Rubyist Hotlinks 【第 8 回】 田中哲さん]({{base}}{% post_url articles/0008/2005-07-19-0008-Hotlinks %})
+* [Rubyist Hotlinks 【第 32 回】 卜部昌平さん]({{base}}{% post_url articles/0042/2013-05-29-0042-Hotlinks %})
 
 
 「Rubyist Hotlinks 【第 8 回】 田中哲さん」を編集しました。自分にとっても周囲にとってもさまざまな意味でエポックメーキングだったなあと思います。いまやこれをやるのはまず体力の面で厳しい。
@@ -311,28 +312,28 @@ Ruby のことを知ってからずっと RubyConf は憧れでした。「い�
 
 ### 日本 Ruby 会議 2011 直前特集号
 
-* [preRubyKaigi2011](preRubyKaigi2011)
+* [preRubyKaigi2011]({{base}}{% post_url articles/preRubyKaigi2011/2011-06-16-preRubyKaigi2011-index %})
 
 
 初めて Ruby 会議でレポートを書くということで、とても緊張していたことを覚えています。
 
 ### RegionalRubyKaigi レポート (33) 東京 Ruby 会議 10
 
-* [RegionalRubyKaigi レポート (33) 東京 Ruby 会議 10]({% post_url articles/0041/2013-02-24-0041-TokyoRubyKaigi10Report_1st %})
+* [RegionalRubyKaigi レポート (33) 東京 Ruby 会議 10]({{base}}{% post_url articles/0041/2013-02-24-0041-TokyoRubyKaigi10Report_1st %})
 
 
 初めてレポート班長と、実行委員を経験したイベントでした。
 
 ### RubyConf 2013 参加レポート
 
-* [RubyConf 2013 参加レポート]({% post_url articles/0045/2013-12-21-0045-RubyConf2013 %})
+* [RubyConf 2013 参加レポート]({{base}}{% post_url articles/0045/2013-12-21-0045-RubyConf2013 %})
 
 
 初めての海外カンファレンス参加レポートです。とても楽しい場所でした。
 
 ### Rubyist Magazine 0045 号
 
-* [0045](0045)
+* [0045]({{base}}{% post_url articles/0045/2013-12-21-0045-index %})
 
 
 るびま編集部の内部的な話ですが、進行役を初めて経験したのはこの号でした。公開されたことを ML や blog に書くときはとても緊張しました。Twitter で拡散されていく様子を見て安心したのと同時に、嬉しくなったことを今でも思い出します。
@@ -343,86 +344,86 @@ Ruby のことを知ってからずっと RubyConf は憧れでした。「い�
 
 ### Fiber と Proc ―― 手続きを抽象化する二つの機能
 
-* [Fiber と Proc ―― 手続きを抽象化する二つの機能]({% post_url articles/0034/2011-06-12-0034-FiberForBeginners %})
+* [Fiber と Proc ―― 手続きを抽象化する二つの機能]({{base}}{% post_url articles/0034/2011-06-12-0034-FiberForBeginners %})
 
 
 自分が初めて Rubyist Magazine に投稿した記事です。当時は色々なプログラミング言語を勉強していた頃だったのですが、Python のジェネレータのような機能が Ruby にないなあ、と思っていたら Ruby 1.9 から Fiber として入ったことを知り、しかもあまり知られていないようでしたので、せっかくなので自分が勉強した知見 (手続き型言語と関数型言語の違い) を含めて紹介記事を書きたいなあと思ったのがきっかけでした。力及ばず内容についてご批判もいくつかいただいたのですが「面白かったよ！」「わかりやすかった！」というコメントもいただき、誰かのお役に立ったのであれば嬉しいですね。
 
 ### map と collect、reduce と inject ―― 名前の違いに見る発想の違い
 
-* [map と collect、reduce と inject ―― 名前の違いに見る発想の違い]({% post_url articles/0038/2012-05-22-0038-MapAndCollect %})
+* [map と collect、reduce と inject ―― 名前の違いに見る発想の違い]({{base}}{% post_url articles/0038/2012-05-22-0038-MapAndCollect %})
 
 
 その当時、世の中では「ビッグデータ」がバズワードっぽい感じで流行しており「Hadoop で MapReduce ですよ！」みたいなことを言われていたので、流行に乗って MapReduce を「Rubyist の map 派 collect 派」に絡めて説明したら一本ネタ的な記事になるんじゃないかなあということで書いてみました。これまた上記の記事同様、裏のテーマは「手続き型言語と関数型言語の違い」なんですが、今でも定期的に関数型言語が話題になっては消えたりしていることや、現在の Hadoop や Google 自身が MapReduce を使っていなかったりもするのを見るに、関数型言語の理論的な面白さと手続き型言語の実用の狭間で揺れていて、歴史というものは繰り返すものなのだなあ、と感慨もひとしおです。この記事もやっぱり内容についてご批判いただくとともに「面白かった！」というご好評もいただきました。ありがとうございます。
 
 ### 式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか【前編】
 
-* [式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか【前編】]({% post_url articles/0039/2012-09-05-0039-ExpressionAndStatement %})
+* [式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか【前編】]({{base}}{% post_url articles/0039/2012-09-05-0039-ExpressionAndStatement %})
 
 
-オブジェクト指向が難しい、という話をよく聞きます。Ruby をちゃんと学んだ人であれば「オブジェクト指向プログラミング」は空気のように当たり前の話なので、そのあたりを何かうまく説明できないかなあと思いつつ書き始めたものの筆が止まってかれこれ 2 年になりました。すみません。こちらの記事も行き着く先は「手続き型言語と関数型言語の違い」の説明だったりするので、続きは「[アンダースタンディング コンピュテーション]({% post_url articles/0048/2014-09-19-0048-BookUC_ja %})」を買って読もう！　ということでお茶を濁したいと思います (だめ？)。
+オブジェクト指向が難しい、という話をよく聞きます。Ruby をちゃんと学んだ人であれば「オブジェクト指向プログラミング」は空気のように当たり前の話なので、そのあたりを何かうまく説明できないかなあと思いつつ書き始めたものの筆が止まってかれこれ 2 年になりました。すみません。こちらの記事も行き着く先は「手続き型言語と関数型言語の違い」の説明だったりするので、続きは「[アンダースタンディング コンピュテーション]({{base}}{% post_url articles/0048/2014-09-19-0048-BookUC_ja %})」を買って読もう！　ということでお茶を濁したいと思います (だめ？)。
 
 ## たなべ (@sunaot)
 
 記事を書いてくれた執筆者の皆様にあらためて感謝を。担当全記事を書こうと思いながら力尽きたので、とくに思い入れのある記事に絞って書くことを許してください。
 
-### [RegionalRubyKaigi レポート (01) 東京 Ruby 会議 01]({% post_url articles/0024/2008-10-01-0024-TokyoRubyKaigi01Report %})
+### [RegionalRubyKaigi レポート (01) 東京 Ruby 会議 01]({{base}}{% post_url articles/0024/2008-10-01-0024-TokyoRubyKaigi01Report %})
 
 るびまとの最初の接点は第一回目の地域 Ruby 会議のレポート執筆でした。今見るとずいぶんと豪華な発表陣ですね。運営側としてはかくたにさんがほとんど一人でこなしてしまって、レポート係以外にとくになにもしなくても地域 Ruby 会議が開催されたのが当時印象的でした。その後このときの関わりがきっかけで Reboot 前の RubyKaigi の実行委員へ誘われ、Ruby のコミュニティに関わるきっかけになった記事でもあります。るびまに記事を書くと人生変わることもありますよ。
 
 ### VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い
 
-* [VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (前編)]({% post_url articles/0027/2009-09-13-0027-ExcellentRuby %})
-* [VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)]({% post_url articles/0029/2010-03-16-0029-ExcellentRuby %})
+* [VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (前編)]({{base}}{% post_url articles/0027/2009-09-13-0027-ExcellentRuby %})
+* [VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)]({{base}}{% post_url articles/0029/2010-03-16-0029-ExcellentRuby %})
 
 
 RubyKaigi の実行委員が一緒だったご縁でこしばさんに執筆をお願いして編集を担当した記事。当時のこしばさんは業務システムの開発の話をする人というイメージでした。編集者になったと同時に担当記事があったというのが、るびま編集の中で居場所をつくって長く続けることができた一番の理由でした。担当記事があるとやることがあって編集部の中で発言機会があるという気付きがなければ私もいつのまにかフェードアウトしていた気がします。
 
-### [RubyKaigi2010 の裏側]({% post_url articles/0031/2010-10-07-0031-RubyKaigi2010 %})
+### [RubyKaigi2010 の裏側]({{base}}{% post_url articles/0031/2010-10-07-0031-RubyKaigi2010 %})
 
 RubyKaigi の実行委員をした経験が非常に学ぶことが多かったので、「RubyKaigi の作り方」をなにかしら残せないかと開催後の疲れきった &amp;&amp; テンションは高いところへ無理やりお願いしていろいろな方に書いてもらった記事。読んだ人へはどんな風に読まれたのか気になります。
 
-### [0033 号 巻頭言]({% post_url articles/0033/2011-04-05-0033-ForeWord %})
+### [0033 号 巻頭言]({{base}}{% post_url articles/0033/2011-04-05-0033-ForeWord %})
 
 2011 年 4 月。地震の直後に出した号です。この時期は桑田さんが編集者としてそして執筆者として両面で大活躍されてました。日常生活が安定しないなかで、いつもどおりの生活を続けるための号を出したくて当たり前のるびまをちゃんと出そうという思いで編集していたのを覚えています。
 
-### [他言語からの訪問 【第 1 回】 Groovy (前編)]({% post_url articles/0034/2011-06-12-0034-GuestTalk %})
+### [他言語からの訪問 【第 1 回】 Groovy (前編)]({{base}}{% post_url articles/0034/2011-06-12-0034-GuestTalk %})
 
 桑田さんの企画で始まった他言語からの訪問シリーズの第一回目。Matz の他言語探訪が連載されなくなったなかで新しいスタイルの他言語紹介記事でした。これはぜひ続けていきたいので、他の言語からの訪問者に心当たりがある方は紹介してください。
 
-### [改めて学ぶ RSpec]({% post_url articles/0035/2011-09-26-0035-RSpecInPractice %})
+### [改めて学ぶ RSpec]({{base}}{% post_url articles/0035/2011-09-26-0035-RSpecInPractice %})
 
 赤松さんによる RSpec らしい RSpec の書き方を解説した記事。今でも類似の内容は少なく私自身も何度も後から参照したことがあり、こういう記事をるびまに載せたいと心から思える記事の一つの形です。
 
 ### Making of RubyKaigi 2011
 
-* [Making of RubyKaigi2011 第一回]({% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi2011 %})
-* [Making of RubyKaigi2011 第二回]({% post_url articles/0037/2012-02-05-0037-MakingOfRubyKaigi2011 %})
+* [Making of RubyKaigi2011 第一回]({{base}}{% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi2011 %})
+* [Making of RubyKaigi2011 第二回]({{base}}{% post_url articles/0037/2012-02-05-0037-MakingOfRubyKaigi2011 %})
 
 
 2011 年のほうの Making of RubyKaigi です。
 
-### [RubyKaigi2010 後の角谷さん・島田さんインタビュー]({% post_url articles/0035/2011-09-26-0035-rk10interview %})
+### [RubyKaigi2010 後の角谷さん・島田さんインタビュー]({{base}}{% post_url articles/0035/2011-09-26-0035-rk10interview %})
 
-これはたしか担当編集というわけではなかったと思うのですが、思い入れがあって校正をがんばった印象があります。[RubyKaigi2010 の裏側]({% post_url articles/0031/2010-10-07-0031-RubyKaigi2010 %}) をあわせて読みたい。
+これはたしか担当編集というわけではなかったと思うのですが、思い入れがあって校正をがんばった印象があります。[RubyKaigi2010 の裏側]({{base}}{% post_url articles/0031/2010-10-07-0031-RubyKaigi2010 %}) をあわせて読みたい。
 
-### [達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた]({% post_url articles/0039/2012-09-05-0039-MetPragdaveAtAsakusarb %})
+### [達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた]({{base}}{% post_url articles/0039/2012-09-05-0039-MetPragdaveAtAsakusarb %})
 
 こちらは Dave Thomas が来日して Asakusa.rb で語った話の感想レポートです。執筆しました。これまで自分で書いた文章の中で一番気に入っています。
 
 ### Ruby コードの感想戦
 
-* [Ruby コードの感想戦 【第 1 回】 WikiR]({% post_url articles/0040/2012-11-25-0040-CodePostMortem %})
-* [Ruby コードの感想戦 【第 2 回】 WikiR]({% post_url articles/0041/2013-02-24-0041-CodePostMortem %})
+* [Ruby コードの感想戦 【第 1 回】 WikiR]({{base}}{% post_url articles/0040/2012-11-25-0040-CodePostMortem %})
+* [Ruby コードの感想戦 【第 2 回】 WikiR]({{base}}{% post_url articles/0041/2013-02-24-0041-CodePostMortem %})
 
 
 私がるびま編集をするくらいにるびまファンとなったのは間違いなく青木さんのコード添削記事があったからであり、この感想戦の連載はそこへのアンサーソングとしての企画で始めました。その意気込みのわりにいろいろ空回りして執筆者のお二人へご迷惑やご心配をおかけしたのは本当に申し訳なく思い反省しています。最初の二人の組合せがいきなりの大ボス感があり、次の組合せが浮かばず第二弾が続けられていません。こんな二人の感想戦を読んでみたいという組合せを思いついた方はぜひお知らせください。
 
-### [Ruby on Rails: The Bad Parts]({% post_url articles/0041/2013-02-24-0041-RailsTheBadParts %})
+### [Ruby on Rails: The Bad Parts]({{base}}{% post_url articles/0041/2013-02-24-0041-RailsTheBadParts %})
 
 こちらも発表を Ust で見て、るびまに記事で残したいと思ってお願いし書いてもらった記事になります。このような読んだ人がそのまま読んだその日から自分の生活の中で活かせるような記事も私の中でのるびまに載っていてほしい記事の一つの形です。
 
-### [8-bit風ゲームをつくるフレームワークburnの紹介]({% post_url articles/0047/2014-06-30-0047-IntroductionToBurn %})
+### [8-bit風ゲームをつくるフレームワークburnの紹介]({{base}}{% post_url articles/0047/2014-06-30-0047-IntroductionToBurn %})
 
 対象的なのが、最近のこちら。執筆者のさわださんに記事をお願いしたときには記事のテーマを絞らずお願いしたのですが、たまたま出てきたテーマが burn でした。初期のるびまには遊び心のある記事が多かった印象があり、対して近年はそのような記事があまりないなと思っていたところだったので、この記事を掲載できたのはうれしいことでした。
 

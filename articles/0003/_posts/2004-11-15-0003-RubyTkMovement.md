@@ -4,6 +4,7 @@ title: Ruby/Tk の動向
 short_title: Ruby/Tk の動向
 tags: 0003 RubyTkMovement
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -14,7 +15,7 @@ tags: 0003 RubyTkMovement
 
 著者: 永井 秀利
 
-創刊号の記事「[Ruby de GUI]({% post_url articles/0001/2004-09-10-0001-RubyGUI %})」では Ruby/Tk を
+創刊号の記事「[Ruby de GUI]({{base}}{% post_url articles/0001/2004-09-10-0001-RubyGUI %})」では Ruby/Tk を
 「現在進行形で進化中の GUI ライブラリであり、決して過去のものではないのだ」
 と紹介していただきました。
 実は Ruby の次の安定版リリースである 1.8.2 に添付予定の Ruby/Tk は、
@@ -78,9 +79,9 @@ Ruby/Tk から見て重要なポイントの一つは
 図は 8.4.7 と 8.5a1 での表示例です。
 8.5 で新しく加えられた Tristate モードも含めて比べてみてください。
 
-![buttons84.png]({{site.baseurl}}/images/0003-RubyTkMovement/buttons84.png)
-![buttons85.png]({{site.baseurl}}/images/0003-RubyTkMovement/buttons85.png)
-__![null.png]({{site.baseurl}}/images/0003-RubyTkMovement/null.png)__
+![buttons84.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/buttons84.png)
+![buttons85.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/buttons85.png)
+__![null.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/null.png)__
 
 古いと言われる Tcl/Tk ですが、開発は全く止っていません。
 バージョンが上がるにつれて機能やウィジェットが追加されていますから、
@@ -248,7 +249,7 @@ Tcl/Tk の「\u 置換」(\uhhhh という 16 進表記で Unicode 文字を指�
 この点にさえ気をつければ多国語表示も気軽に行えるのではないでしょうか。
 Ruby のソースに含まれる ext/tk/sample/encstr_usage.rb も
 参照してみてください。
-![enc_str.png]({{site.baseurl}}/images/0003-RubyTkMovement/enc_str.png)
+![enc_str.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/enc_str.png)
 
 ### 名前空間 (TkNamespace)
 
@@ -355,8 +356,8 @@ Ruby/Tk では三つ目の形式としてそれもサポートしており、
 Tk での表示などにそのまま用いることができます。
 
 次の図は Ruby のソースに含まれるサンプルスクリプトを実行した例です。
-![msgcat_ja.png]({{site.baseurl}}/images/0003-RubyTkMovement/msgcat_ja.png)
-![msgcat_el.png]({{site.baseurl}}/images/0003-RubyTkMovement/msgcat_el.png)
+![msgcat_ja.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/msgcat_ja.png)
+![msgcat_el.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/msgcat_el.png)
 
 ### オプション (リソース) データベース (TkOptionDB)
 
@@ -651,7 +652,7 @@ add_menubar メソッド版のサンプルが ext/tk/sample/menubar2.rb とし�
 
 
 というように用いて次のようなメニューを得ています。
-![menubar.png]({{site.baseurl}}/images/0003-RubyTkMovement/menubar.png)
+![menubar.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/menubar.png)
 
 ## 拡張ライブラリのサポート
 
@@ -745,7 +746,7 @@ Tcl/Tk 拡張を使うためのライブラリを添付することとしまし�
 それぞれがどのような拡張ライブラリであるかは
 記載の URL を参照してください。
 サンプルスクリプトの一部を実行中の画面例はこちら
-([tkextlibs.png]({{site.baseurl}}/images/0003-RubyTkMovement/tkextlibs.png))
+([tkextlibs.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/tkextlibs.png))
 を見てください。
 
 Tcl 部分のみの機能を拡張するものについてはほとんど無視していますが、
@@ -833,24 +834,24 @@ Ruby/Tk を利用する際には一度目を通しておいていただけると
 #### tkballoonhelp.rb
 
 色などの属性設定可能なバルーンメッセージを表示するサンプル兼ライブラリ
-![balloonhelp.png]({{site.baseurl}}/images/0003-RubyTkMovement/balloonhelp.png)
+![balloonhelp.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/balloonhelp.png)
 
 #### tkalignbox.rb
 
 最大サイズのものと同一サイズで
 ウィジェットを縦または横に並べるサンプル兼ライブラリ
-![alignbox.png]({{site.baseurl}}/images/0003-RubyTkMovement/alignbox.png)
+![alignbox.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/alignbox.png)
 
 #### tkmulticolumnlist.rb
 
 マウスによるペインサイズ変更可能、表示範囲スクロール可能な連動リストボックス
-![mulcollist.png]({{site.baseurl}}/images/0003-RubyTkMovement/mulcollist.png)
+![mulcollist.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/mulcollist.png)
 
 #### tktree.rb
 
 Tcl/Tk で書かれたライブラリ (tktree.tcl) を読み込んで Ruby/Tk で
 活用するサンプル兼ライブラリ
-![tktree.png]({{site.baseurl}}/images/0003-RubyTkMovement/tktree.png)
+![tktree.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/tktree.png)
 
 ## 複数インタープリタの駆動 (MultiTkIp, RemoteTkIp)
 
@@ -892,7 +893,7 @@ MultiTkIp クラスです。
 評価されていることがわかります。
 図はその実行例です。
 
-__![multi-tk.png]({{site.baseurl}}/images/0003-RubyTkMovement/multi-tk.png)__
+__![multi-tk.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/multi-tk.png)__
 
 この例からもわかるように、MultiTkIp の面白い点は、
 メソッド呼び出しの効果がそのメソッド呼び出しの「文脈」によって
@@ -915,7 +916,7 @@ RemoteTkIp クラスによる他のインタープリタの操作は MultiTkIp �
 プロセス２に直接与えた命令は Tk.appname と Tk.mainloop だけで、
 ４個のボタンはすべてプロセス１からの指示によって作成されたものです。
 
-__![remote-tk.png]({{site.baseurl}}/images/0003-RubyTkMovement/remote-tk.png)__
+__![remote-tk.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/remote-tk.png)__
 
 ## その他の改良
 
@@ -1210,11 +1211,11 @@ ruby-talk ML を購読されている方はご存知と思いますが、
 使えるもの) を作り、ML に流しました。
 次の図がそのスクリプトの実行例です。
 
-__![mapframe.png]({{site.baseurl}}/images/0003-RubyTkMovement/mapframe.png)__
+__![mapframe.png]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/mapframe.png)__
 
 画像データをソースに埋め込んでいるせいでスクリプトが少し長くなってしまったため、
 スクリプトのソース[^18]は
-こちら ([mapframe.rb]({{site.baseurl}}/images/0003-RubyTkMovement/mapframe.rb)) に置いておきます。
+こちら ([mapframe.rb]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/mapframe.rb)) に置いておきます。
 Linux 以外ではテストはしていませんが、特殊なことは何もしていないので、
 Ruby/Tk が動く環境 (0001号の記事にあるように、上記のプラットホームは
 すべて含まれます) であれば動くはずです。
@@ -1223,9 +1224,9 @@ Ruby/Tk が動く環境 (0001号の記事にあるように、上記のプラッ
 
 ## ついでのつぶやき
 
-今号の [RubyEventCheck]({% post_url articles/0003/2004-11-15-0003-RubyEventCheck %}) でも紹介していただいていますが、
+今号の [RubyEventCheck]({{base}}{% post_url articles/0003/2004-11-15-0003-RubyEventCheck %}) でも紹介していただいていますが、
 1.8.2 での変化を期に Ruby/Tk の
-１日講習会 ([RubyTk-seminar.txt]({{site.baseurl}}/images/0003-RubyTkMovement/RubyTk-seminar.txt)) を開催します。
+１日講習会 ([RubyTk-seminar.txt]({{base}}{{site.baseurl}}/images/0003-RubyTkMovement/RubyTk-seminar.txt)) を開催します。
 ActiveTcl + 最新の 1.8.2 (正式リリースはまだですから、preview3 かそれ以降のもの) の環境での演習付き集中講義形式です。
 
 興味を持たれた方はぜひご参加下さい (11/13 07:00 現在で
@@ -1259,6 +1260,6 @@ ActiveTcl + 最新の 1.8.2 (正式リリースはまだですから、preview3 
 [^14]: Tk つまり GUI に関係しない部分の機能は Tcl/Tk とは関わらない Ruby のライブラリとして実装する方が望ましいと考えてそのようにしていますが、希望があれば Tcl 部分のみの拡張もサポート対象とすることは可能です。標準の Tcl/Tk の機能の中にも同様の理由で実装していないものがいくつかありますが、それらについても希望があればサポートできるはずです。例えば Tcl の I/O を wrap して、シリアルポート制御オプション付きの IO クラスのサブクラスを作るなども考えられるでしょうね。
 [^15]: Tcl/Tk8.5 では Windows 環境での send コマンドサポートが加えられようとしていますが、まだ実用レベルには至っていないようです。
 [^16]: MultiTkIp クラスは、もともとはこの目的のために作られたものです。
-[^17]: [0002号の巻頭言]({% post_url articles/0002/2004-10-16-0002-ForeWord %})を受けて念のために書いておきますが、私は「他人が好きで使っているものに無理やりけちをつけたり貶めたりするなど愚かしい」と思っているので、これを争いの道具にする気など毛頭ありません。純粋に比較の意味で作ってみた例に過ぎないので、つまらない争いに用いるのは断固として拒否します。まぁ、争いができるほどの代物ではないのでいらぬ心配だとは思いますが(^_^)。もちろん、「こう書けばより良くなる」とか「こういう書き方ができればより使いやすくなる」とかの建設的な議論は大歓迎です。
+[^17]: [0002号の巻頭言]({{base}}{% post_url articles/0002/2004-10-16-0002-ForeWord %})を受けて念のために書いておきますが、私は「他人が好きで使っているものに無理やりけちをつけたり貶めたりするなど愚かしい」と思っているので、これを争いの道具にする気など毛頭ありません。純粋に比較の意味で作ってみた例に過ぎないので、つまらない争いに用いるのは断固として拒否します。まぁ、争いができるほどの代物ではないのでいらぬ心配だとは思いますが(^_^)。もちろん、「こう書けばより良くなる」とか「こういう書き方ができればより使いやすくなる」とかの建設的な議論は大歓迎です。
 [^18]: ML に流したものと比べると、親クラスを TkCanvas に変更した点が違っています。この変更により MapFrame#postscript メソッドが使えるため、マップのイメージを Postscript 形式で出力できるようになります。ただし、埋め込みウィンドウやイメージの Postscript 出力が可能になった Tcl/Tk8.3 以降であることが必要です。
 [^19]: 「講習会は無理だけれども懇親会だけでも参加したい」ということも可能かもしれません。準備の都合もあり、遅くなると懇親会参加メンバーとしての追加ができなくなる可能性もありますので、そうした希望がある場合はお早めにご相談ください。

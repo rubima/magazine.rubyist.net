@@ -4,11 +4,12 @@ title: Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 3
 short_title: Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 3
 tags: 0012 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-4 %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-4 %})
 
 * Table of content
 {:toc}
@@ -42,7 +43,7 @@ tags: 0012 CGIProgrammingForRubyBeginners
 まずは「山彦もどき」でアルファベットや数字以外の文字を入力してみましょう。
 [http://localhost:8080/bar_echo2.html](http://localhost:8080/bar_echo2.html) にアクセスして
 フォームにアルファベットや数字以外の文字を入力してみて下さい。
-![bar_echo_problem.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_problem.jpg)
+![bar_echo_problem.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_problem.jpg)
 
 上の図は「ほげ」をフォームに入力して
 サブミットボタンを押した時の結果です。
@@ -106,7 +107,7 @@ print "<br>"
 print "</body></html>"
 
 ```
-![bar_echo_improved.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved.jpg)
+![bar_echo_improved.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved.jpg)
 
 文字化けする場合はブラウザの文字コード設定を変えてみて下さい。
 IE ならメニューの 表示 → エンコード の中に
@@ -182,7 +183,7 @@ CGI.new で CGI データが作られる時に
 「hoge」というメッセージが出現します。
 これはフォームに入力された HTML タグの中に
 Javascript が含まれていることが原因です。
-![bar_echo_improved_problem.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_problem.jpg)
+![bar_echo_improved_problem.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_problem.jpg)
 
 Javascript を使えば色々なことが出来るので、
 Javascript を含んだ HTML のタグを受け付けてしまうと、
@@ -225,7 +226,7 @@ puts CGI.escapeHTML("<body><div></div></body>")
 {% endraw %}
 {% endhighlight %}
 
-![rde_html_escape.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/rde_html_escape.jpg)
+![rde_html_escape.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/rde_html_escape.jpg)
 
 #### 「山彦もどき改」で HTML エスケープを使う
 
@@ -260,7 +261,7 @@ HTML エスケープしています。
 余裕のある人はテキストフィールドに色々なデータを入力して、
 2 つの CGI プログラムの結果を HTML のソースで比較し、
 その違いを探してみましょう。
-![bar_echo_improved_escaped.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_escaped.jpg)
+![bar_echo_improved_escaped.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_escaped.jpg)
 
 ### 秘密のメッセージ
 
@@ -359,7 +360,7 @@ rand のパラメーターも変更しなければなりません。
 この時、19 行目は "nya" * rand(10) となります。
 これはどういう計算なのでしょうか？
 試しに RDE で実行してみましょう。
-![string_multiply.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/string_multiply.jpg)
+![string_multiply.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/string_multiply.jpg)
 
 何回も実行させると分かりますが、
 「nya」が繰り返し表示されますね。
@@ -387,10 +388,10 @@ rand の結果だけ変数 s のデータ("nya" やら "nyan" やら)をつな�
 
 [http://localhost:8080/bar_echo_improved3.html](http://localhost:8080/bar_echo_improved3.html) にアクセスして、
 bar と入力してみて下さい。色んなメッセージや猫の絵が表示されると思います。
-![bar_echo_improved_msg.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_msg.jpg)
+![bar_echo_improved_msg.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-3/bar_echo_improved_msg.jpg)
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-4 %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-2 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-4 %})
 
 

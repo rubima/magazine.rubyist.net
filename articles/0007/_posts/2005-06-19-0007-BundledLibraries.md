@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R
 short_title: 標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R
 tags: 0007 BundledLibraries
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -377,8 +378,8 @@ XML-RPC についての基本的な説明が終わったところで、
 XMLRPC4R を使って Blogger API を利用する実際のスクリプトを載せておきます。
 このスクリプトでは、利用可能なメソッド一覧を取得しています。
 
-[cocolog-mt_supportedMethods.rb]({{site.baseurl}}/images/0007-BundledLibraries/cocolog-mt_supportedMethods.rb)
-![cocolog-mt_supportedMethods.rb]({{site.baseurl}}/images/0007-BundledLibraries/cocolog-mt_supportedMethods.rb)
+[cocolog-mt_supportedMethods.rb]({{base}}{{site.baseurl}}/images/0007-BundledLibraries/cocolog-mt_supportedMethods.rb)
+![cocolog-mt_supportedMethods.rb]({{base}}{{site.baseurl}}/images/0007-BundledLibraries/cocolog-mt_supportedMethods.rb)
 
 この例では server_uri として、筆者が利用しているプロバイダの
 [@nifty の ココログ](http://www.cocolog-nifty.com/)
@@ -551,7 +552,7 @@ XMLRPC4R 以外のライブラリについては本当に簡単に紹介する�
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

@@ -4,6 +4,7 @@ title: Sinatra 再入門、 Padrino / Rack / その先の何か
 short_title: Sinatra 再入門、 Padrino / Rack / その先の何か
 tags: 0036 SinatraReintroduction
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -571,7 +572,7 @@ _Rack::Glitch_ は、Rubyist Magazine に出てくる「Ruby(ist)」と言う文
 
 
 ということをしているだけです。簡単そうでしょう？　HTTP 自体の仕組みに詳しければもっといろいろなイタズラが仕掛けられると思います。
-![padrino_glitch_s2.png]({{site.baseurl}}/images/0036-SinatraReintroduction/padrino_glitch_s2.png)
+![padrino_glitch_s2.png]({{base}}{{site.baseurl}}/images/0036-SinatraReintroduction/padrino_glitch_s2.png)
 
 [RubyistMagazine 35 号 巻頭言](http://jp.rubyist.net/magazine/?0035-ForeWord)を利用。Ruby、Rubyist と書かれた部分がグリッチされている
 

@@ -4,9 +4,10 @@ title: 0015-CodeReview-tropy2.rb
 short_title: 0015-CodeReview-tropy2.rb
 tags: 0015 CodeReview
 ---
+{% include base.html %}
 
 
-[あなたの Ruby コードを添削します 【第 4 回】 Tropy]({% post_url articles/0015/2006-07-13-0015-CodeReview %}) で解説した、添削後のソースコード tropy.rb です。
+[あなたの Ruby コードを添削します 【第 4 回】 Tropy]({{base}}{% post_url articles/0015/2006-07-13-0015-CodeReview %}) で解説した、添削後のソースコード tropy.rb です。
 
 ```ruby
 #

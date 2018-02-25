@@ -4,6 +4,7 @@ title: 東京 Ruby 会議 11 直前特集号
 short_title: 東京 Ruby 会議 11 直前特集号
 tags: preTokyoRubyKaigi11 index
 ---
+{% include base.html %}
 
 
 ##  目次

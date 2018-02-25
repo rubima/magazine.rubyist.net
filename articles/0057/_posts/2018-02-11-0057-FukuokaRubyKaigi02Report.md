@@ -4,6 +4,7 @@ title: RegionalRubyKaigiレポート 福岡Ruby会議02
 short_title: RegionalRubyKaigiレポート 福岡Ruby会議02
 tags: 0057 FukuokaRubyKaigi02Report
 ---
+{% include base.html %}
 
 ## RegionalRubyKaigiレポート 福岡Ruby会議02
 
@@ -26,7 +27,7 @@ tags: 0057 FukuokaRubyKaigi02Report
 ### 午前の部
 
 #### Opening Talk
-![udzura.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/udzura.jpg)
+![udzura.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/udzura.jpg)
 
 * 発表者
   * 近藤 うちお (@udzura)
@@ -35,7 +36,7 @@ tags: 0057 FukuokaRubyKaigi02Report
 まずは実行委員長近藤うちお(@udzura)さんから、会場諸注意およびスポンサーの紹介と福岡で2回目の地方 Ruby 会議を開催できたことの喜びの言葉で福岡 Ruby 会議は始まりました。
 
 #### A Ruby Programming Episode
-![snoozer05.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/snoozer05.jpg)
+![snoozer05.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/snoozer05.jpg)
 
 * 発表者
   * 島田 浩二 様(@snoozer05)
@@ -50,7 +51,7 @@ tags: 0057 FukuokaRubyKaigi02Report
 福岡 Ruby 会議02のテーマである「もう一度、Ruby と出会う」というテーマにとてもマッチした素敵なトークでした。
 
 #### Ruby で書く Parser (自力かライブラリか、それが問題だ)
-![yotii23.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/yotii23.jpg)
+![yotii23.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/yotii23.jpg)
 
 * 発表者
   * 鳥井 雪 様(@yotii23)
@@ -72,7 +73,7 @@ tags: 0057 FukuokaRubyKaigi02Report
 など沢山の発見や経験を得ることができ、まさに「もう一度、Ruby と出会う」を体験できた発表内容であると感じました。
 
 #### メドピアの全力Rails化取り組み晒します(めんたいトーク #1)
-![fukumura.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/fukumura.jpg)
+![fukumura.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/fukumura.jpg)
 
 * 発表者
   * 福村 彰展 様（[メドピア株式会社](https://medpeer.co.jp/) 執行役員 CTO）
@@ -85,7 +86,7 @@ tags: 0057 FukuokaRubyKaigi02Report
 スポンサートークでありながら技術的にも非常に参考になるトークでした。
 
 #### Keynote: Finding Ruby Again
-![a_matsuda.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/a_matsuda.jpg)
+![a_matsuda.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/a_matsuda.jpg)
 
 * 発表者
   * 松田 明 様 (@a_matsuda)
@@ -103,8 +104,8 @@ Ruby, Rails, RubyKaigi についての非常に内容の濃いキーノートで
 ### 午後の部
 
 #### マネーフォワードにおける Ruby エコシステム事例の紹介と、CTOより福岡の皆様へご挨拶(めんたいトーク #2)
-![nakade.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/nakade.jpg)
-![urabe.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/urabe.jpg)
+![nakade.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/nakade.jpg)
+![urabe.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/urabe.jpg)
 
 * 発表者
   * 中出 匠哉 様（[株式会社マネーフォワード](https://corp.moneyforward.com/) CTO）
@@ -116,7 +117,7 @@ Ruby, Rails, RubyKaigi についての非常に内容の濃いキーノートで
 またフルタイム Ruby コミッターの卜部様からは執筆中の書籍のためにサンプルコードの動作確認を行うためのツールの紹介がありました。
 
 #### Rust で書いたライブラリを Ruby/mruby から呼び出す実践的な方法
-![mizzy.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/mizzy.jpg)
+![mizzy.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/mizzy.jpg)
 
 * 発表者
   * 宮下 剛輔 様（Serverspec Operations）
@@ -132,7 +133,7 @@ Rust の構造体を受け渡す場合構造体の内容はバインディング
 他言語間の呼び出しという高度な内容で、実際のコードを交えての非常に実践的な発表でした。
 
 #### Railsチュートリアルを支える継続的組版技術
-![yasulab.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/yasulab.jpg)
+![yasulab.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/yasulab.jpg)
 
 * 発表者
   * 安川 要平 様(@yasulab)
@@ -169,8 +170,8 @@ LaTeX で書いた原稿を更新し、softcover という gem を使って EPUB
 月間の読者が 1.3万人である Rails チュートリアルの裏側の一部を知ることができた素晴らしい発表でした。
 
 #### mockmockを支える技術 (めんたいトーク#3)
-![mouri.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/mouri.jpg)
-![takase.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/takase.jpg)
+![mouri.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/mouri.jpg)
+![takase.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/takase.jpg)
 
 * 発表者
   * 毛利 啓太 様（[株式会社Fusic](https://fusic.co.jp/) 技術開発部門 mockmock 開発チーム プロダクトオーナー）
@@ -224,7 +225,7 @@ IoT ブームのなかで IoT サービスそのものではなくて IoT サー
 
 
 #### コンパイル時計算への招待
-![take-cheeze.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/take-cheeze.jpg)
+![take-cheeze.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/take-cheeze.jpg)
 
 * 発表者
   * take-cheeze 様([@take-cheeze](https://github.com/take-cheeze))
@@ -246,7 +247,7 @@ take-cheeze さんによる、Ruby でどのようにコンパイル時計算を
 C++ など他の言語で得た技術・知見を Ruby でどのように表現することで高速化ができるのかという視点を得られたことや Ruby 以外の言語ではどのように高速化を図るのかについて興味が湧いてくる発表でした。
 
 #### 200 万ドメインの HTTPS 化を見据えた mruby による大規模証明書管理アーキテクチャ
-![matsumotory.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/matsumotory.jpg)
+![matsumotory.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/matsumotory.jpg)
 
 * 発表者
   * 松本 亮介 様([GMOペパボ](https://pepabo.com/) シニアプリンシパル)
@@ -261,7 +262,7 @@ C++ など他の言語で得た技術・知見を Ruby でどのように表現�
 理路整然とした課題やその解決手段の説明がとてもわかりやすい発表でした。
 
 #### なぜRubyだったのか？Rubyで成長したOSS
-![k1LoW.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/k1LoW.jpg)
+![k1LoW.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/k1LoW.jpg)
 
 * 発表者
   * 小山 健一郎 様([@k1LoW](https://github.com/k1LoW))
@@ -289,7 +290,7 @@ awspec は Serverspec のソースコードを grep しながら解析し、実�
 Ruby の魅力に加えて OSS 開発のやりがいや魅力、そして様々な人たちやコミュニティと共に力を合わせて OSS を成長させていくことを実感することができた発表でした。
 
 #### CookpadとRuby(飛び梅トーク)
-![yoshiori.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/yoshiori.jpg)
+![yoshiori.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/yoshiori.jpg)
 
 * 発表者
   * 庄司 嘉織 様（[クックパッド株式会社](https://cookpad.com/) 技術部部長/エンジニア統括マネージャ）
@@ -299,7 +300,7 @@ Ruby の魅力に加えて OSS 開発のやりがいや魅力、そして様々�
 クックパッドのサービスの世界展開や開発拠点の国際化の紹介から、かつて「世界一巨大なモノリシック Rails サイト」として知られていたクックパッドも近年ではマイクロサービス化を進めているとのことで、多数のオープンソースライブラリやツールの紹介をされていました。
 
 #### Keynote: Rubyにおけるトレース機構の刷新
-![ko1.jpg]({{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/ko1.jpg)
+![ko1.jpg]({{base}}{{site.baseurl}}/images/0057-FukuokaRubyKaigi02Report/ko1.jpg)
 
 * 発表者
   * 笹田 耕一 様

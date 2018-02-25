@@ -4,6 +4,7 @@ title: Ruby 仮想マシン・ガチンコバトル (2008 年 12 月版)
 short_title: Ruby 仮想マシン・ガチンコバトル (2008 年 12 月版)
 tags: 0025 TheGreatRubyShootout
 ---
+{% include base.html %}
 
 
 〔訳注: 本記事は [The Great Ruby Shootout](http://antoniocangiano.com/2008/12/09/the-great-ruby-shootout-december-2008/) の翻訳です。〕

@@ -4,6 +4,7 @@ title: Making of RubyKaigi - Making of KaigiFreaks レポート班
 short_title: Making of RubyKaigi - Making of KaigiFreaks レポート班
 tags: 0037 MakingOfRubyKaigi04
 ---
+{% include base.html %}
 
 
 書いた人：O-Show, takkanm
@@ -80,7 +81,7 @@ RubyKaigi 直前号は、
 ## 当日レポート
 
 枠が長いセッションや海外の人の英語セッションを除いて、基本一人一セッションで記事を書いていました。当日はセッション単位で記事が書けたら、即本番サーバにアップロードする、本当にリアルタイムレポートをやることになります。大体の流れとしては、セッションを見ながらメモを取り、メモを参考に担当セッションの合間の時間で文章として仕上げてアップロードする形です。
-: ![dropbox.png]({{site.baseurl}}/images/0037-MakingOfRubyKaigi04/dropbox.png)
+: ![dropbox.png]({{base}}{{site.baseurl}}/images/0037-MakingOfRubyKaigi04/dropbox.png)
 
 当日、レポート班メンバーは大ホール・小ホールとバラバラになるので Skype チャットを使って連絡を取り合いました。メモと清書用のテキストファイルは予め Dropbox の共有フォルダに発表枠ごとに作成しておき、そこで直接編集します。1 セッションに複数担当がつく場合は担当者の数だけメモ用ファイルを作るので、ファイルが同時に編集されることはありません (清書はメインの担当がやるので、清書用ファイルはセッション毎に常に 1 つです)。そして Web に掲載していいレベルになったら、Skype で声掛けをしてから本番サーバにデプロイします。
 
@@ -113,7 +114,7 @@ RubyKaigi に限りませんが、こういった技術系セッションのレ�
 
 
 ここに挙げた以外でも、RubyKaigi のためにおもてなし精神を少しでも発揮してくださった方々へ。皆様あってのレポート班でした。ありがとうございました！
-![kaigi_subscreen.jpg]({{site.baseurl}}/images/0037-MakingOfRubyKaigi04/kaigi_subscreen.jpg)
+![kaigi_subscreen.jpg]({{base}}{{site.baseurl}}/images/0037-MakingOfRubyKaigi04/kaigi_subscreen.jpg)
 
 [^1]: 会場の設営・撤収や受付等、会期中に必要な事を行う
 [^2]: 開催そのものの準備・運営や開催内容の設計を取り仕切る

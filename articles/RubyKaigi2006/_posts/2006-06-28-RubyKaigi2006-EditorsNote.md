@@ -4,8 +4,9 @@ title: 編集後記
 short_title: 編集後記
 tags: RubyKaigi2006 EditorsNote
 ---
+{% include base.html %}
 
-![boom2.png]({{site.baseurl}}/images/RubyKaigi2006-EditorsNote/boom2.png)
+![boom2.png]({{base}}{{site.baseurl}}/images/RubyKaigi2006-EditorsNote/boom2.png)
 
 ## 編集後記
 

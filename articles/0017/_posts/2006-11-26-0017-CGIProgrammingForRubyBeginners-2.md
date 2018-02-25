@@ -4,11 +4,12 @@ title: Ruby ビギナーのための CGI 入門 【第 5 回】文字コード�
 short_title: Ruby ビギナーのための CGI 入門 【第 5 回】文字コードと排他処理 2 ページ
 tags: 0017 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[前のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-1 %})
-[目次へ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
-[次のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-3 %})
+[前のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-1 %})
+[目次へ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
+[次のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-3 %})
 
 ## 目次
 
@@ -364,8 +365,8 @@ filename = "bbs01.rb"
 
 としていますが、これは排他処理とは関係ありません。
 
-[前のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-1 %})
-[目次へ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
-[次のページへ]({% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-3 %})
+[前のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-1 %})
+[目次へ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners %})
+[次のページへ]({{base}}{% post_url articles/0017/2006-11-26-0017-CGIProgrammingForRubyBeginners-3 %})
 
 

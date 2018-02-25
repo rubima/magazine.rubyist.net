@@ -4,6 +4,7 @@ title: 標準添付ライブラリ紹介 【第 6 回】 委譲
 short_title: 標準添付ライブラリ紹介 【第 6 回】 委譲
 tags: 0012 BundledLibraries
 ---
+{% include base.html %}
 
 
 書いた人：西山
@@ -515,7 +516,7 @@ Ruby で委譲を利用する、もっと色々な使用例を見たいと思っ
 ## 標準添付ライブラリ紹介 連載一覧
 
 {% for post in site.tags.BundledLibraries %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (64) Tokyu Ruby 会議 11
 short_title: RegionalRubyKaigi レポート (64) Tokyu Ruby 会議 11
 tags: 0057 TokyuRubyKaigi11Report
 ---
+{% include base.html %}
 
 ## はじめに
 
@@ -80,7 +81,7 @@ Tokyu.rb の幹事 @ginkouno さんが、大和路の元店員さんがいらっ
 回答の方は、A ３人、B ２人に解答が分かれ<br />
 それぞれの選択した理由についてインタビュー、自信満々で臭いでわかるという方もいらっしゃいました。<br />
 正解は A の3人の方々が正解でした！<br />
-![プレモルセミナー.jpg]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/premoru.jpg)
+![プレモルセミナー.jpg]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/premoru.jpg)
 
 ### LT
 
@@ -146,7 +147,7 @@ Tokyu.rb の幹事 @ginkouno さんが、大和路の元店員さんがいらっ
 
 毎回恒例の抽選LTでは、いろいろな抽選方法が行われてきました。
 そして、今回は @kishima さんから、ユニティちゃんによる抽選が行われました。
-![抽選LT.jpg]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/tyusenlt.jpg)
+![抽選LT.jpg]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/tyusenlt.jpg)
 
 ### 投票結果
 
@@ -154,7 +155,7 @@ Tokyu.rb の幹事 @ginkouno さんが、大和路の元店員さんがいらっ
 
 #### 飯王
 
-![elt合算飯王.png]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/elt.png)
+![elt合算飯王.png]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/elt.png)
 接戦の様子がうかがえる、途中経過。
 
 ##### 単品飯王
@@ -189,7 +190,7 @@ TokyuRuby Kaigi に来てくれる、いろんな人に食べてもらいたい�
 今回の TokyuRuby Kaigi 11 では、受付スタッフとしても参加していた安田篤史さんが、
 投票アプリに登録を忘れてしまうというハプニングも乗り越え、
 2017 年夏にふさわしい怪談で、最多得票数を獲得して LT 王となりました。
-![LT王.jpg]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/LT.jpg)
+![LT王.jpg]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/LT.jpg)
 
 ----
 
@@ -199,8 +200,8 @@ TokyuRuby Kaigi に来てくれる、いろんな人に食べてもらいたい�
 
 TokyuRuby 会議では恒例の飯 (お持ち寄り料理) も、これまで以上にたくさんお持ち寄りいただきました。
 
-![夏休み00.jpg]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/00.jpg)
-![開始早々飯テーブル01.jpg]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/01.jpg)
+![夏休み00.jpg]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/00.jpg)
+![開始早々飯テーブル01.jpg]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/01.jpg)
 
 #### 飯王
 
@@ -217,7 +218,7 @@ LT 王とは、発表された LT の中から投票を行い、一番票を集�
 ### スタッフ T シャツ
 
 今回の T シャツデザインは、前回当日スタッフとしてお手伝いしてもらった [@tdakak](https://twitter.com/tdakak) さんにデザインしてもらいました。<br />
-![stuff_t-shirts.jpg]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/stuff_t-shirts.jpg)
+![stuff_t-shirts.jpg]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/stuff_t-shirts.jpg)
 
 ----
 
@@ -229,7 +230,7 @@ TokyuRuby 会議 08 から引き続いて、PC 、スマフォから、コメン
 
 株式会社 VOYAGE GROUP 様<br />
 いつも使わせていただいている大きな銅鑼、飲食もできるステキな会場と、休憩の出来る和室、アルコール・フリードリンクのご提供などなど、いつもありがとうございます。<br />
-![会場スポンサー.jpg]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/suponser.jpg)
+![会場スポンサー.jpg]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/suponser.jpg)
 
 ### TokyuRuby 会議実行委員長システム
 
@@ -266,7 +267,7 @@ TokyuRuby 会議 10 では  [@yucao24hours](https://twitter.com/yucao24hours) �
 
 ### 三浦 美咲樹 ( [@yukaina](https://twitter.com/yukaina) )
 
-![yukaina.png]({{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/yukaina.png)TokyuRuby 会議 11 るびま係。<br />
+![yukaina.png]({{base}}{{site.baseurl}}/images/0057-TokyuRubyKaigi11Report/yukaina.png)TokyuRuby 会議 11 るびま係。<br />
 普段は Ruby on Rails でストックフォトサイトの開発しています。<br />
 
 

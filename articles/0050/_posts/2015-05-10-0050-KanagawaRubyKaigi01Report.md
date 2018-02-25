@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (49) 神奈川 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (49) 神奈川 Ruby 会議 01
 tags: 0050 KanagawaRubyKaigi01Report
 ---
+{% include base.html %}
 
 
 書いた人 : [@snowcrush](https://twitter.com/snowcrush)  , [@miyohide](https://twitter.com/miyohide)
@@ -41,22 +42,22 @@ tags: 0050 KanagawaRubyKaigi01Report
 
 今回は、[遠い世界の数式](http://nabetani.sakura.ne.jp/kanagawa.rb/evalex/)という問題が出題されました。普段使っている演算子の優先順位が異なっており、ぱっと見、『難しそう』という印象を持たれる方もちらほら。しかしながら、予め用意されたヒントや TA さん、そしてペア同士が開始直後から活発な議論を進めて、終盤にはあちらこちらで「できた！」とか「やった！」といった歓声が飛んでいました。
 
-![pairpro01_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/pairpro01_m.jpg) ![pairpro02_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/pairpro02_m.jpg)
+![pairpro01_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/pairpro01_m.jpg) ![pairpro02_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/pairpro02_m.jpg)
 
 ### デモペアプロ
 
 会場正面では、デモペアプロと称して、ペアプロの様子をスクリーンに映しながら解いてもらいました。最初は緊張気味だったお二人も、時間が経つにつれ実装が進み、無事 1 時間以内に全テストをパスすることができました。
-![pairpro03_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/pairpro03_m.jpg)
+![pairpro03_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/pairpro03_m.jpg)
 
 ### 発表
 
 1 時間経過後には、解いたプログラムについて発表。プレッシャーがかかる中、問題を解ききった二人には大きな拍手が贈られました。
-![pairpro04_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/pairpro04_m.jpg)
+![pairpro04_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/pairpro04_m.jpg)
 
 ### 解説
 
 その後は、問題作成者である [@Nabetani](https://twitter.com/nabetani) さんによる問題解説と出題者からの回答例の紹介が行われました。回答例ではものすごくシンプルに書かれた実装例に対して、会場からはため息にも似た感嘆の声があちこちで起こっていました。
-![nabetani01_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/nabetani01_m.jpg)
+![nabetani01_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/nabetani01_m.jpg)
 
 ## Ruby入門
 
@@ -64,8 +65,8 @@ tags: 0050 KanagawaRubyKaigi01Report
 
 初級編や中級編に対して特に強調されていたのが「人」との関わり。 Ruby を学ぶことを助けてくれるのも「人」であれば、使う理由であるのも「人」ということを強調されてました。
 
-![takahashi01_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/takahashi01_m.jpg)
-![takahashi02_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/takahashi02_m.jpg)
+![takahashi01_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/takahashi01_m.jpg)
+![takahashi02_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/takahashi02_m.jpg)
 
 ## 神奈川県内Rubyコミュニティ紹介
 
@@ -91,7 +92,7 @@ yokohama.rb は「横浜周辺の Ruby 技術者が集まって Ruby に関し�
 
 本題である「理由」については、「もっと楽しく、気持ちよくなりたいために、そのための努力は惜しまない」ため。そういう意味では、 Gem を作るということも、 Ruby を使ってより怠惰にしてくれるという意味ではコミッターとは変わらないのではないかと提案して、基調講演を締めました。
 
-![tarui01_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/tarui01_m.jpg) ![tarui02_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/tarui02_m.jpg)
+![tarui01_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/tarui01_m.jpg) ![tarui02_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/tarui02_m.jpg)
 
 ## Rubyと俺達の生存戦略
 
@@ -114,7 +115,7 @@ yokohama.rb は「横浜周辺の Ruby 技術者が集まって Ruby に関し�
 
 今回、紹介されたロールの名前は「プロの無職」。ネーミングのユニークさと、働き方が聴衆の心を捉え、発表後の質疑応答や懇親会では「プロの無職」が大流行しました。
 
-![seki01_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/seki01_m.jpg) ![seki02_m.jpg]({{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/seki02_m.jpg)
+![seki01_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/seki01_m.jpg) ![seki02_m.jpg]({{base}}{{site.baseurl}}/images/0050-KanagawaRubyKaigi01Report/seki02_m.jpg)
 
 ## まとめ
 

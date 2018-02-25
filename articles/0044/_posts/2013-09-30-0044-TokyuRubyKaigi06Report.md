@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (39) Tokyu Ruby 会議 06
 short_title: RegionalRubyKaigi レポート (39) Tokyu Ruby 会議 06
 tags: 0044 TokyuRubyKaigi06Report
 ---
+{% include base.html %}
 
 
 ## はじめに<br />
@@ -93,7 +94,7 @@ TokyuRuby会議は、Rubyに興味のあるエンジニアが集うTokyu.rbが�
 一般的なフォーム、間違いがいっぱいあるそうで・・・
 
 #### require 'ginza' Rails::VERSION::STRING #=&gt; "4.0.0" (工藤研一さん)
-: ![IMG_0011.jpg]({{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0011.jpg)
+: ![IMG_0011.jpg]({{base}}{{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0011.jpg)
 
 6/18日に行われた、ginza.rb 第0回のお話。<br />
 懇親会の方は、銀座という場所柄高そうなイメージですが、実際は2000円くらいとのこと。<br />
@@ -102,7 +103,7 @@ TokyuRuby会議は、Rubyに興味のあるエンジニアが集うTokyu.rbが�
 というが気の毒でした・・・
 
 #### サクラ大戦に学ぶプロジェクトマネジメント (久保優子(@kuko)さん)
-: ![IMG_0014.JPG]({{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0014.JPG)
+: ![IMG_0014.JPG]({{base}}{{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0014.JPG)
 
 某社の歌って踊れる専務から、まじめなお話。<br />
 PMやるならサクラ大戦をやっておけ！<br />
@@ -111,7 +112,7 @@ PMやるならサクラ大戦をやっておけ！<br />
 やばい、LT王候補きたぁ〜と感じたLTでした。
 
 #### english.rb (willnetさん)
-: ![IMG_0043.JPG]({{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0043.JPG)
+: ![IMG_0043.JPG]({{base}}{{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0043.JPG)
 
 ドヤリングが印象的な、英語でのLTでした。<br />
 「明日から本気出す。」ではなく、「今日から本気出せ！」<br />
@@ -161,7 +162,7 @@ TokyuRuby会議では、前半戦と後半戦との合間の休憩中に、
 LTをしてもらうということをしています。
 
 #### 抽選の様子
-: ![IMG_0095.JPG]({{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0095.JPG)
+: ![IMG_0095.JPG]({{base}}{{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0095.JPG)
 
 抽選は、スタッフのkishimaさん作成の
 webrubyで作られた、新システムによる厳正に行われました。
@@ -338,13 +339,13 @@ Accept LTには、12名もの方が立候補！<br />
 
 久保優子(@kuko)さん。
 : 「女性に好意を持ってもらう方法」で、ドラがなるという衝撃的な幕切れから、待望の続きとなる基調講演。<br />
-![IMG_0152.JPG]({{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0152.JPG)
+![IMG_0152.JPG]({{base}}{{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0152.JPG)
 
 #### 飯王
 
 @2celebさん。<br />
 
-![IMG_0170.JPG]({{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0170.JPG)
+![IMG_0170.JPG]({{base}}{{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0170.JPG)
 Amazonのお届け先を病室にしておくと便利！とのこと。<br />
 お酒は飲み過ぎないように、楽しいときに飲むのが一番良い！<br />
 というまとめでした。<br />
@@ -370,7 +371,7 @@ TokyuRuby会議06をこれまで以上に楽しい場へと盛り上げていた
 ## TokyuRuby会議07の予定
 
 次回は__2014.03.29(土)__<br />__櫻井目覚めるミートの日！__<br />
-![IMG_0125.JPG]({{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0125.JPG)
+![IMG_0125.JPG]({{base}}{{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/IMG_0125.JPG)
 `というわけではなく・・・`<br />
 実行委員長に__櫻井達生__さんを据えて、<br />
 __桜咲くニクの日(2014.03.29)__になりそうです。<br />
@@ -395,7 +396,7 @@ __桜咲くニクの日(2014.03.29)__になりそうです。<br />
 
 ### 三浦 美咲樹(@yukaina)
 
-![yukaina.png]({{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/yukaina.png)TokyuRuby会議01から、受付担当。<br />
+![yukaina.png]({{base}}{{site.baseurl}}/images/0044-TokyuRubyKaigi06Report/yukaina.png)TokyuRuby会議01から、受付担当。<br />
 普段はRuby on Railsでストックフォトサイトの開発しています。
 
 

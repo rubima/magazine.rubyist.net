@@ -4,6 +4,7 @@ title: lily でブログカスタマイズ 【第 2 回】
 short_title: lily でブログカスタマイズ 【第 2 回】
 tags: 0004 LilyCustomizeHack
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -14,7 +15,7 @@ tags: 0004 LilyCustomizeHack
 
 ## はじめに
 
-「[lilyでブログカスタマイズ第1回]({% post_url articles/0003/2004-11-15-0003-LilyCustomizeHack %})」では、lilyの導入と基本的な記事の投稿方法を解説しました。
+「[lilyでブログカスタマイズ第1回]({{base}}{% post_url articles/0003/2004-11-15-0003-LilyCustomizeHack %})」では、lilyの導入と基本的な記事の投稿方法を解説しました。
 
 さて、ブログをカスタマイズするとして、まず思い浮かぶのはデザイン面ではないでしょうか。特にlilyの場合、折角サーバーを借りて運用するわけですから、ブログホスティングサービスでは出来無い全面的なデザインカスタマイズをしてみたいところです。
 
@@ -28,7 +29,7 @@ lilyではこのテンプレート方式の一種である、flavour（フレー
 
 flavourの詳細について説明する前に、lilyがどのようにして出力する画面を決定しているかの仕組みを説明します。
 
-以下のように直接lily.cgiにアクセスすると、最近投稿した記事を何件か表示します（このときの件数はlily.cfgで設定します=&gt;[第1回]({% post_url articles/0004/2004-12-17-0004-LilyCustomizeHack %})）。
+以下のように直接lily.cgiにアクセスすると、最近投稿した記事を何件か表示します（このときの件数はlily.cfgで設定します=&gt;[第1回]({{base}}{% post_url articles/0004/2004-12-17-0004-LilyCustomizeHack %})）。
 
 [http://www.mikihoshi.com/rubima/d/lily.cgi](http://www.mikihoshi.com/rubima/d/lily.cgi)
 
@@ -105,7 +106,7 @@ lilyはperlで書かれたblosxomというツールをrubyに移植したもの�
 もう一つ、tDiary互換flavourを試してみます。
 
 1. [http://cgi.no-ip.org/cgi-bin/blosxom/data/](http://cgi.no-ip.org/cgi-bin/blosxom/data/)でblosxomのデータディレクトリを公開されているのですが、flavourディレクトリ内に拡張子tdiaryのflavourファイルがあるので、ダウンロードします。
-1. tDiary互換flavourの場合はプラグインに関する記述など、変更の必要な箇所がいくつか存在します。変更したものをアップしておきます。（[tdiary.zip]({{site.baseurl}}/images/0004-LilyCustomizeHack/tdiary.zip)）
+1. tDiary互換flavourの場合はプラグインに関する記述など、変更の必要な箇所がいくつか存在します。変更したものをアップしておきます。（[tdiary.zip]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/tdiary.zip)）
 1. 自分のサーバのflavourディレクトリにアップロードします
 
 
@@ -154,14 +155,14 @@ tDiary互換flavourの導入はやや複雑ですが、tDiaryの豊富なテー�
 ### flavourの構成
 
 下図を見てもらうと分かるように、flavourの5つのファイル（content_type, head, date, story, foot）は以下の順序で組み合わさって出力されます。
-![flavour.png]({{site.baseurl}}/images/0004-LilyCustomizeHack/flavour.png)
+![flavour.png]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/flavour.png)
 
 各flavourファイルを順番に説明して行きます。
 
 #### content_type
 
 このflavourは特殊で、HTTPヘッダの「Content-type」フィールドを指定するものです。例えば、今回作成するはてなデータ形式や、RSSのファイル等はXMLファイルです。そのため、ブラウザで正しく処理するには「Content-type」フィールドにXMLを意味する「text/xml」を出力する必要があります。
-![content_type.txt]({{site.baseurl}}/images/0004-LilyCustomizeHack/content_type.txt)
+![content_type.txt]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/content_type.txt)
 
 content_type flavourファイルが存在しない場合、lilyは自動的にHTML用のContent-typeフィールドを出力します。そのため、一般的なHTML出力用のflavourではcontent_type flavourは不要です。
 
@@ -192,7 +193,7 @@ $定義名
 のように書くことで出力できます。
 
 単純な定義だけでなく、月別のアーカイブリンクを出力したり、カテゴリ別のリンクを出力したりする場合は、プラグインという仕組みを使います。（プラグインについての詳細な解説は次号を予定しています）
-![head.txt]({{site.baseurl}}/images/0004-LilyCustomizeHack/head.txt)
+![head.txt]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/head.txt)
 
 #### date
 
@@ -232,7 +233,7 @@ $yr年$mo_num月$da日
 と記述します。
 
 はてなデータ形式では日付を意味する&lt;day&gt;と&lt;body&gt;を記述することになります。注意するのは、date flavourは各日の最初だけしか表示されないということです。そのため、&lt;day&gt;,&lt;body&gt;の前に&lt;/body&gt;,&lt;/day&gt;を追加して、直前の日の要素を閉じています。head.hatenaの最後に&lt;day&gt;,&lt;body&gt;があるのは、一番最初に表示されるdate flavour（前の日がない）のためのダミーです。
-![date.txt]({{site.baseurl}}/images/0004-LilyCustomizeHack/date.txt)
+![date.txt]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/date.txt)
 
 #### story
 
@@ -272,19 +273,19 @@ $flavourの部分は「html」などのflavour名を入れてしまってもい�
 
 
 のようにタイトルを付けるので、story.hatenaは以下のようになります。
-![story.txt]({{site.baseurl}}/images/0004-LilyCustomizeHack/story.txt)
+![story.txt]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/story.txt)
 
 #### foot
 
 footは記事の表示が終わったあと、最後に出力されます。
 はてな日記データ形式の場合は、タグを閉じるだけですね。
-![foot.txt]({{site.baseurl}}/images/0004-LilyCustomizeHack/foot.txt)
+![foot.txt]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/foot.txt)
 
 余談ですが、大抵のblogツールやWikiツールの末尾には「Powered by ○○」とツール名が表記されています。PerlやPHPなどのツールの場合は「Powered by blosxom」のようにそのままツール名が入りますが、Rubyのツールには「Generated by ○○ Powered by Ruby」と、Rubyへのリンクを入れているものが多いです（中にはテンプレートエンジンのリンクなんかも入っていたり）。筆者はなんとなくこのRuby式の表記を気に入っていたりします。
 
 ### flavour完成
 
-最後に完成したhatena flavourを置いておきます。（[hatena.zip]({{site.baseurl}}/images/0004-LilyCustomizeHack/hatena.zip)）また、これをサンプルのlilyに適用した場合、以下のようなXMLになります。
+最後に完成したhatena flavourを置いておきます。（[hatena.zip]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/hatena.zip)）また、これをサンプルのlilyに適用した場合、以下のようなXMLになります。
 
 [http://www.mikihoshi.com/rubima/d/lily.cgi/index.hatena](http://www.mikihoshi.com/rubima/d/lily.cgi/index.hatena)
 
@@ -296,7 +297,7 @@ footは記事の表示が終わったあと、最後に出力されます。
 
 ## 著者について
 
-![deka.jpg]({{site.baseurl}}/images/0004-LilyCustomizeHack/deka.jpg)
+![deka.jpg]({{base}}{{site.baseurl}}/images/0004-LilyCustomizeHack/deka.jpg)
 なまえ：ふしはらかん。
 [http://www.mikihoshi.com/d/](http://www.mikihoshi.com/d/)にて日記を書いてます。
 

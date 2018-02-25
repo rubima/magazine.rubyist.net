@@ -4,6 +4,7 @@ title: テンプレートシステム入門 (1) 歴史編
 short_title: テンプレートシステム入門 (1) 歴史編
 tags: 0024 TemplateSystem
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -60,7 +61,7 @@ tags: 0024 TemplateSystem
 
 図 1: 第 1 世代: プログラムに HTML を埋め込む
 
-![template-system-1-1.png]({{site.baseurl}}/images/0024-TemplateSystem/template-system-1-1.png)
+![template-system-1-1.png]({{base}}{{site.baseurl}}/images/0024-TemplateSystem/template-system-1-1.png)
 動的に Web ページを出力する方法で一番原始的なのは、プログラムの中に HTML を埋め込み、print 文などで出力する方法です。
 ここではこれを第 1 世代の方法と呼ぶことにします (図 1)。
 
@@ -227,7 +228,7 @@ puts builder.to_s
 
 図 2: 第 2 世代: HTML にプログラムを埋め込む
 
-![template-system-1-2.png]({{site.baseurl}}/images/0024-TemplateSystem/template-system-1-2.png)
+![template-system-1-2.png]({{base}}{{site.baseurl}}/images/0024-TemplateSystem/template-system-1-2.png)
 Web 黎明期のように HTML が単純なうちは print 文でちまちま出力する方法でも良かったのですが、Web ページが複雑かつ大きくなるにつれ、この方法は破綻しました。
 print 文として埋め込まれた HTML の変更があまりに面倒だったからです。
 
@@ -326,7 +327,7 @@ Ruby ユーザは eRuby の単純さに感謝しましょう。
 
 図 3: 第 3 世代: プログラムと HTML とを分離する
 
-![template-system-1-3.png]({{site.baseurl}}/images/0024-TemplateSystem/template-system-1-3.png)
+![template-system-1-3.png]({{base}}{{site.baseurl}}/images/0024-TemplateSystem/template-system-1-3.png)
 HTML 中にプログラムを埋め込む方法によって、特にプログラムが小さい場合は開発作業が格段に楽になりました。
 しかし、この方法にも次のような問題点が残っています。
 
@@ -621,7 +622,7 @@ XSLT (XML Stylesheet Language Transformations) とは、XML を別の形式の X
 ## テンプレートシステム入門 連載一覧
 
 {% for post in site.tags.TemplateSystem %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

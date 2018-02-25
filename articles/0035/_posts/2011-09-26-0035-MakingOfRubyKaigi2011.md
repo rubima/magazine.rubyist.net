@@ -4,6 +4,7 @@ title: Making of RubyKaigi2011 第一回
 short_title: Making of RubyKaigi2011 第一回
 tags: 0035 MakingOfRubyKaigi2011
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -18,25 +19,25 @@ RubyKaigi2011 が無事終わりました。RubyKaigi は終了しますが、�
 
 ## 目次
 
-### [Making of RubyKaigi - Making of KaigiFreaks 配信班]({% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi01 %})
+### [Making of RubyKaigi - Making of KaigiFreaks 配信班]({{base}}{% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi01 %})
 
-* [Making of RubyKaigi - Making of KaigiFreaks 配信班]({% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi01 %})
+* [Making of RubyKaigi - Making of KaigiFreaks 配信班]({{base}}{% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi01 %})
 
 
 会場風景は Ustream で配信されました。アーカイブを観て今から RubyKaigi2011 を追体験することもできます。そんな充実の動画配信を実現した配信システムの構成や、トラブル報告などを語ります。
 
-### [Making of RubyKaigi - Making of KaigiFreaks ネットワーク班]({% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi02 %})
+### [Making of RubyKaigi - Making of KaigiFreaks ネットワーク班]({{base}}{% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi02 %})
 
-* [Making of RubyKaigi - Making of KaigiFreaks ネットワーク班]({% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi02 %})
+* [Making of RubyKaigi - Making of KaigiFreaks ネットワーク班]({{base}}{% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi02 %})
 
 
 例年、RubyKaigi では猛者たちが集うため、安定したネットワークの確保に四苦八苦していましたが、RubyKaigi2011 では (文字通り) プロの犯行により安定したネットワークが提供されました。ここでは、会場のネットワーク構成の考え方から実運用に至るまでその内幕を語り尽くします。
 
-### [Making of RubyKaigi - Making of 闇 RubyKaigi]({% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi03 %})
+### [Making of RubyKaigi - Making of 闇 RubyKaigi]({{base}}{% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi03 %})
 
 …えーと、ここは「裏」ですけど？
 
-* [Making of RubyKaigi - Making of 闇 RubyKaigi]({% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi03 %})
+* [Making of RubyKaigi - Making of 闇 RubyKaigi]({{base}}{% post_url articles/0035/2011-09-26-0035-MakingOfRubyKaigi03 %})
 
 
 会議が終わって居場所がなくなってしまったようなので、「闇」も載せてあげました。一部ではある意味メインコンテンツとの呼び声も高かった企画の立ち上げから小ネタばらしまで、がっつり語っていただきます。
@@ -61,8 +62,8 @@ RubyKaigi の運営には、実行委員から会期の間を中心にサポー�
 
 RubyKaigi のつくり方に興味のある人は、こちらもどうぞ。
 
-* 0035 号掲載：[RubyKaigi2010 後の角谷さん・島田さんインタビュー]({% post_url articles/0035/2011-09-26-0035-rk10interview %})
-* 0031 号掲載：[RubyKaigi2010 の裏側]({% post_url articles/0031/2010-10-07-0031-RubyKaigi2010 %})
+* 0035 号掲載：[RubyKaigi2010 後の角谷さん・島田さんインタビュー]({{base}}{% post_url articles/0035/2011-09-26-0035-rk10interview %})
+* 0031 号掲載：[RubyKaigi2010 の裏側]({{base}}{% post_url articles/0031/2010-10-07-0031-RubyKaigi2010 %})
 
 
 

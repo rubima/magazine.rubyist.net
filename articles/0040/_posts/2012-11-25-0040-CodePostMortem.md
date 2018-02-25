@@ -4,6 +4,7 @@ title: Ruby コードの感想戦 【第 1 回】 WikiR
 short_title: Ruby コードの感想戦 【第 1 回】 WikiR
 tags: 0040 CodePostMortem
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -22,13 +23,13 @@ tags: 0040 CodePostMortem
 {% endhighlight %}
 
 
-るびまには「よい Ruby コードのお手本を示す」というスタイルの青木峰郎さんの「[あなたの Ruby コードを添削します]({% post_url articles/0010/2005-10-10-0010-CodeReview %})」という名連載がありました。
+るびまには「よい Ruby コードのお手本を示す」というスタイルの青木峰郎さんの「[あなたの Ruby コードを添削します]({{base}}{% post_url articles/0010/2005-10-10-0010-CodeReview %})」という名連載がありました。
 
 新しく始まるこの連載もコード添削をテーマにした連載です。青木さんの連載との違いは、「よい Ruby コードのお手本を示す」、「Ruby で書くよいコードのベストプラクティスを提供する」というのではなく、「よいコードにも視点の違いによって多様性があり、それぞれの視点を読んだうえで記事を読む人に自分はどう考えるかを考えてもらう」というスタイルをとる点です。結果として、読んだ人が自分のコードを書くときに、視点がひとつ、ふたつ増えているということを期待しています。
 
 この連載では、「ある人がコードにコメントし、そのコメントに対してまた別の人がコメントする」という記事がセットで進んでいきます。コメントする人は特定の誰かではなく、毎回変わっていきます。先生と生徒の関係ではなく、コメントする人、される人、どちらもコードに一家言持ったプログラマです。きっと、いろいろな視点を見つけられるはずです。
 
-第 1 回目は[咳さん]({% post_url articles/0013/2006-02-20-0013-Hotlinks %})の書いたコードに対して私（須藤）がコメントします。題材は以下の URL にある小さな Wiki です。
+第 1 回目は[咳さん]({{base}}{% post_url articles/0013/2006-02-20-0013-Hotlinks %})の書いたコードに対して私（須藤）がコメントします。題材は以下の URL にある小さな Wiki です。
 
 [http://d.hatena.ne.jp/m_seki/20120213#1329064281](http://d.hatena.ne.jp/m_seki/20120213#1329064281)
 
@@ -84,7 +85,7 @@ HTTP サーバーを動かします。
 
 
 localhost の 8080 番ポートで HTTP サーバーが起動しました。それでは、Web ブラウザーでアクセスしましょう。
-![cgi-fail.png]({{site.baseurl}}/images/0040-CodePostMortem/cgi-fail.png)
+![cgi-fail.png]({{base}}{{site.baseurl}}/images/0040-CodePostMortem/cgi-fail.png)
 
 CGI の実行に失敗しました。うまくいかないときはまずはログを確認します[^1]。HTTP サーバーのログを確認すると以下のようになっています。
 
@@ -148,7 +149,7 @@ index.rb:
 
 
 ふたたび Web ブラウザーでアクセスすると今度はトップページが表示されます。
-![cgi-work.png]({{site.baseurl}}/images/0040-CodePostMortem/cgi-work.png)
+![cgi-work.png]({{base}}{{site.baseurl}}/images/0040-CodePostMortem/cgi-work.png)
 
 これでスタート地点に立てました。それでは、コードを見ていきましょう。
 
@@ -1058,7 +1059,7 @@ index.rb については以上です。
 ## Ruby コードの感想戦 連載一覧
 
 {% for post in site.tags.CodePostMortem %}
-  - [{{ post.title }}]({{ post.url }})
+  - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ----

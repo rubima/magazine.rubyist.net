@@ -4,6 +4,7 @@ title: Chef でサーバ管理を楽チンにしよう！ (第 1 回)
 short_title: Chef でサーバ管理を楽チンにしよう！ (第 1 回)
 tags: 0035 ChefInDECOLOG
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -141,7 +142,7 @@ chef-server にアクセスするツール類のこと。
 #### 全体像
 
 これらの関係を図にまとめると以下のようなイメージになります。
-![chef_arch.png]({{site.baseurl}}/images/0035-ChefInDECOLOG/chef_arch.png)
+![chef_arch.png]({{base}}{{site.baseurl}}/images/0035-ChefInDECOLOG/chef_arch.png)
 
 前述のとおり、レシピに対する chef-solo と chef-server のポジションは同じです。Chef を活用するのにサーバとクライアントが必ずしも必要でないことがわかります。
 

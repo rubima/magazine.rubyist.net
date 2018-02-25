@@ -4,11 +4,12 @@ title: Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 2
 short_title: Ruby ビギナーのための CGI 入門 【第 2 回】 ページ 2
 tags: 0012 CGIProgrammingForRubyBeginners
 ---
+{% include base.html %}
 
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
 
 * Table of content
 {:toc}
@@ -22,7 +23,7 @@ tags: 0012 CGIProgrammingForRubyBeginners
 とりあえず図を眺めてみて下さい。
 
 HTML フォームのスクリーンショット
-![form_example.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/form_example.jpg)
+![form_example.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/form_example.jpg)
 
 スクリーンショットを見ると、
 このフォームには下のような部品があることが分かりますね。
@@ -47,7 +48,7 @@ Web ページの読者はこうした部品を通じて
 
 上記の図の HTML ソースを読んでみましょう。
 下にソースを示します。
-![form.html]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/form.html)
+![form.html]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/form.html)
 
 目に付くのは form タグと input タグですね。
 form タグに囲まれた部分がフォーム全体で、
@@ -139,8 +140,8 @@ CGI プログラムに渡されます。
 テキストフィールドとサブミットボタンが表示されますね。
 
 bar0.html
-![bar0.html]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar0.html)
-![bar0.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar0.jpg)
+![bar0.html]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar0.html)
+![bar0.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar0.jpg)
 
 試しにテキストフィールドにアルファベットか数字を書いて、
 サブミットボタンを押してみましょう。
@@ -150,7 +151,7 @@ bar0.html
 これは一般にファイルが無い時に表示されるメッセージです。
 何故こうなるのでしょうか？
 皆さんも少し考えてみてください。
-![not_found.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/not_found.jpg)
+![not_found.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/not_found.jpg)
 
 #### form タグの action 属性
 
@@ -203,7 +204,7 @@ bar1.html は action 属性を bar1.rb に変更しているだけで
 でも、bar1.rb はフォームデータを取得していませんから、
 フォームの内容と関係の無い HTML しか表示出来ません。
 どうしたら良いのでしょうか？
-![form_get2.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/form_get2.jpg)
+![form_get2.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/form_get2.jpg)
 
 ### フォームデータの受け取り
 
@@ -257,7 +258,7 @@ ENV の使い方さえ分かれば難しいところは無いと思います。
 
 ちなみに bar_echo1.html も bar0.html とほとんど同じです。
 違うのは action 属性だけです。
-![bar_echo1_1.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1_1.jpg)
+![bar_echo1_1.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1_1.jpg)
 
 確かに URL の「?」より後ろの文字列が表示されていますね。
 でも、フォームに入力した内容が「dddd」なのに
@@ -273,7 +274,7 @@ ENV の使い方さえ分かれば難しいところは無いと思います。
 まずは bar_echo1.html のフォームを見てみましょう。
 
 bar_echo1.html
-![bar_echo1.html]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1.html)
+![bar_echo1.html]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1.html)
 
 このフォームは二つの部品から構成されています。
 
@@ -458,10 +459,10 @@ arr1[0] で "t=dddd" のデータにアクセスします。
 [http://localhost:8080/bar_echo2.html](http://localhost:8080/bar_echo2.html) にアクセスして下さい。
 フォームにアルファベットや数字を入れて
 どのように表示されるか遊んでみましょう。
-![bar_echo1_2.jpg]({{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1_2.jpg)
+![bar_echo1_2.jpg]({{base}}{{site.baseurl}}/images/0012-CGIProgrammingForRubyBeginners-2/bar_echo1_2.jpg)
 
-[前ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
-[目次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
-[次ページへ]({% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
+[前ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-1 %})
+[目次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners %})
+[次ページへ]({{base}}{% post_url articles/0012/2005-12-23-0012-CGIProgrammingForRubyBeginners-3 %})
 
 

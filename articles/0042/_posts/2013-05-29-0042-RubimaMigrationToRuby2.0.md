@@ -4,6 +4,7 @@ title: Rubyist Magazine 移行後記
 short_title: Rubyist Magazine 移行後記
 tags: 0042 RubimaMigrationToRuby2.0
 ---
+{% include base.html %}
 
 
 * Table of content
@@ -16,7 +17,7 @@ tags: 0042 RubimaMigrationToRuby2.0
 
 ### はじめに
 
-[0041](0041)を読まれた方はご存知のとおり、Ruby のメジャーバージョンが 2.0 へと上がり、Rubyist Magazine ではリリース特集記事を掲載しました。
+[0041]({{base}}{% post_url articles/0041/2013-02-24-0041-index %})を読まれた方はご存知のとおり、Ruby のメジャーバージョンが 2.0 へと上がり、Rubyist Magazine ではリリース特集記事を掲載しました。
 
 このめでたい記事の裏で、実はこんな感想も聞かれてました。
 

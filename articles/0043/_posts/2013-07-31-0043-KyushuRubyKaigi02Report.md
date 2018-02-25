@@ -4,6 +4,7 @@ title: RegionalRubyKaigi レポート (38) 九州 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (38) 九州 Ruby 会議 02
 tags: 0043 KyushuRubyKaigi02Report
 ---
+{% include base.html %}
 
 
 書いた人：永井 秀利
@@ -26,7 +27,7 @@ tags: 0043 KyushuRubyKaigi02Report
 
 参加者
 :  約 40 名
-![P1090034.JPG]({{site.baseurl}}/images/0043-KyushuRubyKaigi02Report/P1090034.JPG)
+![P1090034.JPG]({{base}}{{site.baseurl}}/images/0043-KyushuRubyKaigi02Report/P1090034.JPG)
 
 ### はじめに
 

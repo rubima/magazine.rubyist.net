@@ -4,6 +4,7 @@ title: Ruby 考古学 消された機能編
 short_title: Ruby 考古学 消された機能編
 tags: 0049 archaeology
 ---
+{% include base.html %}
 
 
 書いた人：西山さん([@znz](https://twitter.com/znz))
