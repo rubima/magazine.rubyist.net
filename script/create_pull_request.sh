@@ -9,7 +9,7 @@ export PATH="$PATH:$HOME/hub-linux-amd64-$HUB/bin"
 now=$(date "+%Y%m%d%H%M%S")
 
 # リポジトリに変更をコミットする
-hub cone "rubima/rubima.github.io" rubima_github_io
+hub clone "rubima/rubima.github.io" rubima_github_io
 cp -r docs/* rubima_github_io/
 cd rubima_github_io
 hub checkout -b "jekyll_build_${now}"
