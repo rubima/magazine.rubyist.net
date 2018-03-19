@@ -252,7 +252,7 @@ guiutil.rb で定義されているメソッドの使い方は後ほど解説し
 
 <p>scenario.rb は次のようになっています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># シナリオテーブル</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># シナリオテーブル</span>
 <span class="no">ScenarioTbl</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">'opening'</span> <span class="o">=&gt;</span> <span class="p">[</span>
     <span class="p">[</span><span class="s1">'bg00.gif'</span><span class="p">,</span> <span class="s2">"嵐で知らないところに流されちゃった…</span><span class="se">\n</span><span class="s2">どっちへ行けばいいのかなぁ…。"</span><span class="p">,],</span>
@@ -275,8 +275,7 @@ guiutil.rb で定義されているメソッドの使い方は後ほど解説し
   <span class="p">],</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ScenarioTbl はハッシュです。次のように書くとわかりやすいでしょう。</p>
 
@@ -379,7 +378,7 @@ ScenarioTbl = {
 
 <p>このスクリプトは長いのでプログラム中に多くのコメントをつけました。とは言ってもコメントも含めて 120 行ほどのプログラムです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="nb">require</span> <span class="s2">"guiutil.rb"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">require</span> <span class="s2">"guiutil.rb"</span>
  <span class="nb">require</span> <span class="s2">"scenario.rb"</span>
  
  <span class="c1">#--------------------------------------</span>
@@ -423,7 +422,7 @@ ScenarioTbl = {
  
      <span class="c1"># 選択肢メッセージの表示</span>
      <span class="p">(</span><span class="n">scene_data</span><span class="p">.</span><span class="nf">size</span><span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
-       <span class="nb">sleep</span> <span class="mi">0</span><span class="o">.</span><span class="mi">2</span>
+       <span class="nb">sleep</span> <span class="mf">0.2</span>
        <span class="n">idx</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
        <span class="n">ch_msg</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">idx</span><span class="si">}</span><span class="s2">. </span><span class="si">#{</span><span class="n">scene_data</span><span class="p">[</span><span class="n">idx</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
        <span class="n">font</span> <span class="o">=</span> <span class="n">create_font_button</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ch_msg</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">270</span><span class="o">+</span><span class="n">i</span><span class="o">*</span><span class="mi">24</span><span class="p">,</span> <span class="vg">$font_size</span>
@@ -500,8 +499,7 @@ ScenarioTbl = {
  <span class="n">init</span> <span class="c1"># 初期化処理</span>
  <span class="n">mainloop</span> <span class="no">ScenarioTbl</span> <span class="c1"># メインループ</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="guiutilrb-と-scenariorb-をロード">guiutil.rb と scenario.rb をロード</h3>
 

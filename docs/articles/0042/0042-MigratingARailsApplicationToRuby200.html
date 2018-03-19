@@ -269,7 +269,7 @@
 
 <p>著者以外のエンジニアは 1.8 を使用しているため、新しく追加されるファイルにマジックコメントが記載されないことが原因の Syntax Error が時々発生していました。著者は以下のスクリプトを使って、リポジトリ内のすべてのファイルを走査し、マジックコメントが必要なファイルに自動的にマジックコメントを入れました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#! /usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#! /usr/bin/env ruby</span>
 <span class="c1"># coding: utf-8</span>
 <span class="c1"># https://gist.github.com/mrkn/5173137</span>
 
@@ -314,8 +314,7 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このスクリプトは pwd 以下にある拡張子が <code class="highlighter-rouge">.rb</code> のファイルを対象にマジックコメントが必要だったら <code class="highlighter-rouge"># coding: utf-8</code> をファイルの先頭に挿入します。コマンドラインで <code class="highlighter-rouge">--pre-commit</code> オプションを指定すると git add されたファイルのみを対象にマジックコメントを挿入するようになっています。git の pre-commit フックから呼び出すときに便利です。</p>
 
@@ -323,7 +322,7 @@
 
 <p>Ruby 1.8 までは、以下に示すように、<code class="highlighter-rouge">if</code> や <code class="highlighter-rouge">while</code> の条件の後ろにコロン (<code class="highlighter-rouge">:</code>) を置く記法が許されていました:</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
 <span class="k">while</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="ss">height:
   </span><span class="n">x</span> <span class="o">=</span> <span class="n">x0</span>
   <span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="ss">width:
@@ -333,8 +332,7 @@
   <span class="n">y</span> <span class="o">+=</span> <span class="n">dy</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>この記法は Ruby 1.9 で削除されたため、上記のコードは Syntax Error になります。</p>
 
@@ -344,24 +342,22 @@
 
 <p>みなさんは 1.8 まで以下のようなブロックパラメータが許されていた事をご存知ですか？</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">recipes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="vi">@recipe</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recipes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="vi">@recipe</span><span class="o">|</span>
   <span class="n">render</span> <span class="s1">'shared/recipe_detail'</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>そう、インスタンス変数をブロックパラメータにできたんです。びっくりですね。</p>
 
 <p>著者は、このようなコードを、手っ取り早く次のように書き換えて対処しました。
 同じような変更を <a href="https://github.com/rails/rails/commit/5f7c42413b099f8811c45a27202cce5dc9e7d285">@a_matsuda さんが rails でやっている</a>ので、問題ないでしょう(笑)</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">recipes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">recipe</span><span class="o">|</span> <span class="vi">@recipe</span> <span class="o">=</span> <span class="n">recipe</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">recipes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">recipe</span><span class="o">|</span> <span class="vi">@recipe</span> <span class="o">=</span> <span class="n">recipe</span>
   <span class="n">render</span> <span class="s1">'shared/recipe_detail'</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>くそ真面目に対策するなら、partial view template の中まで調べて、view template 内で新しいインスタンス変数を導入しないように修正すべきです。クックパッドの 1.9.3 対応作業では、そこまで真面目にやっていると仕事が終わらない可能性が高かったので手抜きをしました。</p>
 
@@ -415,7 +411,7 @@
 
 <p>この問題に対しては、Ruby Enterprise Edition の場合に以下のような monkey patch を使って警告を出す事で、使用箇所の発見だけでなく、サービス開発者によって新たな使用箇所が追加されることを防ぎました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Time</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Time</span>
   <span class="k">def</span> <span class="nf">succ_with_warning</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
     <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"[WARN] Time#succ is obsolete; use time + 1 at </span><span class="si">#{</span><span class="nb">caller</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
     <span class="n">succ_without_warning</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
@@ -441,23 +437,21 @@
   <span class="k">alias</span> <span class="kp">include</span><span class="p">?</span> <span class="n">include_with_warn?</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="datestep-と-activesupportduration"><code class="highlighter-rouge">Date#step</code> と <code class="highlighter-rouge">ActiveSupport::Duration</code></h4>
 
 <p>1.9 から date ライブラリが拡張ライブラリにかわりました。その過程で、Date#step は第2引数に Numeric だけを受け付けるようになりました。そのため、1週間単位の繰り返しを以下のように書けなくなりました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">begin_date</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="nf">week</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">date</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">begin_date</span><span class="p">.</span><span class="nf">step</span><span class="p">(</span><span class="n">end_date</span><span class="p">,</span> <span class="mi">1</span><span class="p">.</span><span class="nf">week</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">date</span><span class="o">|</span>
   <span class="c1"># ...</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このようなコードが増えていかないように、以下のモンキーパッチを導入して警告を出し、サービス開発者に注意を促すようにして対応しました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'date'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'date'</span>
 
 <span class="k">class</span> <span class="nc">Date</span>
   <span class="k">def</span> <span class="nf">step_with_warn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
@@ -470,8 +464,7 @@
   <span class="k">alias</span> <span class="n">step</span> <span class="n">step_with_warn</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="意味が変わったもの">意味が変わったもの</h3>
 
@@ -509,18 +502,16 @@
 
 <p>この違いを吸収するため、私は以下のように正規表現を実行時にコンパイルする方法を採用しました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">word</span> <span class="o">=</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span> <span class="p">?</span> <span class="s1">'\w'</span> <span class="p">:</span> <span class="s1">'\p{Word}'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">word</span> <span class="o">=</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span> <span class="p">?</span> <span class="s1">'\w'</span> <span class="p">:</span> <span class="s1">'\p{Word}'</span>
 <span class="n">regex</span> <span class="o">=</span> <span class="sr">/</span><span class="si">#{</span><span class="n">word</span><span class="si">}</span><span class="sr">/</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>正規表現を実行時に作っている理由はコンパイルエラーを避けるためです。以下の方法では、Ruby 1.8 で <code class="highlighter-rouge">\p</code> や <code class="highlighter-rouge">\P</code> を含む正規表現をコンパイルしようとするため、コンパイルエラーになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">regex</span> <span class="o">=</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span> <span class="p">?</span> <span class="sr">/\w/</span> <span class="p">:</span> <span class="sr">/\p{Word}/</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">regex</span> <span class="o">=</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span> <span class="p">?</span> <span class="sr">/\w/</span> <span class="p">:</span> <span class="sr">/\p{Word}/</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Ruby 1.9 では、正規表現とマッチさせる文字列の文字エンコーディングを気にする必要があります。この話は「独自の <code class="highlighter-rouge">String#blank?</code>」の項で詳しく説明します。</p>
 
@@ -528,7 +519,7 @@
 
 <p>次に示すコードはシンプルな has_many 関係を持つ ActiveRecord のモデルです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">User</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">belongs_to</span> <span class="ss">:group</span>
 <span class="k">end</span>
 
@@ -536,8 +527,7 @@
   <span class="n">has_many</span> <span class="ss">:users</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ActiveRecord は、<code class="highlighter-rouge">User#group</code> に保持されたオブジェクトが DB に保存される際、<code class="highlighter-rouge">group.id</code> の結果を <code class="highlighter-rouge">group_id</code> カラムに保存しようとします。このとき、<code class="highlighter-rouge">User#group</code> に nil が入っていると <code class="highlighter-rouge">nil.id</code> が呼ばれ、<code class="highlighter-rouge">nil.id</code> が CRuby では 4 になることから、whiny_nils が無効になっていると <code class="highlighter-rouge">group_id</code> に 4 が入ってしまう現象が起きることは有名です。</p>
 
@@ -545,7 +535,7 @@
 
 <p>この問題に対しては、Ruby 1.8 の場合に <code class="highlighter-rouge">nil.id</code> でエラーが出ないことの方を問題だと解釈し、以下のようなモンキーパッチを使用して <code class="highlighter-rouge">nil.id</code> が呼ばれた場所を検出する方法をとりました。このモンキーパッチは <code class="highlighter-rouge">Rails.application.config.whiny_nils</code> を参照するため、initializer の中でロードする必要があります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">whiny_nils</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">whiny_nils</span>
   <span class="nb">require</span> <span class="s1">'active_support/whiny_nil'</span>
 <span class="k">end</span>
 
@@ -567,14 +557,13 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="新ハッシュ記法">新ハッシュ記法</h4>
 
 <p>Ruby 1.9 から導入された新ハッシュ記法に関連する面白い非互換性があります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
   <span class="s2">"foo: </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
 
@@ -584,8 +573,7 @@
 
 <span class="nb">p</span> <span class="n">foo</span> <span class="n">bar</span><span class="ss">:baz</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上記のコードは 1.8 では <code class="highlighter-rouge">foo: bar: baz</code> が表示されます。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>ところが 1.9 では <code class="highlighter-rouge">bar:</code> というキーに変数 <code class="highlighter-rouge">baz</code> の値を対応させたハッシュを引数に <code class="highlighter-rouge">foo</code> メソッドを呼び出そうとして、変数 <code class="highlighter-rouge">baz</code> が無いため NameError になります。</p>
 
@@ -609,7 +597,7 @@
 
 <p>クックパッドのコードでは、これらと nkf のそれぞれに依存しているコードが散らばっている状態でした。私はそれらを整理し、1.8 での文字エンコーディング関連の処理は NKF だけに依存するようにして、1.9 では原則として組み込みのエンコーディング変換機能のみを使用するように修正したいと考えました。そこで次のモンキーパッチを String クラスに対して導入し、それだけを使用するようにアプリケーションコードを書き換えました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Ruby 1.8 に対するモンキーパッチ</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ruby 1.8 に対するモンキーパッチ</span>
 <span class="k">class</span> <span class="nc">String</span>
   <span class="k">alias</span> <span class="n">b</span> <span class="nb">dup</span>
 
@@ -660,14 +648,13 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>文字エンコーディング変換処理のほとんどの用途は、ガラケーに対応する際の UTF-8 と Windows-31J の間での変換と、メール処理での UTF-8 と CP50221 の間の変換です。そのため、この2つの場合に対しては専用のメソッドを用意しておきました。</p>
 
 <p>次に Ruby 1.9 用のモンキーパッチを示します。1.9 では、nkf と挙動をそろえるために、未定義コードポイントや不正なバイト列に対して空文字でフォールバックするようにしています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># Ruby 1.9 に対するモンキーパッチ</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ruby 1.9 に対するモンキーパッチ</span>
 <span class="k">class</span> <span class="nc">String</span>
   <span class="k">def</span> <span class="nf">b</span>
     <span class="nb">dup</span><span class="p">.</span><span class="nf">force_encoding</span><span class="p">(</span><span class="s1">'BINARY'</span><span class="p">)</span>
@@ -698,8 +685,7 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="独自の-stringblank">独自の <code class="highlighter-rouge">String#blank?</code></h4>
 
@@ -707,7 +693,7 @@
 
 <p>クックパッドで使用している <code class="highlighter-rouge">String#blank?</code> は、IDEOGRAPHIC SPACE (U+3000) も空白として扱うようカスタマイズしてあるのですが、文字列自身の文字エンコーディングが UTF-8 ではない場合に incompatible encoding regexp match というエラーが出てしまいました。この問題に対しては、Ruby 1.9 の場合に以下のような <code class="highlighter-rouge">String#blank?</code> を使用することで対応しました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">String</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">String</span>
   <span class="k">def</span> <span class="nf">blank?</span>
     <span class="k">case</span> <span class="n">encoding</span>
     <span class="k">when</span> <span class="no">Encoding</span><span class="o">::</span><span class="no">UTF_8</span>
@@ -724,8 +710,7 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上記のコードは UTF-8 とバイナリを特別扱いしています。他に良く使用される文字エンコーディングが存在するなら、それも特別扱いすると再帰呼び出しコストを抑えることができるでしょう。</p>
 
@@ -783,16 +768,16 @@
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>この記事が出た時には ruby-2.0.0-p195 がリリースされています。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>この記事が出た時には ruby-2.0.0-p195 がリリースされています。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>名前が変わり、Object#object_id になりました。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>名前が変わり、Object#object_id になりました。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>まず :baz を引数に bar メソッドが呼び出され、その結果が foo メソッドに渡されます。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>まず :baz を引数に bar メソッドが呼び出され、その結果が foo メソッドに渡されます。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>Object#respond_to? の第 2 引数に true を指定すると、private なメソッドも含めて調べてくれる。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>Object#respond_to? の第 2 引数に true を指定すると、private なメソッドも含めて調べてくれる。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -388,12 +388,11 @@
 
 <p>schema01.yaml : 文字列のシーケンス</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*type:   seq*\}\}           # データ型はシーケンス
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:   seq*\}\}           # データ型はシーケンス
 \{\{*sequence:*\}\}             # シーケンスの要素は
   - type:   str       #   データ型が文字列
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ポイントは次のとおりです。</p>
 
@@ -451,7 +450,7 @@
 
 <p>schema02.yaml : マッピングを表すスキーマ</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*type:       map*\}\}                 # マッピング型
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:       map*\}\}                 # マッピング型
 \{\{*mapping:*\}\}
  "name":
     type:      str              # 文字列型
@@ -464,8 +463,7 @@
  "birth":
     type:      date             # 日付型
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ポイントは次のとおりです。</p>
 
@@ -525,7 +523,7 @@
 
 <p>schema03.yaml :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*type:      seq*\}\}                 # シーケンス型
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:      seq*\}\}                 # シーケンス型
 \{\{*sequence:*\}\}                      # シーケンスの要素
   - \{\{*type:      map*\}\}             #   マッピング型
     \{\{*mapping:*\}\}                   #   マッピングの要素
@@ -535,8 +533,7 @@
      "email":
         type:      str
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>妥当な YAML ドキュメントの例は次のようになります。</p>
 
@@ -583,7 +580,7 @@
 
 <p>schema04.yaml : シーケンスを要素とするマッピングのスキーマ</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*type:      map*\}\}                  # マッピング型
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:      map*\}\}                  # マッピング型
 \{\{*mapping:*\}\}                        # マッピングの要素
  "company":
     type:      str
@@ -604,8 +601,7 @@
          "email":
             type:      str
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>妥当な YAML ドキュメントの例は次のようになります。</p>
 
@@ -658,7 +654,7 @@
 
 <p>schema05.yaml : 一意制約を使ったスキーマ</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type: seq
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: seq
 sequence:
   - type:     map
     required: yes
@@ -675,8 +671,7 @@ sequence:
           - type: str
             \{\{*unique:   yes*\}\}   # シーケンスの要素に対して一意制約
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>妥当な YAML ドキュメントの例は次のようになります。</p>
 
@@ -791,7 +786,7 @@ sequence:
 
 <p>schema06.yaml : 様々な制約を使ったスキーマ</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>name:      address-book            # 名前
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name:      address-book            # 名前
 desc:      アドレス帳              # 説明
 type:      seq
 sequence:
@@ -823,8 +818,7 @@ sequence:
      "memo":
         type:       any            # データ型は任意
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>妥当でない YAML ドキュメントの例は次のようになります。</p>
 
@@ -877,7 +871,7 @@ sequence:
 
 <p>例えば次のような YAML ドキュメントがあるとします。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- \{\{*&amp;a*\}\}                # アンカー
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- \{\{*&amp;a*\}\}                # アンカー
   name: foo
   parent: ~
 - name: bar
@@ -885,24 +879,22 @@ sequence:
 - name: baz
   parent: \{\{**a*\}\}        # エイリアス
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これは次のような Ruby スクリプトと同じです。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>foo = \{\{*a*\}\} = { "name"=&gt;"foo", "parent"=&gt;nil }
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo = \{\{*a*\}\} = { "name"=&gt;"foo", "parent"=&gt;nil }
 bar = { "name"=&gt;"bar", "parent"=&gt;\{\{*a*\}\} }
 baz = { "name"=&gt;"baz", "parent"=&gt;\{\{*a*\}\} }
 [ foo, bar, baz ]
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>アンカーとエイリアスを使うと、ひとつのルールを複数の箇所で共有することができます。次の例では著作者についてのルールを翻訳者でも共有しています。</p>
 
 <p>schema07.yaml : ルールを共有するスキーマ</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>desc:   書籍リスト
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>desc:   書籍リスト
 type:   seq
 sequence:
   - type:   map
@@ -920,8 +912,7 @@ sequence:
      "year":
         type:   int
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>妥当な YAML ドキュメントの例は次のようになります。</p>
 
@@ -961,7 +952,7 @@ sequence:
 
 <p>schema08.yaml : 再帰的なルールの定義</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>\{\{*&amp;task*\}\}                  # アンカー
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*&amp;task*\}\}                  # アンカー
 desc:   作業分解図
 type:   map
 mapping:
@@ -973,8 +964,7 @@ mapping:
     sequence:
       - \{\{**task*\}\}          # エイリアス
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>妥当な YAML ドキュメントの例は次のようになります。</p>
 
@@ -1015,20 +1005,18 @@ mapping:
 
 <p>例えば次の YAML ドキュメントがあるとします。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>A: 10
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A: 10
 B: 20
 \{\{*=*\}\}: -1             # デフォルト値
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これは次の Ruby コードと同じです。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>map1= {"A"=&gt;10, "B"=&gt;20}
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map1= {"A"=&gt;10, "B"=&gt;20}
 \{\{*map1.default = -1*\}\}
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>YAML のこの機能を使って、Kwalify ではマッピングにおいて一致するキーの名前が見つからなかった場合のデフォルトルールを指定できるようになっています。これは、キー名が事前にはわからない場合に使用します。</p>
 
@@ -1054,7 +1042,7 @@ B: 20
 
 <p>schema09.yaml : デフォルトのルールを指定したスキーマ</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type: map
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: map
 mapping:
  "properties":
     type: map
@@ -1062,14 +1050,13 @@ mapping:
      \{\{*=*\}\}:              # 任意のキーにマッチ
         type: any    # 値はどんなデータ型でもよい
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>また他のキーと共に使用することもできます。次の例は、アドレス帳に任意のキーと値を追加できるようにした例です。</p>
 
 <p>schema10.yaml : ユーザが自由にキーと値を追加できるアドレス帳</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type: seq
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: seq
 sequence:
   - type: map
     mapping:
@@ -1083,8 +1070,7 @@ sequence:
      \{\{*=*\}\}:             # キーが「name」「email」「birth」以外の場合
         type: any   # 値はどんなデータ型でもよい
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>デフォルトルールは、いわばどんなキーにもマッチするルールです。そのため、これを使うとキーのタイプミスが発見できなくなります。それを考慮したうえでお使いください。</p>
 
@@ -1094,32 +1080,30 @@ sequence:
 
 <p>例えば次のような YAML ドキュメントがあるとします。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- &amp;m1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- &amp;m1
   A: 10
   B: 20
 - \{\{*&lt;&lt;*\}\}: *m1            # マージ
   A: 15              # 上書き
   C: 30              # 追加
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これは次の Ruby コードと同じです。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=20}
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=20}
 m2 = {}
 \{\{*m2.update(m1)*\}\}        # マージ
 m2["A"] = 15         # 上書き
 m2["C"] = 30         # 追加
 [m1, m2]
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>また複数のマッピングをマージすることができます。
 例えば次のような YAML ドキュメントがあるとします。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>- &amp;m1
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- &amp;m1
   A: 10
   B: 20
 - &amp;m2
@@ -1127,26 +1111,24 @@ m2["C"] = 30         # 追加
   D: 40
 - \{\{*&lt;&lt;: [*m1, *m2]*\}\}    # 複数のマッピングをマージ
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これは次の Ruby コードと同じです。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=&gt;20}
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=&gt;20}
 m2 = {"C"=&gt;10, "D"=&gt;20}
 m3 = {}
 \{\{*m3.update(m1)*\}\}       # マージ
 \{\{*m3.update(m2)*\}\}       # マージ
 [m1, m2, m3]
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>YAML のこの機能を使うと、Kwalify でルールのマージや差分定義（上書きと追加）ができます。次の例では、グループについてのルールに追加・上書きすることで、ユーザについてのルールを定義しています。</p>
 
 <p>schema11.yaml : ルールのマージと差分定義を行う例</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type: map
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: map
 mapping:
  "group":
     type: map
@@ -1168,8 +1150,7 @@ mapping:
         \{\{*&lt;&lt;: *email*\}\}            # マージ
         \{\{*required: yes*\}\}         # 上書き
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>次のような、妥当でない YAML ドキュメントで試してみましょう。</p>
 
@@ -1200,7 +1181,7 @@ mapping:
 
 <p>script1.rb : Kwalify ライブラリを使って検証するサンプル</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>require 'kwalify'
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require 'kwalify'
 
 ## スキーマファイルを読み込み、バリデータを作成する。
 ## スキーマ定義にエラーがあると、例外 Kwalify::SchemaError が発生する。
@@ -1219,8 +1200,7 @@ else
   end
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>この例でわかるように、Kwalify では YAML ドキュメントをパースするときに検証するのではなく、読み込んだあとの YAML ドキュメントに対して検証を行います。そのため、Syck の YAML パーサのように行番号をパース中にしか保持しないパーサだと、エラー箇所の行番号がわかりません。</p>
 
@@ -1228,7 +1208,7 @@ end
 
 <p>script2.rb : Kwalify::YamlParser を使って行番号を表示するサンプル</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>## Kwalify::Parse を使って YAML ドキュメントを読み込む。
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Kwalify::Parse を使って YAML ドキュメントを読み込む。
 ## (このパーサは行番号を保持している。)
 str = ARGF.read()
 \{\{*parser = Kwalify::Parser.new(str)*\}\}
@@ -1251,8 +1231,7 @@ else
   end
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>また読み込んだあとの YAML ドキュメントは配列とハッシュとスカラーの組み合わせであり、これは JSON と同じです。つまり JSON を読み込んで、それを Kwalify で検証することが可能です。ほかにも、CGIパラメータの検証などに使用できるでしょう。</p>
 
@@ -1264,7 +1243,7 @@ end
 
 <p>script3.rb : スキーマファイル自身を検証するサンプル</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>## メタバリデータを取得する
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## メタバリデータを取得する
 require 'kwalify'
 \{\{*meta_validator = Kwalify::MetaValidator.instance()*\}\}
 
@@ -1279,8 +1258,7 @@ else
   end
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="フックメソッドを用いて独自の検証を行う">フックメソッドを用いて独自の検証を行う</h3>
 
@@ -1291,7 +1269,7 @@ end
 
 <p>script4.rb : フックメソッドの例</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 
 <span class="nb">require</span> <span class="s1">'kwalify'</span>
 <span class="nb">require</span> <span class="s1">'yaml'</span>
@@ -1344,14 +1322,13 @@ end
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>スキーマは次のようになります。「name:」を使ってルールに名前をつけ、それを上のスクリプトで参照しているのがポイントです。</p>
 
 <p>answers.schema.yaml : スキーマ</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type:      map
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type:      map
 mapping:
   answers:
     type:      seq
@@ -1372,8 +1349,7 @@ mapping:
          "reason":
             type:      str
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>妥当でない YAML ドキュメントの例は次のようになります。</p>
 
@@ -1426,7 +1402,7 @@ mapping:
 
 <p>creatable.schema.yaml : creatable のためのスキーマ</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>type:     map
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type:     map
 mapping:
  "defaults":
     type:     map
@@ -1464,8 +1440,7 @@ mapping:
             sequence:
               - \{\{**column-rule*\}\}              # エイリアスでルールを共有
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>前回のデータファイル (<a href="../../images/0012-YAML/datafile.yaml">datafile.yaml</a>) を使って検証してみましょう。</p>
 

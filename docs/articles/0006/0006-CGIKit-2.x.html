@@ -378,7 +378,7 @@
 
 <p>これがアップロードを行う CGI スクリプトになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="nb">require</span> <span class="s1">'cgikit'</span>
 <span class="nb">require</span> <span class="s1">'UploadPage'</span>
@@ -389,8 +389,7 @@
 <span class="n">app</span><span class="p">.</span><span class="nf">run</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>1 行目は shebang というものです。普通 Windows では無用のものです (Cygwin・UNIX系OSでは使用できますが、ここでは詳しい説明はしません。というかできません。詳細を知りたい人は Linux や *BSD の Kernel のソースを読んでください)。</p>
 
@@ -880,7 +879,7 @@ end</code></pre></figure>
 
 <p>はい。最初にアルバムページを表示させる index.cgi を載せますね。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 <span class="nb">require</span> <span class="s1">'cgikit'</span>
 <span class="nb">require</span> <span class="s1">'AlbumPage'</span>
 
@@ -890,8 +889,7 @@ end</code></pre></figure>
 <span class="n">app</span><span class="p">.</span><span class="nf">run</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>UploadPage が AlbumPage に変わっただけで upload.cgi と構成はほとんど同じです。7 行目だけが少し変わっています。このページは CSS や画像などの外部リソースを使います。CGIKit で外部リソースを使う場合、web_server_resources,   document_root を設定しなければなりません (絶対ではありませんが、多くの場合、指定する必要があります)。今回は画像・CSV ファイル・CSS を image 以下に置くので、 web_server_resources には画像や CSS の置いてあるフォルダーを割り当てます。document_root はとりあえず index.cgi のあるフォルダーにします。</p>
 
@@ -1117,7 +1115,7 @@ Powered By CGIKit Version &lt;span ck:id='version'&gt;version&lt;/span&gt;
 
 <p>そうですね。これで一通りは動きます。webrick-app.rb で実行しましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'webrick'</span>
 <span class="nb">require</span> <span class="s1">'cgikit'</span>
 <span class="nb">require</span> <span class="s1">'cgikit/webrick'</span>
@@ -1140,8 +1138,7 @@ Powered By CGIKit Version &lt;span ck:id='version'&gt;version&lt;/span&gt;
 <span class="nb">trap</span><span class="p">(</span><span class="s2">"INT"</span><span class="p">){</span> <span class="n">server</span><span class="p">.</span><span class="nf">shutdown</span> <span class="p">}</span>
 <span class="n">server</span><span class="p">.</span><span class="nf">start</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>2-7 行で必要なファイルを require しています。11-15 行 で CGIKit::Application のオブジェクトを二つ生成しています。16 行ではサーバーを生成し、17-18 行では URL と 実行される CGIKit::Application を結び付けます。これにより URL と表示されるページとの関係は下のようになります。</p>
 
@@ -1311,13 +1308,13 @@ Powered By CGIKit Version &lt;span ck:id='version'&gt;version&lt;/span&gt;
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Ruby on Railsの railsコマンド や bin/generate みたいなものです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>Ruby on Railsの railsコマンド や bin/generate みたいなものです。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>誰か cgikit.el を 2.x 用に修正してください･･･。へたれ Emacs 使いの筆者には修正できません･･･&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>誰か cgikit.el を 2.x 用に修正してください･･･。へたれ Emacs 使いの筆者には修正できません･･･ <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>え、CGIKitと関係ないって？　そんなことないですよ。ちゃんと読んでみてください。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>え、CGIKitと関係ないって？　そんなことないですよ。ちゃんと読んでみてください。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

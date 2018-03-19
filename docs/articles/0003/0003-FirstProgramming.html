@@ -491,7 +491,7 @@ puts values[r]</code></pre></figure>
 
 <p>次のプログラムは配列にセットされた身長データから、全員の平均身長を求めるプログラムです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">150</span><span class="p">,</span> <span class="mi">174</span><span class="p">,</span> <span class="mi">180</span><span class="p">]</span>
 
 <span class="n">n</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="nf">size</span>
 <span class="nb">puts</span> <span class="s2">"values には </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2"> 人分のデータがあります。"</span>
@@ -505,8 +505,7 @@ puts values[r]</code></pre></figure>
 <span class="nb">puts</span> <span class="s2">"全員の身長の合計は </span><span class="si">#{</span><span class="n">total</span><span class="si">}</span><span class="s2"> cm です。"</span>
 <span class="nb">puts</span> <span class="s2">"全員の身長の平均は </span><span class="si">#{</span><span class="n">total</span><span class="o">/</span><span class="n">n</span><span class="si">}</span><span class="s2"> cm です。"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>3 行目の__ .size __は配列の要素数を返すメソッドです。ここでは変数 n に 3 が代入されます。</p>
 
@@ -634,7 +633,7 @@ p tbl</code></pre></figure>
 
 <p>2 次元配列と先ほど説明した times のループ機能を使ってこのようなプログラムを作ってみました。画面にある文字絵を表示するプログラムです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">tbl</span> <span class="o">=</span> <span class="p">[</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">tbl</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
   <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
@@ -656,8 +655,7 @@ p tbl</code></pre></figure>
   <span class="nb">print</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="c1"># 改行する</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>2 重ループと 2 次元配列を使ったすこしややこしいプログラムですが、もう特に説明する必要はないでしょう。
 パズルゲームを解く気持ちでひとつひとつの処理を自分で追ってみてください。</p>
@@ -671,7 +669,7 @@ p tbl</code></pre></figure>
 <p>前回作成したゲームブックプログラムを配列を使って作ってみます。
 プログラムを見ただけでは動作をイメージできないので、実際に実行してから次のソースを見てください。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">msg0</span> <span class="o">=</span> <span class="s2">"３本の分かれ道があります。どの道を進みますか。</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">msg0</span> <span class="o">=</span> <span class="s2">"３本の分かれ道があります。どの道を進みますか。</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span>
        <span class="s2">"  1 左の道</span><span class="se">\n</span><span class="s2">  2 真ん中の道</span><span class="se">\n</span><span class="s2">  3 右の道"</span>
 <span class="n">msg1</span> <span class="o">=</span> <span class="s2">"あっ！</span><span class="se">\n</span><span class="s2">落とし穴に落ちてしまいました。</span><span class="se">\n</span><span class="s2">〜 GAME "</span> <span class="o">+</span>
        <span class="s2">"OVER 〜"</span>
@@ -717,12 +715,11 @@ p tbl</code></pre></figure>
     <span class="nb">puts</span> <span class="s1">'不正な値が入力されました'</span>
   <span class="k">end</span>
 
-  <span class="nb">sleep</span> <span class="mi">0</span><span class="o">.</span><span class="mi">5</span>
+  <span class="nb">sleep</span> <span class="mf">0.5</span>
   <span class="nb">print</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>先頭の msg0 ? msg5 はゲームの各場面で表示するメッセージです。スペースの都合で 2 行に渡って文字列を代入しています。</p>
 

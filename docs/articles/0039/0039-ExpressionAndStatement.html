@@ -199,7 +199,7 @@
     </ul>
   </li>
   <li><a href="#著者について" id="markdown-toc-著者について">著者について</a>    <ul>
-      <li><a href="#郡司啓-gunjisatoshi" id="markdown-toc-郡司啓-gunjisatoshi">郡司啓 (<a href="http://twitter.com/gunjisatoshi/">@gunjisatoshi</a>)</a></li>
+      <li><a href="#郡司啓-gunjisatoshi" id="markdown-toc-郡司啓-gunjisatoshi">郡司啓 (@gunjisatoshi)</a></li>
     </ul>
   </li>
   <li><a href="#式と文評価と実行そして副作用--プログラムはいかにして動くのか-連載一覧" id="markdown-toc-式と文評価と実行そして副作用--プログラムはいかにして動くのか-連載一覧">式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか 連載一覧</a></li>
@@ -235,7 +235,7 @@ Rubyは「侘寂 (わびさび)」。世界は自然で、変化する。 固定
 
 <p>例として次のようなプログラムを書いてみましょう。これは、名前と誕生年をインスタンス変数として持つクラス Person を定義して、名前と誕生年を引数として Person オブジェクトを生成し、 Person オブジェクトが返したあいさつを画面に出力する、という単純なプログラムになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Person</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">birth_year</span><span class="p">)</span>
     <span class="vi">@name</span> <span class="o">=</span> <span class="nb">name</span>
     <span class="vi">@birth_year</span> <span class="o">=</span> <span class="n">birth_year</span>
@@ -249,8 +249,7 @@ Rubyは「侘寂 (わびさび)」。世界は自然で、変化する。 固定
 
 <span class="nb">puts</span> <span class="n">person</span><span class="p">.</span><span class="nf">hi</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上記のプログラムを person.rb というファイル名で保存して、実行してみましょう。</p>
 
@@ -504,28 +503,28 @@ $
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Python ではクラス定義の引数に親クラスを指定することで継承ができます。 Ruby と異なり、複数の引数を指定することで多重継承もできます。ここでは object クラスを継承していますが、その理由は余談が過ぎるのでここでは説明しませんので、 Python に興味がある方は調べてみてください。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>Python ではクラス定義の引数に親クラスを指定することで継承ができます。 Ruby と異なり、複数の引数を指定することで多重継承もできます。ここでは object クラスを継承していますが、その理由は余談が過ぎるのでここでは説明しませんので、 Python に興味がある方は調べてみてください。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>Ruby と異なり Python ではメソッドと関数の区別がなく、クラス定義中に関数を定義するとそれがメソッドになります。関数定義の第一引数 self には、そのクラスから生成されたインスタンス自体が代入されます。また Ruby の initialize メソッドに相当するのが <strong>init</strong> 関数になります。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>Ruby と異なり Python ではメソッドと関数の区別がなく、クラス定義中に関数を定義するとそれがメソッドになります。関数定義の第一引数 self には、そのクラスから生成されたインスタンス自体が代入されます。また Ruby の initialize メソッドに相当するのが <strong>init</strong> 関数になります。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>Python でインスタンス変数を表すのは「self.変数名」です。先ほどの注でも述べましたが、関数定義の第一引数 self にはメソッド呼び出し時にインスタンス自体が代入されますので、「self.変数名」で各インスタンスの変数を参照できる、という仕組みになっています。また Python のインスタンス変数は基本的にオブジェクトの外からも参照・代入が可能ですが、変数名がアンダースコア 2 つ「__」で始まる変数はプライベート変数となり、外から参照できなくなります (これまた余談が過ぎるので詳しくは説明しませんが、厳密にはあくまで「参照しにくくしている」だけなので、参照可能だったりします。 Python に興味がある方はどういう仕組みなのか調べてみると面白いでしょう) 。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>Python でインスタンス変数を表すのは「self.変数名」です。先ほどの注でも述べましたが、関数定義の第一引数 self にはメソッド呼び出し時にインスタンス自体が代入されますので、「self.変数名」で各インスタンスの変数を参照できる、という仕組みになっています。また Python のインスタンス変数は基本的にオブジェクトの外からも参照・代入が可能ですが、変数名がアンダースコア 2 つ「__」で始まる変数はプライベート変数となり、外から参照できなくなります (これまた余談が過ぎるので詳しくは説明しませんが、厳密にはあくまで「参照しにくくしている」だけなので、参照可能だったりします。 Python に興味がある方はどういう仕組みなのか調べてみると面白いでしょう) 。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>Python 3.0 以降では print は文ではなく式になりましたが、ここでの主題とは関係ないのと、余談が過ぎるので詳しい説明は省略します。このあたりの経緯もなかなか面白いので、興味のある方は調べてみてはいかがでしょうか。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>Python 3.0 以降では print は文ではなく式になりましたが、ここでの主題とは関係ないのと、余談が過ぎるので詳しい説明は省略します。このあたりの経緯もなかなか面白いので、興味のある方は調べてみてはいかがでしょうか。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>「無名の構造体」のこと。タプルは Ruby にはない概念なので難しいかもしれませんが、誤解を恐れずに言えば、要素数の固定された配列のようなものです。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>「無名の構造体」のこと。タプルは Ruby にはない概念なので難しいかもしれませんが、誤解を恐れずに言えば、要素数の固定された配列のようなものです。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>Ruby と同様、 Python でもクラス自体がオブジェクトで、クラス定義をするとそのクラス名の変数に代入されます。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+      <p>Ruby と同様、 Python でもクラス自体がオブジェクトで、クラス定義をするとそのクラス名の変数に代入されます。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:7">
-      <p>Ruby ではクラスの new メソッドを呼び出してインスタンスを生成しますが、 Python ではクラスに直接引数を渡してインスタンスを生成します。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+      <p>Ruby ではクラスの new メソッドを呼び出してインスタンスを生成しますが、 Python ではクラスに直接引数を渡してインスタンスを生成します。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:8">
-      <p>Python ではメソッド呼び出しの括弧「()」を省略できません。 Ruby と異なり Python ではメソッド（関数）もオブジェクトなので、括弧を省略するとその関数オブジェクト自体を戻り値として得ることができます。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+      <p>Python ではメソッド呼び出しの括弧「()」を省略できません。 Ruby と異なり Python ではメソッド（関数）もオブジェクトなので、括弧を省略するとその関数オブジェクト自体を戻り値として得ることができます。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

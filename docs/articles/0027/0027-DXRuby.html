@@ -264,7 +264,7 @@ DXRuby スターターキットは <a href="http://dxruby.sourceforge.jp/">DXRub
 
 <p><a href="../../images/0027-DXRuby/sample1.rb">sample1.rb</a>, <a href="../../images/0027-DXRuby/data.png">data.png</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'dxruby'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'dxruby'</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>                               <span class="c1"># x座標の変数</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>                               <span class="c1"># y座標の変数</span>
@@ -279,8 +279,7 @@ DXRuby スターターキットは <a href="http://dxruby.sourceforge.jp/">DXRub
   <span class="k">break</span> <span class="k">if</span> <span class="no">Input</span><span class="p">.</span><span class="nf">keyPush?</span><span class="p">(</span><span class="no">K_ESCAPE</span><span class="p">)</span> <span class="c1"># Escキーで終了 (5)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このプログラムを実行すると、data.png を読み込んで表示し、カーソルキーで動かすことができます。また、Esc キーを押すかウィンドウを閉じることで終了します。</p>
 
@@ -390,7 +389,7 @@ Ruby の簡単さを重視し、Ruby 初心者でもゲームプログラムに�
 
 <p><a href="../../images/0027-DXRuby/sample2_main.rb">sample2_main.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Window</span><span class="p">.</span><span class="nf">caption</span> <span class="o">=</span> <span class="s2">"るびま用 DXRuby サンプルゲーム"</span> <span class="c1"># ウィンドウのキャプション設定</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Window</span><span class="p">.</span><span class="nf">caption</span> <span class="o">=</span> <span class="s2">"るびま用 DXRuby サンプルゲーム"</span> <span class="c1"># ウィンドウのキャプション設定</span>
 <span class="no">Window</span><span class="p">.</span><span class="nf">width</span> <span class="o">=</span> <span class="mi">360</span>        <span class="c1"># ウィンドウの横サイズ設定</span>
 <span class="no">Window</span><span class="p">.</span><span class="nf">height</span> <span class="o">=</span> <span class="mi">480</span>       <span class="c1"># ウィンドウの縦サイズ設定</span>
 <span class="no">Input</span><span class="p">.</span><span class="nf">setRepeat</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>     <span class="c1"># キーのオートリピート設定。5 フレームに 1 回 on</span>
@@ -454,8 +453,7 @@ Ruby の簡単さを重視し、Ruby 初心者でもゲームプログラムに�
   <span class="no">Window</span><span class="p">.</span><span class="nf">drawFont</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="no">Window</span><span class="p">.</span><span class="nf">getLoad</span><span class="p">.</span><span class="nf">to_i</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">+</span> <span class="s2">" %"</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="ss">:z</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">)</span>
   <span class="no">Window</span><span class="p">.</span><span class="nf">drawFont</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="no">ObjectGroup</span><span class="p">.</span><span class="nf">size</span><span class="p">.</span><span class="nf">to_s</span> <span class="o">+</span> <span class="s2">" objects"</span><span class="p">,</span> <span class="n">font</span><span class="p">,</span> <span class="ss">:z</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="初期化処理">初期化処理</h3>
 
@@ -490,16 +488,16 @@ font は DXRuby で文字を描画するときに使うフォントオブジェ�
 
 <p><a href="../../images/0027-DXRuby/sample2_my_ship.rb">sample2_my_ship.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyShip</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">,</span> <span class="ss">:collision</span><span class="p">,</span> <span class="ss">:delta_x</span><span class="p">,</span> <span class="ss">:delete</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyShip</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:x</span><span class="p">,</span> <span class="ss">:y</span><span class="p">,</span> <span class="ss">:collision</span><span class="p">,</span> <span class="ss">:delta_x</span><span class="p">,</span> <span class="ss">:delete</span>
 
   <span class="c1"># 画像読み込みと影画像生成</span>
   <span class="vc">@@image0</span> <span class="o">=</span> <span class="no">Image</span><span class="p">.</span><span class="nf">loadToArray</span><span class="p">(</span><span class="s2">"image/myship.png"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
   <span class="vc">@@image1</span> <span class="o">=</span> <span class="no">Array</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">{</span><span class="no">Image</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">)}</span>
   <span class="n">black</span> <span class="o">=</span> <span class="p">[</span><span class="mi">128</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">3</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">31</span>
-      <span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">31</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..</span><span class="mi">3</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..</span><span class="mi">31</span>
+      <span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..</span><span class="mi">31</span>
         <span class="c1"># 元画像で透明じゃない部分を黒にする</span>
         <span class="vc">@@image1</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">black</span> <span class="k">if</span> <span class="vc">@@image0</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span>
       <span class="k">end</span>
@@ -525,11 +523,11 @@ font は DXRuby で文字を描画するときに使うフォントオブジェ�
 
   <span class="k">def</span> <span class="nf">update</span>
     <span class="c1"># 移動</span>
-    <span class="n">dx</span> <span class="o">=</span> <span class="no">Input</span><span class="p">.</span><span class="nf">x</span> <span class="o">*</span> <span class="mi">2</span><span class="o">.</span><span class="mi">4</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="no">Input</span><span class="p">.</span><span class="nf">x</span> <span class="o">*</span> <span class="mf">2.4</span>
     <span class="n">dy</span> <span class="o">=</span> <span class="no">Input</span><span class="p">.</span><span class="nf">y</span> <span class="o">*</span> <span class="mi">3</span>
     <span class="k">if</span> <span class="no">Input</span><span class="p">.</span><span class="nf">x</span> <span class="o">!=</span> <span class="mi">0</span> <span class="n">and</span> <span class="no">Input</span><span class="p">.</span><span class="nf">y</span> <span class="o">!=</span> <span class="mi">0</span>   <span class="c1"># ナナメの時は 0.7 倍</span>
-      <span class="n">dx</span> <span class="o">*=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">7</span>
-      <span class="n">dy</span> <span class="o">*=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">7</span>
+      <span class="n">dx</span> <span class="o">*=</span> <span class="mf">0.7</span>
+      <span class="n">dy</span> <span class="o">*=</span> <span class="mf">0.7</span>
     <span class="k">end</span>
     <span class="vi">@x</span> <span class="o">+=</span> <span class="n">dx</span>
     <span class="vi">@y</span> <span class="o">+=</span> <span class="n">dy</span>
@@ -567,8 +565,7 @@ font は DXRuby で文字を描画するときに使うフォントオブジェ�
     <span class="no">Window</span><span class="p">.</span><span class="nf">draw</span><span class="p">(</span><span class="vi">@x</span> <span class="o">-</span> <span class="mi">16</span><span class="p">,</span> <span class="vi">@y</span> <span class="o">-</span> <span class="mi">16</span><span class="p">,</span> <span class="vc">@@image1</span><span class="p">[</span><span class="vi">@animecount</span> <span class="o">/</span> <span class="mi">20</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># 影</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="初期化処理-1">初期化処理</h4>
 
@@ -658,13 +655,13 @@ Rubyと DXRuby なら、ゲームプログラミング初心者でもゲーム�
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>次章の説明で表示しているソースコードは、このサンプルファイルの main.rb の一部を切り出したものです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>次章の説明で表示しているソースコードは、このサンプルファイルの main.rb の一部を切り出したものです。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>詳しい動きを知りたい方は、サンプルファイル (rubima_sample.zip) 内、main.rb の Collision モジュールを参照。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>詳しい動きを知りたい方は、サンプルファイル (rubima_sample.zip) 内、main.rb の Collision モジュールを参照。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>(ルート 2)/2 の近似値として 0.7 を使用しています。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>(ルート 2)/2 の近似値として 0.7 を使用しています。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

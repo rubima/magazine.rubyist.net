@@ -272,7 +272,7 @@
 <p>でも、人間の目でそういう場所を探すのには限度がありますし、grep などで検索しても動的に呼び出している場合などひっかからないケースもあります。
 そこで、これまでどおり Ruby 1.8 で動かしながら、そういう「やばそうなメソッド」が呼ばれた時に呼び出し元の情報付きで警告を出すライブラリを作ってみました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_warning</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_warning</span><span class="p">(</span><span class="nb">method</span><span class="p">)</span>
   <span class="n">owner</span> <span class="o">=</span> <span class="nb">method</span><span class="p">.</span><span class="nf">owner</span>
   <span class="nb">name</span> <span class="o">=</span> <span class="nb">method</span><span class="p">.</span><span class="nf">name</span>
   <span class="n">orig_name</span> <span class="o">=</span> <span class="s2">"orig_</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
@@ -315,8 +315,7 @@
 <span class="c1"># String#to_a is not defined on Ruby-1.9</span>
 <span class="n">add_warning</span> <span class="s2">""</span><span class="p">.</span><span class="nf">method</span><span class="p">(</span><span class="ss">:to_a</span><span class="p">)</span> <span class="k">rescue</span> <span class="kp">nil</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>使い方は、動かすプログラムの適当な場所で require “compatibility_warning” と加えるだけで、例えば Hiki を Ruby 1.8 で動かすと、こんな error_log が得られます。</p>
 
@@ -582,13 +581,13 @@ O さんが好きな人もいれば、K さんが好きな人もいます。
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Product Advertising API用リバースプロキシ は、Ruby ではなく Python で書かれています。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>Product Advertising API用リバースプロキシ は、Ruby ではなく Python で書かれています。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>Ruby 1.8 標準の profile ライブラリは、それ自身のオーバヘッドがかなりあり、実行時間が数倍から数十倍くらい遅くなるので、代わりに <a href="http://rubyforge.org/projects/ruby-prof/">ruby-prof</a> ライブラリを使うのがお勧めですが、ここでは同じフォーマットで比較するために、あえて Ruby 1.8 でも標準の profile ライブラリを使っています。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>Ruby 1.8 標準の profile ライブラリは、それ自身のオーバヘッドがかなりあり、実行時間が数倍から数十倍くらい遅くなるので、代わりに <a href="http://rubyforge.org/projects/ruby-prof/">ruby-prof</a> ライブラリを使うのがお勧めですが、ここでは同じフォーマットで比較するために、あえて Ruby 1.8 でも標準の profile ライブラリを使っています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>名前のとおり、本来はパフォーマンスを測定するためのツールで、プロファイルをみながらコードを変更するときも、これを使ってその効果を調べました。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>名前のとおり、本来はパフォーマンスを測定するためのツールで、プロファイルをみながらコードを変更するときも、これを使ってその効果を調べました。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

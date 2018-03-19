@@ -522,14 +522,13 @@ Apache だとか PHP だとか MySQL だとかそういった単位ごとに作�
 <p>test/recipes の直下に default.rb という名前のファイルがあると思います。これが Recipe です。
 ここに上記の仕様を落としこんでいきます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">template</span> <span class="s2">"/tmp/test.conf"</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">template</span> <span class="s2">"/tmp/test.conf"</span> <span class="k">do</span>
   <span class="n">owner</span> <span class="s2">"root"</span>
   <span class="n">group</span> <span class="s2">"root"</span>
   <span class="n">mode</span> <span class="s2">"0644"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>以上です。これで終わりです。
 これで、前述の仕様すべてを満たしています。</p>
@@ -564,12 +563,11 @@ Template は erb で書かれた File を扱う Resource です。※<a href="ht
 <p>という名前で作ります。
 solo.rb は実行環境の設定を記述します。こんな感じです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">file_cache_path</span> <span class="s2">"/tmp/chef-solo"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">file_cache_path</span> <span class="s2">"/tmp/chef-solo"</span>
 <span class="n">cookbook_path</span> <span class="s2">"/path/to/cookbooks"</span>
 <span class="n">role_path</span> <span class="s2">"/path/to/roles"</span>
 <span class="n">log_level</span> <span class="ss">:debug</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>log_level は最初は debug がおすすめです。記述におかしいところがあったときなど、ほぼデバッグログでわかります。</p>
 

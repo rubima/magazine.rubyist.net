@@ -206,7 +206,7 @@
 
 <p><a href="http://github.com/technohippy/xruby">http://github.com/technohippy/xruby</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">phone_book</span> <span class="o">=</span> <span class="o">&lt;</span><span class="p">?</span><span class="n">xml</span><span class="o">&gt;</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">phone_book</span> <span class="o">=</span> <span class="o">&lt;</span><span class="p">?</span><span class="n">xml</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">phonebook</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">entry</span><span class="o">&gt;</span>
       <span class="o">&lt;</span><span class="nb">name</span><span class="o">&gt;</span><span class="no">Burak</span><span class="o">&lt;</span><span class="sr">/name&gt; 
@@ -225,8 +225,7 @@
 <span class="nb">puts</span> <span class="n">phone_book</span><span class="p">.</span><span class="nf">elements</span><span class="p">[</span><span class="s2">"//descr/a"</span><span class="p">].</span><span class="nf">attribute</span><span class="p">(</span><span class="s1">'href'</span><span class="p">)</span>
 <span class="c1">#=&gt; http://acme.org</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実装は parse.y のヒアドキュメントのところをいろいろとコピペしてちょっと修正しています。</p>
 
@@ -250,29 +249,27 @@
 
 <p><a href="http://github.com/technohippy/oruby">http://github.com/technohippy/oruby</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 普通の Ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 普通の Ruby</span>
 <span class="nb">require</span> <span class="s1">'date'</span>
 <span class="n">birthday</span> <span class="o">=</span> <span class="no">Date</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">1993</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">24</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">birthday</span> <span class="o">==</span> <span class="no">Date</span><span class="p">.</span><span class="nf">today</span>
     <span class="nb">puts</span> <span class="s2">"Happy birthday, Ruby!"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="c1"># Objective Ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># Objective Ruby</span>
  <span class="nb">require</span> <span class="s1">'date'</span>
- <span class="n">birthday</span> <span class="o">=</span> <span class="o">%</span><span class="n">o</span><span class="p">{</span> <span class="no">Date</span> <span class="kp">new</span><span class="p">:</span><span class="mi">1993</span> <span class="n">month</span><span class="p">:</span><span class="mi">2</span> <span class="n">day</span><span class="p">:</span><span class="mi">24</span> <span class="p">}</span>
+ <span class="n">birthday</span> <span class="o">=</span> <span class="o">%</span><span class="n">o</span><span class="p">{</span> <span class="no">Date</span> <span class="n">new</span><span class="p">:</span><span class="mi">1993</span> <span class="n">month</span><span class="p">:</span><span class="mi">2</span> <span class="n">day</span><span class="p">:</span><span class="mi">24</span> <span class="p">}</span>
  <span class="o">%</span><span class="n">o</span><span class="p">{</span> <span class="p">(</span><span class="n">birthday</span> <span class="o">=</span> <span class="no">Date</span> <span class="n">today</span><span class="p">)</span> <span class="n">ifTrue</span><span class="p">:[</span><span class="no">Kernel</span> <span class="nb">puts</span><span class="ss">:'Happy'</span><span class="p">]</span> <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>%o{…} が今回導入されたオブジェクティブリテラルで、オブジェクティブリテラル内では Ruby のメソッド呼び出しをまるで Objective-C のメッセージ式のように書くことができます。birthday という変数がオブジェクティブリテラルの内外でやり取りできているのが本例の見所です。</p>
 
 <p>これだけだといまいちなのでさらに進んだ例。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 普通の Ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 普通の Ruby</span>
 <span class="k">class</span> <span class="nc">MyClass</span>
   <span class="k">def</span> <span class="nf">my_method</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
     <span class="k">while</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">num</span>
@@ -285,10 +282,9 @@
 <span class="k">end</span>
 <span class="no">MyClass</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">my_method</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="o">%</span><span class="n">o</span><span class="p">{</span> <span class="no">Object</span> <span class="ss">subclass: </span><span class="s1">'MyClass'</span><span class="o">.</span> <span class="p">}</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">%</span><span class="n">o</span><span class="p">{</span> <span class="no">Object</span> <span class="ss">subclass: </span><span class="s1">'MyClass'</span><span class="o">.</span> <span class="p">}</span>
  <span class="o">%</span><span class="n">o</span><span class="p">{</span> <span class="no">MyClass</span> <span class="ss">compile: </span><span class="s1">'
    my_method: num 
      [num := num - 1. 0 &lt; num.] whileTrue:[ 
@@ -297,8 +293,7 @@
          Kernel puts: num.].].'</span><span class="p">}</span>
  <span class="no">MyClass</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">my_method</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>クラス定義もオブジェクティブに書く事ができます。見所はオブジェクティブに定義したクラスとメソッドを、オブジェクティブリテラルの外の普通の Ruby の構文で利用できているとこです。</p>
 
@@ -325,7 +320,7 @@
 
 <p><a href="http://github.com/technohippy/fruby">http://github.com/technohippy/fruby</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="mi">1000</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
   <span class="k">if</span> <span class="kp">true</span> <span class="k">then</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -333,10 +328,9 @@
 <span class="k">end</span>
 <span class="nb">puts</span> <span class="n">count</span> <span class="c1">#=&gt; 1000 (100%)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="mi">1000</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
   <span class="k">if</span> <span class="kp">true</span> <span class="n">probably</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> 
@@ -344,10 +338,9 @@
 <span class="k">end</span>
 <span class="nb">puts</span> <span class="n">count</span> <span class="c1">#=&gt; 839 (80%)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="mi">1000</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
   <span class="k">if</span> <span class="kp">true</span> <span class="n">maybe</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -355,10 +348,9 @@
 <span class="k">end</span>
 <span class="nb">puts</span> <span class="n">count</span> <span class="c1">#=&gt; 471 (50%)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="mi">1000</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span>
   <span class="k">if</span> <span class="kp">true</span> <span class="n">perhaps</span>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> 
@@ -366,8 +358,7 @@
 <span class="k">end</span>
 <span class="nb">puts</span> <span class="n">count</span> <span class="c1">#=&gt; 188 (20%)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>FRuby では if then 以外に確度に応じて probably、maybe、perhaps が利用可能です。</p>
 

@@ -198,19 +198,19 @@
       <li><a href="#動かしてみよう" id="markdown-toc-動かしてみよう">動かしてみよう</a></li>
     </ul>
   </li>
-  <li><a href="#screenshot1png" id="markdown-toc-screenshot1png"><a href="../../images/0039-IntroductionToRubyMotion/screenshot1.png">screenshot1.png</a></a>    <ul>
+  <li><a href="#screenshot1png" id="markdown-toc-screenshot1png">screenshot1.png</a>    <ul>
       <li><a href="#テストを書こう" id="markdown-toc-テストを書こう">テストを書こう</a></li>
     </ul>
   </li>
   <li><a href="#開発おすすめツールライブラリ" id="markdown-toc-開発おすすめツールライブラリ">開発おすすめツール、ライブラリ</a>    <ul>
       <li><a href="#テキストエディタのプラグイン--拡張" id="markdown-toc-テキストエディタのプラグイン--拡張">テキストエディタのプラグイン / 拡張</a></li>
-      <li><a href="#dash" id="markdown-toc-dash"><a href="http://itunes.apple.com/jp/app/dash-docs-snippets/id458034879?mt=12">Dash</a></a></li>
-      <li><a href="#testflight" id="markdown-toc-testflight"><a href="https://testflightapp.com/">TestFlight</a></a></li>
+      <li><a href="#dash" id="markdown-toc-dash">Dash</a></li>
+      <li><a href="#testflight" id="markdown-toc-testflight">TestFlight</a></li>
       <li><a href="#定番ライブラリ" id="markdown-toc-定番ライブラリ">定番ライブラリ</a>        <ul>
-          <li><a href="#motion-cocoapods" id="markdown-toc-motion-cocoapods"><a href="https://github.com/HipByte/motion-cocoapods">motion-cocoapods</a></a></li>
-          <li><a href="#motion-testflight" id="markdown-toc-motion-testflight"><a href="https://github.com/HipByte/motion-testflight">motion-testflight</a></a></li>
-          <li><a href="#bubblewrap" id="markdown-toc-bubblewrap"><a href="http://bubblewrap.io">BubbleWrap</a></a></li>
-          <li><a href="#rm-redgreen" id="markdown-toc-rm-redgreen"><a href="https://github.com/mdks/rm-redgreen">rm-redgreen</a></a></li>
+          <li><a href="#motion-cocoapods" id="markdown-toc-motion-cocoapods">motion-cocoapods</a></li>
+          <li><a href="#motion-testflight" id="markdown-toc-motion-testflight">motion-testflight</a></li>
+          <li><a href="#bubblewrap" id="markdown-toc-bubblewrap">BubbleWrap</a></li>
+          <li><a href="#rm-redgreen" id="markdown-toc-rm-redgreen">rm-redgreen</a></li>
         </ul>
       </li>
     </ul>
@@ -324,14 +324,13 @@ Commands:
 
 <p>早速テキストエディタ (エディタ用の拡張等については後述) で app/app_delegate.rb を開いてみます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
   <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">application</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span><span class="ss">:launchOptions</span><span class="p">)</span>
     <span class="kp">true</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>デフォルトでこのようなコードが書いてあると思います。
 2 行目をご覧ください。Ruby 2.0 で取り入れられるという噂のキーワード引数のようなメソッド定義になっています。</p>
@@ -398,7 +397,7 @@ Hello, world
 
 <p>いつまでも真っ黒な画面では寂しいので、app_delegate.rb にコードを記述してみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
   <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">application</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span><span class="ss">:launchOptions</span><span class="p">)</span>
     <span class="vi">@window</span> <span class="o">=</span> <span class="no">UIWindow</span><span class="p">.</span><span class="nf">alloc</span><span class="p">.</span><span class="nf">initWithFrame</span><span class="p">(</span><span class="no">UIScreen</span><span class="p">.</span><span class="nf">mainScreen</span><span class="p">.</span><span class="nf">bounds</span><span class="p">)</span>
     <span class="n">controller</span> <span class="o">=</span> <span class="no">UIViewController</span><span class="p">.</span><span class="nf">new</span>
@@ -409,8 +408,7 @@ Hello, world
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>コードの中身については Objective-C でアプリを開発した経験が無いと理解が難しいかもしれませんが、筆者は Objective-C 経験ほぼゼロの状態で RubyMotion を始めましたので、平行して勉強していくことも十分可能です。
 これで先ほど同様にrakeコマンドを実行すると今度は白い背景の画面が表示されるようになったと思います。</p>
@@ -418,7 +416,7 @@ Hello, world
 <p>では画面にボタンなどの部品を置いてみようと思います。
 Storyboard を使うこともできますが、ここではコードのみで GUI を構築します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AppDelegate</span>
   <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">application</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span><span class="ss">:launchOptions</span><span class="p">)</span>
     <span class="vi">@window</span> <span class="o">=</span> <span class="no">UIWindow</span><span class="p">.</span><span class="nf">alloc</span><span class="p">.</span><span class="nf">initWithFrame</span><span class="p">(</span><span class="no">UIScreen</span><span class="p">.</span><span class="nf">mainScreen</span><span class="p">.</span><span class="nf">bounds</span><span class="p">)</span>
     <span class="n">controller</span> <span class="o">=</span> <span class="no">UIViewController</span><span class="p">.</span><span class="nf">new</span>
@@ -442,8 +440,7 @@ Storyboard を使うこともできますが、ここではコードのみで GU
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>UILabelとUIButtonを追加してみました。実行してみると、ラベルの位置が気になりませんか？
 REPL で位置の調整を試してみましょう。</p>
@@ -464,14 +461,13 @@ REPL で位置の調整を試してみましょう。</p>
 何度もコンパイルし直して位置を調整するよりも簡単に UI 部品の位置、大きさの調整ができることを実感できますね。
 忘れずに元の app_delegate.rb の 9 行目を今確認したframeの値に変更しておきましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>    <span class="n">label</span> <span class="o">=</span> <span class="no">UILabel</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="n">label</span> <span class="o">=</span> <span class="no">UILabel</span><span class="p">.</span><span class="nf">new</span><span class="p">.</span><span class="nf">tap</span> <span class="k">do</span> <span class="o">|</span><span class="n">l</span><span class="o">|</span>
       <span class="n">l</span><span class="p">.</span><span class="nf">text</span> <span class="o">=</span> <span class="s1">'foo'</span>
       <span class="n">l</span><span class="p">.</span><span class="nf">frame</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
     <span class="k">end</span>
     <span class="n">controller</span><span class="p">.</span><span class="nf">view</span><span class="p">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>さて、今はボタンをタップしても何も起きません。
 タップするとラベルの文字列が変更されるように修正したいと思いますが、このまま app_delegate.rb にコードを書いていくと複雑になってしまうので、UIViewControllerを継承したMyViewControllerクラスを定義し、ファイルを分けるリファクタリングを行います。</p>
@@ -479,7 +475,7 @@ REPL で位置の調整を試してみましょう。</p>
 <p>リファクタリング後の 2 ファイルは以下のようになります。
 実行して、先ほどと同じ結果になることを確認してください。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/app_delegate.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/app_delegate.rb</span>
 <span class="k">class</span> <span class="nc">AppDelegate</span>
   <span class="k">def</span> <span class="nf">application</span><span class="p">(</span><span class="n">application</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span><span class="ss">:launchOptions</span><span class="p">)</span>
     <span class="vi">@window</span> <span class="o">=</span> <span class="no">UIWindow</span><span class="p">.</span><span class="nf">alloc</span><span class="p">.</span><span class="nf">initWithFrame</span><span class="p">(</span><span class="no">UIScreen</span><span class="p">.</span><span class="nf">mainScreen</span><span class="p">.</span><span class="nf">bounds</span><span class="p">)</span>
@@ -513,8 +509,7 @@ REPL で位置の調整を試してみましょう。</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>あれ？と思った方もいらっしゃるかもしれません。RubyMotion ではrequireが使えない代わりに、app ディレクトリ以下のファイルは自動的に読み込まれるようになっています。
 (もし読み込まれる順序が問題でコンパイルできない場合は Rakefile で app.files_dependencies メソッドを使って指定できます。<a href="http://www.rubymotion.com/developer-center/guides/project-management/#_files_dependencies">2.1. Files Dependencies</a>)</p>
@@ -570,7 +565,7 @@ index d29b2cc..03a06a3 100644
 
 <p>エディタで spec/main_spec.rb を開いてください。以下のようなコードが記述されています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"Application 'Hello'"</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"Application 'Hello'"</span> <span class="k">do</span>
   <span class="n">before</span> <span class="k">do</span>
     <span class="vi">@app</span> <span class="o">=</span> <span class="no">UIApplication</span><span class="p">.</span><span class="nf">sharedApplication</span>
   <span class="k">end</span>
@@ -580,8 +575,7 @@ index d29b2cc..03a06a3 100644
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>アプリケーションに一つのwindowがあることをテストしています。
 実行してみます。</p>
@@ -607,7 +601,7 @@ Application 'Hello'
 
 <p>では先ほど作ったプロジェクトのテストを書いてみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"Application 'Hello'"</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"Application 'Hello'"</span> <span class="k">do</span>
   <span class="n">before</span> <span class="k">do</span>
     <span class="vi">@app</span> <span class="o">=</span> <span class="no">UIApplication</span><span class="p">.</span><span class="nf">sharedApplication</span>
   <span class="k">end</span>
@@ -628,8 +622,7 @@ Application 'Hello'
 
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>コントローラのクラスが正しく MyViewController であることをテストしました。
 テストを実行してみてください。</p>
@@ -653,7 +646,7 @@ rootViewController
 <p>では次にボタンをタップしたときの動作を検証します。
 spec/my_view_controller_spec.rb を作成し、以下のように記述します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"The 'My View Controller' view"</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">describe</span> <span class="s2">"The 'My View Controller' view"</span> <span class="k">do</span>
   <span class="n">tests</span> <span class="no">MyViewController</span>
 
   <span class="n">before</span> <span class="k">do</span>
@@ -666,8 +659,7 @@ spec/my_view_controller_spec.rb を作成し、以下のように記述します
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実行してみます。</p>
 

@@ -397,7 +397,7 @@ Application オブジェクトの AdvancedSearch メソッドを使用したと�
 
 <p><a href="../../images/0007-Win32OLE/inbox.rb">inbox.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="k">def</span> <span class="nf">each_mail</span>
   <span class="n">ol</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="o">::</span><span class="n">connect</span><span class="p">(</span><span class="s2">"Outlook.Application"</span><span class="p">)</span>
@@ -413,8 +413,7 @@ Application オブジェクトの AdvancedSearch メソッドを使用したと�
   <span class="nb">puts</span> <span class="n">mail</span><span class="o">.</span><span class="no">Subject</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Outlook に保存されたメールは次のようになります。
 <img src="../../images/0007-Win32OLE/Outlook.PNG" alt="Outlook.PNG" /></p>
@@ -638,7 +637,7 @@ Outlook で行うかどうかを判断してください。</p>
 
 <p><a href="../../images/0007-Win32OLE/search.rb">search.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#! ruby -Ks</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#! ruby -Ks</span>
 
 <span class="nb">require</span> <span class="s1">'win32ole'</span>
 <span class="nb">require</span> <span class="s1">'singleton'</span>
@@ -679,8 +678,7 @@ Outlook で行うかどうかを判断してください。</p>
   <span class="n">mail</span><span class="o">.</span><span class="no">GetInspector</span><span class="o">.</span><span class="no">Activate</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>今回のスクリプトは初めて紹介する内容があるかと思います。
 順に説明していきます。</p>
@@ -938,7 +936,7 @@ Inspector オブジェクトは Outlook のメールなどのアイテムを
 
 <p><a href="../../images/0007-Win32OLE/send.rb">send.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#! ruby -Ks</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#! ruby -Ks</span>
 <span class="nb">require</span> <span class="s1">'win32ole'</span>
 <span class="nb">require</span> <span class="s1">'singleton'</span>
 
@@ -964,8 +962,7 @@ Inspector オブジェクトは Outlook のメールなどのアイテムを
 <span class="n">mail</span><span class="o">.</span><span class="no">GetInspector</span><span class="o">.</span><span class="no">Activate</span>
 <span class="n">mail</span><span class="o">.</span><span class="no">Send</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このスクリプトではメールの送信を行います。</p>
 

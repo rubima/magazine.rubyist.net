@@ -568,40 +568,40 @@ result = (1..1.0/0).map{|n|n**2+1}.select{|m|m.prime?}.take(100)</code></pre></f
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>名古屋 Ruby 会議 02 で行ったデモと同じコードです。一瞬で 100 個の素数列が返ってきます。なお速いのは enumerable_lz ではなく Ruby1.9 の prime ライブラリのおかげです。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>名古屋 Ruby 会議 02 で行ったデモと同じコードです。一瞬で 100 個の素数列が返ってきます。なお速いのは enumerable_lz ではなく Ruby1.9 の prime ライブラリのおかげです。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>本稿で紹介しているサンプルコードは、特に断りがない限り Ruby1.9.x を動作対象としています。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>本稿で紹介しているサンプルコードは、特に断りがない限り Ruby1.9.x を動作対象としています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>中には「ブロック引数を渡さなければ Enumerable を返す」メソッドも含まれますが、ここでは深く触れません。興味のある方は「そのとき返ってくる Enumerable が一体どんなものなのか」を調べてみてください。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>中には「ブロック引数を渡さなければ Enumerable を返す」メソッドも含まれますが、ここでは深く触れません。興味のある方は「そのとき返ってくる Enumerable が一体どんなものなのか」を調べてみてください。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>この性質から「ストリーム指向メソッド」という呼び方をすることもあります。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>この性質から「ストリーム指向メソッド」という呼び方をすることもあります。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>この節のサンプルコードは Ruby1.8.7 でも動きます。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>この節のサンプルコードは Ruby1.8.7 でも動きます。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>もちろん、落ちる前に Ctrl+C 等で強制終了してあげてください。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+      <p>もちろん、落ちる前に Ctrl+C 等で強制終了してあげてください。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:7">
-      <p>無限リストとは言え、これも立派な Enumerable オブジェクトです。なのに Enumerable モジュールに用意されているメソッドが正常終了しない。このことを発見して「それってどうなの？」と思ったのが、enumerable_lz を作ろうと思い立ったきっかけです。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+      <p>無限リストとは言え、これも立派な Enumerable オブジェクトです。なのに Enumerable モジュールに用意されているメソッドが正常終了しない。このことを発見して「それってどうなの？」と思ったのが、enumerable_lz を作ろうと思い立ったきっかけです。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:8">
-      <p>短いですがマニアックなコードですね (汗)&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+      <p>短いですがマニアックなコードですね (汗) <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:9">
-      <p>このコードは最初の list1. で示したサンプルコードと本質的に同じものです。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+      <p>このコードは最初の list1. で示したサンプルコードと本質的に同じものです。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:10">
-      <p>もちろん、落ちる前に Ctrl+C 等で強制終了してあげてください。大事なことなので、2 度言いました。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+      <p>もちろん、落ちる前に Ctrl+C 等で強制終了してあげてください。大事なことなので、2 度言いました。 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:11">
-      <p>Array も Enumerable を include していますが、each メソッドは「格納されている (算出済の) 値を順に返している」だけで、実質遅延評価はしていません。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+      <p>Array も Enumerable を include していますが、each メソッドは「格納されている (算出済の) 値を順に返している」だけで、実質遅延評価はしていません。 <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:12">
-      <p>一応、Array を返すようにした方が「メモリを犠牲にしてパフォーマンスを確保できる」というメリットがある、ということも言及しておきます。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+      <p>一応、Array を返すようにした方が「メモリを犠牲にしてパフォーマンスを確保できる」というメリットがある、ということも言及しておきます。 <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

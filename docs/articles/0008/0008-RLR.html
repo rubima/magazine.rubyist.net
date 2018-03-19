@@ -283,7 +283,7 @@ IPアドレス <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
 
 <p><a href="../../images/0008-RLR/sample_abnf_1.rb">sample_abnf_1.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
 <span class="n">fmt</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOS</span><span class="sh">
   expr  = prim 0*(op prim)
   prim  = ["("] num [")"]
@@ -294,8 +294,7 @@ IPアドレス <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
 <span class="n">str</span> <span class="o">=</span> <span class="s2">"3+(2-1)は4です。33(23)は33と(23)に区別されます。"</span>
 <span class="nb">puts</span><span class="p">(</span> <span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">reg</span><span class="p">){</span><span class="o">|</span><span class="n">expr</span><span class="o">|</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">)}</span> <span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>abnf を用いると、全体がマッチすることは分かるのですが、例えば、算術式となる
 文字列を抽出したときに、その算術式における num に相当する文字列も同時に検出
@@ -305,7 +304,7 @@ IPアドレス <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
 
 <p><a href="../../images/0008-RLR/sample_abnf_2.rb">sample_abnf_2.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
 <span class="n">fmt</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOS</span><span class="sh">
   expr  = prim 0*(op prim)
   prim  = ["("] num [")"]
@@ -322,8 +321,7 @@ IPアドレス <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
 <span class="n">str</span> <span class="o">=</span> <span class="s2">"3+(2-1)は4です。33(23)は33と(23)に区別されます。"</span>
 <span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">reg</span><span class="p">){</span><span class="o">|</span><span class="n">expr</span><span class="o">|</span> <span class="nb">p</span> <span class="n">expr</span><span class="p">;</span> <span class="n">expr</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">num</span><span class="p">){</span><span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="nb">p</span> <span class="n">n</span><span class="p">}</span> <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>10,11行目の parse メソッドによって、記述した文法のパースを行います。
 文法のパースの段階では、num の定義が欠けていても構いません。
@@ -372,7 +370,7 @@ sample_racc_1.racc です。</p>
 
 <p><a href="../../images/0008-RLR/sample_racc_1.racc">sample_racc_1.racc</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Calc</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Calc</span>
   <span class="n">token</span> <span class="no">NUM</span>
 <span class="n">prechigh</span>
   <span class="n">left</span>  <span class="s1">'*'</span> <span class="s1">'/'</span>
@@ -406,8 +404,7 @@ sample_racc_1.racc です。</p>
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>’—- inner’ という行より後ろには、Calc クラス内のコードを書きます。
 parse メソッドは、与えられた算術式の計算を行うためのメソッドです。
@@ -432,12 +429,11 @@ Calc クラスは、next_token メソッドにより取り出されるトーク�
 
 <p><a href="../../images/0008-RLR/sample_racc_2.rb">sample_racc_2.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_racc_1'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_racc_1'</span>
 <span class="n">calc</span> <span class="o">=</span> <span class="no">Calc</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
 <span class="nb">p</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"3+(2-1)"</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>さて、abnf の例題 sample_abnf_1.rb では、eval() (10行目) を用いて算術式の
 計算を行っていました。
@@ -447,7 +443,7 @@ eval() は、便利な機能ですが、使い方を間違えると脆弱性の�
 
 <p><a href="../../images/0008-RLR/sample_racc_3.rb">sample_racc_3.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'abnf'</span>
 <span class="nb">require</span> <span class="s1">'sample_racc_1'</span>
 <span class="n">fmt</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">EOS</span><span class="sh">
   expr  = prim 0*(op prim)
@@ -460,8 +456,7 @@ eval() は、便利な機能ですが、使い方を間違えると脆弱性の�
 <span class="n">calc</span> <span class="o">=</span> <span class="no">Calc</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
 <span class="nb">puts</span><span class="p">(</span> <span class="n">str</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="n">reg</span><span class="p">){</span><span class="o">|</span><span class="n">expr</span><span class="o">|</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">expr</span><span class="p">)}</span> <span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このように、文字列から算術式に一致する部分文字列を abnf を用いて抽出し、その
 文字列を racc で生成したパーサを用いて構文解析と計算を行うことができました。</p>
@@ -500,7 +495,7 @@ tdp4r でも、繰り返し記号を用いた文法を記述できますので�
 
 <p><a href="../../images/0008-RLR/sample_tdp4r_1.rb">sample_tdp4r_1.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'tdp'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'tdp'</span>
 <span class="k">class</span> <span class="nc">MyCalc</span>
   <span class="kp">include</span> <span class="no">TDParser</span>
 
@@ -544,8 +539,7 @@ tdp4r でも、繰り返し記号を用いた文法を記述できますので�
 <span class="n">calc</span> <span class="o">=</span> <span class="no">MyCalc</span><span class="p">.</span><span class="nf">new</span>
 <span class="nb">puts</span><span class="p">(</span><span class="s2">"5-2*(5-2*2) = "</span> <span class="o">+</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"5-2*(5-2*2)"</span><span class="p">).</span><span class="nf">to_s</span><span class="p">())</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>tdp4r では、文法を Ruby のコードとして記述します。
 このために、まず Calc クラスを用意して、TDParser モジュールをインクルードします。
@@ -566,7 +560,7 @@ rule と token を連接「-」、選択「|」、繰り返し「*」の記号�
 
 <p><a href="../../images/0008-RLR/sample_tdp4r_2.rb">sample_tdp4r_2.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_tdp4r_1'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_tdp4r_1'</span>
 <span class="k">class</span> <span class="nc">MyCalc</span>
   <span class="k">def</span> <span class="nf">expr1</span>
     <span class="n">n</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">;</span>
@@ -596,8 +590,7 @@ rule と token を連接「-」、選択「|」、繰り返し「*」の記号�
 <span class="n">calc</span> <span class="o">=</span> <span class="no">MyCalc</span><span class="p">.</span><span class="nf">new</span>
 <span class="nb">puts</span><span class="p">(</span><span class="s2">"5-2*(5-2*2) = "</span> <span class="o">+</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"5-2*(5-2*2)"</span><span class="p">).</span><span class="nf">to_s</span><span class="p">())</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>また、サンプルコードから分かる通り、tdp4r では演算子の優先順位は、文法を工夫す
 ることによって実現しなければなりません。このあたりは、racc に比べると非常に不便
@@ -608,7 +601,7 @@ rule と token を連接「-」、選択「|」、繰り返し「*」の記号�
 
 <p><a href="../../images/0008-RLR/sample_tdp4r_3.rb">sample_tdp4r_3.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_tdp4r_1'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'sample_tdp4r_1'</span>
 <span class="k">class</span> <span class="nc">FastCalc</span> <span class="o">&lt;</span> <span class="no">MyCalc</span>
   <span class="k">def</span> <span class="nf">expr1</span>
     <span class="vi">@expr1</span> <span class="o">||=</span> <span class="k">super</span><span class="p">()</span>
@@ -626,8 +619,7 @@ rule と token を連接「-」、選択「|」、繰り返し「*」の記号�
 <span class="n">calc</span> <span class="o">=</span> <span class="no">FastCalc</span><span class="p">.</span><span class="nf">new</span>
 <span class="nb">puts</span><span class="p">(</span><span class="s2">"5-2*(5-2*2) = "</span> <span class="o">+</span> <span class="n">calc</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"5-2*(5-2*2)"</span><span class="p">).</span><span class="nf">to_s</span><span class="p">())</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="試用レポート--syntaxrb">試用レポート – syntax.rb</h2>
 
@@ -653,12 +645,12 @@ syntax.rb によって行うことができ、また、ルールの定義がオ�
 
 <p><a href="../../images/0008-RLR/sample_syntax_1.rb">sample_syntax_1.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'syntax'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'syntax'</span>
 
-<span class="no">INF</span> <span class="o">=</span> <span class="o">+</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span>
-<span class="no">LOOP0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="no">INF</span><span class="p">)</span>
-<span class="no">LOOP1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="no">INF</span><span class="p">)</span>
-<span class="n">num</span> <span class="o">=</span> <span class="p">((</span><span class="s2">"0"</span><span class="p">.</span><span class="nf">.</span><span class="s2">"9"</span><span class="p">)</span><span class="o">*</span><span class="no">LOOP1</span><span class="p">).</span><span class="nf">qualify</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">.</span><span class="nf">to_s</span><span class="p">().</span><span class="nf">to_i</span><span class="p">()}</span>
+<span class="no">INF</span> <span class="o">=</span> <span class="o">+</span><span class="mf">1.0</span><span class="o">/</span><span class="mi">0</span>
+<span class="no">LOOP0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="o">..</span><span class="no">INF</span><span class="p">)</span>
+<span class="no">LOOP1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="no">INF</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="p">((</span><span class="s2">"0"</span><span class="o">..</span><span class="s2">"9"</span><span class="p">)</span><span class="o">*</span><span class="no">LOOP1</span><span class="p">).</span><span class="nf">qualify</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">.</span><span class="nf">to_s</span><span class="p">().</span><span class="nf">to_i</span><span class="p">()}</span>
 
 <span class="n">expr</span> <span class="o">=</span> <span class="no">Syntax</span><span class="o">::</span><span class="no">Pass</span><span class="p">.</span><span class="nf">new</span><span class="p">()</span>
 
@@ -688,8 +680,7 @@ syntax.rb によって行うことができ、また、ルールの定義がオ�
 
 <span class="nb">p</span><span class="p">(</span><span class="n">expr</span> <span class="o">===</span> <span class="no">RandomAccessStream</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"5-2*2"</span><span class="p">))</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="試用レポート--reg">試用レポート – reg</h2>
 
@@ -818,7 +809,7 @@ AlgorithmIdentifier の定義を参考として挙げます。これは、4.1.1.
 
 <p><a href="../../images/0008-RLR/sample_asn1_1.rb">sample_asn1_1.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'openssl'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'openssl'</span>
 <span class="nb">require</span> <span class="s1">'pp'</span>
 <span class="kp">include</span> <span class="no">OpenSSL</span>
 
@@ -836,8 +827,7 @@ AlgorithmIdentifier の定義を参考として挙げます。これは、4.1.1.
 <span class="p">]</span>
 <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="no">ARGV</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">'wb'</span><span class="p">){</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="nf">to_der</span><span class="p">())}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>5 行目でファイルから証明書のデータを読み込み DER 形式のデコードを行っています。
 そして、7 行目では、データ構造の定義に従って、それらを tbsCertificate,
@@ -945,25 +935,25 @@ tdp4r や syntax.rb などを扱う場合の参考になります。</p>
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>有名なものに、正規文法、文脈自由文法 、LALR(1) 文法、LL(k) 文法 などの文法のクラスがあります。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>有名なものに、正規文法、文脈自由文法 、LALR(1) 文法、LL(k) 文法 などの文法のクラスがあります。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>LR解析、LALR(1)解析、再帰下降解析などの解析方法があります。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>LR解析、LALR(1)解析、再帰下降解析などの解析方法があります。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>これらは、パーサやXMLというドメインに特化した言語ですが、ビジネスドメインを記述するものも同様に DSL です。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>これらは、パーサやXMLというドメインに特化した言語ですが、ビジネスドメインを記述するものも同様に DSL です。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>[[RFC:2373]]のAPPENDIX B&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>[[RFC:2373]]のAPPENDIX B <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>[[RFC:2393]]のAPPENDIX A&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>[[RFC:2393]]のAPPENDIX A <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>一般的に字句解析と言います&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+      <p>一般的に字句解析と言います <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:7">
-      <p>Linux や *BSD をお使いの方も、適当な DER によりエンコーディングされた電子証明書をご用意ください。(編注: 適当な証明書が無い場合は <a href="http://www.cacert.org/index.php?id=3&amp;lang=ja_JP">CAcert.org</a> からダウンロードすると良いでしょう)&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+      <p>Linux や *BSD をお使いの方も、適当な DER によりエンコーディングされた電子証明書をご用意ください。(編注: 適当な証明書が無い場合は <a href="http://www.cacert.org/index.php?id=3&amp;lang=ja_JP">CAcert.org</a> からダウンロードすると良いでしょう) <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

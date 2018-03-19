@@ -280,16 +280,15 @@
 
 <p>つまり、次のようなファイル fib.rb を書いて、</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
   <span class="c1"># ここを実装する</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>次のようなテストケース test_fib.rb を満たすような fib メソッド実装してください。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'fib'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'fib'</span>
 <span class="nb">require</span> <span class="s1">'test/unit'</span>
 
 <span class="k">class</span> <span class="nc">TestFib</span> <span class="o">&lt;</span> <span class="no">Test</span><span class="o">::</span><span class="no">Unit</span><span class="o">::</span><span class="no">TestCase</span>
@@ -301,8 +300,7 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>テストが成功すると、次のような実行結果になるはずです。</p>
 
@@ -323,35 +321,32 @@ $</code></pre></figure>
 
 <p>ええと、じゃあまず 0 番目と 1 番目で「ひとつ前の数 (b)」と「ふたつ前の数 (a)」を変数に代入して初期化しよう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>次に、ひとつ前の数 (b) とふたつ前の数 (a) を足した結果を求めると、もうひとつ先の値が求められるね。なので「a + b」を新しい「b」に代入すればいいかな。そうそう、さらに先を求めるときに「ひとつ前の数」も覚えておく必要があるから、古い「b」は「a」に代入して保存しておこう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
 
 <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>あとはこれを n 回繰り返せばいいよね。カウンタ (i) を用意して、ループごとにカウントアップして n より大きくなるまで繰り返せばいいかな。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
 <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span>
   <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
   <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>最後に結果 a を返せば完成だね。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
   <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
   <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span>
@@ -361,8 +356,7 @@ $</code></pre></figure>
   <span class="n">a</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h5 id="関数型言語の発想">関数型言語の発想</h5>
 
@@ -376,18 +370,17 @@ $</code></pre></figure>
 
 <p>n が 0 のとき、1 のとき、2 以上のときで場合分けしよう。場合分けは case を使えばいいよね。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">case</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">case</span>
 <span class="k">when</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span> <span class="mi">0</span>
 <span class="k">when</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span> <span class="mi">1</span>
 <span class="k">when</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="k">then</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>あとはこれをメソッドとして定義してあげればとりあえず動く<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>ね。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
   <span class="k">case</span>
   <span class="k">when</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span> <span class="mi">0</span>
   <span class="k">when</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span> <span class="mi">1</span>
@@ -395,8 +388,7 @@ $</code></pre></figure>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>さて、手続き型言語と関数型言語とで、発想の違いを感じていただけたでしょうか？</p>
 
@@ -421,18 +413,17 @@ $</code></pre></figure>
 
 <p>1 から 100 までの数をプリントするんだから、ループしてプリントすればよさそうだよね。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span>
   <span class="nb">puts</span> <span class="n">i</span>
   <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>3 の倍数のときは｢Fizz｣、5 の倍数のときは｢Buzz｣、3 と 5 両方の倍数の場合には｢FizzBuzz｣とプリントするのだから、「puts i」のところを if 文で条件分岐すればいいかな？　15 の倍数 (つまり 3 と 5 の倍数)、5 の倍数、3 の倍数それぞれで分岐すればいいよね。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span>
   <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">15</span> <span class="o">==</span> <span class="mi">0</span> 
     <span class="nb">puts</span> <span class="s1">'FizzBuzz'</span>
@@ -446,30 +437,27 @@ $</code></pre></figure>
   <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h5 id="関数型言語の発想-1">関数型言語の発想</h5>
 
 <p>1 から 100 まで出力せよ、と言っているので、Range を Array に変換して出力すればいいよね。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">100</span><span class="p">).</span><span class="nf">to_a</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">puts</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">100</span><span class="p">).</span><span class="nf">to_a</span>
+</code></pre></div></div>
 
 <p>3 の倍数のときは Fizz、5 の倍数のときは Buzz、3 と 5 の倍数のときは FizzBuzz を出力するのだから、変換ルールの関数を書いて map すればいいよね。変換ルールの関数は、15 の倍数 (つまり 3 と 5 の倍数)、5 の倍数、3 の倍数それぞれで場合分けすればいいけど、あとで考えよう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">100</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">puts</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">100</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
   <span class="c1"># 3と5の倍数のときは FizzBuzz、</span>
   <span class="c1"># 5の倍数のときは Buzz、</span>
   <span class="c1"># xが3の倍数のときは Fizz に変換する関数</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>関数の中身は「複数の場合の場合分け」だから、case を使えばいいよね。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span> <span class="p">(</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="mi">100</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">puts</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">100</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
   <span class="k">case</span>
   <span class="k">when</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">15</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span> <span class="s1">'FizzBuzz'</span>
   <span class="k">when</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">then</span> <span class="s1">'Buzz'</span>
@@ -477,8 +465,7 @@ $</code></pre></figure>
   <span class="k">else</span> <span class="n">x</span>
   <span class="k">end</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>いかがでしたか。</p>
 
@@ -490,49 +477,45 @@ $</code></pre></figure>
 
 <p>Fiber は Ruby 1.9 で新しく導入されたクラスで、「これから起こること」を抽象化したものです。と言っても何のことか分からないと思いますので、実際にコードを書いてみることにしましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="c1"># 処理</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>と書くと、「処理」の部分を「これから起こること」としてオブジェクト (Fiber クラスのインスタンス) を生成します。そしてその「処理」を実行したい場合、Fiber#resume メソッドを使います。また実際にコードを書いてみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">fi</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fi</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="c1"># 処理</span>
 <span class="k">end</span> <span class="c1">#=&gt; 「処理」が Fiber クラスのインスタンスとして抽象化され、変数 fi に代入される</span>
 
 <span class="n">fi</span><span class="p">.</span><span class="nf">resume</span> <span class="c1">#=&gt; 処理が実行される</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Proc も「これから起こること」をオブジェクト (Proc クラスのインスタンス) として抽象化したものです。たとえば、</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="c1"># 処理</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>と書くことで、先ほどの Fiber と同様、「処理」の部分を「これから起こること」としてオブジェクト化することができます。Proc の場合は、「処理」を実行したい場合、Proc#call メソッドを使います。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">pr</span> <span class="o">=</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pr</span> <span class="o">=</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="c1"># 処理</span>
 <span class="k">end</span> <span class="c1">#=&gt; 「処理」が Proc クラスのインスタンスとして抽象化され、変数 pr に代入される</span>
 
 <span class="n">pr</span><span class="p">.</span><span class="nf">call</span> <span class="c1">#=&gt; 処理が実行される</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>こうして見ると、どちらも「手続き (これから起こること) 」を抽象化するという点で同じようなもののように見えるかもしれません。ところが、Fiber と Proc では決定的に違うことがあります。Fiber で抽象化した「処理」は「処理」の中で Fiber.yield が呼ばれたタイミングで処理が終了し、再度呼び出した場合は Fiber.yield の呼び出しの続きから「処理」が再開されるのに対して、Proc で抽象化した「処理」は何度呼び出してもその「処理」の最初から実行されます。</p>
 
 <p>これも言葉で聞いても何のことか分かりづらいと思いますので、実際のコードを見て Fiber と Proc がどのような挙動をするのかを見てみましょう。まずは Fiber の例です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">fi</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">first</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fi</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">first</span><span class="o">|</span>
   <span class="n">second</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">yield</span><span class="p">(</span><span class="s2">"</span><span class="si">#{</span><span class="n">first</span><span class="si">}</span><span class="s2">!"</span><span class="p">)</span>
   <span class="s2">"</span><span class="si">#{</span><span class="n">first</span><span class="si">}</span><span class="s2">, </span><span class="si">#{</span><span class="n">second</span><span class="si">}</span><span class="s2">!"</span>
 <span class="k">end</span>
@@ -540,8 +523,7 @@ $</code></pre></figure>
 <span class="nb">puts</span> <span class="n">fi</span><span class="p">.</span><span class="nf">resume</span><span class="p">(</span><span class="s1">'Hello'</span><span class="p">)</span> <span class="c1">#=&gt; "Hello!" と出力</span>
 <span class="nb">puts</span> <span class="n">fi</span><span class="p">.</span><span class="nf">resume</span><span class="p">(</span><span class="s1">'World'</span><span class="p">)</span> <span class="c1">#=&gt; "Hello, World!" と出力</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>変数 fi には、Fiber.new により do から end までの処理を抽象化した Fiber オブジェクトが代入されます。そして最初に文字列 ‘Hello’ を引数にその Fiber オブジェクトのインスタンスメソッド resume を呼び出すと、ブロックの引数 first に ‘Hello’ が代入され、ブロックの実行が開始します。</p>
 
@@ -551,14 +533,13 @@ $</code></pre></figure>
 
 <p>次に Proc の例です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">pr</span> <span class="o">=</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">text</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pr</span> <span class="o">=</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">text</span><span class="o">|</span>
   <span class="s2">"Hello</span><span class="si">#{</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
 
 <span class="nb">puts</span> <span class="n">pr</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="s1">'!'</span><span class="p">)</span> <span class="c1">#=&gt; "Hello!" と出力</span>
 <span class="nb">puts</span> <span class="n">pr</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="s1">', World!'</span><span class="p">)</span> <span class="c1">#=&gt; "Hello, World!" と出力</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>変数 pr には、Proc.new により do から end までの処理を抽象化した Proc オブジェクトが代入されます。そして最初に文字列 ‘!’ を引数にその Proc オブジェクトのインスタンスメソッド call を呼び出すと、ブロック引数 text に ‘!’ が代入され、ブロックの実行が開始します。そしてブロックの最後の評価値である “Hello#{text}” すなわち “Hello!” を戻り値として呼び出し元に戻ります。</p>
 
@@ -576,7 +557,7 @@ $</code></pre></figure>
 
 <p>回答は次のようなプログラムになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">fib</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fib</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
   <span class="kp">loop</span> <span class="k">do</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
@@ -589,8 +570,7 @@ $</code></pre></figure>
   <span class="nb">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>プログラムを見ていただけると分かると思いますが、Fiber.yield メソッドを無限ループの中で呼ぶことで、無限ループ処理を抽象化し、処理を少しずつ実行することができています。言い換えると、Fiber を使うと、手続き型言語によるフィボナッチ数列の計算方法はそのままで、フィボナッチ数列を算出する処理をオブジェクトとして抽象化することができます。</p>
 
@@ -598,7 +578,7 @@ $</code></pre></figure>
 
 <p>FizzBuzz 問題のほうも 1 秒ごとに順に出力するバージョンを Fiber を使って実装してみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">fizzbuzz</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fizzbuzz</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
   <span class="kp">loop</span> <span class="k">do</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">15</span> <span class="o">==</span> <span class="mi">0</span> 
@@ -619,8 +599,7 @@ $</code></pre></figure>
   <span class="nb">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>それでは最後に、フィボナッチ数列と FizzBuzz の合わせ技の問題です。</p>
 
@@ -630,7 +609,7 @@ $</code></pre></figure>
 
 <p>このような「処理を途中で止めて別の処理をする」といった「状態」を管理する用途に Fiber は向いています。回答例は次のようになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">fizzbuzz</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fizzbuzz</span> <span class="o">=</span> <span class="no">Fiber</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
   <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
   <span class="kp">loop</span> <span class="k">do</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">15</span> <span class="o">==</span> <span class="mi">0</span> 
@@ -663,14 +642,13 @@ $</code></pre></figure>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="proc-によるフィボナッチ数列と-fizzbuzz">Proc によるフィボナッチ数列と FizzBuzz</h4>
 
 <p>先ほど Proc は「関数のようなもの」と説明しましたが、実は Proc は純粋な関数ではなく<a href="http://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%B8%E3%83%A3">クロージャ</a>です。なので、クロージャのレキシカル変数を使うことで「状態」を扱うこともできます。これにより、Proc でも次のように手続き型言語の発想でフィボナッチ数列や FizzBuzz を実装することができます。それでは、先ほどのフィボナッチ数列と FizzBuzz を交互に 5 つずつ 100 個まで出力するプログラムを Proc で実装してみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fizzbuzz_maker</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">fizzbuzz_maker</span>
   <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
   <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="k">do</span>
    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -703,8 +681,7 @@ $</code></pre></figure>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>fizzbuzz_maker メソッドは、FizzBuzz の状態をレキシカル変数 i に保持した Proc オブジェクトを生成します。同様に、fib_maker メソッドは、フィボナッチ数列の算出過程をレキシカル変数 a, b に保持した Proc オブジェクトを生成します。そうして生成された Proc オブジェクトは、一連の手続き自体は毎回同じですが、call メソッドを呼ばれる度にレキシカル変数が変化するため、先ほどの Fiber のように計算を少しずつ進めることができています。しかし Proc のレキシカル変数の考え方は、Fiber の「処理がどこまで進んだか」という考え方と比較すると、直感的に理解するのは難しいのではないでしょうか。</p>
 
@@ -725,7 +702,7 @@ $</code></pre></figure>
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>もちろんこの実装は無邪気に過ぎるのですが (末尾再帰とかメモ化とかの最適化や、引数チェックなどの例外処理とかを考慮していない) 、今回の話の本質ではないのでそのあたりの説明は省略します。興味のある方は調べてみると面白いでしょう。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>もちろんこの実装は無邪気に過ぎるのですが (末尾再帰とかメモ化とかの最適化や、引数チェックなどの例外処理とかを考慮していない) 、今回の話の本質ではないのでそのあたりの説明は省略します。興味のある方は調べてみると面白いでしょう。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

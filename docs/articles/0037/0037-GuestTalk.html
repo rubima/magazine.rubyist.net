@@ -524,31 +524,31 @@ println hash.if    // =&gt; 3 が出力される</code></pre></figure>
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>「実行時」メタプログラミングとわざわざことわっているのは、前回説明した AST 変換が「コンパイル時」メタプログラミングだからです。groovy には事前コンパイラとして「groovyc コマンド」があり Java の仮想マシンコード (class ファイル) を事前に生成しておくことができますが、AST 変換はコンパイル時に解決されます。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>「実行時」メタプログラミングとわざわざことわっているのは、前回説明した AST 変換が「コンパイル時」メタプログラミングだからです。groovy には事前コンパイラとして「groovyc コマンド」があり Java の仮想マシンコード (class ファイル) を事前に生成しておくことができますが、AST 変換はコンパイル時に解決されます。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>Objective-C 由来の機能とのことです。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>Objective-C 由来の機能とのことです。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p><a href="http://www.rubyist.net/~matz/20101113.html">Ruby で採用が検討されている「Refinement」</a>にも似ているようだが Refinement がレキシカルスコープであることを特徴とするのに対して、カテゴリ (use) は動的スコープ。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p><a href="http://www.rubyist.net/~matz/20101113.html">Ruby で採用が検討されている「Refinement」</a>にも似ているようだが Refinement がレキシカルスコープであることを特徴とするのに対して、カテゴリ (use) は動的スコープ。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>Java 標準 API に対する Groovy 追加メソッド GDK (Groovy JDK) は、内部的にはカテゴリと等しい仕組みで実現されている。ただ、GDK は、Groovy コードから見るとコードの実行開始時には既にメソッドが追加されているし、プログラマからは与りしらない内部機構なので「動的メソッド追加」や「実行時メタプログラミング」には当らない。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>Java 標準 API に対する Groovy 追加メソッド GDK (Groovy JDK) は、内部的にはカテゴリと等しい仕組みで実現されている。ただ、GDK は、Groovy コードから見るとコードの実行開始時には既にメソッドが追加されているし、プログラマからは与りしらない内部機構なので「動的メソッド追加」や「実行時メタプログラミング」には当らない。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>インスタンスメソッドを以下の条件で変形して定義するということだが、これはちょっと不自然にも感じられる。なのでそのままインスタンスメソッドとして定義できるようにするための、<a href="http://groovy.codehaus.org/Category+and+Mixin+transformations">@Category という AST 変換</a>もある。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>インスタンスメソッドを以下の条件で変形して定義するということだが、これはちょっと不自然にも感じられる。なのでそのままインスタンスメソッドとして定義できるようにするための、<a href="http://groovy.codehaus.org/Category+and+Mixin+transformations">@Category という AST 変換</a>もある。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>印象ですが、Ruby では send を置き変えることはそれほど普通に行なわれることはないように思いますが何故なのでしょう。<a href="http://hamasyou.com/archives/000370#title27">ブランクスレートクラス</a>を使用する場合と比較したときの考察などをご教示頂けるとありがたいです。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+      <p>印象ですが、Ruby では send を置き変えることはそれほど普通に行なわれることはないように思いますが何故なのでしょう。<a href="http://hamasyou.com/archives/000370#title27">ブランクスレートクラス</a>を使用する場合と比較したときの考察などをご教示頂けるとありがたいです。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:7">
-      <p>これを「メタ」クラスというと違和感があるかもしれません。意味的には Java の Class クラスに比して動的な側面を含むクラスオブジェクトです。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+      <p>これを「メタ」クラスというと違和感があるかもしれません。意味的には Java の Class クラスに比して動的な側面を含むクラスオブジェクトです。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:8">
-      <p>ひとことでいうと <a href="http://haml.ursm.jp/">haml</a> みたいなものを Groovy の内部 DSL として実現しようということです。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+      <p>ひとことでいうと <a href="http://haml.ursm.jp/">haml</a> みたいなものを Groovy の内部 DSL として実現しようということです。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:9">
-      <p>本家 Java7 でも、異国的識別子 (exotic identifier) と&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+      <p>本家 Java7 でも、異国的識別子 (exotic identifier) と <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

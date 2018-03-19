@@ -557,7 +557,7 @@ iso_2022_jp.txt や euc_jp.txt を開くと文字化けします。</p>
 
 <p>change_enc.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"kconv"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"kconv"</span>
 
 <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"euc_jp.txt"</span><span class="p">)</span>
 <span class="n">euc</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span>
@@ -576,8 +576,7 @@ iso_2022_jp.txt や euc_jp.txt を開くと文字化けします。</p>
 <span class="n">out2</span><span class="p">.</span><span class="nf">close</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このプログラムの先頭の require “kconv” というのが 
 Kconv を使うためのおまじないです。
@@ -669,14 +668,13 @@ File クラスの排他処理を使うことで、
 
 <p>exclusive.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"tmp.txt"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">"tmp.txt"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span>
 
 <span class="n">f</span><span class="p">.</span><span class="nf">flock</span><span class="p">(</span><span class="no">File</span><span class="o">::</span><span class="no">LOCK_EX</span><span class="p">)</span>
 <span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s2">"test</span><span class="se">\r\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">f</span><span class="p">.</span><span class="nf">close</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このプログラムは tmp.txt に test という行を追加するプログラムです。
 tmp.txt に同時に書き込みできないようにファイルを開く際に排他処理をしています。</p>

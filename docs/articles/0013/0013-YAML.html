@@ -238,7 +238,7 @@
 
 <p><a href="../../images/0013-YAML/show-ypath.rb">show-ypath.rb</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 
 <span class="c1">## Usage: ruby show-ypath.rb ypath datafile.yaml</span>
 
@@ -276,8 +276,7 @@
 <span class="c1">#   pp obj</span>
 <span class="c1"># end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>YPath を使ったスクリプトは本連載の第 2 回でも説明しましたが、もう一度説明します。</p>
 
@@ -297,7 +296,7 @@
 
 <p><a href="../../images/0013-YAML/datafile.yaml">datafile.yaml</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>teams:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>teams:
   - name:        Akudaman
     members:
       - name:    Mujo
@@ -317,8 +316,7 @@
       - name:    Tonzuraa
         age:     30
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="ypath-の基本">YPath の基本</h2>
 
@@ -552,7 +550,7 @@
 
 <p><a href="../../images/0013-YAML/yamlgrep">yamlgrep</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="c1">##</span>
 <span class="c1">## yamlgrep - YAML ファイルから YPath にマッチしたデータを抜き出す</span>
@@ -642,8 +640,7 @@
 
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="使い方">使い方</h3>
 
@@ -819,16 +816,16 @@
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>実際には YAML::Syck::Node のサブクラスである YAML::Syck::Seq、YAML::Syck::Map、YAML::Syck::Serial が使用されます。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>実際には YAML::Syck::Node のサブクラスである YAML::Syck::Seq、YAML::Syck::Map、YAML::Syck::Serial が使用されます。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>これらのメソッドは YAML::BaseNode モジュールで定義されており、これを YAML::Syck::Node クラスが include しています。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>これらのメソッドは YAML::BaseNode モジュールで定義されており、これを YAML::Syck::Node クラスが include しています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>本当なら「.」で現在のノードを、「..」で親のノードを表すはずなのですが、「..」は今のところ動作しないようです。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>本当なら「.」で現在のノードを、「..」で親のノードを表すはずなのですが、「..」は今のところ動作しないようです。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>本来なら「//members/*[age=25]」のように書けるとよいのですが、YPath の仕様が決まってないこともあり、Syck ではこのような探索条件がサポートされていません。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>本来なら「//members/*[age=25]」のように書けるとよいのですが、YPath の仕様が決まってないこともあり、Syck ではこのような探索条件がサポートされていません。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

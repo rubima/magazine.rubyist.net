@@ -224,7 +224,7 @@
 
 <p>ここでいう「xUnit っぽい」というのは、簡単に言えば RSpec の機能を使いこなすことなく、it を xUnit のテストメソッドと同じように扱ってしまっているものをさします。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
     <span class="n">before</span> <span class="k">do</span>
       <span class="vi">@stack</span> <span class="o">=</span> <span class="no">Stack</span><span class="p">.</span><span class="nf">new</span>
     <span class="k">end</span>
@@ -251,8 +251,7 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上記のテストコードは RSpec でスタック構造をあらわす Stack クラスに対して書かれたものです。Stack クラスは push、pop、size の 3 つのメソッドを持ちます。</p>
 
@@ -262,7 +261,7 @@
 
 <p>さきほどのテストコードをいくつかの手順を踏んで修正してみましょう。まずは describe です。describe は RSpec でテストコードを書くときは必ず一つは登場するものですが、同じレベルで並べたりネストさせたりすることができます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
     <span class="n">before</span> <span class="k">do</span>
       <span class="vi">@stack</span> <span class="o">=</span> <span class="no">Stack</span><span class="p">.</span><span class="nf">new</span>
     <span class="k">end</span>
@@ -299,14 +298,13 @@
       <span class="k">end</span>
     <span class="k">end</span>
   <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>describe を使うことでテストコードに構造がうまれました。各テストケースがグルーピングされることによって、テストケースが何についてテストを行なっているのかわかりやすくなります。</p>
 
 <p>次に context です。context は describe のエイリアスでしかありませんが使う目的が違います。ひとことで言うなら、 describe はテストする対象をあらわし、 context はテストする時の状況をあらわします。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
     <span class="n">before</span> <span class="k">do</span>
       <span class="vi">@stack</span> <span class="o">=</span> <span class="no">Stack</span><span class="p">.</span><span class="nf">new</span>
     <span class="k">end</span>
@@ -350,8 +348,7 @@
       <span class="k">end</span>
     <span class="k">end</span>
   <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>今回、describe はメソッド単位でわけました。理由としてはテストケースを書くときは何らかのメソッドを対象としていることがほとんどのため、このようにわけた方がテストが書き易いことが多いためです。またメソッド単位でわけることでドキュメントとしても読み易くなります。</p>
 
@@ -365,27 +362,25 @@
 
 <p>まずは push メソッドをテスト対象とする describe を用意します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
     <span class="n">describe</span> <span class="s1">'#push'</span> <span class="k">do</span>
     <span class="k">end</span>
   <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>対象が決まったら、次はそのメソッドを呼び出す状況を考えます。push メソッドの場合、最初に思いつくのは、そのまま値を保存する状況でしょう。この時は、まだ他に context がないのでそのまま it にしてしまうことができます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
     <span class="n">describe</span> <span class="s1">'#push'</span> <span class="k">do</span>
       <span class="n">it</span> <span class="s1">'値が保存されること'</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>正常値について考えたら、異常値についても考えるので、nil を保存しようとした時に例外が発生する状況について考えます。先程の正常値とは状況が違うので、今度は context をわける必要があります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span> <span class="k">do</span>
     <span class="n">describe</span> <span class="s1">'#push'</span> <span class="k">do</span>
       <span class="n">context</span> <span class="s1">'正常値'</span> <span class="k">do</span>
         <span class="n">it</span> <span class="s1">'値が保存されること'</span>
@@ -397,8 +392,7 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このように describe、context、it と順番を踏むことで仕様を段階的にテストコードに落とし込んでいきやすくなります。describe と context を使うことでアプリケーションの仕様を整理し、設計を行ないやすくなります。</p>
 
@@ -406,7 +400,7 @@
 
 <p>RSpec では subject を使うことで should のレシーバを省略することができます。先程のテストコードの一部を subject を使って書き直してみます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="s1">'#pop'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="s1">'#pop'</span> <span class="k">do</span>
     <span class="n">subject</span> <span class="p">{</span> <span class="vi">@stack</span><span class="p">.</span><span class="nf">pop</span> <span class="p">}</span>
 
     <span class="n">context</span> <span class="s1">'スタックが空の場合'</span> <span class="k">do</span>
@@ -427,12 +421,11 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>subject のメリットはテスト対象が明確になること、そしてほぼ強制的にひとつのテストケースにひとつのアサーションしか書けなくなることです。テストを書くときに「今何をテストしているのか」ということを意識するのは重要です。describe を切った時点である程度明確になっていますが、subject に比べると若干弱いのは否めません。subject を使うと例えばメソッドを実行した後のオブジェクトの状態をテストしているのか、もしくはメソッドの返り値をテストしているのかという普段つい曖昧にしがちな部分もはっきりと分けることができます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Array</span><span class="p">,</span> <span class="s1">'#delete'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Array</span><span class="p">,</span> <span class="s1">'#delete'</span> <span class="k">do</span>
     <span class="n">subject</span> <span class="p">{</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">].</span><span class="nf">delete</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">}</span>
     <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">eq</span> <span class="mi">3</span> <span class="p">}</span>
   <span class="k">end</span>
@@ -446,8 +439,7 @@
     <span class="n">its</span><span class="p">(</span><span class="ss">:size</span><span class="p">)</span> <span class="p">{</span> <span class="n">should</span> <span class="n">eq</span> <span class="mi">2</span> <span class="p">}</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>そして、should のレシーバを省略することでひとつのテストケースにひとつのアサーションしか書けなくなります。一般的にテストケースにはひとつのアサーションを書くのがよいとされており、subject をうまく使うことで自然とそのようなテストを書くようになります。</p>
 
@@ -455,7 +447,7 @@
 
 <p>場合によっては、関連先のオブジェクトについてもテストしたい場合があります。例えば User クラスと それに関連する Profile クラスなどが考えられます。この場合、subject を使って should のレシーバを省略すると関連先のオブジェクトにアクセスできないのでテストすることができません。解決するには 新たに describe をネストさせてもう一度 subject を定義しましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">User</span><span class="p">,</span> <span class="s1">'#create!'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">User</span><span class="p">,</span> <span class="s1">'#create!'</span> <span class="k">do</span>
     <span class="n">before</span> <span class="p">{</span> <span class="vi">@user</span><span class="o">=</span><span class="no">User</span><span class="p">.</span><span class="nf">create!</span> <span class="p">}</span>
     <span class="n">subject</span> <span class="p">{</span> <span class="vi">@user</span> <span class="p">}</span>
     <span class="n">it</span> <span class="p">{</span> <span class="n">should_not</span> <span class="n">be_new_record</span> <span class="p">}</span>
@@ -467,22 +459,20 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このようにして関連先のオブジェクトもテストすることができます。Rails のアプリケーションを開発している場合、こういうケースは結構あるのではないかと思います。</p>
 
 <p>もうひとつ、 its を使う方法もあります。テストする箇所が少ない場合はこちらでもいいでしょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">User</span><span class="p">,</span> <span class="s1">'#create!'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">User</span><span class="p">,</span> <span class="s1">'#create!'</span> <span class="k">do</span>
     <span class="n">subject</span> <span class="p">{</span> <span class="no">User</span><span class="p">.</span><span class="nf">creat!</span> <span class="p">}</span>
     <span class="n">it</span> <span class="p">{</span> <span class="n">should_not</span> <span class="n">be_new_record</span> <span class="p">}</span>
     <span class="n">its</span><span class="p">(</span><span class="ss">:profile</span><span class="p">)</span> <span class="p">{</span> <span class="n">should_not</span> <span class="n">be_new_record</span> <span class="p">}</span>
     <span class="n">its</span><span class="p">(</span><span class="s1">'profile.name'</span><span class="p">)</span> <span class="p">{</span> <span class="n">should</span> <span class="n">eq</span> <span class="s1">'AKAMATSU Yuki'</span> <span class="p">}</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="it-に文字列を渡すのか渡さないのか">it に文字列を渡すのか、渡さないのか</h3>
 
@@ -512,7 +502,7 @@
 
 <p>こちらはいくつか解決する方法があります。1つは context に具体的な値を入れてしまう方法、もうひとつは カスタムマッチャを定義してしまうことです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="no">RSpec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">.</span><span class="nf">define</span> <span class="ss">:be_latest_value</span> <span class="k">do</span> <span class="o">|</span><span class="n">expected</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="no">RSpec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">.</span><span class="nf">define</span> <span class="ss">:be_latest_value</span> <span class="k">do</span> <span class="o">|</span><span class="n">expected</span><span class="o">|</span>
     <span class="n">match</span> <span class="k">do</span> <span class="o">|</span><span class="n">actual</span><span class="o">|</span>
       <span class="n">actual</span> <span class="o">==</span> <span class="n">latest_value</span>
     <span class="k">end</span>
@@ -550,8 +540,7 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> Stack
    #pop
@@ -574,19 +563,18 @@
 
 <p>RSpec には let という機能があります。subject などに比べるとあまり知られておらず、知っていても使い方がよくわからないという方も多いようなので解説したいと思います。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">descirbe</span> <span class="s1">'let'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">descirbe</span> <span class="s1">'let'</span> <span class="k">do</span>
     <span class="n">let</span><span class="p">(</span><span class="ss">:foo</span><span class="p">)</span> <span class="p">{</span> <span class="s1">'foo'</span> <span class="p">}</span>
     <span class="n">specify</span> <span class="p">{</span> <span class="n">foo</span><span class="p">.</span><span class="nf">should</span> <span class="n">eq</span> <span class="s1">'foo'</span> <span class="p">}</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>let はブロックの評価値が、引数として渡されたシンボルと同名の変数に格納されます。上記の例ではブロックの評価値が文字列 ‘foo’ でシンボルが :foo なので foo という変数名に文字列 ‘foo’ が格納されています。動作としては遅延評価される仕組みになっており<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>、実際に呼び出しされるまでは実行されません。また、同じテストケース内ではブロックの評価値はキャッシュされており、複数回呼び出したときに毎回処理を行なうということはおきません。</p>
 
 <p>テストを書くとき、事前処理や呼び出すメソッドは同じでも使うデータだけが違うという場合があります。その時はそれぞれの describe や context の before の中で同じ処理を毎回書くか、テスト用のヘルパーメソッドを書くなどするしかありませんでしたが、let を使うともう少しスマートに書くことができます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">User</span><span class="p">,</span> <span class="s1">'#admin?'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">User</span><span class="p">,</span> <span class="s1">'#admin?'</span> <span class="k">do</span>
     <span class="n">before</span> <span class="k">do</span>
       <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'jack'</span><span class="p">)</span>
     <span class="k">end</span>
@@ -609,12 +597,11 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>User クラスは内部に Role クラスを持ち、その Role の状態によって admin? メソッドの結果がかわります。このテストコードは let を使わず before と subject だけで書かれています。admin の context と not admin の context の違いは Role クラスに渡す引数だけです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">User</span><span class="p">,</span> <span class="s1">'#admin?'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">User</span><span class="p">,</span> <span class="s1">'#admin?'</span> <span class="k">do</span>
     <span class="n">before</span> <span class="k">do</span>
       <span class="vi">@user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s1">'jack'</span><span class="p">)</span>
       <span class="vi">@user</span><span class="p">.</span><span class="nf">role</span> <span class="o">=</span> <span class="no">Role</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:role</span> <span class="o">=&gt;</span> <span class="n">role</span><span class="p">)</span>
@@ -632,14 +619,13 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>let を使うとデータの定義の部分だけを抜き出すことができるので、Role の設定もひとつの before の中ですませることができます。先程のテストコードよりこちらの方が DRY でコードの見通しもよくなっています。これが let の最もオーソドックスな使い方だと思います。</p>
 
 <p>もちろん、単純にインスタンス変数の置き換えとしても使うことができます。このあたりは好みの問題の気も若干しますが、データの定義を宣言的に書くことができるので大体の場合は見やすくなるでしょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span><span class="p">,</span> <span class="s1">'#pop'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="no">Stack</span><span class="p">,</span> <span class="s1">'#pop'</span> <span class="k">do</span>
     <span class="n">let</span><span class="p">(</span><span class="ss">:stack</span><span class="p">)</span> <span class="p">{</span> <span class="no">Stack</span><span class="p">.</span><span class="nf">new</span> <span class="p">}</span>
     <span class="n">subject</span> <span class="p">{</span> <span class="n">stack</span><span class="p">.</span><span class="nf">pop</span> <span class="p">}</span>
 
@@ -660,8 +646,7 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="shared_context">shared_context</h3>
 
@@ -669,7 +654,7 @@
 
 <p>実は同じコンテキストでもひとつの context の中にまとめられないことが多々あります。例えば、複数のメソッドのテストで同じコンテキストを使いたい時などがそうです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">describe</span> <span class="s1">'#method_a'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">describe</span> <span class="s1">'#method_a'</span> <span class="k">do</span>
     <span class="n">context</span> <span class="s1">'#context_a'</span> <span class="k">do</span>
       <span class="n">before</span> <span class="p">{}</span> <span class="c1"># DRYじゃない</span>
     <span class="k">end</span>
@@ -681,12 +666,11 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>describe と context のネストを逆にすることで解決できそうな気もしますが、普通あるメソッドに対するテストは複数のコンテキストで行いますから今度は同じメソッドに対するテストがバラバラに記述されてしまいます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">context</span> <span class="s1">'#context_a'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">context</span> <span class="s1">'#context_a'</span> <span class="k">do</span>
     <span class="n">before</span> <span class="p">{}</span>
 
     <span class="n">describe</span> <span class="s1">'#method_a'</span> <span class="k">do</span>
@@ -706,14 +690,13 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>バラバラになるとはいえ、これはこれでうまく構造化できているような気がします。ですが、これにはひとつ大きな問題があります。先程、段階的に仕様をテストコードに落とし込むという話で最初に describe を分けるところからはじめました。それと同じ理由で、これからテストしようと思う describe があってその次にテストする状況としての context があるので context が describe より上に来るのは自然ではありません。なので私はこの書き方はおすすめしません。</p>
 
 <p>これを解決するためには shared_context を使います。shared_context はその名前の通りコンテキスト (テストを行なうときの状況) を共有するための機能です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">shared_context</span> <span class="s1">'要素がふたつpushされている'</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">shared_context</span> <span class="s1">'要素がふたつpushされている'</span> <span class="k">do</span>
     <span class="n">let</span><span class="p">(</span><span class="ss">:latest_value</span><span class="p">)</span> <span class="p">{</span> <span class="s1">'value2'</span> <span class="p">}</span>
     <span class="n">before</span> <span class="k">do</span>
       <span class="vi">@stack</span> <span class="o">=</span> <span class="no">Stack</span><span class="p">.</span><span class="nf">new</span>
@@ -736,8 +719,7 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>shared_context を使うことで複数箇所にちらばる同一処理をまとめることができます。shared_context は shared_context が書かれたファイルを require することでも使えるようになるので別のスペックファイルでも使うことができます。</p>
 
@@ -772,16 +754,16 @@
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>編注 : 以前るびまでは、<a href="../../articles/0021/0021-Rspec.html">スはスペックのス</a>という連載がありました。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>編注 : 以前るびまでは、<a href="../../articles/0021/0021-Rspec.html">スはスペックのス</a>という連載がありました。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>カスタムマッチャのこの使い方は個人的には気に入っていますが、この使い方だと定義が増えすぎてしまうので基本的には避けています。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>カスタムマッチャのこの使い方は個人的には気に入っていますが、この使い方だと定義が増えすぎてしまうので基本的には避けています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>RSpec Best Practice の Jared さんがそうです。[[0032-TranslationArticle]]&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>RSpec Best Practice の Jared さんがそうです。[[0032-TranslationArticle]] <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>編注 : 遅延評価しない(正格評価される) let! というメソッドも用意されています。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>編注 : 遅延評価しない(正格評価される) let! というメソッドも用意されています。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

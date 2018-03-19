@@ -227,7 +227,7 @@
 
 <p>使い方としてはまず Web::Controller::Simple を継承したコントローラクラスを作成して setup、teardown メソッドを記述します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'web'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'web'</span>
 <span class="nb">require</span> <span class="s1">'web/controller/simple'</span>
 
 <span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
@@ -242,22 +242,20 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>そして、実行モード (=画面) に対応したメソッドを定義します。
 メソッドは ‘do_’ + 実行モード という名前で定義するきまりになっています。
 実行モードを明示的に指定しない場合はデフォルトの実行モード ‘start’ が選択されるので、まず ‘do_start’ を定義します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
   <span class="k">def</span> <span class="nf">do_start</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">rsp</span><span class="p">)</span>
     <span class="n">rsp</span><span class="p">.</span><span class="nf">content_type</span> <span class="o">=</span> <span class="s1">'text/plain'</span>
     <span class="n">rsp</span><span class="p">.</span><span class="nf">write</span> <span class="n">req</span><span class="p">[</span><span class="s1">'text1'</span><span class="p">]</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>メソッドにはリクエスト (Web::Request) とレスポンス (Web::Response) の 2 つのオブジェクトが渡されます。
 <a href="../../articles/0001/0001-NoraTutorial.html">第 1 回</a>、<a href="../../articles/0002/0002-NoraTutorial.html">第 2 回</a> でやったようにリクエストからデータを取り出してレスポンスに出力します。
@@ -265,7 +263,7 @@
 
 <p>実行する CGI ファイルはコントローラの初期化と API とのやりとりを書くだけと非常にシンプルになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'web'</span>
 <span class="nb">require</span> <span class="s1">'simple'</span>
 
@@ -281,8 +279,7 @@
 
 <span class="n">ctrl</span><span class="p">.</span><span class="nf">teardown</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="画面の遷移">画面の遷移</h3>
 
@@ -290,13 +287,12 @@
 実行モードは CGI の ‘rm’ (run mode) というパラメータで指定します。
 リンクを使って遷移する場合、クエリとして ‘?rm=edit’ とすることでコントローラの do_edit メソッドが起動され、実行モード edit の画面が表示されます。</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"?rm=edit;page=foo"</span><span class="nt">&gt;</span>fooの編集<span class="nt">&lt;/a&gt;</span>
-</code></pre>
-</div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"?rm=edit;page=foo"</span><span class="nt">&gt;</span>fooの編集<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
 
 <p>do_edit メソッドではパラメタを取得して画面を組み立てます。一般的には <a href="../../articles/0002/0002-NoraTutorial.html">前回</a> 使った Web::Template でテンプレートを使って画面出力します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
   <span class="k">def</span> <span class="nf">do_edit</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">rsp</span><span class="p">)</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">req</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span>
     <span class="n">param</span> <span class="o">=</span> <span class="p">{</span>
@@ -309,30 +305,27 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="フォームボタンによる画面遷移">フォーム、ボタンによる画面遷移</h3>
 
 <p>フォームを使う場合には実行モードは隠しフィールドを使って指定します。</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"rm"</span> <span class="na">value=</span><span class="s">"save"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"title"</span> <span class="na">value=</span><span class="s">"タイトル"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"body"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Wiki や日記でよくみられる「プレビュー」「保存」など、ボタンによって処理を変えたい場合があります。その場合は隠しフィールドではなくボタンの name 属性に ‘rm_’ で始まる名前を付けることで対応します。</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"rm_preview"</span> <span class="na">value=</span><span class="s">"プレビュー"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"rm_preview"</span> <span class="na">value=</span><span class="s">"プレビュー"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"rm_save"</span> <span class="na">value=</span><span class="s">"保存"</span><span class="nt">&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このようにするとクリックしたボタンによって do_preview,do_save ボタンが起動されます。</p>
 
@@ -343,7 +336,7 @@ Location ヘッダを出力したり、&lt;meta http-equiv=”Refresh” content
 
 <p>たとえば xxx から yyy にリダイレクトしたい場合、do_xxx メソッドで保存処理など必要な処理が終わった後、リクエストオブジェクトをリダイレクト後画面用に変更して do_yyy メソッドを起動します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Web</span><span class="o">::</span><span class="no">Controller</span><span class="o">::</span><span class="no">Simple</span>
   <span class="k">def</span> <span class="nf">do_xxx</span><span class="p">(</span><span class="n">req</span><span class="p">,</span><span class="n">rsp</span><span class="p">)</span>
     <span class="n">page</span> <span class="o">=</span> <span class="n">req</span><span class="p">[</span><span class="s1">'page'</span><span class="p">]</span>
     <span class="nb">open</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="s1">'w'</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="o">|</span>
@@ -359,8 +352,7 @@ Location ヘッダを出力したり、&lt;meta http-equiv=”Refresh” content
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="次回予告">次回予告</h3>
 

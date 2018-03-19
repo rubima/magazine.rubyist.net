@@ -336,7 +336,7 @@
 
 <p><a href="../../images/0011-YAML/ddl-mysql.sql">ddl-mysql.sql</a> - 出力ファイル (MySQL 用)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>----------------------------------------------------------------------
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>----------------------------------------------------------------------
 -- DDL for MySQL
 --   generated at Sun Oct 02 02:49:28 JST 2005
 ----------------------------------------------------------------------
@@ -363,14 +363,13 @@ create table users (
    updated_on           timestamp            not null
 );
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>PostgreSQL 用の SQL スクリプトは、例えば次のようになります。上の MySQL 用 SQL スクリプトと比較してみてください。</p>
 
 <p><a href="../../images/0011-YAML/ddl-postgresql.sql">ddl-postgresql.sql</a> - 出力ファイル (PostgreSQL 用)</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>----------------------------------------------------------------------
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>----------------------------------------------------------------------
 -- DDL for PostgreSQL
 --   generated at Sun Oct 02 02:49:28 JST 2005
 ----------------------------------------------------------------------
@@ -397,8 +396,7 @@ create table users (
    updated_on           timestamp            not null
 );
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>データベースごとの相違点は、出力用テンプレートを切り替えることで対応できます。アプリケーションを MySQL から PostgreSQL に切り替える (あるいはその逆) といった場合にも、柔軟に対応できます。</p>
 
@@ -424,7 +422,7 @@ create table users (
 
 <p><a href="../../images/0011-YAML/datafile.yaml">datafile.yaml</a> - データファイル</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>##
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
 ## テーブル定義ファイル
 ##
 
@@ -502,8 +500,7 @@ tables:
       - name:     created_on
       - name:     updated_on
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>なおここでは、外部参照キーの指定に YAML のアンカーとエイリアスを使いました。しかし YAML のアンカーとエイリアスでは、後方参照ができません。つまり、エイリアスではすでに定義されてあるアンカーしか参照できません (これは YAML を 1 パスで構文解析するための意図的な仕様です)。これを避けるためには、外部参照キーを例えば「<em>テーブル名</em>.<em>カラム名</em>」のように指定できるようにするとよいでしょう。</p>
 
@@ -547,7 +544,7 @@ tables:
 
 <p>creatable.rb - メインプログラム</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 
 <span class="c1">##</span>
 <span class="c1">## creatable - テーブル定義を読み込んで加工し、テンプレートで出力する</span>
@@ -698,8 +695,7 @@ tables:
 <span class="n">output</span> <span class="o">=</span> <span class="n">main</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">output</span> <span class="k">if</span> <span class="n">output</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="出力用テンプレート-eruby-スクリプト">出力用テンプレート (eRuby スクリプト)</h3>
 
@@ -720,7 +716,7 @@ tables:
 
 <p><a href="../../images/0011-YAML/ddl-mysql.eruby">ddl-mysql.eruby</a> - 出力用テンプレート</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;%
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%
    ##
    ## MySQL用のDDL(create table文)を生成するテンプレート
    ##
@@ -854,8 +850,7 @@ create table &lt;%= _(table['name']) %&gt; (
 &lt;% end %&gt;
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>eRuby テンプレートの中で新しいメソッドが必要な場合は、特異メソッドとして定義すると他のプログラムへの影響を少なくできます。
 この例では、エスケープするメソッドを特異メソッドとして定義しています。
@@ -865,7 +860,7 @@ create table &lt;%= _(table['name']) %&gt; (
 
 <p><a href="../../images/0011-YAML/ddl-postgresql.eruby">ddl-postgresql.eruby</a> - 出力用テンプレート</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;%
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%
    ##
    ## PostgreSQL用のDDL(create table文)を生成するテンプレート
    ##
@@ -985,8 +980,7 @@ create table &lt;%= _(table['name']) %&gt; (
 &lt;% end %&gt;
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>なお、2 つのテンプレートファイルが似ていることから、ひとつにまとめられるのでは？と思う方もいるでしょう。もちろんそうしたいところなのですが、筆者の経験からいうと、まとめたほうが逆に保守しにくいテンプレートとなりました。理想的だが複雑なものより、次善策だが単純なもののほうが、結局は保守しやすいというのが筆者なりの結論です。ただこれはあくまで筆者の私見なので、まとめられると思えばそうしていただいて結構です。</p>
 
@@ -1048,7 +1042,7 @@ create table &lt;%= _(table['name']) %&gt; (
 
 <p><a href="../../images/0011-YAML/creatable.rb">creatable.rb</a> - メインプログラム</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 
 <span class="c1">##</span>
 <span class="c1">## creatable - テーブル定義を読み込んで加工し、テンプレートで出力する</span>
@@ -1243,8 +1237,7 @@ create table &lt;%= _(table['name']) %&gt; (
 <span class="n">output</span> <span class="o">=</span> <span class="n">main</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">output</span> <span class="k">if</span> <span class="n">output</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="出力用テンプレートdto-javaeruby">出力用テンプレート「dto-java.eruby」</h3>
 
@@ -1260,143 +1253,142 @@ create table &lt;%= _(table['name']) %&gt; (
 
 <p><a href="../../images/0011-YAML/dto-java.eruby">dto-java.eruby</a> - 出力用テンプレート</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;%
-   ##
-   ## Java用DTO(Data Transfer Object)クラスを生成するテンプレート
-   ##
-   ## テンプレートプロパティ：
-   ##   package   - パッケージ名
-   ##   parent    - 親クラス名
-   ##
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;%</span>
+   <span class="p">##</span>
+   <span class="p">##</span> <span class="n">Java</span><span class="err">用</span><span class="n">DTO</span><span class="p">(</span><span class="n">Data</span> <span class="n">Transfer</span> <span class="n">Object</span><span class="p">)</span><span class="err">クラスを生成するテンプレート</span>
+   <span class="p">##</span>
+   <span class="p">##</span> <span class="err">テンプレートプロパティ：</span>
+   <span class="p">##</span>   <span class="k">package</span>   <span class="p">-</span> <span class="err">パッケージ名</span>
+   <span class="p">##</span>   <span class="n">parent</span>    <span class="p">-</span> <span class="err">親クラス名</span>
+   <span class="p">##</span>
 
-   ## コンテキスト
-   table      = context['table']         # ・・・(1)
-   properties = context['properties']    # ・・・(2)
-   raise "コマンドオプション '-m' を指定してください。" unless table
+   <span class="p">##</span> <span class="err">コンテキスト</span>
+   <span class="n">table</span>      <span class="p">=</span> <span class="n">context</span><span class="p">[</span><span class="s1">'table'</span><span class="p">]</span>         <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+   <span class="n">properties</span> <span class="p">=</span> <span class="n">context</span><span class="p">[</span><span class="s1">'properties'</span><span class="p">]</span>    <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+   <span class="n">raise</span> <span class="s2">"コマンドオプション '-m' を指定してください。"</span> <span class="n">unless</span> <span class="n">table</span>
 
-   unless defined?(KEYWORDS)
+   <span class="n">unless</span> <span class="n">defined</span><span class="p">?(</span><span class="n">KEYWORDS</span><span class="p">)</span>
 
-     ## Javaの予約語
-     keywords = &lt;&lt;-END
-       abstract assert boolean break byte case catch char class const
-       continue default do double else enum extends final finally float
-       for goto if implements import instanceof int interface long
-       native new package private protected public return short
-       static strictfp super switch synchronized this throw throws
-       transient try void volatile while
-     END
-     @keywords = {}
-     keywords.each { |word| @keywords[word] = true }
+     <span class="p">##</span> <span class="n">Java</span><span class="err">の予約語</span>
+     <span class="n">keywords</span> <span class="p">=</span> <span class="p">&lt;&lt;-</span><span class="k">END</span>
+       <span class="n">abstract</span> <span class="nb">assert</span> <span class="k">boolean</span> <span class="k">break</span> <span class="n">byte</span> <span class="k">case</span> <span class="n">catch</span> <span class="n">char</span> <span class="n">class</span> <span class="n">const</span>
+       <span class="n">continue</span> <span class="n">default</span> <span class="k">do</span> <span class="n">double</span> <span class="k">else</span> <span class="n">enum</span> <span class="n">extends</span> <span class="n">final</span> <span class="n">finally</span> <span class="n">float</span>
+       <span class="n">for</span> <span class="n">goto</span> <span class="k">if</span> <span class="n">implements</span> <span class="n">import</span> <span class="n">instanceof</span> <span class="n">int</span> <span class="n">interface</span> <span class="n">long</span>
+       <span class="n">native</span> <span class="n">new</span> <span class="k">package</span> <span class="n">private</span> <span class="n">protected</span> <span class="k">public</span> <span class="n">return</span> <span class="n">short</span>
+       <span class="n">static</span> <span class="n">strictfp</span> <span class="n">super</span> <span class="n">switch</span> <span class="n">synchronized</span> <span class="n">this</span> <span class="n">throw</span> <span class="n">throws</span>
+       <span class="n">transient</span> <span class="n">try</span> <span class="n">void</span> <span class="n">volatile</span> <span class="k">while</span>
+     <span class="k">END</span>
+     <span class="p">@</span><span class="n">keywords</span> <span class="p">=</span> <span class="p">{}</span>
+     <span class="n">keywords</span><span class="p">.</span><span class="n">each</span> <span class="p">{</span> <span class="p">|</span><span class="n">word</span><span class="p">|</span> <span class="p">@</span><span class="n">keywords</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="p">=</span> <span class="nb">true</span> <span class="p">}</span>
 
-     ## 予約語をエスケープする関数
-     def self._(word)
-       return @keywords[word] ? "_#{word}" : word
-     end
+     <span class="p">##</span> <span class="err">予約語をエスケープする関数</span>
+     <span class="n">def</span> <span class="n">self</span><span class="p">.</span><span class="n">_</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+       <span class="n">return</span> <span class="p">@</span><span class="n">keywords</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="p">?</span> <span class="s2">"_#{word}"</span> <span class="p">:</span> <span class="n">word</span>
+     <span class="k">end</span>
 
-     ## 文字列 "aaa_bbb_ccc" を "AaaBbbCcc" に変換する関数
-     def camel_case(name, flag_all=true)
-       s = ''
-       name.split('_').each_with_index do |word, i|
-         s &lt;&lt; (!flag_all &amp;&amp; i == 0 ? word.downcase : word.capitalize)
-       end
-       return s
-     end
+     <span class="p">##</span> <span class="err">文字列</span> <span class="s2">"aaa_bbb_ccc"</span> <span class="err">を</span> <span class="s2">"AaaBbbCcc"</span> <span class="err">に変換する関数</span>
+     <span class="n">def</span> <span class="n">camel_case</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flag_all</span><span class="p">=</span><span class="nb">true</span><span class="p">)</span>
+       <span class="n">s</span> <span class="p">=</span> <span class="s1">''</span>
+       <span class="n">name</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">).</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="p">|</span><span class="n">word</span><span class="p">,</span> <span class="n">i</span><span class="p">|</span>
+         <span class="n">s</span> <span class="p">&lt;&lt;</span> <span class="p">(</span><span class="c1">!flag_all &amp;&amp; i == 0 ? word.downcase : word.capitalize)
+</span>       <span class="k">end</span>
+       <span class="n">return</span> <span class="n">s</span>
+     <span class="k">end</span>
 
-   end
-
-
-   ## クラス定義情報
-   klass = {
-     :name       =&gt; table['class']   || camel_case(table['name']),
-     :package    =&gt; table['package'] || properties['package'],    # ・・・(3)
-     :parent     =&gt; table['parent']  || properties['parent'],     # ・・・(3)
-     :desc       =&gt; table['desc'],
-   }
-
-   ## 出力ファイル名
-   context[:output_filename] = klass[:name] + ".java"    # ・・・(4)
-
-   ## インスタンス変数
-   variables = []
-   ref_variables = []
-   table['columns'].each do |column|
-     type = column['class']
-     unless type
-       type   = column['type']
-       width  = column['width']
-       case type
-       when 'char'            ;  type = (!width || width == 1) ? 'char' : 'String'
-       when 'short'           ;
-       when 'int', 'integer'  ;  type = 'int'
-       when 'str', 'string'   ;  type = width == 1 ? 'char' : 'String'
-       when 'text'            ;  type = width == 1 ? 'char' : 'String'
-       when 'float'           ;
-       when 'double'          ;
-       when 'bool', 'boolean' ;  type = 'boolean'
-       when 'date'            ;  type = 'java.util.Date'  # or java.util.Calendar
-       when 'timestamp'       ;  type = 'java.util.Date'  # or java.util.Calendar
-       when 'money'           ;  type = 'double'
-       end
-     end
-     var = {
-       :name  =&gt; column['name'],
-       :type  =&gt; type,
-       :desc  =&gt; column['desc'],
-     }
-     variables &lt;&lt; var
-     ## 外部参照キー
-     if (ref = column['ref']) != nil
-       var = {
-         :name =&gt; column['ref-name'] || column['name'].sub(/_id$/, ''),
-         :type =&gt; ref['table']['class'],
-         :desc =&gt; ref['table']['desc']
-       }
-       ref_variables &lt;&lt; var
-     end
-   end
-   variables.concat(ref_variables)
+   <span class="k">end</span>
 
 
-   ## ファイルの出力を開始
+   <span class="p">##</span> <span class="err">クラス定義情報</span>
+   <span class="n">klass</span> <span class="p">=</span> <span class="p">{</span>
+     <span class="p">:</span><span class="n">name</span>       <span class="p">=&gt;</span> <span class="n">table</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span>   <span class="p">||</span> <span class="n">camel_case</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]),</span>
+     <span class="p">:</span><span class="k">package</span>    <span class="p">=&gt;</span> <span class="n">table</span><span class="p">[</span><span class="s1">'package'</span><span class="p">]</span> <span class="p">||</span> <span class="n">properties</span><span class="p">[</span><span class="s1">'package'</span><span class="p">],</span>    <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+     <span class="p">:</span><span class="n">parent</span>     <span class="p">=&gt;</span> <span class="n">table</span><span class="p">[</span><span class="s1">'parent'</span><span class="p">]</span>  <span class="p">||</span> <span class="n">properties</span><span class="p">[</span><span class="s1">'parent'</span><span class="p">],</span>     <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+     <span class="p">:</span><span class="n">desc</span>       <span class="p">=&gt;</span> <span class="n">table</span><span class="p">[</span><span class="s1">'desc'</span><span class="p">],</span>
+   <span class="p">}</span>
 
- %&gt;
-/*
- * DTO class for Java
- *   generated at &lt;%= Time.now.to_s %&gt;
+   <span class="p">##</span> <span class="err">出力ファイル名</span>
+   <span class="n">context</span><span class="p">[:</span><span class="n">output_filename</span><span class="p">]</span> <span class="p">=</span> <span class="n">klass</span><span class="p">[:</span><span class="n">name</span><span class="p">]</span> <span class="p">+</span> <span class="s2">".java"</span>    <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">4</span><span class="p">)</span>
 
- */
-&lt;% if klass[:package] %&gt;
-package &lt;%= klass[:package] %&gt;;
-&lt;% end %&gt;
+   <span class="p">##</span> <span class="err">インスタンス変数</span>
+   <span class="n">variables</span> <span class="p">=</span> <span class="p">[]</span>
+   <span class="n">ref_variables</span> <span class="p">=</span> <span class="p">[]</span>
+   <span class="n">table</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">].</span><span class="n">each</span> <span class="k">do</span> <span class="p">|</span><span class="n">column</span><span class="p">|</span>
+     <span class="n">type</span> <span class="p">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span>
+     <span class="n">unless</span> <span class="n">type</span>
+       <span class="n">type</span>   <span class="p">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span>
+       <span class="n">width</span>  <span class="p">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span>
+       <span class="k">case</span> <span class="n">type</span>
+       <span class="n">when</span> <span class="s1">'char'</span>            <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="p">(</span><span class="c1">!width || width == 1) ? 'char' : 'String'
+</span>       <span class="n">when</span> <span class="s1">'short'</span>           <span class="p">;</span>
+       <span class="n">when</span> <span class="s1">'int'</span><span class="p">,</span> <span class="s1">'integer'</span>  <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'int'</span>
+       <span class="n">when</span> <span class="s1">'str'</span><span class="p">,</span> <span class="s1">'string'</span>   <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="n">width</span> <span class="p">==</span> <span class="m">1</span> <span class="p">?</span> <span class="s1">'char'</span> <span class="p">:</span> <span class="s1">'String'</span>
+       <span class="n">when</span> <span class="s1">'text'</span>            <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="n">width</span> <span class="p">==</span> <span class="m">1</span> <span class="p">?</span> <span class="s1">'char'</span> <span class="p">:</span> <span class="s1">'String'</span>
+       <span class="n">when</span> <span class="s1">'float'</span>           <span class="p">;</span>
+       <span class="n">when</span> <span class="s1">'double'</span>          <span class="p">;</span>
+       <span class="n">when</span> <span class="s1">'bool'</span><span class="p">,</span> <span class="s1">'boolean'</span> <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'boolean'</span>
+       <span class="n">when</span> <span class="s1">'date'</span>            <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'java.util.Date'</span>  <span class="p">#</span> <span class="k">or</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Calendar</span>
+       <span class="n">when</span> <span class="s1">'timestamp'</span>       <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'java.util.Date'</span>  <span class="p">#</span> <span class="k">or</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Calendar</span>
+       <span class="n">when</span> <span class="s1">'money'</span>           <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'double'</span>
+       <span class="k">end</span>
+     <span class="k">end</span>
+     <span class="n">var</span> <span class="p">=</span> <span class="p">{</span>
+       <span class="p">:</span><span class="n">name</span>  <span class="p">=&gt;</span> <span class="n">column</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span>
+       <span class="p">:</span><span class="n">type</span>  <span class="p">=&gt;</span> <span class="n">type</span><span class="p">,</span>
+       <span class="p">:</span><span class="n">desc</span>  <span class="p">=&gt;</span> <span class="n">column</span><span class="p">[</span><span class="s1">'desc'</span><span class="p">],</span>
+     <span class="p">}</span>
+     <span class="n">variables</span> <span class="p">&lt;&lt;</span> <span class="n">var</span>
+     <span class="p">##</span> <span class="err">外部参照キー</span>
+     <span class="k">if</span> <span class="p">(</span><span class="n">ref</span> <span class="p">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'ref'</span><span class="p">])</span> <span class="c1">!= nil
+</span>       <span class="n">var</span> <span class="p">=</span> <span class="p">{</span>
+         <span class="p">:</span><span class="n">name</span> <span class="p">=&gt;</span> <span class="n">column</span><span class="p">[</span><span class="s1">'ref-name'</span><span class="p">]</span> <span class="p">||</span> <span class="n">column</span><span class="p">[</span><span class="s1">'name'</span><span class="p">].</span><span class="n">sub</span><span class="p">(/</span><span class="n">_id</span><span class="p">$/,</span> <span class="s1">''</span><span class="p">),</span>
+         <span class="p">:</span><span class="n">type</span> <span class="p">=&gt;</span> <span class="n">ref</span><span class="p">[</span><span class="s1">'table'</span><span class="p">][</span><span class="s1">'class'</span><span class="p">],</span>
+         <span class="p">:</span><span class="n">desc</span> <span class="p">=&gt;</span> <span class="n">ref</span><span class="p">[</span><span class="s1">'table'</span><span class="p">][</span><span class="s1">'desc'</span><span class="p">]</span>
+       <span class="p">}</span>
+       <span class="n">ref_variables</span> <span class="p">&lt;&lt;</span> <span class="n">var</span>
+     <span class="k">end</span>
+   <span class="k">end</span>
+   <span class="n">variables</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">ref_variables</span><span class="p">)</span>
 
-/**
- * &lt;%= klass[:desc] %&gt;
 
- */
-&lt;% extends = klass[:parent] ? ' extends ' + klass[:parent] : '' %&gt;
-public class &lt;%= klass[:name] %&gt;&lt;% extends %&gt; implements java.io.Serializable {
+   <span class="p">##</span> <span class="err">ファイルの出力を開始</span>
 
-&lt;% ## インスタンス変数 %&gt;
-&lt;% variables.each do |var|  %&gt;
-&lt;%   vartype = '%-12s' % var[:type] %&gt;
-&lt;%   varname = '%-12s' % (var[:name]+';') %&gt;
-    private  &lt;%= vartype %&gt; &lt;%= _(varname) %&gt;  /* &lt;%= var[:desc] %&gt; */
-&lt;% end %&gt;
+ <span class="p">%&gt;</span>
+<span class="p">/*</span>
+ <span class="p">*</span> <span class="n">DTO</span> <span class="n">class</span> <span class="n">for</span> <span class="n">Java</span>
+ <span class="p">*</span>   <span class="n">generated</span> <span class="n">at</span> <span class="p">&lt;%=</span> <span class="n">Time</span><span class="p">.</span><span class="n">now</span><span class="p">.</span><span class="n">to_s</span> <span class="p">%&gt;</span>
 
-&lt;% ## getter/setter %&gt;
-&lt;% variables.each do |var| %&gt;
-&lt;%   vname  = var[:name] %&gt;
-&lt;%   vtype  = var[:type] %&gt;
-&lt;%   getter = "#{vtype == 'boolean' ? 'is' : 'get'}#{camel_case(vname)}" %&gt;
-&lt;%   setter = "set#{camel_case(vname)}" %&gt;
-    public &lt;%= vtype %&gt; &lt;%= getter %&gt;() { return &lt;%= _(vname) %&gt; }
-    public void &lt;%=setter%&gt;(&lt;%=vtype%&gt; &lt;%=_(vname)%&gt;) { this.&lt;%=_(vname)%&gt; = &lt;%=_(vname)%&gt;; }
-&lt;% end %&gt;
+ <span class="p">*/</span>
+<span class="p">&lt;%</span> <span class="k">if</span> <span class="n">klass</span><span class="p">[:</span><span class="k">package</span><span class="p">]</span> <span class="p">%&gt;</span>
+<span class="k">package</span> <span class="p">&lt;%=</span> <span class="n">klass</span><span class="p">[:</span><span class="k">package</span><span class="p">]</span> <span class="p">%&gt;;</span>
+<span class="p">&lt;%</span> <span class="k">end</span> <span class="p">%&gt;</span>
 
-}
+<span class="p">/**</span>
+ <span class="p">*</span> <span class="p">&lt;%=</span> <span class="n">klass</span><span class="p">[:</span><span class="n">desc</span><span class="p">]</span> <span class="p">%&gt;</span>
 
-</code></pre>
-</div>
+ <span class="p">*/</span>
+<span class="p">&lt;%</span> <span class="n">extends</span> <span class="p">=</span> <span class="n">klass</span><span class="p">[:</span><span class="n">parent</span><span class="p">]</span> <span class="p">?</span> <span class="s1">' extends '</span> <span class="p">+</span> <span class="n">klass</span><span class="p">[:</span><span class="n">parent</span><span class="p">]</span> <span class="p">:</span> <span class="s1">''</span> <span class="p">%&gt;</span>
+<span class="k">public</span> <span class="n">class</span> <span class="p">&lt;%=</span> <span class="n">klass</span><span class="p">[:</span><span class="n">name</span><span class="p">]</span> <span class="p">%&gt;&lt;%</span> <span class="n">extends</span> <span class="p">%&gt;</span> <span class="n">implements</span> <span class="n">java</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">Serializable</span> <span class="p">{</span>
+
+<span class="p">&lt;%</span> <span class="p">##</span> <span class="err">インスタンス変数</span> <span class="p">%&gt;</span>
+<span class="p">&lt;%</span> <span class="n">variables</span><span class="p">.</span><span class="n">each</span> <span class="k">do</span> <span class="p">|</span><span class="n">var</span><span class="p">|</span>  <span class="p">%&gt;</span>
+<span class="p">&lt;%</span>   <span class="n">vartype</span> <span class="p">=</span> <span class="s1">'%-12s'</span> <span class="p">%</span> <span class="n">var</span><span class="p">[:</span><span class="n">type</span><span class="p">]</span> <span class="p">%&gt;</span>
+<span class="p">&lt;%</span>   <span class="n">varname</span> <span class="p">=</span> <span class="s1">'%-12s'</span> <span class="p">%</span> <span class="p">(</span><span class="n">var</span><span class="p">[:</span><span class="n">name</span><span class="p">]+</span><span class="s1">';'</span><span class="p">)</span> <span class="p">%&gt;</span>
+    <span class="n">private</span>  <span class="p">&lt;%=</span> <span class="n">vartype</span> <span class="p">%&gt;</span> <span class="p">&lt;%=</span> <span class="n">_</span><span class="p">(</span><span class="n">varname</span><span class="p">)</span> <span class="p">%&gt;</span>  <span class="p">/*</span> <span class="p">&lt;%=</span> <span class="n">var</span><span class="p">[:</span><span class="n">desc</span><span class="p">]</span> <span class="p">%&gt;</span> <span class="p">*/</span>
+<span class="p">&lt;%</span> <span class="k">end</span> <span class="p">%&gt;</span>
+
+<span class="p">&lt;%</span> <span class="p">##</span> <span class="n">getter</span><span class="p">/</span><span class="n">setter</span> <span class="p">%&gt;</span>
+<span class="p">&lt;%</span> <span class="n">variables</span><span class="p">.</span><span class="n">each</span> <span class="k">do</span> <span class="p">|</span><span class="n">var</span><span class="p">|</span> <span class="p">%&gt;</span>
+<span class="p">&lt;%</span>   <span class="n">vname</span>  <span class="p">=</span> <span class="n">var</span><span class="p">[:</span><span class="n">name</span><span class="p">]</span> <span class="p">%&gt;</span>
+<span class="p">&lt;%</span>   <span class="n">vtype</span>  <span class="p">=</span> <span class="n">var</span><span class="p">[:</span><span class="n">type</span><span class="p">]</span> <span class="p">%&gt;</span>
+<span class="p">&lt;%</span>   <span class="n">getter</span> <span class="p">=</span> <span class="s2">"#{vtype == 'boolean' ? 'is' : 'get'}#{camel_case(vname)}"</span> <span class="p">%&gt;</span>
+<span class="p">&lt;%</span>   <span class="n">setter</span> <span class="p">=</span> <span class="s2">"set#{camel_case(vname)}"</span> <span class="p">%&gt;</span>
+    <span class="k">public</span> <span class="p">&lt;%=</span> <span class="n">vtype</span> <span class="p">%&gt;</span> <span class="p">&lt;%=</span> <span class="n">getter</span> <span class="p">%&gt;()</span> <span class="p">{</span> <span class="n">return</span> <span class="p">&lt;%=</span> <span class="n">_</span><span class="p">(</span><span class="n">vname</span><span class="p">)</span> <span class="p">%&gt;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="p">&lt;%=</span><span class="n">setter</span><span class="p">%&gt;(&lt;%=</span><span class="n">vtype</span><span class="p">%&gt;</span> <span class="p">&lt;%=</span><span class="n">_</span><span class="p">(</span><span class="n">vname</span><span class="p">)%&gt;)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.&lt;%=</span><span class="n">_</span><span class="p">(</span><span class="n">vname</span><span class="p">)%&gt;</span> <span class="p">=</span> <span class="p">&lt;%=</span><span class="n">_</span><span class="p">(</span><span class="n">vname</span><span class="p">)%&gt;;</span> <span class="p">}</span>
+<span class="p">&lt;%</span> <span class="k">end</span> <span class="p">%&gt;</span>
+
+<span class="p">}</span>
+
+</code></pre></div></div>
 
 <h3 id="実行例-1">実行例</h3>
 
@@ -1412,90 +1404,88 @@ public class &lt;%= klass[:name] %&gt;&lt;% extends %&gt; implements java.io.Ser
 
 <p><a href="../../images/0011-YAML/Group.java">Group.java</a> - 自動生成された DTO クラス</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/*
- * DTO class for Java
- *   generated at Sun Oct 02 02:49:29 JST 2005
- */
-package my;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">/*</span>
+ <span class="p">*</span> <span class="n">DTO</span> <span class="n">class</span> <span class="n">for</span> <span class="n">Java</span>
+ <span class="p">*</span>   <span class="n">generated</span> <span class="n">at</span> <span class="n">Sun</span> <span class="n">Oct</span> <span class="m">02</span> <span class="m">02</span><span class="p">:</span><span class="m">49</span><span class="p">:</span><span class="m">29</span> <span class="n">JST</span> <span class="m">2005</span>
+ <span class="p">*/</span>
+<span class="k">package</span> <span class="n">my</span><span class="p">;</span>
 
-/**
- * グループマスターテーブル
- */
-public class Group implements java.io.Serializable {
+<span class="p">/**</span>
+ <span class="p">*</span> <span class="err">グループマスターテーブル</span>
+ <span class="p">*/</span>
+<span class="k">public</span> <span class="n">class</span> <span class="n">Group</span> <span class="n">implements</span> <span class="n">java</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">Serializable</span> <span class="p">{</span>
 
-    private  int          id;           /* グループID */
-    private  String       name;         /* 名前 */
-    private  String       desc;         /* 摘要 */
-    private  java.util.Date created_on;   /* 作成時刻 */
-    private  java.util.Date updated_on;   /* 更新時刻 */
+    <span class="n">private</span>  <span class="n">int</span>          <span class="n">id</span><span class="p">;</span>           <span class="p">/*</span> <span class="err">グループ</span><span class="n">ID</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="k">String</span>       <span class="n">name</span><span class="p">;</span>         <span class="p">/*</span> <span class="err">名前</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="k">String</span>       <span class="n">desc</span><span class="p">;</span>         <span class="p">/*</span> <span class="err">摘要</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">created_on</span><span class="p">;</span>   <span class="p">/*</span> <span class="err">作成時刻</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">updated_on</span><span class="p">;</span>   <span class="p">/*</span> <span class="err">更新時刻</span> <span class="p">*/</span>
 
-    public int getId() { return id }
-    public void setId(int id) { this.id = id; }
-    public String getName() { return name }
-    public void setName(String name) { this.name = name; }
-    public String getDesc() { return desc }
-    public void setDesc(String desc) { this.desc = desc; }
-    public java.util.Date getCreatedOn() { return created_on }
-    public void setCreatedOn(java.util.Date created_on) { this.created_on = created_on; }
-    public java.util.Date getUpdatedOn() { return updated_on }
-    public void setUpdatedOn(java.util.Date updated_on) { this.updated_on = updated_on; }
+    <span class="k">public</span> <span class="n">int</span> <span class="nf">getId</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">id</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setId</span><span class="p">(</span><span class="n">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="k">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">name</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setName</span><span class="p">(</span><span class="k">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="k">String</span> <span class="n">getDesc</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">desc</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setDesc</span><span class="p">(</span><span class="k">String</span> <span class="n">desc</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">desc</span> <span class="p">=</span> <span class="n">desc</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">getCreatedOn</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">created_on</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setCreatedOn</span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">created_on</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">created_on</span> <span class="p">=</span> <span class="n">created_on</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">getUpdatedOn</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">updated_on</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setUpdatedOn</span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">updated_on</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">updated_on</span> <span class="p">=</span> <span class="n">updated_on</span><span class="p">;</span> <span class="p">}</span>
 
-}
+<span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>User.java では外部参照キーもインスタンス変数として追加されていることがわかります。</p>
 
 <p><a href="../../images/0011-YAML/User.java">User.java</a> - 自動生成された DTO クラス</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/*
- * DTO class for Java
- *   generated at Sun Oct 02 02:49:29 JST 2005
- */
-package my;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">/*</span>
+ <span class="p">*</span> <span class="n">DTO</span> <span class="n">class</span> <span class="n">for</span> <span class="n">Java</span>
+ <span class="p">*</span>   <span class="n">generated</span> <span class="n">at</span> <span class="n">Sun</span> <span class="n">Oct</span> <span class="m">02</span> <span class="m">02</span><span class="p">:</span><span class="m">49</span><span class="p">:</span><span class="m">29</span> <span class="n">JST</span> <span class="m">2005</span>
+ <span class="p">*/</span>
+<span class="k">package</span> <span class="n">my</span><span class="p">;</span>
 
-/**
- * ユーザマスターテーブル
- */
-public class User implements java.io.Serializable {
+<span class="p">/**</span>
+ <span class="p">*</span> <span class="err">ユーザマスターテーブル</span>
+ <span class="p">*/</span>
+<span class="k">public</span> <span class="n">class</span> <span class="n">User</span> <span class="n">implements</span> <span class="n">java</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">Serializable</span> <span class="p">{</span>
 
-    private  int          id;           /* ユーザID */
-    private  String       name;         /* 名前 */
-    private  String       desc;         /* 摘要 */
-    private  String       email;        /* メールアドレス */
-    private  int          group_id;     /* 所属するグループのID */
-    private  int          age;          /* 年齢 */
-    private  char         gender;       /* 性別 */
-    private  java.util.Date created_on;   /* 作成時刻 */
-    private  java.util.Date updated_on;   /* 更新時刻 */
-    private  Group        group;        /* グループマスターテーブル */
+    <span class="n">private</span>  <span class="n">int</span>          <span class="n">id</span><span class="p">;</span>           <span class="p">/*</span> <span class="err">ユーザ</span><span class="n">ID</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="k">String</span>       <span class="n">name</span><span class="p">;</span>         <span class="p">/*</span> <span class="err">名前</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="k">String</span>       <span class="n">desc</span><span class="p">;</span>         <span class="p">/*</span> <span class="err">摘要</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="k">String</span>       <span class="n">email</span><span class="p">;</span>        <span class="p">/*</span> <span class="err">メールアドレス</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="n">int</span>          <span class="n">group_id</span><span class="p">;</span>     <span class="p">/*</span> <span class="err">所属するグループの</span><span class="n">ID</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="n">int</span>          <span class="n">age</span><span class="p">;</span>          <span class="p">/*</span> <span class="err">年齢</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="n">char</span>         <span class="n">gender</span><span class="p">;</span>       <span class="p">/*</span> <span class="err">性別</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">created_on</span><span class="p">;</span>   <span class="p">/*</span> <span class="err">作成時刻</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">updated_on</span><span class="p">;</span>   <span class="p">/*</span> <span class="err">更新時刻</span> <span class="p">*/</span>
+    <span class="n">private</span>  <span class="n">Group</span>        <span class="n">group</span><span class="p">;</span>        <span class="p">/*</span> <span class="err">グループマスターテーブル</span> <span class="p">*/</span>
 
-    public int getId() { return id }
-    public void setId(int id) { this.id = id; }
-    public String getName() { return name }
-    public void setName(String name) { this.name = name; }
-    public String getDesc() { return desc }
-    public void setDesc(String desc) { this.desc = desc; }
-    public String getEmail() { return email }
-    public void setEmail(String email) { this.email = email; }
-    public int getGroupId() { return group_id }
-    public void setGroupId(int group_id) { this.group_id = group_id; }
-    public int getAge() { return age }
-    public void setAge(int age) { this.age = age; }
-    public char getGender() { return gender }
-    public void setGender(char gender) { this.gender = gender; }
-    public java.util.Date getCreatedOn() { return created_on }
-    public void setCreatedOn(java.util.Date created_on) { this.created_on = created_on; }
-    public java.util.Date getUpdatedOn() { return updated_on }
-    public void setUpdatedOn(java.util.Date updated_on) { this.updated_on = updated_on; }
-    public Group getGroup() { return group }
-    public void setGroup(Group group) { this.group = group; }
+    <span class="k">public</span> <span class="n">int</span> <span class="nf">getId</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">id</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setId</span><span class="p">(</span><span class="n">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="k">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">name</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setName</span><span class="p">(</span><span class="k">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="k">String</span> <span class="n">getDesc</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">desc</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setDesc</span><span class="p">(</span><span class="k">String</span> <span class="n">desc</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">desc</span> <span class="p">=</span> <span class="n">desc</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="k">String</span> <span class="n">getEmail</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">email</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setEmail</span><span class="p">(</span><span class="k">String</span> <span class="n">email</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">email</span> <span class="p">=</span> <span class="n">email</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">int</span> <span class="n">getGroupId</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">group_id</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setGroupId</span><span class="p">(</span><span class="n">int</span> <span class="n">group_id</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">group_id</span> <span class="p">=</span> <span class="n">group_id</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">int</span> <span class="n">getAge</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">age</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setAge</span><span class="p">(</span><span class="n">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">age</span> <span class="p">=</span> <span class="n">age</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">char</span> <span class="n">getGender</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">gender</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setGender</span><span class="p">(</span><span class="n">char</span> <span class="n">gender</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">gender</span> <span class="p">=</span> <span class="n">gender</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">getCreatedOn</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">created_on</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setCreatedOn</span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">created_on</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">created_on</span> <span class="p">=</span> <span class="n">created_on</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">getUpdatedOn</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">updated_on</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setUpdatedOn</span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">updated_on</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">updated_on</span> <span class="p">=</span> <span class="n">updated_on</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">Group</span> <span class="n">getGroup</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">group</span> <span class="p">}</span>
+    <span class="k">public</span> <span class="n">void</span> <span class="n">setGroup</span><span class="p">(</span><span class="n">Group</span> <span class="n">group</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">group</span> <span class="p">=</span> <span class="n">group</span><span class="p">;</span> <span class="p">}</span>
 
-}
+<span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="xml--xsltとの比較">「XML ＋ XSLT」との比較</h2>
 

@@ -315,7 +315,7 @@ Internet Explorer です。</p>
 
 <p><a href="../../images/0008-Win32OLE/zip_com.rb">zip_com.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="n">ie</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"InternetExplorer.Application"</span><span class="p">)</span>
 <span class="n">ie</span><span class="o">.</span><span class="no">Navigate</span> <span class="s2">"http://apollo.u-gakugei.ac.jp/~sunaoka/ajax/ajaxzip/"</span>
@@ -335,8 +335,7 @@ Internet Explorer です。</p>
   <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="n">ie</span><span class="o">.</span><span class="no">Document</span><span class="p">.</span><span class="nf">getElementByID</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span><span class="o">.</span><span class="no">Value</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="../../articles/0003/0003-Win32OLE.html">Win32OLE活用法第一回</a>で
 すでに Internet Explorer を使った例について紹介しています。</p>
@@ -466,11 +465,11 @@ COM 対応させる手間が省けます。</p>
 
 <p><a href="../../images/0008-Win32OLE/zip_wsh.rb">zip_wsh.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 <span class="nb">require</span> <span class="s1">'Win32API'</span>
 
 <span class="k">class</span> <span class="nc">Clipboard</span>
-  <span class="nc">OpenClipboard</span> <span class="o">=</span> <span class="no">Win32API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'user32'</span><span class="p">,</span> <span class="s1">'OpenClipboard'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'I'</span><span class="p">],</span> <span class="s1">'I'</span><span class="p">);</span>
+  <span class="no">OpenClipboard</span> <span class="o">=</span> <span class="no">Win32API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'user32'</span><span class="p">,</span> <span class="s1">'OpenClipboard'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'I'</span><span class="p">],</span> <span class="s1">'I'</span><span class="p">);</span>
   <span class="no">CloseClipboard</span> <span class="o">=</span> <span class="no">Win32API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'user32'</span><span class="p">,</span> <span class="s1">'CloseClipboard'</span><span class="p">,</span> <span class="p">[],</span> <span class="s1">'I'</span><span class="p">);</span>
   <span class="no">EmptyClipboard</span> <span class="o">=</span> <span class="no">Win32API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'user32'</span><span class="p">,</span> <span class="s1">'EmptyClipboard'</span><span class="p">,</span> <span class="p">[],</span> <span class="s1">'I'</span><span class="p">);</span>
   <span class="no">IsClipboardFormatAvailable</span> <span class="o">=</span> <span class="no">Win32API</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'user32'</span><span class="p">,</span> <span class="s1">'IsClipboardFormatAvailable'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'I'</span><span class="p">],</span> <span class="s1">'I'</span><span class="p">);</span>
@@ -518,8 +517,7 @@ COM 対応させる手間が省けます。</p>
 <span class="n">wsh</span><span class="o">.</span><span class="no">SendKeys</span><span class="p">(</span><span class="s2">"{TAB}^c"</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="no">Clipboard</span><span class="o">::</span><span class="no">GetText</span><span class="p">()</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このスクリプトも先ほどと同様に郵便番号を自動的に入力させて、
 都道府県と市区町村を標準出力に出力させています。</p>
@@ -767,7 +765,7 @@ POST で CGI を呼び出すときは、COM の型と Ruby の型との間の変
 
 <p><a href="../../images/0008-Win32OLE/hatena.rb">hatena.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 <span class="kp">include</span> <span class="no">WIN32OLE</span><span class="o">::</span><span class="no">VARIANT</span>
 
 <span class="n">ie</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"InternetExplorer.Application"</span><span class="p">)</span>
@@ -786,8 +784,7 @@ POST で CGI を呼び出すときは、COM の型と Ruby の型との間の変
 <span class="n">query_string</span> <span class="o">=</span> <span class="s2">"mode=login&amp;backurl=http%3a%2f%2fwww%2ehatena%2ene%2ejp%2f&amp;key=myname&amp;password=mypassword"</span>
 <span class="n">ie</span><span class="p">.</span><span class="nf">navigate_post</span> <span class="n">url</span><span class="p">,</span><span class="n">query_string</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>key=myname&amp;password=mypassword のところに自分のはてなのユーザ名とパスワードを
 入力してください。</p>

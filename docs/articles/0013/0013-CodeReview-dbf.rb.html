@@ -189,7 +189,7 @@
                         
 <p><a href="../../articles/0013/0013-CodeReview.html">あなたの Ruby コードを添削します 【第 3 回】 dbf.rb</a> で解説した、添削前のソースコードです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="cm">=begin
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">=begin
 		dbf.rb
 		
 		05-11-21
@@ -213,7 +213,7 @@
 		<span class="vi">@recordbytes</span> <span class="o">=</span> <span class="kp">nil</span>	<span class="c1"># レコードのバイト数</span>
 		<span class="vi">@reserve</span> <span class="o">=</span> <span class="kp">nil</span>			<span class="c1"># 予約領域など</span>
 	<span class="k">end</span>
-	<span class="kp">attr_accessor</span> <span class="ss">:version</span><span class="p">,</span> <span class="ss">:date1</span><span class="p">,</span> <span class="ss">:date2</span><span class="p">,</span> <span class="ss">:date3</span><span class="p">,</span> <span class="ss">:numrec</span><span class="p">,</span> <span class="ss">:headerbytes</span><span class="p">,</span> <span class="ss">:recordbytes</span><span class="p">,</span> <span class="ss">:reserve</span>
+	<span class="nb">attr_accessor</span> <span class="ss">:version</span><span class="p">,</span> <span class="ss">:date1</span><span class="p">,</span> <span class="ss">:date2</span><span class="p">,</span> <span class="ss">:date3</span><span class="p">,</span> <span class="ss">:numrec</span><span class="p">,</span> <span class="ss">:headerbytes</span><span class="p">,</span> <span class="ss">:recordbytes</span><span class="p">,</span> <span class="ss">:reserve</span>
 <span class="k">end</span>
 
 <span class="c1">#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span>
@@ -231,7 +231,7 @@
 		<span class="vi">@decimal</span> <span class="o">=</span> <span class="mi">0</span>				<span class="c1">#フィールド小数部長</span>
 		<span class="vi">@value</span> <span class="o">=</span> <span class="kp">nil</span>				<span class="c1">#フィールド値</span>
 	<span class="k">end</span>
-	<span class="kp">attr_accessor</span> <span class="ss">:fieldname</span><span class="p">,</span> <span class="ss">:fieldtype</span><span class="p">,</span> <span class="ss">:fieldsize</span><span class="p">,</span> <span class="ss">:decimal</span><span class="p">,</span> <span class="ss">:value</span>
+	<span class="nb">attr_accessor</span> <span class="ss">:fieldname</span><span class="p">,</span> <span class="ss">:fieldtype</span><span class="p">,</span> <span class="ss">:fieldsize</span><span class="p">,</span> <span class="ss">:decimal</span><span class="p">,</span> <span class="ss">:value</span>
 <span class="k">end</span>
 
 <span class="c1">#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++</span>
@@ -496,7 +496,7 @@
 		<span class="k">while</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="p">(</span><span class="vi">@fields</span><span class="p">.</span><span class="nf">numfields</span><span class="p">)</span> <span class="k">do</span>
 			<span class="n">typechar</span> <span class="o">=</span> <span class="vi">@fields</span><span class="p">.</span><span class="nf">item</span><span class="p">(</span><span class="vi">@fields</span><span class="p">.</span><span class="nf">fieldname</span><span class="p">(</span><span class="n">count</span><span class="p">)).</span><span class="nf">fieldtype</span>
 			<span class="k">if</span> <span class="n">typechar</span> <span class="o">==</span> <span class="s2">"N"</span> <span class="n">or</span> <span class="n">typechar</span> <span class="o">==</span> <span class="s2">"F"</span> <span class="k">then</span>
-				<span class="vi">@fields</span><span class="p">.</span><span class="nf">item</span><span class="p">(</span><span class="vi">@fields</span><span class="p">.</span><span class="nf">fieldname</span><span class="p">(</span><span class="n">count</span><span class="p">)).</span><span class="nf">value</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
+				<span class="vi">@fields</span><span class="p">.</span><span class="nf">item</span><span class="p">(</span><span class="vi">@fields</span><span class="p">.</span><span class="nf">fieldname</span><span class="p">(</span><span class="n">count</span><span class="p">)).</span><span class="nf">value</span> <span class="o">=</span> <span class="mf">0.0</span>
 			<span class="k">elsif</span> <span class="n">typechar</span> <span class="o">==</span> <span class="s2">"C"</span> <span class="k">then</span>
 				<span class="vi">@fields</span><span class="p">.</span><span class="nf">item</span><span class="p">(</span><span class="vi">@fields</span><span class="p">.</span><span class="nf">fieldname</span><span class="p">(</span><span class="n">count</span><span class="p">)).</span><span class="nf">value</span> <span class="o">=</span> <span class="s2">""</span>
 			<span class="k">else</span>
@@ -677,8 +677,7 @@
 
 <span class="k">end</span>		<span class="c1"># class DBFrecordset</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
                     </div>

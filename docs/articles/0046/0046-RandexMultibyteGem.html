@@ -309,7 +309,7 @@ SWET として書くテストは各コンポーネントの開発者が作成す
 
 <p>上記テストケースを Capybara と RSpec を使用した擬似コードで表すと、以下のようになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"spec_helper"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"spec_helper"</span>
 <span class="nb">require</span> <span class="s2">"randexp"</span>
 
 <span class="n">describe</span> <span class="s2">"Game Title"</span> <span class="k">do</span>
@@ -326,8 +326,7 @@ SWET として書くテストは各コンポーネントの開発者が作成す
 <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Mobage Developers に何らかのリリースが入る度、上記のようなテストケース群から成るリグレッションテストを実行しており一定の効果を上げられていたのですが、ある問題に関してはこのリグレッションテストでは検知できないという懸念がありました。</p>
 
@@ -363,15 +362,14 @@ SWET として書くテストは各コンポーネントの開発者が作成す
 
 <p>「業務で困っていたこと」に記述したテストコードにあるように、これまではテスト用のランダムな入力パラメータの生成には <a href="http://rubygems.org/gems/randexp">randexp</a>を使用していました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp"</span>
  
 <span class="sr">/\w{10}/</span><span class="p">.</span><span class="nf">gen</span>               <span class="c1">#=&gt; "breastwood" 英数字 10 文字から生成された文字列を返す</span>
 <span class="sr">/[:email:]/</span><span class="p">.</span><span class="nf">gen</span>            <span class="c1">#=&gt; "chint@phasma.example.org" ランダムな文字列から生成されたメールアドレスを返す</span>
 <span class="sr">/[:phone_number:]{10}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "862-229-5689" ランダムな数字から生成された電話番号を返す</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>重複を許可しない入力パラメータの生成などに非常に便利な gem パッケージなのですが、やはり日本語対応のプロダクトのテスト用途としては日本語文字列のランダム生成ができないことが課題でした。</p>
 
@@ -379,7 +377,7 @@ SWET として書くテストは各コンポーネントの開発者が作成す
 
 <p>randexp では補いきれなかった日本語のランダム文字列生成を、 randexp を拡張する形で実装しました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp-multibyte"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp-multibyte"</span>
 
 <span class="sr">/[:hiragana:]{3}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "けさぎ"    ひらがな 3 文字から生成された文字列を返す</span>
 <span class="sr">/[:katakana:]{2}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "ドヘ"      カタカナ 2 文字から生成された文字列を返す</span>
@@ -388,17 +386,15 @@ SWET として書くテストは各コンポーネントの開発者が作成す
 <span class="sr">/\w{7}/</span><span class="p">.</span><span class="nf">gen</span>           <span class="c1">#=&gt; "lapwork"  randexp の機能は継承</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>また、私は韓国向けの <a href="https://developer.dena-seoul.kr/">Mobage Developers Korea</a> のテストも担当しているため、韓国語の生成にも対応しました。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="sr">/[:hangeul:]{7}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "콃콿텤헔혓튿혓" ハングル文字 7 文字から生成された文字列を返す</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sr">/[:hangeul:]{7}/</span><span class="p">.</span><span class="nf">gen</span> <span class="c1">#=&gt; "콃콿텤헔혓튿혓" ハングル文字 7 文字から生成された文字列を返す</span>
 <span class="sr">/[:korean:]{5}/</span><span class="p">.</span><span class="nf">gen</span>  <span class="c1">#=&gt; "핫콂쾐컮퍊"    hangeul のエイリアス</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="gem-パッケージの作成公開">gem パッケージの作成・公開</h2>
 
@@ -497,7 +493,7 @@ $ git push -u origin master</code></pre></figure>
 <p>github への登録が終われば、 Bundler で生成したひな形を編集して gem パッケージを実装していきます。
 まず、 randexp-multibyte.gemspec ファイルを編集します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 <span class="n">lib</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../lib'</span><span class="p">,</span> <span class="kp">__FILE__</span><span class="p">)</span>
 <span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span> <span class="k">unless</span> <span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">lib</span><span class="p">)</span>
 <span class="nb">require</span> <span class="s1">'randexp/multibyte/version'</span>
@@ -529,8 +525,7 @@ $ git push -u origin master</code></pre></figure>
 <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ひとまず TODO の summary と description の項目を埋めれば OK です。 homepage には先ほど登録した github のリポジトリの URL を記入すると良いでしょう。</p>
 
@@ -542,15 +537,14 @@ $ git push -u origin master</code></pre></figure>
 
 <p>次にバージョンナンバーの定義です。 lib/randexp/multibyte/version.rb ファイルを編集しバージョンナンバーを記述します。 <strong>bundle gem</strong> コマンドで作成したひな形は以下のようになっています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Randexp</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Randexp</span>
   <span class="k">module</span> <span class="nn">Multibyte</span>
     <span class="no">VERSION</span> <span class="o">=</span> <span class="s2">"0.0.1"</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>今回のバージョンナンバーは初期状態の 0.0.1 のままにしてあります。</p>
 
@@ -558,7 +552,7 @@ $ git push -u origin master</code></pre></figure>
 
 <p>あとは通常の Module や Class を実装するのと同じ要領で、 gem パッケージの機能を実装していきます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
  
 <span class="k">module</span> <span class="nn">Randexp</span>
   <span class="k">module</span> <span class="nn">Multibyte</span>
@@ -567,8 +561,7 @@ $ git push -u origin master</code></pre></figure>
 <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Bundler で gem パッケージを作る際の注意点として、 Bundler で生成されるひな形は名前空間が Module として定義されるということが挙げられます。</p>
 
@@ -576,27 +569,25 @@ $ git push -u origin master</code></pre></figure>
 
 <p>しかし拡張元の Randexp は Class として定義されているため、 Bundler のひな形ファイルから randexp を require すると Class と Module の Randexp を二重に定義することになるためエラーが発生します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
 <span class="nb">require</span> <span class="s2">"randexp"</span> <span class="c1"># class Randexp</span>
  
 <span class="k">module</span> <span class="nn">Randexp</span> <span class="c1">#=&gt; TypeError: Randexp is not a module</span>
   <span class="k">module</span> <span class="nn">Multibyte</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Bundler には Class による定義のひな形を生成するオプションは現状ないようなので、 Class を定義したい場合は Bundler が生成したファイルの module という記述を class に置換する必要があります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"randexp/multibyte/version"</span>
 <span class="nb">require</span> <span class="s2">"randexp"</span>
  
 <span class="k">class</span> <span class="nc">Randexp</span>
   <span class="k">class</span> <span class="nc">Multibyte</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>作成中の gem パッケージをローカルで試したい場合は、</p>
 
@@ -663,14 +654,13 @@ $  ruby -r randexp-multibyte -e 'p /[:japanese:]/.gen'
 
 <p>randexp-multibyte には以下のようなコードが含まれていたため、 Ruby 2.0.0 未満で require するとコードに不正な文字列が含まれていると解釈され、エラーとなります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">hiragana</span><span class="p">(</span><span class="n">options</span> <span class="o">=</span> <span class="p">{})</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">hiragana</span><span class="p">(</span><span class="n">options</span> <span class="o">=</span> <span class="p">{})</span>
   <span class="n">length</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:length</span><span class="p">]</span> <span class="o">||</span> <span class="mi">1</span>
-  <span class="n">length</span><span class="p">.</span><span class="nf">of</span> <span class="p">{</span> <span class="p">(</span><span class="s1">'ぁ'</span><span class="p">.</span><span class="nf">.</span><span class="s1">'ん'</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">pick</span> <span class="p">}.</span><span class="nf">join</span> <span class="c1"># invalid multibyte char (US-ASCII) </span>
+  <span class="n">length</span><span class="p">.</span><span class="nf">of</span> <span class="p">{</span> <span class="p">(</span><span class="s1">'ぁ'</span><span class="o">..</span><span class="s1">'ん'</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">pick</span> <span class="p">}.</span><span class="nf">join</span> <span class="c1"># invalid multibyte char (US-ASCII) </span>
 <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>こちらのバグは既に修正済みのバージョン 0.0.3 をリリースしました。
 修正方法としては</p>

@@ -227,7 +227,7 @@
 <p>「httpd.conf を修正したら apache 再起動」をイメージしてみます。
 これは前述の参考サイトにほとんどそのまんま書いてあります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
 
 <span class="n">template</span> <span class="s2">"/tmp/test.conf"</span> <span class="k">do</span>
   <span class="n">notifies</span> <span class="ss">:restart</span><span class="p">,</span> <span class="s2">"service[httpd]"</span>
@@ -235,8 +235,7 @@
 
 <span class="n">service</span> <span class="s2">"httpd"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これだけです。Service リソースは引数と同名の init スクリプトを探して実行します。service コマンドと同じですね<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
@@ -267,7 +266,7 @@
 <p>変更時に処理を指定する際に “notifies” を使いますが、notifies のデフォルトは delayed となり、キューに貯められて Chef の処理の最後にまとめて実行されます。
 今回は、処理がひとつしかないので特に困りませんが、依存関係のある複数の処理が走る場合に、即時実行したい場合は、:immediately を指定しましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
 
 <span class="n">template</span> <span class="s2">"/tmp/test.conf"</span> <span class="k">do</span>
   <span class="n">notifies</span> <span class="ss">:restart</span><span class="p">,</span> <span class="s2">"service[httpd]"</span><span class="p">,</span> <span class="ss">:immediately</span>
@@ -275,8 +274,7 @@
 
 <span class="n">service</span> <span class="s2">"httpd"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これで実行してログを確認すると、先程 (delayed) になっていた部分が (immediate) に変わっているはずです。</p>
 
@@ -284,7 +282,7 @@
 
 <p>つまり、</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
 
 <span class="n">template</span> <span class="s2">"/tmp/test.conf"</span> <span class="k">do</span>
  <span class="n">owner</span> <span class="s2">"root"</span>
@@ -298,8 +296,7 @@
   <span class="n">restart_command</span> <span class="s2">"service httpd restart"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>こう書くことができます。</p>
 
@@ -313,7 +310,7 @@
 
 <p>この流れなので「設定ファイルに変更があったら、メール送信」ということにしたいと思います。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
 
 <span class="n">execute</span> <span class="s2">"sendmail"</span> <span class="k">do</span>
   <span class="n">command</span> <span class="s1">'echo "Cook me something tasty." | mail -s "Hello! Chef!" 164c@example.com'</span>
@@ -327,8 +324,7 @@
  <span class="n">notifies</span> <span class="ss">:run</span><span class="p">,</span> <span class="n">resources</span><span class="p">(</span><span class="ss">:execute</span> <span class="o">=&gt;</span> <span class="s2">"sendmail"</span><span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>こんな感じに書いてみます。execute のブロックは呼び出す前に記述しておく必要があります。</p>
 
@@ -336,7 +332,7 @@
 
 <p>Execute リソースのアクションは run と nothing で、デフォルトが run になっているためです。ファイルが変更されたときだけ、実行させるためには nothing にしておきます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># test/recipes/default.rb</span>
 
 <span class="n">execute</span> <span class="s2">"sendmail"</span> <span class="k">do</span>
   <span class="n">command</span> <span class="s1">'echo "Cook me something tasty." | mail -s "Hello! Chef!" morotomi@328w.co.jp'</span>
@@ -351,8 +347,7 @@
  <span class="n">notifies</span> <span class="ss">:run</span><span class="p">,</span> <span class="n">resources</span><span class="p">(</span><span class="ss">:execute</span> <span class="o">=&gt;</span> <span class="s2">"sendmail"</span><span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これで完成です。実行してログとメールを確認してみてください。</p>
 
@@ -376,13 +371,13 @@ Chef以外にも様々な取り組みを行なっていますので、興味が�
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>というか、chef-solo のログを見ていたら内部的にも service コマンドが実行されていました&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>というか、chef-solo のログを見ていたら内部的にも service コマンドが実行されていました <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>sendmail コマンドで外部にメールが送れる環境が必要です&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>sendmail コマンドで外部にメールが送れる環境が必要です <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>日本語では冪等性 (べきとうせい) と言ったりする&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>日本語では冪等性 (べきとうせい) と言ったりする <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

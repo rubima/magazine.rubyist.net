@@ -266,7 +266,7 @@ Nora にも Web::Template というテンプレートエンジンが含まれて
 
 <h6 id="template1rb">template1.rb</h6>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'web/template'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'web/template'</span>
 
 <span class="n">tmpl</span> <span class="o">=</span> <span class="no">Web</span><span class="o">::</span><span class="no">Template</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'filename'</span><span class="o">=&gt;</span><span class="s1">'template1.html'</span><span class="p">)</span>
 <span class="n">tmpl</span><span class="p">.</span><span class="nf">param</span> <span class="o">=</span> <span class="p">{</span>
@@ -279,12 +279,11 @@ Nora にも Web::Template というテンプレートエンジンが含まれて
 <span class="p">}</span>
 <span class="n">tmpl</span><span class="p">.</span><span class="nf">output</span><span class="p">(</span><span class="no">STDOUT</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h6 id="template1html">template1.html</h6>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>\{\{var name=title\}\}<span class="nt">&lt;/h1&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>\{\{var name=title\}\}<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">"1"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
    <span class="nt">&lt;th&gt;</span>name<span class="nt">&lt;/th&gt;</span>
@@ -298,12 +297,11 @@ Nora にも Web::Template というテンプレートエンジンが含まれて
   \{\{/loop\}\}
 <span class="nt">&lt;/table&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h6 id="template1rb-実行結果">template1.rb 実行結果</h6>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>Script Languages<span class="nt">&lt;/h1&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1&gt;</span>Script Languages<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;table</span> <span class="na">border=</span><span class="s">"1"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;tr&gt;</span>
    <span class="nt">&lt;th&gt;</span>name<span class="nt">&lt;/th&gt;</span>
@@ -327,8 +325,7 @@ Nora にも Web::Template というテンプレートエンジンが含まれて
 
 <span class="nt">&lt;/table&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>template1.rb の 3 行目でテンプレートを作成しています。
 4 〜 11 行目でテンプレートの param 変数にデータを設定しています。
@@ -373,7 +370,7 @@ param は通常のハッシュオブジェクトです。基本的にキー：�
 
 <h5 id="xpathcgi">xpath.cgi</h5>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby -Ku</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby -Ku</span>
 <span class="nb">require</span> <span class="s1">'web'</span>
 <span class="nb">require</span> <span class="s1">'web/template'</span>
 <span class="nb">require</span> <span class="s1">'htree'</span>
@@ -409,12 +406,11 @@ param は通常のハッシュオブジェクトです。基本的にキー：�
   <span class="n">api</span><span class="p">.</span><span class="nf">response</span> <span class="n">req</span><span class="p">,</span><span class="n">rsp</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h5 id="xpathhtml">xpath.html</h5>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/1999/xhtml"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=utf-8"</span> <span class="nt">/&gt;</span>
@@ -443,8 +439,7 @@ param は通常のハッシュオブジェクトです。基本的にキー：�
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="次回予告">次回予告</h3>
 

@@ -228,11 +228,10 @@
 
 <p>最初に変数名を間違えてみます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">str</span> <span class="o">=</span> <span class="s2">"rubima"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">str</span> <span class="o">=</span> <span class="s2">"rubima"</span>
 <span class="nb">print</span> <span class="n">st</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このプログラムを RDE で実行すると、
 下のようなメッセージが表示されます。
@@ -260,10 +259,9 @@ Ruby がそんな変数は知らないとエラーを出して終了してしま
 
 <p>次にメソッド名を間違えてみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">priny</span> <span class="s2">"hogehoge"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">priny</span> <span class="s2">"hogehoge"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><img src="../../images/0014-CGIProgrammingForRubyBeginners-2/error2.jpg" alt="error2.jpg" /></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">C:/rubima014-cgi/error2.rb:1: undefined method `priny' for main:Object (NoMethodError)</code></pre></figure>
@@ -297,10 +295,9 @@ print にすれば修正は完了です。</p>
 通常引数は付けられません。
 間違って引数を付けてしまった場合、どうなるか見てみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">print</span> <span class="s2">"aaa  bbbb ccccc"</span><span class="p">.</span><span class="nf">to_s</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">" "</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span> <span class="s2">"aaa  bbbb ccccc"</span><span class="p">.</span><span class="nf">to_s</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">" "</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><img src="../../images/0014-CGIProgrammingForRubyBeginners-2/error3.jpg" alt="error3.jpg" /></p>
 
 <p>エラーメッセージは下記のようになります。</p>
@@ -325,7 +322,7 @@ print にすれば修正は完了です。</p>
 <p>文法エラーといってもさまざまなものがあります。
 その中でも end 忘れ、括弧の閉じ忘れなどは比較的遭遇しやすいエラーだと思います。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span>
   <span class="nb">print</span> <span class="s2">"OK: "</span>
   <span class="nb">puts</span> <span class="n">i</span>
@@ -336,8 +333,7 @@ print にすれば修正は完了です。</p>
 <span class="nb">puts</span> <span class="s2">"BYE"</span>
 <span class="nb">puts</span> <span class="s2">"Program END"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0014-CGIProgrammingForRubyBeginners-2/error4.jpg" alt="error4.jpg" /></p>
 
@@ -353,12 +349,11 @@ C:/rubima014-cgi/error4.rb:10 と表示されているので、
 
 <p>次に引数の「)」忘れについて見てみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"hogehoge"</span> 
 <span class="nb">print</span> <span class="mi">345</span>
  
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0014-CGIProgrammingForRubyBeginners-2/error5.jpg" alt="error5.jpg" /></p>
 
@@ -380,10 +375,9 @@ Ruby のエラーメッセージの行が一致しないので、
 筆者も一度経験したことがありますが、
 なかなかエラーの原因が見付けられませんでした。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">puts</span><span class="err">　</span><span class="mi">123</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">puts</span><span class="err">　</span><span class="mi">123</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0014-CGIProgrammingForRubyBeginners-2/error6.jpg" alt="error6.jpg" /></p>
 
@@ -402,13 +396,12 @@ Ruby が全角空白をどう扱って良いか分からないために
 <p>最後はファイルの扱いについてです。
 例えば、ファイルを開く時にファイル名を間違えるとどうなるのでしょうか？</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"erro1.rb"</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"erro1.rb"</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="nf">read</span>
 <span class="nb">print</span> <span class="n">s</span> 
 <span class="n">f</span><span class="p">.</span><span class="nf">close</span> 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0014-CGIProgrammingForRubyBeginners-2/error7.jpg" alt="error7.jpg" /></p>
 
@@ -504,7 +497,7 @@ p が “るびま” をあるルールに則って変換してから表示さ�
 
 <p>error8.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">b</span> <span class="o">&gt;</span> <span class="n">a</span>
@@ -513,8 +506,7 @@ p が “るびま” をあるルールに則って変換してから表示さ�
   <span class="nb">puts</span> <span class="s2">"b is not larger than a."</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>原因を調べるために
 p を使ってプリントデバッグを行います。
@@ -523,7 +515,7 @@ p を使ってプリントデバッグを行います。
 
 <p>error8-p.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">b</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="nb">p</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
@@ -536,8 +528,7 @@ p を使ってプリントデバッグを行います。
   <span class="nb">p</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span>
   <span class="nb">puts</span> <span class="s2">"b is not larger than a."</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このプログラムを何回か実行させると分かりますが、
 変数 b はいつも 2 以下です。</p>

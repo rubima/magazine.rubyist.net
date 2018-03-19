@@ -350,7 +350,7 @@
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 検索対象のテーブル</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 検索対象のテーブル</span>
 <span class="n">table_create</span> <span class="no">Entries</span> <span class="no">TABLE_HASH_KEY</span> <span class="no">ShortText</span>
 <span class="c1"># 全文検索用の語彙表。トークナイザーとしてN-gramを使用。</span>
 <span class="n">table_create</span> <span class="no">Terms</span> <span class="no">TABLE_PAT_KEY</span> <span class="no">ShortText</span> <span class="o">--</span><span class="n">default_tokenizer</span> <span class="no">TokenBigram</span>
@@ -369,15 +369,14 @@
 <span class="c1"># 完全一致検索用の索引</span>
 <span class="n">column_create</span> <span class="no">Names</span> <span class="no">Entries_name</span> <span class="no">COLUMN_INDEX</span><span class="o">|</span><span class="no">WITH_POSITION</span> <span class="no">Entries</span> <span class="nb">name</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>rroonga の DSL</dt>
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Groonga</span><span class="o">::</span><span class="no">Schema</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span> <span class="o">|</span><span class="n">schema</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Groonga</span><span class="o">::</span><span class="no">Schema</span><span class="p">.</span><span class="nf">define</span> <span class="k">do</span> <span class="o">|</span><span class="n">schema</span><span class="o">|</span>
   <span class="c1"># 完全一致検索用の語彙表。トークナイザーはなし。</span>
   <span class="n">schema</span><span class="p">.</span><span class="nf">create_table</span><span class="p">(</span><span class="s2">"Names"</span><span class="p">,</span>
                       <span class="ss">:type</span> <span class="o">=&gt;</span> <span class="ss">:hash</span><span class="p">,</span>
@@ -410,8 +409,7 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="登録例-るりまサーチ">登録例: るりまサーチ</h3>
 <p><img src="../../images/0031-RuremaSearch/20100901_11.png" alt="20100901_11.png" /></p>
@@ -425,22 +423,21 @@
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">load</span> <span class="o">--</span><span class="n">table</span> <span class="no">Entries</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">load</span> <span class="o">--</span><span class="n">table</span> <span class="no">Entries</span>
 <span class="p">[</span>
   <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">,</span> <span class="s2">"summary"</span><span class="p">,</span> <span class="s2">"description"</span><span class="p">],</span>
   <span class="p">[</span><span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">],</span>
   <span class="p">[</span><span class="s2">"String#gsub"</span><span class="p">,</span> <span class="s2">"gsub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"全部置換"</span><span class="p">]</span>
 <span class="p">]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>rroonga</dt>
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">entries</span> <span class="o">=</span> <span class="no">Groonga</span><span class="p">[</span><span class="s2">"Entries"</span><span class="p">]</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entries</span> <span class="o">=</span> <span class="no">Groonga</span><span class="p">[</span><span class="s2">"Entries"</span><span class="p">]</span>
 <span class="n">entries</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s2">"String#sub"</span><span class="p">,</span>
             <span class="ss">name: </span><span class="s2">"sub"</span><span class="p">,</span>
             <span class="ss">summary: </span><span class="s2">"置換"</span><span class="p">,</span>
@@ -450,8 +447,7 @@
             <span class="ss">summary: </span><span class="s2">"置換"</span><span class="p">,</span>
             <span class="ss">description: </span><span class="s2">"全部置換"</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Ruby で登録データの前処理を行う場合は rroonga を使う方がよいでしょう。Ruby 以外で処理を行う場合はデータから JSON を生成し、groonga の load コマンドを使う方がよいでしょう。るりまサーチは Ruby で前処理<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>をしているので rroonga でデータを登録しています。</p>
 
@@ -467,55 +463,53 @@
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 「description」カラムに「1つが」含まれているエントリを検索</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 「description」カラムに「1つが」含まれているエントリを検索</span>
 <span class="nb">select</span> <span class="no">Entries</span> <span class="n">description</span> <span class="s2">"1つ"</span>
-<span class="p">[[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
- <span class="p">[[[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
-   <span class="p">[.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span> <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"summary"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"description"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">]],</span>
-  <span class="p">[.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span> <span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
-  <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">]]</span>
+<span class="p">[[</span><span class="o">...</span><span class="p">],</span>
+ <span class="p">[[[</span><span class="o">...</span><span class="p">],</span>
+   <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"summary"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"description"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="o">...</span><span class="p">]],</span>
+  <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="o">...</span><span class="p">]]</span>
 <span class="c1"># 「sub」が含まれているエントリを検索。ただし、「name」が</span>
 <span class="c1"># 「sub」だった場合は重みを大きくする。</span>
 <span class="nb">select</span> <span class="no">Entries</span> <span class="s2">"name * 100 | summary | description"</span> <span class="s2">"sub"</span>
-<span class="p">[[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
- <span class="p">[[[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
-   <span class="p">[.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span> <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"summary"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"description"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">]],</span>
-  <span class="p">[.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span> <span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
-  <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">]]</span>
+<span class="p">[[</span><span class="o">...</span><span class="p">],</span>
+ <span class="p">[[[</span><span class="o">...</span><span class="p">],</span>
+   <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"summary"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"description"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="o">...</span><span class="p">]],</span>
+  <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="o">...</span><span class="p">]]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>groonga の select コマンド (HTTP 経由)</dt>
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 「description」カラムに「1つが」含まれているエントリを検索</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 「description」カラムに「1つが」含まれているエントリを検索</span>
 <span class="sx">% wget </span><span class="o">-</span><span class="no">O</span> <span class="o">-</span> <span class="s1">'http://localhost:10041/d/select?table=Entries&amp;match_columns=description&amp;query=1つ'</span>
-<span class="p">[[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
- <span class="p">[[[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
-   <span class="p">[.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span> <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"summary"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"description"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">]],</span>
-  <span class="p">[.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span> <span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
-  <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">]]</span>
+<span class="p">[[</span><span class="o">...</span><span class="p">],</span>
+ <span class="p">[[[</span><span class="o">...</span><span class="p">],</span>
+   <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"summary"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"description"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="o">...</span><span class="p">]],</span>
+  <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="o">...</span><span class="p">]]</span>
 <span class="c1"># 「sub」が含まれているエントリを検索。ただし、「name」が</span>
 <span class="c1"># 「sub」だった場合は重みを大きくする。</span>
 <span class="sx">% wget </span><span class="o">-</span><span class="no">O</span> <span class="o">-</span> <span class="s1">'http://localhost:10041/d/select?table=Entries&amp;match_columns=name*100|summary|description&amp;query=sub'</span>
-<span class="p">[[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
- <span class="p">[[[.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
-   <span class="p">[.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span> <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"summary"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">[</span><span class="s2">"description"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">]],</span>
-  <span class="p">[.</span><span class="nf">.</span><span class="p">.</span><span class="nf">,</span> <span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">,</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">],</span>
-  <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="p">]]</span>
+<span class="p">[[</span><span class="o">...</span><span class="p">],</span>
+ <span class="p">[[[</span><span class="o">...</span><span class="p">],</span>
+   <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">[</span><span class="s2">"_key"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"name"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"summary"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="p">[</span><span class="s2">"description"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="o">...</span><span class="p">]],</span>
+  <span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="s2">"String#sub"</span><span class="p">,</span> <span class="s2">"sub"</span><span class="p">,</span> <span class="s2">"置換"</span><span class="p">,</span> <span class="s2">"1つ置換"</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="o">...</span><span class="p">]]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>rroonga</dt>
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">entries</span> <span class="o">=</span> <span class="no">Groonga</span><span class="p">[</span><span class="s2">"Entries"</span><span class="p">]</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">entries</span> <span class="o">=</span> <span class="no">Groonga</span><span class="p">[</span><span class="s2">"Entries"</span><span class="p">]</span>
 <span class="c1"># 「description」カラムに「1つ」が含まれているエントリを検索</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">entries</span><span class="p">.</span><span class="nf">select</span> <span class="k">do</span> <span class="o">|</span><span class="n">record</span><span class="o">|</span>
   <span class="n">record</span><span class="p">.</span><span class="nf">description</span> <span class="o">=~</span> <span class="s2">"1つ"</span>
@@ -531,8 +525,7 @@
   <span class="n">target</span> <span class="o">=~</span> <span class="s2">"sub"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>PHP など Ruby 以外の言語から利用する場合は groonga サーバを立てて、HTTP 経由で検索するのがよいでしょう。Ruby から利用する場合は、select コマンドで十分なら select コマンドを利用、より複雑なことをしたい場合は rroonga を利用するのがよいでしょう。select コマンドでもドリルダウンはサポートされて入るので、多くの場合は select コマンドで十分でしょう。</p>
 
@@ -568,10 +561,10 @@
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'racknga'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'racknga'</span>
 
 <span class="n">notifier_options</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"host"</span> <span class="o">=&gt;</span> <span class="mi">127</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"host"</span> <span class="o">=&gt;</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span><span class="p">,</span>
   <span class="s2">"from"</span> <span class="o">=&gt;</span> <span class="s2">"rurema@example.com"</span><span class="p">,</span>
   <span class="s2">"to"</span> <span class="o">=&gt;</span> <span class="s2">"developer@example.com"</span><span class="p">,</span>
   <span class="s2">"charset"</span> <span class="o">=&gt;</span> <span class="s2">"iso-2022-jp"</span><span class="p">,</span>
@@ -582,8 +575,7 @@
 <span class="c1"># ...</span>
 <span class="n">run</span> <span class="n">your_application</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>できるだけ多くのエラーを検出するためになるべく最初の方で_use_してください。</p>
 
@@ -597,7 +589,7 @@
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'racknga'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'racknga'</span>
 <span class="nb">require</span> <span class="s1">'racknga/middleware/cache'</span>
 
 <span class="c1"># ...</span>
@@ -609,8 +601,7 @@
 <span class="n">use</span> <span class="no">Racknga</span><span class="o">::</span><span class="no">Middleware</span><span class="o">::</span><span class="no">Cache</span><span class="p">,</span> <span class="ss">:database_path</span> <span class="o">=&gt;</span> <span class="n">cache_database_path</span><span class="p">.</span><span class="nf">to_s</span>
 <span class="n">run</span> <span class="n">your_application</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>他のミドルウェアと組み合わせやすいように、なるべくアプリケーションに近い部分に置くことをよいでしょう。</p>
 
@@ -626,7 +617,7 @@
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'racknga'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'racknga'</span>
 
 <span class="c1"># ...</span>
 <span class="n">use</span> <span class="no">Racknga</span><span class="o">::</span><span class="no">Middleware</span><span class="o">::</span><span class="no">Deflater</span>
@@ -634,8 +625,7 @@
 <span class="c1"># ...</span>
 <span class="n">run</span> <span class="n">your_application</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="jsonp">JSONP</h3>
 <p><img src="../../images/0031-RuremaSearch/20100901_17.png" alt="20100901_17.png" /></p>
@@ -649,7 +639,7 @@
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'racknga'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'racknga'</span>
 <span class="nb">require</span> <span class="s1">'racknga/middleware/cache'</span>
 
 <span class="n">use</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Middleware</span><span class="o">::</span><span class="no">JSONP</span>
@@ -660,8 +650,7 @@
 
 <span class="n">run</span> <span class="n">your_application</span> <span class="c1"># "Content-Type: application/json"のレスポンスを返す</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>現在、るりまサーチは Web サービスを提供していませんが、将来の拡張を念頭においてこのミドルウェアが racknga に含まれています。</p>
 
@@ -686,22 +675,22 @@
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>数十秒以上かかる。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>数十秒以上かかる。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>文章から単語を抜き出す処理&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>文章から単語を抜き出す処理 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>メソッド名で検索することは多いですよね?&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>メソッド名で検索することは多いですよね? <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>実体はトークナイザーなしのハッシュテーブル。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>実体はトークナイザーなしのハッシュテーブル。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>BitClust を使ってメソッド単位にドキュメントを分割するなど。&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>BitClust を使ってメソッド単位にドキュメントを分割するなど。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>Rails や Sinatra などは使っていません。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+      <p>Rails や Sinatra などは使っていません。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
