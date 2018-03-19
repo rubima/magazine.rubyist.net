@@ -239,18 +239,16 @@ Monban を利用した認証機能を Scaffold により作成することがで
 <p>実際に Rails アプリケーションを作りながら Monban による基本的な認証機能を実装する方法について説明します。
 まず <em>rails new</em> します。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ rails new sample
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rails new sample
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Gemfile</em> に次の行を追加します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'monban'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'monban'</span>
 <span class="n">gem</span> <span class="s1">'monban-generators'</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>monban-generators</em> は必須ではありませんが、 Monban を利用した認証機能を Scaffold で作成するための gem なので、 Monban の導入が楽になります。</p>
 
@@ -258,7 +256,7 @@ Monban を利用した認証機能を Scaffold により作成することがで
 
 <p>次のコマンドを実行して認証機能を生成します。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ rails g monban:scaffold
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rails g monban:scaffold
        route  resources :users, only: [:new, :create]
        route  resource :session, only: [:new, :create, :destroy]
       create  app/views/users/new.html.erb
@@ -274,22 +272,20 @@ Monban を利用した認証機能を Scaffold により作成することがで
     run:
       rake db:migrate
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>生成されたファイルについて説明します。</p>
 
 <p>まず、<em>app/controllers/application_controller.rb</em> を開くと、次のように <em>include Monban::ControllerHelpers</em> が追加されています。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class ApplicationController &lt; ActionController::Base
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ApplicationController &lt; ActionController::Base
 +  include Monban::ControllerHelpers
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Monban::ControllerHelpers</em> には次のメソッドが定義されています。</p>
 
@@ -320,7 +316,7 @@ end
 <p>他のコントローラではこれらのメソッドを使って認証機能を実装します。
 例えば <em>app/controllers/users_controller.rb</em> では次のようにサインアップ機能を実装しています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
   <span class="n">skip_before_action</span> <span class="ss">:require_login</span><span class="p">,</span> <span class="ss">only: </span><span class="p">[</span><span class="ss">:new</span><span class="p">,</span> <span class="ss">:create</span><span class="p">]</span>
 
   <span class="k">def</span> <span class="nf">new</span>
@@ -345,8 +341,7 @@ end
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>create</em> メソッド内では <em>Monban::ControllerHelpers</em> が提供する <em>sign_up</em> と <em>sign_in</em> メソッドに認証関係の処理を任せています。
 これにより <em>create</em> メソッドでは HTTP リクエストを受け取ってレスポンスを返すことに集中しています。
@@ -357,7 +352,7 @@ end
 <p><em>Monban::ControllerHelpers</em> が提供しているメソッドはビジネスロジックと切り離されています。
 例えば <em>Monban::ControllerHelpers#sign_up</em> は次のように実装されています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Monban</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Monban</span>
   <span class="k">module</span> <span class="nn">ControllerHelpers</span>
     <span class="c1"># Sign up a user</span>
     <span class="c1">#</span>
@@ -376,8 +371,7 @@ end
 
 <span class="c1"># 後略</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Monban::ControllerHelpers#sign_up</em> では <em>Monban.config.sign_up_service</em> が返すクラスを <em>new</em> して <em>perform</em> メソッドを呼び出しています。
 <em>perform</em> の戻り値についてはコメントで <em>Object</em> を返すように指示されています。</p>
@@ -393,7 +387,7 @@ end
 <p><em>Monban.config.sign_up_service</em> はデフォルトでは <em>Monban::Services::SignUp</em> が設定されています。
 <em>Monban::Services::SignUp</em> は monban 中の <em>/lib/monban/services/sign_up.rb</em> で次のように定義されています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Monban</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Monban</span>
   <span class="k">module</span> <span class="nn">Services</span>
     <span class="c1"># Sign up service. Signs the user up</span>
     <span class="c1"># @since 0.0.15</span>
@@ -434,8 +428,7 @@ end
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>initialize</em> では引数に <em>user_params</em> を受け取って、 <em>password</em> をハッシュ化して <em>@user_params</em> に代入します。
 <em>perform</em> メソッドでは <em>@user_params</em> から <em>User</em> を create してオブジェクトを返します。
@@ -443,12 +436,11 @@ end
 
 <p>もし <em>Monban.config.sign_up_service</em> を <em>Monban::Services::SignUp</em> 以外にしたい場合、 <em>config/initializers/monban.rb</em> を作成して、次のように設定します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Monban</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Monban</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="p">.</span><span class="nf">sign_up_service</span> <span class="o">=</span> <span class="no">MySignUp</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>MySignUp</em> クラスを独自に作成すれば、 <em>Monban::ControllerHelpers#sign_up</em> を実行した際に呼び出されます。
 これにより <em>app/controllers/users_controller.rb</em> を変更することなくサインアップに関する機能を変更することができます。</p>
@@ -460,7 +452,7 @@ end
 
 <p>まず View を変更します。 <em>app/views/users/new.html.haml</em> に <em>password_confirmation</em> を入力するフォームを追加します。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>= form_for @user do |form|
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>= form_for @user do |form|
   - if @user.errors.any?
     = pluralize(@user.errors.count, "error")
     prevented your account from being created:
@@ -479,24 +471,22 @@ end
   %div
     = form.submit "Sign up"
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>次に、モデルを拡張します。現在、 <em>users</em> テーブルのスキーマは下記のようになっています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">create_table</span> <span class="s2">"users"</span><span class="p">,</span> <span class="ss">force: :cascade</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">create_table</span> <span class="s2">"users"</span><span class="p">,</span> <span class="ss">force: :cascade</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
   <span class="n">t</span><span class="p">.</span><span class="nf">string</span>   <span class="s2">"email"</span><span class="p">,</span>           <span class="ss">null: </span><span class="kp">false</span>
   <span class="n">t</span><span class="p">.</span><span class="nf">string</span>   <span class="s2">"password_digest"</span><span class="p">,</span> <span class="ss">null: </span><span class="kp">false</span>
   <span class="n">t</span><span class="p">.</span><span class="nf">datetime</span> <span class="s2">"created_at"</span><span class="p">,</span>      <span class="ss">null: </span><span class="kp">false</span>
   <span class="n">t</span><span class="p">.</span><span class="nf">datetime</span> <span class="s2">"updated_at"</span><span class="p">,</span>      <span class="ss">null: </span><span class="kp">false</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>データベースには <em>password_digest</em> を書き込めれば良いので、スキーマは変更せずに <em>app/models/user.rb</em> を下記のように書き換えます。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class User &lt; ActiveRecord::Base
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class User &lt; ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
 +  attr_accessor :password, :password_confirmation
@@ -504,12 +494,11 @@ end
 +  validates_confirmation_of :password
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>app/controllers/users/users_controller.rb</em> の Strong Parameters で <em>password_confirmation</em> を受け入れるようにします。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>class Users::UsersController &lt; Users::ApplicationController
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Users::UsersController &lt; Users::ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def new
@@ -535,25 +524,23 @@ end
   end
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上記のコントローラの <em>create</em> 部分からわかるように、サインアップに関するビジネスロジックは <em>sign_up</em> メソッドに切り出されています。
 これは前節で説明したとおり <em>Monban.config.sign_up_service</em> に設定したクラスに処理を委譲します。
 <em>/config/initializers/monban.rb</em> で独自のクラスを使うように設定します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'app/services/sign_up'</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">'app/services/sign_up'</span><span class="p">)</span>
 
 <span class="no">Monban</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
   <span class="n">config</span><span class="p">.</span><span class="nf">sign_up_service</span> <span class="o">=</span> <span class="no">Services</span><span class="o">::</span><span class="no">SignUp</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>app/services/sign_up.rb</em> というファイルを次の内容で作成します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/services/sign_up.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/services/sign_up.rb</span>
 <span class="k">module</span> <span class="nn">Services</span>
   <span class="k">class</span> <span class="nc">SignUp</span>
     <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">user_params</span><span class="p">)</span>
@@ -568,8 +555,7 @@ end
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>perform</em> メソッドでは <em>User</em> モデルでパラメータの妥当性を検証した後、
 <em>params</em> の <em>password</em> の値を <em>Monban.hash_token</em> によりハッシュ化して

@@ -1275,61 +1275,61 @@ ActiveTcl + 最新の 1.8.2 (正式リリースはまだですから、preview3 
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Tcl/Tk 側の autoload 機構を働かせねばならない部分では、どうしてもコマンドライン解釈を経由せざるを得ません。でなければ autoload が働かないためにコマンドが見つからず、エラーになってしまいます。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>Tcl/Tk 側の autoload 機構を働かせねばならない部分では、どうしてもコマンドライン解釈を経由せざるを得ません。でなければ autoload が働かないためにコマンドが見つからず、エラーになってしまいます。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>Ruby/Tk は Tcl インタープリタの制御を tcltklib に依存しています。TclTkip#_invoke がコマンドライン解釈を経由しない呼び出しに、TclTkIp#_eval がコマンドライン解釈を経由した呼び出しになっています。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>Ruby/Tk は Tcl インタープリタの制御を tcltklib に依存しています。TclTkip#_invoke がコマンドライン解釈を経由しない呼び出しに、TclTkIp#_eval がコマンドライン解釈を経由した呼び出しになっています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>もし動かなくても、それは単に想定外であっただけとかバグだとかの可能性もありますから、諦めるまえにまずは問い合わせてみてください。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>もし動かなくても、それは単に想定外であっただけとかバグだとかの可能性もありますから、諦めるまえにまずは問い合わせてみてください。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>どちらを使うかは好きに決めてかまいません。最終的には文字列に変換されて Tk インタープリタに渡されますから、文字列とシンボルとを混在させてもかまいません。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>どちらを使うかは好きに決めてかまいません。最終的には文字列に変換されて Tk インタープリタに渡されますから、文字列とシンボルとを混在させてもかまいません。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>エントリウィジェットなどへの日本語入力についても同様にパッチが必要でした。最近の Tcl/Tk では通常はパッチの必要はありません。そして Tcl/Tk での日本語入力が可能な環境なら、Ruby/Tk でも同様に入力可能なはずです&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>エントリウィジェットなどへの日本語入力についても同様にパッチが必要でした。最近の Tcl/Tk では通常はパッチの必要はありません。そして Tcl/Tk での日本語入力が可能な環境なら、Ruby/Tk でも同様に入力可能なはずです <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>戻り値としての文字列を現在のエンコーディングに変換してから返そうとするためです。通常はその方が使いやすいですよね。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+      <p>戻り値としての文字列を現在のエンコーディングに変換してから返そうとするためです。通常はその方が使いやすいですよね。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:7">
-      <p>Ruby/Tk を構成するクラスの一般的な new メソッドと同様に、ここでの例の場合も、ブロックは生成された TkMsgCatalog オブジェクトをself とする環境で評価されます。つまりこの例は、self.ja(“Blue”, “\u9752”)を実行し、ja というメソッドの不在を利用して定義を行っています。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+      <p>Ruby/Tk を構成するクラスの一般的な new メソッドと同様に、ここでの例の場合も、ブロックは生成された TkMsgCatalog オブジェクトをself とする環境で評価されます。つまりこの例は、self.ja(“Blue”, “\u9752”)を実行し、ja というメソッドの不在を利用して定義を行っています。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:8">
-      <p>tcltklib の中で Tk インタープリタ上に導入される “ruby” という Tcl/Tk コマンドを使っています。このコマンドは、引数の文字列を Ruby インタープリタ側に渡して eval した結果 (文字列) を受け取ることができます。&nbsp;<a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+      <p>tcltklib の中で Tk インタープリタ上に導入される “ruby” という Tcl/Tk コマンドを使っています。このコマンドは、引数の文字列を Ruby インタープリタ側に渡して eval した結果 (文字列) を受け取ることができます。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:9">
-      <p>Ruby スクリプト部分が Tcl/Tk の文字列として扱われるためです。逆に、% 置換でない部分が置換されてしまわないように注意する必要もあります。&nbsp;<a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+      <p>Ruby スクリプト部分が Tcl/Tk の文字列として扱われるためです。逆に、% 置換でない部分が置換されてしまわないように注意する必要もあります。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:10">
-      <p>tcltklib の中で Tk インタープリタ上に導入される “ruby_cmd” という Tcl/Tk コマンドを使っています。レシーバについての制約はスコープの問題によるものです。&nbsp;<a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+      <p>tcltklib の中で Tk インタープリタ上に導入される “ruby_cmd” という Tcl/Tk コマンドを使っています。レシーバについての制約はスコープの問題によるものです。 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:11">
-      <p><strong>check_proc_string</strong> メソッドは、必ず new_proc_class メソッドに与えるブロックの中で定義してください。ブロック実行後は生成されるクラスは freeze されてしまいますので設定不可能になります。&nbsp;<a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+      <p><strong>check_proc_string</strong> メソッドは、必ず new_proc_class メソッドに与えるブロックの中で定義してください。ブロック実行後は生成されるクラスは freeze されてしまいますので設定不可能になります。 <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:12">
-      <p>ユーザによる自由なメソッドリソース名定義を許すようにすることも可能です。そうしたユーザ定義メソッドも、<strong>check_proc_string</strong> のチェックが行われ、指定したセーフレベルで実行されます。&nbsp;<a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+      <p>ユーザによる自由なメソッドリソース名定義を許すようにすることも可能です。そうしたユーザ定義メソッドも、<strong>check_proc_string</strong> のチェックが行われ、指定したセーフレベルで実行されます。 <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:13">
-      <p>他、BLT (<a href="http://sourceforge.net/projects/blt/">The BLT Toolkit</a>) がサポートに向けて作業中の状態です。できれば 1.8.2 の正式リリースには間に合わせたいと思っています。&nbsp;<a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+      <p>他、BLT (<a href="http://sourceforge.net/projects/blt/">The BLT Toolkit</a>) がサポートに向けて作業中の状態です。できれば 1.8.2 の正式リリースには間に合わせたいと思っています。 <a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:14">
-      <p>Tk つまり GUI に関係しない部分の機能は Tcl/Tk とは関わらない Ruby のライブラリとして実装する方が望ましいと考えてそのようにしていますが、希望があれば Tcl 部分のみの拡張もサポート対象とすることは可能です。標準の Tcl/Tk の機能の中にも同様の理由で実装していないものがいくつかありますが、それらについても希望があればサポートできるはずです。例えば Tcl の I/O を wrap して、シリアルポート制御オプション付きの IO クラスのサブクラスを作るなども考えられるでしょうね。&nbsp;<a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+      <p>Tk つまり GUI に関係しない部分の機能は Tcl/Tk とは関わらない Ruby のライブラリとして実装する方が望ましいと考えてそのようにしていますが、希望があれば Tcl 部分のみの拡張もサポート対象とすることは可能です。標準の Tcl/Tk の機能の中にも同様の理由で実装していないものがいくつかありますが、それらについても希望があればサポートできるはずです。例えば Tcl の I/O を wrap して、シリアルポート制御オプション付きの IO クラスのサブクラスを作るなども考えられるでしょうね。 <a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:15">
-      <p>Tcl/Tk8.5 では Windows 環境での send コマンドサポートが加えられようとしていますが、まだ実用レベルには至っていないようです。&nbsp;<a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+      <p>Tcl/Tk8.5 では Windows 環境での send コマンドサポートが加えられようとしていますが、まだ実用レベルには至っていないようです。 <a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:16">
-      <p>MultiTkIp クラスは、もともとはこの目的のために作られたものです。&nbsp;<a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+      <p>MultiTkIp クラスは、もともとはこの目的のために作られたものです。 <a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:17">
-      <p><a href="../../articles/0002/0002-ForeWord.html">0002号の巻頭言</a>を受けて念のために書いておきますが、私は「他人が好きで使っているものに無理やりけちをつけたり貶めたりするなど愚かしい」と思っているので、これを争いの道具にする気など毛頭ありません。純粋に比較の意味で作ってみた例に過ぎないので、つまらない争いに用いるのは断固として拒否します。まぁ、争いができるほどの代物ではないのでいらぬ心配だとは思いますが(^_^)。もちろん、「こう書けばより良くなる」とか「こういう書き方ができればより使いやすくなる」とかの建設的な議論は大歓迎です。&nbsp;<a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+      <p><a href="../../articles/0002/0002-ForeWord.html">0002号の巻頭言</a>を受けて念のために書いておきますが、私は「他人が好きで使っているものに無理やりけちをつけたり貶めたりするなど愚かしい」と思っているので、これを争いの道具にする気など毛頭ありません。純粋に比較の意味で作ってみた例に過ぎないので、つまらない争いに用いるのは断固として拒否します。まぁ、争いができるほどの代物ではないのでいらぬ心配だとは思いますが(^_^)。もちろん、「こう書けばより良くなる」とか「こういう書き方ができればより使いやすくなる」とかの建設的な議論は大歓迎です。 <a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:18">
-      <p>ML に流したものと比べると、親クラスを TkCanvas に変更した点が違っています。この変更により MapFrame#postscript メソッドが使えるため、マップのイメージを Postscript 形式で出力できるようになります。ただし、埋め込みウィンドウやイメージの Postscript 出力が可能になった Tcl/Tk8.3 以降であることが必要です。&nbsp;<a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+      <p>ML に流したものと比べると、親クラスを TkCanvas に変更した点が違っています。この変更により MapFrame#postscript メソッドが使えるため、マップのイメージを Postscript 形式で出力できるようになります。ただし、埋め込みウィンドウやイメージの Postscript 出力が可能になった Tcl/Tk8.3 以降であることが必要です。 <a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:19">
-      <p>「講習会は無理だけれども懇親会だけでも参加したい」ということも可能かもしれません。準備の都合もあり、遅くなると懇親会参加メンバーとしての追加ができなくなる可能性もありますので、そうした希望がある場合はお早めにご相談ください。&nbsp;<a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+      <p>「講習会は無理だけれども懇親会だけでも参加したい」ということも可能かもしれません。準備の都合もあり、遅くなると懇親会参加メンバーとしての追加ができなくなる可能性もありますので、そうした希望がある場合はお早めにご相談ください。 <a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

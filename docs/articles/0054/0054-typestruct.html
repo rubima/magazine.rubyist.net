@@ -217,13 +217,12 @@
 <p>定義は Ruby のコードになっているので、
 Ruby のコード上ならどこにでも書けます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">NewClassName</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">NewClassName</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
   <span class="ss">key_1: </span><span class="no">Integer</span><span class="p">,</span>
   <span class="ss">key_2: </span><span class="no">String</span><span class="p">,</span>
 <span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これで <em>NewClassName</em> という class が定義されたことになります。</p>
 
@@ -241,7 +240,7 @@ Ruby のコード上ならどこにでも書けます。</p>
 
 <p>インスタンス作成後も最初の定義にそっている限り代入もできます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">foo</span> <span class="o">=</span> <span class="no">NewClassName</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foo</span> <span class="o">=</span> <span class="no">NewClassName</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
   <span class="ss">key_1: </span><span class="mi">123</span><span class="p">,</span>
   <span class="ss">key_2: </span><span class="s1">'hello'</span><span class="p">,</span>
 <span class="p">)</span>
@@ -255,8 +254,7 @@ Ruby のコード上ならどこにでも書けます。</p>
 <span class="nb">p</span> <span class="n">foo</span><span class="p">.</span><span class="nf">key_1</span> <span class="c1">#=&gt; 0</span>
 <span class="nb">p</span> <span class="n">foo</span><span class="p">.</span><span class="nf">key_2</span> <span class="c1">#=&gt; 'world'</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>型定義に沿っていれば、TypeStruct は、ただの Struct とそれほど差はありません。</p>
 
@@ -274,7 +272,7 @@ Ruby のコード上ならどこにでも書けます。</p>
 
 <p>途中の代入でも型定義に合っていなければ同じくエラーになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">p</span> <span class="no">NewClassName</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">p</span> <span class="no">NewClassName</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
   <span class="ss">key_1: </span><span class="s1">'123'</span><span class="p">,</span>
   <span class="ss">key_2: </span><span class="s1">'hello'</span><span class="p">,</span>
 <span class="p">)</span>
@@ -288,8 +286,7 @@ Ruby のコード上ならどこにでも書けます。</p>
 <span class="n">foo</span><span class="p">.</span><span class="nf">key_1</span> <span class="o">=</span> <span class="s1">'123'</span>
 <span class="c1">#=&gt; TypeError: NewClassName#key_1 expect Integer got "123"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このエラーこそ TypeStruct の真骨頂です。</p>
 
@@ -319,7 +316,7 @@ Ruby のコード上ならどこにでも書けます。</p>
 
 <p><em>ArrayOf</em> は「〜の Array」を表すもので、<em>ArrayOf.new(String)</em> とすると、「String の Array」という型であることを TypeStruct で定義できるようになります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Name</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Name</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
   <span class="ss">values: </span><span class="no">TypeStruct</span><span class="o">::</span><span class="no">ArrayOf</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="nb">name</span> <span class="o">=</span> <span class="no">Name</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">values: </span><span class="p">[</span><span class="s1">'foo'</span><span class="p">,</span> <span class="s1">'bar'</span><span class="p">,</span> <span class="s1">'baz'</span><span class="p">])</span>
@@ -330,20 +327,18 @@ Ruby のコード上ならどこにでも書けます。</p>
 <span class="nb">name</span><span class="p">.</span><span class="nf">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="c1">#=&gt; TypeError: Name#values expect TypeStruct::ArrayOf(String) got [1, 2, 3]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ちなみに <em>require ‘type_struct/ext</em>’ とすると <em>ArrayOf</em> はメソッドとして定義されるようになり、<em>ArrayOf(String)</em> のように使えます。
 ネームスペースを消費する副作用があるので、別途 require するようにしています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'type_struct/ext'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'type_struct/ext'</span>
 <span class="no">Name</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
    <span class="ss">values: </span><span class="no">ArrayOf</span><span class="p">(</span><span class="no">String</span><span class="p">)</span>
 <span class="p">)</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="union">Union</h3>
 
@@ -351,7 +346,7 @@ Ruby のコード上ならどこにでも書けます。</p>
 
 <p>最も使う頻度が高いのは、<em>true</em> もしくは <em>false</em> がありえるメンバーと、<em>nil</em> がありえるメンバーでしょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Name</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Name</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
   <span class="ss">is_show: </span><span class="no">TypeStruct</span><span class="o">::</span><span class="no">Union</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="kp">true</span><span class="p">,</span> <span class="kp">false</span><span class="p">),</span> <span class="c1"># trueもしくはfalse</span>
   <span class="ss">value: </span><span class="no">TypeStruct</span><span class="o">::</span><span class="no">Union</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">String</span><span class="p">,</span> <span class="kp">nil</span><span class="p">),</span> <span class="c1"># Stringもしくはnil</span>
 <span class="p">)</span>
@@ -363,8 +358,7 @@ Ruby のコード上ならどこにでも書けます。</p>
 <span class="nb">p</span> <span class="nb">name</span><span class="p">.</span><span class="nf">is_show</span> <span class="o">=</span> <span class="kp">nil</span>
 <span class="c1">#=&gt; TypeError: Name#is_show expect #&lt;Union true|false&gt; got nil</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このように、複数の型がありえるメンバーに有効なのが Union です。</p>
 
@@ -377,14 +371,13 @@ Ruby のコード上ならどこにでも書けます。</p>
   </tbody>
 </table>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">using</span> <span class="no">TypeStruct</span><span class="o">::</span><span class="no">Union</span><span class="o">::</span><span class="no">Ext</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">using</span> <span class="no">TypeStruct</span><span class="o">::</span><span class="no">Union</span><span class="o">::</span><span class="no">Ext</span>
 <span class="no">Foo</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
   <span class="ss">num: </span><span class="no">Integer</span> <span class="o">|</span> <span class="kp">nil</span> <span class="c1">#=&gt; Integerもしくはnil</span>
   <span class="ss">name: </span><span class="no">Regexp</span> <span class="o">|</span> <span class="no">String</span> <span class="c1">#=&gt; RegexpもしくはString</span>
 <span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>crystal-lang のようでカッコイイですね。</p>
 
@@ -414,7 +407,7 @@ TypeStruct のメリット(意味ある名前・期待した値・ドキュメ�
 <p>この「JSON の情報を元に、一枚の画像として合成され」の部分では JSON 文字列を Ruby で parse してループを回し、それぞれの ID から図形画像を参照して座標情報から合成する。
 といったプログラムが想像できます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">composition</span> <span class="o">=</span> <span class="no">Composition</span><span class="p">.</span><span class="nf">new</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">composition</span> <span class="o">=</span> <span class="no">Composition</span><span class="p">.</span><span class="nf">new</span>
 <span class="n">json</span><span class="p">[</span><span class="s2">"layers"</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">layer</span><span class="o">|</span>
   <span class="n">layer</span><span class="p">[</span><span class="s2">"figures"</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">figure</span><span class="o">|</span>
     <span class="k">case</span> <span class="n">figure</span><span class="p">[</span><span class="s2">"typo"</span><span class="p">]</span>
@@ -431,8 +424,7 @@ TypeStruct のメリット(意味ある名前・期待した値・ドキュメ�
 <span class="k">end</span>
 <span class="n">composition</span><span class="p">.</span><span class="nf">to_png</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>こんなプログラムで怖いのは、プログラムのtypoによるミスではないでしょうか。(実際に、上のプログラム内にはtypoが潜んでいます)</p>
 
@@ -452,7 +444,7 @@ typo したら KeyError として教えてくれますし、did_you_mean も最�
 
 <p>まず型定義を用意します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'type_struct/ext'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'type_struct/ext'</span>
 <span class="k">module</span> <span class="nn">Type</span>
   <span class="n">using</span> <span class="no">TypeStruct</span><span class="o">::</span><span class="no">Union</span><span class="o">::</span><span class="no">Ext</span>
   <span class="no">Position</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
@@ -485,13 +477,12 @@ typo したら KeyError として教えてくれますし、did_you_mean も最�
   <span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>先ほどのプログラムを書きなおしてみます。
 <em>Type::Picture.from_hash(json)</em> の部分が TypeStruct を使っている部分です</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">composition</span> <span class="o">=</span> <span class="no">Composition</span><span class="p">.</span><span class="nf">new</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">composition</span> <span class="o">=</span> <span class="no">Composition</span><span class="p">.</span><span class="nf">new</span>
 <span class="no">Type</span><span class="o">::</span><span class="no">Picture</span><span class="p">.</span><span class="nf">from_hash</span><span class="p">(</span><span class="n">json</span><span class="p">).</span><span class="nf">layers</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">layer</span><span class="o">|</span>
   <span class="n">layer</span><span class="p">.</span><span class="nf">figures</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">figure</span><span class="o">|</span>
     <span class="k">case</span> <span class="n">figure</span>
@@ -508,8 +499,7 @@ typo したら KeyError として教えてくれますし、did_you_mean も最�
 <span class="k">end</span>
 <span class="n">composition</span><span class="p">.</span><span class="nf">to_png</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>いかがでしょうか。</p>
 
@@ -584,7 +574,7 @@ Hash の問題は存在するものの、TypeStruct を有効に使える機会�
 
 <p>この事故も、TypeStruct を使っていればもしかしたら防げたでしょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="o">---</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">---</span>
 <span class="ss">foo:
   bar:
     baz:
@@ -593,10 +583,9 @@ Hash の問題は存在するものの、TypeStruct を有効に使える機会�
     <span class="o">-</span> <span class="mi">3</span>
     <span class="ss">qux: </span><span class="s1">'aaa'</span> <span class="c1"># 本当は一段左にあるべき行</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'yaml'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'yaml'</span>
 <span class="nb">require</span> <span class="s1">'type_struct/ext'</span>
 <span class="no">Bar</span> <span class="o">=</span> <span class="no">TypeStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
   <span class="ss">baz: </span><span class="no">ArrayOf</span><span class="p">(</span><span class="no">Integer</span><span class="p">),</span>
@@ -612,8 +601,7 @@ Hash の問題は存在するものの、TypeStruct を有効に使える機会�
 <span class="c1">#=&gt; TypeStruct::MultiTypeError:</span>
 <span class="n">t</span><span class="p">.</span><span class="nf">rb</span><span class="p">:</span><span class="mi">13</span><span class="ss">:in</span> <span class="no">TypeError</span> <span class="no">Foo</span><span class="c1">#qux expect String got nil</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>既存の設定ファイルから型定義をつくる場合も、yaml の generator を使うことで作りやすくなります。</p>
 
@@ -674,7 +662,7 @@ CLI のオプションは、Ruby のオブジェクトにまとめてアプリ�
 ここで、CLI のオプションとしてどんな key がありえるのか、実装者自身は知っているはずです。
 こんなときは Struct が便利です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Option</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Option</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
   <span class="c1"># オプションの種類</span>
   <span class="ss">:aaa</span><span class="p">,</span>
   <span class="ss">:bbb</span><span class="p">,</span>
@@ -695,8 +683,7 @@ CLI のオプションは、Ruby のオブジェクトにまとめてアプリ�
 
 <span class="no">CLI</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>としておけば、どんなオプションがあるのか、デフォルト値は何か、
 どのオプションに対応付けられているのかが読みやすいでしょう。
@@ -704,7 +691,7 @@ CLI のオプションは、Ruby のオブジェクトにまとめてアプリ�
 コードの中での寿命が長くなりやすいので、Struct のメリットを享受しやすいでしょう。
 また、Struct はオブジェクトの生成が Hash よりも高速というのもメリットでしょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#! /usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#! /usr/bin/env ruby</span>
 
 <span class="nb">require</span> <span class="s1">'benchmark/ips'</span>
 
@@ -721,8 +708,7 @@ CLI のオプションは、Ruby のオブジェクトにまとめてアプリ�
   <span class="n">x</span><span class="p">.</span><span class="nf">compare!</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ruby t.rb
  Warming up --------------------------------------
@@ -747,13 +733,13 @@ CLI のオプションは、Ruby のオブジェクトにまとめてアプリ�
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>提案したのオレオレ https://github.com/yuki24/did_you_mean/pull/71&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>提案したのオレオレ https://github.com/yuki24/did_you_mean/pull/71 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>なぜesa.ioなのかというと、筆者がよくAPIを叩いていたため。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>なぜesa.ioなのかというと、筆者がよくAPIを叩いていたため。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>Struct#[]にも対応する提案したのオレオレ https://github.com/yuki24/did_you_mean/pull/73&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>Struct#[]にも対応する提案したのオレオレ https://github.com/yuki24/did_you_mean/pull/73 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

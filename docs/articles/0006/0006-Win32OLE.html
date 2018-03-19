@@ -377,7 +377,7 @@ Illustrator なのに文字だけというのも芸がないので、ちょっ�
 
 <p><a href="../../images/0006-Win32OLE/helloworld.rb">helloworld.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 <span class="n">illu</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span><span class="s1">'Illustrator.Application'</span><span class="p">)</span>
 <span class="k">module</span> <span class="nn">Illu</span><span class="p">;</span> <span class="k">end</span>
 <span class="no">WIN32OLE</span><span class="o">::</span><span class="n">const_load</span><span class="p">(</span><span class="n">illu</span><span class="p">,</span> <span class="no">Illu</span><span class="p">)</span>
@@ -402,8 +402,7 @@ Illustrator なのに文字だけというのも芸がないので、ちょっ�
 
 <span class="n">doc</span><span class="o">.</span><span class="no">Close</span><span class="p">(</span><span class="no">Illu</span><span class="o">::</span><span class="no">AiDoNotSaveChanges</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>紙の真ん中あたりに「Hello, world !」と、それを囲んで四角い枠と対角線一本。
 アートボード (紙) の大きさを指定してるわけではないので、

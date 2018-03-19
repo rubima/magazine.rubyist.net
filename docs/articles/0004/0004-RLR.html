@@ -287,11 +287,11 @@ ER 図と UML におけるクラス図は一見似ているのですが
 
 <p><a href="../../images/0004-RLR/rorm-simple.rb">rorm-simple.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'rorm'</span>
 
 <span class="k">class</span> <span class="nc">Student</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:no</span><span class="p">,</span> <span class="ss">:name</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:no</span><span class="p">,</span> <span class="ss">:name</span>
   <span class="k">def</span> <span class="nf">introduce</span>
     <span class="k">return</span> <span class="s2">"Hello, my name is %s."</span> <span class="o">%</span> <span class="nb">name</span>
   <span class="k">end</span> 
@@ -317,8 +317,7 @@ ER 図と UML におけるクラス図は一見似ているのですが
 &lt;/config&gt;
 
 
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p><strong>END</strong> 以下に定義されている XML による設定の要素・属性から説明すると、</p>
 
@@ -383,21 +382,21 @@ db.query(クラス)で「全てがオブジェクト」である Ruby の「ク�
 
 <p><a href="../../images/0004-RLR/rorm-sample.rb">rorm-sample.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'rorm'</span>
 
 <span class="k">class</span> <span class="nc">Student</span>
-	<span class="kp">attr_accessor</span> <span class="ss">:no</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:department_id</span>
+	<span class="nb">attr_accessor</span> <span class="ss">:no</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:department_id</span>
 	<span class="k">def</span> <span class="nf">introduce</span>
 		<span class="s2">"Hello, my name is %s."</span> <span class="o">%</span> <span class="vi">@name</span>
 	<span class="k">end</span> 
 
-	<span class="kp">attr_accessor</span> <span class="ss">:account</span>	<span class="c1"># for 1:1</span>
+	<span class="nb">attr_accessor</span> <span class="ss">:account</span>	<span class="c1"># for 1:1</span>
 	<span class="k">def</span> <span class="nf">tellme_password</span>
 		<span class="sx">%Q|</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="sx">'s account is </span><span class="si">#{</span><span class="n">account</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">username</span><span class="si">}</span><span class="sx">/</span><span class="si">#{</span><span class="n">account</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nf">password</span><span class="si">}</span><span class="sx">|</span>
 	<span class="k">end</span>
 
-	<span class="kp">attr_accessor</span> <span class="ss">:courses</span>	<span class="c1"># for N:N</span>
+	<span class="nb">attr_accessor</span> <span class="ss">:courses</span>	<span class="c1"># for N:N</span>
 	<span class="k">def</span> <span class="nf">course_summary</span>
 		<span class="n">output</span> <span class="o">=</span> <span class="s2">""</span>
 		<span class="n">courses</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="o">|</span>
@@ -408,8 +407,8 @@ db.query(クラス)で「全てがオブジェクト」である Ruby の「ク�
 <span class="k">end</span>
 
 <span class="k">class</span> <span class="nc">Department</span>
-	<span class="kp">attr_accessor</span> <span class="ss">:code</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:abbrev</span>
-	<span class="kp">attr_accessor</span> <span class="ss">:students</span>	 <span class="c1"># for 1:N</span>
+	<span class="nb">attr_accessor</span> <span class="ss">:code</span><span class="p">,</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:abbrev</span>
+	<span class="nb">attr_accessor</span> <span class="ss">:students</span>	 <span class="c1"># for 1:N</span>
 <span class="k">end</span>
 
 <span class="no">Account</span> <span class="o">=</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:username</span><span class="p">,</span> <span class="ss">:password</span><span class="p">)</span>
@@ -510,8 +509,7 @@ db.query(クラス)で「全てがオブジェクト」である Ruby の「ク�
 <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Account, Course を見てもらえば分かる通り、DTO として利用するだけならば、Struct で代用することが出来ます。</p>
 
@@ -690,7 +688,7 @@ Create modeler-sample.yaml</code></pre></figure>
 
 <p><a href="../../images/0004-RLR/tapkit-simple.rb">tapkit-simple.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'tapkit'</span>
 
 <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
@@ -708,8 +706,7 @@ Create modeler-sample.yaml</code></pre></figure>
 <span class="nb">puts</span> <span class="n">introduce</span><span class="p">(</span><span class="n">alan</span><span class="p">[</span><span class="s1">'name'</span><span class="p">])</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>include TapKit で Tapkit モジュールをインクルードして諸々の機能を使用します。</p>
 
@@ -757,7 +754,7 @@ Create modeler-sample.yaml</code></pre></figure>
 
 <p><a href="../../images/0004-RLR/tapkit-sample.rb">tapkit-sample.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'tapkit'</span>
 
 <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
@@ -865,8 +862,7 @@ Create modeler-sample.yaml</code></pre></figure>
 	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>(1) 1:1</p>
 
@@ -959,7 +955,7 @@ RDBMS 依存性の排除
 
 <p><a href="../../images/0004-RLR/sds-simple.rb">sds-simple.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'sds'</span>
 
 <span class="kp">include</span> <span class="no">SDS</span>
@@ -977,8 +973,7 @@ RDBMS 依存性の排除
 <span class="n">alan</span><span class="p">.</span><span class="nf">introduce</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Store.get により、エンティティやりレーションの定義を読み込みます。</p>
 
@@ -997,7 +992,7 @@ RDBMS 依存性の排除
 
 <p><a href="../../images/0004-RLR/sds-sample.rb">sds-sample.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'sds'</span>
 
 <span class="kp">include</span> <span class="no">SDS</span>
@@ -1110,8 +1105,7 @@ RDBMS 依存性の排除
    <span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>(2) 1:N 
 で students.each メソッドの出力で、途中に nil という行が出力されてしまいます。残念ながら、時間的な制約もあり、回避策を施したサンプルを用意できませんでした。</p>
@@ -1163,7 +1157,7 @@ DB 定義が先にあることも往々にしてあるので、TapKit のよう�
 
 <p><a href="../../images/0004-RLR/ar-simple.rb">ar-simple.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'active_record'</span>
 
 <span class="k">class</span> <span class="nc">Student</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
@@ -1188,8 +1182,7 @@ DB 定義が先にあることも往々にしてあるので、TapKit のよう�
 <span class="nb">puts</span> <span class="n">student</span><span class="p">.</span><span class="nf">introduce</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ActiveRecord::Base を継承して マッピングクラスを定義します。
 このようにテーブル名が複数形でない場合は table_name クラスメソッドを定義します。
@@ -1210,7 +1203,7 @@ ActiveRecord::Base.logger = Logger.new(logfile)</code></pre></figure>
 
 <p><a href="../../images/0004-RLR/ar-sample.rb">ar-sample.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
 <span class="nb">require</span> <span class="s1">'active_record'</span>
 <span class="c1"># for RubyGems package</span>
 <span class="cm">=begin
@@ -1328,8 +1321,7 @@ require_gem 'activerecord'
 	<span class="n">s</span><span class="p">.</span><span class="nf">one2many</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>1対1 は  has_one、
 1対多は has_many、
@@ -1415,25 +1407,25 @@ C, C++, C#, Perl, PHP と変遷を辿っているので、
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p><a href="http://www.agiledata.org/essays/impedanceMismatch.html">The Object-Relational Impedance Mismatch</a>に詳しい&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p><a href="http://www.agiledata.org/essays/impedanceMismatch.html">The Object-Relational Impedance Mismatch</a>に詳しい <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>上記の邦訳 <a href="http://capsctrl.que.jp/kdmsnr/wiki/agiledata/?TheObject-RelationalImpedanceMismatch">オブジェクト・リレーショナル・インピーダンス・ミスマッチ</a>&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>上記の邦訳 <a href="http://capsctrl.que.jp/kdmsnr/wiki/agiledata/?TheObject-RelationalImpedanceMismatch">オブジェクト・リレーショナル・インピーダンス・ミスマッチ</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>詳細は http://www.apple.com/jp/webobjects/wo_docs_j.html の “Enterprise Objects Framework Developers Guide” を参照して下さい&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>詳細は http://www.apple.com/jp/webobjects/wo_docs_j.html の “Enterprise Objects Framework Developers Guide” を参照して下さい <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>SQLite でも今回のサンプルのプロトタイプを動かすことができました。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>SQLite でも今回のサンプルのプロトタイプを動かすことができました。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>http://www.yaml.org/&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>http://www.yaml.org/ <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:6">
-      <p>http://www.spice-of-life.net/tapkit/ja/TapKitUserGuide_J_c5_s1.html#doc7_1176 によると、「主キー名に id と設定しないでください。主キーを id とすると、オブジェクトにアクセスしても Object#id が呼び出されてしまいます。」とあるので、今回のサンプルのテーブル定義が適切でない可能性があります。&nbsp;<a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+      <p>http://www.spice-of-life.net/tapkit/ja/TapKitUserGuide_J_c5_s1.html#doc7_1176 によると、「主キー名に id と設定しないでください。主キーを id とすると、オブジェクトにアクセスしても Object#id が呼び出されてしまいます。」とあるので、今回のサンプルのテーブル定義が適切でない可能性があります。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:7">
-      <p>付属コマンド sds_generate_db_schema.rb で YAML から テーブル定義 SQL を生成すると、この名前でシーケンステーブル名が定義されています。&nbsp;<a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+      <p>付属コマンド sds_generate_db_schema.rb で YAML から テーブル定義 SQL を生成すると、この名前でシーケンステーブル名が定義されています。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

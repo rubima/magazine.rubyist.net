@@ -308,15 +308,14 @@
 
 <p>プログラム main.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'al_template'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'al_template'</span>
 <span class="k">class</span> <span class="nc">AlController</span>
   <span class="k">def</span> <span class="nf">action_index</span><span class="p">()</span>	<span class="c1"># デフォルトアクション</span>
     <span class="vi">@my_message</span> <span class="o">=</span> <span class="s2">"Hello world."</span>
     <span class="no">AlTemplate</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span> <span class="s1">'index.rhtml'</span> <span class="p">)</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ユーザーのコードは、main.rb ファイル内へ AlController クラスのメソッドとして記述します。コントローラへは、ユーザーのブラウザ操作により規定のアクションが送信されますが、最初は特に何もアクションが無いので、デフォルトのアクションである action_index() という名前のメソッドが呼ばれます。</p>
 
@@ -364,7 +363,7 @@
 
 <p>プログラム main.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AlController</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AlController</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">()</span>
     <span class="vi">@form</span> <span class="o">=</span> <span class="no">AlForm</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
       <span class="no">AlText</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="s2">"text1"</span><span class="p">,</span> <span class="ss">:label</span><span class="o">=&gt;</span><span class="s2">"名前"</span><span class="p">,</span> <span class="ss">:value</span><span class="o">=&gt;</span><span class="s2">"ボズ・スキャッグス"</span> <span class="p">),</span>
@@ -377,8 +376,7 @@
     <span class="p">)</span>
     <span class="vi">@form</span><span class="p">.</span><span class="nf">action</span> <span class="o">=</span> <span class="no">Alone</span><span class="o">::</span><span class="n">make_uri</span><span class="p">(</span> <span class="ss">:action</span> <span class="o">=&gt;</span> <span class="s1">'confirm'</span> <span class="p">)</span>
   <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実行画面と、AlForm オブジェクトに指示した AlText, AlRadios, AlCheckboxes, AlSubmit を比較してみてください。HTML フォームと、AlForm が、一対一で対応しているのがわかると思います。Alone では、AlText 等のこれら内包されたオブジェクト類を、ウィジェット (widget) と呼称しています。</p>
 
@@ -388,7 +386,7 @@
 
 <p>プログラム main.rb のaction_index()</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="c1">##</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">##</span>
  <span class="c1"># デフォルト動作</span>
  <span class="c1">#</span>
  <span class="c1">#@note</span>
@@ -398,8 +396,7 @@
    <span class="n">session</span><span class="p">.</span><span class="nf">delete_all</span><span class="p">()</span>
    <span class="no">AlTemplate</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span> <span class="s1">'index.rhtml'</span> <span class="p">)</span>
  <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>テンプレートでは、構造は　hello world　の時と変わりませんが、今回は　@form.make_tiny_form()　により、フォームの自動生成をしています。ごくごく定型的なフォームですが、とりあえず動作を確認したい（見た目の調整は後回しでも良い）時には、とても便利に使えます。</p>
 
@@ -420,7 +417,7 @@
 
 <p>プログラム main.rb のaction_confirm()</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="c1">##</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1">##</span>
  <span class="c1"># 確認画面</span>
  <span class="c1">#</span>
  <span class="c1">#@note</span>
@@ -436,8 +433,7 @@
      <span class="no">AlTemplate</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span> <span class="s1">'index.rhtml'</span> <span class="p">)</span>
    <span class="k">end</span>
  <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このアクションでは、まずフォームをバリデートしてエラーとなる値が入っていないことを確認します。エラーがなければ、セッション変数 :values へバリデーション済みのデータを保存し、確認画面 confirm.rhtml を表示します。</p>
 
@@ -470,12 +466,11 @@
 
 <p>プログラム main.rb の action_commit()</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">action_commit</span><span class="p">()</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">action_commit</span><span class="p">()</span>
    <span class="vi">@form</span><span class="p">.</span><span class="nf">set_values</span><span class="p">(</span> <span class="n">session</span><span class="p">[</span><span class="ss">:values</span><span class="p">]</span> <span class="p">)</span>
    <span class="no">AlTemplate</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span> <span class="s1">'commit.rhtml'</span> <span class="p">)</span>
  <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>テンプレート commit.rhtml</p>
 
@@ -494,13 +489,12 @@
 
 <p>プログラム main.rb の action_cancel()</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">action_cancel</span><span class="p">()</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">action_cancel</span><span class="p">()</span>
    <span class="vi">@form</span><span class="p">.</span><span class="nf">set_values</span><span class="p">(</span> <span class="n">session</span><span class="p">[</span><span class="ss">:values</span><span class="p">]</span> <span class="p">)</span>
    <span class="no">AlTemplate</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span> <span class="s1">'index.rhtml'</span> <span class="p">)</span>
    <span class="n">session</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span> <span class="ss">:values</span> <span class="p">)</span>
  <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="使ってみよう-3-todo-メモ">使ってみよう 3 ToDo メモ</h2>
 
@@ -520,11 +514,10 @@
 
 <p>プログラム main.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'al_form'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'al_form'</span>
 <span class="nb">require</span> <span class="s1">'al_persist_file'</span>	<span class="c1"># ファイルを使ったデータ永続化機構を使う</span>
 <span class="nb">require</span> <span class="s1">'al_mif'</span>		<span class="c1"># AlControllerへ定型的なCRUDの為のメソッドを注入</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="2-コンストラクタ">(2) コンストラクタ</h3>
 
@@ -534,7 +527,7 @@
 
 <p>プログラム main.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">DB_FILE</span> <span class="o">=</span> <span class="s2">"data/todo.txt"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">DB_FILE</span> <span class="o">=</span> <span class="s2">"data/todo.txt"</span>
 <span class="k">class</span> <span class="nc">AlController</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">()</span>
     <span class="vi">@form</span> <span class="o">=</span> <span class="no">AlForm</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span>
@@ -549,8 +542,7 @@
     <span class="c1"># use file</span>
     <span class="vi">@persist</span> <span class="o">=</span> <span class="no">AlPersistFile</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span> <span class="no">DB_FILE</span> <span class="p">)</span>
   <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ここで初めてAlDate オブジェクトが出てきました。これは、HTML 的には &lt;input type=”text”&gt; ですが、Alone では日付のためのバリデータを内包するなど、日付け入出力のために便利な機能を持っています。その他にもいくつかこのような用途のためのウィジェットを定義してありますので、詳しくはウェブ上のリファレンスマニュアルを参照してください。</p>
 
@@ -560,9 +552,8 @@
 
 <p>プログラム main.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="k">alias</span> <span class="n">action_index</span> <span class="n">action_list</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">alias</span> <span class="n">action_index</span> <span class="n">action_list</span>
+</code></pre></div></div>
 <p><img src="../../images/0035-AloneFramework/7-(3).png" alt="7-(3).png" /></p>
 
 <h3 id="4-その他の動作">(4) その他の動作</h3>
@@ -588,7 +579,7 @@
 
 <p>プログラム line_plot.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">draw_sample_01</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">draw_sample_01</span>
    <span class="n">ydata1</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">]</span>
 
    <span class="n">graph</span> <span class="o">=</span> <span class="no">AlGraph</span><span class="p">.</span><span class="nf">new</span>
@@ -596,8 +587,7 @@
 
    <span class="n">graph</span><span class="p">.</span><span class="nf">draw</span>
  <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>プログラムについて説明しましょう。まず、AlGraph.new でオブジェクトを生成し、このオブジェクトに対して操作をすることで、各種グラフを生成します。</p>
 
@@ -625,8 +615,8 @@
 
 <p>この機器では、エミューレートパラメータ変更や、モニタリングを行うためのウェブコンソールの作成にAloneを利用しています。全画面数は８画面ありますが、ユーザーインターフェースのために書いたRubyコードはコメントを除くと560行程度で、非常に少ないことがわかります。たとえばこういった組み込み機器特有の機能としてIP設定画面がありますが、Aloneは先に説明したデータ永続化機構の一部として、シェルスクリプト形式で保存するクラス AlPersistShを持ち、これを使えば下記の通りコード量が劇的に少なくできるため、効率よく開発が可能です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">initialize</span><span class="p">()</span>
-   <span class="vi">@form</span> <span class="o">=</span> <span class="no">AlForm</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span><span class="err">省略</span> <span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">initialize</span><span class="p">()</span>
+   <span class="vi">@form</span> <span class="o">=</span> <span class="no">AlForm</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span> <span class="o">...</span><span class="err">省略</span> <span class="p">)</span>
    <span class="vi">@persist</span> <span class="o">=</span> <span class="no">AlPersistSh</span><span class="p">.</span><span class="nf">connect</span><span class="p">(</span> <span class="s2">"/etc/my_settings.conf"</span> <span class="p">)</span>
  <span class="k">end</span>
 
@@ -643,15 +633,14 @@
      <span class="no">AlTemplate</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span> <span class="s2">"form.rhtml"</span> <span class="p">)</span>
    <span class="k">end</span>
  <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>起動スクリプトでは、ここで保存された /etc/my_settings.confの内容を使って、IPの初期設定を行います。ここで、シェルスクリプト形式で保存されているのがポイントで、通常の起動スクリプト中にそのまま読み込んで値を使う事が容易になっています。
 <img src="../../images/0035-AloneFramework/9-(2)-1.png" alt="9-(2)-1.png" /></p>
 
 <p>もう一つ、トラフィックグラフについて説明しておきましょう。本器では、パケット数およびバイト数のトラフィックグラフを描画するために、折れ線グラフを用いました。以下はそのコードです。（実際のコードはラベルなどの微調整のため、もう少し複雑です）</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">action_graph_packets</span><span class="p">()</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">action_graph_packets</span><span class="p">()</span>
    <span class="c1"># 変数ydata へ、パケット数のトレンドデータを用意する</span>
    <span class="n">ydata0</span> <span class="o">=</span> <span class="p">[]</span>
    <span class="n">ydata1</span> <span class="o">=</span> <span class="p">[]</span>
@@ -670,8 +659,7 @@
    <span class="n">graph</span><span class="p">.</span><span class="nf">y_axis</span><span class="p">.</span><span class="nf">min</span> <span class="o">=</span> <span class="mi">0</span>
    <span class="n">graph</span><span class="p">.</span><span class="nf">draw</span><span class="p">()</span>
  <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>オートスケールが働いて、値から XY 軸スケールなどを適切に計算してくれるので、非常に簡単な記述でグラフが描けます。
 <img src="../../images/0035-AloneFramework/9-(2)-2.png" alt="9-(2)-2.png" /></p>

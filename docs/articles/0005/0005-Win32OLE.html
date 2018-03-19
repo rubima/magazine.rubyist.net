@@ -331,7 +331,7 @@ Field オブジェクトの使い方についても学んでいきます。</p>
 
 <p><a href="../../images/0005-Win32OLE/insert1record.rb">insert1record.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="n">conn</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"ADODB.Connection"</span><span class="p">)</span>
 <span class="n">connstr</span> <span class="o">=</span> <span class="s2">"DRIVER={Microsoft Access Driver (*.mdb)};Dbq=sample1.mdb"</span>
@@ -348,8 +348,7 @@ Field オブジェクトの使い方についても学んでいきます。</p>
 
 <span class="n">conn</span><span class="o">.</span><span class="no">Close</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>順に説明していきます。</p>
 
@@ -457,7 +456,7 @@ SQL ステートメントです。
 
 <p><a href="../../images/0005-Win32OLE/csv2rs.rb">csv2rs.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="k">def</span> <span class="nf">startADO</span> <span class="n">filename</span> 
   <span class="n">cn</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"ADODB.Connection"</span><span class="p">)</span>
@@ -504,8 +503,7 @@ SQL ステートメントです。
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">conn = WIN32OLE.new("ADODB.Connection")
 connstr = "DRIVER={Microsoft Access Driver (*.mdb)};Dbq=sample1.mdb"</code></pre></figure>
@@ -668,7 +666,7 @@ conn.Execute で、sql を実行しています。</p>
 
 <p><a href="../../images/0005-Win32OLE/rs2csv.rb">rs2csv.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="k">def</span> <span class="nf">startADO</span> <span class="n">filename</span> 
   <span class="n">cn</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"ADODB.Connection"</span><span class="p">)</span>
@@ -716,8 +714,7 @@ conn.Execute で、sql を実行しています。</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このスクリプトでは、earthquake テーブルの値をカンマ区切りで
 出力します。</p>
@@ -929,7 +926,7 @@ Field オブジェクトの Value プロパティが、そのフィールドの�
 
 <p><a href="../../images/0005-Win32OLE/addnew.rb">addnew.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="k">module</span> <span class="nn">Recordset</span>
   <span class="k">def</span> <span class="nf">[]</span> <span class="n">field</span>
@@ -972,8 +969,7 @@ Field オブジェクトの Value プロパティが、そのフィールドの�
   <span class="n">rs</span><span class="o">.</span><span class="no">Update</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>レコードセットの更新・追加においては、まずレコードセットを
 更新・追加できるような形で開くことが必要です。</p>
@@ -1216,7 +1212,7 @@ Enumerable#join を使って SQL を生成することができます。</p>
 
 <p><a href="../../images/0005-Win32OLE/update.rb">update.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generateUPDATE</span> <span class="n">tablename</span><span class="p">,</span><span class="n">values</span><span class="p">,</span><span class="n">constraints</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generateUPDATE</span> <span class="n">tablename</span><span class="p">,</span><span class="n">values</span><span class="p">,</span><span class="n">constraints</span>
   <span class="n">fields</span> <span class="o">=</span> <span class="n">values</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">field</span><span class="p">,</span><span class="n">value</span><span class="p">,</span><span class="n">flag</span><span class="o">|</span> <span class="n">field</span><span class="p">}</span>
   <span class="n">field_statement</span> <span class="o">=</span> <span class="n">fields</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
 
@@ -1243,7 +1239,7 @@ Enumerable#join を使って SQL を生成することができます。</p>
   <span class="k">return</span> <span class="n">sql</span>
 <span class="k">end</span>
 
-<span class="n">values</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">'Magnitude'</span><span class="p">,</span><span class="mi">7</span><span class="o">.</span><span class="mi">9</span><span class="p">,</span><span class="kp">true</span><span class="p">],</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">'Magnitude'</span><span class="p">,</span><span class="mf">7.9</span><span class="p">,</span><span class="kp">true</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">'NumOfDeaths'</span><span class="p">,</span><span class="mi">142807</span><span class="p">,</span><span class="kp">true</span><span class="p">],</span>
   <span class="p">[</span><span class="s1">'DeadOrAlive'</span><span class="p">,</span><span class="s2">"TRUE"</span><span class="p">,</span><span class="kp">true</span><span class="p">]]</span>
 
@@ -1251,8 +1247,7 @@ Enumerable#join を使って SQL を生成することができます。</p>
 
 <span class="nb">puts</span> <span class="n">generateUPDATE</span><span class="p">(</span><span class="s2">"earthquake"</span><span class="p">,</span><span class="n">values</span><span class="p">,</span><span class="n">constraints</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>generateUPDATE メソッドは、3 つの引数をとります。</p>
 
@@ -1317,7 +1312,7 @@ WHERE 句のときの違いは join メソッドで連結するときにコロ�
 
 <p><a href="../../images/0005-Win32OLE/select.rb">select.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generateSELECT</span> <span class="n">tablename</span><span class="p">,</span><span class="n">fields</span><span class="p">,</span><span class="n">constraints</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generateSELECT</span> <span class="n">tablename</span><span class="p">,</span><span class="n">fields</span><span class="p">,</span><span class="n">constraints</span>
   <span class="n">field_statement</span> <span class="o">=</span> <span class="n">fields</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">","</span><span class="p">)</span>
 
   <span class="n">sql</span> <span class="o">=</span> <span class="s2">"SELECT </span><span class="si">#{</span><span class="n">field_statement</span><span class="si">}</span><span class="s2"> FROM </span><span class="si">#{</span><span class="n">tablename</span><span class="si">}</span><span class="s2"> "</span>
@@ -1339,8 +1334,7 @@ WHERE 句のときの違いは join メソッドで連結するときにコロ�
 
 <span class="nb">puts</span> <span class="n">generateSELECT</span><span class="p">(</span><span class="s2">"earthquake"</span><span class="p">,</span><span class="n">fields</span><span class="p">,</span><span class="n">constraints</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これはもう分かりますね。
 しつこく同じ内容を解説することはしません。</p>

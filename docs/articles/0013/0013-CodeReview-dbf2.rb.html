@@ -189,7 +189,7 @@
                         
 <p><a href="../../articles/0013/0013-CodeReview.html">あなたの Ruby コードを添削します 【第 3 回】 dbf.rb</a> で解説した、添削後のソースコードです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># $Id: dbf.rb,v 1.9 2006/02/12 22:02:54 aamine Exp $</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># $Id: dbf.rb,v 1.9 2006/02/12 22:02:54 aamine Exp $</span>
 <span class="c1">#</span>
 <span class="c1"># Copyright (c) 2005,2006 yrock</span>
 <span class="c1"># </span>
@@ -261,8 +261,8 @@
         <span class="vi">@size</span> <span class="o">=</span> <span class="n">size</span>
       <span class="k">end</span>
 
-      <span class="kp">attr_reader</span> <span class="ss">:name</span>
-      <span class="kp">attr_reader</span> <span class="ss">:size</span>
+      <span class="nb">attr_reader</span> <span class="ss">:name</span>
+      <span class="nb">attr_reader</span> <span class="ss">:size</span>
 
       <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
         <span class="n">parse</span><span class="p">(</span><span class="n">f</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="vi">@size</span><span class="p">))</span>
@@ -290,7 +290,7 @@
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nc">PackedStruct</span><span class="o">.</span><span class="nf">read</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-      <span class="kp">new</span><span class="p">(</span><span class="o">*</span> <span class="vi">@prototypes</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">proto</span><span class="o">|</span> <span class="n">proto</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">})</span>
+      <span class="n">new</span><span class="p">(</span><span class="o">*</span> <span class="vi">@prototypes</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">proto</span><span class="o">|</span> <span class="n">proto</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">})</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="o">*</span><span class="n">vals</span><span class="p">)</span>
@@ -349,7 +349,7 @@
   <span class="k">class</span> <span class="nc">HeaderLead</span>   <span class="c1"># reopen</span>
     <span class="k">def</span> <span class="nc">HeaderLead</span><span class="o">.</span><span class="nf">create</span>
       <span class="n">now</span> <span class="o">=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span>
-      <span class="kp">new</span><span class="p">(</span><span class="no">DBF_VERSION</span><span class="p">,</span> <span class="n">now</span><span class="p">.</span><span class="nf">year</span><span class="p">,</span> <span class="n">now</span><span class="p">.</span><span class="nf">month</span><span class="p">,</span> <span class="n">now</span><span class="p">.</span><span class="nf">day</span><span class="p">,</span>
+      <span class="n">new</span><span class="p">(</span><span class="no">DBF_VERSION</span><span class="p">,</span> <span class="n">now</span><span class="p">.</span><span class="nf">year</span><span class="p">,</span> <span class="n">now</span><span class="p">.</span><span class="nf">month</span><span class="p">,</span> <span class="n">now</span><span class="p">.</span><span class="nf">day</span><span class="p">,</span>
           <span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
           <span class="s2">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
     <span class="k">end</span>
@@ -405,7 +405,7 @@
         <span class="no">TYPE_TO_CLASS</span><span class="p">[</span><span class="n">ch</span><span class="p">]</span> <span class="o">=</span> <span class="nb">self</span>
       <span class="k">end</span>
 
-      <span class="k">alias</span> <span class="n">newobj</span> <span class="kp">new</span>
+      <span class="k">alias</span> <span class="n">newobj</span> <span class="n">new</span>
 
       <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">newobj</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="vi">@type</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span> <span class="k">if</span> <span class="nb">self</span> <span class="o">&lt;</span> <span class="no">Field</span>
@@ -420,7 +420,7 @@
       <span class="vi">@value</span> <span class="o">=</span> <span class="kp">nil</span>
     <span class="k">end</span>
 
-    <span class="kp">attr_accessor</span> <span class="ss">:value</span>
+    <span class="nb">attr_accessor</span> <span class="ss">:value</span>
 
     <span class="k">def</span> <span class="nf">inspect</span>
       <span class="s2">"</span><span class="se">\#</span><span class="s2">&lt;</span><span class="si">#{</span><span class="nb">self</span><span class="p">.</span><span class="nf">class</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="vi">@alist</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span><span class="o">|</span><span class="n">n</span><span class="p">,</span><span class="n">v</span><span class="o">|</span> <span class="s2">"</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">=</span><span class="si">#{</span><span class="n">v</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span> <span class="si">}</span><span class="s2">.join(' ')} value=</span><span class="si">#{</span><span class="vi">@value</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">&gt;"</span>
@@ -433,7 +433,7 @@
     <span class="n">field_type</span> <span class="s1">'N'</span>
 
     <span class="k">def</span> <span class="nc">NumericField</span><span class="o">.</span><span class="nf">new2</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span>
-      <span class="kp">new</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="vi">@type</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">)</span>
+      <span class="n">new</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="vi">@type</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">)</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">string_field?</span>
@@ -450,7 +450,7 @@
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">load_default_value</span>
-      <span class="vi">@value</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span>
+      <span class="vi">@value</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="k">end</span>
   <span class="k">end</span>
 
@@ -462,7 +462,7 @@
     <span class="n">field_type</span> <span class="s1">'C'</span>
 
     <span class="k">def</span> <span class="nc">StringField</span><span class="o">.</span><span class="nf">new2</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-      <span class="kp">new</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="vi">@type</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">)</span>
+      <span class="n">new</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="vi">@type</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">""</span><span class="p">,</span> <span class="mh">0x0</span><span class="p">)</span>
     <span class="k">end</span>
 
     <span class="k">def</span> <span class="nf">string_field?</span>
@@ -486,7 +486,7 @@
   <span class="k">class</span> <span class="nc">RecordSet</span>
 
     <span class="k">def</span> <span class="nc">RecordSet</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span> <span class="o">=</span> <span class="s1">'r'</span><span class="p">)</span>
-      <span class="n">recset</span> <span class="o">=</span> <span class="kp">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+      <span class="n">recset</span> <span class="o">=</span> <span class="n">new</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
       <span class="k">if</span> <span class="nb">block_given?</span>
         <span class="k">begin</span>
           <span class="k">return</span> <span class="k">yield</span><span class="p">(</span><span class="n">recset</span><span class="p">)</span>
@@ -507,7 +507,7 @@
         <span class="vi">@f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'rb+'</span><span class="p">)</span>
         <span class="vi">@lead</span> <span class="o">=</span> <span class="no">HeaderLead</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="vi">@f</span><span class="p">)</span>
         <span class="vi">@header_modified</span> <span class="o">=</span> <span class="kp">false</span>
-        <span class="vi">@fields</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="p">.</span><span class="nf">.</span><span class="o">.</span> <span class="vi">@lead</span><span class="p">.</span><span class="nf">n_fields</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="no">Field</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="vi">@f</span><span class="p">)</span> <span class="p">}</span>
+        <span class="vi">@fields</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span> <span class="o">...</span> <span class="vi">@lead</span><span class="p">.</span><span class="nf">n_fields</span><span class="p">).</span><span class="nf">to_a</span><span class="p">.</span><span class="nf">map</span> <span class="p">{</span> <span class="no">Field</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="vi">@f</span><span class="p">)</span> <span class="p">}</span>
         <span class="n">set_current_record</span> <span class="mi">0</span>
       <span class="k">when</span> <span class="s1">'c'</span>
         <span class="vi">@f</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'wb+'</span><span class="p">)</span>
@@ -536,7 +536,7 @@
     <span class="c1"># Database Schema</span>
     <span class="c1">#</span>
 
-    <span class="kp">attr_reader</span> <span class="ss">:fields</span>
+    <span class="nb">attr_reader</span> <span class="ss">:fields</span>
 
     <span class="k">def</span> <span class="nf">field</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
       <span class="vi">@fields</span><span class="p">.</span><span class="nf">detect</span> <span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="p">.</span><span class="nf">name</span> <span class="o">==</span> <span class="nb">name</span> <span class="p">}</span> <span class="n">or</span>
@@ -733,7 +733,7 @@
           <span class="k">raise</span> <span class="no">ArgumentError</span><span class="p">,</span> <span class="s2">"no such field: </span><span class="si">#{</span><span class="nb">name</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">end</span>
 
-    <span class="kp">attr_reader</span> <span class="ss">:fields</span>
+    <span class="nb">attr_reader</span> <span class="ss">:fields</span>
 
     <span class="k">def</span> <span class="nf">[]</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
       <span class="n">field</span><span class="p">(</span><span class="nb">name</span><span class="p">).</span><span class="nf">value</span>
@@ -755,8 +755,7 @@
 
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
                     </div>

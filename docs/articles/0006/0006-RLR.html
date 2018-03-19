@@ -347,9 +347,9 @@ row (行)-major であることは注意を要する。このため、添字順�
 
 <p><a href="../../images/0006-RLR/na1.rb">na1.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
 <span class="n">na</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">float</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">).</span><span class="nf">indgen!</span>         <span class="c1"># indgen! --&gt; 0,1,2,..</span>
-<span class="n">nb</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">to_na</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="p">],</span>            <span class="c1"># Will be a float NArray</span>
+<span class="n">nb</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">to_na</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">],</span>            <span class="c1"># Will be a float NArray</span>
                      <span class="p">[</span><span class="mi">10</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span>
 <span class="n">nc</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">sfloat</span><span class="p">(</span><span class="mi">12</span><span class="p">).</span><span class="nf">random!</span>
 <span class="nb">print</span> <span class="s2">"na = "</span><span class="p">;</span> <span class="nb">p</span> <span class="n">na</span>
@@ -360,7 +360,7 @@ row (行)-major であることは注意を要する。このため、添字順�
 <span class="n">na</span><span class="p">[</span><span class="n">na</span> <span class="o">&gt;=</span> <span class="n">nb</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>
 <span class="nb">print</span> <span class="s2">"na[na&gt;=nb]=999 --&gt; na = "</span><span class="p">;</span> <span class="nb">p</span> <span class="n">na</span>
 
-<span class="nb">print</span> <span class="s2">"na[0..1,true] = "</span><span class="p">;</span> <span class="nb">p</span> <span class="n">na</span><span class="p">[</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">1</span><span class="p">,</span><span class="kp">true</span><span class="p">]</span>
+<span class="nb">print</span> <span class="s2">"na[0..1,true] = "</span><span class="p">;</span> <span class="nb">p</span> <span class="n">na</span><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">1</span><span class="p">,</span><span class="kp">true</span><span class="p">]</span>
 <span class="nb">print</span> <span class="s2">"na[true,-1]"</span><span class="p">;</span>      <span class="nb">p</span> <span class="n">na</span><span class="p">[</span><span class="kp">true</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span> <span class="s2">"na[[0,2,0],true]"</span><span class="p">;</span> <span class="nb">p</span> <span class="n">na</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="kp">true</span><span class="p">]</span>
 
@@ -368,8 +368,7 @@ row (行)-major であることは注意を要する。このため、添字順�
 <span class="nb">print</span> <span class="s2">"sqrt(na) = "</span><span class="p">;</span> <span class="nb">p</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">na</span><span class="p">)</span>
 <span class="nb">print</span> <span class="s2">"log10(na + 1) = "</span><span class="p">;</span> <span class="nb">p</span> <span class="n">log10</span><span class="p">(</span><span class="n">na</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実行結果は下のようになる。</p>
 
@@ -451,15 +450,14 @@ true は全選択、すなわち 0..-1 と等価である。</p>
 
 <p><a href="../../images/0006-RLR/na2.rb">na2.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
 <span class="n">na</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">int</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nf">indgen!</span>
 <span class="n">str</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">stop</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="n">step</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">p</span> <span class="n">na</span><span class="p">[</span> <span class="n">str</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">to_na</span><span class="p">([</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="p">((</span><span class="n">stop</span><span class="o">-</span><span class="n">str</span><span class="p">)</span><span class="o">/</span><span class="n">step</span><span class="p">)])</span> <span class="p">]</span>
+<span class="nb">p</span> <span class="n">na</span><span class="p">[</span> <span class="n">str</span> <span class="o">+</span> <span class="n">step</span> <span class="o">*</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">to_na</span><span class="p">([</span><span class="mi">0</span><span class="o">..</span><span class="p">((</span><span class="n">stop</span><span class="o">-</span><span class="n">str</span><span class="p">)</span><span class="o">/</span><span class="n">step</span><span class="p">)])</span> <span class="p">]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="指定した次元に関する操作">指定した次元に関する操作</h4>
 
@@ -470,14 +468,14 @@ Ruby では [ ] がメソッドであり、さらに配列を ‘*’ で展開�
 
 <p><a href="../../images/0006-RLR/na3.rb">na3.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
 
 <span class="k">class</span> <span class="nc">NArray</span>
   <span class="c1"># differentiate along the dim-th dimension:</span>
   <span class="c1">#   self[.., 1..-1, ..] - self[.., 0..-2, ..]</span>
   <span class="k">def</span> <span class="nf">diff</span><span class="p">(</span><span class="n">dim</span><span class="p">)</span>
-    <span class="n">idx1</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">]</span><span class="o">*</span><span class="n">dim</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">.</span><span class="nf">.</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="kp">false</span><span class="p">]</span>
-    <span class="n">idx2</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">]</span><span class="o">*</span><span class="n">dim</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="kp">false</span><span class="p">]</span>
+    <span class="n">idx1</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">]</span><span class="o">*</span><span class="n">dim</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="o">..-</span><span class="mi">1</span><span class="p">,</span> <span class="kp">false</span><span class="p">]</span>
+    <span class="n">idx2</span> <span class="o">=</span> <span class="p">[</span><span class="kp">true</span><span class="p">]</span><span class="o">*</span><span class="n">dim</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="o">..-</span><span class="mi">2</span><span class="p">,</span> <span class="kp">false</span><span class="p">]</span>
     <span class="nb">self</span><span class="p">[</span><span class="o">*</span><span class="n">idx1</span><span class="p">].</span><span class="nf">sbt!</span><span class="p">(</span> <span class="nb">self</span><span class="p">[</span><span class="o">*</span><span class="n">idx2</span><span class="p">]</span> <span class="p">)</span>   <span class="c1"># sbt! : destructive subtraction</span>
   <span class="k">end</span>
 <span class="k">end</span>
@@ -489,8 +487,7 @@ Ruby では [ ] がメソッドであり、さらに配列を ‘*’ で展開�
 <span class="n">na</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
 <span class="nb">p</span> <span class="n">na</span><span class="p">,</span> <span class="n">na</span><span class="p">.</span><span class="nf">diff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>7、8 行目の false は、0 以上の任意個の true を表す「ゴム次元」である。
 実際何個に対応するかは、行列の次元数に依存する。つまり、7 行目は</p>
@@ -533,13 +530,13 @@ Ruby では [ ] がメソッドであり、さらに配列を ‘*’ で展開�
 
 <p><a href="../../images/0006-RLR/nmatrix_lu.rb">nmatrix_lu.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
 
 <span class="k">def</span> <span class="nf">hilbert</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
   <span class="n">h</span> <span class="o">=</span> <span class="no">NMatrix</span><span class="p">.</span><span class="nf">float</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">n</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">n</span>
-      <span class="n">h</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">n</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">n</span>
+      <span class="n">h</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">end</span>
   <span class="k">end</span>
   <span class="n">h</span>
@@ -556,8 +553,7 @@ Ruby では [ ] がメソッドであり、さらに配列を ‘*’ で展開�
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実行結果は下記。倍精度計算であるが、n=12 では誤差がそれなりに大きく 
 n=13 では特異ベクトルと判別されて計算できてない。これは、そのような数
@@ -647,7 +643,7 @@ Ruby のメソッドを呼び出す形で行われるので時間はかかる。
 
 <p><a href="../../images/0006-RLR/dcl_hop.rb">dcl_hop.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
 <span class="nb">require</span> <span class="s2">"numru/dcl"</span>
 <span class="kp">include</span> <span class="no">NumRu</span>                 <span class="c1"># Most dennou-ruby products are in it</span>
 <span class="kp">include</span> <span class="no">NMath</span>                 <span class="c1"># Math module for NArray</span>
@@ -664,8 +660,7 @@ Ruby のメソッドを呼び出す形で行われるので時間はかかる。
 <span class="no">DCL</span><span class="o">::</span><span class="n">usgrph</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="no">DCL</span><span class="o">::</span><span class="n">grcls</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これを実行すると下に示す図が表示される。</p>
 
@@ -720,7 +715,7 @@ window システムを使うが、Windows 版では Windows ネーティブな�
 
 <p><a href="../../images/0006-RLR/dcl_contour.rb">dcl_contour.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="cm">=begin
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">=begin
 =dcl_contour.rb: 等高線と色塗りのサンプル
 使用法
  % ruby dcl_contour.rb [-ps] [-dump]
@@ -735,15 +730,15 @@ window システムを使うが、Windows 版では Windows ネーティブな�
 
 <span class="n">nt</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">nz</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span> <span class="o">=</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">zmin</span><span class="p">,</span> <span class="n">zmax</span> <span class="o">=</span> <span class="mi">20</span><span class="o">.</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">tmin</span><span class="p">,</span> <span class="n">tmax</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">5.0</span>
+<span class="n">zmin</span><span class="p">,</span> <span class="n">zmax</span> <span class="o">=</span> <span class="mf">20.0</span><span class="p">,</span><span class="mf">50.0</span>
 
 <span class="n">t</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">sfloat</span><span class="p">(</span><span class="n">nt</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span>    <span class="mi">1</span><span class="p">).</span><span class="nf">indgen!</span> <span class="o">*</span> <span class="p">(</span><span class="n">tmax</span><span class="o">-</span><span class="n">tmin</span><span class="p">)</span><span class="o">/</span><span class="n">nt</span>    <span class="c1"># 横軸</span>
 <span class="n">z</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">sfloat</span><span class="p">(</span>   <span class="mi">1</span><span class="p">,</span> <span class="n">nz</span><span class="o">+</span><span class="mi">1</span><span class="p">).</span><span class="nf">indgen!</span> <span class="o">*</span> <span class="p">(</span><span class="n">zmax</span><span class="o">-</span><span class="n">zmin</span><span class="p">)</span><span class="o">/</span><span class="n">nz</span>    <span class="c1"># 縦軸</span>
 
-<span class="n">uz</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="o">.</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="n">tz</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">.</span><span class="mi">0</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">0</span><span class="o">.</span><span class="mi">1</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">uz</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">.</span><span class="mi">0</span><span class="o">*</span><span class="p">(</span><span class="n">tz</span><span class="o">+</span><span class="n">t</span><span class="p">))</span>               <span class="c1"># (nt+1,nz+1)の配列になる。</span>
+<span class="n">uz</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="o">*</span><span class="n">z</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">tz</span> <span class="o">=</span> <span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">z</span><span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">uz</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="mf">3.0</span><span class="o">*</span><span class="p">(</span><span class="n">tz</span><span class="o">+</span><span class="n">t</span><span class="p">))</span>               <span class="c1"># (nt+1,nz+1)の配列になる。</span>
 
 <span class="k">if</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">index</span><span class="p">(</span><span class="s2">"-ps"</span><span class="p">)</span>
   <span class="c1"># コマンドラインオプションに-psが含まれていればPSファイルを作る</span>
@@ -766,12 +761,11 @@ window システムを使うが、Windows 版では Windows ネーティブな�
 <span class="no">DCL</span><span class="o">::</span><span class="n">uetone</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>                              <span class="c1"># ぬりわけ</span>
 <span class="no">DCL</span><span class="o">::</span><span class="n">usdaxs</span>                                 <span class="c1"># 座標軸を描く</span>
 <span class="no">DCL</span><span class="o">::</span><span class="n">udcntr</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>                              <span class="c1"># 等値線をひく</span>
-<span class="no">DCL</span><span class="o">::</span><span class="n">uxmttl</span><span class="p">(</span><span class="s1">'t'</span><span class="p">,</span><span class="s1">'Idealized QBO'</span><span class="p">,</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>        <span class="c1"># title. top に中央合せ(0.0)</span>
+<span class="no">DCL</span><span class="o">::</span><span class="n">uxmttl</span><span class="p">(</span><span class="s1">'t'</span><span class="p">,</span><span class="s1">'Idealized QBO'</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>        <span class="c1"># title. top に中央合せ(0.0)</span>
 
 <span class="no">DCL</span><span class="o">::</span><span class="n">grcls</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>19-24 行目では、表示すべきデータを生成している。やや長いが、ソースがほ
 ぼ数式どおりに書かれているので分かりやすい。NArray のレポートで説明し
@@ -934,14 +928,14 @@ NArray を使用する場合の二通りを示す。</p>
 
 <p><a href="../../images/0006-RLR/gsl_lu.rb">gsl_lu.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"gsl"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"gsl"</span>
 
 <span class="k">def</span> <span class="nf">hilbert</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
   <span class="c1"># 実は GSL::Matrix にはクラスメソッドとして hilbert があるのだがデモのため</span>
   <span class="n">h</span> <span class="o">=</span> <span class="no">GSL</span><span class="o">::</span><span class="no">Matrix</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">n</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">n</span>
-      <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">n</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">n</span>
+      <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">end</span>
   <span class="k">end</span>
   <span class="n">h</span>
@@ -956,8 +950,7 @@ NArray を使用する場合の二通りを示す。</p>
   <span class="nb">print</span> <span class="s2">"n=</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">. Error in h*h^-1 : "</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>GSL::Matrix の値の代入は NArray と同じようにできることが分かる。ただし、
 こちらは、添字は普通に行、列の順である。例で用いたのは対称行列なので、
@@ -1009,14 +1002,14 @@ NArray を使用する場合の二通りを示す。</p>
 
 <p><a href="../../images/0006-RLR/gsl_lu_narray.rb">gsl_lu_narray.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"narray"</span>
 <span class="nb">require</span> <span class="s2">"gsl"</span>
 
 <span class="k">def</span> <span class="nf">hilbert</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
   <span class="n">h</span> <span class="o">=</span> <span class="no">NMatrix</span><span class="p">.</span><span class="nf">float</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">n</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="p">.</span><span class="nf">n</span>
-      <span class="n">h</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">.</span><span class="mi">0</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">n</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="mi">0</span><span class="o">...</span><span class="n">n</span>
+      <span class="n">h</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">end</span>
   <span class="k">end</span>
   <span class="n">h</span>
@@ -1030,8 +1023,7 @@ NArray を使用する場合の二通りを示す。</p>
   <span class="nb">print</span> <span class="s2">"n=</span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">. Error in h*h^-1 : "</span><span class="p">,</span> <span class="p">(</span><span class="n">e</span> <span class="o">-</span> <span class="n">h</span><span class="o">*</span><span class="n">hi</span><span class="p">).</span><span class="nf">abs</span><span class="p">.</span><span class="nf">max</span><span class="p">,</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ここでは NArray と GSL::Matrix の間の変換は陽に行った。しかし、NArray 
 を直接与えて動作するメソッドも多く、かつ増え続けている。その場合、
@@ -1190,7 +1182,7 @@ CDL (Common Data Language) というテキスト表現に変換する。順序�
 
 <p><a href="../../images/0006-RLR/netcdf_create.rb">netcdf_create.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"numru/netcdf"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"numru/netcdf"</span>
 <span class="kp">include</span> <span class="no">NumRu</span>
 <span class="kp">include</span> <span class="no">NMath</span>
 
@@ -1219,11 +1211,11 @@ CDL (Common Data Language) というテキスト表現に変換する。順序�
 <span class="n">file</span><span class="p">.</span><span class="nf">enddef</span>                                  <span class="c1"># end the define mode</span>
 
 <span class="c1">#   -- create data values for test --</span>
-<span class="n">x</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">sfloat</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nf">indgen!</span> <span class="o">*</span> <span class="p">(</span><span class="mi">360</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="p">(</span><span class="n">nx</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">sfloat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ny</span><span class="p">).</span><span class="nf">indgen!</span> <span class="o">*</span> <span class="p">(</span><span class="mi">180</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="p">(</span><span class="n">ny</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="mi">90</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">x</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">sfloat</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="mi">1</span><span class="p">).</span><span class="nf">indgen!</span> <span class="o">*</span> <span class="p">(</span><span class="mf">360.0</span><span class="o">/</span><span class="p">(</span><span class="n">nx</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="no">NArray</span><span class="p">.</span><span class="nf">sfloat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">ny</span><span class="p">).</span><span class="nf">indgen!</span> <span class="o">*</span> <span class="p">(</span><span class="mf">180.0</span><span class="o">/</span><span class="p">(</span><span class="n">ny</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">-</span> <span class="mf">90.0</span>
 <span class="n">x_rad</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="no">PI</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span>
 <span class="n">y_rad</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="no">PI</span><span class="o">/</span><span class="mi">180</span><span class="p">)</span>
-<span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x_rad</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span> <span class="mi">0</span><span class="o">.</span><span class="mi">2</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">y_rad</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span> <span class="o">+</span> <span class="mi">5</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x_rad</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span> <span class="mf">0.2</span> <span class="o">-</span> <span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">y_rad</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="c1">#   -- write data values --</span>
 <span class="n">xvar</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span> <span class="n">x</span> <span class="p">)</span>
@@ -1232,8 +1224,7 @@ CDL (Common Data Language) というテキスト表現に変換する。順序�
 
 <span class="n">file</span><span class="p">.</span><span class="nf">close</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>やや長いが、読めば何をしてるかは分かるであろう。
 なお、2 行目の NumRu については、RubyDCL の節を、
@@ -1248,7 +1239,7 @@ CDL (Common Data Language) というテキスト表現に変換する。順序�
 
 <p><a href="../../images/0006-RLR/netcdf_copy.rb">netcdf_copy.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#  Makes a copy of a NetCDF file:</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#  Makes a copy of a NetCDF file:</span>
 <span class="c1">#  % ruby netcdf_copy.rb path_from path_to</span>
 
 <span class="nb">require</span> <span class="s2">"numru/netcdf"</span>
@@ -1268,8 +1259,7 @@ CDL (Common Data Language) というテキスト表現に変換する。順序�
 <span class="n">from</span><span class="p">.</span><span class="nf">each_var</span><span class="p">{</span><span class="o">|</span><span class="n">var</span><span class="o">|</span> <span class="n">to</span><span class="p">.</span><span class="nf">var</span><span class="p">(</span><span class="n">var</span><span class="p">.</span><span class="nf">name</span><span class="p">).</span><span class="nf">put</span><span class="p">(</span><span class="n">var</span><span class="p">.</span><span class="nf">get</span><span class="p">)}</span>
 <span class="n">to</span><span class="p">.</span><span class="nf">close</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ちなみに、NetCDF の C ライブラリーは、変数の型毎に関数が用意されている
 ため、上のプログラムを C で書くと条件分岐の嵐となり、非常に長いプログ
@@ -1282,7 +1272,7 @@ CDL (Common Data Language) というテキスト表現に変換する。順序�
 
 <p><a href="../../images/0006-RLR/netcdf_plot.rb">netcdf_plot.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"numru/netcdf"</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"numru/netcdf"</span>
 <span class="nb">require</span> <span class="s2">"numru/dcl"</span>
 <span class="kp">include</span> <span class="no">NumRu</span>
 
@@ -1304,21 +1294,20 @@ CDL (Common Data Language) というテキスト表現に変換する。順序�
 <span class="c1"># -- graphics --</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">gropn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">sgpset</span><span class="p">(</span><span class="s1">'lfull'</span><span class="p">,</span><span class="kp">true</span><span class="p">)</span>       <span class="c1"># use the whole window even if not a square</span>
-<span class="no">DCL</span><span class="p">.</span><span class="nf">uzfact</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">8</span><span class="p">)</span>                             <span class="c1"># --&gt; a bit smaller characters</span>
+<span class="no">DCL</span><span class="p">.</span><span class="nf">uzfact</span><span class="p">(</span><span class="mf">0.8</span><span class="p">)</span>                             <span class="c1"># --&gt; a bit smaller characters</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">grfrm</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">grswnd</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="nf">min</span><span class="p">,</span> <span class="n">x</span><span class="p">.</span><span class="nf">max</span><span class="p">,</span> <span class="n">y</span><span class="p">.</span><span class="nf">min</span><span class="p">,</span> <span class="n">y</span><span class="p">.</span><span class="nf">max</span><span class="p">)</span>        <span class="c1"># physical boundaries</span>
-<span class="no">DCL</span><span class="p">.</span><span class="nf">grsvpt</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">6</span><span class="p">)</span>                <span class="c1"># viewport on window</span>
+<span class="no">DCL</span><span class="p">.</span><span class="nf">grsvpt</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span>                <span class="c1"># viewport on window</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">grstrf</span>                                    <span class="c1"># fix the "transform"</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">uelset</span><span class="p">(</span><span class="s2">"ltone"</span><span class="p">,</span><span class="kp">true</span><span class="p">)</span>                      <span class="c1"># color shading from now on</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">uetone</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>                                 <span class="c1"># shading</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">ussttl</span><span class="p">(</span><span class="n">xname</span><span class="p">,</span> <span class="n">xunits</span><span class="p">,</span> <span class="n">yname</span><span class="p">,</span> <span class="n">yunits</span><span class="p">)</span>      <span class="c1"># set axis titles</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">usdaxs</span>                                    <span class="c1"># axis</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">udcntz</span><span class="p">(</span><span class="n">u</span><span class="p">)</span>                                 <span class="c1"># contour</span>
-<span class="no">DCL</span><span class="p">.</span><span class="nf">uxmttl</span><span class="p">(</span><span class="s1">'t'</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="n">uname</span><span class="si">}</span><span class="s2"> [</span><span class="si">#{</span><span class="n">uunits</span><span class="si">}</span><span class="s2">]"</span><span class="p">,</span> <span class="mi">0</span><span class="o">.</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># title at the top</span>
+<span class="no">DCL</span><span class="p">.</span><span class="nf">uxmttl</span><span class="p">(</span><span class="s1">'t'</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="n">uname</span><span class="si">}</span><span class="s2"> [</span><span class="si">#{</span><span class="n">uunits</span><span class="si">}</span><span class="s2">]"</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>  <span class="c1"># title at the top</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">grcls</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これを実行すると、次のような図が表示される。</p>
 
@@ -1386,7 +1375,7 @@ Ruby で書かれた下記の <a href="単位ライブラリー Units">単位ラ
 
 <p><a href="../../images/0006-RLR/gphys_demo.rb">gphys_demo.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"numru/ggraph"</span>      <span class="c1"># require "numru/gphys" if graphic is not needed</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s2">"numru/ggraph"</span>      <span class="c1"># require "numru/gphys" if graphic is not needed</span>
 <span class="kp">include</span> <span class="no">NumRu</span>
 
 <span class="n">gphys</span> <span class="o">=</span> <span class="no">GPhys</span><span class="o">::</span><span class="no">IO</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'test.nc'</span><span class="p">,</span><span class="s1">'u'</span><span class="p">)</span>   <span class="c1"># create a GPhys obj on data in file</span>
@@ -1394,11 +1383,10 @@ Ruby で書かれた下記の <a href="単位ライブラリー Units">単位ラ
 <span class="no">DCL</span><span class="p">.</span><span class="nf">gropn</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">sldiv</span><span class="p">(</span><span class="s1">'y'</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>                   <span class="c1"># 'y'oko narabe, 2 by 1 window division</span>
 <span class="no">GGraph</span><span class="p">.</span><span class="nf">contour</span><span class="p">(</span> <span class="n">gphys</span> <span class="p">)</span>
-<span class="no">GGraph</span><span class="p">.</span><span class="nf">line</span><span class="p">(</span> <span class="n">gphys</span><span class="p">.</span><span class="nf">cut</span><span class="p">(</span><span class="s1">'y'</span><span class="o">=&gt;-</span><span class="mi">15</span><span class="p">.</span><span class="nf">.</span><span class="mi">15</span><span class="p">).</span><span class="nf">mean</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span> <span class="p">)</span>
+<span class="no">GGraph</span><span class="p">.</span><span class="nf">line</span><span class="p">(</span> <span class="n">gphys</span><span class="p">.</span><span class="nf">cut</span><span class="p">(</span><span class="s1">'y'</span><span class="o">=&gt;-</span><span class="mi">15</span><span class="o">..</span><span class="mi">15</span><span class="p">).</span><span class="nf">mean</span><span class="p">(</span><span class="s1">'y'</span><span class="p">)</span> <span class="p">)</span>
 <span class="no">DCL</span><span class="p">.</span><span class="nf">grcls</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これまで示した可視化プログラムに比べて圧倒的に短い。これを実行すると下
 の図が表示される。短いながらも、座標軸まで正しく書いているのがポイント

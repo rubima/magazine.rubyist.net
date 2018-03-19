@@ -227,7 +227,7 @@
 
 <p>最初の実装は、Kernel モジュールに直接 HTTP verb 相当のメソッドを定義するという、シンプルなものでした。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">module</span> <span class="nn">Kernel</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">module</span> <span class="nn">Kernel</span>
 
     <span class="sx">%w( get post put delete )</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">verb</span><span class="o">|</span>
       <span class="nb">eval</span> <span class="o">&lt;&lt;-</span><span class="no">end_eval</span><span class="sh">
@@ -239,8 +239,7 @@
 
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>その後、Sinatra は着実な開発が続けられていきます。</p>
 
@@ -248,19 +247,18 @@
 
 <p>従来までの「クラシック」スタイル</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'rubygems'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'rubygems'</span>
   <span class="nb">require</span> <span class="s1">'sinatra'</span>
 
   <span class="n">get</span> <span class="s1">'/'</span> <span class="k">do</span>
     <span class="s1">'Fly me to the Moon!'</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>そして、より「Rack アプリケーションらしい」、クラスマクロによってルートを定義するスタイル。register のような重要なメソッドもいくつか追加されています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'rubygems'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'rubygems'</span>
   <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
 
   <span class="k">class</span> <span class="nc">MyApp</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
@@ -271,8 +269,7 @@
 
   <span class="no">MyApp</span><span class="p">.</span><span class="nf">run!</span> <span class="ss">:host</span> <span class="o">=&gt;</span> <span class="s1">'localhost'</span><span class="p">,</span> <span class="ss">:port</span> <span class="o">=&gt;</span> <span class="mi">9090</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>そして 1.0 において、以下のような大きな変更が加えられました。</p>
 
@@ -315,7 +312,7 @@
 
 <p>もうすこし、Sinatra をいじってみましょう。まずは、ベースとなる以下の app.rb を作ってみます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'rubygems'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'rubygems'</span>
   <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
 
   <span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
@@ -324,14 +321,13 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>名前を入力したら挨拶をしてくれる画面を作りましょう。また、簡単なレイアウトも導入しましょう。gem のインストールに関しては、必要ならば適宜「sudo」等を補ってください。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">   $ gem install haml</code></pre></figure>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># encoding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1"># encoding: utf-8</span>
   <span class="nb">require</span> <span class="s1">'rubygems'</span>
   <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
 
@@ -364,8 +360,7 @@
     %h1= @title
     %div= yield
 
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>少し、本格的なアプリケーションっぽくなってきました。といっても 30 行と少しなんですが……。サーバを再起動して、<a href="http://localhost:4567/">http://localhost:4567/</a> や <a href="http://localhost:4567/name/foo">http://localhost:4567/name/foo</a> などにアクセスしてみましょう。</p>
 
@@ -400,7 +395,7 @@
 
 <p>そうして、以下のような記述をします。「何をしているか」は一目瞭然だと思います。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'rack/rewrite'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'rack/rewrite'</span>
   <span class="c1">#...</span>
   <span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
     <span class="c1">#...</span>
@@ -410,8 +405,7 @@
     <span class="c1">#...</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実際、<a href="http://localhost:4567/name/foo">http://localhost:4567/name/foo</a> と <a href="http://localhost:4567/song_for/foo">http://localhost:4567/song_for/foo</a> とで同じ画面が表示されることと思います。</p>
 
@@ -427,7 +421,7 @@
 
 <p>最後に、register でリローダの利用を宣言するだけです (サーバが Thin だと上手に動かないので、一緒に設定で WEBrick に決め打ちします)。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
     <span class="n">enable</span> <span class="ss">:inline_templates</span>
     <span class="n">enable</span> <span class="ss">:logging</span>
     <span class="n">set</span> <span class="ss">:server</span><span class="p">,</span> <span class="s2">"webrick"</span>
@@ -435,18 +429,16 @@
     <span class="c1">#...</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>development 環境でのみ有効にしたい場合も簡単です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="n">configure</span> <span class="ss">:development</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">configure</span> <span class="ss">:development</span> <span class="k">do</span>
     <span class="n">register</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Reloader</span>
     <span class="n">set</span> <span class="ss">:server</span><span class="p">,</span> <span class="s2">"webrick"</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これでターミナルで Sinatra プロセスを立ち上げたままで、デザイン変更、ロジックの変更など、いろいろな改修を加えられます (gem の追加等の場合は再起動が必要になりますので注意してください)。</p>
 
@@ -508,7 +500,7 @@
 
 <p>まず、「Rails 風 MVC パターンの導入」ということで、Sinatra の HTTP verb を拡張し、DSL には controller メソッドが追加されます。以下は、公式ガイドからの引用です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="no">SimpleApp</span><span class="p">.</span><span class="nf">controllers</span> <span class="ss">:admin</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="no">SimpleApp</span><span class="p">.</span><span class="nf">controllers</span> <span class="ss">:admin</span> <span class="k">do</span>
     <span class="n">get</span> <span class="ss">:show</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="ss">:id</span> <span class="k">do</span>
       <span class="c1"># url is generated as "/admin/show/#{params[:id]}"</span>
       <span class="c1"># url_for(:admin, :show, :id =&gt; 5) =&gt; "/admin/show/5"</span>
@@ -520,24 +512,22 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これにより、「Controller による画面のグルーピング」が実現でき、また、各ルーティングに名前が付くため、url_for ヘルパーによって実 URL を参照することができるようになります。そしてビューやモデルに関しても、専用のディレクトリにジェネレータにより生成することが可能になります。</p>
 
 <p>また、豊富で十分なテストが書かれたヘルパー群、メール送信やキャッシュのための DSL の拡張も含まれています。これらは、それぞれ padrino-helpers、padrino-mailer、padrino-cache として単一の gem に切り出されており、先だって説明した「register」により、単独で普通の Sinatra アプリケーションにも cherry-pick できます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
   <span class="nb">require</span> <span class="s1">'padrino-helpers'</span>
 
   <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
     <span class="n">register</span> <span class="no">Padrino</span><span class="o">::</span><span class="no">Helpers</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
   <span class="nb">require</span> <span class="s1">'padrino-mailer'</span>
 
   <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
@@ -554,10 +544,9 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'sinatra/base'</span>
   <span class="nb">require</span> <span class="s1">'padrino-cache'</span>
 
   <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
@@ -570,8 +559,7 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ロガー、リローダーなども、開発時には便利だと分かっていても、自分で実装するとなるとなかなか大変なものです。Padrino のロガーは非常に読みやすく、リローダーも賢いので、比較的地味な要素なのかもしれませんが、開発時のストレスがずいぶん軽減されることになるでしょう。</p>
 
@@ -589,7 +577,7 @@
 
 <p>一番わかりやすいのは Padrino::Helpers でしょう。まず、以下のように変更してください。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># gem を追記</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1"># gem を追記</span>
   <span class="nb">require</span> <span class="s1">'padrino-helpers'</span>
 
   <span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
@@ -604,12 +592,11 @@
     <span class="c1">#...</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>そして、<strong>END</strong> 以下のテンプレートで、ヘルパーを使うように編集します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="err">@@</span> <span class="n">layout</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="err">@@</span> <span class="n">layout</span>
   <span class="o">!!!</span> <span class="mi">5</span>
   <span class="o">%</span><span class="n">html</span>
     <span class="o">%</span><span class="n">head</span>
@@ -625,14 +612,13 @@
     <span class="no">This</span> <span class="n">is</span> <span class="n">header</span> <span class="n">from</span> <span class="n">helper</span>
   <span class="o">%</span><span class="nb">p</span> <span class="no">My</span> <span class="no">Way</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>この状態で / にアクセスすると、確かに content_for の内容が yield_content に展開されているのが分かると思います。無論、form builder なども利用可能です。</p>
 
 <p>また、ログをよりカラフルなものにしてみましょう。Padrino::Logger::Rack は padrino-core に含まれます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'padrino-core'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'padrino-core'</span>
   <span class="c1">#...</span>
   <span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
     <span class="c1"># Sinatra 自体のログを disable</span>
@@ -642,12 +628,11 @@
     <span class="c1">#...</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>さらに、キャッシュを導入してみましょう。現状では Padrino::Routing に依存しているので、キャッシュの単独導入は少し複雑です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'padrino-core'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nb">require</span> <span class="s1">'padrino-core'</span>
   <span class="nb">require</span> <span class="s1">'padrino-cache'</span>
 
   <span class="k">class</span> <span class="nc">App</span> <span class="o">&lt;</span> <span class="no">Sinatra</span><span class="o">::</span><span class="no">Base</span>
@@ -666,8 +651,7 @@
     <span class="k">end</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これで、まずは <a href="http://localhost:4567/heavy_contents">http://localhost:4567/heavy_contents</a> にアクセスしてみます。当然表示に 5 秒かかります。ですが、次に、画面をリロードした際には、すぐに返ってくるはずです。この URL のコンテンツをキャッシュしたからですね。</p>
 
@@ -705,7 +689,7 @@
 
 <p>簡単な Rack Middleware の実装を見てみましょう。以下のような config.ru (Rack アプリケーションの標準的な設定ファイルです) を作成し、同じディレクトリで <em>rackup</em> を実行すれば立ち上がります。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1"># encoding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1"># encoding: utf-8</span>
   <span class="nb">require</span> <span class="s1">'kconv'</span>
   <span class="nb">require</span> <span class="s1">'open-uri'</span>
   <span class="nb">require</span> <span class="s1">'rack'</span>
@@ -737,8 +721,7 @@
     <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span><span class="s2">"Content-Type"</span> <span class="o">=&gt;</span> <span class="s2">"text/html"</span><span class="p">},</span> <span class="p">[</span><span class="nb">open</span><span class="p">(</span><span class="n">target</span><span class="p">).</span><span class="nf">read</span><span class="p">.</span><span class="nf">toutf8</span><span class="p">]]</span>
   <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>Rack::Glitch</em> は、Rubyist Magazine に出てくる「Ruby(ist)」と言う文字列に対して、今流行りのグリッチ処理を仕掛けて格好良くするための Rack Middleware です。るびまのページが EUC-JP なので少し面倒なことをしているんですが、基本的には：</p>
 
@@ -764,7 +747,7 @@
 
 <p>というだけです。たとえば、Padrino::Helpers Extensions は大まかに言って以下のような実装です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">module</span> <span class="nn">Padrino</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">module</span> <span class="nn">Padrino</span>
     <span class="k">module</span> <span class="nn">Helpers</span>
       <span class="k">class</span> <span class="o">&lt;&lt;</span> <span class="nb">self</span>
         <span class="k">def</span> <span class="nf">registered</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
@@ -783,8 +766,7 @@
     <span class="k">end</span> <span class="c1"># Helpers</span>
   <span class="k">end</span> <span class="c1"># Padrino</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>基本的な作り方としては、registered の中で app のクラスマクロ (use、helpers、get/post などの verbs、set など) を呼ぶやり方が良いでしょう。むろん、class_eval のような上級黒魔術も使えます。</p>
 
@@ -910,13 +892,13 @@
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>Windows においても、たとえば NogakuDo (http://www.artonx.org/data/nougakudo/jman.html) に同梱されている Ruby などであれば問題なく動くと思われますし、NogakuDo ならば Windows 向けの高速な Rack 対応サーバ (Ennou) も入るそうなので、Rails のみならず Sinatra も高速に動作させられることと思います。もし動かなければ作者の arton さんにフィードバックを送ることも出来るでしょう。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>Windows においても、たとえば NogakuDo (http://www.artonx.org/data/nougakudo/jman.html) に同梱されている Ruby などであれば問題なく動くと思われますし、NogakuDo ならば Windows 向けの高速な Rack 対応サーバ (Ennou) も入るそうなので、Rails のみならず Sinatra も高速に動作させられることと思います。もし動かなければ作者の arton さんにフィードバックを送ることも出来るでしょう。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>どこかの誰かは「二郎だ」などと喩えていましたけどね……(w&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>どこかの誰かは「二郎だ」などと喩えていましたけどね……(w <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>2011 年 11 月現在&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>2011 年 11 月現在 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -395,13 +395,12 @@ CGI プログラムを実行するのを諦めてしまいます。</p>
 
 <p>bar1.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 <span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;OK?&lt;/body&gt;&lt;/html&gt;"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>bar1.rb という CGI プログラムは前号で作った
 HTML を表示させるプログラムと構造は同じです。
@@ -445,15 +444,14 @@ CGI プログラムの表示する内容を変更出来ます。</p>
 
 <p>bar_echo1.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 <span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;"</span>
 <span class="nb">print</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'QUERY_STRING'</span><span class="p">]</span>
 <span class="nb">print</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ENV の使い方さえ分かれば難しいところは無いと思います。
 試しに <a href="http://localhost:8080/bar_echo1.html">http://localhost:8080/bar_echo1.html</a> を表示させて
@@ -538,7 +536,7 @@ CGI プログラムの表示する内容を変更出来ます。</p>
 
 <p>bar_echo2.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 <span class="nb">print</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;"</span>
@@ -558,8 +556,7 @@ CGI プログラムの表示する内容を変更出来ます。</p>
 
 <span class="nb">print</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="文字列の分割---split-命令">文字列の分割 - split 命令</h4>
 

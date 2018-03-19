@@ -189,7 +189,7 @@
                         
 <p><a href="../../articles/0011/0011-CodeReview.html">あなたの Ruby コードを添削します 【第 2 回】 HexStruct.rb</a> で解説した、添削前のソースコードです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># IE Control Library Ver.0.1.0    2003/11/30</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># IE Control Library Ver.0.1.0    2003/11/30</span>
 <span class="c1"># Copyright (C) 2005 Oka Yasushi &lt;yac@tech-notes.dyndns.org&gt;</span>
 <span class="c1"># </span>
 <span class="c1"># You may redistribute it and/or modify it under the same license terms as Ruby.</span>
@@ -341,7 +341,7 @@
         <span class="k">end</span>
         <span class="n">offset</span> <span class="o">+=</span> <span class="n">item_size</span>
       <span class="k">else</span>
-        <span class="n">item_data</span> <span class="o">=</span> <span class="n">hex_str</span><span class="p">[(</span><span class="n">offset</span> <span class="o">*</span> <span class="mi">2</span><span class="p">).</span><span class="nf">.</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">item_data</span> <span class="o">=</span> <span class="n">hex_str</span><span class="p">[(</span><span class="n">offset</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span><span class="o">..-</span><span class="mi">1</span><span class="p">]</span>
         <span class="n">offset</span> <span class="o">+=</span> <span class="n">item_data</span><span class="p">.</span><span class="nf">size</span> <span class="o">/</span> <span class="mi">2</span>
       <span class="k">end</span>
       <span class="vi">@item_list</span><span class="p">.</span><span class="nf">push</span> <span class="n">item_data</span>
@@ -381,8 +381,7 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
                     </div>

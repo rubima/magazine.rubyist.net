@@ -201,7 +201,7 @@
   </li>
   <li><a href="#最後に" id="markdown-toc-最後に">最後に</a></li>
   <li><a href="#著者について" id="markdown-toc-著者について">著者について</a>    <ul>
-      <li><a href="#佐藤竜之介tricknotes" id="markdown-toc-佐藤竜之介tricknotes">佐藤竜之介(<a href="https://github.com/tricknotes">@tricknotes</a>)</a></li>
+      <li><a href="#佐藤竜之介tricknotes" id="markdown-toc-佐藤竜之介tricknotes">佐藤竜之介(@tricknotes)</a></li>
     </ul>
   </li>
 </ul>
@@ -242,7 +242,7 @@ Excel をはじめ、OpenOffice などの各オフィスアプリケーション
   <li>example.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'axlsx'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'axlsx'</span>
 
 <span class="n">package</span> <span class="o">=</span> <span class="no">Axlsx</span><span class="o">::</span><span class="no">Package</span><span class="p">.</span><span class="nf">new</span>
 
@@ -251,8 +251,7 @@ Excel をはじめ、OpenOffice などの各オフィスアプリケーション
 
 <span class="n">package</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="s1">'example.xlsx'</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このファイルを実行すると、example.xlsx というファイルが生成されているかと思います。
 お手持ちのオフィスアプリケーションで開いてみてください。
@@ -262,33 +261,30 @@ Excel をはじめ、OpenOffice などの各オフィスアプリケーション
 これを解決するためには、文字列を sharedString.xml に保存するようにする必要があります。
 Axlsx では以下のように指定します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># ...</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ...</span>
 <span class="n">package</span><span class="p">.</span><span class="nf">use_shared_strings</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># for Numbers</span>
 <span class="n">package</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="s1">'example.xlsx'</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>なお、本稿では互換性を重視して常にこの指定を行うことにします。</p>
 
 <p>では次に、セルにスタイルをあててみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">package</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">styles</span> <span class="k">do</span> <span class="o">|</span><span class="n">style</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">package</span><span class="p">.</span><span class="nf">workbook</span><span class="p">.</span><span class="nf">styles</span> <span class="k">do</span> <span class="o">|</span><span class="n">style</span><span class="o">|</span>
   <span class="n">black</span> <span class="o">=</span> <span class="n">style</span><span class="p">.</span><span class="nf">add_style</span><span class="p">(</span><span class="ss">:bg_color</span> <span class="o">=&gt;</span> <span class="s1">'000000'</span><span class="p">,</span> <span class="ss">:fg_color</span> <span class="o">=&gt;</span> <span class="s1">'FFFFFF'</span><span class="p">,</span> <span class="ss">:sz</span> <span class="o">=&gt;</span> <span class="mi">14</span><span class="p">,</span> <span class="ss">:alignment</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="ss">:horizontal</span><span class="o">=&gt;</span> <span class="ss">:center</span> <span class="p">})</span>
   <span class="n">worksheet</span><span class="p">.</span><span class="nf">add_row</span><span class="p">([</span><span class="s1">'Hello'</span><span class="p">,</span> <span class="s1">'World'</span><span class="p">],</span> <span class="ss">style: </span><span class="n">black</span><span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><img src="../../images/0039-TestingWithAxlsx/example2.png" alt="example2.png" /></p>
 
 <p>また、画像を貼り付けることもできます。
 対応している形式は、PNG, GIF, JPEG の3種類です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">worksheet</span><span class="p">.</span><span class="nf">add_image</span><span class="p">(</span><span class="ss">image_src: </span><span class="s1">'/path/to/your/image'</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">worksheet</span><span class="p">.</span><span class="nf">add_image</span><span class="p">(</span><span class="ss">image_src: </span><span class="s1">'/path/to/your/image'</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>この例では、筆者のアイコン画像を貼り付けてみました。
 <img src="../../images/0039-TestingWithAxlsx/example3.png" alt="example3.png" /></p>
@@ -327,15 +323,14 @@ Axlsx では以下のように指定します。</p>
   <li>spec/example_spec.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 <span class="n">describe</span> <span class="no">Array</span> <span class="k">do</span>
   <span class="n">context</span> <span class="s1">'When initialized'</span> <span class="k">do</span>
     <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">be_empty</span> <span class="p">}</span>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>作成したテストが成功することを確認します。</p>
 
@@ -347,7 +342,7 @@ Axlsx では以下のように指定します。</p>
   <li>spec/example_spec.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 <span class="nb">require</span> <span class="s1">'axlsx'</span>
 
 <span class="n">describe</span> <span class="no">Array</span> <span class="k">do</span>
@@ -382,8 +377,7 @@ Axlsx では以下のように指定します。</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>RSpec の after/before を利用して、すべての検証が終わった後にカレントディレクトリに array_spec.xlsx というファイル名でレポートを生成するよう</p>
 
@@ -404,7 +398,7 @@ Axlsx では以下のように指定します。</p>
   <li>spec/spec_helper.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 <span class="nb">require</span> <span class="s1">'axlsx'</span>
 
 <span class="no">RSpec</span><span class="p">.</span><span class="nf">configure</span> <span class="k">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
@@ -441,8 +435,7 @@ Axlsx では以下のように指定します。</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これで、テスト本体からレポート出力に関する処理を取り除くことができます。</p>
 
@@ -450,7 +443,7 @@ Axlsx では以下のように指定します。</p>
   <li>spec/example_spec.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require_relative</span> <span class="s1">'./spec_helper'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require_relative</span> <span class="s1">'./spec_helper'</span>
 
 <span class="n">describe</span> <span class="no">Array</span> <span class="k">do</span>
   <span class="n">context</span> <span class="s1">'When initialized'</span> <span class="k">do</span>
@@ -458,8 +451,7 @@ Axlsx では以下のように指定します。</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>こうすることで、レポートに出力するかどうかを意識することなく新しいテストを追加することができます。</p>
 
@@ -481,7 +473,7 @@ Axlsx では以下のように指定します。</p>
   <li>spec/spec_helper.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 <span class="nb">require</span> <span class="s1">'capybara/dsl'</span>
 <span class="nb">require</span> <span class="s1">'capybara/rspec'</span>
 
@@ -491,8 +483,7 @@ Axlsx では以下のように指定します。</p>
   <span class="n">config</span><span class="p">.</span><span class="nf">include</span> <span class="no">Capybara</span><span class="o">::</span><span class="no">DSL</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>試しに、<a href="http://jp.rubyist.net/magazine/">るびま</a>にアクセスするテストを書いてみましょう。</p>
 
@@ -500,7 +491,7 @@ Axlsx では以下のように指定します。</p>
   <li>spec/rubima_spec.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 <span class="nb">require_relative</span> <span class="s1">'./spec_helper'</span>
 
 <span class="n">describe</span> <span class="s1">'るびま'</span> <span class="k">do</span>
@@ -515,8 +506,7 @@ Axlsx では以下のように指定します。</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このテストを実行すると Selenium を利用してるびまにアクセスしコンテンツを検証します。</p>
 
@@ -534,7 +524,7 @@ Axlsx では以下のように指定します。</p>
   <li>spec/spec_helper.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'mini_magick'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'mini_magick'</span>
 
 <span class="c1"># ...</span>
 
@@ -566,8 +556,7 @@ Axlsx では以下のように指定します。</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>スクリーンショットを取得する機能は Capybara のドライバ依存なので、別のドライバを利用する際にはそのドライバで用意されているスクリーンショット出力方法を使用してください。
 (なお、Capybara 2.0.0 ではスクリーンショット取得用のインターフェースが用意される見込みです: <a href="https://github.com/jnicklas/capybara/tree/2.0.0.beta2#debugging">https://github.com/jnicklas/capybara/tree/2.0.0.beta2#debugging</a> )</p>
@@ -609,7 +598,7 @@ Axlsx では以下のように指定します。</p>
   <li>features/support/env.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 <span class="nb">require</span> <span class="s1">'capybara/cucumber'</span>
 <span class="nb">require</span> <span class="s1">'rspec/expectations'</span>
 
@@ -617,8 +606,7 @@ Axlsx では以下のように指定します。</p>
 
 <span class="no">World</span><span class="p">(</span><span class="no">RSpec</span><span class="o">::</span><span class="no">Matchers</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>簡単に Cucumber を実行できるよう、Rake タスクを設定しておくこともできます。
 Rake タスクの設定については <a href="https://github.com/cucumber/cucumber/wiki/Using-Rake">Using Rake - cucumber/cucumber</a> に情報が載っています。</p>
@@ -631,15 +619,14 @@ Rake タスクの設定については <a href="https://github.com/cucumber/cucu
   <li>features/rubima.feature</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 
 <span class="no">Feature</span><span class="p">:</span> <span class="err">るびまを閲覧できる</span>
   <span class="no">Scenario</span><span class="p">:</span> <span class="err">るびまのトップページを閲覧できる</span>
     <span class="no">When</span>  <span class="n">web</span><span class="err">サイト</span> <span class="s2">"http://jp.rubyist.net/magazine/"</span> <span class="err">にアクセスする</span>
     <span class="no">Then</span>  <span class="err">ページタイトルが</span> <span class="s2">"るびま"</span> <span class="err">であること</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このフィーチャを動作させるためのステップ定義は次のようになります。</p>
 
@@ -647,7 +634,7 @@ Rake タスクの設定については <a href="https://github.com/cucumber/cucu
   <li>features/step_definitions/steps.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 
 <span class="no">When</span> <span class="sr">/^webサイト "(.*?)" にアクセスする$/</span> <span class="k">do</span> <span class="o">|</span><span class="n">url</span><span class="o">|</span>
   <span class="n">visit</span> <span class="n">url</span>
@@ -657,8 +644,7 @@ Rake タスクの設定については <a href="https://github.com/cucumber/cucu
   <span class="n">page</span><span class="p">.</span><span class="nf">should</span> <span class="n">have_css</span><span class="p">(</span><span class="s1">'h1'</span><span class="p">,</span> <span class="ss">text: </span><span class="n">title</span><span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>作成したフィーチャが正しく動作することを確認します。</p>
 
@@ -670,7 +656,7 @@ Rake タスクの設定については <a href="https://github.com/cucumber/cucu
   <li>features/support/env.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># coding: utf-8</span>
 <span class="nb">require</span> <span class="s1">'capybara/cucumber'</span>
 <span class="nb">require</span> <span class="s1">'rspec/expectations'</span>
 
@@ -730,8 +716,7 @@ Rake タスクの設定については <a href="https://github.com/cucumber/cucu
   <span class="n">excel</span><span class="p">.</span><span class="nf">serialize</span><span class="p">(</span><span class="s1">'rubima_features.xlsx'</span><span class="p">)</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>レポート出力の処理は RSpec の項で書いたコードとほとんど同じです。
 ただ、テスト実行時のフックの書き方が Cucumber と RSpec で異なるので、その部分を Cucmber 用に書き直しています。</p>

@@ -402,12 +402,12 @@ $ ri CGIKit::Application</code></pre></figure>
 
 <p>RI2Reference/hoge/hoge.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'cgikit'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'cgikit'</span>
 <span class="nb">require</span> <span class="s1">'webrick'</span>
 <span class="nb">require</span> <span class="s1">'cgikit/webrick'</span>
 
 <span class="k">class</span> <span class="nc">HogePage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
-  <span class="kp">attr_accessor</span> <span class="ss">:title</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:title</span>
   
   <span class="k">def</span> <span class="nf">init</span>
     <span class="vi">@title</span> <span class="o">=</span> <span class="s1">'Hoge'</span>
@@ -417,7 +417,7 @@ $ ri CGIKit::Application</code></pre></figure>
 
 <span class="k">class</span> <span class="nc">FooPage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
   
-  <span class="kp">attr_accessor</span> <span class="ss">:body</span>
+  <span class="nb">attr_accessor</span> <span class="ss">:body</span>
   
   <span class="k">def</span> <span class="nf">init</span>
     <span class="vi">@body</span> <span class="o">=</span> <span class="s1">'FOO'</span>
@@ -458,8 +458,7 @@ $ ri CGIKit::Application</code></pre></figure>
   <span class="n">server</span><span class="p">.</span><span class="nf">start</span>  
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>各ページの HTML や ckd ファイルは省略します。この例では hoge.rb に HogePage、 FooPage というページと HogeAction というダイレクトアクションが定義されています。WEBrick用に作ってあるので、試しに RI2Reference/hoge に移動して</p>
 
@@ -587,7 +586,7 @@ $ ri CGIKit::Application</code></pre></figure>
 
 <p>今回も WEBrick で開発を行います(CGI 用のスクリプトは省略します。前回の内容を踏まえて御自分でいじってみて下さい)。それでは ckproject によって生成された RI2Reference.rb を変更しましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="c1"># RI2Reference.rb [port]</span>
 
@@ -614,8 +613,7 @@ $ ri CGIKit::Application</code></pre></figure>
 <span class="nb">trap</span><span class="p">(</span><span class="s2">"INT"</span><span class="p">){</span> <span class="n">server</span><span class="p">.</span><span class="nf">shutdown</span> <span class="p">}</span>
 <span class="n">server</span><span class="p">.</span><span class="nf">start</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>最初に 18・19行目の</p>
 
@@ -667,7 +665,7 @@ WEBrick のサーバーが起動します。/www 以下に
 
 <p>上で HogeAction の例を見せましたが、同じように CGIKit::DirectAction を継承したクラスを書いてそこにメソッドを定義します。今回定義するダイレクトアクションのクラスは RI2Reference::DirectAction  です。そこに 4 つのメソッドを定義します。クラスを置く場所は lib/direcaction.rb です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'ri2ref_utils'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'ri2ref_utils'</span>
 
 <span class="k">module</span> <span class="nn">RI2Reference</span>
 
@@ -722,8 +720,7 @@ WEBrick のサーバーが起動します。/www 以下に
 
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ダイレクトアクションによって呼び出されるのはページではなくメソッドです。紹介した4つのページはすべてダイレクトアクションを通じて CGIKit によって表示されます。URL、 メソッド、 表示されるページの関係は下のようになります。</p>
 
@@ -841,11 +838,11 @@ RI2Reference::Utils.search_name(str) は str を含む
 
 <p>そうですね。じゃあ、最初は ClassListPage にしましょうか。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">RI2Reference</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">RI2Reference</span>
   
   <span class="k">class</span> <span class="nc">ClassListPage</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
   
-    <span class="kp">attr_accessor</span> <span class="ss">:i</span><span class="p">,</span> <span class="ss">:list</span>
+    <span class="nb">attr_accessor</span> <span class="ss">:i</span><span class="p">,</span> <span class="ss">:list</span>
     
     <span class="k">def</span> <span class="nf">query</span>
       <span class="p">{</span><span class="s1">'n'</span> <span class="o">=&gt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Utilities</span><span class="p">.</span><span class="nf">escape_url</span><span class="p">(</span><span class="vi">@i</span><span class="p">)</span> <span class="p">}</span>
@@ -855,10 +852,9 @@ RI2Reference::Utils.search_name(str) は str を含む
   
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="ss">:rep</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
     <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:list</span><span class="p">,</span>
@@ -876,8 +872,7 @@ RI2Reference::Utils.search_name(str) は str を含む
   
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0007-CGIKit-2.x/ClassListPage.html" alt="ClassListPage.html" />
 <img src="../../images/0007-CGIKit-2.x/list.jpg" alt="list.jpg" /></p>
@@ -959,7 +954,7 @@ RI2Reference::Utils.search_name(str) は str を含む
 
 <p><img src="../../images/0007-CGIKit-2.x/ClassPage.rb" alt="ClassPage.rb" /></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
 
   <span class="ss">:is_class</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Conditional</span><span class="p">,</span>
@@ -1080,8 +1075,7 @@ RI2Reference::Utils.search_name(str) は str を含む
   <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0007-CGIKit-2.x/ClassPage.html" alt="ClassPage.html" />
 <img src="../../images/0007-CGIKit-2.x/class.jpg" alt="class.jpg" /></p>
@@ -1243,7 +1237,7 @@ RI2Reference::Utils.search_name(str) は str を含む
 
 <p><img src="../../images/0007-CGIKit-2.x/MethodPage.rb" alt="MethodPage.rb" /></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="ss">:method_name</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">String</span><span class="p">,</span>
     <span class="ss">:value</span> <span class="o">=&gt;</span> <span class="ss">:full_name</span><span class="p">,</span>
@@ -1272,8 +1266,7 @@ RI2Reference::Utils.search_name(str) は str を含む
   
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0007-CGIKit-2.x/MethodPage.html" alt="MethodPage.html" />
 <img src="../../images/0007-CGIKit-2.x/method.jpg" alt="method.jpg" /></p>
@@ -1357,11 +1350,11 @@ CGIKit は Symbol オブジェクトの文字列の部分を評価して、属�
 
 <p>…おっしゃるように説明しません。今まで見てきたページと構成はほとんど変わりませんので、御自分で考えてみて下さい。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">RI2Reference</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">RI2Reference</span>
 
   <span class="k">class</span> <span class="nc">SearchResult</span> <span class="o">&lt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Component</span>
     
-    <span class="kp">attr_accessor</span> <span class="ss">:class_list</span><span class="p">,</span> <span class="ss">:method_list</span><span class="p">,</span> <span class="ss">:i</span>
+    <span class="nb">attr_accessor</span> <span class="ss">:class_list</span><span class="p">,</span> <span class="ss">:method_list</span><span class="p">,</span> <span class="ss">:i</span>
     
     <span class="k">def</span> <span class="nf">query</span>
       <span class="p">{</span><span class="s1">'n'</span> <span class="o">=&gt;</span> <span class="no">CGIKit</span><span class="o">::</span><span class="no">Utilities</span><span class="p">.</span><span class="nf">escape_url</span><span class="p">(</span><span class="vi">@i</span><span class="p">)}</span>
@@ -1371,10 +1364,9 @@ CGIKit は Symbol オブジェクトの文字列の部分を評価して、属�
   
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
   <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="ss">:element</span> <span class="o">=&gt;</span> <span class="no">Repetition</span><span class="p">,</span>
     <span class="ss">:list</span> <span class="o">=&gt;</span> <span class="ss">:class_list</span><span class="p">,</span>
@@ -1408,8 +1400,7 @@ CGIKit は Symbol オブジェクトの文字列の部分を評価して、属�
 
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0007-CGIKit-2.x/SearchResult.html" alt="SearchResult.html" />
 <img src="../../images/0007-CGIKit-2.x/search.jpg" alt="search.jpg" /></p>
@@ -1483,7 +1474,7 @@ CGIKit は Symbol オブジェクトの文字列の部分を評価して、属�
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>誰かこのアプリを rewrite してくれません？いやマジで。&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>誰かこのアプリを rewrite してくれません？いやマジで。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

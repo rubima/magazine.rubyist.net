@@ -293,31 +293,29 @@
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
   <span class="kp">include</span> <span class="no">Pundit</span>
   <span class="n">protect_from_forgery</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UsersController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
   <span class="n">before_action</span> <span class="ss">:pundit_auth</span>
  
-  <span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+  <span class="o">...</span>
  
-  <span class="nf">private</span>
+  <span class="kp">private</span>
     <span class="k">def</span> <span class="nf">pundit_auth</span>
       <span class="n">authorize</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span>
     <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>例えば_app/model/user.rb_に_User#admin?_いうメソッドを用意しておき、Userリソースはadminしか操作できないようにしておきたい場合には、_UserPolicy_クラスに下記のような実装を行います。</p>
 
@@ -325,14 +323,13 @@
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/policies/user_policy.rb">app/policies/user_policy.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserPolicy</span> <span class="o">&lt;</span> <span class="no">ApplicationPolicy</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserPolicy</span> <span class="o">&lt;</span> <span class="no">ApplicationPolicy</span>
   <span class="k">def</span> <span class="nf">update?</span>
     <span class="n">user</span><span class="p">.</span><span class="nf">admin?</span>
   <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>こうしておけば、_UsersController#update_が実行された際に_current_user.admin?_が呼ばれ、falseだった際に_NotAuthorizedError_という例外が発生するようになります。</p>
 
@@ -412,8 +409,8 @@ _Abilities_テーブルの_domain_カラムに操作ができるリソースの�
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/policies/application_policy.rb">app/policies/application_policy.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationPolicy</span>
-  <span class="kp">attr_reader</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">:record</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationPolicy</span>
+  <span class="nb">attr_reader</span> <span class="ss">:user</span><span class="p">,</span> <span class="ss">:record</span>
  
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
     <span class="vi">@user</span> <span class="o">=</span> <span class="n">user</span>
@@ -453,14 +450,13 @@ _Abilities_テーブルの_domain_カラムに操作ができるリソースの�
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/policies/user_policy.rb">app/policies/user_policy.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserPolicy</span> <span class="o">&lt;</span> <span class="no">ApplicationPolicy</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserPolicy</span> <span class="o">&lt;</span> <span class="no">ApplicationPolicy</span>
   <span class="k">class</span> <span class="nc">Scope</span> <span class="o">&lt;</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:user</span><span class="p">,</span> <span class="ss">:scope</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">resolve</span>
       <span class="n">scope</span>
@@ -468,8 +464,7 @@ _Abilities_テーブルの_domain_カラムに操作ができるリソースの�
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Userリソースに対して権限の判定ロジックを実装する場合、_user_policy.rb_に実装していきます。
 まず、管理者の場合は全ての操作が可能なように実装します。
@@ -479,7 +474,7 @@ _authorize_メソッドを使用した場合、_user_は_current_user_になる�
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/policies/user_policy.rb">app/policies/user_policy.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">index?</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">index?</span>
     <span class="n">user</span><span class="p">.</span><span class="nf">admin?</span>
   <span class="k">end</span>
   
@@ -508,8 +503,7 @@ _authorize_メソッドを使用した場合、_user_は_current_user_になる�
   <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>さらに、abilityごとの権限の判定を実装していきます。まず、_ApplicationPolicy_クラスに下記のメソッドを実装します。</p>
 
@@ -517,13 +511,12 @@ _authorize_メソッドを使用した場合、_user_は_current_user_になる�
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/policies/application_policy.rb">app/policies/application_policy.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">can?</span><span class="p">(</span><span class="n">ability</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">can?</span><span class="p">(</span><span class="n">ability</span><span class="p">)</span>
     <span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="nf">ability</span><span class="p">.</span><span class="nf">include?</span><span class="p">(</span><span class="n">record</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">underscore</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">user</span><span class="p">.</span><span class="nf">ability</span><span class="p">[</span><span class="n">record</span><span class="p">.</span><span class="nf">class</span><span class="p">.</span><span class="nf">to_s</span><span class="p">.</span><span class="nf">underscore</span><span class="p">].</span><span class="nf">include?</span><span class="p">(</span><span class="n">ability</span><span class="p">))</span>
   <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>User#abilityの返り値の中にリソース、メソッドの名称が存在しているかを判定するメソッドを記述します。
 上記メソッドをUserPolicyクラスで使用すれば完了です。</p>
@@ -532,7 +525,7 @@ _authorize_メソッドを使用した場合、_user_は_current_user_になる�
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/policies/user_policy.rb">app/policies/user_policy.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">index?</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">index?</span>
     <span class="n">user</span><span class="p">.</span><span class="nf">admin?</span> <span class="n">or</span> <span class="n">can?</span> <span class="s2">"index"</span>
   <span class="k">end</span>
   
@@ -560,15 +553,14 @@ _authorize_メソッドを使用した場合、_user_は_current_user_になる�
     <span class="n">user</span><span class="p">.</span><span class="nf">admin?</span> <span class="n">or</span> <span class="n">can?</span> <span class="s2">"destroy"</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これは例えば、<em>UserPolicy_で_can?(“update”)_が実行された際、</em>(user.ability.include?(“user”) &amp;&amp; user.ability[“user”].include?(“update”))_が実行されるようになります。</p>
 
 <p>これで権限が存在しないユーザーが各メソッドを実行した場合は例外が発生するようになります。
 404に飛ばしたい場合は、_ApplicationController_で下記のように例外をキャッチしてあげればOKです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">rescue_from</span> <span class="no">NotAuthorizedError</span><span class="p">,</span> <span class="ss">with: :render_404</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rescue_from</span> <span class="no">NotAuthorizedError</span><span class="p">,</span> <span class="ss">with: :render_404</span>
   
 <span class="k">def</span> <span class="nf">render_404</span><span class="p">(</span><span class="n">exception</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
   <span class="k">if</span> <span class="n">exception</span>
@@ -578,8 +570,7 @@ _authorize_メソッドを使用した場合、_user_は_current_user_になる�
   <span class="n">render</span> <span class="ss">file: </span><span class="s2">"</span><span class="si">#{</span><span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="si">}</span><span class="s2">/public/404.html"</span><span class="p">,</span> <span class="ss">status: </span><span class="mi">404</span><span class="p">,</span> <span class="ss">content_type: </span><span class="s1">'text/html'</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="punditの仕組み">Punditの仕組み</h2>
 
@@ -589,7 +580,7 @@ _authorize_メソッドを使用した場合、_user_は_current_user_になる�
   <li><a href="https://github.com/elabs/pundit/blob/master/lib/pundit.rb#L63">https://github.com/elabs/pundit/blob/master/lib/pundit.rb#L63</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">authorize</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">authorize</span><span class="p">(</span><span class="n">record</span><span class="p">,</span> <span class="n">query</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
     <span class="n">query</span> <span class="o">||=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:action</span><span class="p">].</span><span class="nf">to_s</span> <span class="o">+</span> <span class="s2">"?"</span>
     <span class="vi">@_policy_authorized</span> <span class="o">=</span> <span class="kp">true</span>
    
@@ -604,8 +595,7 @@ _authorize_メソッドを使用した場合、_user_は_current_user_になる�
     <span class="kp">true</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>まず、変数queryに”呼び出されたメソッドの名前” + “?”を格納します。
 _@_policy_authorized_は_authorize_メソッドが呼び出されたかどうかのフラグのようなものなので無視します。</p>
@@ -619,17 +609,16 @@ _@_policy_authorized_は_authorize_メソッドが呼び出されたかどうか
   <li><a href="https://github.com/elabs/pundit/blob/master/lib/pundit.rb#L84">https://github.com/elabs/pundit/blob/master/lib/pundit.rb#L84</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">policy</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">policy</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
     <span class="vi">@policy</span> <span class="n">or</span> <span class="no">Pundit</span><span class="p">.</span><span class="nf">policy!</span><span class="p">(</span><span class="n">pundit_user</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
   <span class="k">end</span>
-  <span class="kp">attr_writer</span> <span class="ss">:policy</span>
+  <span class="nb">attr_writer</span> <span class="ss">:policy</span>
   
   <span class="k">def</span> <span class="nf">pundit_user</span>
     <span class="n">current_user</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>policyメソッドはPundit.policy!メソッドを呼んでいます。また、pundit_userはcurrent_userを呼び出していることがわかります。
 Pundit.policy!メソッドを見ていきましょう。</p>
@@ -638,12 +627,11 @@ Pundit.policy!メソッドを見ていきましょう。</p>
   <li><a href="https://github.com/elabs/pundit/blob/master/lib/pundit.rb#L32">https://github.com/elabs/pundit/blob/master/lib/pundit.rb#L32</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">policy!</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">policy!</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
     <span class="no">PolicyFinder</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">record</span><span class="p">).</span><span class="nf">policy!</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ちょっとわかり辛いですが、順に追っていきます。
 まず、PolicyFinder#policy!メソッドを呼んでいます。
@@ -653,9 +641,9 @@ PolicyFinderクラスは短いので全部載せてしまいます。</p>
   <li><a href="https://github.com/elabs/pundit/blob/master/lib/pundit/policy_finder.rb">https://github.com/elabs/pundit/blob/master/lib/pundit/policy_finder.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Pundit</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Pundit</span>
   <span class="k">class</span> <span class="nc">PolicyFinder</span>
-    <span class="kp">attr_reader</span> <span class="ss">:object</span>
+    <span class="nb">attr_reader</span> <span class="ss">:object</span>
     
     <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
       <span class="vi">@object</span> <span class="o">=</span> <span class="n">object</span>
@@ -706,8 +694,7 @@ PolicyFinderクラスは短いので全部載せてしまいます。</p>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>_PolicyFinder#policy!_内で_PolicyFinder#policy_メソッドを呼んでいます。
 _PolicyFinder#policy_は何をしているのかというと、_find_というprivateメソッドを呼んでその結果を返しています。
@@ -726,7 +713,7 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/helpers/users_helper.rb">https://github.com/onigra/pundit_sample/blob/master/app/helpers/users_helper.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">UsersHelper</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">UsersHelper</span>
   <span class="k">def</span> <span class="nf">user_show?</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="n">current_user</span><span class="p">)</span>
     <span class="no">Pundit</span><span class="p">.</span><span class="nf">policy</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">).</span><span class="nf">show?</span>
   <span class="k">end</span>
@@ -744,8 +731,7 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上記のようにしておくと、各メソッドを呼び出すリンクに対して下記のように記述ができるようになります。</p>
 
@@ -791,7 +777,7 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/spec/helpers/users_helper_spec.rb">https://github.com/onigra/pundit_sample/blob/master/spec/helpers/users_helper_spec.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
 
 <span class="n">describe</span> <span class="no">UsersHelper</span> <span class="k">do</span>
   <span class="n">describe</span> <span class="s2">".user_show?"</span> <span class="k">do</span>
@@ -814,12 +800,11 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
     <span class="k">end</span>
   <span class="k">end</span>
 
-  <span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+  <span class="o">...</span>
 
-<span class="nf">end</span>
+<span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="scopeについて">Scopeについて</h2>
 
@@ -829,7 +814,7 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <li>app/policies/user_policy.rb</li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserPolicy</span> <span class="o">&lt;</span> <span class="no">ApplicationPolicy</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">UserPolicy</span> <span class="o">&lt;</span> <span class="no">ApplicationPolicy</span>
   <span class="k">class</span> <span class="nc">Scope</span> <span class="o">&lt;</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:user</span><span class="p">,</span> <span class="ss">:scope</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">resolve</span>
       <span class="n">scope</span>
@@ -837,8 +822,7 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これはどういう時に使う機能かというと、例えばindexメソッドで一覧を作成した際に、ユーザーの権限ごとに表示するレコードを制御したい際に役に立ちます。
 例えば、ログインしたユーザーが管理者以外の場合、indexで表示されるユーザーに管理者ユーザーは表示したくない場合は下記のように実装します。</p>
@@ -847,18 +831,17 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/models/user.rb">https://github.com/onigra/pundit_sample/blob/master/app/models/user.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">scope</span> <span class="ss">:except_admin</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">scope</span> <span class="ss">:except_admin</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span>
   <span class="n">joins</span><span class="p">(</span><span class="ss">:role</span><span class="p">).</span><span class="nf">where</span><span class="p">.</span><span class="nf">not</span><span class="p">(</span><span class="ss">roles: </span><span class="p">{</span> <span class="ss">name: </span><span class="s2">"administrator"</span> <span class="p">}</span> <span class="p">)</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/policies/user_policy.rb">app/policies/user_policy.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Scope</span> <span class="o">&lt;</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:user</span><span class="p">,</span> <span class="ss">:scope</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Scope</span> <span class="o">&lt;</span> <span class="no">Struct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">:user</span><span class="p">,</span> <span class="ss">:scope</span><span class="p">)</span>
   <span class="k">def</span> <span class="nf">resolve</span>
     <span class="k">if</span> <span class="n">user</span><span class="p">.</span><span class="nf">admin?</span>
       <span class="n">scope</span><span class="p">.</span><span class="nf">all</span>
@@ -868,19 +851,17 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <ul>
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">index</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">def</span> <span class="nf">index</span>
     <span class="vi">@users</span> <span class="o">=</span> <span class="n">policy_scope</span><span class="p">(</span><span class="no">User</span><span class="p">)</span>
   <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>_policy_scope_メソッドは_authorize_と同様、渡されたオブジェクトのPolicyクラスを探し出して_resolve_メソッドを実行を行っています。</p>
 
@@ -899,7 +880,7 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
 
 <p>まず、policyクラスに_permitted_attributes_というメソッドを用意し、権限ごとに許可するパラメータの配列を定義します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/policies/post_policy.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/policies/post_policy.rb</span>
 <span class="k">class</span> <span class="nc">PostPolicy</span> <span class="o">&lt;</span> <span class="no">ApplicationPolicy</span>
   <span class="k">def</span> <span class="nf">permitted_attributes</span>
     <span class="k">if</span> <span class="n">user</span><span class="p">.</span><span class="nf">admin?</span> <span class="o">||</span> <span class="n">user</span><span class="p">.</span><span class="nf">owner_of?</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
@@ -910,12 +891,11 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>controllerのStrongParametersの設定を行うメソッド内で_permitted_attributes_メソッドを呼び、permitに渡す引数を動的に定義しています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># app/controllers/posts_controller.rb</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># app/controllers/posts_controller.rb</span>
 <span class="k">class</span> <span class="nc">PostsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
   <span class="k">def</span> <span class="nf">update</span>
     <span class="vi">@post</span> <span class="o">=</span> <span class="no">Post</span><span class="p">.</span><span class="nf">find</span><span class="p">(</span><span class="n">params</span><span class="p">[</span><span class="ss">:id</span><span class="p">])</span>
@@ -933,8 +913,7 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="テストについて">テストについて</h2>
 
@@ -945,14 +924,14 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
   <li><a href="https://github.com/onigra/pundit_sample/blob/master/spec/policies/user_policy_spec.rb">https://github.com/onigra/pundit_sample/blob/master/spec/policies/user_policy_spec.rb</a></li>
 </ul>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'spec_helper'</span>
  
 <span class="n">describe</span> <span class="no">UserPolicy</span> <span class="k">do</span>
   <span class="n">subject</span> <span class="p">{</span> <span class="no">UserPolicy</span> <span class="p">}</span>
 
-  <span class="p">.</span><span class="nf">.</span><span class="p">.</span>
+  <span class="o">...</span>
 
-  <span class="nf">permissions</span> <span class="ss">:update?</span> <span class="k">do</span>
+  <span class="n">permissions</span> <span class="ss">:update?</span> <span class="k">do</span>
     <span class="n">context</span> <span class="s1">'管理者'</span> <span class="k">do</span>
       <span class="n">include_context</span> <span class="s2">"管理者"</span>
       <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">permit</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span><span class="p">)</span> <span class="p">}</span>
@@ -969,10 +948,9 @@ _policy_メソッドに戻ると、_find_で返ってきた文字列をconstanti
     <span class="k">end</span>
   <span class="k">end</span>
 
-  <span class="p">.</span><span class="nf">.</span><span class="o">.</span>
+  <span class="o">...</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>しかし、これだけでは前述のScope機能のテストが行えないのでcontrollerのテストでカバーする必要がありそうです。
 また、READMEの中でまた違ったテストの方法のアプローチが<a href="http://thunderboltlabs.com/blog/2013/03/27/testing-pundit-policies-with-rspec/">紹介されています。</a></p>

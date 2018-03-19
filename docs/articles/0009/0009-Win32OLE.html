@@ -298,7 +298,7 @@ WSH (Windows Script Host) でサポートされているスクリプト言語
 
 <p><a href="../../images/0009-Win32OLE/ie.vbs">ie.vbs</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Sub</span> <span class="n">ie_DownloadComplete</span><span class="p">()</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Sub</span> <span class="n">ie_DownloadComplete</span><span class="p">()</span>
      <span class="no">WScript</span><span class="o">.</span><span class="no">Echo</span> <span class="s2">"Download Complete"</span>
 <span class="no">End</span> <span class="no">Sub</span>
 
@@ -325,8 +325,7 @@ WSH (Windows Script Host) でサポートされているスクリプト言語
 
 <span class="no">WScript</span><span class="o">.</span><span class="no">Echo</span><span class="p">(</span><span class="s2">"complete"</span> <span class="o">&amp;</span> <span class="n">vbCrLf</span> <span class="o">&amp;</span> <span class="n">count</span> <span class="o">&amp;</span> <span class="s2">"elements found"</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>この例はとても簡単な例です。
 VBScript で Internet Explorer を起動して、
@@ -455,7 +454,7 @@ JScript ですが、COM クライアントを作成するための言語とし�
 
 <p><a href="../../images/0009-Win32OLE/ie.js">ie.js</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">var</span> <span class="n">ie</span> <span class="o">=</span> <span class="no">WScript</span><span class="o">.</span><span class="no">CreateObject</span><span class="p">(</span><span class="s2">"InternetExplorer.Application"</span><span class="p">,</span><span class="s2">"ie_"</span><span class="p">);</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">ie</span> <span class="o">=</span> <span class="no">WScript</span><span class="o">.</span><span class="no">CreateObject</span><span class="p">(</span><span class="s2">"InternetExplorer.Application"</span><span class="p">,</span><span class="s2">"ie_"</span><span class="p">);</span>
 
 <span class="n">ie</span><span class="o">.</span><span class="no">Visible</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="n">ie</span><span class="o">.</span><span class="no">GoHome</span><span class="p">();</span>
@@ -485,8 +484,7 @@ JScript ですが、COM クライアントを作成するための言語とし�
 <span class="p">}</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>文法上の違いを除いてはほとんど VBScript と同じような流れで
 記述可能であることが分かると思います。</p>
@@ -524,7 +522,7 @@ Google で調べれば様々な情報が手に入ります。</p>
 
 <p><a href="../../images/0009-Win32OLE/ie.py">ie.py</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">import</span> <span class="n">win32com</span><span class="p">.</span><span class="nf">client</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">import</span> <span class="n">win32com</span><span class="p">.</span><span class="nf">client</span>
 <span class="n">from</span> <span class="n">win32com</span><span class="p">.</span><span class="nf">server</span> <span class="n">import</span> <span class="n">util</span>
 <span class="n">import</span> <span class="n">pythoncom</span>
 
@@ -555,8 +553,7 @@ Google で調べれば様々な情報が手に入ります。</p>
     <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="nb">print</span> <span class="s2">"complete</span><span class="se">\n</span><span class="s2"> %d elements found</span><span class="se">\n</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">count</span><span class="p">)</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Python で、COM オブジェクトを作成するには、単に win32com.client.Dispatch
 というメソッドを使います。
@@ -597,11 +594,11 @@ Ruby の中には Perl を参考にしてもたらされた機能がいくつも
 
 <p><a href="../../images/0009-Win32OLE/ie.pl">ie.pl</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">use</span> <span class="no">Win32</span><span class="o">::</span><span class="no">OLE</span> <span class="n">qw</span><span class="p">(</span><span class="no">EVENTS</span> <span class="k">in</span><span class="p">);</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">use</span> <span class="no">Win32</span><span class="o">::</span><span class="no">OLE</span> <span class="n">qw</span><span class="p">(</span><span class="no">EVENTS</span> <span class="k">in</span><span class="p">);</span>
 <span class="n">use</span> <span class="no">Win32</span><span class="o">::</span><span class="no">OLE</span><span class="o">::</span><span class="no">Const</span> <span class="p">(</span><span class="s1">'Microsoft Internet Controls'</span><span class="p">);</span>
 
 <span class="err">$</span><span class="o">|</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">my</span> <span class="vg">$ie</span> <span class="o">=</span> <span class="no">Win32</span><span class="o">::</span><span class="no">OLE</span><span class="o">-&gt;</span><span class="kp">new</span><span class="p">(</span><span class="s1">'InternetExplorer.Application'</span><span class="p">);</span>
+<span class="n">my</span> <span class="vg">$ie</span> <span class="o">=</span> <span class="no">Win32</span><span class="o">::</span><span class="no">OLE</span><span class="o">-&gt;</span><span class="n">new</span><span class="p">(</span><span class="s1">'InternetExplorer.Application'</span><span class="p">);</span>
 <span class="no">Win32</span><span class="o">::</span><span class="no">OLE</span><span class="o">-&gt;</span><span class="no">WithEvents</span><span class="p">(</span><span class="vg">$ie</span><span class="p">,</span><span class="s2">"WebBrowserEvents"</span><span class="p">,</span><span class="s2">"DWebBrowserEvents2"</span><span class="p">);</span>
 <span class="vg">$ie</span><span class="o">-&gt;</span><span class="p">{</span><span class="no">Visible</span><span class="p">}</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
 <span class="vg">$ie</span><span class="o">-&gt;</span><span class="no">GoHome</span><span class="p">();</span>
@@ -631,8 +628,7 @@ Ruby の中には Perl を参考にしてもたらされた機能がいくつも
     <span class="no">Win32</span><span class="o">::</span><span class="no">OLE</span><span class="o">-&gt;</span><span class="no">QuitMessageLoop</span><span class="p">();</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">my $ie = Win32::OLE-&gt;new('InternetExplorer.Application');</code></pre></figure>
 
@@ -675,7 +671,7 @@ Tcl で、COM のサーバも作成可能です。</p>
 
 <p><a href="../../images/0009-Win32OLE/ie.tcl">ie.tcl</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">package</span> <span class="nb">require</span> <span class="n">tcom</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">package</span> <span class="nb">require</span> <span class="n">tcom</span>
 
 <span class="nb">proc</span> <span class="n">sink</span> <span class="p">{</span><span class="nb">method</span> <span class="n">args</span><span class="p">}</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">{</span><span class="vg">$method</span> <span class="n">eq</span> <span class="s2">"DownloadComplete"</span><span class="p">}</span> <span class="k">then</span> <span class="p">{</span>
@@ -701,8 +697,7 @@ Tcl で、COM のサーバも作成可能です。</p>
     <span class="n">incr</span> <span class="n">count</span>
 <span class="p">}</span>
 <span class="nb">puts</span> <span class="s2">"complete</span><span class="se">\n</span><span class="s2"> $count elements found"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Tcl で、COM オブジェクトを作成するには、</p>
 
@@ -744,25 +739,25 @@ Java でも COM のテクノロジを利用できるようにするプロジェ�
 
 <p><a href="../../images/0009-Win32OLE/InternetExplorer.java">InternetExplorer.java</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">import</span> <span class="n">com</span><span class="p">.</span><span class="nf">jacob</span><span class="p">.</span><span class="nf">com</span><span class="p">.</span><span class="nf">*</span><span class="p">;</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">import</span> <span class="n">com</span><span class="p">.</span><span class="nf">jacob</span><span class="p">.</span><span class="nf">com</span><span class="p">.</span><span class="nf">*</span><span class="p">;</span>
 <span class="n">import</span> <span class="n">com</span><span class="p">.</span><span class="nf">jacob</span><span class="p">.</span><span class="nf">activeX</span><span class="p">.</span><span class="nf">*</span><span class="p">;</span>
 
 <span class="kp">public</span> <span class="k">class</span> <span class="nc">InternetExplorer</span>
 <span class="p">{</span>
     <span class="kp">public</span> <span class="n">static</span> <span class="n">void</span> <span class="n">main</span><span class="p">(</span><span class="no">String</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="no">ActiveXComponent</span> <span class="n">iecom</span> <span class="o">=</span> <span class="kp">new</span> <span class="no">ActiveXComponent</span><span class="p">(</span><span class="s2">"InternetExplorer.Application"</span><span class="p">);</span>
+        <span class="no">ActiveXComponent</span> <span class="n">iecom</span> <span class="o">=</span> <span class="n">new</span> <span class="no">ActiveXComponent</span><span class="p">(</span><span class="s2">"InternetExplorer.Application"</span><span class="p">);</span>
         <span class="no">Object</span> <span class="n">ie</span> <span class="o">=</span> <span class="n">iecom</span><span class="p">.</span><span class="nf">getObject</span><span class="p">();</span>
-        <span class="no">Dispatch</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span> <span class="s2">"Visible"</span><span class="p">,</span> <span class="kp">new</span> <span class="no">Variant</span><span class="p">(</span><span class="kp">true</span><span class="p">));</span>
-        <span class="no">IEEvents</span> <span class="n">ieE</span> <span class="o">=</span> <span class="kp">new</span> <span class="no">IEEvents</span><span class="p">();</span>
-        <span class="no">DispatchEvents</span> <span class="n">de</span> <span class="o">=</span> <span class="kp">new</span> <span class="no">DispatchEvents</span><span class="p">((</span><span class="no">Dispatch</span><span class="p">)</span> <span class="n">ie</span><span class="p">,</span><span class="n">ieE</span><span class="p">,</span><span class="s2">"InternetExplorer.Application"</span><span class="p">);</span>
+        <span class="no">Dispatch</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span> <span class="s2">"Visible"</span><span class="p">,</span> <span class="n">new</span> <span class="no">Variant</span><span class="p">(</span><span class="kp">true</span><span class="p">));</span>
+        <span class="no">IEEvents</span> <span class="n">ieE</span> <span class="o">=</span> <span class="n">new</span> <span class="no">IEEvents</span><span class="p">();</span>
+        <span class="no">DispatchEvents</span> <span class="n">de</span> <span class="o">=</span> <span class="n">new</span> <span class="no">DispatchEvents</span><span class="p">((</span><span class="no">Dispatch</span><span class="p">)</span> <span class="n">ie</span><span class="p">,</span><span class="n">ieE</span><span class="p">,</span><span class="s2">"InternetExplorer.Application"</span><span class="p">);</span>
         <span class="no">Dispatch</span><span class="p">.</span><span class="nf">callSub</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span><span class="s2">"GoHome"</span><span class="p">);</span>
         <span class="n">try</span> <span class="p">{</span>
-            <span class="k">while</span><span class="p">(</span><span class="no">Dispatch</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span><span class="s2">"Busy"</span><span class="p">).</span><span class="nf">toBoolean</span><span class="p">()</span> <span class="o">==</span> <span class="kp">new</span> <span class="no">Boolean</span><span class="p">(</span><span class="kp">true</span><span class="p">)){</span>
+            <span class="k">while</span><span class="p">(</span><span class="no">Dispatch</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span><span class="s2">"Busy"</span><span class="p">).</span><span class="nf">toBoolean</span><span class="p">()</span> <span class="o">==</span> <span class="n">new</span> <span class="no">Boolean</span><span class="p">(</span><span class="kp">true</span><span class="p">)){</span>
                 <span class="no">Thread</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
             <span class="p">}</span>
-            <span class="no">Dispatch</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span><span class="s2">"Navigate"</span><span class="p">,</span><span class="kp">new</span> <span class="no">Variant</span><span class="p">(</span><span class="s2">"http://www.ruby-lang.org/"</span><span class="p">));</span>
-            <span class="k">while</span><span class="p">(</span><span class="no">Dispatch</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span><span class="s2">"Busy"</span><span class="p">).</span><span class="nf">toBoolean</span><span class="p">()</span> <span class="o">==</span> <span class="kp">new</span> <span class="no">Boolean</span><span class="p">(</span><span class="kp">true</span><span class="p">)){</span>
+            <span class="no">Dispatch</span><span class="p">.</span><span class="nf">call</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span><span class="s2">"Navigate"</span><span class="p">,</span><span class="n">new</span> <span class="no">Variant</span><span class="p">(</span><span class="s2">"http://www.ruby-lang.org/"</span><span class="p">));</span>
+            <span class="k">while</span><span class="p">(</span><span class="no">Dispatch</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span><span class="s2">"Busy"</span><span class="p">).</span><span class="nf">toBoolean</span><span class="p">()</span> <span class="o">==</span> <span class="n">new</span> <span class="no">Boolean</span><span class="p">(</span><span class="kp">true</span><span class="p">)){</span>
                 <span class="no">Thread</span><span class="p">.</span><span class="nf">sleep</span><span class="p">(</span><span class="mi">4000</span><span class="p">);</span>
             <span class="p">}</span>
             <span class="no">Dispatch</span> <span class="n">document</span> <span class="o">=</span> <span class="no">Dispatch</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="n">ie</span><span class="p">,</span><span class="s2">"Document"</span><span class="p">).</span><span class="nf">toDispatch</span><span class="p">();</span>
@@ -772,7 +767,7 @@ Java でも COM のテクノロジを利用できるようにするプロジェ�
         <span class="p">}</span><span class="kp">catch</span><span class="p">(</span><span class="no">InterruptedException</span> <span class="n">e</span><span class="p">){</span>
             <span class="n">e</span><span class="p">.</span><span class="nf">printStackTrace</span><span class="p">();</span>
         <span class="p">}</span><span class="n">finally</span><span class="p">{</span>
-            <span class="n">iecom</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"Quit"</span><span class="p">,</span><span class="kp">new</span> <span class="no">Variant</span><span class="p">[]{});</span>
+            <span class="n">iecom</span><span class="p">.</span><span class="nf">invoke</span><span class="p">(</span><span class="s2">"Quit"</span><span class="p">,</span><span class="n">new</span> <span class="no">Variant</span><span class="p">[]{});</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -784,8 +779,7 @@ Java でも COM のテクノロジを利用できるようにするプロジェ�
     <span class="p">}</span>
 <span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このプログラムで、Java から COM を呼び出すことができます。
 Java の場合は、今まで紹介した言語と違って、静的型付け言語である点が色濃く
@@ -845,7 +839,7 @@ Lua のライブラリ兼実行形式です。</p>
 
 <p><a href="../../images/0009-Win32OLE/ie.lua">ie.lua</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"luacom"</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"luacom"</span><span class="p">)</span>
 
 <span class="n">local</span> <span class="n">ie</span> <span class="o">=</span> <span class="n">luacom</span><span class="o">.</span><span class="no">CreateObject</span><span class="p">(</span><span class="s2">"InternetExplorer.Application"</span><span class="p">)</span>
 <span class="n">local</span> <span class="n">events_handler</span> <span class="o">=</span> <span class="p">{}</span>
@@ -869,8 +863,7 @@ Lua のライブラリ兼実行形式です。</p>
 <span class="k">end</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="s2">"complete </span><span class="se">\n</span><span class="s2">%d elements found"</span><span class="p">,</span><span class="n">count</span><span class="p">))</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>次の行で Lua での COM オブジェクトの作成を行っています。</p>
 
@@ -916,7 +909,7 @@ Version 1.5 で検証しました。</p>
 
 <p><a href="../../images/0009-Win32OLE/ie.rb">ie.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="k">module</span> <span class="nn">InternetExplorer</span>
 <span class="k">end</span>
@@ -947,8 +940,7 @@ Version 1.5 で検証しました。</p>
 <span class="k">end</span>
 <span class="nb">puts</span> <span class="s2">"complete</span><span class="se">\n</span><span class="si">#{</span><span class="n">count</span><span class="si">}</span><span class="s2"> elements found"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Ruby での Win32OLE には次のような特徴があります。</p>
 
@@ -1029,7 +1021,7 @@ Haskell という言語でも COM/ActiveX を利用できる
 
 <p><a href="../../images/0009-Win32OLE/ruby.vbs">ruby.vbs</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Dim</span> <span class="n">sc</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Dim</span> <span class="n">sc</span>
 
 <span class="no">Set</span> <span class="n">sc</span> <span class="o">=</span> <span class="no">CreateObject</span><span class="p">(</span><span class="s2">"ScriptControl"</span><span class="p">)</span>
 <span class="n">sc</span><span class="o">.</span><span class="no">Language</span> <span class="o">=</span> <span class="s2">"GlobalRubyScript"</span>
@@ -1037,8 +1029,7 @@ Haskell という言語でも COM/ActiveX を利用できる
 <span class="n">sc</span><span class="o">.</span><span class="no">AddCode</span><span class="p">(</span><span class="s2">"def add x,y;x + y;end"</span><span class="p">)</span>
 
 <span class="no">WScript</span><span class="o">.</span><span class="no">Echo</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="no">Run</span><span class="p">(</span><span class="s2">"add"</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Ruby で定義した add というメソッドを Visual Basic から利用しています。
 ScriptControl という COM オブジェクトと ActiveScriptRuby を使用することで、

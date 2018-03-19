@@ -226,7 +226,7 @@
 
 <p><a href="../../images/0031-BackTrace/ex1.rb">ex1.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f1</span><span class="p">()</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f1</span><span class="p">()</span>
   <span class="n">f2</span><span class="p">()</span>
 <span class="k">end</span>
 
@@ -239,8 +239,7 @@
 <span class="k">end</span>
 
 <span class="n">f1</span><span class="p">()</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これを実行すると、ソースコードのファイル名と行番号が表示されています。これがバックトレース情報であり、メソッドの呼び出し状況を表しています。</p>
 
@@ -259,7 +258,7 @@ ex1.rb:10:in `f3': undefined local variable or method `foobar' for main:Object (
 
 <p><a href="../../images/0031-BackTrace/ex2.rb">ex2.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f1</span><span class="p">()</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">f1</span><span class="p">()</span>
   <span class="n">f2</span><span class="p">()</span>
 <span class="k">end</span>
 
@@ -274,8 +273,7 @@ ex1.rb:10:in `f3': undefined local variable or method `foobar' for main:Object (
 <span class="k">end</span>
 
 <span class="n">f1</span><span class="p">()</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>実行結果</dt>
@@ -297,7 +295,7 @@ ex1.rb:10:in `f3': undefined local variable or method `foobar' for main:Object (
 
 <p><a href="../../images/0031-BackTrace/ex3.rb">ex3.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">debug_puts</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">debug_puts</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
   <span class="nb">caller</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=~</span> <span class="sr">/(.*?):(\d+)/</span>   <span class="c1"># 呼び出し元を調べる</span>
   <span class="n">filename</span><span class="p">,</span> <span class="n">linenum</span> <span class="o">=</span> <span class="vg">$1</span><span class="p">,</span> <span class="vg">$2</span>
   <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"[DEBUG] </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">:</span><span class="si">#{</span><span class="n">linenum</span><span class="si">}</span><span class="s2">"</span>
@@ -308,8 +306,7 @@ ex1.rb:10:in `f3': undefined local variable or method `foobar' for main:Object (
 <span class="n">debug_puts</span> <span class="s2">"x=</span><span class="si">#{</span><span class="n">x</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
 <span class="n">x</span> <span class="o">=</span> <span class="s2">"bar"</span>
 <span class="n">debug_puts</span> <span class="s2">"x=</span><span class="si">#{</span><span class="n">x</span><span class="p">.</span><span class="nf">inspect</span><span class="si">}</span><span class="s2">"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これを実行すると、デバッグ用のメッセージだけでなく、debug_puts() を使っている場所も同時に表示されることがわかります。実際使ってみると、これは大変便利です。</p>
 
@@ -339,7 +336,7 @@ ex1.rb:10:in `f3': undefined local variable or method `foobar' for main:Object (
 
 <p><a href="../../images/0031-BackTrace/ex4.rb">ex4.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AssertionError</span> <span class="o">&lt;</span> <span class="no">StandardError</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AssertionError</span> <span class="o">&lt;</span> <span class="no">StandardError</span>
 <span class="k">end</span>
 
 <span class="k">def</span> <span class="nf">_assert</span> <span class="n">expr</span>
@@ -354,8 +351,7 @@ ex1.rb:10:in `f3': undefined local variable or method `foobar' for main:Object (
 <span class="k">end</span>                  <span class="c1"># ように偽装している</span>
 
 <span class="n">main</span><span class="p">()</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>実行例</dt>

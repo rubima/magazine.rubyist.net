@@ -271,14 +271,13 @@ print, puts の使い方は普通の Ruby プログラムの時と同じです�
 
 <p>foo.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n</span><span class="s2">"</span>
 <span class="nb">print</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
 <span class="nb">print</span> <span class="mi">123</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>1 行目は shebang というものです。
 Windows を使っている人にはほとんど関係ありません。
@@ -420,15 +419,14 @@ CGI プログラムとして実行させてみて下さい。</p>
 
 <p>foo2.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
  
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">"Hello World"</span>
 <span class="nb">print</span> <span class="n">a</span>
 <span class="nb">print</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><img src="../../images/0011-CGIProgrammingForRubyBeginners-4/foo2.jpg" alt="foo2.jpg" /></p>
 
 <p>Hello World と表示されたでしょうか？　
@@ -574,15 +572,14 @@ puts "太郎君"</code></pre></figure>
 
 <p>foo2.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
  
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 <span class="n">a</span> <span class="o">=</span> <span class="s2">"Hello World"</span>
 <span class="nb">print</span> <span class="n">a</span>
 <span class="nb">print</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>foo2.rb の 4 行目では変数 a を “Hello World” への目印にしています。
 その後の 5 行目で変数 a の目印が付いているデータ、つまり、
@@ -639,7 +636,7 @@ puts "はじめまして。#{a}、#{b}。"</code></pre></figure>
 CGI プログラムでも試してみましょう。
 <a href="http://localhost:8080/foo3.rb">http://localhost:8080/foo3.rb</a> にアクセスしてみて下さい。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 
@@ -650,8 +647,7 @@ CGI プログラムでも試してみましょう。
 <span class="nb">print</span> <span class="s2">"b = </span><span class="si">#{</span><span class="n">b</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
 <span class="nb">print</span> <span class="s2">"c = </span><span class="si">#{</span><span class="n">c</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0011-CGIProgrammingForRubyBeginners-4/foo3.jpg" alt="foo3.jpg" /></p>
 
@@ -674,7 +670,7 @@ CGI プログラムでも試してみましょう。
 
 <p>foo4.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 
@@ -687,8 +683,7 @@ CGI プログラムでも試してみましょう。
 <span class="nb">print</span> <span class="s2">"&lt;/body&gt;</span><span class="se">\n</span><span class="s2">"</span>
 <span class="nb">print</span> <span class="s2">"&lt;/html&gt;</span><span class="se">\n</span><span class="s2">"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p><img src="../../images/0011-CGIProgrammingForRubyBeginners-4/foo4.jpg" alt="foo4.jpg" /></p>
 
 <p>foo4.rb では文字を何回かに分けて print で HTML を表示させます。
@@ -748,7 +743,7 @@ print "images/cat#{a}.jpg"</code></pre></figure>
 これまでに説明した機能を使っているので、
 どうしてこれで上手くいくのか是非自分で考えてみて下さい。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/local/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 
@@ -763,8 +758,7 @@ print "images/cat#{a}.jpg"</code></pre></figure>
 <span class="nb">print</span> <span class="s2">"&lt;/html&gt;</span><span class="se">\n</span><span class="s2">"</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="../../images/0011-CGIProgrammingForRubyBeginners-4/foo5.jpg" alt="foo5.jpg" /></p>
 

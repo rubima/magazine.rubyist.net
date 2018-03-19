@@ -261,7 +261,7 @@ Microsoft 社が開発した技術に Component Object Model (COM) がありま�
 
 <p><a href="../../images/0003-Win32OLE/ie.rb">ie.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="n">ie</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'InternetExplorer.Application'</span><span class="p">)</span>
 <span class="n">ie</span><span class="o">.</span><span class="no">Navigate</span><span class="p">(</span><span class="s2">"http://www.google.co.jp/"</span><span class="p">)</span>
@@ -274,8 +274,7 @@ Microsoft 社が開発した技術に Component Object Model (COM) がありま�
 <span class="n">btnG</span> <span class="o">=</span> <span class="n">ie</span><span class="p">.</span><span class="nf">document</span><span class="p">.</span><span class="nf">all</span><span class="o">.</span><span class="no">Item</span><span class="p">(</span><span class="s2">"btnG"</span><span class="p">)</span>
 <span class="n">btnG</span><span class="p">.</span><span class="nf">click</span><span class="p">()</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このスクリプトでは Internet Explorer の COM オブジェクトを作成していま
 す。COM オブジェクトというのは、ざっくりと Windows アプリケーションの
@@ -497,7 +496,7 @@ COM オブジェクトを生成し、その COM オブジェクトが持つメ�
 
 <p><a href="../../images/0003-Win32OLE/method_param.rb">method_param.rb</a></p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'win32ole'</span>
 
 <span class="n">ie</span> <span class="o">=</span> <span class="no">WIN32OLE</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s1">'InternetExplorer.Application'</span><span class="p">)</span>
 <span class="nb">puts</span>  <span class="n">ie</span><span class="p">.</span><span class="nf">ole_obj_help</span><span class="p">.</span><span class="nf">to_s</span>
@@ -515,8 +514,7 @@ COM オブジェクトを生成し、その COM オブジェクトが持つメ�
   <span class="nb">puts</span> <span class="n">str</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>上記スクリプトの実行結果は次のとおりです。</p>
 

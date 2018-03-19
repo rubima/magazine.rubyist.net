@@ -453,7 +453,7 @@ end</code></pre></figure>
 
 <p>一例として、MainPageディレクトリ下のMainPage.rbを編集して、投稿時にPingを打つサンプルを載せておきます。今号でも連載を執筆されているMoonWolf氏の<a href="http://raa.ruby-lang.org/project/blogping/">Blog::Pingライブラリ</a>を使った改造です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'fileutils'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'fileutils'</span>
 
 <span class="k">class</span> <span class="nc">MainPage</span> <span class="o">&lt;</span> <span class="no">CKComponent</span>
   <span class="k">def</span> <span class="nf">init</span>
@@ -491,8 +491,7 @@ end</code></pre></figure>
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>余談ですが、lilypadプログラムで使用しているCGIKitというWebアプリケーションフレームワークは非常に便利なのでお勧めです。CGIプログラムというと、どうしてもソース中にHTMLが混在して読みづらくなりがちですが、lilypadでは上記のMainPage.rbのようにrubyによる処理部分がHTMLと分離するので可読性が上がります。POST値とクラス変数のマッピングなども簡単な定義で出来たり、エラーになったときに原因を追いやすい（CGIKitのエラー画面が表示され、rubyのエラーのダンプを見られる）のもポイントです。</p>
 

@@ -207,7 +207,7 @@
 
 <p>ActiveRecord に着想を得たこのライブラリは、これまでの LDAP ライブラリと比較するとシンプルかつ判りやすい LDAP プログラミングを可能とします。Rubyist な皆さんなら、以下のサンプルコードを直感的に理解していただけるのではないでしょうか。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># エントリの作成</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># エントリの作成</span>
 <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span>
 
 <span class="c1"># 属性の設定</span>
@@ -219,8 +219,7 @@
 <span class="c1"># 削除</span>
 <span class="n">user</span><span class="p">.</span><span class="nf">destroy</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>前編の記事執筆時から現在までに ActiveLdap のバージョンが上がったため、先ずこの点について説明します。本稿は最新版である 1.2.1 を利用して執筆していますが、「<a href="../../articles/0029/0029-ActiveLdap.html">バージョンアップで変更された点</a>」で記載の項目以外問題なく利用できると思います。</p>
 
@@ -389,7 +388,7 @@
 
 <p>冒頭の例では以下のような User クラスを利用しました。このクラスは validate というメソッドが定義されており、ここで状態のチェックが行われています。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span>
                 <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
@@ -403,8 +402,7 @@
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>validation の機構はインスタンスメソッド validate を見つけると、save の直前にそれを実行します。上記のクラスでは self.uid が正規表現にマッチしなかった場合に errors.add によってエラーの発生を記録していますが、これが validation の正体と言っても差支えないでしょう。</p>
 
@@ -420,7 +418,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>インスタンスメソッド validate を定義する以外に、クラスメソッド validate によって妥当性チェックメソッドを指定することができます。先ほどの状態チェックをこの方法で実装してみましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span>
                 <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
@@ -434,17 +432,15 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>validate クラスメソッドで :validates_uid を状態チェックのためのメソッドとして実行すると予約しています。validate インスタンスメソッドを利用した場合と違うのは、validate クラスメソッドを複数回指定するか引数に複数のメソッド名を指定することで、状態チェックメソッドを複数設定できることです。</p>
 
 <p>以下のように指定すれば、指定した順番にメソッドが実行されます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">validate</span> <span class="ss">:validate_one</span><span class="p">,</span> <span class="ss">:validate_two</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">validate</span> <span class="ss">:validate_one</span><span class="p">,</span> <span class="ss">:validate_two</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="保存を試行せず状態のチェックだけを行う">保存を試行せず、状態のチェックだけを行う</h4>
 
@@ -457,7 +453,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>ActiveRecord::Validations::ClassMethods では、良く使う状態チェックを予めメソッド化して提供しています。先の例では validates_uid としてチェック用のメソッドを定義していましたが、予め用意されている状態チェックメソッド validates_format_of を用いると以下のように記述できます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span>
                 <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
@@ -466,8 +462,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
                       <span class="ss">:message</span> <span class="o">=&gt;</span> <span class="s2">"must match with '/</span><span class="se">\\</span><span class="s2">A[a-zA-Z0-9]+</span><span class="se">\\</span><span class="s2">z/'."</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; taro = User.new :uid =&gt; "ruby_taro",
  irb*                :uidNumber =&gt; 10000,
@@ -484,7 +479,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>callbacks は save などのメソッドが実行される前後に、予め特定の処理を自動的に実行するよう”予約”することができる機構です。上手く使えば便利な機能でしょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span>
                 <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
@@ -496,8 +491,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
   <span class="k">end</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> irb&gt; taro = User.new :uid =&gt; "ruby_taro",
  irb*                :uidNumber =&gt; 10000,
@@ -533,20 +527,19 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>先ずはどんな形で渡せるのか見てみましょう。この時点では細かく見る必要はありません。大体で見てください。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># "(uid=ruby_taro)" の別表現</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># "(uid=ruby_taro)" の別表現</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:first</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">]</span>
 
 <span class="c1"># "(|(uid=ruby_taro)(uid=ruby_hanako))" の別表現</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">{</span><span class="ss">:uid</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]}]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ちょっと見づらいですが、重要なのは文字列を編集する必要がないという事です。つまりフィルタ構文のカッコの開閉や、メタ文字列の扱いなど気にすることなくフィルタを構成できる点こそが重要です。</p>
 
 <p>以下の例では、もう少し複雑なフィルタを記述してみます。フィルタを動的に構成し易い点が見て取れると思います。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># :filter オプションを組み立てて記述する例</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># :filter オプションを組み立てて記述する例</span>
 <span class="n">users</span>                 <span class="o">=</span> <span class="p">[</span><span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]</span>
 <span class="n">exclude_uidnumber</span>     <span class="o">=</span> <span class="mi">10000</span>
 
@@ -556,8 +549,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 <span class="c1"># "(&amp;(|(uid=ruby_taro)(uid=ruby_hanako))(!(uidNumber=10000)))" が適用される</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:and</span><span class="p">,</span> <span class="n">user_filter</span><span class="p">,</span> <span class="n">exclude_filter</span><span class="p">]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>仕組みを簡単に解説します。概念はそう難しくはありません。</p>
 
@@ -567,64 +559,59 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>最小限のフィルタ構成は、以下のようなものです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># "(uid=ruby_taro)" が利用される</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># "(uid=ruby_taro)" が利用される</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">]</span>
 
 <span class="c1"># "(uidNumber&gt;=100)" が利用される</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:uidNumber</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>どちらもおよそ見た目通りです。前者の例では、配列の最初の要素に検索対象の属性名を String か Symbol で指定します。そのまま比較演算子を指定しないで検索値を入れると、比較演算子 “=” で繋がったフィルタが構成されます。後者の例では比較演算子を指定しています。二番目の要素に有効な比較演算子を指定するとその演算子でフィルタが作成されます。</p>
 
 <p>これらの例が最も基本的なフィルタ構成、つまり単一の比較式です。あとは比較式を論理演算子によって繋げれば、複雑なフィルタを容易に構成することができます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># (|(uid=ruby_taro)(uid=ruby_hanako))</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># (|(uid=ruby_taro)(uid=ruby_hanako))</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">],</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]]</span>
 
 <span class="c1"># こちらも同じ</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>前者の場合、実際の LDAP フィルタに近い書式なので判りやすいでしょう。後者の場合、値を示す配列の要素が更に配列になっていますが、これは ActiveLdap が備える省略形であり、このように検索値を複数指定することが可能です。上記二例ともに、結果的に生成される LDAP フィルタは同じものです。</p>
 
 <p>次は LDAP フィルタ自身の実装でも浮いている否定形ですが、ActiveLdap でもやはり浮いています(笑)。LDAP フィルタでの検索条件の否定は比較式を否定することによって構成します。このため論理演算子に近い利用の仕方をします。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># (!(uid=ruby_taro))</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># (!(uid=ruby_taro))</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:not</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="s1">'ruby_taro'</span><span class="p">]]</span> 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>フィルタは入れ子にできるため、幾らでも深く記述することができます（あまりそこまで複雑にはしませんが……）。</p>
 
 <p>最後に、Hash を渡す場合について簡単に触れておきます。Hash を渡す場合と Array を渡す場合にそれほど差異はありません。以下の例では Hash を利用する利点が見え難いですが、動きを確認するために記述します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># "(|(uid=ruby_taro)(uid=ruby_hanako))" が利用される</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># "(|(uid=ruby_taro)(uid=ruby_hanako))" が利用される</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">[</span><span class="ss">:uid</span><span class="p">,</span> <span class="p">[</span><span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]]]</span>     
 
 <span class="c1"># これも同じ</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:or</span><span class="p">,</span> <span class="p">{</span><span class="ss">:uid</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">'ruby_taro'</span><span class="p">,</span> <span class="s1">'ruby_hanako'</span><span class="p">]}]</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>どちらの場合も生成される LDAP フィルタは同一です。Hash を利用すると Hash のキーが属性名、その値が検索値として扱われます。</p>
 
 <p>以下のように、複数の属性に対する検索を and または or で一括して繋ぐような場合があれば、Hash は便利でしょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">hash</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">hash</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="nb">hash</span><span class="p">[</span><span class="ss">:ou</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'rubyistMagazine'</span>
 <span class="nb">hash</span><span class="p">[</span><span class="ss">:sn</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Ruby'</span>
 
 <span class="c1"># "(&amp;(ou=rubyistMagazine)(sn=Ruby))" が利用される</span>
 <span class="no">User</span><span class="p">.</span><span class="nf">find</span> <span class="ss">:all</span><span class="p">,</span> <span class="ss">:filter</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="ss">:and</span><span class="p">,</span> <span class="nb">hash</span><span class="p">]</span> 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Hash を利用する利点は、単にその方が見やすい場合もあるでしょうし、プログラム上扱いやすい場合もあるでしょう。場合に合わせて使い分けてください<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
@@ -650,7 +637,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
   <dd></dd>
 </dl>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Groups"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"cn"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"posixGroup"</span><span class="p">]</span>
 
@@ -661,8 +648,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
                     <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">"User"</span><span class="p">,</span> <span class="ss">:primary_key</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>関連先へのアクセス例</dt>
@@ -692,11 +678,10 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>関連性オブジェクトはこれを解決するために存在します。関連性オブジェクト自身に “&lt;&lt;” メソッドが定義されており、ここをうまく吸収しているからです。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># group の memberUid に new_user の uid を追加して、group を自動で保存する</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># group の memberUid に new_user の uid を追加して、group を自動で保存する</span>
 <span class="n">group</span><span class="p">.</span><span class="nf">users</span> <span class="o">&lt;&lt;</span> <span class="n">new_user</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>また関連性そのものの情報を得ることなどもでき、関連性オブジェクトを通じて、既に関連先のオブジェクトがロードされたか？ 関連先は存在するか？ などを問い合わせることが可能です。</p>
 
@@ -715,14 +700,13 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <h4 id="関連先の情報を取得する">関連先の情報を取得する</h4>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 関連先オブジェクト（群）を取得</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 関連先オブジェクト（群）を取得</span>
 <span class="n">group</span><span class="p">.</span><span class="nf">users</span><span class="p">.</span><span class="nf">target</span>
 
 <span class="c1"># 関連先オブジェクト（群）が存在するかを確認する</span>
 <span class="n">group</span><span class="p">.</span><span class="nf">users</span><span class="p">.</span><span class="nf">exists?</span>  <span class="c1">#=&gt; true</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>target</dt>
@@ -735,14 +719,13 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <h4 id="関連先を操作する">関連先を操作する</h4>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 関連先オブジェクト（群）を再ロードする</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 関連先オブジェクト（群）を再ロードする</span>
 <span class="n">group</span><span class="p">.</span><span class="nf">users</span><span class="p">.</span><span class="nf">reload</span>
 
 <span class="c1"># 関連先を追加する</span>
 <span class="n">group</span><span class="p">.</span><span class="nf">users</span> <span class="o">&lt;&lt;</span> <span class="n">user</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <dl>
   <dt>reload</dt>
@@ -759,7 +742,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>前回の記事では関連性定義の際に :class_name によって関連先オブジェクト（群）のクラスを指定すると説明しましたが、以下のようにキー <strong>:class</strong> によってクラスを直接指定することもできます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Groups"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"cn"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"posixGroup"</span><span class="p">]</span>
 
@@ -768,8 +751,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
                     <span class="ss">:class</span> <span class="o">=&gt;</span> <span class="no">User</span><span class="p">,</span> <span class="ss">:primary_key</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="err">　</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>メタプログラミングを意識する際などに有用でしょう。</p>
 
@@ -783,21 +765,19 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>一方で、API を利用して関連先を追加あるいは削除した場合、自動的に関連先オブジェクトやレシーバが保存される場合があります。例えば、以下のような場合には新規の関連先（user）が保存されます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># user が保存される</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># user が保存される</span>
 <span class="c1"># （has_many を利用し、posixAccount と posixGroup を ユーザ側の gidNumber で 関連付けている場合の例）</span>
 <span class="n">group</span><span class="p">.</span><span class="nf">primary_users</span> <span class="o">&lt;&lt;</span> <span class="n">user</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>逆に、以下の場合には関連元（group）が保存されます</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># group が保存される</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># group が保存される</span>
 <span class="c1"># （has_many(:wrap) を利用して posixAccount と posixGroup をグループ側の memberUid で関連付けている場合）</span>
 <span class="n">group</span><span class="p">.</span><span class="nf">users</span> <span class="o">&lt;&lt;</span> <span class="n">user</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>以下に関連先の追加あるいは削除の際の挙動をまとめます。参考にしてください。</p>
 
@@ -1033,15 +1013,14 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 <p>では LDAPツリー 全体を管理対象としたい場合などはどうでしょう。これは少し特殊な設定のクラスを作れば対応できます。これを利用すれば全てのエントリを取得できますし、ツリー全体を辿る事も可能です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Entry</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Entry</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">""</span><span class="p">,</span>
                <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"top"</span><span class="p">],</span>
                <span class="ss">:scope</span> <span class="o">=&gt;</span> <span class="ss">:sub</span>
   <span class="nb">self</span><span class="p">.</span><span class="nf">dn_attribute</span> <span class="o">=</span> <span class="kp">nil</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> # 全てのエントリを取得して DN を表示する
  irb&gt; pp Entry.find(:all).map{|e| e.dn.to_s}
@@ -1290,19 +1269,19 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>というか私が混乱したんですが……&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>というか私が混乱したんですが…… <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>内容からお気づきの方もいらっしゃると思いますが、validations でも callbacks の仕組みが利用されています&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>内容からお気づきの方もいらっしゃると思いますが、validations でも callbacks の仕組みが利用されています <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>例では判り易さのために、各検索値などを直接記述していますが、実際のプログラムでは他のメソッドの戻り値などを利用するでしょう。その場合にこそ、この仕組みは威力を発揮すると思います&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>例では判り易さのために、各検索値などを直接記述していますが、実際のプログラムでは他のメソッドの戻り値などを利用するでしょう。その場合にこそ、この仕組みは威力を発揮すると思います <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>RFC の書き方的にツリーの一部のスキーマ定義を格納するのか、各部を合計した全部のスキーマ定義を集約しているのかはちょっと判りません。一見した限りでは全部のスキーマ定義が入っているように見えます。予想にすぎませんが、ツリーの一部を別のサーバに委譲する場合などに全部のスキーマ情報を格納する訳ではないのかもしれません。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>RFC の書き方的にツリーの一部のスキーマ定義を格納するのか、各部を合計した全部のスキーマ定義を集約しているのかはちょっと判りません。一見した限りでは全部のスキーマ定義が入っているように見えます。予想にすぎませんが、ツリーの一部を別のサーバに委譲する場合などに全部のスキーマ情報を格納する訳ではないのかもしれません。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>厳密に言えば、RFC はこの属性を持つ事を「強く推奨」しています&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>厳密に言えば、RFC はこの属性を持つ事を「強く推奨」しています <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>

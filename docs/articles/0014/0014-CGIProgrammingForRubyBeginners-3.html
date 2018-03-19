@@ -243,13 +243,12 @@
 
 <p>baz01.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n</span><span class="s2">"</span>
 <span class="n">priny</span> <span class="s2">"hogehoge"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>このプログラムは C:\rubima014-cgi にあります。
 エラーがあると言っても最初はプログラムを眺めても分からないと思います。
@@ -359,13 +358,12 @@ http://localhost:8080/ -&gt; /baz01.rb</code></pre></figure>
 修正部分はごく僅かですが、
 そうした僅かな違いがエラーを引き起こしてしまいます。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="nb">print</span> <span class="s2">"Content-Type: text/html</span><span class="se">\n\n</span><span class="s2">"</span>
 <span class="nb">print</span> <span class="s2">"hogehoge"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="その-2">その 2</h3>
 
@@ -376,7 +374,7 @@ http://localhost:8080/ -&gt; /baz01.rb</code></pre></figure>
 
 <p>baz02.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="nb">require</span> <span class="s2">"cgi "</span>
 
@@ -387,8 +385,7 @@ http://localhost:8080/ -&gt; /baz01.rb</code></pre></figure>
 
 <span class="nb">print</span> <span class="n">m</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="http://localhost:8080/baz02.html">http://localhost:8080/baz02.html</a> にフォームがあります。
 <img src="../../images/0014-CGIProgrammingForRubyBeginners-3/baz02.html" alt="baz02.html" /></p>
@@ -493,7 +490,7 @@ cgi.params の値がおかしいはずです。</p>
 
 <p>baz02-print.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="nb">require</span> <span class="s2">"cgi"</span>
 
@@ -507,8 +504,7 @@ cgi.params の値がおかしいはずです。</p>
 
 <span class="nb">print</span> <span class="n">m</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実際に baz02-print.rb を RDE から実行してみます。
 9, 11 行目のようなプリントデバッグを含んだ CGI プログラムを
@@ -611,7 +607,7 @@ msg の組の値を得ることになりますが、
 
 <p>baz02-ok.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="nb">require</span> <span class="s2">"cgi"</span>
 
@@ -622,8 +618,7 @@ msg の組の値を得ることになりますが、
 
 <span class="nb">print</span> <span class="n">m</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><a href="http://localhost:8080/baz02-ok.rb">http://localhost:8080/baz02-ok.rb</a> に修正済みの CGI プログラムがあるので、
 baz02.html の form タグの action 属性を変更してから、
@@ -714,7 +709,7 @@ show.rb は上の 3 つの情報を表示させる CGI プログラムです。
 
 <p>show.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="nb">require</span> <span class="s2">"cgi"</span>
 
@@ -729,8 +724,7 @@ show.rb は上の 3 つの情報を表示させる CGI プログラムです。
 <span class="nb">print</span> <span class="n">c</span><span class="p">.</span><span class="nf">remote_host</span>
 <span class="nb">print</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>9 行目で Time.new で Time オブジェクトが作られています。
 この行で show.rb が実行された時刻が表示されるわけです。
@@ -754,7 +748,7 @@ show.rb は上の 3 つの情報を表示させる CGI プログラムです。
 
 <p>access.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="nb">require</span> <span class="s2">"cgi"</span>
 
@@ -772,8 +766,7 @@ show.rb は上の 3 つの情報を表示させる CGI プログラムです。
 <span class="nb">print</span> <span class="s2">"OK"</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>実はこのプログラムにはエラーがあります。
 エラーを見つけるためにとりあえず実行してみましょう。
@@ -842,7 +835,7 @@ access.rb ではファイルを閉じていません。
 
 <p>access-ok.rb</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
 
 <span class="nb">require</span> <span class="s2">"cgi"</span>
 
@@ -861,8 +854,7 @@ access.rb ではファイルを閉じていません。
 <span class="nb">print</span> <span class="s2">"OK"</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="まとめ">まとめ</h3>
 

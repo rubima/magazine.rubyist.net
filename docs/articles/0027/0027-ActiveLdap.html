@@ -203,7 +203,7 @@
 
 <p>これまでの LDAP ライブラリと比較すると、ActiveLdap はシンプルかつ判りやすい LDAP プログラミングを可能とします。Rubyist な皆さんなら、以下のサンプルコードを直感的に理解していただけるのではないでしょうか。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># エントリの作成</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># エントリの作成</span>
 <span class="n">user</span> <span class="o">=</span> <span class="no">User</span><span class="p">.</span><span class="nf">new</span>
 
 <span class="c1"># 属性の設定</span>
@@ -215,8 +215,7 @@
 <span class="c1"># 削除</span>
 <span class="n">user</span><span class="p">.</span><span class="nf">destroy</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ActiveLdap を利用する際、当然ながら LDAP の知識が要求されます。このため、本記事では先ず LDAP の基礎概念について記述しています。また LDAP をご存知の方も、記事の中に見慣れない単語など出てくるかもしれません。必要な説明はなるべく記述しましたので、必要に応じ参照して頂ければと思います。</p>
 
@@ -521,7 +520,7 @@ Serverに標準搭載されているOpen Directory、マイクロソフトのWin
 
 <h3 id="usage">Usage</h3>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1"># 接続設定</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 接続設定</span>
 <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">setup_connection</span> <span class="ss">:host</span> <span class="o">=&gt;</span> <span class="s2">"localhost"</span><span class="p">,</span> <span class="ss">:base</span> <span class="o">=&gt;</span> <span class="s2">"o=rubyistMagazine,c=jp"</span>
 
 <span class="c1"># クラス定義</span>
@@ -547,8 +546,7 @@ Serverに標準搭載されているOpen Directory、マイクロソフトのWin
 <span class="c1"># エントリの削除</span>
 <span class="n">u</span><span class="p">.</span><span class="nf">destroy</span>                 <span class="c1">#=&gt; true</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="必要環境">必要環境</h3>
 
@@ -704,12 +702,11 @@ ou: Users</code></pre></figure>
 
 <p>先ずは接続設定を行います。これには ActiveLdap::Base の setup_connection クラスメソッドを利用します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">setup_connection</span> <span class="ss">:base</span> <span class="o">=&gt;</span> <span class="s2">"o=rubyistMagazine,c=jp"</span><span class="p">,</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">setup_connection</span> <span class="ss">:base</span> <span class="o">=&gt;</span> <span class="s2">"o=rubyistMagazine,c=jp"</span><span class="p">,</span>
                                      <span class="ss">:bind_dn</span> <span class="o">=&gt;</span> <span class="s2">"cn=Manager,o=rubyistMagazine,c=jp"</span><span class="p">,</span>
                                      <span class="ss">:password_block</span> <span class="o">=&gt;</span> <span class="nb">lambda</span><span class="p">{</span><span class="s2">"secret"</span><span class="p">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>最低限必要な設定はこれだけです。この設定により ActiveLdap はローカルホストの LDAP サーバに格納された “o=rubyistMagazine,c=jp” 以下のノードを扱うことができるようになります。</p>
 
@@ -767,13 +764,12 @@ ou: Users</code></pre></figure>
 <p><br />
 これでオペレーションのための最低限の準備は整いました。これまで作ったファイルをロードするためのファイルを init.rb として作成しておきましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>
 <span class="nb">require</span> <span class="s1">'active_ldap'</span>
 <span class="nb">require</span> <span class="s1">'connection'</span>
 <span class="nb">require</span> <span class="s1">'user'</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>これ以降は init.rb を利用し、irb で LDAP ツリーを操作していきます。</p>
 
@@ -1025,7 +1021,7 @@ ou: Users</code></pre></figure>
 
 <p>定義例</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
 
@@ -1034,8 +1030,7 @@ ou: Users</code></pre></figure>
 <span class="k">end</span>
 
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>利用例</p>
 
@@ -1057,7 +1052,7 @@ ou: Users</code></pre></figure>
 
 <p>定義例</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
 
@@ -1065,8 +1060,7 @@ ou: Users</code></pre></figure>
                         <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">"Group"</span><span class="p">,</span> <span class="ss">:many</span> <span class="o">=&gt;</span> <span class="s2">"memberUid"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>利用例</p>
 
@@ -1094,7 +1088,7 @@ ou: Users</code></pre></figure>
 
 <p>定義例</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Groups"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"cn"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"posixGroup"</span><span class="p">]</span>
 
@@ -1102,8 +1096,7 @@ ou: Users</code></pre></figure>
                             <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">"User"</span><span class="p">,</span> <span class="ss">:foreign_key</span> <span class="o">=&gt;</span> <span class="s2">"gidNumber"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>利用例</p>
 
@@ -1129,7 +1122,7 @@ ou: Users</code></pre></figure>
 
 <p>定義例</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Groups"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"cn"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"posixGroup"</span><span class="p">]</span>
 
@@ -1137,8 +1130,7 @@ ou: Users</code></pre></figure>
                     <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">"User"</span><span class="p">,</span> <span class="ss">:primary_key</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>利用例</p>
 
@@ -1227,7 +1219,7 @@ ou: Groups</code></pre></figure>
 
 <p>ou=Groups 以下を管理するための、Group クラスを作成します。group.rb として以下のファイルを作成しましょう。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Group</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Groups"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"cn"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"posixGroup"</span><span class="p">]</span>
 
@@ -1238,12 +1230,11 @@ ou: Groups</code></pre></figure>
                     <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">"User"</span><span class="p">,</span> <span class="ss">:primary_key</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Users クラスも belongs_to を実装したものに変更します。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="no">ActiveLdap</span><span class="o">::</span><span class="no">Base</span>
   <span class="n">ldap_mapping</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="s2">"ou=Users"</span><span class="p">,</span>
                 <span class="ss">:dn_attribute</span> <span class="o">=&gt;</span> <span class="s2">"uid"</span><span class="p">,</span> <span class="ss">:classes</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"inetOrgPerson"</span><span class="p">,</span> <span class="s2">"posixAccount"</span><span class="p">]</span>
 
@@ -1254,21 +1245,19 @@ ou: Groups</code></pre></figure>
                               <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s2">"Group"</span><span class="p">,</span> <span class="ss">:primary_key</span> <span class="o">=&gt;</span> <span class="s2">"gidNumber"</span>
 <span class="k">end</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>この User クラスにはオブジェクトクラス posixAccount を追加し、dn_attribute も uid に変更しています。</p>
 
 <p>最後に、これらを init.rb がロードするように変更すれば準備完了です。</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rubygems'</span>
 <span class="nb">require</span> <span class="s1">'active_ldap'</span>
 <span class="nb">require</span> <span class="s1">'connection'</span>
 <span class="nb">require</span> <span class="s1">'user'</span>
 <span class="nb">require</span> <span class="s1">'group'</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>ここから irb を利用して実際にエントリを作成していきます。init.rb を require しながら irb を起動します。</p>
 
@@ -1354,19 +1343,19 @@ ou: Groups</code></pre></figure>
 <div class="footnotes">
   <ol>
     <li id="fn:1">
-      <p>属性値には日本語が使えますが、ここでその詳細は割愛します&nbsp;<a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+      <p>属性値には日本語が使えますが、ここでその詳細は割愛します <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:2">
-      <p>ここでは判り易さのために cn を dn_attribute にしていますが、同姓同名に対応できないため、実際の設計では別の属性を検討すべきでしょう。&nbsp;<a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+      <p>ここでは判り易さのために cn を dn_attribute にしていますが、同姓同名に対応できないため、実際の設計では別の属性を検討すべきでしょう。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:3">
-      <p>ただしパラメータを調整することで高速化する事も可能です。&nbsp;<a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+      <p>ただしパラメータを調整することで高速化する事も可能です。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:4">
-      <p>memberUid にはセカンダリで所属しているユーザのみを入れる文意の記事も見受けられます。どちらが正式なのかは RFC 上でも確認できませんでした。ここでは便宜上、プライマリとセカンダリの両方を扱う属性として memberUid を扱います。&nbsp;<a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+      <p>memberUid にはセカンダリで所属しているユーザのみを入れる文意の記事も見受けられます。どちらが正式なのかは RFC 上でも確認できませんでした。ここでは便宜上、プライマリとセカンダリの両方を扱う属性として memberUid を扱います。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
     </li>
     <li id="fn:5">
-      <p>前述の通り、このメソッドだけ、新規のインスタンスが戻りに含まれる場合があります&nbsp;<a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+      <p>前述の通り、このメソッドだけ、新規のインスタンスが戻りに含まれる場合があります <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
     </li>
   </ol>
 </div>
