@@ -31,7 +31,7 @@ http://127.0.0.1:4000/ にローカル開発サーバーが起動し、Markdown�
 
 1. 受け付けたリリース対象の記事のPull Requestをmergeします。
 1. 次のことがTravisでできそうなので、実装すれば良さそう。
-- `bundle exec jekyll build`を実行します。
+- `JEKYLL_ENV=production bundle exec jekyll build`を実行します。
 - `_site`にサイトが生成されるので`git commit`して`gh-page`ブランチにcommit、`git push`します。
 
 上記のようにしているのは、amazonの書影をとるためにpluginを使用しているため。これを解決できれば、特にcloneしなくても動かせるものと考えています。
