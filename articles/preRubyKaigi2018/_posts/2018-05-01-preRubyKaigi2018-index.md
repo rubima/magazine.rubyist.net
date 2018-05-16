@@ -17,7 +17,7 @@ tags: preRubyKaigi2018 index
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) RejectKaigi 2018
 
-2018 年 5 月 12 日（土）に株式会社 Speee さまで [RejectKaigi 2018](https://speee.connpass.com/event/84915/) が開催されました。
+2018 年 5 月 12 日（土）に株式会社 Speee 様で [RejectKaigi 2018](https://speee.connpass.com/event/84915/) が開催されました。
 
 ## RubyKaigi 2018 Speaker から（随時更新）
 
@@ -31,13 +31,21 @@ RubyKaigi 2018 の Speaker による発表内容の事前資料集がここに�
 
 ## 各有益情報
 
-RubyKaigi 2018 に向けて多くの企業や参加者、 Rubyist 、仙台出身者の方々などから有益情報を記されています。その記事へのリンクがここに掲載されます。
+RubyKaigi 2018 に向けて多くの企業や参加者、 Rubyist 、仙台出身者の方々などから有益情報を記されています。
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) スポンサー様から
+
+#### [SmartHR ビアバッシュ @RubyKaigi 2018](https://smarthr.connpass.com/event/87674/)
+
+RubyKaigi2018 にスポンサーとして出展予定の SmartHR 様主催のビアバッシュです。6 月 1 日 (金) 19:00 からとのことです。
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 見どころ情報
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) グルメ／おみやげ情報
+
+#### [【保存版】自腹でつくる仙台グルメマップ #RubyKaigi 2018 - SmartHR Tech Blog](http://tech.smarthr.jp/entry/2018/05/10/192540)
+
+RubyKaigi2018 にスポンサーとして出展予定の SmartHR 様よりご寄稿いただきました。「RubyKaigi 2018 当日は SmartHR のブースで仙台グルメマップをお配りしています！」とのこと。お楽しみに！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) その他
 
