@@ -41,7 +41,9 @@ http://127.0.0.1:4000/ にローカル開発サーバーが起動し、Markdown�
 `../rubima.github.io/` に `rubima/rubima.github.io` が chekout されている場合は下記のような操作をします。
 
 ```
-$ \cp -pr docs/* ../rubima.github.io/
+$ git checkout master
+$ git pull
+$ \cp -r docs/* ../rubima.github.io/
 $ cd ../rubima.github.io/
 $ git checkout -b (ブランチ名)
 $ git add .
