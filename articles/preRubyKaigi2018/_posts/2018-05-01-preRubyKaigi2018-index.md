@@ -19,6 +19,10 @@ tags: preRubyKaigi2018 index
 
 2018 年 5 月 12 日（土）に株式会社 Speee 様で [RejectKaigi 2018](https://speee.connpass.com/event/84915/) が開催されました。
 
+#### [RejectKaigi2018参加レポート - inFablic](http://in.fablic.co.jp/entry/2018/05/12/215813)
+
+[@tommy](https://twitter.com/@tooooooooomy) さんによるレポートです。一部の講演については発表資料や反応のツイートへのリンクもあります。
+
 ## RubyKaigi 2018 Speaker から（随時更新）
 
 RubyKaigi 2018 の Speaker による発表内容の事前資料集がここに掲載されます。
@@ -47,18 +51,22 @@ RubyKaigi2018 にスポンサーとして出展予定の SmartHR 様主催のビ
 
 RubyKaigi2018 にスポンサーとして出展予定の SmartHR 様よりご寄稿いただきました。「RubyKaigi 2018 当日は SmartHR のブースで仙台グルメマップをお配りしています！」とのこと。お楽しみに！
 
+#### [@hsbt さんによる仙台グルメスポットマップ](https://twitter.com/hsbt/status/994563804812820480)
+
+牛タン・寿司・ラーメン部門、RubyKaigi 部門、バー・カラオケ・日本酒部門に分かれていて見やすい Google Map です。
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) その他
 
 ### 書いた人
 
 * RubyKaigi 2018 Speaker から : Speakerのみなさん
 * 各有益情報 : 各エントリー執筆者のみなさん
-* まとめ : みよひで、zunda
+* まとめ : みよひで、[zunda](https://twitter.com/zundan)
 
 
 ## おねがい
 
-RubyKaigi 2018 直前特集号に記事へのリンクを貼って欲しいなどご要望がありましたら[Github Issue #464](https://github.com/rubima/rubima/issues/464)にコメントを残してください。随時対応します。
+RubyKaigi 2018 直前特集号に記事へのリンクを貼って欲しいなどご要望がありましたら [Github Issue #464](https://github.com/rubima/rubima/issues/464) にコメントを残してください。随時対応します。
 
 るびま全体に対する記事へのご意見、ご感想や、「こんな記事が読みたい」、「あの人の記事が読みたい」、といったご希望などがありましたら、下記連絡先までお気軽にお寄せください。
 
