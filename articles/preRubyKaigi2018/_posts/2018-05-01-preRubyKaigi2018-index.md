@@ -19,13 +19,13 @@ tags: preRubyKaigi2018 index
 
 2018 年 5 月 12 日（土）に株式会社 Speee 様で [RejectKaigi 2018](https://speee.connpass.com/event/84915/) が開催されました。
 
-#### [RejectKaigi2018参加レポート - inFablic](http://in.fablic.co.jp/entry/2018/05/12/215813)
+#### [RejectKaigi 2018 参加レポート - inFablic](http://in.fablic.co.jp/entry/2018/05/12/215813)
 
 [@tommy](https://twitter.com/@tooooooooomy) さんによるレポートです。一部の講演については発表資料や反応のツイートへのリンクもあります。
 
 ## RubyKaigi 2018 Speaker から（随時更新）
 
-RubyKaigi 2018 の Speaker による発表内容の事前資料集がここに掲載されます。
+RubyKaigi 2018 の Speaker による発表内容の事前資料集がここに掲載されます。Speaker のみなさま、資料募集中です！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 5 月 31 日 (木) 
 
@@ -41,7 +41,15 @@ RubyKaigi 2018 に向けて多くの企業や参加者、 Rubyist 、仙台出�
 
 #### [SmartHR ビアバッシュ @RubyKaigi 2018](https://smarthr.connpass.com/event/87674/)
 
-RubyKaigi2018 にスポンサーとして出展予定の SmartHR 様主催のビアバッシュです。6 月 1 日 (金) 19:00 からとのことです。
+RubyKaigi 2018 にスポンサーとして出展予定の SmartHR 様主催のビアバッシュです。6 月 1 日 (金) 19:00 からとのことです。
+
+#### [Pin Badge Sponsor RubyKaigi 2018](https://www.brilliance.co.jp/journal/fussover/pin-badge-sponsor-rubykaigi-2018/)
+
+Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
+
+#### [RubyKaigi 2018 に Breakfast Sponsor として協賛します](https://agile.esm.co.jp/news/2018-05-18-breakfast-sponsor-of-rubykaigi-2018.html)
+
+Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 見どころ情報
 
@@ -49,7 +57,7 @@ RubyKaigi2018 にスポンサーとして出展予定の SmartHR 様主催のビ
 
 #### [【保存版】自腹でつくる仙台グルメマップ #RubyKaigi 2018 - SmartHR Tech Blog](http://tech.smarthr.jp/entry/2018/05/10/192540)
 
-RubyKaigi2018 にスポンサーとして出展予定の SmartHR 様よりご寄稿いただきました。「RubyKaigi 2018 当日は SmartHR のブースで仙台グルメマップをお配りしています！」とのこと。お楽しみに！
+RubyKaigi 2018 にスポンサーとして出展予定の SmartHR 様よりご寄稿いただきました。「RubyKaigi 2018 当日は SmartHR のブースで仙台グルメマップをお配りしています！」とのこと。お楽しみに！
 
 #### [@hsbt さんによる仙台グルメスポットマップ](https://twitter.com/hsbt/status/994563804812820480)
 
