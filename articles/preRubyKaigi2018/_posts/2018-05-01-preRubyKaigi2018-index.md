@@ -53,6 +53,10 @@ Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい�
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
 
+#### [今年の #rubykaigi 向けのノベルティは『マイクロファイバー傘カバー』です](https://twitter.com/everyleaf/status/998424312351637504)
+
+Nursery Sponsor の株式会社万葉様からノベルティのご案内です。気になります。
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 見どころ情報
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) グルメ／おみやげ情報
