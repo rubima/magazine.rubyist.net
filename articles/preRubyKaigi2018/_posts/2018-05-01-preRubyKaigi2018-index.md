@@ -53,6 +53,10 @@ Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい�
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
 
+#### [今年の #rubykaigi 向けのノベルティは『マイクロファイバー傘カバー』です](https://twitter.com/everyleaf/status/998424312351637504)
+
+Nursery Sponsor の株式会社万葉様からノベルティのご案内です。気になります。
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 見どころ情報
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) グルメ／おみやげ情報
@@ -61,9 +65,9 @@ Breakfast Sponsor の永和システムマネジメント様からのご案内�
 
 RubyKaigi 2018 にスポンサーとして出展予定の SmartHR 様よりご寄稿いただきました。「RubyKaigi 2018 当日は SmartHR のブースで仙台グルメマップをお配りしています！」とのこと。お楽しみに！
 
-#### [トレタはRubyKaigi2018にスポンサーとして参加します & 【仙台版】トレタMapのご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
+#### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
 
-RubyKaigi 2018 にスポンサーとして出展予定の トレタ 様よりご寄稿いただきました。[【仙台版】トレタMap](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
+RubyKaigi 2018 にスポンサーとして出展予定のトレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
 
 #### [@hsbt さんによる仙台グルメスポットマップ](https://twitter.com/hsbt/status/994563804812820480)
 
