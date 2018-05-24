@@ -39,7 +39,7 @@ RubyKaigi 2018 に向けて多くの企業や参加者、 Rubyist 、仙台出�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) スポンサー様から
 
-下記に掲載した他にも、パーティー・ドリンクアップ・カラオケ・5k run のご案内が RubyKaigi 2018 の [Parties](http://rubykaigi.org/2018/parties) に掲載されています。
+全てのスポンサー様が、RubyKaigi 2018 の [Sponsors](http://rubykaigi.org/2018/sponsors) に掲載されています。下記に掲載した他にも、パーティー・ドリンクアップ・カラオケ・5k run のご案内が RubyKaigi 2018 の [Parties](http://rubykaigi.org/2018/parties) に掲載されています。
 
 #### [SmartHR ビアバッシュ @RubyKaigi 2018](https://smarthr.connpass.com/event/87674/)
 
