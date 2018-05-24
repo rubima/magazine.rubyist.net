@@ -73,6 +73,10 @@ RubyKaigi 2018 にスポンサーとして出展予定のトレタ様よりご�
 
 牛タン・寿司・ラーメン部門、RubyKaigi 部門、バー・カラオケ・日本酒部門に分かれていて見やすい Google Map です。
 
+#### [RubyKaigiで仙台行く人に物申したい](https://twitter.com/rechiba3/status/999493922832318465)
+
+@rechiba3 さんによる、牛タン・中落ち・海鮮丼などの情報です。
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) その他
 
 ### 書いた人
