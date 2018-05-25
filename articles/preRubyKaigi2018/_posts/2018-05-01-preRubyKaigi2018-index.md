@@ -35,7 +35,7 @@ RubyKaigi 2018 の Speaker による発表内容の事前資料集がここに�
 
 ## 各有益情報
 
-RubyKaigi 2018 に向けて多くの企業や参加者、 Rubyist 、仙台出身者の方々などから有益情報を記されています。
+RubyKaigi 2018 に向けて多くの企業や参加者、 Rubyist 、仙台出身者の方々などからの有益情報です。漏れがあったらすみません！[編集](https://twitter.com/zundan)までお知らせください！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) スポンサー様から
 
@@ -57,9 +57,19 @@ Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい�
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
 
-#### [今年の #rubykaigi 向けのノベルティは『マイクロファイバー傘カバー』です](https://twitter.com/everyleaf/status/998424312351637504)
+#### [RubyKaigi 2018のNursery Sponsorになりました](https://everyleaf.com/articles/31)
 
-Nursery Sponsor の株式会社万葉様からノベルティのご案内です。気になります。
+Nursery Sponsor の株式会社万葉様から託児サービスのご案内です。
+
+そして、[今年の #rubykaigi 向けのノベルティは『マイクロファイバー傘カバー』です](https://twitter.com/everyleaf/status/998424312351637504)、とのこと。気になります。
+
+#### [RubyKaigi2018にてラブグラフがPhoto Sponsorとして期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
+
+Photo Sponsor の株式会社ラブグラフより、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
+
+#### [週刊Railsウォッチ（20180525）特集: RubyKaigi 2018いよいよ来週、Rails vs Hanami対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
+
+Silver Sponsor のビヨンド・パースペクティブ・ソリューションズ株式会社様より、幅広い事前お役立ち情報です。つっつきボイスさんでさらに広がる視野！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 見どころ情報
 
