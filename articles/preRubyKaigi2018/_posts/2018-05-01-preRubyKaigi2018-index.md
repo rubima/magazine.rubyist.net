@@ -77,6 +77,10 @@ RubyKaigi 2018 にスポンサーとして出展予定のトレタ様よりご�
 
 @rechiba3 さんによる、牛タン・中落ち・海鮮丼などの情報です。
 
+#### [ゆでたん (ゆるキャラではなく茹でた牛タン) 是非食べてみてください！](https://twitter.com/thatblue_plus/status/999555854956314624)
+
+@thatblue_plus さんによる、広瀬通の牛タン屋さん情報です。
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) その他
 
 ### 書いた人
