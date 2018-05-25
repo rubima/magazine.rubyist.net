@@ -45,6 +45,10 @@ RubyKaigi 2018 に向けて多くの企業や参加者、 Rubyist 、仙台出�
 
 RubyKaigi 2018 にスポンサーとして出展予定の SmartHR 様主催のビアバッシュです。6 月 1 日 (金) 19:00 からとのことです。
 
+#### [RubyKaigi 2018 今年も Ruby Sponsor として協賛します #RubyKaigi](https://tech.drecom.co.jp/rubykaigi-2018/)
+
+Ruby Sponsor の株式会社ドリコム様より、ブースご出展のお知らせです。ぜひお立ち寄りください。
+
 #### [Pin Badge Sponsor RubyKaigi 2018](https://www.brilliance.co.jp/journal/fussover/pin-badge-sponsor-rubykaigi-2018/)
 
 Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
