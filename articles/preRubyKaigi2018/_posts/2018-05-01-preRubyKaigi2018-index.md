@@ -25,13 +25,21 @@ tags: preRubyKaigi2018 index
 
 ## RubyKaigi 2018 Speaker から（随時更新）
 
-RubyKaigi 2018 の Speaker による発表内容の事前資料集がここに掲載されます。Speaker のみなさま、資料募集中です！
+RubyKaigi 2018 の Speaker による事前資料集です。これを読んでおけば当日の発表をより深く理解できると思います。Speaker のみなさま、資料募集中です！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 5 月 31 日 (木)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 1 日 (金)
 
+#### [RNode with code positions](http://rubykaigi.org/2018/presentations/spikeolaf.html#jun01) (15:50 - 16:30 Main Hall, Yuichiro Kaneko さん)
+
+- [RNode with code positions](https://gist.github.com/yui-knk/169fc1ae1fc8c88547cc6ee2bca4e351)
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
+
+#### [The Method JIT Compiler for Ruby 2.6](http://rubykaigi.org/2018/presentations/k0kubun.html#jun02) (13:00 - 13:40 Main Hall, Takashi Kokubun さん)
+
+- [Ruby 2.6にJITコンパイラをマージしました](https://k0kubun.hatenablog.com/entry/ruby26-jit)
 
 ## 各有益情報
 
