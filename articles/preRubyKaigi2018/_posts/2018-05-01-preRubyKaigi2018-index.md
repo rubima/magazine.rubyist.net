@@ -65,6 +65,10 @@ Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい�
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
 
+#### [Ltech#0 【緊急開催】RubyKaigi2018 報告会](https://lifull.connpass.com/event/89131/)
+
+Platinum Sponsors の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
+
 #### [RubyKaigi 2018のNursery Sponsorになりました](https://everyleaf.com/articles/31)
 
 Nursery Sponsor の株式会社万葉様から託児サービスのご案内です。
