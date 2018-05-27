@@ -65,17 +65,21 @@ Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい�
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
 
-#### [RubyKaigi 2018のNursery Sponsorになりました](https://everyleaf.com/articles/31)
+#### [Ltech#0 【緊急開催】RubyKaigi2018 報告会](https://lifull.connpass.com/event/89131/)
+
+Platinum Sponsors の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
+
+#### [RubyKaigi 2018 の Nursery Sponsor になりました](https://everyleaf.com/articles/31)
 
 Nursery Sponsor の株式会社万葉様から託児サービスのご案内です。
 
 そして、[今年の #rubykaigi 向けのノベルティは『マイクロファイバー傘カバー』です](https://twitter.com/everyleaf/status/998424312351637504)、とのこと。気になります。
 
-#### [RubyKaigi2018にてラブグラフがPhoto Sponsorとして期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
+#### [RubyKaigi 2018 にてラブグラフが Photo Sponsor として期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
 
 Photo Sponsor の株式会社ラブグラフより、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
 
-#### [週刊Railsウォッチ（20180525）特集: RubyKaigi 2018いよいよ来週、Rails vs Hanami対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
+#### [週刊 Railsウォッチ（20180525）特集: RubyKaigi 2018 いよいよ来週、Rails vs Hanami 対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
 
 Silver Sponsor のビヨンド・パースペクティブ・ソリューションズ株式会社様より、幅広い事前お役立ち情報です。つっつきボイスさんでさらに広がる視野！
 
