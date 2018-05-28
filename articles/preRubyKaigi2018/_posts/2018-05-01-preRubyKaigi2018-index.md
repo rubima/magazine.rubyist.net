@@ -25,21 +25,65 @@ tags: preRubyKaigi2018 index
 
 ## RubyKaigi 2018 Speaker から（随時更新）
 
-RubyKaigi 2018 の Speaker による事前資料集です。これを読んでおけば当日の発表をより深く理解できると思います。Speaker のみなさま、資料募集中です！
+RubyKaigi 2018 の Speaker による事前資料集です。これを読んでおけば当日の発表をより深く理解できると思います。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 5 月 31 日 (木)
 
+#### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:000 - 14:00 Hagi, Yuta Kurotaki さん)
+
+- [bancor: Token economy made with Ruby](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+
+#### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
+
+- [RubyGems 3 & 4](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+
+#### [A parser based syntax highlighter](http://rubykaigi.org/2018/presentations/p_ck_.html#may31) (16:40 - 17:20, Masataka Kuwabaraさん)
+
+- [A parser based syntax highlighter](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
+
+#### ライトニングトーク (http://rubykaigi.org/2018/presentations/lt/) (17:30 - 18:30 Main Hall)
+
+- [Find out potential dead codes from diff](http://techlife.cookpad.com/entry/2018/05/28/143226) (Sangyong Sim さん, クックパッド様による紹介記事内)
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 1 日 (金)
+
+#### [It's Rubies All The Way Down](http://rubykaigi.org/2018/presentations/wyhaines.html#jun01) (10:50 - 11:30 Hagi, Kirk Haines さん)
+
+- [It's Rubies All The Way Down](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
+
+#### [Guild Prototype](http://rubykaigi.org/2018/presentations/ko1.html#jun01) (13:00 -13:40 Main Hall, Koichi Sasada さん)
+
+- [Guild Prototype](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
 
 #### [RNode with code positions](http://rubykaigi.org/2018/presentations/spikeolaf.html#jun01) (15:50 - 16:30 Main Hall, Yuichiro Kaneko さん)
 
 - [RNode with code positions](https://gist.github.com/yui-knk/169fc1ae1fc8c88547cc6ee2bca4e351)
+
+#### [How Ruby Survives in the Cloud Native World](http://rubykaigi.org/2018/presentations/udzura.html#jun01) (15:50 - 16:30 Hagi, Uchio KONDO さん)
+
+- [How Ruby Survives in the Cloud Native World](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+
+#### [Type Profiler: An analysis to guess type signatures](http://rubykaigi.org/2018/presentations/mametter.html#jun01) (16:40 - 17:20 Main Hall, Yusuke Endoh さん)
+
+- [Type Profiler: An analysis to guess type signatures](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
+
+#### [Ruby Committers vs the World](http://rubykaigi.org/2018/presentations/rubylangorg.html#jun01) (17:30 - 18:30 Main Hall, CRuby Committers の皆さん)
+
+- [RubyKaigi 2018 "Ruby Committers vs the World" Questions](https://docs.google.com/forms/d/e/1FAIpQLSe7FpSOxEgZ39L1hnzO_fOilstF35jXn_aFwQOpctOqRS6ZGA/viewform) (質問のある方は、このフォームからどうぞ！)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
 
 #### [The Method JIT Compiler for Ruby 2.6](http://rubykaigi.org/2018/presentations/k0kubun.html#jun02) (13:00 - 13:40 Main Hall, Takashi Kokubun さん)
 
 - [Ruby 2.6にJITコンパイラをマージしました](https://k0kubun.hatenablog.com/entry/ruby26-jit)
+
+#### [Design pattern for embedding mruby into middleware](http://rubykaigi.org/2018/presentations/matsumotory.html#jun02) (15:50 - 16:00 Hagi, MATSUMOTO, Ryosuke さん)
+
+- [Design pattern for embedding mruby into middleware](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+
+#### [TRICK 2018 (FINAL)](http://rubykaigi.org/2018/presentations/tric.html#jun02) (16:40 - 17:40 Main Hall, mame & the judges)
+
+- [TRICK FINAL](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
 
 ## 各有益情報
 
@@ -57,6 +101,10 @@ RubyKaigi 2018 にスポンサーとして出展予定の SmartHR 様主催の�
 
 Ruby Sponsor の株式会社ドリコム様より、ブースご出展のお知らせです。ぜひお立ち寄りください。
 
+#### [クックパッドは、RubyKaigi 2018 でみなさんにお会いできることを楽しみにしています！](http://techlife.cookpad.com/entry/2018/05/28/143226)
+
+Ruby Committers Sponsor また Network Sponsor のクックパッド株式会社様より、ブースでのライブコーティングや登壇者への Q&A タイムなどのお知らせです。
+
 #### [Pin Badge Sponsor RubyKaigi 2018](https://www.brilliance.co.jp/journal/fussover/pin-badge-sponsor-rubykaigi-2018/)
 
 Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
@@ -68,6 +116,11 @@ Breakfast Sponsor の永和システムマネジメント様からのご案内�
 #### [Ltech#0 【緊急開催】RubyKaigi2018 報告会](https://lifull.connpass.com/event/89131/)
 
 Platinum Sponsors の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
+
+#### [GMO ペパボ on RubyKaigi 2018 のご紹介](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/)
+
+Video Sponsor の GMO ペパボ株式会社様より、 気になる情報のご紹介です。メインホールのセッションの録画には 4K カメラを用意しているとのこと、楽しみです。
+
 
 #### [RubyKaigi 2018 の Nursery Sponsor になりました](https://everyleaf.com/articles/31)
 
