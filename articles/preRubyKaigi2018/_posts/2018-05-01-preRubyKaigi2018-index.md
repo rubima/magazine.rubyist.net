@@ -25,9 +25,17 @@ tags: preRubyKaigi2018 index
 
 ## RubyKaigi 2018 Speaker から（随時更新）
 
-RubyKaigi 2018 の Speaker による事前資料集です。これを読んでおけば当日の発表をより深く理解できると思います。Speaker のみなさま、資料募集中です！
+RubyKaigi 2018 の Speaker による事前資料集です。これを読んでおけば当日の発表をより深く理解できると思います。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 5 月 31 日 (木)
+
+#### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:000 - 14:00 Hagi, Yuta Kurotaki さん)
+
+- [bancor: Token economy made with Ruby](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+
+#### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
+
+- [RubyGems 3 & 4](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 1 日 (金)
 
@@ -35,11 +43,19 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 - [RNode with code positions](https://gist.github.com/yui-knk/169fc1ae1fc8c88547cc6ee2bca4e351)
 
+#### [How Ruby Survives in the Cloud Native World](http://rubykaigi.org/2018/presentations/udzura.html#jun01) (15:50 - 16:30 Hagi, Uchio KONDO さん)
+
+- [How Ruby Survives in the Cloud Native World](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
 
 #### [The Method JIT Compiler for Ruby 2.6](http://rubykaigi.org/2018/presentations/k0kubun.html#jun02) (13:00 - 13:40 Main Hall, Takashi Kokubun さん)
 
 - [Ruby 2.6にJITコンパイラをマージしました](https://k0kubun.hatenablog.com/entry/ruby26-jit)
+
+#### [Design pattern for embedding mruby into middleware](http://rubykaigi.org/2018/presentations/matsumotory.html#jun02) (15:50 - 16:00 Hagi, MATSUMOTO, Ryosuke さん)
+
+- [Design pattern for embedding mruby into middleware](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
 
 ## 各有益情報
 
@@ -68,6 +84,11 @@ Breakfast Sponsor の永和システムマネジメント様からのご案内�
 #### [Ltech#0 【緊急開催】RubyKaigi2018 報告会](https://lifull.connpass.com/event/89131/)
 
 Platinum Sponsors の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
+
+#### [GMO ペパボ on RubyKaigi 2018 のご紹介](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/)
+
+Video Sponsor の GMO ペパボ株式会社様より、 気になる情報のご紹介です。メインホールのセッションの録画には 4K カメラを用意しているとのこと、楽しみです。
+
 
 #### [RubyKaigi 2018 の Nursery Sponsor になりました](https://everyleaf.com/articles/31)
 
