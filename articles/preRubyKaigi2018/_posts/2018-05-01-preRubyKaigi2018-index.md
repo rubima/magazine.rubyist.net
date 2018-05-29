@@ -130,7 +130,11 @@ Nursery Sponsor の株式会社万葉様から託児サービスのご案内で�
 
 #### [RubyKaigi 2018 にてラブグラフが Photo Sponsor として期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
 
-Photo Sponsor の株式会社ラブグラフより、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
+Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
+
+#### [📖ステッカー帳](http://tech.misoca.jp/entry/2018/05/29/141628)
+
+Silver Sponsor の株式会社 Misoca 様より、RubyKaigi 2018 で配るノベルティのご紹介です。これはいいアイディア！
 
 #### [週刊 Railsウォッチ（20180525）特集: RubyKaigi 2018 いよいよ来週、Rails vs Hanami 対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
 
