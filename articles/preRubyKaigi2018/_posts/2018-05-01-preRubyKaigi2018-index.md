@@ -69,7 +69,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [Ruby Committers vs the World](http://rubykaigi.org/2018/presentations/rubylangorg.html#jun01) (17:30 - 18:30 Main Hall, CRuby Committers の皆さん)
 
-- [RubyKaigi 2018 "Ruby Committers vs the World" Questions](https://docs.google.com/forms/d/e/1FAIpQLSe7FpSOxEgZ39L1hnzO_fOilstF35jXn_aFwQOpctOqRS6ZGA/viewform) (質問のある方は、このフォームからどうぞ！)
+- [RubyKaigi 2018 "Ruby Committers vs the World" Questions](https://docs.google.com/forms/d/e/1FAIpQLSe7FpSOxEgZ39L1hnzO_fOilstF35jXn_aFwQOpctOqRS6ZGA/viewform) (質問のある方は、このフォームから、日本語でもどうぞ！)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
 
