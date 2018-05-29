@@ -69,7 +69,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [Ruby Committers vs the World](http://rubykaigi.org/2018/presentations/rubylangorg.html#jun01) (17:30 - 18:30 Main Hall, CRuby Committers の皆さん)
 
-- [RubyKaigi 2018 "Ruby Committers vs the World" Questions](https://docs.google.com/forms/d/e/1FAIpQLSe7FpSOxEgZ39L1hnzO_fOilstF35jXn_aFwQOpctOqRS6ZGA/viewform) (質問のある方は、このフォームからどうぞ！)
+- [RubyKaigi 2018 "Ruby Committers vs the World" Questions](https://docs.google.com/forms/d/e/1FAIpQLSe7FpSOxEgZ39L1hnzO_fOilstF35jXn_aFwQOpctOqRS6ZGA/viewform) (質問のある方は、このフォームから、日本語でもどうぞ！)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
 
@@ -113,9 +113,11 @@ Breakfast Sponsor の永和システムマネジメント様からのご案内�
 
 Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
 
-#### [オプト ドリンクアップ at RubyKaigi 2018](https://ichigayageek.connpass.com/event/88219/)
+#### [オプト、プログラミング言語Rubyの国内最大級カンファレンス「RubyKaigi 2018」へ協賛・出展](http://www.opt.ne.jp/news/topics/detail/id=4366)
 
-Platinum Sponsor の株式会社オプト様より、ドリンクアップのご案内です。アンケートで第 1 位！
+Platinum Sponsor の株式会社オプト様より、特設ブースのご案内です。
+
+加えて、[オプト ドリンクアップ at RubyKaigi 2018](https://ichigayageek.connpass.com/event/88219/) のご案内もいただいています。アンケートで第 1 位！
 
 #### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
 
