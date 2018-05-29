@@ -113,9 +113,11 @@ Breakfast Sponsor の永和システムマネジメント様からのご案内�
 
 Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
 
-#### [オプト ドリンクアップ at RubyKaigi 2018](https://ichigayageek.connpass.com/event/88219/)
+#### [オプト、プログラミング言語Rubyの国内最大級カンファレンス「RubyKaigi 2018」へ協賛・出展](http://www.opt.ne.jp/news/topics/detail/id=4366)
 
-Platinum Sponsor の株式会社オプト様より、ドリンクアップのご案内です。アンケートで第 1 位！
+Platinum Sponsor の株式会社オプト様より、特設ブースのご案内です。
+
+加えて、[オプト ドリンクアップ at RubyKaigi 2018](https://ichigayageek.connpass.com/event/88219/) のご案内もいただいています。アンケートで第 1 位！
 
 #### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
 
