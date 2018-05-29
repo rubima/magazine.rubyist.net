@@ -105,17 +105,21 @@ Ruby Sponsor の株式会社ドリコム様より、ブースご出展のお知�
 
 Ruby Committers Sponsor また Network Sponsor のクックパッド株式会社様より、ブースでのライブコーティングや登壇者への Q&A タイムなどのお知らせです。
 
-#### [Pin Badge Sponsor RubyKaigi 2018](https://www.brilliance.co.jp/journal/fussover/pin-badge-sponsor-rubykaigi-2018/)
-
-Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
-
 #### [RubyKaigi 2018 に Breakfast Sponsor として協賛します](https://agile.esm.co.jp/news/2018-05-18-breakfast-sponsor-of-rubykaigi-2018.html)
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
 
-#### [Ltech#0 【緊急開催】RubyKaigi2018 報告会](https://lifull.connpass.com/event/89131/)
+#### [Pin Badge Sponsor RubyKaigi 2018](https://www.brilliance.co.jp/journal/fussover/pin-badge-sponsor-rubykaigi-2018/)
 
-Platinum Sponsors の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
+Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
+
+#### [オプト ドリンクアップ at RubyKaigi 2018](https://ichigayageek.connpass.com/event/88219/)
+
+Platinum Sponsor の株式会社オプト様より、ドリンクアップのご案内です。アンケートで第 1 位！
+
+#### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
+
+Platinum Sponsor の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
 
 #### [GMO ペパボ on RubyKaigi 2018 のご紹介](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/)
 
@@ -130,7 +134,11 @@ Nursery Sponsor の株式会社万葉様から託児サービスのご案内で�
 
 #### [RubyKaigi 2018 にてラブグラフが Photo Sponsor として期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
 
-Photo Sponsor の株式会社ラブグラフより、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
+Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
+
+#### [📖ステッカー帳](http://tech.misoca.jp/entry/2018/05/29/141628)
+
+Silver Sponsor の株式会社 Misoca 様より、RubyKaigi 2018 で配るノベルティのご紹介です。これはいいアイディア！
 
 #### [週刊 Railsウォッチ（20180525）特集: RubyKaigi 2018 いよいよ来週、Rails vs Hanami 対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
 
