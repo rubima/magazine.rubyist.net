@@ -123,6 +123,10 @@ Platinum Sponsor の株式会社オプト様より、特設ブースのご案内
 
 Platinum Sponsor の株式会社ミクシィ様より、ブースのご案内です。いろいろ待ってる！
 
+#### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
+
+Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
+
 #### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
 
 Platinum Sponsor の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
@@ -174,9 +178,9 @@ Silver Sponsor のビヨンド・パースペクティブ・ソリューショ�
 
 RubyKaigi 2018 にスポンサーとして出展予定の SmartHR 様よりご寄稿いただきました。「RubyKaigi 2018 当日は SmartHR のブースで仙台グルメマップをお配りしています！」とのこと。お楽しみに！
 
-#### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
+#### [【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/)
 
-RubyKaigi 2018 にスポンサーとして出展予定のトレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
+Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。お店を予約して飲みに行きましょう！
 
 #### [@hsbt さんによる仙台グルメスポットマップ](https://twitter.com/hsbt/status/994563804812820480)
 
