@@ -146,9 +146,11 @@ Gold Sponsor のメドピア株式会社様より、パーカーとステッカ�
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
 
-#### [📖ステッカー帳](http://tech.misoca.jp/entry/2018/05/29/141628)
+#### [RubyKaigi2018 で現存する最古の Ruby をフロッピーディスクに入れて配布します](http://tech.misoca.jp/entry/build-the-ruby-from-a-floppy-disk)
 
-Silver Sponsor の株式会社 Misoca 様より、RubyKaigi 2018 で配るノベルティのご紹介です。これはいいアイディア！
+Silver Sponsor の株式会社 Misoca 様より、ノベルティとRuby 0.49 のビルド方法のご紹介です。gcc の make も待ちましょう。
+
+[📖ステッカー帳](http://tech.misoca.jp/entry/2018/05/29/141628)のご紹介もあります。これはいいアイディア！
 
 #### [RubyKaigi 2018 直前！チーフオーガナイザ・松田明さん特別インタビュー](http://blog-ja.sideci.com/entry/rubykaigi18-interview-akira-matsuda)
 
