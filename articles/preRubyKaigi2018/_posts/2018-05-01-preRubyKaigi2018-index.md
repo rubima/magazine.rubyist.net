@@ -138,6 +138,10 @@ Nursery Sponsor の株式会社万葉様から託児サービスのご案内で�
 
 そして、[今年の #rubykaigi 向けのノベルティは『マイクロファイバー傘カバー』です](https://twitter.com/everyleaf/status/998424312351637504)、とのこと。気になります。
 
+#### [RubyKaigi 2018 に参加してきます！！](http://tech.medpeer.co.jp/entry/2018/05/30/113000)
+
+Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報をリリース予定とのこと。楽しみです！
+
 #### [RubyKaigi 2018 にてラブグラフが Photo Sponsor として期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
