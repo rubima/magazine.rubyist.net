@@ -23,6 +23,12 @@ tags: preRubyKaigi2018 index
 
 [@tommy](https://twitter.com/@tooooooooomy) さんによるレポートです。一部の講演については発表資料や反応のツイートへのリンクもあります。
 
+## RubyKaigi 2018 タイムテーブル徹底解説
+
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) [RubyKaigi 2018 タイムテーブル徹底解説](preRubyKaigi2018-01)
+
+RejectKaigi 2018 にて行われた RubyKaigi 2018 タイムテーブル徹底解説のるびまバージョンです。
+
 ## RubyKaigi 2018 Speaker から（随時更新）
 
 RubyKaigi 2018 の Speaker による事前資料集です。これを読んでおけば当日の発表をより深く理解できると思います。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
