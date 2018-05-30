@@ -119,6 +119,10 @@ Platinum Sponsor の株式会社オプト様より、特設ブースのご案内
 
 加えて、[オプト ドリンクアップ at RubyKaigi 2018](https://ichigayageek.connpass.com/event/88219/) のご案内もいただいています。アンケートで第 1 位！
 
+#### [ミクシィグループは、プラチナ・スポンサーとして参加します！！](https://twitter.com/mixi_engineers/status/1001610506652667905)
+
+Platinum Sponsor の株式会社ミクシィ様より、ブースのご案内です。いろいろ待ってる！
+
 #### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
 
 Platinum Sponsor の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
