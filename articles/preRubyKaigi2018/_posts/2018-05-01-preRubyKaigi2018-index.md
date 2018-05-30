@@ -188,6 +188,10 @@ RubyKaigi 2018 にスポンサーとして出展予定のトレタ様よりご�
 
 @thatblue_plus さんによる、広瀬通の牛タン屋さん情報です。
 
+#### [仙台支社の仙台出身者が紹介する仙台のおすすめのお店](https://www.infiniteloop.co.jp/blog/2018/05/sendai-recommended-restaurant/)
+
+株式会社インフィニットループ k-goto さんによる飲食店のご紹介です。写真がおいしそう！
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) その他
 
 #### 関東地方から仙台への交通手段
