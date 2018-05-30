@@ -113,6 +113,8 @@ Ruby Committers Sponsor また Network Sponsor のクックパッド株式会社
 
 Pre Kaigi Sponsor の株式会社 Speee 様より、今回、RubyKaigi 2018 で Speee がすることのご紹介です。速報ブログほか盛りだくさん！
 
+- [RubyKaigi 2018 Official Pre Party を開催しました！！！](http://tech.speee.jp/entry/2018/05/30/232511)
+
 #### [Eight アイマスクを使ってみた。](https://jp.corp-sansan.com/blog/2018/05/eight_ruby2018.html)
 
 Name Badge Sponsor の Sansan 株式会社様より、ノベルティのご紹介です。気持ち良さそう〜！
@@ -157,6 +159,10 @@ Nursery Sponsor の株式会社万葉様から託児サービスのご案内で�
 #### [RubyKaigi 2018 に参加してきます！！](http://tech.medpeer.co.jp/entry/2018/05/30/113000)
 
 Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報をリリース予定とのこと。楽しみです！
+
+### [Classi はコーヒースポンサーとして、珈琲☕️とクッキー🍪をご用意してお待ちしてます。☺️](https://twitter.com/sasata299/status/1001784613340000256)
+
+Coffee Sponsor の Classi 株式会社様からのお知らせです。おいしそう！
 
 #### [RubyKaigi 2018 にてラブグラフが Photo Sponsor として期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
 
