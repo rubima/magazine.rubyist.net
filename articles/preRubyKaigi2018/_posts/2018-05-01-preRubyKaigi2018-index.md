@@ -150,6 +150,12 @@ Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影
 
 Silver Sponsor の株式会社 Misoca 様より、RubyKaigi 2018 で配るノベルティのご紹介です。これはいいアイディア！
 
+#### [RubyKaigi 2018 直前！チーフオーガナイザ・松田明さん特別インタビュー](http://blog-ja.sideci.com/entry/rubykaigi18-interview-akira-matsuda)
+
+Silver Sponsor の SideCI 株式会社様より、松田さんへのインタビュー記事です。タブスペース合戦！
+
+英語版もどうぞ: [A Must Read before RubyKaigi ‘18 - Special Interview with Akira Matsuda](https://blog.sideci.com/rubykaigi18-special-interview-akira-matsuda-f7098bc22c06)
+
 #### [週刊 Railsウォッチ（20180525）特集: RubyKaigi 2018 いよいよ来週、Rails vs Hanami 対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
 
 Silver Sponsor のビヨンド・パースペクティブ・ソリューションズ株式会社様より、幅広い事前お役立ち情報です。つっつきボイスさんでさらに広がる視野！
