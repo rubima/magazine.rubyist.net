@@ -123,6 +123,10 @@ Platinum Sponsor の株式会社オプト様より、特設ブースのご案内
 
 Platinum Sponsor の株式会社ミクシィ様より、ブースのご案内です。いろいろ待ってる！
 
+#### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
+
+Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
+
 #### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
 
 Platinum Sponsor の株式会社 LIFULL 様より、RubyKaigi 後の報告会のご案内です。LT 枠もある！
@@ -146,9 +150,17 @@ Gold Sponsor のメドピア株式会社様より、パーカーとステッカ�
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
 
-#### [📖ステッカー帳](http://tech.misoca.jp/entry/2018/05/29/141628)
+#### [RubyKaigi2018 で現存する最古の Ruby をフロッピーディスクに入れて配布します](http://tech.misoca.jp/entry/build-the-ruby-from-a-floppy-disk)
 
-Silver Sponsor の株式会社 Misoca 様より、RubyKaigi 2018 で配るノベルティのご紹介です。これはいいアイディア！
+Silver Sponsor の株式会社 Misoca 様より、ノベルティとRuby 0.49 のビルド方法のご紹介です。gcc の make も待ちましょう。
+
+[📖ステッカー帳](http://tech.misoca.jp/entry/2018/05/29/141628)のご紹介もあります。これはいいアイディア！
+
+#### [RubyKaigi 2018 直前！チーフオーガナイザ・松田明さん特別インタビュー](http://blog-ja.sideci.com/entry/rubykaigi18-interview-akira-matsuda)
+
+Silver Sponsor の SideCI 株式会社様より、松田さんへのインタビュー記事です。タブスペース合戦！
+
+英語版もどうぞ: [A Must Read before RubyKaigi ‘18 - Special Interview with Akira Matsuda](https://blog.sideci.com/rubykaigi18-special-interview-akira-matsuda-f7098bc22c06)
 
 #### [週刊 Railsウォッチ（20180525）特集: RubyKaigi 2018 いよいよ来週、Rails vs Hanami 対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
 
@@ -156,15 +168,19 @@ Silver Sponsor のビヨンド・パースペクティブ・ソリューショ�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 見どころ情報
 
+#### [RubyKaigi 直前、写真で見る仙台国際センター周辺](http://monyakata.hatenadiary.jp/entry/2018/05/28/161517)
+
+仙台広瀬川ワイルド系ワーキングマザー社長さんによる会場周辺の詳細なご案内です。日本フィギュアスケート発祥の地！ランチスポット・コンビニ情報もあります。
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) グルメ／おみやげ情報
 
 #### [【保存版】自腹でつくる仙台グルメマップ #RubyKaigi 2018 - SmartHR Tech Blog](http://tech.smarthr.jp/entry/2018/05/10/192540)
 
 RubyKaigi 2018 にスポンサーとして出展予定の SmartHR 様よりご寄稿いただきました。「RubyKaigi 2018 当日は SmartHR のブースで仙台グルメマップをお配りしています！」とのこと。お楽しみに！
 
-#### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
+#### [【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/)
 
-RubyKaigi 2018 にスポンサーとして出展予定のトレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
+Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。お店を予約して飲みに行きましょう！
 
 #### [@hsbt さんによる仙台グルメスポットマップ](https://twitter.com/hsbt/status/994563804812820480)
 
@@ -177,6 +193,10 @@ RubyKaigi 2018 にスポンサーとして出展予定のトレタ様よりご�
 #### [ゆでたん (ゆるキャラではなく茹でた牛タン) 是非食べてみてください！](https://twitter.com/thatblue_plus/status/999555854956314624)
 
 @thatblue_plus さんによる、広瀬通の牛タン屋さん情報です。
+
+#### [仙台支社の仙台出身者が紹介する仙台のおすすめのお店](https://www.infiniteloop.co.jp/blog/2018/05/sendai-recommended-restaurant/)
+
+株式会社インフィニットループ k-goto さんによる飲食店のご紹介です。写真がおいしそう！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) その他
 
