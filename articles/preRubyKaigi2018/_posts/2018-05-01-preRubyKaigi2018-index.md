@@ -29,9 +29,13 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 5 月 31 日 (木)
 
-#### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:000 - 14:00 Hagi, Yuta Kurotaki さん)
+#### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:00 - 13:40 Hagi, Yuta Kurotaki さん)
 
 - [bancor: Token economy made with Ruby](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+
+#### [Deep Learning Programming on Ruby](http://rubykaigi.org/2018/presentations/mrkn.html#may31) (13:50 - 14:30 Main Hall, Kenta Murata さん, Yusaku Hatanaka さん)
+
+- [RubyKaigi2018の１日目に弊社の@mrknと@hatappiが登壇します！](http://tech.speee.jp/entry/2018/05/30/144944) (株式会社 Speee 様による紹介記事内)
 
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
@@ -104,6 +108,10 @@ Ruby Sponsor の株式会社ドリコム様より、ブースご出展のお知�
 #### [クックパッドは、RubyKaigi 2018 でみなさんにお会いできることを楽しみにしています！](http://techlife.cookpad.com/entry/2018/05/28/143226)
 
 Ruby Committers Sponsor また Network Sponsor のクックパッド株式会社様より、ブースでのライブコーティングや登壇者への Q&A タイムなどのお知らせです。
+
+#### [いよいよ RubyKaigi 2018 直前！！Speee はなにやるの？](http://tech.speee.jp/entry/2018/05/30/144944)
+
+Pre Kaigi Sponsor の株式会社 Speee 様より、今回、RubyKaigi 2018 で Speee がすることのご紹介です。速報ブログほか盛りだくさん！
 
 #### [Eight アイマスクを使ってみた。](https://jp.corp-sansan.com/blog/2018/05/eight_ruby2018.html)
 
