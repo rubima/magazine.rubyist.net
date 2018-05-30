@@ -105,6 +105,10 @@ Ruby Sponsor の株式会社ドリコム様より、ブースご出展のお知�
 
 Ruby Committers Sponsor また Network Sponsor のクックパッド株式会社様より、ブースでのライブコーティングや登壇者への Q&A タイムなどのお知らせです。
 
+#### [Eight アイマスクを使ってみた。](https://jp.corp-sansan.com/blog/2018/05/eight_ruby2018.html)
+
+Name Badge Sponsor の Sansan 株式会社様より、ノベルティのご紹介です。気持ち良さそう〜！
+
 #### [RubyKaigi 2018 に Breakfast Sponsor として協賛します](https://agile.esm.co.jp/news/2018-05-18-breakfast-sponsor-of-rubykaigi-2018.html)
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
@@ -150,7 +154,7 @@ Gold Sponsor のメドピア株式会社様より、パーカーとステッカ�
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
 
-#### [RubyKaigi2018 で現存する最古の Ruby をフロッピーディスクに入れて配布します](http://tech.misoca.jp/entry/build-the-ruby-from-a-floppy-disk)
+#### [RubyKaigi 2018 で現存する最古の Ruby をフロッピーディスクに入れて配布します](http://tech.misoca.jp/entry/build-the-ruby-from-a-floppy-disk)
 
 Silver Sponsor の株式会社 Misoca 様より、ノベルティとRuby 0.49 のビルド方法のご紹介です。gcc の make も待ちましょう。
 
