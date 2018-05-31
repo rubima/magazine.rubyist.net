@@ -190,11 +190,19 @@ Nursery Sponsor の株式会社万葉様から託児サービスのご案内で�
 
 Hack Space Sponsor の GitHub, Inc. 様よりブースのご案内です。🔌ありがたい！
 
+#### [転職ドラフトは今年もブースでお邪魔しております！](https://twitter.com/tensyoku_draft/status/1002007822534492160)
+
+Gold Sponsor の転職ドラフト様よりブースのご案内です。漫画！
+
 #### [RubyKaigi 2018 に参加してきます！！](http://tech.medpeer.co.jp/entry/2018/05/30/113000)
 
 Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報も公開してくださっています！
 
 - [RubyKaigi 2018 の速報！！](http://tech.medpeer.co.jp/entry/2018/05/31/140955)
+
+#### [シールとラムネとガチャガチャでお待ちしております。](https://twitter.com/micchiebear/status/1002066045505433600)
+
+Gold Sponsor の株式会社リブセンス様よりブースのご案内です。ラムネいいな。
 
 #### [Classi はコーヒースポンサーとして、珈琲☕️とクッキー🍪をご用意してお待ちしてます。☺️](https://twitter.com/sasata299/status/1001784613340000256)
 
