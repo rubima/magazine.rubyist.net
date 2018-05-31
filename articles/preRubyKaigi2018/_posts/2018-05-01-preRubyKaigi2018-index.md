@@ -29,6 +29,10 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 5 月 31 日 (木)
 
+#### [Karafka - Ruby Framework for Event Driven Architecture ](http://rubykaigi.org/2018/presentations/maciejmensfeld.html#may31) (13:00 - 14:00 Tachibana, Maciej Mensfeld さん)
+
+- [Karafka - Ruby Framework for Event Driven Architecture](https://mensfeld.github.io/karafka-ruby-kaigi-2018/index.html#/) (発表資料)
+
 #### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:00 - 13:40 Hagi, Yuta Kurotaki さん)
 
 - [bancor: Token economy made with Ruby](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
@@ -41,12 +45,16 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 - [Hijacking Ruby Syntax in Ruby](https://www.slideshare.net/tagomoris/hijacking-ruby-syntax-in-ruby) (発表資料)
 
+#### [Fast Numerical Computing and Deep Learning in Ruby with Cumo](http://rubykaigi.org/2018/presentations/sonots.html#may31) (15:50 - 16:30 Main Hall, Naotoshi Seo さん)
+
+- [Fast Numerical Computing and Deep Learning in Ruby with Cumo](https://speakerdeck.com/sonots/fast-numerical-computing-and-deep-learning-in-ruby-with-cumo) (発表資料)
+
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
 - [RubyGems 3 & 4](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
 - [RubyGems 3 & 4](https://www.slideshare.net/hsbt/rubygems-3-4) (発表資料)
 
-#### [A parser based syntax highlighter](http://rubykaigi.org/2018/presentations/p_ck_.html#may31) (16:40 - 17:20, Masataka Kuwabaraさん)
+#### [A parser based syntax highlighter](http://rubykaigi.org/2018/presentations/p_ck_.html#may31) (16:40 - 17:20, Masataka Kuwabara さん)
 
 - [A parser based syntax highlighter](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
 
