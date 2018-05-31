@@ -65,7 +65,8 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### ライトニングトーク (http://rubykaigi.org/2018/presentations/lt/) (17:30 - 18:30 Main Hall)
 
-- [From String#undump to String#unescape](https://niconare.nicovideo.jp/watch/kn3098) (Tadashi Saito さん、発表資料)
+- [From String#undump to String#unescape](https://niconare.nicovideo.jp/watch/kn3098) (Tadashi Saito さん, 発表資料)
+- [Improve JSON performance](https://speakerdeck.com/watson/improve-json-performance) (Shizuo Fujita さん, 発表資料)
 - [Find out potential dead codes from diff](http://techlife.cookpad.com/entry/2018/05/28/143226) (Sangyong Sim さん, クックパッド様による紹介記事内)
 - [Schrödinger's branch, or Ruby is dead every year](https://speakerdeck.com/unak/schrodingers-branch-or-ruby-is-dead-every-year) (usa さん, 発表資料)
 
