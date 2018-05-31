@@ -41,7 +41,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:00 - 13:40 Hagi, Yuta Kurotaki さん)
 
-- [bancor-token-economy-made-with-ruby](https://speakerdeck.com/kurotaky/bancor-token-economy-made-with-ruby) (発表資料)
+- [bancor: Token economy made with Ruby](https://speakerdeck.com/kurotaky/bancor-token-economy-made-with-ruby) (発表資料)
 
 #### [Deep Learning Programming on Ruby](http://rubykaigi.org/2018/presentations/mrkn.html#may31) (13:50 - 14:30 Main Hall, Kenta Murata さん, Yusaku Hatanaka さん)
 
