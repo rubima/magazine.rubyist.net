@@ -37,6 +37,10 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 - [RubyKaigi 2018 の 1 日目に弊社の @mrkn と @hatappi が登壇します！](http://tech.speee.jp/entry/2018/05/30/144944) (株式会社 Speee 様による紹介記事内)
 
+#### [Hijacking Ruby Syntax in Ruby](http://rubykaigi.org/2018/presentations/joker1007.html#may31) (13:50 - 14:30 Hagi, joker1007 さん, Satoshi "moris" Tagomori さん)
+
+- [Hijacking Ruby Syntax in Ruby](https://www.slideshare.net/tagomoris/hijacking-ruby-syntax-in-ruby) (発表資料)
+
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
 - [RubyGems 3 & 4](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
