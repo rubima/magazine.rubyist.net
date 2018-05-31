@@ -137,6 +137,10 @@ Platinum Sponsor の株式会社オプト様より、特設ブースのご案内
 
 Platinum Sponsor の株式会社ミクシィ様より、ブースのご案内です。いろいろ待ってる！
 
+#### [弊社ブースではどら焼きを配ります！ ](https://twitter.com/kyohei_shimada/status/1001992594891698176)
+
+Platinum Sponsor の株式会社エス・エム・エス様よりブースでの配布品のご案内です。交換会もあるの？
+
 #### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
 
 Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
@@ -156,6 +160,10 @@ Nursery Sponsor の株式会社万葉様から託児サービスのご案内で�
 
 そして、[今年の #rubykaigi 向けのノベルティは『マイクロファイバー傘カバー』です](https://twitter.com/everyleaf/status/998424312351637504)、とのこと。気になります。
 
+### [ブースありまーす](https://twitter.com/PNSK/status/1001990560901681152)
+
+Hack Space Sponsor の GitHub, Inc. 様よりブースのご案内です。🔌ありがたい！
+
 #### [RubyKaigi 2018 に参加してきます！！](http://tech.medpeer.co.jp/entry/2018/05/30/113000)
 
 Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報をリリース予定とのこと。楽しみです！
@@ -167,6 +175,10 @@ Coffee Sponsor の Classi 株式会社様からのお知らせです。おいし
 #### [RubyKaigi 2018 にてラブグラフが Photo Sponsor として期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
+
+#### [RubyKaigiの会場に到着しました！](https://twitter.com/pixta_tech/status/1001988430925123584)
+
+Silver Sponsors のピクスタ株式会社様よりノベルティのご案内です。いつでも便利！
 
 #### [RubyKaigi 2018 で現存する最古の Ruby をフロッピーディスクに入れて配布します](http://tech.misoca.jp/entry/build-the-ruby-from-a-floppy-disk)
 
