@@ -41,7 +41,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:00 - 13:40 Hagi, Yuta Kurotaki さん)
 
-- [bancor: Token economy made with Ruby](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+- [bancor: Token economy made with Ruby](https://speakerdeck.com/kurotaky/bancor-token-economy-made-with-ruby) (発表資料)
 
 #### [Deep Learning Programming on Ruby](http://rubykaigi.org/2018/presentations/mrkn.html#may31) (13:50 - 14:30 Main Hall, Kenta Murata さん, Yusaku Hatanaka さん)
 
@@ -57,7 +57,6 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
-- [RubyGems 3 & 4](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
 - [RubyGems 3 & 4](https://www.slideshare.net/hsbt/rubygems-3-4) (発表資料)
 
 #### [A parser based syntax highlighter](http://rubykaigi.org/2018/presentations/p_ck_.html#may31) (16:40 - 17:20, Masataka Kuwabara さん)
@@ -66,7 +65,9 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### ライトニングトーク (http://rubykaigi.org/2018/presentations/lt/) (17:30 - 18:30 Main Hall)
 
+- [From String#undump to String#unescape](https://niconare.nicovideo.jp/watch/kn3098) (Tadashi Saito さん、発表資料)
 - [Find out potential dead codes from diff](http://techlife.cookpad.com/entry/2018/05/28/143226) (Sangyong Sim さん, クックパッド様による紹介記事内)
+- [Schrödinger's branch, or Ruby is dead every year](https://speakerdeck.com/unak/schrodingers-branch-or-ruby-is-dead-every-year) (usa さん, 発表資料)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 1 日 (金)
 
@@ -123,6 +124,10 @@ RubyKaigi 2018 にスポンサーとして出展予定の SmartHR 様主催の�
 #### [RubyKaigi 2018 今年も Ruby Sponsor として協賛します #RubyKaigi](https://tech.drecom.co.jp/rubykaigi-2018/)
 
 Ruby Sponsor の株式会社ドリコム様より、ブースご出展のお知らせです。ぜひお立ち寄りください。
+
+振り返りのブログポストも公開してくださっています。
+
+- [RubyKaigi 2018 1 日目を振り返ってみて①  #RubyKaigi2018](https://tech.drecom.co.jp/rubykaigi2018-day1-01/)
 
 #### [クックパッドは、RubyKaigi 2018 でみなさんにお会いできることを楽しみにしています！](http://techlife.cookpad.com/entry/2018/05/28/143226)
 
