@@ -196,7 +196,7 @@ Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影
 
 #### [esaｽﾃｯｶｰ #ﾄﾉｺﾄ](https://twitter.com/esa_io/status/1002028349974200320)
 
-Silver Sponsor の合同会社 esa 様よりステッカーのご案内です。(\( ⁰⊖⁰)/) 
+Silver Sponsor の合同会社 esa 様よりステッカーのご案内です。(\\( ⁰⊖⁰)/)
 
 #### [RubyKaigiの会場に到着しました！](https://twitter.com/pixta_tech/status/1001988430925123584)
 
