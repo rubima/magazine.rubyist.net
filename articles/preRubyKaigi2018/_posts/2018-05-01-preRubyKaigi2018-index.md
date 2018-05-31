@@ -61,7 +61,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [A parser based syntax highlighter](http://rubykaigi.org/2018/presentations/p_ck_.html#may31) (16:40 - 17:20, Masataka Kuwabara さん)
 
-- [A parser based syntax highlighter](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
+- [A parser based syntax highlighter](https://speakerdeck.com/pocke/a-parser-based-syntax-highlighter) (発表資料)
 
 #### ライトニングトーク (http://rubykaigi.org/2018/presentations/lt/) (17:30 - 18:30 Main Hall)
 
