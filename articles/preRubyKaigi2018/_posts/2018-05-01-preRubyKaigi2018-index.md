@@ -51,6 +51,10 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 - [Hijacking Ruby Syntax in Ruby](https://www.slideshare.net/tagomoris/hijacking-ruby-syntax-in-ruby) (発表資料)
 
+#### [All About RuboCop](http://rubykaigi.org/2018/presentations/bbatsov.html#may31) (14:40 - 15:20 Main Hall, Bozhidar Batsov さん)
+
+- [All About RuboCop](https://speakerdeck.com/bbatsov/all-about-rubocop-rubykaigi-2018) (発表資料)
+
 #### [Fast Numerical Computing and Deep Learning in Ruby with Cumo](http://rubykaigi.org/2018/presentations/sonots.html#may31) (15:50 - 16:30 Main Hall, Naotoshi Seo さん)
 
 - [Fast Numerical Computing and Deep Learning in Ruby with Cumo](https://speakerdeck.com/sonots/fast-numerical-computing-and-deep-learning-in-ruby-with-cumo) (発表資料)
@@ -66,6 +70,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 #### ライトニングトーク (http://rubykaigi.org/2018/presentations/lt/) (17:30 - 18:30 Main Hall)
 
 - [From String#undump to String#unescape](https://niconare.nicovideo.jp/watch/kn3098) (Tadashi Saito さん, 発表資料)
+- [Rib console and plugins to make you happier](https://www.godfat.org/slide/lulalala_it/rib/) (lulalala さん, 発表資料)
 - [Improve JSON performance](https://speakerdeck.com/watson/improve-json-performance) (Shizuo Fujita さん, 発表資料)
 - [Find out potential dead codes from diff](http://techlife.cookpad.com/entry/2018/05/28/143226) (Sangyong Sim さん, クックパッド様による紹介記事内)
 - [Schrödinger's branch, or Ruby is dead every year](https://speakerdeck.com/unak/schrodingers-branch-or-ruby-is-dead-every-year) (usa さん, 発表資料)
