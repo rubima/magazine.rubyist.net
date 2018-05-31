@@ -45,7 +45,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [Deep Learning Programming on Ruby](http://rubykaigi.org/2018/presentations/mrkn.html#may31) (13:50 - 14:30 Main Hall, Kenta Murata さん, Yusaku Hatanaka さん)
 
-- [RubyKaigi 2018 の 1 日目に弊社の @mrkn と @hatappi が登壇します！](http://tech.speee.jp/entry/2018/05/30/144944) (株式会社 Speee 様による紹介記事内)
+- [RubyKaigi 2018 で Deep Learning Programming on Ruby というタイトルで発表してきました](http://blog.hatappi.me/entry/2018/05/31/221419) (ブログポスト・発表資料)
 
 #### [Hijacking Ruby Syntax in Ruby](http://rubykaigi.org/2018/presentations/joker1007.html#may31) (13:50 - 14:30 Hagi, joker1007 さん, Satoshi "moris" Tagomori さん)
 
