@@ -44,6 +44,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
 - [RubyGems 3 & 4](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+- [RubyGems 3 & 4](https://www.slideshare.net/hsbt/rubygems-3-4) (発表資料)
 
 #### [A parser based syntax highlighter](http://rubykaigi.org/2018/presentations/p_ck_.html#may31) (16:40 - 17:20, Masataka Kuwabaraさん)
 
