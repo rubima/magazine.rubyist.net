@@ -37,6 +37,10 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 - [RubyKaigi 2018 の 1 日目に弊社の @mrkn と @hatappi が登壇します！](http://tech.speee.jp/entry/2018/05/30/144944) (株式会社 Speee 様による紹介記事内)
 
+#### [Hijacking Ruby Syntax in Ruby](http://rubykaigi.org/2018/presentations/joker1007.html#may31) (13:50 - 14:30 Hagi, joker1007 さん, Satoshi "moris" Tagomori さん)
+
+- [Hijacking Ruby Syntax in Ruby](https://www.slideshare.net/tagomoris/hijacking-ruby-syntax-in-ruby) (発表資料)
+
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
 - [RubyGems 3 & 4](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
@@ -186,11 +190,19 @@ Nursery Sponsor の株式会社万葉様から託児サービスのご案内で�
 
 Hack Space Sponsor の GitHub, Inc. 様よりブースのご案内です。🔌ありがたい！
 
+#### [転職ドラフトは今年もブースでお邪魔しております！](https://twitter.com/tensyoku_draft/status/1002007822534492160)
+
+Gold Sponsor の転職ドラフト様よりブースのご案内です。漫画！
+
 #### [RubyKaigi 2018 に参加してきます！！](http://tech.medpeer.co.jp/entry/2018/05/30/113000)
 
 Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報も公開してくださっています！
 
 - [RubyKaigi 2018 の速報！！](http://tech.medpeer.co.jp/entry/2018/05/31/140955)
+
+#### [シールとラムネとガチャガチャでお待ちしております。](https://twitter.com/micchiebear/status/1002066045505433600)
+
+Gold Sponsor の株式会社リブセンス様よりブースのご案内です。ラムネいいな。
 
 #### [Classi はコーヒースポンサーとして、珈琲☕️とクッキー🍪をご用意してお待ちしてます。☺️](https://twitter.com/sasata299/status/1001784613340000256)
 
