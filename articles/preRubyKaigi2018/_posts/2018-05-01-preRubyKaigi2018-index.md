@@ -72,6 +72,10 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 1 日 (金)
 
+#### [My way with Ruby](http://rubykaigi.org/2018/presentations/ktou.html#jun01) (09:40 - 10:40 Main Hall, Kouhei Sutou さん)
+
+- [My way with Ruby](https://slide.rabbit-shocker.org/authors/kou/rubykaigi-2018/) (発表資料)
+
 #### [It's Rubies All The Way Down](http://rubykaigi.org/2018/presentations/wyhaines.html#jun01) (10:50 - 11:30 Hagi, Kirk Haines さん)
 
 - [It's Rubies All The Way Down](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
