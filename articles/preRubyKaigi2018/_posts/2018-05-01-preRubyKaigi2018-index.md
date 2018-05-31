@@ -182,7 +182,7 @@ Nursery Sponsor の株式会社万葉様から託児サービスのご案内で�
 
 そして、[今年の #rubykaigi 向けのノベルティは『マイクロファイバー傘カバー』です](https://twitter.com/everyleaf/status/998424312351637504)、とのこと。気になります。
 
-### [ブースありまーす](https://twitter.com/PNSK/status/1001990560901681152)
+#### [ブースありまーす](https://twitter.com/PNSK/status/1001990560901681152)
 
 Hack Space Sponsor の GitHub, Inc. 様よりブースのご案内です。🔌ありがたい！
 
@@ -192,7 +192,7 @@ Gold Sponsor のメドピア株式会社様より、パーカーとステッカ�
 
 - [RubyKaigi 2018 の速報！！](http://tech.medpeer.co.jp/entry/2018/05/31/140955)
 
-### [Classi はコーヒースポンサーとして、珈琲☕️とクッキー🍪をご用意してお待ちしてます。☺️](https://twitter.com/sasata299/status/1001784613340000256)
+#### [Classi はコーヒースポンサーとして、珈琲☕️とクッキー🍪をご用意してお待ちしてます。☺️](https://twitter.com/sasata299/status/1001784613340000256)
 
 Coffee Sponsor の Classi 株式会社様からのお知らせです。おいしそう！
 
