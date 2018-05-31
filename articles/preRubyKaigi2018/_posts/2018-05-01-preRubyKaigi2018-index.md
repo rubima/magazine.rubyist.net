@@ -155,6 +155,10 @@ Platinum Sponsor の株式会社ミクシィ様より、ブースのご案内で
 
 Platinum Sponsor の株式会社エス・エム・エス様よりブースでの配布品のご案内です。交換会もあるの？
 
+#### [おはようございます☀️本日は #RubyKaigi で杜王町に来ております。](https://twitter.com/jetbrainsjp/status/1002012967838277632)
+
+Platinum Sponsor の JetBrains 様よりブースのご案内です。RubyMine2018.1 のデモやカラフルなグッズ！
+
 #### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
 
 Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
@@ -184,7 +188,9 @@ Hack Space Sponsor の GitHub, Inc. 様よりブースのご案内です。🔌�
 
 #### [RubyKaigi 2018 に参加してきます！！](http://tech.medpeer.co.jp/entry/2018/05/30/113000)
 
-Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報をリリース予定とのこと。楽しみです！
+Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報も公開してくださっています！
+
+- [RubyKaigi 2018 の速報！！](http://tech.medpeer.co.jp/entry/2018/05/31/140955)
 
 ### [Classi はコーヒースポンサーとして、珈琲☕️とクッキー🍪をご用意してお待ちしてます。☺️](https://twitter.com/sasata299/status/1001784613340000256)
 
