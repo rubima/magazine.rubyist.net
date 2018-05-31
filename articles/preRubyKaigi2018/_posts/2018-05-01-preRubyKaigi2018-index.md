@@ -213,9 +213,9 @@ Coffee Sponsor の Classi 株式会社様からのお知らせです。おいし
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
 
-#### [esaｽﾃｯｶｰ #ﾄﾉｺﾄ](https://twitter.com/esa_io/status/1002028349974200320)
+#### [esa in RubyKaigi 2018 Sendai](https://docs.esa.io/posts/271)
 
-Silver Sponsor の合同会社 esa 様よりステッカーのご案内です。(\\( ⁰⊖⁰)/)
+Silver Sponsor の合同会社 esa 様より RubyKaigi 2018 サポートのご案内です。[esaｽﾃｯｶｰ #ﾄﾉｺﾄ](https://twitter.com/esa_io/status/1002028349974200320)もあるよ (\\( ⁰⊖⁰)/)
 
 #### [RubyKaigiの会場に到着しました！](https://twitter.com/pixta_tech/status/1001988430925123584)
 
