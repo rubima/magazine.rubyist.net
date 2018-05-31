@@ -151,6 +151,10 @@ Platinum Sponsor の株式会社オプト様より、特設ブースのご案内
 
 Platinum Sponsor の株式会社ミクシィ様より、ブースのご案内です。いろいろ待ってる！
 
+#### [弊社ブースではどら焼きを配ります！ ](https://twitter.com/kyohei_shimada/status/1001992594891698176)
+
+Platinum Sponsor の株式会社エス・エム・エス様よりブースでの配布品のご案内です。交換会もあるの？
+
 #### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
 
 Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
