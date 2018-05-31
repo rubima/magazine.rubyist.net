@@ -35,7 +35,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [Deep Learning Programming on Ruby](http://rubykaigi.org/2018/presentations/mrkn.html#may31) (13:50 - 14:30 Main Hall, Kenta Murata さん, Yusaku Hatanaka さん)
 
-- [RubyKaigi2018の１日目に弊社の@mrknと@hatappiが登壇します！](http://tech.speee.jp/entry/2018/05/30/144944) (株式会社 Speee 様による紹介記事内)
+- [RubyKaigi 2018 の 1 日目に弊社の @mrkn と @hatappi が登壇します！](http://tech.speee.jp/entry/2018/05/30/144944) (株式会社 Speee 様による紹介記事内)
 
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
@@ -115,6 +115,12 @@ Pre Kaigi Sponsor の株式会社 Speee 様より、今回、RubyKaigi 2018 で 
 
 - [RubyKaigi 2018 Official Pre Party を開催しました！！！](http://tech.speee.jp/entry/2018/05/30/232511)
 
+#### [お弁当のスポンサー、マネーフォワードからです~~](https://twitter.com/moneyforward/status/1002016001494433798)
+
+Bento Sponsor の株式会社マネーフォワード様よりお弁当のご案内です。おいしそう！
+
+- 5 月 31 日は、[牛タン、彩り弁当、洋風、ビーガン、ベジタリアン](https://twitter.com/moneyforward/status/1002025980934868992)とのこと。
+
 #### [Eight アイマスクを使ってみた。](https://jp.corp-sansan.com/blog/2018/05/eight_ruby2018.html)
 
 Name Badge Sponsor の Sansan 株式会社様より、ノベルティのご紹介です。気持ち良さそう〜！
@@ -126,6 +132,14 @@ Breakfast Sponsor の永和システムマネジメント様からのご案内�
 #### [Pin Badge Sponsor RubyKaigi 2018](https://www.brilliance.co.jp/journal/fussover/pin-badge-sponsor-rubykaigi-2018/)
 
 Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
+
+#### [BANK のブースでは CASH 体験ができるコンテンツを用意しています！ガチャを回してブランド小物を CASH してみませんか？](https://twitter.com/HolyGrail/status/1002019508221968384)
+
+Platinum Sponsor の株式会社バンク様よりブースのご案内です。ブランド小物！
+
+#### [弊社ブースで何故かじゃがりこ配布してるのでおやつの時間にお立ち寄りください](https://twitter.com/ma2ge/status/1002017715798839296)
+
+Platinum Sponsor のエムスリー株式会社様より配布物のご案内です。人気過ぎの模様。
 
 #### [オプト、プログラミング言語Rubyの国内最大級カンファレンス「RubyKaigi 2018」へ協賛・出展](http://www.opt.ne.jp/news/topics/detail/id=4366)
 
@@ -140,6 +154,10 @@ Platinum Sponsor の株式会社ミクシィ様より、ブースのご案内で
 #### [トレタは RubyKaigi 2018 にスポンサーとして参加します &【仙台版】トレタ Map のご紹介 - トレタ開発者ブログ](http://tech.toreta.in/entry/2018/05/23/104921)
 
 Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
+
+#### [Matz コスチュームスポンサーのスタートトゥディテクノロジーズもブース出してますー！ ZOZO スーツもあるのでぜひ遊びに来てください〜￼￼](https://twitter.com/rllllho/status/1002019946312814592)
+
+Platinum Sponsor の株式会社スタートトゥデイテクノロジーズ様よりブースのご案内です。水玉模様！
 
 #### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
 
@@ -172,9 +190,13 @@ Coffee Sponsor の Classi 株式会社様からのお知らせです。おいし
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
 
+#### [esaｽﾃｯｶｰ #ﾄﾉｺﾄ](https://twitter.com/esa_io/status/1002028349974200320)
+
+Silver Sponsor の合同会社 esa 様よりステッカーのご案内です。(\( ⁰⊖⁰)/) 
+
 #### [RubyKaigiの会場に到着しました！](https://twitter.com/pixta_tech/status/1001988430925123584)
 
-Silver Sponsors のピクスタ株式会社様よりノベルティのご案内です。いつでも便利！
+Silver Sponsor のピクスタ株式会社様よりノベルティのご案内です。いつでも便利！
 
 #### [RubyKaigi 2018 で現存する最古の Ruby をフロッピーディスクに入れて配布します](http://tech.misoca.jp/entry/build-the-ruby-from-a-floppy-disk)
 
@@ -188,7 +210,12 @@ Silver Sponsor の SideCI 株式会社様より、松田さんへのインタビ
 
 英語版もどうぞ: [A Must Read before RubyKaigi ‘18 - Special Interview with Akira Matsuda](https://blog.sideci.com/rubykaigi18-special-interview-akira-matsuda-f7098bc22c06)
 
-#### [週刊 Railsウォッチ（20180525）特集: RubyKaigi 2018 いよいよ来週、Rails vs Hanami 対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
+#### [RubyKaigi 2018 のスポンサーになりました](http://fjord.jp/articles/2018-05-31.html)
+
+Silver Sponsor の合同会社フィヨルド様よりご紹介です。興味のある方は声をかけてみてください！
+
+
+#### [週刊 Railsウォッチ (20180525) 特集: RubyKaigi 2018 いよいよ来週、Rails vs Hanami 対決、命名にはシソーラス使おうほか](https://techracho.bpsinc.jp/hachi8833/2018_05_25/56937)
 
 Silver Sponsor のビヨンド・パースペクティブ・ソリューションズ株式会社様より、幅広い事前お役立ち情報です。つっつきボイスさんでさらに広がる視野！
 
