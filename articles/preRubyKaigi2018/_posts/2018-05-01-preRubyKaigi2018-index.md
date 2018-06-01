@@ -63,6 +63,10 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 - [RubyGems 3 & 4](https://www.slideshare.net/hsbt/rubygems-3-4) (発表資料)
 
+#### [Architecture of hanami applications](http://rubykaigi.org/2018/presentations/anton_davydov.html#may31) (16:40 - 17:20, Anton Davydov さん)
+
+- [Architecture of hanami applications](https://speakerdeck.com/davydovanton/architecture-of-hanami-applications) (発表資料)
+
 #### [A parser based syntax highlighter](http://rubykaigi.org/2018/presentations/p_ck_.html#may31) (16:40 - 17:20, Masataka Kuwabara さん)
 
 - [A parser based syntax highlighter](https://speakerdeck.com/pocke/a-parser-based-syntax-highlighter) (発表資料)
@@ -94,17 +98,29 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 - [Improve Ruby coding styles and Lint](https://speakerdeck.com/koic/improve-ruby-coding-styles-and-lint) (発表資料)
 
+#### [extend your own programming language](http://rubykaigi.org/2018/presentations/m_seki.html#jun01) (13:50 - 14:30 Main Hall, Masatoshi SEKI さん)
+
+- [Extend your own programming language (RubyKaigi 2018)](https://speakerdeck.com/m_seki/extend-your-own-programming-language-rubykaigi-2018) (発表資料)
+
+#### [Ferrari Driven Development: superfast Ruby with Rubex](http://rubykaigi.org/2018/presentations/v0dro.html#jun01) (14:40 - 15:20 Tachibana, Sameer Deshmukh さん)
+
+- [Ferrari Driven Development: superfast Ruby with Rubex](https://speakerdeck.com/v0dro/ferrari-driven-development-superfast-ruby-with-rubex) (発表資料)
+
 #### [RNode with code positions](http://rubykaigi.org/2018/presentations/spikeolaf.html#jun01) (15:50 - 16:30 Main Hall, Yuichiro Kaneko さん)
 
 - [RNode with code positions](https://gist.github.com/yui-knk/169fc1ae1fc8c88547cc6ee2bca4e351)
 
 #### [How Ruby Survives in the Cloud Native World](http://rubykaigi.org/2018/presentations/udzura.html#jun01) (15:50 - 16:30 Hagi, Uchio KONDO さん)
 
-- [How Ruby Survives in the Cloud Native World](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+- [How Ruby Survives in the Cloud Native World](https://speakerdeck.com/udzura/how-ruby-survives-in-the-cloud-native-world) (発表資料)
 
 #### [Type Profiler: An analysis to guess type signatures](http://rubykaigi.org/2018/presentations/mametter.html#jun01) (16:40 - 17:20 Main Hall, Yusuke Endoh さん)
 
 - [Type Profiler: An analysis to guess type signatures](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
+
+#### [One cable to rule them all](http://rubykaigi.org/2018/presentations/palkan_tula.html#jun01) (16:40 - 17:20 Tachibana, Vladimir Dementyev さん)
+
+- [[RubyKaigi 2018] AnyCable: One cable to rule them all](https://speakerdeck.com/palkan/rubykaigi-2018-anycable-one-cable-to-rule-them-all) (発表資料)
 
 #### [Ruby Committers vs the World](http://rubykaigi.org/2018/presentations/rubylangorg.html#jun01) (17:30 - 18:30 Main Hall, CRuby Committers の皆さん)
 
