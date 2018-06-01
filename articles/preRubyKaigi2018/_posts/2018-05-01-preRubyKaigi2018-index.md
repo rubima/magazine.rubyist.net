@@ -155,6 +155,7 @@ Pre Kaigi Sponsor の株式会社 Speee 様より、今回、RubyKaigi 2018 で 
 Bento Sponsor の株式会社マネーフォワード様よりお弁当のご案内です。おいしそう！
 
 - 5 月 31 日は、[牛タン、彩り弁当、洋風、ビーガン、ベジタリアン](https://twitter.com/moneyforward/status/1002025980934868992)とのこと。
+- 6 月 1 日は、[牛タン 幕の内弁当、宮城彩り 小分け弁当、特製 洋風弁当、ベジタリアン弁当、ビーガン弁当](https://twitter.com/moneyforward/status/1002382833602588672)とのこと。あー、メニューは昨日と同じなのかな？
 
 #### [Eight アイマスクを使ってみた。](https://jp.corp-sansan.com/blog/2018/05/eight_ruby2018.html)
 
