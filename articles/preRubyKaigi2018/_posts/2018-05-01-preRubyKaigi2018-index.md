@@ -31,7 +31,7 @@ RejectKaigi 2018 にて行われた RubyKaigi 2018 タイムテーブル徹底�
 
 ## RubyKaigi 2018 Speaker から（随時更新）
 
-RubyKaigi 2018 の Speaker による事前資料集です。これを読んでおけば当日の発表をより深く理解できると思います。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
+RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 5 月 31 日 (木)
 
@@ -72,6 +72,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 - [From String#undump to String#unescape](https://niconare.nicovideo.jp/watch/kn3098) (Tadashi Saito さん, 発表資料)
 - [Rib console and plugins to make you happier](https://www.godfat.org/slide/lulalala_it/rib/) (lulalala さん, 発表資料)
 - [Improve JSON performance](https://speakerdeck.com/watson/improve-json-performance) (Shizuo Fujita さん, 発表資料)
+- [Improve Red Chainer and Numo::NArray performance](https://speakerdeck.com/naitoh/improve-red-chainer-and-numo-narray-performance) (NAITOH Jun さん, 発表資料)
 - [Find out potential dead codes from diff](http://techlife.cookpad.com/entry/2018/05/28/143226) (Sangyong Sim さん, クックパッド様による紹介記事内)
 - [Schrödinger's branch, or Ruby is dead every year](https://speakerdeck.com/unak/schrodingers-branch-or-ruby-is-dead-every-year) (usa さん, 発表資料)
 
