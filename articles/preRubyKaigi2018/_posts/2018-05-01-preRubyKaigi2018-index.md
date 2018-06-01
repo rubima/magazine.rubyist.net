@@ -204,6 +204,10 @@ Platinum Sponsor の JetBrains 様よりブースのご案内です。RubyMine20
 
 Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました。[【仙台版】トレタ Map](https://rubykaigi2018.toreta.in/) でお店を予約して飲みに行きましょう！
 
+#### [Fastly は今年も #rubykaigi に参加しています！是非ブースにもお立ち寄りください！](https://twitter.com/FastlyJapan/status/1002427949612535809)
+
+Platinum Sponsor の Fastly 様よりブースのお知らせです。purge ボタン！
+
 #### [Matz コスチュームスポンサーのスタートトゥディテクノロジーズもブース出してますー！ ZOZO スーツもあるのでぜひ遊びに来てください〜￼￼](https://twitter.com/rllllho/status/1002019946312814592)
 
 Platinum Sponsor の株式会社スタートトゥデイテクノロジーズ様よりブースのご案内です。水玉模様！
