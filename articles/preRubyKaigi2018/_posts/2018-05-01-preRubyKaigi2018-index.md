@@ -126,6 +126,10 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 - [RubyKaigi 2018 "Ruby Committers vs the World" Questions](https://docs.google.com/forms/d/e/1FAIpQLSe7FpSOxEgZ39L1hnzO_fOilstF35jXn_aFwQOpctOqRS6ZGA/viewform) (質問のある方は、このフォームから、日本語でもどうぞ！)
 
+#### [RubyData Workshop (2) Red Data Tools Lightning Talks](http://rubykaigi.org/2018/presentations/ktou2.html#jun01) (16:40 - 17:20 Shirakashi)
+
+- [Red Data Tools -Red Chainer-](https://speakerdeck.com/naitoh/red-data-tools-red-chainer) (NAITOH Jun さん, 発表資料)
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
 
 #### [The Method JIT Compiler for Ruby 2.6](http://rubykaigi.org/2018/presentations/k0kubun.html#jun02) (13:00 - 13:40 Main Hall, Takashi Kokubun さん)
