@@ -94,7 +94,7 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 - [Guild Prototype](http://www.atdot.net/~ko1/activities/2018_rubykaigi2018.pdf) (発表資料)
 
-#### [Improve Ruby coding style rules and Lint] (13:00 - 13:40 Hagi, Koichi ITO さん)
+#### [Improve Ruby coding style rules and Lint](http://rubykaigi.org/2018/presentations/koic.html#jun01) (13:00 - 13:40 Hagi, Koichi ITO さん)
 
 - [Improve Ruby coding styles and Lint](https://speakerdeck.com/koic/improve-ruby-coding-styles-and-lint) (発表資料)
 
