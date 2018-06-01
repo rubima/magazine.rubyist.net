@@ -86,9 +86,13 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 - [It's Rubies All The Way Down](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
 
-#### [Guild Prototype](http://rubykaigi.org/2018/presentations/ko1.html#jun01) (13:00 -13:40 Main Hall, Koichi Sasada さん)
+#### [Guild Prototype](http://rubykaigi.org/2018/presentations/ko1.html#jun01) (13:00 - 13:40 Main Hall, Koichi Sasada さん)
 
 - [Guild Prototype](http://www.atdot.net/~ko1/activities/2018_rubykaigi2018.pdf) (発表資料)
+
+#### [Improve Ruby coding style rules and Lint] (13:00 - 13:40 Hagi, Koichi ITO さん)
+
+- [Improve Ruby coding styles and Lint](https://speakerdeck.com/koic/improve-ruby-coding-styles-and-lint) (発表資料)
 
 #### [RNode with code positions](http://rubykaigi.org/2018/presentations/spikeolaf.html#jun01) (15:50 - 16:30 Main Hall, Yuichiro Kaneko さん)
 
@@ -149,6 +153,7 @@ Ruby Committers Sponsor また Network Sponsor のクックパッド株式会社
 Pre Kaigi Sponsor の株式会社 Speee 様より、今回、RubyKaigi 2018 で Speee がすることのご紹介です。速報ブログほか盛りだくさん！
 
 - [RubyKaigi 2018 Official Pre Party を開催しました！！！](http://tech.speee.jp/entry/2018/05/30/232511)
+- [RubyKaigi 2018 速報!!（1 日目）](http://tech.speee.jp/entry/2018/06/01/131757)
 
 #### [お弁当のスポンサー、マネーフォワードからです~~](https://twitter.com/moneyforward/status/1002016001494433798)
 
