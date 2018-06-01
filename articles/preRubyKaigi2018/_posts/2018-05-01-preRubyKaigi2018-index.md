@@ -159,6 +159,7 @@ Ruby Sponsor の株式会社ドリコム様より、ブースご出展のお知�
 振り返りのブログポストも公開してくださっています。
 
 - [RubyKaigi 2018 1 日目を振り返ってみて①  #RubyKaigi2018](https://tech.drecom.co.jp/rubykaigi2018-day1-01/)
+- [RubyKaigi 2018 2 日目を振り返ってみて②  #RubyKaigi2018](https://tech.drecom.co.jp/rubykaigi2018-day2-02/)
 
 #### [クックパッドは、RubyKaigi 2018 でみなさんにお会いできることを楽しみにしています！](http://techlife.cookpad.com/entry/2018/05/28/143226)
 
@@ -305,6 +306,10 @@ Silver Sponsor のビヨンド・パースペクティブ・ソリューショ�
 仙台広瀬川ワイルド系ワーキングマザー社長さんによる会場周辺の詳細なご案内です。日本フィギュアスケート発祥の地！ランチスポット・コンビニ情報もあります。
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) グルメ／おみやげ情報
+
+#### [宮城県出身者が勧める仙台のおすすめのお土産](https://yonta.hatenablog.jp/entry/2018/06/01/165228)
+
+@keita44_f4 さんによる、仙台土産情報です。買える場所も書いてある！
 
 #### [【保存版】自腹でつくる仙台グルメマップ #RubyKaigi 2018 - SmartHR Tech Blog](http://tech.smarthr.jp/entry/2018/05/10/192540)
 
