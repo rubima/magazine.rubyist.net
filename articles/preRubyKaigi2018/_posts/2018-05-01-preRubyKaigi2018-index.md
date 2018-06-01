@@ -87,7 +87,7 @@ RubyKaigi 2018 の Speaker による事前資料集です。これを読んで�
 
 #### [Guild Prototype](http://rubykaigi.org/2018/presentations/ko1.html#jun01) (13:00 -13:40 Main Hall, Koichi Sasada さん)
 
-- [Guild Prototype](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
+- [Guild Prototype](http://www.atdot.net/~ko1/activities/2018_rubykaigi2018.pdf) (発表資料)
 
 #### [RNode with code positions](http://rubykaigi.org/2018/presentations/spikeolaf.html#jun01) (15:50 - 16:30 Main Hall, Yuichiro Kaneko さん)
 
