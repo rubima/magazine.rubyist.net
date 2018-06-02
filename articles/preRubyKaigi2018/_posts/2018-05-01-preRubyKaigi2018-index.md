@@ -86,6 +86,10 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 - [My way with Ruby](https://slide.rabbit-shocker.org/authors/kou/rubykaigi-2018/) (発表資料)
 
+#### [Faster Apps, No Memory Thrash: Get Your Memory Config Right ](http://rubykaigi.org/2018/presentations/codefolio.html#jun01) (10:50 - 11:30 Tachibana, Noah Gibbs さん)
+
+- [Faster Apps No Memory Thrash](https://docs.google.com/presentation/d/1-WrYwz-QnSI9yeRZfCCgUno-KOMuggiGHlmOETXZy9c/edit#slide=id.p) (発表資料)
+
 #### [It's Rubies All The Way Down](http://rubykaigi.org/2018/presentations/wyhaines.html#jun01) (10:50 - 11:30 Hagi, Kirk Haines さん)
 
 - [It's Rubies All The Way Down](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
@@ -108,7 +112,8 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 #### [RNode with code positions](http://rubykaigi.org/2018/presentations/spikeolaf.html#jun01) (15:50 - 16:30 Main Hall, Yuichiro Kaneko さん)
 
-- [RNode with code positions](https://gist.github.com/yui-knk/169fc1ae1fc8c88547cc6ee2bca4e351)
+- [RNode with code positions](https://gist.github.com/yui-knk/169fc1ae1fc8c88547cc6ee2bca4e351) (事前資料)
+- [RNode with code locations](https://speakerdeck.com/yui_knk/rnode-with-code-locations) (発表資料)
 
 #### [How Ruby Survives in the Cloud Native World](http://rubykaigi.org/2018/presentations/udzura.html#jun01) (15:50 - 16:30 Hagi, Uchio KONDO さん)
 
@@ -132,9 +137,24 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
 
+#### [Ruby code from the stratosphere - SIAF, Sonic Pi, Petal](http://rubykaigi.org/2018/presentations/kn1kn1.html#jun02) (10:50 - 11:30 Hagi, Kenichi Kanai さん)
+
+- [Ruby code from the stratosphere](https://github.com/kn1kn1/rubykaigi2018/blob/master/slide/ruby-code-from-the-stratosphere.md) (発表資料)
+- [コード](https://github.com/kn1kn1/rubykaigi2018/tree/master/code)
+- [Ruby code from the stratosphere - Session Notes](https://gist.github.com/kn1kn1/c28f8029ba5ee069d83b8b6a6c4c8543)
+
 #### [The Method JIT Compiler for Ruby 2.6](http://rubykaigi.org/2018/presentations/k0kubun.html#jun02) (13:00 - 13:40 Main Hall, Takashi Kokubun さん)
 
-- [Ruby 2.6にJITコンパイラをマージしました](https://k0kubun.hatenablog.com/entry/ruby26-jit)
+- [Ruby 2.6 に JIT コンパイラをマージしました](https://k0kubun.hatenablog.com/entry/ruby26-jit) (参考資料)
+- [The Method JIT Compiler for Ruby 2.6](https://speakerdeck.com/k0kubun/the-method-jit-compiler) (発表資料)
+
+#### [Build your own tools](http://rubykaigi.org/2018/presentations/shugomaeda.html#jun02) (13:50 - 14:30 Main Hall, Shugo Maeda さん)
+
+- [Build your own tools](https://slide.rabbit-shocker.org/authors/shugo/RubyKaigi2018/) (発表資料)
+
+#### [LuaJIT as a Ruby backend.](http://rubykaigi.org/2018/presentations/take-cheeze.html#jun02) (13:50 - 14:30 Hagi, Takeshi Watanabe さん)
+
+- [LuaJIT as a Ruby backend](https://speakerdeck.com/takecheeze/luajit-as-a-ruby-backend) (発表資料)
 
 #### [Design pattern for embedding mruby into middleware](http://rubykaigi.org/2018/presentations/matsumotory.html#jun02) (15:50 - 16:00 Hagi, MATSUMOTO, Ryosuke さん)
 
@@ -264,11 +284,18 @@ Gold Sponsor の転職ドラフト様よりブースのご案内です。漫画�
 
 Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報も公開してくださっています！
 
-- [RubyKaigi 2018 の速報！！](http://tech.medpeer.co.jp/entry/2018/05/31/140955)
+- [RubyKaigi 2018 速報 (5/31 1 日目)！！](http://tech.medpeer.co.jp/entry/2018/05/31/140955)
+- [RubyKaigi 2018 速報 ！！ (6/1 - 1 つ目)](http://tech.medpeer.co.jp/entry/2018/06/01/121931)
+- [RubyKaigi 2018 速報 ！！ (6/1 - 2 つ目)](http://tech.medpeer.co.jp/entry/2018/06/01/155158)
+- [RubyKaigi 2018 速報 ！！ (6/2 最終日)](http://tech.medpeer.co.jp/entry/2018/06/02/120605)
 
 #### [シールとラムネとガチャガチャでお待ちしております。](https://twitter.com/micchiebear/status/1002066045505433600)
 
 Gold Sponsor の株式会社リブセンス様よりブースのご案内です。ラムネいいな。
+
+#### [そういえば、ドワンゴは RubyKaigi のスポンサーなんですよ。コミッターも在籍してます。](https://twitter.com/GhostBrain/status/1002786955304693760)
+
+Gold Sponsor の株式会社ドワンゴ様よりコミッターのご紹介です。アフターパーティーで握手！
 
 #### [Classi はコーヒースポンサーとして、珈琲☕️とクッキー🍪をご用意してお待ちしてます。☺️](https://twitter.com/sasata299/status/1001784613340000256)
 
