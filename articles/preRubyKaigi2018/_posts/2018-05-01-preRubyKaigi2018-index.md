@@ -195,6 +195,10 @@ Breakfast Sponsor の永和システムマネジメント様からのご案内�
 
 Pin Badge Sponsor の QUEUE, Inc. 様からのご案内です。うつくしい。
 
+#### [英語セッション所々聞き取れない…質問したいけど英語話すの怖い。というRubyist のために最高のソリューション用意しました](https://twitter.com/bussorenre/status/1002728094870822913)
+
+Platinum Sponsor のリクルートマーケティングパートナーズ様より配布物のご案内です。英語じゅうよう！
+
 #### [BANK のブースでは CASH 体験ができるコンテンツを用意しています！ガチャを回してブランド小物を CASH してみませんか？](https://twitter.com/HolyGrail/status/1002019508221968384)
 
 Platinum Sponsor の株式会社バンク様よりブースのご案内です。ブランド小物！
