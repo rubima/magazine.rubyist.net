@@ -318,6 +318,10 @@ Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影
 - [RubyKaigi2018.days.second](https://photos.google.com/share/AF1QipM2rfjEQeloDMI6qaibgo_MxyHw5ufoWcfQ1RVPcoOIrEOeahmiHBuveObhI5jFtg?key=aUstaEJyV3BuclFvZDFZd2JkVXBxbm5kVHRlV0lB)
 - [RubyKaigi2018.days.third](https://photos.google.com/share/AF1QipP5DE4XOmGpYG9fcCC5omz6rDUXFKvMZgKTj7DhyvA6kbKZzkSSEMWsxOKwkK57dQ?key=SEtfOFg2b3IwZEtoNFlydjlxdnpUX2FpVF9VcmN3)
 
+#### [RubyKaigi 2018 - My way with Ruby #rubykaigi](http://www.clear-code.com/blog/2018/6/4.html)
+
+Silver Sponsor の株式会社クリアコード様より、須藤さんによるキーノート、RubyData Workshop、コード懇親会についての振り返りです。今回よかった！」と思った人はぜひインターネット上に思ったことなどをまとめてみてください！
+
 #### [esa in RubyKaigi 2018 Sendai](https://docs.esa.io/posts/271)
 
 Silver Sponsor の合同会社 esa 様より RubyKaigi 2018 サポートのご案内です。[esaｽﾃｯｶｰ #ﾄﾉｺﾄ](https://twitter.com/esa_io/status/1002028349974200320)もあるよ (\\( ⁰⊖⁰)/)
