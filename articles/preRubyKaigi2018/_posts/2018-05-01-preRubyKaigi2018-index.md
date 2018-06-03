@@ -200,7 +200,10 @@ Ruby Committers Sponsor また Network Sponsor のクックパッド株式会社
 Pre Kaigi Sponsor の株式会社 Speee 様より、今回、RubyKaigi 2018 で Speee がすることのご紹介です。速報ブログほか盛りだくさん！
 
 - [RubyKaigi 2018 Official Pre Party を開催しました！！！](http://tech.speee.jp/entry/2018/05/30/232511)
-- [RubyKaigi 2018 速報!!（1 日目）](http://tech.speee.jp/entry/2018/06/01/131757)
+- [RubyKaigi 2018 速報!! (1 日目)](http://tech.speee.jp/entry/2018/06/01/131757)
+- [RubyKaigi 2018 速報!! (2 日目)](http://tech.speee.jp/entry/2018/06/02/150419)
+- [RubyKaigi 2018 懇親会に酒は要らない！？"コードで懇親する"コード懇親会](http://tech.speee.jp/entry/2018/06/02/154701)
+- [RubyKaigi 2018 速報!! (3 日目)](http://tech.speee.jp/entry/2018/06/03/110015)
 
 #### [お弁当のスポンサー、マネーフォワードからです~~](https://twitter.com/moneyforward/status/1002016001494433798)
 
