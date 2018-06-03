@@ -158,6 +158,10 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 - [LuaJIT as a Ruby backend](https://speakerdeck.com/takecheeze/luajit-as-a-ruby-backend) (発表資料)
 
+#### [How to get the dark power from ISeq](http://rubykaigi.org/2018/presentations/youchan.html#jun02) (14:40 - 15:20 Main Hall, Yoh Osaki さん)
+
+- [How to get the dark power from ISeq](http://youchan.org/RubyKaigi2018/) (発表資料)
+
 #### [Design pattern for embedding mruby into middleware](http://rubykaigi.org/2018/presentations/matsumotory.html#jun02) (15:50 - 16:00 Hagi, MATSUMOTO, Ryosuke さん)
 
 - [Design pattern for embedding mruby into middleware](https://speakerdeck.com/matsumoto_r/design-pattern-for-embedding-mruby-into-middleware) (発表資料)
