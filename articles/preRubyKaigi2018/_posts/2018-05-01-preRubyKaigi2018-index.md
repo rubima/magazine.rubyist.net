@@ -11,8 +11,6 @@ tags: preRubyKaigi2018 index
 
 このレポートでは、5/31 (木) から 6/2 (土) に仙台国際センターで開催される [RubyKaigi 2018](http://rubykaigi.org/2018) の基調講演やプレゼンテーション発表・企画を紹介し、見どころをいち早くお伝えします。
 
-レポートは、開催までの間に随時更新します。当日までの予習のお供にぜひご活用ください。
-
 ## RejectKaigi 2018
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) RejectKaigi 2018
@@ -133,9 +131,13 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 #### [RubyData Workshop (2) Red Data Tools Lightning Talks](http://rubykaigi.org/2018/presentations/ktou2.html#jun01) (16:40 - 17:20 Shirakashi)
 
-- [Red Data Tools -Red Chainer-](https://speakerdeck.com/naitoh/red-data-tools-red-chainer) (NAITOH Jun さん, 発表資料)
+- [#RubyKaigi 2018 RubyData Workshop LTで「Red Data Tools -Red Chainer-」というタイトルで発表しました。](http://naitoh.hatenablog.com/entry/2018/06/02/180129) (NAITOH Jun さん, ブログポスト・[発表資料](https://speakerdeck.com/naitoh/red-data-tools-red-chainer))
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
+
+#### [Parallel and Thread-Safe Ruby at High-Speed with TruffleRuby](http://rubykaigi.org/2018/presentations/eregontp.html#jun02) (09:40 - 10:40 Main Hall, Benoit Daloze さん)
+
+- [Parallel and Thread-Safe Ruby at High-Speed with TruffleRuby](https://speakerdeck.com/eregon/parallel-and-thread-safe-ruby-at-high-speed-with-truffleruby) (発表資料)
 
 #### [Ruby code from the stratosphere - SIAF, Sonic Pi, Petal](http://rubykaigi.org/2018/presentations/kn1kn1.html#jun02) (10:50 - 11:30 Hagi, Kenichi Kanai さん)
 
@@ -158,11 +160,13 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 #### [Design pattern for embedding mruby into middleware](http://rubykaigi.org/2018/presentations/matsumotory.html#jun02) (15:50 - 16:00 Hagi, MATSUMOTO, Ryosuke さん)
 
-- [Design pattern for embedding mruby into middleware](https://tech.pepabo.com/2018/05/28/pre-rubykaigi-2018/) (GMO ペパボ様による紹介記事内)
+- [Design pattern for embedding mruby into middleware](https://speakerdeck.com/matsumoto_r/design-pattern-for-embedding-mruby-into-middleware) (発表資料)
 
 #### [TRICK 2018 (FINAL)](http://rubykaigi.org/2018/presentations/tric.html#jun02) (16:40 - 17:40 Main Hall, mame & the judges)
 
-- [TRICK FINAL](http://techlife.cookpad.com/entry/2018/05/28/143226) (クックパッド様による紹介記事内)
+- [tric/trick2018](https://github.com/tric/trick2018) (受賞作のコードなど)
+- [TRICK 2018 (FINAL) ３連覇！](http://www.kmonos.net/wlog/143.html#_2124180602) (kinaba さんによるブログエントリ)
+- [TRICK FINAL 5作品入選](http://tompng.hatenablog.com/entry/2018/06/03/020238) (tompng さんによるブログエントリ)
 
 ## 各有益情報
 
@@ -184,6 +188,8 @@ Ruby Sponsor の株式会社ドリコム様より、ブースご出展のお知�
 
 - [RubyKaigi 2018 1 日目を振り返ってみて①  #RubyKaigi2018](https://tech.drecom.co.jp/rubykaigi2018-day1-01/)
 - [RubyKaigi 2018 2 日目を振り返ってみて②  #RubyKaigi2018](https://tech.drecom.co.jp/rubykaigi2018-day2-02/)
+- [RubyKaigi 2018 3 日目を振り返ってみて①  #RubyKaigi2018](https://tech.drecom.co.jp/rubykaigi2018-day3-01/)
+- [RubyKaigi 2018 Ruby スポンサーの思い](https://tech.drecom.co.jp/rubykaigi-2018-ruby-sponsor/)
 
 #### [クックパッドは、RubyKaigi 2018 でみなさんにお会いできることを楽しみにしています！](http://techlife.cookpad.com/entry/2018/05/28/143226)
 
@@ -303,7 +309,11 @@ Coffee Sponsor の Classi 株式会社様からのお知らせです。おいし
 
 #### [RubyKaigi 2018 にてラブグラフが Photo Sponsor として期間中の写真を撮影します！](https://twitter.com/KatsumaNarisawa/status/994938579104120832)
 
-Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。リアルタイムな写真、楽しみです。
+Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。すばらしい写真をありがとうございます！
+
+- [RubyKaigi2018.days.first](https://photos.google.com/share/AF1QipONYGO6fp08hZKobTa8gZfORg8CS-63TV-USXUZkKFpmQV-cMVIR4mUN95g5dNC-w?key=aG5GLVZQZHRfdXRyU29tZUpNTkc0NnhBUzNfX2xR)
+- [RubyKaigi2018.days.second](https://photos.google.com/share/AF1QipM2rfjEQeloDMI6qaibgo_MxyHw5ufoWcfQ1RVPcoOIrEOeahmiHBuveObhI5jFtg?key=aUstaEJyV3BuclFvZDFZd2JkVXBxbm5kVHRlV0lB)
+- [RubyKaigi2018.days.third](https://photos.google.com/share/AF1QipP5DE4XOmGpYG9fcCC5omz6rDUXFKvMZgKTj7DhyvA6kbKZzkSSEMWsxOKwkK57dQ?key=SEtfOFg2b3IwZEtoNFlydjlxdnpUX2FpVF9VcmN3)
 
 #### [esa in RubyKaigi 2018 Sendai](https://docs.esa.io/posts/271)
 
