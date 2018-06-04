@@ -172,6 +172,12 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 - [TRICK 2018 (FINAL) ３連覇！](http://www.kmonos.net/wlog/143.html#_2124180602) (kinaba さんによるブログエントリ)
 - [TRICK FINAL 5作品入選](http://tompng.hatenablog.com/entry/2018/06/03/020238) (tompng さんによるブログエントリ)
 
+### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) RubyKaigi 2018 After Party
+
+2018 年 6 月 2 日 (土) に Bar, isn't it? で After Party Sponsor の Treasure Data 様による [RubyKaigi 2018 After Party](https://techplay.jp/event/673436) が開催されました。
+
+- [327 種類の Ruby をビルドする方法 ~0.49 から 2.6.0-preview2 まで ~](http://www.a-k-r.org/pub/2018-06-02-all-ruby-ruby-kaigi-after-party.pdf) (田中 哲さん,　発表資料)
+
 ## 各有益情報
 
 RubyKaigi 2018 に向けて多くの企業や参加者、 Rubyist 、仙台出身者の方々などからの有益情報です。漏れがあったらすみません！[編集](https://twitter.com/zundan)までお知らせください！
