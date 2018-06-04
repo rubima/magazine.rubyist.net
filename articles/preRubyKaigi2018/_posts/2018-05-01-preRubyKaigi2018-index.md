@@ -75,6 +75,7 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 - [Rib console and plugins to make you happier](https://www.godfat.org/slide/lulalala_it/rib/) (lulalala さん, 発表資料)
 - [Improve JSON performance](https://speakerdeck.com/watson/improve-json-performance) (Shizuo Fujita さん, 発表資料)
 - [Improve Red Chainer and Numo::NArray performance](https://speakerdeck.com/naitoh/improve-red-chainer-and-numo-narray-performance) (NAITOH Jun さん, 発表資料)
+  - [#RubyKaigi 2018 LTで「Improve Red Chainer and Numo::NArray performance」というタイトルで発表しました。](http://naitoh.hatenablog.com/entry/2018/06/01/120356) (ブログポスト)
 - [Find out potential dead codes from diff](http://techlife.cookpad.com/entry/2018/05/28/143226) (Sangyong Sim さん, クックパッド様による紹介記事内)
 - [Schrödinger's branch, or Ruby is dead every year](https://speakerdeck.com/unak/schrodingers-branch-or-ruby-is-dead-every-year) (usa さん, 発表資料)
 
@@ -132,6 +133,7 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [RubyData Workshop (2) Red Data Tools Lightning Talks](http://rubykaigi.org/2018/presentations/ktou2.html#jun01) (16:40 - 17:20 Shirakashi)
 
 - [#RubyKaigi 2018 RubyData Workshop LTで「Red Data Tools -Red Chainer-」というタイトルで発表しました。](http://naitoh.hatenablog.com/entry/2018/06/02/180129) (NAITOH Jun さん, ブログポスト・[発表資料](https://speakerdeck.com/naitoh/red-data-tools-red-chainer))
+- [RubyData Workshop #RubyKaigi2018 でLTをしてきたよ](http://blog.hatappi.me/entry/2018/06/02/094005) (Yusaku Hatanaka さん, ブログポスト・[発表資料](https://speakerdeck.com/hatappi/rubydata-workshop-2018)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 6 月 2 日 (土)
 
