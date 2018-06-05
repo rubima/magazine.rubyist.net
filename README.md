@@ -32,9 +32,26 @@ http://127.0.0.1:4000/ にローカル開発サーバーが起動し、Markdown�
 1. 受け付けたリリース対象の記事のPull Requestをmergeします。
 1. 次のことがTravisでできそうなので、実装すれば良さそう。
 - `JEKYLL_ENV=production bundle exec jekyll build`を実行します。
-- `_site`にサイトが生成されるので`git commit`して`gh-page`ブランチにcommit、`git push`します。
+- `docs`にサイトが生成されるので`git commit`して`gh-page`ブランチにcommit、`git push`します。
 
 上記のようにしているのは、amazonの書影をとるためにpluginを使用しているため。これを解決できれば、特にcloneしなくても動かせるものと考えています。
+
+## rubima.github.io へのリリース
+　
+`../rubima.github.io/` に `rubima/rubima.github.io` が chekout されている場合は下記のような操作をします。
+
+```
+$ git checkout master
+$ git pull
+$ \cp -r docs/* ../rubima.github.io/
+$ cd ../rubima.github.io/
+$ git checkout -b (ブランチ名)
+$ git add .
+$ git commit
+$ git push -u origin (ブランチ名)
+```
+
+https://github.com/rubima/rubima.github.io からプルリクエストを作成し`master`ブランチにマージします。
 
 # 移行
 
