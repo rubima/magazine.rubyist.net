@@ -48,6 +48,8 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [Hijacking Ruby Syntax in Ruby](http://rubykaigi.org/2018/presentations/joker1007.html#may31) (13:50 - 14:30 Hagi, joker1007 さん, Satoshi "moris" Tagomori さん)
 
 - [Hijacking Ruby Syntax in Ruby](https://www.slideshare.net/tagomoris/hijacking-ruby-syntax-in-ruby) (発表資料)
+- [RubyKaigi 2018 で仙台に行ってきた＆しゃべってきた - たごもりすメモ](https://tagomoris.hatenablog.com/entry/2018/06/05/132931) (ブログポスト)
+- [俺史上最高のRubyKaigi 2018 - joker1007’s diary](http://joker1007.hatenablog.com/entry/2018/06/04/183849) (ブログポスト)
 
 #### [All About RuboCop](http://rubykaigi.org/2018/presentations/bbatsov.html#may31) (14:40 - 15:20 Main Hall, Bozhidar Batsov さん)
 
@@ -56,6 +58,7 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [Fast Numerical Computing and Deep Learning in Ruby with Cumo](http://rubykaigi.org/2018/presentations/sonots.html#may31) (15:50 - 16:30 Main Hall, Naotoshi Seo さん)
 
 - [Fast Numerical Computing and Deep Learning in Ruby with Cumo](https://speakerdeck.com/sonots/fast-numerical-computing-and-deep-learning-in-ruby-with-cumo) (発表資料)
+- [RubyKaigi 2018 で Cumo の話をしてきた](http://blog.livedoor.jp/sonots/archives/52060744.html) (ブログポスト)
 
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
@@ -274,9 +277,9 @@ Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました
 
 Platinum Sponsor の Fastly 様よりブースのお知らせです。purge ボタン！
 
-#### [Matz コスチュームスポンサーのスタートトゥディテクノロジーズもブース出してますー！ ZOZO スーツもあるのでぜひ遊びに来てください〜￼￼](https://twitter.com/rllllho/status/1002019946312814592)
+#### [RubyKaigi 2018に協賛しました！](http://company.starttoday-tech.com/entry/20180606_rubykaigi)
 
-Platinum Sponsor の株式会社スタートトゥデイテクノロジーズ様よりブースのご案内です。水玉模様！
+Platinum Sponsor の株式会社スタートトゥデイテクノロジーズ様より、初日に[ツイート](https://twitter.com/rllllho/status/1002019946312814592)でご案内いただいたブースの様子のまとめとアンケートの結果です。水玉模様！
 
 #### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
 
@@ -326,6 +329,7 @@ Coffee Sponsor の Classi 株式会社様からのお知らせです。おいし
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。すばらしい写真をありがとうございます！
 
+- [RubyKaigi2018にてラブグラフがPhoto Sponsorをしました！](https://us.wantedly.com/companies/lovegraph/post_articles/121767)
 - [RubyKaigi2018.days.first](https://photos.google.com/share/AF1QipONYGO6fp08hZKobTa8gZfORg8CS-63TV-USXUZkKFpmQV-cMVIR4mUN95g5dNC-w?key=aG5GLVZQZHRfdXRyU29tZUpNTkc0NnhBUzNfX2xR)
 - [RubyKaigi2018.days.second](https://photos.google.com/share/AF1QipM2rfjEQeloDMI6qaibgo_MxyHw5ufoWcfQ1RVPcoOIrEOeahmiHBuveObhI5jFtg?key=aUstaEJyV3BuclFvZDFZd2JkVXBxbm5kVHRlV0lB)
 - [RubyKaigi2018.days.third](https://photos.google.com/share/AF1QipP5DE4XOmGpYG9fcCC5omz6rDUXFKvMZgKTj7DhyvA6kbKZzkSSEMWsxOKwkK57dQ?key=SEtfOFg2b3IwZEtoNFlydjlxdnpUX2FpVF9VcmN3)
