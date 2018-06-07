@@ -88,6 +88,10 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 
 - [My way with Ruby](https://slide.rabbit-shocker.org/authors/kou/rubykaigi-2018/) (発表資料)
 
+#### [Controlling Droids™ with mruby & Go](https://rubykaigi.org/2018/presentations/hone02.html#jun01) (10:50 - 11:30 Main Hall, Terence Leeさん, Chase McCarthy さん)
+
+- [A Droid's Journey - RubyKaigi 2018](https://speakerdeck.com/hone/a-droids-journey-rubykaigi-2018) (発表資料)
+
 #### [Faster Apps, No Memory Thrash: Get Your Memory Config Right ](http://rubykaigi.org/2018/presentations/codefolio.html#jun01) (10:50 - 11:30 Tachibana, Noah Gibbs さん)
 
 - [Faster Apps No Memory Thrash](https://docs.google.com/presentation/d/1-WrYwz-QnSI9yeRZfCCgUno-KOMuggiGHlmOETXZy9c/edit#slide=id.p) (発表資料)
