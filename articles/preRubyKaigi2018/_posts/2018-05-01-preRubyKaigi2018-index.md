@@ -235,6 +235,10 @@ Bento Sponsor の株式会社マネーフォワード様よりお弁当のご案
 
 Name Badge Sponsor の Sansan 株式会社様より、ノベルティのご紹介です。気持ち良さそう〜！
 
+#### [Lightning Talks SponsorとしてRubyKaigi 2018に参加してきました](http://developer.medley.jp/entry/2018/06/06/151300)
+
+Lightning Talks Sponsor の株式会社メドレー様より、参加した様子のご紹介です。日本三景をめぐる旅が一旦完結、なるほど！
+
 #### [RubyKaigi 2018 に Breakfast Sponsor として協賛します](https://agile.esm.co.jp/news/2018-05-18-breakfast-sponsor-of-rubykaigi-2018.html)
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
