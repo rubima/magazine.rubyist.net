@@ -40,6 +40,7 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:00 - 13:40 Hagi, Yuta Kurotaki さん)
 
 - [bancor: Token economy made with Ruby](https://speakerdeck.com/kurotaky/bancor-token-economy-made-with-ruby) (発表資料)
+- [RubyKaigi 2018で発表してきました](http://kurotaky.hatenablog.com/entry/2018/06/08/212451) (ブログポスト)
 
 #### [Deep Learning Programming on Ruby](http://rubykaigi.org/2018/presentations/mrkn.html#may31) (13:50 - 14:30 Main Hall, Kenta Murata さん, Yusaku Hatanaka さん)
 
@@ -48,6 +49,8 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [Hijacking Ruby Syntax in Ruby](http://rubykaigi.org/2018/presentations/joker1007.html#may31) (13:50 - 14:30 Hagi, joker1007 さん, Satoshi "moris" Tagomori さん)
 
 - [Hijacking Ruby Syntax in Ruby](https://www.slideshare.net/tagomoris/hijacking-ruby-syntax-in-ruby) (発表資料)
+- [RubyKaigi 2018 で仙台に行ってきた＆しゃべってきた - たごもりすメモ](https://tagomoris.hatenablog.com/entry/2018/06/05/132931) (ブログポスト)
+- [俺史上最高のRubyKaigi 2018 - joker1007’s diary](http://joker1007.hatenablog.com/entry/2018/06/04/183849) (ブログポスト)
 
 #### [All About RuboCop](http://rubykaigi.org/2018/presentations/bbatsov.html#may31) (14:40 - 15:20 Main Hall, Bozhidar Batsov さん)
 
@@ -56,6 +59,7 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [Fast Numerical Computing and Deep Learning in Ruby with Cumo](http://rubykaigi.org/2018/presentations/sonots.html#may31) (15:50 - 16:30 Main Hall, Naotoshi Seo さん)
 
 - [Fast Numerical Computing and Deep Learning in Ruby with Cumo](https://speakerdeck.com/sonots/fast-numerical-computing-and-deep-learning-in-ruby-with-cumo) (発表資料)
+- [RubyKaigi 2018 で Cumo の話をしてきた](http://blog.livedoor.jp/sonots/archives/52060744.html) (ブログポスト)
 
 #### [RubyGems 3 & 4 ](http://rubykaigi.org/2018/presentations/hsbt.html#may31) (15:50 - 16:30 Hagi, SHIBATA Hiroshi さん)
 
@@ -84,6 +88,10 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [My way with Ruby](http://rubykaigi.org/2018/presentations/ktou.html#jun01) (09:40 - 10:40 Main Hall, Kouhei Sutou さん)
 
 - [My way with Ruby](https://slide.rabbit-shocker.org/authors/kou/rubykaigi-2018/) (発表資料)
+
+#### [Controlling Droids™ with mruby & Go](https://rubykaigi.org/2018/presentations/hone02.html#jun01) (10:50 - 11:30 Main Hall, Terence Leeさん, Chase McCarthy さん)
+
+- [A Droid's Journey - RubyKaigi 2018](https://speakerdeck.com/hone/a-droids-journey-rubykaigi-2018) (発表資料)
 
 #### [Faster Apps, No Memory Thrash: Get Your Memory Config Right ](http://rubykaigi.org/2018/presentations/codefolio.html#jun01) (10:50 - 11:30 Tachibana, Noah Gibbs さん)
 
@@ -228,6 +236,10 @@ Bento Sponsor の株式会社マネーフォワード様よりお弁当のご案
 
 Name Badge Sponsor の Sansan 株式会社様より、ノベルティのご紹介です。気持ち良さそう〜！
 
+#### [Lightning Talks SponsorとしてRubyKaigi 2018に参加してきました](http://developer.medley.jp/entry/2018/06/06/151300)
+
+Lightning Talks Sponsor の株式会社メドレー様より、参加した様子のご紹介です。日本三景をめぐる旅が一旦完結、なるほど！
+
 #### [RubyKaigi 2018 に Breakfast Sponsor として協賛します](https://agile.esm.co.jp/news/2018-05-18-breakfast-sponsor-of-rubykaigi-2018.html)
 
 Breakfast Sponsor の永和システムマネジメント様からのご案内です。寝坊しない！
@@ -244,9 +256,9 @@ Platinum Sponsor のリクルートマーケティングパートナーズ様よ
 
 Platinum Sponsor の株式会社バンク様よりブースのご案内です。ブランド小物！
 
-#### [弊社ブースで何故かじゃがりこ配布してるのでおやつの時間にお立ち寄りください](https://twitter.com/ma2ge/status/1002017715798839296)
+#### [RubyKaigi 2018 に Platinum Sponsor として参加してきました！](http://www.m3tech.blog/entry/2018/06/06/101525)
 
-Platinum Sponsor のエムスリー株式会社様より配布物のご案内です。人気過ぎの模様。
+[何故かじゃがりこ配布して](https://twitter.com/ma2ge/status/1002017715798839296)いた Platinum Sponsor のエムスリー株式会社様よりブースの様子と興味深かったセッションのまとめです。重要なことは太字！
 
 #### [オプト、プログラミング言語Rubyの国内最大級カンファレンス「RubyKaigi 2018」へ協賛・出展](http://www.opt.ne.jp/news/topics/detail/id=4366)
 
@@ -274,9 +286,9 @@ Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました
 
 Platinum Sponsor の Fastly 様よりブースのお知らせです。purge ボタン！
 
-#### [Matz コスチュームスポンサーのスタートトゥディテクノロジーズもブース出してますー！ ZOZO スーツもあるのでぜひ遊びに来てください〜￼￼](https://twitter.com/rllllho/status/1002019946312814592)
+#### [RubyKaigi 2018に協賛しました！](http://company.starttoday-tech.com/entry/20180606_rubykaigi)
 
-Platinum Sponsor の株式会社スタートトゥデイテクノロジーズ様よりブースのご案内です。水玉模様！
+Platinum Sponsor の株式会社スタートトゥデイテクノロジーズ様より、初日に[ツイート](https://twitter.com/rllllho/status/1002019946312814592)でご案内いただいたブースの様子のまとめとアンケートの結果です。水玉模様！
 
 #### [Ltech#0 【緊急開催】RubyKaigi 2018 報告会](https://lifull.connpass.com/event/89131/)
 
@@ -305,6 +317,7 @@ Gold Sponsor の転職ドラフト様よりブースのご案内です。漫画�
 
 Gold Sponsor のメドピア株式会社様より、パーカーとステッカーのお知らせです。RubyKaigi 中には各セッションの速報も公開してくださっています！
 
+- [RubyKaigi 2018 に参加してきました](http://tech.medpeer.co.jp/entry/2018/06/06/100300)
 - [RubyKaigi 2018 速報 (5/31 1 日目)！！](http://tech.medpeer.co.jp/entry/2018/05/31/140955)
 - [RubyKaigi 2018 速報 ！！ (6/1 - 1 つ目)](http://tech.medpeer.co.jp/entry/2018/06/01/121931)
 - [RubyKaigi 2018 速報 ！！ (6/1 - 2 つ目)](http://tech.medpeer.co.jp/entry/2018/06/01/155158)
@@ -326,6 +339,7 @@ Coffee Sponsor の Classi 株式会社様からのお知らせです。おいし
 
 Photo Sponsor の株式会社ラブグラフ様より、期間中の写真撮影のお知らせです。すばらしい写真をありがとうございます！
 
+- [RubyKaigi2018にてラブグラフがPhoto Sponsorをしました！](https://us.wantedly.com/companies/lovegraph/post_articles/121767)
 - [RubyKaigi2018.days.first](https://photos.google.com/share/AF1QipONYGO6fp08hZKobTa8gZfORg8CS-63TV-USXUZkKFpmQV-cMVIR4mUN95g5dNC-w?key=aG5GLVZQZHRfdXRyU29tZUpNTkc0NnhBUzNfX2xR)
 - [RubyKaigi2018.days.second](https://photos.google.com/share/AF1QipM2rfjEQeloDMI6qaibgo_MxyHw5ufoWcfQ1RVPcoOIrEOeahmiHBuveObhI5jFtg?key=aUstaEJyV3BuclFvZDFZd2JkVXBxbm5kVHRlV0lB)
 - [RubyKaigi2018.days.third](https://photos.google.com/share/AF1QipP5DE4XOmGpYG9fcCC5omz6rDUXFKvMZgKTj7DhyvA6kbKZzkSSEMWsxOKwkK57dQ?key=SEtfOFg2b3IwZEtoNFlydjlxdnpUX2FpVF9VcmN3)
@@ -422,9 +436,7 @@ Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました
 
 ## おねがい
 
-RubyKaigi 2018 直前特集号に記事へのリンクを貼って欲しいなどご要望がありましたら [Github Issue #464](https://github.com/rubima/rubima/issues/464) にコメントを残してください。随時対応します。
-
-るびま全体に対する記事へのご意見、ご感想や、「こんな記事が読みたい」、「あの人の記事が読みたい」、といったご希望などがありましたら、下記連絡先までお気軽にお寄せください。
+るびまに対する記事へのご意見、ご感想や、「こんな記事が読みたい」、「あの人の記事が読みたい」、といったご希望などがありましたら、下記連絡先までお気軽にお寄せください。
 
 記事の投稿も随時受け付けております。
 
