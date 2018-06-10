@@ -40,6 +40,7 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [bancor: Token economy made with Ruby ](http://rubykaigi.org/2018/presentations/kurotaky.html#may31) (13:00 - 13:40 Hagi, Yuta Kurotaki さん)
 
 - [bancor: Token economy made with Ruby](https://speakerdeck.com/kurotaky/bancor-token-economy-made-with-ruby) (発表資料)
+- [RubyKaigi 2018で発表してきました](http://kurotaky.hatenablog.com/entry/2018/06/08/212451) (ブログポスト)
 
 #### [Deep Learning Programming on Ruby](http://rubykaigi.org/2018/presentations/mrkn.html#may31) (13:50 - 14:30 Main Hall, Kenta Murata さん, Yusaku Hatanaka さん)
 
@@ -87,6 +88,10 @@ RubyKaigi 2018 の Speaker による事前資料・発表資料集です。節�
 #### [My way with Ruby](http://rubykaigi.org/2018/presentations/ktou.html#jun01) (09:40 - 10:40 Main Hall, Kouhei Sutou さん)
 
 - [My way with Ruby](https://slide.rabbit-shocker.org/authors/kou/rubykaigi-2018/) (発表資料)
+
+#### [Controlling Droids™ with mruby & Go](https://rubykaigi.org/2018/presentations/hone02.html#jun01) (10:50 - 11:30 Main Hall, Terence Leeさん, Chase McCarthy さん)
+
+- [A Droid's Journey - RubyKaigi 2018](https://speakerdeck.com/hone/a-droids-journey-rubykaigi-2018) (発表資料)
 
 #### [Faster Apps, No Memory Thrash: Get Your Memory Config Right ](http://rubykaigi.org/2018/presentations/codefolio.html#jun01) (10:50 - 11:30 Tachibana, Noah Gibbs さん)
 
@@ -230,6 +235,10 @@ Bento Sponsor の株式会社マネーフォワード様よりお弁当のご案
 #### [Eight アイマスクを使ってみた。](https://jp.corp-sansan.com/blog/2018/05/eight_ruby2018.html)
 
 Name Badge Sponsor の Sansan 株式会社様より、ノベルティのご紹介です。気持ち良さそう〜！
+
+#### [Lightning Talks SponsorとしてRubyKaigi 2018に参加してきました](http://developer.medley.jp/entry/2018/06/06/151300)
+
+Lightning Talks Sponsor の株式会社メドレー様より、参加した様子のご紹介です。日本三景をめぐる旅が一旦完結、なるほど！
 
 #### [RubyKaigi 2018 に Breakfast Sponsor として協賛します](https://agile.esm.co.jp/news/2018-05-18-breakfast-sponsor-of-rubykaigi-2018.html)
 
@@ -427,9 +436,7 @@ Platinum Sponsor の株式会社トレタ様よりご寄稿いただきました
 
 ## おねがい
 
-RubyKaigi 2018 直前特集号に記事へのリンクを貼って欲しいなどご要望がありましたら [Github Issue #464](https://github.com/rubima/rubima/issues/464) にコメントを残してください。随時対応します。
-
-るびま全体に対する記事へのご意見、ご感想や、「こんな記事が読みたい」、「あの人の記事が読みたい」、といったご希望などがありましたら、下記連絡先までお気軽にお寄せください。
+るびまに対する記事へのご意見、ご感想や、「こんな記事が読みたい」、「あの人の記事が読みたい」、といったご希望などがありましたら、下記連絡先までお気軽にお寄せください。
 
 記事の投稿も随時受け付けております。
 
