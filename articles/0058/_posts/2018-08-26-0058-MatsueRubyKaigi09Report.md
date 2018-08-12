@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (TODO) 松江 Ruby 会議 09
-short_title: RegionalRubyKaigi レポート (TODO) 松江 Ruby 会議 09
+title: RegionalRubyKaigi レポート (68) 松江 Ruby 会議 09
+short_title: RegionalRubyKaigi レポート (68) 松江 Ruby 会議 09
 tags: 0058 MatsueRubyKaigi09Report
 ---
 {% include base.html %}
