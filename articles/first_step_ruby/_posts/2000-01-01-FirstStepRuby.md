@@ -31,7 +31,7 @@ tags: FirstStepRuby
 
 まずは Ruby でプログラムが書ける環境を整えましょう。
 
-インストールする前にちょっと Ruby を味見してみたいと言う方は [TryRuby](http://tryruby.org) を試してみると良いかもしれません。
+インストールする前にちょっと Ruby を味見してみたいと言う方は [TryRuby](https://ruby.github.io/TryRuby/) を試してみると良いかもしれません。
 
 ### Ruby の種類について
 
