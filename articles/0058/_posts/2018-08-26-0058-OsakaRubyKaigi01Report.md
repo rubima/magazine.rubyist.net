@@ -5,7 +5,9 @@ short_title: RegionalRubyKaigi レポート (69) 大阪 Ruby 会議 01
 tags: 0058 MatsueRubyKaigi09Report
 ---
 {% include base.html %}
- ## RegionalRubyKaigi レポート 大阪 Ruby 会議 09 </br>
+
+ ## RegionalRubyKaigi レポート 大阪 Ruby 会議 09
+
  ### はじめに
 
 
@@ -18,7 +20,8 @@ tags: 0058 MatsueRubyKaigi09Report
 * 公式タグ・Twitter：[#osrk01](https://twitter.com/hashtag/osrk01)
  ![all.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/rito.jpg)
 
-## 大阪Ruby会議とは </br>
+## 大阪Ruby会議とは
+
  2018年7月21日（土）に大阪Ruby会議01が初めて開催されました。
  以前までは関西Ruby会議という規模で開催していましたが、
  今回からより地域に密接したRuby会議にしようというということになり、
@@ -26,7 +29,8 @@ tags: 0058 MatsueRubyKaigi09Report
  また、今回は大阪市にある科学技術センター(http://www.ostec.or.jp)で
  総勢163名(運営スタッフ含む)の肩にご参加いただきました。
 
-### オープニング </br>
+### オープニング
+
   ![ogom.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/ogom.jpg)
     - 発表者
       - 尾篭さん[@ogom](https://twitter.com/ogom)
@@ -35,7 +39,8 @@ tags: 0058 MatsueRubyKaigi09Report
     そして今回のステッカーのデザインとしてモチーフにしたのは
     水都である大阪の堀や川をイメージして作られましたとのこと。
 
-### エイチームにジョインして行った技術改革や実際のお金の話 </br>
+### エイチームにジョインして行った技術改革や実際のお金の話
+
   ![rito.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/rito.jpg)
   - 発表者
     - ritoさん[@chimame_rt](https://twitter.com/chimame_rt)[スポンサーLT]
@@ -43,7 +48,8 @@ tags: 0058 MatsueRubyKaigi09Report
     結果として会社の運用向上に貢献したおかげで提示された給料が上がっていったと
     なかなか生々しい話でした。(会社的には許可が出ているのも驚き。)
 
-### Rubyはなんでできているの？(基調講演) </br>
+### Rubyはなんでできているの？(基調講演)
+
   ![matz.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/matz.jpg)
   - 発表者
     - まつもとゆきひろさん[@yukihiro_matz](https://twitter.com/yukihiro_matz)
@@ -54,7 +60,8 @@ tags: 0058 MatsueRubyKaigi09Report
     個人的には最近のMatzの講演でよく聞く内容でもあると感じたので
     あえてこちらで紹介するよりも、実際に講演を聞いた方が良いかと思うので割愛させていただきます。
 
-### BigQuery on Rails </br>
+### BigQuery on Rails
+
   ![aiming.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/aiming.jpg)  
   - 発表者
     - Aiming[スポンサーLT]
@@ -63,7 +70,8 @@ tags: 0058 MatsueRubyKaigi09Report
     膨大なデータをどのようにしてRailsで扱うかをBigQueryとしてうまく付き合っていこう
     というものでした。
 
-### Complexily on you </br>
+### Complexily on you
+
   ![yuki24.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/yuki24.jpg)
   - 発表者
     - Yuki Nishijimaさん[@yuki24](https://twitter.com/yuki24)
@@ -71,7 +79,8 @@ tags: 0058 MatsueRubyKaigi09Report
     フロントエンドのライブラリながらなんでも書けるReactで
     お互いの間で葛藤しつつも、うまく取り入れることでよりハッピーなハックをしていこうという内容でした
 
-### GR-CITRUSのいろいろ </br>
+### GR-CITRUSのいろいろ
+
   ![tarosay.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/tarosay.jpg)
   - 発表者
     - たろサさん[@momoonga](https://twitter.com/momoonga)
@@ -82,12 +91,14 @@ tags: 0058 MatsueRubyKaigi09Report
     ライブコーディングでGr-CITRUSのLEDを点灯させてみたりと
     Rubyでもここまでできるんだよと紹介していただきました。
 
-## LT大会</br>
+## LT大会
+
   休憩を挟んだのちに参加者のLT大会が始まりました。
   LT登壇者の数も飛び入りを含めると総勢10名を超えるものになりましたので
   全て紹介できないのですが、スライドを公開している方に限って掲載さえていただきます。
 
-### Introducing Fn Project</br>
+### Introducing Fn Project
+
   ![ayumin.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/ayumin.jpg)
   - 発表者
     - ayuminさん[@ayumin](https://twitter.com/ayumin)
@@ -96,7 +107,8 @@ tags: 0058 MatsueRubyKaigi09Report
     現在もクラウドサーバの最前線に立って先陣を切る中で
     最近リリースされた「Fn Project」について紹介していただきました。
 
-### 怒り駆動開発 -キレる技術- </br>
+### 怒り駆動開発 -キレる技術-
+
   ![joker.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/joker.jpg)
   - 発表者
     - jokerさん[@joker1007](https://twitter.com/joker1007)
@@ -106,7 +118,8 @@ tags: 0058 MatsueRubyKaigi09Report
     「不満があるからキレる。不満を解決するのがエンジニアとしての仕事である。
     だからさらにキレる。しかし、キレる対象は常に自分である。」(なるほど)
     
-### コミュニティの力が本当にすごいという話 </br>
+### コミュニティの力が本当にすごいという話
+
   ![kiryu.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/kiryu.jpg)
   - 発表者
     - 桐生あんずさん[@anzu_mmm](https://twitter.com/anzu_mmm)
@@ -115,7 +128,8 @@ tags: 0058 MatsueRubyKaigi09Report
     そして学内の未経験の人に対しても自らコーチングすることで、徐々にエンジニアの輪が広がっていった。
     といったことを話していただきました。
 
-### もう「クレデンシャルください」なんて言わせない </br>
+### もう「クレデンシャルください」なんて言わせない
+
   ![zaru.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/zaru.jpg)
   - 発表者
     - zaruさん[@zaru](https://twitter.com/zaru)
@@ -125,7 +139,8 @@ tags: 0058 MatsueRubyKaigi09Report
     「credential」ファイルを容易に管理できる「KMS+yaml_vault」を使用すれば
     YAMLの構造を保ったままvalueだけ暗号化できるのでコードレビューがやりやすいよね。これこそ最高！
 
-### コミュニティを立ち上げて実感した「ガチ初心者向け」勉強会の失敗しないやり方について </br>
+### コミュニティを立ち上げて実感した「ガチ初心者向け」勉強会の失敗しないやり方について
+
   ![yucky.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/yucky.jpg)
   - 発表者
     - 私[@yucky_sun](https://twitter.com/yucky_sun)
@@ -137,6 +152,7 @@ tags: 0058 MatsueRubyKaigi09Report
 
 
 ## 著者について 
+
   - @yucky_sun(ゆっき)
     Rails+Reactで遠隔診療サービスの「スマ診」でサーバサイドの開発担当。
     Web開発のみならずIoTやVUI,VRなど新しい技術についてもこっそり勉強しています
