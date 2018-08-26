@@ -52,22 +52,3 @@ $ git push -u origin (ブランチ名)
 ```
 
 https://github.com/rubima/rubima.github.io からプルリクエストを作成し`master`ブランチにマージします。
-
-# 移行
-
-URLが`http://magazine.rubyist.net/?xxx`から`https://magazine.rubyist.net/xxx`に変わるため、なんらかの移行作業が必要になるかと思います。
-案としては、以下のもの。
-
-1. 移行しない。リリースのタイミングで切り替える。
-1. 現システムを動かしているサイトにてURLが変わったことを表示するようする。
-
-# 影響
-
-- るりま
-  - いくつかのページにおいて`http://magazine.rubyist.net/`を参照しているところがあるので、修正を依頼するpull requestを出す。
-- www.ruby-lang.org
-  - 過去のリリースのお知らせについてURLを変更するPull Requestを出す？
-- 地域Ruby会議レポート
-  - URLを変更するPull Requestを出す
-
-
