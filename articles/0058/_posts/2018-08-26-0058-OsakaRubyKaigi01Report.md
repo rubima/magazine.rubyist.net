@@ -6,7 +6,7 @@ tags: 0058 MatsueRubyKaigi09Report
 ---
 {% include base.html %}
 
- ## RegionalRubyKaigi レポート 大阪 Ruby 会議 09
+ ## RegionalRubyKaigi レポート 大阪 Ruby 会議 01
 
  ### はじめに
 
