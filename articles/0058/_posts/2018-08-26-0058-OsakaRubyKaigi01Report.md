@@ -6,9 +6,9 @@ tags: 0058 MatsueRubyKaigi09Report
 ---
 {% include base.html %}
 
- ## RegionalRubyKaigi レポート 大阪 Ruby 会議 01
+## RegionalRubyKaigi レポート 大阪 Ruby 会議 01
 
- ### はじめに
+### はじめに
 
 
 * 日時：2018年7月21日（土）10:00〜17:00（懇親会: 18:30〜）
@@ -32,8 +32,8 @@ tags: 0058 MatsueRubyKaigi09Report
 ### オープニング
 
   ![ogom.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/ogom.jpg)
-    - 発表者
-      - 尾篭さん[@ogom](https://twitter.com/ogom)
+- 発表者
+  - 尾篭さん[@ogom](https://twitter.com/ogom)
     関西Ruby会議は200-300人規模で2年周期で開催しているので、
     今回は大阪Ruby会議ということにして少し小さい規模にして毎年実施できるようにした。
     そして今回のステッカーのデザインとしてモチーフにしたのは
@@ -42,8 +42,8 @@ tags: 0058 MatsueRubyKaigi09Report
 ### エイチームにジョインして行った技術改革や実際のお金の話
 
   ![rito.jpg]({{base}}{{site.beseurl}}/images/0058-OsakaRubyKaigi01Report/rito.jpg)
-  - 発表者
-    - ritoさん[@chimame_rt](https://twitter.com/chimame_rt)[スポンサーLT]
+- 発表者
+  - ritoさん[@chimame_rt](https://twitter.com/chimame_rt)[スポンサーLT]
     2016年にエイチーム社にジョインしてからウェブ開発のインフラなどを大きく変更し
     結果として会社の運用向上に貢献したおかげで提示された給料が上がっていったと
     なかなか生々しい話でした。(会社的には許可が出ているのも驚き。)
