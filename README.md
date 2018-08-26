@@ -20,14 +20,14 @@ Markdownです。具体的には、[kramdown](https://kramdown.gettalong.org/)�
 $ git clone git@github.com:rubima/magazine.rubyist.net.git
 $ cd magazine.rubyist.net
 $ bundle install
-$ bundle exec jekyll serve -I
+$ bundle exec jekyll serve -I --future
 ```
 
 http://127.0.0.1:4000/ にローカル開発サーバーが起動し、Markdownから生成されたHTMLページを確認することができます。
 
 # リリース作業について
 
-次の手順で行います。今のところ、GitHub Pages上で動かすことを考えています。
+次の手順で行います。
 
 1. 受け付けたリリース対象の記事のPull Requestをmergeします。
 1. 次のことがTravisでできそうなので、実装すれば良さそう。
