@@ -36,7 +36,7 @@ RubyKaigi の追い風を受けて出された 31 号の後、やや停滞して
 
 今年も変わらず、巻頭言が続いています。当たり前のように毎号催促するのですが、高橋さんはそれが当然のことのように書き続けてくれています。ありがたい話です。今年の巻頭言は日本 Ruby の会の広報誌の側面を持ったものが二つ ([32 号]({{base}}{% post_url articles/0032/2011-01-31-0032-ForeWord %})、[35 号]({{base}}{% post_url articles/0035/2011-09-26-0035-ForeWord %}))、2011 年 3 月 11 日の震災後初めての巻頭言となった [33 号の巻頭言]({{base}}{% post_url articles/0033/2011-04-05-0033-ForeWord %})など、読み応えのあるものが多かったですね。
 
-[FirstStepRuby](https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md)は、RVM、Bundler や能楽堂など Rails も視野に入れた開発環境構築の情報を含めたほうがいいのかもしれないと思いつつ、手が出せていません。年に数回ほど話題には挙がる気がするのできっと需要はあるんでしょうね。良い案があったら教えてください。
+[FirstStepRuby]({{base}}{% post_url articles/first_step_ruby/2000-01-01-FirstStepRuby %})は、RVM、Bundler や能楽堂など Rails も視野に入れた開発環境構築の情報を含めたほうがいいのかもしれないと思いつつ、手が出せていません。年に数回ほど話題には挙がる気がするのできっと需要はあるんでしょうね。良い案があったら教えてください。
 
 インタビュー記事である Rubyist Hotlinks は、cuzic さん、小波さんと関西編が続き、関東の yugui さんへとつながりました。次回は松田明さんのようですが、またここから別の地方編が始まるという噂も出ています。
 
