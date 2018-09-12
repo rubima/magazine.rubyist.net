@@ -112,7 +112,7 @@ vagrantは、Mac、windows、Linuxの環境全て動きます。<br />
 rbenvやrvmを使ってインストールすることをおすすめします。<br />
 るびまでも紹介されているので参考になると思います。
 
-* [FirstStepRuby](https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md)
+* [FirstStepRuby]({{base}}{% post_url articles/first_step_ruby/2000-01-01-FirstStepRuby %})
 
 
 ##### vagrantのインストール

@@ -449,7 +449,7 @@ CGI の枠組みについての文章
 Ruby
 
 * [オブジェクト指向スクリプト言語 Ruby](http://www.ruby-lang.org/ja/) Ruby の 本家サイトです。
-* [FirstStepRuby](https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md) Ruby を習い始める時の情報がまとまっています。
+* [FirstStepRuby]({{base}}{% post_url articles/first_step_ruby/2000-01-01-FirstStepRuby %}) Ruby を習い始める時の情報がまとまっています。
 * [Ruby で CGI を作ろう](http://www.rubycgi.org/cgi_explanation/index.htm)  Ruby で CGI プログラムを作ろうというサイトです。対象が Ruby-1.6.x であるため内容が古くなってきています。
 
 

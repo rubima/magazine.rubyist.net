@@ -35,9 +35,9 @@ tags: 0048 EditorComment
 * [0048 号 巻頭言]({{base}}{% post_url articles/0048/2014-09-19-0048-ForeWord %})
 
 
-Rubyist Magazine 常設記事の「Ruby の歩き方」ですが、昨年大幅にリニューアルした後は若干の修正を加える程度で現状維持となっています。こうした記事は内容がすぐに古くなってしまうために継続した修正が必要となりますので、何かお気付きの点がありましたら Rubyist Magazine 編集部までご連絡いただくか、[GitHub に公開されているドキュメント](https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md)に対して Pull Request いただければと思います。
+Rubyist Magazine 常設記事の「Ruby の歩き方」ですが、昨年大幅にリニューアルした後は若干の修正を加える程度で現状維持となっています。こうした記事は内容がすぐに古くなってしまうために継続した修正が必要となりますので、何かお気付きの点がありましたら Rubyist Magazine 編集部までご連絡いただくか、[GitHub に公開されているドキュメント]({{base}}{% post_url articles/first_step_ruby/2000-01-01-FirstStepRuby %})に対して Pull Request いただければと思います。
 
-* [FirstStepRuby](https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md)
+* [FirstStepRuby]({{base}}{% post_url articles/first_step_ruby/2000-01-01-FirstStepRuby %})
 
 
 インタビュー記事については、連載の Rubyist Hotlinks としては昨年に掲載された前編に続く大場さん夫妻へのインタビュー後編、および Rubyist Hotlinks とは別の特別企画として Ruby と Linux カーネルのデュアルコミッタとして有名な小崎資広さんへのインタビュー前編が掲載されました。

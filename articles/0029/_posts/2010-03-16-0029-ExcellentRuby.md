@@ -15,7 +15,7 @@ tags: 0029 ExcellentRuby
 
 ## 必要となる環境
 
-この記事で解説する事を行うには、Windows 上で、Microsoft Excel と Ruby が動く環境が必要です。Rubyの入手とインストールについては、[FirstStepRuby](https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md) を参照してください。
+この記事で解説する事を行うには、Windows 上で、Microsoft Excel と Ruby が動く環境が必要です。Rubyの入手とインストールについては、[FirstStepRuby]({{base}}{% post_url articles/first_step_ruby/2000-01-01-FirstStepRuby %}) を参照してください。
 
 サンプルコードの動作は下記環境で確認しております。
 

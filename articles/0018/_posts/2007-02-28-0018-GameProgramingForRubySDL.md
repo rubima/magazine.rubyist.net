@@ -56,7 +56,7 @@ Windows 用に、インストールなしに Ruby/SDL を使ったゲーム開�
 
 ### (D) Windows に Ruby をインストールする
 
-まず、[FirstStepRuby](https://github.com/rubima/rubima/blob/master/first_step_ruby/first-step-ruby-2.0.md)を参考に Ruby をインストールしてください。Windows 版の Ruby にはいろいろなパッケージが用意されていますが、
+まず、[FirstStepRuby]({{base}}{% post_url articles/first_step_ruby/2000-01-01-FirstStepRuby %})を参考に Ruby をインストールしてください。Windows 版の Ruby にはいろいろなパッケージが用意されていますが、
 [ActiveScriptRuby](http://arton.hp.infoseek.co.jp/indexj.html) が人気があるようです。
 
 インストールできたら (B) に進んでください。
