@@ -3,6 +3,8 @@ layout: post
 title: RegionalRubyKaigi レポート (70) 沖縄　ruby 会議 02
 short_title: RegionalRubyKaigi レポート (70) 沖縄 Ruby 会議 02
 tags: 0059 OkinawaRubyKaigi02Report
+post_author: kousy, 仲座 李香, 島袋 雄太
+created_on: 2019-01-27
 ---
 {% include base.html %}
 
