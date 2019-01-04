@@ -152,7 +152,7 @@ Rails や Padrino 等でアプリケーション開発をする場合はこれ�
 
 ## 情報の入手方法
 
-**[オブジェクト指向スクリプト言語 Ruby リファレンスマニュアル](http://docs.ruby-lang.org/ja/2.3.0/doc/index.html)**
+**[オブジェクト指向スクリプト言語 Ruby リファレンスマニュアル](https://docs.ruby-lang.org/ja/)**
 
 まずは公式のドキュメントです。
 
