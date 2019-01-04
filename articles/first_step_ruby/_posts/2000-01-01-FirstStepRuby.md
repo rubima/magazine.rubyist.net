@@ -166,7 +166,7 @@ Rails や Padrino 等でアプリケーション開発をする場合はこれ�
 
 ---
 
-**[Rubyist Magazine](http://magazine.rubyist.net/)**
+**[Rubyist Magazine](https://magazine.rubyist.net/)**
 
 本誌。通称るびま。
 
