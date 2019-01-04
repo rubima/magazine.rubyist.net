@@ -52,7 +52,7 @@ Ruby に限らず最近のスクリプト系言語 (LL: Lightweight Language と
 
 Ruby で言うと、以下の2つが主流です。
 
-- [rvm](http://rvm.io/)
+- [RVM](http://rvm.io/)
 - [rbenv](https://github.com/rbenv/rbenv) + [ruby-build](https://github.com/rbenv/ruby-build)
 
 最近人気が高まってきているのは rbenv の方ですが、
