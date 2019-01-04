@@ -175,7 +175,7 @@ Web で発行されている Rubyist 向け雑誌です。
 
 ---
 
-**[RubyDoc.info](http://rubydoc.info/)**
+**[RubyDoc.info](https://www.rubydoc.info/)**
 
 gem の API ドキュメントが見られるサイトです。
 
