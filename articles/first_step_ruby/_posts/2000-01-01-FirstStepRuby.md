@@ -160,7 +160,7 @@ Rails や Padrino 等でアプリケーション開発をする場合はこれ�
 
 ---
 
-**[最速 Ruby リファレンスマニュアル検索！ \| るりまサーチ](http://doc.ruby-lang.org/ja/search/)**
+**[最速 Ruby リファレンスマニュアル検索！ \| るりまサーチ](https://docs.ruby-lang.org/ja/search/)**
 
 マニュアルの検索はこちら。
 
