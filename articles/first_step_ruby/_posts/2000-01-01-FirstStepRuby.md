@@ -46,13 +46,13 @@ Ruby の処理系にはいくつかの種類があります。
 
 現在最新の安定版の Ruby は [Ruby 公式サイトのダウンロードページ](https://www.ruby-lang.org/ja/downloads/) から確認できます。
 
-まだまだ 1.9.3 も多い状況ですが、これから Ruby を学び始めるのであれば、最新の安定版で問題ないと思います。
+これから Ruby を学び始めるのであれば、最新の安定版で問題ないと思います。
 
 Ruby に限らず最近のスクリプト系言語 (LL: Lightweight Language と呼ばれたりする。perl, python, node.js...etc.) で開発をしている人の多くは複数のバージョンを切り替えて扱えるようなツールを使っています。
 
 Ruby で言うと、以下の2つが主流です。
 
-- [rvm](http://rvm.io/)
+- [RVM](http://rvm.io/)
 - [rbenv](https://github.com/rbenv/rbenv) + [ruby-build](https://github.com/rbenv/ruby-build)
 
 最近人気が高まってきているのは rbenv の方ですが、
@@ -67,10 +67,9 @@ Ruby で言うと、以下の2つが主流です。
 
 自分で Ruby をビルドしたい方は [Ruby環境構築講座 Windows編 - 達人出版会](http://tatsu-zine.com/books/winrubybuild) を参照されるのが良いかと思います。
 
-#### Mac OS X
+#### mac
 
-デフォルトで Ruby が入っていますが、OS X Mountain Lion(10.8)以前のものはバージョンが 1.8 系と大変古いです。
-OS X Mavericks(10.9)では 2.0.0 系が入っています。これを使うのもいいですが、最新の安定版を入れるのをお勧めします。
+デフォルトで Ruby が入っていますが、古いバージョンがインストールされていることが多いため最新の安定版を入れるのをお勧めします。
 
 新しいバージョンの Ruby は以下の方法などでインストールができます。
 
@@ -78,7 +77,7 @@ OS X Mavericks(10.9)では 2.0.0 系が入っています。これを使うの�
 
 バージョン切り替えが必要な場合は RailsInstaller と一緒にインストールされる [RVM](https://rvm.io) を利用したり、 [rbenv](https://github.com/rbenv/rbenv/) + [ruby-build](https://github.com/rbenv/ruby-build) 等の導入を検討してください。
 
-rbenv を使ったインストール方法については [OS X で rbenv を使って ruby 1.9.3 or 2.0.0 の環境を作る](http://qiita.com/items/9dd797f42e7bea674705) が参考になります。
+rbenv を使ったインストール方法については [Rails Girls インストール・レシピ](http://railsgirls.jp/install#setup_for_macos) が参考になります。
 
 #### Linux 等の Unix 系 OS
 
@@ -112,6 +111,7 @@ $ rbenv shell 1.9.3-p395
 - emacs
 - [Atom](https://atom.io/)
 - [Sublime Text 2](http://www.sublimetext.com/2)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 ### IDE
 
@@ -152,7 +152,7 @@ Rails や Padrino 等でアプリケーション開発をする場合はこれ�
 
 ## 情報の入手方法
 
-**[オブジェクト指向スクリプト言語 Ruby リファレンスマニュアル](http://docs.ruby-lang.org/ja/2.3.0/doc/index.html)**
+**[オブジェクト指向スクリプト言語 Ruby リファレンスマニュアル](https://docs.ruby-lang.org/ja/)**
 
 まずは公式のドキュメントです。
 
@@ -160,13 +160,13 @@ Rails や Padrino 等でアプリケーション開発をする場合はこれ�
 
 ---
 
-**[最速 Ruby リファレンスマニュアル検索！ \| るりまサーチ](http://doc.ruby-lang.org/ja/search/)**
+**[最速 Ruby リファレンスマニュアル検索！ \| るりまサーチ](https://docs.ruby-lang.org/ja/search/)**
 
 マニュアルの検索はこちら。
 
 ---
 
-**[Rubyist Magazine](http://magazine.rubyist.net/)**
+**[Rubyist Magazine](https://magazine.rubyist.net/)**
 
 本誌。通称るびま。
 
@@ -175,7 +175,7 @@ Web で発行されている Rubyist 向け雑誌です。
 
 ---
 
-**[RubyDoc.info](http://rubydoc.info/)**
+**[RubyDoc.info](https://www.rubydoc.info/)**
 
 gem の API ドキュメントが見られるサイトです。
 
