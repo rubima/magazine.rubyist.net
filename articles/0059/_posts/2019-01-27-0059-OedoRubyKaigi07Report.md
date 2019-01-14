@@ -6,6 +6,7 @@ tags: 0059 OedoRubyKaigi07Report
 post_author: lime1024, emorima
 created_on: 2019-01-27
 ---
+{% include base.html %}
 
 ## RegionalRubyKaigi レポート 大江戸 Ruby 会議 07
 
