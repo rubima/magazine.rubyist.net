@@ -43,7 +43,7 @@ mruby/cの特徴をもう少し詳しく見てみましょう。
 
 mruby/cは以下のgithubリポジトリで公開されています。
 
-https://github.com/mrubyc/mrubyc
+<https://github.com/mrubyc/mrubyc>
 
 2019年1月現在は、Version1.2が最新となっています。
 mrubyと比較して、言語としての機能がかなり制限されていますが、その分とてもコンパクトです。
@@ -64,13 +64,13 @@ mruby/cはmrubyのバイトコードをそのまま用いることを前提と�
 その構造の違いを簡単に図で表してみようと思います。
 以下がmrubyの構成となっています。
 
-![mrubyの構成](image/0059-original_mrubyc_iot_device/mruby_arch.jpg)
+![mrubyの構成]({{base}}{{site.baseurl}}/images/0059-original_mrubyc_iot_device/mruby_arch.jpg)
 
 スクリプトをParserで構文解析し、Code Generatorでバイトコードにコンパイルします。そしてVirtual Machine(VM)がバイトコードを実行します。mrubyでは処理の複雑なコンパイルまでの処理を別環境で行い、VMだけ実環境で動かすことができるようにVMを独立させることができる構造になっています。
 
 mruby/cの構成を以下に示します。
 
-![mruby/cの構成](image/0059-original_mrubyc_iot_device/mrubyc_arch.jpg)
+![mruby/cの構成]({{base}}{{site.baseurl}}/images/0059-original_mrubyc_iot_device/mrubyc_arch.jpg)
 
 mruby/cでは実はParserとCode Generatorの部分はmrubyの実装をそのまま使用しています。mruby/cではバイトコードの生成はPCなどで行うことを前提とし、VMだけを独自のコンパクトな実装を用いることで、mrubyとの互換性をある程度保ちつつマイコン向けの環境を提供しています。
 
@@ -103,7 +103,7 @@ Wio LTEに接続するセンサのサンプルとして、たまたま手元に�
 
 ### WioLTEの説明
 
-![Wio LTE JP version](image/0059-original_mrubyc_iot_device/wiolte.jpg)
+![Wio LTE JP version]({{base}}{{site.baseurl}}/images/0059-original_mrubyc_iot_device/wiolte.jpg)
 
 通信ボードの[Wio LTE JP version](https://soracom.jp/products/module/wio_lte/)について説明します。本記事では以降、Wio LTE JP versionのことを、特に断りの無い限りWio LTEと呼びます。
 
@@ -122,11 +122,11 @@ Wio LTEは中国深センのSeeed Studio社製のLTE通信ボードです。
 |内蔵SRAM | 192KB |
 
 Wio LTEは日本向けにArduinoのライブラリが公開されていて、説明も手厚いです。
-https://github.com/SeeedJP/WioLTEforArduino/wiki/Home-ja
+<https://github.com/SeeedJP/WioLTEforArduino/wiki/Home-ja>
 
 開発環境としては、ArduinoIDEを使うのが最もお手軽かと思います。
 導入については、下記の資料がわかりやすいです。
-https://github.com/soracom/handson/wiki/Wio-LTE-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3
+<https://github.com/soracom/handson/wiki/Wio-LTE-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3>
 
 こちらの手順に従って、Wio LTEにソフトを書き込める状態にしましょう。
 
@@ -140,7 +140,7 @@ https://github.com/soracom/handson/wiki/Wio-LTE-%E3%83%8F%E3%83%B3%E3%82%BA%E3%8
 SORACOM Air SIM for セルラーは、SORACOMが販売しているデータ通信用SIMカードで、IoTのような少量のデータ通信を断続的に行うようなユースケースに適したSIMカードです。これを用いることで、SORACOMが提供するデータ管理サービスとの連携も可能になります。
 
 詳しくは以下を参照下さい。
-https://soracom.jp/services/air/
+<https://soracom.jp/services/air/>
 
 Amazonなどで購入して、公式サイトの手順に従ってWeb画面上で開通処理を行うだけですぐ使えるようになります。
 通信費も安いので、個人でちょっと試したい場合にも気軽に使えると思います。
@@ -153,11 +153,11 @@ SORACOM Harvestもあらかじめ使用の設定が完了していることを�
 
 Wio LTEに接続するセンサとして、Seeed社の超音波距離センサを使用します。
 
-![超音波距離センサ](image/0059-original_mrubyc_iot_device/ultrasonic.jpg)
+![超音波距離センサ]({{base}}{{site.baseurl}}/images/0059-original_mrubyc_iot_device/ultrasonic.jpg)
 
 GroveというSeeed社が提供しているインタフェースに準拠しており、Wio LTEのGroveコネクタに接続するだけで使用できて簡単です。
 詳しくは下記を参照下さい。
-http://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/
+<http://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/>
 
 Groveシリーズのセンサ類は、Arduino用にドライバライブラリが公開されているのがとてもありがたいです。
 こちらの超音波距離センサ用のUltrasonicのライブラリも公式の手順に従って、Arduinoにインストール済みであることを前提とします。
@@ -174,7 +174,7 @@ Arduino環境にmruby/cを移植するためには以下のようなステップ
 
 #### mruby/cのリポジトリの取得
 
-https://github.com/mrubyc/mrubyc からmruby/cのソースコードを取得します。
+<https://github.com/mrubyc/mrubyc> からmruby/cのソースコードを取得します。
 2019年1月時点ではVersion1.2が最新のリリースバージョンです。
 ここではmasterの最新(2019/1/8:f864d19)を使ってみます。
 （ArduinoIDEでのコンパイルエラーを避ける[bug fix](https://github.com/mrubyc/mrubyc/commit/40528070b2307ac91ef6650e0696deac160f913a)を使いたいためです）
@@ -230,7 +230,7 @@ Wio LTE Arduino Libraryでは、`SerialUSB.print`がデバッグ用シリアル�
 実装例を挙げると、`inline static int hal_write()`を以下のような関数に書き換えます。
 （入力が2文字以上の場合、かならずヌル文字が終端にあることが前提になっています）
 
-```C
+```c
 int hal_write(int fd, const void *buf, int nbytes)
 {
 	char* t = (char*)buf;
@@ -248,7 +248,7 @@ int hal_write(int fd, const void *buf, int nbytes)
 
 そして、hal.cppというファイルを作成し、`hal_write_string()`を以下のように実装します。
 
-```C++
+```c++
 extern "C" void hal_write_string(char* text){
   SerialUSB.print(text);
 }
@@ -263,7 +263,7 @@ extern "C" void hal_write_string(char* text){
 
 実際にポーティングした結果のソースコードを下記のリポジトリにアップしていますので、詳細はそちらを参考にしてみてください。
 
-https://github.com/kishima/libmrubycForWioLTEArduino
+<https://github.com/kishima/libmrubycForWioLTEArduino>
 
 ### C拡張の書き方
 
@@ -290,7 +290,7 @@ C言語で定義したクラスを追加するためには、`mrbc_define_class(
 メソッドの追加には、`mrbc_define_class()`関数を使用します。
 以下に、その例を示します。
 
-```C
+```c
 Ultrasonic ultrasonic(WIOLTE_D38);
 
 static void class_ultrasonic_read(mrb_vm *vm, mrb_value *v, int argc ){
@@ -319,7 +319,7 @@ void define_ultrasonic_class(){
 
 先程も紹介した下記のリポジトリに、Wio LTEの通信APIなどをmruby/cのメソッド化した結果を公開しています。こちらを利用して超音波センサとWio LTEをmruby/cで動かしてみましょう。
 
-https://github.com/kishima/libmrubycForWioLTEArduino
+<https://github.com/kishima/libmrubycForWioLTEArduino>
 
 ## 実機での動かし方
 
@@ -327,13 +327,13 @@ https://github.com/kishima/libmrubycForWioLTEArduino
 
 部品を接続するとこんな感じになります。
 
-![Wio LTEにセンサを取り付けた状態](image/0059-original_mrubyc_iot_device/testing.jpg)
+![Wio LTEにセンサを取り付けた状態]({{base}}{{site.baseurl}}/images/0059-original_mrubyc_iot_device/testing.jpg)
 
 ### WioLTE実機への転送
 
 以下のようなスクリプトをtest.rbという名前で保存します。
 
-```Ruby
+```ruby
 Wio.power_supply_LTE(true)
 Wio.turnon_or_reset
 Wio.activate("soracom.io", "sora", "sora")
@@ -356,7 +356,7 @@ puts "done"
 
 test.cというファイルができるはずです、この内容をArduinoのinoファイルで以下のように貼り付けします。
 
-```C++
+```c++
 #include <libmrubyc.h>
 #include <stdint.h>
 
@@ -421,7 +421,7 @@ done
 この先は、SORACOM Beamのような機能を利用して、AWSとの連携も可能です。後は煮るなり焼くなり自由自在というわけです。
 
 今回はとりあえず動かすためにバイトコードをコピペしたりしていますが、開発フローの効率化のために、@hasumikin さんのmrubyc-utilsというツールもありますので、興味のあるの方は御覧ください。
-https://github.com/hasumikin/mrubyc-utils
+<https://github.com/hasumikin/mrubyc-utils>
 
 ## まとめ
 
