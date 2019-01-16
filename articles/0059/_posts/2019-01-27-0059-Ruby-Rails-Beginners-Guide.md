@@ -19,7 +19,7 @@ Railsアプリを作るときに必要になたくさんの技術について説
 
 Railsアプリで使う知識を図示すると次のようになります。
 
-![ruby_rails_guide_map.png](../images/0059-Ruby-Rails-Beginners-Guide/ruby_rails_guide_map.png)
+![ruby_rails_guide_map.png]({{base}}{{site.baseurl}}/images/0059-Ruby-Rails-Beginners-Guide/ruby_rails_guide_map.png)
 
 こうして見ると、Railsアプリ（Webアプリ）というものはたくさんの技術を積み重ねてできていることが分かります。それぞれについて順に見ていきましょう。
 
@@ -39,7 +39,7 @@ Rubyを学ぶ方法を、レベル感を「初めてのプログラミングをR
 
 Ruby超入門の共著者である松岡さんがこの本で学習するRubyの知識について地図のように図示しているのが [こちら](https://speakerdeck.com/machu/zerokarawakarurubychao-ru-men-falsebu-kifang?slide=7) です。1冊の本で学ぶ知識を分類して1枚の図で示すとこのようになります。（今、書いていて気づいたのですが、これを書籍の前書きに載せたら分かりやすかったですね…。）
 
-![machu.png](../images/0059-Ruby-Rails-Beginners-Guide/machu.png)
+![machu.png]({{base}}{{site.baseurl}}/images/0059-Ruby-Rails-Beginners-Guide/machu.png)
 
 このレベルの他の本としては [3ステップでしっかり学ぶRuby入門](https://gihyo.jp/book/2018/978-4-7741-9502-5) があります。Windowsのコマンドプロンプトでの実行と結果のスクリーンショットが載っているので、照らし合わせながら実行できます。
 
