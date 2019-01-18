@@ -414,7 +414,7 @@ done
 
 ３度ほどリセットを行って、距離の測定値をサーバに送信した後、SORACOMの管理画面から見た結果を下記に示します。
 
-<img src="image/0059-original_mrubyc_iot_device/soracom_harvest.png" width="500">
+![SORACOM Harvest]({{base}}{{site.baseurl}}/images/0059-original_mrubyc_iot_device/soracom_harvest.png)
 
 実際に測定した距離の数値（{“distance”:158}など）が転送されていることが確認できました！
 
