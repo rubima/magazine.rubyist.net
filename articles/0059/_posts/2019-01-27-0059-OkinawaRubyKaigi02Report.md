@@ -24,7 +24,7 @@ created_on: 2019-01-27
 
 ### Red Data Tools
 
-![kou.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/kou.jpg)
+![kou.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/kou.jpg)
 
 * 発表者: [@kou](https://github.com/kou)
 
@@ -37,7 +37,7 @@ Red Data ToolsというRubyでデータ処理を行うというプロジェク�
 
 ### RailsでOSSのWebアプリケーションを書くための 'ことはじめ'
 
-![kami-zh.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/kami-zh.jpg)
+![kami-zh.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/kami-zh.jpg)
 
 * 発表者: [@kami-zh](https://github.com/kami-zh)
 
@@ -52,7 +52,7 @@ OSSはプライベートな時間を割いていることが多く、作りた�
 
 ### TracePoint Tips Talk
 
-![shimanman.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/shimanman.jpg)
+![shimanman.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/shimanman.jpg)
 
 * 発表者: ([@_shimanman](https://twitter.com/_simanman))
 
@@ -65,7 +65,7 @@ Ruby2.0から実装された組み込みのクラスであるTracePointについ
 
 ### A ripper based syntax highlighter
 
-![pocke.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/pocke.jpg)
+![pocke.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/pocke.jpg)
 
 * 発表者: [@pocke](https://github.com/pocke)
 
@@ -82,7 +82,7 @@ Highlighterが元になっていてVim以外のエディタでも使用できる
 
 ### CPU＋FPGAプラットフォームのためのRubyベースの開発環境
 
-![maruusa83.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/maruusa83.jpg)
+![maruuusa83.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/maruusa83.jpg)
 
 * 発表者: [@maruuusa83](https://github.com/maruuusa83)
 
@@ -95,7 +95,7 @@ Highlighterが元になっていてVim以外のエディタでも使用できる
 
 ### ActiveRecord::ConnectionAdapters の下の世界
 
-![koic.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/koic.jpg)
+![koic.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/koic.jpg)
 
 * 発表者: [@koic](https://twitter.com/koic)
 
@@ -110,7 +110,7 @@ ActiveRecord::ConnectionAdaptersでモデル経由での呼び出しに対して
 
 ### はじめてのアジャイル開発×Railsで得たこと
 
-![puremoru0315.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/puremoru0315.jpg)
+![puremoru0315.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/puremoru0315.jpg)
 
 * 発表者: [@puremoru0315](https://twitter.com/puremoru0315)
 
@@ -123,7 +123,7 @@ enPiTという人材育成プログラムにて学生6人で10週間で開発し
 
 ### Fast Code for Ruby
 
-![@284km.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/284km.jpg)
+![@284km.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/284km.jpg)
 
 * 発表者: [@284km](https://twitter.com/284km)
 
@@ -136,7 +136,7 @@ enPiTという人材育成プログラムにて学生6人で10週間で開発し
 
 ### 文系から半年でRuby（Sinatra, Rails）を学んだら人生変わった
 
-![masayoshi-tokumoto.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/masayoshi-tokumoto.jpg)
+![masayoshi-tokumoto.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/masayoshi-tokumoto.jpg)
 
 * 発表者: [@masayoshi-tokumoto](https://twitter.com/Masah201707)
 
@@ -151,7 +151,7 @@ enPiTという人材育成プログラムにて学生6人で10週間で開発し
 
 ### 大規模Railsアプリのマイクロサービス化・序章
 
-![yotaro-fujii.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/yotaro-fujii.jpg)
+![yotaro-fujii.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/yotaro-fujii.jpg)
 
 * 発表者: [@yotaro-fujii](https://github.com/yotaro-fujii)
 
@@ -166,7 +166,7 @@ enPiTという人材育成プログラムにて学生6人で10週間で開発し
 
 ### Ruby をデータサイエンス分野に対応させる活動の現況
 
-![mrkn.jpg]({{base}}{{site.beseurl}}/images/0059-OkinawaRubyKaigi02Report/mrkn.jpg)
+![mrkn.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/mrkn.jpg)
 
 * 発表者: [@mrkn](https://twitter.com/mrkn)
 
