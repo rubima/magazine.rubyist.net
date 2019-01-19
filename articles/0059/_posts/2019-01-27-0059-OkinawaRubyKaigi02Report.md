@@ -82,7 +82,7 @@ Highlighterが元になっていてVim以外のエディタでも使用できる
 
 ### CPU＋FPGAプラットフォームのためのRubyベースの開発環境
 
-![maruuusa83.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/maruusa83.jpg)
+![maruuusa83.jpg]({{base}}{{site.baseurl}}/images/0059-OkinawaRubyKaigi02Report/maruuusa83.jpg)
 
 * 発表者: [@maruuusa83](https://github.com/maruuusa83)
 
