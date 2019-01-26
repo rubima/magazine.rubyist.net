@@ -73,7 +73,7 @@ Rubyの場合と比べて、RailsではたくさんのGem（特にCで書かれ�
 
 macOSでRailsを使うときにはrbenv、Command line tools、homebrewを使ってRubyをインストールする方法がお勧めです。Rails Girls ガイドの [インストール](http://railsgirls.jp/install#setup_for_macos) のページが分かりやすく、また最新のインストール方法で更新されているのでお勧めです。
 
-WindowsでRailsを使うときには、WSL(Windows Subsystem for Linux)を使ってUbuntu(Linux OS)をセットアップし、その上で開発するのがお勧めです。後述する書籍「現場Rails」に手順が説明されています。また、Rails Girls ガイドの [インストール](http://railsgirls.jp/install#setup_for_windows) のページにはRubyInstallerを使ったセットアップ手順が載っていますので、こちらの方が簡単です。その代わり、RailsアプリをAWS(後述)などで運用しようとすると、利用するOSがほぼLinuxになります。その予定があるならば手元の環境もLinux(WSL)やmacOS(BSDと呼ばれるUnixの1種)にしておいた方がスムースです。
+WindowsでRailsを使うときには、WSL(Windows Subsystem for Linux)を使ってUbuntu(Linux OS)をセットアップし、その上で開発するのがお勧めです。後述する書籍「現場Rails」に手順が説明されています。また、Rails Girls ガイドの [インストール](http://railsgirls.jp/install#setup_for_windows) のページにも2019年1月中に記載予定で作業中です。別の選択肢としては、[RubyInstaller](https://rubyinstaller.org/) を使ったセットアップがあり、Rails Girls ガイドや書籍「Ruby超入門」に手順が載っています。こちらの方がインストーラーだけでセットアップできるのでインストールは簡単です。しかし、RailsアプリをAWS(後述)などで運用しようとすると、利用するOSはほぼLinuxになります。手元の環境もLinux(WSL)やmacOS(BSDと呼ばれるUnixの1種)にしておいた方がスムースです。
 
 ### Railsでまずは簡単なアプリを作る
 
