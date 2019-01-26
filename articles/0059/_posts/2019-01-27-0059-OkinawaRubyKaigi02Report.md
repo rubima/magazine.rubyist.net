@@ -176,7 +176,7 @@ enPiTという人材育成プログラムにて学生6人で10週間で開発し
 
 また、各プロジェクトを横断するコミュニティの必要性の話もあり本会の締めに相応しいトークでした。
 
-=> 動画でみる](https://www.youtube.com/watch?v=uaNqGqEf1zc&index=12&list=PLNLYzHXJU2-84dl1iyRuGMJS9F2_7rArA)
+=> [動画でみる](https://www.youtube.com/watch?v=uaNqGqEf1zc&index=12&list=PLNLYzHXJU2-84dl1iyRuGMJS9F2_7rArA)
 
 
 ## 謝辞
