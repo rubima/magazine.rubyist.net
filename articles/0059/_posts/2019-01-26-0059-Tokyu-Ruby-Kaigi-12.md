@@ -1,7 +1,7 @@
 ---
 layout: post
-title: TokyuRuby会議12 レポート
-short_title: TokyuRuby会議12 レポート
+title: RegionalRubyKaigi レポート (71) TokyuRuby会議12 レポート
+short_title: RegionalRubyKaigi レポート (71) TokyuRuby会議12 レポート
 tags: 0059 tqrk regionalRubyKaigi
 post_author: igaiga
 created_on: 2019-01-27
