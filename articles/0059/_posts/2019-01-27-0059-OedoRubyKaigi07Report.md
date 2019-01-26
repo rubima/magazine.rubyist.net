@@ -1,8 +1,8 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (71) 大江戸 Ruby 会議 07
-short_title: RegionalRubyKaigi レポート (71) 大江戸 Ruby 会議 07
-tags: 0059 OedoRubyKaigi07Report
+title: RegionalRubyKaigi レポート (72) 大江戸 Ruby 会議 07
+short_title: RegionalRubyKaigi レポート (72) 大江戸 Ruby 会議 07
+tags: 0059 OedoRubyKaigi07Report regionalRubyKaigi
 post_author: lime1024, emorima
 created_on: 2019-01-27
 ---

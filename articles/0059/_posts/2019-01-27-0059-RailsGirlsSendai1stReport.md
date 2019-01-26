@@ -4,7 +4,7 @@ title: Rails Girls Sendai 1st 開催レポート
 short_title: Rails Girls Sendai 1st 開催レポート
 tags: 0058 RailsGirlsSendai1stReport
 post_author: 大倉雅史（@okuramasafumi）
-created_on: 2018-01-27
+created_on: 2019-01-27
 ---
 {% include base.html %}
 
