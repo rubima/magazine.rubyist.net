@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+  <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41117431-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-41117431-1');
+  </script>
+  <script src="../../js/gtag.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>mruby/cで始めるオリジナルIoTデバイス作り</title>
+  <meta name="description" content="">
+
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../../css/theme.css" rel="stylesheet" type="text/css">
+  <link href="../../css/syntax.css" rel="stylesheet" type="text/css">
+  <link href="../../css/sharebutton.css" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://magazine.rubyist.net/articles/0059/0059-original_mrubyc_iot_device.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="https://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    
+        <li><a href="../../articles/0059/0059-index.html">0059号(2019-01)</a></li>
+    
+        <li><a href="../../articles/0058/0058-index.html">0058号(2018-08)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2018/preRubyKaigi2018-index.html">RubyKaigi 2018 直前特集号</a></li>
+    
+        <li><a href="../../articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="../../articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="../../articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="../../articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="../../articles/pretokyorubykaigi11/preTokyoRubyKaigi11-index.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="../../articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="../../articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="../../articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="../../articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="../../articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="../../articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="../../articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="../../articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="../../articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="../../articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="../../articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="../../articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="../../articles/ruby200specialen/Ruby200SpecialEn-index.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="../../articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="../../articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="../../articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="../../articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="../../articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="../../articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="../../articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="../../articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2011/preRubyKaigi2011-index.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="../../articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="../../articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="../../articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="../../articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2010/preRubyKaigi2010-index.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="../../articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="../../articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="../../articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="../../articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="../../articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="../../articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="../../articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="../../articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="../../articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="../../articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="../../articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="../../articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="../../articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="../../articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="../../articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="../../articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="../../articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="../../articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="../../articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="../../articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="../../articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="../../articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="../../articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="../../articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="../../articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="../../articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="../../articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="../../articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="../../articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="../../articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="../../articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="../../images/rubima_logo_l.png">
+                        <h1>mruby/cで始めるオリジナルIoTデバイス作り</h1>
+                        <div class="social-buttons">
+                            <div class='sns'>            
+    <ul class="clearfix">
+       <li class="twitter"><a href="https://twitter.com/share?text=mruby/cで始めるオリジナルIoTデバイス作り&amp;url=https://magazine.rubyist.net/articles/0059/0059-original_mrubyc_iot_device.html" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-twitter"></i></a></li>
+       <li class="facebook"><a href="https://www.facebook.com/sharer.php?u=https://magazine.rubyist.net/articles/0059/0059-original_mrubyc_iot_device.html&amp;t=mruby/cで始めるオリジナルIoTデバイス作り" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-facebook"></i></a></li>
+       <li class="hatebu"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://magazine.rubyist.net/articles/0059/0059-original_mrubyc_iot_device.html&amp;mruby/cで始めるオリジナルIoTデバイス作り" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa">B!</i></a></li>
+    </ul>
+</div>
+                        </div>
+                        <div class="post_info">
+                            
+  <span class="author">著者：kishima</span><br />
+
+
+  <span class="created_on">初稿：2019-01-27</span>
+
+
+
+                        </div>
+                        
+<h2 id="はじめに">はじめに</h2>
+
+<p>こんにちは、kishimaと申します。
+mruby/c（えむるびーすらっしゅしー）という言語を皆さんは御存知でしょうか？
+この記事では、mrubyから派生して生まれたmruby/cを使ったIoTっぽい電子工作について説明していきたいと思います。</p>
+
+<h3 id="mrubycでiot">mruby/cでIoT</h3>
+
+<p>筆者は仕事で馴染み深かったのもあり、2017年後半あたりから電子工作を本格的に趣味として始めました。
+機器の制御のためにマイコンにソフトを書き込むわけですが、プログラミング言語は基本的にC言語を用いてきました。</p>
+
+<p>しかしちょっとした機能の実装に、いつもC言語を使うのも面倒と感じる場面も多く、Rubyのようなスクリプト言語を使えたらいいなとずっと思ってきました。</p>
+
+<p>最近では、mrubyという選択肢もあるわけなのですが、RAMが数百KB程度のマイコンで動かすことを考えると、mrubyは動かせないということはないのですが、ある程度自由に実装するにはちょっとリソースがぎりぎりであることが多く、採用を見送ってきました。</p>
+
+<p>ふと思いたち、ちょっと調べてみると、よりマイコン向けに特化した「mruby/c」という言語が開発されていることを発見し、これだ！と思い、早速飛びついたわけです。</p>
+
+<p>本記事では、センサからデータを取得して、モバイル通信網にデータを送る作業をmruby/cで行うための一連の流れを紹介します。本記事の内容を応用すれば、mruby/cを利用して自分の好きなIoTデバイスを作れるようになるはずです！</p>
+
+<h2 id="mrubycとは">mruby/cとは</h2>
+
+<p>mruby/cについて詳しく知らない方のために、まずmruby/cの紹介から入りたいと思います。</p>
+
+<p>mruby/cとは、しまねソフト研究開発センターの<a href="https://www.s-itoc.jp/activity/research/mrubyc/">サイトの記載</a>によれば、</p>
+
+<blockquote>
+  <p>「mruby/cは、Rubyの特徴を引き継ぎつつ、プログラム実行時に必要なメモリ消費量が従来のmruby（福岡で開発された組込み向けの軽量Ruby）より少ないmrubyの実装です。」</p>
+</blockquote>
+
+<p>というものだそうです。</p>
+
+<h3 id="特徴">特徴</h3>
+
+<p>mruby/cの特徴をもう少し詳しく見てみましょう。</p>
+
+<p>mruby/cは以下のgithubリポジトリで公開されています。</p>
+
+<p><a href="https://github.com/mrubyc/mrubyc">https://github.com/mrubyc/mrubyc</a></p>
+
+<p>2019年1月現在は、Version1.2が最新となっています。
+mrubyと比較して、言語としての機能がかなり制限されていますが、その分とてもコンパクトです。
+githubで公開されているリポジトリのReadmeには以下のように記載されています。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>mruby/c</th>
+      <th>mruby</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>memory size</td>
+      <td>&lt; 40KB</td>
+      <td>&lt; 400KB</td>
+    </tr>
+    <tr>
+      <td>main target</td>
+      <td>one-chip microprocessors</td>
+      <td>general embedded software</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>メモリのサイズが40KB未満でも動作することが謳われており、SRAMを内蔵したワンチップマイコンのような環境でも動くことが特徴です。</p>
+
+<h3 id="mrubyとの違い">mrubyとの違い</h3>
+
+<p>mrubyとmruby/cは名前が似ていますが、何が違うのでしょうか？</p>
+
+<p>mruby/cはmrubyのバイトコードをそのまま用いることを前提としており、mrubyのVMに相当する部分だけを提供しています。
+その構造の違いを簡単に図で表してみようと思います。
+以下がmrubyの構成となっています。</p>
+
+<p><img src="../../images/0059-original_mrubyc_iot_device/mruby_arch.jpg" alt="mrubyの構成" /></p>
+
+<p>スクリプトをParserで構文解析し、Code Generatorでバイトコードにコンパイルします。そしてVirtual Machine(VM)がバイトコードを実行します。mrubyでは処理の複雑なコンパイルまでの処理を別環境で行い、VMだけ実環境で動かすことができるようにVMを独立させることができる構造になっています。</p>
+
+<p>mruby/cの構成を以下に示します。</p>
+
+<p><img src="../../images/0059-original_mrubyc_iot_device/mrubyc_arch.jpg" alt="mruby/cの構成" /></p>
+
+<p>mruby/cでは実はParserとCode Generatorの部分はmrubyの実装をそのまま使用しています。mruby/cではバイトコードの生成はPCなどで行うことを前提とし、VMだけを独自のコンパクトな実装を用いることで、mrubyとの互換性をある程度保ちつつマイコン向けの環境を提供しています。</p>
+
+<p>さきほど、言語としての機能が制限されていると書きましたが、一例として、mruby/cでは、mrubyと比較して、mrbgemsという機能拡張の仕組みがないため、mrubyがmrbgemsで実現している機能を実現するためには独自に都度ポーティングする必要があります。
+その他、例外やモジュールが削られていたりなど、大きな違いがあります。</p>
+
+<p>もう一点大きな違いとして、mruby/cではマルチタスク機能をデフォルトでサポートしている点があります。マイコンを使った開発では、外部のデバイスの監視や応答待ちなどで非同期の処理が多く発生します。mruby/cでは、そのような処理を実装するために簡易的なマルチタスク機能が利用できます。
+mruby/cでは、タスク間で共通のクラス定義、グローバル変数空間を参照しており、mutexで排他処理を実装可能です。</p>
+
+<p>その他には、定量的な説明が難しいポイントですが、機能を削ったことにより実装の規模が小さくなっている点があります。
+実装がシンプルなので、ソースコードを眺めたときに各処理の動きの見当がつきやすく、ポーティングが非常にやりやすい点は、個人的にはとても嬉しいメリットと感じています。</p>
+
+<h2 id="開発環境の構築">開発環境の構築</h2>
+
+<p>では、本格的に開発の準備を進めていきます。</p>
+
+<p>こういった電子工作や組み込み機器の開発は、PCアプリの開発と違って、ハードウェアの準備から始まるのが特徴です。
+最初にモバイル通信網にデータを送ってみることを目標とすると書きましたが、特にデバイス単体で通信を行うようなデバイスで、国内で個人で手に入るものはあまり選択肢が多くありません。
+（海外で売られているデバイスは日本の周波数帯と合わないか、もしくは日本での認可を得ていないことが多いので注意です）</p>
+
+<p>今回はWio LTEというLTEでデータ通信可能なボードを利用したいと思います。</p>
+
+<p>またボード単体では基地局と通信できないので、日本のモバイル通信網に接続可能なSIMカードも必要です。</p>
+
+<p>SIMは、個人でも簡単に手に入って、初期費用も安いSORACOM Air SIMを利用します。</p>
+
+<p>Wio LTEに接続するセンサのサンプルとして、たまたま手元にあったSeeedの超音波距離センサを使ってみます。</p>
+
+<p>その他の準備として、PCにはArduinoIDEがインストールされており、ビルド済みのmrubyのバイナリが存在することを前提とします。mrubyについては、最新のmruby2.0ではバイトコードフォーマットが更新されており、mruby/cと対応しないため、あえて古い1.3を使用しています。</p>
+
+<h3 id="wiolteの説明">WioLTEの説明</h3>
+
+<p><img src="../../images/0059-original_mrubyc_iot_device/wiolte.jpg" alt="Wio LTE JP version" /></p>
+
+<p>通信ボードの<a href="https://soracom.jp/products/module/wio_lte/">Wio LTE JP version</a>について説明します。本記事では以降、Wio LTE JP versionのことを、特に断りの無い限りWio LTEと呼びます。</p>
+
+<p>Wio LTEは中国深センのSeeed Studio社製のLTE通信ボードです。
+制御用のマイコンとしてSTM32というARMのマイコンが利用されており、回路図も公開されていています。
+ちゃんと認証を取得した日本用のバージョンが販売されており、日本でも安心して使えます。</p>
+
+<p>単なる通信機能だけでなく、外部デバイスとの接続インタフェースとして同社製品用のGroveコネクタも搭載しています。</p>
+
+<p><a href="https://soracom.jp/products/module/wio_lte/">SORACOMのサイト</a>によれば、Wio LTEのスペックは以下の通りとなっています。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>項目</th>
+      <th>Wio LTE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>プロセッサー</td>
+      <td>STM32F405RG, ARM Cortex-M4, 168MHz</td>
+    </tr>
+    <tr>
+      <td>フラッシュメモリ</td>
+      <td>1MB</td>
+    </tr>
+    <tr>
+      <td>内蔵SRAM</td>
+      <td>192KB</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Wio LTEは日本向けにArduinoのライブラリが公開されていて、説明も手厚いです。
+<a href="https://github.com/SeeedJP/WioLTEforArduino/wiki/Home-ja">https://github.com/SeeedJP/WioLTEforArduino/wiki/Home-ja</a></p>
+
+<p>開発環境としては、ArduinoIDEを使うのが最もお手軽かと思います。
+導入については、下記の資料がわかりやすいです。
+<a href="https://github.com/soracom/handson/wiki/Wio-LTE-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3">https://github.com/soracom/handson/wiki/Wio-LTE-%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3</a></p>
+
+<p>こちらの手順に従って、Wio LTEにソフトを書き込める状態にしましょう。</p>
+
+<p><strong>！注意！</strong></p>
+
+<p>本記事で用いているWio LTE JP versionは、2019年1月現在、秋月電子などで在庫がありませんが、SORACOMのサイト経由で購入が可能なようです。その他にも、<a href="https://soracom.jp/products/module/wio_lte_m1_nb1/">Wio LTE M1/NB1(BG96)</a>というボードもあります。そちらの利用もご検討ください。
+筆者の環境ではWio LTE M1/NB1(BG96)は動作未確認ですが、本記事の内容はだいたい適用できるかと思います。</p>
+
+<h3 id="soracom-air-sim-for-セルラーの説明">SORACOM Air SIM for セルラーの説明</h3>
+
+<p>SORACOM Air SIM for セルラーは、SORACOMが販売しているデータ通信用SIMカードで、IoTのような少量のデータ通信を断続的に行うようなユースケースに適したSIMカードです。これを用いることで、SORACOMが提供するデータ管理サービスとの連携も可能になります。</p>
+
+<p>詳しくは以下を参照下さい。
+<a href="https://soracom.jp/services/air/">https://soracom.jp/services/air/</a></p>
+
+<p>Amazonなどで購入して、公式サイトの手順に従ってWeb画面上で開通処理を行うだけですぐ使えるようになります。
+通信費も安いので、個人でちょっと試したい場合にも気軽に使えると思います。</p>
+
+<p>今回はSORACOM Harvestという文字列で送ったデータをSORACOMのサーバで管理できる仕組みを使って、IoT的な通信の基礎を実践してみたいと思います。</p>
+
+<p>SORACOM Harvestもあらかじめ使用の設定が完了していることを前提とします。従量課金の料金体系になっているので設定時はご注意下さい。</p>
+
+<h3 id="超音波距離センサ">超音波距離センサ</h3>
+
+<p>Wio LTEに接続するセンサとして、Seeed社の超音波距離センサを使用します。</p>
+
+<p><img src="../../images/0059-original_mrubyc_iot_device/ultrasonic.jpg" alt="超音波距離センサ" /></p>
+
+<p>GroveというSeeed社が提供しているインタフェースに準拠しており、Wio LTEのGroveコネクタに接続するだけで使用できて簡単です。
+詳しくは下記を参照下さい。
+<a href="http://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/">http://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/</a></p>
+
+<p>Groveシリーズのセンサ類は、Arduino用にドライバライブラリが公開されているのがとてもありがたいです。
+こちらの超音波距離センサ用のUltrasonicのライブラリも公式の手順に従って、Arduinoにインストール済みであることを前提とします。</p>
+
+<h2 id="実装方法">実装方法</h2>
+
+<p>ここからが本題です。</p>
+
+<p>mruby/cをWio LTEの上で動かすための手順について説明していきたいと思います。</p>
+
+<h3 id="mrubycのポーテイング">mruby/cのポーテイング</h3>
+
+<p>Arduino環境にmruby/cを移植するためには以下のようなステップを踏みます。</p>
+
+<h4 id="mrubycのリポジトリの取得">mruby/cのリポジトリの取得</h4>
+
+<p><a href="https://github.com/mrubyc/mrubyc">https://github.com/mrubyc/mrubyc</a> からmruby/cのソースコードを取得します。
+2019年1月時点ではVersion1.2が最新のリリースバージョンです。
+ここではmasterの最新(2019/1/8:f864d19)を使ってみます。
+（ArduinoIDEでのコンパイルエラーを避ける<a href="https://github.com/mrubyc/mrubyc/commit/40528070b2307ac91ef6650e0696deac160f913a">bug fix</a>を使いたいためです）</p>
+
+<h4 id="arduinoのライブラリの作成">Arduinoのライブラリの作成</h4>
+
+<p>まず、Arduino用のライブラリを作成します。
+例えばMacの場合、<code class="highlighter-rouge">~/Documents/Arduino/libraries/</code>のようなディレクトリの下に<code class="highlighter-rouge">libmrubycForWioLTEArduino</code>というディレクトリを作成して、以下のような構成にします。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> libmrubycForWioLTEArduino/
+  |- library.properties
+  |- src/
+</code></pre></div></div>
+
+<p>library.propertiesは、Arduino用のライブラリの設定ファイルです。
+例えば以下のような内容を書き込みます。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name=mruby/c for Wio LTE
+version=0.0.0
+author=kishima
+maintainer=kishima
+sentence=mruby/c implementation for Wio LTE.
+paragraph=
+category=Communication
+url=https://github.com/kishima/libmrubycForWioLTEArduino
+architectures=Seeed_STM32F4
+includes=libmrubyc.h
+</code></pre></div></div>
+
+<p>このような内容を書き込むことで、ArduinoIDEのライブラリとして認識されるようになります。</p>
+
+<h4 id="ソースのコピー">ソースのコピー</h4>
+
+<p>取得したmruby/cのソースのから、src/配下のファイルを、さきほど作成した<code class="highlighter-rouge">libmrubycForWioLTEArduino/src</code>にコピーします。</p>
+
+<p>mruby/cのsrcには、<code class="highlighter-rouge">hal_***</code>というディレクトリが含まれていますが、これは、各種のボードに依存している機能を切り出しものです。halは”Hardware Abstraction Layer”の略（のはず）です。
+以下のように対応します。</p>
+
+<ul>
+  <li>hal_posix/をhal/にリネームする</li>
+  <li>その他のhal_***/は削除する</li>
+</ul>
+
+<h4 id="halhardware-abstraction-layerの実装">HAL(Hardware Abstraction Layer)の実装</h4>
+
+<p><code class="highlighter-rouge">puts</code>などで用いられる文字列出力関数がhal.hにインライン関数<code class="highlighter-rouge">hal_write</code>として定義されているのですが、中身は<code class="highlighter-rouge">write(1, buf, nbytes)</code>となっていて、そのままでは期待通り動きません。</p>
+
+<p>文字列の出力先は、ライブラリの開発者が環境に合わせて実装することが必要です。</p>
+
+<p>Wio LTE Arduino Libraryでは、<code class="highlighter-rouge">SerialUSB.print</code>がデバッグ用シリアルへの出力を行うので、これを用いています。
+注意点として、<code class="highlighter-rouge">SerialUSB.print</code>のようなArduinoのAPIはC++で実装されているので、hal.cからは直接呼べません。hal.cppを準備するなどして、CとC++の間を繋ぐ必要があります。</p>
+
+<p>実装例を挙げると、<code class="highlighter-rouge">inline static int hal_write()</code>を以下のような関数に書き換えます。
+（入力が2文字以上の場合、かならずヌル文字が終端にあることが前提になっています）</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">hal_write</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbytes</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="kt">char</span><span class="o">*</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">buf</span><span class="p">;</span>
+	<span class="kt">char</span> <span class="n">tbuf</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">nbytes</span><span class="o">==</span><span class="mi">1</span><span class="p">){</span>
+		<span class="n">tbuf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=*</span><span class="n">t</span><span class="p">;</span>
+		<span class="n">tbuf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="sc">'\0'</span><span class="p">;</span>
+		<span class="n">hal_write_string</span><span class="p">(</span><span class="n">tbuf</span><span class="p">);</span>
+		<span class="k">return</span> <span class="n">nbytes</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">hal_write_string</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
+	<span class="k">return</span> <span class="n">nbytes</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>そして、hal.cppというファイルを作成し、<code class="highlighter-rouge">hal_write_string()</code>を以下のように実装します。</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">extern</span> <span class="s">"C"</span> <span class="kt">void</span> <span class="n">hal_write_string</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">){</span>
+  <span class="n">SerialUSB</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>このようにすることで、スクリプト上の<code class="highlighter-rouge">puts</code>などの出力先がデバッグ用のシリアルになります。</p>
+
+<p>もう一点、HALではタイマ割り込みの設定も考慮が必要です。mruby/cではマルチタスク機能を実現するために一定間隔でVMの処理を中断して、別のタスクのVMに処理を切り替える必要があります。
+そのためにはハードウェアの周期的な割り込み機能を使うのがシンプルですが、それが使えない場合は、vm_config.hに<code class="highlighter-rouge">#define MRBC_NO_TIMER</code>という定義を追記すると、ソフト処理でのタスク切換えを行うようになります。</p>
+
+<p>このようなポイントに注意することで、mruby/cの機能をArduinoライブラリとして利用可能となります。</p>
+
+<p>実際にポーティングした結果のソースコードを下記のリポジトリにアップしていますので、詳細はそちらを参考にしてみてください。</p>
+
+<p><a href="https://github.com/kishima/libmrubycForWioLTEArduino">https://github.com/kishima/libmrubycForWioLTEArduino</a></p>
+
+<h3 id="c拡張の書き方">C拡張の書き方</h3>
+
+<p>mruby/cをポーティングしただけの状態だと、シリアルのコンソールに文字が出力されるだけで、他に何もすることができません。
+ボード固有の機能を利用するためにはC言語で書かれているAPIをmruby/cから呼び出す必要があります。RubyのメソッドをC言語で実装するための方法を説明します。</p>
+
+<h4 id="クラスの追加">クラスの追加</h4>
+
+<p>C言語で定義したクラスを追加するためには、<code class="highlighter-rouge">mrbc_define_class()</code>という関数を使用します。
+以下に超音波センサのための<code class="highlighter-rouge">UltraSonic</code>クラスを追加する例を示しています。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	mrb_class *class_ultrasonic;
+	class_ultrasonic = mrbc_define_class(0, "UltraSonic", mrbc_class_object);
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">mrbc_define_class()</code>の第一引数は特に考えず0で問題ないです。第二引数にRubyのクラス名を与えます。そして第三引数に親クラスを指定します。この場合は特別な親クラスを持つ必要がないので、オブジェクトクラス（mrbc_class_object）を親クラスとしています。</p>
+
+<p><code class="highlighter-rouge">mrbc_define_class()</code>の戻り値にはクラスオブジェクトを表すmrb_class構造体へのポインタが返って来ます。このポインタは破棄しても、<code class="highlighter-rouge">UltraSonic</code>クラスのクラスオブジェクトはグローバル定数として記憶されているので、定義が消えることはありません。</p>
+
+<h4 id="メソッドの追加">メソッドの追加</h4>
+
+<p>次に、<code class="highlighter-rouge">UltraSonic</code>クラスに、 距離センサの測値を返す、<code class="highlighter-rouge">read</code>メソッドを追加してみます。
+メソッドの追加には、<code class="highlighter-rouge">mrbc_define_class()</code>関数を使用します。
+以下に、その例を示します。</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Ultrasonic</span> <span class="n">ultrasonic</span><span class="p">(</span><span class="n">WIOLTE_D38</span><span class="p">);</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="n">class_ultrasonic_read</span><span class="p">(</span><span class="n">mrb_vm</span> <span class="o">*</span><span class="n">vm</span><span class="p">,</span> <span class="n">mrb_value</span> <span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">){</span>
+	<span class="kt">long</span> <span class="n">val</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">.</span><span class="n">MeasureInCentimeters</span><span class="p">();</span>
+	<span class="n">SET_INT_RETURN</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">define_ultrasonic_class</span><span class="p">(){</span>
+	<span class="n">mrb_class</span> <span class="o">*</span><span class="n">class_ultrasonic</span><span class="p">;</span>
+	<span class="n">class_ultrasonic</span> <span class="o">=</span> <span class="n">mrbc_define_class</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">"UltraSonic"</span><span class="p">,</span> <span class="n">mrbc_class_object</span><span class="p">);</span>
+
+	<span class="c1">//method</span>
+	<span class="n">mrbc_define_method</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">class_ultrasonic</span><span class="p">,</span> <span class="s">"read"</span><span class="p">,</span> <span class="n">class_ultrasonic_read</span><span class="p">);</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">mrbc_define_class()</code>関数の第一引数は、クラス定義と同じく0を指定して、第二引数にメソッドに対応するクラスをしていします。ここで、先程の<code class="highlighter-rouge">class_ultrasonic</code>を与えます。
+第三引数には、メソッド名である<code class="highlighter-rouge">read</code>を与えます。そして第四引数には、メソッドの処理を行う関数へのポインタを与えます。</p>
+
+<p>メソッドの処理を表す関数の型は<code class="highlighter-rouge">void (mrb_vm *vm, mrb_value *v, int argc )</code>と決まっており、ここにメソッドの引数に関する全ての情報が格納されています。</p>
+
+<p>距離センサのオブジェクト<code class="highlighter-rouge">ultrasonic</code>は、<code class="highlighter-rouge">WIOLTE_D38</code>という値を与えて初期化しています。<code class="highlighter-rouge">WIOLTE_D38</code>がWio LTE基板上の接続端子を表しています。
+<code class="highlighter-rouge">ultrasonic</code>に対して、<code class="highlighter-rouge">MeasureInCentimeters()</code>という関数で得た距離センサの測定値(cm)を<code class="highlighter-rouge">SET_INT_RETURN</code>というマクロでメソッドの戻り値に設定しています。</p>
+
+<p>このような手順で、C/C++言語で書かれたライブラリとmruby/cの連携を図ることができます。
+連携方法の全てを記事中で説明するのは難しいですが、より詳しい情報はmruby/cのヘッダファイルの定義などを参照すると理解が進むと思います。</p>
+
+<p>先程も紹介した下記のリポジトリに、Wio LTEの通信APIなどをmruby/cのメソッド化した結果を公開しています。こちらを利用して超音波センサとWio LTEをmruby/cで動かしてみましょう。</p>
+
+<p><a href="https://github.com/kishima/libmrubycForWioLTEArduino">https://github.com/kishima/libmrubycForWioLTEArduino</a></p>
+
+<h2 id="実機での動かし方">実機での動かし方</h2>
+
+<p>自分で作ったmruby/cのメソッドを利用したアプリを、実際に動かしてみましょう。</p>
+
+<p>部品を接続するとこんな感じになります。</p>
+
+<p><img src="../../images/0059-original_mrubyc_iot_device/testing.jpg" alt="Wio LTEにセンサを取り付けた状態" /></p>
+
+<h3 id="wiolte実機への転送">WioLTE実機への転送</h3>
+
+<p>以下のようなスクリプトをtest.rbという名前で保存します。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Wio</span><span class="p">.</span><span class="nf">power_supply_LTE</span><span class="p">(</span><span class="kp">true</span><span class="p">)</span>
+<span class="no">Wio</span><span class="p">.</span><span class="nf">turnon_or_reset</span>
+<span class="no">Wio</span><span class="p">.</span><span class="nf">activate</span><span class="p">(</span><span class="s2">"soracom.io"</span><span class="p">,</span> <span class="s2">"sora"</span><span class="p">,</span> <span class="s2">"sora"</span><span class="p">)</span>
+<span class="n">sock</span> <span class="o">=</span> <span class="no">Wio</span><span class="p">.</span><span class="nf">sock_open_udp</span><span class="p">(</span><span class="s2">"harvest.soracom.io"</span><span class="p">,</span><span class="mi">8514</span><span class="p">)</span>
+
+<span class="n">val</span> <span class="o">=</span> <span class="no">UltraSonic</span><span class="p">.</span><span class="nf">read</span>
+<span class="no">Wio</span><span class="p">.</span><span class="nf">sock_send</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span><span class="s2">"{</span><span class="se">\"</span><span class="s2">distance</span><span class="se">\"</span><span class="s2">:</span><span class="si">#{</span><span class="n">val</span><span class="si">}</span><span class="s2">}"</span><span class="p">)</span>
+<span class="no">Wio</span><span class="p">.</span><span class="nf">sock_close</span><span class="p">(</span><span class="n">sock</span><span class="p">)</span>
+
+<span class="nb">puts</span> <span class="s2">"done"</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">Wio.activate</code>というメソッドでSORACOMのサーバとのアクティベーションを行い、<code class="highlighter-rouge">Wio.sock_send</code>というメソッドで測定した結果を{“distance”:val}という文字列でSORACOM Harvestのサービス(<code class="highlighter-rouge">harvest.soracom.io:8514</code>)に送信します。</p>
+
+<p>このスクリプトを以下のようなmrubyのコマンドで、バイトコードを16進数配列で表したC言語ファイルに変換します。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ mrbc -E -B code test.rb
+</code></pre></div></div>
+
+<p>test.cというファイルができるはずです、この内容をArduinoのinoファイルで以下のように貼り付けします。</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;libmrubyc.h&gt;
+#include &lt;stdint.h&gt;
+</span>
+<span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">code</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="mh">0x52</span><span class="p">,</span><span class="mh">0x49</span><span class="p">,</span><span class="mh">0x54</span><span class="p">,</span><span class="mh">0x45</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x34</span><span class="p">,</span><span class="mh">0x20</span><span class="p">,</span><span class="mh">0x3e</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x01</span><span class="p">,</span><span class="mh">0xa0</span><span class="p">,</span><span class="mh">0x4d</span><span class="p">,</span><span class="mh">0x41</span><span class="p">,</span>
+<span class="mh">0x54</span><span class="p">,</span><span class="mh">0x5a</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x49</span><span class="p">,</span><span class="mh">0x52</span><span class="p">,</span><span class="mh">0x45</span><span class="p">,</span><span class="mh">0x50</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x01</span><span class="p">,</span><span class="mh">0x63</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span>
+<span class="mh">0x30</span><span class="p">,</span><span class="mh">0x30</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x01</span><span class="p">,</span><span class="mh">0x5b</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x03</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x08</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x00</span><span class="p">,</span><span class="mh">0x21</span><span class="p">,</span>
+<span class="err">（中略）</span>
+<span class="p">};</span>
+
+
+<span class="cp">#define MEMSIZE (1024*50)
+</span><span class="k">static</span> <span class="kt">uint8_t</span> <span class="n">mempool</span><span class="p">[</span><span class="n">MEMSIZE</span><span class="p">];</span>
+
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+  <span class="n">SerialUSB</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"--- begin setup"</span><span class="p">);</span>
+  <span class="n">mrbc_init</span><span class="p">(</span><span class="n">mempool</span><span class="p">,</span> <span class="n">MEMSIZE</span><span class="p">);</span>
+  <span class="n">mrbc_define_wiolte_methods</span><span class="p">();</span>
+  <span class="k">if</span><span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">mrbc_create_task</span><span class="p">(</span> <span class="n">code</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)){</span>
+    <span class="n">SerialUSB</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"mrbc_create_task error"</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">SerialUSB</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">"--- run mruby script"</span><span class="p">);</span>
+  <span class="n">mrbc_run</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">mrbc_create_task()</code>という関数でバイトコードが格納された配列を読み込み、<code class="highlighter-rouge">mrbc_run()</code>で実際にVMで処理を行っています。</p>
+
+<p>準備ができたら、Wio LTEを接続して、DFUモードに切り替えた後、ArduinoIDEの書き込みボタンをクリックして、ビルド＆書き込みを行います。</p>
+
+<p>DFUモードでは、通常のプログラムは起動せず、プログラムの書き込みを待ち受ける状態になります。
+細かいボタン操作については、先に紹介した参考サイトを参照下さい。</p>
+
+<h3 id="動作チェック">動作チェック</h3>
+
+<p>では実際に動かしてみましょう。書き込んだ後にボードのリセットボタンを押すと、書き込んだプログラムが起動します。</p>
+
+<p>動かしてみた結果のシリアルログを示します。</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>— begin setup
+— run mruby script
+class_wio_power_supply_LTE
+class_wio_turnon_or_reset
+TurnOnOrReset OK
+send:{“distance”:158}
+done
+</code></pre></div></div>
+
+<p>３度ほどリセットを行って、距離の測定値をサーバに送信した後、SORACOMの管理画面から見た結果を下記に示します。</p>
+
+<p><img src="../../images/0059-original_mrubyc_iot_device/soracom_harvest.png" alt="SORACOM Harvest" /></p>
+
+<p>実際に測定した距離の数値（{“distance”:158}など）が転送されていることが確認できました！</p>
+
+<p>この先は、SORACOM Beamのような機能を利用して、AWSとの連携も可能です。後は煮るなり焼くなり自由自在というわけです。</p>
+
+<p>今回はとりあえず動かすためにバイトコードをコピペしたりしていますが、開発フローの効率化のために、@hasumikin さんのmrubyc-utilsというツールもありますので、興味のあるの方は御覧ください。
+<a href="https://github.com/hasumikin/mrubyc-utils">https://github.com/hasumikin/mrubyc-utils</a></p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>この記事では、WioLTEというモバイルデータ通信が可能なボード上で、mruby/cを使って開発を行う基本的な方法を紹介しました。
+環境をそろえるのが面倒だったりしますが、一度始めてしまえば意外とあっさり動くので、興味のある方はぜひトライしてみてほしいです。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p><a href="https://twitter.com/kishima">@kishima</a></p>
+
+<p>組み込みソフト系サラリーマンです。Rubyは趣味として触れ合うことが多いです。
+TokyuRuby会議のスタッフをしたり、Kawasaki.rbに時々参加したりしています。</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
