@@ -168,7 +168,7 @@ binding.irb
 
 同じくMinitestを使った資料として、Railsガイドにも [テスト](https://railsguides.jp/testing.html) について書いたページがあります。Railsの各部品のテストについて丁寧に説明があります。
 
-また、Railsのテストフレームワークとしてよく使われているRspecについては [Everyday Rails](https://leanpub.com/everydayrailsrspec-jp) に網羅的にまとまっています。目次を見ると分かるように、Railsの各部品ごとに書くことができる各種テストを説明しています。
+また、Railsのテストフレームワークとしてよく使われているRspecについては [Everyday Rails - RSpecによるRailsテスト入門](https://leanpub.com/everydayrailsrspec-jp) に網羅的にまとまっています。目次を見ると分かるように、Railsの各部品ごとに書くことができる各種テストを説明しています。
 
 ### セキュリティ
 
