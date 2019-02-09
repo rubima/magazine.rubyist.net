@@ -38,8 +38,8 @@ tags: FirstStepRuby
 Ruby の処理系にはいくつかの種類があります。
 
 - CRuby（単に "Ruby" と言った場合はほとんどこれを指す）
-- [JRuby](http://jruby.org/)
-- [Rubinius](http://rubini.us/)
+- [JRuby](https://www.jruby.org/)
+- [Rubinius](https://rubinius.com/)
 - [mruby](https://github.com/mruby/mruby)
 
 特に理由が無ければ CRuby を入れておけば間違いないです。
@@ -62,10 +62,10 @@ Ruby で言うと、以下の2つが主流です。
 
 #### Windows
 
-- [RubyInstaller](http://rubyinstaller.org)
+- [RubyInstaller](https://rubyinstaller.org/)
 - [RailsInstaller](http://railsinstaller.org)
 
-自分で Ruby をビルドしたい方は [Ruby環境構築講座 Windows編 - 達人出版会](http://tatsu-zine.com/books/winrubybuild) を参照されるのが良いかと思います。
+自分で Ruby をビルドしたい方は [Ruby環境構築講座 Windows編 - 達人出版会](https://tatsu-zine.com/books/winrubybuild) を参照されるのが良いかと思います。
 
 #### mac
 
@@ -115,7 +115,7 @@ $ rbenv shell 1.9.3-p395
 
 ### IDE
 
-IDE を使いたい方は [RubyMine](http://www.jetbrains.com/ruby/) を検討されると良いでしょう。
+IDE を使いたい方は [RubyMine](https://www.jetbrains.com/ruby/) を検討されると良いでしょう。
 
 
 ## 学習方法
@@ -139,7 +139,7 @@ Ruby 本体に gem コマンドが付属しているのですぐに使うこと�
     $ gem update # ライブラリのアップデート
     $ gem uninstall [ライブラリ名]
 
-### [Bundler](http://gembundler.com/)
+### [Bundler](https://bundler.io/)
 
 これもライブラリの管理ツールですが、アプリケーション固有で必要になるライブラリの管理に使います。
 Rails や Padrino 等でアプリケーション開発をする場合はこれを使用する前提となっています。
