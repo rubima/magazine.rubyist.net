@@ -18,22 +18,24 @@ class Checker
   end
 end
 
-have_error = false
+if $0 == __FILE__
+  have_error = false
 
-Dir.glob("articles/**/_posts/*.md") do |fname|
-  c = Checker.new(fname)
-  c.check
-  unless c.errors.empty?
-    have_error = true
-
-    c.errors.each do |error|
-      puts error
+  Dir.glob("articles/**/_posts/*.md") do |fname|
+    c = Checker.new(fname)
+    c.check
+    unless c.errors.empty?
+      have_error = true
+  
+      c.errors.each do |error|
+        puts error
+      end
     end
   end
-end
-
-if have_error
-  exit(1)
-else
-  exit(0)
+  
+  if have_error
+    exit(1)
+  else
+    exit(0)
+  end
 end
