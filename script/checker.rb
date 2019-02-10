@@ -11,6 +11,9 @@ class Checker
     check_filename
   end
 
+  # ファイル名のチェックを行う
+  # YYYY-mm-dd-号数-記事名.mdの形式であることを期待している。しかしながら
+  # 号外などは号数がないケースがあるので、号数のチェックは厳密にはしていない。
   def check_filename
     if File.basename(fname) !~ /\d{4}-\d{2}-\d{2}-(\d{4}-)?.+\.md/
       @errors << "#{fname}のファイル名が規則違反です。「YYYY-mm-dd-号数-記事名.md」の名前にしてください。"
