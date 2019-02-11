@@ -2,7 +2,9 @@ language: ruby
 rvm:
   - 2.5.1
 
-script: ./script/cibuild
+script:
+  - ./script/cibuild
+  - ruby ./script/checker.rb
 
 env:
   global:
