@@ -29,7 +29,8 @@ class Checker
         @errors << "#{fname}のヘッダに「post_author:」が存在しません。追加してください。"
       end
 
-      unless fdata.any? { |line| line =~ /^created_on: +\d{4}-\d{2}-\d{2}/ }
+      # created_on:のチェック。日付の書式チェックまでは行わない（現状でまちまち）
+      unless fdata.any? { |line| line =~ /^created_on:/ }
         @errors << "#{fname}のヘッダに「created_on:」が存在しません。追加してください。"
       end
     end
