@@ -24,6 +24,18 @@ RubyKaigi 2019 の Speaker による事前資料・発表資料集です。節�
 
 RubyKaigi 2019 に向けて多くの企業や参加者、 Rubyist 、福岡出身者の方々などからの有益情報です。漏れがあったらすみません！[編集](https://twitter.com/miyohide)までお知らせください！
 
+### [「RubyKaigi 2019」に Shuttle Sponsor として参加します](https://smarthr.co.jp/news/info/20307)
+
+株式会社SmartHRさまによるShuttle Sponsorのご案内です。記事執筆時点（3/22）時点でアンケートが実施されているようです。
+
+### [【RubyKaigi 2019 参加者に捧ぐ】福岡で起業した男が本気で書いた福岡グルメまとめ](https://techlife.cookpad.com/entry/2019/03/20/170000)
+
+ウミーベ株式会社さまによる福岡グルメ情報のまとめです。
+
+### [【保存版】自腹でつくる博多グルメマップ #RubyKaigi 2019](https://tech.smarthr.jp/entry/2019/03/21/121514)
+
+毎年恒例、株式会社SmartHRさまによる自腹で作成された福岡グルメマップです。
+
 ### 書いた人
 
 * RubyKaigi 2018 Speaker から : Speakerのみなさん
