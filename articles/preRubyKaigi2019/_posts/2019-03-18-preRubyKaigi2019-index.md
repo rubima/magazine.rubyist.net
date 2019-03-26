@@ -10,6 +10,18 @@ tags: preRubyKaigi2019 index
 
 このレポートでは、4/18 (木) から 4/20 (土) に福岡国際会議場で開催される [RubyKaigi 2019](http://rubykaigi.org/2019) の基調講演やプレゼンテーション発表・企画を紹介し、見どころをいち早くお伝えします。
 
+## ローカルオーガナイザー 近藤うちお氏より寄稿
+
+RubyKaigi 2019 ローカルオーガナイザーであり、福岡の地域Rubyコミュニティ[Fukuoka.rb](https://fukuokarb.connpass.com/)や、地域Ruby会議[福岡Ruby会議02](http://regional.rubykaigi.org/fukuoka02/)を開催している近藤うちおさん([@udzura](https://twitter.com/udzura))より、今回のRubyKaigiに関する文章を寄稿していただきました。
+
+### [福岡のRubyコミュニティ、Rubyでないコミュニティ、そしてRubyistの私](/articles/prerubykaigi2019/from-local-organizer-2019-index.html)
+
+Fukuoka.rbが協力して開催する関連イベントも是非ご参加ください。
+
+* [RejectKaigi 2019 福岡会場](https://fukuokarb.connpass.com/event/124966/)
+* [RejectKaigi 2019 東京会場](https://pixiv.connpass.com/event/124727/)
+* [RubyKaigi 2019 After Hack!! @博多](https://fukuokarb.connpass.com/event/124406/)
+
 ## RubyKaigi 2019 Speaker から（随時更新）
 
 RubyKaigi 2019 の Speaker による事前資料・発表資料集です。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
