@@ -44,6 +44,10 @@ RubyKaigi 2019 に向けて多くの企業や参加者、 Rubyist 、福岡出�
 
 株式会社マネーフォワードさまの福岡出身の熱き人事による博多うどん店のまとめ(公式版へのアンサー記事)です。
 
+### [RubyKaigi 2019 に Coffee Sponsor として協賛します](https://tech.speee.jp/entry/rubykaigi2019-coffee-sponsor)
+
+株式会社SpeeeさまによるCoffee Sponsorの紹介と、コード懇親会、After Hack、RejectKaigiの案内です。
+
 ### 書いた人
 
 * RubyKaigi 2018 Speaker から : Speakerのみなさん
