@@ -14,7 +14,7 @@ tags: preRubyKaigi2019 index
 
 RubyKaigi 2019 ローカルオーガナイザーであり、福岡の地域Rubyコミュニティ[Fukuoka.rb](https://fukuokarb.connpass.com/)や、地域Ruby会議[福岡Ruby会議02](http://regional.rubykaigi.org/fukuoka02/)を開催している近藤うちおさん([@udzura](https://twitter.com/udzura))より、今回のRubyKaigiに関する文章を寄稿していただきました。
 
-### [福岡のRubyコミュニティ、Rubyでないコミュニティ、そしてRubyistの私]({{base}}{% post_url articles/prerubykaigi2019/2019-03-26-from-local-organizer-2019-index %})
+### [福岡のRubyコミュニティ、Rubyでないコミュニティ、そしてRubyistの私]({{base}}{% post_url articles/preRubyKaigi2019/2019-03-18-preRubyKaigi2019-from-local-organizer-2019-index %})
 
 Fukuoka.rbが協力して開催する関連イベントも是非ご参加ください。
 
