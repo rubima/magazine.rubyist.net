@@ -105,3 +105,9 @@ RubyKaigiの直前の[RejectKaigi 2019 福岡会場](https://fukuokarb.connpass.
 ----
 
 本記事の内容について、[@nagachikaさん](https://twitter.com/nagachika)、[@minimum2scpさん](https://twitter.com/minimum2scp)のアドバイスをいただいています。ありがとうございました。
+
+## 著者について
+
+udzura (近藤 うちお): [@udzura](https://twitter.com/udzura/) && [@udzura](https://github.com/udzura/) && [udzura.hatenablog.jp](https://udzura.hatenablog.jp/)
+
+Fukuoka.rbの人で、RubyKaigi 2019 スピーカー兼ローカルオーガナイザー。最近作ってるものは [Haconiwa](https://haconiwa.mruby.org/) と [Grenadine](https://udzura.hatenablog.jp/entry/2019/03/07/202615) 。
