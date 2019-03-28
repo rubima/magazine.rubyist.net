@@ -3,14 +3,17 @@ layout: post
 title: 福岡のRubyコミュニティ、Rubyでないコミュニティ、そしてRubyistの私
 short_title: RubyKaigi 2019 ローカルオーガナイザーより寄稿
 tags: preRubyKaigi2019
+post_author: udzura
+created_on: 2019/03/26
+updated_on: 2019/03/28
 ---
 {% include base.html %}
 
-本記事は、RubyKaigi 2019 ローカルオーガナイザーである近藤うちお([@udzura](https://twitter.com/udzura))による情緒的な文章です。
+## はじめに
 
-----
+こん(にち\|ばん)は。@udzura from Fukuoka.rbです。RubyKaigi 2019 ローカルオーガナイザーでもあります。
 
-こん(にち\|ばん)は。@udzura from Fukuoka.rbです。私が東京のRubyコミュニティから離れ、福岡に移住して5年半、ついに福岡でRubyKaigiが開催されることになりました。様々な気持ちになり、でしゃばりの謗りを承知の上で今回、寄稿させていただき、タイトルのような話をさせていただきます。
+私が東京のRubyコミュニティから離れ、福岡に移住して5年半、ついに福岡でRubyKaigiが開催されることになりました。様々な気持ちになり、でしゃばりの謗りを承知の上で今回、寄稿させていただき、タイトルのような話をさせていただきます。
 
 ## 福岡のRubyコミュニティ
 
@@ -29,7 +32,7 @@ Rubyはどうでしょうか？ 少し詳しい方であれば、福岡県をは
 ただ、その先の活動記録の日記などがすでにデッドになっており、詳細を知ることは難しくなっています。[Web Archive](https://web.archive.org/web/20080307011725/http://d.hatena.ne.jp/authorNari/20080223/1203768426)などの記録から掘り出す限り当時は月に1〜2回行われていたようです。また、通常のミートアップの他に、「Rubyist九州会議 2008」「九州Ruby会議01」の2つの大規模なイベントが開催されているようでした。
 
 * [Rubyist九州会議 2008](http://jp.rubyist.net/?Rubyist%B6%E5%BD%A3%B2%F1%B5%C4+2008)
-* [九州Ruby会議01](/articles/0026/0026-KyushuRubyKaigi01Report.html)
+* [RegionalRubyKaigiレポート 九州Ruby会議01](/articles/0026/0026-KyushuRubyKaigi01Report.html)
 
 前者は日本Ruby会議2008に登壇される3名の福岡のエンジニアのために、リハーサル的に行う側面もあったようですが、最初の九州での大きなRubyistイベントと思われます。
 
@@ -45,13 +48,15 @@ Rubyはどうでしょうか？ 少し詳しい方であれば、福岡県をは
 
 そこで福岡地域を中心に一旦立て直しを図るべく、Watsさんが**Fukuoka.rb**を立ち上げたようです。そして[春山さん](https://twitter.com/Spring_MT)がそれを引き継ぎ、彼を中心に定期開催される時代が訪れました。春山さんはこのコミュニティで、地域Ruby会議「福岡Ruby会議01」を開催します。
 
-* [福岡Ruby会議01](https://magazine.rubyist.net/articles/0042/0042-FukuokaRubyKaigi01Report.html)
+* [RegionalRubyKaigiレポート 福岡Ruby会議01](/articles/0042/0042-FukuokaRubyKaigi01Report.html)
 
 私が移住前に福岡を訪れた時は、この当時のFukuoka.rbに関わる皆様にお世話になった記憶があります。
 
 ### Fukuoka.rb（現在）
 
-しかし、春山さんが東京に戻ってしまい、また福岡のRubyコミュニティは危機に陥りました（？）。そのタイミングで2013年秋に私こと @udzura が福岡に移住してきました。それに合わせて、今回のRubyKaigiキーノートスピーカーの@nagachikaさんを始め、@minimum2scpさんや@morygonzalezさんたちでFukuoka.rbを再起動しようということになりました。これが現世代のFukuoka.rbです。現在行われているミートアップの採番は2014年1月に行われたこの世代の1回目のミートアップからのものです。
+しかし、春山さんが東京に戻ってしまい、また福岡のRubyコミュニティは危機に陥りました（？）。
+
+そのタイミングで2013年秋に私こと @udzura が福岡に移住してきました。それに合わせて、今回のRubyKaigiキーノートスピーカーの[@nagachikaさん](https://twitter.com/nagachika)を始め、[@minimum2scpさん](https://twitter.com/minimum2scp)や[@morygonzalezさん](https://twitter.com/morygonzalez)たちでFukuoka.rbを再起動しようということになりました。これが現世代のFukuoka.rbです。現在行われているミートアップの採番は2014年1月に行われたこの世代の1回目のミートアップからのものです。
 
 * [Fukuoka.rb.next #1](https://fukuokarb.doorkeeper.jp/events/7726)
 
@@ -59,9 +64,9 @@ Rubyはどうでしょうか？ 少し詳しい方であれば、福岡県をは
 
 こうしてコミュニティが無事復活し、粛々と続けることで、徐々になんとな〜く集まる人を増やして行きました。そして2017年には地域Ruby会議として「福岡Ruby会議02」も開催することができました。
 
-* https://magazine.rubyist.net/articles/0057/0057-FukuokaRubyKaigi02Report.html
+* [RegionalRubyKaigiレポート 福岡Ruby会議02](/articles/0057/0057-FukuokaRubyKaigi02Report.html)
 
-RubyKaigiの直前の [RejectKaigi 2019 福岡会場](https://fukuokarb.connpass.com/event/124966/) をFukuoka.rbミートアップに含んで、RubyKaigiまでにのべ131回（＋Nishitetsu.rb 2回）のミートアップが開催される予定です。
+RubyKaigiの直前の[RejectKaigi 2019 福岡会場](https://fukuokarb.connpass.com/event/124966/)をFukuoka.rbミートアップに含んで、RubyKaigiまでにのべ131回（＋Nishitetsu.rb 2回）のミートアップが開催される予定です。
 
 ## 福岡のRubyでないコミュニティ
 
@@ -77,7 +82,7 @@ RubyKaigiの直前の [RejectKaigi 2019 福岡会場](https://fukuokarb.connpass
 
 そういうわけで、今年のRubyKaigiは福岡のテイストを随所に感じられるものになるのではないかと思います。YATAIスポンサー様提供の屋台や地元川端商店街などで開催される懇親会でも福岡を感じるでしょうが、それに加えて参加者の中にいる福岡コミュニティの人々と交流していただくことで、是非とも福岡の「えも言われぬ、あの感じ」を感じ取っていただければ、ローカルオーガナイザーとしてこれ以上の喜びはありません。
 
-## Rubyistの私とRubyKaigi
+## Rubyistの私とあなたとRubyKaigi
 
 さて正直なところ、今の福岡の市井のRubyistはどうなのでしょうか？ Fukuoka.rbの常連さんや、福岡Ruby会議02の実行委員、RubyKaigi 2019のローカルオーガナイザー陣など、「お客さま」を飛び越えてコミュニティで何かをしたい！ と手を挙げてくださるRubyistが福岡にもたくさん増えたなと思っています。一方で、なかなか地域コミュニティに顔を出していただけないRubyistもたくさんおられるように感じています。
 
