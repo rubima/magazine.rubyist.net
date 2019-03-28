@@ -32,7 +32,7 @@ Rubyはどうでしょうか？ 少し詳しい方であれば、福岡県をは
 ただ、その先の活動記録の日記などがすでにデッドになっており、詳細を知ることは難しくなっています。[Web Archive](https://web.archive.org/web/20080307011725/http://d.hatena.ne.jp/authorNari/20080223/1203768426)などの記録から掘り出す限り当時は月に1〜2回行われていたようです。また、通常のミートアップの他に、「Rubyist九州会議 2008」「九州Ruby会議01」の2つの大規模なイベントが開催されているようでした。
 
 * [Rubyist九州会議 2008](http://jp.rubyist.net/?Rubyist%B6%E5%BD%A3%B2%F1%B5%C4+2008)
-* [RegionalRubyKaigiレポート 九州Ruby会議01](/articles/0026/0026-KyushuRubyKaigi01Report.html)
+* [RegionalRubyKaigiレポート 九州Ruby会議01]({{base}}{% post_url articles/0026/2009-06-30-0026-KyushuRubyKaigi01Report %})
 
 前者は日本Ruby会議2008に登壇される3名の福岡のエンジニアのために、リハーサル的に行う側面もあったようですが、最初の九州での大きなRubyistイベントと思われます。
 
@@ -44,11 +44,11 @@ Rubyはどうでしょうか？ 少し詳しい方であれば、福岡県をは
 
 ### Fukuoka.rb（春山時代）
 
-一方で、Rubyist九州の活動は徐々に下火になっていったようです。九州Ruby会議01を評して「スタッフが燃え尽き症候群に陥っていたようです」とおっしゃっている記録があり、その影響もあるかもしれません（Rubyist九州の新井さんはその後[九州Ruby会議02を開催していますが](/articles/0043/0043-KyushuRubyKaigi02Report.html)）。
+一方で、Rubyist九州の活動は徐々に下火になっていったようです。九州Ruby会議01を評して「スタッフが燃え尽き症候群に陥っていたようです」とおっしゃっている記録があり、その影響もあるかもしれません（Rubyist九州の新井さんはその後[九州Ruby会議02を開催していますが]({{base}}{% post_url articles/0043/2013-07-31-0043-KyushuRubyKaigi02Report %})）。
 
 そこで福岡地域を中心に一旦立て直しを図るべく、Watsさんが**Fukuoka.rb**を立ち上げたようです。そして[春山さん](https://twitter.com/Spring_MT)がそれを引き継ぎ、彼を中心に定期開催される時代が訪れました。春山さんはこのコミュニティで、地域Ruby会議「福岡Ruby会議01」を開催します。
 
-* [RegionalRubyKaigiレポート 福岡Ruby会議01](/articles/0042/0042-FukuokaRubyKaigi01Report.html)
+* [RegionalRubyKaigiレポート 福岡Ruby会議01]({{base}}{% post_url articles/0042/2013-05-29-0042-FukuokaRubyKaigi01Report %})
 
 私が移住前に福岡を訪れた時は、この当時のFukuoka.rbに関わる皆様にお世話になった記憶があります。
 
@@ -64,7 +64,7 @@ Rubyはどうでしょうか？ 少し詳しい方であれば、福岡県をは
 
 こうしてコミュニティが無事復活し、粛々と続けることで、徐々になんとな〜く集まる人を増やして行きました。そして2017年には地域Ruby会議として「福岡Ruby会議02」も開催することができました。
 
-* [RegionalRubyKaigiレポート 福岡Ruby会議02](/articles/0057/0057-FukuokaRubyKaigi02Report.html)
+* [RegionalRubyKaigiレポート 福岡Ruby会議02]({{base}}{% post_url articles/0057/2018-02-11-0057-FukuokaRubyKaigi02Report %})
 
 RubyKaigiの直前の[RejectKaigi 2019 福岡会場](https://fukuokarb.connpass.com/event/124966/)をFukuoka.rbミートアップに含んで、RubyKaigiまでにのべ131回（＋Nishitetsu.rb 2回）のミートアップが開催される予定です。
 
