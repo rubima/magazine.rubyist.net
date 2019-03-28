@@ -104,4 +104,4 @@ RubyKaigiの直前の[RejectKaigi 2019 福岡会場](https://fukuokarb.connpass.
 
 ----
 
-本記事の内容について、[@nagachikaさん](https://twitter.com/nagachika)、[@minimum2scp（やすぅん）さん](https://twitter.com/minimum2scp)のアドバイスをいただいています。ありがとうございました。
+本記事の内容について、[@nagachikaさん](https://twitter.com/nagachika)、[@minimum2scpさん](https://twitter.com/minimum2scp)のアドバイスをいただいています。ありがとうございました。
