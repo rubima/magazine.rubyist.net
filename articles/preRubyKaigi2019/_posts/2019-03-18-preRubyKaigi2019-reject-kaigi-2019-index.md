@@ -5,7 +5,7 @@ short_title: RejectKaigi 2019
 tags: preRubyKaigi2019
 post_author: alitaso346
 created_on: 2019/03/29
-updated_on: 2019/04/06
+updated_on: 2019/04/09
 ---
 {% include base.html %}
 
