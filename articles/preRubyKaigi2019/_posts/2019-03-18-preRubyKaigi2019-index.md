@@ -32,6 +32,17 @@ RubyKaigi 2019 の Speaker による事前資料・発表資料集です。節�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 20 日 (土)
 
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "Play with local vars" @ujihisa
+
+<https://rubykaigi.org/2019/presentations/ujm.html#apr20>
+
+"This 40min talk is only about Ruby's local variables. I'm not going to talk about anything else." とあるように、発表枠40分かけてひたすらずっとRubyのローカル変数についてだけ話をします。話というか、タイトルに"Play"とあるように、ローカル変数で遊びます。
+RubyKaigiではこれまでローカル変数の仕様の詳細や実装の話を含む発表がありましたが、時間枠全てひたすらローカル変数についてだけ説明するという発表はありそうでなかったのではないでしょうか。
+
+関連しそうな話題: ["Hijacking Ruby Syntax in Ruby"](https://rubykaigi.org/2018/presentations/joker1007.html#may31)
+
+発表者のujihisaは、過去のRubyKaigi 3回すべてVimの発表をしてきたようで、Rubyの話をするのは実は今回がはじめてで、とても緊張しています。
+
 ## 各有益情報
 
 RubyKaigi 2019 に向けて多くの企業や参加者、 Rubyist 、福岡出身者の方々などからの有益情報です。漏れがあったらすみません！[編集](https://twitter.com/miyohide)までお知らせください！
