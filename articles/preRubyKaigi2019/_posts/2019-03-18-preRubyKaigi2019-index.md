@@ -79,6 +79,10 @@ RubyKaigi 2019 に向けて多くの企業や参加者、 Rubyist 、福岡出�
 
 株式会社エムスリーのブース出展情報です。ノベルティや参加者について記載されてます。
 
+### [RubyKaigi 2019を盛り上げていこう！STORES.jpのおすすめ「福岡土産」Vol.1](https://note.mu/mkondo/n/ndf1de90a4435)
+
+PlatinumスポンサーのSTORES.jpさまによる福岡土産の特集です。[RubyKaigi 2019を盛り上げていこう！STORES.jpのおすすめ「福岡土産」Vol.1](https://note.mu/mkondo/n/ndf1de90a4435) と [RubyKaigi 2019を盛り上げていこう！STORES.jpのおすすめ「福岡土産」Vol.2](https://note.mu/mkondo/n/n03888338a8fd) の2つあります。
+
 ### 書いた人
 
 * RubyKaigi 2019 Speaker から : Speakerのみなさん
