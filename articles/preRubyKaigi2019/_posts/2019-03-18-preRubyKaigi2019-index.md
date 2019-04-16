@@ -71,9 +71,9 @@ RubyKaigi 2019 に向けて多くの企業や参加者、 Rubyist 、福岡出�
 
 株式会社SpeeeさまによるCoffee Sponsorの紹介と、コード懇親会、After Hack、RejectKaigiの案内です。
 
-### [RejectKaigi 2019 を開催します]({{base}}{% post_url articles/preRubyKaigi2019/2019-03-18-preRubyKaigi2019-reject-kaigi-2019-index %})
+### [RejectKaigi 2019 を開催しました](https://inside.pixiv.blog/alitaso/6897/)
 
-2019年4月12日（金）にピクシブ株式会社とGMOペパボ株式会社の福岡オフィスにてRejectKaigi 2019を開催します。
+2019年4月12日（金）にピクシブ株式会社とGMOペパボ株式会社の福岡オフィスにて開催されたRejectKaigi 2019開催レポートへのリンクです。
 
 ### [エムスリーは「RubyKaigi 2019」にプラチナスポンサーとして協賛 & ブース出展します](https://www.m3tech.blog/entry/rubykaigi2019)
 
