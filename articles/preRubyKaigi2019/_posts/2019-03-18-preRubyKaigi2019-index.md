@@ -28,6 +28,10 @@ RubyKaigi 2019 の Speaker による事前資料・発表資料集です。節�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 18 日 (木)
 
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "A Type-level Ruby Interpreter for Testing and Understanding" @mametter
+
+[RubyKaigi 2019 "A Type-level Ruby Interpreter for Testing and Understanding" の発表要旨](https://techlife.cookpad.com/entry/2019/04/16/164858)
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 19 日 (金)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 20 日 (土)
@@ -86,6 +90,10 @@ PlatinumスポンサーのSTORES.jpさまによる福岡土産の特集です。
 ### [RubyKaigi 2019 に今年もいっぱい参加します](https://blog.agile.esm.co.jp/entry/rubykaigi-2019-news)
 
 Night Cruise Sponsorの永和システムマネジメントさまによる登壇予定、スポンサーブースなどの紹介です。
+
+### [クックパッド一同は、RubyKaigi 2019でみなさんにお会いできることを楽しみにしています！](https://techlife.cookpad.com/entry/2019/04/15/182000)
+
+クックパッド株式会社さまによる登壇予定やCookpad Daily Ruby Puzzles など限定企画の紹介記事です。
 
 ### 書いた人
 
