@@ -28,6 +28,10 @@ RubyKaigi 2019 の Speaker による事前資料・発表資料集です。節�
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 18 日 (木)
 
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "Write a Ruby interpreter in Ruby for Ruby 3" @ko1
+
+[RubyKaigi 2019: Write a Ruby interpreter in Ruby for Ruby 3](https://techlife.cookpad.com/entry/2019/04/17/014142)
+
 #### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "A Type-level Ruby Interpreter for Testing and Understanding" @mametter
 
 [RubyKaigi 2019 "A Type-level Ruby Interpreter for Testing and Understanding" の発表要旨](https://techlife.cookpad.com/entry/2019/04/16/164858)
@@ -46,6 +50,10 @@ RubyKaigiではこれまでローカル変数の仕様の詳細や実装の話�
 関連しそうな話題: ["Hijacking Ruby Syntax in Ruby"](https://rubykaigi.org/2018/presentations/joker1007.html#may31)
 
 発表者のujihisaは、過去のRubyKaigi 3回すべてVimの発表をしてきたようで、Rubyの話をするのは実は今回がはじめてで、とても緊張しています。
+
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "Reducing ActiveRecord memory consumption using Apache Arrow" @mrkn
+
+[RubyKaigi 2019: Reducing ActiveRecord memory consumption using Apache Arrow](https://tech.speee.jp/entry/rubykaigi2019mrkn)
 
 ## 各有益情報
 
