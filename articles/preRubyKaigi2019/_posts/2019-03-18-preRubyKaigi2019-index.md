@@ -24,7 +24,7 @@ Fukuoka.rbが協力して開催する関連イベントも是非ご参加くだ�
 
 ## RubyKaigi 2019 Speaker から
 
-RubyKaigi 2019 の Speaker による事前資料・発表資料集です。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
+RubyKaigi 2019 の Speaker による事前資料・発表資料・登壇まとめ集です。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 18 日 (木)
 
@@ -51,6 +51,10 @@ RubyKaigi 2019 の Speaker による事前資料・発表資料集です。節�
 [RubyKaigi 2019 で登壇しました。](https://watson.hatenablog.com/entry/2019/04/25/015037)
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 19 日 (金)
+
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) Practical mruby/c firmware development with CRuby
+
+[RubyKaigi2019で発表した内容について〈mrubyc-test編〉](http://shimane.monstar-lab.com/hasumin/RubyKaigi2019-mrubyc-test)
 
 #### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) Better CSV processing with Ruby 2.6
 
@@ -80,6 +84,10 @@ RubyKaigiではこれまでローカル変数の仕様の詳細や実装の話�
 #### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "Reducing ActiveRecord memory consumption using Apache Arrow" @mrkn
 
 [RubyKaigi 2019: Reducing ActiveRecord memory consumption using Apache Arrow](https://tech.speee.jp/entry/rubykaigi2019mrkn)
+
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) Red Chainer and Cumo: Practical Deep Learning in Ruby
+
+[RubyKaigi 2019参加レポート〜sonots登壇セッション & エンジニア8名による厳選セッション](https://techblog.zozo.com/entry/rubykaigi2019)
 
 ## 各有益情報
 
