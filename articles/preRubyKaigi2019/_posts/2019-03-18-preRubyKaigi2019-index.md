@@ -22,23 +22,49 @@ Fukuoka.rbが協力して開催する関連イベントも是非ご参加くだ�
 * [RejectKaigi 2019 東京会場](https://pixiv.connpass.com/event/124727/)
 * [RubyKaigi 2019 After Hack!! @博多](https://fukuokarb.connpass.com/event/124406/)
 
-## RubyKaigi 2019 Speaker から（随時更新）
+## RubyKaigi 2019 Speaker から
 
 RubyKaigi 2019 の Speaker による事前資料・発表資料集です。節のタイトルはアブストラクトへのリンク、節内のリストはご用意いただいた資料へのリンクです。Speaker のみなさま、資料募集中です！
 
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 18 日 (木)
 
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) How to use OpenAPI3 for API developer
+
+[RubyKaigi 2019でOpenAPI 3について登壇しました](https://ota42y.com/blog/2019/04/23/rubykaigi_2019/)
+
+[RubyKaigi 2019で登壇した時のCFPや準備の話](https://ota42y.com/blog/2019/04/24/rubykaigi_2019_cfp/)
+
 #### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "Write a Ruby interpreter in Ruby for Ruby 3" @ko1
 
 [RubyKaigi 2019: Write a Ruby interpreter in Ruby for Ruby 3](https://techlife.cookpad.com/entry/2019/04/17/014142)
+
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) Pragmatic Monadic Programing in Ruby
+
+[RubyKaigi 2019で登壇してきました #rubykaigi](http://joker1007.hatenablog.com/entry/2019/04/22/204441)
 
 #### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "A Type-level Ruby Interpreter for Testing and Understanding" @mametter
 
 [RubyKaigi 2019 "A Type-level Ruby Interpreter for Testing and Understanding" の発表要旨](https://techlife.cookpad.com/entry/2019/04/16/164858)
 
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) RMagick, migrate to ImageMagick 7
+
+[RubyKaigi 2019 で登壇しました。](https://watson.hatenablog.com/entry/2019/04/25/015037)
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 19 日 (金)
 
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) Better CSV processing with Ruby 2.6
+
+[RubyKaigi 2019 - Better CSV processing with Ruby 2.6 #rubykaigi](https://www.clear-code.com/blog/2019/4/20.html)
+
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) Invitation to Dark Side of Ruby
+
+[RubyKaigi 2019いってきた＆LTやってきた](https://tagomoris.hatenablog.com/entry/2019/04/25/131224)
+
 ### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) 4 月 20 日 (土)
+
+#### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) Best practices in web API client development
+
+[#RubyKaigi 2019に登壇しました](https://inside.pixiv.blog/sue445/6946)
 
 #### ![title_mark.gif]({{base}}{{site.baseurl}}/images/title_mark.gif) "Play with local vars" @ujihisa
 
