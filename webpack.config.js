@@ -1,9 +1,15 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   // モード値を production に設定すると最適化された状態で、
   // development に設定するとソースマップ有効でJSファイルが出力される
   mode: 'production',
+  // 出力の設定
+  output: {
+    // 出力先のパスは絶対パスを指定する必要がある
+    path: path.join(__dirname, 'assets')
+  },
   module: {
     rules: [
       {
