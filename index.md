@@ -11,14 +11,32 @@ title: るびま
 ## 最新号
 
 {% for post in site.tags.index limit: 1 %}
-- [{{ post.title }}]({{base}}{{ post.url }})
+<div class="card">
+    <h5 class="card-header">
+      <a href="{{base}}{{ post.url }}">{{post.title}}</a>
+    </h5>
+    <div class="card-body">
+      {{post.description}}
+    </div>
+</div>
 {% endfor %}
 
 ## バックナンバー
 
-{% for post in site.tags.index %}
-- [{{ post.title }}]({{base}}{{ post.url }})
+<div class="card-group">
+{% for post in site.tags.index limit: 5 %}
+    <div class="card">
+        <h5 class="card-header">
+            <a href="{{base}}{{ post.url }}">{{post.title}}</a>
+        </h5>
+        <div class="card-body">
+            {{post.description}}
+        </div>
+    </div>
 {% endfor %}
+</div>
+
+<a href="#">さらに過去のバックナンバー</a>
 
 ## FAQ
 
