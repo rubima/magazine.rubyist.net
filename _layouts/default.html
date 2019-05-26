@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html>
-  {% include base.html %}
-  {% include index_head.html %}
-  <body>
-    <div class="container-fluid">
-        <div class="row full">
-            <div class="col-md-2 hidden-xs sidebar">
-                {% include sidebar.html %}
-            </div>
-            <div class="col-md-10 main">
-                <div class="row">
-                    <div class="col-md-12">
-                        <img src="{{base}}{{ site.baseurl }}/images/rubima_logo_l.png">
-                        <h1>{{page.title}}</h1>
-                        <div class="social-buttons">
-                            {% include social-buttons.html %}
-                        </div>
-                        <div id="redirect_notice"></div>
-                        <div class="section">
-                           『るびま』は、Ruby に関する技術記事はもちろんのこと、Rubyist へのインタビューやエッセイ、その他をお届けするウェブ雑誌です。
-                        </div>
-                        {{ content }}
-                    </div>
-                </div>
-            </div>
+{% include base.html %}
+{% include index_head.html %}
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #b71c1c">
+        <a class="navbar-brand" href="#">
+            <img src="images/rubima_logo.png" height="30" class="d-inline-block align-top">
+            Rubyist Magazine
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">トップページ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">最新号</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">バックナンバー</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">お問い合わせ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">RSS</a></li>
+            </ul>
         </div>
+    </nav>
+
+    <div class="container">
+        <h1>{{page.title}}</h1>
+        <div id="redirect_notice"></div>
+        <div class="section">
+            『るびま』は、Ruby に関する技術記事はもちろんのこと、Rubyist へのインタビューやエッセイ、その他をお届けするウェブ雑誌です。
+        </div>
+        {{ content }}
     </div>
-  </body>
+</body>
+
 </html>

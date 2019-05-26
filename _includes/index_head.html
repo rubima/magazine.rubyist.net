@@ -15,14 +15,9 @@
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <script src="{{base}}{{ site.baseurl }}/js/jquery.min.js"></script>
-  <script src="{{base}}{{ site.baseurl }}/js/bootstrap.min.js"></script>
   <script src="{{base}}{{ site.baseurl }}/js/checkurl.js"></script>
-  <link href="{{base}}{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <link href="{{base}}{{ site.baseurl }}/css/theme.css" rel="stylesheet" type="text/css">
-  <link href="{{base}}{{ site.baseurl }}/css/syntax.css" rel="stylesheet" type="text/css">
-  <link href="{{base}}{{ site.baseurl }}/css/sharebutton.css" rel="stylesheet" type="text/css">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="{{base}}{{ site.baseurl }}/assets/main.js"></script>
+  <link href="{{base}}{{ site.baseurl }}/assets/style.css" rel="stylesheet" type="text/css">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
