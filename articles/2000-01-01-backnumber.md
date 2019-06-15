@@ -13,6 +13,10 @@ short_title: バックナンバー
 
 ## 巻頭言
 
+{% for post in site.tags.ForeWord %}
+- [{{ post.title }}]({{base}}{{ post.url }})
+{% endfor %}
+
 ## Rubyist Hotlinks（インタビュー）
 
 ## RegionalRubyKaigiレポート
@@ -52,5 +56,3 @@ short_title: バックナンバー
 ### 中国の若きエンジニアの肖像
 
 ### 他言語からの訪問
-
-### 
