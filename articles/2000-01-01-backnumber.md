@@ -19,6 +19,10 @@ short_title: バックナンバー
 
 ## Rubyist Hotlinks（インタビュー）
 
+{% for post in site.tags.Hotlinks %}
+- [{{ post.title }}]({{base}}{{ post.url }})
+{% endfor %}
+
 ## RegionalRubyKaigiレポート
 
 ## 連載（3回以上続いた連載記事）
