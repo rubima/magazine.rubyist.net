@@ -25,6 +25,10 @@ short_title: バックナンバー
 
 ## RegionalRubyKaigiレポート
 
+{% for post in site.tags.regionalRubyKaigi %}
+- [{{ post.title }}]({{base}}{{ post.url }})
+{% endfor %}
+
 ## 連載（3回以上続いた連載記事）
 
 ### Rubyではじめるプログラミング
