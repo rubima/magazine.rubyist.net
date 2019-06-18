@@ -33,6 +33,10 @@ short_title: バックナンバー
 
 ### Rubyではじめるプログラミング
 
+{% for post in site.tags.FirstProgramming %}
+- [{{ post.title }}]({{base}}{{ post.url }})
+{% endfor %}
+
 ### RubyビギナーのためのCGI入門
 
 ### あなたのRubyコードを添削します
