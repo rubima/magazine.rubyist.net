@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
-short_title: RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
+title: RegionalRubyKaigi (66) レポート ぎんざ Ruby 会議 01
+short_title: RegionalRubyKaigi (66) レポート ぎんざ Ruby 会議 01
 tags: 0057 GinzaRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigiレポート 福岡Ruby会議02
-short_title: RegionalRubyKaigiレポート 福岡Ruby会議02
+title: RegionalRubyKaigiレポート (67) 福岡Ruby会議02
+short_title: RegionalRubyKaigiレポート (67) 福岡Ruby会議02
 tags: 0057 FukuokaRubyKaigi02Report regionalRubyKaigi
 ---
 {% include base.html %}
