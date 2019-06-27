@@ -2,7 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (52) 浜松 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (52) 浜松 Ruby 会議 01
-tags: 0051 HamamatsuRubyKaigi01Report
+tags: 0051 HamamatsuRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}
 

@@ -2,7 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (61) 松江 Ruby 会議 08
 short_title: RegionalRubyKaigi レポート (61) 松江 Ruby 会議 08
-tags: 0056 MatsueRubyKaigi08Report
+tags: 0056 MatsueRubyKaigi08Report regionalRubyKaigi
 ---
 {% include base.html %}
 
