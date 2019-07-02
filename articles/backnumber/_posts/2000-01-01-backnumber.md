@@ -25,8 +25,8 @@ short_title: バックナンバー
 
 ## RegionalRubyKaigiレポート
 
-{% assign sortedPosts = site.tags.regionalRubyKaigi | sort: 'title' %}
-{% for post in sortedPosts %}
+{% assign titleSorted = site.tags.regionalRubyKaigi | sort: 'title' %}
+{% for post in titleSorted reversed %}
 - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
