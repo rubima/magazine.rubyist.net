@@ -5,12 +5,6 @@ short_title: バックナンバー
 ---
 {% include base.html %}
 
-## 各号表紙
-
-{% for post in site.tags.index %}
-- [{{ post.title }}]({{base}}{{ post.url }})
-{% endfor %}
-
 ## 巻頭言
 
 {% for post in site.tags.ForeWord %}
@@ -131,5 +125,11 @@ short_title: バックナンバー
 ### 他言語からの訪問
 
 {% for post in site.tags.GuestTalk %}
+- [{{ post.title }}]({{base}}{{ post.url }})
+{% endfor %}
+
+## 各号表紙
+
+{% for post in site.tags.index %}
 - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
