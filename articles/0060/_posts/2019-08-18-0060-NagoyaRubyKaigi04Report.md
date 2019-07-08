@@ -183,7 +183,6 @@ Twitter [#nagoyark04](https://twitter.com/search?q=%23nagoyark04&src=typd)
 
 ![]({{base}}{{site.baseurl}}/images/0060-NagoyaRubyKaigi04Report/20.JPG)
 
-![]({{base}}{{site.baseurl}}/images/0060-NagoyaRubyKaigi04Report/21.JPG)
 
 ![]({{base}}{{site.baseurl}}/images/0060-NagoyaRubyKaigi04Report/22.JPG)
 
