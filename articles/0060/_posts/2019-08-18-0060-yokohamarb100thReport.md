@@ -75,6 +75,10 @@ Yokohama.rbが始まってからしばらく経ち、Rubyが普及した頃に�
 
 ![miyohide]({{base}}{{site.baseurl}}/images/0060-YokohamaRb100thReport/miyohide.jpg)
 
+そんな第100回の後、常連の1人 [@hamakn](https://twitter.com/hamakn) さんはYokohama.rbについてこんなことを言っていました。
+
+「エンジニアに限らず、人とコミュニティの関係は多様なものですが、自分にとってのYokohama.rbは、昔はRuby/Railsの知識を得るところ、今は業界の気楽な話ができる友人がいるところ、です。居心地のよい趣味の集まりをこれからも大事にしていきたいものです」
+
 ## Yokohama.rbは今月もあなたをお待ちしています
 
 第100回以降も、Yokohama.rbは引き続き毎月開催されています。ご都合のよい月に、参加してみませんか？
