@@ -75,9 +75,15 @@ Yokohama.rbが始まってからしばらく経ち、Rubyが普及した頃に�
 
 ![miyohide]({{base}}{{site.baseurl}}/images/0060-YokohamaRb100thReport/miyohide.jpg)
 
-そんな第100回の後、常連の1人 [@hamakn](https://twitter.com/hamakn) さんはYokohama.rbについてこんなことを言っていました。
+## それぞれのメンバーにとってのYokohama.rb
 
-「エンジニアに限らず、人とコミュニティの関係は多様なものですが、自分にとってのYokohama.rbは、昔はRuby/Railsの知識を得るところ、今は業界の気楽な話ができる友人がいるところ、です。居心地のよい趣味の集まりをこれからも大事にしていきたいものです」
+第100回の後、メンバーの何人かが、Yokohama.rbが自分にとってどんな場所か、コメントを寄せてくれました。
+
+### [@miyohide](https://twitter.com/miyohide) さん 
+Yokohama.rbは私を育ててくれた場所です。Rubyについて右も左も分からない頃から多くの知見を得ることができ、多くの友人もでき、たくさんの言葉をかわしてきました。これからもこの集まりを大事にしていきたいです。
+
+### [@hamakn](https://twitter.com/hamakn) さん 
+エンジニアに限らず、人とコミュニティの関係は多様なものですが、自分にとってのYokohama.rbは、昔はRuby/Railsの知識を得るところ、今は業界の気楽な話ができる友人がいるところ、です。居心地のよい趣味の集まりをこれからも大事にしていきたいものです。
 
 ## Yokohama.rbは今月もあなたをお待ちしています
 
