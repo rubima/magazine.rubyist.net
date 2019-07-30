@@ -4,7 +4,7 @@ title: RegionalRubyKaigi レポート (74) TokyuRuby会議13 レポート
 short_title: RegionalRubyKaigi レポート (74) TokyuRuby会議13 レポート
 tags: 0060 tqrk regionalRubyKaigi
 post_author: igaiga
-created_on: 2019-08-17
+created_on: 2019-08-18
 ---
 {% include base.html %}
 
