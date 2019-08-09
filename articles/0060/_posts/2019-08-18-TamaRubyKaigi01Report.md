@@ -47,7 +47,6 @@ Tama.rb
 
 [ツイートまとめ(Togetter)](https://togetter.com/t/tamarubykaigi01)
 
-
 ## 基調講演1
 
 ### Junichi Ito: なぜテストを書くの？（または書かないの？）
@@ -82,7 +81,6 @@ DSL理解のために独自DSLの作成に挑戦し、どのようなステッ�
 
 #### スライド <https://speakerdeck.com/ken3ypa/tamarubykaigi01-kowakunaidsl>
 
-
 ### ほたて: ぼくらのリファクタリングは裏切らない💪
 
 リードエンジニアとして新規から携わってきたサービスの各フェーズごとの開発の様子やリファクタリングを始めたこと、継続的にリファクタリングするようになり何が良かったか、どのように成長できたか発表くださいました。
@@ -112,7 +110,6 @@ Rubyを参考にDartで日付処理をする[date_calc](https://github.com/makic
 現在開発に取り組んでおられるWebAssemblyをRubyで動かすための[wagyu](https://github.com/edvakf/wagyu)の一部について、どのようなアプローチをとり実装しているのか解説してくださいました。
 
 #### スライド <https://speakerdeck.com/alice345/webassemblywo-rubynikonpairusuru-hei-mo-shu-kodowan-quan-jie-shuo>
-
 
 ### tsuka: RubyistのためのElixir入門(以前)
 
@@ -144,7 +141,8 @@ Rubyを参考にDartで日付処理をする[date_calc](https://github.com/makic
 
 ## 特別企画
 
-### 特別企画
+### 内容
+
 事前にTwitter上で世のRubyistたちがどんなふうに成長してきたのかアンケートが実施され、特別企画として集計結果の発表がありました。
 
 #### スライド <https://speakerdeck.com/hayashiyoshino/how-to-be-a-better-rubyist>
