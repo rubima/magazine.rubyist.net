@@ -20,7 +20,8 @@ Saku35(github)
 * 参加者 : 約50名
 
 ### ランチセッション
-![johtani.jpg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/johtani.jpg)
+![johtani.jpg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/johtani.jpeg)
+
 　検索エンジンを開発しているElastic Searchから、@johtaniさんがご講演くださり、
 Elastic Stackによる、デモサイトのデバッグ作業をライブしていただきました。
 ウェブアプリケーションに疎い私にこのデバッグ作業がどれほど有用なのかわかったなんて口が裂けても言えませんが、ログの検索やらアクセスポイントの可視化やら、@johtaniさんが機能を紹介するたびに、「え、これ便利」と近くから声が聞こえてきたので、そんな風にこの機能の便利さを実感したいなーなんて思いました。
@@ -29,6 +30,7 @@ Elastic Stackによる、デモサイトのデバッグ作業をライブして�
 
 ### 招待講演１
 ![sumim.jpeg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/sumim.jpeg)
+
 　北海道よりはるばる@sumimさんがオブジェクト指向とSmalltalkのお話をしに来てくださいました。
 オブジェクト指向プログラミングの歴史から、Smalltalkの誕生など、いきなり大学の講義みたいな発表でびっくりしました。いろんなプログラミング言語があるけれど、それらに派生する前の中心部分にSmalltalkが存在するような、まだ漠然としてますが、そんなイメージを持つことができる講演でした。
 @m_sekiさんが20年前に作ったSmalltalk処女作も公開していただいて、講演を通して「歴史」を実感しました。
@@ -37,6 +39,7 @@ Elastic Stackによる、デモサイトのデバッグ作業をライブして�
 
 ### 招待講演２
 ![yhara.jpeg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/yhara.jpeg)
+
 　@yharaさんが作ったzanzouというGemについてお話してくださいました。
 Ovtoでアプリを作るときにapp.stateを破壊的に変更したくないということがモチベーションで作ったそう。必要は発明の母ですね。
 ネーミングも@yharaさんのセンスが光っていて、破壊的操作をしたように見えて…していない、バトルマンガの「やったか…？やってない…」というところにインスピレーションを受けzanzou（残像）にしました。というトークには会場も笑いが起こっていました。
@@ -45,6 +48,7 @@ Ovtoでアプリを作るときにapp.stateを破壊的に変更したくない�
 
 ### 招待講演３
 ![sugamasao.jpeg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/sugamasao.jpeg)
+
 　Rubyを説明するのは難しい。と題し、@sugamasaoさんが自著「かんたんRuby」を製作していたときの体験談をご紹介くださいました。
 puts “Hello World”を説明するだけでも、いろいろ考えてしまいますよね？という会場への問いかけ、クラスの説明に入った途端に情報量がいっきに増えることなど、初心者にRubyを教える時の大変さを会場と共感しながら進めていく講演内容に、聞き入っていました。
 質問タイムでは、会場から「私はこういうの風にした」とか「私がプログラミングで楽しいと感じたのはこんな時」など積極的な意見・質問が出て、会場みんなが初心者にRubyを教えることに思いを馳せながら講演に参加できたのではないかと思います。
@@ -53,6 +57,7 @@ puts “Hello World”を説明するだけでも、いろいろ考えてしま�
 
 ### 一般講演１
 ![ken_c_lo.jpeg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/ken_c_lo.jpeg)
+
 　esaの@ken_c_loさんがesaについてる機能のひとつであるWIP(Work in Progress)について語ってくださいました。
 WIPは、「これからまだ良くなりますけど、とりあえずここまでやりました」ということを前面に押し出すサインで、
 WIPがやり始めのハードルをさげたり、読み手を優しくしたりすることで、自分のやったことが相手の役に立ちやすくなる。
@@ -62,6 +67,7 @@ WIPがやり始めのハードルをさげたり、読み手を優しくした�
 
 ### 一般講演２
 ![youchan.jpeg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/youchan.jpeg)
+
 　@youchanさんがConway’s Game of Lifeをワンライナーで書いてきてくれました。
 日本語ではライフゲームと呼ばれるもので、ワンライナー以外にライフゲームで描くデジタル時計など、ライフゲームの面白さの一端に触れさせてくれる貴重な講演だったと感じました。
 Ruby会議で興味を持ったConway’s Game of Lifeをワンライナーで描くことによって、日々の好奇心や創造力を大事にすることも説いてくださったすてきな講演でした。
@@ -70,6 +76,7 @@ Ruby会議で興味を持ったConway’s Game of Lifeをワンライナーで�
 
 ### 一般講演３
 ![kakutani.jpeg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/kakutani.jpeg)
+
 　高橋、RubyKaigiやめるってよ　と題しまして、@kakutaniさんが講演してくださいました。
 高橋さんがRuby会議をやめると言ったとき、周りの人がどうRuby会議のことを考えて、どういう気持ちをこめてリブートしたのかということを熱く語ってくださいました。
 最近Ruby界隈に関わり始めた人にとっては、Rubyコミュニティの概観を把握するのにはもってこいの講演で、かつ@kakutaniファンにとっては久しぶりの@kakutani節を見られたということで、新参者から古参まで幅広く楽しめる、満足感の高い講演だったと思います。
@@ -77,7 +84,8 @@ Ruby会議で興味を持ったConway’s Game of Lifeをワンライナーで�
 講演内容はこちら👉[The Kaigi Thing 高橋、RubyKaigiやめるってよ](https://speakerdeck.com/kakutani/the-kaigi-thing)
 
 ### 基調講演とハンズオン
-![m_seki.jpeg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/johtani.jpeg)
+![m_seki.jpeg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/m_seki.jpeg)
+
 　@m_sekiさんが、分散オブジェクトとはあれですか？と題しましてdRubyについて講演してくださいました。
 5分でおわる基調講演。残りの55分はdRubyを使ってしりとりをしました。
 ネットワークを介して他人のオブジェクトにさわるという、かつてない触れ合い体験によって、dRubyの不思議さ・すごさに魅了された人も多いでしょう。
@@ -85,7 +93,8 @@ Ruby会議で興味を持ったConway’s Game of Lifeをワンライナーで�
 講演内容はこちら👉[分散オブジェクトとはあれですか？](https://speakerdeck.com/m_seki/tochigi-ruby-kaigi-08-keynote)
 
 ### 特別LT
-![june29.jpg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/june29.jpg)
+![june29.jpg]({{base}}{{site.baseurl}}/images/0060-tochigiRubyKaigi08Report/june29.jpeg)
+
 　この日、お誕生日を迎える@june29さんにLT時間6分29秒という特別LTを依頼し、
 「令和元年版　大和田家を支える技術」と題しまして、@june29、@mamipeko夫妻にLTしていただきました。
 円満な環境をテクノロジーによって構築した実例の数々。
