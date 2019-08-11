@@ -73,7 +73,7 @@ Tama.rb
 
 Ruby2.7の新機能であるPattern Matchingって密結合な実装につながるのでは？という疑問の検証のために既存コードの書き換えをしてみた結果やその経緯を発表されました。
 
-#### スライド <https://fuqda.hatenablog.com/entry/2019/07/25/222256>
+#### スライド <https://speakerdeck.com/expajp/06-tamarubyhui-yi-01-brainf-star-ckchu-li-xi-teli-jie-suruhatanmatutinkuwotukatutashu-jie-he-nashi-zhuang>
 
 ### ken3ypa: こわくないDSL
 
