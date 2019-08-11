@@ -544,4 +544,4 @@ Process.waitall
 
 少しでもRubyでUnixプロセスに触れることや、Unixプログラミングについて興味を持たれた方は、ぜひ[『なるほどUnixプロセス』](https://tatsu-zine.com/books/naruhounix)をお読みいただき、この記事の復習と続きをお楽しみいただけたらと思います（販促）。
 
-また、この記事をここまで読んで「Windowsの方はどうなんだろう」と思われた方は、ぜひusaさんの「『なるほどUnixプロセス』で学ぶWindows版Rubyの基礎」もご一読ください。
+また、この記事をここまで読んで「Windowsの方はどうなんだろう」と思われた方は、ぜひ[usaさんの「『なるほどUnixプロセス』で学ぶWindows版Rubyの基礎」](https://www.garbagecollect.jp/~usa/d/201304c.html)もご一読ください。
