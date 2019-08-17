@@ -241,3 +241,12 @@ TokyoGirls.rbでは次回の勉強会を企画しており、12月開催を予�
  - [Rubyでプログラミングの楽しさを知ろう 言語の特徴と魅力について Part1](https://logmi.jp/tech/articles/321629)
  - [Rubyでプログラミングの楽しさを知ろう 言語の特徴と魅力について Part2](https://logmi.jp/tech/articles/321632)
  - [チームの変化は成長のチャンス 育休復帰したエンジニアが考える、チーム開発とキャリアのこと](https://logmi.jp/tech/articles/321493)
+
+## 著者について
+### りほ ([@rllllho](https://twitter.com/rllllho))
+
+9月に東京から大阪に移住予定のエンジニア。
+漫画とビールとご飯がすきです。
+
+### りさきゃん ([@_risacan_](https://twitter.com/_risacan_))
+株式会社SmartHRのエンジニア。絵文字と柴犬とお絵かきが好き Yak Shaving Tシャツ発売中 !!
