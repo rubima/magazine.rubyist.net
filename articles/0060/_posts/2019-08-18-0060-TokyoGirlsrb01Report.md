@@ -2,8 +2,8 @@
 layout: post
 title: TokyoGirls.rb Meetup vol.1 開催レポート
 short_title: TokyoGirls.rb Meetup vol.1 開催レポート
-tags: 0060  regionalRubyKaigi
-post_author: rllllho
+tags: 0060
+post_author: rllllho、_risacan_
 created_on: 2019-08-18
 ---
 {% include base.html %}
