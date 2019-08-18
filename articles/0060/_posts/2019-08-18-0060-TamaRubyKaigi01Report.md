@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (75) TamaRuby会議01 レポート
-short_title: RegionalRubyKaigi レポート (75) TamaRuby会議01 レポート
+title: RegionalRubyKaigi レポート (76) Tama Ruby会議01 レポート
+short_title: RegionalRubyKaigi レポート (76) Tama Ruby会議01 レポート
 tags: 0060  regionalRubyKaigi
 post_author: neko314
 created_on: 2019-08-18
@@ -57,7 +57,7 @@ Tama.rb
 
 ## 発表の様子
 
-### konchan: プロになるためのレビューのススメ 
+### konchan: プロになるためのレビューのススメ
 
 「コードレビューを通して成長した」というご自身の経験から、レビュイー・レビュアーとなることが具体的にどのように成長につながるのか、注意点も交えて発表されました。
 
