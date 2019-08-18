@@ -2,7 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (27) とちぎ Ruby 会議 04
 short_title: RegionalRubyKaigi レポート (27) とちぎ Ruby 会議 04
-tags: 0037 TochigiRubyKaigi04Report
+tags: 0037 TochigiRubyKaigi04Report regionalRubyKaigi
 ---
 {% include base.html %}
 

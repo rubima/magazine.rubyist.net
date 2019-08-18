@@ -2,7 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (75) とちぎ Ruby 会議 08
 short_title: RegionalRubyKaigi レポート (75) とちぎ Ruby 会議 08
-tags: 0060 tochigiRubyKaigi08Report RegionalRubyKaigi
+tags: 0060 tochigiRubyKaigi08Report regionalRubyKaigi
 post_author: saku35
 created_on: 2019-08-18
 ---

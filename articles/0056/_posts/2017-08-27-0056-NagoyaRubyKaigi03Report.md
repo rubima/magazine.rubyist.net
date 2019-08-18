@@ -2,7 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (62) 名古屋Ruby会議03
 short_title: RegionalRubyKaigi レポート (62) 名古屋Ruby会議03
-tags: 0056 NagoyaRubyKaigi03Report
+tags: 0056 NagoyaRubyKaigi03Report regionalRubyKaigi
 ---
 {% include base.html %}
 

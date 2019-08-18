@@ -1,12 +1,12 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
-short_title: RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
-tags: 0057 GinzaRubyKaigi01Report
+title: RegionalRubyKaigi レポート (66) ぎんざ Ruby 会議 01
+short_title: RegionalRubyKaigi レポート (66) ぎんざ Ruby 会議 01
+tags: 0057 GinzaRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート ぎんざ Ruby 会議 01
+## RegionalRubyKaigi レポート (66) ぎんざ Ruby 会議 01
 
 * 開催日時 -- 2017 年 8 月 5 日 (土) 13:00-18:00
 * 開催場所 -- 株式会社 みんなのウェディング 会議室
