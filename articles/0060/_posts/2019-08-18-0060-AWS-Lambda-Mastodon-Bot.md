@@ -2,25 +2,22 @@
 layout: post
 title: AWS Lambdaで作るサーバーレス Mastodon Bot
 short_title: AWS Lambdaで作るサーバーレス Mastodon Bot
-tags: 後述
+tags: 0060
 post_author: S.H.
 created_on: 2019年8月18日
 ---
 {% include base.html %}
 
-
-# AWS lamndaで作るサーバーレス Mastodon　Bot
-
 ## はじめに
 
-みなさん、こんにちは。  
+みなさん、こんにちは。
 普段は[Creatodon](https://gamelinks007.net)というMastodonサーバーの管理人をしています、S.H.と申します。
 
 今回は、下記のイベントで寄稿した記事に加筆したものをるびまにも寄稿させて頂きました。
 
 [分散SNS萬本執筆・販売　執筆者募集中です（公募型アンソロジー）](https://connpass.com/event/115011/)
 
-今回書くものは、以前「#顔面工事」というハッシュタグを拡散するBotを作った際に得たノウハウをまとめたものになります。  
+今回書くものは、以前「#顔面工事」というハッシュタグを拡散するBotを作った際に得たノウハウをまとめたものになります。
 下記のリポジトリを見つつ、読み進めるとより楽しめると思います。
 
 [S-H-GAMELINKS/face_under_construction](https://github.com/S-H-GAMELINKS/face_under_construction)
@@ -37,31 +34,31 @@ AWS Lambda のRubyランタイムのバージョンが2.5なので、Rubyの2.5�
 
 ## Mastodonとは？
 
-[Mastodon](https://github.com/tootsuite/mastodon)とは分散SNSと呼ばれるものの一つになります。  
+[Mastodon](https://github.com/tootsuite/mastodon)とは分散SNSと呼ばれるものの一つになります。
 数年前に日本でもMastodonブームが来たこともあり、ご存知の方もおられるかと思います。
 
-実装としてはバックエンドにRails、フロントエンドにReactが使用されています。  
+実装としてはバックエンドにRails、フロントエンドにReactが使用されています。
 Dockerイメージも公開されており手軽にサーバーを構築できます。
 
-Mastodonなどの分散SNSの魅力は自分でTwitterのようなSNSサービスを立ち上げ、運営することができる点です。  
+Mastodonなどの分散SNSの魅力は自分でTwitterのようなSNSサービスを立ち上げ、運営することができる点です。
 自分のサーバーを構築すればアカウントの凍結などを気にする必要もないですし、
 
 MastodonではActivityPubというプロトコルを使い、他なサーバーとやり取りをすることができます。
 その為、別のサーバーのアカウントをフォローできますし、つぶやきなどを見ることもできます。
 
-また他な分散SNSともやり取りをすることができます。  
-他な分散SNSには[Pleroma](https://git.pleroma.social/pleroma/pleroma)や[Misskey](https://github.com/syuilo/misskey)といったものがあります。それらの分散SNSもActivityPubを使用しています。  
-その為、それらと相互にフォローしたり、つぶやきをお気に入りしたりということができます。  
+また他な分散SNSともやり取りをすることができます。
+他な分散SNSには[Pleroma](https://git.pleroma.social/pleroma/pleroma)や[Misskey](https://github.com/syuilo/misskey)といったものがあります。それらの分散SNSもActivityPubを使用しています。
+その為、それらと相互にフォローしたり、つぶやきをお気に入りしたりということができます。
 分かりやすく言えば、TwitterとFacebookで互いにやり取りができるという状態ですね。
 
-ちなみに、海外のRubyistが[ruby.social](https://ruby.social)というRubyistのためのサーバーを公開しています。  
+ちなみに、海外のRubyistが[ruby.social](https://ruby.social)というRubyistのためのサーバーを公開しています。
 興味のある方はアカウントを作成してみてはいかがでしょうか？
 
 ## AWS Lambdaとは？
 
 ご存知の方も多いとは思いますが、念のため[AWS Lambda](https://aws.amazon.com/jp/lambda/)について少し解説します。
 
-AWS LambdaとはAmazonが提供しているサービスの一つで、サーバーを意識しなくてもコードを実行する環境を提供するサービスです。  
+AWS LambdaとはAmazonが提供しているサービスの一つで、サーバーを意識しなくてもコードを実行する環境を提供するサービスです。
 そのためコードを書くことに集中できますし、コードを気軽に本番環境で動かすことができます。
 
 また、AWS Lambdaはコードを実行した分だけの課金となっています。その為、Botなどで定期的にコードを実行するものを作成する際には非常に低コストで済みます。
@@ -78,9 +75,9 @@ AWS LambdaとはAmazonが提供しているサービスの一つで、サーバ�
 
 ![lambdaの検索]({{base}}{{site.baseurl}}/images/0060-AWS-Lambda-Mastodon-Bot/lambda_00.png)
 
-  
+
 Lambdaの管理画面に移動して、**関数の作成**と書かれているボタンを選択します。
-  
+
 
 ![lambdaの管理画面]({{base}}{{site.baseurl}}/images/0060-AWS-Lambda-Mastodon-Bot/lambda_01.png)
 
