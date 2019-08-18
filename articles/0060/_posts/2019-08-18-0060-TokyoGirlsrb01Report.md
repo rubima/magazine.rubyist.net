@@ -2,8 +2,8 @@
 layout: post
 title: TokyoGirls.rb Meetup vol.1 開催レポート
 short_title: TokyoGirls.rb Meetup vol.1 開催レポート
-tags: 0060  regionalRubyKaigi
-post_author: rllllho
+tags: 0060
+post_author: rllllho、_risacan_
 created_on: 2019-08-18
 ---
 {% include base.html %}
@@ -12,7 +12,7 @@ created_on: 2019-08-18
 
 ## はじめに
 
-こんにちは！りほやん([@rllllho](https://twitter.com/rllllho))とりさきゃん([@_risacan_](https://twitter.com/_risacan_))です。
+こんにちは！りほやん([@rllllho](https://twitter.com/rllllho))とりさきゃん([@\_risacan\_](https://twitter.com/_risacan_))です。
 
 2019年3月2日にTokyoGirls.rb Meetup vol.1というイベントを開催しました。
 
@@ -248,5 +248,5 @@ TokyoGirls.rbでは次回の勉強会を企画しており、12月開催を予�
 9月に東京から大阪に移住予定のエンジニア。
 漫画とビールとご飯がすきです。
 
-### りさきゃん ([@_risacan_](https://twitter.com/_risacan_))
+### りさきゃん ([@\_risacan\_](https://twitter.com/_risacan_))
 株式会社SmartHRのエンジニア。絵文字と柴犬とお絵かきが好き Yak Shaving Tシャツ発売中 !!

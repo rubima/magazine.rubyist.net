@@ -1,8 +1,8 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート とちぎ Ruby 会議 08
-short_title: RegionalRubyKaigi レポート とちぎ Ruby 会議 08
-tags: 0060 tochigiRubyKaigi08Report
+title: RegionalRubyKaigi レポート (75) とちぎ Ruby 会議 08
+short_title: RegionalRubyKaigi レポート (75) とちぎ Ruby 会議 08
+tags: 0060 tochigiRubyKaigi08Report RegionalRubyKaigi
 post_author: saku35
 created_on: 2019-08-18
 ---
@@ -105,6 +105,6 @@ Slack, Scrapbox, M5Stack, スマートロックなどなど、大和田家に合
 講演内容はこちら👉[大和田家を支える技術 令和元年版](https://speakerdeck.com/june29/our-life-supported-by-technologies-and-skills)
 
 ### 2分間LT
- 　立食形式のパーティと並行して、2分間LTが開催されました。用意された2時間というたっぷりの時間は、とちぎRuby会議08の参加者全員が発表するのに十分な時間で、実に40名ほどが各々自分の好きなこと・関心のあることについて発表しました。  
-　筆者としてはこの「2分間」というのは絶妙で、最悪うまくいかなくてもたった2分だ・・・と思えば、かなり参加ハードルが下がって初LTを乗り越えることができたのでした。  
+ 　立食形式のパーティと並行して、2分間LTが開催されました。用意された2時間というたっぷりの時間は、とちぎRuby会議08の参加者全員が発表するのに十分な時間で、実に40名ほどが各々自分の好きなこと・関心のあることについて発表しました。
+　筆者としてはこの「2分間」というのは絶妙で、最悪うまくいかなくてもたった2分だ・・・と思えば、かなり参加ハードルが下がって初LTを乗り越えることができたのでした。
 　発表内容も面白いものばかりでしたが、40題目以上をここに書ききるわけにはいかないのが残念です。あえて筆者が個人的に印象に残ったものをあげるなら・・・@yharaさんのSumotalkですね。

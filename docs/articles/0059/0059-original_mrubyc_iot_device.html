@@ -45,6 +45,8 @@
 <h4>バックナンバー</h4>
 <ul>
     
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
+    
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
         <li><a href="../../articles/0059/0059-index.html">0059号(2019-01)</a></li>
@@ -485,7 +487,7 @@ includes=libmrubyc.h
 
 <p>そして、hal.cppというファイルを作成し、<code class="highlighter-rouge">hal_write_string()</code>を以下のように実装します。</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">extern</span> <span class="s">"C"</span> <span class="kt">void</span> <span class="n">hal_write_string</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">){</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">extern</span> <span class="s">"C"</span> <span class="kt">void</span> <span class="nf">hal_write_string</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">){</span>
   <span class="n">SerialUSB</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -525,13 +527,13 @@ includes=libmrubyc.h
 メソッドの追加には、<code class="highlighter-rouge">mrbc_define_class()</code>関数を使用します。
 以下に、その例を示します。</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Ultrasonic</span> <span class="n">ultrasonic</span><span class="p">(</span><span class="n">WIOLTE_D38</span><span class="p">);</span>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Ultrasonic</span> <span class="nf">ultrasonic</span><span class="p">(</span><span class="n">WIOLTE_D38</span><span class="p">);</span>
 
-<span class="k">static</span> <span class="kt">void</span> <span class="n">class_ultrasonic_read</span><span class="p">(</span><span class="n">mrb_vm</span> <span class="o">*</span><span class="n">vm</span><span class="p">,</span> <span class="n">mrb_value</span> <span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">){</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">class_ultrasonic_read</span><span class="p">(</span><span class="n">mrb_vm</span> <span class="o">*</span><span class="n">vm</span><span class="p">,</span> <span class="n">mrb_value</span> <span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">){</span>
 	<span class="kt">long</span> <span class="n">val</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">.</span><span class="n">MeasureInCentimeters</span><span class="p">();</span>
 	<span class="n">SET_INT_RETURN</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="kt">void</span> <span class="n">define_ultrasonic_class</span><span class="p">(){</span>
+<span class="kt">void</span> <span class="nf">define_ultrasonic_class</span><span class="p">(){</span>
 	<span class="n">mrb_class</span> <span class="o">*</span><span class="n">class_ultrasonic</span><span class="p">;</span>
 	<span class="n">class_ultrasonic</span> <span class="o">=</span> <span class="n">mrbc_define_class</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">"UltraSonic"</span><span class="p">,</span> <span class="n">mrbc_class_object</span><span class="p">);</span>
 

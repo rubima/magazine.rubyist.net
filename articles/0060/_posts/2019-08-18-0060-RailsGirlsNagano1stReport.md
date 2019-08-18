@@ -8,8 +8,6 @@ created_on: 2019-08-10
 ---
 {% include base.html %}
 
-# Rails Girls Nagano 1st レポート
-
 ## はじめに
 
 2019年5月24日(金)、25日(土)に Rails Girls Nagano 1st を開催しました。
@@ -38,7 +36,7 @@ Web アプリケーションの構築を通してテクノロジーに親しん�
 
 - 日時: 2019年5月24日（金）、25日（土）
 
-- 場所: [長野美術専門学校](/http://www.n-bisen.ac.jp/) さま 
+- 場所: [長野美術専門学校](/http://www.n-bisen.ac.jp/) さま
 
 - 参加者: 23人（参加者 9人、コーチ・スタッフ 14人）
 
@@ -144,6 +142,6 @@ Rails Girls に興味を持っていただけたら、お近くの Rails Girls �
 
 ### cobachie ([@co_bachie](https://twitter.com/co_bachie))
 
-長野県松本市在住の Rails プログラマ。  
+長野県松本市在住の Rails プログラマ。
 
 近くに Ruby コミュニティがあるといいなあという気持ちで活動中です。
