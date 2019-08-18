@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ReginalRubyKaigi レポート (73) 名古屋Ruby会議04
-short_title: ReginalRubyKaigi レポート (73) 名古屋Ruby会議04
-tags: 0060 NagoyaRubyKaigi04Report RegionalRubyKaigi
+title: RegionalRubyKaigi レポート (73) 名古屋Ruby会議04
+short_title: RegionalRubyKaigi レポート (73) 名古屋Ruby会議04
+tags: 0060 NagoyaRubyKaigi04Report regionalRubyKaigi
 post_author: huequica
 created_on: 2019-08-18
 ---
@@ -199,8 +199,8 @@ Twitter [#nagoyark04](https://twitter.com/search?q=%23nagoyark04&src=typd)
 
 ## さいごに
 
-今回初めてカンファレンスイベントに参加させていただきましたが、Ruby愛にあふれた方々がとても多くて楽しかったです。  
-3ヶ月くらいバタバタしていたのですが、スタッフとして頑張ってよかったと思います。  
+今回初めてカンファレンスイベントに参加させていただきましたが、Ruby愛にあふれた方々がとても多くて楽しかったです。
+3ヶ月くらいバタバタしていたのですが、スタッフとして頑張ってよかったと思います。
 ご協力頂いた皆様、並びにご来場いただいた皆様、本当にありがとうございました。
 
 ## 謝辞
