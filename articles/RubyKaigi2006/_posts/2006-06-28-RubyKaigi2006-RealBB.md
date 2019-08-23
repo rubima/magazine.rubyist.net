@@ -14,13 +14,13 @@ tags: RubyKaigi2006 RealBB
 ### 全景
 
 #### 起動
-![pv-RubyKaigi2006+009_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+009_s.jpg)
+![pv-RubyKaigi2006+009_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_009_s.jpg)
 
 #### 二日目朝
-![pv-RubyKaigi2006+209_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+209_s.jpg)
+![pv-RubyKaigi2006+209_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_209_s.jpg)
 
 #### 二日目昼過ぎ
-![pv-RubyKaigi2006+248_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+248_s.jpg)
+![pv-RubyKaigi2006+248_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_248_s.jpg)
 
 #### 最終形
 ![06110157_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/06110157_s.jpg)
@@ -78,17 +78,15 @@ tags: RubyKaigi2006 RealBB
 
 #### そして伝説へ
 
-![pv-RubyKaigi2006+277_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+277_s.jpg)
-![pv-RubyKaigi2006+264_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+264_s.jpg)
-![pv-RubyKaigi2006+265_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+265_s.jpg)
-![pv-RubyKaigi2006+266_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+266_s.jpg)
-![pv-RubyKaigi2006+267_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+267_s.jpg)
-![pv-RubyKaigi2006+268_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+268_s.jpg)
-![pv-RubyKaigi2006+269_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+269_s.jpg)
-![pv-RubyKaigi2006+270_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+270_s.jpg)
-![pv-RubyKaigi2006+271_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+271_s.jpg)
-![pv-RubyKaigi2006+272_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+272_s.jpg)
-![pv-RubyKaigi2006+273_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+273_s.jpg)
-![pv-RubyKaigi2006+274_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006+274_s.jpg)
-
-
+![pv-RubyKaigi2006+277_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_277_s.jpg)
+![pv-RubyKaigi2006+264_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_264_s.jpg)
+![pv-RubyKaigi2006+265_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_265_s.jpg)
+![pv-RubyKaigi2006+266_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_266_s.jpg)
+![pv-RubyKaigi2006+267_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_267_s.jpg)
+![pv-RubyKaigi2006+268_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_268_s.jpg)
+![pv-RubyKaigi2006+269_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_269_s.jpg)
+![pv-RubyKaigi2006+270_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_270_s.jpg)
+![pv-RubyKaigi2006+271_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_271_s.jpg)
+![pv-RubyKaigi2006+272_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_272_s.jpg)
+![pv-RubyKaigi2006+273_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_273_s.jpg)
+![pv-RubyKaigi2006+274_s.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006-RealBB/pv-RubyKaigi2006_274_s.jpg)
