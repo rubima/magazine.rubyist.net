@@ -6,7 +6,7 @@ tags: rubykaigi2006 index
 ---
 {% include base.html %}
 
-![boom1-2-3.png]({{base}}{{site.baseurl}}/images/rubykaigi2006/boom1-2-3.png)
+![boom1-2-3.png]({{base}}{{site.baseurl}}/images/RubyKaigi2006/boom1-2-3.png)
 
 ## はじめに
 
@@ -49,7 +49,7 @@ tags: rubykaigi2006 index
 初日 ([プログラム](http://jp.rubyist.net/RubyKaigi2006/program0610.html)) のレポートです。
 
 ### 懇親会
-![s06100088.jpg]({{base}}{{site.baseurl}}/images/rubykaigi2006/s06100088.jpg)
+![s06100088.jpg]({{base}}{{site.baseurl}}/images/RubyKaigi2006/s06100088.jpg)
 
 日本科学未来館にて懇親会を行いました。
 
