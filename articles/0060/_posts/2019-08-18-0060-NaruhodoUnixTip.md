@@ -440,7 +440,7 @@ IO.pipeの使い方を、irbで少し練習してみます。
 パイプを作成するには、以下のようにします。
 
 ```
-> read_id, write_id = IO.pipe
+> read_io, write_io = IO.pipe
 => [#>IO:fd 9>, #<IO:fd 10>
 ```
 
@@ -469,11 +469,11 @@ IO.pipeをつかうと、このように2つの入出力が返ってきます。
 また、Rubyらしくブロックを使って以下のように書くこともできます。
 
 ```
-> IO.pipe do |read_id, write_io|
+> IO.pipe do |read_io, write_io|
 >  write_io.puts 'foo'
 >  write_io.puts 'bar'
 >  p read_io.gets
->  p read_id.gets
+>  p read_io.gets
 > end
 "foo¥n"
 "bar¥n"
