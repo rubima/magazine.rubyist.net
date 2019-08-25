@@ -616,7 +616,7 @@ psコマンドが実行されたはず
 
 <p>パイプを作成するには、以下のようにします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; read_id, write_id = IO.pipe
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; read_io, write_io = IO.pipe
 =&gt; [#&gt;IO:fd 9&gt;, #&lt;IO:fd 10&gt;
 </code></pre></div></div>
 
@@ -642,11 +642,11 @@ psコマンドが実行されたはず
 
 <p>また、Rubyらしくブロックを使って以下のように書くこともできます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; IO.pipe do |read_id, write_io|
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; IO.pipe do |read_io, write_io|
 &gt;  write_io.puts 'foo'
 &gt;  write_io.puts 'bar'
 &gt;  p read_io.gets
-&gt;  p read_id.gets
+&gt;  p read_io.gets
 &gt; end
 "foo¥n"
 "bar¥n"
