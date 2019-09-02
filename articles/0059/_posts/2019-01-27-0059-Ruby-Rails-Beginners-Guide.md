@@ -5,7 +5,7 @@ short_title: RubyとRailsの学習ガイド2019年版
 tags: 0059
 post_author: igaiga
 created_on: 2019/01/27
-updated_on: 2019/02/27
+updated_on: 2019/09/02
 ---
 {% include base.html %}
 
