@@ -28,11 +28,9 @@ DXOpalは、DXRubyの命令を「だいたいそのまま」ブラウザに移�
 
 ### 準備
 
-Rubyをすでにインストールしている人は、(A)を読んでください。そうでない人は(B)を読んでください。
+#### DXOpalのインストール
 
-#### (A) DXOpalのインストール
-
-Rubyをすでにインストールしていれば、RubyGemsからDXOpalをインストールできます。
+Rubyをインストール後、RubyGemsからDXOpalをインストールできます。
 
 {% highlight text %}
 {% raw %}
@@ -92,18 +90,6 @@ sounds/
   get.wav
 {% endraw %}
 {% endhighlight %}
-
-
-#### (B) スターターキットを使う
-
-Rubyのインストール方法がわからない、または調べるのがめんどくさい、という人向けに、DXOpalスターターキットというものがあります。これを使うとRubyをインストールしなくてもゲームが作れます。ただし、 __[Firefox](https://www.mozilla.org/ja/firefox/new/)にしか対応していない__ のでご注意ください。
-
-[https://github.com/yhara/dxopal-starter-kit/releases](https://github.com/yhara/dxopal-starter-kit/releases) から最新のzipをダウンロードして展開してください。
-
-ブラウザで中に入っているindex.htmlを開くと、以下のように表示されるはずです。
-![18.55.19.png]({{base}}{{site.baseurl}}/images/0057-GameProgramingWithDXOpal/18.55.19.png)
-
-(スターターキットには画像と効果音が入っているので、サンプルパックのダウンロードは必要ありません。)
 
 ### 画面を出してみよう
 
