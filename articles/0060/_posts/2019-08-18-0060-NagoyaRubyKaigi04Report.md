@@ -205,7 +205,7 @@ Twitter [#nagoyark04](https://twitter.com/search?q=%23nagoyark04&src=typd)
 
 ## 謝辞
 
-名古屋 Ruby 会議03のスポンサーとして以下の8社様には、多大なご協力を頂きました。実行委員一同、感謝申し上げます。
+名古屋 Ruby 会議04のスポンサーとして以下の8社様には、多大なご協力を頂きました。実行委員一同、感謝申し上げます。
 
 - [株式会社永和システムマネジメント](http://agile.esm.co.jp/)
 - [株式会社Misoca](https://www.misoca.jp/)
