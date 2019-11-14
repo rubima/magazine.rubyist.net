@@ -55,12 +55,18 @@ Toyama.rb
 
 ![]({{base}}{{site.baseurl}}/images/0061-ToyamaRubyKaigi01Report/kunitoo.jpg)
 
+まずは、主催者の [@kunitoo](https://twitter.com/kunitoo) のオープニングトーク。
+
+登録時アンケートの結果発表。  
+富山県の人が約半数、約25%がその他北陸ということで、北陸で開催した意義があったと思います。
+
+![]({{base}}{{site.baseurl}}/images/0061-ToyamaRubyKaigi01Report/area.png)
+
 ## 講演
 
 ### 招待講演「○○からRubyへ」
 
-* 発表者
-  * 伊藤 淳一
+* 発表者：伊藤 淳一
   * [Twitter](https://twitter.com/jnchito)
   * [GitHub](https://github.com/JunichiIto)
 * 資料
@@ -78,8 +84,7 @@ Toyama.rb
 
 ### 「読みやすいコードとRubyらしいコード」
 
-* 発表者
-  * 黒曜
+* 発表者：黒曜
   * [Twitter](https://twitter.com/kokuyouwind)
   * [GitHub](https://github.com/kokuyouwind)
 * 資料
@@ -94,8 +99,7 @@ Toyama.rb
 
 ### 「初心者PHPerがRubyキメて思うこと」
 
-* 発表者
-  * oratake
+* 発表者：oratake
   * [Twitter](https://twitter.com/kyosuketakenaka)
   * [GitHub](https://github.com/oratake)
 * 資料
@@ -110,8 +114,7 @@ Toyama.rb
 
 ### 「Crawler on Rails」
 
-* 発表者
-  * suginoy
+* 発表者：suginoy
   * [Twitter](https://twitter.com/suginoy)
   * [GitHub](https://github.com/suginoy)
 * 資料
@@ -127,8 +130,7 @@ Toyama.rb
 
 ### 「TracePointから学ぶRubyVM」
 
-* 発表者
-  * joker1007
+* 発表者：joker1007
   * [Twitter](https://twitter.com/joker1007)
   * [GitHub](https://github.com/joker1007)
 * 資料
@@ -144,8 +146,7 @@ Toyama.rb
 
 ### 「北陸で Ruby なお仕事に携わるための3つの戦略」
 
-* 発表者
-  * 清原 智和
+* 発表者：清原 智和
   * [Twitter](https://twitter.com/kiyohara)
   * [GitHub](https://github.com/kiyohara)
 * 資料
@@ -160,8 +161,7 @@ Toyama.rb
 
 ### 「業務で！Rubyを！キメる！」
 
-* 発表者
-  * 伊藤 浩一
+* 発表者：伊藤 浩一
   * [Twitter](https://twitter.com/koic)
   * [GitHub](https://github.com/koic)
 * 資料
@@ -175,8 +175,7 @@ ASTってちゃんと見たことなかったんですが、説明を聞いて�
 
 ### 「mrubyでハローワールド！」
 
-* 発表者
-  * 羽角 均
+* 発表者：羽角 均
   * [Twitter](https://twitter.com/hasumikin)
   * [GitHub](https://github.com/hasumikin)
 * 資料
@@ -194,8 +193,7 @@ mrubyとかmruby/cが別ということは知っていたけど、ROMやRAMの�
 
 #### LT
 
-* 発表者
-  * muryoimpl
+* 発表者：muryoimpl
   * [Twitter](https://twitter.com/muryoimpl)
   * [GitHub](https://github.com/muryoimpl)
 * 資料
@@ -209,8 +207,7 @@ Rspecでのテストコードを、短期集中で増やしていく話。
 
 #### LT
 
-* 発表者
-  * ふぁらお加藤
+* 発表者：ふぁらお加藤
   * [Twitter](https://twitter.com/PharaohKJ)
   * [GitHub](https://github.com/PharaohKJ)
 * 資料
@@ -224,8 +221,7 @@ Rubyで仕事してる人は、比較的こだわりの強い人が多く、ハ�
 
 #### LT
 
-* 発表者
-  * 相生ゆら
+* 発表者：相生ゆら
   * [Twitter](https://twitter.com/Little_Rubyist)
   * [GitHub](https://github.com/Little-Rubyist)
 * 資料
@@ -239,8 +235,7 @@ Rubyで仕事してる人は、比較的こだわりの強い人が多く、ハ�
 
 #### LT
 
-* 発表者
-  * wtnabe
+* 発表者：wtnabe
   * [Twitter](https://twitter.com/wtnabe)
   * [GitHub](https://github.com/wtnabe)
 * 資料
@@ -255,8 +250,7 @@ Kanazawa.rbは7年継続しているとのこと。すばらしい。
 
 #### LT
 
-* 発表者
-  * Yuka Kato
+* 発表者：Yuka Kato
   * [Twitter](https://twitter.com/yucao24hours)
   * [GitHub](https://github.com/yucao24hours)
 * 資料
@@ -271,8 +265,7 @@ PhantomJSがメンテ終了してたのは聞いたことあった気がしま�
 
 #### LT
 
-* 発表者
-  * 水尻裕人
+* 発表者：水尻裕人
   * [Twitter](https://twitter.com/mizukmb)
   * [GitHub](https://github.com/mizukmb)
 * 資料
@@ -286,8 +279,7 @@ PhantomJSがメンテ終了してたのは聞いたことあった気がしま�
 
 #### LT
 
-* 発表者
-  * よしだ たけひこ
+* 発表者：よしだ たけひこ
   * [Twitter](https://twitter.com/chihayafuru)
   * [GitHub](https://github.com/chihayafuru)
 * 資料
@@ -301,8 +293,7 @@ PhantomJSがメンテ終了してたのは聞いたことあった気がしま�
 
 #### LT
 
-* 発表者
-  * 羽角 均
+* 発表者：羽角 均
   * [Twitter](https://twitter.com/hasumikin)
   * [GitHub](https://github.com/hasumikin)
 * 資料
@@ -317,8 +308,7 @@ vimでライブでバイナリ列を書いていくという荒業に出て、�
 
 ### 招待講演「型なし言語のための型」
 
-* 発表者
-  * 松本 宗太郎
+* 発表者：松本 宗太郎
   * [Twitter](https://twitter.com/soutaro)
   * [GitHub](https://github.com/soutaro)
 * 資料
