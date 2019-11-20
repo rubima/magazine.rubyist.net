@@ -259,7 +259,7 @@ Kanazawa.rbは7年継続しているとのこと。すばらしい。
   * [Twitter](https://twitter.com/yucao24hours)
   * [GitHub](https://github.com/yucao24hours)
 * 資料
-  * 公開されておらず
+  * [The basic architecture of Capybara - Speaker Deck](https://speakerdeck.com/yucao24hours/the-basic-architecture-of-capybara)
 
 ![]({{base}}{{site.baseurl}}/images/0061-ToyamaRubyKaigi01Report/LT_yucao24hours.jpg)
 
