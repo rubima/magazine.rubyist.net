@@ -182,7 +182,7 @@ def bar(arr)
 end
 
 numbers = [10, 20]
-bar(number)
+bar(numbers)
 puts numbers      #=> [11, 20]   # 中身が変更されている!
 {% endraw %}
 {% endhighlight %}
