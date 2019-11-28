@@ -1,10 +1,10 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (XX) 富山Ruby会議01 レポート
-short_title: RegionalRubyKaigi レポート (XX) 富山Ruby会議01 レポート
-tags: 0061  regionalRubyKaigi
+title: RegionalRubyKaigi レポート (78) 富山Ruby会議01 レポート
+short_title: RegionalRubyKaigi レポート (78) 富山Ruby会議01 レポート
+tags: 0061 regionalRubyKaigi
 post_author: noboru-i
-created_on: 2020-01-dd
+created_on: 2020-01-26
 ---
 {% include base.html %}
 
