@@ -567,7 +567,7 @@
     <span class="k">def</span> <span class="nf">id_with_warn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
       <span class="k">return</span> <span class="mi">4</span> <span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="nb">caller</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nf">starts_with?</span><span class="p">(</span><span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">)</span>
       <span class="n">message</span> <span class="o">=</span> <span class="s2">"nil.id was called at </span><span class="si">#{</span><span class="nb">caller</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
-      <span class="k">if</span> <span class="n">defined?</span> <span class="no">Logger</span>
+      <span class="k">if</span> <span class="k">defined?</span> <span class="no">Logger</span>
         <span class="no">Logger</span><span class="p">.</span><span class="nf">error</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="s1">'nil.id'</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
       <span class="k">else</span>
         <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="n">message</span>
