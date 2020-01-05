@@ -483,8 +483,8 @@ RuboCop はこわれやすい。なぜ Regression test が必要か、そして 
 - [平成Ruby会議01に参加しました - @znz blog](https://blog.n-z.jp/blog/2019-12-14-heiseirubykaigi-01.html)
 - [平成Ruby会議01 に参加してきました #heiseirubykaigi - Smoky God Express](https://hkdnet.hatenablog.com/entry/2019/12/15/130900)
 
-### 著者: rry（[@ryamakuchi](https://twitter.com/ryamakuchi)）
+## 著者について
 
-2020年 1月〜 STORES.jp で Rails エンジニアをやります（ちょうど転職したてです）
+rry（[@ryamakuchi](https://twitter.com/ryamakuchi)）: 2020年 1月〜 STORES.jp で Rails エンジニアをやります（ちょうど転職したてです）
 
 平成 Ruby 会議の運営にジョインしたのは 10月頃からで、これまで運営陣のパワフルな活動に支えられてきました。みんないつもありがとう！今年もよろしくお願いします。
