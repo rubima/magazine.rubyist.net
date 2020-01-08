@@ -251,13 +251,12 @@ Jets が Rails に似ていること、なおかつサーバーレスに異世�
 ![]({{base}}{{site.baseurl}}/images/0061-HeiseiRubyKaigi01Report/trackB5.jpg)
 
 - 発表者: [@cobafan](https://github.com/cobafan)
+- スライド: [既存 RailsApplication の高速化 - Google スライド](https://docs.google.com/presentation/d/199LMWszou-xib_X0NM8Egk4Ko2G1uk12__38EMAzn58/)
 - ツイート: <https://togetter.com/li/1451720>
 
 平成.rb オーガナイザーである @cobafan さんの発表です。
 
-既存の Rails アプリケーションを高速化するために、ベストプラクティスなコードが実装されてほしい。
-CI などでベストプラクティスなコードになっているかをチェックできるような Gem を作っている、という内容でした。
-
+既存の Rails アプリケーションを高速化するために、CI などで適切なコードの書き方になっているかをチェックできるような Gem を作っている、という内容でした。
 セッション後の質問タイムで実装で困っていることの解決法を募ったところ、@pocke さん達が解決法のアイディアを出していて、つよい... となりました。
 
 ### Ruby で JVM を実装してみる
