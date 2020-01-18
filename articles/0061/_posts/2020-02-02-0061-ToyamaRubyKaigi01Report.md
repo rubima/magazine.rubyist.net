@@ -4,7 +4,7 @@ title: RegionalRubyKaigi レポート (78) 富山Ruby会議01 レポート
 short_title: RegionalRubyKaigi レポート (78) 富山Ruby会議01 レポート
 tags: 0061 regionalRubyKaigi
 post_author: noboru-i
-created_on: 2020-01-26
+created_on: 2020-02-02
 ---
 {% include base.html %}
 
