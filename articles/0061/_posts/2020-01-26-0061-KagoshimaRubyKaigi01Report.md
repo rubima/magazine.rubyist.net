@@ -10,15 +10,15 @@ created_on: 2020-01-26
 
 ## はじめに
 
-2019年11月30日に[鹿児島Ruby会議01](https://k-ruby.github.io/kagoshima-rubykaigi01/)が開催されました。
-鹿児島だけでなく、日本全国から多くのRubyistが集まりました。今回はその様子をレポートします。
+鹿児島Ruby会議01の実行委員長を務めました[kurotaky](https://twitter.com/kurotaky)です。2019年11月30日に[鹿児島Ruby会議01](https://k-ruby.github.io/kagoshima-rubykaigi01/)が開催され、鹿児島だけでなく日本全国から多くのRubyistが集まりました。今回はその様子をレポートします。
 
 ### K-Rubyについて
 
 鹿児島Rubyコミュニティ（K-Ruby: Kagoshima Ruby Community）
 2011/05/26 鹿児島でRubyのコミュニティを立ち上げました。プログラミング好きの集まりです。
 
-K-Rubyのホームページ: https://k-ruby.github.io/
+- [K-Rubyのホームページ](https://k-ruby.github.io/)
+- [K-RubyのFacebookグループ](https://www.facebook.com/kagoshima.rb/)
 
 ## 開催概要
 
@@ -44,7 +44,7 @@ K-Ruby
 
 ### 公式サイト
 
-<https://k-ruby.github.io/kagoshima-rubykaigi01/>
+[鹿児島Ruby会議01](https://k-ruby.github.io/kagoshima-rubykaigi01/)
 
 ### 公式タグ
 
@@ -52,7 +52,7 @@ K-Ruby
 
 ## セッションの内容について
 
-シナプスの中野さんが書かれた[鹿児島Ruby会議01に参加してきました](https://tech.synapse.jp/entry/2019/12/25/113000)を見ると詳しく書かれていますが、今回のるびまのレポートでは写真多めに
+シナプスの中野さんが書かれた[鹿児島Ruby会議01に参加してきました](https://tech.synapse.jp/entry/2019/12/25/113000)を見ると詳しく書かれています。今回のるびまのレポートでは一言コメントと一緒に写真多めで紹介します！
 
 ## Opening
 
@@ -83,7 +83,7 @@ Ruby2.7で導入される新機能について、興味深いユースケース�
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/pocke.jpg)
 
 - ブログ: [鹿児島Ruby会議01に参加した](https://pocke.hatenablog.com/entry/2019/12/04/005440)
-- 発表資料: https://speakerdeck.com/pocke/ruby-jp
+- 発表資料: [ruby-jp](https://speakerdeck.com/pocke/ruby-jp)
 
 ## ruby-vipsを利用した画像処理Tips
 
@@ -93,7 +93,7 @@ Ruby2.7で導入される新機能について、興味深いユースケース�
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/miyahara.jpg)
 
 - ブログ: [鹿児島Ruby会議01で発表しました](https://nyagato.hatenablog.jp/entry/2019/12/12/183000)
-- 発表資料: https://speakerdeck.com/takashimiyahara/image-processing-tips-using-ruby-vips
+- 発表資料: [Image processing tips using ruby-vips](https://speakerdeck.com/takashimiyahara/image-processing-tips-using-ruby-vips)
 
 ## Haconiwaが越えたあの夏〜3年間を振り返る
 
@@ -102,7 +102,7 @@ Ruby2.7で導入される新機能について、興味深いユースケース�
 
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/udzura.jpg)
 
-- 発表資料: https://speakerdeck.com/udzura/haconiwa-for-3-years
+- 発表資料: [Haconiwaが越えたあの夏 / haconiwa-for-3-years](https://speakerdeck.com/udzura/haconiwa-for-3-years)
 
 ## RubyのOSSコードリーディング
 
@@ -111,7 +111,7 @@ Ruby2.7で導入される新機能について、興味深いユースケース�
 
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/osamtimizer.jpg)
 
-- 発表資料: https://speakerdeck.com/osamtimizer/ruby-oss-code-reading
+- 発表資料: [RubyのOSSコードリーディング](https://speakerdeck.com/osamtimizer/ruby-oss-code-reading)
 
 ## 福岡の方から参りました Fukuoka.rb です
 
@@ -121,7 +121,7 @@ Fukuoka.rbの歴史と変化についてされていました。今後OSSパッ�
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/jimlock.jpg)
 
 - ブログ: [鹿児島 Ruby 会議 01 に行ってきた](https://jinroq.hatenablog.jp/entry/2019/12/01/183502)
-- 発表資料: https://speakerdeck.com/oda/fu-gang-falsefang-karacan-rimasita-fukuoka-dot-rb-desu
+- 発表資料: [福岡の方から参りました Fukuoka.rb です](https://speakerdeck.com/oda/fu-gang-falsefang-karacan-rimasita-fukuoka-dot-rb-desu)
 
 ## かごっま弁のDeep LearningをRubyできばっ
 
@@ -130,7 +130,7 @@ Fukuoka.rbの歴史と変化についてされていました。今後OSSパッ�
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/tanaken.jpg)
 
 - ブログ: [鹿児島Ruby会議01に参加しました](https://tech.pepabo.com/2019/12/13/kagoshima-rk01/)
-- 発表資料: https://speakerdeck.com/tanaken0515/introduction-of-deep-learning-for-rubyist
+- 発表資料: [Introduction of Deep Learning for Rubyist](https://speakerdeck.com/tanaken0515/introduction-of-deep-learning-for-rubyist)
 
 ## How to make a gem with Rust
 
@@ -139,7 +139,7 @@ Fukuoka.rbの歴史と変化についてされていました。今後OSSパッ�
 
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/sinsoku.jpg)
 
-- 発表資料: https://speakerdeck.com/sinsoku/how-to-make-a-gem-with-rust
+- 発表資料: [How to make a gem with Rust](https://speakerdeck.com/sinsoku/how-to-make-a-gem-with-rust)
 
 ## あまり知られていないRubyの便利機能
 
@@ -149,7 +149,7 @@ Fukuoka.rbの歴史と変化についてされていました。今後OSSパッ�
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/znz.jpg)
 
 - ブログ: [鹿児島Ruby会議01に参加して発表してきました](https://blog.n-z.jp/blog/2019-11-30-kagoshima-rubykaigi01.html)
-- 発表資料: https://slide.rabbit-shocker.org/authors/znz/kagoshima-rubykaigi01/
+- 発表資料: [あまり知られていないRubyの便利機能](https://slide.rabbit-shocker.org/authors/znz/kagoshima-rubykaigi01/)
 
 ## "regional” wasn’t going to mean “provincial”
 
@@ -157,7 +157,7 @@ Fukuoka.rbの歴史と変化についてされていました。今後OSSパッ�
 
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/kakutani.jpg)
 
-- 発表資料: https://speakerdeck.com/kakutani/kagoshima-rubykaigi01
+- 発表資料: ["REGIONAL" WASN'T MEANT TO BE MEAN "PROVINCIAL"](https://speakerdeck.com/kakutani/kagoshima-rubykaigi01)
 
 ## Rubyで作るネット回線の自動速度測定ツール
 
@@ -167,7 +167,7 @@ Fukuoka.rbの歴史と変化についてされていました。今後OSSパッ�
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/ryonkn.jpg)
 
 - ブログ: [鹿児島Ruby会議01に参加してきました](https://tech.synapse.jp/entry/2019/12/25/113000)
-- 発表資料: https://speakerdeck.com/ryonkn/automatic-network-bandwidth-measurement-tool-built-with-ruby
+- 発表資料: [Rubyで作るネット回線の自動速度測定ツール](https://speakerdeck.com/ryonkn/automatic-network-bandwidth-measurement-tool-built-with-ruby)
 
 ## Location-based API with Ruby
 
@@ -181,18 +181,31 @@ Fukuoka.rbの歴史と変化についてされていました。今後OSSパッ�
 
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/emorima.jpg)
 
-発表資料: https://www.slideshare.net/MayumiEmori/rails-girls-199846026
+発表資料: [Rails Girlsのお話や、初めての方向けのコミュニティについてなどお話](https://www.slideshare.net/MayumiEmori/rails-girls-199846026)
 
 ## closing
 
-最後はみんなで集合写真を撮りました！
+最後はみんなで集合写真を撮りました。県内外問わず多くの方が参加されました。
 
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/closing.jpg)
 
+参加されたみなさま、スタッフのみなさま、ありがとうございました！
+
 ## 懇親会
 
-懇親会では焼酎やさつま揚げなど鹿児島ならではの食事もありました。Fukuoka.rbの皆さまから日本酒の差し入れもいただきました。ありがとうございます！
-コーヒーブレイクでは鹿児島の[010coffee](https://twitter.com/010coffee)さんのコーヒーが提供されていました。
+懇親会では焼酎やさつま揚げなど鹿児島ならではの食事もありました。Fukuoka.rbの皆さまから日本酒の差し入れもいただきました。また、コーヒーブレイクでは鹿児島の[010coffee](https://twitter.com/010coffee)さんのコーヒーが提供されていました。朝早くから準備していただきました。ありがとうございます！
+
+Super Lightning Talksという発表したい人が名前を書いて、順番に自己紹介していくという企画も行ないました。沢山の方に発表していただきました。
+
+![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/lt.jpg)
+
+突然ライブコーディングをはじめる方もいました。各々が楽しめたようで良かったです。
+
+![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/unix.jpg)
+
+emorimaさんの発表で紹介されていた[#RubyFriends](http://rubyfriends.com/)もやりました。勢い余って写真がぶれていますが、雰囲気だけでも感じ取ってもらえると嬉しいです。
+
+![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/ruby-friends.jpg)
 
 ## スポンサー
 
@@ -212,10 +225,12 @@ Fukuoka.rbの歴史と変化についてされていました。今後OSSパッ�
 
 * [esa.io](https://esa.io/)
 
-## 参加者のブログ
+## 参加者のブログ紹介
 
-* http://serina-diary.jugem.jp/?eid=12
+参加者で鹿児島Ruby会議01の感想を書いてくれている方がいたので、こちらで紹介します。
+
+* [鹿児島Ruby会議01その１　全体的な感想語り編](http://serina-diary.jugem.jp/?eid=12)
 
 ## おわりに
 
-2020年の6月頃に[Rails Girls Kagoshima 1stも開催予定みたいで](https://twitter.com/railsgirls_kago/status/1219125183207723008)ますます盛り上がりをみせてきた鹿児島のRubyコミュニティ、これからも盛り上がっていくことを楽しみにしています！
+2020年の6月頃に[Rails Girls Kagoshima 1stも開催予定](https://twitter.com/railsgirls_kago/status/1219125183207723008)となり、ますます盛り上がりをみせてきた鹿児島のRubyコミュニティ、これからも盛り上がっていくことを楽しみにしています！
