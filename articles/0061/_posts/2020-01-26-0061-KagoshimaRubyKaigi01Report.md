@@ -78,7 +78,7 @@ Ruby2.7で導入される新機能について、興味深いユースケース�
 
 ## ruby-jp
 
-[pocke]さんは[Ruby界隈の大統一Slackワークスペースがほしい](https://pocke.hatenablog.com/entry/2019/08/02/181140)のエントリを書かれた方で、ruby-jpの話をされていました。鹿児島のRubyコミュニティの `#k-ruby` チャンネルもあるので、みなさん是非参加してみてください！
+[pocke](https://github.com/pocke)さんは[Ruby界隈の大統一Slackワークスペースがほしい](https://pocke.hatenablog.com/entry/2019/08/02/181140)のエントリを書かれた方で、ruby-jpの話をされていました。鹿児島のRubyコミュニティの `#k-ruby` チャンネルもあるので、みなさん是非参加してみてください！
 
 ![]({{base}}{{site.baseurl}}/images/0061-KagoshimaRubyKaigi01Report/pocke.jpg)
 
