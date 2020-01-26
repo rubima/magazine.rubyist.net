@@ -4,7 +4,7 @@ title: RegionalRubyKaigiレポート 鹿児島Ruby会議01
 short_title: 鹿児島Ruby会議01レポート
 tags: 0061 regionalRubyKaigi
 post_author: kurotaky
-created_on: 2020-01-26
+created_on: 2020-02-02
 ---
 {% include base.html %}
 
