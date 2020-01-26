@@ -234,3 +234,8 @@ emorimaさんの発表で紹介されていた[#RubyFriends](http://rubyfriends.
 ## おわりに
 
 2020年の6月頃に[Rails Girls Kagoshima 1stも開催予定](https://twitter.com/railsgirls_kago/status/1219125183207723008)となり、ますます盛り上がりをみせてきた鹿児島のRubyコミュニティ、これからも盛り上がっていくことを楽しみにしています！
+
+## 著者について
+
+[@kurotaky](https://twitter.com/kurotaky)
+GMOペパボ株式会社SUZURI事業部エンジニアリングリード、最近はethereum.rbのメンテナをしている。
