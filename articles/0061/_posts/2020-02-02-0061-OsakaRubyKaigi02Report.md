@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート 大阪Ruby会議02
+title: RegionalRubyKaigi レポート (77) 大阪Ruby会議02
 short_title: 大阪Ruby会議02
 post_author: 五島 僚太郎
 tags: 0061 regionalRubyKaigi
@@ -9,7 +9,7 @@ created_on: 2020-02-02
 
 {% include base.html %}
 
-## RegionalRubyKaigi レポート 大阪 Ruby 会議 02
+## RegionalRubyKaigi レポート (77) 大阪 Ruby 会議 02
 
 ### はじめに
 

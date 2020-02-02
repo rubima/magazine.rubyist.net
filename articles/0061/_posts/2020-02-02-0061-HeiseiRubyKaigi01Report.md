@@ -1,10 +1,10 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート 平成 Ruby 会議 01
+title: RegionalRubyKaigi レポート (80) 平成 Ruby 会議 01
 short_title: 平成 Ruby 会議 01 レポート
 tags: 0061 regionalRubyKaigi
 post_author: ryamakuchi
-created_on: 2020-01-26
+created_on: 2020-02-02
 ---
 {% include base.html %}
 
