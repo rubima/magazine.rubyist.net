@@ -15,7 +15,7 @@
   - 編集後記は`EditorsNote`
   - 地域Ruby会議レポートは`hogehogeRubyKaigiXXReport`
   - その他の記事は適当な英語名で
-- 記事を https://github.com/rubima/magazine/rubyist.net に対してPull Requestで出してください。
+- 記事を https://github.com/rubima/magazine.rubyist.net に対してPull Requestで出してください。
 - 記事はMarkdownで書きます。後述する書式とローカル環境の構築の方法を参照して、ご自身の環境でレイアウトなどを確認されてからPull Requestを出していただけると助かります。
 
 # 書式
