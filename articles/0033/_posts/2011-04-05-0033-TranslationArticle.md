@@ -2,6 +2,7 @@
 layout: post
 title: 海外記事翻訳シリーズ 【第 2 回】 Rack 仕様
 short_title: 海外記事翻訳シリーズ 【第 2 回】 Rack 仕様
+created_on: 2011-04-05
 tags: 0033 TranslationArticle
 ---
 {% include base.html %}

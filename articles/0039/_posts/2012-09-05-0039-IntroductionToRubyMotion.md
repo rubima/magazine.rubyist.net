@@ -2,6 +2,7 @@
 layout: post
 title: RubyMotion のご紹介
 short_title: RubyMotion のご紹介
+created_on: 2012-09-05
 tags: 0039 IntroductionToRubyMotion
 ---
 {% include base.html %}

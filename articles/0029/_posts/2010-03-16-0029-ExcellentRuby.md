@@ -2,6 +2,7 @@
 layout: post
 title: VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)
 short_title: VBA より便利で手軽 Excel 操作スクリプト言語「Ruby」へのお誘い (後編)
+created_on: 2010-03-16
 tags: 0029 ExcellentRuby
 ---
 {% include base.html %}

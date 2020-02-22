@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報
 short_title: 標準添付ライブラリ紹介 【第 4 回】 1.8.3 更新情報
+created_on: 2005-10-10
 tags: 0010 BundledLibraries
 ---
 {% include base.html %}

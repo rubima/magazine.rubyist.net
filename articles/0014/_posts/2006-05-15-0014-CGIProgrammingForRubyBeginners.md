@@ -2,6 +2,7 @@
 layout: post
 title: Ruby ビギナーのための CGI 入門 【第 3 回】 エラーの修正
 short_title: Ruby ビギナーのための CGI 入門 【第 3 回】 エラーの修正
+created_on: 2006-05-15
 tags: 0014 CGIProgrammingForRubyBeginners
 ---
 {% include base.html %}

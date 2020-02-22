@@ -2,6 +2,7 @@
 layout: post
 title: 0001-RubyEventCheck
 short_title: 0001-RubyEventCheck
+created_on: 2004-09-10
 tags: 0001 RubyEventCheck
 ---
 {% include base.html %}

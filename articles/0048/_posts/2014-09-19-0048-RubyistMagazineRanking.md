@@ -2,6 +2,7 @@
 layout: post
 title: 0048 号 アクセスランキング
 short_title: 0048 号 アクセスランキング
+created_on: 2014-09-19
 tags: 0048 RubyistMagazineRanking
 ---
 {% include base.html %}

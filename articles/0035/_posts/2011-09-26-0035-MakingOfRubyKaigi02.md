@@ -2,6 +2,7 @@
 layout: post
 title: Making of RubyKaigi - Making of KaigiFreaks ネットワーク班
 short_title: Making of RubyKaigi - Making of KaigiFreaks ネットワーク班
+created_on: 2011-09-26
 tags: 0035 MakingOfRubyKaigi02
 ---
 {% include base.html %}

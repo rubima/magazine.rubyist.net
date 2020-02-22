@@ -2,6 +2,7 @@
 layout: post
 title: レポートチーム史上最大の作戦
 short_title: レポートチーム史上最大の作戦
+created_on: 2012-11-25
 tags: 0040 HowToBuildSprk2012ReportTeam
 ---
 {% include base.html %}

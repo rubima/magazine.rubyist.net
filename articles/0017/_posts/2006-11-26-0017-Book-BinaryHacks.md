@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介『Binary Hacks』
 short_title: 書籍紹介『Binary Hacks』
+created_on: 2006-11-26
 tags: 0017 Book
 ---
 {% include base.html %}

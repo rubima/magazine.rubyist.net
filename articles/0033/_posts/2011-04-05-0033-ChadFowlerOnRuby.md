@@ -2,6 +2,7 @@
 layout: post
 title: Chad Fowler on Ruby
 short_title: Chad Fowler on Ruby
+created_on: 2011-04-05
 tags: 0033 ChadFowlerOnRuby
 ---
 {% include base.html %}

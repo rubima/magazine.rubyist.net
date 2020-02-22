@@ -2,6 +2,7 @@
 layout: post
 title: Rubyist インタビュー特別編 小崎資広さん 前編
 short_title: Rubyist インタビュー特別編 小崎資広さん 前編
+created_on: 2014-04-05
 tags: 0046 SpecialInterviewKosaki
 ---
 {% include base.html %}

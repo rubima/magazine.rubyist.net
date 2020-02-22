@@ -2,6 +2,7 @@
 layout: post
 title: 世界の Rubyist
 short_title: 世界の Rubyist
+created_on: 2006-02-20
 tags: 0013 WorldRubyistReport
 ---
 {% include base.html %}

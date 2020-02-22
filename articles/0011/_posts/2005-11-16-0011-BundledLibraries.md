@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 5 回】 enumerator
 short_title: 標準添付ライブラリ紹介 【第 5 回】 enumerator
+created_on: 2005-11-16
 tags: 0011 BundledLibraries
 ---
 {% include base.html %}

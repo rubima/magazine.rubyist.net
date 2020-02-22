@@ -2,6 +2,7 @@
 layout: post
 title: Rubyist Magazine 九周年
 short_title: Rubyist Magazine 九周年
+created_on: 2013-09-30
 tags: 0044 EditorComment
 ---
 {% include base.html %}

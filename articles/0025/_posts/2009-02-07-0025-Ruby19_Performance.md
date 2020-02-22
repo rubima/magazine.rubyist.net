@@ -2,6 +2,7 @@
 layout: post
 title: Ruby 1.9 で Web アプリを想定したベンチマークをとってみた
 short_title: Ruby 1.9 で Web アプリを想定したベンチマークをとってみた
+created_on: 2009-02-07
 tags: 0025 Ruby19_Performance
 ---
 {% include base.html %}

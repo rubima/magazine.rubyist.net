@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介『たのしい開発 スタートアップRuby』
 short_title: 書籍紹介『たのしい開発 スタートアップRuby』
+created_on: 2012-09-05
 tags: 0039 BookStartupRuby
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介『Ruby on Windows -- Rubyist Magazine 出張版』
 short_title: 書籍紹介『Ruby on Windows -- Rubyist Magazine 出張版』
+created_on: 2008-03-31
 tags: 0023 Book
 ---
 {% include base.html %}

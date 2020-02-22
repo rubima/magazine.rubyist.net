@@ -2,6 +2,7 @@
 layout: post
 title: 0054 号 アクセスランキング
 short_title: 0054 号 アクセスランキング
+created_on: 2016-08-21
 tags: 0054 RubyistMagazineRanking
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (40) 岡山 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (40) 岡山 Ruby 会議 02
+created_on: 2013-09-30
 tags: 0044 OkayamaRubyKaigi02Report regionalRubyKaigi
 ---
 {% include base.html %}

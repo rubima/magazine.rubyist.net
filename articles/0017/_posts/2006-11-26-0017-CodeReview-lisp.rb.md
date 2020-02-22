@@ -2,6 +2,7 @@
 layout: post
 title: 0017-CodeReview-lisp.rb
 short_title: 0017-CodeReview-lisp.rb
+created_on: 2006-11-26
 tags: 0017 CodeReview
 ---
 {% include base.html %}

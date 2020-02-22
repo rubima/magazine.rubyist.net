@@ -2,6 +2,7 @@
 layout: post
 title: Rubyist Magazine 七周年
 short_title: Rubyist Magazine 七周年
+created_on: 2011-09-26
 tags: 0035 EditorComment
 ---
 {% include base.html %}

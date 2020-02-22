@@ -2,6 +2,7 @@
 layout: post
 title: よちよち.rb みんなで LT デビューしよう会 イベントレポート
 short_title: よちよち.rb みんなで LT デビューしよう会 イベントレポート
+created_on: 2015-05-10
 tags: 0050 YochiyochiRbLtEventReport
 ---
 {% include base.html %}

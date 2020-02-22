@@ -2,6 +2,7 @@
 layout: post
 title: 海外記事翻訳シリーズ 【第 1 回】 RSpec ベストプラクティス
 short_title: 海外記事翻訳シリーズ 【第 1 回】 RSpec ベストプラクティス
+created_on: 2011-01-31
 tags: 0032 TranslationArticle
 ---
 {% include base.html %}

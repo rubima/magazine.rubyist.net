@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02
+created_on: 2011-04-05
 tags: 0033 NagoyaRubyKaigi02Report regionalRubyKaigi
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: 0050-EffectiveRuby_ja]
 short_title: 0050-EffectiveRuby_ja]
+created_on: 2015-05-10
 tags: 0050 EffectiveRuby_ja]
 ---
 {% include base.html %}

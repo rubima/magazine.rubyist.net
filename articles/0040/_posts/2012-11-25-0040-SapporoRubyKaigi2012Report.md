@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (32) 札幌 Ruby 会議 2012
 short_title: RegionalRubyKaigi レポート (32) 札幌 Ruby 会議 2012
+created_on: 2012-11-25
 tags: 0040 SapporoRubyKaigi2012Report regionalRubyKaigi
 ---
 {% include base.html %}

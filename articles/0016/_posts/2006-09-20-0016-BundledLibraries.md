@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 9 回】 PStore
 short_title: 標準添付ライブラリ紹介 【第 9 回】 PStore
+created_on: 2006-09-20
 tags: 0016 BundledLibraries
 ---
 {% include base.html %}

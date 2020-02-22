@@ -2,6 +2,7 @@
 layout: post
 title: 0015-CodeReview-tropy2.rb
 short_title: 0015-CodeReview-tropy2.rb
+created_on: 2006-07-13
 tags: 0015 CodeReview
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (19) とちぎ Ruby 会議 03
 short_title: RegionalRubyKaigi レポート (19) とちぎ Ruby 会議 03
+created_on: 2011-04-05
 tags: 0033 TochigiRubyKaigi03Report regionalRubyKaigi
 ---
 {% include base.html %}

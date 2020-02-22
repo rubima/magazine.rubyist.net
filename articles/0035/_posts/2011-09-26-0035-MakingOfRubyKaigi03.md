@@ -2,6 +2,7 @@
 layout: post
 title: Making of RubyKaigi - Making of 闇 RubyKaigi
 short_title: Making of RubyKaigi - Making of 闇 RubyKaigi
+created_on: 2011-09-26
 tags: 0035 MakingOfRubyKaigi03
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: プレゼント当選者からのフィードバック
 short_title: プレゼント当選者からのフィードバック
+created_on: 2015-12-06
 tags: 0052 present
 ---
 {% include base.html %}

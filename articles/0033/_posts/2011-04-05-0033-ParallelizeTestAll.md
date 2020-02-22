@@ -2,6 +2,7 @@
 layout: post
 title: 詳解! test-all 並列化
 short_title: 詳解! test-all 並列化
+created_on: 2011-04-05
 tags: 0033 ParallelizeTestAll
 ---
 {% include base.html %}

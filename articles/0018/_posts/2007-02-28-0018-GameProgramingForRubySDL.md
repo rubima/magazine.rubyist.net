@@ -2,6 +2,7 @@
 layout: post
 title: Ruby/SDLで始めるゲームプログラミング【前編】
 short_title: Ruby/SDLで始めるゲームプログラミング【前編】
+created_on: 2007-02-28
 tags: 0018 GameProgramingForRubySDL
 ---
 {% include base.html %}

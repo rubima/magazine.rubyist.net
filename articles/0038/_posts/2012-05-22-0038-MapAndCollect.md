@@ -2,6 +2,7 @@
 layout: post
 title: map と collect、reduce と inject ―― 名前の違いに見る発想の違い
 short_title: map と collect、reduce と inject ―― 名前の違いに見る発想の違い
+created_on: 2012-05-22
 tags: 0038 MapAndCollect
 ---
 {% include base.html %}

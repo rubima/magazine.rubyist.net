@@ -2,6 +2,7 @@
 layout: post
 title: 式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか【前編】
 short_title: 式と文、評価と実行、そして副作用 ―― プログラムはいかにして動くのか【前編】
+created_on: 2012-09-05
 tags: 0039 ExpressionAndStatement
 ---
 {% include base.html %}

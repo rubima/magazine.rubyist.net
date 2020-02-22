@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03
 short_title: RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03
+created_on: 2013-05-29
 tags: 0042 OoedoRubyKaigi03Report regionalRubyKaigi
 ---
 {% include base.html %}

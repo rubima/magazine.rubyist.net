@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (24) 松江 Ruby 会議 03
 short_title: RegionalRubyKaigi レポート (24) 松江 Ruby 会議 03
+created_on: 2011-09-26
 tags: 0035 MatsueRubyKaigi03Report regionalRubyKaigi
 ---
 {% include base.html %}

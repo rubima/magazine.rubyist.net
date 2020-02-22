@@ -2,6 +2,7 @@
 layout: post
 title: 中国の若きエンジニアの肖像 【第 3 回】ロビン・ルー(北京IN-SRC)さん
 short_title: 中国の若きエンジニアの肖像 【第 3 回】ロビン・ルー(北京IN-SRC)さん
+created_on: 2010-03-16
 tags: 0029 ChineseRubyist
 ---
 {% include base.html %}

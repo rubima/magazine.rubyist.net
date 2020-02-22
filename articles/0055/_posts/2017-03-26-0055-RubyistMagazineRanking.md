@@ -2,6 +2,7 @@
 layout: post
 title: 0055号 アクセスランキング
 short_title: 0055号 アクセスランキング
+created_on: 2017-03-26
 tags: 0055 RubyistMagazineRanking
 ---
 {% include base.html %}

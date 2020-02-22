@@ -2,6 +2,7 @@
 layout: post
 title: Rubyイメージソングコンテスト
 short_title: Rubyイメージソングコンテスト
+created_on: 2011-04-05
 tags: 0033 ImagesongContest
 ---
 {% include base.html %}

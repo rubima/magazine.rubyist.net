@@ -2,6 +2,7 @@
 layout: post
 title: 0051 号 アクセスランキング
 short_title: 0051 号 アクセスランキング
+created_on: 2015-09-06
 tags: 0051 RubyistMagazineRanking
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: 解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み
 short_title: 解説 Ruby Refactoring Browser - Ruby Refactoring Browser の組み込み
+created_on: 2005-11-16
 tags: 0011 RubyRefactoringBrowser
 ---
 {% include base.html %}

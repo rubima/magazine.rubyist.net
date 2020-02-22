@@ -2,6 +2,7 @@
 layout: post
 title: CRuby Committers Who's Who in 2013
 short_title: CRuby Committers Who's Who in 2013
+created_on: 2013-09-30
 tags: 0044 CRubyCommittersWhosWho2013
 ---
 {% include base.html %}

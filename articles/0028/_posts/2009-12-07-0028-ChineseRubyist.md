@@ -2,6 +2,7 @@
 layout: post
 title: 中国の若きエンジニアの肖像 【第 2 回】　ダニエルLvさん
 short_title: 中国の若きエンジニアの肖像 【第 2 回】　ダニエルLvさん
+created_on: 2009-12-07
 tags: 0028 ChineseRubyist
 ---
 {% include base.html %}

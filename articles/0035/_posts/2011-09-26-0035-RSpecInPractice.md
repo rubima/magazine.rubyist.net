@@ -2,6 +2,7 @@
 layout: post
 title: 改めて学ぶ RSpec
 short_title: 改めて学ぶ RSpec
+created_on: 2011-09-26
 tags: 0035 RSpecInPractice
 ---
 {% include base.html %}

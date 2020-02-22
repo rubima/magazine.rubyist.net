@@ -2,6 +2,7 @@
 layout: post
 title: 学術会議とRuby
 short_title: 学術会議とRuby
+created_on: 2009-02-07
 tags: 0025 AcaSocAndRuby
 ---
 {% include base.html %}

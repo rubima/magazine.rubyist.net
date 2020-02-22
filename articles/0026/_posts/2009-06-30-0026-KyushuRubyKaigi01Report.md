@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (04) 九州 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (04) 九州 Ruby 会議 01
+created_on: 2009-06-30
 tags: 0026 KyushuRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}

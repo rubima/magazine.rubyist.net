@@ -2,6 +2,7 @@
 layout: post
 title: エンドツーエンドテストの自動化は Cucumber から Turnip へ
 short_title: エンドツーエンドテストの自動化は Cucumber から Turnip へ
+created_on: 2013-05-29
 tags: 0042 FromCucumberToTurnip
 ---
 {% include base.html %}

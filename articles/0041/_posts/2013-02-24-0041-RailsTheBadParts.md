@@ -2,6 +2,7 @@
 layout: post
 title: Ruby on Rails： The Bad Parts
 short_title: Ruby on Rails： The Bad Parts
+created_on: 2013-02-24
 tags: 0041 RailsTheBadParts
 ---
 {% include base.html %}
