@@ -2,6 +2,7 @@
 layout: post
 title: Ruby で暦を研究する
 short_title: Ruby で暦を研究する
+created_on: 2015-09-06
 tags: 0051 FebruaryRectangleWithRuby
 ---
 {% include base.html %}

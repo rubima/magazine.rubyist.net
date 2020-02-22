@@ -2,6 +2,7 @@
 layout: post
 title: 0011-CodeReview-hex_struct.rb
 short_title: 0011-CodeReview-hex_struct.rb
+created_on: 2005-11-16
 tags: 0011 CodeReview
 ---
 {% include base.html %}

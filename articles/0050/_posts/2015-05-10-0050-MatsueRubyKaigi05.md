@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (46) 松江 Ruby 会議 05
 short_title: RegionalRubyKaigi レポート (46) 松江 Ruby 会議 05
+created_on: 2015-05-10
 tags: 0050 MatsueRubyKaigi05 regionalRubyKaigi
 ---
 {% include base.html %}

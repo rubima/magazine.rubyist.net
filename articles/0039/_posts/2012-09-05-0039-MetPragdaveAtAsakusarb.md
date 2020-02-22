@@ -2,6 +2,7 @@
 layout: post
 title: 達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた
 short_title: 達人プログラマ Dave Thomas が Asakusa.rb で話するというので聞いてきた
+created_on: 2012-09-05
 tags: 0039 MetPragdaveAtAsakusarb
 ---
 {% include base.html %}

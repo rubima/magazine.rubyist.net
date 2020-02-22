@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (59) TokyuRuby 会議 10
 short_title: RegionalRubyKaigi レポート (59) TokyuRuby 会議 10
+created_on: 2016-08-21
 tags: 0054 TokyuRubyKaigi10Report regionalRubyKaigi
 ---
 {% include base.html %}

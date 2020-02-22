@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (25) TokyuRuby 会議 03
 short_title: RegionalRubyKaigi レポート (25) TokyuRuby 会議 03
+created_on: 2011-11-28
 tags: 0036 TokyuRubyKaigi03Report regionalRubyKaigi
 ---
 {% include base.html %}

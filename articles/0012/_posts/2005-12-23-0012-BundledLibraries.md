@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 6 回】 委譲
 short_title: 標準添付ライブラリ紹介 【第 6 回】 委譲
+created_on: 2005-12-23
 tags: 0012 BundledLibraries
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: 8-bit風ゲームをつくるフレームワークburnの紹介
 short_title: 8-bit風ゲームをつくるフレームワークburnの紹介
+created_on: 2014-06-30
 tags: 0047 IntroductionToBurn
 ---
 {% include base.html %}

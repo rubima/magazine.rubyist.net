@@ -2,6 +2,7 @@
 layout: post
 title: Ruby/Tk の動向
 short_title: Ruby/Tk の動向
+created_on: 2004-11-15
 tags: 0003 RubyTkMovement
 ---
 {% include base.html %}

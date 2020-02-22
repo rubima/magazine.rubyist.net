@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)
 short_title: 標準添付ライブラリ紹介 【第 13 回】 正規表現 (2)
+created_on: 2007-08-15
 tags: 0020 BundledLibraries
 ---
 {% include base.html %}

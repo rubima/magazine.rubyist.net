@@ -2,6 +2,7 @@
 layout: post
 title: OSSC2004　Ruby BoF レポート
 short_title: OSSC2004　Ruby BoF レポート
+created_on: 2004-10-16
 tags: 0002 OSSC2004RubyBoFReport
 ---
 {% include base.html %}

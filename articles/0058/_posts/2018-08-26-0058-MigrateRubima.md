@@ -2,6 +2,7 @@
 layout: post
 title: るびまバージョンアップの裏側
 short_title: るびまバージョンアップの裏側
+created_on: 2018-08-26
 tags: 0058 migrate_rubima
 post_author: みよひで
 created_on: 2018年8月26日

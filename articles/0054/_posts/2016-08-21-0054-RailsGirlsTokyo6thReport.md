@@ -2,6 +2,7 @@
 layout: post
 title: Rails Girls Tokyo 6th 開催レポート
 short_title: Rails Girls Tokyo 6th 開催レポート
+created_on: 2016-08-21
 tags: 0054 RailsGirlsTokyo6thReport
 ---
 {% include base.html %}

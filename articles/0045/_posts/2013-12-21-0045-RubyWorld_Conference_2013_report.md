@@ -2,6 +2,7 @@
 layout: post
 title: RubyWorld Conference 2013 参加レポート
 short_title: RubyWorld Conference 2013 参加レポート
+created_on: 2013-12-21
 tags: 0045 RubyWorld_Conference_2013_report
 ---
 {% include base.html %}

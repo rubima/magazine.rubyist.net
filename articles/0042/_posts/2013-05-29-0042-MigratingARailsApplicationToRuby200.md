@@ -2,6 +2,7 @@
 layout: post
 title: クックパッドを Ruby 2.0.0 に対応させた話
 short_title: クックパッドを Ruby 2.0.0 に対応させた話
+created_on: 2013-05-29
 tags: 0042 MigratingARailsApplicationToRuby200
 ---
 {% include base.html %}

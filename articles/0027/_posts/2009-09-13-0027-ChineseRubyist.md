@@ -2,6 +2,7 @@
 layout: post
 title: 中国の若きエンジニアの肖像 【第 1 回】　バオ＝クゲンさん
 short_title: 中国の若きエンジニアの肖像 【第 1 回】　バオ＝クゲンさん
+created_on: 2009-09-13
 tags: 0027 ChineseRubyist
 ---
 {% include base.html %}

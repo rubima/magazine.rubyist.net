@@ -2,6 +2,7 @@
 layout: post
 title: Ruby ではじめるプログラミング 【最終回】
 short_title: Ruby ではじめるプログラミング 【最終回】
+created_on: 2005-02-15
 tags: 0005 FirstProgramming
 ---
 {% include base.html %}

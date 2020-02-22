@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介『Rubyist Magazine 出張版　正しい Ruby コードの書き方講座』
 short_title: 書籍紹介『Rubyist Magazine 出張版　正しい Ruby コードの書き方講座』
+created_on: 2007-09-29
 tags: 0021 Book
 ---
 {% include base.html %}

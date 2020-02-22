@@ -2,6 +2,7 @@
 layout: post
 title: Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて
 short_title: Jeweler で作る Rails 用 RubyGems パッケージとそのテストについて
+created_on: 2012-02-05
 tags: 0037 CreateRailsPlugin
 ---
 {% include base.html %}

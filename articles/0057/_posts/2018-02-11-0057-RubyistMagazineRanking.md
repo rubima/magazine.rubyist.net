@@ -2,6 +2,7 @@
 layout: post
 title: 0057 号 アクセスランキング
 short_title: 0057 号 アクセスランキング
+created_on: 2018-02-11
 tags: 0057 RubyistMagazineRanking
 ---
 {% include base.html %}

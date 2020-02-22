@@ -2,6 +2,7 @@
 layout: post
 title: 0049 号 アクセスランキング
 short_title: 0049 号 アクセスランキング
+created_on: 2014-12-14
 tags: 0049 RubyistMagazineRanking
 ---
 {% include base.html %}

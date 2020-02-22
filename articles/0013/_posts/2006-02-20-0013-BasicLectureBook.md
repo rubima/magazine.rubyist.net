@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介『Ruby プログラミング基礎講座』
 short_title: 書籍紹介『Ruby プログラミング基礎講座』
+created_on: 2006-02-20
 tags: 0013 BasicLectureBook
 ---
 {% include base.html %}

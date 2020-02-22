@@ -2,6 +2,7 @@
 layout: post
 title: vagrantとchef-soloを使った開発環境の構築
 short_title: vagrantとchef-soloを使った開発環境の構築
+created_on: 2013-12-21
 tags: 0045 SetupDevelopmentEnvWIthVagrantAndChefSolo
 ---
 {% include base.html %}

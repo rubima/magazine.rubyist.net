@@ -2,6 +2,7 @@
 layout: post
 title: Refinementsとは何だったのか
 short_title: Refinementsとは何だったのか
+created_on: 2013-02-24
 tags: 0041 200Special
 ---
 {% include base.html %}

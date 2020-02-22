@@ -2,6 +2,7 @@
 layout: post
 title: C# と Ruby を連携させる
 short_title: C# と Ruby を連携させる
+created_on: 2007-09-29
 tags: 0021 RubyWithCSharp
 ---
 {% include base.html %}

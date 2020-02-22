@@ -2,6 +2,7 @@
 layout: post
 title: 解説 Ruby Refactoring Browser - Emacs でリファクタリング
 short_title: 解説 Ruby Refactoring Browser - Emacs でリファクタリング
+created_on: 2005-10-10
 tags: 0010 RubyRefactoringBrowser
 ---
 {% include base.html %}

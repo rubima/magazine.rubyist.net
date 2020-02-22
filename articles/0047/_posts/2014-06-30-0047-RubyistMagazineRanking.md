@@ -2,6 +2,7 @@
 layout: post
 title: 0047 号 アクセスランキング
 short_title: 0047 号 アクセスランキング
+created_on: 2014-06-30
 tags: 0047 RubyistMagazineRanking
 ---
 {% include base.html %}

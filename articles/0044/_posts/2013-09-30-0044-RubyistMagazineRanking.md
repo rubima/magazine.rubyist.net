@@ -2,6 +2,7 @@
 layout: post
 title: 0044 号 アクセスランキング
 short_title: 0044 号 アクセスランキング
+created_on: 2013-09-30
 tags: 0044 RubyistMagazineRanking
 ---
 {% include base.html %}

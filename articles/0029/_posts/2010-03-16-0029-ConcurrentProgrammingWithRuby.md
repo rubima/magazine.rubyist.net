@@ -2,6 +2,7 @@
 layout: post
 title: Ruby と並列プログラミング
 short_title: Ruby と並列プログラミング
+created_on: 2010-03-16
 tags: 0029 ConcurrentProgrammingWithRuby
 ---
 {% include base.html %}

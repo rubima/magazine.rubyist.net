@@ -2,6 +2,7 @@
 layout: post
 title: 値渡しと参照渡しの違いを理解する
 short_title: 値渡しと参照渡しの違いを理解する
+created_on: 2011-01-31
 tags: 0032 CallByValueAndCallByReference
 ---
 {% include base.html %}

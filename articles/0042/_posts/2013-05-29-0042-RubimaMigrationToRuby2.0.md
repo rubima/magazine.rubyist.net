@@ -2,6 +2,7 @@
 layout: post
 title: Rubyist Magazine 移行後記
 short_title: Rubyist Magazine 移行後記
+created_on: 2013-05-29
 tags: 0042 RubimaMigrationToRuby2.0
 ---
 {% include base.html %}

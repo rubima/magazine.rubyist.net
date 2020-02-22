@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 7 回】 net/http
 short_title: 標準添付ライブラリ紹介 【第 7 回】 net/http
+created_on: 2006-02-20
 tags: 0013 BundledLibraries
 ---
 {% include base.html %}

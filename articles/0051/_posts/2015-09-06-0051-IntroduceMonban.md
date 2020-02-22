@@ -2,6 +2,7 @@
 layout: post
 title: Monban どうでしょう
 short_title: Monban どうでしょう
+created_on: 2015-09-06
 tags: 0051 IntroduceMonban
 ---
 {% include base.html %}

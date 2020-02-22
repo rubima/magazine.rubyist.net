@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (35) 東京 Ruby 会議 10 中断後の 3 日目
 short_title: RegionalRubyKaigi レポート (35) 東京 Ruby 会議 10 中断後の 3 日目
+created_on: 2013-05-29
 tags: 0042 TokyoRubyKaigi10Report_2nd regionalRubyKaigi
 ---
 {% include base.html %}

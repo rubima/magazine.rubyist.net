@@ -2,6 +2,7 @@
 layout: post
 title: 0046 号 アクセスランキング
 short_title: 0046 号 アクセスランキング
+created_on: 2014-04-05
 tags: 0046 RubyistMagazineRanking
 ---
 {% include base.html %}

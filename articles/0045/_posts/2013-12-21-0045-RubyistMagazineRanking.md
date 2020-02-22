@@ -2,6 +2,7 @@
 layout: post
 title: 0045 号 アクセスランキング
 short_title: 0045 号 アクセスランキング
+created_on: 2013-12-21
 tags: 0045 RubyistMagazineRanking
 ---
 {% include base.html %}

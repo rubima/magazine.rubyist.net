@@ -2,6 +2,7 @@
 layout: post
 title: Fiber と Proc ―― 手続きを抽象化する二つの機能
 short_title: Fiber と Proc ―― 手続きを抽象化する二つの機能
+created_on: 2011-06-12
 tags: 0034 FiberForBeginners
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: Sinatra 再入門、 Padrino / Rack / その先の何か
 short_title: Sinatra 再入門、 Padrino / Rack / その先の何か
+created_on: 2011-11-28
 tags: 0036 SinatraReintroduction
 ---
 {% include base.html %}

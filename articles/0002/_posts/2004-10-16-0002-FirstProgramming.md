@@ -2,6 +2,7 @@
 layout: post
 title: Ruby ではじめるプログラミング 【第 1 回】
 short_title: Ruby ではじめるプログラミング 【第 1 回】
+created_on: 2004-10-16
 tags: 0002 FirstProgramming
 ---
 {% include base.html %}

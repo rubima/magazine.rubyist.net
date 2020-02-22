@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 2 回】 Logger
 short_title: 標準添付ライブラリ紹介 【第 2 回】 Logger
+created_on: 2005-07-19
 tags: 0008 BundledLibraries
 ---
 {% include base.html %}

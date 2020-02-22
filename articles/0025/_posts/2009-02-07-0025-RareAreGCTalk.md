@@ -2,6 +2,7 @@
 layout: post
 title: レアでアレなGCの話
 short_title: レアでアレなGCの話
+created_on: 2009-02-07
 tags: 0025 RareAreGCTalk
 ---
 {% include base.html %}

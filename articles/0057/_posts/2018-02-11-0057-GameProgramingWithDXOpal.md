@@ -2,6 +2,7 @@
 layout: post
 title: Rubyで始めるゲームプログラミング - DXOpal編 -
 short_title: Rubyでゲーム
+created_on: 2018-02-11
 tags: 0057 GameProgramingWithDXOpal
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: Ruby/Tk 講習会レポート
 short_title: Ruby/Tk 講習会レポート
+created_on: 2004-12-17
 tags: 0004 RubyTkSemiReport
 ---
 {% include base.html %}

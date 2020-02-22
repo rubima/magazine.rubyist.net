@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介『Effective Ruby』
 short_title: 書籍紹介『Effective Ruby』
+created_on: 2015-05-10
 tags: 0050 EffectiveRuby_ja
 ---
 {% include base.html %}

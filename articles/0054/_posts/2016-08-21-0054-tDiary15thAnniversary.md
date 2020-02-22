@@ -2,6 +2,7 @@
 layout: post
 title: tDiary 15th anniversary party レポート
 short_title: tDiary 15th anniversary party レポート
+created_on: 2016-08-21
 tags: 0054 tDiary15thAnniversary
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile
 short_title: 標準添付ライブラリ紹介 【第 15 回】 tmpdir, tempfile
+created_on: 2010-03-16
 tags: 0029 BundledLibraries
 ---
 {% include base.html %}

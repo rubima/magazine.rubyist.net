@@ -2,6 +2,7 @@
 layout: post
 title: ruby-dev translationのご紹介
 short_title: ruby-dev translationのご紹介
+created_on: 2011-09-26
 tags: 0035 ruby
 ---
 {% include base.html %}

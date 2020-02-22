@@ -2,6 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (66) ぎんざ Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (66) ぎんざ Ruby 会議 01
+created_on: 2018-02-11
 tags: 0057 GinzaRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}

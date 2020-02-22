@@ -2,6 +2,7 @@
 layout: post
 title: 桐島、Rubyやめるってよ
 short_title: 桐島、Rubyやめるってよ
+created_on: 2013-05-29
 tags: 0042 FollowUpKirishimaRuby
 ---
 {% include base.html %}

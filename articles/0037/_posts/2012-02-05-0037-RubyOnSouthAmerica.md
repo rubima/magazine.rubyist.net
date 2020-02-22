@@ -2,6 +2,7 @@
 layout: post
 title: あなたが南米のRubyカンファレンスに参加するべきn個の理由【前編】
 short_title: あなたが南米のRubyカンファレンスに参加するべきn個の理由【前編】
+created_on: 2012-02-05
 tags: 0037 RubyOnSouthAmerica
 ---
 {% include base.html %}

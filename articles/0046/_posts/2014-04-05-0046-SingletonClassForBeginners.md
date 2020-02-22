@@ -2,6 +2,7 @@
 layout: post
 title: Ruby 初級者のための class << self の話 (または特異クラスとメタクラス)
 short_title: Ruby 初級者のための class << self の話 (または特異クラスとメタクラス)
+created_on: 2014-04-05
 tags: 0046 SingletonClassForBeginners
 ---
 {% include base.html %}

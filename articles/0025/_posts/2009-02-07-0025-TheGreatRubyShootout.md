@@ -2,6 +2,7 @@
 layout: post
 title: Ruby 仮想マシン・ガチンコバトル (2008 年 12 月版)
 short_title: Ruby 仮想マシン・ガチンコバトル (2008 年 12 月版)
+created_on: 2009-02-07
 tags: 0025 TheGreatRubyShootout
 ---
 {% include base.html %}

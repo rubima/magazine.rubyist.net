@@ -2,6 +2,7 @@
 layout: post
 title: 権限管理のgem、Punditの紹介
 short_title: 権限管理のgem、Punditの紹介
+created_on: 2014-06-30
 tags: 0047 IntroductionToPundit
 ---
 {% include base.html %}

@@ -2,6 +2,7 @@
 layout: post
 title: 東京 Ruby 会議 11 運営記録
 short_title: 東京 Ruby 会議 11 運営記録
+created_on: 2016-08-21
 tags: 0054 TokyoRubyKaigi11OrganizeReport
 ---
 {% include base.html %}

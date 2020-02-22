@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介『たのしい Ruby 第 2 版』
 short_title: 書籍紹介『たのしい Ruby 第 2 版』
+created_on: 2006-09-20
 tags: 0016 Book
 ---
 {% include base.html %}

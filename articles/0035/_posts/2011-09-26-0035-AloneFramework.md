@@ -2,6 +2,7 @@
 layout: post
 title: 組み込み向けウェブインターフェースフレームワーク「Alone」とその応用機器の紹介
 short_title: 組み込み向けウェブインターフェースフレームワーク「Alone」とその応用機器の紹介
+created_on: 2011-09-26
 tags: 0035 AloneFramework
 ---
 {% include base.html %}

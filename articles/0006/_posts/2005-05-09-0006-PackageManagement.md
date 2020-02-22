@@ -2,6 +2,7 @@
 layout: post
 title: シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)
 short_title: シリーズ パッケージマネジメント 【第 1 回】 RubyGems (1)
+created_on: 2005-05-09
 tags: 0006 PackageManagement
 ---
 {% include base.html %}
