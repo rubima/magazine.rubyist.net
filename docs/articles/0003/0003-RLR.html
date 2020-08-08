@@ -238,7 +238,7 @@ RubyJDWP は実行中の Java プロセスにアクセスするためのライ�
 このようなことは、JDWP [1] というデバッグ用のプロトコルを使うと
 実現できます。このプロトコルを Ruby から使えるようにしたのが RubyJDWP です。
 JDWP は低レベルなプロトコルですので、より使いやすくしたものに JDI という
-ライブラリがあります。JDI には、Java のメソッドコールを行うことができる程度<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+ライブラリがあります。JDI には、Java のメソッドコールを行うことができる程度<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
 の機能があります。
 RubyJDWP を利用して JDI 相当のライブラリを作成すれば、
 Ruby プロセスから Java のメソッドを呼ぶことができます。
@@ -267,7 +267,7 @@ Java クラスファイルをロードしてメソッドを呼ぶことができ
 
 <h3 id="作者からの声">作者からの声</h3>
 
-<p>作者の arton 氏より以下のコメントを頂きました。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>作者の arton 氏より以下のコメントを頂きました。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <blockquote>
   <p>rjb の 3 つの目的と 3 つの誤算</p>
@@ -333,7 +333,7 @@ rjni の開発者が [ruby-talk:115504] で語っているように、Ruby は�
 ろそろ反映させますのでもうちょっとお待ちください) 。</p>
 </blockquote>
 
-<p>rjb は趣味・実験目的で作られた物と思っていましたが、実用目的だったのですね。目的が合致する方は、使ってみると良いのではないのでしょうか。なお、コメントにあるバグですが、今回のサンプルや通常の使用ではほとんど問題ありません。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+<p>rjb は趣味・実験目的で作られた物と思っていましたが、実用目的だったのですね。目的が合致する方は、使ってみると良いのではないのでしょうか。なお、コメントにあるバグですが、今回のサンプルや通常の使用ではほとんど問題ありません。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
 
 <h3 id="サンプル">サンプル</h3>
 
@@ -738,7 +738,7 @@ JVM の停止・実行時におけるバイトコードレベルでの編集・
 
 <p>実装上の自慢は、JDWP の仕様を Ruby を利用したメタ言語で記述し、
 JDWP のプロトコル実装部分を自動化したところのようです。
-[5] <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+[5] <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
 
 <h3 id="サンプル-2">サンプル</h3>
 
@@ -923,19 +923,19 @@ Java の機能を自在に利用することができるようになると思い
   </li>
 </ul>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>com.sun.jdi.ObjectReference における、invokeMethod を利用します。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>com.sun.jdi.ObjectReference における、invokeMethod を利用します。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>arton 氏ご自身の<a href="http://arton.no-ip.info/diary/20041116.html#p02">ページ</a>に、コメントに対する補足説明があります。[11/25 追記] <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>arton 氏ご自身の<a href="http://arton.no-ip.info/diary/20041116.html#p02">ページ</a>に、コメントに対する補足説明があります。[11/25 追記] <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>Rjb::load メソッドの第 1 引数に JNI のバージョン番号を渡せるのですが、現状、1 引いて渡さなければなりません。例えば、バージョン 1.3 を指定する場合、0.3 を渡す必要があります。デフォルト値で使用する分には問題ありません。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>Rjb::load メソッドの第 1 引数に JNI のバージョン番号を渡せるのですが、現状、1 引いて渡さなければなりません。例えば、バージョン 1.3 を指定する場合、0.3 を渡す必要があります。デフォルト値で使用する分には問題ありません。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Rich Kilmer さんが中心となり実装したようです。該当部分は、RubyJDWP ソースツリーの lib/jdwp/spec/ 以下になります。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Rich Kilmer さんが中心となり実装したようです。該当部分は、RubyJDWP ソースツリーの lib/jdwp/spec/ 以下になります。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -280,15 +280,15 @@
 
 <p>人間は仕様という名前の制限の下で使わされてるに過ぎないのではないのか？</p>
 
-<p>Ruby は、ライセンス<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> に基づいて、
-公開されているフリーソフトウェア <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> だ。
+<p>Ruby は、ライセンス<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> に基づいて、
+公開されているフリーソフトウェア <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> だ。
 ここでは「動かすことの出来る有用なプログラムのソースコードがある」事実をひとまず考えてみたい。</p>
 
 <p>ソースコードは ruby インタプリタの設計図だ。理論的には、あなたはその全てを確認することが出来るし
 自分の思うままに書き換えることが可能である。昔から ruby に 『++』(インクリメント)を導入して欲しい
 というリクエストがあるが、これだって自分で仕様を考えて、自分でコーディングして、自分で 
 ruby インタプリタを作りさえすれば手に入る。自分の手のひらの中だけでだけど
-<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <p>この記事を読んでいるあなたは、(アプリケーション)プログラムを触るだけでなく、スクリプティング言語
 に興味があるのだと思う。自分から PC に歩み寄る選択肢を選んだあなたなら、この気持ちは判ると思う。</p>
@@ -301,19 +301,19 @@ ruby インタプリタを作りさえすれば手に入る。自分の手のひ
 
 <p>OS をいぢる前に(もちろん、いぢることから始めても良いけれど)プログラムをビルド(コンパイル)することから始めてみようじゃないか。
 この連載は Windows OS (具体的には、Windows 2000 以降の Microsoft 製の OS たち)上で
-<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> 、
+<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup> 、
 ruby.exe をビルドする方法について説明していく。</p>
 
 <h3 id="ビルドコンパイルするとは">ビルド(コンパイル)するとは？</h3>
 
 <p>ソースコードをコンピュータが処理可能な命令を出すモノ(プログラム)に変換する作業がコンパイルだ。
 正確にはコンパイルとはソースコード→オブジェクトコードの変換を指すため、最終的なプログラム
-および必要なファイル群<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> を生成する
-後処理的な部分も合わせて「ビルドする」といった言い方<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> を本稿では用いることとする。</p>
+および必要なファイル群<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> を生成する
+後処理的な部分も合わせて「ビルドする」といった言い方<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup> を本稿では用いることとする。</p>
 
 <h4 id="開発環境">開発環境</h4>
 
-<p>開発環境とは、ビルドするためのツール群のことだ。コンパイラやリンカなどのツール、ヘッダ/ライブラリ<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>などが含まれる。
+<p>開発環境とは、ビルドするためのツール群のことだ。コンパイラやリンカなどのツール、ヘッダ/ライブラリ<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>などが含まれる。
 また、OS やコンパイラによっても、ビルドに必要なツールは変わっていく。</p>
 
 <p>Windows OS には、基本的に開発環境は含まれないのでインストールする必要がある。</p>
@@ -364,7 +364,7 @@ ruby.exe をビルドする方法について説明していく。</p>
   <li>GNUの開発環境</li>
 </ol>
 
-<p>同様に GCC というコンパイラが使える Cygwin では、 cygwin1.dll という動作用の DLL 他を入れないと動かない<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>、しかし、UNIX 系 OS とほぼ同等の環境まで用意してくれる という違いがある。MSWin32版および bccwin32版でも基本的にフリーで環境をそろえることも可能なのだが、今回はインストールなどの手間が一番小さいと思われる MinGW および MSYS にて環境を作ることとする。</p>
+<p>同様に GCC というコンパイラが使える Cygwin では、 cygwin1.dll という動作用の DLL 他を入れないと動かない<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>、しかし、UNIX 系 OS とほぼ同等の環境まで用意してくれる という違いがある。MSWin32版および bccwin32版でも基本的にフリーで環境をそろえることも可能なのだが、今回はインストールなどの手間が一番小さいと思われる MinGW および MSYS にて環境を作ることとする。</p>
 
 <h4 id="msys">MSYS?</h4>
 
@@ -374,12 +374,12 @@ ruby.exe をビルドする方法について説明していく。</p>
   <p>MSYS: A Minimal SYStem to provide POSIX/Bourne configure scripts the ability to execute and create a Makefile used by make.</p>
 </blockquote>
 
-<p>またまた適当になんちゃって訳すると「最小限の POSIX<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup> と configureスクリプトが動作して Makefileを作ることが出来る環境」ってとこだ。元々 UNIX環境を祖とする Rubyの場合 UNIX的環境(上記 POSIXおよび configureスクリプトが動作する環境だ)がある方がビルドの手間がかからない。
+<p>またまた適当になんちゃって訳すると「最小限の POSIX<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup> と configureスクリプトが動作して Makefileを作ることが出来る環境」ってとこだ。元々 UNIX環境を祖とする Rubyの場合 UNIX的環境(上記 POSIXおよび configureスクリプトが動作する環境だ)がある方がビルドの手間がかからない。
 まぁ、知ってるに越した事はないんだが「コンパイラ以外のビルドに必要なツール群が入ってる」くらいの認識でも今は OK だ。おいおい知るハメにもなるわけだし。</p>
 
 <p>MinGW/MSYS環境と Cygwin 環境との大きな違いはコンパイルした実行ファイルが、動作用の DLL(msys-1.0.dll)が無くても動くことを前提にしてる部分である。</p>
 
-<p>MinGW/MSYS に関しては MinGW公式ページの <a href="http://www.mingw.org/mingwfaq.shtml">FAQ</a>や<a href="http://www.mingw.org/docs.shtml">Documentation</a>にも情報がある<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup> 。この後紹介するページにも有用な解説もあるので見て欲しい。</p>
+<p>MinGW/MSYS に関しては MinGW公式ページの <a href="http://www.mingw.org/mingwfaq.shtml">FAQ</a>や<a href="http://www.mingw.org/docs.shtml">Documentation</a>にも情報がある<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup> 。この後紹介するページにも有用な解説もあるので見て欲しい。</p>
 
 <h3 id="インストールしてみる">インストールしてみる</h3>
 
@@ -389,7 +389,7 @@ ruby.exe をビルドする方法について説明していく。</p>
   <dt>MinGWを使う</dt>
   <dd><a href="http://www.geocities.jp/turtle_wide/tools/gccwin.htm">http://www.geocities.jp/turtle_wide/tools/gccwin.htm</a> :画像付きの説明ページあり</dd>
   <dt>Win32 + MSYS + MinGW 2.0 で SDL の開発環境を構築</dt>
-  <dd><a href="http://cefiro.homelinux.org/topics/SDL/setup-win32-mingw-2.0.html">http://cefiro.homelinux.org/topics/SDL/setup-win32-mingw-2.0.html</a> :SDL <sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup> 用に環境構築を説明している。ただし現在は MinGW3.0</dd>
+  <dd><a href="http://cefiro.homelinux.org/topics/SDL/setup-win32-mingw-2.0.html">http://cefiro.homelinux.org/topics/SDL/setup-win32-mingw-2.0.html</a> :SDL <sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup> 用に環境構築を説明している。ただし現在は MinGW3.0</dd>
 </dl>
 
 <p>がまとまっている。で、今回は MinGW/MSYS セットアップのみをインストールする。</p>
@@ -441,7 +441,7 @@ Where is your MinGW installation?</code></pre></figure>
 
 <p><em><img src="../../images/0004-BuildRubyWin/msys_rxvt.png" alt="msys_rxvt.png" /></em></p>
 
-<p>rxvt は Linuxなどの UNIX互換OSなどで動くターミナルプログラムの移植版である。詳しくはこれも <a href="GoogleJ:rxvt">GoogleJ:rxvt</a>から探索して欲しい。そうそう、こいつは初期設定のままでは、日本語は通らない <sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>。</p>
+<p>rxvt は Linuxなどの UNIX互換OSなどで動くターミナルプログラムの移植版である。詳しくはこれも <a href="GoogleJ:rxvt">GoogleJ:rxvt</a>から探索して欲しい。そうそう、こいつは初期設定のままでは、日本語は通らない <sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>。</p>
 
 <h4 id="bash">bash</h4>
 
@@ -485,7 +485,7 @@ gcc version 3.2.3 (mingw special 20030504-1)</code></pre></figure>
 
 <p>今回はその辺は、きっちりやり方を説明させていただく。しかし</p>
 
-<p><strong>今 度 だ け だ よ ん <sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup></strong></p>
+<p><strong>今 度 だ け だ よ ん <sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote">13</a></sup></strong></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ mkdir src
 $ cd src</code></pre></figure>
@@ -495,7 +495,7 @@ $ cd src</code></pre></figure>
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ start .
 $</code></pre></figure>
 
-<p>これで、Homeディレクトリをエクスプローラが開いた状態で表示されるはずだ <sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>
+<p>これで、Homeディレクトリをエクスプローラが開いた状態で表示されるはずだ <sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote">14</a></sup>
 後は何とかメモ帳から hello.cファイルを開いた状態にして欲しい。</p>
 
 <p>そうしたら、以下のソースコードをコピペだ。</p>
@@ -518,7 +518,7 @@ a.exe
 $ a
 Hello,World!!</code></pre></figure>
 
-<p><sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup> 
+<p><sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote">15</a></sup> 
 特に問題は無いはずだ。</p>
 
 <h3 id="rubyexe作ってみるよ">ruby.exe作ってみるよ</h3>
@@ -564,9 +564,9 @@ ruby 1.8.2 (2004-11-06) [i386-mingw32]</code></pre></figure>
 
 <h4 id="課題その１拡張ライブラリ">課題その１：拡張ライブラリ</h4>
 
-<p>今回のビルドではいくつかの拡張ライブラリ<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>が作られていない。</p>
+<p>今回のビルドではいくつかの拡張ライブラリ<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote">16</a></sup>が作られていない。</p>
 
-<p>以下で拡張ライブラリの名前<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>を表示させている <sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>。作られなかったライブラリの共通点を考えてみよう。</p>
+<p>以下で拡張ライブラリの名前<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote">17</a></sup>を表示させている <sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote">18</a></sup>。作られなかったライブラリの共通点を考えてみよう。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ find . -name \*.so
 ./ext/bigdecimal/bigdecimal.so
@@ -595,7 +595,7 @@ ruby 1.8.2 (2004-11-06) [i386-mingw32]</code></pre></figure>
 
 <h4 id="課題その２エディタ">課題その２：エディタ</h4>
 
-<p>vi を操作することに問題のない向きは関係ないが、メモ帳は開発に使うにはシンプル過ぎる <sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>。
+<p>vi を操作することに問題のない向きは関係ないが、メモ帳は開発に使うにはシンプル過ぎる <sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote">19</a></sup>。
 やはりプログラミング言語用にカラーリングをしてくれたり、開発向き機能に特化したエディタの使い方に慣れた方が後々楽だ。</p>
 
 <p>以下でフリーな開発系のエディタをいくつか紹介するので、インストールして試しておいて欲しい。もちろん<a href="http://hide.maruo.co.jp/">秀丸エディタ</a>などのシェアウェアのものであっても構わない。</p>
@@ -661,64 +661,64 @@ ruby 1.8.2 (2004-11-06) [i386-mingw32]</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>GPL ライセンス、または Ruby’s と呼ばれる独自ライセンス http://www.ruby-lang.org/ja/LICENSE.txt を参照のこと <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>GPL ライセンス、または Ruby’s と呼ばれる独自ライセンス http://www.ruby-lang.org/ja/LICENSE.txt を参照のこと <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>実は『フリーソフトウェア』の定義ってやつも難しいのだが <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>実は『フリーソフトウェア』の定義ってやつも難しいのだが <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>フリーソフトウェアの場合、改変が自由であるケースが多い。この辺はライセンスをきちんと確認すること <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>フリーソフトウェアの場合、改変が自由であるケースが多い。この辺はライセンスをきちんと確認すること <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>ユーザーが多い、なじみがないというのがチョイスした理由だ <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>ユーザーが多い、なじみがないというのがチョイスした理由だ <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>ruby でいうならライブラリとかマニュアル関係とか <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>ruby でいうならライブラリとかマニュアル関係とか <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>configure とかもコンパイルじゃないな <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>configure とかもコンパイルじゃないな <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>予め用意されている、プログラムに組み込むための材料 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>予め用意されている、プログラムに組み込むための材料 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>おまけに以前はこいつの動作が不安定という問題もあった。最近はかなり安定して動作するようではある <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>おまけに以前はこいつの動作が不安定という問題もあった。最近はかなり安定して動作するようではある <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>UNIX系で共通の開発的インターフェースの共通仕様のこと。詳細は http://www.atmarkit.co.jp/icd/root/31/5787131.html <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>UNIX系で共通の開発的インターフェースの共通仕様のこと。詳細は http://www.atmarkit.co.jp/icd/root/31/5787131.html <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>残念ながら英語である。この辺に関しては英語のページを避けることは現状無理だ。ちょっとした辞書と根気と慣れがあれば何とかなるものである。探すと翻訳されたページが発見されたりするわけだが <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>残念ながら英語である。この辺に関しては英語のページを避けることは現状無理だ。ちょっとした辞書と根気と慣れがあれば何とかなるものである。探すと翻訳されたページが発見されたりするわけだが <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>http://www.libsdl.org/ フリーなクロスプラットフォームのマルチメディア開発用ライブラリ <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>http://www.libsdl.org/ フリーなクロスプラットフォームのマルチメディア開発用ライブラリ <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:12">
-      <p>http://fun.sci.fukuoka-u.ac.jp/RWiki/rw-cgi.rb?cmd=view;name=MSYS に msys.bat の修正をすることで表示は可能だと書かれている <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:12" role="doc-endnote">
+      <p>http://fun.sci.fukuoka-u.ac.jp/RWiki/rw-cgi.rb?cmd=view;name=MSYS に msys.bat の修正をすることで表示は可能だと書かれている <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:13">
-      <p>これは決していぢわるで言っているのではなく、自分の頭で解決出来るやり方やクセをつける方が、その人のためだからである <a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:13" role="doc-endnote">
+      <p>これは決していぢわるで言っているのではなく、自分の頭で解決出来るやり方やクセをつける方が、その人のためだからである <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:14">
-      <p>C:\msys\1.0\home\tamura とか <a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:14" role="doc-endnote">
+      <p>C:\msys\1.0\home\tamura とか <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:15">
-      <p>gcc -o hello.exe hello.c など出力ファイル名を指定しなければ、a.exe が作られる。ちなみに Linuxなどの環境では ./a.out としなければ実行されない <a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:15" role="doc-endnote">
+      <p>gcc -o hello.exe hello.c など出力ファイル名を指定しなければ、a.exe が作られる。ちなみに Linuxなどの環境では ./a.out としなければ実行されない <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:16">
-      <p>C言語で記述されたRubyを拡張する機能を持つライブラリ <a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:16" role="doc-endnote">
+      <p>C言語で記述されたRubyを拡張する機能を持つライブラリ <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:17">
-      <p>Windowsでは hogehoge.so という名前になる <a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:17" role="doc-endnote">
+      <p>Windowsでは hogehoge.so という名前になる <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:18">
-      <p>コンパイル直後に実行だ <a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:18" role="doc-endnote">
+      <p>コンパイル直後に実行だ <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:19">
-      <p>容量が 64Kまでだったり、文字コードがShiftJISしか対応してなかったり <a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:19" role="doc-endnote">
+      <p>容量が 64Kまでだったり、文字コードがShiftJISしか対応してなかったり <a href="#fnref:19" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

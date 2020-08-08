@@ -315,9 +315,9 @@
 
 <h3 id="ruby-の-dll-を手に入れる">Ruby の DLL を手に入れる</h3>
 
-<p>Windows 用の Ruby のライブラリを手に入れます。 mswin32 版でも cygwin 版でも mingw 版でも、どれでも OK なはずです<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>Windows 用の Ruby のライブラリを手に入れます。 mswin32 版でも cygwin 版でも mingw 版でも、どれでも OK なはずです<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
-<p>今回は <a href="http://www.garbagecollect.jp/ruby/mswin32/ja/">mswin32 版</a>の、 1.8.x 系統を使います<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>今回は <a href="http://www.garbagecollect.jp/ruby/mswin32/ja/">mswin32 版</a>の、 1.8.x 系統を使います<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <h3 id="プロジェクトに-dll-を追加する">プロジェクトに DLL を追加する</h3>
 
@@ -390,7 +390,7 @@ namespace RubyTest
 
 <p>protect のつかない、 rb_eval_string 関数は今回は使いませんでした。 rb_eval_string 関数を使用した場合、スクリプト評価時に例外が発生すると、 C# 側で予期せぬエラーが生じるからです。</p>
 
-<p>C で定義された関数を C# から呼び出すために、 .NET の「マーシャリング」を利用します。マーシャリングとは、 .NET の型とネイティブ型を相互変換する機能です。 C の型と C# (.NET) の型には一定のルールがあり<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>、非常に複雑ですが、適当に抜粋すると以下のようになります。</p>
+<p>C で定義された関数を C# から呼び出すために、 .NET の「マーシャリング」を利用します。マーシャリングとは、 .NET の型とネイティブ型を相互変換する機能です。 C の型と C# (.NET) の型には一定のルールがあり<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>、非常に複雑ですが、適当に抜粋すると以下のようになります。</p>
 
 <table>
   <thead>
@@ -602,7 +602,7 @@ namespace RubyTest
     // 略
 }</code></pre></figure>
 
-<p>引数の数はいくらでも定義できますが<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>、とりあえずこの程度にしておきます。</p>
+<p>引数の数はいくらでも定義できますが<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>、とりあえずこの程度にしておきます。</p>
 
 <p>引数を見れば分かりますが、最初の値は self (メソッドのレシーバ) で、それ以降の引数が、実際のメソッドの引数となります。</p>
 
@@ -665,7 +665,7 @@ namespace RubyTest
     // 略
 }</code></pre></figure>
 
-<p>上記ソースを見ていただければお分かりの通り、 C の関数を呼ぶ前にデリゲートを static なリスト (MethodDelegates) に保存しています。これはデリゲートが GC によって回収されてしまうのを防ぐためです。 C# (マネージド) のデリゲートは C (アンマネージド) では関数ポインタとなりますが、 C の関数ポインタをコールするときに、対応する C# のデリゲートが存在するかどうかは、 .NET のほうでちゃんと管理する必要があるのです。<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。回収されてしまったデリゲートをコールしようとするとエラーになってしまいます。それを防ぐために、デリゲートへの static な参照を保持することにしました。</p>
+<p>上記ソースを見ていただければお分かりの通り、 C の関数を呼ぶ前にデリゲートを static なリスト (MethodDelegates) に保存しています。これはデリゲートが GC によって回収されてしまうのを防ぐためです。 C# (マネージド) のデリゲートは C (アンマネージド) では関数ポインタとなりますが、 C の関数ポインタをコールするときに、対応する C# のデリゲートが存在するかどうかは、 .NET のほうでちゃんと管理する必要があるのです。<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。回収されてしまったデリゲートをコールしようとするとエラーになってしまいます。それを防ぐために、デリゲートへの static な参照を保持することにしました。</p>
 
 <p>実際に使う例は、以下の通り。動作させるためには、プロジェクトの参照設定に “System.Windows.Forms” を追加する必要があります。  String クラスにメソッド “show_message” を定義してみました。 Ruby の文字列をダイアログボックスに表示してくれます。なんと日本語も OK です。</p>
 
@@ -698,7 +698,7 @@ namespace RubyTest
 
 <h3 id="いよいよ標準出力">いよいよ標準出力</h3>
 
-<p>いままで、 Ruby スクリプトで puts などの標準出力メソッドを使用しても、コンソールには何も出ませんでした。原因はよくわかりません。リファレンスによると<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>、Ruby では標準出力を変えるには「この変数 ($&gt;) の値を別の IO に再設定すればよい」ということが分かります。 $&gt; に代入されている値のデフォルト値は定数 STDOUT ですので、今回は STDOUT に write という特異メソッドを上書き定義してやることで、標準出力の挙動を変えることにします。</p>
+<p>いままで、 Ruby スクリプトで puts などの標準出力メソッドを使用しても、コンソールには何も出ませんでした。原因はよくわかりません。リファレンスによると<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>、Ruby では標準出力を変えるには「この変数 ($&gt;) の値を別の IO に再設定すればよい」ということが分かります。 $&gt; に代入されている値のデフォルト値は定数 STDOUT ですので、今回は STDOUT に write という特異メソッドを上書き定義してやることで、標準出力の挙動を変えることにします。</p>
 
 <p>Ruby 風擬似コードを書くと、以下のようになります。</p>
 
@@ -931,7 +931,7 @@ static class Ruby
 
 <p>画像操作などの速度が要求される部分は C# で書かれており、ゲームを作る「楽しい」部分は Ruby で書けるようになっています。</p>
 
-<p>C# で書くことによって、 .NET の恩恵をそのまま受けることが出来ました。特に画像処理やフォント周りとかが楽チンでした<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</p>
+<p>C# で書くことによって、 .NET の恩恵をそのまま受けることが出来ました。特に画像処理やフォント周りとかが楽チンでした<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。</p>
 
 <h2 id="謝辞">謝辞</h2>
 
@@ -948,28 +948,28 @@ static class Ruby
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>差異は、http://www.garbagecollect.jp/ruby/mswin32/ja/documents/mswin32.htmlを参照。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>差異は、http://www.garbagecollect.jp/ruby/mswin32/ja/documents/mswin32.htmlを参照。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>ライセンスが GPL ですので、公開する際は注意してください。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>ライセンスが GPL ですので、公開する際は注意してください。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>参考: http://msdn2.microsoft.com/ja-jp/library/04fy9ya1(VS.80).aspx <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>参考: http://msdn2.microsoft.com/ja-jp/library/04fy9ya1(VS.80).aspx <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>README.EXT.ja によると、 16 個が限界らしい。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>README.EXT.ja によると、 16 個が限界らしい。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>厳密には、 C# のデリゲートと C の関数ポインタを仲介する Reverse P/Invoke thunk というサンクというものが存在し、デリゲートインスタンスごとに実行時生成されます。 C から関数ポインタをコールするとき、実際にはこのサンクが呼ばれます。サンクはデリゲートインスタンスと一対一に対応し、デリゲートインスタンスが回収されたときにサンクも破棄されることになっています。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>厳密には、 C# のデリゲートと C の関数ポインタを仲介する Reverse P/Invoke thunk というサンクというものが存在し、デリゲートインスタンスごとに実行時生成されます。 C から関数ポインタをコールするとき、実際にはこのサンクが呼ばれます。サンクはデリゲートインスタンスと一対一に対応し、デリゲートインスタンスが回収されたときにサンクも破棄されることになっています。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>組み込み変数: http://www.ruby-lang.org/ja/man/?cmd=view;name=%C1%C8%A4%DF%B9%FE%A4%DF%CA%D1%BF%F4 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>組み込み変数: http://www.ruby-lang.org/ja/man/?cmd=view;name=%C1%C8%A4%DF%B9%FE%A4%DF%CA%D1%BF%F4 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>SDL を使っていますが、 SDL_ttf などはあまり使いたくなかったんです。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>SDL を使っていますが、 SDL_ttf などはあまり使いたくなかったんです。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

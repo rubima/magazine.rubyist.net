@@ -258,7 +258,7 @@
 
 <p>Ruby は様々なプログラミング言語の「良いとこ取り」をした言語だ、と Ruby の作者であるまつもとゆきひろさんもどこかでおっしゃっていたかと思いますが、今回取り上げる 4 つのメソッドの名前は、Lisp と Smalltalk という 2 つのプログラミング言語が由来となっています。具体的には map と reduce が Lisp 由来、collect と inject が Smalltalk 由来となります。</p>
 
-<p>Lisp と Smalltalk がどのようなプログラミング言語なのか、という詳細についての説明はここではしませんが、書いたコードの動作の確認のためにはそれぞれのプログラミング言語の処理系が必要になりますね。そこで、下準備として Lisp は GNU CLISP という Common Lisp の処理系<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>を、Smalltalk は GNU Smalltalk という処理系<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>をインストールして利用することにします。Debian 系の Linux ディストリビューションを利用しているなら、</p>
+<p>Lisp と Smalltalk がどのようなプログラミング言語なのか、という詳細についての説明はここではしませんが、書いたコードの動作の確認のためにはそれぞれのプログラミング言語の処理系が必要になりますね。そこで、下準備として Lisp は GNU CLISP という Common Lisp の処理系<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>を、Smalltalk は GNU Smalltalk という処理系<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>をインストールして利用することにします。Debian 系の Linux ディストリビューションを利用しているなら、</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ sudo apt-get install clisp</code></pre></figure>
 
@@ -478,7 +478,7 @@ $</code></pre></figure>
 
 <h3 id="map">map</h3>
 
-<p>map は「データ構造を保ったまま<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>、あるルールに従って元のデータ構造を別データ構造に変換する」という発想になります。図にすると、次のようになります。
+<p>map は「データ構造を保ったまま<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>、あるルールに従って元のデータ構造を別データ構造に変換する」という発想になります。図にすると、次のようになります。
 <img src="../../images/0038-MapAndCollect/map.png" alt="map.png" /></p>
 
 <p>それでは、先ほどの Lisp で map を使ったコードの例をもういちど見てみましょう。</p>
@@ -547,9 +547,9 @@ $</code></pre></figure>
 
 <p>今回の記事では map と collect、reduce と inject の比較をしてきましたが、最終的には同じ結果が得られるのに、それぞれの発想にはずいぶん違いがあることが分かります。</p>
 
-<p>しかし別々の発想をしていても、それぞれで「こうした処理は必要だ」という結論になって、違う名前で同じ機能が実装されたということはとても面白いですね。実は今回取り上げた二つの機能、ひとつは「map と collect」が表現している「巨大なデータを構造を保ったまま別のデータに変換する」機能<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>、もうひとつは「reduce と inject」が表現している「巨大なデータのすべての要素を使って何らかの計算結果を求める」機能<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>は、巨大なデータを処理する場合の最も基本的な処理、つまり基礎となる機能なのです。</p>
+<p>しかし別々の発想をしていても、それぞれで「こうした処理は必要だ」という結論になって、違う名前で同じ機能が実装されたということはとても面白いですね。実は今回取り上げた二つの機能、ひとつは「map と collect」が表現している「巨大なデータを構造を保ったまま別のデータに変換する」機能<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>、もうひとつは「reduce と inject」が表現している「巨大なデータのすべての要素を使って何らかの計算結果を求める」機能<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>は、巨大なデータを処理する場合の最も基本的な処理、つまり基礎となる機能なのです。</p>
 
-<p>今回の例では「[3, 4, 5, 6]」という 4 つの要素しかない配列を対象としていましたが、これが巨大なデータを対象とした場合でも全く同じ考え方を適用できます。最近「ビッグデータ」という言葉をよく耳にするようになりましたが、そうした巨大なデータを手軽に処理するフレームワークとして「Hadoop<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>」というものがあります。Hadoop は Google の「MapReduce」というフレームワークが元になっており、今回取り上げた map と reduce が「巨大なデータを処理する際の基礎」であることを伺わせますね。</p>
+<p>今回の例では「[3, 4, 5, 6]」という 4 つの要素しかない配列を対象としていましたが、これが巨大なデータを対象とした場合でも全く同じ考え方を適用できます。最近「ビッグデータ」という言葉をよく耳にするようになりましたが、そうした巨大なデータを手軽に処理するフレームワークとして「Hadoop<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>」というものがあります。Hadoop は Google の「MapReduce」というフレームワークが元になっており、今回取り上げた map と reduce が「巨大なデータを処理する際の基礎」であることを伺わせますね。</p>
 
 <p>このフレームワークの名前が「MapReduce」なのも興味深いですね。なぜ「CollectInject」ではなかったのでしょうか。おそらくこれは「並列処理」のためだと思われます。map も reduce も「やりたいことを宣言的に書いておけば、あとはコンピューターが頑張ってくれる」という発想のため、ユーザーはフレームワークの裏側の並列処理を意識することなく巨大なデータを扱えそうなイメージですよね。対する collect や inject は、コンピューターがどんな処理をしているかが分かりやすい半面、並列処理をするには色々と工夫が必要そうな印象を受けます。</p>
 
@@ -563,25 +563,25 @@ $</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>http://www.clisp.org/ <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>http://www.clisp.org/ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>http://smalltalk.gnu.org/ <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>http://smalltalk.gnu.org/ <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>ちなみに Common Lisp の map はデータ構造を保ちません。そういう意味では Ruby の map は Common Lisp の map ではなく mapcar に相当します。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>ちなみに Common Lisp の map はデータ構造を保ちません。そういう意味では Ruby の map は Common Lisp の map ではなく mapcar に相当します。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>数学ではこれを「写像」と呼びます。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>数学ではこれを「写像」と呼びます。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>数学ではこれを「畳み込み」と呼びます。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>数学ではこれを「畳み込み」と呼びます。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>http://hadoop.apache.org/ <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>http://hadoop.apache.org/ <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

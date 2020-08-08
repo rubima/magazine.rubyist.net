@@ -296,7 +296,7 @@
 
 <p>というような木構造になっています。</p>
 
-<p>ちなみに、命令列オブジェクトも Ruby の普通のオブジェクトですので GC されます。もちろん実行中には GC されることはありませんが、たとえばトップレベルの命令列は別のトップレベルへ実行が遷移したとき、GC されるかもしれません<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>ちなみに、命令列オブジェクトも Ruby の普通のオブジェクトですので GC されます。もちろん実行中には GC されることはありませんが、たとえばトップレベルの命令列は別のトップレベルへ実行が遷移したとき、GC されるかもしれません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <p>ちなみに、命令列同士の親子関係で参照を持っているものがあります。たとえば、ブロックの命令列はその親への参照を持っています。そのため、子どもを実行中に親が GC されるということは多分ありません。</p>
 
@@ -304,11 +304,11 @@
 
 <p>ところで、このオブジェクトはどうやって生成するんでしょうか。前述したように、YARV は命令列にそって実行します。つまり、Ruby プログラムを読み込んで実行している時点で、しっかり存在するわけですね。</p>
 
-<p>でも、YARV を使っていても 命令列オブジェクトなんて見た事ねーよ、という方がほとんどではないかと思います<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。私もほとんどありません。</p>
+<p>でも、YARV を使っていても 命令列オブジェクトなんて見た事ねーよ、という方がほとんどではないかと思います<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。私もほとんどありません。</p>
 
 <p>今回の話題は、この命令列オブジェクトに対してなんかする、ということなので、Ruby レベルのオブジェクトとして取り出したいわけですが、どうしましょう。</p>
 
-<p>実は、実行するために命令列にしてしまうと、それを取り出す手段は (今は) ありません<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。require なども同様です。</p>
+<p>実は、実行するために命令列にしてしまうと、それを取り出す手段は (今は) ありません<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。require なども同様です。</p>
 
 <p>そのため、YARV 命令列オブジェクトのファクトリーメソッドを用意してあります。これは、Ruby プログラムである文字列を YARV 命令列オブジェクトに変換して返すという機能を持っています。</p>
 
@@ -787,13 +787,13 @@ EOS____</code></pre></figure>
 
 <p>という流れになります。</p>
 
-<p>ちなみに、これだけのオーバヘッドがあるのでロード時間短縮のためにこのコンパイラで先にコンパイルしておく、というのは意味がありません (測りました)。というか、遅くなります。unpack のコスト、および Marshal.load のコストが大部分で、これに時間がかかります。後者のコストはシンボルを多用している現在の表現によります。この辺、バイナリでガチガチに固めてしまう、よくある (Java の VM 用クラスファイルのような) 構造を定義すれば可能になるでしょう。そのためには命令セット決めないとなぁ。うーん<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>ちなみに、これだけのオーバヘッドがあるのでロード時間短縮のためにこのコンパイラで先にコンパイルしておく、というのは意味がありません (測りました)。というか、遅くなります。unpack のコスト、および Marshal.load のコストが大部分で、これに時間がかかります。後者のコストはシンボルを多用している現在の表現によります。この辺、バイナリでガチガチに固めてしまう、よくある (Java の VM 用クラスファイルのような) 構造を定義すれば可能になるでしょう。そのためには命令セット決めないとなぁ。うーん<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
 
 <p>ところで、結局 YARV 命令列 -&gt; Ruby プログラム変換器 (逆コンパイラ) を作れば中で何をしているのかわかってしまうのですが、とりあえずそんなに簡単ではないとたかをくくっています。誰か作りませんか？</p>
 
 <h2 id="ライブラリ-yasm">ライブラリ yasm</h2>
 
-<p>さて、このデシリアライズインターフェースを使うと簡単に YARV 上で実行できる命令列を作成することができます。たとえば、他の言語で YAML を利用して上記フォーマットを記述しておけば、簡単に YARV に読み込ませることが出来ます<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+<p>さて、このデシリアライズインターフェースを使うと簡単に YARV 上で実行できる命令列を作成することができます。たとえば、他の言語で YAML を利用して上記フォーマットを記述しておけば、簡単に YARV に読み込ませることが出来ます<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。</p>
 
 <p>が、配列をごちゃごちゃ弄るのはめんどくさいです。そもそも、構造の解説がソース読め、という冷たい仕打ち。そこで、yasm というライブラリを用意しました。要するに YARV 用アセンブラで、Ruby の文法で記述します、というか Ruby のプログラムです。アセンブラで色々記述すると、上記のシリアライズした表現、つまり Ruby の配列を作るので、あとはそれをデシリアライズ (ロード) して実行すればいいわけです。</p>
 
@@ -832,7 +832,7 @@ iseq = YASM.toplevel([:a, :b]){
 p iseq
 iseq.eval #=&gt; 30, 0, 1, 2</code></pre></figure>
 
-<p>YASM.toplevel メソッドが toplevel の YARV 命令列のファクトリーメソッドになります。そして、ブロック中でどんな挙動をするのか、命令を Ruby のメソッドとして作成します<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+<p>YASM.toplevel メソッドが toplevel の YARV 命令列のファクトリーメソッドになります。そして、ブロック中でどんな挙動をするのか、命令を Ruby のメソッドとして作成します<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
 
 <p>ブロックなどは block メソッドで記述します。</p>
 
@@ -910,25 +910,25 @@ iseq.eval #=&gt; 30, 0, 1, 2</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>ちょっとわかりづらいかもしれませんが、たとえばこの命令列が require などで実行された場合を考えてみてください。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>ちょっとわかりづらいかもしれませんが、たとえばこの命令列が require などで実行された場合を考えてみてください。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>YARV を使ったことがある人がほとんどいねーという噂。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>YARV を使ったことがある人がほとんどいねーという噂。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>加えるのは簡単なんですが、インターフェース、API の設計が難しいのです。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>加えるのは簡単なんですが、インターフェース、API の設計が難しいのです。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>別の選択肢として、「現在の VM が dump したファイルしか読み込めないようにする」という割り切りをしてしまうという方法があります。ビルドバージョンが違ったり、別の VM が dump した、たとえばネットワーク越しのやり取りは一切サポートしない、という方法です。個人的には、現在の冗長表現、それから VM 限定のタイトな表現、どちらもサポートするのがいいのかな、と思っています。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>別の選択肢として、「現在の VM が dump したファイルしか読み込めないようにする」という割り切りをしてしまうという方法があります。ビルドバージョンが違ったり、別の VM が dump した、たとえばネットワーク越しのやり取りは一切サポートしない、という方法です。個人的には、現在の冗長表現、それから VM 限定のタイトな表現、どちらもサポートするのがいいのかな、と思っています。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>というか、そういう目的で作ったわけです。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>というか、そういう目的で作ったわけです。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>命令を Ruby のメソッドとして記述可能にするために命令セットの名前を考え直したんですよね。たとえば、end 命令は leave 命令になりました。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>命令を Ruby のメソッドとして記述可能にするために命令セットの名前を考え直したんですよね。たとえば、end 命令は leave 命令になりました。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

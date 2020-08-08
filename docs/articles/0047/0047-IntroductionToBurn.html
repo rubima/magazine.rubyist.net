@@ -257,7 +257,7 @@ burn -p -c # -c で Chrome が起動します。-c を外すと Firefox が起�
 
 <p>LL という制約条件を外せば、例えば有名な開発環境としては <a href="http://www.cc65.org/">cc65</a> (C言語で記述) や <a href="http://www.magicengine.com/mkit/">nesasm</a> (アセンブリで記述) などがありますが、それらも利用にあたってはアセンブラや 6502 CPU を始めとするハードウェアのアドレス空間等についての知識が必要で、しかも最終的に .nes ファイルにコンパイルするまでには複数の別ユーティリティを利用してアセンブリを生成していく必要があるなど、開発の敷居が大変高いものでした。</p>
 
-<p>burn を使うと、ruby (&gt;=1.9.1) と gcc が動く PC さえあれば、自作の .nes の ROM を簡単に作成できます (Windows 環境では gcc すら不要なことは特筆すべき点です)。ドット絵も FM 音源の操作も DSL で記述するため、特殊なソフトは必要がありません。DSL を記述できるお気に入りのテキストエディタさえあれば、.nes ファイルが作れるわけです<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>burn を使うと、ruby (&gt;=1.9.1) と gcc が動く PC さえあれば、自作の .nes の ROM を簡単に作成できます (Windows 環境では gcc すら不要なことは特筆すべき点です)。ドット絵も FM 音源の操作も DSL で記述するため、特殊なソフトは必要がありません。DSL を記述できるお気に入りのテキストエディタさえあれば、.nes ファイルが作れるわけです<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <h2 id="burn-を支える技術">burn を支える技術</h2>
 
@@ -275,7 +275,7 @@ burn -p -c # -c で Chrome が起動します。-c を外すと Firefox が起�
 
 <p>開発に着手した頃は 6502 アーキテクチャ向けの命令セットを自前で制御したり、mruby をフォークして RiteVM を改造して 6502 をサポートさせれないかなどの野望を追いかけていた時期もありましたが、著者の実力と慎重に相談しながら実装方針を検討した結果、結局は実装が一番簡単なこの仕組みに落ち着きました。</p>
 
-<p>以上の機能を提供するために利用している主な gem には、thor、archive-tar-minitar、ripper や webrick などがあります。archive-tar-minitar は cc65 のソースを始めとする、ビルドに必要な様々なファイルを gem ファイルに内包するために、ripper は C 言語のソースジェネレータ中で ruby2c もどきの動作をしている箇所がありその部分の動作に、webrick は <code class="highlighter-rouge">burn play</code> コマンドを実行した際に burn が提供する NES エミュレータの実装に利用しています。なお、エミュレータは JSNES (Firefox/Chrome で動作する javascript ベースのエミュレータ) を利用しています。</p>
+<p>以上の機能を提供するために利用している主な gem には、thor、archive-tar-minitar、ripper や webrick などがあります。archive-tar-minitar は cc65 のソースを始めとする、ビルドに必要な様々なファイルを gem ファイルに内包するために、ripper は C 言語のソースジェネレータ中で ruby2c もどきの動作をしている箇所がありその部分の動作に、webrick は <code class="language-plaintext highlighter-rouge">burn play</code> コマンドを実行した際に burn が提供する NES エミュレータの実装に利用しています。なお、エミュレータは JSNES (Firefox/Chrome で動作する javascript ベースのエミュレータ) を利用しています。</p>
 
 <h3 id="burn-の-c-言語ジェネレータ">burn の C 言語ジェネレータ</h3>
 
@@ -385,7 +385,7 @@ SimpleTranspiler.ruby2c(Ripper.sexp("printf \"hogehoge\" if i==2 and j%2")) # if
 
 <p>まだ開発の途中段階で、非常に限られた ruby の記述のみサポートしています。上記のように単純な例であれば変換できますが、to_i のような ruby の組み込みメソッドの変換やブロック構文などの基本的な文法ですら現在はサポートしていません。</p>
 
-<p>この ruby2c の処理は、本当は自前で実装なんてせずに rubygem から使える gem を持ってこれたら良かったのですが、今回の目的に合う ruby2c トランスレータが見つからなかったため、結局自作したという経緯があります<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>この ruby2c の処理は、本当は自前で実装なんてせずに rubygem から使える gem を持ってこれたら良かったのですが、今回の目的に合う ruby2c トランスレータが見つからなかったため、結局自作したという経緯があります<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <h3 id="音楽やサウンドエフェクトも-dsl-で記述">音楽やサウンドエフェクトも DSL で記述</h3>
 
@@ -427,13 +427,13 @@ end</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>burn v0.1.3 を利用してちゃんとしたものを作ろうとすると、相応のデバッグ能力も必要になりそうだけど <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>burn v0.1.3 を利用してちゃんとしたものを作ろうとすると、相応のデバッグ能力も必要になりそうだけど <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p><a href="https://github.com/seattlerb/ruby_to_c">ruby2c</a> は一時期使ってみようと試みたがサポートしてる簡単な構文でも変換エラーが出たり、そもそもメンテナンスされてなさすぎてて不安定だったし、それではと思い treetop 等で構文解析をすることも考えたが、結局 ripper が一番信頼性が高く扱いやすかった <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://github.com/seattlerb/ruby_to_c">ruby2c</a> は一時期使ってみようと試みたがサポートしてる簡単な構文でも変換エラーが出たり、そもそもメンテナンスされてなさすぎてて不安定だったし、それではと思い treetop 等で構文解析をすることも考えたが、結局 ripper が一番信頼性が高く扱いやすかった <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -282,7 +282,7 @@
 
 <p>例えば以下のような記述ができます。</p>
 
-<p>list1. enumerable_lz のサンプルコード 1<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup><sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>list1. enumerable_lz のサンプルコード 1<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"># require RUBY_VERSION &gt;= '1.9'
 require 'enumerable_lz'
@@ -340,7 +340,7 @@ p (1..Float::INFINITY).map_lz{|n|n**2+1}.select_lz{|m|m.prime?}.take_lz(100).to_
 
 <p>そして「遅延評価メソッド」とは、「(先行評価した結果を返すのではなく) 遅延評価する『仕組み』を返すメソッド」のことです。</p>
 
-<p>先ほど挙げた、サフィックス ‘_lz’ のついたメソッドを見てみてください。元の (サフィックス ‘_lz’ を取り除いた) メソッドは、すべて配列 (Array) を戻り値とするメソッドです<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>先ほど挙げた、サフィックス ‘_lz’ のついたメソッドを見てみてください。元の (サフィックス ‘_lz’ を取り除いた) メソッドは、すべて配列 (Array) を戻り値とするメソッドです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <ul>
   <li>Enumerable#select</li>
@@ -357,7 +357,7 @@ p (1..Float::INFINITY).map_lz{|n|n**2+1}.select_lz{|m|m.prime?}.take_lz(100).to_
 
 <p>つまりこれらのメソッドは、「レシーバ (Enumerable) の各要素を先行評価して、その結果を配列に格納して返す」という共通の仕様に沿っているのです。</p>
 
-<p>enumerable_lz が提供する「遅延評価メソッド」は、配列ではなく「その都度評価した結果を順次送出する Enumerable (＝遅延評価する『仕組み』) を返す」仕様<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>になっています。</p>
+<p>enumerable_lz が提供する「遅延評価メソッド」は、配列ではなく「その都度評価した結果を順次送出する Enumerable (＝遅延評価する『仕組み』) を返す」仕様<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>になっています。</p>
 
 <h3 id="できること-1-無駄な評価を減らして効率化">できること (1): 無駄な評価を減らして効率化</h3>
 
@@ -416,7 +416,7 @@ end
 
 <h3 id="できること-2-無限リストを扱う">できること (2): 無限リストを扱う</h3>
 
-<p>次に、こんな例を考えてみましょう<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+<p>次に、こんな例を考えてみましょう<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。</p>
 
 <p>list6. 無限リストを扱うコード例 1</p>
 
@@ -428,11 +428,11 @@ end
 <figure class="highlight"><pre><code class="language-text" data-lang="text">require 'enumerable_lz'
 (1..1.0/0).transform{|n|n.even? ? n/2 : n*3+1}.take_while{|m|m&lt;100}</code></pre></figure>
 
-<p>list6. は実行しないでください。実行すると、半永久的に評価を繰り返した挙句、NoMemoryError で落ちます<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+<p>list6. は実行しないでください。実行すると、半永久的に評価を繰り返した挙句、NoMemoryError で落ちます<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
 
 <p>これは、map が「レシーバ (Enumerable) の各要素を__すべて評価__した結果を格納した__配列 (Array)__」を返すメソッドだからです。</p>
 
-<p>評価が終わるまでチェインしている take に処理は引き継がれませんが、(1..1.0/0) が__無限リスト__なので、map メソッドの評価は永遠に終わりません<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</p>
+<p>評価が終わるまでチェインしている take に処理は引き継がれませんが、(1..1.0/0) が__無限リスト__なので、map メソッドの評価は永遠に終わりません<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。</p>
 
 <p>これに対して list7. は、やはり結果は一瞬で返ってきます。</p>
 
@@ -484,7 +484,7 @@ end</code></pre></figure>
 
 <p>Ruby のライブラリや文法を利用すれば、もっと簡潔にできるはず。例えば、以下のようなコードは 1 つの回答例です。</p>
 
-<p>list9. 整数 (&gt;0) の 2 乗 +1 のカタチになっている素数を小さい順に 100 個取得するコード例 2<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup></p>
+<p>list9. 整数 (&gt;0) の 2 乗 +1 のカタチになっている素数を小さい順に 100 個取得するコード例 2<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">require 'prime'
 
@@ -519,7 +519,7 @@ end</code></pre></figure>
 
 <p>すると、以下のような書き方が出来てしまいます！</p>
 
-<p>list10. 整数 (&gt;0) の 2 乗 +1 のカタチになっている素数を小さい順に 100 個取得するコード例 3<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></p>
+<p>list10. 整数 (&gt;0) の 2 乗 +1 のカタチになっている素数を小さい順に 100 個取得するコード例 3<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">require 'prime'
 require 'enumerable_lz'
@@ -550,7 +550,7 @@ result = (1..1.0/0).map{|n|n**2+1}.select{|m|m.prime?}.take(100)</code></pre></f
 
 <p>見た目は、使用しているメソッド名が変わっている以外はまったく同じです。これでも良いのではないか？ と一瞬思ってしまうかもしれません。</p>
 
-<p>でも、今までの説明を読んでいただけていたら分かると思いますが、このコードは完全に NG です。map メソッドが無限リストを処理しようとしているので、実行すると、半永久的に処理を続けて NoMemoryError で落ちます<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>。</p>
+<p>でも、今までの説明を読んでいただけていたら分かると思いますが、このコードは完全に NG です。map メソッドが無限リストを処理しようとしているので、実行すると、半永久的に処理を続けて NoMemoryError で落ちます<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup>。</p>
 
 <p>list10. は、遅延評価メソッドを利用して、結果ではなく「遅延評価する仕組み」を連鎖させている形になっているので、問題がないのです。</p>
 
@@ -568,11 +568,11 @@ result = (1..1.0/0).map{|n|n**2+1}.select{|m|m.prime?}.take(100)</code></pre></f
 
 <p>Ruby1.8.7 で大幅に拡充された Enumerable モジュールは、とても有用なメソッドを用意してくれています。でも、本稿で示した通り、そのいくつかはその設計に問題があると思っています。</p>
 
-<p>そもそも Enumerable は、Array を抽象化したモノ。そのメソッドは、要素を列挙しイテレーションを行うための each メソッドに (のみ) 依存したモノになっています。そして多くの Enumerable を include しているクラスのオブジェクトは、each メソッドで次の要素をその都度算出しています。つまり、内部的には「遅延評価」しているのです<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>。</p>
+<p>そもそも Enumerable は、Array を抽象化したモノ。そのメソッドは、要素を列挙しイテレーションを行うための each メソッドに (のみ) 依存したモノになっています。そして多くの Enumerable を include しているクラスのオブジェクトは、each メソッドで次の要素をその都度算出しています。つまり、内部的には「遅延評価」しているのです<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>。</p>
 
 <p>そのメソッドの戻り値を Array にしてしまったら、せっかくの遅延評価が有効活用できない。それによって困ることもあります。</p>
 
-<p>むしろ (Array ではなく) Enumerable を返すようにすると、これまで見てきたように、「遅延評価」由縁の色々なメリットを享受できるのです<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>。</p>
+<p>むしろ (Array ではなく) Enumerable を返すようにすると、これまで見てきたように、「遅延評価」由縁の色々なメリットを享受できるのです<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>。</p>
 
 <p>「Enumerable をもっと Enumerable らしく」。enumerable_lz は、その 1 つの提案です。</p>
 
@@ -592,43 +592,43 @@ result = (1..1.0/0).map{|n|n**2+1}.select{|m|m.prime?}.take(100)</code></pre></f
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>名古屋 Ruby 会議 02 で行ったデモと同じコードです。一瞬で 100 個の素数列が返ってきます。なお速いのは enumerable_lz ではなく Ruby1.9 の prime ライブラリのおかげです。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>名古屋 Ruby 会議 02 で行ったデモと同じコードです。一瞬で 100 個の素数列が返ってきます。なお速いのは enumerable_lz ではなく Ruby1.9 の prime ライブラリのおかげです。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>本稿で紹介しているサンプルコードは、特に断りがない限り Ruby1.9.x を動作対象としています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>本稿で紹介しているサンプルコードは、特に断りがない限り Ruby1.9.x を動作対象としています。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>中には「ブロック引数を渡さなければ Enumerable を返す」メソッドも含まれますが、ここでは深く触れません。興味のある方は「そのとき返ってくる Enumerable が一体どんなものなのか」を調べてみてください。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>中には「ブロック引数を渡さなければ Enumerable を返す」メソッドも含まれますが、ここでは深く触れません。興味のある方は「そのとき返ってくる Enumerable が一体どんなものなのか」を調べてみてください。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>この性質から「ストリーム指向メソッド」という呼び方をすることもあります。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>この性質から「ストリーム指向メソッド」という呼び方をすることもあります。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>この節のサンプルコードは Ruby1.8.7 でも動きます。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>この節のサンプルコードは Ruby1.8.7 でも動きます。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>もちろん、落ちる前に Ctrl+C 等で強制終了してあげてください。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>もちろん、落ちる前に Ctrl+C 等で強制終了してあげてください。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>無限リストとは言え、これも立派な Enumerable オブジェクトです。なのに Enumerable モジュールに用意されているメソッドが正常終了しない。このことを発見して「それってどうなの？」と思ったのが、enumerable_lz を作ろうと思い立ったきっかけです。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>無限リストとは言え、これも立派な Enumerable オブジェクトです。なのに Enumerable モジュールに用意されているメソッドが正常終了しない。このことを発見して「それってどうなの？」と思ったのが、enumerable_lz を作ろうと思い立ったきっかけです。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>短いですがマニアックなコードですね (汗) <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>短いですがマニアックなコードですね (汗) <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>このコードは最初の list1. で示したサンプルコードと本質的に同じものです。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>このコードは最初の list1. で示したサンプルコードと本質的に同じものです。 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>もちろん、落ちる前に Ctrl+C 等で強制終了してあげてください。大事なことなので、2 度言いました。 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>もちろん、落ちる前に Ctrl+C 等で強制終了してあげてください。大事なことなので、2 度言いました。 <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>Array も Enumerable を include していますが、each メソッドは「格納されている (算出済の) 値を順に返している」だけで、実質遅延評価はしていません。 <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>Array も Enumerable を include していますが、each メソッドは「格納されている (算出済の) 値を順に返している」だけで、実質遅延評価はしていません。 <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:12">
-      <p>一応、Array を返すようにした方が「メモリを犠牲にしてパフォーマンスを確保できる」というメリットがある、ということも言及しておきます。 <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:12" role="doc-endnote">
+      <p>一応、Array を返すようにした方が「メモリを犠牲にしてパフォーマンスを確保できる」というメリットがある、ということも言及しておきます。 <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

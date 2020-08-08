@@ -250,7 +250,7 @@
 
 <h2 id="はじめに">はじめに</h2>
 
-<p>テンプレートシステムは、動的に HTML ページを生成する方法のひとつです<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。
+<p>テンプレートシステムは、動的に HTML ページを生成する方法のひとつです<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。
 具体的には、テンプレートとなる HTML ファイルをメインプログラムから読み込み、必要な箇所を書き換えて出力するという仕組みのことです。
 またこれを実現してくれる具体的なライブラリをテンプレートエンジンといいます。</p>
 
@@ -271,7 +271,7 @@
 
 <h2 id="ビジネス層とプレゼンテーション層">ビジネス層とプレゼンテーション層</h2>
 
-<p>何らかの表示を伴うアプリケーションは、大きく「ビジネス層」と「プレゼンテーション層」の 2 つに分けることができます<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>何らかの表示を伴うアプリケーションは、大きく「ビジネス層」と「プレゼンテーション層」の 2 つに分けることができます<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <dl>
   <dt>ビジネス層</dt>
@@ -357,7 +357,7 @@
 
 <p>現在ほとんどのテンプレートエンジンは、プレゼンテーションロジックを HTML テンプレート中に記述しています。例を挙げると、Ruby でいえば eRuby、<a href="http://www.fobj.com/tempura/doc/tempura.ja.html">Tempura</a>、<a href="http://www.kuwata-lab.com/tenjin/">Tenjin</a> など、Ruby 以外でいえば <a href="http://velocity.apache.org/">Velocity</a>(Java)、<a href="http://www.smarty.net/">Smarty</a>(PHP)、<a href="http://template-toolkit.org/">Template-Toolkit</a>(Perl)、<a href="http://wiki.zope.org/ZPT/FrontPage">Zope PageTemplate</a>(Python) などが挙げられます。</p>
 
-<p>プレゼンテーションロジックを HTML テンプレートの中に記述するのは、方法としては分かりやすいのですが、HTML の中に HTML ではない要素 (= プレゼンテーションロジック) が混じるため、記法を工夫しないと HTML デザインが崩れてしまいます<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。
+<p>プレゼンテーションロジックを HTML テンプレートの中に記述するのは、方法としては分かりやすいのですが、HTML の中に HTML ではない要素 (= プレゼンテーションロジック) が混じるため、記法を工夫しないと HTML デザインが崩れてしまいます<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。
 また Web デザイナーと協業する場合、デザイナーとプログラマーが同じファイルを編集するため、同時作業がしづらく、またデザイナーが誤ってロジックを変更してしまう危険性もあり、協業するには都合が悪いです。</p>
 
 <p>例として、<a href="http://www.kuwata-lab.com/tenjin/">Tenjin</a> のサンプルをリスト 1 と リスト 2 に掲載します。
@@ -393,7 +393,7 @@ print output</code></pre></figure>
 
 <h3 id="メインプログラムの中に記述する">メインプログラムの中に記述する</h3>
 
-<p>プレゼンテーションロジックをメインプログラム中に記述することで、HTML テンプレートに余計なものが含まれないようにしたテンプレートシステムがあります。例を挙げると、Ruby なら <a href="http://amrita2.rubyforge.org/indexJ.html">Amrita2</a> や <a href="http://devel.korinkan.co.jp/misen/">misen</a>、Ruby 以外だと <a href="http://www.enhydra.org/tech/xmlc/index.html">Enhydra XMLC</a>(Java) や <a href="http://wicket.apache.org/">Wicket</a><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>(Java) が挙げられます。</p>
+<p>プレゼンテーションロジックをメインプログラム中に記述することで、HTML テンプレートに余計なものが含まれないようにしたテンプレートシステムがあります。例を挙げると、Ruby なら <a href="http://amrita2.rubyforge.org/indexJ.html">Amrita2</a> や <a href="http://devel.korinkan.co.jp/misen/">misen</a>、Ruby 以外だと <a href="http://www.enhydra.org/tech/xmlc/index.html">Enhydra XMLC</a>(Java) や <a href="http://wicket.apache.org/">Wicket</a><sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>(Java) が挙げられます。</p>
 
 <p>プレゼンテーションロジックをメインプログラムの中に書く方法は、HTML テンプレートの中に余計なものが混じらないので HTML デザインが崩れません。
 またデザイナーが編集するファイル (= HTML テンプレート) と、プログラマーが編集するファイル (= メインプログラム) が別になるので、同時作業がしやすく、デザイナーがロジックを触ることができないので、デザイナーと協業する上でも好都合です。</p>
@@ -605,7 +605,7 @@ print eruby.result(create_binding(list))</code></pre></figure>
     <p>テキスト汎用型は、テンプレート中に書く「目印」の記法が独自形式であることが多く、そのためテンプレートの HTML デザインが崩れます (本当は HTML のコメントや処理命令を「目印」として使ったり、Kwartz のように HTML タグを認識する独自のパーサを使うことで HTML デザインを崩さないようにできるのですが、そこまで考慮されたものは少ないです)。また HTML パーサや DOM ツリーを使わないので、HTML 専用型と比べて高速かつ軽量です。</p>
   </li>
   <li>
-    <p>HTML 専用型では、「目印」としてタグや属性を使うため、テンプレートの HTML デザインが崩れません。Amrita2 や XMLC のように id 属性で目印をつけるだけのものと、Tempura や Zope PageTemplate のように独自属性を使ってロジックを記述するものに分かれます<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。また foreach ~ end や if ~ end のようなブロックは、HTML タグの構造をそのまま使います。内部で HTML パーサや DOM ツリーを使うため、一般的にはテキスト汎用型と比べて遅くかつ重いです。</p>
+    <p>HTML 専用型では、「目印」としてタグや属性を使うため、テンプレートの HTML デザインが崩れません。Amrita2 や XMLC のように id 属性で目印をつけるだけのものと、Tempura や Zope PageTemplate のように独自属性を使ってロジックを記述するものに分かれます<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。また foreach ~ end や if ~ end のようなブロックは、HTML タグの構造をそのまま使います。内部で HTML パーサや DOM ツリーを使うため、一般的にはテキスト汎用型と比べて遅くかつ重いです。</p>
   </li>
 </ul>
 
@@ -652,7 +652,7 @@ print eruby.result(create_binding(list))</code></pre></figure>
     <tr>
       <td>独立した別ファイル</td>
       <td><a href="http://www.kuwata-lab.com/kwartz/">Kwartz</a></td>
-      <td><a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi?FrontPage">CGIKit</a>, <a href="http://tapestry.apache.org/">Tapestry</a><sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>, <a href="http://mayaa.seasar.org/">Mayaa</a></td>
+      <td><a href="http://cgikit.sourceforge.jp/cgi-bin/ja/index.cgi?FrontPage">CGIKit</a>, <a href="http://tapestry.apache.org/">Tapestry</a><sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>, <a href="http://mayaa.seasar.org/">Mayaa</a></td>
     </tr>
   </tbody>
 </table>
@@ -720,7 +720,7 @@ print eruby.result(create_binding(list))</code></pre></figure>
   </li>
   <li>プレゼンテーションロジックを変更するには、HTML テンプレートを修正しなくてはいけない。
     <ul>
-      <li>→ プログラマーとデザイナーとが同じファイルを編集するため、競合が発生する<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</li>
+      <li>→ プログラマーとデザイナーとが同じファイルを編集するため、競合が発生する<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。</li>
     </ul>
   </li>
 </ul>
@@ -782,7 +782,7 @@ print eruby.result(create_binding(list))</code></pre></figure>
 <p>特に動作速度の問題は、皆さんが思っている以上に深刻です。
 たとえば Perl でよく使われている <a href="http://template-toolkit.org/">Template-Toolkit</a> はプレゼンテーションロジックを記述するのに独自言語を使いますが、C 言語で実装されているにも関わらず、pure Perl で実装された <a href="http://www.kuwata-lab.com/tenjin/">Tenjn</a> と比べて動作は約 5 倍遅いです (Perl 用の Tenjin では Perl そのものをテンプレート言語として使います)。</p>
 
-<p>このように、テンプレートシステム独自の言語を実装するのは、実装する側にも使う側にもメリットがありませんので、やめたほうがいいでしょう<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+<p>このように、テンプレートシステム独自の言語を実装するのは、実装する側にも使う側にもメリットがありませんので、やめたほうがいいでしょう<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>。</p>
 
 <h3 id="テンプレートを安全に編集する">テンプレートを安全に編集する</h3>
 
@@ -925,7 +925,7 @@ HTML にロジックを埋め込めるのであれば、どんなテンプレー
 <p>XHTML の名前空間を使った独自属性は便利なのですが、HTML で使うことも考えると、おいそれと独自属性を使うわけにはいきません (テンプレートに対して HTML validator が使えなくなります)。
 また共通属性のうち、テンプレートシステムでよく使われるのは id 属性や class 属性ですが、これらは属性値として使える文字が限られているため、たとえば「id=”if(items.length == 0)”」のような記述をすると HTML validator でエラーになります。</p>
 
-<p>筆者のお勧めは title 属性です<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。
+<p>筆者のお勧めは title 属性です<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>。
 title 属性だと、属性値として使える文字列に制限がありません。
 また HTML テンプレートをブラウザで表示したときに、該当箇所にマウスカーソルを乗せれば属性値が表示されるというのも、テンプレートシステムに都合がいいです。</p>
 
@@ -1012,34 +1012,34 @@ title 属性だと、属性値として使える文字列に制限がありま�
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>厳密にいうと、出力形式は HTML に限りませんが、本稿は Web アプリケーションを対象としているため、主に HTML を出力することを前提とします。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>厳密にいうと、出力形式は HTML に限りませんが、本稿は Web アプリケーションを対象としているため、主に HTML を出力することを前提とします。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>これはテンプレートシステムから見た分け方というだけであり、他の分け方 (MVC など) を否定するものではありません。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>これはテンプレートシステムから見た分け方というだけであり、他の分け方 (MVC など) を否定するものではありません。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>厳密にいうと、テンプレートの HTML デザインが崩れるかどうかは単に記法の問題であり、プレゼンテーションロジックをテンプレート中に埋め込むかどうかは関係ありません。ただし、埋め込むタイプでデザインが崩れないような記法を採用しているのは少数派です。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>厳密にいうと、テンプレートの HTML デザインが崩れるかどうかは単に記法の問題であり、プレゼンテーションロジックをテンプレート中に埋め込むかどうかは関係ありません。ただし、埋め込むタイプでデザインが崩れないような記法を採用しているのは少数派です。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Wicket は、実際にはフレームワークであり、テンプレートエンジンだけを取り出して使うことはできません。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Wicket は、実際にはフレームワークであり、テンプレートエンジンだけを取り出して使うことはできません。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>ColdFusion や JSP のようにカスタムタグを使うものも考えられますが、それよりは独自属性を使う方がセンスがいいでしょう。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>ColdFusion や JSP のようにカスタムタグを使うものも考えられますが、それよりは独自属性を使う方がセンスがいいでしょう。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>CGIKit と Tapestry は、実際には Web アプリケーションフレームワークであり、テンプレートエンジンとして使うことはできません。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>CGIKit と Tapestry は、実際には Web アプリケーションフレームワークであり、テンプレートエンジンとして使うことはできません。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>デザイナーとプログラマーとが同じリポジトリを共有できる幸せな環境なら、この問題はあまり重要ではありません。デザイナーが Subversion や Git を使いこなせればの話ですが。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>デザイナーとプログラマーとが同じリポジトリを共有できる幸せな環境なら、この問題はあまり重要ではありません。デザイナーが Subversion や Git を使いこなせればの話ですが。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>ただし、「複数の言語で使えるテンプレートエンジンを作りたい」のような、特別な事情がある場合は別です。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>ただし、「複数の言語で使えるテンプレートエンジンを作りたい」のような、特別な事情がある場合は別です。 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>本音をいえば、特定の用途を定めないような共通属性が HTML の仕様にあると、テンプレートシステムにとっては大変都合がいいのですが。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>本音をいえば、特定の用途を定めないような共通属性が HTML の仕様にあると、テンプレートシステムにとっては大変都合がいいのですが。 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

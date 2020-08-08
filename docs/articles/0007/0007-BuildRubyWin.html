@@ -289,7 +289,7 @@ ruby 1.8.3 (2005-05-12) [i386-mingw32]</code></pre></figure>
 
 <p>.soなファイルが生成される場所が変更されていることに気付いただろうか。</p>
 
-<p>拡張ライブラリの有無の確認のために、ext/以下のディレクトリを羅列する。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p>拡張ライブラリの有無の確認のために、ext/以下のディレクトリを羅列する。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ find ext/ -type d -maxdepth 1 -mindepth 1
 ext/bigdecimal
@@ -320,17 +320,17 @@ ext/Win32API
 ext/win32ole
 ext/zlib +</code></pre></figure>
 
-<p>拡張ライブラリが作られていないディレクトリには『+』で印を付けてみた。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>拡張ライブラリが作られていないディレクトリには『+』で印を付けてみた。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <h4 id="そもそも拡張ライブラリとはどんなものだったろうか">そもそも拡張ライブラリとはどんなものだったろうか?</h4>
 
 <p>RubyインタプリタはC言語で書かれているのだが、Ruby自体を拡張するためのAPIを用いてRubyに機能追加するための仕組みが拡張ライブラリである。</p>
 
-<p>ほとんどのライブラリは OSの仕組みを利用して、Rubyインタプリタのコンパイル時以降に作成された拡張ライブラリを動的に組込むことが可能だ。Windows OS の場合、DLL<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> なので作法に従って作成する必要があるが、Rubyの場合、特にこの辺を意識する必要はない。</p>
+<p>ほとんどのライブラリは OSの仕組みを利用して、Rubyインタプリタのコンパイル時以降に作成された拡張ライブラリを動的に組込むことが可能だ。Windows OS の場合、DLL<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup> なので作法に従って作成する必要があるが、Rubyの場合、特にこの辺を意識する必要はない。</p>
 
 <p><a href="http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/ruby/README.EXT.ja?rev=HEAD">README.EXT.ja</a>は、OS毎の解説が無いが、これはRubyが吸収しているからだ。LinuxなどのUNIX系OSでも、MinGW/MSYSでも基本的にこの辺は問題なく動く。</p>
 
-<p>拡張ライブラリの作り方に関しては<a href="http://shugo.net/">前田修吾氏</a> <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>の「<a href="http://shugo.net/article/cmagazine/1st/">第1回 拡張ライブラリの作成(1)</a>, <a href="http://shugo.net/article/cmagazine/2nd/">(2)</a>」が詳しい。</p>
+<p>拡張ライブラリの作り方に関しては<a href="http://shugo.net/">前田修吾氏</a> <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>の「<a href="http://shugo.net/article/cmagazine/1st/">第1回 拡張ライブラリの作成(1)</a>, <a href="http://shugo.net/article/cmagazine/2nd/">(2)</a>」が詳しい。</p>
 
 <h4 id="キモは-extconfrb">キモは extconf.rb</h4>
 
@@ -391,7 +391,7 @@ curses拡張ライブラリの場合、プラットフォームで条件分け�
 
 <p>自前でコンパイルするのは手間がかかるものもあったりするが、最新版を自分の好きなように用意できるのは魅力だ。ただMinGW/MSYSではまだまだ UNIXなソースのコンパイルは通らないものも多い。バイナリは見つけられるかどうかが問題だ。ただし今回に限れば標準添付な拡張ライブラリに必要なものは、ほぼ揃っている。</p>
 
-<h5 id="jarp-porting-libraries-to-win32-httpjarpdoesnotworkorgwin32--">jarp Porting Libraries to Win32( <a href="http://jarp.does.notwork.org/win32/">http://jarp.does.notwork.org/win32/</a> ) <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></h5>
+<h5 id="jarp-porting-libraries-to-win32-httpjarpdoesnotworkorgwin32--">jarp Porting Libraries to Win32( <a href="http://jarp.does.notwork.org/win32/">http://jarp.does.notwork.org/win32/</a> ) <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup></h5>
 
 <p>gdbm, openssl, pdcurses(curses), readline, zlib</p>
 
@@ -544,22 +544,22 @@ Windows OS (具体的には、Windows 2000 以降の Microsoft 製の OS たち)
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>digest/md5 とか io/waitなどのディレクトリ階層の深いものもあるが <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>digest/md5 とか io/waitなどのディレクトリ階層の深いものもあるが <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>実はこっそり iconv.soが追加されてることに注目だったり <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>実はこっそり iconv.soが追加されてることに注目だったり <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>Dynamic Link Library。WindowsのOS機能自体が DLLの固まりである。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>Dynamic Link Library。WindowsのOS機能自体が DLLの固まりである。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p><a href="../../articles/0002/0002-Hotlinks.html">るびま2号インタビュー</a>も参照 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p><a href="../../articles/0002/0002-Hotlinks.html">るびま2号インタビュー</a>も参照 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>わたなべひろふみ氏の Ruby binariesが依存しているライブラリの Win32版が置かれている。氏の日記 Just another Ruby porter,( http://jarp.jin.gr.jp/diary/ ) は Rubyのみならず勉強になること請け合い <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>わたなべひろふみ氏の Ruby binariesが依存しているライブラリの Win32版が置かれている。氏の日記 Just another Ruby porter,( http://jarp.jin.gr.jp/diary/ ) は Rubyのみならず勉強になること請け合い <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

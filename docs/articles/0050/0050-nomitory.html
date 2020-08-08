@@ -263,9 +263,9 @@
 
 <p>みなさん、<a href="https://github.com/mruby/mruby">mruby</a> を使ったことはありますか？ mruby は組込み用途向けの「軽量 Ruby」のことで、るびまでも過去に <a href="../../articles/0038/0038-ForeWord.html">0038 号 巻頭言</a> や <a href="../../articles/0040/0040-ForeWord.html">0040 号 巻頭言</a> で取り上げられていますね。</p>
 
-<p>そして mruby は CRuby 以上に C に依存しているため、デバッグに苦労されているのではないでしょうか。そんな苦労を解消するために mruby 用のデバッガ「nomitory<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>」を開発し、 <a href="http://www.slideshare.net/yamanekko/writing-mruby-debugger">RubyConf 2014 で発表しました</a>。この記事では、その中から「Ruby を GDB (The GNU Project Debugger) でデバッグするための実装部分」を取り上げました。</p>
+<p>そして mruby は CRuby 以上に C に依存しているため、デバッグに苦労されているのではないでしょうか。そんな苦労を解消するために mruby 用のデバッガ「nomitory<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>」を開発し、 <a href="http://www.slideshare.net/yamanekko/writing-mruby-debugger">RubyConf 2014 で発表しました</a>。この記事では、その中から「Ruby を GDB (The GNU Project Debugger) でデバッグするための実装部分」を取り上げました。</p>
 
-<p>また、対象読者を考慮して、フロントエンド部分には触れません。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+<p>また、対象読者を考慮して、フロントエンド部分には触れません。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>
 まず、nomitory の実装の基となる GDB、GDB/MI の使い方を紹介し、次にそれを使って Ruby をデバッグするしくみを解説します。</p>
 
 <p>紹介するコードはコマンドラインの GDB からも試すことができるので、GUI が好きではないという方にもお楽しみいただけると思います。</p>
@@ -300,7 +300,7 @@
 
 <p>一方 GDB/MI は GNU Debugger Machine Interface の略称です。名前から何となく分かるように、プログラムからの操作を想定して作られています。そのため、実行結果が機械的に解析しやすい形で返されます。Eclipse などの IDE ではこの GDB/MI でコマンドを実行した結果をもとに画面表示を行っています。GDB/MI では GDB で実行して画面に表示される内容よりも多くの情報を実行結果として返してくれます。</p>
 
-<p>では同じプログラムを GDB と GDB/MI で実行して比べてみましょう。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>では同じプログラムを GDB と GDB/MI で実行して比べてみましょう。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup><sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
 
 <p>ここでは以下のコードを使用します。</p>
 
@@ -322,7 +322,7 @@ int main(void)
 
 <h3 id="起動する">起動する</h3>
 
-<p>「gdb デバッグしたい実行ファイル名」の場合は GDB が起動しますが、–interpreter=mi または -i=mi オプションをつけると GDB/MI が起動します<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。-q オプションは起動時に表示されるメッセージを省略します。<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></p>
+<p>「gdb デバッグしたい実行ファイル名」の場合は GDB が起動しますが、–interpreter=mi または -i=mi オプションをつけると GDB/MI が起動します<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。-q オプションは起動時に表示されるメッセージを省略します。<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup></p>
 
 <p>GDB を起動します。</p>
 
@@ -342,7 +342,7 @@ Reading symbols from sample...done.
 
 <h3 id="実行する">実行する</h3>
 
-<p>起動できたら、コマンドを入力してデバッグ対象のプログラムを実行してみましょう。<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup></p>
+<p>起動できたら、コマンドを入力してデバッグ対象のプログラムを実行してみましょう。<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup></p>
 
 <p>GDB/MI のコマンドには、たいてい同等機能の GDB コマンドがあります。GDB/MI のマニュアルには「The corresponding gdb command is ‘xxx’. 」の形で対応する GDB コマンドを記載しています。ただし、すべてのコマンドに対応する GDB コマンドがあるわけではなく、GDB/MI にしかないものもあります。代表的なものとして「変数オブジェクト」があります。</p>
 
@@ -418,7 +418,7 @@ thread-groups=["i1"],cond="line==7",times="0",original-location="sample.c:10"}</
 
 <p>テンポラリブレークポイントは、1 回限り有効なブレークポイントです。テンポラリブレークポイントは一度停止したら設定自体が削除されてしまうのが、通常のブレークポイントと異なります。</p>
 
-<p>IDE ではよくある「カーソル位置まで実行」は、カーソルで指定された行にテンポラリブレークポイントを設定すると実装できます。<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup></p>
+<p>IDE ではよくある「カーソル位置まで実行」は、カーソルで指定された行にテンポラリブレークポイントを設定すると実装できます。<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup></p>
 
 <p>GDB でテンポラリブレークポイントを設定するには tbreak を使用します。</p>
 
@@ -538,7 +538,7 @@ $1 = 10</code></pre></figure>
 
 <h4 id="code_fetch_hook">code_fetch_hook</h4>
 
-<p>mruby.h ( <a href="https://github.com/mruby/mruby/blob/master/include/mruby.h">https://github.com/mruby/mruby/blob/master/include/mruby.h</a> ) に定義されている mrb_state 構造体に以下のような定義があります。<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></p>
+<p>mruby.h ( <a href="https://github.com/mruby/mruby/blob/master/include/mruby.h">https://github.com/mruby/mruby/blob/master/include/mruby.h</a> ) に定義されている mrb_state 構造体に以下のような定義があります。<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">#ifdef ENABLE_DEBUG
 void (*code_fetch_hook)(struct mrb_state* mrb, struct mrb_irep *irep, mrb_code *pc, mrb_value *regs);
@@ -595,7 +595,7 @@ y = x + y</code></pre></figure>
 <p>赤丸で囲った部分が Ruby コードの行番号です。3 行目は複数行のバイトコードになっていることがわかります。
 <img src="../../images/0050-nomitory/bytecode-output5.png" alt="bytecode-output5.png" /></p>
 
-<h4 id="ブレークポイントの実装例-">ブレークポイントの実装例 <sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup></h4>
+<h4 id="ブレークポイントの実装例-">ブレークポイントの実装例 <sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup></h4>
 
 <p>GDB (C) の場合</p>
 
@@ -700,7 +700,7 @@ original-location="rubima2.c:89"}</code></pre></figure>
 <p>変数の値を取得するには、Ruby の inspect メソッドを使用します。
 ここで気をつけなければならないのが、デバッガの実装に Ruby の関数を使用したときの動作です。inspect メソッドは Ruby の関数のため、デバッグ対象のプログラム同様にバイトコードとして実行され、 code_fetch 関数も呼び出してしまいます。呼び出された code_fetch 関数はデバッグ対象のプログラムではなくデバッガが呼び出した inspect メソッドの実行結果を返します。このようなことが起きないように inspect メソッド実行中は code_fetch 関数を呼ばないようにしておきましょう。</p>
 
-<p>nomitory の場合、IDE の一部として機能しているので、変数ウィンドウに変数一覧を表示するための関数も作成しました。<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup></p>
+<p>nomitory の場合、IDE の一部として機能しているので、変数ウィンドウに変数一覧を表示するための関数も作成しました。<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup></p>
 
 <h4 id="変数表示の実装例">変数表示の実装例</h4>
 
@@ -741,47 +741,47 @@ $2 = 0x1000814c0 &lt;ret&gt; "result={name=\"v\",value=\"5\",type=\"Fixnum\"}"</
 
 <p>主に組込み向けの mrbgems を作りながら、Eclipse を mruby 用にカスタマイズしています。</p>
 
-<p>最近手がけているのは、<a href="http://dev.toppers.jp/trac_user/ev3pf/wiki/WhatsEV3RT">EV3RT</a><sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup> の API を mruby 用に移植すること。</p>
+<p>最近手がけているのは、<a href="http://dev.toppers.jp/trac_user/ev3pf/wiki/WhatsEV3RT">EV3RT</a><sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup> の API を mruby 用に移植すること。</p>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>nomitory という名前は発表後のたいやき部新年会で「すとうさん」がつけてくれました。感謝 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>nomitory という名前は発表後のたいやき部新年会で「すとうさん」がつけてくれました。感謝 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>フロントエンドの実装は Java なので <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>フロントエンドの実装は Java なので <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>GDB, GDB/MI のコマンドについては、簡単のため、複数の書き方があるものは 1 種類のみ紹介します。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>GDB, GDB/MI のコマンドについては、簡単のため、複数の書き方があるものは 1 種類のみ紹介します。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>GDB でデバッグするには、あらかじめ GCC で -g3 オプションをつけてコンパイルしておきます。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>GDB でデバッグするには、あらかじめ GCC で -g3 オプションをつけてコンパイルしておきます。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>現時点では mi1 と mi2 の 2 種類がありますが、mi のみ指定すると最新のもの (mi2) が指定されたことになります。 https://sourceware.org/gdb/onlinedocs/gdb/Interpreters.html#Interpreters <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>現時点では mi1 と mi2 の 2 種類がありますが、mi のみ指定すると最新のもの (mi2) が指定されたことになります。 https://sourceware.org/gdb/onlinedocs/gdb/Interpreters.html#Interpreters <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>引用する際にシンプルに表示したかったため使用しただけです。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>引用する際にシンプルに表示したかったため使用しただけです。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>まだ何も設定していませんから、ここで試した場合は、プログラムは最後まで実行されて終了します。びっくりしないでね:) <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>まだ何も設定していませんから、ここで試した場合は、プログラムは最後まで実行されて終了します。びっくりしないでね:) <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>nomitory ではまだ実装していませんが・・・ <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>nomitory ではまだ実装していませんが・・・ <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>この機能を使用するには、mrbconf.h で #define ENABLE_DEBUG を有効にします。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>この機能を使用するには、mrbconf.h で #define ENABLE_DEBUG を有効にします。 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>Ruby の実装例は https://github.com/yurie/rubima50/blob/master/rubycode.rb と https://github.com/yurie/rubima50/blob/master/rubima2.c を使用しています。 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>Ruby の実装例は https://github.com/yurie/rubima50/blob/master/rubycode.rb と https://github.com/yurie/rubima50/blob/master/rubima2.c を使用しています。 <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>変数一覧を返す関数を mruby 側で作成しておき、 -data-evaluate-expression で呼んでいるだけですが <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>変数一覧を返す関数を mruby 側で作成しておき、 -data-evaluate-expression で呼んでいるだけですが <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:12">
-      <p>EV3 用の RTOS(Real-Time Operating System) <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:12" role="doc-endnote">
+      <p>EV3 用の RTOS(Real-Time Operating System) <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

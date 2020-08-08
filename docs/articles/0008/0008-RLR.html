@@ -238,8 +238,8 @@ OpenSSL::ASN1 を簡単に概要だけを紹介します。</p>
 すくなります。</p>
 
 <p>パーサジェネレータについて議論を行うとき、まず扱える
-文法の範囲<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
-や、解析方法<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+文法の範囲<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
+や、解析方法<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>
 に着目することが多いです。
 しかし、これらの詳細な説明は RLR では行いませんので、詳しくは教科書[4,5] を
 参照して下さい。
@@ -253,7 +253,7 @@ DSL とは、特定ドメインのモデリングを行うための言語のこ�
 がプログラムを行えることを期待しています。
 このような言語を扱うツールには、<a href="Wikipedia-en:yacc">yacc</a>　や <a href="http://xmlsoft.org/XSLT/xsltproc2.html">xsltproc</a>
 などがあります。
-同様に、今回 RLR で扱うツールとライブラリが扱う対象も DSL であると言えます。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>
+同様に、今回 RLR で扱うツールとライブラリが扱う対象も DSL であると言えます。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>
 yacc は、BNF という文法を記述する言語によってプログラミングを行います。
 また、xsltproc は、<a href="W3C:xslt">XSLT</a> という変換言語によって、XMLの変換方法をプログラミングします。
 そして、DSL により記述されたモデルは、ツールなどにより汎用的な言語へ変換する
@@ -286,8 +286,8 @@ Internal DSL は、その DSL を実装するための言語の文法などの�
 するライブラリです。
 ABNF は、BNF と基本的に文法は同じであり、表現形式が拡張されているものです。
 ABNF(あるいは似たようなBNF)を用いて文法を定義したものに、
-IPアドレス <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
-やURI <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> があります。
+IPアドレス <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>
+やURI <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> があります。
 このような文法記述から、IPアドレスやURLに一致する正規表現を生成すること
 によって、文法に従った正確な正規表現を生成できます。</p>
 
@@ -664,7 +664,7 @@ rule と token を連接「-」、選択「|」、繰り返し「*」の記号�
 
 <p>syntax.rb は、tdp4r とほとんど狙いは同じライブラリです。
 文法を Ruby のコードとして記述できます。
-特徴的なことは、トークンへの分解<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>も
+特徴的なことは、トークンへの分解<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>も
 syntax.rb によって行うことができ、また、ルールの定義がオブジェクトのみ
 で実現できることです。</p>
 
@@ -806,7 +806,7 @@ OpenSSL 拡張モジュールの一部として提供されています。
 のウィンドウから、一つ証明書を選択し、エクスポートを行うことができます。
 このとき、エンコーディング方法として DER を選択できます。
 そこで、このような DER によりエンコーディングされた電子証明書を OpenSSL::ASN1 を
-用いて閲覧します。<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>
+用いて閲覧します。<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>
 ここでは DER 形式でエンコーディングされた証明書を foo.der という名前のファイル
 とします。</p>
 
@@ -959,28 +959,28 @@ tdp4r や syntax.rb などを扱う場合の参考になります。</p>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>有名なものに、正規文法、文脈自由文法 、LALR(1) 文法、LL(k) 文法 などの文法のクラスがあります。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>有名なものに、正規文法、文脈自由文法 、LALR(1) 文法、LL(k) 文法 などの文法のクラスがあります。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>LR解析、LALR(1)解析、再帰下降解析などの解析方法があります。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>LR解析、LALR(1)解析、再帰下降解析などの解析方法があります。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>これらは、パーサやXMLというドメインに特化した言語ですが、ビジネスドメインを記述するものも同様に DSL です。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>これらは、パーサやXMLというドメインに特化した言語ですが、ビジネスドメインを記述するものも同様に DSL です。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>[[RFC:2373]]のAPPENDIX B <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>[[RFC:2373]]のAPPENDIX B <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>[[RFC:2393]]のAPPENDIX A <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>[[RFC:2393]]のAPPENDIX A <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>一般的に字句解析と言います <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>一般的に字句解析と言います <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>Linux や *BSD をお使いの方も、適当な DER によりエンコーディングされた電子証明書をご用意ください。(編注: 適当な証明書が無い場合は <a href="http://www.cacert.org/index.php?id=3&amp;lang=ja_JP">CAcert.org</a> からダウンロードすると良いでしょう) <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>Linux や *BSD をお使いの方も、適当な DER によりエンコーディングされた電子証明書をご用意ください。(編注: 適当な証明書が無い場合は <a href="http://www.cacert.org/index.php?id=3&amp;lang=ja_JP">CAcert.org</a> からダウンロードすると良いでしょう) <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

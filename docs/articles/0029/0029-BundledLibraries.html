@@ -438,7 +438,7 @@ end</code></pre></figure>
 <p>そのとき、いくつか方法を考えてみたところ、</p>
 
 <ul>
-  <li>「<code class="highlighter-rouge">#{cmd} 2&amp;gt;&amp;amp;1</code>」だと標準出力と標準エラー出力が混ざる</li>
+  <li>「<code class="language-plaintext highlighter-rouge">#{cmd} 2&amp;gt;&amp;amp;1</code>」だと標準出力と標準エラー出力が混ざる</li>
   <li>「open3」ライブラリの「Open3.popen3(cmd)」だと終了ステータスが取れない</li>
   <li>IO.pipe と fork の組み合わせだと読み込まないとコマンドが止まる可能性があるのが面倒</li>
   <li>Process.spawn は ruby 1.8 では使えない</li>

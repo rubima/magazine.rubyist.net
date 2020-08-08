@@ -306,15 +306,15 @@
 <h3 id="ruby-archaeology-by-石塚圭樹さん-書いた人-zonu_exe">Ruby Archaeology by 石塚圭樹さん (書いた人: @zonu_exe)</h3>
 <p>: <img src="../../images/0043-RubyKaigi2013/ishitsuka.jpg" alt="ishitsuka.jpg" /></p>
 
-<p>「Ruby考古学」 発表者の石塚圭樹 (けいじゅ ＠ いしつか) さんは、世界最初の Ruby 書籍である『オブジェクト指向スクリプト言語 Ruby 』の著書としても知られる、Ruby の名付け親です<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。また、現在まで広く使われている対話環境 IRB の作者です。Ruby が開発された 1993 年、いしつかさんはまつもとゆきひろさんと同じ会社でプログラミング言語の研究職に就いていらっしゃいました。 Ruby の歴史については初日の最初のセッションで高橋征義さんが「<a href="http://rubykaigi.org/2013/talk/S57">The History of Ruby</a>」として紹介していましたが、当セッション「Ruby 考古学」は、当事者の立場からの Ruby 開発前史にあたります。</p>
+<p>「Ruby考古学」 発表者の石塚圭樹 (けいじゅ ＠ いしつか) さんは、世界最初の Ruby 書籍である『オブジェクト指向スクリプト言語 Ruby 』の著書としても知られる、Ruby の名付け親です<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。また、現在まで広く使われている対話環境 IRB の作者です。Ruby が開発された 1993 年、いしつかさんはまつもとゆきひろさんと同じ会社でプログラミング言語の研究職に就いていらっしゃいました。 Ruby の歴史については初日の最初のセッションで高橋征義さんが「<a href="http://rubykaigi.org/2013/talk/S57">The History of Ruby</a>」として紹介していましたが、当セッション「Ruby 考古学」は、当事者の立場からの Ruby 開発前史にあたります。</p>
 
 <p>Ruby 誕生の前日までに新しい言語の特徴として現在まで貫かれているコンセプトがいくつも挙げられていました。この時点では「<a href="http://ja.wikipedia.org/wiki/Yacc">yacc</a> を使用しないシェル風の簡単な構文」が想定されていたようで、「引数を文字列として扱う」「引数区切りはカンマ (,) なし」など、あたかもシェルスクリプトのような言語でした。しかしこの時点で既に、こんにち <a href="http://doc.ruby-lang.org/ja/2.0.0/doc/spec=2fcall.html#block">ブロック付きメソッド呼び出し</a> と呼ばれるものに相当する「ユーザ定義の制御構文」が検討されていたことは特筆すべきでしょう。</p>
 
-<p>言語名が「ruby<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>」と決まったあと具体的な構文の検討が開始され、毎日のように成長していきます。この時点で引数はまだ全て文字列で扱うことになっていたので、 if [a == b] のような構文で引数に式を埋め込めるようになっていました。ほどなくして、誕生から 5 日目には「引数区切りはカンマ (,)」になります。また、当初 PC との互換性のために使用しないことになっていた <a href="http://ja.wikipedia.org/wiki/Yacc">yacc</a> は、このころ解禁されることになります。</p>
+<p>言語名が「ruby<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>」と決まったあと具体的な構文の検討が開始され、毎日のように成長していきます。この時点で引数はまだ全て文字列で扱うことになっていたので、 if [a == b] のような構文で引数に式を埋め込めるようになっていました。ほどなくして、誕生から 5 日目には「引数区切りはカンマ (,)」になります。また、当初 PC との互換性のために使用しないことになっていた <a href="http://ja.wikipedia.org/wiki/Yacc">yacc</a> は、このころ解禁されることになります。</p>
 
 <p>インスタンス変数は当初 obj.ivar のように参照するようになっていました。現在の Ruby では <a href="http://doc.ruby-lang.org/ja/2.0.0/class/Module.html#I_ATTR">Module#attr_*</a> で明示的にアクセサを定義することで同様のアクセスができるようになります。意外なことに、当時は「アクセサの定義は要らないようにしたい」という設計でした。しかしそれは 13 日目までには撤回され、現在のものに近い仕様になります。</p>
 
-<p>誕生から半年以内に「モジュールの mix-in<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>」「private メソッド」「グローバル変数 ($gver), インスタンス変数 (@ivar)」など現在と同様なものが登場し、1993 年 8 月 19 日に初めて Ruby が動作したそうです。その後、いしつかさんとまつもとさんの転職でメールのやりとりが途切れてしまい、いしつかさんの記録が存在しない「暗黒時代」を経た 1994 年 8 月 10 日にバージョンが ruby 0.50 になりました。開発は進み、やがて 1994 年末には 0.6 に、そして 1995 年 12 月に ruby 0.95 をリリース、ネットニュースで一般公開されました。</p>
+<p>誕生から半年以内に「モジュールの mix-in<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>」「private メソッド」「グローバル変数 ($gver), インスタンス変数 (@ivar)」など現在と同様なものが登場し、1993 年 8 月 19 日に初めて Ruby が動作したそうです。その後、いしつかさんとまつもとさんの転職でメールのやりとりが途切れてしまい、いしつかさんの記録が存在しない「暗黒時代」を経た 1994 年 8 月 10 日にバージョンが ruby 0.50 になりました。開発は進み、やがて 1994 年末には 0.6 に、そして 1995 年 12 月に ruby 0.95 をリリース、ネットニュースで一般公開されました。</p>
 
 <p>その後は高橋さんの語る「Ruby の歴史」へと続き、数々の出来事を経て現在へと至ります。筆者がプログラミングを始めたのは 2010 年、 Web に関わるようになったのも 2004 年頃なので、Ruby の歴史の大部分にはまったく接点を持つことなく過ごしてきました。今後 Ruby と関わっていく上で歴史に貢献、などと大それたことではなくとも、関わりを持っていくことができるのか。エモい話ではありますが、わくわくしますね。</p>
 
@@ -529,7 +529,7 @@
  context.stroke
  context.restoke</code></pre></figure>
 
-<p>この短いコードの中で <code class="highlighter-rouge">context.save</code> と <code class="highlighter-rouge">context.restore</code> に注目してみると</p>
+<p>この短いコードの中で <code class="language-plaintext highlighter-rouge">context.save</code> と <code class="language-plaintext highlighter-rouge">context.restore</code> に注目してみると</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> context.save do
    context.circle(50, 50, 50)
@@ -571,7 +571,7 @@
 
 <h3 id="trick-by-yusuke-endoh--the-judges--書いた人-shokolateday-">TRICK by Yusuke Endoh &amp; the judges  (書いた人： @shokolateday )</h3>
 
-<p>参加者ブログに一番登場しているセッションとも言える、第一回の TRICK<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> が開催されました。TRICK とは簡単に言うと自らがプログラミングにかける変態さ<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>を Ruby で表現しあう大会です。</p>
+<p>参加者ブログに一番登場しているセッションとも言える、第一回の TRICK<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup> が開催されました。TRICK とは簡単に言うと自らがプログラミングにかける変態さ<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>を Ruby で表現しあう大会です。</p>
 
 <p>Ruby の生みの親のまつもとゆきひろさんを初めとする豪華な審査員が、応募作品をジャッジ、順位をつけていくのですが、作品の出来もさることながら、審査員同士のゆるい掛け合いが面白く、「俺が作った言語だよな？」「変態だーと思って次の作品見たら更に変態で……」「審査員が試されるコンテストだ」とコメントが飛び出すたびに会場は大いに盛り上がりました。また、受賞者の半分以上が審査員というのも笑いを誘ったひとつでありました。(受賞作品は<a href="https://github.com/tric/trick2013">コチラ</a>でご覧になれます。)</p>
 
@@ -584,9 +584,9 @@
 
 <h3 id="fight-with-diversity-by-akira-akr-tanaka-さん-書いた人-zonu_exe">Fight with Diversity by Akira “akr” Tanaka さん (書いた人: @zonu_exe)</h3>
 
-<p>「多様性は善」– <a href="http://www.perl.org/">Perl</a> の「やりかたは一つじゃない (TMTOWTDI)」から引き継いだ、Ruby の世界観を代表するスローガンのひとつ<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>です。「生物多様性」という言葉は環境保護の重要なキーワードとして知られます。しかしソフトウェアの世界において、ただ選択肢が多様であることは良いことなのでしょうか。RubyKaigi 最後のセッションとして Ruby コミッタの <a href="https://github.com/akr">akr</a> さんが基調講演として語ったのは、Ruby 開発の上で直面した、多様性との格闘でした。</p>
+<p>「多様性は善」– <a href="http://www.perl.org/">Perl</a> の「やりかたは一つじゃない (TMTOWTDI)」から引き継いだ、Ruby の世界観を代表するスローガンのひとつ<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>です。「生物多様性」という言葉は環境保護の重要なキーワードとして知られます。しかしソフトウェアの世界において、ただ選択肢が多様であることは良いことなのでしょうか。RubyKaigi 最後のセッションとして Ruby コミッタの <a href="https://github.com/akr">akr</a> さんが基調講演として語ったのは、Ruby 開発の上で直面した、多様性との格闘でした。</p>
 
-<p>今日のような複雑さが生まれた経緯はまさに「歴史的経緯」と呼ぶほかないのですが、<a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> の歴史と発展は収集のつかない多様性を生みました。そのひとつが、<a href="http://ja.wikipedia.org/wiki/DBM">DBM</a> と総称されるアプリケーション組込みの DB ライブラリ<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>です。技術的な要約を試みるのは齟齬が生じかねないので避けますが、この問題は <a href="http://ja.wikipedia.org/wiki/AT%26T">AT&amp;T</a> で開発された最初の <a href="http://ja.wikipedia.org/wiki/DBM">dbm</a> が (そして <a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> が) プロプライエタリ<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>であったこと、時を経て <a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> 世界が「多様化」したこと、そして多様化の過程で各実装間に互換性への配慮が乏しかったことによります。</p>
+<p>今日のような複雑さが生まれた経緯はまさに「歴史的経緯」と呼ぶほかないのですが、<a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> の歴史と発展は収集のつかない多様性を生みました。そのひとつが、<a href="http://ja.wikipedia.org/wiki/DBM">DBM</a> と総称されるアプリケーション組込みの DB ライブラリ<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>です。技術的な要約を試みるのは齟齬が生じかねないので避けますが、この問題は <a href="http://ja.wikipedia.org/wiki/AT%26T">AT&amp;T</a> で開発された最初の <a href="http://ja.wikipedia.org/wiki/DBM">dbm</a> が (そして <a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> が) プロプライエタリ<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>であったこと、時を経て <a href="http://ja.wikipedia.org/wiki/UNIX">UNIX</a> 世界が「多様化」したこと、そして多様化の過程で各実装間に互換性への配慮が乏しかったことによります。</p>
 
 <p><a href="https://github.com/akr">akr</a> さんは、この <a href="http://ja.wikipedia.org/wiki/DBM">dbm</a> 拡張ライブラリのサポートに関して、検出が可能な限りの多くの OS 及び C ライブラリ環境でのビルド対応に挑戦しました。その過程はさながらパズルのようで、結果として、現在ではよほどおかしなライブラリ構成でない限りほとんどの場合に問題なく自動検出・ビルドできるようになっているようです。</p>
 
@@ -810,31 +810,31 @@
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p><a href="http://ja.wikipedia.org/wiki/Ruby">Ruby - Wikipedia</a> などで “まつもとの同僚の誕生石（7 月）のルビーを取って名付けられた” として言及されている「同僚」本人でもあります <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="http://ja.wikipedia.org/wiki/Ruby">Ruby - Wikipedia</a> などで “まつもとの同僚の誕生石（7 月）のルビーを取って名付けられた” として言及されている「同僚」本人でもあります <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>当時の言語名の正式な表記は、すべて小文字の「ruby」でした。ただし、 <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/5039">[ruby-list:5039] Ruby or ruby, but no RUBY</a> 以後は「Ruby」と表記することが許容され、現在では言語の正式表記は「Ruby」になっています。 <a href="https://github.com/ruby-no-kai/official/wiki/Ruby-FAQ#ruby%E3%81%A8ruby%E3%81%AF%E3%81%A9%E3%81%A3%E3%81%A1%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8B">“Ruby” と “ruby” はどっちが正しいのですか</a> も参照 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>当時の言語名の正式な表記は、すべて小文字の「ruby」でした。ただし、 <a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/5039">[ruby-list:5039] Ruby or ruby, but no RUBY</a> 以後は「Ruby」と表記することが許容され、現在では言語の正式表記は「Ruby」になっています。 <a href="https://github.com/ruby-no-kai/official/wiki/Ruby-FAQ#ruby%E3%81%A8ruby%E3%81%AF%E3%81%A9%E3%81%A3%E3%81%A1%E3%81%8C%E6%AD%A3%E3%81%97%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8B">“Ruby” と “ruby” はどっちが正しいのですか</a> も参照 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>Ruby では多重継承をサポートしないが、その代替としてモジュールの Mix-in をサポートする。継承の種類と特徴については、まつもとさんの書かれた <a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060825/246409/">まつもと直伝 プログラミングのオキテ</a> の「第3回 多重継承の光と影」を参照 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>Ruby では多重継承をサポートしないが、その代替としてモジュールの Mix-in をサポートする。継承の種類と特徴については、まつもとさんの書かれた <a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060825/246409/">まつもと直伝 プログラミングのオキテ</a> の「第3回 多重継承の光と影」を参照 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>「Transcendental Ruby Imbroglio Contest for rubyKaigi (超絶技巧 Ruby 意味不明コンテスト in RubyKaigi)」の頭文字 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>「Transcendental Ruby Imbroglio Contest for rubyKaigi (超絶技巧 Ruby 意味不明コンテスト in RubyKaigi)」の頭文字 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>ここでは難解で突拍子もない発想と、周囲を置いてきぼりにする異次元な実力のことを、最高の賛辞を添えて「変態」と表現しています <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>ここでは難解で突拍子もない発想と、周囲を置いてきぼりにする異次元な実力のことを、最高の賛辞を添えて「変態」と表現しています <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p><a href="http://magazine.rubyist.net/?0015-ForeWord">Rubyist Magazine - 0015 号 巻頭言</a> によれば、1999 年までにはこのフレーズが登場しているとのこと <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p><a href="http://magazine.rubyist.net/?0015-ForeWord">Rubyist Magazine - 0015 号 巻頭言</a> によれば、1999 年までにはこのフレーズが登場しているとのこと <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>DB と言っても <a href="http://www.mysql.com/">MySQL</a> のような RDBMS ではなく、今日 <a href="http://ja.wikipedia.org/wiki/NoSQL">NoSQL</a> の一種と呼ばれることもある KVS (Key-Value Store) です。現に、例えば <a href="http://fallabs.com/kyototycoon/">KyotoTycoon</a> という分散 KVS は同作者による DBM の実装である <a href="http://fallabs.com/kyotocabinet/index.ja.html">KyotoCabinet</a> を基盤としています <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>DB と言っても <a href="http://www.mysql.com/">MySQL</a> のような RDBMS ではなく、今日 <a href="http://ja.wikipedia.org/wiki/NoSQL">NoSQL</a> の一種と呼ばれることもある KVS (Key-Value Store) です。現に、例えば <a href="http://fallabs.com/kyototycoon/">KyotoTycoon</a> という分散 KVS は同作者による DBM の実装である <a href="http://fallabs.com/kyotocabinet/index.ja.html">KyotoCabinet</a> を基盤としています <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p><a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%83%97%E3%83%A9%E3%82%A4%E3%82%A8%E3%82%BF%E3%83%AA%E3%83%BB%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2">プロプライエタリ・ソフトウェア - Wikipedia</a> を参照。<a href="http://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2">フリーソフトウェア</a> の対義語。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p><a href="http://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%83%97%E3%83%A9%E3%82%A4%E3%82%A8%E3%82%BF%E3%83%AA%E3%83%BB%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2">プロプライエタリ・ソフトウェア - Wikipedia</a> を参照。<a href="http://ja.wikipedia.org/wiki/%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2">フリーソフトウェア</a> の対義語。 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

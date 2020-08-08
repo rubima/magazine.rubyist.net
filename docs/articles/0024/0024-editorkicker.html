@@ -278,7 +278,7 @@
 
 <p>CGI や mod_ruby で EditorKicker を使うには、CGI-Exception も同時にインストールする必要があります。
 <a href="http://cgi-exception.rubyforge.org/">CGI-Exception</a> は、CGI スクリプトでエラーが発生したときに、それをブラウザ画面に表示するツールです。
-ちょうど PHP のようにエラーがブラウザ画面に表示されるため、わざわざ Web サーバのログを確認する必要がなくなります<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+ちょうど PHP のようにエラーがブラウザ画面に表示されるため、わざわざ Web サーバのログを確認する必要がなくなります<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <p>CGI-Exception は EditorKicker をサポートしており、CGI スクリプトでエラーが発生したときに EditorKicker が require されていれば、EditorKicker を使ってエディタを起動するようになっています。</p>
 
@@ -308,7 +308,7 @@
 理由は、RubyGems をロードするコストが CGI スクリプトにとって致命的に重いからです。</p>
 
 <p>また Emacs をお使いの場合は、M-x server-start を実行してください。
-そのあと、例えば /tmp/emacs501/server のようなソケットファイルが作成されますので、この所有者を CGI スクリプトの実行ユーザ (Apache をお使いなら Apache の実行ユーザ) に変更します<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+そのあと、例えば /tmp/emacs501/server のようなソケットファイルが作成されますので、この所有者を CGI スクリプトの実行ユーザ (Apache をお使いなら Apache の実行ユーザ) に変更します<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> $ sudo chown -R /tmp/emacs501</code></pre></figure>
 
@@ -439,13 +439,13 @@ ENV['EDITOR_KICKER_EXCLUDE'] = '/usr/lib/ruby'
 
 <p>所有者とが同じでないといけないようです。
 [^3]: emacsclient コマンドの -s オプションは Emacs 22 から利用可能であり、Emacs 21 付属の emacsclient にはないようです。</p>
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>ローカルマシンでの開発なら tail -f error_log でもいいんですけどね。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>ローカルマシンでの開発なら tail -f error_log でもいいんですけどね。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>emacsclient コマンドでは、コマンドの実行ユーザとソケットファイル /tmp/emacs501/server と <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>emacsclient コマンドでは、コマンドの実行ユーザとソケットファイル /tmp/emacs501/server と <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
