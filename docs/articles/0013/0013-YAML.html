@@ -265,43 +265,43 @@
 
 <p><a href="../../images/0013-YAML/show-ypath.rb">show-ypath.rb</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env ruby
 
-<span class="c1">## Usage: ruby show-ypath.rb ypath datafile.yaml</span>
+## Usage: ruby show-ypath.rb ypath datafile.yaml
 
-<span class="nb">require</span> <span class="s1">'yaml'</span>
-<span class="nb">require</span> <span class="s1">'pp'</span>
+require 'yaml'
+require 'pp'
 
-<span class="c1">## YPath パターンを取得する</span>
-<span class="n">ypath</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>
-<span class="k">unless</span> <span class="n">ypath</span>
-   <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"Usage: show-ypath ypath [file.yaml ...]"</span>
-   <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">end</span>
+## YPath パターンを取得する
+ypath = ARGV.shift
+unless ypath
+   $stderr.puts "Usage: show-ypath ypath [file.yaml ...]"
+   exit(0)
+end
 
-<span class="c1">## YAML ファイルを読み込み、ツリーに変換する</span>
-<span class="n">str</span> <span class="o">=</span> <span class="no">ARGF</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
-<span class="n">tree</span> <span class="o">=</span> <span class="p">\{\{</span><span class="o">*</span><span class="no">YAML</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
+## YAML ファイルを読み込み、ツリーに変換する
+str = ARGF.read()
+tree = \{\{*YAML.parse(str)*\}\}
 
-<span class="c1">## ツリーを探索し、ypath にマッチしたノードのパスをすべて表示する</span>
-<span class="nb">puts</span> <span class="s2">"#--- search('</span><span class="si">#{</span><span class="n">ypath</span><span class="si">}</span><span class="s2">') ---"</span>
-<span class="n">paths</span> <span class="o">=</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">tree</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">ypath</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>    <span class="c1"># paths はパスの配列</span>
-<span class="n">paths</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">path</span><span class="o">|</span>
-  <span class="n">pp</span> <span class="n">path</span>
-<span class="k">end</span>
+## ツリーを探索し、ypath にマッチしたノードのパスをすべて表示する
+puts "#--- search('#{ypath}') ---"
+paths = \{\{*tree.search(ypath)*\}\}    # paths はパスの配列
+paths.each do |path|
+  pp path
+end
 
-<span class="c1">## ツリーを探索し、ypath にマッチしたノードをすべて表示する</span>
-<span class="nb">puts</span> <span class="s2">"#--- select('</span><span class="si">#{</span><span class="n">ypath</span><span class="si">}</span><span class="s2">') ---"</span>
-<span class="n">nodes</span> <span class="o">=</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">tree</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">ypath</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>    <span class="c1"># nodes はノードの配列</span>
-<span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
-  <span class="n">obj</span> <span class="o">=</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">node</span><span class="p">.</span><span class="nf">transform</span><span class="o">*</span><span class="p">\}\}</span>    <span class="c1"># ノードをオブジェクトに変換する</span>
-  <span class="n">pp</span> <span class="n">obj</span>
-<span class="k">end</span>
-<span class="c1">## または</span>
-<span class="c1"># objs = \{\{*tree.select!(ypath)*\}\}</span>
-<span class="c1"># objs.each do |obj|</span>
-<span class="c1">#   pp obj</span>
-<span class="c1"># end</span>
+## ツリーを探索し、ypath にマッチしたノードをすべて表示する
+puts "#--- select('#{ypath}') ---"
+nodes = \{\{*tree.select(ypath)*\}\}    # nodes はノードの配列
+nodes.each do |node|
+  obj = \{\{*node.transform*\}\}    # ノードをオブジェクトに変換する
+  pp obj
+end
+## または
+# objs = \{\{*tree.select!(ypath)*\}\}
+# objs.each do |obj|
+#   pp obj
+# end
 
 </code></pre></div></div>
 
@@ -309,8 +309,8 @@
 
 <ul>
   <li>「YAML.parse(input)」は、文字列または IO オブジェクトを読み込んで、ツリー形式に変換します。</li>
-  <li>ツリーはノード (YAML::Syck::Node オブジェクト) で構成されます<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。ノードを Ruby のオブジェクト (Array、Hash、String、Fixnum など) に変換するには、YAML::Syck::Node#transform() を使います。</li>
-  <li>ツリーを探索するメソッドには以下の 3 つがあります<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。これらはどれも、文字列 ypath をもとにツリーを探索するという点では同じですが、戻り値が異なります。
+  <li>ツリーはノード (YAML::Syck::Node オブジェクト) で構成されます<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。ノードを Ruby のオブジェクト (Array、Hash、String、Fixnum など) に変換するには、YAML::Syck::Node#transform() を使います。</li>
+  <li>ツリーを探索するメソッドには以下の 3 つがあります<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。これらはどれも、文字列 ypath をもとにツリーを探索するという点では同じですが、戻り値が異なります。
     <ul>
       <li>Node#search(ypath) は、マッチしたノードのパスの配列を返します。</li>
       <li>Node#select(ypath) は、マッチしたノードの配列を返します。</li>
@@ -323,7 +323,7 @@
 
 <p><a href="../../images/0013-YAML/datafile.yaml">datafile.yaml</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>teams:
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>teams:
   - name:        Akudaman
     members:
       - name:    Mujo
@@ -376,7 +376,7 @@
 
 <h3 id="ルート">ルート</h3>
 
-<p>ツリーのルートとなるノードは、「/.」という YPath で表されます。ここで「.」は現在のノードを表します<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>ツリーのルートとなるノードは、「/.」という YPath で表されます。ここで「.」は現在のノードを表します<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ruby show-ypath.rb '/.' datafile.yaml
  #--- search('/.') ---
@@ -549,7 +549,7 @@
  25
  25</code></pre></figure>
 
-<p>ここで「age の値が 25 であるようなマッピングのノード」を抽出できればいいのですが、Syck がサポートしている YPath だけではできないので、次のようなコードを使ってください<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>ここで「age の値が 25 であるようなマッピングのノード」を抽出できればいいのですが、Syck がサポートしている YPath だけではできないので、次のようなコードを使ってください<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> ## YAML ファイルを読み込み、ツリーに変換する
  str = ARGF.read()
@@ -577,95 +577,95 @@
 
 <p><a href="../../images/0013-YAML/yamlgrep">yamlgrep</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/ruby</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/ruby
 
-<span class="c1">##</span>
-<span class="c1">## yamlgrep - YAML ファイルから YPath にマッチしたデータを抜き出す</span>
-<span class="c1">##</span>
+##
+## yamlgrep - YAML ファイルから YPath にマッチしたデータを抜き出す
+##
 
-<span class="k">def</span> <span class="nf">usage</span><span class="p">()</span>
-  <span class="n">command</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">basename</span><span class="p">(</span><span class="vg">$0</span><span class="p">)</span>
-  <span class="n">s</span> <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">END</span><span class="sh">
-使い方:  </span><span class="si">#{</span><span class="n">command</span><span class="si">}</span><span class="sh"> [-h] [-q] [-u[N]] [-z ypath] ypath-pattern [yamlfile ...]
+def usage()
+  command = File.basename($0)
+  s = &lt;&lt;END
+使い方:  #{command} [-h] [-q] [-u[N]] [-z ypath] ypath-pattern [yamlfile ...]
   -h        : ヘルプ
   -q        : 余分な出力を抑える (quietモード)
   -u[N]     : 親をたどる数 (省略時 N=1)
   -z ypath  : 末尾に追加する YPath パターン
-</span><span class="no">END</span>
-  <span class="k">return</span> <span class="n">s</span>
-<span class="k">end</span>
+END
+  return s
+end
 
 
-<span class="nb">require</span> <span class="s1">'yaml'</span>
+require 'yaml'
 
-<span class="c1">## コマンドラインオプションを解析</span>
-<span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">while</span> <span class="no">ARGV</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=~</span> <span class="sr">/^-/</span>
-  <span class="n">opt</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>
-  <span class="k">case</span> <span class="n">opt</span>
-  <span class="k">when</span> <span class="s1">'-h'</span><span class="p">,</span> <span class="s1">'--help'</span>     <span class="c1"># ヘルプ</span>
-    <span class="n">options</span><span class="p">[</span><span class="ss">:help</span><span class="p">]</span>   <span class="o">=</span> <span class="kp">true</span>
-  <span class="k">when</span> <span class="s1">'-q'</span>               <span class="c1"># 余分な出力を抑える</span>
-    <span class="n">options</span><span class="p">[</span><span class="ss">:quiet</span><span class="p">]</span>  <span class="o">=</span> <span class="kp">true</span>
-  <span class="k">when</span> <span class="sr">/^-u(\d*)/</span>         <span class="c1"># 親をたどる数</span>
-    <span class="n">options</span><span class="p">[</span><span class="ss">:parent</span><span class="p">]</span> <span class="o">=</span> <span class="vg">$1</span><span class="p">.</span><span class="nf">empty?</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="vg">$1</span><span class="p">.</span><span class="nf">to_i</span>
-  <span class="k">when</span> <span class="sr">/^-z(.*)/</span>          <span class="c1"># 末尾に追加する YPath</span>
-    <span class="n">ypath</span> <span class="o">=</span> <span class="vg">$1</span><span class="p">.</span><span class="nf">empty?</span> <span class="p">?</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span> <span class="p">:</span> <span class="vg">$1</span>
-    <span class="k">unless</span> <span class="n">ypath</span>
-      <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">opt</span><span class="si">}</span><span class="s2">: YPath パターンが指定されていません。"</span>
-      <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">end</span>
-    <span class="n">options</span><span class="p">[</span><span class="ss">:tail</span><span class="p">]</span> <span class="o">=</span> <span class="n">ypath</span>
-  <span class="k">else</span>
-    <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">opt</span><span class="si">}</span><span class="s2">: 不正なオプションです。"</span>
-    <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+## コマンドラインオプションを解析
+options = {}
+while ARGV[0] =~ /^-/
+  opt = ARGV.shift
+  case opt
+  when '-h', '--help'     # ヘルプ
+    options[:help]   = true
+  when '-q'               # 余分な出力を抑える
+    options[:quiet]  = true
+  when /^-u(\d*)/         # 親をたどる数
+    options[:parent] = $1.empty? ? 1 : $1.to_i
+  when /^-z(.*)/          # 末尾に追加する YPath
+    ypath = $1.empty? ? ARGV.shift : $1
+    unless ypath
+      $stderr.puts "#{opt}: YPath パターンが指定されていません。"
+      exit(1)
+    end
+    options[:tail] = ypath
+  else
+    $stderr.puts "#{opt}: 不正なオプションです。"
+    exit(1)
+  end
+end
 
-<span class="c1">## ヘルプを表示</span>
-<span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:help</span><span class="p">]</span>
-  <span class="nb">puts</span> <span class="n">usage</span><span class="p">()</span>
-  <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">end</span>
+## ヘルプを表示
+if options[:help]
+  puts usage()
+  exit(0)
+end
 
-<span class="c1">## YPath パターンを読み取る</span>
-<span class="n">ypath</span> <span class="o">=</span> <span class="no">ARGV</span><span class="p">.</span><span class="nf">shift</span>
-<span class="k">unless</span> <span class="n">ypath</span>
-  <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"YPath パターンが指定されていません。"</span>
-  <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">end</span>
+## YPath パターンを読み取る
+ypath = ARGV.shift
+unless ypath
+  $stderr.puts "YPath パターンが指定されていません。"
+  exit(1)
+end
 
-<span class="c1">## YAML ファイルを読み込み、ツリーに変換</span>
-<span class="n">str</span> <span class="o">=</span> <span class="no">ARGF</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
-<span class="n">tree</span> <span class="o">=</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+## YAML ファイルを読み込み、ツリーに変換
+str = ARGF.read()
+tree = YAML.parse(str)
 
-<span class="c1">## YPath にマッチするパスをすべて取得</span>
-<span class="n">paths</span> <span class="o">=</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">tree</span><span class="p">.</span><span class="nf">search</span><span class="p">(</span><span class="n">ypath</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
+## YPath にマッチするパスをすべて取得
+paths = \{\{*tree.search(ypath)*\}\}
 
-<span class="c1">## パスごとにノードを取得し、データを表示</span>
-<span class="n">paths</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">path</span><span class="o">|</span>
+## パスごとにノードを取得し、データを表示
+paths.each do |path|
 
-  <span class="c1">## -u オプションがあれば親をたどる</span>
-  <span class="n">options</span><span class="p">[</span><span class="ss">:parent</span><span class="p">].</span><span class="nf">times</span> <span class="p">{</span> <span class="n">path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="p">}</span> <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:parent</span><span class="p">]</span>
+  ## -u オプションがあれば親をたどる
+  options[:parent].times { path = File.dirname(path) } if options[:parent]
 
-  <span class="c1">## -z オプションがあれば YPath パターンを末尾に追加する</span>
-  <span class="n">path</span> <span class="o">&lt;&lt;</span> <span class="n">options</span><span class="p">[</span><span class="ss">:tail</span><span class="p">]</span> <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:tail</span><span class="p">]</span>
+  ## -z オプションがあれば YPath パターンを末尾に追加する
+  path &lt;&lt; options[:tail] if options[:tail]
 
-  <span class="c1">## ノードを取得してオブジェクトに変換する</span>
-  <span class="n">objs</span> <span class="o">=</span> <span class="p">[]</span>
-  <span class="n">nodes</span> <span class="o">=</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">tree</span><span class="p">.</span><span class="nf">select</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-  <span class="n">nodes</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
-    <span class="n">obj</span> <span class="o">=</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">node</span><span class="p">.</span><span class="nf">transform</span><span class="o">*</span><span class="p">\}\}</span>         <span class="c1"># ノードをオブジェクトに変換</span>
-    <span class="n">objs</span> <span class="o">&lt;&lt;</span> <span class="n">obj</span>
-  <span class="k">end</span>
+  ## ノードを取得してオブジェクトに変換する
+  objs = []
+  nodes = \{\{*tree.select(path)*\}\}
+  nodes.each do |node|
+    obj = \{\{*node.transform*\}\}         # ノードをオブジェクトに変換
+    objs &lt;&lt; obj
+  end
 
-  <span class="c1">## 表示する</span>
-  <span class="nb">puts</span> <span class="s2">"## </span><span class="si">#{</span><span class="n">path</span><span class="si">}</span><span class="s2">"</span> <span class="k">unless</span> <span class="n">options</span><span class="p">[</span><span class="ss">:quiet</span><span class="p">]</span>
-  <span class="n">s</span> <span class="o">=</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">objs</span><span class="p">.</span><span class="nf">to_yaml</span><span class="o">*</span><span class="p">\}\}</span>               <span class="c1"># YAML 形式の文字列に変換</span>
-  <span class="nb">puts</span> <span class="n">s</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sr">/^---\s*\n?/</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>   <span class="c1"># ドキュメントの区切り「---」を取り除く</span>
-  <span class="nb">puts</span> <span class="k">unless</span> <span class="n">options</span><span class="p">[</span><span class="ss">:quiet</span><span class="p">]</span>
+  ## 表示する
+  puts "## #{path}" unless options[:quiet]
+  s = \{\{*objs.to_yaml*\}\}               # YAML 形式の文字列に変換
+  puts s.sub(/^---\s*\n?/, '')   # ドキュメントの区切り「---」を取り除く
+  puts unless options[:quiet]
 
-<span class="k">end</span>
+end
 
 </code></pre></div></div>
 
@@ -840,19 +840,19 @@
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>実際には YAML::Syck::Node のサブクラスである YAML::Syck::Seq、YAML::Syck::Map、YAML::Syck::Serial が使用されます。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>実際には YAML::Syck::Node のサブクラスである YAML::Syck::Seq、YAML::Syck::Map、YAML::Syck::Serial が使用されます。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>これらのメソッドは YAML::BaseNode モジュールで定義されており、これを YAML::Syck::Node クラスが include しています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>これらのメソッドは YAML::BaseNode モジュールで定義されており、これを YAML::Syck::Node クラスが include しています。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>本当なら「.」で現在のノードを、「..」で親のノードを表すはずなのですが、「..」は今のところ動作しないようです。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>本当なら「.」で現在のノードを、「..」で親のノードを表すはずなのですが、「..」は今のところ動作しないようです。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>本来なら「//members/*[age=25]」のように書けるとよいのですが、YPath の仕様が決まってないこともあり、Syck ではこのような探索条件がサポートされていません。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>本来なら「//members/*[age=25]」のように書けるとよいのですが、YPath の仕様が決まってないこともあり、Syck ではこのような探索条件がサポートされていません。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

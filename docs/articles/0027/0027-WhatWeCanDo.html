@@ -258,7 +258,7 @@
 <p>さて、この 1 ヶ月の間に、私が新たに使い始めた Ruby で書かれたフリーソフトウェアは、ただただしさん作の <a href="https://github.com/tdtds/amazon-auth-proxy">amazon-auth-proxy</a> です。
 これは、2009 年 8 月 15 日から <a href="http://www.amazon.co.jp/">Amazon</a> の API 利用に認証が必要になったため、(tDiary や Hiki などの) フリーソフトウェアから使う場合は秘密鍵をいっしょに配布するわけにいかず、利用者一人一人が API の認証鍵の取得を強いられてしまいかねなくなったことに対し、認証部分を代行する proxy を (これまでのと同じ API で) 提供することで、元のフリーソフトウェア利用者に新たな負担をかけない、というアイデアのソフトウェアです。</p>
 
-<p>tDiary や Hiki の大口 (？) 利用者である私としては、この amazon-auth-proxy を大いに必要とする立場ですので、さっそくインストールするとともに、さらに他のユーザの役にも立てるように、風柳さん作の <a href="http://honnomemo.appspot.com/rpaproxy/">Product Advertising API用リバースプロキシ</a><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>に参加しました。
+<p>tDiary や Hiki の大口 (？) 利用者である私としては、この amazon-auth-proxy を大いに必要とする立場ですので、さっそくインストールするとともに、さらに他のユーザの役にも立てるように、風柳さん作の <a href="http://honnomemo.appspot.com/rpaproxy/">Product Advertising API用リバースプロキシ</a><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>に参加しました。
 ちなみに、Product Advertising API用リバースプロキシに参加している人の多くは、私とおなじく tDiary ユーザだそうです。
 こんなところでも、Rubyist は Nice ですね。</p>
 
@@ -459,7 +459,7 @@ Modified: trunk/plugin/makerss.rb
 
 <p>自分が使っているソフトウェアのどの処理で主に時間がかかっているのかとか、Ruby ではどういう処理で時間がかかるのか、というのを知るために、たまには自分が使っているソフトウェアのプロファイルをとってみるといいでしょう。</p>
 
-<p>プロファイラとは効率改善のための調査に用いられるツールのことで、Ruby に標準添付の profile ライブラリ<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>を使えば、各メソッドの実行時間に関する統計を出力してくれます。</p>
+<p>プロファイラとは効率改善のための調査に用いられるツールのことで、Ruby に標準添付の profile ライブラリ<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>を使えば、各メソッドの実行時間に関する統計を出力してくれます。</p>
 
 <p>さて、私が久しぶりにプロファイルをとってみようと思ったきっかけは、先日の <a href="http://rubykaigi.org/2009/">RubyKaigi 2009</a> で行われた <a href="http://www.hsbt.org/diary/20090720.html#p01">tDiary 会議</a>です。
 そこで、「tDiary を Ruby 1.9 で動かすと妙に遅い」という発言があったので、じゃあ Ruby 1.8 と Ruby 1.9 とでプロファイルを取って見比べてみよう、と思ったのでした。</p>
@@ -519,7 +519,7 @@ Ruby on Rails のように、一度プロセスが起動したらあとは起動
 <p>FastCGI のようにプロセスが起動したまま動作するソフトウェアは、安定したサービス提供のためにも、メモリ使用量とその変化をチェックすることが大切です。</p>
 
 <p>そんなわけで、私も tDiary を Ruby 1.9 + FastCGI の環境で動かして、たくさんのアクセスをしながらメモリ使用量の変化をチェックしてみることにしました。
-たくさんのアクセスをするために、今回はお手軽に Apache HTTP サーバに付属する ab (Apache HTTP server benchmarking tool) を使いました<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+たくさんのアクセスをするために、今回はお手軽に Apache HTTP サーバに付属する ab (Apache HTTP server benchmarking tool) を使いました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ ab -n 100 http://example.com/diary/index.fcgi?date=20090722</code></pre></figure>
 
@@ -605,16 +605,16 @@ O さんが好きな人もいれば、K さんが好きな人もいます。
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Product Advertising API用リバースプロキシ は、Ruby ではなく Python で書かれています。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Product Advertising API用リバースプロキシ は、Ruby ではなく Python で書かれています。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>Ruby 1.8 標準の profile ライブラリは、それ自身のオーバヘッドがかなりあり、実行時間が数倍から数十倍くらい遅くなるので、代わりに <a href="http://rubyforge.org/projects/ruby-prof/">ruby-prof</a> ライブラリを使うのがお勧めですが、ここでは同じフォーマットで比較するために、あえて Ruby 1.8 でも標準の profile ライブラリを使っています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>Ruby 1.8 標準の profile ライブラリは、それ自身のオーバヘッドがかなりあり、実行時間が数倍から数十倍くらい遅くなるので、代わりに <a href="http://rubyforge.org/projects/ruby-prof/">ruby-prof</a> ライブラリを使うのがお勧めですが、ここでは同じフォーマットで比較するために、あえて Ruby 1.8 でも標準の profile ライブラリを使っています。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>名前のとおり、本来はパフォーマンスを測定するためのツールで、プロファイルをみながらコードを変更するときも、これを使ってその効果を調べました。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>名前のとおり、本来はパフォーマンスを測定するためのツールで、プロファイルをみながらコードを変更するときも、これを使ってその効果を調べました。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

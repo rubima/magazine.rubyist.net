@@ -338,7 +338,7 @@
   <tbody>
     <tr>
       <td>予約語のエスケープ</td>
-      <td><code class="highlighter-rouge">...</code></td>
+      <td><code class="language-plaintext highlighter-rouge">...</code></td>
       <td>“…”</td>
     </tr>
     <tr>
@@ -363,7 +363,7 @@
 
 <p><a href="../../images/0011-YAML/ddl-mysql.sql">ddl-mysql.sql</a> - 出力ファイル (MySQL 用)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>----------------------------------------------------------------------
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>----------------------------------------------------------------------
 -- DDL for MySQL
 --   generated at Sun Oct 02 02:49:28 JST 2005
 ----------------------------------------------------------------------
@@ -396,7 +396,7 @@ create table users (
 
 <p><a href="../../images/0011-YAML/ddl-postgresql.sql">ddl-postgresql.sql</a> - 出力ファイル (PostgreSQL 用)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>----------------------------------------------------------------------
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>----------------------------------------------------------------------
 -- DDL for PostgreSQL
 --   generated at Sun Oct 02 02:49:28 JST 2005
 ----------------------------------------------------------------------
@@ -449,7 +449,7 @@ create table users (
 
 <p><a href="../../images/0011-YAML/datafile.yaml">datafile.yaml</a> - データファイル</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>##
 ## テーブル定義ファイル
 ##
 
@@ -571,156 +571,156 @@ tables:
 
 <p>creatable.rb - メインプログラム</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env ruby
 
-<span class="c1">##</span>
-<span class="c1">## creatable - テーブル定義を読み込んで加工し、テンプレートで出力する</span>
-<span class="c1">##</span>
+##
+## creatable - テーブル定義を読み込んで加工し、テンプレートで出力する
+##
 
-<span class="nb">require</span> <span class="s1">'yaml'</span>
-<span class="nb">require</span> <span class="s1">'erb'</span>
-
-
-<span class="c1">##</span>
-<span class="c1">## メインプログラムを表すクラス</span>
-<span class="c1">##</span>
-<span class="c1">## 使い方：</span>
-<span class="c1">##  main = MainProgram.new()</span>
-<span class="c1">##  output = main.execute(ARGV)</span>
-<span class="c1">##  print output if output</span>
-<span class="c1">##</span>
-<span class="k">class</span> <span class="nc">MainProgram</span>
-
-  <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="no">ARGV</span><span class="p">)</span>
-    <span class="c1"># コマンドオプションの解析</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="n">_parse_options</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">usage</span><span class="p">()</span> <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:help</span><span class="p">]</span>
-    <span class="k">raise</span> <span class="s2">"テンプレートが指定されていません。"</span> <span class="k">unless</span> <span class="n">options</span><span class="p">[</span><span class="ss">:template</span><span class="p">]</span>
-
-    <span class="c1"># データファイルを読み込む。タブ文字は空白に展開する。</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="s1">''</span>
-    <span class="k">while</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">()</span>
-      <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">line</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/([^\t]{8})|([^\t]*)\t/n</span><span class="p">){[</span><span class="vg">$+</span><span class="p">].</span><span class="nf">pack</span><span class="p">(</span><span class="s2">"A8"</span><span class="p">)}</span>
-    <span class="k">end</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="n">doc</span> <span class="o">=</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-
-    <span class="c1"># 読み込んだデータを加工する</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="n">manipulator</span> <span class="o">=</span> <span class="no">Manipulator</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="n">manipulator</span><span class="p">.</span><span class="nf">manipulate</span><span class="p">()</span><span class="o">*</span><span class="p">\}\}</span>
-
-    <span class="c1"># テンプレートを読み込んで出力を生成する</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">options</span><span class="p">[</span><span class="ss">:template</span><span class="p">])</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="n">trim_mode</span> <span class="o">=</span> <span class="s1">'&gt;'</span>      <span class="c1"># '%&gt;' で終わる行では改行を出力しない</span>
-    <span class="n">erb</span> <span class="o">=</span> <span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="vg">$SAFE</span><span class="p">,</span> <span class="n">trim_mode</span><span class="p">)</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="n">context</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'tables'</span> <span class="o">=&gt;</span> <span class="n">doc</span><span class="p">[</span><span class="s1">'tables'</span><span class="p">]</span> <span class="p">}</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="n">output</span> <span class="o">=</span> <span class="n">_eval_erb</span><span class="p">(</span><span class="n">erb</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="k">return</span> <span class="n">output</span>
-  <span class="k">end</span>
-
-  <span class="kp">private</span>
-
-  <span class="c1">## テンプレートを適用する。</span>
-  <span class="k">def</span> <span class="nf">_eval_erb</span><span class="p">(</span><span class="n">__erb</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-    <span class="c1"># このように ERB#result() だけを実行するメソッドを用意すると、</span>
-    <span class="c1"># 必要な変数 (この場合なら context) だけをテンプレートに渡し、</span>
-    <span class="c1"># 不必要なローカル変数は渡さなくてすむようになる。</span>
-    <span class="k">return</span> <span class="n">__erb</span><span class="p">.</span><span class="nf">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">())</span>
-  <span class="k">end</span>
-
-  <span class="c1">## ヘルプメッセージ</span>
-  <span class="k">def</span> <span class="nf">usage</span><span class="p">()</span>
-     <span class="n">s</span> <span class="o">=</span> <span class="s1">''</span>
-     <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s2">"Usage: ruby creatable.rb [-h] -f template datafile.yaml [...]</span><span class="se">\n</span><span class="s2">"</span>
-     <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s2">"  -h          : ヘルプ</span><span class="se">\n</span><span class="s2">"</span>
-     <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s2">"  -f template : テンプレートのファイル名</span><span class="se">\n</span><span class="s2">"</span>
-     <span class="k">return</span> <span class="n">s</span>
-  <span class="k">end</span>
-
-  <span class="c1">## コマンドオプションを解析する</span>
-  <span class="k">def</span> <span class="nf">_parse_options</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">while</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">?-</span>
-      <span class="n">opt</span> <span class="o">=</span> <span class="n">argv</span><span class="p">.</span><span class="nf">shift</span>
-      <span class="k">case</span> <span class="n">opt</span>
-      <span class="k">when</span> <span class="s1">'-h'</span>        <span class="c1"># ヘルプ</span>
-        <span class="n">options</span><span class="p">[</span><span class="ss">:help</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
-      <span class="k">when</span> <span class="s1">'-f'</span>        <span class="c1"># テンプレート名</span>
-        <span class="n">arg</span> <span class="o">=</span> <span class="n">argv</span><span class="p">.</span><span class="nf">shift</span>
-        <span class="k">raise</span> <span class="s2">"-f: テンプレート名を指定してください。"</span> <span class="k">unless</span> <span class="n">arg</span>
-        <span class="n">options</span><span class="p">[</span><span class="ss">:template</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
-      <span class="k">else</span>
-        <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">opt</span><span class="si">}</span><span class="s2">: コマンドオプションが間違ってます。"</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-    <span class="k">return</span> <span class="n">options</span>
-  <span class="k">end</span>
-
-<span class="k">end</span>
+require 'yaml'
+require 'erb'
 
 
-<span class="c1">##</span>
-<span class="c1">## 定義ファイルから読み込んだデータをチェックし、加工するクラス</span>
-<span class="c1">##</span>
-<span class="c1">## 使い方：</span>
-<span class="c1">##   yaml = YAML.load(file)</span>
-<span class="c1">##   manipulator = Manipulator.new()</span>
-<span class="c1">##   manipulator.manipulate(yaml)</span>
-<span class="c1">##</span>
-<span class="k">class</span> <span class="nc">Manipulator</span>
+##
+## メインプログラムを表すクラス
+##
+## 使い方：
+##  main = MainProgram.new()
+##  output = main.execute(ARGV)
+##  print output if output
+##
+class MainProgram
 
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-    <span class="vi">@defaults</span> <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="s1">'defaults'</span><span class="p">]</span> <span class="o">||</span> <span class="p">{}</span>
-    <span class="vi">@tables</span>   <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="s1">'tables'</span><span class="p">]</span>   <span class="o">||</span> <span class="p">[]</span>
-  <span class="k">end</span>
+  def execute(argv=ARGV)
+    # コマンドオプションの解析
+    options = _parse_options(ARGV)
+    return usage() if options[:help]
+    raise "テンプレートが指定されていません。" unless options[:template]
 
-  <span class="c1">## 定義ファイルから読み込んだデータを操作する</span>
-  <span class="k">def</span> <span class="nf">manipulate</span><span class="p">()</span>
+    # データファイルを読み込む。タブ文字は空白に展開する。
+    s = ''
+    while line = gets()
+      s &lt;&lt; line.gsub(/([^\t]{8})|([^\t]*)\t/n){[$+].pack("A8")}
+    end
+    \{\{*doc = YAML.load(s)*\}\}
+
+    # 読み込んだデータを加工する
+    \{\{*manipulator = Manipulator.new(doc)*\}\}
+    \{\{*manipulator.manipulate()*\}\}
+
+    # テンプレートを読み込んで出力を生成する
+    \{\{*s = File.read(options[:template])*\}\}
+    trim_mode = '&gt;'      # '%&gt;' で終わる行では改行を出力しない
+    erb = ERB.new(s, $SAFE, trim_mode)
+    \{\{*context = { 'tables' =&gt; doc['tables'] }*\}\}
+    \{\{*output = _eval_erb(erb, context)*\}\}
+    return output
+  end
+
+  private
+
+  ## テンプレートを適用する。
+  def _eval_erb(__erb, context)
+    # このように ERB#result() だけを実行するメソッドを用意すると、
+    # 必要な変数 (この場合なら context) だけをテンプレートに渡し、
+    # 不必要なローカル変数は渡さなくてすむようになる。
+    return __erb.result(binding())
+  end
+
+  ## ヘルプメッセージ
+  def usage()
+     s = ''
+     s &lt;&lt; "Usage: ruby creatable.rb [-h] -f template datafile.yaml [...]\n"
+     s &lt;&lt; "  -h          : ヘルプ\n"
+     s &lt;&lt; "  -f template : テンプレートのファイル名\n"
+     return s
+  end
+
+  ## コマンドオプションを解析する
+  def _parse_options(argv)
+    options = {}
+    while argv[0] &amp;&amp; argv[0][0] == ?-
+      opt = argv.shift
+      case opt
+      when '-h'        # ヘルプ
+        options[:help] = true
+      when '-f'        # テンプレート名
+        arg = argv.shift
+        raise "-f: テンプレート名を指定してください。" unless arg
+        options[:template] = arg
+      else
+        raise "#{opt}: コマンドオプションが間違ってます。"
+      end
+    end
+    return options
+  end
+
+end
+
+
+##
+## 定義ファイルから読み込んだデータをチェックし、加工するクラス
+##
+## 使い方：
+##   yaml = YAML.load(file)
+##   manipulator = Manipulator.new()
+##   manipulator.manipulate(yaml)
+##
+class Manipulator
+
+  def initialize(doc)
+    @defaults = doc['defaults'] || {}
+    @tables   = doc['tables']   || []
+  end
+
+  ## 定義ファイルから読み込んだデータを操作する
+  def manipulate()
     
-    <span class="c1"># 「カラム名→デフォルトカラム定義」の Hash を作成する</span>
-    <span class="n">default_columns</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="vi">@defaults</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">column</span><span class="o">|</span>
-      <span class="n">colname</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
-      <span class="k">raise</span> <span class="s2">"カラム名がありません。"</span> <span class="k">unless</span> <span class="n">colname</span>
-      <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">colname</span><span class="si">}</span><span class="s2">: カラム名が重複しています。"</span> <span class="k">if</span> <span class="n">default_columns</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span>
-      <span class="n">default_columns</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span> <span class="o">=</span> <span class="n">column</span>
-    <span class="k">end</span> <span class="k">if</span> <span class="vi">@defaults</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">]</span>
+    # 「カラム名→デフォルトカラム定義」の Hash を作成する
+    default_columns = {}
+    @defaults['columns'].each do |column|
+      colname = column['name']
+      raise "カラム名がありません。" unless colname
+      raise "#{colname}: カラム名が重複しています。" if default_columns[colname]
+      default_columns[colname] = column
+    end if @defaults['columns']
 
-    <span class="c1"># テーブルのカラムをチェックし値を設定する</span>
-    <span class="n">tablenames</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="vi">@tables</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
-      <span class="n">tblname</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
-      <span class="k">raise</span> <span class="s2">"テーブル名がありません。"</span> <span class="k">unless</span> <span class="n">tblname</span>
-      <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tblname</span><span class="si">}</span><span class="s2">: テーブル名が重複しています。"</span> <span class="k">if</span> <span class="n">tablenames</span><span class="p">[</span><span class="n">tblname</span><span class="p">]</span>
-      <span class="n">tablenames</span><span class="p">[</span><span class="n">tblname</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
-      <span class="n">colnames</span> <span class="o">=</span> <span class="p">{}</span>
-      <span class="n">table</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">column</span><span class="o">|</span>
-        <span class="n">colname</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
-        <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tblname</span><span class="si">}</span><span class="s2">: カラム名がありません。"</span> <span class="k">unless</span> <span class="n">colname</span>
-        <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tblname</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">colname</span><span class="si">}</span><span class="s2">: カラム名が重複しています。"</span> <span class="k">if</span> <span class="n">colnames</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span>
-        <span class="n">colnames</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="c1"># カラムのデフォルト値を設定*\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">default_column</span> <span class="o">=</span> <span class="n">default_columns</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">default_column</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="o">|*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">column</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span> <span class="k">unless</span> <span class="n">column</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">end</span> <span class="k">if</span> <span class="n">default_column</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="c1"># カラムからテーブルへのリンクを設定*\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">column</span><span class="p">[</span><span class="s1">'table'</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="c1"># 外部キーで参照しているカラムの、データ型とカラム幅をコピーする*\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">if</span> <span class="p">(</span><span class="n">ref_column</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'ref'</span><span class="p">])</span> <span class="o">!=</span> <span class="kp">nil</span><span class="o">*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">column</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span>    <span class="o">=</span> <span class="n">ref_column</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span><span class="o">*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">column</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">||=</span> <span class="n">ref_column</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span>  <span class="k">if</span> <span class="n">ref_column</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="s1">'width'</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">end</span><span class="o">*</span><span class="p">\}\}</span>
-      <span class="k">end</span> <span class="k">if</span> <span class="n">table</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">]</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
+    # テーブルのカラムをチェックし値を設定する
+    tablenames = {}
+    @tables.each do |table|
+      tblname = table['name']
+      raise "テーブル名がありません。" unless tblname
+      raise "#{tblname}: テーブル名が重複しています。" if tablenames[tblname]
+      tablenames[tblname] = true
+      colnames = {}
+      table['columns'].each do |column|
+        colname = column['name']
+        raise "#{tblname}: カラム名がありません。" unless colname
+        raise "#{tblname}.#{colname}: カラム名が重複しています。" if colnames[colname]
+        colnames[colname] = true
+        \{\{*# カラムのデフォルト値を設定*\}\}
+        \{\{*default_column = default_columns[colname]*\}\}
+        \{\{*default_column.each do |key, val|*\}\}
+          \{\{*column[key] = val unless column.key?(key)*\}\}
+        \{\{*end if default_column*\}\}
+        \{\{*# カラムからテーブルへのリンクを設定*\}\}
+        \{\{*column['table'] = table*\}\}
+        \{\{*# 外部キーで参照しているカラムの、データ型とカラム幅をコピーする*\}\}
+        \{\{*if (ref_column = column['ref']) != nil*\}\}
+          \{\{*column['type']    = ref_column['type']*\}\}
+          \{\{*column['width'] ||= ref_column['width']  if ref_column.key?('width')*\}\}
+        \{\{*end*\}\}
+      end if table['columns']
+    end
+  end
 
-<span class="k">end</span>
+end
 
 
-<span class="c1">## メインプログラムを実行</span>
-<span class="n">main</span> <span class="o">=</span> <span class="no">MainProgram</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">main</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">output</span> <span class="k">if</span> <span class="n">output</span>
+## メインプログラムを実行
+main = MainProgram.new
+output = main.execute(ARGV)
+print output if output
 
 </code></pre></div></div>
 
@@ -743,7 +743,7 @@ tables:
 
 <p><a href="../../images/0011-YAML/ddl-mysql.eruby">ddl-mysql.eruby</a> - 出力用テンプレート</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%
    ##
    ## MySQL用のDDL(create table文)を生成するテンプレート
    ##
@@ -887,7 +887,7 @@ create table &lt;%= _(table['name']) %&gt; (
 
 <p><a href="../../images/0011-YAML/ddl-postgresql.eruby">ddl-postgresql.eruby</a> - 出力用テンプレート</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%
    ##
    ## PostgreSQL用のDDL(create table文)を生成するテンプレート
    ##
@@ -1069,200 +1069,200 @@ create table &lt;%= _(table['name']) %&gt; (
 
 <p><a href="../../images/0011-YAML/creatable.rb">creatable.rb</a> - メインプログラム</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env ruby
 
-<span class="c1">##</span>
-<span class="c1">## creatable - テーブル定義を読み込んで加工し、テンプレートで出力する</span>
-<span class="c1">##</span>
+##
+## creatable - テーブル定義を読み込んで加工し、テンプレートで出力する
+##
 
-<span class="nb">require</span> <span class="s1">'yaml'</span>
-<span class="nb">require</span> <span class="s1">'erb'</span>
+require 'yaml'
+require 'erb'
 
 
-<span class="c1">##</span>
-<span class="c1">## メインプログラムを表すクラス</span>
-<span class="c1">##</span>
-<span class="c1">## 使い方：</span>
-<span class="c1">##  main = MainProgram.new()</span>
-<span class="c1">##  output = main.execute(ARGV)</span>
-<span class="c1">##  print output if output</span>
-<span class="c1">##</span>
-<span class="k">class</span> <span class="nc">MainProgram</span>
+##
+## メインプログラムを表すクラス
+##
+## 使い方：
+##  main = MainProgram.new()
+##  output = main.execute(ARGV)
+##  print output if output
+##
+class MainProgram
 
-  <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="no">ARGV</span><span class="p">)</span>
-    <span class="c1"># コマンドオプションの解析</span>
-    <span class="n">options</span><span class="p">\{\{</span><span class="o">*</span><span class="p">,</span> <span class="n">properties</span><span class="o">*</span><span class="p">\}\}</span> <span class="o">=</span> <span class="n">_parse_options</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">usage</span><span class="p">()</span> <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:help</span><span class="p">]</span>
-    <span class="k">raise</span> <span class="s2">"テンプレートが指定されていません。"</span> <span class="k">unless</span> <span class="n">options</span><span class="p">[</span><span class="ss">:template</span><span class="p">]</span>
+  def execute(argv=ARGV)
+    # コマンドオプションの解析
+    options\{\{*, properties*\}\} = _parse_options(ARGV)
+    return usage() if options[:help]
+    raise "テンプレートが指定されていません。" unless options[:template]
 
-    <span class="c1"># データファイルを読み込む。タブ文字は空白に展開する。</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="s1">''</span>
-    <span class="k">while</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">gets</span><span class="p">()</span>
-      <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="n">line</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/([^\t]{8})|([^\t]*)\t/n</span><span class="p">){[</span><span class="vg">$+</span><span class="p">].</span><span class="nf">pack</span><span class="p">(</span><span class="s2">"A8"</span><span class="p">)}</span>
-    <span class="k">end</span>
-    <span class="n">doc</span> <span class="o">=</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    # データファイルを読み込む。タブ文字は空白に展開する。
+    s = ''
+    while line = gets()
+      s &lt;&lt; line.gsub(/([^\t]{8})|([^\t]*)\t/n){[$+].pack("A8")}
+    end
+    doc = YAML.load(s)
 
-    <span class="c1"># 読み込んだデータを加工する</span>
-    <span class="n">manipulator</span> <span class="o">=</span> <span class="no">Manipulator</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-    <span class="n">manipulator</span><span class="p">.</span><span class="nf">manipulate</span><span class="p">()</span>
+    # 読み込んだデータを加工する
+    manipulator = Manipulator.new(doc)
+    manipulator.manipulate()
 
-    <span class="p">\{\{</span><span class="o">*</span><span class="c1"># テンプレートを検索する*\}\}</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="n">t</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:template</span><span class="p">]</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="k">if</span> <span class="nb">test</span><span class="p">(</span><span class="sc">?f</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="n">template</span> <span class="o">=</span> <span class="n">t</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="k">elsif</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'CREATABLE_PATH'</span><span class="p">]</span><span class="o">*</span><span class="p">\}\}</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="n">path_list</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'CREATABLE_PATH'</span><span class="p">].</span><span class="nf">split</span><span class="p">(</span><span class="no">File</span><span class="o">::</span><span class="no">PATH_SEPARATOR</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="n">template</span> <span class="o">=</span> <span class="n">path_list</span><span class="p">.</span><span class="nf">find</span> <span class="p">{</span> <span class="o">|</span><span class="n">path</span><span class="o">|</span> <span class="nb">test</span><span class="p">(</span><span class="sc">?f</span><span class="p">,</span> <span class="s2">"</span><span class="si">#{</span><span class="n">path</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="n">t</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span> <span class="p">}</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="k">end</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="k">raise</span> <span class="s2">"'</span><span class="si">#{</span><span class="n">t</span><span class="si">}</span><span class="s2">': テンプレートが見つかりません。"</span> <span class="k">unless</span> <span class="n">template</span><span class="o">*</span><span class="p">\}\}</span>
+    \{\{*# テンプレートを検索する*\}\}
+    \{\{*t = options[:template]*\}\}
+    \{\{*if test(?f, t)*\}\}
+      \{\{*template = t*\}\}
+    \{\{*elsif ENV['CREATABLE_PATH']*\}\}
+      \{\{*path_list = ENV['CREATABLE_PATH'].split(File::PATH_SEPARATOR)*\}\}
+      \{\{*template = path_list.find { |path| test(?f, "#{path}/#{t}") }*\}\}
+    \{\{*end*\}\}
+    \{\{*raise "'#{t}': テンプレートが見つかりません。" unless template*\}\}
     
-    <span class="c1"># テンプレートを読み込んで出力を生成する</span>
-    <span class="n">s</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
-    <span class="n">trim_mode</span> <span class="o">=</span> <span class="s1">'&gt;'</span>        <span class="c1"># '%&gt;' で終わる行では改行を出力しない</span>
-    <span class="n">erb</span> <span class="o">=</span> <span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="vg">$SAFE</span><span class="p">,</span> <span class="n">trim_mode</span><span class="p">)</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:multiple</span><span class="p">]</span>  <span class="c1"># 複数ファイルへ出力*\}\}</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="n">doc</span><span class="p">[</span><span class="s1">'tables'</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">context</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'table'</span> <span class="o">=&gt;</span> <span class="n">table</span><span class="p">,</span> <span class="s1">'properties'</span> <span class="o">=&gt;</span> <span class="n">properties</span> <span class="p">}</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">output</span> <span class="o">=</span> <span class="n">_eval_erb</span><span class="p">(</span><span class="n">erb</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">filename</span> <span class="o">=</span> <span class="n">context</span><span class="p">[</span><span class="ss">:output_filename</span><span class="p">]</span>   <span class="c1"># 出力ファイル名*\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">filename</span> <span class="o">=</span> <span class="n">options</span><span class="p">[</span><span class="ss">:directory</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">filename</span> <span class="k">if</span> <span class="n">options</span><span class="p">[</span><span class="ss">:directory</span><span class="p">]</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">f</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="s2">"generated: </span><span class="si">#{</span><span class="n">filename</span><span class="si">}</span><span class="s2">"</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">end</span> <span class="k">if</span> <span class="n">filename</span><span class="o">*</span><span class="p">\}\}</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="k">end</span><span class="o">*</span><span class="p">\}\}</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="n">output</span> <span class="o">=</span> <span class="kp">nil</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="k">else</span>                   <span class="c1"># 標準出力へ出力*\}\}</span>
-      <span class="n">context</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'tables'</span> <span class="o">=&gt;</span> <span class="n">doc</span><span class="p">[</span><span class="s1">'tables'</span><span class="p">]\{\{</span><span class="o">*</span><span class="p">,</span> <span class="s1">'properties'</span> <span class="o">=&gt;</span> <span class="n">properties</span><span class="o">*</span><span class="p">\}\}</span> <span class="p">}</span>
-      <span class="n">output</span> <span class="o">=</span> <span class="n">_eval_erb</span><span class="p">(</span><span class="n">erb</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-    <span class="p">\{\{</span><span class="o">*</span><span class="k">end</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="k">return</span> <span class="n">output</span>
-  <span class="k">end</span>
+    # テンプレートを読み込んで出力を生成する
+    s = File.read(template)
+    trim_mode = '&gt;'        # '%&gt;' で終わる行では改行を出力しない
+    erb = ERB.new(s, $SAFE, trim_mode)
+    \{\{*if options[:multiple]  # 複数ファイルへ出力*\}\}
+      \{\{*doc['tables'].each do |table|*\}\}
+        \{\{*context = { 'table' =&gt; table, 'properties' =&gt; properties }*\}\}
+        \{\{*output = _eval_erb(erb, context)*\}\}
+        \{\{*filename = context[:output_filename]   # 出力ファイル名*\}\}
+        \{\{*filename = options[:directory] + "/" + filename if options[:directory]*\}\}
+        \{\{*File.open(filename, 'w') do |f|*\}\}
+          \{\{*f.write(output)*\}\}
+          \{\{*$stderr.puts "generated: #{filename}"*\}\}
+        \{\{*end if filename*\}\}
+      \{\{*end*\}\}
+      \{\{*output = nil*\}\}
+    \{\{*else                   # 標準出力へ出力*\}\}
+      context = { 'tables' =&gt; doc['tables']\{\{*, 'properties' =&gt; properties*\}\} }
+      output = _eval_erb(erb, context)
+    \{\{*end*\}\}
+    return output
+  end
 
-  <span class="kp">private</span>
+  private
 
-  <span class="c1">## テンプレートを適用する。</span>
-  <span class="k">def</span> <span class="nf">_eval_erb</span><span class="p">(</span><span class="n">__erb</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
-    <span class="c1"># このようにERB#result()だけを実行するメソッドを用意すると、</span>
-    <span class="c1"># 必要な変数（この場合ならcontext）だけをテンプレートに渡し、</span>
-    <span class="c1"># 不必要なローカル変数は渡さなくてすむようになる。</span>
-    <span class="k">return</span> <span class="n">__erb</span><span class="p">.</span><span class="nf">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">())</span>
-  <span class="k">end</span>
+  ## テンプレートを適用する。
+  def _eval_erb(__erb, context)
+    # このようにERB#result()だけを実行するメソッドを用意すると、
+    # 必要な変数（この場合ならcontext）だけをテンプレートに渡し、
+    # 不必要なローカル変数は渡さなくてすむようになる。
+    return __erb.result(binding())
+  end
 
-  <span class="c1">## ヘルプメッセージ</span>
-  <span class="k">def</span> <span class="nf">usage</span><span class="p">()</span>
-     <span class="n">s</span> <span class="o">=</span> <span class="s1">''</span>
-     <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s2">"Usage: ruby creatable.rb [-h] </span><span class="se">\{\{</span><span class="s2">*[-m]*</span><span class="se">\}\}</span><span class="s2"> -f template datafile.yaml [...]</span><span class="se">\n</span><span class="s2">"</span>
-     <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s2">"  -h          : ヘルプ</span><span class="se">\n</span><span class="s2">"</span>
-     <span class="p">\{\{</span><span class="o">*</span><span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s2">"  -m          : multiple output file</span><span class="se">\n</span><span class="s2">"</span><span class="o">*</span><span class="p">\}\}</span>
-     <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="s2">"  -f template : テンプレートのファイル名</span><span class="se">\n</span><span class="s2">"</span>
-     <span class="k">return</span> <span class="n">s</span>
-  <span class="k">end</span>
+  ## ヘルプメッセージ
+  def usage()
+     s = ''
+     s &lt;&lt; "Usage: ruby creatable.rb [-h] \{\{*[-m]*\}\} -f template datafile.yaml [...]\n"
+     s &lt;&lt; "  -h          : ヘルプ\n"
+     \{\{*s &lt;&lt; "  -m          : multiple output file\n"*\}\}
+     s &lt;&lt; "  -f template : テンプレートのファイル名\n"
+     return s
+  end
 
-  <span class="c1">## コマンドオプションおよびテンプレートプロパティを解析する</span>
-  <span class="k">def</span> <span class="nf">_parse_options</span><span class="p">(</span><span class="n">argv</span><span class="p">)</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">properties</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="k">while</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">?-</span>
-      <span class="n">opt</span> <span class="o">=</span> <span class="n">argv</span><span class="p">.</span><span class="nf">shift</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="k">if</span> <span class="n">opt</span> <span class="o">=~</span> <span class="sr">/^--(.*)/</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="c1"># テンプレートプロパティ*\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">param_str</span> <span class="o">=</span> <span class="vg">$1</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">if</span> <span class="n">param_str</span> <span class="o">=~</span> <span class="sr">/\A([-\w]+)=(.*)/</span><span class="o">*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="vg">$1</span><span class="p">,</span> <span class="vg">$2</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">else</span><span class="o">*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">param_str</span><span class="p">,</span> <span class="kp">true</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">end</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="n">properties</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span><span class="o">*</span><span class="p">\}\}</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="k">else</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="c1"># コマンドオプション</span>
-        <span class="k">case</span> <span class="n">opt</span>
-        <span class="k">when</span> <span class="s1">'-h'</span>      <span class="c1"># ヘルプ</span>
-          <span class="n">options</span><span class="p">[</span><span class="ss">:help</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
-        <span class="k">when</span> <span class="s1">'-f'</span>      <span class="c1"># テンプレート名</span>
-          <span class="n">arg</span> <span class="o">=</span> <span class="n">argv</span><span class="p">.</span><span class="nf">shift</span>
-          <span class="k">raise</span> <span class="s2">"-f: テンプレート名を指定してください。"</span> <span class="k">unless</span> <span class="n">arg</span>
-          <span class="n">options</span><span class="p">[</span><span class="ss">:template</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">when</span> <span class="s1">'-m'</span>   <span class="c1"># テーブルごとの出力ファイル*\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">options</span><span class="p">[</span><span class="ss">:multiple</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="p">\{\{</span><span class="o">*</span><span class="k">when</span> <span class="s1">'-d'</span>   <span class="c1"># 出力先ディレクトリ*\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">arg</span> <span class="o">=</span> <span class="n">argv</span><span class="p">.</span><span class="nf">shift</span><span class="o">*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="k">raise</span> <span class="s2">"-d: ディレクトリ名を指定してください。"</span> <span class="k">unless</span> <span class="n">arg</span><span class="o">*</span><span class="p">\}\}</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">options</span><span class="p">[</span><span class="ss">:directory</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="k">else</span>
-          <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">opt</span><span class="si">}</span><span class="s2">: コマンドオプションが間違ってます。"</span>
-        <span class="k">end</span>
-      <span class="p">\{\{</span><span class="o">*</span><span class="k">end</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="k">end</span>
-    <span class="k">return</span> <span class="n">options</span><span class="p">\{\{</span><span class="o">*</span><span class="p">,</span> <span class="n">properties</span><span class="o">*</span><span class="p">\}\}</span>
-  <span class="k">end</span>
+  ## コマンドオプションおよびテンプレートプロパティを解析する
+  def _parse_options(argv)
+    options = {}
+    properties = {}
+    while argv[0] &amp;&amp; argv[0][0] == ?-
+      opt = argv.shift
+      \{\{*if opt =~ /^--(.*)/*\}\}
+        \{\{*# テンプレートプロパティ*\}\}
+        \{\{*param_str = $1*\}\}
+        \{\{*if param_str =~ /\A([-\w]+)=(.*)/*\}\}
+          \{\{*key, value = $1, $2*\}\}
+        \{\{*else*\}\}
+          \{\{*key, value = param_str, true*\}\}
+        \{\{*end*\}\}
+        \{\{*properties[key] = value*\}\}
+      \{\{*else*\}\}
+        # コマンドオプション
+        case opt
+        when '-h'      # ヘルプ
+          options[:help] = true
+        when '-f'      # テンプレート名
+          arg = argv.shift
+          raise "-f: テンプレート名を指定してください。" unless arg
+          options[:template] = arg
+        \{\{*when '-m'   # テーブルごとの出力ファイル*\}\}
+          \{\{*options[:multiple] = true*\}\}
+        \{\{*when '-d'   # 出力先ディレクトリ*\}\}
+          \{\{*arg = argv.shift*\}\}
+          \{\{*raise "-d: ディレクトリ名を指定してください。" unless arg*\}\}
+          \{\{*options[:directory] = arg*\}\}
+        else
+          raise "#{opt}: コマンドオプションが間違ってます。"
+        end
+      \{\{*end*\}\}
+    end
+    return options\{\{*, properties*\}\}
+  end
 
-<span class="k">end</span>
+end
 
 
-<span class="c1">##</span>
-<span class="c1">## 定義ファイルから読み込んだデータをチェックし、加工するクラス</span>
-<span class="c1">##</span>
-<span class="c1">## 使い方：</span>
-<span class="c1">##   doc = YAML.load(file)</span>
-<span class="c1">##   manipulator = Manipulator.new()</span>
-<span class="c1">##   manipulator.manipulate(doc)</span>
-<span class="c1">##</span>
-<span class="k">class</span> <span class="nc">Manipulator</span>
+##
+## 定義ファイルから読み込んだデータをチェックし、加工するクラス
+##
+## 使い方：
+##   doc = YAML.load(file)
+##   manipulator = Manipulator.new()
+##   manipulator.manipulate(doc)
+##
+class Manipulator
 
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
-    <span class="vi">@defaults</span> <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="s1">'defaults'</span><span class="p">]</span> <span class="o">||</span> <span class="p">{}</span>
-    <span class="vi">@tables</span>   <span class="o">=</span> <span class="n">doc</span><span class="p">[</span><span class="s1">'tables'</span><span class="p">]</span>   <span class="o">||</span> <span class="p">[]</span>
-  <span class="k">end</span>
+  def initialize(doc)
+    @defaults = doc['defaults'] || {}
+    @tables   = doc['tables']   || []
+  end
 
-  <span class="c1">## 定義ファイルから読み込んだデータを操作する</span>
-  <span class="k">def</span> <span class="nf">manipulate</span><span class="p">()</span>
+  ## 定義ファイルから読み込んだデータを操作する
+  def manipulate()
     
-    <span class="c1"># 「カラム名→カラム定義」の Hash を作成する</span>
-    <span class="n">default_columns</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="vi">@defaults</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">column</span><span class="o">|</span>
-      <span class="n">colname</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
-      <span class="k">raise</span> <span class="s2">"カラム名がありません。"</span> <span class="k">unless</span> <span class="n">colname</span>
-      <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">colname</span><span class="si">}</span><span class="s2">: カラム名が重複しています。"</span> <span class="k">if</span> <span class="n">default_columns</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span>
-      <span class="n">default_columns</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span> <span class="o">=</span> <span class="n">column</span>
-    <span class="k">end</span> <span class="k">if</span> <span class="vi">@defaults</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">]</span>
+    # 「カラム名→カラム定義」の Hash を作成する
+    default_columns = {}
+    @defaults['columns'].each do |column|
+      colname = column['name']
+      raise "カラム名がありません。" unless colname
+      raise "#{colname}: カラム名が重複しています。" if default_columns[colname]
+      default_columns[colname] = column
+    end if @defaults['columns']
 
-    <span class="c1"># テーブルのカラムをチェックし値を設定する</span>
-    <span class="n">tablenames</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="vi">@tables</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
-      <span class="n">tblname</span> <span class="o">=</span> <span class="n">table</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
-      <span class="k">raise</span> <span class="s2">"テーブル名がありません。"</span> <span class="k">unless</span> <span class="n">tblname</span>
-      <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tblname</span><span class="si">}</span><span class="s2">: テーブル名が重複しています。"</span> <span class="k">if</span> <span class="n">tablenames</span><span class="p">[</span><span class="n">tblname</span><span class="p">]</span>
-      <span class="n">tablenames</span><span class="p">[</span><span class="n">tblname</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
-      <span class="n">colnames</span> <span class="o">=</span> <span class="p">{}</span>
-      <span class="n">table</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">column</span><span class="o">|</span>
-        <span class="n">colname</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]</span>
-        <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tblname</span><span class="si">}</span><span class="s2">: カラム名がありません。"</span> <span class="k">unless</span> <span class="n">colname</span>
-        <span class="k">raise</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tblname</span><span class="si">}</span><span class="s2">.</span><span class="si">#{</span><span class="n">colname</span><span class="si">}</span><span class="s2">: カラム名が重複しています。"</span> <span class="k">if</span> <span class="n">colnames</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span>
-        <span class="n">colnames</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
-        <span class="c1"># カラムのデフォルト値を設定</span>
-        <span class="n">default_column</span> <span class="o">=</span> <span class="n">default_columns</span><span class="p">[</span><span class="n">colname</span><span class="p">]</span>
-        <span class="n">default_column</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="o">|</span>
-          <span class="n">column</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span> <span class="k">unless</span> <span class="n">column</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-        <span class="k">end</span> <span class="k">if</span> <span class="n">default_column</span>
-        <span class="c1"># カラムからテーブルへのリンクを設定</span>
-        <span class="n">column</span><span class="p">[</span><span class="s1">'table'</span><span class="p">]</span> <span class="o">=</span> <span class="n">table</span>
-        <span class="c1"># 外部キーで参照しているカラムの、データ型とカラム幅をコピーする</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">ref_column</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'ref'</span><span class="p">])</span> <span class="o">!=</span> <span class="kp">nil</span>
-          <span class="n">column</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span>    <span class="o">=</span> <span class="n">ref_column</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span>
-          <span class="n">column</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span> <span class="o">||=</span> <span class="n">ref_column</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span>  <span class="k">if</span> <span class="n">ref_column</span><span class="p">.</span><span class="nf">key?</span><span class="p">(</span><span class="s1">'width'</span><span class="p">)</span>
-        <span class="k">end</span>
-      <span class="k">end</span> <span class="k">if</span> <span class="n">table</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">]</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
+    # テーブルのカラムをチェックし値を設定する
+    tablenames = {}
+    @tables.each do |table|
+      tblname = table['name']
+      raise "テーブル名がありません。" unless tblname
+      raise "#{tblname}: テーブル名が重複しています。" if tablenames[tblname]
+      tablenames[tblname] = true
+      colnames = {}
+      table['columns'].each do |column|
+        colname = column['name']
+        raise "#{tblname}: カラム名がありません。" unless colname
+        raise "#{tblname}.#{colname}: カラム名が重複しています。" if colnames[colname]
+        colnames[colname] = true
+        # カラムのデフォルト値を設定
+        default_column = default_columns[colname]
+        default_column.each do |key, val|
+          column[key] = val unless column.key?(key)
+        end if default_column
+        # カラムからテーブルへのリンクを設定
+        column['table'] = table
+        # 外部キーで参照しているカラムの、データ型とカラム幅をコピーする
+        if (ref_column = column['ref']) != nil
+          column['type']    = ref_column['type']
+          column['width'] ||= ref_column['width']  if ref_column.key?('width')
+        end
+      end if table['columns']
+    end
+  end
 
-<span class="k">end</span>
+end
 
 
-<span class="c1">## メインプログラムを実行</span>
-<span class="n">main</span> <span class="o">=</span> <span class="no">MainProgram</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">main</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="no">ARGV</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">output</span> <span class="k">if</span> <span class="n">output</span>
+## メインプログラムを実行
+main = MainProgram.new
+output = main.execute(ARGV)
+print output if output
 
 </code></pre></div></div>
 
@@ -1280,140 +1280,140 @@ create table &lt;%= _(table['name']) %&gt; (
 
 <p><a href="../../images/0011-YAML/dto-java.eruby">dto-java.eruby</a> - 出力用テンプレート</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;%</span>
-   <span class="p">##</span>
-   <span class="p">##</span> <span class="n">Java</span><span class="err">用</span><span class="n">DTO</span><span class="p">(</span><span class="n">Data</span> <span class="n">Transfer</span> <span class="n">Object</span><span class="p">)</span><span class="err">クラスを生成するテンプレート</span>
-   <span class="p">##</span>
-   <span class="p">##</span> <span class="err">テンプレートプロパティ：</span>
-   <span class="p">##</span>   <span class="k">package</span>   <span class="p">-</span> <span class="err">パッケージ名</span>
-   <span class="p">##</span>   <span class="n">parent</span>    <span class="p">-</span> <span class="err">親クラス名</span>
-   <span class="p">##</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;%
+   ##
+   ## Java用DTO(Data Transfer Object)クラスを生成するテンプレート
+   ##
+   ## テンプレートプロパティ：
+   ##   package   - パッケージ名
+   ##   parent    - 親クラス名
+   ##
 
-   <span class="p">##</span> <span class="err">コンテキスト</span>
-   <span class="n">table</span>      <span class="p">=</span> <span class="n">context</span><span class="p">[</span><span class="s1">'table'</span><span class="p">]</span>         <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-   <span class="n">properties</span> <span class="p">=</span> <span class="n">context</span><span class="p">[</span><span class="s1">'properties'</span><span class="p">]</span>    <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
-   <span class="n">raise</span> <span class="s2">"コマンドオプション '-m' を指定してください。"</span> <span class="n">unless</span> <span class="n">table</span>
+   ## コンテキスト
+   table      = context['table']         # ・・・(1)
+   properties = context['properties']    # ・・・(2)
+   raise "コマンドオプション '-m' を指定してください。" unless table
 
-   <span class="n">unless</span> <span class="n">defined</span><span class="p">?(</span><span class="n">KEYWORDS</span><span class="p">)</span>
+   unless defined?(KEYWORDS)
 
-     <span class="p">##</span> <span class="n">Java</span><span class="err">の予約語</span>
-     <span class="n">keywords</span> <span class="p">=</span> <span class="p">&lt;&lt;-</span><span class="k">END</span>
-       <span class="n">abstract</span> <span class="nb">assert</span> <span class="k">boolean</span> <span class="k">break</span> <span class="n">byte</span> <span class="k">case</span> <span class="n">catch</span> <span class="n">char</span> <span class="n">class</span> <span class="n">const</span>
-       <span class="n">continue</span> <span class="n">default</span> <span class="k">do</span> <span class="n">double</span> <span class="k">else</span> <span class="n">enum</span> <span class="n">extends</span> <span class="n">final</span> <span class="n">finally</span> <span class="n">float</span>
-       <span class="n">for</span> <span class="n">goto</span> <span class="k">if</span> <span class="n">implements</span> <span class="n">import</span> <span class="n">instanceof</span> <span class="n">int</span> <span class="n">interface</span> <span class="n">long</span>
-       <span class="n">native</span> <span class="n">new</span> <span class="k">package</span> <span class="n">private</span> <span class="n">protected</span> <span class="k">public</span> <span class="n">return</span> <span class="n">short</span>
-       <span class="n">static</span> <span class="n">strictfp</span> <span class="n">super</span> <span class="n">switch</span> <span class="n">synchronized</span> <span class="n">this</span> <span class="n">throw</span> <span class="n">throws</span>
-       <span class="n">transient</span> <span class="n">try</span> <span class="n">void</span> <span class="n">volatile</span> <span class="k">while</span>
-     <span class="k">END</span>
-     <span class="p">@</span><span class="n">keywords</span> <span class="p">=</span> <span class="p">{}</span>
-     <span class="n">keywords</span><span class="p">.</span><span class="n">each</span> <span class="p">{</span> <span class="p">|</span><span class="n">word</span><span class="p">|</span> <span class="p">@</span><span class="n">keywords</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="p">=</span> <span class="nb">true</span> <span class="p">}</span>
+     ## Javaの予約語
+     keywords = &lt;&lt;-END
+       abstract assert boolean break byte case catch char class const
+       continue default do double else enum extends final finally float
+       for goto if implements import instanceof int interface long
+       native new package private protected public return short
+       static strictfp super switch synchronized this throw throws
+       transient try void volatile while
+     END
+     @keywords = {}
+     keywords.each { |word| @keywords[word] = true }
 
-     <span class="p">##</span> <span class="err">予約語をエスケープする関数</span>
-     <span class="n">def</span> <span class="n">self</span><span class="p">.</span><span class="n">_</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-       <span class="n">return</span> <span class="p">@</span><span class="n">keywords</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="p">?</span> <span class="s2">"_#{word}"</span> <span class="p">:</span> <span class="n">word</span>
-     <span class="k">end</span>
+     ## 予約語をエスケープする関数
+     def self._(word)
+       return @keywords[word] ? "_#{word}" : word
+     end
 
-     <span class="p">##</span> <span class="err">文字列</span> <span class="s2">"aaa_bbb_ccc"</span> <span class="err">を</span> <span class="s2">"AaaBbbCcc"</span> <span class="err">に変換する関数</span>
-     <span class="n">def</span> <span class="n">camel_case</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">flag_all</span><span class="p">=</span><span class="nb">true</span><span class="p">)</span>
-       <span class="n">s</span> <span class="p">=</span> <span class="s1">''</span>
-       <span class="n">name</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'_'</span><span class="p">).</span><span class="n">each_with_index</span> <span class="k">do</span> <span class="p">|</span><span class="n">word</span><span class="p">,</span> <span class="n">i</span><span class="p">|</span>
-         <span class="n">s</span> <span class="p">&lt;&lt;</span> <span class="p">(</span><span class="c1">!flag_all &amp;&amp; i == 0 ? word.downcase : word.capitalize)
-</span>       <span class="k">end</span>
-       <span class="n">return</span> <span class="n">s</span>
-     <span class="k">end</span>
+     ## 文字列 "aaa_bbb_ccc" を "AaaBbbCcc" に変換する関数
+     def camel_case(name, flag_all=true)
+       s = ''
+       name.split('_').each_with_index do |word, i|
+         s &lt;&lt; (!flag_all &amp;&amp; i == 0 ? word.downcase : word.capitalize)
+       end
+       return s
+     end
 
-   <span class="k">end</span>
-
-
-   <span class="p">##</span> <span class="err">クラス定義情報</span>
-   <span class="n">klass</span> <span class="p">=</span> <span class="p">{</span>
-     <span class="p">:</span><span class="n">name</span>       <span class="p">=&gt;</span> <span class="n">table</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span>   <span class="p">||</span> <span class="n">camel_case</span><span class="p">(</span><span class="n">table</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]),</span>
-     <span class="p">:</span><span class="k">package</span>    <span class="p">=&gt;</span> <span class="n">table</span><span class="p">[</span><span class="s1">'package'</span><span class="p">]</span> <span class="p">||</span> <span class="n">properties</span><span class="p">[</span><span class="s1">'package'</span><span class="p">],</span>    <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
-     <span class="p">:</span><span class="n">parent</span>     <span class="p">=&gt;</span> <span class="n">table</span><span class="p">[</span><span class="s1">'parent'</span><span class="p">]</span>  <span class="p">||</span> <span class="n">properties</span><span class="p">[</span><span class="s1">'parent'</span><span class="p">],</span>     <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
-     <span class="p">:</span><span class="n">desc</span>       <span class="p">=&gt;</span> <span class="n">table</span><span class="p">[</span><span class="s1">'desc'</span><span class="p">],</span>
-   <span class="p">}</span>
-
-   <span class="p">##</span> <span class="err">出力ファイル名</span>
-   <span class="n">context</span><span class="p">[:</span><span class="n">output_filename</span><span class="p">]</span> <span class="p">=</span> <span class="n">klass</span><span class="p">[:</span><span class="n">name</span><span class="p">]</span> <span class="p">+</span> <span class="s2">".java"</span>    <span class="p">#</span> <span class="err">・・・</span><span class="p">(</span><span class="m">4</span><span class="p">)</span>
-
-   <span class="p">##</span> <span class="err">インスタンス変数</span>
-   <span class="n">variables</span> <span class="p">=</span> <span class="p">[]</span>
-   <span class="n">ref_variables</span> <span class="p">=</span> <span class="p">[]</span>
-   <span class="n">table</span><span class="p">[</span><span class="s1">'columns'</span><span class="p">].</span><span class="n">each</span> <span class="k">do</span> <span class="p">|</span><span class="n">column</span><span class="p">|</span>
-     <span class="n">type</span> <span class="p">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'class'</span><span class="p">]</span>
-     <span class="n">unless</span> <span class="n">type</span>
-       <span class="n">type</span>   <span class="p">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span>
-       <span class="n">width</span>  <span class="p">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'width'</span><span class="p">]</span>
-       <span class="k">case</span> <span class="n">type</span>
-       <span class="n">when</span> <span class="s1">'char'</span>            <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="p">(</span><span class="c1">!width || width == 1) ? 'char' : 'String'
-</span>       <span class="n">when</span> <span class="s1">'short'</span>           <span class="p">;</span>
-       <span class="n">when</span> <span class="s1">'int'</span><span class="p">,</span> <span class="s1">'integer'</span>  <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'int'</span>
-       <span class="n">when</span> <span class="s1">'str'</span><span class="p">,</span> <span class="s1">'string'</span>   <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="n">width</span> <span class="p">==</span> <span class="m">1</span> <span class="p">?</span> <span class="s1">'char'</span> <span class="p">:</span> <span class="s1">'String'</span>
-       <span class="n">when</span> <span class="s1">'text'</span>            <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="n">width</span> <span class="p">==</span> <span class="m">1</span> <span class="p">?</span> <span class="s1">'char'</span> <span class="p">:</span> <span class="s1">'String'</span>
-       <span class="n">when</span> <span class="s1">'float'</span>           <span class="p">;</span>
-       <span class="n">when</span> <span class="s1">'double'</span>          <span class="p">;</span>
-       <span class="n">when</span> <span class="s1">'bool'</span><span class="p">,</span> <span class="s1">'boolean'</span> <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'boolean'</span>
-       <span class="n">when</span> <span class="s1">'date'</span>            <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'java.util.Date'</span>  <span class="p">#</span> <span class="k">or</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Calendar</span>
-       <span class="n">when</span> <span class="s1">'timestamp'</span>       <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'java.util.Date'</span>  <span class="p">#</span> <span class="k">or</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Calendar</span>
-       <span class="n">when</span> <span class="s1">'money'</span>           <span class="p">;</span>  <span class="n">type</span> <span class="p">=</span> <span class="s1">'double'</span>
-       <span class="k">end</span>
-     <span class="k">end</span>
-     <span class="n">var</span> <span class="p">=</span> <span class="p">{</span>
-       <span class="p">:</span><span class="n">name</span>  <span class="p">=&gt;</span> <span class="n">column</span><span class="p">[</span><span class="s1">'name'</span><span class="p">],</span>
-       <span class="p">:</span><span class="n">type</span>  <span class="p">=&gt;</span> <span class="n">type</span><span class="p">,</span>
-       <span class="p">:</span><span class="n">desc</span>  <span class="p">=&gt;</span> <span class="n">column</span><span class="p">[</span><span class="s1">'desc'</span><span class="p">],</span>
-     <span class="p">}</span>
-     <span class="n">variables</span> <span class="p">&lt;&lt;</span> <span class="n">var</span>
-     <span class="p">##</span> <span class="err">外部参照キー</span>
-     <span class="k">if</span> <span class="p">(</span><span class="n">ref</span> <span class="p">=</span> <span class="n">column</span><span class="p">[</span><span class="s1">'ref'</span><span class="p">])</span> <span class="c1">!= nil
-</span>       <span class="n">var</span> <span class="p">=</span> <span class="p">{</span>
-         <span class="p">:</span><span class="n">name</span> <span class="p">=&gt;</span> <span class="n">column</span><span class="p">[</span><span class="s1">'ref-name'</span><span class="p">]</span> <span class="p">||</span> <span class="n">column</span><span class="p">[</span><span class="s1">'name'</span><span class="p">].</span><span class="n">sub</span><span class="p">(/</span><span class="n">_id</span><span class="p">$/,</span> <span class="s1">''</span><span class="p">),</span>
-         <span class="p">:</span><span class="n">type</span> <span class="p">=&gt;</span> <span class="n">ref</span><span class="p">[</span><span class="s1">'table'</span><span class="p">][</span><span class="s1">'class'</span><span class="p">],</span>
-         <span class="p">:</span><span class="n">desc</span> <span class="p">=&gt;</span> <span class="n">ref</span><span class="p">[</span><span class="s1">'table'</span><span class="p">][</span><span class="s1">'desc'</span><span class="p">]</span>
-       <span class="p">}</span>
-       <span class="n">ref_variables</span> <span class="p">&lt;&lt;</span> <span class="n">var</span>
-     <span class="k">end</span>
-   <span class="k">end</span>
-   <span class="n">variables</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">ref_variables</span><span class="p">)</span>
+   end
 
 
-   <span class="p">##</span> <span class="err">ファイルの出力を開始</span>
+   ## クラス定義情報
+   klass = {
+     :name       =&gt; table['class']   || camel_case(table['name']),
+     :package    =&gt; table['package'] || properties['package'],    # ・・・(3)
+     :parent     =&gt; table['parent']  || properties['parent'],     # ・・・(3)
+     :desc       =&gt; table['desc'],
+   }
 
- <span class="p">%&gt;</span>
-<span class="p">/*</span>
- <span class="p">*</span> <span class="n">DTO</span> <span class="n">class</span> <span class="n">for</span> <span class="n">Java</span>
- <span class="p">*</span>   <span class="n">generated</span> <span class="n">at</span> <span class="p">&lt;%=</span> <span class="n">Time</span><span class="p">.</span><span class="n">now</span><span class="p">.</span><span class="n">to_s</span> <span class="p">%&gt;</span>
+   ## 出力ファイル名
+   context[:output_filename] = klass[:name] + ".java"    # ・・・(4)
 
- <span class="p">*/</span>
-<span class="p">&lt;%</span> <span class="k">if</span> <span class="n">klass</span><span class="p">[:</span><span class="k">package</span><span class="p">]</span> <span class="p">%&gt;</span>
-<span class="k">package</span> <span class="p">&lt;%=</span> <span class="n">klass</span><span class="p">[:</span><span class="k">package</span><span class="p">]</span> <span class="p">%&gt;;</span>
-<span class="p">&lt;%</span> <span class="k">end</span> <span class="p">%&gt;</span>
+   ## インスタンス変数
+   variables = []
+   ref_variables = []
+   table['columns'].each do |column|
+     type = column['class']
+     unless type
+       type   = column['type']
+       width  = column['width']
+       case type
+       when 'char'            ;  type = (!width || width == 1) ? 'char' : 'String'
+       when 'short'           ;
+       when 'int', 'integer'  ;  type = 'int'
+       when 'str', 'string'   ;  type = width == 1 ? 'char' : 'String'
+       when 'text'            ;  type = width == 1 ? 'char' : 'String'
+       when 'float'           ;
+       when 'double'          ;
+       when 'bool', 'boolean' ;  type = 'boolean'
+       when 'date'            ;  type = 'java.util.Date'  # or java.util.Calendar
+       when 'timestamp'       ;  type = 'java.util.Date'  # or java.util.Calendar
+       when 'money'           ;  type = 'double'
+       end
+     end
+     var = {
+       :name  =&gt; column['name'],
+       :type  =&gt; type,
+       :desc  =&gt; column['desc'],
+     }
+     variables &lt;&lt; var
+     ## 外部参照キー
+     if (ref = column['ref']) != nil
+       var = {
+         :name =&gt; column['ref-name'] || column['name'].sub(/_id$/, ''),
+         :type =&gt; ref['table']['class'],
+         :desc =&gt; ref['table']['desc']
+       }
+       ref_variables &lt;&lt; var
+     end
+   end
+   variables.concat(ref_variables)
 
-<span class="p">/**</span>
- <span class="p">*</span> <span class="p">&lt;%=</span> <span class="n">klass</span><span class="p">[:</span><span class="n">desc</span><span class="p">]</span> <span class="p">%&gt;</span>
 
- <span class="p">*/</span>
-<span class="p">&lt;%</span> <span class="n">extends</span> <span class="p">=</span> <span class="n">klass</span><span class="p">[:</span><span class="n">parent</span><span class="p">]</span> <span class="p">?</span> <span class="s1">' extends '</span> <span class="p">+</span> <span class="n">klass</span><span class="p">[:</span><span class="n">parent</span><span class="p">]</span> <span class="p">:</span> <span class="s1">''</span> <span class="p">%&gt;</span>
-<span class="k">public</span> <span class="n">class</span> <span class="p">&lt;%=</span> <span class="n">klass</span><span class="p">[:</span><span class="n">name</span><span class="p">]</span> <span class="p">%&gt;&lt;%</span> <span class="n">extends</span> <span class="p">%&gt;</span> <span class="n">implements</span> <span class="n">java</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">Serializable</span> <span class="p">{</span>
+   ## ファイルの出力を開始
 
-<span class="p">&lt;%</span> <span class="p">##</span> <span class="err">インスタンス変数</span> <span class="p">%&gt;</span>
-<span class="p">&lt;%</span> <span class="n">variables</span><span class="p">.</span><span class="n">each</span> <span class="k">do</span> <span class="p">|</span><span class="n">var</span><span class="p">|</span>  <span class="p">%&gt;</span>
-<span class="p">&lt;%</span>   <span class="n">vartype</span> <span class="p">=</span> <span class="s1">'%-12s'</span> <span class="p">%</span> <span class="n">var</span><span class="p">[:</span><span class="n">type</span><span class="p">]</span> <span class="p">%&gt;</span>
-<span class="p">&lt;%</span>   <span class="n">varname</span> <span class="p">=</span> <span class="s1">'%-12s'</span> <span class="p">%</span> <span class="p">(</span><span class="n">var</span><span class="p">[:</span><span class="n">name</span><span class="p">]+</span><span class="s1">';'</span><span class="p">)</span> <span class="p">%&gt;</span>
-    <span class="n">private</span>  <span class="p">&lt;%=</span> <span class="n">vartype</span> <span class="p">%&gt;</span> <span class="p">&lt;%=</span> <span class="n">_</span><span class="p">(</span><span class="n">varname</span><span class="p">)</span> <span class="p">%&gt;</span>  <span class="p">/*</span> <span class="p">&lt;%=</span> <span class="n">var</span><span class="p">[:</span><span class="n">desc</span><span class="p">]</span> <span class="p">%&gt;</span> <span class="p">*/</span>
-<span class="p">&lt;%</span> <span class="k">end</span> <span class="p">%&gt;</span>
+ %&gt;
+/*
+ * DTO class for Java
+ *   generated at &lt;%= Time.now.to_s %&gt;
 
-<span class="p">&lt;%</span> <span class="p">##</span> <span class="n">getter</span><span class="p">/</span><span class="n">setter</span> <span class="p">%&gt;</span>
-<span class="p">&lt;%</span> <span class="n">variables</span><span class="p">.</span><span class="n">each</span> <span class="k">do</span> <span class="p">|</span><span class="n">var</span><span class="p">|</span> <span class="p">%&gt;</span>
-<span class="p">&lt;%</span>   <span class="n">vname</span>  <span class="p">=</span> <span class="n">var</span><span class="p">[:</span><span class="n">name</span><span class="p">]</span> <span class="p">%&gt;</span>
-<span class="p">&lt;%</span>   <span class="n">vtype</span>  <span class="p">=</span> <span class="n">var</span><span class="p">[:</span><span class="n">type</span><span class="p">]</span> <span class="p">%&gt;</span>
-<span class="p">&lt;%</span>   <span class="n">getter</span> <span class="p">=</span> <span class="s2">"#{vtype == 'boolean' ? 'is' : 'get'}#{camel_case(vname)}"</span> <span class="p">%&gt;</span>
-<span class="p">&lt;%</span>   <span class="n">setter</span> <span class="p">=</span> <span class="s2">"set#{camel_case(vname)}"</span> <span class="p">%&gt;</span>
-    <span class="k">public</span> <span class="p">&lt;%=</span> <span class="n">vtype</span> <span class="p">%&gt;</span> <span class="p">&lt;%=</span> <span class="n">getter</span> <span class="p">%&gt;()</span> <span class="p">{</span> <span class="n">return</span> <span class="p">&lt;%=</span> <span class="n">_</span><span class="p">(</span><span class="n">vname</span><span class="p">)</span> <span class="p">%&gt;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="p">&lt;%=</span><span class="n">setter</span><span class="p">%&gt;(&lt;%=</span><span class="n">vtype</span><span class="p">%&gt;</span> <span class="p">&lt;%=</span><span class="n">_</span><span class="p">(</span><span class="n">vname</span><span class="p">)%&gt;)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.&lt;%=</span><span class="n">_</span><span class="p">(</span><span class="n">vname</span><span class="p">)%&gt;</span> <span class="p">=</span> <span class="p">&lt;%=</span><span class="n">_</span><span class="p">(</span><span class="n">vname</span><span class="p">)%&gt;;</span> <span class="p">}</span>
-<span class="p">&lt;%</span> <span class="k">end</span> <span class="p">%&gt;</span>
+ */
+&lt;% if klass[:package] %&gt;
+package &lt;%= klass[:package] %&gt;;
+&lt;% end %&gt;
 
-<span class="p">}</span>
+/**
+ * &lt;%= klass[:desc] %&gt;
+
+ */
+&lt;% extends = klass[:parent] ? ' extends ' + klass[:parent] : '' %&gt;
+public class &lt;%= klass[:name] %&gt;&lt;% extends %&gt; implements java.io.Serializable {
+
+&lt;% ## インスタンス変数 %&gt;
+&lt;% variables.each do |var|  %&gt;
+&lt;%   vartype = '%-12s' % var[:type] %&gt;
+&lt;%   varname = '%-12s' % (var[:name]+';') %&gt;
+    private  &lt;%= vartype %&gt; &lt;%= _(varname) %&gt;  /* &lt;%= var[:desc] %&gt; */
+&lt;% end %&gt;
+
+&lt;% ## getter/setter %&gt;
+&lt;% variables.each do |var| %&gt;
+&lt;%   vname  = var[:name] %&gt;
+&lt;%   vtype  = var[:type] %&gt;
+&lt;%   getter = "#{vtype == 'boolean' ? 'is' : 'get'}#{camel_case(vname)}" %&gt;
+&lt;%   setter = "set#{camel_case(vname)}" %&gt;
+    public &lt;%= vtype %&gt; &lt;%= getter %&gt;() { return &lt;%= _(vname) %&gt; }
+    public void &lt;%=setter%&gt;(&lt;%=vtype%&gt; &lt;%=_(vname)%&gt;) { this.&lt;%=_(vname)%&gt; = &lt;%=_(vname)%&gt;; }
+&lt;% end %&gt;
+
+}
 
 </code></pre></div></div>
 
@@ -1431,35 +1431,35 @@ create table &lt;%= _(table['name']) %&gt; (
 
 <p><a href="../../images/0011-YAML/Group.java">Group.java</a> - 自動生成された DTO クラス</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">/*</span>
- <span class="p">*</span> <span class="n">DTO</span> <span class="n">class</span> <span class="n">for</span> <span class="n">Java</span>
- <span class="p">*</span>   <span class="n">generated</span> <span class="n">at</span> <span class="n">Sun</span> <span class="n">Oct</span> <span class="m">02</span> <span class="m">02</span><span class="p">:</span><span class="m">49</span><span class="p">:</span><span class="m">29</span> <span class="n">JST</span> <span class="m">2005</span>
- <span class="p">*/</span>
-<span class="k">package</span> <span class="n">my</span><span class="p">;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/*
+ * DTO class for Java
+ *   generated at Sun Oct 02 02:49:29 JST 2005
+ */
+package my;
 
-<span class="p">/**</span>
- <span class="p">*</span> <span class="err">グループマスターテーブル</span>
- <span class="p">*/</span>
-<span class="k">public</span> <span class="n">class</span> <span class="n">Group</span> <span class="n">implements</span> <span class="n">java</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">Serializable</span> <span class="p">{</span>
+/**
+ * グループマスターテーブル
+ */
+public class Group implements java.io.Serializable {
 
-    <span class="n">private</span>  <span class="n">int</span>          <span class="n">id</span><span class="p">;</span>           <span class="p">/*</span> <span class="err">グループ</span><span class="n">ID</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="k">String</span>       <span class="n">name</span><span class="p">;</span>         <span class="p">/*</span> <span class="err">名前</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="k">String</span>       <span class="n">desc</span><span class="p">;</span>         <span class="p">/*</span> <span class="err">摘要</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">created_on</span><span class="p">;</span>   <span class="p">/*</span> <span class="err">作成時刻</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">updated_on</span><span class="p">;</span>   <span class="p">/*</span> <span class="err">更新時刻</span> <span class="p">*/</span>
+    private  int          id;           /* グループID */
+    private  String       name;         /* 名前 */
+    private  String       desc;         /* 摘要 */
+    private  java.util.Date created_on;   /* 作成時刻 */
+    private  java.util.Date updated_on;   /* 更新時刻 */
 
-    <span class="k">public</span> <span class="n">int</span> <span class="nf">getId</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">id</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setId</span><span class="p">(</span><span class="n">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="k">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">name</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setName</span><span class="p">(</span><span class="k">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="k">String</span> <span class="n">getDesc</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">desc</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setDesc</span><span class="p">(</span><span class="k">String</span> <span class="n">desc</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">desc</span> <span class="p">=</span> <span class="n">desc</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">getCreatedOn</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">created_on</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setCreatedOn</span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">created_on</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">created_on</span> <span class="p">=</span> <span class="n">created_on</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">getUpdatedOn</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">updated_on</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setUpdatedOn</span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">updated_on</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">updated_on</span> <span class="p">=</span> <span class="n">updated_on</span><span class="p">;</span> <span class="p">}</span>
+    public int getId() { return id }
+    public void setId(int id) { this.id = id; }
+    public String getName() { return name }
+    public void setName(String name) { this.name = name; }
+    public String getDesc() { return desc }
+    public void setDesc(String desc) { this.desc = desc; }
+    public java.util.Date getCreatedOn() { return created_on }
+    public void setCreatedOn(java.util.Date created_on) { this.created_on = created_on; }
+    public java.util.Date getUpdatedOn() { return updated_on }
+    public void setUpdatedOn(java.util.Date updated_on) { this.updated_on = updated_on; }
 
-<span class="p">}</span>
+}
 
 </code></pre></div></div>
 
@@ -1467,50 +1467,50 @@ create table &lt;%= _(table['name']) %&gt; (
 
 <p><a href="../../images/0011-YAML/User.java">User.java</a> - 自動生成された DTO クラス</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">/*</span>
- <span class="p">*</span> <span class="n">DTO</span> <span class="n">class</span> <span class="n">for</span> <span class="n">Java</span>
- <span class="p">*</span>   <span class="n">generated</span> <span class="n">at</span> <span class="n">Sun</span> <span class="n">Oct</span> <span class="m">02</span> <span class="m">02</span><span class="p">:</span><span class="m">49</span><span class="p">:</span><span class="m">29</span> <span class="n">JST</span> <span class="m">2005</span>
- <span class="p">*/</span>
-<span class="k">package</span> <span class="n">my</span><span class="p">;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/*
+ * DTO class for Java
+ *   generated at Sun Oct 02 02:49:29 JST 2005
+ */
+package my;
 
-<span class="p">/**</span>
- <span class="p">*</span> <span class="err">ユーザマスターテーブル</span>
- <span class="p">*/</span>
-<span class="k">public</span> <span class="n">class</span> <span class="n">User</span> <span class="n">implements</span> <span class="n">java</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">Serializable</span> <span class="p">{</span>
+/**
+ * ユーザマスターテーブル
+ */
+public class User implements java.io.Serializable {
 
-    <span class="n">private</span>  <span class="n">int</span>          <span class="n">id</span><span class="p">;</span>           <span class="p">/*</span> <span class="err">ユーザ</span><span class="n">ID</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="k">String</span>       <span class="n">name</span><span class="p">;</span>         <span class="p">/*</span> <span class="err">名前</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="k">String</span>       <span class="n">desc</span><span class="p">;</span>         <span class="p">/*</span> <span class="err">摘要</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="k">String</span>       <span class="n">email</span><span class="p">;</span>        <span class="p">/*</span> <span class="err">メールアドレス</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="n">int</span>          <span class="n">group_id</span><span class="p">;</span>     <span class="p">/*</span> <span class="err">所属するグループの</span><span class="n">ID</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="n">int</span>          <span class="n">age</span><span class="p">;</span>          <span class="p">/*</span> <span class="err">年齢</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="n">char</span>         <span class="n">gender</span><span class="p">;</span>       <span class="p">/*</span> <span class="err">性別</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">created_on</span><span class="p">;</span>   <span class="p">/*</span> <span class="err">作成時刻</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">updated_on</span><span class="p">;</span>   <span class="p">/*</span> <span class="err">更新時刻</span> <span class="p">*/</span>
-    <span class="n">private</span>  <span class="n">Group</span>        <span class="n">group</span><span class="p">;</span>        <span class="p">/*</span> <span class="err">グループマスターテーブル</span> <span class="p">*/</span>
+    private  int          id;           /* ユーザID */
+    private  String       name;         /* 名前 */
+    private  String       desc;         /* 摘要 */
+    private  String       email;        /* メールアドレス */
+    private  int          group_id;     /* 所属するグループのID */
+    private  int          age;          /* 年齢 */
+    private  char         gender;       /* 性別 */
+    private  java.util.Date created_on;   /* 作成時刻 */
+    private  java.util.Date updated_on;   /* 更新時刻 */
+    private  Group        group;        /* グループマスターテーブル */
 
-    <span class="k">public</span> <span class="n">int</span> <span class="nf">getId</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">id</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setId</span><span class="p">(</span><span class="n">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">id</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="k">String</span> <span class="n">getName</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">name</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setName</span><span class="p">(</span><span class="k">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="k">String</span> <span class="n">getDesc</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">desc</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setDesc</span><span class="p">(</span><span class="k">String</span> <span class="n">desc</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">desc</span> <span class="p">=</span> <span class="n">desc</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="k">String</span> <span class="n">getEmail</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">email</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setEmail</span><span class="p">(</span><span class="k">String</span> <span class="n">email</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">email</span> <span class="p">=</span> <span class="n">email</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">int</span> <span class="n">getGroupId</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">group_id</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setGroupId</span><span class="p">(</span><span class="n">int</span> <span class="n">group_id</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">group_id</span> <span class="p">=</span> <span class="n">group_id</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">int</span> <span class="n">getAge</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">age</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setAge</span><span class="p">(</span><span class="n">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">age</span> <span class="p">=</span> <span class="n">age</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">char</span> <span class="n">getGender</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">gender</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setGender</span><span class="p">(</span><span class="n">char</span> <span class="n">gender</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">gender</span> <span class="p">=</span> <span class="n">gender</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">getCreatedOn</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">created_on</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setCreatedOn</span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">created_on</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">created_on</span> <span class="p">=</span> <span class="n">created_on</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">getUpdatedOn</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">updated_on</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setUpdatedOn</span><span class="p">(</span><span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">Date</span> <span class="n">updated_on</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">updated_on</span> <span class="p">=</span> <span class="n">updated_on</span><span class="p">;</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">Group</span> <span class="n">getGroup</span><span class="p">()</span> <span class="p">{</span> <span class="n">return</span> <span class="n">group</span> <span class="p">}</span>
-    <span class="k">public</span> <span class="n">void</span> <span class="n">setGroup</span><span class="p">(</span><span class="n">Group</span> <span class="n">group</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">group</span> <span class="p">=</span> <span class="n">group</span><span class="p">;</span> <span class="p">}</span>
+    public int getId() { return id }
+    public void setId(int id) { this.id = id; }
+    public String getName() { return name }
+    public void setName(String name) { this.name = name; }
+    public String getDesc() { return desc }
+    public void setDesc(String desc) { this.desc = desc; }
+    public String getEmail() { return email }
+    public void setEmail(String email) { this.email = email; }
+    public int getGroupId() { return group_id }
+    public void setGroupId(int group_id) { this.group_id = group_id; }
+    public int getAge() { return age }
+    public void setAge(int age) { this.age = age; }
+    public char getGender() { return gender }
+    public void setGender(char gender) { this.gender = gender; }
+    public java.util.Date getCreatedOn() { return created_on }
+    public void setCreatedOn(java.util.Date created_on) { this.created_on = created_on; }
+    public java.util.Date getUpdatedOn() { return updated_on }
+    public void setUpdatedOn(java.util.Date updated_on) { this.updated_on = updated_on; }
+    public Group getGroup() { return group }
+    public void setGroup(Group group) { this.group = group; }
 
-<span class="p">}</span>
+}
 
 </code></pre></div></div>
 

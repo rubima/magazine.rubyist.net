@@ -236,7 +236,7 @@
 
 <p>プログラムの実行が終わると、プロセスも同様に終了して無くなります。ターミナルからpsコマンドを実行することで、その時点で実際にうごいているプロセスを確認できます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
   PID TTY           TIME CMD
 66461 ttys000    0:00.15 -zsh
 </code></pre></div></div>
@@ -245,7 +245,7 @@
 
 <p>psコマンドをそのまま実行した場合は、ターミナル上で実行されているプロセスだけが出力されます。もし、バックグラウンドで動いているプロセスも確認したければ、psコマンドに-xオプションをつけて実行します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x
   PID TTY           TIME CMD
   338 ??         1:19.78 /usr/libexec/UserEventAgent (Aqua)
   340 ??         7:44.52 /usr/sbin/distnoted agent
@@ -263,7 +263,7 @@
 
 <p>そして、このスクリプトをターミナルから実行してみましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
 hello
 </code></pre></div></div>
 
@@ -275,14 +275,14 @@ sleep
 
 <p>再び、このスクリプトをターミナルから実行してみます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
 hello
 
 </code></pre></div></div>
 
 <p>これでこのプログラムを実行中のままにすることができました。それでは、ターミナルをもう一つ立ち上げて、そこからpsコマンドを実行してみましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
   PID TTY           TIME CMD
 66461 ttys000    0:00.26 -zsh
 67220 ttys000    0:00.05 ruby hello.rb
@@ -293,7 +293,7 @@ hello
 
 <p>では、Ctrl-Cでプログラムを終了させてみてから、もう一度 ps コマンドを実行してみてください。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
   PID TTY           TIME CMD
 66461 ttys000    0:00.26 -zsh
 67036 ttys001    0:00.11 -zsh
@@ -303,7 +303,7 @@ hello
 
 <p>では、次に同じプログラムを2つ同時に実行してみたときの様子を見てみることにしましょう。ターミナルを2つ開いて、それぞれのターミナルから先ほどのプログラムを実行します。そして、さらに別のターミナルから ps コマンドを実行してみましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
   PID TTY           TIME CMD
 66461 ttys000    0:00.26 -zsh
 67524 ttys000    0:00.05 ruby hello.rb
@@ -334,14 +334,14 @@ sleep
 
 <p>では、改良したプログラムを実行してみましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
 hello
 私のプロセスIDは67830です
 </code></pre></div></div>
 
 <p>上記で表示された値が、このプロセスに振られたプロセスIDになります。それでは、先ほどの様にpsコマンドを実行してみてください。psコマンドでは、PIDという列でこのIDを確認できます。psコマンドの結果を確認して、プログラムが表示した値とPIDの値が確かに一致しているかを確認しましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
  PID TTY           TIME CMD
 66461 ttys000    0:00.29 -zsh
 67830 ttys000    0:00.05 ruby hello.rb
@@ -399,7 +399,7 @@ file = File.open('a.txt', 'w')
 puts "a.txt ファイルへの入出力のファイルディスクリプタ: #{file.fileno}"
 </code></pre>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fileno.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fileno.rb
 標準入力のファイルディスクリプタ: 0
 標準出力のファイルディスクリプタ1
 a.txt ファイルへの入出力のファイルディスクリプタ: 7
@@ -422,7 +422,7 @@ puts '標準入力先が変わっているはず'
 
 <p>これを実行すると、どうなるでしょうか。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fileno.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fileno.rb
 標準入力のファイルディスクリプタ: 0
 標準出力のファイルディスクリプタ1
 a.txt ファイルへの入出力のファイルディスクリプタ: 7
@@ -430,7 +430,7 @@ a.txt ファイルへの入出力のファイルディスクリプタ: 7
 
 <p>おや？最後の「標準入力先が変わっているはず」が出力されてませんね。これはもしや…ということで、a.txtの中を確認してみましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% cat a.txt
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% cat a.txt
 標準入力先が変わっているはず
 </code></pre></div></div>
 
@@ -442,13 +442,13 @@ a.txt ファイルへの入出力のファイルディスクリプタ: 7
 
 <p>たとえば、wc コマンド（行数，単語数，バイト数などを数えるコマンド）への標準入力を a.txt というファイルにしたい場合は以下のようにします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% wc -l &lt; a.txt
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% wc -l &lt; a.txt
       1
 </code></pre></div></div>
 
 <p>また、ps コマンドの標準出力を b.txt というにしたい場合は以下のようにします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps &gt; b.txt
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps &gt; b.txt
 % cat b.txt
   PID TTY           TIME CMD
 66461 ttys000    0:00.29 -zsh
@@ -456,7 +456,7 @@ a.txt ファイルへの入出力のファイルディスクリプタ: 7
 
 <p>以下のような感じで、標準入出力を両方を差し替えることも、もちろんできます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% wc -l &lt; a.txt &gt; b.txt
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% wc -l &lt; a.txt &gt; b.txt
 % cat b.txt
        1
 </code></pre></div></div>
@@ -490,7 +490,7 @@ sleep
 
 <p>プログラムを実行すると、親プロセスのIDが出力されるはずです。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
 hello
 私のプロセスIDは68903です
 私の親プロセスのIDは67036です
@@ -498,7 +498,7 @@ hello
 
 <p>では、psコマンドを実行して、親のプロセスが何者なのかを確認してみましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
   PID TTY           TIME CMD
 66461 ttys000    0:00.29 -zsh
 67036 ttys001    0:00.30 -zsh
@@ -507,7 +507,7 @@ hello
 
 <p>67036のプロセスは…zshですね。Rubyプログラムの親プロセスはシェルを実行中のプロセスだということがわかりました。実は ps コマンドからも親プロセスIDを確認することができます。-l オプションをつけて ps コマンドを実行してみてください。PPID　という列に親プロセスIDが出力されるようになります。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -l
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -l
   UID   PID  PPID        F CPU PRI NI       SZ    RSS WCHAN     S             ADDR TTY           TIME CMD
   501 66461 66460     4006   0  31  0  2494520   5856 -      S                   0 ttys000    0:00.30 -zsh
   501 67036 67035     4006   0  31  0  2501688   6192 -      S                   0 ttys001    0:00.30 -zsh
@@ -540,7 +540,7 @@ Process.waitpid(pid)
 
 <p>それでは、このプログラムを実行してみましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fork.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fork.rb
 自分: PID(69193) PPID(66461)
 子ども: PID(69238) PPID(69193)
 </code></pre></div></div>
@@ -567,7 +567,7 @@ puts 'psコマンドが実行されたはず'
 
 <p>このプログラムを実行すると、どうなるでしょうか。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fork_exec.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fork_exec.rb
 自分: PID(69420) PPID(66461)
   UID   PID  PPID        F CPU PRI NI       SZ    RSS WCHAN     S             ADDR TTY           TIME CMD
   501 66461 66460     4006   0  31  0  2494520   5920 -      S                   0 ttys000    0:00.34 -zsh
@@ -596,9 +596,9 @@ psコマンドが実行されたはず
 
 <h2 id="パイプ">パイプ</h2>
 
-<p>パイプとは、コマンドの結果を別のコマンドの入力にすることを可能にするUnixのしくみです。例えば、psコマンドの結果の行数をwcコマンドでカウントする、ということをしたければ、以下のように「<code class="highlighter-rouge">|</code>」でコマンドをつなげます。</p>
+<p>パイプとは、コマンドの結果を別のコマンドの入力にすることを可能にするUnixのしくみです。例えば、psコマンドの結果の行数をwcコマンドでカウントする、ということをしたければ、以下のように「<code class="language-plaintext highlighter-rouge">|</code>」でコマンドをつなげます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x | wc -l
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x | wc -l
     238
 </code></pre></div></div>
 
@@ -612,13 +612,13 @@ psコマンドが実行されたはず
 
 <p>まずirbを立ち上げましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% irb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% irb
 &gt;
 </code></pre></div></div>
 
 <p>パイプを作成するには、以下のようにします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; read_io, write_io = IO.pipe
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; read_io, write_io = IO.pipe
 =&gt; [#&gt;IO:fd 9&gt;, #&lt;IO:fd 10&gt;
 </code></pre></div></div>
 
@@ -628,7 +628,7 @@ psコマンドが実行されたはず
 
 <p>では、パイプに何か書き込みんでみます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; write_io.puts 'foo'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; write_io.puts 'foo'
 =&gt; nil
 &gt; write_io.puts 'bar'
 =&gt; nil
@@ -636,7 +636,7 @@ psコマンドが実行されたはず
 
 <p>そうしたら、今度はパイプから読み出してみます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; read_io.gets
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; read_io.gets
 =&gt; "foo¥n"
 &gt; read_id.gets
 =&gt; "bar¥n"
@@ -644,7 +644,7 @@ psコマンドが実行されたはず
 
 <p>また、Rubyらしくブロックを使って以下のように書くこともできます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; IO.pipe do |read_io, write_io|
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; IO.pipe do |read_io, write_io|
 &gt;  write_io.puts 'foo'
 &gt;  write_io.puts 'bar'
 &gt;  p read_io.gets
@@ -666,7 +666,7 @@ psコマンドが実行されたはず
 
 <p>では、Rubyを使ってこれを体験してみましょう！</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x | wc -l
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x | wc -l
 </code></pre></div></div>
 
 <p>と同じことを、Rubyを使って実現してみることにします。</p>
@@ -691,7 +691,7 @@ Process.waitall
 
 <p>では、実際に動かしてみましょう。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby pipe_example.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby pipe_example.rb
      240
 </code></pre></div></div>
 

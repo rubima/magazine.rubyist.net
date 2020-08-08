@@ -280,7 +280,7 @@
 
 <h2 id="はじめに">はじめに</h2>
 
-<p>こんにちは、リアル厨二<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>こと sora_h です。このたび、晴れて Ruby コミッタになりました。お祝いのメッセージをくださった皆さん、ありがとうございました。</p>
+<p>こんにちは、リアル厨二<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>こと sora_h です。このたび、晴れて Ruby コミッタになりました。お祝いのメッセージをくださった皆さん、ありがとうございました。</p>
 
 <p>本稿では、筆者が Ruby コミッタになるきっかけとなった、test-all の並列化について解説します。</p>
 
@@ -295,7 +295,7 @@
 
 <p>本稿のコードは Mac OS X 10.6.6 で確認しています。</p>
 
-<p>また、本稿の実装解説などは Ruby の r31140 <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> のコードをベースとしています。
+<p>また、本稿の実装解説などは Ruby の r31140 <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> のコードをベースとしています。
 Ruby の開発が進むにつれ本稿の内容は古くなりますが、ご了承下さい。</p>
 
 <h2 id="背景">背景</h2>
@@ -355,9 +355,9 @@ mrkn: さぁ<br /></p>
 
 <h3 id="パッチの提出">パッチの提出</h3>
 
-<p>作成開始から約一週間でまともに動くようになったので、ruby-dev<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> にパッチを投げたところ (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/43226">ruby-dev:43226</a>)、コミット権がもらえてコミッターになりました。</p>
+<p>作成開始から約一週間でまともに動くようになったので、ruby-dev<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup> にパッチを投げたところ (<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/43226">ruby-dev:43226</a>)、コミット権がもらえてコミッターになりました。</p>
 
-<p>そこで r30939<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> でこのパッチをコミットし、その後リファクタリングを行ったり Windows でのバグを直したりして現在に至ります。</p>
+<p>そこで r30939<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup> でこのパッチをコミットし、その後リファクタリングを行ったり Windows でのバグを直したりして現在に至ります。</p>
 
 <h2 id="実装">実装</h2>
 
@@ -623,7 +623,7 @@ mrkn: さぁ<br /></p>
 
 <p>LoadError などを受け取って、テストの結果出力の前にまとめて配列に入っている例外を出力します。</p>
 
-<p>たとえば psych<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> のテストファイルを require すると、libyaml<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> がない環境では LoadError が出るため、それを見失わないよう最後に出力しています。</p>
+<p>たとえば psych<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> のテストファイルを require すると、libyaml<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup> がない環境では LoadError が出るため、それを見失わないよう最後に出力しています。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">              when /^bye (.+?)$/
                 after_worker_down worker, Marshal.load($1.unpack("m")[0])</code></pre></figure>
@@ -948,7 +948,7 @@ o.close すると i に EOF が入るので、自然に終了するかまたは�
 
 <p>これらのテストでは同じ番号のポートを使っていたため、並列で動作しませんでした。</p>
 
-<p>そのため、ポート番号を変更して並列動作時に重複しないようにしました<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</p>
+<p>そのため、ポート番号を変更して並列動作時に重複しないようにしました<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。</p>
 
 <h4 id="testcsv">test/csv</h4>
 
@@ -1103,28 +1103,28 @@ iOS アプリなどを作っているのでよければ買ってください (<a
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>記事執筆時点。公開時点では厨三にバージョンアップしています。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>記事執筆時点。公開時点では厨三にバージョンアップしています。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>編集部注:「r31140」とはリビジョン 31140 のことです。コミット日は 2011 年 3 月 21 日です。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>編集部注:「r31140」とはリビジョン 31140 のことです。コミット日は 2011 年 3 月 21 日です。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>編集部注:「ruby-dev」とは Ruby 開発者用メーリングリストのことです。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>編集部注:「ruby-dev」とは Ruby 開発者用メーリングリストのことです。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>編集部注:「r30939」とはリビジョン 30939 のことです。コミット日は 2011 年 2 月 22 日。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>編集部注:「r30939」とはリビジョン 30939 のことです。コミット日は 2011 年 2 月 22 日。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>編集部注:「psych」は Ruby 1.9.2 から標準搭載された YAML ライブラリです。利用するには libyaml が必要です。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>編集部注:「psych」は Ruby 1.9.2 から標準搭載された YAML ライブラリです。利用するには libyaml が必要です。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>編集部注:「libyaml」は C 言語で実装された YAML ライブラリです。その Ruby 用バインディングが psych です。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>編集部注:「libyaml」は C 言語で実装された YAML ライブラリです。その Ruby 用バインディングが psych です。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>パッチを提出する前に IRC に書いていたら先に他の方にコミットされていたので、筆者の修正には入っていませんが。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>パッチを提出する前に IRC に書いていたら先に他の方にコミットされていたので、筆者の修正には入っていませんが。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -290,7 +290,7 @@
 
 <h3 id="インライン要素に対する変換">インライン要素に対する変換</h3>
 
-<p>まず、インライン要素に対する変換です。処理対象のHikiデータから1行ずつ読み込み、Hiki記法にマッチするかどうか<code class="highlighter-rouge">case</code>文で見ていきます。Hiki記法で見出し要素は<code class="highlighter-rouge">!</code>や<code class="highlighter-rouge">!!!</code>などで表すのですが、これを正規表現<code class="highlighter-rouge">/\A!+/</code>で検出させます。</p>
+<p>まず、インライン要素に対する変換です。処理対象のHikiデータから1行ずつ読み込み、Hiki記法にマッチするかどうか<code class="language-plaintext highlighter-rouge">case</code>文で見ていきます。Hiki記法で見出し要素は<code class="language-plaintext highlighter-rouge">!</code>や<code class="language-plaintext highlighter-rouge">!!!</code>などで表すのですが、これを正規表現<code class="language-plaintext highlighter-rouge">/\A!+/</code>で検出させます。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compile_blocks</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
   <span class="n">f</span> <span class="o">=</span> <span class="no">LineInput</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">StringIO</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">src</span><span class="p">))</span>
@@ -310,7 +310,7 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>あとは各インライン要素ごとに用意した変換メソッドを呼び出します。見出し要素の例で言えば、<code class="highlighter-rouge">compile_header</code>メソッドを呼び出し、見出し要素のレベルの取得と見出し文字列を取得後、Markdown変換処理である<code class="highlighter-rouge">headline</code>メソッドを呼び出します。</p>
+<p>あとは各インライン要素ごとに用意した変換メソッドを呼び出します。見出し要素の例で言えば、<code class="language-plaintext highlighter-rouge">compile_header</code>メソッドを呼び出し、見出し要素のレベルの取得と見出し文字列を取得後、Markdown変換処理である<code class="language-plaintext highlighter-rouge">headline</code>メソッドを呼び出します。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">compile_header</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
   <span class="vi">@header_re</span> <span class="o">||=</span> <span class="sr">/\A!{1,6}/</span>
@@ -320,7 +320,7 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p>Markdown変換処理である<code class="highlighter-rouge">headline</code>メソッドでは引数で与えられた見出し要素のレベルと見出し文字列をもとにMarkdown文字列を生成します。</p>
+<p>Markdown変換処理である<code class="language-plaintext highlighter-rouge">headline</code>メソッドでは引数で与えられた見出し要素のレベルと見出し文字列をもとにMarkdown文字列を生成します。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">headline</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
   <span class="vi">@f</span><span class="p">.</span><span class="nf">puts</span>
@@ -332,7 +332,7 @@
 
 <p>続いて複数行に渡って意味を成すブロック要素に対する変換について見ていきます。これも考え方はインライン要素の場合と同様で正規表現によってブロック要素の開始と終了を検出し、変換処理を行います。</p>
 
-<p>例として引用記法についてみてみます。Hikiにおける引用は<code class="highlighter-rouge">" </code>ではじめる行として表現します。これを正規表現<code class="highlighter-rouge">\A""[ \t]?</code>で検索します。正規表現にマッチしたら、以下に示す<code class="highlighter-rouge">compile_blockquote</code>メソッドを呼び出します。</p>
+<p>例として引用記法についてみてみます。Hikiにおける引用は<code class="language-plaintext highlighter-rouge">" </code>ではじめる行として表現します。これを正規表現<code class="language-plaintext highlighter-rouge">\A""[ \t]?</code>で検索します。正規表現にマッチしたら、以下に示す<code class="language-plaintext highlighter-rouge">compile_blockquote</code>メソッドを呼び出します。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">BLOCKQUOTE_REGEX</span> <span class="o">=</span> <span class="sr">/\A""[ \t]?/</span>
 <span class="k">def</span> <span class="nf">compile_blockquote</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
@@ -345,7 +345,7 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">compile_blockquote</code>メソッドでは、引用の開始、引用の内部、引用の終了ごとにそれぞれMarkdownの変換メソッド<code class="highlighter-rouge">blockquote_open</code>、<code class="highlighter-rouge">blockquote_line</code>、<code class="highlighter-rouge">blockquote_close</code>を呼び出し変換処理を行っています。</p>
+<p><code class="language-plaintext highlighter-rouge">compile_blockquote</code>メソッドでは、引用の開始、引用の内部、引用の終了ごとにそれぞれMarkdownの変換メソッド<code class="language-plaintext highlighter-rouge">blockquote_open</code>、<code class="language-plaintext highlighter-rouge">blockquote_line</code>、<code class="language-plaintext highlighter-rouge">blockquote_close</code>を呼び出し変換処理を行っています。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">blockquote_open</span>
   <span class="vi">@f</span><span class="p">.</span><span class="nf">puts</span>
@@ -360,11 +360,11 @@
 
 <h3 id="プラグイン">プラグイン</h3>
 
-<p>るびまはHikiで提供している記法以外にプラグインを使って独自の記法をサポートしていました。例えば脚注を表現する<code class="highlighter-rouge">{{fn('脚注の内容')}}</code>や画像を埋め込む<code class="highlighter-rouge">{{attach_view('ファイル名')}}</code>などがプラグインを使っていました。</p>
+<p>るびまはHikiで提供している記法以外にプラグインを使って独自の記法をサポートしていました。例えば脚注を表現する<code class="language-plaintext highlighter-rouge">{{fn('脚注の内容')}}</code>や画像を埋め込む<code class="language-plaintext highlighter-rouge">{{attach_view('ファイル名')}}</code>などがプラグインを使っていました。</p>
 
-<p>これらプラグインの変換についても<code class="highlighter-rouge">{{</code>と<code class="highlighter-rouge">}}</code>を正規表現で検出し、プラグインの内容（<code class="highlighter-rouge">fn('脚注の内容')</code>や<code class="highlighter-rouge">attach_view('ファイル名')</code>など）を取り出します。</p>
+<p>これらプラグインの変換についても<code class="language-plaintext highlighter-rouge">{{</code>と<code class="language-plaintext highlighter-rouge">}}</code>を正規表現で検出し、プラグインの内容（<code class="language-plaintext highlighter-rouge">fn('脚注の内容')</code>や<code class="language-plaintext highlighter-rouge">attach_view('ファイル名')</code>など）を取り出します。</p>
 
-<p>その後、以下のソース片が示すように<a href="https://github.com/hiki/hiki/blob/6610f9f53c394a28f202dc5ae0209615a02ae824/lib/hiki/pluginutil.rb">hiki/pluginutil.rb</a>にある<code class="highlighter-rouge">Hiki::Util.methodwords</code>を使ってプラグインの内容をメソッド名と引数とに分割し、<code class="highlighter-rouge">send</code>でプラグインごとの変換処理を呼び出し変換を行いました。</p>
+<p>その後、以下のソース片が示すように<a href="https://github.com/hiki/hiki/blob/6610f9f53c394a28f202dc5ae0209615a02ae824/lib/hiki/pluginutil.rb">hiki/pluginutil.rb</a>にある<code class="language-plaintext highlighter-rouge">Hiki::Util.methodwords</code>を使ってプラグインの内容をメソッド名と引数とに分割し、<code class="language-plaintext highlighter-rouge">send</code>でプラグインごとの変換処理を呼び出し変換を行いました。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">inline_plugin</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>
   <span class="nb">method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span> <span class="o">=</span> <span class="no">Hiki</span><span class="o">::</span><span class="no">Util</span><span class="p">.</span><span class="nf">methodwords</span><span class="p">(</span><span class="n">src</span><span class="p">)</span>

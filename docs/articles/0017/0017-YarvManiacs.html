@@ -224,7 +224,7 @@
 
 <p>毎年恒例の RubyConf 2006 が行われました。今年も枠をもらえたので、YARV: on Rails? というタイトルで発表をしてきました。内容は現在の YARV の内容と、実際に YARV どうなのよ、という内容でした。発表資料は <a href="http://www.atdot.net/yarv/rc2006_sasada_yarv_on_rails.pdf">http://www.atdot.net/yarv/rc2006_sasada_yarv_on_rails.pdf</a> においておきます。</p>
 
-<p>発表時に、なんとか Rails を動かすデモを行いたかったのですが、なかなか動かなくて困りました。日本人参加者を巻き込んだ徹夜のデバッグ作業で、なんとか発表の 3 時間くらい前に動くようになりました<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>発表時に、なんとか Rails を動かすデモを行いたかったのですが、なかなか動かなくて困りました。日本人参加者を巻き込んだ徹夜のデバッグ作業で、なんとか発表の 3 時間くらい前に動くようになりました<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <h3 id="デンバー合意">デンバー合意</h3>
 
@@ -338,7 +338,7 @@ else if (recv と val は Float？) {
 }
 return send(:+, recv, val);</code></pre></figure>
 
-<p>こんな感じでチェックを追加していけば、いろんな型 (クラス) に対する「+」メソッド呼び出しを高速化できます。実際、opt_plus 命令は今現在、「Fixnum + Fixnum」と「Float + Float」以外に、「String + String」、「Array + 任意の型」<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> という型に対応しています。</p>
+<p>こんな感じでチェックを追加していけば、いろんな型 (クラス) に対する「+」メソッド呼び出しを高速化できます。実際、opt_plus 命令は今現在、「Fixnum + Fixnum」と「Float + Float」以外に、「String + String」、「Array + 任意の型」<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> という型に対応しています。</p>
 
 <p>ただし、対応する型を増やせばいいというものではありません。たしかに「Fixnum + Fixnum」のような処理は高速になりますが、他のメソッド呼び出し、たとえば独自に定義したクラスの Foo#+ メソッドを呼び出すためのプログラム「foo + 任意の値」は、上記型チェックを行ったあと (当然、どのチェックにもひっかからない)、通常のメソッド呼び出し処理を行うので、チェックの分だけオーバヘッドがかかります。</p>
 
@@ -493,13 +493,13 @@ lend:</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>このあたりの個人的な感想文は自分の日記に書きました (<a href="http://www.atdot.net/~ko1/diary/200610.html#d26">DA 10/26 (Thu)</a>) <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>このあたりの個人的な感想文は自分の日記に書きました (<a href="http://www.atdot.net/~ko1/diary/200610.html#d26">DA 10/26 (Thu)</a>) <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>ここでは rb_ary_plus() という API を直接呼び出しているが、引数の型はその API 中でチェックするので、opt_plus 命令がチェックする必要は無い <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>ここでは rb_ary_plus() という API を直接呼び出しているが、引数の型はその API 中でチェックするので、opt_plus 命令がチェックする必要は無い <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

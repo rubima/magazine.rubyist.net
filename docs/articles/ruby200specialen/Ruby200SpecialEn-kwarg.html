@@ -352,7 +352,7 @@ foo(*args) #=&gt; [{}, {}]</code></pre></figure>
 end
 foo(k: 1) #=&gt; unknown keyword: k</code></pre></figure>
 
-<p>(While writing this article, I started having doubts about this behaviour…)<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p>(While writing this article, I started having doubts about this behaviour…)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <p>Care must also be taken when rewriting existing functions to take advantage of this feature. Unlike hash keys, keywords can not be reserved words in Ruby.</p>
 
@@ -360,7 +360,7 @@ foo(k: 1) #=&gt; unknown keyword: k</code></pre></figure>
 end
 foo(if: true)</code></pre></figure>
 
-<p>The above code won’t explicitly fail, but you won’t be able to access the contents of the local variable named <code class="highlighter-rouge">if</code>. To get around this, you will need to use the ** parameter.</p>
+<p>The above code won’t explicitly fail, but you won’t be able to access the contents of the local variable named <code class="language-plaintext highlighter-rouge">if</code>. To get around this, you will need to use the ** parameter.</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">def foo(**kwrest)
   p kwrest[:if]
@@ -378,10 +378,10 @@ I think we will be seeing many new APIs taking advantage of keyword arguments, h
 
 <p>Yusuke Endoh is a Ruby committer (account: mame). His contributions include increasing the test coverage of Ruby, serving as the assistant Release Manager of Ruby 1.9.2, and the Release Manager of Ruby 2.0.0.</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>This behaviour has been fixed. It will be included in a future patch level release of Ruby. https://bugs.ruby-lang.org/issues/7922 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>This behaviour has been fixed. It will be included in a future patch level release of Ruby. https://bugs.ruby-lang.org/issues/7922 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

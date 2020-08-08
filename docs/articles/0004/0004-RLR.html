@@ -236,7 +236,7 @@ RDBにおけるデータモデルの設計では、
 モデルの最適解を得ようとします。
 ER 図と UML におけるクラス図は一見似ているのですが
 大元のアプローチが違うため様々な相違点をもたらします。
-これを、オブジェクトリレーショナル・インピーダンスミスマッチ <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+これを、オブジェクトリレーショナル・インピーダンスミスマッチ <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>
 と呼びます。</p>
 
 <p>オブジェクト指向パラダイムが登場した後に作られた、オブジェクト指向データベースや XML データベースならば、オブジェクト指向言語との親和性も高いかもしれませんが、長い間エンタープライズの現場で使われ続けてきたRDBと比べると実績やパフォーマンスという面で難があり、まだまだRDBと付き合っていかなければいけないのが現状でしょう。</p>
@@ -595,10 +595,10 @@ db.query(クラス)で「全てがオブジェクト」である Ruby の「ク�
 
 <h3 id="概要-1">概要</h3>
 
-<p>TapKit は EOF (Enterprise Objects Framework<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>) を Ruby で実装した物です。
+<p>TapKit は EOF (Enterprise Objects Framework<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>) を Ruby で実装した物です。
 YAML による定義ファイルを用いて DB や マッピングの情報を記述します。
 対応する RDBMS は、MySQL, PostgreSQL, OpenBase, CSV(実験的対応)ですが、
-Ruby/DBI の対応しているものならば概ね動くようです。<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+Ruby/DBI の対応しているものならば概ね動くようです。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
 
 <h3 id="作者からの声-1">作者からの声</h3>
 
@@ -618,7 +618,7 @@ CVS を使った作業サイクルを思い浮かべてみてください。リ�
 
 <h4 id="ユーティリティー">ユーティリティー</h4>
 
-<p>TapKit では YAML<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> でマッピング定義であるモデルファイルを記述します。</p>
+<p>TapKit では YAML<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> でマッピング定義であるモデルファイルを記述します。</p>
 
 <p>付属の modeler コマンドでモデルファイルを DB から直接リレーション等の情報を読み取って生成することが出来ます。早速使用してみましょう。</p>
 
@@ -642,7 +642,7 @@ Create modeler-sample.yaml</code></pre></figure>
 
 <p>modeler コマンドは設定ファイル自動生成してくれますが、未だ発展途上のようで、精度は今回のサンプルを用いた限りではイマイチです。
 例えば、後述する 1:N の例での Department - Student のリレーションシップが、お互いの Department.id と Student.id がキーとなるものとして出力されていました。
-現段階では雛形として利用するのが良さそうです。<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></p>
+現段階では雛形として利用するのが良さそうです。<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup></p>
 
 <h4 id="単純な参照-1">単純な参照</h4>
 
@@ -1142,7 +1142,7 @@ RDBMS 依存性の排除
 
 <p>(4) INSERT 
 は、実はそのままでは動きません。SDS は INSERT 時に連番を取得する際、
-(table_name)<em>Seq というシーケンステーブル名を期待している<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>のですが、
+(table_name)<em>Seq というシーケンステーブル名を期待している<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>のですが、
 PostgreSQL の serial カラム型によるデフォルトのシーケンステーブル名は (table_name)</em>(column_name)_seq なので、エラーを起こしてしまいます。
 今回は、<a href="../../images/0004-RLR/adaptor.rb.patch">adaptor.rb.patch</a> というパッチを作成し凌ぎました。
 (6) DELETE が動かないのもここら辺が関係するかもしれません。</p>
@@ -1431,28 +1431,28 @@ C, C++, C#, Perl, PHP と変遷を辿っているので、
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p><a href="http://www.agiledata.org/essays/impedanceMismatch.html">The Object-Relational Impedance Mismatch</a>に詳しい <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="http://www.agiledata.org/essays/impedanceMismatch.html">The Object-Relational Impedance Mismatch</a>に詳しい <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>上記の邦訳 <a href="http://capsctrl.que.jp/kdmsnr/wiki/agiledata/?TheObject-RelationalImpedanceMismatch">オブジェクト・リレーショナル・インピーダンス・ミスマッチ</a> <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>上記の邦訳 <a href="http://capsctrl.que.jp/kdmsnr/wiki/agiledata/?TheObject-RelationalImpedanceMismatch">オブジェクト・リレーショナル・インピーダンス・ミスマッチ</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>詳細は http://www.apple.com/jp/webobjects/wo_docs_j.html の “Enterprise Objects Framework Developers Guide” を参照して下さい <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>詳細は http://www.apple.com/jp/webobjects/wo_docs_j.html の “Enterprise Objects Framework Developers Guide” を参照して下さい <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>SQLite でも今回のサンプルのプロトタイプを動かすことができました。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>SQLite でも今回のサンプルのプロトタイプを動かすことができました。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>http://www.yaml.org/ <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>http://www.yaml.org/ <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>http://www.spice-of-life.net/tapkit/ja/TapKitUserGuide_J_c5_s1.html#doc7_1176 によると、「主キー名に id と設定しないでください。主キーを id とすると、オブジェクトにアクセスしても Object#id が呼び出されてしまいます。」とあるので、今回のサンプルのテーブル定義が適切でない可能性があります。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>http://www.spice-of-life.net/tapkit/ja/TapKitUserGuide_J_c5_s1.html#doc7_1176 によると、「主キー名に id と設定しないでください。主キーを id とすると、オブジェクトにアクセスしても Object#id が呼び出されてしまいます。」とあるので、今回のサンプルのテーブル定義が適切でない可能性があります。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>付属コマンド sds_generate_db_schema.rb で YAML から テーブル定義 SQL を生成すると、この名前でシーケンステーブル名が定義されています。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>付属コマンド sds_generate_db_schema.rb で YAML から テーブル定義 SQL を生成すると、この名前でシーケンステーブル名が定義されています。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

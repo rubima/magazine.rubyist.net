@@ -415,7 +415,7 @@
 
 <p>schema01.yaml : 文字列のシーケンス</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:   seq*\}\}           # データ型はシーケンス
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:   seq*\}\}           # データ型はシーケンス
 \{\{*sequence:*\}\}             # シーケンスの要素は
   - type:   str       #   データ型が文字列
 
@@ -477,7 +477,7 @@
 
 <p>schema02.yaml : マッピングを表すスキーマ</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:       map*\}\}                 # マッピング型
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:       map*\}\}                 # マッピング型
 \{\{*mapping:*\}\}
  "name":
     type:      str              # 文字列型
@@ -550,7 +550,7 @@
 
 <p>schema03.yaml :</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:      seq*\}\}                 # シーケンス型
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:      seq*\}\}                 # シーケンス型
 \{\{*sequence:*\}\}                      # シーケンスの要素
   - \{\{*type:      map*\}\}             #   マッピング型
     \{\{*mapping:*\}\}                   #   マッピングの要素
@@ -607,7 +607,7 @@
 
 <p>schema04.yaml : シーケンスを要素とするマッピングのスキーマ</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:      map*\}\}                  # マッピング型
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*type:      map*\}\}                  # マッピング型
 \{\{*mapping:*\}\}                        # マッピングの要素
  "company":
     type:      str
@@ -681,7 +681,7 @@
 
 <p>schema05.yaml : 一意制約を使ったスキーマ</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: seq
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: seq
 sequence:
   - type:     map
     required: yes
@@ -813,7 +813,7 @@ sequence:
 
 <p>schema06.yaml : 様々な制約を使ったスキーマ</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name:      address-book            # 名前
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name:      address-book            # 名前
 desc:      アドレス帳              # 説明
 type:      seq
 sequence:
@@ -898,7 +898,7 @@ sequence:
 
 <p>例えば次のような YAML ドキュメントがあるとします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- \{\{*&amp;a*\}\}                # アンカー
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- \{\{*&amp;a*\}\}                # アンカー
   name: foo
   parent: ~
 - name: bar
@@ -910,7 +910,7 @@ sequence:
 
 <p>これは次のような Ruby スクリプトと同じです。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo = \{\{*a*\}\} = { "name"=&gt;"foo", "parent"=&gt;nil }
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>foo = \{\{*a*\}\} = { "name"=&gt;"foo", "parent"=&gt;nil }
 bar = { "name"=&gt;"bar", "parent"=&gt;\{\{*a*\}\} }
 baz = { "name"=&gt;"baz", "parent"=&gt;\{\{*a*\}\} }
 [ foo, bar, baz ]
@@ -921,7 +921,7 @@ baz = { "name"=&gt;"baz", "parent"=&gt;\{\{*a*\}\} }
 
 <p>schema07.yaml : ルールを共有するスキーマ</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>desc:   書籍リスト
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>desc:   書籍リスト
 type:   seq
 sequence:
   - type:   map
@@ -979,7 +979,7 @@ sequence:
 
 <p>schema08.yaml : 再帰的なルールの定義</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*&amp;task*\}\}                  # アンカー
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\{\{*&amp;task*\}\}                  # アンカー
 desc:   作業分解図
 type:   map
 mapping:
@@ -1032,7 +1032,7 @@ mapping:
 
 <p>例えば次の YAML ドキュメントがあるとします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A: 10
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A: 10
 B: 20
 \{\{*=*\}\}: -1             # デフォルト値
 
@@ -1040,7 +1040,7 @@ B: 20
 
 <p>これは次の Ruby コードと同じです。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map1= {"A"=&gt;10, "B"=&gt;20}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map1= {"A"=&gt;10, "B"=&gt;20}
 \{\{*map1.default = -1*\}\}
 
 </code></pre></div></div>
@@ -1069,7 +1069,7 @@ B: 20
 
 <p>schema09.yaml : デフォルトのルールを指定したスキーマ</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: map
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: map
 mapping:
  "properties":
     type: map
@@ -1083,7 +1083,7 @@ mapping:
 
 <p>schema10.yaml : ユーザが自由にキーと値を追加できるアドレス帳</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: seq
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: seq
 sequence:
   - type: map
     mapping:
@@ -1107,7 +1107,7 @@ sequence:
 
 <p>例えば次のような YAML ドキュメントがあるとします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- &amp;m1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- &amp;m1
   A: 10
   B: 20
 - \{\{*&lt;&lt;*\}\}: *m1            # マージ
@@ -1118,7 +1118,7 @@ sequence:
 
 <p>これは次の Ruby コードと同じです。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=20}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=20}
 m2 = {}
 \{\{*m2.update(m1)*\}\}        # マージ
 m2["A"] = 15         # 上書き
@@ -1130,7 +1130,7 @@ m2["C"] = 30         # 追加
 <p>また複数のマッピングをマージすることができます。
 例えば次のような YAML ドキュメントがあるとします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- &amp;m1
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- &amp;m1
   A: 10
   B: 20
 - &amp;m2
@@ -1142,7 +1142,7 @@ m2["C"] = 30         # 追加
 
 <p>これは次の Ruby コードと同じです。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=&gt;20}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>m1 = {"A"=&gt;10, "B"=&gt;20}
 m2 = {"C"=&gt;10, "D"=&gt;20}
 m3 = {}
 \{\{*m3.update(m1)*\}\}       # マージ
@@ -1155,7 +1155,7 @@ m3 = {}
 
 <p>schema11.yaml : ルールのマージと差分定義を行う例</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: map
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: map
 mapping:
  "group":
     type: map
@@ -1208,7 +1208,7 @@ mapping:
 
 <p>script1.rb : Kwalify ライブラリを使って検証するサンプル</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require 'kwalify'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require 'kwalify'
 
 ## スキーマファイルを読み込み、バリデータを作成する。
 ## スキーマ定義にエラーがあると、例外 Kwalify::SchemaError が発生する。
@@ -1235,7 +1235,7 @@ end
 
 <p>script2.rb : Kwalify::YamlParser を使って行番号を表示するサンプル</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Kwalify::Parse を使って YAML ドキュメントを読み込む。
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## Kwalify::Parse を使って YAML ドキュメントを読み込む。
 ## (このパーサは行番号を保持している。)
 str = ARGF.read()
 \{\{*parser = Kwalify::Parser.new(str)*\}\}
@@ -1270,7 +1270,7 @@ end
 
 <p>script3.rb : スキーマファイル自身を検証するサンプル</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## メタバリデータを取得する
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## メタバリデータを取得する
 require 'kwalify'
 \{\{*meta_validator = Kwalify::MetaValidator.instance()*\}\}
 
@@ -1296,58 +1296,58 @@ end
 
 <p>script4.rb : フックメソッドの例</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/usr/bin/env ruby
 
-<span class="nb">require</span> <span class="s1">'kwalify'</span>
-<span class="nb">require</span> <span class="s1">'yaml'</span>
+require 'kwalify'
+require 'yaml'
 
-<span class="c1">## Kwalify::Validator のサブクラスを定義</span>
-<span class="k">class</span> <span class="nc">AnswersValidator</span> <span class="o">&lt;</span> <span class="no">Kwalify</span><span class="o">::</span><span class="no">Validator</span>
+## Kwalify::Validator のサブクラスを定義
+class AnswersValidator &lt; Kwalify::Validator
 
-  <span class="c1">## スキーマ定義を読み込む</span>
-  <span class="vc">@@schema</span> <span class="o">=</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">load_file</span><span class="p">(</span><span class="s1">'answers.schema.yaml'</span><span class="p">)</span>
+  ## スキーマ定義を読み込む
+  @@schema = YAML.load_file('answers.schema.yaml')
 
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">()</span>
-    <span class="k">super</span><span class="p">(</span><span class="vc">@@schema</span><span class="p">)</span>
-  <span class="k">end</span>
+  def initialize()
+    super(@@schema)
+  end
 
-  <span class="c1">## Validator#validate() から呼び出されるフックメソッド</span>
-  <span class="k">def</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">validate_hook</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">rule</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">errors</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="c1"># ルールの名前が 'Answer' である場合だけ実行</span>
-    <span class="k">case</span> <span class="p">\{\{</span><span class="o">*</span><span class="n">rule</span><span class="p">.</span><span class="nf">name</span><span class="o">*</span><span class="p">\}\}</span>
-    <span class="k">when</span> <span class="p">\{\{</span><span class="o">*</span><span class="s1">'Answer'</span><span class="o">*</span><span class="p">\}\}</span>
-      <span class="c1"># 解答が 'bad' であれば、理由の記入が必須である</span>
-      <span class="k">if</span> <span class="n">value</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'bad'</span>
-        <span class="k">if</span> <span class="n">value</span><span class="p">[</span><span class="s1">'reason'</span><span class="p">]</span> <span class="o">==</span> <span class="kp">nil</span> <span class="o">||</span> <span class="n">value</span><span class="p">[</span><span class="s1">'reason'</span><span class="p">].</span><span class="nf">empty?</span>
-          <span class="n">msg</span> <span class="o">=</span> <span class="s2">"reason is required when answer is 'bad'."</span>
-          <span class="p">\{\{</span><span class="o">*</span><span class="n">errors</span> <span class="o">&lt;&lt;</span> <span class="no">Kwalify</span><span class="o">::</span><span class="no">ValidationError</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span><span class="o">*</span><span class="p">\}\}</span>
-        <span class="k">end</span>
-      <span class="k">end</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
+  ## Validator#validate() から呼び出されるフックメソッド
+  def \{\{*validate_hook(value, rule, path, errors)*\}\}
+    # ルールの名前が 'Answer' である場合だけ実行
+    case \{\{*rule.name*\}\}
+    when \{\{*'Answer'*\}\}
+      # 解答が 'bad' であれば、理由の記入が必須である
+      if value['answer'] == 'bad'
+        if value['reason'] == nil || value['reason'].empty?
+          msg = "reason is required when answer is 'bad'."
+          \{\{*errors &lt;&lt; Kwalify::ValidationError.new(msg, path)*\}\}
+        end
+      end
+    end
+  end
 
-<span class="k">end</span>
+end
 
 
-<span class="c1">## YAML ドキュメントを読み込む</span>
-<span class="c1">## (エラー行番号を表示するために、Kwalify::YamlParser を使う。)</span>
-<span class="n">input</span> <span class="o">=</span> <span class="no">ARGF</span><span class="p">.</span><span class="nf">read</span><span class="p">()</span>
-<span class="n">parser</span> <span class="o">=</span> <span class="no">Kwalify</span><span class="o">::</span><span class="no">YamlParser</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">input</span><span class="p">)</span>
-<span class="n">document</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="nf">parse</span><span class="p">()</span>
+## YAML ドキュメントを読み込む
+## (エラー行番号を表示するために、Kwalify::YamlParser を使う。)
+input = ARGF.read()
+parser = Kwalify::YamlParser.new(input)
+document = parser.parse()
 
-<span class="c1">## バリデータを作成し、検証する</span>
-<span class="n">validator</span> <span class="o">=</span> <span class="no">AnswersValidator</span><span class="p">.</span><span class="nf">new</span>
-<span class="n">errors</span> <span class="o">=</span> <span class="n">validator</span><span class="p">.</span><span class="nf">validate</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+## バリデータを作成し、検証する
+validator = AnswersValidator.new
+errors = validator.validate(document)
 
-<span class="c1">## エラーがあれば行番号つきで表示する</span>
-<span class="k">if</span> <span class="o">!</span><span class="n">errors</span> <span class="o">||</span> <span class="n">errors</span><span class="p">.</span><span class="nf">empty?</span>
-  <span class="nb">puts</span> <span class="s2">"Valid."</span>
-<span class="k">else</span>
-  <span class="n">parser</span><span class="p">.</span><span class="nf">set_errors_linenum</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
-  <span class="n">errors</span><span class="p">.</span><span class="nf">sort</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">error</span><span class="o">|</span>
-    <span class="nb">puts</span> <span class="s2">" - line </span><span class="si">#{</span><span class="n">error</span><span class="p">.</span><span class="nf">linenum</span><span class="si">}</span><span class="s2">: [</span><span class="si">#{</span><span class="n">error</span><span class="p">.</span><span class="nf">path</span><span class="si">}</span><span class="s2">] </span><span class="si">#{</span><span class="n">error</span><span class="p">.</span><span class="nf">message</span><span class="si">}</span><span class="s2">"</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+## エラーがあれば行番号つきで表示する
+if !errors || errors.empty?
+  puts "Valid."
+else
+  parser.set_errors_linenum(errors)
+  errors.sort.each do |error|
+    puts " - line #{error.linenum}: [#{error.path}] #{error.message}"
+  end
+end
 
 </code></pre></div></div>
 
@@ -1355,7 +1355,7 @@ end
 
 <p>answers.schema.yaml : スキーマ</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type:      map
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type:      map
 mapping:
   answers:
     type:      seq
@@ -1429,7 +1429,7 @@ mapping:
 
 <p>creatable.schema.yaml : creatable のためのスキーマ</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type:     map
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type:     map
 mapping:
  "defaults":
     type:     map

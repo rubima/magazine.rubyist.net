@@ -265,7 +265,7 @@ RLR は、そのような場合に補助的な参考資料として、少しで�
 RLR の執筆者となって頂ければと考えています。</p>
 
 <p>さて、RLR 第 1 回では、IoC コンテナ [1,3] である Copland、Rico、tudura 
-<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>を紹介します。
+<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>を紹介します。
 今回のレポートでは、初めに IoC コンテナについての簡単な説明を記載します。
 IoC をご存知のユーザは、読み飛ばしても支障はないと思います。
 その次に、Copland、Rico、tudura を続けて紹介します。</p>
@@ -273,7 +273,7 @@ IoC をご存知のユーザは、読み飛ばしても支障はないと思い�
 <h3 id="ioc-と軽量コンテナについて">IoC と軽量コンテナについて</h3>
 
 <p>IoC とは Inverse of Control (制御の逆転) の略記です。各コンポーネントや
-コンテナ<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+コンテナ<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>
 との依存性をコードから排除し、コンテナによって依存性の解決を行うというパタ
 ーンです。
 ここで、依存性とはどのようにコンポーネントを獲得するかということに関わって
@@ -335,7 +335,7 @@ Dependency Injection に分けるようです。
 
 <p>また、軽量コンテナという用語を、IoC コンテナと同時に見かけることがあります。
 軽量コンテナとは、コンテナに期待される基本的な機能を備えつつ、コンポーネント
-がコンテナにほとんど依存せず、デプロイ<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>
+がコンテナにほとんど依存せず、デプロイ<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>
 に必要以上の手間がかからない手軽なコンテナのことを指すようです。
 そして、コンポーネントの依存性を低くするために IoC を用いているように思います。
 私も IoC コンテナや、軽量コンテナの厳密な定義は定かではありませんが、IoC コン
@@ -441,7 +441,7 @@ Copland では、このファイルをパッケージと呼んでいます。</p
 
 <p>id を使って、このパッケージを識別するために、一意な名前を与えます。
 これは、Copland が複数のパッケージを扱う上で必要となります。サービス
-ポイント (service-points) は、コンポーネント<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
+ポイント (service-points) は、コンポーネント<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>
 を利用するコードが、その
 コンポーネントをコンテナから獲得するときに用いるキーです。
 Copland では、コンポーネントのことをサービスと呼ぶため、サービスポイ
@@ -1127,19 +1127,19 @@ Setter Injection を採用した Java 版 IoC コンテナです。Ruby 以外�
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>作者の意向により、tudura はすべて小文字表記です。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>作者の意向により、tudura はすべて小文字表記です。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>コンポーネントとコンテナが良く分からない方は、コンテナを、実行環境やアプリケーションサーバ、コンポーネントを、その上で動くソフトウェア部品、つまり単独では意味を持たないが、他のコンポーネントやコンテナと組み合わさることで役割を発揮するオブジェクトを想像してください。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>コンポーネントとコンテナが良く分からない方は、コンテナを、実行環境やアプリケーションサーバ、コンポーネントを、その上で動くソフトウェア部品、つまり単独では意味を持たないが、他のコンポーネントやコンテナと組み合わさることで役割を発揮するオブジェクトを想像してください。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>コンテナにコンポーネントを導入することです。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>コンテナにコンポーネントを導入することです。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>コンポーネントとオブジェクトという用語には、明確に区別は無いと思いますが、本レポートでは、設定ファイルや設定コードのコンテキストではコンポーネントという用語を用いて、通常のプログラミングのコンテキストではオブジェクトを用いています。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>コンポーネントとオブジェクトという用語には、明確に区別は無いと思いますが、本レポートでは、設定ファイルや設定コードのコンテキストではコンポーネントという用語を用いて、通常のプログラミングのコンテキストではオブジェクトを用いています。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

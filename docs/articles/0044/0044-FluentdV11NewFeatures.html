@@ -220,7 +220,7 @@
 
 <p>皆さんは Fluentd をご存知でしょうか？ 「<a href="http://fluentd.org/">Fluentd</a>」は<a href="http://www.treasure-data.com">トレジャーデータ</a>のメンバおよびコミュニティメンバーにより開発が進められている Ruby 実装のオープンソースログ収集ツールです。</p>
 
-<p>クラウド化が進むことでますますシステムが大規模・複雑化している近年、大量・多様に出力されるログを効率良く管理し、活用できるツールとして注目され、実際に<a href="http://docs.fluentd.org/articles/users">多くの会社</a>によって利用されています。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p>クラウド化が進むことでますますシステムが大規模・複雑化している近年、大量・多様に出力されるログを効率良く管理し、活用できるツールとして注目され、実際に<a href="http://docs.fluentd.org/articles/users">多くの会社</a>によって利用されています。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <p>今回私は、そのメジャーバージョンアップとなる Fluentd v11 にまつわる噂を記事にしたいと思います。噂、としているのは v11 はまだ開発途中であり、これらの仕様はまだ確定したものではなく、今後変更もあり得るためです。</p>
 
@@ -578,7 +578,7 @@ Fluentd v10 には worker ディレクティブがありませんので、以下
 
 <h3 id="おまけ-format-none-の導入">おまけ: format none の導入</h3>
 
-<p>Fluentd v10 の最新ブランチに format <code class="highlighter-rouge">none</code> が導入されました！今まで Fluentd では、ログをパースすることなく送信したい場合でも、</p>
+<p>Fluentd v10 の最新ブランチに format <code class="language-plaintext highlighter-rouge">none</code> が導入されました！今まで Fluentd では、ログをパースすることなく送信したい場合でも、</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;source&gt;
    type tail
@@ -588,7 +588,7 @@ Fluentd v10 には worker ディレクティブがありませんので、以下
 
 <p>のように正規表現を記述する必要がありました。正規表現でのパースはそれだけでも充分大きなオーバーヘッドとなりえます。</p>
 
-<p>そこで、上記の設定と同等な効用を持ちつつも、正規表現でのパースを必要としない format <code class="highlighter-rouge">none</code> が <a href="https://github.com/fluent/fluentd/pull/182">pull request #182</a> によって実装されました。</p>
+<p>そこで、上記の設定と同等な効用を持ちつつも、正規表現でのパースを必要としない format <code class="language-plaintext highlighter-rouge">none</code> が <a href="https://github.com/fluent/fluentd/pull/182">pull request #182</a> によって実装されました。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;source&gt;
    type tail
@@ -617,10 +617,10 @@ Fluentd v11 はまだ開発途中であり、仕様も fix されたものでは
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>任天堂でも利用されているとか。 http://www.nintendo.co.jp/3ds/interview/streetpass_relay/vol1/index4.html <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>任天堂でも利用されているとか。 http://www.nintendo.co.jp/3ds/interview/streetpass_relay/vol1/index4.html <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

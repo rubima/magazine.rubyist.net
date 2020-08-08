@@ -287,14 +287,14 @@
 
 <h2 id="実行時メタプログラミング">実行時メタプログラミング</h2>
 
-<p>Groovy の実行時メタプログラミング機構<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>のいくつかについて紹介します。ここで「メタプログラミング」という用語はクラスやオブジェクトインスタンスにメソッドやプロパティを追加する仕組みという意味で使用します。</p>
+<p>Groovy の実行時メタプログラミング機構<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>のいくつかについて紹介します。ここで「メタプログラミング」という用語はクラスやオブジェクトインスタンスにメソッドやプロパティを追加する仕組みという意味で使用します。</p>
 
 <h3 id="カテゴリ">カテゴリ</h3>
 
-<p>Groovy の「カテゴリ」は、クラスにメソッドを動的に追加する仕組みの 1 つです<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。一般に、Ruby のオープンクラスでもそうですが、既存のクラスに対するメソッド追加は強力である反面、危険も伴います。たとえば、由来の異なるライブラリを組み合せて使用する場合に、追加するメソッドが衝突する可能性もあるからです。</p>
+<p>Groovy の「カテゴリ」は、クラスにメソッドを動的に追加する仕組みの 1 つです<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。一般に、Ruby のオープンクラスでもそうですが、既存のクラスに対するメソッド追加は強力である反面、危険も伴います。たとえば、由来の異なるライブラリを組み合せて使用する場合に、追加するメソッドが衝突する可能性もあるからです。</p>
 
-<p>カテゴリは、限定した範囲でのみメソッド追加が有効となる<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>ので、このような問題の発生確率を低めることができます。
-カテゴリを利用するには、まず準備として、追加したいメソッドを static メソッド (Ruby で言うクラスメソッド) として定義したクラスを準備します<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。このようなクラスをここではカテゴリクラスと呼ぶことにします。以下は例です。</p>
+<p>カテゴリは、限定した範囲でのみメソッド追加が有効となる<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>ので、このような問題の発生確率を低めることができます。
+カテゴリを利用するには、まず準備として、追加したいメソッドを static メソッド (Ruby で言うクラスメソッド) として定義したクラスを準備します<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。このようなクラスをここではカテゴリクラスと呼ぶことにします。以下は例です。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">class HelloCategory {
   static hello(String self) { // String クラスに追加しようとするメソッド。
@@ -305,7 +305,7 @@
 <p>ここでは、Groovy の標準クラスである String クラスに、インスタンスメソッドとして hello を追加します。
 内容は、「”hello “+String の内容」を表示するというものです。</p>
 
-<p>カテゴリクラスで定義するメソッドは以下のようにします<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+<p>カテゴリクラスで定義するメソッドは以下のようにします<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。</p>
 
 <ul>
   <li>static メソッドとする</li>
@@ -353,7 +353,7 @@ s.hello() // "hello ABC" が表示される
 
 <p>なお、ご存知の様に、methodMissing が呼び出されるのは、その名の通りメソッドが存在しない場合のみで、既存のメソッドの意味を上書きすることはありません。</p>
 
-<p>しかし、Groovy では「invokeMethod」というものもあります。invokeMethod を定義すると、メソッドが存在していようといまいとこちらが呼び出され、本来のメソッドは呼び出されなくなります。Groovy でのメタプログラミングでは、invokeMethod のトラップは多用されます<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+<p>しかし、Groovy では「invokeMethod」というものもあります。invokeMethod を定義すると、メソッドが存在していようといまいとこちらが呼び出され、本来のメソッドは呼び出されなくなります。Groovy でのメタプログラミングでは、invokeMethod のトラップは多用されます<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">BigDecimal.metaClass.invokeMethod = { String methodName, args -&gt;
    "method $delegate.$methodName($args) called"
@@ -365,7 +365,7 @@ println 3.3 + 4.5
 
 <h3 id="mop">MOP</h3>
 
-<p>前項で invokeMethod, methodMissing を説明しましたが、これらのメソッドを含む「オブジェクトの振舞い」を実現するメソッド群は、<a href="http://groovy.codehaus.org/api/groovy/lang/MetaObjectProtocol.html">MetaObjectProtocol インターフェース</a> (MOP) で定義されており、これを実装するメタクラス<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>を定義してクラスの metaClass プロパティに設定することでオブジェクトの振舞いをメタレベルで変更することができます。MetaObjectProtocol で定義されているメソッドは以下の通りです。</p>
+<p>前項で invokeMethod, methodMissing を説明しましたが、これらのメソッドを含む「オブジェクトの振舞い」を実現するメソッド群は、<a href="http://groovy.codehaus.org/api/groovy/lang/MetaObjectProtocol.html">MetaObjectProtocol インターフェース</a> (MOP) で定義されており、これを実装するメタクラス<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>を定義してクラスの metaClass プロパティに設定することでオブジェクトの振舞いをメタレベルで変更することができます。MetaObjectProtocol で定義されているメソッドは以下の通りです。</p>
 
 <ul>
   <li>getAttribute</li>
@@ -427,7 +427,7 @@ println 3.3 + 4.5
 呼び出すことで代替します。</p>
 
 <p>百聞は一見にしかず、ということで以下にビルダーの一例である「MarkupBuilder」の使用例を示します。
-MarkupBuilder を使うと、HTML や XML などのマークアップ言語のツリー構造を、DOM などを使うよりも簡潔に、XML 自体を使うよりも簡潔に記述することができます<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+MarkupBuilder を使うと、HTML や XML などのマークアップ言語のツリー構造を、DOM などを使うよりも簡潔に、XML 自体を使うよりも簡潔に記述することができます<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">import groovy.xml.MarkupBuilder
 new MarkupBuilder().root {
@@ -482,7 +482,7 @@ new MarkupBuilder().root {
 
 <h3 id="識別子のクォーティング">識別子のクォーティング</h3>
 
-<p>Groovy では識別子をクォートすることで、たとえばハイフンや/、!、空白など通常識別子名ではない文字も含めることができます(Ruby でいう p:’‘、p:”” の記法) <sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>‘。</p>
+<p>Groovy では識別子をクォートすることで、たとえばハイフンや/、!、空白など通常識別子名ではない文字も含めることができます(Ruby でいう p:’‘、p:”” の記法) <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>‘。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">def 'if'(cond, Closure c) {
   if (cond) c.call()
@@ -548,34 +548,34 @@ println hash.if    // =&gt; 3 が出力される</code></pre></figure>
 委員。Java 技術および言語処理系実装に興味がある。おもな著書は「Grails 徹底入門」「プログラミング Groovy」 (共著) 。Groovy 技術に関するブログ「Gr な日々」を主宰している。Groovy の起動を高速化する OSS ソフトウェアである GroovyServ の開発者の 1 人。Groovy で書かれた Java VM “GVM” や、Groovy 上の DSL として実装された Lisp 処理系である Lisp Builder の作者でもある。</p>
 
 <p>して任意の識別子が使えるはずだったが、なぜか<a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=6999438">正式版では削除された</a>。</p>
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>「実行時」メタプログラミングとわざわざことわっているのは、前回説明した AST 変換が「コンパイル時」メタプログラミングだからです。groovy には事前コンパイラとして「groovyc コマンド」があり Java の仮想マシンコード (class ファイル) を事前に生成しておくことができますが、AST 変換はコンパイル時に解決されます。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>「実行時」メタプログラミングとわざわざことわっているのは、前回説明した AST 変換が「コンパイル時」メタプログラミングだからです。groovy には事前コンパイラとして「groovyc コマンド」があり Java の仮想マシンコード (class ファイル) を事前に生成しておくことができますが、AST 変換はコンパイル時に解決されます。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>Objective-C 由来の機能とのことです。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>Objective-C 由来の機能とのことです。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p><a href="http://www.rubyist.net/~matz/20101113.html">Ruby で採用が検討されている「Refinement」</a>にも似ているようだが Refinement がレキシカルスコープであることを特徴とするのに対して、カテゴリ (use) は動的スコープ。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p><a href="http://www.rubyist.net/~matz/20101113.html">Ruby で採用が検討されている「Refinement」</a>にも似ているようだが Refinement がレキシカルスコープであることを特徴とするのに対して、カテゴリ (use) は動的スコープ。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Java 標準 API に対する Groovy 追加メソッド GDK (Groovy JDK) は、内部的にはカテゴリと等しい仕組みで実現されている。ただ、GDK は、Groovy コードから見るとコードの実行開始時には既にメソッドが追加されているし、プログラマからは与りしらない内部機構なので「動的メソッド追加」や「実行時メタプログラミング」には当らない。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Java 標準 API に対する Groovy 追加メソッド GDK (Groovy JDK) は、内部的にはカテゴリと等しい仕組みで実現されている。ただ、GDK は、Groovy コードから見るとコードの実行開始時には既にメソッドが追加されているし、プログラマからは与りしらない内部機構なので「動的メソッド追加」や「実行時メタプログラミング」には当らない。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>インスタンスメソッドを以下の条件で変形して定義するということだが、これはちょっと不自然にも感じられる。なのでそのままインスタンスメソッドとして定義できるようにするための、<a href="http://groovy.codehaus.org/Category+and+Mixin+transformations">@Category という AST 変換</a>もある。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>インスタンスメソッドを以下の条件で変形して定義するということだが、これはちょっと不自然にも感じられる。なのでそのままインスタンスメソッドとして定義できるようにするための、<a href="http://groovy.codehaus.org/Category+and+Mixin+transformations">@Category という AST 変換</a>もある。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>印象ですが、Ruby では send を置き変えることはそれほど普通に行なわれることはないように思いますが何故なのでしょう。<a href="http://hamasyou.com/archives/000370#title27">ブランクスレートクラス</a>を使用する場合と比較したときの考察などをご教示頂けるとありがたいです。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>印象ですが、Ruby では send を置き変えることはそれほど普通に行なわれることはないように思いますが何故なのでしょう。<a href="http://hamasyou.com/archives/000370#title27">ブランクスレートクラス</a>を使用する場合と比較したときの考察などをご教示頂けるとありがたいです。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>これを「メタ」クラスというと違和感があるかもしれません。意味的には Java の Class クラスに比して動的な側面を含むクラスオブジェクトです。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>これを「メタ」クラスというと違和感があるかもしれません。意味的には Java の Class クラスに比して動的な側面を含むクラスオブジェクトです。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>ひとことでいうと <a href="http://haml.ursm.jp/">haml</a> みたいなものを Groovy の内部 DSL として実現しようということです。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>ひとことでいうと <a href="http://haml.ursm.jp/">haml</a> みたいなものを Groovy の内部 DSL として実現しようということです。 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>本家 Java7 でも、異国的識別子 (exotic identifier) と <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>本家 Java7 でも、異国的識別子 (exotic identifier) と <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
