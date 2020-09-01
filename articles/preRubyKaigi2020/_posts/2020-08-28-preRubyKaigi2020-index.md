@@ -13,7 +13,7 @@ tags: preRubyKaigi2020 index
 ## 公式サイト
 
 - [公式サイト](https://rubykaigi.org/2020-takeout)
-    - [ライブストリーミングへのリンク](https://www.youtube.com/channel/UCBSg5zH-VFJ42BGQFk4VH2A)、[スピーカー一覧](https://rubykaigi.org/2020-takeout/speakers)や[スポンサー一覧](https://rubykaigi.org/2020-takeout/sponsors)、[ノベルティ販売ページへのリンク](https://rubykaigi.org/2020-takeout/novelties)が載っています。
+    - [ライブストリーミングへのリンク](https://www.youtube.com/channel/UCBSg5zH-VFJ42BGQFk4VH2A)、[タイムスケジュール](https://rubykaigi.org/2020-takeout/schedule)、[スピーカー一覧](https://rubykaigi.org/2020-takeout/speakers)や[スポンサー一覧](https://rubykaigi.org/2020-takeout/sponsors)、[ノベルティ販売ページへのリンク](https://rubykaigi.org/2020-takeout/novelties)が載っています。
 
 ## 各種案内
 
