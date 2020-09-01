@@ -13,16 +13,19 @@ tags: preRubyKaigi2020 index
 ## 公式サイト
 
 - [公式サイト](https://rubykaigi.org/2020-takeout)
-    - [ライブストリーミングへのリンク](https://www.youtube.com/channel/UCBSg5zH-VFJ42BGQFk4VH2A)、[スピーカー一覧](https://rubykaigi.org/2020-takeout/speakers)や[スポンサー一覧](https://rubykaigi.org/2020-takeout/sponsors)、[ノベルティ販売ページへのリンク](https://rubykaigi.org/2020-takeout/novelties)が載っています。
+    - [ライブストリーミングへのリンク](https://www.youtube.com/channel/UCBSg5zH-VFJ42BGQFk4VH2A)、[タイムスケジュール](https://rubykaigi.org/2020-takeout/schedule)、[スピーカー一覧](https://rubykaigi.org/2020-takeout/speakers)や[スポンサー一覧](https://rubykaigi.org/2020-takeout/sponsors)、[ノベルティ販売ページへのリンク](https://rubykaigi.org/2020-takeout/novelties)が載っています。
 
 ## 各種案内
 
-- [【8/31まで】RubyKaigi Takeout 2020りんごジュース応募フォーム](https://docs.google.com/forms/d/e/1FAIpQLSf3TagswznuknXpxzH4KuDeNHQiyctGDilMILvhDfmbezAU5g/viewform)
 - [Committers vs. the World Questions - RubyKaigi Takeout 2020](https://docs.google.com/forms/d/e/1FAIpQLSdGAEtgFjCmRH8oYr6oz4NNjtXkxQEGBjlJW9ZNPQSj0wPvQw/viewform)
 
 ## 登壇情報
 
-- [RubyKaigi Takeout 2020 への登壇とスポンサーのお知らせ](https://blog.agile.esm.co.jp/entry/rubykaigi-takeout-2020)
+### 2020年9月4日（金）
+
+- [Road to RuboCop 1.0](https://rubykaigi.org/2020-takeout/speakers#koic)
+  - [RubyKaigi Takeout 2020 に登壇します](https://koic.hatenablog.com/entry/rubykaigi-2020-takeout-information)
+  - [RubyKaigi Takeout 2020 への登壇とスポンサーのお知らせ](https://blog.agile.esm.co.jp/entry/rubykaigi-takeout-2020)
     - 株式会社 永和システムマネジメント (ESM, Inc.)の[@koic](https://github.com/koic)さんによる登壇情報です。
 
 ## おねがい
