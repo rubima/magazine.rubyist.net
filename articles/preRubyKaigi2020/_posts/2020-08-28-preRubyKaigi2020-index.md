@@ -17,7 +17,6 @@ tags: preRubyKaigi2020 index
 
 ## 各種案内
 
-- [【8/31まで】RubyKaigi Takeout 2020りんごジュース応募フォーム](https://docs.google.com/forms/d/e/1FAIpQLSf3TagswznuknXpxzH4KuDeNHQiyctGDilMILvhDfmbezAU5g/viewform)
 - [Committers vs. the World Questions - RubyKaigi Takeout 2020](https://docs.google.com/forms/d/e/1FAIpQLSdGAEtgFjCmRH8oYr6oz4NNjtXkxQEGBjlJW9ZNPQSj0wPvQw/viewform)
 
 ## 登壇情報
