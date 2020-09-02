@@ -19,6 +19,11 @@ tags: preRubyKaigi2020 index
 
 - [Committers vs. the World Questions - RubyKaigi Takeout 2020](https://docs.google.com/forms/d/e/1FAIpQLSdGAEtgFjCmRH8oYr6oz4NNjtXkxQEGBjlJW9ZNPQSj0wPvQw/viewform)
 
+## スポンサー様から
+
+- [SmartHRがイベント「RubyKaigi Takeout 2020 感想戦」開催！参加者を募集](https://smarthr.co.jp/news/press/22195/)
+  - 2020年9月19日（土）「RubyKaigi Takeout 2020 感想戦＠仮想松本」をオンライン開催予定だそうです。
+
 ## 登壇情報
 
 ### 2020年9月4日（金）
