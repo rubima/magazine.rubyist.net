@@ -28,7 +28,11 @@ tags: preRubyKaigi2020 index
 
 ### 2020年9月4日（金）
 
-- [Road to RuboCop 1.0](https://rubykaigi.org/2020-takeout/speakers#koic)
+- [13:00 - 13:25 Goodbye fat gem](https://rubykaigi.org/2020-takeout/speakers#ktou)
+  - [RubyKaigi Takeout 2020 - Goodbye fat gem #rubykaigi](https://www.clear-code.com/blog/2020/9/3.html)
+    - [@kou](https://github.com/kou)さんによる登壇情報です。
+
+- [14:00 - 14:25 Road to RuboCop 1.0](https://rubykaigi.org/2020-takeout/speakers#koic)
   - [RubyKaigi Takeout 2020 に登壇します](https://koic.hatenablog.com/entry/rubykaigi-2020-takeout-information)
   - [RubyKaigi Takeout 2020 への登壇とスポンサーのお知らせ](https://blog.agile.esm.co.jp/entry/rubykaigi-takeout-2020)
     - 株式会社 永和システムマネジメント (ESM, Inc.)の[@koic](https://github.com/koic)さんによる登壇情報です。
