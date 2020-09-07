@@ -37,9 +37,9 @@ tags: preRubyKaigi2020 index
 
 - [RubyKaigi Takeout 2020 - Journal InTime(2020-09-05)](https://shugo.net/jit/20200905.html)
 - [RubyKaigi Takeout 2020 と RubyKaigi 2020 の振り返り](https://note.com/co_bachie/n/ndac0e1567953)
-- [しまもん | おく | RubyKaigi Takeout 2020 Day1 参加レポート](https://shimane.monstar-lab.com/okuoku/rubykaigitakeout2020-day1)
-- [しまもん | おく | RubyKaigi Takeout 2020 Day2 参加レポート](https://shimane.monstar-lab.com/okuoku/rubykaigitakeout2020-day2)
-- [しまもん | はすみん | RubyKaigi Takeout 2020で発表した「mmruby」について](https://shimane.monstar-lab.com/hasumin/mmruby-on-RubyKaigi-Takeout-2020)
+- [しまもん \| おく \| RubyKaigi Takeout 2020 Day1 参加レポート](https://shimane.monstar-lab.com/okuoku/rubykaigitakeout2020-day1)
+- [しまもん \| おく \| RubyKaigi Takeout 2020 Day2 参加レポート](https://shimane.monstar-lab.com/okuoku/rubykaigitakeout2020-day2)
+- [しまもん \| はすみん \| RubyKaigi Takeout 2020で発表した「mmruby」について](https://shimane.monstar-lab.com/hasumin/mmruby-on-RubyKaigi-Takeout-2020)
 
 ## おねがい
 
