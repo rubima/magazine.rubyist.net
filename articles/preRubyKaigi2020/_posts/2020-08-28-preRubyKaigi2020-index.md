@@ -1,23 +1,19 @@
 ---
 layout: post
-title: RubyKaigi Takeout 2020 直前特集号
-short_title: RubyKaigi Takeout 2020 直前特集号
+title: RubyKaigi Takeout 2020 特集号
+short_title: RubyKaigi Takeout 2020 特集号
 tags: preRubyKaigi2020 index
 ---
 {% include base.html %}
 
 『るびま』は、Ruby に関する技術記事はもちろんのこと、Rubyist へのインタビューやエッセイ、その他をお届けするウェブ雑誌です。
 
-このレポートは、2020 年 9 月 4 日（金）〜 5 日（土）に開催される [RubyKaigi Takeout 2020](https://rubykaigi.org/2020-takeout) の基調講演やプレゼンテーション発表・企画を紹介し、見どころをいち早くお伝えするものです。
+このレポートは、2020 年 9 月 4 日（金）〜 5 日（土）に開催された [RubyKaigi Takeout 2020](https://rubykaigi.org/2020-takeout) の基調講演やプレゼンテーション発表・企画を紹介し、見どころをお伝えするものです。
 
 ## 公式サイト
 
 - [公式サイト](https://rubykaigi.org/2020-takeout)
     - [ライブストリーミングへのリンク](https://www.youtube.com/channel/UCBSg5zH-VFJ42BGQFk4VH2A)、[タイムスケジュール](https://rubykaigi.org/2020-takeout/schedule)、[スピーカー一覧](https://rubykaigi.org/2020-takeout/speakers)や[スポンサー一覧](https://rubykaigi.org/2020-takeout/sponsors)、[ノベルティ販売ページへのリンク](https://rubykaigi.org/2020-takeout/novelties)が載っています。
-
-## 各種案内
-
-- [Committers vs. the World Questions - RubyKaigi Takeout 2020](https://docs.google.com/forms/d/e/1FAIpQLSdGAEtgFjCmRH8oYr6oz4NNjtXkxQEGBjlJW9ZNPQSj0wPvQw/viewform)
 
 ## スポンサー様から
 
@@ -36,6 +32,14 @@ tags: preRubyKaigi2020 index
   - [RubyKaigi Takeout 2020 に登壇します](https://koic.hatenablog.com/entry/rubykaigi-2020-takeout-information)
   - [RubyKaigi Takeout 2020 への登壇とスポンサーのお知らせ](https://blog.agile.esm.co.jp/entry/rubykaigi-takeout-2020)
     - 株式会社 永和システムマネジメント (ESM, Inc.)の[@koic](https://github.com/koic)さんによる登壇情報です。
+
+## ブログ
+
+- [RubyKaigi Takeout 2020 - Journal InTime(2020-09-05)](https://shugo.net/jit/20200905.html)
+- [RubyKaigi Takeout 2020 と RubyKaigi 2020 の振り返り](https://note.com/co_bachie/n/ndac0e1567953)
+- [しまもん | おく | RubyKaigi Takeout 2020 Day1 参加レポート](https://shimane.monstar-lab.com/okuoku/rubykaigitakeout2020-day1)
+- [しまもん | おく | RubyKaigi Takeout 2020 Day2 参加レポート](https://shimane.monstar-lab.com/okuoku/rubykaigitakeout2020-day2)
+- [しまもん | はすみん | RubyKaigi Takeout 2020で発表した「mmruby」について](https://shimane.monstar-lab.com/hasumin/mmruby-on-RubyKaigi-Takeout-2020)
 
 ## おねがい
 
