@@ -564,9 +564,9 @@ puts foo.size #=&gt; 2</code></pre></figure>
 
 <p>この例では、オブジェクト foo に大して呼ばれたメソッドは、すべて　SimpleDelegator.new([]) として渡した配列オブジェクトに委譲されます。</p>
 
-<h4 id="setobj"><strong>setobj</strong></h4>
+<h4 id="__setobj__"><code class="language-plaintext highlighter-rouge">__setobj__</code></h4>
 
-<p>委譲先のオブジェクトは <strong>setobj</strong> を使って、後で変更することも出来ます。</p>
+<p>委譲先のオブジェクトは <code class="language-plaintext highlighter-rouge">__setobj__</code> を使って、後で変更することも出来ます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">require 'delegate'
 
@@ -575,7 +575,7 @@ puts s[1] #=&gt; "b"
 s.__setobj__(%w"A B C")
 puts s[1] #=&gt; "B"</code></pre></figure>
 
-<p>ただし、普通は変更前の委譲先と変更後の委譲先のオブジェクトは同じクラスだと思われるので、SimpleDelegator のメソッドは定義し直されません。そのため、別のクラスのオブジェクトを <strong>setobj</strong> すると何か問題が起きるかもしれません (1.8.3 では例外発生時のクラス部分が変わるようです)。</p>
+<p>ただし、普通は変更前の委譲先と変更後の委譲先のオブジェクトは同じクラスだと思われるので、SimpleDelegator のメソッドは定義し直されません。そのため、別のクラスのオブジェクトを <code class="language-plaintext highlighter-rouge">__setobj__</code> すると何か問題が起きるかもしれません (1.8.3 では例外発生時のクラス部分が変わるようです)。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">require 'delegate'
 
@@ -632,7 +632,7 @@ p a       # =&gt; [25]</code></pre></figure>
 <h3 id="delegator">Delegator</h3>
 
 <p>Delegator クラスはデザインパターンの delegator パターンを実現するための抽象クラスです。
-継承して <strong>getobj</strong> を再定義して使います。</p>
+継承して <code class="language-plaintext highlighter-rouge">__getobj__</code> を再定義して使います。</p>
 
 <p>具体的な使用例は SimpleDelegator の実装を見てください。</p>
 
