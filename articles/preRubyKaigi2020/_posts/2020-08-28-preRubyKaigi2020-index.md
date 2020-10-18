@@ -41,6 +41,8 @@ tags: preRubyKaigi2020 index
 - [しまもん \| おく \| RubyKaigi Takeout 2020 Day2 参加レポート](https://shimane.monstar-lab.com/okuoku/rubykaigitakeout2020-day2)
 - [しまもん \| はすみん \| RubyKaigi Takeout 2020で発表した「mmruby」について](https://shimane.monstar-lab.com/hasumin/mmruby-on-RubyKaigi-Takeout-2020)
 - [RubyKaigi Takeout 2020 に登壇した - koicの日記](https://koic.hatenablog.com/entry/rubykaigi-2020-road-to-rubocop-1-0)
+- [RubyKaigi 2020 -&gt; RubyKaigi Takeout 2020 のオーガナイザーにしてもらった話 - すむとこ探し](https://pupupopo88.hatenablog.com/entry/2020/10/11/200836)
+- [大規模カンファレンス運営経験がなかった人が、RubyKaigi 2020(と、少しだけRubyKaigi Takeout 2020)にオーガナイザーとして関わることになった話｜ぱん｜note](https://note.com/nappan23/n/nb20fbccdc786)
 
 ## おねがい
 
