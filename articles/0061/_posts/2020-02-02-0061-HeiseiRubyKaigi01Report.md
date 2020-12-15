@@ -92,8 +92,6 @@ created_on: 2020-02-02
 
 ### Ruby 2.7 ISeq バイナリ表現の改善について +α
 
-![]({{base}}{{site.baseurl}}/images/0061-HeiseiRubyKaigi01Report/trackA1.jpg)
-
 - 発表者: [@NagayamaRyoga](https://github.com/NagayamaRyoga)
 - スライド: [2019/12/14 平成 Ruby 会議 - Google スライド](https://docs.google.com/presentation/d/1kX7aIW0A4Eti8TsoWlS5acTuf0ns9nOnmJYXwCQLp2Y/)
 - ツイート: <https://togetter.com/li/1451568>
