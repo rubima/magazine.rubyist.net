@@ -2,6 +2,7 @@
 layout: post
 title: Ruby ビギナーのための CGI 入門 【第 4 回】 1 ページ
 short_title: Ruby ビギナーのための CGI 入門 【第 4 回】 1 ページ
+created_on: 2006-07-13
 tags: 0015 CGIProgrammingForRubyBeginners
 ---
 {% include base.html %}

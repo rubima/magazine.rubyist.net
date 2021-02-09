@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2008-10-01</span>
+
 
 
                         </div>
@@ -243,7 +255,7 @@
 
 <p>テンプレートシステムについて説明する前に、Web アプリケーションで動的にページを生成する方法について説明しましょう。</p>
 
-<p>動的に Web ページを生成する方法は、メインプログラムとの関係から見て大きく次の 3 つに分けられます<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>動的に Web ページを生成する方法は、メインプログラムとの関係から見て大きく次の 3 つに分けられます<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <ul>
   <li>第 1 世代: メインプログラムに HTML を埋め込む方法</li>
@@ -251,7 +263,7 @@
   <li>第 3 世代: メインプログラムと HTML とを分離する方法</li>
 </ul>
 
-<p>また対象とする出力形式から見て、次の 2 つに分けられます<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>また対象とする出力形式から見て、次の 2 つに分けられます<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <ul>
   <li>テキスト汎用型: 任意のテキスト形式で利用可能</li>
@@ -450,7 +462,7 @@ print 文として埋め込まれた HTML の変更があまりに面倒だっ�
 特に、動的な部分が少なくほとんどの部分が静的な HTML である場合は、この方法のほうが圧倒的に簡単です。</p>
 
 <p>この方法を広めたのは、なんといっても <a href="http://www.php.net">PHP</a> でした。
-また「プログラムが埋め込まれた HTML」を「HTML が埋め込まれたプログラム」に変換するのもそう難しくない<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>ため、eRuby や JSP など似たようなものが数多く登場しました。</p>
+また「プログラムが埋め込まれた HTML」を「HTML が埋め込まれたプログラム」に変換するのもそう難しくない<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>ため、eRuby や JSP など似たようなものが数多く登場しました。</p>
 
 <p>この方法もテキスト汎用型と HTML 専用型に分けることができます。</p>
 
@@ -479,7 +491,7 @@ eRuby では、次のような記法で Ruby コードをテキストファイ�
 &lt;/html&gt;</code></pre></figure>
 
 <p>print() を使ったリスト 1-1 と比べると、ずいぶん HTML に近いことが分かります。
-ただし、「&lt;% %&gt;」や「&lt;%= %&gt;」は HTML の仕様に反する記法なので、ブラウザでデザインを確認したり、HTML バリデータでチェックするということはできません<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+ただし、「&lt;% %&gt;」や「&lt;%= %&gt;」は HTML の仕様に反する記法なので、ブラウザでデザインを確認したり、HTML バリデータでチェックするということはできません<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
 
 <p>次に HTML 専用型の例をお見せしたいのですが、Ruby では適当なものが見つかりませんでしたので、かわりに XML 構文を使った JSP の例をお見せします (リスト 2-2)。
 JSP (Java ServerPage) は基本的にはテキスト汎用型ですが、ファイルの拡張子を「.jspx」にすることで、埋め込みコードを XML の構文で記述できるようになります。</p>
@@ -511,7 +523,7 @@ JSP (Java ServerPage) は基本的にはテキスト汎用型ですが、ファ�
   &lt;/body&gt;
 &lt;/html&gt;</code></pre></figure>
 
-<p>テキスト汎用型である eRuby と比べると、XML 構文を使った JSP は HTML 専用型であるため、「開始タグと終了タグが正しく対応付けされる」<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>などの利点があります。
+<p>テキスト汎用型である eRuby と比べると、XML 構文を使った JSP は HTML 専用型であるため、「開始タグと終了タグが正しく対応付けされる」<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>などの利点があります。
 ただし、__ロジックを HTML 中に埋め込んでいるという点ではどちらも同じ__です。</p>
 
 <p>なお余談ですが、JSP は</p>
@@ -704,7 +716,7 @@ __eRuby は汎用のテキストプロセッサであり、メインプログラ
 <p>ただし、こんな細かい違いは普通に生きている限り気にする必要はありません。</p>
 
 <p>なお、同じことが JSP でもいえます。
-本稿における用語の定義だと JSP はテンプレートエンジンではありませんが、テンプレートシステムとして使うことができます<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+本稿における用語の定義だと JSP はテンプレートエンジンではありませんが、テンプレートシステムとして使うことができます<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
 
 <h3 id="eruby-や-php-があればテンプレートエンジンはいらないか">eRuby や PHP があればテンプレートエンジンはいらないか</h3>
 
@@ -743,7 +755,7 @@ __eRuby は汎用のテキストプロセッサであり、メインプログラ
 <ul>
   <li>速度は、PHP や eRuby のような第 2 世代型のほうがずっと高速です。たとえば PHP で include() を使う方法は Smarty よりも約 3 倍高速であり、eRuby は PageTemplate よりも 2 倍以上高速です。またテンプレートエンジンは大きなライブラリを読み込む必要があるため、特に CGI では不利です。</li>
   <li>学習コストは、PHP や Ruby の知識がそのまま使える第 2 世代型のほうが低いです。たとえば繰り返しや条件分岐をしたい場合、eRuby だと Ruby の for 文や if 文がそのまま使えますが、テンプレートエンジンを使う場合は専用の構文を覚える必要があります。</li>
-  <li>式や文の記述能力は、PHP や Ruby がそのまま使える第 2 世代型のほうが高いです。たとえば 3 項演算子や整数の余剰を求める演算子 (%) は PHP にも Ruby にもありますが、それらを用意しているテンプレートエンジンは少なく、その分記述能力は劣ります。他にも、たとえば Velocity 1.4 では整数は扱えるが小数は扱えないなど、多くのテンプレートエンジンで機能の低さが目立ちます。ただし、機能が低いおかげで余計なロジックが記述できないため、プレゼンテーション層にはテンプレートエンジンのほうがふさわしいとする考え方もあります<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</li>
+  <li>式や文の記述能力は、PHP や Ruby がそのまま使える第 2 世代型のほうが高いです。たとえば 3 項演算子や整数の余剰を求める演算子 (%) は PHP にも Ruby にもありますが、それらを用意しているテンプレートエンジンは少なく、その分記述能力は劣ります。他にも、たとえば Velocity 1.4 では整数は扱えるが小数は扱えないなど、多くのテンプレートエンジンで機能の低さが目立ちます。ただし、機能が低いおかげで余計なロジックが記述できないため、プレゼンテーション層にはテンプレートエンジンのほうがふさわしいとする考え方もあります<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。</li>
   <li>PHP や eRuby のような第 2 世代型と比べると、テンプレートエンジンは Web アプリケーションに必要な機能が備わっています。たとえば、複数のページにおいてレイアウトを統一する機能や、他のテンプレートを読み込む機能や、出力をキャッシュする機能などが挙げられます。</li>
   <li>セキュリティについては、テンプレートエンジンのほうが優れている場合があります。たとえばデフォルトで HTML エスケープするなどです。ただし多くのテンプレートエンジンは、PHP や eRuby と比べて大した違いがないのが実情です。</li>
 </ul>
@@ -775,7 +787,7 @@ __eRuby は汎用のテキストプロセッサであり、メインプログラ
 
 <p>筆者は以前、プレゼンテーション層に XSLT を使ってしまったために、Java で作成されているにも関わらず CGI より遅くなったシステムを目の当たりにしたことがあります。
 いくら速い言語を使っても、アーキテクチャがまずいとアプリケーションは遅くなるという典型的な例でした。
-みなさんも、XSLT の使いどころを間違わないようにしましょう<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+みなさんも、XSLT の使いどころを間違わないようにしましょう<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>。</p>
 
 <h2 id="まとめ">まとめ</h2>
 
@@ -855,31 +867,31 @@ __eRuby は汎用のテキストプロセッサであり、メインプログラ
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>「第 N 世代」という名前はこの記事で便宜上つけたものです。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>「第 N 世代」という名前はこの記事で便宜上つけたものです。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>「テキスト汎用型」「HTML 専用型」という名称もこの記事で便宜上つけたものです。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>「テキスト汎用型」「HTML 専用型」という名称もこの記事で便宜上つけたものです。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>Ruby であれば、<a href="http://www.kuwata-lab.com/support/2007/10/09/30-lines-implementation-of-eruby/">30 行で実装できます</a>。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>Ruby であれば、<a href="http://www.kuwata-lab.com/support/2007/10/09/30-lines-implementation-of-eruby/">30 行で実装できます</a>。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>ここはもう少し考慮して eRuby の仕様を決めて欲しかったです。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>ここはもう少し考慮して eRuby の仕様を決めて欲しかったです。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>開始タグと終了タグが正しく対応付けされるのは入力となる JSP ファイルであって、出力された HTML については保証されません。これは、正しくない HTML の断片を変数にいれてそれを出力するということが可能なためです。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>開始タグと終了タグが正しく対応付けされるのは入力となる JSP ファイルであって、出力された HTML については保証されません。これは、正しくない HTML の断片を変数にいれてそれを出力するということが可能なためです。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>初期の JSP は確かに第 2 世代型でしたが、JSP 2.0 以降は EL (Expression Language) を使うようになり、Java の文や式を埋め込むことはほぼなくなったため、第 3 世代に分類するほうがいいかもしれません。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>初期の JSP は確かに第 2 世代型でしたが、JSP 2.0 以降は EL (Expression Language) を使うようになり、Java の文や式を埋め込むことはほぼなくなったため、第 3 世代に分類するほうがいいかもしれません。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>ただし、筆者はこの意見に反対です。理由は次回説明します。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>ただし、筆者はこの意見に反対です。理由は次回説明します。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>たとえば、PC 向けのページをケータイ向けに自動変換するといった用途であれば、XSLT も悪くないでしょう。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>たとえば、PC 向けのページをケータイ向けに自動変換するといった用途であれば、XSLT も悪くないでしょう。 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

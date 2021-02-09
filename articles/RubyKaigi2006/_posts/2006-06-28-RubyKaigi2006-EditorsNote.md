@@ -6,7 +6,7 @@ tags: RubyKaigi2006 EditorsNote
 ---
 {% include base.html %}
 
-![boom2.png]({{base}}{{site.baseurl}}/images/RubyKaigi2006-EditorsNote/boom2.png)
+![boom2.png]({{base}}{{site.baseurl}}/images/RubyKaigi2006/boom2.png)
 
 ## 編集後記
 
@@ -33,5 +33,3 @@ nov
 
 znz
 :  最初はなかなか進まずに大丈夫なのかなと思うこともありましたが、カンファレンスに参加していない方にも編集を手伝っていただいて、いい感じになりました。
-
-

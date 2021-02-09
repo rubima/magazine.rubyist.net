@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (17) 札幌 Ruby 会議 03
 short_title: RegionalRubyKaigi レポート (17) 札幌 Ruby 会議 03
-tags: 0033 SapporoRubyKaigi03Report
+created_on: 2011-04-05
+tags: 0033 SapporoRubyKaigi03Report regionalRubyKaigi
 ---
 {% include base.html %}
 

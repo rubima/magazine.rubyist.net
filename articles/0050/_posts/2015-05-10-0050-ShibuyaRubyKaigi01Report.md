@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (48) 渋谷 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (48) 渋谷 Ruby 会議 01
-tags: 0050 ShibuyaRubyKaigi01Report
+created_on: 2015-05-10
+tags: 0050 ShibuyaRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}
 

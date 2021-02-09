@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2007-12-17</span>
+
 
 
                         </div>
@@ -233,7 +245,7 @@
 
 <p>Ruby をはじめとする動的なスクリプト言語は、C や Java のような静的なコンバイル型言語と比べると動作速度が遅いです。
 しかし、それがそのままアプリケーションの動作速度を決定するわけではありません。
-アプリケーションの動作速度には、実装言語の速度よりも、アルゴリズムやデータ構造といった知識の有無や、プログラミング上の工夫やアイデアのほうがずっと大きく影響を与えます<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+アプリケーションの動作速度には、実装言語の速度よりも、アルゴリズムやデータ構造といった知識の有無や、プログラミング上の工夫やアイデアのほうがずっと大きく影響を与えます<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <p>本稿では、C 言語で書かれた拡張モジュールより高速に動作する pure Ruby プログラムを示すことで、アプリケーションの速度には言語よりも知識やアイデアの方がずっと重要であることを示します。</p>
 
@@ -973,7 +985,7 @@ _buf &lt;&lt; {{*%Q`*}}&lt;tr&gt;
 &lt;/tr&gt;{{*`*}}</code></pre></figure>
 
 <p>またこのサンプルでは「% 記法」を使っています。
-「%Q<code class="highlighter-rouge">...</code>」は「”…“」と同じ意味ですが、文字列リテラルを囲むのに「<code class="highlighter-rouge">」以外の任意の記号を使うことができます。
+「%Q<code class="language-plaintext highlighter-rouge">...</code>」は「”…“」と同じ意味ですが、文字列リテラルを囲むのに「<code class="language-plaintext highlighter-rouge">」以外の任意の記号を使うことができます。
 「"」で文字列リテラルを表すと、HTML中にも「"」が頻出するため、そのエスケープ処理のコストが馬鹿になりません。
 そこで「% 記法」を使い、例えば「</code>」のようなHTML中に現れにくい文字を使うことで、エスケープ処理を避けています。</p>
 
@@ -1422,7 +1434,7 @@ Web アプリケーションでいえば、mod_ruby や FastCGI では効果が�
 Ruby が遅いからといって、Ruby で作られたアプリケーションも遅いと決めつける必要はありません。
 少なくとも、Reflection を多用したような__動的な Java プログラムよりも素の Ruby プログラムのほうが速い__です。</p>
 
-<p>また eRuby は Velocity や JSP より速くできる<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>ので、Web アプリケーションのビュー層に限っていえば、Java で性能要件が満たせられるなら Ruby でも満たすことができるはずです。
+<p>また eRuby は Velocity や JSP より速くできる<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>ので、Web アプリケーションのビュー層に限っていえば、Java で性能要件が満たせられるなら Ruby でも満たすことができるはずです。
 今回のデータを見れば、10,000 ページ生成するのにノート PC で 10 秒もかかってないわけですから、ビュー層としては充分な速度でしょう。
 つまりスクリプト言語でも工夫次第で十分な速度がだせるのです。</p>
 
@@ -1436,7 +1448,7 @@ Ruby が遅いからといって、Ruby で作られたアプリケーション�
 また他言語でのライブラリと比較しても、圧倒的に速いことがわかりました。</p>
 
 <p>繰り返しになりますが、本稿でいいたかったことは、__言語の速度とアプリケーションの速度は別物であり、アプリケーションの高速化には言語の速度よりも知識やアイデアの方が重要__だということです。
-アプリケーションの速度を決定する要因はいくつもあり、言語はそのうちのひとつに過ぎず、かつその影響度は一般的に考えられているよりも低いのです<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+アプリケーションの速度を決定する要因はいくつもあり、言語はそのうちのひとつに過ぎず、かつその影響度は一般的に考えられているよりも低いのです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <p>スクリプト言語では最高速度を得ることはできませんが、たいがいのシステムが必要とする速度は十分得られます。
 あなたが開発したアプリケーションが遅いとしたら、ほとんどの場合においてそれは Ruby やスクリプト言語のせいではなく、あなた自身のせいです。
@@ -1447,16 +1459,16 @@ Ruby が遅いからといって、Ruby で作られたアプリケーション�
 
 <p>本稿がスクリプト言語の発展に役立てば幸いです。</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>もちろんアプリケーションの特性に依ります。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>もちろんアプリケーションの特性に依ります。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>JSP は Velocity より遅いことが知られているため、Velocity より速ければ JSP よりも速いといえます。ただし、昔の JSP は Velocity の半分程度の速さだったのが、最近はかなり改善されています。なお table10 に JSP がないのは、JSP の実行には Servlet コンテナが必要であり、テンプレートエンジンのように単体で実行することができないためです。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>JSP は Velocity より遅いことが知られているため、Velocity より速ければ JSP よりも速いといえます。ただし、昔の JSP は Velocity の半分程度の速さだったのが、最近はかなり改善されています。なお table10 に JSP がないのは、JSP の実行には Servlet コンテナが必要であり、テンプレートエンジンのように単体で実行することができないためです。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>繰り返しますがアプリケーションの特性に依ります。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>繰り返しますがアプリケーションの特性に依ります。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2009-02-07</span>
+
 
 
                         </div>
@@ -275,7 +287,7 @@
 
 <p>この記事では「 GC が便利って事は知ってるんだけど仕組みは知らないなぁ」という人たちに向けて、GC のアルゴリズムを分かりやすく解説します。</p>
 
-<p>その後、実際に CRuby <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>の GC がどういう風に動いているのかを説明します。</p>
+<p>その後、実際に CRuby <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>の GC がどういう風に動いているのかを説明します。</p>
 
 <p>また、CRubyGC に対する最近の研究の動向にも少し触れようかと思います。</p>
 
@@ -445,7 +457,7 @@ GC の仕組みや内部実装を知ることはプログラマにとって決�
 
 <p>これでは新しい本を入れるときに困ってしまいますね。何か違う方法を考えた方が良さそうです。</p>
 
-<p>余談ですが我らが CRuby ではこの Mark&amp;Sweep アルゴリズムが実装されており、この本棚と同じく断片化の問題があります<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>余談ですが我らが CRuby ではこの Mark&amp;Sweep アルゴリズムが実装されており、この本棚と同じく断片化の問題があります<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <h3 id="copying">Copying</h3>
 
@@ -510,7 +522,7 @@ GC の仕組みや内部実装を知ることはプログラマにとって決�
 
 <p>このように、Copying する為には Mark&amp;Sweep に比べて2倍の入れ物（領域）が必要になります。これは困りものです。</p>
 
-<p>この場合だと新しい本棚を買ってこなくてはなりません<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>が、そんな事はしたくありませんよね。</p>
+<p>この場合だと新しい本棚を買ってこなくてはなりません<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>が、そんな事はしたくありませんよね。</p>
 
 <p>次は、もっと根本的に違う方法を考えてみましょう。</p>
 
@@ -861,7 +873,7 @@ is_pointer_to_heap(integer) #=&gt; true</code></pre></figure>
 
 <p>2008年10月に松江で開催された「<a href="http://www.math.nagoya-u.ac.jp/~garrigue/pro71/">第71回情報処理学会プログラミング研究発表会</a>」では3つのRubyGCに関する発表が行われています。</p>
 
-<p>このイベントを笹田さんは「なんというかアレ、じゃなくてレアなイベント」<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>と表現しました。なるほど:-)</p>
+<p>このイベントを笹田さんは「なんというかアレ、じゃなくてレアなイベント」<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup><sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>と表現しました。なるほど:-)</p>
 
 <p>そこで、今回はその3つレアな研究内容を簡単に紹介したいと思います。</p>
 
@@ -898,7 +910,7 @@ is_pointer_to_heap(integer) #=&gt; true</code></pre></figure>
 
 <p>また、この研究内には「ライトバリアをここに張らないと駄目ですよ！」という事を教えてくれる超絶便利機能も研究・実装されています。</p>
 
-<p>miniruby<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> までしか動かないそうですが、今後が非常に楽しみです。</p>
+<p>miniruby<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup> までしか動かないそうですが、今後が非常に楽しみです。</p>
 
 <h4 id="詳細を知りたい方へ-1">詳細を知りたい方へ</h4>
 
@@ -962,25 +974,25 @@ is_pointer_to_heap(integer) #=&gt; true</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>まつもとさん主導で開発が進められているCで書かれたRuby実装 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>まつもとさん主導で開発が進められているCで書かれたRuby実装 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>これに対する対策は多くありますが詳細についてはまたの機会にでも <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>これに対する対策は多くありますが詳細についてはまたの機会にでも <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>ちなみに｢床においたら？｣とかは受け付けませんのであしからず :-) <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>ちなみに｢床においたら？｣とかは受け付けませんのであしからず :-) <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/45519">[ruby-list:45519]</a> <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/45519">[ruby-list:45519]</a> <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>この記事のタイトルもここから頂きました <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>この記事のタイトルもここから頂きました <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>miniruby はビルド途中で構築される、拡張ライブラリなどを含まない最小構成のRuby <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>miniruby はビルド途中で構築される、拡張ライブラリなどを含まない最小構成のRuby <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

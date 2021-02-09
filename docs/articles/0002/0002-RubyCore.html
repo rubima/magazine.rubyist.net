@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2004-10-16</span>
+
 
 
                         </div>
@@ -234,7 +246,7 @@
 <p>この記事では、最近数多く発見された配列や文字列などのバグについて解説します。
 これらのバグはメモリの不適切な場所をアクセスしてしまうもので、
 典型的には Segmentation fault により core を吐く症状としてあらわれます。
-なお、Ruby で記述されたコードから Segmentation fault を起こせてしまうのはほぼ確実に Ruby のバグです。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+なお、Ruby で記述されたコードから Segmentation fault を起こせてしまうのはほぼ確実に Ruby のバグです。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <p>これらのバグの原因は、配列の中身などのメモリが realloc されて移動したときに、C で記述されたメソッドがその移動に気がつかずにもとのアドレスにアクセスしてしまうことです。
 このような状況は C で記述されたメソッド中で配列の中身を指すポインタを記憶しているときに、
@@ -462,7 +474,7 @@ end</code></pre></figure>
   <li>配列の内部にアクセスする場合には to_ary が呼び出される</li>
   <li>I/O を行なうときにスレッドが切り替わって他のスレッドが動作する</li>
   <li>rb_gc を呼び出して GC が行なわれるとき、finalizer が付加されているオブジェクトが削除されるとその finalizer が呼び出される</li>
-  <li>オブジェクトを作ったり配列の長さが変わるなどしてメモリの確保が起こると、GC が行なわれて finalizer が呼び出される <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></li>
+  <li>オブジェクトを作ったり配列の長さが変わるなどしてメモリの確保が起こると、GC が行なわれて finalizer が呼び出される <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></li>
 </ul>
 
 <p>また、オブジェクトを変更するにはそのオブジェクトを参照する必要があります。
@@ -549,13 +561,13 @@ etc.</p>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>スタックオーバーフローによるものなど、Segmentation fault が起きてもしかたがないとされる場合も稀にはあります <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>スタックオーバーフローによるものなど、Segmentation fault が起きてもしかたがないとされる場合も稀にはあります <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>2004-09-27 に finalizer の実行は遅延されるようになり、メモリ確保の時点で起こる GC では Ruby コードは実行されなくなりました <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>2004-09-27 に finalizer の実行は遅延されるようになり、メモリ確保の時点で起こる GC では Ruby コードは実行されなくなりました <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -2,6 +2,7 @@
 layout: post
 title: Ruby 初心者の新卒エンジニアが gem パッケージ公開に至るまで
 short_title: Ruby 初心者の新卒エンジニアが gem パッケージ公開に至るまで
+created_on: 2014-04-05
 tags: 0046 RandexMultibyteGem
 ---
 {% include base.html %}

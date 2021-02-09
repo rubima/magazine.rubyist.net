@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2014-04-05</span>
+
 
 
                         </div>
@@ -290,7 +302,7 @@
 
 <p>Rroonga 自体がカラムストアエンジンとして使えるので MySQL などのストレージエンジンを別途インストールする必要がないのも Rroonga を採用した理由のひとつです。 Milkode は gem でインストールするアプリケーションなので、他にインストーラーを立ち上げるようなものが増えると、どんどん敷居が上がってしまうので……。</p>
 
-<p>Rroonga で検索するには事前にテーブルを定義しておく必要があります。以下は Milkode が内部で定義しているテーブルです<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。ひとつのファイルを 1 レコードとして登録しています。全文検索時に転置インデックス格納用のテーブル (terms) を作る必要があるのは少し複雑ですが、それ以外は素直ではないかと思います。</p>
+<p>Rroonga で検索するには事前にテーブルを定義しておく必要があります。以下は Milkode が内部で定義しているテーブルです<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。ひとつのファイルを 1 レコードとして登録しています。全文検索時に転置インデックス格納用のテーブル (terms) を作る必要があるのは少し複雑ですが、それ以外は素直ではないかと思います。</p>
 
 <p><a href="http://kodeworld.ongaeshi.me/home/milkode/lib/milkode/database/document_table.rb?query=%2Fmilkode%2Flib%2Fmilkode%2Fdatabase%2Fdocument_table.rb%3A15&amp;shead=package#n15">/milkode/lib/milkode/database/document_table.rb:15</a></p>
 
@@ -600,7 +612,7 @@ end</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">.CodeRay .highlight-line { background-color: #f5f7f9; }</code></pre></figure>
 
-<p>……長い道のりでしたが<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>なんとかなりました。ここまでやってできたことといえば、検索行がハイライトされる “だけ” です<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。が、やっぱり使う上では大切だったりするのです。</p>
+<p>……長い道のりでしたが<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>なんとかなりました。ここまでやってできたことといえば、検索行がハイライトされる “だけ” です<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。が、やっぱり使う上では大切だったりするのです。</p>
 
 <p>ぱっと見の簡単さ、実装難易度、そして実際の役立ち度には相関性がないことが時折あります。なので作っている最中も「こんなに大変なことわざわざやらなくていいんじゃない？」という誘惑に何度も負けそうになりました。</p>
 
@@ -696,16 +708,16 @@ end</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>お手元で Milkode を使っている人は、 ‘/milkode/lib/milkode/database/document_table.rb:15’ といったテキストを検索ボックスに貼り付けて検索すると目的個所に一発でジャンプできます (ダイレクトジャンプ機能)。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>お手元で Milkode を使っている人は、 ‘/milkode/lib/milkode/database/document_table.rb:15’ といったテキストを検索ボックスに貼り付けて検索すると目的個所に一発でジャンプできます (ダイレクトジャンプ機能)。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>実際 HTML2 クラスで上書きするのは 3 回目位の作戦だった気がします。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>実際 HTML2 クラスで上書きするのは 3 回目位の作戦だった気がします。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>マッチしたキーワードを黄色にしたり、選択行をさらに濃くする方法についてはまた次の機会に……。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>マッチしたキーワードを黄色にしたり、選択行をさらに濃くする方法についてはまた次の機会に……。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

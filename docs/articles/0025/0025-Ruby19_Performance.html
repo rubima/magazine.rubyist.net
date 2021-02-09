@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -201,6 +211,8 @@
                         </div>
                         <div class="post_info">
                             
+
+  <span class="created_on">初稿：2009-02-07</span>
 
 
 
@@ -581,7 +593,7 @@ Ruby などスクリプト言語の処理系では、組み込み関数やメソ
 つまり、MVC モデルにおける V は 1.8.7 のほうが速いが M は 1.9.1 のほうが速い、あるいは、__モデル操作が多い複雑なアプリケーションほど Ruby 1.9.1 のほうが速い__と言えます。</p>
 
 <p>ただし、全体の時間が約 31.5 秒もかかっているのに、そのうち Ruby によって消費された時間はわずか 3.5 秒程度です。
-このことから、全体の実行時間のうちほとんどはデータベースによって消費されていることがわかります<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+このことから、全体の実行時間のうちほとんどはデータベースによって消費されていることがわかります<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <p>この結果を見ると、言語の速度を競うのがいかにばからしいことかと思い知らされます。
 もちろん言語の速度が必要なアプリケーションも数多くあるでしょう。
@@ -589,7 +601,7 @@ Ruby などスクリプト言語の処理系では、組み込み関数やメソ
 
 <p>そして、この傾向は__大規模システムであればあるほど顕著になる__ことに注意してください。
 今回のベンチマークでは__わずか__ 1.5 万件程度のデータしか扱っていませんが、実際の大規模システムではこの 100 倍や 1000 倍あるのは珍しくありません。
-そして、そのようにデータ量が大量になればなるほどボトルネックになるのはデータベースであり<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>、言語処理系の速度はあまり問題にならなくなります<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+そして、そのようにデータ量が大量になればなるほどボトルネックになるのはデータベースであり<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>、言語処理系の速度はあまり問題にならなくなります<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <p>ちなみに、このベンチマークで使ったテーブルと SQL にはボトルネックがあります。
 該当箇所の create table 文と select 文は以下の通りですが、これらのうちどの部分がボトルネックになっているか、みなさんお分かりになるでしょうか。</p>
@@ -653,7 +665,7 @@ Ruby の父が 10 年ぶりに書いた待望の書籍、絶賛発売中！</p>
 
 <p>みなさん、わかりましたでしょうか。
 筆者はデータベースが得意ではないのですが、調べた限りでは blog_entries テーブルにつけたインデックス (blog_entries_user_id) が原因でした。
-このインデックスがついていると、select 文の結果をソートする際に PRIMARY インデックスが使われないため、遅くなるようです<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。
+このインデックスがついていると、select 文の結果をソートする際に PRIMARY インデックスが使われないため、遅くなるようです<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。
 この問題の対策としては、次の 2 つがあります。</p>
 
 <ol>
@@ -685,7 +697,7 @@ ActiveRecord などの O/R マッパーでは use index のような構文をサ
 <p>このように、データベースを使うアプリケーションではデータベース周りこそがボトルネックです。
 そしてこの傾向は、大規模システムになるほど顕著になります。
 Ruby が遅いと文句をいう前に、Ruby による部分が本当にボトルネックになっているかを確認してから、速い言語を求めましょう。
-少なくとも、前述の SQL におけるボトルネックが分からなかったプログラマーや、MySQL を使っていながら use index を知らないようなプログラマーに、言語の速さがどうのこうのという資格はないでしょう<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> 。</p>
+少なくとも、前述の SQL におけるボトルネックが分からなかったプログラマーや、MySQL を使っていながら use index を知らないようなプログラマーに、言語の速さがどうのこうのという資格はないでしょう<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> 。</p>
 
 <h2 id="考察">考察</h2>
 
@@ -698,7 +710,7 @@ Ruby が遅いと文句をいう前に、Ruby による部分が本当にボト�
 
 <p>この主張には、ある重大な前提が隠されています。
 それは、我々が最終的に必要としているのは「アプリケーションの速さ」であって「言語の速さ」ではないということです。
-我々にとっては__「アプリケーションの速さ」こそが目的であり、「言語の速さ」はそのための手段でしかありません__<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+我々にとっては__「アプリケーションの速さ」こそが目的であり、「言語の速さ」はそのための手段でしかありません__<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
 
 <p>勘違いしないでいただきたいのですが、言語処理系の性能に無頓着でいいと主張しているわけではありません。
 言語の性能は大事です。ただ、同じくらい大事な (あるいはそれより大事な) 要因が他にも多くあるという、ごくごく当たり前のことを言っているまでです。</p>
@@ -775,25 +787,25 @@ Ruby が高速化されたおかげで、そういった分野にも Ruby が進
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>これには HTTP パラメータの解析など Web アプリケーションで必要ないくつかの処理が省略されていることに注意してください。実際の Web アプリケーションではこの割合も変わります。ただし、データベースがボトルネックであることは変わらないでしょう。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>これには HTTP パラメータの解析など Web アプリケーションで必要ないくつかの処理が省略されていることに注意してください。実際の Web アプリケーションではこの割合も変わります。ただし、データベースがボトルネックであることは変わらないでしょう。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>またデータベースサーバはスケールアウトしにくいことも、大規模システムでデータベースがボトルネックになる理由のひとつです。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>またデータベースサーバはスケールアウトしにくいことも、大規模システムでデータベースがボトルネックになる理由のひとつです。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>ところが世の中の認識はこれとは逆で、大規模システムほど速い言語が必要という人ばかりです。そのくせ、そういう人ほど SQL のチューニングや O/R マッパーの速度には無頓着だったりします。なんとも不思議な現象です。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>ところが世の中の認識はこれとは逆で、大規模システムほど速い言語が必要という人ばかりです。そのくせ、そういう人ほど SQL のチューニングや O/R マッパーの速度には無頓着だったりします。なんとも不思議な現象です。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>これは MySQL のバージョンに依存する話であり、今回使用した MySQL 5.0.67 ではこのような結果になりましたが、MySQL 5.1 では blog_entries_user_id インデックスを削除しなくても select 文において PRIMARY インデックスが使われました。また MySQL 5.0.27 では逆に PRIMARY インデックスすらも使われなくなったためさらに遅くなりました。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>これは MySQL のバージョンに依存する話であり、今回使用した MySQL 5.0.67 ではこのような結果になりましたが、MySQL 5.1 では blog_entries_user_id インデックスを削除しなくても select 文において PRIMARY インデックスが使われました。また MySQL 5.0.27 では逆に PRIMARY インデックスすらも使われなくなったためさらに遅くなりました。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>まさに筆者のことです。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>まさに筆者のことです。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>ただし世の中には「言語の速さ」自体が目的である場合もあるので、その場合はこの限りではありません。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>ただし世の中には「言語の速さ」自体が目的である場合もあるので、その場合はこの限りではありません。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

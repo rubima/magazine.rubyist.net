@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (特別編) RegionalRubyKaigiKaigi
 short_title: RegionalRubyKaigi レポート (特別編) RegionalRubyKaigiKaigi
-tags: 0027 RegionalRubyKaigiKaigiReport
+created_on: 2009-09-13
+tags: 0027 RegionalRubyKaigiKaigiReport regionalRubyKaigi
 ---
 {% include base.html %}
 

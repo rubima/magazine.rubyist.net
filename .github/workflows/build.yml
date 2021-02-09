@@ -1,0 +1,20 @@
+name: build articles
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.6'
+    - name: bundle install
+      run: bundle install --jobs 4 --retry 3
+    - name: build articles
+      run: bundle exec jekyll build -I
+    - name: check articles
+      run: ruby ./script/checker.rb

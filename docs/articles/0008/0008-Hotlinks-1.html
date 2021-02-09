@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2005-07-19</span>
+
 
 
                         </div>
@@ -251,7 +263,7 @@
 <p><strong>笹田</strong>　それはどういう意味で？</p>
 
 <p><img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/618K90DWMVL._SL160_.jpg" />
-<strong>田中</strong>　どうなんでしょうね。これは作者不詳<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>で、たしか <a href="https://www.amazon.co.jp/PostScript-Language-Program-Design-Systems/dp/0201143968?SubscriptionId=AKIAIXYTNSOEGXJVP5SQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0201143968">‘PostScript の Green Book’</a> の「デバッグテクニック」の章の頭に引用されていたたものなんですけど。まあ普通はそうなんだけど、嘘の事もあるなあと思って。</p>
+<strong>田中</strong>　どうなんでしょうね。これは作者不詳<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>で、たしか <a href="https://www.amazon.co.jp/PostScript-Language-Program-Design-Systems/dp/0201143968?SubscriptionId=AKIAIXYTNSOEGXJVP5SQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=0201143968">‘PostScript の Green Book’</a> の「デバッグテクニック」の章の頭に引用されていたたものなんですけど。まあ普通はそうなんだけど、嘘の事もあるなあと思って。</p>
 
 <p><strong>笹田</strong>　印字するときに文字列はかっちり決まってるっていう意味？</p>
 
@@ -265,7 +277,7 @@
 
 <p><strong>笹田</strong>　尊敬する人は？</p>
 
-<p><strong>田中</strong>　これも困りますが。無難な所で Guy Steele Jr.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> とかどうでしょう。</p>
+<p><strong>田中</strong>　これも困りますが。無難な所で Guy Steele Jr.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> とかどうでしょう。</p>
 
 <p><strong>笹田</strong>　おお普通ですね。どのへん？</p>
 
@@ -295,7 +307,7 @@
 
 <p><strong>笹田</strong>　難しいですねそれは。どっちなんだろう。Zsh だと何になるんですか？</p>
 
-<p><strong>田中</strong>　completion function <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>を沢山書いた。だから cvs とか apt-get でタブを打って出てくるのは、私のコードが動いているに違いない。</p>
+<p><strong>田中</strong>　completion function <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>を沢山書いた。だから cvs とか apt-get でタブを打って出てくるのは、私のコードが動いているに違いない。</p>
 
 <p><strong>笹田</strong>　へー。なるほど。</p>
 
@@ -317,13 +329,13 @@
 
 <p><strong>笹田</strong>　好きなメソッドは？</p>
 
-<p><strong>田中</strong>　それは前に聞かれた時<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>から変わってないんですが、好きなのは <a href="ruby-man:Regexp#to_s">Regexp#to_s</a> かな。最初に聞かれたときは、よく思いつかなくて <a href="http://pub.cozmixng.org/~the-rwiki/rw-cgi.rb?cmd=view;name=%B7%D1%C2%B3">callcc</a> にしたんだっけ。</p>
+<p><strong>田中</strong>　それは前に聞かれた時<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>から変わってないんですが、好きなのは <a href="ruby-man:Regexp#to_s">Regexp#to_s</a> かな。最初に聞かれたときは、よく思いつかなくて <a href="http://pub.cozmixng.org/~the-rwiki/rw-cgi.rb?cmd=view;name=%B7%D1%C2%B3">callcc</a> にしたんだっけ。</p>
 
 <p><strong>笹田</strong>　なぜ Regexp#to_s が好きなんですか。</p>
 
 <p><strong>田中</strong>　まぁ、自分で提案して自分で実装したというのがひとつですが、それだけなら他にもあるか。これがとくにという理由は、宣伝してないのに良く使われていて、しかも暗黙に呼ばれて表に出ないってところかな。re.to_s は /xxx#{re}xxx/ みたいなときに呼ばれて、普通のユーザは to_s を書かないんで。</p>
 
-<p>あとは、regexp<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> の埋め込みを実現する方法としては正しくないってところも面白いですね。やっぱり文字列化して展開してパーズし直すってのは間違っているでしょう。埋め込みを正しくやるんなら、木構造のレベルでやるべきでしょう。でも、正しくなくてもみんな気がつかないというのが面白い。</p>
+<p>あとは、regexp<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> の埋め込みを実現する方法としては正しくないってところも面白いですね。やっぱり文字列化して展開してパーズし直すってのは間違っているでしょう。埋め込みを正しくやるんなら、木構造のレベルでやるべきでしょう。でも、正しくなくてもみんな気がつかないというのが面白い。</p>
 
 <p><strong>笹田</strong>　嫌いなのは？</p>
 
@@ -341,7 +353,7 @@
 
 <p><strong>田中</strong>　あるいは今だと何かな。うむ、嫌いというほどではないですが、iterator の中での retry とか。</p>
 
-<p><strong>笹田</strong>　なるほど。たしかに嫌ですね<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。なしにしましょう。あれ。</p>
+<p><strong>笹田</strong>　なるほど。たしかに嫌ですね<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。なしにしましょう。あれ。</p>
 
 <p><strong>田中</strong>　うむ。なしにするのがいいと思うな。だれも使ってないと思うし。</p>
 
@@ -368,7 +380,7 @@ end</code></pre></figure>
 
 <p><strong>田中</strong>　バグなの？</p>
 
-<p><strong>笹田</strong>　うん。だから直すって言ってましたよ<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</p>
+<p><strong>笹田</strong>　うん。だから直すって言ってましたよ<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。</p>
 
 <p><strong>田中</strong>　直すかわりに消したほうがいいと思うんだけど。</p>
 
@@ -388,7 +400,7 @@ end</code></pre></figure>
 
 <p><strong>笹田</strong>　じゃあまあ、そんな感じですかね。嫌いなメソッドは。</p>
 
-<p><strong>田中</strong>　ああ <a href="ruby-man:Values">Values</a><sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup> が嫌いだな。クラスだけど。</p>
+<p><strong>田中</strong>　ああ <a href="ruby-man:Values">Values</a><sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup> が嫌いだな。クラスだけど。</p>
 
 <p><strong>笹田</strong>　なきゃ困るでしょう。</p>
 
@@ -534,7 +546,7 @@ end</code></pre></figure>
 
 <p>で ruby では閏秒を付けている場合には、閏秒も含めた厳密な逆変換をしてますが。</p>
 
-<p><strong>笹田</strong>　なるほど<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>。</p>
+<p><strong>笹田</strong>　なるほど<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>。</p>
 
 <p><strong>田中</strong>　でも役に立つ事はあんまりないですね。ってゆーかそれを嬉しいっていわれた事もないな (笑)</p>
 
@@ -542,7 +554,7 @@ end</code></pre></figure>
 
 <p><strong>田中</strong>　あー。timegm(3) があれば、それは使います。</p>
 
-<p>たぶん tzcode や glibc 内部で実装しているのは難しくないんじゃないかな。time zone の情報は zoneinfo っていうやつのなかに入ってますが、localtime(3) とかはそのデータを読んで変換しているわけです。そのデータを参照できるんなら逆変換を実装するのも別に難しくはないはずです。<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup></p>
+<p>たぶん tzcode や glibc 内部で実装しているのは難しくないんじゃないかな。time zone の情報は zoneinfo っていうやつのなかに入ってますが、localtime(3) とかはそのデータを読んで変換しているわけです。そのデータを参照できるんなら逆変換を実装するのも別に難しくはないはずです。<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup></p>
 
 <p><strong>笹田</strong>　はあ。なるほど。システムが持っている情報を使うから楽っていう。</p>
 
@@ -570,7 +582,7 @@ end</code></pre></figure>
 
 <p><strong>笹田</strong>　バグレポートって ruby-dev に投げるの？</p>
 
-<p><strong>田中</strong>　最近は ruby-dev が多いですよね。以前は、今は亡き Ruby の BTS<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>に投げてましたが。基本的には修正するであろう人が読んでいるところに出しています。</p>
+<p><strong>田中</strong>　最近は ruby-dev が多いですよね。以前は、今は亡き Ruby の BTS<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>に投げてましたが。基本的には修正するであろう人が読んでいるところに出しています。</p>
 
 <p><strong>笹田</strong>　なるほど。まあバグ出し屋さんということで。</p>
 
@@ -580,7 +592,7 @@ end</code></pre></figure>
 
 <p><strong>田中</strong>　日本語とか。</p>
 
-<p><strong>笹田</strong>　いやまあそっち<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>じゃなくて。</p>
+<p><strong>笹田</strong>　いやまあそっち<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>じゃなくて。</p>
 
 <p><strong>田中</strong>　えー。プログラムはまあそうですね、C と Ruby を使えば、まだいたい済むかなぁ。</p>
 
@@ -863,7 +875,7 @@ end</code></pre></figure>
 
 <p><strong>田中</strong>　だって困るじゃん、アプリケーションでどこの時点でも、例外が発生したり止まったしちゃうんじゃ困るじゃないですか。</p>
 
-<p><strong>笹田</strong>　どうなんでしょうね。フラグを作る？<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup> スレッドごとに。</p>
+<p><strong>笹田</strong>　どうなんでしょうね。フラグを作る？<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote">13</a></sup> スレッドごとに。</p>
 
 <p><strong>田中</strong>　フラグはまさに C の問題がそのまま残っちゃうでしょう。ブロックする操作の直前にセットされたら検査できないし。ま、そういうことを考えていたりもする。だから、そのために先人の知恵ということで pthread を調べたいなと。pthread のプログラムをまじめに書いたことがなくて、まあやってみるのもいいかと。</p>
 
@@ -899,7 +911,7 @@ end</code></pre></figure>
 
 <p><strong>笹田</strong>　他に何か使ってますか？</p>
 
-<p><strong>田中</strong>　他にですか。細かいものはもちろん使ってますが、メモを書くとか。自作のツールはいろいろとありますが、たとえば Wiki のデータを取ってくるとか<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>。</p>
+<p><strong>田中</strong>　他にですか。細かいものはもちろん使ってますが、メモを書くとか。自作のツールはいろいろとありますが、たとえば Wiki のデータを取ってくるとか<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote">14</a></sup>。</p>
 
 <p><strong>笹田</strong>　あーはいはいはい。</p>
 
@@ -963,7 +975,7 @@ end</code></pre></figure>
 
 <p><strong>田中</strong>　過不足なく記述されているというのが一番大きいかな。あるいは仕様の点からも本質的にエラーが起こらないとか。そういうの美しいと感じることはあります。</p>
 
-<p>そういう意味では江渡さんの感覚<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>とは違うかもしれませんが、Scheme の append が美しいと言った和田先生<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>の意見は、まあそれなりに同意できなくもない。それに対して Scheme でいえば、append とかはいいんだけど、last とかあんまり好きではないですね。標準じゃないけど。last というのはリストの最後の要素を取り出すんですけども、空リストに対して定義できないじゃないですか。だからあんまり美しいとは思わない。</p>
+<p>そういう意味では江渡さんの感覚<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote">15</a></sup>とは違うかもしれませんが、Scheme の append が美しいと言った和田先生<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote">16</a></sup>の意見は、まあそれなりに同意できなくもない。それに対して Scheme でいえば、append とかはいいんだけど、last とかあんまり好きではないですね。標準じゃないけど。last というのはリストの最後の要素を取り出すんですけども、空リストに対して定義できないじゃないですか。だからあんまり美しいとは思わない。</p>
 
 <p>でもそういえばそれに対して car はあんまり気にならないのはなぜでしょうね。プリミティブだからかな。</p>
 
@@ -974,55 +986,55 @@ end</code></pre></figure>
 <hr />
 <p>[ 1 | <a href="../../articles/0008/0008-Hotlinks-2.html">2</a> | <a href="../../articles/0008/0008-Hotlinks-3.html">3</a> ]</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>/usr/games/fortune が出典とされている <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>/usr/games/fortune が出典とされている <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>Guy L. Steele Jr., 現 Sun Microsystems, Inc. Scheme の作者の一人、CLTL などの著者 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>Guy L. Steele Jr., 現 Sun Microsystems, Inc. Scheme の作者の一人、CLTL などの著者 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>コマンドライン引数などを補完する関数 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>コマンドライン引数などを補完する関数 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>好きなメソッド: 読書会や飲み会、自己紹介の定番ネタ。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>好きなメソッド: 読書会や飲み会、自己紹介の定番ネタ。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>regexp: regular expression, 正規表現のこと <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>regexp: regular expression, 正規表現のこと <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>retry: 田中さんは言語デザインという観点から言っていて、ささだは実装の観点からやりづらい (高速化しづらい) から無しにしようと言っている <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>retry: 田中さんは言語デザインという観点から言っていて、ささだは実装の観点からやりづらい (高速化しづらい) から無しにしようと言っている <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>誰が? <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>誰が? <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>Values: 現在の処理系で多値を実現するためのクラス <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>Values: 現在の処理系で多値を実現するためのクラス <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>なるほど: ささだは結局よくわかってない <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>なるほど: ささだは結局よくわかってない <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>zoneinfo: Ruby がこの仕組みを採用していないのは、Windows ではさっぱり使えないからだと思われる <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>zoneinfo: Ruby がこの仕組みを採用していないのは、Windows ではさっぱり使えないからだと思われる <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>BTS: 例のクラック事件以降 JitterBug は停止して rubyforge.org を利用するようになった <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>BTS: 例のクラック事件以降 JitterBug は停止して rubyforge.org を利用するようになった <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:12">
-      <p>そっち: どっちだ <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:12" role="doc-endnote">
+      <p>そっち: どっちだ <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:13">
-      <p>フラグ: trap が行うのはそのフラグを操作するだけで、プログラム側で明示的にそのフラグをセンスするようなプログラムにするという意味 <a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:13" role="doc-endnote">
+      <p>フラグ: trap が行うのはそのフラグを操作するだけで、プログラム側で明示的にそのフラグをセンスするようなプログラムにするという意味 <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:14">
-      <p>自作ツール: wikisuck <a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:14" role="doc-endnote">
+      <p>自作ツール: wikisuck <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:15">
-      <p>美しさに関する江渡さんの感覚: 前々回の江渡さんのインタビュー参照 <a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:15" role="doc-endnote">
+      <p>美しさに関する江渡さんの感覚: 前々回の江渡さんのインタビュー参照 <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:16">
-      <p>和田英一氏 現東京大学名誉教授。国内の伝説的ハッカー <a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:16" role="doc-endnote">
+      <p>和田英一氏 現東京大学名誉教授。国内の伝説的ハッカー <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

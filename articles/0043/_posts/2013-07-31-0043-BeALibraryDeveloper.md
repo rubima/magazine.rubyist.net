@@ -2,6 +2,7 @@
 layout: post
 title: ライブラリー開発者になろう
 short_title: ライブラリー開発者になろう
+created_on: 2013-07-31
 tags: 0043 BeALibraryDeveloper
 ---
 {% include base.html %}

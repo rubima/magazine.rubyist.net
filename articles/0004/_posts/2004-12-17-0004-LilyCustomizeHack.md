@@ -2,6 +2,7 @@
 layout: post
 title: lily でブログカスタマイズ 【第 2 回】
 short_title: lily でブログカスタマイズ 【第 2 回】
+created_on: 2004-12-17
 tags: 0004 LilyCustomizeHack
 ---
 {% include base.html %}

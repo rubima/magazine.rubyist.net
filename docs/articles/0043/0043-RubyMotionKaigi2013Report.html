@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2013-07-31</span>
+
 
 
                         </div>
@@ -296,11 +308,11 @@
 
 <p><em>Project Template</em></p>
 
-<p>ユーザーが独自のテンプレートを作れる機能です。よく使う gem をあらかじめ Gemfile に書いておいたり、app_delegate.rb で <code class="highlighter-rouge">@window</code> をインスタンス化するようなお決まりのコードをテンプレート化しておけます。</p>
+<p>ユーザーが独自のテンプレートを作れる機能です。よく使う gem をあらかじめ Gemfile に書いておいたり、app_delegate.rb で <code class="language-plaintext highlighter-rouge">@window</code> をインスタンス化するようなお決まりのコードをテンプレート化しておけます。</p>
 
 <p><em>Command-Line Plugin</em></p>
 
-<p>ユーザー独自のサブコマンドを <code class="highlighter-rouge">motion</code> コマンドに追加できる機能です。@watson1978 さんがサンプルで作った <a href="https://github.com/Watson1978/motion-doc">motion-doc</a> コマンドの紹介がありました。</p>
+<p>ユーザー独自のサブコマンドを <code class="language-plaintext highlighter-rouge">motion</code> コマンドに追加できる機能です。@watson1978 さんがサンプルで作った <a href="https://github.com/Watson1978/motion-doc">motion-doc</a> コマンドの紹介がありました。</p>
 
 <p><em>Common Build Directory</em></p>
 
@@ -308,7 +320,7 @@
 
 <p><em>Weak Reference</em></p>
 
-<p>弱参照をサポートする機能です。RubyMotion には ARC 同様のリファレンスカウンタによる GC が実装されています。オブジェクトを代入する際には自動的にリファレンスカウンタが上がるようになっているのですが、この <code class="highlighter-rouge">WeakRef</code> を使用することで、リファレンスカウンタを上げずにオブジェクトを参照することが出来ます。</p>
+<p>弱参照をサポートする機能です。RubyMotion には ARC 同様のリファレンスカウンタによる GC が実装されています。オブジェクトを代入する際には自動的にリファレンスカウンタが上がるようになっているのですが、この <code class="language-plaintext highlighter-rouge">WeakRef</code> を使用することで、リファレンスカウンタを上げずにオブジェクトを参照することが出来ます。</p>
 
 <h5 id="実践-rubymotion-naoya_ito-さん">実践 RubyMotion: @naoya_ito さん</h5>
 
@@ -320,7 +332,7 @@
 
 <p>つまり Objective-C の代わりに言語を Ruby を使用しているだけであって、フレームワークは Cocoa Touch を使用しているのでフレームワークについての知識は必要になる (学ぶ必要がある) とのことです。</p>
 
-<p>続いて、RubyMotion における <code class="highlighter-rouge">Object</code> クラスは <code class="highlighter-rouge">NSObject</code> クラスを継承している作りとなっているため、Cocoa (Touch) の API がそのまま呼べることについての説明がありました。</p>
+<p>続いて、RubyMotion における <code class="language-plaintext highlighter-rouge">Object</code> クラスは <code class="language-plaintext highlighter-rouge">NSObject</code> クラスを継承している作りとなっているため、Cocoa (Touch) の API がそのまま呼べることについての説明がありました。</p>
 
 <p>次に並列処理についてですが、GCD を使うことによって以下のコード例のように Ruby らしく書くことが出来ます。</p>
 

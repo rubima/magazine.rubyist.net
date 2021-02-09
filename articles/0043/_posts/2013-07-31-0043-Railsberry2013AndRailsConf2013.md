@@ -2,6 +2,7 @@
 layout: post
 title: Railsberry 2013 And RailsConf 2013
 short_title: Railsberry 2013 And RailsConf 2013
+created_on: 2013-07-31
 tags: 0043 Railsberry2013AndRailsConf2013
 ---
 {% include base.html %}

@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2013-05-29</span>
+
 
 
                         </div>
@@ -210,7 +222,7 @@
 
 <h2 id="クックパッドを-ruby-200-に対応させた話">クックパッドを Ruby 2.0.0 に対応させた話</h2>
 
-<p>Ruby 2.0.0-p0 がリリースされて2ヶ月ちょっと経過してます。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>この新しい Ruby を皆さんはもう使っているでしょうか。</p>
+<p>Ruby 2.0.0-p0 がリリースされて2ヶ月ちょっと経過してます。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>この新しい Ruby を皆さんはもう使っているでしょうか。</p>
 
 <p>先日クックパッドが本番環境で使用する Ruby が 2.0.0-p0 にアップグレードされました。アップグレード作業を担当したのは著者です。本稿では、この移行作業で得られた知識を皆さんに紹介します。</p>
 
@@ -229,29 +241,29 @@
         </ul>
       </li>
       <li><a href="#消された機能" id="markdown-toc-消された機能">消された機能</a>        <ul>
-          <li><a href="#next-でメソッドから抜けられない" id="markdown-toc-next-でメソッドから抜けられない"><code class="highlighter-rouge">next</code> でメソッドから抜けられない</a></li>
-          <li><a href="#symbolto_int-が消えたイイ話" id="markdown-toc-symbolto_int-が消えたイイ話"><code class="highlighter-rouge">Symbol#to_int</code> が消えたイイ話</a></li>
-          <li><a href="#enumerableenum_with_index" id="markdown-toc-enumerableenum_with_index"><code class="highlighter-rouge">Enumerable#enum_with_index</code></a></li>
-          <li><a href="#time--timeinclude-time" id="markdown-toc-time--timeinclude-time"><code class="highlighter-rouge">(time .. time).include? time</code></a></li>
-          <li><a href="#datestep-と-activesupportduration" id="markdown-toc-datestep-と-activesupportduration"><code class="highlighter-rouge">Date#step</code> と <code class="highlighter-rouge">ActiveSupport::Duration</code></a></li>
+          <li><a href="#next-でメソッドから抜けられない" id="markdown-toc-next-でメソッドから抜けられない"><code class="language-plaintext highlighter-rouge">next</code> でメソッドから抜けられない</a></li>
+          <li><a href="#symbolto_int-が消えたイイ話" id="markdown-toc-symbolto_int-が消えたイイ話"><code class="language-plaintext highlighter-rouge">Symbol#to_int</code> が消えたイイ話</a></li>
+          <li><a href="#enumerableenum_with_index" id="markdown-toc-enumerableenum_with_index"><code class="language-plaintext highlighter-rouge">Enumerable#enum_with_index</code></a></li>
+          <li><a href="#time--timeinclude-time" id="markdown-toc-time--timeinclude-time"><code class="language-plaintext highlighter-rouge">(time .. time).include? time</code></a></li>
+          <li><a href="#datestep-と-activesupportduration" id="markdown-toc-datestep-と-activesupportduration"><code class="language-plaintext highlighter-rouge">Date#step</code> と <code class="language-plaintext highlighter-rouge">ActiveSupport::Duration</code></a></li>
         </ul>
       </li>
       <li><a href="#意味が変わったもの" id="markdown-toc-意味が変わったもの">意味が変わったもの</a>        <ul>
-          <li><a href="#lambda-で生成される-proc-オブジェクトの引数マッチング" id="markdown-toc-lambda-で生成される-proc-オブジェクトの引数マッチング"><code class="highlighter-rouge">lambda</code> で生成される Proc オブジェクトの引数マッチング</a></li>
+          <li><a href="#lambda-で生成される-proc-オブジェクトの引数マッチング" id="markdown-toc-lambda-で生成される-proc-オブジェクトの引数マッチング"><code class="language-plaintext highlighter-rouge">lambda</code> で生成される Proc オブジェクトの引数マッチング</a></li>
           <li><a href="#多重代入" id="markdown-toc-多重代入">多重代入</a></li>
           <li><a href="#正規表現の非互換性" id="markdown-toc-正規表現の非互換性">正規表現の非互換性</a></li>
-          <li><a href="#activerecord-と-nilid" id="markdown-toc-activerecord-と-nilid">ActiveRecord と <code class="highlighter-rouge">nil.id</code></a></li>
+          <li><a href="#activerecord-と-nilid" id="markdown-toc-activerecord-と-nilid">ActiveRecord と <code class="language-plaintext highlighter-rouge">nil.id</code></a></li>
           <li><a href="#新ハッシュ記法" id="markdown-toc-新ハッシュ記法">新ハッシュ記法</a></li>
         </ul>
       </li>
       <li><a href="#文字エンコーディング関係" id="markdown-toc-文字エンコーディング関係">文字エンコーディング関係</a>        <ul>
-          <li><a href="#tempfile-のオープンモード" id="markdown-toc-tempfile-のオープンモード"><code class="highlighter-rouge">Tempfile</code> のオープンモード</a></li>
+          <li><a href="#tempfile-のオープンモード" id="markdown-toc-tempfile-のオープンモード"><code class="language-plaintext highlighter-rouge">Tempfile</code> のオープンモード</a></li>
           <li><a href="#nkf-kconv-jcode-iconv" id="markdown-toc-nkf-kconv-jcode-iconv">nkf, kconv, jcode, iconv</a></li>
-          <li><a href="#独自の-stringblank" id="markdown-toc-独自の-stringblank">独自の <code class="highlighter-rouge">String#blank?</code></a></li>
+          <li><a href="#独自の-stringblank" id="markdown-toc-独自の-stringblank">独自の <code class="language-plaintext highlighter-rouge">String#blank?</code></a></li>
         </ul>
       </li>
       <li><a href="#200-への移行" id="markdown-toc-200-への移行">2.0.0 への移行</a>        <ul>
-          <li><a href="#objectinitialize_clone-と-objectinitialize_dup-がプライベートメソッドになった" id="markdown-toc-objectinitialize_clone-と-objectinitialize_dup-がプライベートメソッドになった"><code class="highlighter-rouge">Object#initialize_clone</code> と <code class="highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになった</a></li>
+          <li><a href="#objectinitialize_clone-と-objectinitialize_dup-がプライベートメソッドになった" id="markdown-toc-objectinitialize_clone-と-objectinitialize_dup-がプライベートメソッドになった"><code class="language-plaintext highlighter-rouge">Object#initialize_clone</code> と <code class="language-plaintext highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになった</a></li>
           <li><a href="#スレッド周辺の非互換性" id="markdown-toc-スレッド周辺の非互換性">スレッド周辺の非互換性</a></li>
           <li><a href="#rubygems-のバグ" id="markdown-toc-rubygems-のバグ">rubygems のバグ</a></li>
         </ul>
@@ -335,11 +347,11 @@
 
 </code></pre></div></div>
 
-<p>このスクリプトは pwd 以下にある拡張子が <code class="highlighter-rouge">.rb</code> のファイルを対象にマジックコメントが必要だったら <code class="highlighter-rouge"># coding: utf-8</code> をファイルの先頭に挿入します。コマンドラインで <code class="highlighter-rouge">--pre-commit</code> オプションを指定すると git add されたファイルのみを対象にマジックコメントを挿入するようになっています。git の pre-commit フックから呼び出すときに便利です。</p>
+<p>このスクリプトは pwd 以下にある拡張子が <code class="language-plaintext highlighter-rouge">.rb</code> のファイルを対象にマジックコメントが必要だったら <code class="language-plaintext highlighter-rouge"># coding: utf-8</code> をファイルの先頭に挿入します。コマンドラインで <code class="language-plaintext highlighter-rouge">--pre-commit</code> オプションを指定すると git add されたファイルのみを対象にマジックコメントを挿入するようになっています。git の pre-commit フックから呼び出すときに便利です。</p>
 
 <h4 id="then-や-do-の代わりのコロン">then や do の代わりのコロン</h4>
 
-<p>Ruby 1.8 までは、以下に示すように、<code class="highlighter-rouge">if</code> や <code class="highlighter-rouge">while</code> の条件の後ろにコロン (<code class="highlighter-rouge">:</code>) を置く記法が許されていました:</p>
+<p>Ruby 1.8 までは、以下に示すように、<code class="language-plaintext highlighter-rouge">if</code> や <code class="language-plaintext highlighter-rouge">while</code> の条件の後ろにコロン (<code class="language-plaintext highlighter-rouge">:</code>) を置く記法が許されていました:</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">y</span> <span class="o">=</span> <span class="n">y0</span>
 <span class="k">while</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="ss">height:
@@ -384,35 +396,35 @@
 
 <p>本セクションでは Ruby 1.9 になって削除された機能をまとめました。</p>
 
-<h4 id="next-でメソッドから抜けられない"><code class="highlighter-rouge">next</code> でメソッドから抜けられない</h4>
+<h4 id="next-でメソッドから抜けられない"><code class="language-plaintext highlighter-rouge">next</code> でメソッドから抜けられない</h4>
 
-<p>1.8 までは、<code class="highlighter-rouge">return</code> だけでなく、<code class="highlighter-rouge">next</code> でもメソッドを抜けることができました。</p>
+<p>1.8 までは、<code class="language-plaintext highlighter-rouge">return</code> だけでなく、<code class="language-plaintext highlighter-rouge">next</code> でもメソッドを抜けることができました。</p>
 
 <p>クックパッドでは <a href="http://cookpad.github.io/chanko/">Chanko</a> を使って新機能の開発を実施しているため、開発中の多くの機能が Proc クラスのインスタンスで提供されています。それらの新機能は、アプリケーションのメインコードへ結合されるときに、コントローラのアクションや、ヘルパのメソッドへと置換されます。</p>
 
-<p>その際、<code class="highlighter-rouge">next</code> を <code class="highlighter-rouge">return</code> に書き換えるのを忘れてしまうことがあるらしく、いくつかのメソッドが <code class="highlighter-rouge">next</code> でメソッドを抜けるように作られていました。</p>
+<p>その際、<code class="language-plaintext highlighter-rouge">next</code> を <code class="language-plaintext highlighter-rouge">return</code> に書き換えるのを忘れてしまうことがあるらしく、いくつかのメソッドが <code class="language-plaintext highlighter-rouge">next</code> でメソッドを抜けるように作られていました。</p>
 
-<p>この問題は、<code class="highlighter-rouge">Invalid next</code> エラーが出るため、コードを実行するとすぐに気付けます。</p>
+<p>この問題は、<code class="language-plaintext highlighter-rouge">Invalid next</code> エラーが出るため、コードを実行するとすぐに気付けます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">  $ ruby -e 'def foo; next; end; foo'
   -e:1: Invalid next
   -e: compile error (SyntaxError)</code></pre></figure>
 
-<p>私は、この <code class="highlighter-rouge">Invalid next</code> を見つけるたびに手で置き換えることで対策しました。</p>
+<p>私は、この <code class="language-plaintext highlighter-rouge">Invalid next</code> を見つけるたびに手で置き換えることで対策しました。</p>
 
-<h4 id="symbolto_int-が消えたイイ話"><code class="highlighter-rouge">Symbol#to_int</code> が消えたイイ話</h4>
+<h4 id="symbolto_int-が消えたイイ話"><code class="language-plaintext highlighter-rouge">Symbol#to_int</code> が消えたイイ話</h4>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> hash[:symbol]</code></pre></figure>
 
-<p>このコードは、<code class="highlighter-rouge">hash</code> に <code class="highlighter-rouge">:symbol</code> がキーとして含まれていればそれに対応する値を、そうでなければ <code class="highlighter-rouge">nil</code> を結果とします。</p>
+<p>このコードは、<code class="language-plaintext highlighter-rouge">hash</code> に <code class="language-plaintext highlighter-rouge">:symbol</code> がキーとして含まれていればそれに対応する値を、そうでなければ <code class="language-plaintext highlighter-rouge">nil</code> を結果とします。</p>
 
 <p>本当にそうでしょうか？</p>
 
-<p>このコードがそのような振る舞いを示すためには、<code class="highlighter-rouge">hash</code> が <code class="highlighter-rouge">Hash</code> クラスのインスタンスであるか、それ相当の振る舞いを示すオブジェクトである必要があります。</p>
+<p>このコードがそのような振る舞いを示すためには、<code class="language-plaintext highlighter-rouge">hash</code> が <code class="language-plaintext highlighter-rouge">Hash</code> クラスのインスタンスであるか、それ相当の振る舞いを示すオブジェクトである必要があります。</p>
 
-<p>もし <code class="highlighter-rouge">hash</code> が配列や文字列など、整数インデックスだけを受け付けるオブジェクトだったら……そのような場合であっても、Ruby 1.8 ではエラーが起きずに動いてしまいます！　その理由は <code class="highlighter-rouge">Symbol#to_int</code> が存在するからです。</p>
+<p>もし <code class="language-plaintext highlighter-rouge">hash</code> が配列や文字列など、整数インデックスだけを受け付けるオブジェクトだったら……そのような場合であっても、Ruby 1.8 ではエラーが起きずに動いてしまいます！　その理由は <code class="language-plaintext highlighter-rouge">Symbol#to_int</code> が存在するからです。</p>
 
-<p>Ruby 1.9 では、<code class="highlighter-rouge">Symbol#to_int</code> が削除されています。そのため <code class="highlighter-rouge">hash</code> が配列や文字列である場合に上記のコードはかならずエラーを発生させます。</p>
+<p>Ruby 1.9 では、<code class="language-plaintext highlighter-rouge">Symbol#to_int</code> が削除されています。そのため <code class="language-plaintext highlighter-rouge">hash</code> が配列や文字列である場合に上記のコードはかならずエラーを発生させます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ruby -e '"str"[:sym]'
  -e:1:in `[]': no implicit conversion of Symbol into Integer (TypeError)
@@ -420,13 +432,13 @@
 
 <p>これはとても良い話です。私はこの仕様変更のおかげで、この移行作業中にテストで発見できなかったバグを見つけて修正しています。バグを生みやすい仕様が是正されることはとても歓迎できる仕様変更だと思います。</p>
 
-<h4 id="enumerableenum_with_index"><code class="highlighter-rouge">Enumerable#enum_with_index</code></h4>
+<h4 id="enumerableenum_with_index"><code class="language-plaintext highlighter-rouge">Enumerable#enum_with_index</code></h4>
 
-<p>1.8 では、<code class="highlighter-rouge">each_with_index</code> と同じ働きをする <code class="highlighter-rouge">enum_with_index</code> がありました。これを使っていると <code class="highlighter-rouge">NoMethodError</code> が発生するので、その例外を見つけるたびに置き換える方法もあります。しかし、私はその方法はとらず、<code class="highlighter-rouge">enum_with_index</code> を <code class="highlighter-rouge">git grep</code> コマンドで検索し、発見された行を機械的に置き換える方法で解決しました。メソッド名が独特だからできる技だと思います。</p>
+<p>1.8 では、<code class="language-plaintext highlighter-rouge">each_with_index</code> と同じ働きをする <code class="language-plaintext highlighter-rouge">enum_with_index</code> がありました。これを使っていると <code class="language-plaintext highlighter-rouge">NoMethodError</code> が発生するので、その例外を見つけるたびに置き換える方法もあります。しかし、私はその方法はとらず、<code class="language-plaintext highlighter-rouge">enum_with_index</code> を <code class="language-plaintext highlighter-rouge">git grep</code> コマンドで検索し、発見された行を機械的に置き換える方法で解決しました。メソッド名が独特だからできる技だと思います。</p>
 
-<h4 id="time--timeinclude-time"><code class="highlighter-rouge">(time .. time).include? time</code></h4>
+<h4 id="time--timeinclude-time"><code class="language-plaintext highlighter-rouge">(time .. time).include? time</code></h4>
 
-<p>1.9 から <code class="highlighter-rouge">Time#succ</code> が廃止されたことで、両端が Time オブジェクトの Range に対して <code class="highlighter-rouge">Range#include?</code> を使って包含関係を調べられなくなりました。これは、<code class="highlighter-rouge">Range#cover?</code> を使うよう変更することで対処できます。</p>
+<p>1.9 から <code class="language-plaintext highlighter-rouge">Time#succ</code> が廃止されたことで、両端が Time オブジェクトの Range に対して <code class="language-plaintext highlighter-rouge">Range#include?</code> を使って包含関係を調べられなくなりました。これは、<code class="language-plaintext highlighter-rouge">Range#cover?</code> を使うよう変更することで対処できます。</p>
 
 <p>この問題に対しては、Ruby Enterprise Edition の場合に以下のような monkey patch を使って警告を出す事で、使用箇所の発見だけでなく、サービス開発者によって新たな使用箇所が追加されることを防ぎました。</p>
 
@@ -458,7 +470,7 @@
 
 </code></pre></div></div>
 
-<h4 id="datestep-と-activesupportduration"><code class="highlighter-rouge">Date#step</code> と <code class="highlighter-rouge">ActiveSupport::Duration</code></h4>
+<h4 id="datestep-と-activesupportduration"><code class="language-plaintext highlighter-rouge">Date#step</code> と <code class="language-plaintext highlighter-rouge">ActiveSupport::Duration</code></h4>
 
 <p>1.9 から date ライブラリが拡張ライブラリにかわりました。その過程で、Date#step は第2引数に Numeric だけを受け付けるようになりました。そのため、1週間単位の繰り返しを以下のように書けなくなりました。</p>
 
@@ -489,9 +501,9 @@
 
 <p>本セクションでは Ruby 1.9 になって意味が変化したものをまとめました。</p>
 
-<h4 id="lambda-で生成される-proc-オブジェクトの引数マッチング"><code class="highlighter-rouge">lambda</code> で生成される Proc オブジェクトの引数マッチング</h4>
+<h4 id="lambda-で生成される-proc-オブジェクトの引数マッチング"><code class="language-plaintext highlighter-rouge">lambda</code> で生成される Proc オブジェクトの引数マッチング</h4>
 
-<p><code class="highlighter-rouge">lambda</code> で作った Proc オブジェクトの引数マッチングが、メソッドの引数マッチングと同じルールに変更されました。そのため、これまで動いていた以下のコードが動かなくなりました。</p>
+<p><code class="language-plaintext highlighter-rouge">lambda</code> で作った Proc オブジェクトの引数マッチングが、メソッドの引数マッチングと同じルールに変更されました。そのため、これまで動いていた以下のコードが動かなくなりました。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> lambda { }.call(1)</code></pre></figure>
 
@@ -504,7 +516,7 @@
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> a = *[1]
  p a</code></pre></figure>
 
-<p>Ruby 1.8 では <code class="highlighter-rouge">1</code> が表示されるのに対して、Ruby 1.9 では <code class="highlighter-rouge">[1]</code> が表示されます。多重代入のルールが変わったためです。以下のようにカンマを付けることで同じ挙動にできます。</p>
+<p>Ruby 1.8 では <code class="language-plaintext highlighter-rouge">1</code> が表示されるのに対して、Ruby 1.9 では <code class="language-plaintext highlighter-rouge">[1]</code> が表示されます。多重代入のルールが変わったためです。以下のようにカンマを付けることで同じ挙動にできます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> a, = *[1]
  p a</code></pre></figure>
@@ -515,9 +527,9 @@
 
 <p>これはとても良い改善ですが、同時に非互換性が導入され、同じ正規表現が Ruby 1.8 と 1.9 で意味が異なってしまう場合も出ています。</p>
 
-<p>最も大きな影響がありそうな仕様変更が単語構成文字クラスを表す <code class="highlighter-rouge">\w</code> とその否定形の <code class="highlighter-rouge">\W</code> でしょう。この2つの文字クラスの構成文字種は、Ruby 1.8 までは <code class="highlighter-rouge">$KCODE</code> の値によって変化していました。<code class="highlighter-rouge">$KCODE</code> が <code class="highlighter-rouge">none</code> である場合、単語構成文字は ASCII の範囲に限られ、アルファベットと数字とアンスコ (<code class="highlighter-rouge">_</code>) でした。<code class="highlighter-rouge">$KCODE</code> が <code class="highlighter-rouge">utf8</code> などマルチバイト文字エンコーディングを意味する値の場合は、ASCII の範囲外の文字も単語構成文字に含まれます。たとえば、ひらがな、カタカナ、漢字などです。</p>
+<p>最も大きな影響がありそうな仕様変更が単語構成文字クラスを表す <code class="language-plaintext highlighter-rouge">\w</code> とその否定形の <code class="language-plaintext highlighter-rouge">\W</code> でしょう。この2つの文字クラスの構成文字種は、Ruby 1.8 までは <code class="language-plaintext highlighter-rouge">$KCODE</code> の値によって変化していました。<code class="language-plaintext highlighter-rouge">$KCODE</code> が <code class="language-plaintext highlighter-rouge">none</code> である場合、単語構成文字は ASCII の範囲に限られ、アルファベットと数字とアンスコ (<code class="language-plaintext highlighter-rouge">_</code>) でした。<code class="language-plaintext highlighter-rouge">$KCODE</code> が <code class="language-plaintext highlighter-rouge">utf8</code> などマルチバイト文字エンコーディングを意味する値の場合は、ASCII の範囲外の文字も単語構成文字に含まれます。たとえば、ひらがな、カタカナ、漢字などです。</p>
 
-<p>ところが、Ruby 1.9 からは <code class="highlighter-rouge">\w</code> と <code class="highlighter-rouge">\W</code> が持つ文字が常に ASCII の範囲内に限定されることになりました。その理由は、新しい正規表現処理エンジンが Unicode のプロパティを使って文字クラスを作れるようになったからです。その機能を使うと、ASCII の範囲外の文字も含む単語構成文字クラスは <code class="highlighter-rouge">\p{Word}</code> であり、その否定形は <code class="highlighter-rouge">\P{Word}</code> になります。</p>
+<p>ところが、Ruby 1.9 からは <code class="language-plaintext highlighter-rouge">\w</code> と <code class="language-plaintext highlighter-rouge">\W</code> が持つ文字が常に ASCII の範囲内に限定されることになりました。その理由は、新しい正規表現処理エンジンが Unicode のプロパティを使って文字クラスを作れるようになったからです。その機能を使うと、ASCII の範囲外の文字も含む単語構成文字クラスは <code class="language-plaintext highlighter-rouge">\p{Word}</code> であり、その否定形は <code class="language-plaintext highlighter-rouge">\P{Word}</code> になります。</p>
 
 <p>この違いを吸収するため、私は以下のように正規表現を実行時にコンパイルする方法を採用しました。</p>
 
@@ -526,15 +538,15 @@
 
 </code></pre></div></div>
 
-<p>正規表現を実行時に作っている理由はコンパイルエラーを避けるためです。以下の方法では、Ruby 1.8 で <code class="highlighter-rouge">\p</code> や <code class="highlighter-rouge">\P</code> を含む正規表現をコンパイルしようとするため、コンパイルエラーになります。</p>
+<p>正規表現を実行時に作っている理由はコンパイルエラーを避けるためです。以下の方法では、Ruby 1.8 で <code class="language-plaintext highlighter-rouge">\p</code> や <code class="language-plaintext highlighter-rouge">\P</code> を含む正規表現をコンパイルしようとするため、コンパイルエラーになります。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">regex</span> <span class="o">=</span> <span class="no">RUBY_VERSION</span> <span class="o">&lt;</span> <span class="s1">'1.9'</span> <span class="p">?</span> <span class="sr">/\w/</span> <span class="p">:</span> <span class="sr">/\p{Word}/</span>
 
 </code></pre></div></div>
 
-<p>Ruby 1.9 では、正規表現とマッチさせる文字列の文字エンコーディングを気にする必要があります。この話は「独自の <code class="highlighter-rouge">String#blank?</code>」の項で詳しく説明します。</p>
+<p>Ruby 1.9 では、正規表現とマッチさせる文字列の文字エンコーディングを気にする必要があります。この話は「独自の <code class="language-plaintext highlighter-rouge">String#blank?</code>」の項で詳しく説明します。</p>
 
-<h4 id="activerecord-と-nilid">ActiveRecord と <code class="highlighter-rouge">nil.id</code></h4>
+<h4 id="activerecord-と-nilid">ActiveRecord と <code class="language-plaintext highlighter-rouge">nil.id</code></h4>
 
 <p>次に示すコードはシンプルな has_many 関係を持つ ActiveRecord のモデルです。</p>
 
@@ -548,11 +560,11 @@
 
 </code></pre></div></div>
 
-<p>ActiveRecord は、<code class="highlighter-rouge">User#group</code> に保持されたオブジェクトが DB に保存される際、<code class="highlighter-rouge">group.id</code> の結果を <code class="highlighter-rouge">group_id</code> カラムに保存しようとします。このとき、<code class="highlighter-rouge">User#group</code> に nil が入っていると <code class="highlighter-rouge">nil.id</code> が呼ばれ、<code class="highlighter-rouge">nil.id</code> が CRuby では 4 になることから、whiny_nils が無効になっていると <code class="highlighter-rouge">group_id</code> に 4 が入ってしまう現象が起きることは有名です。</p>
+<p>ActiveRecord は、<code class="language-plaintext highlighter-rouge">User#group</code> に保持されたオブジェクトが DB に保存される際、<code class="language-plaintext highlighter-rouge">group.id</code> の結果を <code class="language-plaintext highlighter-rouge">group_id</code> カラムに保存しようとします。このとき、<code class="language-plaintext highlighter-rouge">User#group</code> に nil が入っていると <code class="language-plaintext highlighter-rouge">nil.id</code> が呼ばれ、<code class="language-plaintext highlighter-rouge">nil.id</code> が CRuby では 4 になることから、whiny_nils が無効になっていると <code class="language-plaintext highlighter-rouge">group_id</code> に 4 が入ってしまう現象が起きることは有名です。</p>
 
-<p>Ruby 1.9 ではこの現象は発生しません。代わりに NoMethodError が発生します。その理由は <code class="highlighter-rouge">Object#id</code> メソッドが削除されたからです。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>Ruby 1.9 ではこの現象は発生しません。代わりに NoMethodError が発生します。その理由は <code class="language-plaintext highlighter-rouge">Object#id</code> メソッドが削除されたからです。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
-<p>この問題に対しては、Ruby 1.8 の場合に <code class="highlighter-rouge">nil.id</code> でエラーが出ないことの方を問題だと解釈し、以下のようなモンキーパッチを使用して <code class="highlighter-rouge">nil.id</code> が呼ばれた場所を検出する方法をとりました。このモンキーパッチは <code class="highlighter-rouge">Rails.application.config.whiny_nils</code> を参照するため、initializer の中でロードする必要があります。</p>
+<p>この問題に対しては、Ruby 1.8 の場合に <code class="language-plaintext highlighter-rouge">nil.id</code> でエラーが出ないことの方を問題だと解釈し、以下のようなモンキーパッチを使用して <code class="language-plaintext highlighter-rouge">nil.id</code> が呼ばれた場所を検出する方法をとりました。このモンキーパッチは <code class="language-plaintext highlighter-rouge">Rails.application.config.whiny_nils</code> を参照するため、initializer の中でロードする必要があります。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="no">Rails</span><span class="p">.</span><span class="nf">application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">whiny_nils</span>
   <span class="nb">require</span> <span class="s1">'active_support/whiny_nil'</span>
@@ -563,7 +575,7 @@
     <span class="k">def</span> <span class="nf">id_with_warn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
       <span class="k">return</span> <span class="mi">4</span> <span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="nb">caller</span><span class="p">[</span><span class="mi">0</span><span class="p">]).</span><span class="nf">starts_with?</span><span class="p">(</span><span class="no">Rails</span><span class="p">.</span><span class="nf">root</span><span class="p">)</span>
       <span class="n">message</span> <span class="o">=</span> <span class="s2">"nil.id was called at </span><span class="si">#{</span><span class="nb">caller</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
-      <span class="k">if</span> <span class="n">defined?</span> <span class="no">Logger</span>
+      <span class="k">if</span> <span class="k">defined?</span> <span class="no">Logger</span>
         <span class="no">Logger</span><span class="p">.</span><span class="nf">error</span><span class="p">.</span><span class="nf">post</span><span class="p">(</span><span class="s1">'nil.id'</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
       <span class="k">else</span>
         <span class="vg">$stderr</span><span class="p">.</span><span class="nf">puts</span> <span class="n">message</span>
@@ -594,19 +606,19 @@
 
 </code></pre></div></div>
 
-<p>上記のコードは 1.8 では <code class="highlighter-rouge">foo: bar: baz</code> が表示されます。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>ところが 1.9 では <code class="highlighter-rouge">bar:</code> というキーに変数 <code class="highlighter-rouge">baz</code> の値を対応させたハッシュを引数に <code class="highlighter-rouge">foo</code> メソッドを呼び出そうとして、変数 <code class="highlighter-rouge">baz</code> が無いため NameError になります。</p>
+<p>上記のコードは 1.8 では <code class="language-plaintext highlighter-rouge">foo: bar: baz</code> が表示されます。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>ところが 1.9 では <code class="language-plaintext highlighter-rouge">bar:</code> というキーに変数 <code class="language-plaintext highlighter-rouge">baz</code> の値を対応させたハッシュを引数に <code class="language-plaintext highlighter-rouge">foo</code> メソッドを呼び出そうとして、変数 <code class="language-plaintext highlighter-rouge">baz</code> が無いため NameError になります。</p>
 
 <h3 id="文字エンコーディング関係">文字エンコーディング関係</h3>
 
 <p>本セクションでは文字エンコーディング関係のことがらをまとめました。</p>
 
-<h4 id="tempfile-のオープンモード"><code class="highlighter-rouge">Tempfile</code> のオープンモード</h4>
+<h4 id="tempfile-のオープンモード"><code class="language-plaintext highlighter-rouge">Tempfile</code> のオープンモード</h4>
 
-<p>Ruby 1.9 で文字エンコーディングに関する機能が組み込まれた事で、IO オブジェクトにも文字エンコーディング関連の新しい振る舞いが増えています。それは、IO オブジェクトが持つ外部エンコーディングと内部エンコーディングです。外部エンコーディングは IO オブジェクトの向こう側にあるもの (e.g. ファイル) が持つデータのエンコーディングです。IO オブジェクトから読み込んだ文字列は、IO オブジェクトに外部エンコーディングとして指定した文字エンコーディングを持っています。特に指定しない場合、デフォルトの外部エンコーディングは <code class="highlighter-rouge">Encoding.default_external</code> で指定された文字エンコーディングになります。入力文字列を外部エンコーディングとは異なる文字エンコーディングへ自動変換する場合は、その変換先の文字エンコーディングを IO オブジェクトの内部エンコーディングに設定します。</p>
+<p>Ruby 1.9 で文字エンコーディングに関する機能が組み込まれた事で、IO オブジェクトにも文字エンコーディング関連の新しい振る舞いが増えています。それは、IO オブジェクトが持つ外部エンコーディングと内部エンコーディングです。外部エンコーディングは IO オブジェクトの向こう側にあるもの (e.g. ファイル) が持つデータのエンコーディングです。IO オブジェクトから読み込んだ文字列は、IO オブジェクトに外部エンコーディングとして指定した文字エンコーディングを持っています。特に指定しない場合、デフォルトの外部エンコーディングは <code class="language-plaintext highlighter-rouge">Encoding.default_external</code> で指定された文字エンコーディングになります。入力文字列を外部エンコーディングとは異なる文字エンコーディングへ自動変換する場合は、その変換先の文字エンコーディングを IO オブジェクトの内部エンコーディングに設定します。</p>
 
-<p>このような仕組みが増えたことで、バイナリファイルを開いて作業する際は、ファイルのオープンモードを <code class="highlighter-rouge">'rb'</code> や <code class="highlighter-rouge">'wb'</code> にして明示的にバイナリモードで開くか、ファイルを開いた後で <code class="highlighter-rouge">IO#set_encoding</code> を使用して外部エンコーディングを <code class="highlighter-rouge">ASCII-8BIT</code> または <code class="highlighter-rouge">BINARY</code> に設定する必要があります。</p>
+<p>このような仕組みが増えたことで、バイナリファイルを開いて作業する際は、ファイルのオープンモードを <code class="language-plaintext highlighter-rouge">'rb'</code> や <code class="language-plaintext highlighter-rouge">'wb'</code> にして明示的にバイナリモードで開くか、ファイルを開いた後で <code class="language-plaintext highlighter-rouge">IO#set_encoding</code> を使用して外部エンコーディングを <code class="language-plaintext highlighter-rouge">ASCII-8BIT</code> または <code class="language-plaintext highlighter-rouge">BINARY</code> に設定する必要があります。</p>
 
-<p>クックパッドには、Eメールで投稿された画像データを処理しているコードがあり、この部分でメールから取り出した画像データを一時的にファイルに書き出して処理しています。一時ファイルを取り扱うために標準ライブラリで提供されている <code class="highlighter-rouge">Tempfile</code> を使っているのですが、<code class="highlighter-rouge">Tempfile</code> が使用するオープンモードは <code class="highlighter-rouge">'w+'</code> に固定されていて、かつ、<code class="highlighter-rouge">Encoding.default_external</code> が UTF-8 になっていたため、画像データを書き込む際に Invalid byte sequence が発生してしまいました。</p>
+<p>クックパッドには、Eメールで投稿された画像データを処理しているコードがあり、この部分でメールから取り出した画像データを一時的にファイルに書き出して処理しています。一時ファイルを取り扱うために標準ライブラリで提供されている <code class="language-plaintext highlighter-rouge">Tempfile</code> を使っているのですが、<code class="language-plaintext highlighter-rouge">Tempfile</code> が使用するオープンモードは <code class="language-plaintext highlighter-rouge">'w+'</code> に固定されていて、かつ、<code class="language-plaintext highlighter-rouge">Encoding.default_external</code> が UTF-8 になっていたため、画像データを書き込む際に Invalid byte sequence が発生してしまいました。</p>
 
 <p>これの解決方法としては、IO#set_encoding メソッドでエンコーディングを変更する方法と Tempfile.new に encoding オプションを使う方法の2種類があります。既にオープンされた Tempfile オブジェクトが与えられる場合は前者を、自分で Tempfile.new できる場合は後者を採用して解決します。</p>
 
@@ -706,11 +718,11 @@
 
 </code></pre></div></div>
 
-<h4 id="独自の-stringblank">独自の <code class="highlighter-rouge">String#blank?</code></h4>
+<h4 id="独自の-stringblank">独自の <code class="language-plaintext highlighter-rouge">String#blank?</code></h4>
 
 <p>Ruby 1.9 では正規表現も文字エンコーディングを保持します。そのため、正規表現と文字列が持つ文字エンコーディングが比較に対して互換でなければエラーが出てしまいます。</p>
 
-<p>クックパッドで使用している <code class="highlighter-rouge">String#blank?</code> は、IDEOGRAPHIC SPACE (U+3000) も空白として扱うようカスタマイズしてあるのですが、文字列自身の文字エンコーディングが UTF-8 ではない場合に incompatible encoding regexp match というエラーが出てしまいました。この問題に対しては、Ruby 1.9 の場合に以下のような <code class="highlighter-rouge">String#blank?</code> を使用することで対応しました。</p>
+<p>クックパッドで使用している <code class="language-plaintext highlighter-rouge">String#blank?</code> は、IDEOGRAPHIC SPACE (U+3000) も空白として扱うようカスタマイズしてあるのですが、文字列自身の文字エンコーディングが UTF-8 ではない場合に incompatible encoding regexp match というエラーが出てしまいました。この問題に対しては、Ruby 1.9 の場合に以下のような <code class="language-plaintext highlighter-rouge">String#blank?</code> を使用することで対応しました。</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">String</span>
   <span class="k">def</span> <span class="nf">blank?</span>
@@ -737,9 +749,9 @@
 
 <p>Ruby 1.9.3 から Ruby 2.0.0 へ移行する際に出会った問題について説明します。</p>
 
-<h4 id="objectinitialize_clone-と-objectinitialize_dup-がプライベートメソッドになった"><code class="highlighter-rouge">Object#initialize_clone</code> と <code class="highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになった</h4>
+<h4 id="objectinitialize_clone-と-objectinitialize_dup-がプライベートメソッドになった"><code class="language-plaintext highlighter-rouge">Object#initialize_clone</code> と <code class="language-plaintext highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになった</h4>
 
-<p>Ruby 2.0 では <code class="highlighter-rouge">Object#initialize_clone</code> と <code class="highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになりました。そのため、Rails に<a href="https://github.com/rails/rails/commit/127411fdf3a3470e8830abf0c7876db67c0c344a">このパッチ</a>を適用する必要がありました。<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+<p>Ruby 2.0 では <code class="language-plaintext highlighter-rouge">Object#initialize_clone</code> と <code class="language-plaintext highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになりました。そのため、Rails に<a href="https://github.com/rails/rails/commit/127411fdf3a3470e8830abf0c7876db67c0c344a">このパッチ</a>を適用する必要がありました。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
 
 <h4 id="スレッド周辺の非互換性">スレッド周辺の非互換性</h4>
 
@@ -784,19 +796,19 @@
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>この記事が出た時には ruby-2.0.0-p195 がリリースされています。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>この記事が出た時には ruby-2.0.0-p195 がリリースされています。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>名前が変わり、Object#object_id になりました。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>名前が変わり、Object#object_id になりました。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>まず :baz を引数に bar メソッドが呼び出され、その結果が foo メソッドに渡されます。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>まず :baz を引数に bar メソッドが呼び出され、その結果が foo メソッドに渡されます。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Object#respond_to? の第 2 引数に true を指定すると、private なメソッドも含めて調べてくれる。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Object#respond_to? の第 2 引数に true を指定すると、private なメソッドも含めて調べてくれる。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

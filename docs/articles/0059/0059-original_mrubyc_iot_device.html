@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -420,9 +430,9 @@ mruby/cでは、タスク間で共通のクラス定義、グローバル変数�
 <h4 id="arduinoのライブラリの作成">Arduinoのライブラリの作成</h4>
 
 <p>まず、Arduino用のライブラリを作成します。
-例えばMacの場合、<code class="highlighter-rouge">~/Documents/Arduino/libraries/</code>のようなディレクトリの下に<code class="highlighter-rouge">libmrubycForWioLTEArduino</code>というディレクトリを作成して、以下のような構成にします。</p>
+例えばMacの場合、<code class="language-plaintext highlighter-rouge">~/Documents/Arduino/libraries/</code>のようなディレクトリの下に<code class="language-plaintext highlighter-rouge">libmrubycForWioLTEArduino</code>というディレクトリを作成して、以下のような構成にします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> libmrubycForWioLTEArduino/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> libmrubycForWioLTEArduino/
   |- library.properties
   |- src/
 </code></pre></div></div>
@@ -430,7 +440,7 @@ mruby/cでは、タスク間で共通のクラス定義、グローバル変数�
 <p>library.propertiesは、Arduino用のライブラリの設定ファイルです。
 例えば以下のような内容を書き込みます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name=mruby/c for Wio LTE
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name=mruby/c for Wio LTE
 version=0.0.0
 author=kishima
 maintainer=kishima
@@ -446,9 +456,9 @@ includes=libmrubyc.h
 
 <h4 id="ソースのコピー">ソースのコピー</h4>
 
-<p>取得したmruby/cのソースのから、src/配下のファイルを、さきほど作成した<code class="highlighter-rouge">libmrubycForWioLTEArduino/src</code>にコピーします。</p>
+<p>取得したmruby/cのソースのから、src/配下のファイルを、さきほど作成した<code class="language-plaintext highlighter-rouge">libmrubycForWioLTEArduino/src</code>にコピーします。</p>
 
-<p>mruby/cのsrcには、<code class="highlighter-rouge">hal_***</code>というディレクトリが含まれていますが、これは、各種のボードに依存している機能を切り出しものです。halは”Hardware Abstraction Layer”の略（のはず）です。
+<p>mruby/cのsrcには、<code class="language-plaintext highlighter-rouge">hal_***</code>というディレクトリが含まれていますが、これは、各種のボードに依存している機能を切り出しものです。halは”Hardware Abstraction Layer”の略（のはず）です。
 以下のように対応します。</p>
 
 <ul>
@@ -458,14 +468,14 @@ includes=libmrubyc.h
 
 <h4 id="halhardware-abstraction-layerの実装">HAL(Hardware Abstraction Layer)の実装</h4>
 
-<p><code class="highlighter-rouge">puts</code>などで用いられる文字列出力関数がhal.hにインライン関数<code class="highlighter-rouge">hal_write</code>として定義されているのですが、中身は<code class="highlighter-rouge">write(1, buf, nbytes)</code>となっていて、そのままでは期待通り動きません。</p>
+<p><code class="language-plaintext highlighter-rouge">puts</code>などで用いられる文字列出力関数がhal.hにインライン関数<code class="language-plaintext highlighter-rouge">hal_write</code>として定義されているのですが、中身は<code class="language-plaintext highlighter-rouge">write(1, buf, nbytes)</code>となっていて、そのままでは期待通り動きません。</p>
 
 <p>文字列の出力先は、ライブラリの開発者が環境に合わせて実装することが必要です。</p>
 
-<p>Wio LTE Arduino Libraryでは、<code class="highlighter-rouge">SerialUSB.print</code>がデバッグ用シリアルへの出力を行うので、これを用いています。
-注意点として、<code class="highlighter-rouge">SerialUSB.print</code>のようなArduinoのAPIはC++で実装されているので、hal.cからは直接呼べません。hal.cppを準備するなどして、CとC++の間を繋ぐ必要があります。</p>
+<p>Wio LTE Arduino Libraryでは、<code class="language-plaintext highlighter-rouge">SerialUSB.print</code>がデバッグ用シリアルへの出力を行うので、これを用いています。
+注意点として、<code class="language-plaintext highlighter-rouge">SerialUSB.print</code>のようなArduinoのAPIはC++で実装されているので、hal.cからは直接呼べません。hal.cppを準備するなどして、CとC++の間を繋ぐ必要があります。</p>
 
-<p>実装例を挙げると、<code class="highlighter-rouge">inline static int hal_write()</code>を以下のような関数に書き換えます。
+<p>実装例を挙げると、<code class="language-plaintext highlighter-rouge">inline static int hal_write()</code>を以下のような関数に書き換えます。
 （入力が2文字以上の場合、かならずヌル文字が終端にあることが前提になっています）</p>
 
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">hal_write</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nbytes</span><span class="p">)</span>
@@ -483,17 +493,17 @@ includes=libmrubyc.h
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>そして、hal.cppというファイルを作成し、<code class="highlighter-rouge">hal_write_string()</code>を以下のように実装します。</p>
+<p>そして、hal.cppというファイルを作成し、<code class="language-plaintext highlighter-rouge">hal_write_string()</code>を以下のように実装します。</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">extern</span> <span class="s">"C"</span> <span class="kt">void</span> <span class="n">hal_write_string</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">){</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">extern</span> <span class="s">"C"</span> <span class="kt">void</span> <span class="nf">hal_write_string</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">){</span>
   <span class="n">SerialUSB</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>このようにすることで、スクリプト上の<code class="highlighter-rouge">puts</code>などの出力先がデバッグ用のシリアルになります。</p>
+<p>このようにすることで、スクリプト上の<code class="language-plaintext highlighter-rouge">puts</code>などの出力先がデバッグ用のシリアルになります。</p>
 
 <p>もう一点、HALではタイマ割り込みの設定も考慮が必要です。mruby/cではマルチタスク機能を実現するために一定間隔でVMの処理を中断して、別のタスクのVMに処理を切り替える必要があります。
-そのためにはハードウェアの周期的な割り込み機能を使うのがシンプルですが、それが使えない場合は、vm_config.hに<code class="highlighter-rouge">#define MRBC_NO_TIMER</code>という定義を追記すると、ソフト処理でのタスク切換えを行うようになります。</p>
+そのためにはハードウェアの周期的な割り込み機能を使うのがシンプルですが、それが使えない場合は、vm_config.hに<code class="language-plaintext highlighter-rouge">#define MRBC_NO_TIMER</code>という定義を追記すると、ソフト処理でのタスク切換えを行うようになります。</p>
 
 <p>このようなポイントに注意することで、mruby/cの機能をArduinoライブラリとして利用可能となります。</p>
 
@@ -508,30 +518,30 @@ includes=libmrubyc.h
 
 <h4 id="クラスの追加">クラスの追加</h4>
 
-<p>C言語で定義したクラスを追加するためには、<code class="highlighter-rouge">mrbc_define_class()</code>という関数を使用します。
-以下に超音波センサのための<code class="highlighter-rouge">UltraSonic</code>クラスを追加する例を示しています。</p>
+<p>C言語で定義したクラスを追加するためには、<code class="language-plaintext highlighter-rouge">mrbc_define_class()</code>という関数を使用します。
+以下に超音波センサのための<code class="language-plaintext highlighter-rouge">UltraSonic</code>クラスを追加する例を示しています。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	mrb_class *class_ultrasonic;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	mrb_class *class_ultrasonic;
 	class_ultrasonic = mrbc_define_class(0, "UltraSonic", mrbc_class_object);
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">mrbc_define_class()</code>の第一引数は特に考えず0で問題ないです。第二引数にRubyのクラス名を与えます。そして第三引数に親クラスを指定します。この場合は特別な親クラスを持つ必要がないので、オブジェクトクラス（mrbc_class_object）を親クラスとしています。</p>
+<p><code class="language-plaintext highlighter-rouge">mrbc_define_class()</code>の第一引数は特に考えず0で問題ないです。第二引数にRubyのクラス名を与えます。そして第三引数に親クラスを指定します。この場合は特別な親クラスを持つ必要がないので、オブジェクトクラス（mrbc_class_object）を親クラスとしています。</p>
 
-<p><code class="highlighter-rouge">mrbc_define_class()</code>の戻り値にはクラスオブジェクトを表すmrb_class構造体へのポインタが返って来ます。このポインタは破棄しても、<code class="highlighter-rouge">UltraSonic</code>クラスのクラスオブジェクトはグローバル定数として記憶されているので、定義が消えることはありません。</p>
+<p><code class="language-plaintext highlighter-rouge">mrbc_define_class()</code>の戻り値にはクラスオブジェクトを表すmrb_class構造体へのポインタが返って来ます。このポインタは破棄しても、<code class="language-plaintext highlighter-rouge">UltraSonic</code>クラスのクラスオブジェクトはグローバル定数として記憶されているので、定義が消えることはありません。</p>
 
 <h4 id="メソッドの追加">メソッドの追加</h4>
 
-<p>次に、<code class="highlighter-rouge">UltraSonic</code>クラスに、 距離センサの測値を返す、<code class="highlighter-rouge">read</code>メソッドを追加してみます。
-メソッドの追加には、<code class="highlighter-rouge">mrbc_define_class()</code>関数を使用します。
+<p>次に、<code class="language-plaintext highlighter-rouge">UltraSonic</code>クラスに、 距離センサの測値を返す、<code class="language-plaintext highlighter-rouge">read</code>メソッドを追加してみます。
+メソッドの追加には、<code class="language-plaintext highlighter-rouge">mrbc_define_class()</code>関数を使用します。
 以下に、その例を示します。</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Ultrasonic</span> <span class="n">ultrasonic</span><span class="p">(</span><span class="n">WIOLTE_D38</span><span class="p">);</span>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Ultrasonic</span> <span class="nf">ultrasonic</span><span class="p">(</span><span class="n">WIOLTE_D38</span><span class="p">);</span>
 
-<span class="k">static</span> <span class="kt">void</span> <span class="n">class_ultrasonic_read</span><span class="p">(</span><span class="n">mrb_vm</span> <span class="o">*</span><span class="n">vm</span><span class="p">,</span> <span class="n">mrb_value</span> <span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">){</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">class_ultrasonic_read</span><span class="p">(</span><span class="n">mrb_vm</span> <span class="o">*</span><span class="n">vm</span><span class="p">,</span> <span class="n">mrb_value</span> <span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">){</span>
 	<span class="kt">long</span> <span class="n">val</span> <span class="o">=</span> <span class="n">ultrasonic</span><span class="p">.</span><span class="n">MeasureInCentimeters</span><span class="p">();</span>
 	<span class="n">SET_INT_RETURN</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
 <span class="p">}</span>
-<span class="kt">void</span> <span class="n">define_ultrasonic_class</span><span class="p">(){</span>
+<span class="kt">void</span> <span class="nf">define_ultrasonic_class</span><span class="p">(){</span>
 	<span class="n">mrb_class</span> <span class="o">*</span><span class="n">class_ultrasonic</span><span class="p">;</span>
 	<span class="n">class_ultrasonic</span> <span class="o">=</span> <span class="n">mrbc_define_class</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">"UltraSonic"</span><span class="p">,</span> <span class="n">mrbc_class_object</span><span class="p">);</span>
 
@@ -540,13 +550,13 @@ includes=libmrubyc.h
 
 <span class="p">}</span>
 </code></pre></div></div>
-<p><code class="highlighter-rouge">mrbc_define_class()</code>関数の第一引数は、クラス定義と同じく0を指定して、第二引数にメソッドに対応するクラスをしていします。ここで、先程の<code class="highlighter-rouge">class_ultrasonic</code>を与えます。
-第三引数には、メソッド名である<code class="highlighter-rouge">read</code>を与えます。そして第四引数には、メソッドの処理を行う関数へのポインタを与えます。</p>
+<p><code class="language-plaintext highlighter-rouge">mrbc_define_class()</code>関数の第一引数は、クラス定義と同じく0を指定して、第二引数にメソッドに対応するクラスをしていします。ここで、先程の<code class="language-plaintext highlighter-rouge">class_ultrasonic</code>を与えます。
+第三引数には、メソッド名である<code class="language-plaintext highlighter-rouge">read</code>を与えます。そして第四引数には、メソッドの処理を行う関数へのポインタを与えます。</p>
 
-<p>メソッドの処理を表す関数の型は<code class="highlighter-rouge">void (mrb_vm *vm, mrb_value *v, int argc )</code>と決まっており、ここにメソッドの引数に関する全ての情報が格納されています。</p>
+<p>メソッドの処理を表す関数の型は<code class="language-plaintext highlighter-rouge">void (mrb_vm *vm, mrb_value *v, int argc )</code>と決まっており、ここにメソッドの引数に関する全ての情報が格納されています。</p>
 
-<p>距離センサのオブジェクト<code class="highlighter-rouge">ultrasonic</code>は、<code class="highlighter-rouge">WIOLTE_D38</code>という値を与えて初期化しています。<code class="highlighter-rouge">WIOLTE_D38</code>がWio LTE基板上の接続端子を表しています。
-<code class="highlighter-rouge">ultrasonic</code>に対して、<code class="highlighter-rouge">MeasureInCentimeters()</code>という関数で得た距離センサの測定値(cm)を<code class="highlighter-rouge">SET_INT_RETURN</code>というマクロでメソッドの戻り値に設定しています。</p>
+<p>距離センサのオブジェクト<code class="language-plaintext highlighter-rouge">ultrasonic</code>は、<code class="language-plaintext highlighter-rouge">WIOLTE_D38</code>という値を与えて初期化しています。<code class="language-plaintext highlighter-rouge">WIOLTE_D38</code>がWio LTE基板上の接続端子を表しています。
+<code class="language-plaintext highlighter-rouge">ultrasonic</code>に対して、<code class="language-plaintext highlighter-rouge">MeasureInCentimeters()</code>という関数で得た距離センサの測定値(cm)を<code class="language-plaintext highlighter-rouge">SET_INT_RETURN</code>というマクロでメソッドの戻り値に設定しています。</p>
 
 <p>このような手順で、C/C++言語で書かれたライブラリとmruby/cの連携を図ることができます。
 連携方法の全てを記事中で説明するのは難しいですが、より詳しい情報はmruby/cのヘッダファイルの定義などを参照すると理解が進むと思います。</p>
@@ -579,11 +589,11 @@ includes=libmrubyc.h
 <span class="nb">puts</span> <span class="s2">"done"</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">Wio.activate</code>というメソッドでSORACOMのサーバとのアクティベーションを行い、<code class="highlighter-rouge">Wio.sock_send</code>というメソッドで測定した結果を{“distance”:val}という文字列でSORACOM Harvestのサービス(<code class="highlighter-rouge">harvest.soracom.io:8514</code>)に送信します。</p>
+<p><code class="language-plaintext highlighter-rouge">Wio.activate</code>というメソッドでSORACOMのサーバとのアクティベーションを行い、<code class="language-plaintext highlighter-rouge">Wio.sock_send</code>というメソッドで測定した結果を{“distance”:val}という文字列でSORACOM Harvestのサービス(<code class="language-plaintext highlighter-rouge">harvest.soracom.io:8514</code>)に送信します。</p>
 
 <p>このスクリプトを以下のようなmrubyのコマンドで、バイトコードを16進数配列で表したC言語ファイルに変換します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ mrbc -E -B code test.rb
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ mrbc -E -B code test.rb
 </code></pre></div></div>
 
 <p>test.cというファイルができるはずです、この内容をArduinoのinoファイルで以下のように貼り付けします。</p>
@@ -621,7 +631,7 @@ includes=libmrubyc.h
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">mrbc_create_task()</code>という関数でバイトコードが格納された配列を読み込み、<code class="highlighter-rouge">mrbc_run()</code>で実際にVMで処理を行っています。</p>
+<p><code class="language-plaintext highlighter-rouge">mrbc_create_task()</code>という関数でバイトコードが格納された配列を読み込み、<code class="language-plaintext highlighter-rouge">mrbc_run()</code>で実際にVMで処理を行っています。</p>
 
 <p>準備ができたら、Wio LTEを接続して、DFUモードに切り替えた後、ArduinoIDEの書き込みボタンをクリックして、ビルド＆書き込みを行います。</p>
 
@@ -633,7 +643,7 @@ includes=libmrubyc.h
 <p>では実際に動かしてみましょう。書き込んだ後にボードのリセットボタンを押すと、書き込んだプログラムが起動します。</p>
 
 <p>動かしてみた結果のシリアルログを示します。</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>— begin setup
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>— begin setup
 — run mruby script
 class_wio_power_supply_LTE
 class_wio_turnon_or_reset

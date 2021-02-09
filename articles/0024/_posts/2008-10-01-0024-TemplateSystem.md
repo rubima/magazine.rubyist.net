@@ -2,6 +2,7 @@
 layout: post
 title: テンプレートシステム入門 (1) 歴史編
 short_title: テンプレートシステム入門 (1) 歴史編
+created_on: 2008-10-01
 tags: 0024 TemplateSystem
 ---
 {% include base.html %}

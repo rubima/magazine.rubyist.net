@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -201,6 +211,8 @@
                         </div>
                         <div class="post_info">
                             
+
+  <span class="created_on">初稿：2011-09-26</span>
 
 
 
@@ -430,7 +442,7 @@
 &lt;%= footer_section %&gt;</code></pre></figure>
 
 <h3 id="3-決定ボタンsubmit-を押された時の処理">(3) 決定ボタン(submit) を押された時の処理</h3>
-<p><img src="../../images/0035-AloneFramework/6-(3).png" alt="6-(3).png" /></p>
+<p><img src="../../images/0035-AloneFramework/6-_3_.png" alt="6-(3).png" /></p>
 
 <p>このアプリケーションでは、ユーザーの入力値を一度そのまま表示させて確認させる仕様です。フォームオブジェクトの定義で、:action=&gt;‘confirm’ となっていた事を思い出してください。このフォームが submitされると、action_confirm() メソッドが呼び出されます。</p>
 
@@ -479,7 +491,7 @@
 <p>もう一つは、make_uri()メソッド。これはフォームオブジェクトの作成でも出てきましたが、今回はそれぞれ cancel と commit という２つの違ったアクションを生成し、リンクテキストとして表示しています。</p>
 
 <h3 id="4-確認画面ではいを選ばれた場合">(4) 確認画面で「はい」を選ばれた場合</h3>
-<p><img src="../../images/0035-AloneFramework/6-(4).png" alt="6-(4).png" /></p>
+<p><img src="../../images/0035-AloneFramework/6-_4_.png" alt="6-(4).png" /></p>
 
 <p>先の確認画面で、「はい」を選んだ場合は、アクション commit が送られます。この場合、セッションから変数を戻してフォームにセットし直し、完了画面を表示します。</p>
 
@@ -573,14 +585,14 @@
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">alias</span> <span class="n">action_index</span> <span class="n">action_list</span>
 </code></pre></div></div>
-<p><img src="../../images/0035-AloneFramework/7-(3).png" alt="7-(3).png" /></p>
+<p><img src="../../images/0035-AloneFramework/7-_3_.png" alt="7-(3).png" /></p>
 
 <h3 id="4-その他の動作">(4) その他の動作</h3>
 
 <p>これだけのソースで、基本的な CRUD が可能になっていることを、動作から確認できるでしょう。これらのアクションは、すべて mif 内で定義されています。それぞれのアクションについて、デフォルト動作を変更したければ、まず mif のソースを開いて、該当アクションを自分の main.rb へ コピー＆ペーストしたうえで変更をしましょう。圧倒的に簡単かつスピーディーにやりたいことが完了します。</p>
 
-<p><img src="../../images/0035-AloneFramework/7-(4)-1.png" alt="7-(4)-1.png" />
-<img src="../../images/0035-AloneFramework/7-(4)-2.png" alt="7-(4)-2.png" /></p>
+<p><img src="../../images/0035-AloneFramework/7-_4_-1.png" alt="7-(4)-1.png" />
+<img src="../../images/0035-AloneFramework/7-_4_-2.png" alt="7-(4)-2.png" /></p>
 
 <h3 id="5-テンプレートは">(5) テンプレートは？</h3>
 
@@ -655,7 +667,7 @@
 </code></pre></div></div>
 
 <p>起動スクリプトでは、ここで保存された /etc/my_settings.confの内容を使って、IPの初期設定を行います。ここで、シェルスクリプト形式で保存されているのがポイントで、通常の起動スクリプト中にそのまま読み込んで値を使う事が容易になっています。
-<img src="../../images/0035-AloneFramework/9-(2)-1.png" alt="9-(2)-1.png" /></p>
+<img src="../../images/0035-AloneFramework/9-_2_-1.png" alt="9-(2)-1.png" /></p>
 
 <p>もう一つ、トラフィックグラフについて説明しておきましょう。本器では、パケット数およびバイト数のトラフィックグラフを描画するために、折れ線グラフを用いました。以下はそのコードです。（実際のコードはラベルなどの微調整のため、もう少し複雑です）</p>
 
@@ -681,7 +693,7 @@
 </code></pre></div></div>
 
 <p>オートスケールが働いて、値から XY 軸スケールなどを適切に計算してくれるので、非常に簡単な記述でグラフが描けます。
-<img src="../../images/0035-AloneFramework/9-(2)-2.png" alt="9-(2)-2.png" /></p>
+<img src="../../images/0035-AloneFramework/9-_2_-2.png" alt="9-(2)-2.png" /></p>
 
 <h2 id="おわりに">おわりに</h2>
 
@@ -692,7 +704,6 @@
 <p>東裕人（ひがしひろひと）</p>
 
 <p>有限会社アイナス所属。組込エンジニア。島根県の片田舎で、犬と暮らしながら ARM チップ上で Ruby と Qt (QtRuby) を動かしたりしている。最近のお気に入り CPU は TI の MSP430 。</p>
-
 
                     </div>
                 </div>

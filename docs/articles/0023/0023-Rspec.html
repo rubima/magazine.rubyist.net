@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2008-03-31</span>
+
 
 
                         </div>
@@ -355,10 +367,38 @@
       </li>
       <li><a href="#テスト指定したブログの名前を表示する" id="markdown-toc-テスト指定したブログの名前を表示する">テスト:指定したブログの名前を表示する</a>        <ul>
           <li><a href="#specviewsblogsshowhtmlerb_specrb-1" id="markdown-toc-specviewsblogsshowhtmlerb_specrb-1">spec/views/blogs/show.html.erb_spec.rb</a></li>
+          <li><a href="#appviewsblogsshowhtmlerb" id="markdown-toc-appviewsblogsshowhtmlerb">app/views/blogs/show.html.erb</a></li>
+          <li><a href="#todoリスト-1" id="markdown-toc-todoリスト-1">TODOリスト</a></li>
+          <li><a href="#faqビューのテストなのに何が出力されているのかわからないのは不安だ" id="markdown-toc-faqビューのテストなのに何が出力されているのかわからないのは不安だ">FAQ:「ビューのテストなのに何が出力されているのかわからないのは不安だ」</a></li>
         </ul>
       </li>
+      <li><a href="#ブラウザで動作確認" id="markdown-toc-ブラウザで動作確認">ブラウザで動作確認</a>        <ul>
+          <li><a href="#データの準備" id="markdown-toc-データの準備">データの準備</a>            <ul>
+              <li><a href="#todoリスト-2" id="markdown-toc-todoリスト-2">TODOリスト</a></li>
+            </ul>
+          </li>
+          <li><a href="#ブラウザで確認する" id="markdown-toc-ブラウザで確認する">ブラウザで確認する</a></li>
+        </ul>
+      </li>
+      <li><a href="#ビューのテストで利用できる機能" id="markdown-toc-ビューのテストで利用できる機能">ビューのテストで利用できる機能</a></li>
     </ul>
   </li>
+  <li><a href="#今回のまとめ" id="markdown-toc-今回のまとめ">今回のまとめ</a>    <ul>
+      <li><a href="#全テストケースの実行" id="markdown-toc-全テストケースの実行">全テストケースの実行</a></li>
+      <li><a href="#rcov-によるカバレッジ" id="markdown-toc-rcov-によるカバレッジ">RCov によるカバレッジ</a></li>
+      <li><a href="#rake-stats-による統計情報" id="markdown-toc-rake-stats-による統計情報">rake stats による統計情報</a></li>
+    </ul>
+  </li>
+  <li><a href="#次回予告" id="markdown-toc-次回予告">次回予告</a>    <ul>
+      <li><a href="#todo-リスト-5" id="markdown-toc-todo-リスト-5">TODO リスト</a></li>
+    </ul>
+  </li>
+  <li><a href="#著者について" id="markdown-toc-著者について">著者について</a>    <ul>
+      <li><a href="#かくたに" id="markdown-toc-かくたに">かくたに</a></li>
+      <li><a href="#もろはし" id="markdown-toc-もろはし">もろはし</a></li>
+    </ul>
+  </li>
+  <li><a href="#バックナンバー" id="markdown-toc-バックナンバー">バックナンバー</a></li>
 </ul>
 
 <h2 id="この連載について">この連載について</h2>
@@ -376,7 +416,7 @@
 
 <h3 id="対象読者">対象読者</h3>
 
-<p><a href="http://jp.rubyist.net/magazine/?0021-Rspec">前回の連載</a>に目を通している方を対象としています。</p>
+<p><a href="../../articles/0021/0021-Rspec.html">前回の連載</a>に目を通している方を対象としています。</p>
 
 <p>前回の連載は、Ruby 標準添付のテスティングフレームワークである Test::Unit を多少は使ったことがあることを前提としていますが、
 いわゆるテスト駆動開発やテストファーストといったプログラム技法の経験は前提としていません。</p>
@@ -403,7 +443,7 @@ Ruby on Rails も同様に最新のリリースバージョンを対象としま
 TDD で行っていた「テスト」を「ビヘイビア」や「スペック」といった言葉に__言い換えません</strong>。
 つまり、ツールとして RSpec を使いながら、TDD をします。</p>
 
-<p>この考えの詳細については連載第1回の<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l9">「なぜ、RSpec なのか」</a>を参照してください。</p>
+<p>この考えの詳細については連載第1回の<a href="../../articles/0021/0021-Rspec.html">「なぜ、RSpec なのか」</a>を参照してください。</p>
 
 <p>また、今回の連載では私たちが別段 BDD という言葉にこだわらない理由が明らかになります。お楽しみに。</p>
 
@@ -628,7 +668,7 @@ RSpec を使うとヘルパーやルーティングのテストも書けるの�
 
 <h2 id="rails-と-rspec-のバージョンアップ">Rails と RSpec のバージョンアップ</h2>
 
-<p>前回の連載記事を寄稿してから今日までの間に、私たちが <a href="http://jp.rubyist.net/magazine/?0022-RubyConf2007Report">RubyConf2007 に出かけたり</a>、
+<p>前回の連載記事を寄稿してから今日までの間に、私たちが <a href="../../articles/0022/0022-RubyConf2007Report.html">RubyConf2007 に出かけたり</a>、
 <a href="http://ruby-sapporo.org/events/etc/postgresql-ruby-2008/">JPUG と Ruby 札幌の合同セミナー</a>に参加していたら、Rails や RSpec のバージョンが上がってしまいました。</p>
 
 <p>まずは、RSpec と Rails のそれぞれをバージョンアップすることから始めましょう。</p>
@@ -703,7 +743,7 @@ index 0589aa9..568ccd0 100644
 
 <p>Rails 2.0 は、デフォルトではセッション情報を Cookie に格納します。これに伴い、Cookie に格納されているセッション情報の改竄を検知するためにシークレットキー文字列の設定が必須になりました。</p>
 
-<p>そのための設定を config/environment.rb に追記します。シークレットキー文字列は 30〜40 文字程度の長さにします。30 文字より少ないと Rails から「短すぎる」と怒られてしまいます。逆に、長すぎても暗号の強度には寄与しません[^1]。ここでは手っ取り早い方法を取ります。</p>
+<p>そのための設定を config/environment.rb に追記します。シークレットキー文字列は 30〜40 文字程度の長さにします。30 文字より少ないと Rails から「短すぎる」と怒られてしまいます。逆に、長すぎても暗号の強度には寄与しません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。ここでは手っ取り早い方法を取ります。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ script/runner 'puts CGI::Session.generate_unique_id'
 ce053ab2dfc17fbe2ee2a8675d83952f</code></pre></figure>
@@ -761,7 +801,7 @@ Database schema version   2</code></pre></figure>
 
 <h4 id="rspec-on-rails-108-のアンインストール">RSpec on Rails 1.0.8 のアンインストール</h4>
 
-<p>連載が長期にわたってしまうので、前回の連載で<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l52">紹介した</a>ような、
+<p>連載が長期にわたってしまうので、前回の連載で<a href="../../articles/0021/0021-Rspec.html">紹介した</a>ような、
 バージョンを固定するインストール方法はあまり適切とはいえませんでした。ごめんなさい。
 ここでは、連載中に RSpec のバージョンが上っても問題ない方法にしたいと思います。
 そのためにまず、バージョンが固定されている現在の RSpec on Rails をアンインストールします。</p>
@@ -843,7 +883,7 @@ http://rspec.rubyforge.org/</code></pre></figure>
 
 <h3 id="story-runner-の登場">Story Runner の登場</h3>
 
-<p>るびま 0022 号の <a href="http://jp.rubyist.net/magazine/?0022-RubyConf2007Report">RubyConf2007 レポート</a>で紹介した、rbehave を RSpec に統合した Story Runner がリリースされました。</p>
+<p>るびま 0022 号の <a href="../../articles/0022/0022-RubyConf2007Report.html">RubyConf2007 レポート</a>で紹介した、rbehave を RSpec に統合した Story Runner がリリースされました。</p>
 
 <p>リリースされたばかりの新機能なので、仕様や API がそれなりに安定してきたらこの連載でも取りあげたいと思います。</p>
 
@@ -851,7 +891,7 @@ http://rspec.rubyforge.org/</code></pre></figure>
 
 <h3 id="ネストした-describe-のサポート">ネストした describe のサポート</h3>
 
-<p>前回の連載では Behaviour (振舞) として<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l26">説明した</a>、describe do … end のブロックをネストして書けるようになりました。</p>
+<p>前回の連載では Behaviour (振舞) として<a href="../../articles/0021/0021-Rspec.html">説明した</a>、describe do … end のブロックをネストして書けるようになりました。</p>
 
 <p>describe をネストさせて記述した際には、外側の describe ブロックで定義したインスタンス変数や before / after の設定、定義した独自のメソッドは、内側の describe ブロック からも見えます。</p>
 
@@ -874,7 +914,7 @@ http://rspec.rubyforge.org/</code></pre></figure>
 <p>またしても前置きが長くなってしまいましたが、おかげで RSpec と Ruby on Rails を最新版にアップデートできました。
 また RSpec の新機能もざっと確認できました。そろそろ本当に今回ターゲットとしている機能を実装しましょう。</p>
 
-<p>今回も、前回のモデルの開発と同じように「レッド - グリーン - リファクタリング」という<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l11">テスト駆動開発の小さなステップ</a>を小さく、短い単位で積み上げていきます。
+<p>今回も、前回のモデルの開発と同じように「レッド - グリーン - リファクタリング」という<a href="../../articles/0021/0021-Rspec.html">テスト駆動開発の小さなステップ</a>を小さく、短い単位で積み上げていきます。
 作業単位の理想は数分サイクルで「レッド - グリーン - リファクタリング」を 1 周させられることです。これを目指して実装の作戦を立ててみます。</p>
 
 <h3 id="水平分割アプローチと垂直分割アプローチ">水平分割アプローチと垂直分割アプローチ</h3>
@@ -1229,7 +1269,7 @@ end</code></pre></figure>
  end</code></pre></figure>
 
 <p>修正した example ではまず、get メソッドを少し変更して、:id パラメータにフィクスチャからロードしたブログの id を渡しています。
-そして、リクエストを送信した後に、response オブジェクト[^2]が success であることを期待しています。つまり、response#success? が true を返すことを期待しています。これが成立するのは、レスポンスの HTTP ステータスコードが 200 の場合です。</p>
+そして、リクエストを送信した後に、response オブジェクト<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>が success であることを期待しています。つまり、response#success? が true を返すことを期待しています。これが成立するのは、レスポンスの HTTP ステータスコードが 200 の場合です。</p>
 
 <p>テストを書いたので、実行してみます。</p>
 
@@ -1404,7 +1444,7 @@ Finished in 0.198442 seconds
 <p>ここまででコントローラのアクションの 3 つの責務のうち、2 つを実装しました。
 残っている最後の責務である「適切なテンプレートを選択していること」をテストします。</p>
 
-<p>ひとつ断わっておきますが、この責務のテストは、いま実現しようとしている機能 (ブログの名前を表示する) 程度であれば、あまり意義のあるテストではありません。というのも、現在の実装にとって選択すべき「適切なテンプレート」とは Rails の規約に従ったデフォルトのテンプレート (/app/views/blogs/show.html.erb) だからです。つまり、このテストは単に Rails がフレームワークとして提供している機能をテストしているだけです (「アプリケーションやライブラリの機能をテストすること」については、前回の連載で簡単に<a href="http://jp.rubyist.net/magazine/?0021-Rspec#l56">説明しました</a>)。</p>
+<p>ひとつ断わっておきますが、この責務のテストは、いま実現しようとしている機能 (ブログの名前を表示する) 程度であれば、あまり意義のあるテストではありません。というのも、現在の実装にとって選択すべき「適切なテンプレート」とは Rails の規約に従ったデフォルトのテンプレート (/app/views/blogs/show.html.erb) だからです。つまり、このテストは単に Rails がフレームワークとして提供している機能をテストしているだけです (「アプリケーションやライブラリの機能をテストすること」については、前回の連載で簡単に<a href="../../articles/0021/0021-Rspec.html">説明しました</a>)。</p>
 
 <p>ですが、今回は RSpec on Rails を説明するために、このテンプレートの選択もテストします。このテストを書くことに価値がある場合もあるからです。</p>
 
@@ -1770,7 +1810,7 @@ CSS クラス名が “blog” である div タグの子要素の h1 タグに�
 1)
 <span style="color: red">'/blogs/show ブログの名前を表示すること' FAILED
 Expected at least 1 element matching "div.blog &gt; h1", found 0.
-<false> is not true.&lt;/span&gt;
+&lt;false&gt; is not true.</span>
 
 ./spec/views/blogs/show.html.erb_spec.rb:12:
 script/spec:4:
@@ -1779,28 +1819,23 @@ Finished in 0.18182 seconds
 
 <span style="color: red">1 example, 1 failure</span>
 
-&lt;/pre&gt;
+</pre>
 
-指定した CSS セレクタにマッチする要素が無いのでテストに失敗しました。予想通りです。このエラーの読み方は、次の通りです。
+<p>指定した CSS セレクタにマッチする要素が無いのでテストに失敗しました。予想通りです。このエラーの読み方は、次の通りです。</p>
 
-「"div.blog &gt; h1" にマッチする (matching "div.blog")、少なくとも 1 つの要素が存在することを期待した (Expected at least 1 element) が、1 つも見つからなかった (found 0)、つまり have_tag マッチャが成立しなかった (&lt;false&gt;) のであり、それは期待通りではない (is not true)」
+<p>「”div.blog &gt; h1” にマッチする (matching “div.blog”)、少なくとも 1 つの要素が存在することを期待した (Expected at least 1 element) が、1 つも見つからなかった (found 0)、つまり have_tag マッチャが成立しなかった (&lt;false&gt;) のであり、それは期待通りではない (is not true)」</p>
 
-では、ビューのファイルを修正します。
+<p>では、ビューのファイルを修正します。</p>
 
-##### app/views/blogs/show.html.erb
-
+<h5 id="appviewsblogsshowhtmlerb">app/views/blogs/show.html.erb</h5>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div class="blog"&gt;
   &lt;h1&gt;&lt;%=h @blog.name %&gt;&lt;/h1&gt;
 &lt;/div&gt;</code></pre></figure>
 
-
-
-実行します。
-
+<p>実行します。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">script/spec -cfs spec/views/blogs/show.html.erb_spec.rb</code></pre></figure>
-
 
 <pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
 
@@ -1814,106 +1849,108 @@ Finished in 0.166681 seconds
 
 </pre>
 
-成功しました。
+<p>成功しました。</p>
 
-TODO 項目を消しておきましょう。
+<p>TODO 項目を消しておきましょう。</p>
 
-##### TODOリスト
+<h5 id="todoリスト-1">TODOリスト</h5>
 
-* ブログの名前を表示する
-  *  ~~コントローラにアクションを用意する~~ 
-    *  ~~/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200~~ 
-    *  ~~/blogs/show/:id で指定した Blog インスタンスをロードする~~ 
-    *  ~~app/views/blogs/show.erb.html を選択する~~ 
-  * __ ~~アクションの結果を表示するビューを用意する~~ __
-    * __ ~~指定したブログの名前を表示する~~ __
-* ブログの最新記事を表示する
-* ブログの最新記事を最大 5 件表示する
+<ul>
+  <li>ブログの名前を表示する
+    <ul>
+      <li><del>コントローラにアクションを用意する</del></li>
+      <li><del>/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200</del></li>
+      <li><del>/blogs/show/:id で指定した Blog インスタンスをロードする</del></li>
+      <li><del>app/views/blogs/show.erb.html を選択する</del></li>
+      <li>__ <del>アクションの結果を表示するビューを用意する</del> __
+        <ul>
+          <li>__ <del>指定したブログの名前を表示する</del> __</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>ブログの最新記事を表示する</li>
+  <li>ブログの最新記事を最大 5 件表示する</li>
+</ul>
 
+<h4 id="faqビューのテストなのに何が出力されているのかわからないのは不安だ">FAQ:「ビューのテストなのに何が出力されているのかわからないのは不安だ」</h4>
 
-#### FAQ:「ビューのテストなのに何が出力されているのかわからないのは不安だ」
+<p>その感情はもっともです。というか、私たちも不安になることがあります。</p>
 
-その感情はもっともです。というか、私たちも不安になることがあります。
-
-実際の開発でも、思ったようにテストが通らないことはいくらでもあります。
+<p>実際の開発でも、思ったようにテストが通らないことはいくらでもあります。
 そうした時には、実際に出力される HTML 片などを目で確認したくなります。
-特に、have_tag マッチャや assert_select の記法に慣れないうちは「これで正しいはずなのにテストが通らない」という状況によく遭遇します。
+特に、have_tag マッチャや assert_select の記法に慣れないうちは「これで正しいはずなのにテストが通らない」という状況によく遭遇します。</p>
 
-実際に出力される結果を目視確認したい場合には、response#body を使います。
-手っ取り早い方法としては example の記述に「puts response.body」と追加してテストを実行すれば、出力された HTML 片がターミナルに表示されます。
+<p>実際に出力される結果を目視確認したい場合には、response#body を使います。
+手っ取り早い方法としては example の記述に「puts response.body」と追加してテストを実行すれば、出力された HTML 片がターミナルに表示されます。</p>
 
-### ブラウザで動作確認
+<h3 id="ブラウザで動作確認">ブラウザで動作確認</h3>
 
-ここまでで、モデル、ビュー、コントローラのそれぞれについてごく簡単にですがテストを書きました。
-TODO リストを確認すると、これで「ブログの名前を表示する」ことができそうです。本当でしょうか？ブラウザで確認してみましょう。
+<p>ここまでで、モデル、ビュー、コントローラのそれぞれについてごく簡単にですがテストを書きました。
+TODO リストを確認すると、これで「ブログの名前を表示する」ことができそうです。本当でしょうか？ブラウザで確認してみましょう。</p>
 
-#### データの準備
+<h4 id="データの準備">データの準備</h4>
 
-ブラウザでアプリケーションの動作を確認したいのですが、まだデータを入力する画面がありません。
-TODO リストに実現したい機能として追加しておいて、ここではフィクスチャで定義しているデータを development 環境のデータベースへロードすることで代用しましょう。
+<p>ブラウザでアプリケーションの動作を確認したいのですが、まだデータを入力する画面がありません。
+TODO リストに実現したい機能として追加しておいて、ここではフィクスチャで定義しているデータを development 環境のデータベースへロードすることで代用しましょう。</p>
 
-##### TODOリスト
+<h5 id="todoリスト-2">TODOリスト</h5>
 
-* ブログの名前を表示する
-  *  ~~コントローラにアクションを用意する~~ 
-    *  ~~/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200~~ 
-    *  ~~/blogs/show/:id で指定した Blog インスタンスをロードする~~ 
-    *  ~~app/views/blogs/show.erb.html を選択する~~ 
-  *  ~~アクションの結果を表示するビューを用意する~~ 
-* ブログの最新記事を表示する
-* ブログの最新記事を最大 5 件表示する
-* __ブログを開設する__
+<ul>
+  <li>ブログの名前を表示する
+    <ul>
+      <li><del>コントローラにアクションを用意する</del></li>
+      <li><del>/blogs/show/:id のリクエストに対する HTTP レスポンスのステータスコードは 200</del></li>
+      <li><del>/blogs/show/:id で指定した Blog インスタンスをロードする</del></li>
+      <li><del>app/views/blogs/show.erb.html を選択する</del></li>
+      <li><del>アクションの結果を表示するビューを用意する</del></li>
+    </ul>
+  </li>
+  <li>ブログの最新記事を表示する</li>
+  <li>ブログの最新記事を最大 5 件表示する</li>
+  <li><strong>ブログを開設する</strong></li>
+</ul>
 
-
-さて。フィクスチャのデータを DB に投入するには、rake で spec:db:fixtures:load タスクを実行します。
-
+<p>さて。フィクスチャのデータを DB に投入するには、rake で spec:db:fixtures:load タスクを実行します。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake spec:db:fixtures:load</code></pre></figure>
 
+<h4 id="ブラウザで確認する">ブラウザで確認する</h4>
 
-
-#### ブラウザで確認する
-
-開発用のサーバを起動して、ブラウザからアクセスします。
-
+<p>開発用のサーバを起動して、ブラウザからアクセスします。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ ruby script/server</code></pre></figure>
 
+<p><a href="http://localhost:3000/blogs/show/1">http://localhost:3000/blogs/show/1</a> へアクセスしてみてください。
+<img src="../../images/0023-Rspec/blogs_show_1.png" alt="blogs_show_1.png" /></p>
 
+<p>連載 2 回を費して、ついに画面を表示することができました。なんという生産性。Ruby on Rails すごい!</p>
 
-[http://localhost:3000/blogs/show/1](http://localhost:3000/blogs/show/1) へアクセスしてみてください。
-![blogs_show_1.png](../../images/0023-Rspec/blogs_show_1.png)
+<h3 id="ビューのテストで利用できる機能">ビューのテストで利用できる機能</h3>
 
-連載 2 回を費して、ついに画面を表示することができました。なんという生産性。Ruby on Rails すごい!
+<p>RSpec on Rails のビューのテストでは、描画したテンプレートのデータにアクセスする方法として以下をサポートしています。</p>
 
-### ビューのテストで利用できる機能
+<dl>
+  <dt>assigns[variable_name]</dt>
+  <dd>ビューのインスタンス変数 @variable_name に代入されたオブジェクトを取得します。インスタンス変数名の “@” を除いたものを文字列またはシンボルをキーとして指定します。</dd>
+  <dt>flash[:key], params[:key], session[:key]</dt>
+  <dd>flash、params、session のそれぞれに指定したキーでアクセスします。</dd>
+  <dt>template.expect_render / stub_render</dt>
+  <dd>描画するテンプレートを部分的にモック化 / スタブ化します。モックとスタブについては今後の連載で紹介します。</dd>
+  <dt>have_tag マッチャ</dt>
+  <dd>テンプレートが描画する HTML を検証するためのマッチャーです。その実装は、assert_select への薄いラッパーです。assert_select は Rails 1.2 で導入された HTML 検証用のメソッドです。検証したいエレメントを CSS セレクタ形式で指定し、エレメントの数や内部のテキストなど様々な検証を記述できます。assert_select の詳細は『<a href="https://www.amazon.co.jp/Rails%E3%81%AB%E3%82%88%E3%82%8B%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%ABWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA-%E5%89%8D%E7%94%B0-%E4%BF%AE%E5%90%BE/dp/4274066401?SubscriptionId=AKIAIXYTNSOEGXJVP5SQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4274066401">‘Rails によるアジャイル Web アプリケーション開発’</a>』や私 (もろはし) が<a href="http://d.hatena.ne.jp/moro/20071001/1191255082">執筆中の書籍の草稿</a>を参照してください。</dd>
+</dl>
 
-RSpec on Rails のビューのテストでは、描画したテンプレートのデータにアクセスする方法として以下をサポートしています。
+<p>RSpec on Rails がコントローラのテストを書くために提供している機能は、
+<a href="http://rspec.info/documentation/rails/writing/views.html">プロジェクトサイトのドキュメント</a>にもまとまっています。参考にしてください。</p>
 
-assigns[variable_name]
-: ビューのインスタンス変数 @variable_name に代入されたオブジェクトを取得します。インスタンス変数名の "@" を除いたものを文字列またはシンボルをキーとして指定します。
+<h2 id="今回のまとめ">今回のまとめ</h2>
 
-flash[&#58;key], params[&#58;key], session[&#58;key]
-:  flash、params、session のそれぞれに指定したキーでアクセスします。
+<p>今回書いたコードをふりかえっておきましょう。</p>
 
-template.expect_render / stub_render
-:  描画するテンプレートを部分的にモック化 / スタブ化します。モックとスタブについては今後の連載で紹介します。
-
-have_tag マッチャ
-: テンプレートが描画する HTML を検証するためのマッチャーです。その実装は、assert_select への薄いラッパーです。assert_select は Rails 1.2 で導入された HTML 検証用のメソッドです。検証したいエレメントを CSS セレクタ形式で指定し、エレメントの数や内部のテキストなど様々な検証を記述できます。assert_select の詳細は『<a href="https://www.amazon.co.jp/Rails%E3%81%AB%E3%82%88%E3%82%8B%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%ABWeb%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E9%96%8B%E7%99%BA-%E5%89%8D%E7%94%B0-%E4%BF%AE%E5%90%BE/dp/4274066401?SubscriptionId=AKIAIXYTNSOEGXJVP5SQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4274066401">'Rails によるアジャイル Web アプリケーション開発'</a>』や私 (もろはし) が[執筆中の書籍の草稿](http://d.hatena.ne.jp/moro/20071001/1191255082)を参照してください。
-
-RSpec on Rails がコントローラのテストを書くために提供している機能は、
-[プロジェクトサイトのドキュメント](http://rspec.info/documentation/rails/writing/views.html)にもまとまっています。参考にしてください。
-
-## 今回のまとめ
-
-今回書いたコードをふりかえっておきましょう。
-
-### 全テストケースの実行
-
+<h3 id="全テストケースの実行">全テストケースの実行</h3>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ spec -cfs spec/**/*_spec.rb</code></pre></figure>
-
 
 <pre class="screen" style="color: white; background-color: black; padding: 0.5em; width: 40.0em">
 
@@ -1965,12 +2002,11 @@ Finished in 0.210226 seconds
 
 </pre>
 
-モデル、コントローラ、ビューのテストをごく簡単にではありますが、一通り書きました。
+<p>モデル、コントローラ、ビューのテストをごく簡単にではありますが、一通り書きました。</p>
 
-### RCov によるカバレッジ
+<h3 id="rcov-によるカバレッジ">RCov によるカバレッジ</h3>
 
-カバレッジも確認しておきましょう。
-
+<p>カバレッジも確認しておきましょう。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">rake spec:rcov
 (in /path/to/myblog)
@@ -1980,13 +2016,11 @@ Finished in 0.411136 seconds
 
 12 examples, 0 failures</code></pre></figure>
 
+<p><img src="../../images/0023-Rspec/rcov-screenshot-02.png" alt="rcov-screenshot-02.png" /></p>
 
-![rcov-screenshot-02.png](../../images/0023-Rspec/rcov-screenshot-02.png)
+<p>依然 100% です(まあ、ほとんどプロダクトコードは増えてないのですが)。</p>
 
-依然 100% です(まあ、ほとんどプロダクトコードは増えてないのですが)。
-
-### rake stats による統計情報
-
+<h3 id="rake-stats-による統計情報">rake stats による統計情報</h3>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ rake stats
 (in /path/to/myblog)
@@ -2005,51 +2039,59 @@ Finished in 0.411136 seconds
 +----------------------+-------+-------+---------+---------+-----+-------+
   Code LOC: 22     Test LOC: 107     Code to Test Ratio: 1:4.9</code></pre></figure>
 
+<p>今回もテストばかり書いていました。</p>
 
+<h2 id="次回予告">次回予告</h2>
 
-今回もテストばかり書いていました。
+<p>次回も、myblog の機能拡張をテスト駆動で開発しながら、RSpec の機能を紹介していきます。
+現在の TODO リストを整理しておきます。</p>
 
-## 次回予告
+<h5 id="todo-リスト-5">TODO リスト</h5>
 
-次回も、myblog の機能拡張をテスト駆動で開発しながら、RSpec の機能を紹介していきます。
-現在の TODO リストを整理しておきます。
+<ul>
+  <li>__ <del>ブログの名前を表示する</del> __</li>
+  <li>ブログの最新記事を表示する</li>
+  <li>ブログの最新記事を最大 5 件表示する</li>
+  <li>ブログを開設する</li>
+</ul>
 
-##### TODO リスト
+<p>まだまだ先は長いですね。いかにもすべてを実装する前に飽きてしまいそうです :-)</p>
 
-* __ ~~ブログの名前を表示する~~ __
-* ブログの最新記事を表示する
-* ブログの最新記事を最大 5 件表示する
-* ブログを開設する
+<p>それはそれとして、またお目にかかりましょう。Happy Testing!</p>
 
+<h2 id="著者について">著者について</h2>
 
-まだまだ先は長いですね。いかにもすべてを実装する前に飽きてしまいそうです :-)
+<h3 id="かくたに">かくたに</h3>
 
-それはそれとして、またお目にかかりましょう。Happy Testing!
+<p><a href="http://kakutani.com">kakutani.com</a>。日本 Ruby の会理事。(株) 永和システムマネジメント サービスプロバイディング事業部チーフプログラマ。『<a href="https://www.amazon.co.jp/Rubyist-Magazine-%E5%87%BA%E5%BC%B5%E7%89%88-%E6%AD%A3%E3%81%97%E3%81%84Ruby%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E8%AC%9B%E5%BA%A7%E2%80%95Rubyist%E3%81%AERubyist%E3%81%AB%E3%82%88%E3%82%8B%E3%80%81Rubyist%E3%81%A8%E3%81%9D%E3%81%86%E3%81%A7%E3%81%AA%E3%81%84%E4%BA%BA%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE-%E9%9D%92%E6%9C%A8/dp/4839923205?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4839923205">‘Rubyist Magazine 出張版’</a>』にコラムを寄稿したり『<a href="https://www.amazon.co.jp/Java%E3%81%8B%E3%82%89Ruby%E3%81%B8-%E2%80%95%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E5%AE%9F%E8%B7%B5%E7%A7%BB%E8%A1%8C%E3%82%AC%E3%82%A4%E3%83%89-Bruce-Tate/dp/4873113202?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4873113202">‘Java から Ruby へ’</a>』を翻訳したり、『<a href="https://www.amazon.co.jp/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9-%E9%81%94%E4%BA%BA%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%AB%E5%AD%A6%E3%81%B6%E7%8F%BE%E5%A0%B4%E9%96%8B%E7%99%BA%E8%80%85%E3%81%AE%E7%BF%92%E6%85%A3-Venkat-Subramaniam/dp/4274066940?SubscriptionId=0WVS3J53FVP9M1E7ET02&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4274066940">‘アジャイルプラクティス’</a>』を監訳したり。好きなメソッドは Object#extend 。好きな分散 SCM は git (にわかユーザ)。</p>
 
-## 著者について
+<h3 id="もろはし">もろはし</h3>
 
-### かくたに
+<p><a href="http://d.hatena.ne.jp/moro/">moro の日記</a> 。Rails 勉強会@東京の案内メール係。(株) 永和システムマネジメント サービスプロバイディング事業部所属。足掛け 2 年もかかっている Rails 書籍がそろそろ一区切り着きそうです。ただいま絶賛自己レビュー中。Rails 2.0 対応で書き上げています。好きなメソッドは content_tag_for という Rails 脳。</p>
 
-[kakutani.com](http://kakutani.com)。日本 Ruby の会理事。(株) 永和システムマネジメント サービスプロバイディング事業部チーフプログラマ。『<a href="https://www.amazon.co.jp/Rubyist-Magazine-%E5%87%BA%E5%BC%B5%E7%89%88-%E6%AD%A3%E3%81%97%E3%81%84Ruby%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E8%AC%9B%E5%BA%A7%E2%80%95Rubyist%E3%81%AERubyist%E3%81%AB%E3%82%88%E3%82%8B%E3%80%81Rubyist%E3%81%A8%E3%81%9D%E3%81%86%E3%81%A7%E3%81%AA%E3%81%84%E4%BA%BA%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE-%E9%9D%92%E6%9C%A8/dp/4839923205?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4839923205">'Rubyist Magazine 出張版'</a>』にコラムを寄稿したり『<a href="https://www.amazon.co.jp/Java%E3%81%8B%E3%82%89Ruby%E3%81%B8-%E2%80%95%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E5%AE%9F%E8%B7%B5%E7%A7%BB%E8%A1%8C%E3%82%AC%E3%82%A4%E3%83%89-Bruce-Tate/dp/4873113202?SubscriptionId=AKIAJCKXRISJS6UE36NQ&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4873113202">'Java から Ruby へ'</a>』を翻訳したり、『<a href="https://www.amazon.co.jp/%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E3%83%97%E3%83%A9%E3%82%AF%E3%83%86%E3%82%A3%E3%82%B9-%E9%81%94%E4%BA%BA%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9E%E3%81%AB%E5%AD%A6%E3%81%B6%E7%8F%BE%E5%A0%B4%E9%96%8B%E7%99%BA%E8%80%85%E3%81%AE%E7%BF%92%E6%85%A3-Venkat-Subramaniam/dp/4274066940?SubscriptionId=0WVS3J53FVP9M1E7ET02&amp;tag=cshs-22&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=4274066940">'アジャイルプラクティス'</a>』を監訳したり。好きなメソッドは Object#extend 。好きな分散 SCM は git (にわかユーザ)。
+<h2 id="バックナンバー">バックナンバー</h2>
 
-### もろはし
+<ul>
+  <li>
+    <p><a href="../../articles/0023/0023-Rspec.html">スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)</a></p>
+  </li>
+  <li>
+    <p><a href="../../articles/0021/0021-Rspec.html">スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)</a></p>
+  </li>
+</ul>
 
-[moro の日記](http://d.hatena.ne.jp/moro/) 。Rails 勉強会@東京の案内メール係。(株) 永和システムマネジメント サービスプロバイディング事業部所属。足掛け 2 年もかかっている Rails 書籍がそろそろ一区切り着きそうです。ただいま絶賛自己レビュー中。Rails 2.0 対応で書き上げています。好きなメソッドは content_tag_for という Rails 脳。
+<hr />
 
-## バックナンバー
-
-
-
-  - [スはスペックのス 【第 2 回】 RSpec on Rails (コントローラとビュー編)](../../articles/0023/0023-Rspec.html)
-
-  - [スはスペックのス 【第 1 回】 RSpec の概要と、RSpec on Rails (モデル編)](../../articles/0021/0021-Rspec.html)
-
-
-----
-
-[^1]: 現在の Cookie セッションストアでは HMAC-SHA1 を利用しており、その鍵長は160ビットです。key が鍵長を越えると key のハッシュ値を key とします。[[http://www.ipa.go.jp/security/rfc/RFC2104JA.html#3]] も参照してください
-[^2]: より正確に書くなら「response() メソッドの戻り値である ActionController::TestResponse オブジェクト」ですが、冗長なので便宜的に「response オブジェクト」と呼びます
-</false></span></pre>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>現在の Cookie セッションストアでは HMAC-SHA1 を利用しており、その鍵長は160ビットです。key が鍵長を越えると key のハッシュ値を key とします。[[http://www.ipa.go.jp/security/rfc/RFC2104JA.html#3]] も参照してください <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>より正確に書くなら「response() メソッドの戻り値である ActionController::TestResponse オブジェクト」ですが、冗長なので便宜的に「response オブジェクト」と呼びます <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
                     </div>
                 </div>

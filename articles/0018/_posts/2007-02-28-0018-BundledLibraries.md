@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 11 回】 zlib
 short_title: 標準添付ライブラリ紹介 【第 11 回】 zlib
+created_on: 2007-02-28
 tags: 0018 BundledLibraries
 ---
 {% include base.html %}

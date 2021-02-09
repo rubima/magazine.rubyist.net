@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2004-10-16</span>
+
 
 
                         </div>
@@ -218,7 +230,7 @@
 
 <p>そんな人に Ruby のプログラミングを紹介します。</p>
 
-<p>筆者はゲームプログラマー<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+<p>筆者はゲームプログラマー<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
 なので、簡単なゲームプログラムを作りながらプログラムの基本的な部分を連載形式で解説します。この連載では原則として Windows で Ruby を使うことを前提に解説します。
 プログラミングははじめてだけど HTML くらいなら知っているというような、ある程度コンピュータを使い慣れている方が対象です。</p>
 
@@ -233,7 +245,7 @@
 
 <h3 id="ruby-はオブジェクト指向スクリプト言語">Ruby はオブジェクト指向スクリプト言語</h3>
 
-<p><img src="../../images/0002-FirstProgramming/dengaku_s.png" alt="dengaku_s.png" />Ruby は、便利な機能がたくさんあって、いろいろな分野<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>で使うことができるとても強力なプログラム言語ですが、簡単な機能を使うだけでも十分にプログラミングを楽しむことができます。また、オブジェクト指向<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>を知らなくても大丈夫です。</p>
+<p><img src="../../images/0002-FirstProgramming/dengaku_s.png" alt="dengaku_s.png" />Ruby は、便利な機能がたくさんあって、いろいろな分野<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>で使うことができるとても強力なプログラム言語ですが、簡単な機能を使うだけでも十分にプログラミングを楽しむことができます。また、オブジェクト指向<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>を知らなくても大丈夫です。</p>
 
 <p>Ruby はまつもと ゆきひろ氏が中心となって開発している__フリーソフトウェア__なので、誰でも無料で使用することができます。</p>
 
@@ -294,12 +306,12 @@ Windows 以外の OS にインストールする場合や他のインストー�
 このプログラムが書かれたファイルのことを__ソースファイル__と呼びます。
 ただ単に__ソース__と呼ぶこともあります。</p>
 
-<p>ソースファイルはエディタ<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>というアプリケーションで作成します。
+<p>ソースファイルはエディタ<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>というアプリケーションで作成します。
 Windows には「メモ帳」というエディタがはじめから用意されています。プログラムのソースを書くにはあまり便利ではありませんが、今回はこれでも十分です。</p>
 
 <h3 id="hello-world">hello world</h3>
 
-<p>ここでは <strong>C:\src</strong> というディレクトリ (フォルダ) <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>にソースファイルを置くことにします。Cドライブのルートに src というディレクトリを作成してください。src は半角文字にしてください。</p>
+<p>ここでは <strong>C:\src</strong> というディレクトリ (フォルダ) <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>にソースファイルを置くことにします。Cドライブのルートに src というディレクトリを作成してください。src は半角文字にしてください。</p>
 
 <p>エディタ (メモ帳) を起動して次のように入力してください。必ず全ての文字を半角で入力してください。全角のスペースも使わないでください。アルファベットの大文字と小文字も区別されます。</p>
 
@@ -438,12 +450,12 @@ print '歳です。'</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">print '私は' ; sleep 1 ; print 15 ; sleep 1 ; print '歳です。'</code></pre></figure>
 
-<p>プログラムには流れがあります。どんなに大きなプログラムでも必ず流れがあり、一行ずつ (一文ずつ) 順番に実行されていきます。今回のサンプルは流れがひとつしかなく、このようなプログラムをシングルスレッド<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>と言います。Ruby では明示的にスレッド機能を使わない限り自動的にシングルスレッドのプログラムになります。</p>
+<p>プログラムには流れがあります。どんなに大きなプログラムでも必ず流れがあり、一行ずつ (一文ずつ) 順番に実行されていきます。今回のサンプルは流れがひとつしかなく、このようなプログラムをシングルスレッド<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>と言います。Ruby では明示的にスレッド機能を使わない限り自動的にシングルスレッドのプログラムになります。</p>
 
 <h3 id="変数-へんすう">変数 (へんすう)</h3>
 
 <p><strong>変数__はプログラムではとても重要な仕組みで、いろいろな場面で使用します。
-ここでは数値や文字列の__データを入れることのできる箱</strong><sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>のようなものだと考えてください。</p>
+ここでは数値や文字列の__データを入れることのできる箱</strong><sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>のようなものだと考えてください。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">a = 1
 b = 50</code></pre></figure>
@@ -479,7 +491,7 @@ aBc_123_XyZ</code></pre></figure>
 
 <p>これまでのテストプログラムに登場した puts 、print、sleep は__メソッド__と呼ばれます。
 puts と print は文字を表示するメソッドです。
-sleep はプログラムの実行を一時停止するメソッド<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>です。</p>
+sleep はプログラムの実行を一時停止するメソッド<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>です。</p>
 
 <p>メソッドの後ろに書くパラメータを__引数 (ひきすう) __といいます。puts メソッドでは引数に与える文字列や数字によっていろいろな表示を行うことができます。</p>
 
@@ -628,7 +640,7 @@ if a == 0
 end</code></pre></figure>
 
 <p>このプログラムでは 2 行目で条件判断が行われます。このとき a の内容が 0 であれば 3 行目の puts メソッドが実行されます。
-if 文では if の後に書かれた条件が成立したときだけ if と end に囲まれた部分<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>が実行されます。2 行目の条件の部分で a と 0 の間に <strong>==</strong> が使われています。
+if 文では if の後に書かれた条件が成立したときだけ if と end に囲まれた部分<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>が実行されます。2 行目の条件の部分で a と 0 の間に <strong>==</strong> が使われています。
 この == は a と 0 が__等しかったら__という意味を表す記号で__比較演算子__といいます。このプログラムでは1行目で a の中身には 0 がセットされているので if 文の条件が成立し、 3 行目が実行されます。比較演算子にはいくつか種類があります。</p>
 
 <table>
@@ -705,7 +717,7 @@ puts ct</code></pre></figure>
 <h3 id="無限ループ">無限ループ</h3>
 
 <p>次のプログラムでは条件が必ず成立するのでプログラムが終了しません。このようなループを無限ループといいます。
-このプログラムを停止させるには Ctrl キーを押しながら C キーを押して Ruby を強制終了させてください。<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup></p>
+このプログラムを停止させるには Ctrl キーを押しながら C キーを押して Ruby を強制終了させてください。<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">while 1 &gt; 0
   puts 'とまらないよ'
@@ -964,7 +976,7 @@ end</code></pre></figure>
 <p>exit 以外はこれまでに紹介した機能しか使っていないのでじっくりソースを読んでみてください。
 一行ずつ理解しながら読んでいけば頭の中でプログラムの流れをイメージすることができると思います。</p>
 
-<p>読者のみなさんもこのプログラムを参考にゲームブックプログラムを是非作ってみてください<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>。乱数の機能を使えば新たなゲーム性をプラスすることもできるでしょう。</p>
+<p>読者のみなさんもこのプログラムを参考にゲームブックプログラムを是非作ってみてください<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>。乱数の機能を使えば新たなゲーム性をプラスすることもできるでしょう。</p>
 
 <h2 id="著者について">著者について</h2>
 
@@ -993,40 +1005,40 @@ end</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>プログラムを書いていることが多いのでそう言われますが、自分ではあくまでゲームデザイナーだと思っています！ <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>プログラムを書いていることが多いのでそう言われますが、自分ではあくまでゲームデザイナーだと思っています！ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>もちろんゲームだって作れます。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>もちろんゲームだって作れます。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>オブジェクト指向プログラミングとはプログラミング技法のひとつです。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>オブジェクト指向プログラミングとはプログラミング技法のひとつです。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>エディタとはテキストファイルを編集するツールのことです。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>エディタとはテキストファイルを編集するツールのことです。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>ディレクトリとはフォルダのことです。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>ディレクトリとはフォルダのことです。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>流れが複数あるプログラムはマルチスレッドと言います。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>流れが複数あるプログラムはマルチスレッドと言います。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>実はこのたとえは正確ではありません。 Ruby の世界では、複数の箱に同時に同じデータが入ることがあります。変数とはオブジェクトに付ける名札と言ってもいいかもしれません。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>実はこのたとえは正確ではありません。 Ruby の世界では、複数の箱に同時に同じデータが入ることがあります。変数とはオブジェクトに付ける名札と言ってもいいかもしれません。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>ここでは詳しい解説はしませんが、オブジェクト指向プログラミングにおいてメソッドとはデータに対する「手続き」のことを指します。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>ここでは詳しい解説はしませんが、オブジェクト指向プログラミングにおいてメソッドとはデータに対する「手続き」のことを指します。 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>上のプログラムでは puts の前にスペースが挿入してありますが、これはプログラムを見やすくするためのものでインデント (字下げ) といいます。インデントをしなくてもプログラムは同じように動作します。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>上のプログラムでは puts の前にスペースが挿入してありますが、これはプログラムを見やすくするためのものでインデント (字下げ) といいます。インデントをしなくてもプログラムは同じように動作します。 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>Windows の場合です。例えば Linux ならばターミナル画面で、Ctrl + D です。 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>Windows の場合です。例えば Linux ならばターミナル画面で、Ctrl + D です。 <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>このゲームを作るのに一番気を使ったのは sleep です。sleep のタイミングは何度もプログラムを実行しながら調整しました。微妙な数値で印象がガラリと変わってしまうからアプリケーションって不思議ですね。 <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>このゲームを作るのに一番気を使ったのは sleep です。sleep のタイミングは何度もプログラムを実行しながら調整しました。微妙な数値で印象がガラリと変わってしまうからアプリケーションって不思議ですね。 <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

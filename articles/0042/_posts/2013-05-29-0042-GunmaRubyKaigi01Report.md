@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (36) ぐんま Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (36) ぐんま Ruby 会議 01
-tags: 0042 GunmaRubyKaigi01Report
+created_on: 2013-05-29
+tags: 0042 GunmaRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}
 

@@ -2,6 +2,7 @@
 layout: post
 title: Ruby ビギナーのための CGI 入門 【第 4 回】 同じようなことを繰り返して実行する
 short_title: Ruby ビギナーのための CGI 入門 【第 4 回】 同じようなことを繰り返して実行する
+created_on: 2006-07-13
 tags: 0015 CGIProgrammingForRubyBeginners
 ---
 {% include base.html %}

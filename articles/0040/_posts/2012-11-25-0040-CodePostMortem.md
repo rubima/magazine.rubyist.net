@@ -2,6 +2,7 @@
 layout: post
 title: Ruby コードの感想戦 【第 1 回】 WikiR
 short_title: Ruby コードの感想戦 【第 1 回】 WikiR
+created_on: 2012-11-25
 tags: 0040 CodePostMortem
 ---
 {% include base.html %}

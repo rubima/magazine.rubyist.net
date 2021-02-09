@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介 『パーフェクト Ruby』
 short_title: 書籍紹介 『パーフェクト Ruby』
+created_on: 2013-07-31
 tags: 0043 BookPerfectRuby
 ---
 {% include base.html %}

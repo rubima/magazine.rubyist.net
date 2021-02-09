@@ -2,6 +2,7 @@
 layout: post
 title: Introducing ruby-dev Translation
 short_title: Introducing ruby-dev Translation
+created_on: 2011-11-28
 tags: 0036 ruby
 ---
 {% include base.html %}

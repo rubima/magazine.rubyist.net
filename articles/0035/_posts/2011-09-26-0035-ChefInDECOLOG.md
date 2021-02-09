@@ -2,6 +2,7 @@
 layout: post
 title: Chef でサーバ管理を楽チンにしよう！ (第 1 回)
 short_title: Chef でサーバ管理を楽チンにしよう！ (第 1 回)
+created_on: 2011-09-26
 tags: 0035 ChefInDECOLOG
 ---
 {% include base.html %}

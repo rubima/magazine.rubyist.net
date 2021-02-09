@@ -2,6 +2,7 @@
 layout: post
 title: テンプレートシステム入門 (2) 基礎編
 short_title: テンプレートシステム入門 (2) 基礎編
+created_on: 2008-10-01
 tags: 0024 TemplateSystem2
 ---
 {% include base.html %}

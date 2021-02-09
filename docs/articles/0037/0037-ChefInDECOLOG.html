@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2012-02-05</span>
+
 
 
                         </div>
@@ -256,7 +268,7 @@
 
 </code></pre></div></div>
 
-<p>これだけです。Service リソースは引数と同名の init スクリプトを探して実行します。service コマンドと同じですね<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>これだけです。Service リソースは引数と同名の init スクリプトを探して実行します。service コマンドと同じですね<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <p><a href="http://wiki.opscode.com/display/chef/Resources#Resources-Service">http://wiki.opscode.com/display/chef/Resources#Resources-Service</a></p>
 
@@ -347,7 +359,7 @@
 
 <p>こんな感じに書いてみます。execute のブロックは呼び出す前に記述しておく必要があります。</p>
 
-<p>これを実行するとメールが送られてくると思います<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。ところが、これだとファイルに変更がなくても実行されてしまい、メールが送られてきます。</p>
+<p>これを実行するとメールが送られてくると思います<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。ところが、これだとファイルに変更がなくても実行されてしまい、メールが送られてきます。</p>
 
 <p>Execute リソースのアクションは run と nothing で、デフォルトが run になっているためです。ファイルが変更されたときだけ、実行させるためには nothing にしておきます。</p>
 
@@ -374,7 +386,7 @@
 
 <p><a href="http://wiki.opscode.com/display/chef/Resources#Resources-Script">http://wiki.opscode.com/display/chef/Resources#Resources-Script</a></p>
 
-<p>ところで、マニュアルによると「Execute や Script リソースは “idempotent” を保証してないよ！　だからあなたが “idempotent” になるように記載するよう注意してね！」ということが書かれています。”idempotent” とは、何回行なっても同じ結果が得られることを指す概念だそうです<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。今回はなんでもできる度をアピールするためこういった例を出しましたが、Chef はサーバ環境などを “idempotent” に保つために設計されたものであり、その思想から外れるものは別のツールに頼るのが後の幸せを買うことになるのかもしれません。</p>
+<p>ところで、マニュアルによると「Execute や Script リソースは “idempotent” を保証してないよ！　だからあなたが “idempotent” になるように記載するよう注意してね！」ということが書かれています。”idempotent” とは、何回行なっても同じ結果が得られることを指す概念だそうです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。今回はなんでもできる度をアピールするためこういった例を出しましたが、Chef はサーバ環境などを “idempotent” に保つために設計されたものであり、その思想から外れるものは別のツールに頼るのが後の幸せを買うことになるのかもしれません。</p>
 
 <h2 id="最後に">最後に</h2>
 
@@ -387,16 +399,16 @@ Chef以外にも様々な取り組みを行なっていますので、興味が�
 
 <p>諸富　洋。モバイル向けブログサイト「<a href="http://dclog.jp/">DECOLOG</a>」を運営する<a href="http://www.328w.co.jp/">ミツバチワークス株式会社</a>の中の人。<a href="https://twitter.com/#!/164c">@164c</a>。<a href="http://tech.dclog.jp/">DECOLOG TECH BLOG</a>。</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>というか、chef-solo のログを見ていたら内部的にも service コマンドが実行されていました <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>というか、chef-solo のログを見ていたら内部的にも service コマンドが実行されていました <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>sendmail コマンドで外部にメールが送れる環境が必要です <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>sendmail コマンドで外部にメールが送れる環境が必要です <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>日本語では冪等性 (べきとうせい) と言ったりする <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>日本語では冪等性 (べきとうせい) と言ったりする <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2016-08-21</span>
+
 
 
                         </div>
@@ -265,9 +277,9 @@
 <h2 id="はじめに">はじめに</h2>
 
 <p><img src="../../images/0054-TokyoRubyKaigi11Report/27391441416_1604a37692_o.jpg" alt="27391441416_1604a37692_o.jpg" />
-実行委員長の笹田さんが白衣で登壇して、東京 Ruby 会議 11 が始まりました。ロビーには書籍の展示やコーヒーがあり、いろいろなポスターが掲示されています。コンベンションホールには 2 列の通路ができるように椅子が並んでいます。それぞれの通路の前の方にはマイクスタンドとマイク<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+実行委員長の笹田さんが白衣で登壇して、東京 Ruby 会議 11 が始まりました。ロビーには書籍の展示やコーヒーがあり、いろいろなポスターが掲示されています。コンベンションホールには 2 列の通路ができるように椅子が並んでいます。それぞれの通路の前の方にはマイクスタンドとマイク<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
-<p>「秋葉原ダイビル、『Steins;Gate』で何かを隠しておいたロッカーの向こうにあるビルなんですけど、ロッカーは撤去されてしまいました。そんなわけで白衣<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>でまいりました。」とのこと。地域 Ruby 会議は「テーマ性を持ってやりたい人がやる」というわけで、東京 Ruby 会議 11 では「血湧き肉躍るハックの話をしてください。質疑応答は前方のマイクで。意見を戦わせましょう。」</p>
+<p>「秋葉原ダイビル、『Steins;Gate』で何かを隠しておいたロッカーの向こうにあるビルなんですけど、ロッカーは撤去されてしまいました。そんなわけで白衣<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>でまいりました。」とのこと。地域 Ruby 会議は「テーマ性を持ってやりたい人がやる」というわけで、東京 Ruby 会議 11 では「血湧き肉躍るハックの話をしてください。質疑応答は前方のマイクで。意見を戦わせましょう。」</p>
 
 <h2 id="午前セッション">午前セッション</h2>
 
@@ -311,7 +323,7 @@ UI や API デザインの原則やデータ構造、アルゴリズムを知る
 <h3 id="rubyに型があると便利か---栗原-勇樹さん">Rubyに型があると便利か - 栗原 勇樹さん</h3>
 
 <p><a href="https://speakerdeck.com/ksss/rubynixing-gaarutobian-li-ka">発表資料</a>
-<a href="https://youtu.be/HwdWbJxLRdE">動画</a><sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+<a href="https://youtu.be/HwdWbJxLRdE">動画</a><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
 
 <p>mruby 関連で RubyKaja 2014 に選ばれた栗原さんからは、型についていろんな議論がもりあがればいいな、ということで、Ruby での型についての紹介がありました。型については、『型システム入門 −プログラミング言語と型の理論−<img class="right" src="https://images-fe.ssl-images-amazon.com/images/I/41gusdgRAkL._SL160_.jpg" />』という、これを読んでいない奴はモグリと言われる本がありますが、「難しくてよくわからなかった」。「入門の入門の入門があればな」だそうです。</p>
 
@@ -321,7 +333,7 @@ UI や API デザインの原則やデータ構造、アルゴリズムを知る
 String === 123 #=&gt; false
 String === nil #=&gt; false</code></pre></figure>
 
-<p>これまでの実装例はいくつかあります<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup><sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>が、今回は Struct を拡張したものを作りました<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。値が入る時や変わる時だけ class チェックをして、合わなければエラーをくれます。つくったけど、実は、使いませんでした。</p>
+<p>これまでの実装例はいくつかあります<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup><sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>が、今回は Struct を拡張したものを作りました<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。値が入る時や変わる時だけ class チェックをして、合わなければエラーをくれます。つくったけど、実は、使いませんでした。</p>
 
 <p>そのまま時間はたち、次の問題。JSONを扱うのが面倒。 [] も fetch(“”) もみづらい。タイポがこわい。どういうメソッドが使えるのかわからない。nil はありえるのかどうかわからない。「もーむりっす。」Go 言語や Crystal では、JSON を扱えるライブラリがあります。それを眺めてみると、TypeStruct を拡張してチェックができることがわかりました。安心感があります。</p>
 
@@ -336,7 +348,7 @@ String === nil #=&gt; false</code></pre></figure>
 
 <p>というわけで、TypeStruct を作りました。JSON を当てはめることができます。作りも単純なので導入もしやすいです。ドキュメントとしてもわかりやすく、プルリクエストでも型の変更を議論しやすくなります。複数人での開発向きです。</p>
 
-<p>なお、Ruby 3 の型<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup><sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>は、今回の発表のものとは違います。静的チェックがあります。Ruby レベルでは、Annotation を書きません。C では、Annotation を書きます。たいへんそう。</p>
+<p>なお、Ruby 3 の型<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup><sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>は、今回の発表のものとは違います。静的チェックがあります。Ruby レベルでは、Annotation を書きません。C では、Annotation を書きます。たいへんそう。</p>
 
 <p>講演後の質疑応答。まつもとさん何かコメントはありませんか？という問いかけにたいして、「こういうのが便利な時もあるとは思いますが、型は絶対書きたくないでござる。」とコメントされていました。「型がいやとか嫌いなわけではなく、書きたくないのです。」とのことでした。
 <img src="../../images/0054-TokyoRubyKaigi11Report/DSC05573.JPG" alt="DSC05573.JPG" /></p>
@@ -347,14 +359,14 @@ String === nil #=&gt; false</code></pre></figure>
 ここまでの講演を聴いて、お昼の休憩時間となりました。休憩中に、ロビーに展示されていたポスターのうち技術的な内容のものを順不同で紹介しておきましょう。</p>
 
 <ul>
-  <li>「CRuby 組込ライブラリ Rational の最適化<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>」</li>
-  <li>「mruby/c - Ruby for small devices<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>」</li>
-  <li>「RICOH THETA の全天球写真でペーパークラフト作成<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>」</li>
+  <li>「CRuby 組込ライブラリ Rational の最適化<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>」</li>
+  <li>「mruby/c - Ruby for small devices<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup>」</li>
+  <li>「RICOH THETA の全天球写真でペーパークラフト作成<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>」</li>
 </ul>
 
 <p>「Ruby 開発協賛各社御紹介」のポスターもありました。「Ruby の開発に際して多くの企業様から多岐にわたるご支援をいただいております。これらのご支援がなければ私達の活動は成し得ません。この場を借りて篤く感謝いたします。」とのこと。ありがとうございます。</p>
 
-<p>いっぽう、「Sciruby-jp プロジェクト (協力者募集中)<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>」とのお知らせもありました。興味のある方は覗いてみてください。</p>
+<p>いっぽう、「Sciruby-jp プロジェクト (協力者募集中)<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>」とのお知らせもありました。興味のある方は覗いてみてください。</p>
 
 <h2 id="午後セッション-1">午後セッション 1</h2>
 
@@ -380,7 +392,7 @@ Yahoo や Google (……プレゼンでは Google の資料でした) などの�
 </ol>
 
 <p>それらを解決することで、最速のウェブサーバーが作れる可能性があります。
-理論値を計算すると、<a href="http://regional.rubykaigi.org/tokyo11/interview/kazuho/">一回の通信で最低 6 RTT</a><sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup> かかります。それを 1 RTT におさめることができれば格段に表示速度が上がります。</p>
+理論値を計算すると、<a href="http://regional.rubykaigi.org/tokyo11/interview/kazuho/">一回の通信で最低 6 RTT</a><sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote">13</a></sup> かかります。それを 1 RTT におさめることができれば格段に表示速度が上がります。</p>
 
 <p>その実現方法として 2 つの最適化の例を挙げられました。
 一つ目は poll threshold の設定をして通信効率を上げること、二つ目は、server-push という機能を使って機能を使ってサーバー側でのプロセッシング中に先に JS および CSS を返すようにすることです。
@@ -445,7 +457,7 @@ Yahoo や Google (……プレゼンでは Google の資料でした) などの�
 <p><a href="https://speakerdeck.com/tenderlove/tokyo-ruby-kaigi">発表資料</a>
 <a href="https://youtu.be/x3UANgL98wk">動画</a></p>
 
-<p>Aaron さんの、最近新しい会社に入りました<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>という挨拶から講演は始まりました (拍手) 。笹田さんからの講演依頼に「プログラミングをしていて、おお、凄いコードが書けた、とかこれは凄いものをつくってしまった、とかの経験を発表してください」とあったということで、まずは「凄いって何だろう」というところから講演が始まりました。</p>
+<p>Aaron さんの、最近新しい会社に入りました<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote">14</a></sup>という挨拶から講演は始まりました (拍手) 。笹田さんからの講演依頼に「プログラミングをしていて、おお、凄いコードが書けた、とかこれは凄いものをつくってしまった、とかの経験を発表してください」とあったということで、まずは「凄いって何だろう」というところから講演が始まりました。</p>
 
 <p>「凄い」を辞書でひいてみると、「素晴らしい / 良い」と、「恐ろしい / 怖い」という 2 つの意味が載っていましたので、今日は、それぞれについてと、あと 1 つ、秘密の話題について発表します。</p>
 
@@ -457,7 +469,7 @@ Yahoo や Google (……プレゼンでは Google の資料でした) などの�
 
 <p>今後は、カメラの前にカードを置く操作を自動化していきたいです。秋葉原のどこかにありそうでしょ？</p>
 
-<p>つぎに「恐ろしい/怖い」コード。PHP + Ruby でやった悪いことのはなしをします。レポジトリは、<a href="https://github.com/tenderlove/phuby">https://github.com/tenderlove/phuby</a>。レポジトリのリンクを入れると会社の宣伝になる気がしておもしろいよね。このプログラムは、Ruby から PHP のオブジェクトを使ったり、PHP から Ruby のオブジェクトを使ったりできるようにします。なぜそんなことを？実際にできるのか確認したかったのです。出来上がった時には自分で凄いって思った。『ジュラシックパーク』より、「Scientists were so preoccupied with whether or not they could, they didn’t stop to think if they should.<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>」</p>
+<p>つぎに「恐ろしい/怖い」コード。PHP + Ruby でやった悪いことのはなしをします。レポジトリは、<a href="https://github.com/tenderlove/phuby">https://github.com/tenderlove/phuby</a>。レポジトリのリンクを入れると会社の宣伝になる気がしておもしろいよね。このプログラムは、Ruby から PHP のオブジェクトを使ったり、PHP から Ruby のオブジェクトを使ったりできるようにします。なぜそんなことを？実際にできるのか確認したかったのです。出来上がった時には自分で凄いって思った。『ジュラシックパーク』より、「Scientists were so preoccupied with whether or not they could, they didn’t stop to think if they should.<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote">15</a></sup>」</p>
 
 <p>それでは、最後に、秘密のトピックに移ります。mame さんの凄いコードに感銘を受けたので、代わりに、新技術 Homeopathic Optimizations を紹介しますね。Homeopathy とは、希釈。Wikipedia で読もうとおもったら長すぎたので OSX に要約してもらいました。「このプロセスを6回繰り返すと……水が記憶を持っています。」水に何かを混ぜると、水がそれを記憶することができるらしいです。それじゃあ、もしかしたら空白文字も何かを記憶することができるのかも? Yes!</p>
 
@@ -632,52 +644,52 @@ $ ./dilute.rb fib.rb | ruby
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>「<a href="https://twitter.com/_ko1/status/736580154269433857">そういえば、東京 Ruby 会議 11 が面白かった人は、学会に行くと良いと思います……tokyo11 は学会運営の手法を、結構そのまんま輸入していました。</a>」 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>「<a href="https://twitter.com/_ko1/status/736580154269433857">そういえば、東京 Ruby 会議 11 が面白かった人は、学会に行くと良いと思います……tokyo11 は学会運営の手法を、結構そのまんま輸入していました。</a>」 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>『Steins;Gate』の主人公の服装 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>『Steins;Gate』の主人公の服装 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>るびま今号に講演者ご本人による記事「[[0054-typestruct]]」も掲載しています。併せてご覧下さい。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>るびま今号に講演者ご本人による記事「[[0054-typestruct]]」も掲載しています。併せてご覧下さい。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>https://github.com/gogotanaka/Rubype <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>https://github.com/gogotanaka/Rubype <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>https://github.com/egonSchiele/contracts.ruby <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>https://github.com/egonSchiele/contracts.ruby <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>https://github.com/ksss/type_struct <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>https://github.com/ksss/type_struct <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>http://www.slideshare.net/yukihiro_matz/feeding-the-sharks/143 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>http://www.slideshare.net/yukihiro_matz/feeding-the-sharks/143 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>http://www.atdot.net/~ko1/activities/2016_RubyConfLT_pub.pdf <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>http://www.atdot.net/~ko1/activities/2016_RubyConfLT_pub.pdf <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>http://www.ruby.or.jp/ja/news/20160414.data/saitou_report.pdf <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>http://www.ruby.or.jp/ja/news/20160414.data/saitou_report.pdf <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>http://www.s-itoc.jp/activity/research/mruby/ <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>http://www.s-itoc.jp/activity/research/mruby/ <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>http://chihayafuru.jp/tdiary/?date=20160528 <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>http://chihayafuru.jp/tdiary/?date=20160528 <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:12">
-      <p>https://groups.google.com/forum/#!forum/sciruby-jp <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:12" role="doc-endnote">
+      <p>https://groups.google.com/forum/#!forum/sciruby-jp <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:13">
-      <p>1 RTT はパケット 1 往復分の時間 <a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:13" role="doc-endnote">
+      <p>1 RTT はパケット 1 往復分の時間 <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:14">
-      <p>https://twitter.com/tenderlove/status/714513025470828544 <a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:14" role="doc-endnote">
+      <p>https://twitter.com/tenderlove/status/714513025470828544 <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:15">
-      <p>科学者たちは、彼らにそれが可能かどうかにすっかり夢中になっていたので、それをするべきかどうか考える暇がなかったのでした <a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:15" role="doc-endnote">
+      <p>科学者たちは、彼らにそれが可能かどうかにすっかり夢中になっていたので、それをするべきかどうか考える暇がなかったのでした <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

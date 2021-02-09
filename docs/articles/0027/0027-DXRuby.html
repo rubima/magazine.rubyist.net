@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -201,6 +211,8 @@
                         </div>
                         <div class="post_info">
                             
+
+  <span class="created_on">初稿：2009-09-13</span>
 
 
 
@@ -391,7 +403,7 @@ Ruby の簡単さを重視し、Ruby 初心者でもゲームプログラムに�
   <li><a href="http://sourceforge.jp/projects/dxruby/wiki/FrontPage">DXRuby のプロジェクトWiki</a> (まだそれに関する記事はありませんが)</li>
 </ul>
 
-<p><a href="../../images/0027-DXRuby/rubima_sample.zip">サンプルファイル</a> <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> をダウンロードして展開後、game.exe を実行するとサンプルゲームが起動します。
+<p><a href="../../images/0027-DXRuby/rubima_sample.zip">サンプルファイル</a> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> をダウンロードして展開後、game.exe を実行するとサンプルゲームが起動します。
 自機の移動は十字キー、弾を発射は Z キー、ゲームの終了は ESC キーです。</p>
 
 <p>DXRuby スターターキットを使っていますので、mswin32 版 Ruby や、DXRuby がインストールされてなくても、Windows と DirectX 9 があれば動きます。</p>
@@ -493,7 +505,7 @@ font は DXRuby で文字を描画するときに使うフォントオブジェ�
 <p>あまりにもシンプルで説明するところがありませんが、強いて言うなら衝突判定のあたりでしょうか。
 このサンプルゲームでは、衝突判定オブジェクトの配列を 2 つ渡すとそのオブジェクト同士の判定を行い、当たったオブジェクトのメソッドを呼ぶような処理が Collision モジュールとして作ってあります。
 メソッドを呼ばれたオブジェクトは、例えば敵なら HP を減らし、0 になった時点でやられパターンオブジェクトを生成、自分に delete フラグを立てます。
-判定のあとの delete_if で、判定中や移動中に消えたキャラを ObjectGroup から削除して、残ったキャラを描画する、という流れです。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+判定のあとの delete_if で、判定中や移動中に消えたキャラを ObjectGroup から削除して、残ったキャラを描画する、という流れです。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <p>ちなみにこの Collision モジュールと、まだ出てきていませんが判定配列に入れる CollisionBox クラスは今回は Ruby で実装していますが、これをCで実装した DXRubyExtension という追加ライブラリもプロジェクト Web で公開しています。</p>
 
@@ -620,7 +632,7 @@ SoundEffect クラスでは三角波のほかに、矩形波、正弦波、ノ�
 第 2 引数からは、キャラの座標を原点とした左上の点と右下の点の相対位置を指定します。キャラは 32*32 なので、絵のサイズより少し小さい正方形となっているのがわかるでしょう。</p>
 
 <p>update メソッドはメインルーチンから1フレームに1回呼ばれる、移動用のメソッドでしたね。
-移動処理は DXRuby の Input モジュールを使い、x と y の増分を取得し、ナナメの場合は 0.7 倍 <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> して補正し、@x と @y に足します。その後、画面端との判定処理をしています。
+移動処理は DXRuby の Input モジュールを使い、x と y の増分を取得し、ナナメの場合は 0.7 倍 <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup> して補正し、@x と @y に足します。その後、画面端との判定処理をしています。
 横のほうが移動量の倍率が低くなっているのは、背景を自分の移動に合わせて逆方向にずらしているため、そのぶんだけ移動量を減らす目的です。</p>
 
 <p>CollisionBox オブジェクトの set メソッドは、相対範囲で設定されている衝突判定範囲に足すキャラの原点を設定します。こうした状態で Collision モジュールの check メソッドに渡せば判定してくれる、という仕組みです。
@@ -671,16 +683,16 @@ Rubyと DXRuby なら、ゲームプログラミング初心者でもゲーム�
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>次章の説明で表示しているソースコードは、このサンプルファイルの main.rb の一部を切り出したものです。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>次章の説明で表示しているソースコードは、このサンプルファイルの main.rb の一部を切り出したものです。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>詳しい動きを知りたい方は、サンプルファイル (rubima_sample.zip) 内、main.rb の Collision モジュールを参照。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>詳しい動きを知りたい方は、サンプルファイル (rubima_sample.zip) 内、main.rb の Collision モジュールを参照。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>(ルート 2)/2 の近似値として 0.7 を使用しています。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>(ルート 2)/2 の近似値として 0.7 を使用しています。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

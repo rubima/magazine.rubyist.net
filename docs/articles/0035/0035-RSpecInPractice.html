@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2011-09-26</span>
+
 
 
                         </div>
@@ -232,7 +244,7 @@
 
 <p>当記事は Ruby のテスティングフレームワーク、RSpec の解説記事です。 入門記事ではなく、比較的実践的な内容を目指しているので it や describe やテストの実行の仕方など最低限の RSpec の知識ある人を対象としています。</p>
 
-<p>RSpec は今やメジャーなテスティングフレームワークとなりましたが、実は日本語での情報はあまりありません。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+<p>RSpec は今やメジャーなテスティングフレームワークとなりましたが、実は日本語での情報はあまりありません。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
 そういった背景から大多数の人が RSpec をうまく使いこなせているとは言えず、RSpec らしくないテストコードを見かけることが多々あります。</p>
 
 <p>この記事の目的はそういった状況を少しでも改善するために、RSpec に興味がある、もしくは使っているが今一使いこなせてるように感じない人に向け RSpec の使い方を指南することです。</p>
@@ -572,11 +584,11 @@
 
 <p>context で具体的な値を明示することで RSpec の出力から最後の値を取得する仕様だというのが推測できます。カスタムマッチャは定義したものがそのまま出力されるので、こちらの方がより仕様としてわかりやすいでしょう。</p>
 
-<p>ですが、実際筆者がここまでやるかというとあまりやりません。せいぜい、context の文言を気にする程度でしょうか<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。なぜならプログラマとしては RSpec が出力するドキュメントよりテストコードの方が重要なため、RSpec の出力結果だけを見るということはあまりないためです。なので、テストコードが読みやすく書かれているのであれば、ドキュメントとして意味がわかりにくい文章が出力されていてもあまり気にならないでしょう。</p>
+<p>ですが、実際筆者がここまでやるかというとあまりやりません。せいぜい、context の文言を気にする程度でしょうか<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。なぜならプログラマとしては RSpec が出力するドキュメントよりテストコードの方が重要なため、RSpec の出力結果だけを見るということはあまりないためです。なので、テストコードが読みやすく書かれているのであれば、ドキュメントとして意味がわかりにくい文章が出力されていてもあまり気にならないでしょう。</p>
 
 <p>結論としては、筆者としては it には文字列を使わない書き方をおすすめします。やはり文字列とテスト内容が DRY ではないというのが理由としては大きいです。また、今回はサンプルが小さいのであまり気にならないと思いますが、実際はもっとたくさんのテストケースがあるのが普通です。そうなると文字列を省いた方がテストコード全体がコンパクトになります。</p>
 
-<p>以上の理由から個人的には文字列を使わない書き方をおすすめしますが、当然文字列をちゃんと書くという人もいます。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>なので、自分なりにでいいので、どちらがいいのか考えてみてください。どちらにもいい点悪い点はあるので絶対的にどちらが正しいというのはありません。</p>
+<p>以上の理由から個人的には文字列を使わない書き方をおすすめしますが、当然文字列をちゃんと書くという人もいます。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>なので、自分なりにでいいので、どちらがいいのか考えてみてください。どちらにもいい点悪い点はあるので絶対的にどちらが正しいというのはありません。</p>
 
 <h3 id="let-でデータ以外の部分だけを共通化する">let でデータ以外の部分だけを共通化する</h3>
 
@@ -589,7 +601,7 @@
 
 </code></pre></div></div>
 
-<p>let はブロックの評価値が、引数として渡されたシンボルと同名の変数に格納されます。上記の例ではブロックの評価値が文字列 ‘foo’ でシンボルが :foo なので foo という変数名に文字列 ‘foo’ が格納されています。動作としては遅延評価される仕組みになっており<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>、実際に呼び出しされるまでは実行されません。また、同じテストケース内ではブロックの評価値はキャッシュされており、複数回呼び出したときに毎回処理を行なうということはおきません。</p>
+<p>let はブロックの評価値が、引数として渡されたシンボルと同名の変数に格納されます。上記の例ではブロックの評価値が文字列 ‘foo’ でシンボルが :foo なので foo という変数名に文字列 ‘foo’ が格納されています。動作としては遅延評価される仕組みになっており<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>、実際に呼び出しされるまでは実行されません。また、同じテストケース内ではブロックの評価値はキャッシュされており、複数回呼び出したときに毎回処理を行なうということはおきません。</p>
 
 <p>テストを書くとき、事前処理や呼び出すメソッドは同じでも使うデータだけが違うという場合があります。その時はそれぞれの describe や context の before の中で同じ処理を毎回書くか、テスト用のヘルパーメソッドを書くなどするしかありませんでしたが、let を使うともう少しスマートに書くことができます。</p>
 
@@ -770,19 +782,19 @@
 
 <p>フリーランスの Ruby プログラマ。最近は主に<a href="http://scaleout.jp/">株式会社スケールアウト</a>のお手伝いをさせてもらってます。あと、Ruby での TDD 入門本を現在執筆中です。落ちなければ来年ぐらいには出る気がします。みんな買ってね。</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>編注 : 以前るびまでは、<a href="../../articles/0021/0021-Rspec.html">スはスペックのス</a>という連載がありました。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>編注 : 以前るびまでは、<a href="../../articles/0021/0021-Rspec.html">スはスペックのス</a>という連載がありました。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>カスタムマッチャのこの使い方は個人的には気に入っていますが、この使い方だと定義が増えすぎてしまうので基本的には避けています。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>カスタムマッチャのこの使い方は個人的には気に入っていますが、この使い方だと定義が増えすぎてしまうので基本的には避けています。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>RSpec Best Practice の Jared さんがそうです。[[0032-TranslationArticle]] <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>RSpec Best Practice の Jared さんがそうです。[[0032-TranslationArticle]] <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>編注 : 遅延評価しない(正格評価される) let! というメソッドも用意されています。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>編注 : 遅延評価しない(正格評価される) let! というメソッドも用意されています。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

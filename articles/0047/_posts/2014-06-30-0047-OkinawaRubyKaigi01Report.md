@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (44) 沖縄 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (44) 沖縄 Ruby 会議 01
-tags: 0047 OkinawaRubyKaigi01Report
+created_on: 2014-06-30
+tags: 0047 OkinawaRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}
 

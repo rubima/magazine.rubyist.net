@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -242,7 +252,7 @@
 <p>昔 Perl で書いた CGI、仕様拡張。どうしよう……というところで、Ruby で書き直した。
 MySQL/Ruby 書きやすかったんですけど、大きくなると保守たいへん。</p>
 
-<h3 id="cgikit">CGIKit<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></h3>
+<h3 id="cgikit">CGIKit<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></h3>
 
 <p>しっくりこなかった。テンプレートエンジンの存在が慣れず。</p>
 
@@ -276,7 +286,7 @@ MySQL/Ruby 書きやすかったんですけど、大きくなると保守たい
 
 <h3 id="託児施設-かずひこさんとゆうなさんのお子さんの写真を使用">託児施設 (かずひこさんとゆうなさんのお子さんの写真を使用)</h3>
 
-<p>Apollo<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> で GUI のテストをある程度自動化できた。
+<p>Apollo<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> で GUI のテストをある程度自動化できた。
 お子さんは 4 人まで登録できるので、まつもとさんちも大丈夫。</p>
 
 <h3 id="activerecord">ActiveRecord</h3>
@@ -309,7 +319,7 @@ MySQL/Ruby 書きやすかったんですけど、大きくなると保守たい
 
 <h3 id="ptaの連絡会-携帯メールへの対応">PTAの連絡会 携帯メールへの対応</h3>
 
-<p>has_and_belong_to_many (HABTM<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>) を使う。
+<p>has_and_belong_to_many (HABTM<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>) を使う。
 見た目は単純。</p>
 
 <p>User / Room / Topic と、それら二つの間の関係とで、HABTM×3。
@@ -327,7 +337,7 @@ has_many:through、よさげ。でも更新が書きにくい！</p>
 <p>URL パラメータは人の見えないようにスクランブル (可逆に構成) する。
 強い方法ではないので有効期限設定。じつはページキャッシュ使える、かも。</p>
 
-<p>ActionMailer 最初は使ってたけど、中で使っている TMail<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> が、ケータイでよく出てくるような妙なアドレスに対応してくれない様子。
+<p>ActionMailer 最初は使ってたけど、中で使っている TMail<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup> が、ケータイでよく出てくるような妙なアドレスに対応してくれない様子。
 なので、TMail ごと捨ててなんちゃってライブラリを自作した。
 歴史的理由で MySQL を文字コード Shift_JIS のデータに使っていたが、そうすると 「\」の罠や quote の罠にはまって文字が化ける。→やはり文字コードは UTF-8 に統一がよい。</p>
 
@@ -396,12 +406,12 @@ has_many:through、よさげ。でも更新が書きにくい！</p>
 
 <ul>
   <li>ふつう require_gem してください。</li>
-  <li>Model クラスを ActiveRecord::Base から継承するだけで簡単に ORM<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup> できる。
+  <li>Model クラスを ActiveRecord::Base から継承するだけで簡単に ORM<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> できる。
     <ul>
       <li>最初からクラスとして呼ぶだけで、DB 意識せずに使えるのが一番ビックリ！ おまじない不要！</li>
       <li>これはデータベースとのコネクションが ActiveRecord::Base のクラスメソッドから提供されているため。</li>
       <li>保存したいオブジェクトをデータベースと紐付けるために面倒な手続きをしなくてよい。</li>
-      <li>データベースコネクションを表すオブジェクトに対して操作をするのでなく、アプリケーションにおけるモデルを表すオブジェクトそのものに対して自然に CRUD<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup> 操作可能。</li>
+      <li>データベースコネクションを表すオブジェクトに対して操作をするのでなく、アプリケーションにおけるモデルを表すオブジェクトそのものに対して自然に CRUD<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup> 操作可能。</li>
     </ul>
   </li>
   <li>簡単なのでこんな使いかたもできる。
@@ -646,9 +656,9 @@ DELETE /people/1</code></pre></figure>
 <h4 id="http-の語彙の射影-問題">HTTP の語彙の射影…… 問題</h4>
 
 <ul>
-  <li>今ある HTML ブラウザの form では PUT<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> や DELETE<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup> が使えないのだ！</li>
+  <li>今ある HTML ブラウザの form では PUT<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup> や DELETE<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup> が使えないのだ！</li>
   <li>でもそれは単にクライアントの問題。</li>
-  <li>今でも GET<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup> や POST<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup> は簡単に出来るので、Rails 上では CRUD に対応させておいて、見分けがつくように実装しておく。</li>
+  <li>今でも GET<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup> や POST<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup> は簡単に出来るので、Rails 上では CRUD に対応させておいて、見分けがつくように実装しておく。</li>
 </ul>
 
 <p>PUT や DELETE が使えないうちは、form の hidden フィールドや JavaScript を使って GET や POST に逃げる。あとでブラウザが全部対応するようになっても、ユーザコードの変更は必要ない。</p>
@@ -779,7 +789,7 @@ end</code></pre></figure>
 
 <p>ActiveResource は、ActiveRecord から CRUD を操作できるように Web サービスを外部から操作できるようにするための新しいフレームワークである。
 最初にサービスの URI と認証の情報が必要だが、それらをモデルの中に隠蔽してしまって後は気にせず、(REST の) API でモデル操作を公開する。
-事例は今まで挙げたものと同じ内容。コード上は今の ActiveRecord と同じ使い方ができる…ようにしたい。今のところ、ActiveResource は単なる設計方針でしかなく、何も実装されていない。<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup></p>
+事例は今まで挙げたものと同じ内容。コード上は今の ActiveRecord と同じ使い方ができる…ようにしたい。今のところ、ActiveResource は単なる設計方針でしかなく、何も実装されていない。<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup></p>
 
 <p>ネットワークから要求が帰ってこなくなるような状況に対応するために、credentials つきの認証を Web でやりたい。</p>
 
@@ -829,40 +839,40 @@ docomo.my_applications</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>CGIKit: Ruby で書かれた Web アプリケーションフレームワーク。http://www.spice-of-life.net/cgikit/ <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>CGIKit: Ruby で書かれた Web アプリケーションフレームワーク。http://www.spice-of-life.net/cgikit/ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>Apollo: Delphi (ボーランド社の Pascal 系の開発環境) の GUI コンポーネントを ruby から使えるようにするライブラリ。http://www.moriq.com/apollo/ および [[0002-Apollo]] <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>Apollo: Delphi (ボーランド社の Pascal 系の開発環境) の GUI コンポーネントを ruby から使えるようにするライブラリ。http://www.moriq.com/apollo/ および [[0002-Apollo]] <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>HABTM: has_and_belongs_to_many の略。Rails でモデル間の関連をつけるためのメソッドの１つ。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>HABTM: has_and_belongs_to_many の略。Rails でモデル間の関連をつけるためのメソッドの１つ。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>TMail: Ruby 用の電子メールを扱うライブラリ。Rails に標準添付されている。http://i.loveruby.net/ja/projects/tmail/doc/ <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>TMail: Ruby 用の電子メールを扱うライブラリ。Rails に標準添付されている。http://i.loveruby.net/ja/projects/tmail/doc/ <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>O/R マッパー: オブジェクト指向言語のオブジェクトと，データベースのリレーションを関連付けるライブラリのこと。よくあるのはテーブル名がクラス名になり，各行がオブジェクトになり，各カラムがメソッドやインスンタンス変数として扱えるというもの。Rails の ActiveRecord が代表例。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>O/R マッパー: オブジェクト指向言語のオブジェクトと，データベースのリレーションを関連付けるライブラリのこと。よくあるのはテーブル名がクラス名になり，各行がオブジェクトになり，各カラムがメソッドやインスンタンス変数として扱えるというもの。Rails の ActiveRecord が代表例。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>CRUD: Create, Read, Update, Delete の略。データベースの基本的な 4 つの操作を総称したもの。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>CRUD: Create, Read, Update, Delete の略。データベースの基本的な 4 つの操作を総称したもの。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>PUT: http のオペレーションの１つ。サーバ上のリソースを書き換えるので、CRUD の「U」と見なせる。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>PUT: http のオペレーションの１つ。サーバ上のリソースを書き換えるので、CRUD の「U」と見なせる。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>DELETE: http のオペレーションの１つ。サーバ上のリソースを削除するので、CRUD の「D」と見なせる。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>DELETE: http のオペレーションの１つ。サーバ上のリソースを削除するので、CRUD の「D」と見なせる。 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>http のオペレーションの１つ。サーバ上のリソースを取得する，CRUD の「R」と見なせる。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>http のオペレーションの１つ。サーバ上のリソースを取得する，CRUD の「R」と見なせる。 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>POST: http のオペレーションの１つ。サーバ上にリソースを生成するので，CRUD の「C」と見なせる。 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>POST: http のオペレーションの１つ。サーバ上にリソースを生成するので，CRUD の「C」と見なせる。 <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>公開されました。http://dev.rubyonrails.org/changeset/4492 <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>公開されました。http://dev.rubyonrails.org/changeset/4492 <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

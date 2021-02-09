@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (58) 東京 Ruby 会議 11
 short_title: RegionalRubyKaigi レポート (58) 東京 Ruby 会議 11
-tags: 0054 TokyoRubyKaigi11Report
+created_on: 2016-08-21
+tags: 0054 TokyoRubyKaigi11Report regionalRubyKaigi
 ---
 {% include base.html %}
 

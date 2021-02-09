@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -235,14 +245,14 @@
 
 <h4 id="win32ole-com-wsc-asr">Win32OLE, COM, WSC, ASR</h4>
 
-<p>Win32OLE<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> が主役です。
-COM (Component Object Model) <sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>は、Windows のカーネルでない部分で、サービス、といっても半分は定義でできています。
-そのなかで、今回紹介するのは WSC (Windows Script Component)<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>、その中で実際サービスを提供している ScrObj.dll との連携を考えます。
+<p>Win32OLE<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> が主役です。
+COM (Component Object Model) <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>は、Windows のカーネルでない部分で、サービス、といっても半分は定義でできています。
+そのなかで、今回紹介するのは WSC (Windows Script Component)<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>、その中で実際サービスを提供している ScrObj.dll との連携を考えます。
 VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これでつくられています。</p>
 
 <h4 id="rubyize">Rubyize</h4>
 
-<p>ASR<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup> 附属。使用するには、regsvr32 rbobj.wsc で一回レジストリに登録しないといけません。
+<p>ASR<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup> 附属。使用するには、regsvr32 rbobj.wsc で一回レジストリに登録しないといけません。
 これがどういうものかを、JScript 版と VBScript 版の二種類で説明されました。</p>
 
 <p>C レベル (水面下) では何をやってるか？ を明示するためにデモの C 実装が示されました。Visual Basic のオブジェクトの引数の順番に Rubyize の Object(bstr) 引数を合わせている点がはまりやすい、と指摘されました。</p>
@@ -376,7 +386,7 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
   <li>普段遣いのクラスやメソッドの数を減らす: Ruby の大クラス主義はここに通じる。注意: ミニマリズム (可能な限りのチイサナセカイ狙い) に陥るな。</li>
   <li>設定なしが良い設定</li>
   <li>ハフマンコード: よく使うものほど短い名前にする(もともとは Perl の思想。例としては p コマンド。これは名前としては非常識)。</li>
-  <li>DRY<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>: 落とし穴回避</li>
+  <li>DRY<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>: 落とし穴回避</li>
 </ol>
 
 <h4 id="フィードバックで改善-継続的に">フィードバックで改善 (継続的に)</h4>
@@ -450,7 +460,7 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
 <h3 id="そこで-uml">そこで UML</h3>
 
 <ul>
-  <li>UML: オブジェクト指向設計における標準的な記述言語で、その名も統一モデリング言語 (Unified Modeling Language)<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>。</li>
+  <li>UML: オブジェクト指向設計における標準的な記述言語で、その名も統一モデリング言語 (Unified Modeling Language)<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</li>
 </ul>
 
 <p>標準的なビジュアル化の方法にはユースケース図やクラス図やシーケンス図などたくさんの種類があるが、講演では以下が紹介されました。</p>
@@ -468,9 +478,9 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
 <p>デザインパターンは、典型的な問題の文脈に対して (逆に言えばインタフェースとしては問題ごとに安定)、動的な解法を示すものである。
 動的なので、ライブラリの対象外 (となることが多い)、と一般にはいわれている。</p>
 
-<p>けれども、もとが動的な Ruby なら MLF<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> を使えばライブラリ化できるのでは？ 実際にはどうなのか？ 使い物になるのか？</p>
+<p>けれども、もとが動的な Ruby なら MLF<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup> を使えばライブラリ化できるのでは？ 実際にはどうなのか？ 使い物になるのか？</p>
 
-<p>実際に試してみると GoF<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup> の 23 個のパターンのうち 9 個が実装できた。試したものはすべてライブラリ化できた (ここで Composite パターンの事例が紹介されました)。
+<p>実際に試してみると GoF<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup> の 23 個のパターンのうち 9 個が実装できた。試したものはすべてライブラリ化できた (ここで Composite パターンの事例が紹介されました)。
 けっこうパターンって単純な話が多いので、できるのは当たり前だなぁ。</p>
 
 <ul>
@@ -486,7 +496,7 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
 <p>MDA の立場は Ruby の立場(というかアジャイル系の立場)と正反対にある</p>
 
 <dl>
-  <dt>MDA = model driven architecture<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup></dt>
+  <dt>MDA = model driven architecture<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup></dt>
   <dd>プラットフォーム独立モデル (PIM)→プラットフォーム特化モデル (PSM)→ソースコード。</dd>
 </dl>
 
@@ -503,34 +513,34 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Win32OLE: Windows のオブジェクト (Excel や Word) を Ruby から扱うためのライブラリ。Ruby 1.8 から標準添付。るびまに「Win32OLE 活用法」が連載中 ([[0003-Win32OLE]])。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Win32OLE: Windows のオブジェクト (Excel や Word) を Ruby から扱うためのライブラリ。Ruby 1.8 から標準添付。るびまに「Win32OLE 活用法」が連載中 ([[0003-Win32OLE]])。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>COM (Component Object Model): Windows の部品化技術。他にも ActiveX とか OLE とも呼ばれる。Win32OLE を使えば気にしなくていいはず。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>COM (Component Object Model): Windows の部品化技術。他にも ActiveX とか OLE とも呼ばれる。Win32OLE を使えば気にしなくていいはず。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>WSC (Windows Script Components): コンポーネントとして扱えるように (XML で) パッケージされたスクリプト。http://www.microsoft.com/japan/msdn/columns/scripting/scripting091399.asp <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>WSC (Windows Script Components): コンポーネントとして扱えるように (XML で) パッケージされたスクリプト。http://www.microsoft.com/japan/msdn/columns/scripting/scripting091399.asp <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>ASR (ActiveScriptRuby): arton さんの開発している Windows 版の ruby 実装。Windows とブリッジ可能で、Windows のオブジェクトを利用したり、IE で JavaScript の代わりに使ったり、バッチファイルのように利用したり、HTA (IE の表示部分を使って Shell を動かす) と呼ばれるアプリケーションを記述するのに使ったりできる。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>ASR (ActiveScriptRuby): arton さんの開発している Windows 版の ruby 実装。Windows とブリッジ可能で、Windows のオブジェクトを利用したり、IE で JavaScript の代わりに使ったり、バッチファイルのように利用したり、HTA (IE の表示部分を使って Shell を動かす) と呼ばれるアプリケーションを記述するのに使ったりできる。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>DRY (Don’t Repeat Yourself): 「同じことを二度も繰り返すな」という設計指針。Ruby on Rails も採用している。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>DRY (Don’t Repeat Yourself): 「同じことを二度も繰り返すな」という設計指針。Ruby on Rails も採用している。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>オブジェクト指向のソフトウェア構造を記述するための図法。1997 年 OMG で統一規格が制定されてから急激に普及した <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>オブジェクト指向のソフトウェア構造を記述するための図法。1997 年 OMG で統一規格が制定されてから急激に普及した <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>MLF (Meta Level Feature): メタ水準の言語仕様のこと。約 10 年前に MLF をめぐって、発足したばかりの ruby-list メーリングリストで、石塚さんとまつもとさんの討論が交わされています。今読んでも大変参考になる議論です。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>MLF (Meta Level Feature): メタ水準の言語仕様のこと。約 10 年前に MLF をめぐって、発足したばかりの ruby-list メーリングリストで、石塚さんとまつもとさんの討論が交わされています。今読んでも大変参考になる議論です。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>Gang of Four : 最初のデザインパターンに関する書籍を出した四名 (Erich Gamma、Richard Helm、Ralph Johnson、John Vlissides) のこと <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>Gang of Four : 最初のデザインパターンに関する書籍を出した四名 (Erich Gamma、Richard Helm、Ralph Johnson、John Vlissides) のこと <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>あるいは、MDD (model driven development) と呼ぶこともあります。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>あるいは、MDD (model driven development) と呼ぶこともあります。 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

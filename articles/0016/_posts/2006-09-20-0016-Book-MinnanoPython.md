@@ -2,6 +2,7 @@
 layout: post
 title: 書籍紹介『みんなの Python』
 short_title: 書籍紹介『みんなの Python』
+created_on: 2006-09-20
 tags: 0016 Book
 ---
 {% include base.html %}

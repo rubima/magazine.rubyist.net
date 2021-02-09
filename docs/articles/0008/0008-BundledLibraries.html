@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -201,6 +211,8 @@
                         </div>
                         <div class="post_info">
                             
+
+  <span class="created_on">初稿：2005-07-19</span>
 
 
 
@@ -469,7 +481,7 @@ Logger 自身にローテーションを任せることをお勧めします。<
 <p>第 3 引数で指定した一定サイズごとを超えるごとにログをローテーションして、
 第 2 引数で指定したファイル数までのログファイルを残します。
 サイズを省略すると
-1 MiB <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+1 MiB <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
 ごとになります。</p>
 
 <p>ただし、一度に (logger.info などの呼び出しで)
@@ -629,7 +641,7 @@ UNIX のシステムのログ記録用プログラム (syslog)
 
 <p>syslog はプロセスごとに 1 つしか開けないので、
 最初は Syslog が Singleton
-パターンのクラスになっていました。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>
+パターンのクラスになっていました。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>
 その後の互換性を保った変更で、現在はモジュールになっています。</p>
 
 <h3 id="facility">facility</h3>
@@ -752,7 +764,7 @@ Ruby の sprintf メソッドで処理されます。
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> Syslog.debug('%s', str)</code></pre></figure>
 
-<p>のように %s を使う必要があることに注意してください。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+<p>のように %s を使う必要があることに注意してください。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
 
 <p>Ruby では、</p>
 
@@ -890,16 +902,16 @@ Log4r を使ったりすると良いのではないかと思います。</p>
 
 <p>syslog(“%s”, str) とせずに syslog(str) としてしまうと format string
 bug というセキュリティホールの原因となるバグになります。</p>
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>MiB については http://www.linux.or.jp/JM/html/LDP_man-pages/man7/units.7.html を参照 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>MiB については http://www.linux.or.jp/JM/html/LDP_man-pages/man7/units.7.html を参照 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>[[ruby-ext:1996]] <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>[[ruby-ext:1996]] <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>C 言語で <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>C 言語で <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

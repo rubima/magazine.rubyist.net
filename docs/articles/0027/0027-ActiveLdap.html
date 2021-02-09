@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -201,6 +211,8 @@
                         </div>
                         <div class="post_info">
                             
+
+  <span class="created_on">初稿：2009-09-13</span>
 
 
 
@@ -419,7 +431,7 @@ Serverに標準搭載されているOpen Directory、マイクロソフトのWin
 <img src="../../images/0027-ActiveLdap/DIT.PNG" alt="DIT.PNG" /></p>
 
 <p><br />
-さてここまでは便宜上 LDAP エントリの表現に日本語を用いてきましたが、実際にはほぼ全ての項目を英語で表記するのが一般的です<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。これまでに出てきた”名称”や”姓”などの属性の名称は <a href="http://tools.ietf.org/html/rfc4519">RFC4519</a> で既に定義されています。以下はその一部です。</p>
+さてここまでは便宜上 LDAP エントリの表現に日本語を用いてきましたが、実際にはほぼ全ての項目を英語で表記するのが一般的です<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。これまでに出てきた”名称”や”姓”などの属性の名称は <a href="http://tools.ietf.org/html/rfc4519">RFC4519</a> で既に定義されています。以下はその一部です。</p>
 
 <table>
   <thead>
@@ -761,7 +773,7 @@ ou: Users</code></pre></figure>
   <dt><strong>：prefix</strong></dt>
   <dd>この User クラスが setup_connection のオプション :base 以下のどのツリーを管理するかを指定します。上記では “ou=Users” を指定したため、このクラスは”ou=Users,o=rubyistMagazine,c=jp” 以下のエントリ群を管理するようになります。</dd>
   <dt><strong>：dn_attribute</strong></dt>
-  <dd>User クラスが管理するエントリ群の DN を表現する属性を指定します。上記では “cn=Ruby Taro” さんを作成する事にしているので、cn を指定しています<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</dd>
+  <dd>User クラスが管理するエントリ群の DN を表現する属性を指定します。上記では “cn=Ruby Taro” さんを作成する事にしているので、cn を指定しています<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</dd>
   <dt><strong>：classes</strong></dt>
   <dd>User クラスが管理するエントリ群が保持するオブジェクトクラスを指定します。上記では “inetOrgPerson” のみを指定していますが、objectClass は複数保持する事が多いので配列で設定します。ここで指定されたオブジェクトクラスを持っているエントリのみが User クラスの管理対象になります。逆に言えば  “ou=Users,o=rubyistMagazine,c=jp” 以下に配置されたエントリであっても、指定されているオブジェクトクラスを持っていないエントリは User クラスの管理対象とはなりません。</dd>
 </dl>
@@ -930,7 +942,7 @@ ou: Users</code></pre></figure>
 
 <p>クラスが管理するツリー全体を操作する代表的な作業は検索でしょう。ActiveLdap ではエントリの検索用メソッドとして <strong>exists?</strong>、<strong>find</strong>、<strong>search</strong> が用意されています。</p>
 
-<p>いずれのメソッドもエントリを検索するという意味ではほぼ同じ機能を持っています。exists? は指定した条件のエントリが存在するかの確認のみを行います。find は検索結果のエントリ群をそのクラスのインスタンスとして返しますが、search はよりプリミティブな実装で、検索結果を配列とハッシュの組み合わせで返します。find はインスタンス化して返すので API としてより便利ですが、search と比較した場合には低速です <sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>いずれのメソッドもエントリを検索するという意味ではほぼ同じ機能を持っています。exists? は指定した条件のエントリが存在するかの確認のみを行います。find は検索結果のエントリ群をそのクラスのインスタンスとして返しますが、search はよりプリミティブな実装で、検索結果を配列とハッシュの組み合わせで返します。find はインスタンス化して返すので API としてより便利ですが、search と比較した場合には低速です <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <p>これらはツリー全体の操作なので、全てクラスメソッドとして実装されています。</p>
 
@@ -1028,7 +1040,7 @@ ou: Users</code></pre></figure>
 
 <p>アカウントが所属するプライマリグループの表現には <strong>gidNumber</strong> という属性を使います。これは posixAccount/posixGroup 両方に存在する属性です。posixGroup の gidNumber にはグループを一意に特定するための番号が、また posixAccount の gidNumber にはプライマリで所属しているグループの番号が、それぞれ格納されます。</p>
 
-<p>プライマリとセカンダリ両方を含めた所属表現には posixGroup の <strong>memberUid</strong> を使います <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。 memberUid には複数の値を登録できます。ここには、そのグループに所属する全ユーザのアカウント名を登録します。アカウント名は posixAccount のオブジェクトクラス上 uid という属性で表現されます。</p>
+<p>プライマリとセカンダリ両方を含めた所属表現には posixGroup の <strong>memberUid</strong> を使います <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。 memberUid には複数の値を登録できます。ここには、そのグループに所属する全ユーザのアカウント名を登録します。アカウント名は posixAccount のオブジェクトクラス上 uid という属性で表現されます。</p>
 
 <h4 id="所属の定義--belongs_to">所属の定義 ― belongs_to</h4>
 
@@ -1212,7 +1224,7 @@ ou: Users</code></pre></figure>
       <td>所有側</td>
       <td>相手が持つ<br />:primary_key</td>
       <td>自分が持つ <br />:wrap</td>
-      <td>複数<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></td>
+      <td>複数<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup></td>
     </tr>
   </tbody>
 </table>
@@ -1359,22 +1371,22 @@ ou: Groups</code></pre></figure>
 —-
 <br /></p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>属性値には日本語が使えますが、ここでその詳細は割愛します <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>属性値には日本語が使えますが、ここでその詳細は割愛します <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>ここでは判り易さのために cn を dn_attribute にしていますが、同姓同名に対応できないため、実際の設計では別の属性を検討すべきでしょう。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>ここでは判り易さのために cn を dn_attribute にしていますが、同姓同名に対応できないため、実際の設計では別の属性を検討すべきでしょう。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>ただしパラメータを調整することで高速化する事も可能です。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>ただしパラメータを調整することで高速化する事も可能です。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>memberUid にはセカンダリで所属しているユーザのみを入れる文意の記事も見受けられます。どちらが正式なのかは RFC 上でも確認できませんでした。ここでは便宜上、プライマリとセカンダリの両方を扱う属性として memberUid を扱います。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>memberUid にはセカンダリで所属しているユーザのみを入れる文意の記事も見受けられます。どちらが正式なのかは RFC 上でも確認できませんでした。ここでは便宜上、プライマリとセカンダリの両方を扱う属性として memberUid を扱います。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>前述の通り、このメソッドだけ、新規のインスタンスが戻りに含まれる場合があります <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>前述の通り、このメソッドだけ、新規のインスタンスが戻りに含まれる場合があります <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

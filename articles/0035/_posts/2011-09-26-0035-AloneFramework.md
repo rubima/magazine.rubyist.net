@@ -2,6 +2,7 @@
 layout: post
 title: 組み込み向けウェブインターフェースフレームワーク「Alone」とその応用機器の紹介
 short_title: 組み込み向けウェブインターフェースフレームワーク「Alone」とその応用機器の紹介
+created_on: 2011-09-26
 tags: 0035 AloneFramework
 ---
 {% include base.html %}
@@ -213,7 +214,7 @@ class AlController
 
 
 ### (3) 決定ボタン(submit) を押された時の処理
-![6-(3).png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/6-(3).png)
+![6-(3).png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/6-_3_.png)
 
 このアプリケーションでは、ユーザーの入力値を一度そのまま表示させて確認させる仕様です。フォームオブジェクトの定義で、:action=&gt;'confirm' となっていた事を思い出してください。このフォームが submitされると、action_confirm() メソッドが呼び出されます。
 
@@ -268,7 +269,7 @@ class AlController
 もう一つは、make_uri()メソッド。これはフォームオブジェクトの作成でも出てきましたが、今回はそれぞれ cancel と commit という２つの違ったアクションを生成し、リンクテキストとして表示しています。
 
 ### (4) 確認画面で「はい」を選ばれた場合
-![6-(4).png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/6-(4).png)
+![6-(4).png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/6-_4_.png)
 
 先の確認画面で、「はい」を選んだ場合は、アクション commit が送られます。この場合、セッションから変数を戻してフォームにセットし直し、完了画面を表示します。
 
@@ -372,14 +373,14 @@ mifによって定義されている、リストビューアクションを、�
 ```ruby
  alias action_index action_list
 ```
-![7-(3).png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/7-(3).png)
+![7-(3).png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/7-_3_.png)
 
 ### (4) その他の動作
 
 これだけのソースで、基本的な CRUD が可能になっていることを、動作から確認できるでしょう。これらのアクションは、すべて mif 内で定義されています。それぞれのアクションについて、デフォルト動作を変更したければ、まず mif のソースを開いて、該当アクションを自分の main.rb へ コピー＆ペーストしたうえで変更をしましょう。圧倒的に簡単かつスピーディーにやりたいことが完了します。
 
-![7-(4)-1.png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/7-(4)-1.png)
-![7-(4)-2.png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/7-(4)-2.png)
+![7-(4)-1.png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/7-_4_-1.png)
+![7-(4)-2.png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/7-_4_-2.png)
 
 ### (5) テンプレートは？
 
@@ -461,7 +462,7 @@ Aloneの実際の組み込み機器使用例として、弊社が発売したネ
 ```
 
 起動スクリプトでは、ここで保存された /etc/my_settings.confの内容を使って、IPの初期設定を行います。ここで、シェルスクリプト形式で保存されているのがポイントで、通常の起動スクリプト中にそのまま読み込んで値を使う事が容易になっています。
-![9-(2)-1.png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/9-(2)-1.png)
+![9-(2)-1.png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/9-_2_-1.png)
 
 もう一つ、トラフィックグラフについて説明しておきましょう。本器では、パケット数およびバイト数のトラフィックグラフを描画するために、折れ線グラフを用いました。以下はそのコードです。（実際のコードはラベルなどの微調整のため、もう少し複雑です）
 
@@ -488,7 +489,7 @@ Aloneの実際の組み込み機器使用例として、弊社が発売したネ
 ```
 
 オートスケールが働いて、値から XY 軸スケールなどを適切に計算してくれるので、非常に簡単な記述でグラフが描けます。
-![9-(2)-2.png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/9-(2)-2.png)
+![9-(2)-2.png]({{base}}{{site.baseurl}}/images/0035-AloneFramework/9-_2_-2.png)
 
 ## おわりに
 
@@ -499,5 +500,3 @@ Aloneの実際の組み込み機器使用例として、弊社が発売したネ
 東裕人（ひがしひろひと）
 
 有限会社アイナス所属。組込エンジニア。島根県の片田舎で、犬と暮らしながら ARM チップ上で Ruby と Qt (QtRuby) を動かしたりしている。最近のお気に入り CPU は TI の MSP430 。
-
-

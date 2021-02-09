@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2011-06-12</span>
+
 
 
                         </div>
@@ -249,7 +261,7 @@
 
 <h3 id="この記事はなんのため">この記事はなんのため？</h3>
 
-<p>Groovy は Ruby から多大な影響を受けたオブジェクト指向スクリプト言語です。具体的には、構文やライブラリの設計について、あるいは動的言語としての特性について、Ruby から大きな影響を受けて設計されています。しかしながら、その後、Groovy は他の言語からもアイデアを貪欲に取り込んだり <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>、また独自のアイデアで急速な発展を続けてきました。今回は、その中で「Groovy にあって Ruby には無いか、あっても大きく異っている機能」を紹介します。</p>
+<p>Groovy は Ruby から多大な影響を受けたオブジェクト指向スクリプト言語です。具体的には、構文やライブラリの設計について、あるいは動的言語としての特性について、Ruby から大きな影響を受けて設計されています。しかしながら、その後、Groovy は他の言語からもアイデアを貪欲に取り込んだり <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>、また独自のアイデアで急速な発展を続けてきました。今回は、その中で「Groovy にあって Ruby には無いか、あっても大きく異っている機能」を紹介します。</p>
 
 <p>本記事の目的は、Ruby の利用者・開発者の皆さんにとってなんらかの参考になり、「へーこんな(機能/見方/アプローチ)があるんだ」と思う情報が1つか2つでも提供できることです。本記事をきっかけとして、Ruby もしくは Groovy コミュニティにおいて、両言語の何らかの発展に寄与するようなアイデアや活動に繋がれば存外の喜びです。</p>
 
@@ -298,7 +310,7 @@
       <li>プリミティブを排して「すべてがオブジェクト」</li>
       <li>型指定は省略可能。省略しなくても良い (オプショナルタイピング、後述)</li>
       <li>メソッドは動的にクラスやインスタンスに追加可能で実行時に探索する (Ruby のオープンクラス的な動作)</li>
-      <li>(Java で定義されたオブジェクトを含む) オブジェクトの振舞いはメタオブジェクトプロトコル (MOP)<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>で定義・操作される</li>
+      <li>(Java で定義されたオブジェクトを含む) オブジェクトの振舞いはメタオブジェクトプロトコル (MOP)<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>で定義・操作される</li>
     </ul>
   </li>
 </ul>
@@ -309,7 +321,7 @@
 
 <h4 id="コード例その-1ハローワールド他">コード例その 1、ハローワールド他</h4>
 
-<p>まずは、「Hello World」を含むちょっとした Ruby コードです<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>まずは、「Hello World」を含むちょっとした Ruby コードです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">puts "hello world"
 [1,2,3].each { | it |
@@ -318,7 +330,7 @@
 p (1..100).find_all{|v| v % 3 == 0} # 3 の倍数を表示
 map = {a: 1, b: 2, c: 3} # ハッシュリテラル</code></pre></figure>
 
-<p>Groovy ではこれに対応するコードは以下のようになります<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>Groovy ではこれに対応するコードは以下のようになります<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">println "hello world"
 [1,2,3].each {
@@ -374,9 +386,9 @@ def p = new Person(name:'taro', age:30)
 println p</code></pre></figure>
 
 <p>Groovy ではコンストラクタを明示的に定義しない場合、「new Person(name:’taro’, age:30)」の様に名前引数の形式で呼び出してフィールドを初期化できるコンストラクタが暗黙に生成されるため、コンストラクタの定義を省略しています。
-また、アクセッサメソッド (Getter, Setter) 群はフィールドを定義するだけで自動的に生成されます<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+また、アクセッサメソッド (Getter, Setter) 群はフィールドを定義するだけで自動的に生成されます<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。</p>
 
-<p>さらに、以下のようにクラスに「@TupleConstructor」というアノテーション<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>を指定すると「コンストラクタ引数の並んでいる順番でフィールドを順に初期化するコンストラクタ」が自動的に生成されるので、「new Person(‘taro’, 30)」でインスタンスを生成できます。</p>
+<p>さらに、以下のようにクラスに「@TupleConstructor」というアノテーション<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>を指定すると「コンストラクタ引数の並んでいる順番でフィールドを順に初期化するコンストラクタ」が自動的に生成されるので、「new Person(‘taro’, 30)」でインスタンスを生成できます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">@groovy.transform.TupleConstructor
 class Person {
@@ -386,7 +398,7 @@ class Person {
 }
 def p = new Person('taro', 30)</code></pre></figure>
 
-<p>このように、「決まりきったコード (ボイラープレートコード)」を書かなくて済むことに血道を上げるのが Groovy のポリシーと言えます<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup>。</p>
+<p>このように、「決まりきったコード (ボイラープレートコード)」を書かなくて済むことに血道を上げるのが Groovy のポリシーと言えます<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。</p>
 
 <h2 id="groovy-の機能紹介-前編">Groovy の機能紹介 (前編)</h2>
 
@@ -404,9 +416,9 @@ def p = new Person('taro', 30)</code></pre></figure>
 <figure class="highlight"><pre><code class="language-text" data-lang="text">Person p = new Person('taro', 30)</code></pre></figure>
 
 <p>フィールドやメソッド引数、メソッドの返り値などでも同様です。これをオプショナルタイピングと呼び、静的型宣言と動的型を任意に使いわけることができます。
-ただし、型エラー検出の観点からすると、Groovy では任意の代入が型エラーかどうかをコンパイル時には決定できない<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>ので、代入時の型チェックは実行時<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>に行われます。</p>
+ただし、型エラー検出の観点からすると、Groovy では任意の代入が型エラーかどうかをコンパイル時には決定できない<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>ので、代入時の型チェックは実行時<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>に行われます。</p>
 
-<p>私見ですが、Groovy のオプショナルタイピングは今のところ、型チェックという意味よりも、どちらかというと型情報をドキュメントとして書くことによるコードの可読性向上についての利点が大きいと感じています<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>。</p>
+<p>私見ですが、Groovy のオプショナルタイピングは今のところ、型チェックという意味よりも、どちらかというと型情報をドキュメントとして書くことによるコードの可読性向上についての利点が大きいと感じています<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup>。</p>
 
 <h3 id="ast-変換">AST 変換</h3>
 
@@ -416,7 +428,7 @@ def p = new Person('taro', 30)</code></pre></figure>
 
 <p>Groovy に限らず、Ruby を含め多くの言語処理系では、内部的には実行までの過程でコードの中間表現として AST (Abstract Syntax Tree, 抽象構文木 ) を使用します。</p>
 
-<p>Groovy では、この AST を加工・操作するための API を開放<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>しており、AST の変換モジュールもしくは変換処理を AST 変換と呼んでいます。AST 変換には、標準 AST 変換として Groovy が提供しているものや、フレームワークやツール提供者が提供しているものが多くあり、もちろん Groovy プログラマが自ら AST 変換を定義することもできます。</p>
+<p>Groovy では、この AST を加工・操作するための API を開放<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>しており、AST の変換モジュールもしくは変換処理を AST 変換と呼んでいます。AST 変換には、標準 AST 変換として Groovy が提供しているものや、フレームワークやツール提供者が提供しているものが多くあり、もちろん Groovy プログラマが自ら AST 変換を定義することもできます。</p>
 
 <p>以下に AST 変換が適用される様子を示します。
 <img src="../../images/0034-GuestTalk/astxform.png" alt="astxform.png" /></p>
@@ -450,7 +462,7 @@ assert (s.capitalize() * 2).size() == 7
 
   at powerassert.run(powerassert.groovy:2)</code></pre></figure>
 
-<p>この背後では、Assert 引数の式の AST がツリーとして解析され、「部分式ごとに計算した値をカラムを調整して Assert のメッセージに構築するコード」が AST 変換により生成されて実行されています。Power Assert は言語処理系本体 (Groovy のコンパイラやコード生成部)に手を入れることなく、標準の AST 変換として実現されています<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>。</p>
+<p>この背後では、Assert 引数の式の AST がツリーとして解析され、「部分式ごとに計算した値をカラムを調整して Assert のメッセージに構築するコード」が AST 変換により生成されて実行されています。Power Assert は言語処理系本体 (Groovy のコンパイラやコード生成部)に手を入れることなく、標準の AST 変換として実現されています<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>。</p>
 
 <h4 id="ast-変換の例-3-ー-groovy">AST 変換の例 3 ー Groovy++</h4>
 
@@ -479,7 +491,7 @@ int sum(int i) {
 
 <h4 id="ast-変換の例-4-ー-grapegrab">AST 変換の例 4 ー Grape(@Grab)</h4>
 
-<p>Groovy には Grape<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup> という言語組み込みのライブラリ管理機構があります。Groovy コードに</p>
+<p>Groovy には Grape<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote">13</a></sup> という言語組み込みのライブラリ管理機構があります。Groovy コードに</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">@Grab('net.sourceforge.htmlunit:htmlunit:2.8')
 import com.gargoylesoftware.htmlunit.WebClient
@@ -492,7 +504,7 @@ page = new WebClient().getPage("http://..")</code></pre></figure>
 
 <h4 id="ast-変換を使った開発">AST 変換を使った開発</h4>
 
-<p>標準 Groovy には、AST 変換が数多く定義されています。たとえばデザインパターンを実現するもの<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>、特定のコーディングパターンを実現するもの<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>、Java を強化もしくは弱点を補足するもの<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup>、記述を簡潔にするもの<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup>、決りきったコードを生成するもの<sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup>などです。</p>
+<p>標準 Groovy には、AST 変換が数多く定義されています。たとえばデザインパターンを実現するもの<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote">14</a></sup>、特定のコーディングパターンを実現するもの<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote">15</a></sup>、Java を強化もしくは弱点を補足するもの<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote">16</a></sup>、記述を簡潔にするもの<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote">17</a></sup>、決りきったコードを生成するもの<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote">18</a></sup>などです。</p>
 
 <p>これらの AST 変換を利用すると、記述を簡潔にするなどの利点がある反面、どのような動作をするかが見えにくくなるという問題があります。</p>
 
@@ -533,61 +545,61 @@ page = new WebClient().getPage("http://..")</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Groovy は Ruby 以外の言語の影響も受けています。影響が圧倒的に大きいのは Java ですが、Scala や Clojure などからも精力的に機能を取り込んでおり、その自重しなさが Groovy らしさの一つではないかと私は思います。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Groovy は Ruby 以外の言語の影響も受けています。影響が圧倒的に大きいのは Java ですが、Scala や Clojure などからも精力的に機能を取り込んでおり、その自重しなさが Groovy らしさの一つではないかと私は思います。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>MOP は、「オープンかつ拡張可能なプログラムの意味の解釈機構」です(<a href="http://en.wikipedia.org/wiki/Metaobject#Metaobject_protocol">Wikipediaより</a>)。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>MOP は、「オープンかつ拡張可能なプログラムの意味の解釈機構」です(<a href="http://en.wikipedia.org/wiki/Metaobject#Metaobject_protocol">Wikipediaより</a>)。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>筆者は Ruby に詳しくないので、Ruby らしくない、もしくは最適ではないコードかもしれませんがご容赦下さい。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>筆者は Ruby に詳しくないので、Ruby らしくない、もしくは最適ではないコードかもしれませんがご容赦下さい。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Groovy は Java とほぼ上位互換なので、Java 風にも書けますが、ここではなるべく Java らしく無いように書いています。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Groovy は Java とほぼ上位互換なので、Java 風にも書けますが、ここではなるべく Java らしく無いように書いています。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>アクセス修飾子や final を指定することでアクセッサメソッドの自動生成を抑制・コントロールすることができます。 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>アクセス修飾子や final を指定することでアクセッサメソッドの自動生成を抑制・コントロールすることができます。 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>アノテーションはクラスや変数などに任意のメタデータを付与する Java の機構であり、Groovy でも利用可能です。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>アノテーションはクラスや変数などに任意のメタデータを付与する Java の機構であり、Groovy でも利用可能です。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>おそらく、ボイラープレートコードを書かなくて済む、ということを Java との違いとして強調する必要がある、という「言語の進化圧」があり、このように発達しています。 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>おそらく、ボイラープレートコードを書かなくて済む、ということを Java との違いとして強調する必要がある、という「言語の進化圧」があり、このように発達しています。 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>asType()というキャスト用メソッドがクラスやインスタンスに実行時に注入されると任意の代入は正しいかもしれないため。 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>asType()というキャスト用メソッドがクラスやインスタンスに実行時に注入されると任意の代入は正しいかもしれないため。 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>実行時ではありますが、ダックタイピングと比べると、メソッドの呼び出し時にメソッドが無いことで型エラーが発覚するのではなく、代入時(引数としてメソッドを渡した時点、返り値を受けとった時点)にチェックのタイミングが前倒しになるので、ダックタイピングよりは早いタイミングで検出できるとは言えます。 <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>実行時ではありますが、ダックタイピングと比べると、メソッドの呼び出し時にメソッドが無いことで型エラーが発覚するのではなく、代入時(引数としてメソッドを渡した時点、返り値を受けとった時点)にチェックのタイミングが前倒しになるので、ダックタイピングよりは早いタイミングで検出できるとは言えます。 <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>Groovy 1.8.0 では int 型に限って特別な最適化が導入されたので、性能向上面の効果もあります。ただし現時点では限定的です。 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>Groovy 1.8.0 では int 型に限って特別な最適化が導入されたので、性能向上面の効果もあります。ただし現時点では限定的です。 <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>なお、Groovy のコンパイル処理は Groovy 1.7 以前からもともと内部的に AST 変換の集合体でした。1.7 以降は、Groovy 処理系の開発者以外からも容易に利用できるようにAPIとして整備された、ということです。 <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>なお、Groovy のコンパイル処理は Groovy 1.7 以前からもともと内部的に AST 変換の集合体でした。1.7 以降は、Groovy 処理系の開発者以外からも容易に利用できるようにAPIとして整備された、ということです。 <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:12">
-      <p>Groovy プログラマは Power Assertが AST 変換で実現されていると意識する必要ありません。ただの言語拡張に見えます。 <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:12" role="doc-endnote">
+      <p>Groovy プログラマは Power Assertが AST 変換で実現されていると意識する必要ありません。ただの言語拡張に見えます。 <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:13">
-      <p>The Groovy Adaptable Packaging Engine または Groovy Advanced Packaging Engine <a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:13" role="doc-endnote">
+      <p>The Groovy Adaptable Packaging Engine または Groovy Advanced Packaging Engine <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:14">
-      <p>@Immutable, @Delegate, @ListenerList <a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:14" role="doc-endnote">
+      <p>@Immutable, @Delegate, @ListenerList <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:15">
-      <p>@WithReadLock,@WithWriteLock <a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:15" role="doc-endnote">
+      <p>@WithReadLock,@WithWriteLock <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:16">
-      <p>@Synchronized, @ThreadInterrupt,@TimedInterrupt,@ConditionalInterrupt <a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:16" role="doc-endnote">
+      <p>@Synchronized, @ThreadInterrupt,@TimedInterrupt,@ConditionalInterrupt <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:17">
-      <p>@Newify, @TupleConstructor, @InheritConstructor, @Log(@Commons,@Log4j,@Slf4j) <a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:17" role="doc-endnote">
+      <p>@Newify, @TupleConstructor, @InheritConstructor, @Log(@Commons,@Log4j,@Slf4j) <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:18">
-      <p>@AutoClone, @AutoExternalize, @ToString, @EqualsAndHashCode, @Canonical, @IndexedProperties <a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:18" role="doc-endnote">
+      <p>@AutoClone, @AutoExternalize, @ToString, @EqualsAndHashCode, @Canonical, @IndexedProperties <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

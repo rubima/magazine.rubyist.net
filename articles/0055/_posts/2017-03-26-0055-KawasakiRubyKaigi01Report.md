@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (60) 川崎 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (60) 川崎 Ruby 会議 01
-tags: 0055 KawasakiRubyKaigi01Report
+created_on: 2017-03-26
+tags: 0055 KawasakiRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}
 

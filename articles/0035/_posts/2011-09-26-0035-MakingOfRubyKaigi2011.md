@@ -2,6 +2,7 @@
 layout: post
 title: Making of RubyKaigi2011 第一回
 short_title: Making of RubyKaigi2011 第一回
+created_on: 2011-09-26
 tags: 0035 MakingOfRubyKaigi2011
 ---
 {% include base.html %}

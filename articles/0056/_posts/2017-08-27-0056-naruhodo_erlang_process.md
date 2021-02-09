@@ -2,6 +2,7 @@
 layout: post
 title: なるほど Erlang プロセス
 short_title: なるほど Erlang プロセス
+created_on: 2017-08-27
 tags: 0056 naruhodo_erlang_process
 ---
 {% include base.html %}

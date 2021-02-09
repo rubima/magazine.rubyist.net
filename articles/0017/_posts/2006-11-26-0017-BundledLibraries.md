@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 10 回】 ERB
 short_title: 標準添付ライブラリ紹介 【第 10 回】 ERB
+created_on: 2006-11-26
 tags: 0017 BundledLibraries
 ---
 {% include base.html %}

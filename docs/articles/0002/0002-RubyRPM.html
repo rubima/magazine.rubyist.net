@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2004-10-16</span>
+
 
 
                         </div>
@@ -249,11 +261,11 @@
 ruby-rpm は Ruby で RPM を扱うための拡張ライブラリです。
 RPM については <a href="http://www.linux.or.jp/JF/JFdocs/RPM-HOWTO.html">RPM HOWTO</a> や <a href="http://www.rpm.org/max-rpm/">Maximum RPM</a> をご参照ください。</p>
 
-<p>ruby-rpm を用いると、rpm コマンドを経由せずに Ruby から RPM DB を扱え、問い合わせ・インストール・アップグレード・削除の処理を実行できます。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p>ruby-rpm を用いると、rpm コマンドを経由せずに Ruby から RPM DB を扱え、問い合わせ・インストール・アップグレード・削除の処理を実行できます。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <p>私が <a href="http://www.momonga-linux.org/">Momonga Project</a> に誘われて ruby-rpm をいじるようになったのは、つい最近のことです。
 RPM についてもあまり理解していなかったので、ruby-rpm と一緒に調べていくことにしました。
-本稿はその調査記録として ruby-rpm の簡単な使い方を紹介します。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+本稿はその調査記録として ruby-rpm の簡単な使い方を紹介します。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <p>RPM は Red Hat によって開発が進められています。RPM の機能は C ライブラリとして提供されており、これを用いた Python による拡張ライブラリ (rpm-python) が Red Hat によって提供されています (rpm-python は RPM のソースツリーに含まれています)。</p>
 
@@ -287,7 +299,7 @@ RPM についてもあまり理解していなかったので、ruby-rpm と一�
 
 <h3 id="ビルド手順">ビルド手順</h3>
 
-<p>momonga は svn で管理されています。現在の <a href="http://developer.momonga-linux.org/viewcvs/trunk/pkgs/ruby-rpm/">trunk/pkgs/ruby-rpm/</a> に置かれているのは次のファイルです。<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+<p>momonga は svn で管理されています。現在の <a href="http://developer.momonga-linux.org/viewcvs/trunk/pkgs/ruby-rpm/">trunk/pkgs/ruby-rpm/</a> に置かれているのは次のファイルです。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
 
 <ul>
   <li>ruby-rpm-1.2.0.tar.bz2</li>
@@ -322,7 +334,7 @@ RPM についてもあまり理解していなかったので、ruby-rpm と一�
 <p>それでも Cygwin で ruby-rpm を使おうとするなら RPM をソースからビルドする必要があります。私の試した rpm-4.1 では Cygwin でもビルドできました。そして ruby-rpm も (少し Makefile をいじる必要がありましたが) ビルドできました。</p>
 
 <p>Cygwin を使わない方法として X on Win パッケージがあります。
-Cygwin で RPM を使う方法を探していると、HOLON Linux が提供している X on Win パッケージを見つけることができました。<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>
+Cygwin で RPM を使う方法を探していると、HOLON Linux が提供している X on Win パッケージを見つけることができました。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>
 X on Win のブートパッケージを使えば Windows 上で一から RPM 環境を作ることができるようです。興味のある方はお試しください。</p>
 
 <h2 id="ruby-rpm-を使う前に">ruby-rpm を使う前に</h2>
@@ -588,7 +600,7 @@ db.transaction が返す ts は Transaction Set なのです。
 ブロックを渡さないとデフォルトのコールバックを実行します (キャラクタベースのプログレスバーが表示されます)。</p>
 
 <p>ts.commit を呼ばなかったときは ts.transaction {} を抜けるときに内部で ts.commit が呼ばれます。
-この際、ブロック呼び出しが妙なことになって、ts.transaction に渡したブロックが ts.commit を読んだ際にも呼ばれてしまいます (これはおそらく Ruby の不具合だと思います<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>)。</p>
+この際、ブロック呼び出しが妙なことになって、ts.transaction に渡したブロックが ts.commit を読んだ際にも呼ばれてしまいます (これはおそらく Ruby の不具合だと思います<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>)。</p>
 
 <h3 id="パッケージをインストールする-rpm--i">パッケージをインストールする (rpm -i)</h3>
 
@@ -648,22 +660,22 @@ Copyright (c) 2003 by Red Hat, Inc.</p>
 
 <p>著者の連絡先は moriq@moriq.com です。</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>本稿を書き始める前には、これらの処理は当然できるものと考えていました。しかし、テストしてみると不具合が見つかりました。幸いなことに直し方が判ったので、パッチを投げつつその成果を元に執筆することになりました。これぞ執筆駆動開発！ <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>本稿を書き始める前には、これらの処理は当然できるものと考えていました。しかし、テストしてみると不具合が見つかりました。幸いなことに直し方が判ったので、パッチを投げつつその成果を元に執筆することになりました。これぞ執筆駆動開発！ <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>実は、ruby-rpm の開発過程も書くつもりでした。しかし、ruby-rpm が何なのか事前に説明しておかないと話を始められないのでした。というわけで、このような紹介記事になりました。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>実は、ruby-rpm の開発過程も書くつもりでした。しかし、ruby-rpm が何なのか事前に説明しておかないと話を始められないのでした。というわけで、このような紹介記事になりました。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>現在パッチは増えています。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>現在パッチは増えています。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>http://www.mars.dti.ne.jp/~sohda/cygwin/holon.html に詳しい。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>http://www.mars.dti.ne.jp/~sohda/cygwin/holon.html に詳しい。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>[[ruby-dev:24252]] で報告済み <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>[[ruby-dev:24252]] で報告済み <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

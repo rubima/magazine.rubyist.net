@@ -2,6 +2,7 @@
 layout: post
 title: Ruby 20 周年記念パーティーレポート ―― プログラミング初心者の運営スタッフが見た Ruby コミュニティ
 short_title: Ruby 20 周年記念パーティーレポート ―― プログラミング初心者の運営スタッフが見た Ruby コミュニティ
+created_on: 2013-05-29
 tags: 0042 Ruby20thAnniversaryPartyReport
 ---
 {% include base.html %}

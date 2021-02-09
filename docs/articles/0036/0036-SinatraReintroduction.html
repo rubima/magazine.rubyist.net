@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2011-11-28</span>
+
 
 
                         </div>
@@ -327,7 +339,7 @@
    $ ruby app.rb
    #=&gt; http://localhost:4567/ にアクセス</code></pre></figure>
 
-<p>Rails で同様なことをする場合 (controller をジェネレートし、route.rb を編集し……) や、あるいは PHP などを用いて同等のことをする場合と比較しても、非常に簡単に「ブラウザで表示する」ところまでたどり着けることがご理解いただけると思います<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>Rails で同様なことをする場合 (controller をジェネレートし、route.rb を編集し……) や、あるいは PHP などを用いて同等のことをする場合と比較しても、非常に簡単に「ブラウザで表示する」ところまでたどり着けることがご理解いただけると思います<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <p>もうすこし、Sinatra をいじってみましょう。まずは、ベースとなる以下の app.rb を作ってみます。</p>
 
@@ -714,7 +726,7 @@
   <span class="nb">require</span> <span class="s1">'rack'</span>
   <span class="nb">require</span> <span class="s1">'zalgo'</span>
 
-  <span class="k">class</span> <span class="nc">Rack</span><span class="o">::</span><span class="no">Glitch</span>
+  <span class="k">class</span> <span class="nc">Rack::Glitch</span>
     <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
       <span class="vi">@app</span> <span class="o">=</span> <span class="n">app</span>
     <span class="k">end</span>
@@ -809,7 +821,7 @@
 
 <h2 id="sinatra-を使った開発とそのエコシステムについて">Sinatra を使った開発とそのエコシステムについて</h2>
 
-<p>今までのサンプルコードでは、「最小限のフレームワークの上に、必要な機能を盛り付ける」という、言ってみればビュッフェスタイルの開発を意識しています。要するに、Sinatra と言う皿の上に、ロガー、キャッシュ、ヘルパー、認証と言った料理をたくさん盛り付けていくわけです。逆に、Rails のようなフレームワークはフルコース・スタイルであるといえるかもしれません<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>今までのサンプルコードでは、「最小限のフレームワークの上に、必要な機能を盛り付ける」という、言ってみればビュッフェスタイルの開発を意識しています。要するに、Sinatra と言う皿の上に、ロガー、キャッシュ、ヘルパー、認証と言った料理をたくさん盛り付けていくわけです。逆に、Rails のようなフレームワークはフルコース・スタイルであるといえるかもしれません<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <p>どちらが絶対的に良い、ということは一概には言えないでしょう。ただ、筆者の考えとしては、このビュッフェスタイルの開発は、上手にやれば気を回すべき関心事が適切に分離されるので、バグを追いかけやすく、またテストもしやすい、そしてコードの見通しが良くなる、といったメリットがあります。</p>
 
@@ -892,7 +904,7 @@
 
 <p>このイベントは lingr のチャットなども開放しているので、まずはオンラインで、予定が合えば会場提供のフィヨルドさんへ、といろいろな形での参加が可能です。</p>
 
-<p>また、京都の意識の高い破滅的な学生達によって「Padrino 黒ミサ」と言うイベントが 2011/12/10 に開催予定です<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。関西闇 Ruby 会議といい、つくづくあちらは瘴気が濃いですね。</p>
+<p>また、京都の意識の高い破滅的な学生達によって「Padrino 黒ミサ」と言うイベントが 2011/12/10 に開催予定です<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。関西闇 Ruby 会議といい、つくづくあちらは瘴気が濃いですね。</p>
 
 <ul>
   <li><a href="http://atnd.org/events/21442">Padrino 黒ミサ in 京都</a></li>
@@ -908,16 +920,16 @@
 
 <p><a href="http://www.fujisan.co.jp">富士山マガジンサービス</a>で Rails や Groovy などのプログラマをやりつつ、Padrino framework のドキュメント邦訳、rspec-padrino などの gem の開発をしています。US ローファイロックが好き。<a href="http://blog.udzura.jp">ブログ</a>もやっています。</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Windows においても、たとえば NogakuDo (http://www.artonx.org/data/nougakudo/jman.html) に同梱されている Ruby などであれば問題なく動くと思われますし、NogakuDo ならば Windows 向けの高速な Rack 対応サーバ (Ennou) も入るそうなので、Rails のみならず Sinatra も高速に動作させられることと思います。もし動かなければ作者の arton さんにフィードバックを送ることも出来るでしょう。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Windows においても、たとえば NogakuDo (http://www.artonx.org/data/nougakudo/jman.html) に同梱されている Ruby などであれば問題なく動くと思われますし、NogakuDo ならば Windows 向けの高速な Rack 対応サーバ (Ennou) も入るそうなので、Rails のみならず Sinatra も高速に動作させられることと思います。もし動かなければ作者の arton さんにフィードバックを送ることも出来るでしょう。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>どこかの誰かは「二郎だ」などと喩えていましたけどね……(w <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>どこかの誰かは「二郎だ」などと喩えていましたけどね……(w <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>2011 年 11 月現在 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>2011 年 11 月現在 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

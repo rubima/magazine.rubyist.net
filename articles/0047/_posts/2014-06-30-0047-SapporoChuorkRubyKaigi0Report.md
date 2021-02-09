@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (43) 札幌市中央区 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (43) 札幌市中央区 Ruby 会議 01
-tags: 0047 SapporoChuorkRubyKaigi0Report
+created_on: 2014-06-30
+tags: 0047 SapporoChuorkRubyKaigi0Report regionalRubyKaigi
 ---
 {% include base.html %}
 

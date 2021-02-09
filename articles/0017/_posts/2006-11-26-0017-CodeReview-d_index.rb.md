@@ -2,6 +2,7 @@
 layout: post
 title: 0017-CodeReview-d_index.rb
 short_title: 0017-CodeReview-d_index.rb
+created_on: 2006-11-26
 tags: 0017 CodeReview
 ---
 {% include base.html %}

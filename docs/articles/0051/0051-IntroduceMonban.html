@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2015-09-06</span>
+
 
 
                         </div>
@@ -258,7 +270,7 @@ Monban を利用した認証機能を Scaffold により作成することがで
 <p>実際に Rails アプリケーションを作りながら Monban による基本的な認証機能を実装する方法について説明します。
 まず <em>rails new</em> します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rails new sample
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rails new sample
 
 </code></pre></div></div>
 
@@ -275,7 +287,7 @@ Monban を利用した認証機能を Scaffold により作成することがで
 
 <p>次のコマンドを実行して認証機能を生成します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rails g monban:scaffold
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rails g monban:scaffold
        route  resources :users, only: [:new, :create]
        route  resource :session, only: [:new, :create, :destroy]
       create  app/views/users/new.html.erb
@@ -297,7 +309,7 @@ Monban を利用した認証機能を Scaffold により作成することがで
 
 <p>まず、<em>app/controllers/application_controller.rb</em> を開くと、次のように <em>include Monban::ControllerHelpers</em> が追加されています。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ApplicationController &lt; ActionController::Base
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class ApplicationController &lt; ActionController::Base
 +  include Monban::ControllerHelpers
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -471,7 +483,7 @@ end
 
 <p>まず View を変更します。 <em>app/views/users/new.html.haml</em> に <em>password_confirmation</em> を入力するフォームを追加します。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>= form_for @user do |form|
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>= form_for @user do |form|
   - if @user.errors.any?
     = pluralize(@user.errors.count, "error")
     prevented your account from being created:
@@ -505,7 +517,7 @@ end
 
 <p>データベースには <em>password_digest</em> を書き込めれば良いので、スキーマは変更せずに <em>app/models/user.rb</em> を下記のように書き換えます。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class User &lt; ActiveRecord::Base
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class User &lt; ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
 +  attr_accessor :password, :password_confirmation
@@ -517,7 +529,7 @@ end
 
 <p><em>app/controllers/users/users_controller.rb</em> の Strong Parameters で <em>password_confirmation</em> を受け入れるようにします。</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Users::UsersController &lt; Users::ApplicationController
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Users::UsersController &lt; Users::ApplicationController
   skip_before_action :require_login, only: [:new, :create]
 
   def new

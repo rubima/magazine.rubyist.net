@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -201,6 +211,8 @@
                         </div>
                         <div class="post_info">
                             
+
+  <span class="created_on">初稿：2010-03-16</span>
 
 
 
@@ -532,9 +544,9 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
   <li>ActiveRecord::Callbacks</li>
 </ol>
 
-<p>混乱の種にもなるので<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>老婆心ながら違いについて触れておきますと、ActiveSuport::Callbacks は特定のメソッドが実行される際にその前後をフックして他のメソッドを実行し易くするための仕組みです。これを利用すると様々なコールバックを定義することができます。</p>
+<p>混乱の種にもなるので<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>老婆心ながら違いについて触れておきますと、ActiveSuport::Callbacks は特定のメソッドが実行される際にその前後をフックして他のメソッドを実行し易くするための仕組みです。これを利用すると様々なコールバックを定義することができます。</p>
 
-<p>上記で解説したのは ActiveRecord::Callbacks です。これは ActiveSupport::Callbacks を利用して各種 before_* や after_* を定義している、という実装になっています<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>上記で解説したのは ActiveRecord::Callbacks です。これは ActiveSupport::Callbacks を利用して各種 before_* や after_* を定義している、という実装になっています<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <h3 id="検索フィルタを動的に組み立てる方法">検索フィルタを動的に組み立てる方法</h3>
 
@@ -632,7 +644,7 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 
 </code></pre></div></div>
 
-<p>Hash を利用する利点は、単にその方が見やすい場合もあるでしょうし、プログラム上扱いやすい場合もあるでしょう。場合に合わせて使い分けてください<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>Hash を利用する利点は、単にその方が見やすい場合もあるでしょうし、プログラム上扱いやすい場合もあるでしょう。場合に合わせて使い分けてください<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <h3 id="関連性の詳細と操作方法">関連性の詳細と操作方法</h3>
 
@@ -1075,9 +1087,9 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
  単一のサブスキーマ（サブ）エントリは、ディレクトリツリーの特定の部分に存在するエン
  トリ群で利用される全てのスキーマ定義を格納しています。</code></pre></figure>
 
-<p>少々判りづらい表現ですが、私が確認した限りでは、このサブスキーマサブエントリにディレクトリツリーの全てのスキーマ定義が属性として記述されているようです<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+<p>少々判りづらい表現ですが、私が確認した限りでは、このサブスキーマサブエントリにディレクトリツリーの全てのスキーマ定義が属性として記述されているようです<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
 
-<p>このサブスキーマサブエントリを参照するため、各エントリは subschemaSubentry という属性を持っています<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>。この属性にはサブスキーマサブエントリの DN が格納され、DNが示す先のエントリに、各種スキーマ定義が記載されています。</p>
+<p>このサブスキーマサブエントリを参照するため、各エントリは subschemaSubentry という属性を持っています<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。この属性にはサブスキーマサブエントリの DN が格納され、DNが示す先のエントリに、各種スキーマ定義が記載されています。</p>
 
 <p>前回の記事と同じ LDAP ツリーを利用し、o=rubyistMagazine,c=jp のエントリから subschemaSubentry 属性を見てみましょう。</p>
 
@@ -1285,22 +1297,22 @@ save メソッドが呼ばれると、エラー情報が記録されていた場
 <hr />
 <p><br /></p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>というか私が混乱したんですが…… <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>というか私が混乱したんですが…… <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>内容からお気づきの方もいらっしゃると思いますが、validations でも callbacks の仕組みが利用されています <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>内容からお気づきの方もいらっしゃると思いますが、validations でも callbacks の仕組みが利用されています <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>例では判り易さのために、各検索値などを直接記述していますが、実際のプログラムでは他のメソッドの戻り値などを利用するでしょう。その場合にこそ、この仕組みは威力を発揮すると思います <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>例では判り易さのために、各検索値などを直接記述していますが、実際のプログラムでは他のメソッドの戻り値などを利用するでしょう。その場合にこそ、この仕組みは威力を発揮すると思います <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>RFC の書き方的にツリーの一部のスキーマ定義を格納するのか、各部を合計した全部のスキーマ定義を集約しているのかはちょっと判りません。一見した限りでは全部のスキーマ定義が入っているように見えます。予想にすぎませんが、ツリーの一部を別のサーバに委譲する場合などに全部のスキーマ情報を格納する訳ではないのかもしれません。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>RFC の書き方的にツリーの一部のスキーマ定義を格納するのか、各部を合計した全部のスキーマ定義を集約しているのかはちょっと判りません。一見した限りでは全部のスキーマ定義が入っているように見えます。予想にすぎませんが、ツリーの一部を別のサーバに委譲する場合などに全部のスキーマ情報を格納する訳ではないのかもしれません。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>厳密に言えば、RFC はこの属性を持つ事を「強く推奨」しています <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>厳密に言えば、RFC はこの属性を持つ事を「強く推奨」しています <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

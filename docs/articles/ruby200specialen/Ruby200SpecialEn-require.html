@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -292,7 +302,7 @@ $MAGIC = "/bar"
 However, since you can change the return value of <em>to_path</em> method without changing contents, we had to stop calling it for String objects in order to guarantee the file path is not changed.</p>
 
 <p>You can still add non-String objects to $LOAD_PATH. In this case, Ruby 2.0 still calls <em>to_path</em> for the objects but you won’t get any benefit from the performance improvement.
-I don’t recommend it<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
+I don’t recommend it<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>.</p>
 
 <p>In addition, you can find very interesting gimmick in the implementation of the logic detecting the changes on $LOAD_PATH and $LOADED_FEATURES.
 It uses share flag of the array inside $LOAD_PATH and $LOADED_FEATURES.
@@ -314,10 +324,10 @@ That sounds amazing, doesn’t it?</p>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>I don’t know how many people have tried that :-) <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>I don’t know how many people have tried that :-) <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

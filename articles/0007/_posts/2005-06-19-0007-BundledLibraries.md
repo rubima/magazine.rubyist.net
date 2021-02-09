@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R
 short_title: 標準添付ライブラリ紹介 【第 1 回】 XMLRPC4R
+created_on: 2005-06-19
 tags: 0007 BundledLibraries
 ---
 {% include base.html %}

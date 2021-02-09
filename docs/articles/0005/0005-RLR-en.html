@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2005-02-15</span>
+
 
 
                         </div>
@@ -354,11 +366,11 @@ using Ruby by using the win32-file package.</p>
    fh.read_only = true
  }</code></pre></figure>
 
-<p>In addition, you can get and set the security settings of files.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+<p>In addition, you can get and set the security settings of files.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
 Use File.get_permissions to retrieve a hash of key value pairs that
 describe the security settings.  However, the values are integer values.
 To turn those into human readable strings, we need to pass the flag to
-the File.securities method.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+the File.securities method.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/file"
 
@@ -378,7 +390,7 @@ more attribute related methods.</p>
 <p>On a final note, a few of the core File methods have been reimplemented 
 in the win32-file package, either because they weren’t implemented for 
 Win32 systems, or they didn’t work properly.  At the time of this writing 
-this included File.blockdev?, File.chardev? and File.size.<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+this included File.blockdev?, File.chardev? and File.size.<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
 
 <h4 id="win32-sound">WIN32-SOUND</h4>
 
@@ -403,7 +415,7 @@ playing sounds.</p>
 <p>This package allows you to create and configure shortcuts on Win32 
 systems.  Shortcuts are links (.lnk files) to other files or programs, 
 typically represented by an icon  on your Desktop or in an Explorer 
-window, with a little arrow in the lower left hand corner.<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></p>
+window, with a little arrow in the lower left hand corner.<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/shortcut"
  include Win32
@@ -416,7 +428,7 @@ window, with a little arrow in the lower left hand corner.<sup id="fnref:4"><a h
  s.save</code></pre></figure>
 
 <p>In the above example, we’ve created a shortcut called “test.lnk” 
-in the ‘C:' directory and gives it a description of “test link”.<sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup>
+in the ‘C:' directory and gives it a description of “test link”.<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>
 The shortcut is a link to the Notepad executable.<br />
 The Shortcut#working_directory method tells it to consider ‘C:' 
 the starting directory for that executable when started.<br />
@@ -457,7 +469,7 @@ we need to add a work item and a trigger, then save it.</p>
    "type"         =&gt; { "days_interval" =&gt; 2 }
  }</code></pre></figure>
 
-<p>A trigger is written as a hash.<sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup>
+<p>A trigger is written as a hash.<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>
 The above trigger sets a task to start on April 11th
 (of the current year if not specified), starting at 7:14am 
 and will run daily, every other day.  With a trigger 
@@ -467,7 +479,7 @@ prepared, a new work item can be created.</p>
  t.application_name = "ruby foo.exe"
  t.save</code></pre></figure>
 
-<p>This sample actually creates the work item in the Task Scheduler.<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup><br />
+<p>This sample actually creates the work item in the Task Scheduler.<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup><br />
 Note that we have to specify the actual program to execute, as well 
 as save the work item.  The work item is notcreated until 
 TaskScheduler#save is called.  For convenience, the samples I have 
@@ -496,7 +508,7 @@ speech creation and recognition using Ruby (win32-sapi), and a version
 of popen3 that works on Win32 as it does on Unix systems (win32-open3).</p>
 
 <p>There is also an experimental native thread library (win32-thread), 
-with an interface for the Windows fiber API<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>
+with an interface for the Windows fiber API<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>
 in the works.</p>
 
 <h3 id="conclusion">Conclusion</h3>
@@ -512,31 +524,31 @@ I hope you can now use Ruby in production code on Win32 systems.</p>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>This is only possible on NTFS filesystems. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>This is only possible on NTFS filesystems. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>I may alter this in a future release to simply return an array. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>I may alter this in a future release to simply return an array. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>The core File.size method works fine so long as the file size is less than 2 GB. <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>The core File.size method works fine so long as the file size is less than 2 GB. <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>Note that shortcuts on Win32 are not the same thing as symlinks. <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>Note that shortcuts on Win32 are not the same thing as symlinks. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>You can see this if you right-click on the .lnk file and select “properties”. <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>You can see this if you right-click on the .lnk file and select “properties”. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>See the docs for all possible valid keys.  Note that the “type” key takes a hash as its argument. <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>See the docs for all possible valid keys.  Note that the “type” key takes a hash as its argument. <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>If you want visual evidence, you can select Start -&gt; Control Panel -&gt; Scheduled Tasks. <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>If you want visual evidence, you can select Start -&gt; Control Panel -&gt; Scheduled Tasks. <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>Fiber is a concept of Windows. It is a sort of thread created by <a href="http://msdn.microsoft.com/library/en-us/dllproc/base/createfiber.asp">CreateFiber()</a>. <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>Fiber is a concept of Windows. It is a sort of thread created by <a href="http://msdn.microsoft.com/library/en-us/dllproc/base/createfiber.asp">CreateFiber()</a>. <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

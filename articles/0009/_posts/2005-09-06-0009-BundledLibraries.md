@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv
 short_title: 標準添付ライブラリ紹介 【第 3 回】 Kconv/NKF/Iconv
+created_on: 2005-09-06
 tags: 0009 BundledLibraries
 ---
 {% include base.html %}

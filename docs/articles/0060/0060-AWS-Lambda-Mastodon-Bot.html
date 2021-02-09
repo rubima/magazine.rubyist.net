@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+  <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41117431-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-41117431-1');
+  </script>
+  <script src="../../js/gtag.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AWS Lambdaで作るサーバーレス Mastodon Bot</title>
+  <meta name="description" content="">
+
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../../css/theme.css" rel="stylesheet" type="text/css">
+  <link href="../../css/syntax.css" rel="stylesheet" type="text/css">
+  <link href="../../css/sharebutton.css" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://magazine.rubyist.net/articles/0060/0060-AWS-Lambda-Mastodon-Bot.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="https://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
+    
+        <li><a href="../../articles/0059/0059-index.html">0059号(2019-01)</a></li>
+    
+        <li><a href="../../articles/0058/0058-index.html">0058号(2018-08)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2018/preRubyKaigi2018-index.html">RubyKaigi 2018 直前特集号</a></li>
+    
+        <li><a href="../../articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="../../articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="../../articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="../../articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="../../articles/pretokyorubykaigi11/preTokyoRubyKaigi11-index.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="../../articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="../../articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="../../articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="../../articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="../../articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="../../articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="../../articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="../../articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="../../articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="../../articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="../../articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="../../articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="../../articles/ruby200specialen/Ruby200SpecialEn-index.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="../../articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="../../articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="../../articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="../../articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="../../articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="../../articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="../../articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="../../articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2011/preRubyKaigi2011-index.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="../../articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="../../articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="../../articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="../../articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2010/preRubyKaigi2010-index.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="../../articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="../../articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="../../articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="../../articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="../../articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="../../articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="../../articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="../../articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="../../articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="../../articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="../../articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="../../articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="../../articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="../../articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="../../articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="../../articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="../../articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="../../articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="../../articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="../../articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="../../articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="../../articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="../../articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="../../articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="../../articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="../../articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="../../articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="../../articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="../../articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="../../articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="../../articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="../../images/rubima_logo_l.png">
+                        <h1>AWS Lambdaで作るサーバーレス Mastodon Bot</h1>
+                        <div class="social-buttons">
+                            <div class='sns'>            
+    <ul class="clearfix">
+       <li class="twitter"><a href="https://twitter.com/share?text=AWS Lambdaで作るサーバーレス Mastodon Bot&amp;url=https://magazine.rubyist.net/articles/0060/0060-AWS-Lambda-Mastodon-Bot.html" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-twitter"></i></a></li>
+       <li class="facebook"><a href="https://www.facebook.com/sharer.php?u=https://magazine.rubyist.net/articles/0060/0060-AWS-Lambda-Mastodon-Bot.html&amp;t=AWS Lambdaで作るサーバーレス Mastodon Bot" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-facebook"></i></a></li>
+       <li class="hatebu"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://magazine.rubyist.net/articles/0060/0060-AWS-Lambda-Mastodon-Bot.html&amp;AWS Lambdaで作るサーバーレス Mastodon Bot" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa">B!</i></a></li>
+    </ul>
+</div>
+                        </div>
+                        <div class="post_info">
+                            
+  <span class="author">著者：S.H.</span><br />
+
+
+  <span class="created_on">初稿：2019年8月18日</span>
+
+
+
+                        </div>
+                        
+<h2 id="はじめに">はじめに</h2>
+
+<p>みなさん、こんにちは。
+普段は<a href="https://gamelinks007.net">Creatodon</a>というMastodonサーバーの管理人をしています、S.H.と申します。</p>
+
+<p>今回は、下記のイベントで寄稿した記事に加筆したものをるびまにも寄稿させて頂きました。</p>
+
+<p><a href="https://connpass.com/event/115011/">分散SNS萬本執筆・販売　執筆者募集中です（公募型アンソロジー）</a></p>
+
+<p>今回書くものは、以前「#顔面工事」というハッシュタグを拡散するBotを作った際に得たノウハウをまとめたものになります。
+下記のリポジトリを見つつ、読み進めるとより楽しめると思います。</p>
+
+<p><a href="https://github.com/S-H-GAMELINKS/face_under_construction">S-H-GAMELINKS/face_under_construction</a></p>
+
+<h2 id="環境">環境</h2>
+
+<p>本記事では、以下の環境にてBotを作成しました。</p>
+
+<ul>
+  <li>OS : Windows 10 Pro(WSL/Ubuntu 18.04)</li>
+  <li>Ruby : 2.5.5</li>
+  <li>エディタ : VSCode 1.36.0</li>
+</ul>
+
+<p>AWS Lambda のRubyランタイムのバージョンが2.5なので、Rubyの2.5系列がインストールされていれば問題ありません。</p>
+
+<h2 id="mastodonとは">Mastodonとは？</h2>
+
+<p><a href="https://github.com/tootsuite/mastodon">Mastodon</a>とは分散SNSと呼ばれるものの一つになります。
+数年前に日本でもMastodonブームが来たこともあり、ご存知の方もおられるかと思います。</p>
+
+<p>実装としてはバックエンドにRails、フロントエンドにReactが使用されています。
+Dockerイメージも公開されており手軽にサーバーを構築できます。</p>
+
+<p>Mastodonなどの分散SNSの魅力は自分でTwitterのようなSNSサービスを立ち上げ、運営することができる点です。
+自分のサーバーを構築すればアカウントの凍結などを気にする必要もないですし、</p>
+
+<p>MastodonではActivityPubというプロトコルを使い、他なサーバーとやり取りをすることができます。
+その為、別のサーバーのアカウントをフォローできますし、つぶやきなどを見ることもできます。</p>
+
+<p>また他な分散SNSともやり取りをすることができます。
+他な分散SNSには<a href="https://git.pleroma.social/pleroma/pleroma">Pleroma</a>や<a href="https://github.com/syuilo/misskey">Misskey</a>といったものがあります。それらの分散SNSもActivityPubを使用しています。
+その為、それらと相互にフォローしたり、つぶやきをお気に入りしたりということができます。
+分かりやすく言えば、TwitterとFacebookで互いにやり取りができるという状態ですね。</p>
+
+<p>ちなみに、海外のRubyistが<a href="https://ruby.social">ruby.social</a>というRubyistのためのサーバーを公開しています。
+興味のある方はアカウントを作成してみてはいかがでしょうか？</p>
+
+<h2 id="aws-lambdaとは">AWS Lambdaとは？</h2>
+
+<p>ご存知の方も多いとは思いますが、念のため<a href="https://aws.amazon.com/jp/lambda/">AWS Lambda</a>について少し解説します。</p>
+
+<p>AWS LambdaとはAmazonが提供しているサービスの一つで、サーバーを意識しなくてもコードを実行する環境を提供するサービスです。
+そのためコードを書くことに集中できますし、コードを気軽に本番環境で動かすことができます。</p>
+
+<p>また、AWS Lambdaはコードを実行した分だけの課金となっています。その為、Botなどで定期的にコードを実行するものを作成する際には非常に低コストで済みます。</p>
+
+<h2 id="botをrubyで作成">BotをRubyで作成</h2>
+
+<p>それでは、AWS LaambdaでMastodonのハッシュタグをブーストするBotを作っていきます。</p>
+
+<p>なお、AWSへのアカウント作成などは省略させていただきます。</p>
+
+<h3 id="まずは-aws-lambdaでhello-world">まずは AWS LambdaでHello World!</h3>
+
+<p>まず、AWS にログインし、サービスの検索欄から Lambdaを検索します。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_00.png" alt="lambdaの検索" /></p>
+
+<p>Lambdaの管理画面に移動して、<strong>関数の作成</strong>と書かれているボタンを選択します。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_01.png" alt="lambdaの管理画面" /></p>
+
+<p>その後、関数作成のフロー画面に移動します。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_02.png" alt="関数作成画面" /></p>
+
+<p><strong>関数名</strong>などを以下のように入力してください。</p>
+
+<ul>
+  <li>関数名：bot</li>
+  <li>ランタイム： Ruby 2.5</li>
+</ul>
+
+<p>入力後、<strong>関数の作成</strong>をクリックして、関数を作成します。これでAWS Lambdaに関数が作成されます。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_03.png" alt="関数作成後の画面" /></p>
+
+<p>関数が作成されると画面が遷移します。遷移後の画面をスクロールすると、<strong>関数コード</strong>という項目でエディタ画面が見つかります。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_04.png" alt="関数コードの画面" /></p>
+
+<p>そこには既に以下のようなコードが作成されています。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">:,</span> <span class="n">context</span><span class="p">:)</span>
+    <span class="c1"># TODO implement</span>
+    <span class="p">{</span> <span class="ss">statusCode: </span><span class="mi">200</span><span class="p">,</span> <span class="ss">body: </span><span class="no">JSON</span><span class="p">.</span><span class="nf">generate</span><span class="p">(</span><span class="s1">'Hello from Lambda!'</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p><strong>Hello from Lambda!</strong>の部分を<strong>Hello World!</strong>に修正してください。その後、画面上部にある<strong>テスト</strong>をクリックします。</p>
+
+<p>新しいテストの作成画面が表示されますので、<strong>イベント名</strong>に<strong>helloworld</strong>と入力します。あとは<strong>作成</strong>をクリックし、テストを作成します。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_05.png" alt="テスト作成画面" /></p>
+
+<p>最後に、再び画面上部にある<strong>テスト</strong>をクリックします。すると、先ほど作成したテストが実行され、実行結果がログとして表示されます。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_06.png" alt="テスト実行時のログ" /></p>
+
+<h3 id="mastodonインスタンスでbotのアカウントを作成">MastodonインスタンスでBotのアカウントを作成</h3>
+
+<p>Botを作成したいMastodonインスタンスにてBot用のアカウントを作成しましょう。</p>
+
+<p>作成後、<strong>ユーザー設定</strong>を開きます。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_07.png" alt="ユーザー設定を選択" /></p>
+
+<p><strong>開発</strong>タブをクリックします。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_08.png" alt="開発を選択" /></p>
+
+<p><strong>新規アプリ</strong>を作成します</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_09.png" alt="新規アプリを選択" /></p>
+
+<p>新規で作成するアプリの情報などを記入していきます。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_10.png" alt="アプリの情報入力" /></p>
+
+<p>入力後、<strong>送信</strong>をクリックします。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_11.png" alt="送信を押してアプリを作成" /></p>
+
+<p>これで新しいアプリが作成されます。</p>
+
+<p>新しく作成した<strong>アプリ</strong>をクリックします。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_12.png" alt="作成したアプリへのリンクをクリック" /></p>
+
+<p><strong>アクセストークン</strong>を取得します。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_13.png" alt="アクセストークンを取得" /></p>
+
+<p>以上でMastodon側での設定は完了です。</p>
+
+<h3 id="rubyでbotのコーディング">RubyでBotのコーディング</h3>
+
+<p>それでは、Botのコードを書いていきます。</p>
+
+<p>まずは、以下のように<strong>Gemfile</strong>を作成します。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+
+<span class="n">git_source</span><span class="p">(</span><span class="ss">:github</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">repo_name</span><span class="o">|</span> <span class="s2">"https://github.com/</span><span class="si">#{</span><span class="n">repo_name</span><span class="si">}</span><span class="s2">"</span> <span class="p">}</span>
+
+<span class="c1"># Using Mastodon API</span>
+<span class="n">gem</span> <span class="s1">'mastodon-api'</span><span class="p">,</span> <span class="s1">'1.1.0'</span>
+
+</code></pre></div></div>
+
+<p>次に、以下のように<strong>bot.rb</strong>を作成します。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">load_paths</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">[</span><span class="s2">"/vendor/bundle/ruby/2.5.0/gems/2.5.0/**/lib"</span><span class="p">]</span>
+<span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="o">*</span><span class="n">load_paths</span><span class="p">)</span>
+
+<span class="nb">require</span> <span class="s2">"mastodon"</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">:,</span> <span class="n">context</span><span class="p">:)</span>
+
+  <span class="n">client</span> <span class="o">=</span> <span class="no">Mastodon</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">base_url: </span><span class="no">URL</span><span class="p">,</span> <span class="ss">bearer_token: </span><span class="no">ACCESS_TOKEN</span><span class="p">)</span>
+
+    <span class="n">client</span><span class="p">.</span><span class="nf">hashtag_timeline</span><span class="p">(</span><span class="no">HASH_TAG</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">toot</span><span class="o">|</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">toot</span><span class="p">.</span><span class="nf">reblogged?</span> <span class="k">then</span>
+          <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">reblog</span><span class="p">(</span><span class="n">toot</span><span class="p">.</span><span class="nf">id</span><span class="p">)</span>
+          <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">favourite</span><span class="p">(</span><span class="n">toot</span><span class="p">.</span><span class="nf">id</span><span class="p">)</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>実は、ハッシュタグをブーストするBotはたったこれだけのコードで実装できます。それではコードの内容を解説していきましょう。</p>
+
+<p>まず、最初の二行で外部ライブラリを読み込むためのパスを設定しています。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">load_paths</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">[</span><span class="s2">"/vendor/bundle/ruby/2.5.0/gems/2.5.0/**/lib"</span><span class="p">]</span>
+<span class="vg">$LOAD_PATH</span><span class="p">.</span><span class="nf">unshift</span><span class="p">(</span><span class="o">*</span><span class="n">load_paths</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>AWS Lambdaではbundlerを使っての外部ライブラリ使用ができません。そのため、ローカルのディレクトリ内にライブラリのファイルを配置する必要があり、上記のコードで読込先を指定しています。</p>
+
+<p>次に、requireを使ってライブラリを読み込みます。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'mastodon'</span>
+</code></pre></div></div>
+
+<p>その後、以下のように lambda_handlerというメソッドを定義します。</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">:,</span> <span class="n">context</span><span class="p">:)</span>
+
+  <span class="n">client</span> <span class="o">=</span> <span class="no">Mastodon</span><span class="o">::</span><span class="no">REST</span><span class="o">::</span><span class="no">Client</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">base_url: </span><span class="no">URL</span><span class="p">,</span> <span class="ss">bearer_token: </span><span class="no">ACCESS_TOKEN</span><span class="p">)</span>
+
+    <span class="n">client</span><span class="p">.</span><span class="nf">hashtag_timeline</span><span class="p">(</span><span class="no">HASH_TAG</span><span class="p">).</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">toot</span><span class="o">|</span>
+        <span class="k">if</span> <span class="o">!</span><span class="n">toot</span><span class="p">.</span><span class="nf">reblogged?</span> <span class="k">then</span>
+          <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">reblog</span><span class="p">(</span><span class="n">toot</span><span class="p">.</span><span class="nf">id</span><span class="p">)</span>
+          <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">favourite</span><span class="p">(</span><span class="n">toot</span><span class="p">.</span><span class="nf">id</span><span class="p">)</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>アクセストークンとインスタンスのURLを使い、Botへのアクセスができるようにします。その後、hashtag_timelineというメソッドにブーストしたいハッシュタグを引数として渡します(ex: “顔面工事”)</p>
+
+<p>すると、指定のハッシュタグをもつ投稿を取得できます。それをeachメソッドで一つずつ繰り返し、既にブースト済みかを判定してからブーストします。</p>
+
+<h3 id="aws-lambdaへデプロイ">AWS lambdaへデプロイ</h3>
+
+<p>それでは作成したBotを AWS Lambdaへとデプロイしていきます。</p>
+
+<p>まず、ターミナルで bundle install –deployment を実行します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span> <span class="nt">--path</span> vendor/bundle
+</code></pre></div></div>
+
+<p>実行すると、vendorディレクトリが作成されます。そこに、使用するライブラリのファイルが配置されています。</p>
+
+<p>あとは、bot.rb、vendorディレクトリをzip形式で圧縮します。</p>
+
+<p>AWS Lamndaの先ほど作成したbot関数の画面を開きます。<strong>関数コード</strong>の項目内に、<strong>コードエントリタイプ</strong>というものがあります。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_14.png" alt="コードエントリ" /></p>
+
+<p><strong>コードエントリタイプ</strong>で<strong>zipファイルをアップロード</strong>を選択します。<strong>アップロード</strong>をクリックし、先ほど作成したzipファイルをアップロードします。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_15.png" alt="ZIPファイルのアップロード" /></p>
+
+<p>その後、ハンドラを bot.lambda_handlerに書き換えて保存します。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_16.png" alt="ハンドラの書き換え" /></p>
+
+<p>次に、<strong>トリガーを追加</strong>という項目がありますので、それを選択します。トリガーの追加画面に切り替わります。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_17.png" alt="トリガーを追加をクリック" /></p>
+
+<p>トリガーには<strong>Cloud Watch Events</strong>を使用します。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_18.png" alt="トリガーの検索画面" /></p>
+
+<p><strong>Cloud Watch</strong>と入力すると以下のように検索結果に表示されます。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_19.png" alt="Cloud Watch Eventsを選択" /></p>
+
+<p><strong>Cloud Watch</strong>を選択し、<strong>ルール</strong>の部分をクリックして新しいルールを作成します。</p>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_20.png" alt="新規ルールの作成" /></p>
+
+<p>新しいルールは以下のようにします。</p>
+
+<ul>
+  <li>ルール名：bot</li>
+  <li>ルールの説明：Mastodon Bot用の定期スケジュール</li>
+  <li>ルールタイプ：スケジュール式</li>
+  <li>スケジュール式下の空欄：rate(1 hour)</li>
+</ul>
+
+<p><img src="../../images/0060-AWS-Lambda-Mastodon-Bot/lambda_21.png" alt="新規ルールを入力していく" /></p>
+
+<p>各項目を入力後、<strong>追加</strong>をクリックします。</p>
+
+<p>これで AWS LambdaへBoをデプロイできました！</p>
+
+<h2 id="おわりに">おわりに</h2>
+
+<p>本記事では AWS Lambda を使ったMastodon Botの作成について解説を行いました。</p>
+
+<p>意外と簡単に定期実行のBotは作成できますので、皆さんも是非Botを作成してみてください。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>S.H. (平岡 瞬) Mastodon: <a href="https://gamelinks007.net/@S_H_">@S_H_</a> blog: <a href="https://gamelinks007.hatenablog.com/">ゲームリンクスの徒然なる日常</a> GitHub: <a href="https://github.com/S-H-GAMELINKS">S-H-GAMELINKS</a></p>
+
+<p>RubyとC++が好きな人。株式会社侍にてRailsとか教えています。
+趣味でMastodonの周辺サービスとか色々やってます。</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

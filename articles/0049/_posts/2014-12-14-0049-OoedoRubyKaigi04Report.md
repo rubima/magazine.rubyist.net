@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (45) 大江戸 Ruby 会議 04
 short_title: RegionalRubyKaigi レポート (45) 大江戸 Ruby 会議 04
-tags: 0049 OoedoRubyKaigi04Report
+created_on: 2014-12-14
+tags: 0049 OoedoRubyKaigi04Report regionalRubyKaigi
 ---
 {% include base.html %}
 

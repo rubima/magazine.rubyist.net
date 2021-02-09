@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2012-02-05</span>
+
 
 
                         </div>
@@ -256,7 +268,7 @@
   </li>
 </ul>
 
-<p>Ruby のライブラリは gem 形式のファイルとしてパッケージ化することができます。このパッケージを集約しているのが RubyGems というサイトで、簡単に検索やインストールを行うことができます。また、 Rails3 系から標準採用された Bundler<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> という仕組みを利用すればバージョン間の依存を考慮したインストールおよびアップデートを行うことができます。</p>
+<p>Ruby のライブラリは gem 形式のファイルとしてパッケージ化することができます。このパッケージを集約しているのが RubyGems というサイトで、簡単に検索やインストールを行うことができます。また、 Rails3 系から標準採用された Bundler<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> という仕組みを利用すればバージョン間の依存を考慮したインストールおよびアップデートを行うことができます。</p>
 
 <h2 id="jeweler-について">Jeweler について</h2>
 
@@ -494,7 +506,7 @@ ActionView::Helpers::FormHelper#need_label で関連する Model の項目が必
 
 <h3 id="参考元を探して">参考元を探して</h3>
 
-<p>困った私は似たような機能を持つ Gem のソースを片っ端からダウンロードしてテストコードを見てみました。しかしなかなかシンプルなものが見つかりません。Model と View が関係しそうな Gem といえば、取得したレコードに応じたページ数を表示するページネーションが思い当たりました。初めは will_pagenate[^4] を、そしてページネーションなら「amatsuda<sup id="fnref:5"><a href="#fn:5" class="footnote">2</a></sup> さんが作られた kaminari<sup id="fnref:6"><a href="#fn:6" class="footnote">3</a></sup> がいいよ」という知人からのアドバイスもあり、ソースを確認してみたところシンプルで良い感じなので参考にさせて頂きました。</p>
+<p>困った私は似たような機能を持つ Gem のソースを片っ端からダウンロードしてテストコードを見てみました。しかしなかなかシンプルなものが見つかりません。Model と View が関係しそうな Gem といえば、取得したレコードに応じたページ数を表示するページネーションが思い当たりました。初めは will_pagenate[^4] を、そしてページネーションなら「amatsuda<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">2</a></sup> さんが作られた kaminari<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">3</a></sup> がいいよ」という知人からのアドバイスもあり、ソースを確認してみたところシンプルで良い感じなので参考にさせて頂きました。</p>
 
 <h3 id="テストコードについて">テストコードについて</h3>
 
@@ -612,16 +624,16 @@ $ gem install gemcutter
 $ gem yank hoge -v 0.1.0 #必ずバージョンを指定すること
 [^4]: Railsで古くから使用されているページネーション。https://github.com/mislav/will_paginate</p>
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Jewelerを使用せずBundlerを使用してパッケージを作成し、gem pushコマンドでRubyGemsへパッケージを公開することもできます。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Jewelerを使用せずBundlerを使用してパッケージを作成し、gem pushコマンドでRubyGemsへパッケージを公開することもできます。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>今号のインタビュー記事 [[0037-Hotlinks]] に出ておられます <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>今号のインタビュー記事 [[0037-Hotlinks]] に出ておられます <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>Rails3.1やmongoidにも対応している最近話題のページネーション。https://github.com/amatsuda/kaminari <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>Rails3.1やmongoidにも対応している最近話題のページネーション。https://github.com/amatsuda/kaminari <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -2,6 +2,7 @@
 layout: post
 title: Ruby ビギナーのための CGI 入門 【第 5 回】 文字コードと排他処理 1 ページ
 short_title: Ruby ビギナーのための CGI 入門 【第 5 回】 文字コードと排他処理 1 ページ
+created_on: 2006-11-26
 tags: 0017 CGIProgrammingForRubyBeginners
 ---
 {% include base.html %}

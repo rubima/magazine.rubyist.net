@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (05) 仙台 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (05) 仙台 Ruby 会議 01
-tags: 0026 SendaiRubyKaigi01Report
+created_on: 2009-06-30
+tags: 0026 SendaiRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}
 

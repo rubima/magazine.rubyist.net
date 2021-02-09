@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2013-05-29</span>
+
 
 
                         </div>
@@ -289,7 +301,7 @@
 
 <p>そして、今回 Ruby 2.0 で実装された Bitmap Marking の概要についての説明がありました。Bitmap Marking では GC のための Mark bit を管理する Bitmap 領域を用意し、Mark をそこでまとめて扱うようになりました。従来のマーキング処理では、オブジェクトのメモリ領域自体に Mark bit をセットしていました。そうすると Rubyが内部で保持している RVALUE という構造体の値が変化してしまいます。これでは、GC のためのマーキング処理が行われる度にメモリの値が書き変わってしまい、CoW に向かない動作になってしまいます。そのため、Ruby 2.0 ではBitmap Marking を導入し、GC のマーキング処理が行われても、オブジェクトのメモリに変化が発生しないように改善されました。もちろんメリットだけではなく、Mark bit を探索するためには Bitmap 領域を経由する必要が出てくるため、GC の動作自体が若干遅くなる可能性もある、という話もありました。</p>
 
-<p>最後に Ruby の GC には現状どういう問題があるのか、そして今後どうしていこうと考えているかについて、語ってくれました。今の Ruby の GC はまだまだ効率が良くないことや、メモリコンパクションが無いこと等が大きな問題だと考えているとのことです。元々は C 言語での実装や拡張に対して親和性を高くするためにやっていた事が、今効率性を高めていくためには負債になってしまっている、という要因のが要因です。ですが、今後の改善案として、世代別 GC を実現して効率を高めたいと考えているそうなので、次のメジャーバージョンアップでは、更に効率良い GC が実現されているかもしれません<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>最後に Ruby の GC には現状どういう問題があるのか、そして今後どうしていこうと考えているかについて、語ってくれました。今の Ruby の GC はまだまだ効率が良くないことや、メモリコンパクションが無いこと等が大きな問題だと考えているとのことです。元々は C 言語での実装や拡張に対して親和性を高くするためにやっていた事が、今効率性を高めていくためには負債になってしまっている、という要因のが要因です。ですが、今後の改善案として、世代別 GC を実現して効率を高めたいと考えているそうなので、次のメジャーバージョンアップでは、更に効率良い GC が実現されているかもしれません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <p>資料には、もう一つ 2.0 で実装されたマーキング処理の非再帰処理化についても書かれていましたが、発表時間の都合で、今回は話を聞くことができませんでした。興味がある方は、是非発表資料の方も参照してみてください。</p>
 
@@ -392,10 +404,10 @@
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>笹田注: しました。ご参考 -&gt; [[https://bugs.ruby-lang.org/issues/8339]] <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>笹田注: しました。ご参考 -&gt; [[https://bugs.ruby-lang.org/issues/8339]] <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -201,6 +211,8 @@
                         </div>
                         <div class="post_info">
                             
+
+  <span class="created_on">初稿：2013-12-21</span>
 
 
 
@@ -490,7 +502,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   .
 end</code></pre></figure>
 
-<p>次に、ローカルマシンの<code class="highlighter-rouge">ssh/config</code>の設定を行ってください。</p>
+<p>次に、ローカルマシンの<code class="language-plaintext highlighter-rouge">ssh/config</code>の設定を行ってください。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">Host [GH:Eのhostやgithub.com]
 ForwardAgent yes</code></pre></figure>
@@ -555,7 +567,7 @@ end</code></pre></figure>
 
 <h4 id="作ったクックブックをberkshelfに登録しvmを立ち上げる">作ったクックブックをberkshelfに登録し、VMを立ち上げる</h4>
 
-<p>ここまで、準備ができたら、Berksfileに作成したクックブックを設定し、<code class="highlighter-rouge">berks install</code>を実行してください。<br />
+<p>ここまで、準備ができたら、Berksfileに作成したクックブックを設定し、<code class="language-plaintext highlighter-rouge">berks install</code>を実行してください。<br />
 その後に、</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">vagrant up</code></pre></figure>
@@ -580,7 +592,7 @@ end</code></pre></figure>
 <h5 id="クックブックを修正した場合">クックブックを修正した場合</h5>
 
 <p>環境を更新するために、クックブックを修正することが多々あると思います。<br />
-クックブックを修正したら、vagrantを管理しているディレクトリで<code class="highlighter-rouge">berks update</code> を実行してBerksfile.lockを更新しましょう(よく忘れます。。。。)。<br />
+クックブックを修正したら、vagrantを管理しているディレクトリで<code class="language-plaintext highlighter-rouge">berks update</code> を実行してBerksfile.lockを更新しましょう(よく忘れます。。。。)。<br />
 Berksfile.lockを更新したら、使ってる人たちに連絡してberks installしてもらい、vagrant provisionを実行してもらい新しいクックブックを適用しましょう。</p>
 
 <h5 id="立ち上げた仮想マシンのシャットダウンホストマシンのシャットダウン">立ち上げた仮想マシンのシャットダウン、ホストマシンのシャットダウン</h5>

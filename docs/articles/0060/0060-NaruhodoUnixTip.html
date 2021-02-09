@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+  
+
+
+
+  <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41117431-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-41117431-1');
+  </script>
+  <script src="../../js/gtag.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>『なるほどUnixプロセス』を読む前にちょっとだけﾅﾙﾎﾄﾞとなる記事</title>
+  <meta name="description" content="">
+
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../../css/theme.css" rel="stylesheet" type="text/css">
+  <link href="../../css/syntax.css" rel="stylesheet" type="text/css">
+  <link href="../../css/sharebutton.css" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://magazine.rubyist.net/articles/0060/0060-NaruhodoUnixTip.html">
+  <link rel="alternate" type="application/rss+xml" title="Rubyist Magazine" href="https://magazine.rubyist.net/feed.xml">
+  <link rel="shortcut icon" href="../../images/favicon.ico">
+</head>
+
+  <body>
+    <div class="container-fluid">
+        <div class="row full">
+            <div class="col-md-2 hidden-xs sidebar">
+                <h4>
+
+</h4>
+
+<h4>バックナンバー</h4>
+<ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
+    
+        <li><a href="../../articles/0059/0059-index.html">0059号(2019-01)</a></li>
+    
+        <li><a href="../../articles/0058/0058-index.html">0058号(2018-08)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2018/preRubyKaigi2018-index.html">RubyKaigi 2018 直前特集号</a></li>
+    
+        <li><a href="../../articles/0057/0057-index.html">0057号(2018-02)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2017/preRubyKaigi2017-index.html">RubyKaigi 2017 直前特集号</a></li>
+    
+        <li><a href="../../articles/0056/0056-index.html">0056号(2017-08)</a></li>
+    
+        <li><a href="../../articles/0055/0055-index.html">0055号(2017-03)</a></li>
+    
+        <li><a href="../../articles/0054/0054-index.html">0054号(2016-08)</a></li>
+    
+        <li><a href="../../articles/pretokyorubykaigi11/preTokyoRubyKaigi11-index.html">東京 Ruby 会議 11 直前特集号</a></li>
+    
+        <li><a href="../../articles/0053/0053-index.html">0053号(2016-04)</a></li>
+    
+        <li><a href="../../articles/0052/0052-index.html">0052号(2015-12)</a></li>
+    
+        <li><a href="../../articles/0051/0051-index.html">0051号(2015-09)</a></li>
+    
+        <li><a href="../../articles/0050/0050-index.html">0050号(2015-05)</a></li>
+    
+        <li><a href="../../articles/0049/0049-index.html">0049号(2014-12)</a></li>
+    
+        <li><a href="../../articles/0048/0048-index.html">0048号(2014-09)</a></li>
+    
+        <li><a href="../../articles/0047/0047-index.html">0047号(2014-06)</a></li>
+    
+        <li><a href="../../articles/0046/0046-index.html">0046号(2014-04)</a></li>
+    
+        <li><a href="../../articles/0045/0045-index.html">0045号(2013-12)</a></li>
+    
+        <li><a href="../../articles/0044/0044-index.html">0044号(2013-09)</a></li>
+    
+        <li><a href="../../articles/0043/0043-index.html">0043号(2013-07)</a></li>
+    
+        <li><a href="../../articles/0042/0042-index.html">0042号(2013-05)</a></li>
+    
+        <li><a href="../../articles/ruby200specialen/Ruby200SpecialEn-index.html">2.0.0 Special (EN)</a></li>
+    
+        <li><a href="../../articles/0041/0041-index.html">0041号(2013-02)</a></li>
+    
+        <li><a href="../../articles/0040/0040-index.html">0040号(2012-11)</a></li>
+    
+        <li><a href="../../articles/0039/0039-index.html">0039号(2012-09)</a></li>
+    
+        <li><a href="../../articles/rubykaja/kaja.html">RubyKaja のご紹介</a></li>
+    
+        <li><a href="../../articles/0038/0038-index.html">0038号(2012-05)</a></li>
+    
+        <li><a href="../../articles/0037/0037-index.html">0037号(2012-02)</a></li>
+    
+        <li><a href="../../articles/0036/0036-index.html">0036号(2011-11)</a></li>
+    
+        <li><a href="../../articles/0035/0035-index.html">0035号(2011-09)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2011/preRubyKaigi2011-index.html">RubyKaigi2011直前特集号</a></li>
+    
+        <li><a href="../../articles/0034/0034-index.html">0034号(2011-06)</a></li>
+    
+        <li><a href="../../articles/0033/0033-index.html">0033号(2011-04)</a></li>
+    
+        <li><a href="../../articles/0032/0032-index.html">0032号(2011-01)</a></li>
+    
+        <li><a href="../../articles/0031/0031-index.html">0031号(2010-10)</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2010/preRubyKaigi2010-index.html">RubyKaigi2010直前特集号</a></li>
+    
+        <li><a href="../../articles/0030/0030-index.html">0030号(2010-06)</a></li>
+    
+        <li><a href="../../articles/0029/0029-index.html">0029号(2010-03)</a></li>
+    
+        <li><a href="../../articles/0028/0028-index.html">0028号(2009-12)</a></li>
+    
+        <li><a href="../../articles/0027/0027-index.html">0027号(2009-09)</a></li>
+    
+        <li><a href="../../articles/0026/0026-index.html">0026号(2009-06)</a></li>
+    
+        <li><a href="../../articles/0025/0025-index.html">0025号(2009-02)</a></li>
+    
+        <li><a href="../../articles/0024/0024-index.html">0024号(2008-10)</a></li>
+    
+        <li><a href="../../articles/0023/0023-index.html">0023号(2008-03)</a></li>
+    
+        <li><a href="../../articles/0022/0022-index.html">0022号(2007-12)</a></li>
+    
+        <li><a href="../../articles/0021/0021-index.html">0021号(2007-09)</a></li>
+    
+        <li><a href="../../articles/0020/0020-index.html">0020号(2007-08)</a></li>
+    
+        <li><a href="../../articles/0019/0019-index.html">0019号(2007-05)</a></li>
+    
+        <li><a href="../../articles/0018/0018-index.html">0018号(2007-02)</a></li>
+    
+        <li><a href="../../articles/0017/0017-index.html">0017号(2006-11)</a></li>
+    
+        <li><a href="../../articles/0016/0016-index.html">0016号(2006-09)</a></li>
+    
+        <li><a href="../../articles/0015/0015-index.html">0015号(2006-07)</a></li>
+    
+        <li><a href="../../articles/rubykaigi2006/RubyKaigi2006-index.html">日本 Ruby カンファレンス 2006 特別号</a></li>
+    
+        <li><a href="../../articles/0014/0014-index.html">0014号(2006-05)</a></li>
+    
+        <li><a href="../../articles/0013/0013-index.html">0013号(2006-02)</a></li>
+    
+        <li><a href="../../articles/0012/0012-index.html">0012号(2005-12)</a></li>
+    
+        <li><a href="../../articles/0011/0011-index.html">0011号(2005-11)</a></li>
+    
+        <li><a href="../../articles/0010/0010-index.html">0010号(2005-10)</a></li>
+    
+        <li><a href="../../articles/0009/0009-index.html">0009号(2005-09)</a></li>
+    
+        <li><a href="../../articles/0008/0008-index.html">0008号(2005-07)</a></li>
+    
+        <li><a href="../../articles/0007/0007-index.html">0007号(2005-06)</a></li>
+    
+        <li><a href="../../articles/0006/0006-index.html">0006号(2005-05)</a></li>
+    
+        <li><a href="../../articles/0005/0005-index.html">0005号(2005-02)</a></li>
+    
+        <li><a href="../../articles/0004/0004-index.html">0004号(2004-12)</a></li>
+    
+        <li><a href="../../articles/0003/0003-index.html">0003号(2004-11)</a></li>
+    
+        <li><a href="../../articles/0002/0002-index.html">0002号(2004-10)</a></li>
+    
+        <li><a href="../../articles/0001/0001-index.html">0001号(2004-09)</a></li>
+    
+</ul>
+<p class="rss-subscribe"><a href="/feed.xml">RSS</a></p>
+
+            </div>
+            <div class="col-md-10 main">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="../../images/rubima_logo_l.png">
+                        <h1>『なるほどUnixプロセス』を読む前にちょっとだけﾅﾙﾎﾄﾞとなる記事</h1>
+                        <div class="social-buttons">
+                            <div class='sns'>            
+    <ul class="clearfix">
+       <li class="twitter"><a href="https://twitter.com/share?text=『なるほどUnixプロセス』を読む前にちょっとだけﾅﾙﾎﾄﾞとなる記事&amp;url=https://magazine.rubyist.net/articles/0060/0060-NaruhodoUnixTip.html" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-twitter"></i></a></li>
+       <li class="facebook"><a href="https://www.facebook.com/sharer.php?u=https://magazine.rubyist.net/articles/0060/0060-NaruhodoUnixTip.html&amp;t=『なるほどUnixプロセス』を読む前にちょっとだけﾅﾙﾎﾄﾞとなる記事" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-facebook"></i></a></li>
+       <li class="hatebu"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url=https://magazine.rubyist.net/articles/0060/0060-NaruhodoUnixTip.html&amp;『なるほどUnixプロセス』を読む前にちょっとだけﾅﾙﾎﾄﾞとなる記事" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa">B!</i></a></li>
+    </ul>
+</div>
+                        </div>
+                        <div class="post_info">
+                            
+  <span class="author">著者：島田浩二</span><br />
+
+
+  <span class="created_on">初稿：2019-08-18</span>
+
+
+
+                        </div>
+                        
+<h2 id="はじめに">はじめに</h2>
+
+<p>この記事では、UnixのプロセスのことやUnix環境のことについてﾁｮｯﾄﾜｶｯﾀ気持ちになっていただくことを目的に、RubyをつかってUnixプロセスについて触れていきます。読み終わったあと、ﾁｮｯﾄﾜｶｯﾀｶﾓという気持ちになっていただけたり、著者が訳者として関わっている<a href="https://tatsu-zine.com/books/naruhounix">『なるほどUNIXプロセス』</a>を手に取ってもらえたりすると幸いです。</p>
+
+<p>なお、この記事の内容は、オープンソースカンファレンス2015 Hokkaido での jus 研究会で行った<a href="https://speakerdeck.com/snoozer05/naruhounix">発表内容</a>をまとめ、原稿におこしたものになります。</p>
+
+<p>それでは、さっそく本題に入っていきましょう。</p>
+
+<h2 id="コマンドを実行する">コマンドを実行する</h2>
+
+<p>ふだん、みなさんは作業中にターミナルからたくさんのコマンドを実行しているはずです。まずは、この「ターミナルからコマンドを実行する」ことについて見ていきましょう。</p>
+
+<h3 id="コマンドとプロセス">コマンドとプロセス</h3>
+
+<p>Unixでは、あらゆるコマンド、プログラムはプロセスというものの上で実行されます。たとえば、lsというコマンドを実行すると、OSは新しいプロセスを1つ用意します。そして、その上でlsプログラムが実行されることになります。</p>
+
+<p><img src="../../images/0060-NaruhodoUnixTip/ls-1.png" alt="プログラムはプロセスとして実行される" height="300px" /></p>
+
+<p>プログラムの実行が終わると、プロセスも同様に終了して無くなります。ターミナルからpsコマンドを実行することで、その時点で実際にうごいているプロセスを確認できます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+  PID TTY           TIME CMD
+66461 ttys000    0:00.15 -zsh
+</code></pre></div></div>
+
+<p>出力のCMDという列を見れば、そのプロセスでどんなプログラムが動いているかわかります。上の実行例では、ターミナル上で zsh というシェルプログラムを実行中のプロセスが1つ存在していることがわかります。</p>
+
+<p>psコマンドをそのまま実行した場合は、ターミナル上で実行されているプロセスだけが出力されます。もし、バックグラウンドで動いているプロセスも確認したければ、psコマンドに-xオプションをつけて実行します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x
+  PID TTY           TIME CMD
+  338 ??         1:19.78 /usr/libexec/UserEventAgent (Aqua)
+  340 ??         7:44.52 /usr/sbin/distnoted agent
+  341 ??         0:10.74 /usr/sbin/universalaccessd launchd -s
+  342 ??         1:02.59 /usr/sbin/cfprefsd agent
+  343 ??         0:04.32 /usr/libexec/lsd
+  349 ??         1:20.09 /System/Library/CoreServices/Dock.app/Contents/MacOS/Dock
+  ...
+</code></pre></div></div>
+
+<p>それでは、ここで実際に簡単なRubyプログラムを動かしてみて、それがちゃんとプロセスとして実行されるということを確認してみましょう。まずはじめに、次のようなスクリプトを用意します。</p>
+
+<pre><code class="language-hello.rb">puts 'hello'
+</code></pre>
+
+<p>そして、このスクリプトをターミナルから実行してみましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
+hello
+</code></pre></div></div>
+
+<p>ちゃんと実行はできますが、これだと一瞬で終了してしまって、psコマンドを実行しているような隙はありませんね…それでは、sleep をつかって、このプログラムを実行したままにしてみましょうか。</p>
+
+<pre><code class="language-hello.rb">puts 'hello'
+sleep
+</code></pre>
+
+<p>再び、このスクリプトをターミナルから実行してみます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
+hello
+
+</code></pre></div></div>
+
+<p>これでこのプログラムを実行中のままにすることができました。それでは、ターミナルをもう一つ立ち上げて、そこからpsコマンドを実行してみましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+  PID TTY           TIME CMD
+66461 ttys000    0:00.26 -zsh
+67220 ttys000    0:00.05 ruby hello.rb
+67036 ttys001    0:00.11 -zsh
+</code></pre></div></div>
+
+<p>出力を見ると、たしかにRubyプログラムを実行しているプロセスが存在していることが確認できますね。</p>
+
+<p>では、Ctrl-Cでプログラムを終了させてみてから、もう一度 ps コマンドを実行してみてください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+  PID TTY           TIME CMD
+66461 ttys000    0:00.26 -zsh
+67036 ttys001    0:00.11 -zsh
+</code></pre></div></div>
+
+<p>プロセスも終了していることが確認できました。</p>
+
+<p>では、次に同じプログラムを2つ同時に実行してみたときの様子を見てみることにしましょう。ターミナルを2つ開いて、それぞれのターミナルから先ほどのプログラムを実行します。そして、さらに別のターミナルから ps コマンドを実行してみましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+  PID TTY           TIME CMD
+66461 ttys000    0:00.26 -zsh
+67524 ttys000    0:00.05 ruby hello.rb
+67036 ttys001    0:00.13 -zsh
+67571 ttys001    0:00.05 ruby hello.rb
+67358 ttys002    0:00.08 -zsh
+
+</code></pre></div></div>
+
+<p>こうすると、「ruby hello.rb」を実行中のプロセスが２つあることがわかります。ここから、プロセスはプログラムを実行する度に用意されるものだ、ということが観察できます。同じプログラムでも、2つ実行すれば2つプロセスができる、ということですね。</p>
+
+<p>ここまでは、とても基本的なプロセスの様子を観察してきました。それでは、ここからはこの「プロセス」というものがどんなものかを、もう少しだけ深く探求して行ってみましょう。</p>
+
+<h3 id="プロセスid">プロセスID</h3>
+
+<p>最初に、プロセスがもつプロセスIDというものについて説明します。プロセスIDとは、OSがプロセスを管理するためにプロセスに対して割りあてる番号で、プロセスごとにユニークな番号が振られます。</p>
+
+<p><img src="../../images/0060-NaruhodoUnixTip/ls-2.png" alt="プロセスにはIDがある" height="300px" /></p>
+
+<p>Rubyプログラムでは、Process.pid で自分自身のプロセスIDを確認できます。</p>
+
+<p>では、さきほどのプログラムを改良して、プロセスIDを確認できるようにしてみましょう。</p>
+
+<pre><code class="language-hello.rb">puts 'hello'
+puts "私のプロセスIDは#{Process.pid}です"
+sleep
+</code></pre>
+
+<p>では、改良したプログラムを実行してみましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
+hello
+私のプロセスIDは67830です
+</code></pre></div></div>
+
+<p>上記で表示された値が、このプロセスに振られたプロセスIDになります。それでは、先ほどの様にpsコマンドを実行してみてください。psコマンドでは、PIDという列でこのIDを確認できます。psコマンドの結果を確認して、プログラムが表示した値とPIDの値が確かに一致しているかを確認しましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+ PID TTY           TIME CMD
+66461 ttys000    0:00.29 -zsh
+67830 ttys000    0:00.05 ruby hello.rb
+67036 ttys001    0:00.14 -zsh
+</code></pre></div></div>
+
+<p>一致していることが確認できますね！これで、プロセスIDというものの存在と、Rubyプログラムからはそれを Process.pid で取得できることがわかりました。ﾅﾙﾎﾄﾞ</p>
+
+<h3 id="標準ストリーム">標準ストリーム</h3>
+
+<p>続いて、プロセスが持つ「標準ストリーム」というものについて説明します。</p>
+
+<p>すべてのプロセスには、標準ストリームというものがくっついてきます。これは、標準入力、標準出力、標準エラー出力という三つのものがあるのですが、今日は説明を簡単にするため、標準入力、標準出力に絞って見ていくことにします。</p>
+
+<p>プログラムというものは、ざっくりと捉えると「何かしらの入力を受けて、処理をし、何かしらの結果を出力をするもの」と捉えることができます。そうしてプログラムを捉えたとして、その標準の入出力先としてプロセスとつながっているものが、この「標準ストリーム」というものになります。そして、この入出力は通常はターミナルと繋がっています。</p>
+
+<p><img src="../../images/0060-NaruhodoUnixTip/stdinout.png" alt="標準ストリーム" height="300px" /></p>
+
+<p>先ほどのRubyプログラムでは、何も気にすることなく、putsメソッドをつかってターミナルに文字列を出力していましたね。</p>
+
+<pre><code class="language-hello.rb">puts 'hello'
+puts "私のプロセスIDは#{Process.pid}です"
+sleep
+</code></pre>
+
+<p>実は、このputsメソッドの実際の振る舞いとは、標準出力に対して文字列を出力するという振る舞いなのでした。同様に、標準入力から文字列を受け取るには、gets メソッドを使用できます。</p>
+
+<pre><code class="language-gets.rb">in = gets
+puts "#{in}が入力されました"
+</code></pre>
+
+<p>より明示的に標準入出力に対する操作をする場合には、STDIN と STDOUT という定数を使います。</p>
+
+<pre><code class="language-gets.rb">in = STDIN.gets
+STDOUT.puts "#{in}が入力されました"
+</code></pre>
+
+<p>この「標準入力」「標準出力」というものは、実際にはターミナル以外のものに付け替えることも可能です。</p>
+
+<p>そのことを説明するために、次にファイルとファイルディスクリプタというものを紹介します。</p>
+
+<h4 id="ファイルとファイルディスクリプタ">ファイルとファイルディスクリプタ</h4>
+
+<p>Unixは、プロセスが繋がっている入出力先をファイルというものに抽象化します（この抽象化したものを「リソース」と表現したりもします。以降はリソースという言葉を使っていきますね）。そして、プロセスをプロセスIDというIDで管理するのと同じように、リソースはファイルディスクリプタという一意な整数値で管理されます。</p>
+
+<p><img src="../../images/0060-NaruhodoUnixTip/fd.png" alt="ファイルディスクリプタ" height="300px" /></p>
+
+<p>Rubyでは、リソースに対して fileno というメソッドを呼ぶことで、リソースに割り当てられているファイルディスクリプタを確認できます。</p>
+
+<p>まずは標準入出力のファイルディスクリプタを確認してみましょう。</p>
+
+<pre><code class="language-fileno.rb">puts "標準入力のファイルディスクリプタ: #{STDIN.fileno}"
+puts "標準出力のファイルディスクリプタ#{STDOUT.fileno}"
+file = File.open('a.txt', 'w')
+puts "a.txt ファイルへの入出力のファイルディスクリプタ: #{file.fileno}"
+</code></pre>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fileno.rb
+標準入力のファイルディスクリプタ: 0
+標準出力のファイルディスクリプタ1
+a.txt ファイルへの入出力のファイルディスクリプタ: 7
+</code></pre></div></div>
+
+<p>どのリソースにもファイルディスクリプタがちゃんとあることが観察できますね。これで、標準入出力も、プログラムから開いたファイルの入出力も、プロセスにつながっている入出力というものは、どれも何となく同じように管理されていそうだ…ということを、感じていただけたのではないでしょうか。</p>
+
+<h2 id="標準入出力先を付け替えてみる">標準入出力先を付け替えてみる</h2>
+
+<p>それでは、ちょっと実験してみましょう。同じように管理されているということは交換可能であるかもしれません。これらのものをすり替えてみると、一体どんなことが起きるでしょうか。Rubyでは入出力先に対して reopen というメソッドを呼んで別の入出力を渡すことで、入出力先を付け替えることができます。早速やってみましょう。</p>
+
+<pre><code class="language-fileno.rb">puts "標準入力のファイルディスクリプタ: #{STDIN.fileno}"
+puts "標準出力のファイルディスクリプタ#{STDOUT.fileno}"
+file = File.open('a.txt', 'w')
+puts "a.txt ファイルへの入出力のファイルディスクリプタ: #{file.fileno}"
+
+STDOUT.reopen(file)
+puts '標準入力先が変わっているはず'
+</code></pre>
+
+<p>これを実行すると、どうなるでしょうか。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fileno.rb
+標準入力のファイルディスクリプタ: 0
+標準出力のファイルディスクリプタ1
+a.txt ファイルへの入出力のファイルディスクリプタ: 7
+</code></pre></div></div>
+
+<p>おや？最後の「標準入力先が変わっているはず」が出力されてませんね。これはもしや…ということで、a.txtの中を確認してみましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% cat a.txt
+標準入力先が変わっているはず
+</code></pre></div></div>
+
+<p>やりましたね。STDOUT.reopen(file)をすることで、標準出力がa.txtへの出力につけ変わり、putsメソッドの出力先がa.txtになったということが観察できました。ｵﾓｼﾛｲ</p>
+
+<h2 id="リダイレクション">リダイレクション</h2>
+
+<p>Unixでは、こうした性質を利用して標準入出力先を別のリソースへの入出力につけかえる「リダイレクション」という仕組みがあります。この「リダイレクション」という仕組みを使うと、いちいちRubyプログラムの中でごにょごにょしなくても、もっと簡単に標準入出力先を切り替えることができます。</p>
+
+<p>たとえば、wc コマンド（行数，単語数，バイト数などを数えるコマンド）への標準入力を a.txt というファイルにしたい場合は以下のようにします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% wc -l &lt; a.txt
+      1
+</code></pre></div></div>
+
+<p>また、ps コマンドの標準出力を b.txt というにしたい場合は以下のようにします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps &gt; b.txt
+% cat b.txt
+  PID TTY           TIME CMD
+66461 ttys000    0:00.29 -zsh
+</code></pre></div></div>
+
+<p>以下のような感じで、標準入出力を両方を差し替えることも、もちろんできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% wc -l &lt; a.txt &gt; b.txt
+% cat b.txt
+       1
+</code></pre></div></div>
+
+<p>こんな感じで、コマンドを実行する時にちょっと書き方を変えてあげるだけで、入出力先を簡単につけかえることができるわけです。ﾍﾞﾝﾘﾃﾞｽﾈ</p>
+
+<h2 id="ここまでのまとめ">ここまでのまとめ</h2>
+
+<p>ここまでで、1つのコマンドを実行するときに起きていることとして、以下のようなことを説明してきました。</p>
+
+<ul>
+  <li>コマンドはプロセスとして実行される</li>
+  <li>プロセスはIDを持つ</li>
+  <li>プロセスは標準ストリームを持つ</li>
+  <li>プロセスは繋がった入出力をファイルとして扱う</li>
+</ul>
+
+<p>次は、プロセスは１人で生きてるわけじゃなくて、親や子がいる、といった話をします。</p>
+
+<h2 id="親プロセス">親プロセス</h2>
+
+<p>すべてのプロセスには、親となるプロセスが存在します。</p>
+
+<p>Rubyでは、Process.ppid で自分の親のプロセスIDを確認できます。</p>
+
+<pre><code class="language-hello.rb">puts 'hello'
+puts "私のプロセスIDは#{Process.pid}です"
+puts "私の親プロセスのIDは#{Process.ppid}です"
+sleep
+</code></pre>
+
+<p>プログラムを実行すると、親プロセスのIDが出力されるはずです。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby hello.rb
+hello
+私のプロセスIDは68903です
+私の親プロセスのIDは67036です
+</code></pre></div></div>
+
+<p>では、psコマンドを実行して、親のプロセスが何者なのかを確認してみましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps
+  PID TTY           TIME CMD
+66461 ttys000    0:00.29 -zsh
+67036 ttys001    0:00.30 -zsh
+68903 ttys001    0:00.05 ruby hello.rb
+</code></pre></div></div>
+
+<p>67036のプロセスは…zshですね。Rubyプログラムの親プロセスはシェルを実行中のプロセスだということがわかりました。実は ps コマンドからも親プロセスIDを確認することができます。-l オプションをつけて ps コマンドを実行してみてください。PPID　という列に親プロセスIDが出力されるようになります。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -l
+  UID   PID  PPID        F CPU PRI NI       SZ    RSS WCHAN     S             ADDR TTY           TIME CMD
+  501 66461 66460     4006   0  31  0  2494520   5856 -      S                   0 ttys000    0:00.30 -zsh
+  501 67036 67035     4006   0  31  0  2501688   6192 -      S                   0 ttys001    0:00.30 -zsh
+  501 68903 67036     4046   0  31  0  2467288   7388 -      S+                  0 ttys001    0:00.05 ruby hello.rb
+</code></pre></div></div>
+
+<p>zsh プロセスにも親がいることがわかりますね。確認ははしょりますが、これはターミナル.appを実行中のプロセスになります。つまり、ターミナルからコマンドを実行する、という操作は、ターミナル.appが生成したシェルプロセス(上記ではzsh)が入力された文字列を解釈し、そして該当するコマンドを見つけ、そのコマンド(プログラム)を実行するプロセスを生成してコマンドを実行する、というような操作だということが想像できます。</p>
+
+<p>次は、上記のようなこと、つまり実行中のプロセスから別のプロセスを生成する、ということをRubyプログラムの中で実際に行いながら、プロセスと仲良くなっていってみたいと思います。</p>
+
+<h2 id="fork">fork</h2>
+
+<p>Unixで別のプロセスを生成するにはforkというシステムコールを使用します。Rubyではそのままの fork メソッドというメソッドがあり、そのメソッドを呼び出すことで別のプロセスを生成することができます。</p>
+
+<pre><code class="language-fork.rb">puts "自分: PID(#{Process.pid}) PPID(#{Process.ppid})"
+
+pid = fork do
+  puts "子ども: PID(#{Process.pid}) PPID(#{Process.ppid})"
+end
+Process.waitpid(pid)
+</code></pre>
+
+<p>Rubyでforkを使う際の一般的な使い方はこんな感じです。こうすると、forkメソッドを呼び出しているところで、このRubyプログラムを実行しているプロセスに子どものプロセスが生まれます。</p>
+
+<p><img src="../../images/0060-NaruhodoUnixTip/fork-1.png" alt="forkメソッドを呼び出す" height="300px" /></p>
+
+<p>そして、子どものプロセスは、ブロックの中身だけを実行して終了するという動きをします。</p>
+
+<p><img src="../../images/0060-NaruhodoUnixTip/fork-2.png" alt="子プロセスが実行される" height="300px" /></p>
+
+<p>それでは、このプログラムを実行してみましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fork.rb
+自分: PID(69193) PPID(66461)
+子ども: PID(69238) PPID(69193)
+</code></pre></div></div>
+
+<p>たしかに、ブロックの中では違うプロセスIDが表示されていて、外側のプロセスがその親になっていることがわかります。</p>
+
+<p>これで、あるプロセスから別のプロセスを生成する、ということをRubyの世界で観察してみることができました。次は、シェルがコマンドを別のプロセスで実行するように、Rubyプログラムを実行しているプロセスから別のプロセスを生成し、そこで別のプログラムを実行する、ということを実現してみましょう。</p>
+
+<h2 id="fork--exec">fork + exec</h2>
+
+<p>あるプロセスを別のプロセスにするには、exec というシステムコールを使います。forkと同じで、Rubyにもそのまま exec というメソッドが用意されています。</p>
+
+<p>forkとこのexecを組み合わせて別のコマンドを実行する、というのが、Unixで良く使われるパターンの１つになります。それでは、生成した子プロセスでlsコマンドを実行するようなプログラムを作ってみましょう。</p>
+
+<pre><code class="language-fork_exec.rb">puts "自分: PID(#{Process.pid}) PPID(#{Process.ppid})"
+
+pid = fork do
+  exec 'ps', '-l'
+  puts '子どもはもう別の道に進んだので、もうこの道は通らない'
+end
+Process.waitpid(pid)
+puts 'psコマンドが実行されたはず'
+</code></pre>
+
+<p>このプログラムを実行すると、どうなるでしょうか。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby fork_exec.rb
+自分: PID(69420) PPID(66461)
+  UID   PID  PPID        F CPU PRI NI       SZ    RSS WCHAN     S             ADDR TTY           TIME CMD
+  501 66461 66460     4006   0  31  0  2494520   5920 -      S                   0 ttys000    0:00.34 -zsh
+  501 69420 66461     4046   0  31  0  2458072   7192 -      S+                  0 ttys000    0:00.05 ruby fork_exec.rb
+  501 67036 67035     4006   0  31  0  2501688   6192 -      S+                  0 ttys001    0:00.31 -zsh
+psコマンドが実行されたはず
+</code></pre></div></div>
+
+<p>lsコマンドの結果が出力されましたね。また、「子どもはもう…」の行が実行されていないことから、子供のプロセスはexecを実行した段階で別のプログラムになってしまって、もうRubyプログラムを実行するプロセスではなくなってしまっていることも観察できます。</p>
+
+<h2 id="ここまでのまとめ-1">ここまでのまとめ</h2>
+
+<p>ここまでで、1つのコマンドを実行するときに起きていることとして、以下のようなことを説明してきました。</p>
+
+<ul>
+  <li>シェルプロセスはプロンプトから渡された入力を解釈して</li>
+  <li>forkして子プロセスを生成し、</li>
+  <li>execしてその子プロセスをコマンドを実行するプロセスへと変身させる</li>
+  <li>子プロセスの標準入出力はプロンプトにつながっているので、結果はプロンプトに出力される</li>
+  <li>処理を終えると子プロセスは終了し、シェルプロセスは次の入力を待つ</li>
+</ul>
+
+<p>これで、ふだんターミナルからコマンドを実行している時にどんなことが起こっているかのイメージが、なんとなく掴めましたでしょうか。ﾅﾙﾎﾄﾞ</p>
+
+<p>さいごに、ここまでやってきたことを全部つなぎ合わせて、パイプというものを実現してみることにしましょう。</p>
+
+<h2 id="パイプ">パイプ</h2>
+
+<p>パイプとは、コマンドの結果を別のコマンドの入力にすることを可能にするUnixのしくみです。例えば、psコマンドの結果の行数をwcコマンドでカウントする、ということをしたければ、以下のように「<code class="language-plaintext highlighter-rouge">|</code>」でコマンドをつなげます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x | wc -l
+    238
+</code></pre></div></div>
+
+<p>Unixには「一つのことを行い、またそれをうまくやるプログラムを書け。協調して動くプログラムを書け。」（M.D.マキロイ）という哲学があり、パイプはそのUnixの哲学を体現したしくみともいえるような、Unixにおける大事なしくみです。</p>
+
+<p>では、このパイプは、どのようなしくみになっているのでしょうか。</p>
+
+<p>原理はとてもシンプルです。実は、2つのコマンドの標準出力と標準入力をつなげる、ということをして、コマンドの結果を別のコマンドの入力にするということをしています。Unixではこれを行うための pipe というシステムコールが用意されていて、これがパイプの肝となります。Ruby でも IO.pipe メソッドを使うことで、このパイプを実現できます。</p>
+
+<p>IO.pipeの使い方を、irbで少し練習してみます。</p>
+
+<p>まずirbを立ち上げましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% irb
+&gt;
+</code></pre></div></div>
+
+<p>パイプを作成するには、以下のようにします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; read_io, write_io = IO.pipe
+=&gt; [#&gt;IO:fd 9&gt;, #&lt;IO:fd 10&gt;
+</code></pre></div></div>
+
+<p>IO.pipeをつかうと、このように2つの入出力が返ってきます。
+これはパイプの入り口と出口にそれぞれ繋がっていて、
+手前が出口、後ろが入り口と繋がっています。</p>
+
+<p>では、パイプに何か書き込みんでみます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; write_io.puts 'foo'
+=&gt; nil
+&gt; write_io.puts 'bar'
+=&gt; nil
+</code></pre></div></div>
+
+<p>そうしたら、今度はパイプから読み出してみます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; read_io.gets
+=&gt; "foo¥n"
+&gt; read_id.gets
+=&gt; "bar¥n"
+</code></pre></div></div>
+
+<p>また、Rubyらしくブロックを使って以下のように書くこともできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; IO.pipe do |read_io, write_io|
+&gt;  write_io.puts 'foo'
+&gt;  write_io.puts 'bar'
+&gt;  p read_io.gets
+&gt;  p read_io.gets
+&gt; end
+"foo¥n"
+"bar¥n"
+</code></pre></div></div>
+
+<p>なんとなくパイプの動きがつかめたでしょうか。</p>
+
+<p>pipeを使ってる時のイメージは次のような感じです。</p>
+
+<p><img src="../../images/0060-NaruhodoUnixTip/pipe.png" alt="pipeの動作イメージ" height="300px" /></p>
+
+<p>これを以下のように使うことで、パイプを実現します。</p>
+
+<p><img src="../../images/0060-NaruhodoUnixTip/pipe-2.png" alt="パイプの実現" height="300px" /></p>
+
+<p>では、Rubyを使ってこれを体験してみましょう！</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ps -x | wc -l
+</code></pre></div></div>
+
+<p>と同じことを、Rubyを使って実現してみることにします。</p>
+
+<pre><code class="language-pipe_example.rb">IO.pipe do |read_io, write_io|
+  # 1つ目のコマンドを実行する子プロセス
+  fork do
+    STDOUT.reopen(write_io) # 標準出力をパイプにつけかえる
+    exec 'ps', '-x' # psコマンドを実行させる
+  end
+
+  # 2つ目のコマンドを実行する子プロセス
+  fork do
+    STDIN.reopen(read_io) # 標準入力をパイプにつけかえる
+    exec 'wc', '-l'
+  end
+end
+Process.waitall
+</code></pre>
+
+<p>2つの子プロセスをつくり、1つ目のコマンドの標準出力と2つ目のコマンドの標準入力をパイプで繋ぎ合わせて実行するプログラムになっています。</p>
+
+<p>では、実際に動かしてみましょう。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% ruby pipe_example.rb
+     240
+</code></pre></div></div>
+
+<p>うまく動いてそうですね！細かい部分で、いろいろと省略した部分はありますが、いかがでしょうか。ターミナル上でパイプをつかったときに、どんな風に動いているかの雰囲気がﾁｮｯﾄ掴めましたでしょうか。</p>
+
+<h2 id="まとめ">まとめ</h2>
+
+<p>この記事では、以下のようなことについて、Rubyを使って駆け足で紹介しました。</p>
+
+<ul>
+  <li>コマンドはプロセスとして実行される</li>
+  <li>プロセスはIDを持つ</li>
+  <li>プロセスは標準ストリームを持つ</li>
+  <li>リソースはファイルディスクリプタを持つ</li>
+  <li>親プロセスと子プロセスについて</li>
+  <li>fork+execで別のプログラムを実行する</li>
+  <li>プロセス同士の入出力をパイプで繋げられる</li>
+</ul>
+
+<p>どうだったでしょうか。解説につかったのはC言語ではなくRubyでしたが、とても素直にUnixプログラミングを体感できたのではないでしょうか。</p>
+
+<p>また、この記事では以下のようなことについては触れませんでした。</p>
+
+<ul>
+  <li>環境変数のこと</li>
+  <li>コマンドライン引数のこと</li>
+  <li>プロセス間通信のこと</li>
+  <li>シグナルのこと</li>
+  <li>デーモンプロセスのこと</li>
+  <li>現実世界での例</li>
+</ul>
+
+<p>少しでもRubyでUnixプロセスに触れることや、Unixプログラミングについて興味を持たれた方は、ぜひ<a href="https://tatsu-zine.com/books/naruhounix">『なるほどUnixプロセス』</a>をお読みいただき、この記事の復習と続きをお楽しみいただけたらと思います（販促）。</p>
+
+<p>また、この記事をここまで読んで「Windowsの方はどうなんだろう」と思われた方は、ぜひ<a href="https://www.garbagecollect.jp/~usa/d/201304c.html">usaさんの「『なるほどUnixプロセス』で学ぶWindows版Rubyの基礎」</a>もご一読ください。</p>
+
+<h2 id="著者について">著者について</h2>
+
+<p>@snoozer05。札幌在住のRubyist。株式会社えにしテック代表取締役。一般社団法人日本Rubyの会の理事。訳書に『進化的アーキテクチャ』『エラスティックリーダーシップ』『プロダクティブ・プログラマ』（オライリー・ジャパン）、『Rubyのしくみ』（オーム社）、『なるほどUnixプロセス』（達人出版会）、共著者に『Ruby逆引きレシピ』（翔泳社）がある。もうすぐ新しい訳書が出せそうです。</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

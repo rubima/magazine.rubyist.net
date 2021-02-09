@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (63) 関西 Ruby 会議 2017
 short_title: RegionalRubyKaigi レポート (63) 関西 Ruby 会議 2017
-tags: 0056 KansaiRubyKaigi2017Report
+created_on: 2017-08-27
+tags: 0056 KansaiRubyKaigi2017Report regionalRubyKaigi
 ---
 {% include base.html %}
 

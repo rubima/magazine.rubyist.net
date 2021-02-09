@@ -2,6 +2,7 @@
 layout: post
 title: Axlsx でテスト支援
 short_title: Axlsx でテスト支援
+created_on: 2012-09-05
 tags: 0039 TestingWithAxlsx
 ---
 {% include base.html %}

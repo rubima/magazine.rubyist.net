@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2005-09-06</span>
+
 
 
                         </div>
@@ -291,7 +303,7 @@
 
 <p>文章をコンピュータで扱おう思うと、文字をコンピュータで扱わなければなりません。しかし、ご存知のとおり、基本的にコンピュータは 0 と 1 しか扱えないため、文字をコンピュータが扱える形に変換する (符号化する) 仕組みが必要となります。この仕組みが文字符号化であり、符号化の仕方の一つ一つが文字コードです。</p>
 
-<p>コンピュータの扱う情報量の最小単位は 0 か 1 によって表される情報量であり、これを bit と呼びます。通常は 8bit (1octet) を一組にして 1byte とし、これを基本にしてコンピュータは情報をやりとりします。文字も同様に byte を一単位としてやりとりすることになります。つまり、文字コード<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>とは、文字を byte の列に変換する体系のことと言えるのです。</p>
+<p>コンピュータの扱う情報量の最小単位は 0 か 1 によって表される情報量であり、これを bit と呼びます。通常は 8bit (1octet) を一組にして 1byte とし、これを基本にしてコンピュータは情報をやりとりします。文字も同様に byte を一単位としてやりとりすることになります。つまり、文字コード<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>とは、文字を byte の列に変換する体系のことと言えるのです。</p>
 
 <h3 id="文字コードの種類">文字コードの種類</h3>
 
@@ -812,7 +824,7 @@ str_utf8      = Iconv.conv('UTF-8', 'Shift_JIS', str_shiftjis) # Shift_JIS か�
   <li><a href="http://www.gnu.org/software/libiconv/">libiconv</a> に<a href="http://www2d.biglobe.ne.jp/~msyk/software/libiconv-patch.html">パッチ</a>を適用したもの</li>
 </ul>
 
-<p>その他の iconv 、例えば NetBSD Iconv (Citrus Iconv) では、いくつか<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>の機種依存文字が変換できないため、 pkgsrc 等から libiconv を別途インストールして用いる必要があります。</p>
+<p>その他の iconv 、例えば NetBSD Iconv (Citrus Iconv) では、いくつか<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>の機種依存文字が変換できないため、 pkgsrc 等から libiconv を別途インストールして用いる必要があります。</p>
 
 <p>また、 Windows の機種依存文字を含んだ Shift_JIS は cp932 を、 EUC-JP は eucJP-ms を指定する必要があります。</p>
 
@@ -1036,13 +1048,13 @@ str_utf32le  = Uconv.u4swap(str_utf32be)  # UTF-32LE に変換</code></pre></fig
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>ここで言う文字コード (charset, codeset) は符号化文字集合 (CCS) と符号化方式 (CES) をあわせたもの <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>ここで言う文字コード (charset, codeset) は符号化文字集合 (CCS) と符号化方式 (CES) をあわせたもの <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>NetBSD 2.0.2 付属の iconv で試したところ、 CP932 から UTF-8 では 74 文字 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>NetBSD 2.0.2 付属の iconv で試したところ、 CP932 から UTF-8 では 74 文字 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

@@ -2,6 +2,7 @@
 layout: post
 title: Ruby 考古学 消された機能編
 short_title: Ruby 考古学 消された機能編
+created_on: 2014-12-14
 tags: 0049 archaeology
 ---
 {% include base.html %}

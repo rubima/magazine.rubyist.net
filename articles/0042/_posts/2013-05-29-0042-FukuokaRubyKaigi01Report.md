@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (34) 福岡 Ruby 会議 01
 short_title: RegionalRubyKaigi レポート (34) 福岡 Ruby 会議 01
-tags: 0042 FukuokaRubyKaigi01Report
+created_on: 2013-05-29
+tags: 0042 FukuokaRubyKaigi01Report regionalRubyKaigi
 ---
 {% include base.html %}
 

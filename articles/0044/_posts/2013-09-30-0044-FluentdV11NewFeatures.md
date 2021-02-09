@@ -2,6 +2,7 @@
 layout: post
 title: Fluentd v11 の噂
 short_title: Fluentd v11 の噂
+created_on: 2013-09-30
 tags: 0044 FluentdV11NewFeatures
 ---
 {% include base.html %}

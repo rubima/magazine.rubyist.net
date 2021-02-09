@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2005-12-23</span>
+
 
 
                         </div>
@@ -217,7 +229,7 @@
 <p>今回は <a href="ruby-man:添付ライブラリ">ruby-man:添付ライブラリ</a> でデザインパターンに分類されているライブラリの中から、メソッドの委譲機能を定義する forwardable と delegate を紹介します。</p>
 
 <p>forwardable は 1.6.4 から標準添付されています。
-delegate は初期の頃から標準添付されています。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+delegate は初期の頃から標準添付されています。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
 
 <p>forwardable は明示的に指定したメソッドだけを委譲するのに対して、delegate はほぼすべてのメソッドを委譲します。
 委譲したいメソッドを明示的に指定する forwardable の方がわかりやすそうなので、この記事では forwardable の方から紹介します。</p>
@@ -248,7 +260,7 @@ delegate は初期の頃から標準添付されています。<sup id="fnref:1"
 <h3 id="forwardable-の使用例">Forwardable の使用例</h3>
 
 <p>ここでは、Forwardable の使用例として、委譲を使ってキューを実現する例を紹介します。
-この例は RDoc から持ってきました<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+この例は RDoc から持ってきました<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
 
 <p>MyQueue クラスはいわゆる「キュー」のデータ構造を管理するクラスで、機能としては Array クラスのサブセットになります。しかし、この例ではいくつかの点を Array から変更したいと思います。</p>
 
@@ -334,7 +346,7 @@ puts q[0]</code></pre></figure>
 
 <h3 id="singleforwardable-の使用例">SingleForwardable の使用例</h3>
 
-<p>ここでは、SingleForwardable の使用例として、委譲を使って出力機能を実現する例を紹介します。この例も RDoc から持って来ました<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>ここでは、SingleForwardable の使用例として、委譲を使って出力機能を実現する例を紹介します。この例も RDoc から持って来ました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <p>例では、String クラスのインスタンスに対して、puts メソッドを STDOUT オブジェクトに委譲しています。</p>
 
@@ -552,9 +564,9 @@ puts foo.size #=&gt; 2</code></pre></figure>
 
 <p>この例では、オブジェクト foo に大して呼ばれたメソッドは、すべて　SimpleDelegator.new([]) として渡した配列オブジェクトに委譲されます。</p>
 
-<h4 id="setobj"><strong>setobj</strong></h4>
+<h4 id="__setobj__"><code class="language-plaintext highlighter-rouge">__setobj__</code></h4>
 
-<p>委譲先のオブジェクトは <strong>setobj</strong> を使って、後で変更することも出来ます。</p>
+<p>委譲先のオブジェクトは <code class="language-plaintext highlighter-rouge">__setobj__</code> を使って、後で変更することも出来ます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">require 'delegate'
 
@@ -563,7 +575,7 @@ puts s[1] #=&gt; "b"
 s.__setobj__(%w"A B C")
 puts s[1] #=&gt; "B"</code></pre></figure>
 
-<p>ただし、普通は変更前の委譲先と変更後の委譲先のオブジェクトは同じクラスだと思われるので、SimpleDelegator のメソッドは定義し直されません。そのため、別のクラスのオブジェクトを <strong>setobj</strong> すると何か問題が起きるかもしれません (1.8.3 では例外発生時のクラス部分が変わるようです)。</p>
+<p>ただし、普通は変更前の委譲先と変更後の委譲先のオブジェクトは同じクラスだと思われるので、SimpleDelegator のメソッドは定義し直されません。そのため、別のクラスのオブジェクトを <code class="language-plaintext highlighter-rouge">__setobj__</code> すると何か問題が起きるかもしれません (1.8.3 では例外発生時のクラス部分が変わるようです)。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">require 'delegate'
 
@@ -620,7 +632,7 @@ p a       # =&gt; [25]</code></pre></figure>
 <h3 id="delegator">Delegator</h3>
 
 <p>Delegator クラスはデザインパターンの delegator パターンを実現するための抽象クラスです。
-継承して <strong>getobj</strong> を再定義して使います。</p>
+継承して <code class="language-plaintext highlighter-rouge">__getobj__</code> を再定義して使います。</p>
 
 <p>具体的な使用例は SimpleDelegator の実装を見てください。</p>
 
@@ -705,16 +717,16 @@ p a       # =&gt; [25]</code></pre></figure>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>CVS のタグをみると Ruby 1.1 の頃からのようです。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>CVS のタグをみると Ruby 1.1 の頃からのようです。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>変更点は次の通り：(1) 頭に「require ‘forwardable’」を追加 (2) Queue は thread.rb で定義されている名前と重なるので MyQueue に変更 (3) コメントを日本語に翻訳 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>変更点は次の通り：(1) 頭に「require ‘forwardable’」を追加 (2) Queue は thread.rb で定義されている名前と重なるので MyQueue に変更 (3) コメントを日本語に翻訳 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>変更点は (1) 頭に「require ‘forwardable’」を追加 (2) コメントを日本語に翻訳 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>変更点は (1) 頭に「require ‘forwardable’」を追加 (2) コメントを日本語に翻訳 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

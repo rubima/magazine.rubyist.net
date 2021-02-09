@@ -2,6 +2,7 @@
 layout: post
 title: RubyMotion Kaigi 2013 レポート
 short_title: RubyMotion Kaigi 2013 レポート
+created_on: 2013-07-31
 tags: 0043 RubyMotionKaigi2013Report
 ---
 {% include base.html %}

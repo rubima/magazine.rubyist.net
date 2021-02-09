@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -201,6 +211,8 @@
                         </div>
                         <div class="post_info">
                             
+
+  <span class="created_on">初稿：2016-08-21</span>
 
 
 
@@ -452,7 +464,7 @@ TypeStruct のメリット(意味ある名前・期待した値・ドキュメ�
 <em>Hash#[]</em> での typo は <a href="https://github.com/yuki24/did_you_mean">did_you_mean</a>でも対応できません。</p>
 
 <p>「typo 対策なら <em>Hash#fetch</em> がある」は良い案です。
-typo したら KeyError として教えてくれますし、did_you_mean も最新版では対応されています。<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+typo したら KeyError として教えてくれますし、did_you_mean も最新版では対応されています。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
 しかしながらプログラムの見た目は <em>obj.fetch(“key”)</em> ばかりになります。
 またcase 文では自動的に <em>===</em> メソッドが使われます。
 それに「数字を期待していたが文字列だった」のようなケースは防げません。</p>
@@ -584,7 +596,7 @@ Hash の問題は存在するものの、TypeStruct を有効に使える機会�
 <p><a href="https://github.com/ksss/type_struct-esa">https://github.com/ksss/type_struct-esa</a></p>
 
 <p>このように Web API のレスポンスの TypeStruct コードを書いておけば、
-レスポンスを使って整形して分解して……、などのコードが書きやすくなるでしょう。<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+レスポンスを使って整形して分解して……、などのコードが書きやすくなるでしょう。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <h3 id="configyml">config.yml</h3>
 
@@ -651,7 +663,7 @@ Hash の問題は存在するものの、TypeStruct を有効に使える機会�
 
 <ul>
   <li>class 名が付いているのでデバッグしやすい</li>
-  <li>key 名を typo しても即座にわかるのでデバッグしやすい<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></li>
+  <li>key 名を typo しても即座にわかるのでデバッグしやすい<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></li>
   <li>メンバー呼び出しの syntax が書きやすい</li>
 </ul>
 
@@ -749,16 +761,16 @@ CLI のオプションは、Ruby のオブジェクトにまとめてアプリ�
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>提案したのオレオレ https://github.com/yuki24/did_you_mean/pull/71 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>提案したのオレオレ https://github.com/yuki24/did_you_mean/pull/71 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>なぜesa.ioなのかというと、筆者がよくAPIを叩いていたため。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>なぜesa.ioなのかというと、筆者がよくAPIを叩いていたため。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>Struct#[]にも対応する提案したのオレオレ https://github.com/yuki24/did_you_mean/pull/73 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>Struct#[]にも対応する提案したのオレオレ https://github.com/yuki24/did_you_mean/pull/73 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

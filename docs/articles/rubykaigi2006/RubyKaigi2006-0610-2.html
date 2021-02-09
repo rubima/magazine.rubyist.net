@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -261,13 +271,13 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
 
 <dl>
   <dt>真実</dt>
-  <dd>「Ruby 2.0 とは燃料である。」との見解が出されました。「我々は止まってはいられない。」(<em>サメですか</em><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>)</dd>
+  <dd>「Ruby 2.0 とは燃料である。」との見解が出されました。「我々は止まってはいられない。」(<em>サメですか</em><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>)</dd>
   <dt>本質</dt>
   <dd>Ruby 2.0 は、Ruby を再デザインして、再実装して、「これまでの後悔をつぶしたもの」であると定義されました。</dd>
   <dt>ポリシー</dt>
   <dd>Ruby は Ruby のままでありつづけることを強調されました。互換性を考慮して、多くのソースはそのまま動く「……と、いいなぁ」とのことです。注意点として、優れたデザインと互換性が矛盾する時は、優れたデザインを採る、との方針が示されました。</dd>
   <dt>特徴</dt>
-  <dd>文法上の特徴として「互換性がない」「スコープが変わる」「多値 (多くの値があるときどうなるか？非常に‘タチ’の悪い問題) の扱いの変更」などが挙げられました。<a href="http://www.eigenclass.org/">http://www.eigenclass.org/</a> という有用なサイトが紹介されました<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。</dd>
+  <dd>文法上の特徴として「互換性がない」「スコープが変わる」「多値 (多くの値があるときどうなるか？非常に‘タチ’の悪い問題) の扱いの変更」などが挙げられました。<a href="http://www.eigenclass.org/">http://www.eigenclass.org/</a> という有用なサイトが紹介されました<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</dd>
   <dt>とはいうものの</dt>
   <dd>2.0 の話が出てから来年で 10 年になるのだそうです。しかしこのままでは、リリースが 2010 年になるやら 2020 年になるやら分からない様子です。</dd>
   <dd>この懸念は以前から各地で表明されており、Rubyist Magazine のパロディ版でも <a href="http://jp.rubyist.net/RubiMa/RubyNews">2073 年までの予想が提示</a> されていますが、その頃に今の開発者の何人が生き残っているでしょうか……。</dd>
@@ -283,15 +293,15 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
   <dt>1.9.1 に入るもの</dt>
   <dd></dd>
   <dd>今、1.9 にあるもの</dd>
-  <dd>ローカル変数の新しいスコープ規則<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></dd>
-  <dd>M17N<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup></dd>
+  <dd>ローカル変数の新しいスコープ規則<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></dd>
+  <dd>M17N<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></dd>
   <dd>YARV (希望); このときに入らないと 3000 年 YARV リリースとか</dd>
   <dt>入らないもの</dt>
   <dd></dd>
   <dd>new GC (論文も reject されたし)</dd>
-  <dd>classbox (仕様決まらないし) <sup id="fnref:5"><a href="#fn:5" class="footnote">5</a></sup></dd>
+  <dd>classbox (仕様決まらないし) <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup></dd>
   <dd>selector namespace (これも仕様が見えない)</dd>
-  <dd>キーワード引数 <sup id="fnref:6"><a href="#fn:6" class="footnote">6</a></sup></dd>
+  <dd>キーワード引数 <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup></dd>
   <dd>メソッド結合</dd>
   <dt>課題</dt>
   <dd>「2.0 でいいじゃん」といわれる (でしょうね) と「一理ある」とのことです。</dd>
@@ -307,9 +317,9 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
   <dt>C2 (中村(う)さん)</dt>
   <dd>1.8 と 1.9 で、とくに何が違うの？</dd>
   <dt>A2</dt>
-  <dd>細かいことが多い。鬼車とか。クラス変数が継承しなくなった。クラス定数スコープ。BasicObject<sup id="fnref:7"><a href="#fn:7" class="footnote">7</a></sup> は今朝入れた。あとは……。</dd>
+  <dd>細かいことが多い。鬼車とか。クラス変数が継承しなくなった。クラス定数スコープ。BasicObject<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup> は今朝入れた。あとは……。</dd>
   <dt>Q3 (Yugui さん)</dt>
-  <dd>ブロック引数の構文<sup id="fnref:8"><a href="#fn:8" class="footnote">8</a></sup>は？</dd>
+  <dd>ブロック引数の構文<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>は？</dd>
   <dt>A3 (まつもとさん)</dt>
   <dd>-&gt; は残ってる。入れる気満々なんだけど。</dd>
   <dt>C3 (中田さん)</dt>
@@ -320,7 +330,7 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
 
 <h3 id="ささだこういち氏yarv">ささだこういち氏「YARV」</h3>
 
-<p>YARV (Yet Another Ruby VM) は「世界一速い Ruby 処理系」を目指して開発されている仮想マシンです。計算モデルとしてはスタックマシン<sup id="fnref:9"><a href="#fn:9" class="footnote">9</a></sup>を採用しています。次世代 Ruby 処理系として公式に採用されることを狙いつつ開発されていますおり、情報処理推進機構の 2004 年度および 2005 年度上期の未踏ソフトウェア創造事業<sup id="fnref:10"><a href="#fn:10" class="footnote">10</a></sup>として採択され、「皆様の血税により開発できた」とのことです。</p>
+<p>YARV (Yet Another Ruby VM) は「世界一速い Ruby 処理系」を目指して開発されている仮想マシンです。計算モデルとしてはスタックマシン<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>を採用しています。次世代 Ruby 処理系として公式に採用されることを狙いつつ開発されていますおり、情報処理推進機構の 2004 年度および 2005 年度上期の未踏ソフトウェア創造事業<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup>として採択され、「皆様の血税により開発できた」とのことです。</p>
 
 <p>現在の Ruby 処理系はソースコードを解析して構築した Abstract Syntax Tree を逐次辿りながら実行しています。これが遅くなっている原因なので、YARV ではソースコードをバイトコードにコンパイルし、バイトコードをスタックマシン上で実行します。コンパイル時の各種最適化にもかなり力を入れているそうです。</p>
 
@@ -331,9 +341,9 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
   <li>POSIX Thread 及び Win32 Thread を利用したネイティブスレッドへの対応。</li>
 </ul>
 
-<p>JIT コンパイラ<sup id="fnref:11"><a href="#fn:11" class="footnote">11</a></sup>や AOT コンパイラ<sup id="fnref:12"><a href="#fn:12" class="footnote">12</a></sup>の実装は視野には入れているものの、現状では「今後の課題」ということです。Ruby 1.9 に変更が入るとそれに追随しなければならないので、「敵はまつもとさん」だそうです。</p>
+<p>JIT コンパイラ<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>や AOT コンパイラ<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>の実装は視野には入れているものの、現状では「今後の課題」ということです。Ruby 1.9 に変更が入るとそれに追随しなければならないので、「敵はまつもとさん」だそうです。</p>
 
-<p>各種ベンチマークも提示されました。アッカーマン関数の計算では他の言語処理系や Ruby 1.9 と比較しても YARV の性能は圧倒的で「アッカーマン関数を計算するには YARV」とアピールしていました<sup id="fnref:13"><a href="#fn:13" class="footnote">13</a></sup>。代表的なアプリケーションを用いたもう少し現実なベンチマークもありましたが、tDiary では今の Ruby より遅くなったりしており今後の改善が望まれます<sup id="fnref:14"><a href="#fn:14" class="footnote">14</a></sup>。</p>
+<p>各種ベンチマークも提示されました。アッカーマン関数の計算では他の言語処理系や Ruby 1.9 と比較しても YARV の性能は圧倒的で「アッカーマン関数を計算するには YARV」とアピールしていました<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote">13</a></sup>。代表的なアプリケーションを用いたもう少し現実なベンチマークもありましたが、tDiary では今の Ruby より遅くなったりしており今後の改善が望まれます<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote">14</a></sup>。</p>
 
 <p>そのほか、今後の課題として次が示されました。</p>
 
@@ -348,7 +358,7 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
   <dt>C1 (青木さん)</dt>
   <dd>JavaVM, .NET VM そういうのじゃいけないの？</dd>
   <dt>A1</dt>
-  <dd>いいんじゃないんでしょうか。ではなくて、セマンティックスにギャップがあるので、Ruby の仕様を満足する VM を実装することには十分意味がある。また、既存のほかの VM を利用するとなると、今まで世界中で作成された膨大な拡張ライブラリを捨てることになってしまう。<sup id="fnref:15"><a href="#fn:15" class="footnote">15</a></sup>。</dd>
+  <dd>いいんじゃないんでしょうか。ではなくて、セマンティックスにギャップがあるので、Ruby の仕様を満足する VM を実装することには十分意味がある。また、既存のほかの VM を利用するとなると、今まで世界中で作成された膨大な拡張ライブラリを捨てることになってしまう。<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote">15</a></sup>。</dd>
   <dt>C2 (中村(う)さん)</dt>
   <dd>何のために Native Thread に対応しなきゃいけないのか？</dd>
   <dt>A2</dt>
@@ -395,7 +405,7 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
       <li>これらは、M17N が出るまで様子見か。</li>
     </ul>
   </li>
-  <li>RCR237 (?{var=}…) グループのキャプチャ結果を直接ローカル変数に代入できるようにする。<sup id="fnref:16"><a href="#fn:16" class="footnote">16</a></sup></li>
+  <li>RCR237 (?{var=}…) グループのキャプチャ結果を直接ローカル変数に代入できるようにする。<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote">16</a></sup></li>
 </ul>
 
 <dl>
@@ -406,7 +416,7 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
   <dt>C2 (青木さん)</dt>
   <dd>速度は？</dd>
   <dt>A2</dt>
-  <dd>きかれると思ったので (→スライド)。<sup id="fnref:17"><a href="#fn:17" class="footnote">17</a></sup><sup id="fnref:18"><a href="#fn:18" class="footnote">18</a></sup></dd>
+  <dd>きかれると思ったので (→スライド)。<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote">17</a></sup><sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote">18</a></sup></dd>
 </dl>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">(高) 2.5.5 &gt; 1.8regex &gt; 4.1.0 (35%ほど現状より遅い) &gt; PCRE (低)</code></pre></figure>
@@ -478,7 +488,7 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
   <dt>A2 (ささださん)</dt>
   <dd>configure で 1.8 と切り替えるわけじゃないですよね (笑)、と。内部の実装を YARV 向きにとっかえる話になるので、「選ぶ」というのはありえない。もう戻れない道です。</dd>
   <dt>Q3 (青木さん)</dt>
-  <dd>mod_ruby では各ウェブアプリケーションで別々の VM で動かしたい時とかあるので、multi VM <sup id="fnref:19"><a href="#fn:19" class="footnote">19</a></sup>ができるようにならないか？</dd>
+  <dd>mod_ruby では各ウェブアプリケーションで別々の VM で動かしたい時とかあるので、multi VM <sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote">19</a></sup>ができるようにならないか？</dd>
   <dt>A3 (ささだ)</dt>
   <dd>そういうブランチを作ってはいます。未踏事業で (実装する、と言ってしまったテーマに含めていたために) 一応実装はしましたが、効率まだあまり考えてないです。将来、2030 年とか 2010 年には使えたらいーなー、とか。</dd>
   <dt>Q4 (青木さん)</dt>
@@ -492,7 +502,7 @@ Ruby 2.0 は、過去の Ruby と非互換になる、といわれます。し�
   <dt>N4 (まつもとさん)</dt>
   <dd>ではのちほど。</dd>
   <dt>Q5 (やまださん)</dt>
-  <dd>今後の添付ライブラリの方針は？ 整理の話、rubygems<sup id="fnref:20"><a href="#fn:20" class="footnote">20</a></sup> 標準化、class 命名規則、CPAN などにある規約のようなもの、枠組み。</dd>
+  <dd>今後の添付ライブラリの方針は？ 整理の話、rubygems<sup id="fnref:20" role="doc-noteref"><a href="#fn:20" class="footnote">20</a></sup> 標準化、class 命名規則、CPAN などにある規約のようなもの、枠組み。</dd>
   <dt>A5 (まつもとさん)</dt>
   <dd>問題が起きていないのなら今のままでいいのでは。厳しくするつもりはない。ただ推奨ルールの類は明文化したほうがいいかもしれない。</dd>
 </dl>
@@ -561,14 +571,14 @@ in_groups_of は元々 nil が入っていた場合と勝手に nil が追加さ
   <dt>Q2</dt>
   <dd>多値が導入されるらしいけど、今までとの違い・概念がよくわからない。入門のポインタがあると嬉しい。</dd>
   <dt>A2 (まつもとさん)</dt>
-  <dd>えーーっと、まぁ、あの、99.8% のユーザには関係ないので<sup id="fnref:21"><a href="#fn:21" class="footnote">21</a></sup>……だめですか？ 影響がないわけではないが、説明しても理解を期待できないし、ユーザにとっても聞きたくないだろうから。今朝 (6/10) のコミットの仕様が matz からの提案。多値は配列で表現しよう。</dd>
+  <dd>えーーっと、まぁ、あの、99.8% のユーザには関係ないので<sup id="fnref:21" role="doc-noteref"><a href="#fn:21" class="footnote">21</a></sup>……だめですか？ 影響がないわけではないが、説明しても理解を期待できないし、ユーザにとっても聞きたくないだろうから。今朝 (6/10) のコミットの仕様が matz からの提案。多値は配列で表現しよう。</dd>
 </dl>
 
 <h4 id="会場からの質問意見">会場からの質問・意見</h4>
 
 <dl>
   <dt>Q1 (田中(akr)さん)</dt>
-  <dd>2038 年問題<sup id="fnref:22"><a href="#fn:22" class="footnote">22</a></sup> (2036 年問題ではない) への対応は？</dd>
+  <dd>2038 年問題<sup id="fnref:22" role="doc-noteref"><a href="#fn:22" class="footnote">22</a></sup> (2036 年問題ではない) への対応は？</dd>
   <dt>A1 (まつもとさん)</dt>
   <dd>プラットフォームに任せます。いざとなったらそれなりに対応。ふなばさんの date4 もリリースされたことだし。</dd>
   <dt>Q2 (大林さん)</dt>
@@ -576,7 +586,7 @@ in_groups_of は元々 nil が入っていた場合と勝手に nil が追加さ
   <dt>A2 (ささださん)</dt>
   <dd>じつはコードは YARV にちょっと入ってたりします。Ruby の文法で末尾再帰の最適化は不可能 なんですが、末尾呼び出しの最適化はやってみました。だけど、あまり速度向上はありませんでした。Scheme を実装してみたいので、実装はしているという感じです。</dd>
   <dt>Q3 (Yugui さん)</dt>
-  <dd>YARV で Scheme を動かすならなおのこと継続<sup id="fnref:23"><a href="#fn:23" class="footnote">23</a></sup> (が必要) ですよ。継続かわいいですよ継続。</dd>
+  <dd>YARV で Scheme を動かすならなおのこと継続<sup id="fnref:23" role="doc-noteref"><a href="#fn:23" class="footnote">23</a></sup> (が必要) ですよ。継続かわいいですよ継続。</dd>
   <dt>A3 (ささださん)</dt>
   <dd>今の YARV には実装されてないです。下手に実装すると誰かが core を吐かせるので。</dd>
   <dt>Q4 (MoonWolf さん)</dt>
@@ -610,76 +620,76 @@ in_groups_of は元々 nil が入っていた場合と勝手に nil が追加さ
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>サメなどの原始的な魚類はエラに自力で水を送り込む仕組みがないので、泳ぎ続けることで水流の中にいるようにしないと窒息してしまいます <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>サメなどの原始的な魚類はエラに自力で水を送り込む仕組みがないので、泳ぎ続けることで水流の中にいるようにしないと窒息してしまいます <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>eigenclass.org の著者は「特異クラス」の英訳は “singleton class” ではなく “eigenclass” であるべきだと主張しているそうです。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>eigenclass.org の著者は「特異クラス」の英訳は “singleton class” ではなく “eigenclass” であるべきだと主張しているそうです。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>ブロックローカル変数の新しいスコープ規則: 現状の Ruby ではブロック引数とブロック外の変数が同名だと書き換えてしまう等の問題がある。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>ブロックローカル変数の新しいスコープ規則: 現状の Ruby ではブロック引数とブロック外の変数が同名だと書き換えてしまう等の問題がある。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>M17N: Multilingualization の略で、複数の異なる言語を同時に扱うための枠組み。Ruby M17N では文字列オブジェクトが自分のエンコーディングを「知っている」ようになり、内部エンコーディングは決め打ちされないようです。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>M17N: Multilingualization の略で、複数の異なる言語を同時に扱うための枠組み。Ruby M17N では文字列オブジェクトが自分のエンコーディングを「知っている」ようになり、内部エンコーディングは決め打ちされないようです。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:5">
-      <p>Classbox: スコープを限定してクラスの書き換えを許す仕組み。http://www.rubyist.net/~matz/20060104.html#p01 <a href="#fnref:5" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:5" role="doc-endnote">
+      <p>Classbox: スコープを限定してクラスの書き換えを許す仕組み。http://www.rubyist.net/~matz/20060104.html#p01 <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:6">
-      <p>キーワード引数 (keyword arguments): メソッド呼び出し時に、引数の順番を気にせず、引数に名前 (キーワード) を付けて呼び出す方法。 <a href="#fnref:6" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:6" role="doc-endnote">
+      <p>キーワード引数 (keyword arguments): メソッド呼び出し時に、引数の順番を気にせず、引数に名前 (キーワード) を付けて呼び出す方法。 <a href="#fnref:6" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:7">
-      <p>Object クラスより上位の、Kernel モジュールを include していないクラス。http://www.rubyist.net/~matz/20050406.html#p02 <a href="#fnref:7" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:7" role="doc-endnote">
+      <p>Object クラスより上位の、Kernel モジュールを include していないクラス。http://www.rubyist.net/~matz/20050406.html#p02 <a href="#fnref:7" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:8">
-      <p>一時期検討されていた Perl6 風の lambda 構文 <a href="#fnref:8" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:8" role="doc-endnote">
+      <p>一時期検討されていた Perl6 風の lambda 構文 <a href="#fnref:8" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:9">
-      <p>スタックマシン: Intel x86 CPU のようにレジスタ上の値に対して演算するのではなく、スタック上に積まれた値を演算する計算機。Java VM や .NET の CLR はスタックマシンとして実装されている。) <a href="#fnref:9" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:9" role="doc-endnote">
+      <p>スタックマシン: Intel x86 CPU のようにレジスタ上の値に対して演算するのではなく、スタック上に積まれた値を演算する計算機。Java VM や .NET の CLR はスタックマシンとして実装されている。) <a href="#fnref:9" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:10">
-      <p>未踏ソフトウェア創造事業: 経済産業省の外郭団体である独立行政法人情報処理推進機構の事業で、情報産業の基盤づくりとして独創的な技術や才能の発掘・支援を目的としている。 <a href="#fnref:10" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:10" role="doc-endnote">
+      <p>未踏ソフトウェア創造事業: 経済産業省の外郭団体である独立行政法人情報処理推進機構の事業で、情報産業の基盤づくりとして独創的な技術や才能の発掘・支援を目的としている。 <a href="#fnref:10" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:11">
-      <p>JIT コンパイラ: Just In Time コンパイラ。仮想マシンのバイトコードを実行時にネイティブコードにコンパイルして動作の高速化を図る仕組み。Java VM 用の JIT コンパイラとしては Sun の HotSpot 技術などがある。プログラムのうち良く使われる部分だけを選択的にコンパイルしたり、プログラム実行時の統計的情報を利用した最適化を施したりできるという利点がある。 <a href="#fnref:11" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:11" role="doc-endnote">
+      <p>JIT コンパイラ: Just In Time コンパイラ。仮想マシンのバイトコードを実行時にネイティブコードにコンパイルして動作の高速化を図る仕組み。Java VM 用の JIT コンパイラとしては Sun の HotSpot 技術などがある。プログラムのうち良く使われる部分だけを選択的にコンパイルしたり、プログラム実行時の統計的情報を利用した最適化を施したりできるという利点がある。 <a href="#fnref:11" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:12">
-      <p>AOT コンパイラ: Ahead Of Time コンパイラ。バイトコードを事前にネイティブコードなどに変換しておく仕組み。JIT に比べて実行時にコンパイル時間を掛けなくて済むという利点があるが、コンパイル後のコードが大きくなったり、実行時統計情報は利用しづらいという欠点もある。 <a href="#fnref:12" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:12" role="doc-endnote">
+      <p>AOT コンパイラ: Ahead Of Time コンパイラ。バイトコードを事前にネイティブコードなどに変換しておく仕組み。JIT に比べて実行時にコンパイル時間を掛けなくて済むという利点があるが、コンパイル後のコードが大きくなったり、実行時統計情報は利用しづらいという欠点もある。 <a href="#fnref:12" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:13">
-      <p>アッカーマン関数なんて誰もつかわないって <a href="#fnref:13" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:13" role="doc-endnote">
+      <p>アッカーマン関数なんて誰もつかわないって <a href="#fnref:13" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:14">
-      <p>ささだ注：具体的には、リフレクション関係のチューニングが出来ていない <a href="#fnref:14" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:14" role="doc-endnote">
+      <p>ささだ注：具体的には、リフレクション関係のチューニングが出来ていない <a href="#fnref:14" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:15">
-      <p>ささだ注：あと、やっぱり自分で作ったほうが面白いよね <a href="#fnref:15" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:15" role="doc-endnote">
+      <p>ささだ注：あと、やっぱり自分で作ったほうが面白いよね <a href="#fnref:15" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:16">
-      <p>RCR: Ruby Change Request の略。<a href="http://www.rcrchive.net/">RCRchive</a> というサイトに Ruby への機能拡張・変更要求としてまとめられている。英語。 <a href="#fnref:16" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:16" role="doc-endnote">
+      <p>RCR: Ruby Change Request の略。<a href="http://www.rcrchive.net/">RCRchive</a> というサイトに Ruby への機能拡張・変更要求としてまとめられている。英語。 <a href="#fnref:16" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:17">
-      <p>PCRE: Perl Compatible Regular Expressions の略。その名の通り Perl 互換の正規表現ライブラリ。 <a href="#fnref:17" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:17" role="doc-endnote">
+      <p>PCRE: Perl Compatible Regular Expressions の略。その名の通り Perl 互換の正規表現ライブラリ。 <a href="#fnref:17" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:18">
-      <p><a href="http://d.hatena.ne.jp/kkos/20060524#1148477800">UTF-16 対応で遅くなった</a> <a href="#fnref:18" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:18" role="doc-endnote">
+      <p><a href="http://d.hatena.ne.jp/kkos/20060524#1148477800">UTF-16 対応で遅くなった</a> <a href="#fnref:18" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:19">
-      <p>同一プロセスで複数のVMを動かすこと <a href="#fnref:19" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:19" role="doc-endnote">
+      <p>同一プロセスで複数のVMを動かすこと <a href="#fnref:19" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:20">
-      <p>rubygems: Ruby のライブラリやアプリケーションを集めたリポジトリである RubyGems を利用するためのツールの名前。ネットワーク越しに Ruby ライブラリの検索、インストール、更新、削除などを行う。RubyGems は Ruby on Rails がホストされていたので注目を浴びた。 <a href="#fnref:20" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:20" role="doc-endnote">
+      <p>rubygems: Ruby のライブラリやアプリケーションを集めたリポジトリである RubyGems を利用するためのツールの名前。ネットワーク越しに Ruby ライブラリの検索、インストール、更新、削除などを行う。RubyGems は Ruby on Rails がホストされていたので注目を浴びた。 <a href="#fnref:20" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:21">
-      <p><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/28712">[ruby-dev:28712]</a> によると言いたかったのは「99% は説明されても理解しない (したくない) し、聞きたくないと思う」 <a href="#fnref:21" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:21" role="doc-endnote">
+      <p><a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-dev/28712">[ruby-dev:28712]</a> によると言いたかったのは「99% は説明されても理解しない (したくない) し、聞きたくないと思う」 <a href="#fnref:21" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:22">
-      <p>2038 年問題: 時刻を表すために 1970 年 1 月 1 日午前 0 時からの経過秒数を 32bit 符号つき整数で数えている場合、2038 年 1 月 19 日午前 3 時 14 分 8 秒に桁が溢れてプログラムが時刻を誤認する問題。 <a href="#fnref:22" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:22" role="doc-endnote">
+      <p>2038 年問題: 時刻を表すために 1970 年 1 月 1 日午前 0 時からの経過秒数を 32bit 符号つき整数で数えている場合、2038 年 1 月 19 日午前 3 時 14 分 8 秒に桁が溢れてプログラムが時刻を誤認する問題。 <a href="#fnref:22" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:23">
-      <p>http://www.ruby-lang.org/ja/man/index.cgi?cmd=view;name=Continuation <a href="#fnref:23" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:23" role="doc-endnote">
+      <p>http://www.ruby-lang.org/ja/man/index.cgi?cmd=view;name=Continuation <a href="#fnref:23" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

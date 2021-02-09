@@ -2,6 +2,7 @@
 layout: post
 title: Linux 体験講座潜入記
 short_title: Linux 体験講座潜入記
+created_on: 2004-09-10
 tags: 0001 RubyCourseReport
 ---
 {% include base.html %}

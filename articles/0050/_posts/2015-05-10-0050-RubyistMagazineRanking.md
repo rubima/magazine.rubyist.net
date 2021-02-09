@@ -2,6 +2,7 @@
 layout: post
 title: 0050 号 アクセスランキング
 short_title: 0050 号 アクセスランキング
+created_on: 2015-05-10
 tags: 0050 RubyistMagazineRanking
 ---
 {% include base.html %}

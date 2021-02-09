@@ -2,7 +2,8 @@
 layout: post
 title: RegionalRubyKaigi レポート (14) 東京 Ruby 会議 03
 short_title: RegionalRubyKaigi レポート (14) 東京 Ruby 会議 03
-tags: 0030 TokyoRubyKaigi03Report
+created_on: 2010-06-15
+tags: 0030 TokyoRubyKaigi03Report regionalRubyKaigi
 ---
 {% include base.html %}
 

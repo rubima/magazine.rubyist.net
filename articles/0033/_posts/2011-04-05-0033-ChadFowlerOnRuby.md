@@ -2,6 +2,7 @@
 layout: post
 title: Chad Fowler on Ruby
 short_title: Chad Fowler on Ruby
+created_on: 2011-04-05
 tags: 0033 ChadFowlerOnRuby
 ---
 {% include base.html %}
@@ -156,7 +157,7 @@ Euruko が始まってから、RubyConf の運営母体 (Ruby Central という�
 
 以後、地域 Ruby カンファレンスの開催される数は爆発的に増えていった。どのカンファレンスにも地域独特の雰囲気と味わいがある。今はこうした地域カンファレンスの取り組みは世界中に広がってる。僕はいくつもの地域カンファレンスに参加して、それぞれの違いを楽しんだよ。そこから RubyConf でも採用するために拝借したアイデアもあったな。
 
-僕が次のステップとして期待していることは、あるテーマに特化したカンファレンスが開催されるようになっていくことだ。今年、またしてもユタ州で……ええと「Ruby|Web Conference」という Ruby のウェブテクノロジに特化したカンファレンスが開催された。ひょっとしたら来年は「Ruby|MusicConf」とか「Ruby|HardwareConf」が開催されるようになるかもしれない。僕はそうなることを願ってるよ。
+僕が次のステップとして期待していることは、あるテーマに特化したカンファレンスが開催されるようになっていくことだ。今年、またしてもユタ州で……ええと「Ruby Web Conference」という Ruby のウェブテクノロジに特化したカンファレンスが開催された。ひょっとしたら来年は「Ruby MusicConf」とか「Ruby HardwareConf」が開催されるようになるかもしれない。僕はそうなることを願ってるよ。
 
 ### Ruby の採用者たち
 

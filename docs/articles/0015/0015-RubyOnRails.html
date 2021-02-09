@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2006-07-13</span>
+
 
 
                         </div>
@@ -288,7 +300,7 @@ edit や r_index といった別アクションに遷移したら session をク
 <p>しかし、このやり方には問題があります。</p>
 
 <p>そこでブラウザの「戻る」ボタンを使った場合はどうなるでしょうか？
-<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>
+<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
 その場合、session がクリアされず、セレクトボックスから別の日付を新たに選択しても、前に選んだ日付のデータが表示されることになります。</p>
 
 <h3 id="改善後コード画面">改善後コード・画面</h3>
@@ -538,7 +550,7 @@ ActiveSupport には、他にも便利なメソッドがたくさんあるので
 <h3 id="改善点-3">改善点</h3>
 
 <p>実は :include オプションを使えばいいだけです。
-<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup></p>
+<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
 
 <p>上記コードの様に、:include を使えば一回の SQL で関連テーブルデータもまとめて取ってきてくれます。
 恥ずかしい話ですが、私の場合、そもそも :include オプションというか、SQL の join を良く理解していなかったというのが根本的な原因でした。
@@ -698,7 +710,7 @@ ActiveSupport には、他にも便利なメソッドがたくさんあるので
 <h3 id="改善点その2">改善点その2</h3>
 
 <p>その後、calculations プラグインを発見、導入して上記のようになっています。
-<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup></p>
+<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
 
 <p>ある程度 SQL が遮蔽されているからといって、SQL を知らないで書いているというのはまずかったです。
 Web ページを作成する際、オーサリングツールでしか作れないよりも、実際にどんなタグで書かれているのか知っていたほうがいいのと同様ですね。</p>
@@ -865,7 +877,7 @@ app/controller/old_timecard_controller.rb もご覧になってみてくださ�
 
 <h3 id="改善点-4">改善点</h3>
 
-<p>save 時のロジック (実際の残業時間と命令上の残業時間を記録する) を、モデルのコールバック before_update として、追い出しています <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。
+<p>save 時のロジック (実際の残業時間と命令上の残業時間を記録する) を、モデルのコールバック before_update として、追い出しています <sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。
 また、上記の for @object in @objects のように、ローカル変数ではなくインスタンス変数を使うと、FormHelper で id と value が上手く取れます。このため、ビューの記述量も減っています。
 render :partial =&gt; ‘object’, :collection =&gt; @objects などと、ローカル変数を使用する場合には、FormHelper 使用時に :index オプションを使うと、同様に上手く取れます (ただし select 系は取れません)。
 また、object の id をキーとした params が取れるため、Timecard.update(params[:timecard].keys, params[:timecard].values) などとして一気に更新できます。
@@ -1080,19 +1092,19 @@ Ruby と Ruby on Rails に出会い、現在に至ります。
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>開発者が思っている以上にブラウザの「戻る」「進む」ボタンは使われるものです。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>開発者が思っている以上にブラウザの「戻る」「進む」ボタンは使われるものです。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>:joins オプションという選択肢もありますが割愛。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>:joins オプションという選択肢もありますが割愛。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>calculations プラグインは Rails1.1 で取り込まれ、現在は標準のメソッドになっています。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>calculations プラグインは Rails1.1 で取り込まれ、現在は標準のメソッドになっています。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>労働基準局に入られたら大変ですね。 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>労働基準局に入られたら大変ですね。 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

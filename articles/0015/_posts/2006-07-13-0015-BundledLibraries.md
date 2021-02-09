@@ -2,6 +2,7 @@
 layout: post
 title: 標準添付ライブラリ紹介 【第 8 回】 uri, pathname
 short_title: 標準添付ライブラリ紹介 【第 8 回】 uri, pathname
+created_on: 2006-07-13
 tags: 0015 BundledLibraries
 ---
 {% include base.html %}

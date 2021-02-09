@@ -44,6 +44,16 @@
 
 <h4>バックナンバー</h4>
 <ul>
+    <li><a href="../../articles/backnumber/backnumber.html">記事単位</a></li>
+    <hr>
+    
+        <li><a href="../../articles/kaigi_on_rails/index.html">Kaigi on Rails 特集号</a></li>
+    
+        <li><a href="../../articles/prerubykaigi2020/preRubyKaigi2020-index.html">RubyKaigi Takeout 2020 特集号</a></li>
+    
+        <li><a href="../../articles/0061/0061-index.html">0061号(2020-02)</a></li>
+    
+        <li><a href="../../articles/0060/0060-index.html">0060号(2019-08)</a></li>
     
         <li><a href="../../articles/prerubykaigi2019/preRubyKaigi2019-index.html">RubyKaigi 2019 直前特集号</a></li>
     
@@ -202,6 +212,8 @@
                         <div class="post_info">
                             
 
+  <span class="created_on">初稿：2005-10-10</span>
+
 
 
                         </div>
@@ -234,7 +246,7 @@
 
 <p>この CGI を見てもらうと、おっきなテキストフィールドがあると思うので、そこに適当な Ruby プログラムを書き込んで、「compile and disassemble」というボタンを押してみてください。ずらずらと色々な情報、つまりこの連載でちょうど説明している YARV 命令列が表示されます。</p>
 
-<p>もちろん、コンパイルして逆アセンブルするだけなので、YARV でそのプログラムを実行するわけじゃありません。そんな恐ろしいことは出来ません<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>もちろん、コンパイルして逆アセンブルするだけなので、YARV でそのプログラムを実行するわけじゃありません。そんな恐ろしいことは出来ません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
 
 <p>いろいろ試して、Ruby プログラムがこんな命令に変換されるんだ、というのを見て楽しんでもらえればいいと思います。</p>
 
@@ -266,7 +278,7 @@
 
 <h3 id="immutable-なオブジェクト">immutable なオブジェクト</h3>
 
-<p>変更できないオブジェクトを immutable なオブジェクトと言います<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>。たとえば、true オブジェクトはいつも true です。123 はいつも 123 です。内容が変わったりはしません。前述した例では、true/false/nil などの固定の値、数値（1、12345678901234567890 、1.2）、シンボル（:Symbol）、正規表現（/abc/）などがこれにあたります。</p>
+<p>変更できないオブジェクトを immutable なオブジェクトと言います<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。たとえば、true オブジェクトはいつも true です。123 はいつも 123 です。内容が変わったりはしません。前述した例では、true/false/nil などの固定の値、数値（1、12345678901234567890 、1.2）、シンボル（:Symbol）、正規表現（/abc/）などがこれにあたります。</p>
 
 <p>これらのリテラル式は <strong>putobject</strong> という命令で表現されます。</p>
 
@@ -312,11 +324,11 @@ nil</code></pre></figure>
 <figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putnil
 0001 end</code></pre></figure>
 
-<p>何もしない YARV 命令列が生成されました<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>何もしない YARV 命令列が生成されました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
 
 <h3 id="文字列リテラル">文字列リテラル</h3>
 
-<p>次は文字列リテラルです。文字列リテラルは破壊的な変更が可能なので mutable なオブジェクトと言えます。たとえば、プログラム上同じ位置にあっても、文字列リテラルが返すオブジェクトは毎回異なります<sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>次は文字列リテラルです。文字列リテラルは破壊的な変更が可能なので mutable なオブジェクトと言えます。たとえば、プログラム上同じ位置にあっても、文字列リテラルが返すオブジェクトは毎回異なります<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
 
 <p>というわけで、毎回同じオブジェクトをスタックトップに置くだけの putobject 命令は使えないので、代わりに <strong>putstring</strong> 命令を使います。</p>
 
@@ -607,19 +619,19 @@ cache_end:                    # ラベル</code></pre></figure>
 というプログラムを動かすとわかります。
 [^5]: 本稿執筆中、筆者はマジで忘れていた。
 [^6]: nil を積むのは、getconstant 命令の出現箇所の多くで次の命令が putnil 命令であることが多いため。</p>
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>バグが多すぎる、ということがばれるのが怖い、というわけじゃなくて、セキュリティの問題です。もちろん。 <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>バグが多すぎる、ということがばれるのが怖い、というわけじゃなくて、セキュリティの問題です。もちろん。 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:2">
-      <p>ただし、Ruby では特異メソッドやインスタンス変数を付け加えることができるので、厳密な意味で immutable とは言えません。ここでの判断基準は現在のインタプリタの挙動によります。 <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:2" role="doc-endnote">
+      <p>ただし、Ruby では特異メソッドやインスタンス変数を付け加えることができるので、厳密な意味で immutable とは言えません。ここでの判断基準は現在のインタプリタの挙動によります。 <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:3">
-      <p>もうひとつちなむと、この 2 命令の YARV 命令列は何も無いメソッドをコンパイルしても生成されます。 <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:3" role="doc-endnote">
+      <p>もうひとつちなむと、この 2 命令の YARV 命令列は何も無いメソッドをコンパイルしても生成されます。 <a href="#fnref:3" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
-    <li id="fn:4">
-      <p>異なるオブジェクト、というのはオブジェクトID（obj.object_id で取れる値）が異なるオブジェクト、という意味です。immutable なオブジェクトでは、プログラムの同じ場所では、毎回同じオブジェクトID を持つオブジェクトが生成されますが、文字列オブジェクトはそうではありません。簡単な実験としては、 <a href="#fnref:4" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:4" role="doc-endnote">
+      <p>異なるオブジェクト、というのはオブジェクトID（obj.object_id で取れる値）が異なるオブジェクト、という意味です。immutable なオブジェクトでは、プログラムの同じ場所では、毎回同じオブジェクトID を持つオブジェクトが生成されますが、文字列オブジェクトはそうではありません。簡単な実験としては、 <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>
