@@ -348,8 +348,8 @@
 
 <ul>
   <li>単体テスト (Unit Test)</li>
-  <li>結合テスト (Integration Test)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></li>
-  <li>総合テスト (General Test)<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></li>
+  <li>結合テスト (Integration Test)<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></li>
+  <li>総合テスト (General Test)<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></li>
 </ul>
 
 <p>テスト屋さんの世界では、次のように分類し各種テストや評価を実施する整理もあります。</p>
@@ -400,7 +400,7 @@
 
 <p>出来上がったシステムがきちんと動作することを確認する、というのがテストの基本です。従って出来上がったあとの評価の為のテスト、すなわちテストラスト (という言葉があるわけではありませんが、テストファーストの対義語として便宜的にこう呼びます) という本来のテスト方法も脈々と流れています。</p>
 
-<p>テストラストで実施するテストは、テスト項目を Microsoft Excel などのスプレッドシート (表計算ソフト) で記述することが多いようです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。仕様書からテストすべき項目を洗い出し、スプレッドシートに列挙します。またテスト実施後にはテスト結果をスプレッドシートに追記し、保存し管理します。</p>
+<p>テストラストで実施するテストは、テスト項目を Microsoft Excel などのスプレッドシート (表計算ソフト) で記述することが多いようです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。仕様書からテストすべき項目を洗い出し、スプレッドシートに列挙します。またテスト実施後にはテスト結果をスプレッドシートに追記し、保存し管理します。</p>
 
 <p>テスト項目を Excel で列挙し、テストを実施し、テスト結果の管理を行うという方式は、脈々と行われています。特に開発者がテストするのではない第三者テストでは、それが主流でしょう。それはそれで磨き抜かれた方法ではあります。テストコードが無くても人間がテスト項目に基づいて動作チェックするので、いろいろな観点でテストができます。しかし労力 (すなわちコスト) と時間がかかるのが宿命です。</p>
 
@@ -410,9 +410,9 @@
 
 <p>テストの本質は変わらなくても、ツールは次々と変遷してゆきます。ここでは、Ruby や Rails で使われるテストツールの進化・変遷を見ていきます。</p>
 
-<p>Ruby には Ruby 1.8 まで xUnit の流れを汲む Test::Unit が標準添付されていましたので、RSpec<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup> 登場以前は Test::Unit を使うのが当然で、その方式は今でも脈々と流れているところはあります (Ruby 1.9 からは minitest が標準添付)。</p>
+<p>Ruby には Ruby 1.8 まで xUnit の流れを汲む Test::Unit が標準添付されていましたので、RSpec<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> 登場以前は Test::Unit を使うのが当然で、その方式は今でも脈々と流れているところはあります (Ruby 1.9 からは minitest が標準添付)。</p>
 
-<p>RSpec が登場して、ベタベタなコードでなくふるまいを記述してテストするというスタイルが DSL<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> の流行とともに普及しています。</p>
+<p>RSpec が登場して、ベタベタなコードでなくふるまいを記述してテストするというスタイルが DSL<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> の流行とともに普及しています。</p>
 
 <p>さらに後述する Cucumber が登場し、feature ファイルによるもう一段メタな記述 (feature: 機能) から順番に具体化 (シナリオ、ステップ) する方式 (Gherkin 書式) で、feature 記述部分はコードに依存せず、プログラマ以外のステークホルダ (関係者) によっても仕様記述や評価が可能となる世界が開けました。</p>
 
@@ -420,7 +420,7 @@
 
 <h4 id="web-周りテストツールの変遷">Web 周りテストツールの変遷</h4>
 
-<p>Ruby の Web 周りでのテストツールの変遷を見てみましょう。現在 (2013.5) は、「4. Rails3」時代の円熟期で Rails4 も間近です<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+<p>Ruby の Web 周りでのテストツールの変遷を見てみましょう。現在 (2013.5) は、「4. Rails3」時代の円熟期で Rails4 も間近です<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。</p>
 
 <ol>
   <li>CGI 時代
@@ -446,12 +446,12 @@
   </li>
   <li>Rails4 時代
     <ul>
-      <li>minitest + Turnip 改 + Capybara さてどうなりますか?<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup></li>
+      <li>minitest + Turnip 改 + Capybara さてどうなりますか?<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup></li>
     </ul>
   </li>
 </ol>
 
-<p>昔はテストは xUnit で assert するものであったところ、RSpec 時代 になって should が定着したと思ったら、expect to でないと時代遅れ<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>となってしまうという、何とも進化の早い世界であることが分かると思います。</p>
+<p>昔はテストは xUnit で assert するものであったところ、RSpec 時代 になって should が定着したと思ったら、expect to でないと時代遅れ<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>となってしまうという、何とも進化の早い世界であることが分かると思います。</p>
 
 <h4 id="テストツールもベタからメタへ">テストツールもベタからメタへ</h4>
 
@@ -467,7 +467,7 @@
 
 <h5 id="第一世代testunit">第一世代：Test::Unit</h5>
 
-<p>テストの記述は Ruby プログラムそのもので、通常 test_xxx.rb (xxx はテスト対象を表す文字列) というファイルにテストを記述します<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>。</p>
+<p>テストの記述は Ruby プログラムそのもので、通常 test_xxx.rb (xxx はテスト対象を表す文字列) というファイルにテストを記述します<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>。</p>
 
 <h5 id="第二世代-rspec">第二世代： RSpec</h5>
 
@@ -592,7 +592,7 @@ end</code></pre></figure>
 <ol>
   <li>Cucumber では正規表現を用いるためにステップ記述が煩雑になりがちであった点を、Turnip では正規表現を使わずにプレースホルダーを使用するため、ステップ記述がスッキリしました。この「正規表現を使わないことで一段階複雑さが軽減された」点は、結構大きな効果があります。
     <ul>
-      <li>「Cucumber のステップファイル記述と差異は、feature を解釈するステップファイルの記述に正規表現を使っていない点です。プレースホルダー (:keys, :link_name, ..) を使って、テストに使うパラメーターを取り出しています」<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup></li>
+      <li>「Cucumber のステップファイル記述と差異は、feature を解釈するステップファイルの記述に正規表現を使っていない点です。プレースホルダー (:keys, :link_name, ..) を使って、テストに使うパラメーターを取り出しています」<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup></li>
     </ul>
   </li>
   <li>従来は RSpec と Cucumber の 2 本立てとなっていたテストを RSpec に一本化できるので、テストの管理や操作の面倒さが解消されます。</li>
@@ -799,7 +799,7 @@ end</code></pre></figure>
 
 <p>Web 操作には、Capybara が使用されます。その習得にはそれなりに初期コストが必要です。</p>
 
-<p>Capybara の Web 操作は Capybara Node Action<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup> に解説があります。よく使うのは fill_in や click_link、click_button です。</p>
+<p>Capybara の Web 操作は Capybara Node Action<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup> に解説があります。よく使うのは fill_in や click_link、click_button です。</p>
 
 <h2 id="リモートアクセス">リモートアクセス</h2>
 
@@ -843,7 +843,7 @@ end</code></pre></figure>
  end</code></pre></figure>
 
 <p>XPath 自体は XML などでのグラフ構造内を汎用的に走査する仕様なので、なかなか奥深いです。
-[…] の述語を使うのがポイントです。<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup><sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote">13</a></sup></p>
+[…] の述語を使うのがポイントです。<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup><sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">13</a></sup></p>
 
 <h3 id="javascript-の-confirm-box-の文言チェック">JavaScript の confirm box の文言チェック</h3>
 
@@ -865,7 +865,7 @@ expect(page).to have_content 'hoge'</code></pre></figure>
 
 <p>この page は、Capybara オブジェクトです。この構文の page の箇所に配列や文字列をもってきても should などのメソッドを持っていないのでエラーとなります。</p>
 
-<p>従って配列を配列として、配列要素をチェックする構文で対応します<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote">14</a></sup>。</p>
+<p>従って配列を配列として、配列要素をチェックする構文で対応します<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">14</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">   page.driver.confirm_messages.should =~ ['hoge']</code></pre></figure>
 
@@ -1002,7 +1002,7 @@ expect(page).to have_content 'hoge'</code></pre></figure>
 
 <h3 id="webkit-の賞味期限">Webkit の賞味期限</h3>
 
-<p>流れは速く Webkit も時代の主流から外れてゆきそうです。<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote">15</a></sup></p>
+<p>流れは速く Webkit も時代の主流から外れてゆきそうです。<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">15</a></sup></p>
 
 <p>ということである時点で Capybara-webkit は衰退するかもしれません。phantom.js も QtWebkit ベースなので Blink 対応の新しい JavaScript ドライバに置き換わってゆくのでしょう。</p>
 
@@ -1018,9 +1018,9 @@ expect(page).to have_content 'hoge'</code></pre></figure>
 
 <h3 id="福井修-ir3">福井修 (<a href="https://twitter.com/iR3">@iR3</a>)</h3>
 
-<p>2001年まだマイナーだったRubyで英会話学校向け教材配信システムを構築<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote">16</a></sup>
-して以来Ruby大好きしてます。関西OPENSOURCE+FREEWARE2002<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote">17</a></sup>からRuby関西<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote">18</a></sup>を立ち上げたり
-2006年は<a href="http://www.ivia.or.jp">IVIA</a>の監事したり2007年からは東京に移り2009年から<a href="http://irubysystems.com">iRubySystems</a>やってます。2012年RubyKaja<sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote">19</a></sup>のひとりです。
+<p>2001年まだマイナーだったRubyで英会話学校向け教材配信システムを構築<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">16</a></sup>
+して以来Ruby大好きしてます。関西OPENSOURCE+FREEWARE2002<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">17</a></sup>からRuby関西<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">18</a></sup>を立ち上げたり
+2006年は<a href="http://www.ivia.or.jp">IVIA</a>の監事したり2007年からは東京に移り2009年から<a href="http://irubysystems.com">iRubySystems</a>やってます。2012年RubyKaja<sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">19</a></sup>のひとりです。
 —-</p>
 
 <div class="footnotes" role="doc-endnotes">

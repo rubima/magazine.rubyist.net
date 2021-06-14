@@ -743,7 +743,7 @@ index 0589aa9..568ccd0 100644
 
 <p>Rails 2.0 は、デフォルトではセッション情報を Cookie に格納します。これに伴い、Cookie に格納されているセッション情報の改竄を検知するためにシークレットキー文字列の設定が必須になりました。</p>
 
-<p>そのための設定を config/environment.rb に追記します。シークレットキー文字列は 30〜40 文字程度の長さにします。30 文字より少ないと Rails から「短すぎる」と怒られてしまいます。逆に、長すぎても暗号の強度には寄与しません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。ここでは手っ取り早い方法を取ります。</p>
+<p>そのための設定を config/environment.rb に追記します。シークレットキー文字列は 30〜40 文字程度の長さにします。30 文字より少ないと Rails から「短すぎる」と怒られてしまいます。逆に、長すぎても暗号の強度には寄与しません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。ここでは手っ取り早い方法を取ります。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">$ script/runner 'puts CGI::Session.generate_unique_id'
 ce053ab2dfc17fbe2ee2a8675d83952f</code></pre></figure>
@@ -1269,7 +1269,7 @@ end</code></pre></figure>
  end</code></pre></figure>
 
 <p>修正した example ではまず、get メソッドを少し変更して、:id パラメータにフィクスチャからロードしたブログの id を渡しています。
-そして、リクエストを送信した後に、response オブジェクト<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>が success であることを期待しています。つまり、response#success? が true を返すことを期待しています。これが成立するのは、レスポンスの HTTP ステータスコードが 200 の場合です。</p>
+そして、リクエストを送信した後に、response オブジェクト<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>が success であることを期待しています。つまり、response#success? が true を返すことを期待しています。これが成立するのは、レスポンスの HTTP ステータスコードが 200 の場合です。</p>
 
 <p>テストを書いたので、実行してみます。</p>
 

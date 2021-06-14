@@ -394,7 +394,7 @@
 <span class="nt">&lt;/div&gt;</span>
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">MyApp.run</code>でOvtoアプリを起動すると、まずMyApp::Stateクラスのオブジェクトが自動的に作成され、それを引数としてMainComponentクラスのrenderメソッドが呼ばれます。引数の<code class="language-plaintext highlighter-rouge">state:</code>というのは見慣れないかもしれませんが、キーワード引数の初期値を省略した形です。Ovtoではキーワード引数を多用するので、この機会に慣れてください。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p><code class="language-plaintext highlighter-rouge">MyApp.run</code>でOvtoアプリを起動すると、まずMyApp::Stateクラスのオブジェクトが自動的に作成され、それを引数としてMainComponentクラスのrenderメソッドが呼ばれます。引数の<code class="language-plaintext highlighter-rouge">state:</code>というのは見慣れないかもしれませんが、キーワード引数の初期値を省略した形です。Ovtoではキーワード引数を多用するので、この機会に慣れてください。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
 
 <p>renderメソッドは、「このようなDOMを生成してほしい」という依頼を返さなくてはなりません。この依頼を作成するのがoメソッドです。</p>
 
@@ -472,7 +472,7 @@
 
 <p>上のコードでは、onclickを使ってボタンが押されたときの処理を記述しています。実行したい処理はProcオブジェクトで指定します。<code class="language-plaintext highlighter-rouge">-&gt;(){ ... }</code>はProcオブジェクトを作るRubyの文法です。</p>
 
-<p>イベントハンドラ内では、<code class="language-plaintext highlighter-rouge">actions</code>メソッドを経由してアクションを呼び出すことができます。アクションを実行すると、stateが更新され、新しいstateを引数にしてrenderが呼び出されて、画面が書き換わります。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>イベントハンドラ内では、<code class="language-plaintext highlighter-rouge">actions</code>メソッドを経由してアクションを呼び出すことができます。アクションを実行すると、stateが更新され、新しいstateを引数にしてrenderが呼び出されて、画面が書き換わります。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
 
 <h2 id="ovtoで三目並べを作る">Ovtoで三目並べを作る</h2>
 
@@ -897,7 +897,7 @@
 
 <h3 id="maincomponentの拡張">MainComponentの拡張</h3>
 
-<p>MainComponent#renderが長くなった場合は、サブのComponentを定義するのが良いです。例えば三目並べの盤面部分をサブComponentにしてみると、以下のようになります。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
+<p>MainComponent#renderが長くなった場合は、サブのComponentを定義するのが良いです。例えば三目並べの盤面部分をサブComponentにしてみると、以下のようになります。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></p>
 
 <div class="language-rb highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">Board</span> <span class="o">&lt;</span> <span class="no">Ovto</span><span class="o">::</span><span class="no">Component</span>
     <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">state</span><span class="p">:)</span>

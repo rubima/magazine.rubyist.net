@@ -252,13 +252,13 @@
 
 <p>A Rack application is an Ruby object (not a class) that responds to call. It takes exactly one argument, the environment and returns an Array of exactly three values: The status, the headers, and the body.</p>
 
-<p>Rack アプリケーションは、call() メソッドが呼び出せる Ruby のオブジェクトである (クラスではない)。call() は「環境 (environment)」を表す引数を 1 つだけとり、「ステータス」「ヘッダ」「ボディ」の 3 つを要素とする配列 (Array) を戻り値として返す<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>Rack アプリケーションは、call() メソッドが呼び出せる Ruby のオブジェクトである (クラスではない)。call() は「環境 (environment)」を表す引数を 1 つだけとり、「ステータス」「ヘッダ」「ボディ」の 3 つを要素とする配列 (Array) を戻り値として返す<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。</p>
 
 <h3 id="the-environment-環境">The Environment (環境)</h3>
 
 <p>The environment must be an instance of Hash that includes CGI-like headers. The application is free to modify the environment. The environment is required to include these variables (adopted from PEP333), except when they’d be empty, but see below.</p>
 
-<p>環境 (environment) は CGI ライクなヘッダを持った Hash のインスタンスオブジェクトである。アプリケーションは好きなように環境を変更してよい。環境は以下のような変数を含む必要がある (これは PEP333<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> に倣った)。ただし値が空である場合は含まなくてもよい。</p>
+<p>環境 (environment) は CGI ライクなヘッダを持った Hash のインスタンスオブジェクトである。アプリケーションは好きなように環境を変更してよい。環境は以下のような変数を含む必要がある (これは PEP333<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> に倣った)。ただし値が空である場合は含まなくてもよい。</p>
 
 <dl>
   <dt>REQUEST_METHOD</dt>
@@ -304,7 +304,7 @@
   <dd>アプリケーションオブジェクトが、同じプロセスの別スレッドから同時に実行される可能性がある場合は true、それ以外は false。</dd>
   <dt>rack.multiprocess</dt>
   <dd>true if an equivalent application object may be simultaneously invoked by another process, false otherwise.</dd>
-  <dd>アプリケーションオブジェクトが、他のプロセスから同時に実行される可能性があるなら true、それ以外は false<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</dd>
+  <dd>アプリケーションオブジェクトが、他のプロセスから同時に実行される可能性があるなら true、それ以外は false<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。</dd>
   <dt>rack.run_once</dt>
   <dd>true if the server expects (but does not guarantee!) that the application will only be invoked this one time during the life of its containing process. Normally, this will only be true for a server based on CGI (or something similar).</dd>
   <dd>サーバがそのプロセスにおいて、アプリケーションを一度しか実行しないと期待される場合 (ただし保証はしないことに注意！) は true。通常は、CGI (あるいはそれに類するもの) として実行される場合にのみ true である。</dd>
@@ -408,7 +408,7 @@
 
 <p>The header must respond to each, and yield values of key and value. The header keys must be Strings. The header must not contain a Status key, contain keys with : or newlines in their name, contain keys names that end in - or _, but only contain keys that consist of letters, digits, _ or - and start with a letter. The values of the header must be Strings, consisting of lines (for multiple header values, e.g. multiple Set-Cookie values) seperated by “n”. The lines must not contain characters below 037.</p>
 
-<p>ヘッダは each() を実装し、キーと値の組を yield しなければならない。ヘッダのキーは文字列でなければならない。ヘッダは「Status」キーを含んではならない。また名前に「:」や改行があるキーや、「-」や「<em>」で終わるようなキーを含んでもいけない。キーは文字<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>と数字と「</em>」と「-」のみで構成され、文字で始まらなければならない。ヘッダの値は文字列でなければならない。値は複数行である場合もあり (これは値が複数であるヘッダのため、たとえば Set-Cookie を複数回指定した場合など)、その場合は「\n」で区切られてなければならない。行は 037 より小さい文字<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>を含んではならない。</p>
+<p>ヘッダは each() を実装し、キーと値の組を yield しなければならない。ヘッダのキーは文字列でなければならない。ヘッダは「Status」キーを含んではならない。また名前に「:」や改行があるキーや、「-」や「<em>」で終わるようなキーを含んでもいけない。キーは文字<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>と数字と「</em>」と「-」のみで構成され、文字で始まらなければならない。ヘッダの値は文字列でなければならない。値は複数行である場合もあり (これは値が複数であるヘッダのため、たとえば Set-Cookie を複数回指定した場合など)、その場合は「\n」で区切られてなければならない。行は 037 より小さい文字<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>を含んではならない。</p>
 
 <h4 id="the-content-type-content-type-ヘッダ">The Content-Type (Content-Type ヘッダ)</h4>
 
@@ -426,13 +426,13 @@
 
 <p>The Body must respond to each and must only yield String values. The Body itself should not be an instance of String, as this will break in Ruby 1.9. If the Body responds to close, it will be called after iteration. If the Body responds to to_path, it must return a String identifying the location of a file whose contents are identical to that produced by calling each; this may be used by the server as an alternative, possibly more efficient way to transport the response. The Body commonly is an Array of Strings, the application instance itself, or a File-like object.</p>
 
-<p>ボディは each() を実装し、文字列のみを yield しなければならない。ボディ自体は文字列であってはならない (なぜなら Ruby 1.9 では動かないから<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>)。もしボディが close() を実装している場合は、繰り返しのあとで呼び出される。ボディが to_path() を実装している場合は、to_path() はファイルの場所を表す文字列を返さなければならず、そのファイルの内容は each() を呼び出しているときに生成される; この方法は、サーバによってはレスポンスを効率よく転送するための代替手段として使われることがある。ボディは、通常は文字列を要素とした配列か、アプリケーションインスタンスそのものか、ファイルに似たオブジェクトである。</p>
+<p>ボディは each() を実装し、文字列のみを yield しなければならない。ボディ自体は文字列であってはならない (なぜなら Ruby 1.9 では動かないから<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>)。もしボディが close() を実装している場合は、繰り返しのあとで呼び出される。ボディが to_path() を実装している場合は、to_path() はファイルの場所を表す文字列を返さなければならず、そのファイルの内容は each() を呼び出しているときに生成される; この方法は、サーバによってはレスポンスを効率よく転送するための代替手段として使われることがある。ボディは、通常は文字列を要素とした配列か、アプリケーションインスタンスそのものか、ファイルに似たオブジェクトである。</p>
 
 <h3 id="thanks-謝辞">Thanks (謝辞)</h3>
 
 <p>Some parts of this specification are adopted from PEP333: Python Web Server Gateway Interface v1.0 (<a href="http://www.python.org/dev/peps/pep-0333/">www.python.org/dev/peps/pep-0333/</a>). I’d like to thank everyone involved in that effort.</p>
 
-<p>本仕様のいくつかの部分は、PEP333: Python Web Server Gateway Interface v1.0<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup> (<a href="http://www.python.org/dev/peps/pep-0333/">www.python.org/dev/peps/pep-0333/</a>) から取り込まれた。その仕様策定に尽力された方全員に感謝の意を表する。</p>
+<p>本仕様のいくつかの部分は、PEP333: Python Web Server Gateway Interface v1.0<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> (<a href="http://www.python.org/dev/peps/pep-0333/">www.python.org/dev/peps/pep-0333/</a>) から取り込まれた。その仕様策定に尽力された方全員に感謝の意を表する。</p>
 
 <h2 id="訳者について">訳者について</h2>
 

@@ -426,7 +426,7 @@ $bytes = encode("UTF-8", "あ"); #=&gt; "\xE3\x81\x82"</code></pre></figure>
 
 <h5 id="javas-case-utf-16">Java’s case (UTF-16)</h5>
 
-<p><a href="http://java.sun.com/">Java</a> の内部は UTF-16 です。Java 1.5 より前では、U+0000-U+FFFF の範囲、つまり 今の Unicode や ISO/IEC 10646 の基本多言語面 (Basic Multilingual Plane, BMP) を 16bit の固定長で表していました<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。しかし、16bit では世界中の文字が収まらないことが明らかになり<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>、Unicode 2.0 からはサロゲートペアという、16bit の code unit を 2 つ用いて BMP 外を表す仕組みを導入しました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。このため、<a href="http://java.sun.com/developer/technicalArticles/Intl/Supplementary/index_ja.html">Java 1.5 以降</a> や <a href="http://msdn.microsoft.com/ja-jp/library/9b1s4yhz.aspx">.NET Framework</a> のような UTF-16 を内部コードに採用した言語では、「文字」の単位がサロゲートペアを構成する片方の unit のみになってしまっている場合があることに注意する必要があります。</p>
+<p><a href="http://java.sun.com/">Java</a> の内部は UTF-16 です。Java 1.5 より前では、U+0000-U+FFFF の範囲、つまり 今の Unicode や ISO/IEC 10646 の基本多言語面 (Basic Multilingual Plane, BMP) を 16bit の固定長で表していました<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。しかし、16bit では世界中の文字が収まらないことが明らかになり<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>、Unicode 2.0 からはサロゲートペアという、16bit の code unit を 2 つ用いて BMP 外を表す仕組みを導入しました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。このため、<a href="http://java.sun.com/developer/technicalArticles/Intl/Supplementary/index_ja.html">Java 1.5 以降</a> や <a href="http://msdn.microsoft.com/ja-jp/library/9b1s4yhz.aspx">.NET Framework</a> のような UTF-16 を内部コードに採用した言語では、「文字」の単位がサロゲートペアを構成する片方の unit のみになってしまっている場合があることに注意する必要があります。</p>
 
 <p>ちなみに、<a href="http://www.python.org/">Python</a> もデフォルトでは内部コードに UTF-16 を用います。 (2.x は –enable-unicode=ucs4、3.0 では –with-wide-unicode で UTF-32 を用いるようにも変更可能。なお、Fedora や Ubuntu では UTF-32 を用いるものが配布されている)</p>
 
@@ -516,23 +516,23 @@ $bytes = encode("UTF-8", "あ"); #=&gt; "\xE3\x81\x82"</code></pre></figure>
 
 <h3 id="ロケールエンコーディング">ロケールエンコーディング</h3>
 
-<p>ロケールエンコーディングを決定するには、まず locale_charmap を決定します。まず、Unix 環境でも Windows 環境でも、環境変数 $LANG が設定されていた場合は、そこエンコーディング名を決定します。Windows (cygwin を含む) で $LANG が設定されていなかった場合、GetConsoleCP<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup> を用います。以上から決定された名前は <a href="http://doc.okkez.net/1.9.3/view/method/Encoding/s/locale_charmap">Encoding.locale_charmap</a> で取得することができます。なお、Encoding.locale_charmap は、miniruby では ASCII-8BIT を、nl_langinfo 等がない環境では nil を返します。</p>
+<p>ロケールエンコーディングを決定するには、まず locale_charmap を決定します。まず、Unix 環境でも Windows 環境でも、環境変数 $LANG が設定されていた場合は、そこエンコーディング名を決定します。Windows (cygwin を含む) で $LANG が設定されていなかった場合、GetConsoleCP<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> を用います。以上から決定された名前は <a href="http://doc.okkez.net/1.9.3/view/method/Encoding/s/locale_charmap">Encoding.locale_charmap</a> で取得することができます。なお、Encoding.locale_charmap は、miniruby では ASCII-8BIT を、nl_langinfo 等がない環境では nil を返します。</p>
 
 <p>こうして得られた locale_charmap からロケールエンコーディングは決定されます。基本的には Encoding.find(Encoding.locale_charmap) の値と等しくなりますが、locale_charmap が nil だった場合には US-ASCII、Ruby が理解できない名前の場合には ASCII-8BIT になります。以上で決定されたロケールエンコーディングを取得するには、Encoding.find(“locale”) を用います。</p>
 
-<p>ロケールエンコーディングの Ruby 内での主な利用用途は、前述の default_external のデフォルト値を与えることです。先述のとおり、default_external は IO の外部エンコーディングのデフォルトですが、ファイル等を開く際には別にエンコーディングを指定することが推奨されるので、default_external が影響するのは Ruby が最初から開いている IO、つまり $stdin、$stdout、$stderr になります。通常これらはコンソールとの入出力となるため、コンソールで用いられるエンコーディング、すなわち、基本的には $LANG、Windows では GetConsoleCP を用いるのが妥当だと判断されました。なお、Windows においては入出力に Unicode 版 API を用いて、UTF-16LE を使うという方法も存在はしますが、Ruby 1.8 系との互換性を著しく損なうため採用されていません。<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup></p>
+<p>ロケールエンコーディングの Ruby 内での主な利用用途は、前述の default_external のデフォルト値を与えることです。先述のとおり、default_external は IO の外部エンコーディングのデフォルトですが、ファイル等を開く際には別にエンコーディングを指定することが推奨されるので、default_external が影響するのは Ruby が最初から開いている IO、つまり $stdin、$stdout、$stderr になります。通常これらはコンソールとの入出力となるため、コンソールで用いられるエンコーディング、すなわち、基本的には $LANG、Windows では GetConsoleCP を用いるのが妥当だと判断されました。なお、Windows においては入出力に Unicode 版 API を用いて、UTF-16LE を使うという方法も存在はしますが、Ruby 1.8 系との互換性を著しく損なうため採用されていません。<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup></p>
 
 <p>以上の通り、ロケールエンコーディングは「default_external のデフォルト値」やコンソールとの関係を念頭に決定されているため、特に Windows においてはそれ以外の用途で用いた場合、期待とは異なるエンコーディングが返る可能性があります。「default_external のデフォルト値」以外の意味で用いる場合には ruby-dev に一報を入れておいた方がよいかも知れません。また、将来的に GetConsoleCP から GetACP への切り替えが行われる可能性があります。</p>
 
 <h3 id="ファイルシステムエンコーディング">ファイルシステムエンコーディング</h3>
 
-<p>ファイルシステムとのやりとりに用いられるエンコーディングは、ロケールエンコーディングとは別に決定されるファイルシステムエンコーディングに基づきます。具体的には、システムから取得したファイル名等を表す文字列のエンコーディングとしてファイルシステムエンコーディングは用いられます。このエンコーディングを取得するための Ruby API は提供されていません<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+<p>ファイルシステムとのやりとりに用いられるエンコーディングは、ロケールエンコーディングとは別に決定されるファイルシステムエンコーディングに基づきます。具体的には、システムから取得したファイル名等を表す文字列のエンコーディングとしてファイルシステムエンコーディングは用いられます。このエンコーディングを取得するための Ruby API は提供されていません<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。</p>
 
 <h4 id="windows-の場合">Windows の場合</h4>
 
-<p>FAT32 や NTFS など、ロングファイルネーム対応ファイルシステムの場合、ファイル名は UTF-16LE<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup> で格納されています。また、FAT でも NT 系ならばシステムに読み込んだ後は UTF-16LE で扱われます。つまり、Windows、特に NT 系においてはシステム内部では UTF-16LE でファイル名を扱っています。</p>
+<p>FAT32 や NTFS など、ロングファイルネーム対応ファイルシステムの場合、ファイル名は UTF-16LE<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> で格納されています。また、FAT でも NT 系ならばシステムに読み込んだ後は UTF-16LE で扱われます。つまり、Windows、特に NT 系においてはシステム内部では UTF-16LE でファイル名を扱っています。</p>
 
-<p>Ruby 1.9.1 は ANSI 版 API を用いているので、この文字列は、Windows によって ANSI または OEM コードページ<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup> の文字列に変換されて Ruby へと渡されます。つまり、結局 Ruby 1.9.1 から見るとファイル名は常に ANSI または OEM コードページとして見えることになるので、ファイルシステムエンコーディングは ANSI または OEM コードページになります。Ruby はこの文字列を ANSI または OEM コードページとしてエンコーディングを設定し、さらにオプションでエンコーディングが設定されていた場合はそのエンコーディングに変換して返します。</p>
+<p>Ruby 1.9.1 は ANSI 版 API を用いているので、この文字列は、Windows によって ANSI または OEM コードページ<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup> の文字列に変換されて Ruby へと渡されます。つまり、結局 Ruby 1.9.1 から見るとファイル名は常に ANSI または OEM コードページとして見えることになるので、ファイルシステムエンコーディングは ANSI または OEM コードページになります。Ruby はこの文字列を ANSI または OEM コードページとしてエンコーディングを設定し、さらにオプションでエンコーディングが設定されていた場合はそのエンコーディングに変換して返します。</p>
 
 <p>将来 Unicode 版 API を用いるようになった場合は、UTF-16LE のファイル名を Ruby は取得し、オプションでエンコーディングが指定されている場合にはこれを直接そのエンコーディングへ、指定されていない場合はファイルシステムエンコーディングに変換して返すようになるでしょう。ファイルシステムエンコーディングを UTF-16LE や UTF-8 に変えてしまうと、Ruby 1.8 系との互換性を著しく損なうため、この場合でもそのまま ANSI または OEM コードページになります。</p>
 
@@ -603,7 +603,7 @@ Ruby M17N では主に開発リソース的な理由から、全てのエンコ�
 
 <h5 id="utf-16--utf-32">UTF-16 &amp; UTF-32</h5>
 
-<p>先述の通り、Ruby 1.9.1 では UTF-16BE、UTF-16LE、UTF-32BE、UTF-32LE がサポートされています。これらは全て BOM <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>なしのエンコーディングです。よって、U+FEFF は ZERO WIDTH NO-BREAK SPACE として認識されるので、BOM であることがわかっている場合は適宜削ってください。また、Ruby 1.9.1 では、”UTF-16” と “UTF-32” はサポートしていないことに注意してください。</p>
+<p>先述の通り、Ruby 1.9.1 では UTF-16BE、UTF-16LE、UTF-32BE、UTF-32LE がサポートされています。これらは全て BOM <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>なしのエンコーディングです。よって、U+FEFF は ZERO WIDTH NO-BREAK SPACE として認識されるので、BOM であることがわかっている場合は適宜削ってください。また、Ruby 1.9.1 では、”UTF-16” と “UTF-32” はサポートしていないことに注意してください。</p>
 
 <p>なお、BOM 付きの UTF-16 と UTF-32 がサポートされていないのは、開発リソース上の問題です。一時本格サポートが検討はされましたが、BOM を考慮しながらのバイト位置計算や、1 つのエンコーディングでのエンディアンに応じた処理の提供、IO が絡んだ際の処理の複雑さ等から、1.9.1 でのサポートは断念されました。取り込むこと自体への反対はないので、誰かが手を挙げてパッチを作成すればおそらく取り込まれることでしょう。</p>
 

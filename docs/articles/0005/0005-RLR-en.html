@@ -366,11 +366,11 @@ using Ruby by using the win32-file package.</p>
    fh.read_only = true
  }</code></pre></figure>
 
-<p>In addition, you can get and set the security settings of files.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
+<p>In addition, you can get and set the security settings of files.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
 Use File.get_permissions to retrieve a hash of key value pairs that
 describe the security settings.  However, the values are integer values.
 To turn those into human readable strings, we need to pass the flag to
-the File.securities method.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
+the File.securities method.<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/file"
 
@@ -390,7 +390,7 @@ more attribute related methods.</p>
 <p>On a final note, a few of the core File methods have been reimplemented 
 in the win32-file package, either because they weren’t implemented for 
 Win32 systems, or they didn’t work properly.  At the time of this writing 
-this included File.blockdev?, File.chardev? and File.size.<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
+this included File.blockdev?, File.chardev? and File.size.<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></p>
 
 <h4 id="win32-sound">WIN32-SOUND</h4>
 
@@ -415,7 +415,7 @@ playing sounds.</p>
 <p>This package allows you to create and configure shortcuts on Win32 
 systems.  Shortcuts are links (.lnk files) to other files or programs, 
 typically represented by an icon  on your Desktop or in an Explorer 
-window, with a little arrow in the lower left hand corner.<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
+window, with a little arrow in the lower left hand corner.<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/shortcut"
  include Win32
@@ -428,7 +428,7 @@ window, with a little arrow in the lower left hand corner.<sup id="fnref:4" role
  s.save</code></pre></figure>
 
 <p>In the above example, we’ve created a shortcut called “test.lnk” 
-in the ‘C:' directory and gives it a description of “test link”.<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>
+in the ‘C:' directory and gives it a description of “test link”.<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>
 The shortcut is a link to the Notepad executable.<br />
 The Shortcut#working_directory method tells it to consider ‘C:' 
 the starting directory for that executable when started.<br />
@@ -469,7 +469,7 @@ we need to add a work item and a trigger, then save it.</p>
    "type"         =&gt; { "days_interval" =&gt; 2 }
  }</code></pre></figure>
 
-<p>A trigger is written as a hash.<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>
+<p>A trigger is written as a hash.<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>
 The above trigger sets a task to start on April 11th
 (of the current year if not specified), starting at 7:14am 
 and will run daily, every other day.  With a trigger 
@@ -479,7 +479,7 @@ prepared, a new work item can be created.</p>
  t.application_name = "ruby foo.exe"
  t.save</code></pre></figure>
 
-<p>This sample actually creates the work item in the Task Scheduler.<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup><br />
+<p>This sample actually creates the work item in the Task Scheduler.<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup><br />
 Note that we have to specify the actual program to execute, as well 
 as save the work item.  The work item is notcreated until 
 TaskScheduler#save is called.  For convenience, the samples I have 
@@ -508,7 +508,7 @@ speech creation and recognition using Ruby (win32-sapi), and a version
 of popen3 that works on Win32 as it does on Unix systems (win32-open3).</p>
 
 <p>There is also an experimental native thread library (win32-thread), 
-with an interface for the Windows fiber API<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>
+with an interface for the Windows fiber API<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>
 in the works.</p>
 
 <h3 id="conclusion">Conclusion</h3>

@@ -296,7 +296,7 @@
 <p>localhost の 8080 番ポートで HTTP サーバーが起動しました。それでは、Web ブラウザーでアクセスしましょう。
 <img src="../../images/0040-CodePostMortem/cgi-fail.png" alt="cgi-fail.png" /></p>
 
-<p>CGI の実行に失敗しました。うまくいかないときはまずはログを確認します<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。HTTP サーバーのログを確認すると以下のようになっています。</p>
+<p>CGI の実行に失敗しました。うまくいかないときはまずはログを確認します<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。HTTP サーバーのログを確認すると以下のようになっています。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> [2012-10-09 22:01:25] ERROR CGIHandler: /home/kou/work/ruby/rubima-correction-wikir/index.rb:
  /usr/lib/ruby/1.9.1/webrick/httpservlet/cgi_runner.rb:46:in `exec': No such file or directory - /home/kou/work/ruby/rubima-correction-wikir/index.rb (Errno::ENOENT)
@@ -306,7 +306,7 @@
  localhost - - [09/Oct/2012:22:01:25 JST] "GET / HTTP/1.1" 500 365
  - -&gt; /</code></pre></figure>
 
-<p>ファイルが存在しているのにファイルの実行時に「No such file or directory」とでるときは shebang<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> がおかしいと相場が決まっています。index.rb を見てみましょう。</p>
+<p>ファイルが存在しているのにファイルの実行時に「No such file or directory」とでるときは shebang<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> がおかしいと相場が決まっています。index.rb を見てみましょう。</p>
 
 <p>index.rb:</p>
 
@@ -317,7 +317,7 @@
  ro = DRbObject.new_with_uri('druby://localhost:50830')
  ro.start(ENV.to_hash, $stdin, $stdout)</code></pre></figure>
 
-<p>私の環境では ruby コマンドは <em>/usr/bin/ruby</em> なので <em>/usr/local/bin/ruby</em> から <em>/usr/bin/ruby</em> に変更します <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>私の環境では ruby コマンドは <em>/usr/bin/ruby</em> なので <em>/usr/local/bin/ruby</em> から <em>/usr/bin/ruby</em> に変更します <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> commit f9fdacafc7dbe57a537f09a013193f6fe257b454 (HEAD, master)
  Author: Kouhei Sutou &lt;kou@clear-code.com&gt;
@@ -349,9 +349,9 @@
 
 <h3 id="コードを見る">コードを見る</h3>
 
-<p>私がコードを読むときは 2 つのモードがあります。1 つが「なんとなく読む」モードで、もう 1 つが「必要だから読む」モードです。「なんとなく読む」モードのときは上から順に読んでいって、なにか気になったらコメントしたり直したり無視したりします。読むというより眺めるに近いかもしれません<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。「必要だから読む」モードのときは、まず必要なところを探して、見つけたらそこだけを集中して読んで他のところには目もくれずに必要なことだけ調べます。</p>
+<p>私がコードを読むときは 2 つのモードがあります。1 つが「なんとなく読む」モードで、もう 1 つが「必要だから読む」モードです。「なんとなく読む」モードのときは上から順に読んでいって、なにか気になったらコメントしたり直したり無視したりします。読むというより眺めるに近いかもしれません<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。「必要だから読む」モードのときは、まず必要なところを探して、見つけたらそこだけを集中して読んで他のところには目もくれずに必要なことだけ調べます。</p>
 
-<p>「なんとなく読む」モードはコミットメール<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>を読む時のモードです。「必要だから読む」モードは機能を追加する時やデバッグする時や実装を調べる時のモードです。</p>
+<p>「なんとなく読む」モードはコミットメール<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>を読む時のモードです。「必要だから読む」モードは機能を追加する時やデバッグする時や実装を調べる時のモードです。</p>
 
 <p>今回は機能追加などではなく、気になったことにコメントするために読むので「なんとなく読む」モードです。</p>
 
@@ -377,11 +377,11 @@
  # encoding = エンコーディング名
  # ...</code></pre></figure>
 
-<p>たくさんあるとどの書き方がよいか悩むかもしれませんが、wikir.rb と同じく以下の書き方にしましょう<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+<p>たくさんあるとどの書き方がよいか悩むかもしれませんが、wikir.rb と同じく以下の書き方にしましょう<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> # -*- coding: エンコーディング名 -*-</code></pre></figure>
 
-<p>この形式は Ruby だけではなく GNU Emacs も認識できる形式です。GNU Emacs がエンコーディングを認識すると、保存するときに指定したエンコーディングに変換してくれます。そのため、マジックコメントで指定したエンコーディングと実際のエンコーディングが異なることがありません。なお、ruby-mode<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>を使っていると ASCII 範囲外の文字列があれば自動でマジックコメントが挿入されるので、意識せずにマジックコメントを指定していることでしょう。</p>
+<p>この形式は Ruby だけではなく GNU Emacs も認識できる形式です。GNU Emacs がエンコーディングを認識すると、保存するときに指定したエンコーディングに変換してくれます。そのため、マジックコメントで指定したエンコーディングと実際のエンコーディングが異なることがありません。なお、ruby-mode<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>を使っていると ASCII 範囲外の文字列があれば自動でマジックコメントが挿入されるので、意識せずにマジックコメントを指定していることでしょう。</p>
 
 <h5 id="ライブラリ読み込み">ライブラリ読み込み</h5>
 
@@ -429,7 +429,7 @@
 
 <p>ページを管理するクラスには他にも違う名前が考えられます。例えば「Wiki」という名前です。ページを全部集めたものが Wiki だと考えれば適切な名前です。あるいは、「データベース」という名前です。ページが保存されている感じがします。「本」や「Wiki」ではどのように保存するかは気になりませんが、データベースという名前を使うとどのようにページを保存するかを意識している感じがしますね。</p>
 
-<p>咳さんは何かに例えた名前をつけます。作っているものは Wiki ですが、「ページが集まっているものと言えば本だよね」という連想をして「本」という名前をつけたのでしょう。このように何かに例えた名前をつけると愛着がわき、例えたものベースで説明するようになります。例えば、「ページの数が増えてきて処理に時間がかかるようになったね」というのではなく、「本が厚くなって重くなったね」というような感じです。自分が書いたソフトウェアに愛着がわくので一度は試してみるとよいでしょう<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+<p>咳さんは何かに例えた名前をつけます。作っているものは Wiki ですが、「ページが集まっているものと言えば本だよね」という連想をして「本」という名前をつけたのでしょう。このように何かに例えた名前をつけると愛着がわき、例えたものベースで説明するようになります。例えば、「ページの数が増えてきて処理に時間がかかるようになったね」というのではなく、「本が厚くなって重くなったね」というような感じです。自分が書いたソフトウェアに愛着がわくので一度は試してみるとよいでしょう<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>。</p>
 
 <p>さて、それではコードの中を見てみましょう。</p>
 
@@ -646,7 +646,7 @@
   <li>どう直したか（変更点そのもの。diff）</li>
 </ul>
 
-<p>私は、こっちのコードの方がいいんじゃないかということを伝える時には「どうしてそう思うか」という理由も伝えたいなぁと思っています。理由も伝えれば同じパターン<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>の別のケースの時にも使える知識になってくれるのではないかと期待しているからです。そして、上述のようにコミットすることにより私が伝えたい内容を全部含んだ状態で伝えられるのではないかと思っています。ただ、これが本当に効果がある方法なのかどうかはまだわかっていません。</p>
+<p>私は、こっちのコードの方がいいんじゃないかということを伝える時には「どうしてそう思うか」という理由も伝えたいなぁと思っています。理由も伝えれば同じパターン<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>の別のケースの時にも使える知識になってくれるのではないかと期待しているからです。そして、上述のようにコミットすることにより私が伝えたい内容を全部含んだ状態で伝えられるのではないかと思っています。ただ、これが本当に効果がある方法なのかどうかはまだわかっていません。</p>
 
 <p>それでは、コードの続きを見ていきましょう。</p>
 
@@ -936,7 +936,7 @@
  86 rescue
  87 end</code></pre></figure>
 
-<p>以下の書き方は、「Ruby で Web アプリケーションを書くときは <a href="http://rack.github.com/">Rack</a> ベースのものばかり<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup>」という人には馴染みのないものでしょう。</p>
+<p>以下の書き方は、「Ruby で Web アプリケーションを書くときは <a href="http://rack.github.com/">Rack</a> ベースのものばかり<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>」という人には馴染みのないものでしょう。</p>
 
 <p>wikir.rb:</p>
 
@@ -969,9 +969,9 @@
 
 <p><em>rescue</em> の中でログを出力するなどした方がよいです。</p>
 
-<p><em>WEBrick::CGI</em> には触れませんでしたが、咳さんが解説してくれるかもしれません<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>。WikiR の本体 wikir.rb については以上です。</p>
+<p><em>WEBrick::CGI</em> には触れませんでしたが、咳さんが解説してくれるかもしれません<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>。WikiR の本体 wikir.rb については以上です。</p>
 
-<p>と思ったのですが、最後に 1 つ気になることがあったので触れておきます。wikir.rb の構造は以下のようになっていて、<em>WikiR</em> はネームスペース<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>としてしか使われていません。</p>
+<p>と思ったのですが、最後に 1 つ気になることがあったので触れておきます。wikir.rb の構造は以下のようになっていて、<em>WikiR</em> はネームスペース<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>としてしか使われていません。</p>
 
 <p>wikir.rb:</p>
 
@@ -1040,7 +1040,7 @@
  ro = DRbObject.new_with_uri('druby://localhost:50830')
  ro.start(ENV.to_hash, $stdin, $stdout)</code></pre></figure>
 
-<p>その人のコードを見続けていると、この人はどうしてこんなコードを書いたのか、というのがわかってきます<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote">13</a></sup>。昔、咳さんのコードを見ていた私からすると「このコードはいろんなプロダクツで使いまわしているコードだろうなぁ」と感じます。</p>
+<p>その人のコードを見続けていると、この人はどうしてこんなコードを書いたのか、というのがわかってきます<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">13</a></sup>。昔、咳さんのコードを見ていた私からすると「このコードはいろんなプロダクツで使いまわしているコードだろうなぁ」と感じます。</p>
 
 <p>ちゃんと書いた咳さんのコードでは「<em>ro</em>（たぶん、Remote Object の略）」という名前を使いません。咳さんなら「<em>wikir</em>（リモートにあるどのオブジェクトを触るかがわかる名前。一見、ローカルのオブジェクトに見える名前をつけるはずです。wikir.rb の最後を見るとリモートにあるのは <em>WikiR::UI</em> ですが、<em>ui</em> にはしないはずです。リモートのオブジェクトを提供する側は公開用に <em>WikiR::UI</em> というオブジェクトを用意していますが、使う側からすれば Wiki サービスを使いたいだけなので、それが UI 用のやつかどうかなんて気にしたくありません。）」や「<em>front</em>（dRuby本でも使われている伝統的な名前）」といった名前を使うはずです。</p>
 
@@ -1077,7 +1077,7 @@
 
 <h3 id="まとめ">まとめ</h3>
 
-<p>咳さんの書いた小さな Wiki のコードを上から見て<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote">14</a></sup>気になることをコメントしました。咳さんはどうしてこのようなコードを書いたのだろうか、ということを考えながら読んでいることが伝わったでしょうか。コードを読むときは書いた人がどうしてこのコードを書いたかということを考えながら読みましょう。そうした方がコードを理解しやすくなります<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote">15</a></sup>。理解した状態でコードを読み書きした方がプログラミングは楽しいですよ。ぜひ試してみてください。</p>
+<p>咳さんの書いた小さな Wiki のコードを上から見て<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">14</a></sup>気になることをコメントしました。咳さんはどうしてこのようなコードを書いたのだろうか、ということを考えながら読んでいることが伝わったでしょうか。コードを読むときは書いた人がどうしてこのコードを書いたかということを考えながら読みましょう。そうした方がコードを理解しやすくなります<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">15</a></sup>。理解した状態でコードを読み書きした方がプログラミングは楽しいですよ。ぜひ試してみてください。</p>
 
 <p>読む人の視点でコードと向き合うことで、コードの書き方も変わってくるかもしれません。「このようにコードを書くと読む人はどう思うかな？」という視点が入るかもしれません。あなたの書いたコードを読み書きした人が楽しくプログラミングできたらステキじゃないですか。</p>
 

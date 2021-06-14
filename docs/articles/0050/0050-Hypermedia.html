@@ -313,9 +313,9 @@
   </tbody>
 </table>
 
-<p>この命名は筆者が行ったものですが、分類は目新しいものではありません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。また、これはどちらが良い悪いということではありません。またどちらかに必ず分かれるというわけでもなく、その中間という選択肢もあるでしょう。最近話題のマイクロサービスに適しているのは中間ぐらいかもしれません。</p>
+<p>この命名は筆者が行ったものですが、分類は目新しいものではありません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。また、これはどちらが良い悪いということではありません。またどちらかに必ず分かれるというわけでもなく、その中間という選択肢もあるでしょう。最近話題のマイクロサービスに適しているのは中間ぐらいかもしれません。</p>
 
-<p>「Web を支える技術」の著者で知られる山本陽平氏は「API を RESTful にするかどうかは要件しだい」<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> と述べています。クモの巣 API を作るか、クモの糸 API を作るか、も要件しだいです。どのような API を作るかによって、適切な構造や作り方は変わってきます。</p>
+<p>「Web を支える技術」の著者で知られる山本陽平氏は「API を RESTful にするかどうかは要件しだい」<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> と述べています。クモの巣 API を作るか、クモの糸 API を作るか、も要件しだいです。どのような API を作るかによって、適切な構造や作り方は変わってきます。</p>
 
 <p>今回はその中で、どちらかというとクモの巣 API、つまりパブリックでさまざまなクライアントが使い、どう使われるかをコントロールしづらいような Web API をうまく作るには、という話を進めていきます。</p>
 
@@ -368,11 +368,11 @@
 
 <p>既存のクライアントやライブラリは、どのように作られているでしょうか。</p>
 
-<p>API の機能の一覧、この URL にこのパラメータを渡す、という使用法の説明 ( API ドキュメンテーション<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup> ) が Web サイトに載っています。開発者はそれを読んで、その通りにコードを書いてクライアントやライブラリを作る、ということが多いでしょう。</p>
+<p>API の機能の一覧、この URL にこのパラメータを渡す、という使用法の説明 ( API ドキュメンテーション<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> ) が Web サイトに載っています。開発者はそれを読んで、その通りにコードを書いてクライアントやライブラリを作る、ということが多いでしょう。</p>
 
 <p>この場合、URL やパラメータが変わると、クライアントは壊れて動かなくなってしまいます。動かすためには、コードを書き直さなければなりません。</p>
 
-<p>もう少し賢い方法として、API ドキュメンテーションをマシンリーダブルな形で提供している場合もあります。<a href="http://json-schema.org/">JSON Schema</a>や<a href="http://swagger.io/">Swagger</a>などです<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。開発者はそこから、自動生成のソフトウェアを使ってクライアントやライブラリのコードを生成します。</p>
+<p>もう少し賢い方法として、API ドキュメンテーションをマシンリーダブルな形で提供している場合もあります。<a href="http://json-schema.org/">JSON Schema</a>や<a href="http://swagger.io/">Swagger</a>などです<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。開発者はそこから、自動生成のソフトウェアを使ってクライアントやライブラリのコードを生成します。</p>
 
 <p>でも、URL やパラメータに変更があるとやっぱり壊れてしまって、再生成が必要です。これでは根本的な解決になりません。人間が書かなくていいという点ではとても良いのですが。</p>
 
@@ -382,7 +382,7 @@
 
 <p>原理としては、API の変更がクライアントに伝わるようにすれば、クライアントは壊れないはずです。そのためには、1 ヶ所にまとまった API ドキュメンテーションからすべてをあらかじめ作るのではなく、API のそれぞれのレスポンスの中に個別のドキュメンテーションを埋め込み、クライアントは__実行時__にそれを読み取って判断すればよいのです。</p>
 
-<p>URL やパラメータなどの情報<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>をクライアントが事前に持っていると、クライアントと API 実装との間に密結合ができてしまいます。密結合は Breaking Change につながります。Non-Breaking Change にするためには、密結合を避け、疎結合にする必要があります。</p>
+<p>URL やパラメータなどの情報<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>をクライアントが事前に持っていると、クライアントと API 実装との間に密結合ができてしまいます。密結合は Breaking Change につながります。Non-Breaking Change にするためには、密結合を避け、疎結合にする必要があります。</p>
 
 <h3 id="例fizzbuzzaas">例：FizzBuzzaaS</h3>
 
@@ -520,7 +520,7 @@ end</code></pre></figure>
 
 <p>そして、Google は検索結果にレストランのレーティングや、音楽のトラックリストを表示することがあります (リッチスニペット)。前節では、HTML には段落・リストやセクションなどの意味しか含まれていないと書きました。レストランタグとかミュージックタグはありませんよね。しかしクローラは、HTML のどの部分がデータで、そのデータの意味は何かということを認識しているということになります。どのようにやっているのでしょう？</p>
 
-<p>その方法が、Microdata です。Microdata は、HTML のタグに特別な属性をつけることで、データの場所と名前を明示するというしくみです<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。一般的には、SEO の手段として知られています。</p>
+<p>その方法が、Microdata です。Microdata は、HTML のタグに特別な属性をつけることで、データの場所と名前を明示するというしくみです<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。一般的には、SEO の手段として知られています。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">&lt;div itemscope itemtype="http://schema.org/Person"&gt;
   My name is &lt;span itemprop="name"&gt;Bob Smith&lt;/span&gt;
@@ -611,7 +611,7 @@ end</code></pre></figure>
   </tbody>
 </table>
 
-<p>これだけ揃えば、HTML を Web API として使うことができます。実際、HTML から Microdata を抽出するための仕様 <a href="http://www.w3.org/TR/microdata/#using-the-microdata-dom-api">Microdata DOM API</a> が定義されています。ブラウザに標準ではまだ実装されていませんが、<a href="https://github.com/termi/Microdata-JS">JavaScript の実装</a>が存在するので、すぐ使うことができます。または、Microdata を JSON に変換する仕様もいくつか定義されています<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。</p>
+<p>これだけ揃えば、HTML を Web API として使うことができます。実際、HTML から Microdata を抽出するための仕様 <a href="http://www.w3.org/TR/microdata/#using-the-microdata-dom-api">Microdata DOM API</a> が定義されています。ブラウザに標準ではまだ実装されていませんが、<a href="https://github.com/termi/Microdata-JS">JavaScript の実装</a>が存在するので、すぐ使うことができます。または、Microdata を JSON に変換する仕様もいくつか定義されています<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>。</p>
 
 <p>HTML の大きなアドバンテージは、リンクとフォームを最初から持っていることです。</p>
 
@@ -672,7 +672,7 @@ alert('Hello ' + name + '!');</code></pre></figure>
       <td>-</td>
     </tr>
     <tr>
-      <td>JSON+Link ヘッダ<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup></td>
+      <td>JSON+Link ヘッダ<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup></td>
       <td>-</td>
       <td>✓</td>
       <td>-</td>
@@ -892,7 +892,7 @@ Accept: application/vnd.amundsen-uber+json</code></pre></figure>
   </tbody>
 </table>
 
-<p>また、リンクの名前も対応する語彙があれば結びつけておきます。ただしリンクの名前はまだあまり選択肢がありません。schema.org の hasPart のように、プロパティとして存在すればそれを使いましょう。加えて、<a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">IANA のリンクリレーション</a>は汎用的なリンクリレーションを定義しているので、あてはまるものがあれば取り入れましょう<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>。</p>
+<p>また、リンクの名前も対応する語彙があれば結びつけておきます。ただしリンクの名前はまだあまり選択肢がありません。schema.org の hasPart のように、プロパティとして存在すればそれを使いましょう。加えて、<a href="http://www.iana.org/assignments/link-relations/link-relations.xhtml">IANA のリンクリレーション</a>は汎用的なリンクリレーションを定義しているので、あてはまるものがあれば取り入れましょう<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>。</p>
 
 <p>create などの安全でない遷移 (フォーム) に対応する語彙は、schema.org では Action から探します。または、<a href="http://www.w3.org/TR/activitystreams-vocabulary/">Activity Streams</a> の語彙を使う方法もあります。IANA のリンクリレーションにはあまりありません。</p>
 

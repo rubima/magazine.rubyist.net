@@ -233,7 +233,7 @@
 <h3 id="るりまサーチとは">るりまサーチとは</h3>
 <p><img src="../../images/0031-RuremaSearch/20100901_2.png" alt="20100901_2.png" /></p>
 
-<p>るりまサーチは <a href="http://redmine.ruby-lang.org/wiki/rurema">Ruby リファレンスマニュアル刷新計画 (通称るりま)</a> の成果物である Ruby 本体のリファレンスマニュアルを全文検索するための Web アプリケーションです。るりまサーチが必要とされていた理由は、既存のリファレンスマニュアル閲覧 Web アプリケーションに組み込まれていた検索機能の速度が遅かった<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>からです。せっかく有益なリファレンスマニュアルがあっても、目的のエントリにたどりつくのが難しければ、有効に活用することができません。検索機能の面からリファレンスマニュアルの有効活用を支援する全文検索システムがるりまサーチです。</p>
+<p>るりまサーチは <a href="http://redmine.ruby-lang.org/wiki/rurema">Ruby リファレンスマニュアル刷新計画 (通称るりま)</a> の成果物である Ruby 本体のリファレンスマニュアルを全文検索するための Web アプリケーションです。るりまサーチが必要とされていた理由は、既存のリファレンスマニュアル閲覧 Web アプリケーションに組み込まれていた検索機能の速度が遅かった<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>からです。せっかく有益なリファレンスマニュアルがあっても、目的のエントリにたどりつくのが難しければ、有効に活用することができません。検索機能の面からリファレンスマニュアルの有効活用を支援する全文検索システムがるりまサーチです。</p>
 
 <h3 id="ポイント-ドリルダウン">ポイント: ドリルダウン</h3>
 <p><img src="../../images/0031-RuremaSearch/20100901_3.png" alt="20100901_3.png" /></p>
@@ -366,11 +366,11 @@
 
 <p>テーブルには検索結果に表示したい内容と検索時に利用する内容をカラムとして定義します。るりまサーチの場合にはメソッド名やクラス名を格納する「 name 」カラムやドキュメントを格納する「 description 」カラムなどを定義しています。</p>
 
-<p>検索対象用のテーブルを定義したら索引を定義します。ここが RDB と異なる部分です。全文検索用の索引では単語と文書を対応させる語彙表が必要になりますが、同じトークナイザー<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>を利用している場合は同じ語彙表を共有して省スペース化したり、同じテキストに複数のトークナイザーを適用して検索精度や検索漏れのトレードオフを調整したり、といった RDB よりも細かい制御ができます。</p>
+<p>検索対象用のテーブルを定義したら索引を定義します。ここが RDB と異なる部分です。全文検索用の索引では単語と文書を対応させる語彙表が必要になりますが、同じトークナイザー<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>を利用している場合は同じ語彙表を共有して省スペース化したり、同じテキストに複数のトークナイザーを適用して検索精度や検索漏れのトレードオフを調整したり、といった RDB よりも細かい制御ができます。</p>
 
 <p>単にヒットしたかどうかではなく、検索結果の重み付けも重要です。有用な検索結果を提供するためには、クエリに適していると思われる結果ほど上位に提示する必要があります。しかし、どのように重み付けをするのが適切かは全文検索システムに大きく依存します。そのため、groonga では索引毎に重み付けをカスタマイズする機能を提供しています。</p>
 
-<p>るりまサーチではメソッド名やクラス名に完全一致した場合はよりマッチしていると判断するように<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>、名前と完全一致だけする語彙表「Names」テーブル<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>を定義し、そこに「 name 」カラムの索引を定義します。検索時にはこの索引にマッチした場合は重み付けを大きくします。</p>
+<p>るりまサーチではメソッド名やクラス名に完全一致した場合はよりマッチしていると判断するように<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>、名前と完全一致だけする語彙表「Names」テーブル<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>を定義し、そこに「 name 」カラムの索引を定義します。検索時にはこの索引にマッチした場合は重み付けを大きくします。</p>
 
 <p>ドキュメント部分 (「summary」カラムと「description」カラム) はトークナイザーを設定した全文検索用の語彙表「Terms」テーブルを共有しています。こっちの索引にマッチした場合は重み付けを小さくします。</p>
 
@@ -480,7 +480,7 @@
 
 </code></pre></div></div>
 
-<p>Ruby で登録データの前処理を行う場合は rroonga を使う方がよいでしょう。Ruby 以外で処理を行う場合はデータから JSON を生成し、groonga の load コマンドを使う方がよいでしょう。るりまサーチは Ruby で前処理<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>をしているので rroonga でデータを登録しています。</p>
+<p>Ruby で登録データの前処理を行う場合は rroonga を使う方がよいでしょう。Ruby 以外で処理を行う場合はデータから JSON を生成し、groonga の load コマンドを使う方がよいでしょう。るりまサーチは Ruby で前処理<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>をしているので rroonga でデータを登録しています。</p>
 
 <h3 id="検索例-るりまサーチ">検索例: るりまサーチ</h3>
 <p><img src="../../images/0031-RuremaSearch/20100901_12.png" alt="20100901_12.png" /></p>
@@ -567,7 +567,7 @@
 <h3 id="racknga">racknga</h3>
 <p><img src="../../images/0031-RuremaSearch/20100901_13.png" alt="20100901_13.png" /></p>
 
-<p>るりまサーチの検索 Web インターフェイスは Ruby 1.9 と Rack の上に構築されています<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。るりまサーチを開発した際に、るりまサーチ以外でも使えそうな部分がでてきたので、<a href="http://github.com/ranguba/racknga/">racknga</a> という名前でるりまサーチと別パッケージとして公開しています。</p>
+<p>るりまサーチの検索 Web インターフェイスは Ruby 1.9 と Rack の上に構築されています<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。るりまサーチを開発した際に、るりまサーチ以外でも使えそうな部分がでてきたので、<a href="http://github.com/ranguba/racknga/">racknga</a> という名前でるりまサーチと別パッケージとして公開しています。</p>
 
 <p>racknga には Rack のミドルウェアと Munin プラグインが含まれています。Munin のプラグインは Passenger の以下の情報を収集します。</p>
 

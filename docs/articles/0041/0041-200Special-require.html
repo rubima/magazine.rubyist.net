@@ -273,7 +273,7 @@ files.times{|j|
 
 <p>これらは結局の所、変更が無い場合に実際のファイルパスをキャッシュして高速化する為に行われています。freeze する事によってその中身に変化が無い事を保証しますが、to_path メソッドがあると中身に変化はなくともクラスが修正されると結果を変えないといけないので、実際のファイルパスに変更が無い事を保証する為に呼び出さない事としました。</p>
 
-<p>そのため、上記で何度も String オブジェクトと書いていましたが、$LOAD_PATH 内に String オブジェクト以外を入れてしまうと効果は半減とは言わないまでも少し落ちてしまう為、入れないようにする事をお勧めします <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>そのため、上記で何度も String オブジェクトと書いていましたが、$LOAD_PATH 内に String オブジェクト以外を入れてしまうと効果は半減とは言わないまでも少し落ちてしまう為、入れないようにする事をお勧めします <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。</p>
 
 <p>なお、$LOAD_PATH や $LOADED_FEATURES に変更が無い事自体の判定の実装では、内部で用いている配列の share フラグを利用する中々面白いギミックが用いられています。このあたりに興味のある方は、是非 <a href="https://bugs.ruby-lang.org/issues/7158">https://bugs.ruby-lang.org/issues/7158</a> も覗いてみてください。</p>
 

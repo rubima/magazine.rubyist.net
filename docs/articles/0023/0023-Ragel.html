@@ -326,7 +326,7 @@ Ragel の使い方を知るために、まずは簡単なサンプルを作っ�
 <ul>
   <li>1, 9行目: Ragel のステートマシン定義は、「%%{」から「}%%」までの間に書きます。または 1 行だけなら「%%」で始まる行に書くこともできます。</li>
   <li>Ragel では、ステートマシンに名前をつける必要があります。この名前は、Ruby や C のコードを生成した場合の、変数名の接頭辞になります。</li>
-  <li>7行目: 「main :=」から「;」までが文法定義になります<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。ここに、文法のパターンを書きます。
+  <li>7行目: 「main :=」から「;」までが文法定義になります<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。ここに、文法のパターンを書きます。
     <ul>
       <li>
         <table>
@@ -390,7 +390,7 @@ fig-1 で状態の番号が左から「1 2 3 4 5」ではなく「1 2 4 3 5」�
 <p>Ragel では、パターンに別名をつけることができます。</p>
 
 <p>list-3 をご覧下さい。
-先ほどの定義ファイルに加え、符号を表す「sign」と、数値を表す「d」の、2 つの別名を定義しました<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。
+先ほどの定義ファイルに加え、符号を表す「sign」と、数値を表す「d」の、2 つの別名を定義しました<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。
 また文法の定義も、別名を使うように変更しています。</p>
 
 <p>list-3. ex2.rl: パターンに別名を追加</p>
@@ -737,7 +737,7 @@ ex4.rb:418:in `scan_all': ** syntax error (cs=0, p=4, data[p]='(') (RuntimeError
 
 <p>具体的な応用例として、Ragel を使ってJSONパーサを作ってみましょう。</p>
 
-<p>ちょっと小難しい話をすると、<a href="http://www.json.org">JSON の仕様</a>は文脈自由文法を使って定義されるため、正規言語を使う Ragel では JSON パーサを記述できません<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。
+<p>ちょっと小難しい話をすると、<a href="http://www.json.org">JSON の仕様</a>は文脈自由文法を使って定義されるため、正規言語を使う Ragel では JSON パーサを記述できません<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。
 そのため、今回は JSON パーサ自体は再帰下降法を使って手書きし、字句解析部分を Ragel で作成します。</p>
 
 <p>ただし、今回はあくまで Ragel の使い方を紹介するのが目的なので、JSON の仕様に忠実に従ったパーサではなく、都合の良いところで改変しています。
@@ -1150,7 +1150,7 @@ end</code></pre></figure>
 また具体的な応用例として、JSON パーサを作成しました。
 Ragel を使うと、字句解析部が簡単に作成できます。</p>
 
-<p>ただし Ragel が生成するコードは、C であれば効率がいいのですが、Ruby のコードはそれほど効率がよくありません<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。
+<p>ただし Ragel が生成するコードは、C であれば効率がいいのですが、Ruby のコードはそれほど効率がよくありません<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。
 字句解析部を作るなら、Ruby では StringScanner がありますので、もしかしたらそちらのほうが実行効率がいいかもしれません。
 興味のある人は両方試してみてください。
 —-</p>

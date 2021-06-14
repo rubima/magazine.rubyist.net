@@ -287,8 +287,8 @@ Tcl インタープリタによるコマンドライン解釈を経由したり�
 いまだに誤解があるようなのですが、これは大昔の話です。
 現在の Ruby/Tk はそのほとんどの部分で Tcl インタープリタによる
 コマンドライン解釈を経由せず、直接に手続きを
-呼び出しています<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
-<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。
+呼び出しています<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
+<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。
 そのため呼び出し自体のオーバヘッドはわずかです。
 最大のオーバヘッドは、メソッド呼び出しの各引数をチェックして
 Tcl/Tk に渡すための文字列に変換している部分です
@@ -353,12 +353,12 @@ Ruby/Tk から見て重要なポイントの一つは
 とはいえ、できる限りは互換性を維持するようにしていますから、
 Ruby 1.6 と 1.8 の違いやバグ修正に伴う変更などの
 やむを得ない非互換性を除いては従来のスクリプトの大部分が
-そのまま動くはずです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+そのまま動くはずです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。</p>
 
 <p>スクリプトを書く上での大きな違いは、
 「new の際に第 1 引数に親ウィジェットを与える必要がなくなった」ことと
 「文字列の代りにシンボルで指定してもよいことに
-なった<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>」ことでしょう。</p>
+なった<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>」ことでしょう。</p>
 
 <p>現在の 1.8.2 では、親ウィジェットは第 1 引数による指定以外にも
 属性設定の Hash における ‘parent’ キーでの指定もできるようになりました。
@@ -433,7 +433,7 @@ Ruby 1.6 と 1.8 の違いやバグ修正に伴う変更などの
 <h3 id="エンコード情報付き文字列-tkencodedstring">エンコード情報付き文字列 (Tk::EncodedString)</h3>
 
 <p>8.0 までの Tcl/Tk では、日本語対応パッチを適用しなければ
-日本語の表示ができませんでした<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。
+日本語の表示ができませんでした<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>。
 Ruby/Tk は組み合わせた Tcl/Tk ライブラリと同じ制約を受けますから、
 その Tcl/Tk ライブラリが扱える文字コードでのみ日本語表示が可能でした。
 当然ながら日本語パッチは利用環境で最も一般的な日本語文字コードを
@@ -472,7 +472,7 @@ Tcl/Tk の「\u 置換」(\uhhhh という 16 進表記で Unicode 文字を指�
 行うメソッドも用意してあります。</p>
 
 <p>多国語を使う場合、デフォルトのエンコーディング (または Tk.encoding= で設定した現在のエンコーディング) を Unicode にしない限りは多国語を含んだ戻り値が
-文字化けしてしまう<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>という
+文字化けしてしまう<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>という
 やむを得ない問題はありますが、
 この点にさえ気をつければ多国語表示も気軽に行えるのではないでしょうか。
 Ruby のソースに含まれる ext/tk/sample/encstr_usage.rb も
@@ -519,7 +519,7 @@ Tk インタープリタにおいて特定の名前空間で評価させるこ�
 <p>という形になります。
 これが二つ目の形式です。
 method_missing の機構を活用して、ja というロケールでの定義を
-追加するようにしています<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。
+追加するようにしています<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>。
 ‘::tkmsgcat_demo’ は名前空間であり、
 内部で TkNamespace クラスを利用して取り扱っています。</p>
 
@@ -593,11 +593,11 @@ Tk での表示などにそのまま用いることができます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> *BtnFrame.hello.command: ruby {puts "Hello World!!"}</code></pre></figure>
 
-<p>などと ruby {Ruby スクリプト} という形式<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>で記述することで
+<p>などと ruby {Ruby スクリプト} という形式<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>で記述することで
 設定することができます。</p>
 
 <p>ただしこの形式の場合、
-イベントに対するコールバック処理のような % 置換による情報受け取り<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>はできますが、
+イベントに対するコールバック処理のような % 置換による情報受け取り<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>はできますが、
 Tk インタープリタが末尾に引数を追加して呼び出すケースに
 対応して引数を受け取るものは書けません。
 この場合、実行したいのが単一のメソッド呼び出しであり、
@@ -605,7 +605,7 @@ Tk インタープリタが末尾に引数を追加して呼び出すケース�
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;リソース名&gt;: ruby_cmd &lt;レシーバ&gt; &lt;メソッド&gt; &lt;引数&gt; ...</code></pre></figure>
 
-<p>と記述する<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup>ことで、</p>
+<p>と記述する<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>ことで、</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> &lt;レシーバ&gt;.&lt;メソッド&gt;(&lt;引数&gt;, ... , &lt;Tk インタープリタによる追加引数&gt;, ...)</code></pre></figure>
 
@@ -630,10 +630,10 @@ BTN_CMD というデータベースクラスを定義します (データベー�
 そのブロック中で self.<strong>check_proc_string</strong>(str) というメソッドを
 再定義しておけば、データベースで設定された手続きの文字列を
 このメソッドで検査や加工を行った上で扱えるようになります
-<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>。</p>
+<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>。</p>
 
 <p>上記の例では BTN_CMD には *BTN_CMD.show_msg と *BTN_CMD.bye_msg とを
-データベースで設定できます<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>。
+データベースで設定できます<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>。
 設定は</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> *BTN_CMD.show_msg: {|arg| print "Hello, #{arg}!!\n"}</code></pre></figure>
@@ -880,7 +880,7 @@ Tcl/Tk 拡張を使うためのライブラリを添付することとしまし�
   <li><a href="http://sourceforge.net/projects/tkdnd/">TkDND       </a></li>
 </ul>
 
-<p>という状況です<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote">13</a></sup>。
+<p>という状況です<sup id="fnref:13" role="doc-noteref"><a href="#fn:13" class="footnote" rel="footnote">13</a></sup>。
 数が多くて紹介しきれないので、
 それぞれがどのような拡張ライブラリであるかは
 記載の URL を参照してください。
@@ -890,7 +890,7 @@ Tcl/Tk 拡張を使うためのライブラリを添付することとしまし�
 
 <p>Tcl 部分のみの機能を拡張するものについてはほとんど無視していますが、
 Tk 部分の拡張については ActiveTcl パッケージに含まれているものは
-ほぼサポートの状態となっています<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote">14</a></sup>。
+ほぼサポートの状態となっています<sup id="fnref:14" role="doc-noteref"><a href="#fn:14" class="footnote" rel="footnote">14</a></sup>。
 よって、これ以外の拡張のサポートはリクエスト次第ということになります。
 標準配布に含めるか、RAA 登録とするかなどもリクエスト次第です。
 気になる Tcl/Tk 拡張がありましたら、ぜひリクエストしてください。</p>
@@ -1026,7 +1026,7 @@ MultiTkIp クラスです。
 可能にしたものが 1.8.2 で新たに追加された RemoteTkIp クラスです。
 ただし、残念ながら Tk の send コマンドは
 すべての環境でサポートされているわけではありません。
-現状は UNIX 系の環境だけで使えるものと考えていただいた方がいいでしょう<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote">15</a></sup>。</p>
+現状は UNIX 系の環境だけで使えるものと考えていただいた方がいいでしょう<sup id="fnref:15" role="doc-noteref"><a href="#fn:15" class="footnote" rel="footnote">15</a></sup>。</p>
 
 <p>RemoteTkIp クラスによる他のインタープリタの操作は MultiTkIp クラスに比べると
 少し制約がありますが、TCP/IP とは違った通信制御をお試し下さい。
@@ -1130,7 +1130,7 @@ Tk.tkcall() などで Tk インタープリタを直接操作すれば
 永続化が可能なのではないかと考えています。
 要望が強ければ、本気で取り掛かってもいいのかもしれません。</p>
 
-<p>もう一つは「tclplugin を利用した Ruby/Tk プラグイン」<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote">16</a></sup>です。
+<p>もう一つは「tclplugin を利用した Ruby/Tk プラグイン」<sup id="fnref:16" role="doc-noteref"><a href="#fn:16" class="footnote" rel="footnote">16</a></sup>です。
 こちらはセキュリティの問題がかなりやっかいなので、
 「できればいいなぁ」というレベルです。
 まぁ、tclplugin 自体も全く使われていないに等しい状況ですから、
@@ -1175,7 +1175,7 @@ Tk のスタイルと言えるのかもしれません。
 
 <p>某所で某巨大掲示板に掲載されている Python/Tkinter のスクリプトの話を聞きました。
 で、「現在の Ruby/Tk で実装するとしたら、自分ならどう書くかな？」と思って
-作ってみたのが以下のスクリプトです<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote">17</a></sup>。</p>
+作ってみたのが以下のスクリプトです<sup id="fnref:17" role="doc-noteref"><a href="#fn:17" class="footnote" rel="footnote">17</a></sup>。</p>
 
 <ul>
   <li>「乙」と「巳」</li>
@@ -1273,7 +1273,7 @@ Tk のスタイルと言えるのかもしれません。
 <p><strong><img src="../../images/0003-RubyTkMovement/mapframe.png" alt="mapframe.png" /></strong></p>
 
 <p>画像データをソースに埋め込んでいるせいでスクリプトが少し長くなってしまったため、
-スクリプトのソース<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote">18</a></sup>は
+スクリプトのソース<sup id="fnref:18" role="doc-noteref"><a href="#fn:18" class="footnote" rel="footnote">18</a></sup>は
 こちら (<a href="../../images/0003-RubyTkMovement/mapframe.rb">mapframe.rb</a>) に置いておきます。
 Linux 以外ではテストはしていませんが、特殊なことは何もしていないので、
 Ruby/Tk が動く環境 (0001号の記事にあるように、上記のプラットホームは
@@ -1289,7 +1289,7 @@ Ruby/Tk が動く環境 (0001号の記事にあるように、上記のプラッ
 ActiveTcl + 最新の 1.8.2 (正式リリースはまだですから、preview3 かそれ以降のもの) の環境での演習付き集中講義形式です。</p>
 
 <p>興味を持たれた方はぜひご参加下さい (11/13 07:00 現在で
-定員の残りは 6 席ほどです)<sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote">19</a></sup>。</p>
+定員の残りは 6 席ほどです)<sup id="fnref:19" role="doc-noteref"><a href="#fn:19" class="footnote" rel="footnote">19</a></sup>。</p>
 
 <h2 id="著者について">著者について</h2>
 
