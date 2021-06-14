@@ -291,14 +291,14 @@
 
 <h2 id="実行時メタプログラミング">実行時メタプログラミング</h2>
 
-<p>Groovy の実行時メタプログラミング機構<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>のいくつかについて紹介します。ここで「メタプログラミング」という用語はクラスやオブジェクトインスタンスにメソッドやプロパティを追加する仕組みという意味で使用します。</p>
+<p>Groovy の実行時メタプログラミング機構<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>のいくつかについて紹介します。ここで「メタプログラミング」という用語はクラスやオブジェクトインスタンスにメソッドやプロパティを追加する仕組みという意味で使用します。</p>
 
 <h3 id="カテゴリ">カテゴリ</h3>
 
-<p>Groovy の「カテゴリ」は、クラスにメソッドを動的に追加する仕組みの 1 つです<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。一般に、Ruby のオープンクラスでもそうですが、既存のクラスに対するメソッド追加は強力である反面、危険も伴います。たとえば、由来の異なるライブラリを組み合せて使用する場合に、追加するメソッドが衝突する可能性もあるからです。</p>
+<p>Groovy の「カテゴリ」は、クラスにメソッドを動的に追加する仕組みの 1 つです<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。一般に、Ruby のオープンクラスでもそうですが、既存のクラスに対するメソッド追加は強力である反面、危険も伴います。たとえば、由来の異なるライブラリを組み合せて使用する場合に、追加するメソッドが衝突する可能性もあるからです。</p>
 
-<p>カテゴリは、限定した範囲でのみメソッド追加が有効となる<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>ので、このような問題の発生確率を低めることができます。
-カテゴリを利用するには、まず準備として、追加したいメソッドを static メソッド (Ruby で言うクラスメソッド) として定義したクラスを準備します<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。このようなクラスをここではカテゴリクラスと呼ぶことにします。以下は例です。</p>
+<p>カテゴリは、限定した範囲でのみメソッド追加が有効となる<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>ので、このような問題の発生確率を低めることができます。
+カテゴリを利用するには、まず準備として、追加したいメソッドを static メソッド (Ruby で言うクラスメソッド) として定義したクラスを準備します<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。このようなクラスをここではカテゴリクラスと呼ぶことにします。以下は例です。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">class HelloCategory {
   static hello(String self) { // String クラスに追加しようとするメソッド。
@@ -309,7 +309,7 @@
 <p>ここでは、Groovy の標準クラスである String クラスに、インスタンスメソッドとして hello を追加します。
 内容は、「”hello “+String の内容」を表示するというものです。</p>
 
-<p>カテゴリクラスで定義するメソッドは以下のようにします<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+<p>カテゴリクラスで定義するメソッドは以下のようにします<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>。</p>
 
 <ul>
   <li>static メソッドとする</li>
@@ -357,7 +357,7 @@ s.hello() // "hello ABC" が表示される
 
 <p>なお、ご存知の様に、methodMissing が呼び出されるのは、その名の通りメソッドが存在しない場合のみで、既存のメソッドの意味を上書きすることはありません。</p>
 
-<p>しかし、Groovy では「invokeMethod」というものもあります。invokeMethod を定義すると、メソッドが存在していようといまいとこちらが呼び出され、本来のメソッドは呼び出されなくなります。Groovy でのメタプログラミングでは、invokeMethod のトラップは多用されます<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+<p>しかし、Groovy では「invokeMethod」というものもあります。invokeMethod を定義すると、メソッドが存在していようといまいとこちらが呼び出され、本来のメソッドは呼び出されなくなります。Groovy でのメタプログラミングでは、invokeMethod のトラップは多用されます<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">BigDecimal.metaClass.invokeMethod = { String methodName, args -&gt;
    "method $delegate.$methodName($args) called"
@@ -369,7 +369,7 @@ println 3.3 + 4.5
 
 <h3 id="mop">MOP</h3>
 
-<p>前項で invokeMethod, methodMissing を説明しましたが、これらのメソッドを含む「オブジェクトの振舞い」を実現するメソッド群は、<a href="http://groovy.codehaus.org/api/groovy/lang/MetaObjectProtocol.html">MetaObjectProtocol インターフェース</a> (MOP) で定義されており、これを実装するメタクラス<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>を定義してクラスの metaClass プロパティに設定することでオブジェクトの振舞いをメタレベルで変更することができます。MetaObjectProtocol で定義されているメソッドは以下の通りです。</p>
+<p>前項で invokeMethod, methodMissing を説明しましたが、これらのメソッドを含む「オブジェクトの振舞い」を実現するメソッド群は、<a href="http://groovy.codehaus.org/api/groovy/lang/MetaObjectProtocol.html">MetaObjectProtocol インターフェース</a> (MOP) で定義されており、これを実装するメタクラス<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>を定義してクラスの metaClass プロパティに設定することでオブジェクトの振舞いをメタレベルで変更することができます。MetaObjectProtocol で定義されているメソッドは以下の通りです。</p>
 
 <ul>
   <li>getAttribute</li>
@@ -431,7 +431,7 @@ println 3.3 + 4.5
 呼び出すことで代替します。</p>
 
 <p>百聞は一見にしかず、ということで以下にビルダーの一例である「MarkupBuilder」の使用例を示します。
-MarkupBuilder を使うと、HTML や XML などのマークアップ言語のツリー構造を、DOM などを使うよりも簡潔に、XML 自体を使うよりも簡潔に記述することができます<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>。</p>
+MarkupBuilder を使うと、HTML や XML などのマークアップ言語のツリー構造を、DOM などを使うよりも簡潔に、XML 自体を使うよりも簡潔に記述することができます<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">import groovy.xml.MarkupBuilder
 new MarkupBuilder().root {
@@ -486,7 +486,7 @@ new MarkupBuilder().root {
 
 <h3 id="識別子のクォーティング">識別子のクォーティング</h3>
 
-<p>Groovy では識別子をクォートすることで、たとえばハイフンや/、!、空白など通常識別子名ではない文字も含めることができます(Ruby でいう p:’‘、p:”” の記法) <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>‘。</p>
+<p>Groovy では識別子をクォートすることで、たとえばハイフンや/、!、空白など通常識別子名ではない文字も含めることができます(Ruby でいう p:’‘、p:”” の記法) <sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>‘。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">def 'if'(cond, Closure c) {
   if (cond) c.call()

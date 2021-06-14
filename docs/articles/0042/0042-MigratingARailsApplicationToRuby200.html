@@ -222,7 +222,7 @@
 
 <h2 id="クックパッドを-ruby-200-に対応させた話">クックパッドを Ruby 2.0.0 に対応させた話</h2>
 
-<p>Ruby 2.0.0-p0 がリリースされて2ヶ月ちょっと経過してます。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>この新しい Ruby を皆さんはもう使っているでしょうか。</p>
+<p>Ruby 2.0.0-p0 がリリースされて2ヶ月ちょっと経過してます。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>この新しい Ruby を皆さんはもう使っているでしょうか。</p>
 
 <p>先日クックパッドが本番環境で使用する Ruby が 2.0.0-p0 にアップグレードされました。アップグレード作業を担当したのは著者です。本稿では、この移行作業で得られた知識を皆さんに紹介します。</p>
 
@@ -562,7 +562,7 @@
 
 <p>ActiveRecord は、<code class="language-plaintext highlighter-rouge">User#group</code> に保持されたオブジェクトが DB に保存される際、<code class="language-plaintext highlighter-rouge">group.id</code> の結果を <code class="language-plaintext highlighter-rouge">group_id</code> カラムに保存しようとします。このとき、<code class="language-plaintext highlighter-rouge">User#group</code> に nil が入っていると <code class="language-plaintext highlighter-rouge">nil.id</code> が呼ばれ、<code class="language-plaintext highlighter-rouge">nil.id</code> が CRuby では 4 になることから、whiny_nils が無効になっていると <code class="language-plaintext highlighter-rouge">group_id</code> に 4 が入ってしまう現象が起きることは有名です。</p>
 
-<p>Ruby 1.9 ではこの現象は発生しません。代わりに NoMethodError が発生します。その理由は <code class="language-plaintext highlighter-rouge">Object#id</code> メソッドが削除されたからです。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
+<p>Ruby 1.9 ではこの現象は発生しません。代わりに NoMethodError が発生します。その理由は <code class="language-plaintext highlighter-rouge">Object#id</code> メソッドが削除されたからです。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
 
 <p>この問題に対しては、Ruby 1.8 の場合に <code class="language-plaintext highlighter-rouge">nil.id</code> でエラーが出ないことの方を問題だと解釈し、以下のようなモンキーパッチを使用して <code class="language-plaintext highlighter-rouge">nil.id</code> が呼ばれた場所を検出する方法をとりました。このモンキーパッチは <code class="language-plaintext highlighter-rouge">Rails.application.config.whiny_nils</code> を参照するため、initializer の中でロードする必要があります。</p>
 
@@ -606,7 +606,7 @@
 
 </code></pre></div></div>
 
-<p>上記のコードは 1.8 では <code class="language-plaintext highlighter-rouge">foo: bar: baz</code> が表示されます。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>ところが 1.9 では <code class="language-plaintext highlighter-rouge">bar:</code> というキーに変数 <code class="language-plaintext highlighter-rouge">baz</code> の値を対応させたハッシュを引数に <code class="language-plaintext highlighter-rouge">foo</code> メソッドを呼び出そうとして、変数 <code class="language-plaintext highlighter-rouge">baz</code> が無いため NameError になります。</p>
+<p>上記のコードは 1.8 では <code class="language-plaintext highlighter-rouge">foo: bar: baz</code> が表示されます。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>ところが 1.9 では <code class="language-plaintext highlighter-rouge">bar:</code> というキーに変数 <code class="language-plaintext highlighter-rouge">baz</code> の値を対応させたハッシュを引数に <code class="language-plaintext highlighter-rouge">foo</code> メソッドを呼び出そうとして、変数 <code class="language-plaintext highlighter-rouge">baz</code> が無いため NameError になります。</p>
 
 <h3 id="文字エンコーディング関係">文字エンコーディング関係</h3>
 
@@ -751,7 +751,7 @@
 
 <h4 id="objectinitialize_clone-と-objectinitialize_dup-がプライベートメソッドになった"><code class="language-plaintext highlighter-rouge">Object#initialize_clone</code> と <code class="language-plaintext highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになった</h4>
 
-<p>Ruby 2.0 では <code class="language-plaintext highlighter-rouge">Object#initialize_clone</code> と <code class="language-plaintext highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになりました。そのため、Rails に<a href="https://github.com/rails/rails/commit/127411fdf3a3470e8830abf0c7876db67c0c344a">このパッチ</a>を適用する必要がありました。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
+<p>Ruby 2.0 では <code class="language-plaintext highlighter-rouge">Object#initialize_clone</code> と <code class="language-plaintext highlighter-rouge">Object#initialize_dup</code> がプライベートメソッドになりました。そのため、Rails に<a href="https://github.com/rails/rails/commit/127411fdf3a3470e8830abf0c7876db67c0c344a">このパッチ</a>を適用する必要がありました。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></p>
 
 <h4 id="スレッド周辺の非互換性">スレッド周辺の非互換性</h4>
 

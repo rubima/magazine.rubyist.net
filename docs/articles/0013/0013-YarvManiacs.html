@@ -257,11 +257,11 @@
 
 <h3 id="条件ジャンプと無条件ジャンプ">条件ジャンプと無条件ジャンプ</h3>
 
-<p>YARV には条件ジャンプ命令 <em>if</em> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> と <em>unless</em>、無条件ジャンプ命令の <em>jump</em> があります。</p>
+<p>YARV には条件ジャンプ命令 <em>if</em> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> と <em>unless</em>、無条件ジャンプ命令の <em>jump</em> があります。</p>
 
 <h4 id="条件ジャンプ命令">条件ジャンプ命令</h4>
 
-<p>条件ジャンプ命令は、読んで字のごとく条件によってジャンプしたりしなかったり、という命令です。条件によってジャンプ先を変えるわけではありません<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。条件分岐命令 if はスタックからひとつ値をポップして、もしそれが真ならオペランドで指定された分岐先へジャンプし、そうでなければ何もしません。unless 命令はその逆です。</p>
+<p>条件ジャンプ命令は、読んで字のごとく条件によってジャンプしたりしなかったり、という命令です。条件によってジャンプ先を変えるわけではありません<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。条件分岐命令 if はスタックからひとつ値をポップして、もしそれが真ならオペランドで指定された分岐先へジャンプし、そうでなければ何もしません。unless 命令はその逆です。</p>
 
 <p>Ruby における真偽の判断は、値が nil か false なら偽、それ以外なら真ということになります。C 言語レベルでは RTEST(val) というマクロが用意されています。</p>
 
@@ -275,7 +275,7 @@
 
 <p>無条件ジャンプ命令 jump は、問答無用で分岐先へジャンプします。いわゆる分岐ではありませんが、ここにまとめて書いておきます。</p>
 
-<p>YARV におけるローカルな分岐命令、ジャンプ命令はこの 3 つだけです。何も難しいことはないですね<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>YARV におけるローカルな分岐命令、ジャンプ命令はこの 3 つだけです。何も難しいことはないですね<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。</p>
 
 <h3 id="分岐先とラベル">分岐先とラベル</h3>
 
@@ -480,7 +480,7 @@
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> THEN_BODY if COND</code></pre></figure>
 
-<p>と書けます<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>と書けます<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。</p>
 
 <p>後置の式は、そのまま普通の if 文に置き換えられるため、YARV のコンパイラは普通の if 文として扱います。というか、パーサが普通の if 文と変わらないように構文木を作るため、違いがわからないということになります。</p>
 
@@ -514,7 +514,7 @@
    __tmp__
  end</code></pre></figure>
 
-<p>とほぼ同じ意味 (仮に作った変数 <strong>tmp</strong> が余計) になります<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。</p>
+<p>とほぼ同じ意味 (仮に作った変数 <strong>tmp</strong> が余計) になります<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>。</p>
 
 <p>これを YARV 命令列にしてみると次のようになります。</p>
 

@@ -261,11 +261,11 @@
 ruby-rpm は Ruby で RPM を扱うための拡張ライブラリです。
 RPM については <a href="http://www.linux.or.jp/JF/JFdocs/RPM-HOWTO.html">RPM HOWTO</a> や <a href="http://www.rpm.org/max-rpm/">Maximum RPM</a> をご参照ください。</p>
 
-<p>ruby-rpm を用いると、rpm コマンドを経由せずに Ruby から RPM DB を扱え、問い合わせ・インストール・アップグレード・削除の処理を実行できます。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup></p>
+<p>ruby-rpm を用いると、rpm コマンドを経由せずに Ruby から RPM DB を扱え、問い合わせ・インストール・アップグレード・削除の処理を実行できます。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
 
 <p>私が <a href="http://www.momonga-linux.org/">Momonga Project</a> に誘われて ruby-rpm をいじるようになったのは、つい最近のことです。
 RPM についてもあまり理解していなかったので、ruby-rpm と一緒に調べていくことにしました。
-本稿はその調査記録として ruby-rpm の簡単な使い方を紹介します。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
+本稿はその調査記録として ruby-rpm の簡単な使い方を紹介します。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
 
 <p>RPM は Red Hat によって開発が進められています。RPM の機能は C ライブラリとして提供されており、これを用いた Python による拡張ライブラリ (rpm-python) が Red Hat によって提供されています (rpm-python は RPM のソースツリーに含まれています)。</p>
 
@@ -299,7 +299,7 @@ RPM についてもあまり理解していなかったので、ruby-rpm と一�
 
 <h3 id="ビルド手順">ビルド手順</h3>
 
-<p>momonga は svn で管理されています。現在の <a href="http://developer.momonga-linux.org/viewcvs/trunk/pkgs/ruby-rpm/">trunk/pkgs/ruby-rpm/</a> に置かれているのは次のファイルです。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
+<p>momonga は svn で管理されています。現在の <a href="http://developer.momonga-linux.org/viewcvs/trunk/pkgs/ruby-rpm/">trunk/pkgs/ruby-rpm/</a> に置かれているのは次のファイルです。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></p>
 
 <ul>
   <li>ruby-rpm-1.2.0.tar.bz2</li>
@@ -334,7 +334,7 @@ RPM についてもあまり理解していなかったので、ruby-rpm と一�
 <p>それでも Cygwin で ruby-rpm を使おうとするなら RPM をソースからビルドする必要があります。私の試した rpm-4.1 では Cygwin でもビルドできました。そして ruby-rpm も (少し Makefile をいじる必要がありましたが) ビルドできました。</p>
 
 <p>Cygwin を使わない方法として X on Win パッケージがあります。
-Cygwin で RPM を使う方法を探していると、HOLON Linux が提供している X on Win パッケージを見つけることができました。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>
+Cygwin で RPM を使う方法を探していると、HOLON Linux が提供している X on Win パッケージを見つけることができました。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>
 X on Win のブートパッケージを使えば Windows 上で一から RPM 環境を作ることができるようです。興味のある方はお試しください。</p>
 
 <h2 id="ruby-rpm-を使う前に">ruby-rpm を使う前に</h2>
@@ -600,7 +600,7 @@ db.transaction が返す ts は Transaction Set なのです。
 ブロックを渡さないとデフォルトのコールバックを実行します (キャラクタベースのプログレスバーが表示されます)。</p>
 
 <p>ts.commit を呼ばなかったときは ts.transaction {} を抜けるときに内部で ts.commit が呼ばれます。
-この際、ブロック呼び出しが妙なことになって、ts.transaction に渡したブロックが ts.commit を読んだ際にも呼ばれてしまいます (これはおそらく Ruby の不具合だと思います<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>)。</p>
+この際、ブロック呼び出しが妙なことになって、ts.transaction に渡したブロックが ts.commit を読んだ際にも呼ばれてしまいます (これはおそらく Ruby の不具合だと思います<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>)。</p>
 
 <h3 id="パッケージをインストールする-rpm--i">パッケージをインストールする (rpm -i)</h3>
 

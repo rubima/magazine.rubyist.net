@@ -245,14 +245,14 @@
 
 <h4 id="win32ole-com-wsc-asr">Win32OLE, COM, WSC, ASR</h4>
 
-<p>Win32OLE<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup> が主役です。
-COM (Component Object Model) <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>は、Windows のカーネルでない部分で、サービス、といっても半分は定義でできています。
-そのなかで、今回紹介するのは WSC (Windows Script Component)<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>、その中で実際サービスを提供している ScrObj.dll との連携を考えます。
+<p>Win32OLE<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> が主役です。
+COM (Component Object Model) <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>は、Windows のカーネルでない部分で、サービス、といっても半分は定義でできています。
+そのなかで、今回紹介するのは WSC (Windows Script Component)<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>、その中で実際サービスを提供している ScrObj.dll との連携を考えます。
 VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これでつくられています。</p>
 
 <h4 id="rubyize">Rubyize</h4>
 
-<p>ASR<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup> 附属。使用するには、regsvr32 rbobj.wsc で一回レジストリに登録しないといけません。
+<p>ASR<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup> 附属。使用するには、regsvr32 rbobj.wsc で一回レジストリに登録しないといけません。
 これがどういうものかを、JScript 版と VBScript 版の二種類で説明されました。</p>
 
 <p>C レベル (水面下) では何をやってるか？ を明示するためにデモの C 実装が示されました。Visual Basic のオブジェクトの引数の順番に Rubyize の Object(bstr) 引数を合わせている点がはまりやすい、と指摘されました。</p>
@@ -386,7 +386,7 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
   <li>普段遣いのクラスやメソッドの数を減らす: Ruby の大クラス主義はここに通じる。注意: ミニマリズム (可能な限りのチイサナセカイ狙い) に陥るな。</li>
   <li>設定なしが良い設定</li>
   <li>ハフマンコード: よく使うものほど短い名前にする(もともとは Perl の思想。例としては p コマンド。これは名前としては非常識)。</li>
-  <li>DRY<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>: 落とし穴回避</li>
+  <li>DRY<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>: 落とし穴回避</li>
 </ol>
 
 <h4 id="フィードバックで改善-継続的に">フィードバックで改善 (継続的に)</h4>
@@ -460,7 +460,7 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
 <h3 id="そこで-uml">そこで UML</h3>
 
 <ul>
-  <li>UML: オブジェクト指向設計における標準的な記述言語で、その名も統一モデリング言語 (Unified Modeling Language)<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</li>
+  <li>UML: オブジェクト指向設計における標準的な記述言語で、その名も統一モデリング言語 (Unified Modeling Language)<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。</li>
 </ul>
 
 <p>標準的なビジュアル化の方法にはユースケース図やクラス図やシーケンス図などたくさんの種類があるが、講演では以下が紹介されました。</p>
@@ -478,9 +478,9 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
 <p>デザインパターンは、典型的な問題の文脈に対して (逆に言えばインタフェースとしては問題ごとに安定)、動的な解法を示すものである。
 動的なので、ライブラリの対象外 (となることが多い)、と一般にはいわれている。</p>
 
-<p>けれども、もとが動的な Ruby なら MLF<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup> を使えばライブラリ化できるのでは？ 実際にはどうなのか？ 使い物になるのか？</p>
+<p>けれども、もとが動的な Ruby なら MLF<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> を使えばライブラリ化できるのでは？ 実際にはどうなのか？ 使い物になるのか？</p>
 
-<p>実際に試してみると GoF<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup> の 23 個のパターンのうち 9 個が実装できた。試したものはすべてライブラリ化できた (ここで Composite パターンの事例が紹介されました)。
+<p>実際に試してみると GoF<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup> の 23 個のパターンのうち 9 個が実装できた。試したものはすべてライブラリ化できた (ここで Composite パターンの事例が紹介されました)。
 けっこうパターンって単純な話が多いので、できるのは当たり前だなぁ。</p>
 
 <ul>
@@ -496,7 +496,7 @@ VBScript、JScript、VB6 などから Ruby を呼び出す Rubyize も、これ�
 <p>MDA の立場は Ruby の立場(というかアジャイル系の立場)と正反対にある</p>
 
 <dl>
-  <dt>MDA = model driven architecture<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup></dt>
+  <dt>MDA = model driven architecture<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup></dt>
   <dd>プラットフォーム独立モデル (PIM)→プラットフォーム特化モデル (PSM)→ソースコード。</dd>
 </dl>
 

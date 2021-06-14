@@ -313,8 +313,8 @@ end
 
 <ul>
   <li>「YAML.parse(input)」は、文字列または IO オブジェクトを読み込んで、ツリー形式に変換します。</li>
-  <li>ツリーはノード (YAML::Syck::Node オブジェクト) で構成されます<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。ノードを Ruby のオブジェクト (Array、Hash、String、Fixnum など) に変換するには、YAML::Syck::Node#transform() を使います。</li>
-  <li>ツリーを探索するメソッドには以下の 3 つがあります<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。これらはどれも、文字列 ypath をもとにツリーを探索するという点では同じですが、戻り値が異なります。
+  <li>ツリーはノード (YAML::Syck::Node オブジェクト) で構成されます<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。ノードを Ruby のオブジェクト (Array、Hash、String、Fixnum など) に変換するには、YAML::Syck::Node#transform() を使います。</li>
+  <li>ツリーを探索するメソッドには以下の 3 つがあります<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。これらはどれも、文字列 ypath をもとにツリーを探索するという点では同じですが、戻り値が異なります。
     <ul>
       <li>Node#search(ypath) は、マッチしたノードのパスの配列を返します。</li>
       <li>Node#select(ypath) は、マッチしたノードの配列を返します。</li>
@@ -380,7 +380,7 @@ end
 
 <h3 id="ルート">ルート</h3>
 
-<p>ツリーのルートとなるノードは、「/.」という YPath で表されます。ここで「.」は現在のノードを表します<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>ツリーのルートとなるノードは、「/.」という YPath で表されます。ここで「.」は現在のノードを表します<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> $ ruby show-ypath.rb '/.' datafile.yaml
  #--- search('/.') ---
@@ -553,7 +553,7 @@ end
  25
  25</code></pre></figure>
 
-<p>ここで「age の値が 25 であるようなマッピングのノード」を抽出できればいいのですが、Syck がサポートしている YPath だけではできないので、次のようなコードを使ってください<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>ここで「age の値が 25 であるようなマッピングのノード」を抽出できればいいのですが、Syck がサポートしている YPath だけではできないので、次のようなコードを使ってください<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> ## YAML ファイルを読み込み、ツリーに変換する
  str = ARGF.read()

@@ -268,7 +268,7 @@
 
 </code></pre></div></div>
 
-<p>これだけです。Service リソースは引数と同名の init スクリプトを探して実行します。service コマンドと同じですね<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>これだけです。Service リソースは引数と同名の init スクリプトを探して実行します。service コマンドと同じですね<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。</p>
 
 <p><a href="http://wiki.opscode.com/display/chef/Resources#Resources-Service">http://wiki.opscode.com/display/chef/Resources#Resources-Service</a></p>
 
@@ -359,7 +359,7 @@
 
 <p>こんな感じに書いてみます。execute のブロックは呼び出す前に記述しておく必要があります。</p>
 
-<p>これを実行するとメールが送られてくると思います<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。ところが、これだとファイルに変更がなくても実行されてしまい、メールが送られてきます。</p>
+<p>これを実行するとメールが送られてくると思います<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。ところが、これだとファイルに変更がなくても実行されてしまい、メールが送られてきます。</p>
 
 <p>Execute リソースのアクションは run と nothing で、デフォルトが run になっているためです。ファイルが変更されたときだけ、実行させるためには nothing にしておきます。</p>
 
@@ -386,7 +386,7 @@
 
 <p><a href="http://wiki.opscode.com/display/chef/Resources#Resources-Script">http://wiki.opscode.com/display/chef/Resources#Resources-Script</a></p>
 
-<p>ところで、マニュアルによると「Execute や Script リソースは “idempotent” を保証してないよ！　だからあなたが “idempotent” になるように記載するよう注意してね！」ということが書かれています。”idempotent” とは、何回行なっても同じ結果が得られることを指す概念だそうです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。今回はなんでもできる度をアピールするためこういった例を出しましたが、Chef はサーバ環境などを “idempotent” に保つために設計されたものであり、その思想から外れるものは別のツールに頼るのが後の幸せを買うことになるのかもしれません。</p>
+<p>ところで、マニュアルによると「Execute や Script リソースは “idempotent” を保証してないよ！　だからあなたが “idempotent” になるように記載するよう注意してね！」ということが書かれています。”idempotent” とは、何回行なっても同じ結果が得られることを指す概念だそうです<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。今回はなんでもできる度をアピールするためこういった例を出しましたが、Chef はサーバ環境などを “idempotent” に保つために設計されたものであり、その思想から外れるものは別のツールに頼るのが後の幸せを買うことになるのかもしれません。</p>
 
 <h2 id="最後に">最後に</h2>
 

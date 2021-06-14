@@ -314,7 +314,7 @@
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> str.each_char.with_index{ ... }</code></pre></figure>
 
 <p>なお IO、StringIO、ARGF にも同名のメソッドがありますが、2.0.0 では IO#bytes 等は deprecated になり、使うと warning が表示されるようになりました。
-IO#bytes の返り値の型が String#bytes と異なるのは気持ち悪いけど、かといってファイル全体を配列化したいケースはあまりなさそうなので <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>、IO の方は deprecated にしようという判断がされました。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
+IO#bytes の返り値の型が String#bytes と異なるのは気持ち悪いけど、かといってファイル全体を配列化したいケースはあまりなさそうなので <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>、IO の方は deprecated にしようという判断がされました。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></p>
 
 <p>この場合も bytes ではなく each_byte の方を使うことが推奨されています。</p>
 
@@ -406,7 +406,7 @@ p %I(a b#{1} c) #=&gt; [:a, :b1, :c]</code></pre></figure>
 
 <p>Ruby には to_a や to_s という、オブジェクトを配列や文字列に変換する一連のメソッドがあります。Ruby 2.0 ではこれに to_h という、オブジェクトをハッシュに変換するメソッドが加わりました。</p>
 
-<p>具体的には、Struct、OpenStruct、ENV を to_h でハッシュに変換できるようになっています。またコーナーケースとして、Hash は to_h で self をそのまま返します。nil は to_h で空のハッシュ ({}) を返します。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
+<p>具体的には、Struct、OpenStruct、ENV を to_h でハッシュに変換できるようになっています。またコーナーケースとして、Hash は to_h で self をそのまま返します。nil は to_h で空のハッシュ ({}) を返します。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></p>
 
 <p>これから書くプログラムでは、オブジェクトのハッシュとしての表現を返すようなメソッドは to_h という名前をつけると良いでしょう。</p>
 
@@ -420,7 +420,7 @@ p %I(a b#{1} c) #=&gt; [:a, :b1, :c]</code></pre></figure>
 
 <p>書いた人: nari</p>
 
-<p>Array#bsearch というメソッドが追加されました<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。このメソッドでは、ソートされた配列<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>について、指定した条件の要素をバイナリサーチを利用して見つけます。プログラミングコンテストなどの機会に自前で bsearch を実装しなくて済むので、個人的にはかなり嬉しい機能です。</p>
+<p>Array#bsearch というメソッドが追加されました<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>。このメソッドでは、ソートされた配列<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>について、指定した条件の要素をバイナリサーチを利用して見つけます。プログラミングコンテストなどの機会に自前で bsearch を実装しなくて済むので、個人的にはかなり嬉しい機能です。</p>
 
 <p>まず、例を示します。下記の例はすべて <a href="https://github.com/ruby/ruby/blob/v2_0_0_0/array.c#L2404-2408">Ruby 本体の RDoc</a> から引用しています。</p>
 

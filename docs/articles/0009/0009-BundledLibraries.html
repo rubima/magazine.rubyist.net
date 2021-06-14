@@ -303,7 +303,7 @@
 
 <p>文章をコンピュータで扱おう思うと、文字をコンピュータで扱わなければなりません。しかし、ご存知のとおり、基本的にコンピュータは 0 と 1 しか扱えないため、文字をコンピュータが扱える形に変換する (符号化する) 仕組みが必要となります。この仕組みが文字符号化であり、符号化の仕方の一つ一つが文字コードです。</p>
 
-<p>コンピュータの扱う情報量の最小単位は 0 か 1 によって表される情報量であり、これを bit と呼びます。通常は 8bit (1octet) を一組にして 1byte とし、これを基本にしてコンピュータは情報をやりとりします。文字も同様に byte を一単位としてやりとりすることになります。つまり、文字コード<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>とは、文字を byte の列に変換する体系のことと言えるのです。</p>
+<p>コンピュータの扱う情報量の最小単位は 0 か 1 によって表される情報量であり、これを bit と呼びます。通常は 8bit (1octet) を一組にして 1byte とし、これを基本にしてコンピュータは情報をやりとりします。文字も同様に byte を一単位としてやりとりすることになります。つまり、文字コード<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>とは、文字を byte の列に変換する体系のことと言えるのです。</p>
 
 <h3 id="文字コードの種類">文字コードの種類</h3>
 
@@ -824,7 +824,7 @@ str_utf8      = Iconv.conv('UTF-8', 'Shift_JIS', str_shiftjis) # Shift_JIS か�
   <li><a href="http://www.gnu.org/software/libiconv/">libiconv</a> に<a href="http://www2d.biglobe.ne.jp/~msyk/software/libiconv-patch.html">パッチ</a>を適用したもの</li>
 </ul>
 
-<p>その他の iconv 、例えば NetBSD Iconv (Citrus Iconv) では、いくつか<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>の機種依存文字が変換できないため、 pkgsrc 等から libiconv を別途インストールして用いる必要があります。</p>
+<p>その他の iconv 、例えば NetBSD Iconv (Citrus Iconv) では、いくつか<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>の機種依存文字が変換できないため、 pkgsrc 等から libiconv を別途インストールして用いる必要があります。</p>
 
 <p>また、 Windows の機種依存文字を含んだ Shift_JIS は cp932 を、 EUC-JP は eucJP-ms を指定する必要があります。</p>
 

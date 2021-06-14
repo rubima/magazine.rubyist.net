@@ -246,7 +246,7 @@
 
 <p>この CGI を見てもらうと、おっきなテキストフィールドがあると思うので、そこに適当な Ruby プログラムを書き込んで、「compile and disassemble」というボタンを押してみてください。ずらずらと色々な情報、つまりこの連載でちょうど説明している YARV 命令列が表示されます。</p>
 
-<p>もちろん、コンパイルして逆アセンブルするだけなので、YARV でそのプログラムを実行するわけじゃありません。そんな恐ろしいことは出来ません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>もちろん、コンパイルして逆アセンブルするだけなので、YARV でそのプログラムを実行するわけじゃありません。そんな恐ろしいことは出来ません<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。</p>
 
 <p>いろいろ試して、Ruby プログラムがこんな命令に変換されるんだ、というのを見て楽しんでもらえればいいと思います。</p>
 
@@ -278,7 +278,7 @@
 
 <h3 id="immutable-なオブジェクト">immutable なオブジェクト</h3>
 
-<p>変更できないオブジェクトを immutable なオブジェクトと言います<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。たとえば、true オブジェクトはいつも true です。123 はいつも 123 です。内容が変わったりはしません。前述した例では、true/false/nil などの固定の値、数値（1、12345678901234567890 、1.2）、シンボル（:Symbol）、正規表現（/abc/）などがこれにあたります。</p>
+<p>変更できないオブジェクトを immutable なオブジェクトと言います<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。たとえば、true オブジェクトはいつも true です。123 はいつも 123 です。内容が変わったりはしません。前述した例では、true/false/nil などの固定の値、数値（1、12345678901234567890 、1.2）、シンボル（:Symbol）、正規表現（/abc/）などがこれにあたります。</p>
 
 <p>これらのリテラル式は <strong>putobject</strong> という命令で表現されます。</p>
 
@@ -324,11 +324,11 @@ nil</code></pre></figure>
 <figure class="highlight"><pre><code class="language-text" data-lang="text">0000 putnil
 0001 end</code></pre></figure>
 
-<p>何もしない YARV 命令列が生成されました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>何もしない YARV 命令列が生成されました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。</p>
 
 <h3 id="文字列リテラル">文字列リテラル</h3>
 
-<p>次は文字列リテラルです。文字列リテラルは破壊的な変更が可能なので mutable なオブジェクトと言えます。たとえば、プログラム上同じ位置にあっても、文字列リテラルが返すオブジェクトは毎回異なります<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>次は文字列リテラルです。文字列リテラルは破壊的な変更が可能なので mutable なオブジェクトと言えます。たとえば、プログラム上同じ位置にあっても、文字列リテラルが返すオブジェクトは毎回異なります<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。</p>
 
 <p>というわけで、毎回同じオブジェクトをスタックトップに置くだけの putobject 命令は使えないので、代わりに <strong>putstring</strong> 命令を使います。</p>
 

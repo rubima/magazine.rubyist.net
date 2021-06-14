@@ -372,7 +372,7 @@ print $req-&gt;remote_host();</code></pre></figure>
 
 <p>$req は Plack::Request のインスタンスとして振る舞いますが、実際は new サブルーチンの結果として返る bless されたハッシュリファレンスです。new を使うのは慣例であり、Perl のシンタクスではありません。</p>
 
-<p>ここでは、Package::Name-&gt;sub_name(@args) <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>という呼び出しをするとパッケージ名が暗黙の第一引数としてわたされる、というのが Perl のシンタクスとしての機能です (Package::Name::sub_name(@args) でも静的なサブルーチンとしての呼び出しは可能です。ただし、この場合は継承木はたどらず、静的なパッケージ関数の呼出しとして解釈され sub_name() の引数もパッケージ名はわたされません)。</p>
+<p>ここでは、Package::Name-&gt;sub_name(@args) <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>という呼び出しをするとパッケージ名が暗黙の第一引数としてわたされる、というのが Perl のシンタクスとしての機能です (Package::Name::sub_name(@args) でも静的なサブルーチンとしての呼び出しは可能です。ただし、この場合は継承木はたどらず、静的なパッケージ関数の呼出しとして解釈され sub_name() の引数もパッケージ名はわたされません)。</p>
 
 <p>コンストラクタの中でインスタンス自身を操作したいときは、このようにも書けます。便宜上コンストラクタと呼びましたが、実際はたんなる Factory Method なので、最後に bless されたハッシュリファレンスを return してやればいいだけです。</p>
 
@@ -696,7 +696,7 @@ sub enable_if(&amp;$@) { $_add_if-&gt;(@_) }</code></pre></figure>
 
 <h3 id="言語内-dsl-の実装に見るたのしい-perl">言語内 DSL の実装に見る「たのしい Perl」</h3>
 
-<p>最後に少し Ruby と Perl のプログラミングのたのしさについて触れてみます。筆者が Perl を始めたときに感じたのは、Perl のプログラミングのたのしさでした。そして、それが身近に知っている感覚に近いという感想でした。Ruby が教えてくれた「自分が表現したいことを邪魔されない気持ちよさ」です<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。</p>
+<p>最後に少し Ruby と Perl のプログラミングのたのしさについて触れてみます。筆者が Perl を始めたときに感じたのは、Perl のプログラミングのたのしさでした。そして、それが身近に知っている感覚に近いという感想でした。Ruby が教えてくれた「自分が表現したいことを邪魔されない気持ちよさ」です<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。</p>
 
 <p>今回は触れられませんでしたが、Perl のリフレクションやメタプログラミングとなると、シンボルテーブルを直接書き換えるような、さらに自由度、万能感が高く、その一方で自らの足を打ち抜き放題のものとなってきます。また、さらに深く潜れば<a href="http://perldoc.jp/docs/perl/perlfilter.pod">ソースフィルタ</a>のような機能も提供されています。なにかを実現しようと思ったときに、手段が多岐にわたり用意されており、さらにそれらをよりよく使うための支援モジュールも CPAN に山のように登録されています。</p>
 
@@ -712,7 +712,7 @@ finalizerは故意に使いにくくしたそうだものね。</li>
   </ul>
 </blockquote>
 
-<p>この点は Perl は思想の根本が違っているように感じます。”TMTOWTDI” であることが優先され、その more than one way たちの中での優劣は感じさせません。結果として、内臓が剥き出しで手段が提供され、CPAN モジュールの生存競争のなかでデファクトスタンダードとなるラッパー API が決まってきているような面があります。言語側がまず可能性を提示するので、「あまり使わない、望ましくないプログラミングスタイルは不可能では無いけれども使いにくくする」というのは、その後の生存競争後の活動によってなされている様子が見られます<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>この点は Perl は思想の根本が違っているように感じます。”TMTOWTDI” であることが優先され、その more than one way たちの中での優劣は感じさせません。結果として、内臓が剥き出しで手段が提供され、CPAN モジュールの生存競争のなかでデファクトスタンダードとなるラッパー API が決まってきているような面があります。言語側がまず可能性を提示するので、「あまり使わない、望ましくないプログラミングスタイルは不可能では無いけれども使いにくくする」というのは、その後の生存競争後の活動によってなされている様子が見られます<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。</p>
 
 <p>このような違いを学ぶことは、自分のプログラミング習慣や設計するライブラリの API 設計などへの学びともなり、慣れ親しんだ Ruby についても理解が深まるよいきっかけとなりました。そういった学びの機会という意味でも、Perl は楽しい教材です。</p>
 

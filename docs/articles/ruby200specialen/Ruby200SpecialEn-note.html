@@ -314,7 +314,7 @@
 
 <p>BTW IO, StringIO, ARGF has methods with same names, but methods such as IO#bytes are deprecated in Ruby 2.0 and raises warning if you use the method.</p>
 
-<p>We decided to deprecate IO#bytes <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>  <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>  because no one will want to convert an entire file into an array (It may look strange that IO#bytes and String#bytes returns different result format) <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>.</p>
+<p>We decided to deprecate IO#bytes <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>  <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>  because no one will want to convert an entire file into an array (It may look strange that IO#bytes and String#bytes returns different result format) <sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>.</p>
 
 <p>each_byte is recommended over each in this situation.</p>
 
@@ -387,7 +387,7 @@ For example the following program returns nil because you won’t be able to kno
 
 <p>Ruby has methods that converts an object into array or string, such as to_a and to_s. In Ruby 2.0, there is a new method called to_h that converts an object into a hash.</p>
 
-<p>Struct, OpenStruct, and ENV cow can be converted into a hash with to_h. When a hash is passed to to_h, it just returns self. When nil is passed to to_h, it returns an empty hash ({}) .<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
+<p>Struct, OpenStruct, and ENV cow can be converted into a hash with to_h. When a hash is passed to to_h, it just returns self. When nil is passed to to_h, it returns an empty hash ({}) .<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></p>
 
 <p>Going forward, I would suggest that you name to_h to methods that returns hash representation of an object.</p>
 
@@ -401,7 +401,7 @@ For example the following program returns nil because you won’t be able to kno
 
 <p>Author: nari</p>
 
-<p>Array#bsearch <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup> takes a sorted array <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup> and matches a condition using binary search. It’s nice that you don’t have to build your own bsearch for programming competitions :-)</p>
+<p>Array#bsearch <sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup> takes a sorted array <sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup> and matches a condition using binary search. It’s nice that you don’t have to build your own bsearch for programming competitions :-)</p>
 
 <p>Here is the example. The following examples are all from <a href="https://github.com/ruby/ruby/blob/v2_0_0_0/array.c#L2404-2408">Ruby’s RDoc</a></p>
 

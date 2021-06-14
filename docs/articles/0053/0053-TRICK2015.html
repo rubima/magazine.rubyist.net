@@ -359,7 +359,7 @@
   <li>ソースコード： <a href="https://github.com/tric/trick2015/blob/master/ksk_1/entry.rb">https://github.com/tric/trick2015/blob/master/ksk_1/entry.rb</a></li>
 </ul>
 
-<p>コラッツ数列<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>の生成器です。これを、整数演算も分岐も使わずに実現しています。</p>
+<p>コラッツ数列<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>の生成器です。これを、整数演算も分岐も使わずに実現しています。</p>
 
 <h4 id="解説-1">解説</h4>
 
@@ -424,7 +424,7 @@
 
 <p>数独を解くプログラム本体は、Fiber を使って全探索をするコードが書かれています。たいへん教科書的なコードですが、Fiber での探索は慣れていないとなかなか解読が大変だと思います。でも勉強になるので、ぜひ解読してください。</p>
 
-<p>ちなみに、5 位の SAT ソルバもこの数独ソルバもどちらも NP 完全問題の解を見つけるプログラムですが、SAT ソルバは色々な問題に応用できるのに対し、この数独ソルバは数独にしか使えません<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。ということで、数独ソルバの方がより役に立たないわけですが、役に立たない方が上位に来たのは TRICK らしくていいなあと個人的に思っています。</p>
+<p>ちなみに、5 位の SAT ソルバもこの数独ソルバもどちらも NP 完全問題の解を見つけるプログラムですが、SAT ソルバは色々な問題に応用できるのに対し、この数独ソルバは数独にしか使えません<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。ということで、数独ソルバの方がより役に立たないわけですが、役に立たない方が上位に来たのは TRICK らしくていいなあと個人的に思っています。</p>
 
 <h3 id="5位-most-general-solver">5位: “Most general solver”</h3>
 
@@ -440,7 +440,7 @@
 
 <p>一定の形式をした論理式を真にするような変数割当を見つける問題を、<a href="https://ja.wikipedia.org/wiki/%E5%85%85%E8%B6%B3%E5%8F%AF%E8%83%BD%E6%80%A7%E5%95%8F%E9%A1%8C">充足可能性問題 (Satisfiability problem, SAT)</a> といいます。</p>
 
-<p>以下、Ruby の式を使って説明します。x &amp;&amp; !y という式が与えられたとき、これを真にするには x = true; y = false としておけばいいです。x &amp;&amp; !x は、x にどのような値を入れても真にすることはできません<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。こういうふうに、式が与えられたとき、それを真にするように変数の値を決めていく問題が SAT です。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
+<p>以下、Ruby の式を使って説明します。x &amp;&amp; !y という式が与えられたとき、これを真にするには x = true; y = false としておけばいいです。x &amp;&amp; !x は、x にどのような値を入れても真にすることはできません<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。こういうふうに、式が与えられたとき、それを真にするように変数の値を決めていく問題が SAT です。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></p>
 
 <p>そして SAT ソルバとは、SAT 問題を解いてくれるツールのことです。有名な SAT ソルバには <a href="http://minisat.se/">MiniSAT</a> や <a href="http://www.sat4j.org/">Sat4j</a> などがあり、さらにこれらを改良したり組み込んだりした亜種がいろいろ存在します。SAT ソルバは、何か解きたい問題があるときに、その問題を SAT に変換し、SAT ソルバで解を見つけて、解を逆変換する、という風に使われます。興味のある人は調べてください。</p>
 
@@ -465,7 +465,7 @@
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">-&gt;(&amp;_){_["","ev"+"al","実行したいコード"]}[&amp;:send]</code></pre></figure>
 
-<p>これがどのように動くかは解説しません<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>が、なんとこれで</p>
+<p>これがどのように動くかは解説しません<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>が、なんとこれで</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">eval("実行したいコード")</code></pre></figure>
 
@@ -475,7 +475,7 @@
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">%I(  #{ ?s + ?e + ?n + ?d }  )[0]</code></pre></figure>
 
-<p>これで :send が得られます。残念ながら %I( の 3 文字だけはこれ以上分割できませんが、それ以外は無事 2 文字単位バラバラが実現できました<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。%I() は必要性がよくわからない機能ですが、このようなプログラムのために生まれたのだと納得できました。</p>
+<p>これで :send が得られます。残念ながら %I( の 3 文字だけはこれ以上分割できませんが、それ以外は無事 2 文字単位バラバラが実現できました<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。%I() は必要性がよくわからない機能ですが、このようなプログラムのために生まれたのだと納得できました。</p>
 
 <h3 id="shinh-賞-most-fragile">shinh 賞: “Most fragile”</h3>
 
@@ -599,7 +599,7 @@ hello trick</code></pre></figure>
 
 <p>?X が「文字リテラル」であることはご存知の人も多いでしょう。Ruby において文字は 1 文字の文字列なので、つまり “X” と同じ意味です。しかしこれにエスケープシーケンスが使えることは、あまり知られていないかも知れません。たとえば ?\n で “\n” と同じ意味になります。</p>
 
-<p>それから、存在しないエスケープシーケンスを使ったときは、エスケープ記号が無視されるという挙動を知っておく必要があります。”\A” と書いても、そういうエスケープシーケンスはないので、”A” と書いたのと同じになります。<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup></p>
+<p>それから、存在しないエスケープシーケンスを使ったときは、エスケープ記号が無視されるという挙動を知っておく必要があります。”\A” と書いても、そういうエスケープシーケンスはないので、”A” と書いたのと同じになります。<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup></p>
 
 <p>例として、?\A-p を解釈してみます。?\A の部分は、”\A” と同じ意味なので、”A” という文字列になります。p はデバッグ出力に使う Kernel#p メソッドですが、無引数で呼び出すと nil を返します。よってこの式は、”A” - nil を計算することになります。String#- というメソッドはないですが、プログラムの末尾で Object#- を定義しています。このメソッドは単に self を返すので、この式は “A” を返すことになります。このように得られた文字列を A から Z まで結合し、最後に tr(“A-Z”, “_”) を実行するので、基本的にはアンダースコアばかりの文字列になります。</p>
 

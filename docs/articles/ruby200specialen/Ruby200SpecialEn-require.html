@@ -302,7 +302,7 @@ $MAGIC = "/bar"
 However, since you can change the return value of <em>to_path</em> method without changing contents, we had to stop calling it for String objects in order to guarantee the file path is not changed.</p>
 
 <p>You can still add non-String objects to $LOAD_PATH. In this case, Ruby 2.0 still calls <em>to_path</em> for the objects but you won’t get any benefit from the performance improvement.
-I don’t recommend it<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>.</p>
+I don’t recommend it<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
 
 <p>In addition, you can find very interesting gimmick in the implementation of the logic detecting the changes on $LOAD_PATH and $LOADED_FEATURES.
 It uses share flag of the array inside $LOAD_PATH and $LOADED_FEATURES.

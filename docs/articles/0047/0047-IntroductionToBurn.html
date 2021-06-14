@@ -261,7 +261,7 @@ burn -p -c # -c で Chrome が起動します。-c を外すと Firefox が起�
 
 <p>LL という制約条件を外せば、例えば有名な開発環境としては <a href="http://www.cc65.org/">cc65</a> (C言語で記述) や <a href="http://www.magicengine.com/mkit/">nesasm</a> (アセンブリで記述) などがありますが、それらも利用にあたってはアセンブラや 6502 CPU を始めとするハードウェアのアドレス空間等についての知識が必要で、しかも最終的に .nes ファイルにコンパイルするまでには複数の別ユーティリティを利用してアセンブリを生成していく必要があるなど、開発の敷居が大変高いものでした。</p>
 
-<p>burn を使うと、ruby (&gt;=1.9.1) と gcc が動く PC さえあれば、自作の .nes の ROM を簡単に作成できます (Windows 環境では gcc すら不要なことは特筆すべき点です)。ドット絵も FM 音源の操作も DSL で記述するため、特殊なソフトは必要がありません。DSL を記述できるお気に入りのテキストエディタさえあれば、.nes ファイルが作れるわけです<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>burn を使うと、ruby (&gt;=1.9.1) と gcc が動く PC さえあれば、自作の .nes の ROM を簡単に作成できます (Windows 環境では gcc すら不要なことは特筆すべき点です)。ドット絵も FM 音源の操作も DSL で記述するため、特殊なソフトは必要がありません。DSL を記述できるお気に入りのテキストエディタさえあれば、.nes ファイルが作れるわけです<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。</p>
 
 <h2 id="burn-を支える技術">burn を支える技術</h2>
 
@@ -389,7 +389,7 @@ SimpleTranspiler.ruby2c(Ripper.sexp("printf \"hogehoge\" if i==2 and j%2")) # if
 
 <p>まだ開発の途中段階で、非常に限られた ruby の記述のみサポートしています。上記のように単純な例であれば変換できますが、to_i のような ruby の組み込みメソッドの変換やブロック構文などの基本的な文法ですら現在はサポートしていません。</p>
 
-<p>この ruby2c の処理は、本当は自前で実装なんてせずに rubygem から使える gem を持ってこれたら良かったのですが、今回の目的に合う ruby2c トランスレータが見つからなかったため、結局自作したという経緯があります<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>この ruby2c の処理は、本当は自前で実装なんてせずに rubygem から使える gem を持ってこれたら良かったのですが、今回の目的に合う ruby2c トランスレータが見つからなかったため、結局自作したという経緯があります<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。</p>
 
 <h3 id="音楽やサウンドエフェクトも-dsl-で記述">音楽やサウンドエフェクトも DSL で記述</h3>
 

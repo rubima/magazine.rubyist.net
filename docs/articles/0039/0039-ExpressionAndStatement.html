@@ -390,12 +390,12 @@ $</code></pre></figure>
 
 <h3 id="pythonの文">Pythonの「文」</h3>
 
-<p>先ほどの Ruby と同様、クラス定義<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>全体が大きな「文」でしたね。</p>
+<p>先ほどの Ruby と同様、クラス定義<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>全体が大きな「文」でしたね。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">class Person(object):
   ...</code></pre></figure>
 
-<p>次は Person クラスの定義の中を見ていきます。メソッド定義（関数定義<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>）も「文」です。</p>
+<p>次は Person クラスの定義の中を見ていきます。メソッド定義（関数定義<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>）も「文」です。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">  def __init__(self, name, birth_year):
     ...</code></pre></figure>
@@ -403,7 +403,7 @@ $</code></pre></figure>
 <figure class="highlight"><pre><code class="language-text" data-lang="text">  def hi(self):
     ...</code></pre></figure>
 
-<p>メソッド定義の中に行きます。まずは <strong>init</strong> メソッド定義の中ですが、変数への代入<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>も「文」でしたね。</p>
+<p>メソッド定義の中に行きます。まずは <strong>init</strong> メソッド定義の中ですが、変数への代入<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>も「文」でしたね。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">    self.__name = name</code></pre></figure>
 
@@ -418,7 +418,7 @@ $</code></pre></figure>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">person = Person('Taro', 1989)</code></pre></figure>
 
-<p>そして print で画面出力をしている部分も、やはり「文」になります<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>そして print で画面出力をしている部分も、やはり「文」になります<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">print person.hi()</code></pre></figure>
 
@@ -439,15 +439,15 @@ $</code></pre></figure>
 <figure class="highlight"><pre><code class="language-text" data-lang="text">    return 'My name is %s, I was born in %d.' \
       % (self.__name, self.__birth_year)</code></pre></figure>
 
-<p>の「’My name is %s, I was born in %d.’ % (self.__name, self.__birth_year)」の部分は「式」になります。さらに細かく見ると「%」演算子の左側の文字列単体「’My name is %s, I was born in %d.’」も式、「%」演算子の右側のタプル<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>「(self.__name, self.__birth_year)」も式、さらにタプルの中の変数 self.__name と self.__birth_year も式になります。</p>
+<p>の「’My name is %s, I was born in %d.’ % (self.__name, self.__birth_year)」の部分は「式」になります。さらに細かく見ると「%」演算子の左側の文字列単体「’My name is %s, I was born in %d.’」も式、「%」演算子の右側のタプル<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>「(self.__name, self.__birth_year)」も式、さらにタプルの中の変数 self.__name と self.__birth_year も式になります。</p>
 
 <p>次に行きましょう。 Person インスタンスを生成して変数 person に代入している文のうち、</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">person = Person('Taro', 1989)</code></pre></figure>
 
-<p>まず Person クラスを参照している変数 Person<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup> が「式」になります。次に、 Person インスタンスを生成する Person()<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup> も「式」になります。さらにその引数である ‘Taro’ と 1989 もそれぞれが「式」になります。</p>
+<p>まず Person クラスを参照している変数 Person<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup> が「式」になります。次に、 Person インスタンスを生成する Person()<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup> も「式」になります。さらにその引数である ‘Taro’ と 1989 もそれぞれが「式」になります。</p>
 
-<p>最後の print 文ですが、これも変数参照している person が「式」、そしてメソッド呼び出しをしている person.hi()<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup> も「式」になります。</p>
+<p>最後の print 文ですが、これも変数参照している person が「式」、そしてメソッド呼び出しをしている person.hi()<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup> も「式」になります。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">print person.hi()</code></pre></figure>
 

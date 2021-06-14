@@ -270,7 +270,7 @@
 
 <p>ところが時間が足りなくなってしまったので、紹介できたのは用意したスライドの中のいくつかだけでした。</p>
 
-<p>まずは Git を知ること。WEB+DB PRESS Vol.50 特集 2 の Junio C Hamano さんが書いた記事をおすすめしていました<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。 つぎに良いコミットを目指そうというプラクティスでは”良い”とは何かを説明されました。 他人に読まれてはずかしくないコミットオブジェクトのつくりかた、コミットコメントの書き方を実例を交えて紹介しました。 “ソーシャルコーティングとしてのプログラミングとは日々のコミットを紡ぐ作業”だと述べられて、素敵な言いかただなと思いました。</p>
+<p>まずは Git を知ること。WEB+DB PRESS Vol.50 特集 2 の Junio C Hamano さんが書いた記事をおすすめしていました<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。 つぎに良いコミットを目指そうというプラクティスでは”良い”とは何かを説明されました。 他人に読まれてはずかしくないコミットオブジェクトのつくりかた、コミットコメントの書き方を実例を交えて紹介しました。 “ソーシャルコーティングとしてのプログラミングとは日々のコミットを紡ぐ作業”だと述べられて、素敵な言いかただなと思いました。</p>
 
 <p>また”人のバグを直す”というプラクティスを紹介されましたが、Rails はバグの宝庫なのでオススメ(?)だそうです。 人のプロダクトを使ってみてバグを踏んだら直して pull request するのはマナーとのことで、pull request するときのプラクティスも紹介されました。</p>
 
@@ -347,7 +347,7 @@ Ruby がサポートするプラットフォームはいくつかの段階にわ
 
 <p>Windows での Ruby のバイナリパッケージはいくつかあるが、おすすめは Windows の作法に則っている ActiveScriptRuby (arton さんが作成)とのことです。</p>
 
-<p>拡張ライブラリをつくったり Gem の作成には自分でビルドできる環境が必要ですが、その環境は<a href="http://tatsu-zine.com/books/winrubybuild">Ruby 環境構築講座 Windows 編</a><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>を読んでつくる事ができ、Windows で Ruby を使って開発できることを伝えました。</p>
+<p>拡張ライブラリをつくったり Gem の作成には自分でビルドできる環境が必要ですが、その環境は<a href="http://tatsu-zine.com/books/winrubybuild">Ruby 環境構築講座 Windows 編</a><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>を読んでつくる事ができ、Windows で Ruby を使って開発できることを伝えました。</p>
 
 <p>次に話題は Rails に移り、arton さんが作成された Ennou (演能)というライブラリを紹介されました。Ruby on Rails による Web アプリケーションは起動に時間がかかるため、”仮想ホスト＋マルチプロセスで Rails は一度起動したら起動しっぱなし”が効率的であると考えられます。Windows には Http.sys というカーネルモードドライバがありますが、Ennou はこれを利用する Rack ハンドラでマルチプロセスを実現しています。</p>
 
@@ -357,7 +357,7 @@ Ruby がサポートするプラットフォームはいくつかの段階にわ
 
 <p>このように Windows だからといって Ruby や Rails を諦める必要はない、Windows で Rails は運用できて、Windows Azure は Rails の運用プラットフォームとして有力な選択肢であると述べられました。</p>
 
-<p>このあと時間が多少あまったので、arton さんは Ruby のマルチスレッドについて説明されました。 ご存知の方が多いかと思いますが、Ruby のマルチスレッドはグリーンスレッドなので普通は並列実行はないです。 ただし IO 待ちが発生したときだけ並列実行ができます。 これは Ruby の IO ライブラリは IO の待機状態になるときに GVL を解放しているためで、IO が完了したら GVL を待って実行を継続します<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。 並行動作は C の拡張ライブラリで制御可能で、さきほど紹介した Ennou は並行動作に対応したライブラリだと付け加えられました。</p>
+<p>このあと時間が多少あまったので、arton さんは Ruby のマルチスレッドについて説明されました。 ご存知の方が多いかと思いますが、Ruby のマルチスレッドはグリーンスレッドなので普通は並列実行はないです。 ただし IO 待ちが発生したときだけ並列実行ができます。 これは Ruby の IO ライブラリは IO の待機状態になるときに GVL を解放しているためで、IO が完了したら GVL を待って実行を継続します<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。 並行動作は C の拡張ライブラリで制御可能で、さきほど紹介した Ennou は並行動作に対応したライブラリだと付け加えられました。</p>
 
 <p>Windows に詳しい arton さんならではの発表になりました。</p>
 
@@ -374,9 +374,9 @@ Ruby がサポートするプラットフォームはいくつかの段階にわ
 <p>最後の一般講演は mrkn さんです。mrkn さんは CRuby のコミッタで bigdecimal や Mac OS X のメンテナをされいます。 数値系に興味があるということで、Float や Rational の話をされました。</p>
 
 <p><img src="../../images/0037-TochigiRubyKaigi04Report/05.jpg" alt="05.jpg" />
-まず Float について説明されました。Ruby の Float class は C でいう double のラッパで Boxing している。オブジェクトをアロケートする必要があるので生成コストは安くはない。また Float は実数の近似値であって、ほとんどの実数を正確に表せないという性質を詳しく説明されました。Ruby は小数の表記を Float として解釈するのだけれど、先に説明した Float の性質を知らない人によって Ruby の redmine にはたくさんの Float に関する issue があげられているそうです<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。Float に関しては <a href="http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">“What Every Computer Scientist Should Know About Floating-Point Arithmetic”</a> を読んでほしいと仰っていました。</p>
+まず Float について説明されました。Ruby の Float class は C でいう double のラッパで Boxing している。オブジェクトをアロケートする必要があるので生成コストは安くはない。また Float は実数の近似値であって、ほとんどの実数を正確に表せないという性質を詳しく説明されました。Ruby は小数の表記を Float として解釈するのだけれど、先に説明した Float の性質を知らない人によって Ruby の redmine にはたくさんの Float に関する issue があげられているそうです<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。Float に関しては <a href="http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">“What Every Computer Scientist Should Know About Floating-Point Arithmetic”</a> を読んでほしいと仰っていました。</p>
 
-<p>次に本題の Rational を紹介されました。Rational を使えば Float がもつ誤差なくすことができる。 けれでもリテラルがないので、知らない人には届かない。知っている人は Rational を使って書く、というジレンマがあります。そこで mrkn さんは小数表記を Rational に解釈してくれるパッチを書いたそうです。<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup></p>
+<p>次に本題の Rational を紹介されました。Rational を使えば Float がもつ誤差なくすことができる。 けれでもリテラルがないので、知らない人には届かない。知っている人は Rational を使って書く、というジレンマがあります。そこで mrkn さんは小数表記を Rational に解釈してくれるパッチを書いたそうです。<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup></p>
 
 <p>Float で発生していた誤差は Rational を使うと誤差なく計算できることを実例で説明されました。</p>
 

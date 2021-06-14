@@ -368,10 +368,10 @@ win32-file パッケージを使うことによって、このようなプロパ
    fh.read_only = true
  }</code></pre></figure>
 
-<p>さらに、ファイルに関して、セキュリティ情報の閲覧と設定を行うことができます。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>
+<p>さらに、ファイルに関して、セキュリティ情報の閲覧と設定を行うことができます。<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>
 セキュリティ情報を表しているキーと値の組のハッシュを取得するためには、
 File.get_permissions を使います。しかし、値は整数値であるため、それらの値
-を File.securities を用いて可読な表現に変換する必要があります。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup></p>
+を File.securities を用いて可読な表現に変換する必要があります。<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/file"
 
@@ -389,7 +389,7 @@ File.get_permissions を使います。しかし、値は整数値であるた�
 <p>最後に、いくつかの中心となる File メソッドは win32-file において再定義されています。
 なぜなら、それらは Win32 システムのために実装されたものではないか、あるいは、うまく
 動かなかったためです。原稿執筆時点において、File.blockdev?, File.chardev?, 
-File.size がそのようなメソッドです。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup></p>
+File.size がそのようなメソッドです。<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup></p>
 
 <h4 id="win32-sound">WIN32-SOUND</h4>
 
@@ -413,7 +413,7 @@ File.size がそのようなメソッドです。<sup id="fnref:3" role="doc-not
 <p>このパッケージを用いると、Win32 システム上において、ショートカットの作成と設定を
 行うこができます。ショートカットは、ファイルやプログラムへのリンク(.lnkファイル)
 です。典型的に、左下に小さな矢印のあるアイコンとして、デスクトップ上やエクスプロー
-ラ上に表示されています。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup></p>
+ラ上に表示されています。<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup></p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> require "win32/shortcut"
  include Win32
@@ -426,7 +426,7 @@ File.size がそのようなメソッドです。<sup id="fnref:3" role="doc-not
  s.save</code></pre></figure>
 
 <p>上記の例では、”notepad.exe” への “test.lnk” というショートカットを ‘C:' ディレ
-クトリ中に作成しました。そして、”test link” という description を付けました。<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>
+クトリ中に作成しました。そして、”test link” という description を付けました。<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>
 Shortcut#working_directory は、実行可能ファイルが実行されるときのディレクトリ
 を表すもので、この例では ‘C:' です。
 Shortcut#show_cmd は、GUI アプリケーションが、どのように実行開始されるのかを示
@@ -466,7 +466,7 @@ Shortcut#show_cmd は、GUI アプリケーションが、どのように実行�
    "type"         =&gt; { "days_interval" =&gt; 2 }
  }</code></pre></figure>
 
-<p>トリガーは、ハッシュを用いて記述します。<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>
+<p>トリガーは、ハッシュを用いて記述します。<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>
 上記のトリガーを用いると、(今年の)4月11日の7:14amにタスクが開始し、毎日一度、
 タスクが実行されます。用意したトリガーを用いて、新しいタスクの項目を、以下の通
 りに作成できます。</p>
@@ -475,7 +475,7 @@ Shortcut#show_cmd は、GUI アプリケーションが、どのように実行�
  t.application_name = "ruby foo.exe"
  t.save</code></pre></figure>
 
-<p>このサンプルでは、実際にタスクスケジューラ中に項目を作成しています。<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>
+<p>このサンプルでは、実際にタスクスケジューラ中に項目を作成しています。<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>
 そして、この項目をセーブするのはもちろん、実際に実行すべきプログラムを指定しな
 ければなりません。TaskScheduler#save が呼ばれるまで、タスクの項目は生成され
 ません。ここでのサンプルは、便宜的に、以下のように簡単に記述できます。</p>
@@ -505,7 +505,7 @@ Shortcut#show_cmd は、GUI アプリケーションが、どのように実行�
 </ul>
 
 <p>これ以外にも、実験的なものとして、ネイティブスレッドを利用するための 
-win32-thread を、Windows の fiber API<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>
+win32-thread を、Windows の fiber API<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>
 を用いて開発中です。</p>
 
 <h3 id="まとめ">まとめ</h3>

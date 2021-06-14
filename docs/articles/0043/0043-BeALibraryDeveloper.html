@@ -317,7 +317,7 @@
  context.stroke
  context.restore</code></pre></figure>
 
-<p>このコードは、<em>save</em> で現在の描画情報を保存し、<em>restore</em> で保存した状態まで戻しています。<em>save</em> と <em>restore</em> の間で <em>circle</em> と <em>stroke</em> を使って円を描いています。円を描くために変更された描画情報は <em>restore</em> のところで元に戻ります<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+<p>このコードは、<em>save</em> で現在の描画情報を保存し、<em>restore</em> で保存した状態まで戻しています。<em>save</em> と <em>restore</em> の間で <em>circle</em> と <em>stroke</em> を使って円を描いています。円を描くために変更された描画情報は <em>restore</em> のところで元に戻ります<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。</p>
 
 <p>では、このコードよりもよいコードで書けるようにするために API を改良できないか考えてみましょう。より「よい」の基準はいくつもあります。まずは自分のより「よい」の基準で考えてみてください。</p>
 
@@ -357,7 +357,7 @@
 
 <p>ところで、これを見て <em>File.open</em> ではなく <em>Kernel.#open</em> を使ったほうがよいと思う人もいることでしょう。理由は「記述が短い」や「ファイル以外にも対応できる」あたりでしょうか。しかし、私は <em>File.open</em> を使ったほうがよいと考えています。理由は「ファイルを開くことが明確なコードになるから」です。ファイルしか扱わない場所ではファイルしか扱わない API を使うことでコードで表現したい意図が明確になります。一方、ファイル以外にも様々な入力を受け付けたい場合は <em>Kernel.#open</em> を使います。</p>
 
-<p>この考えは <em>end_with?</em><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup> と <em>/\z/</em><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup> の使い分けにも応用が効きます。</p>
+<p>この考えは <em>end_with?</em><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup> と <em>/\z/</em><sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup> の使い分けにも応用が効きます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"> def ruby_script?(path)
    path.end_with?(".rb")
@@ -458,13 +458,13 @@
 
 <h4 id="補足-メソッド名に使えないプロパティー名はないの">補足: メソッド名に使えないプロパティー名はないの？</h4>
 
-<p>発表時には触れなかったことについて補足します<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+<p>発表時には触れなかったことについて補足します<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。</p>
 
-<p>gtk2 gem は <a href="http://www.gtk.org/">GTK+</a> という GUI ライブラリーを Ruby から使えるようにしたライブラリーです。そのため、プロパティー名は GTK+ の規則に従います。プロパティー名として Ruby のメソッド名で使えない文字が使われていないか気になるところです。実はプロパティー名には「-」も使うことができます<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>。これだけが Ruby のメソッド名では使えない文字です。ただし、プロパティー名として「-」の代わりに「_」を使っても GTK+ 内部<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>で「-」に正規化するため、gtk2 gem で「default-height」プロパティー用のメソッド名として「default_height」を使えば、Ruby から見ても GTK+ から見ても問題も違和感もありません。</p>
+<p>gtk2 gem は <a href="http://www.gtk.org/">GTK+</a> という GUI ライブラリーを Ruby から使えるようにしたライブラリーです。そのため、プロパティー名は GTK+ の規則に従います。プロパティー名として Ruby のメソッド名で使えない文字が使われていないか気になるところです。実はプロパティー名には「-」も使うことができます<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>。これだけが Ruby のメソッド名では使えない文字です。ただし、プロパティー名として「-」の代わりに「_」を使っても GTK+ 内部<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>で「-」に正規化するため、gtk2 gem で「default-height」プロパティー用のメソッド名として「default_height」を使えば、Ruby から見ても GTK+ から見ても問題も違和感もありません。</p>
 
 <p>なお、仮にどうしても使えない文字があった場合はどうしますか？　私ならそのプロパティー用のメソッドは用意せず、用意できるものだけ用意します。メソッドを用意できないプロパティーはそもそも Ruby らしくない名前なので Ruby の属性と似せることはできません。</p>
 
-<p>では、<em>window[“default-height”]</em><sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>のように取得できるようにするのはどうでしょうか。これについてはもう少し後の補足で触れます。そこでは <em>[]</em> を使うときはどんなときかを考えます。</p>
+<p>では、<em>window[“default-height”]</em><sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>のように取得できるようにするのはどうでしょうか。これについてはもう少し後の補足で触れます。そこでは <em>[]</em> を使うときはどんなときかを考えます。</p>
 
 <p>なお、Ruby のメソッド名として使えないプロパティー名の値は <em>get_property</em> を使えば取得できるので、Ruby らしさから外れたものはそれらを使うという割り切りはアリです。ただし、これは多くのプロパティー名が Ruby のメソッド名としても使える場合に限ります。多くのプロパティー名が Ruby のメソッド名として使えない場合はプロパティーと Ruby の属性は似ていないということです。無理やり Ruby の属性と似せようとしてはいけません。思い出すものを間違っています。</p>
 
@@ -472,7 +472,7 @@
 
 <h4 id="思い出すことは難しい">思い出すことは難しい</h4>
 
-<p>ところで、<em>get_property</em> のよりよい API を考えられましたか？　「思い出す」というのは意外と「難しい」と思いませんでしたか？<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>　そう、難しいんです。「思い出せ！？」「Ruby らしいって何！？」そう思ったことでしょう。</p>
+<p>ところで、<em>get_property</em> のよりよい API を考えられましたか？　「思い出す」というのは意外と「難しい」と思いませんでしたか？<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>　そう、難しいんです。「思い出せ！？」「Ruby らしいって何！？」そう思ったことでしょう。</p>
 
 <h2 id="-6"><img src="../../images/0043-BeALibraryDeveloper/remember-is-difficult.png" alt="remember-is-difficult.png" /></h2>
 <p>すでに知っているはずなのにどうして思い出すことが難しいのでしょう。それは、「想像するよりも思い出す」という経験をしていないからです。今のあなたの状態は「経験した」という状態ではなく、「読んだだけ」という状態です。</p>
@@ -521,7 +521,7 @@
 
 <p>ここの <em>record</em> はテーブルの中の 1 つのレコードです。このレコードのカラムの値にアクセスすることを考えます。<em>Hash</em> のようにアクセスする方法とメソッドでアクセスする方法ではどちらがよいでしょうか。レコードをカラムが集まったコレクションと考えるなら <em>Hash</em> のようにアクセスする方法が Ruby らしいですし、オブジェクトと考えるならメソッドでアクセスする方法が Ruby らしいです。</p>
 
-<p>さて、それでは GUI のウィジェットであるウィンドウはプロパティーが集まったコレクションと考えられるでしょうか。ウィンドウの主要な機能はプロパティーの操作ではなく GUI 関連の機能です。そのため、コレクションと考えるよりもオブジェクトと考える方が妥当です。よって、プロパティーにアクセスするために <em>[]</em> を使うのは Ruby らしくありません<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote">9</a></sup>。</p>
+<p>さて、それでは GUI のウィジェットであるウィンドウはプロパティーが集まったコレクションと考えられるでしょうか。ウィンドウの主要な機能はプロパティーの操作ではなく GUI 関連の機能です。そのため、コレクションと考えるよりもオブジェクトと考える方が妥当です。よって、プロパティーにアクセスするために <em>[]</em> を使うのは Ruby らしくありません<sup id="fnref:9" role="doc-noteref"><a href="#fn:9" class="footnote" rel="footnote">9</a></sup>。</p>
 
 <h4 id="練習-4-明示的な初期化が必要なライブラリー">練習 4: 明示的な初期化が必要なライブラリー</h4>
 
@@ -622,7 +622,7 @@
 
 <p>自動でインストールしない場合についても考えました。自動でインストールしない場合は、使いたいなら手動でシステムにパッケージをインストールします。どうせ同じことをするのです。私は <a href="http://rubygems.org/gems/nokogiri">nokogiri gem</a> をインストールするときに、<strong>gem install nokogiri</strong> して失敗して、<strong>sudo apt-get install …</strong> して、再度 <strong>gem install nokogiri</strong> をしていました。</p>
 
-<p>どうせ手動でパッケージをインストールするのであれば、最初から自動でインストールしても同じことです。もし、パッケージを追加でインストールすることをシビアに考えている人はインストールする前に依存しているライブラリーを調べるはずです。それらの人のためには、インストール方法のドキュメントとは別の場所に依存ライブラリーをリストアップしておくことができます<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote">10</a></sup>。本当にシビアな人は調べるはずです。これは、パッケージでインストールしないで自分でビルドしてインストールする人にも当てはまります。</p>
+<p>どうせ手動でパッケージをインストールするのであれば、最初から自動でインストールしても同じことです。もし、パッケージを追加でインストールすることをシビアに考えている人はインストールする前に依存しているライブラリーを調べるはずです。それらの人のためには、インストール方法のドキュメントとは別の場所に依存ライブラリーをリストアップしておくことができます<sup id="fnref:10" role="doc-noteref"><a href="#fn:10" class="footnote" rel="footnote">10</a></sup>。本当にシビアな人は調べるはずです。これは、パッケージでインストールしないで自分でビルドしてインストールする人にも当てはまります。</p>
 
 <p>長くなりましたが、パッケージを自動でインストールするようにしても、よく考えてみれば、最初に抱くイメージほど変なことではないということです。</p>
 
@@ -630,7 +630,7 @@
 
 <p>もう 1 つ補足します。これも長いです。</p>
 
-<p>パッケージを自動でインストールするという方法をどうやって思いつくかということについてです<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote">11</a></sup>。</p>
+<p>パッケージを自動でインストールするという方法をどうやって思いつくかということについてです<sup id="fnref:11" role="doc-noteref"><a href="#fn:11" class="footnote" rel="footnote">11</a></sup>。</p>
 
 <p>パッケージを自動でインストールする方法は他のライブラリーではやっていません。そのため、知っていることを「思い出す」ということはできません。目指したい場所を思い出してみつけることはできるがそこまでの道のりは思い出すことができない、ということはよくあります。少し前の <em>Gst.init</em> を呼ばなくても済むようにしたいという例もこのケースです。</p>
 
@@ -665,7 +665,7 @@
                 前のなんとかなりそうな場所ベースで近づけた場所
                  (こういう考え方はしていなそう)</code></pre></figure>
 
-<p>さて、みなさんは「今いる場所」と「ゴール」がわかっているとき、どうしているでしょうか<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote">12</a></sup>。</p>
+<p>さて、みなさんは「今いる場所」と「ゴール」がわかっているとき、どうしているでしょうか<sup id="fnref:12" role="doc-noteref"><a href="#fn:12" class="footnote" rel="footnote">12</a></sup>。</p>
 
 <h4 id="おさらい-1">おさらい</h4>
 

@@ -478,7 +478,7 @@ cgi.rb の読み込みが遅いのは、ファイルサイズも原因ですが�
 そもそもクッキーの仕様 (<a href="http://www.ietf.org/rfc/rfc2965">RFC2965</a>) では複数の値を取るようには書かれていませんし、かりに複数の値を取ることができたとしても Array と完全互換である必要はまったくないはずです。</p>
 
 <p>そこで、DelegateClass(Array) を使わないように書き換えてみましょう。
-以下がそのパッチです<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>。</p>
+以下がそのパッチです<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">--- /usr/local/lib/ruby/1.8/cgi.rb	2007-05-23 06:58:09.000000000 +0900
 +++ cgi.rb	2008-02-05 12:27:26.000000000 +0900
@@ -615,7 +615,7 @@ CGI::unescape() は、たとえば「word=%E6%97%A5%E6%9C%AC%E8%AA%9E」のよ�
     cookies
   end</code></pre></figure>
 
-<p>しかし CGI::Cookie.new() は Hash に変換しなくても名前と値をそのまま受け取ることができるので、Hash に変換するのをやめます<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>。</p>
+<p>しかし CGI::Cookie.new() は Hash に変換しなくても名前と値をそのまま受け取ることができるので、Hash に変換するのをやめます<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">  def Cookie::parse(raw_cookie)
     cookies = Hash.new([])
@@ -664,7 +664,7 @@ CGI::unescape() は、たとえば「word=%E6%97%A5%E6%9C%AC%E8%AA%9E」のよ�
       super(@value)
     end</code></pre></figure>
 
-<p>これもやはり無駄なので、引数が Hash かどうかを調べ、Hash でないときはより単純で高速な処理となるようにしました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote">3</a></sup>。
+<p>これもやはり無駄なので、引数が Hash かどうかを調べ、Hash でないときはより単純で高速な処理となるようにしました<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">3</a></sup>。
 これにより、余計な Hash が生成されるのを回避できます。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">    def initialize(name = "", *value)
@@ -706,7 +706,7 @@ CGI::unescape() は、たとえば「word=%E6%97%A5%E6%9C%AC%E8%AA%9E」のよ�
 そのため、例えば 10GB の動画ファイルを送られてきた場合、それを正直に受け取ってしまうため、サーバ資源を食い荒らされてしまいます。</p>
 
 <p>これを防ぐには、Content-Length の値を確認し、大きすぎるようであれば受信しないようにする必要があります。
-以下がそのためのパッチです<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote">4</a></sup>。</p>
+以下がそのためのパッチです<sup id="fnref:4" role="doc-noteref"><a href="#fn:4" class="footnote" rel="footnote">4</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">--- /usr/local/lib/ruby/1.8/cgi.rb	2008-02-05 17:10:03.000000000 +0900
 +++ cgi.rb	2008-02-05 13:16:03.000000000 +0900
@@ -774,7 +774,7 @@ CGI::unescape() は、たとえば「word=%E6%97%A5%E6%9C%AC%E8%AA%9E」のよ�
 つまり、たとえば 1 万個のパラメータがあれば 1 万個のテンポラリファイルがサーバに作成されてしまいます。</p>
 
 <p>これだと都合が悪いので、multipart 時にはパラメータの数をチェックすべきです。
-以下がそのためのパッチです(<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote">5</a></sup>)。</p>
+以下がそのためのパッチです(<sup id="fnref:5" role="doc-noteref"><a href="#fn:5" class="footnote" rel="footnote">5</a></sup>)。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">--- /usr/local/lib/ruby/1.8/cgi.rb	2008-02-05 17:10:03.000000000 +0900
 +++ cgi.rb	2008-02-05 13:16:03.000000000 +0900
@@ -976,7 +976,7 @@ PHP では通常の値は $_REQUEST[‘name’] で取り出し、ファイル�
 そうすれば FastCGI や SCGI に対応させるときも、それ用のクラスを追加するだけで済んだことでしょう。</p>
 
 <p>また、たとえば Ruby 用の FastCGI ライブラリである fcgi の中の fcgi.rb を見ると、CGI クラスを FastCGI でも使えるようにするため、かなりトリッキーなことをしています。
-作者の苦労が偲ばれます<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote">6</a></sup>。</p>
+作者の苦労が偲ばれます<sup id="fnref:6" role="doc-noteref"><a href="#fn:6" class="footnote" rel="footnote">6</a></sup>。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text"># There is no C version of 'each_cgi'
 # Note: for ruby-1.6.8 at least, the constants CGI_PARAMS/CGI_COOKIES
@@ -1036,7 +1036,7 @@ class FCGI
   end
 end</code></pre></figure>
 
-<p>これを見ると、cgi.rb の設計に引きずられて他のライブラリの設計もまずくなるという悪循環を感じます<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote">7</a></sup>。
+<p>これを見ると、cgi.rb の設計に引きずられて他のライブラリの設計もまずくなるという悪循環を感じます<sup id="fnref:7" role="doc-noteref"><a href="#fn:7" class="footnote" rel="footnote">7</a></sup>。
 これが、たとえば CGI クラスが CGI#env_table() や CGI#stdinput() や CGI#stdoutput() ではなく、インスタンス変数を使うように作られていたら、fcgi.rb がこんなに悲惨なコードになることはなかったでしょう。</p>
 
 <figure class="highlight"><pre><code class="language-text" data-lang="text">class CGI
@@ -1076,7 +1076,7 @@ cgi.rb でうまく対応できないというのであれば、やはり「次�
 またそれらに対する解決策を提案しました。
 cgi.rb にとって代わる「次世代 cgi.rb」を作ろうという方は、参考にしてください。</p>
 
-<p>なお筆者は cgi.rb を書き直した <a href="http://cgialt.rubyforge.org/">CGIAlt</a> というライブラリを開発しています<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote">8</a></sup>。
+<p>なお筆者は cgi.rb を書き直した <a href="http://cgialt.rubyforge.org/">CGIAlt</a> というライブラリを開発しています<sup id="fnref:8" role="doc-noteref"><a href="#fn:8" class="footnote" rel="footnote">8</a></sup>。
 本稿の内容は、この CGIAlt を開発したときの経験がもとになっています。
 興味のある人は使ってみてください。</p>
 
