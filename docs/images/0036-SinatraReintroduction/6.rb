@@ -1,9 +1,0 @@
-  require 'rack/rewrite'
-  #...
-  class App < Sinatra::Base
-    #...
-    use Rack::Rewrite do
-      rewrite %r{^/song_for/(.*)}, '/name/$1'
-    end
-    #...
-  end
