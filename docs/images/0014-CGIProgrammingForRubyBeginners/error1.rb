@@ -1,2 +1,0 @@
-str = "rubima"
-print st

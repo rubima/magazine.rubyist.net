@@ -1,3 +1,0 @@
-begin_date.step(end_date, 1.week) do |date|
-  # ...
-end

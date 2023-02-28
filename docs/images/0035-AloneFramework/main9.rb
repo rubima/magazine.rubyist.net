@@ -1,1 +1,0 @@
- alias action_index action_list

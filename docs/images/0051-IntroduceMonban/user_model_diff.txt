@@ -1,7 +1,0 @@
-class User < ActiveRecord::Base
-  validates :email, presence: true, uniqueness: true
-
-+  attr_accessor :password, :password_confirmation
-+  validates_presence_of :password, :password_confirmation
-+  validates_confirmation_of :password
-end
