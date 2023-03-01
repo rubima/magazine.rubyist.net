@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/rubima/magazine.rubyist.net.svg?branch=master)](https://travis-ci.org/rubima/magazine.rubyist.net)
-
 # Rubima on Jekyll
 
 るびま本体のサイトです。
@@ -52,6 +50,8 @@ created_on: リリース予定日
 
 # ローカル環境構築
 
+Ruby 3.2+ が必要です。
+
 ```
 $ git clone git@github.com:rubima/magazine.rubyist.net.git
 $ cd magazine.rubyist.net
@@ -61,26 +61,11 @@ $ bundle exec jekyll serve -I --future
 
 http://127.0.0.1:4000/ にローカル開発サーバーが起動し、Markdownから生成されたHTMLページを確認することができます。
 
-# リリース作業について
+# リリース作業
 
 次の手順で行います。
 
 1. 受け付けたリリース対象の記事のPull Requestをmergeします。
-1. buildした結果（`docs`の中身）を https://github.com/rubima/rubima.github.io に対して反映させます
+2. 号数に相当する表紙を作成し、Pull Request を master 向けに作成したのち merge します。
 
-## rubima.github.io へのリリース
-　
-`../rubima.github.io/` に `rubima/rubima.github.io` が chekout されている場合は下記のような操作をします。
-
-```
-$ git checkout master
-$ git pull
-$ \cp -r docs/* ../rubima.github.io/
-$ cd ../rubima.github.io/
-$ git checkout -b (ブランチ名)
-$ git add .
-$ git commit
-$ git push -u origin (ブランチ名)
-```
-
-https://github.com/rubima/rubima.github.io からプルリクエストを作成し`master`ブランチにマージします。
+GitHub Actions を利用して master にマージされたものから github pages にて公開されます。
