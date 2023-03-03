@@ -46,5 +46,4 @@ tags: preTokyoRubyKaigi11 index
 などを募集しております。何かネタがありましたらご連絡ください。
 また、編集に参加したいというお申し出も大歓迎です。
 
-連絡先：[るびま編集部](mailto:magazine@ruby-no-kai.org)、[るびまサポートリポジトリ](https://github.com/rubima/rubima-support)
-
+連絡先：[るびま編集部](mailto:magazine@ruby-no-kai.org)、[るびまサポート](https://github.com/rubima/magazine.rubyist.net/discussions)
