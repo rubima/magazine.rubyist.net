@@ -12,6 +12,7 @@ created_on: 2023-04-01
 
 * 開催日時 - 2023年2月18日 9:30-18:00
 * 開催場所 - [リファレンス駅東ビル4階 会議室Q](http://re-rental.com/ekihigashi/access/)
+![ko1.jpg]({{base}}{{site.baseurl}}/images/0062-FukuokaRubyistKaigi03Report/kaijou.jpg)
 * 主催 - [Fukuoka.rb](https://fukuokarb.connpass.com/) / [株式会社Ruby開発](https://www.ruby-dev.jp/)
 * 後援 - [一般社団法人 日本Rubyの会](http://ruby-no-kai.org/)
 * 公式サイト - [Fukuoka RubyistKaigi 03](https://regional.rubykaigi.org/fukuoka03/index.html)
