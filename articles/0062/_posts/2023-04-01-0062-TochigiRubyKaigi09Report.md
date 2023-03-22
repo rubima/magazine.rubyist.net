@@ -1,7 +1,7 @@
 ---
 layout: post
 title: RegionalRubyKaigi レポート (79) とちぎ Ruby 会議 09
-short_title: RegionalRubyKaigi レポート (78) とちぎ Ruby 会議 09
+short_title: RegionalRubyKaigi レポート (79) とちぎ Ruby 会議 09
 tags: 0062 TochigiRubyKaigi09Report regionalRubyKaigi
 post_author: gadgdiler
 created_on: 2023-04-01
