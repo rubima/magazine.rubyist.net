@@ -1,14 +1,14 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (xx) 福岡Rubyist会議03
-short_title: RegionalRubyKaigi レポート (xx) 福岡Rubyist会議03
+title: RegionalRubyKaigi レポート (80) 福岡Rubyist会議03
+short_title: RegionalRubyKaigi レポート (80) 福岡Rubyist会議03
 tags: 0062 FukuokaRubyistKaigi03Report regionalRubyKaigi
 post_author: m-nishijima
 created_on: 2023-04-01
 ---
 {% include base.html %}
 
-## RegionalRubyKaigiレポート (xx) 福岡Rubyist会議02
+## RegionalRubyKaigiレポート (80) 福岡Rubyist会議02
 
 * 開催日時 - 2023年2月18日 9:30-18:00
 * 開催場所 - [リファレンス駅東ビル4階 会議室Q](http://re-rental.com/ekihigashi/access/)
