@@ -11,7 +11,8 @@
 - 執筆者へ案内と御礼のメール
 - リリースの案内
   - [ruby-list](https://ml.ruby-lang.org/mailman3/postorius/lists/ruby-list.ml.ruby-lang.org/)
-  - [ruby-lang.org](http://www.ruby-lang.org/ja/)
+  - [ruby-jp](https://ruby-jp.github.io)#general
+  - [@ruby-no-kai](https://twitter.com/rubynokai)
 - 読者プレゼント抽選タスク
   - 抽選
   - 当選案内
