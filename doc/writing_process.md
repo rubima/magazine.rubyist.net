@@ -1,4 +1,17 @@
-# 記事について
+# るびまを手元で動かす
+
+Ruby 3.2+ が必要です。
+
+```
+$ git clone git@github.com:rubima/magazine.rubyist.net.git
+$ cd magazine.rubyist.net
+$ bundle install
+$ bundle exec jekyll serve -I --future
+```
+
+http://127.0.0.1:4000/ にローカル開発サーバーが起動し、Markdownから生成されたHTMLページを確認できます。
+
+# るびまに記事を追加する
 
 - 記事は、`articles/号数/_posts/yyyy-mm-dd-号数-記事名.md`として作成してください。
 - 画像ファイルなどは`images/号数-記事名`以下に配置してください。
@@ -12,7 +25,7 @@
 - 記事を https://github.com/rubima/magazine.rubyist.net の `master` ブランチに対してPull Requestで出してください。
 - 記事はMarkdownで書きます。後述する書式とローカル環境の構築の方法を参照して、ご自身の環境でレイアウトなどを確認されてからPull Requestを出していただけると助かります。
 
-# 書式
+## 書式
 
 記事はMarkdownで記します。具体的には、[kramdown](https://kramdown.gettalong.org/)を使っています。詳細な文法は[kramdownのSyntaxページ](https://kramdown.gettalong.org/syntax.html)を参照してください。
 
@@ -44,24 +57,3 @@ created_on: リリース予定日
 - GitHubのリンクを乗せる場合は`master`ではなく、該当バージョンへのリンクにするようにしてください。
   - `master`へのリンクは将来的に変更される可能性があるためです。
 
-# ローカル環境構築
-
-Ruby 3.2+ が必要です。
-
-```
-$ git clone git@github.com:rubima/magazine.rubyist.net.git
-$ cd magazine.rubyist.net
-$ bundle install
-$ bundle exec jekyll serve -I --future
-```
-
-http://127.0.0.1:4000/ にローカル開発サーバーが起動し、Markdownから生成されたHTMLページを確認することができます。
-
-# リリース作業
-
-次の手順で行います。
-
-1. 受け付けたリリース対象の記事のPull Requestをmergeします。
-2. 号数に相当する表紙を作成し、Pull Request を master 向けに作成したのち merge します。
-
-GitHub Actions を利用して master にマージされたものから github pages にて公開されます。

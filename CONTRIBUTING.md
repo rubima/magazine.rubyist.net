@@ -35,12 +35,13 @@ If you are contributing to Rubima for the first time, please first read [CODE OF
 ### るびまを刊行するお手伝いがしたい
 
 - https://github.com/rubima/magazine.rubyist.net/discussions/364 に自己紹介をお願いします
-- [編集部のDiscord](https://github.com/rubima/magazine.rubyist.net/issues/352#issuecomment-1443682899)に参加ください
+- [編集部の Discord](https://github.com/rubima/magazine.rubyist.net/issues/352#issuecomment-1443682899)に参加ください
 - このリポジトリや Discord 上でそのうち色々動きが出てくるので、手伝えそうなものを拾ってもらえるとありがたいです
 
 ### るびまに記事を書きたい
 
-- https://github.com/rubima/magazine.rubyist.net/discussions/categories/記事を書きたい に書きたい記事の内容をお知らせください
+- https://github.com/rubima/magazine.rubyist.net/discussions/categories/記事を書きたい に書きたい記事の内容をお知らせください。
+- るびまに記事を追加する方法については、[/doc/writing_process.md](/doc/writing_process.md)を参照ください。
 
 ### るびまの刊行/記事/体制その他についてアイデアがあるので提案したい
 
