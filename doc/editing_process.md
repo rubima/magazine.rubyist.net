@@ -19,6 +19,15 @@
   - 抽選結果の更新
   - 出版社さんへの発送のお願い
 
+# るびまをリリースする
+
+次の手順で行います。
+
+1. 受け付けたリリース対象の記事の Pull Request を merge します。
+2. 号数に相当する表紙を作成し、Pull Request を master 向けに作成したのち merge します。
+
+GitHub Actions を利用して master にマージされたものから github pages にて公開されます。
+
 # 現状
 
 ## リリース後
