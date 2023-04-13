@@ -37,8 +37,8 @@ module Jekyll
   end
 
   def amazon_call(asin:, id_type:)
-    if File.exist?("tmp/#{asin}.xml")
-      return File.open("tmp/#{asin}.xml").read
+    if File.exist?("data/amazon/#{asin}.xml")
+      return File.open("data/amazon/#{asin}.xml").read
     end
     aid = 'cshs-22'
 
@@ -54,7 +54,7 @@ module Jekyll
     begin
       Timeout.timeout(100) do
         xml = Jekyll.amazon_fetch(url: url)
-        File.open("tmp/#{asin}.xml", 'w') { |f| f.write(xml) }
+        File.open("data/amazon/#{asin}.xml", 'w') { |f| f.write(xml) }
         xml
       end
     rescue ArgumentError
