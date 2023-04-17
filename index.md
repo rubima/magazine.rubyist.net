@@ -2,6 +2,7 @@
 layout: default
 title: るびま
 ---
+
 {% include base.html %}
 
 ## Rubyist Magazine について
@@ -11,14 +12,16 @@ title: るびま
 ## 最新号
 
 {% for post in site.tags.index limit: 1 %}
+
 - [{{ post.title }}]({{base}}{{ post.url }})
-{% endfor %}
+  {% endfor %}
 
 ## バックナンバー
 
 {% for post in site.tags.index %}
+
 - [{{ post.title }}]({{base}}{{ post.url }})
-{% endfor %}
+  {% endfor %}
 
 ## FAQ
 
