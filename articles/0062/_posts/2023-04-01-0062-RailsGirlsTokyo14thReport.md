@@ -115,3 +115,5 @@ Rails Girls Tokyo 14th 開催後、体調を崩れた方の報告もなく、無
 ## 書いた人
 
 [@emorima](https://twitter.com/emorima) Rails Girls Japanメンバー、Asakusa.rbメンバー、酒とRubyを時々（福山）雅治。
+
+『[はじめてつくるWebアプリケーション 〜Ruby on Railsでプログラミングへの第一歩を踏み出そう](https://gihyo.jp/book/2023/978-4-297-13468-6)』（技術評論社、2023年5月3日発行) 著者。次号にて紹介記事を掲載予定!!!
