@@ -2,6 +2,7 @@
 layout: default
 title: るびま
 ---
+
 {% include base.html %}
 
 ## Rubyist Magazine について
@@ -11,14 +12,16 @@ title: るびま
 ## 最新号
 
 {% for post in site.tags.index limit: 1 %}
+
 - [{{ post.title }}]({{base}}{{ post.url }})
-{% endfor %}
+  {% endfor %}
 
 ## バックナンバー
 
 {% for post in site.tags.index %}
+
 - [{{ post.title }}]({{base}}{{ post.url }})
-{% endfor %}
+  {% endfor %}
 
 ## FAQ
 
@@ -44,6 +47,9 @@ title: るびま
 
 - Q. じゃぁ、何時出すんですか？
 - A. 出せそうだと思ったら出します。
+
+- Q. るびま編集部 にはどうやったら入れるの？
+- A. 「[るびまを刊行するお手伝いがしたい](https://github.com/rubima/magazine.rubyist.net/blob/master/CONTRIBUTING.md#るびまを刊行するお手伝いがしたい)」に沿ってご参加ください。
 
 - Q. るびまに宣伝を出したいんだけれど。
 - A. 可能です。詳しくは るびま編集部 までご連絡ください。
