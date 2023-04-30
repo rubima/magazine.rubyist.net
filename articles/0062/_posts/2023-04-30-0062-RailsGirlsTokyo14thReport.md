@@ -28,7 +28,7 @@ Rails Girls のワークショップは、プログラミング未経験の方�
 
 ## Tokyo 14th 開催のきっかけとその時期の状況
 
-Rails Girls Tokyo 14th は、[むろさん](https://twitter.com/murokaco)と [ogijun さん](https://twitter.com/ogijun)から、iCare 様で開催をしたいというお話があり、開催が決まりました。
+Rails Girls Tokyo 14th は、[むろさん](https://twitter.com/murokaco)と [ogijun さん](https://twitter.com/ogijun)から、iCARE 様で開催をしたいというお話があり、開催が決まりました。
 
 開催はきまったものの、開催予定とした 2022 年 7 月は、感染の規模がこれまで以上に拡がっており、
 ニュースで伝える新規陽性者数は、日々過去最大数を記録していました。
@@ -94,7 +94,7 @@ OS や経験で分けられたチームで、Web アプリケーションを作�
 マスクをしながら、説明をしてくれるコーチは少し息苦しかったかもしれません……(ありがとうございます!)
 <img src="{{base}}{{site.baseurl}}/images/0062-RailsGirlsTokyo14thReport/workshop1.jpg" width="700px">
 
-おやつには、iCare 様近くにある「ひいらぎ」のたいやきが出ました。
+おやつには、iCARE 様近くにある「ひいらぎ」のたいやきが出ました。
 <img src="{{base}}{{site.baseurl}}/images/0062-RailsGirlsTokyo14thReport/taiyaki.jpg" width="700px">
 
 感染対策を考えて、記念撮影の時もマスク着用でした。
@@ -108,7 +108,7 @@ Rails Girls Tokyo 14th 開催後、体調を崩れた方の報告もなく、無
 
 この状況下でも皆さんの協力があれば、開催できる!という自信になりました。
 
-会場をお貸し頂いた iCare 様、感染対策に配慮しながらもコーチやスタッフをしてくれた皆さん、そして参加しよう!と思ってくれた Girls の皆さん、本当にありがとうございました!!!
+会場をお貸し頂いた iCARE 様、感染対策に配慮しながらもコーチやスタッフをしてくれた皆さん、そして参加しよう!と思ってくれた Girls の皆さん、本当にありがとうございました!!!
 
 マスクを外して、アフターパーティーも楽しめる Rails Girls ワークショップが 1 日でも早く戻ってきますように!
 
