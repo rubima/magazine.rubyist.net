@@ -4,7 +4,7 @@ title: RegionalRubyKaigi レポート (80) 福岡 Rubyist 会議 03
 short_title: RegionalRubyKaigi レポート (80) 福岡 Rubyist 会議 03
 tags: 0062 FukuokaRubyistKaigi03Report regionalRubyKaigi
 post_author: m-nishijima
-created_on: 2023-04-01
+created_on: 2023-04-30
 ---
 {% include base.html %}
 

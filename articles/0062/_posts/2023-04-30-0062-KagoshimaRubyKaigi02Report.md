@@ -4,7 +4,7 @@ title: RegionalRubyKaigi レポート (81) 鹿児島 Ruby 会議 02
 short_title: RegionalRubyKaigi レポート (81) 鹿児島 Ruby 会議 02
 tags: 0062 regionalRubyKaigi
 post_author: okuramasafumi
-created_on: 2023-04-01
+created_on: 2023-04-30
 ---
 
 {% include base.html %}
