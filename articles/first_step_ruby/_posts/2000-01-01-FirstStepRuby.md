@@ -109,8 +109,7 @@ $ rbenv shell 1.9.3-p395
 
 - vim
 - emacs
-- [Atom](https://atom.io/)
-- [Sublime Text 2](http://www.sublimetext.com/2)
+- [Sublime Text 4](https://www.sublimetext.com/download)
 - [Visual Studio Code](https://code.visualstudio.com/)
 
 ### IDE
