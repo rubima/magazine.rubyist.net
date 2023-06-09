@@ -65,7 +65,7 @@ class RubimaFomatter
     end
 
     def convert_line(trimmed = '')
-      @line.gsub(INVALID_BLANK, trimed)
+      @line.gsub(INVALID_BLANK, trimmed)
     end
   end
 
