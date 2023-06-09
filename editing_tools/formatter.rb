@@ -17,7 +17,7 @@ class RubimaFomatter
       pre_checked_line = pre_check
       return @line if @line == pre_checked_line
 
-      puts "#{formated_message}: line [#{@line_no}]:"
+      puts "#{formatted_message}: line [#{@line_no}]:"
       puts pre_checked_line
 
       loop do
@@ -42,7 +42,7 @@ class RubimaFomatter
   end
 
   class WhiteSpaceFormatter < BaseFormatter
-    def formated_message
+    def formatted_message
       "半角文字列の前後に空白を挿入しました"
     end
 
@@ -56,7 +56,7 @@ class RubimaFomatter
   end
 
   class TrimUnnecessarySpaceFormatter < BaseFormatter
-    def formated_message
+    def formatted_message
       "不要な空白を削除しました"
     end
 
@@ -64,7 +64,7 @@ class RubimaFomatter
       convert_line("\e[32m#{$&}\e[m")
     end
 
-    def convert_line(trimed = '')
+    def convert_line(trimmed = '')
       @line.gsub(INVALID_BLANK, trimed)
     end
   end
@@ -76,11 +76,11 @@ class RubimaFomatter
   end
 
   def run!
-    formated_file = execute_format!
+    formatted_file = execute_format!
 
     backup_path = @dir_name + (@file_name.to_s + '.bak')
     FileUtils.mv @src_file_path, backup_path
-    FileUtils.copy_file formated_file.path, @src_file_path
+    FileUtils.copy_file formatted_file.path, @src_file_path
   end
 
   def execute_format!
