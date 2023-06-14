@@ -36,7 +36,7 @@ RubyKaigi 2023 の感染対策を参考にしながら対策を行いました�
 
 [かとりえさん](https://twitter.com/katorie)にお越しいただいて、Rails Girls に参加したのをきっかけにエンジニアになるまでどのようなことを行ったのかなどを対談形式でお伺いしました。
 
-<img src="{{base}}{{site.baseurl}}/images/0062-RailsGirlsTokyo14thReport/icare.jpg" width="700px">
+<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/lunch.png" width="700px">
 
 アフターパーティーではいろいろな方々にLTをしていただきました。
 
@@ -46,7 +46,7 @@ RubyKaigi 2023 の感染対策を参考にしながら対策を行いました�
 
 4月ということで春をテーマにロゴを作成いただきました。ロゴの作成はスタッフの [むろさん](https://twitter.com/murokaco) にお願いしました。
 
-<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/logo.jpg" width="700px">
+<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/logo.png" width="700px">
 
 装飾道具も用意しました。
 
@@ -58,7 +58,7 @@ OSや経験ごとにチームを分けてワークショップを行いました
 
 デプロイできた様子です。
 
-<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/deploy.jpg" width="700px">
+<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/deploy.png" width="700px">
 
 アフターパーティーでは、コーチの [べーたさん](https://twitter.com/beta_chelsea)、[江森さん](https://twitter.com/emorima)、[松田さん](https://twitter.com/a_matsuda)にお話をしていただきました。
 
@@ -66,7 +66,7 @@ OSや経験ごとにチームを分けてワークショップを行いました
 
 最後に全員で集合写真を撮りました。
 
-<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/gather.jpg" width="700px">
+<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/gather.png" width="700px">
 
 ### おわりに
 
