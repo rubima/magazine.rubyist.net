@@ -2,7 +2,7 @@
 layout: post
 title: Rails Girls Tokyo 15th 開催レポート
 short_title: Rails Girls Tokyo 15th
-tags: 0063 RailsGirlsTokyo15thReport RailsGirlsReport
+tags: 0063 RailsGirlsReport
 post_author: えりりん
 created_on: 2023-06-11
 ---
