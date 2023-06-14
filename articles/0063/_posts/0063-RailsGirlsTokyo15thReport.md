@@ -74,6 +74,6 @@ OSや経験ごとにチームを分けてワークショップを行いました
 
 そして、Rails Girls で知り合った人と直後に RubyKaigi でまた会えるという機会は私自身とても良かったなと感じました。たくさんの方に RubyKaigi で話かけていただきました。また、参加していない方からも 「Rails Girls やってましたよね」という形で話かけていただけたのも嬉しかったです。
 
-### 書いた人
+## 書いた人
 
 えりりん。 Twitter: [@suuuuengch](https://twitter.com/suuuuengch), GitHub: [@ericgpks](https://github.com/ericgpks) 。パン作りエンジニア。Ruby や Ruby on Rails が大好き。Ruby が好きな人とつながりたい。
