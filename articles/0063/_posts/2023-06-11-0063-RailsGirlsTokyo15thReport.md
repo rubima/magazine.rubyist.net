@@ -54,7 +54,7 @@ RubyKaigi 2023 の感染対策を参考にしながら対策を行いました�
 
 OSや経験ごとにチームを分けてワークショップを行いました。チーム名はポピーやミモザ、スイセン、チューリップなど春の花の名前をつけました。
 
-<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/workshop.jpg" width="700px">
+<img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsTokyo15thReport/workshop.png" width="700px">
 
 デプロイできた様子です。
 
