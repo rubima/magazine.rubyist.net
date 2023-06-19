@@ -4,7 +4,7 @@ title: 著者による『はじめてつくるWebアプリケーション〜Ruby
 short_title: 訳者による『研鑽 Ruby プログラミング』の紹介
 tags: 0063
 post_author: emorima, yadaita, cobachie
-created_on: 2023-04-30
+created_on: 2023-06-18
 ---
 {% include base.html %}
 
