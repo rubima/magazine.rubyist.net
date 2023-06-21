@@ -2,7 +2,7 @@
 layout: post
 title: Rails Girls Sendai 2nd 開催レポート
 short_title: Rails Girls Sendai 2nd 開催レポート
-tags: 0060 RailsGirlsSendai2ndReport
+tags: 0060 RailsGirlsSendai2ndReport RailsGirlsReport
 post_author: halucaaya
 created_on: 2019-08-18
 ---

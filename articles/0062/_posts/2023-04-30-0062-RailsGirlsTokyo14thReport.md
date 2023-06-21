@@ -2,7 +2,7 @@
 layout: post
 title: Rails Girls Tokyo 14th 開催レポート
 short_title: Rails Girls Tokyo 14th 開催レポート
-tags: 0062 RailsGirlsTokyo14thReport
+tags: 0062 RailsGirlsTokyo14thReport RailsGirlsReport
 post_author: emorima
 created_on: 2023-04-30
 ---
