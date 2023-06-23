@@ -128,7 +128,7 @@ short_title: バックナンバー
 - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
-### RailsGirlsReport
+### Rails Girls レポート
 
 {% for post in site.tags.RailsGirlsReport %}
 - [{{ post.title }}]({{base}}{{ post.url }})
