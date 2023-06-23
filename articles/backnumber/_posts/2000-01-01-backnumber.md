@@ -17,7 +17,7 @@ short_title: バックナンバー
 - [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
-## RegionalRubyKaigiレポート
+## 地域 Ruby 会議 レポート
 
 {% assign titleSorted = site.tags.regionalRubyKaigi | sort: 'title' %}
 {% for post in titleSorted reversed %}
