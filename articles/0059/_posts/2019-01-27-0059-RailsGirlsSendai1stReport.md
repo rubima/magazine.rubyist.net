@@ -2,7 +2,7 @@
 layout: post
 title: Rails Girls Sendai 1st 開催レポート
 short_title: Rails Girls Sendai 1st 開催レポート
-tags: 0058 RailsGirlsSendai1stReport
+tags: 0058 RailsGirlsReport
 post_author: 大倉雅史（@okuramasafumi）
 created_on: 2019-01-27
 ---

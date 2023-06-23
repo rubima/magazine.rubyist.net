@@ -2,7 +2,7 @@
 layout: post
 title: Rails Girls Tokyo 12th レポート
 short_title: Rails Girls Tokyo 12th レポート
-tags: 0060 RailsGirlsTokyo12thReport
+tags: 0060 RailsGirlsReport
 post_author: chinatz_
 created_on: 2019-08-10
 ---

@@ -2,7 +2,7 @@
 layout: post
 title: Rails Girls Nagano 1st 開催レポート
 short_title: Rails Girls Nagano 1st 開催レポート
-tags: 0059 RailsGirlsNagano1stReport
+tags: 0059 RailsGirlsReport
 post_author: cobachie
 created_on: 2019-08-10
 ---
