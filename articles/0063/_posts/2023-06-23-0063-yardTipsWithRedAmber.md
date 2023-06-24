@@ -12,7 +12,9 @@ created_on: 2023-06-23
 
 ### はじめに
 
-（自己紹介と背景説明を書く）
+[Red Data Tools](https://red-data-tools.github.io/ja/) で [RedAmber](https://github.com/red-data-tools/red_amber) という Ruby で書かれたデータフレームライブラリを作っている @heronshoes です。RedAmber は、Ruby でデータフレームを扱うためのライブラリで、Python の pandas、R の data.frame　または dplyr/tidyr がやるようなことを Apache Arrow を利用して Ruby でできるようにするためのライブラリです。RubyKaigi2023 では、「[The Adventure of RedAmber - A data frame library in Ruby](https://rubykaigi.org/2023/presentations/heronshoes.html)」というタイトルで３日目に発表しました。
+
+大変ありがたいことに [2022 年度の Ruby アソシエーション開発助成](https://www.ruby.or.jp/ja/news/20221027)に採択されまして、その期間中にコードとドキュメントの整備にも取り組みました。ドキュメントを整備する中で、YARD の使い方についてついて色々知らなかった事に触れることができましたので、ここで共有させていただきたいと思います。
 
 ### 1. 動的に生成しているメソッドのドキュメント追加方法
 
@@ -43,6 +45,8 @@ end
 
 `define_unary_aggregation(function)` は Arrow の Compute Function の名前を受け付けてそれを呼び出すメソッドを定義するためのメソッドです。これは、例えば `#count` や `#mean`のような、関数の引数がなく結果として一つのスカラーを返すメソッドを定義するために使います。同類のクラスメソッドとして、`#abs`のような引数を取らずに結果を Vector で返すメソッドを定義するための `define_unary_element_wise` や、 `#==` のような引数を取って結果を Vector で返すようなメソッドを定義するための `define_binary_element_wise` があります。
 
+(説明用の画像を入れる)
+
 #### 個別のメソッド定義はDSL風に書く
 
 上で定義したクラスメソッドを使って、関数的なメソッドの定義を書いていきます。必要に応じて、エイリアスを定義します。
@@ -56,7 +60,7 @@ module RedAmber
 end
 ```
 
-Ruby らしい別名として、`#count_uniq` も用意してみました。
+ここでは、Ruby らしい別名として `#count_uniq` を用意してみました。
 
 #### ドキュメントを付加する
 
@@ -65,12 +69,13 @@ Ruby らしい別名として、`#count_uniq` も用意してみました。
 - クラスメソッドで共通のドキュメントは `@!macro[attach]` でクラスメソッドに付加します (1)。
 
 - 全部に共通ではないが適宜利用するマクロはインスタンスメソッドの上の方で定義します (2)。
+  ここでは、`mode` というオプションを使うメソッドに共通のドキュメントを定義しています。
 
 - メソッド固有のドキュメントはメソッド定義のすぐ上に書きます (3)。
 
 - `@!method` で引数とオプションを書きます (4)。
 
-- メソッドの別名は alias_method で書きます (5)。 実装上はクラスメソッド経由で定義することもできるが、このようにするとドキュメントで 'Also known as:' として正しく表示されます。
+- メソッドの別名は alias_method で書きます (5)。 実装上はクラスメソッド経由で定義することもできますが、このようにするとドキュメントで 'Also known as:' として正しく表示されます。
 
 ```ruby
 module RedAmber
@@ -125,9 +130,14 @@ module RedAmber
 
 この結果生成されたドキュメントは、 [RedAmber YARD Vector#count_distinct](https://red-data-tools.github.io/red_amber/RedAmber/Vector.html#count_distinct-instance_method) にあります。
 
-該当するYARDのドキュメントは [YARD document / Tags](https://rubydoc.info/gems/yard/file/docs/Tags.md#macro) にあります。
+該当するYARDのドキュメントは [YARD document / Tags](https://rubydoc.info/gems/yard/file/docs/Tags.md#macro) にあります。クラスメソッドで定義するメソッドの種類が限られている場合は、`$0, $1, $2, ...`などの変数を使って引数の説明を入れる方法も有効だと思います。今回の例では、定義されたメソッドで受け付けるオプションの種類が一種類ではないため、上のようなやり方に落ち着きました。
 
+### 2. YARDドキュメントにカスタム css を登録する
 
-### 2. YARDドキュメントでコード部分に等幅フォントを指定する方法
+#### コード部分に等幅フォントを指定する方法
 
 ### おわりに
+
+### 書いた人
+
+heronshoes (Hirokazu SUZUKI)。 Twitter: [@heronshoes](https://twitter.com/heronshoes), GitHub: [@heronshoes](https://github.com/heronshoes) 。広島県福山市在住のRuby愛好家。好きなメソッドはtally、シングルクォート派。コーヒーとクラフトビールとMINIも好き。今週のコーヒーは GitHub のステータスに表示しています。
