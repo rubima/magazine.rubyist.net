@@ -14,7 +14,9 @@ created_on: 2023-06-23
 
 [Red Data Tools](https://red-data-tools.github.io/ja/) で [RedAmber](https://github.com/red-data-tools/red_amber) という Ruby で書かれたデータフレームライブラリを作っている @heronshoes です。RedAmber は、Ruby でデータフレームを扱うためのライブラリで、Python の pandas、R の data.frame　または dplyr/tidyr がやるようなことを Apache Arrow を利用して Ruby でできるようにするためのライブラリです。RubyKaigi2023 では、「[The Adventure of RedAmber - A data frame library in Ruby](https://rubykaigi.org/2023/presentations/heronshoes.html)」というタイトルで３日目に発表しました。
 
-大変ありがたいことに [2022 年度の Ruby アソシエーション開発助成](https://www.ruby.or.jp/ja/news/20221027)に採択されまして、その期間中にコードとドキュメントの整備にも取り組みました。ドキュメントを整備する中で、YARD の使い方についてついて色々知らなかった事に触れることができましたので、ここで共有させていただきたいと思います。
+![DataFrame in RedAmber]({{base}}{{site.baseurl}}/images/0063-yardTipsWithRedAmber/DataFrame_in_RedAmber.png)
+
+大変ありがたいことに [2022 年度の Ruby アソシエーション開発助成](https://www.ruby.or.jp/ja/news/20221027)に採択されまして、その期間中にはコードとドキュメントの整備にも取り組みました。そしてドキュメントを整備する中で、YARD の使い方について色々知らなかった事に触れることができましたので、ここで共有させていただきたいと思います。
 
 ### 1. 動的に生成しているメソッドのドキュメント追加方法
 
@@ -43,9 +45,9 @@ module RedAmber
 end
 ```
 
-`define_unary_aggregation(function)` は Arrow の Compute Function の名前を受け付けてそれを呼び出すメソッドを定義するためのメソッドです。これは、例えば `#count` や `#mean`のような、関数の引数がなく結果として一つのスカラーを返すメソッドを定義するために使います。同類のクラスメソッドとして、`#abs`のような引数を取らずに結果を Vector で返すメソッドを定義するための `define_unary_element_wise` や、 `#==` のような引数を取って結果を Vector で返すようなメソッドを定義するための `define_binary_element_wise` があります。
+`define_unary_aggregation(function)` は Arrow の Compute Function の名前を受け付けてそれを呼び出すメソッドを定義するためのメソッドです。これは、例えば `#count` や `#mean` のような、関数の引数がなく結果として一つのスカラーを返すメソッドを定義するために使います。同類のクラスメソッドとして、`#abs` のような引数を取らずに結果を Vector で返すメソッドを定義するための `define_unary_element_wise` や、 `#==` のような引数を取って結果を Vector で返すようなメソッドを定義するための `define_binary_element_wise` があります。
 
-(説明用の画像を入れる)
+![Vector's functional methods]({{base}}{{site.baseurl}}/images/0063-yardTipsWithRedAmber/Vector_s_functional_methods.png)
 
 #### 個別のメソッド定義はDSL風に書く
 
@@ -133,6 +135,7 @@ module RedAmber
 該当するYARDのドキュメントは [YARD document / Tags](https://rubydoc.info/gems/yard/file/docs/Tags.md#macro) にあります。クラスメソッドで定義するメソッドの種類が限られている場合は、`$0, $1, $2, ...`などの変数を使って引数の説明を入れる方法も有効だと思います。今回の例では、定義されたメソッドで受け付けるオプションの種類が一種類ではないため、上のようなやり方に落ち着きました。
 
 ### 2. YARDドキュメントにカスタム css を登録する
+
 
 #### コード部分に等幅フォントを指定する方法
 
