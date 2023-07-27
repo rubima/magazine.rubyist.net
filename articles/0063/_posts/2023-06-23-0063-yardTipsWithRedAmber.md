@@ -18,6 +18,7 @@ created_on: 2023-06-23
 
 大変ありがたいことに [2022 年度の Ruby アソシエーション開発助成](https://www.ruby.or.jp/ja/news/20221027)に採択されまして、その期間中にはコードとドキュメントの整備にも取り組みました。そしてドキュメントを整備する中で、YARD の使い方について色々知らなかった事に触れることができましたので、ここで共有させていただきたいと思います。
 
+
 ### 1. 動的に生成しているメソッドのドキュメント追加方法
 
 RedAmberでは、表の各列のデータを表すオブジェクト Vector の関数的なメソッド、例えば #mean, #abs, #> などは Apache Arrow の C++で書かれた Compute Function を利用して `#define_method` で動的に生成しています。
@@ -134,13 +135,45 @@ module RedAmber
 
 該当するYARDのドキュメントは [YARD document / Tags](https://rubydoc.info/gems/yard/file/docs/Tags.md#macro) にあります。クラスメソッドで定義するメソッドの種類が限られている場合は、`$0, $1, $2, ...`などの変数を使って引数の説明を入れる方法も有効だと思います。今回の例では、定義されたメソッドで受け付けるオプションの種類が一種類ではないため、上のようなやり方に落ち着きました。
 
+
 ### 2. YARDドキュメントにカスタム css を登録する
 
+[YARD のドキュメント](https://rubydoc.info/gems/yard/file/docs/Templates.md) には、css ファイルを使ってドキュメントのデザインをカスタマイズするテンプレートの例が書かれています。
+RedAmberのドキュメントでは `@example` を使ってコード例を多く表示させていますが、デフォルトの設定ではそれらはプロポーショナルフォントで表示されてしまいます。これを回避するために、テンプレートをカスタマイズする方法を使いました。
 
-#### コード部分に等幅フォントを指定する方法
+#### コード部分に等幅フォントを指定する例
+
+YARD テンプレートをカスタマイズする際には YARD 標準のテンプレートと同じディレクトリ構造の中に置く必要があります。
+
+#### カスタムテンプレートを定義
+
+`.yardopts`にカスタムテンプレートを置くパスを指定しました。
+
+```
+--template-path doc/yard-templates
+```
+
+カスタマイズした下記のようなcssを　`doc/yard-templates/default/fulldoc/html/css/common.css` に置きました。
+
+```
+/* Use monospace font for code */
+code {
+  font-family: "Courier New", Consolas, monospace;
+}
+```
+
+その結果、下記のように表示できました。
+
+![DataFrame in RedAmber]({{base}}{{site.baseurl}}/images/0063-yardTipsWithRedAmber/yard_monospace_fonts.png)
+
+このカスタマイズは YARD 本体に取り込んでいただけるよう提案していきたいと思っています。
+
 
 ### おわりに
 
+YARD をちゃんと書くのは初めての経験でしたが、Ruby Association Grant の助成適用ということもあり、全てのメソッドのドキュメント化を達成することができました。大変でしたがドキュメントにまとめることでライブラリのメソッド設計を整理することもできて良かったと感じています。お気づきの点がございましたらご指摘をいただけると嬉しいです。Ruby によるデータ処理に興味がある方、Ruby で新しいことに取り組んでみたい方は、[Red Data Tools](https://red-data-tools.github.io/ja/) に来てみて下さい。[Matrix上のチャットルーム](https://app.element.io/#/room/#red-data-tools_ja:gitter.im) でお待ちしています。
+
+
 ### 書いた人
 
-heronshoes (Hirokazu SUZUKI)。 Twitter: [@heronshoes](https://twitter.com/heronshoes), GitHub: [@heronshoes](https://github.com/heronshoes) 。広島県福山市在住のRuby愛好家。好きなメソッドはtally、シングルクォート派。コーヒーとクラフトビールとMINIも好き。今週のコーヒーは GitHub のステータスに表示しています。
+heronshoes (Hirokazu SUZUKI)。 ex-Twitter: [@heronshoes](https://twitter.com/heronshoes), GitHub: [@heronshoes](https://github.com/heronshoes) 。広島県福山市在住のRuby愛好家。好きなメソッドはtally、シングルクォート派。コーヒーとクラフトビールとMINIも好き。今週のコーヒーを GitHub のステータスに表示しています。
