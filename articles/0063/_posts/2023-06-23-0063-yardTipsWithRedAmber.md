@@ -73,16 +73,16 @@ end
 
 いよいよこれにドキュメントを付与していきます。ポイントを箇条書きにしてご説明します。
 
-- クラスメソッドで共通のドキュメントは `@!macro[attach]` でクラスメソッドに付加します (1)。
+1. クラスメソッドで共通のドキュメントは `@!macro[attach]` でクラスメソッドに付加します。
 
-- 全部に共通ではないが適宜利用するマクロはインスタンスメソッドの上の方で定義します (2)。
+2. 全部に共通ではないが適宜利用するマクロはインスタンスメソッドの上の方で定義します。
   ここでは、`mode` というオプションを使うメソッドに共通のドキュメントを定義しています。
 
-- メソッド固有のドキュメントはメソッド定義のすぐ上に書きます (3)。
+3. メソッド固有のドキュメントはメソッド定義のすぐ上に書きます。
 
-- `@!method` で引数とオプションを書きます (4)。
+4. `@!method` で引数とオプションを書きます。
 
-- メソッドの別名は alias_method で書きます (5)。 実装上はクラスメソッド経由で定義することもできますが、このようにするとドキュメントで 'Also known as:' として正しく表示されます。
+5. メソッドの別名は alias_method で書きます。 実装上はクラスメソッド経由で定義することもできますが、このようにするとドキュメントで 'Also known as:' として正しく表示されます。
 
 ```ruby
 module RedAmber
@@ -90,7 +90,7 @@ module RedAmber
     class << self
       private
 
-      # @!macro [attach] define_unary_aggregation    # (1)
+      # @!macro [attach] define_unary_aggregation    # 1
       #   [Unary aggregation function] Returns a scalar.
       #
       def define_unary_aggregation(function)
@@ -101,17 +101,17 @@ module RedAmber
       end
     end
 
-    # @!macro count_options                          # (2)
+    # @!macro count_options                          # 2
     #   @param mode [:only_valid, :only_null, :all]
     #     control count aggregate kernel behavior.
     #     - only_valid: count only non-nil values.
     #     - only_null: count only nil.
     #     - all: count both.
 
-    # Count the number of unique values.             # (3)
+    # Count the number of unique values.             # 3
     #
-    # @!method count_distinct(mode: :only_valid)     # (4)
-    # @macro count_options                           # (2)
+    # @!method count_distinct(mode: :only_valid)     # 4
+    # @macro count_options                           # 2
     # @return [Integer]
     #   unique count of self.
     # @example
@@ -131,7 +131,7 @@ module RedAmber
     #   vector.count_uniq(mode: :all) # => 3
     #
     define_unary_aggregation :count_distinct
-    alias_method :count_uniq, :count_distinct        # (5)
+    alias_method :count_uniq, :count_distinct        # 5
   end
 ```
 
