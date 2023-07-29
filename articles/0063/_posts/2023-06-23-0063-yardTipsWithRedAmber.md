@@ -48,7 +48,7 @@ module RedAmber
 end
 ```
 
-`define_unary_aggregation(function)` は Arrow の Compute Function の名前を受け付けてそれを呼び出すメソッドを定義するためのメソッドです。これは、例えば `#count` や `#mean` のような、関数の引数がなく結果として一つのスカラーを返すメソッドを定義するために使います。同類のクラスメソッドとして、`#abs` のような引数を取らずに結果を Vector で返すメソッドを定義するための `define_unary_element_wise` や、 `#==` のような引数を取って結果を Vector で返すようなメソッドを定義するための `define_binary_element_wise` があります。
+`define_unary_aggregation(function)` は Arrow の Compute Function の名前を受け付けてそれを呼び出すメソッドを定義するためのメソッドです。これは、例えば `#sum` や `#mean` のような、引数がなく結果として一つのスカラーを返すメソッド(Aggregation メソッド)を定義するために使います。同類のクラスメソッドとして、`#cumsum` や `#abs` のような引数を取らずに結果を Vector で返すメソッドを定義するための `define_unary_element_wise` や、 `#>` や `#+` のような引数を取って結果を Vector で返すようなメソッドを定義するための `define_binary_element_wise` があります。
 
 ##### 図2. RedAmber の Vector オブジェクトの種類
 
