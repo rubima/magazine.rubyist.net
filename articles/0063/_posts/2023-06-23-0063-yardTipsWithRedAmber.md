@@ -23,7 +23,7 @@ created_on: 2023-06-23
 
 ### 1. 動的に生成しているメソッドのドキュメント追加方法
 
-RedAmberでは、表の各列のデータを表すオブジェクト Vector の関数的なメソッド、例えば #mean, #abs, #> などは Apache Arrow の C++で書かれた Compute Function を利用して `#define_method` で動的に生成しています。
+RedAmberでは、表の各列のデータを表すオブジェクト Vector の関数的なメソッド、例えば `#mean`, `#abs`, `#>` などは Apache Arrow の C++で書かれた Compute Function を利用して `#define_method` で動的に生成しています。
 
 当初はそのように動的に生成されたメソッドに対して効率的にドキュメントを付加する方法がわからなかったのですが、最終的に下記の方法に辿り着きました。ここでは、Vector の要素に対してユニークな要素の数を数えるメソッド `#count_distinct` を例にしてドキュメントを付与してみます。
 
