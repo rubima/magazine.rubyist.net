@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RedAmberのドキュメントを整備する際に見つけたYARDのtips
+title: RedAmber のドキュメントを整備する際に見つけた YARD の tips
 short_title: Yard tips with RedAmber
 tags: 0063
 post_author: heronshoes
@@ -8,7 +8,7 @@ created_on: 2023-06-23
 ---
 {% include base.html %}
 
-## RedAmberのドキュメントを整備する際に見つけたYARDのtips
+## RedAmber のドキュメントを整備する際に見つけた YARD の tips
 
 ### はじめに
 
@@ -23,7 +23,7 @@ created_on: 2023-06-23
 
 ### 1. 動的に生成しているメソッドのドキュメント追加方法
 
-RedAmberでは、表の各列のデータを表すオブジェクト Vector の関数的なメソッド、例えば `#mean`, `#abs`, `#>` などは Apache Arrow の C++で書かれた Compute Function を利用して `#define_method` で動的に生成しています。
+RedAmber では、表の各列のデータを表すオブジェクト Vector の関数的なメソッド、例えば `#mean`, `#abs`, `#>` などは Apache Arrow の C++で書かれた Compute Function を利用して `#define_method` で動的に生成しています。
 
 当初はそのように動的に生成されたメソッドに対して効率的にドキュメントを付加する方法がわからなかったのですが、最終的に下記の方法に辿り着きました。ここでは、Vector の要素に対してユニークな要素の数を数えるメソッド `#count_distinct` を例にしてドキュメントを付与してみます。
 
@@ -48,13 +48,13 @@ module RedAmber
 end
 ```
 
-`define_unary_aggregation(function)` は Arrow の Compute Function の名前を受け付けてそれを呼び出すメソッドを定義するためのメソッドです。これは、例えば `#sum` や `#mean` のような、引数がなく結果として一つのスカラーを返すメソッド(Aggregation メソッド)を定義するために使います。同類のクラスメソッドとして、`#cumsum` や `#abs` のような引数を取らずに結果を Vector で返すメソッドを定義するための `define_unary_element_wise` や、 `#>` や `#+` のような引数を取って結果を Vector で返すようなメソッドを定義するための `define_binary_element_wise` があります。
+`define_unary_aggregation(function)` は Arrow の Compute Function の名前を受け付けてそれを呼び出すメソッドを定義するためのメソッドです。これは、例えば `#sum` や `#mean` のような、引数がなく結果として一つのスカラーを返すメソッド(Aggregation メソッド) を定義するために使います。同類のクラスメソッドとして、`#cumsum` や `#abs` のような引数を取らずに結果を Vector で返すメソッドを定義するための `define_unary_element_wise` や、 `#>` や `#+` のような引数を取って結果を Vector で返すようなメソッドを定義するための `define_binary_element_wise` があります。
 
 ##### 図2. RedAmber の Vector オブジェクトの種類
 
 ![Vector's functional methods]({{base}}{{site.baseurl}}/images/0063-yardTipsWithRedAmber/Vector_s_functional_methods.png)
 
-#### 個別のメソッド定義はDSL風に書く
+#### 個別のメソッド定義は DSL 風に書く
 
 上で定義したクラスメソッドを使って、関数的なメソッドの定義を書いていきます。必要に応じて、エイリアスを定義します。
 
@@ -137,13 +137,13 @@ module RedAmber
 
 この結果生成されたドキュメントは、 [RedAmber YARD Vector#count_distinct](https://red-data-tools.github.io/red_amber/RedAmber/Vector.html#count_distinct-instance_method) にあります。
 
-該当するYARDのドキュメントは [YARD document / Tags](https://rubydoc.info/gems/yard/file/docs/Tags.md#macro) にあります。クラスメソッドで定義するメソッドの種類が限られている場合は、`$0, $1, $2, ...`などの変数を使って引数の説明を入れる方法も有効だと思います。今回の例では、定義されたメソッドで受け付けるオプションの種類が一種類ではないため、上のようなやり方に落ち着きました。
+該当する YARD のドキュメントは [YARD document / Tags](https://rubydoc.info/gems/yard/file/docs/Tags.md#macro) にあります。クラスメソッドで定義するメソッドの種類が限られている場合は、`$0, $1, $2, ...`などの変数を使って引数の説明を入れる方法も有効だと思います。今回の例では、定義されたメソッドで受け付けるオプションの種類が一種類ではないため、上のようなやり方に落ち着きました。
 
 
-### 2. YARDドキュメントにカスタム css を登録する
+### 2. YARD ドキュメントにカスタム css を登録する
 
 [YARD のドキュメント](https://rubydoc.info/gems/yard/file/docs/Templates.md) には、css ファイルを使ってドキュメントのデザインをカスタマイズするテンプレートの例が書かれています。
-RedAmberのドキュメントでは `@example` を使ってコード例を多く表示させていますが、デフォルトの設定ではそれらはプロポーショナルフォントで表示されてしまいます。これを回避するために、テンプレートをカスタマイズする方法を使いました。
+RedAmber のドキュメントでは `@example` を使ってコード例を多く表示させていますが、デフォルトの設定ではそれらはプロポーショナルフォントで表示されてしまいます。これを回避するために、テンプレートをカスタマイズする方法を使いました。
 
 #### コード部分に等幅フォントを指定する例
 
@@ -157,7 +157,7 @@ YARD テンプレートをカスタマイズする際には YARD 標準のテン
 --template-path doc/yard-templates
 ```
 
-カスタマイズした下記のようなcssを　`doc/yard-templates/default/fulldoc/html/css/common.css` に置きました。
+カスタマイズした下記のような css を　`doc/yard-templates/default/fulldoc/html/css/common.css` に置きました。
 
 ```
 /* Use monospace font for code */
@@ -175,9 +175,9 @@ code {
 
 ### おわりに
 
-YARD をちゃんと書くのは初めての経験でしたが、Ruby Association Grant の助成適用ということもあり、全てのメソッドのドキュメント化を達成することができました。大変でしたがドキュメントにまとめることでライブラリのメソッド設計を整理することもできて良かったと感じています。お気づきの点がございましたらご指摘をいただけると嬉しいです。Ruby によるデータ処理に興味がある方、Ruby で新しいことに取り組んでみたい方は、[Red Data Tools](https://red-data-tools.github.io/ja/) に来てみて下さい。[Matrix上のチャットルーム](https://app.element.io/#/room/#red-data-tools_ja:gitter.im) でお待ちしています。
+YARD をちゃんと書くのは初めての経験でしたが、Ruby Association Grant の助成適用ということもあり、全てのメソッドのドキュメント化を達成することができました。大変でしたがドキュメントにまとめることでライブラリのメソッド設計を整理することもできて良かったと感じています。お気づきの点がございましたらご指摘をいただけると嬉しいです。Ruby によるデータ処理に興味がある方、Ruby で新しいことに取り組んでみたい方は、[Red Data Tools](https://red-data-tools.github.io/ja/) に来てみて下さい。[Matrix 上のチャットルーム](https://app.element.io/#/room/#red-data-tools_ja:gitter.im) でお待ちしています。
 
 
 ### 書いた人
 
-heronshoes (Hirokazu SUZUKI)。 ex-Twitter: [@heronshoes](https://twitter.com/heronshoes), GitHub: [@heronshoes](https://github.com/heronshoes) 。広島県福山市在住のRuby愛好家。好きなメソッドはtally、シングルクォート派。コーヒーとクラフトビールとMINIも好き。今週のコーヒーを GitHub のステータスに表示しています。
+heronshoes (Hirokazu SUZUKI)。 ex-Twitter: [@heronshoes](https://twitter.com/heronshoes), GitHub: [@heronshoes](https://github.com/heronshoes), 広島県福山市在住の Ruby 愛好家。好きなメソッドは tally、シングルクォート派。コーヒーとクラフトビールと MINI も好き。今週のコーヒーを GitHub のステータスに表示しています。
