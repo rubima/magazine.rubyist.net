@@ -26,7 +26,7 @@ Rails Girls のワークショップは、プログラミング未経験の方�
 
 ## ワークショップの内容
 
-鹿児島名物であるかき氷の「しろくま」とRubyをコンセプトに、イラストレーターの[もにやま](https://twitter.com/_cobone)さんにロゴを作成していただきました。また、年間スポンサーの方々から数多くのノベルティをいただきました。心より御礼申し上げます。
+鹿児島名物であるかき氷の「しろくま」とRubyをコンセプトに、イラストレーターの[もにやま](https://www.instagram.com/_cobone/)さんにロゴを作成していただきました。また、年間スポンサーの方々から数多くのノベルティをいただきました。心より御礼申し上げます。
 
 <img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsKagoshima2ndReport/logos.png" width="1000px">
 
