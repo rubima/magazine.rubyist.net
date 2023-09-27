@@ -42,7 +42,7 @@ Rails Girls のワークショップは、プログラミング未経験の方�
 
 <img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsKagoshima2ndReport/lunch.png" width="1000px">
 
-スポンサーLTでは、ピクシブ株式会社 様、TokyoDev株式会社 様、株式会社現場サポート 様、個人スポンサーのyohsikouki 様にLTを行ってもらいました。
+スポンサーLTでは、ピクシブ株式会社 様、TokyoDev株式会社 様、株式会社現場サポート 様、個人スポンサーのyoshikouki 様にLTを行ってもらいました。
 
 <img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsKagoshima2ndReport/lt1.png" width="1000px">
 
