@@ -2,7 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (TODO) 松江 Ruby 会議 10
 short_title: RegionalRubyKaigi レポート (TODO) 松江 Ruby 会議 10
-tags: 0063 MatsueRubyKaigi10Report
+tags: 0063 MatsueRubyKaigi10Report regionalRubyKaigi
 ---
 {% include base.html %}
 
