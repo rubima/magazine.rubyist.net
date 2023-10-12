@@ -10,7 +10,7 @@ created_on: 2023-09-15
 
 ## はじめに
 
-この記事は、2023年9月1日(金)、2日(土) に [GMOペパボ株式会社 鹿児島オフィス](https://pepabo.com/) にて開催された Rails Girls Kagoshima 2nd のレポートです。 記事の内容は、オーガナイザーのはやぴが開催にあたり、考えたこと・感じたことを中心にまとめています。
+この記事は、2023年9月1日(金)、2日(土) に [GMOペパボ株式会社](https://pepabo.com/) 鹿児島オフィス にて開催された [Rails Girls Kagoshima 2nd](https://railsgirls.com/kagoshima-2023.html) のレポートです。 記事の内容は、オーガナイザーのはやぴが開催にあたり、考えたこと・感じたことを中心にまとめています。
 
 <img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsKagoshima2ndReport/gather-all.png" width="1000px">
 
