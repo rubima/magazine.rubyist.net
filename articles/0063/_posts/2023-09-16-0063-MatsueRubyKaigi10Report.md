@@ -3,6 +3,7 @@ layout: post
 title: RegionalRubyKaigi レポート (82) 松江 Ruby 会議 10
 short_title: RegionalRubyKaigi レポート (82) 松江 Ruby 会議 10
 tags: 0063 MatsueRubyKaigi10Report regionalRubyKaigi
+created_on: 2023-11-15
 ---
 {% include base.html %}
 
