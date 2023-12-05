@@ -1,7 +1,7 @@
 ---                                                                                                              
 layout: post
 title: 著者による『はじめてつくるWebアプリケーション〜Ruby on Railsでプログラミングへの第一歩を踏み出そう』の紹介
-short_title: 訳者による『研鑽 Ruby プログラミング』の紹介
+short_title: 著者による『はじめてつくるWebアプリケーション』の紹介
 tags: 0063
 post_author: emorima, yadaita, cobachie
 created_on: 2023-06-18
