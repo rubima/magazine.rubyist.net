@@ -13,7 +13,7 @@ created_on: 2023-12-09
 ### 『はじめてつくる Web アプリケーション〜 Ruby on Rails でプログラミングへの第一歩を踏み出そう』
 
 
-![はじめてつくる Web アプリケーション-cover]({{base}}{{site.baseurl}}/images/0063-1st-steps-into-Rails/cover.jpg){:height="500px"}
+![はじめてつくる Web アプリケーション-cover]({{base}}{{site.baseurl}}/images/0063-1st-steps-into-rails/cover.jpg){:height="500px"}
 
 
 著者
