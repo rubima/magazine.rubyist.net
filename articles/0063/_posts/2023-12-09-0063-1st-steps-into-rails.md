@@ -4,7 +4,7 @@ title: 著者による『はじめてつくる Web アプリケーション〜 R
 short_title: 著者による『はじめてつくる Web アプリケーション』の紹介
 tags: 0063
 post_author: emorima, yadaita, cobachie
-created_on: 2023-06-18
+created_on: 2023-12-09
 ---
 {% include base.html %}
 
