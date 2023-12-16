@@ -36,8 +36,8 @@ Rails Girlsは、より多くの女性がプログラミングに親しみ、ア
 
 ## Rails Girls Matsue 5th当日について
 
-ついに本番！ITエンジニアとして第一線で活躍されている9名の心強いコーチにご協力いただきました。前日のRubyWorld ConferenceでRails Girls Matsue 5thのことを知って急遽コーチとしてご参加してくださった方や、Rails Girls Matsue 1stからコーチをしてくださっている心強い方々も...。  
-大変豪華なコーチ陣にご協力頂きとても助かりました、ご協力いただきありがとうございました！
+ついに本番！ITエンジニアとして第一線で活躍されている9名の心強いコーチにご協力いただきました。  
+前日のRubyWorld ConferenceでRails Girls Matsue 5thのことを知って急遽コーチとしてご参加してくださった方や、Rails Girls Matsue 1stからコーチをしてくださっている心強い方々など、大変豪華なコーチ陣にご協力頂きとても助かりました。ご協力いただきありがとうございました！
 
 <img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsMatsue5thReport/coaches.jpg" alt="Rails Girls Matsue 1stのTシャツを着たコーチたち" width="500px">
 <img src="{{base}}{{site.baseurl}}/images/0063-RailsGirlsMatsue5thReport/meeting.jpeg" alt="当日朝のミーティングの様子" width="500px">
