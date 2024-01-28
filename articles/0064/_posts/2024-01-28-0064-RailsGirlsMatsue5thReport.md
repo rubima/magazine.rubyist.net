@@ -4,8 +4,9 @@ title: Rails Girls Matsue 5th 開催レポート
 short_title: Rails Girls Matsue 5th
 tags: 0064 RailsGirlsReport
 post_author: 槇原 育美, 石川 瑞希
-created_on: 2023-12-16
+created_on: 2024-01-28
 ---
+
 {% include base.html %}
 
 ## はじめに
@@ -81,7 +82,7 @@ Rails Girls では初日のインストール・デイで環境構築、2 日目
 
 分からないところがあると隣のコーチがすぐさまサポート。今回ありがたいことにほぼ 1 対 1 でサポートできる手厚い体制となり、誰一人取り残されることなくサクサクと Web アプリケーションが作成されていました。  
 参加者の皆さんも優秀で、想定以上の早さで進めることができました。  
-途中、ポッキーの日にちなんで色んな味のポッキーを準備したので、お菓子休憩では味比べをしてもらいながら、みんなで和気あいあいとワークショップが進みました♡
+途中、ポッキーの日にちなんで色んな味のポッキーを準備したので、お菓子休憩では味比べをしてもらいながら、みんなで和気あいあいとワークショップが進みました ♡
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RailsGirlsMatsue5thReport/sweets-drinks.jpg" alt="会場にあったお菓子・飲み物" width="500px">
 <img src="{{base}}{{site.baseurl}}/images/0064-RailsGirlsMatsue5thReport/sweets.jpg" alt="会場にあったお菓子" width="500px">
