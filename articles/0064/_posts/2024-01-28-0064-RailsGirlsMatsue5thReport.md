@@ -12,6 +12,7 @@ created_on: 2024-01-28
 ## はじめに
 
 この記事は、2023/11/11(土) に松江オープンソースラボにて開催された[Rails Girls Matsue 5th](https://railsgirls.com/matsue-5th) の開催レポートです。
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RailsGirlsMatsue5thReport/whiteboard.jpg" width="300px" alt="歓迎メッセージが書かれたホワイトボード">
 
 ## Rails Girls とは
