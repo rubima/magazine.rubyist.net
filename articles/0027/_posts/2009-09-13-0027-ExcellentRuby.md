@@ -164,7 +164,7 @@ Set app = CreateObject("Excel.Application")
 
 #### 3. 省略不可
 
-本来 Excel の VBA では、Applicaion オブジェクトや ActiveWorkbook オブジェクトなど、いくつかのオブジェクトの名前を省略できます。Ruby では省略できないので、必ずどのオブジェクトを用いるのかを明示する必要があります。
+本来 Excel の VBA では、Application オブジェクトや ActiveWorkbook オブジェクトなど、いくつかのオブジェクトの名前を省略できます。Ruby では省略できないので、必ずどのオブジェクトを用いるのかを明示する必要があります。
 
 ## そもそも何故 Excel なのか？　何故 Ruby を使って Excel を扱うのか？
 
