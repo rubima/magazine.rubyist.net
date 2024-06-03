@@ -24,7 +24,7 @@ tags: 0027 ExcellentRuby
 
 * Windows XP Home Edition SP3
 * ruby 1.9.1p0  [i386-mswin32]
-* Microsft Excel 2007 SP1
+* Microsoft Excel 2007 SP1
 
 
 なお、コードのエンコーディングはシフト JIS を用いて動作確認を行いました。同じくシフト JIS でサンプルコードを試す場合は、ソースファイルの先頭で下記ようにエンコーディング指定を行ってください。使っている Ruby が 1.8 系でも 1.9 系でもこれで動作します。
