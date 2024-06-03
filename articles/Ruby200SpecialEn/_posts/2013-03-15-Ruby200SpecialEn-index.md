@@ -49,7 +49,7 @@ Because there isn’t a lot of information about these new features and performa
 * [Ruby200SpecialEn-refinement](Ruby200SpecialEn-refinement) discusses  the new ‘refinements’ and the controversy surrounding them, written by Shugo Maeda.
 * [Ruby200SpecialEn-dtrace](Ruby200SpecialEn-dtrace) introduces Ruby's DTrace support. Written by Aaron Patterson.
 * [Ruby200SpecialEn-gc](Ruby200SpecialEn-gc) summarises GC performance improvements on Ruby 2.0.0. Written by nari.
-* [Ruby200SpecialEn-require](Ruby200SpecialEn-require) summarises the performance improvements for ‘require’. Writen by Masaya TARUI.
+* [Ruby200SpecialEn-require](Ruby200SpecialEn-require) summarises the performance improvements for ‘require’. Written by Masaya TARUI.
 * [Ruby200SpecialEn-note](Ruby200SpecialEn-note) goes into detail about compatibility issues as well as other features.
 
 
