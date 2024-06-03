@@ -282,7 +282,7 @@ $ ./dilute.rb fib.rb | ./dilute.rb | ruby
 
 どうやって? Ruby の VM は消去された文字を記憶するのです!
 
-何が良いの? 高速化できます! 「No code is fater than no code.」保守もしやすくなります!
+何が良いの? 高速化できます! 「No code is faster than no code.」保守もしやすくなります!
 
 おしまい。
 
