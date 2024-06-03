@@ -56,7 +56,7 @@ tDiary は遅い。とうことで、高速化の手法について話します�
 高速化のまえに計測が重要です。[stackprof](https://github.com/tmm1/stackprof)というプロファイラを自分の日記に仕込んで 1 日動かし、どこに時間がかかっているかを計測します。それで、いくつかのボトルネックが見つかります。
 
 * 1 つ目は意外にもキャッシュです。memcache サーバに保存していたキャッシュを復元するための Dalli::Server#deserialize で時間がかかっていました。日記サーバは 1 台で運用しているので、ローカルの PStore に戻しています。
-* 2 つ目は XML の解析です。いくつかのプラグインは、amazon や flickr などの Web サービスと連携するために XML パーサーを使っています。REXML から native extansion で動く[Oga](https://github.com/YorickPeterse/oga)へ置き換えます。[benchmark-ips](https://github.com/evanphx/benchmark-ips)というツールを使って XML 解析の処理性能を計測すると、REXML から Oga に置き換えることで 4.2 倍も速くなったそうです。
+* 2 つ目は XML の解析です。いくつかのプラグインは、amazon や flickr などの Web サービスと連携するために XML パーサーを使っています。REXML から native extension で動く[Oga](https://github.com/YorickPeterse/oga)へ置き換えます。[benchmark-ips](https://github.com/evanphx/benchmark-ips)というツールを使って XML 解析の処理性能を計測すると、REXML から Oga に置き換えることで 4.2 倍も速くなったそうです。
 * 3 つ目はカレンダープラグインです。日記データを格納したディレクトリをすべて Dir.glob しているので、長く日記を書いていると、どんどん遅くなっていきます。これを最適化することで、1.2 倍ほど速くなっています。
 
 
