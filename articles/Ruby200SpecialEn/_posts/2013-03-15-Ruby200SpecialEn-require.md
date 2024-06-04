@@ -123,7 +123,7 @@ Masaya TARUI
 
 "No Tool, No Life. How wonderful civilization is. Let's civilize!"
 
-I am living in IRB on Windoes and pretty mad at the speed.
+I am living in IRB on Windows and pretty mad at the speed.
 Imagine a tool is improved, gets 1 second faster and a thousand people use it a thousand times: it can save a million seconds.
 That sounds amazing, doesn't it?
 

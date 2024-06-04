@@ -72,7 +72,7 @@ Ruby の標準添付 GUI ライブラリである Ruby/Tk の講習会です。
 
 Ruby 関連以外の、興味深いイベントを紹介します。
 
-### [Embeded Technology 2004](http://www.jasa.or.jp/et/)
+### [Embedded Technology 2004](http://www.jasa.or.jp/et/)
 
 開催日時 
 :  2004 年 11 月 17 日 (水) 〜 19 日 (金)

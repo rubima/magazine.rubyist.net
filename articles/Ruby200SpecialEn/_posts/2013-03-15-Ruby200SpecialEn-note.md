@@ -222,7 +222,7 @@ ary.bsearch {|x| x >= 100 } #=> nil
 {% endhighlight %}
 
 
-bsearch passes an array into an arugment inside block, and the block has to return either true or false.
+bsearch passes an array into an argument inside block, and the block has to return either true or false.
 
 * When true is returned, the searching element locates in the same index or bigger.
 * When true is returned, the searching element locates in the smaller index.

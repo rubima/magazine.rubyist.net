@@ -22,7 +22,7 @@ tags: 0029 ExcellentRuby
 
 * Windows XP Home Edition SP3
 * ruby 1.9.1p0  [i386-mswin32]
-* Microsft Excel 2007 SP1
+* Microsoft Excel 2007 SP1
 
 
 なお、コードのエンコーディングはシフトJIS を用いて動作確認を行いました。同じくシフトJIS でサンプルコードを試す場合は、ソースファイルの先頭で下記ようにエンコーディング指定を行ってください。使っているRuby が1.8系でも1.9系でもこれで動作します。

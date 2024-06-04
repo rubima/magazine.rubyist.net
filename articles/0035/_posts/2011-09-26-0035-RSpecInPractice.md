@@ -266,7 +266,7 @@ subject のメリットはテスト対象が明確になること、そしてほ
     subject { @user }
     it { should_not be_new_record }
 
-    descirbe Profile do
+    describe Profile do
       subject { @user.profile }
       it { should_not be_new_record }
       its(:name) { should eq 'AKAMATSU Yuki' }
@@ -395,7 +395,7 @@ context で具体的な値を明示することで RSpec の出力から最後�
 RSpec には let という機能があります。subject などに比べるとあまり知られておらず、知っていても使い方がよくわからないという方も多いようなので解説したいと思います。
 
 ```ruby
-  descirbe 'let' do
+  describe 'let' do
     let(:foo) { 'foo' }
     specify { foo.should eq 'foo' }
   end
