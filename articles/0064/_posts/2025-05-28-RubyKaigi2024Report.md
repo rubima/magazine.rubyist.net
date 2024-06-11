@@ -35,6 +35,11 @@ created_on: 2025-05-28
 
 撮影した人: @hayat01sh1da
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_t_shirt.jpeg" width="60%">
+
+撮影した人: あっきー（kuronekopunk）
+ひとこと: RubyKaigi 2024 用の T シャツを作って参戦 👍
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_lunch.jpg" width="60%" alt="Day1にランチした時の集合写真">
 
 撮影した人: neko314
@@ -46,6 +51,11 @@ created_on: 2025-05-28
 
 ## Day2
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_tel.jpeg" width="60%">
+
+撮影した人: あっきー（kuronekopunk）
+ひとこと: IVRy さんで電話になった
+
 ## Day3
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_committers.jpeg" width="60%" alt="Ruby Committers and the Worldにて、Rubyコミッター大集合">
@@ -53,10 +63,20 @@ created_on: 2025-05-28
 撮影した人: しおい (coe401\_)
 ひとこと: Ruby Committers and the World にて、Ruby コミッター大集合
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_drink_tickets.jpeg" width="60%">
+
+撮影した人: あっきー（kuronekopunk）
+ひとこと: After Party sponsored by mov 飲みまくって Ruby を満たすぞ！
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_irb_reline_team.jpeg" width="60%" alt="After Party で IRB Reline Team が集合できた記念">
 
 撮影した人: しおいさんが ima1zumi の iPhone で撮ってくれた
 ひとこと: After Party で IRB Reline Team が集合できた記念
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_after_party.jpeg" width="60%">
+
+撮影した人: あっきー（kuronekopunk）
+ひとこと: After Party sponsored by mov！
 
 ## 会期後
 
