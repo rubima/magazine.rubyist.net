@@ -15,7 +15,25 @@ created_on: 2025-05-28
 
 ## 会期前
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_airport.jpeg" width="60%">
+
+撮影した人: @hayat01sh1da
+ひとこと: 空港お出迎え
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_welcome_drinkup.jpeg" width="60%">
+
+撮影した人: @hayat01sh1da
+ひとこと: RubyKaigi 2024 前夜祭 Asakusa.rb Welcome Drinkup
+
 ## Day1
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_entrance.jpeg" width="60%">
+
+撮影した人: @hayat01sh1da
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_quine.jpeg" width="60%">
+
+撮影した人: @hayat01sh1da
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_lunch.jpg" width="60%" alt="Day1にランチした時の集合写真">
 
