@@ -22,6 +22,10 @@ created_on: 2025-05-28
 撮影した人: neko314
 ひとこと: [玉城豆腐のみそ汁屋](https://www.instagram.com/tamakidoufuno_misoshiru/)でランチ
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_official_party.jpeg" width="60%">
+
+撮影した人: ujihisa
+
 ## Day2
 
 ## Day3
