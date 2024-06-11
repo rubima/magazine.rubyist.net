@@ -26,6 +26,11 @@ created_on: 2025-05-28
 
 ## Day3
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_committers.jpeg" width="60%" alt="Ruby Committers and the Worldにて、Rubyコミッター大集合">
+
+撮影した人: しおい (coe401\_)
+ひとこと: Ruby Committers and the World にて、Ruby コミッター大集合
+
 ## 会期後
 
 ## さいごに
