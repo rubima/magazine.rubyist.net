@@ -31,6 +31,11 @@ created_on: 2025-05-28
 撮影した人: しおい (coe401\_)
 ひとこと: Ruby Committers and the World にて、Ruby コミッター大集合
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_irb_reline_team.jpeg" width="60%" alt="After Party で IRB Reline Team が集合できた記念">
+
+撮影した人: しおいさんが ima1zumi の iPhone で撮ってくれた
+ひとこと: After Party で IRB Reline Team が集合できた記念
+
 ## 会期後
 
 ## さいごに
