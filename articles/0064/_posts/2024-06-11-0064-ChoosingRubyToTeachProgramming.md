@@ -9,6 +9,8 @@ created_on: 2024 年 6 月 11 日
 
 {% include base.html %}
 
+# 日本語バージョン：
+
 ## はじめに
 
 IT業界全般、特にプログラミングは、人材育成は大事なことです。ですが、新しいメンバーをトレーニングするとき、メンターとしてエンジニアさんは、様々なチャレンジに会います。この投稿は、私の経験やなぜ、Rubyを選んでプログラミングを教える理由です。よろしくお願いします。
@@ -118,3 +120,114 @@ PythonからRubyに変わりましたあと、留学生たちは：
 私にとって、Rubyはいい教育ためプログラミング言語です。Rubyプログラマーコミュニティをもっとサポートできたらいいのにと思います。
 
 最後までご読みになって、ありがとうございます。
+
+------
+
+# English version:
+
+## Intro
+
+In the IT industry in general and programming particularly, training new members is very important. However, when training them, there are a lot of challenges that the mentor engineer has to solve. The article is my experience and the reason why I choose Ruby as the way to teach programming and the results.
+
+## Self Introduction
+
+Hello, my name is Hoang Quan. I'm from Hanoi, Vietnam. I'm working in Japan for 4 years. At the moment, I'm the Lead Engineer of a start up in Tokyo. My favorite tech stack is Agile/Scrum, AWS and Ruby.
+
+At the first 1,5 years of my career, I worked as a Ruby developer. Then, after becoming a system engineer, although I rarely use Ruby in work, I continue to learn Ruby myself.
+
+## Situation
+
+At the beginning of the company, the CEO want to hire some of his acquaintances as the company interns and part-time, so as the lead engineer, I am also tasked with training them. They were 6 young Vietnamese overseas students with a lot of energy and eager to find IT related jobs. I was really excited and hoped that I can teach them all my skills and experiences. But then...
+
+### Challenges
+
+In my case, these are my problems:
+
+- They are the students of the IT vocational schools and the Japanese-language schools, so they didn't learn much about IT and programming from those schools.
+- They don't know in particular who they will become when "having an IT job".
+- Recently, our Vietnamese has the "You can have an IT job without programming". The outsourcing companies have the programs that produce a BrSE for 3-6 months. Those programs are just BA courses, so no programming. With the students of the IT vocational schools and the Japanese-language schools, these are "the easy way".
+- Their English and Japanese are not so good.
+- My time for the training is only 3 months.
+- There are many programming languages.
+- There is no syllabus at that time.
+
+With the above, I have to choose the appropriate programming language, build a syllabus with it weeks by weeks, combine with other solutions. 
+
+### Solution to Challenge #1
+
+My solutions are:
+- For issues 1, 6, and 7, choose a programming language that is easy to understand the syntax and can be learned quickly.
+- For issue 2, I organized an orientation for them.
+- For issue 3, it's the programming language I chose and the orientation. For the programming language solution, I need to choose a language that can be learned fast enough to compete with other short courses.
+- For issues 4 and 5, I teach them to ["Read - Search - Ask"](https://www.freecodecamp.org/news/read-search-dont-be-afraid-to-ask-743a23c411b4/) and prepare reference materials properly.
+- For issue 8, I have no choice but to create a syllabus for each week.
+
+Within the limits of the article, I would like to continue with the method of **"Choose a programming language that is easy to understand the syntax and can be learned quickly"**. Ruby, Python, and Typescript meet this requirement of being easy to learn and quick to master.
+
+At that time, I chose Python. Reasons are:
+- Similar to Ruby syntax.
+- When I work at AWS, I use Python a lot for services like Lambda and Glue ETL. So I am also familiar with Python.
+- Because it was the CEO's opinion 🙁
+
+### Challenge #2: Why did I change from Python to Ruby?
+
+After choosing a programming language, new problems arose:
+- The students' code had many bugs related to Python indentation.
+- In object-oriented (OOP), Python's access modifiers are difficult to understand.
+
+Python access modifiers
+```python
+class Example:
+# If public, there is no _
+def public_method:
+pass
+
+# If protected, there is one _
+def _protected_method:
+pass
+
+# If protected, there are two __
+def __private_method:
+pass
+```
+When I asked the students, "What does this underscore mean?", they had no idea.
+
+At this point, I chose a real OOP language. Speaking of OOP, it's probably Java, but it's difficult to learn it right away. They were students at Japanese language schools and vocational schools, not third-year university students studying IT. That's why they chose Ruby.
+
+Access modifiers in Ruby
+```ruby
+class Example
+# For public, it's free or public keyword.
+def public_method
+end
+
+# For protected, it's protected keyword.
+protected
+
+def protected_method
+end
+
+# For private, it's private keyword.
+private
+
+def private_method
+end
+end
+```
+### Results
+
+After switching from Python to Ruby, the students:
+- After one day, they were able to write Ruby code immediately.
+- Writing code became more rigorous, so they were more careful.
+- They understood the four basic concepts of OOP well.
+- Their logical thinking improved, because OOP is a good direction for thinking when programming.
+
+After that, after understanding the core of Ruby, they studied Ruby on Rails and created interesting projects. But in the end, three of them wanted to get an IT job without programming, so they joined a large Vietnamese outsourcing company. One went back to Japanese language school and continued studying. Only two continued programming.
+
+It was a little sad.
+
+## Conclusion
+
+For me, Ruby is a good programming language for education. I wish I could support the Ruby programmer community more.
+
+Thank you for reading to the end.
