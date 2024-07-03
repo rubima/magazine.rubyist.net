@@ -72,7 +72,7 @@ RailsはWebアプリ（ブラウザからアクセスするアプリ）をかん
 執筆時2019年1月10日現在のRails最新バージョンはRails5.2.2です。今年の4月末にRails6.0.0が出る予定だと公表されています。
 
 ### 環境構築
-Rubyの場合と比べて、RailsではたくさんのGem（特にCで書かれていてインストール時にコンパイルが必要なNative extention）を使うため、環境構築がRubyだけで使うよりも難しいという問題があります。
+Rubyの場合と比べて、RailsではたくさんのGem（特にCで書かれていてインストール時にコンパイルが必要なNative extension）を使うため、環境構築がRubyだけで使うよりも難しいという問題があります。
 
 macOSでRailsを使うときにはrbenv、Command line tools、homebrewを使ってRubyをインストールする方法がお勧めです。Rails Girls ガイドの [インストール](http://railsgirls.jp/install#setup_for_macos) のページが分かりやすく、また最新のインストール方法で更新されているのでお勧めです。
 

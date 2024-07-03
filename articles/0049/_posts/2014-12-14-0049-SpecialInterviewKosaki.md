@@ -740,7 +740,7 @@ __小崎__ 何もしてないが故に無茶苦茶速いので最初みんな感
 
 __郡司__ どっかの KVS でも聞いたような話ですね。
 
-#### Kernal Watch の記事
+#### Kernel Watch の記事
 
 __三村__ [カーネルのアップデートの連載](http://www.atmarkit.co.jp/flinux/index/indexfiles/watchindex.html)あったじゃないですか。あれどうして終わっちゃったんですか？
 

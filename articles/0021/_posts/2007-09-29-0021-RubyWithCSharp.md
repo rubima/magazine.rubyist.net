@@ -617,7 +617,7 @@ ID は変数名やメソッド名を一意に定める値で、 Symbol のこと
 
 {% highlight text %}
 {% raw %}
-ID rb_intern(const cahr *name);
+ID rb_intern(const char *name);
 {% endraw %}
 {% endhighlight %}
 

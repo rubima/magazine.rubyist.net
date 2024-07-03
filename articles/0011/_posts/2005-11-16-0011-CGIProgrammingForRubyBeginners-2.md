@@ -171,7 +171,7 @@ __その4__
 
 Ruby のインストール場所を指定します。
 インストール場所を変更したい場合は
-「Destinaion Folder」に指定します。
+「Destination Folder」に指定します。
 インストール場所はデフォルトの C:\ruby でも良いですし、
 下図のように D:\app\ruby に変更しても良いです。
 スペースが入る C:\Program Files\ruby は止めておきましょう。

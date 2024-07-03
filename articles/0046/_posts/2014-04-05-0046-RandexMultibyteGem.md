@@ -222,7 +222,7 @@ gem パッケージの名前を決めたら、いよいよ gem パッケージ�
 * Bundler 1.5.3
 
 
-まずは Bunlder のコマンドで gem パッケージのひな形を作成します。
+まずは Bundler のコマンドで gem パッケージのひな形を作成します。
 
 {% highlight text %}
 {% raw %}

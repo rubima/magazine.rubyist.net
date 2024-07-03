@@ -611,7 +611,7 @@ _Rack::Glitch_ は、Rubyist Magazine に出てくる「Ruby(ist)」と言う文
 
 基本的な作り方としては、registered の中で app のクラスマクロ (use、helpers、get/post などの verbs、set など) を呼ぶやり方が良いでしょう。むろん、class_eval のような上級黒魔術も使えます。
 
-これら、Rack Middleware や Sinatra Extentions が実際にどう作られているかは、以下のリポジトリが参考になると思います。
+これら、Rack Middleware や Sinatra Extensions が実際にどう作られているかは、以下のリポジトリが参考になると思います。
 
 * [rack-contrib](https://github.com/rack/rack-contrib)
 * [sinatra-contrib](https://github.com/sinatra/sinatra-contrib)
