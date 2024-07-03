@@ -34,7 +34,7 @@ IT業界全般、特にプログラミングは、人材育成は大事なこと
 私のケースは、これらの問題に合いました：
 1. 留学生たちは日本語学校やIT専門学校に通っていましたがプログラミングはほとんど勉強していませんでした。
 1. IT関連の仕事をやりたいですが、彼らは具体的に何をするが分からなかったです。
-1. 最近、私のベトナムコミュニティーに、「プログラミングできず、IT仕事もできる」というコースもあります。というのは、ベトナムのアウトソース会社は、3ヶ月から6ヵ月ぐらい、ITを知らない人にBrSE（ブリッジSE）になるためことを教えることです。そのことは、だいたいビジネスアナリスト(BA)の知識ですから、プログラミングは全然ないです。すなわち、留学生たちとして、「簡単より道」です。
+1. 最近、私のベトナムコミュニティーに、「プログラミングしなくてもITの仕事に就ける」というコースもあります。というのは、ベトナムのアウトソース会社は、3ヶ月から6ヵ月ぐらい、ITを知らない人にブリッジSEになるためことを教えるコースがあります。そうしたコースで教えるのはビジネスアナリストの知識だけですから、プログラミングは全然やりません。すなわち、留学生たちにとっては、「簡単な道」です。
 1. 英語が分からなくて、日本語能力もまだ強くなかったです。
 1. 問題があったら、資料や本を読まずに、ネットで検索せずに、すぐに聞きます。
 1. 育成期間は3ヶ月だけでした。
@@ -145,7 +145,7 @@ In my case, these are my problems:
 
 - They didn't learn much about IT and programming from the IT vocational schools and the Japanese-language schools they are attending.
 - They don't know in particular who they will become when "having an IT job".
-- Recently, our Vietnamese has the "You can have an IT job without programming". The outsourcing companies have the programs that produce a BrSE for 3-6 months. Those programs are just BA courses, so no programming. With the students of the IT vocational schools and the Japanese-language schools, these are "the easy way".
+- Recently, our Vietnamese has the "You can have an IT job without programming". The outsourcing companies have the programs that produce a BrSE for 3-6 months. Those programs are just Business Analyst courses, so no programming. With the students of the IT vocational schools and the Japanese-language schools, these are "the easy way".
 - Their English and Japanese are not so good.
 - My time for the training is only 3 months.
 - There are many programming languages as the options.
