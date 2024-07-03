@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 自分の経験からRubyでプログラミングを教えた
+title: Rubyでプログラミングを教えた経験談
 short_title: My Experience on Teaching Programming with Ruby
 tags: 0064
 post_author: ホアンクアン
@@ -21,13 +21,13 @@ IT業界全般、特にプログラミングは、人材育成は大事なこと
 
 ベトナムのハノイ出身のホアン・クアンです。４年間日本で働いています。今はリードエンジニアとして東京のITスタートアップで働いています。好きな技術スタックはAgile/Scrum、AWSとRubyです。
 
-最初の１年半、Rubyプログラマーでした。その後、システムエンジニアとして仕事しており、仕事の内容はあまりRubyを使っていませんが、自分でRubyを勉強し続けています。
+社会人になって最初の１年半、Rubyプログラマーでした。その後、システムエンジニアとして仕事しています。仕事ではあまりRubyを使っていませんが、自分でRubyを勉強し続けています。
 
 よろしくお願いします。
 
 ## 状況
 
-会社設立当初、CEOが知り合いをインターンやバイトとして雇いたいということで、リードエンジニアである私は彼らの育成も任されました。CEOの知り合いは、6人の若いベトナム留学生でした。彼らは、卒業後、IT関連の仕事をやりたかったので、私はスキルと経験を伝えたかったです。しかし、...
+会社設立当初、CEOが知り合いをインターンやバイトとして雇いたいということで、リードエンジニアである私は彼らの育成も任されました。CEOの知り合いは、6人の若いベトナム人留学生でした。彼らは、卒業後、IT関連の仕事に就きたいと望んでいました。そのため私は自分のスキルと経験を彼らに伝えたいと思いました。しかし、...
 
 ### チャレンジ#1
 
@@ -44,17 +44,17 @@ IT業界全般、特にプログラミングは、人材育成は大事なこと
 上記のことから、解決ために、適切なプログラミング言語を選択し、それを使用して週ごとにシラバスを作成し、他のソリューションと組み合わせる必要がありました。
 
 ### チャレンジ#1の解決
-私の対策は:
+私の対策方法は:
 - 1、6、7の問題は、シンタックスが理解しやすく、早く勉強できるプログラミング言語を選びました。
 - 2の問題は、彼たちへオリエンテーションを企画しました。
-- 3の問題は、選んだプログラミング言語とオリエンテーションでした。プログラミング言語ソリューションに関しては、他の短期コースと競合するのに十分な速さで学習できる言語を選択する必要がありまsた。
-- 4、5の問題は、彼たちに[「Read - Search - Ask」](https://www.freecodecamp.org/news/read-search-dont-be-afraid-to-ask-743a23c411b4/)を教えるし、参考資料をちゃんと準備しました。
-- 8の問題は、週ごとにシラバスを作成しなければしかありませんでした。
+- 3の問題は、選んだプログラミング言語とオリエンテーションでした。プログラミング言語ソリューションに関しては、他の短期コースと競合するのに十分な速さで学習できる言語を選択する必要がありました。
+- 4、5の問題は、彼たちに[「Read - Search - Ask」](https://www.freecodecamp.org/news/read-search-dont-be-afraid-to-ask-743a23c411b4/)を教え、参考資料をちゃんと準備しました。
+- 8の問題は、週ごとにシラバスを作成するしかありませんでした。
 
-この投稿に限り、**「シンタックスが理解しやすく、早く勉強できるプログラミング言語を選ぶ」**方法をもっと続きたいです。Ruby、PythonやTypescriptは、学習が簡単ですぐに習得できるというこの要件を満たしています。
+この投稿に限り、**「シンタックスが理解しやすく、早く勉強できるプログラミング言語を選ぶ」**方法をもっと続けたいです。Ruby、PythonやTypescriptは、学習が簡単ですぐに習得できるというこの要件を満たしています。
 
 このとき、Pythonを選びました。理由は：
-- Rubyのシンタックスを似ています。
+- Rubyのシンタックスに似ています。
 - AWSに働くとき、Lambda、Glue ETLのようなサービスに、Pythonを使うことがたくさんです。ですから、私も経験もあります。
 - CEOの意見でしたから🙁
 
@@ -62,7 +62,7 @@ IT業界全般、特にプログラミングは、人材育成は大事なこと
 
 プログラミング言語を選らびましたが、新しい問題が発生しました：
 - 留学生たちのコードは、Pythonのインデントに関するバグが多かったです。
-- オブジェクト指向(OOP)に、Pythonのアクセス修飾子はわかりにくいでした。
+- オブジェクト指向(OOP)に、Pythonのアクセス修飾子はわかりにくかったです。
 
 Pythonのアクセス修飾子
 ```python
@@ -81,45 +81,45 @@ class Example:
 ```
 留学生たちに「このアンダースコアの意味はなんですか」を聞いたら、全然分からなかったです。
 
-このとき、本当のOOP言語を選びました。OOPといえば、多分Javaですが、すぐに習得できないです。彼たちは日本語学校や専門学校の学生でした、ITを勉強している大学３年生ではなかったです。ですから、Rubyを選びました。
+このとき、本当のOOP言語を選びました。OOPといえば、多分Javaですが、すぐに習得できないです。彼たちは日本語学校や専門学校の学生で、ITを勉強している大学３年生ではなかったです。ですから、Rubyを選びました。
 
 Rubyのアクセス修飾子
 ```ruby
 class Example
-  # public場合は、空きとかpublicキーワードです。
+  # public場合は、指定されていないかpublicキーワードです。
   def public_method
   end
-  
+
   # protected場合は、protectedキーワードです。
   protected
-  
+
   def protected_method
   end
-  
+
   # private場合は、privateキーワードです。
   private
-  
+
   def private_method
   end
 end
 ```
 ### 結果
 
-PythonからRubyに変わりましたあと、留学生たちは：
+PythonからRubyに変えたあと、留学生たちは：
 - 1日後、すぐにRubyのコードを書けました。
-- コードを書くことは厳格なりましたから、より慎重になっていました。
-- OOPの4つの基本概念はよくわかりました。
-- ロジック的思考が向上しました。なぜならOOPはプログラミング時の思考の良い方向性です。
+- コードの書き方が厳格になり、より慎重になっていました。
+- 学生たちはOOPの基本概念をよく理解していました。
+- 論理的思考が向上しました。なぜならOOPはプログラミングをする時の考え方によい方向性をしています。
 
-その後、Rubyのコアを分かったら、Ruby on Railsを勉強して、面白かったプロジェクトを作りました。でも、結局、3人はプログラミングなしでIT仕事をやりたいですから、大きなベトナムアウトソース会社に入りました。1人は、日本語学校を戻って勉強続けました。2人だけプログラミング続けます。
+その後、Rubyのコアを分かったら、Ruby on Railsを勉強して、興味のあるプロジェクトを作りました。でも、結局、3人はプログラミングなしでIT仕事をしたかったため、大きなベトナムアウトソース会社に入りました。1人は、日本語学校に戻って勉強を続けました。2人だけプログラミング続けています。
 
 ちょっと寂しかったです。
 
 ## おわりに
 
-私にとって、Rubyはいい教育ためプログラミング言語です。Rubyプログラマーコミュニティをもっとサポートできたらいいのにと思います。
+私にとって、Rubyは教育するのにいいプログラミング言語です。Rubyプログラマーコミュニティをもっとサポートできたらいいのにと思います。
 
-最後までご読みになって、ありがとうございます。
+最後までお読みいただき、ありがとうございます。
 
 ------
 
@@ -162,11 +162,11 @@ My solutions are:
 - For issues 4 and 5, I teach them to ["Read - Search - Ask"](https://www.freecodecamp.org/news/read-search-dont-be-afraid-to-ask-743a23c411b4/) and prepare reference materials properly.
 - For issue 8, I have no choice but to create a syllabus for each week.
 
-Within the limits of the article, I would like to continue with the method of **"Choose a programming language that is easy to understand the syntax and can be learned quickly"**. Ruby, Python, and Typescript meet this requirement of being easy to learn and quick to master.
+Within the limits of the article, I would like to continue with the solution of **"Choose a programming language that is easy to understand the syntax and can be learned quickly"**. Ruby, Python, and Typescript meet this requirement of being easy to learn and quick to master.
 
 At that time, I chose Python. Reasons are:
 - Similar to Ruby syntax.
-- When I work at AWS, I use Python a lot for services like Lambda and Glue ETL. So I am also familiar with Python.
+- When I work with AWS, I use Python a lot for services like Lambda and Glue ETL. So I am also familiar with Python.
 - Because it was the CEO's opinion 🙁
 
 ### Challenge #2: Why did I change from Python to Ruby?
