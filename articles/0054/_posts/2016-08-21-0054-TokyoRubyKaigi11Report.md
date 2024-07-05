@@ -380,7 +380,7 @@ Distributed task execution を行うためには、DAG で表されたタスク�
 ## まとめ
 
 ![IMG_4442.jpg]({{base}}{{site.baseurl}}/images/0054-TokyoRubyKaigi11Report/IMG_4442.jpg)
-さて、血湧き肉躍るハックのいちにちはいかがだったでしょうか？「[技術的好奇心を改めて呼び起こし、プログラミングの難しさ、そして楽しさを再発見する](http://regional.rubykaigi.org/tokyo11/about/)」ことができたように思います。笹田さんからの「われこそは、という人は次回やってみましょう」という呼びかけで、東京 Ruby 会議 11 は閉幕しました。興味の出た方は、とりあえず、日本 Ruby の会の Wiki の [RegionalRubyKaigiのページ](https://github.com/ruby-no-kai/official/wiki/Regionalrubykaigi) を見てみてください。
+さて、血湧き肉躍るハックのいちにちはいかがだったでしょうか？「[技術的好奇心を改めて呼び起こし、プログラミングの難しさ、そして楽しさを再発見する](http://regional.rubykaigi.org/tokyo11/about/)」ことができたように思います。笹田さんからの「われこそは、という人は次回やってみましょう」という呼びかけで、東京 Ruby 会議 11 は閉幕しました。興味の出た方は、とりあえず、日本 Ruby の会の Wiki の [RegionalRubyKaigiのページ](https://cosen.se/ruby-no-kai/Regional_RubyKaigi) を見てみてください。
 
 ## 執筆者
 

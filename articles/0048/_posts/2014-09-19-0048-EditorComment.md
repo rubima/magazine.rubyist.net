@@ -69,7 +69,7 @@ Rubyist Magazine 常設記事の「Ruby の歩き方」ですが、昨年大幅�
 * [RubyConf 台湾 2014 参加・発表レポート]({{base}}{% post_url articles/0047/2014-06-30-0047-RubyConfTw2014 %})
 
 
-こうして国内・海外で多数の Ruby 関連カンファレンスが開催されていますので、ご興味のある方はぜひ足を運んでみてください。地域 Ruby 会議の開催予定は「[地域Ruby会議のサイト](http://regional.rubykaigi.org/)」や「[RubyKaigi 日記](http://rubykaigi.tdiary.net/)」、「[これから開催される地域Ruby会議](https://github.com/ruby-no-kai/official/wiki/Upcomingregionalrubykaigi)」といったサイトを、海外の Ruby カンファレンスの開催予定は [Lanyrd の Ruby conferences and events](http://lanyrd.com/topics/ruby/) などのサイトをチェックしてみてください。
+こうして国内・海外で多数の Ruby 関連カンファレンスが開催されていますので、ご興味のある方はぜひ足を運んでみてください。地域 Ruby 会議の開催予定は「[地域Ruby会議のサイト](http://regional.rubykaigi.org/)」や「[RubyKaigi 日記](http://rubykaigi.tdiary.net/)」、「[RubyEventCheck](https://cosen.se/ruby-no-kai/RubyEventCheck)」といったサイトを、海外の Ruby カンファレンスの開催予定は [Lanyrd の Ruby conferences and events](http://lanyrd.com/topics/ruby/) などのサイトをチェックしてみてください。
 
 個別記事は次のとおりです。
 
