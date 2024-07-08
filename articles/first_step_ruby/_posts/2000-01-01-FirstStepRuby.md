@@ -180,7 +180,7 @@ Ruby はコミュニティ活動が非常に活発です。
 
 勉強会やコミュニティに参加するようになると、新しい情報や実務に基づいた詳しい情報なども入手することができるようになります。
 
-まずは [地域Rubyの会](https://github.com/ruby-no-kai/official/wiki/RegionalRubyistMeetUp) を探してみるといいと思います。
+まずは [ruby-jp](https://cosen.se/ruby-jp/)の[地域.rbのページ](https://cosen.se/ruby-jp/%E5%9C%B0%E5%9F%9F.rb) を探してみるといいと思います。
 
 
 ## おわりに

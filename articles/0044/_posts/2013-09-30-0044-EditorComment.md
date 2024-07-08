@@ -71,7 +71,7 @@ tags: 0044 EditorComment
 * [YARV Maniacs 【第 11 回】 最近の YARV の事情]({{base}}{% post_url articles/0041/2013-02-24-0041-YarvManiacs %})
 
 
-そしてシリーズ物としては毎号掲載されている「Regional RubyKaigi レポート」。岡山 Ruby 会議が 2 回開催されているのを始めとして、北は北海道から南は九州まで、各地の Ruby コミュニティによる地域 Ruby 会議が活発に開催されていることが分かりますね。こうしたレポートを見て興味を持ったら、ぜひ各地域の地域 Ruby 会議に足を運んでみてください。地域 Ruby 会議の開催予定は「[地域Ruby会議のサイト](http://regional.rubykaigi.org/)」や「[RubyKaigi 日記](http://rubykaigi.tdiary.net/)」、「[これから開催される地域Ruby会議](https://github.com/ruby-no-kai/official/wiki/Upcomingregionalrubykaigi)」といったサイトをチェックしてみてください。
+そしてシリーズ物としては毎号掲載されている「Regional RubyKaigi レポート」。岡山 Ruby 会議が 2 回開催されているのを始めとして、北は北海道から南は九州まで、各地の Ruby コミュニティによる地域 Ruby 会議が活発に開催されていることが分かりますね。こうしたレポートを見て興味を持ったら、ぜひ各地域の地域 Ruby 会議に足を運んでみてください。地域 Ruby 会議の開催予定は「[地域Ruby会議のサイト](http://regional.rubykaigi.org/)」や「[RubyKaigi 日記](http://rubykaigi.tdiary.net/)」、「[RubyEventCheck](https://cosen.se/ruby-no-kai/RubyEventCheck)」といったサイトをチェックしてみてください。
 
 * [RegionalRubyKaigi レポート (30) 岡山 Ruby 会議 01]({{base}}{% post_url articles/0040/2012-11-25-0040-OkayamaRubyKaigi01Report %})
 * [RegionalRubyKaigi レポート (31) 松江 Ruby 会議 04]({{base}}{% post_url articles/0040/2012-11-25-0040-MatsueRubyKaigi04Report %})
@@ -90,7 +90,7 @@ tags: 0044 EditorComment
 
 かねてより日本の Ruby コミュニティと海外の Ruby コミュニティとの断絶の話は何度も話題に上っており、日本の Ruby コミュニティはもっともっと海外の Ruby コミュニティと交流が必要だと個人的には思っていますので、こうした記事を読んで興味を持ったらぜひ海外の Ruby カンファレンスへも足を運んでみてください。また海外に行くのが無理という方も、日本国内で海外の著名な Rubyist が講演するイベントも最近は増えてきましたので、そうした機会を見つけてぜひ海外の Rubyist と交流してみてください。
 
-国内および海外の Ruby カンファレンスの開催情報については、[RubyEventCheck](https://github.com/ruby-no-kai/official/wiki/RubyEventCheck) をご参照ください。
+国内および海外の Ruby カンファレンスの開催情報については、[RubyEventCheck](https://cosen.se/ruby-no-kai/RubyEventCheck) をご参照ください。
 
 * [レポートチーム史上最大の作戦]({{base}}{% post_url articles/0040/2012-11-25-0040-HowToBuildSprk2012ReportTeam %})
 * [Euroko 2012 参加レポート]({{base}}{% post_url articles/0041/2013-02-24-0041-Euroko2012 %})
