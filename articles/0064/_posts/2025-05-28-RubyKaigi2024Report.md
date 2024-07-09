@@ -93,7 +93,17 @@ created_on: 2025-05-28
 撮影した人: まつした(jxmtst)
 ひとこと: RubyMusicMixin
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_closing.webp">
+
+撮影した人: しおい (coe401\_)
+ひとこと: クロージングにて、RubyKaigi 運営チームの MINASWAN。お疲れ様でした!
+
 ## 会期後
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day4_zenzai.webp">
+
+撮影した人: しおい (coe401\_)
+ひとこと: RubyFriends with みんなが食べていた千日のぜんざい
 
 ## さいごに
 
