@@ -51,10 +51,20 @@ created_on: 2025-05-28
 
 ## Day2
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_stamp_rally.jpeg">
+
+撮影した人: まつした(jxmtst)
+ひとこと: スタンプラリー
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_tel.jpeg" width="60%">
 
 撮影した人: あっきー（kuronekopunk）
 ひとこと: IVRy さんで電話になった
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_ruby_karaoke.jpeg">
+
+撮影した人: まつした(jxmtst)
+ひとこと: RubyMusicMixin
 
 ## Day3
 
@@ -77,6 +87,11 @@ created_on: 2025-05-28
 
 撮影した人: あっきー（kuronekopunk）
 ひとこと: After Party sponsored by mov！
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_ruby_music_mixin.jpeg">
+
+撮影した人: まつした(jxmtst)
+ひとこと: RubyMusicMixin
 
 ## 会期後
 
