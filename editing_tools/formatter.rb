@@ -7,7 +7,7 @@ require_relative 'rubima-lint'
 class RubimaFomatter
   class BaseFormatter
     include RubimaLint::Rules
-    
+
     def initialize(line_no, line)
       @line_no = line_no
       @line = line
@@ -21,7 +21,7 @@ class RubimaFomatter
       puts pre_checked_line
 
       loop do
-        y_or_n = Readline.readline("appry? [y(es)<default>|n(o)|e(dit)|i(gnore)]> ")
+        y_or_n = Readline.readline("apply? [y(es)<default>|n(o)|e(dit)|i(gnore)]> ")
         case y_or_n.chomp
         when ?y, 'yes', ''
           return convert_line
