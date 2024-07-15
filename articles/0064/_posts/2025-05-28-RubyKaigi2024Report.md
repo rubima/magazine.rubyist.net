@@ -20,6 +20,11 @@ created_on: 2025-05-28
 撮影した人: @hayat01sh1da
 ひとこと: 空港お出迎え
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_night_cruise.webp">
+
+撮影した人: @Kiryuanzu
+ひとこと: 会期前の写真なんですけど、みんな良い表情で写ってたのでつい共有してみました。チラッと写り込んでるふーがさんも好きなポイントです
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_welcome_drinkup.webp">
 
 撮影した人: @hayat01sh1da
