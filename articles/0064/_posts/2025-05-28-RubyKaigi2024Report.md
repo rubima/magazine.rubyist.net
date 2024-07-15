@@ -49,7 +49,17 @@ created_on: 2025-05-28
 
 撮影した人: ujihisa
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_seki_and_shioi.webp">
+
+撮影した人: @moro
+ひとこと: Offical Party の関さんと塩井さん
+
 ## Day2
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_city_hall.webp">
+
+撮影した人: @moro
+ひとこと: なんかカッコイイ那覇市役所
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_stamp_rally.webp">
 
@@ -66,12 +76,22 @@ created_on: 2025-05-28
 撮影した人: まつした(jxmtst)
 ひとこと: RubyMusicMixin
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_kosaki_and_shioi.webp">
+
+撮影した人: @moro
+ひとこと: 弊社ブース付近に来てくれたがちゃぴん先生と塩井さん
+
 ## Day3
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_committers.webp" alt="Ruby Committers and the Worldにて、Rubyコミッター大集合">
 
 撮影した人: しおい (coe401\_)
 ひとこと: Ruby Committers and the World にて、Ruby コミッター大集合
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_shimada_with_icecream.webp">
+
+撮影した人: @moro
+ひとこと: アイスを食べる島田さん
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_drink_tickets.webp">
 
