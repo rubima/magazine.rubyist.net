@@ -20,6 +20,11 @@ created_on: 2025-05-28
 撮影した人: @hayat01sh1da
 ひとこと: 空港お出迎え
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_arriving.webp">
+
+撮影した人: ヤノ | ROUTE06 @ynndino88
+ひとこと: 空港のウェルカムボード前でのごきげん記念写真です 🙈
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_night_cruise.webp">
 
 撮影した人: @Kiryuanzu
@@ -54,6 +59,11 @@ created_on: 2025-05-28
 
 撮影した人: ujihisa
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rubyfriends_at_official_party.webp">
+
+撮影した人: ヤノ | ROUTE06 @ynndino88
+ひとこと: おやつタイム
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_seki_and_shioi.webp">
 
 撮影した人: @moro
@@ -76,15 +86,34 @@ created_on: 2025-05-28
 撮影した人: あっきー（kuronekopunk）
 ひとこと: IVRy さんで電話になった
 
-<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_ruby_karaoke.webp">
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_fruits.webp">
 
-撮影した人: まつした(jxmtst)
-ひとこと: RubyMusicMixin
+撮影した人: ヤノ | ROUTE06 @ynndino88
+ひとこと: official party のようす、WE ARE #RubyFriends!
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_kosaki_and_shioi.webp">
 
 撮影した人: @moro
 ひとこと: 弊社ブース付近に来てくれたがちゃぴん先生と塩井さん
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_organizers1.webp">
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_organizers2.webp">
+
+撮影した人: ヤノ | ROUTE06 @ynndino88
+ひとこと: RubyKaigi といえばこの方々
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_ruby_karaoke.webp">
+
+撮影した人: まつした(jxmtst)
+ひとこと: RubyMusicMixin
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_rubykaraoke.webp">
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_rubykaraoke2.webp">
+
+撮影した人: ヤノ | ROUTE06 @ynndino88
+ひとこと: RubyKaraoke で #RubyFriends!
 
 ## Day3
 
@@ -97,6 +126,11 @@ created_on: 2025-05-28
 
 撮影した人: @moro
 ひとこと: アイスを食べる島田さん
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_tel.webp">
+
+撮影した人: ヤノ | ROUTE06 @ynndino88
+ひとこと: 私も IVRy さんで黒電話になりました
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_drink_tickets.webp">
 
