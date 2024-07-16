@@ -88,10 +88,15 @@ created_on: 2025-05-28
 撮影した人: かわかみ(kota_syan)
 ひとこと: RubyFriends@Official Party
 
-<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_hadegamirb.webp">
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_yuntaku_night.webp">
 
 撮影した人: かわかみ(kota_syan)
 ひとこと: 派手髪.rb
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_okinawa_friends.webp">
+
+撮影した人: yasulab
+ひとこと: ゆんたく Night@RubyKaigi 2024 で唄っている様子
 
 ## Day2
 
@@ -123,6 +128,11 @@ created_on: 2025-05-28
 
 撮影した人: ヤノ | ROUTE06 @ynndino88
 ひとこと: おやつタイム
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_okinawa_friends.webp">
+
+撮影した人: yasulab
+ひとこと: 10 年前からご一緒している Okinawa Friends
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_kosaki_and_shioi.webp">
 
@@ -240,6 +250,11 @@ created_on: 2025-05-28
 
 撮影した人: @okuramasafumi（大倉雅史）
 ひとこと: RubyKaigi が終われない
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/taneakashi.webp">
+
+撮影した人: yasulab
+ひとこと: RubyKaigi 2024 が沖縄に決まった瞬間?
 
 ## さいごに
 
