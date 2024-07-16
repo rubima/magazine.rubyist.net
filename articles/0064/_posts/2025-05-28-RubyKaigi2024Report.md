@@ -141,6 +141,16 @@ created_on: 2025-05-28
 撮影した人: かわかみ(kota_syan)
 ひとこと: NOC チームの皆さま
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_little_rubyists.webp">
+
+撮影した人: えんじぇる
+ひとこと: 託児サポートの一貫で美ら海水族館アクティビティに行く時のバス
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_churaumi.webp">
+
+撮影した人: えんじぇる
+ひとこと: 美ら海水族館を楽しんでいる子どもたち（保護者に掲載許可を得ています）
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_ruby_karaoke.webp">
 
 撮影した人: まつした(jxmtst)
