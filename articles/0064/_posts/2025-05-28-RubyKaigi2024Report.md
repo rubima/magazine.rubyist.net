@@ -30,6 +30,11 @@ created_on: 2025-05-28
 撮影した人: @Kiryuanzu
 ひとこと: 会期前の写真なんですけど、みんな良い表情で写ってたのでつい共有してみました。チラッと写り込んでるふーがさんも好きなポイントです
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_prechekin.webp">
+
+撮影した人: かわかみ(kota_syan)
+ひとこと: プレチェックイン前の受付の皆さん
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_welcome_drinkup.webp">
 
 撮影した人: @hayat01sh1da
@@ -78,6 +83,16 @@ created_on: 2025-05-28
 撮影した人: @moro
 ひとこと: Offical Party の関さんと塩井さん
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rubyfriends_at_party.webp">
+
+撮影した人: かわかみ(kota_syan)
+ひとこと: RubyFriends@Official Party
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_hadegamirb.webp">
+
+撮影した人: かわかみ(kota_syan)
+ひとこと: 派手髪.rb
+
 ## Day2
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_rubyfriends.webp">
@@ -121,6 +136,11 @@ created_on: 2025-05-28
 撮影した人: ヤノ | ROUTE06 @ynndino88
 ひとこと: RubyKaigi といえばこの方々
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_noc_team.webp">
+
+撮影した人: かわかみ(kota_syan)
+ひとこと: NOC チームの皆さま
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_ruby_karaoke.webp">
 
 撮影した人: まつした(jxmtst)
@@ -144,6 +164,11 @@ created_on: 2025-05-28
 撮影した人: しおい (coe401\_)
 ひとこと: Ruby Committers and the World にて、Ruby コミッター大集合
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_committers_on_screen.webp">
+
+撮影した人: かわかみ(kota_syan)
+ひとこと: "おもしろうちわを持ちながら真面目な話をしている mame さんと、見守る k0kubun さん、そして嬉しそうに聞いている金子さん"
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_shimada_with_icecream.webp">
 
 撮影した人: @moro
@@ -158,6 +183,11 @@ created_on: 2025-05-28
 
 撮影した人: ヤノ | ROUTE06 @ynndino88
 ひとこと: 私も IVRy さんで黒電話になりました
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_hanachin.webp">
+
+撮影した人: かわかみ(kota_syan)
+ひとこと: hanachin さんとルーサーくん
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_palkan_and_his_book.webp">
 
