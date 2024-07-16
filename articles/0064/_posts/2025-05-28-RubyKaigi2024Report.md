@@ -50,6 +50,10 @@ created_on: 2025-05-28
 撮影した人: あっきー（kuronekopunk）
 ひとこと: RubyKaigi 2024 用の T シャツを作って参戦 👍
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/map.webp">
+
+撮影した人: @hsbt
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_lunch.webp" alt="Day1にランチした時の集合写真">
 
 撮影した人: neko314
@@ -96,6 +100,10 @@ created_on: 2025-05-28
 撮影した人: あっきー（kuronekopunk）
 ひとこと: IVRy さんで電話になった
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/discussion.webp">
+
+撮影した人: @hsbt
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_fruits.webp">
 
 撮影した人: ヤノ | ROUTE06 @ynndino88
@@ -126,6 +134,10 @@ created_on: 2025-05-28
 ひとこと: RubyKaraoke で #RubyFriends!
 
 ## Day3
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_ruby_committers.webp">
+
+撮影した人: @hsbt
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_committers.webp" alt="Ruby Committers and the Worldにて、Rubyコミッター大集合">
 
