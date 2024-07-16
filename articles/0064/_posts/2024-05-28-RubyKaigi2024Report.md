@@ -3,15 +3,17 @@ layout: post
 title: RubyKaigi 2024 フォトレポート
 short_title: Rubykaigi 2024 report
 tags: 0064
-post_author:
-created_on: 2025-05-28
+post_author: neko314
+created_on: 2024-05-28
 ---
 
 {% include base.html %}
 
 ## はじめに
 
-あとでかく
+2024 年 5 月 15 日 〜 2024 年 5 月 17 日に、[RubyKaigi 2024](https://rubykaigi.org/2024/)が開催されました。
+
+今回は当日の様子を写真たっぷりでお伝えします！写真は [GitHub Issue にて募集](https://github.com/rubima/magazine.rubyist.net/issues/500)し、たくさんの Rubyist から提供いただきました。写真の提供ありがとうございました。
 
 ## 会期前
 
@@ -258,4 +260,7 @@ created_on: 2025-05-28
 
 ## さいごに
 
-あとでかく
+載せきれなかった写真は issue にあります。合わせてご覧ください。
+https://github.com/rubima/magazine.rubyist.net/issues/500
+
+次回の RubyKaigi も楽しみですね。
