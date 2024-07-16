@@ -132,6 +132,11 @@ created_on: 2025-05-28
 撮影した人: @moro
 ひとこと: アイスを食べる島田さん
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_sanbaruby.webp">
+
+撮影した人: hasumikin
+ひとこと: このお三方とランチのステーキを食べに行きました。彼らがどうみても[太陽戦隊サンバルカン](https://x.com/hasumikin/status/1791328343809462713)だったので、これを撮影しました。ただ、緑のスタッフかりゆしを着た松田さんとピンクの STORES T シャツを着た笹田さんも連れてきて秘密戦隊ゴレンジャーにするべきだったと反省しています
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_tel.webp">
 
 撮影した人: ヤノ | ROUTE06 @ynndino88
