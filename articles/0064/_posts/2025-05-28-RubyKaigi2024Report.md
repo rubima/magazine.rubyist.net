@@ -76,6 +76,11 @@ created_on: 2025-05-28
 
 ## Day2
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_rubyfriends.webp">
+
+撮影した人: おおき（aoirolamp）
+ひとこと: RubyFriends
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_city_hall.webp">
 
 撮影した人: @moro
