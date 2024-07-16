@@ -64,6 +64,11 @@ created_on: 2025-05-28
 撮影した人: ヤノ | ROUTE06 @ynndino88
 ひとこと: おやつタイム
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rbs_friends.webp">
+
+撮影した人: @okuramasafumi（大倉雅史）
+ひとこと: RBS に興味がある人たち
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_seki_and_shioi.webp">
 
 撮影した人: @moro
@@ -132,6 +137,11 @@ created_on: 2025-05-28
 撮影した人: ヤノ | ROUTE06 @ynndino88
 ひとこと: 私も IVRy さんで黒電話になりました
 
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_palkan_and_his_book.webp">
+
+撮影した人: @okuramasafumi（大倉雅史）
+ひとこと: Palkan が書いた本に自作 gem が載っていたので記念
+
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_drink_tickets.webp">
 
 撮影した人: あっきー（kuronekopunk）
@@ -163,6 +173,11 @@ created_on: 2025-05-28
 
 撮影した人: しおい (coe401\_)
 ひとこと: RubyFriends with みんなが食べていた千日のぜんざい
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day4_endless_rubykaigi.webp">
+
+撮影した人: @okuramasafumi（大倉雅史）
+ひとこと: RubyKaigi が終われない
 
 ## さいごに
 
