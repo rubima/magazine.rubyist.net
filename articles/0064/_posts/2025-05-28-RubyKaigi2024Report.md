@@ -68,15 +68,15 @@ created_on: 2025-05-28
 
 撮影した人: ujihisa
 
-<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rubyfriends_at_official_party.webp">
-
-撮影した人: ヤノ | ROUTE06 @ynndino88
-ひとこと: おやつタイム
-
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rbs_friends.webp">
 
 撮影した人: @okuramasafumi（大倉雅史）
 ひとこと: RBS に興味がある人たち
+
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rubyfriends_at_official_party.webp">
+
+撮影した人: ヤノ | ROUTE06 @ynndino88
+ひとこと: official party のようす、WE ARE #RubyFriends!
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_seki_and_shioi.webp">
 
@@ -122,7 +122,7 @@ created_on: 2025-05-28
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_fruits.webp">
 
 撮影した人: ヤノ | ROUTE06 @ynndino88
-ひとこと: official party のようす、WE ARE #RubyFriends!
+ひとこと: おやつタイム
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_kosaki_and_shioi.webp">
 
