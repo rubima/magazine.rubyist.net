@@ -67,15 +67,15 @@ IT業界全般、特にプログラミングは、人材育成は大事なこと
 Pythonのアクセス修飾子
 ```python
 class Example:
-  # public場合は、_がないです
+  # public場合は、アンダースコアがないです
   def public_method:
     pass
   
-  # protected場合は、_が1つあります
+  # protected場合は、アンダースコアが1つあります
   def _protected_method:
     pass
    
-  # protected場合は、__が2つあります
+  # protected場合は、アンダースコアが2つあります
   def __private_method:
     pass
 ```
@@ -88,6 +88,10 @@ Rubyのアクセス修飾子
 class Example
   # public場合は、指定されていないかpublicキーワードです。
   def public_method
+  end
+
+  public
+  def public_method2
   end
 
   # protected場合は、protectedキーワードです。
@@ -119,6 +123,8 @@ PythonからRubyに変えたあと、留学生たちは：
 
 私にとって、Rubyは教育するのにいいプログラミング言語です。Rubyプログラマーコミュニティをもっとサポートできたらいいのにと思います。
 
+自己理由なので、Rubyを教えることを中止ました。Slideshareに教えるためのスライドをアップロードしました。英語バージョンの最後にリンクを貼っていただきます。
+
 最後までお読みいただき、ありがとうございます。
 
 ------
@@ -131,7 +137,7 @@ In the IT industry in general and programming particularly, training new members
 
 ## Self Introduction
 
-Hello, my name is Hoang Quan. I'm from Hanoi, Vietnam. I'm working in Japan for 4 years. At the moment, I'm the Lead Engineer of a start up in Tokyo. My favorite tech stack is Agile/Scrum, AWS and Ruby.
+Hello, my name is Hoang Quan. I'm from Hanoi, Vietnam. I'm working in Japan for 4 years. At the moment, I'm the Lead Engineer of a start up in Tokyo. I love Agile/Scrum, AWS and Ruby.
 
 At the first 1,5 years of my career, I worked as a Ruby developer. Then, after becoming a system engineer, although I rarely use Ruby in work, I continue to learn Ruby myself.
 
@@ -178,17 +184,17 @@ After choosing a programming language, new problems arose:
 Python access modifiers
 ```python
 class Example:
-# If public, there is no _
-def public_method:
-pass
+  # For public case, there is no underscore
+  def public_method:
+  pass
 
-# If protected, there is one _
-def _protected_method:
-pass
+  # For protected case, there is one underscore
+  def _protected_method:
+  pass
 
-# If protected, there are two __
-def __private_method:
-pass
+  # For private case, there are two underscores
+  def __private_method:
+  pass
 ```
 When I asked the students, "What does this underscore mean?", they had no idea.
 
@@ -197,21 +203,25 @@ At this point, I chose a real OOP language. Speaking of OOP, it's probably Java,
 Access modifiers in Ruby
 ```ruby
 class Example
-# For public, it's free or public keyword.
-def public_method
-end
+  # For public case, there is no keyword or it's public keyword.
+  def public_method
+  end
 
-# For protected, it's protected keyword.
-protected
+  public
+  def public_method2
+  end
 
-def protected_method
-end
+  # For protected case, it's protected keyword.
+  protected
 
-# For private, it's private keyword.
-private
+  def protected_method
+  end
 
-def private_method
-end
+  # For private case, it's private keyword.
+  private
+
+  def private_method
+  end
 end
 ```
 ### Results
@@ -230,4 +240,18 @@ It was a little sad.
 
 For me, Ruby is a good programming language for education. I wish I could support the Ruby programmer community more.
 
+For personal reasons, I don't teach Ruby For now. I have uploaded the slides I used for teaching into Slideshare. The links to the slides are at the end of the English version.
+
 Thank you for reading to the end.
+
+### スライド/Slides
+
+- First slide: [https://www.slideshare.net/slideshow/01-ruby-introduction-ruby-core-teaching/270326042](https://www.slideshare.net/slideshow/01-ruby-introduction-ruby-core-teaching/270326042)
+- Second slide: [https://www.slideshare.net/slideshow/02-ruby-basic-slides-ruby-core-teaching/270326038](https://www.slideshare.net/slideshow/02-ruby-basic-slides-ruby-core-teaching/270326038)
+- Third slide: [https://www.slideshare.net/slideshow/03-ruby-variables-regex-ruby-core-teaching/270326039](https://www.slideshare.net/slideshow/03-ruby-variables-regex-ruby-core-teaching/270326039)
+- 4th slide: [https://www.slideshare.net/slideshow/04-ruby-operators-slides-ruby-core-teaching/270326035](https://www.slideshare.net/slideshow/04-ruby-operators-slides-ruby-core-teaching/270326035)
+- 5th slide: [https://www.slideshare.net/slideshow/05-ruby-control-structures-ruby-core-teaching/270326036](https://www.slideshare.net/slideshow/05-ruby-control-structures-ruby-core-teaching/270326036)
+- 6th slide: [https://www.slideshare.net/slideshow/06-ruby-array-hash-ruby-core-teaching/270326037](https://www.slideshare.net/slideshow/06-ruby-array-hash-ruby-core-teaching/270326037)
+- 7th slide: [https://www.slideshare.net/slideshow/07-ruby-string-slides-ruby-core-teaching/270326040](https://www.slideshare.net/slideshow/07-ruby-string-slides-ruby-core-teaching/270326040)
+- 8th slide: [https://www.slideshare.net/slideshow/08-ruby-enumerable-ruby-core-teaching/270326032](https://www.slideshare.net/slideshow/08-ruby-enumerable-ruby-core-teaching/270326032)
+- 9th slide: [https://www.slideshare.net/slideshow/09-ruby-object-oriented-programming-ruby-core-teaching/270326041](https://www.slideshare.net/slideshow/09-ruby-object-oriented-programming-ruby-core-teaching/270326041)
