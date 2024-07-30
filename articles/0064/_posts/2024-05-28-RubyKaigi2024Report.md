@@ -11,9 +11,9 @@ created_on: 2024-05-28
 
 ## はじめに
 
-2024 年 5 月 15 日 〜 2024 年 5 月 17 日に、[RubyKaigi 2024](https://rubykaigi.org/2024/)が開催されました。
+2024 年 5 月 15 日 〜 2024 年 5 月 17 日に、[RubyKaigi 2024](https://rubykaigi.org/2024/) が開催されました。
 
-今回は当日の様子を写真たっぷりでお伝えします！写真は [GitHub Issue にて募集](https://github.com/rubima/magazine.rubyist.net/issues/500)し、たくさんの Rubyist から提供いただきました。写真の提供ありがとうございました。
+今回は当日の様子を写真たっぷりでお伝えします! 写真は [GitHub Issue にて募集](https://github.com/rubima/magazine.rubyist.net/issues/500) し、たくさんの Rubyist から提供いただきました。写真の提供ありがとうございました。
 
 ## 会期前
 
@@ -34,7 +34,7 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_prechekin.webp">
 
-撮影した人: かわかみ(kota_syan)
+撮影した人: かわかみ (kota_syan)
 ひとこと: プレチェックイン前の受付の皆さん
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day0_welcome_drinkup.webp">
@@ -54,17 +54,17 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_t_shirt.webp">
 
-撮影した人: あっきー（kuronekopunk）
+撮影した人: あっきー (kuronekopunk)
 ひとこと: RubyKaigi 2024 用の T シャツを作って参戦 👍
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/map.webp">
 
 撮影した人: @hsbt
 
-<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_lunch.webp" alt="Day1にランチした時の集合写真">
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_lunch.webp" alt="Day1 にランチした時の集合写真">
 
 撮影した人: neko314
-ひとこと: [玉城豆腐のみそ汁屋](https://www.instagram.com/tamakidoufuno_misoshiru/)でランチ
+ひとこと: [玉城豆腐のみそ汁屋](https://www.instagram.com/tamakidoufuno_misoshiru/) でランチ
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_official_party.webp">
 
@@ -72,7 +72,7 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rbs_friends.webp">
 
-撮影した人: @okuramasafumi（大倉雅史）
+撮影した人: @okuramasafumi (大倉雅史)
 ひとこと: RBS に興味がある人たち
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rubyfriends_at_official_party.webp">
@@ -87,12 +87,12 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rubyfriends_at_party.webp">
 
-撮影した人: かわかみ(kota_syan)
+撮影した人: かわかみ (kota_syan)
 ひとこと: RubyFriends@Official Party
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_yuntaku_night.webp">
 
-撮影した人: かわかみ(kota_syan)
+撮影した人: かわかみ (kota_syan)
 ひとこと: 派手髪.rb
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_okinawa_friends.webp">
@@ -104,7 +104,7 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_rubyfriends.webp">
 
-撮影した人: おおき（aoirolamp）
+撮影した人: おおき (aoirolamp)
 ひとこと: RubyFriends
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_city_hall.webp">
@@ -114,12 +114,12 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_stamp_rally.webp">
 
-撮影した人: まつした(jxmtst)
+撮影した人: まつした (jxmtst)
 ひとこと: スタンプラリー
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_tel.webp">
 
-撮影した人: あっきー（kuronekopunk）
+撮影した人: あっきー (kuronekopunk )
 ひとこと: IVRy さんで電話になった
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/discussion.webp">
@@ -150,7 +150,7 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_noc_team.webp">
 
-撮影した人: かわかみ(kota_syan)
+撮影した人: かわかみ (kota_syan)
 ひとこと: NOC チームの皆さま
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_little_rubyists.webp">
@@ -161,11 +161,11 @@ created_on: 2024-05-28
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_churaumi.webp">
 
 撮影した人: えんじぇる
-ひとこと: 美ら海水族館を楽しんでいる子どもたち（保護者に掲載許可を得ています）
+ひとこと: 美ら海水族館を楽しんでいる子どもたち (保護者に掲載許可を得ています)
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_ruby_karaoke.webp">
 
-撮影した人: まつした(jxmtst)
+撮影した人: まつした (jxmtst)
 ひとこと: RubyMusicMixin
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_rubykaraoke.webp">
@@ -181,14 +181,14 @@ created_on: 2024-05-28
 
 撮影した人: @hsbt
 
-<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_committers.webp" alt="Ruby Committers and the Worldにて、Rubyコミッター大集合">
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_committers.webp" alt="Ruby Committers and the World にて、Ruby コミッター大集合">
 
 撮影した人: しおい (coe401\_)
 ひとこと: Ruby Committers and the World にて、Ruby コミッター大集合
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_committers_on_screen.webp">
 
-撮影した人: かわかみ(kota_syan)
+撮影した人: かわかみ (kota_syan)
 ひとこと: "おもしろうちわを持ちながら真面目な話をしている mame さんと、見守る k0kubun さん、そして嬉しそうに聞いている金子さん"
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_shimada_with_icecream.webp">
@@ -199,7 +199,7 @@ created_on: 2024-05-28
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_sanbaruby.webp">
 
 撮影した人: hasumikin
-ひとこと: このお三方とランチのステーキを食べに行きました。彼らがどうみても[太陽戦隊サンバルカン](https://x.com/hasumikin/status/1791328343809462713)だったので、これを撮影しました。ただ、緑のスタッフかりゆしを着た松田さんとピンクの STORES T シャツを着た笹田さんも連れてきて秘密戦隊ゴレンジャーにするべきだったと反省しています
+ひとこと: このお三方とランチのステーキを食べに行きました。彼らがどうみても[太陽戦隊サンバルカン](https://x.com/hasumikin/status/1791328343809462713) だったので、これを撮影しました。ただ、緑のスタッフかりゆしを着た松田さんとピンクの STORES T シャツを着た笹田さんも連れてきて秘密戦隊ゴレンジャーにするべきだったと反省しています
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_tel.webp">
 
@@ -208,17 +208,17 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_hanachin.webp">
 
-撮影した人: かわかみ(kota_syan)
+撮影した人: かわかみ (kota_syan)
 ひとこと: hanachin さんとルーサーくん
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_palkan_and_his_book.webp">
 
-撮影した人: @okuramasafumi（大倉雅史）
+撮影した人: @okuramasafumi (大倉雅史)
 ひとこと: Palkan が書いた本に自作 gem が載っていたので記念
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_drink_tickets.webp">
 
-撮影した人: あっきー（kuronekopunk）
+撮影した人: あっきー (kuronekopunk )
 ひとこと: After Party sponsored by mov 飲みまくって Ruby を満たすぞ！
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_irb_reline_team.webp" alt="After Party で IRB Reline Team が集合できた記念">
@@ -228,12 +228,12 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_after_party.webp">
 
-撮影した人: あっきー（kuronekopunk）
+撮影した人: あっきー (kuronekopunk)
 ひとこと: After Party sponsored by mov！
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_ruby_music_mixin.webp">
 
-撮影した人: まつした(jxmtst)
+撮影した人: まつした (jxmtst)
 ひとこと: RubyMusicMixin
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day3_closing.webp">
@@ -250,7 +250,7 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day4_endless_rubykaigi.webp">
 
-撮影した人: @okuramasafumi（大倉雅史）
+撮影した人: @okuramasafumi ( 大倉雅史 )
 ひとこと: RubyKaigi が終われない
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/taneakashi.webp">
