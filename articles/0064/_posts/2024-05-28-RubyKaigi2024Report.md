@@ -13,7 +13,7 @@ created_on: 2024-05-28
 
 2024 年 5 月 15 日 〜 2024 年 5 月 17 日に、[RubyKaigi 2024](https://rubykaigi.org/2024/) が開催されました。
 
-今回は当日の様子を写真たっぷりでお伝えします! 写真は [GitHub Issue にて募集](https://github.com/rubima/magazine.rubyist.net/issues/500) し、たくさんの Rubyist から提供いただきました。写真の提供ありがとうございました。
+当日の様子を記録として残しておけたらと思い、RubyKaigi の会期中のフォトレポートを作成しました。 写真は [GitHub Issue にて募集](https://github.com/rubima/magazine.rubyist.net/issues/500) し、たくさんの Rubyist から提供いただきました。写真の提供ありがとうございました。
 
 ## 会期前
 
