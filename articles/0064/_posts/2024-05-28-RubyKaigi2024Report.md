@@ -166,7 +166,7 @@ created_on: 2024-05-28
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_ruby_karaoke.webp">
 
 撮影した人: まつした (jxmtst)
-ひとこと: RubyMusicMixin
+ひとこと: RubyKaraoke
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_rubykaraoke.webp">
 
