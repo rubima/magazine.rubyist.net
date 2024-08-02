@@ -92,13 +92,13 @@ created_on: 2024-05-28
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_yuntaku_night.webp">
 
-撮影した人: かわかみ (kota_syan)
-ひとこと: 派手髪.rb
+撮影した人: yasulab
+ひとこと: ゆんたく Night@RubyKaigi 2024 で唄っている様子
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_hadegami.webp">
 
-撮影した人: yasulab
-ひとこと: ゆんたく Night@RubyKaigi 2024 で唄っている様子
+撮影した人: かわかみ (kota_syan)
+ひとこと: 派手髪.rb
 
 ## Day2
 
