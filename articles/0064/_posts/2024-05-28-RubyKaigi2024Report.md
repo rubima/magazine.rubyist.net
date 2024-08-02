@@ -95,7 +95,7 @@ created_on: 2024-05-28
 撮影した人: かわかみ (kota_syan)
 ひとこと: 派手髪.rb
 
-<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day2_okinawa_friends.webp">
+<img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_hadegami.webp">
 
 撮影した人: yasulab
 ひとこと: ゆんたく Night@RubyKaigi 2024 で唄っている様子
