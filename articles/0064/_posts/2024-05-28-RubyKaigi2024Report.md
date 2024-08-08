@@ -260,7 +260,7 @@ created_on: 2024-05-28
 
 ## さいごに
 
-載せきれなかった写真は issue にあります。合わせてご覧ください。
-https://github.com/rubima/magazine.rubyist.net/issues/500
+載せきれなかった写真は issue にあります。合わせてご覧ください。  
+<https://github.com/rubima/magazine.rubyist.net/issues/500>
 
 次回の RubyKaigi も楽しみですね。
