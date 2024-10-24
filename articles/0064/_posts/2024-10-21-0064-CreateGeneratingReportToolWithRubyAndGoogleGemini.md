@@ -6,6 +6,7 @@ tags: 0064
 post_author: ホアンクアン
 created_on: 2024 年 10 月 21 日
 ---
+{% include base.html %}
 
 ## はじめに
 
