@@ -75,7 +75,7 @@ class Example:
   def _protected_method:
     pass
    
-  # protected 場合は、アンダースコアが 2 つあります
+  # private 場合は、アンダースコアが 2 つあります
   def __private_method:
     pass
 ```
