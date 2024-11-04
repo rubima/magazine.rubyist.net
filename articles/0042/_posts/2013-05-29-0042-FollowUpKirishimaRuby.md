@@ -37,7 +37,7 @@ tags: 0042 FollowUpKirishimaRuby
 昔はよくプログラミングしてたんだけど、最近は Excel とか Word ばっかり相手にして、あんまりプログラミングしてない人はまたプログラミングをはじめるきっかけになると嬉しいですし、現在、たくさんプログラミングをしている人はプログラミングとの向き合いを考えるきっかけになると嬉しいです。
 
 ## 『桐島、部活やめるってよ』
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/KjjG0WTQ6C4"></param><embed src="http://www.youtube.com/v/KjjG0WTQ6C4" type="application/x-shockwave-flash" width="560" height="315"></embed></object>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/KjjG0WTQ6C4" /><embed src="http://www.youtube.com/v/KjjG0WTQ6C4" type="application/x-shockwave-flash" width="560" height="315" /></object>
 
 最近、映画鑑賞が趣味でいろんな映画を観ていて、その中でも昨年公開された『[桐島、部活やめるってよ](http://www.kirishima-movie.com/)』がかなりお気に入りです。
 映画『桐島』っていうのはあまり多くを語らない映画といいますか、ぽっかりと空洞がある映画で、自分の想像で補う部分が非常に大きい作品だと考えています。
@@ -165,7 +165,7 @@ tags: 0042 FollowUpKirishimaRuby
 そんなみなさんを納得させるため、ここからは具体的なぽんこつ事例を挙げていき、自分のぽんこつ度の検証していこうと思います。
 
 一つ目の事例はみなさん大好き Perfume に関するものです。私自身は Perfume に関してそれほど思い入れがあるわけでもないのですが、Perfume が [perfume-dev](http://perfume-dev.github.io/) という面白い取り組みをしていたのに興味を持ちました。
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/uIgsODaANHY"></param><embed src="http://www.youtube.com/v/uIgsODaANHY" type="application/x-shockwave-flash" width="560" height="315"></embed></object>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/uIgsODaANHY" /><embed src="http://www.youtube.com/v/uIgsODaANHY" type="application/x-shockwave-flash" width="560" height="315" /></object>
 
 Perfume は彼女たちのダンスなどのモーションデータと音声データを github 上に[公開しました](https://github.com/perfume-dev)。
 このデータを使って世界中のクリエータたちにデータを基にして自由に作品を作ってもらい、Perfume 自身の世界的な知名度をあげようというのが perfume-dev の狙いのようです。
@@ -177,7 +177,7 @@ Perfume は彼女たちのダンスなどのモーションデータと音声デ
 モーションデータは[BVH形式](http://www.tmps.org/?MOCAP%A5%C7%A1%BC%A5%BF%A5%D5%A5%A1%A5%A4%A5%EB)でデータが公開されており、まずはこれをパースする必要がありましたが、運良く gem があったのでそれを使うことにしました。
 
 そして、お盆休みに徹夜してプログラムを書き、ついに Perfume を踊らせることに成功したのです！　わーい、できた〜！
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/rjoFPGmJyn0"></param><embed src="http://www.youtube.com/v/rjoFPGmJyn0" type="application/x-shockwave-flash" width="560" height="315"></embed></object>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/rjoFPGmJyn0" /><embed src="http://www.youtube.com/v/rjoFPGmJyn0" type="application/x-shockwave-flash" width="560" height="315" /></object>
 
 徹夜して寝ぼけてたので「Perfume もずいぶん近未来的というか、アグレッシブな関節の使い方するんだな」とマジで誤解して、Youtube に上記の動画の上げて寝ました。
 この動画には次のような反響がありました。
@@ -557,7 +557,7 @@ NaCl では、有志が集まって隔週間隔で過去問を解いています
 ![kiri_hunter_quote.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_hunter_quote.png)
 
 そして、コードを書くという遊びをめいいっぱい楽しんでいる人が、最終的には強いんじゃないのかな、と思います。
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/f9j4Qh5A3ys"></param><embed src="http://www.youtube.com/v/f9j4Qh5A3ys" type="application/x-shockwave-flash" width="560" height="315"></embed></object>
+<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/f9j4Qh5A3ys" /><embed src="http://www.youtube.com/v/f9j4Qh5A3ys" type="application/x-shockwave-flash" width="560" height="315" /></object>
 
 テキトーに遊んでたら Perfume がキビキビ動くようになったので、ちょっと自慢しておきますね（キビキビ動かすために実は GC を止めている……のは内緒）。
 ![kiri_mseki_quote.png]({{base}}{{site.baseurl}}/images/0042-FollowUpKirishimaRuby/kiri_mseki_quote.png)
