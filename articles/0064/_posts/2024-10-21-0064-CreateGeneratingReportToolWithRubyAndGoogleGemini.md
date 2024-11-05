@@ -2,7 +2,7 @@
 layout: post
 title: 日報が面倒なので、RubyとGoogle Geminiを使って生成するツールを作成しました。
 short_title: Generating Report Tool With Ruby and Gemini
-tags: 0064
+tags: 0065
 post_author: ホアンクアン
 created_on: 2024 年 10 月 21 日
 ---
