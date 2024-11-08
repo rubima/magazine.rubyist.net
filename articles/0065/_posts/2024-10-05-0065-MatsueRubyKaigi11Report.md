@@ -22,7 +22,7 @@ created_on: 2024-10-05
 * Togetter まとめ： [https://togetter.com/li/2445824](https://togetter.com/li/2445824)
 * 公式タグ：[#matrk11](https://x.com/hashtag/matrk11)
 
-![01_all.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/01_all.jpg)
+![01_all.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/01_all.jpg)
 
 ### 基調講演: A Beginner's Complete Guide to Microcontroller Programming with Ruby
 
@@ -47,7 +47,7 @@ created_on: 2024-10-05
 途中、オームの法則やキルヒホッフの法則といった電気回路にまつわる話題もありました。<br>
 諸事情により講演前日に基調講演をお願いする形となりましたが、ご快諾・ご講演いただきました。<br>
 
-![02_keynote.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/02_keynote.jpg)
+![02_keynote.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/02_keynote.jpg)
 
 ### Ruby をファミコンで動かすには
 
@@ -63,7 +63,7 @@ created_on: 2024-10-05
 また、今回の取り組みにあたり mruby を作ることが mruby のバイトコードがどうやって実行されるか理解する最良の方法と Ruby で実装した mruby/ruby も作成されています。<br>
 mruby/ruby は、C に詳しくない Rubyist の学習用(観賞用)にと紹介されました。<br>
 
-![03_session1.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/03_session1.jpg)
+![03_session1.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/03_session1.jpg)
 
 ### Rails Girls Matsue 5th を振り返る
 
@@ -77,7 +77,7 @@ mruby/ruby は、C に詳しくない Rubyist の学習用(観賞用)にと紹�
 開催後のアンケートで全ての参加者から「とてもサポートしてもらえて助かった」と感謝の言葉をもらえたというお話が印象的でした。<br>
 次回、Rails Girls Matsue 6th の開催も楽しみです。<br>
 
-![04_session2.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/04_session2.jpg)
+![04_session2.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/04_session2.jpg)
 
 ### Rubyist Magagine を続けていくということ
 
@@ -97,7 +97,7 @@ mruby/ruby は、C に詳しくない Rubyist の学習用(観賞用)にと紹�
 
 今後の活動として、るびま 20 周年記念号をそろそろ出せるのではないかということでした。<br>
 
-![05_session3.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/05_session3.jpg)
+![05_session3.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/05_session3.jpg)
 
 ### gem_rbs_collection へのコントリビュートから始める Ruby の型の世界
 
@@ -119,7 +119,7 @@ gem_rbs_collection のコントリビュートの仕方として [roo-rb/roo](ht
 [roo-rb/roo](https://github.com/roo-rb/roo) の method_missing で追加されるスプレッドシートの行と列に対応するメソッドに型を付ける方法について Slack の ruby-jp で相談したところ、gem パッケージで型を追加せずに必要なら各自で追加すればよいとの返答でしたので、そこは型を指定せずに PR を作成されたとのことでした。<br>
 きちんとテストも書き、PR をマージできたところまでの流れをご説明いただきました。<br>
 
-![06_session4.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/06_session4.jpg)
+![06_session4.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/06_session4.jpg)
 
 ### low power ruby
 
@@ -136,7 +136,7 @@ mruby/c を搭載した RBoard をベースにして、電源を単三電池に�
   - sleep の実行時に CPU 以外(周辺機器部分)で一定の電力消費が残っていることを見つけた
   - 周辺機器部分による電力消費を減らそうと電圧を強制的に下げると sleep を実行できなくなったが、UART の機能を止めることで 電圧を下げても sleep を実行できるようになった
 
-![07_session5.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/07_session5.jpg)
+![07_session5.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/07_session5.jpg)
 
 ### ruby.wasm × Service Worker でサーバーのいらないモックサーバーを作る
 
@@ -154,7 +154,7 @@ Service Worker はフロントエンドからバックエンドへのリクエ�
 - textarea 要素に入力した YAML を扱うため、Indexed DB 経由で YAML を渡した。
 - C 拡張の commonmarker がビルドに失敗していたため、ビルド対象から外し、LoadError 回避のために空ファイルを置いた。
 
-![08_session6.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/08_session6.jpg)
+![08_session6.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/08_session6.jpg)
 
 ### Ruby の日本語リファレンスマニュアルの現在と未来
 
@@ -170,7 +170,7 @@ rurema は現状、文法の変更などの対応状況や NEWS の翻訳等に�
 また、ドキュメントの誤字脱字なども受付中とのことで、issue に対応してくれる方、PR のレビューをしていただける方を募集しておられました。<br>
 rurema についての興味や質問等については、Slack の ruby-jp の #rurema チャンネルにてご連絡くださいとのことでした。<br>
 
-![09_session7.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/09_session7.jpg)
+![09_session7.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/09_session7.jpg)
 
 ### RDoc の改善案をひたすらしゃべるだけ
 
@@ -187,7 +187,7 @@ Ruby のドキュメント生成ツールとしては RDoc と YARD が代表的
 これらを解決すべく、プラグインとして拡張可能な機能を実装できないかいう構想はとても興味深いものでした。<br>
 ドキュメントが楽しく書けるようになると Ruby の魅力がまた強くなりそうです。<br>
 
-![10_session8.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/10_session8.jpg)
+![10_session8.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/10_session8.jpg)
 
 ### まつもと ゆきひろ 氏への質問コーナー
 
@@ -200,13 +200,13 @@ Ruby のドキュメント生成ツールとしては RDoc と YARD が代表的
 30 分のうち、20 分ほどはその事前に募集いただいた質問にご回答いただき、残りの 10 分を会場に参加者から質問をしていただきました。<br>
 過去に講演された発表に関する質問、モチベーションに関する質問、Ruby の言語設計に関する質問などがありました。<br>
 
-![11_qa.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/11_qa.jpg)
+![11_qa.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/11_qa.jpg)
 
 ### あしあと
 
 松江 Ruby 会議 11 にご参加いただいた方に「あしあと」としてホワイトボードにメッセージを書いていただきました。
 
-![12_qa.jpg]({{base}}{{site.baseurl}}/images/0064-MatsueRubyKaigi11Report/12_ashiato.jpg)
+![12_qa.jpg]({{base}}{{site.baseurl}}/images/0065-MatsueRubyKaigi11Report/12_ashiato.jpg)
 
 ## 著者について
 
