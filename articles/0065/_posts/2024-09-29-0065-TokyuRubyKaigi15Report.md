@@ -108,7 +108,7 @@ Twitter で募集した記念のおたよりを掲載した記事が近日公開
 ### 投票アプリ開発 LT
 
 今回の投票アプリはフィヨルドブートキャンプ生である smallmonkey117 さんが作ってくれました！
- Figma で画像設計をして作成に臨んだが、当初はユーザーとしての使い勝手の視点がなかった反省や、Tokyu メンバーに先に触ってもらったところ、「(自分が)投票した一覧が見えた方が便利」というフィードバックをもらって取り入れた話などしてくれました。
+ Figma で画像設計をして作成に臨んだが、当初はユーザーとしての使い勝手の視点がなかった反省や、Tokyu メンバーに先に触ってもらったところ、「(自分が)投票した一覧が見えた方が便利」というフィードバックをもらって取り入れた話などしてくれました。<br><br>
 
 <img src="{{base}}{{site.baseurl}}/images/0065-TokyuRubyKaigi15Report/ryopeko.png" alt="ryopekoさん親子" width="500px">
 <img src="{{base}}{{site.baseurl}}/images/0065-TokyuRubyKaigi15Report/takkanm.jpg" alt="発表するtakkanmさん" width="500px">
