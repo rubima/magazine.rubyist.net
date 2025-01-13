@@ -34,7 +34,7 @@ Tokyu.rb
 
 [TokyuRuby会議15](https://tokyurubykaigi.github.io/tokyu15/)
 
-### 公式タグ・ X (旧 Twitter) 
+### 公式タグ・ X (旧 Twitter)
 
 \#tqrk15
 \#GMOインターネットグループ
