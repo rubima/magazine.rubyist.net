@@ -28,7 +28,7 @@ Fukuoka.rb/株式会社 Ruby 開発
 
 #### 公式サイト
 
-https://regional.rubykaigi.org/fukuoka04/
+[https://regional.rubykaigi.org/fukuoka04/](https://regional.rubykaigi.org/fukuoka04/)
 
 #### 公式タグ
 
@@ -123,3 +123,8 @@ Lrama もその実装のひとつである LALR パーサーは文脈自由文�
 今回 2 つのキーノートはそれぞれパーサー(パーサージェネレーター)の作者によるものでしたが、双方の動機や向いている方向は対照的で、Kevin がコミュニティへのサポートというのを主眼に置いておりエディタやデバッガなどのツールで使えるパーサーを共通の実装で今現在提供したい、という「Ruby の利用者」「現在」を向いているのに対して、yui-knk さんは CRuby 開発者がより正確な情報やフィードバックを得られる状態で文法の検討や実装ができる状態をつくることで、将来に渡って ruby の健全な仕様追加ができるという「Ruby 開発者」「将来」をみているという印象がありました。
 Kevin のキーノートでは Prism についてメンテナンス性についての批判への反論もありましたが、将来の変更への堅牢性についての心配は残ると思いますし、一方で parse.y によるパーサー実装をサードパーティーの gem などから利用する方法としての Universal Parser の実装は S.H さんの発表をみてもまだまだ発展途上で、現在は(同じ parse.y の文法規則を利用している ripper があるとはいえ)いいオプションを提示できていないというのは Prism が支持されうる大きな要因なのだろうと感じました。
 
+## 筆者について
+
+### nagachika
+
+福岡市在住 ruby committer. 安定版メンテナ。CRuby のコミットを読んでコメントする [ruby-trunk-changes](https://ruby-trunk-changes.hatenablog.com/) を更新しています。
