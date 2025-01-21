@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (88) 福岡 Rubyist 会議 04
-short_title: RegionalRubyKaigi レポート (88) 福岡 Rubyist 会議 04
+title: RegionalRubyKaigi レポート (85) 福岡 Rubyist 会議 04
+short_title: RegionalRubyKaigi レポート (85) 福岡 Rubyist 会議 04
 tags: regionalRubyKaigi
 post_author: nagachika
 created_on: 2024-12-08

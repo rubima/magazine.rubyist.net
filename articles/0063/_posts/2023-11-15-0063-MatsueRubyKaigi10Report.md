@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (82) 松江 Ruby 会議 10
-short_title: RegionalRubyKaigi レポート (82) 松江 Ruby 会議 10
+title: RegionalRubyKaigi レポート (84) 松江 Ruby 会議 10
+short_title: RegionalRubyKaigi レポート (84) 松江 Ruby 会議 10
 tags: 0063 MatsueRubyKaigi10Report regionalRubyKaigi
 post_author: 佐田 明弘, 西田 雄也, 原 悠, 野坂 秀和, 田中 健, 高田 芳和
 created_on: 2023-11-15

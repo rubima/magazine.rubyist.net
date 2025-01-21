@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (86) 松江 Ruby 会議 11
-short_title: RegionalRubyKaigi レポート (86) 松江 Ruby 会議 11
+title: RegionalRubyKaigi レポート (87) 松江 Ruby 会議 11
+short_title: RegionalRubyKaigi レポート (87) 松江 Ruby 会議 11
 tags: MatsueRubyKaigi11Report regionalRubyKaigi
 post_author: 佐田 明弘, 西田 雄也, 高田 芳和, 伊東 亮, 藤井 貴
 created_on: 2024-11-22
