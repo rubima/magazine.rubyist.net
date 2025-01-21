@@ -70,7 +70,7 @@ Rubyist Magazine 常設記事となっている「Ruby の歩き方」ですが�
 
 これまたシリーズ物というわけではないのですが、各種カンファレンス参加レポートやカンファレンス後日談など、Ruby に関するカンファレンスに関する記事が多いのも最近の傾向かと思います。特に海外との交流については今後も重要なテーマであると思われますので、海外のカンファレンスに参加したり、日本でも海外の Rubyist を呼んでイベントを開催したり、そうしたイベントに参加されたら是非レポート記事を投稿してみてください。
 
-* [EuRuKo2011レポート]({{base}}{% post_url articles/0036/2011-11-28-0036-Euroko2011 %})
+* [EuRuKo2011レポート]({{base}}{% post_url articles/0036/2011-11-28-0036-EuRuKo2011 %})
 * [RubyConf2011レポート]({{base}}{% post_url articles/0036/2011-11-28-0036-RubyConf2011 %})
 * [あなたが南米のRubyカンファレンスに参加するべきn個の理由【前編】]({{base}}{% post_url articles/0037/2012-02-05-0037-RubyOnSouthAmerica %})
 * [Making of RubyKaigi2011 第二回]({{base}}{% post_url articles/0037/2012-02-05-0037-MakingOfRubyKaigi2011 %})
