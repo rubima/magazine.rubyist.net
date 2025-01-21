@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (87) TokyuRuby会議15 レポート
-short_title: RegionalRubyKaigi レポート (87) TokyuRuby会議15 レポート
+title: RegionalRubyKaigi レポート (86) TokyuRuby会議15 レポート
+short_title: RegionalRubyKaigi レポート (86) TokyuRuby会議15 レポート
 tags: 0065 tqrk regionalRubyKaigi
 post_author: shokola
 created_on: 2024-12-14
