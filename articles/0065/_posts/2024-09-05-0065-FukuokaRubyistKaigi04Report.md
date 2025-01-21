@@ -74,7 +74,7 @@ SIMD 命令を利用すれば高速化できるということはわかってい
 次は mruby で巨大な整数の積が遅いという報告があったので、CRuby でも利用している Karatsuba 法というアルゴリズムの実装にとりかかろうかと考えているとのことでした。
 いつも RubyKaigi や RubyWorld Conference では Ruby の次期バージョンの構想などの話を聞くことが多いなかでいちハッカーとしてのまつもとさんの話を聞くことができた貴重なトークでした。
 
-![02_matz.webp]({{base}}{{site.baseurl}}/images/0065-FukuokaRubyistKaigi04Report/02_matz.webp)
+![02_Matz.webp]({{base}}{{site.baseurl}}/images/0065-FukuokaRubyistKaigi04Report/02_Matz.webp)
 
 #### Building a Ruby-like Language Compiler with Ruby
 

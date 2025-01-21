@@ -349,7 +349,7 @@ eto さんは鶏肉、nari3 はトンカツ、僕はラビオリを頼んだ[^33
 * [http://www.youtube.com/watch?v=qObzgUfCl28](http://www.youtube.com/watch?v=qObzgUfCl28)
 
 
-休憩時間には音楽がかかるのだけど、その中でひときわインパクトが大きかったのがこの曲。「Ruby Ruby Ruby Ruby!」というサビは一度聞いたら忘れられない。るびまのレポートによると、EuRoKo ではこの曲を[ライブ演奏していた](http://jp.rubyist.net/magazine/?0036-Euroko2011)らしい。大人気だ。
+休憩時間には音楽がかかるのだけど、その中でひときわインパクトが大きかったのがこの曲。「Ruby Ruby Ruby Ruby!」というサビは一度聞いたら忘れられない。るびまのレポートによると、EuRuKo ではこの曲を[ライブ演奏していた](http://jp.rubyist.net/magazine/?0036-EuRuKo2011)らしい。大人気だ。
 
 #### 夕方
 
