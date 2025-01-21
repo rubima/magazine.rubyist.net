@@ -25,7 +25,7 @@ created_on: 2024 年 10 月 21 日
 
 Google Gemini(旧：Google Bard)は、2023年12月に発表されました。Googleが「最も強力で汎用的なAIモデル」と呼ぶGeminiは、OpenAIのGPT-4など、他の大規模言語モデルを凌駕する多くの能力を備えています。Googleの様々なサービスと連携しているため、ユーザーはより深い知識や情報を簡単に得ることができます。
 
-以前は、OpenAIアカウントを登録するのが難しく、多くの条件があったため、簡単な登録条件のGoogle Bardを使用しました。 GmailアカウントまたはGoogleアカウントがあればすぐに使用できます。 そのため、BardがGeminiになった今でも、これは私のお気に入りの生成AIツールです。
+以前は、OpenAIアカウントを登録するのが難しく、多くの制約があったため、簡単な登録条件のGoogle Bardを使用していました。 GmailアカウントまたはGoogleアカウントがあればすぐに使用できます。 そのため、BardがGeminiになった今でも、これは私のお気に入りの生成AIツールです。
 
 Google Gemini API キーを取得する方法：
 - [Google AI Studio](https://aistudio.google.com/app/apikey)にアクセスして, "Create API key in new project"をクリックする。
