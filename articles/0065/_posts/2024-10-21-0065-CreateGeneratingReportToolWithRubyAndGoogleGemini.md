@@ -39,7 +39,7 @@ Google Gemini API キーを取得する方法：
 このようなツールをPython、Javascript、TypeScript、またはシェルスクリプトで書くと、多くのサポートがあり、作業が簡単すぎるという結果になります。私はRubyプログラミング言語が好きで、「RubyはRailsだけではない」ことを証明したいとも思っています。そのため、今回はRubyを言語として選びました。
 
 ### `gemini-ai`というgemを使用
-`gemini-ai`とはは、Vertex AI、Generative Language API、AI Studio、その他のGoogleの生成AIサービスを介してGeminiと対話するためのRuby gemです。
+`gemini-ai`とは、Vertex AI、Generative Language API、AI Studio、その他のGoogleの生成AIサービスを介してGeminiと対話するためのRuby gemです。
 これはgemのGithubです: [https://github.com/gbaptista/gemini-ai](https://github.com/gbaptista/gemini-ai)
 
 gemのドキュメントから、Googleのサービスを呼び出すための様々な方法があります。上記のようにGoogle Gemini APIを取得したから、次のようにコードを書きます:
@@ -77,7 +77,7 @@ gem 'gemini-ai', '~> 4.2.0'
 gem 'dotenv'
 ```
 
-空き`Gemfile.lock`を作って、`bundle install`を実行するのは、環境設定は完了です。
+空の`Gemfile.lock`を作って、`bundle install`を実行するのは、環境設定は完了です。
 
 `lib/main.rb`に、必要なgemを呼びます。
 ```ruby
@@ -218,4 +218,10 @@ READMEを書くのも面倒なので、AIを使って簡単に生成します。
 ## おわりに
 このツールのおかげで、プロジェクトをファイルにまとめるのに5分、レポートを作成するのに1分、レビューするのに5分しかかかりませんでした。レポートを書く時間を費やす代わりに、コーディングやインフラなどの知識を学ぶことに集中する時間ができました。
 
+最近、私は [sentiment-ai](https://github.com/BlazingRockStorm/sentiment-ai) というgemを開発しました。これはテキストの感情分析を簡単に行うためのツールです。Rubyが新しい技術、例えば生成AI（GenAI）ともうまく連携できることを示すために、このgemを作成しました。ぜひご覧ください。
+
 最後までお読みいただき、ありがとうございます。
+
+## 筆者について
+
+ホアン・クアン ([@BlazingRockStorm](https://github.com/BlazingRockStorm/))。ベトナムのハノイから出身。5年ぐらい日本に住んでいる。エンジニア、ドラマー・パーカッショニスト、折り紙のインスタグラマー。
