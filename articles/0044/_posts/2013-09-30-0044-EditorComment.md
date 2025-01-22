@@ -93,7 +93,7 @@ tags: 0044 EditorComment
 国内および海外の Ruby カンファレンスの開催情報については、[RubyEventCheck](https://cosen.se/ruby-no-kai/RubyEventCheck) をご参照ください。
 
 * [レポートチーム史上最大の作戦]({{base}}{% post_url articles/0040/2012-11-25-0040-HowToBuildSprk2012ReportTeam %})
-* [Euroko 2012 参加レポート]({{base}}{% post_url articles/0041/2013-02-24-0041-Euroko2012 %})
+* [EuRuKo 2012 参加レポート]({{base}}{% post_url articles/0041/2013-02-24-0041-EuRuKo2012 %})
 * [RubyConf Taiwan 旅行記]({{base}}{% post_url articles/0041/2013-02-24-0041-RubyTaiwan2012 %})
 * [Ruby 20 周年記念パーティーレポート ―― プログラミング初心者の運営スタッフが見た Ruby コミュニティ]({{base}}{% post_url articles/0042/2013-05-29-0042-Ruby20thAnniversaryPartyReport %})
 * [RubyKaigi 2013 レポート]({{base}}{% post_url articles/0043/2013-07-31-0043-RubyKaigi2013 %})

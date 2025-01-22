@@ -145,9 +145,9 @@ ruby main.rb
 {% endraw %}
 {% endhighlight %}
 
-
 新しいウィンドウが開いて、2 秒後に閉じれば成功です。Ruby/SDL の世界へようこそ！
-![00_.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/00_.png)
+
+![00.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/00.png)
 
 ### 初期化
 
@@ -188,9 +188,9 @@ sleep(2)
 {% endraw %}
 {% endhighlight %}
 
-
 空と大地が表示されましたか？:-)
-![01_.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/01_.png)
+
+![01.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/01.png)
 
 ### 画面への描画
 
@@ -239,9 +239,9 @@ sleep(2)
 {% endraw %}
 {% endhighlight %}
 
-
 実行すると、地面の上にキャラクターが表示されます。少しゲームらしくなってきました。
-![02_.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/02_.png)
+
+![02.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/02.png)
 
 ### 画像の読み込み
 
@@ -724,7 +724,8 @@ A. 別に分けなくても構いません。
 
 さて、主人公だけでは寂しいので、他の物も描画してみましょう。
 手元にリンゴと爆弾の絵があるので、「爆弾を避けつつリンゴを集める」ゲームにしてみましょうか。
-![11_.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/11_.png)
+
+![11.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/11.png)
 
 main.rb と同じディレクトリに items.rb というファイルを作り、
 以下のように書いてください。
@@ -875,6 +876,7 @@ A. 僕にもよく分かりません。：-P
 判定することにしましょう。この方法は当たり判定の範囲 (下図の青線) が円形になるので丸い画像に向いていますが、
 Math.sqrt(平方根) を利用しているので物体が多いと重くなる可能性があります (その場合は四角形で判定するのが
 良いでしょう)。
+
 ![distance.png]({{base}}{{site.baseurl}}/images/0018-GameProgramingForRubySDL/distance.png)
 
 items.rb を以下のように書き換えてください。
@@ -1091,6 +1093,4 @@ screen = SDL.set_video_mode(SCREEN_W, SCREEN_H, 16, video_mode)
 ## 筆者について
 
 yhara
-:  [京大マイコンクラブ](http://www.kmc.gr.jp/)に所属する大学院生。好きなゲームのジャンルは音ゲーと落ちゲー。
-
-
+: [京大マイコンクラブ](http://www.kmc.gr.jp/)に所属する大学院生。好きなゲームのジャンルは音ゲーと落ちゲー。

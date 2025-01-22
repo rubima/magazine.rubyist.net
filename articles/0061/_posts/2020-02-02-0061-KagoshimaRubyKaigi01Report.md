@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RegionalRubyKaigiレポート (79) 鹿児島Ruby会議01
+title: RegionalRubyKaigi レポート (79) 鹿児島Ruby会議01
 short_title: 鹿児島Ruby会議01レポート
 tags: 0061 regionalRubyKaigi
 post_author: kurotaky
