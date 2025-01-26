@@ -159,8 +159,8 @@ Rails Girls Fukuoka 3rd は福岡市赤煉瓦文化館という明治時代の�
 * 資料
   * [スライド](https://udzura.jp/slides/2024/rubyistkaigi04/index.pdf)
 
-コンテナエンジン、CRIU、eBPF、WebAssembly など RubyKaigi での udzura さんの過去の発表の内容をなぞりつつ、これら低レベルレイヤの技術を ruby で扱う SDK などの提供が少ないことから、自分で実装をしてるというのが共通したアプローチであると自己分析されていました。こうした技術を ruby から扱うための実装をすることで、対象の技術の具体的で根本的な理解が深まるというメリットもあると語られていたのが印象的でした。
-最近の興味は mruby の WASM binding の mruby/edge や WASM Component Model という拡張仕様への対応など WASM の周辺技術とのことで、次回作が期待されます。
+コンテナエンジン、CRIU、eBPF、WebAssembly(WASM) など RubyKaigi での udzura さんの過去の発表の内容をなぞりつつ、これら低レベルレイヤの技術を ruby で扱う SDK などの提供が少ないことから、自分で実装をしてるというのが共通したアプローチであると自己分析されていました。こうした技術を ruby から扱うための実装をすることで、対象の技術の具体的で根本的な理解が深まるというメリットもあると語られていたのが印象的でした。
+最近の興味は Rust を用いて mruby を WASM 上で動作させるためのプロジェクト mruby/edge や、 WASM Component Model という拡張仕様への対応など、 WASM の周辺技術とのことで、次回作が期待されます。
 
 ![08_udzura.webp]({{base}}{{site.baseurl}}/images/0065-FukuokaRubyistKaigi04Report/08_udzura.webp)
 
