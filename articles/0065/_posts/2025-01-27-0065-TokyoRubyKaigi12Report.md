@@ -131,9 +131,9 @@ created_on: 2025-01-27
 
 RubyKaigiのNOCチームを長く担当されている花月かすみさんによる、DNSの暗号化の自動構成を行うためのプロトコルの紹介と、その検証のためにQUICライブラリのラッパーを実装した、という話です。
 
-Domain Name System(DNS)は最も身近にはドメイン名からIPアドレスを得るための方法として用いられていますが、実際にはドメイン名にあらゆるデータを紐付けられるキーバリューストア、階層型分散データベースとしてインターネットに欠かせない存在となっています。しかしDNSは一般に使われている方式(UDPポート53でクエリを行う、通称「Do53」)では暗号化されておらず、カンファレンスのネットワークを含む公衆WiFiでは盗聴に対して脆弱であるということが知られています。カンファレンスにおいてはWiFiどころかそのへんを転がしているケーブルに対してMan-in-the-Middle攻撃することも容易です。そこで現代ではDNS over TLS(DoT), DNS over HTTPS(DoH; この中にはHTTP/2を使うものとHTTP/3を使うものがある), DNS over QUIC(DoQ)といった、クライアントとリゾルバ[^note-on-resolver]の間の通信を暗号化することで盗聴に対して保護する方式が提案されています。
+Domain Name System(DNS)は最も身近にはドメイン名からIPアドレスを得るための方法として用いられていますが、実際にはドメイン名にあらゆるデータを紐付けられるキーバリューストア、階層型分散データベースとしてインターネットに欠かせない存在となっています。しかしDNSは一般に使われている方式(UDPポート53でクエリを行う、通称「Do53」)では暗号化されておらず、カンファレンスのネットワークを含む公衆WiFiでは盗聴に対して脆弱であるということが知られています。カンファレンスにおいてはWiFiどころかそのへんを転がしているケーブルに対してMan-in-the-Middle攻撃することも容易です。そこで現代ではDNS over TLS(DoT), DNS over HTTPS(DoH; この中にはHTTP/2を使うものとHTTP/3を使うものがある), DNS over QUIC(DoQ)といった、クライアントとリゾルバ(※)の間の通信を暗号化することで盗聴に対して保護する方式が提案されています。
 
-[^note-on-resolver]: 正確にはRFC 9499 Section 6でいう"Recursive Resolver"のこと。「フルサービスリゾルバー」、「キャッシュDNSサーバー」と呼ばれることもある
+(※: 正確にはRFC 9499 Section 6でいう"Recursive Resolver"のこと。「フルサービスリゾルバー」、「キャッシュDNSサーバー」と呼ばれることもある)
 
 DNSの暗号化を行うにあたって、クライアントに対してこのサーバーはDNSクエリの暗号化に対応しています、という情報を伝えることで自動構成を行いたい、という要望があります。これを実現するためにAdaptive DNS Discovery(ADD)というワーキンググループがIETFで活動しており、標準として提案されたプロトコルとしてDiscovery of Designated Resolvers(DDR; RFC 9462)、DHCP and Router Advertisement Options for the Discovery of Network-designated Resolvers (DNR; RFC 9463)があります。前者はmacOSやiOS、後者は一部のWindowsで使われているそうです。RubyKaigi 2023以降ではDoT, DoH, DDRを提供しており、だいたい半分くらいのDNSクエリが暗号化されていたそうです。
 
