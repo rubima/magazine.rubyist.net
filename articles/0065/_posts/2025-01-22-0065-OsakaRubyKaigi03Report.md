@@ -270,10 +270,10 @@ Ruby のブロックをコールバックとして扱う際に、その動作や
 * 資料
   * [スライド](https://speakerdeck.com/osatoh/ossnipull-requestwosong-tutemite)
 
-![20_osatohh.jpg]({{base}}{{site.beseurl}}/images/0065-OsakaRubyKaigi03Report/20_osatohh.jpg)
-
 [gem_rbs_collection](https://github.com/ruby/gem_rbs_collection) に [rbs](https://github.com/ruby/rbs) の型を追加するパッチを送った際のお話でした。
 その経験を通じて、より技術や Ruby に関心を持つようになったとのことで、とても素敵なエピソードでした。
+
+![20_osatohh.jpg]({{base}}{{site.beseurl}}/images/0065-OsakaRubyKaigi03Report/20_osatohh.jpg)
 
 ### Slim を安全にあつかう
 
