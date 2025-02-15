@@ -283,6 +283,7 @@ Ruby のブロックをコールバックとして扱う際に、その動作や
   * [スライド](https://speakerdeck.com/ydah/slim-safety)
 
 [slim](https://github.com/slim-template/slim) を安全に扱うために実際にどのような対策を行ったかを解説しました。
+主に業務の中で直面した問題に対して、gem を作って解決した話をしました。
 
 ![21_ydah.jpg]({{base}}{{site.beseurl}}/images/0065-OsakaRubyKaigi03Report/21_ydah.jpg)
 
