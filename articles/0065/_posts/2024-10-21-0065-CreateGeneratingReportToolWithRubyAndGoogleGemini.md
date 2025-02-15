@@ -28,10 +28,13 @@ Google Gemini(旧：Google Bard)は、2023年12月に発表されました。Goo
 以前は、OpenAIアカウントを登録するのが難しく、多くの制約があったため、簡単な登録条件のGoogle Bardを使用していました。 GmailアカウントまたはGoogleアカウントがあればすぐに使用できます。 そのため、BardがGeminiになった今でも、これは私のお気に入りの生成AIツールです。
 
 Google Gemini API キーを取得する方法：
+
 - [Google AI Studio](https://aistudio.google.com/app/apikey)にアクセスして, "Create API key in new project"をクリックする。
+
 <img src="{{base}}{{site.baseurl}}/images/2024-10-21-0064-CreateGeneratingReportToolWithRubyAndGoogleGemini/click-to-get-key.webp">
 
 - キーが表示されたら、キーをコピーして.envファイルに貼り付けてください。
+
 <img src="{{base}}{{site.baseurl}}/images/2024-10-21-0064-CreateGeneratingReportToolWithRubyAndGoogleGemini/copy-key.webp">
 
 ### Rubyでプログラミングする理由
@@ -39,10 +42,12 @@ Google Gemini API キーを取得する方法：
 このようなツールをPython、Javascript、TypeScript、またはシェルスクリプトで書くと、多くのサポートがあり、作業が簡単すぎるという結果になります。私はRubyプログラミング言語が好きで、「RubyはRailsだけではない」ことを証明したいとも思っています。そのため、今回はRubyを言語として選びました。
 
 ### `gemini-ai`というgemを使用
+
 `gemini-ai`とは、Vertex AI、Generative Language API、AI Studio、その他のGoogleの生成AIサービスを介してGeminiと対話するためのRuby gemです。
 これはgemのGithubです: [https://github.com/gbaptista/gemini-ai](https://github.com/gbaptista/gemini-ai)
 
 gemのドキュメントから、Googleのサービスを呼び出すための様々な方法があります。上記のようにGoogle Gemini APIを取得したから、次のようにコードを書きます:
+
 ```ruby
 client = Gemini.new(
   credentials: {
@@ -60,6 +65,7 @@ client = Gemini.new(
 <img src="{{base}}{{site.baseurl}}/images/2024-10-21-0064-CreateGeneratingReportToolWithRubyAndGoogleGemini/structure.webp">
 
 このプロジェクトでは、.gitignore に GitHub の標準的なテンプレートを使用しています: [https://github.com/github/gitignore/blob/main/Ruby.gitignore](https://github.com/github/gitignore/blob/main/Ruby.gitignore)。そして、このルールを追加します。
+
 ```
 /result/*
 !/result/.keep
@@ -68,6 +74,7 @@ client = Gemini.new(
 ```
 
 `Gemfile`:
+
 ```ruby
 # frozen_string_literal: true
 
@@ -80,6 +87,7 @@ gem 'dotenv'
 空の`Gemfile.lock`を作って、`bundle install`を実行するのは、環境設定は完了です。
 
 `lib/main.rb`に、必要なgemを呼びます。
+
 ```ruby
 # frozen_string_literal: true
 
@@ -90,6 +98,7 @@ require 'gemini-ai'
 Geminiのinputを1つ作成します。この入力テキストは、メールテンプレートの部分と、ファイルを読み込む部分の2つの部分で構成されます。
 
 メールテンプレートの部分はこのようなです。
+
 ```ruby
 text_request = <<-TEXT
 この日報フォーマットに情報を追加てください。
@@ -128,20 +137,26 @@ end
 ```
 
 Geminiにinputを入れます。
+
 - テンプレートがある場合。このこと、創造的な結果をもらいたくないですから、`temperature`を設定する。
+
 ```ruby
 result = client.stream_generate_content({
   contents: { role: 'user', parts: { text: text_request } },
   generationConfig: { temperature: 0 }
 })
 ```
+
 - テンプレートがない場合。このこと、創造的な結果をもらいたいですから、`temperature`を設定しない。
+
 ```ruby
 result = client.stream_generate_content({
   contents: { role: 'user', parts: { text: text_request } }
 })
 ```
+
 出力結果はデータの形式です。各テキスト部分を抽出したいので、以下を追加する必要があります。
+
 ```ruby
 mail_template = result
               .map { |response| response.dig('candidates', 0, 'content', 'parts') }
@@ -150,7 +165,9 @@ mail_template = result
 
 puts mail_template
 ```
+
 便利になるために、`run.sh`を書く：
+
 ```shell
 echo "Job starts"
 sleep .5
@@ -160,15 +177,19 @@ echo "Done"
 ```
 
 ### プロジェクトのREADMEを書く
+
 READMEを書くのも面倒なので、AIを使って簡単に生成します。
 
 <img src="{{base}}{{site.baseurl}}/images/2024-10-21-0064-CreateGeneratingReportToolWithRubyAndGoogleGemini/readme.webp">
 
 ## 結果
+
 ソースコード： [https://github.com/BlazingRockStorm/genai-daily-report-generator](https://github.com/BlazingRockStorm/genai-daily-report-generator)
 
 ### ツールを実行
+
 例ファイルを３つを作成する：
+
 - ファイル#1
 
 ```
@@ -177,23 +198,25 @@ READMEを書くのも面倒なので、AIを使って簡単に生成します。
 進捗状況: 40%
 
 タスク2：
-   進捗状況: 30%。
-   
+  進捗状況: 30%。
+
 課題/問題ない
 
 タスク2の優先度が高いので、明日このタスク続きます
 ```
+
 - ファイル#2
 
 ```
 プロジェクト2：
 タスク1： 
 進捗状況: 100%
-   
+
 課題/問題ない
 
 プロジェクト完了
 ```
+
 - ファイル#3
 
 ```
@@ -212,10 +235,12 @@ READMEを書くのも面倒なので、AIを使って簡単に生成します。
 結果を見ると、日報として使えると思います。
 
 ### 改善目標
+
 - 出力をMarkdownから`.doc`に変更する。
 - rspecテストを書く。
 
 ## おわりに
+
 このツールのおかげで、プロジェクトをファイルにまとめるのに5分、レポートを作成するのに1分、レビューするのに5分しかかかりませんでした。レポートを書く時間を費やす代わりに、コーディングやインフラなどの知識を学ぶことに集中する時間ができました。
 
 最近、私は [sentiment-ai](https://github.com/BlazingRockStorm/sentiment-ai) というgemを開発しました。これはテキストの感情分析を簡単に行うためのツールです。Rubyが新しい技術、例えば生成AI（GenAI）ともうまく連携できることを示すために、このgemを作成しました。ぜひご覧ください。
