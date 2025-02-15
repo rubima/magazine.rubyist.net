@@ -62,7 +62,6 @@ Ruby の構文木の理想的な姿を考察するだけでなく、これまで
   * makicamel 氏 ([@makicamel](https://twitter.com/makicamel))
 * 資料
   * [スライド](https://speakerdeck.com/makicamel/druby-ru-men-zhe-niyoruanatanoshen-jin-niarudruby-ru-men)
-ß
 dRuby という分散オブジェクトシステムを実現するライブラリについて、入門者の視点から解説していただきました。
 分散オブジェクトシステムとは、複数のプロセスやマシン間でオブジェクトを共有できるシステムのことを指します。
 
