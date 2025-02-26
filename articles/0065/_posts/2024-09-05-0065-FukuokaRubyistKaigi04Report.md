@@ -79,7 +79,7 @@ SIMD 命令を利用すれば高速化できるということはわかってい
 #### Building a Ruby-like Language Compiler with Ruby
 
 * 発表者
-  * htkymyks 氏
+  * htkymtks 氏
 * 資料
   * [スライド](https://speakerdeck.com/htkymtks/rubydetukururubymitainayan-yu-nokonpaira)
 
