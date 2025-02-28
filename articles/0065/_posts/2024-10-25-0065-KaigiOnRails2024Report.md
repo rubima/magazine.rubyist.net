@@ -103,7 +103,7 @@ Kaigi on Rails 2024には、オフラインで約700人が参加しました。�
 ## その他
 当日、国際展示場駅には大きな広告が掲げられました。参加者の皆様で目にした方もいらしたのではないでしょうか。
 
-![station.jpg]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/station.jpg)
+![station.png]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/station.png)
 
 
 今回も沢山の方々のご協力によりWi-Fi、託児サポートをご用意することができました。
@@ -112,9 +112,10 @@ Kaigi on Rails 2024には、オフラインで約700人が参加しました。�
 
 また、昼食として肉、魚、ベジタリアンなど種類豊富なお弁当が2日間提供されました。
 
-![lunch.jpg]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/lunch.jpg)
-写真提供：株式会社ラブグラフ様
+![lunch.png]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/lunch.png)  
 
+写真提供：株式会社ラブグラフ様   
+※元画像を圧縮しています
 
 ## 次回予告
 
