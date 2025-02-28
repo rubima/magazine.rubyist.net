@@ -48,9 +48,9 @@ Kaigi on Rails 2024では、2つの基調講演が行われました。
 今年は67のスポンサーの皆様にご支援いただきました。大変ありがとうございました。
 
 内訳は以下の通りです。
-- **Silver**: 36社
-- **Gold**: 25社
 - **Ruby**: 6社  
+- **Gold**: 25社
+- **Silver**: 36社
 
 詳細は、 以下のリンクからご覧ください。  
 [https://kaigionrails.org/2024/sponsors/](https://kaigionrails.org/2024/sponsors/)
