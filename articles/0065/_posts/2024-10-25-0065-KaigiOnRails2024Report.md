@@ -118,6 +118,6 @@ Kaigi on Rails 2024には、オフラインで約700人が参加しました。�
 
 ## 次回予告
 
-次回のKaigi on Railsは「**JPタワー ホール&カンファレンス**」で開催予定です。詳細は公式発表をお待ちください！
+次回のKaigi on Railsは、東京駅近くの「**JPタワー ホール&カンファレンス**」で開催予定です。詳細は公式発表をお待ちください！
 
 ![jptower.png]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/jptower.png)
