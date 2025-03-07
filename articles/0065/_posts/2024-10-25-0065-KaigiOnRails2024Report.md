@@ -9,14 +9,14 @@ created_on: 2025-01-31
 {% include base.html %}
 
 ## はじめに
-このレポートは、2024 年 10 月 25 日(金)〜26 日（土）に開催された [Kaigi on Rails 2024](https://kaigionrails.org/2024/) についての記事です。
+このレポートは、2024 年 10 月 25 日 ( 金 ) 〜 26 日 ( 土 ) に開催された [Kaigi on Rails 2024](https://kaigionrails.org/2024/) についての記事です。
 記事の内容は、オーガナイザーチームの horiyu と nissyi がまとめました。
 
 ## Kaigi on Rails とは
 Ruby on Rails を中心とした Web 技術に関するカンファレンスで、初学者から上級者まで幅広い参加者が楽しめる内容になっています。2020 年にオンラインで開催され、2023 年からはオフライン開催となりました。
 
 ## 開催情報
-Kaigi on Rails 2024 は、2024 年 10 月 25 日（金）〜と 26 日（土）の 2 日間にわたり、東京の [有明セントラルタワーホール & カンファレンス](https://ariake-hall.jp/) で開催されました。
+Kaigi on Rails 2024 は、2024 年 10 月 25 日 ( 金 ) 〜と 26 日 ( 土 ) の 2 日間にわたり、東京の [有明セントラルタワーホール & カンファレンス](https://ariake-hall.jp/) で開催されました。
 
 また、スポンサー企業の皆様やコミュニティの皆様によって、[関連するイベント](https://kaigionrails.org/2024/events/) も開催されました。
 
@@ -37,7 +37,7 @@ Kaigi on Rails 2024 では、2 つの基調講演が行われました。
 
 ### セッション
 
-今年の Kaigi on Rails では、合計 39 名（基調講演含む）のスピーカーによる発表やワークショップが行われました。プロポーザルの倍率は 5 倍と非常に高く、2 つのトラックで進行しました。
+今年の Kaigi on Rails では、合計 39 名 ( 基調講演含む ) のスピーカーによる発表やワークショップが行われました。プロポーザルの倍率は 5 倍と非常に高く、2 つのトラックで進行しました。
 
 イベントの様子は YouTube で公開されていますので、見逃してしまった方は以下のリンクからご覧ください。  
 [Kaigi on Rails 2024 セッション一覧 (YouTube)](https://www.youtube.com/watch?v=ZUtRyHeLq4M&list=PLiBdJz0juoHC9hBr_Cce38yX4ANimvLOK)
@@ -57,7 +57,7 @@ Kaigi on Rails 2024 では、2 つの基調講演が行われました。
 
 ### その他のブース
 #### [ささださん](https://x.com/_ko1) の本屋さんブース
-「Ruby および Rails」に関する書籍やスピーカーの関連書籍を販売してイベントを盛り上げてくださいました！詳しくは [ささださんの Zenn の記事](https://zenn.dev/ko1/articles/bf47077f40d793) をご覧ください。
+「Ruby および Rails」に関する書籍やスピーカーの関連書籍を販売してイベントを盛り上げてくださいました!詳しくは [ささださんの Zenn の記事](https://zenn.dev/ko1/articles/bf47077f40d793) をご覧ください。
 
 #### もくもく部屋 & わいわい部屋
 もくもく部屋では、作業を行いたい人が中心に集まっていました。セッションを聞いた後、すぐに試してみたり、参加レポートを書く参加者の方も見られました。
@@ -66,9 +66,9 @@ Kaigi on Rails 2024 では、2 つの基調講演が行われました。
 
 また、わいわい部屋のホワイトボードには地域 Ruby の情報が掲載され、注目を集めていました。
 
-![地域 rb1.png]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/地域rb2.png)
+![regonal_ruby1.png]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/regonal_ruby1.png)
 
-![地域 rb2.png]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/地域rb2.png)
+![regonal_ruby2.png]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/regonal_ruby2.png)
 
 
 ## 懇親会
@@ -108,7 +108,7 @@ Kaigi on Rails 2024 には、オフラインで約 700 人が参加しました�
 
 今回も沢山の方々のご協力により Wi-Fi、託児サポートをご用意することができました。
 
-会場のネットワークに関しては、RubyKaigi Wi-Fi Team と京大マイコンクラブ（KMC）の協力により快適な Wi-Fi 環境を準備してもらいました。
+会場のネットワークに関しては、RubyKaigi Wi-Fi Team と京大マイコンクラブ ( KMC ) の協力により快適な Wi-Fi 環境を準備してもらいました。
 
 また、昼食として肉、魚、ベジタリアンなど種類豊富なお弁当が 2 日間提供されました。
 
