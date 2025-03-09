@@ -124,8 +124,13 @@ Kaigi on Rails 2024 には、オフラインで約 700 人が参加しました�
 ![jptower.png]({{base}}{{site.baseurl}}/images/0065-KaigiOnRails2024Report/jptower.png)
 
 ## 著者について
-[ほりゆう](https://x.com/yuki82511988)
+
+### [ほりゆう](https://x.com/yuki82511988)
 
 Kaigi on Rails オーガナイザーの 1 人。妻と Urawa.rb を主催しております。
 去年は Ruby Kaigi がきっかけで英語の勉強にたくさん挑戦できました。
 最近はもっぱら Cursor を触ってコーディイングをしています。
+
+### [nissyi](https://x.com/yuta_onishi_97)
+
+2023年よりKaigi on Rails オーガナイザーとして活動中。元電車の運転士。
