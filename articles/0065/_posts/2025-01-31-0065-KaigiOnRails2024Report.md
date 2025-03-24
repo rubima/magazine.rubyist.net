@@ -128,7 +128,7 @@ Kaigi on Rails 2024 には、オフラインで約 700 人が参加しました�
 ### [ほりゆう](https://x.com/yuki82511988)
 
 Kaigi on Rails オーガナイザーの 1 人。妻と Urawa.rb を主催しております。
-去年は Ruby Kaigi がきっかけで英語の勉強にたくさん挑戦できました。
+去年は RubyKaigi がきっかけで英語の勉強にたくさん挑戦できました。
 最近はもっぱら Cursor を触ってコーディングをしています。
 
 ### [nissyi](https://x.com/yuta_onishi_97)
