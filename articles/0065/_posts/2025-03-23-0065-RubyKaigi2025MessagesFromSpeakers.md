@@ -76,7 +76,7 @@ Nice to meet you! My name is Cristian, and I am a Rubyist obsessed with performa
 
 Title: [mruby/c and data-flow programming for small devices](https://rubykaigi.org/2025/presentations/kaz0505.html)
 
-mruby に関する内容です。コンパクトな実装である mruby/c を使った、小型マイコンのソフトウェア開発として、データフローを使った手法を紹介します。データフローを使うことで、データの流れを直感的に記述できることから、IoT プログラミングとの親和性が高いとかなえています。
+mruby に関する内容です。コンパクトな実装である mruby/c を使った、小型マイコンのソフトウェア開発として、データフローを使った手法を紹介します。データフローを使うことで、データの流れを直感的に記述できることから、IoT プログラミングとの親和性が高いと考えています。
 
 ## Day2
 
