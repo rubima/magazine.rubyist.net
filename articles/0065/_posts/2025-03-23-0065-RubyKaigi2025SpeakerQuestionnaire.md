@@ -3,6 +3,8 @@ layout: post
 title: RubyKaigi 2025 登壇者アンケート
 short_title: RubyKaigi 2025 speaker questionnaire
 tags: 0065
+post_author: るびま編集部
+created_on: 2025-03-23
 ---
 {% include base.html %}
 
