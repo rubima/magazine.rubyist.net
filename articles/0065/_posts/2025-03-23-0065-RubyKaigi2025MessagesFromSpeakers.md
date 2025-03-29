@@ -227,6 +227,12 @@ Title: [On-the-fly Suggestions of Rewriting Method Deprecations](https://rubykai
 
 言語・ライブラリ作成者とそのユーザーの両方に関係する method deprecation の課題をスムーズに解決できるアイデアについて話します。比較的馴染み深いテーマなので多くの方と議論できることを楽しみにしております。
 
+### <img width="40px" height="40px" alt="Koichi Sasada" src="https://avatars.githubusercontent.com/u/9558?v=4" />Koichi Ssasda (?)
+
+Title: [Toward Ractor local GC - RubyKaigi 2025](https://rubykaigi.org/2025/presentations/ko1.html)
+
+今年こそ Ractor 使えるようにするために GC よくするぞ！
+
 ## 最後に
 
 メッセージをいただいたスピーカーの皆様、どうもありがとうございました。RubyKaigi 2025、楽しみですね！
