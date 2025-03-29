@@ -71,7 +71,7 @@ Title:[ 50.000 processed records per second: a CRuby & JRuby story](https://ruby
 
 Nice to meet you! My name is Cristian, and I am a Rubyist obsessed with performance issues. In my talk we will talk about the history of Ruby and JRuby, through the story of a service that has been running for 15 years. By the way, if you work with Rails, please take a look at my upcoming book "Rails Scales!".
 
-### Kazuaki TANAKA ( 始めて )
+### Kazuaki TANAKA ( 初めて )
 
 Title: [mruby/c and data-flow programming for small devices](https://rubykaigi.org/2025/presentations/kaz0505.html)
 
