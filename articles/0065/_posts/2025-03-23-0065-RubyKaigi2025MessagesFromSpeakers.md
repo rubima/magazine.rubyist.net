@@ -166,6 +166,14 @@ This talk is a continuation of my RubyKaigi 2024 session on adding Happy Eyeball
 
 I'll be sharing the twists and turns that happened between RubyKaigi 2024 and the release of Ruby 3.4.0. Hope you enjoy it!
 
+### <img width="40px" height="40px" alt="Alexander Momchilov icon" src="https://github.com/amomchilov.png"/> Alexander Momchilov ( 1 回目 )
+
+Title: [From C extension to pure C: Migrating RBS](https://rubykaigi.org/2025/presentations/amomchilov.html)
+
+I'm excited to give my first-ever conference talk, in which I'll be presenting our work on making the standard RBS gem more portable, faster and memory efficient. I'll show the tricks we used to add a new direct C API to an existing Ruby gem, and how we migrated it to work without any depenency on the Ruby VM (`ruby.h`).
+
+There's something for everyone, from gem maintainers to curious application developers. Enjoy!
+
 ### <img width="40px" height="40px" alt="Junichi Kobayashi icon" src="https://2.gravatar.com/avatar/41e66dc2dbb5f26acd56d55c4b7715594ccfa39f2833b56ee36b9f69744b2361?size=256"/> Junichi Kobayashi ( 2 )
 
 Title: [The Implementations of Advanced LR Parser Algorithm](https://rubykaigi.org/2025/presentations/junk0612.html)
