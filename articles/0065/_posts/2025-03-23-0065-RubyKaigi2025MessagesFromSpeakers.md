@@ -13,7 +13,7 @@ created_on: 2025-03-23
 2025 年も RubyKaigi が近づいてきましたね。今年は RubyKaigi 直前記事として、スピーカーのみなさんに任意で参加者・るびま読者に向けてのメッセージをいただきましたのでご覧ください！
 名前の後ろのカッコに記載されているのは今年の RubyKaigi を含めた登壇回数、並びはスケジュール順です。
 
-## Day1
+## Day 1
 
 ### <img width="40px" height="40px" alt="Mari Imaizumi icon" src="https://avatars.githubusercontent.com/u/52617472"/> Mari Imaizumi ( 5 )
 
@@ -78,7 +78,7 @@ Title: [mruby/c and data-flow programming for small devices](https://rubykaigi.o
 
 mruby に関する内容です。コンパクトな実装である mruby/c を使った、小型マイコンのソフトウェア開発として、データフローを使った手法を紹介します。データフローを使うことで、データの流れを直感的に記述できることから、IoT プログラミングとの親和性が高いと考えています。
 
-## Day2
+## Day 2
 
 ### <img width="40px" height="40px" alt="Ivo Anjo icon" src="https://ivoanjo.me/img/me.jpg"/> Ivo Anjo ( 4 )
 
@@ -172,7 +172,7 @@ Title: [The Implementations of Advanced LR Parser Algorithm](https://rubykaigi.o
 
 今年はパーサー技術のさらに深い部分についてお話しします。これぞ RubyKaigi というような話にしますので、ぜひ聞きに来てください！
 
-## Day3
+## Day 3
 
 ### <img width="40px" height="40px" alt="monochrome icon" src="https://1.gravatar.com/avatar/bba2082a103995a197a13ccc2b39d031aa27550e2ba0a85947db7c96489955b4?size=256"/> monochrome ( 2 )
 
