@@ -144,7 +144,7 @@ It's an honor to speak at the Ruby home conference, in the same room as the Ruby
 Title: [RuboCop: Modularity and AST Insights](https://rubykaigi.org/2025/presentations/koic.html)
 
 今年は『RuboCop:Modularity and AST Insights』というタイトルを持ってきました。ここ最近 RuboCop に導入しているプラグインシステムと、Ruby LSP アドオンといった新たなモジュールシステムならびに、今後の RuboCop のバックエンドパーサーと AST への動向が大きなテーマです。いずれもユーザーに影響のある RuboCop の先端に関する話題ですので、ここ最近とこれからの RuboCop の方向性への見解を得ることができるでしょう。個人のブログにも概要を記していますので、良ければご参照ください。それでは RubyKaigi 2025 でお会いしましょう！
-https://koic.hatenablog.com/entry/rubykaigi-2025-information
+[https://koic.hatenablog.com/entry/rubykaigi-2025-information](https://koic.hatenablog.com/entry/rubykaigi-2025-information)
 
 ### <img width="40px" height="40px" alt="Aaron Patterson icon" src="https://avatars.githubusercontent.com/u/3124?v=4"/> Aaron Patterson ( 10 or more times )
 
@@ -216,7 +216,7 @@ Title: [Toward Ractor local GC - RubyKaigi 2025](https://rubykaigi.org/2025/pres
 
 Title: [Road to Go gem](https://rubykaigi.org/2025/presentations/sue445.html)
 
-採択された Proposal を https://inside.pixiv.blog/2025/03/05/170250 に公開してるので予習資料としてご活用ください
+採択された Proposal を [https://inside.pixiv.blog/2025/03/05/170250](https://inside.pixiv.blog/2025/03/05/170250) に公開してるので予習資料としてご活用ください
 
 ### <img width="40px" height="40px" alt="ぺん！(tomoya ishida, @tompng) icon" src="https://avatars.githubusercontent.com/u/1780201"/> ぺん！(tomoya ishida, @tompng) ( 3 )
 
