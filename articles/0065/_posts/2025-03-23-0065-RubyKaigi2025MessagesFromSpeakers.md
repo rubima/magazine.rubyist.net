@@ -180,6 +180,12 @@ Title: [Improving my own Ruby](https://rubykaigi.org/2025/presentations/s_isshik
 
 私はソフトウェアエンジニアではありませんし、コンピュータサイエンス系の教育も受けていませんが、JIT コンパイラに魅せられて趣味で開発しています。
 
+### <img width="40px" height="40px" alt="uchio kondo's icon, which was taken in Itozu Zoo Park" src="https://www.gravatar.com/avatar/2cf373725ded741824c50fd571eda6e1?s=268" /> Uchio Kondo ( 7 )
+
+Title: [Running ruby.wasm on Pure Ruby Wasm Runtime](https://rubykaigi.org/2025/presentations/udzura.html)
+
+This year I'm going to talk about my DIY wasm runtiem. I hope we'll gain a better understanding about wasm and VM implementation. Be wasm guys ;) 自作が好きなので、今年はWasm Runtimeを自作した話をします。一人でもWasmやVM実装に親しみを持つ人が増えたら嬉しいです！
+
 ### Jeremy Evans ( 8 )
 
 Title: [Eliminating Unnecessary Implicit Allocations](https://rubykaigi.org/2025/presentations/jeremyevans0.html)
