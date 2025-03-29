@@ -11,7 +11,7 @@ created_on: 2025-03-23
 ## はじめに
 
 2025 年も RubyKaigi が近づいてきましたね。今年は RubyKaigi 直前記事として、スピーカーのみなさんに任意で参加者・るびま読者に向けてのメッセージをいただきましたのでご覧ください！
-名前の後ろのカッコに記載されているのは今年の RubyKaigi を含めた登壇回数です。
+名前の後ろのカッコに記載されているのは今年の RubyKaigi を含めた登壇回数、並びはスケジュール順です。
 
 ## Day1
 
@@ -200,6 +200,12 @@ Title: [The Ruby One-Binary Tool, Enhanced with Kompo](https://rubykaigi.org/202
 
 ワンバイナリ Ruby で二回目の登壇で前回からアップデートした内容を発表します。前回発表の差分から紹介しますので、初めての方でもわかるような内容にしようと思っていますので、ぜひ聴きに来てください！
 
+### <img width="40px" height="40px" alt="Koichi Sasada" src="https://avatars.githubusercontent.com/u/9558?v=4" />Koichi Ssasda (?)
+
+Title: [Toward Ractor local GC - RubyKaigi 2025](https://rubykaigi.org/2025/presentations/ko1.html)
+
+今年こそ Ractor 使えるようにするために GC よくするぞ！
+
 ### <img width="40px" height="40px" alt="sue445 icon" src="https://avatars.githubusercontent.com/u/608755"/> sue445 ( 3 )
 
 Title: [Road to Go gem](https://rubykaigi.org/2025/presentations/sue445.html)
@@ -226,12 +232,6 @@ PicoRuby や組込みシステムの開発に興味がある方はぜひ聴き�
 Title: [On-the-fly Suggestions of Rewriting Method Deprecations](https://rubykaigi.org/2025/presentations/ohbarye.html)
 
 言語・ライブラリ作成者とそのユーザーの両方に関係する method deprecation の課題をスムーズに解決できるアイデアについて話します。比較的馴染み深いテーマなので多くの方と議論できることを楽しみにしております。
-
-### <img width="40px" height="40px" alt="Koichi Sasada" src="https://avatars.githubusercontent.com/u/9558?v=4" />Koichi Ssasda (?)
-
-Title: [Toward Ractor local GC - RubyKaigi 2025](https://rubykaigi.org/2025/presentations/ko1.html)
-
-今年こそ Ractor 使えるようにするために GC よくするぞ！
 
 ## 最後に
 
