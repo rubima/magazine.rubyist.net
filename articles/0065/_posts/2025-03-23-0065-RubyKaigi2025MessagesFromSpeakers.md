@@ -78,6 +78,13 @@ Title: [mruby/c and data-flow programming for small devices](https://rubykaigi.o
 
 mruby に関する内容です。コンパクトな実装である mruby/c を使った、小型マイコンのソフトウェア開発として、データフローを使った手法を紹介します。データフローを使うことで、データの流れを直感的に記述できることから、IoT プログラミングとの親和性が高いと考えています。
 
+### <img width="40px" height="40px" alt="youchan icon" src="https://avatars.githubusercontent.com/u/222183"/> Yoh Osaki ( 7 回目 )
+
+Title: [dRuby on Browser Again!](https://rubykaigi.org/2025/presentations/youchan.html)
+
+2017年の"dRuby on Browser"を処理系をOpalからruby.wasmに変えて再演します。今回はデモにちょっとした仕掛けを用意しました。
+ledsunさんのオルタナティブな実装と合わせておたのしみください。
+
 ### <img src="https://avatars.githubusercontent.com/u/1079508" alt="Shigeru Nakajima" size="40" height="40" width="40"> Shigeru Nakajima (@ledsun) ( 3 )
 
 Title: [dRuby on Browser Again!](https://rubykaigi.org/2025/presentations/youchan.html)
