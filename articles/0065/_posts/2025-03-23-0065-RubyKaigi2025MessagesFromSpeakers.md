@@ -85,6 +85,15 @@ Title: [dRuby on Browser Again!](https://rubykaigi.org/2025/presentations/youcha
 2017年の"dRuby on Browser"を処理系をOpalからruby.wasmに変えて再演します。今回はデモにちょっとした仕掛けを用意しました。
 ledsunさんのオルタナティブな実装と合わせておたのしみください。
 
+### <img src="https://avatars.githubusercontent.com/u/1079508" alt="Shigeru Nakajima" size="40" height="40" width="40"> Shigeru Nakajima (@ledsun) ( 3 )
+
+Title: [dRuby on Browser Again!](https://rubykaigi.org/2025/presentations/youchan.html)
+
+dRubyをブラウザで動かそうとしていたらyouchanさんとネタがかぶりました。ならば、いっそのこと一緒に発表します。
+二人の別の人間がそれぞれの道を通って同じところを目指しました。
+違いを楽しんで頂ければと思います。
+僕はdRubyを動かすためにブラウザでソケットプログラミングできるようにした話をします。
+
 ## Day 2
 
 ### <img width="40px" height="40px" alt="Ivo Anjo icon" src="https://ivoanjo.me/img/me.jpg"/> Ivo Anjo ( 4 )
