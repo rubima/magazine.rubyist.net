@@ -84,7 +84,7 @@ created_on: 2025-01-27
 
 * 録画: https://example.com/
 
-yumuさんによる「Ruby×AWSで作る動画変換システム」は、GMOペパボさんののハンドメイドECサービス「minnne」で新しくリリースされた動画投稿機能の設計や実装・運用について焦点を当てられていた発表内容でした。
+yumuさんによる「Ruby×AWSで作る動画変換システム」は、GMOペパボさんのハンドメイドECサービス「minne」で新しくリリースされた動画投稿機能の設計や実装・運用について焦点を当てられていた発表内容でした。
 
 Rubyによる自前実装とAWSのマネージドサービスを組み合わせた設計となっており、それらを実装する上で導入した2つのgemであるffmpegの動画変換をRubyで作れる [streamio-ffmpeg](https://github.com/streamio/streamio-ffmpeg) gemとAWS SQSをバックエンド基盤としたワーカー実装ができる [Shoryuken](https://github.com/ruby-shoryuken/shoryuken) gemの活用事例を中心に触れられていました。<br>
 リリース後の運用についても話されており、ECSの監視はGrafanaを用いてリソース監視をしメモリ/CPUのスペック調整を行いながらコストを意識した運用を続けているとのことでした。
@@ -94,8 +94,8 @@ Rubyによる自前実装とAWSのマネージドサービスを組み合わせ�
 また、発表中には ffmpeg を使った動画変換のデモを挟んでおり、yumuさんが撮影した可愛いカピバラの動画をアップロードし動画変換された様子を紹介されていてたいへん和みました。
 
 発表の最後では Shoryuken gem のリポジトリが先日アーカイブとなりショックを受けた話もされていましたが、その後yumuさんご本人がメンテナのPabloさんに連絡を取り、アーカイブが解除されyumuさんもメンテナのメンバーに加わるというとても素敵な Kaigi Effect があったことも後日観測しました！すごすぎる、おめでとうございます！
-https://x.com/myumura3/status/1880872104775893101<br>
-https://x.com/myumura3/status/1884281861435974085
+[https://x.com/myumura3/status/1880872104775893101](https://x.com/myumura3/status/1880872104775893101)<br>
+[https://x.com/myumura3/status/1884281861435974085](https://x.com/myumura3/status/1884281861435974085)
 
 (桐生あんず)
 
@@ -149,7 +149,7 @@ https://x.com/myumura3/status/1884281861435974085
 
 * 録画: https://example.com/
 
-大倉さん(@okuramasafumi) さん司会による、総勢16団体の東京圏を中心とする地域rbコミュニティが集結したトークセッションとなりました。
+大倉さん(@okuramasafumi)司会による、総勢16団体の東京圏を中心とする地域rbコミュニティが集結したトークセッションとなりました。
 
 > Gotanda.rb, Shibuya.rb, Tokyu.rb, Omotesando.rb, Roppongi.rb, Sendagaya.rb, Ginza.rb, Shinjuku.rb, 中央総武.rb, mitaka.rb, Asakusa.rb, Nishinippori.rb, Urawa.rb, Saitama.rb, 柏.rb, しんめ.rb の実に16団体から登壇いただきます。意外、そして多彩、ご期待あれ！
 
