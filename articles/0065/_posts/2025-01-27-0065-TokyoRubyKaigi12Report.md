@@ -23,7 +23,7 @@ created_on: 2025-01-27
 
 ## John Hawthorn『Scaling Ruby @ GitHub』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 オープニングキーノートを務めた John Hawthorn は、昨年の RubyKaigi 2024 の登壇に来日している、カナダ在住の Ruby と Rails のコミッターです。
 
@@ -52,7 +52,7 @@ GitHub 社が GitHub を使いながら GitHub を Ruby on Rails で開発して
 
 ## Kohei Suzuki『Ruby と Rust と私』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 最後のキーノートでは、Kohei Suzukiさんが、CLIツールの開発とISUCON（競技型Webアプリチューニングコンテスト）における言語移植の経験をもとに、RubyとRustの特徴を比較しました。RubyとRustといえば、Ruby3.1でRust実装のYJITが導入されて以降、注目を集めている組み合わせです。多くのRubyistがRustに興味を持ちつつも、使いこなせていないのが実情だと思います。発表ではどのように比較されるのか、非常に興味深い内容でした！
 
@@ -78,7 +78,7 @@ CLIツール開発やISUCONでの言語移植での経験を踏まえて、用�
 
 ### 前田 修吾『Ruby製テキストエディタでの生活』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 ランチ明けは、前田 修吾さんによる自作のRuby製テキストエディタ[shugo/textbringer](https://github.com/shugo/textbringer)での生活の発表がありました。
 
@@ -100,7 +100,7 @@ CLIツール開発やISUCONでの言語移植での経験を踏まえて、用�
 
 ### ぺん！『全てが同期する! Railsとフロントエンドのシームレスな連携の再考』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 コラボレーションツール、チャットやオンライン授業など、複数のWebフロントエンドがリアルタイムに協調動作する必要のあるユースケースで、それらをいかにして同期させるかというテーマでした。既存のリアルタイムデータベースを使用するのではなく、Active Recordを活用すべく、RailsとReactの組み合わせで実現する方法について話されました。
 
@@ -117,7 +117,7 @@ CLIツール開発やISUCONでの言語移植での経験を踏まえて、用�
 
 ### ryopeko『functionalなアプローチで動的要素を排除する』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 『パーフェクトRuby』の著者でもある ryopeko さんのトークです。
 
@@ -136,7 +136,7 @@ CLIツール開発やISUCONでの言語移植での経験を踏まえて、用�
 
 ### tokujiros『ゼロからの、2Dレトロゲームエンジンの作り方』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 tokujirosさんの発表では、Rubyアソシエーション開発助成金にも採択された[Reight](https://github.com/xord/reight)の内部実装と利用方法について紹介されました！ReightはRubyで実装されたレトロゲームエンジンで、Reightをインストールして起動することでゲームを作るための統合開発環境が立ち上がります。統合開発環境では、ゲームに表示させるキャラクターやコインなどをドット絵で作ったり、それをマップ上に配置したりといったゲームを作るための作業と実際のプレイができます。ゲーム中のキャラクターの操作や当たり判定などはgame.rbにRubyのコードで実装します。発表中に使われたコードが[reight-examples](https://github.com/xord/reight-examples)に上がっていて、インストール後すぐに試すことができるので是非！
 
@@ -149,7 +149,7 @@ tokujirosさんの発表では、Rubyアソシエーション開発助成金に�
 
 ### yumu『Ruby×AWSで作る動画変換システム』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 yumuさんによる「Ruby×AWSで作る動画変換システム」は、GMOペパボさんのハンドメイドECサービス「minne」で新しくリリースされた動画投稿機能の設計や実装・運用について焦点を当てられていた発表内容でした。
 
@@ -169,7 +169,7 @@ Rubyによる自前実装とAWSのマネージドサービスを組み合わせ�
 
 ### moznion『simple組み合わせ村から大都会Railsにやってきた俺は』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 moznion さんの発表内容は、Rails と Perl の違いを比較しながら、それぞれの特徴をもとにした開発スタイルに焦点を当てたものでした。
 それらの違いを「Simple vs Easy」の構図で語っていた点が印象的です。
@@ -198,7 +198,7 @@ Rails を書いている身としては、レールに沿っているかを気�
 
 ### Hiromi Ogawa『Writing PDFs in Ruby DSL』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 Ogawa さんは、Ruby DSL を使って PDF を生成するという内容でした。
 
@@ -271,7 +271,7 @@ end
 
 ### buty4649『mrubyでワンバイナリーなテキストフィルタツールを作った』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 buty4649さんの発表ではテキストフィルタツールの[rf](https://github.com/buty4649/rf)について紹介されました！rfはsedやawk、jqのようなテキストフィルターツールと同じように、テキストデータの加工や整形、抽出を効率的に行えるツールです。rubyをインストールしていれば `echo matz | ruby -p -e '$_.tr! "a-z", "A-Z"'` のようにワンライナーでテキストの変換を実行することもできますが、よりタイプ数を減らして簡単に使えるツールが欲しい！！とのことでrfを開発されたそうです。mrubyを使ってワンバイナリーになっているのでrubyがなくてもインストールでき、Homebrewなどのパッケージマネージャーにも対応されています。 `brew install buty4649/tap/rf` でサクッとインストールできるので試してみてください！
 
@@ -284,7 +284,7 @@ rfではRuby実装を独自拡張しているところもあり、読み込ん�
 
 ### morihirok『混沌とした例外処理とエラー監視に秩序をもたらす』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 巨大なRailsアプリケーションであるSTORESにおける例外処理とエラー監視の整理について発表されました。
 
@@ -308,7 +308,7 @@ STORESの開発現場では、すべてのエラーを一括して処理する�
 
 ### Kasumi Hanazuki『Ruby meets secure DNS and modern Internet protocols』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 RubyKaigiのNOCチームを長く担当されている花月かすみさんによる、DNSの暗号化の自動構成を行うためのプロトコルの紹介と、その検証のためにQUICライブラリのラッパーを実装した、という話です。
 
@@ -327,7 +327,7 @@ DNSは動作するプロトコルの組み合わせが非常に多く、また�
 
 ## 『Regional.rb and the Tokyo Metropolis』
 
-* 録画: https://example.com/
+* 録画: (coming soon)
 
 大倉さん(@okuramasafumi)司会による、総勢16団体の東京圏を中心とする地域rbコミュニティが集結したトークセッションとなりました。
 
