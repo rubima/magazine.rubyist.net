@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (xx) 東京Ruby会議12
-short_title: RegionalRubyKaigi レポート (xx) 東京Ruby会議12
+title: RegionalRubyKaigi レポート (88) 東京Ruby会議12
+short_title: RegionalRubyKaigi レポート (88) 東京Ruby会議12
 post_author: 東京Ruby会議12 実行委員会
 tags: regionalRubyKaigi
 created_on: 2025-01-27
@@ -9,7 +9,7 @@ created_on: 2025-01-27
 
 {% include base.html %}
 
-## RegionalRubyKaigi レポート (xx) 東京Ruby会議12
+## RegionalRubyKaigi レポート (88) 東京Ruby会議12
 
 2016年の東京Ruby会議11から9年、東京Ruby会議が帰ってきました。おかえりなさい。始動させたのはオーガナイザーのおしょうゆさん、それからコアメンバーの皆さんです。今回は神奈川県は横浜市鶴見区、まあ大体東京に収まる範囲の「東京」で開催されました。
 
