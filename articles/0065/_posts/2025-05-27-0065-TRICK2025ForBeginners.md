@@ -9,7 +9,10 @@ created_on: 2025-05-27
 {% include base.html %}
 
 ## はじめに
-RubyKaigi 2025 にて、いかにして超絶技巧・意味不明な Ruby コードを書けるかを競うコンテスト TRICK 2025 が開催されました。筆者がコンテストに初参加した知見を踏まえて、本記事では「超絶技巧 Ruby 意味不明コーディング」の始め方をお伝えします。
+RubyKaigi 2025 にて、いかにして超絶技巧・意味不明な Ruby コードを書けるかを競うコンテスト TRICK 2025 が開催されました。今回、筆者が提出した作品が『最も自然で賞』("Most Natural") をいただきました。作品をつくる過程で体感した様々な発見・学びを元に、本記事では「超絶技巧 Ruby 意味不明コーディング」の始め方をお伝えしたいと思います。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/z0V0L1nTVMg?si=MYqVayGDRkiIjQV3&amp;start=1313" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 
 ## Ruby の新たな一面と出会える TRICK
 
@@ -20,7 +23,7 @@ Ruby は書いていて大変「たのしい」言語である、ということ
 
 > Your entry must bring the judges a surprise, excitement, and/or laughter.
 
-TRICK の発表に刺激を受けて、自分でも書いてみたいという憧れが芽生えたのならば、思い切って超絶技巧・意味不明な Ruby コーディングへ踏み出してみましょう。筆者も今年、憧れから TRICK にチャレンジしたことで、普段と異なる「たのしい」を体感することができました。その経験を元に、興味を抱いている方へ、未体験領域への飛び込み方をご紹介したいと思います。
+TRICK の発表に刺激を受けて、自分でも書いてみたいという憧れが芽生えたのならば、思い切って超絶技巧・意味不明な Ruby コーディングへ踏み出してみましょう。
 
 ### STEP1：過去作・サンプルを見る
 
@@ -260,7 +263,7 @@ end;
 本記事の執筆は、「Rubyist なにかやる合宿 2025」での neko314 さんからのお声がけと、参加者のみなさんからの励ましによって実現しました。貴重な機会をいただき、ありがとうございました！
 
 ## 著者について
-[@beta_chelsea](https://x.com/beta_chelsea): 教育系スタートアップにて、Rails 製の自社サービス開発保守を担当しています。TRICK 2025 へ提出した作品が『最も自然で賞』("Most Natural") をいただきました。他活動として、Rails Gilrs コーチ経験、フィヨルドブートキャンプメンター参加、Kaigi on Rails Team 参加。
+[@beta_chelsea](https://x.com/beta_chelsea): 教育系スタートアップにて、Rails 製の自社サービス開発保守を担当しています。他活動として、Rails Gilrs コーチ経験、フィヨルドブートキャンプメンター参加、Kaigi on Rails Team 参加。
 
 [^1]: ソースコードを成形する詳しい方法については、超絶技巧本の第 2 章「アスキーアートでプログラミング」を参照してください。
 [^2]: 演算子 `"&&"` について: [演算子式 (Ruby 3.4 リファレンスマニュアル)](https://docs.ruby-lang.org/ja/3.4/doc/spec=2foperator.html#and)
