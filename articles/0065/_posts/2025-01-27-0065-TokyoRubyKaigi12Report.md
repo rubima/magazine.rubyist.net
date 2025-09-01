@@ -21,7 +21,7 @@ created_on: 2025-01-27
 
 ## キーノート
 
-## John Hawthorn『Scaling Ruby @ GitHub』
+### John Hawthorn『Scaling Ruby @ GitHub』
 
 * 録画: (coming soon)
 
@@ -50,7 +50,7 @@ GitHub 社が GitHub を使いながら GitHub を Ruby on Rails で開発して
 
 (koic)
 
-## Kohei Suzuki『Ruby と Rust と私』
+### Kohei Suzuki『Ruby と Rust と私』
 
 * 録画: (coming soon)
 
