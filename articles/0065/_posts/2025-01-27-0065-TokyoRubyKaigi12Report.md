@@ -2,7 +2,7 @@
 layout: post
 title: RegionalRubyKaigi レポート (88) 東京Ruby会議12
 short_title: RegionalRubyKaigi レポート (88) 東京Ruby会議12
-post_author: 東京Ruby会議12 実行委員会
+post_author: 東京Ruby会議12 実行委員会 ＆ 参加者のみなさま
 tags: regionalRubyKaigi
 created_on: 2025-01-27
 ---
@@ -10,6 +10,20 @@ created_on: 2025-01-27
 {% include base.html %}
 
 ## RegionalRubyKaigi レポート (88) 東京Ruby会議12
+
+東京Ruby会議12 実行委員長のおしょうゆです。<br />
+素敵なレポートを参加者のみなさまに執筆いただきました。ぜひお読みください。
+
+- 日時：2025年1月18日
+- 会場：横浜市鶴見区民文化センター サルビアホール
+- 主催：東京Ruby会議12 実行委員会
+- 後援・会計協力：一般社団法人 日本Rubyの会
+- 公式サイト：[https://regional.rubykaigi.org/tokyo12/](https://regional.rubykaigi.org/tokyo12/)
+- 公式タグ：[#tokyorubykaigi](https://x.com/hashtag/tokyorubykaigi)
+
+(おしょうゆ)
+
+---
 
 2016年の東京Ruby会議11から9年、東京Ruby会議が帰ってきました。おかえりなさい。始動させたのはオーガナイザーのおしょうゆさん、それからコアメンバーの皆さんです。今回は神奈川県は横浜市鶴見区、まあ大体東京に収まる範囲の「東京」で開催されました。
 
