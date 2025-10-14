@@ -1,186 +1,451 @@
 #!/usr/bin/env ruby
 
+require 'optparse'
+
 class RubimaLint
-  module Rules
-    NOT_ASCII  = '[^[:ascii:]]'     # 非ASCII
-    ASCII_CHAR = '[\w&&[:ascii:]]'  # ASCII
-    OPEN_PARENTHESES  = '[(]'  # 開き丸括弧
-    CLOSE_PARENTHESES = '[)]'  # 閉じ丸括弧
-    QUESTION_EXCLAMATION = '[？！]'  # 疑問符・感嘆符
-    PUNCTUATION = "[、。#{QUESTION_EXCLAMATION}]"  # 句読点
-    OPEN_BRANCKETS  = '[「『]'  # 開き括弧類
-    CLOSE_BRANCKETS = '[』」]'  # 閉じ括弧類
-    THREE_POINT_LEADER = '[…]'  # 三点リーダ
-    OTHER_OK_LETTER = "[#{THREE_POINT_LEADER}〜：　]"  # その他OK文字
-    OK_BEFORE_ASCII = "[#{PUNCTUATION}#{OPEN_BRANCKETS}#{OTHER_OK_LETTER}]"  # ASCII直前のOK文字
-    OK_AFTER_ASCII = "[#{PUNCTUATION}#{CLOSE_BRANCKETS}#{OTHER_OK_LETTER}]"  # ASCII直後のOK文字
-    HEAD_CHAR = "'''　"  # 発言頭
-    ASCII_AFTER_NOT_ASCII = /(?<=#{NOT_ASCII})(?=#{ASCII_CHAR})(?<!#{OK_BEFORE_ASCII})(?<!#{HEAD_CHAR})/o  # 非ASCIIの直後にASCII
-      NOT_ASCII_AFTER_ASCII = /(?<=#{ASCII_CHAR})(?=#{NOT_ASCII})(?!#{OK_AFTER_ASCII})/o  # ASCIIの直後に非ASCII
-      MISSING_BLANK = /#{ASCII_AFTER_NOT_ASCII}|#{NOT_ASCII_AFTER_ASCII}/o  # 空白抜け
+  module Patterns
+    NOT_ASCII  = '[^[:ascii:]]' # 非ASCII
+    ASCII_CHAR = '[\w&&[:ascii:]]' # ASCII
+    OPEN_PARENTHESES  = '[(]' # 開き丸括弧
+    CLOSE_PARENTHESES = '[)]' # 閉じ丸括弧
+    QUESTION_EXCLAMATION = '[？！]' # 疑問符・感嘆符
+    PUNCTUATION = "[、。#{QUESTION_EXCLAMATION}]" # 句読点
+    OPEN_BRANCKETS  = '[「『]' # 開き括弧類
+    CLOSE_BRANCKETS = '[』」]' # 閉じ括弧類
+    THREE_POINT_LEADER = '[…]' # 三点リーダー
+    OTHER_OK_LETTER = "[#{THREE_POINT_LEADER}〜：　]" # その他OKな文字
+    OK_BEFORE_ASCII = "[#{PUNCTUATION}#{OPEN_BRANCKETS}#{OTHER_OK_LETTER}]" # ASCII直前のOKな文字
+    OK_AFTER_ASCII = "[#{PUNCTUATION}#{CLOSE_BRANCKETS}#{OTHER_OK_LETTER}]" # ASCII直後のOKな文字
+    HEAD_CHAR = "'''　" # 発言頭
+
+    ASCII_AFTER_NOT_ASCII = /(?<=#{NOT_ASCII})(?=#{ASCII_CHAR})(?<!#{OK_BEFORE_ASCII})(?<!#{HEAD_CHAR})/o # 非ASCIIの直後にASCII
+    NOT_ASCII_AFTER_ASCII = /(?<=#{ASCII_CHAR})(?=#{NOT_ASCII})(?!#{OK_AFTER_ASCII})/o # ASCIIの直後に非ASCII
+    MISSING_BLANK = /#{ASCII_AFTER_NOT_ASCII}|#{NOT_ASCII_AFTER_ASCII}/o # 空白抜け
 
     # 円括弧前後OK文字
     OK_AROUND_PARENTHESES = "[ [[:ascii:]&&[:graph:]]#{PUNCTUATION}#{OPEN_BRANCKETS}#{CLOSE_BRANCKETS}#{THREE_POINT_LEADER}]"
 
-    union = [
-      /(?<!^)(?<!#{HEAD_CHAR})(?<!#{OK_AROUND_PARENTHESES})#{OPEN_PARENTHESES}/o,
-      /#{CLOSE_PARENTHESES}(?!#{OK_AROUND_PARENTHESES})(?!$)/o,
-      PARENTHESES_AT_END_OF_STATE = /。#{CLOSE_PARENTHESES}。/o,  # 文末で括弧を閉じる場合
-        LAUGH_AND_PARENTHESES = /笑#{CLOSE_PARENTHESES}。$/o,    # 括弧笑の後の句点
-        SINGLE_THREE_POINT_LEADER = /(?<!#{THREE_POINT_LEADER})#{THREE_POINT_LEADER}(?!#{THREE_POINT_LEADER})/o,  # 単独の三点リーダ
-        THREE_POINT_LEADER_AT_END = /#{THREE_POINT_LEADER}$/o,  # 文末の三点リーダ
-      QUESTION_EXCLAMATION_IN_PARAGRAPH = /#{QUESTION_EXCLAMATION}(?!$)(?![　#{QUESTION_EXCLAMATION}#{CLOSE_BRANCKETS}])/o,  # 段落中の疑問符・感嘆符
-      FULL_WIDTH_PARENTHESES = /[（）]/o,  # 全角括弧
-    ]
-    INVALID_PATTERN = Regexp.union(*union)
-
+    # 不要な空白
     CHAR_AROUND_NOT_PERMIT_BLANK = "[#{PUNCTUATION}#{OPEN_BRANCKETS}#{CLOSE_BRANCKETS}]"
-    union = [
+    # 編集指針に反する空白パターン
+    INVALID_BLANK_PARTS = [
       /#{THREE_POINT_LEADER} #{OPEN_PARENTHESES}/o,
       /#{CHAR_AROUND_NOT_PERMIT_BLANK} #{OPEN_PARENTHESES}/o,
-      /#{CLOSE_PARENTHESES} #{CHAR_AROUND_NOT_PERMIT_BLANK}/o,
+      /#{CLOSE_PARENTHESES} #{CHAR_AROUND_NOT_PERMIT_BLANK}/o
     ]
-    INVALID_BLANK = Regexp.union(*union)
+    INVALID_BLANK = Regexp.union(*INVALID_BLANK_PARTS)
+
+    FULL_WIDTH_PARENTHESES = /[（）]/o # 全角括弧
+    TODO_PATTERN = /TODO/ # TODO
+    TOC_PATTERN = /\{\{toc\}\}/ # {{toc}}
+    LINK_PATTERN = /(?<left>\[\[(.*?\|)?)(?<link>.*)(?<right>\]\])/ # [[リンク]]
+    FOOTNOTE_PATTERN = /\{\{fn/ # {{fn
+    HRULE_PATTERN = /^----$/ # ----
+    NON_WHITESPACE = /\S/ # 空白以外
   end
 
-  include Rules
+  class Rule
+    attr_reader :name, :correctable
 
-  attr_reader :warning_count, :error_messages
+    def initialize(name, correctable:, color_code: 31)
+      @name = name
+      @correctable = correctable
+      @color_code = color_code
+    end
 
-  def initialize(options)
+    def check(line)
+      raise NotImplementedError, "#{self.class}#check must be implemented in subclasses"
+    end
+
+    def correct(line)
+      raise NotImplementedError, "#{self.class}#correct must be implemented for correctable rules"
+    end
+
+    def highlight(line)
+      line
+    end
+
+    def warning_description
+      raise NotImplementedError, "#{self.class}#warning_description must be implemented in subclasses"
+    end
+
+    def warning_message(lineno, line)
+      prefix = @correctable ? '[Correctable]' : '[Uncorrectable]'
+      highlighted = highlight(line)
+      "#{prefix} #{warning_description} : #{lineno}行目 : #{highlighted.chomp}"
+    end
+  end
+
+  class LineRule < Rule
+    def initialize(name, pattern, correctable:, color_code: 31)
+      super(name, correctable: correctable, color_code: color_code)
+      @pattern = pattern
+    end
+
+    def check(line)
+      line.match?(@pattern)
+    end
+
+    def highlight(line)
+      line.gsub(@pattern) { "\e[#{@color_code}m#{::Regexp.last_match(0)}\e[m" }
+    end
+  end
+
+  class FileRule < Rule
+    def initialize(name)
+      super(name, correctable: false, color_code: 7)
+    end
+
+    def track(line)
+      raise NotImplementedError, "#{self.class}#track must be implemented in subclasses"
+    end
+
+    def check
+      raise NotImplementedError, "#{self.class}#check must be implemented in subclasses"
+    end
+
+    def warning_message
+      "[Uncorrectable] \e[7m#{warning_description}\e[m"
+    end
+  end
+
+  class MissingBlankRule < LineRule
+    def initialize
+      super('missing_blank', Patterns::MISSING_BLANK, correctable: true, color_code: 7)
+    end
+
+    def correct(line)
+      line.gsub(@pattern, ' ')
+    end
+
+    def warning_description
+      '半角英数字の前後には空白が必要です。'
+    end
+  end
+
+  class FullWidthParenthesesRule < LineRule
+    def initialize
+      super('full_width_parentheses', Patterns::FULL_WIDTH_PARENTHESES, correctable: true, color_code: 31)
+    end
+
+    def correct(line)
+      line.gsub(/[（）]/, '（' => '(', '）' => ')')
+    end
+
+    def warning_description
+      '全角括弧が使用されています。'
+    end
+  end
+
+  class InvalidOpenParenthesesRule < LineRule
+    def initialize
+      pattern = /(?<!^)(?<!#{Patterns::HEAD_CHAR})(?<!#{Patterns::OK_AROUND_PARENTHESES})#{Patterns::OPEN_PARENTHESES}/o
+      super('invalid_open_parentheses', pattern, correctable: true, color_code: 31)
+    end
+
+    def correct(line)
+      line.gsub(@pattern) { " #{::Regexp.last_match(0)}" }
+    end
+
+    def warning_description
+      '開き括弧の前に空白が必要です。'
+    end
+  end
+
+  class InvalidCloseParenthesesRule < LineRule
+    def initialize
+      pattern = /#{Patterns::CLOSE_PARENTHESES}(?!#{Patterns::OK_AROUND_PARENTHESES})(?!$)/o
+      super('invalid_close_parentheses', pattern, correctable: true, color_code: 31)
+    end
+
+    def correct(line)
+      line.gsub(@pattern) { "#{::Regexp.last_match(0)} " }
+    end
+
+    def warning_description
+      '閉じ括弧の後に空白が必要です。'
+    end
+  end
+
+  class PeriodAroundParenthesesRule < LineRule
+    def initialize
+      pattern = /。#{Patterns::CLOSE_PARENTHESES}。/o
+      super('period_around_parentheses', pattern, correctable: false, color_code: 31)
+    end
+
+    def warning_description
+      '丸括弧の前後に句点があります。どちらか一方を削除してください。'
+    end
+  end
+
+  class LaughterPeriodRule < LineRule
+    def initialize
+      pattern = /笑#{Patterns::CLOSE_PARENTHESES}。$/o
+      super('laughter_period', pattern, correctable: true, color_code: 31)
+    end
+
+    def correct(line)
+      line.gsub(@pattern) { "笑#{::Regexp.last_match(0)[1]}" }
+    end
+
+    def warning_description
+      '括弧笑の後ろに句点は不要です。'
+    end
+  end
+
+  class SingleThreePointLeaderRule < LineRule
+    def initialize
+      pattern = /(?<!#{Patterns::THREE_POINT_LEADER})#{Patterns::THREE_POINT_LEADER}(?!#{Patterns::THREE_POINT_LEADER})/o
+      super('single_three_point_leader', pattern, correctable: true, color_code: 31)
+    end
+
+    def correct(line)
+      line.gsub(@pattern, '……')
+    end
+
+    def warning_description
+      '三点リーダーは2つ連続で使用してください。'
+    end
+  end
+
+  class ThreePointLeaderAtEndRule < LineRule
+    def initialize
+      pattern = /#{Patterns::THREE_POINT_LEADER}$/o
+      super('three_point_leader_at_end', pattern, correctable: false, color_code: 31)
+    end
+
+    def warning_description
+      '文末に三点リーダーがあります。適切な句読点で終えてください。'
+    end
+  end
+
+  class QuestionExclamationInParagraphRule < LineRule
+    def initialize
+      pattern = /#{Patterns::QUESTION_EXCLAMATION}(?!$)(?![　#{Patterns::QUESTION_EXCLAMATION}#{Patterns::CLOSE_BRANCKETS}])/o
+      super('question_exclamation_in_paragraph', pattern, correctable: true, color_code: 31)
+    end
+
+    def correct(line)
+      line.gsub(@pattern) { "#{::Regexp.last_match(0)}　" }
+    end
+
+    def warning_description
+      '疑問符・感嘆符の後には全角空白が必要です。'
+    end
+  end
+
+  class InvalidBlankRule < LineRule
+    def initialize
+      super('invalid_blank', Patterns::INVALID_BLANK, correctable: true, color_code: 32)
+    end
+
+    def correct(line)
+      line.gsub(@pattern) { |match| match.delete(' ') }
+    end
+
+    def warning_description
+      '不要な空白が含まれています。'
+    end
+  end
+
+  class TodoRule < LineRule
+    def initialize
+      super('todo', Patterns::TODO_PATTERN, correctable: false, color_code: 33)
+    end
+
+    def warning_description
+      'TODOが含まれています。'
+    end
+  end
+
+  class TocRule < LineRule
+    def initialize
+      super('toc', Patterns::TOC_PATTERN, correctable: true, color_code: 35)
+    end
+
+    def correct(line)
+      line.gsub(@pattern, '{{toc_here}}')
+    end
+
+    def warning_description
+      '{{toc}}ではなく、{{toc_here}}を使ってください。'
+    end
+  end
+
+  class LinkRule < LineRule
+    def initialize
+      super('link', Patterns::LINK_PATTERN, correctable: false, color_code: 34)
+    end
+
+    def check(line)
+      return false unless line.match?(@pattern)
+
+      m = line.match(@pattern)
+      m[:link] !~ %r{\Ahttps?://} && m[:link] =~ /[^0-9A-Za-z\-_]/
+    end
+
+    def warning_description
+      'リンクの設定漏れと思われる部分があります。'
+    end
+
+    def warning_message(lineno, line)
+      m = line.match(@pattern)
+      highlighted = "#{m[:left]}\e[#{@color_code}m#{m[:link]}\e[m#{m[:right]}"
+      "[Uncorrectable] #{warning_description} : #{lineno}行目 : #{line.chomp.gsub(m[0], highlighted)}"
+    end
+  end
+
+  class FootnoteConsistencyRule < FileRule
+    def initialize
+      super('footnote_consistency')
+      @has_footnote = false
+      @has_last_hrule = false
+    end
+
+    def track(line)
+      @has_footnote = true if line.match?(Patterns::FOOTNOTE_PATTERN)
+
+      if line.match?(Patterns::HRULE_PATTERN)
+        @has_last_hrule = true
+      elsif line.match?(Patterns::NON_WHITESPACE)
+        @has_last_hrule = false
+      end
+    end
+
+    def check
+      @has_footnote && !@has_last_hrule || !@has_footnote && @has_last_hrule
+    end
+
+    def warning_description
+      if @has_footnote && !@has_last_hrule
+        '脚注があるのに末尾に「----」がありません。'
+      else
+        '脚注がないのに末尾に「----」があります。'
+      end
+    end
+  end
+
+  attr_reader :warning_count, :line_rules
+
+  def initialize(file_io, autocorrect: false)
+    @file_io = file_io
+    @autocorrect = autocorrect
     @warning_count = 0
     @warning_messages = []
-    @options = options
-    @fn = false
-    @last_hrule = false
+    @line_rules = build_line_rules
+    @file_rules = build_file_rules
   end
 
   def run!
-    @options.each_line do |line|
-      white_space_check(@options.lineno, line)
-      invalid_pattern_check(@options.lineno, line)
-      unnecessary_space_check(@options.lineno, line)
-      todo_check(@options.lineno, line)
-      link_check(@options.lineno, line)
-      toc_check(@options.lineno, line)
-
-      footnote_check(@options.lineno, line)
-      last_hrule_check(@options.lineno, line)
-    end
-
-    footnote_pair_check
-
-    @warning_count > 0
-  end
-
-  def print_result
-    if @warning_count > 0
-      puts "#{@warning_count} warning(s)"
-      @warning_messages.each do |warning_message|
-        puts warning_message
-      end
-      false
+    if @autocorrect
+      run_with_formatter!
     else
-      true
+      run_check_only!
     end
   end
 
-  def add_msg(msg)
-    @warning_messages << msg
-    msg
-  end
-
-  def white_space_check(lineno, line)
-    check_result = false
-    line.gsub!(MISSING_BLANK) do
-      check_result = true
-      @warning_count += 1
-      "\e[7m \e[m"
+  def run_check_only!
+    @file_io.each_line do |line|
+      lineno = @file_io.lineno
+      check_line(lineno, line)
+      track_file_rules(line)
     end
-    add_msg("半角英数字の前後には空白が必要です。: #{lineno}行目 : #{line}") if check_result
+
+    check_file_rules
+    nil
   end
 
-  def invalid_pattern_check(lineno, line)
-    check_result = false
-    line.gsub!(INVALID_PATTERN) do
-      check_result = true
-      @warning_count += 1
-      "\e[31m#{$&}\e[m"
-    end
-    add_msg("句点や括弧の記述が編集指針にあいません。 : #{lineno}行目 : #{line}") if check_result
-  end
+  def run_with_formatter!
+    require_relative 'formatter'
 
-  def unnecessary_space_check(lineno, line)
-    check_result = false
-    line.gsub!(INVALID_BLANK) do
-      check_result = true
-      @warning_count += 1
-      "\e[32m#{$&}\e[m"
-    end
-    add_msg("不要な空白が含まれています。 : #{lineno}行目 : #{line}") if check_result
-  end
+    file_path = @file_io.path
+    formatter = RubimaFormatter.new(file_path, @line_rules)
+    formatter.run!
 
-  def todo_check(lineno, line)
-    check_result = false
-    line.gsub!(/TODO/) do
-      check_result = true
-      @warning_count += 1
-      "\e[33m#{$&}\e[m"
-    end
-    add_msg("TODOが含まれています。 : #{lineno}行目 : #{line}") if check_result
-  end
-
-  def link_check(lineno, line)
-    check_result = false
-    line.gsub!(/(?<left>\[\[(.*?\|)?)(?<link>.*)(?<right>\]\])/) do
-      m = $~
-      if m[:link] !~ %r!\Ahttps?://! &&  m[:link] =~ /[^0-9A-Za-z\-_]/
-        check_result = true
-        @warning_count += 1
-        "#{m[:left]}\e[34m#{m[:link]}\e[m#{m[:right]}"
+    File.open(file_path, 'r') do |f|
+      f.each_line do |line|
+        lineno = f.lineno
+        check_line(lineno, line)
+        track_file_rules(line)
       end
     end
-    add_msg("リンクの設定漏れと思われる部分があります。 : #{lineno}行目 : #{line}") if check_result
+
+    check_file_rules
   end
 
-  def toc_check(lineno, line)
-    check_result = false
-    line.gsub!(/\{\{toc\}\}/) do
-      check_result = true
-      @warning_count += 1
-      "\e[35m#{$&}\e[m"
+  def print_messages(io = $stdout)
+    return if @warning_count.zero?
+
+    io.puts "#{@warning_count} warning(s)"
+    @warning_messages.each { |msg| io.puts msg }
+  end
+
+  private
+
+  def build_line_rules
+    [
+      MissingBlankRule.new,
+      InvalidBlankRule.new,
+      TocRule.new,
+      FullWidthParenthesesRule.new,
+      InvalidOpenParenthesesRule.new,
+      InvalidCloseParenthesesRule.new,
+      PeriodAroundParenthesesRule.new,
+      LaughterPeriodRule.new,
+      SingleThreePointLeaderRule.new,
+      ThreePointLeaderAtEndRule.new,
+      QuestionExclamationInParagraphRule.new,
+      TodoRule.new,
+      LinkRule.new
+    ]
+  end
+
+  def build_file_rules
+    [
+      FootnoteConsistencyRule.new
+    ]
+  end
+
+  def check_line(lineno, line)
+    @line_rules.each do |rule|
+      next unless rule.check(line)
+
+      add_message(rule.warning_message(lineno, line))
+      break if rule.is_a?(FullWidthParenthesesRule)
     end
-    add_msg("{{toc}}ではなく、{{toc_here}}を使ってください。 : #{lineno}行目 : #{line}") if check_result
   end
 
-  def footnote_check(lineno, line)
-    @fn = true if /\{\{fn/ =~ line
+  def track_file_rules(line)
+    @file_rules.each { |rule| rule.track(line) }
   end
 
-  def last_hrule_check(lineno, line)
-    if /^----$/ =~ line
-      @last_hrule = true
-    elsif /\S/ =~ line
-      @last_hrule = false
+  def check_file_rules
+    @file_rules.each do |rule|
+      next unless rule.check
+
+      add_message(rule.warning_message)
     end
   end
 
-  def footnote_pair_check
-    if @fn && !@last_hrule
-      @warning_count += 1
-      add_msg("\e[7m脚注があるのに末尾に「----」がありません。\e[m")
-    elsif !@fn && @last_hrule
-      @warning_count += 1
-      add_msg("\e[7m脚注がないのに末尾に「----」があります。\e[m")
-    end
+  def add_message(msg)
+    @warning_messages << msg
+    @warning_count += 1
   end
-
 end
 
 if $0 == __FILE__
-  checker = RubimaLint.new(ARGF)
+  options = { autocorrect: false }
+  OptionParser.new do |opts|
+    opts.banner = "Usage: #{$0} [-a] [file...]"
+    opts.on('-a', '--autocorrect', 'Enable auto-correction') do
+      options[:autocorrect] = true
+    end
+  end.parse!
+
+  checker = RubimaLint.new(ARGF, autocorrect: options[:autocorrect])
   checker.run!
 
-  exit(checker.print_result)
-end
+  checker.print_messages(options[:autocorrect] ? $stderr : $stdout)
 
+  exit(checker.warning_count > 0 ? 1 : 0)
+end

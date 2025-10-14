@@ -2,77 +2,13 @@ require 'tempfile'
 require 'pathname'
 require 'fileutils'
 require 'readline'
-require_relative 'rubima-lint'
 
-class RubimaFomatter
-  class BaseFormatter
-    include RubimaLint::Rules
-
-    def initialize(line_no, line)
-      @line_no = line_no
-      @line = line
-    end
-
-    def apply
-      pre_checked_line = pre_check
-      return @line if @line == pre_checked_line
-
-      puts "#{formatted_message}: line [#{@line_no}]:"
-      puts pre_checked_line
-
-      loop do
-        y_or_n = Readline.readline("apply? [y(es)<default>|n(o)|e(dit)|i(gnore)]> ")
-        case y_or_n.chomp
-        when ?y, 'yes', ''
-          return convert_line
-        when ?n, 'no'
-          return @line
-        when ?e, 'edit'
-          return edit_line
-        end
-      end
-    end
-
-    def edit_line
-      editor = ENV['EDITOR'] || 'vim'
-      tempfile = Tempfile.open { |fp| fp.print @line; fp }
-      system [editor, tempfile.path].join(' ')
-      File.read(tempfile.path)
-    end
-  end
-
-  class WhiteSpaceFormatter < BaseFormatter
-    def formatted_message
-      "半角文字列の前後に空白を挿入しました"
-    end
-
-    def pre_check
-      convert_line("\e[7m \e[m")
-    end
-
-    def convert_line(blank = ' ')
-      @line.gsub(MISSING_BLANK, blank)
-    end
-  end
-
-  class TrimUnnecessarySpaceFormatter < BaseFormatter
-    def formatted_message
-      "不要な空白を削除しました"
-    end
-
-    def pre_check
-      convert_line("\e[32m#{$&}\e[m")
-    end
-
-    def convert_line(trimmed = '')
-      @line.gsub(INVALID_BLANK, trimmed)
-    end
-  end
-
-  def initialize(src_file_path)
+class RubimaFormatter
+  def initialize(src_file_path, lint_rules)
     @src_file_path = Pathname.new(src_file_path)
     @file_name = @src_file_path.basename
     @dir_name = @src_file_path.dirname
+    @lint_rules = lint_rules
   end
 
   def run!
@@ -92,11 +28,40 @@ class RubimaFomatter
     end
   end
 
-  def apply_format(no, line)
-    [WhiteSpaceFormatter, TrimUnnecessarySpaceFormatter].inject(line) do |l, fc|
-      fc.new(no, l).apply
+  def apply_format(line_no, line)
+    @lint_rules.inject(line) do |current_line, rule|
+      next current_line unless rule.correctable
+      next current_line unless rule.check(current_line)
+
+      corrected_line = rule.correct(current_line)
+
+      puts "#{rule.warning_description}(L#{line_no}):"
+      puts "Before: #{current_line.chomp}"
+      puts "After:  #{corrected_line.chomp}"
+
+      loop do
+        y_or_n = Readline.readline('apply? [y(es)<default>|n(o)|e(dit)|i(gnore)]> ')
+        case y_or_n.chomp
+        when 'y', 'yes', ''
+          break corrected_line
+        when 'n', 'no'
+          break current_line
+        when 'e', 'edit'
+          break edit_line(current_line)
+        when 'i', 'ignore'
+          break current_line
+        end
+      end
     end
   end
-end
 
-RubimaFomatter.new(ARGV[0]).run!
+  def edit_line(line)
+    editor = ENV['EDITOR'] || 'vim'
+    tempfile = Tempfile.open do |fp|
+      fp.print line
+      fp
+    end
+    system "#{editor} #{tempfile.path}"
+    File.read(tempfile.path)
+  end
+end
