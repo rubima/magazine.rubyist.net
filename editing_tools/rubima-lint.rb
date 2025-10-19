@@ -10,12 +10,12 @@ class RubimaLint
     CLOSE_PARENTHESES = '[)]' # 閉じ丸括弧
     QUESTION_EXCLAMATION = '[？！]' # 疑問符・感嘆符
     PUNCTUATION = "[、。#{QUESTION_EXCLAMATION}]" # 句読点
-    OPEN_BRANCKETS  = '[「『]' # 開き括弧類
-    CLOSE_BRANCKETS = '[』」]' # 閉じ括弧類
+    OPEN_BRACKETS  = '[「『]' # 開き括弧類
+    CLOSE_BRACKETS = '[』」]' # 閉じ括弧類
     THREE_POINT_LEADER = '[…]' # 三点リーダー
     OTHER_OK_LETTER = "[#{THREE_POINT_LEADER}〜：　]" # その他OKな文字
-    OK_BEFORE_ASCII = "[#{PUNCTUATION}#{OPEN_BRANCKETS}#{OTHER_OK_LETTER}]" # ASCII直前のOKな文字
-    OK_AFTER_ASCII = "[#{PUNCTUATION}#{CLOSE_BRANCKETS}#{OTHER_OK_LETTER}]" # ASCII直後のOKな文字
+    OK_BEFORE_ASCII = "[#{PUNCTUATION}#{OPEN_BRACKETS}#{OTHER_OK_LETTER}]" # ASCII直前のOKな文字
+    OK_AFTER_ASCII = "[#{PUNCTUATION}#{CLOSE_BRACKETS}#{OTHER_OK_LETTER}]" # ASCII直後のOKな文字
     HEAD_CHAR = "'''　" # 発言頭
 
     ASCII_AFTER_NOT_ASCII = /(?<=#{NOT_ASCII})(?=#{ASCII_CHAR})(?<!#{OK_BEFORE_ASCII})(?<!#{HEAD_CHAR})/o # 非ASCIIの直後にASCII
@@ -23,10 +23,10 @@ class RubimaLint
     MISSING_BLANK = /#{ASCII_AFTER_NOT_ASCII}|#{NOT_ASCII_AFTER_ASCII}/o # 空白抜け
 
     # 円括弧前後OK文字
-    OK_AROUND_PARENTHESES = "[ [[:ascii:]&&[:graph:]]#{PUNCTUATION}#{OPEN_BRANCKETS}#{CLOSE_BRANCKETS}#{THREE_POINT_LEADER}]"
+    OK_AROUND_PARENTHESES = "[ [[:ascii:]&&[:graph:]]#{PUNCTUATION}#{OPEN_BRACKETS}#{CLOSE_BRACKETS}#{THREE_POINT_LEADER}]"
 
     # 不要な空白
-    CHAR_AROUND_NOT_PERMIT_BLANK = "[#{PUNCTUATION}#{OPEN_BRANCKETS}#{CLOSE_BRANCKETS}]"
+    CHAR_AROUND_NOT_PERMIT_BLANK = "[#{PUNCTUATION}#{OPEN_BRACKETS}#{CLOSE_BRACKETS}]"
     # 編集指針に反する空白パターン
     INVALID_BLANK_PARTS = [
       /#{THREE_POINT_LEADER} #{OPEN_PARENTHESES}/o,
@@ -221,7 +221,7 @@ class RubimaLint
 
   class QuestionExclamationInParagraphRule < LineRule
     def initialize
-      pattern = /#{Patterns::QUESTION_EXCLAMATION}(?!$)(?![　#{Patterns::QUESTION_EXCLAMATION}#{Patterns::CLOSE_BRANCKETS}])/o
+      pattern = /#{Patterns::QUESTION_EXCLAMATION}(?!$)(?![　#{Patterns::QUESTION_EXCLAMATION}#{Patterns::CLOSE_BRACKETS}])/o
       super('question_exclamation_in_paragraph', pattern, correctable: true, color_code: 31)
     end
 
