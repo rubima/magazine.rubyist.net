@@ -186,7 +186,7 @@ I'll be sharing the twists and turns that happened between RubyKaigi 2024 and th
 
 Title: [From C extension to pure C: Migrating RBS](https://rubykaigi.org/2025/presentations/amomchilov.html)
 
-I'm excited to give my first-ever conference talk, in which I'll be presenting our work on making the standard RBS gem more portable, faster and memory efficient. I'll show the tricks we used to add a new direct C API to an existing Ruby gem, and how we migrated it to work without any depenency on the Ruby VM (`ruby.h`).
+I'm excited to give my first-ever conference talk, in which I'll be presenting our work on making the standard RBS gem more portable, faster and memory efficient. I'll show the tricks we used to add a new direct C API to an existing Ruby gem, and how we migrated it to work without any dependency on the Ruby VM (`ruby.h`).
 
 There's something for everyone, from gem maintainers to curious application developers. Enjoy!
 
