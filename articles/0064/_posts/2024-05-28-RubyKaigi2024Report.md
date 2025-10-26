@@ -83,7 +83,7 @@ created_on: 2024-05-28
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_seki_and_shioi.webp">
 
 撮影した人: @moro
-ひとこと: Offical Party の関さんと塩井さん
+ひとこと: Official Party の関さんと塩井さん
 
 <img src="{{base}}{{site.baseurl}}/images/0064-RubyKaigi2024Report/day1_rubyfriends_at_party.webp">
 
