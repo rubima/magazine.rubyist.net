@@ -1,6 +1,6 @@
 # るびまを手元で動かす
 
-Ruby 3.2+ が必要です。
+`.ruby-version`に記載されたRubyのバージョンが必要です。
 
 ```
 $ git clone git@github.com:rubima/magazine.rubyist.net.git
