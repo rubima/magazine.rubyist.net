@@ -78,13 +78,13 @@ Rubyリリース30周年おめでとうございます。人生を大きく変�
 
 ### hayay01sh1da
 
-I develop a product in Ruby at work.
-I have been into it because of its developers' happy experience but intriguing linguistic features, which will keep me a big fan of Ruby.
+I develop a product in Ruby at work.  
+I have been into it thanks to not only its principal philosophy Programmer's Happiness but its intriguing linguistic features, which will keep me a big fan.  
 I wish to return a big favour sometime in any way.
 
 Happy 30th Anniversary!!🎉
 
-編集部訳：仕事でRubyによるプロダクトを開発しています。開発者を幸せにしてくれる体験や魅力的な言語仕様に惹かれ、これからもRubyの大ファンであり続けます。いつか何らかの形で大きなお返しができればと思っています。30周年おめでとうございます！🎉
+編集部訳：仕事で Ruby によるプロダクトを開発しています。これまでプログラマの幸福と興味深い言語学的特徴に惹かれ続け、これからも変わらず大ファンでいることと思います。いつか何らかの形で心から恩返しができればと思っています。30周年おめでとうございます！🎉
 
 
 ### junk0612
