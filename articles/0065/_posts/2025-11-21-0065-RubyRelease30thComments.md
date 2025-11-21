@@ -79,7 +79,7 @@ Rubyリリース30周年おめでとうございます。人生を大きく変�
 ### hayay01sh1da
 
 I develop a product in Ruby at work.  
-I have been into it thanks not only its principal philosophy Programmer's Happiness but its intriguing linguistic features, which will keep me a big fan.  
+I have been into it thanks to not only its principal philosophy Programmer's Happiness but its intriguing linguistic features, which will keep me a big fan.  
 I wish to return a big favour sometime in any way.
 
 Happy 30th Anniversary!!🎉
