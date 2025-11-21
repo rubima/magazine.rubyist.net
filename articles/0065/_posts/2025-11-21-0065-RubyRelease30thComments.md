@@ -78,8 +78,8 @@ Rubyリリース30周年おめでとうございます。人生を大きく変�
 
 ### hayay01sh1da
 
-I develop a product in Ruby at work.  
-I have been into it thanks to not only its principal philosophy Programmer's Happiness but its intriguing linguistic features, which will keep me a big fan.  
+I develop a product in Ruby at work.
+I have been into it thanks to not only its principal philosophy Programmer's Happiness but its intriguing linguistic features, which will keep me a big fan.
 I wish to return a big favour sometime in any way.
 
 Happy 30th Anniversary!!🎉
@@ -323,3 +323,55 @@ Ruby is one programming language that may seem strange and difficult to use at f
 ### Hamamatsu.rb
 
 Rubyリリース30周年おめでとうございます！　Hamamatsu.rbはもうすぐ15周年です。これからもRubyと一緒にプログラミングを楽しんでいきます！
+
+### mrkn
+
+30歳おめでとうございます。私は人生の半分以上を Ruby と共に歩んできました。Ruby のおかげで楽しい人生を過ごせています。これからも使う人が楽しめるプログラミング言語であり続けてください。40周年でまた会いましょう。
+
+### Andi Idogawa
+
+Happy Birthday Ruby! Programming in Ruby makes me happy. Thank you Ruby Community!
+
+編集部訳：Ruby、お誕生日おめでとう！ Rubyでプログラミングすると幸せな気持ちになります。Rubyコミュニティのみなさん、ありがとう！
+
+### 小川伸一郎
+
+30周年おめでとうごさいます！Rubyに出会ってからは、RubyやRubyコミュニティのおかげでいまの自分があると思うぐらいにお世話になりっぱなしです。これからはお返しができるといいなと思いつつ、40周年に望みたいと思っています。
+
+### kojix2
+
+Rubyに触れてから10年以上の年月が経ってしまったのが信じられません。私にとって初めて本格的に勉強したプログラミング言語です。本当に素晴らしいプログラミング言語だと思います。30周年おめでとうございます。
+
+### yuriko
+
+Ruby30周年おめでとうございます！Rubyを通して私の世界がぐっと広がったと感じています。この先もRubyと一緒に歩んでいきたいです。
+
+### ledsun
+
+RubyとRubyを作っている人たちが大好きです。60周年目指してコミュニティの力でがんばっていきましょう！
+
+### jesus_isao
+
+他言語から来たので最初は、「静的型がなくて辛い！」と思っていたはずなのに、数年経った今では、他言語のコードを触るときに「オープンクラスでライブラリの挙動を変更できないのが辛い！」と思うようになりました。書けば書くほど味が出る良い言語だからこそ、こんなに長い間人々に愛されているのだと思いました。30周年おめでとうございます！
+
+### joker1007
+
+Rubyは私にプログラミングの楽しさを教えて育ててくれた言語です。そしてRubyコミュニティに長く関わってこなければ今の自分の様にはなってなかったでしょう。自分がプログラマで食べていけているのはRubyのおかげです！共に4.0のリリースを祝うことができることをとても嬉しく思っています。そしてそんなコミュニティ発の情報誌るびまの20周年、本当におめでとうございます！！
+
+### neko314
+
+リリース30周年おめでとうございます！私にとってRubyは生活の一部、体の一部で、なかったら心が枯れてしまうかもしれません。30年間、Rubyを生み育て生かしてこられたたくさんの方々に感謝しています。RubyとRubyコミュニティーのみなさん、これからもよろしくお願いします。
+
+### 志村 (hs9587)
+
+30周年おめでとうございます。この機会なので昔話。その昔 Ruby を始めたのは、「オブジェクト指向スクリプト言語 Ruby」(まつもと ゆきひろ/石塚 圭樹、株式会社アスキー、1999年、https://ndlsearch.ndl.go.jp/books/R100000002-I000002918770 ) が出たときでした。そのしばらく前に、鍋谷さん( https://nabetani.hatenadiary.com/ 、当時ハンドルではなかった) に存在だけ教えてもらってたのが、本が出たので勉強して試してみたのでした。いろいろ検討して勤務先の Web開発は PHP になったのだけど、サーバ側のいろいろは Ruby で書いたりもしました。今も生き残ってるスクリプトあります。思えば随分長くお世話になっています。30周年、本当におめでとうございます。
+
+### Rich Kilmer
+
+Congrats to Matz and team who have given our minds the best way to express our dreams in code for over 30 years!
+
+編集部訳：30年以上にわたり、コードで夢を表現する最良の方法を私たちに授けてくれたMatzとチームにお祝いを送ります！
+
+### m_seki
+
+30年おめでとうございます！私がビルドに失敗してから30年ですね。次の30年もよろしくお願いします。
