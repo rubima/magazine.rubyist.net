@@ -13,7 +13,7 @@ created_on: 2025-11-21
 
 ### ja
 
-1995年12月21日にRubyがfj.sourcesにバージョン0.95として一般公開されてから、今年（2025年）の12月21日で30年という節目を迎えます。
+1995 年 12 月 21 日に Ruby が fj.sources にバージョン 0.95 として一般公開されてから、今年（2025 年）の 12 月 21 日で 30 年という節目を迎えます。
 
 そんな節目をお祝いしたく、るびまでは Rubyist のみなさんからのお祝いコメントを募集しました。
 
@@ -33,48 +33,47 @@ The editorial team would like to express our heartfelt gratitude to the very lar
 
 ## みなさんからいただいたコメント
 
-
 ### しまだ（@snoozer05）
 
-Rubyと出会ったおかげで、たくさんのご縁に恵まれています。これから先も、Rubyのいきいきとした歴史が続いていくことを願っています。Rubyのリリースから30周年、そしてRuby 4.0のリリース、誠におめでとうございます。
+Ruby と出会ったおかげで、たくさんのご縁に恵まれています。これから先も、Ruby のいきいきとした歴史が続いていくことを願っています。Ruby のリリースから 30 周年、そして Ruby 4.0 のリリース、誠におめでとうございます。
 
 ### 西川茂伸@shishi
 
-Rubyリリース30周年おめでとうございます! 違う言語からキャリアをはじめ、Ruby1.6ぐらいから触りはじめ、Rubyによってプログラマとして成長し、Rubyを触らない期間もありましたが、ずっとRubyがプログラミング母語といえる存在になっています。これからもますますのRubyの発展をお祈りしています!
+Ruby リリース 30 周年おめでとうございます! 違う言語からキャリアをはじめ、Ruby1.6 ぐらいから触りはじめ、Ruby によってプログラマとして成長し、Ruby を触らない期間もありましたが、ずっと Ruby がプログラミング母語といえる存在になっています。これからもますますの Ruby の発展をお祈りしています!
 
 ### chezou
 
-Rubyは文字通り私の人生を変えた言語でした。仕事もコミュニティもエンジニアとしての世界を広げてくれた言語です。30周年おめでとうございます！
+Ruby は文字通り私の人生を変えた言語でした。仕事もコミュニティもエンジニアとしての世界を広げてくれた言語です。30 周年おめでとうございます！
 
 ### 名無し。
 
-Ruby 30周年おめでとうございます！
+Ruby 30 周年おめでとうございます！
 
-自分が初めて学んだプログラミング言語がRubyでした。（母からお勧めされたので）
-そこからプログラミングにのめり込んで10年ほど経ちます。
-今の自分があるのはRubyのおかげです。
+自分が初めて学んだプログラミング言語が Ruby でした。（母からお勧めされたので）
+そこからプログラミングにのめり込んで 10 年ほど経ちます。
+今の自分があるのは Ruby のおかげです。
 本当におめでとうございます！
 
 ### ささだ
 
-Ruby リリース30周年おめでとうございます。おかげで楽しく暮らすことができています。今後ともよろしくお願いします。
+Ruby リリース 30 周年おめでとうございます。おかげで楽しく暮らすことができています。今後ともよろしくお願いします。
 
 ### hachi8833
 
-Ruby 30周年おめでとうございます！
-Ruby 2.0からのユーザーなので歴史浅いです。当時PythonとRubyとどっちにするか迷って、ソースコードに日本語があってもエラーにならなかったという理由でRuby 2.0を選んだのを思い出しました。あれからRubyがこんなにもりもり強くなるとは感無量です。
+Ruby 30 周年おめでとうございます！
+Ruby 2.0 からのユーザーなので歴史浅いです。当時 Python と Ruby とどっちにするか迷って、ソースコードに日本語があってもエラーにならなかったという理由で Ruby 2.0 を選んだのを思い出しました。あれから Ruby がこんなにもりもり強くなるとは感無量です。
 
 ### udzura
 
-Ruby 30周年おめでとうございます！Rubyも俺たちもまだまだこっからっす！
+Ruby 30 周年おめでとうございます！Ruby も俺たちもまだまだこっからっす！
 
 ### jx.matsushita
 
-30th & v4.0 おめでとうございます。Rubyに関わるみんながこの言語のことが好きでいきいきしている様子につい自分も楽しくなってしまいます。これからもプログラムを書くことを楽しんでコミュニティに貢献していきたいです。
+30th & v4.0 おめでとうございます。Ruby に関わるみんながこの言語のことが好きでいきいきしている様子につい自分も楽しくなってしまいます。これからもプログラムを書くことを楽しんでコミュニティに貢献していきたいです。
 
 ### ydah
 
-Rubyリリース30周年おめでとうございます。人生を大きく変えてくれたRubyに本当に感謝しています。これからも多くの人に使われる素敵な言語であり続けますように。
+Ruby リリース 30 周年おめでとうございます。人生を大きく変えてくれた Ruby に本当に感謝しています。これからも多くの人に使われる素敵な言語であり続けますように。
 
 ### hayay01sh1da
 
@@ -84,12 +83,11 @@ I wish to return a big favour sometime in any way.
 
 Happy 30th Anniversary!!🎉
 
-編集部訳：仕事で Ruby によるプロダクトを開発しています。これまでプログラマの幸福と興味深い言語学的特徴に惹かれ続け、これからも変わらず大ファンでいることと思います。いつか何らかの形で心から恩返しができればと思っています。30周年おめでとうございます！🎉
-
+編集部訳：仕事で Ruby によるプロダクトを開発しています。これまでプログラマの幸福と興味深い言語学的特徴に惹かれ続け、これからも変わらず大ファンでいることと思います。いつか何らかの形で心から恩返しができればと思っています。30 周年おめでとうございます！🎉
 
 ### junk0612
 
-Ruby30周年おめでとうございます！
+Ruby30 周年おめでとうございます！
 これからも Ruby が "a programmer's best friend" であり続けられますように！
 
 ### のだ ゆうだい
@@ -104,15 +102,13 @@ Ruby30周年おめでとうございます！
 
 Version 0.95 was released when I was 2.5 years old. At 32.5, I look back and see and entire lifetime what went by, and its threads were marked by Ruby. Today, I find myself enjoying being part of the Ruby community which grew to a global scale since its birth and is enriched with beautiful souls all across the world, souls as rare to find as high value natural rubies. Next to Ruby being amazing as it is, the community it created stands as a testament to its history, but also to the 30 years ahead of us. Thank you for building something which had an unmeasurable impact on my life and my heartfelt congratulations on reaching this milestone. Here's to another 30 years and making a meaningful impact on the life of someone 2.5 years old today. Maybe? We'll see.
 
-編集部訳：Ruby 0.95が公開されたとき、私はまだ2歳半でした。いま32歳半になって振り返ると、人生のいたるところにRubyの足跡があります。誕生以来グローバルに広がり、世界中の美しい魂――高価な天然ルビーのように稀少な人たち――で彩られたRubyコミュニティの一員として過ごせることを楽しんでいます。Rubyそのものが素晴らしいだけでなく、そこから生まれたコミュニティはこれまでの歴史を物語り、これからの30年も証明してくれます。私の人生に計り知れない影響を与えてくれたものを築いてくださり、本当にありがとうございます。この節目を迎えられたことに心からお祝いを申し上げます。今日2歳半の誰かの人生にも、この先30年で大きな意味をもたらせますように。さて、どうなるでしょうか。
-
+編集部訳：Ruby 0.95 が公開されたとき、私はまだ 2 歳半でした。いま 32 歳半になって振り返ると、人生のいたるところに Ruby の足跡があります。誕生以来グローバルに広がり、世界中の美しい魂――高価な天然ルビーのように稀少な人たち――で彩られた Ruby コミュニティの一員として過ごせることを楽しんでいます。Ruby そのものが素晴らしいだけでなく、そこから生まれたコミュニティはこれまでの歴史を物語り、これからの 30 年も証明してくれます。私の人生に計り知れない影響を与えてくれたものを築いてくださり、本当にありがとうございます。この節目を迎えられたことに心からお祝いを申し上げます。今日 2 歳半の誰かの人生にも、この先 30 年で大きな意味をもたらせますように。さて、どうなるでしょうか。
 
 ### Rafael Peña-Azar
 
 Being a Ruby dev for almost 15 years made me happier, and seeing now that the language is reaching this unbelievable milestone, is a kiss to my soul. Congratulations for all the amazing work and for the effort you put all these years to make Ruby the best programming language ever. Greetings from Colombia!
 
-編集部訳：Ruby開発者になってほぼ15年、Rubyのおかげで私はより幸せになりました。この信じられない節目に言語が到達した姿を見ると、魂にキスをされたような気持ちです。Rubyを最高のプログラミング言語にするために長年注がれてきた素晴らしい仕事と努力にお祝いを送ります。コロンビアから祝福を！
-
+編集部訳：Ruby 開発者になってほぼ 15 年、Ruby のおかげで私はより幸せになりました。この信じられない節目に言語が到達した姿を見ると、魂にキスをされたような気持ちです。Ruby を最高のプログラミング言語にするために長年注がれてきた素晴らしい仕事と努力にお祝いを送ります。コロンビアから祝福を！
 
 ### MGC
 
@@ -122,8 +118,7 @@ Technology evolves, trends shift, but Ruby’s core remains: simple, intuitive, 
 
 Thank you, Matz. Happy 30th, Ruby.
 
-編集部訳：Rubyを書いて20年以上。力と情熱、そして何より喜びを与えてくれました。技術は進化しトレンドは移り変わっても、Rubyの核はシンプルで直感的で、とても人間的なままです。私にとってRubyは単なる言語ではなく、ものづくりや考え方を形作ってくれた長年の相棒です。まつもとさん、ありがとう。30周年おめでとうRuby。
-
+編集部訳：Ruby を書いて 20 年以上。力と情熱、そして何より喜びを与えてくれました。技術は進化しトレンドは移り変わっても、Ruby の核はシンプルで直感的で、とても人間的なままです。私にとって Ruby は単なる言語ではなく、ものづくりや考え方を形作ってくれた長年の相棒です。まつもとさん、ありがとう。30 周年おめでとう Ruby。
 
 ### Dirk
 
@@ -131,27 +126,23 @@ Love to all the devs who made this incredible ecosystem! Congratulations.
 
 編集部訳：この素晴らしいエコシステムを築いてくれたすべての開発者に愛を。おめでとうございます。
 
-
 ### Yaro Shm
 
 love ruby!
 
-編集部訳：Ruby大好き！
-
+編集部訳：Ruby 大好き！
 
 ### lekemula
 
 Keep on shinning for the next 30 years and more 🥂 ✨
 
-編集部訳：これからの30年も、それ以上の未来も輝き続けてください 🥂✨
-
+編集部訳：これからの 30 年も、それ以上の未来も輝き続けてください 🥂✨
 
 ### Ivan Turkovic
 
 Three decades of elegance, simplicity, and joy in programming and I’ve been lucky to share 23 of those years with you. From my very first puts "Hello, world!" to building full-scale systems, Ruby has always felt like home.
 
-編集部訳：エレガンスとシンプルさ、そしてプログラミングの喜びの30年。そのうち23年をあなたと共有できたのは幸運です。最初に`puts "Hello, world!"`を書いたときからフルスケールのシステムを作る今に至るまで、Rubyはいつも我が家のように感じられます。
-
+編集部訳：エレガンスとシンプルさ、そしてプログラミングの喜びの 30 年。そのうち 23 年をあなたと共有できたのは幸運です。最初に`puts "Hello, world!"`を書いたときからフルスケールのシステムを作る今に至るまで、Ruby はいつも我が家のように感じられます。
 
 ### AC de Souza
 
@@ -166,37 +157,34 @@ AC
 
 編集部訳：親愛なるまつもとさん、そして皆さん。この素晴らしいコミュニティと出会えたことは祝福です。私を客観的により良いプログラマにし、家族を支える助けにもなってくれるこの道具への感謝を、せめて言葉で伝えさせてください。心から感謝しています。― AC
 
-
 ### Brad Gessler
 
 Ruby is Beautiful. Thanks for all the hard work you’ve all put into it. Congrats on 30 years. Cheers to another 30.
 
-編集部訳：Rubyは美しい。ここまで支えてくれたすべての努力に感謝します。30周年おめでとう、そしてこれからの30年にも乾杯。
-
+編集部訳：Ruby は美しい。ここまで支えてくれたすべての努力に感謝します。30 周年おめでとう、そしてこれからの 30 年にも乾杯。
 
 ### Francesco Canessa (@makevoid)
 
 In Ruby for 18 years, what an incredible journey it has been!
 
-編集部訳：18年にわたってRubyと歩んできました。本当に信じられないほど素晴らしい旅でした！
-
+編集部訳：18 年にわたって Ruby と歩んできました。本当に信じられないほど素晴らしい旅でした！
 
 ### lef237
 
-Rubyに出逢ってから、プログラミングが大好きになりました！
+Ruby に出逢ってから、プログラミングが大好きになりました！
 コードを書くことの「楽しさ」を教えてくれた、かけがえのない言語です。
-リリース30周年、本当におめでとうございます！！
+リリース 30 周年、本当におめでとうございます！！
 
 ### FUNAKI Shinya
 
-Rubyは、自分の人生に創造の喜びをもたらしてくれました。
+Ruby は、自分の人生に創造の喜びをもたらしてくれました。
 言語そのものの素晴らしさはもちろん、その思想や文化の広がりも、今の私の日々を支えてくれています。
-30周年、本当におめでとうございます。そして、心からありがとうございます。
+30 周年、本当におめでとうございます。そして、心からありがとうございます。
 微力ながら何かしらの形で貢献していけたらと思っています。
 
 ### dak2
 
-30周年おめでとうございます！
+30 周年おめでとうございます！
 楽しくエンジニアリングができているのも Ruby に出会えたからだと思っています。
 これからも自分ができる形でコミュニティに貢献していきたいと思っています。
 
@@ -206,65 +194,59 @@ I’m truly grateful with Ruby and the whole community behind it, you’re makin
 
 To the community, thank you for all the effort and work you’re putting into it; to Ruby, Happy Birthday, thank you for your existence and I wish you many more. NMRK!
 
-編集部訳：Rubyと、そのコミュニティ全体に心から感謝しています。世界中の多くの人が一行ごとに幸せを感じながら主役としてコードを書けるよう、みなさんは舞台裏で支えてくれています。あなたがたの仕事がなければ何ひとつ実現しませんでしたし、Rubyがなければ多くの開発者は日々の仕事を成功と喜びで満たすことはできなかったでしょう。ミッションは達成です！ コミュニティのみなさん、尽力をありがとうございます。そしてRuby、お誕生日おめでとう。存在してくれてありがとう、これからも末永く続きますように。NMRK!
-
+編集部訳：Ruby と、そのコミュニティ全体に心から感謝しています。世界中の多くの人が一行ごとに幸せを感じながら主役としてコードを書けるよう、みなさんは舞台裏で支えてくれています。あなたがたの仕事がなければ何ひとつ実現しませんでしたし、Ruby がなければ多くの開発者は日々の仕事を成功と喜びで満たすことはできなかったでしょう。ミッションは達成です！ コミュニティのみなさん、尽力をありがとうございます。そして Ruby、お誕生日おめでとう。存在してくれてありがとう、これからも末永く続きますように。NMRK!
 
 ### Aniket Patidar
 
 Congratulations on your 30th anniversary! Ruby has changed my life💫
 
-編集部訳：30周年おめでとうございます！ Rubyは私の人生を変えてくれました💫
-
+編集部訳：30 周年おめでとうございます！ Ruby は私の人生を変えてくれました 💫
 
 ### Ender Ahmet Yurt
 
 I discovered Ruby in 2010. I earned my first professional income with Ruby in 2011. 14 years later, and I'm still working with Ruby. I'm so glad there's such a programming language and a community around it. I really enjoy Ruby and its community. Finally, I'd like to say, Matz is nice, so we are nice. Thank you.
 
-編集部訳：2010年にRubyを見つけ、2011年にはRubyで初めてプロとしての収入を得ました。14年たった今もRubyで仕事をしています。こんなプログラミング言語とコミュニティが存在してくれて本当にうれしいです。Rubyとそのコミュニティを心から楽しんでいます。最後に「Matz is nice, so we are nice」と伝えたいです。ありがとうございます。
-
+編集部訳：2010 年に Ruby を見つけ、2011 年には Ruby で初めてプロとしての収入を得ました。14 年たった今も Ruby で仕事をしています。こんなプログラミング言語とコミュニティが存在してくれて本当にうれしいです。Ruby とそのコミュニティを心から楽しんでいます。最後に「Matz is nice, so we are nice」と伝えたいです。ありがとうございます。
 
 ### Khaled Bhyan
 
 Ruby was one of the best things introduced to me back in 2017! I want to thank you and the team for your great efforts and the happiness I felt every time I code in Ruby. Keep up the amazing work guys.
 
-編集部訳：2017年にRubyを紹介されたことは、私にとって最高の出来事のひとつでした。素晴らしい努力と、Rubyでコードを書くたびに感じる幸せを届けてくれた皆さんに感謝します。これからも素晴らしい仕事を続けてください。
-
+編集部訳：2017 年に Ruby を紹介されたことは、私にとって最高の出来事のひとつでした。素晴らしい努力と、Ruby でコードを書くたびに感じる幸せを届けてくれた皆さんに感謝します。これからも素晴らしい仕事を続けてください。
 
 ### Saroj Maharjan
 
 My whole career has been a success thanks to Ruby and I wish to spend my lifetime working with it. Happy Birthday to Ruby which brings happiness to programmers everywhere.
 
-編集部訳：キャリアが成功してきたのはすべてRubyのおかげです。これからの人生もRubyと共に働いていきたい。世界中のプログラマに幸せをもたらすRuby、お誕生日おめでとうございます。
-
+編集部訳：キャリアが成功してきたのはすべて Ruby のおかげです。これからの人生も Ruby と共に働いていきたい。世界中のプログラマに幸せをもたらす Ruby、お誕生日おめでとうございます。
 
 ### 5hun
 
-30周年おめでとうございます。Rubyは仕事で活用させていただいているだけでなく、コミュニティの皆さんの活気にも日々励まされています。
+30 周年おめでとうございます。Ruby は仕事で活用させていただいているだけでなく、コミュニティの皆さんの活気にも日々励まされています。
 
 ### haagiii
 
-Ruby30周年、おめでとうございます！
-気づけば、早10年、エンジニアキャリアの半分以上をRubyともに歩んできました。
-Rubyのお陰で自分のエンジニア人生が綺羅びやかなものになった実感があります（Rubyだけに）。
-これからの10年、20年もよろしくお願いします！
+Ruby30 周年、おめでとうございます！
+気づけば、早 10 年、エンジニアキャリアの半分以上を Ruby ともに歩んできました。
+Ruby のお陰で自分のエンジニア人生が綺羅びやかなものになった実感があります（Ruby だけに）。
+これからの 10 年、20 年もよろしくお願いします！
 
 ### kazumi3858
 
-pメソッド好きです。30周年おめでとうございます＾ー＾
+p メソッド好きです。30 周年おめでとうございます＾ー＾
 
 ### Felipe Moyano
 
 Ruby helped me realize that I love programming. I don't think I'd have taken this path if I hadn't experienced the magic of watching a product come to life with a few lines of ruby <3. Happy birthday!!
 
-編集部訳：Rubyのおかげで、私はプログラミングが大好きだと気づけました。数行のRubyでプロダクトが命を吹き込まれる魔法を体験していなければ、この道を選んでいなかったかもしれません。お誕生日おめでとう!!
-
+編集部訳：Ruby のおかげで、私はプログラミングが大好きだと気づけました。数行の Ruby でプロダクトが命を吹き込まれる魔法を体験していなければ、この道を選んでいなかったかもしれません。お誕生日おめでとう!!
 
 ### okabeeeat
 
-Rubyリリース30周年、おめでとうございます！
-Webエンジニアになって以来、いつもRubyがそばにありました。
-今でもRubyでコードを書く時間がとても楽しいです。
-これからもRuby、そしてRubyに関わるすべてのコミュニティがますます発展していくことを心から願っています。
+Ruby リリース 30 周年、おめでとうございます！
+Web エンジニアになって以来、いつも Ruby がそばにありました。
+今でも Ruby でコードを書く時間がとても楽しいです。
+これからも Ruby、そして Ruby に関わるすべてのコミュニティがますます発展していくことを心から願っています。
 
 ### zvlex
 
@@ -273,8 +255,7 @@ Exactly 12 years ago, Ruby changed my life for the better - it taught me good ha
 It gave me hope and showed me what a real community feels like.
 Thank you for everything - keep going strong, no matter what!
 
-編集部訳：Ruby30周年おめでとう！ちょうど12年前、Rubyは私の人生を良い方向に変えてくれ、良い習慣を教え、より良いプロフェッショナルにしてくれました。希望をくれ、真のコミュニティとは何かを教えてくれました。すべてに感謝しています。どんなことがあっても、このまま強く進み続けてください！
-
+編集部訳：Ruby30 周年おめでとう！ちょうど 12 年前、Ruby は私の人生を良い方向に変えてくれ、良い習慣を教え、より良いプロフェッショナルにしてくれました。希望をくれ、真のコミュニティとは何かを教えてくれました。すべてに感謝しています。どんなことがあっても、このまま強く進み続けてください！
 
 ### Paaha Kalashnikov
 
@@ -285,93 +266,88 @@ And then I met you! You gave me complete freedom and the ability to build meanin
 Ruby is freedom. Ruby is love.
 Happy 30th anniversary! ❤️
 
-編集部訳：ありがとう、Ruby！あなたのおかげで私は開発者になれました。キャリアの初期は他の言語で苦しみ、本当に愛せるものを探していて、プログラミングをやめかけたこともありました。そんなときにRubyと出会い、自分のやり方で意味のあるものを作る自由を与えてくれました。Rubyは自由であり、愛です。30周年おめでとう！❤️
-
+編集部訳：ありがとう、Ruby！あなたのおかげで私は開発者になれました。キャリアの初期は他の言語で苦しみ、本当に愛せるものを探していて、プログラミングをやめかけたこともありました。そんなときに Ruby と出会い、自分のやり方で意味のあるものを作る自由を与えてくれました。Ruby は自由であり、愛です。30 周年おめでとう！❤️
 
 ### Jan Sandberg
 
 When I started my career in software engineering, I did not expect to fall in love with a programming language, nor did I expect such an amazing and friendly worldwide community. Thank you Ruby, and thank you to all Rubyists!
 
-編集部訳：ソフトウェアエンジニアとしてのキャリアを始めたとき、プログラミング言語に恋をするなんて思っていませんでしたし、こんなに素晴らしくフレンドリーな世界的コミュニティがあるとも思っていませんでした。Ruby、そしてすべてのRubyistにありがとう！
-
+編集部訳：ソフトウェアエンジニアとしてのキャリアを始めたとき、プログラミング言語に恋をするなんて思っていませんでしたし、こんなに素晴らしくフレンドリーな世界的コミュニティがあるとも思っていませんでした。Ruby、そしてすべての Rubyist にありがとう！
 
 ### ag0os
 
 Happy 30th anniversary dear Ruby! Congratulations to Matz and the whole Ruby community for this great accomplishment and thank you very much for the most beautiful and pleasant programming language ever. <3
 
-編集部訳：30周年おめでとう、親愛なるRuby！この偉業を成し遂げたまつもとさんとRubyコミュニティのみなさんに祝福と感謝を。これほど美しく心地よいプログラミング言語をありがとうございます。<3
-
+編集部訳：30 周年おめでとう、親愛なる Ruby！この偉業を成し遂げたまつもとさんと Ruby コミュニティのみなさんに祝福と感謝を。これほど美しく心地よいプログラミング言語をありがとうございます。<3
 
 ### igaiga
 
-30周年おめでとうございます！RubyとRubyistと一緒に日々を暮らしてたくさんの思い出をつくれていることに感謝します。最近はRubyのTシャツを着ると子が「るびー！」と指さします。
+30 周年おめでとうございます！Ruby と Rubyist と一緒に日々を暮らしてたくさんの思い出をつくれていることに感謝します。最近は Ruby の T シャツを着ると子が「るびー！」と指さします。
 
 ### Arghan
 
 I'm celebrating Ruby's 30th anniversary. It's been an absolute joy and privilege to be part of this journey for the past 10 years. Here's to many more years with Ruby!
 
-編集部訳：Rubyの30周年を祝っています。この10年間、この旅の一部でいられたことは絶対的な喜びであり特権でした。これからもRubyと共に多くの年月を過ごせますように！
-
+編集部訳：Ruby の 30 周年を祝っています。この 10 年間、この旅の一部でいられたことは絶対的な喜びであり特権でした。これからも Ruby と共に多くの年月を過ごせますように！
 
 ### Artem Yegorov (@Yegorov), Ruby Developer
 
 Ruby is one programming language that may seem strange and difficult to use at first, but once you understand its concept, you will not be able to use other languages for your projects. I would like to thank everyone who participated in the creation and support of the Ruby language. I wish you not to stop at what you have achieved and to improve every day.
 
-編集部訳：Rubyは最初こそ奇妙で扱いづらく思えるかもしれませんが、概念を理解すると、他の言語ではプロジェクトを進められなくなります。Rubyの創造と支援に携わったすべての人に感謝します。到達したところにとどまらず、毎日成長し続けてください。
-
+編集部訳：Ruby は最初こそ奇妙で扱いづらく思えるかもしれませんが、概念を理解すると、他の言語ではプロジェクトを進められなくなります。Ruby の創造と支援に携わったすべての人に感謝します。到達したところにとどまらず、毎日成長し続けてください。
 
 ### Hamamatsu.rb
 
-Rubyリリース30周年おめでとうございます！　Hamamatsu.rbはもうすぐ15周年です。これからもRubyと一緒にプログラミングを楽しんでいきます！
+Ruby リリース 30 周年おめでとうございます！　 Hamamatsu.rb はもうすぐ 15 周年です。これからも Ruby と一緒にプログラミングを楽しんでいきます！
 
 ### mrkn
 
-30歳おめでとうございます。私は人生の半分以上を Ruby と共に歩んできました。Ruby のおかげで楽しい人生を過ごせています。これからも使う人が楽しめるプログラミング言語であり続けてください。40周年でまた会いましょう。
+30 歳おめでとうございます。私は人生の半分以上を Ruby と共に歩んできました。Ruby のおかげで楽しい人生を過ごせています。これからも使う人が楽しめるプログラミング言語であり続けてください。40 周年でまた会いましょう。
 
 ### Andi Idogawa
 
 Happy Birthday Ruby! Programming in Ruby makes me happy. Thank you Ruby Community!
 
-編集部訳：Ruby、お誕生日おめでとう！ Rubyでプログラミングすると幸せな気持ちになります。Rubyコミュニティのみなさん、ありがとう！
+編集部訳：Ruby、お誕生日おめでとう！ Ruby でプログラミングすると幸せな気持ちになります。Ruby コミュニティのみなさん、ありがとう！
 
 ### 小川伸一郎
 
-30周年おめでとうごさいます！Rubyに出会ってからは、RubyやRubyコミュニティのおかげでいまの自分があると思うぐらいにお世話になりっぱなしです。これからはお返しができるといいなと思いつつ、40周年に望みたいと思っています。
+30 周年おめでとうごさいます！Ruby に出会ってからは、Ruby や Ruby コミュニティのおかげでいまの自分があると思うぐらいにお世話になりっぱなしです。これからはお返しができるといいなと思いつつ、40 周年に望みたいと思っています。
 
 ### kojix2
 
-Rubyに触れてから10年以上の年月が経ってしまったのが信じられません。私にとって初めて本格的に勉強したプログラミング言語です。本当に素晴らしいプログラミング言語だと思います。30周年おめでとうございます。
+Ruby に触れてから 10 年以上の年月が経ってしまったのが信じられません。私にとって初めて本格的に勉強したプログラミング言語です。本当に素晴らしいプログラミング言語だと思います。30 周年おめでとうございます。
 
 ### yuriko
 
-Ruby30周年おめでとうございます！Rubyを通して私の世界がぐっと広がったと感じています。この先もRubyと一緒に歩んでいきたいです。
+Ruby30 周年おめでとうございます！Ruby を通して私の世界がぐっと広がったと感じています。この先も Ruby と一緒に歩んでいきたいです。
 
 ### ledsun
 
-RubyとRubyを作っている人たちが大好きです。60周年目指してコミュニティの力でがんばっていきましょう！
+Ruby と Ruby を作っている人たちが大好きです。60 周年目指してコミュニティの力でがんばっていきましょう！
 
 ### jesus_isao
 
-他言語から来たので最初は、「静的型がなくて辛い！」と思っていたはずなのに、数年経った今では、他言語のコードを触るときに「オープンクラスでライブラリの挙動を変更できないのが辛い！」と思うようになりました。書けば書くほど味が出る良い言語だからこそ、こんなに長い間人々に愛されているのだと思いました。30周年おめでとうございます！
+他言語から来たので最初は、「静的型がなくて辛い！」と思っていたはずなのに、数年経った今では、他言語のコードを触るときに「オープンクラスでライブラリの挙動を変更できないのが辛い！」と思うようになりました。書けば書くほど味が出る良い言語だからこそ、こんなに長い間人々に愛されているのだと思いました。30 周年おめでとうございます！
 
 ### joker1007
 
-Rubyは私にプログラミングの楽しさを教えて育ててくれた言語です。そしてRubyコミュニティに長く関わってこなければ今の自分の様にはなってなかったでしょう。自分がプログラマで食べていけているのはRubyのおかげです！共に4.0のリリースを祝うことができることをとても嬉しく思っています。そしてそんなコミュニティ発の情報誌るびまの20周年、本当におめでとうございます！！
+Ruby は私にプログラミングの楽しさを教えて育ててくれた言語です。そして Ruby コミュニティに長く関わってこなければ今の自分の様にはなってなかったでしょう。自分がプログラマで食べていけているのは Ruby のおかげです！共に 4.0 のリリースを祝うことができることをとても嬉しく思っています。そしてそんなコミュニティ発の情報誌るびまの 20 周年、本当におめでとうございます！！
 
 ### neko314
 
-リリース30周年おめでとうございます！私にとってRubyは生活の一部、体の一部で、なかったら心が枯れてしまうかもしれません。30年間、Rubyを生み育て生かしてこられたたくさんの方々に感謝しています。RubyとRubyコミュニティーのみなさん、これからもよろしくお願いします。
+リリース 30 周年おめでとうございます！私にとって Ruby は生活の一部、体の一部で、なかったら心が枯れてしまうかもしれません。30 年間、Ruby を生み育て生かしてこられたたくさんの方々に感謝しています。Ruby と Ruby コミュニティーのみなさん、これからもよろしくお願いします。
 
 ### 志村 (hs9587)
 
-30周年おめでとうございます。この機会なので昔話。その昔 Ruby を始めたのは、「オブジェクト指向スクリプト言語 Ruby」(まつもと ゆきひろ/石塚 圭樹、株式会社アスキー、1999年、https://ndlsearch.ndl.go.jp/books/R100000002-I000002918770 ) が出たときでした。そのしばらく前に、鍋谷さん( https://nabetani.hatenadiary.com/ 、当時ハンドルではなかった) に存在だけ教えてもらってたのが、本が出たので勉強して試してみたのでした。いろいろ検討して勤務先の Web開発は PHP になったのだけど、サーバ側のいろいろは Ruby で書いたりもしました。今も生き残ってるスクリプトあります。思えば随分長くお世話になっています。30周年、本当におめでとうございます。
+30 周年おめでとうございます。この機会なので昔話。その昔 Ruby を始めたのは、「オブジェクト指向スクリプト言語 Ruby」(まつもと ゆきひろ/石塚 圭樹、株式会社アスキー、1999 年、https://ndlsearch.ndl.go.jp/books/R100000002-I000002918770 ) が出たときでした。そのしばらく前に、鍋谷さん( https://nabetani.hatenadiary.com/ 、当時ハンドルではなかった) に存在だけ教えてもらってたのが、本が出たので勉強して試してみたのでした。いろいろ検討して勤務先の Web 開発は PHP になったのだけど、サーバ側のいろいろは Ruby で書いたりもしました。今も生き残ってるスクリプトあります。思えば随分長くお世話になっています。30 周年、本当におめでとうございます。
 
 ### Rich Kilmer
 
 Congrats to Matz and team who have given our minds the best way to express our dreams in code for over 30 years!
 
-編集部訳：30年以上にわたり、コードで夢を表現する最良の方法を私たちに授けてくれたMatzとチームにお祝いを送ります！
+編集部訳：30 年以上にわたり、コードで夢を表現する最良の方法を私たちに授けてくれた Matz とチームにお祝いを送ります！
 
 ### m_seki
 
-30年おめでとうございます！私がビルドに失敗してから30年ですね。次の30年もよろしくお願いします。
+30 年おめでとうございます！私がビルドに失敗してから 30 年ですね。次の 30 年もよろしくお願いします。
