@@ -11,6 +11,8 @@ created_on: 2025-11-21
 
 ## Ruby リリース 30 周年に寄せて
 
+### ja
+
 1995年12月21日にRubyがfj.sourcesにバージョン0.95として一般公開されてから、今年（2025年）の12月21日で30年という節目を迎えます。
 
 そんな節目をお祝いしたく、るびまでは Rubyist のみなさんからのお祝いコメントを募集しました。
@@ -18,6 +20,16 @@ created_on: 2025-11-21
 こちらの記事では、そうして寄せられた Rubyist のみなさんからのコメントを掲載します。
 
 大変たくさんの方にコメントをいただきましたこと、編集部一同、心より御礼申し上げます。
+
+### en
+
+This year marks the 30th anniversary since Ruby was first publicly released as version 0.95 on the fj.sources newsgroup on December 21, 1995.
+
+To celebrate this milestone, We invited congratulatory messages from the Ruby community.
+
+This article features the comments we received from Rubyists.
+
+The editorial team would like to express our heartfelt gratitude to the very large number of people who kindly submitted comments.
 
 ## みなさんからいただいたコメント
 
