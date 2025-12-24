@@ -126,7 +126,7 @@ SmartHR/関西 Ruby 会議/関ヶ原 Ruby 会議の方から、ydah さん。
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/taiju.webp)
 
 fukui.rb のオーガナイザーの東 大樹さん  
-Minecraft を Ruby DSL で改造して Minecraft 内にプレゼンツールを作成し、デモしながら追加したアイテム DSL とコマンド DSL について紹介していただきました。おれは Rubiest だー！
+Minecraft を Ruby DSL で改造して Minecraft 内にプレゼンツールを作成し、デモしながら追加したアイテム DSL とコマンド DSL について紹介していただきました。おれは Rubyist だー！
 
 ## Ruby で鍛える仕組み化プロヂュース力
 
