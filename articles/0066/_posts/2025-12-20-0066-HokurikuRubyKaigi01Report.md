@@ -36,7 +36,7 @@ created_on: 2025-12-20
 
 ### 主催
 
-北陸三県で活動する三つの Ruby コミュニティが合同で主催・運営を行っています。  
+北陸 3 県で活動する 3 つの Ruby コミュニティが合同で主催・運営を行っています。  
 ※都道府県コード順
 
 * 富山: [Toyama.rb](https://toyamarb.github.io/)  
@@ -64,7 +64,7 @@ created_on: 2025-12-20
 
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/opening.webp)
 
-まずは、実行委員長の一人である [kunitoo](https://github.com/kunitoo) (Toyama.rb) のオープニングトーク。
+まずは、実行委員長の 1 人である [kunitoo](https://github.com/kunitoo) (Toyama.rb) のオープニングトーク。
 
 ## 日本 Ruby の会の構造と実行とあと何か
 
@@ -74,7 +74,7 @@ created_on: 2025-12-20
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/Masayoshi_Takahashi.webp)
 
 1 つ目のセッションは、日本 Ruby の会の高橋征義さんによるキーノート。  
-今回の北陸 Ruby 会議 01 が、ちょうど 100 回目の Regional RubyKaigi だそうです！　  
+今回の北陸 Ruby 会議 01 が、ちょうど 100 回目の RegionalRubyKaigi だそうです！　  
 日本 Ruby の会の成り立ちや背景、役割などを紹介いただきました。  
 今回のテーマは「みんなの Ruby の使い方」でしたが、「みんなの Ruby の会の使い方」も募集中とのことでした。
 
@@ -103,15 +103,13 @@ SmartHR/関西 Ruby 会議/関ヶ原 Ruby 会議の方から、ydah さん。
 
 ### 株式会社あしたのチーム
 
-![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/ashita-team.webp)
-
 最初のスポンサーセッションは、人事評価周りの構築や SaaS などを提供されている株式会社あしたのチーム様。
 
 ### 株式会社永和システムマネジメント
 
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/esm.webp)
 
-2 つ目のスポンサーセッションセッションは、Regional Ruby Kaigi に来る人はほとんど知ってる株式会社永和システムマネジメント様。
+2 つ目のスポンサーセッションセッションは、RegionalRubyKaigi に来る人はほとんど知ってる株式会社永和システムマネジメント様。
 
 ### 株式会社クルウィット
 
