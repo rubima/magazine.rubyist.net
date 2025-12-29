@@ -103,6 +103,8 @@ SmartHR/関西 Ruby 会議/関ヶ原 Ruby 会議の方から、ydah さん。
 
 ### 株式会社あしたのチーム
 
+![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/ashita-team.webp)
+
 最初のスポンサーセッションは、人事評価周りの構築や SaaS などを提供されている株式会社あしたのチーム様。
 
 ### 株式会社永和システムマネジメント
