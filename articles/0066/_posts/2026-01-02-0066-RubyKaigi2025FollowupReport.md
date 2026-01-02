@@ -4,7 +4,7 @@ title: RubyKaigi 2025 follow up 運営記録
 short_title: RubyKaigi 2025 follow up 運営記録
 tags: 0066
 post_author: alitaso345
-created_on: 2026-01-14
+created_on: 2026-01-02
 ---
 {% include base.html %}
 
