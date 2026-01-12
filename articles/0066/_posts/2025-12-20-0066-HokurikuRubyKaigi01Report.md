@@ -74,7 +74,7 @@ created_on: 2025-12-20
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/Masayoshi_Takahashi.webp)
 
 1 つ目のセッションは、日本 Ruby の会の高橋征義さんによるキーノート。  
-今回の北陸 Ruby 会議 01 が、ちょうど 100 回目の Regional RubyKaigi だそうです！　  
+今回の北陸 Ruby 会議 01 が、ちょうど 100 回目の Regional RubyKaigi だそうです！  
 日本 Ruby の会の成り立ちや背景、役割などを紹介いただきました。  
 今回のテーマは「みんなの Ruby の使い方」でしたが、「みんなの Ruby の会の使い方」も募集中とのことでした。
 
@@ -179,10 +179,10 @@ LT にも多くの方に登壇していただきました。 身の回りの不�
 
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/izawa.webp)
 
-### 猫の健康を見守りたい！　実践 Raspberry Pi + Ruby
+### 猫の健康を見守りたい！実践 Raspberry Pi + Ruby
 
 * 発表者：beta_chelsea  
-* 資料：[猫の健康を見守りたい！　実践 Raspberry Pi + Ruby](https://speakerdeck.com/betachelsea/mao-nojian-kang-wojian-shou-ritai-shi-jian-raspberry-pi-plus-ruby)
+* 資料：[猫の健康を見守りたい！実践 Raspberry Pi + Ruby](https://speakerdeck.com/betachelsea/mao-nojian-kang-wojian-shou-ritai-shi-jian-raspberry-pi-plus-ruby)
 
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/betachelsea.webp)
 
@@ -203,7 +203,7 @@ LT にも多くの方に登壇していただきました。 身の回りの不�
 ### Ruby で楽してタスクを書きたい！
 
 * 発表者：ahogappa  
-* 資料：[Ruby で楽して タスクを書きたい！　](https://speakerdeck.com/ahogappa/rubydele-site-tasukuwoshu-kitai)
+* 資料：[Ruby で楽して タスクを書きたい！](https://speakerdeck.com/ahogappa/rubydele-site-tasukuwoshu-kitai)
 
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/ahogappa.webp)
 
@@ -268,7 +268,7 @@ LT にも多くの方に登壇していただきました。 身の回りの不�
 「Ruby DSL で Minecraft を改造できるようにする 〜パパの Ruby、娘の Minecraft〜」  
 から「Ruby 受託事業マネジメントの 10 年」のレポートを担当しました。
 
-### 東　大樹 ([@taiju](https://x.com/taiju))  
+### 東 大樹 ([@taiju](https://x.com/taiju))  
 
 北陸 Ruby 会議 01 のスタッフ。今回のイベントでは Ruby コミュニティイベントでの初登壇もさせていただきました。  
 LT ～クロージングまでのレポートを担当しました。
