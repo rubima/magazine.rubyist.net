@@ -10,7 +10,7 @@ created_on: 2025-12-20
 
 ## はじめに
 
-北陸 3 県合同の RegionalRubyKaigi である北陸 Ruby 会議 01 が、2025 年 12 月に開催されました。  
+北陸 3 県合同の Regional RubyKaigi である北陸 Ruby 会議 01 が、2025 年 12 月に開催されました。  
 本記事はその開催レポートです。
 
 なお登壇者名の表記は公式サイトに則っています。
@@ -74,7 +74,7 @@ created_on: 2025-12-20
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/Masayoshi_Takahashi.webp)
 
 1 つ目のセッションは、日本 Ruby の会の高橋征義さんによるキーノート。  
-今回の北陸 Ruby 会議 01 が、ちょうど 100 回目の RegionalRubyKaigi だそうです！　  
+今回の北陸 Ruby 会議 01 が、ちょうど 100 回目の Regional RubyKaigi だそうです！　  
 日本 Ruby の会の成り立ちや背景、役割などを紹介いただきました。  
 今回のテーマは「みんなの Ruby の使い方」でしたが、「みんなの Ruby の会の使い方」も募集中とのことでした。
 
@@ -111,7 +111,7 @@ SmartHR/関西 Ruby 会議/関ヶ原 Ruby 会議の方から、ydah さん。
 
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/esm.webp)
 
-2 つ目のスポンサーセッションセッションは、RegionalRubyKaigi に来る人はほとんど知ってる株式会社永和システムマネジメント様。
+2 つ目のスポンサーセッションセッションは、Regional RubyKaigi に来る人はほとんど知ってる株式会社永和システムマネジメント様。
 
 ### 株式会社クルウィット
 
