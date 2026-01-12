@@ -86,7 +86,7 @@ created_on: 2025-12-20
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/taketo1113.webp)
 
 fukui.rb の方から、今回の実行委員長の 1 人でもある高嶋健人さん。  
-Interop Tokyo で構築される ShowNet というネットワークの構築を支える TTDB (トラブルチケットデータベース) というシステムは、2003 年から Ruby on Rails を利用して開発・運用が続けられているそうです。  
+Interop Tokyo で構築される ShowNet というネットワークの構築を支える TTDB (トラブルチケットデータベース) というシステムは、2006 年から Ruby on Rails を利用して開発・運用が続けられているそうです。  
 また、その中でどのように Ruby が利用されているかも紹介されてました。
 
 ## 計算機科学を Ruby と歩む 〜DFA 型正規表現エンジンをつくる～
