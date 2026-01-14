@@ -221,7 +221,7 @@ class RubimaLint
 
   class QuestionExclamationInParagraphRule < LineRule
     def initialize
-      pattern = /#{Patterns::QUESTION_EXCLAMATION}(?!$)(?![　#{Patterns::QUESTION_EXCLAMATION}#{Patterns::CLOSE_BRACKETS}])/o
+      pattern = /#{Patterns::QUESTION_EXCLAMATION}(?!$)(?!\])(?![　#{Patterns::QUESTION_EXCLAMATION}#{Patterns::CLOSE_BRACKETS}])/o
       super('question_exclamation_in_paragraph', pattern, correctable: true, color_code: 31)
     end
 
