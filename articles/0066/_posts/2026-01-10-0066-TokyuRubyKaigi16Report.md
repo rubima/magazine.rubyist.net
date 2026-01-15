@@ -109,7 +109,7 @@ make_ruby_friend メソッドの最終的な実装「drink して talk する」
 「るびまは何の略？　 (答え：Rubyist Magazine )」の誰でもわかる問題から、「るびまのリポジトリ名は何？　 (答え：magazine.rubyist.net )」と意外と知られていない問題、「2025 年に初めてるびまにコントリビュートした人数は何人？　 (答え：neko314 さん調べで 16 人)」といったコアな問題まで多岐にわたっていて、全員参加してとても盛り上がりました！
 最後に、みなさんもコントリビュートして一緒にるびまにコミュニティの歴史を残していきましょうと呼びかけました。
 
-るびまのメンバーのなり方は[こちら](https://github.com/rubima/magazine.rubyist.net/blob/master/CONTRIBUTING.md)。
+るびまのメンバーになりたい方は[こちら](https://github.com/rubima/magazine.rubyist.net/blob/master/CONTRIBUTING.md)。
 
 <img src="{{base}}{{site.baseurl}}/images/0066-TokyuRubyKaigi16Report/neko314.jpg" alt="発表する neko314 さん" width="500px">
 
@@ -126,7 +126,7 @@ make_ruby_friend メソッドの最終的な実装「drink して talk する」
 「銃！？」と驚きと笑いが巻き起こり、まさに文字通りの「飛び道具」的な発表となりました。
 今後は技術的な発表ができるように引き続き学習を頑張りたいと最後に述べると、会場全体から温かな応援の拍手が送られました。
 
-当日の飛び入り参加枠である accept LT では 8 名の発表が行われ、個人開発や技術、キャリアに至るまで幅白いテーマで発表が繰り広げられました。
+当日の飛び入り参加枠である accept LT では 8 名の発表が行われ、個人開発や技術、キャリアに至るまで幅広いテーマで発表が繰り広げられました。
 参加者それぞれのこだわりと熱量が伝わってくる、非常に活気ある時間となりました。
 
 ## 料理・お酒の様子
