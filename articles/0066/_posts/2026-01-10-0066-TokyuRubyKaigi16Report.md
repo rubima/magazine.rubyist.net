@@ -1,10 +1,10 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (92) TokyuRuby 会議 16 レポート
-short_title: RegionalRubyKaigi レポート (92) TokyuRuby 会議 16 レポート
+title: RegionalRubyKaigi レポート (91) TokyuRuby 会議 16 レポート
+short_title: RegionalRubyKaigi レポート (91) TokyuRuby 会議 16 レポート
 tags: 0066 tqrk regionalRubyKaigi
 post_author: motohiromm
-created_on: 2026-01-10
+created_on: 2026-01-20
 ---
 {% include base.html %}
 
