@@ -8,3 +8,5 @@ gem "csv"
 gem "base64"
 gem "bigdecimal"
 gem "logger"
+
+gem "rss", "~> 0.3.2"
