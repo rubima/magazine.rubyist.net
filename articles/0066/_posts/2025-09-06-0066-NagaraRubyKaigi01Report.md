@@ -264,3 +264,13 @@ RuboCopコミッターとして毎日OSSに関わり続けているKoichi ITOさ
 ながらRuby会議01は、nagara.rb 100回目の節目を飾る記念すべきイベントとなりました。
 
 ご参加いただいた皆さま、スポンサーの皆さま、そして日本Rubyの会の皆さま、本当にありがとうございました！
+
+## 著者紹介
+
+- **HANDLE1**
+  - ながらRuby会議01 運営。
+  - GitHub: GITHUB_URL1
+
+- **HANDLE2**
+  - ながらRuby会議01 運営。
+  - GitHub: GITHUB_URL2
