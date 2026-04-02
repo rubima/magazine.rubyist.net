@@ -165,7 +165,7 @@ Kaigi on Rails のいちオーガナイザーのうなすけさん
 
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/mhirata.webp)
 
-Software Design 2025 年 4 月号にご寄稿されました平田守幸さん  
+Software Design 2025 年 4 月号に寄稿された平田守幸さん  
 Ruby 受託事業マネジメントの 10 年、受託開発 20 年でおきた課題や問題に対する実際の対策と今後の展望について紹介して頂きました。
 
 ## LT
