@@ -111,7 +111,7 @@ SmartHR/関西 Ruby 会議/関ヶ原 Ruby 会議の方から、ydah さん。
 
 ![]({{base}}{{site.baseurl}}/images/0066-HokurikuRubyKaigi01Report/esm.webp)
 
-2 つ目のスポンサーセッションセッションは、Regional RubyKaigi に来る人はほとんど知ってる株式会社永和システムマネジメント様。
+2 つ目のスポンサーセッションは、Regional RubyKaigi に来る人はほとんど知ってる株式会社永和システムマネジメント様。
 
 ### 株式会社クルウィット
 
