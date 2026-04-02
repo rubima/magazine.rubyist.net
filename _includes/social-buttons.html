@@ -1,7 +1,9 @@
+{% assign page_title_encoded = page.title | url_encode %}
 <div class='sns'>            
     <ul class="clearfix">
-       <li class="twitter-x"><a href="https://x.com/share?text={{ page.title }}&amp;url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-brands fa-x-twitter"></i></a></li>
-       <li class="facebook"><a href="https://www.facebook.com/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}&amp;t={{ page.title }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-brands fa-facebook-f"></i></a></li>
-       <li class="hatebu"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url={{ site.url }}{{ site.baseurl }}{{ page.url }}&amp;{{ page.title }}" target="_blank" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa">B!</i></a></li>
+       <li class="twitter-x"><a href="https://x.com/share?text={{ page_title_encoded }}&amp;url={{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-brands fa-x-twitter"></i></a></li>
+       <li class="facebook"><a href="https://www.facebook.com/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}&amp;t={{ page_title_encoded }}" target="_blank" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-brands fa-facebook-f"></i></a></li>
+       <li class="hatebu"><a href="http://b.hatena.ne.jp/add?mode=confirm&amp;url={{ site.url }}{{ site.baseurl }}{{ page.url }}&amp;{{ page_title_encoded }}" target="_blank" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa">B!</i></a></li>
+       <li class="mastodon"><a href="https://share.joinmastodon.org/#text={{ page_title_encoded }}+{{ site.url }}{{ site.baseurl }}{{ page.url }}" target="_blank" onclick="window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"><i class="fa fa-brands fa-mastodon"></i></a></li>
     </ul>
 </div>
