@@ -4,7 +4,7 @@ title: RegionalRubyKaigi レポート (92) 北陸 Ruby 会議 01 レポート
 short_title: RegionalRubyKaigi レポート (92) 北陸 Ruby 会議 01 レポート
 tags: 0066 regionalRubyKaigi
 post_author: noboru-i(toyama.rb), cotton(kanazawa.rb), taiju(fukui.rb)
-created_on: 2025-12-20
+created_on: 2026-04-06
 ---  
 {% include base.html %}
 
