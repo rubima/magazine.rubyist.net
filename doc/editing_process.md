@@ -32,7 +32,7 @@ GitHub Actions を利用して master にマージされたものから github p
 
 リリース対象の記事の Pull Request を merge して GitHub Actions によるページのビルトとデプロイが終わると、下記の手順でリリース対象の記事の URL を確認できます。
 
-1. [`master`ブランチへの push をきっかけとして実行されたワークフローの一覧](/actions?query=branch%3Amaster+event%3Apush)から記事を公開した Pull Request に対応したものを見つける
+1. [`master`ブランチへの push をきっかけとして実行されたワークフローの一覧](https://github.com/rubima/magazine.rubyist.net/actions?query=branch%3Amaster+event%3Apush)から記事を公開した Pull Request に対応したものを見つける
 1. 対象の「Merge pull request …」という表題をクリックする
 1. 「build」ジョブと「deploy」ジョブのうち「build」をクリックする
 1. 「Show new pages since previous deploy」ステップをクリックする
