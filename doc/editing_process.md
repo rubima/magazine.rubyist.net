@@ -28,6 +28,24 @@
 
 GitHub Actions を利用して master にマージされたものから github pages にて公開されます。
 
+## リリース時に新しい記事のURLを確認する
+
+リリース対象の記事の Pull Request を merge して GitHub Actions によるページのビルトとデプロイが終わると、下記の手順でリリース対象の記事の URL を確認できます。
+
+1. [`master`ブランチへの push をきっかけとして実行されたワークフローの一覧](/actions?query=branch%3Amaster+event%3Apush)から記事を公開した Pull Request に対応したものを見つける
+1. 対象の「Merge pull request …」という表題をクリックする
+1. 「build」ジョブと「deploy」ジョブのうち「build」をクリックする
+1. 「Show new pages since previous deploy」ステップをクリックする
+
+この手順で、下記のような情報が表示されます。表示された URL をクリックすることでデプロイされた記事を閲覧することもできます。
+
+> Show new pages since previous deploy
+> 1	▸ Run bundle exec ruby script/show_new_pages.rb
+> 6 New pages:
+> 7 https://magazine.rubyist.net/articles/ ...
+
+このワークフローの現状の詳細は[`/.github/workflows/jekyll.yml`](/.github/workflows/jekyll.yml)で、実行されるスクリプトは[`script/show_new_pages.rb`](/script/show_new_pages.rb)で確認できます。
+
 # 現状
 
 ## リリース後
