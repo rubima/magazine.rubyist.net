@@ -39,10 +39,12 @@ GitHub Actions を利用して master にマージされたものから github p
 
 この手順で、下記のような情報が表示されます。表示された URL をクリックすることでデプロイされた記事を閲覧することもできます。
 
-> Show new pages since previous deploy
-> 1	▸ Run bundle exec ruby script/show_new_pages.rb
-> 6 New pages:
-> 7 https://magazine.rubyist.net/articles/ ...
+```
+Show new pages since previous deploy
+1 ▸ Run bundle exec ruby script/show_new_pages.rb
+6 New pages:
+7 https://magazine.rubyist.net/articles/ ...
+```
 
 このワークフローの現状の詳細は[`/.github/workflows/jekyll.yml`](/.github/workflows/jekyll.yml)で、実行されるスクリプトは[`script/show_new_pages.rb`](/script/show_new_pages.rb)で確認できます。
 
