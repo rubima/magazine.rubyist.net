@@ -6,8 +6,7 @@
 - 記事目次・アウトライン締切
 - 記事締切
 - 執筆者の確認
-- リリース
-  - リリース作業後に一通りのページの表示確認をする
+- リリース (詳細は下記)
 - 執筆者へ案内と御礼のメール
 - リリースの案内
   - [ruby-list](https://ml.ruby-lang.org/mailman3/postorius/lists/ruby-list.ml.ruby-lang.org/)
@@ -19,7 +18,7 @@
   - 抽選結果の更新
   - 出版社さんへの発送のお願い
 
-# るびまをリリースする
+# リリース
 
 個別の記事や新しい号数で公開する記事が公開可能になったらリリースします。下記の手順で `master` ブランチに merge/push された記事は、GitHub Actions が[ワークフロー](/.github/workflows/jekyll.yml)を実行することでビルド・デプロイされ、GitHub Pages として https://magazine.rubyist.net/ 以下に公開されます。
 
