@@ -9,9 +9,9 @@
 - リリース (詳細は下記)
 - 執筆者へ案内と御礼のメール
 - リリースの案内
-  - [ruby-list](https://ml.ruby-lang.org/mailman3/postorius/lists/ruby-list.ml.ruby-lang.org/)
-  - [ruby-jp](https://ruby-jp.github.io)#general
-  - [@ruby-no-kai](https://twitter.com/rubynokai)
+  - [ruby-list メーリングリスト](https://ml.ruby-lang.org/archives/list/ruby-list@ml.ruby-lang.org/)
+  - [ruby-jp Slack](https://ruby-jp.github.io) の #general チャンネル
+  - [@ruby-no-kai](https://x.com/rubynokai)
 - 読者プレゼント抽選タスク
   - 抽選
   - 当選案内
