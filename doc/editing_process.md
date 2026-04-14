@@ -6,6 +6,7 @@
 - 記事目次・アウトライン締切
 - 記事締切
 - 執筆者の確認
+- レビュー (詳細は下記)
 - リリース (詳細は下記)
 - 執筆者へ案内と御礼のメール
 - リリースの案内
@@ -17,6 +18,58 @@
   - 当選案内
   - 抽選結果の更新
   - 出版社さんへの発送のお願い
+
+# レビュー
+
+執筆者からレビュー可能な状態になったと知らせがあれば、レビューを始めます。変更の必要な点があれば、執筆者に変更を依頼するか、軽微な変更で編集者がプルリクエスト元のレポジトリへの書き込み権限を持っている場合は直接変更します。
+
+下記のような手順で、ビルドされた状態の記事を手元のブラウザで確認することができます。
+
+## 新しい記事のブランチを取得してそこに移動する
+
+初めての場合は、るびまのレポジトリを取得します。
+
+```
+$ git clone git@github.com:rubima/magazine.rubyist.net.git
+$ cd magazine.rubyist.net
+```
+
+2度目以降の場合は、手元のレポジトリを更新します。
+
+```
+$ cd magazine.rubyist.net
+$ git switch master
+$ git pull
+```
+
+プルリクエスト元のブランチを取得します。下記では、GitHubの`example`アカウントの`newarticle`ブランチからプルリクエストが来ていると仮定しています。実際の作業時には適宜読み替えてください。
+
+```
+$ git remote add example https://github.com/example/magazine.rubyist.net.git
+$ git fetch example newarticle
+$ git switch newarticle
+```
+
+## 新しい記事のパスを推定する
+
+新しい記事 (手元のブランチにはあるけれど公開されていない記事) を手元で閲覧する時のURLを、上記の作業をしたディレクトリで下記のように推定することができます。
+
+```
+$ bundle install
+$ bundle exec jekyll build --future
+$ ruby script/show_new_pages.rb --base http://localhost:4000
+New pages:
+http://localhost:4000/articles/1234/1234-NewArticle.html
+```
+
+## 原稿を編集しながら新しい記事を閲覧する
+
+上記の作業をしたディレクトリで下記のコマンドを実行することで、上記で得られたURLから記事を閲覧できます。コマンドはCtrl-Cなどで停止します。
+
+```
+$ bundle install
+$ bundle exec jekyll serve -I --future
+```
 
 # リリース
 
