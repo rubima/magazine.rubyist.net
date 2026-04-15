@@ -62,6 +62,20 @@ New pages:
 http://localhost:4000/articles/1234/1234-NewArticle.html
 ```
 
+## るびまlintをかける
+
+原稿がるびまの[編集方針](https://github.com/rubima/magazine.rubyist.net/blob/master/doc/editing_policy.md)に従っているか、基本的な確認やオートコレクトをすることができます。新しい記事について、下記のように懸念のある項目を指摘してもらったり、
+
+```
+$ ./editing_tools/rubima-lint.rb articles/1234/_posts/2026-04-15-1234-NewArticle.md
+```
+
+下記のように自動的に修正可能な項目を修正しもらったりできます。
+
+```
+$ ./editing_tools/rubima-lint.rb -a articles/1234/_posts/2026-04-15-1234-NewArticle.md
+```
+
 ## 原稿を編集しながら新しい記事を閲覧する
 
 上記の作業をしたディレクトリで下記のコマンドを実行することで、上記で得られたURLから記事を閲覧できます。コマンドはCtrl-Cなどで停止します。
