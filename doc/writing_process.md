@@ -56,4 +56,4 @@ created_on: リリース予定日
 - 記事の最後には`著者について`の見出しを作成して、書いた人がわかるようにしてください。
 - GitHubのリンクを乗せる場合は`master`ではなく、該当バージョンへのリンクにするようにしてください。
   - `master`へのリンクは将来的に変更される可能性があるためです。
-
+- 適宜、るびまlintをかけて、原稿が[るびまの編集方針](https://github.com/rubima/magazine.rubyist.net/blob/master/doc/editing_policy.md)に従っているか確認してみてください。指摘事項の表示には`./editing_tools/rubima-lint.rb articles/号数/_posts/yyyy-mm-dd-号数-記事名.md`というコマンドラインを、自動的に修正する場合には`-a`オプションを追加して`./editing_tools/rubima-lint.rb -a articles/号数/_posts/yyyy-mm-dd-号数-記事名.md`というコマンドラインを、実行してください。
