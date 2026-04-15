@@ -12,7 +12,7 @@
 - リリースの案内
   - [ruby-list メーリングリスト](https://ml.ruby-lang.org/archives/list/ruby-list@ml.ruby-lang.org/)
   - [ruby-jp Slack](https://ruby-jp.github.io) の #general チャンネル
-  - [@ruby-no-kai](https://x.com/rubynokai)
+  - [@ruby-no-kai](https://x.com/rubynokai)。日本Rubyの会の方々など、ログインできる方に投稿を依頼する
 - 読者プレゼント抽選タスク
   - 抽選
   - 当選案内
