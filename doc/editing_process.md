@@ -62,6 +62,10 @@ New pages:
 http://localhost:4000/articles/1234/1234-NewArticle.html
 ```
 
+## `created_on`を確認する
+
+フロントマターの`created_on`がリリース予定日になっていることを確認します。更新が必要で編集者がプルリクエスト元のレポジトリに書き込み権限を持っていない場合は、著者に更新を依頼する必要があります。
+
 ## るびまlintをかける
 
 原稿がるびまの[編集方針](https://github.com/rubima/magazine.rubyist.net/blob/master/doc/editing_policy.md)に従っているか、基本的な確認やオートコレクトをすることができます。新しい記事について、下記のように懸念のある項目を指摘してもらったり、
