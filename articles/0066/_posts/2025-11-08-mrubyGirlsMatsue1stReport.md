@@ -24,7 +24,7 @@ PicoRuby の作者である [hasumikin](https://x.com/hasumikin) さん、Rails 
 
 なんと予定より 30 分早く参加者もコーチも集まったので前倒しで開始。
 
-<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/welcome-board.png" width="200px" alt="ウェルカムボード"> 
+<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/welcome-board.jpg" width="200px" alt="ウェルカムボード"> 
 
 ### まつもとゆきひろさんのトーク
 
@@ -34,7 +34,7 @@ PicoRuby の作者である [hasumikin](https://x.com/hasumikin) さん、Rails 
 
 制約のあるプログラミングの楽しさやまつもとさんの mruby への愛が語られ、最後に参加者へ「ホビープログラムとして楽しんでほしい」というメッセージをいただきました。
 
-<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/matz.png" width="500px" alt="まつもとさん"> 
+<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/matz.jpg" width="500px" alt="まつもとさん"> 
 
 ### ワークショップ
 
@@ -48,7 +48,7 @@ PicoRuby の作者である [hasumikin](https://x.com/hasumikin) さん、Rails 
 
 そしてついに L チカ。点灯した瞬間「わっ」と声があがってました。情操教育の始まりです。[^1]
 
-<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/led_blinking.png" width="500px" alt="L チカ"> 
+<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/led_blinking.jpg" width="500px" alt="L チカ"> 
 
 あっという間にお昼休憩の時間となり、まつもとさんを囲んでのランチへ。
 
@@ -56,13 +56,13 @@ PicoRuby の作者である [hasumikin](https://x.com/hasumikin) さん、Rails 
 
 そして、ボタン・ LED ・ 6 軸モーションセンサーを組み合わせた LED アニメーションや、デジタル水準器をチュートリアルに沿って作ってみたあと、各自の作りたいものを作り込んでいく作業に入っていきました。
 
-<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/workshop.png" width="500px" alt="ワークショップの様子"> 
+<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/workshop.jpg" width="500px" alt="ワークショップの様子"> 
 
 ### 成果発表会
 
 会の最後は参加者全員での発表会。同じデバイスを使っても作るものは人によって様々で、お互いの作ったものを見せ合いました。アニメーションや、電光掲示板のようにメッセージを出す方、ブロックをキャッチするゲーム、任意の数字で止めるスロットなど、まさに「自分だけのガジェット」を完成させていました。   
 
-<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/presentation.png" width="700px" alt="成果発表会の様子">
+<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/presentation.jpg" width="700px" alt="成果発表会の様子">
 
 ## さいごに
 
@@ -72,7 +72,7 @@ PicoRuby の作者である [hasumikin](https://x.com/hasumikin) さん、Rails 
 
 PicoRuby は今どんどん開発が進んでいて、始めやすくなっています。[mruby Girls](https://mrubygirls.github.io/) のサイトでもガイドを更新していくので、ぜひみなさんも PicoRuby をはじめてみてください。
 
-<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/group-photo.png" width="500px" alt="集合写真">
+<img src="{{base}}{{site.baseurl}}/images/0066-mrubyGirlsMatsue1stReport/group-photo.jpg" width="500px" alt="集合写真">
 
 ## 書いた人
 ### chobishiba([@chobishiba](https://x.com/chobishiba)) 
