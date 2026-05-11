@@ -1,10 +1,10 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (66) ながらRuby会議01
-short_title: RegionalRubyKaigi レポート (66) ながらRuby会議01
+title: RegionalRubyKaigi レポート (93) ながらRuby会議01
+short_title: RegionalRubyKaigi レポート (93) ながらRuby会議01
 tags: 0066 regionalRubyKaigi NagaraRubyKaigi01Report
 post_author: ながらRuby会議 実行委員会
-created_on: <!-- リリース予定日 yyyy-mm-dd -->
+created_on: 2026-05-13
 ---
 {% include base.html %}
 
