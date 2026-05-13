@@ -138,3 +138,11 @@ Show new pages since previous deploy
 ```
 
 このワークフローの現状の詳細は[`/.github/workflows/jekyll.yml`](/.github/workflows/jekyll.yml)で、実行されるスクリプトは[`script/show_new_pages.rb`](/script/show_new_pages.rb)で確認できます。
+
+## リリース後の広報
+新しい記事や新しい号数をリリースしたら、読者に知らせます。
+
+- 編集者自身のSNSアカウントなどでアナウンスしたり、
+- 日本Rubyの会のDiscordサーバーの`PROJECTS`カテゴリの`#rubima`チャンネルなどで依頼して、[@rubynokai](https://x.com/rubynokai)からアナウンスしてもらったり、
+
+しましょう。
