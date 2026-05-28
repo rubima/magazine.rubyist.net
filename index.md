@@ -9,6 +9,22 @@ title: るびま
 
 『Rubyist Magazine』、略して『るびま』は、Rubyist の Rubyist による、Rubyist とそうでない人のためのウェブ雑誌です。
 
+{% assign articles = site.posts | sort: "date" | reverse %}
+{% for post in articles %}
+{%   if post.tags contains "index" or post.tags contains "EditorsNote" %}
+{%     break %}
+{%   endif %}
+## 最新記事
+{%   break %}
+{% endfor %}
+
+{% for post in articles %}
+{%   if post.tags contains "index" or post.tags contains "EditorsNote" %}
+{%     break %}
+{%   endif %}
+- [{{ post.title }}]({{base}}{{ post.url }})
+{% endfor %}
+
 ## 最新号
 
 {% for post in site.tags.index limit: 1 %}
