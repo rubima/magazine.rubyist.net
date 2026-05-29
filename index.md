@@ -15,6 +15,7 @@ title: るびま
 {%     break %}
 {%   endif %}
 ## 最新記事
+次号にまとめられます。
 {%   break %}
 {% endfor %}
 
