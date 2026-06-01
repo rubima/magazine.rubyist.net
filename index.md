@@ -35,7 +35,7 @@ title: るびま
 
 ## バックナンバー
 
-{% for post in site.tags.index %}
+{% for post in site.tags.index offset: 1 %}
 
 - [{{ post.title }}]({{base}}{{ post.url }})
   {% endfor %}
