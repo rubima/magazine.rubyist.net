@@ -40,7 +40,7 @@ If you are contributing to Rubima for the first time, please first read [CODE OF
 - [日本Rubyの会の Discordサーバー](https://scrapbox.io/ruby-no-kai/Discord%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC)に参加ください(`PROJECTS`カテゴリの`#rubima`チャンネルです)
 - このリポジトリや Discord 上でそのうち色々動きが出てくるので、手伝えそうなものを拾ってもらえるとありがたいです
   - 記事や各号の編集やリリースの手順について[doc/editing_process.md](./doc/editing_process.md)をご一読ください
-  - るびまはJekyllでビルドしています。改善点に気づいたら、Discordで発言したり、[Issue](https://github.com/rubima/magazine.rubyist.net/issues)あるいは[Pull Request](https://github.com/rubima/magazine.rubyist.net/pulls)を作成してみてください。Pull Requestは、るびま[関係者](https://github.com/rubima/magazine.rubyist.net/discussions/364)の誰かが良さそうと反応してくれたら、自分でマージしてしまってもよいでしょう
+  - るびまはJekyllでビルドしています。改善点に気づいたら、Discordで発言したり、[Issue](https://github.com/rubima/magazine.rubyist.net/issues)あるいは[Pull Request](https://github.com/rubima/magazine.rubyist.net/pulls)を作成してみてください。るびま[関係者](https://github.com/rubima/magazine.rubyist.net/discussions/364)の誰かがPull Requestが良さそうと反応してくれたら、push権限を持っている場合は自分でマージしてしまってもよいでしょう。権限がない場合は関係者にマージを依頼してください
 
 ### るびまに記事を書きたい
 
