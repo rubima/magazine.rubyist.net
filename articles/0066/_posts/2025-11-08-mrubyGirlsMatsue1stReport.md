@@ -13,6 +13,8 @@ PicoRuby の作者である [hasumikin](https://x.com/hasumikin) さん、Rails 
 
 まずは、Ruby の聖地 松江から始めようと、[RubyWorld Conference 2025](https://2025.rubyworld-conf.org/ja/) の翌日 mruby Girls Matsue 1st を行いました。
 
+初めての開催だったので、告知サイトもワークショップのガイドも一から用意しました。準備の舞台裏は [mruby Girls Matsue 1st を開催しました｜chobishiba｜note](https://note.com/chobishiba/n/n8edd9f890c0f) にまとめています。
+
 ## イベント概要
 - 日時：2025 年 11 月 8 日 (土) 10:00〜16:00
 - 場所：松江オープンソースラボ
