@@ -40,11 +40,11 @@ PicoRuby の作者である [hasumikin](https://x.com/hasumikin) さん、Rails 
 
 ### ワークショップ
 
-今回は、[ATOM Matrix](https://docs.m5stack.com/ja/core/ATOM%20Matrix) という  LED、ボタン、加速度センサー一体型のデバイスを使って PicoRuby を体験するという内容にしました。はんだ付けも配線も不要、すぐ始められます。
+今回は、[ATOM Matrix](https://docs.m5stack.com/ja/core/ATOM%20Matrix) という  LED、ボタン、加速度センサー一体型のデバイスを使って PicoRuby を体験するという内容にしました。はんだ付けも配線も不要で、すぐ始められます。
 
 この日集まったのは組み込み初体験の方ばかり。スポンサー様のおかげで参加者にデバイスを配布することができました。皆さん"自分の"デバイスを手にスタート。
 
-用意していた [Guide](https://mrubygirls.github.io/guides/esp32/) に沿ってまずは環境構築から。搭載されているマイコンが ESP32 なので、ESP-IDF を使えるようにするために一斉に `git clone` から始まったので少々時間がかかりましたが、その間自己紹介をしながら和やかに過ごしました。
+用意していた [Guide](https://mrubygirls.github.io/guides/esp32/) に沿ってまずは環境構築から。搭載されているマイコンが ESP32 なので、ESP-IDF を導入する必要がありました。一斉にそのリポジトリを `git clone` したため、少々時間がかかりましたが、その間自己紹介をしながら和やかに過ごしました。
 
 その後は irb を使ってマイコン上で PicoRuby を動かし始めました。ボタンを使った値の読み取りや `loop` から抜ける操作をしてもらうと、自分の手でデバイスを動かしコードに影響を与えるおもしろさを実感してもらえたようです。
 
