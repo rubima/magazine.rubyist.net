@@ -24,6 +24,8 @@ articles_in_volume:
 - authors キーがある場合は目次に表示します
 - comment キーがある場合は目次に表示します
 
+対象の記事の ID に号数が含まれる場合は、_includes/sidebar.html によってその記事のサイドバーにその号の目次が表示されます。/articles/first_step_ruby/FirstStepRuby などには表示されません。
+
 {% endcomment %}
 {% for x in page.articles_in_volume %}
 

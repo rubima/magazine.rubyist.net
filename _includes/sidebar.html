@@ -3,22 +3,35 @@
 {%   assign index_id = page.id | split: "/" | slice: 0, 3 | join: "/" | append: "/index" %}
 {%   assign toc = site.posts | find: "id", index_id %}
 {%   assign toc_posts = toc.articles_in_volume %}
-
 {%   if toc_posts.size > 0 %}
 <h4><a href="{{base}}{{ toc.url }}">{{ volume }}号</a></h4>
 <ul>
-{%     for post in toc_posts %}
-<li>{{ post.id }}
+{%     for x in toc_posts %}
+{%       assign current = false %}
+{%       if x.id %}
+{%         assign p = site.posts | find: "id", x.id %}
+{%         if x.id == page.id %}
+{%           assign current = true %}
+{%         else %}
+{%           assign url = p.url | prepend: base %}
+{%         endif %}
+{%       else %}
+{%         assign url = x.url %}
+{%       endif %}
+{%       if x.title %}
+{%         assign title = x.title %}
+{%       else %}
+{%         assign title = p.title %}
+{%       endif %}
+{%       unless current %}
+<li><a href="{{ url }}">{{ title }}</a>
+{%       else %}
+<li>&gt; {{ title }}
+{%       endunless %}
 {%     endfor %}
 </ul>
 {%   endif %}
 {% endunless %}
-
-<h4>
-{% for post in site.tags.latest %}
-    <a href="{{base}}{{ post.url }}">{{ post.short_title }}</a>
-{% endfor %}
-</h4>
 
 <h4>バックナンバー</h4>
 <ul>
