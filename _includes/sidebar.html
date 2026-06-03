@@ -2,12 +2,12 @@
 {%   assign volume = page.id | split: "/" | slice: 2 %}
 {%   assign index_id = page.id | split: "/" | slice: 0, 3 | join: "/" | append: "/index" %}
 {%   assign toc = site.posts | find: "id", index_id %}
-{%   assign toc_posts = toc.articles %}
+{%   assign toc_posts = toc.articles_in_volume %}
 
 {%   if toc_posts.size > 0 %}
 <h4><a href="{{base}}{{ toc.url }}">{{ volume }}号</a></h4>
 <ul>
-{%     for post in toc.articles %}
+{%     for post in toc_posts %}
 <li>{{ post.id }}
 {%     endfor %}
 </ul>
