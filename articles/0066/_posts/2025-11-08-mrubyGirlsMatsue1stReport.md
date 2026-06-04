@@ -4,7 +4,7 @@ title: mruby Girls Matsue 1st 開催レポート
 short_title: mruby Girls Matsue 1st レポート
 tags: 0066 mrubyGirlsReport
 post_author: chobishiba
-created_on: 2026-05-03
+created_on: 2026-06-05
 ---
 
 ## mruby Girls Matsue 1st とは
