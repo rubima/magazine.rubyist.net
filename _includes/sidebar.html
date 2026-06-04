@@ -4,11 +4,17 @@
 {% endfor %}
 </h4>
 
+<h4>最新号</h4>
+<ul>
+    {% for post in site.tags.index limit: 1 %}
+        <li><a href="{{base}}{{ post.url }}">{{ post.short_title }}</a></li>
+    {% endfor %}
+</ul>
 <h4>バックナンバー</h4>
 <ul>
     <li><a href="{{base}}{% post_url articles/backnumber/2000-01-01-backnumber %}">記事単位</a></li>
     <hr>
-    {% for post in site.tags.index %}
+    {% for post in site.tags.index offset: 1 %}
         <li><a href="{{base}}{{ post.url }}">{{ post.short_title }}</a></li>
     {% endfor %}
 </ul>
