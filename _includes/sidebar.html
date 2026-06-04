@@ -1,3 +1,6 @@
+{% comment %}
+_includes/index_toc.md に従って表紙原稿のフロントマターに記載された情報から各号目次をサイバーに生成します
+{% endcomment %}
 {% unless page.tags contains "index" %}
 {%   assign volume = page.id | split: "/" | slice: 2 %}
 {%   assign index_id = page.id | split: "/" | slice: 0, 3 | join: "/" | append: "/index" %}
