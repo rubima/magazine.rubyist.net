@@ -15,7 +15,7 @@ articles_in_volume:
 対象の記事がこのレポトリにある場合、
 - id キーで記事の ID (原稿のファイルのパスから日付部分を除いたもの) を指定します (必須)
 - title キーで目次に使用するタイトルを指定します。指定されていない場合は対象の原稿のフロントマターの title キーを利用します
-- authors キーで目次に表示する著者リストを指定します。指定されていない場合は対象の原稿のフロントマターの post_author に日本語の名前が「, 」区切りで列挙されているとして、それぞれの名前に「さん」を追加します。アルファベットの名前の場合は空白を含めて「 さん」を追加して、巻頭言のように「さん」が不要な場合には表紙の原稿のフロントマターで指定してください
+- authors キーで目次に表示する著者リストを指定します (必須)。目次に著者を表示しない場合には `""` を指定します
 - comment キーがある場合は目次に表示します
 
 対象の記事が外部のサイトの場合、
@@ -37,32 +37,22 @@ articles_in_volume:
 {%       else %}
 {%         assign title = target.title %}
 {%       endif %}
-{%       if x.authors %}
-{%         assign authors = x.authors %}
-{%       else %}
-{%         if target.post_author %}
-{%           assign authors = target.post_author | replace: ", ", " さん, " | append: " さん" %}
-{%         else %}
-{%           assign authors = nil %}
-{%         endif %}
-{%       endif %}
 ### ![title_mark.gif]({{ base }}{{ site.baseurl }}/images/title_mark.gif) [{{ title }}]({{ base }}{{ target.url }})
 {%     else %}
-### ![title_mark.gif]({{ base }}{{ site.baseurl }}/images/title_mark.gif) 目次の articles_in_volume に問題があります
-id が {{ x.id }} の記事がありません…
+### ![title_mark.gif]({{ base }}{{ site.baseurl }}/images/title_mark.gif) 目次原稿に問題があります
+⚠️ 目次原稿の `articles_in_volume` で `id` が {{ x.id }} の記事がありません…
 {%     endif %}
 
+{%     unless x.authors %}
+⚠️ 目次原稿の `articles_in_volume` で `id` が `{{ x.id }}` の記事の `authors` が指定されていません…
+{%     endunless %}
+
 {%   else # 記事が外部サイトにありurlで指定されている場合 %}
-{%     if x.authors %}
-{%       assign authors = x.authors %}
-{%     else %}
-{%       assign authors = nil %}
-{%     endif %}
 ### ![title_mark.gif]({{ base }}{{ site.baseurl }}/images/title_mark.gif) [{{ x.title }}]({{ x.url }})
 {%   endif %}
 
-{%   if authors %}
-書いた人：{{ authors }}
+{%   if x.authors and x.authors != "" %}
+書いた人：{{ x.authors }}
 {%   endif %}
 
 {%   if x.comment %}
