@@ -154,7 +154,8 @@ Kaigi on Rails 2026 での国際カンファレンス化を見据えて、公式
 
 次回の [Kaigi on Rails 2026](https://kaigionrails.org/2026/) は、2026 年 10 月 16 日 (金) 〜 17 日 (土) の 2 日間、[ベルサール渋谷ガーデン](https://www.bellesalle.co.jp/shisetsu/shibuya/bs_shibuyagarden/) にて開催予定です。
 
-キーノートスピーカーとして、David Heinemeier Hansson (DHH) 氏、Dave Thomas 氏の登壇が決定しています。
+キーノートスピーカーとして、David Heinemeier Hansson (DHH) 氏、Dave Thomas 氏の登壇が決定しています。\
+DHH 氏は 2006 年に来日しており、当時の様子は、るびま [日本 Ruby カンファレンス 2006 特別号]({{base}}{% post_url articles/RubyKaigi2006/2006-06-28-RubyKaigi2006-index %}) の記事「[David を追う]({{base}}{% post_url articles/RubyKaigi2006/2006-06-28-RubyKaigi2006-DHH %})」 でご覧いただけます。また、Dave 氏と日本の Ruby コミュニティの関わりについては、るびま 0066 号の記事「[書籍紹介『シンプリシティ―持続可能かつ人間的で効果的なソフトウェア開発』]({{base}}{% post_url articles/0066/2026-05-29-0066-Book-SimplicityJa %}#日本の-rubyist-が本書を読む意義)」 をご覧ください。
 
 詳細については、今後公式の [X アカウント](https://x.com/kaigionrails) や [Mastodon アカウント](https://ruby.social/@kaigionrails) にて順次発信していきます。ぜひアカウントをフォローして続報をお待ちください。
 
