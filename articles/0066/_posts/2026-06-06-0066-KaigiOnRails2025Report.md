@@ -155,7 +155,7 @@ Kaigi on Rails 2026 での国際カンファレンス化を見据えて、公式
 次回の [Kaigi on Rails 2026](https://kaigionrails.org/2026/) は、2026 年 10 月 16 日 (金) 〜 17 日 (土) の 2 日間、[ベルサール渋谷ガーデン](https://www.bellesalle.co.jp/shisetsu/shibuya/bs_shibuyagarden/) にて開催予定です。
 
 キーノートスピーカーとして、David Heinemeier Hansson (DHH) 氏、Dave Thomas 氏の登壇が決定しています。\
-DHH 氏はかつて [日本 Ruby カンファレンス 2006]({{base}}{% post_url articles/RubyKaigi2006/2006-06-28-RubyKaigi2006-index %}) で基調講演を行っており、その様子は、るびまの [基調講演レポート]({{base}}{% post_url articles/RubyKaigi2006/2006-06-28-RubyKaigi2006-0611-3 %}#基調講演-david-heinemeier-hanssonone-controller-many-ins-many-outs) や 「[David を追う]({{base}}{% post_url articles/RubyKaigi2006/2006-06-28-RubyKaigi2006-DHH %})」 の記事でご覧いただけます。また、Dave 氏と日本の Ruby コミュニティの関わりについては、[るびま 0066 号の記事]({{base}}{% post_url articles/0066/2026-05-29-0066-Book-SimplicityJa %}#日本の-rubyist-が本書を読む意義) をご覧ください。
+DHH 氏はかつて [日本 Ruby カンファレンス 2006](https://rubykaigi.org/2006/) で基調講演を行っており、その様子は、るびまの [基調講演レポート]({{base}}{% post_url articles/RubyKaigi2006/2006-06-28-RubyKaigi2006-0611-3 %}#基調講演-david-heinemeier-hanssonone-controller-many-ins-many-outs) や 「[David を追う]({{base}}{% post_url articles/RubyKaigi2006/2006-06-28-RubyKaigi2006-DHH %})」 の記事でご覧いただけます。また、Dave 氏と日本の Ruby コミュニティの関わりについては、[るびま 0066 号の記事]({{base}}{% post_url articles/0066/2026-05-29-0066-Book-SimplicityJa %}#日本の-rubyist-が本書を読む意義) をご覧ください。
 
 詳細については、今後公式の [X アカウント](https://x.com/kaigionrails) や [Mastodon アカウント](https://ruby.social/@kaigionrails) にて順次発信していきます。ぜひアカウントをフォローして続報をお待ちください。
 
