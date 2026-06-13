@@ -1,8 +1,40 @@
-<h4>
-{% for post in site.tags.latest %}
-    <a href="{{base}}{{ post.url }}">{{ post.short_title }}</a>
-{% endfor %}
-</h4>
+{% comment %}
+_includes/index_toc.md に従って表紙原稿のフロントマターに記載された情報から各号目次をサイバーに生成します
+{% endcomment %}
+{% unless page.tags contains "index" %}
+{%   assign volume = page.id | split: "/" | slice: 2 %}
+{%   assign index_id = page.id | split: "/" | slice: 0, 3 | join: "/" | append: "/index" %}
+{%   assign toc = site.posts | find: "id", index_id %}
+{%   assign toc_posts = toc.articles_in_volume %}
+{%   if toc_posts.size > 0 %}
+<h4><a href="{{base}}{{ toc.url }}">{{ volume }}号</a></h4>
+<ul>
+{%     for x in toc_posts %}
+{%       assign current = false %}
+{%       if x.id %}
+{%         assign p = site.posts | find: "id", x.id %}
+{%         if x.id == page.id %}
+{%           assign current = true %}
+{%         else %}
+{%           assign url = p.url | prepend: base %}
+{%         endif %}
+{%       else %}
+{%         assign url = x.url %}
+{%       endif %}
+{%       if x.title %}
+{%         assign title = x.title %}
+{%       else %}
+{%         assign title = p.title %}
+{%       endif %}
+{%       unless current %}
+<li><a href="{{ url }}">{{ title }}</a>
+{%       else %}
+<li>&gt; {{ title }}
+{%       endunless %}
+{%     endfor %}
+</ul>
+{%   endif %}
+{% endunless %}
 
 <h4>最新号</h4>
 <ul>
