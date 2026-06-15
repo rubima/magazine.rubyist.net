@@ -4,7 +4,7 @@ title: Kaigi on Rails 2025 開催レポート
 short_title: Kaigi on Rails 2025 開催レポート
 tags: 0066 KaigiOnRails2025Report KaigiOnRails
 post_author: nobu09, mugi, nissyi
-created_on: 2026-06-06
+created_on: 2026-06-15
 ---
 {% include base.html %}
 
