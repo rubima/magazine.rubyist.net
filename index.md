@@ -36,6 +36,8 @@ title: るびま
 {%   assign date = post.created_on | date: "%Y-%m-%d" %}
 {%   if date > latest_volume_date %}
 - [{{ post.title }}]({{base}}{{ post.url }})
+{%   else %}
+{%     break %}
 {%   endif %}
 {% endfor %}
 
