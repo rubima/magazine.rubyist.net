@@ -9,21 +9,36 @@ title: るびま
 
 『Rubyist Magazine』、略して『るびま』は、Rubyist の Rubyist による、Rubyist とそうでない人のためのウェブ雑誌です。
 
-{% assign articles = site.posts | sort: "date" | reverse %}
+{% comment %}
+最新号のリリース日を最新の表紙のdateとする。
+最近の記事はcreated_on順に並べ、最新号のリリース日よりも新しいものを「最新記事」に列挙する。
+古い記事にはcreated_onが設定されていないものがある。そのような記事は「最新記事」には含めない。
+{% endcomment %}
+{% assign latest_volume_date = site.tags.index | sort: "date" | map: "date" | last | date: "%Y-%m-%d" %}
+{% assign articles = site.posts | sort: "created_on" | reverse %}
+
 {% for post in articles %}
-{%   if post.tags contains "index" or post.tags contains "EditorsNote" %}
-{%     break %}
-{%   endif %}
+{%   unless post.created_on %}
+{%     continue %}
+{%   endunless %}
+{%   assign date = post.created_on | date: "%Y-%m-%d" %}
+{%   if date > latest_volume_date %}
 ## 最新記事
 次号にまとめられます。
+{%   endif %}
 {%   break %}
 {% endfor %}
 
 {% for post in articles %}
-{%   if post.tags contains "index" or post.tags contains "EditorsNote" %}
+{%   unless post.created_on %}
+{%     continue %}
+{%   endunless %}
+{%   assign date = post.created_on | date: "%Y-%m-%d" %}
+{%   if date > latest_volume_date %}
+- [{{ post.title }}]({{base}}{{ post.url }})
+{%   else %}
 {%     break %}
 {%   endif %}
-- [{{ post.title }}]({{base}}{{ post.url }})
 {% endfor %}
 
 ## 最新号
