@@ -25,8 +25,8 @@ title: るびま
 {%   if date > latest_volume_date %}
 ## 最新記事
 次号にまとめられます。
-{%     break %}
 {%   endif %}
+{%   break %}
 {% endfor %}
 
 {% for post in articles %}
