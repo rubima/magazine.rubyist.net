@@ -7,7 +7,7 @@ tags: 0058 MatsueRubyKaigi09Report regionalRubyKaigi
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート 大阪 Ruby 会議 01
+## {% post_title articles/0058/2018-08-26-0058-OsakaRubyKaigi01Report %}
 
 ### はじめに
 

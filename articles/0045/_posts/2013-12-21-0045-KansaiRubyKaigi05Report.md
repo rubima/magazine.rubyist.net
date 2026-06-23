@@ -10,7 +10,7 @@ tags: 0045 KansaiRubyKaigi05Report regionalRubyKaigi
 
 書いた人：無量井 ([@muryoimpl](https://twitter.com/muryoimpl))
 
-## RegionalRubyKaigiレポート関西 Ruby 会議 05
+## {% post_title articles/0045/2013-12-21-0045-KansaiRubyKaigi05Report %}
 
 ### はじめに
 

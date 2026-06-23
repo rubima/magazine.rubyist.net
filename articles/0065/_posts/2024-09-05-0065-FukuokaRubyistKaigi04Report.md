@@ -8,7 +8,7 @@ created_on: 2024-12-08
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート: 福岡 Rubyist 会議 04
+## {% post_title articles/0065/2024-09-05-0065-FukuokaRubyistKaigi04Report %}
 
 ### 概要
 

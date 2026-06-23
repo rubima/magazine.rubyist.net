@@ -8,7 +8,7 @@ tags: 0042 TokyoRubyKaigi10Report_2nd regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート東京 Ruby 会議 10 中断後の 3 日目
+## {% post_title articles/0042/2013-05-29-0042-TokyoRubyKaigi10Report_2nd %}
 
 ### 開催概要
 : ![centre_ohwada.png]({{base}}{{site.baseurl}}/images/0042-TokyoRubyKaigi10Report_2nd/centre_ohwada.png)

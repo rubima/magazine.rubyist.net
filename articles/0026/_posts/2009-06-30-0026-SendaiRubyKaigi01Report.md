@@ -8,7 +8,7 @@ tags: 0026 SendaiRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (05) 仙台 Ruby 会議 01
+## {% post_title articles/0026/2009-06-30-0026-SendaiRubyKaigi01Report %}
 
 書いた人: monya_kata
 

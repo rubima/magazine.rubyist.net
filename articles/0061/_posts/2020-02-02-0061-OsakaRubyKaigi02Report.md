@@ -9,7 +9,7 @@ created_on: 2020-02-02
 
 {% include base.html %}
 
-## RegionalRubyKaigi レポート (77) 大阪 Ruby 会議 02
+## {% post_title articles/0061/2020-02-02-0061-OsakaRubyKaigi02Report %}
 
 ### はじめに
 

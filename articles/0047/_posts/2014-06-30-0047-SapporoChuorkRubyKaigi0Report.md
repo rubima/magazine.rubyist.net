@@ -8,7 +8,7 @@ tags: 0047 SapporoChuorkRubyKaigi0Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート 札幌市中央区 Ruby 会議 01
+## {% post_title articles/0047/2014-06-30-0047-SapporoChuorkRubyKaigi0Report %}
 
 ### はじめに
 

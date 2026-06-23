@@ -10,7 +10,7 @@ tags: 0043 KyushuRubyKaigi02Report regionalRubyKaigi
 
 書いた人：永井 秀利
 
-## RegionalRubyKaigi レポート 九州 Ruby 会議 02
+## {% post_title articles/0043/2013-07-31-0043-KyushuRubyKaigi02Report %}
 
 ### 開催概要
 

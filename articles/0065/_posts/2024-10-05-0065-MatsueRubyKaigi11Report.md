@@ -8,7 +8,7 @@ created_on: 2024-11-22
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート 松江 Ruby 会議 11
+## {% post_title articles/0065/2024-10-05-0065-MatsueRubyKaigi11Report %}
 
 2024 年 10 月 5 日（土）に松江 Ruby 会議 11 が開催されました。<br>
 合計 51 名の方にご参加いただきました。<br>

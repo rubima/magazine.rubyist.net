@@ -8,7 +8,7 @@ tags: 0056 NagoyaRubyKaigi03Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigiレポート 名古屋Ruby会議03
+## {% post_title articles/0056/2017-08-27-0056-NagoyaRubyKaigi03Report %}
 
 * 開催日時 - 2017年02月11日 10:00-18:30
 * 開催場所 - [大須演芸場](http://www.osuengei.nagoya/)

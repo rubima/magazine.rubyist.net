@@ -8,7 +8,7 @@ created_on: 2019-01-27
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート 大江戸 Ruby 会議 07
+## {% post_title articles/0059/2019-01-27-0059-OedoRubyKaigi07Report %}
 
 ### はじめに
 

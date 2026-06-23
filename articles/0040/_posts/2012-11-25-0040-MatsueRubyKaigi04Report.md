@@ -8,7 +8,7 @@ tags: 0040 MatsueRubyKaigi04Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート松江 Ruby 会議 04
+## {% post_title articles/0040/2012-11-25-0040-MatsueRubyKaigi04Report %}
 
 ### 最初に
 

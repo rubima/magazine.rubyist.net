@@ -8,7 +8,7 @@ created_on: 2025-01-22
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート (88) 大阪 Ruby 会議 03
+## {% post_title articles/0065/2025-01-22-0065-OsakaRubyKaigi03Report %}
 
 * 日時：2023 年 9 月 9 日 (土) 10:00〜20:50
 * 場所：ハートンホテル心斎橋別館 松風ホール

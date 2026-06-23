@@ -9,7 +9,7 @@ created_on: 2025-01-27
 
 {% include base.html %}
 
-## RegionalRubyKaigi レポート (90) 東京 Ruby 会議 12
+## {% post_title articles/0065/2025-01-27-0065-TokyoRubyKaigi12Report %}
 
 東京 Ruby 会議 12 実行委員長のおしょうゆです。<br />
 素敵なレポートを参加者のみなさまに執筆いただきました。ぜひお読みください。

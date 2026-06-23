@@ -8,7 +8,7 @@ tags: 0050 MatsueRubyKaigi05 regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート 松江 Ruby 会議 05
+## {% post_title articles/0050/2015-05-10-0050-MatsueRubyKaigi05 %}
 
 ### はじめに
 

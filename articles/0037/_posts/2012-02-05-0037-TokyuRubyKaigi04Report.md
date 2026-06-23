@@ -8,7 +8,7 @@ tags: 0037 TokyuRubyKaigi04Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート TokyuRuby 会議 04
+## {% post_title articles/0037/2012-02-05-0037-TokyuRubyKaigi04Report %}
 
 ### 開催概要
 : ![image05.jpg]({{base}}{{site.baseurl}}/images/0037-TokyuRubyKaigi04Report/image05.jpg)

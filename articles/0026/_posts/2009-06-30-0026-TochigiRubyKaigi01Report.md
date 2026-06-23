@@ -10,7 +10,7 @@ tags: 0026 TochigiRubyKaigi01Report regionalRubyKaigi
 
 書いた人: 渋川よしき
 
-## RegionalRubyKaigi レポート (07) とちぎ Ruby 会議 01
+## {% post_title articles/0026/2009-06-30-0026-TochigiRubyKaigi01Report %}
 
 ## はじめに
 ![3324123913_6fe266f7bb.jpg]({{base}}{{site.baseurl}}/images/0026-TochigiRubyKaigi01Report/3324123913_6fe266f7bb.jpg)

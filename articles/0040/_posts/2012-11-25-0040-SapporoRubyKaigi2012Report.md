@@ -8,7 +8,7 @@ tags: 0040 SapporoRubyKaigi2012Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート札幌 Ruby 会議 2012
+## {% post_title articles/0040/2012-11-25-0040-SapporoRubyKaigi2012Report %}
 
 ### 開催概要
 

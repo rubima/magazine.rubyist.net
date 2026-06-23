@@ -10,7 +10,7 @@ tags: 0049 OoedoRubyKaigi04Report regionalRubyKaigi
 
 書いた人 : ヨシオリ ([@yoshiori](https://twitter.com/yoshiori/))
 
-## [WIP]RegionalRubyKaigi レポート (45) 大江戸 Ruby 会議 04
+## [WIP]{% post_title articles/0049/2014-12-14-0049-OoedoRubyKaigi04Report %}
 : ![13924209506_a54612d9b8.jpg](http://farm8.staticflickr.com/7395/13924209506_a54612d9b8.jpg)
 
 開催日

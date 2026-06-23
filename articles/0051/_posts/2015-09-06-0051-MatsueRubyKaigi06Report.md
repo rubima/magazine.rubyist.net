@@ -8,7 +8,7 @@ tags: 0051 MatsueRubyKaigi06Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート 松江 Ruby 会議 06
+## {% post_title articles/0051/2015-09-06-0051-MatsueRubyKaigi06Report %}
 
 ### はじめに
 
