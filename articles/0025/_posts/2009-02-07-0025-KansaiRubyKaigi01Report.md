@@ -8,7 +8,7 @@ tags: 0025 KansaiRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (03) 関西 Ruby 会議 01
+## {% post_title articles/0025/2009-02-07-0025-KansaiRubyKaigi01Report %}
 
 書いた人：こなみ (各プログラムのログおよび KOF 関連の記事を参考にして再構成しています)
 

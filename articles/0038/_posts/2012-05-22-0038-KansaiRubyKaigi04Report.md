@@ -8,7 +8,7 @@ tags: 0038 KansaiRubyKaigi04Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigiレポート関西 Ruby 会議 04
+## {% post_title articles/0038/2012-05-22-0038-KansaiRubyKaigi04Report %}
 
 ### 開催概要
 : ![top.jpg]({{base}}{{site.baseurl}}/images/0038-KansaiRubyKaigi04Report/top.jpg)

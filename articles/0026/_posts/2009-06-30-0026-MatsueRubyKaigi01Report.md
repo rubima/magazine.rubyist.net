@@ -8,7 +8,7 @@ tags: 0026 MatsueRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (06) 松江 Ruby 会議 01
+## {% post_title articles/0026/2009-06-30-0026-MatsueRubyKaigi01Report %}
 
 書いた人: 野田哲夫
 

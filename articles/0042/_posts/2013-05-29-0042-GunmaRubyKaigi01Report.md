@@ -10,7 +10,7 @@ tags: 0042 GunmaRubyKaigi01Report regionalRubyKaigi
 
 書いた人：中内章一、米澤慎
 
-## RegionalRubyKaigi レポートぐんま Ruby 会議 01
+## {% post_title articles/0042/2013-05-29-0042-GunmaRubyKaigi01Report %}
 
 ### 開催概要
 : ![002_s.jpg]({{base}}{{site.baseurl}}/images/0042-GunmaRubyKaigi01Report/002_s.jpg)

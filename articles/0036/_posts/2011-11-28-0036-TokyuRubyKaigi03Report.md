@@ -8,7 +8,7 @@ tags: 0036 TokyuRubyKaigi03Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート  TokyuRuby 会議 03
+## {% post_title articles/0036/2011-11-28-0036-TokyuRubyKaigi03Report %}
 
 ### 開催概要
 : ![image01.jpg]({{base}}{{site.baseurl}}/images/0036-TokyuRubyKaigi03Report/image01.jpg)

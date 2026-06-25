@@ -8,7 +8,7 @@ tags: 0033 NagoyaRubyKaigi02Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (20) 名古屋 Ruby 会議 02
+## {% post_title articles/0033/2011-04-05-0033-NagoyaRubyKaigi02Report %}
 
 ### はじめに
 : ![1.jpg]({{base}}{{site.baseurl}}/images/0033-NagoyaRubyKaigi02Report/1.jpg)

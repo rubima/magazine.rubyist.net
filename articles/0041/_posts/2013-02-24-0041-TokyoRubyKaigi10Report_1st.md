@@ -8,7 +8,7 @@ tags: 0041 TokyoRubyKaigi10Report_1st regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート東京 Ruby 会議 10
+## {% post_title articles/0041/2013-02-24-0041-TokyoRubyKaigi10Report_1st %}
 
 ### 開催概要
 : ![mihama_culture_hall_with_snow.jpeg]({{base}}{{site.baseurl}}/images/0041-TokyoRubyKaigi10Report_1st/mihama_culture_hall_with_snow.jpeg)

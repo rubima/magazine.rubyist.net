@@ -9,7 +9,7 @@ created_on: 2023-11-15
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート 松江 Ruby 会議 10
+## {% post_title articles/0063/2023-11-15-0063-MatsueRubyKaigi10Report %}
 
 ### はじめに
 

@@ -1,14 +1,14 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (87) 松江 Ruby 会議 11
-short_title: RegionalRubyKaigi レポート (87) 松江 Ruby 会議 11
+title: RegionalRubyKaigi レポート (85) 松江 Ruby 会議 11
+short_title: RegionalRubyKaigi レポート (85) 松江 Ruby 会議 11
 tags: MatsueRubyKaigi11Report regionalRubyKaigi
 post_author: 佐田 明弘, 西田 雄也, 高田 芳和, 伊東 亮, 藤井 貴
 created_on: 2024-11-22
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート 松江 Ruby 会議 11
+## {% post_title articles/0065/2024-10-05-0065-MatsueRubyKaigi11Report %}
 
 2024 年 10 月 5 日（土）に松江 Ruby 会議 11 が開催されました。<br>
 合計 51 名の方にご参加いただきました。<br>

@@ -8,7 +8,7 @@ created_on: 2019-08-18
 ---
 {% include base.html %}
 
-# RegionalRubyKaigi レポート 名古屋Ruby会議04
+# {% post_title articles/0060/2019-08-18-0060-NagoyaRubyKaigi04Report %}
 
 ## はじめに
 

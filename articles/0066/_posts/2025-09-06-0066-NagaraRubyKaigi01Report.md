@@ -8,7 +8,7 @@ created_on: 2026-05-13
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート (66) ながらRuby会議01
+## {% post_title articles/0066/2025-09-06-0066-NagaraRubyKaigi01Report %}
 
 - 開催日：2025年9月6日
 - 開催場所：うかいミュージアム 四阿（あずまや）

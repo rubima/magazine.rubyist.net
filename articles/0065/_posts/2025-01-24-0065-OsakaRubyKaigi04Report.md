@@ -8,7 +8,7 @@ created_on: 2025-01-22
 ---
 {% include base.html %}
 
-## RegionalRubyKaigi レポート (89) 大阪 Ruby 会議 04
+## {% post_title articles/0065/2025-01-24-0065-OsakaRubyKaigi04Report %}
 
 * 日時：2024 年 8 月 24 日 (土) 10:00〜20:50
 * 場所：中之島フェスティバルタワーウエスト 4F 中之島会館ホール

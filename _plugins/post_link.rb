@@ -1,19 +1,20 @@
-# post_link
-# http://brm.io/jekyll-post-links/
-# modified for jekyll 3.1.2. by miyohide
-#
-# usage {% post_link post text %}
-#
-# Where post is a post in the usual date-slug format.
-# If text is specified, it uses that as the anchor text, otherwise it's the post title.
-#
-# Output is a full anchor tag. Broken links will be detected by compiler.
-#
-# based on post_url.rb
-# https://github.com/jekyll/jekyll/blob/master/lib/jekyll/tags/post_url.rb
+require "jekyll/tags/post_url"
 
 module Jekyll
   module Tags
+    # post_link
+    # http://brm.io/jekyll-post-links/
+    # modified for jekyll 3.1.2. by miyohide
+    #
+    # usage {% post_link post text %}
+    #
+    # Where post is a post in the usual date-slug format.
+    # If text is specified, it uses that as the anchor text, otherwise it's the post title.
+    #
+    # Output is a full anchor tag. Broken links will be detected by compiler.
+    #
+    # based on post_url.rb
+    # https://github.com/jekyll/jekyll/blob/master/lib/jekyll/tags/post_url.rb
     class PostLinkComparer
       MATCHER = /^(.+\/)*(\d+-\d+-\d+)-([^\s]*)(\s.*)?$/
 
@@ -62,7 +63,46 @@ Make sure the post exists and the name and date is correct.
 eos
       end
     end
+
+    # post_title
+    #
+    # usage {% post_title path %}
+    #
+    # Returns the title string of the given post. The counterpart of
+    # Jekyll's built-in post_url tag, which returns the URL.
+    # Accepts the same path-date-slug format as post_url.
+    #
+    # Use it to keep cross-reference link text in sync with the post's
+    # current title, e.g. for issue table-of-contents entries.
+    class PostTitle < Liquid::Tag
+      def initialize(tag_name, post, tokens)
+        super
+        @orig_post = post.strip
+        begin
+          @post = PostComparer.new(@orig_post)
+        rescue StandardError => e
+          raise ArgumentError, <<~MSG
+            Could not parse name of post "#{@orig_post}" in tag 'post_title'.
+            Make sure the post exists and the name is correct.
+            #{e.class}: #{e.message}
+          MSG
+        end
+      end
+
+      def render(context)
+        site = context.registers[:site]
+        site.posts.docs.each do |document|
+          return document.data["title"] if @post == document
+        end
+
+        raise ArgumentError, <<~MSG
+          Could not find post "#{@orig_post}" in tag 'post_title'.
+          Make sure the post exists and the name is correct.
+        MSG
+      end
+    end
   end
 end
 
 Liquid::Template.register_tag('post_link', Jekyll::Tags::PostLink)
+Liquid::Template.register_tag('post_title', Jekyll::Tags::PostTitle)

@@ -8,7 +8,7 @@ tags: 0040 OkayamaRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigiレポート岡山 Ruby 会議 01
+## {% post_title articles/0040/2012-11-25-0040-OkayamaRubyKaigi01Report %}
 
 ### 開催概要
 : ![top.jpg]({{base}}{{site.baseurl}}/images/0040-OkayamaRubyKaigi01Report/top.jpg)

@@ -8,7 +8,7 @@ tags: 0042 OoedoRubyKaigi03Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (37) 大江戸 Ruby 会議 03
+## {% post_title articles/0042/2013-05-29-0042-OoedoRubyKaigi03Report %}
 
 ### 開催概要
 : ![8564408660_9452806671.jpg](http://farm9.staticflickr.com/8531/8564408660_9452806671.jpg)

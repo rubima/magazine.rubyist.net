@@ -10,7 +10,7 @@ tags: 0039 MinatoRubyKaigi01Report regionalRubyKaigi
 
 横浜ではじめての地域 Ruby 会議「みなと Ruby 会議 01」が 2012 年 6 月 2 日に開催されました。 森に囲まれた自然豊かな会場で、参加者のみなさんからは「みなとっぽくない」と大きな反響をいただきました。
 
-## RegionalRubyKaigi レポート みなと Ruby 会議 01
+## {% post_title articles/0039/2012-09-05-0039-MinatoRubyKaigi01Report %}
 
 ### 開催概要
 

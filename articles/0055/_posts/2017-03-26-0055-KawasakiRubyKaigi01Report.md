@@ -8,7 +8,7 @@ tags: 0055 KawasakiRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート 川崎 Ruby 会議 01
+## {% post_title articles/0055/2017-03-26-0055-KawasakiRubyKaigi01Report %}
 
 * 開催日時 -- 2016 年 8 月 20 日 (土) 13:00-17:00
 * 開催場所 -- 川崎市教育文化会館 4F 第 1 ・ 2 ・ 3 学習室

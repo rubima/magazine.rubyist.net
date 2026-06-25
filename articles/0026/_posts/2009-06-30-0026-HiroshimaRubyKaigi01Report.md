@@ -8,7 +8,7 @@ tags: 0026 HiroshimaRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (08) 広島 Ruby 会議 01
+## {% post_title articles/0026/2009-06-30-0026-HiroshimaRubyKaigi01Report %}
 
 書いた人: にしゅぅ と こまつ
 

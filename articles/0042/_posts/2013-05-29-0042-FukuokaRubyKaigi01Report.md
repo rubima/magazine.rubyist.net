@@ -8,7 +8,7 @@ tags: 0042 FukuokaRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート 福岡 Ruby 会議 01
+## {% post_title articles/0042/2013-05-29-0042-FukuokaRubyKaigi01Report %}
 
 ### はじめに
 

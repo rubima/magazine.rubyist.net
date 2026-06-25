@@ -10,7 +10,7 @@ tags: 0050 KanagawaRubyKaigi01Report regionalRubyKaigi
 
 書いた人 : [@snowcrush](https://twitter.com/snowcrush)  , [@miyohide](https://twitter.com/miyohide)
 
-## RegionalRubyKaigi レポート (49) 神奈川 Ruby 会議 01
+## {% post_title articles/0050/2015-05-10-0050-KanagawaRubyKaigi01Report %}
 
 開催日時
 : 2015 年 1 月 17 日 (土) 13:00 - 18:35

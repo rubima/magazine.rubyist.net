@@ -8,7 +8,7 @@ tags: 0047 OkinawaRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (44) 沖縄 Ruby 会議 01
+## {% post_title articles/0047/2014-06-30-0047-OkinawaRubyKaigi01Report %}
 
 書いた人: [@cota2n](https://twitter.com/cota2n), [@hanachin_](https://github.com/hanachin), [@kimihito_](https://twitter.com/kimihito_)
 

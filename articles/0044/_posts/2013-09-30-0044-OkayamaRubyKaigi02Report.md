@@ -8,7 +8,7 @@ tags: 0044 OkayamaRubyKaigi02Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート岡山 Ruby 会議 02
+## {% post_title articles/0044/2013-09-30-0044-OkayamaRubyKaigi02Report %}
 
 ### 開催概要
 : ![title.jpg]({{base}}{{site.baseurl}}/images/0044-OkayamaRubyKaigi02Report/title.jpg)

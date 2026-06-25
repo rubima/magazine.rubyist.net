@@ -8,7 +8,7 @@ tags: 0025 SapporoRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (02) 札幌 Ruby 会議 01
+## {% post_title articles/0025/2009-02-07-0025-SapporoRubyKaigi01Report %}
 
 書いた人: Maimuzo と荒井
 

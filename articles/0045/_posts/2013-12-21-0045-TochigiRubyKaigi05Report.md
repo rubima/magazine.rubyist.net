@@ -8,7 +8,7 @@ tags: 0045 TochigiRubyKaigi05Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigiレポート (42) とちぎ Ruby 会議 05
+## {% post_title articles/0045/2013-12-21-0045-TochigiRubyKaigi05Report %}
 
 ### はじめに
 

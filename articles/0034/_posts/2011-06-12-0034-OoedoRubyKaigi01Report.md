@@ -8,7 +8,7 @@ tags: 0034 OoedoRubyKaigi01Report regionalRubyKaigi
 {% include base.html %}
 
 
-## RegionalRubyKaigi レポート (23) 大江戸 Ruby 会議 01
+## {% post_title articles/0034/2011-06-12-0034-OoedoRubyKaigi01Report %}
 : ![桜](http://farm6.static.flickr.com/5022/5626685003_40c4e1d11a.jpg)
 
 開催日

@@ -14,7 +14,7 @@ tags: 0052 MatsueRubyKaigi07Report regionalRubyKaigi
 
 書いた人 : 西田 雄也 さん、佐田 明弘 さん、井上 裕之 さん、本多 展幸 さん、木村 友哉 さん、橋本 将 さん
 
-## RegionalRubyKaigi レポート 松江 Ruby 会議 07
+## {% post_title articles/0052/2015-12-06-0052-MatsueRubyKaigi07Report %}
 
 ### はじめに
 

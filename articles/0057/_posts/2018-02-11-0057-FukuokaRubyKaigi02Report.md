@@ -7,7 +7,7 @@ tags: 0057 FukuokaRubyKaigi02Report regionalRubyKaigi
 ---
 {% include base.html %}
 
-## RegionalRubyKaigiレポート (67) 福岡Ruby会議02
+## {% post_title articles/0057/2018-02-11-0057-FukuokaRubyKaigi02Report %}
 
 * 開催日時 - 2017年11月25日 9:45-18:00
 * 開催場所 - [大名小学校跡地 FUKUOKA growth next](https://growth-next.com)
