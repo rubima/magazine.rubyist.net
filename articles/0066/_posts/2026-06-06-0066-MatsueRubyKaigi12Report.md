@@ -249,4 +249,4 @@ Ruby プログラマ。松江 Ruby 会議が久しぶりのイベント参加。
 
 ### 原 悠 ([@yhara](https://x.com/yhara))
 
-Shiika の作者。最近の興味はスキューブとヨーヨー。
+[2026年 難読プログラミング言語デザインコンテスト](https://gist.github.com/yhara/787df8607ce8a1fbe4b5043b53e4c6c3)開催中です。よろしくお願いします。
