@@ -1,0 +1,45 @@
+name: Deploy PR previews
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Fetch master
+        run: |
+          commits=${{ github.event.pull_request.commits }}
+          if [[ -n "$commits" ]]; then
+            # Prepare enough depth for diffs with master
+            git fetch --depth="$(( commits + 1 ))"
+          fi
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Remove unrelated images
+        run: git diff --name-only origin/master --relative=articles | ruby -nle 'puts $_[%r([0-9]{4}-[0-9]{2}-[0-9]{2}-([0-9]{4}-.+)\.md), 1]' | tr '\n' ',' | ruby -rfileutils -nle 'Dir.chdir("_site/images") { Dir.glob("*").each { FileUtils.rm_r(_1) if File.directory?(_1) && !$_.split(",").include?(_1) } }'
+
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./_site/
+          deploy-repository: rubima/rubima-preview
+          token: ${{ secrets.PREVIEW_TOKEN }}
