@@ -34,32 +34,39 @@ programming language we all know and love. We can't wait to meet in Singapore!
 
 ## カンファレンスの様子
 この時は、SingPost Centre というショッピングモールの中にあるイベントホールで開催されました。  
-＜ここに外観写真貼る＞  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/venue.jpg" width="500px">
+
 場所も駅から出たすぐのところにあったので、とてもアクセスがしやすかったです。
 
-日本からは私を含めて、Rubyコミッターとして招待公演を行った[柴田さん](https://github.com/hsbt)、CfPで採択された[大倉さん](https://github.com/okuramasafumi)
-と私が現地参加しました。
+日本からは私を含めて、Rubyコミッターとして招待公演を行った[柴田さん](https://github.com/hsbt)、CfPで採択された[大倉さん](https://github.com/okuramasafumi)と私が現地参加しました。  
 Matz もキーノート登壇があったのですが、録画での参加だったため現地でお会いすることはできませんでした。
-（写真はる）
+
 セッションは1並列のみなので全員で聴く形になります。  
-（タイテのスクショを貼る）
-こちらは開会の挨拶です。今回のキャラクターが可愛くてとてもお気に入りです。
-（写真はる）
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/timetable.jpg" width="500px">
+
+こちらは開会の挨拶です。今回のキャラクターが可愛くてとてもお気に入りです。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/opening.jpg" width="500px">
+
 カンファレンスの時間はホールの中でセッションを聴講し、休憩時間になったらホールの中やホワイエでRubyistと交流したりしました。  
 休憩時間には現地のおやつがでたり  
-（写真はる）  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/fruits.jpg" width="500px" height="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/egg_tart.jpg" width="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/traditional_sweets.jpg" width="500px">
+
 ランチも現地のものをブッフェ形式でいただけるようになっていて、カンファレンスの中だけでもシンガポール文化をたくさん楽しむことができました。  
-（写真はる）  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/lunch_station.jpg" width="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/lunch.jpg" width="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/lunch_day2.jpg" width="500px">
 
 ## 発表の様子
 ### Matzのキーノート
-
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/matz_keynote.jpg" width="500px">
 ### 柴田さんの発表
-
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/hsbt_talk.jpg" width="500px">
 ### 大倉さんの発表
-
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/okura_talk.jpg" width="500px">
 ### 私の発表（柴田さんの良いカメラで写真を撮ってもらいました）
-
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/eririn_talk.jpg" width="500px">
 ## 海外カンファレンスに初参加しての感想
 私は日本の RubyKaigi や地域Ruby会議などのカンファレンスには何回か参加したことがありますが、海外のカンファレンスに参加するのはこの時が初めてでした。  
 海外カンファレンスに行くと、日本の RubyKaigi には参加したことがないけれど、今回は参加したというアメリカの方と出会うことができました。  
@@ -70,13 +77,13 @@ Matz もキーノート登壇があったのですが、録画での参加だっ
 さらに、現地の方に土曜日の夜にマリーナベイ（マリーナベイサンズとかマーライオンがあるエリア）で花火が見れるよと教えてもらいました。
 これは事前には知らなかったので、現地のRubyistの方と話したから得ることができた情報です。
 （ちなみに、このタイミングで花火があがるのは、8月9日がシンガポールの建国記念日なのですが、その数週間前から練習として土曜日の夜に花火を上げるようです。リッチ〜。）
-＜花火の写真貼る＞
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/fireworks.jpg" width="500px">
 
 今回の Red Dot Ruby Conference 2024 は 12 カ国から 78 人の参加者と 16 人のスピーカーが集まったようです。
 これにも、シンガポールらしさが出ているなと私は感じました。  
 78 人の規模のカンファレンスを日本で開催したら都内の人だけでもいっぱいになりそうじゃないですか。
 立地の理由なのか文化の理由なのか、これもとても興味深いと感じた点でした。
-＜ツイートの写真貼る＞
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/wrapup.png" width="500px">
 
 海外カンファレンスに行って良かったなと思ったことについては、以下の記事で羽角さんが良い感じに書いてくださっているのでこちらも見てみてください。  
 [RubyConf Africa 2024あるいは海外カンフの滋養強壮](https://tech.andpad.co.jp/entry/2024/08/23/100000)  
@@ -89,14 +96,18 @@ Matz もキーノート登壇があったのですが、録画での参加だっ
 
 ## カンファレンス以外の活動
 初日はスピーカーディナーがありました。  
-マレーインドネシア料理ということで、またランチとは違った食事を楽しむことができました。
-（写真貼る）  
-また、モスクもすぐ近くだったのでアザーン（イスラム教のお祈りの放送）も聞くことができました。
-（写真はる）  
-その後は、柴田さん、大倉さん、Aaronさんと一緒にドリアンを食べに行きました。
-（写真貼る）  
-久しぶりのドリアンで、匂いは慣れているのですが味はこんなだったっけとびっくりしました。品種や熟れ具合によって味も違うみたいです。品種によって値段も変わってきます。  
-（写真はる）
+マレーインドネシア料理ということで、またランチとは違った食事を楽しむことができました。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/dinner.jpg" width="500px">
+
+また、モスクもすぐ近くだったのでアザーン（イスラム教のお祈りの放送）も聞くことができました。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/mosque.jpg" width="500px">
+
+その後は、柴田さん、大倉さん、Aaronさんと一緒にドリアンを食べに行きました。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/rubyfriends.jpg" width="500px">  
+
+久しぶりのドリアンで、匂いは慣れているのですが味はこんなだったっけとびっくりしました。品種や熟れ具合によって味も違うみたいです。品種によって値段も変わってきます。    
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/durian.jpg" width="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/cut_durian.jpg" width="300px" height="500px">
 
 ## まとめ
 私の場合、英語はなんとかなると思って、シンガポールに行きたいという気持ちだけで参加したのですが、行って良かったなと思っています。  
