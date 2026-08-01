@@ -1,0 +1,131 @@
+---
+layout: post
+title: Red Dot Ruby Conference 2024 参加レポート
+short_title: Red Dot Ruby Conference 2024
+post_author: えりりん
+created_on: 2026-07-20
+---
+{% include base.html %}
+
+## はじめに
+
+この記事は、2024 年 7 月 25 日 (金)、26 日 (土) に シンガポールにて開催された [Red Dot Ruby Conference 2024](https://reddotrubyconf.com/) 
+の参加レポートです。  
+記事の内容は、日本からの参加者の一人であるえりりんが参加してきた感想などをまとめた記事となります。  
+写真は私と柴田さんが撮影したものです。
+
+## Red Dot Ruby Conference とは
+> Red Dot Ruby Conference (RDRC) is the only Ruby programming language conference in Singapore, bringing together 
+> the brightest minds in the Ruby community in the region since 2011.  
+> After a brief hiatus due to the global pandemic in 2020, we are excited to reboot in 2024 and celebrating the 
+programming language we all know and love. We can't wait to meet in Singapore!  
+> (公式サイトの文言より引用)
+
+上記に書かれている通り、2011年からシンガポールで開催されているRubyのカンファレンスです。2020年以降コロナの影響で開催されていませんでしたが、2024年に再開されました。
+
+私ごとですが、シンガポールに行くのはこの時で4回目ほどとなるくらいにシンガポールが大好きです。
+このカンファレンスの開催を知り、シンガポールにどうしても行きたいと思い、CfPを提出、無事に通り参加することになりました。
+
+## シンガポールとは
+東南アジアに位置する赤道直下の国です。そのため年中夏です。いわゆる夏頃が乾季、冬頃が雨季です。  
+熱帯気候独特のスコールもよく起こります。  
+多民族国家であり、シンガポールの文化といっても、マレー系や中華系・インド系など様々な文化が混ざり合っています。  
+公用語は英語ですが、電車のアナウンスは英語・中国語・マレー語・タミル語が流れるなど、多民族国家であることをすぐに感じることができます。
+
+## カンファレンスの様子
+この時は、SingPost Centre というショッピングモールの中にあるイベントホールで開催されました。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/venue.jpg" width="500px">
+
+場所も駅から出たすぐのところにあったので、とてもアクセスがしやすかったです。
+
+日本からは私を含めて、Rubyコミッターとして招待公演を行った[柴田さん](https://github.com/hsbt)、CfPで採択された[大倉さん](https://github.com/okuramasafumi)と私が現地参加しました。  
+Matz もキーノート登壇があったのですが、録画での参加だったため現地でお会いすることはできませんでした。
+
+セッションは1並列のみなので全員で聴く形になります。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/timetable.jpg" width="500px">
+
+こちらは開会の挨拶です。今回のキャラクターが可愛くてとてもお気に入りです。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/opening.jpg" width="500px">
+
+カンファレンスの時間はホールの中でセッションを聴講し、休憩時間になったらホールの中やホワイエでRubyistと交流したりしました。  
+休憩時間には現地のおやつがでたり  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/fruits.jpg" width="500px" height="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/egg_tart.jpg" width="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/traditional_sweets.jpg" width="500px">
+
+ランチも現地のものをブッフェ形式でいただけるようになっていて、カンファレンスの中だけでもシンガポール文化をたくさん楽しむことができました。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/lunch_station.jpg" width="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/lunch.jpg" width="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/lunch_day2.jpg" width="500px">
+
+## 発表の様子
+### Matzのキーノート
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/matz_keynote.jpg" width="500px">
+### 柴田さんの発表
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/hsbt_talk.jpg" width="500px">
+### 大倉さんの発表
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/okura_talk.jpg" width="500px">
+### 私の発表（柴田さんの良いカメラで写真を撮ってもらいました）
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/eririn_talk.jpg" width="500px">
+## 海外カンファレンスに初参加しての感想
+私は日本の RubyKaigi や地域Ruby会議などのカンファレンスには何回か参加したことがありますが、海外のカンファレンスに参加するのはこの時が初めてでした。  
+海外カンファレンスに行くと、日本の RubyKaigi には参加したことがないけれど、今回は参加したというアメリカの方と出会うことができました。  
+つまり、ここに来なかったら出会えなかった方々がいたということです。  
+そういう方と話せただけでも、十分にシンガポールまで行った意味があったなと感じました。  
+また、発表をしたことでカンファレンスの参加者の方も声をかけてくださったり、内容を褒めてくださったりしたので、発表して良かったなと思いました。  
+
+さらに、現地の方に土曜日の夜にマリーナベイ（マリーナベイサンズとかマーライオンがあるエリア）で花火が見れるよと教えてもらいました。
+これは事前には知らなかったので、現地のRubyistの方と話したから得ることができた情報です。
+（ちなみに、このタイミングで花火があがるのは、8月9日がシンガポールの建国記念日なのですが、その数週間前から練習として土曜日の夜に花火を上げるようです。リッチ〜。）
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/fireworks.jpg" width="500px">
+
+今回の Red Dot Ruby Conference 2024 は 12 カ国から 78 人の参加者と 16 人のスピーカーが集まったようです。
+これにも、シンガポールらしさが出ているなと私は感じました。  
+78 人の規模のカンファレンスを日本で開催したら都内の人だけでもいっぱいになりそうじゃないですか。
+立地の理由なのか文化の理由なのか、これもとても興味深いと感じた点でした。
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/wrapup.png" width="500px">
+
+海外カンファレンスに行って良かったなと思ったことについては、以下の記事で羽角さんが良い感じに書いてくださっているのでこちらも見てみてください。  
+[RubyConf Africa 2024あるいは海外カンフの滋養強壮](https://tech.andpad.co.jp/entry/2024/08/23/100000)  
+ちょうどこの時、シンガポールでのカンファレンスとケニアでのカンファレンスがほぼ同じ日に開催されていたんですよね。  
+
+## 各参加者の感想
+### 柴田さん
+シンガポールの思い出:
+今回で5回目の参加となった「RedDotRubyConf」です。会場であるパヤ・レバのシンガポール郵政ビル周辺は、2016年当時はマレー文化が残るローカルな商店街でしたが、2024年には高層ビルがそびえ立つ大都市へと変貌を遂げていました。
+ホテルをとったブギスも同様に、歴史的街並みと近代開発が融合するエネルギッシュなエリアへと進化しています。どこへ行っても絶えず工事が進み、訪れるたびに景色が変わるシンガポールを懐かしくも感じました。その圧倒的な都市開発の勢いと熱気からは、東南アジアの成長国家ならではのパワーを改めて強く実感しました。円安で厳しい昨今ですが、また訪問する機会があれば行きたい国の1つです。
+### 大倉さん
+初参加のRedDotRubyConferenceでした。私はDSLの話をしましたが、それ以外も全体的に「Ruby/Railsをどう使うか」の話が多かった印象です。ランチもシンガポールっぽい内容で楽しめました。
+シンガポールを訪れるのは20年ぶり2度目でしたが、前回行ったときに比べて色々変わっていたような気がします（正直あまり覚えてないですが…笑）特に物価の上昇が著しい中、チャイナコンプレックスというビルの中の中華街エリアは非常に庶民的な価格かつ昔のシンガポールっぽい雰囲気を残しているのではと感じました。そのチャイナコンプレックスから10分ほど歩くと近代的な高層ビルが建ち並ぶエリアに出るあたり、都市国家であるシンガポールらしくて面白いですね。
+また、今回は1泊2日でマレーシアのジョホールバルに行きました。バスに乗って1時間もするともう国境線で、そこから検問などを経てマレーシアに入国すると雰囲気も変わり、旅の醍醐味を味わいました。一方、そのためにシンガポール内でまだ行けていないエリアもたくさんあります。
+次回のRedDotRubyConfがもしあれば、またプロポーザルを出したいと思います。
+## カンファレンス以外の活動
+初日はスピーカーディナーがありました。  
+マレーインドネシア料理ということで、またランチとは違った食事を楽しむことができました。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/dinner.jpg" width="500px">
+
+また、モスクもすぐ近くだったのでアザーン（イスラム教のお祈りの放送）も聞くことができました。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/mosque.jpg" width="500px">
+
+その後は、柴田さん、大倉さん、Aaronさんと一緒にドリアンを食べに行きました。  
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/rubyfriends.jpg" width="500px">  
+
+久しぶりのドリアンで、匂いは慣れているのですが味はこんなだったっけとびっくりしました。品種や熟れ具合によって味も違うみたいです。品種によって値段も変わってきます。    
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/durian.jpg" width="500px">
+<img src="{{base}}{{site.baseurl}}/images/0066-RedDotRubyConference2024/cut_durian.jpg" width="300px" height="500px">
+
+## まとめ
+私の場合、英語はなんとかなると思って、シンガポールに行きたいという気持ちだけで参加したのですが、行って良かったなと思っています。  
+技術系の話じゃないけどいいのかなと思いましたが、ダメならCfPで落ちるだろうとダメ元で提出してみました。  
+行きたいと思ったらやってみる。これの大事さを改めて感じました。  
+
+また、海外カンファレンスに参加するにあたり、日本Rubyの会には旅費の補助もしていただきました。  
+このような制度もありがたいことに Ruby コミュニティには整っているので、参加してみたい海外カンファレンスにはぜひ参加してみることをおすすめします。  
+日本Rubyの会による参加支援の詳細については[こちら](https://scrapbox.io/ruby-no-kai/%E6%97%A5%E6%9C%AC%E5%9B%BD%E5%A4%96%E3%81%AERuby%E3%82%AB%E3%83%B3%E3%83%95%E3%82%A1%E3%83%AC%E3%83%B3%E3%82%B9%E3%81%B8%E3%81%AE%E5%8F%82%E5%8A%A0%E6%B8%A1%E8%88%AA%E8%B2%BB%E6%94%AF%E6%8F%B4)。
+
+この記事が少しでもそういう方の後押しになっていたら嬉しいです。
+
+## 書いた人
+
+えりりん。 X: [@suuuuengch](https://x.com/suuuuengch), GitHub: [@ericgpks](https://github.com/ericgpks) 
+。パン作りエンジニア。Ruby や Ruby on Rails が大好き。Ruby が好きな人とつながりたい。趣味はパン作り・読書・海外旅行です。
