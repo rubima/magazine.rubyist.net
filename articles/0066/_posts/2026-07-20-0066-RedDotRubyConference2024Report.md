@@ -2,7 +2,6 @@
 layout: post
 title: Red Dot Ruby Conference 2024 参加レポート
 short_title: Red Dot Ruby Conference 2024
-tags: 0066 RedDotRubyConferenceReport
 post_author: えりりん
 created_on: 2026-07-20
 ---
