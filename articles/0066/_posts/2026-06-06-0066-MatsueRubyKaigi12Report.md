@@ -1,7 +1,7 @@
 ---
 layout: post
-title: RegionalRubyKaigi レポート (TODO) 松江 Ruby 会議 12
-short_title: RegionalRubyKaigi レポート (TODO) 松江 Ruby 会議 12
+title: RegionalRubyKaigi レポート (NUM) 松江 Ruby 会議 12
+short_title: RegionalRubyKaigi レポート (NUM) 松江 Ruby 会議 12
 tags: MatsueRubyKaigi12Report regionalRubyKaigi
 post_author: 野坂 秀和, 田中 健, 原 悠, 佐田 明弘
 created_on: 2026-06-06
