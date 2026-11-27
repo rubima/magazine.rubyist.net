@@ -1,13 +1,15 @@
 require 'erb'
 require 'pathname'
+require 'yaml'
 
 class Article
-  attr_reader :path
+  attr_reader :path, :id
 
   def initialize(file_path)
     @file_path = file_path
     pn = Pathname.new(@file_path.gsub('_posts', ''))
     @path = (pn.dirname + pn.basename('.md')).to_s
+    @id = "/#{pn.dirname}/#{pn.basename('.md').to_s.sub(/^\d{4,4}-\d\d-\d\d-/, '')}"
     @meta_data = fetch_meta_data!
   end
 
@@ -22,8 +24,10 @@ class Article
   private
 
   def fetch_meta_data!
-    meta_data = File.readlines(@file_path).slice_after { |l| l.chomp == '---' }.to_a[1][0..-2]
-    meta_data.map! { |m| m.chomp.split(': ') }.to_h
+    front_matter = File.read(@file_path).split(/^---\s*$/)[1]
+    front_matter.gsub!(/^tags:\s+(\d+)\s*$/, 'tags: "\1"')
+    # tags: 0065 -> tags: "0065"
+    YAML.load(front_matter, permitted_classes: [Date])
   end
 end
 
@@ -43,7 +47,7 @@ variables = {
   foreword: foreword[0],
   articles: articles
 }
-index_content = ERB.new(File.read(index_template_path)).result_with_hash(variables)
+index_content = ERB.new(File.read(index_template_path), trim_mode: "-").result_with_hash(variables)
 File.write("#{release_dir}/#{release_date}-index.md", index_content)
 
 editors_note_template_path = "#{__dir__}/template/EditorsNote.md.erb"
