@@ -9,6 +9,8 @@ title: るびま
 
 『Rubyist Magazine』、略して『るびま』は、Rubyist の Rubyist による、Rubyist とそうでない人のためのウェブ雑誌です。
 
+るびまに記事を書いてみたい方は、[記事を書いてみようと思ったあなたへ　るびまは OSS です！]({{base}}/how_to_write.html) をご覧ください。
+
 {% comment %}
 最新号のリリース日を最新の表紙のdateとする。
 最近の記事はcreated_on順に並べ、最新号のリリース日よりも新しいものを「最新記事」に列挙する。
